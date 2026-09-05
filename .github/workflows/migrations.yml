@@ -1,0 +1,43 @@
+name: Migrations
+
+on:
+  pull_request:
+    paths:
+      - 'src/db/**'
+      - 'package.json'
+  push:
+    branches: [main]
+    paths:
+      - 'src/db/**'
+      - 'package.json'
+
+jobs:
+  migrate-scratch-db:
+    runs-on: ubuntu-latest
+    services:
+      postgres:
+        image: postgres:17
+        env:
+          POSTGRES_PASSWORD: postgres
+        ports:
+          - 5432:5432
+        options: >-
+          --health-cmd pg_isready
+          --health-interval 5s
+          --health-timeout 5s
+          --health-retries 10
+    env:
+      DATABASE_URL: postgresql://postgres:postgres@localhost:5432/postgres
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - run: npm ci
+      - name: Migrate up
+        run: npm run db:migrate
+      - name: Migrate all the way down
+        run: |
+          while npm run db:migrate:down 2>&1 | grep -q ' — ok'; do :; done
+      - name: Migrate back up
+        run: npm run db:migrate
