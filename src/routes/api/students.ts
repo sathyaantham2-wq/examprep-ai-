@@ -33,7 +33,10 @@ export const Route = createFileRoute('/api/students')({
 
         const parsed = createStudentSchema.safeParse(await request.json())
         if (!parsed.success) {
-          return Response.json({ error: parsed.error.flatten() }, { status: 400 })
+          return Response.json(
+            { error: parsed.error.flatten() },
+            { status: 400 },
+          )
         }
 
         const db = createDb()

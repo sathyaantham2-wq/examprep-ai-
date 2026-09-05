@@ -16,7 +16,8 @@
     "db:migrate": "tsx src/db/migrate.ts latest",
     "db:migrate:up": "tsx src/db/migrate.ts up",
     "db:migrate:down": "tsx src/db/migrate.ts down",
-    "db:codegen": "kysely-codegen --config-file kysely-codegen.json"
+    "db:codegen": "kysely-codegen --config-file kysely-codegen.json",
+    "db:seed": "tsx src/db/seed.ts"
   },
   "dependencies": {
     "@tailwindcss/vite": "^4.1.18",
