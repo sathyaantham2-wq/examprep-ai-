@@ -52,6 +52,23 @@ export type Numeric = ColumnType<string, number | string, number | string>
 
 export type Timestamp = ColumnType<Date, Date | string, Date | string>
 
+export interface Accounts {
+  access_token: string | null
+  access_token_expires_at: Timestamp | null
+  account_id: string
+  created_at: Generated<Timestamp>
+  id: Generated<string>
+  id_token: string | null
+  issuer: string
+  password: string | null
+  provider_id: string
+  refresh_token: string | null
+  refresh_token_expires_at: Timestamp | null
+  scope: string | null
+  updated_at: Generated<Timestamp>
+  user_id: string
+}
+
 export interface AiJobs {
   cost_inr: Numeric | null
   created_at: Generated<Timestamp>
@@ -363,6 +380,17 @@ export interface RemediationTasks {
   trigger_reason: string
 }
 
+export interface Sessions {
+  created_at: Generated<Timestamp>
+  expires_at: Timestamp
+  id: Generated<string>
+  ip_address: string | null
+  token: string
+  updated_at: Generated<Timestamp>
+  user_agent: string | null
+  user_id: string
+}
+
 export interface Sources {
   created_at: Generated<Timestamp>
   edition: string | null
@@ -426,14 +454,27 @@ export interface Users {
   auth_provider: Generated<string>
   created_at: Generated<Timestamp>
   email: string
+  email_verified: Generated<boolean>
   household_id: string
   id: Generated<string>
+  image: string | null
   is_active: Generated<boolean>
   name: string
   role: UserRole
+  updated_at: Generated<Timestamp>
+}
+
+export interface Verifications {
+  created_at: Generated<Timestamp>
+  expires_at: Timestamp
+  id: Generated<string>
+  identifier: string
+  updated_at: Generated<Timestamp>
+  value: string
 }
 
 export interface DB {
+  accounts: Accounts
   ai_jobs: AiJobs
   attempt_answers: AttemptAnswers
   attempts: Attempts
@@ -460,10 +501,12 @@ export interface DB {
   question_usage: QuestionUsage
   questions: Questions
   remediation_tasks: RemediationTasks
+  sessions: Sessions
   sources: Sources
   students: Students
   study_plans: StudyPlans
   subjects: Subjects
   uploads: Uploads
   users: Users
+  verifications: Verifications
 }

@@ -10,33 +10,62 @@
 
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as ApiStudentsRouteImport } from './routes/api/students'
+import { Route as ApiAuthSplatRouteImport } from './routes/api/auth/$'
+import { Route as ApiStudentsIdRouteImport } from './routes/api/students/$id'
 
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
   getParentRoute: () => rootRouteImport,
 } as any)
+const ApiStudentsRoute = ApiStudentsRouteImport.update({
+  id: '/api/students',
+  path: '/api/students',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ApiAuthSplatRoute = ApiAuthSplatRouteImport.update({
+  id: '/api/auth/$',
+  path: '/api/auth/$',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ApiStudentsIdRoute = ApiStudentsIdRouteImport.update({
+  id: '/$id',
+  path: '/$id',
+  getParentRoute: () => ApiStudentsRoute,
+} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/api/students': typeof ApiStudentsRouteWithChildren
+  '/api/auth/$': typeof ApiAuthSplatRoute
+  '/api/students/$id': typeof ApiStudentsIdRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/api/students': typeof ApiStudentsRouteWithChildren
+  '/api/auth/$': typeof ApiAuthSplatRoute
+  '/api/students/$id': typeof ApiStudentsIdRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/api/students': typeof ApiStudentsRouteWithChildren
+  '/api/auth/$': typeof ApiAuthSplatRoute
+  '/api/students/$id': typeof ApiStudentsIdRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/'
+  fullPaths: '/' | '/api/students' | '/api/auth/$' | '/api/students/$id'
   fileRoutesByTo: FileRoutesByTo
-  to: '/'
-  id: '__root__' | '/'
+  to: '/' | '/api/students' | '/api/auth/$' | '/api/students/$id'
+  id: '__root__' | '/' | '/api/students' | '/api/auth/$' | '/api/students/$id'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  ApiStudentsRoute: typeof ApiStudentsRouteWithChildren
+  ApiAuthSplatRoute: typeof ApiAuthSplatRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -48,11 +77,46 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/api/students': {
+      id: '/api/students'
+      path: '/api/students'
+      fullPath: '/api/students'
+      preLoaderRoute: typeof ApiStudentsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/api/auth/$': {
+      id: '/api/auth/$'
+      path: '/api/auth/$'
+      fullPath: '/api/auth/$'
+      preLoaderRoute: typeof ApiAuthSplatRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/api/students/$id': {
+      id: '/api/students/$id'
+      path: '/$id'
+      fullPath: '/api/students/$id'
+      preLoaderRoute: typeof ApiStudentsIdRouteImport
+      parentRoute: typeof ApiStudentsRoute
+    }
   }
 }
 
+interface ApiStudentsRouteChildren {
+  ApiStudentsIdRoute: typeof ApiStudentsIdRoute
+}
+
+const ApiStudentsRouteChildren: ApiStudentsRouteChildren = {
+  ApiStudentsIdRoute: ApiStudentsIdRoute,
+}
+
+const ApiStudentsRouteWithChildren = ApiStudentsRoute._addFileChildren(
+  ApiStudentsRouteChildren,
+)
+
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  ApiStudentsRoute: ApiStudentsRouteWithChildren,
+  ApiAuthSplatRoute: ApiAuthSplatRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
