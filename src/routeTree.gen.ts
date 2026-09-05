@@ -17,6 +17,7 @@ import { Route as ApiQuestionsIdRouteImport } from './routes/api/questions/$id'
 import { Route as ApiStudentsIdRouteImport } from './routes/api/students/$id'
 import { Route as ApiSyllabusChaptersRouteImport } from './routes/api/syllabus/chapters'
 import { Route as ApiSyllabusSubjectsRouteImport } from './routes/api/syllabus/subjects'
+import { Route as ApiTrackerStudentIdRouteImport } from './routes/api/tracker/$studentId'
 import { Route as ApiQuestionsIdApproveRouteImport } from './routes/api/questions/$id/approve'
 import { Route as ApiSyllabusChaptersIdScopeRouteImport } from './routes/api/syllabus/chapters/$id/scope'
 
@@ -60,6 +61,11 @@ const ApiSyllabusSubjectsRoute = ApiSyllabusSubjectsRouteImport.update({
   path: '/api/syllabus/subjects',
   getParentRoute: () => rootRouteImport,
 } as any)
+const ApiTrackerStudentIdRoute = ApiTrackerStudentIdRouteImport.update({
+  id: '/api/tracker/$studentId',
+  path: '/api/tracker/$studentId',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const ApiQuestionsIdApproveRoute = ApiQuestionsIdApproveRouteImport.update({
   id: '/approve',
   path: '/approve',
@@ -81,6 +87,7 @@ export interface FileRoutesByFullPath {
   '/api/students/$id': typeof ApiStudentsIdRoute
   '/api/syllabus/chapters': typeof ApiSyllabusChaptersRouteWithChildren
   '/api/syllabus/subjects': typeof ApiSyllabusSubjectsRoute
+  '/api/tracker/$studentId': typeof ApiTrackerStudentIdRoute
   '/api/questions/$id/approve': typeof ApiQuestionsIdApproveRoute
   '/api/syllabus/chapters/$id/scope': typeof ApiSyllabusChaptersIdScopeRoute
 }
@@ -93,6 +100,7 @@ export interface FileRoutesByTo {
   '/api/students/$id': typeof ApiStudentsIdRoute
   '/api/syllabus/chapters': typeof ApiSyllabusChaptersRouteWithChildren
   '/api/syllabus/subjects': typeof ApiSyllabusSubjectsRoute
+  '/api/tracker/$studentId': typeof ApiTrackerStudentIdRoute
   '/api/questions/$id/approve': typeof ApiQuestionsIdApproveRoute
   '/api/syllabus/chapters/$id/scope': typeof ApiSyllabusChaptersIdScopeRoute
 }
@@ -106,6 +114,7 @@ export interface FileRoutesById {
   '/api/students/$id': typeof ApiStudentsIdRoute
   '/api/syllabus/chapters': typeof ApiSyllabusChaptersRouteWithChildren
   '/api/syllabus/subjects': typeof ApiSyllabusSubjectsRoute
+  '/api/tracker/$studentId': typeof ApiTrackerStudentIdRoute
   '/api/questions/$id/approve': typeof ApiQuestionsIdApproveRoute
   '/api/syllabus/chapters/$id/scope': typeof ApiSyllabusChaptersIdScopeRoute
 }
@@ -120,6 +129,7 @@ export interface FileRouteTypes {
     | '/api/students/$id'
     | '/api/syllabus/chapters'
     | '/api/syllabus/subjects'
+    | '/api/tracker/$studentId'
     | '/api/questions/$id/approve'
     | '/api/syllabus/chapters/$id/scope'
   fileRoutesByTo: FileRoutesByTo
@@ -132,6 +142,7 @@ export interface FileRouteTypes {
     | '/api/students/$id'
     | '/api/syllabus/chapters'
     | '/api/syllabus/subjects'
+    | '/api/tracker/$studentId'
     | '/api/questions/$id/approve'
     | '/api/syllabus/chapters/$id/scope'
   id:
@@ -144,6 +155,7 @@ export interface FileRouteTypes {
     | '/api/students/$id'
     | '/api/syllabus/chapters'
     | '/api/syllabus/subjects'
+    | '/api/tracker/$studentId'
     | '/api/questions/$id/approve'
     | '/api/syllabus/chapters/$id/scope'
   fileRoutesById: FileRoutesById
@@ -155,6 +167,7 @@ export interface RootRouteChildren {
   ApiAuthSplatRoute: typeof ApiAuthSplatRoute
   ApiSyllabusChaptersRoute: typeof ApiSyllabusChaptersRouteWithChildren
   ApiSyllabusSubjectsRoute: typeof ApiSyllabusSubjectsRoute
+  ApiTrackerStudentIdRoute: typeof ApiTrackerStudentIdRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -213,6 +226,13 @@ declare module '@tanstack/react-router' {
       path: '/api/syllabus/subjects'
       fullPath: '/api/syllabus/subjects'
       preLoaderRoute: typeof ApiSyllabusSubjectsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/api/tracker/$studentId': {
+      id: '/api/tracker/$studentId'
+      path: '/api/tracker/$studentId'
+      fullPath: '/api/tracker/$studentId'
+      preLoaderRoute: typeof ApiTrackerStudentIdRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/api/questions/$id/approve': {
@@ -286,6 +306,7 @@ const rootRouteChildren: RootRouteChildren = {
   ApiAuthSplatRoute: ApiAuthSplatRoute,
   ApiSyllabusChaptersRoute: ApiSyllabusChaptersRouteWithChildren,
   ApiSyllabusSubjectsRoute: ApiSyllabusSubjectsRoute,
+  ApiTrackerStudentIdRoute: ApiTrackerStudentIdRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
