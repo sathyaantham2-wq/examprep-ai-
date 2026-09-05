@@ -1,0 +1,48 @@
+{
+  "outFile": "src/db/types.ts",
+  "includePattern": "public.*",
+  "excludePattern": "kysely_migration*",
+  "customImports": {
+    "UserRole": "./enums#UserRole",
+    "ScopeKind": "./enums#ScopeKind",
+    "DifficultyTier": "./enums#DifficultyTier",
+    "BloomLevel": "./enums#BloomLevel",
+    "QuestionType": "./enums#QuestionType",
+    "QuestionStatus": "./enums#QuestionStatus",
+    "AttemptMode": "./enums#AttemptMode",
+    "AttemptStatus": "./enums#AttemptStatus",
+    "AnswerSource": "./enums#AnswerSource",
+    "EvaluatedBy": "./enums#EvaluatedBy",
+    "HabitRating": "./enums#HabitRating",
+    "ConceptStatusValue": "./enums#ConceptStatusValue",
+    "RemediationStatus": "./enums#RemediationStatus",
+    "StudyPlanStatus": "./enums#StudyPlanStatus",
+    "UploadKind": "./enums#UploadKind",
+    "AiJobStatus": "./enums#AiJobStatus",
+    "NotificationChannel": "./enums#NotificationChannel",
+    "NotificationStatus": "./enums#NotificationStatus"
+  },
+  "overrides": {
+    "columns": {
+      "users.role": "UserRole",
+      "chapter_scope.kind": "ScopeKind",
+      "concepts.difficulty_base": "DifficultyTier",
+      "questions.bloom": "BloomLevel",
+      "questions.difficulty": "DifficultyTier",
+      "questions.type": "QuestionType",
+      "questions.status": "QuestionStatus",
+      "attempts.mode": "AttemptMode",
+      "attempts.status": "AttemptStatus",
+      "attempt_answers.source": "AnswerSource",
+      "evaluations.evaluated_by": "EvaluatedBy",
+      "habit_observations.rating": "HabitRating",
+      "concept_status.status": "ConceptStatusValue",
+      "remediation_tasks.status": "RemediationStatus",
+      "study_plans.status": "StudyPlanStatus",
+      "uploads.kind": "UploadKind",
+      "ai_jobs.status": "AiJobStatus",
+      "notifications.channel": "NotificationChannel",
+      "notifications.status": "NotificationStatus"
+    }
+  }
+}

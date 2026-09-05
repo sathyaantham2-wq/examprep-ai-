@@ -15,7 +15,8 @@
     "check": "prettier --check .",
     "db:migrate": "tsx src/db/migrate.ts latest",
     "db:migrate:up": "tsx src/db/migrate.ts up",
-    "db:migrate:down": "tsx src/db/migrate.ts down"
+    "db:migrate:down": "tsx src/db/migrate.ts down",
+    "db:codegen": "kysely-codegen --config-file kysely-codegen.json"
   },
   "dependencies": {
     "@tailwindcss/vite": "^4.1.18",
@@ -47,6 +48,7 @@
     "@vitejs/plugin-react": "^6.0.1",
     "dotenv": "^17.4.2",
     "eslint": "^9.20.0",
+    "kysely-codegen": "^0.20.0",
     "prettier": "^3.8.1",
     "tsx": "^4.23.13",
     "typescript": "^6.0.2",
