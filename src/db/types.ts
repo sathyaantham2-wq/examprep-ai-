@@ -18,6 +18,7 @@ import type {
   QuestionStatus,
   QuestionType,
   RemediationStatus,
+  ReviewTier,
   ScopeKind,
   StudyPlanStatus,
   UploadKind,
@@ -187,6 +188,7 @@ export interface Concepts {
   idea: string | null
   name: string
   rule: string | null
+  target_question_count: Generated<number>
 }
 
 export interface ConceptStatus {
@@ -341,6 +343,10 @@ export interface Questions {
   id: Generated<string>
   language: Generated<string>
   marks: number
+  review_note: string | null
+  review_tier: ReviewTier
+  reviewed_at: Timestamp | null
+  reviewed_by: string | null
   source_ref: string | null
   status: QuestionStatus
   tags: Generated<string[]>

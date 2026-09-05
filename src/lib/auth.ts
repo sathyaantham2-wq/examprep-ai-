@@ -31,7 +31,12 @@ export const auth = betterAuth({
   // Google is optional in dev — only registered once real OAuth credentials exist.
   socialProviders:
     googleClientId && googleClientSecret
-      ? { google: { clientId: googleClientId, clientSecret: googleClientSecret } }
+      ? {
+          google: {
+            clientId: googleClientId,
+            clientSecret: googleClientSecret,
+          },
+        }
       : undefined,
   // A brand-new sign-up is always a parent starting their own household (F008) — students get
   // added afterwards, they don't self-register into an empty household. household_id/role are
@@ -46,7 +51,13 @@ export const auth = betterAuth({
               name: `${user.name}'s household`,
               plan: 'free',
             })
-            return { data: { ...user, household_id: household.id, role: 'parent' as const } }
+            return {
+              data: {
+                ...user,
+                household_id: household.id,
+                role: 'parent' as const,
+              },
+            }
           } finally {
             await db.destroy()
           }
@@ -68,7 +79,12 @@ export const auth = betterAuth({
       household_id: { type: 'string', required: false, input: false },
       role: { type: 'string', required: false, input: false },
       auth_provider: { type: 'string', required: false, input: false },
-      is_active: { type: 'boolean', required: false, defaultValue: true, input: false },
+      is_active: {
+        type: 'boolean',
+        required: false,
+        defaultValue: true,
+        input: false,
+      },
     },
   },
   session: {
