@@ -10,20 +10,29 @@
 
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as ApiBlueprintsRouteImport } from './routes/api/blueprints'
 import { Route as ApiQuestionsRouteImport } from './routes/api/questions'
 import { Route as ApiStudentsRouteImport } from './routes/api/students'
 import { Route as ApiAuthSplatRouteImport } from './routes/api/auth/$'
+import { Route as ApiPapersIdRouteImport } from './routes/api/papers/$id'
+import { Route as ApiPapersGenerateRouteImport } from './routes/api/papers/generate'
 import { Route as ApiQuestionsIdRouteImport } from './routes/api/questions/$id'
 import { Route as ApiStudentsIdRouteImport } from './routes/api/students/$id'
 import { Route as ApiSyllabusChaptersRouteImport } from './routes/api/syllabus/chapters'
 import { Route as ApiSyllabusSubjectsRouteImport } from './routes/api/syllabus/subjects'
 import { Route as ApiTrackerStudentIdRouteImport } from './routes/api/tracker/$studentId'
+import { Route as ApiPapersIdRegenerateSlotRouteImport } from './routes/api/papers/$id/regenerate-slot'
 import { Route as ApiQuestionsIdApproveRouteImport } from './routes/api/questions/$id/approve'
 import { Route as ApiSyllabusChaptersIdScopeRouteImport } from './routes/api/syllabus/chapters/$id/scope'
 
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ApiBlueprintsRoute = ApiBlueprintsRouteImport.update({
+  id: '/api/blueprints',
+  path: '/api/blueprints',
   getParentRoute: () => rootRouteImport,
 } as any)
 const ApiQuestionsRoute = ApiQuestionsRouteImport.update({
@@ -39,6 +48,16 @@ const ApiStudentsRoute = ApiStudentsRouteImport.update({
 const ApiAuthSplatRoute = ApiAuthSplatRouteImport.update({
   id: '/api/auth/$',
   path: '/api/auth/$',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ApiPapersIdRoute = ApiPapersIdRouteImport.update({
+  id: '/api/papers/$id',
+  path: '/api/papers/$id',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ApiPapersGenerateRoute = ApiPapersGenerateRouteImport.update({
+  id: '/api/papers/generate',
+  path: '/api/papers/generate',
   getParentRoute: () => rootRouteImport,
 } as any)
 const ApiQuestionsIdRoute = ApiQuestionsIdRouteImport.update({
@@ -66,6 +85,12 @@ const ApiTrackerStudentIdRoute = ApiTrackerStudentIdRouteImport.update({
   path: '/api/tracker/$studentId',
   getParentRoute: () => rootRouteImport,
 } as any)
+const ApiPapersIdRegenerateSlotRoute =
+  ApiPapersIdRegenerateSlotRouteImport.update({
+    id: '/regenerate-slot',
+    path: '/regenerate-slot',
+    getParentRoute: () => ApiPapersIdRoute,
+  } as any)
 const ApiQuestionsIdApproveRoute = ApiQuestionsIdApproveRouteImport.update({
   id: '/approve',
   path: '/approve',
@@ -80,41 +105,53 @@ const ApiSyllabusChaptersIdScopeRoute =
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/api/blueprints': typeof ApiBlueprintsRoute
   '/api/questions': typeof ApiQuestionsRouteWithChildren
   '/api/students': typeof ApiStudentsRouteWithChildren
   '/api/auth/$': typeof ApiAuthSplatRoute
+  '/api/papers/$id': typeof ApiPapersIdRouteWithChildren
+  '/api/papers/generate': typeof ApiPapersGenerateRoute
   '/api/questions/$id': typeof ApiQuestionsIdRouteWithChildren
   '/api/students/$id': typeof ApiStudentsIdRoute
   '/api/syllabus/chapters': typeof ApiSyllabusChaptersRouteWithChildren
   '/api/syllabus/subjects': typeof ApiSyllabusSubjectsRoute
   '/api/tracker/$studentId': typeof ApiTrackerStudentIdRoute
+  '/api/papers/$id/regenerate-slot': typeof ApiPapersIdRegenerateSlotRoute
   '/api/questions/$id/approve': typeof ApiQuestionsIdApproveRoute
   '/api/syllabus/chapters/$id/scope': typeof ApiSyllabusChaptersIdScopeRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/api/blueprints': typeof ApiBlueprintsRoute
   '/api/questions': typeof ApiQuestionsRouteWithChildren
   '/api/students': typeof ApiStudentsRouteWithChildren
   '/api/auth/$': typeof ApiAuthSplatRoute
+  '/api/papers/$id': typeof ApiPapersIdRouteWithChildren
+  '/api/papers/generate': typeof ApiPapersGenerateRoute
   '/api/questions/$id': typeof ApiQuestionsIdRouteWithChildren
   '/api/students/$id': typeof ApiStudentsIdRoute
   '/api/syllabus/chapters': typeof ApiSyllabusChaptersRouteWithChildren
   '/api/syllabus/subjects': typeof ApiSyllabusSubjectsRoute
   '/api/tracker/$studentId': typeof ApiTrackerStudentIdRoute
+  '/api/papers/$id/regenerate-slot': typeof ApiPapersIdRegenerateSlotRoute
   '/api/questions/$id/approve': typeof ApiQuestionsIdApproveRoute
   '/api/syllabus/chapters/$id/scope': typeof ApiSyllabusChaptersIdScopeRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/api/blueprints': typeof ApiBlueprintsRoute
   '/api/questions': typeof ApiQuestionsRouteWithChildren
   '/api/students': typeof ApiStudentsRouteWithChildren
   '/api/auth/$': typeof ApiAuthSplatRoute
+  '/api/papers/$id': typeof ApiPapersIdRouteWithChildren
+  '/api/papers/generate': typeof ApiPapersGenerateRoute
   '/api/questions/$id': typeof ApiQuestionsIdRouteWithChildren
   '/api/students/$id': typeof ApiStudentsIdRoute
   '/api/syllabus/chapters': typeof ApiSyllabusChaptersRouteWithChildren
   '/api/syllabus/subjects': typeof ApiSyllabusSubjectsRoute
   '/api/tracker/$studentId': typeof ApiTrackerStudentIdRoute
+  '/api/papers/$id/regenerate-slot': typeof ApiPapersIdRegenerateSlotRoute
   '/api/questions/$id/approve': typeof ApiQuestionsIdApproveRoute
   '/api/syllabus/chapters/$id/scope': typeof ApiSyllabusChaptersIdScopeRoute
 }
@@ -122,49 +159,64 @@ export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
   fullPaths:
     | '/'
+    | '/api/blueprints'
     | '/api/questions'
     | '/api/students'
     | '/api/auth/$'
+    | '/api/papers/$id'
+    | '/api/papers/generate'
     | '/api/questions/$id'
     | '/api/students/$id'
     | '/api/syllabus/chapters'
     | '/api/syllabus/subjects'
     | '/api/tracker/$studentId'
+    | '/api/papers/$id/regenerate-slot'
     | '/api/questions/$id/approve'
     | '/api/syllabus/chapters/$id/scope'
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/'
+    | '/api/blueprints'
     | '/api/questions'
     | '/api/students'
     | '/api/auth/$'
+    | '/api/papers/$id'
+    | '/api/papers/generate'
     | '/api/questions/$id'
     | '/api/students/$id'
     | '/api/syllabus/chapters'
     | '/api/syllabus/subjects'
     | '/api/tracker/$studentId'
+    | '/api/papers/$id/regenerate-slot'
     | '/api/questions/$id/approve'
     | '/api/syllabus/chapters/$id/scope'
   id:
     | '__root__'
     | '/'
+    | '/api/blueprints'
     | '/api/questions'
     | '/api/students'
     | '/api/auth/$'
+    | '/api/papers/$id'
+    | '/api/papers/generate'
     | '/api/questions/$id'
     | '/api/students/$id'
     | '/api/syllabus/chapters'
     | '/api/syllabus/subjects'
     | '/api/tracker/$studentId'
+    | '/api/papers/$id/regenerate-slot'
     | '/api/questions/$id/approve'
     | '/api/syllabus/chapters/$id/scope'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  ApiBlueprintsRoute: typeof ApiBlueprintsRoute
   ApiQuestionsRoute: typeof ApiQuestionsRouteWithChildren
   ApiStudentsRoute: typeof ApiStudentsRouteWithChildren
   ApiAuthSplatRoute: typeof ApiAuthSplatRoute
+  ApiPapersIdRoute: typeof ApiPapersIdRouteWithChildren
+  ApiPapersGenerateRoute: typeof ApiPapersGenerateRoute
   ApiSyllabusChaptersRoute: typeof ApiSyllabusChaptersRouteWithChildren
   ApiSyllabusSubjectsRoute: typeof ApiSyllabusSubjectsRoute
   ApiTrackerStudentIdRoute: typeof ApiTrackerStudentIdRoute
@@ -177,6 +229,13 @@ declare module '@tanstack/react-router' {
       path: '/'
       fullPath: '/'
       preLoaderRoute: typeof IndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/api/blueprints': {
+      id: '/api/blueprints'
+      path: '/api/blueprints'
+      fullPath: '/api/blueprints'
+      preLoaderRoute: typeof ApiBlueprintsRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/api/questions': {
@@ -198,6 +257,20 @@ declare module '@tanstack/react-router' {
       path: '/api/auth/$'
       fullPath: '/api/auth/$'
       preLoaderRoute: typeof ApiAuthSplatRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/api/papers/$id': {
+      id: '/api/papers/$id'
+      path: '/api/papers/$id'
+      fullPath: '/api/papers/$id'
+      preLoaderRoute: typeof ApiPapersIdRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/api/papers/generate': {
+      id: '/api/papers/generate'
+      path: '/api/papers/generate'
+      fullPath: '/api/papers/generate'
+      preLoaderRoute: typeof ApiPapersGenerateRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/api/questions/$id': {
@@ -234,6 +307,13 @@ declare module '@tanstack/react-router' {
       fullPath: '/api/tracker/$studentId'
       preLoaderRoute: typeof ApiTrackerStudentIdRouteImport
       parentRoute: typeof rootRouteImport
+    }
+    '/api/papers/$id/regenerate-slot': {
+      id: '/api/papers/$id/regenerate-slot'
+      path: '/regenerate-slot'
+      fullPath: '/api/papers/$id/regenerate-slot'
+      preLoaderRoute: typeof ApiPapersIdRegenerateSlotRouteImport
+      parentRoute: typeof ApiPapersIdRoute
     }
     '/api/questions/$id/approve': {
       id: '/api/questions/$id/approve'
@@ -288,6 +368,18 @@ const ApiStudentsRouteWithChildren = ApiStudentsRoute._addFileChildren(
   ApiStudentsRouteChildren,
 )
 
+interface ApiPapersIdRouteChildren {
+  ApiPapersIdRegenerateSlotRoute: typeof ApiPapersIdRegenerateSlotRoute
+}
+
+const ApiPapersIdRouteChildren: ApiPapersIdRouteChildren = {
+  ApiPapersIdRegenerateSlotRoute: ApiPapersIdRegenerateSlotRoute,
+}
+
+const ApiPapersIdRouteWithChildren = ApiPapersIdRoute._addFileChildren(
+  ApiPapersIdRouteChildren,
+)
+
 interface ApiSyllabusChaptersRouteChildren {
   ApiSyllabusChaptersIdScopeRoute: typeof ApiSyllabusChaptersIdScopeRoute
 }
@@ -301,9 +393,12 @@ const ApiSyllabusChaptersRouteWithChildren =
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  ApiBlueprintsRoute: ApiBlueprintsRoute,
   ApiQuestionsRoute: ApiQuestionsRouteWithChildren,
   ApiStudentsRoute: ApiStudentsRouteWithChildren,
   ApiAuthSplatRoute: ApiAuthSplatRoute,
+  ApiPapersIdRoute: ApiPapersIdRouteWithChildren,
+  ApiPapersGenerateRoute: ApiPapersGenerateRoute,
   ApiSyllabusChaptersRoute: ApiSyllabusChaptersRouteWithChildren,
   ApiSyllabusSubjectsRoute: ApiSyllabusSubjectsRoute,
   ApiTrackerStudentIdRoute: ApiTrackerStudentIdRoute,

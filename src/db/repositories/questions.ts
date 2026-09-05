@@ -1,3 +1,4 @@
+import { sql } from 'kysely'
 import type {
   BloomLevel,
   DifficultyTier,
@@ -13,6 +14,14 @@ export interface QuestionFilters {
   difficulty?: DifficultyTier
   type?: QuestionType
   status?: QuestionStatus
+}
+
+export interface EligibleSlotParams {
+  conceptIds: Array<string>
+  bloomAllowed: Array<BloomLevel>
+  difficultiesAllowed: Array<DifficultyTier>
+  marks: number
+  excludeQuestionIds: Array<string>
 }
 
 // The question bank is global reference data (not household-owned), unscoped.
@@ -45,6 +54,30 @@ export const questionsRepository = {
 
     return { items, total: Number(countResult.count) }
   },
+  // The paper generator's core lookup (F028/F029/F119): approved questions matching a concept
+  // pool, an allowed Bloom set, and a difficulty ceiling, excluding ones already used up. Random
+  // order so repeated generation doesn't always pick the same question first.
+  async findEligibleForSlot(db: Db, params: EligibleSlotParams, limit: number) {
+    if (params.conceptIds.length === 0) return []
+
+    let query = db
+      .selectFrom('questions')
+      .selectAll()
+      .where('status', '=', 'approved')
+      .where('concept_id', 'in', params.conceptIds)
+      .where('bloom', 'in', params.bloomAllowed)
+      .where('difficulty', 'in', params.difficultiesAllowed)
+      .where('marks', '=', params.marks)
+
+    if (params.excludeQuestionIds.length > 0) {
+      query = query.where('id', 'not in', params.excludeQuestionIds)
+    }
+
+    return query
+      .orderBy(sql`random()`)
+      .limit(limit)
+      .execute()
+  },
 }
 
 export const questionOptionsRepository = createRepository('question_options')
@@ -52,8 +85,19 @@ export const questionStepMarksRepository = createRepository(
   'question_step_marks',
 )
 
-// Which student has seen which question — always scoped by student.
-export const questionUsageRepository = createScopedRepository(
-  'question_usage',
-  'student_id',
-)
+export const questionUsageRepository = {
+  ...createScopedRepository('question_usage', 'student_id'),
+  async listRecentQuestionIds(db: Db, studentId: string, sinceDays: number) {
+    const rows = await db
+      .selectFrom('question_usage')
+      .select('question_id')
+      .where('student_id', '=', studentId)
+      .where(
+        'served_at',
+        '>=',
+        sql<Date>`now() - (${sinceDays} || ' days')::interval`,
+      )
+      .execute()
+    return rows.map((row) => row.question_id)
+  },
+}
