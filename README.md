@@ -8,9 +8,8 @@ one school student at a time.
 ```bash
 git clone <repo-url>
 cd examprep-ai
-npm install          # once the app scaffold lands (F001)
-code .               # open in VS Code
-claude               # start Claude Code in the repo root
+npm install
+npm run dev          # http://localhost:3000
 ```
 
 Claude Code reads `CLAUDE.md` automatically and picks up the four project skills in
@@ -32,7 +31,7 @@ examprep-ai/
 ├─ content/
 │  ├─ sources/                   raw NCERT files (gegp101.pdf …) — gitignored, they're large
 │  └─ extracted/                 normalised per-page text — committed
-└─ src/                          the app (from F001 onward)
+└─ src/                          the app — TanStack Start (React 19), file-based routes
 ```
 
 ## Where to start
@@ -45,3 +44,27 @@ Do not start on the paper generator before the schema exists.
 The twelve `gegp*.pdf` files are **ZIP archives of page JPEGs with a per-page text sidecar**, not
 real PDFs — which is why PDF readers reject them. `/examprep-ingest-source` handles both that
 format and true PDFs. Don't "repair" them.
+
+## Local development
+
+```bash
+npm run dev       # dev server on :3000
+npm run build     # production build
+npm run lint      # eslint
+npm run format    # prettier + eslint --fix
+npm run check     # prettier --check
+```
+
+Routes are files under `src/routes` (TanStack Router file-based routing); server functions and
+API routes live alongside them per the [TanStack Start docs](https://tanstack.com/start). Add
+shadcn/ui components with:
+
+```bash
+npx shadcn@latest add button
+```
+
+## Deploy
+
+Hosting is locked to Vercel (tab 09). `vercel.json` makes framework detection explicit; import the
+repo in Vercel and add production env vars under Settings > Environment Variables. Variables
+prefixed `VITE_` ship to the browser bundle — keep secrets unprefixed so they stay server-only.
