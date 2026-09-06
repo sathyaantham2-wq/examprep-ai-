@@ -20,15 +20,39 @@ const weightingSchema = z
     },
   )
 
-const generateSchema = z.object({
-  student_id: z.string().uuid(),
-  blueprint_id: z.string().uuid(),
-  chapter_ids: z.array(z.string().uuid()).min(1),
-  theme: z.string().min(1).optional(),
-  // F119: this is a ceiling on difficulty, never a filter on which concepts get picked.
-  difficulty_ceiling: z.enum(DIFFICULTY_TIERS).optional(),
-  weighting_override: weightingSchema.optional(),
-})
+// F113: chapter_id -> percentage, keyed dynamically since it depends on which chapters were
+// picked. Same "must sum to 100" contract as weightingSchema above.
+const chapterWeightingSchema = z
+  .record(z.string().uuid(), z.number().min(0).max(100))
+  .refine(
+    (w) => Math.abs(Object.values(w).reduce((a, b) => a + b, 0) - 100) < 0.01,
+    { message: 'chapter_weighting_override must sum to 100' },
+  )
+
+const generateSchema = z
+  .object({
+    student_id: z.string().uuid(),
+    blueprint_id: z.string().uuid(),
+    chapter_ids: z.array(z.string().uuid()).min(1),
+    theme: z.string().min(1).optional(),
+    // F119: this is a ceiling on difficulty, never a filter on which concepts get picked.
+    difficulty_ceiling: z.enum(DIFFICULTY_TIERS).optional(),
+    weighting_override: weightingSchema.optional(),
+    // F113: overrides the concept-count-proportional per-chapter marks split.
+    chapter_weighting_override: chapterWeightingSchema.optional(),
+  })
+  .refine(
+    (v) =>
+      !v.chapter_weighting_override ||
+      (new Set(Object.keys(v.chapter_weighting_override)).size ===
+        v.chapter_ids.length &&
+        v.chapter_ids.every((id) => id in v.chapter_weighting_override!)),
+    {
+      message:
+        'chapter_weighting_override must have exactly one weight per chapter_id',
+      path: ['chapter_weighting_override'],
+    },
+  )
 
 export const Route = createFileRoute('/api/papers/generate')({
   server: {

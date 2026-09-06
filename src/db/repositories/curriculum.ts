@@ -49,6 +49,18 @@ export const chaptersRepository = {
       .orderBy('chapters.order_index')
       .execute()
   },
+  // F113: resolves a paper's raw chapter_ids into display info (part + chapter_no + name) for the
+  // paper header -- chapter identity is (source, part, chapter_no), never chapter_no alone.
+  async listByIds(db: Db, ids: Array<string>) {
+    if (ids.length === 0) return []
+    return db
+      .selectFrom('chapters')
+      .select(['id', 'part', 'chapter_no', 'name'])
+      .where('id', 'in', ids)
+      .orderBy('part')
+      .orderBy('chapter_no')
+      .execute()
+  },
 }
 
 export const chapterScopeRepository = {

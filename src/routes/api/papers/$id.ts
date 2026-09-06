@@ -4,6 +4,7 @@ import { createDb } from '../../../db/connection'
 import {
   papersRepository,
   paperQuestionsRepository,
+  chaptersRepository,
 } from '../../../db/repositories'
 
 // tab05 lists this route as Parent-only. Student self-access (with answers/keys stripped, per
@@ -25,12 +26,12 @@ export const Route = createFileRoute('/api/papers/$id')({
           )
           if (!paper) return new Response(null, { status: 404 })
 
-          const questions =
-            await paperQuestionsRepository.listForPaperWithQuestions(
-              db,
-              paper.id,
-            )
-          return Response.json({ ...paper, questions })
+          const [questions, chapters] = await Promise.all([
+            paperQuestionsRepository.listForPaperWithQuestions(db, paper.id),
+            // F113: resolve stored chapter_ids into header-ready display info.
+            chaptersRepository.listByIds(db, paper.chapter_ids),
+          ])
+          return Response.json({ ...paper, questions, chapters })
         } finally {
           await db.destroy()
         }
