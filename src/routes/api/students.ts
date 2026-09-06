@@ -2,7 +2,8 @@ import { createFileRoute } from '@tanstack/react-router'
 import { z } from 'zod'
 import { requireRole } from '../../lib/session'
 import { createDb } from '../../db/connection'
-import { studentsRepository } from '../../db/repositories'
+import { studentsRepository, consentsRepository } from '../../db/repositories'
+import { CURRENT_CONSENT_VERSION } from '../../lib/consent'
 
 // F009: target_exams is {name, date}[] -- no consumer reads its shape yet (no other feature
 // exists to display or schedule against it), so this is the minimal shape the AC's "target exam
@@ -20,6 +21,11 @@ const createStudentSchema = z.object({
   section: z.string().min(1).optional(),
   roll_no: z.string().min(1).optional(),
   target_exams: z.array(targetExamSchema).optional(),
+  // F095: DPDP consent is captured at student creation -- must be an explicit true, not merely
+  // present/truthy, so a client can't satisfy this by sending consent_accepted: "no".
+  consent_accepted: z.literal(true, {
+    error: 'Parental consent is required to create a student profile',
+  }),
 })
 
 export const Route = createFileRoute('/api/students')({
@@ -51,15 +57,26 @@ export const Route = createFileRoute('/api/students')({
 
         const db = createDb()
         try {
-          const student = await studentsRepository.insert(db, {
-            household_id: auth.householdId,
-            name: parsed.data.name,
-            class: parsed.data.class,
-            board: parsed.data.board,
-            school: parsed.data.school,
-            section: parsed.data.section,
-            roll_no: parsed.data.roll_no,
-            target_exams: JSON.stringify(parsed.data.target_exams ?? []),
+          // F095: the student profile and its consent record are created atomically -- a student
+          // row must never exist without a matching consent event.
+          const student = await db.transaction().execute(async (trx) => {
+            const created = await studentsRepository.insert(trx, {
+              household_id: auth.householdId,
+              name: parsed.data.name,
+              class: parsed.data.class,
+              board: parsed.data.board,
+              school: parsed.data.school,
+              section: parsed.data.section,
+              roll_no: parsed.data.roll_no,
+              target_exams: JSON.stringify(parsed.data.target_exams ?? []),
+            })
+            await consentsRepository.insert(trx, {
+              household_id: auth.householdId,
+              student_id: created.id,
+              given_by_user_id: auth.id,
+              purpose_version: CURRENT_CONSENT_VERSION,
+            })
+            return created
           })
           return Response.json(student, { status: 201 })
         } finally {

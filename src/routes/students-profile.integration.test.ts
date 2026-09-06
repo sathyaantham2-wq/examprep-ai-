@@ -71,6 +71,7 @@ describe('student profile fields round-trip (F009)', () => {
         section: 'B',
         roll_no: '17',
         target_exams: [{ name: 'Unit Test 1', date: '2026-03-01' }],
+        consent_accepted: true,
       }),
     })
     expect(response.status).toBe(201)

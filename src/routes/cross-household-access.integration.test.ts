@@ -86,6 +86,7 @@ describe('cross-household access is denied on every route it was checked against
         name: 'F096 Kid A',
         class: 7,
         board: 'CBSE',
+        consent_accepted: true,
       }),
     })
     studentAId = (await studentAResponse.json()).id
@@ -98,6 +99,7 @@ describe('cross-household access is denied on every route it was checked against
         name: 'F096 Kid B',
         class: 7,
         board: 'CBSE',
+        consent_accepted: true,
       }),
     })
     studentBId = (await studentBResponse.json()).id

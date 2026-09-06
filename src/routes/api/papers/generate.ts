@@ -3,7 +3,10 @@ import { z } from 'zod'
 import { requireRole } from '../../../lib/session'
 import { generatePaper } from '../../../lib/papers'
 import { createDb } from '../../../db/connection'
-import { studentsRepository } from '../../../db/repositories'
+import {
+  studentsRepository,
+  consentsRepository,
+} from '../../../db/repositories'
 
 const DIFFICULTY_TIERS = ['Easy', 'Hard', 'Hardest'] as const
 
@@ -78,6 +81,25 @@ export const Route = createFileRoute('/api/papers/generate')({
             parsed.data.student_id,
           )
           if (!student) return new Response(null, { status: 404 })
+
+          // F095: consent is required before generating any new content for this student. Not
+          // "the student has no consent record" specifically -- some students predate this
+          // feature or were created directly at the repository layer (fixtures/tests) -- but any
+          // active-consent check has to treat "no row at all" the same as "withdrawn", since
+          // both mean there is currently no valid consent on file.
+          const activeConsent = await consentsRepository.findActiveForStudent(
+            db,
+            student.id,
+          )
+          if (!activeConsent) {
+            return Response.json(
+              {
+                error:
+                  'Parental consent for this student is missing or has been withdrawn -- generation is blocked until consent is given again',
+              },
+              { status: 403 },
+            )
+          }
 
           const result = await generatePaper(db, parsed.data)
           return Response.json(result, { status: 201 })

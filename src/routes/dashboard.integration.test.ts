@@ -68,6 +68,7 @@ describe('parent dashboard (F071)', () => {
         name: 'Dashboard Kid',
         class: 7,
         board: 'CBSE',
+        consent_accepted: true,
       }),
     })
     studentId = (await studentResponse.json()).id

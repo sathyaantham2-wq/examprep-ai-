@@ -3,518 +3,503 @@
  * Please do not edit it manually.
  */
 
-import type {
-  AiJobStatus,
-  AnswerSource,
-  AttemptMode,
-  AttemptStatus,
-  BloomLevel,
-  ConceptStatusValue,
-  DifficultyTier,
-  ErrorType,
-  EvaluatedBy,
-  HabitRating,
-  NotificationChannel,
-  NotificationStatus,
-  QuestionStatus,
-  QuestionType,
-  RemediationStatus,
-  ReviewTier,
-  ScopeKind,
-  StudyPlanStatus,
-  UploadKind,
-  UserRole,
-} from './enums'
-import type { ColumnType } from 'kysely'
+import type { AiJobStatus, AnswerSource, AttemptMode, AttemptStatus, BloomLevel, ConceptStatusValue, DifficultyTier, ErrorType, EvaluatedBy, HabitRating, NotificationChannel, NotificationStatus, QuestionStatus, QuestionType, RemediationStatus, ReviewTier, ScopeKind, StudyPlanStatus, UploadKind, UserRole } from "./enums";
+import type { ColumnType } from "kysely";
 
-export type Generated<T> =
-  T extends ColumnType<infer S, infer I, infer U>
-    ? ColumnType<S, I | undefined, U>
-    : ColumnType<T, T | undefined, T>
+export type Generated<T> = T extends ColumnType<infer S, infer I, infer U>
+  ? ColumnType<S, I | undefined, U>
+  : ColumnType<T, T | undefined, T>;
 
-export type Int8 = ColumnType<
-  string,
-  bigint | number | string,
-  bigint | number | string
->
+export type Int8 = ColumnType<string, bigint | number | string, bigint | number | string>;
 
-export type Json = JsonValue
+export type Json = JsonValue;
 
-export type JsonArray = JsonValue[]
+export type JsonArray = JsonValue[];
 
 export type JsonObject = {
-  [x: string]: JsonValue | undefined
-}
+  [x: string]: JsonValue | undefined;
+};
 
-export type JsonPrimitive = boolean | number | string | null
+export type JsonPrimitive = boolean | number | string | null;
 
-export type JsonValue = JsonArray | JsonObject | JsonPrimitive
+export type JsonValue = JsonArray | JsonObject | JsonPrimitive;
 
-export type Numeric = ColumnType<string, number | string, number | string>
+export type Numeric = ColumnType<string, number | string, number | string>;
 
-export type Timestamp = ColumnType<Date, Date | string, Date | string>
+export type Timestamp = ColumnType<Date, Date | string, Date | string>;
 
 export interface Accounts {
-  access_token: string | null
-  access_token_expires_at: Timestamp | null
-  account_id: string
-  created_at: Generated<Timestamp>
-  id: Generated<string>
-  id_token: string | null
-  issuer: string
-  password: string | null
-  provider_id: string
-  refresh_token: string | null
-  refresh_token_expires_at: Timestamp | null
-  scope: string | null
-  updated_at: Generated<Timestamp>
-  user_id: string
+  access_token: string | null;
+  access_token_expires_at: Timestamp | null;
+  account_id: string;
+  created_at: Generated<Timestamp>;
+  id: Generated<string>;
+  id_token: string | null;
+  issuer: string;
+  password: string | null;
+  provider_id: string;
+  refresh_token: string | null;
+  refresh_token_expires_at: Timestamp | null;
+  scope: string | null;
+  updated_at: Generated<Timestamp>;
+  user_id: string;
 }
 
 export interface AiJobs {
-  cost_inr: Numeric | null
-  created_at: Generated<Timestamp>
-  error: string | null
-  feature: string
-  household_id: string
-  id: Generated<string>
-  latency_ms: number | null
-  model: string
-  prompt_ref: string | null
-  status: AiJobStatus
-  tokens_in: number | null
-  tokens_out: number | null
+  cost_inr: Numeric | null;
+  created_at: Generated<Timestamp>;
+  error: string | null;
+  feature: string;
+  household_id: string;
+  id: Generated<string>;
+  latency_ms: number | null;
+  model: string;
+  prompt_ref: string | null;
+  status: AiJobStatus;
+  tokens_in: number | null;
+  tokens_out: number | null;
 }
 
 export interface AttemptAnswers {
-  attempt_id: string
-  created_at: Generated<Timestamp>
-  id: Generated<string>
-  image_ref: string | null
-  ocr_confidence: Numeric | null
-  paper_question_id: string
-  response_text: string | null
-  selected_option: string | null
-  source: AnswerSource
-  time_spent_sec: number | null
+  attempt_id: string;
+  created_at: Generated<Timestamp>;
+  id: Generated<string>;
+  image_ref: string | null;
+  ocr_confidence: Numeric | null;
+  paper_question_id: string;
+  response_text: string | null;
+  selected_option: string | null;
+  source: AnswerSource;
+  time_spent_sec: number | null;
 }
 
 export interface Attempts {
-  duration_used_sec: number | null
-  id: Generated<string>
-  mode: AttemptMode
-  paper_id: string
-  started_at: Generated<Timestamp>
-  status: AttemptStatus
-  student_id: string
-  submitted_at: Timestamp | null
+  duration_used_sec: number | null;
+  id: Generated<string>;
+  mode: AttemptMode;
+  paper_id: string;
+  started_at: Generated<Timestamp>;
+  status: AttemptStatus;
+  student_id: string;
+  submitted_at: Timestamp | null;
 }
 
 export interface AuditLog {
-  action: string
-  actor_user_id: string | null
-  after: Json | null
-  before: Json | null
-  created_at: Generated<Timestamp>
-  entity: string
-  entity_id: string
-  household_id: string
-  id: Generated<string>
+  action: string;
+  actor_user_id: string | null;
+  after: Json | null;
+  before: Json | null;
+  created_at: Generated<Timestamp>;
+  entity: string;
+  entity_id: string;
+  household_id: string;
+  id: Generated<string>;
 }
 
 export interface Blueprints {
-  bloom_targets: Json
-  board: string
-  choice_rules: Generated<Json>
-  class: number
-  created_at: Generated<Timestamp>
-  duration_min: number
-  id: Generated<string>
-  name: string
-  sections: Json
-  subject_id: string
-  total_marks: number
-  version: Generated<number>
+  bloom_targets: Json;
+  board: string;
+  choice_rules: Generated<Json>;
+  class: number;
+  created_at: Generated<Timestamp>;
+  duration_min: number;
+  id: Generated<string>;
+  name: string;
+  sections: Json;
+  subject_id: string;
+  total_marks: number;
+  version: Generated<number>;
 }
 
 export interface Chapters {
-  blurb: string | null
-  chapter_no: number
-  created_at: Generated<Timestamp>
-  id: Generated<string>
-  name: string
-  order_index: number
-  part: string
-  source_id: string
-  subject_id: string
+  blurb: string | null;
+  chapter_no: number;
+  created_at: Generated<Timestamp>;
+  id: Generated<string>;
+  name: string;
+  order_index: number;
+  part: string;
+  source_id: string;
+  subject_id: string;
 }
 
 export interface ChapterScope {
-  chapter_id: string
-  created_at: Generated<Timestamp>
-  id: Generated<string>
-  item_text: string
-  kind: ScopeKind
-  page_ref: string | null
+  chapter_id: string;
+  created_at: Generated<Timestamp>;
+  id: Generated<string>;
+  item_text: string;
+  kind: ScopeKind;
+  page_ref: string | null;
 }
 
 export interface ConceptMastery {
-  concept_id: string
-  date: Timestamp
-  evaluation_id: string
-  id: Generated<string>
-  marks: Numeric
-  marks_max: Numeric
-  ratio: Numeric
-  status_at_time: ConceptStatusValue | null
-  student_id: string
+  concept_id: string;
+  date: Timestamp;
+  evaluation_id: string;
+  id: Generated<string>;
+  marks: Numeric;
+  marks_max: Numeric;
+  ratio: Numeric;
+  status_at_time: ConceptStatusValue | null;
+  student_id: string;
 }
 
 export interface ConceptPrereqs {
-  concept_id: string
-  created_at: Generated<Timestamp>
-  prereq_concept_id: string
+  concept_id: string;
+  created_at: Generated<Timestamp>;
+  prereq_concept_id: string;
 }
 
 export interface Concepts {
-  board: string
-  chapter_id: string
-  class: number
-  code: string
-  created_at: Generated<Timestamp>
-  description: string | null
-  difficulty_base: DifficultyTier
-  example: string | null
-  id: Generated<string>
-  idea: string | null
-  name: string
-  rule: string | null
-  target_question_count: Generated<number>
+  board: string;
+  chapter_id: string;
+  class: number;
+  code: string;
+  created_at: Generated<Timestamp>;
+  description: string | null;
+  difficulty_base: DifficultyTier;
+  example: string | null;
+  id: Generated<string>;
+  idea: string | null;
+  name: string;
+  rule: string | null;
+  target_question_count: Generated<number>;
 }
 
 export interface ConceptStatus {
-  attempts: Generated<number>
-  avg_ratio: Numeric | null
-  concept_id: string
-  created_at: Generated<Timestamp>
-  flagged_at: Timestamp | null
-  last_ratio: Numeric | null
-  next_retest_at: Timestamp | null
-  status: ConceptStatusValue
-  student_id: string
-  trend: string | null
+  attempts: Generated<number>;
+  avg_ratio: Numeric | null;
+  concept_id: string;
+  created_at: Generated<Timestamp>;
+  flagged_at: Timestamp | null;
+  last_ratio: Numeric | null;
+  next_retest_at: Timestamp | null;
+  status: ConceptStatusValue;
+  student_id: string;
+  trend: string | null;
+}
+
+export interface Consents {
+  given_at: Generated<Timestamp>;
+  given_by_user_id: string;
+  household_id: string;
+  id: Generated<string>;
+  purpose_version: string;
+  student_id: string;
+  withdrawn_at: Timestamp | null;
 }
 
 export interface EvaluationItems {
-  ai_error_type: ErrorType | null
-  ai_marks: Numeric | null
-  created_at: Generated<Timestamp>
-  error_type: ErrorType | null
-  evaluation_id: string
-  feedback: string | null
-  id: Generated<string>
-  knowledge_known: boolean | null
-  marks_awarded: Numeric
-  marks_max: Numeric
-  overridden_by: string | null
-  paper_question_id: string
-  step_marks_awarded: Json | null
+  ai_error_type: ErrorType | null;
+  ai_marks: Numeric | null;
+  created_at: Generated<Timestamp>;
+  error_type: ErrorType | null;
+  evaluation_id: string;
+  feedback: string | null;
+  id: Generated<string>;
+  knowledge_known: boolean | null;
+  marks_awarded: Numeric;
+  marks_max: Numeric;
+  overridden_by: string | null;
+  paper_question_id: string;
+  step_marks_awarded: Json | null;
 }
 
 export interface Evaluations {
-  actual_score: Numeric | null
-  attempt_id: string
-  confirmed_at: Timestamp | null
-  created_at: Generated<Timestamp>
-  delivery_gap: Numeric | null
-  evaluated_by: EvaluatedBy
-  grade: string | null
-  id: Generated<string>
-  knowledge_score: Numeric | null
-  percentage: Numeric | null
-  remarks: string | null
-  total_marks: Numeric
+  actual_score: Numeric | null;
+  attempt_id: string;
+  confirmed_at: Timestamp | null;
+  created_at: Generated<Timestamp>;
+  delivery_gap: Numeric | null;
+  evaluated_by: EvaluatedBy;
+  grade: string | null;
+  id: Generated<string>;
+  knowledge_score: Numeric | null;
+  percentage: Numeric | null;
+  remarks: string | null;
+  total_marks: Numeric;
 }
 
 export interface HabitObservations {
-  created_at: Generated<Timestamp>
-  evaluation_id: string
-  evidence_note: string | null
-  habit_id: string
-  id: Generated<string>
-  rating: HabitRating
+  created_at: Generated<Timestamp>;
+  evaluation_id: string;
+  evidence_note: string | null;
+  habit_id: string;
+  id: Generated<string>;
+  rating: HabitRating;
 }
 
 export interface Habits {
-  code: string
-  created_at: Generated<Timestamp>
-  description: string | null
-  id: Generated<string>
-  name: string
-  target_behaviour: string | null
+  code: string;
+  created_at: Generated<Timestamp>;
+  description: string | null;
+  id: Generated<string>;
+  name: string;
+  target_behaviour: string | null;
 }
 
 export interface Households {
-  created_at: Generated<Timestamp>
-  id: Generated<string>
-  name: string
-  owner_user_id: string | null
-  plan: Generated<string>
+  created_at: Generated<Timestamp>;
+  id: Generated<string>;
+  name: string;
+  owner_user_id: string | null;
+  plan: Generated<string>;
 }
 
 export interface Notifications {
-  channel: NotificationChannel
-  created_at: Generated<Timestamp>
-  id: Generated<string>
-  payload: Json | null
-  read_at: Timestamp | null
-  sent_at: Timestamp | null
-  status: NotificationStatus
-  template: string
-  user_id: string
+  channel: NotificationChannel;
+  created_at: Generated<Timestamp>;
+  id: Generated<string>;
+  payload: Json | null;
+  read_at: Timestamp | null;
+  sent_at: Timestamp | null;
+  status: NotificationStatus;
+  template: string;
+  user_id: string;
 }
 
 export interface PaperQuestions {
-  choice_group: string | null
-  created_at: Generated<Timestamp>
-  id: Generated<string>
-  marks: number
-  paper_id: string
-  position: number
-  question_id: string
-  section: string
+  choice_group: string | null;
+  created_at: Generated<Timestamp>;
+  id: Generated<string>;
+  marks: number;
+  paper_id: string;
+  position: number;
+  question_id: string;
+  section: string;
 }
 
 export interface Papers {
-  blueprint_id: string
-  chapter_ids: Generated<string[]>
-  duration_min: number
-  generated_at: Generated<Timestamp>
-  id: Generated<string>
-  key_pdf_ref: string | null
-  pdf_ref: string | null
-  shortfalls: Json | null
-  student_id: string
-  subject_id: string
-  theme: Generated<string>
-  title: string
-  total_marks: number
-  weighting: Json | null
+  blueprint_id: string;
+  chapter_ids: Generated<string[]>;
+  duration_min: number;
+  generated_at: Generated<Timestamp>;
+  id: Generated<string>;
+  key_pdf_ref: string | null;
+  pdf_ref: string | null;
+  shortfalls: Json | null;
+  student_id: string;
+  subject_id: string;
+  theme: Generated<string>;
+  title: string;
+  total_marks: number;
+  weighting: Json | null;
 }
 
 export interface PatternHits {
-  created_at: Generated<Timestamp>
-  evaluation_item_id: string
-  id: Generated<string>
-  note: string | null
-  pattern_id: string
+  created_at: Generated<Timestamp>;
+  evaluation_item_id: string;
+  id: Generated<string>;
+  note: string | null;
+  pattern_id: string;
 }
 
 export interface Patterns {
-  code: string
-  created_at: Generated<Timestamp>
-  description: string | null
-  id: Generated<string>
-  is_active: Generated<boolean>
-  name: string
-  subject_scope: string | null
+  code: string;
+  created_at: Generated<Timestamp>;
+  description: string | null;
+  id: Generated<string>;
+  is_active: Generated<boolean>;
+  name: string;
+  subject_scope: string | null;
 }
 
 export interface QuestionOptions {
-  created_at: Generated<Timestamp>
-  id: Generated<string>
-  is_correct: Generated<boolean>
-  label: string
-  order_index: number
-  question_id: string
-  text: string
+  created_at: Generated<Timestamp>;
+  id: Generated<string>;
+  is_correct: Generated<boolean>;
+  label: string;
+  order_index: number;
+  question_id: string;
+  text: string;
 }
 
 export interface Questions {
-  answer: string
-  bloom: BloomLevel
-  board: string
-  class: number
-  concept_id: string
-  created_at: Generated<Timestamp>
-  created_by: string
-  diagram_kind: string | null
-  diagram_params: Json | null
-  difficulty: DifficultyTier
-  hint: string | null
-  id: Generated<string>
-  language: Generated<string>
-  marks: number
-  review_note: string | null
-  review_tier: ReviewTier
-  reviewed_at: Timestamp | null
-  reviewed_by: string | null
-  source_ref: string | null
-  status: QuestionStatus
-  tags: Generated<string[]>
-  text: string
-  type: QuestionType
+  answer: string;
+  bloom: BloomLevel;
+  board: string;
+  class: number;
+  concept_id: string;
+  created_at: Generated<Timestamp>;
+  created_by: string;
+  diagram_kind: string | null;
+  diagram_params: Json | null;
+  difficulty: DifficultyTier;
+  hint: string | null;
+  id: Generated<string>;
+  language: Generated<string>;
+  marks: number;
+  review_note: string | null;
+  review_tier: ReviewTier;
+  reviewed_at: Timestamp | null;
+  reviewed_by: string | null;
+  source_ref: string | null;
+  status: QuestionStatus;
+  tags: Generated<string[]>;
+  text: string;
+  type: QuestionType;
 }
 
 export interface QuestionStepMarks {
-  created_at: Generated<Timestamp>
-  description: string
-  id: Generated<string>
-  marks: number
-  question_id: string
-  step_no: number
+  created_at: Generated<Timestamp>;
+  description: string;
+  id: Generated<string>;
+  marks: number;
+  question_id: string;
+  step_no: number;
 }
 
 export interface QuestionUsage {
-  id: Generated<string>
-  paper_id: string
-  question_id: string
-  served_at: Generated<Timestamp>
-  student_id: string
-  was_correct: boolean | null
+  id: Generated<string>;
+  paper_id: string;
+  question_id: string;
+  served_at: Generated<Timestamp>;
+  student_id: string;
+  was_correct: boolean | null;
 }
 
 export interface RemediationTasks {
-  completed_at: Timestamp | null
-  concept_id: string
-  created_at: Generated<Timestamp>
-  due_at: Timestamp | null
-  examples: Json | null
-  id: Generated<string>
-  question_ids: Generated<string[]>
-  refresher: string | null
-  status: RemediationStatus
-  student_id: string
-  trigger_reason: string
+  completed_at: Timestamp | null;
+  concept_id: string;
+  created_at: Generated<Timestamp>;
+  due_at: Timestamp | null;
+  examples: Json | null;
+  id: Generated<string>;
+  question_ids: Generated<string[]>;
+  refresher: string | null;
+  status: RemediationStatus;
+  student_id: string;
+  trigger_reason: string;
 }
 
 export interface Sessions {
-  created_at: Generated<Timestamp>
-  expires_at: Timestamp
-  id: Generated<string>
-  ip_address: string | null
-  token: string
-  updated_at: Generated<Timestamp>
-  user_agent: string | null
-  user_id: string
+  created_at: Generated<Timestamp>;
+  expires_at: Timestamp;
+  id: Generated<string>;
+  ip_address: string | null;
+  token: string;
+  updated_at: Generated<Timestamp>;
+  user_agent: string | null;
+  user_id: string;
 }
 
 export interface Sources {
-  created_at: Generated<Timestamp>
-  edition: string | null
-  file_ref: string | null
-  id: Generated<string>
-  notes: string | null
-  publisher: string
-  subject_id: string
-  title: string
-  year: number | null
+  created_at: Generated<Timestamp>;
+  edition: string | null;
+  file_ref: string | null;
+  id: Generated<string>;
+  notes: string | null;
+  publisher: string;
+  subject_id: string;
+  title: string;
+  year: number | null;
 }
 
 export interface Students {
-  board: string
-  class: number
-  created_at: Generated<Timestamp>
-  household_id: string
-  id: Generated<string>
-  name: string
-  roll_no: string | null
-  school: string | null
-  section: string | null
-  target_exams: Generated<Json>
-  user_id: string | null
+  board: string;
+  class: number;
+  created_at: Generated<Timestamp>;
+  household_id: string;
+  id: Generated<string>;
+  name: string;
+  roll_no: string | null;
+  school: string | null;
+  section: string | null;
+  target_exams: Generated<Json>;
+  user_id: string | null;
 }
 
 export interface StudyPlans {
-  created_at: Generated<Timestamp>
-  days: Json
-  generated_from: Json | null
-  id: Generated<string>
-  status: StudyPlanStatus
-  student_id: string
-  week_start: Timestamp
+  created_at: Generated<Timestamp>;
+  days: Json;
+  generated_from: Json | null;
+  id: Generated<string>;
+  status: StudyPlanStatus;
+  student_id: string;
+  week_start: Timestamp;
 }
 
 export interface Subjects {
-  board: string
-  class: number
-  code: string
-  created_at: Generated<Timestamp>
-  id: Generated<string>
-  is_active: Generated<boolean>
-  language: Generated<string>
-  name: string
+  board: string;
+  class: number;
+  code: string;
+  created_at: Generated<Timestamp>;
+  id: Generated<string>;
+  is_active: Generated<boolean>;
+  language: Generated<string>;
+  name: string;
 }
 
 export interface Uploads {
-  attempt_id: string | null
-  id: Generated<string>
-  kind: UploadKind
-  mime: string
-  page_count: number | null
-  size_bytes: Int8
-  storage_ref: string
-  student_id: string
-  uploaded_at: Generated<Timestamp>
+  attempt_id: string | null;
+  id: Generated<string>;
+  kind: UploadKind;
+  mime: string;
+  page_count: number | null;
+  size_bytes: Int8;
+  storage_ref: string;
+  student_id: string;
+  uploaded_at: Generated<Timestamp>;
 }
 
 export interface Users {
-  auth_provider: Generated<string>
-  created_at: Generated<Timestamp>
-  email: string
-  email_verified: Generated<boolean>
-  household_id: string
-  id: Generated<string>
-  image: string | null
-  is_active: Generated<boolean>
-  name: string
-  role: UserRole
-  updated_at: Generated<Timestamp>
+  auth_provider: Generated<string>;
+  created_at: Generated<Timestamp>;
+  email: string;
+  email_verified: Generated<boolean>;
+  household_id: string;
+  id: Generated<string>;
+  image: string | null;
+  is_active: Generated<boolean>;
+  name: string;
+  role: UserRole;
+  updated_at: Generated<Timestamp>;
 }
 
 export interface Verifications {
-  created_at: Generated<Timestamp>
-  expires_at: Timestamp
-  id: Generated<string>
-  identifier: string
-  updated_at: Generated<Timestamp>
-  value: string
+  created_at: Generated<Timestamp>;
+  expires_at: Timestamp;
+  id: Generated<string>;
+  identifier: string;
+  updated_at: Generated<Timestamp>;
+  value: string;
 }
 
 export interface DB {
-  accounts: Accounts
-  ai_jobs: AiJobs
-  attempt_answers: AttemptAnswers
-  attempts: Attempts
-  audit_log: AuditLog
-  blueprints: Blueprints
-  chapter_scope: ChapterScope
-  chapters: Chapters
-  concept_mastery: ConceptMastery
-  concept_prereqs: ConceptPrereqs
-  concept_status: ConceptStatus
-  concepts: Concepts
-  evaluation_items: EvaluationItems
-  evaluations: Evaluations
-  habit_observations: HabitObservations
-  habits: Habits
-  households: Households
-  notifications: Notifications
-  paper_questions: PaperQuestions
-  papers: Papers
-  pattern_hits: PatternHits
-  patterns: Patterns
-  question_options: QuestionOptions
-  question_step_marks: QuestionStepMarks
-  question_usage: QuestionUsage
-  questions: Questions
-  remediation_tasks: RemediationTasks
-  sessions: Sessions
-  sources: Sources
-  students: Students
-  study_plans: StudyPlans
-  subjects: Subjects
-  uploads: Uploads
-  users: Users
-  verifications: Verifications
+  accounts: Accounts;
+  ai_jobs: AiJobs;
+  attempt_answers: AttemptAnswers;
+  attempts: Attempts;
+  audit_log: AuditLog;
+  blueprints: Blueprints;
+  chapter_scope: ChapterScope;
+  chapters: Chapters;
+  concept_mastery: ConceptMastery;
+  concept_prereqs: ConceptPrereqs;
+  concept_status: ConceptStatus;
+  concepts: Concepts;
+  consents: Consents;
+  evaluation_items: EvaluationItems;
+  evaluations: Evaluations;
+  habit_observations: HabitObservations;
+  habits: Habits;
+  households: Households;
+  notifications: Notifications;
+  paper_questions: PaperQuestions;
+  papers: Papers;
+  pattern_hits: PatternHits;
+  patterns: Patterns;
+  question_options: QuestionOptions;
+  question_step_marks: QuestionStepMarks;
+  question_usage: QuestionUsage;
+  questions: Questions;
+  remediation_tasks: RemediationTasks;
+  sessions: Sessions;
+  sources: Sources;
+  students: Students;
+  study_plans: StudyPlans;
+  subjects: Subjects;
+  uploads: Uploads;
+  users: Users;
+  verifications: Verifications;
 }

@@ -73,6 +73,7 @@ describe('paper PDF and coverage routes (F033/F035/F036/F037)', () => {
         name: 'PDF Kid',
         class: 7,
         board: 'CBSE',
+        consent_accepted: true,
       }),
     })
     studentAId = (await studentResponse.json()).id
