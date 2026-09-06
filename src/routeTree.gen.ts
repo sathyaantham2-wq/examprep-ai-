@@ -10,6 +10,7 @@
 
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as ApiAttemptsRouteImport } from './routes/api/attempts'
 import { Route as ApiBlueprintsRouteImport } from './routes/api/blueprints'
 import { Route as ApiQuestionsRouteImport } from './routes/api/questions'
 import { Route as ApiStudentsRouteImport } from './routes/api/students'
@@ -21,6 +22,8 @@ import { Route as ApiStudentsIdRouteImport } from './routes/api/students/$id'
 import { Route as ApiSyllabusChaptersRouteImport } from './routes/api/syllabus/chapters'
 import { Route as ApiSyllabusSubjectsRouteImport } from './routes/api/syllabus/subjects'
 import { Route as ApiTrackerStudentIdRouteImport } from './routes/api/tracker/$studentId'
+import { Route as ApiAttemptsIdAnswerRouteImport } from './routes/api/attempts/$id/answer'
+import { Route as ApiAttemptsIdSubmitRouteImport } from './routes/api/attempts/$id/submit'
 import { Route as ApiPapersIdRegenerateSlotRouteImport } from './routes/api/papers/$id/regenerate-slot'
 import { Route as ApiQuestionsIdApproveRouteImport } from './routes/api/questions/$id/approve'
 import { Route as ApiSyllabusChaptersIdScopeRouteImport } from './routes/api/syllabus/chapters/$id/scope'
@@ -28,6 +31,11 @@ import { Route as ApiSyllabusChaptersIdScopeRouteImport } from './routes/api/syl
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ApiAttemptsRoute = ApiAttemptsRouteImport.update({
+  id: '/api/attempts',
+  path: '/api/attempts',
   getParentRoute: () => rootRouteImport,
 } as any)
 const ApiBlueprintsRoute = ApiBlueprintsRouteImport.update({
@@ -85,6 +93,16 @@ const ApiTrackerStudentIdRoute = ApiTrackerStudentIdRouteImport.update({
   path: '/api/tracker/$studentId',
   getParentRoute: () => rootRouteImport,
 } as any)
+const ApiAttemptsIdAnswerRoute = ApiAttemptsIdAnswerRouteImport.update({
+  id: '/$id/answer',
+  path: '/$id/answer',
+  getParentRoute: () => ApiAttemptsRoute,
+} as any)
+const ApiAttemptsIdSubmitRoute = ApiAttemptsIdSubmitRouteImport.update({
+  id: '/$id/submit',
+  path: '/$id/submit',
+  getParentRoute: () => ApiAttemptsRoute,
+} as any)
 const ApiPapersIdRegenerateSlotRoute =
   ApiPapersIdRegenerateSlotRouteImport.update({
     id: '/regenerate-slot',
@@ -105,6 +123,7 @@ const ApiSyllabusChaptersIdScopeRoute =
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/api/attempts': typeof ApiAttemptsRouteWithChildren
   '/api/blueprints': typeof ApiBlueprintsRoute
   '/api/questions': typeof ApiQuestionsRouteWithChildren
   '/api/students': typeof ApiStudentsRouteWithChildren
@@ -116,12 +135,15 @@ export interface FileRoutesByFullPath {
   '/api/syllabus/chapters': typeof ApiSyllabusChaptersRouteWithChildren
   '/api/syllabus/subjects': typeof ApiSyllabusSubjectsRoute
   '/api/tracker/$studentId': typeof ApiTrackerStudentIdRoute
+  '/api/attempts/$id/answer': typeof ApiAttemptsIdAnswerRoute
+  '/api/attempts/$id/submit': typeof ApiAttemptsIdSubmitRoute
   '/api/papers/$id/regenerate-slot': typeof ApiPapersIdRegenerateSlotRoute
   '/api/questions/$id/approve': typeof ApiQuestionsIdApproveRoute
   '/api/syllabus/chapters/$id/scope': typeof ApiSyllabusChaptersIdScopeRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/api/attempts': typeof ApiAttemptsRouteWithChildren
   '/api/blueprints': typeof ApiBlueprintsRoute
   '/api/questions': typeof ApiQuestionsRouteWithChildren
   '/api/students': typeof ApiStudentsRouteWithChildren
@@ -133,6 +155,8 @@ export interface FileRoutesByTo {
   '/api/syllabus/chapters': typeof ApiSyllabusChaptersRouteWithChildren
   '/api/syllabus/subjects': typeof ApiSyllabusSubjectsRoute
   '/api/tracker/$studentId': typeof ApiTrackerStudentIdRoute
+  '/api/attempts/$id/answer': typeof ApiAttemptsIdAnswerRoute
+  '/api/attempts/$id/submit': typeof ApiAttemptsIdSubmitRoute
   '/api/papers/$id/regenerate-slot': typeof ApiPapersIdRegenerateSlotRoute
   '/api/questions/$id/approve': typeof ApiQuestionsIdApproveRoute
   '/api/syllabus/chapters/$id/scope': typeof ApiSyllabusChaptersIdScopeRoute
@@ -140,6 +164,7 @@ export interface FileRoutesByTo {
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/api/attempts': typeof ApiAttemptsRouteWithChildren
   '/api/blueprints': typeof ApiBlueprintsRoute
   '/api/questions': typeof ApiQuestionsRouteWithChildren
   '/api/students': typeof ApiStudentsRouteWithChildren
@@ -151,6 +176,8 @@ export interface FileRoutesById {
   '/api/syllabus/chapters': typeof ApiSyllabusChaptersRouteWithChildren
   '/api/syllabus/subjects': typeof ApiSyllabusSubjectsRoute
   '/api/tracker/$studentId': typeof ApiTrackerStudentIdRoute
+  '/api/attempts/$id/answer': typeof ApiAttemptsIdAnswerRoute
+  '/api/attempts/$id/submit': typeof ApiAttemptsIdSubmitRoute
   '/api/papers/$id/regenerate-slot': typeof ApiPapersIdRegenerateSlotRoute
   '/api/questions/$id/approve': typeof ApiQuestionsIdApproveRoute
   '/api/syllabus/chapters/$id/scope': typeof ApiSyllabusChaptersIdScopeRoute
@@ -159,6 +186,7 @@ export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
   fullPaths:
     | '/'
+    | '/api/attempts'
     | '/api/blueprints'
     | '/api/questions'
     | '/api/students'
@@ -170,12 +198,15 @@ export interface FileRouteTypes {
     | '/api/syllabus/chapters'
     | '/api/syllabus/subjects'
     | '/api/tracker/$studentId'
+    | '/api/attempts/$id/answer'
+    | '/api/attempts/$id/submit'
     | '/api/papers/$id/regenerate-slot'
     | '/api/questions/$id/approve'
     | '/api/syllabus/chapters/$id/scope'
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/'
+    | '/api/attempts'
     | '/api/blueprints'
     | '/api/questions'
     | '/api/students'
@@ -187,12 +218,15 @@ export interface FileRouteTypes {
     | '/api/syllabus/chapters'
     | '/api/syllabus/subjects'
     | '/api/tracker/$studentId'
+    | '/api/attempts/$id/answer'
+    | '/api/attempts/$id/submit'
     | '/api/papers/$id/regenerate-slot'
     | '/api/questions/$id/approve'
     | '/api/syllabus/chapters/$id/scope'
   id:
     | '__root__'
     | '/'
+    | '/api/attempts'
     | '/api/blueprints'
     | '/api/questions'
     | '/api/students'
@@ -204,6 +238,8 @@ export interface FileRouteTypes {
     | '/api/syllabus/chapters'
     | '/api/syllabus/subjects'
     | '/api/tracker/$studentId'
+    | '/api/attempts/$id/answer'
+    | '/api/attempts/$id/submit'
     | '/api/papers/$id/regenerate-slot'
     | '/api/questions/$id/approve'
     | '/api/syllabus/chapters/$id/scope'
@@ -211,6 +247,7 @@ export interface FileRouteTypes {
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  ApiAttemptsRoute: typeof ApiAttemptsRouteWithChildren
   ApiBlueprintsRoute: typeof ApiBlueprintsRoute
   ApiQuestionsRoute: typeof ApiQuestionsRouteWithChildren
   ApiStudentsRoute: typeof ApiStudentsRouteWithChildren
@@ -229,6 +266,13 @@ declare module '@tanstack/react-router' {
       path: '/'
       fullPath: '/'
       preLoaderRoute: typeof IndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/api/attempts': {
+      id: '/api/attempts'
+      path: '/api/attempts'
+      fullPath: '/api/attempts'
+      preLoaderRoute: typeof ApiAttemptsRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/api/blueprints': {
@@ -308,6 +352,20 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ApiTrackerStudentIdRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/api/attempts/$id/answer': {
+      id: '/api/attempts/$id/answer'
+      path: '/$id/answer'
+      fullPath: '/api/attempts/$id/answer'
+      preLoaderRoute: typeof ApiAttemptsIdAnswerRouteImport
+      parentRoute: typeof ApiAttemptsRoute
+    }
+    '/api/attempts/$id/submit': {
+      id: '/api/attempts/$id/submit'
+      path: '/$id/submit'
+      fullPath: '/api/attempts/$id/submit'
+      preLoaderRoute: typeof ApiAttemptsIdSubmitRouteImport
+      parentRoute: typeof ApiAttemptsRoute
+    }
     '/api/papers/$id/regenerate-slot': {
       id: '/api/papers/$id/regenerate-slot'
       path: '/regenerate-slot'
@@ -331,6 +389,20 @@ declare module '@tanstack/react-router' {
     }
   }
 }
+
+interface ApiAttemptsRouteChildren {
+  ApiAttemptsIdAnswerRoute: typeof ApiAttemptsIdAnswerRoute
+  ApiAttemptsIdSubmitRoute: typeof ApiAttemptsIdSubmitRoute
+}
+
+const ApiAttemptsRouteChildren: ApiAttemptsRouteChildren = {
+  ApiAttemptsIdAnswerRoute: ApiAttemptsIdAnswerRoute,
+  ApiAttemptsIdSubmitRoute: ApiAttemptsIdSubmitRoute,
+}
+
+const ApiAttemptsRouteWithChildren = ApiAttemptsRoute._addFileChildren(
+  ApiAttemptsRouteChildren,
+)
 
 interface ApiQuestionsIdRouteChildren {
   ApiQuestionsIdApproveRoute: typeof ApiQuestionsIdApproveRoute
@@ -393,6 +465,7 @@ const ApiSyllabusChaptersRouteWithChildren =
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  ApiAttemptsRoute: ApiAttemptsRouteWithChildren,
   ApiBlueprintsRoute: ApiBlueprintsRoute,
   ApiQuestionsRoute: ApiQuestionsRouteWithChildren,
   ApiStudentsRoute: ApiStudentsRouteWithChildren,
