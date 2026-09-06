@@ -30,6 +30,10 @@ jobs:
         with:
           node-version: 22
       - run: npm ci
+      # F033's PDF renderer (papers-pdf.integration.test.ts) launches a real headless Chromium via
+      # Playwright -- npm ci only installs the npm package, not the browser binary itself.
+      - name: Install Playwright Chromium
+        run: npx playwright install --with-deps chromium
       - name: Migrate scratch DB
         run: npm run db:migrate
       # The MATH-SEED subject/chapter fixture — the integration suite queries it directly, same
