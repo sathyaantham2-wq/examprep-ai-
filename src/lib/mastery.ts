@@ -7,17 +7,17 @@ import {
 
 // F062: status thresholds on the ratio for THIS attempt/appearance, before the F063 escalation
 // overrides below are applied. Configurable in the sense that these are the one place they live.
-const STRONG_THRESHOLD = 0.8
-const NEEDS_PRACTICE_THRESHOLD = 0.5
-const MAINTENANCE_RECOVERY_THRESHOLD = 0.85
+export const STRONG_THRESHOLD = 0.8
+export const NEEDS_PRACTICE_THRESHOLD = 0.5
+export const MAINTENANCE_RECOVERY_THRESHOLD = 0.85
 
-function computeRawStatus(ratio: number): ConceptStatusValue {
+export function computeRawStatus(ratio: number): ConceptStatusValue {
   if (ratio >= STRONG_THRESHOLD) return 'Strong'
   if (ratio >= NEEDS_PRACTICE_THRESHOLD) return 'Needs Practice'
   return 'Weak'
 }
 
-function computeTrend(
+export function computeTrend(
   currentRatio: number,
   priorRatios: Array<number>,
 ): 'up' | 'down' | 'flat' {
@@ -31,12 +31,44 @@ function computeTrend(
 
 // Retest spacing is a reasonable default, not a number specified anywhere in the plan — the
 // product hasn't decided exact intervals yet. Easy to change in one place once it does.
-const RETEST_DAYS_BY_STATUS: Record<ConceptStatusValue, number> = {
+export const RETEST_DAYS_BY_STATUS: Record<ConceptStatusValue, number> = {
   Priority: 3,
   Weak: 5,
   'Needs Practice': 10,
   Strong: 21,
   Maintenance: 30,
+}
+
+/**
+ * F063's whole state machine, as a pure function so it's directly unit-testable (T18/T19)
+ * without a database: Priority is sticky — it only clears via two consecutive >=85% attempts
+ * (isTwoHighInARow), never by a single good score, which is why this checks the *persisted*
+ * concept_status.status rather than just the last ledger row's label.
+ *
+ * F063's "retire only after three" doesn't map onto a schema value: concept_status.status is a
+ * fixed five-value CHECK (Strong/Needs Practice/Weak/Priority/Maintenance) with no "Retired"
+ * option, and inventing one wasn't part of this pass's scope. The "auto-triggers a 5-question
+ * mini test" half of F063 also isn't implemented — that needs the paper generator to be invoked
+ * from here, which would make this impure; left as a TODO for whatever calls this once a
+ * Priority flag is newly raised.
+ */
+export function determineNextStatus(params: {
+  ratio: number
+  mostRecentRatio: number | undefined
+  mostRecentStatus: ConceptStatusValue | undefined
+  currentPersistedStatus: ConceptStatusValue | undefined
+}): ConceptStatusValue {
+  const isTwoHighInARow =
+    params.ratio >= MAINTENANCE_RECOVERY_THRESHOLD &&
+    params.mostRecentRatio !== undefined &&
+    params.mostRecentRatio >= MAINTENANCE_RECOVERY_THRESHOLD
+
+  if (isTwoHighInARow) return 'Maintenance'
+  if (params.currentPersistedStatus === 'Priority') return 'Priority'
+
+  const raw = computeRawStatus(params.ratio)
+  if (raw === 'Weak' && params.mostRecentStatus === 'Weak') return 'Priority'
+  return raw
 }
 
 export interface RecordAttemptInput {
@@ -53,14 +85,6 @@ export interface RecordAttemptInput {
  * / maintenance recovery). This is a service, not a route — nothing in the app can call it yet
  * because it's meant to run when an evaluation is confirmed (POST /api/evaluations/:id/confirm,
  * M09), which doesn't exist. M09 should call this once it does.
- *
- * F063's "retire only after three" doesn't map onto a schema value: concept_status.status is a
- * fixed five-value CHECK (Strong/Needs Practice/Weak/Priority/Maintenance) with no "Retired"
- * option, and inventing one wasn't part of this pass's scope. What's implemented: Weak on a
- * second consecutive appearance escalates to Priority, and two consecutive attempts >=85% recover
- * a Priority/Weak/Maintenance concept into Maintenance. The "auto-triggers a 5-question mini
- * test" half of F063 is not implemented — that needs the paper generator (M06), which doesn't
- * exist yet.
  */
 export async function recordMasteryAttempt(db: Db, input: RecordAttemptInput) {
   const ratio = input.marks_max > 0 ? input.marks / input.marks_max : 0
@@ -74,31 +98,19 @@ export async function recordMasteryAttempt(db: Db, input: RecordAttemptInput) {
   const mostRecent = priorHistory.at(0)
 
   // Look up the PERSISTED status before this attempt, not just the last ledger row's label —
-  // Priority must survive a single good score; it only clears via the explicit two-in-a-row
-  // recovery below. Without this, one lucky attempt would silently un-flag a concept the parent
-  // is supposed to be watching.
+  // determineNextStatus needs this to keep Priority sticky across a single good score.
   const existing = await conceptStatusRepository.findOne(
     db,
     input.student_id,
     input.concept_id,
   )
 
-  const isTwoHighInARow =
-    ratio >= MAINTENANCE_RECOVERY_THRESHOLD &&
-    mostRecent !== undefined &&
-    Number(mostRecent.ratio) >= MAINTENANCE_RECOVERY_THRESHOLD
-
-  let status: ConceptStatusValue
-  if (isTwoHighInARow) {
-    status = 'Maintenance'
-  } else if (existing?.status === 'Priority') {
-    status = 'Priority'
-  } else {
-    status = computeRawStatus(ratio)
-    if (status === 'Weak' && mostRecent?.status_at_time === 'Weak') {
-      status = 'Priority'
-    }
-  }
+  const status = determineNextStatus({
+    ratio,
+    mostRecentRatio: mostRecent ? Number(mostRecent.ratio) : undefined,
+    mostRecentStatus: mostRecent?.status_at_time ?? undefined,
+    currentPersistedStatus: existing?.status,
+  })
 
   const trend = computeTrend(
     ratio,

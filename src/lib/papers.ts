@@ -13,12 +13,14 @@ const DIFFICULTY_ORDER: Array<DifficultyTier> = ['Easy', 'Hard', 'Hardest']
 
 // F119: the ceiling limits which difficulty tiers are eligible, but does not touch which
 // concepts get selected — the 40/40/20 weak/priority weighting below runs unconditionally.
-function difficultiesUpTo(ceiling: DifficultyTier): Array<DifficultyTier> {
+export function difficultiesUpTo(
+  ceiling: DifficultyTier,
+): Array<DifficultyTier> {
   const idx = DIFFICULTY_ORDER.indexOf(ceiling)
   return DIFFICULTY_ORDER.slice(0, idx + 1)
 }
 
-type Bucket = 'weak_priority' | 'needs_practice' | 'strong'
+export type Bucket = 'weak_priority' | 'needs_practice' | 'strong'
 
 export interface Weighting {
   weak_priority: number
@@ -26,7 +28,7 @@ export interface Weighting {
   strong: number
 }
 
-const DEFAULT_WEIGHTING: Weighting = {
+export const DEFAULT_WEIGHTING: Weighting = {
   weak_priority: 40,
   needs_practice: 40,
   strong: 20,
@@ -34,7 +36,7 @@ const DEFAULT_WEIGHTING: Weighting = {
 
 // Largest-remainder apportionment: floor each bucket's share, then hand out the leftover slots
 // to whichever buckets had the biggest fractional part, so the counts always sum to `total`.
-function allocateByWeighting(
+export function allocateByWeighting(
   total: number,
   weighting: Weighting,
 ): Record<Bucket, number> {

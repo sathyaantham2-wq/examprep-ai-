@@ -20,15 +20,22 @@ export function isObjectiveType(type: QuestionType): boolean {
  * full stops removed so "5 cm", "5cm", and "5 cm." all normalize the same.
  */
 export function normalizeAnswer(raw: string): string {
-  return raw
-    .toLowerCase()
-    .trim()
-    .replace(/,/g, '')
-    .replace(/[₹%°]/g, '')
-    .replace(/\b(rs\.?|rupees?|cm|mm|km|kg|gm?|litres?|ml)\b/g, '')
-    .replace(/\.$/, '')
-    .replace(/\s+/g, ' ')
-    .trim()
+  return (
+    raw
+      .toLowerCase()
+      .trim()
+      .replace(/,/g, '')
+      .replace(/[₹%°]/g, '')
+      // A unit glued straight onto a number ("5cm") has no word boundary between the digit and
+      // the letter for \b to match on, so split them apart before stripping unit words below.
+      .replace(/(\d)([a-z])/g, '$1 $2')
+      .replace(/\b(rs\.?|rupees?|cm|mm|km|kg|gm?|litres?|ml)\b/g, '')
+      // Any full stop that isn't a decimal point (digit on both sides) is leftover abbreviation
+      // punctuation ("rs." with the unit word now gone, or a trailing "cm.") — drop it.
+      .replace(/(?<!\d)\.|\.(?!\d)/g, '')
+      .replace(/\s+/g, ' ')
+      .trim()
+  )
 }
 
 export interface ObjectiveScoreResult {

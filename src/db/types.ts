@@ -166,7 +166,7 @@ export interface ConceptMastery {
   marks: Numeric
   marks_max: Numeric
   ratio: Numeric
-  status_at_time: string | null
+  status_at_time: ConceptStatusValue | null
   student_id: string
 }
 
