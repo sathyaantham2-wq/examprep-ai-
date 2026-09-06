@@ -27,8 +27,13 @@ type RouteHandler = (opts: {
 // Every route in this project uses the plain-object form of `server.handlers` (never the
 // createHandlers-callback form), so this cast is safe — it exists purely because TypeScript's
 // RouteOptions type has to allow both shapes generically.
-function handlerFor(route: { options: { server?: unknown } }, method: string): RouteHandler {
-  const handlers = (route.options.server as { handlers: Record<string, RouteHandler> }).handlers
+function handlerFor(
+  route: { options: { server?: unknown } },
+  method: string,
+): RouteHandler {
+  const handlers = (
+    route.options.server as { handlers: Record<string, RouteHandler> }
+  ).handlers
   return handlers[method]
 }
 
@@ -73,18 +78,40 @@ describe('cross-household access is denied on every route it was checked against
     parentA = await createParentSession('f096-a')
     parentB = await createParentSession('f096-b')
 
-    const studentAResponse = await handlerFor(StudentsRoute, 'POST')({
-      request: request(parentA.cookie, { name: 'F096 Kid A', class: 7, board: 'CBSE' }),
+    const studentAResponse = await handlerFor(
+      StudentsRoute,
+      'POST',
+    )({
+      request: request(parentA.cookie, {
+        name: 'F096 Kid A',
+        class: 7,
+        board: 'CBSE',
+      }),
     })
     studentAId = (await studentAResponse.json()).id
 
-    const studentBResponse = await handlerFor(StudentsRoute, 'POST')({
-      request: request(parentB.cookie, { name: 'F096 Kid B', class: 7, board: 'CBSE' }),
+    const studentBResponse = await handlerFor(
+      StudentsRoute,
+      'POST',
+    )({
+      request: request(parentB.cookie, {
+        name: 'F096 Kid B',
+        class: 7,
+        board: 'CBSE',
+      }),
     })
     studentBId = (await studentBResponse.json()).id
 
-    studentA = await createStudentSession('f096-a-student', parentA.householdId, studentAId)
-    studentB = await createStudentSession('f096-b-student', parentB.householdId, studentBId)
+    studentA = await createStudentSession(
+      'f096-a-student',
+      parentA.householdId,
+      studentAId,
+    )
+    studentB = await createStudentSession(
+      'f096-b-student',
+      parentB.householdId,
+      studentBId,
+    )
 
     const subject = await db
       .selectFrom('subjects')
@@ -153,7 +180,12 @@ describe('cross-household access is denied on every route it was checked against
       duration_min: 10,
       total_marks: 1,
       sections: JSON.stringify([
-        { name: 'Section A', marks_per_question: 1, count: 1, bloom_allowed: ['Remember'] },
+        {
+          name: 'Section A',
+          marks_per_question: 1,
+          count: 1,
+          bloom_allowed: ['Remember'],
+        },
       ]),
       bloom_targets: JSON.stringify({
         Remember: 100,
@@ -166,7 +198,10 @@ describe('cross-household access is denied on every route it was checked against
     })
     blueprintId = blueprint.id
 
-    const generateResponse = await handlerFor(GenerateRoute, 'POST')({
+    const generateResponse = await handlerFor(
+      GenerateRoute,
+      'POST',
+    )({
       request: request(parentA.cookie, {
         student_id: studentAId,
         blueprint_id: blueprint.id,
@@ -179,21 +214,36 @@ describe('cross-household access is denied on every route it was checked against
 
     // Student A actually attempts and submits, so there's a real attempt + evaluation to test
     // cross-household/cross-student denial against, not just papers.
-    const attemptResponse = await handlerFor(AttemptsRoute, 'POST')({
+    const attemptResponse = await handlerFor(
+      AttemptsRoute,
+      'POST',
+    )({
       request: request(studentA.cookie, { paper_id: paperId, mode: 'online' }),
     })
     attemptId = (await attemptResponse.json()).id
 
-    await handlerFor(AttemptAnswerRoute, 'PATCH')({
-      request: request(studentA.cookie, { paper_question_id: paperQuestionId, selected_option: 'A' }),
+    await handlerFor(
+      AttemptAnswerRoute,
+      'PATCH',
+    )({
+      request: request(studentA.cookie, {
+        paper_question_id: paperQuestionId,
+        selected_option: 'A',
+      }),
       params: { id: attemptId },
     })
-    await handlerFor(AttemptSubmitRoute, 'POST')({
+    await handlerFor(
+      AttemptSubmitRoute,
+      'POST',
+    )({
       request: request(studentA.cookie, {}),
       params: { id: attemptId },
     })
 
-    const evaluationResponse = await handlerFor(EvaluationsRoute, 'POST')({
+    const evaluationResponse = await handlerFor(
+      EvaluationsRoute,
+      'POST',
+    )({
       request: request(parentA.cookie, { attempt_id: attemptId }),
     })
     const evaluation = await evaluationResponse.json()
@@ -205,30 +255,48 @@ describe('cross-household access is denied on every route it was checked against
     // FK-restrict on paper_questions/attempts blocks a straight cascade from households, unlike
     // the simpler papers-only fixture in the earlier version of this test — delete in dependency
     // order instead.
-    await db.deleteFrom('evaluation_items').where('evaluation_id', '=', evaluationId).execute()
+    await db
+      .deleteFrom('evaluation_items')
+      .where('evaluation_id', '=', evaluationId)
+      .execute()
     await db.deleteFrom('evaluations').where('id', '=', evaluationId).execute()
-    await db.deleteFrom('attempt_answers').where('attempt_id', '=', attemptId).execute()
+    await db
+      .deleteFrom('attempt_answers')
+      .where('attempt_id', '=', attemptId)
+      .execute()
     await db.deleteFrom('attempts').where('id', '=', attemptId).execute()
-    await db.deleteFrom('paper_questions').where('paper_id', '=', paperId).execute()
+    await db
+      .deleteFrom('paper_questions')
+      .where('paper_id', '=', paperId)
+      .execute()
     await db.deleteFrom('papers').where('id', '=', paperId).execute()
     await db
       .deleteFrom('households')
       .where('id', 'in', [parentA.householdId, parentB.householdId])
       .execute()
     await db.deleteFrom('blueprints').where('id', '=', blueprintId).execute()
-    await db.deleteFrom('questions').where('created_by', '=', 'f096-fixture').execute()
+    await db
+      .deleteFrom('questions')
+      .where('created_by', '=', 'f096-fixture')
+      .execute()
     await db.deleteFrom('concepts').where('id', '=', conceptId).execute()
     await db.destroy()
   })
 
   it('GET /api/students never lists another household’s student', async () => {
-    const response = await handlerFor(StudentsRoute, 'GET')({ request: request(parentB.cookie) })
+    const response = await handlerFor(
+      StudentsRoute,
+      'GET',
+    )({ request: request(parentB.cookie) })
     const list = (await response.json()) as Array<{ id: string }>
     expect(list.some((s) => s.id === studentAId)).toBe(false)
   })
 
   it('PATCH /api/students/:id on another household’s student -> 404', async () => {
-    const response = await handlerFor(StudentByIdRoute, 'PATCH')({
+    const response = await handlerFor(
+      StudentByIdRoute,
+      'PATCH',
+    )({
       request: request(parentB.cookie, { section: 'Z' }),
       params: { id: studentAId },
     })
@@ -236,7 +304,10 @@ describe('cross-household access is denied on every route it was checked against
   })
 
   it('POST /api/papers/generate for another household’s student -> 404', async () => {
-    const response = await handlerFor(GenerateRoute, 'POST')({
+    const response = await handlerFor(
+      GenerateRoute,
+      'POST',
+    )({
       request: request(parentB.cookie, {
         student_id: studentAId,
         blueprint_id: blueprintId,
@@ -247,7 +318,10 @@ describe('cross-household access is denied on every route it was checked against
   })
 
   it('GET /api/papers/:id for another household’s paper -> 404', async () => {
-    const response = await handlerFor(PaperByIdRoute, 'GET')({
+    const response = await handlerFor(
+      PaperByIdRoute,
+      'GET',
+    )({
       request: request(parentB.cookie),
       params: { id: paperId },
     })
@@ -255,7 +329,10 @@ describe('cross-household access is denied on every route it was checked against
   })
 
   it('GET /api/tracker/:studentId for another household’s student -> 404', async () => {
-    const response = await handlerFor(TrackerRoute, 'GET')({
+    const response = await handlerFor(
+      TrackerRoute,
+      'GET',
+    )({
       request: request(parentB.cookie),
       params: { studentId: studentAId },
     })
@@ -263,14 +340,20 @@ describe('cross-household access is denied on every route it was checked against
   })
 
   it('POST /api/attempts for another student’s paper -> 404', async () => {
-    const response = await handlerFor(AttemptsRoute, 'POST')({
+    const response = await handlerFor(
+      AttemptsRoute,
+      'POST',
+    )({
       request: request(studentB.cookie, { paper_id: paperId, mode: 'online' }),
     })
     expect(response.status).toBe(404)
   })
 
   it('PATCH /api/attempts/:id/answer on another student’s attempt -> 404', async () => {
-    const response = await handlerFor(AttemptAnswerRoute, 'PATCH')({
+    const response = await handlerFor(
+      AttemptAnswerRoute,
+      'PATCH',
+    )({
       request: request(studentB.cookie, {
         paper_question_id: paperQuestionId,
         selected_option: 'B',
@@ -281,7 +364,10 @@ describe('cross-household access is denied on every route it was checked against
   })
 
   it('POST /api/attempts/:id/submit on another student’s attempt -> 404', async () => {
-    const response = await handlerFor(AttemptSubmitRoute, 'POST')({
+    const response = await handlerFor(
+      AttemptSubmitRoute,
+      'POST',
+    )({
       request: request(studentB.cookie, {}),
       params: { id: attemptId },
     })
@@ -289,22 +375,34 @@ describe('cross-household access is denied on every route it was checked against
   })
 
   it('POST /api/evaluations for another household’s attempt -> 404', async () => {
-    const response = await handlerFor(EvaluationsRoute, 'POST')({
+    const response = await handlerFor(
+      EvaluationsRoute,
+      'POST',
+    )({
       request: request(parentB.cookie, { attempt_id: attemptId }),
     })
     expect(response.status).toBe(404)
   })
 
   it('PATCH /api/evaluations/:id/items/:itemId for another household -> 404', async () => {
-    const response = await handlerFor(EvaluationItemRoute, 'PATCH')({
-      request: request(parentB.cookie, { marks: 0, feedback: 'should not apply' }),
+    const response = await handlerFor(
+      EvaluationItemRoute,
+      'PATCH',
+    )({
+      request: request(parentB.cookie, {
+        marks: 0,
+        feedback: 'should not apply',
+      }),
       params: { id: evaluationId, itemId: evaluationItemId },
     })
     expect(response.status).toBe(404)
   })
 
   it('POST /api/evaluations/:id/confirm for another household -> 404', async () => {
-    const response = await handlerFor(EvaluationConfirmRoute, 'POST')({
+    const response = await handlerFor(
+      EvaluationConfirmRoute,
+      'POST',
+    )({
       request: request(parentB.cookie, {}),
       params: { id: evaluationId },
     })
@@ -312,19 +410,28 @@ describe('cross-household access is denied on every route it was checked against
   })
 
   it('the owning household can still do all of the above (isolation is not just failing everything)', async () => {
-    const paperResponse = await handlerFor(PaperByIdRoute, 'GET')({
+    const paperResponse = await handlerFor(
+      PaperByIdRoute,
+      'GET',
+    )({
       request: request(parentA.cookie),
       params: { id: paperId },
     })
     expect(paperResponse.status).toBe(200)
 
-    const trackerResponse = await handlerFor(TrackerRoute, 'GET')({
+    const trackerResponse = await handlerFor(
+      TrackerRoute,
+      'GET',
+    )({
       request: request(parentA.cookie),
       params: { studentId: studentAId },
     })
     expect(trackerResponse.status).toBe(200)
 
-    const confirmResponse = await handlerFor(EvaluationConfirmRoute, 'POST')({
+    const confirmResponse = await handlerFor(
+      EvaluationConfirmRoute,
+      'POST',
+    )({
       request: request(parentA.cookie, {}),
       params: { id: evaluationId },
     })
@@ -332,7 +439,10 @@ describe('cross-household access is denied on every route it was checked against
   })
 
   it('GET /api/evaluations/:id/report for another household -> 404, even once confirmed', async () => {
-    const response = await handlerFor(EvaluationReportRoute, 'GET')({
+    const response = await handlerFor(
+      EvaluationReportRoute,
+      'GET',
+    )({
       request: request(parentB.cookie),
       params: { id: evaluationId },
     })
@@ -340,7 +450,10 @@ describe('cross-household access is denied on every route it was checked against
   })
 
   it('the owning household can read the confirmed report', async () => {
-    const response = await handlerFor(EvaluationReportRoute, 'GET')({
+    const response = await handlerFor(
+      EvaluationReportRoute,
+      'GET',
+    )({
       request: request(parentA.cookie),
       params: { id: evaluationId },
     })
@@ -348,7 +461,10 @@ describe('cross-household access is denied on every route it was checked against
   })
 
   it('POST /api/papers/:id/regenerate-slot for another household’s paper -> 404', async () => {
-    const response = await handlerFor(RegenerateSlotRoute, 'POST')({
+    const response = await handlerFor(
+      RegenerateSlotRoute,
+      'POST',
+    )({
       request: request(parentB.cookie, { paper_question_id: paperQuestionId }),
       params: { id: paperId },
     })
@@ -356,17 +472,37 @@ describe('cross-household access is denied on every route it was checked against
   })
 
   it('the owning household can regenerate a slot on their own paper', async () => {
-    const response = await handlerFor(RegenerateSlotRoute, 'POST')({
+    // Paper generation picks randomly between the two same-shape fixture questions, so the slot
+    // could have started on either one -- assert the swap actually changed it, not a specific
+    // fixed text.
+    const before = await db
+      .selectFrom('paper_questions')
+      .innerJoin('questions', 'questions.id', 'paper_questions.question_id')
+      .select('questions.text')
+      .where('paper_questions.id', '=', paperQuestionId)
+      .executeTakeFirstOrThrow()
+
+    const response = await handlerFor(
+      RegenerateSlotRoute,
+      'POST',
+    )({
       request: request(parentA.cookie, { paper_question_id: paperQuestionId }),
       params: { id: paperId },
     })
     expect(response.status).toBe(200)
     const body = await response.json()
-    expect(body.question.text).toBe('F096 fixture question (alternate)')
+    expect([
+      'F096 fixture question',
+      'F096 fixture question (alternate)',
+    ]).toContain(body.question.text)
+    expect(body.question.text).not.toBe(before.text)
   })
 
   it('T01: an unauthenticated request is rejected before any data is touched', async () => {
-    const response = await handlerFor(StudentsRoute, 'GET')({
+    const response = await handlerFor(
+      StudentsRoute,
+      'GET',
+    )({
       request: new Request('http://localhost/test'),
     })
     expect(response.status).toBe(401)
