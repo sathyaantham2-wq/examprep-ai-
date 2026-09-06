@@ -17,6 +17,7 @@ import { Route as EvaluationsRoute } from './api/evaluations'
 import { Route as EvaluationItemRoute } from './api/evaluations/$id/items/$itemId'
 import { Route as EvaluationConfirmRoute } from './api/evaluations/$id/confirm'
 import { Route as EvaluationReportRoute } from './api/evaluations/$id/report'
+import { Route as RegenerateSlotRoute } from './api/papers/$id/regenerate-slot'
 
 type RouteHandler = (opts: {
   request: Request
@@ -117,6 +118,25 @@ describe('cross-household access is denied on every route it was checked against
       marks: 1,
       type: 'mcq',
       text: 'F096 fixture question',
+      answer: '1',
+      created_by: 'f096-fixture',
+      options: [
+        { label: 'A', text: '1', is_correct: true, order_index: 1 },
+        { label: 'B', text: '2', is_correct: false, order_index: 2 },
+      ],
+    })
+
+    // A second question of the identical shape (same concept/bloom/marks/type) so
+    // POST /api/papers/:id/regenerate-slot has an eligible replacement to swap to.
+    await createQuestion(db, {
+      concept_id: concept.id,
+      board: 'CBSE',
+      class: 7,
+      bloom: 'Remember',
+      difficulty: 'Easy',
+      marks: 1,
+      type: 'mcq',
+      text: 'F096 fixture question (alternate)',
       answer: '1',
       created_by: 'f096-fixture',
       options: [
@@ -325,6 +345,24 @@ describe('cross-household access is denied on every route it was checked against
       params: { id: evaluationId },
     })
     expect(response.status).toBe(200)
+  })
+
+  it('POST /api/papers/:id/regenerate-slot for another household’s paper -> 404', async () => {
+    const response = await handlerFor(RegenerateSlotRoute, 'POST')({
+      request: request(parentB.cookie, { paper_question_id: paperQuestionId }),
+      params: { id: paperId },
+    })
+    expect(response.status).toBe(404)
+  })
+
+  it('the owning household can regenerate a slot on their own paper', async () => {
+    const response = await handlerFor(RegenerateSlotRoute, 'POST')({
+      request: request(parentA.cookie, { paper_question_id: paperQuestionId }),
+      params: { id: paperId },
+    })
+    expect(response.status).toBe(200)
+    const body = await response.json()
+    expect(body.question.text).toBe('F096 fixture question (alternate)')
   })
 
   it('T01: an unauthenticated request is rejected before any data is touched', async () => {
