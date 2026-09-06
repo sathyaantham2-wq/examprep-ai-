@@ -1,5 +1,6 @@
 import Anthropic from '@anthropic-ai/sdk'
 import type { ErrorType } from '../db/enums'
+import { env } from './env'
 
 const ERROR_TYPES = [
   'Conceptual Gap',
@@ -15,13 +16,13 @@ const MODEL = 'claude-sonnet-5'
 
 let cachedClient: Anthropic | null = null
 function getClient(): Anthropic | null {
-  if (!process.env.ANTHROPIC_API_KEY) return null
-  cachedClient ??= new Anthropic({ apiKey: process.env.ANTHROPIC_API_KEY })
+  if (!env.ANTHROPIC_API_KEY) return null
+  cachedClient ??= new Anthropic({ apiKey: env.ANTHROPIC_API_KEY })
   return cachedClient
 }
 
 export function isAiGradingConfigured(): boolean {
-  return Boolean(process.env.ANTHROPIC_API_KEY)
+  return Boolean(env.ANTHROPIC_API_KEY)
 }
 
 export interface SubjectiveGradingInput {

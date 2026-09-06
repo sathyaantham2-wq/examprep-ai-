@@ -2,14 +2,12 @@ import { betterAuth } from 'better-auth'
 import { createAuthPool } from '../db/auth-pool'
 import { createDb } from '../db/connection'
 import { householdsRepository } from '../db/repositories'
-
-const googleClientId = process.env.GOOGLE_CLIENT_ID
-const googleClientSecret = process.env.GOOGLE_CLIENT_SECRET
+import { env } from './env'
 
 export const auth = betterAuth({
   database: createAuthPool(),
-  secret: process.env.BETTER_AUTH_SECRET,
-  baseURL: process.env.BETTER_AUTH_URL,
+  secret: env.BETTER_AUTH_SECRET,
+  baseURL: env.BETTER_AUTH_URL,
   // Every other table in this schema uses uuid primary keys (see src/db/migrations); without
   // this, better-auth defaults to 32-char random text ids, which can't FK against users.id uuid.
   advanced: {
@@ -30,11 +28,11 @@ export const auth = betterAuth({
   },
   // Google is optional in dev — only registered once real OAuth credentials exist.
   socialProviders:
-    googleClientId && googleClientSecret
+    env.GOOGLE_CLIENT_ID && env.GOOGLE_CLIENT_SECRET
       ? {
           google: {
-            clientId: googleClientId,
-            clientSecret: googleClientSecret,
+            clientId: env.GOOGLE_CLIENT_ID,
+            clientSecret: env.GOOGLE_CLIENT_SECRET,
           },
         }
       : undefined,
