@@ -5,6 +5,7 @@ import { createDb } from '../../../../../db/connection'
 import {
   evaluationsRepository,
   evaluationItemsRepository,
+  patternHitsRepository,
   auditLogRepository,
 } from '../../../../../db/repositories'
 
@@ -23,6 +24,10 @@ const overrideSchema = z
     error_type: z.enum(ERROR_TYPES).nullable(),
     knowledge_known: z.boolean().nullable(),
     feedback: z.string().min(1),
+    // F057: not in tab05's stated payload shape, but there's no other listed route for
+    // attaching behaviour patterns to an answer, and this is the endpoint that already owns
+    // per-item human review.
+    pattern_ids: z.array(z.string().uuid()),
   })
   .partial()
 
@@ -90,7 +95,16 @@ export const Route = createFileRoute('/api/evaluations/$id/items/$itemId')({
             after: JSON.stringify(updated),
           })
 
-          return Response.json(updated)
+          const patternHits =
+            parsed.data.pattern_ids !== undefined
+              ? await patternHitsRepository.replaceForItem(
+                  db,
+                  item.id,
+                  parsed.data.pattern_ids,
+                )
+              : await patternHitsRepository.listForItem(db, item.id)
+
+          return Response.json({ ...updated, pattern_hits: patternHits })
         } finally {
           await db.destroy()
         }

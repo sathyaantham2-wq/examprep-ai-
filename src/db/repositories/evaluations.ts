@@ -45,7 +45,41 @@ export const evaluationItemsRepository = {
 // Pattern/habit libraries are global reference data (P1-P6, H1-H10), editable but not per
 // household.
 export const patternsRepository = createRepository('patterns')
-export const patternHitsRepository = createRepository('pattern_hits')
+
+export const patternHitsRepository = {
+  ...createRepository('pattern_hits'),
+  async listForItem(db: Db, evaluationItemId: string) {
+    return db
+      .selectFrom('pattern_hits')
+      .selectAll()
+      .where('evaluation_item_id', '=', evaluationItemId)
+      .execute() as Promise<Array<Selectable<DB['pattern_hits']>>>
+  },
+  // F057: "each answer can carry one or more" patterns — a full replace on every override call
+  // (rather than an additive insert) keeps re-submitting the same PATCH idempotent.
+  async replaceForItem(
+    db: Db,
+    evaluationItemId: string,
+    patternIds: Array<string>,
+  ) {
+    await db
+      .deleteFrom('pattern_hits')
+      .where('evaluation_item_id', '=', evaluationItemId)
+      .execute()
+    if (patternIds.length === 0) return []
+    return db
+      .insertInto('pattern_hits')
+      .values(
+        patternIds.map((patternId) => ({
+          evaluation_item_id: evaluationItemId,
+          pattern_id: patternId,
+        })),
+      )
+      .returningAll()
+      .execute() as Promise<Array<Selectable<DB['pattern_hits']>>>
+  },
+}
+
 export const habitsRepository = createRepository('habits')
 export const habitObservationsRepository =
   createRepository('habit_observations')

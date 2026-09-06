@@ -1,0 +1,166 @@
+import type { Db } from '../db/connection'
+import {
+  evaluationItemsRepository,
+  patternHitsRepository,
+  conceptStatusRepository,
+} from '../db/repositories'
+
+interface ErrorInventoryRow {
+  position: number
+  section: string
+  concept_name: string
+  marks_max: number
+  marks_awarded: number
+  marks_lost: number
+  error_type: string | null
+  knowledge_known: boolean | null
+  feedback: string
+  patterns: Array<{ code: string; name: string }>
+}
+
+interface RankedAction {
+  concept_id: string
+  concept_name: string
+  status: string
+  last_ratio: number | null
+  action: string
+}
+
+/**
+ * F059: the paper diagnosis report. Rule-based end to end — this is AI-10's own documented
+ * fallback ("rule-based template report"), used as the primary implementation here rather than
+ * a stopgap, since the numbers must come from data either way (AI-10's guardrail: "the model
+ * never computes scores").
+ */
+export async function buildDiagnosisReport(db: Db, evaluationId: string) {
+  const evaluation = await db
+    .selectFrom('evaluations')
+    .selectAll()
+    .where('id', '=', evaluationId)
+    .executeTakeFirstOrThrow()
+
+  const attempt = await db
+    .selectFrom('attempts')
+    .selectAll()
+    .where('id', '=', evaluation.attempt_id)
+    .executeTakeFirstOrThrow()
+
+  const items = await evaluationItemsRepository.listForEvaluation(
+    db,
+    evaluationId,
+  )
+
+  const inventory: Array<ErrorInventoryRow> = []
+  for (const item of items) {
+    const marksLost = Number(item.marks_max) - Number(item.marks_awarded)
+    if (marksLost <= 0) continue // full marks — not part of the error inventory
+
+    const slot = await db
+      .selectFrom('paper_questions')
+      .innerJoin('questions', 'questions.id', 'paper_questions.question_id')
+      .innerJoin('concepts', 'concepts.id', 'questions.concept_id')
+      .select([
+        'paper_questions.position',
+        'paper_questions.section',
+        'concepts.name as concept_name',
+      ])
+      .where('paper_questions.id', '=', item.paper_question_id)
+      .executeTakeFirstOrThrow()
+
+    const hits = await patternHitsRepository.listForItem(db, item.id)
+    const patterns = await Promise.all(
+      hits.map(async (hit) => {
+        const pattern = await db
+          .selectFrom('patterns')
+          .select(['code', 'name'])
+          .where('id', '=', hit.pattern_id)
+          .executeTakeFirstOrThrow()
+        return pattern
+      }),
+    )
+
+    inventory.push({
+      position: slot.position,
+      section: slot.section,
+      concept_name: slot.concept_name,
+      marks_max: Number(item.marks_max),
+      marks_awarded: Number(item.marks_awarded),
+      marks_lost: marksLost,
+      error_type: item.error_type,
+      knowledge_known: item.knowledge_known,
+      feedback: item.feedback ?? '',
+      patterns,
+    })
+  }
+  inventory.sort((a, b) => a.position - b.position)
+
+  const patternCounts = new Map<string, { name: string; count: number }>()
+  for (const row of inventory) {
+    for (const pattern of row.patterns) {
+      const existing = patternCounts.get(pattern.code) ?? {
+        name: pattern.name,
+        count: 0,
+      }
+      existing.count += 1
+      patternCounts.set(pattern.code, existing)
+    }
+  }
+
+  // Actions: worst-first from the student's whole tracker, not just this paper — a Delivery Gap
+  // report is about what to do next, and that's tracker-wide, not paper-scoped.
+  const statuses = await conceptStatusRepository.list(db, attempt.student_id)
+  const priorityOrder: Record<string, number> = {
+    Priority: 0,
+    Weak: 1,
+    'Needs Practice': 2,
+    Maintenance: 3,
+    Strong: 4,
+  }
+  const candidates = statuses
+    .filter((s) => s.status === 'Priority' || s.status === 'Weak')
+    .sort(
+      (a, b) => (priorityOrder[a.status] ?? 9) - (priorityOrder[b.status] ?? 9),
+    )
+
+  const ranked: Array<RankedAction> = []
+  for (const status of candidates.slice(0, 3)) {
+    const concept = await db
+      .selectFrom('concepts')
+      .select(['name'])
+      .where('id', '=', status.concept_id)
+      .executeTakeFirstOrThrow()
+    ranked.push({
+      concept_id: status.concept_id,
+      concept_name: concept.name,
+      status: status.status,
+      last_ratio: status.last_ratio !== null ? Number(status.last_ratio) : null,
+      action: `Practice ${concept.name} — currently ${status.status}${status.last_ratio !== null ? `, last scored ${Math.round(Number(status.last_ratio) * 100)}%` : ''}.`,
+    })
+  }
+
+  const parentAction = ranked[0]
+    ? `This week, have your child redo a short practice set on ${ranked[0].concept_name}.`
+    : 'No priority or weak concepts flagged right now — keep up the current pace.'
+
+  return {
+    score: {
+      actual: Number(evaluation.actual_score),
+      total: Number(evaluation.total_marks),
+      percentage: Number(evaluation.percentage),
+      grade: evaluation.grade,
+    },
+    knowledge_score: Number(evaluation.knowledge_score),
+    delivery_gap: Number(evaluation.delivery_gap),
+    error_inventory: inventory,
+    pattern_hits: [...patternCounts.entries()].map(([code, v]) => ({
+      pattern_code: code,
+      pattern_name: v.name,
+      count: v.count,
+    })),
+    habit_status: [], // F058 (habit tracker) is not built
+    actions: {
+      ranked,
+      parent_action: parentAction,
+    },
+  }
+}

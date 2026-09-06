@@ -16,6 +16,16 @@ import {
 import { gradeSubjectiveAnswer } from './ai-grading'
 import { recordMasteryAttempt } from './mastery'
 
+// A generic placeholder band, not a school- or board-specific grading scale — none is defined
+// anywhere in the plan. Swap this out once a real one is decided.
+function gradeFromPercentage(percentage: number): string {
+  if (percentage >= 90) return 'A'
+  if (percentage >= 75) return 'B'
+  if (percentage >= 60) return 'C'
+  if (percentage >= 40) return 'D'
+  return 'E'
+}
+
 /**
  * F044-F046, F049: scores every question in a submitted attempt — objective questions
  * deterministically (F044/AI-04, never AI), subjective questions via AI-05 when configured. Marks
@@ -178,16 +188,32 @@ export async function confirmEvaluation(db: Db, evaluationId: string) {
     const totalMarks = Number(evaluation.total_marks)
     const wasOverridden = items.some((item) => item.overridden_by != null)
 
+    // F055/F056: Knowledge Score credits back marks lost to a delivery habit (the reviewer
+    // marked knowledge_known=true on a lost-mark item) but not marks lost to a real gap
+    // (knowledge_known=false, or never reviewed). Delivery Gap is the headline metric this
+    // product is built around — it's meaningless until a human has actually made that call per
+    // item, which is exactly what F047's override endpoint captures.
+    const knowledgeCredit = items.reduce((sum, item) => {
+      const lost = Number(item.marks_max) - Number(item.marks_awarded)
+      return item.knowledge_known === true && lost > 0 ? sum + lost : sum
+    }, 0)
+    const knowledgeScore = actualScore + knowledgeCredit
+    const deliveryGap = knowledgeScore - actualScore
+    const percentage =
+      totalMarks > 0 ? Math.round((actualScore / totalMarks) * 1000) / 10 : 0
+
     const updatedEvaluation = await evaluationsRepository.update(
       trx,
       evaluationId,
       {
         confirmed_at: new Date(),
         actual_score: actualScore,
-        percentage:
-          totalMarks > 0
-            ? Math.round((actualScore / totalMarks) * 1000) / 10
-            : 0,
+        knowledge_score: knowledgeScore,
+        delivery_gap: deliveryGap,
+        percentage,
+        // No school-specific grading scale is defined anywhere in the plan — this is a generic
+        // placeholder band, not a CBSE-authoritative scale, easy to swap for a real one later.
+        grade: gradeFromPercentage(percentage),
         evaluated_by: wasOverridden ? 'mixed' : evaluation.evaluated_by,
       },
     )
