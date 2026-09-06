@@ -12,6 +12,7 @@ import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
 import { Route as ApiAttemptsRouteImport } from './routes/api/attempts'
 import { Route as ApiBlueprintsRouteImport } from './routes/api/blueprints'
+import { Route as ApiEvaluationsRouteImport } from './routes/api/evaluations'
 import { Route as ApiQuestionsRouteImport } from './routes/api/questions'
 import { Route as ApiStudentsRouteImport } from './routes/api/students'
 import { Route as ApiAuthSplatRouteImport } from './routes/api/auth/$'
@@ -24,8 +25,10 @@ import { Route as ApiSyllabusSubjectsRouteImport } from './routes/api/syllabus/s
 import { Route as ApiTrackerStudentIdRouteImport } from './routes/api/tracker/$studentId'
 import { Route as ApiAttemptsIdAnswerRouteImport } from './routes/api/attempts/$id/answer'
 import { Route as ApiAttemptsIdSubmitRouteImport } from './routes/api/attempts/$id/submit'
+import { Route as ApiEvaluationsIdConfirmRouteImport } from './routes/api/evaluations/$id/confirm'
 import { Route as ApiPapersIdRegenerateSlotRouteImport } from './routes/api/papers/$id/regenerate-slot'
 import { Route as ApiQuestionsIdApproveRouteImport } from './routes/api/questions/$id/approve'
+import { Route as ApiEvaluationsIdItemsItemIdRouteImport } from './routes/api/evaluations/$id/items/$itemId'
 import { Route as ApiSyllabusChaptersIdScopeRouteImport } from './routes/api/syllabus/chapters/$id/scope'
 
 const IndexRoute = IndexRouteImport.update({
@@ -41,6 +44,11 @@ const ApiAttemptsRoute = ApiAttemptsRouteImport.update({
 const ApiBlueprintsRoute = ApiBlueprintsRouteImport.update({
   id: '/api/blueprints',
   path: '/api/blueprints',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ApiEvaluationsRoute = ApiEvaluationsRouteImport.update({
+  id: '/api/evaluations',
+  path: '/api/evaluations',
   getParentRoute: () => rootRouteImport,
 } as any)
 const ApiQuestionsRoute = ApiQuestionsRouteImport.update({
@@ -103,6 +111,11 @@ const ApiAttemptsIdSubmitRoute = ApiAttemptsIdSubmitRouteImport.update({
   path: '/$id/submit',
   getParentRoute: () => ApiAttemptsRoute,
 } as any)
+const ApiEvaluationsIdConfirmRoute = ApiEvaluationsIdConfirmRouteImport.update({
+  id: '/$id/confirm',
+  path: '/$id/confirm',
+  getParentRoute: () => ApiEvaluationsRoute,
+} as any)
 const ApiPapersIdRegenerateSlotRoute =
   ApiPapersIdRegenerateSlotRouteImport.update({
     id: '/regenerate-slot',
@@ -114,6 +127,12 @@ const ApiQuestionsIdApproveRoute = ApiQuestionsIdApproveRouteImport.update({
   path: '/approve',
   getParentRoute: () => ApiQuestionsIdRoute,
 } as any)
+const ApiEvaluationsIdItemsItemIdRoute =
+  ApiEvaluationsIdItemsItemIdRouteImport.update({
+    id: '/$id/items/$itemId',
+    path: '/$id/items/$itemId',
+    getParentRoute: () => ApiEvaluationsRoute,
+  } as any)
 const ApiSyllabusChaptersIdScopeRoute =
   ApiSyllabusChaptersIdScopeRouteImport.update({
     id: '/$id/scope',
@@ -125,6 +144,7 @@ export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/api/attempts': typeof ApiAttemptsRouteWithChildren
   '/api/blueprints': typeof ApiBlueprintsRoute
+  '/api/evaluations': typeof ApiEvaluationsRouteWithChildren
   '/api/questions': typeof ApiQuestionsRouteWithChildren
   '/api/students': typeof ApiStudentsRouteWithChildren
   '/api/auth/$': typeof ApiAuthSplatRoute
@@ -137,14 +157,17 @@ export interface FileRoutesByFullPath {
   '/api/tracker/$studentId': typeof ApiTrackerStudentIdRoute
   '/api/attempts/$id/answer': typeof ApiAttemptsIdAnswerRoute
   '/api/attempts/$id/submit': typeof ApiAttemptsIdSubmitRoute
+  '/api/evaluations/$id/confirm': typeof ApiEvaluationsIdConfirmRoute
   '/api/papers/$id/regenerate-slot': typeof ApiPapersIdRegenerateSlotRoute
   '/api/questions/$id/approve': typeof ApiQuestionsIdApproveRoute
+  '/api/evaluations/$id/items/$itemId': typeof ApiEvaluationsIdItemsItemIdRoute
   '/api/syllabus/chapters/$id/scope': typeof ApiSyllabusChaptersIdScopeRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/api/attempts': typeof ApiAttemptsRouteWithChildren
   '/api/blueprints': typeof ApiBlueprintsRoute
+  '/api/evaluations': typeof ApiEvaluationsRouteWithChildren
   '/api/questions': typeof ApiQuestionsRouteWithChildren
   '/api/students': typeof ApiStudentsRouteWithChildren
   '/api/auth/$': typeof ApiAuthSplatRoute
@@ -157,8 +180,10 @@ export interface FileRoutesByTo {
   '/api/tracker/$studentId': typeof ApiTrackerStudentIdRoute
   '/api/attempts/$id/answer': typeof ApiAttemptsIdAnswerRoute
   '/api/attempts/$id/submit': typeof ApiAttemptsIdSubmitRoute
+  '/api/evaluations/$id/confirm': typeof ApiEvaluationsIdConfirmRoute
   '/api/papers/$id/regenerate-slot': typeof ApiPapersIdRegenerateSlotRoute
   '/api/questions/$id/approve': typeof ApiQuestionsIdApproveRoute
+  '/api/evaluations/$id/items/$itemId': typeof ApiEvaluationsIdItemsItemIdRoute
   '/api/syllabus/chapters/$id/scope': typeof ApiSyllabusChaptersIdScopeRoute
 }
 export interface FileRoutesById {
@@ -166,6 +191,7 @@ export interface FileRoutesById {
   '/': typeof IndexRoute
   '/api/attempts': typeof ApiAttemptsRouteWithChildren
   '/api/blueprints': typeof ApiBlueprintsRoute
+  '/api/evaluations': typeof ApiEvaluationsRouteWithChildren
   '/api/questions': typeof ApiQuestionsRouteWithChildren
   '/api/students': typeof ApiStudentsRouteWithChildren
   '/api/auth/$': typeof ApiAuthSplatRoute
@@ -178,8 +204,10 @@ export interface FileRoutesById {
   '/api/tracker/$studentId': typeof ApiTrackerStudentIdRoute
   '/api/attempts/$id/answer': typeof ApiAttemptsIdAnswerRoute
   '/api/attempts/$id/submit': typeof ApiAttemptsIdSubmitRoute
+  '/api/evaluations/$id/confirm': typeof ApiEvaluationsIdConfirmRoute
   '/api/papers/$id/regenerate-slot': typeof ApiPapersIdRegenerateSlotRoute
   '/api/questions/$id/approve': typeof ApiQuestionsIdApproveRoute
+  '/api/evaluations/$id/items/$itemId': typeof ApiEvaluationsIdItemsItemIdRoute
   '/api/syllabus/chapters/$id/scope': typeof ApiSyllabusChaptersIdScopeRoute
 }
 export interface FileRouteTypes {
@@ -188,6 +216,7 @@ export interface FileRouteTypes {
     | '/'
     | '/api/attempts'
     | '/api/blueprints'
+    | '/api/evaluations'
     | '/api/questions'
     | '/api/students'
     | '/api/auth/$'
@@ -200,14 +229,17 @@ export interface FileRouteTypes {
     | '/api/tracker/$studentId'
     | '/api/attempts/$id/answer'
     | '/api/attempts/$id/submit'
+    | '/api/evaluations/$id/confirm'
     | '/api/papers/$id/regenerate-slot'
     | '/api/questions/$id/approve'
+    | '/api/evaluations/$id/items/$itemId'
     | '/api/syllabus/chapters/$id/scope'
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/'
     | '/api/attempts'
     | '/api/blueprints'
+    | '/api/evaluations'
     | '/api/questions'
     | '/api/students'
     | '/api/auth/$'
@@ -220,14 +252,17 @@ export interface FileRouteTypes {
     | '/api/tracker/$studentId'
     | '/api/attempts/$id/answer'
     | '/api/attempts/$id/submit'
+    | '/api/evaluations/$id/confirm'
     | '/api/papers/$id/regenerate-slot'
     | '/api/questions/$id/approve'
+    | '/api/evaluations/$id/items/$itemId'
     | '/api/syllabus/chapters/$id/scope'
   id:
     | '__root__'
     | '/'
     | '/api/attempts'
     | '/api/blueprints'
+    | '/api/evaluations'
     | '/api/questions'
     | '/api/students'
     | '/api/auth/$'
@@ -240,8 +275,10 @@ export interface FileRouteTypes {
     | '/api/tracker/$studentId'
     | '/api/attempts/$id/answer'
     | '/api/attempts/$id/submit'
+    | '/api/evaluations/$id/confirm'
     | '/api/papers/$id/regenerate-slot'
     | '/api/questions/$id/approve'
+    | '/api/evaluations/$id/items/$itemId'
     | '/api/syllabus/chapters/$id/scope'
   fileRoutesById: FileRoutesById
 }
@@ -249,6 +286,7 @@ export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   ApiAttemptsRoute: typeof ApiAttemptsRouteWithChildren
   ApiBlueprintsRoute: typeof ApiBlueprintsRoute
+  ApiEvaluationsRoute: typeof ApiEvaluationsRouteWithChildren
   ApiQuestionsRoute: typeof ApiQuestionsRouteWithChildren
   ApiStudentsRoute: typeof ApiStudentsRouteWithChildren
   ApiAuthSplatRoute: typeof ApiAuthSplatRoute
@@ -280,6 +318,13 @@ declare module '@tanstack/react-router' {
       path: '/api/blueprints'
       fullPath: '/api/blueprints'
       preLoaderRoute: typeof ApiBlueprintsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/api/evaluations': {
+      id: '/api/evaluations'
+      path: '/api/evaluations'
+      fullPath: '/api/evaluations'
+      preLoaderRoute: typeof ApiEvaluationsRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/api/questions': {
@@ -366,6 +411,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ApiAttemptsIdSubmitRouteImport
       parentRoute: typeof ApiAttemptsRoute
     }
+    '/api/evaluations/$id/confirm': {
+      id: '/api/evaluations/$id/confirm'
+      path: '/$id/confirm'
+      fullPath: '/api/evaluations/$id/confirm'
+      preLoaderRoute: typeof ApiEvaluationsIdConfirmRouteImport
+      parentRoute: typeof ApiEvaluationsRoute
+    }
     '/api/papers/$id/regenerate-slot': {
       id: '/api/papers/$id/regenerate-slot'
       path: '/regenerate-slot'
@@ -379,6 +431,13 @@ declare module '@tanstack/react-router' {
       fullPath: '/api/questions/$id/approve'
       preLoaderRoute: typeof ApiQuestionsIdApproveRouteImport
       parentRoute: typeof ApiQuestionsIdRoute
+    }
+    '/api/evaluations/$id/items/$itemId': {
+      id: '/api/evaluations/$id/items/$itemId'
+      path: '/$id/items/$itemId'
+      fullPath: '/api/evaluations/$id/items/$itemId'
+      preLoaderRoute: typeof ApiEvaluationsIdItemsItemIdRouteImport
+      parentRoute: typeof ApiEvaluationsRoute
     }
     '/api/syllabus/chapters/$id/scope': {
       id: '/api/syllabus/chapters/$id/scope'
@@ -402,6 +461,20 @@ const ApiAttemptsRouteChildren: ApiAttemptsRouteChildren = {
 
 const ApiAttemptsRouteWithChildren = ApiAttemptsRoute._addFileChildren(
   ApiAttemptsRouteChildren,
+)
+
+interface ApiEvaluationsRouteChildren {
+  ApiEvaluationsIdConfirmRoute: typeof ApiEvaluationsIdConfirmRoute
+  ApiEvaluationsIdItemsItemIdRoute: typeof ApiEvaluationsIdItemsItemIdRoute
+}
+
+const ApiEvaluationsRouteChildren: ApiEvaluationsRouteChildren = {
+  ApiEvaluationsIdConfirmRoute: ApiEvaluationsIdConfirmRoute,
+  ApiEvaluationsIdItemsItemIdRoute: ApiEvaluationsIdItemsItemIdRoute,
+}
+
+const ApiEvaluationsRouteWithChildren = ApiEvaluationsRoute._addFileChildren(
+  ApiEvaluationsRouteChildren,
 )
 
 interface ApiQuestionsIdRouteChildren {
@@ -467,6 +540,7 @@ const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   ApiAttemptsRoute: ApiAttemptsRouteWithChildren,
   ApiBlueprintsRoute: ApiBlueprintsRoute,
+  ApiEvaluationsRoute: ApiEvaluationsRouteWithChildren,
   ApiQuestionsRoute: ApiQuestionsRouteWithChildren,
   ApiStudentsRoute: ApiStudentsRouteWithChildren,
   ApiAuthSplatRoute: ApiAuthSplatRoute,

@@ -21,7 +21,8 @@
     "AiJobStatus": "./enums#AiJobStatus",
     "NotificationChannel": "./enums#NotificationChannel",
     "NotificationStatus": "./enums#NotificationStatus",
-    "ReviewTier": "./enums#ReviewTier"
+    "ReviewTier": "./enums#ReviewTier",
+    "ErrorType": "./enums#ErrorType"
   },
   "overrides": {
     "columns": {
@@ -44,7 +45,9 @@
       "ai_jobs.status": "AiJobStatus",
       "notifications.channel": "NotificationChannel",
       "notifications.status": "NotificationStatus",
-      "questions.review_tier": "ReviewTier"
+      "questions.review_tier": "ReviewTier",
+      "evaluation_items.error_type": "ErrorType | null",
+      "evaluation_items.ai_error_type": "ErrorType | null"
     }
   }
 }

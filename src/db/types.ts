@@ -11,6 +11,7 @@ import type {
   BloomLevel,
   ConceptStatusValue,
   DifficultyTier,
+  ErrorType,
   EvaluatedBy,
   HabitRating,
   NotificationChannel,
@@ -205,9 +206,10 @@ export interface ConceptStatus {
 }
 
 export interface EvaluationItems {
+  ai_error_type: ErrorType | null
   ai_marks: Numeric | null
   created_at: Generated<Timestamp>
-  error_type: string | null
+  error_type: ErrorType | null
   evaluation_id: string
   feedback: string | null
   id: Generated<string>

@@ -80,10 +80,29 @@ export const questionsRepository = {
   },
 }
 
-export const questionOptionsRepository = createRepository('question_options')
-export const questionStepMarksRepository = createRepository(
-  'question_step_marks',
-)
+export const questionOptionsRepository = {
+  ...createRepository('question_options'),
+  async listByQuestion(db: Db, questionId: string) {
+    return db
+      .selectFrom('question_options')
+      .selectAll()
+      .where('question_id', '=', questionId)
+      .orderBy('order_index')
+      .execute()
+  },
+}
+
+export const questionStepMarksRepository = {
+  ...createRepository('question_step_marks'),
+  async listByQuestion(db: Db, questionId: string) {
+    return db
+      .selectFrom('question_step_marks')
+      .selectAll()
+      .where('question_id', '=', questionId)
+      .orderBy('step_no')
+      .execute()
+  },
+}
 
 export const questionUsageRepository = {
   ...createScopedRepository('question_usage', 'student_id'),
