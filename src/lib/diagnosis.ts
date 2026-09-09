@@ -26,6 +26,14 @@ interface RankedAction {
   action: string
 }
 
+interface ConceptPerformanceRow {
+  concept_id: string
+  concept_name: string
+  marks_awarded: number
+  marks_max: number
+  percentage: number
+}
+
 /**
  * F059: the paper diagnosis report. Rule-based end to end — this is AI-10's own documented
  * fallback ("rule-based template report"), used as the primary implementation here rather than
@@ -43,6 +51,17 @@ export async function buildDiagnosisReport(db: Db, evaluationId: string) {
     .selectFrom('attempts')
     .selectAll()
     .where('id', '=', evaluation.attempt_id)
+    .executeTakeFirstOrThrow()
+
+  const paper = await db
+    .selectFrom('papers')
+    .select(['title'])
+    .where('id', '=', attempt.paper_id)
+    .executeTakeFirstOrThrow()
+  const student = await db
+    .selectFrom('students')
+    .select(['name', 'class', 'board'])
+    .where('id', '=', attempt.student_id)
     .executeTakeFirstOrThrow()
 
   const items = await evaluationItemsRepository.listForEvaluation(
@@ -94,6 +113,45 @@ export async function buildDiagnosisReport(db: Db, evaluationId: string) {
   }
   inventory.sort((a, b) => a.position - b.position)
 
+  // F073's "concept-wise performance" -- every item, not just the ones that lost marks (the
+  // error inventory above only tracks those), aggregated per concept.
+  const performanceByConcept = new Map<
+    string,
+    { concept_name: string; marks_awarded: number; marks_max: number }
+  >()
+  for (const item of items) {
+    const slot = await db
+      .selectFrom('paper_questions')
+      .innerJoin('questions', 'questions.id', 'paper_questions.question_id')
+      .innerJoin('concepts', 'concepts.id', 'questions.concept_id')
+      .select(['concepts.id as concept_id', 'concepts.name as concept_name'])
+      .where('paper_questions.id', '=', item.paper_question_id)
+      .executeTakeFirstOrThrow()
+
+    const existing = performanceByConcept.get(slot.concept_id) ?? {
+      concept_name: slot.concept_name,
+      marks_awarded: 0,
+      marks_max: 0,
+    }
+    existing.marks_awarded += Number(item.marks_awarded)
+    existing.marks_max += Number(item.marks_max)
+    performanceByConcept.set(slot.concept_id, existing)
+  }
+  const conceptPerformance: Array<ConceptPerformanceRow> = [
+    ...performanceByConcept.entries(),
+  ]
+    .map(([conceptId, v]) => ({
+      concept_id: conceptId,
+      concept_name: v.concept_name,
+      marks_awarded: v.marks_awarded,
+      marks_max: v.marks_max,
+      percentage:
+        v.marks_max > 0
+          ? Math.round((v.marks_awarded / v.marks_max) * 1000) / 10
+          : 0,
+    }))
+    .sort((a, b) => a.concept_name.localeCompare(b.concept_name))
+
   const patternCounts = new Map<string, { name: string; count: number }>()
   for (const row of inventory) {
     for (const pattern of row.patterns) {
@@ -143,6 +201,12 @@ export async function buildDiagnosisReport(db: Db, evaluationId: string) {
     : 'No priority or weak concepts flagged right now — keep up the current pace.'
 
   return {
+    meta: {
+      paper_title: paper.title,
+      student_name: student.name,
+      student_class: student.class,
+      student_board: student.board,
+    },
     score: {
       actual: Number(evaluation.actual_score),
       total: Number(evaluation.total_marks),
@@ -152,6 +216,7 @@ export async function buildDiagnosisReport(db: Db, evaluationId: string) {
     knowledge_score: Number(evaluation.knowledge_score),
     delivery_gap: Number(evaluation.delivery_gap),
     error_inventory: inventory,
+    concept_performance: conceptPerformance,
     pattern_hits: [...patternCounts.entries()].map(([code, v]) => ({
       pattern_code: code,
       pattern_name: v.name,
