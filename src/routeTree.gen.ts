@@ -11,6 +11,7 @@
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
 import { Route as ApiAttemptsRouteImport } from './routes/api/attempts'
+import { Route as ApiAuditLogRouteImport } from './routes/api/audit-log'
 import { Route as ApiBlueprintsRouteImport } from './routes/api/blueprints'
 import { Route as ApiEvaluationsRouteImport } from './routes/api/evaluations'
 import { Route as ApiQuestionsRouteImport } from './routes/api/questions'
@@ -46,6 +47,11 @@ const IndexRoute = IndexRouteImport.update({
 const ApiAttemptsRoute = ApiAttemptsRouteImport.update({
   id: '/api/attempts',
   path: '/api/attempts',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ApiAuditLogRoute = ApiAuditLogRouteImport.update({
+  id: '/api/audit-log',
+  path: '/api/audit-log',
   getParentRoute: () => rootRouteImport,
 } as any)
 const ApiBlueprintsRoute = ApiBlueprintsRouteImport.update({
@@ -188,6 +194,7 @@ const ApiSyllabusChaptersIdScopeRoute =
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/api/attempts': typeof ApiAttemptsRouteWithChildren
+  '/api/audit-log': typeof ApiAuditLogRoute
   '/api/blueprints': typeof ApiBlueprintsRoute
   '/api/evaluations': typeof ApiEvaluationsRouteWithChildren
   '/api/questions': typeof ApiQuestionsRouteWithChildren
@@ -218,6 +225,7 @@ export interface FileRoutesByFullPath {
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/api/attempts': typeof ApiAttemptsRouteWithChildren
+  '/api/audit-log': typeof ApiAuditLogRoute
   '/api/blueprints': typeof ApiBlueprintsRoute
   '/api/evaluations': typeof ApiEvaluationsRouteWithChildren
   '/api/questions': typeof ApiQuestionsRouteWithChildren
@@ -249,6 +257,7 @@ export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
   '/api/attempts': typeof ApiAttemptsRouteWithChildren
+  '/api/audit-log': typeof ApiAuditLogRoute
   '/api/blueprints': typeof ApiBlueprintsRoute
   '/api/evaluations': typeof ApiEvaluationsRouteWithChildren
   '/api/questions': typeof ApiQuestionsRouteWithChildren
@@ -281,6 +290,7 @@ export interface FileRouteTypes {
   fullPaths:
     | '/'
     | '/api/attempts'
+    | '/api/audit-log'
     | '/api/blueprints'
     | '/api/evaluations'
     | '/api/questions'
@@ -311,6 +321,7 @@ export interface FileRouteTypes {
   to:
     | '/'
     | '/api/attempts'
+    | '/api/audit-log'
     | '/api/blueprints'
     | '/api/evaluations'
     | '/api/questions'
@@ -341,6 +352,7 @@ export interface FileRouteTypes {
     | '__root__'
     | '/'
     | '/api/attempts'
+    | '/api/audit-log'
     | '/api/blueprints'
     | '/api/evaluations'
     | '/api/questions'
@@ -372,6 +384,7 @@ export interface FileRouteTypes {
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   ApiAttemptsRoute: typeof ApiAttemptsRouteWithChildren
+  ApiAuditLogRoute: typeof ApiAuditLogRoute
   ApiBlueprintsRoute: typeof ApiBlueprintsRoute
   ApiEvaluationsRoute: typeof ApiEvaluationsRouteWithChildren
   ApiQuestionsRoute: typeof ApiQuestionsRouteWithChildren
@@ -399,6 +412,13 @@ declare module '@tanstack/react-router' {
       path: '/api/attempts'
       fullPath: '/api/attempts'
       preLoaderRoute: typeof ApiAttemptsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/api/audit-log': {
+      id: '/api/audit-log'
+      path: '/api/audit-log'
+      fullPath: '/api/audit-log'
+      preLoaderRoute: typeof ApiAuditLogRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/api/blueprints': {
@@ -710,6 +730,7 @@ const ApiSyllabusChaptersRouteWithChildren =
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   ApiAttemptsRoute: ApiAttemptsRouteWithChildren,
+  ApiAuditLogRoute: ApiAuditLogRoute,
   ApiBlueprintsRoute: ApiBlueprintsRoute,
   ApiEvaluationsRoute: ApiEvaluationsRouteWithChildren,
   ApiQuestionsRoute: ApiQuestionsRouteWithChildren,

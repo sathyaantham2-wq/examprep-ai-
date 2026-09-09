@@ -4,6 +4,7 @@ import { createDb } from '../../../../../db/connection'
 import {
   studentsRepository,
   consentsRepository,
+  auditLogRepository,
 } from '../../../../../db/repositories'
 
 // F095: "withdrawal supported". Not in tab05's listed 38 routes (the sheet has no consent
@@ -44,6 +45,19 @@ export const Route = createFileRoute('/api/students/$id/consent/withdraw')({
             auth.householdId,
             active.id,
           )
+
+          // F099: consent withdrawal is exactly the kind of sensitive, privacy-relevant write
+          // the audit trail exists for.
+          await auditLogRepository.insert(db, {
+            household_id: auth.householdId,
+            actor_user_id: auth.id,
+            action: 'consent.withdrawn',
+            entity: 'consents',
+            entity_id: active.id,
+            before: JSON.stringify(active),
+            after: JSON.stringify(withdrawn),
+          })
+
           return Response.json(withdrawn)
         } finally {
           await db.destroy()

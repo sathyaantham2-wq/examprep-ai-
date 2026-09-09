@@ -2,7 +2,10 @@ import { createFileRoute } from '@tanstack/react-router'
 import { requireRole } from '../../../../lib/session'
 import { confirmEvaluation } from '../../../../lib/evaluation'
 import { createDb } from '../../../../db/connection'
-import { evaluationsRepository } from '../../../../db/repositories'
+import {
+  evaluationsRepository,
+  auditLogRepository,
+} from '../../../../db/repositories'
 
 export const Route = createFileRoute('/api/evaluations/$id/confirm')({
   server: {
@@ -27,6 +30,19 @@ export const Route = createFileRoute('/api/evaluations/$id/confirm')({
           }
 
           const updated = await confirmEvaluation(db, evaluation.id)
+
+          // F099: confirming an evaluation finalises marks that can no longer be overridden --
+          // exactly the "score" event the audit trail exists to trace.
+          await auditLogRepository.insert(db, {
+            household_id: auth.householdId,
+            actor_user_id: auth.id,
+            action: 'evaluation.confirmed',
+            entity: 'evaluations',
+            entity_id: evaluation.id,
+            before: JSON.stringify(evaluation),
+            after: JSON.stringify(updated),
+          })
+
           return Response.json(updated)
         } finally {
           await db.destroy()
