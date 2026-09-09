@@ -1,3 +1,4 @@
+import { z } from 'zod'
 import type { Db } from '../db/connection'
 import type {
   BloomLevel,
@@ -10,6 +11,89 @@ import {
   questionOptionsRepository,
   questionStepMarksRepository,
 } from '../db/repositories'
+
+const BLOOM_LEVELS = [
+  'Remember',
+  'Understand',
+  'Apply',
+  'Analyse',
+  'Evaluate',
+  'Create',
+] as const
+const DIFFICULTY_TIERS = ['Easy', 'Hard', 'Hardest'] as const
+const QUESTION_TYPES = [
+  'mcq',
+  'assertion_reason',
+  'match',
+  'multi_statement',
+  'short_answer',
+  'long_answer',
+  'fill_blank',
+  'diagram',
+] as const
+
+const optionSchema = z.object({
+  label: z.string().min(1),
+  text: z.string().min(1),
+  is_correct: z.boolean(),
+  order_index: z.number().int(),
+})
+
+const stepMarkSchema = z.object({
+  step_no: z.number().int().positive(),
+  description: z.string().min(1),
+  marks: z.number().int().positive(),
+})
+
+/**
+ * F020/F021's validation, shared by both a single POST /api/questions and each row of
+ * F022's bulk import -- one question is never valid by different rules depending on which route
+ * it arrived through.
+ */
+export const questionInputSchema = z
+  .object({
+    concept_id: z.string().uuid(),
+    board: z.string().min(1),
+    class: z.number().int().min(1).max(12),
+    bloom: z.enum(BLOOM_LEVELS),
+    difficulty: z.enum(DIFFICULTY_TIERS),
+    marks: z.number().int().positive(),
+    type: z.enum(QUESTION_TYPES),
+    text: z.string().min(1),
+    answer: z.string().min(1),
+    hint: z.string().min(1).optional(),
+    tags: z.array(z.string()).optional(),
+    diagram_kind: z.string().min(1).optional(),
+    diagram_params: z.unknown().optional(),
+    language: z.string().min(1).optional(),
+    source_ref: z.string().min(1).optional(),
+    options: z.array(optionSchema).optional(),
+    step_marks: z.array(stepMarkSchema).optional(),
+  })
+  .superRefine((data, ctx) => {
+    if (data.type === 'mcq') {
+      const correctCount = (data.options ?? []).filter(
+        (o) => o.is_correct,
+      ).length
+      if (correctCount !== 1) {
+        ctx.addIssue({
+          code: 'custom',
+          path: ['options'],
+          message: 'An mcq question must have exactly one correct option',
+        })
+      }
+    }
+    if (data.step_marks && data.step_marks.length > 0) {
+      const sum = data.step_marks.reduce((total, step) => total + step.marks, 0)
+      if (sum !== data.marks) {
+        ctx.addIssue({
+          code: 'custom',
+          path: ['step_marks'],
+          message: `Step marks sum to ${sum} but the question is worth ${data.marks}`,
+        })
+      }
+    }
+  })
 
 // Objective, deterministic-answer types — everything else is subjective by nature.
 const OBJECTIVE_TYPES = new Set<QuestionType>([
