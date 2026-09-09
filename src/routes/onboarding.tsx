@@ -21,6 +21,7 @@ interface Student {
   class: number
   board: string
   school: string | null
+  user_id: string | null
 }
 
 function Onboarding() {
@@ -34,6 +35,12 @@ function Onboarding() {
   const [consent, setConsent] = useState(false)
   const [error, setError] = useState<string | null>(null)
   const [submitting, setSubmitting] = useState(false)
+
+  const [loginFormFor, setLoginFormFor] = useState<string | null>(null)
+  const [loginEmail, setLoginEmail] = useState('')
+  const [loginPassword, setLoginPassword] = useState('')
+  const [loginError, setLoginError] = useState<string | null>(null)
+  const [loginSubmitting, setLoginSubmitting] = useState(false)
 
   const role = (session?.user as { role?: string } | undefined)?.role
 
@@ -83,6 +90,40 @@ function Onboarding() {
     }
   }
 
+  async function handleCreateLogin(e: React.FormEvent, studentId: string) {
+    e.preventDefault()
+    setLoginError(null)
+    setLoginSubmitting(true)
+    try {
+      const response = await fetch(`/api/students/${studentId}/login`, {
+        method: 'POST',
+        headers: { 'content-type': 'application/json' },
+        body: JSON.stringify({ email: loginEmail, password: loginPassword }),
+      })
+      if (!response.ok) {
+        const body = await response.json()
+        setLoginError(
+          body.error?.formErrors?.[0] ??
+            (typeof body.error === 'string' ? body.error : null) ??
+            'Could not create a login for this student.',
+        )
+        return
+      }
+      const createdUser: { id: string } = await response.json()
+      setStudents(
+        (prev) =>
+          prev?.map((s) =>
+            s.id === studentId ? { ...s, user_id: createdUser.id } : s,
+          ) ?? null,
+      )
+      setLoginFormFor(null)
+      setLoginEmail('')
+      setLoginPassword('')
+    } finally {
+      setLoginSubmitting(false)
+    }
+  }
+
   if (isPending || !session || role !== 'parent') {
     return <div className="p-8 text-body text-muted-foreground">Loading…</div>
   }
@@ -122,14 +163,70 @@ function Onboarding() {
         {students && students.length > 0 && (
           <CardContent className="space-y-3">
             {students.map((s) => (
-              <div
-                key={s.id}
-                className="text-body flex items-center justify-between rounded-md border px-3 py-2"
-              >
-                <span>{s.name}</span>
-                <span className="text-small text-muted-foreground">
-                  {s.board} · Class {s.class}
-                </span>
+              <div key={s.id} className="rounded-md border px-3 py-2">
+                <div className="text-body flex items-center justify-between">
+                  <span>{s.name}</span>
+                  <div className="flex items-center gap-3">
+                    <span className="text-small text-muted-foreground">
+                      {s.board} · Class {s.class}
+                    </span>
+                    {s.user_id ? (
+                      <span className="text-small text-muted-foreground">
+                        Login active
+                      </span>
+                    ) : (
+                      <Button
+                        type="button"
+                        variant="outline"
+                        size="sm"
+                        onClick={() => {
+                          setLoginFormFor(loginFormFor === s.id ? null : s.id)
+                          setLoginError(null)
+                        }}
+                      >
+                        {loginFormFor === s.id ? 'Cancel' : 'Create login'}
+                      </Button>
+                    )}
+                  </div>
+                </div>
+                {loginFormFor === s.id && (
+                  <form
+                    onSubmit={(e) => handleCreateLogin(e, s.id)}
+                    className="mt-3 space-y-3 border-t pt-3"
+                  >
+                    <div className="space-y-1.5">
+                      <Label htmlFor={`login-email-${s.id}`}>
+                        {s.name}'s email
+                      </Label>
+                      <Input
+                        id={`login-email-${s.id}`}
+                        type="email"
+                        value={loginEmail}
+                        onChange={(e) => setLoginEmail(e.target.value)}
+                        required
+                      />
+                    </div>
+                    <div className="space-y-1.5">
+                      <Label htmlFor={`login-password-${s.id}`}>Password</Label>
+                      <Input
+                        id={`login-password-${s.id}`}
+                        type="password"
+                        value={loginPassword}
+                        onChange={(e) => setLoginPassword(e.target.value)}
+                        required
+                        minLength={8}
+                      />
+                    </div>
+                    {loginError && (
+                      <p className="text-small text-destructive" role="alert">
+                        {loginError}
+                      </p>
+                    )}
+                    <Button type="submit" size="sm" disabled={loginSubmitting}>
+                      {loginSubmitting ? 'Creating…' : 'Create login'}
+                    </Button>
+                  </form>
+                )}
               </div>
             ))}
             <a

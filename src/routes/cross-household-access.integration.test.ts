@@ -7,6 +7,7 @@ import { createParentSession, createStudentSession } from '../db/test-helpers'
 import type { TestSession } from '../db/test-helpers'
 import { Route as StudentsRoute } from './api/students'
 import { Route as StudentByIdRoute } from './api/students/$id'
+import { Route as StudentLoginRoute } from './api/students/$id/login'
 import { Route as GenerateRoute } from './api/papers/generate'
 import { Route as PaperByIdRoute } from './api/papers/$id'
 import { Route as TrackerRoute } from './api/tracker/$studentId'
@@ -300,6 +301,20 @@ describe('cross-household access is denied on every route it was checked against
       'PATCH',
     )({
       request: request(parentB.cookie, { section: 'Z' }),
+      params: { id: studentAId },
+    })
+    expect(response.status).toBe(404)
+  })
+
+  it('POST /api/students/:id/login for another household’s student -> 404', async () => {
+    const response = await handlerFor(
+      StudentLoginRoute,
+      'POST',
+    )({
+      request: request(parentB.cookie, {
+        email: `f096-login-attempt-${Date.now()}@example.com`,
+        password: 'correcthorsebatterystaple',
+      }),
       params: { id: studentAId },
     })
     expect(response.status).toBe(404)
