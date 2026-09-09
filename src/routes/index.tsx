@@ -11,7 +11,7 @@ import {
 import { Input } from '../components/ui/input'
 import { Label } from '../components/ui/label'
 import { ThemeToggle } from '../components/theme-toggle'
-import { signIn, signUp, useSession } from '../lib/auth-client'
+import { signIn, signOut, signUp, useSession } from '../lib/auth-client'
 
 export const Route = createFileRoute('/')({ component: Home })
 
@@ -28,8 +28,36 @@ function Home() {
   const [submitting, setSubmitting] = useState(false)
   const [signedUp, setSignedUp] = useState(false)
 
-  if (!isPending && session) {
+  const role = (session?.user as { role?: string } | undefined)?.role
+
+  // Only the parent role has a home to land on (/onboarding). A student or admin session has no
+  // screen to redirect into yet -- bouncing them to /onboarding would immediately bounce back
+  // here (it redirects anyone who isn't 'parent'), so this renders a plain signed-in notice
+  // instead of looping.
+  if (!isPending && session && role === 'parent') {
     navigate({ to: '/onboarding' })
+  }
+
+  if (!isPending && session && role !== 'parent') {
+    return (
+      <div className="flex min-h-screen items-center justify-center p-8">
+        <Card className="w-full max-w-sm">
+          <CardHeader>
+            <CardTitle className="text-h3">Signed in</CardTitle>
+            <CardDescription>
+              Signed in as {session.user.name} ({role}). There's no home screen
+              for this role yet -- a direct link (e.g. to /attempt/:id) is the
+              only way in for now.
+            </CardDescription>
+          </CardHeader>
+          <CardContent>
+            <Button variant="outline" onClick={() => signOut()}>
+              Sign out
+            </Button>
+          </CardContent>
+        </Card>
+      </div>
+    )
   }
 
   async function handleSubmit(e: React.FormEvent) {
@@ -43,7 +71,12 @@ function Home() {
           setError(result.error.message ?? 'Sign in failed')
           return
         }
-        navigate({ to: '/onboarding' })
+        const signedInRole = (result.data.user as { role?: string }).role
+        if (signedInRole === 'parent') {
+          navigate({ to: '/onboarding' })
+        }
+        // Any other role has no home screen yet -- staying on `/` is what shows the
+        // "Signed in" notice above once useSession() picks up the new session.
       } else {
         const result = await signUp.email({ name, email, password })
         if (result.error) {

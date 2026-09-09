@@ -18,6 +18,8 @@ import { Route as ApiBlueprintsRouteImport } from './routes/api/blueprints'
 import { Route as ApiEvaluationsRouteImport } from './routes/api/evaluations'
 import { Route as ApiQuestionsRouteImport } from './routes/api/questions'
 import { Route as ApiStudentsRouteImport } from './routes/api/students'
+import { Route as AttemptIdRouteImport } from './routes/attempt/$id'
+import { Route as ApiAttemptsIdRouteImport } from './routes/api/attempts/$id'
 import { Route as ApiAuthSplatRouteImport } from './routes/api/auth/$'
 import { Route as ApiDashboardStudentIdRouteImport } from './routes/api/dashboard/$studentId'
 import { Route as ApiPapersIdRouteImport } from './routes/api/papers/$id'
@@ -91,6 +93,16 @@ const ApiStudentsRoute = ApiStudentsRouteImport.update({
   path: '/api/students',
   getParentRoute: () => rootRouteImport,
 } as any)
+const AttemptIdRoute = AttemptIdRouteImport.update({
+  id: '/attempt/$id',
+  path: '/attempt/$id',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ApiAttemptsIdRoute = ApiAttemptsIdRouteImport.update({
+  id: '/$id',
+  path: '/$id',
+  getParentRoute: () => ApiAttemptsRoute,
+} as any)
 const ApiAuthSplatRoute = ApiAuthSplatRouteImport.update({
   id: '/api/auth/$',
   path: '/api/auth/$',
@@ -148,14 +160,14 @@ const ApiTrackerStudentIdRoute = ApiTrackerStudentIdRouteImport.update({
   getParentRoute: () => rootRouteImport,
 } as any)
 const ApiAttemptsIdAnswerRoute = ApiAttemptsIdAnswerRouteImport.update({
-  id: '/$id/answer',
-  path: '/$id/answer',
-  getParentRoute: () => ApiAttemptsRoute,
+  id: '/answer',
+  path: '/answer',
+  getParentRoute: () => ApiAttemptsIdRoute,
 } as any)
 const ApiAttemptsIdSubmitRoute = ApiAttemptsIdSubmitRouteImport.update({
-  id: '/$id/submit',
-  path: '/$id/submit',
-  getParentRoute: () => ApiAttemptsRoute,
+  id: '/submit',
+  path: '/submit',
+  getParentRoute: () => ApiAttemptsIdRoute,
 } as any)
 const ApiEvaluationsIdConfirmRoute = ApiEvaluationsIdConfirmRouteImport.update({
   id: '/$id/confirm',
@@ -244,6 +256,8 @@ export interface FileRoutesByFullPath {
   '/api/evaluations': typeof ApiEvaluationsRouteWithChildren
   '/api/questions': typeof ApiQuestionsRouteWithChildren
   '/api/students': typeof ApiStudentsRouteWithChildren
+  '/attempt/$id': typeof AttemptIdRoute
+  '/api/attempts/$id': typeof ApiAttemptsIdRouteWithChildren
   '/api/auth/$': typeof ApiAuthSplatRoute
   '/api/dashboard/$studentId': typeof ApiDashboardStudentIdRoute
   '/api/papers/$id': typeof ApiPapersIdRouteWithChildren
@@ -282,6 +296,8 @@ export interface FileRoutesByTo {
   '/api/evaluations': typeof ApiEvaluationsRouteWithChildren
   '/api/questions': typeof ApiQuestionsRouteWithChildren
   '/api/students': typeof ApiStudentsRouteWithChildren
+  '/attempt/$id': typeof AttemptIdRoute
+  '/api/attempts/$id': typeof ApiAttemptsIdRouteWithChildren
   '/api/auth/$': typeof ApiAuthSplatRoute
   '/api/dashboard/$studentId': typeof ApiDashboardStudentIdRoute
   '/api/papers/$id': typeof ApiPapersIdRouteWithChildren
@@ -321,6 +337,8 @@ export interface FileRoutesById {
   '/api/evaluations': typeof ApiEvaluationsRouteWithChildren
   '/api/questions': typeof ApiQuestionsRouteWithChildren
   '/api/students': typeof ApiStudentsRouteWithChildren
+  '/attempt/$id': typeof AttemptIdRoute
+  '/api/attempts/$id': typeof ApiAttemptsIdRouteWithChildren
   '/api/auth/$': typeof ApiAuthSplatRoute
   '/api/dashboard/$studentId': typeof ApiDashboardStudentIdRoute
   '/api/papers/$id': typeof ApiPapersIdRouteWithChildren
@@ -361,6 +379,8 @@ export interface FileRouteTypes {
     | '/api/evaluations'
     | '/api/questions'
     | '/api/students'
+    | '/attempt/$id'
+    | '/api/attempts/$id'
     | '/api/auth/$'
     | '/api/dashboard/$studentId'
     | '/api/papers/$id'
@@ -399,6 +419,8 @@ export interface FileRouteTypes {
     | '/api/evaluations'
     | '/api/questions'
     | '/api/students'
+    | '/attempt/$id'
+    | '/api/attempts/$id'
     | '/api/auth/$'
     | '/api/dashboard/$studentId'
     | '/api/papers/$id'
@@ -437,6 +459,8 @@ export interface FileRouteTypes {
     | '/api/evaluations'
     | '/api/questions'
     | '/api/students'
+    | '/attempt/$id'
+    | '/api/attempts/$id'
     | '/api/auth/$'
     | '/api/dashboard/$studentId'
     | '/api/papers/$id'
@@ -476,6 +500,7 @@ export interface RootRouteChildren {
   ApiEvaluationsRoute: typeof ApiEvaluationsRouteWithChildren
   ApiQuestionsRoute: typeof ApiQuestionsRouteWithChildren
   ApiStudentsRoute: typeof ApiStudentsRouteWithChildren
+  AttemptIdRoute: typeof AttemptIdRoute
   ApiAuthSplatRoute: typeof ApiAuthSplatRoute
   ApiDashboardStudentIdRoute: typeof ApiDashboardStudentIdRoute
   ApiPapersIdRoute: typeof ApiPapersIdRouteWithChildren
@@ -549,6 +574,20 @@ declare module '@tanstack/react-router' {
       fullPath: '/api/students'
       preLoaderRoute: typeof ApiStudentsRouteImport
       parentRoute: typeof rootRouteImport
+    }
+    '/attempt/$id': {
+      id: '/attempt/$id'
+      path: '/attempt/$id'
+      fullPath: '/attempt/$id'
+      preLoaderRoute: typeof AttemptIdRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/api/attempts/$id': {
+      id: '/api/attempts/$id'
+      path: '/$id'
+      fullPath: '/api/attempts/$id'
+      preLoaderRoute: typeof ApiAttemptsIdRouteImport
+      parentRoute: typeof ApiAttemptsRoute
     }
     '/api/auth/$': {
       id: '/api/auth/$'
@@ -629,17 +668,17 @@ declare module '@tanstack/react-router' {
     }
     '/api/attempts/$id/answer': {
       id: '/api/attempts/$id/answer'
-      path: '/$id/answer'
+      path: '/answer'
       fullPath: '/api/attempts/$id/answer'
       preLoaderRoute: typeof ApiAttemptsIdAnswerRouteImport
-      parentRoute: typeof ApiAttemptsRoute
+      parentRoute: typeof ApiAttemptsIdRoute
     }
     '/api/attempts/$id/submit': {
       id: '/api/attempts/$id/submit'
-      path: '/$id/submit'
+      path: '/submit'
       fullPath: '/api/attempts/$id/submit'
       preLoaderRoute: typeof ApiAttemptsIdSubmitRouteImport
-      parentRoute: typeof ApiAttemptsRoute
+      parentRoute: typeof ApiAttemptsIdRoute
     }
     '/api/evaluations/$id/confirm': {
       id: '/api/evaluations/$id/confirm'
@@ -742,14 +781,26 @@ declare module '@tanstack/react-router' {
   }
 }
 
-interface ApiAttemptsRouteChildren {
+interface ApiAttemptsIdRouteChildren {
   ApiAttemptsIdAnswerRoute: typeof ApiAttemptsIdAnswerRoute
   ApiAttemptsIdSubmitRoute: typeof ApiAttemptsIdSubmitRoute
 }
 
-const ApiAttemptsRouteChildren: ApiAttemptsRouteChildren = {
+const ApiAttemptsIdRouteChildren: ApiAttemptsIdRouteChildren = {
   ApiAttemptsIdAnswerRoute: ApiAttemptsIdAnswerRoute,
   ApiAttemptsIdSubmitRoute: ApiAttemptsIdSubmitRoute,
+}
+
+const ApiAttemptsIdRouteWithChildren = ApiAttemptsIdRoute._addFileChildren(
+  ApiAttemptsIdRouteChildren,
+)
+
+interface ApiAttemptsRouteChildren {
+  ApiAttemptsIdRoute: typeof ApiAttemptsIdRouteWithChildren
+}
+
+const ApiAttemptsRouteChildren: ApiAttemptsRouteChildren = {
+  ApiAttemptsIdRoute: ApiAttemptsIdRouteWithChildren,
 }
 
 const ApiAttemptsRouteWithChildren = ApiAttemptsRoute._addFileChildren(
@@ -883,6 +934,7 @@ const rootRouteChildren: RootRouteChildren = {
   ApiEvaluationsRoute: ApiEvaluationsRouteWithChildren,
   ApiQuestionsRoute: ApiQuestionsRouteWithChildren,
   ApiStudentsRoute: ApiStudentsRouteWithChildren,
+  AttemptIdRoute: AttemptIdRoute,
   ApiAuthSplatRoute: ApiAuthSplatRoute,
   ApiDashboardStudentIdRoute: ApiDashboardStudentIdRoute,
   ApiPapersIdRoute: ApiPapersIdRouteWithChildren,
