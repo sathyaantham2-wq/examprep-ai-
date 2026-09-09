@@ -10,6 +10,7 @@
 
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as GenerateRouteImport } from './routes/generate'
 import { Route as OnboardingRouteImport } from './routes/onboarding'
 import { Route as ApiAttemptsRouteImport } from './routes/api/attempts'
 import { Route as ApiAuditLogRouteImport } from './routes/api/audit-log'
@@ -47,6 +48,11 @@ import { Route as ApiSyllabusChaptersIdScopeRouteImport } from './routes/api/syl
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const GenerateRoute = GenerateRouteImport.update({
+  id: '/generate',
+  path: '/generate',
   getParentRoute: () => rootRouteImport,
 } as any)
 const OnboardingRoute = OnboardingRouteImport.update({
@@ -224,6 +230,7 @@ const ApiSyllabusChaptersIdScopeRoute =
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/generate': typeof GenerateRoute
   '/onboarding': typeof OnboardingRoute
   '/api/attempts': typeof ApiAttemptsRouteWithChildren
   '/api/audit-log': typeof ApiAuditLogRoute
@@ -260,6 +267,7 @@ export interface FileRoutesByFullPath {
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/generate': typeof GenerateRoute
   '/onboarding': typeof OnboardingRoute
   '/api/attempts': typeof ApiAttemptsRouteWithChildren
   '/api/audit-log': typeof ApiAuditLogRoute
@@ -297,6 +305,7 @@ export interface FileRoutesByTo {
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/generate': typeof GenerateRoute
   '/onboarding': typeof OnboardingRoute
   '/api/attempts': typeof ApiAttemptsRouteWithChildren
   '/api/audit-log': typeof ApiAuditLogRoute
@@ -335,6 +344,7 @@ export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
   fullPaths:
     | '/'
+    | '/generate'
     | '/onboarding'
     | '/api/attempts'
     | '/api/audit-log'
@@ -371,6 +381,7 @@ export interface FileRouteTypes {
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/'
+    | '/generate'
     | '/onboarding'
     | '/api/attempts'
     | '/api/audit-log'
@@ -407,6 +418,7 @@ export interface FileRouteTypes {
   id:
     | '__root__'
     | '/'
+    | '/generate'
     | '/onboarding'
     | '/api/attempts'
     | '/api/audit-log'
@@ -444,6 +456,7 @@ export interface FileRouteTypes {
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  GenerateRoute: typeof GenerateRoute
   OnboardingRoute: typeof OnboardingRoute
   ApiAttemptsRoute: typeof ApiAttemptsRouteWithChildren
   ApiAuditLogRoute: typeof ApiAuditLogRoute
@@ -467,6 +480,13 @@ declare module '@tanstack/react-router' {
       path: '/'
       fullPath: '/'
       preLoaderRoute: typeof IndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/generate': {
+      id: '/generate'
+      path: '/generate'
+      fullPath: '/generate'
+      preLoaderRoute: typeof GenerateRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/onboarding': {
@@ -834,6 +854,7 @@ const ApiSyllabusChaptersRouteWithChildren =
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  GenerateRoute: GenerateRoute,
   OnboardingRoute: OnboardingRoute,
   ApiAttemptsRoute: ApiAttemptsRouteWithChildren,
   ApiAuditLogRoute: ApiAuditLogRoute,

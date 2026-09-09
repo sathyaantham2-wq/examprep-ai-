@@ -120,7 +120,7 @@ function Onboarding() {
           </CardDescription>
         </CardHeader>
         {students && students.length > 0 && (
-          <CardContent className="space-y-2">
+          <CardContent className="space-y-3">
             {students.map((s) => (
               <div
                 key={s.id}
@@ -132,6 +132,12 @@ function Onboarding() {
                 </span>
               </div>
             ))}
+            <a
+              href="/generate"
+              className="text-small text-primary underline-offset-4 hover:underline"
+            >
+              Generate a paper →
+            </a>
           </CardContent>
         )}
       </Card>
