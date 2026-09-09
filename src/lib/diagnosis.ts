@@ -200,6 +200,20 @@ export async function buildDiagnosisReport(db: Db, evaluationId: string) {
     ? `This week, have your child redo a short practice set on ${ranked[0].concept_name}.`
     : 'No priority or weak concepts flagged right now — keep up the current pace.'
 
+  // F058: one rating per habit that was actually recorded for this evaluation via
+  // PATCH /api/evaluations/:id/habits -- empty until a reviewer rates any, same as
+  // error_inventory/pattern_hits above depend on a human having reviewed the paper.
+  const habitRows = await db
+    .selectFrom('habit_observations')
+    .innerJoin('habits', 'habits.id', 'habit_observations.habit_id')
+    .select([
+      'habits.code as habit_code',
+      'habits.name as habit_name',
+      'habit_observations.rating',
+    ])
+    .where('habit_observations.evaluation_id', '=', evaluationId)
+    .execute()
+
   return {
     meta: {
       paper_title: paper.title,
@@ -222,7 +236,11 @@ export async function buildDiagnosisReport(db: Db, evaluationId: string) {
       pattern_name: v.name,
       count: v.count,
     })),
-    habit_status: [], // F058 (habit tracker) is not built
+    habit_status: habitRows.map((row) => ({
+      habit_code: row.habit_code,
+      habit_name: row.habit_name,
+      rating: row.rating,
+    })),
     actions: {
       ranked,
       parent_action: parentAction,

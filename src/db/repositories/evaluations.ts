@@ -1,6 +1,7 @@
 import type { Insertable, Selectable } from 'kysely'
 import type { Db } from '../connection'
 import type { DB } from '../types'
+import type { HabitRating } from '../enums'
 import { createRepository } from './factory'
 
 // Neither evaluations nor evaluation_items has a direct student_id/household_id column —
@@ -81,5 +82,68 @@ export const patternHitsRepository = {
 }
 
 export const habitsRepository = createRepository('habits')
-export const habitObservationsRepository =
-  createRepository('habit_observations')
+
+export const habitObservationsRepository = {
+  ...createRepository('habit_observations'),
+  async listForEvaluation(db: Db, evaluationId: string) {
+    return db
+      .selectFrom('habit_observations')
+      .selectAll()
+      .where('evaluation_id', '=', evaluationId)
+      .execute() as Promise<Array<Selectable<DB['habit_observations']>>>
+  },
+  // F058: "each habit rated present/partial/absent per paper" -- one rating per (evaluation,
+  // habit), so a full replace on every call (rather than an additive insert) keeps re-submitting
+  // the same PATCH idempotent, the same pattern replaceForItem already uses for pattern_hits.
+  async replaceForEvaluation(
+    db: Db,
+    evaluationId: string,
+    observations: Array<{
+      habit_id: string
+      rating: HabitRating
+      evidence_note?: string
+    }>,
+  ) {
+    await db
+      .deleteFrom('habit_observations')
+      .where('evaluation_id', '=', evaluationId)
+      .execute()
+    if (observations.length === 0) return []
+    return db
+      .insertInto('habit_observations')
+      .values(
+        observations.map((o) => ({
+          evaluation_id: evaluationId,
+          habit_id: o.habit_id,
+          rating: o.rating,
+          evidence_note: o.evidence_note,
+        })),
+      )
+      .returningAll()
+      .execute() as Promise<Array<Selectable<DB['habit_observations']>>>
+  },
+  // F058: "a trend line" -- every rating this student has ever received for each habit, oldest
+  // first, across all of their confirmed evaluations (not just one paper).
+  async trendForStudent(db: Db, studentId: string) {
+    return db
+      .selectFrom('habit_observations')
+      .innerJoin(
+        'evaluations',
+        'evaluations.id',
+        'habit_observations.evaluation_id',
+      )
+      .innerJoin('attempts', 'attempts.id', 'evaluations.attempt_id')
+      .innerJoin('habits', 'habits.id', 'habit_observations.habit_id')
+      .select([
+        'habits.id as habit_id',
+        'habits.code as habit_code',
+        'habits.name as habit_name',
+        'habit_observations.rating',
+        'evaluations.confirmed_at',
+      ])
+      .where('attempts.student_id', '=', studentId)
+      .where('evaluations.confirmed_at', 'is not', null)
+      .orderBy('evaluations.confirmed_at', 'asc')
+      .execute()
+  },
+}

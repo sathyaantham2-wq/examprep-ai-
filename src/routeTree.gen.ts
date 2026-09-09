@@ -30,6 +30,7 @@ import { Route as ApiTrackerStudentIdRouteImport } from './routes/api/tracker/$s
 import { Route as ApiAttemptsIdAnswerRouteImport } from './routes/api/attempts/$id/answer'
 import { Route as ApiAttemptsIdSubmitRouteImport } from './routes/api/attempts/$id/submit'
 import { Route as ApiEvaluationsIdConfirmRouteImport } from './routes/api/evaluations/$id/confirm'
+import { Route as ApiEvaluationsIdHabitsRouteImport } from './routes/api/evaluations/$id/habits'
 import { Route as ApiEvaluationsIdReportRouteImport } from './routes/api/evaluations/$id/report'
 import { Route as ApiPapersIdCoverageRouteImport } from './routes/api/papers/$id/coverage'
 import { Route as ApiPapersIdPdfRouteImport } from './routes/api/papers/$id/pdf'
@@ -39,6 +40,7 @@ import { Route as ApiQuestionsIdStatsRouteImport } from './routes/api/questions/
 import { Route as ApiEvaluationsIdItemsItemIdRouteImport } from './routes/api/evaluations/$id/items/$itemId'
 import { Route as ApiEvaluationsIdReportPdfRouteImport } from './routes/api/evaluations/$id/report/pdf'
 import { Route as ApiStudentsIdConsentWithdrawRouteImport } from './routes/api/students/$id/consent/withdraw'
+import { Route as ApiStudentsIdHabitsTrendRouteImport } from './routes/api/students/$id/habits/trend'
 import { Route as ApiSyllabusChaptersIdScopeRouteImport } from './routes/api/syllabus/chapters/$id/scope'
 
 const IndexRoute = IndexRouteImport.update({
@@ -147,6 +149,11 @@ const ApiEvaluationsIdConfirmRoute = ApiEvaluationsIdConfirmRouteImport.update({
   path: '/$id/confirm',
   getParentRoute: () => ApiEvaluationsRoute,
 } as any)
+const ApiEvaluationsIdHabitsRoute = ApiEvaluationsIdHabitsRouteImport.update({
+  id: '/$id/habits',
+  path: '/$id/habits',
+  getParentRoute: () => ApiEvaluationsRoute,
+} as any)
 const ApiEvaluationsIdReportRoute = ApiEvaluationsIdReportRouteImport.update({
   id: '/$id/report',
   path: '/$id/report',
@@ -196,6 +203,12 @@ const ApiStudentsIdConsentWithdrawRoute =
     path: '/consent/withdraw',
     getParentRoute: () => ApiStudentsIdRoute,
   } as any)
+const ApiStudentsIdHabitsTrendRoute =
+  ApiStudentsIdHabitsTrendRouteImport.update({
+    id: '/habits/trend',
+    path: '/habits/trend',
+    getParentRoute: () => ApiStudentsIdRoute,
+  } as any)
 const ApiSyllabusChaptersIdScopeRoute =
   ApiSyllabusChaptersIdScopeRouteImport.update({
     id: '/$id/scope',
@@ -225,6 +238,7 @@ export interface FileRoutesByFullPath {
   '/api/attempts/$id/answer': typeof ApiAttemptsIdAnswerRoute
   '/api/attempts/$id/submit': typeof ApiAttemptsIdSubmitRoute
   '/api/evaluations/$id/confirm': typeof ApiEvaluationsIdConfirmRoute
+  '/api/evaluations/$id/habits': typeof ApiEvaluationsIdHabitsRoute
   '/api/evaluations/$id/report': typeof ApiEvaluationsIdReportRouteWithChildren
   '/api/papers/$id/coverage': typeof ApiPapersIdCoverageRoute
   '/api/papers/$id/pdf': typeof ApiPapersIdPdfRoute
@@ -234,6 +248,7 @@ export interface FileRoutesByFullPath {
   '/api/evaluations/$id/items/$itemId': typeof ApiEvaluationsIdItemsItemIdRoute
   '/api/evaluations/$id/report/pdf': typeof ApiEvaluationsIdReportPdfRoute
   '/api/students/$id/consent/withdraw': typeof ApiStudentsIdConsentWithdrawRoute
+  '/api/students/$id/habits/trend': typeof ApiStudentsIdHabitsTrendRoute
   '/api/syllabus/chapters/$id/scope': typeof ApiSyllabusChaptersIdScopeRoute
 }
 export interface FileRoutesByTo {
@@ -258,6 +273,7 @@ export interface FileRoutesByTo {
   '/api/attempts/$id/answer': typeof ApiAttemptsIdAnswerRoute
   '/api/attempts/$id/submit': typeof ApiAttemptsIdSubmitRoute
   '/api/evaluations/$id/confirm': typeof ApiEvaluationsIdConfirmRoute
+  '/api/evaluations/$id/habits': typeof ApiEvaluationsIdHabitsRoute
   '/api/evaluations/$id/report': typeof ApiEvaluationsIdReportRouteWithChildren
   '/api/papers/$id/coverage': typeof ApiPapersIdCoverageRoute
   '/api/papers/$id/pdf': typeof ApiPapersIdPdfRoute
@@ -267,6 +283,7 @@ export interface FileRoutesByTo {
   '/api/evaluations/$id/items/$itemId': typeof ApiEvaluationsIdItemsItemIdRoute
   '/api/evaluations/$id/report/pdf': typeof ApiEvaluationsIdReportPdfRoute
   '/api/students/$id/consent/withdraw': typeof ApiStudentsIdConsentWithdrawRoute
+  '/api/students/$id/habits/trend': typeof ApiStudentsIdHabitsTrendRoute
   '/api/syllabus/chapters/$id/scope': typeof ApiSyllabusChaptersIdScopeRoute
 }
 export interface FileRoutesById {
@@ -292,6 +309,7 @@ export interface FileRoutesById {
   '/api/attempts/$id/answer': typeof ApiAttemptsIdAnswerRoute
   '/api/attempts/$id/submit': typeof ApiAttemptsIdSubmitRoute
   '/api/evaluations/$id/confirm': typeof ApiEvaluationsIdConfirmRoute
+  '/api/evaluations/$id/habits': typeof ApiEvaluationsIdHabitsRoute
   '/api/evaluations/$id/report': typeof ApiEvaluationsIdReportRouteWithChildren
   '/api/papers/$id/coverage': typeof ApiPapersIdCoverageRoute
   '/api/papers/$id/pdf': typeof ApiPapersIdPdfRoute
@@ -301,6 +319,7 @@ export interface FileRoutesById {
   '/api/evaluations/$id/items/$itemId': typeof ApiEvaluationsIdItemsItemIdRoute
   '/api/evaluations/$id/report/pdf': typeof ApiEvaluationsIdReportPdfRoute
   '/api/students/$id/consent/withdraw': typeof ApiStudentsIdConsentWithdrawRoute
+  '/api/students/$id/habits/trend': typeof ApiStudentsIdHabitsTrendRoute
   '/api/syllabus/chapters/$id/scope': typeof ApiSyllabusChaptersIdScopeRoute
 }
 export interface FileRouteTypes {
@@ -327,6 +346,7 @@ export interface FileRouteTypes {
     | '/api/attempts/$id/answer'
     | '/api/attempts/$id/submit'
     | '/api/evaluations/$id/confirm'
+    | '/api/evaluations/$id/habits'
     | '/api/evaluations/$id/report'
     | '/api/papers/$id/coverage'
     | '/api/papers/$id/pdf'
@@ -336,6 +356,7 @@ export interface FileRouteTypes {
     | '/api/evaluations/$id/items/$itemId'
     | '/api/evaluations/$id/report/pdf'
     | '/api/students/$id/consent/withdraw'
+    | '/api/students/$id/habits/trend'
     | '/api/syllabus/chapters/$id/scope'
   fileRoutesByTo: FileRoutesByTo
   to:
@@ -360,6 +381,7 @@ export interface FileRouteTypes {
     | '/api/attempts/$id/answer'
     | '/api/attempts/$id/submit'
     | '/api/evaluations/$id/confirm'
+    | '/api/evaluations/$id/habits'
     | '/api/evaluations/$id/report'
     | '/api/papers/$id/coverage'
     | '/api/papers/$id/pdf'
@@ -369,6 +391,7 @@ export interface FileRouteTypes {
     | '/api/evaluations/$id/items/$itemId'
     | '/api/evaluations/$id/report/pdf'
     | '/api/students/$id/consent/withdraw'
+    | '/api/students/$id/habits/trend'
     | '/api/syllabus/chapters/$id/scope'
   id:
     | '__root__'
@@ -393,6 +416,7 @@ export interface FileRouteTypes {
     | '/api/attempts/$id/answer'
     | '/api/attempts/$id/submit'
     | '/api/evaluations/$id/confirm'
+    | '/api/evaluations/$id/habits'
     | '/api/evaluations/$id/report'
     | '/api/papers/$id/coverage'
     | '/api/papers/$id/pdf'
@@ -402,6 +426,7 @@ export interface FileRouteTypes {
     | '/api/evaluations/$id/items/$itemId'
     | '/api/evaluations/$id/report/pdf'
     | '/api/students/$id/consent/withdraw'
+    | '/api/students/$id/habits/trend'
     | '/api/syllabus/chapters/$id/scope'
   fileRoutesById: FileRoutesById
 }
@@ -571,6 +596,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ApiEvaluationsIdConfirmRouteImport
       parentRoute: typeof ApiEvaluationsRoute
     }
+    '/api/evaluations/$id/habits': {
+      id: '/api/evaluations/$id/habits'
+      path: '/$id/habits'
+      fullPath: '/api/evaluations/$id/habits'
+      preLoaderRoute: typeof ApiEvaluationsIdHabitsRouteImport
+      parentRoute: typeof ApiEvaluationsRoute
+    }
     '/api/evaluations/$id/report': {
       id: '/api/evaluations/$id/report'
       path: '/$id/report'
@@ -634,6 +666,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ApiStudentsIdConsentWithdrawRouteImport
       parentRoute: typeof ApiStudentsIdRoute
     }
+    '/api/students/$id/habits/trend': {
+      id: '/api/students/$id/habits/trend'
+      path: '/habits/trend'
+      fullPath: '/api/students/$id/habits/trend'
+      preLoaderRoute: typeof ApiStudentsIdHabitsTrendRouteImport
+      parentRoute: typeof ApiStudentsIdRoute
+    }
     '/api/syllabus/chapters/$id/scope': {
       id: '/api/syllabus/chapters/$id/scope'
       path: '/$id/scope'
@@ -674,12 +713,14 @@ const ApiEvaluationsIdReportRouteWithChildren =
 
 interface ApiEvaluationsRouteChildren {
   ApiEvaluationsIdConfirmRoute: typeof ApiEvaluationsIdConfirmRoute
+  ApiEvaluationsIdHabitsRoute: typeof ApiEvaluationsIdHabitsRoute
   ApiEvaluationsIdReportRoute: typeof ApiEvaluationsIdReportRouteWithChildren
   ApiEvaluationsIdItemsItemIdRoute: typeof ApiEvaluationsIdItemsItemIdRoute
 }
 
 const ApiEvaluationsRouteChildren: ApiEvaluationsRouteChildren = {
   ApiEvaluationsIdConfirmRoute: ApiEvaluationsIdConfirmRoute,
+  ApiEvaluationsIdHabitsRoute: ApiEvaluationsIdHabitsRoute,
   ApiEvaluationsIdReportRoute: ApiEvaluationsIdReportRouteWithChildren,
   ApiEvaluationsIdItemsItemIdRoute: ApiEvaluationsIdItemsItemIdRoute,
 }
@@ -720,10 +761,12 @@ const ApiQuestionsRouteWithChildren = ApiQuestionsRoute._addFileChildren(
 
 interface ApiStudentsIdRouteChildren {
   ApiStudentsIdConsentWithdrawRoute: typeof ApiStudentsIdConsentWithdrawRoute
+  ApiStudentsIdHabitsTrendRoute: typeof ApiStudentsIdHabitsTrendRoute
 }
 
 const ApiStudentsIdRouteChildren: ApiStudentsIdRouteChildren = {
   ApiStudentsIdConsentWithdrawRoute: ApiStudentsIdConsentWithdrawRoute,
+  ApiStudentsIdHabitsTrendRoute: ApiStudentsIdHabitsTrendRoute,
 }
 
 const ApiStudentsIdRouteWithChildren = ApiStudentsIdRoute._addFileChildren(
