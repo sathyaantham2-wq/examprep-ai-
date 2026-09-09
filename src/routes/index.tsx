@@ -1,4 +1,5 @@
-import { createFileRoute } from '@tanstack/react-router'
+import { useState } from 'react'
+import { createFileRoute, useNavigate } from '@tanstack/react-router'
 import { Button } from '../components/ui/button'
 import {
   Card,
@@ -7,39 +8,179 @@ import {
   CardHeader,
   CardTitle,
 } from '../components/ui/card'
+import { Input } from '../components/ui/input'
+import { Label } from '../components/ui/label'
 import { ThemeToggle } from '../components/theme-toggle'
+import { signIn, signUp, useSession } from '../lib/auth-client'
 
 export const Route = createFileRoute('/')({ component: Home })
 
-function Home() {
-  return (
-    <div className="p-8">
-      <div className="mb-6 flex items-center justify-between">
-        <h1 className="text-display">ExamPrep AI</h1>
-        <div className="no-print">
-          <ThemeToggle />
-        </div>
-      </div>
-      <p className="text-body text-muted-foreground">
-        Scaffold running. Screens land feature by feature — see{' '}
-        <code>docs/ExamPrep_AI_Module_Development_Plan.xlsx</code>.
-      </p>
+type Mode = 'sign-in' | 'sign-up'
 
-      <Card className="mt-8 max-w-md">
-        <CardHeader>
-          <CardTitle className="text-h3">Design system (F005)</CardTitle>
-          <CardDescription>
-            shadcn/ui tokens, light/dark, type scale and a print stylesheet —
-            defined once here for every screen to reuse.
-          </CardDescription>
-        </CardHeader>
-        <CardContent className="flex flex-wrap gap-2">
-          <Button>Primary</Button>
-          <Button variant="secondary">Secondary</Button>
-          <Button variant="outline">Outline</Button>
-          <Button variant="destructive">Destructive</Button>
-        </CardContent>
-      </Card>
+function Home() {
+  const { data: session, isPending } = useSession()
+  const navigate = useNavigate()
+  const [mode, setMode] = useState<Mode>('sign-in')
+  const [name, setName] = useState('')
+  const [email, setEmail] = useState('')
+  const [password, setPassword] = useState('')
+  const [error, setError] = useState<string | null>(null)
+  const [submitting, setSubmitting] = useState(false)
+  const [signedUp, setSignedUp] = useState(false)
+
+  if (!isPending && session) {
+    navigate({ to: '/onboarding' })
+  }
+
+  async function handleSubmit(e: React.FormEvent) {
+    e.preventDefault()
+    setError(null)
+    setSubmitting(true)
+    try {
+      if (mode === 'sign-in') {
+        const result = await signIn.email({ email, password })
+        if (result.error) {
+          setError(result.error.message ?? 'Sign in failed')
+          return
+        }
+        navigate({ to: '/onboarding' })
+      } else {
+        const result = await signUp.email({ name, email, password })
+        if (result.error) {
+          setError(result.error.message ?? 'Sign up failed')
+          return
+        }
+        // F006: requireEmailVerification is on and M16 (transactional email) doesn't exist yet --
+        // the server logs the verification link to its own console rather than emailing it, so
+        // there is nothing more this screen can do for a real user until M16 lands.
+        setSignedUp(true)
+      }
+    } finally {
+      setSubmitting(false)
+    }
+  }
+
+  return (
+    <div className="flex min-h-screen items-center justify-center p-8">
+      <div className="absolute top-6 right-6 no-print">
+        <ThemeToggle />
+      </div>
+      <div className="w-full max-w-sm">
+        <h1 className="text-display mb-2 text-center">ExamPrep AI</h1>
+        <p className="text-body text-muted-foreground mb-8 text-center">
+          Find out which marks she lost because she didn't know it — and which
+          because she stopped writing too early.
+        </p>
+
+        <Card>
+          <CardHeader>
+            <CardTitle className="text-h3">
+              {mode === 'sign-in' ? 'Sign in' : 'Create your account'}
+            </CardTitle>
+            <CardDescription>
+              {mode === 'sign-in'
+                ? 'Parents sign in here to manage their household.'
+                : 'A new account starts your own household — students are added afterwards.'}
+            </CardDescription>
+          </CardHeader>
+          <CardContent>
+            {signedUp ? (
+              <div className="text-body space-y-4">
+                <p>
+                  Account created. Check the server log for a verification link
+                  (email delivery isn't wired up yet) and open it before signing
+                  in.
+                </p>
+                <Button
+                  variant="outline"
+                  className="w-full"
+                  onClick={() => {
+                    setSignedUp(false)
+                    setMode('sign-in')
+                  }}
+                >
+                  Back to sign in
+                </Button>
+              </div>
+            ) : (
+              <form onSubmit={handleSubmit} className="space-y-4">
+                {mode === 'sign-up' && (
+                  <div className="space-y-1.5">
+                    <Label htmlFor="name">Name</Label>
+                    <Input
+                      id="name"
+                      value={name}
+                      onChange={(e) => setName(e.target.value)}
+                      required
+                    />
+                  </div>
+                )}
+                <div className="space-y-1.5">
+                  <Label htmlFor="email">Email</Label>
+                  <Input
+                    id="email"
+                    type="email"
+                    value={email}
+                    onChange={(e) => setEmail(e.target.value)}
+                    required
+                  />
+                </div>
+                <div className="space-y-1.5">
+                  <Label htmlFor="password">Password</Label>
+                  <Input
+                    id="password"
+                    type="password"
+                    value={password}
+                    onChange={(e) => setPassword(e.target.value)}
+                    required
+                    minLength={8}
+                  />
+                </div>
+                {error && (
+                  <p className="text-small text-destructive" role="alert">
+                    {error}
+                  </p>
+                )}
+                <Button type="submit" className="w-full" disabled={submitting}>
+                  {submitting
+                    ? 'Please wait…'
+                    : mode === 'sign-in'
+                      ? 'Sign in'
+                      : 'Sign up'}
+                </Button>
+              </form>
+            )}
+
+            {!signedUp && (
+              <p className="text-small text-muted-foreground mt-4 text-center">
+                {mode === 'sign-in' ? (
+                  <>
+                    New here?{' '}
+                    <button
+                      type="button"
+                      className="text-primary underline-offset-4 hover:underline"
+                      onClick={() => setMode('sign-up')}
+                    >
+                      Create an account
+                    </button>
+                  </>
+                ) : (
+                  <>
+                    Already have an account?{' '}
+                    <button
+                      type="button"
+                      className="text-primary underline-offset-4 hover:underline"
+                      onClick={() => setMode('sign-in')}
+                    >
+                      Sign in
+                    </button>
+                  </>
+                )}
+              </p>
+            )}
+          </CardContent>
+        </Card>
+      </div>
     </div>
   )
 }
