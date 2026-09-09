@@ -296,6 +296,48 @@ describe('paper PDF and coverage routes (F033/F035/F036/F037)', () => {
     expect(coverage[0].bloom_split).toEqual({ Remember: 1, Apply: 1 })
   })
 
+  it('F038: re-downloading the same paper reproduces the same content (page count, size)', async () => {
+    const first = await handlerFor(
+      PdfRoute,
+      'GET',
+    )({
+      request: request(parentA.cookie),
+      params: { id: paperId },
+    })
+    const firstBytes = new Uint8Array(await first.arrayBuffer())
+
+    const second = await handlerFor(
+      PdfRoute,
+      'GET',
+    )({
+      request: request(parentA.cookie),
+      params: { id: paperId },
+    })
+    const secondBytes = new Uint8Array(await second.arrayBuffer())
+
+    // Not byte-identical -- Chromium stamps a fresh /CreationDate into every PDF it exports, and
+    // there's no Playwright option to override that -- so "identical" is verified as identical
+    // rendered content (same page count, near-identical size) rather than an exact byte match.
+    expect(countPdfPages(secondBytes)).toBe(countPdfPages(firstBytes))
+    expect(
+      Math.abs(secondBytes.byteLength - firstBytes.byteLength),
+    ).toBeLessThan(200)
+  })
+
+  it('F038: the paper snapshots the blueprint version it was generated from', async () => {
+    const paper = await db
+      .selectFrom('papers')
+      .select(['blueprint_version'])
+      .where('id', '=', paperId)
+      .executeTakeFirstOrThrow()
+    const blueprint = await db
+      .selectFrom('blueprints')
+      .select(['version'])
+      .where('id', '=', blueprintId)
+      .executeTakeFirstOrThrow()
+    expect(paper.blueprint_version).toBe(blueprint.version)
+  })
+
   it('F096: another household gets 404 on both new routes', async () => {
     const pdfResponse = await handlerFor(
       PdfRoute,

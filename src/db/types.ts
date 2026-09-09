@@ -271,6 +271,7 @@ export interface PaperQuestions {
 
 export interface Papers {
   blueprint_id: string;
+  blueprint_version: Generated<number>;
   chapter_ids: Generated<string[]>;
   duration_min: number;
   generated_at: Generated<Timestamp>;

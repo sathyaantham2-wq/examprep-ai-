@@ -388,6 +388,10 @@ export async function generatePaper(db: Db, input: GeneratePaperInput) {
     const paper = await papersRepository.insert(trx, {
       student_id: input.student_id,
       blueprint_id: input.blueprint_id,
+      // F038: snapshots the blueprint's version at generation time, since blueprint_id alone is
+      // a live FK -- if a blueprint is ever edited in place, this is what keeps an old paper
+      // provably tied to the exact version it was actually generated from.
+      blueprint_version: blueprint.version,
       subject_id: blueprint.subject_id,
       chapter_ids: input.chapter_ids,
       title: blueprint.name,
