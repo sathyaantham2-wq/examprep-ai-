@@ -3,6 +3,10 @@ import { z } from 'zod'
 import { requireRole } from '../../lib/session'
 import { createEvaluation } from '../../lib/evaluation'
 import { createDb } from '../../db/connection'
+import {
+  evaluationsRepository,
+  evaluationItemsRepository,
+} from '../../db/repositories'
 
 const createEvaluationSchema = z.object({
   attempt_id: z.string().uuid(),
@@ -35,6 +39,26 @@ export const Route = createFileRoute('/api/evaluations')({
             .where('attempts.id', '=', parsed.data.attempt_id)
             .executeTakeFirst()
           if (!attempt) return new Response(null, { status: 404 })
+
+          // createEvaluation() never flips attempts.status -- only confirmEvaluation() does --
+          // so an attempt stays 'submitted' the whole time an evaluation exists for it but
+          // hasn't been confirmed. Re-checking here rather than relying on attempt.status alone
+          // means reopening the review screen returns the same evaluation instead of creating a
+          // second, orphaned one for the same attempt.
+          const existing = await evaluationsRepository.findByAttemptId(
+            db,
+            attempt.id,
+          )
+          if (existing) {
+            const items = await evaluationItemsRepository.listForEvaluation(
+              db,
+              existing.id,
+            )
+            return Response.json(
+              { evaluation: existing, items },
+              { status: 200 },
+            )
+          }
 
           if (attempt.status !== 'submitted') {
             return Response.json(

@@ -23,6 +23,17 @@ export const evaluationsRepository = {
       .where('evaluations.id', '=', evaluationId)
       .executeTakeFirst()
   },
+  // createEvaluation() doesn't flip attempts.status until confirmEvaluation() does -- so an
+  // attempt sits at 'submitted' the whole time its evaluation exists but isn't confirmed yet.
+  // Without this, reopening the review screen before confirming would call POST
+  // /api/evaluations again and create a second, orphaned evaluation for the same attempt.
+  async findByAttemptId(db: Db, attemptId: string) {
+    return db
+      .selectFrom('evaluations')
+      .selectAll()
+      .where('attempt_id', '=', attemptId)
+      .executeTakeFirst()
+  },
 }
 
 export const evaluationItemsRepository = {
