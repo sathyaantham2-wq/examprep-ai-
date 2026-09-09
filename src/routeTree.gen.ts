@@ -20,6 +20,7 @@ import { Route as ApiDashboardStudentIdRouteImport } from './routes/api/dashboar
 import { Route as ApiPapersIdRouteImport } from './routes/api/papers/$id'
 import { Route as ApiPapersGenerateRouteImport } from './routes/api/papers/generate'
 import { Route as ApiQuestionsIdRouteImport } from './routes/api/questions/$id'
+import { Route as ApiQuestionsCoverageGridRouteImport } from './routes/api/questions/coverage-grid'
 import { Route as ApiStudentsIdRouteImport } from './routes/api/students/$id'
 import { Route as ApiSyllabusChaptersRouteImport } from './routes/api/syllabus/chapters'
 import { Route as ApiSyllabusSubjectsRouteImport } from './routes/api/syllabus/subjects'
@@ -91,6 +92,12 @@ const ApiQuestionsIdRoute = ApiQuestionsIdRouteImport.update({
   path: '/$id',
   getParentRoute: () => ApiQuestionsRoute,
 } as any)
+const ApiQuestionsCoverageGridRoute =
+  ApiQuestionsCoverageGridRouteImport.update({
+    id: '/coverage-grid',
+    path: '/coverage-grid',
+    getParentRoute: () => ApiQuestionsRoute,
+  } as any)
 const ApiStudentsIdRoute = ApiStudentsIdRouteImport.update({
   id: '/$id',
   path: '/$id',
@@ -183,6 +190,7 @@ export interface FileRoutesByFullPath {
   '/api/papers/$id': typeof ApiPapersIdRouteWithChildren
   '/api/papers/generate': typeof ApiPapersGenerateRoute
   '/api/questions/$id': typeof ApiQuestionsIdRouteWithChildren
+  '/api/questions/coverage-grid': typeof ApiQuestionsCoverageGridRoute
   '/api/students/$id': typeof ApiStudentsIdRouteWithChildren
   '/api/syllabus/chapters': typeof ApiSyllabusChaptersRouteWithChildren
   '/api/syllabus/subjects': typeof ApiSyllabusSubjectsRoute
@@ -211,6 +219,7 @@ export interface FileRoutesByTo {
   '/api/papers/$id': typeof ApiPapersIdRouteWithChildren
   '/api/papers/generate': typeof ApiPapersGenerateRoute
   '/api/questions/$id': typeof ApiQuestionsIdRouteWithChildren
+  '/api/questions/coverage-grid': typeof ApiQuestionsCoverageGridRoute
   '/api/students/$id': typeof ApiStudentsIdRouteWithChildren
   '/api/syllabus/chapters': typeof ApiSyllabusChaptersRouteWithChildren
   '/api/syllabus/subjects': typeof ApiSyllabusSubjectsRoute
@@ -240,6 +249,7 @@ export interface FileRoutesById {
   '/api/papers/$id': typeof ApiPapersIdRouteWithChildren
   '/api/papers/generate': typeof ApiPapersGenerateRoute
   '/api/questions/$id': typeof ApiQuestionsIdRouteWithChildren
+  '/api/questions/coverage-grid': typeof ApiQuestionsCoverageGridRoute
   '/api/students/$id': typeof ApiStudentsIdRouteWithChildren
   '/api/syllabus/chapters': typeof ApiSyllabusChaptersRouteWithChildren
   '/api/syllabus/subjects': typeof ApiSyllabusSubjectsRoute
@@ -270,6 +280,7 @@ export interface FileRouteTypes {
     | '/api/papers/$id'
     | '/api/papers/generate'
     | '/api/questions/$id'
+    | '/api/questions/coverage-grid'
     | '/api/students/$id'
     | '/api/syllabus/chapters'
     | '/api/syllabus/subjects'
@@ -298,6 +309,7 @@ export interface FileRouteTypes {
     | '/api/papers/$id'
     | '/api/papers/generate'
     | '/api/questions/$id'
+    | '/api/questions/coverage-grid'
     | '/api/students/$id'
     | '/api/syllabus/chapters'
     | '/api/syllabus/subjects'
@@ -326,6 +338,7 @@ export interface FileRouteTypes {
     | '/api/papers/$id'
     | '/api/papers/generate'
     | '/api/questions/$id'
+    | '/api/questions/coverage-grid'
     | '/api/students/$id'
     | '/api/syllabus/chapters'
     | '/api/syllabus/subjects'
@@ -436,6 +449,13 @@ declare module '@tanstack/react-router' {
       path: '/$id'
       fullPath: '/api/questions/$id'
       preLoaderRoute: typeof ApiQuestionsIdRouteImport
+      parentRoute: typeof ApiQuestionsRoute
+    }
+    '/api/questions/coverage-grid': {
+      id: '/api/questions/coverage-grid'
+      path: '/coverage-grid'
+      fullPath: '/api/questions/coverage-grid'
+      preLoaderRoute: typeof ApiQuestionsCoverageGridRouteImport
       parentRoute: typeof ApiQuestionsRoute
     }
     '/api/students/$id': {
@@ -590,10 +610,12 @@ const ApiQuestionsIdRouteWithChildren = ApiQuestionsIdRoute._addFileChildren(
 
 interface ApiQuestionsRouteChildren {
   ApiQuestionsIdRoute: typeof ApiQuestionsIdRouteWithChildren
+  ApiQuestionsCoverageGridRoute: typeof ApiQuestionsCoverageGridRoute
 }
 
 const ApiQuestionsRouteChildren: ApiQuestionsRouteChildren = {
   ApiQuestionsIdRoute: ApiQuestionsIdRouteWithChildren,
+  ApiQuestionsCoverageGridRoute: ApiQuestionsCoverageGridRoute,
 }
 
 const ApiQuestionsRouteWithChildren = ApiQuestionsRoute._addFileChildren(
