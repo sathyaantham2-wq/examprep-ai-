@@ -7,6 +7,8 @@ export interface BulkImportRowResult {
   status: 'imported' | 'rejected'
   question_id?: string
   errors?: Array<string>
+  // F023: an exact-hash duplicate is a warning, not a rejection -- the row still imports.
+  duplicate_of?: { id: string; text: string } | null
 }
 
 export interface BulkImportResult {
@@ -115,6 +117,7 @@ export async function bulkImportQuestions(
         row: rowNumber,
         status: 'imported',
         question_id: question.id,
+        duplicate_of: question.duplicate_of,
       })
     } catch (err) {
       rows.push({

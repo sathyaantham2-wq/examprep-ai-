@@ -11,6 +11,7 @@ import {
   questionOptionsRepository,
   questionStepMarksRepository,
 } from '../db/repositories'
+import { computeTextHash, findExactDuplicate } from './duplicate-detection'
 
 const BLOOM_LEVELS = [
   'Remember',
@@ -151,7 +152,8 @@ export interface CreateQuestionInput {
 /**
  * Writes a question plus its options and step marks as one transaction (F020/F021) and assigns
  * its review tier (F117). Tier A auto-approves immediately; Tier B stays draft pending
- * POST /api/questions/:id/approve.
+ * POST /api/questions/:id/approve. F023: flags an exact-hash duplicate within the same concept
+ * rather than blocking the save -- "warns with a link to the existing question", not a hard stop.
  */
 export async function createQuestion(db: Db, input: CreateQuestionInput) {
   const language = input.language ?? 'English'
@@ -162,8 +164,11 @@ export async function createQuestion(db: Db, input: CreateQuestionInput) {
     diagram_kind: input.diagram_kind,
   })
   const status = reviewTier === 'A' ? 'approved' : 'draft'
+  const textHash = computeTextHash(input.text)
 
-  return db.transaction().execute(async (trx) => {
+  const duplicate = await findExactDuplicate(db, input.concept_id, textHash)
+
+  const created = await db.transaction().execute(async (trx) => {
     const question = await questionsRepository.insert(trx, {
       concept_id: input.concept_id,
       board: input.board,
@@ -173,6 +178,7 @@ export async function createQuestion(db: Db, input: CreateQuestionInput) {
       marks: input.marks,
       type: input.type,
       text: input.text,
+      text_hash: textHash,
       answer: input.answer,
       hint: input.hint,
       tags: input.tags,
@@ -211,4 +217,9 @@ export async function createQuestion(db: Db, input: CreateQuestionInput) {
 
     return { ...question, options, step_marks: stepMarks }
   })
+
+  return {
+    ...created,
+    duplicate_of: duplicate ? { id: duplicate.id, text: duplicate.text } : null,
+  }
 }

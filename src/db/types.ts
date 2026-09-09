@@ -338,6 +338,7 @@ export interface Questions {
   status: QuestionStatus;
   tags: Generated<string[]>;
   text: string;
+  text_hash: string;
   type: QuestionType;
 }
 
