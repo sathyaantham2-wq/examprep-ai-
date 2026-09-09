@@ -221,7 +221,14 @@ function Evaluate() {
               : 'AI-proposed marks below are editable until you confirm.'}
           </p>
         </div>
-        <div className="no-print">
+        <div className="flex items-center gap-2 no-print">
+          {isConfirmed && (
+            <a href={`/evaluation/${evaluation.id}/report`}>
+              <Button variant="outline" size="sm">
+                View report
+              </Button>
+            </a>
+          )}
           <ThemeToggle />
         </div>
       </div>

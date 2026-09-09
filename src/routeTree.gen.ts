@@ -33,6 +33,7 @@ import { Route as ApiStudentsIdRouteImport } from './routes/api/students/$id'
 import { Route as ApiSyllabusChaptersRouteImport } from './routes/api/syllabus/chapters'
 import { Route as ApiSyllabusSubjectsRouteImport } from './routes/api/syllabus/subjects'
 import { Route as ApiTrackerStudentIdRouteImport } from './routes/api/tracker/$studentId'
+import { Route as EvaluationIdReportRouteImport } from './routes/evaluation/$id/report'
 import { Route as ApiAttemptsIdAnswerRouteImport } from './routes/api/attempts/$id/answer'
 import { Route as ApiAttemptsIdSubmitRouteImport } from './routes/api/attempts/$id/submit'
 import { Route as ApiEvaluationsIdConfirmRouteImport } from './routes/api/evaluations/$id/confirm'
@@ -171,6 +172,11 @@ const ApiTrackerStudentIdRoute = ApiTrackerStudentIdRouteImport.update({
   path: '/api/tracker/$studentId',
   getParentRoute: () => rootRouteImport,
 } as any)
+const EvaluationIdReportRoute = EvaluationIdReportRouteImport.update({
+  id: '/evaluation/$id/report',
+  path: '/evaluation/$id/report',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const ApiAttemptsIdAnswerRoute = ApiAttemptsIdAnswerRouteImport.update({
   id: '/answer',
   path: '/answer',
@@ -283,6 +289,7 @@ export interface FileRoutesByFullPath {
   '/api/syllabus/chapters': typeof ApiSyllabusChaptersRouteWithChildren
   '/api/syllabus/subjects': typeof ApiSyllabusSubjectsRoute
   '/api/tracker/$studentId': typeof ApiTrackerStudentIdRoute
+  '/evaluation/$id/report': typeof EvaluationIdReportRoute
   '/api/attempts/$id/answer': typeof ApiAttemptsIdAnswerRoute
   '/api/attempts/$id/submit': typeof ApiAttemptsIdSubmitRoute
   '/api/evaluations/$id/confirm': typeof ApiEvaluationsIdConfirmRoute
@@ -325,6 +332,7 @@ export interface FileRoutesByTo {
   '/api/syllabus/chapters': typeof ApiSyllabusChaptersRouteWithChildren
   '/api/syllabus/subjects': typeof ApiSyllabusSubjectsRoute
   '/api/tracker/$studentId': typeof ApiTrackerStudentIdRoute
+  '/evaluation/$id/report': typeof EvaluationIdReportRoute
   '/api/attempts/$id/answer': typeof ApiAttemptsIdAnswerRoute
   '/api/attempts/$id/submit': typeof ApiAttemptsIdSubmitRoute
   '/api/evaluations/$id/confirm': typeof ApiEvaluationsIdConfirmRoute
@@ -368,6 +376,7 @@ export interface FileRoutesById {
   '/api/syllabus/chapters': typeof ApiSyllabusChaptersRouteWithChildren
   '/api/syllabus/subjects': typeof ApiSyllabusSubjectsRoute
   '/api/tracker/$studentId': typeof ApiTrackerStudentIdRoute
+  '/evaluation/$id/report': typeof EvaluationIdReportRoute
   '/api/attempts/$id/answer': typeof ApiAttemptsIdAnswerRoute
   '/api/attempts/$id/submit': typeof ApiAttemptsIdSubmitRoute
   '/api/evaluations/$id/confirm': typeof ApiEvaluationsIdConfirmRoute
@@ -412,6 +421,7 @@ export interface FileRouteTypes {
     | '/api/syllabus/chapters'
     | '/api/syllabus/subjects'
     | '/api/tracker/$studentId'
+    | '/evaluation/$id/report'
     | '/api/attempts/$id/answer'
     | '/api/attempts/$id/submit'
     | '/api/evaluations/$id/confirm'
@@ -454,6 +464,7 @@ export interface FileRouteTypes {
     | '/api/syllabus/chapters'
     | '/api/syllabus/subjects'
     | '/api/tracker/$studentId'
+    | '/evaluation/$id/report'
     | '/api/attempts/$id/answer'
     | '/api/attempts/$id/submit'
     | '/api/evaluations/$id/confirm'
@@ -496,6 +507,7 @@ export interface FileRouteTypes {
     | '/api/syllabus/chapters'
     | '/api/syllabus/subjects'
     | '/api/tracker/$studentId'
+    | '/evaluation/$id/report'
     | '/api/attempts/$id/answer'
     | '/api/attempts/$id/submit'
     | '/api/evaluations/$id/confirm'
@@ -533,6 +545,7 @@ export interface RootRouteChildren {
   ApiSyllabusChaptersRoute: typeof ApiSyllabusChaptersRouteWithChildren
   ApiSyllabusSubjectsRoute: typeof ApiSyllabusSubjectsRoute
   ApiTrackerStudentIdRoute: typeof ApiTrackerStudentIdRoute
+  EvaluationIdReportRoute: typeof EvaluationIdReportRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -703,6 +716,13 @@ declare module '@tanstack/react-router' {
       path: '/api/tracker/$studentId'
       fullPath: '/api/tracker/$studentId'
       preLoaderRoute: typeof ApiTrackerStudentIdRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/evaluation/$id/report': {
+      id: '/evaluation/$id/report'
+      path: '/evaluation/$id/report'
+      fullPath: '/evaluation/$id/report'
+      preLoaderRoute: typeof EvaluationIdReportRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/api/attempts/$id/answer': {
@@ -993,6 +1013,7 @@ const rootRouteChildren: RootRouteChildren = {
   ApiSyllabusChaptersRoute: ApiSyllabusChaptersRouteWithChildren,
   ApiSyllabusSubjectsRoute: ApiSyllabusSubjectsRoute,
   ApiTrackerStudentIdRoute: ApiTrackerStudentIdRoute,
+  EvaluationIdReportRoute: EvaluationIdReportRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
