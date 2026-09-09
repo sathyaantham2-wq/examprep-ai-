@@ -35,6 +35,7 @@ import { Route as ApiPapersIdCoverageRouteImport } from './routes/api/papers/$id
 import { Route as ApiPapersIdPdfRouteImport } from './routes/api/papers/$id/pdf'
 import { Route as ApiPapersIdRegenerateSlotRouteImport } from './routes/api/papers/$id/regenerate-slot'
 import { Route as ApiQuestionsIdApproveRouteImport } from './routes/api/questions/$id/approve'
+import { Route as ApiQuestionsIdStatsRouteImport } from './routes/api/questions/$id/stats'
 import { Route as ApiEvaluationsIdItemsItemIdRouteImport } from './routes/api/evaluations/$id/items/$itemId'
 import { Route as ApiEvaluationsIdReportPdfRouteImport } from './routes/api/evaluations/$id/report/pdf'
 import { Route as ApiStudentsIdConsentWithdrawRouteImport } from './routes/api/students/$id/consent/withdraw'
@@ -172,6 +173,11 @@ const ApiQuestionsIdApproveRoute = ApiQuestionsIdApproveRouteImport.update({
   path: '/approve',
   getParentRoute: () => ApiQuestionsIdRoute,
 } as any)
+const ApiQuestionsIdStatsRoute = ApiQuestionsIdStatsRouteImport.update({
+  id: '/stats',
+  path: '/stats',
+  getParentRoute: () => ApiQuestionsIdRoute,
+} as any)
 const ApiEvaluationsIdItemsItemIdRoute =
   ApiEvaluationsIdItemsItemIdRouteImport.update({
     id: '/$id/items/$itemId',
@@ -224,6 +230,7 @@ export interface FileRoutesByFullPath {
   '/api/papers/$id/pdf': typeof ApiPapersIdPdfRoute
   '/api/papers/$id/regenerate-slot': typeof ApiPapersIdRegenerateSlotRoute
   '/api/questions/$id/approve': typeof ApiQuestionsIdApproveRoute
+  '/api/questions/$id/stats': typeof ApiQuestionsIdStatsRoute
   '/api/evaluations/$id/items/$itemId': typeof ApiEvaluationsIdItemsItemIdRoute
   '/api/evaluations/$id/report/pdf': typeof ApiEvaluationsIdReportPdfRoute
   '/api/students/$id/consent/withdraw': typeof ApiStudentsIdConsentWithdrawRoute
@@ -256,6 +263,7 @@ export interface FileRoutesByTo {
   '/api/papers/$id/pdf': typeof ApiPapersIdPdfRoute
   '/api/papers/$id/regenerate-slot': typeof ApiPapersIdRegenerateSlotRoute
   '/api/questions/$id/approve': typeof ApiQuestionsIdApproveRoute
+  '/api/questions/$id/stats': typeof ApiQuestionsIdStatsRoute
   '/api/evaluations/$id/items/$itemId': typeof ApiEvaluationsIdItemsItemIdRoute
   '/api/evaluations/$id/report/pdf': typeof ApiEvaluationsIdReportPdfRoute
   '/api/students/$id/consent/withdraw': typeof ApiStudentsIdConsentWithdrawRoute
@@ -289,6 +297,7 @@ export interface FileRoutesById {
   '/api/papers/$id/pdf': typeof ApiPapersIdPdfRoute
   '/api/papers/$id/regenerate-slot': typeof ApiPapersIdRegenerateSlotRoute
   '/api/questions/$id/approve': typeof ApiQuestionsIdApproveRoute
+  '/api/questions/$id/stats': typeof ApiQuestionsIdStatsRoute
   '/api/evaluations/$id/items/$itemId': typeof ApiEvaluationsIdItemsItemIdRoute
   '/api/evaluations/$id/report/pdf': typeof ApiEvaluationsIdReportPdfRoute
   '/api/students/$id/consent/withdraw': typeof ApiStudentsIdConsentWithdrawRoute
@@ -323,6 +332,7 @@ export interface FileRouteTypes {
     | '/api/papers/$id/pdf'
     | '/api/papers/$id/regenerate-slot'
     | '/api/questions/$id/approve'
+    | '/api/questions/$id/stats'
     | '/api/evaluations/$id/items/$itemId'
     | '/api/evaluations/$id/report/pdf'
     | '/api/students/$id/consent/withdraw'
@@ -355,6 +365,7 @@ export interface FileRouteTypes {
     | '/api/papers/$id/pdf'
     | '/api/papers/$id/regenerate-slot'
     | '/api/questions/$id/approve'
+    | '/api/questions/$id/stats'
     | '/api/evaluations/$id/items/$itemId'
     | '/api/evaluations/$id/report/pdf'
     | '/api/students/$id/consent/withdraw'
@@ -387,6 +398,7 @@ export interface FileRouteTypes {
     | '/api/papers/$id/pdf'
     | '/api/papers/$id/regenerate-slot'
     | '/api/questions/$id/approve'
+    | '/api/questions/$id/stats'
     | '/api/evaluations/$id/items/$itemId'
     | '/api/evaluations/$id/report/pdf'
     | '/api/students/$id/consent/withdraw'
@@ -594,6 +606,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ApiQuestionsIdApproveRouteImport
       parentRoute: typeof ApiQuestionsIdRoute
     }
+    '/api/questions/$id/stats': {
+      id: '/api/questions/$id/stats'
+      path: '/stats'
+      fullPath: '/api/questions/$id/stats'
+      preLoaderRoute: typeof ApiQuestionsIdStatsRouteImport
+      parentRoute: typeof ApiQuestionsIdRoute
+    }
     '/api/evaluations/$id/items/$itemId': {
       id: '/api/evaluations/$id/items/$itemId'
       path: '/$id/items/$itemId'
@@ -671,10 +690,12 @@ const ApiEvaluationsRouteWithChildren = ApiEvaluationsRoute._addFileChildren(
 
 interface ApiQuestionsIdRouteChildren {
   ApiQuestionsIdApproveRoute: typeof ApiQuestionsIdApproveRoute
+  ApiQuestionsIdStatsRoute: typeof ApiQuestionsIdStatsRoute
 }
 
 const ApiQuestionsIdRouteChildren: ApiQuestionsIdRouteChildren = {
   ApiQuestionsIdApproveRoute: ApiQuestionsIdApproveRoute,
+  ApiQuestionsIdStatsRoute: ApiQuestionsIdStatsRoute,
 }
 
 const ApiQuestionsIdRouteWithChildren = ApiQuestionsIdRoute._addFileChildren(

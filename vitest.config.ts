@@ -11,5 +11,11 @@ export default defineConfig({
     // picks for another file's concurrently-generating paper -- observed as both cross-test data
     // contamination and FK-violation cleanup failures. Sequential file execution is the fix.
     fileParallelism: false,
+    // These tests hit a real remote database (a Supabase session pooler, not a local instance),
+    // so the default 5s/10s timeouts are tuned for a local DB and leave no margin for real
+    // network latency -- a hook doing several sequential round trips (a real auth signup plus a
+    // few queries) can legitimately take longer than 10s without anything being wrong.
+    testTimeout: 15000,
+    hookTimeout: 30000,
   },
 })

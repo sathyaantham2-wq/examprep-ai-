@@ -11,6 +11,10 @@ const updateQuestionSchema = z
     hint: z.string().min(1).nullable(),
     tags: z.array(z.string()),
     source_ref: z.string().min(1).nullable(),
+    // F118: "can be retired without deleting historical results" -- retiring only flips this
+    // column; every paper/attempt/evaluation that already used the question keeps referencing it
+    // untouched (status isn't a FK target anywhere, so nothing cascades on the change).
+    status: z.enum(['draft', 'approved', 'retired']),
   })
   .partial()
 
