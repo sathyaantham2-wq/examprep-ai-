@@ -40,3 +40,4 @@ export type ErrorType =
   | 'Formula/Definition Error'
   | 'Incomplete'
   | 'Not Attempted'
+  | 'Reading Discipline'

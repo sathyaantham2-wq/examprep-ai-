@@ -82,6 +82,7 @@ export async function createEvaluation(db: Db, attemptId: string) {
         correctAnswerText: slot.answer,
         selectedOption: answer?.selected_option,
         responseText: answer?.response_text,
+        isReversalWord: slot.is_reversal_word,
       })
       anyAutoScored = true
       items.push({

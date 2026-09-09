@@ -54,6 +54,8 @@ function csvRowToQuestionInput(
     answer: row.answer?.trim(),
     hint: row.hint?.trim() || undefined,
     language: row.language?.trim() || undefined,
+    is_reversal_word:
+      row.is_reversal_word?.trim().toLowerCase() === 'true' || undefined,
     options: options.length > 0 ? options : undefined,
   }
 }

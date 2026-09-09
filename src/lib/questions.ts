@@ -70,6 +70,9 @@ export const questionInputSchema = z
     source_ref: z.string().min(1).optional(),
     options: z.array(optionSchema).optional(),
     step_marks: z.array(stepMarkSchema).optional(),
+    // F060: reversal-word questions (NOT/least/false) get a distinct 'Reading Discipline' error
+    // classification on a wrong answer, instead of the usual 'Conceptual Gap' default.
+    is_reversal_word: z.boolean().optional(),
   })
   .superRefine((data, ctx) => {
     if (data.type === 'mcq') {
@@ -140,6 +143,7 @@ export interface CreateQuestionInput {
   language?: string
   created_by: string
   source_ref?: string
+  is_reversal_word?: boolean
   options?: Array<{
     label: string
     text: string
@@ -191,6 +195,7 @@ export async function createQuestion(db: Db, input: CreateQuestionInput) {
       created_by: input.created_by,
       source_ref: input.source_ref,
       review_tier: reviewTier,
+      is_reversal_word: input.is_reversal_word ?? false,
     })
 
     const options = input.options

@@ -48,6 +48,11 @@ export interface ObjectiveScoreResult {
  * not *why* — real differentiation between Conceptual Gap / Calculation Error / Formula error
  * needs either shown work (subjective questions, F045's job) or a human's judgment, so a wrong
  * objective answer defaults to 'Conceptual Gap' rather than guessing more specifically.
+ *
+ * F060's one exception: a question tagged is_reversal_word (NOT/least/false) is the one case
+ * where the wrong-answer *cause* is knowable without shown work -- missing the reversal word is
+ * a reading slip, not evidence the underlying concept is shaky, so it's classified as its own
+ * 'Reading Discipline' category rather than folded into 'Conceptual Gap'.
  */
 export function scoreObjectiveAnswer(params: {
   type: QuestionType
@@ -56,6 +61,7 @@ export function scoreObjectiveAnswer(params: {
   correctAnswerText: string
   selectedOption?: string | null
   responseText?: string | null
+  isReversalWord?: boolean
 }): ObjectiveScoreResult {
   const attempted =
     Boolean(params.selectedOption) || Boolean(params.responseText?.trim())
@@ -77,9 +83,11 @@ export function scoreObjectiveAnswer(params: {
     )
   }
 
-  return isCorrect
-    ? { marksAwarded: params.marksMax, errorType: null }
-    : { marksAwarded: 0, errorType: 'Conceptual Gap' }
+  if (isCorrect) return { marksAwarded: params.marksMax, errorType: null }
+  return {
+    marksAwarded: 0,
+    errorType: params.isReversalWord ? 'Reading Discipline' : 'Conceptual Gap',
+  }
 }
 
 const TEMPLATE_FEEDBACK: Record<ErrorType, (conceptName: string) => string> = {
@@ -95,6 +103,10 @@ const TEMPLATE_FEEDBACK: Record<ErrorType, (conceptName: string) => string> = {
     `Check the formula/definition used for ${c} — it doesn't match what this question needs.`,
   Incomplete: (c) =>
     `The answer on ${c} stopped short — finish every step through to a final answer with units.`,
+  // F060: "routed to a drill instead of re-teaching" — the concept name is deliberately absent
+  // here, since the fix for a reading slip is not "revisit the concept" at all.
+  'Reading Discipline': () =>
+    `A word like NOT, least, or false in this question was missed — this needs a reading-discipline drill, not a concept re-teach.`,
 }
 
 /**

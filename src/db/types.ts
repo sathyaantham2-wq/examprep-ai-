@@ -328,6 +328,7 @@ export interface Questions {
   difficulty: DifficultyTier;
   hint: string | null;
   id: Generated<string>;
+  is_reversal_word: Generated<boolean>;
   language: Generated<string>;
   marks: number;
   review_note: string | null;

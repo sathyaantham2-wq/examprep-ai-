@@ -67,6 +67,7 @@ export const paperQuestionsRepository = {
         'questions.diagram_kind',
         'questions.diagram_params',
         'questions.language',
+        'questions.is_reversal_word',
       ])
       .where('paper_questions.paper_id', '=', paperId)
       .orderBy('paper_questions.position')
