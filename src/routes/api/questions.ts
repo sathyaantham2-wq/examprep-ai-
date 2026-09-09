@@ -3,7 +3,10 @@ import { z } from 'zod'
 import { requireRole } from '../../lib/session'
 import { createQuestion, questionInputSchema } from '../../lib/questions'
 import { createDb } from '../../db/connection'
-import { questionsRepository } from '../../db/repositories'
+import {
+  questionsRepository,
+  questionUsageRepository,
+} from '../../db/repositories'
 
 const BLOOM_LEVELS = [
   'Remember',
@@ -44,6 +47,9 @@ export const Route = createFileRoute('/api/questions')({
             status: z.enum(QUESTION_STATUSES).optional(),
             page: z.coerce.number().int().positive().optional(),
             pageSize: z.coerce.number().int().positive().max(100).optional(),
+            // F026: "per student, last_served_at and times_served" -- opt-in, since usage is
+            // meaningless without a specific student to ask about.
+            student_id: z.string().uuid().optional(),
           })
           .safeParse(Object.fromEntries(params))
         if (!parsedFilters.success) {
@@ -61,6 +67,7 @@ export const Route = createFileRoute('/api/questions')({
           status,
           page = 1,
           pageSize = 20,
+          student_id: studentId,
         } = parsedFilters.data
 
         const db = createDb()
@@ -71,7 +78,22 @@ export const Route = createFileRoute('/api/questions')({
             pageSize,
             (page - 1) * pageSize,
           )
-          return Response.json({ items, total, page, pageSize })
+
+          if (!studentId) {
+            return Response.json({ items, total, page, pageSize })
+          }
+
+          const usageByQuestion =
+            await questionUsageRepository.summaryForStudent(
+              db,
+              studentId,
+              items.map((item) => item.id),
+            )
+          const itemsWithUsage = items.map((item) => ({
+            ...item,
+            usage: usageByQuestion.get(item.id) ?? null,
+          }))
+          return Response.json({ items: itemsWithUsage, total, page, pageSize })
         } finally {
           await db.destroy()
         }

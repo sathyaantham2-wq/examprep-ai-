@@ -119,4 +119,35 @@ export const questionUsageRepository = {
       .execute()
     return rows.map((row) => row.question_id)
   },
+  // F026: "per student, last_served_at and times_served" -- the generator already avoids recent
+  // repeats (listRecentQuestionIds above); this is the same underlying data made visible.
+  async summaryForStudent(
+    db: Db,
+    studentId: string,
+    questionIds: Array<string>,
+  ) {
+    if (questionIds.length === 0)
+      return new Map<string, { last_served_at: Date; times_served: number }>()
+    const rows = await db
+      .selectFrom('question_usage')
+      .select([
+        'question_id',
+        (eb) => eb.fn.max('served_at').as('last_served_at'),
+        (eb) => eb.fn.countAll<string>().as('times_served'),
+      ])
+      .where('student_id', '=', studentId)
+      .where('question_id', 'in', questionIds)
+      .groupBy('question_id')
+      .execute()
+
+    return new Map(
+      rows.map((row) => [
+        row.question_id,
+        {
+          last_served_at: row.last_served_at,
+          times_served: Number(row.times_served),
+        },
+      ]),
+    )
+  },
 }

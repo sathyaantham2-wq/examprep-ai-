@@ -43,6 +43,11 @@ const generateSchema = z
     weighting_override: weightingSchema.optional(),
     // F113: overrides the concept-count-proportional per-chapter marks split.
     chapter_weighting_override: chapterWeightingSchema.optional(),
+    // F026: "generator excludes questions served within a configurable window" -- previously
+    // only configurable by calling generatePaper() directly (as every test in this repo does),
+    // never through the real route. Defaults to generatePaper()'s own 14-day default when
+    // omitted.
+    recent_usage_window_days: z.number().int().nonnegative().optional(),
   })
   .refine(
     (v) =>
@@ -101,7 +106,10 @@ export const Route = createFileRoute('/api/papers/generate')({
             )
           }
 
-          const result = await generatePaper(db, parsed.data)
+          const result = await generatePaper(db, {
+            ...parsed.data,
+            recentUsageWindowDays: parsed.data.recent_usage_window_days,
+          })
           return Response.json(result, { status: 201 })
         } finally {
           await db.destroy()
