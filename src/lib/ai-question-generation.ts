@@ -55,6 +55,25 @@ export interface GeneratedQuestionCandidate {
 export interface GenerateQuestionsResult {
   accepted: Array<GeneratedQuestionCandidate>
   rejected: Array<{ reason: string; raw: unknown }>
+  usage?: { inputTokens: number; outputTokens: number }
+}
+
+// Claude Sonnet 5 published rate: $2.00 / 1M input tokens, $10.00 / 1M output tokens. INR
+// conversion uses a fixed approximate rate (documented assumption, not a live FX lookup) since
+// there's no billing/FX infrastructure in this app yet -- F091 (cost dashboard) owns doing this
+// properly with real per-call metering.
+const USD_PER_1M_INPUT = 2.0
+const USD_PER_1M_OUTPUT = 10.0
+const USD_TO_INR = 83
+
+export function estimateCostInr(usage: {
+  inputTokens: number
+  outputTokens: number
+}): number {
+  const usd =
+    (usage.inputTokens / 1_000_000) * USD_PER_1M_INPUT +
+    (usage.outputTokens / 1_000_000) * USD_PER_1M_OUTPUT
+  return usd * USD_TO_INR
 }
 
 const OBJECTIVE_TYPES = new Set<QuestionType>([
@@ -131,9 +150,13 @@ Respond with ONLY a JSON array, no other text, each element matching exactly:
     max_tokens: 4096,
     messages: [{ role: 'user', content: prompt }],
   })
+  const usage = {
+    inputTokens: response.usage.input_tokens,
+    outputTokens: response.usage.output_tokens,
+  }
 
   const textBlock = response.content.find((block) => block.type === 'text')
-  if (!textBlock) return { accepted: [], rejected: [] }
+  if (!textBlock) return { accepted: [], rejected: [], usage }
 
   let parsed: unknown
   try {
@@ -142,15 +165,19 @@ Respond with ONLY a JSON array, no other text, each element matching exactly:
     return {
       accepted: [],
       rejected: [{ reason: 'Model output was not valid JSON', raw: textBlock.text }],
+      usage,
     }
   }
 
-  return validateCandidates(Array.isArray(parsed) ? parsed : [parsed], {
-    inScope,
-    outScope,
-    isMcq,
-    marks: input.marks,
-  })
+  return {
+    ...validateCandidates(Array.isArray(parsed) ? parsed : [parsed], {
+      inScope,
+      outScope,
+      isMcq,
+      marks: input.marks,
+    }),
+    usage,
+  }
 }
 
 /**

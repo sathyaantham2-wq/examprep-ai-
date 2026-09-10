@@ -41,3 +41,7 @@ export type ErrorType =
   | 'Incomplete'
   | 'Not Attempted'
   | 'Reading Discipline'
+export type QuestionOrigin = 'manual' | 'ai_generated'
+export type GenerationBatchStatus =
+  'pending' | 'running' | 'paused' | 'completed' | 'failed'
+export type GenerationBatchItemStatus = 'pending' | 'done' | 'failed' | 'skipped'

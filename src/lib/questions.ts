@@ -3,6 +3,7 @@ import type { Db } from '../db/connection'
 import type {
   BloomLevel,
   DifficultyTier,
+  QuestionOrigin,
   QuestionType,
   ReviewTier,
 } from '../db/enums'
@@ -147,7 +148,7 @@ export interface CreateQuestionInput {
   // F025: AI-authored questions always land in the review queue as Draft, even when their shape
   // would otherwise qualify for Tier A auto-approve -- Tier A exists to reduce review load on a
   // trusted human's routine entries, not to wave through unreviewed AI output.
-  origin?: 'manual' | 'ai_generated'
+  origin?: QuestionOrigin
   options?: Array<{
     label: string
     text: string

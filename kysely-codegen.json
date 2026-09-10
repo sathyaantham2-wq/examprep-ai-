@@ -22,7 +22,10 @@
     "NotificationChannel": "./enums#NotificationChannel",
     "NotificationStatus": "./enums#NotificationStatus",
     "ReviewTier": "./enums#ReviewTier",
-    "ErrorType": "./enums#ErrorType"
+    "ErrorType": "./enums#ErrorType",
+    "QuestionOrigin": "./enums#QuestionOrigin",
+    "GenerationBatchStatus": "./enums#GenerationBatchStatus",
+    "GenerationBatchItemStatus": "./enums#GenerationBatchItemStatus"
   },
   "overrides": {
     "columns": {
@@ -48,7 +51,12 @@
       "questions.review_tier": "ReviewTier",
       "evaluation_items.error_type": "ErrorType | null",
       "evaluation_items.ai_error_type": "ErrorType | null",
-      "concept_mastery.status_at_time": "ConceptStatusValue | null"
+      "concept_mastery.status_at_time": "ConceptStatusValue | null",
+      "questions.origin": "QuestionOrigin",
+      "generation_batches.status": "GenerationBatchStatus",
+      "generation_batch_items.bloom": "BloomLevel",
+      "generation_batch_items.difficulty": "DifficultyTier",
+      "generation_batch_items.status": "GenerationBatchItemStatus"
     }
   }
 }

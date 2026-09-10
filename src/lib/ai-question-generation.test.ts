@@ -1,5 +1,5 @@
 import { describe, expect, it } from 'vitest'
-import { validateCandidates } from './ai-question-generation'
+import { estimateCostInr, validateCandidates } from './ai-question-generation'
 import type { ScopeItem } from './ai-question-generation'
 
 const inScope: Array<ScopeItem> = [
@@ -92,5 +92,20 @@ describe('validateCandidates (F025 / AI-01 guardrail)', () => {
     )
     expect(result.accepted).toHaveLength(0)
     expect(result.rejected[0].reason).toMatch(/Missing/)
+  })
+})
+
+describe('estimateCostInr (F116 cost cap)', () => {
+  it('prices at Claude Sonnet 5 published rates ($2/$10 per 1M tokens) converted to INR', () => {
+    const cost = estimateCostInr({ inputTokens: 1_000_000, outputTokens: 1_000_000 })
+    // (2 + 10) USD * 83 INR/USD
+    expect(cost).toBeCloseTo(12 * 83, 5)
+  })
+
+  it('scales linearly and returns 0 for no usage', () => {
+    expect(estimateCostInr({ inputTokens: 0, outputTokens: 0 })).toBe(0)
+    const small = estimateCostInr({ inputTokens: 1000, outputTokens: 500 })
+    const double = estimateCostInr({ inputTokens: 2000, outputTokens: 1000 })
+    expect(double).toBeCloseTo(small * 2, 8)
   })
 })

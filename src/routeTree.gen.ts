@@ -30,6 +30,7 @@ import { Route as ApiQuestionsIdRouteImport } from './routes/api/questions/$id'
 import { Route as ApiQuestionsBulkImportRouteImport } from './routes/api/questions/bulk-import'
 import { Route as ApiQuestionsCoverageGridRouteImport } from './routes/api/questions/coverage-grid'
 import { Route as ApiQuestionsGenerateRouteImport } from './routes/api/questions/generate'
+import { Route as ApiQuestionsGenerateBatchRouteImport } from './routes/api/questions/generate-batch'
 import { Route as ApiStudentsIdRouteImport } from './routes/api/students/$id'
 import { Route as ApiSyllabusChaptersRouteImport } from './routes/api/syllabus/chapters'
 import { Route as ApiSyllabusSubjectsRouteImport } from './routes/api/syllabus/subjects'
@@ -45,9 +46,11 @@ import { Route as ApiPapersIdPdfRouteImport } from './routes/api/papers/$id/pdf'
 import { Route as ApiPapersIdRegenerateSlotRouteImport } from './routes/api/papers/$id/regenerate-slot'
 import { Route as ApiQuestionsIdApproveRouteImport } from './routes/api/questions/$id/approve'
 import { Route as ApiQuestionsIdStatsRouteImport } from './routes/api/questions/$id/stats'
+import { Route as ApiQuestionsGenerateBatchIdRouteImport } from './routes/api/questions/generate-batch/$id'
 import { Route as ApiStudentsIdLoginRouteImport } from './routes/api/students/$id/login'
 import { Route as ApiEvaluationsIdItemsItemIdRouteImport } from './routes/api/evaluations/$id/items/$itemId'
 import { Route as ApiEvaluationsIdReportPdfRouteImport } from './routes/api/evaluations/$id/report/pdf'
+import { Route as ApiQuestionsGenerateBatchIdResumeRouteImport } from './routes/api/questions/generate-batch/$id/resume'
 import { Route as ApiStudentsIdConsentWithdrawRouteImport } from './routes/api/students/$id/consent/withdraw'
 import { Route as ApiStudentsIdHabitsTrendRouteImport } from './routes/api/students/$id/habits/trend'
 import { Route as ApiSyllabusChaptersIdScopeRouteImport } from './routes/api/syllabus/chapters/$id/scope'
@@ -158,6 +161,12 @@ const ApiQuestionsGenerateRoute = ApiQuestionsGenerateRouteImport.update({
   path: '/generate',
   getParentRoute: () => ApiQuestionsRoute,
 } as any)
+const ApiQuestionsGenerateBatchRoute =
+  ApiQuestionsGenerateBatchRouteImport.update({
+    id: '/generate-batch',
+    path: '/generate-batch',
+    getParentRoute: () => ApiQuestionsRoute,
+  } as any)
 const ApiStudentsIdRoute = ApiStudentsIdRouteImport.update({
   id: '/$id',
   path: '/$id',
@@ -234,6 +243,12 @@ const ApiQuestionsIdStatsRoute = ApiQuestionsIdStatsRouteImport.update({
   path: '/stats',
   getParentRoute: () => ApiQuestionsIdRoute,
 } as any)
+const ApiQuestionsGenerateBatchIdRoute =
+  ApiQuestionsGenerateBatchIdRouteImport.update({
+    id: '/$id',
+    path: '/$id',
+    getParentRoute: () => ApiQuestionsGenerateBatchRoute,
+  } as any)
 const ApiStudentsIdLoginRoute = ApiStudentsIdLoginRouteImport.update({
   id: '/login',
   path: '/login',
@@ -250,6 +265,12 @@ const ApiEvaluationsIdReportPdfRoute =
     id: '/pdf',
     path: '/pdf',
     getParentRoute: () => ApiEvaluationsIdReportRoute,
+  } as any)
+const ApiQuestionsGenerateBatchIdResumeRoute =
+  ApiQuestionsGenerateBatchIdResumeRouteImport.update({
+    id: '/resume',
+    path: '/resume',
+    getParentRoute: () => ApiQuestionsGenerateBatchIdRoute,
   } as any)
 const ApiStudentsIdConsentWithdrawRoute =
   ApiStudentsIdConsentWithdrawRouteImport.update({
@@ -292,6 +313,7 @@ export interface FileRoutesByFullPath {
   '/api/questions/bulk-import': typeof ApiQuestionsBulkImportRoute
   '/api/questions/coverage-grid': typeof ApiQuestionsCoverageGridRoute
   '/api/questions/generate': typeof ApiQuestionsGenerateRoute
+  '/api/questions/generate-batch': typeof ApiQuestionsGenerateBatchRouteWithChildren
   '/api/students/$id': typeof ApiStudentsIdRouteWithChildren
   '/api/syllabus/chapters': typeof ApiSyllabusChaptersRouteWithChildren
   '/api/syllabus/subjects': typeof ApiSyllabusSubjectsRoute
@@ -307,9 +329,11 @@ export interface FileRoutesByFullPath {
   '/api/papers/$id/regenerate-slot': typeof ApiPapersIdRegenerateSlotRoute
   '/api/questions/$id/approve': typeof ApiQuestionsIdApproveRoute
   '/api/questions/$id/stats': typeof ApiQuestionsIdStatsRoute
+  '/api/questions/generate-batch/$id': typeof ApiQuestionsGenerateBatchIdRouteWithChildren
   '/api/students/$id/login': typeof ApiStudentsIdLoginRoute
   '/api/evaluations/$id/items/$itemId': typeof ApiEvaluationsIdItemsItemIdRoute
   '/api/evaluations/$id/report/pdf': typeof ApiEvaluationsIdReportPdfRoute
+  '/api/questions/generate-batch/$id/resume': typeof ApiQuestionsGenerateBatchIdResumeRoute
   '/api/students/$id/consent/withdraw': typeof ApiStudentsIdConsentWithdrawRoute
   '/api/students/$id/habits/trend': typeof ApiStudentsIdHabitsTrendRoute
   '/api/syllabus/chapters/$id/scope': typeof ApiSyllabusChaptersIdScopeRoute
@@ -336,6 +360,7 @@ export interface FileRoutesByTo {
   '/api/questions/bulk-import': typeof ApiQuestionsBulkImportRoute
   '/api/questions/coverage-grid': typeof ApiQuestionsCoverageGridRoute
   '/api/questions/generate': typeof ApiQuestionsGenerateRoute
+  '/api/questions/generate-batch': typeof ApiQuestionsGenerateBatchRouteWithChildren
   '/api/students/$id': typeof ApiStudentsIdRouteWithChildren
   '/api/syllabus/chapters': typeof ApiSyllabusChaptersRouteWithChildren
   '/api/syllabus/subjects': typeof ApiSyllabusSubjectsRoute
@@ -351,9 +376,11 @@ export interface FileRoutesByTo {
   '/api/papers/$id/regenerate-slot': typeof ApiPapersIdRegenerateSlotRoute
   '/api/questions/$id/approve': typeof ApiQuestionsIdApproveRoute
   '/api/questions/$id/stats': typeof ApiQuestionsIdStatsRoute
+  '/api/questions/generate-batch/$id': typeof ApiQuestionsGenerateBatchIdRouteWithChildren
   '/api/students/$id/login': typeof ApiStudentsIdLoginRoute
   '/api/evaluations/$id/items/$itemId': typeof ApiEvaluationsIdItemsItemIdRoute
   '/api/evaluations/$id/report/pdf': typeof ApiEvaluationsIdReportPdfRoute
+  '/api/questions/generate-batch/$id/resume': typeof ApiQuestionsGenerateBatchIdResumeRoute
   '/api/students/$id/consent/withdraw': typeof ApiStudentsIdConsentWithdrawRoute
   '/api/students/$id/habits/trend': typeof ApiStudentsIdHabitsTrendRoute
   '/api/syllabus/chapters/$id/scope': typeof ApiSyllabusChaptersIdScopeRoute
@@ -381,6 +408,7 @@ export interface FileRoutesById {
   '/api/questions/bulk-import': typeof ApiQuestionsBulkImportRoute
   '/api/questions/coverage-grid': typeof ApiQuestionsCoverageGridRoute
   '/api/questions/generate': typeof ApiQuestionsGenerateRoute
+  '/api/questions/generate-batch': typeof ApiQuestionsGenerateBatchRouteWithChildren
   '/api/students/$id': typeof ApiStudentsIdRouteWithChildren
   '/api/syllabus/chapters': typeof ApiSyllabusChaptersRouteWithChildren
   '/api/syllabus/subjects': typeof ApiSyllabusSubjectsRoute
@@ -396,9 +424,11 @@ export interface FileRoutesById {
   '/api/papers/$id/regenerate-slot': typeof ApiPapersIdRegenerateSlotRoute
   '/api/questions/$id/approve': typeof ApiQuestionsIdApproveRoute
   '/api/questions/$id/stats': typeof ApiQuestionsIdStatsRoute
+  '/api/questions/generate-batch/$id': typeof ApiQuestionsGenerateBatchIdRouteWithChildren
   '/api/students/$id/login': typeof ApiStudentsIdLoginRoute
   '/api/evaluations/$id/items/$itemId': typeof ApiEvaluationsIdItemsItemIdRoute
   '/api/evaluations/$id/report/pdf': typeof ApiEvaluationsIdReportPdfRoute
+  '/api/questions/generate-batch/$id/resume': typeof ApiQuestionsGenerateBatchIdResumeRoute
   '/api/students/$id/consent/withdraw': typeof ApiStudentsIdConsentWithdrawRoute
   '/api/students/$id/habits/trend': typeof ApiStudentsIdHabitsTrendRoute
   '/api/syllabus/chapters/$id/scope': typeof ApiSyllabusChaptersIdScopeRoute
@@ -427,6 +457,7 @@ export interface FileRouteTypes {
     | '/api/questions/bulk-import'
     | '/api/questions/coverage-grid'
     | '/api/questions/generate'
+    | '/api/questions/generate-batch'
     | '/api/students/$id'
     | '/api/syllabus/chapters'
     | '/api/syllabus/subjects'
@@ -442,9 +473,11 @@ export interface FileRouteTypes {
     | '/api/papers/$id/regenerate-slot'
     | '/api/questions/$id/approve'
     | '/api/questions/$id/stats'
+    | '/api/questions/generate-batch/$id'
     | '/api/students/$id/login'
     | '/api/evaluations/$id/items/$itemId'
     | '/api/evaluations/$id/report/pdf'
+    | '/api/questions/generate-batch/$id/resume'
     | '/api/students/$id/consent/withdraw'
     | '/api/students/$id/habits/trend'
     | '/api/syllabus/chapters/$id/scope'
@@ -471,6 +504,7 @@ export interface FileRouteTypes {
     | '/api/questions/bulk-import'
     | '/api/questions/coverage-grid'
     | '/api/questions/generate'
+    | '/api/questions/generate-batch'
     | '/api/students/$id'
     | '/api/syllabus/chapters'
     | '/api/syllabus/subjects'
@@ -486,9 +520,11 @@ export interface FileRouteTypes {
     | '/api/papers/$id/regenerate-slot'
     | '/api/questions/$id/approve'
     | '/api/questions/$id/stats'
+    | '/api/questions/generate-batch/$id'
     | '/api/students/$id/login'
     | '/api/evaluations/$id/items/$itemId'
     | '/api/evaluations/$id/report/pdf'
+    | '/api/questions/generate-batch/$id/resume'
     | '/api/students/$id/consent/withdraw'
     | '/api/students/$id/habits/trend'
     | '/api/syllabus/chapters/$id/scope'
@@ -515,6 +551,7 @@ export interface FileRouteTypes {
     | '/api/questions/bulk-import'
     | '/api/questions/coverage-grid'
     | '/api/questions/generate'
+    | '/api/questions/generate-batch'
     | '/api/students/$id'
     | '/api/syllabus/chapters'
     | '/api/syllabus/subjects'
@@ -530,9 +567,11 @@ export interface FileRouteTypes {
     | '/api/papers/$id/regenerate-slot'
     | '/api/questions/$id/approve'
     | '/api/questions/$id/stats'
+    | '/api/questions/generate-batch/$id'
     | '/api/students/$id/login'
     | '/api/evaluations/$id/items/$itemId'
     | '/api/evaluations/$id/report/pdf'
+    | '/api/questions/generate-batch/$id/resume'
     | '/api/students/$id/consent/withdraw'
     | '/api/students/$id/habits/trend'
     | '/api/syllabus/chapters/$id/scope'
@@ -709,6 +748,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ApiQuestionsGenerateRouteImport
       parentRoute: typeof ApiQuestionsRoute
     }
+    '/api/questions/generate-batch': {
+      id: '/api/questions/generate-batch'
+      path: '/generate-batch'
+      fullPath: '/api/questions/generate-batch'
+      preLoaderRoute: typeof ApiQuestionsGenerateBatchRouteImport
+      parentRoute: typeof ApiQuestionsRoute
+    }
     '/api/students/$id': {
       id: '/api/students/$id'
       path: '/$id'
@@ -814,6 +860,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ApiQuestionsIdStatsRouteImport
       parentRoute: typeof ApiQuestionsIdRoute
     }
+    '/api/questions/generate-batch/$id': {
+      id: '/api/questions/generate-batch/$id'
+      path: '/$id'
+      fullPath: '/api/questions/generate-batch/$id'
+      preLoaderRoute: typeof ApiQuestionsGenerateBatchIdRouteImport
+      parentRoute: typeof ApiQuestionsGenerateBatchRoute
+    }
     '/api/students/$id/login': {
       id: '/api/students/$id/login'
       path: '/login'
@@ -834,6 +887,13 @@ declare module '@tanstack/react-router' {
       fullPath: '/api/evaluations/$id/report/pdf'
       preLoaderRoute: typeof ApiEvaluationsIdReportPdfRouteImport
       parentRoute: typeof ApiEvaluationsIdReportRoute
+    }
+    '/api/questions/generate-batch/$id/resume': {
+      id: '/api/questions/generate-batch/$id/resume'
+      path: '/resume'
+      fullPath: '/api/questions/generate-batch/$id/resume'
+      preLoaderRoute: typeof ApiQuestionsGenerateBatchIdResumeRouteImport
+      parentRoute: typeof ApiQuestionsGenerateBatchIdRoute
     }
     '/api/students/$id/consent/withdraw': {
       id: '/api/students/$id/consent/withdraw'
@@ -942,11 +1002,42 @@ const ApiQuestionsIdRouteWithChildren = ApiQuestionsIdRoute._addFileChildren(
   ApiQuestionsIdRouteChildren,
 )
 
+interface ApiQuestionsGenerateBatchIdRouteChildren {
+  ApiQuestionsGenerateBatchIdResumeRoute: typeof ApiQuestionsGenerateBatchIdResumeRoute
+}
+
+const ApiQuestionsGenerateBatchIdRouteChildren: ApiQuestionsGenerateBatchIdRouteChildren =
+  {
+    ApiQuestionsGenerateBatchIdResumeRoute:
+      ApiQuestionsGenerateBatchIdResumeRoute,
+  }
+
+const ApiQuestionsGenerateBatchIdRouteWithChildren =
+  ApiQuestionsGenerateBatchIdRoute._addFileChildren(
+    ApiQuestionsGenerateBatchIdRouteChildren,
+  )
+
+interface ApiQuestionsGenerateBatchRouteChildren {
+  ApiQuestionsGenerateBatchIdRoute: typeof ApiQuestionsGenerateBatchIdRouteWithChildren
+}
+
+const ApiQuestionsGenerateBatchRouteChildren: ApiQuestionsGenerateBatchRouteChildren =
+  {
+    ApiQuestionsGenerateBatchIdRoute:
+      ApiQuestionsGenerateBatchIdRouteWithChildren,
+  }
+
+const ApiQuestionsGenerateBatchRouteWithChildren =
+  ApiQuestionsGenerateBatchRoute._addFileChildren(
+    ApiQuestionsGenerateBatchRouteChildren,
+  )
+
 interface ApiQuestionsRouteChildren {
   ApiQuestionsIdRoute: typeof ApiQuestionsIdRouteWithChildren
   ApiQuestionsBulkImportRoute: typeof ApiQuestionsBulkImportRoute
   ApiQuestionsCoverageGridRoute: typeof ApiQuestionsCoverageGridRoute
   ApiQuestionsGenerateRoute: typeof ApiQuestionsGenerateRoute
+  ApiQuestionsGenerateBatchRoute: typeof ApiQuestionsGenerateBatchRouteWithChildren
 }
 
 const ApiQuestionsRouteChildren: ApiQuestionsRouteChildren = {
@@ -954,6 +1045,7 @@ const ApiQuestionsRouteChildren: ApiQuestionsRouteChildren = {
   ApiQuestionsBulkImportRoute: ApiQuestionsBulkImportRoute,
   ApiQuestionsCoverageGridRoute: ApiQuestionsCoverageGridRoute,
   ApiQuestionsGenerateRoute: ApiQuestionsGenerateRoute,
+  ApiQuestionsGenerateBatchRoute: ApiQuestionsGenerateBatchRouteWithChildren,
 }
 
 const ApiQuestionsRouteWithChildren = ApiQuestionsRoute._addFileChildren(

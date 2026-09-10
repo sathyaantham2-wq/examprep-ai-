@@ -3,7 +3,7 @@
  * Please do not edit it manually.
  */
 
-import type { AiJobStatus, AnswerSource, AttemptMode, AttemptStatus, BloomLevel, ConceptStatusValue, DifficultyTier, ErrorType, EvaluatedBy, HabitRating, NotificationChannel, NotificationStatus, QuestionStatus, QuestionType, RemediationStatus, ReviewTier, ScopeKind, StudyPlanStatus, UploadKind, UserRole } from "./enums";
+import type { AiJobStatus, AnswerSource, AttemptMode, AttemptStatus, BloomLevel, ConceptStatusValue, DifficultyTier, ErrorType, EvaluatedBy, GenerationBatchItemStatus, GenerationBatchStatus, HabitRating, NotificationChannel, NotificationStatus, QuestionOrigin, QuestionStatus, QuestionType, RemediationStatus, ReviewTier, ScopeKind, StudyPlanStatus, UploadKind, UserRole } from "./enums";
 import type { ColumnType } from "kysely";
 
 export type Generated<T> = T extends ColumnType<infer S, infer I, infer U>
@@ -220,6 +220,31 @@ export interface Evaluations {
   total_marks: Numeric;
 }
 
+export interface GenerationBatches {
+  cost_cap_inr: Numeric;
+  cost_spent_inr: Generated<Numeric>;
+  created_at: Generated<Timestamp>;
+  created_by: string;
+  error: string | null;
+  id: Generated<string>;
+  status: GenerationBatchStatus;
+  subject_id: string;
+  updated_at: Generated<Timestamp>;
+}
+
+export interface GenerationBatchItems {
+  batch_id: string;
+  bloom: BloomLevel;
+  concept_id: string;
+  created_at: Generated<Timestamp>;
+  difficulty: DifficultyTier;
+  error: string | null;
+  generated_count: Generated<number>;
+  id: Generated<string>;
+  status: GenerationBatchItemStatus;
+  target_count: number;
+}
+
 export interface HabitObservations {
   created_at: Generated<Timestamp>;
   evaluation_id: string;
@@ -331,7 +356,7 @@ export interface Questions {
   is_reversal_word: Generated<boolean>;
   language: Generated<string>;
   marks: number;
-  origin: Generated<string>;
+  origin: QuestionOrigin;
   review_note: string | null;
   review_tier: ReviewTier;
   reviewed_at: Timestamp | null;
@@ -485,6 +510,8 @@ export interface DB {
   consents: Consents;
   evaluation_items: EvaluationItems;
   evaluations: Evaluations;
+  generation_batch_items: GenerationBatchItems;
+  generation_batches: GenerationBatches;
   habit_observations: HabitObservations;
   habits: Habits;
   households: Households;
