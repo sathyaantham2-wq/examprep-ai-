@@ -40,6 +40,8 @@ describe('AI question generation (F025)', () => {
   let admin: TestSession
   let scopedConceptId: string
   let unscopedConceptId: string
+  let scopedChapterId: string
+  let unscopedChapterId: string
 
   beforeAll(async () => {
     db = createDb()
@@ -69,6 +71,7 @@ describe('AI question generation (F025)', () => {
       })
       .returningAll()
       .executeTakeFirstOrThrow()
+    scopedChapterId = chapter.id
 
     await chapterScopeRepository.insertMany(db, [
       {
@@ -100,6 +103,7 @@ describe('AI question generation (F025)', () => {
       })
       .returningAll()
       .executeTakeFirstOrThrow()
+    unscopedChapterId = unscopedChapter.id
 
     const unscoped = await conceptsRepository.insert(db, {
       chapter_id: unscopedChapter.id,
@@ -116,6 +120,14 @@ describe('AI question generation (F025)', () => {
     await db
       .deleteFrom('concepts')
       .where('id', 'in', [scopedConceptId, unscopedConceptId])
+      .execute()
+    // Chapter rows aren't product data (drafts/approved questions etc. are, per CLAUDE.md
+    // invariant 4) -- they're this test's own fixtures, and leaving them behind let a later run's
+    // random chapter_no collide with one from a prior run (chapters_source_part_no_key), which is
+    // exactly what happened before this cleanup was added.
+    await db
+      .deleteFrom('chapters')
+      .where('id', 'in', [scopedChapterId, unscopedChapterId])
       .execute()
     await db.deleteFrom('households').where('id', '=', admin.householdId).execute()
     await db.destroy()

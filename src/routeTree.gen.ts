@@ -13,11 +13,13 @@ import { Route as IndexRouteImport } from './routes/index'
 import { Route as GenerateRouteImport } from './routes/generate'
 import { Route as HomeRouteImport } from './routes/home'
 import { Route as OnboardingRouteImport } from './routes/onboarding'
+import { Route as StudentRouteImport } from './routes/student'
 import { Route as ApiAttemptsRouteImport } from './routes/api/attempts'
 import { Route as ApiAuditLogRouteImport } from './routes/api/audit-log'
 import { Route as ApiBlueprintsRouteImport } from './routes/api/blueprints'
 import { Route as ApiEvaluationsRouteImport } from './routes/api/evaluations'
 import { Route as ApiQuestionsRouteImport } from './routes/api/questions'
+import { Route as ApiStudentDashboardRouteImport } from './routes/api/student-dashboard'
 import { Route as ApiStudentsRouteImport } from './routes/api/students'
 import { Route as AttemptIdRouteImport } from './routes/attempt/$id'
 import { Route as EvaluateAttemptIdRouteImport } from './routes/evaluate/$attemptId'
@@ -76,6 +78,11 @@ const OnboardingRoute = OnboardingRouteImport.update({
   path: '/onboarding',
   getParentRoute: () => rootRouteImport,
 } as any)
+const StudentRoute = StudentRouteImport.update({
+  id: '/student',
+  path: '/student',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const ApiAttemptsRoute = ApiAttemptsRouteImport.update({
   id: '/api/attempts',
   path: '/api/attempts',
@@ -99,6 +106,11 @@ const ApiEvaluationsRoute = ApiEvaluationsRouteImport.update({
 const ApiQuestionsRoute = ApiQuestionsRouteImport.update({
   id: '/api/questions',
   path: '/api/questions',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ApiStudentDashboardRoute = ApiStudentDashboardRouteImport.update({
+  id: '/api/student-dashboard',
+  path: '/api/student-dashboard',
   getParentRoute: () => rootRouteImport,
 } as any)
 const ApiStudentsRoute = ApiStudentsRouteImport.update({
@@ -302,11 +314,13 @@ export interface FileRoutesByFullPath {
   '/generate': typeof GenerateRoute
   '/home': typeof HomeRoute
   '/onboarding': typeof OnboardingRoute
+  '/student': typeof StudentRoute
   '/api/attempts': typeof ApiAttemptsRouteWithChildren
   '/api/audit-log': typeof ApiAuditLogRoute
   '/api/blueprints': typeof ApiBlueprintsRoute
   '/api/evaluations': typeof ApiEvaluationsRouteWithChildren
   '/api/questions': typeof ApiQuestionsRouteWithChildren
+  '/api/student-dashboard': typeof ApiStudentDashboardRoute
   '/api/students': typeof ApiStudentsRouteWithChildren
   '/attempt/$id': typeof AttemptIdRoute
   '/evaluate/$attemptId': typeof EvaluateAttemptIdRoute
@@ -350,11 +364,13 @@ export interface FileRoutesByTo {
   '/generate': typeof GenerateRoute
   '/home': typeof HomeRoute
   '/onboarding': typeof OnboardingRoute
+  '/student': typeof StudentRoute
   '/api/attempts': typeof ApiAttemptsRouteWithChildren
   '/api/audit-log': typeof ApiAuditLogRoute
   '/api/blueprints': typeof ApiBlueprintsRoute
   '/api/evaluations': typeof ApiEvaluationsRouteWithChildren
   '/api/questions': typeof ApiQuestionsRouteWithChildren
+  '/api/student-dashboard': typeof ApiStudentDashboardRoute
   '/api/students': typeof ApiStudentsRouteWithChildren
   '/attempt/$id': typeof AttemptIdRoute
   '/evaluate/$attemptId': typeof EvaluateAttemptIdRoute
@@ -399,11 +415,13 @@ export interface FileRoutesById {
   '/generate': typeof GenerateRoute
   '/home': typeof HomeRoute
   '/onboarding': typeof OnboardingRoute
+  '/student': typeof StudentRoute
   '/api/attempts': typeof ApiAttemptsRouteWithChildren
   '/api/audit-log': typeof ApiAuditLogRoute
   '/api/blueprints': typeof ApiBlueprintsRoute
   '/api/evaluations': typeof ApiEvaluationsRouteWithChildren
   '/api/questions': typeof ApiQuestionsRouteWithChildren
+  '/api/student-dashboard': typeof ApiStudentDashboardRoute
   '/api/students': typeof ApiStudentsRouteWithChildren
   '/attempt/$id': typeof AttemptIdRoute
   '/evaluate/$attemptId': typeof EvaluateAttemptIdRoute
@@ -449,11 +467,13 @@ export interface FileRouteTypes {
     | '/generate'
     | '/home'
     | '/onboarding'
+    | '/student'
     | '/api/attempts'
     | '/api/audit-log'
     | '/api/blueprints'
     | '/api/evaluations'
     | '/api/questions'
+    | '/api/student-dashboard'
     | '/api/students'
     | '/attempt/$id'
     | '/evaluate/$attemptId'
@@ -497,11 +517,13 @@ export interface FileRouteTypes {
     | '/generate'
     | '/home'
     | '/onboarding'
+    | '/student'
     | '/api/attempts'
     | '/api/audit-log'
     | '/api/blueprints'
     | '/api/evaluations'
     | '/api/questions'
+    | '/api/student-dashboard'
     | '/api/students'
     | '/attempt/$id'
     | '/evaluate/$attemptId'
@@ -545,11 +567,13 @@ export interface FileRouteTypes {
     | '/generate'
     | '/home'
     | '/onboarding'
+    | '/student'
     | '/api/attempts'
     | '/api/audit-log'
     | '/api/blueprints'
     | '/api/evaluations'
     | '/api/questions'
+    | '/api/student-dashboard'
     | '/api/students'
     | '/attempt/$id'
     | '/evaluate/$attemptId'
@@ -594,11 +618,13 @@ export interface RootRouteChildren {
   GenerateRoute: typeof GenerateRoute
   HomeRoute: typeof HomeRoute
   OnboardingRoute: typeof OnboardingRoute
+  StudentRoute: typeof StudentRoute
   ApiAttemptsRoute: typeof ApiAttemptsRouteWithChildren
   ApiAuditLogRoute: typeof ApiAuditLogRoute
   ApiBlueprintsRoute: typeof ApiBlueprintsRoute
   ApiEvaluationsRoute: typeof ApiEvaluationsRouteWithChildren
   ApiQuestionsRoute: typeof ApiQuestionsRouteWithChildren
+  ApiStudentDashboardRoute: typeof ApiStudentDashboardRoute
   ApiStudentsRoute: typeof ApiStudentsRouteWithChildren
   AttemptIdRoute: typeof AttemptIdRoute
   EvaluateAttemptIdRoute: typeof EvaluateAttemptIdRoute
@@ -642,6 +668,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof OnboardingRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/student': {
+      id: '/student'
+      path: '/student'
+      fullPath: '/student'
+      preLoaderRoute: typeof StudentRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/api/attempts': {
       id: '/api/attempts'
       path: '/api/attempts'
@@ -675,6 +708,13 @@ declare module '@tanstack/react-router' {
       path: '/api/questions'
       fullPath: '/api/questions'
       preLoaderRoute: typeof ApiQuestionsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/api/student-dashboard': {
+      id: '/api/student-dashboard'
+      path: '/api/student-dashboard'
+      fullPath: '/api/student-dashboard'
+      preLoaderRoute: typeof ApiStudentDashboardRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/api/students': {
@@ -1132,11 +1172,13 @@ const rootRouteChildren: RootRouteChildren = {
   GenerateRoute: GenerateRoute,
   HomeRoute: HomeRoute,
   OnboardingRoute: OnboardingRoute,
+  StudentRoute: StudentRoute,
   ApiAttemptsRoute: ApiAttemptsRouteWithChildren,
   ApiAuditLogRoute: ApiAuditLogRoute,
   ApiBlueprintsRoute: ApiBlueprintsRoute,
   ApiEvaluationsRoute: ApiEvaluationsRouteWithChildren,
   ApiQuestionsRoute: ApiQuestionsRouteWithChildren,
+  ApiStudentDashboardRoute: ApiStudentDashboardRoute,
   ApiStudentsRoute: ApiStudentsRouteWithChildren,
   AttemptIdRoute: AttemptIdRoute,
   EvaluateAttemptIdRoute: EvaluateAttemptIdRoute,
