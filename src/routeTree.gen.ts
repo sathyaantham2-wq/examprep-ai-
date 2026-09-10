@@ -15,6 +15,7 @@ import { Route as HomeRouteImport } from './routes/home'
 import { Route as OnboardingRouteImport } from './routes/onboarding'
 import { Route as RemediationRouteImport } from './routes/remediation'
 import { Route as StudentRouteImport } from './routes/student'
+import { Route as AdminBlueprintsRouteImport } from './routes/admin/blueprints'
 import { Route as AdminQuestionsRouteImport } from './routes/admin/questions'
 import { Route as ApiAttemptsRouteImport } from './routes/api/attempts'
 import { Route as ApiAuditLogRouteImport } from './routes/api/audit-log'
@@ -96,6 +97,11 @@ const RemediationRoute = RemediationRouteImport.update({
 const StudentRoute = StudentRouteImport.update({
   id: '/student',
   path: '/student',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AdminBlueprintsRoute = AdminBlueprintsRouteImport.update({
+  id: '/admin/blueprints',
+  path: '/admin/blueprints',
   getParentRoute: () => rootRouteImport,
 } as any)
 const AdminQuestionsRoute = AdminQuestionsRouteImport.update({
@@ -377,6 +383,7 @@ export interface FileRoutesByFullPath {
   '/onboarding': typeof OnboardingRoute
   '/remediation': typeof RemediationRoute
   '/student': typeof StudentRoute
+  '/admin/blueprints': typeof AdminBlueprintsRoute
   '/admin/questions': typeof AdminQuestionsRoute
   '/api/attempts': typeof ApiAttemptsRouteWithChildren
   '/api/audit-log': typeof ApiAuditLogRoute
@@ -437,6 +444,7 @@ export interface FileRoutesByTo {
   '/onboarding': typeof OnboardingRoute
   '/remediation': typeof RemediationRoute
   '/student': typeof StudentRoute
+  '/admin/blueprints': typeof AdminBlueprintsRoute
   '/admin/questions': typeof AdminQuestionsRoute
   '/api/attempts': typeof ApiAttemptsRouteWithChildren
   '/api/audit-log': typeof ApiAuditLogRoute
@@ -498,6 +506,7 @@ export interface FileRoutesById {
   '/onboarding': typeof OnboardingRoute
   '/remediation': typeof RemediationRoute
   '/student': typeof StudentRoute
+  '/admin/blueprints': typeof AdminBlueprintsRoute
   '/admin/questions': typeof AdminQuestionsRoute
   '/api/attempts': typeof ApiAttemptsRouteWithChildren
   '/api/audit-log': typeof ApiAuditLogRoute
@@ -560,6 +569,7 @@ export interface FileRouteTypes {
     | '/onboarding'
     | '/remediation'
     | '/student'
+    | '/admin/blueprints'
     | '/admin/questions'
     | '/api/attempts'
     | '/api/audit-log'
@@ -620,6 +630,7 @@ export interface FileRouteTypes {
     | '/onboarding'
     | '/remediation'
     | '/student'
+    | '/admin/blueprints'
     | '/admin/questions'
     | '/api/attempts'
     | '/api/audit-log'
@@ -680,6 +691,7 @@ export interface FileRouteTypes {
     | '/onboarding'
     | '/remediation'
     | '/student'
+    | '/admin/blueprints'
     | '/admin/questions'
     | '/api/attempts'
     | '/api/audit-log'
@@ -741,6 +753,7 @@ export interface RootRouteChildren {
   OnboardingRoute: typeof OnboardingRoute
   RemediationRoute: typeof RemediationRoute
   StudentRoute: typeof StudentRoute
+  AdminBlueprintsRoute: typeof AdminBlueprintsRoute
   AdminQuestionsRoute: typeof AdminQuestionsRoute
   ApiAttemptsRoute: typeof ApiAttemptsRouteWithChildren
   ApiAuditLogRoute: typeof ApiAuditLogRoute
@@ -807,6 +820,13 @@ declare module '@tanstack/react-router' {
       path: '/student'
       fullPath: '/student'
       preLoaderRoute: typeof StudentRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/admin/blueprints': {
+      id: '/admin/blueprints'
+      path: '/admin/blueprints'
+      fullPath: '/admin/blueprints'
+      preLoaderRoute: typeof AdminBlueprintsRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/admin/questions': {
@@ -1398,6 +1418,7 @@ const rootRouteChildren: RootRouteChildren = {
   OnboardingRoute: OnboardingRoute,
   RemediationRoute: RemediationRoute,
   StudentRoute: StudentRoute,
+  AdminBlueprintsRoute: AdminBlueprintsRoute,
   AdminQuestionsRoute: AdminQuestionsRoute,
   ApiAttemptsRoute: ApiAttemptsRouteWithChildren,
   ApiAuditLogRoute: ApiAuditLogRoute,
