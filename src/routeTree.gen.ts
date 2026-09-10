@@ -29,6 +29,7 @@ import { Route as ApiStudentsRouteImport } from './routes/api/students'
 import { Route as AttemptIdRouteImport } from './routes/attempt/$id'
 import { Route as EvaluateAttemptIdRouteImport } from './routes/evaluate/$attemptId'
 import { Route as SummaryWeeklyRouteImport } from './routes/summary/weekly'
+import { Route as ApiAdminSyllabusFidelityRouteImport } from './routes/api/admin/syllabus-fidelity'
 import { Route as ApiAttemptsIdRouteImport } from './routes/api/attempts/$id'
 import { Route as ApiAuthSplatRouteImport } from './routes/api/auth/$'
 import { Route as ApiDashboardStudentIdRouteImport } from './routes/api/dashboard/$studentId'
@@ -173,6 +174,12 @@ const SummaryWeeklyRoute = SummaryWeeklyRouteImport.update({
   path: '/summary/weekly',
   getParentRoute: () => rootRouteImport,
 } as any)
+const ApiAdminSyllabusFidelityRoute =
+  ApiAdminSyllabusFidelityRouteImport.update({
+    id: '/api/admin/syllabus-fidelity',
+    path: '/api/admin/syllabus-fidelity',
+    getParentRoute: () => rootRouteImport,
+  } as any)
 const ApiAttemptsIdRoute = ApiAttemptsIdRouteImport.update({
   id: '/$id',
   path: '/$id',
@@ -421,6 +428,7 @@ export interface FileRoutesByFullPath {
   '/attempt/$id': typeof AttemptIdRoute
   '/evaluate/$attemptId': typeof EvaluateAttemptIdRoute
   '/summary/weekly': typeof SummaryWeeklyRoute
+  '/api/admin/syllabus-fidelity': typeof ApiAdminSyllabusFidelityRoute
   '/api/attempts/$id': typeof ApiAttemptsIdRouteWithChildren
   '/api/auth/$': typeof ApiAuthSplatRoute
   '/api/dashboard/$studentId': typeof ApiDashboardStudentIdRoute
@@ -486,6 +494,7 @@ export interface FileRoutesByTo {
   '/attempt/$id': typeof AttemptIdRoute
   '/evaluate/$attemptId': typeof EvaluateAttemptIdRoute
   '/summary/weekly': typeof SummaryWeeklyRoute
+  '/api/admin/syllabus-fidelity': typeof ApiAdminSyllabusFidelityRoute
   '/api/attempts/$id': typeof ApiAttemptsIdRouteWithChildren
   '/api/auth/$': typeof ApiAuthSplatRoute
   '/api/dashboard/$studentId': typeof ApiDashboardStudentIdRoute
@@ -552,6 +561,7 @@ export interface FileRoutesById {
   '/attempt/$id': typeof AttemptIdRoute
   '/evaluate/$attemptId': typeof EvaluateAttemptIdRoute
   '/summary/weekly': typeof SummaryWeeklyRoute
+  '/api/admin/syllabus-fidelity': typeof ApiAdminSyllabusFidelityRoute
   '/api/attempts/$id': typeof ApiAttemptsIdRouteWithChildren
   '/api/auth/$': typeof ApiAuthSplatRoute
   '/api/dashboard/$studentId': typeof ApiDashboardStudentIdRoute
@@ -619,6 +629,7 @@ export interface FileRouteTypes {
     | '/attempt/$id'
     | '/evaluate/$attemptId'
     | '/summary/weekly'
+    | '/api/admin/syllabus-fidelity'
     | '/api/attempts/$id'
     | '/api/auth/$'
     | '/api/dashboard/$studentId'
@@ -684,6 +695,7 @@ export interface FileRouteTypes {
     | '/attempt/$id'
     | '/evaluate/$attemptId'
     | '/summary/weekly'
+    | '/api/admin/syllabus-fidelity'
     | '/api/attempts/$id'
     | '/api/auth/$'
     | '/api/dashboard/$studentId'
@@ -749,6 +761,7 @@ export interface FileRouteTypes {
     | '/attempt/$id'
     | '/evaluate/$attemptId'
     | '/summary/weekly'
+    | '/api/admin/syllabus-fidelity'
     | '/api/attempts/$id'
     | '/api/auth/$'
     | '/api/dashboard/$studentId'
@@ -815,6 +828,7 @@ export interface RootRouteChildren {
   AttemptIdRoute: typeof AttemptIdRoute
   EvaluateAttemptIdRoute: typeof EvaluateAttemptIdRoute
   SummaryWeeklyRoute: typeof SummaryWeeklyRoute
+  ApiAdminSyllabusFidelityRoute: typeof ApiAdminSyllabusFidelityRoute
   ApiAuthSplatRoute: typeof ApiAuthSplatRoute
   ApiDashboardStudentIdRoute: typeof ApiDashboardStudentIdRoute
   ApiHouseholdsMeRoute: typeof ApiHouseholdsMeRoute
@@ -970,6 +984,13 @@ declare module '@tanstack/react-router' {
       path: '/summary/weekly'
       fullPath: '/summary/weekly'
       preLoaderRoute: typeof SummaryWeeklyRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/api/admin/syllabus-fidelity': {
+      id: '/api/admin/syllabus-fidelity'
+      path: '/api/admin/syllabus-fidelity'
+      fullPath: '/api/admin/syllabus-fidelity'
+      preLoaderRoute: typeof ApiAdminSyllabusFidelityRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/api/attempts/$id': {
@@ -1512,6 +1533,7 @@ const rootRouteChildren: RootRouteChildren = {
   AttemptIdRoute: AttemptIdRoute,
   EvaluateAttemptIdRoute: EvaluateAttemptIdRoute,
   SummaryWeeklyRoute: SummaryWeeklyRoute,
+  ApiAdminSyllabusFidelityRoute: ApiAdminSyllabusFidelityRoute,
   ApiAuthSplatRoute: ApiAuthSplatRoute,
   ApiDashboardStudentIdRoute: ApiDashboardStudentIdRoute,
   ApiHouseholdsMeRoute: ApiHouseholdsMeRoute,
@@ -1529,12 +1551,3 @@ const rootRouteChildren: RootRouteChildren = {
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
   ._addFileTypes<FileRouteTypes>()
-
-import type { getRouter } from './router.tsx'
-import type { createStart } from '@tanstack/react-start'
-declare module '@tanstack/react-start' {
-  interface Register {
-    ssr: true
-    router: Awaited<ReturnType<typeof getRouter>>
-  }
-}
