@@ -198,6 +198,14 @@ export interface Consents {
   withdrawn_at: Timestamp | null;
 }
 
+export interface DeletionLog {
+  deleted_at: Generated<Timestamp>;
+  household_id: string;
+  household_name: string;
+  id: Generated<string>;
+  requested_by_user_id: string;
+}
+
 export interface EvaluationItems {
   ai_error_type: ErrorType | null;
   ai_marks: Numeric | null;
@@ -518,6 +526,7 @@ export interface DB {
   concept_status: ConceptStatus;
   concepts: Concepts;
   consents: Consents;
+  deletion_log: DeletionLog;
   evaluation_items: EvaluationItems;
   evaluations: Evaluations;
   generation_batch_items: GenerationBatchItems;

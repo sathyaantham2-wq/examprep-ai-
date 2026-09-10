@@ -14,6 +14,7 @@ import { Route as GenerateRouteImport } from './routes/generate'
 import { Route as HomeRouteImport } from './routes/home'
 import { Route as OnboardingRouteImport } from './routes/onboarding'
 import { Route as RemediationRouteImport } from './routes/remediation'
+import { Route as SettingsRouteImport } from './routes/settings'
 import { Route as StudentRouteImport } from './routes/student'
 import { Route as AdminBlueprintsRouteImport } from './routes/admin/blueprints'
 import { Route as AdminQuestionsRouteImport } from './routes/admin/questions'
@@ -32,8 +33,11 @@ import { Route as ApiAttemptsIdRouteImport } from './routes/api/attempts/$id'
 import { Route as ApiAuthSplatRouteImport } from './routes/api/auth/$'
 import { Route as ApiDashboardStudentIdRouteImport } from './routes/api/dashboard/$studentId'
 import { Route as ApiEvaluationsIdRouteImport } from './routes/api/evaluations/$id'
+import { Route as ApiHouseholdsMeRouteImport } from './routes/api/households/me'
 import { Route as ApiPapersIdRouteImport } from './routes/api/papers/$id'
 import { Route as ApiPapersGenerateRouteImport } from './routes/api/papers/generate'
+import { Route as ApiPrivacyDeleteRouteImport } from './routes/api/privacy/delete'
+import { Route as ApiPrivacyExportRouteImport } from './routes/api/privacy/export'
 import { Route as ApiQuestionsIdRouteImport } from './routes/api/questions/$id'
 import { Route as ApiQuestionsBulkImportRouteImport } from './routes/api/questions/bulk-import'
 import { Route as ApiQuestionsCoverageGridRouteImport } from './routes/api/questions/coverage-grid'
@@ -92,6 +96,11 @@ const OnboardingRoute = OnboardingRouteImport.update({
 const RemediationRoute = RemediationRouteImport.update({
   id: '/remediation',
   path: '/remediation',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const SettingsRoute = SettingsRouteImport.update({
+  id: '/settings',
+  path: '/settings',
   getParentRoute: () => rootRouteImport,
 } as any)
 const StudentRoute = StudentRouteImport.update({
@@ -184,6 +193,11 @@ const ApiEvaluationsIdRoute = ApiEvaluationsIdRouteImport.update({
   path: '/$id',
   getParentRoute: () => ApiEvaluationsRoute,
 } as any)
+const ApiHouseholdsMeRoute = ApiHouseholdsMeRouteImport.update({
+  id: '/api/households/me',
+  path: '/api/households/me',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const ApiPapersIdRoute = ApiPapersIdRouteImport.update({
   id: '/api/papers/$id',
   path: '/api/papers/$id',
@@ -192,6 +206,16 @@ const ApiPapersIdRoute = ApiPapersIdRouteImport.update({
 const ApiPapersGenerateRoute = ApiPapersGenerateRouteImport.update({
   id: '/api/papers/generate',
   path: '/api/papers/generate',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ApiPrivacyDeleteRoute = ApiPrivacyDeleteRouteImport.update({
+  id: '/api/privacy/delete',
+  path: '/api/privacy/delete',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ApiPrivacyExportRoute = ApiPrivacyExportRouteImport.update({
+  id: '/api/privacy/export',
+  path: '/api/privacy/export',
   getParentRoute: () => rootRouteImport,
 } as any)
 const ApiQuestionsIdRoute = ApiQuestionsIdRouteImport.update({
@@ -382,6 +406,7 @@ export interface FileRoutesByFullPath {
   '/home': typeof HomeRoute
   '/onboarding': typeof OnboardingRoute
   '/remediation': typeof RemediationRoute
+  '/settings': typeof SettingsRoute
   '/student': typeof StudentRoute
   '/admin/blueprints': typeof AdminBlueprintsRoute
   '/admin/questions': typeof AdminQuestionsRoute
@@ -400,8 +425,11 @@ export interface FileRoutesByFullPath {
   '/api/auth/$': typeof ApiAuthSplatRoute
   '/api/dashboard/$studentId': typeof ApiDashboardStudentIdRoute
   '/api/evaluations/$id': typeof ApiEvaluationsIdRouteWithChildren
+  '/api/households/me': typeof ApiHouseholdsMeRoute
   '/api/papers/$id': typeof ApiPapersIdRouteWithChildren
   '/api/papers/generate': typeof ApiPapersGenerateRoute
+  '/api/privacy/delete': typeof ApiPrivacyDeleteRoute
+  '/api/privacy/export': typeof ApiPrivacyExportRoute
   '/api/questions/$id': typeof ApiQuestionsIdRouteWithChildren
   '/api/questions/bulk-import': typeof ApiQuestionsBulkImportRoute
   '/api/questions/coverage-grid': typeof ApiQuestionsCoverageGridRoute
@@ -443,6 +471,7 @@ export interface FileRoutesByTo {
   '/home': typeof HomeRoute
   '/onboarding': typeof OnboardingRoute
   '/remediation': typeof RemediationRoute
+  '/settings': typeof SettingsRoute
   '/student': typeof StudentRoute
   '/admin/blueprints': typeof AdminBlueprintsRoute
   '/admin/questions': typeof AdminQuestionsRoute
@@ -461,8 +490,11 @@ export interface FileRoutesByTo {
   '/api/auth/$': typeof ApiAuthSplatRoute
   '/api/dashboard/$studentId': typeof ApiDashboardStudentIdRoute
   '/api/evaluations/$id': typeof ApiEvaluationsIdRouteWithChildren
+  '/api/households/me': typeof ApiHouseholdsMeRoute
   '/api/papers/$id': typeof ApiPapersIdRouteWithChildren
   '/api/papers/generate': typeof ApiPapersGenerateRoute
+  '/api/privacy/delete': typeof ApiPrivacyDeleteRoute
+  '/api/privacy/export': typeof ApiPrivacyExportRoute
   '/api/questions/$id': typeof ApiQuestionsIdRouteWithChildren
   '/api/questions/bulk-import': typeof ApiQuestionsBulkImportRoute
   '/api/questions/coverage-grid': typeof ApiQuestionsCoverageGridRoute
@@ -505,6 +537,7 @@ export interface FileRoutesById {
   '/home': typeof HomeRoute
   '/onboarding': typeof OnboardingRoute
   '/remediation': typeof RemediationRoute
+  '/settings': typeof SettingsRoute
   '/student': typeof StudentRoute
   '/admin/blueprints': typeof AdminBlueprintsRoute
   '/admin/questions': typeof AdminQuestionsRoute
@@ -523,8 +556,11 @@ export interface FileRoutesById {
   '/api/auth/$': typeof ApiAuthSplatRoute
   '/api/dashboard/$studentId': typeof ApiDashboardStudentIdRoute
   '/api/evaluations/$id': typeof ApiEvaluationsIdRouteWithChildren
+  '/api/households/me': typeof ApiHouseholdsMeRoute
   '/api/papers/$id': typeof ApiPapersIdRouteWithChildren
   '/api/papers/generate': typeof ApiPapersGenerateRoute
+  '/api/privacy/delete': typeof ApiPrivacyDeleteRoute
+  '/api/privacy/export': typeof ApiPrivacyExportRoute
   '/api/questions/$id': typeof ApiQuestionsIdRouteWithChildren
   '/api/questions/bulk-import': typeof ApiQuestionsBulkImportRoute
   '/api/questions/coverage-grid': typeof ApiQuestionsCoverageGridRoute
@@ -568,6 +604,7 @@ export interface FileRouteTypes {
     | '/home'
     | '/onboarding'
     | '/remediation'
+    | '/settings'
     | '/student'
     | '/admin/blueprints'
     | '/admin/questions'
@@ -586,8 +623,11 @@ export interface FileRouteTypes {
     | '/api/auth/$'
     | '/api/dashboard/$studentId'
     | '/api/evaluations/$id'
+    | '/api/households/me'
     | '/api/papers/$id'
     | '/api/papers/generate'
+    | '/api/privacy/delete'
+    | '/api/privacy/export'
     | '/api/questions/$id'
     | '/api/questions/bulk-import'
     | '/api/questions/coverage-grid'
@@ -629,6 +669,7 @@ export interface FileRouteTypes {
     | '/home'
     | '/onboarding'
     | '/remediation'
+    | '/settings'
     | '/student'
     | '/admin/blueprints'
     | '/admin/questions'
@@ -647,8 +688,11 @@ export interface FileRouteTypes {
     | '/api/auth/$'
     | '/api/dashboard/$studentId'
     | '/api/evaluations/$id'
+    | '/api/households/me'
     | '/api/papers/$id'
     | '/api/papers/generate'
+    | '/api/privacy/delete'
+    | '/api/privacy/export'
     | '/api/questions/$id'
     | '/api/questions/bulk-import'
     | '/api/questions/coverage-grid'
@@ -690,6 +734,7 @@ export interface FileRouteTypes {
     | '/home'
     | '/onboarding'
     | '/remediation'
+    | '/settings'
     | '/student'
     | '/admin/blueprints'
     | '/admin/questions'
@@ -708,8 +753,11 @@ export interface FileRouteTypes {
     | '/api/auth/$'
     | '/api/dashboard/$studentId'
     | '/api/evaluations/$id'
+    | '/api/households/me'
     | '/api/papers/$id'
     | '/api/papers/generate'
+    | '/api/privacy/delete'
+    | '/api/privacy/export'
     | '/api/questions/$id'
     | '/api/questions/bulk-import'
     | '/api/questions/coverage-grid'
@@ -752,6 +800,7 @@ export interface RootRouteChildren {
   HomeRoute: typeof HomeRoute
   OnboardingRoute: typeof OnboardingRoute
   RemediationRoute: typeof RemediationRoute
+  SettingsRoute: typeof SettingsRoute
   StudentRoute: typeof StudentRoute
   AdminBlueprintsRoute: typeof AdminBlueprintsRoute
   AdminQuestionsRoute: typeof AdminQuestionsRoute
@@ -768,8 +817,11 @@ export interface RootRouteChildren {
   SummaryWeeklyRoute: typeof SummaryWeeklyRoute
   ApiAuthSplatRoute: typeof ApiAuthSplatRoute
   ApiDashboardStudentIdRoute: typeof ApiDashboardStudentIdRoute
+  ApiHouseholdsMeRoute: typeof ApiHouseholdsMeRoute
   ApiPapersIdRoute: typeof ApiPapersIdRouteWithChildren
   ApiPapersGenerateRoute: typeof ApiPapersGenerateRoute
+  ApiPrivacyDeleteRoute: typeof ApiPrivacyDeleteRoute
+  ApiPrivacyExportRoute: typeof ApiPrivacyExportRoute
   ApiSyllabusChaptersRoute: typeof ApiSyllabusChaptersRouteWithChildren
   ApiSyllabusConceptsRoute: typeof ApiSyllabusConceptsRoute
   ApiSyllabusSubjectsRoute: typeof ApiSyllabusSubjectsRoute
@@ -813,6 +865,13 @@ declare module '@tanstack/react-router' {
       path: '/remediation'
       fullPath: '/remediation'
       preLoaderRoute: typeof RemediationRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/settings': {
+      id: '/settings'
+      path: '/settings'
+      fullPath: '/settings'
+      preLoaderRoute: typeof SettingsRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/student': {
@@ -941,6 +1000,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ApiEvaluationsIdRouteImport
       parentRoute: typeof ApiEvaluationsRoute
     }
+    '/api/households/me': {
+      id: '/api/households/me'
+      path: '/api/households/me'
+      fullPath: '/api/households/me'
+      preLoaderRoute: typeof ApiHouseholdsMeRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/api/papers/$id': {
       id: '/api/papers/$id'
       path: '/api/papers/$id'
@@ -953,6 +1019,20 @@ declare module '@tanstack/react-router' {
       path: '/api/papers/generate'
       fullPath: '/api/papers/generate'
       preLoaderRoute: typeof ApiPapersGenerateRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/api/privacy/delete': {
+      id: '/api/privacy/delete'
+      path: '/api/privacy/delete'
+      fullPath: '/api/privacy/delete'
+      preLoaderRoute: typeof ApiPrivacyDeleteRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/api/privacy/export': {
+      id: '/api/privacy/export'
+      path: '/api/privacy/export'
+      fullPath: '/api/privacy/export'
+      preLoaderRoute: typeof ApiPrivacyExportRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/api/questions/$id': {
@@ -1417,6 +1497,7 @@ const rootRouteChildren: RootRouteChildren = {
   HomeRoute: HomeRoute,
   OnboardingRoute: OnboardingRoute,
   RemediationRoute: RemediationRoute,
+  SettingsRoute: SettingsRoute,
   StudentRoute: StudentRoute,
   AdminBlueprintsRoute: AdminBlueprintsRoute,
   AdminQuestionsRoute: AdminQuestionsRoute,
@@ -1433,8 +1514,11 @@ const rootRouteChildren: RootRouteChildren = {
   SummaryWeeklyRoute: SummaryWeeklyRoute,
   ApiAuthSplatRoute: ApiAuthSplatRoute,
   ApiDashboardStudentIdRoute: ApiDashboardStudentIdRoute,
+  ApiHouseholdsMeRoute: ApiHouseholdsMeRoute,
   ApiPapersIdRoute: ApiPapersIdRouteWithChildren,
   ApiPapersGenerateRoute: ApiPapersGenerateRoute,
+  ApiPrivacyDeleteRoute: ApiPrivacyDeleteRoute,
+  ApiPrivacyExportRoute: ApiPrivacyExportRoute,
   ApiSyllabusChaptersRoute: ApiSyllabusChaptersRouteWithChildren,
   ApiSyllabusConceptsRoute: ApiSyllabusConceptsRoute,
   ApiSyllabusSubjectsRoute: ApiSyllabusSubjectsRoute,
