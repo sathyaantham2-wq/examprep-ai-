@@ -8,6 +8,12 @@ interface PriorityConcept {
   status: ConceptStatusValue
 }
 
+interface ScorePoint {
+  date: string
+  percentage: number
+  delivery_gap: number
+}
+
 interface SubjectCard {
   subject_id: string
   subject_name: string
@@ -17,6 +23,10 @@ interface SubjectCard {
   next_action: string
   // F050 (photo/PDF upload) isn't built yet -- always empty until that feature lands.
   pending_uploads: Array<never>
+  // F075: "score-over-time per subject, Delivery Gap over time" -- oldest first (chart reading
+  // order), capped at the most recent 20 confirmed evaluations so the payload doesn't grow
+  // unbounded over a student's whole history.
+  score_history: Array<ScorePoint>
 }
 
 const PRIORITY_ORDER: Record<string, number> = {
@@ -66,7 +76,7 @@ export async function buildParentDashboard(db: Db, studentId: string) {
       .where('papers.subject_id', '=', subject.id)
       .where('evaluations.confirmed_at', 'is not', null)
       .orderBy('evaluations.confirmed_at', 'desc')
-      .limit(2)
+      .limit(20)
       .execute()
 
     const latest = recentEvaluations.at(0)
@@ -105,6 +115,16 @@ export async function buildParentDashboard(db: Db, studentId: string) {
       ? `Practice ${priorityConcepts[0].concept_name} this week — currently ${priorityConcepts[0].status}.`
       : 'No priority or weak concepts flagged right now — keep up the current pace.'
 
+    const scoreHistory: Array<ScorePoint> = recentEvaluations
+      .filter((e) => e.confirmed_at)
+      .slice()
+      .reverse()
+      .map((e) => ({
+        date: e.confirmed_at!.toISOString().slice(0, 10),
+        percentage: Number(e.percentage),
+        delivery_gap: Number(e.delivery_gap),
+      }))
+
     cards.push({
       subject_id: subject.id,
       subject_name: subject.name,
@@ -118,8 +138,19 @@ export async function buildParentDashboard(db: Db, studentId: string) {
       priority_concepts: priorityConcepts,
       next_action: nextAction,
       pending_uploads: [],
+      score_history: scoreHistory,
     })
   }
 
-  return { subjects: cards }
+  const statusCounts = await db
+    .selectFrom('concept_status')
+    .select(['status', (eb) => eb.fn.countAll<string>().as('count')])
+    .where('student_id', '=', studentId)
+    .groupBy('status')
+    .execute()
+  const conceptStatusDistribution = Object.fromEntries(
+    statusCounts.map((row) => [row.status, Number(row.count)]),
+  ) as Record<ConceptStatusValue, number>
+
+  return { subjects: cards, concept_status_distribution: conceptStatusDistribution }
 }

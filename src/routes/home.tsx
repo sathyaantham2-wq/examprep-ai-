@@ -8,6 +8,8 @@ import {
   CardTitle,
 } from '../components/ui/card'
 import { ThemeToggle } from '../components/theme-toggle'
+import { LineChart } from '../components/charts/line-chart'
+import { StatusDistributionBar } from '../components/charts/status-distribution-bar'
 import { useSession } from '../lib/auth-client'
 
 export const Route = createFileRoute('/home')({ component: ParentDashboard })
@@ -25,6 +27,12 @@ interface PriorityConcept {
   status: string
 }
 
+interface ScorePoint {
+  date: string
+  percentage: number
+  delivery_gap: number
+}
+
 interface SubjectCard {
   subject_id: string
   subject_name: string
@@ -33,10 +41,12 @@ interface SubjectCard {
   priority_concepts: Array<PriorityConcept>
   next_action: string
   pending_uploads: Array<unknown>
+  score_history: Array<ScorePoint>
 }
 
 interface Dashboard {
   subjects: Array<SubjectCard>
+  concept_status_distribution: Record<string, number>
 }
 
 const TREND_ARROW: Record<string, string> = { up: '↑', down: '↓', flat: '→' }
@@ -206,9 +216,58 @@ function ParentDashboard() {
                     {subject.pending_uploads.length} upload(s) pending review.
                   </p>
                 )}
+
+                {subject.score_history.length > 0 && (
+                  <div className="grid gap-4 pt-2">
+                    <div>
+                      <p className="text-small mb-1 font-medium">
+                        Score over time
+                      </p>
+                      <LineChart
+                        series={[
+                          {
+                            label: subject.subject_name,
+                            points: subject.score_history.map((p) => ({
+                              x: p.date,
+                              y: p.percentage,
+                            })),
+                          },
+                        ]}
+                        yFormat={(n) => `${n}%`}
+                      />
+                    </div>
+                    <div>
+                      <p className="text-small mb-1 font-medium">
+                        Delivery Gap over time
+                      </p>
+                      <LineChart
+                        series={[
+                          {
+                            label: subject.subject_name,
+                            points: subject.score_history.map((p) => ({
+                              x: p.date,
+                              y: p.delivery_gap,
+                            })),
+                          },
+                        ]}
+                        yFormat={(n) => `${n}%`}
+                      />
+                    </div>
+                  </div>
+                )}
               </CardContent>
             </Card>
           ))}
+
+          <Card>
+            <CardHeader>
+              <CardTitle className="text-h3">Concept status distribution</CardTitle>
+              <CardDescription>Across every subject.</CardDescription>
+            </CardHeader>
+            <CardContent>
+              <StatusDistributionBar counts={dashboard.concept_status_distribution} />
+            </CardContent>
+          </Card>
         </div>
       )}
     </div>

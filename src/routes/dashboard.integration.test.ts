@@ -344,6 +344,13 @@ describe('parent dashboard (F071)', () => {
     expect(card.subject_name).toBe('Mathematics (seed)')
     expect(card.latest_score.percentage).toBe(100)
     expect(card.trend).toBe('up')
+
+    // F075: score-over-time is oldest-first and reflects both real confirmed evaluations.
+    expect(card.score_history).toHaveLength(2)
+    expect(card.score_history[0].percentage).toBe(0)
+    expect(card.score_history[1].percentage).toBe(100)
+
+    expect(dashboard.concept_status_distribution.Strong).toBeGreaterThanOrEqual(1)
   })
 
   it('another household gets 404', async () => {
