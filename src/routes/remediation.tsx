@@ -20,6 +20,7 @@ interface TaskSummary {
   concept_name: string
   status: 'pending' | 'in_progress' | 'completed'
   created_at: string
+  trigger_reason: string
 }
 
 interface WorkedExample {
@@ -41,7 +42,13 @@ interface TaskDetail {
   refresher: string | null
   examples: Array<WorkedExample>
   questions: Array<DrillQuestion>
+  drill_kind: 'concept_refresher' | 'reading_discipline'
 }
+
+// F060: a reading-discipline drill isn't a re-teach, so it shouldn't be labelled "Refresher" --
+// this reads the trigger_reason the backend already persists (see remediation.ts's
+// READING_DISCIPLINE_TRIGGER_REASON) rather than needing its own field on the list endpoint.
+const READING_DISCIPLINE_TRIGGER_REASON = 'Reading discipline pattern'
 
 interface AttemptResult {
   percentage: number
@@ -128,7 +135,8 @@ function RemediationHub() {
         <div>
           <h1 className="text-h1">Practice drills</h1>
           <p className="text-body text-muted-foreground">
-            A quick refresher and three questions for the concepts that need it most.
+            A quick refresher and three questions for the concepts that need it
+            most.
           </p>
         </div>
         <div className="no-print">
@@ -142,7 +150,8 @@ function RemediationHub() {
             <Card>
               <CardContent className="pt-6">
                 <p className="text-body text-muted-foreground">
-                  No drills right now — nothing is flagged as needing extra practice.
+                  No drills right now — nothing is flagged as needing extra
+                  practice.
                 </p>
               </CardContent>
             </Card>
@@ -156,6 +165,11 @@ function RemediationHub() {
                     {t.status === 'completed' ? 'Done' : 'Open'}
                   </span>
                 </div>
+                {t.trigger_reason === READING_DISCIPLINE_TRIGGER_REASON && (
+                  <CardDescription>
+                    Careful-reading practice — not a concept re-teach
+                  </CardDescription>
+                )}
               </CardHeader>
               <CardContent>
                 <Button
@@ -183,7 +197,11 @@ function RemediationHub() {
           {detail.refresher && (
             <Card>
               <CardHeader>
-                <CardTitle className="text-h3">Refresher</CardTitle>
+                <CardTitle className="text-h3">
+                  {detail.drill_kind === 'reading_discipline'
+                    ? 'Why this drill'
+                    : 'Refresher'}
+                </CardTitle>
               </CardHeader>
               <CardContent>
                 <p className="text-body">{detail.refresher}</p>
@@ -231,7 +249,10 @@ function RemediationHub() {
                     {i + 1}. {q.text}
                   </p>
                   {q.options.map((o) => (
-                    <label key={o.label} className="text-small flex items-center gap-2">
+                    <label
+                      key={o.label}
+                      className="text-small flex items-center gap-2"
+                    >
                       <input
                         type="radio"
                         name={q.id}
@@ -257,8 +278,7 @@ function RemediationHub() {
                 <Button
                   onClick={submitAttempt}
                   disabled={
-                    submitting ||
-                    detail.questions.some((q) => !answers[q.id])
+                    submitting || detail.questions.some((q) => !answers[q.id])
                   }
                 >
                   {submitting ? 'Scoring…' : 'Submit'}

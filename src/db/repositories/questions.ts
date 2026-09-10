@@ -86,13 +86,22 @@ export const questionsRepository = {
     conceptId: string,
     objectiveTypes: Array<QuestionType>,
     limit: number,
+    // F060: a reading-discipline drill should prefer reversal-word questions (drilling the habit
+    // that actually failed) over a random pick from the concept -- ordering by is_reversal_word
+    // first rather than filtering on it means a concept with too few tagged questions still fills
+    // the drill instead of coming back empty.
+    preferReversalWord = false,
   ) {
-    return db
+    let query = db
       .selectFrom('questions')
       .selectAll()
       .where('status', '=', 'approved')
       .where('concept_id', '=', conceptId)
       .where('type', 'in', objectiveTypes)
+    if (preferReversalWord) {
+      query = query.orderBy('is_reversal_word', 'desc')
+    }
+    return query
       .orderBy(sql`random()`)
       .limit(limit)
       .execute()

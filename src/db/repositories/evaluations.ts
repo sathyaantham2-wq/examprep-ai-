@@ -52,6 +52,41 @@ export const evaluationItemsRepository = {
       .returningAll()
       .execute() as Promise<Array<Selectable<DB['evaluation_items']>>>
   },
+  // F060: "wrong answers ... routed to a drill instead of re-teaching" -- to decide which kind of
+  // drill, buildRemediationPack needs to know whether this student's wrong answers on this
+  // concept were mostly a reading-discipline habit rather than a genuine gap. Confirmed
+  // evaluations only (an AI-proposed, unconfirmed error_type is not a fact yet), grouped rather
+  // than filtered to one type since the caller compares counts.
+  async countErrorTypesForConcept(
+    db: Db,
+    studentId: string,
+    conceptId: string,
+  ) {
+    return db
+      .selectFrom('evaluation_items')
+      .innerJoin(
+        'evaluations',
+        'evaluations.id',
+        'evaluation_items.evaluation_id',
+      )
+      .innerJoin('attempts', 'attempts.id', 'evaluations.attempt_id')
+      .innerJoin(
+        'paper_questions',
+        'paper_questions.id',
+        'evaluation_items.paper_question_id',
+      )
+      .innerJoin('questions', 'questions.id', 'paper_questions.question_id')
+      .select([
+        'evaluation_items.error_type',
+        (eb) => eb.fn.countAll().as('count'),
+      ])
+      .where('attempts.student_id', '=', studentId)
+      .where('questions.concept_id', '=', conceptId)
+      .where('evaluations.confirmed_at', 'is not', null)
+      .where('evaluation_items.error_type', 'is not', null)
+      .groupBy('evaluation_items.error_type')
+      .execute()
+  },
 }
 
 // Pattern/habit libraries are global reference data (P1-P6, H1-H10), editable but not per

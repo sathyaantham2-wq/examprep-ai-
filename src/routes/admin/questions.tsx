@@ -41,9 +41,17 @@ interface QuestionRow {
   review_tier: string
   concept_id: string
   answer: string
+  is_reversal_word: boolean
 }
 
-const BLOOM_LEVELS = ['Remember', 'Understand', 'Apply', 'Analyse', 'Evaluate', 'Create']
+const BLOOM_LEVELS = [
+  'Remember',
+  'Understand',
+  'Apply',
+  'Analyse',
+  'Evaluate',
+  'Create',
+]
 const DIFFICULTIES = ['Easy', 'Hard', 'Hardest']
 
 /**
@@ -61,9 +69,12 @@ function AdminQuestions() {
   const [concepts, setConcepts] = useState<Array<Concept>>([])
   const [conceptId, setConceptId] = useState('')
 
-  const [draftQuestions, setDraftQuestions] = useState<Array<QuestionRow> | null>(null)
+  const [draftQuestions, setDraftQuestions] =
+    useState<Array<QuestionRow> | null>(null)
   const [expandedId, setExpandedId] = useState<string | null>(null)
-  const [expandedOptions, setExpandedOptions] = useState<Array<QuestionOption>>([])
+  const [expandedOptions, setExpandedOptions] = useState<Array<QuestionOption>>(
+    [],
+  )
   const [rejectNote, setRejectNote] = useState('')
   const [reviewError, setReviewError] = useState<string | null>(null)
 
@@ -87,7 +98,9 @@ function AdminQuestions() {
   function refreshDrafts() {
     fetch('/api/questions?status=draft&pageSize=50')
       .then((r) => r.json())
-      .then((data: { items: Array<QuestionRow> }) => setDraftQuestions(data.items))
+      .then((data: { items: Array<QuestionRow> }) =>
+        setDraftQuestions(data.items),
+      )
   }
 
   useEffect(() => {
@@ -162,6 +175,25 @@ function AdminQuestions() {
     refreshDrafts()
   }
 
+  // F060: the only place in any screen a reversal-word tag can be set or corrected -- previously
+  // API/CSV-only. PATCHes and updates local state directly rather than a full refreshDrafts()
+  // round trip, since approve/reject already close the expanded row but this shouldn't.
+  async function toggleReversalWord(q: QuestionRow) {
+    const next = !q.is_reversal_word
+    const response = await fetch(`/api/questions/${q.id}`, {
+      method: 'PATCH',
+      headers: { 'content-type': 'application/json' },
+      body: JSON.stringify({ is_reversal_word: next }),
+    })
+    if (!response.ok) return
+    setDraftQuestions(
+      (prev) =>
+        prev?.map((r) =>
+          r.id === q.id ? { ...r, is_reversal_word: next } : r,
+        ) ?? null,
+    )
+  }
+
   async function generate() {
     if (!conceptId) return
     setGenerating(true)
@@ -226,7 +258,9 @@ function AdminQuestions() {
         </CardHeader>
         <CardContent className="space-y-3">
           {draftQuestions !== null && draftQuestions.length === 0 && (
-            <p className="text-body text-muted-foreground">Nothing pending review.</p>
+            <p className="text-body text-muted-foreground">
+              Nothing pending review.
+            </p>
           )}
           {draftQuestions?.map((q) => (
             <div key={q.id} className="rounded-md border p-3">
@@ -237,8 +271,8 @@ function AdminQuestions() {
               >
                 {q.text}{' '}
                 <span className="text-small text-muted-foreground">
-                  ({q.bloom}, {q.difficulty}, {q.marks} mark{q.marks === 1 ? '' : 's'}, Tier{' '}
-                  {q.review_tier})
+                  ({q.bloom}, {q.difficulty}, {q.marks} mark
+                  {q.marks === 1 ? '' : 's'}, Tier {q.review_tier})
                 </span>
               </button>
               {expandedId === q.id && (
@@ -246,13 +280,27 @@ function AdminQuestions() {
                   {expandedOptions.length > 0 && (
                     <ul className="text-small list-inside list-disc">
                       {expandedOptions.map((o) => (
-                        <li key={o.label} className={o.is_correct ? 'font-medium' : ''}>
+                        <li
+                          key={o.label}
+                          className={o.is_correct ? 'font-medium' : ''}
+                        >
                           {o.label}. {o.text} {o.is_correct ? '(correct)' : ''}
                         </li>
                       ))}
                     </ul>
                   )}
-                  <p className="text-small text-muted-foreground">Answer: {q.answer}</p>
+                  <p className="text-small text-muted-foreground">
+                    Answer: {q.answer}
+                  </p>
+                  <label className="text-small flex items-center gap-2">
+                    <input
+                      type="checkbox"
+                      checked={q.is_reversal_word}
+                      onChange={() => toggleReversalWord(q)}
+                    />
+                    Reversal-word (NOT / least / false) — wrong answers here get
+                    classified as reading discipline, not a concept gap
+                  </label>
                   {reviewError && (
                     <p className="text-small text-destructive" role="alert">
                       {reviewError}
@@ -268,7 +316,11 @@ function AdminQuestions() {
                       value={rejectNote}
                       onChange={(e) => setRejectNote(e.target.value)}
                     />
-                    <Button size="sm" variant="destructive" onClick={() => reject(q.id)}>
+                    <Button
+                      size="sm"
+                      variant="destructive"
+                      onClick={() => reject(q.id)}
+                    >
                       Reject
                     </Button>
                   </div>
@@ -375,8 +427,9 @@ function AdminQuestions() {
                 <p className="text-muted-foreground">{genResult.message}</p>
               ) : (
                 <p>
-                  {genResult.generated.length} question(s) added to the review queue,{' '}
-                  {genResult.rejected.length} rejected by the scope guardrail.
+                  {genResult.generated.length} question(s) added to the review
+                  queue, {genResult.rejected.length} rejected by the scope
+                  guardrail.
                 </p>
               )}
             </div>

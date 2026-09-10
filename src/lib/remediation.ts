@@ -14,7 +14,10 @@ import {
   questionsRepository,
   evaluationItemsRepository,
 } from '../db/repositories'
-import { generateRemediationContent, isAiRemediationConfigured } from './ai-remediation'
+import {
+  generateRemediationContent,
+  isAiRemediationConfigured,
+} from './ai-remediation'
 import { createEvaluation, confirmEvaluation } from './evaluation'
 
 // F066/F068: only objective types can be auto-scored with no AI/human step, which is what makes
@@ -27,6 +30,7 @@ const OBJECTIVE_TYPES: Array<QuestionType> = [
   'fill_blank',
 ]
 const DRILL_QUESTION_COUNT = 3
+const READING_DISCIPLINE_TRIGGER_REASON = 'Reading discipline pattern'
 
 export type BuildRemediationPackResult =
   | {
@@ -42,8 +46,16 @@ export type BuildRemediationPackResult =
         options: Array<{ label: string; text: string }>
       }>
       shortfall: boolean
+      // F060: "wrong answers on [reversal-word questions] classified as reading discipline,
+      // routed to a drill instead of re-teaching." 'reading_discipline' means this student's
+      // recent wrong answers on this concept were dominated by that error type, not a genuine
+      // knowledge gap -- the caller should present it as a careful-reading drill, not a lesson.
+      drill_kind: 'concept_refresher' | 'reading_discipline'
     }
-  | { ok: false; reason: 'concept_not_found' | 'not_priority' | 'no_questions_available' }
+  | {
+      ok: false
+      reason: 'concept_not_found' | 'not_priority' | 'no_questions_available'
+    }
 
 /**
  * F066: "On PRIORITY flag the system builds: 2-3 line refresher, 2 solved examples, 3 practice
@@ -67,33 +79,65 @@ export async function buildRemediationPack(
   const concept = await conceptsRepository.findById(db, input.conceptId)
   if (!concept) return { ok: false, reason: 'concept_not_found' }
 
-  // F067: cached per concept, generated once, reused by every student who needs it.
-  let cached = await conceptRemediationContentRepository.findByConcept(
-    db,
-    input.conceptId,
-  )
-  if (!cached) {
-    const aiResult = isAiRemediationConfigured()
-      ? await generateRemediationContent({
-          conceptName: concept.name,
-          conceptIdea: concept.idea,
-          conceptRule: concept.rule,
-          conceptExample: concept.example,
-        })
-      : null
-    cached = await conceptRemediationContentRepository.insert(db, {
-      concept_id: input.conceptId,
-      refresher: aiResult?.refresher ?? null,
-      examples: JSON.stringify(aiResult?.examples ?? []),
-      source: aiResult ? 'ai' : 'bank_fallback',
-    })
+  // F060: if this student's recent wrong answers on this concept were mostly Reading Discipline
+  // (not a knowledge gap -- she can do the maths, she missed the NOT/least/false), re-teaching
+  // the concept is the wrong intervention. "Mostly" is a simple strict-majority-of-error-types
+  // comparison, not a stated threshold from the plan (none exists), same kind of documented
+  // default F118/F063 already use elsewhere in this codebase.
+  const errorTypeCounts =
+    await evaluationItemsRepository.countErrorTypesForConcept(
+      db,
+      input.studentId,
+      input.conceptId,
+    )
+  const readingDisciplineCount =
+    errorTypeCounts.find((r) => r.error_type === 'Reading Discipline')?.count ??
+    0
+  const otherErrorCount = errorTypeCounts
+    .filter((r) => r.error_type !== 'Reading Discipline')
+    .reduce((sum, r) => sum + Number(r.count), 0)
+  const isReadingDisciplinePack =
+    Number(readingDisciplineCount) > 0 &&
+    Number(readingDisciplineCount) > otherErrorCount
+
+  // F067: cached per concept, generated once, reused by every student who needs it. Skipped
+  // entirely for a reading-discipline pack -- there is nothing to re-teach, so there is nothing
+  // to cache or generate here.
+  let cached:
+    { refresher: string | null; examples: unknown } | null | undefined = null
+  if (!isReadingDisciplinePack) {
+    cached = await conceptRemediationContentRepository.findByConcept(
+      db,
+      input.conceptId,
+    )
+    if (!cached) {
+      const aiResult = isAiRemediationConfigured()
+        ? await generateRemediationContent({
+            conceptName: concept.name,
+            conceptIdea: concept.idea,
+            conceptRule: concept.rule,
+            conceptExample: concept.example,
+          })
+        : null
+      cached = await conceptRemediationContentRepository.insert(db, {
+        concept_id: input.conceptId,
+        refresher: aiResult?.refresher ?? null,
+        examples: JSON.stringify(aiResult?.examples ?? []),
+        source: aiResult ? 'ai' : 'bank_fallback',
+      })
+    }
   }
+  const refresher = isReadingDisciplinePack
+    ? 'Not a knowledge gap -- her working shows she knows this concept. These questions have a NOT, least, false, or similar word that flips what is being asked; re-read the question itself before answering.'
+    : (cached?.refresher ?? null)
+  const examples = isReadingDisciplinePack ? [] : (cached?.examples ?? [])
 
   const drillQuestions = await questionsRepository.findRandomApprovedObjective(
     db,
     input.conceptId,
     OBJECTIVE_TYPES,
     DRILL_QUESTION_COUNT,
+    isReadingDisciplinePack,
   )
   if (drillQuestions.length === 0) {
     return { ok: false, reason: 'no_questions_available' }
@@ -103,7 +147,10 @@ export async function buildRemediationPack(
     await Promise.all(
       drillQuestions.map(async (q) => {
         const options = await questionOptionsRepository.listByQuestion(db, q.id)
-        return [q.id, options.map((o) => ({ label: o.label, text: o.text }))] as const
+        return [
+          q.id,
+          options.map((o) => ({ label: o.label, text: o.text })),
+        ] as const
       }),
     ),
   )
@@ -111,9 +158,14 @@ export async function buildRemediationPack(
   const task = await remediationTasksRepository.insert(db, {
     student_id: input.studentId,
     concept_id: input.conceptId,
-    trigger_reason: 'Priority flag',
-    refresher: cached.refresher,
-    examples: cached.examples,
+    // Persisted here rather than a new column -- trigger_reason is already the record of "why
+    // this task exists," and loadTaskView derives drill_kind back out of it for a student
+    // reopening an unfinished task, so the distinction survives without a migration.
+    trigger_reason: isReadingDisciplinePack
+      ? READING_DISCIPLINE_TRIGGER_REASON
+      : 'Priority flag',
+    refresher,
+    examples: JSON.stringify(examples),
     question_ids: drillQuestions.map((q) => q.id),
     status: 'pending',
   })
@@ -121,8 +173,8 @@ export async function buildRemediationPack(
   return {
     ok: true,
     task_id: task.id,
-    refresher: cached.refresher,
-    examples: cached.examples as Array<{ problem: string; steps: Array<string> }>,
+    refresher,
+    examples: examples as Array<{ problem: string; steps: Array<string> }>,
     questions: drillQuestions.map((q) => ({
       id: q.id,
       text: q.text,
@@ -131,6 +183,9 @@ export async function buildRemediationPack(
       options: optionsByQuestion.get(q.id) ?? [],
     })),
     shortfall: drillQuestions.length < DRILL_QUESTION_COUNT,
+    drill_kind: isReadingDisciplinePack
+      ? 'reading_discipline'
+      : 'concept_refresher',
   }
 }
 
@@ -144,6 +199,7 @@ export interface TaskView {
     marks: number
     options: Array<{ label: string; text: string }>
   }>
+  drill_kind: 'concept_refresher' | 'reading_discipline'
 }
 
 /**
@@ -153,7 +209,12 @@ export interface TaskView {
  */
 export async function loadTaskView(
   db: Db,
-  task: { refresher: string | null; examples: unknown; question_ids: Array<string> },
+  task: {
+    refresher: string | null
+    examples: unknown
+    question_ids: Array<string>
+    trigger_reason: string
+  },
 ): Promise<TaskView> {
   const questions =
     task.question_ids.length > 0
@@ -167,7 +228,10 @@ export async function loadTaskView(
     await Promise.all(
       questions.map(async (q) => {
         const options = await questionOptionsRepository.listByQuestion(db, q.id)
-        return [q.id, options.map((o) => ({ label: o.label, text: o.text }))] as const
+        return [
+          q.id,
+          options.map((o) => ({ label: o.label, text: o.text })),
+        ] as const
       }),
     ),
   )
@@ -183,6 +247,10 @@ export async function loadTaskView(
       marks: q.marks,
       options: optionsByQuestion.get(q.id) ?? [],
     })),
+    drill_kind:
+      task.trigger_reason === READING_DISCIPLINE_TRIGGER_REASON
+        ? 'reading_discipline'
+        : 'concept_refresher',
   }
 }
 
@@ -238,7 +306,10 @@ export type SubmitDrillResult =
       }>
       priority_cleared: boolean
     }
-  | { ok: false; reason: 'not_found' | 'already_completed' | 'concept_not_found' }
+  | {
+      ok: false
+      reason: 'not_found' | 'already_completed' | 'concept_not_found'
+    }
 
 /**
  * F068: "Drill attempt scored immediately ... writes back to the concept ledger and can clear or
@@ -284,9 +355,7 @@ export async function submitDrillAttempt(
     .selectAll()
     .where('id', 'in', task.question_ids)
     .execute()
-  const answerByQuestion = new Map(
-    input.answers.map((a) => [a.question_id, a]),
-  )
+  const answerByQuestion = new Map(input.answers.map((a) => [a.question_id, a]))
 
   // createEvaluation/confirmEvaluation each open their own db.transaction() internally, and
   // Kysely's Postgres dialect here doesn't support nesting one transaction inside another (no

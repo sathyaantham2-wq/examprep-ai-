@@ -135,10 +135,20 @@ describe('remediation engine (F066-F068)', () => {
       duration_min: 10,
       total_marks: 1,
       sections: JSON.stringify([
-        { name: 'Section A', marks_per_question: 1, count: 1, bloom_allowed: ['Remember'] },
+        {
+          name: 'Section A',
+          marks_per_question: 1,
+          count: 1,
+          bloom_allowed: ['Remember'],
+        },
       ]),
       bloom_targets: JSON.stringify({
-        Remember: 100, Understand: 0, Apply: 0, Analyse: 0, Evaluate: 0, Create: 0,
+        Remember: 100,
+        Understand: 0,
+        Apply: 0,
+        Analyse: 0,
+        Evaluate: 0,
+        Create: 0,
       }),
     })
     blueprintId = blueprint.id
@@ -235,23 +245,55 @@ describe('remediation engine (F066-F068)', () => {
     const allEvals = await db
       .selectFrom('evaluations')
       .select('id')
-      .where('attempt_id', 'in', allAttemptIds.length > 0 ? allAttemptIds : [''])
+      .where(
+        'attempt_id',
+        'in',
+        allAttemptIds.length > 0 ? allAttemptIds : [''],
+      )
       .execute()
     const allEvalIds = allEvals.map((e) => e.id)
 
-    await db.deleteFrom('concept_mastery').where('concept_id', '=', conceptId).execute()
-    await db.deleteFrom('concept_status').where('concept_id', '=', conceptId).execute()
+    await db
+      .deleteFrom('concept_mastery')
+      .where('concept_id', '=', conceptId)
+      .execute()
+    await db
+      .deleteFrom('concept_status')
+      .where('concept_id', '=', conceptId)
+      .execute()
     if (allEvalIds.length > 0) {
-      await db.deleteFrom('evaluation_items').where('evaluation_id', 'in', allEvalIds).execute()
+      await db
+        .deleteFrom('evaluation_items')
+        .where('evaluation_id', 'in', allEvalIds)
+        .execute()
       await db.deleteFrom('evaluations').where('id', 'in', allEvalIds).execute()
     }
-    await db.deleteFrom('attempt_answers').where('attempt_id', 'in', allAttemptIds.length > 0 ? allAttemptIds : ['']).execute()
-    await db.deleteFrom('attempts').where('student_id', '=', studentId).execute()
-    await db.deleteFrom('paper_questions').where('paper_id', 'in', allPaperIds.length > 0 ? allPaperIds : ['']).execute()
+    await db
+      .deleteFrom('attempt_answers')
+      .where(
+        'attempt_id',
+        'in',
+        allAttemptIds.length > 0 ? allAttemptIds : [''],
+      )
+      .execute()
+    await db
+      .deleteFrom('attempts')
+      .where('student_id', '=', studentId)
+      .execute()
+    await db
+      .deleteFrom('paper_questions')
+      .where('paper_id', 'in', allPaperIds.length > 0 ? allPaperIds : [''])
+      .execute()
     await db.deleteFrom('papers').where('student_id', '=', studentId).execute()
-    await db.deleteFrom('blueprints').where('name', '=', 'Auto remediation drill').execute()
+    await db
+      .deleteFrom('blueprints')
+      .where('name', '=', 'Auto remediation drill')
+      .execute()
     await db.deleteFrom('blueprints').where('id', '=', blueprintId).execute()
-    await db.deleteFrom('households').where('id', '=', parent.householdId).execute()
+    await db
+      .deleteFrom('households')
+      .where('id', '=', parent.householdId)
+      .execute()
     // Scoped to this run's own question ids, not a shared `created_by` literal -- the latter used
     // to also try to delete any OTHER run's leftover 'remediation-fixture' questions (e.g. from a
     // crashed prior run that never reached its own cleanup), which could still be referenced by
@@ -268,7 +310,9 @@ describe('remediation engine (F066-F068)', () => {
     const response = await handlerFor(
       RemediationGenerateRoute,
       'POST',
-    )({ request: request('', { student_id: studentId, concept_id: conceptId }) })
+    )({
+      request: request('', { student_id: studentId, concept_id: conceptId }),
+    })
     expect(response.status).toBe(401)
   })
 
@@ -312,6 +356,9 @@ describe('remediation engine (F066-F068)', () => {
 
     expect(body.questions).toHaveLength(3)
     expect(body.shortfall).toBe(false)
+    // F060: this fixture's Priority escalation happened via a plain (non-reversal-word) wrong
+    // answer, so the pack should be a normal concept refresher, not the reading-discipline path.
+    expect(body.drill_kind).toBe('concept_refresher')
     for (const q of body.questions) {
       expect(q).not.toHaveProperty('answer')
       for (const o of q.options) {
@@ -327,10 +374,12 @@ describe('remediation engine (F066-F068)', () => {
     )({ request: request(student.cookie) })
     expect(response.status).toBe(200)
     const body = await response.json()
-    expect(body.tasks.some((t: { id: string }) => t.id === firstTaskId)).toBe(true)
+    expect(body.tasks.some((t: { id: string }) => t.id === firstTaskId)).toBe(
+      true,
+    )
   })
 
-  it("a student can view the task detail with no answer key leaked", async () => {
+  it('a student can view the task detail with no answer key leaked', async () => {
     const response = await handlerFor(
       RemediationDetailRoute,
       'GET',
@@ -379,7 +428,10 @@ describe('remediation engine (F066-F068)', () => {
     const response = await handlerFor(
       RemediationAttemptRoute,
       'POST',
-    )({ request: request(student.cookie, { answers: [] }), params: { id: firstTaskId } })
+    )({
+      request: request(student.cookie, { answers: [] }),
+      params: { id: firstTaskId },
+    })
     expect(response.status).toBe(409)
   })
 
@@ -418,5 +470,284 @@ describe('remediation engine (F066-F068)', () => {
       .where('concept_id', '=', conceptId)
       .executeTakeFirstOrThrow()
     expect(status.status).toBe('Maintenance')
+  })
+})
+
+/**
+ * F060: "wrong answers on [reversal-word questions] classified as reading discipline, routed to a
+ * drill instead of re-teaching." Separate concept/student fixture from the describe block above --
+ * that one escalates to Priority via a plain wrong answer (asserted as 'concept_refresher' there),
+ * this one escalates via a reversal-word question so buildRemediationPack takes the other branch.
+ */
+describe('remediation engine: reading-discipline drills (F060)', () => {
+  let db: Db
+  let parent: TestSession
+  let student: TestSession
+  let studentId: string
+  let chapterId: string
+  let conceptId: string
+  let blueprintId: string
+  let reversalQuestionId: string
+  const questionIds: Array<string> = []
+  const paperIds: Array<string> = []
+  const attemptIds: Array<string> = []
+
+  beforeAll(async () => {
+    db = createDb()
+    parent = await createParentSession('remediation-rd')
+
+    const studentResponse = await handlerFor(
+      StudentsRoute,
+      'POST',
+    )({
+      request: request(parent.cookie, {
+        name: 'Reading Discipline Kid',
+        class: 7,
+        board: 'CBSE',
+        consent_accepted: true,
+      }),
+    })
+    studentId = (await studentResponse.json()).id
+    student = await createStudentSession(
+      'remediation-rd-student',
+      parent.householdId,
+      studentId,
+    )
+
+    const subject = await db
+      .selectFrom('subjects')
+      .selectAll()
+      .where('code', '=', 'MATH-SEED')
+      .executeTakeFirstOrThrow()
+    const chapter = await db
+      .selectFrom('chapters')
+      .selectAll()
+      .where('subject_id', '=', subject.id)
+      .where('chapter_no', '=', 1)
+      .executeTakeFirstOrThrow()
+    chapterId = chapter.id
+
+    const concept = await conceptsRepository.insert(db, {
+      chapter_id: chapter.id,
+      board: 'CBSE',
+      class: 7,
+      code: `C7M-1.REMEDIATION-RD-${Date.now()}`,
+      name: 'Reading discipline fixture concept',
+      difficulty_base: 'Easy',
+    })
+    conceptId = concept.id
+
+    // One reversal-word question the exam rounds will use (so the wrong answers below classify
+    // as Reading Discipline), and one plain question so the drill has more than one to pick from.
+    const reversalQuestion = await createQuestion(db, {
+      concept_id: concept.id,
+      board: 'CBSE',
+      class: 7,
+      bloom: 'Remember',
+      difficulty: 'Easy',
+      marks: 1,
+      type: 'mcq',
+      text: 'Which of these is NOT an even number?',
+      answer: 'B',
+      created_by: 'remediation-rd-fixture',
+      is_reversal_word: true,
+      options: [
+        { label: 'A', text: '4', is_correct: false, order_index: 1 },
+        { label: 'B', text: '5', is_correct: true, order_index: 2 },
+      ],
+    })
+    reversalQuestionId = reversalQuestion.id
+    questionIds.push(reversalQuestion.id)
+    // A second reversal-word question, not a plain one -- paper generation excludes a recently
+    // served question from the next round (F026), so escalating across two exam rounds needs two
+    // eligible questions either way. Making the second one reversal-word too (rather than plain)
+    // keeps "always answer A wrong" deterministic regardless of which one gets served each round.
+    const reversalQuestion2 = await createQuestion(db, {
+      concept_id: concept.id,
+      board: 'CBSE',
+      class: 7,
+      bloom: 'Remember',
+      difficulty: 'Easy',
+      marks: 1,
+      type: 'mcq',
+      text: 'Which of these is least likely to be a factor of 12?',
+      answer: 'B',
+      created_by: 'remediation-rd-fixture',
+      is_reversal_word: true,
+      options: [
+        { label: 'A', text: '4', is_correct: false, order_index: 1 },
+        { label: 'B', text: '5', is_correct: true, order_index: 2 },
+      ],
+    })
+    questionIds.push(reversalQuestion2.id)
+
+    const blueprint = await blueprintsRepository.insert(db, {
+      subject_id: subject.id,
+      board: 'CBSE',
+      class: 7,
+      name: 'Reading discipline fixture blueprint',
+      duration_min: 10,
+      total_marks: 1,
+      sections: JSON.stringify([
+        {
+          name: 'Section A',
+          marks_per_question: 1,
+          count: 1,
+          bloom_allowed: ['Remember'],
+        },
+      ]),
+      bloom_targets: JSON.stringify({
+        Remember: 100,
+        Understand: 0,
+        Apply: 0,
+        Analyse: 0,
+        Evaluate: 0,
+        Create: 0,
+      }),
+    })
+    blueprintId = blueprint.id
+
+    // Two wrong real exam rounds -> Weak, then Priority -- same escalation sequence as the main
+    // describe block above, but every generated paper here only has the reversal-word question
+    // available at Tier objective/Remember/Easy for this concept, so it's the one served.
+    for (let i = 0; i < 2; i++) {
+      const generateResponse = await handlerFor(
+        GenerateRoute,
+        'POST',
+      )({
+        request: request(parent.cookie, {
+          student_id: studentId,
+          blueprint_id: blueprintId,
+          chapter_ids: [chapterId],
+        }),
+      })
+      const generated = await generateResponse.json()
+      paperIds.push(generated.paper.id)
+
+      const attemptResponse = await handlerFor(
+        AttemptsRoute,
+        'POST',
+      )({
+        request: request(student.cookie, {
+          paper_id: generated.paper.id,
+          mode: 'online',
+        }),
+      })
+      const attemptId = (await attemptResponse.json()).id
+      attemptIds.push(attemptId)
+
+      const pq = generated.paperQuestions[0]
+      await handlerFor(
+        AttemptAnswerRoute,
+        'PATCH',
+      )({
+        request: request(student.cookie, {
+          paper_question_id: pq.id,
+          selected_option: 'A',
+        }),
+        params: { id: attemptId },
+      })
+      await handlerFor(
+        AttemptSubmitRoute,
+        'POST',
+      )({ request: request(student.cookie, {}), params: { id: attemptId } })
+
+      const evalResponse = await handlerFor(
+        EvaluationsRoute,
+        'POST',
+      )({ request: request(parent.cookie, { attempt_id: attemptId }) })
+      const evaluation = await evalResponse.json()
+      await handlerFor(
+        EvaluationConfirmRoute,
+        'POST',
+      )({
+        request: request(parent.cookie, {}),
+        params: { id: evaluation.evaluation.id },
+      })
+    }
+
+    const status = await db
+      .selectFrom('concept_status')
+      .selectAll()
+      .where('student_id', '=', studentId)
+      .where('concept_id', '=', conceptId)
+      .executeTakeFirstOrThrow()
+    expect(status.status).toBe('Priority')
+  })
+
+  afterAll(async () => {
+    await db
+      .deleteFrom('remediation_tasks')
+      .where('student_id', '=', studentId)
+      .execute()
+    await db
+      .deleteFrom('concept_remediation_content')
+      .where('concept_id', '=', conceptId)
+      .execute()
+
+    const allEvals = await db
+      .selectFrom('evaluations')
+      .select('id')
+      .where('attempt_id', 'in', attemptIds.length > 0 ? attemptIds : [''])
+      .execute()
+    const allEvalIds = allEvals.map((e) => e.id)
+    if (allEvalIds.length > 0) {
+      await db
+        .deleteFrom('evaluation_items')
+        .where('evaluation_id', 'in', allEvalIds)
+        .execute()
+      await db.deleteFrom('evaluations').where('id', 'in', allEvalIds).execute()
+    }
+    await db
+      .deleteFrom('attempt_answers')
+      .where('attempt_id', 'in', attemptIds.length > 0 ? attemptIds : [''])
+      .execute()
+    await db
+      .deleteFrom('attempts')
+      .where('student_id', '=', studentId)
+      .execute()
+    await db
+      .deleteFrom('paper_questions')
+      .where('paper_id', 'in', paperIds.length > 0 ? paperIds : [''])
+      .execute()
+    await db.deleteFrom('papers').where('student_id', '=', studentId).execute()
+    await db
+      .deleteFrom('blueprints')
+      .where('name', '=', 'Auto remediation drill')
+      .execute()
+    await db.deleteFrom('blueprints').where('id', '=', blueprintId).execute()
+    await db
+      .deleteFrom('households')
+      .where('id', '=', parent.householdId)
+      .execute()
+    if (questionIds.length > 0) {
+      await db.deleteFrom('questions').where('id', 'in', questionIds).execute()
+    }
+    await db.deleteFrom('concepts').where('id', '=', conceptId).execute()
+    await db.destroy()
+  })
+
+  it('builds a reading-discipline drill instead of a concept refresher', async () => {
+    const response = await handlerFor(
+      RemediationGenerateRoute,
+      'POST',
+    )({
+      request: request(parent.cookie, {
+        student_id: studentId,
+        concept_id: conceptId,
+      }),
+    })
+    expect(response.status).toBe(201)
+    const body = await response.json()
+
+    expect(body.drill_kind).toBe('reading_discipline')
+    // Not the AI/bank-cached refresher path -- a fixed, framing-specific message, and no worked
+    // examples (there is nothing to re-teach).
+    expect(body.refresher).toMatch(/not a knowledge gap/i)
+    expect(body.examples).toEqual([])
+    // The reversal-word question is preferred; with only 2 eligible questions total and a drill
+    // of 3, both get pulled in, but the reversal-word one must be among them.
+    const questionIdsInDrill = body.questions.map((q: { id: string }) => q.id)
+    expect(questionIdsInDrill).toContain(reversalQuestionId)
   })
 })

@@ -19,6 +19,9 @@ const updateQuestionSchema = z
     // column; every paper/attempt/evaluation that already used the question keeps referencing it
     // untouched (status isn't a FK target anywhere, so nothing cascades on the change).
     status: z.enum(['draft', 'approved', 'retired']),
+    // F060: previously settable only via POST /api/questions or bulk import -- there was no way
+    // to correct this on a question already in the bank without going around the API entirely.
+    is_reversal_word: z.boolean(),
   })
   .partial()
 
