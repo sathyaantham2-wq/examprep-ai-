@@ -144,6 +144,10 @@ export interface CreateQuestionInput {
   created_by: string
   source_ref?: string
   is_reversal_word?: boolean
+  // F025: AI-authored questions always land in the review queue as Draft, even when their shape
+  // would otherwise qualify for Tier A auto-approve -- Tier A exists to reduce review load on a
+  // trusted human's routine entries, not to wave through unreviewed AI output.
+  origin?: 'manual' | 'ai_generated'
   options?: Array<{
     label: string
     text: string
@@ -161,13 +165,15 @@ export interface CreateQuestionInput {
  */
 export async function createQuestion(db: Db, input: CreateQuestionInput) {
   const language = input.language ?? 'English'
+  const origin = input.origin ?? 'manual'
   const reviewTier = computeReviewTier({
     marks: input.marks,
     type: input.type,
     language,
     diagram_kind: input.diagram_kind,
   })
-  const status = reviewTier === 'A' ? 'approved' : 'draft'
+  const status =
+    origin === 'ai_generated' ? 'draft' : reviewTier === 'A' ? 'approved' : 'draft'
   const textHash = computeTextHash(input.text)
 
   const duplicate = await findExactDuplicate(db, input.concept_id, textHash)
@@ -196,6 +202,7 @@ export async function createQuestion(db: Db, input: CreateQuestionInput) {
       source_ref: input.source_ref,
       review_tier: reviewTier,
       is_reversal_word: input.is_reversal_word ?? false,
+      origin,
     })
 
     const options = input.options

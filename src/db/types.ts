@@ -331,6 +331,7 @@ export interface Questions {
   is_reversal_word: Generated<boolean>;
   language: Generated<string>;
   marks: number;
+  origin: Generated<string>;
   review_note: string | null;
   review_tier: ReviewTier;
   reviewed_at: Timestamp | null;
