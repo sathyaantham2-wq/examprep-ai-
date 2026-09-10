@@ -2,9 +2,15 @@ import { test, expect } from '@playwright/test'
 import type { Page } from '@playwright/test'
 import { createDb } from '../src/db/connection'
 import type { Db } from '../src/db/connection'
-import { conceptsRepository, blueprintsRepository } from '../src/db/repositories'
+import {
+  conceptsRepository,
+  blueprintsRepository,
+} from '../src/db/repositories'
 import { createQuestion } from '../src/lib/questions'
-import { createParentSession, createStudentSession } from '../src/db/test-helpers'
+import {
+  createParentSession,
+  createStudentSession,
+} from '../src/db/test-helpers'
 import type { TestSession } from '../src/db/test-helpers'
 
 /**
@@ -83,10 +89,20 @@ test.beforeAll(async () => {
     duration_min: 30,
     total_marks: 1,
     sections: JSON.stringify([
-      { name: 'Section A', marks_per_question: 1, count: 1, bloom_allowed: ['Remember'] },
+      {
+        name: 'Section A',
+        marks_per_question: 1,
+        count: 1,
+        bloom_allowed: ['Remember'],
+      },
     ]),
     bloom_targets: JSON.stringify({
-      Remember: 100, Understand: 0, Apply: 0, Analyse: 0, Evaluate: 0, Create: 0,
+      Remember: 100,
+      Understand: 0,
+      Apply: 0,
+      Analyse: 0,
+      Evaluate: 0,
+      Create: 0,
     }),
   })
   blueprintId = blueprint.id
@@ -95,28 +111,79 @@ test.beforeAll(async () => {
   // them the same way every other test in this repo does -- F112 self-service doesn't exist.
   const studentRes = await fetch('http://localhost:3000/api/students', {
     method: 'POST',
-    headers: { 'content-type': 'application/json', cookie: parent.cookie, origin: 'http://localhost:3000' },
-    body: JSON.stringify({ name: 'E2E Kid', class: 7, board: 'CBSE', consent_accepted: true }),
+    headers: {
+      'content-type': 'application/json',
+      cookie: parent.cookie,
+      origin: 'http://localhost:3000',
+    },
+    body: JSON.stringify({
+      name: 'E2E Kid',
+      class: 7,
+      board: 'CBSE',
+      consent_accepted: true,
+    }),
   }).then((r) => r.json())
   studentId = studentRes.id
-  student = await createStudentSession('e2e-student', parent.householdId, studentId)
+  student = await createStudentSession(
+    'e2e-student',
+    parent.householdId,
+    studentId,
+  )
 })
 
 test.afterAll(async () => {
   if (attemptId) {
-    await db.deleteFrom('evaluation_items').where('evaluation_id', 'in',
-      db.selectFrom('evaluations').select('id').where('attempt_id', '=', attemptId)).execute()
-    await db.deleteFrom('evaluations').where('attempt_id', '=', attemptId).execute()
-    await db.deleteFrom('attempt_answers').where('attempt_id', '=', attemptId).execute()
+    await db
+      .deleteFrom('habit_observations')
+      .where(
+        'evaluation_id',
+        'in',
+        db
+          .selectFrom('evaluations')
+          .select('id')
+          .where('attempt_id', '=', attemptId),
+      )
+      .execute()
+    await db
+      .deleteFrom('evaluation_items')
+      .where(
+        'evaluation_id',
+        'in',
+        db
+          .selectFrom('evaluations')
+          .select('id')
+          .where('attempt_id', '=', attemptId),
+      )
+      .execute()
+    await db
+      .deleteFrom('evaluations')
+      .where('attempt_id', '=', attemptId)
+      .execute()
+    await db
+      .deleteFrom('attempt_answers')
+      .where('attempt_id', '=', attemptId)
+      .execute()
     await db.deleteFrom('attempts').where('id', '=', attemptId).execute()
   }
   if (paperId) {
-    await db.deleteFrom('paper_questions').where('paper_id', '=', paperId).execute()
+    await db
+      .deleteFrom('paper_questions')
+      .where('paper_id', '=', paperId)
+      .execute()
     await db.deleteFrom('papers').where('id', '=', paperId).execute()
   }
-  await db.deleteFrom('concept_mastery').where('concept_id', '=', conceptId).execute()
-  await db.deleteFrom('concept_status').where('concept_id', '=', conceptId).execute()
-  await db.deleteFrom('households').where('id', '=', parent.householdId).execute()
+  await db
+    .deleteFrom('concept_mastery')
+    .where('concept_id', '=', conceptId)
+    .execute()
+  await db
+    .deleteFrom('concept_status')
+    .where('concept_id', '=', conceptId)
+    .execute()
+  await db
+    .deleteFrom('households')
+    .where('id', '=', parent.householdId)
+    .execute()
   await db.deleteFrom('blueprints').where('id', '=', blueprintId).execute()
   if (questionIds.length > 0) {
     await db.deleteFrom('questions').where('id', 'in', questionIds).execute()
@@ -144,13 +211,18 @@ async function signInUi(page: Page, email: string, password: string) {
 // resulting empty-session cookie state with a fresh navigation.
 async function signOutApi(page: Page) {
   await page.request.post('/api/auth/sign-out', {
-    headers: { origin: 'http://localhost:3000', 'content-type': 'application/json' },
+    headers: {
+      origin: 'http://localhost:3000',
+      'content-type': 'application/json',
+    },
     data: {},
   })
   await page.goto('/', { waitUntil: 'networkidle' })
 }
 
-test('happy path: sign in, generate paper, download PDF, attempt, evaluate, tracker updates', async ({ page }) => {
+test('happy path: sign in, generate paper, download PDF, attempt, evaluate, tracker updates', async ({
+  page,
+}) => {
   // 1. Sign in as parent via the real login form. The bug fix under test: this must land on
   // /home (a student already exists), not /onboarding.
   await signInUi(page, parent.email, parent.password)
@@ -170,7 +242,9 @@ test('happy path: sign in, generate paper, download PDF, attempt, evaluate, trac
   await page.getByRole('checkbox').first().check()
 
   const generateResponsePromise = page.waitForResponse(
-    (r) => r.url().includes('/api/papers/generate') && r.request().method() === 'POST',
+    (r) =>
+      r.url().includes('/api/papers/generate') &&
+      r.request().method() === 'POST',
   )
   await page.getByRole('button', { name: 'Generate paper' }).click()
   const generateResponse = await generateResponsePromise
@@ -222,12 +296,29 @@ test('happy path: sign in, generate paper, download PDF, attempt, evaluate, trac
 
   await page.goto(`/evaluate/${attemptId}`, { waitUntil: 'networkidle' })
   await page.waitForTimeout(500)
+
+  // F058: rate one presentation habit before confirming -- the whole point of "before
+  // confirming" is that PATCH .../habits 409s afterward, so this has to happen first.
+  // CardTitle renders a styled <div>, not a semantic heading, so this is a text match rather
+  // than getByRole('heading', ...) -- unlike the page's own <h1> elements.
+  await expect(page.getByText('Presentation habits')).toBeVisible()
+  await page
+    .locator('label', { hasText: 'present' })
+    .first()
+    .locator('input[type="radio"]')
+    .check()
+  await page.getByRole('button', { name: 'Save habits' }).click()
+  await expect(page.getByRole('button', { name: 'Saved' })).toBeVisible()
+
   await page.getByRole('button', { name: 'Confirm all' }).click()
   await expect(page.getByText(/Confirmed --/)).toBeVisible()
 
-  // 6. See the tracker/dashboard update -- the real score this attempt earned.
+  // 6. See the tracker/dashboard update -- the real score this attempt earned, and the habit
+  // rating just saved showing up in the trend.
   await page.goto('/home')
   // "100%" also appears twice more as chart axis/point labels (F075) once real score history
   // exists, so a bare getByText('100%') is ambiguous -- anchor to the summary line itself.
   await expect(page.getByText(/Latest score 100%/)).toBeVisible()
+  await expect(page.getByText('Presentation habits')).toBeVisible()
+  await expect(page.getByText('latest: present')).toBeVisible()
 })

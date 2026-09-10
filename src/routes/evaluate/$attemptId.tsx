@@ -55,6 +55,15 @@ interface Pattern {
   name: string
 }
 
+interface Habit {
+  id: string
+  code: string
+  name: string
+  rating: 'present' | 'partial' | 'absent' | null
+}
+
+const HABIT_RATINGS = ['present', 'partial', 'absent'] as const
+
 interface Evaluation {
   id: string
   confirmed_at: string | null
@@ -89,6 +98,12 @@ function Evaluate() {
   const [evaluation, setEvaluation] = useState<Evaluation | null>(null)
   const [items, setItems] = useState<Array<Item>>([])
   const [patterns, setPatterns] = useState<Array<Pattern>>([])
+  const [habits, setHabits] = useState<Array<Habit>>([])
+  const [habitEdits, setHabitEdits] = useState<
+    Record<string, 'present' | 'partial' | 'absent' | 'unset'>
+  >({})
+  const [savingHabits, setSavingHabits] = useState(false)
+  const [habitsSaved, setHabitsSaved] = useState(false)
   const [edits, setEdits] = useState<Partial<Record<string, EditState>>>({})
   const [loadError, setLoadError] = useState<string | null>(null)
   const [savingId, setSavingId] = useState<string | null>(null)
@@ -128,6 +143,15 @@ function Evaluate() {
       setEvaluation(detail.evaluation)
       setItems(detail.items)
       setPatterns(detail.patterns ?? [])
+      setHabits(detail.habits ?? [])
+      const initialHabitEdits: Record<
+        string,
+        'present' | 'partial' | 'absent' | 'unset'
+      > = {}
+      for (const h of detail.habits as Array<Habit>) {
+        initialHabitEdits[h.id] = h.rating ?? 'unset'
+      }
+      setHabitEdits(initialHabitEdits)
       const initialEdits: Record<string, EditState> = {}
       for (const item of detail.items as Array<Item>) {
         initialEdits[item.id] = {
@@ -231,6 +255,25 @@ function Evaluate() {
       }
     } finally {
       setSavingId(null)
+    }
+  }
+
+  async function saveHabits() {
+    if (!evaluation) return
+    setSavingHabits(true)
+    setHabitsSaved(false)
+    try {
+      const observations = Object.entries(habitEdits)
+        .filter(([, rating]) => rating !== 'unset')
+        .map(([habit_id, rating]) => ({ habit_id, rating }))
+      const response = await fetch(`/api/evaluations/${evaluation.id}/habits`, {
+        method: 'PATCH',
+        headers: { 'content-type': 'application/json' },
+        body: JSON.stringify({ observations }),
+      })
+      if (response.ok) setHabitsSaved(true)
+    } finally {
+      setSavingHabits(false)
     }
   }
 
@@ -441,6 +484,71 @@ function Evaluate() {
           )
         })}
       </div>
+
+      {habits.length > 0 && (
+        <Card className="mt-4">
+          <CardHeader>
+            <CardTitle className="text-h3">Presentation habits</CardTitle>
+            <CardDescription>
+              {isConfirmed
+                ? 'Rated for this paper.'
+                : 'Rate how she showed up on each habit this paper, before confirming.'}
+            </CardDescription>
+          </CardHeader>
+          <CardContent className="space-y-3">
+            {habits.map((h) => (
+              <div
+                key={h.id}
+                className="flex items-center justify-between gap-4"
+              >
+                <span className="text-small">
+                  {h.code} — {h.name}
+                </span>
+                {isConfirmed ? (
+                  <span className="text-small text-muted-foreground">
+                    {habitEdits[h.id] !== 'unset'
+                      ? habitEdits[h.id]
+                      : 'Not rated'}
+                  </span>
+                ) : (
+                  <div className="flex gap-3">
+                    {HABIT_RATINGS.map((r) => (
+                      <label
+                        key={r}
+                        className="text-small flex items-center gap-1"
+                      >
+                        <input
+                          type="radio"
+                          name={`habit-${h.id}`}
+                          checked={habitEdits[h.id] === r}
+                          onChange={() =>
+                            setHabitEdits((prev) => ({ ...prev, [h.id]: r }))
+                          }
+                        />
+                        {r}
+                      </label>
+                    ))}
+                  </div>
+                )}
+              </div>
+            ))}
+            {!isConfirmed && (
+              <Button
+                size="sm"
+                variant="outline"
+                onClick={saveHabits}
+                disabled={savingHabits}
+              >
+                {savingHabits
+                  ? 'Saving…'
+                  : habitsSaved
+                    ? 'Saved'
+                    : 'Save habits'}
+              </Button>
+            )}
+          </CardContent>
+        </Card>
+      )}
 
       {!isConfirmed && (
         <div className="mt-6 space-y-2">

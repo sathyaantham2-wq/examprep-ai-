@@ -11,6 +11,7 @@ import { ThemeToggle } from '../components/theme-toggle'
 import { LineChart } from '../components/charts/line-chart'
 import { StatusDistributionBar } from '../components/charts/status-distribution-bar'
 import { useSession } from '../lib/auth-client'
+import { STATUS } from '../components/charts/palette'
 
 export const Route = createFileRoute('/home')({ component: ParentDashboard })
 
@@ -49,6 +50,27 @@ interface Dashboard {
   concept_status_distribution: Record<string, number>
 }
 
+interface HabitTrendRow {
+  habit_id: string
+  habit_code: string
+  habit_name: string
+  observations: Array<{
+    rating: 'present' | 'partial' | 'absent'
+    confirmed_at: string
+  }>
+}
+
+const HABIT_RATING_COLOR: Record<string, string> = {
+  present: STATUS.good,
+  partial: STATUS.warning,
+  absent: STATUS.critical,
+}
+const HABIT_RATING_LETTER: Record<string, string> = {
+  present: 'P',
+  partial: '~',
+  absent: 'A',
+}
+
 const TREND_ARROW: Record<string, string> = { up: '↑', down: '↓', flat: '→' }
 const TREND_LABEL: Record<string, string> = {
   up: 'Improving',
@@ -71,6 +93,7 @@ function ParentDashboard() {
   const [studentId, setStudentId] = useState('')
   const [dashboard, setDashboard] = useState<Dashboard | null>(null)
   const [loadingDashboard, setLoadingDashboard] = useState(false)
+  const [habitTrend, setHabitTrend] = useState<Array<HabitTrendRow>>([])
 
   useEffect(() => {
     if (isPending) return
@@ -96,6 +119,16 @@ function ParentDashboard() {
       .then((r) => r.json())
       .then(setDashboard)
       .finally(() => setLoadingDashboard(false))
+  }, [studentId])
+
+  useEffect(() => {
+    if (!studentId) {
+      setHabitTrend([])
+      return
+    }
+    fetch(`/api/students/${studentId}/habits/trend`)
+      .then((r) => r.json())
+      .then(setHabitTrend)
   }, [studentId])
 
   if (isPending || !session || (role !== 'parent' && role !== 'admin')) {
@@ -261,13 +294,63 @@ function ParentDashboard() {
 
           <Card>
             <CardHeader>
-              <CardTitle className="text-h3">Concept status distribution</CardTitle>
+              <CardTitle className="text-h3">
+                Concept status distribution
+              </CardTitle>
               <CardDescription>Across every subject.</CardDescription>
             </CardHeader>
             <CardContent>
-              <StatusDistributionBar counts={dashboard.concept_status_distribution} />
+              <StatusDistributionBar
+                counts={dashboard.concept_status_distribution}
+              />
             </CardContent>
           </Card>
+
+          {habitTrend.length > 0 && (
+            <Card>
+              <CardHeader>
+                <CardTitle className="text-h3">Presentation habits</CardTitle>
+                <CardDescription>
+                  Every confirmed paper's rating, oldest to newest. P = present,
+                  ~ = partial, A = absent.
+                </CardDescription>
+              </CardHeader>
+              <CardContent className="space-y-2">
+                {habitTrend.map((h) => {
+                  const latest = h.observations[h.observations.length - 1]
+                  return (
+                    <div
+                      key={h.habit_id}
+                      className="flex items-center justify-between gap-4"
+                    >
+                      <span className="text-small">
+                        {h.habit_code} — {h.habit_name}
+                      </span>
+                      <div className="flex items-center gap-2">
+                        <div className="flex gap-1">
+                          {h.observations.map((o, i) => (
+                            <span
+                              key={i}
+                              title={`${o.rating} — ${new Date(o.confirmed_at).toLocaleDateString()}`}
+                              className="flex h-5 w-5 items-center justify-center rounded-full text-[10px] font-medium text-white"
+                              style={{
+                                background: HABIT_RATING_COLOR[o.rating],
+                              }}
+                            >
+                              {HABIT_RATING_LETTER[o.rating]}
+                            </span>
+                          ))}
+                        </div>
+                        <span className="text-small text-muted-foreground">
+                          latest: {latest.rating}
+                        </span>
+                      </div>
+                    </div>
+                  )
+                })}
+              </CardContent>
+            </Card>
+          )}
         </div>
       )}
     </div>

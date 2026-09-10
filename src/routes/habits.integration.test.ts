@@ -14,6 +14,7 @@ import { Route as EvaluationConfirmRoute } from './api/evaluations/$id/confirm'
 import { Route as EvaluationReportRoute } from './api/evaluations/$id/report'
 import { Route as HabitsRoute } from './api/evaluations/$id/habits'
 import { Route as HabitsTrendRoute } from './api/students/$id/habits/trend'
+import { Route as EvaluationByIdRoute } from './api/evaluations/$id'
 
 type RouteHandler = (opts: {
   request: Request
@@ -55,6 +56,7 @@ describe('presentation habit tracker (F058)', () => {
   let evaluationId: string
   let blueprintId: string
   let conceptId: string
+  let questionId: string
   let habitH1Id: string
   let habitH8Id: string
 
@@ -116,7 +118,7 @@ describe('presentation habit tracker (F058)', () => {
     })
     conceptId = concept.id
 
-    await createQuestion(db, {
+    const question = await createQuestion(db, {
       concept_id: concept.id,
       board: 'CBSE',
       class: 7,
@@ -132,6 +134,7 @@ describe('presentation habit tracker (F058)', () => {
         { label: 'B', text: '2', is_correct: false, order_index: 2 },
       ],
     })
+    questionId = question.id
 
     const blueprint = await blueprintsRepository.insert(db, {
       subject_id: subject.id,
@@ -240,10 +243,11 @@ describe('presentation habit tracker (F058)', () => {
       .where('id', 'in', [parentA.householdId, parentB.householdId])
       .execute()
     await db.deleteFrom('blueprints').where('id', '=', blueprintId).execute()
-    await db
-      .deleteFrom('questions')
-      .where('created_by', '=', 'habits-fixture')
-      .execute()
+    // Scoped to this run's own question id, not a shared created_by literal -- see
+    // remediation.integration.test.ts's afterAll for why: the latter also tries to delete any
+    // OTHER run's leftover 'habits-fixture' questions, which can still be referenced by that
+    // other run's own dangling paper_questions and throw an FK violation here.
+    await db.deleteFrom('questions').where('id', '=', questionId).execute()
     await db.deleteFrom('concepts').where('id', '=', conceptId).execute()
     await db.destroy()
   })
@@ -281,6 +285,29 @@ describe('presentation habit tracker (F058)', () => {
     expect(response.status).toBe(200)
     const observations = await response.json()
     expect(observations).toHaveLength(2)
+  })
+
+  it('the review workspace detail (F048) surfaces the full habit library and saved ratings', async () => {
+    const response = await handlerFor(
+      EvaluationByIdRoute,
+      'GET',
+    )({
+      request: request(parentA.cookie),
+      params: { id: evaluationId },
+    })
+    expect(response.status).toBe(200)
+    const detail = await response.json()
+    // The full H1-H10 library, not just the two rated so far -- the review screen renders one
+    // row per habit regardless of whether it's been rated yet.
+    expect(detail.habits.length).toBeGreaterThanOrEqual(10)
+    const h1 = detail.habits.find((h: { id: string }) => h.id === habitH1Id)
+    const h8 = detail.habits.find((h: { id: string }) => h.id === habitH8Id)
+    expect(h1.rating).toBe('present')
+    expect(h8.rating).toBe('absent')
+    const unrated = detail.habits.find(
+      (h: { id: string }) => h.id !== habitH1Id && h.id !== habitH8Id,
+    )
+    expect(unrated.rating).toBeNull()
   })
 
   it('the confirmed report includes the recorded habit ratings', async () => {

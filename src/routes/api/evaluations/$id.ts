@@ -8,6 +8,8 @@ import {
   questionOptionsRepository,
   patternsRepository,
   patternHitsRepository,
+  habitsRepository,
+  habitObservationsRepository,
 } from '../../../db/repositories'
 
 /**
@@ -33,11 +35,20 @@ export const Route = createFileRoute('/api/evaluations/$id')({
           )
           if (!evaluation) return new Response(null, { status: 404 })
 
-          const [items, answers, patterns] = await Promise.all([
-            evaluationItemsRepository.listForEvaluation(db, evaluation.id),
-            attemptAnswersRepository.listForAttempt(db, evaluation.attempt_id),
-            patternsRepository.list(db),
-          ])
+          const [items, answers, patterns, habits, habitObservations] =
+            await Promise.all([
+              evaluationItemsRepository.listForEvaluation(db, evaluation.id),
+              attemptAnswersRepository.listForAttempt(
+                db,
+                evaluation.attempt_id,
+              ),
+              patternsRepository.list(db),
+              habitsRepository.list(db),
+              habitObservationsRepository.listForEvaluation(db, evaluation.id),
+            ])
+          const habitRatingByHabit = new Map(
+            habitObservations.map((o) => [o.habit_id, o.rating]),
+          )
           const answerBySlot = new Map(
             answers.map((a) => [a.paper_question_id, a]),
           )
@@ -102,6 +113,14 @@ export const Route = createFileRoute('/api/evaluations/$id')({
             // F057: the full pattern library, so the review screen can render every pattern as a
             // checkbox per item rather than needing a second round trip.
             patterns: patterns.filter((p) => p.is_active),
+            // F058: the full H1-H10 habit library plus this evaluation's current ratings (if any
+            // were saved on an earlier visit before confirming), same reasoning as patterns above.
+            habits: habits.map((h) => ({
+              id: h.id,
+              code: h.code,
+              name: h.name,
+              rating: habitRatingByHabit.get(h.id) ?? null,
+            })),
             items: items
               .map((item) => {
                 const q = questionByPq.get(item.paper_question_id)
