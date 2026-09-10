@@ -134,6 +134,7 @@ export interface ChapterScope {
 
 export interface ConceptMastery {
   concept_id: string;
+  created_at: Generated<Timestamp>;
   date: Timestamp;
   evaluation_id: string;
   id: Generated<string>;
@@ -148,6 +149,14 @@ export interface ConceptPrereqs {
   concept_id: string;
   created_at: Generated<Timestamp>;
   prereq_concept_id: string;
+}
+
+export interface ConceptRemediationContent {
+  concept_id: string;
+  created_at: Generated<Timestamp>;
+  examples: Json | null;
+  refresher: string | null;
+  source: string;
 }
 
 export interface Concepts {
@@ -505,6 +514,7 @@ export interface DB {
   chapters: Chapters;
   concept_mastery: ConceptMastery;
   concept_prereqs: ConceptPrereqs;
+  concept_remediation_content: ConceptRemediationContent;
   concept_status: ConceptStatus;
   concepts: Concepts;
   consents: Consents;

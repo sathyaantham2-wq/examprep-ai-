@@ -78,6 +78,25 @@ export const questionsRepository = {
       .limit(limit)
       .execute()
   },
+  // F066/F068: drill questions are drawn live (never cached, unlike F067's refresher/examples)
+  // and restricted to objective types so the drill can score itself instantly with no AI/human
+  // grading step -- a subjective question here would break "scored immediately" (F068's AC).
+  async findRandomApprovedObjective(
+    db: Db,
+    conceptId: string,
+    objectiveTypes: Array<QuestionType>,
+    limit: number,
+  ) {
+    return db
+      .selectFrom('questions')
+      .selectAll()
+      .where('status', '=', 'approved')
+      .where('concept_id', '=', conceptId)
+      .where('type', 'in', objectiveTypes)
+      .orderBy(sql`random()`)
+      .limit(limit)
+      .execute()
+  },
 }
 
 export const questionOptionsRepository = {

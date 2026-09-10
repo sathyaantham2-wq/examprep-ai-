@@ -13,12 +13,14 @@ import { Route as IndexRouteImport } from './routes/index'
 import { Route as GenerateRouteImport } from './routes/generate'
 import { Route as HomeRouteImport } from './routes/home'
 import { Route as OnboardingRouteImport } from './routes/onboarding'
+import { Route as RemediationRouteImport } from './routes/remediation'
 import { Route as StudentRouteImport } from './routes/student'
 import { Route as ApiAttemptsRouteImport } from './routes/api/attempts'
 import { Route as ApiAuditLogRouteImport } from './routes/api/audit-log'
 import { Route as ApiBlueprintsRouteImport } from './routes/api/blueprints'
 import { Route as ApiEvaluationsRouteImport } from './routes/api/evaluations'
 import { Route as ApiQuestionsRouteImport } from './routes/api/questions'
+import { Route as ApiRemediationRouteImport } from './routes/api/remediation'
 import { Route as ApiStudentDashboardRouteImport } from './routes/api/student-dashboard'
 import { Route as ApiStudentsRouteImport } from './routes/api/students'
 import { Route as AttemptIdRouteImport } from './routes/attempt/$id'
@@ -35,6 +37,8 @@ import { Route as ApiQuestionsBulkImportRouteImport } from './routes/api/questio
 import { Route as ApiQuestionsCoverageGridRouteImport } from './routes/api/questions/coverage-grid'
 import { Route as ApiQuestionsGenerateRouteImport } from './routes/api/questions/generate'
 import { Route as ApiQuestionsGenerateBatchRouteImport } from './routes/api/questions/generate-batch'
+import { Route as ApiRemediationIdRouteImport } from './routes/api/remediation/$id'
+import { Route as ApiRemediationGenerateRouteImport } from './routes/api/remediation/generate'
 import { Route as ApiStudentsIdRouteImport } from './routes/api/students/$id'
 import { Route as ApiSyllabusChaptersRouteImport } from './routes/api/syllabus/chapters'
 import { Route as ApiSyllabusSubjectsRouteImport } from './routes/api/syllabus/subjects'
@@ -51,6 +55,7 @@ import { Route as ApiPapersIdRegenerateSlotRouteImport } from './routes/api/pape
 import { Route as ApiQuestionsIdApproveRouteImport } from './routes/api/questions/$id/approve'
 import { Route as ApiQuestionsIdStatsRouteImport } from './routes/api/questions/$id/stats'
 import { Route as ApiQuestionsGenerateBatchIdRouteImport } from './routes/api/questions/generate-batch/$id'
+import { Route as ApiRemediationIdAttemptRouteImport } from './routes/api/remediation/$id/attempt'
 import { Route as ApiStudentsIdLoginRouteImport } from './routes/api/students/$id/login'
 import { Route as ApiSummaryWeeklyStudentIdRouteImport } from './routes/api/summary/weekly/$studentId'
 import { Route as ApiEvaluationsIdItemsItemIdRouteImport } from './routes/api/evaluations/$id/items/$itemId'
@@ -78,6 +83,11 @@ const HomeRoute = HomeRouteImport.update({
 const OnboardingRoute = OnboardingRouteImport.update({
   id: '/onboarding',
   path: '/onboarding',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const RemediationRoute = RemediationRouteImport.update({
+  id: '/remediation',
+  path: '/remediation',
   getParentRoute: () => rootRouteImport,
 } as any)
 const StudentRoute = StudentRouteImport.update({
@@ -108,6 +118,11 @@ const ApiEvaluationsRoute = ApiEvaluationsRouteImport.update({
 const ApiQuestionsRoute = ApiQuestionsRouteImport.update({
   id: '/api/questions',
   path: '/api/questions',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ApiRemediationRoute = ApiRemediationRouteImport.update({
+  id: '/api/remediation',
+  path: '/api/remediation',
   getParentRoute: () => rootRouteImport,
 } as any)
 const ApiStudentDashboardRoute = ApiStudentDashboardRouteImport.update({
@@ -192,6 +207,16 @@ const ApiQuestionsGenerateBatchRoute =
     path: '/generate-batch',
     getParentRoute: () => ApiQuestionsRoute,
   } as any)
+const ApiRemediationIdRoute = ApiRemediationIdRouteImport.update({
+  id: '/$id',
+  path: '/$id',
+  getParentRoute: () => ApiRemediationRoute,
+} as any)
+const ApiRemediationGenerateRoute = ApiRemediationGenerateRouteImport.update({
+  id: '/generate',
+  path: '/generate',
+  getParentRoute: () => ApiRemediationRoute,
+} as any)
 const ApiStudentsIdRoute = ApiStudentsIdRouteImport.update({
   id: '/$id',
   path: '/$id',
@@ -274,6 +299,11 @@ const ApiQuestionsGenerateBatchIdRoute =
     path: '/$id',
     getParentRoute: () => ApiQuestionsGenerateBatchRoute,
   } as any)
+const ApiRemediationIdAttemptRoute = ApiRemediationIdAttemptRouteImport.update({
+  id: '/attempt',
+  path: '/attempt',
+  getParentRoute: () => ApiRemediationIdRoute,
+} as any)
 const ApiStudentsIdLoginRoute = ApiStudentsIdLoginRouteImport.update({
   id: '/login',
   path: '/login',
@@ -327,12 +357,14 @@ export interface FileRoutesByFullPath {
   '/generate': typeof GenerateRoute
   '/home': typeof HomeRoute
   '/onboarding': typeof OnboardingRoute
+  '/remediation': typeof RemediationRoute
   '/student': typeof StudentRoute
   '/api/attempts': typeof ApiAttemptsRouteWithChildren
   '/api/audit-log': typeof ApiAuditLogRoute
   '/api/blueprints': typeof ApiBlueprintsRoute
   '/api/evaluations': typeof ApiEvaluationsRouteWithChildren
   '/api/questions': typeof ApiQuestionsRouteWithChildren
+  '/api/remediation': typeof ApiRemediationRouteWithChildren
   '/api/student-dashboard': typeof ApiStudentDashboardRoute
   '/api/students': typeof ApiStudentsRouteWithChildren
   '/attempt/$id': typeof AttemptIdRoute
@@ -349,6 +381,8 @@ export interface FileRoutesByFullPath {
   '/api/questions/coverage-grid': typeof ApiQuestionsCoverageGridRoute
   '/api/questions/generate': typeof ApiQuestionsGenerateRoute
   '/api/questions/generate-batch': typeof ApiQuestionsGenerateBatchRouteWithChildren
+  '/api/remediation/$id': typeof ApiRemediationIdRouteWithChildren
+  '/api/remediation/generate': typeof ApiRemediationGenerateRoute
   '/api/students/$id': typeof ApiStudentsIdRouteWithChildren
   '/api/syllabus/chapters': typeof ApiSyllabusChaptersRouteWithChildren
   '/api/syllabus/subjects': typeof ApiSyllabusSubjectsRoute
@@ -365,6 +399,7 @@ export interface FileRoutesByFullPath {
   '/api/questions/$id/approve': typeof ApiQuestionsIdApproveRoute
   '/api/questions/$id/stats': typeof ApiQuestionsIdStatsRoute
   '/api/questions/generate-batch/$id': typeof ApiQuestionsGenerateBatchIdRouteWithChildren
+  '/api/remediation/$id/attempt': typeof ApiRemediationIdAttemptRoute
   '/api/students/$id/login': typeof ApiStudentsIdLoginRoute
   '/api/summary/weekly/$studentId': typeof ApiSummaryWeeklyStudentIdRoute
   '/api/evaluations/$id/items/$itemId': typeof ApiEvaluationsIdItemsItemIdRoute
@@ -379,12 +414,14 @@ export interface FileRoutesByTo {
   '/generate': typeof GenerateRoute
   '/home': typeof HomeRoute
   '/onboarding': typeof OnboardingRoute
+  '/remediation': typeof RemediationRoute
   '/student': typeof StudentRoute
   '/api/attempts': typeof ApiAttemptsRouteWithChildren
   '/api/audit-log': typeof ApiAuditLogRoute
   '/api/blueprints': typeof ApiBlueprintsRoute
   '/api/evaluations': typeof ApiEvaluationsRouteWithChildren
   '/api/questions': typeof ApiQuestionsRouteWithChildren
+  '/api/remediation': typeof ApiRemediationRouteWithChildren
   '/api/student-dashboard': typeof ApiStudentDashboardRoute
   '/api/students': typeof ApiStudentsRouteWithChildren
   '/attempt/$id': typeof AttemptIdRoute
@@ -401,6 +438,8 @@ export interface FileRoutesByTo {
   '/api/questions/coverage-grid': typeof ApiQuestionsCoverageGridRoute
   '/api/questions/generate': typeof ApiQuestionsGenerateRoute
   '/api/questions/generate-batch': typeof ApiQuestionsGenerateBatchRouteWithChildren
+  '/api/remediation/$id': typeof ApiRemediationIdRouteWithChildren
+  '/api/remediation/generate': typeof ApiRemediationGenerateRoute
   '/api/students/$id': typeof ApiStudentsIdRouteWithChildren
   '/api/syllabus/chapters': typeof ApiSyllabusChaptersRouteWithChildren
   '/api/syllabus/subjects': typeof ApiSyllabusSubjectsRoute
@@ -417,6 +456,7 @@ export interface FileRoutesByTo {
   '/api/questions/$id/approve': typeof ApiQuestionsIdApproveRoute
   '/api/questions/$id/stats': typeof ApiQuestionsIdStatsRoute
   '/api/questions/generate-batch/$id': typeof ApiQuestionsGenerateBatchIdRouteWithChildren
+  '/api/remediation/$id/attempt': typeof ApiRemediationIdAttemptRoute
   '/api/students/$id/login': typeof ApiStudentsIdLoginRoute
   '/api/summary/weekly/$studentId': typeof ApiSummaryWeeklyStudentIdRoute
   '/api/evaluations/$id/items/$itemId': typeof ApiEvaluationsIdItemsItemIdRoute
@@ -432,12 +472,14 @@ export interface FileRoutesById {
   '/generate': typeof GenerateRoute
   '/home': typeof HomeRoute
   '/onboarding': typeof OnboardingRoute
+  '/remediation': typeof RemediationRoute
   '/student': typeof StudentRoute
   '/api/attempts': typeof ApiAttemptsRouteWithChildren
   '/api/audit-log': typeof ApiAuditLogRoute
   '/api/blueprints': typeof ApiBlueprintsRoute
   '/api/evaluations': typeof ApiEvaluationsRouteWithChildren
   '/api/questions': typeof ApiQuestionsRouteWithChildren
+  '/api/remediation': typeof ApiRemediationRouteWithChildren
   '/api/student-dashboard': typeof ApiStudentDashboardRoute
   '/api/students': typeof ApiStudentsRouteWithChildren
   '/attempt/$id': typeof AttemptIdRoute
@@ -454,6 +496,8 @@ export interface FileRoutesById {
   '/api/questions/coverage-grid': typeof ApiQuestionsCoverageGridRoute
   '/api/questions/generate': typeof ApiQuestionsGenerateRoute
   '/api/questions/generate-batch': typeof ApiQuestionsGenerateBatchRouteWithChildren
+  '/api/remediation/$id': typeof ApiRemediationIdRouteWithChildren
+  '/api/remediation/generate': typeof ApiRemediationGenerateRoute
   '/api/students/$id': typeof ApiStudentsIdRouteWithChildren
   '/api/syllabus/chapters': typeof ApiSyllabusChaptersRouteWithChildren
   '/api/syllabus/subjects': typeof ApiSyllabusSubjectsRoute
@@ -470,6 +514,7 @@ export interface FileRoutesById {
   '/api/questions/$id/approve': typeof ApiQuestionsIdApproveRoute
   '/api/questions/$id/stats': typeof ApiQuestionsIdStatsRoute
   '/api/questions/generate-batch/$id': typeof ApiQuestionsGenerateBatchIdRouteWithChildren
+  '/api/remediation/$id/attempt': typeof ApiRemediationIdAttemptRoute
   '/api/students/$id/login': typeof ApiStudentsIdLoginRoute
   '/api/summary/weekly/$studentId': typeof ApiSummaryWeeklyStudentIdRoute
   '/api/evaluations/$id/items/$itemId': typeof ApiEvaluationsIdItemsItemIdRoute
@@ -486,12 +531,14 @@ export interface FileRouteTypes {
     | '/generate'
     | '/home'
     | '/onboarding'
+    | '/remediation'
     | '/student'
     | '/api/attempts'
     | '/api/audit-log'
     | '/api/blueprints'
     | '/api/evaluations'
     | '/api/questions'
+    | '/api/remediation'
     | '/api/student-dashboard'
     | '/api/students'
     | '/attempt/$id'
@@ -508,6 +555,8 @@ export interface FileRouteTypes {
     | '/api/questions/coverage-grid'
     | '/api/questions/generate'
     | '/api/questions/generate-batch'
+    | '/api/remediation/$id'
+    | '/api/remediation/generate'
     | '/api/students/$id'
     | '/api/syllabus/chapters'
     | '/api/syllabus/subjects'
@@ -524,6 +573,7 @@ export interface FileRouteTypes {
     | '/api/questions/$id/approve'
     | '/api/questions/$id/stats'
     | '/api/questions/generate-batch/$id'
+    | '/api/remediation/$id/attempt'
     | '/api/students/$id/login'
     | '/api/summary/weekly/$studentId'
     | '/api/evaluations/$id/items/$itemId'
@@ -538,12 +588,14 @@ export interface FileRouteTypes {
     | '/generate'
     | '/home'
     | '/onboarding'
+    | '/remediation'
     | '/student'
     | '/api/attempts'
     | '/api/audit-log'
     | '/api/blueprints'
     | '/api/evaluations'
     | '/api/questions'
+    | '/api/remediation'
     | '/api/student-dashboard'
     | '/api/students'
     | '/attempt/$id'
@@ -560,6 +612,8 @@ export interface FileRouteTypes {
     | '/api/questions/coverage-grid'
     | '/api/questions/generate'
     | '/api/questions/generate-batch'
+    | '/api/remediation/$id'
+    | '/api/remediation/generate'
     | '/api/students/$id'
     | '/api/syllabus/chapters'
     | '/api/syllabus/subjects'
@@ -576,6 +630,7 @@ export interface FileRouteTypes {
     | '/api/questions/$id/approve'
     | '/api/questions/$id/stats'
     | '/api/questions/generate-batch/$id'
+    | '/api/remediation/$id/attempt'
     | '/api/students/$id/login'
     | '/api/summary/weekly/$studentId'
     | '/api/evaluations/$id/items/$itemId'
@@ -590,12 +645,14 @@ export interface FileRouteTypes {
     | '/generate'
     | '/home'
     | '/onboarding'
+    | '/remediation'
     | '/student'
     | '/api/attempts'
     | '/api/audit-log'
     | '/api/blueprints'
     | '/api/evaluations'
     | '/api/questions'
+    | '/api/remediation'
     | '/api/student-dashboard'
     | '/api/students'
     | '/attempt/$id'
@@ -612,6 +669,8 @@ export interface FileRouteTypes {
     | '/api/questions/coverage-grid'
     | '/api/questions/generate'
     | '/api/questions/generate-batch'
+    | '/api/remediation/$id'
+    | '/api/remediation/generate'
     | '/api/students/$id'
     | '/api/syllabus/chapters'
     | '/api/syllabus/subjects'
@@ -628,6 +687,7 @@ export interface FileRouteTypes {
     | '/api/questions/$id/approve'
     | '/api/questions/$id/stats'
     | '/api/questions/generate-batch/$id'
+    | '/api/remediation/$id/attempt'
     | '/api/students/$id/login'
     | '/api/summary/weekly/$studentId'
     | '/api/evaluations/$id/items/$itemId'
@@ -643,12 +703,14 @@ export interface RootRouteChildren {
   GenerateRoute: typeof GenerateRoute
   HomeRoute: typeof HomeRoute
   OnboardingRoute: typeof OnboardingRoute
+  RemediationRoute: typeof RemediationRoute
   StudentRoute: typeof StudentRoute
   ApiAttemptsRoute: typeof ApiAttemptsRouteWithChildren
   ApiAuditLogRoute: typeof ApiAuditLogRoute
   ApiBlueprintsRoute: typeof ApiBlueprintsRoute
   ApiEvaluationsRoute: typeof ApiEvaluationsRouteWithChildren
   ApiQuestionsRoute: typeof ApiQuestionsRouteWithChildren
+  ApiRemediationRoute: typeof ApiRemediationRouteWithChildren
   ApiStudentDashboardRoute: typeof ApiStudentDashboardRoute
   ApiStudentsRoute: typeof ApiStudentsRouteWithChildren
   AttemptIdRoute: typeof AttemptIdRoute
@@ -695,6 +757,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof OnboardingRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/remediation': {
+      id: '/remediation'
+      path: '/remediation'
+      fullPath: '/remediation'
+      preLoaderRoute: typeof RemediationRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/student': {
       id: '/student'
       path: '/student'
@@ -735,6 +804,13 @@ declare module '@tanstack/react-router' {
       path: '/api/questions'
       fullPath: '/api/questions'
       preLoaderRoute: typeof ApiQuestionsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/api/remediation': {
+      id: '/api/remediation'
+      path: '/api/remediation'
+      fullPath: '/api/remediation'
+      preLoaderRoute: typeof ApiRemediationRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/api/student-dashboard': {
@@ -849,6 +925,20 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ApiQuestionsGenerateBatchRouteImport
       parentRoute: typeof ApiQuestionsRoute
     }
+    '/api/remediation/$id': {
+      id: '/api/remediation/$id'
+      path: '/$id'
+      fullPath: '/api/remediation/$id'
+      preLoaderRoute: typeof ApiRemediationIdRouteImport
+      parentRoute: typeof ApiRemediationRoute
+    }
+    '/api/remediation/generate': {
+      id: '/api/remediation/generate'
+      path: '/generate'
+      fullPath: '/api/remediation/generate'
+      preLoaderRoute: typeof ApiRemediationGenerateRouteImport
+      parentRoute: typeof ApiRemediationRoute
+    }
     '/api/students/$id': {
       id: '/api/students/$id'
       path: '/$id'
@@ -960,6 +1050,13 @@ declare module '@tanstack/react-router' {
       fullPath: '/api/questions/generate-batch/$id'
       preLoaderRoute: typeof ApiQuestionsGenerateBatchIdRouteImport
       parentRoute: typeof ApiQuestionsGenerateBatchRoute
+    }
+    '/api/remediation/$id/attempt': {
+      id: '/api/remediation/$id/attempt'
+      path: '/attempt'
+      fullPath: '/api/remediation/$id/attempt'
+      preLoaderRoute: typeof ApiRemediationIdAttemptRouteImport
+      parentRoute: typeof ApiRemediationIdRoute
     }
     '/api/students/$id/login': {
       id: '/api/students/$id/login'
@@ -1153,6 +1250,31 @@ const ApiQuestionsRouteWithChildren = ApiQuestionsRoute._addFileChildren(
   ApiQuestionsRouteChildren,
 )
 
+interface ApiRemediationIdRouteChildren {
+  ApiRemediationIdAttemptRoute: typeof ApiRemediationIdAttemptRoute
+}
+
+const ApiRemediationIdRouteChildren: ApiRemediationIdRouteChildren = {
+  ApiRemediationIdAttemptRoute: ApiRemediationIdAttemptRoute,
+}
+
+const ApiRemediationIdRouteWithChildren =
+  ApiRemediationIdRoute._addFileChildren(ApiRemediationIdRouteChildren)
+
+interface ApiRemediationRouteChildren {
+  ApiRemediationIdRoute: typeof ApiRemediationIdRouteWithChildren
+  ApiRemediationGenerateRoute: typeof ApiRemediationGenerateRoute
+}
+
+const ApiRemediationRouteChildren: ApiRemediationRouteChildren = {
+  ApiRemediationIdRoute: ApiRemediationIdRouteWithChildren,
+  ApiRemediationGenerateRoute: ApiRemediationGenerateRoute,
+}
+
+const ApiRemediationRouteWithChildren = ApiRemediationRoute._addFileChildren(
+  ApiRemediationRouteChildren,
+)
+
 interface ApiStudentsIdRouteChildren {
   ApiStudentsIdLoginRoute: typeof ApiStudentsIdLoginRoute
   ApiStudentsIdConsentWithdrawRoute: typeof ApiStudentsIdConsentWithdrawRoute
@@ -1213,12 +1335,14 @@ const rootRouteChildren: RootRouteChildren = {
   GenerateRoute: GenerateRoute,
   HomeRoute: HomeRoute,
   OnboardingRoute: OnboardingRoute,
+  RemediationRoute: RemediationRoute,
   StudentRoute: StudentRoute,
   ApiAttemptsRoute: ApiAttemptsRouteWithChildren,
   ApiAuditLogRoute: ApiAuditLogRoute,
   ApiBlueprintsRoute: ApiBlueprintsRoute,
   ApiEvaluationsRoute: ApiEvaluationsRouteWithChildren,
   ApiQuestionsRoute: ApiQuestionsRouteWithChildren,
+  ApiRemediationRoute: ApiRemediationRouteWithChildren,
   ApiStudentDashboardRoute: ApiStudentDashboardRoute,
   ApiStudentsRoute: ApiStudentsRouteWithChildren,
   AttemptIdRoute: AttemptIdRoute,

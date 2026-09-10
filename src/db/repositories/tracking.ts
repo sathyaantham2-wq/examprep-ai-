@@ -14,6 +14,8 @@ export const conceptMasteryRepository = {
   insert: concept_mastery.insert,
   // Most-recent-first history for one (student, concept) pair — the escalation rules in
   // src/lib/mastery.ts (F063) need to see the last couple of appearances, not the whole ledger.
+  // `date` alone can't break ties between same-day rows (an exam evaluation and a same-day
+  // remediation drill both land on today's date) -- created_at is the real recency tiebreaker.
   async listForConcept(
     db: Db,
     studentId: string,
@@ -26,6 +28,7 @@ export const conceptMasteryRepository = {
       .where('student_id', '=', studentId)
       .where('concept_id', '=', conceptId)
       .orderBy('date', 'desc')
+      .orderBy('created_at', 'desc')
       .limit(limit)
       .execute() as Promise<Array<Selectable<DB['concept_mastery']>>>
   },
@@ -136,10 +139,56 @@ export const conceptStatusRepository = {
   },
 }
 
-export const remediationTasksRepository = createScopedRepository(
-  'remediation_tasks',
-  'student_id',
-)
+export const remediationTasksRepository = {
+  ...createScopedRepository('remediation_tasks', 'student_id'),
+  // F066 (tab06 /remediation "open drills"): newest first, so the hub shows the most recently
+  // triggered concept at the top.
+  async listForStudent(db: Db, studentId: string) {
+    return db
+      .selectFrom('remediation_tasks')
+      .innerJoin('concepts', 'concepts.id', 'remediation_tasks.concept_id')
+      .select([
+        'remediation_tasks.id',
+        'remediation_tasks.concept_id',
+        'concepts.name as concept_name',
+        'remediation_tasks.trigger_reason',
+        'remediation_tasks.status',
+        'remediation_tasks.due_at',
+        'remediation_tasks.completed_at',
+        'remediation_tasks.created_at',
+      ])
+      .where('remediation_tasks.student_id', '=', studentId)
+      .orderBy('remediation_tasks.created_at', 'desc')
+      .execute()
+  },
+}
+
+// F067: one cached row per concept -- see migration 0046's own note on why (reviewed once,
+// reused across every student who needs that concept's remediation, never regenerated per
+// student). Global reference data (keyed by concept, not household/student), so unscoped.
+export const conceptRemediationContentRepository = {
+  async findByConcept(db: Db, conceptId: string) {
+    return db
+      .selectFrom('concept_remediation_content')
+      .selectAll()
+      .where('concept_id', '=', conceptId)
+      .executeTakeFirst() as Promise<
+      Selectable<DB['concept_remediation_content']> | undefined
+    >
+  },
+  async insert(
+    db: Db,
+    row: Insertable<DB['concept_remediation_content']>,
+  ) {
+    return db
+      .insertInto('concept_remediation_content')
+      .values(row)
+      .returningAll()
+      .executeTakeFirstOrThrow() as Promise<
+      Selectable<DB['concept_remediation_content']>
+    >
+  },
+}
 export const studyPlansRepository = createScopedRepository(
   'study_plans',
   'student_id',
