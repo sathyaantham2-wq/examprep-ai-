@@ -23,6 +23,7 @@ import { Route as ApiStudentDashboardRouteImport } from './routes/api/student-da
 import { Route as ApiStudentsRouteImport } from './routes/api/students'
 import { Route as AttemptIdRouteImport } from './routes/attempt/$id'
 import { Route as EvaluateAttemptIdRouteImport } from './routes/evaluate/$attemptId'
+import { Route as SummaryWeeklyRouteImport } from './routes/summary/weekly'
 import { Route as ApiAttemptsIdRouteImport } from './routes/api/attempts/$id'
 import { Route as ApiAuthSplatRouteImport } from './routes/api/auth/$'
 import { Route as ApiDashboardStudentIdRouteImport } from './routes/api/dashboard/$studentId'
@@ -51,6 +52,7 @@ import { Route as ApiQuestionsIdApproveRouteImport } from './routes/api/question
 import { Route as ApiQuestionsIdStatsRouteImport } from './routes/api/questions/$id/stats'
 import { Route as ApiQuestionsGenerateBatchIdRouteImport } from './routes/api/questions/generate-batch/$id'
 import { Route as ApiStudentsIdLoginRouteImport } from './routes/api/students/$id/login'
+import { Route as ApiSummaryWeeklyStudentIdRouteImport } from './routes/api/summary/weekly/$studentId'
 import { Route as ApiEvaluationsIdItemsItemIdRouteImport } from './routes/api/evaluations/$id/items/$itemId'
 import { Route as ApiEvaluationsIdReportPdfRouteImport } from './routes/api/evaluations/$id/report/pdf'
 import { Route as ApiQuestionsGenerateBatchIdResumeRouteImport } from './routes/api/questions/generate-batch/$id/resume'
@@ -126,6 +128,11 @@ const AttemptIdRoute = AttemptIdRouteImport.update({
 const EvaluateAttemptIdRoute = EvaluateAttemptIdRouteImport.update({
   id: '/evaluate/$attemptId',
   path: '/evaluate/$attemptId',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const SummaryWeeklyRoute = SummaryWeeklyRouteImport.update({
+  id: '/summary/weekly',
+  path: '/summary/weekly',
   getParentRoute: () => rootRouteImport,
 } as any)
 const ApiAttemptsIdRoute = ApiAttemptsIdRouteImport.update({
@@ -272,6 +279,12 @@ const ApiStudentsIdLoginRoute = ApiStudentsIdLoginRouteImport.update({
   path: '/login',
   getParentRoute: () => ApiStudentsIdRoute,
 } as any)
+const ApiSummaryWeeklyStudentIdRoute =
+  ApiSummaryWeeklyStudentIdRouteImport.update({
+    id: '/api/summary/weekly/$studentId',
+    path: '/api/summary/weekly/$studentId',
+    getParentRoute: () => rootRouteImport,
+  } as any)
 const ApiEvaluationsIdItemsItemIdRoute =
   ApiEvaluationsIdItemsItemIdRouteImport.update({
     id: '/items/$itemId',
@@ -324,6 +337,7 @@ export interface FileRoutesByFullPath {
   '/api/students': typeof ApiStudentsRouteWithChildren
   '/attempt/$id': typeof AttemptIdRoute
   '/evaluate/$attemptId': typeof EvaluateAttemptIdRoute
+  '/summary/weekly': typeof SummaryWeeklyRoute
   '/api/attempts/$id': typeof ApiAttemptsIdRouteWithChildren
   '/api/auth/$': typeof ApiAuthSplatRoute
   '/api/dashboard/$studentId': typeof ApiDashboardStudentIdRoute
@@ -352,6 +366,7 @@ export interface FileRoutesByFullPath {
   '/api/questions/$id/stats': typeof ApiQuestionsIdStatsRoute
   '/api/questions/generate-batch/$id': typeof ApiQuestionsGenerateBatchIdRouteWithChildren
   '/api/students/$id/login': typeof ApiStudentsIdLoginRoute
+  '/api/summary/weekly/$studentId': typeof ApiSummaryWeeklyStudentIdRoute
   '/api/evaluations/$id/items/$itemId': typeof ApiEvaluationsIdItemsItemIdRoute
   '/api/evaluations/$id/report/pdf': typeof ApiEvaluationsIdReportPdfRoute
   '/api/questions/generate-batch/$id/resume': typeof ApiQuestionsGenerateBatchIdResumeRoute
@@ -374,6 +389,7 @@ export interface FileRoutesByTo {
   '/api/students': typeof ApiStudentsRouteWithChildren
   '/attempt/$id': typeof AttemptIdRoute
   '/evaluate/$attemptId': typeof EvaluateAttemptIdRoute
+  '/summary/weekly': typeof SummaryWeeklyRoute
   '/api/attempts/$id': typeof ApiAttemptsIdRouteWithChildren
   '/api/auth/$': typeof ApiAuthSplatRoute
   '/api/dashboard/$studentId': typeof ApiDashboardStudentIdRoute
@@ -402,6 +418,7 @@ export interface FileRoutesByTo {
   '/api/questions/$id/stats': typeof ApiQuestionsIdStatsRoute
   '/api/questions/generate-batch/$id': typeof ApiQuestionsGenerateBatchIdRouteWithChildren
   '/api/students/$id/login': typeof ApiStudentsIdLoginRoute
+  '/api/summary/weekly/$studentId': typeof ApiSummaryWeeklyStudentIdRoute
   '/api/evaluations/$id/items/$itemId': typeof ApiEvaluationsIdItemsItemIdRoute
   '/api/evaluations/$id/report/pdf': typeof ApiEvaluationsIdReportPdfRoute
   '/api/questions/generate-batch/$id/resume': typeof ApiQuestionsGenerateBatchIdResumeRoute
@@ -425,6 +442,7 @@ export interface FileRoutesById {
   '/api/students': typeof ApiStudentsRouteWithChildren
   '/attempt/$id': typeof AttemptIdRoute
   '/evaluate/$attemptId': typeof EvaluateAttemptIdRoute
+  '/summary/weekly': typeof SummaryWeeklyRoute
   '/api/attempts/$id': typeof ApiAttemptsIdRouteWithChildren
   '/api/auth/$': typeof ApiAuthSplatRoute
   '/api/dashboard/$studentId': typeof ApiDashboardStudentIdRoute
@@ -453,6 +471,7 @@ export interface FileRoutesById {
   '/api/questions/$id/stats': typeof ApiQuestionsIdStatsRoute
   '/api/questions/generate-batch/$id': typeof ApiQuestionsGenerateBatchIdRouteWithChildren
   '/api/students/$id/login': typeof ApiStudentsIdLoginRoute
+  '/api/summary/weekly/$studentId': typeof ApiSummaryWeeklyStudentIdRoute
   '/api/evaluations/$id/items/$itemId': typeof ApiEvaluationsIdItemsItemIdRoute
   '/api/evaluations/$id/report/pdf': typeof ApiEvaluationsIdReportPdfRoute
   '/api/questions/generate-batch/$id/resume': typeof ApiQuestionsGenerateBatchIdResumeRoute
@@ -477,6 +496,7 @@ export interface FileRouteTypes {
     | '/api/students'
     | '/attempt/$id'
     | '/evaluate/$attemptId'
+    | '/summary/weekly'
     | '/api/attempts/$id'
     | '/api/auth/$'
     | '/api/dashboard/$studentId'
@@ -505,6 +525,7 @@ export interface FileRouteTypes {
     | '/api/questions/$id/stats'
     | '/api/questions/generate-batch/$id'
     | '/api/students/$id/login'
+    | '/api/summary/weekly/$studentId'
     | '/api/evaluations/$id/items/$itemId'
     | '/api/evaluations/$id/report/pdf'
     | '/api/questions/generate-batch/$id/resume'
@@ -527,6 +548,7 @@ export interface FileRouteTypes {
     | '/api/students'
     | '/attempt/$id'
     | '/evaluate/$attemptId'
+    | '/summary/weekly'
     | '/api/attempts/$id'
     | '/api/auth/$'
     | '/api/dashboard/$studentId'
@@ -555,6 +577,7 @@ export interface FileRouteTypes {
     | '/api/questions/$id/stats'
     | '/api/questions/generate-batch/$id'
     | '/api/students/$id/login'
+    | '/api/summary/weekly/$studentId'
     | '/api/evaluations/$id/items/$itemId'
     | '/api/evaluations/$id/report/pdf'
     | '/api/questions/generate-batch/$id/resume'
@@ -577,6 +600,7 @@ export interface FileRouteTypes {
     | '/api/students'
     | '/attempt/$id'
     | '/evaluate/$attemptId'
+    | '/summary/weekly'
     | '/api/attempts/$id'
     | '/api/auth/$'
     | '/api/dashboard/$studentId'
@@ -605,6 +629,7 @@ export interface FileRouteTypes {
     | '/api/questions/$id/stats'
     | '/api/questions/generate-batch/$id'
     | '/api/students/$id/login'
+    | '/api/summary/weekly/$studentId'
     | '/api/evaluations/$id/items/$itemId'
     | '/api/evaluations/$id/report/pdf'
     | '/api/questions/generate-batch/$id/resume'
@@ -628,6 +653,7 @@ export interface RootRouteChildren {
   ApiStudentsRoute: typeof ApiStudentsRouteWithChildren
   AttemptIdRoute: typeof AttemptIdRoute
   EvaluateAttemptIdRoute: typeof EvaluateAttemptIdRoute
+  SummaryWeeklyRoute: typeof SummaryWeeklyRoute
   ApiAuthSplatRoute: typeof ApiAuthSplatRoute
   ApiDashboardStudentIdRoute: typeof ApiDashboardStudentIdRoute
   ApiPapersIdRoute: typeof ApiPapersIdRouteWithChildren
@@ -636,6 +662,7 @@ export interface RootRouteChildren {
   ApiSyllabusSubjectsRoute: typeof ApiSyllabusSubjectsRoute
   ApiTrackerStudentIdRoute: typeof ApiTrackerStudentIdRoute
   EvaluationIdReportRoute: typeof EvaluationIdReportRoute
+  ApiSummaryWeeklyStudentIdRoute: typeof ApiSummaryWeeklyStudentIdRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -736,6 +763,13 @@ declare module '@tanstack/react-router' {
       path: '/evaluate/$attemptId'
       fullPath: '/evaluate/$attemptId'
       preLoaderRoute: typeof EvaluateAttemptIdRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/summary/weekly': {
+      id: '/summary/weekly'
+      path: '/summary/weekly'
+      fullPath: '/summary/weekly'
+      preLoaderRoute: typeof SummaryWeeklyRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/api/attempts/$id': {
@@ -933,6 +967,13 @@ declare module '@tanstack/react-router' {
       fullPath: '/api/students/$id/login'
       preLoaderRoute: typeof ApiStudentsIdLoginRouteImport
       parentRoute: typeof ApiStudentsIdRoute
+    }
+    '/api/summary/weekly/$studentId': {
+      id: '/api/summary/weekly/$studentId'
+      path: '/api/summary/weekly/$studentId'
+      fullPath: '/api/summary/weekly/$studentId'
+      preLoaderRoute: typeof ApiSummaryWeeklyStudentIdRouteImport
+      parentRoute: typeof rootRouteImport
     }
     '/api/evaluations/$id/items/$itemId': {
       id: '/api/evaluations/$id/items/$itemId'
@@ -1182,6 +1223,7 @@ const rootRouteChildren: RootRouteChildren = {
   ApiStudentsRoute: ApiStudentsRouteWithChildren,
   AttemptIdRoute: AttemptIdRoute,
   EvaluateAttemptIdRoute: EvaluateAttemptIdRoute,
+  SummaryWeeklyRoute: SummaryWeeklyRoute,
   ApiAuthSplatRoute: ApiAuthSplatRoute,
   ApiDashboardStudentIdRoute: ApiDashboardStudentIdRoute,
   ApiPapersIdRoute: ApiPapersIdRouteWithChildren,
@@ -1190,6 +1232,7 @@ const rootRouteChildren: RootRouteChildren = {
   ApiSyllabusSubjectsRoute: ApiSyllabusSubjectsRoute,
   ApiTrackerStudentIdRoute: ApiTrackerStudentIdRoute,
   EvaluationIdReportRoute: EvaluationIdReportRoute,
+  ApiSummaryWeeklyStudentIdRoute: ApiSummaryWeeklyStudentIdRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)

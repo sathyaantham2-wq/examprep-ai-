@@ -1,3 +1,4 @@
+import { sql } from 'kysely'
 import type { Insertable, Selectable, Updateable } from 'kysely'
 import type { Db } from '../connection'
 import type { DB } from '../types'
@@ -27,6 +28,44 @@ export const conceptMasteryRepository = {
       .orderBy('date', 'desc')
       .limit(limit)
       .execute() as Promise<Array<Selectable<DB['concept_mastery']>>>
+  },
+  // F074: date is a DATE column (no time-of-day) -- explicit ::date casts on plain YYYY-MM-DD
+  // strings compare unambiguously at calendar-day granularity, avoiding the timezone-dependent
+  // cast Postgres would otherwise apply comparing a DATE column against a timestamptz instant
+  // (which silently excludes "today" when the instant is also today).
+  async listForStudentInDateWindow(
+    db: Db,
+    studentId: string,
+    startDateInclusive: string,
+    endDateExclusive: string,
+  ) {
+    return db
+      .selectFrom('concept_mastery')
+      .innerJoin('concepts', 'concepts.id', 'concept_mastery.concept_id')
+      .select([
+        'concept_mastery.concept_id',
+        'concept_mastery.ratio',
+        'concepts.name as concept_name',
+      ])
+      .where('concept_mastery.student_id', '=', studentId)
+      .where(sql<boolean>`concept_mastery.date >= ${startDateInclusive}::date`)
+      .where(sql<boolean>`concept_mastery.date < ${endDateExclusive}::date`)
+      .execute()
+  },
+  async findMostRecentBeforeDate(
+    db: Db,
+    studentId: string,
+    conceptId: string,
+    beforeDate: string,
+  ) {
+    return db
+      .selectFrom('concept_mastery')
+      .select('ratio')
+      .where('student_id', '=', studentId)
+      .where('concept_id', '=', conceptId)
+      .where(sql<boolean>`date < ${beforeDate}::date`)
+      .orderBy('date', 'desc')
+      .executeTakeFirst()
   },
 }
 
