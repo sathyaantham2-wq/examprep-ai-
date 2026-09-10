@@ -13,6 +13,7 @@ import { Route as AttemptSubmitRoute } from './api/attempts/$id/submit'
 import { Route as EvaluationsRoute } from './api/evaluations'
 import { Route as EvaluationByIdRoute } from './api/evaluations/$id'
 import { Route as EvaluationConfirmRoute } from './api/evaluations/$id/confirm'
+import { Route as EvaluationItemRoute } from './api/evaluations/$id/items/$itemId'
 
 type RouteHandler = (opts: {
   request: Request
@@ -263,6 +264,40 @@ describe('evaluation review workspace data (F048)', () => {
       selected_option: 'A',
       response_text: null,
     })
+    expect(detailBody.patterns.length).toBeGreaterThan(0)
+    expect(item.pattern_ids).toEqual([])
+
+    // F057: tagging an item's answer with a behaviour pattern via the same PATCH endpoint that
+    // owns marks/error-type overrides, and confirming it round-trips through the GET detail view
+    // the review screen actually renders from.
+    const pattern = detailBody.patterns[0]
+    const patchResponse = await handlerFor(
+      EvaluationItemRoute,
+      'PATCH',
+    )({
+      request: request(parent.cookie, {
+        marks: 0,
+        error_type: 'Conceptual Gap',
+        knowledge_known: false,
+        feedback: 'Review the concept again.',
+        pattern_ids: [pattern.id],
+      }),
+      params: { id: firstBody.evaluation.id, itemId: item.id },
+    })
+    expect(patchResponse.status).toBe(200)
+    const patched = await patchResponse.json()
+    expect(patched.pattern_hits).toHaveLength(1)
+    expect(patched.pattern_hits[0].pattern_id).toBe(pattern.id)
+
+    const afterPatch = await handlerFor(
+      EvaluationByIdRoute,
+      'GET',
+    )({
+      request: request(parent.cookie),
+      params: { id: firstBody.evaluation.id },
+    })
+    const afterPatchBody = await afterPatch.json()
+    expect(afterPatchBody.items[0].pattern_ids).toEqual([pattern.id])
 
     // Confirm, then re-POST /api/evaluations one more time -- it must still return the same,
     // now-confirmed evaluation rather than erroring or creating a duplicate.

@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react'
+import { useEffect, useRef, useState } from 'react'
 import { createFileRoute, useNavigate } from '@tanstack/react-router'
 import { Button } from '../../components/ui/button'
 import {
@@ -46,6 +46,13 @@ interface Item {
     selected_option: string | null
     response_text: string | null
   } | null
+  pattern_ids: Array<string>
+}
+
+interface Pattern {
+  id: string
+  code: string
+  name: string
 }
 
 interface Evaluation {
@@ -62,6 +69,7 @@ interface EditState {
   error_type: string
   knowledge_known: 'unset' | 'true' | 'false'
   feedback: string
+  pattern_ids: Array<string>
 }
 
 function studentAnswerText(item: Item): string {
@@ -80,11 +88,16 @@ function Evaluate() {
 
   const [evaluation, setEvaluation] = useState<Evaluation | null>(null)
   const [items, setItems] = useState<Array<Item>>([])
+  const [patterns, setPatterns] = useState<Array<Pattern>>([])
   const [edits, setEdits] = useState<Partial<Record<string, EditState>>>({})
   const [loadError, setLoadError] = useState<string | null>(null)
   const [savingId, setSavingId] = useState<string | null>(null)
   const [confirming, setConfirming] = useState(false)
   const [confirmError, setConfirmError] = useState<string | null>(null)
+  // F048: keyboard navigation between review cards -- j/k or Down/Up move focus, Enter saves the
+  // focused item and advances. cardRefs is keyed by item id rather than index so focus survives
+  // re-renders after a save reorders nothing but still replaces array identity.
+  const cardRefs = useRef<Partial<Record<string, HTMLDivElement | null>>>({})
 
   useEffect(() => {
     if (isPending) return
@@ -114,6 +127,7 @@ function Evaluate() {
       const detail = await detailResponse.json()
       setEvaluation(detail.evaluation)
       setItems(detail.items)
+      setPatterns(detail.patterns ?? [])
       const initialEdits: Record<string, EditState> = {}
       for (const item of detail.items as Array<Item>) {
         initialEdits[item.id] = {
@@ -126,6 +140,7 @@ function Evaluate() {
                 ? 'true'
                 : 'false',
           feedback: item.feedback ?? '',
+          pattern_ids: item.pattern_ids,
         }
       }
       setEdits(initialEdits)
@@ -139,9 +154,43 @@ function Evaluate() {
         error_type: '',
         knowledge_known: 'unset',
         feedback: '',
+        pattern_ids: [],
       }
       return { ...prev, [itemId]: { ...current, ...patch } }
     })
+  }
+
+  function togglePattern(itemId: string, patternId: string) {
+    const current = edits[itemId]?.pattern_ids ?? []
+    const next = current.includes(patternId)
+      ? current.filter((id) => id !== patternId)
+      : [...current, patternId]
+    updateEdit(itemId, { pattern_ids: next })
+  }
+
+  function focusCard(itemId: string | undefined) {
+    if (!itemId) return
+    cardRefs.current[itemId]?.focus()
+  }
+
+  function handleCardKeyDown(
+    e: React.KeyboardEvent<HTMLDivElement>,
+    item: Item,
+    index: number,
+  ) {
+    // Only act when the card itself has focus -- typing "j"/"k" inside the feedback textarea or
+    // marks input must not hijack the keystroke.
+    if (e.target !== e.currentTarget) return
+    if (e.key === 'ArrowDown' || e.key === 'j') {
+      e.preventDefault()
+      focusCard(items[index + 1]?.id)
+    } else if (e.key === 'ArrowUp' || e.key === 'k') {
+      e.preventDefault()
+      focusCard(items[index - 1]?.id)
+    } else if (e.key === 'Enter' && !evaluation?.confirmed_at) {
+      e.preventDefault()
+      void saveItem(item).then(() => focusCard(items[index + 1]?.id))
+    }
   }
 
   async function saveItem(item: Item) {
@@ -163,13 +212,21 @@ function Evaluate() {
                 ? null
                 : edit.knowledge_known === 'true',
             feedback: edit.feedback || undefined,
+            pattern_ids: edit.pattern_ids,
           }),
         },
       )
       if (response.ok) {
         const updated = await response.json()
+        const patternIds = (
+          updated.pattern_hits as Array<{ pattern_id: string }>
+        ).map((h) => h.pattern_id)
         setItems((prev) =>
-          prev.map((i) => (i.id === item.id ? { ...i, ...updated } : i)),
+          prev.map((i) =>
+            i.id === item.id
+              ? { ...i, ...updated, pattern_ids: patternIds }
+              : i,
+          ),
         )
       }
     } finally {
@@ -220,6 +277,12 @@ function Evaluate() {
               ? `Confirmed -- ${evaluation.percentage}% (${evaluation.grade})`
               : 'AI-proposed marks below are editable until you confirm.'}
           </p>
+          {!isConfirmed && (
+            <p className="text-small text-muted-foreground mt-1">
+              Keyboard: ↓/j and ↑/k move between questions, Enter saves and
+              advances.
+            </p>
+          )}
         </div>
         <div className="flex items-center gap-2 no-print">
           {isConfirmed && (
@@ -234,107 +297,147 @@ function Evaluate() {
       </div>
 
       <div className="space-y-4">
-        {items.map((item) => {
+        {items.map((item, index) => {
           const edit = edits[item.id]
           return (
-            <Card key={item.id}>
-              <CardHeader>
-                <CardTitle className="text-body font-medium">
-                  {item.position}. {item.question_text}
-                </CardTitle>
-                <CardDescription>
-                  Student answer: {studentAnswerText(item)}
-                  {item.options.length > 0 && (
+            // Card itself isn't a forwardRef component, so the focusable/keyboard-nav element is
+            // this wrapping div rather than the Card -- ref, tabIndex and onKeyDown all need a
+            // real DOM node.
+            <div
+              key={item.id}
+              data-testid="review-card"
+              ref={(el) => {
+                cardRefs.current[item.id] = el
+              }}
+              tabIndex={0}
+              onKeyDown={(e) => handleCardKeyDown(e, item, index)}
+              className="focus-visible:ring-ring rounded-xl focus-visible:ring-2 focus-visible:outline-none"
+            >
+              <Card>
+                <CardHeader>
+                  <CardTitle className="text-body font-medium">
+                    {item.position}. {item.question_text}
+                  </CardTitle>
+                  <CardDescription>
+                    Student answer: {studentAnswerText(item)}
+                    {item.options.length > 0 && (
+                      <>
+                        {' '}
+                        -- correct:{' '}
+                        {item.options.find((o) => o.is_correct)?.label ??
+                          item.correct_answer}
+                      </>
+                    )}
+                  </CardDescription>
+                </CardHeader>
+                <CardContent className="space-y-3">
+                  {isConfirmed ? (
+                    <p className="text-small text-muted-foreground">
+                      {item.marks_awarded}/{item.marks_max} marks
+                      {item.error_type ? ` -- ${item.error_type}` : ''}
+                      {item.feedback ? ` -- ${item.feedback}` : ''}
+                    </p>
+                  ) : (
                     <>
-                      {' '}
-                      -- correct:{' '}
-                      {item.options.find((o) => o.is_correct)?.label ??
-                        item.correct_answer}
-                    </>
-                  )}
-                </CardDescription>
-              </CardHeader>
-              <CardContent className="space-y-3">
-                {isConfirmed ? (
-                  <p className="text-small text-muted-foreground">
-                    {item.marks_awarded}/{item.marks_max} marks
-                    {item.error_type ? ` -- ${item.error_type}` : ''}
-                    {item.feedback ? ` -- ${item.feedback}` : ''}
-                  </p>
-                ) : (
-                  <>
-                    <div className="grid grid-cols-2 gap-4">
+                      <div className="grid grid-cols-2 gap-4">
+                        <div className="space-y-1.5">
+                          <Label htmlFor={`marks-${item.id}`}>
+                            Marks (of {item.marks_max})
+                          </Label>
+                          <input
+                            id={`marks-${item.id}`}
+                            type="number"
+                            className="border-input flex h-9 w-full rounded-md border bg-transparent px-3 text-sm shadow-xs"
+                            value={edit?.marks ?? ''}
+                            onChange={(e) =>
+                              updateEdit(item.id, { marks: e.target.value })
+                            }
+                          />
+                        </div>
+                        <div className="space-y-1.5">
+                          <Label htmlFor={`error-${item.id}`}>Error type</Label>
+                          <select
+                            id={`error-${item.id}`}
+                            className="border-input flex h-9 w-full rounded-md border bg-transparent px-3 text-sm shadow-xs"
+                            value={edit?.error_type ?? ''}
+                            onChange={(e) =>
+                              updateEdit(item.id, {
+                                error_type: e.target.value,
+                              })
+                            }
+                          >
+                            <option value="">(none)</option>
+                            {ERROR_TYPES.map((t) => (
+                              <option key={t} value={t}>
+                                {t}
+                              </option>
+                            ))}
+                          </select>
+                        </div>
+                      </div>
                       <div className="space-y-1.5">
-                        <Label htmlFor={`marks-${item.id}`}>
-                          Marks (of {item.marks_max})
-                        </Label>
-                        <input
-                          id={`marks-${item.id}`}
-                          type="number"
-                          className="border-input flex h-9 w-full rounded-md border bg-transparent px-3 text-sm shadow-xs"
-                          value={edit?.marks ?? ''}
+                        <Label htmlFor={`feedback-${item.id}`}>Feedback</Label>
+                        <textarea
+                          id={`feedback-${item.id}`}
+                          className="border-input min-h-16 w-full rounded-md border bg-transparent p-2 text-sm shadow-xs"
+                          value={edit?.feedback ?? ''}
                           onChange={(e) =>
-                            updateEdit(item.id, { marks: e.target.value })
+                            updateEdit(item.id, { feedback: e.target.value })
                           }
                         />
                       </div>
-                      <div className="space-y-1.5">
-                        <Label htmlFor={`error-${item.id}`}>Error type</Label>
-                        <select
-                          id={`error-${item.id}`}
-                          className="border-input flex h-9 w-full rounded-md border bg-transparent px-3 text-sm shadow-xs"
-                          value={edit?.error_type ?? ''}
+                      <label className="text-small flex items-center gap-2">
+                        <input
+                          type="checkbox"
+                          checked={edit?.knowledge_known === 'true'}
                           onChange={(e) =>
-                            updateEdit(item.id, { error_type: e.target.value })
+                            updateEdit(item.id, {
+                              knowledge_known: e.target.checked
+                                ? 'true'
+                                : 'unset',
+                            })
                           }
-                        >
-                          <option value="">(none)</option>
-                          {ERROR_TYPES.map((t) => (
-                            <option key={t} value={t}>
-                              {t}
-                            </option>
-                          ))}
-                        </select>
-                      </div>
-                    </div>
-                    <div className="space-y-1.5">
-                      <Label htmlFor={`feedback-${item.id}`}>Feedback</Label>
-                      <textarea
-                        id={`feedback-${item.id}`}
-                        className="border-input min-h-16 w-full rounded-md border bg-transparent p-2 text-sm shadow-xs"
-                        value={edit?.feedback ?? ''}
-                        onChange={(e) =>
-                          updateEdit(item.id, { feedback: e.target.value })
-                        }
-                      />
-                    </div>
-                    <label className="text-small flex items-center gap-2">
-                      <input
-                        type="checkbox"
-                        checked={edit?.knowledge_known === 'true'}
-                        onChange={(e) =>
-                          updateEdit(item.id, {
-                            knowledge_known: e.target.checked
-                              ? 'true'
-                              : 'unset',
-                          })
-                        }
-                      />
-                      She actually knew this -- credit it to the Knowledge Score
-                      (F055)
-                    </label>
-                    <Button
-                      size="sm"
-                      variant="outline"
-                      onClick={() => saveItem(item)}
-                      disabled={savingId === item.id}
-                    >
-                      {savingId === item.id ? 'Saving…' : 'Save'}
-                    </Button>
-                  </>
-                )}
-              </CardContent>
-            </Card>
+                        />
+                        She actually knew this -- credit it to the Knowledge
+                        Score (F055)
+                      </label>
+                      {patterns.length > 0 && (
+                        <div className="space-y-1.5">
+                          <p className="text-small font-medium">
+                            Behaviour patterns (F057)
+                          </p>
+                          <div className="flex flex-wrap gap-x-4 gap-y-1">
+                            {patterns.map((p) => (
+                              <label
+                                key={p.id}
+                                className="text-small flex items-center gap-1.5"
+                              >
+                                <input
+                                  type="checkbox"
+                                  checked={
+                                    edit?.pattern_ids.includes(p.id) ?? false
+                                  }
+                                  onChange={() => togglePattern(item.id, p.id)}
+                                />
+                                {p.code} — {p.name}
+                              </label>
+                            ))}
+                          </div>
+                        </div>
+                      )}
+                      <Button
+                        size="sm"
+                        variant="outline"
+                        onClick={() => saveItem(item)}
+                        disabled={savingId === item.id}
+                      >
+                        {savingId === item.id ? 'Saving…' : 'Save'}
+                      </Button>
+                    </>
+                  )}
+                </CardContent>
+              </Card>
+            </div>
           )
         })}
       </div>

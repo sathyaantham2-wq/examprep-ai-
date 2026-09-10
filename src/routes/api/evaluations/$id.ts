@@ -6,6 +6,8 @@ import {
   evaluationItemsRepository,
   attemptAnswersRepository,
   questionOptionsRepository,
+  patternsRepository,
+  patternHitsRepository,
 } from '../../../db/repositories'
 
 /**
@@ -31,12 +33,24 @@ export const Route = createFileRoute('/api/evaluations/$id')({
           )
           if (!evaluation) return new Response(null, { status: 404 })
 
-          const [items, answers] = await Promise.all([
+          const [items, answers, patterns] = await Promise.all([
             evaluationItemsRepository.listForEvaluation(db, evaluation.id),
             attemptAnswersRepository.listForAttempt(db, evaluation.attempt_id),
+            patternsRepository.list(db),
           ])
           const answerBySlot = new Map(
             answers.map((a) => [a.paper_question_id, a]),
+          )
+          const patternHitsByItem = new Map(
+            await Promise.all(
+              items.map(
+                async (item) =>
+                  [
+                    item.id,
+                    await patternHitsRepository.listForItem(db, item.id),
+                  ] as const,
+              ),
+            ),
           )
 
           const questionRows =
@@ -85,6 +99,9 @@ export const Route = createFileRoute('/api/evaluations/$id')({
 
           return Response.json({
             evaluation,
+            // F057: the full pattern library, so the review screen can render every pattern as a
+            // checkbox per item rather than needing a second round trip.
+            patterns: patterns.filter((p) => p.is_active),
             items: items
               .map((item) => {
                 const q = questionByPq.get(item.paper_question_id)
@@ -105,6 +122,9 @@ export const Route = createFileRoute('/api/evaluations/$id')({
                         response_text: answer.response_text,
                       }
                     : null,
+                  pattern_ids: (patternHitsByItem.get(item.id) ?? []).map(
+                    (h) => h.pattern_id,
+                  ),
                 }
               })
               .sort((a, b) => (a.position ?? 0) - (b.position ?? 0)),

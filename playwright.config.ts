@@ -13,6 +13,13 @@ export default defineConfig({
   testDir: './e2e',
   timeout: 60_000,
   fullyParallel: false,
+  // fullyParallel:false only serializes tests within one file -- separate spec files still ran as
+  // separate workers by default, which raced two files' fixture setup against the same live dev
+  // DB (one PATCH hit a row the other file's beforeAll hadn't committed yet, and left an orphaned
+  // concept/questions behind when its own afterAll never ran). Same root cause vitest.config.ts
+  // already documents for fileParallelism -- these E2E specs share one live DB, so they were never
+  // safe to run as concurrent workers either.
+  workers: 1,
   retries: 0,
   reporter: 'list',
   use: {
