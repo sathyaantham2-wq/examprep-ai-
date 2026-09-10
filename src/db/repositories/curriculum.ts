@@ -79,7 +79,29 @@ export const chapterScopeRepository = {
   },
 }
 
-export const conceptsRepository = createRepository('concepts')
+export const conceptsRepository = {
+  ...createRepository('concepts'),
+  // Powers the admin question bank's concept picker (F084/F086) — no route listed concepts by
+  // chapter at all before this.
+  async listByChapter(db: Db, chapterId: string) {
+    return db
+      .selectFrom('concepts')
+      .selectAll()
+      .where('chapter_id', '=', chapterId)
+      .orderBy('code')
+      .execute()
+  },
+  async listBySubject(db: Db, subjectId: string) {
+    return db
+      .selectFrom('concepts')
+      .innerJoin('chapters', 'chapters.id', 'concepts.chapter_id')
+      .selectAll('concepts')
+      .select(['chapters.name as chapter_name'])
+      .where('chapters.subject_id', '=', subjectId)
+      .orderBy('concepts.code')
+      .execute()
+  },
+}
 
 // concept_prereqs has a composite primary key (concept_id, prereq_concept_id) — no id column —
 // so it doesn't fit the id-based factory shape.

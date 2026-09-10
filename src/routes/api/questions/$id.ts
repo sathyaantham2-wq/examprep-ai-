@@ -2,7 +2,11 @@ import { createFileRoute } from '@tanstack/react-router'
 import { z } from 'zod'
 import { requireRole } from '../../../lib/session'
 import { createDb } from '../../../db/connection'
-import { questionsRepository } from '../../../db/repositories'
+import {
+  questionsRepository,
+  questionOptionsRepository,
+  questionStepMarksRepository,
+} from '../../../db/repositories'
 
 const updateQuestionSchema = z
   .object({
@@ -21,6 +25,26 @@ const updateQuestionSchema = z
 export const Route = createFileRoute('/api/questions/$id')({
   server: {
     handlers: {
+      // Admin-only full detail (unlike the student-facing attempt view, this legitimately
+      // includes answer/is_correct — an admin reviewing a question IS the answer-key audience).
+      GET: async ({ request, params }) => {
+        const auth = await requireRole(request, 'admin')
+        if (auth instanceof Response) return auth
+
+        const db = createDb()
+        try {
+          const question = await questionsRepository.findById(db, params.id)
+          if (!question) return new Response(null, { status: 404 })
+
+          const [options, stepMarks] = await Promise.all([
+            questionOptionsRepository.listByQuestion(db, params.id),
+            questionStepMarksRepository.listByQuestion(db, params.id),
+          ])
+          return Response.json({ ...question, options, step_marks: stepMarks })
+        } finally {
+          await db.destroy()
+        }
+      },
       PATCH: async ({ request, params }) => {
         const auth = await requireRole(request, 'admin')
         if (auth instanceof Response) return auth

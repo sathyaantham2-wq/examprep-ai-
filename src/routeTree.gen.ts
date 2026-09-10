@@ -15,6 +15,7 @@ import { Route as HomeRouteImport } from './routes/home'
 import { Route as OnboardingRouteImport } from './routes/onboarding'
 import { Route as RemediationRouteImport } from './routes/remediation'
 import { Route as StudentRouteImport } from './routes/student'
+import { Route as AdminQuestionsRouteImport } from './routes/admin/questions'
 import { Route as ApiAttemptsRouteImport } from './routes/api/attempts'
 import { Route as ApiAuditLogRouteImport } from './routes/api/audit-log'
 import { Route as ApiBlueprintsRouteImport } from './routes/api/blueprints'
@@ -41,6 +42,7 @@ import { Route as ApiRemediationIdRouteImport } from './routes/api/remediation/$
 import { Route as ApiRemediationGenerateRouteImport } from './routes/api/remediation/generate'
 import { Route as ApiStudentsIdRouteImport } from './routes/api/students/$id'
 import { Route as ApiSyllabusChaptersRouteImport } from './routes/api/syllabus/chapters'
+import { Route as ApiSyllabusConceptsRouteImport } from './routes/api/syllabus/concepts'
 import { Route as ApiSyllabusSubjectsRouteImport } from './routes/api/syllabus/subjects'
 import { Route as ApiTrackerStudentIdRouteImport } from './routes/api/tracker/$studentId'
 import { Route as EvaluationIdReportRouteImport } from './routes/evaluation/$id/report'
@@ -53,6 +55,7 @@ import { Route as ApiPapersIdCoverageRouteImport } from './routes/api/papers/$id
 import { Route as ApiPapersIdPdfRouteImport } from './routes/api/papers/$id/pdf'
 import { Route as ApiPapersIdRegenerateSlotRouteImport } from './routes/api/papers/$id/regenerate-slot'
 import { Route as ApiQuestionsIdApproveRouteImport } from './routes/api/questions/$id/approve'
+import { Route as ApiQuestionsIdRejectRouteImport } from './routes/api/questions/$id/reject'
 import { Route as ApiQuestionsIdStatsRouteImport } from './routes/api/questions/$id/stats'
 import { Route as ApiQuestionsGenerateBatchIdRouteImport } from './routes/api/questions/generate-batch/$id'
 import { Route as ApiRemediationIdAttemptRouteImport } from './routes/api/remediation/$id/attempt'
@@ -93,6 +96,11 @@ const RemediationRoute = RemediationRouteImport.update({
 const StudentRoute = StudentRouteImport.update({
   id: '/student',
   path: '/student',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AdminQuestionsRoute = AdminQuestionsRouteImport.update({
+  id: '/admin/questions',
+  path: '/admin/questions',
   getParentRoute: () => rootRouteImport,
 } as any)
 const ApiAttemptsRoute = ApiAttemptsRouteImport.update({
@@ -227,6 +235,11 @@ const ApiSyllabusChaptersRoute = ApiSyllabusChaptersRouteImport.update({
   path: '/api/syllabus/chapters',
   getParentRoute: () => rootRouteImport,
 } as any)
+const ApiSyllabusConceptsRoute = ApiSyllabusConceptsRouteImport.update({
+  id: '/api/syllabus/concepts',
+  path: '/api/syllabus/concepts',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const ApiSyllabusSubjectsRoute = ApiSyllabusSubjectsRouteImport.update({
   id: '/api/syllabus/subjects',
   path: '/api/syllabus/subjects',
@@ -286,6 +299,11 @@ const ApiPapersIdRegenerateSlotRoute =
 const ApiQuestionsIdApproveRoute = ApiQuestionsIdApproveRouteImport.update({
   id: '/approve',
   path: '/approve',
+  getParentRoute: () => ApiQuestionsIdRoute,
+} as any)
+const ApiQuestionsIdRejectRoute = ApiQuestionsIdRejectRouteImport.update({
+  id: '/reject',
+  path: '/reject',
   getParentRoute: () => ApiQuestionsIdRoute,
 } as any)
 const ApiQuestionsIdStatsRoute = ApiQuestionsIdStatsRouteImport.update({
@@ -359,6 +377,7 @@ export interface FileRoutesByFullPath {
   '/onboarding': typeof OnboardingRoute
   '/remediation': typeof RemediationRoute
   '/student': typeof StudentRoute
+  '/admin/questions': typeof AdminQuestionsRoute
   '/api/attempts': typeof ApiAttemptsRouteWithChildren
   '/api/audit-log': typeof ApiAuditLogRoute
   '/api/blueprints': typeof ApiBlueprintsRoute
@@ -385,6 +404,7 @@ export interface FileRoutesByFullPath {
   '/api/remediation/generate': typeof ApiRemediationGenerateRoute
   '/api/students/$id': typeof ApiStudentsIdRouteWithChildren
   '/api/syllabus/chapters': typeof ApiSyllabusChaptersRouteWithChildren
+  '/api/syllabus/concepts': typeof ApiSyllabusConceptsRoute
   '/api/syllabus/subjects': typeof ApiSyllabusSubjectsRoute
   '/api/tracker/$studentId': typeof ApiTrackerStudentIdRoute
   '/evaluation/$id/report': typeof EvaluationIdReportRoute
@@ -397,6 +417,7 @@ export interface FileRoutesByFullPath {
   '/api/papers/$id/pdf': typeof ApiPapersIdPdfRoute
   '/api/papers/$id/regenerate-slot': typeof ApiPapersIdRegenerateSlotRoute
   '/api/questions/$id/approve': typeof ApiQuestionsIdApproveRoute
+  '/api/questions/$id/reject': typeof ApiQuestionsIdRejectRoute
   '/api/questions/$id/stats': typeof ApiQuestionsIdStatsRoute
   '/api/questions/generate-batch/$id': typeof ApiQuestionsGenerateBatchIdRouteWithChildren
   '/api/remediation/$id/attempt': typeof ApiRemediationIdAttemptRoute
@@ -416,6 +437,7 @@ export interface FileRoutesByTo {
   '/onboarding': typeof OnboardingRoute
   '/remediation': typeof RemediationRoute
   '/student': typeof StudentRoute
+  '/admin/questions': typeof AdminQuestionsRoute
   '/api/attempts': typeof ApiAttemptsRouteWithChildren
   '/api/audit-log': typeof ApiAuditLogRoute
   '/api/blueprints': typeof ApiBlueprintsRoute
@@ -442,6 +464,7 @@ export interface FileRoutesByTo {
   '/api/remediation/generate': typeof ApiRemediationGenerateRoute
   '/api/students/$id': typeof ApiStudentsIdRouteWithChildren
   '/api/syllabus/chapters': typeof ApiSyllabusChaptersRouteWithChildren
+  '/api/syllabus/concepts': typeof ApiSyllabusConceptsRoute
   '/api/syllabus/subjects': typeof ApiSyllabusSubjectsRoute
   '/api/tracker/$studentId': typeof ApiTrackerStudentIdRoute
   '/evaluation/$id/report': typeof EvaluationIdReportRoute
@@ -454,6 +477,7 @@ export interface FileRoutesByTo {
   '/api/papers/$id/pdf': typeof ApiPapersIdPdfRoute
   '/api/papers/$id/regenerate-slot': typeof ApiPapersIdRegenerateSlotRoute
   '/api/questions/$id/approve': typeof ApiQuestionsIdApproveRoute
+  '/api/questions/$id/reject': typeof ApiQuestionsIdRejectRoute
   '/api/questions/$id/stats': typeof ApiQuestionsIdStatsRoute
   '/api/questions/generate-batch/$id': typeof ApiQuestionsGenerateBatchIdRouteWithChildren
   '/api/remediation/$id/attempt': typeof ApiRemediationIdAttemptRoute
@@ -474,6 +498,7 @@ export interface FileRoutesById {
   '/onboarding': typeof OnboardingRoute
   '/remediation': typeof RemediationRoute
   '/student': typeof StudentRoute
+  '/admin/questions': typeof AdminQuestionsRoute
   '/api/attempts': typeof ApiAttemptsRouteWithChildren
   '/api/audit-log': typeof ApiAuditLogRoute
   '/api/blueprints': typeof ApiBlueprintsRoute
@@ -500,6 +525,7 @@ export interface FileRoutesById {
   '/api/remediation/generate': typeof ApiRemediationGenerateRoute
   '/api/students/$id': typeof ApiStudentsIdRouteWithChildren
   '/api/syllabus/chapters': typeof ApiSyllabusChaptersRouteWithChildren
+  '/api/syllabus/concepts': typeof ApiSyllabusConceptsRoute
   '/api/syllabus/subjects': typeof ApiSyllabusSubjectsRoute
   '/api/tracker/$studentId': typeof ApiTrackerStudentIdRoute
   '/evaluation/$id/report': typeof EvaluationIdReportRoute
@@ -512,6 +538,7 @@ export interface FileRoutesById {
   '/api/papers/$id/pdf': typeof ApiPapersIdPdfRoute
   '/api/papers/$id/regenerate-slot': typeof ApiPapersIdRegenerateSlotRoute
   '/api/questions/$id/approve': typeof ApiQuestionsIdApproveRoute
+  '/api/questions/$id/reject': typeof ApiQuestionsIdRejectRoute
   '/api/questions/$id/stats': typeof ApiQuestionsIdStatsRoute
   '/api/questions/generate-batch/$id': typeof ApiQuestionsGenerateBatchIdRouteWithChildren
   '/api/remediation/$id/attempt': typeof ApiRemediationIdAttemptRoute
@@ -533,6 +560,7 @@ export interface FileRouteTypes {
     | '/onboarding'
     | '/remediation'
     | '/student'
+    | '/admin/questions'
     | '/api/attempts'
     | '/api/audit-log'
     | '/api/blueprints'
@@ -559,6 +587,7 @@ export interface FileRouteTypes {
     | '/api/remediation/generate'
     | '/api/students/$id'
     | '/api/syllabus/chapters'
+    | '/api/syllabus/concepts'
     | '/api/syllabus/subjects'
     | '/api/tracker/$studentId'
     | '/evaluation/$id/report'
@@ -571,6 +600,7 @@ export interface FileRouteTypes {
     | '/api/papers/$id/pdf'
     | '/api/papers/$id/regenerate-slot'
     | '/api/questions/$id/approve'
+    | '/api/questions/$id/reject'
     | '/api/questions/$id/stats'
     | '/api/questions/generate-batch/$id'
     | '/api/remediation/$id/attempt'
@@ -590,6 +620,7 @@ export interface FileRouteTypes {
     | '/onboarding'
     | '/remediation'
     | '/student'
+    | '/admin/questions'
     | '/api/attempts'
     | '/api/audit-log'
     | '/api/blueprints'
@@ -616,6 +647,7 @@ export interface FileRouteTypes {
     | '/api/remediation/generate'
     | '/api/students/$id'
     | '/api/syllabus/chapters'
+    | '/api/syllabus/concepts'
     | '/api/syllabus/subjects'
     | '/api/tracker/$studentId'
     | '/evaluation/$id/report'
@@ -628,6 +660,7 @@ export interface FileRouteTypes {
     | '/api/papers/$id/pdf'
     | '/api/papers/$id/regenerate-slot'
     | '/api/questions/$id/approve'
+    | '/api/questions/$id/reject'
     | '/api/questions/$id/stats'
     | '/api/questions/generate-batch/$id'
     | '/api/remediation/$id/attempt'
@@ -647,6 +680,7 @@ export interface FileRouteTypes {
     | '/onboarding'
     | '/remediation'
     | '/student'
+    | '/admin/questions'
     | '/api/attempts'
     | '/api/audit-log'
     | '/api/blueprints'
@@ -673,6 +707,7 @@ export interface FileRouteTypes {
     | '/api/remediation/generate'
     | '/api/students/$id'
     | '/api/syllabus/chapters'
+    | '/api/syllabus/concepts'
     | '/api/syllabus/subjects'
     | '/api/tracker/$studentId'
     | '/evaluation/$id/report'
@@ -685,6 +720,7 @@ export interface FileRouteTypes {
     | '/api/papers/$id/pdf'
     | '/api/papers/$id/regenerate-slot'
     | '/api/questions/$id/approve'
+    | '/api/questions/$id/reject'
     | '/api/questions/$id/stats'
     | '/api/questions/generate-batch/$id'
     | '/api/remediation/$id/attempt'
@@ -705,6 +741,7 @@ export interface RootRouteChildren {
   OnboardingRoute: typeof OnboardingRoute
   RemediationRoute: typeof RemediationRoute
   StudentRoute: typeof StudentRoute
+  AdminQuestionsRoute: typeof AdminQuestionsRoute
   ApiAttemptsRoute: typeof ApiAttemptsRouteWithChildren
   ApiAuditLogRoute: typeof ApiAuditLogRoute
   ApiBlueprintsRoute: typeof ApiBlueprintsRoute
@@ -721,6 +758,7 @@ export interface RootRouteChildren {
   ApiPapersIdRoute: typeof ApiPapersIdRouteWithChildren
   ApiPapersGenerateRoute: typeof ApiPapersGenerateRoute
   ApiSyllabusChaptersRoute: typeof ApiSyllabusChaptersRouteWithChildren
+  ApiSyllabusConceptsRoute: typeof ApiSyllabusConceptsRoute
   ApiSyllabusSubjectsRoute: typeof ApiSyllabusSubjectsRoute
   ApiTrackerStudentIdRoute: typeof ApiTrackerStudentIdRoute
   EvaluationIdReportRoute: typeof EvaluationIdReportRoute
@@ -769,6 +807,13 @@ declare module '@tanstack/react-router' {
       path: '/student'
       fullPath: '/student'
       preLoaderRoute: typeof StudentRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/admin/questions': {
+      id: '/admin/questions'
+      path: '/admin/questions'
+      fullPath: '/admin/questions'
+      preLoaderRoute: typeof AdminQuestionsRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/api/attempts': {
@@ -953,6 +998,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ApiSyllabusChaptersRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/api/syllabus/concepts': {
+      id: '/api/syllabus/concepts'
+      path: '/api/syllabus/concepts'
+      fullPath: '/api/syllabus/concepts'
+      preLoaderRoute: typeof ApiSyllabusConceptsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/api/syllabus/subjects': {
       id: '/api/syllabus/subjects'
       path: '/api/syllabus/subjects'
@@ -1035,6 +1087,13 @@ declare module '@tanstack/react-router' {
       path: '/approve'
       fullPath: '/api/questions/$id/approve'
       preLoaderRoute: typeof ApiQuestionsIdApproveRouteImport
+      parentRoute: typeof ApiQuestionsIdRoute
+    }
+    '/api/questions/$id/reject': {
+      id: '/api/questions/$id/reject'
+      path: '/reject'
+      fullPath: '/api/questions/$id/reject'
+      preLoaderRoute: typeof ApiQuestionsIdRejectRouteImport
       parentRoute: typeof ApiQuestionsIdRoute
     }
     '/api/questions/$id/stats': {
@@ -1188,11 +1247,13 @@ const ApiEvaluationsRouteWithChildren = ApiEvaluationsRoute._addFileChildren(
 
 interface ApiQuestionsIdRouteChildren {
   ApiQuestionsIdApproveRoute: typeof ApiQuestionsIdApproveRoute
+  ApiQuestionsIdRejectRoute: typeof ApiQuestionsIdRejectRoute
   ApiQuestionsIdStatsRoute: typeof ApiQuestionsIdStatsRoute
 }
 
 const ApiQuestionsIdRouteChildren: ApiQuestionsIdRouteChildren = {
   ApiQuestionsIdApproveRoute: ApiQuestionsIdApproveRoute,
+  ApiQuestionsIdRejectRoute: ApiQuestionsIdRejectRoute,
   ApiQuestionsIdStatsRoute: ApiQuestionsIdStatsRoute,
 }
 
@@ -1337,6 +1398,7 @@ const rootRouteChildren: RootRouteChildren = {
   OnboardingRoute: OnboardingRoute,
   RemediationRoute: RemediationRoute,
   StudentRoute: StudentRoute,
+  AdminQuestionsRoute: AdminQuestionsRoute,
   ApiAttemptsRoute: ApiAttemptsRouteWithChildren,
   ApiAuditLogRoute: ApiAuditLogRoute,
   ApiBlueprintsRoute: ApiBlueprintsRoute,
@@ -1353,6 +1415,7 @@ const rootRouteChildren: RootRouteChildren = {
   ApiPapersIdRoute: ApiPapersIdRouteWithChildren,
   ApiPapersGenerateRoute: ApiPapersGenerateRoute,
   ApiSyllabusChaptersRoute: ApiSyllabusChaptersRouteWithChildren,
+  ApiSyllabusConceptsRoute: ApiSyllabusConceptsRoute,
   ApiSyllabusSubjectsRoute: ApiSyllabusSubjectsRoute,
   ApiTrackerStudentIdRoute: ApiTrackerStudentIdRoute,
   EvaluationIdReportRoute: EvaluationIdReportRoute,
