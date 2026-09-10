@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import { createFileRoute, useNavigate } from '@tanstack/react-router'
 import { Button } from '../components/ui/button'
 import {
@@ -30,15 +30,26 @@ function Home() {
 
   const role = (session?.user as { role?: string } | undefined)?.role
 
-  // Only the parent role has a home to land on (/onboarding). A student or admin session has no
-  // screen to redirect into yet -- bouncing them to /onboarding would immediately bounce back
-  // here (it redirects anyone who isn't 'parent'), so this renders a plain signed-in notice
-  // instead of looping.
-  if (!isPending && session && role === 'parent') {
-    navigate({ to: '/onboarding' })
-  }
+  // One redirect source, reacting to session state, covers both the "just submitted the sign-in
+  // form" case and "already had a session and loaded / directly" case -- these used to be two
+  // separate call sites (one here at render time, one duplicated inside handleSubmit) that could
+  // race and send a parent to two different destinations in the same load, which is the bug this
+  // consolidation fixes. Render-time navigate() calls are also a React rules-of-hooks violation
+  // (the "Cannot update a component while rendering" warning) that a useEffect avoids.
+  useEffect(() => {
+    if (isPending || !session) return
+    if (role === 'parent' || role === 'admin') {
+      fetch('/api/students')
+        .then((r) => r.json())
+        .then((students: Array<unknown>) => {
+          navigate({ to: students.length > 0 ? '/home' : '/onboarding' })
+        })
+    } else if (role === 'student') {
+      navigate({ to: '/student' })
+    }
+  }, [isPending, session, role, navigate])
 
-  if (!isPending && session && role !== 'parent') {
+  if (!isPending && session && role !== 'parent' && role !== 'admin' && role !== 'student') {
     return (
       <div className="flex min-h-screen items-center justify-center p-8">
         <Card className="w-full max-w-sm">
@@ -71,12 +82,8 @@ function Home() {
           setError(result.error.message ?? 'Sign in failed')
           return
         }
-        const signedInRole = (result.data.user as { role?: string }).role
-        if (signedInRole === 'parent') {
-          navigate({ to: '/onboarding' })
-        }
-        // Any other role has no home screen yet -- staying on `/` is what shows the
-        // "Signed in" notice above once useSession() picks up the new session.
+        // The useEffect above reacts to useSession() picking up the new session and does the
+        // actual redirect -- nothing further to do here once sign-in itself succeeds.
       } else {
         const result = await signUp.email({ name, email, password })
         if (result.error) {

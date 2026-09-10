@@ -9,12 +9,14 @@ import { createDb } from './connection'
  * cookie comes out the other end.
  */
 
-const TEST_PASSWORD = 'correcthorsebatterystaple'
+export const TEST_PASSWORD = 'correcthorsebatterystaple'
 
 export interface TestSession {
   cookie: string
   userId: string
   householdId: string
+  email: string
+  password: string
 }
 
 /** Signs up, captures the verification link from the console (there's no email provider — see
@@ -56,6 +58,8 @@ export async function createParentSession(
     cookie: cookie.split(';')[0],
     userId: signUp.user.id,
     householdId,
+    email,
+    password: TEST_PASSWORD,
   }
 }
 
@@ -112,7 +116,13 @@ export async function createStudentSession(
     const cookie = signIn.headers.get('set-cookie')
     if (!cookie) throw new Error('Sign-in did not return a session cookie')
 
-    return { cookie: cookie.split(';')[0], userId: user.id, householdId }
+    return {
+      cookie: cookie.split(';')[0],
+      userId: user.id,
+      householdId,
+      email,
+      password: TEST_PASSWORD,
+    }
   } finally {
     await db.destroy()
   }
