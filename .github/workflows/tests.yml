@@ -46,3 +46,47 @@ jobs:
         run: npx tsc --noEmit
       - name: Test
         run: npm test
+
+  e2e:
+    # F104: separate job, not folded into the `test` job above -- it drives a real browser against
+    # a real running dev server (Playwright's webServer starts `npm run dev` itself), so it's
+    # slower/heavier than the unit+integration suite and failing independently here shouldn't block
+    # on, or be blocked by, that job.
+    runs-on: ubuntu-latest
+    services:
+      postgres:
+        image: postgres:17
+        env:
+          POSTGRES_PASSWORD: postgres
+        ports:
+          - 5432:5432
+        options: >-
+          --health-cmd pg_isready
+          --health-interval 5s
+          --health-timeout 5s
+          --health-retries 10
+    env:
+      DATABASE_URL: postgresql://postgres:postgres@localhost:5432/postgres
+      BETTER_AUTH_SECRET: ci-test-secret-not-used-for-anything-real
+      BETTER_AUTH_URL: http://localhost:3000
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - run: npm ci
+      - name: Install Playwright Chromium
+        run: npx playwright install --with-deps chromium
+      - name: Migrate scratch DB
+        run: npm run db:migrate
+      - name: Seed fixture data
+        run: npm run db:seed
+      - name: E2E
+        run: npm run test:e2e
+      - name: Upload trace on failure
+        if: failure()
+        uses: actions/upload-artifact@v4
+        with:
+          name: playwright-traces
+          path: test-results/
+          retention-days: 7
