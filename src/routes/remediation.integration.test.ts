@@ -60,6 +60,7 @@ describe('remediation engine (F066-F068)', () => {
   const evaluationIds: Array<string> = []
   const attemptIds: Array<string> = []
   const paperIds: Array<string> = []
+  const questionIds: Array<string> = []
 
   beforeAll(async () => {
     db = createDb()
@@ -107,7 +108,7 @@ describe('remediation engine (F066-F068)', () => {
     conceptId = concept.id
 
     for (const suffix of ['a', 'b', 'c']) {
-      await createQuestion(db, {
+      const q = await createQuestion(db, {
         concept_id: concept.id,
         board: 'CBSE',
         class: 7,
@@ -123,6 +124,7 @@ describe('remediation engine (F066-F068)', () => {
           { label: 'B', text: '5', is_correct: false, order_index: 2 },
         ],
       })
+      questionIds.push(q.id)
     }
 
     const blueprint = await blueprintsRepository.insert(db, {
@@ -250,7 +252,14 @@ describe('remediation engine (F066-F068)', () => {
     await db.deleteFrom('blueprints').where('name', '=', 'Auto remediation drill').execute()
     await db.deleteFrom('blueprints').where('id', '=', blueprintId).execute()
     await db.deleteFrom('households').where('id', '=', parent.householdId).execute()
-    await db.deleteFrom('questions').where('created_by', '=', 'remediation-fixture').execute()
+    // Scoped to this run's own question ids, not a shared `created_by` literal -- the latter used
+    // to also try to delete any OTHER run's leftover 'remediation-fixture' questions (e.g. from a
+    // crashed prior run that never reached its own cleanup), which could still be referenced by
+    // that other run's own dangling paper_questions and throw an FK violation here, aborting the
+    // rest of this afterAll.
+    if (questionIds.length > 0) {
+      await db.deleteFrom('questions').where('id', 'in', questionIds).execute()
+    }
     await db.deleteFrom('concepts').where('id', '=', conceptId).execute()
     await db.destroy()
   })
