@@ -83,6 +83,13 @@ export async function computeCoverageGrid(
   }
 }
 
+/**
+ * Same shape as computeCoverageGrid, but batched: one query for every concept in the subject and
+ * one grouped query for every approved question count, rather than computeCoverageGrid's N
+ * sequential per-concept queries repeated once per concept. A real subject-wide call is 60+
+ * concepts -- that many sequential round trips to a pooled/remote Postgres (Supabase) is
+ * seconds-to-tens-of-seconds slow in practice, not just a theoretical N+1.
+ */
 export async function computeCoverageGridForSubject(
   db: Db,
   subjectId: string,
@@ -90,13 +97,63 @@ export async function computeCoverageGridForSubject(
   const concepts = await db
     .selectFrom('concepts')
     .innerJoin('chapters', 'chapters.id', 'concepts.chapter_id')
-    .select(['concepts.id'])
+    .select([
+      'concepts.id',
+      'concepts.name',
+      'concepts.target_question_count',
+    ])
     .where('chapters.subject_id', '=', subjectId)
     .execute()
 
-  const grids: Array<ConceptCoverageGrid> = []
-  for (const concept of concepts) {
-    grids.push(await computeCoverageGrid(db, concept.id))
+  if (concepts.length === 0) return []
+  const conceptIds = concepts.map((c) => c.id)
+
+  const rows = await db
+    .selectFrom('questions')
+    .select([
+      'concept_id',
+      'bloom',
+      'difficulty',
+      (eb) => eb.fn.countAll().as('count'),
+    ])
+    .where('concept_id', 'in', conceptIds)
+    .where('status', '=', 'approved')
+    .groupBy(['concept_id', 'bloom', 'difficulty'])
+    .execute()
+
+  const countByConceptCell = new Map<string, number>()
+  for (const row of rows) {
+    countByConceptCell.set(
+      `${row.concept_id}|${row.bloom}|${row.difficulty}`,
+      Number(row.count),
+    )
   }
+
+  const grids = concepts.map((concept) => {
+    const perCellTarget = Math.ceil(concept.target_question_count / 18)
+    const cells: Array<CoverageCell> = []
+    for (const bloom of BLOOM_LEVELS) {
+      for (const difficulty of DIFFICULTY_TIERS) {
+        const count =
+          countByConceptCell.get(`${concept.id}|${bloom}|${difficulty}`) ?? 0
+        cells.push({
+          bloom,
+          difficulty,
+          count,
+          target: perCellTarget,
+          shortfall: count < perCellTarget,
+        })
+      }
+    }
+    const grid: ConceptCoverageGrid = {
+      concept_id: concept.id,
+      concept_name: concept.name,
+      target_question_count: concept.target_question_count,
+      cells,
+      empty_cells: cells.filter((c) => c.count === 0).length,
+    }
+    return grid
+  })
+
   return grids.sort((a, b) => b.empty_cells - a.empty_cells)
 }

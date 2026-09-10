@@ -17,6 +17,7 @@ import { Route as RemediationRouteImport } from './routes/remediation'
 import { Route as SettingsRouteImport } from './routes/settings'
 import { Route as StudentRouteImport } from './routes/student'
 import { Route as AdminBlueprintsRouteImport } from './routes/admin/blueprints'
+import { Route as AdminCoverageRouteImport } from './routes/admin/coverage'
 import { Route as AdminQuestionsRouteImport } from './routes/admin/questions'
 import { Route as ApiAttemptsRouteImport } from './routes/api/attempts'
 import { Route as ApiAuditLogRouteImport } from './routes/api/audit-log'
@@ -112,6 +113,11 @@ const StudentRoute = StudentRouteImport.update({
 const AdminBlueprintsRoute = AdminBlueprintsRouteImport.update({
   id: '/admin/blueprints',
   path: '/admin/blueprints',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AdminCoverageRoute = AdminCoverageRouteImport.update({
+  id: '/admin/coverage',
+  path: '/admin/coverage',
   getParentRoute: () => rootRouteImport,
 } as any)
 const AdminQuestionsRoute = AdminQuestionsRouteImport.update({
@@ -416,6 +422,7 @@ export interface FileRoutesByFullPath {
   '/settings': typeof SettingsRoute
   '/student': typeof StudentRoute
   '/admin/blueprints': typeof AdminBlueprintsRoute
+  '/admin/coverage': typeof AdminCoverageRoute
   '/admin/questions': typeof AdminQuestionsRoute
   '/api/attempts': typeof ApiAttemptsRouteWithChildren
   '/api/audit-log': typeof ApiAuditLogRoute
@@ -482,6 +489,7 @@ export interface FileRoutesByTo {
   '/settings': typeof SettingsRoute
   '/student': typeof StudentRoute
   '/admin/blueprints': typeof AdminBlueprintsRoute
+  '/admin/coverage': typeof AdminCoverageRoute
   '/admin/questions': typeof AdminQuestionsRoute
   '/api/attempts': typeof ApiAttemptsRouteWithChildren
   '/api/audit-log': typeof ApiAuditLogRoute
@@ -549,6 +557,7 @@ export interface FileRoutesById {
   '/settings': typeof SettingsRoute
   '/student': typeof StudentRoute
   '/admin/blueprints': typeof AdminBlueprintsRoute
+  '/admin/coverage': typeof AdminCoverageRoute
   '/admin/questions': typeof AdminQuestionsRoute
   '/api/attempts': typeof ApiAttemptsRouteWithChildren
   '/api/audit-log': typeof ApiAuditLogRoute
@@ -617,6 +626,7 @@ export interface FileRouteTypes {
     | '/settings'
     | '/student'
     | '/admin/blueprints'
+    | '/admin/coverage'
     | '/admin/questions'
     | '/api/attempts'
     | '/api/audit-log'
@@ -683,6 +693,7 @@ export interface FileRouteTypes {
     | '/settings'
     | '/student'
     | '/admin/blueprints'
+    | '/admin/coverage'
     | '/admin/questions'
     | '/api/attempts'
     | '/api/audit-log'
@@ -749,6 +760,7 @@ export interface FileRouteTypes {
     | '/settings'
     | '/student'
     | '/admin/blueprints'
+    | '/admin/coverage'
     | '/admin/questions'
     | '/api/attempts'
     | '/api/audit-log'
@@ -816,6 +828,7 @@ export interface RootRouteChildren {
   SettingsRoute: typeof SettingsRoute
   StudentRoute: typeof StudentRoute
   AdminBlueprintsRoute: typeof AdminBlueprintsRoute
+  AdminCoverageRoute: typeof AdminCoverageRoute
   AdminQuestionsRoute: typeof AdminQuestionsRoute
   ApiAttemptsRoute: typeof ApiAttemptsRouteWithChildren
   ApiAuditLogRoute: typeof ApiAuditLogRoute
@@ -900,6 +913,13 @@ declare module '@tanstack/react-router' {
       path: '/admin/blueprints'
       fullPath: '/admin/blueprints'
       preLoaderRoute: typeof AdminBlueprintsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/admin/coverage': {
+      id: '/admin/coverage'
+      path: '/admin/coverage'
+      fullPath: '/admin/coverage'
+      preLoaderRoute: typeof AdminCoverageRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/admin/questions': {
@@ -1521,6 +1541,7 @@ const rootRouteChildren: RootRouteChildren = {
   SettingsRoute: SettingsRoute,
   StudentRoute: StudentRoute,
   AdminBlueprintsRoute: AdminBlueprintsRoute,
+  AdminCoverageRoute: AdminCoverageRoute,
   AdminQuestionsRoute: AdminQuestionsRoute,
   ApiAttemptsRoute: ApiAttemptsRouteWithChildren,
   ApiAuditLogRoute: ApiAuditLogRoute,
