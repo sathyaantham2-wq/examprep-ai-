@@ -1,7 +1,8 @@
 import { createFileRoute } from '@tanstack/react-router'
 import { requireRole } from '../../../lib/session'
+import { resolveEnabledStudent } from '../../../lib/access'
 import { createDb } from '../../../db/connection'
-import { studentsRepository, habitDrillTasksRepository } from '../../../db/repositories'
+import { habitDrillTasksRepository } from '../../../db/repositories'
 import { loadHabitDrillView } from '../../../lib/habit-drills'
 
 /**
@@ -20,13 +21,8 @@ export const Route = createFileRoute('/api/habit-drills/$id')({
         try {
           let task
           if (auth.role === 'student') {
-            const student = await studentsRepository.findByUserId(db, auth.id)
-            if (!student) {
-              return Response.json(
-                { error: 'This login is not linked to a student profile' },
-                { status: 403 },
-              )
-            }
+            const student = await resolveEnabledStudent(db, auth.id)
+            if (student instanceof Response) return student
             task = await habitDrillTasksRepository.findById(
               db,
               student.id,

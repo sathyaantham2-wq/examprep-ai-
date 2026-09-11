@@ -1,8 +1,8 @@
 import { createFileRoute } from '@tanstack/react-router'
 import { z } from 'zod'
 import { requireRole } from '../../../../lib/session'
+import { resolveEnabledStudent } from '../../../../lib/access'
 import { createDb } from '../../../../db/connection'
-import { studentsRepository } from '../../../../db/repositories'
 import { submitHabitDrillAttempt } from '../../../../lib/habit-drills'
 
 const requestSchema = z.object({
@@ -37,13 +37,8 @@ export const Route = createFileRoute('/api/habit-drills/$id/attempt')({
 
         const db = createDb()
         try {
-          const student = await studentsRepository.findByUserId(db, auth.id)
-          if (!student) {
-            return Response.json(
-              { error: 'This login is not linked to a student profile' },
-              { status: 403 },
-            )
-          }
+          const student = await resolveEnabledStudent(db, auth.id)
+          if (student instanceof Response) return student
 
           const result = await submitHabitDrillAttempt(db, {
             taskId: params.id,

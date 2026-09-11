@@ -1,12 +1,9 @@
 import { createFileRoute } from '@tanstack/react-router'
 import { z } from 'zod'
 import { requireRole } from '../../lib/session'
+import { resolveEnabledStudent } from '../../lib/access'
 import { createDb } from '../../db/connection'
-import {
-  studentsRepository,
-  papersRepository,
-  attemptsRepository,
-} from '../../db/repositories'
+import { papersRepository, attemptsRepository } from '../../db/repositories'
 
 const createAttemptSchema = z.object({
   paper_id: z.string().uuid(),
@@ -32,13 +29,8 @@ export const Route = createFileRoute('/api/attempts')({
 
         const db = createDb()
         try {
-          const student = await studentsRepository.findByUserId(db, auth.id)
-          if (!student) {
-            return Response.json(
-              { error: 'This login is not linked to a student profile' },
-              { status: 403 },
-            )
-          }
+          const student = await resolveEnabledStudent(db, auth.id)
+          if (student instanceof Response) return student
 
           // Scoped by student_id — a paper belonging to a different student resolves to
           // undefined, so a student can't start an attempt on someone else's paper.

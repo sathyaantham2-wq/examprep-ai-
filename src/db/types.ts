@@ -456,6 +456,7 @@ export interface Sources {
 }
 
 export interface Students {
+  access_enabled: Generated<boolean>;
   board: string;
   class: number;
   created_at: Generated<Timestamp>;

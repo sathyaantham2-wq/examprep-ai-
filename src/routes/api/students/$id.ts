@@ -19,6 +19,10 @@ const updateStudentSchema = z
     board: z.string().min(1),
     school: z.string().min(1).nullable(),
     target_exams: z.array(targetExamSchema),
+    // F010: "Toggle per student." A parent always retains their own access regardless -- this
+    // column only ever gates the student login, enforced server-side in resolveEnabledStudent
+    // (src/lib/access.ts), not by hiding a button.
+    access_enabled: z.boolean(),
   })
   .partial()
 

@@ -1,8 +1,8 @@
 import { createFileRoute } from '@tanstack/react-router'
 import { z } from 'zod'
 import { requireRole } from '../../../../lib/session'
+import { resolveEnabledStudent } from '../../../../lib/access'
 import { createDb } from '../../../../db/connection'
-import { studentsRepository } from '../../../../db/repositories'
 import { submitDrillAttempt } from '../../../../lib/remediation'
 
 const requestSchema = z.object({
@@ -38,13 +38,8 @@ export const Route = createFileRoute('/api/remediation/$id/attempt')({
 
         const db = createDb()
         try {
-          const student = await studentsRepository.findByUserId(db, auth.id)
-          if (!student) {
-            return Response.json(
-              { error: 'This login is not linked to a student profile' },
-              { status: 403 },
-            )
-          }
+          const student = await resolveEnabledStudent(db, auth.id)
+          if (student instanceof Response) return student
 
           const result = await submitDrillAttempt(db, {
             taskId: params.id,

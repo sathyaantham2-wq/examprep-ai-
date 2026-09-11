@@ -1,8 +1,8 @@
 import { createFileRoute } from '@tanstack/react-router'
 import { requireRole } from '../../../lib/session'
+import { resolveEnabledStudent } from '../../../lib/access'
 import { createDb } from '../../../db/connection'
 import {
-  studentsRepository,
   attemptsRepository,
   papersRepository,
   paperQuestionsRepository,
@@ -29,13 +29,8 @@ export const Route = createFileRoute('/api/attempts/$id')({
 
         const db = createDb()
         try {
-          const student = await studentsRepository.findByUserId(db, auth.id)
-          if (!student) {
-            return Response.json(
-              { error: 'This login is not linked to a student profile' },
-              { status: 403 },
-            )
-          }
+          const student = await resolveEnabledStudent(db, auth.id)
+          if (student instanceof Response) return student
 
           const attempt = await attemptsRepository.findById(
             db,
