@@ -20,6 +20,13 @@ const sectionSchema = z.object({
   bloom_allowed: z.array(z.enum(BLOOM_LEVELS)).min(1),
 })
 
+// F030: {section, count} -- "count" of that section's slots become OR pairs. Validated against
+// section names below so a rule can't silently target a section that doesn't exist.
+const choiceRuleSchema = z.object({
+  section: z.string().min(1),
+  count: z.number().int().positive(),
+})
+
 const createBlueprintSchema = z
   .object({
     subject_id: z.string().uuid(),
@@ -29,7 +36,7 @@ const createBlueprintSchema = z
     duration_min: z.number().int().positive(),
     sections: z.array(sectionSchema).min(1),
     bloom_targets: z.record(z.enum(BLOOM_LEVELS), z.number().min(0).max(100)),
-    choice_rules: z.array(z.unknown()).optional(),
+    choice_rules: z.array(choiceRuleSchema).optional(),
   })
   .superRefine((data, ctx) => {
     const bloomTotal = Object.values(data.bloom_targets).reduce(
@@ -42,6 +49,24 @@ const createBlueprintSchema = z
         path: ['bloom_targets'],
         message: `bloom_targets must sum to 100, got ${bloomTotal}`,
       })
+    }
+
+    const sectionByName = new Map(data.sections.map((s) => [s.name, s]))
+    for (const [i, rule] of (data.choice_rules ?? []).entries()) {
+      const section = sectionByName.get(rule.section)
+      if (!section) {
+        ctx.addIssue({
+          code: 'custom',
+          path: ['choice_rules', i, 'section'],
+          message: `No section named "${rule.section}" in this blueprint's sections`,
+        })
+      } else if (rule.count > section.count) {
+        ctx.addIssue({
+          code: 'custom',
+          path: ['choice_rules', i, 'count'],
+          message: `count (${rule.count}) exceeds section "${rule.section}"'s own slot count (${section.count})`,
+        })
+      }
     }
   })
 

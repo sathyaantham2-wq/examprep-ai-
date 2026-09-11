@@ -124,4 +124,70 @@ describe('blueprint authoring (F086)', () => {
     createdBlueprintIds.push(body.id)
     expect(body.total_marks).toBe(1 * 5 + 3 * 5)
   })
+
+  it('F030: accepts a valid choice_rules entry and stores it', async () => {
+    const response = await handlerFor(
+      BlueprintsRoute,
+      'POST',
+    )({
+      request: request(admin.cookie, {
+        subject_id: subjectId,
+        board: 'CBSE',
+        class: 7,
+        name: `F030 fixture blueprint ${Date.now()}`,
+        duration_min: 60,
+        sections: [
+          { name: 'Section A', marks_per_question: 2, count: 3, bloom_allowed: ['Remember'] },
+        ],
+        bloom_targets: validBloomTargets,
+        choice_rules: [{ section: 'Section A', count: 1 }],
+      }),
+    })
+    expect(response.status).toBe(201)
+    const body = await response.json()
+    createdBlueprintIds.push(body.id)
+    expect(body.choice_rules).toEqual([{ section: 'Section A', count: 1 }])
+  })
+
+  it('F030: rejects a choice_rules entry naming a section that does not exist', async () => {
+    const response = await handlerFor(
+      BlueprintsRoute,
+      'POST',
+    )({
+      request: request(admin.cookie, {
+        subject_id: subjectId,
+        board: 'CBSE',
+        class: 7,
+        name: 'Bad choice_rules section',
+        duration_min: 60,
+        sections: [
+          { name: 'Section A', marks_per_question: 2, count: 3, bloom_allowed: ['Remember'] },
+        ],
+        bloom_targets: validBloomTargets,
+        choice_rules: [{ section: 'Section Z', count: 1 }],
+      }),
+    })
+    expect(response.status).toBe(400)
+  })
+
+  it("F030: rejects a choice_rules count that exceeds its section's own slot count", async () => {
+    const response = await handlerFor(
+      BlueprintsRoute,
+      'POST',
+    )({
+      request: request(admin.cookie, {
+        subject_id: subjectId,
+        board: 'CBSE',
+        class: 7,
+        name: 'Bad choice_rules count',
+        duration_min: 60,
+        sections: [
+          { name: 'Section A', marks_per_question: 2, count: 2, bloom_allowed: ['Remember'] },
+        ],
+        bloom_targets: validBloomTargets,
+        choice_rules: [{ section: 'Section A', count: 3 }],
+      }),
+    })
+    expect(response.status).toBe(400)
+  })
 })

@@ -12,6 +12,7 @@ export interface KeyTemplateQuestion {
   answer: string
   diagram_kind: string | null
   diagram_params: unknown
+  choice_group: string | null
   correctOptionLabel: string | null
   stepMarks: Array<{ step_no: number; description: string; marks: number }>
 }
@@ -49,6 +50,56 @@ function renderStepMarks(
           .join('')}
       </tbody>
     </table>`
+}
+
+function renderKeyItemBody(q: KeyTemplateQuestion): string {
+  return `
+      <div>${renderExpectedAnswer(q)}</div>
+      ${renderStepMarks(q.stepMarks)}
+      ${q.diagram_kind ? `<div class="diagram-desc">Expected diagram: ${escapeHtml(q.diagram_kind)}</div>` : ''}
+      ${(() => {
+        const svg = renderDiagramSvg(q.diagram_kind, q.diagram_params)
+        return svg ? `<div class="diagram">${svg}</div>` : ''
+      })()}`
+}
+
+function renderKeyItem(q: KeyTemplateQuestion): string {
+  return `
+    <div class="item">
+      <div class="item-head">${q.position}. [${q.section}] <span class="marks">(${q.marks} mark${q.marks === 1 ? '' : 's'})</span></div>
+      ${renderKeyItemBody(q)}
+    </div>`
+}
+
+// F030: the key shows both alternatives' expected answers under one shared mark value, exactly
+// mirroring how the student paper prints the pair (paper-template.ts's renderChoicePair) -- a
+// reviewer needs to recognise which printed block a key entry belongs to.
+function renderKeyChoicePair(
+  primary: KeyTemplateQuestion,
+  alternate: KeyTemplateQuestion,
+): string {
+  return `
+    <div class="item choice-pair">
+      <div class="item-head">${primary.position}. [${primary.section}] <span class="marks">(${primary.marks} mark${primary.marks === 1 ? '' : 's'})</span></div>
+      ${renderKeyItemBody(primary)}
+      <div class="or-divider">OR</div>
+      ${renderKeyItemBody(alternate)}
+    </div>`
+}
+
+function renderKeyItems(questions: Array<KeyTemplateQuestion>): string {
+  const html: Array<string> = []
+  for (let i = 0; i < questions.length; i++) {
+    const q = questions[i]
+    const next = questions.at(i + 1)
+    if (q.choice_group !== null && next?.choice_group === q.choice_group) {
+      html.push(renderKeyChoicePair(q, next))
+      i += 1
+      continue
+    }
+    html.push(renderKeyItem(q))
+  }
+  return html.join('')
 }
 
 function renderCoverageTable(coverage: Array<CoverageRow>): string {
@@ -99,6 +150,7 @@ export function buildAnswerKeyHtml(input: KeyTemplateInput): string {
   .diagram-desc { font-style: italic; color: #444; margin-top: 4px; }
   .diagram { margin-top: 4px; }
   .diagram svg { display: block; max-width: 100%; height: auto; }
+  .or-divider { text-align: center; font-weight: bold; font-size: 9pt; color: #555; margin: 8px 0; }
   table.step-marks, table.coverage {
     border-collapse: collapse;
     width: 100%;
@@ -117,21 +169,7 @@ export function buildAnswerKeyHtml(input: KeyTemplateInput): string {
 <body>
   <h1>${escapeHtml(input.title)} — Answer Key &amp; Marking Scheme</h1>
   <div class="warning">For teacher/parent use only. Never distribute this file to the student before the paper is attempted.</div>
-  ${sorted
-    .map(
-      (q) => `
-    <div class="item">
-      <div class="item-head">${q.position}. [${q.section}] <span class="marks">(${q.marks} mark${q.marks === 1 ? '' : 's'})</span></div>
-      <div>${renderExpectedAnswer(q)}</div>
-      ${renderStepMarks(q.stepMarks)}
-      ${q.diagram_kind ? `<div class="diagram-desc">Expected diagram: ${escapeHtml(q.diagram_kind)}</div>` : ''}
-      ${(() => {
-        const svg = renderDiagramSvg(q.diagram_kind, q.diagram_params)
-        return svg ? `<div class="diagram">${svg}</div>` : ''
-      })()}
-    </div>`,
-    )
-    .join('')}
+  ${renderKeyItems(sorted)}
   <h2 class="coverage-title">Concept Coverage &amp; Bloom Table</h2>
   ${renderCoverageTable(input.coverage)}
 </body>

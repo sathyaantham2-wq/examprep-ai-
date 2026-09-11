@@ -16,6 +16,7 @@ function baseQuestion(
     text: 'Draw a number line from 0 to 5.',
     diagram_kind: null,
     diagram_params: undefined,
+    choice_group: null,
     options: [],
     ...overrides,
   }
@@ -68,5 +69,47 @@ describe('buildPaperHtml diagram rendering (F024)', () => {
     })
     expect(html).not.toContain('class="diagram"')
     expect(html).not.toContain('class="draw-box"')
+  })
+})
+
+describe('buildPaperHtml internal choice / OR pairs (F030)', () => {
+  it('prints two questions sharing a choice_group as one numbered block with an OR divider and one [marks]', () => {
+    const html = buildPaperHtml({
+      ...baseInput,
+      totalMarks: 3,
+      questions: [
+        baseQuestion({
+          id: 'q1',
+          position: 1,
+          marks: 3,
+          text: 'Primary question text',
+          choice_group: 'Section A#1',
+        }),
+        baseQuestion({
+          id: 'q2',
+          position: 2,
+          marks: 3,
+          text: 'Alternate question text',
+          choice_group: 'Section A#1',
+        }),
+      ],
+    })
+    expect(html).toContain('choice-pair')
+    expect(html).toContain('class="or-divider"')
+    expect(html).toContain('Primary question text')
+    expect(html).toContain('Alternate question text')
+    // Printed once as "1." (not "1." then "2.") and marked once, not twice.
+    expect(html).toContain('<div class="q-number">1.</div>')
+    expect(html).not.toContain('<div class="q-number">2.</div>')
+    expect((html.match(/\[3\]/g) ?? []).length).toBe(1)
+  })
+
+  it('a question with no choice_group renders as a single ordinary question, unchanged from before F030', () => {
+    const html = buildPaperHtml({
+      ...baseInput,
+      questions: [baseQuestion({ choice_group: null })],
+    })
+    expect(html).not.toContain('choice-pair')
+    expect(html).not.toContain('class="or-divider"')
   })
 })

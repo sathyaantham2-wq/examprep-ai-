@@ -20,7 +20,7 @@ export async function computeCoverageTable(
   db: Db,
   paperId: string,
 ): Promise<Array<CoverageRow>> {
-  const rows = await db
+  const allRows = await db
     .selectFrom('paper_questions')
     .innerJoin('questions', 'questions.id', 'paper_questions.question_id')
     .innerJoin('concepts', 'concepts.id', 'questions.concept_id')
@@ -28,10 +28,23 @@ export async function computeCoverageTable(
       'concepts.id as concept_id',
       'concepts.name as concept_name',
       'paper_questions.marks as marks',
+      'paper_questions.choice_group as choice_group',
       'questions.bloom as bloom',
     ])
     .where('paper_questions.paper_id', '=', paperId)
+    .orderBy('paper_questions.position')
     .execute()
+
+  // F030: "handled correctly in ... coverage stats" -- an OR pair should count once, not twice,
+  // here too. Keeps the first-encountered member per choice_group (paper_questions.position
+  // order), matching evaluation.ts's own default when neither/both were answered.
+  const seenChoiceGroups = new Set<string>()
+  const rows = allRows.filter((row) => {
+    if (!row.choice_group) return true
+    if (seenChoiceGroups.has(row.choice_group)) return false
+    seenChoiceGroups.add(row.choice_group)
+    return true
+  })
 
   const totalMarks = rows.reduce((sum, r) => sum + r.marks, 0)
   const byConcept = new Map<string, CoverageRow>()

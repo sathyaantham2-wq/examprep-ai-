@@ -43,11 +43,41 @@ export async function createEvaluation(db: Db, attemptId: string) {
     throw new Error('Attempt must be submitted before it can be evaluated')
   }
 
-  const [slots, answers] = await Promise.all([
+  const [allSlots, answers] = await Promise.all([
     paperQuestionsRepository.listForPaperWithQuestions(db, attempt.paper_id),
     attemptAnswersRepository.listForAttempt(db, attemptId),
   ])
   const answerBySlot = new Map(answers.map((a) => [a.paper_question_id, a]))
+
+  // F030: "handled correctly in evaluation." An OR pair (two slots sharing a choice_group) is
+  // scored as ONE item, not two -- whichever member the student actually answered, or the
+  // primary (first-inserted) member if neither was, so a printed-but-unattempted alternative
+  // never shows up as an extra blank question dragging the percentage down.
+  const hasAnswer = (slotId: string) => {
+    const a = answerBySlot.get(slotId)
+    return Boolean(
+      a && ((a.selected_option?.length ?? 0) > 0 || (a.response_text?.trim().length ?? 0) > 0),
+    )
+  }
+  const groups = new Map<string, typeof allSlots>()
+  const slots: typeof allSlots = []
+  for (const slot of allSlots) {
+    if (!slot.choice_group) {
+      slots.push(slot)
+      continue
+    }
+    const group = groups.get(slot.choice_group)
+    if (group) {
+      group.push(slot)
+    } else {
+      groups.set(slot.choice_group, [slot])
+    }
+  }
+  for (const group of groups.values()) {
+    const chosen = group.find((s) => hasAnswer(s.id)) ?? group[0]
+    slots.push(chosen)
+  }
+  slots.sort((a, b) => a.position - b.position)
 
   let anyAutoScored = false
   const items: Array<{

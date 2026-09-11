@@ -13,6 +13,10 @@ export interface PaperTemplateQuestion {
   text: string
   diagram_kind: string | null
   diagram_params: unknown
+  // F030: two questions sharing a non-null choice_group are an "attempt one of these" OR pair --
+  // rendered together under one shared [marks] and one printed slot number, an "OR" divider
+  // between them, never as two separately-numbered questions.
+  choice_group: string | null
   // Never includes is_correct or the correct-answer text -- this template renders the STUDENT
   // paper, and a student can never see or download an answer key (CLAUDE.md hard rule).
   options: Array<{ label: string; text: string; order_index: number }>
@@ -67,7 +71,7 @@ function renderAnswerLines(marks: number, type: QuestionType): string {
     .join('')}</div>`
 }
 
-function renderQuestion(q: PaperTemplateQuestion): string {
+function renderQuestionBody(q: PaperTemplateQuestion): string {
   const optionsHtml =
     q.type === 'mcq' ||
     q.type === 'assertion_reason' ||
@@ -85,21 +89,66 @@ function renderQuestion(q: PaperTemplateQuestion): string {
   const diagramHtml = diagramSvg ? `<div class="diagram">${diagramSvg}</div>` : ''
   const drawBoxHtml = q.diagram_kind ? '<div class="draw-box"></div>' : ''
 
+  return `
+        <div class="q-text">${escapeHtml(q.text)}</div>
+        ${optionsHtml}
+        ${diagramHtml}
+        ${drawBoxHtml}
+        ${answerLinesHtml}`
+}
+
+function renderQuestion(q: PaperTemplateQuestion): string {
   // q.position is the paper's own running slot number (assigned once, across every section, when
   // generatePaper inserted paper_questions) -- reusing it here keeps numbering continuous across
   // sections (1..N) rather than restarting at 1 in every section.
   return `
     <div class="question">
       <div class="q-number">${q.position}.</div>
-      <div class="q-body">
-        <div class="q-text">${escapeHtml(q.text)}</div>
-        ${optionsHtml}
-        ${diagramHtml}
-        ${drawBoxHtml}
-        ${answerLinesHtml}
+      <div class="q-body">${renderQuestionBody(q)}
       </div>
       <div class="q-marks">[${q.marks}]</div>
     </div>`
+}
+
+/**
+ * F030: an OR pair prints as ONE numbered/marked block -- q.position and q.marks are the SAME on
+ * both members (generatePaper assigns one shared choiceGroup's marks value to each), so the
+ * primary's is used for both, and the "OR" divider is the only thing that tells them apart.
+ */
+function renderChoicePair(
+  primary: PaperTemplateQuestion,
+  alternate: PaperTemplateQuestion,
+): string {
+  return `
+    <div class="question choice-pair">
+      <div class="q-number">${primary.position}.</div>
+      <div class="q-body">${renderQuestionBody(primary)}
+        <div class="or-divider">OR</div>${renderQuestionBody(alternate)}
+      </div>
+      <div class="q-marks">[${primary.marks}]</div>
+    </div>`
+}
+
+/**
+ * Consecutive questions sharing a non-null choice_group are the two members of one OR pair
+ * (generatePaper always inserts them adjacently) -- rendered together via renderChoicePair;
+ * everything else renders singly, unchanged from before F030.
+ */
+function renderQuestionsInSection(
+  questions: Array<PaperTemplateQuestion>,
+): string {
+  const html: Array<string> = []
+  for (let i = 0; i < questions.length; i++) {
+    const q = questions[i]
+    const next = questions.at(i + 1)
+    if (q.choice_group !== null && next?.choice_group === q.choice_group) {
+      html.push(renderChoicePair(q, next))
+      i += 1
+      continue
+    }
+    html.push(renderQuestion(q))
+  }
+  return html.join('')
 }
 
 function groupBySection(
@@ -164,6 +213,7 @@ export function buildPaperHtml(input: PaperTemplateInput): string {
   .chapters { font-size: 8.5pt; color: #444; margin-top: 4px; }
   .section-title { font-weight: bold; text-decoration: underline; margin: 14px 0 8px; }
   .question { display: flex; page-break-inside: avoid; margin-bottom: 12px; }
+  .or-divider { text-align: center; font-weight: bold; font-size: 9pt; color: #555; margin: 8px 0; }
   .q-number { flex: 0 0 22px; font-weight: bold; }
   .q-body { flex: 1 1 auto; padding-right: 10px; }
   .q-marks { flex: 0 0 32px; text-align: right; font-weight: bold; }
@@ -214,7 +264,7 @@ export function buildPaperHtml(input: PaperTemplateInput): string {
         (group) => `
       <div class="section">
         <div class="section-title">${escapeHtml(group.section)}</div>
-        ${group.questions.map((q) => renderQuestion(q)).join('')}
+        ${renderQuestionsInSection(group.questions)}
       </div>`,
       )
       .join('')}

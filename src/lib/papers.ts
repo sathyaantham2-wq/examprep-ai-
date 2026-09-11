@@ -107,6 +107,18 @@ interface BlueprintSection {
   bloom_allowed: Array<BloomLevel>
 }
 
+// F030: "Choice pairs marked in the paper, counted once in total marks, and handled correctly in
+// evaluation and coverage stats." choice_rules (migration 0013) has always been stored but never
+// shape-checked or acted on -- {section, count} is a documented default (the plan names the
+// feature, never a parameter shape), the same kind RETEST_LADDER_DAYS and
+// STUDENT_DAILY_GENERATION_QUOTA already are elsewhere in this codebase. `count` is how many of
+// that section's slots (the first `count`, filled in generation order) become an OR pair: two
+// alternative questions sharing a choice_group, of which the student answers only one.
+interface ChoiceRule {
+  section: string
+  count: number
+}
+
 export interface GeneratePaperInput {
   student_id: string
   blueprint_id: string
@@ -134,8 +146,10 @@ interface Shortfall {
  * proportionally to each chapter's concept count (F113), and reports rather than blocks when a
  * slot, the Bloom mix, or a chapter's proportional target can't be satisfied (F032/F029/F113).
  *
- * F030 (internal choice / OR pairs) is not implemented — blueprint.choice_rules is stored but
- * ignored here; every section slot is a plain required question.
+ * F030: blueprint.choice_rules ({section, count}) turns the first `count` slots filled in a
+ * named section into OR pairs -- two alternative questions sharing a paper_questions.choice_group,
+ * of which the student answers only one. A section with no matching rule behaves exactly as
+ * before this feature existed.
  */
 export async function generatePaper(db: Db, input: GeneratePaperInput) {
   const blueprint = await blueprintsRepository.findById(db, input.blueprint_id)
@@ -148,6 +162,11 @@ export async function generatePaper(db: Db, input: GeneratePaperInput) {
     BloomLevel,
     number
   >
+  const choiceRules = (blueprint.choice_rules ??
+    []) as unknown as Array<ChoiceRule>
+  const choicePairCountBySection = new Map(
+    choiceRules.map((r) => [r.section, r.count]),
+  )
   const weighting = input.weighting_override ?? DEFAULT_WEIGHTING
   const difficultiesAllowed = difficultiesUpTo(
     input.difficulty_ceiling ?? 'Hardest',
@@ -231,11 +250,22 @@ export async function generatePaper(db: Db, input: GeneratePaperInput) {
     marks: number
     bucket: Bucket
     question: { id: string; bloom: BloomLevel }
+    // F030: set on both members of an OR pair. The alternate (isChoiceAlternate) still gets its
+    // own paper_questions row (position, question_usage) but is excluded from every "actual mix"
+    // stat below (Bloom/chapter/bucket/total marks) -- only one of the pair was ever going to be
+    // answered, so only one should count toward what the paper's contents "really" are.
+    choiceGroup?: string
+    isChoiceAlternate?: boolean
   }> = []
   const shortfalls: Array<Shortfall> = []
 
   for (const section of sections) {
     const allocation = allocateByWeighting(section.count, weighting)
+    const choicePairCount = Math.min(
+      choicePairCountBySection.get(section.name) ?? 0,
+      section.count,
+    )
+    let sectionSlotIndex = 0
 
     for (const bucket of [
       'weak_priority',
@@ -355,6 +385,58 @@ export async function generatePaper(db: Db, input: GeneratePaperInput) {
             (chapterMarksAssigned[chosenChapterId] ?? 0) +
             section.marks_per_question
         }
+
+        // F030: the first `choicePairCount` slots filled in this section (across every bucket,
+        // in generation order) become OR pairs -- a documented default for "which slots", since
+        // the plan names the count per section, never which specific ones.
+        const isChoiceSlot = sectionSlotIndex < choicePairCount
+        sectionSlotIndex += 1
+        let choiceGroup: string | undefined
+
+        if (isChoiceSlot) {
+          const alternatePool = chosenChapterId
+            ? pool.filter((id) => chapterByConceptId.get(id) === chosenChapterId)
+            : pool
+          const alternateEligible = await questionsRepository.findEligibleForSlot(
+            db,
+            {
+              conceptIds: alternatePool.length > 0 ? alternatePool : pool,
+              bloomAllowed: section.bloom_allowed,
+              difficultiesAllowed,
+              marks: section.marks_per_question,
+              excludeQuestionIds: [...excludeQuestionIds],
+            },
+            1,
+          )
+          const alternate = alternateEligible.at(0)
+          if (alternate) {
+            choiceGroup = `${section.name}#${sectionSlotIndex}`
+            excludeQuestionIds.add(alternate.id)
+            selected.push({
+              section: section.name,
+              marks: section.marks_per_question,
+              bucket,
+              question: { id: picked.id, bloom: picked.bloom },
+              choiceGroup,
+            })
+            selected.push({
+              section: section.name,
+              marks: section.marks_per_question,
+              bucket,
+              question: alternate,
+              choiceGroup,
+              isChoiceAlternate: true,
+            })
+            continue
+          }
+          shortfalls.push({
+            section: section.name,
+            bucket,
+            reason:
+              'Internal choice requested for this slot but no second eligible question was available -- printed as a single required question instead',
+          })
+        }
+
         selected.push({
           section: section.name,
           marks: section.marks_per_question,
@@ -365,10 +447,16 @@ export async function generatePaper(db: Db, input: GeneratePaperInput) {
     }
   }
 
+  // F030: every "actual mix" stat below counts each OR pair once (the primary member only) --
+  // only one of the pair was ever going to be answered, so the alternate shouldn't inflate what
+  // the paper's contents "really" are. paperQuestions/question_usage still use `selected` in
+  // full, since BOTH members are real rows the student needs printed and excluded from reuse.
+  const countedSelected = selected.filter((item) => !item.isChoiceAlternate)
+
   // F029: report the actual Bloom mix and flag any target missed by more than 5 percentage
   // points, rather than blocking paper generation on it.
   const bloomCounts = new Map<BloomLevel, number>()
-  for (const item of selected) {
+  for (const item of countedSelected) {
     bloomCounts.set(
       item.question.bloom,
       (bloomCounts.get(item.question.bloom) ?? 0) + 1,
@@ -377,7 +465,7 @@ export async function generatePaper(db: Db, input: GeneratePaperInput) {
   const bloomActual: Partial<Record<BloomLevel, number>> = {}
   for (const [bloom, count] of bloomCounts) {
     bloomActual[bloom] =
-      Math.round((count / Math.max(selected.length, 1)) * 1000) / 10
+      Math.round((count / Math.max(countedSelected.length, 1)) * 1000) / 10
   }
   for (const [bloom, target] of Object.entries(bloomTargets) as Array<
     [BloomLevel, number]
@@ -410,17 +498,19 @@ export async function generatePaper(db: Db, input: GeneratePaperInput) {
     needs_practice: 0,
     strong: 0,
   }
-  for (const item of selected) bucketActual[item.bucket] += 1
+  for (const item of countedSelected) bucketActual[item.bucket] += 1
   const bucketActualPct = Object.fromEntries(
     (Object.entries(bucketActual) as Array<[Bucket, number]>).map(
       ([bucket, count]) => [
         bucket,
-        Math.round((count / Math.max(selected.length, 1)) * 1000) / 10,
+        Math.round((count / Math.max(countedSelected.length, 1)) * 1000) / 10,
       ],
     ),
   )
 
-  const totalMarks = selected.reduce((sum, item) => sum + item.marks, 0)
+  // F030: "counted once in total marks" -- an OR pair contributes its shared mark value once,
+  // not once per printed alternative.
+  const totalMarks = countedSelected.reduce((sum, item) => sum + item.marks, 0)
 
   // F113: resolved for the paper header (part + chapter_no + name) -- read-only, so it's safe to
   // fetch outside the write transaction below.
@@ -462,6 +552,7 @@ export async function generatePaper(db: Db, input: GeneratePaperInput) {
               section: item.section,
               position: index + 1,
               marks: item.marks,
+              choice_group: item.choiceGroup ?? null,
             })),
           )
         : []

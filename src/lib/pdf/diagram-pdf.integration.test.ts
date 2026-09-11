@@ -42,6 +42,7 @@ describe('a paper with a real diagram renders to a valid PDF (F024)', () => {
         text: `Question about a ${c.kind}`,
         diagram_kind: c.kind,
         diagram_params: c.params,
+        choice_group: null,
         options: [],
       })),
     })
