@@ -1,6 +1,8 @@
+import { sql } from 'kysely'
 import type { Insertable, Selectable } from 'kysely'
 import type { Db } from '../connection'
 import type { DB } from '../types'
+import type { GenerationTrigger } from '../enums'
 import { createRepository, createScopedRepository } from './factory'
 
 // Exam patterns are global reference data, not owned by a household.
@@ -72,5 +74,26 @@ export const paperQuestionsRepository = {
       .where('paper_questions.paper_id', '=', paperId)
       .orderBy('paper_questions.position')
       .execute()
+  },
+}
+
+// F112: append-only (CLAUDE.md invariant 4) record of every real POST /api/papers/generate call,
+// student-scoped so the daily quota check (countTodayByStudentAndTrigger) can't accidentally
+// count another student's generations.
+export const generationEventsRepository = {
+  ...createScopedRepository('generation_events', 'student_id'),
+  async countTodayByStudentAndTrigger(
+    db: Db,
+    studentId: string,
+    triggeredBy: GenerationTrigger,
+  ) {
+    const row = await db
+      .selectFrom('generation_events')
+      .select((eb) => eb.fn.countAll<string>().as('count'))
+      .where('student_id', '=', studentId)
+      .where('triggered_by', '=', triggeredBy)
+      .where('created_at', '>=', sql<Date>`date_trunc('day', now())`)
+      .executeTakeFirstOrThrow()
+    return Number(row.count)
   },
 }

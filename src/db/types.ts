@@ -3,7 +3,7 @@
  * Please do not edit it manually.
  */
 
-import type { AiJobStatus, AnswerSource, AttemptMode, AttemptStatus, BloomLevel, ConceptStatusValue, DifficultyTier, ErrorType, EvaluatedBy, GenerationBatchItemStatus, GenerationBatchStatus, HabitDrillKind, HabitDrillStatus, HabitRating, NotificationChannel, NotificationStatus, QuestionOrigin, QuestionStatus, QuestionType, RemediationStatus, ReviewTier, ScopeKind, StudyPlanStatus, UploadKind, UserRole } from "./enums";
+import type { AiJobStatus, AnswerSource, AttemptMode, AttemptStatus, BloomLevel, ConceptStatusValue, DifficultyTier, ErrorType, EvaluatedBy, GenerationBatchItemStatus, GenerationBatchStatus, GenerationTrigger, HabitDrillKind, HabitDrillStatus, HabitRating, NotificationChannel, NotificationStatus, QuestionOrigin, QuestionStatus, QuestionType, RemediationStatus, ReviewTier, ScopeKind, StudyPlanStatus, UploadKind, UserRole } from "./enums";
 import type { ColumnType } from "kysely";
 
 export type Generated<T> = T extends ColumnType<infer S, infer I, infer U>
@@ -261,6 +261,13 @@ export interface GenerationBatchItems {
   id: Generated<string>;
   status: GenerationBatchItemStatus;
   target_count: number;
+}
+
+export interface GenerationEvents {
+  created_at: Generated<Timestamp>;
+  id: Generated<string>;
+  student_id: string;
+  triggered_by: GenerationTrigger;
 }
 
 export interface HabitDrillTasks {
@@ -546,6 +553,7 @@ export interface DB {
   evaluations: Evaluations;
   generation_batch_items: GenerationBatchItems;
   generation_batches: GenerationBatches;
+  generation_events: GenerationEvents;
   habit_drill_tasks: HabitDrillTasks;
   habit_observations: HabitObservations;
   habits: Habits;

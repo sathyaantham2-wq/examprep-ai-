@@ -1,12 +1,19 @@
 import { createFileRoute } from '@tanstack/react-router'
 import { z } from 'zod'
 import { requireRole } from '../../../lib/session'
+import { resolveEnabledStudent } from '../../../lib/access'
 import { generatePaper } from '../../../lib/papers'
 import { createDb } from '../../../db/connection'
 import {
   studentsRepository,
   consentsRepository,
+  generationEventsRepository,
 } from '../../../db/repositories'
+
+// F112: "Student role may generate ... papers within a daily quota." Not a number the plan
+// specifies -- a documented default, the same kind RETEST_LADDER_DAYS (src/lib/mastery.ts) and
+// MARK_TO_POINT_MIN_CHARS (src/lib/habit-drills.ts) already are elsewhere in this codebase.
+export const STUDENT_DAILY_GENERATION_QUOTA = 3
 
 const DIFFICULTY_TIERS = ['Easy', 'Hard', 'Hardest'] as const
 
@@ -34,7 +41,10 @@ const chapterWeightingSchema = z
 
 const generateSchema = z
   .object({
-    student_id: z.string().uuid(),
+    // F112: required for a parent/admin caller (which student?), ignored for a student caller
+    // (always themselves -- never trust a body-supplied id for who a student generates as, the
+    // same reasoning POST /api/attempts already applies).
+    student_id: z.string().uuid().optional(),
     blueprint_id: z.string().uuid(),
     chapter_ids: z.array(z.string().uuid()).min(1),
     theme: z.string().min(1).optional(),
@@ -66,7 +76,7 @@ export const Route = createFileRoute('/api/papers/generate')({
   server: {
     handlers: {
       POST: async ({ request }) => {
-        const auth = await requireRole(request, 'parent', 'admin')
+        const auth = await requireRole(request, 'student', 'parent', 'admin')
         if (auth instanceof Response) return auth
 
         const parsed = generateSchema.safeParse(await request.json())
@@ -79,13 +89,28 @@ export const Route = createFileRoute('/api/papers/generate')({
 
         const db = createDb()
         try {
-          // household-scoped: a parent can only generate papers for their own students.
-          const student = await studentsRepository.findById(
-            db,
-            auth.householdId,
-            parsed.data.student_id,
-          )
-          if (!student) return new Response(null, { status: 404 })
+          // F112: a student always generates as themselves (F010's access_enabled gate applies
+          // here too); a parent/admin must name student_id and it is checked against their own
+          // household -- same shape GET /api/remediation and GET /api/habit-drills already use.
+          let student
+          if (auth.role === 'student') {
+            student = await resolveEnabledStudent(db, auth.id)
+            if (student instanceof Response) return student
+          } else {
+            if (!parsed.data.student_id) {
+              return Response.json(
+                { error: 'student_id is required' },
+                { status: 400 },
+              )
+            }
+            const found = await studentsRepository.findById(
+              db,
+              auth.householdId,
+              parsed.data.student_id,
+            )
+            if (!found) return new Response(null, { status: 404 })
+            student = found
+          }
 
           // F095: consent is required before generating any new content for this student. Not
           // "the student has no consent record" specifically -- some students predate this
@@ -106,10 +131,37 @@ export const Route = createFileRoute('/api/papers/generate')({
             )
           }
 
+          if (auth.role === 'student') {
+            const usedToday =
+              await generationEventsRepository.countTodayByStudentAndTrigger(
+                db,
+                student.id,
+                'student',
+              )
+            if (usedToday >= STUDENT_DAILY_GENERATION_QUOTA) {
+              return Response.json(
+                {
+                  error: 'daily_quota_exceeded',
+                  message: `You've reached today's limit of ${STUDENT_DAILY_GENERATION_QUOTA} papers -- try again tomorrow.`,
+                },
+                { status: 429 },
+              )
+            }
+          }
+
           const result = await generatePaper(db, {
             ...parsed.data,
+            student_id: student.id,
             recentUsageWindowDays: parsed.data.recent_usage_window_days,
           })
+
+          if (auth.role === 'student') {
+            await generationEventsRepository.insert(db, {
+              student_id: student.id,
+              triggered_by: 'student',
+            })
+          }
+
           return Response.json(result, { status: 201 })
         } finally {
           await db.destroy()

@@ -29,6 +29,7 @@ export type ConceptStatusValue =
 export type RemediationStatus = 'pending' | 'in_progress' | 'completed'
 export type HabitDrillKind = 'mark_to_point' | 'three_check_ar' | 'blank_sweep'
 export type HabitDrillStatus = 'pending' | 'completed'
+export type GenerationTrigger = 'student' | 'parent' | 'admin'
 export type StudyPlanStatus = 'active' | 'completed' | 'superseded'
 export type UploadKind = 'scan' | 'source_pdf'
 export type AiJobStatus = 'success' | 'error' | 'pending'
