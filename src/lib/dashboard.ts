@@ -1,6 +1,16 @@
 import type { Db } from '../db/connection'
-import { conceptStatusRepository } from '../db/repositories'
+import {
+  conceptStatusRepository,
+  patternHitsRepository,
+} from '../db/repositories'
 import type { ConceptStatusValue } from '../db/enums'
+
+interface PatternFrequency {
+  pattern_id: string
+  pattern_code: string
+  pattern_name: string
+  count: number
+}
 
 interface PriorityConcept {
   concept_id: string
@@ -152,5 +162,20 @@ export async function buildParentDashboard(db: Db, studentId: string) {
     statusCounts.map((row) => [row.status, Number(row.count)]),
   ) as Record<ConceptStatusValue, number>
 
-  return { subjects: cards, concept_status_distribution: conceptStatusDistribution }
+  // F065: "patterns ... aggregated across all subjects" -- the counterpart to habit ratings
+  // (already cross-subject by construction, see habitObservationsRepository.trendForStudent),
+  // surfaced on the same dashboard rather than a new screen.
+  const patternRows = await patternHitsRepository.countForStudent(db, studentId)
+  const patternFrequency: Array<PatternFrequency> = patternRows.map((row) => ({
+    pattern_id: row.pattern_id,
+    pattern_code: row.pattern_code,
+    pattern_name: row.pattern_name,
+    count: Number(row.count),
+  }))
+
+  return {
+    subjects: cards,
+    concept_status_distribution: conceptStatusDistribution,
+    pattern_frequency: patternFrequency,
+  }
 }

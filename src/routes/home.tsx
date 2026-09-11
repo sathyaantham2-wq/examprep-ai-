@@ -45,9 +45,17 @@ interface SubjectCard {
   score_history: Array<ScorePoint>
 }
 
+interface PatternFrequency {
+  pattern_id: string
+  pattern_code: string
+  pattern_name: string
+  count: number
+}
+
 interface Dashboard {
   subjects: Array<SubjectCard>
   concept_status_distribution: Record<string, number>
+  pattern_frequency: Array<PatternFrequency>
 }
 
 interface HabitTrendRow {
@@ -305,6 +313,33 @@ function ParentDashboard() {
               />
             </CardContent>
           </Card>
+
+          {dashboard.pattern_frequency.length > 0 && (
+            <Card>
+              <CardHeader>
+                <CardTitle className="text-h3">Recurring patterns</CardTitle>
+                <CardDescription>
+                  Behaviour patterns flagged during review, aggregated across
+                  every subject — not just one paper.
+                </CardDescription>
+              </CardHeader>
+              <CardContent className="space-y-2">
+                {dashboard.pattern_frequency.map((p) => (
+                  <div
+                    key={p.pattern_id}
+                    className="flex items-center justify-between"
+                  >
+                    <span className="text-small">
+                      {p.pattern_code} — {p.pattern_name}
+                    </span>
+                    <span className="text-small text-muted-foreground">
+                      {p.count}×
+                    </span>
+                  </div>
+                ))}
+              </CardContent>
+            </Card>
+          )}
 
           {habitTrend.length > 0 && (
             <Card>

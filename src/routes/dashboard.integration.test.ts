@@ -13,6 +13,8 @@ import { Route as AttemptSubmitRoute } from './api/attempts/$id/submit'
 import { Route as EvaluationsRoute } from './api/evaluations'
 import { Route as EvaluationConfirmRoute } from './api/evaluations/$id/confirm'
 import { Route as DashboardRoute } from './api/dashboard/$studentId'
+import { Route as EvaluationByIdRoute } from './api/evaluations/$id'
+import { Route as EvaluationItemRoute } from './api/evaluations/$id/items/$itemId'
 
 type RouteHandler = (opts: {
   request: Request
@@ -350,7 +352,9 @@ describe('parent dashboard (F071)', () => {
     expect(card.score_history[0].percentage).toBe(0)
     expect(card.score_history[1].percentage).toBe(100)
 
-    expect(dashboard.concept_status_distribution.Strong).toBeGreaterThanOrEqual(1)
+    expect(dashboard.concept_status_distribution.Strong).toBeGreaterThanOrEqual(
+      1,
+    )
   })
 
   it('another household gets 404', async () => {
@@ -367,5 +371,271 @@ describe('parent dashboard (F071)', () => {
       .deleteFrom('households')
       .where('id', '=', otherParent.householdId)
       .execute()
+  })
+})
+
+/**
+ * F065: "patterns ... aggregated across all subjects, not just per paper." The query itself
+ * (patternHitsRepository.countForStudent) never filters or partitions by subject_id, so proving
+ * it sums across two SEPARATE confirmed evaluations is the structurally correct test of "not just
+ * per paper" -- a real second subject isn't needed to exercise that code path.
+ */
+describe('cross-subject pattern roll-up on the dashboard (F065)', () => {
+  let db: Db
+  let parent: TestSession
+  let student: TestSession
+  let studentId: string
+  let blueprintId: string
+  let conceptId: string
+  let patternId: string
+  const questionIds: Array<string> = []
+  const paperIds: Array<string> = []
+  const attemptIds: Array<string> = []
+
+  beforeAll(async () => {
+    db = createDb()
+    parent = await createParentSession('dash-pattern')
+
+    const pattern = await db
+      .selectFrom('patterns')
+      .select('id')
+      .where('code', '=', 'P1')
+      .executeTakeFirstOrThrow()
+    patternId = pattern.id
+
+    const studentResponse = await handlerFor(
+      StudentsRoute,
+      'POST',
+    )({
+      request: request(parent.cookie, {
+        name: 'Dashboard Pattern Kid',
+        class: 7,
+        board: 'CBSE',
+        consent_accepted: true,
+      }),
+    })
+    studentId = (await studentResponse.json()).id
+    student = await createStudentSession(
+      'dash-pattern-student',
+      parent.householdId,
+      studentId,
+    )
+
+    const subject = await db
+      .selectFrom('subjects')
+      .selectAll()
+      .where('code', '=', 'MATH-SEED')
+      .executeTakeFirstOrThrow()
+    const chapter = await db
+      .selectFrom('chapters')
+      .selectAll()
+      .where('subject_id', '=', subject.id)
+      .where('chapter_no', '=', 1)
+      .executeTakeFirstOrThrow()
+
+    const concept = await conceptsRepository.insert(db, {
+      chapter_id: chapter.id,
+      board: 'CBSE',
+      class: 7,
+      code: `C7M-1.DASHPATTERN-${Date.now()}`,
+      name: 'Dashboard pattern fixture concept',
+      difficulty_base: 'Easy',
+    })
+    conceptId = concept.id
+
+    // Two questions, not one -- paper generation excludes a recently served question from the
+    // next round (F026), and this fixture generates two separate papers back to back.
+    for (const suffix of ['A', 'B']) {
+      const question = await createQuestion(db, {
+        concept_id: concept.id,
+        board: 'CBSE',
+        class: 7,
+        bloom: 'Remember',
+        difficulty: 'Easy',
+        marks: 1,
+        type: 'mcq',
+        text: `Dashboard pattern fixture question ${suffix}`,
+        answer: '1',
+        created_by: 'dash-pattern-fixture',
+        options: [
+          { label: 'A', text: '1', is_correct: true, order_index: 1 },
+          { label: 'B', text: '2', is_correct: false, order_index: 2 },
+        ],
+      })
+      questionIds.push(question.id)
+    }
+
+    const blueprint = await blueprintsRepository.insert(db, {
+      subject_id: subject.id,
+      board: 'CBSE',
+      class: 7,
+      name: 'Dashboard pattern fixture blueprint',
+      duration_min: 10,
+      total_marks: 1,
+      sections: JSON.stringify([
+        {
+          name: 'Section A',
+          marks_per_question: 1,
+          count: 1,
+          bloom_allowed: ['Remember'],
+        },
+      ]),
+      bloom_targets: JSON.stringify({
+        Remember: 100,
+        Understand: 0,
+        Apply: 0,
+        Analyse: 0,
+        Evaluate: 0,
+        Create: 0,
+      }),
+    })
+    blueprintId = blueprint.id
+
+    // Two separate confirmed evaluations, each with the same pattern tagged on its one item --
+    // GET /api/dashboard/:studentId should report this pattern with count 2, not 1 per paper.
+    for (let i = 0; i < 2; i++) {
+      const generateResponse = await handlerFor(
+        GenerateRoute,
+        'POST',
+      )({
+        request: request(parent.cookie, {
+          student_id: studentId,
+          blueprint_id: blueprintId,
+          chapter_ids: [chapter.id],
+        }),
+      })
+      const generated = await generateResponse.json()
+      paperIds.push(generated.paper.id)
+
+      const attemptResponse = await handlerFor(
+        AttemptsRoute,
+        'POST',
+      )({
+        request: request(student.cookie, {
+          paper_id: generated.paper.id,
+          mode: 'online',
+        }),
+      })
+      const attemptId = (await attemptResponse.json()).id
+      attemptIds.push(attemptId)
+
+      const pq = generated.paperQuestions[0]
+      await handlerFor(
+        AttemptAnswerRoute,
+        'PATCH',
+      )({
+        request: request(student.cookie, {
+          paper_question_id: pq.id,
+          selected_option: 'B',
+        }),
+        params: { id: attemptId },
+      })
+      await handlerFor(
+        AttemptSubmitRoute,
+        'POST',
+      )({ request: request(student.cookie, {}), params: { id: attemptId } })
+
+      const evalResponse = await handlerFor(
+        EvaluationsRoute,
+        'POST',
+      )({ request: request(parent.cookie, { attempt_id: attemptId }) })
+      const evaluation = await evalResponse.json()
+
+      const detailResponse = await handlerFor(
+        EvaluationByIdRoute,
+        'GET',
+      )({
+        request: request(parent.cookie),
+        params: { id: evaluation.evaluation.id },
+      })
+      const detail = await detailResponse.json()
+      const itemId = detail.items[0].id
+
+      await handlerFor(
+        EvaluationItemRoute,
+        'PATCH',
+      )({
+        request: request(parent.cookie, { pattern_ids: [patternId] }),
+        params: { id: evaluation.evaluation.id, itemId },
+      })
+
+      await handlerFor(
+        EvaluationConfirmRoute,
+        'POST',
+      )({
+        request: request(parent.cookie, {}),
+        params: { id: evaluation.evaluation.id },
+      })
+    }
+  })
+
+  afterAll(async () => {
+    const allEvals = await db
+      .selectFrom('evaluations')
+      .select('id')
+      .where('attempt_id', 'in', attemptIds.length > 0 ? attemptIds : [''])
+      .execute()
+    const allEvalIds = allEvals.map((e) => e.id)
+    if (allEvalIds.length > 0) {
+      const allItems = await db
+        .selectFrom('evaluation_items')
+        .select('id')
+        .where('evaluation_id', 'in', allEvalIds)
+        .execute()
+      const allItemIds = allItems.map((i) => i.id)
+      if (allItemIds.length > 0) {
+        await db
+          .deleteFrom('pattern_hits')
+          .where('evaluation_item_id', 'in', allItemIds)
+          .execute()
+      }
+      await db
+        .deleteFrom('evaluation_items')
+        .where('evaluation_id', 'in', allEvalIds)
+        .execute()
+      await db.deleteFrom('evaluations').where('id', 'in', allEvalIds).execute()
+    }
+    await db
+      .deleteFrom('attempt_answers')
+      .where('attempt_id', 'in', attemptIds.length > 0 ? attemptIds : [''])
+      .execute()
+    await db.deleteFrom('attempts').where('id', 'in', attemptIds).execute()
+    if (paperIds.length > 0) {
+      await db
+        .deleteFrom('paper_questions')
+        .where('paper_id', 'in', paperIds)
+        .execute()
+      await db.deleteFrom('papers').where('id', 'in', paperIds).execute()
+    }
+    await db
+      .deleteFrom('households')
+      .where('id', '=', parent.householdId)
+      .execute()
+    await db.deleteFrom('blueprints').where('id', '=', blueprintId).execute()
+    // Scoped to this run's own question ids -- see remediation.integration.test.ts's afterAll
+    // for why a shared created_by literal is unsafe here.
+    if (questionIds.length > 0) {
+      await db.deleteFrom('questions').where('id', 'in', questionIds).execute()
+    }
+    await db.deleteFrom('concepts').where('id', '=', conceptId).execute()
+    await db.destroy()
+  })
+
+  it('sums the same pattern across two separate confirmed papers, not per-paper', async () => {
+    const response = await handlerFor(
+      DashboardRoute,
+      'GET',
+    )({
+      request: request(parent.cookie),
+      params: { studentId },
+    })
+    expect(response.status).toBe(200)
+    const dashboard = await response.json()
+
+    const p1 = dashboard.pattern_frequency.find(
+      (p: { pattern_id: string }) => p.pattern_id === patternId,
+    )
+    expect(p1).toBeDefined()
+    expect(p1.count).toBe(2)
   })
 })

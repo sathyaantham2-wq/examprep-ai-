@@ -125,6 +125,39 @@ export const patternHitsRepository = {
       .returningAll()
       .execute() as Promise<Array<Selectable<DB['pattern_hits']>>>
   },
+  // F065: "patterns ... aggregated across all subjects, not just per paper" -- deliberately not
+  // scoped to a subject_id anywhere in this query (unlike buildParentDashboard's per-subject
+  // cards), across every one of this student's confirmed evaluations regardless of which subject
+  // the paper belonged to.
+  async countForStudent(db: Db, studentId: string) {
+    const rows = await db
+      .selectFrom('pattern_hits')
+      .innerJoin(
+        'evaluation_items',
+        'evaluation_items.id',
+        'pattern_hits.evaluation_item_id',
+      )
+      .innerJoin(
+        'evaluations',
+        'evaluations.id',
+        'evaluation_items.evaluation_id',
+      )
+      .innerJoin('attempts', 'attempts.id', 'evaluations.attempt_id')
+      .innerJoin('patterns', 'patterns.id', 'pattern_hits.pattern_id')
+      .select([
+        'patterns.id as pattern_id',
+        'patterns.code as pattern_code',
+        'patterns.name as pattern_name',
+        (eb) => eb.fn.countAll<string>().as('count'),
+      ])
+      .where('attempts.student_id', '=', studentId)
+      .where('evaluations.confirmed_at', 'is not', null)
+      .groupBy(['patterns.id', 'patterns.code', 'patterns.name'])
+      .execute()
+    // Sorted in JS (Kysely's typed orderBy can't reliably reference a computed select alias) --
+    // highest-frequency pattern first, matching computeCoverageGridForSubject's own precedent.
+    return rows.sort((a, b) => Number(b.count) - Number(a.count))
+  },
 }
 
 export const habitsRepository = createRepository('habits')
