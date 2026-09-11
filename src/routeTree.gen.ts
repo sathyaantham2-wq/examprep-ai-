@@ -13,6 +13,7 @@ import { Route as IndexRouteImport } from './routes/index'
 import { Route as GenerateRouteImport } from './routes/generate'
 import { Route as HomeRouteImport } from './routes/home'
 import { Route as OnboardingRouteImport } from './routes/onboarding'
+import { Route as PlanRouteImport } from './routes/plan'
 import { Route as RemediationRouteImport } from './routes/remediation'
 import { Route as SettingsRouteImport } from './routes/settings'
 import { Route as StudentRouteImport } from './routes/student'
@@ -28,6 +29,7 @@ import { Route as ApiQuestionsRouteImport } from './routes/api/questions'
 import { Route as ApiRemediationRouteImport } from './routes/api/remediation'
 import { Route as ApiStudentDashboardRouteImport } from './routes/api/student-dashboard'
 import { Route as ApiStudentsRouteImport } from './routes/api/students'
+import { Route as ApiStudyPlanRouteImport } from './routes/api/study-plan'
 import { Route as AttemptIdRouteImport } from './routes/attempt/$id'
 import { Route as EvaluateAttemptIdRouteImport } from './routes/evaluate/$attemptId'
 import { Route as SummaryWeeklyRouteImport } from './routes/summary/weekly'
@@ -51,6 +53,7 @@ import { Route as ApiQuestionsGenerateBatchRouteImport } from './routes/api/ques
 import { Route as ApiRemediationIdRouteImport } from './routes/api/remediation/$id'
 import { Route as ApiRemediationGenerateRouteImport } from './routes/api/remediation/generate'
 import { Route as ApiStudentsIdRouteImport } from './routes/api/students/$id'
+import { Route as ApiStudyPlanGenerateRouteImport } from './routes/api/study-plan/generate'
 import { Route as ApiSyllabusChaptersRouteImport } from './routes/api/syllabus/chapters'
 import { Route as ApiSyllabusConceptsRouteImport } from './routes/api/syllabus/concepts'
 import { Route as ApiSyllabusSubjectsRouteImport } from './routes/api/syllabus/subjects'
@@ -97,6 +100,11 @@ const HomeRoute = HomeRouteImport.update({
 const OnboardingRoute = OnboardingRouteImport.update({
   id: '/onboarding',
   path: '/onboarding',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const PlanRoute = PlanRouteImport.update({
+  id: '/plan',
+  path: '/plan',
   getParentRoute: () => rootRouteImport,
 } as any)
 const RemediationRoute = RemediationRouteImport.update({
@@ -172,6 +180,11 @@ const ApiStudentDashboardRoute = ApiStudentDashboardRouteImport.update({
 const ApiStudentsRoute = ApiStudentsRouteImport.update({
   id: '/api/students',
   path: '/api/students',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ApiStudyPlanRoute = ApiStudyPlanRouteImport.update({
+  id: '/api/study-plan',
+  path: '/api/study-plan',
   getParentRoute: () => rootRouteImport,
 } as any)
 const AttemptIdRoute = AttemptIdRouteImport.update({
@@ -291,6 +304,11 @@ const ApiStudentsIdRoute = ApiStudentsIdRouteImport.update({
   id: '/$id',
   path: '/$id',
   getParentRoute: () => ApiStudentsRoute,
+} as any)
+const ApiStudyPlanGenerateRoute = ApiStudyPlanGenerateRouteImport.update({
+  id: '/generate',
+  path: '/generate',
+  getParentRoute: () => ApiStudyPlanRoute,
 } as any)
 const ApiSyllabusChaptersRoute = ApiSyllabusChaptersRouteImport.update({
   id: '/api/syllabus/chapters',
@@ -442,6 +460,7 @@ export interface FileRoutesByFullPath {
   '/generate': typeof GenerateRoute
   '/home': typeof HomeRoute
   '/onboarding': typeof OnboardingRoute
+  '/plan': typeof PlanRoute
   '/remediation': typeof RemediationRoute
   '/settings': typeof SettingsRoute
   '/student': typeof StudentRoute
@@ -457,6 +476,7 @@ export interface FileRoutesByFullPath {
   '/api/remediation': typeof ApiRemediationRouteWithChildren
   '/api/student-dashboard': typeof ApiStudentDashboardRoute
   '/api/students': typeof ApiStudentsRouteWithChildren
+  '/api/study-plan': typeof ApiStudyPlanRouteWithChildren
   '/attempt/$id': typeof AttemptIdRoute
   '/evaluate/$attemptId': typeof EvaluateAttemptIdRoute
   '/summary/weekly': typeof SummaryWeeklyRoute
@@ -480,6 +500,7 @@ export interface FileRoutesByFullPath {
   '/api/remediation/$id': typeof ApiRemediationIdRouteWithChildren
   '/api/remediation/generate': typeof ApiRemediationGenerateRoute
   '/api/students/$id': typeof ApiStudentsIdRouteWithChildren
+  '/api/study-plan/generate': typeof ApiStudyPlanGenerateRoute
   '/api/syllabus/chapters': typeof ApiSyllabusChaptersRouteWithChildren
   '/api/syllabus/concepts': typeof ApiSyllabusConceptsRoute
   '/api/syllabus/subjects': typeof ApiSyllabusSubjectsRoute
@@ -513,6 +534,7 @@ export interface FileRoutesByTo {
   '/generate': typeof GenerateRoute
   '/home': typeof HomeRoute
   '/onboarding': typeof OnboardingRoute
+  '/plan': typeof PlanRoute
   '/remediation': typeof RemediationRoute
   '/settings': typeof SettingsRoute
   '/student': typeof StudentRoute
@@ -528,6 +550,7 @@ export interface FileRoutesByTo {
   '/api/remediation': typeof ApiRemediationRouteWithChildren
   '/api/student-dashboard': typeof ApiStudentDashboardRoute
   '/api/students': typeof ApiStudentsRouteWithChildren
+  '/api/study-plan': typeof ApiStudyPlanRouteWithChildren
   '/attempt/$id': typeof AttemptIdRoute
   '/evaluate/$attemptId': typeof EvaluateAttemptIdRoute
   '/summary/weekly': typeof SummaryWeeklyRoute
@@ -551,6 +574,7 @@ export interface FileRoutesByTo {
   '/api/remediation/$id': typeof ApiRemediationIdRouteWithChildren
   '/api/remediation/generate': typeof ApiRemediationGenerateRoute
   '/api/students/$id': typeof ApiStudentsIdRouteWithChildren
+  '/api/study-plan/generate': typeof ApiStudyPlanGenerateRoute
   '/api/syllabus/chapters': typeof ApiSyllabusChaptersRouteWithChildren
   '/api/syllabus/concepts': typeof ApiSyllabusConceptsRoute
   '/api/syllabus/subjects': typeof ApiSyllabusSubjectsRoute
@@ -585,6 +609,7 @@ export interface FileRoutesById {
   '/generate': typeof GenerateRoute
   '/home': typeof HomeRoute
   '/onboarding': typeof OnboardingRoute
+  '/plan': typeof PlanRoute
   '/remediation': typeof RemediationRoute
   '/settings': typeof SettingsRoute
   '/student': typeof StudentRoute
@@ -600,6 +625,7 @@ export interface FileRoutesById {
   '/api/remediation': typeof ApiRemediationRouteWithChildren
   '/api/student-dashboard': typeof ApiStudentDashboardRoute
   '/api/students': typeof ApiStudentsRouteWithChildren
+  '/api/study-plan': typeof ApiStudyPlanRouteWithChildren
   '/attempt/$id': typeof AttemptIdRoute
   '/evaluate/$attemptId': typeof EvaluateAttemptIdRoute
   '/summary/weekly': typeof SummaryWeeklyRoute
@@ -623,6 +649,7 @@ export interface FileRoutesById {
   '/api/remediation/$id': typeof ApiRemediationIdRouteWithChildren
   '/api/remediation/generate': typeof ApiRemediationGenerateRoute
   '/api/students/$id': typeof ApiStudentsIdRouteWithChildren
+  '/api/study-plan/generate': typeof ApiStudyPlanGenerateRoute
   '/api/syllabus/chapters': typeof ApiSyllabusChaptersRouteWithChildren
   '/api/syllabus/concepts': typeof ApiSyllabusConceptsRoute
   '/api/syllabus/subjects': typeof ApiSyllabusSubjectsRoute
@@ -658,6 +685,7 @@ export interface FileRouteTypes {
     | '/generate'
     | '/home'
     | '/onboarding'
+    | '/plan'
     | '/remediation'
     | '/settings'
     | '/student'
@@ -673,6 +701,7 @@ export interface FileRouteTypes {
     | '/api/remediation'
     | '/api/student-dashboard'
     | '/api/students'
+    | '/api/study-plan'
     | '/attempt/$id'
     | '/evaluate/$attemptId'
     | '/summary/weekly'
@@ -696,6 +725,7 @@ export interface FileRouteTypes {
     | '/api/remediation/$id'
     | '/api/remediation/generate'
     | '/api/students/$id'
+    | '/api/study-plan/generate'
     | '/api/syllabus/chapters'
     | '/api/syllabus/concepts'
     | '/api/syllabus/subjects'
@@ -729,6 +759,7 @@ export interface FileRouteTypes {
     | '/generate'
     | '/home'
     | '/onboarding'
+    | '/plan'
     | '/remediation'
     | '/settings'
     | '/student'
@@ -744,6 +775,7 @@ export interface FileRouteTypes {
     | '/api/remediation'
     | '/api/student-dashboard'
     | '/api/students'
+    | '/api/study-plan'
     | '/attempt/$id'
     | '/evaluate/$attemptId'
     | '/summary/weekly'
@@ -767,6 +799,7 @@ export interface FileRouteTypes {
     | '/api/remediation/$id'
     | '/api/remediation/generate'
     | '/api/students/$id'
+    | '/api/study-plan/generate'
     | '/api/syllabus/chapters'
     | '/api/syllabus/concepts'
     | '/api/syllabus/subjects'
@@ -800,6 +833,7 @@ export interface FileRouteTypes {
     | '/generate'
     | '/home'
     | '/onboarding'
+    | '/plan'
     | '/remediation'
     | '/settings'
     | '/student'
@@ -815,6 +849,7 @@ export interface FileRouteTypes {
     | '/api/remediation'
     | '/api/student-dashboard'
     | '/api/students'
+    | '/api/study-plan'
     | '/attempt/$id'
     | '/evaluate/$attemptId'
     | '/summary/weekly'
@@ -838,6 +873,7 @@ export interface FileRouteTypes {
     | '/api/remediation/$id'
     | '/api/remediation/generate'
     | '/api/students/$id'
+    | '/api/study-plan/generate'
     | '/api/syllabus/chapters'
     | '/api/syllabus/concepts'
     | '/api/syllabus/subjects'
@@ -872,6 +908,7 @@ export interface RootRouteChildren {
   GenerateRoute: typeof GenerateRoute
   HomeRoute: typeof HomeRoute
   OnboardingRoute: typeof OnboardingRoute
+  PlanRoute: typeof PlanRoute
   RemediationRoute: typeof RemediationRoute
   SettingsRoute: typeof SettingsRoute
   StudentRoute: typeof StudentRoute
@@ -887,6 +924,7 @@ export interface RootRouteChildren {
   ApiRemediationRoute: typeof ApiRemediationRouteWithChildren
   ApiStudentDashboardRoute: typeof ApiStudentDashboardRoute
   ApiStudentsRoute: typeof ApiStudentsRouteWithChildren
+  ApiStudyPlanRoute: typeof ApiStudyPlanRouteWithChildren
   AttemptIdRoute: typeof AttemptIdRoute
   EvaluateAttemptIdRoute: typeof EvaluateAttemptIdRoute
   SummaryWeeklyRoute: typeof SummaryWeeklyRoute
@@ -934,6 +972,13 @@ declare module '@tanstack/react-router' {
       path: '/onboarding'
       fullPath: '/onboarding'
       preLoaderRoute: typeof OnboardingRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/plan': {
+      id: '/plan'
+      path: '/plan'
+      fullPath: '/plan'
+      preLoaderRoute: typeof PlanRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/remediation': {
@@ -1039,6 +1084,13 @@ declare module '@tanstack/react-router' {
       path: '/api/students'
       fullPath: '/api/students'
       preLoaderRoute: typeof ApiStudentsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/api/study-plan': {
+      id: '/api/study-plan'
+      path: '/api/study-plan'
+      fullPath: '/api/study-plan'
+      preLoaderRoute: typeof ApiStudyPlanRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/attempt/$id': {
@@ -1201,6 +1253,13 @@ declare module '@tanstack/react-router' {
       fullPath: '/api/students/$id'
       preLoaderRoute: typeof ApiStudentsIdRouteImport
       parentRoute: typeof ApiStudentsRoute
+    }
+    '/api/study-plan/generate': {
+      id: '/api/study-plan/generate'
+      path: '/generate'
+      fullPath: '/api/study-plan/generate'
+      preLoaderRoute: typeof ApiStudyPlanGenerateRouteImport
+      parentRoute: typeof ApiStudyPlanRoute
     }
     '/api/syllabus/chapters': {
       id: '/api/syllabus/chapters'
@@ -1607,6 +1666,18 @@ const ApiStudentsRouteWithChildren = ApiStudentsRoute._addFileChildren(
   ApiStudentsRouteChildren,
 )
 
+interface ApiStudyPlanRouteChildren {
+  ApiStudyPlanGenerateRoute: typeof ApiStudyPlanGenerateRoute
+}
+
+const ApiStudyPlanRouteChildren: ApiStudyPlanRouteChildren = {
+  ApiStudyPlanGenerateRoute: ApiStudyPlanGenerateRoute,
+}
+
+const ApiStudyPlanRouteWithChildren = ApiStudyPlanRoute._addFileChildren(
+  ApiStudyPlanRouteChildren,
+)
+
 interface ApiPapersIdRouteChildren {
   ApiPapersIdCoverageRoute: typeof ApiPapersIdCoverageRoute
   ApiPapersIdPdfRoute: typeof ApiPapersIdPdfRoute
@@ -1639,6 +1710,7 @@ const rootRouteChildren: RootRouteChildren = {
   GenerateRoute: GenerateRoute,
   HomeRoute: HomeRoute,
   OnboardingRoute: OnboardingRoute,
+  PlanRoute: PlanRoute,
   RemediationRoute: RemediationRoute,
   SettingsRoute: SettingsRoute,
   StudentRoute: StudentRoute,
@@ -1654,6 +1726,7 @@ const rootRouteChildren: RootRouteChildren = {
   ApiRemediationRoute: ApiRemediationRouteWithChildren,
   ApiStudentDashboardRoute: ApiStudentDashboardRoute,
   ApiStudentsRoute: ApiStudentsRouteWithChildren,
+  ApiStudyPlanRoute: ApiStudyPlanRouteWithChildren,
   AttemptIdRoute: AttemptIdRoute,
   EvaluateAttemptIdRoute: EvaluateAttemptIdRoute,
   SummaryWeeklyRoute: SummaryWeeklyRoute,

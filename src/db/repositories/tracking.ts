@@ -214,7 +214,34 @@ export const conceptRemediationContentRepository = {
     >
   },
 }
-export const studyPlansRepository = createScopedRepository(
-  'study_plans',
-  'student_id',
-)
+export const studyPlansRepository = {
+  ...createScopedRepository('study_plans', 'student_id'),
+  // F077: "regenerable" -- (student_id, week_start) is unique regardless of status, so
+  // generateStudyPlan must UPDATE this exact row in place when it already exists, never insert a
+  // second one for the same week. week_start is a plain DATE column; the explicit ::date cast
+  // keeps the comparison unambiguous the same way concept_mastery's own date comparisons already
+  // do (see listForStudentInDateWindow above).
+  async findForWeek(db: Db, studentId: string, weekStartDate: string) {
+    return db
+      .selectFrom('study_plans')
+      .selectAll()
+      .where('student_id', '=', studentId)
+      .where(sql<boolean>`week_start = ${weekStartDate}::date`)
+      .executeTakeFirst() as Promise<Selectable<DB['study_plans']> | undefined>
+  },
+  // A new week's plan supersedes whatever was still 'active' from an earlier week -- there is
+  // only ever meant to be one current plan per student.
+  async supersedeOtherActiveWeeks(
+    db: Db,
+    studentId: string,
+    currentWeekStartDate: string,
+  ) {
+    await db
+      .updateTable('study_plans')
+      .set({ status: 'superseded' })
+      .where('student_id', '=', studentId)
+      .where('status', '=', 'active')
+      .where(sql<boolean>`week_start != ${currentWeekStartDate}::date`)
+      .execute()
+  },
+}
