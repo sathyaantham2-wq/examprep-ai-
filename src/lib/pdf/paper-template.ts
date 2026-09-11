@@ -1,5 +1,6 @@
 import type { BloomLevel, DifficultyTier, QuestionType } from '../../db/enums'
 import { escapeHtml } from './html-utils'
+import { renderDiagramSvg } from './diagrams'
 
 export interface PaperTemplateQuestion {
   id: string
@@ -11,6 +12,7 @@ export interface PaperTemplateQuestion {
   type: QuestionType
   text: string
   diagram_kind: string | null
+  diagram_params: unknown
   // Never includes is_correct or the correct-answer text -- this template renders the STUDENT
   // paper, and a student can never see or download an answer key (CLAUDE.md hard rule).
   options: Array<{ label: string; text: string; order_index: number }>
@@ -74,8 +76,13 @@ function renderQuestion(q: PaperTemplateQuestion): string {
       ? renderOptions(q.options)
       : ''
   const answerLinesHtml = renderAnswerLines(q.marks, q.type)
-  // F035: a labelled draw-here box appears whenever the question calls for a diagram, regardless
-  // of its base type (a short-answer geometry question can still need one).
+  // F024: a known diagram_kind renders the real SVG figure, printed at the start of the question
+  // (the thing the student reads/labels), followed by F035's existing blank draw-box underneath
+  // so there is still room to mark it up or work through it by hand. An unrecognised diagram_kind
+  // (or one whose diagram_params fail that kind's schema) falls back to exactly F035's original
+  // behaviour -- a bare draw-here box -- rather than a broken or missing figure.
+  const diagramSvg = renderDiagramSvg(q.diagram_kind, q.diagram_params)
+  const diagramHtml = diagramSvg ? `<div class="diagram">${diagramSvg}</div>` : ''
   const drawBoxHtml = q.diagram_kind ? '<div class="draw-box"></div>' : ''
 
   // q.position is the paper's own running slot number (assigned once, across every section, when
@@ -87,6 +94,7 @@ function renderQuestion(q: PaperTemplateQuestion): string {
       <div class="q-body">
         <div class="q-text">${escapeHtml(q.text)}</div>
         ${optionsHtml}
+        ${diagramHtml}
         ${drawBoxHtml}
         ${answerLinesHtml}
       </div>
@@ -163,6 +171,8 @@ export function buildPaperHtml(input: PaperTemplateInput): string {
   .option { margin: 2px 0 2px 12px; }
   .answer-lines { margin-top: 6px; }
   .answer-line { border-bottom: 1px solid #999; height: 15px; }
+  .diagram { margin-top: 6px; }
+  .diagram svg { display: block; max-width: 100%; height: auto; }
   .draw-box {
     border: 1px solid #333;
     height: 55px;

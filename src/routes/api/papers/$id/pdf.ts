@@ -88,6 +88,7 @@ export const Route = createFileRoute('/api/papers/$id/pdf')({
               type: s.type,
               text: s.text,
               diagram_kind: s.diagram_kind,
+              diagram_params: s.diagram_params,
               options: (optionsByQuestion.get(s.question_id) ?? []).map(
                 (o) => ({
                   label: o.label,
@@ -131,6 +132,7 @@ export const Route = createFileRoute('/api/papers/$id/pdf')({
                   text: s.text,
                   answer: s.answer,
                   diagram_kind: s.diagram_kind,
+                  diagram_params: s.diagram_params,
                   correctOptionLabel: correctOption?.label ?? null,
                   stepMarks: (stepMarksByQuestion.get(s.question_id) ?? []).map(
                     (sm) => ({

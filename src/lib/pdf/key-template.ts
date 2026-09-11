@@ -1,6 +1,7 @@
 import type { QuestionType } from '../../db/enums'
 import { escapeHtml } from './html-utils'
 import type { CoverageRow } from './coverage'
+import { renderDiagramSvg } from './diagrams'
 
 export interface KeyTemplateQuestion {
   position: number
@@ -10,6 +11,7 @@ export interface KeyTemplateQuestion {
   text: string
   answer: string
   diagram_kind: string | null
+  diagram_params: unknown
   correctOptionLabel: string | null
   stepMarks: Array<{ step_no: number; description: string; marks: number }>
 }
@@ -95,6 +97,8 @@ export function buildAnswerKeyHtml(input: KeyTemplateInput): string {
   .item .item-head { font-weight: bold; }
   .item .marks { color: #444; font-weight: normal; }
   .diagram-desc { font-style: italic; color: #444; margin-top: 4px; }
+  .diagram { margin-top: 4px; }
+  .diagram svg { display: block; max-width: 100%; height: auto; }
   table.step-marks, table.coverage {
     border-collapse: collapse;
     width: 100%;
@@ -121,6 +125,10 @@ export function buildAnswerKeyHtml(input: KeyTemplateInput): string {
       <div>${renderExpectedAnswer(q)}</div>
       ${renderStepMarks(q.stepMarks)}
       ${q.diagram_kind ? `<div class="diagram-desc">Expected diagram: ${escapeHtml(q.diagram_kind)}</div>` : ''}
+      ${(() => {
+        const svg = renderDiagramSvg(q.diagram_kind, q.diagram_params)
+        return svg ? `<div class="diagram">${svg}</div>` : ''
+      })()}
     </div>`,
     )
     .join('')}
