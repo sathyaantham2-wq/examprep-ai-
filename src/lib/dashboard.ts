@@ -2,6 +2,8 @@ import type { Db } from '../db/connection'
 import {
   conceptStatusRepository,
   patternHitsRepository,
+  remediationTasksRepository,
+  habitDrillTasksRepository,
 } from '../db/repositories'
 import type { ConceptStatusValue } from '../db/enums'
 
@@ -37,6 +39,31 @@ interface SubjectCard {
   // order), capped at the most recent 20 confirmed evaluations so the payload doesn't grow
   // unbounded over a student's whole history.
   score_history: Array<ScorePoint>
+}
+
+interface LastPaperEvaluated {
+  paper_title: string
+  percentage: number
+  confirmed_at: string
+}
+
+interface PendingItem {
+  kind: 'remediation' | 'habit_drill'
+  id: string
+  label: string
+}
+
+interface SessionRecap {
+  last_session_date: string | null
+  last_paper_evaluated: LastPaperEvaluated | null
+  // F076: the literal 'Priority' status, cross-subject -- distinct from a subject card's own
+  // priority_concepts above, which also includes 'Weak' and is scoped to one subject.
+  current_priority_concepts: Array<{
+    concept_id: string
+    concept_name: string
+    subject_name: string
+  }>
+  pending_items: Array<PendingItem>
 }
 
 const PRIORITY_ORDER: Record<string, number> = {
@@ -173,9 +200,84 @@ export async function buildParentDashboard(db: Db, studentId: string) {
     count: Number(row.count),
   }))
 
+  // F076: "On login: last session date, last paper evaluated, current priority concepts, pending
+  // items." A "session" is any attempt this student has started -- the earliest real signal of
+  // "they showed up," distinct from when a parent later reviews/confirms it.
+  const lastAttempt = await db
+    .selectFrom('attempts')
+    .select('started_at')
+    .where('student_id', '=', studentId)
+    .orderBy('started_at', 'desc')
+    .executeTakeFirst()
+
+  const lastEvaluated = await db
+    .selectFrom('evaluations')
+    .innerJoin('attempts', 'attempts.id', 'evaluations.attempt_id')
+    .innerJoin('papers', 'papers.id', 'attempts.paper_id')
+    .select([
+      'papers.title as paper_title',
+      'evaluations.percentage',
+      'evaluations.confirmed_at',
+    ])
+    .where('attempts.student_id', '=', studentId)
+    .where('evaluations.confirmed_at', 'is not', null)
+    .orderBy('evaluations.confirmed_at', 'desc')
+    .executeTakeFirst()
+
+  const allStatuses = await conceptStatusRepository.listForStudentWithFilter(
+    db,
+    studentId,
+    {},
+  )
+  const currentPriorityConcepts = allStatuses
+    .filter((s) => s.status === 'Priority')
+    .map((s) => ({
+      concept_id: s.concept_id,
+      concept_name: s.concept_name,
+      subject_name:
+        subjects.find((sub) => sub.id === s.subject_id)?.name ?? 'Unknown',
+    }))
+
+  const [remediationTasks, habitDrillTasks] = await Promise.all([
+    remediationTasksRepository.listForStudent(db, studentId),
+    habitDrillTasksRepository.listForStudent(db, studentId),
+  ])
+  const pendingItems: Array<PendingItem> = [
+    ...remediationTasks
+      .filter((t) => t.status !== 'completed')
+      .map((t) => ({
+        kind: 'remediation' as const,
+        id: t.id,
+        label: `Remediation drill: ${t.concept_name}`,
+      })),
+    ...habitDrillTasks
+      .filter((t) => t.status === 'pending')
+      .map((t) => ({
+        kind: 'habit_drill' as const,
+        id: t.id,
+        label: `Habit drill: ${t.habit_name}`,
+      })),
+  ]
+
+  const recap: SessionRecap = {
+    last_session_date: lastAttempt?.started_at
+      ? lastAttempt.started_at.toISOString().slice(0, 10)
+      : null,
+    last_paper_evaluated: lastEvaluated
+      ? {
+          paper_title: lastEvaluated.paper_title,
+          percentage: Number(lastEvaluated.percentage),
+          confirmed_at: lastEvaluated.confirmed_at!.toISOString(),
+        }
+      : null,
+    current_priority_concepts: currentPriorityConcepts,
+    pending_items: pendingItems,
+  }
+
   return {
     subjects: cards,
     concept_status_distribution: conceptStatusDistribution,
     pattern_frequency: patternFrequency,
+    recap,
   }
 }

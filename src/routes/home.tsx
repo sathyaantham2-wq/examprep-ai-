@@ -52,10 +52,34 @@ interface PatternFrequency {
   count: number
 }
 
+interface LastPaperEvaluated {
+  paper_title: string
+  percentage: number
+  confirmed_at: string
+}
+
+interface PendingItem {
+  kind: 'remediation' | 'habit_drill'
+  id: string
+  label: string
+}
+
+interface SessionRecap {
+  last_session_date: string | null
+  last_paper_evaluated: LastPaperEvaluated | null
+  current_priority_concepts: Array<{
+    concept_id: string
+    concept_name: string
+    subject_name: string
+  }>
+  pending_items: Array<PendingItem>
+}
+
 interface Dashboard {
   subjects: Array<SubjectCard>
   concept_status_distribution: Record<string, number>
   pattern_frequency: Array<PatternFrequency>
+  recap: SessionRecap
 }
 
 interface HabitTrendRow {
@@ -217,6 +241,44 @@ function ParentDashboard() {
 
       {dashboard && dashboard.subjects.length > 0 && (
         <div className="space-y-4">
+          <Card>
+            <CardHeader>
+              <CardTitle className="text-h3">Since you last checked in</CardTitle>
+            </CardHeader>
+            <CardContent className="space-y-2">
+              <p className="text-small text-muted-foreground">
+                {dashboard.recap.last_session_date
+                  ? `Last session: ${dashboard.recap.last_session_date}`
+                  : 'No sessions yet.'}
+              </p>
+              {dashboard.recap.last_paper_evaluated && (
+                <p className="text-small text-muted-foreground">
+                  Last paper evaluated:{' '}
+                  {dashboard.recap.last_paper_evaluated.paper_title} (
+                  {dashboard.recap.last_paper_evaluated.percentage}%)
+                </p>
+              )}
+              {dashboard.recap.current_priority_concepts.length > 0 && (
+                <div className="text-small">
+                  <span className="text-muted-foreground">
+                    Priority concepts:{' '}
+                  </span>
+                  {dashboard.recap.current_priority_concepts
+                    .map((c) => `${c.concept_name} (${c.subject_name})`)
+                    .join(', ')}
+                </div>
+              )}
+              {dashboard.recap.pending_items.length > 0 && (
+                <div className="text-small">
+                  <span className="text-muted-foreground">
+                    Pending: {dashboard.recap.pending_items.length} open
+                    drill{dashboard.recap.pending_items.length === 1 ? '' : 's'}
+                  </span>
+                </div>
+              )}
+            </CardContent>
+          </Card>
+
           {dashboard.subjects.map((subject) => (
             <Card key={subject.subject_id}>
               <CardHeader>
