@@ -203,6 +203,21 @@ export async function generatePaper(db: Db, input: GeneratePaperInput) {
     else buckets.needs_practice.push(conceptId) // "Needs Practice" and never-attempted both land here
   }
 
+  // F069: "re-test items appear automatically in the next generated paper." A cleared concept
+  // whose spaced-retest date has passed gets first refusal on any 'strong' bucket slot -- see the
+  // due-pool preference a few lines below, inside the section loop.
+  const now = new Date()
+  const dueRetestConceptIds = new Set(
+    statuses
+      .filter(
+        (s) =>
+          (s.status === 'Strong' || s.status === 'Maintenance') &&
+          s.next_retest_at !== null &&
+          new Date(s.next_retest_at) <= now,
+      )
+      .map((s) => s.concept_id),
+  )
+
   const excludeQuestionIds = new Set(
     await questionUsageRepository.listRecentQuestionIds(
       db,
@@ -251,6 +266,33 @@ export async function generatePaper(db: Db, input: GeneratePaperInput) {
             (id) => chapterByConceptId.get(id) === chapterId,
           )
           if (chapterPool.length === 0) continue
+
+          // F069: a 'strong' slot goes to a due re-test concept first, if this chapter has one
+          // eligible for this slot's bloom/difficulty/marks -- falls through to the normal
+          // chapterPool below when it doesn't.
+          if (bucket === 'strong') {
+            const duePool = chapterPool.filter((id) =>
+              dueRetestConceptIds.has(id),
+            )
+            if (duePool.length > 0) {
+              const dueEligible = await questionsRepository.findEligibleForSlot(
+                db,
+                {
+                  conceptIds: duePool,
+                  bloomAllowed: section.bloom_allowed,
+                  difficultiesAllowed,
+                  marks: section.marks_per_question,
+                  excludeQuestionIds: [...excludeQuestionIds],
+                },
+                1,
+              )
+              if (dueEligible.at(0)) {
+                picked = dueEligible.at(0)
+                chosenChapterId = chapterId
+                break
+              }
+            }
+          }
 
           const eligible = await questionsRepository.findEligibleForSlot(
             db,

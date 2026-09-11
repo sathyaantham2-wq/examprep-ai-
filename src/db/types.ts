@@ -183,6 +183,7 @@ export interface ConceptStatus {
   flagged_at: Timestamp | null;
   last_ratio: Numeric | null;
   next_retest_at: Timestamp | null;
+  retest_stage: Generated<number>;
   status: ConceptStatusValue;
   student_id: string;
   trend: string | null;

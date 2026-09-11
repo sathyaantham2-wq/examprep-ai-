@@ -29,14 +29,82 @@ export function computeTrend(
   return 'flat'
 }
 
-// Retest spacing is a reasonable default, not a number specified anywhere in the plan — the
-// product hasn't decided exact intervals yet. Easy to change in one place once it does.
+// Short-term follow-up windows for concepts that are NOT yet cleared -- these aren't the F069
+// re-test ladder (that only applies once a concept reaches Strong/Maintenance); they're just a
+// reasonable default for "when should we look at this again," not a number the plan specifies.
 export const RETEST_DAYS_BY_STATUS: Record<ConceptStatusValue, number> = {
   Priority: 3,
   Weak: 5,
   'Needs Practice': 10,
   Strong: 21,
   Maintenance: 30,
+}
+
+// F069: "Cleared concepts are re-queued at 7 / 21 / 60 days." Index 0 is the first re-test after
+// clearing; each further rung only applies once the prior scheduled re-test has itself come back
+// cleared. The ladder caps at 60 days rather than growing further -- the plan names exactly three
+// intervals.
+export const RETEST_LADDER_DAYS = [7, 21, 60] as const
+
+const CLEARED_STATUSES = new Set<ConceptStatusValue>(['Strong', 'Maintenance'])
+
+function addDays(from: Date, days: number): Date {
+  return new Date(from.getTime() + days * 24 * 60 * 60 * 1000)
+}
+
+/**
+ * F069's schedule, as a pure function for the same reason determineNextStatus is one: directly
+ * unit-testable without a database. A concept only moves along the 7/21/60 ladder when the
+ * attempt that cleared it again was itself the scheduled re-test (previousNextRetestAt was due) --
+ * bonus practice a student does before that date doesn't advance the schedule or reset it early.
+ * Dropping out of Strong/Maintenance always resets to rung 0 for next time the concept clears.
+ */
+export function determineRetestSchedule(params: {
+  status: ConceptStatusValue
+  previousStatus: ConceptStatusValue | undefined
+  previousStage: number
+  previousNextRetestAt: Date | undefined
+  now: Date
+}): { retestStage: number; nextRetestAt: Date } {
+  if (!CLEARED_STATUSES.has(params.status)) {
+    return {
+      retestStage: 0,
+      nextRetestAt: addDays(params.now, RETEST_DAYS_BY_STATUS[params.status]),
+    }
+  }
+
+  const wasCleared = params.previousStatus
+    ? CLEARED_STATUSES.has(params.previousStatus)
+    : false
+  if (!wasCleared) {
+    return {
+      retestStage: 0,
+      nextRetestAt: addDays(params.now, RETEST_LADDER_DAYS[0]),
+    }
+  }
+
+  const wasDue =
+    params.previousNextRetestAt !== undefined &&
+    params.previousNextRetestAt <= params.now
+  if (wasDue) {
+    const nextStage = Math.min(
+      params.previousStage + 1,
+      RETEST_LADDER_DAYS.length - 1,
+    )
+    return {
+      retestStage: nextStage,
+      nextRetestAt: addDays(params.now, RETEST_LADDER_DAYS[nextStage]),
+    }
+  }
+
+  // Already on the ladder and not due yet -- extra practice before the scheduled re-test.
+  // Leave the schedule exactly as it was rather than pushing it out further.
+  return {
+    retestStage: params.previousStage,
+    nextRetestAt:
+      params.previousNextRetestAt ??
+      addDays(params.now, RETEST_LADDER_DAYS[params.previousStage]),
+  }
 }
 
 /**
@@ -134,8 +202,15 @@ export async function recordMasteryAttempt(db: Db, input: RecordAttemptInput) {
   const isNewlyFlagged =
     status === 'Priority' && existing?.status !== 'Priority'
 
-  const retestDays = RETEST_DAYS_BY_STATUS[status]
-  const nextRetestAt = new Date(Date.now() + retestDays * 24 * 60 * 60 * 1000)
+  const { retestStage, nextRetestAt } = determineRetestSchedule({
+    status,
+    previousStatus: existing?.status,
+    previousStage: existing?.retest_stage ?? 0,
+    previousNextRetestAt: existing?.next_retest_at
+      ? new Date(existing.next_retest_at)
+      : undefined,
+    now: new Date(),
+  })
 
   const conceptStatus = await conceptStatusRepository.upsert(db, {
     student_id: input.student_id,
@@ -149,6 +224,7 @@ export async function recordMasteryAttempt(db: Db, input: RecordAttemptInput) {
       ? new Date()
       : (existing?.flagged_at ?? undefined),
     next_retest_at: nextRetestAt,
+    retest_stage: retestStage,
   })
 
   return { masteryRow, conceptStatus }

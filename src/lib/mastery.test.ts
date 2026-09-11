@@ -1,5 +1,11 @@
 import { describe, expect, it } from 'vitest'
-import { computeRawStatus, computeTrend, determineNextStatus } from './mastery'
+import {
+  computeRawStatus,
+  computeTrend,
+  determineNextStatus,
+  determineRetestSchedule,
+  RETEST_LADDER_DAYS,
+} from './mastery'
 
 describe('computeRawStatus (F062 thresholds)', () => {
   it.each([
@@ -116,5 +122,86 @@ describe('determineNextStatus (F063 escalation state machine)', () => {
       currentPersistedStatus: 'Weak',
     })
     expect(status).toBe('Needs Practice')
+  })
+})
+
+describe('determineRetestSchedule (F069 spaced re-test ladder)', () => {
+  const now = new Date('2026-01-01T00:00:00Z')
+
+  it('a concept freshly cleared from Weak starts the ladder at day 7', () => {
+    const { retestStage, nextRetestAt } = determineRetestSchedule({
+      status: 'Strong',
+      previousStatus: 'Weak',
+      previousStage: 0,
+      previousNextRetestAt: undefined,
+      now,
+    })
+    expect(retestStage).toBe(0)
+    expect(nextRetestAt.getTime() - now.getTime()).toBe(
+      RETEST_LADDER_DAYS[0] * 24 * 60 * 60 * 1000,
+    )
+  })
+
+  it('a scheduled re-test that comes back cleared advances to the next rung (7 -> 21)', () => {
+    const { retestStage, nextRetestAt } = determineRetestSchedule({
+      status: 'Strong',
+      previousStatus: 'Strong',
+      previousStage: 0,
+      previousNextRetestAt: new Date('2025-12-31T00:00:00Z'), // due before `now`
+      now,
+    })
+    expect(retestStage).toBe(1)
+    expect(nextRetestAt.getTime() - now.getTime()).toBe(
+      RETEST_LADDER_DAYS[1] * 24 * 60 * 60 * 1000,
+    )
+  })
+
+  it('advancing past the last rung caps at 60 days rather than growing further', () => {
+    const { retestStage, nextRetestAt } = determineRetestSchedule({
+      status: 'Maintenance',
+      previousStatus: 'Strong',
+      previousStage: RETEST_LADDER_DAYS.length - 1,
+      previousNextRetestAt: new Date('2025-12-31T00:00:00Z'),
+      now,
+    })
+    expect(retestStage).toBe(RETEST_LADDER_DAYS.length - 1)
+    expect(nextRetestAt.getTime() - now.getTime()).toBe(
+      RETEST_LADDER_DAYS.at(-1)! * 24 * 60 * 60 * 1000,
+    )
+  })
+
+  it('bonus practice before the scheduled date does not advance or reset the ladder', () => {
+    const scheduledFor = new Date('2026-01-10T00:00:00Z') // not due yet
+    const { retestStage, nextRetestAt } = determineRetestSchedule({
+      status: 'Strong',
+      previousStatus: 'Strong',
+      previousStage: 0,
+      previousNextRetestAt: scheduledFor,
+      now,
+    })
+    expect(retestStage).toBe(0)
+    expect(nextRetestAt).toEqual(scheduledFor)
+  })
+
+  it('regressing out of Strong/Maintenance resets the ladder to rung 0', () => {
+    const { retestStage } = determineRetestSchedule({
+      status: 'Weak',
+      previousStatus: 'Strong',
+      previousStage: 2,
+      previousNextRetestAt: new Date('2025-12-31T00:00:00Z'),
+      now,
+    })
+    expect(retestStage).toBe(0)
+  })
+
+  it('a not-yet-cleared status uses the short follow-up window, not the ladder', () => {
+    const { nextRetestAt } = determineRetestSchedule({
+      status: 'Priority',
+      previousStatus: undefined,
+      previousStage: 0,
+      previousNextRetestAt: undefined,
+      now,
+    })
+    expect(nextRetestAt.getTime() - now.getTime()).toBe(3 * 24 * 60 * 60 * 1000)
   })
 })
