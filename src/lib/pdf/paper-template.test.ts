@@ -114,13 +114,14 @@ describe('buildPaperHtml internal choice / OR pairs (F030)', () => {
   })
 })
 
-describe('buildPaperHtml theming (F034)', () => {
-  it('defaults to the Plain theme when none is given -- no decorative CSS added', () => {
+describe('buildPaperHtml theming (F034/F120)', () => {
+  it('defaults to the Clean School theme when none is given -- no decorative CSS or ornament markup added', () => {
     const html = buildPaperHtml({ ...baseInput, questions: [baseQuestion({})] })
     expect(html).not.toContain('Comic Sans MS')
+    expect(html).not.toContain('<div class="theme-ornament">')
   })
 
-  it('embeds the Doodle Journal theme CSS when selected', () => {
+  it('embeds the Doodle Journal theme CSS and its ornament markup when selected', () => {
     const html = buildPaperHtml({
       ...baseInput,
       theme: 'Doodle Journal',
@@ -128,5 +129,17 @@ describe('buildPaperHtml theming (F034)', () => {
     })
     expect(html).toContain('Comic Sans MS')
     expect(html).toContain('border-radius: 14px')
+    expect(html).toContain('<div class="theme-ornament">')
+  })
+
+  it('embeds the Manga theme CSS and its own distinct ornament markup when selected', () => {
+    const html = buildPaperHtml({
+      ...baseInput,
+      theme: 'Manga',
+      questions: [baseQuestion({})],
+    })
+    expect(html).toContain('Arial Black')
+    expect(html).toContain('<div class="theme-ornament">')
+    expect(html).not.toContain('Comic Sans MS')
   })
 })

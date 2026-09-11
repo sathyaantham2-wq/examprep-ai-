@@ -529,7 +529,7 @@ export async function generatePaper(db: Db, input: GeneratePaperInput) {
       title: blueprint.name,
       total_marks: totalMarks,
       duration_min: blueprint.duration_min,
-      theme: input.theme ?? 'Plain',
+      theme: input.theme ?? 'Clean School',
       weighting: JSON.stringify({
         target: weighting,
         actual: bucketActualPct,

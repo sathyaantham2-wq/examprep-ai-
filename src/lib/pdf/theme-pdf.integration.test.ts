@@ -1,16 +1,17 @@
 import { describe, expect, it } from 'vitest'
 import { buildPaperHtml } from './paper-template'
 import { renderHtmlToPdf } from './render'
+import { PAPER_THEMES } from './themes'
 
 /**
- * F034's "prints in black and white legibly" half for the Doodle Journal theme -- the same
+ * F034/F120's "prints in black and white legibly" half, for every theme pack -- the same
  * real-Chromium-rendering proof src/lib/pdf/diagram-pdf.integration.test.ts uses for diagrams,
  * not just a check of the generated HTML string.
  */
-describe('the Doodle Journal theme renders to a valid PDF (F034)', () => {
-  it('produces a non-trivial PDF with the theme applied', async () => {
+describe('every theme pack renders to a valid PDF (F034/F120)', () => {
+  it.each(PAPER_THEMES)('%s produces a non-trivial PDF with the theme applied', async (theme) => {
     const html = buildPaperHtml({
-      title: 'Doodle Journal Test Paper',
+      title: `${theme} Test Paper`,
       studentName: 'Test Kid',
       board: 'CBSE',
       class: 7,
@@ -18,7 +19,7 @@ describe('the Doodle Journal theme renders to a valid PDF (F034)', () => {
       totalMarks: 1,
       chapters: [],
       shortfalls: [],
-      theme: 'Doodle Journal',
+      theme,
       questions: [
         {
           id: 'q1',
@@ -28,7 +29,7 @@ describe('the Doodle Journal theme renders to a valid PDF (F034)', () => {
           bloom: 'Remember',
           difficulty: 'Easy',
           type: 'mcq',
-          text: 'A doodle-themed question',
+          text: `A ${theme}-themed question`,
           diagram_kind: null,
           diagram_params: undefined,
           choice_group: null,

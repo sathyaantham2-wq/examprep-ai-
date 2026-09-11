@@ -379,7 +379,7 @@ export async function submitDrillAttempt(
       title: `Remediation drill: ${concept.name}`,
       total_marks: questions.reduce((sum, q) => sum + q.marks, 0),
       duration_min: blueprint.duration_min,
-      theme: 'Plain',
+      theme: 'Clean School',
     })
 
     const paperQuestions = await paperQuestionsRepository.insertMany(

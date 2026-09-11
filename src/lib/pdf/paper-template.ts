@@ -1,7 +1,7 @@
 import type { BloomLevel, DifficultyTier, QuestionType } from '../../db/enums'
 import { escapeHtml } from './html-utils'
 import { renderDiagramSvg } from './diagrams'
-import { DEFAULT_THEME, THEME_STYLES } from './themes'
+import { DEFAULT_THEME, THEME_PACKS, THEME_STYLES } from './themes'
 import type { PaperTheme } from './themes'
 
 export interface PaperTemplateQuestion {
@@ -181,6 +181,7 @@ function groupBySection(
  */
 export function buildPaperHtml(input: PaperTemplateInput): string {
   const sections = groupBySection(input.questions)
+  const themePack = THEME_PACKS[input.theme ?? DEFAULT_THEME]
   const chaptersLabel = input.chapters
     .map(
       (c) =>
@@ -210,8 +211,9 @@ export function buildPaperHtml(input: PaperTemplateInput): string {
     padding-top: 4mm;
   }
   .content { margin-right: 18mm; }
-  header.paper-header { border-bottom: 2px solid #111; padding-bottom: 6px; margin-bottom: 10px; }
+  header.paper-header { border-bottom: 2px solid #111; padding-bottom: 6px; margin-bottom: 10px; position: relative; }
   header.paper-header h1 { font-size: 15pt; margin: 0 0 4px; }
+  .theme-ornament { position: absolute; top: 0; right: 0; }
   .meta-row { display: flex; justify-content: space-between; font-size: 9.5pt; }
   .chapters { font-size: 8.5pt; color: #444; margin-top: 4px; }
   .section-title { font-weight: bold; text-decoration: underline; margin: 14px 0 8px; }
@@ -254,6 +256,7 @@ export function buildPaperHtml(input: PaperTemplateInput): string {
   <div class="rough-column"><div class="label">Rough work</div></div>
   <div class="content">
     <header class="paper-header">
+      ${themePack.cornerOrnament ? `<div class="theme-ornament">${themePack.cornerOrnament}</div>` : ''}
       <h1>${escapeHtml(input.title)}</h1>
       <div class="meta-row">
         <span>Name: ${escapeHtml(input.studentName)}</span>

@@ -57,7 +57,7 @@ describe('buildAnswerKeyHtml internal choice / OR pairs (F030)', () => {
   })
 })
 
-describe('buildAnswerKeyHtml theming (F034)', () => {
+describe('buildAnswerKeyHtml theming (F034/F120)', () => {
   it('embeds the Doodle Journal theme CSS when selected, matching the student paper', () => {
     const html = buildAnswerKeyHtml({
       title: 'Test Paper',
@@ -68,7 +68,7 @@ describe('buildAnswerKeyHtml theming (F034)', () => {
     expect(html).toContain('Comic Sans MS')
   })
 
-  it('defaults to Plain -- no decorative CSS added', () => {
+  it('defaults to Clean School -- no decorative CSS added', () => {
     const html = buildAnswerKeyHtml({
       title: 'Test Paper',
       coverage: [],

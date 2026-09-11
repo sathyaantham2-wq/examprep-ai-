@@ -39,11 +39,12 @@ export const Route = createFileRoute('/api/papers/$id/pdf')({
           )
           if (!paper) return new Response(null, { status: 404 })
 
-          // F034: the ?theme= query param can re-print the same paper in a different visual style
-          // (a pure rendering choice, so it's safe to override after generation); an unknown or
-          // absent value falls back to whatever was selected at generation time
-          // (papers.theme), and finally to Plain -- never a 400 for a bad/missing theme, since a
-          // wrong theme is a cosmetic miss, not a reason to refuse the PDF outright.
+          // F034/F120: the ?theme= query param can re-print the same paper in a different visual
+          // style (a pure rendering choice, so it's safe to override after generation); an
+          // unknown, retired (e.g. F034's old 'Plain' name), or absent value falls back to
+          // whatever was selected at generation time (papers.theme), and finally to
+          // DEFAULT_THEME -- never a 400 for a bad/missing theme, since a wrong theme is a
+          // cosmetic miss, not a reason to refuse the PDF outright.
           const requestedTheme = url.searchParams.get('theme')
           const theme = isKnownTheme(requestedTheme)
             ? requestedTheme

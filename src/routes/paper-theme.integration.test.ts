@@ -36,11 +36,12 @@ function request(cookie: string, body?: unknown): Request {
 }
 
 /**
- * F034: "At least two themes ... selectable at generation; both print in black-and-white
- * legibly." Drives the real generate -> PDF pipeline for both themes, plus the PDF route's own
- * ?theme= override and its graceful (never 400) fallback for a garbage value.
+ * F034/F120: "Themes are data-driven packs ... Ship three: Manga, Doodle Journal, Clean School
+ * ... print legibly in black and white." Drives the real generate -> PDF pipeline for the theme
+ * packs, plus the PDF route's own ?theme= override and its graceful (never 400) fallback for a
+ * garbage or retired value.
  */
-describe('paper theme selection (F034)', () => {
+describe('paper theme selection (F034/F120)', () => {
   let db: Db
   let parent: TestSession
   let studentId: string
@@ -204,27 +205,27 @@ describe('paper theme selection (F034)', () => {
   })
 
   it('a ?theme= query override renders in a different theme than the one stored', async () => {
-    const plainResponse = await handlerFor(
+    const cleanSchoolResponse = await handlerFor(
       PdfRoute,
       'GET',
     )({
-      request: new Request('http://localhost/test?theme=Plain', {
+      request: new Request('http://localhost/test?theme=Clean%20School', {
         headers: { cookie: parent.cookie },
       }),
       params: { id: paperIds[0] },
     })
-    expect(plainResponse.status).toBe(200)
+    expect(cleanSchoolResponse.status).toBe(200)
     const doodleResponse = await handlerFor(
       PdfRoute,
       'GET',
     )({ request: request(parent.cookie), params: { id: paperIds[0] } })
-    const plainBytes = (await plainResponse.arrayBuffer()).byteLength
+    const cleanSchoolBytes = (await cleanSchoolResponse.arrayBuffer()).byteLength
     const doodleBytes = (await doodleResponse.arrayBuffer()).byteLength
     // Not a claim about which is bigger, just that a different theme actually produced a
     // different rendered document -- a same-size coincidence would be surprising but not
     // impossible, so this is a light signal, not the primary proof (theme-pdf.integration.test.ts
     // and paper-template.test.ts cover the real assertions).
-    expect(plainBytes).not.toBe(doodleBytes)
+    expect(cleanSchoolBytes).not.toBe(doodleBytes)
   })
 
   it('an unrecognised ?theme= value falls back gracefully instead of erroring', async () => {
@@ -239,5 +240,51 @@ describe('paper theme selection (F034)', () => {
     })
     expect(response.status).toBe(200)
     expect(response.headers.get('content-type')).toBe('application/pdf')
+  })
+
+  it("F120's retired 'Plain' name falls back gracefully too, same as any other unrecognised value", async () => {
+    const response = await handlerFor(
+      PdfRoute,
+      'GET',
+    )({
+      request: new Request('http://localhost/test?theme=Plain', {
+        headers: { cookie: parent.cookie },
+      }),
+      params: { id: paperIds[0] },
+    })
+    expect(response.status).toBe(200)
+    expect(response.headers.get('content-type')).toBe('application/pdf')
+  })
+
+  it('generates and renders a paper with the Manga theme selected', async () => {
+    const chapter = await db
+      .selectFrom('concepts')
+      .select('chapter_id')
+      .where('id', '=', conceptId)
+      .executeTakeFirstOrThrow()
+    const generateResponse = await handlerFor(
+      GenerateRoute,
+      'POST',
+    )({
+      request: request(parent.cookie, {
+        student_id: studentId,
+        blueprint_id: blueprintId,
+        chapter_ids: [chapter.chapter_id],
+        theme: 'Manga',
+        recent_usage_window_days: 0,
+      }),
+    })
+    expect(generateResponse.status).toBe(201)
+    const generated = await generateResponse.json()
+    paperIds.push(generated.paper.id)
+    expect(generated.paper.theme).toBe('Manga')
+
+    const pdfResponse = await handlerFor(
+      PdfRoute,
+      'GET',
+    )({ request: request(parent.cookie), params: { id: generated.paper.id } })
+    expect(pdfResponse.status).toBe(200)
+    const bytes = new Uint8Array(await pdfResponse.arrayBuffer())
+    expect(bytes.byteLength).toBeGreaterThan(1000)
   })
 })
