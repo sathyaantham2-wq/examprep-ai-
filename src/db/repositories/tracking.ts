@@ -163,6 +163,31 @@ export const remediationTasksRepository = {
   },
 }
 
+// F070: short drills targeting a habit rather than a concept -- see migration 0050's own note on
+// why this is a separate table from remediation_tasks.
+export const habitDrillTasksRepository = {
+  ...createScopedRepository('habit_drill_tasks', 'student_id'),
+  async listForStudent(db: Db, studentId: string) {
+    return db
+      .selectFrom('habit_drill_tasks')
+      .innerJoin('habits', 'habits.id', 'habit_drill_tasks.habit_id')
+      .select([
+        'habit_drill_tasks.id',
+        'habit_drill_tasks.habit_id',
+        'habits.code as habit_code',
+        'habits.name as habit_name',
+        'habit_drill_tasks.drill_kind',
+        'habit_drill_tasks.status',
+        'habit_drill_tasks.passed',
+        'habit_drill_tasks.created_at',
+        'habit_drill_tasks.completed_at',
+      ])
+      .where('habit_drill_tasks.student_id', '=', studentId)
+      .orderBy('habit_drill_tasks.created_at', 'desc')
+      .execute()
+  },
+}
+
 // F067: one cached row per concept -- see migration 0046's own note on why (reviewed once,
 // reused across every student who needs that concept's remediation, never regenerated per
 // student). Global reference data (keyed by concept, not household/student), so unscoped.

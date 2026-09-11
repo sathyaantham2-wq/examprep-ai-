@@ -106,6 +106,22 @@ export const questionsRepository = {
       .limit(limit)
       .execute()
   },
+  // F070: habit micro-drills aren't concept-scoped -- a habit like "shows working" is drilled with
+  // any approved question of the right type, not questions from one particular concept.
+  async findRandomApprovedByType(
+    db: Db,
+    types: Array<QuestionType>,
+    limit: number,
+  ) {
+    return db
+      .selectFrom('questions')
+      .selectAll()
+      .where('status', '=', 'approved')
+      .where('type', 'in', types)
+      .orderBy(sql`random()`)
+      .limit(limit)
+      .execute()
+  },
 }
 
 export const questionOptionsRepository = {

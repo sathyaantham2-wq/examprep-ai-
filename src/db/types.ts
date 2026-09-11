@@ -3,7 +3,7 @@
  * Please do not edit it manually.
  */
 
-import type { AiJobStatus, AnswerSource, AttemptMode, AttemptStatus, BloomLevel, ConceptStatusValue, DifficultyTier, ErrorType, EvaluatedBy, GenerationBatchItemStatus, GenerationBatchStatus, HabitRating, NotificationChannel, NotificationStatus, QuestionOrigin, QuestionStatus, QuestionType, RemediationStatus, ReviewTier, ScopeKind, StudyPlanStatus, UploadKind, UserRole } from "./enums";
+import type { AiJobStatus, AnswerSource, AttemptMode, AttemptStatus, BloomLevel, ConceptStatusValue, DifficultyTier, ErrorType, EvaluatedBy, GenerationBatchItemStatus, GenerationBatchStatus, HabitDrillKind, HabitDrillStatus, HabitRating, NotificationChannel, NotificationStatus, QuestionOrigin, QuestionStatus, QuestionType, RemediationStatus, ReviewTier, ScopeKind, StudyPlanStatus, UploadKind, UserRole } from "./enums";
 import type { ColumnType } from "kysely";
 
 export type Generated<T> = T extends ColumnType<infer S, infer I, infer U>
@@ -261,6 +261,19 @@ export interface GenerationBatchItems {
   id: Generated<string>;
   status: GenerationBatchItemStatus;
   target_count: number;
+}
+
+export interface HabitDrillTasks {
+  completed_at: Timestamp | null;
+  created_at: Generated<Timestamp>;
+  drill_kind: HabitDrillKind;
+  habit_id: string;
+  id: Generated<string>;
+  instructions: string;
+  passed: boolean | null;
+  question_ids: Generated<string[]>;
+  status: HabitDrillStatus;
+  student_id: string;
 }
 
 export interface HabitObservations {
@@ -532,6 +545,7 @@ export interface DB {
   evaluations: Evaluations;
   generation_batch_items: GenerationBatchItems;
   generation_batches: GenerationBatches;
+  habit_drill_tasks: HabitDrillTasks;
   habit_observations: HabitObservations;
   habits: Habits;
   households: Households;

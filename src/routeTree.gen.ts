@@ -23,6 +23,7 @@ import { Route as ApiAttemptsRouteImport } from './routes/api/attempts'
 import { Route as ApiAuditLogRouteImport } from './routes/api/audit-log'
 import { Route as ApiBlueprintsRouteImport } from './routes/api/blueprints'
 import { Route as ApiEvaluationsRouteImport } from './routes/api/evaluations'
+import { Route as ApiHabitDrillsRouteImport } from './routes/api/habit-drills'
 import { Route as ApiQuestionsRouteImport } from './routes/api/questions'
 import { Route as ApiRemediationRouteImport } from './routes/api/remediation'
 import { Route as ApiStudentDashboardRouteImport } from './routes/api/student-dashboard'
@@ -35,6 +36,8 @@ import { Route as ApiAttemptsIdRouteImport } from './routes/api/attempts/$id'
 import { Route as ApiAuthSplatRouteImport } from './routes/api/auth/$'
 import { Route as ApiDashboardStudentIdRouteImport } from './routes/api/dashboard/$studentId'
 import { Route as ApiEvaluationsIdRouteImport } from './routes/api/evaluations/$id'
+import { Route as ApiHabitDrillsIdRouteImport } from './routes/api/habit-drills/$id'
+import { Route as ApiHabitDrillsGenerateRouteImport } from './routes/api/habit-drills/generate'
 import { Route as ApiHouseholdsMeRouteImport } from './routes/api/households/me'
 import { Route as ApiPapersIdRouteImport } from './routes/api/papers/$id'
 import { Route as ApiPapersGenerateRouteImport } from './routes/api/papers/generate'
@@ -58,6 +61,7 @@ import { Route as ApiAttemptsIdSubmitRouteImport } from './routes/api/attempts/$
 import { Route as ApiEvaluationsIdConfirmRouteImport } from './routes/api/evaluations/$id/confirm'
 import { Route as ApiEvaluationsIdHabitsRouteImport } from './routes/api/evaluations/$id/habits'
 import { Route as ApiEvaluationsIdReportRouteImport } from './routes/api/evaluations/$id/report'
+import { Route as ApiHabitDrillsIdAttemptRouteImport } from './routes/api/habit-drills/$id/attempt'
 import { Route as ApiPapersIdCoverageRouteImport } from './routes/api/papers/$id/coverage'
 import { Route as ApiPapersIdPdfRouteImport } from './routes/api/papers/$id/pdf'
 import { Route as ApiPapersIdRegenerateSlotRouteImport } from './routes/api/papers/$id/regenerate-slot'
@@ -145,6 +149,11 @@ const ApiEvaluationsRoute = ApiEvaluationsRouteImport.update({
   path: '/api/evaluations',
   getParentRoute: () => rootRouteImport,
 } as any)
+const ApiHabitDrillsRoute = ApiHabitDrillsRouteImport.update({
+  id: '/api/habit-drills',
+  path: '/api/habit-drills',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const ApiQuestionsRoute = ApiQuestionsRouteImport.update({
   id: '/api/questions',
   path: '/api/questions',
@@ -205,6 +214,16 @@ const ApiEvaluationsIdRoute = ApiEvaluationsIdRouteImport.update({
   id: '/$id',
   path: '/$id',
   getParentRoute: () => ApiEvaluationsRoute,
+} as any)
+const ApiHabitDrillsIdRoute = ApiHabitDrillsIdRouteImport.update({
+  id: '/$id',
+  path: '/$id',
+  getParentRoute: () => ApiHabitDrillsRoute,
+} as any)
+const ApiHabitDrillsGenerateRoute = ApiHabitDrillsGenerateRouteImport.update({
+  id: '/generate',
+  path: '/generate',
+  getParentRoute: () => ApiHabitDrillsRoute,
 } as any)
 const ApiHouseholdsMeRoute = ApiHouseholdsMeRouteImport.update({
   id: '/api/households/me',
@@ -323,6 +342,11 @@ const ApiEvaluationsIdReportRoute = ApiEvaluationsIdReportRouteImport.update({
   path: '/report',
   getParentRoute: () => ApiEvaluationsIdRoute,
 } as any)
+const ApiHabitDrillsIdAttemptRoute = ApiHabitDrillsIdAttemptRouteImport.update({
+  id: '/attempt',
+  path: '/attempt',
+  getParentRoute: () => ApiHabitDrillsIdRoute,
+} as any)
 const ApiPapersIdCoverageRoute = ApiPapersIdCoverageRouteImport.update({
   id: '/coverage',
   path: '/coverage',
@@ -428,6 +452,7 @@ export interface FileRoutesByFullPath {
   '/api/audit-log': typeof ApiAuditLogRoute
   '/api/blueprints': typeof ApiBlueprintsRoute
   '/api/evaluations': typeof ApiEvaluationsRouteWithChildren
+  '/api/habit-drills': typeof ApiHabitDrillsRouteWithChildren
   '/api/questions': typeof ApiQuestionsRouteWithChildren
   '/api/remediation': typeof ApiRemediationRouteWithChildren
   '/api/student-dashboard': typeof ApiStudentDashboardRoute
@@ -440,6 +465,8 @@ export interface FileRoutesByFullPath {
   '/api/auth/$': typeof ApiAuthSplatRoute
   '/api/dashboard/$studentId': typeof ApiDashboardStudentIdRoute
   '/api/evaluations/$id': typeof ApiEvaluationsIdRouteWithChildren
+  '/api/habit-drills/$id': typeof ApiHabitDrillsIdRouteWithChildren
+  '/api/habit-drills/generate': typeof ApiHabitDrillsGenerateRoute
   '/api/households/me': typeof ApiHouseholdsMeRoute
   '/api/papers/$id': typeof ApiPapersIdRouteWithChildren
   '/api/papers/generate': typeof ApiPapersGenerateRoute
@@ -463,6 +490,7 @@ export interface FileRoutesByFullPath {
   '/api/evaluations/$id/confirm': typeof ApiEvaluationsIdConfirmRoute
   '/api/evaluations/$id/habits': typeof ApiEvaluationsIdHabitsRoute
   '/api/evaluations/$id/report': typeof ApiEvaluationsIdReportRouteWithChildren
+  '/api/habit-drills/$id/attempt': typeof ApiHabitDrillsIdAttemptRoute
   '/api/papers/$id/coverage': typeof ApiPapersIdCoverageRoute
   '/api/papers/$id/pdf': typeof ApiPapersIdPdfRoute
   '/api/papers/$id/regenerate-slot': typeof ApiPapersIdRegenerateSlotRoute
@@ -495,6 +523,7 @@ export interface FileRoutesByTo {
   '/api/audit-log': typeof ApiAuditLogRoute
   '/api/blueprints': typeof ApiBlueprintsRoute
   '/api/evaluations': typeof ApiEvaluationsRouteWithChildren
+  '/api/habit-drills': typeof ApiHabitDrillsRouteWithChildren
   '/api/questions': typeof ApiQuestionsRouteWithChildren
   '/api/remediation': typeof ApiRemediationRouteWithChildren
   '/api/student-dashboard': typeof ApiStudentDashboardRoute
@@ -507,6 +536,8 @@ export interface FileRoutesByTo {
   '/api/auth/$': typeof ApiAuthSplatRoute
   '/api/dashboard/$studentId': typeof ApiDashboardStudentIdRoute
   '/api/evaluations/$id': typeof ApiEvaluationsIdRouteWithChildren
+  '/api/habit-drills/$id': typeof ApiHabitDrillsIdRouteWithChildren
+  '/api/habit-drills/generate': typeof ApiHabitDrillsGenerateRoute
   '/api/households/me': typeof ApiHouseholdsMeRoute
   '/api/papers/$id': typeof ApiPapersIdRouteWithChildren
   '/api/papers/generate': typeof ApiPapersGenerateRoute
@@ -530,6 +561,7 @@ export interface FileRoutesByTo {
   '/api/evaluations/$id/confirm': typeof ApiEvaluationsIdConfirmRoute
   '/api/evaluations/$id/habits': typeof ApiEvaluationsIdHabitsRoute
   '/api/evaluations/$id/report': typeof ApiEvaluationsIdReportRouteWithChildren
+  '/api/habit-drills/$id/attempt': typeof ApiHabitDrillsIdAttemptRoute
   '/api/papers/$id/coverage': typeof ApiPapersIdCoverageRoute
   '/api/papers/$id/pdf': typeof ApiPapersIdPdfRoute
   '/api/papers/$id/regenerate-slot': typeof ApiPapersIdRegenerateSlotRoute
@@ -563,6 +595,7 @@ export interface FileRoutesById {
   '/api/audit-log': typeof ApiAuditLogRoute
   '/api/blueprints': typeof ApiBlueprintsRoute
   '/api/evaluations': typeof ApiEvaluationsRouteWithChildren
+  '/api/habit-drills': typeof ApiHabitDrillsRouteWithChildren
   '/api/questions': typeof ApiQuestionsRouteWithChildren
   '/api/remediation': typeof ApiRemediationRouteWithChildren
   '/api/student-dashboard': typeof ApiStudentDashboardRoute
@@ -575,6 +608,8 @@ export interface FileRoutesById {
   '/api/auth/$': typeof ApiAuthSplatRoute
   '/api/dashboard/$studentId': typeof ApiDashboardStudentIdRoute
   '/api/evaluations/$id': typeof ApiEvaluationsIdRouteWithChildren
+  '/api/habit-drills/$id': typeof ApiHabitDrillsIdRouteWithChildren
+  '/api/habit-drills/generate': typeof ApiHabitDrillsGenerateRoute
   '/api/households/me': typeof ApiHouseholdsMeRoute
   '/api/papers/$id': typeof ApiPapersIdRouteWithChildren
   '/api/papers/generate': typeof ApiPapersGenerateRoute
@@ -598,6 +633,7 @@ export interface FileRoutesById {
   '/api/evaluations/$id/confirm': typeof ApiEvaluationsIdConfirmRoute
   '/api/evaluations/$id/habits': typeof ApiEvaluationsIdHabitsRoute
   '/api/evaluations/$id/report': typeof ApiEvaluationsIdReportRouteWithChildren
+  '/api/habit-drills/$id/attempt': typeof ApiHabitDrillsIdAttemptRoute
   '/api/papers/$id/coverage': typeof ApiPapersIdCoverageRoute
   '/api/papers/$id/pdf': typeof ApiPapersIdPdfRoute
   '/api/papers/$id/regenerate-slot': typeof ApiPapersIdRegenerateSlotRoute
@@ -632,6 +668,7 @@ export interface FileRouteTypes {
     | '/api/audit-log'
     | '/api/blueprints'
     | '/api/evaluations'
+    | '/api/habit-drills'
     | '/api/questions'
     | '/api/remediation'
     | '/api/student-dashboard'
@@ -644,6 +681,8 @@ export interface FileRouteTypes {
     | '/api/auth/$'
     | '/api/dashboard/$studentId'
     | '/api/evaluations/$id'
+    | '/api/habit-drills/$id'
+    | '/api/habit-drills/generate'
     | '/api/households/me'
     | '/api/papers/$id'
     | '/api/papers/generate'
@@ -667,6 +706,7 @@ export interface FileRouteTypes {
     | '/api/evaluations/$id/confirm'
     | '/api/evaluations/$id/habits'
     | '/api/evaluations/$id/report'
+    | '/api/habit-drills/$id/attempt'
     | '/api/papers/$id/coverage'
     | '/api/papers/$id/pdf'
     | '/api/papers/$id/regenerate-slot'
@@ -699,6 +739,7 @@ export interface FileRouteTypes {
     | '/api/audit-log'
     | '/api/blueprints'
     | '/api/evaluations'
+    | '/api/habit-drills'
     | '/api/questions'
     | '/api/remediation'
     | '/api/student-dashboard'
@@ -711,6 +752,8 @@ export interface FileRouteTypes {
     | '/api/auth/$'
     | '/api/dashboard/$studentId'
     | '/api/evaluations/$id'
+    | '/api/habit-drills/$id'
+    | '/api/habit-drills/generate'
     | '/api/households/me'
     | '/api/papers/$id'
     | '/api/papers/generate'
@@ -734,6 +777,7 @@ export interface FileRouteTypes {
     | '/api/evaluations/$id/confirm'
     | '/api/evaluations/$id/habits'
     | '/api/evaluations/$id/report'
+    | '/api/habit-drills/$id/attempt'
     | '/api/papers/$id/coverage'
     | '/api/papers/$id/pdf'
     | '/api/papers/$id/regenerate-slot'
@@ -766,6 +810,7 @@ export interface FileRouteTypes {
     | '/api/audit-log'
     | '/api/blueprints'
     | '/api/evaluations'
+    | '/api/habit-drills'
     | '/api/questions'
     | '/api/remediation'
     | '/api/student-dashboard'
@@ -778,6 +823,8 @@ export interface FileRouteTypes {
     | '/api/auth/$'
     | '/api/dashboard/$studentId'
     | '/api/evaluations/$id'
+    | '/api/habit-drills/$id'
+    | '/api/habit-drills/generate'
     | '/api/households/me'
     | '/api/papers/$id'
     | '/api/papers/generate'
@@ -801,6 +848,7 @@ export interface FileRouteTypes {
     | '/api/evaluations/$id/confirm'
     | '/api/evaluations/$id/habits'
     | '/api/evaluations/$id/report'
+    | '/api/habit-drills/$id/attempt'
     | '/api/papers/$id/coverage'
     | '/api/papers/$id/pdf'
     | '/api/papers/$id/regenerate-slot'
@@ -834,6 +882,7 @@ export interface RootRouteChildren {
   ApiAuditLogRoute: typeof ApiAuditLogRoute
   ApiBlueprintsRoute: typeof ApiBlueprintsRoute
   ApiEvaluationsRoute: typeof ApiEvaluationsRouteWithChildren
+  ApiHabitDrillsRoute: typeof ApiHabitDrillsRouteWithChildren
   ApiQuestionsRoute: typeof ApiQuestionsRouteWithChildren
   ApiRemediationRoute: typeof ApiRemediationRouteWithChildren
   ApiStudentDashboardRoute: typeof ApiStudentDashboardRoute
@@ -957,6 +1006,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ApiEvaluationsRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/api/habit-drills': {
+      id: '/api/habit-drills'
+      path: '/api/habit-drills'
+      fullPath: '/api/habit-drills'
+      preLoaderRoute: typeof ApiHabitDrillsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/api/questions': {
       id: '/api/questions'
       path: '/api/questions'
@@ -1040,6 +1096,20 @@ declare module '@tanstack/react-router' {
       fullPath: '/api/evaluations/$id'
       preLoaderRoute: typeof ApiEvaluationsIdRouteImport
       parentRoute: typeof ApiEvaluationsRoute
+    }
+    '/api/habit-drills/$id': {
+      id: '/api/habit-drills/$id'
+      path: '/$id'
+      fullPath: '/api/habit-drills/$id'
+      preLoaderRoute: typeof ApiHabitDrillsIdRouteImport
+      parentRoute: typeof ApiHabitDrillsRoute
+    }
+    '/api/habit-drills/generate': {
+      id: '/api/habit-drills/generate'
+      path: '/generate'
+      fullPath: '/api/habit-drills/generate'
+      preLoaderRoute: typeof ApiHabitDrillsGenerateRouteImport
+      parentRoute: typeof ApiHabitDrillsRoute
     }
     '/api/households/me': {
       id: '/api/households/me'
@@ -1201,6 +1271,13 @@ declare module '@tanstack/react-router' {
       fullPath: '/api/evaluations/$id/report'
       preLoaderRoute: typeof ApiEvaluationsIdReportRouteImport
       parentRoute: typeof ApiEvaluationsIdRoute
+    }
+    '/api/habit-drills/$id/attempt': {
+      id: '/api/habit-drills/$id/attempt'
+      path: '/attempt'
+      fullPath: '/api/habit-drills/$id/attempt'
+      preLoaderRoute: typeof ApiHabitDrillsIdAttemptRouteImport
+      parentRoute: typeof ApiHabitDrillsIdRoute
     }
     '/api/papers/$id/coverage': {
       id: '/api/papers/$id/coverage'
@@ -1386,6 +1463,31 @@ const ApiEvaluationsRouteWithChildren = ApiEvaluationsRoute._addFileChildren(
   ApiEvaluationsRouteChildren,
 )
 
+interface ApiHabitDrillsIdRouteChildren {
+  ApiHabitDrillsIdAttemptRoute: typeof ApiHabitDrillsIdAttemptRoute
+}
+
+const ApiHabitDrillsIdRouteChildren: ApiHabitDrillsIdRouteChildren = {
+  ApiHabitDrillsIdAttemptRoute: ApiHabitDrillsIdAttemptRoute,
+}
+
+const ApiHabitDrillsIdRouteWithChildren =
+  ApiHabitDrillsIdRoute._addFileChildren(ApiHabitDrillsIdRouteChildren)
+
+interface ApiHabitDrillsRouteChildren {
+  ApiHabitDrillsIdRoute: typeof ApiHabitDrillsIdRouteWithChildren
+  ApiHabitDrillsGenerateRoute: typeof ApiHabitDrillsGenerateRoute
+}
+
+const ApiHabitDrillsRouteChildren: ApiHabitDrillsRouteChildren = {
+  ApiHabitDrillsIdRoute: ApiHabitDrillsIdRouteWithChildren,
+  ApiHabitDrillsGenerateRoute: ApiHabitDrillsGenerateRoute,
+}
+
+const ApiHabitDrillsRouteWithChildren = ApiHabitDrillsRoute._addFileChildren(
+  ApiHabitDrillsRouteChildren,
+)
+
 interface ApiQuestionsIdRouteChildren {
   ApiQuestionsIdApproveRoute: typeof ApiQuestionsIdApproveRoute
   ApiQuestionsIdRejectRoute: typeof ApiQuestionsIdRejectRoute
@@ -1547,6 +1649,7 @@ const rootRouteChildren: RootRouteChildren = {
   ApiAuditLogRoute: ApiAuditLogRoute,
   ApiBlueprintsRoute: ApiBlueprintsRoute,
   ApiEvaluationsRoute: ApiEvaluationsRouteWithChildren,
+  ApiHabitDrillsRoute: ApiHabitDrillsRouteWithChildren,
   ApiQuestionsRoute: ApiQuestionsRouteWithChildren,
   ApiRemediationRoute: ApiRemediationRouteWithChildren,
   ApiStudentDashboardRoute: ApiStudentDashboardRoute,
@@ -1572,12 +1675,3 @@ const rootRouteChildren: RootRouteChildren = {
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
   ._addFileTypes<FileRouteTypes>()
-
-import type { getRouter } from './router.tsx'
-import type { createStart } from '@tanstack/react-start'
-declare module '@tanstack/react-start' {
-  interface Register {
-    ssr: true
-    router: Awaited<ReturnType<typeof getRouter>>
-  }
-}

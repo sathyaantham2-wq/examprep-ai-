@@ -201,6 +201,32 @@ export const habitObservationsRepository = {
       .returningAll()
       .execute() as Promise<Array<Selectable<DB['habit_observations']>>>
   },
+  // F070: "two most recent ratings for this habit are not 'present'" is the micro-drill trigger
+  // (the same "two in a row" shape F063 already uses for Priority) -- most-recent-first, unlike
+  // trendForStudent's oldest-first (a trend line reads left-to-right; a trigger check only needs
+  // the tail).
+  async recentRatingsForHabit(
+    db: Db,
+    studentId: string,
+    habitId: string,
+    limit = 2,
+  ) {
+    return db
+      .selectFrom('habit_observations')
+      .innerJoin(
+        'evaluations',
+        'evaluations.id',
+        'habit_observations.evaluation_id',
+      )
+      .innerJoin('attempts', 'attempts.id', 'evaluations.attempt_id')
+      .select(['habit_observations.rating', 'evaluations.confirmed_at'])
+      .where('attempts.student_id', '=', studentId)
+      .where('habit_observations.habit_id', '=', habitId)
+      .where('evaluations.confirmed_at', 'is not', null)
+      .orderBy('evaluations.confirmed_at', 'desc')
+      .limit(limit)
+      .execute()
+  },
   // F058: "a trend line" -- every rating this student has ever received for each habit, oldest
   // first, across all of their confirmed evaluations (not just one paper).
   async trendForStudent(db: Db, studentId: string) {

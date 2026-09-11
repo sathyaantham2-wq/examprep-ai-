@@ -27,6 +27,8 @@ export type HabitRating = 'present' | 'partial' | 'absent'
 export type ConceptStatusValue =
   'Strong' | 'Needs Practice' | 'Weak' | 'Priority' | 'Maintenance'
 export type RemediationStatus = 'pending' | 'in_progress' | 'completed'
+export type HabitDrillKind = 'mark_to_point' | 'three_check_ar' | 'blank_sweep'
+export type HabitDrillStatus = 'pending' | 'completed'
 export type StudyPlanStatus = 'active' | 'completed' | 'superseded'
 export type UploadKind = 'scan' | 'source_pdf'
 export type AiJobStatus = 'success' | 'error' | 'pending'
