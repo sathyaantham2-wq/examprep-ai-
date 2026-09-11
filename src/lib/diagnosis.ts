@@ -18,13 +18,26 @@ interface ErrorInventoryRow {
   patterns: Array<{ code: string; name: string }>
 }
 
+interface UnmasteredPrerequisite {
+  concept_id: string
+  concept_name: string
+  status: string | null
+}
+
 interface RankedAction {
   concept_id: string
   concept_name: string
   status: string
   last_ratio: number | null
   action: string
+  // F018: "weak concept surfaces its unmastered prerequisites in the diagnosis." Empty when the
+  // concept has no prerequisites configured, or when every configured prerequisite is already
+  // mastered (Strong/Maintenance) -- the same MASTERED_STATUSES definition
+  // src/lib/student-dashboard.ts already uses.
+  unmastered_prerequisites: Array<UnmasteredPrerequisite>
 }
+
+const MASTERED_STATUSES = new Set(['Strong', 'Maintenance'])
 
 interface ConceptPerformanceRow {
   concept_id: string
@@ -184,15 +197,46 @@ export async function buildDiagnosisReport(db: Db, evaluationId: string) {
   for (const status of candidates.slice(0, 3)) {
     const concept = await db
       .selectFrom('concepts')
-      .select(['name'])
+      .select(['name', 'prerequisite_concept_ids'])
       .where('id', '=', status.concept_id)
       .executeTakeFirstOrThrow()
+
+    const prerequisiteIds = concept.prerequisite_concept_ids
+    const unmasteredPrerequisites: Array<UnmasteredPrerequisite> = []
+    for (const prereqId of prerequisiteIds) {
+      const prereqConcept = await db
+        .selectFrom('concepts')
+        .select(['name'])
+        .where('id', '=', prereqId)
+        .executeTakeFirst()
+      if (!prereqConcept) continue // a dangling id (the concept was never real / was replaced)
+
+      const prereqStatus = await conceptStatusRepository.findOne(
+        db,
+        attempt.student_id,
+        prereqId,
+      )
+      if (prereqStatus && MASTERED_STATUSES.has(prereqStatus.status)) continue
+
+      unmasteredPrerequisites.push({
+        concept_id: prereqId,
+        concept_name: prereqConcept.name,
+        status: prereqStatus?.status ?? null, // null == never attempted, not just "not mastered"
+      })
+    }
+
+    const prereqNote =
+      unmasteredPrerequisites.length > 0
+        ? ` This also depends on ${unmasteredPrerequisites.map((p) => p.concept_name).join(', ')}, which isn't solid yet — that may be worth reviewing first.`
+        : ''
+
     ranked.push({
       concept_id: status.concept_id,
       concept_name: concept.name,
       status: status.status,
       last_ratio: status.last_ratio !== null ? Number(status.last_ratio) : null,
-      action: `Practice ${concept.name} — currently ${status.status}${status.last_ratio !== null ? `, last scored ${Math.round(Number(status.last_ratio) * 100)}%` : ''}.`,
+      action: `Practice ${concept.name} — currently ${status.status}${status.last_ratio !== null ? `, last scored ${Math.round(Number(status.last_ratio) * 100)}%` : ''}.${prereqNote}`,
+      unmastered_prerequisites: unmasteredPrerequisites,
     })
   }
 

@@ -171,6 +171,7 @@ export interface Concepts {
   id: Generated<string>;
   idea: string | null;
   name: string;
+  prerequisite_concept_ids: Generated<string[]>;
   rule: string | null;
   target_question_count: Generated<number>;
 }
