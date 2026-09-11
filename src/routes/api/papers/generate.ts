@@ -9,6 +9,7 @@ import {
   consentsRepository,
   generationEventsRepository,
 } from '../../../db/repositories'
+import { PAPER_THEMES } from '../../../lib/pdf/themes'
 
 // F112: "Student role may generate ... papers within a daily quota." Not a number the plan
 // specifies -- a documented default, the same kind RETEST_LADDER_DAYS (src/lib/mastery.ts) and
@@ -47,7 +48,10 @@ const generateSchema = z
     student_id: z.string().uuid().optional(),
     blueprint_id: z.string().uuid(),
     chapter_ids: z.array(z.string().uuid()).min(1),
-    theme: z.string().min(1).optional(),
+    // F034: "selectable at generation" -- the moment this actually gets validated; the PDF
+    // route's own ?theme= override is deliberately more lenient (falls back rather than 400s,
+    // since it's just a re-print convenience, not the generation record).
+    theme: z.enum(PAPER_THEMES).optional(),
     // F119: this is a ceiling on difficulty, never a filter on which concepts get picked.
     difficulty_ceiling: z.enum(DIFFICULTY_TIERS).optional(),
     weighting_override: weightingSchema.optional(),

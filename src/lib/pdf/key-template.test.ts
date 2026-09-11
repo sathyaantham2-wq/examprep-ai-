@@ -56,3 +56,24 @@ describe('buildAnswerKeyHtml internal choice / OR pairs (F030)', () => {
     expect(html).not.toContain('class="or-divider"')
   })
 })
+
+describe('buildAnswerKeyHtml theming (F034)', () => {
+  it('embeds the Doodle Journal theme CSS when selected, matching the student paper', () => {
+    const html = buildAnswerKeyHtml({
+      title: 'Test Paper',
+      coverage: [],
+      theme: 'Doodle Journal',
+      questions: [baseQuestion({})],
+    })
+    expect(html).toContain('Comic Sans MS')
+  })
+
+  it('defaults to Plain -- no decorative CSS added', () => {
+    const html = buildAnswerKeyHtml({
+      title: 'Test Paper',
+      coverage: [],
+      questions: [baseQuestion({})],
+    })
+    expect(html).not.toContain('Comic Sans MS')
+  })
+})

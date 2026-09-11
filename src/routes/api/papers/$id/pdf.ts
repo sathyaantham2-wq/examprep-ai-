@@ -14,6 +14,7 @@ import { buildPaperHtml } from '../../../../lib/pdf/paper-template'
 import { buildAnswerKeyHtml } from '../../../../lib/pdf/key-template'
 import { computeCoverageTable } from '../../../../lib/pdf/coverage'
 import { extractStyleAndBody } from '../../../../lib/pdf/html-utils'
+import { DEFAULT_THEME, isKnownTheme } from '../../../../lib/pdf/themes'
 
 // tab05: GET /api/papers/:id/pdf, Parent, query (theme, include_key) -> application/pdf stream.
 // Parent-only (same as GET /api/papers/:id) is what actually enforces "a student can never see or
@@ -28,8 +29,6 @@ export const Route = createFileRoute('/api/papers/$id/pdf')({
 
         const url = new URL(request.url)
         const includeKey = url.searchParams.get('include_key') === 'true'
-        // F034/F120 (theme packs) aren't built -- every theme renders as the one "Plain" layout
-        // that exists today. The query param is accepted per tab05's contract, not yet acted on.
 
         const db = createDb()
         try {
@@ -39,6 +38,18 @@ export const Route = createFileRoute('/api/papers/$id/pdf')({
             params.id,
           )
           if (!paper) return new Response(null, { status: 404 })
+
+          // F034: the ?theme= query param can re-print the same paper in a different visual style
+          // (a pure rendering choice, so it's safe to override after generation); an unknown or
+          // absent value falls back to whatever was selected at generation time
+          // (papers.theme), and finally to Plain -- never a 400 for a bad/missing theme, since a
+          // wrong theme is a cosmetic miss, not a reason to refuse the PDF outright.
+          const requestedTheme = url.searchParams.get('theme')
+          const theme = isKnownTheme(requestedTheme)
+            ? requestedTheme
+            : isKnownTheme(paper.theme)
+              ? paper.theme
+              : DEFAULT_THEME
 
           const [student, slots, chapters] = await Promise.all([
             studentsRepository.findById(db, auth.householdId, paper.student_id),
@@ -99,6 +110,7 @@ export const Route = createFileRoute('/api/papers/$id/pdf')({
               ),
             })),
             shortfalls,
+            theme,
           })
 
           let finalHtml = paperHtml
@@ -146,6 +158,7 @@ export const Route = createFileRoute('/api/papers/$id/pdf')({
                 }
               }),
               coverage,
+              theme,
             })
 
             // Combined into one document (this route only ever returns one PDF stream, per

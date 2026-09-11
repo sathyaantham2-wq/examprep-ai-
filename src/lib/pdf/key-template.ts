@@ -2,6 +2,8 @@ import type { QuestionType } from '../../db/enums'
 import { escapeHtml } from './html-utils'
 import type { CoverageRow } from './coverage'
 import { renderDiagramSvg } from './diagrams'
+import { DEFAULT_THEME, THEME_STYLES } from './themes'
+import type { PaperTheme } from './themes'
 
 export interface KeyTemplateQuestion {
   position: number
@@ -21,6 +23,7 @@ export interface KeyTemplateInput {
   title: string
   questions: Array<KeyTemplateQuestion>
   coverage: Array<CoverageRow>
+  theme?: PaperTheme
 }
 
 function renderExpectedAnswer(q: KeyTemplateQuestion): string {
@@ -164,6 +167,7 @@ export function buildAnswerKeyHtml(input: KeyTemplateInput): string {
     text-align: left;
   }
   h2.coverage-title { margin-top: 24px; font-size: 13pt; }
+  ${THEME_STYLES[input.theme ?? DEFAULT_THEME]}
 </style>
 </head>
 <body>

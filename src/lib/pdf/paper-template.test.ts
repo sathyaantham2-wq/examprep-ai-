@@ -113,3 +113,20 @@ describe('buildPaperHtml internal choice / OR pairs (F030)', () => {
     expect(html).not.toContain('class="or-divider"')
   })
 })
+
+describe('buildPaperHtml theming (F034)', () => {
+  it('defaults to the Plain theme when none is given -- no decorative CSS added', () => {
+    const html = buildPaperHtml({ ...baseInput, questions: [baseQuestion({})] })
+    expect(html).not.toContain('Comic Sans MS')
+  })
+
+  it('embeds the Doodle Journal theme CSS when selected', () => {
+    const html = buildPaperHtml({
+      ...baseInput,
+      theme: 'Doodle Journal',
+      questions: [baseQuestion({})],
+    })
+    expect(html).toContain('Comic Sans MS')
+    expect(html).toContain('border-radius: 14px')
+  })
+})

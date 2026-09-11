@@ -1,6 +1,8 @@
 import type { BloomLevel, DifficultyTier, QuestionType } from '../../db/enums'
 import { escapeHtml } from './html-utils'
 import { renderDiagramSvg } from './diagrams'
+import { DEFAULT_THEME, THEME_STYLES } from './themes'
+import type { PaperTheme } from './themes'
 
 export interface PaperTemplateQuestion {
   id: string
@@ -32,6 +34,7 @@ export interface PaperTemplateInput {
   chapters: Array<{ part: string; chapter_no: number; name: string }>
   questions: Array<PaperTemplateQuestion>
   shortfalls: Array<{ section: string; reason: string }>
+  theme?: PaperTheme
 }
 
 const ANSWER_LINE_COUNT: Record<QuestionType, number> = {
@@ -244,6 +247,7 @@ export function buildPaperHtml(input: PaperTemplateInput): string {
     border-top: 1px dashed #a00;
     padding-top: 6px;
   }
+  ${THEME_STYLES[input.theme ?? DEFAULT_THEME]}
 </style>
 </head>
 <body>
