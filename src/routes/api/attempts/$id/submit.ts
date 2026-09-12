@@ -8,6 +8,7 @@ import {
   paperQuestionsRepository,
   attemptAnswersRepository,
 } from '../../../../db/repositories'
+import { logProductEvent } from '../../../../lib/product-events'
 
 const submitSchema = z.object({
   // Set once the student has seen the "you have N blank answers" warning and chosen to proceed
@@ -94,6 +95,12 @@ export const Route = createFileRoute('/api/attempts/$id/submit')({
               duration_used_sec: durationUsedSec,
             },
           )
+
+          await logProductEvent(db, {
+            eventType: 'attempt_submitted',
+            householdId: student.household_id,
+            studentId: student.id,
+          })
 
           // "Objective scoring queued" per tab05 is M09's job (auto-evaluation), which doesn't
           // exist yet — this endpoint only closes the attempt.

@@ -15,6 +15,7 @@ import { buildAnswerKeyHtml } from '../../../../lib/pdf/key-template'
 import { computeCoverageTable } from '../../../../lib/pdf/coverage'
 import { extractStyleAndBody } from '../../../../lib/pdf/html-utils'
 import { DEFAULT_THEME, isKnownTheme } from '../../../../lib/pdf/themes'
+import { logProductEvent } from '../../../../lib/product-events'
 
 // tab05: GET /api/papers/:id/pdf, Parent, query (theme, include_key) -> application/pdf stream.
 // Parent-only (same as GET /api/papers/:id) is what actually enforces "a student can never see or
@@ -184,6 +185,13 @@ ${keyParts.body}
           }
 
           const pdf = await renderHtmlToPdf(finalHtml)
+
+          await logProductEvent(db, {
+            eventType: 'paper_downloaded',
+            householdId: auth.householdId,
+            studentId: paper.student_id,
+          })
+
           return new Response(new Uint8Array(pdf), {
             headers: {
               'content-type': 'application/pdf',

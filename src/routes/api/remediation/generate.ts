@@ -4,6 +4,7 @@ import { requireRole } from '../../../lib/session'
 import { createDb } from '../../../db/connection'
 import { studentsRepository } from '../../../db/repositories'
 import { buildRemediationPack } from '../../../lib/remediation'
+import { logProductEvent } from '../../../lib/product-events'
 
 const requestSchema = z.object({
   student_id: z.string().uuid(),
@@ -54,6 +55,12 @@ export const Route = createFileRoute('/api/remediation/generate')({
             const { status, message } = REASON_MESSAGES[result.reason]
             return Response.json({ error: message }, { status })
           }
+
+          await logProductEvent(db, {
+            eventType: 'remediation_started',
+            householdId: auth.householdId,
+            studentId: student.id,
+          })
 
           return Response.json(result, { status: 201 })
         } finally {

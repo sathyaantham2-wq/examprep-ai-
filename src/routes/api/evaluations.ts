@@ -7,6 +7,7 @@ import {
   evaluationsRepository,
   evaluationItemsRepository,
 } from '../../db/repositories'
+import { logProductEvent } from '../../lib/product-events'
 
 const createEvaluationSchema = z.object({
   attempt_id: z.string().uuid(),
@@ -68,6 +69,13 @@ export const Route = createFileRoute('/api/evaluations')({
           }
 
           const result = await createEvaluation(db, attempt.id)
+
+          await logProductEvent(db, {
+            eventType: 'evaluation_completed',
+            householdId: auth.householdId,
+            studentId: attempt.student_id,
+          })
+
           return Response.json(result, { status: 201 })
         } finally {
           await db.destroy()

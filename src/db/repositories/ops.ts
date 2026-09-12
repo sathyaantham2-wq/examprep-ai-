@@ -201,3 +201,42 @@ export const auditLogRepository = {
       .execute()
   },
 }
+
+export interface ProductFunnelCount {
+  event_type: string
+  households: number
+  students: number
+  events: number
+}
+
+export const productEventsRepository = {
+  ...createScopedRepository('product_events', 'household_id'),
+  // F093: "funnel view." One row per event_type in [from, to] -- `households`/`students` count
+  // DISTINCT actors who reached that stage at least once (the actual funnel metric: "how many
+  // families got this far", not "how many times this fired"), while `events` is the raw count for
+  // context (a household re-generating five papers still only counts once toward the funnel).
+  async funnelCounts(
+    db: Db,
+    input: { from: Date; to: Date | null },
+  ): Promise<Array<ProductFunnelCount>> {
+    let query = db
+      .selectFrom('product_events')
+      .select([
+        'event_type',
+        sql<string>`count(distinct household_id)`.as('households'),
+        sql<string>`count(distinct student_id)`.as('students'),
+        sql<string>`count(*)`.as('events'),
+      ])
+      .where('created_at', '>=', input.from)
+    if (input.to !== null) {
+      query = query.where('created_at', '<=', input.to)
+    }
+    const rows = await query.groupBy('event_type').execute()
+    return rows.map((r) => ({
+      event_type: r.event_type,
+      households: Number(r.households),
+      students: Number(r.students),
+      events: Number(r.events),
+    }))
+  },
+}

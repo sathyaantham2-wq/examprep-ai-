@@ -11,6 +11,7 @@ import {
 } from '../../../db/repositories'
 import { PAPER_THEMES } from '../../../lib/pdf/themes'
 import { StudentSpendCapReachedError, enforceStudentSpendBudget } from '../../../lib/ai-metering'
+import { logProductEvent } from '../../../lib/product-events'
 
 // F112: "Student role may generate ... papers within a daily quota." Not a number the plan
 // specifies -- a documented default, the same kind RETEST_LADDER_DAYS (src/lib/mastery.ts) and
@@ -182,6 +183,12 @@ export const Route = createFileRoute('/api/papers/generate')({
               triggered_by: 'student',
             })
           }
+
+          await logProductEvent(db, {
+            eventType: 'paper_generated',
+            householdId: student.household_id,
+            studentId: student.id,
+          })
 
           return Response.json(result, { status: 201 })
         } finally {

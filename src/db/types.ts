@@ -370,6 +370,15 @@ export interface Patterns {
   subject_scope: string | null;
 }
 
+export interface ProductEvents {
+  created_at: Generated<Timestamp>;
+  event_type: string;
+  household_id: string;
+  id: Generated<string>;
+  metadata: Json | null;
+  student_id: string;
+}
+
 export interface QuestionOptions {
   created_at: Generated<Timestamp>;
   id: Generated<string>;
@@ -567,6 +576,7 @@ export interface DB {
   papers: Papers;
   pattern_hits: PatternHits;
   patterns: Patterns;
+  product_events: ProductEvents;
   question_options: QuestionOptions;
   question_step_marks: QuestionStepMarks;
   question_usage: QuestionUsage;
