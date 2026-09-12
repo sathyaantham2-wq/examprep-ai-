@@ -3,9 +3,11 @@ import type { Db } from '../db/connection'
 import type { BloomLevel, DifficultyTier, QuestionType } from '../db/enums'
 import { env } from './env'
 import { enforceAiCallBudget, logAiJob } from './ai-metering'
+import { callWithModelFallback, modelForFeature } from './ai-models'
 
-// AI-01 in tab07: same "strong model" tier as AI-05's subjective grading.
-const MODEL = 'claude-sonnet-5'
+// F094: resolved from tab07's task-to-model map (src/lib/ai-models.ts) rather than a hardcoded
+// literal -- AI-01 is "strong model" tier, same as AI-05's subjective grading.
+const MODEL = modelForFeature('AI-01')
 
 let cachedClient: Anthropic | null = null
 function getClient(): Anthropic | null {
@@ -144,12 +146,18 @@ Respond with ONLY a JSON array, no other text, each element matching exactly:
 
   const startedAt = Date.now()
   let response: Awaited<ReturnType<typeof client.messages.create>>
+  let modelUsed = MODEL
   try {
-    response = await client.messages.create({
-      model: MODEL,
-      max_tokens: 4096,
-      messages: [{ role: 'user', content: prompt }],
-    })
+    // F094: one retry against the cheap-tier model on a primary-model failure.
+    const outcome = await callWithModelFallback(MODEL, (model) =>
+      client.messages.create({
+        model,
+        max_tokens: 4096,
+        messages: [{ role: 'user', content: prompt }],
+      }),
+    )
+    response = outcome.result
+    modelUsed = outcome.modelUsed
   } catch (err) {
     await logAiJob(db, {
       feature: 'AI-01',
@@ -168,7 +176,7 @@ Respond with ONLY a JSON array, no other text, each element matching exactly:
   }
   await logAiJob(db, {
     feature: 'AI-01',
-    model: MODEL,
+    model: modelUsed,
     householdId: input.householdId,
     studentId: input.studentId,
     tokensIn: usage.inputTokens,

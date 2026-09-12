@@ -2,9 +2,11 @@ import Anthropic from '@anthropic-ai/sdk'
 import type { Db } from '../db/connection'
 import { env } from './env'
 import { enforceAiCallBudget, logAiJob } from './ai-metering'
+import { callWithModelFallback, modelForFeature } from './ai-models'
 
-// AI-09 in tab07: same "strong model" tier as AI-01/AI-05.
-const MODEL = 'claude-sonnet-5'
+// F094: resolved from tab07's task-to-model map (src/lib/ai-models.ts) rather than a hardcoded
+// literal -- AI-09 is "strong model" tier, same as AI-01/AI-05.
+const MODEL = modelForFeature('AI-09')
 
 let cachedClient: Anthropic | null = null
 function getClient(): Anthropic | null {
@@ -71,12 +73,18 @@ Respond with ONLY a JSON object, no other text, matching exactly:
 
   const startedAt = Date.now()
   let response: Awaited<ReturnType<typeof client.messages.create>>
+  let modelUsed = MODEL
   try {
-    response = await client.messages.create({
-      model: MODEL,
-      max_tokens: 2048,
-      messages: [{ role: 'user', content: prompt }],
-    })
+    // F094: one retry against the cheap-tier model on a primary-model failure.
+    const outcome = await callWithModelFallback(MODEL, (model) =>
+      client.messages.create({
+        model,
+        max_tokens: 2048,
+        messages: [{ role: 'user', content: prompt }],
+      }),
+    )
+    response = outcome.result
+    modelUsed = outcome.modelUsed
   } catch (err) {
     await logAiJob(db, {
       feature: 'AI-09',
@@ -91,7 +99,7 @@ Respond with ONLY a JSON object, no other text, matching exactly:
   }
   await logAiJob(db, {
     feature: 'AI-09',
-    model: MODEL,
+    model: modelUsed,
     householdId: input.householdId,
     studentId: input.studentId,
     tokensIn: response.usage.input_tokens,

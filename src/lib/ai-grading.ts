@@ -3,6 +3,7 @@ import type { Db } from '../db/connection'
 import type { ErrorType } from '../db/enums'
 import { env } from './env'
 import { enforceAiCallBudget, logAiJob } from './ai-metering'
+import { callWithModelFallback, modelForFeature } from './ai-models'
 
 const ERROR_TYPES = [
   'Conceptual Gap',
@@ -13,8 +14,9 @@ const ERROR_TYPES = [
   'Not Attempted',
 ] as const
 
-// AI-05 in tab07: "Strong model" tier, same class used for question generation (AI-01).
-const MODEL = 'claude-sonnet-5'
+// F094: "strong model for generation and grading" -- resolved from tab07's task-to-model map
+// (src/lib/ai-models.ts), not a hardcoded literal, so this stays in sync if that mapping changes.
+const MODEL = modelForFeature('AI-05')
 
 let cachedClient: Anthropic | null = null
 function getClient(): Anthropic | null {
@@ -106,12 +108,19 @@ Respond with ONLY a JSON object, no other text, matching exactly:
 
   const startedAt = Date.now()
   let response: Awaited<ReturnType<typeof client.messages.create>>
+  let modelUsed = MODEL
   try {
-    response = await client.messages.create({
-      model: MODEL,
-      max_tokens: 1024,
-      messages: [{ role: 'user', content: prompt }],
-    })
+    // F094: "automatic fallback on failure" -- a primary-model error (rate limit, outage, ...)
+    // gets one retry against the cheap-tier model before this call gives up entirely.
+    const outcome = await callWithModelFallback(MODEL, (model) =>
+      client.messages.create({
+        model,
+        max_tokens: 1024,
+        messages: [{ role: 'user', content: prompt }],
+      }),
+    )
+    response = outcome.result
+    modelUsed = outcome.modelUsed
   } catch (err) {
     await logAiJob(db, {
       feature: 'AI-05',
@@ -126,7 +135,7 @@ Respond with ONLY a JSON object, no other text, matching exactly:
   }
   await logAiJob(db, {
     feature: 'AI-05',
-    model: MODEL,
+    model: modelUsed,
     householdId: input.householdId,
     studentId: input.studentId,
     tokensIn: response.usage.input_tokens,
