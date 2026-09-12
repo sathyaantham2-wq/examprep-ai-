@@ -20,6 +20,7 @@ import { Route as StudentRouteImport } from './routes/student'
 import { Route as AdminBlueprintsRouteImport } from './routes/admin/blueprints'
 import { Route as AdminCoverageRouteImport } from './routes/admin/coverage'
 import { Route as AdminQuestionsRouteImport } from './routes/admin/questions'
+import { Route as AdminUsageRouteImport } from './routes/admin/usage'
 import { Route as ApiAttemptsRouteImport } from './routes/api/attempts'
 import { Route as ApiAuditLogRouteImport } from './routes/api/audit-log'
 import { Route as ApiBlueprintsRouteImport } from './routes/api/blueprints'
@@ -34,6 +35,7 @@ import { Route as ApiStudyPlanRouteImport } from './routes/api/study-plan'
 import { Route as AttemptIdRouteImport } from './routes/attempt/$id'
 import { Route as EvaluateAttemptIdRouteImport } from './routes/evaluate/$attemptId'
 import { Route as SummaryWeeklyRouteImport } from './routes/summary/weekly'
+import { Route as ApiAdminAiUsageRouteImport } from './routes/api/admin/ai-usage'
 import { Route as ApiAdminSyllabusFidelityRouteImport } from './routes/api/admin/syllabus-fidelity'
 import { Route as ApiAttemptsIdRouteImport } from './routes/api/attempts/$id'
 import { Route as ApiAuthSplatRouteImport } from './routes/api/auth/$'
@@ -139,6 +141,11 @@ const AdminQuestionsRoute = AdminQuestionsRouteImport.update({
   path: '/admin/questions',
   getParentRoute: () => rootRouteImport,
 } as any)
+const AdminUsageRoute = AdminUsageRouteImport.update({
+  id: '/admin/usage',
+  path: '/admin/usage',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const ApiAttemptsRoute = ApiAttemptsRouteImport.update({
   id: '/api/attempts',
   path: '/api/attempts',
@@ -207,6 +214,11 @@ const EvaluateAttemptIdRoute = EvaluateAttemptIdRouteImport.update({
 const SummaryWeeklyRoute = SummaryWeeklyRouteImport.update({
   id: '/summary/weekly',
   path: '/summary/weekly',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ApiAdminAiUsageRoute = ApiAdminAiUsageRouteImport.update({
+  id: '/api/admin/ai-usage',
+  path: '/api/admin/ai-usage',
   getParentRoute: () => rootRouteImport,
 } as any)
 const ApiAdminSyllabusFidelityRoute =
@@ -480,6 +492,7 @@ export interface FileRoutesByFullPath {
   '/admin/blueprints': typeof AdminBlueprintsRoute
   '/admin/coverage': typeof AdminCoverageRoute
   '/admin/questions': typeof AdminQuestionsRoute
+  '/admin/usage': typeof AdminUsageRoute
   '/api/attempts': typeof ApiAttemptsRouteWithChildren
   '/api/audit-log': typeof ApiAuditLogRoute
   '/api/blueprints': typeof ApiBlueprintsRoute
@@ -494,6 +507,7 @@ export interface FileRoutesByFullPath {
   '/attempt/$id': typeof AttemptIdRoute
   '/evaluate/$attemptId': typeof EvaluateAttemptIdRoute
   '/summary/weekly': typeof SummaryWeeklyRoute
+  '/api/admin/ai-usage': typeof ApiAdminAiUsageRoute
   '/api/admin/syllabus-fidelity': typeof ApiAdminSyllabusFidelityRoute
   '/api/attempts/$id': typeof ApiAttemptsIdRouteWithChildren
   '/api/auth/$': typeof ApiAuthSplatRoute
@@ -556,6 +570,7 @@ export interface FileRoutesByTo {
   '/admin/blueprints': typeof AdminBlueprintsRoute
   '/admin/coverage': typeof AdminCoverageRoute
   '/admin/questions': typeof AdminQuestionsRoute
+  '/admin/usage': typeof AdminUsageRoute
   '/api/attempts': typeof ApiAttemptsRouteWithChildren
   '/api/audit-log': typeof ApiAuditLogRoute
   '/api/blueprints': typeof ApiBlueprintsRoute
@@ -570,6 +585,7 @@ export interface FileRoutesByTo {
   '/attempt/$id': typeof AttemptIdRoute
   '/evaluate/$attemptId': typeof EvaluateAttemptIdRoute
   '/summary/weekly': typeof SummaryWeeklyRoute
+  '/api/admin/ai-usage': typeof ApiAdminAiUsageRoute
   '/api/admin/syllabus-fidelity': typeof ApiAdminSyllabusFidelityRoute
   '/api/attempts/$id': typeof ApiAttemptsIdRouteWithChildren
   '/api/auth/$': typeof ApiAuthSplatRoute
@@ -633,6 +649,7 @@ export interface FileRoutesById {
   '/admin/blueprints': typeof AdminBlueprintsRoute
   '/admin/coverage': typeof AdminCoverageRoute
   '/admin/questions': typeof AdminQuestionsRoute
+  '/admin/usage': typeof AdminUsageRoute
   '/api/attempts': typeof ApiAttemptsRouteWithChildren
   '/api/audit-log': typeof ApiAuditLogRoute
   '/api/blueprints': typeof ApiBlueprintsRoute
@@ -647,6 +664,7 @@ export interface FileRoutesById {
   '/attempt/$id': typeof AttemptIdRoute
   '/evaluate/$attemptId': typeof EvaluateAttemptIdRoute
   '/summary/weekly': typeof SummaryWeeklyRoute
+  '/api/admin/ai-usage': typeof ApiAdminAiUsageRoute
   '/api/admin/syllabus-fidelity': typeof ApiAdminSyllabusFidelityRoute
   '/api/attempts/$id': typeof ApiAttemptsIdRouteWithChildren
   '/api/auth/$': typeof ApiAuthSplatRoute
@@ -711,6 +729,7 @@ export interface FileRouteTypes {
     | '/admin/blueprints'
     | '/admin/coverage'
     | '/admin/questions'
+    | '/admin/usage'
     | '/api/attempts'
     | '/api/audit-log'
     | '/api/blueprints'
@@ -725,6 +744,7 @@ export interface FileRouteTypes {
     | '/attempt/$id'
     | '/evaluate/$attemptId'
     | '/summary/weekly'
+    | '/api/admin/ai-usage'
     | '/api/admin/syllabus-fidelity'
     | '/api/attempts/$id'
     | '/api/auth/$'
@@ -787,6 +807,7 @@ export interface FileRouteTypes {
     | '/admin/blueprints'
     | '/admin/coverage'
     | '/admin/questions'
+    | '/admin/usage'
     | '/api/attempts'
     | '/api/audit-log'
     | '/api/blueprints'
@@ -801,6 +822,7 @@ export interface FileRouteTypes {
     | '/attempt/$id'
     | '/evaluate/$attemptId'
     | '/summary/weekly'
+    | '/api/admin/ai-usage'
     | '/api/admin/syllabus-fidelity'
     | '/api/attempts/$id'
     | '/api/auth/$'
@@ -863,6 +885,7 @@ export interface FileRouteTypes {
     | '/admin/blueprints'
     | '/admin/coverage'
     | '/admin/questions'
+    | '/admin/usage'
     | '/api/attempts'
     | '/api/audit-log'
     | '/api/blueprints'
@@ -877,6 +900,7 @@ export interface FileRouteTypes {
     | '/attempt/$id'
     | '/evaluate/$attemptId'
     | '/summary/weekly'
+    | '/api/admin/ai-usage'
     | '/api/admin/syllabus-fidelity'
     | '/api/attempts/$id'
     | '/api/auth/$'
@@ -940,6 +964,7 @@ export interface RootRouteChildren {
   AdminBlueprintsRoute: typeof AdminBlueprintsRoute
   AdminCoverageRoute: typeof AdminCoverageRoute
   AdminQuestionsRoute: typeof AdminQuestionsRoute
+  AdminUsageRoute: typeof AdminUsageRoute
   ApiAttemptsRoute: typeof ApiAttemptsRouteWithChildren
   ApiAuditLogRoute: typeof ApiAuditLogRoute
   ApiBlueprintsRoute: typeof ApiBlueprintsRoute
@@ -954,6 +979,7 @@ export interface RootRouteChildren {
   AttemptIdRoute: typeof AttemptIdRoute
   EvaluateAttemptIdRoute: typeof EvaluateAttemptIdRoute
   SummaryWeeklyRoute: typeof SummaryWeeklyRoute
+  ApiAdminAiUsageRoute: typeof ApiAdminAiUsageRoute
   ApiAdminSyllabusFidelityRoute: typeof ApiAdminSyllabusFidelityRoute
   ApiAuthSplatRoute: typeof ApiAuthSplatRoute
   ApiDashboardStudentIdRoute: typeof ApiDashboardStudentIdRoute
@@ -1047,6 +1073,13 @@ declare module '@tanstack/react-router' {
       path: '/admin/questions'
       fullPath: '/admin/questions'
       preLoaderRoute: typeof AdminQuestionsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/admin/usage': {
+      id: '/admin/usage'
+      path: '/admin/usage'
+      fullPath: '/admin/usage'
+      preLoaderRoute: typeof AdminUsageRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/api/attempts': {
@@ -1145,6 +1178,13 @@ declare module '@tanstack/react-router' {
       path: '/summary/weekly'
       fullPath: '/summary/weekly'
       preLoaderRoute: typeof SummaryWeeklyRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/api/admin/ai-usage': {
+      id: '/api/admin/ai-usage'
+      path: '/api/admin/ai-usage'
+      fullPath: '/api/admin/ai-usage'
+      preLoaderRoute: typeof ApiAdminAiUsageRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/api/admin/syllabus-fidelity': {
@@ -1759,6 +1799,7 @@ const rootRouteChildren: RootRouteChildren = {
   AdminBlueprintsRoute: AdminBlueprintsRoute,
   AdminCoverageRoute: AdminCoverageRoute,
   AdminQuestionsRoute: AdminQuestionsRoute,
+  AdminUsageRoute: AdminUsageRoute,
   ApiAttemptsRoute: ApiAttemptsRouteWithChildren,
   ApiAuditLogRoute: ApiAuditLogRoute,
   ApiBlueprintsRoute: ApiBlueprintsRoute,
@@ -1773,6 +1814,7 @@ const rootRouteChildren: RootRouteChildren = {
   AttemptIdRoute: AttemptIdRoute,
   EvaluateAttemptIdRoute: EvaluateAttemptIdRoute,
   SummaryWeeklyRoute: SummaryWeeklyRoute,
+  ApiAdminAiUsageRoute: ApiAdminAiUsageRoute,
   ApiAdminSyllabusFidelityRoute: ApiAdminSyllabusFidelityRoute,
   ApiAuthSplatRoute: ApiAuthSplatRoute,
   ApiDashboardStudentIdRoute: ApiDashboardStudentIdRoute,

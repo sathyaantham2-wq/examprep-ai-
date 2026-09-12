@@ -1,6 +1,8 @@
 import Anthropic from '@anthropic-ai/sdk'
+import type { Db } from '../db/connection'
 import type { BloomLevel, DifficultyTier, QuestionType } from '../db/enums'
 import { env } from './env'
+import { logAiJob } from './ai-metering'
 
 // AI-01 in tab07: same "strong model" tier as AI-05's subjective grading.
 const MODEL = 'claude-sonnet-5'
@@ -40,6 +42,12 @@ export interface GenerateQuestionsInput {
   type: QuestionType
   count: number
   exemplars: Array<ExemplarQuestion>
+  // F091: neither is known for most callers of AI-01 -- it's admin/global bank content
+  // authoring, not tied to a household or a student. Left undefined there; runBatch/the manual
+  // generate route both pass null explicitly so ai_jobs still logs the call with an honest
+  // owner of "none" rather than silently skipping metering.
+  householdId?: string | null
+  studentId?: string | null
 }
 
 export interface GeneratedQuestionCandidate {
@@ -56,24 +64,6 @@ export interface GenerateQuestionsResult {
   accepted: Array<GeneratedQuestionCandidate>
   rejected: Array<{ reason: string; raw: unknown }>
   usage?: { inputTokens: number; outputTokens: number }
-}
-
-// Claude Sonnet 5 published rate: $2.00 / 1M input tokens, $10.00 / 1M output tokens. INR
-// conversion uses a fixed approximate rate (documented assumption, not a live FX lookup) since
-// there's no billing/FX infrastructure in this app yet -- F091 (cost dashboard) owns doing this
-// properly with real per-call metering.
-const USD_PER_1M_INPUT = 2.0
-const USD_PER_1M_OUTPUT = 10.0
-const USD_TO_INR = 83
-
-export function estimateCostInr(usage: {
-  inputTokens: number
-  outputTokens: number
-}): number {
-  const usd =
-    (usage.inputTokens / 1_000_000) * USD_PER_1M_INPUT +
-    (usage.outputTokens / 1_000_000) * USD_PER_1M_OUTPUT
-  return usd * USD_TO_INR
 }
 
 const OBJECTIVE_TYPES = new Set<QuestionType>([
@@ -95,6 +85,7 @@ const OBJECTIVE_TYPES = new Set<QuestionType>([
  * ideas. A candidate that fails either check is dropped into `rejected`, never saved.
  */
 export async function generateQuestions(
+  db: Db,
   input: GenerateQuestionsInput,
 ): Promise<GenerateQuestionsResult | null> {
   const client = getClient()
@@ -145,15 +136,40 @@ Respond with ONLY a JSON array, no other text, each element matching exactly:
   "in_scope_ref": "the exact IN-scope item text this question tests, copied verbatim from the list above"
 }`
 
-  const response = await client.messages.create({
-    model: MODEL,
-    max_tokens: 4096,
-    messages: [{ role: 'user', content: prompt }],
-  })
+  const startedAt = Date.now()
+  let response: Awaited<ReturnType<typeof client.messages.create>>
+  try {
+    response = await client.messages.create({
+      model: MODEL,
+      max_tokens: 4096,
+      messages: [{ role: 'user', content: prompt }],
+    })
+  } catch (err) {
+    await logAiJob(db, {
+      feature: 'AI-01',
+      model: MODEL,
+      householdId: input.householdId,
+      studentId: input.studentId,
+      latencyMs: Date.now() - startedAt,
+      status: 'error',
+      error: err instanceof Error ? err.message : String(err),
+    })
+    throw err
+  }
   const usage = {
     inputTokens: response.usage.input_tokens,
     outputTokens: response.usage.output_tokens,
   }
+  await logAiJob(db, {
+    feature: 'AI-01',
+    model: MODEL,
+    householdId: input.householdId,
+    studentId: input.studentId,
+    tokensIn: usage.inputTokens,
+    tokensOut: usage.outputTokens,
+    latencyMs: Date.now() - startedAt,
+    status: 'success',
+  })
 
   const textBlock = response.content.find((block) => block.type === 'text')
   if (!textBlock) return { accepted: [], rejected: [], usage }

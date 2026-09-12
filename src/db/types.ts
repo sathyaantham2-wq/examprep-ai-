@@ -50,12 +50,13 @@ export interface AiJobs {
   created_at: Generated<Timestamp>;
   error: string | null;
   feature: string;
-  household_id: string;
+  household_id: string | null;
   id: Generated<string>;
   latency_ms: number | null;
   model: string;
   prompt_ref: string | null;
   status: AiJobStatus;
+  student_id: string | null;
   tokens_in: number | null;
   tokens_out: number | null;
 }

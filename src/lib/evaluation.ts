@@ -43,9 +43,14 @@ export async function createEvaluation(db: Db, attemptId: string) {
     throw new Error('Attempt must be submitted before it can be evaluated')
   }
 
-  const [allSlots, answers] = await Promise.all([
+  const [allSlots, answers, student] = await Promise.all([
     paperQuestionsRepository.listForPaperWithQuestions(db, attempt.paper_id),
     attemptAnswersRepository.listForAttempt(db, attemptId),
+    db
+      .selectFrom('students')
+      .select('household_id')
+      .where('id', '=', attempt.student_id)
+      .executeTakeFirstOrThrow(),
   ])
   const answerBySlot = new Map(answers.map((a) => [a.paper_question_id, a]))
 
@@ -131,7 +136,7 @@ export async function createEvaluation(db: Db, attemptId: string) {
       db,
       slot.question_id,
     )
-    const aiResult = await gradeSubjectiveAnswer({
+    const aiResult = await gradeSubjectiveAnswer(db, {
       questionText: slot.text,
       expectedAnswer: slot.answer,
       marksMax: slot.marks,
@@ -142,6 +147,8 @@ export async function createEvaluation(db: Db, attemptId: string) {
       })),
       studentResponse: answer?.response_text ?? '',
       conceptContext: concept?.idea ?? undefined,
+      householdId: student.household_id,
+      studentId: attempt.student_id,
     })
 
     if (aiResult && !aiResult.needsManualMarking) {

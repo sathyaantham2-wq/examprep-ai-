@@ -114,7 +114,7 @@ export const Route = createFileRoute('/api/questions/generate')({
             0,
           )
 
-          const result = await generateQuestions({
+          const result = await generateQuestions(db, {
             conceptName: concept.name,
             conceptIdea: concept.idea,
             conceptRule: concept.rule,
@@ -129,6 +129,8 @@ export const Route = createFileRoute('/api/questions/generate')({
               text: q.text,
               answer: q.answer,
             })),
+            householdId: null,
+            studentId: null,
           })
 
           if (!result) {

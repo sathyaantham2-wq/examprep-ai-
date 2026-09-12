@@ -1,5 +1,7 @@
 import Anthropic from '@anthropic-ai/sdk'
+import type { Db } from '../db/connection'
 import { env } from './env'
+import { logAiJob } from './ai-metering'
 
 // AI-09 in tab07: same "strong model" tier as AI-01/AI-05.
 const MODEL = 'claude-sonnet-5'
@@ -31,12 +33,20 @@ export interface RemediationContent {
  * questions with no narrative", which the caller (buildRemediationPack) does by leaving
  * refresher/examples empty rather than guessing content.
  */
-export async function generateRemediationContent(input: {
-  conceptName: string
-  conceptIdea: string | null
-  conceptRule: string | null
-  conceptExample: string | null
-}): Promise<RemediationContent | null> {
+export async function generateRemediationContent(
+  db: Db,
+  input: {
+    conceptName: string
+    conceptIdea: string | null
+    conceptRule: string | null
+    conceptExample: string | null
+    // F091: cached per-concept (F067) and reused across every student who needs it, but the call
+    // that first generates it is still triggered by one student's Priority flag, so both are
+    // known here.
+    householdId: string
+    studentId: string
+  },
+): Promise<RemediationContent | null> {
   const client = getClient()
   if (!client) return null
 
@@ -53,10 +63,35 @@ Respond with ONLY a JSON object, no other text, matching exactly:
   ]
 }`
 
-  const response = await client.messages.create({
+  const startedAt = Date.now()
+  let response: Awaited<ReturnType<typeof client.messages.create>>
+  try {
+    response = await client.messages.create({
+      model: MODEL,
+      max_tokens: 2048,
+      messages: [{ role: 'user', content: prompt }],
+    })
+  } catch (err) {
+    await logAiJob(db, {
+      feature: 'AI-09',
+      model: MODEL,
+      householdId: input.householdId,
+      studentId: input.studentId,
+      latencyMs: Date.now() - startedAt,
+      status: 'error',
+      error: err instanceof Error ? err.message : String(err),
+    })
+    throw err
+  }
+  await logAiJob(db, {
+    feature: 'AI-09',
     model: MODEL,
-    max_tokens: 2048,
-    messages: [{ role: 'user', content: prompt }],
+    householdId: input.householdId,
+    studentId: input.studentId,
+    tokensIn: response.usage.input_tokens,
+    tokensOut: response.usage.output_tokens,
+    latencyMs: Date.now() - startedAt,
+    status: 'success',
   })
 
   const textBlock = response.content.find((block) => block.type === 'text')

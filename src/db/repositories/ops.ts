@@ -5,10 +5,95 @@ import type { DB } from '../types'
 import { createRepository, createScopedRepository } from './factory'
 
 export const uploadsRepository = createScopedRepository('uploads', 'student_id')
-export const aiJobsRepository = createScopedRepository(
-  'ai_jobs',
-  'household_id',
-)
+
+export type AiUsageGroupBy = 'day' | 'feature' | 'student'
+
+export interface AiUsageAggregateRow {
+  group_key: string | null
+  calls: number
+  tokens_in: number
+  tokens_out: number
+  cost_inr: number
+  avg_latency_ms: number | null
+  error_count: number
+}
+
+function aiUsageGroupExpr(groupBy: AiUsageGroupBy) {
+  if (groupBy === 'day') {
+    return sql<string>`to_char(date_trunc('day', created_at), 'YYYY-MM-DD')`
+  }
+  if (groupBy === 'feature') {
+    return sql<string>`feature`
+  }
+  return sql<string | null>`student_id::text`
+}
+
+export const aiJobsRepository = {
+  ...createScopedRepository('ai_jobs', 'household_id'),
+  // F091: "dashboard by day, feature and student." One row per bucket in the requested
+  // dimension, summed over [from, to]. A pending/error row (no tokens/cost yet) still counts
+  // toward `calls` and `error_count` so a string of failures shows up even before it costs
+  // anything -- the point of the dashboard per its own user story ("costs do not run away").
+  async aggregateUsage(
+    db: Db,
+    input: { from: Date; to: Date | null; groupBy: AiUsageGroupBy },
+  ): Promise<Array<AiUsageAggregateRow>> {
+    const groupExpr = aiUsageGroupExpr(input.groupBy)
+    let query = db
+      .selectFrom('ai_jobs')
+      .select([
+        groupExpr.as('group_key'),
+        sql<string>`count(*)`.as('calls'),
+        sql<string>`coalesce(sum(tokens_in), 0)`.as('tokens_in'),
+        sql<string>`coalesce(sum(tokens_out), 0)`.as('tokens_out'),
+        sql<string>`coalesce(sum(cost_inr), 0)`.as('cost_inr'),
+        sql<string | null>`avg(latency_ms)`.as('avg_latency_ms'),
+        sql<string>`count(*) filter (where status = 'error')`.as('error_count'),
+      ])
+      .where('created_at', '>=', input.from)
+    if (input.to !== null) {
+      query = query.where('created_at', '<=', input.to)
+    }
+    const rows = await query.groupBy(groupExpr).orderBy(groupExpr).execute()
+
+    return rows.map((r) => ({
+      group_key: r.group_key,
+      calls: Number(r.calls),
+      tokens_in: Number(r.tokens_in),
+      tokens_out: Number(r.tokens_out),
+      cost_inr: Number(r.cost_inr),
+      avg_latency_ms: r.avg_latency_ms == null ? null : Number(r.avg_latency_ms),
+      error_count: Number(r.error_count),
+    }))
+  },
+  async totalsForRange(
+    db: Db,
+    input: { from: Date; to: Date | null },
+  ): Promise<Omit<AiUsageAggregateRow, 'group_key' | 'avg_latency_ms'>> {
+    let query = db
+      .selectFrom('ai_jobs')
+      .select([
+        sql<string>`count(*)`.as('calls'),
+        sql<string>`coalesce(sum(tokens_in), 0)`.as('tokens_in'),
+        sql<string>`coalesce(sum(tokens_out), 0)`.as('tokens_out'),
+        sql<string>`coalesce(sum(cost_inr), 0)`.as('cost_inr'),
+        sql<string>`count(*) filter (where status = 'error')`.as('error_count'),
+      ])
+      .where('created_at', '>=', input.from)
+    if (input.to !== null) {
+      query = query.where('created_at', '<=', input.to)
+    }
+    const row = await query.executeTakeFirstOrThrow()
+
+    return {
+      calls: Number(row.calls),
+      tokens_in: Number(row.tokens_in),
+      tokens_out: Number(row.tokens_out),
+      cost_inr: Number(row.cost_inr),
+      error_count: Number(row.error_count),
+    }
+  },
+}
 
 // Scoped by user_id, not household_id directly — a household can have several users
 // (parent + student logins), each with their own notification stream.

@@ -9,10 +9,10 @@ import {
 } from '../db/repositories'
 import { computeCoverageGridForSubject } from './coverage-grid'
 import {
-  estimateCostInr,
   generateQuestions,
   isAiQuestionGenerationConfigured,
 } from './ai-question-generation'
+import { estimateCostInr } from './ai-metering'
 import { createQuestion } from './questions'
 
 // F116: each chunk is capped at this many questions -- keeps one AI call's output bounded and
@@ -153,7 +153,7 @@ export async function runBatch(
         0,
       )
 
-      const result = await generateQuestions({
+      const result = await generateQuestions(db, {
         conceptName: concept.name,
         conceptIdea: concept.idea,
         conceptRule: concept.rule,
@@ -168,6 +168,8 @@ export async function runBatch(
           text: q.text,
           answer: q.answer,
         })),
+        householdId: null,
+        studentId: null,
       })
 
       if (!result) {

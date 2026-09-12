@@ -1,6 +1,8 @@
 import Anthropic from '@anthropic-ai/sdk'
+import type { Db } from '../db/connection'
 import type { ErrorType } from '../db/enums'
 import { env } from './env'
+import { logAiJob } from './ai-metering'
 
 const ERROR_TYPES = [
   'Conceptual Gap',
@@ -32,6 +34,10 @@ export interface SubjectiveGradingInput {
   stepMarks: Array<{ step_no: number; description: string; marks: number }>
   studentResponse: string
   conceptContext?: string
+  // F091: always known here -- unlike AI-01, every grading call happens inside one household's
+  // evaluation of one student's attempt.
+  householdId: string
+  studentId: string
 }
 
 export interface SubjectiveGradingResult {
@@ -64,6 +70,7 @@ const NEEDS_MANUAL_MARKING: SubjectiveGradingResult = {
  * marking" (this module's documented fallback per tab07), not a guess.
  */
 export async function gradeSubjectiveAnswer(
+  db: Db,
   input: SubjectiveGradingInput,
 ): Promise<SubjectiveGradingResult | null> {
   const client = getClient()
@@ -91,10 +98,35 @@ Respond with ONLY a JSON object, no other text, matching exactly:
   "confidence": number from 0 to 1
 }`
 
-  const response = await client.messages.create({
+  const startedAt = Date.now()
+  let response: Awaited<ReturnType<typeof client.messages.create>>
+  try {
+    response = await client.messages.create({
+      model: MODEL,
+      max_tokens: 1024,
+      messages: [{ role: 'user', content: prompt }],
+    })
+  } catch (err) {
+    await logAiJob(db, {
+      feature: 'AI-05',
+      model: MODEL,
+      householdId: input.householdId,
+      studentId: input.studentId,
+      latencyMs: Date.now() - startedAt,
+      status: 'error',
+      error: err instanceof Error ? err.message : String(err),
+    })
+    throw err
+  }
+  await logAiJob(db, {
+    feature: 'AI-05',
     model: MODEL,
-    max_tokens: 1024,
-    messages: [{ role: 'user', content: prompt }],
+    householdId: input.householdId,
+    studentId: input.studentId,
+    tokensIn: response.usage.input_tokens,
+    tokensOut: response.usage.output_tokens,
+    latencyMs: Date.now() - startedAt,
+    status: 'success',
   })
 
   const textBlock = response.content.find((block) => block.type === 'text')

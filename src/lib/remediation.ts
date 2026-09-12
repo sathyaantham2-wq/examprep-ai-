@@ -111,12 +111,21 @@ export async function buildRemediationPack(
       input.conceptId,
     )
     if (!cached) {
+      const student = isAiRemediationConfigured()
+        ? await db
+            .selectFrom('students')
+            .select('household_id')
+            .where('id', '=', input.studentId)
+            .executeTakeFirstOrThrow()
+        : null
       const aiResult = isAiRemediationConfigured()
-        ? await generateRemediationContent({
+        ? await generateRemediationContent(db, {
             conceptName: concept.name,
             conceptIdea: concept.idea,
             conceptRule: concept.rule,
             conceptExample: concept.example,
+            householdId: student!.household_id,
+            studentId: input.studentId,
           })
         : null
       cached = await conceptRemediationContentRepository.insert(db, {
