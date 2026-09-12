@@ -18,6 +18,7 @@ import {
   generateRemediationContent,
   isAiRemediationConfigured,
 } from './ai-remediation'
+import { AiCapReachedError } from './ai-metering'
 import { createEvaluation, confirmEvaluation } from './evaluation'
 
 // F066/F068: only objective types can be auto-scored with no AI/human step, which is what makes
@@ -118,8 +119,13 @@ export async function buildRemediationPack(
             .where('id', '=', input.studentId)
             .executeTakeFirstOrThrow()
         : null
-      const aiResult = isAiRemediationConfigured()
-        ? await generateRemediationContent(db, {
+      // F092: a daily cap hit degrades to the same 'bank_fallback' source as AI not being
+      // configured at all -- both mean "no AI narrative available right now", which
+      // buildRemediationPack already handles gracefully below.
+      let aiResult: Awaited<ReturnType<typeof generateRemediationContent>> = null
+      if (isAiRemediationConfigured()) {
+        try {
+          aiResult = await generateRemediationContent(db, {
             conceptName: concept.name,
             conceptIdea: concept.idea,
             conceptRule: concept.rule,
@@ -127,7 +133,10 @@ export async function buildRemediationPack(
             householdId: student!.household_id,
             studentId: input.studentId,
           })
-        : null
+        } catch (err) {
+          if (!(err instanceof AiCapReachedError)) throw err
+        }
+      }
       cached = await conceptRemediationContentRepository.insert(db, {
         concept_id: input.conceptId,
         refresher: aiResult?.refresher ?? null,

@@ -2,7 +2,7 @@ import Anthropic from '@anthropic-ai/sdk'
 import type { Db } from '../db/connection'
 import type { ErrorType } from '../db/enums'
 import { env } from './env'
-import { logAiJob } from './ai-metering'
+import { enforceAiCallBudget, logAiJob } from './ai-metering'
 
 const ERROR_TYPES = [
   'Conceptual Gap',
@@ -75,6 +75,12 @@ export async function gradeSubjectiveAnswer(
 ): Promise<SubjectiveGradingResult | null> {
   const client = getClient()
   if (!client) return null
+  await enforceAiCallBudget(db, {
+    feature: 'AI-05',
+    model: MODEL,
+    householdId: input.householdId,
+    studentId: input.studentId,
+  })
 
   const prompt = `You are grading one student's exam answer against a marking scheme. Only use what the response actually shows — never infer understanding it doesn't demonstrate. If the response is blank or genuinely illegible/unparseable, set "unreadable": true instead of guessing marks.
 

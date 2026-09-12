@@ -2,7 +2,7 @@ import Anthropic from '@anthropic-ai/sdk'
 import type { Db } from '../db/connection'
 import type { BloomLevel, DifficultyTier, QuestionType } from '../db/enums'
 import { env } from './env'
-import { logAiJob } from './ai-metering'
+import { enforceAiCallBudget, logAiJob } from './ai-metering'
 
 // AI-01 in tab07: same "strong model" tier as AI-05's subjective grading.
 const MODEL = 'claude-sonnet-5'
@@ -90,6 +90,12 @@ export async function generateQuestions(
 ): Promise<GenerateQuestionsResult | null> {
   const client = getClient()
   if (!client) return null
+  await enforceAiCallBudget(db, {
+    feature: 'AI-01',
+    model: MODEL,
+    householdId: input.householdId ?? null,
+    studentId: input.studentId,
+  })
 
   const inScope = input.scope.filter((s) => s.kind === 'IN')
   const outScope = input.scope.filter((s) => s.kind === 'OUT')

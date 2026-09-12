@@ -7,6 +7,7 @@ import {
   generateQuestions,
   isAiQuestionGenerationConfigured,
 } from '../../../lib/ai-question-generation'
+import { AiCapReachedError } from '../../../lib/ai-metering'
 import {
   chapterScopeRepository,
   conceptsRepository,
@@ -114,24 +115,40 @@ export const Route = createFileRoute('/api/questions/generate')({
             0,
           )
 
-          const result = await generateQuestions(db, {
-            conceptName: concept.name,
-            conceptIdea: concept.idea,
-            conceptRule: concept.rule,
-            conceptExample: concept.example,
-            scope,
-            bloom: input.bloom,
-            difficulty: input.difficulty,
-            marks: input.marks,
-            type: input.type,
-            count: input.count,
-            exemplars: exemplarQuestions.map((q) => ({
-              text: q.text,
-              answer: q.answer,
-            })),
-            householdId: null,
-            studentId: null,
-          })
+          // F092: a daily cap hit is reported distinctly from "AI not configured" -- the admin
+          // needs to know to come back tomorrow, not to go check ANTHROPIC_API_KEY.
+          let result: Awaited<ReturnType<typeof generateQuestions>> = null
+          try {
+            result = await generateQuestions(db, {
+              conceptName: concept.name,
+              conceptIdea: concept.idea,
+              conceptRule: concept.rule,
+              conceptExample: concept.example,
+              scope,
+              bloom: input.bloom,
+              difficulty: input.difficulty,
+              marks: input.marks,
+              type: input.type,
+              count: input.count,
+              exemplars: exemplarQuestions.map((q) => ({
+                text: q.text,
+                answer: q.answer,
+              })),
+              householdId: null,
+              studentId: null,
+            })
+          } catch (err) {
+            if (err instanceof AiCapReachedError) {
+              return Response.json({
+                generated: [],
+                rejected: [],
+                ai_configured: true,
+                capped: true,
+                message: err.message,
+              })
+            }
+            throw err
+          }
 
           if (!result) {
             return Response.json({

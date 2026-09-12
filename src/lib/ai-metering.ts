@@ -1,6 +1,6 @@
 import type { Db } from '../db/connection'
 import type { AiJobStatus } from '../db/enums'
-import { aiJobsRepository } from '../db/repositories'
+import { aiJobsRepository, notificationsRepository } from '../db/repositories'
 
 // Claude Sonnet 5 published rate: $2.00 / 1M input tokens, $10.00 / 1M output tokens. INR
 // conversion uses a fixed approximate rate (documented assumption, not a live FX lookup) since
@@ -66,5 +66,122 @@ export async function logAiJob(
     })
   } catch (err) {
     console.error('logAiJob: failed to write ai_jobs row', err)
+  }
+}
+
+// F092: tab03's AC names "daily caps" and an "80%" alert threshold but not the actual numbers --
+// picked generously above any realistic single day of use (a household running a handful of
+// evaluations/remediations, an admin running a generation batch) so these are a circuit breaker
+// against a runaway loop (the feature's own user story), not a routine limit anyone should hit by
+// normal use. "Per-user" is mapped to per-household: a household is this product's account unit
+// (one parent + their students), and F121 already owns a separate, more specific per-student cap.
+export const GLOBAL_DAILY_AI_CALL_CAP = 500
+export const PER_HOUSEHOLD_DAILY_AI_CALL_CAP = 60
+const CAP_ALERT_THRESHOLD = 0.8
+
+export class AiCapReachedError extends Error {
+  readonly scope: 'global' | 'household'
+  constructor(scope: 'global' | 'household') {
+    super(
+      scope === 'global'
+        ? "Today's AI usage limit has been reached across the whole app. Please try again tomorrow."
+        : "Today's AI usage limit has been reached for this household. Please try again tomorrow.",
+    )
+    this.scope = scope
+  }
+}
+
+function startOfTodayUtc(): string {
+  return new Date().toISOString().slice(0, 10)
+}
+
+/**
+ * F092: "alert to admin at 80%." Idempotent per scope per day -- the template string embeds the
+ * date (and household id, for a household-scoped alert), so the very first caller to cross 80% on
+ * a given day writes it and every later call that day is a no-op, rather than paging admin once
+ * per AI call for the rest of the day.
+ */
+async function alertAdminOnce(
+  db: Db,
+  templateKey: string,
+  payload: Record<string, unknown>,
+): Promise<void> {
+  const already = await db
+    .selectFrom('notifications')
+    .select('id')
+    .where('template', '=', templateKey)
+    .executeTakeFirst()
+  if (already) return
+
+  const admins = await db.selectFrom('users').select('id').where('role', '=', 'admin').execute()
+  for (const admin of admins) {
+    await notificationsRepository.insert(db, {
+      user_id: admin.id,
+      channel: 'in_app',
+      template: templateKey,
+      payload: JSON.stringify(payload),
+      status: 'queued',
+    })
+  }
+}
+
+/**
+ * F092: "Per-user and global daily caps on generation and evaluation calls; graceful message on
+ * limit, alert to admin at 80%." Every AI-*.ts function calls this before it spends anything.
+ * Throws AiCapReachedError when a cap is hit; every caller already has a documented fallback for
+ * "AI unavailable" (manual marking / bank fallback / admin writes manually) from when
+ * ANTHROPIC_API_KEY isn't configured, so callers catch this one error type and degrade into that
+ * same path instead of a raw 500 -- that degrade *is* the AC's "graceful message on limit".
+ */
+export async function enforceAiCallBudget(
+  db: Db,
+  input: { feature: string; model: string; householdId: string | null; studentId?: string | null },
+): Promise<void> {
+  const today = startOfTodayUtc()
+  const since = new Date(`${today}T00:00:00.000Z`)
+
+  const globalCount = await aiJobsRepository.countSince(db, since)
+  if (globalCount >= GLOBAL_DAILY_AI_CALL_CAP) {
+    await logAiJob(db, {
+      feature: input.feature,
+      model: input.model,
+      householdId: input.householdId,
+      studentId: input.studentId,
+      latencyMs: 0,
+      status: 'error',
+      error: 'Daily global AI call cap reached',
+    })
+    throw new AiCapReachedError('global')
+  }
+  if (globalCount >= GLOBAL_DAILY_AI_CALL_CAP * CAP_ALERT_THRESHOLD) {
+    await alertAdminOnce(db, `ai_cap_80pct_global_${today}`, {
+      scope: 'global',
+      count: globalCount,
+      cap: GLOBAL_DAILY_AI_CALL_CAP,
+    })
+  }
+
+  if (input.householdId) {
+    const householdCount = await aiJobsRepository.countSince(db, since, input.householdId)
+    if (householdCount >= PER_HOUSEHOLD_DAILY_AI_CALL_CAP) {
+      await logAiJob(db, {
+        feature: input.feature,
+        model: input.model,
+        householdId: input.householdId,
+        studentId: input.studentId,
+        latencyMs: 0,
+        status: 'error',
+        error: 'Daily household AI call cap reached',
+      })
+      throw new AiCapReachedError('household')
+    }
+    if (householdCount >= PER_HOUSEHOLD_DAILY_AI_CALL_CAP * CAP_ALERT_THRESHOLD) {
+      await alertAdminOnce(db, `ai_cap_80pct_household_${input.householdId}_${today}`, {
+        scope: 'household',
+        household_id: input.householdId,
+        count: householdCount,
+        cap: PER_HOUSEHOLD_DAILY_AI_CALL_CAP,
+      })
+    }
   }
 }

@@ -1,7 +1,7 @@
 import Anthropic from '@anthropic-ai/sdk'
 import type { Db } from '../db/connection'
 import { env } from './env'
-import { logAiJob } from './ai-metering'
+import { enforceAiCallBudget, logAiJob } from './ai-metering'
 
 // AI-09 in tab07: same "strong model" tier as AI-01/AI-05.
 const MODEL = 'claude-sonnet-5'
@@ -49,6 +49,12 @@ export async function generateRemediationContent(
 ): Promise<RemediationContent | null> {
   const client = getClient()
   if (!client) return null
+  await enforceAiCallBudget(db, {
+    feature: 'AI-09',
+    model: MODEL,
+    householdId: input.householdId,
+    studentId: input.studentId,
+  })
 
   const prompt = `A CBSE Class 7 Mathematics student has just been flagged as needing extra practice on one concept. Write a short refresher and two worked examples to help them before they attempt practice questions.
 

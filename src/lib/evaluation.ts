@@ -14,6 +14,7 @@ import {
   templateFeedback,
 } from './scoring'
 import { gradeSubjectiveAnswer } from './ai-grading'
+import { AiCapReachedError } from './ai-metering'
 import { recordMasteryAttempt } from './mastery'
 
 // A generic placeholder band, not a school- or board-specific grading scale — none is defined
@@ -136,20 +137,28 @@ export async function createEvaluation(db: Db, attemptId: string) {
       db,
       slot.question_id,
     )
-    const aiResult = await gradeSubjectiveAnswer(db, {
-      questionText: slot.text,
-      expectedAnswer: slot.answer,
-      marksMax: slot.marks,
-      stepMarks: stepMarks.map((s) => ({
-        step_no: s.step_no,
-        description: s.description,
-        marks: s.marks,
-      })),
-      studentResponse: answer?.response_text ?? '',
-      conceptContext: concept?.idea ?? undefined,
-      householdId: student.household_id,
-      studentId: attempt.student_id,
-    })
+    // F092: a daily cap hit degrades to the exact same "needs manual marking" path as
+    // ANTHROPIC_API_KEY not being configured -- both are "AI unavailable right now", and this
+    // path already has a graceful, human-reviewable outcome rather than a failed request.
+    let aiResult: Awaited<ReturnType<typeof gradeSubjectiveAnswer>> = null
+    try {
+      aiResult = await gradeSubjectiveAnswer(db, {
+        questionText: slot.text,
+        expectedAnswer: slot.answer,
+        marksMax: slot.marks,
+        stepMarks: stepMarks.map((s) => ({
+          step_no: s.step_no,
+          description: s.description,
+          marks: s.marks,
+        })),
+        studentResponse: answer?.response_text ?? '',
+        conceptContext: concept?.idea ?? undefined,
+        householdId: student.household_id,
+        studentId: attempt.student_id,
+      })
+    } catch (err) {
+      if (!(err instanceof AiCapReachedError)) throw err
+    }
 
     if (aiResult && !aiResult.needsManualMarking) {
       anyAutoScored = true

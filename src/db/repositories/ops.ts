@@ -30,6 +30,20 @@ function aiUsageGroupExpr(groupBy: AiUsageGroupBy) {
 
 export const aiJobsRepository = {
   ...createScopedRepository('ai_jobs', 'household_id'),
+  // F092: the daily-cap check's raw building block -- count of calls (of any status, capped
+  // rejections included, so a burst of rejected calls still shows up as load) since a point in
+  // time, globally or narrowed to one household.
+  async countSince(db: Db, since: Date, householdId?: string): Promise<number> {
+    let query = db
+      .selectFrom('ai_jobs')
+      .select((eb) => eb.fn.countAll<string>().as('c'))
+      .where('created_at', '>=', since)
+    if (householdId) {
+      query = query.where('household_id', '=', householdId)
+    }
+    const row = await query.executeTakeFirstOrThrow()
+    return Number(row.c)
+  },
   // F091: "dashboard by day, feature and student." One row per bucket in the requested
   // dimension, summed over [from, to]. A pending/error row (no tokens/cost yet) still counts
   // toward `calls` and `error_count` so a string of failures shows up even before it costs
