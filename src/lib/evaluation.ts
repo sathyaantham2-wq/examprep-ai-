@@ -14,7 +14,7 @@ import {
   templateFeedback,
 } from './scoring'
 import { gradeSubjectiveAnswer } from './ai-grading'
-import { AiCapReachedError } from './ai-metering'
+import { AiCapReachedError, StudentSpendCapReachedError, enforceStudentSpendBudget } from './ai-metering'
 import { recordMasteryAttempt } from './mastery'
 
 // A generic placeholder band, not a school- or board-specific grading scale — none is defined
@@ -137,11 +137,13 @@ export async function createEvaluation(db: Db, attemptId: string) {
       db,
       slot.question_id,
     )
-    // F092: a daily cap hit degrades to the exact same "needs manual marking" path as
-    // ANTHROPIC_API_KEY not being configured -- both are "AI unavailable right now", and this
-    // path already has a graceful, human-reviewable outcome rather than a failed request.
+    // F092/F121: a household call-count cap, or this student's own daily/monthly spend cap,
+    // both degrade to the exact same "needs manual marking" path as ANTHROPIC_API_KEY not being
+    // configured -- all three are "AI unavailable right now", and this path already has a
+    // graceful, human-reviewable outcome rather than a failed request.
     let aiResult: Awaited<ReturnType<typeof gradeSubjectiveAnswer>> = null
     try {
+      await enforceStudentSpendBudget(db, { studentId: attempt.student_id })
       aiResult = await gradeSubjectiveAnswer(db, {
         questionText: slot.text,
         expectedAnswer: slot.answer,
@@ -157,7 +159,9 @@ export async function createEvaluation(db: Db, attemptId: string) {
         studentId: attempt.student_id,
       })
     } catch (err) {
-      if (!(err instanceof AiCapReachedError)) throw err
+      if (!(err instanceof AiCapReachedError) && !(err instanceof StudentSpendCapReachedError)) {
+        throw err
+      }
     }
 
     if (aiResult && !aiResult.needsManualMarking) {

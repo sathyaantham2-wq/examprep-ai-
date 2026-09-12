@@ -12,7 +12,11 @@ import {
   AiCapReachedError,
   GLOBAL_DAILY_AI_CALL_CAP,
   PER_HOUSEHOLD_DAILY_AI_CALL_CAP,
+  STUDENT_DAILY_GENERATION_COST_CAP_INR,
+  STUDENT_MONTHLY_GENERATION_COST_CAP_INR,
+  StudentSpendCapReachedError,
   enforceAiCallBudget,
+  enforceStudentSpendBudget,
   estimateCostInr,
   logAiJob,
 } from './ai-metering'
@@ -278,5 +282,105 @@ describe('enforceAiCallBudget (F092)', () => {
     await expect(
       enforceAiCallBudget(db, { feature: 'AI-05', model: 'x', householdId: null }),
     ).rejects.toThrow(AiCapReachedError)
+  })
+})
+
+/**
+ * F121: "Daily and monthly caps per student on paper generation and evaluation ... parent can
+ * raise the cap." Seeds ai_jobs.cost_inr directly (real spend rows), same reasoning as
+ * enforceAiCallBudget's tests above -- ANTHROPIC_API_KEY isn't configured in this dev
+ * environment, so this is the only way to actually reach a cap without a live model call.
+ */
+describe('enforceStudentSpendBudget (F121)', () => {
+  let db: Db
+  let household: Awaited<ReturnType<typeof householdsRepository.insert>>
+  let student: Awaited<ReturnType<typeof studentsRepository.insert>>
+
+  beforeAll(async () => {
+    db = createDb()
+    household = await householdsRepository.insert(db, {
+      name: 'F121 Test Household',
+      plan: 'free',
+    })
+    student = await studentsRepository.insert(db, {
+      household_id: household.id,
+      name: 'F121 Kid',
+      class: 7,
+      board: 'CBSE',
+      target_exams: JSON.stringify([]),
+    })
+  })
+
+  afterAll(async () => {
+    await db.deleteFrom('ai_jobs').where('student_id', '=', student.id).execute()
+    await db.deleteFrom('households').where('id', '=', household.id).execute()
+    await db.destroy()
+  })
+
+  it('allows a call when the student has spent nothing yet', async () => {
+    await expect(
+      enforceStudentSpendBudget(db, { studentId: student.id }),
+    ).resolves.toBeUndefined()
+  })
+
+  it('throws a daily StudentSpendCapReachedError once the default daily cap is reached', async () => {
+    await db
+      .insertInto('ai_jobs')
+      .values({
+        household_id: household.id,
+        student_id: student.id,
+        feature: 'AI-01',
+        model: 'x',
+        status: 'success',
+        latency_ms: 1,
+        cost_inr: STUDENT_DAILY_GENERATION_COST_CAP_INR,
+      })
+      .execute()
+
+    const error = await enforceStudentSpendBudget(db, { studentId: student.id }).catch(
+      (e: unknown) => e,
+    )
+    expect(error).toBeInstanceOf(StudentSpendCapReachedError)
+    expect((error as InstanceType<typeof StudentSpendCapReachedError>).period).toBe('daily')
+  })
+
+  it("a parent-raised override lets the same student through, since it's above their default cap now", async () => {
+    await studentsRepository.update(db, household.id, student.id, {
+      generation_daily_cap_inr: STUDENT_DAILY_GENERATION_COST_CAP_INR * 10,
+    })
+    await expect(
+      enforceStudentSpendBudget(db, { studentId: student.id }),
+    ).resolves.toBeUndefined()
+    // Restore the default (null) and clear today's spend so the next test starts from zero --
+    // it needs to prove the monthly cap alone, without today's own row also tripping the daily one.
+    await studentsRepository.update(db, household.id, student.id, {
+      generation_daily_cap_inr: null,
+    })
+    await db.deleteFrom('ai_jobs').where('student_id', '=', student.id).execute()
+  })
+
+  it('throws a monthly StudentSpendCapReachedError when spend earlier this month already reached it, even with nothing spent today', async () => {
+    // Backdated to the 1st of this month (not today), so today's own daily-cap check sees zero
+    // spend and only the monthly check -- which sums the whole month -- can trip.
+    const firstOfMonth = new Date(`${new Date().toISOString().slice(0, 7)}-01T00:00:00.000Z`)
+    await db
+      .insertInto('ai_jobs')
+      .values({
+        household_id: household.id,
+        student_id: student.id,
+        feature: 'AI-01',
+        model: 'x',
+        status: 'success',
+        latency_ms: 1,
+        cost_inr: STUDENT_MONTHLY_GENERATION_COST_CAP_INR,
+        created_at: firstOfMonth,
+      })
+      .execute()
+
+    const error = await enforceStudentSpendBudget(db, { studentId: student.id }).catch(
+      (e: unknown) => e,
+    )
+    expect(error).toBeInstanceOf(StudentSpendCapReachedError)
+    expect((error as InstanceType<typeof StudentSpendCapReachedError>).period).toBe('monthly')
   })
 })

@@ -10,6 +10,7 @@ import {
   generationEventsRepository,
 } from '../../../db/repositories'
 import { PAPER_THEMES } from '../../../lib/pdf/themes'
+import { StudentSpendCapReachedError, enforceStudentSpendBudget } from '../../../lib/ai-metering'
 
 // F112: "Student role may generate ... papers within a daily quota." Not a number the plan
 // specifies -- a documented default, the same kind RETEST_LADDER_DAYS (src/lib/mastery.ts) and
@@ -150,6 +151,22 @@ export const Route = createFileRoute('/api/papers/generate')({
                 },
                 { status: 429 },
               )
+            }
+
+            // F121: a second, independent ceiling alongside F112's raw call-count quota above --
+            // this one is INR spend (generation + this student's own grading, F091/ai_jobs.cost_inr),
+            // so a handful of unusually large/expensive calls can still be capped even while under
+            // the daily paper-count quota.
+            try {
+              await enforceStudentSpendBudget(db, { studentId: student.id })
+            } catch (err) {
+              if (err instanceof StudentSpendCapReachedError) {
+                return Response.json(
+                  { error: 'spend_cap_exceeded', message: err.message },
+                  { status: 429 },
+                )
+              }
+              throw err
             }
           }
 

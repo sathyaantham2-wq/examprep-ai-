@@ -185,3 +185,76 @@ export async function enforceAiCallBudget(
     }
   }
 }
+
+// F121: tab03 doesn't name a number either -- picked so a normal week of self-service use (a
+// student generating a paper or two and getting them graded) sits comfortably under the daily
+// figure, while the monthly figure is a real ceiling below "daily cap x 30" rather than a no-op,
+// since not every day is used. A parent can raise either via PATCH /api/students/:id
+// (generation_daily_cap_inr / generation_monthly_cap_inr) -- null there means "use this default".
+export const STUDENT_DAILY_GENERATION_COST_CAP_INR = 15
+export const STUDENT_MONTHLY_GENERATION_COST_CAP_INR = 150
+
+export class StudentSpendCapReachedError extends Error {
+  readonly period: 'daily' | 'monthly'
+  constructor(period: 'daily' | 'monthly') {
+    super(
+      period === 'daily'
+        ? "Today's AI spend limit for this student has been reached. Ask a parent to raise it, or try again tomorrow."
+        : "This month's AI spend limit for this student has been reached. Ask a parent to raise it, or try again next month.",
+    )
+    this.period = period
+  }
+}
+
+function startOfMonthUtc(): Date {
+  const today = new Date().toISOString().slice(0, 10)
+  return new Date(`${today.slice(0, 7)}-01T00:00:00.000Z`)
+}
+
+/**
+ * F121: "Daily and monthly caps per student on paper generation and evaluation." Scoped to
+ * AI-01 (self-service generation, F112) and AI-05 (grading of that student's own attempts) --
+ * the two AI-layer calls this AC actually names; AI-09 (remediation content) is cached per-concept
+ * and shared across every student who needs it (F067), so it is deliberately not charged against
+ * any one student's cap here.
+ *
+ * "Admin alerted at 80% of the household cap" is F092's own PER_HOUSEHOLD_DAILY_AI_CALL_CAP alert
+ * (enforceAiCallBudget already fires it whenever this student's calls push the household over that
+ * threshold) -- F121 doesn't need a second alert path, only the per-student spend ceiling itself.
+ */
+export async function enforceStudentSpendBudget(
+  db: Db,
+  input: { studentId: string },
+): Promise<void> {
+  const student = await db
+    .selectFrom('students')
+    .select(['generation_daily_cap_inr', 'generation_monthly_cap_inr'])
+    .where('id', '=', input.studentId)
+    .executeTakeFirstOrThrow()
+  const dailyCap =
+    student.generation_daily_cap_inr != null
+      ? Number(student.generation_daily_cap_inr)
+      : STUDENT_DAILY_GENERATION_COST_CAP_INR
+  const monthlyCap =
+    student.generation_monthly_cap_inr != null
+      ? Number(student.generation_monthly_cap_inr)
+      : STUDENT_MONTHLY_GENERATION_COST_CAP_INR
+
+  const dailySpend = await aiJobsRepository.sumCostForStudentSince(
+    db,
+    input.studentId,
+    new Date(`${startOfTodayUtc()}T00:00:00.000Z`),
+  )
+  if (dailySpend >= dailyCap) {
+    throw new StudentSpendCapReachedError('daily')
+  }
+
+  const monthlySpend = await aiJobsRepository.sumCostForStudentSince(
+    db,
+    input.studentId,
+    startOfMonthUtc(),
+  )
+  if (monthlySpend >= monthlyCap) {
+    throw new StudentSpendCapReachedError('monthly')
+  }
+}

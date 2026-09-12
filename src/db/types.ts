@@ -469,6 +469,8 @@ export interface Students {
   board: string;
   class: number;
   created_at: Generated<Timestamp>;
+  generation_daily_cap_inr: Numeric | null;
+  generation_monthly_cap_inr: Numeric | null;
   household_id: string;
   id: Generated<string>;
   name: string;

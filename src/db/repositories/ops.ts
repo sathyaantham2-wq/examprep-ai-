@@ -44,6 +44,19 @@ export const aiJobsRepository = {
     const row = await query.executeTakeFirstOrThrow()
     return Number(row.c)
   },
+  // F121: the per-student spend-cap check's building block -- INR actually spent (successful
+  // calls only; a rejected/errored call never reached the model, so it never priced anything) by
+  // one student since a point in time, regardless of which feature (generation or evaluation)
+  // spent it.
+  async sumCostForStudentSince(db: Db, studentId: string, since: Date): Promise<number> {
+    const row = await db
+      .selectFrom('ai_jobs')
+      .select(sql<string>`coalesce(sum(cost_inr), 0)`.as('total'))
+      .where('student_id', '=', studentId)
+      .where('created_at', '>=', since)
+      .executeTakeFirstOrThrow()
+    return Number(row.total)
+  },
   // F091: "dashboard by day, feature and student." One row per bucket in the requested
   // dimension, summed over [from, to]. A pending/error row (no tokens/cost yet) still counts
   // toward `calls` and `error_count` so a string of failures shows up even before it costs

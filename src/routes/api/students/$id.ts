@@ -23,6 +23,11 @@ const updateStudentSchema = z
     // column only ever gates the student login, enforced server-side in resolveEnabledStudent
     // (src/lib/access.ts), not by hiding a button.
     access_enabled: z.boolean(),
+    // F121: "parent can raise the cap." null clears the override back to the documented default
+    // (STUDENT_DAILY_GENERATION_COST_CAP_INR / _MONTHLY_ in src/lib/ai-metering.ts); a number sets
+    // an explicit override, typically raising it above that default.
+    generation_daily_cap_inr: z.number().nonnegative().nullable(),
+    generation_monthly_cap_inr: z.number().nonnegative().nullable(),
   })
   .partial()
 
