@@ -81,6 +81,7 @@ import { Route as ApiEvaluationsIdReportPdfRouteImport } from './routes/api/eval
 import { Route as ApiQuestionsGenerateBatchIdResumeRouteImport } from './routes/api/questions/generate-batch/$id/resume'
 import { Route as ApiStudentsIdConsentWithdrawRouteImport } from './routes/api/students/$id/consent/withdraw'
 import { Route as ApiStudentsIdHabitsTrendRouteImport } from './routes/api/students/$id/habits/trend'
+import { Route as ApiStudyPlanIdDaysDayNumberRouteImport } from './routes/api/study-plan/$id/days/$dayNumber'
 import { Route as ApiSyllabusChaptersIdScopeRouteImport } from './routes/api/syllabus/chapters/$id/scope'
 
 const IndexRoute = IndexRouteImport.update({
@@ -454,6 +455,12 @@ const ApiStudentsIdHabitsTrendRoute =
     path: '/habits/trend',
     getParentRoute: () => ApiStudentsIdRoute,
   } as any)
+const ApiStudyPlanIdDaysDayNumberRoute =
+  ApiStudyPlanIdDaysDayNumberRouteImport.update({
+    id: '/$id/days/$dayNumber',
+    path: '/$id/days/$dayNumber',
+    getParentRoute: () => ApiStudyPlanRoute,
+  } as any)
 const ApiSyllabusChaptersIdScopeRoute =
   ApiSyllabusChaptersIdScopeRouteImport.update({
     id: '/$id/scope',
@@ -534,6 +541,7 @@ export interface FileRoutesByFullPath {
   '/api/questions/generate-batch/$id/resume': typeof ApiQuestionsGenerateBatchIdResumeRoute
   '/api/students/$id/consent/withdraw': typeof ApiStudentsIdConsentWithdrawRoute
   '/api/students/$id/habits/trend': typeof ApiStudentsIdHabitsTrendRoute
+  '/api/study-plan/$id/days/$dayNumber': typeof ApiStudyPlanIdDaysDayNumberRoute
   '/api/syllabus/chapters/$id/scope': typeof ApiSyllabusChaptersIdScopeRoute
 }
 export interface FileRoutesByTo {
@@ -609,6 +617,7 @@ export interface FileRoutesByTo {
   '/api/questions/generate-batch/$id/resume': typeof ApiQuestionsGenerateBatchIdResumeRoute
   '/api/students/$id/consent/withdraw': typeof ApiStudentsIdConsentWithdrawRoute
   '/api/students/$id/habits/trend': typeof ApiStudentsIdHabitsTrendRoute
+  '/api/study-plan/$id/days/$dayNumber': typeof ApiStudyPlanIdDaysDayNumberRoute
   '/api/syllabus/chapters/$id/scope': typeof ApiSyllabusChaptersIdScopeRoute
 }
 export interface FileRoutesById {
@@ -685,6 +694,7 @@ export interface FileRoutesById {
   '/api/questions/generate-batch/$id/resume': typeof ApiQuestionsGenerateBatchIdResumeRoute
   '/api/students/$id/consent/withdraw': typeof ApiStudentsIdConsentWithdrawRoute
   '/api/students/$id/habits/trend': typeof ApiStudentsIdHabitsTrendRoute
+  '/api/study-plan/$id/days/$dayNumber': typeof ApiStudyPlanIdDaysDayNumberRoute
   '/api/syllabus/chapters/$id/scope': typeof ApiSyllabusChaptersIdScopeRoute
 }
 export interface FileRouteTypes {
@@ -762,6 +772,7 @@ export interface FileRouteTypes {
     | '/api/questions/generate-batch/$id/resume'
     | '/api/students/$id/consent/withdraw'
     | '/api/students/$id/habits/trend'
+    | '/api/study-plan/$id/days/$dayNumber'
     | '/api/syllabus/chapters/$id/scope'
   fileRoutesByTo: FileRoutesByTo
   to:
@@ -837,6 +848,7 @@ export interface FileRouteTypes {
     | '/api/questions/generate-batch/$id/resume'
     | '/api/students/$id/consent/withdraw'
     | '/api/students/$id/habits/trend'
+    | '/api/study-plan/$id/days/$dayNumber'
     | '/api/syllabus/chapters/$id/scope'
   id:
     | '__root__'
@@ -912,6 +924,7 @@ export interface FileRouteTypes {
     | '/api/questions/generate-batch/$id/resume'
     | '/api/students/$id/consent/withdraw'
     | '/api/students/$id/habits/trend'
+    | '/api/study-plan/$id/days/$dayNumber'
     | '/api/syllabus/chapters/$id/scope'
   fileRoutesById: FileRoutesById
 }
@@ -1463,6 +1476,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ApiStudentsIdHabitsTrendRouteImport
       parentRoute: typeof ApiStudentsIdRoute
     }
+    '/api/study-plan/$id/days/$dayNumber': {
+      id: '/api/study-plan/$id/days/$dayNumber'
+      path: '/$id/days/$dayNumber'
+      fullPath: '/api/study-plan/$id/days/$dayNumber'
+      preLoaderRoute: typeof ApiStudyPlanIdDaysDayNumberRouteImport
+      parentRoute: typeof ApiStudyPlanRoute
+    }
     '/api/syllabus/chapters/$id/scope': {
       id: '/api/syllabus/chapters/$id/scope'
       path: '/$id/scope'
@@ -1688,10 +1708,12 @@ const ApiStudentsRouteWithChildren = ApiStudentsRoute._addFileChildren(
 
 interface ApiStudyPlanRouteChildren {
   ApiStudyPlanGenerateRoute: typeof ApiStudyPlanGenerateRoute
+  ApiStudyPlanIdDaysDayNumberRoute: typeof ApiStudyPlanIdDaysDayNumberRoute
 }
 
 const ApiStudyPlanRouteChildren: ApiStudyPlanRouteChildren = {
   ApiStudyPlanGenerateRoute: ApiStudyPlanGenerateRoute,
+  ApiStudyPlanIdDaysDayNumberRoute: ApiStudyPlanIdDaysDayNumberRoute,
 }
 
 const ApiStudyPlanRouteWithChildren = ApiStudyPlanRoute._addFileChildren(

@@ -8,6 +8,11 @@ export interface StudyPlanDay {
   concept_id: string | null
   concept_name: string | null
   activity: string
+  // F079: "tickable." Starts false for a freshly-generated day. Regenerating the SAME week
+  // (generateStudyPlan's update-in-place path) carries this forward by day_number rather than
+  // resetting it -- a student who already ticked off Monday shouldn't lose that because the
+  // parent regenerated the plan on Wednesday.
+  completed: boolean
 }
 
 export interface StudyPlan {
@@ -130,6 +135,7 @@ export async function generateStudyPlan(
         : candidate
           ? ACTIVITIES[i]
           : 'Generate a paper first to get a personalised plan.',
+      completed: false,
     })
   }
 
@@ -150,6 +156,16 @@ export async function generateStudyPlan(
     studentId,
     weekStartStr,
   )
+  if (existingThisWeek) {
+    const oldDays = existingThisWeek.days as unknown as Array<StudyPlanDay>
+    const completedByDayNumber = new Map(
+      oldDays.map((d) => [d.day_number, d.completed]),
+    )
+    for (const day of days) {
+      day.completed = completedByDayNumber.get(day.day_number) ?? false
+    }
+  }
+
   const plan = existingThisWeek
     ? await studyPlansRepository.update(db, studentId, existingThisWeek.id, {
         days: JSON.stringify(days),
@@ -170,5 +186,65 @@ export async function generateStudyPlan(
     week_start: weekStartStr,
     days,
     status: plan.status,
+  }
+}
+
+export interface TaskListItem extends StudyPlanDay {
+  // F079: "roll over when missed." True for a PAST day that was never ticked off -- it still
+  // needs doing, so it reappears in today's list rather than silently vanishing once its own
+  // date has passed. Today's own day always appears with is_rollover: false, whether or not it's
+  // done yet; a future day never appears (nothing to do about it yet).
+  is_rollover: boolean
+}
+
+/**
+ * F079: "tickable, roll over when missed." A pure function over the plan's own days (given
+ * "today" as a real YYYY-MM-DD string), so it's directly testable without a database.
+ */
+export function getTaskList(
+  days: Array<StudyPlanDay>,
+  todayDateStr: string,
+): Array<TaskListItem> {
+  const tasks: Array<TaskListItem> = []
+  for (const day of days) {
+    if (day.date === todayDateStr) {
+      tasks.push({ ...day, is_rollover: false })
+    } else if (day.date < todayDateStr && !day.completed) {
+      tasks.push({ ...day, is_rollover: true })
+    }
+  }
+  return tasks
+}
+
+/**
+ * F079: "completion feeds the weekly summary." The write side of "tickable" -- flips one day's
+ * completed flag by day_number and persists the whole days array back (JSONB has no partial
+ * update in Postgres via Kysely's typed API here, so read-modify-write is the straightforward
+ * option for a 7-element array).
+ */
+export async function setDayCompleted(
+  db: Db,
+  studentId: string,
+  planId: string,
+  dayNumber: number,
+  completed: boolean,
+): Promise<StudyPlan | null> {
+  const existing = await studyPlansRepository.findById(db, studentId, planId)
+  if (!existing) return null
+
+  const days = (existing.days as unknown as Array<StudyPlanDay>).map((day) =>
+    day.day_number === dayNumber ? { ...day, completed } : day,
+  )
+
+  const updated = await studyPlansRepository.update(db, studentId, planId, {
+    days: JSON.stringify(days),
+  })
+
+  return {
+    id: updated.id,
+    student_id: updated.student_id,
+    week_start: updated.week_start.toISOString().slice(0, 10),
+    days,
+    status: updated.status,
   }
 }

@@ -19,6 +19,7 @@ interface PlanDay {
   subject_name: string | null
   concept_name: string | null
   activity: string
+  completed: boolean
 }
 
 interface StudyPlan {
@@ -45,9 +46,8 @@ interface ExamCountdownReport {
 }
 
 /**
- * F077/F078 (tab06 /plan "Both": 7-day plan, exam countdown, daily tasks, regenerate -- this
- * screen covers F077 and F078's own pieces; F079's tickable tasks aren't built yet). Built for
- * the student's own view, the same scope decision remediation.tsx already made for its own
+ * F077/F078/F079 (tab06 /plan "Both": 7-day plan, exam countdown, daily tasks, regenerate). Built
+ * for the student's own view, the same scope decision remediation.tsx already made for its own
  * "Both" screen -- a parent reaches the same data via the API directly for now.
  */
 function StudyPlanScreen() {
@@ -94,6 +94,31 @@ function StudyPlanScreen() {
       if (response.ok) setPlan(body.plan)
     } finally {
       setRegenerating(false)
+    }
+  }
+
+  async function toggleDay(dayNumber: number, completed: boolean) {
+    if (!plan) return
+    // Optimistic update -- ticking a box should feel instant.
+    setPlan({
+      ...plan,
+      days: plan.days.map((d) =>
+        d.day_number === dayNumber ? { ...d, completed } : d,
+      ),
+    })
+    const response = await fetch(
+      `/api/study-plan/${plan.id}/days/${dayNumber}`,
+      {
+        method: 'PATCH',
+        headers: { 'content-type': 'application/json' },
+        body: JSON.stringify({ completed }),
+      },
+    )
+    if (response.ok) {
+      const body = await response.json()
+      setPlan(body.plan)
+    } else {
+      loadPlan() // revert the optimistic update to real server state
     }
   }
 
@@ -192,8 +217,16 @@ function StudyPlanScreen() {
               <Card key={day.day_number}>
                 <CardHeader>
                   <div className="flex items-center justify-between">
-                    <CardTitle className="text-h3">
-                      Day {day.day_number} — {day.date}
+                    <CardTitle className="text-h3 flex items-center gap-2">
+                      <input
+                        type="checkbox"
+                        checked={day.completed}
+                        onChange={(e) => toggleDay(day.day_number, e.target.checked)}
+                        aria-label={`Mark day ${day.day_number} done`}
+                      />
+                      <span className={day.completed ? 'line-through text-muted-foreground' : ''}>
+                        Day {day.day_number} — {day.date}
+                      </span>
                     </CardTitle>
                     {day.subject_name && (
                       <span className="text-small text-muted-foreground">

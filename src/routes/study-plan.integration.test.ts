@@ -11,6 +11,7 @@ import type { TestSession } from '../db/test-helpers'
 import { Route as StudentsRoute } from './api/students'
 import { Route as StudyPlanRoute } from './api/study-plan'
 import { Route as StudyPlanGenerateRoute } from './api/study-plan/generate'
+import { Route as StudyPlanDayRoute } from './api/study-plan/$id/days/$dayNumber'
 
 type RouteHandler = (opts: {
   request: Request
@@ -223,6 +224,82 @@ describe('7-day study plan generator (F077)', () => {
       .where('id', '=', staleWeek.id)
       .executeTakeFirstOrThrow()
     expect(refreshed.status).toBe('superseded')
+  })
+
+  it('generates with every day defaulting to not completed', async () => {
+    const response = await handlerFor(
+      StudyPlanRoute,
+      'GET',
+    )({ request: request(student.cookie) })
+    const body = await response.json()
+    expect(body.plan.days.every((d: { completed: boolean }) => d.completed === false)).toBe(
+      true,
+    )
+  })
+
+  it('F079: PATCH ticks a day off, and regenerating the same week preserves it', async () => {
+    const current = await handlerFor(
+      StudyPlanRoute,
+      'GET',
+    )({ request: request(student.cookie) })
+    const planId = (await current.json()).plan.id
+
+    const patchResponse = await handlerFor(
+      StudyPlanDayRoute,
+      'PATCH',
+    )({
+      request: request(student.cookie, { completed: true }),
+      params: { id: planId, dayNumber: '1' },
+    })
+    expect(patchResponse.status).toBe(200)
+    const patched = await patchResponse.json()
+    expect(patched.plan.days.find((d: { day_number: number }) => d.day_number === 1).completed).toBe(
+      true,
+    )
+    // Every other day untouched.
+    expect(patched.plan.days.find((d: { day_number: number }) => d.day_number === 2).completed).toBe(
+      false,
+    )
+
+    // Regenerating the same week must not wipe out the tick the student already made.
+    const regenerated = await handlerFor(
+      StudyPlanGenerateRoute,
+      'POST',
+    )({ request: request(student.cookie, {}) })
+    const regeneratedBody = await regenerated.json()
+    expect(regeneratedBody.plan.id).toBe(planId)
+    expect(
+      regeneratedBody.plan.days.find((d: { day_number: number }) => d.day_number === 1)
+        .completed,
+    ).toBe(true)
+  })
+
+  it("rejects an out-of-range dayNumber and a parent from another household", async () => {
+    const current = await handlerFor(
+      StudyPlanRoute,
+      'GET',
+    )({ request: request(student.cookie) })
+    const planId = (await current.json()).plan.id
+
+    const badDay = await handlerFor(
+      StudyPlanDayRoute,
+      'PATCH',
+    )({
+      request: request(student.cookie, { completed: true }),
+      params: { id: planId, dayNumber: '9' },
+    })
+    expect(badDay.status).toBe(400)
+
+    const otherParent = await createParentSession('studyplan-day-other')
+    const crossHousehold = await handlerFor(
+      StudyPlanDayRoute,
+      'PATCH',
+    )({
+      request: request(otherParent.cookie, { completed: true }),
+      params: { id: planId, dayNumber: '1' },
+    })
+    expect(crossHousehold.status).toBe(404)
+    await db.deleteFrom('households').where('id', '=', otherParent.householdId).execute()
   })
 
   it("a parent must name student_id, and another household can't reach it", async () => {

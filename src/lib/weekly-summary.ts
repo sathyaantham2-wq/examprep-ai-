@@ -1,5 +1,5 @@
 import type { Db } from '../db/connection'
-import { conceptMasteryRepository } from '../db/repositories'
+import { conceptMasteryRepository, studyPlansRepository } from '../db/repositories'
 
 interface SubjectWeekScore {
   subject_id: string
@@ -24,6 +24,11 @@ interface CumulativeStats {
   last_week: { evaluations_count: number; avg_percentage: number | null }
 }
 
+interface TaskCompletion {
+  tasks_completed: number
+  tasks_total: number
+}
+
 export interface WeeklySummary {
   week_start: string
   week_end: string
@@ -32,6 +37,9 @@ export interface WeeklySummary {
   urgent_concept: UrgentConcept | null
   seven_day_plan: Array<UrgentConcept>
   cumulative_stats: CumulativeStats
+  // F079: "completion feeds the weekly summary." null when no study plan (F077) was ever
+  // generated for this exact week -- distinct from a plan that exists but is 0/7 done.
+  task_completion: TaskCompletion | null
 }
 
 const FOCUS_PRIORITY: Record<string, number> = {
@@ -163,6 +171,19 @@ export async function buildWeeklySummary(
     .slice(0, 5)
     .map((r) => ({ concept_id: r.concept_id, concept_name: r.concept_name }))
 
+  // F079: "completion feeds the weekly summary" -- this exact week's plan (F077), regardless of
+  // whether it has since been superseded by a later week's; a superseded PAST week's completion
+  // record is still real history for this summary.
+  const weekPlan = await studyPlansRepository.findForWeek(db, studentId, weekStartDate)
+  const taskCompletion: TaskCompletion | null = weekPlan
+    ? {
+        tasks_completed: (
+          weekPlan.days as unknown as Array<{ completed: boolean }>
+        ).filter((d) => d.completed).length,
+        tasks_total: (weekPlan.days as unknown as Array<unknown>).length,
+      }
+    : null
+
   return {
     week_start: weekStart.toISOString().slice(0, 10),
     week_end: weekEnd.toISOString().slice(0, 10),
@@ -171,5 +192,6 @@ export async function buildWeeklySummary(
     urgent_concept: urgentConcept,
     seven_day_plan: sevenDayPlan,
     cumulative_stats: cumulativeStats,
+    task_completion: taskCompletion,
   }
 }
