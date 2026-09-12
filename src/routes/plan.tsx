@@ -28,11 +28,27 @@ interface StudyPlan {
   status: string
 }
 
+interface ExamCountdown {
+  exam_name: string
+  exam_date: string
+  days_remaining: number
+}
+
+interface SyllabusCoverage {
+  strong_pct: number
+  untested_chapters: Array<{ chapter_id: string; chapter_name: string }>
+}
+
+interface ExamCountdownReport {
+  countdowns: Array<ExamCountdown>
+  syllabus_coverage: SyllabusCoverage
+}
+
 /**
- * F077 (tab06 /plan "Both": 7-day plan, exam countdown, daily tasks, regenerate -- this screen
- * covers F077's own piece only; F078's countdown and F079's tickable tasks aren't built yet).
- * Built for the student's own view, the same scope decision remediation.tsx already made for its
- * own "Both" screen -- a parent reaches the same data via the API directly for now.
+ * F077/F078 (tab06 /plan "Both": 7-day plan, exam countdown, daily tasks, regenerate -- this
+ * screen covers F077 and F078's own pieces; F079's tickable tasks aren't built yet). Built for
+ * the student's own view, the same scope decision remediation.tsx already made for its own
+ * "Both" screen -- a parent reaches the same data via the API directly for now.
  */
 function StudyPlanScreen() {
   const { data: session, isPending } = useSession()
@@ -40,14 +56,20 @@ function StudyPlanScreen() {
   const role = (session?.user as { role?: string } | undefined)?.role
 
   const [plan, setPlan] = useState<StudyPlan | null>(null)
+  const [countdown, setCountdown] = useState<ExamCountdownReport | null>(null)
   const [loading, setLoading] = useState(true)
   const [regenerating, setRegenerating] = useState(false)
 
   function loadPlan() {
     setLoading(true)
-    fetch('/api/study-plan')
-      .then((r) => r.json())
-      .then((data: { plan: StudyPlan | null }) => setPlan(data.plan))
+    Promise.all([
+      fetch('/api/study-plan').then((r) => r.json()),
+      fetch('/api/exam-countdown').then((r) => r.json()),
+    ])
+      .then(([planData, countdownData]: [{ plan: StudyPlan | null }, ExamCountdownReport]) => {
+        setPlan(planData.plan)
+        setCountdown(countdownData)
+      })
       .finally(() => setLoading(false))
   }
 
@@ -95,6 +117,46 @@ function StudyPlanScreen() {
 
       {loading && (
         <p className="text-body text-muted-foreground">Loading…</p>
+      )}
+
+      {!loading && countdown && (
+        <Card className="mb-4">
+          <CardHeader>
+            <CardTitle className="text-h3">Exam countdown</CardTitle>
+            <CardDescription>
+              {countdown.syllabus_coverage.strong_pct}% of the syllabus at
+              Strong.
+            </CardDescription>
+          </CardHeader>
+          <CardContent className="space-y-2">
+            {countdown.countdowns.length === 0 && (
+              <p className="text-small text-muted-foreground">
+                No exam dates on file yet.
+              </p>
+            )}
+            {countdown.countdowns.map((c) => (
+              <div
+                key={c.exam_name}
+                className="flex items-center justify-between text-small"
+              >
+                <span>{c.exam_name}</span>
+                <span className="text-muted-foreground">
+                  {c.days_remaining >= 0
+                    ? `${c.days_remaining} day${c.days_remaining === 1 ? '' : 's'} left`
+                    : 'Past'}
+                </span>
+              </div>
+            ))}
+            {countdown.syllabus_coverage.untested_chapters.length > 0 && (
+              <p className="text-small text-muted-foreground">
+                Not yet attempted:{' '}
+                {countdown.syllabus_coverage.untested_chapters
+                  .map((c) => c.chapter_name)
+                  .join(', ')}
+              </p>
+            )}
+          </CardContent>
+        </Card>
       )}
 
       {!loading && !plan && (

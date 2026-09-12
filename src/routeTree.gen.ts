@@ -24,6 +24,7 @@ import { Route as ApiAttemptsRouteImport } from './routes/api/attempts'
 import { Route as ApiAuditLogRouteImport } from './routes/api/audit-log'
 import { Route as ApiBlueprintsRouteImport } from './routes/api/blueprints'
 import { Route as ApiEvaluationsRouteImport } from './routes/api/evaluations'
+import { Route as ApiExamCountdownRouteImport } from './routes/api/exam-countdown'
 import { Route as ApiHabitDrillsRouteImport } from './routes/api/habit-drills'
 import { Route as ApiQuestionsRouteImport } from './routes/api/questions'
 import { Route as ApiRemediationRouteImport } from './routes/api/remediation'
@@ -155,6 +156,11 @@ const ApiBlueprintsRoute = ApiBlueprintsRouteImport.update({
 const ApiEvaluationsRoute = ApiEvaluationsRouteImport.update({
   id: '/api/evaluations',
   path: '/api/evaluations',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ApiExamCountdownRoute = ApiExamCountdownRouteImport.update({
+  id: '/api/exam-countdown',
+  path: '/api/exam-countdown',
   getParentRoute: () => rootRouteImport,
 } as any)
 const ApiHabitDrillsRoute = ApiHabitDrillsRouteImport.update({
@@ -471,6 +477,7 @@ export interface FileRoutesByFullPath {
   '/api/audit-log': typeof ApiAuditLogRoute
   '/api/blueprints': typeof ApiBlueprintsRoute
   '/api/evaluations': typeof ApiEvaluationsRouteWithChildren
+  '/api/exam-countdown': typeof ApiExamCountdownRoute
   '/api/habit-drills': typeof ApiHabitDrillsRouteWithChildren
   '/api/questions': typeof ApiQuestionsRouteWithChildren
   '/api/remediation': typeof ApiRemediationRouteWithChildren
@@ -545,6 +552,7 @@ export interface FileRoutesByTo {
   '/api/audit-log': typeof ApiAuditLogRoute
   '/api/blueprints': typeof ApiBlueprintsRoute
   '/api/evaluations': typeof ApiEvaluationsRouteWithChildren
+  '/api/exam-countdown': typeof ApiExamCountdownRoute
   '/api/habit-drills': typeof ApiHabitDrillsRouteWithChildren
   '/api/questions': typeof ApiQuestionsRouteWithChildren
   '/api/remediation': typeof ApiRemediationRouteWithChildren
@@ -620,6 +628,7 @@ export interface FileRoutesById {
   '/api/audit-log': typeof ApiAuditLogRoute
   '/api/blueprints': typeof ApiBlueprintsRoute
   '/api/evaluations': typeof ApiEvaluationsRouteWithChildren
+  '/api/exam-countdown': typeof ApiExamCountdownRoute
   '/api/habit-drills': typeof ApiHabitDrillsRouteWithChildren
   '/api/questions': typeof ApiQuestionsRouteWithChildren
   '/api/remediation': typeof ApiRemediationRouteWithChildren
@@ -696,6 +705,7 @@ export interface FileRouteTypes {
     | '/api/audit-log'
     | '/api/blueprints'
     | '/api/evaluations'
+    | '/api/exam-countdown'
     | '/api/habit-drills'
     | '/api/questions'
     | '/api/remediation'
@@ -770,6 +780,7 @@ export interface FileRouteTypes {
     | '/api/audit-log'
     | '/api/blueprints'
     | '/api/evaluations'
+    | '/api/exam-countdown'
     | '/api/habit-drills'
     | '/api/questions'
     | '/api/remediation'
@@ -844,6 +855,7 @@ export interface FileRouteTypes {
     | '/api/audit-log'
     | '/api/blueprints'
     | '/api/evaluations'
+    | '/api/exam-countdown'
     | '/api/habit-drills'
     | '/api/questions'
     | '/api/remediation'
@@ -919,6 +931,7 @@ export interface RootRouteChildren {
   ApiAuditLogRoute: typeof ApiAuditLogRoute
   ApiBlueprintsRoute: typeof ApiBlueprintsRoute
   ApiEvaluationsRoute: typeof ApiEvaluationsRouteWithChildren
+  ApiExamCountdownRoute: typeof ApiExamCountdownRoute
   ApiHabitDrillsRoute: typeof ApiHabitDrillsRouteWithChildren
   ApiQuestionsRoute: typeof ApiQuestionsRouteWithChildren
   ApiRemediationRoute: typeof ApiRemediationRouteWithChildren
@@ -1049,6 +1062,13 @@ declare module '@tanstack/react-router' {
       path: '/api/evaluations'
       fullPath: '/api/evaluations'
       preLoaderRoute: typeof ApiEvaluationsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/api/exam-countdown': {
+      id: '/api/exam-countdown'
+      path: '/api/exam-countdown'
+      fullPath: '/api/exam-countdown'
+      preLoaderRoute: typeof ApiExamCountdownRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/api/habit-drills': {
@@ -1721,6 +1741,7 @@ const rootRouteChildren: RootRouteChildren = {
   ApiAuditLogRoute: ApiAuditLogRoute,
   ApiBlueprintsRoute: ApiBlueprintsRoute,
   ApiEvaluationsRoute: ApiEvaluationsRouteWithChildren,
+  ApiExamCountdownRoute: ApiExamCountdownRoute,
   ApiHabitDrillsRoute: ApiHabitDrillsRouteWithChildren,
   ApiQuestionsRoute: ApiQuestionsRouteWithChildren,
   ApiRemediationRoute: ApiRemediationRouteWithChildren,
