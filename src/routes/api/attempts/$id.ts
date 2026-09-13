@@ -1,7 +1,7 @@
 import { createFileRoute } from '@tanstack/react-router'
 import { requireRole } from '../../../lib/session'
 import { resolveEnabledStudent } from '../../../lib/access'
-import { createDb } from '../../../db/connection'
+import { getSharedDb } from '../../../db/connection'
 import {
   attemptsRepository,
   papersRepository,
@@ -27,89 +27,85 @@ export const Route = createFileRoute('/api/attempts/$id')({
         const auth = await requireRole(request, 'student')
         if (auth instanceof Response) return auth
 
-        const db = createDb()
-        try {
-          const student = await resolveEnabledStudent(db, auth.id)
-          if (student instanceof Response) return student
+        const db = getSharedDb()
+        const student = await resolveEnabledStudent(db, auth.id)
+        if (student instanceof Response) return student
 
-          const attempt = await attemptsRepository.findById(
-            db,
-            student.id,
-            params.id,
-          )
-          if (!attempt) return new Response(null, { status: 404 })
+        const attempt = await attemptsRepository.findById(
+          db,
+          student.id,
+          params.id,
+        )
+        if (!attempt) return new Response(null, { status: 404 })
 
-          const paper = await papersRepository.findById(
+        const paper = await papersRepository.findById(
+          db,
+          student.id,
+          attempt.paper_id,
+        )
+        if (!paper) return new Response(null, { status: 404 })
+
+        const [slots, answers] = await Promise.all([
+          paperQuestionsRepository.listForPaperWithQuestions(
             db,
-            student.id,
             attempt.paper_id,
-          )
-          if (!paper) return new Response(null, { status: 404 })
+          ),
+          attemptAnswersRepository.listForAttempt(db, attempt.id),
+        ])
 
-          const [slots, answers] = await Promise.all([
-            paperQuestionsRepository.listForPaperWithQuestions(
-              db,
-              attempt.paper_id,
-            ),
-            attemptAnswersRepository.listForAttempt(db, attempt.id),
-          ])
+        const optionsByQuestion = new Map(
+          await Promise.all(
+            slots.map(async (slot) => {
+              const options = await questionOptionsRepository.listByQuestion(
+                db,
+                slot.question_id,
+              )
+              return [
+                slot.question_id,
+                options.map((o) => ({ label: o.label, text: o.text })),
+              ] as const
+            }),
+          ),
+        )
+        const answerBySlot = new Map(
+          answers.map((a) => [a.paper_question_id, a]),
+        )
 
-          const optionsByQuestion = new Map(
-            await Promise.all(
-              slots.map(async (slot) => {
-                const options = await questionOptionsRepository.listByQuestion(
-                  db,
-                  slot.question_id,
-                )
-                return [
-                  slot.question_id,
-                  options.map((o) => ({ label: o.label, text: o.text })),
-                ] as const
-              }),
-            ),
-          )
-          const answerBySlot = new Map(
-            answers.map((a) => [a.paper_question_id, a]),
-          )
-
-          return Response.json({
-            attempt: {
-              id: attempt.id,
-              status: attempt.status,
-              mode: attempt.mode,
-              started_at: attempt.started_at,
-            },
-            paper: {
-              id: paper.id,
-              title: paper.title,
-              duration_min: paper.duration_min,
-              total_marks: paper.total_marks,
-            },
-            questions: slots.map((slot) => ({
-              paper_question_id: slot.id,
-              position: slot.position,
-              section: slot.section,
-              marks: slot.marks,
-              type: slot.type,
-              text: slot.text,
-              hint: slot.hint,
-              diagram_kind: slot.diagram_kind,
-              diagram_params: slot.diagram_params,
-              options: optionsByQuestion.get(slot.question_id) ?? [],
-              saved_answer: (() => {
-                const saved = answerBySlot.get(slot.id)
-                return saved
-                  ? {
-                      response_text: saved.response_text,
-                      selected_option: saved.selected_option,
-                    }
-                  : null
-              })(),
-            })),
-          })
-        } finally {
-          await db.destroy()
-        }
+        return Response.json({
+          attempt: {
+            id: attempt.id,
+            status: attempt.status,
+            mode: attempt.mode,
+            started_at: attempt.started_at,
+          },
+          paper: {
+            id: paper.id,
+            title: paper.title,
+            duration_min: paper.duration_min,
+            total_marks: paper.total_marks,
+          },
+          questions: slots.map((slot) => ({
+            paper_question_id: slot.id,
+            position: slot.position,
+            section: slot.section,
+            marks: slot.marks,
+            type: slot.type,
+            text: slot.text,
+            hint: slot.hint,
+            diagram_kind: slot.diagram_kind,
+            diagram_params: slot.diagram_params,
+            options: optionsByQuestion.get(slot.question_id) ?? [],
+            saved_answer: (() => {
+              const saved = answerBySlot.get(slot.id)
+              return saved
+                ? {
+                    response_text: saved.response_text,
+                    selected_option: saved.selected_option,
+                  }
+                : null
+            })(),
+          })),
+        })
       },
     },
   },

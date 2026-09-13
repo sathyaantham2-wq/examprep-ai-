@@ -1,7 +1,7 @@
 import { createFileRoute } from '@tanstack/react-router'
 import { z } from 'zod'
 import { requireRole, requireUser } from '../../lib/session'
-import { createDb } from '../../db/connection'
+import { getSharedDb } from '../../db/connection'
 import { blueprintsRepository } from '../../db/repositories'
 
 const BLOOM_LEVELS = [
@@ -85,16 +85,12 @@ export const Route = createFileRoute('/api/blueprints')({
           )
         }
 
-        const db = createDb()
-        try {
-          const blueprints = await blueprintsRepository.listBySubject(
-            db,
-            subjectId,
-          )
-          return Response.json(blueprints)
-        } finally {
-          await db.destroy()
-        }
+        const db = getSharedDb()
+        const blueprints = await blueprintsRepository.listBySubject(
+          db,
+          subjectId,
+        )
+        return Response.json(blueprints)
       },
       POST: async ({ request }) => {
         const auth = await requireRole(request, 'admin')
@@ -113,25 +109,21 @@ export const Route = createFileRoute('/api/blueprints')({
           0,
         )
 
-        const db = createDb()
-        try {
-          const blueprint = await blueprintsRepository.insert(db, {
-            subject_id: parsed.data.subject_id,
-            board: parsed.data.board,
-            class: parsed.data.class,
-            name: parsed.data.name,
-            total_marks: totalMarks,
-            duration_min: parsed.data.duration_min,
-            sections: JSON.stringify(parsed.data.sections),
-            bloom_targets: JSON.stringify(parsed.data.bloom_targets),
-            choice_rules: parsed.data.choice_rules
-              ? JSON.stringify(parsed.data.choice_rules)
-              : undefined,
-          })
-          return Response.json(blueprint, { status: 201 })
-        } finally {
-          await db.destroy()
-        }
+        const db = getSharedDb()
+        const blueprint = await blueprintsRepository.insert(db, {
+          subject_id: parsed.data.subject_id,
+          board: parsed.data.board,
+          class: parsed.data.class,
+          name: parsed.data.name,
+          total_marks: totalMarks,
+          duration_min: parsed.data.duration_min,
+          sections: JSON.stringify(parsed.data.sections),
+          bloom_targets: JSON.stringify(parsed.data.bloom_targets),
+          choice_rules: parsed.data.choice_rules
+            ? JSON.stringify(parsed.data.choice_rules)
+            : undefined,
+        })
+        return Response.json(blueprint, { status: 201 })
       },
     },
   },

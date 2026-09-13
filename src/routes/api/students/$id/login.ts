@@ -1,7 +1,7 @@
 import { createFileRoute } from '@tanstack/react-router'
 import { z } from 'zod'
 import { requireRole } from '../../../../lib/session'
-import { createDb } from '../../../../db/connection'
+import { getSharedDb } from '../../../../db/connection'
 import { studentsRepository } from '../../../../db/repositories'
 
 const createLoginSchema = z.object({
@@ -31,72 +31,68 @@ export const Route = createFileRoute('/api/students/$id/login')({
           )
         }
 
-        const db = createDb()
-        try {
-          const student = await studentsRepository.findById(
-            db,
-            auth.householdId,
-            params.id,
+        const db = getSharedDb()
+        const student = await studentsRepository.findById(
+          db,
+          auth.householdId,
+          params.id,
+        )
+        if (!student) return new Response(null, { status: 404 })
+        if (student.user_id) {
+          return Response.json(
+            { error: 'This student already has a login' },
+            { status: 409 },
           )
-          if (!student) return new Response(null, { status: 404 })
-          if (student.user_id) {
+        }
+
+        const { hashPassword } = await import('better-auth/crypto')
+        const hash = await hashPassword(parsed.data.password)
+
+        try {
+          const user = await db.transaction().execute(async (trx) => {
+            const created = await trx
+              .insertInto('users')
+              .values({
+                household_id: auth.householdId,
+                email: parsed.data.email,
+                name: student.name,
+                role: 'student',
+                email_verified: true,
+              })
+              .returningAll()
+              .executeTakeFirstOrThrow()
+
+            await trx
+              .insertInto('accounts')
+              .values({
+                issuer: 'local:credential',
+                account_id: created.id,
+                provider_id: 'credential',
+                user_id: created.id,
+                password: hash,
+              })
+              .execute()
+
+            await trx
+              .updateTable('students')
+              .set({ user_id: created.id })
+              .where('id', '=', student.id)
+              .execute()
+
+            return created
+          })
+          return Response.json(
+            { id: user.id, email: user.email, name: user.name },
+            { status: 201 },
+          )
+        } catch (err) {
+          if (err instanceof Error && /unique/i.test(err.message)) {
             return Response.json(
-              { error: 'This student already has a login' },
+              { error: 'That email is already in use' },
               { status: 409 },
             )
           }
-
-          const { hashPassword } = await import('better-auth/crypto')
-          const hash = await hashPassword(parsed.data.password)
-
-          try {
-            const user = await db.transaction().execute(async (trx) => {
-              const created = await trx
-                .insertInto('users')
-                .values({
-                  household_id: auth.householdId,
-                  email: parsed.data.email,
-                  name: student.name,
-                  role: 'student',
-                  email_verified: true,
-                })
-                .returningAll()
-                .executeTakeFirstOrThrow()
-
-              await trx
-                .insertInto('accounts')
-                .values({
-                  issuer: 'local:credential',
-                  account_id: created.id,
-                  provider_id: 'credential',
-                  user_id: created.id,
-                  password: hash,
-                })
-                .execute()
-
-              await trx
-                .updateTable('students')
-                .set({ user_id: created.id })
-                .where('id', '=', student.id)
-                .execute()
-
-              return created
-            })
-            return Response.json(
-              { id: user.id, email: user.email, name: user.name },
-              { status: 201 },
-            )
-          } catch (err) {
-            if (err instanceof Error && /unique/i.test(err.message)) {
-              return Response.json(
-                { error: 'That email is already in use' },
-                { status: 409 },
-              )
-            }
-            throw err
-          }
-        } finally {
-          await db.destroy()
+          throw err
         }
       },
     },

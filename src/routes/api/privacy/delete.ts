@@ -1,7 +1,7 @@
 import { createFileRoute } from '@tanstack/react-router'
 import { z } from 'zod'
 import { requireRole } from '../../../lib/session'
-import { createDb } from '../../../db/connection'
+import { getSharedDb } from '../../../db/connection'
 import { deleteHouseholdData } from '../../../lib/privacy'
 import { householdsRepository } from '../../../db/repositories'
 
@@ -24,31 +24,36 @@ export const Route = createFileRoute('/api/privacy/delete')({
 
         const parsed = requestSchema.safeParse(await request.json())
         if (!parsed.success) {
-          return Response.json({ error: parsed.error.flatten() }, { status: 400 })
+          return Response.json(
+            { error: parsed.error.flatten() },
+            { status: 400 },
+          )
         }
 
-        const db = createDb()
-        try {
-          const household = await householdsRepository.findById(db, auth.householdId)
-          if (!household) return new Response(null, { status: 404 })
+        const db = getSharedDb()
+        const household = await householdsRepository.findById(
+          db,
+          auth.householdId,
+        )
+        if (!household) return new Response(null, { status: 404 })
 
-          if (parsed.data.confirm_household_name !== household.name) {
-            return Response.json(
-              { error: 'confirm_household_name did not match this household\'s name' },
-              { status: 400 },
-            )
-          }
-
-          await deleteHouseholdData(db, {
-            householdId: household.id,
-            householdName: household.name,
-            requestedByUserId: auth.id,
-          })
-
-          return new Response(null, { status: 204 })
-        } finally {
-          await db.destroy()
+        if (parsed.data.confirm_household_name !== household.name) {
+          return Response.json(
+            {
+              error:
+                "confirm_household_name did not match this household's name",
+            },
+            { status: 400 },
+          )
         }
+
+        await deleteHouseholdData(db, {
+          householdId: household.id,
+          householdName: household.name,
+          requestedByUserId: auth.id,
+        })
+
+        return new Response(null, { status: 204 })
       },
     },
   },

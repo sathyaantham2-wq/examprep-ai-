@@ -1,6 +1,6 @@
 import { createFileRoute } from '@tanstack/react-router'
 import { requireRole } from '../../../../lib/session'
-import { createDb } from '../../../../db/connection'
+import { getSharedDb } from '../../../../db/connection'
 import {
   papersRepository,
   paperQuestionsRepository,
@@ -31,42 +31,97 @@ export const Route = createFileRoute('/api/papers/$id/pdf')({
         const url = new URL(request.url)
         const includeKey = url.searchParams.get('include_key') === 'true'
 
-        const db = createDb()
-        try {
-          const paper = await papersRepository.findByIdForHousehold(
-            db,
-            auth.householdId,
-            params.id,
-          )
-          if (!paper) return new Response(null, { status: 404 })
+        const db = getSharedDb()
+        const paper = await papersRepository.findByIdForHousehold(
+          db,
+          auth.householdId,
+          params.id,
+        )
+        if (!paper) return new Response(null, { status: 404 })
 
-          // F034/F120: the ?theme= query param can re-print the same paper in a different visual
-          // style (a pure rendering choice, so it's safe to override after generation); an
-          // unknown, retired (e.g. F034's old 'Plain' name), or absent value falls back to
-          // whatever was selected at generation time (papers.theme), and finally to
-          // DEFAULT_THEME -- never a 400 for a bad/missing theme, since a wrong theme is a
-          // cosmetic miss, not a reason to refuse the PDF outright.
-          const requestedTheme = url.searchParams.get('theme')
-          const theme = isKnownTheme(requestedTheme)
-            ? requestedTheme
-            : isKnownTheme(paper.theme)
-              ? paper.theme
-              : DEFAULT_THEME
+        // F034/F120: the ?theme= query param can re-print the same paper in a different visual
+        // style (a pure rendering choice, so it's safe to override after generation); an
+        // unknown, retired (e.g. F034's old 'Plain' name), or absent value falls back to
+        // whatever was selected at generation time (papers.theme), and finally to
+        // DEFAULT_THEME -- never a 400 for a bad/missing theme, since a wrong theme is a
+        // cosmetic miss, not a reason to refuse the PDF outright.
+        const requestedTheme = url.searchParams.get('theme')
+        const theme = isKnownTheme(requestedTheme)
+          ? requestedTheme
+          : isKnownTheme(paper.theme)
+            ? paper.theme
+            : DEFAULT_THEME
 
-          const [student, slots, chapters] = await Promise.all([
-            studentsRepository.findById(db, auth.householdId, paper.student_id),
-            paperQuestionsRepository.listForPaperWithQuestions(db, paper.id),
-            chaptersRepository.listByIds(db, paper.chapter_ids),
-          ])
-          if (!student) return new Response(null, { status: 404 })
+        const [student, slots, chapters] = await Promise.all([
+          studentsRepository.findById(db, auth.householdId, paper.student_id),
+          paperQuestionsRepository.listForPaperWithQuestions(db, paper.id),
+          chaptersRepository.listByIds(db, paper.chapter_ids),
+        ])
+        if (!student) return new Response(null, { status: 404 })
 
-          const optionsByQuestion = new Map(
+        const optionsByQuestion = new Map(
+          await Promise.all(
+            slots.map(
+              async (s) =>
+                [
+                  s.question_id,
+                  await questionOptionsRepository.listByQuestion(
+                    db,
+                    s.question_id,
+                  ),
+                ] as const,
+            ),
+          ),
+        )
+
+        const shortfalls = paper.shortfalls
+          ? (paper.shortfalls as Array<{ section: string; reason: string }>)
+          : []
+
+        const paperHtml = buildPaperHtml({
+          title: paper.title,
+          studentName: student.name,
+          board: student.board,
+          class: student.class,
+          durationMin: paper.duration_min,
+          totalMarks: paper.total_marks,
+          chapters: chapters.map((c) => ({
+            part: c.part,
+            chapter_no: c.chapter_no,
+            name: c.name,
+          })),
+          questions: slots.map((s) => ({
+            id: s.id,
+            section: s.section,
+            position: s.position,
+            marks: s.marks,
+            bloom: s.bloom,
+            difficulty: s.difficulty,
+            type: s.type,
+            text: s.text,
+            diagram_kind: s.diagram_kind,
+            diagram_params: s.diagram_params,
+            choice_group: s.choice_group,
+            options: (optionsByQuestion.get(s.question_id) ?? []).map((o) => ({
+              label: o.label,
+              text: o.text,
+              order_index: o.order_index,
+            })),
+          })),
+          shortfalls,
+          theme,
+        })
+
+        let finalHtml = paperHtml
+
+        if (includeKey) {
+          const stepMarksByQuestion = new Map(
             await Promise.all(
               slots.map(
                 async (s) =>
                   [
                     s.question_id,
-                    await questionOptionsRepository.listByQuestion(
+                    await questionStepMarksRepository.listByQuestion(
                       db,
                       s.question_id,
                     ),
@@ -74,103 +129,45 @@ export const Route = createFileRoute('/api/papers/$id/pdf')({
               ),
             ),
           )
+          const coverage = await computeCoverageTable(db, paper.id)
 
-          const shortfalls = paper.shortfalls
-            ? (paper.shortfalls as Array<{ section: string; reason: string }>)
-            : []
-
-          const paperHtml = buildPaperHtml({
+          const keyHtml = buildAnswerKeyHtml({
             title: paper.title,
-            studentName: student.name,
-            board: student.board,
-            class: student.class,
-            durationMin: paper.duration_min,
-            totalMarks: paper.total_marks,
-            chapters: chapters.map((c) => ({
-              part: c.part,
-              chapter_no: c.chapter_no,
-              name: c.name,
-            })),
-            questions: slots.map((s) => ({
-              id: s.id,
-              section: s.section,
-              position: s.position,
-              marks: s.marks,
-              bloom: s.bloom,
-              difficulty: s.difficulty,
-              type: s.type,
-              text: s.text,
-              diagram_kind: s.diagram_kind,
-              diagram_params: s.diagram_params,
-              choice_group: s.choice_group,
-              options: (optionsByQuestion.get(s.question_id) ?? []).map(
-                (o) => ({
-                  label: o.label,
-                  text: o.text,
-                  order_index: o.order_index,
-                }),
-              ),
-            })),
-            shortfalls,
+            questions: slots.map((s) => {
+              const options = optionsByQuestion.get(s.question_id) ?? []
+              const correctOption = options.find((o) => o.is_correct)
+              return {
+                position: s.position,
+                section: s.section,
+                marks: s.marks,
+                type: s.type,
+                text: s.text,
+                answer: s.answer,
+                diagram_kind: s.diagram_kind,
+                diagram_params: s.diagram_params,
+                choice_group: s.choice_group,
+                correctOptionLabel: correctOption?.label ?? null,
+                stepMarks: (stepMarksByQuestion.get(s.question_id) ?? []).map(
+                  (sm) => ({
+                    step_no: sm.step_no,
+                    description: sm.description,
+                    marks: sm.marks,
+                  }),
+                ),
+              }
+            }),
+            coverage,
             theme,
           })
 
-          let finalHtml = paperHtml
-
-          if (includeKey) {
-            const stepMarksByQuestion = new Map(
-              await Promise.all(
-                slots.map(
-                  async (s) =>
-                    [
-                      s.question_id,
-                      await questionStepMarksRepository.listByQuestion(
-                        db,
-                        s.question_id,
-                      ),
-                    ] as const,
-                ),
-              ),
-            )
-            const coverage = await computeCoverageTable(db, paper.id)
-
-            const keyHtml = buildAnswerKeyHtml({
-              title: paper.title,
-              questions: slots.map((s) => {
-                const options = optionsByQuestion.get(s.question_id) ?? []
-                const correctOption = options.find((o) => o.is_correct)
-                return {
-                  position: s.position,
-                  section: s.section,
-                  marks: s.marks,
-                  type: s.type,
-                  text: s.text,
-                  answer: s.answer,
-                  diagram_kind: s.diagram_kind,
-                  diagram_params: s.diagram_params,
-                  choice_group: s.choice_group,
-                  correctOptionLabel: correctOption?.label ?? null,
-                  stepMarks: (stepMarksByQuestion.get(s.question_id) ?? []).map(
-                    (sm) => ({
-                      step_no: sm.step_no,
-                      description: sm.description,
-                      marks: sm.marks,
-                    }),
-                  ),
-                }
-              }),
-              coverage,
-              theme,
-            })
-
-            // Combined into one document (this route only ever returns one PDF stream, per
-            // tab05's contract) but the key content is appended as a distinct trailing section
-            // behind its own page break, never interleaved with the paper's own questions -- and
-            // this whole branch is unreachable without a parent/admin session, so a student-facing
-            // request (the only kind that matters for "never see an answer key") never sees it.
-            const paperParts = extractStyleAndBody(paperHtml)
-            const keyParts = extractStyleAndBody(keyHtml)
-            finalHtml = `<!doctype html>
+          // Combined into one document (this route only ever returns one PDF stream, per
+          // tab05's contract) but the key content is appended as a distinct trailing section
+          // behind its own page break, never interleaved with the paper's own questions -- and
+          // this whole branch is unreachable without a parent/admin session, so a student-facing
+          // request (the only kind that matters for "never see an answer key") never sees it.
+          const paperParts = extractStyleAndBody(paperHtml)
+          const keyParts = extractStyleAndBody(keyHtml)
+          finalHtml = `<!doctype html>
 <html>
 <head>
 <meta charset="utf-8" />
@@ -182,25 +179,22 @@ ${paperParts.body}
 ${keyParts.body}
 </body>
 </html>`
-          }
-
-          const pdf = await renderHtmlToPdf(finalHtml)
-
-          await logProductEvent(db, {
-            eventType: 'paper_downloaded',
-            householdId: auth.householdId,
-            studentId: paper.student_id,
-          })
-
-          return new Response(new Uint8Array(pdf), {
-            headers: {
-              'content-type': 'application/pdf',
-              'content-disposition': `inline; filename="${paper.id}.pdf"`,
-            },
-          })
-        } finally {
-          await db.destroy()
         }
+
+        const pdf = await renderHtmlToPdf(finalHtml)
+
+        await logProductEvent(db, {
+          eventType: 'paper_downloaded',
+          householdId: auth.householdId,
+          studentId: paper.student_id,
+        })
+
+        return new Response(new Uint8Array(pdf), {
+          headers: {
+            'content-type': 'application/pdf',
+            'content-disposition': `inline; filename="${paper.id}.pdf"`,
+          },
+        })
       },
     },
   },

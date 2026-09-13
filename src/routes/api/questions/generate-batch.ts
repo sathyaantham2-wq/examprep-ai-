@@ -1,7 +1,7 @@
 import { createFileRoute } from '@tanstack/react-router'
 import { z } from 'zod'
 import { requireRole } from '../../../lib/session'
-import { createDb } from '../../../db/connection'
+import { getSharedDb } from '../../../db/connection'
 import { planBatch, runBatch } from '../../../lib/generation-batches'
 import { generationBatchItemsRepository } from '../../../db/repositories'
 
@@ -33,37 +33,34 @@ export const Route = createFileRoute('/api/questions/generate-batch')({
           )
         }
 
-        const db = createDb()
-        try {
-          const plan = await planBatch(db, {
-            subjectId: parsed.data.subject_id,
-            costCapInr: parsed.data.cost_cap_inr,
-            createdBy: auth.id,
-          })
+        const db = getSharedDb()
+        const plan = await planBatch(db, {
+          subjectId: parsed.data.subject_id,
+          costCapInr: parsed.data.cost_cap_inr,
+          createdBy: auth.id,
+        })
 
-          if (!plan.ok) {
-            if (plan.reason === 'ai_not_configured') {
-              return Response.json({
-                batch: null,
-                message:
-                  'No AI provider is configured. Admin writes questions manually; the review queue stays Draft-only.',
-              })
-            }
+        if (!plan.ok) {
+          if (plan.reason === 'ai_not_configured') {
             return Response.json({
               batch: null,
-              message: 'Every Bloom x difficulty cell in this subject already meets its target.',
+              message:
+                'No AI provider is configured. Admin writes questions manually; the review queue stays Draft-only.',
             })
           }
-
-          const summary = await runBatch(db, plan.batchId)
-          const items = await generationBatchItemsRepository.listByBatch(
-            db,
-            plan.batchId,
-          )
-          return Response.json({ batch: summary, items }, { status: 201 })
-        } finally {
-          await db.destroy()
+          return Response.json({
+            batch: null,
+            message:
+              'Every Bloom x difficulty cell in this subject already meets its target.',
+          })
         }
+
+        const summary = await runBatch(db, plan.batchId)
+        const items = await generationBatchItemsRepository.listByBatch(
+          db,
+          plan.batchId,
+        )
+        return Response.json({ batch: summary, items }, { status: 201 })
       },
     },
   },

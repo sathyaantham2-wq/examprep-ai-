@@ -1,7 +1,7 @@
 import { createFileRoute } from '@tanstack/react-router'
 import { z } from 'zod'
 import { requireRole } from '../../../lib/session'
-import { createDb } from '../../../db/connection'
+import { getSharedDb } from '../../../db/connection'
 import { getProductFunnelReport } from '../../../lib/product-events'
 
 const DEFAULT_WINDOW_DAYS = 30
@@ -31,24 +31,34 @@ export const Route = createFileRoute('/api/admin/product-funnel')({
           to: url.searchParams.get('to') ?? undefined,
         })
         if (!parsed.success) {
-          return Response.json({ error: parsed.error.flatten() }, { status: 400 })
+          return Response.json(
+            { error: parsed.error.flatten() },
+            { status: 400 },
+          )
         }
 
-        const to = parsed.data.to ? new Date(`${parsed.data.to}T23:59:59.999Z`) : null
+        const to = parsed.data.to
+          ? new Date(`${parsed.data.to}T23:59:59.999Z`)
+          : null
         const from = parsed.data.from
           ? new Date(`${parsed.data.from}T00:00:00.000Z`)
-          : new Date((to ?? new Date()).getTime() - DEFAULT_WINDOW_DAYS * 24 * 60 * 60 * 1000)
-        if (Number.isNaN(from.getTime()) || (to !== null && Number.isNaN(to.getTime()))) {
-          return Response.json({ error: 'from/to must be YYYY-MM-DD dates' }, { status: 400 })
+          : new Date(
+              (to ?? new Date()).getTime() -
+                DEFAULT_WINDOW_DAYS * 24 * 60 * 60 * 1000,
+            )
+        if (
+          Number.isNaN(from.getTime()) ||
+          (to !== null && Number.isNaN(to.getTime()))
+        ) {
+          return Response.json(
+            { error: 'from/to must be YYYY-MM-DD dates' },
+            { status: 400 },
+          )
         }
 
-        const db = createDb()
-        try {
-          const report = await getProductFunnelReport(db, { from, to })
-          return Response.json(report)
-        } finally {
-          await db.destroy()
-        }
+        const db = getSharedDb()
+        const report = await getProductFunnelReport(db, { from, to })
+        return Response.json(report)
       },
     },
   },

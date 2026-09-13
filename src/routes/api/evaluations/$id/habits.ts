@@ -1,7 +1,7 @@
 import { createFileRoute } from '@tanstack/react-router'
 import { z } from 'zod'
 import { requireRole } from '../../../../lib/session'
-import { createDb } from '../../../../db/connection'
+import { getSharedDb } from '../../../../db/connection'
 import {
   evaluationsRepository,
   habitObservationsRepository,
@@ -38,34 +38,29 @@ export const Route = createFileRoute('/api/evaluations/$id/habits')({
           )
         }
 
-        const db = createDb()
-        try {
-          const evaluation = await evaluationsRepository.findByIdForHousehold(
-            db,
-            auth.householdId,
-            params.id,
+        const db = getSharedDb()
+        const evaluation = await evaluationsRepository.findByIdForHousehold(
+          db,
+          auth.householdId,
+          params.id,
+        )
+        if (!evaluation) return new Response(null, { status: 404 })
+        if (evaluation.confirmed_at) {
+          return Response.json(
+            {
+              error:
+                'This evaluation is already confirmed and can no longer be edited',
+            },
+            { status: 409 },
           )
-          if (!evaluation) return new Response(null, { status: 404 })
-          if (evaluation.confirmed_at) {
-            return Response.json(
-              {
-                error:
-                  'This evaluation is already confirmed and can no longer be edited',
-              },
-              { status: 409 },
-            )
-          }
-
-          const updated =
-            await habitObservationsRepository.replaceForEvaluation(
-              db,
-              evaluation.id,
-              parsed.data.observations,
-            )
-          return Response.json(updated)
-        } finally {
-          await db.destroy()
         }
+
+        const updated = await habitObservationsRepository.replaceForEvaluation(
+          db,
+          evaluation.id,
+          parsed.data.observations,
+        )
+        return Response.json(updated)
       },
     },
   },

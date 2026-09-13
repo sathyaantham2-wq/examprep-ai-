@@ -1,7 +1,7 @@
 import { createFileRoute } from '@tanstack/react-router'
 import { z } from 'zod'
 import { requireRole } from '../../../lib/session'
-import { createDb } from '../../../db/connection'
+import { getSharedDb } from '../../../db/connection'
 import { studentsRepository } from '../../../db/repositories'
 
 // F009: kept in sync with students.ts's create-time targetExamSchema shape.
@@ -46,36 +46,32 @@ export const Route = createFileRoute('/api/students/$id')({
           )
         }
 
-        const db = createDb()
-        try {
-          // findById is scoped by household — a student id from another household resolves to
-          // undefined here rather than ever being reachable for update.
-          const existing = await studentsRepository.findById(
-            db,
-            auth.householdId,
-            params.id,
-          )
-          if (!existing) return new Response(null, { status: 404 })
+        const db = getSharedDb()
+        // findById is scoped by household — a student id from another household resolves to
+        // undefined here rather than ever being reachable for update.
+        const existing = await studentsRepository.findById(
+          db,
+          auth.householdId,
+          params.id,
+        )
+        if (!existing) return new Response(null, { status: 404 })
 
-          // Kysely's set() forwards every key in the object verbatim, including one whose value
-          // is `undefined` -- so target_exams is only added to the payload when it was actually
-          // provided, rather than risk an explicit `undefined` reaching the query as a bind param.
-          const { target_exams, ...rest } = parsed.data
-          const updated = await studentsRepository.update(
-            db,
-            auth.householdId,
-            params.id,
-            {
-              ...rest,
-              ...(target_exams !== undefined
-                ? { target_exams: JSON.stringify(target_exams) }
-                : {}),
-            },
-          )
-          return Response.json(updated)
-        } finally {
-          await db.destroy()
-        }
+        // Kysely's set() forwards every key in the object verbatim, including one whose value
+        // is `undefined` -- so target_exams is only added to the payload when it was actually
+        // provided, rather than risk an explicit `undefined` reaching the query as a bind param.
+        const { target_exams, ...rest } = parsed.data
+        const updated = await studentsRepository.update(
+          db,
+          auth.householdId,
+          params.id,
+          {
+            ...rest,
+            ...(target_exams !== undefined
+              ? { target_exams: JSON.stringify(target_exams) }
+              : {}),
+          },
+        )
+        return Response.json(updated)
       },
     },
   },

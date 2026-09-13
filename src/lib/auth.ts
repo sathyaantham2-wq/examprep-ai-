@@ -1,6 +1,6 @@
 import { betterAuth } from 'better-auth'
 import { createAuthPool } from '../db/auth-pool'
-import { createDb } from '../db/connection'
+import { getSharedDb } from '../db/connection'
 import { householdsRepository } from '../db/repositories'
 import { env } from './env'
 
@@ -43,21 +43,17 @@ export const auth = betterAuth({
     user: {
       create: {
         before: async (user) => {
-          const db = createDb()
-          try {
-            const household = await householdsRepository.insert(db, {
-              name: `${user.name}'s household`,
-              plan: 'free',
-            })
-            return {
-              data: {
-                ...user,
-                household_id: household.id,
-                role: 'parent' as const,
-              },
-            }
-          } finally {
-            await db.destroy()
+          const db = getSharedDb()
+          const household = await householdsRepository.insert(db, {
+            name: `${user.name}'s household`,
+            plan: 'free',
+          })
+          return {
+            data: {
+              ...user,
+              household_id: household.id,
+              role: 'parent' as const,
+            },
           }
         },
       },

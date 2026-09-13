@@ -3,14 +3,17 @@ import { z } from 'zod'
 import { requireRole } from '../../../lib/session'
 import { resolveEnabledStudent } from '../../../lib/access'
 import { generatePaper } from '../../../lib/papers'
-import { createDb } from '../../../db/connection'
+import { getSharedDb } from '../../../db/connection'
 import {
   studentsRepository,
   consentsRepository,
   generationEventsRepository,
 } from '../../../db/repositories'
 import { PAPER_THEMES } from '../../../lib/pdf/themes'
-import { StudentSpendCapReachedError, enforceStudentSpendBudget } from '../../../lib/ai-metering'
+import {
+  StudentSpendCapReachedError,
+  enforceStudentSpendBudget,
+} from '../../../lib/ai-metering'
 import { logProductEvent } from '../../../lib/product-events'
 
 // F112: "Student role may generate ... papers within a daily quota." Not a number the plan
@@ -93,107 +96,103 @@ export const Route = createFileRoute('/api/papers/generate')({
           )
         }
 
-        const db = createDb()
-        try {
-          // F112: a student always generates as themselves (F010's access_enabled gate applies
-          // here too); a parent/admin must name student_id and it is checked against their own
-          // household -- same shape GET /api/remediation and GET /api/habit-drills already use.
-          let student
-          if (auth.role === 'student') {
-            student = await resolveEnabledStudent(db, auth.id)
-            if (student instanceof Response) return student
-          } else {
-            if (!parsed.data.student_id) {
-              return Response.json(
-                { error: 'student_id is required' },
-                { status: 400 },
-              )
-            }
-            const found = await studentsRepository.findById(
-              db,
-              auth.householdId,
-              parsed.data.student_id,
+        const db = getSharedDb()
+        // F112: a student always generates as themselves (F010's access_enabled gate applies
+        // here too); a parent/admin must name student_id and it is checked against their own
+        // household -- same shape GET /api/remediation and GET /api/habit-drills already use.
+        let student
+        if (auth.role === 'student') {
+          student = await resolveEnabledStudent(db, auth.id)
+          if (student instanceof Response) return student
+        } else {
+          if (!parsed.data.student_id) {
+            return Response.json(
+              { error: 'student_id is required' },
+              { status: 400 },
             )
-            if (!found) return new Response(null, { status: 404 })
-            student = found
           }
-
-          // F095: consent is required before generating any new content for this student. Not
-          // "the student has no consent record" specifically -- some students predate this
-          // feature or were created directly at the repository layer (fixtures/tests) -- but any
-          // active-consent check has to treat "no row at all" the same as "withdrawn", since
-          // both mean there is currently no valid consent on file.
-          const activeConsent = await consentsRepository.findActiveForStudent(
+          const found = await studentsRepository.findById(
             db,
-            student.id,
+            auth.householdId,
+            parsed.data.student_id,
           )
-          if (!activeConsent) {
+          if (!found) return new Response(null, { status: 404 })
+          student = found
+        }
+
+        // F095: consent is required before generating any new content for this student. Not
+        // "the student has no consent record" specifically -- some students predate this
+        // feature or were created directly at the repository layer (fixtures/tests) -- but any
+        // active-consent check has to treat "no row at all" the same as "withdrawn", since
+        // both mean there is currently no valid consent on file.
+        const activeConsent = await consentsRepository.findActiveForStudent(
+          db,
+          student.id,
+        )
+        if (!activeConsent) {
+          return Response.json(
+            {
+              error:
+                'Parental consent for this student is missing or has been withdrawn -- generation is blocked until consent is given again',
+            },
+            { status: 403 },
+          )
+        }
+
+        if (auth.role === 'student') {
+          const usedToday =
+            await generationEventsRepository.countTodayByStudentAndTrigger(
+              db,
+              student.id,
+              'student',
+            )
+          if (usedToday >= STUDENT_DAILY_GENERATION_QUOTA) {
             return Response.json(
               {
-                error:
-                  'Parental consent for this student is missing or has been withdrawn -- generation is blocked until consent is given again',
+                error: 'daily_quota_exceeded',
+                message: `You've reached today's limit of ${STUDENT_DAILY_GENERATION_QUOTA} papers -- try again tomorrow.`,
               },
-              { status: 403 },
+              { status: 429 },
             )
           }
 
-          if (auth.role === 'student') {
-            const usedToday =
-              await generationEventsRepository.countTodayByStudentAndTrigger(
-                db,
-                student.id,
-                'student',
-              )
-            if (usedToday >= STUDENT_DAILY_GENERATION_QUOTA) {
+          // F121: a second, independent ceiling alongside F112's raw call-count quota above --
+          // this one is INR spend (generation + this student's own grading, F091/ai_jobs.cost_inr),
+          // so a handful of unusually large/expensive calls can still be capped even while under
+          // the daily paper-count quota.
+          try {
+            await enforceStudentSpendBudget(db, { studentId: student.id })
+          } catch (err) {
+            if (err instanceof StudentSpendCapReachedError) {
               return Response.json(
-                {
-                  error: 'daily_quota_exceeded',
-                  message: `You've reached today's limit of ${STUDENT_DAILY_GENERATION_QUOTA} papers -- try again tomorrow.`,
-                },
+                { error: 'spend_cap_exceeded', message: err.message },
                 { status: 429 },
               )
             }
-
-            // F121: a second, independent ceiling alongside F112's raw call-count quota above --
-            // this one is INR spend (generation + this student's own grading, F091/ai_jobs.cost_inr),
-            // so a handful of unusually large/expensive calls can still be capped even while under
-            // the daily paper-count quota.
-            try {
-              await enforceStudentSpendBudget(db, { studentId: student.id })
-            } catch (err) {
-              if (err instanceof StudentSpendCapReachedError) {
-                return Response.json(
-                  { error: 'spend_cap_exceeded', message: err.message },
-                  { status: 429 },
-                )
-              }
-              throw err
-            }
+            throw err
           }
-
-          const result = await generatePaper(db, {
-            ...parsed.data,
-            student_id: student.id,
-            recentUsageWindowDays: parsed.data.recent_usage_window_days,
-          })
-
-          if (auth.role === 'student') {
-            await generationEventsRepository.insert(db, {
-              student_id: student.id,
-              triggered_by: 'student',
-            })
-          }
-
-          await logProductEvent(db, {
-            eventType: 'paper_generated',
-            householdId: student.household_id,
-            studentId: student.id,
-          })
-
-          return Response.json(result, { status: 201 })
-        } finally {
-          await db.destroy()
         }
+
+        const result = await generatePaper(db, {
+          ...parsed.data,
+          student_id: student.id,
+          recentUsageWindowDays: parsed.data.recent_usage_window_days,
+        })
+
+        if (auth.role === 'student') {
+          await generationEventsRepository.insert(db, {
+            student_id: student.id,
+            triggered_by: 'student',
+          })
+        }
+
+        await logProductEvent(db, {
+          eventType: 'paper_generated',
+          householdId: student.household_id,
+          studentId: student.id,
+        })
+
+        return Response.json(result, { status: 201 })
       },
     },
   },

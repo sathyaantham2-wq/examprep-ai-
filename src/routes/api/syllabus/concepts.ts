@@ -1,7 +1,7 @@
 import { createFileRoute } from '@tanstack/react-router'
 import { z } from 'zod'
 import { requireUser } from '../../../lib/session'
-import { createDb } from '../../../db/connection'
+import { getSharedDb } from '../../../db/connection'
 import { conceptsRepository } from '../../../db/repositories'
 
 const querySchema = z
@@ -26,18 +26,17 @@ export const Route = createFileRoute('/api/syllabus/concepts')({
           Object.fromEntries(new URL(request.url).searchParams),
         )
         if (!parsed.success) {
-          return Response.json({ error: parsed.error.flatten() }, { status: 400 })
+          return Response.json(
+            { error: parsed.error.flatten() },
+            { status: 400 },
+          )
         }
 
-        const db = createDb()
-        try {
-          const concepts = parsed.data.chapter_id
-            ? await conceptsRepository.listByChapter(db, parsed.data.chapter_id)
-            : await conceptsRepository.listBySubject(db, parsed.data.subject_id!)
-          return Response.json(concepts)
-        } finally {
-          await db.destroy()
-        }
+        const db = getSharedDb()
+        const concepts = parsed.data.chapter_id
+          ? await conceptsRepository.listByChapter(db, parsed.data.chapter_id)
+          : await conceptsRepository.listBySubject(db, parsed.data.subject_id!)
+        return Response.json(concepts)
       },
     },
   },

@@ -1,6 +1,6 @@
 import { createFileRoute } from '@tanstack/react-router'
 import { requireRole } from '../../../lib/session'
-import { createDb } from '../../../db/connection'
+import { getSharedDb } from '../../../db/connection'
 import { bulkImportQuestions } from '../../../lib/bulk-import'
 
 // tab05: POST /api/questions/bulk-import, Admin, request "file (csv/json)" -> "imported count +
@@ -43,7 +43,7 @@ export const Route = createFileRoute('/api/questions/bulk-import')({
 
         const content = await file.text()
 
-        const db = createDb()
+        const db = getSharedDb()
         try {
           const result = await bulkImportQuestions(db, content, format, auth.id)
           return Response.json(result, { status: 201 })
@@ -52,8 +52,6 @@ export const Route = createFileRoute('/api/questions/bulk-import')({
             { error: err instanceof Error ? err.message : 'Import failed' },
             { status: 400 },
           )
-        } finally {
-          await db.destroy()
         }
       },
     },

@@ -1,6 +1,6 @@
 import { createFileRoute } from '@tanstack/react-router'
 import { requireRole } from '../../../lib/session'
-import { createDb } from '../../../db/connection'
+import { getSharedDb } from '../../../db/connection'
 import { auditSyllabusFidelity } from '../../../lib/syllabus-fidelity'
 
 // F106: not in tab05 -- a runtime-visible surface for the audit, not just a script, so an admin
@@ -12,13 +12,9 @@ export const Route = createFileRoute('/api/admin/syllabus-fidelity')({
         const auth = await requireRole(request, 'admin')
         if (auth instanceof Response) return auth
 
-        const db = createDb()
-        try {
-          const violations = await auditSyllabusFidelity(db)
-          return Response.json({ violations, count: violations.length })
-        } finally {
-          await db.destroy()
-        }
+        const db = getSharedDb()
+        const violations = await auditSyllabusFidelity(db)
+        return Response.json({ violations, count: violations.length })
       },
     },
   },

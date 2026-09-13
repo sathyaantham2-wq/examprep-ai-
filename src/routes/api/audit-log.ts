@@ -1,6 +1,6 @@
 import { createFileRoute } from '@tanstack/react-router'
 import { requireRole } from '../../lib/session'
-import { createDb } from '../../db/connection'
+import { getSharedDb } from '../../db/connection'
 import { auditLogRepository } from '../../db/repositories'
 
 // F099: "visible to household owner." Not in tab05's listed routes -- no read endpoint for
@@ -13,17 +13,13 @@ export const Route = createFileRoute('/api/audit-log')({
         const auth = await requireRole(request, 'parent', 'admin')
         if (auth instanceof Response) return auth
 
-        const db = createDb()
-        try {
-          const entries = await auditLogRepository.listRecent(
-            db,
-            auth.householdId,
-            100,
-          )
-          return Response.json(entries)
-        } finally {
-          await db.destroy()
-        }
+        const db = getSharedDb()
+        const entries = await auditLogRepository.listRecent(
+          db,
+          auth.householdId,
+          100,
+        )
+        return Response.json(entries)
       },
     },
   },

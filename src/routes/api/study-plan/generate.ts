@@ -3,7 +3,7 @@ import { z } from 'zod'
 import { requireRole } from '../../../lib/session'
 import { resolveEnabledStudent } from '../../../lib/access'
 import { generateStudyPlan } from '../../../lib/study-plan'
-import { createDb } from '../../../db/connection'
+import { getSharedDb } from '../../../db/connection'
 import { studentsRepository } from '../../../db/repositories'
 
 const requestSchema = z.object({
@@ -25,37 +25,36 @@ export const Route = createFileRoute('/api/study-plan/generate')({
 
         const parsed = requestSchema.safeParse(await request.json())
         if (!parsed.success) {
-          return Response.json({ error: parsed.error.flatten() }, { status: 400 })
+          return Response.json(
+            { error: parsed.error.flatten() },
+            { status: 400 },
+          )
         }
 
-        const db = createDb()
-        try {
-          let studentId: string
-          if (auth.role === 'student') {
-            const student = await resolveEnabledStudent(db, auth.id)
-            if (student instanceof Response) return student
-            studentId = student.id
-          } else {
-            if (!parsed.data.student_id) {
-              return Response.json(
-                { error: 'student_id is required' },
-                { status: 400 },
-              )
-            }
-            const student = await studentsRepository.findById(
-              db,
-              auth.householdId,
-              parsed.data.student_id,
+        const db = getSharedDb()
+        let studentId: string
+        if (auth.role === 'student') {
+          const student = await resolveEnabledStudent(db, auth.id)
+          if (student instanceof Response) return student
+          studentId = student.id
+        } else {
+          if (!parsed.data.student_id) {
+            return Response.json(
+              { error: 'student_id is required' },
+              { status: 400 },
             )
-            if (!student) return new Response(null, { status: 404 })
-            studentId = student.id
           }
-
-          const plan = await generateStudyPlan(db, studentId)
-          return Response.json({ plan }, { status: 201 })
-        } finally {
-          await db.destroy()
+          const student = await studentsRepository.findById(
+            db,
+            auth.householdId,
+            parsed.data.student_id,
+          )
+          if (!student) return new Response(null, { status: 404 })
+          studentId = student.id
         }
+
+        const plan = await generateStudyPlan(db, studentId)
+        return Response.json({ plan }, { status: 201 })
       },
     },
   },

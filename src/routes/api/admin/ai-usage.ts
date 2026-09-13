@@ -1,7 +1,7 @@
 import { createFileRoute } from '@tanstack/react-router'
 import { z } from 'zod'
 import { requireRole } from '../../../lib/session'
-import { createDb } from '../../../db/connection'
+import { getSharedDb } from '../../../db/connection'
 import { getAiUsageReport } from '../../../lib/ai-usage'
 
 const DEFAULT_WINDOW_DAYS = 30
@@ -32,7 +32,10 @@ export const Route = createFileRoute('/api/admin/ai-usage')({
           group_by: url.searchParams.get('group_by') ?? undefined,
         })
         if (!parsed.success) {
-          return Response.json({ error: parsed.error.flatten() }, { status: 400 })
+          return Response.json(
+            { error: parsed.error.flatten() },
+            { status: 400 },
+          )
         }
 
         // `to` stays null ("no upper bound") when the caller didn't ask for one -- pinning it to
@@ -40,25 +43,32 @@ export const Route = createFileRoute('/api/admin/ai-usage')({
         // DB server's own `now()` used for created_at: whichever clock runs a few hundred ms
         // ahead can make a just-written row's created_at land after this request's `to`, silently
         // dropping it from "today"'s totals. Only an explicit `to=YYYY-MM-DD` needs a real bound.
-        const to = parsed.data.to ? new Date(`${parsed.data.to}T23:59:59.999Z`) : null
+        const to = parsed.data.to
+          ? new Date(`${parsed.data.to}T23:59:59.999Z`)
+          : null
         const from = parsed.data.from
           ? new Date(`${parsed.data.from}T00:00:00.000Z`)
-          : new Date((to ?? new Date()).getTime() - DEFAULT_WINDOW_DAYS * 24 * 60 * 60 * 1000)
-        if (Number.isNaN(from.getTime()) || (to !== null && Number.isNaN(to.getTime()))) {
-          return Response.json({ error: 'from/to must be YYYY-MM-DD dates' }, { status: 400 })
+          : new Date(
+              (to ?? new Date()).getTime() -
+                DEFAULT_WINDOW_DAYS * 24 * 60 * 60 * 1000,
+            )
+        if (
+          Number.isNaN(from.getTime()) ||
+          (to !== null && Number.isNaN(to.getTime()))
+        ) {
+          return Response.json(
+            { error: 'from/to must be YYYY-MM-DD dates' },
+            { status: 400 },
+          )
         }
 
-        const db = createDb()
-        try {
-          const report = await getAiUsageReport(db, {
-            from,
-            to,
-            groupBy: parsed.data.group_by,
-          })
-          return Response.json(report)
-        } finally {
-          await db.destroy()
-        }
+        const db = getSharedDb()
+        const report = await getAiUsageReport(db, {
+          from,
+          to,
+          groupBy: parsed.data.group_by,
+        })
+        return Response.json(report)
       },
     },
   },

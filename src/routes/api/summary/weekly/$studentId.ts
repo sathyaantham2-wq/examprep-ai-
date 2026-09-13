@@ -1,7 +1,7 @@
 import { createFileRoute } from '@tanstack/react-router'
 import { z } from 'zod'
 import { requireRole } from '../../../../lib/session'
-import { createDb } from '../../../../db/connection'
+import { getSharedDb } from '../../../../db/connection'
 import { studentsRepository } from '../../../../db/repositories'
 import { buildWeeklySummary } from '../../../../lib/weekly-summary'
 
@@ -23,27 +23,26 @@ export const Route = createFileRoute('/api/summary/weekly/$studentId')({
           Object.fromEntries(new URL(request.url).searchParams),
         )
         if (!parsed.success) {
-          return Response.json({ error: parsed.error.flatten() }, { status: 400 })
-        }
-
-        const db = createDb()
-        try {
-          const student = await studentsRepository.findById(
-            db,
-            auth.householdId,
-            params.studentId,
+          return Response.json(
+            { error: parsed.error.flatten() },
+            { status: 400 },
           )
-          if (!student) return new Response(null, { status: 404 })
-
-          const weekStart = parsed.data.week_start
-            ? new Date(parsed.data.week_start)
-            : new Date(Date.now() - 7 * 24 * 60 * 60 * 1000)
-
-          const summary = await buildWeeklySummary(db, student.id, weekStart)
-          return Response.json(summary)
-        } finally {
-          await db.destroy()
         }
+
+        const db = getSharedDb()
+        const student = await studentsRepository.findById(
+          db,
+          auth.householdId,
+          params.studentId,
+        )
+        if (!student) return new Response(null, { status: 404 })
+
+        const weekStart = parsed.data.week_start
+          ? new Date(parsed.data.week_start)
+          : new Date(Date.now() - 7 * 24 * 60 * 60 * 1000)
+
+        const summary = await buildWeeklySummary(db, student.id, weekStart)
+        return Response.json(summary)
       },
     },
   },

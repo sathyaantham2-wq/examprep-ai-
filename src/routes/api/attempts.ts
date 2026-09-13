@@ -2,7 +2,7 @@ import { createFileRoute } from '@tanstack/react-router'
 import { z } from 'zod'
 import { requireRole } from '../../lib/session'
 import { resolveEnabledStudent } from '../../lib/access'
-import { createDb } from '../../db/connection'
+import { getSharedDb } from '../../db/connection'
 import { papersRepository, attemptsRepository } from '../../db/repositories'
 
 const createAttemptSchema = z.object({
@@ -27,30 +27,26 @@ export const Route = createFileRoute('/api/attempts')({
           )
         }
 
-        const db = createDb()
-        try {
-          const student = await resolveEnabledStudent(db, auth.id)
-          if (student instanceof Response) return student
+        const db = getSharedDb()
+        const student = await resolveEnabledStudent(db, auth.id)
+        if (student instanceof Response) return student
 
-          // Scoped by student_id — a paper belonging to a different student resolves to
-          // undefined, so a student can't start an attempt on someone else's paper.
-          const paper = await papersRepository.findById(
-            db,
-            student.id,
-            parsed.data.paper_id,
-          )
-          if (!paper) return new Response(null, { status: 404 })
+        // Scoped by student_id — a paper belonging to a different student resolves to
+        // undefined, so a student can't start an attempt on someone else's paper.
+        const paper = await papersRepository.findById(
+          db,
+          student.id,
+          parsed.data.paper_id,
+        )
+        if (!paper) return new Response(null, { status: 404 })
 
-          const attempt = await attemptsRepository.insert(db, {
-            paper_id: paper.id,
-            student_id: student.id,
-            mode: parsed.data.mode,
-            status: 'in_progress',
-          })
-          return Response.json(attempt, { status: 201 })
-        } finally {
-          await db.destroy()
-        }
+        const attempt = await attemptsRepository.insert(db, {
+          paper_id: paper.id,
+          student_id: student.id,
+          mode: parsed.data.mode,
+          status: 'in_progress',
+        })
+        return Response.json(attempt, { status: 201 })
       },
     },
   },

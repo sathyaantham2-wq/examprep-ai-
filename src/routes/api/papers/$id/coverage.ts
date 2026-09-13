@@ -1,6 +1,6 @@
 import { createFileRoute } from '@tanstack/react-router'
 import { requireRole } from '../../../../lib/session'
-import { createDb } from '../../../../db/connection'
+import { getSharedDb } from '../../../../db/connection'
 import { papersRepository } from '../../../../db/repositories'
 import { computeCoverageTable } from '../../../../lib/pdf/coverage'
 
@@ -14,20 +14,16 @@ export const Route = createFileRoute('/api/papers/$id/coverage')({
         const auth = await requireRole(request, 'parent', 'admin')
         if (auth instanceof Response) return auth
 
-        const db = createDb()
-        try {
-          const paper = await papersRepository.findByIdForHousehold(
-            db,
-            auth.householdId,
-            params.id,
-          )
-          if (!paper) return new Response(null, { status: 404 })
+        const db = getSharedDb()
+        const paper = await papersRepository.findByIdForHousehold(
+          db,
+          auth.householdId,
+          params.id,
+        )
+        if (!paper) return new Response(null, { status: 404 })
 
-          const coverage = await computeCoverageTable(db, paper.id)
-          return Response.json(coverage)
-        } finally {
-          await db.destroy()
-        }
+        const coverage = await computeCoverageTable(db, paper.id)
+        return Response.json(coverage)
       },
     },
   },

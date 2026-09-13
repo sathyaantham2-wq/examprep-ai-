@@ -1,7 +1,7 @@
 import { createFileRoute } from '@tanstack/react-router'
 import { z } from 'zod'
 import { requireRole } from '../../../../lib/session'
-import { createDb } from '../../../../db/connection'
+import { getSharedDb } from '../../../../db/connection'
 import { questionsRepository } from '../../../../db/repositories'
 
 const rejectSchema = z.object({
@@ -32,21 +32,17 @@ export const Route = createFileRoute('/api/questions/$id/reject')({
           )
         }
 
-        const db = createDb()
-        try {
-          const existing = await questionsRepository.findById(db, params.id)
-          if (!existing) return new Response(null, { status: 404 })
+        const db = getSharedDb()
+        const existing = await questionsRepository.findById(db, params.id)
+        if (!existing) return new Response(null, { status: 404 })
 
-          const updated = await questionsRepository.update(db, params.id, {
-            status: 'retired',
-            review_note: parsed.data.note,
-            reviewed_by: auth.id,
-            reviewed_at: new Date(),
-          })
-          return Response.json(updated)
-        } finally {
-          await db.destroy()
-        }
+        const updated = await questionsRepository.update(db, params.id, {
+          status: 'retired',
+          review_note: parsed.data.note,
+          reviewed_by: auth.id,
+          reviewed_at: new Date(),
+        })
+        return Response.json(updated)
       },
     },
   },

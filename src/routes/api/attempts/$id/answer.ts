@@ -2,7 +2,7 @@ import { createFileRoute } from '@tanstack/react-router'
 import { z } from 'zod'
 import { requireRole } from '../../../../lib/session'
 import { resolveEnabledStudent } from '../../../../lib/access'
-import { createDb } from '../../../../db/connection'
+import { getSharedDb } from '../../../../db/connection'
 import {
   attemptsRepository,
   paperQuestionsRepository,
@@ -34,47 +34,43 @@ export const Route = createFileRoute('/api/attempts/$id/answer')({
           )
         }
 
-        const db = createDb()
-        try {
-          const student = await resolveEnabledStudent(db, auth.id)
-          if (student instanceof Response) return student
+        const db = getSharedDb()
+        const student = await resolveEnabledStudent(db, auth.id)
+        if (student instanceof Response) return student
 
-          const attempt = await attemptsRepository.findById(
-            db,
-            student.id,
-            params.id,
+        const attempt = await attemptsRepository.findById(
+          db,
+          student.id,
+          params.id,
+        )
+        if (!attempt) return new Response(null, { status: 404 })
+        if (attempt.status !== 'in_progress') {
+          return Response.json(
+            { error: 'This attempt is already closed' },
+            { status: 409 },
           )
-          if (!attempt) return new Response(null, { status: 404 })
-          if (attempt.status !== 'in_progress') {
-            return Response.json(
-              { error: 'This attempt is already closed' },
-              { status: 409 },
-            )
-          }
-
-          const slot = await paperQuestionsRepository.findById(
-            db,
-            parsed.data.paper_question_id,
-          )
-          if (!slot || slot.paper_id !== attempt.paper_id) {
-            return Response.json(
-              { error: 'That question is not part of this attempt' },
-              { status: 400 },
-            )
-          }
-
-          const saved = await attemptAnswersRepository.upsert(db, {
-            attempt_id: attempt.id,
-            paper_question_id: slot.id,
-            response_text: parsed.data.response_text,
-            selected_option: parsed.data.selected_option,
-            time_spent_sec: parsed.data.time_spent_sec,
-            source: 'typed',
-          })
-          return Response.json(saved)
-        } finally {
-          await db.destroy()
         }
+
+        const slot = await paperQuestionsRepository.findById(
+          db,
+          parsed.data.paper_question_id,
+        )
+        if (!slot || slot.paper_id !== attempt.paper_id) {
+          return Response.json(
+            { error: 'That question is not part of this attempt' },
+            { status: 400 },
+          )
+        }
+
+        const saved = await attemptAnswersRepository.upsert(db, {
+          attempt_id: attempt.id,
+          paper_question_id: slot.id,
+          response_text: parsed.data.response_text,
+          selected_option: parsed.data.selected_option,
+          time_spent_sec: parsed.data.time_spent_sec,
+          source: 'typed',
+        })
+        return Response.json(saved)
       },
     },
   },

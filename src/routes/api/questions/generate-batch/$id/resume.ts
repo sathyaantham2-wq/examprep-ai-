@@ -1,8 +1,11 @@
 import { createFileRoute } from '@tanstack/react-router'
 import { requireRole } from '../../../../../lib/session'
-import { createDb } from '../../../../../db/connection'
+import { getSharedDb } from '../../../../../db/connection'
 import { runBatch } from '../../../../../lib/generation-batches'
-import { generationBatchItemsRepository, generationBatchesRepository } from '../../../../../db/repositories'
+import {
+  generationBatchItemsRepository,
+  generationBatchesRepository,
+} from '../../../../../db/repositories'
 
 /**
  * F116: POST /api/questions/generate-batch/:id/resume -- continues a 'paused' batch's remaining
@@ -18,23 +21,19 @@ export const Route = createFileRoute(
         const auth = await requireRole(request, 'admin')
         if (auth instanceof Response) return auth
 
-        const db = createDb()
-        try {
-          const existing = await generationBatchesRepository.findById(
-            db,
-            params.id,
-          )
-          if (!existing) return new Response(null, { status: 404 })
+        const db = getSharedDb()
+        const existing = await generationBatchesRepository.findById(
+          db,
+          params.id,
+        )
+        if (!existing) return new Response(null, { status: 404 })
 
-          const summary = await runBatch(db, params.id)
-          const items = await generationBatchItemsRepository.listByBatch(
-            db,
-            params.id,
-          )
-          return Response.json({ batch: summary, items })
-        } finally {
-          await db.destroy()
-        }
+        const summary = await runBatch(db, params.id)
+        const items = await generationBatchItemsRepository.listByBatch(
+          db,
+          params.id,
+        )
+        return Response.json({ batch: summary, items })
       },
     },
   },

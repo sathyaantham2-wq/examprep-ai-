@@ -1,7 +1,7 @@
 import { createFileRoute } from '@tanstack/react-router'
 import { requireRole } from '../../lib/session'
 import { resolveEnabledStudent } from '../../lib/access'
-import { createDb } from '../../db/connection'
+import { getSharedDb } from '../../db/connection'
 import { buildStudentDashboard } from '../../lib/student-dashboard'
 
 /**
@@ -18,16 +18,12 @@ export const Route = createFileRoute('/api/student-dashboard')({
         const auth = await requireRole(request, 'student')
         if (auth instanceof Response) return auth
 
-        const db = createDb()
-        try {
-          const student = await resolveEnabledStudent(db, auth.id)
-          if (student instanceof Response) return student
+        const db = getSharedDb()
+        const student = await resolveEnabledStudent(db, auth.id)
+        if (student instanceof Response) return student
 
-          const dashboard = await buildStudentDashboard(db, student.id)
-          return Response.json(dashboard)
-        } finally {
-          await db.destroy()
-        }
+        const dashboard = await buildStudentDashboard(db, student.id)
+        return Response.json(dashboard)
       },
     },
   },

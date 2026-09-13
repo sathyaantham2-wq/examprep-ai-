@@ -1,7 +1,7 @@
 import { createFileRoute } from '@tanstack/react-router'
 import { z } from 'zod'
 import { requireRole } from '../../../lib/session'
-import { createDb } from '../../../db/connection'
+import { getSharedDb } from '../../../db/connection'
 import {
   computeCoverageGrid,
   computeCoverageGridForSubject,
@@ -37,20 +37,16 @@ export const Route = createFileRoute('/api/questions/coverage-grid')({
           )
         }
 
-        const db = createDb()
-        try {
-          if (parsed.data.concept_id) {
-            const grid = await computeCoverageGrid(db, parsed.data.concept_id)
-            return Response.json(grid)
-          }
-          const grids = await computeCoverageGridForSubject(
-            db,
-            parsed.data.subject_id!,
-          )
-          return Response.json(grids)
-        } finally {
-          await db.destroy()
+        const db = getSharedDb()
+        if (parsed.data.concept_id) {
+          const grid = await computeCoverageGrid(db, parsed.data.concept_id)
+          return Response.json(grid)
         }
+        const grids = await computeCoverageGridForSubject(
+          db,
+          parsed.data.subject_id!,
+        )
+        return Response.json(grids)
       },
     },
   },

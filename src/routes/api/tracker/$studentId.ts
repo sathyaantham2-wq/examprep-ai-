@@ -1,7 +1,7 @@
 import { createFileRoute } from '@tanstack/react-router'
 import { z } from 'zod'
 import { requireRole } from '../../../lib/session'
-import { createDb } from '../../../db/connection'
+import { getSharedDb } from '../../../db/connection'
 import {
   studentsRepository,
   conceptStatusRepository,
@@ -35,29 +35,25 @@ export const Route = createFileRoute('/api/tracker/$studentId')({
           )
         }
 
-        const db = createDb()
-        try {
-          // findById is household-scoped — a student id from another household resolves to
-          // undefined, same pattern as PATCH /api/students/:id.
-          const student = await studentsRepository.findById(
-            db,
-            auth.householdId,
-            params.studentId,
-          )
-          if (!student) return new Response(null, { status: 404 })
+        const db = getSharedDb()
+        // findById is household-scoped — a student id from another household resolves to
+        // undefined, same pattern as PATCH /api/students/:id.
+        const student = await studentsRepository.findById(
+          db,
+          auth.householdId,
+          params.studentId,
+        )
+        if (!student) return new Response(null, { status: 404 })
 
-          const rows = await conceptStatusRepository.listForStudentWithFilter(
-            db,
-            params.studentId,
-            {
-              subjectId: parsedQuery.data.subject_id,
-              status: parsedQuery.data.status,
-            },
-          )
-          return Response.json(rows)
-        } finally {
-          await db.destroy()
-        }
+        const rows = await conceptStatusRepository.listForStudentWithFilter(
+          db,
+          params.studentId,
+          {
+            subjectId: parsedQuery.data.subject_id,
+            status: parsedQuery.data.status,
+          },
+        )
+        return Response.json(rows)
       },
     },
   },

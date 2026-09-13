@@ -1,6 +1,6 @@
 import { createFileRoute } from '@tanstack/react-router'
 import { requireRole } from '../../../lib/session'
-import { createDb } from '../../../db/connection'
+import { getSharedDb } from '../../../db/connection'
 import {
   papersRepository,
   paperQuestionsRepository,
@@ -17,24 +17,20 @@ export const Route = createFileRoute('/api/papers/$id')({
         const auth = await requireRole(request, 'parent', 'admin')
         if (auth instanceof Response) return auth
 
-        const db = createDb()
-        try {
-          const paper = await papersRepository.findByIdForHousehold(
-            db,
-            auth.householdId,
-            params.id,
-          )
-          if (!paper) return new Response(null, { status: 404 })
+        const db = getSharedDb()
+        const paper = await papersRepository.findByIdForHousehold(
+          db,
+          auth.householdId,
+          params.id,
+        )
+        if (!paper) return new Response(null, { status: 404 })
 
-          const [questions, chapters] = await Promise.all([
-            paperQuestionsRepository.listForPaperWithQuestions(db, paper.id),
-            // F113: resolve stored chapter_ids into header-ready display info.
-            chaptersRepository.listByIds(db, paper.chapter_ids),
-          ])
-          return Response.json({ ...paper, questions, chapters })
-        } finally {
-          await db.destroy()
-        }
+        const [questions, chapters] = await Promise.all([
+          paperQuestionsRepository.listForPaperWithQuestions(db, paper.id),
+          // F113: resolve stored chapter_ids into header-ready display info.
+          chaptersRepository.listByIds(db, paper.chapter_ids),
+        ])
+        return Response.json({ ...paper, questions, chapters })
       },
     },
   },

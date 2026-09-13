@@ -1,7 +1,7 @@
 import { createFileRoute } from '@tanstack/react-router'
 import { z } from 'zod'
 import { requireRole, requireUser } from '../../../../../lib/session'
-import { createDb } from '../../../../../db/connection'
+import { getSharedDb } from '../../../../../db/connection'
 import { chapterScopeRepository } from '../../../../../db/repositories'
 
 const createScopeSchema = z.object({
@@ -23,19 +23,12 @@ export const Route = createFileRoute('/api/syllabus/chapters/$id/scope')({
         const auth = await requireUser(request)
         if (auth instanceof Response) return auth
 
-        const db = createDb()
-        try {
-          const items = await chapterScopeRepository.listByChapter(
-            db,
-            params.id,
-          )
-          return Response.json({
-            in: items.filter((item) => item.kind === 'IN'),
-            out: items.filter((item) => item.kind === 'OUT'),
-          })
-        } finally {
-          await db.destroy()
-        }
+        const db = getSharedDb()
+        const items = await chapterScopeRepository.listByChapter(db, params.id)
+        return Response.json({
+          in: items.filter((item) => item.kind === 'IN'),
+          out: items.filter((item) => item.kind === 'OUT'),
+        })
       },
       // The generator refuses concepts outside the IN list (F016) — this is the only way
       // that list gets written, and it's admin-only on purpose.
@@ -51,21 +44,17 @@ export const Route = createFileRoute('/api/syllabus/chapters/$id/scope')({
           )
         }
 
-        const db = createDb()
-        try {
-          const created = await chapterScopeRepository.insertMany(
-            db,
-            parsed.data.items.map((item) => ({
-              chapter_id: params.id,
-              kind: parsed.data.kind,
-              item_text: item.item_text,
-              page_ref: item.page_ref,
-            })),
-          )
-          return Response.json(created, { status: 201 })
-        } finally {
-          await db.destroy()
-        }
+        const db = getSharedDb()
+        const created = await chapterScopeRepository.insertMany(
+          db,
+          parsed.data.items.map((item) => ({
+            chapter_id: params.id,
+            kind: parsed.data.kind,
+            item_text: item.item_text,
+            page_ref: item.page_ref,
+          })),
+        )
+        return Response.json(created, { status: 201 })
       },
     },
   },

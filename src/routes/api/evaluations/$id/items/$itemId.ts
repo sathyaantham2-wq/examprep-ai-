@@ -1,7 +1,7 @@
 import { createFileRoute } from '@tanstack/react-router'
 import { z } from 'zod'
 import { requireRole } from '../../../../../lib/session'
-import { createDb } from '../../../../../db/connection'
+import { getSharedDb } from '../../../../../db/connection'
 import {
   evaluationsRepository,
   evaluationItemsRepository,
@@ -50,64 +50,57 @@ export const Route = createFileRoute('/api/evaluations/$id/items/$itemId')({
           )
         }
 
-        const db = createDb()
-        try {
-          const evaluation = await evaluationsRepository.findByIdForHousehold(
-            db,
-            auth.householdId,
-            params.id,
+        const db = getSharedDb()
+        const evaluation = await evaluationsRepository.findByIdForHousehold(
+          db,
+          auth.householdId,
+          params.id,
+        )
+        if (!evaluation) return new Response(null, { status: 404 })
+        if (evaluation.confirmed_at) {
+          return Response.json(
+            {
+              error:
+                'This evaluation is already confirmed and can no longer be edited',
+            },
+            { status: 409 },
           )
-          if (!evaluation) return new Response(null, { status: 404 })
-          if (evaluation.confirmed_at) {
-            return Response.json(
-              {
-                error:
-                  'This evaluation is already confirmed and can no longer be edited',
-              },
-              { status: 409 },
-            )
-          }
-
-          const item = await evaluationItemsRepository.findById(
-            db,
-            params.itemId,
-          )
-          if (!item || item.evaluation_id !== evaluation.id) {
-            return new Response(null, { status: 404 })
-          }
-
-          const before = item
-          const updated = await evaluationItemsRepository.update(db, item.id, {
-            marks_awarded: parsed.data.marks,
-            error_type: parsed.data.error_type,
-            knowledge_known: parsed.data.knowledge_known,
-            feedback: parsed.data.feedback,
-            overridden_by: auth.id,
-          })
-
-          await auditLogRepository.insert(db, {
-            household_id: auth.householdId,
-            actor_user_id: auth.id,
-            action: 'evaluation_item.override',
-            entity: 'evaluation_items',
-            entity_id: item.id,
-            before: JSON.stringify(before),
-            after: JSON.stringify(updated),
-          })
-
-          const patternHits =
-            parsed.data.pattern_ids !== undefined
-              ? await patternHitsRepository.replaceForItem(
-                  db,
-                  item.id,
-                  parsed.data.pattern_ids,
-                )
-              : await patternHitsRepository.listForItem(db, item.id)
-
-          return Response.json({ ...updated, pattern_hits: patternHits })
-        } finally {
-          await db.destroy()
         }
+
+        const item = await evaluationItemsRepository.findById(db, params.itemId)
+        if (!item || item.evaluation_id !== evaluation.id) {
+          return new Response(null, { status: 404 })
+        }
+
+        const before = item
+        const updated = await evaluationItemsRepository.update(db, item.id, {
+          marks_awarded: parsed.data.marks,
+          error_type: parsed.data.error_type,
+          knowledge_known: parsed.data.knowledge_known,
+          feedback: parsed.data.feedback,
+          overridden_by: auth.id,
+        })
+
+        await auditLogRepository.insert(db, {
+          household_id: auth.householdId,
+          actor_user_id: auth.id,
+          action: 'evaluation_item.override',
+          entity: 'evaluation_items',
+          entity_id: item.id,
+          before: JSON.stringify(before),
+          after: JSON.stringify(updated),
+        })
+
+        const patternHits =
+          parsed.data.pattern_ids !== undefined
+            ? await patternHitsRepository.replaceForItem(
+                db,
+                item.id,
+                parsed.data.pattern_ids,
+              )
+            : await patternHitsRepository.listForItem(db, item.id)
+
+        return Response.json({ ...updated, pattern_hits: patternHits })
       },
     },
   },

@@ -2,7 +2,7 @@ import { createFileRoute } from '@tanstack/react-router'
 import { z } from 'zod'
 import { requireRole } from '../../../../lib/session'
 import { resolveEnabledStudent } from '../../../../lib/access'
-import { createDb } from '../../../../db/connection'
+import { getSharedDb } from '../../../../db/connection'
 import { submitHabitDrillAttempt } from '../../../../lib/habit-drills'
 
 const requestSchema = z.object({
@@ -32,31 +32,30 @@ export const Route = createFileRoute('/api/habit-drills/$id/attempt')({
 
         const parsed = requestSchema.safeParse(await request.json())
         if (!parsed.success) {
-          return Response.json({ error: parsed.error.flatten() }, { status: 400 })
+          return Response.json(
+            { error: parsed.error.flatten() },
+            { status: 400 },
+          )
         }
 
-        const db = createDb()
-        try {
-          const student = await resolveEnabledStudent(db, auth.id)
-          if (student instanceof Response) return student
+        const db = getSharedDb()
+        const student = await resolveEnabledStudent(db, auth.id)
+        if (student instanceof Response) return student
 
-          const result = await submitHabitDrillAttempt(db, {
-            taskId: params.id,
-            studentId: student.id,
-            answers: parsed.data.answers,
-          })
+        const result = await submitHabitDrillAttempt(db, {
+          taskId: params.id,
+          studentId: student.id,
+          answers: parsed.data.answers,
+        })
 
-          if (!result.ok) {
-            return Response.json(
-              { error: result.reason },
-              { status: REASON_STATUS[result.reason] },
-            )
-          }
-
-          return Response.json(result)
-        } finally {
-          await db.destroy()
+        if (!result.ok) {
+          return Response.json(
+            { error: result.reason },
+            { status: REASON_STATUS[result.reason] },
+          )
         }
+
+        return Response.json(result)
       },
     },
   },

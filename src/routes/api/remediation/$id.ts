@@ -1,7 +1,7 @@
 import { createFileRoute } from '@tanstack/react-router'
 import { requireRole } from '../../../lib/session'
 import { resolveEnabledStudent } from '../../../lib/access'
-import { createDb } from '../../../db/connection'
+import { getSharedDb } from '../../../db/connection'
 import { remediationTasksRepository } from '../../../db/repositories'
 import { loadTaskView } from '../../../lib/remediation'
 
@@ -17,41 +17,41 @@ export const Route = createFileRoute('/api/remediation/$id')({
         const auth = await requireRole(request, 'student', 'parent', 'admin')
         if (auth instanceof Response) return auth
 
-        const db = createDb()
-        try {
-          let task
-          if (auth.role === 'student') {
-            const student = await resolveEnabledStudent(db, auth.id)
-            if (student instanceof Response) return student
-            task = await remediationTasksRepository.findById(
-              db,
-              student.id,
-              params.id,
+        const db = getSharedDb()
+        let task
+        if (auth.role === 'student') {
+          const student = await resolveEnabledStudent(db, auth.id)
+          if (student instanceof Response) return student
+          task = await remediationTasksRepository.findById(
+            db,
+            student.id,
+            params.id,
+          )
+        } else {
+          task = await db
+            .selectFrom('remediation_tasks')
+            .innerJoin(
+              'students',
+              'students.id',
+              'remediation_tasks.student_id',
             )
-          } else {
-            task = await db
-              .selectFrom('remediation_tasks')
-              .innerJoin('students', 'students.id', 'remediation_tasks.student_id')
-              .selectAll('remediation_tasks')
-              .where('students.household_id', '=', auth.householdId)
-              .where('remediation_tasks.id', '=', params.id)
-              .executeTakeFirst()
-          }
-          if (!task) return new Response(null, { status: 404 })
-
-          const view = await loadTaskView(db, task)
-          return Response.json({
-            id: task.id,
-            concept_id: task.concept_id,
-            status: task.status,
-            trigger_reason: task.trigger_reason,
-            created_at: task.created_at,
-            completed_at: task.completed_at,
-            ...view,
-          })
-        } finally {
-          await db.destroy()
+            .selectAll('remediation_tasks')
+            .where('students.household_id', '=', auth.householdId)
+            .where('remediation_tasks.id', '=', params.id)
+            .executeTakeFirst()
         }
+        if (!task) return new Response(null, { status: 404 })
+
+        const view = await loadTaskView(db, task)
+        return Response.json({
+          id: task.id,
+          concept_id: task.concept_id,
+          status: task.status,
+          trigger_reason: task.trigger_reason,
+          created_at: task.created_at,
+          completed_at: task.completed_at,
+          ...view,
+        })
       },
     },
   },

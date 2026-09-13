@@ -1,6 +1,6 @@
 import { createFileRoute } from '@tanstack/react-router'
 import { requireRole } from '../../../lib/session'
-import { createDb } from '../../../db/connection'
+import { getSharedDb } from '../../../db/connection'
 import { exportHouseholdData } from '../../../lib/privacy'
 import { auditLogRepository } from '../../../db/repositories'
 
@@ -17,28 +17,24 @@ export const Route = createFileRoute('/api/privacy/export')({
         const auth = await requireRole(request, 'parent', 'admin')
         if (auth instanceof Response) return auth
 
-        const db = createDb()
-        try {
-          const data = await exportHouseholdData(db, auth.householdId)
+        const db = getSharedDb()
+        const data = await exportHouseholdData(db, auth.householdId)
 
-          await auditLogRepository.insert(db, {
-            household_id: auth.householdId,
-            actor_user_id: auth.id,
-            action: 'privacy.exported',
-            entity: 'households',
-            entity_id: auth.householdId,
-          })
+        await auditLogRepository.insert(db, {
+          household_id: auth.householdId,
+          actor_user_id: auth.id,
+          action: 'privacy.exported',
+          entity: 'households',
+          entity_id: auth.householdId,
+        })
 
-          return new Response(JSON.stringify(data, null, 2), {
-            status: 200,
-            headers: {
-              'content-type': 'application/json',
-              'content-disposition': `attachment; filename="examprep-export-${auth.householdId}.json"`,
-            },
-          })
-        } finally {
-          await db.destroy()
-        }
+        return new Response(JSON.stringify(data, null, 2), {
+          status: 200,
+          headers: {
+            'content-type': 'application/json',
+            'content-disposition': `attachment; filename="examprep-export-${auth.householdId}.json"`,
+          },
+        })
       },
     },
   },

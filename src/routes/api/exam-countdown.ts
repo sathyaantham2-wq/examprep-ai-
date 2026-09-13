@@ -3,7 +3,7 @@ import { z } from 'zod'
 import { requireRole } from '../../lib/session'
 import { resolveEnabledStudent } from '../../lib/access'
 import { buildExamCountdownReport } from '../../lib/exam-countdown'
-import { createDb } from '../../db/connection'
+import { getSharedDb } from '../../db/connection'
 import { studentsRepository } from '../../db/repositories'
 
 const querySchema = z.object({
@@ -26,37 +26,36 @@ export const Route = createFileRoute('/api/exam-countdown')({
           Object.fromEntries(new URL(request.url).searchParams),
         )
         if (!parsed.success) {
-          return Response.json({ error: parsed.error.flatten() }, { status: 400 })
+          return Response.json(
+            { error: parsed.error.flatten() },
+            { status: 400 },
+          )
         }
 
-        const db = createDb()
-        try {
-          let studentId: string
-          if (auth.role === 'student') {
-            const student = await resolveEnabledStudent(db, auth.id)
-            if (student instanceof Response) return student
-            studentId = student.id
-          } else {
-            if (!parsed.data.student_id) {
-              return Response.json(
-                { error: 'student_id is required' },
-                { status: 400 },
-              )
-            }
-            const student = await studentsRepository.findById(
-              db,
-              auth.householdId,
-              parsed.data.student_id,
+        const db = getSharedDb()
+        let studentId: string
+        if (auth.role === 'student') {
+          const student = await resolveEnabledStudent(db, auth.id)
+          if (student instanceof Response) return student
+          studentId = student.id
+        } else {
+          if (!parsed.data.student_id) {
+            return Response.json(
+              { error: 'student_id is required' },
+              { status: 400 },
             )
-            if (!student) return new Response(null, { status: 404 })
-            studentId = student.id
           }
-
-          const report = await buildExamCountdownReport(db, studentId)
-          return Response.json(report)
-        } finally {
-          await db.destroy()
+          const student = await studentsRepository.findById(
+            db,
+            auth.householdId,
+            parsed.data.student_id,
+          )
+          if (!student) return new Response(null, { status: 404 })
+          studentId = student.id
         }
+
+        const report = await buildExamCountdownReport(db, studentId)
+        return Response.json(report)
       },
     },
   },

@@ -2,7 +2,7 @@ import { createFileRoute } from '@tanstack/react-router'
 import { z } from 'zod'
 import { requireRole } from '../../../../lib/session'
 import { resolveEnabledStudent } from '../../../../lib/access'
-import { createDb } from '../../../../db/connection'
+import { getSharedDb } from '../../../../db/connection'
 import {
   attemptsRepository,
   paperQuestionsRepository,
@@ -33,81 +33,77 @@ export const Route = createFileRoute('/api/attempts/$id/submit')({
           )
         }
 
-        const db = createDb()
-        try {
-          const student = await resolveEnabledStudent(db, auth.id)
-          if (student instanceof Response) return student
+        const db = getSharedDb()
+        const student = await resolveEnabledStudent(db, auth.id)
+        if (student instanceof Response) return student
 
-          const attempt = await attemptsRepository.findById(
-            db,
-            student.id,
-            params.id,
+        const attempt = await attemptsRepository.findById(
+          db,
+          student.id,
+          params.id,
+        )
+        if (!attempt) return new Response(null, { status: 404 })
+        if (attempt.status !== 'in_progress') {
+          return Response.json(
+            { error: 'This attempt is already closed' },
+            { status: 409 },
           )
-          if (!attempt) return new Response(null, { status: 404 })
-          if (attempt.status !== 'in_progress') {
-            return Response.json(
-              { error: 'This attempt is already closed' },
-              { status: 409 },
-            )
-          }
-
-          const [slots, answers] = await Promise.all([
-            paperQuestionsRepository.listForPaperWithQuestions(
-              db,
-              attempt.paper_id,
-            ),
-            attemptAnswersRepository.listForAttempt(db, attempt.id),
-          ])
-          const answeredSlotIds = new Set(
-            answers
-              .filter(
-                (a) =>
-                  (a.response_text?.trim() ?? '') !== '' || a.selected_option,
-              )
-              .map((a) => a.paper_question_id),
-          )
-          const blankPositions = slots
-            .filter((slot) => !answeredSlotIds.has(slot.id))
-            .map((slot) => slot.position)
-            .sort((a, b) => a - b)
-
-          if (blankPositions.length > 0 && !parsed.data.confirm_blanks) {
-            return Response.json(
-              {
-                error: 'blank_answers',
-                message: `You have ${blankPositions.length} blank answer(s)`,
-                blank_positions: blankPositions,
-              },
-              { status: 409 },
-            )
-          }
-
-          const durationUsedSec = Math.floor(
-            (Date.now() - new Date(attempt.started_at).getTime()) / 1000,
-          )
-          const updated = await attemptsRepository.update(
-            db,
-            student.id,
-            attempt.id,
-            {
-              status: 'submitted',
-              submitted_at: new Date(),
-              duration_used_sec: durationUsedSec,
-            },
-          )
-
-          await logProductEvent(db, {
-            eventType: 'attempt_submitted',
-            householdId: student.household_id,
-            studentId: student.id,
-          })
-
-          // "Objective scoring queued" per tab05 is M09's job (auto-evaluation), which doesn't
-          // exist yet — this endpoint only closes the attempt.
-          return Response.json(updated)
-        } finally {
-          await db.destroy()
         }
+
+        const [slots, answers] = await Promise.all([
+          paperQuestionsRepository.listForPaperWithQuestions(
+            db,
+            attempt.paper_id,
+          ),
+          attemptAnswersRepository.listForAttempt(db, attempt.id),
+        ])
+        const answeredSlotIds = new Set(
+          answers
+            .filter(
+              (a) =>
+                (a.response_text?.trim() ?? '') !== '' || a.selected_option,
+            )
+            .map((a) => a.paper_question_id),
+        )
+        const blankPositions = slots
+          .filter((slot) => !answeredSlotIds.has(slot.id))
+          .map((slot) => slot.position)
+          .sort((a, b) => a - b)
+
+        if (blankPositions.length > 0 && !parsed.data.confirm_blanks) {
+          return Response.json(
+            {
+              error: 'blank_answers',
+              message: `You have ${blankPositions.length} blank answer(s)`,
+              blank_positions: blankPositions,
+            },
+            { status: 409 },
+          )
+        }
+
+        const durationUsedSec = Math.floor(
+          (Date.now() - new Date(attempt.started_at).getTime()) / 1000,
+        )
+        const updated = await attemptsRepository.update(
+          db,
+          student.id,
+          attempt.id,
+          {
+            status: 'submitted',
+            submitted_at: new Date(),
+            duration_used_sec: durationUsedSec,
+          },
+        )
+
+        await logProductEvent(db, {
+          eventType: 'attempt_submitted',
+          householdId: student.household_id,
+          studentId: student.id,
+        })
+
+        // "Objective scoring queued" per tab05 is M09's job (auto-evaluation), which doesn't
+        // exist yet — this endpoint only closes the attempt.
+        return Response.json(updated)
       },
     },
   },

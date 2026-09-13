@@ -1,6 +1,6 @@
 import { createFileRoute } from '@tanstack/react-router'
 import { requireUser } from '../../../lib/session'
-import { createDb } from '../../../db/connection'
+import { getSharedDb } from '../../../db/connection'
 import { chaptersRepository } from '../../../db/repositories'
 
 export const Route = createFileRoute('/api/syllabus/chapters')({
@@ -18,14 +18,12 @@ export const Route = createFileRoute('/api/syllabus/chapters')({
           )
         }
 
-        const db = createDb()
-        try {
-          const chapters =
-            await chaptersRepository.listBySubjectWithScopeCounts(db, subjectId)
-          return Response.json(chapters)
-        } finally {
-          await db.destroy()
-        }
+        const db = getSharedDb()
+        const chapters = await chaptersRepository.listBySubjectWithScopeCounts(
+          db,
+          subjectId,
+        )
+        return Response.json(chapters)
       },
     },
   },

@@ -1,6 +1,6 @@
 import { createFileRoute } from '@tanstack/react-router'
 import { requireRole } from '../../../lib/session'
-import { createDb } from '../../../db/connection'
+import { getSharedDb } from '../../../db/connection'
 import { householdsRepository } from '../../../db/repositories'
 
 // Not in tab05 -- no route ever exposed the caller's own household record, needed by /settings
@@ -12,14 +12,13 @@ export const Route = createFileRoute('/api/households/me')({
         const auth = await requireRole(request, 'parent', 'admin')
         if (auth instanceof Response) return auth
 
-        const db = createDb()
-        try {
-          const household = await householdsRepository.findById(db, auth.householdId)
-          if (!household) return new Response(null, { status: 404 })
-          return Response.json(household)
-        } finally {
-          await db.destroy()
-        }
+        const db = getSharedDb()
+        const household = await householdsRepository.findById(
+          db,
+          auth.householdId,
+        )
+        if (!household) return new Response(null, { status: 404 })
+        return Response.json(household)
       },
     },
   },

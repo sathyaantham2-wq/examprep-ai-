@@ -1,6 +1,6 @@
 import { createFileRoute } from '@tanstack/react-router'
 import { requireUser } from '../../../lib/session'
-import { createDb } from '../../../db/connection'
+import { getSharedDb } from '../../../db/connection'
 import { subjectsRepository } from '../../../db/repositories'
 
 export const Route = createFileRoute('/api/syllabus/subjects')({
@@ -29,17 +29,13 @@ export const Route = createFileRoute('/api/syllabus/subjects')({
           )
         }
 
-        const db = createDb()
-        try {
-          const subjects = await subjectsRepository.listByBoardClass(
-            db,
-            board,
-            classNum,
-          )
-          return Response.json(subjects)
-        } finally {
-          await db.destroy()
-        }
+        const db = getSharedDb()
+        const subjects = await subjectsRepository.listByBoardClass(
+          db,
+          board,
+          classNum,
+        )
+        return Response.json(subjects)
       },
     },
   },

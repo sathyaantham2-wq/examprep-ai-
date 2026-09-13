@@ -2,7 +2,7 @@ import { createFileRoute } from '@tanstack/react-router'
 import { z } from 'zod'
 import { requireRole } from '../../lib/session'
 import { createQuestion, questionInputSchema } from '../../lib/questions'
-import { createDb } from '../../db/connection'
+import { getSharedDb } from '../../db/connection'
 import {
   questionsRepository,
   questionUsageRepository,
@@ -70,33 +70,28 @@ export const Route = createFileRoute('/api/questions')({
           student_id: studentId,
         } = parsedFilters.data
 
-        const db = createDb()
-        try {
-          const { items, total } = await questionsRepository.search(
-            db,
-            { concept_id: concept, bloom, difficulty, type, status },
-            pageSize,
-            (page - 1) * pageSize,
-          )
+        const db = getSharedDb()
+        const { items, total } = await questionsRepository.search(
+          db,
+          { concept_id: concept, bloom, difficulty, type, status },
+          pageSize,
+          (page - 1) * pageSize,
+        )
 
-          if (!studentId) {
-            return Response.json({ items, total, page, pageSize })
-          }
-
-          const usageByQuestion =
-            await questionUsageRepository.summaryForStudent(
-              db,
-              studentId,
-              items.map((item) => item.id),
-            )
-          const itemsWithUsage = items.map((item) => ({
-            ...item,
-            usage: usageByQuestion.get(item.id) ?? null,
-          }))
-          return Response.json({ items: itemsWithUsage, total, page, pageSize })
-        } finally {
-          await db.destroy()
+        if (!studentId) {
+          return Response.json({ items, total, page, pageSize })
         }
+
+        const usageByQuestion = await questionUsageRepository.summaryForStudent(
+          db,
+          studentId,
+          items.map((item) => item.id),
+        )
+        const itemsWithUsage = items.map((item) => ({
+          ...item,
+          usage: usageByQuestion.get(item.id) ?? null,
+        }))
+        return Response.json({ items: itemsWithUsage, total, page, pageSize })
       },
       POST: async ({ request }) => {
         const auth = await requireRole(request, 'admin')
@@ -110,16 +105,12 @@ export const Route = createFileRoute('/api/questions')({
           )
         }
 
-        const db = createDb()
-        try {
-          const question = await createQuestion(db, {
-            ...parsed.data,
-            created_by: auth.id,
-          })
-          return Response.json(question, { status: 201 })
-        } finally {
-          await db.destroy()
-        }
+        const db = getSharedDb()
+        const question = await createQuestion(db, {
+          ...parsed.data,
+          created_by: auth.id,
+        })
+        return Response.json(question, { status: 201 })
       },
     },
   },

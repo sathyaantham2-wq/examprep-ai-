@@ -2,7 +2,7 @@ import { createFileRoute } from '@tanstack/react-router'
 import { z } from 'zod'
 import { requireRole } from '../../lib/session'
 import { resolveEnabledStudent } from '../../lib/access'
-import { createDb } from '../../db/connection'
+import { getSharedDb } from '../../db/connection'
 import { studentsRepository, studyPlansRepository } from '../../db/repositories'
 
 const querySchema = z.object({
@@ -28,45 +28,44 @@ export const Route = createFileRoute('/api/study-plan')({
           Object.fromEntries(new URL(request.url).searchParams),
         )
         if (!parsed.success) {
-          return Response.json({ error: parsed.error.flatten() }, { status: 400 })
+          return Response.json(
+            { error: parsed.error.flatten() },
+            { status: 400 },
+          )
         }
 
-        const db = createDb()
-        try {
-          let studentId: string
-          if (auth.role === 'student') {
-            const student = await resolveEnabledStudent(db, auth.id)
-            if (student instanceof Response) return student
-            studentId = student.id
-          } else {
-            if (!parsed.data.student_id) {
-              return Response.json(
-                { error: 'student_id is required' },
-                { status: 400 },
-              )
-            }
-            const student = await studentsRepository.findById(
-              db,
-              auth.householdId,
-              parsed.data.student_id,
+        const db = getSharedDb()
+        let studentId: string
+        if (auth.role === 'student') {
+          const student = await resolveEnabledStudent(db, auth.id)
+          if (student instanceof Response) return student
+          studentId = student.id
+        } else {
+          if (!parsed.data.student_id) {
+            return Response.json(
+              { error: 'student_id is required' },
+              { status: 400 },
             )
-            if (!student) return new Response(null, { status: 404 })
-            studentId = student.id
           }
-
-          // Most recent active plan, not just "any active" -- a plan from a week the parent
-          // never got around to regenerating stays 'active' forever otherwise, and .find() alone
-          // has no ordering guarantee across it and a genuinely current one.
-          const plans = await studyPlansRepository.list(db, studentId)
-          const active =
-            plans
-              .filter((p) => p.status === 'active')
-              .sort((a, b) => b.week_start.getTime() - a.week_start.getTime())
-              .at(0) ?? null
-          return Response.json({ plan: active })
-        } finally {
-          await db.destroy()
+          const student = await studentsRepository.findById(
+            db,
+            auth.householdId,
+            parsed.data.student_id,
+          )
+          if (!student) return new Response(null, { status: 404 })
+          studentId = student.id
         }
+
+        // Most recent active plan, not just "any active" -- a plan from a week the parent
+        // never got around to regenerating stays 'active' forever otherwise, and .find() alone
+        // has no ordering guarantee across it and a genuinely current one.
+        const plans = await studyPlansRepository.list(db, studentId)
+        const active =
+          plans
+            .filter((p) => p.status === 'active')
+            .sort((a, b) => b.week_start.getTime() - a.week_start.getTime())
+            .at(0) ?? null
+        return Response.json({ plan: active })
       },
     },
   },
