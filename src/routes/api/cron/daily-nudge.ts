@@ -3,6 +3,7 @@ import { getSharedDb } from '../../../db/connection'
 import { generateOrGetTodayNudge } from '../../../lib/daily-nudge'
 import { buildDailyNudgeEmail, notifyHouseholdParents } from '../../../lib/email'
 import { env } from '../../../lib/env'
+import { wrapRouteHandlers } from '../../../lib/error-log'
 
 /**
  * F082: "delivered once daily." Scheduled (vercel.json) for 01:30 UTC = ~7:00am IST -- this
@@ -50,3 +51,5 @@ export const Route = createFileRoute('/api/cron/daily-nudge')({
     },
   },
 })
+
+wrapRouteHandlers(Route, '/api/cron/daily-nudge', ['GET'])

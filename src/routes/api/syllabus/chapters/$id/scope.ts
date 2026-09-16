@@ -3,6 +3,7 @@ import { z } from 'zod'
 import { requireRole, requireUser } from '../../../../../lib/session'
 import { getSharedDb } from '../../../../../db/connection'
 import { chapterScopeRepository } from '../../../../../db/repositories'
+import { wrapRouteHandlers } from '../../../../../lib/error-log'
 
 const createScopeSchema = z.object({
   kind: z.enum(['IN', 'OUT']),
@@ -59,3 +60,5 @@ export const Route = createFileRoute('/api/syllabus/chapters/$id/scope')({
     },
   },
 })
+
+wrapRouteHandlers(Route, '/api/syllabus/chapters/$id/scope', ['GET', 'POST'])

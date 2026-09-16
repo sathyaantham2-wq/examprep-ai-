@@ -8,6 +8,7 @@ import {
   paperQuestionsRepository,
   attemptAnswersRepository,
 } from '../../../../db/repositories'
+import { wrapRouteHandlers } from '../../../../lib/error-log'
 
 const answerSchema = z.object({
   paper_question_id: z.string().uuid(),
@@ -75,3 +76,5 @@ export const Route = createFileRoute('/api/attempts/$id/answer')({
     },
   },
 })
+
+wrapRouteHandlers(Route, '/api/attempts/$id/answer', ['PATCH'])

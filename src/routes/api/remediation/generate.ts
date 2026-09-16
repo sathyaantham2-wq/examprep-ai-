@@ -5,6 +5,7 @@ import { getSharedDb } from '../../../db/connection'
 import { studentsRepository } from '../../../db/repositories'
 import { buildRemediationPack } from '../../../lib/remediation'
 import { logProductEvent } from '../../../lib/product-events'
+import { wrapRouteHandlers } from '../../../lib/error-log'
 
 const requestSchema = z.object({
   student_id: z.string().uuid(),
@@ -69,3 +70,5 @@ export const Route = createFileRoute('/api/remediation/generate')({
     },
   },
 })
+
+wrapRouteHandlers(Route, '/api/remediation/generate', ['POST'])

@@ -4,6 +4,7 @@ import { requireRole } from '../../../../lib/session'
 import { resolveEnabledStudent } from '../../../../lib/access'
 import { getSharedDb } from '../../../../db/connection'
 import { submitHabitDrillAttempt } from '../../../../lib/habit-drills'
+import { wrapRouteHandlers } from '../../../../lib/error-log'
 
 const requestSchema = z.object({
   answers: z.array(
@@ -60,3 +61,5 @@ export const Route = createFileRoute('/api/habit-drills/$id/attempt')({
     },
   },
 })
+
+wrapRouteHandlers(Route, '/api/habit-drills/$id/attempt', ['POST'])

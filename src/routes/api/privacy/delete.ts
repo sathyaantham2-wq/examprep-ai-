@@ -4,6 +4,7 @@ import { requireRole } from '../../../lib/session'
 import { getSharedDb } from '../../../db/connection'
 import { deleteHouseholdData } from '../../../lib/privacy'
 import { householdsRepository } from '../../../db/repositories'
+import { wrapRouteHandlers } from '../../../lib/error-log'
 
 const requestSchema = z.object({
   confirm_household_name: z.string().min(1),
@@ -58,3 +59,5 @@ export const Route = createFileRoute('/api/privacy/delete')({
     },
   },
 })
+
+wrapRouteHandlers(Route, '/api/privacy/delete', ['POST'])

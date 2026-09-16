@@ -5,6 +5,7 @@ import {
   studentsRepository,
   habitObservationsRepository,
 } from '../../../../../db/repositories'
+import { wrapRouteHandlers } from '../../../../../lib/error-log'
 
 // F058: "a trend line." Not in tab05's listed routes -- added under the existing
 // /api/students/:id resource. Groups every confirmed evaluation's habit ratings by habit, oldest
@@ -57,3 +58,5 @@ export const Route = createFileRoute('/api/students/$id/habits/trend')({
     },
   },
 })
+
+wrapRouteHandlers(Route, '/api/students/$id/habits/trend', ['GET'])

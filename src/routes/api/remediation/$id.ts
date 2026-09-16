@@ -4,6 +4,7 @@ import { resolveEnabledStudent } from '../../../lib/access'
 import { getSharedDb } from '../../../db/connection'
 import { remediationTasksRepository } from '../../../db/repositories'
 import { loadTaskView } from '../../../lib/remediation'
+import { wrapRouteHandlers } from '../../../lib/error-log'
 
 /**
  * GET /api/remediation/:id (tab06 /remediation) -- not in tab05. A student can only load their
@@ -56,3 +57,5 @@ export const Route = createFileRoute('/api/remediation/$id')({
     },
   },
 })
+
+wrapRouteHandlers(Route, '/api/remediation/$id', ['GET'])

@@ -3,6 +3,7 @@ import { z } from 'zod'
 import { requireRole } from '../../../lib/session'
 import { getSharedDb } from '../../../db/connection'
 import { getAiUsageReport } from '../../../lib/ai-usage'
+import { wrapRouteHandlers } from '../../../lib/error-log'
 
 const DEFAULT_WINDOW_DAYS = 30
 
@@ -73,3 +74,5 @@ export const Route = createFileRoute('/api/admin/ai-usage')({
     },
   },
 })
+
+wrapRouteHandlers(Route, '/api/admin/ai-usage', ['GET'])

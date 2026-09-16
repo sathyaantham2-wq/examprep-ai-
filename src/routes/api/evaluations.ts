@@ -10,6 +10,7 @@ import {
 import { logProductEvent } from '../../lib/product-events'
 import { buildEvaluationCompleteEmail, notifyHouseholdParents } from '../../lib/email'
 import { env } from '../../lib/env'
+import { wrapRouteHandlers } from '../../lib/error-log'
 
 const createEvaluationSchema = z.object({
   attempt_id: z.string().uuid(),
@@ -97,3 +98,5 @@ export const Route = createFileRoute('/api/evaluations')({
     },
   },
 })
+
+wrapRouteHandlers(Route, '/api/evaluations', ['POST'])

@@ -8,6 +8,7 @@ import {
   questionsRepository,
   questionUsageRepository,
 } from '../../../../db/repositories'
+import { wrapRouteHandlers } from '../../../../lib/error-log'
 
 const regenerateSlotSchema = z.object({
   paper_question_id: z.string().uuid(),
@@ -89,3 +90,5 @@ export const Route = createFileRoute('/api/papers/$id/regenerate-slot')({
     },
   },
 })
+
+wrapRouteHandlers(Route, '/api/papers/$id/regenerate-slot', ['POST'])

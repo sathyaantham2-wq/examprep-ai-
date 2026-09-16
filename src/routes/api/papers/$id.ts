@@ -6,6 +6,7 @@ import {
   paperQuestionsRepository,
   chaptersRepository,
 } from '../../../db/repositories'
+import { wrapRouteHandlers } from '../../../lib/error-log'
 
 // tab05 lists this route as Parent-only. Student self-access (with answers/keys stripped, per
 // the hard rule that a student can never see an answer key) needs F112 — the student
@@ -35,3 +36,5 @@ export const Route = createFileRoute('/api/papers/$id')({
     },
   },
 })
+
+wrapRouteHandlers(Route, '/api/papers/$id', ['GET'])

@@ -4,6 +4,7 @@ import { requireRole } from '../../../lib/session'
 import { getSharedDb } from '../../../db/connection'
 import { studentsRepository } from '../../../db/repositories'
 import { generateOrGetTodayNudge } from '../../../lib/daily-nudge'
+import { wrapRouteHandlers } from '../../../lib/error-log'
 
 const querySchema = z.object({
   student_id: z.string().uuid(),
@@ -43,3 +44,5 @@ export const Route = createFileRoute('/api/nudges/today')({
     },
   },
 })
+
+wrapRouteHandlers(Route, '/api/nudges/today', ['GET'])

@@ -5,6 +5,7 @@ import {
   generationBatchItemsRepository,
   generationBatchesRepository,
 } from '../../../../db/repositories'
+import { wrapRouteHandlers } from '../../../../lib/error-log'
 
 /** F116: GET /api/questions/generate-batch/:id -- progress view (status, cost spent, per-cell
  * outcome) so an admin can see what a batch actually did, not in tab05 (predates this feature). */
@@ -28,3 +29,5 @@ export const Route = createFileRoute('/api/questions/generate-batch/$id')({
     },
   },
 })
+
+wrapRouteHandlers(Route, '/api/questions/generate-batch/$id', ['GET'])

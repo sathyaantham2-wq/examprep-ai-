@@ -4,6 +4,7 @@ import { buildWeeklySummary } from '../../../lib/weekly-summary'
 import { mostRecentMonday } from '../../../lib/study-plan'
 import { buildWeeklySummaryEmail, notifyHouseholdParents } from '../../../lib/email'
 import { env } from '../../../lib/env'
+import { wrapRouteHandlers } from '../../../lib/error-log'
 
 /**
  * F080/F074: the "weekly summary" email named in F080's AC. Triggered by Vercel Cron (see
@@ -50,3 +51,5 @@ export const Route = createFileRoute('/api/cron/weekly-summary')({
     },
   },
 })
+
+wrapRouteHandlers(Route, '/api/cron/weekly-summary', ['GET'])

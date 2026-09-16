@@ -2,6 +2,7 @@ import { createFileRoute } from '@tanstack/react-router'
 import { requireRole } from '../../lib/session'
 import { getSharedDb } from '../../db/connection'
 import { auditLogRepository } from '../../db/repositories'
+import { wrapRouteHandlers } from '../../lib/error-log'
 
 // F099: "visible to household owner." Not in tab05's listed routes -- no read endpoint for
 // audit_log exists there at all -- added as the smallest reasonable path (a new top-level
@@ -24,3 +25,5 @@ export const Route = createFileRoute('/api/audit-log')({
     },
   },
 })
+
+wrapRouteHandlers(Route, '/api/audit-log', ['GET'])

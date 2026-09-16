@@ -4,6 +4,7 @@ import { requireRole } from '../../../../../lib/session'
 import { resolveEnabledStudent } from '../../../../../lib/access'
 import { setDayCompleted } from '../../../../../lib/study-plan'
 import { getSharedDb } from '../../../../../db/connection'
+import { wrapRouteHandlers } from '../../../../../lib/error-log'
 
 const requestSchema = z.object({
   completed: z.boolean(),
@@ -72,3 +73,5 @@ export const Route = createFileRoute('/api/study-plan/$id/days/$dayNumber')({
     },
   },
 })
+
+wrapRouteHandlers(Route, '/api/study-plan/$id/days/$dayNumber', ['PATCH'])

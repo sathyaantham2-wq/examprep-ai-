@@ -1,6 +1,7 @@
 import { createFileRoute } from '@tanstack/react-router'
 import { getSharedDb } from '../../../db/connection'
 import { verifyUnsubscribeToken } from '../../../lib/email'
+import { wrapRouteHandlers } from '../../../lib/error-log'
 
 // F080: "unsubscribe honoured." Deliberately a plain GET with no auth check beyond the signed
 // token -- this link is meant to work from inside an email client with no active session, and
@@ -34,3 +35,5 @@ export const Route = createFileRoute('/api/notifications/unsubscribe')({
     },
   },
 })
+
+wrapRouteHandlers(Route, '/api/notifications/unsubscribe', ['GET'])

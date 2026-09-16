@@ -219,6 +219,21 @@ export interface DeletionLog {
   requested_by_user_id: string;
 }
 
+export interface ErrorLog {
+  created_at: Generated<Timestamp>;
+  household_id: string | null;
+  id: Generated<string>;
+  message: string;
+  method: string | null;
+  release: string | null;
+  request_id: string;
+  route: string;
+  source: string;
+  stack: string | null;
+  status_code: number | null;
+  user_id: string | null;
+}
+
 export interface EvaluationItems {
   ai_error_type: ErrorType | null;
   ai_marks: Numeric | null;
@@ -574,6 +589,7 @@ export interface DB {
   consents: Consents;
   daily_nudges: DailyNudges;
   deletion_log: DeletionLog;
+  error_log: ErrorLog;
   evaluation_items: EvaluationItems;
   evaluations: Evaluations;
   generation_batch_items: GenerationBatchItems;

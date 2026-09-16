@@ -3,6 +3,7 @@ import { z } from 'zod'
 import { requireRole } from '../../../../lib/session'
 import { getSharedDb } from '../../../../db/connection'
 import { studentsRepository } from '../../../../db/repositories'
+import { wrapRouteHandlers } from '../../../../lib/error-log'
 
 const createLoginSchema = z.object({
   email: z.string().email(),
@@ -98,3 +99,5 @@ export const Route = createFileRoute('/api/students/$id/login')({
     },
   },
 })
+
+wrapRouteHandlers(Route, '/api/students/$id/login', ['POST'])

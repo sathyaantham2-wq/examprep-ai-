@@ -3,6 +3,7 @@ import { z } from 'zod'
 import { requireUser } from '../../../lib/session'
 import { getSharedDb } from '../../../db/connection'
 import { conceptsRepository } from '../../../db/repositories'
+import { wrapRouteHandlers } from '../../../lib/error-log'
 
 const querySchema = z
   .object({
@@ -41,3 +42,5 @@ export const Route = createFileRoute('/api/syllabus/concepts')({
     },
   },
 })
+
+wrapRouteHandlers(Route, '/api/syllabus/concepts', ['GET'])

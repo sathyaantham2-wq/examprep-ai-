@@ -3,6 +3,7 @@ import { z } from 'zod'
 import { requireRole } from '../../../lib/session'
 import { getSharedDb } from '../../../db/connection'
 import { getProductFunnelReport } from '../../../lib/product-events'
+import { wrapRouteHandlers } from '../../../lib/error-log'
 
 const DEFAULT_WINDOW_DAYS = 30
 
@@ -63,3 +64,5 @@ export const Route = createFileRoute('/api/admin/product-funnel')({
     },
   },
 })
+
+wrapRouteHandlers(Route, '/api/admin/product-funnel', ['GET'])

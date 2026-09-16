@@ -3,6 +3,7 @@ import { requireRole } from '../../lib/session'
 import { resolveEnabledStudent } from '../../lib/access'
 import { getSharedDb } from '../../db/connection'
 import { buildStudentDashboard } from '../../lib/student-dashboard'
+import { wrapRouteHandlers } from '../../lib/error-log'
 
 /**
  * F072 (tab06 /student): GET /api/student-dashboard, not in tab05 (predates this feature). No
@@ -28,3 +29,5 @@ export const Route = createFileRoute('/api/student-dashboard')({
     },
   },
 })
+
+wrapRouteHandlers(Route, '/api/student-dashboard', ['GET'])

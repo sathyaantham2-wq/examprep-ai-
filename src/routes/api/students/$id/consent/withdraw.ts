@@ -6,6 +6,7 @@ import {
   consentsRepository,
   auditLogRepository,
 } from '../../../../../db/repositories'
+import { wrapRouteHandlers } from '../../../../../lib/error-log'
 
 // F095: "withdrawal supported". Not in tab05's listed 38 routes (the sheet has no consent
 // endpoints at all) -- added as the smallest reasonable path under the existing
@@ -62,3 +63,5 @@ export const Route = createFileRoute('/api/students/$id/consent/withdraw')({
     },
   },
 })
+
+wrapRouteHandlers(Route, '/api/students/$id/consent/withdraw', ['POST'])

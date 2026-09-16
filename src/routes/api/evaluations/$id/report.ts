@@ -3,6 +3,7 @@ import { requireRole } from '../../../../lib/session'
 import { buildDiagnosisReport } from '../../../../lib/diagnosis'
 import { getSharedDb } from '../../../../db/connection'
 import { evaluationsRepository } from '../../../../db/repositories'
+import { wrapRouteHandlers } from '../../../../lib/error-log'
 
 export const Route = createFileRoute('/api/evaluations/$id/report')({
   server: {
@@ -34,3 +35,5 @@ export const Route = createFileRoute('/api/evaluations/$id/report')({
     },
   },
 })
+
+wrapRouteHandlers(Route, '/api/evaluations/$id/report', ['GET'])

@@ -3,6 +3,7 @@ import { requireRole } from '../../../lib/session'
 import { getSharedDb } from '../../../db/connection'
 import { studentsRepository } from '../../../db/repositories'
 import { buildParentDashboard } from '../../../lib/dashboard'
+import { wrapRouteHandlers } from '../../../lib/error-log'
 
 // tab05: GET /api/dashboard/:studentId, Parent -> subject cards, gap trend, priority concepts,
 // next actions. No screen exists in this repo (none do) -- this is the data half only.
@@ -27,3 +28,5 @@ export const Route = createFileRoute('/api/dashboard/$studentId')({
     },
   },
 })
+
+wrapRouteHandlers(Route, '/api/dashboard/$studentId', ['GET'])

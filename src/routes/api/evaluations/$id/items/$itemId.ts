@@ -8,6 +8,7 @@ import {
   patternHitsRepository,
   auditLogRepository,
 } from '../../../../../db/repositories'
+import { wrapRouteHandlers } from '../../../../../lib/error-log'
 
 const ERROR_TYPES = [
   'Conceptual Gap',
@@ -105,3 +106,5 @@ export const Route = createFileRoute('/api/evaluations/$id/items/$itemId')({
     },
   },
 })
+
+wrapRouteHandlers(Route, '/api/evaluations/$id/items/$itemId', ['PATCH'])

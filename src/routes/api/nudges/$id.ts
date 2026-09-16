@@ -4,6 +4,7 @@ import { requireRole } from '../../../lib/session'
 import { getSharedDb } from '../../../db/connection'
 import { studentsRepository } from '../../../db/repositories'
 import { markNudgeStatus } from '../../../lib/daily-nudge'
+import { wrapRouteHandlers } from '../../../lib/error-log'
 
 const patchSchema = z.object({
   student_id: z.string().uuid(),
@@ -39,3 +40,5 @@ export const Route = createFileRoute('/api/nudges/$id')({
     },
   },
 })
+
+wrapRouteHandlers(Route, '/api/nudges/$id', ['PATCH'])

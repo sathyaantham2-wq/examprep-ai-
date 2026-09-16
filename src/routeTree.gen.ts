@@ -25,6 +25,7 @@ import { Route as AdminUsageRouteImport } from './routes/admin/usage'
 import { Route as ApiAttemptsRouteImport } from './routes/api/attempts'
 import { Route as ApiAuditLogRouteImport } from './routes/api/audit-log'
 import { Route as ApiBlueprintsRouteImport } from './routes/api/blueprints'
+import { Route as ApiErrorsRouteImport } from './routes/api/errors'
 import { Route as ApiEvaluationsRouteImport } from './routes/api/evaluations'
 import { Route as ApiExamCountdownRouteImport } from './routes/api/exam-countdown'
 import { Route as ApiHabitDrillsRouteImport } from './routes/api/habit-drills'
@@ -171,6 +172,11 @@ const ApiAuditLogRoute = ApiAuditLogRouteImport.update({
 const ApiBlueprintsRoute = ApiBlueprintsRouteImport.update({
   id: '/api/blueprints',
   path: '/api/blueprints',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ApiErrorsRoute = ApiErrorsRouteImport.update({
+  id: '/api/errors',
+  path: '/api/errors',
   getParentRoute: () => rootRouteImport,
 } as any)
 const ApiEvaluationsRoute = ApiEvaluationsRouteImport.update({
@@ -540,6 +546,7 @@ export interface FileRoutesByFullPath {
   '/api/attempts': typeof ApiAttemptsRouteWithChildren
   '/api/audit-log': typeof ApiAuditLogRoute
   '/api/blueprints': typeof ApiBlueprintsRoute
+  '/api/errors': typeof ApiErrorsRoute
   '/api/evaluations': typeof ApiEvaluationsRouteWithChildren
   '/api/exam-countdown': typeof ApiExamCountdownRoute
   '/api/habit-drills': typeof ApiHabitDrillsRouteWithChildren
@@ -625,6 +632,7 @@ export interface FileRoutesByTo {
   '/api/attempts': typeof ApiAttemptsRouteWithChildren
   '/api/audit-log': typeof ApiAuditLogRoute
   '/api/blueprints': typeof ApiBlueprintsRoute
+  '/api/errors': typeof ApiErrorsRoute
   '/api/evaluations': typeof ApiEvaluationsRouteWithChildren
   '/api/exam-countdown': typeof ApiExamCountdownRoute
   '/api/habit-drills': typeof ApiHabitDrillsRouteWithChildren
@@ -711,6 +719,7 @@ export interface FileRoutesById {
   '/api/attempts': typeof ApiAttemptsRouteWithChildren
   '/api/audit-log': typeof ApiAuditLogRoute
   '/api/blueprints': typeof ApiBlueprintsRoute
+  '/api/errors': typeof ApiErrorsRoute
   '/api/evaluations': typeof ApiEvaluationsRouteWithChildren
   '/api/exam-countdown': typeof ApiExamCountdownRoute
   '/api/habit-drills': typeof ApiHabitDrillsRouteWithChildren
@@ -798,6 +807,7 @@ export interface FileRouteTypes {
     | '/api/attempts'
     | '/api/audit-log'
     | '/api/blueprints'
+    | '/api/errors'
     | '/api/evaluations'
     | '/api/exam-countdown'
     | '/api/habit-drills'
@@ -883,6 +893,7 @@ export interface FileRouteTypes {
     | '/api/attempts'
     | '/api/audit-log'
     | '/api/blueprints'
+    | '/api/errors'
     | '/api/evaluations'
     | '/api/exam-countdown'
     | '/api/habit-drills'
@@ -968,6 +979,7 @@ export interface FileRouteTypes {
     | '/api/attempts'
     | '/api/audit-log'
     | '/api/blueprints'
+    | '/api/errors'
     | '/api/evaluations'
     | '/api/exam-countdown'
     | '/api/habit-drills'
@@ -1054,6 +1066,7 @@ export interface RootRouteChildren {
   ApiAttemptsRoute: typeof ApiAttemptsRouteWithChildren
   ApiAuditLogRoute: typeof ApiAuditLogRoute
   ApiBlueprintsRoute: typeof ApiBlueprintsRoute
+  ApiErrorsRoute: typeof ApiErrorsRoute
   ApiEvaluationsRoute: typeof ApiEvaluationsRouteWithChildren
   ApiExamCountdownRoute: typeof ApiExamCountdownRoute
   ApiHabitDrillsRoute: typeof ApiHabitDrillsRouteWithChildren
@@ -1200,6 +1213,13 @@ declare module '@tanstack/react-router' {
       path: '/api/blueprints'
       fullPath: '/api/blueprints'
       preLoaderRoute: typeof ApiBlueprintsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/api/errors': {
+      id: '/api/errors'
+      path: '/api/errors'
+      fullPath: '/api/errors'
+      preLoaderRoute: typeof ApiErrorsRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/api/evaluations': {
@@ -1945,6 +1965,7 @@ const rootRouteChildren: RootRouteChildren = {
   ApiAttemptsRoute: ApiAttemptsRouteWithChildren,
   ApiAuditLogRoute: ApiAuditLogRoute,
   ApiBlueprintsRoute: ApiBlueprintsRoute,
+  ApiErrorsRoute: ApiErrorsRoute,
   ApiEvaluationsRoute: ApiEvaluationsRouteWithChildren,
   ApiExamCountdownRoute: ApiExamCountdownRoute,
   ApiHabitDrillsRoute: ApiHabitDrillsRouteWithChildren,

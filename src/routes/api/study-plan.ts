@@ -4,6 +4,7 @@ import { requireRole } from '../../lib/session'
 import { resolveEnabledStudent } from '../../lib/access'
 import { getSharedDb } from '../../db/connection'
 import { studentsRepository, studyPlansRepository } from '../../db/repositories'
+import { wrapRouteHandlers } from '../../lib/error-log'
 
 const querySchema = z.object({
   student_id: z.string().uuid().optional(),
@@ -70,3 +71,5 @@ export const Route = createFileRoute('/api/study-plan')({
     },
   },
 })
+
+wrapRouteHandlers(Route, '/api/study-plan', ['GET'])

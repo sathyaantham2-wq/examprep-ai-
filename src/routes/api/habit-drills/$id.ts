@@ -4,6 +4,7 @@ import { resolveEnabledStudent } from '../../../lib/access'
 import { getSharedDb } from '../../../db/connection'
 import { habitDrillTasksRepository } from '../../../db/repositories'
 import { loadHabitDrillView } from '../../../lib/habit-drills'
+import { wrapRouteHandlers } from '../../../lib/error-log'
 
 /**
  * GET /api/habit-drills/:id -- mirrors GET /api/remediation/:id's auth shape (T09): a student can
@@ -56,3 +57,5 @@ export const Route = createFileRoute('/api/habit-drills/$id')({
     },
   },
 })
+
+wrapRouteHandlers(Route, '/api/habit-drills/$id', ['GET'])

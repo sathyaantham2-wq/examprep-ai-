@@ -3,6 +3,7 @@ import { z } from 'zod'
 import { requireRole } from '../../../lib/session'
 import { getSharedDb } from '../../../db/connection'
 import { studentsRepository } from '../../../db/repositories'
+import { wrapRouteHandlers } from '../../../lib/error-log'
 
 // F009: kept in sync with students.ts's create-time targetExamSchema shape.
 const targetExamSchema = z.object({
@@ -76,3 +77,5 @@ export const Route = createFileRoute('/api/students/$id')({
     },
   },
 })
+
+wrapRouteHandlers(Route, '/api/students/$id', ['PATCH'])

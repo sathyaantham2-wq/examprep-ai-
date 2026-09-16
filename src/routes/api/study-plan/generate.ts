@@ -5,6 +5,7 @@ import { resolveEnabledStudent } from '../../../lib/access'
 import { generateStudyPlan } from '../../../lib/study-plan'
 import { getSharedDb } from '../../../db/connection'
 import { studentsRepository } from '../../../db/repositories'
+import { wrapRouteHandlers } from '../../../lib/error-log'
 
 const requestSchema = z.object({
   student_id: z.string().uuid().optional(),
@@ -59,3 +60,5 @@ export const Route = createFileRoute('/api/study-plan/generate')({
     },
   },
 })
+
+wrapRouteHandlers(Route, '/api/study-plan/generate', ['POST'])

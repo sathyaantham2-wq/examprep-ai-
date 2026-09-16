@@ -3,6 +3,7 @@ import { requireRole } from '../../../../lib/session'
 import { getSharedDb } from '../../../../db/connection'
 import { questionsRepository } from '../../../../db/repositories'
 import { computeQuestionStats } from '../../../../lib/question-stats'
+import { wrapRouteHandlers } from '../../../../lib/error-log'
 
 // F118: "live stats (attempts, success rate by mastery level, mean time); anomalous items are
 // auto-flagged for review." Not in tab05's listed routes -- no stats endpoint exists there --
@@ -24,3 +25,5 @@ export const Route = createFileRoute('/api/questions/$id/stats')({
     },
   },
 })
+
+wrapRouteHandlers(Route, '/api/questions/$id/stats', ['GET'])

@@ -23,6 +23,10 @@ const envSchema = z.object({
   // finds the URL. Optional so local dev (no Vercel Cron) doesn't need it set; the route
   // refuses to run without it configured in a real deployment (never silently skips the check).
   CRON_SECRET: z.string().min(1).optional(),
+  // F004: "release tagging" for the self-hosted error log (src/lib/error-log.ts) -- Vercel sets
+  // this automatically on every deployment, so it needs no configuration of its own; null in
+  // local dev, where "which deploy" doesn't apply anyway.
+  VERCEL_GIT_COMMIT_SHA: z.string().min(1).optional(),
 })
 
 export type Env = z.infer<typeof envSchema>

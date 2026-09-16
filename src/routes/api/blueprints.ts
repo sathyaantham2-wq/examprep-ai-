@@ -3,6 +3,7 @@ import { z } from 'zod'
 import { requireRole, requireUser } from '../../lib/session'
 import { getSharedDb } from '../../db/connection'
 import { blueprintsRepository } from '../../db/repositories'
+import { wrapRouteHandlers } from '../../lib/error-log'
 
 const BLOOM_LEVELS = [
   'Remember',
@@ -128,3 +129,5 @@ export const Route = createFileRoute('/api/blueprints')({
     },
   },
 })
+
+wrapRouteHandlers(Route, '/api/blueprints', ['GET', 'POST'])

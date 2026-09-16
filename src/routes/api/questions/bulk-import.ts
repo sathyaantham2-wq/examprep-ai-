@@ -2,6 +2,7 @@ import { createFileRoute } from '@tanstack/react-router'
 import { requireRole } from '../../../lib/session'
 import { getSharedDb } from '../../../db/connection'
 import { bulkImportQuestions } from '../../../lib/bulk-import'
+import { wrapRouteHandlers } from '../../../lib/error-log'
 
 // tab05: POST /api/questions/bulk-import, Admin, request "file (csv/json)" -> "imported count +
 // rejected rows with reasons". multipart/form-data with a `file` field, same shape as
@@ -57,3 +58,5 @@ export const Route = createFileRoute('/api/questions/bulk-import')({
     },
   },
 })
+
+wrapRouteHandlers(Route, '/api/questions/bulk-import', ['POST'])

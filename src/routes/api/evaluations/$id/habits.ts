@@ -6,6 +6,7 @@ import {
   evaluationsRepository,
   habitObservationsRepository,
 } from '../../../../db/repositories'
+import { wrapRouteHandlers } from '../../../../lib/error-log'
 
 const HABIT_RATINGS = ['present', 'partial', 'absent'] as const
 
@@ -65,3 +66,5 @@ export const Route = createFileRoute('/api/evaluations/$id/habits')({
     },
   },
 })
+
+wrapRouteHandlers(Route, '/api/evaluations/$id/habits', ['PATCH'])

@@ -5,6 +5,7 @@ import { evaluationsRepository } from '../../../../../db/repositories'
 import { buildDiagnosisReport } from '../../../../../lib/diagnosis'
 import { buildReportHtml } from '../../../../../lib/pdf/report-template'
 import { renderHtmlToPdf } from '../../../../../lib/pdf/render'
+import { wrapRouteHandlers } from '../../../../../lib/error-log'
 
 // F073: "downloadable PDF including error inventory and concept-wise performance." Not in
 // tab05's listed routes -- only the JSON GET /api/evaluations/:id/report exists there -- added
@@ -46,3 +47,5 @@ export const Route = createFileRoute('/api/evaluations/$id/report/pdf')({
     },
   },
 })
+
+wrapRouteHandlers(Route, '/api/evaluations/$id/report/pdf', ['GET'])

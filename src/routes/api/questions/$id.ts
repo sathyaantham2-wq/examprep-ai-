@@ -7,6 +7,7 @@ import {
   questionOptionsRepository,
   questionStepMarksRepository,
 } from '../../../db/repositories'
+import { wrapRouteHandlers } from '../../../lib/error-log'
 
 const updateQuestionSchema = z
   .object({
@@ -70,3 +71,5 @@ export const Route = createFileRoute('/api/questions/$id')({
     },
   },
 })
+
+wrapRouteHandlers(Route, '/api/questions/$id', ['GET', 'PATCH'])

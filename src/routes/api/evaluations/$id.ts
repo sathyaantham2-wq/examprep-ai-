@@ -11,6 +11,7 @@ import {
   habitsRepository,
   habitObservationsRepository,
 } from '../../../db/repositories'
+import { wrapRouteHandlers } from '../../../lib/error-log'
 
 /**
  * GET /api/evaluations/:id -- everything the evaluation review workspace (F048) needs to render
@@ -146,3 +147,5 @@ export const Route = createFileRoute('/api/evaluations/$id')({
     },
   },
 })
+
+wrapRouteHandlers(Route, '/api/evaluations/$id', ['GET'])

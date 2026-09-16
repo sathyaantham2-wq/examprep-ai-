@@ -6,6 +6,7 @@ import {
   evaluationsRepository,
   auditLogRepository,
 } from '../../../../db/repositories'
+import { wrapRouteHandlers } from '../../../../lib/error-log'
 
 export const Route = createFileRoute('/api/evaluations/$id/confirm')({
   server: {
@@ -44,3 +45,5 @@ export const Route = createFileRoute('/api/evaluations/$id/confirm')({
     },
   },
 })
+
+wrapRouteHandlers(Route, '/api/evaluations/$id/confirm', ['POST'])

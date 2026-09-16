@@ -9,6 +9,7 @@ import {
   questionOptionsRepository,
   attemptAnswersRepository,
 } from '../../../db/repositories'
+import { wrapRouteHandlers } from '../../../lib/error-log'
 
 /**
  * GET /api/attempts/:id -- everything the test runner (M08) needs to render and resume an
@@ -110,3 +111,5 @@ export const Route = createFileRoute('/api/attempts/$id')({
     },
   },
 })
+
+wrapRouteHandlers(Route, '/api/attempts/$id', ['GET'])

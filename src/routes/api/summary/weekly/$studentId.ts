@@ -4,6 +4,7 @@ import { requireRole } from '../../../../lib/session'
 import { getSharedDb } from '../../../../db/connection'
 import { studentsRepository } from '../../../../db/repositories'
 import { buildWeeklySummary } from '../../../../lib/weekly-summary'
+import { wrapRouteHandlers } from '../../../../lib/error-log'
 
 const querySchema = z.object({
   week_start: z.string().date().optional(),
@@ -47,3 +48,5 @@ export const Route = createFileRoute('/api/summary/weekly/$studentId')({
     },
   },
 })
+
+wrapRouteHandlers(Route, '/api/summary/weekly/$studentId', ['GET'])

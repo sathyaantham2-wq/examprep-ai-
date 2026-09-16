@@ -4,6 +4,7 @@ import { requireRole } from '../../../lib/session'
 import { getSharedDb } from '../../../db/connection'
 import { studentsRepository } from '../../../db/repositories'
 import { buildHabitDrill } from '../../../lib/habit-drills'
+import { wrapRouteHandlers } from '../../../lib/error-log'
 
 const requestSchema = z.object({
   student_id: z.string().uuid(),
@@ -67,3 +68,5 @@ export const Route = createFileRoute('/api/habit-drills/generate')({
     },
   },
 })
+
+wrapRouteHandlers(Route, '/api/habit-drills/generate', ['POST'])

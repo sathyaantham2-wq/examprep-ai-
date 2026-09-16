@@ -9,6 +9,7 @@ import {
   attemptAnswersRepository,
 } from '../../../../db/repositories'
 import { logProductEvent } from '../../../../lib/product-events'
+import { wrapRouteHandlers } from '../../../../lib/error-log'
 
 const submitSchema = z.object({
   // Set once the student has seen the "you have N blank answers" warning and chosen to proceed
@@ -108,3 +109,5 @@ export const Route = createFileRoute('/api/attempts/$id/submit')({
     },
   },
 })
+
+wrapRouteHandlers(Route, '/api/attempts/$id/submit', ['POST'])

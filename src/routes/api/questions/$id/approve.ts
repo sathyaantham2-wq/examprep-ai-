@@ -3,6 +3,7 @@ import { z } from 'zod'
 import { requireRole } from '../../../../lib/session'
 import { getSharedDb } from '../../../../db/connection'
 import { questionsRepository } from '../../../../db/repositories'
+import { wrapRouteHandlers } from '../../../../lib/error-log'
 
 const approveSchema = z.object({
   note: z.string().min(1).optional(),
@@ -49,3 +50,5 @@ export const Route = createFileRoute('/api/questions/$id/approve')({
     },
   },
 })
+
+wrapRouteHandlers(Route, '/api/questions/$id/approve', ['POST'])

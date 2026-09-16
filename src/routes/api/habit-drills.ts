@@ -7,6 +7,7 @@ import {
   studentsRepository,
   habitDrillTasksRepository,
 } from '../../db/repositories'
+import { wrapRouteHandlers } from '../../lib/error-log'
 
 const querySchema = z.object({
   student_id: z.string().uuid().optional(),
@@ -66,3 +67,5 @@ export const Route = createFileRoute('/api/habit-drills')({
     },
   },
 })
+
+wrapRouteHandlers(Route, '/api/habit-drills', ['GET'])

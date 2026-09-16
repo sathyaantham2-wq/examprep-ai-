@@ -3,6 +3,7 @@ import { requireRole } from '../../../lib/session'
 import { getSharedDb } from '../../../db/connection'
 import { exportHouseholdData } from '../../../lib/privacy'
 import { auditLogRepository } from '../../../db/repositories'
+import { wrapRouteHandlers } from '../../../lib/error-log'
 
 /**
  * F098 (tab05): POST /api/privacy/export, Parent. tab05 describes an async job + email delivery
@@ -39,3 +40,5 @@ export const Route = createFileRoute('/api/privacy/export')({
     },
   },
 })
+
+wrapRouteHandlers(Route, '/api/privacy/export', ['POST'])

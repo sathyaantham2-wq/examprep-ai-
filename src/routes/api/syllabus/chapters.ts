@@ -2,6 +2,7 @@ import { createFileRoute } from '@tanstack/react-router'
 import { requireUser } from '../../../lib/session'
 import { getSharedDb } from '../../../db/connection'
 import { chaptersRepository } from '../../../db/repositories'
+import { wrapRouteHandlers } from '../../../lib/error-log'
 
 export const Route = createFileRoute('/api/syllabus/chapters')({
   server: {
@@ -28,3 +29,5 @@ export const Route = createFileRoute('/api/syllabus/chapters')({
     },
   },
 })
+
+wrapRouteHandlers(Route, '/api/syllabus/chapters', ['GET'])

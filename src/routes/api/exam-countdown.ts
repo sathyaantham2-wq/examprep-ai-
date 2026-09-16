@@ -5,6 +5,7 @@ import { resolveEnabledStudent } from '../../lib/access'
 import { buildExamCountdownReport } from '../../lib/exam-countdown'
 import { getSharedDb } from '../../db/connection'
 import { studentsRepository } from '../../db/repositories'
+import { wrapRouteHandlers } from '../../lib/error-log'
 
 const querySchema = z.object({
   student_id: z.string().uuid().optional(),
@@ -60,3 +61,5 @@ export const Route = createFileRoute('/api/exam-countdown')({
     },
   },
 })
+
+wrapRouteHandlers(Route, '/api/exam-countdown', ['GET'])

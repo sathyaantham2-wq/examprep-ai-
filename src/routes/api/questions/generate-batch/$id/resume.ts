@@ -6,6 +6,7 @@ import {
   generationBatchItemsRepository,
   generationBatchesRepository,
 } from '../../../../../db/repositories'
+import { wrapRouteHandlers } from '../../../../../lib/error-log'
 
 /**
  * F116: POST /api/questions/generate-batch/:id/resume -- continues a 'paused' batch's remaining
@@ -38,3 +39,5 @@ export const Route = createFileRoute(
     },
   },
 })
+
+wrapRouteHandlers(Route, '/api/questions/generate-batch/$id/resume', ['POST'])

@@ -13,6 +13,7 @@ import {
   conceptsRepository,
   questionsRepository,
 } from '../../../db/repositories'
+import { wrapRouteHandlers } from '../../../lib/error-log'
 
 const BLOOM_LEVELS = [
   'Remember',
@@ -196,3 +197,5 @@ export const Route = createFileRoute('/api/questions/generate')({
     },
   },
 })
+
+wrapRouteHandlers(Route, '/api/questions/generate', ['POST'])

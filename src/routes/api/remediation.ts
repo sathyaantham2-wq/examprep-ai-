@@ -7,6 +7,7 @@ import {
   studentsRepository,
   remediationTasksRepository,
 } from '../../db/repositories'
+import { wrapRouteHandlers } from '../../lib/error-log'
 
 const querySchema = z.object({
   student_id: z.string().uuid().optional(),
@@ -66,3 +67,5 @@ export const Route = createFileRoute('/api/remediation')({
     },
   },
 })
+
+wrapRouteHandlers(Route, '/api/remediation', ['GET'])

@@ -17,6 +17,7 @@ import {
 import { logProductEvent } from '../../../lib/product-events'
 import { buildPaperReadyEmail, notifyHouseholdParents } from '../../../lib/email'
 import { env } from '../../../lib/env'
+import { wrapRouteHandlers } from '../../../lib/error-log'
 
 // F112: "Student role may generate ... papers within a daily quota." Not a number the plan
 // specifies -- a documented default, the same kind RETEST_LADDER_DAYS (src/lib/mastery.ts) and
@@ -209,3 +210,5 @@ export const Route = createFileRoute('/api/papers/generate')({
     },
   },
 })
+
+wrapRouteHandlers(Route, '/api/papers/generate', ['POST'])

@@ -6,6 +6,7 @@ import {
   studentsRepository,
   conceptStatusRepository,
 } from '../../../db/repositories'
+import { wrapRouteHandlers } from '../../../lib/error-log'
 
 const CONCEPT_STATUSES = [
   'Strong',
@@ -58,3 +59,5 @@ export const Route = createFileRoute('/api/tracker/$studentId')({
     },
   },
 })
+
+wrapRouteHandlers(Route, '/api/tracker/$studentId', ['GET'])

@@ -16,6 +16,7 @@ import { computeCoverageTable } from '../../../../lib/pdf/coverage'
 import { extractStyleAndBody } from '../../../../lib/pdf/html-utils'
 import { DEFAULT_THEME, isKnownTheme } from '../../../../lib/pdf/themes'
 import { logProductEvent } from '../../../../lib/product-events'
+import { wrapRouteHandlers } from '../../../../lib/error-log'
 
 // tab05: GET /api/papers/:id/pdf, Parent, query (theme, include_key) -> application/pdf stream.
 // Parent-only (same as GET /api/papers/:id) is what actually enforces "a student can never see or
@@ -199,3 +200,5 @@ ${keyParts.body}
     },
   },
 })
+
+wrapRouteHandlers(Route, '/api/papers/$id/pdf', ['GET'])

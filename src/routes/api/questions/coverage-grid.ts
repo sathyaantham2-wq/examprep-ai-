@@ -6,6 +6,7 @@ import {
   computeCoverageGrid,
   computeCoverageGridForSubject,
 } from '../../../lib/coverage-grid'
+import { wrapRouteHandlers } from '../../../lib/error-log'
 
 const querySchema = z
   .object({
@@ -51,3 +52,5 @@ export const Route = createFileRoute('/api/questions/coverage-grid')({
     },
   },
 })
+
+wrapRouteHandlers(Route, '/api/questions/coverage-grid', ['GET'])

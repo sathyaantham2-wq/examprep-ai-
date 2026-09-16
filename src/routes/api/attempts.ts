@@ -4,6 +4,7 @@ import { requireRole } from '../../lib/session'
 import { resolveEnabledStudent } from '../../lib/access'
 import { getSharedDb } from '../../db/connection'
 import { papersRepository, attemptsRepository } from '../../db/repositories'
+import { wrapRouteHandlers } from '../../lib/error-log'
 
 const createAttemptSchema = z.object({
   paper_id: z.string().uuid(),
@@ -51,3 +52,5 @@ export const Route = createFileRoute('/api/attempts')({
     },
   },
 })
+
+wrapRouteHandlers(Route, '/api/attempts', ['POST'])

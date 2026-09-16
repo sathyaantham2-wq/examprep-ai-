@@ -4,6 +4,7 @@ import { requireRole } from '../../../lib/session'
 import { getSharedDb } from '../../../db/connection'
 import { planBatch, runBatch } from '../../../lib/generation-batches'
 import { generationBatchItemsRepository } from '../../../db/repositories'
+import { wrapRouteHandlers } from '../../../lib/error-log'
 
 const requestSchema = z.object({
   subject_id: z.string().uuid(),
@@ -65,3 +66,5 @@ export const Route = createFileRoute('/api/questions/generate-batch')({
     },
   },
 })
+
+wrapRouteHandlers(Route, '/api/questions/generate-batch', ['POST'])

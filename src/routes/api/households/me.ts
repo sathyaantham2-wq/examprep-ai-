@@ -2,6 +2,7 @@ import { createFileRoute } from '@tanstack/react-router'
 import { requireRole } from '../../../lib/session'
 import { getSharedDb } from '../../../db/connection'
 import { householdsRepository } from '../../../db/repositories'
+import { wrapRouteHandlers } from '../../../lib/error-log'
 
 // Not in tab05 -- no route ever exposed the caller's own household record, needed by /settings
 // (F098) to show the household name and to power the "type the name to confirm" delete gesture.
@@ -23,3 +24,5 @@ export const Route = createFileRoute('/api/households/me')({
     },
   },
 })
+
+wrapRouteHandlers(Route, '/api/households/me', ['GET'])

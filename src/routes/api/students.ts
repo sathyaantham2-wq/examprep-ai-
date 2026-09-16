@@ -4,6 +4,7 @@ import { requireRole } from '../../lib/session'
 import { getSharedDb } from '../../db/connection'
 import { studentsRepository, consentsRepository } from '../../db/repositories'
 import { CURRENT_CONSENT_VERSION } from '../../lib/consent'
+import { wrapRouteHandlers } from '../../lib/error-log'
 
 // F009: target_exams is {name, date}[] -- no consumer reads its shape yet (no other feature
 // exists to display or schedule against it), so this is the minimal shape the AC's "target exam
@@ -78,3 +79,5 @@ export const Route = createFileRoute('/api/students')({
     },
   },
 })
+
+wrapRouteHandlers(Route, '/api/students', ['GET', 'POST'])
