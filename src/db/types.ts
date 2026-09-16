@@ -201,6 +201,16 @@ export interface Consents {
   withdrawn_at: Timestamp | null;
 }
 
+export interface DailyNudges {
+  action_text: string;
+  concept_id: string | null;
+  created_at: Generated<Timestamp>;
+  date: Timestamp;
+  id: Generated<string>;
+  status: Generated<string>;
+  student_id: string;
+}
+
 export interface DeletionLog {
   deleted_at: Generated<Timestamp>;
   household_id: string;
@@ -562,6 +572,7 @@ export interface DB {
   concept_status: ConceptStatus;
   concepts: Concepts;
   consents: Consents;
+  daily_nudges: DailyNudges;
   deletion_log: DeletionLog;
   evaluation_items: EvaluationItems;
   evaluations: Evaluations;

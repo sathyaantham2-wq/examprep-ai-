@@ -18,13 +18,13 @@ interface ErrorInventoryRow {
   patterns: Array<{ code: string; name: string }>
 }
 
-interface UnmasteredPrerequisite {
+export interface UnmasteredPrerequisite {
   concept_id: string
   concept_name: string
   status: string | null
 }
 
-interface RankedAction {
+export interface RankedAction {
   concept_id: string
   concept_name: string
   status: string
@@ -38,6 +38,75 @@ interface RankedAction {
 }
 
 const MASTERED_STATUSES = new Set(['Strong', 'Maintenance'])
+
+const PRIORITY_ORDER: Record<string, number> = {
+  Priority: 0,
+  Weak: 1,
+  'Needs Practice': 2,
+  Maintenance: 3,
+  Strong: 4,
+}
+
+/**
+ * F059/F018/F082: "worst-first from the student's whole tracker" -- tracker-wide (concept_status),
+ * not scoped to any one paper or evaluation, which is why this takes a bare studentId rather than
+ * an evaluationId. Originally inlined in buildDiagnosisReport (F059); pulled out so F082's daily
+ * nudge can reuse the exact same ranking and action-text logic instead of a second, drifting copy.
+ */
+export async function getRankedActions(
+  db: Db,
+  studentId: string,
+  limit = 3,
+): Promise<Array<RankedAction>> {
+  const statuses = await conceptStatusRepository.list(db, studentId)
+  const candidates = statuses
+    .filter((s) => s.status === 'Priority' || s.status === 'Weak')
+    .sort((a, b) => (PRIORITY_ORDER[a.status] ?? 9) - (PRIORITY_ORDER[b.status] ?? 9))
+
+  const ranked: Array<RankedAction> = []
+  for (const status of candidates.slice(0, limit)) {
+    const concept = await db
+      .selectFrom('concepts')
+      .select(['name', 'prerequisite_concept_ids'])
+      .where('id', '=', status.concept_id)
+      .executeTakeFirstOrThrow()
+
+    const prerequisiteIds = concept.prerequisite_concept_ids
+    const unmasteredPrerequisites: Array<UnmasteredPrerequisite> = []
+    for (const prereqId of prerequisiteIds) {
+      const prereqConcept = await db
+        .selectFrom('concepts')
+        .select(['name'])
+        .where('id', '=', prereqId)
+        .executeTakeFirst()
+      if (!prereqConcept) continue // a dangling id (the concept was never real / was replaced)
+
+      const prereqStatus = await conceptStatusRepository.findOne(db, studentId, prereqId)
+      if (prereqStatus && MASTERED_STATUSES.has(prereqStatus.status)) continue
+
+      unmasteredPrerequisites.push({
+        concept_id: prereqId,
+        concept_name: prereqConcept.name,
+        status: prereqStatus?.status ?? null, // null == never attempted, not just "not mastered"
+      })
+    }
+
+    const prereqNote =
+      unmasteredPrerequisites.length > 0
+        ? ` This also depends on ${unmasteredPrerequisites.map((p) => p.concept_name).join(', ')}, which isn't solid yet — that may be worth reviewing first.`
+        : ''
+
+    ranked.push({
+      concept_id: status.concept_id,
+      concept_name: concept.name,
+      status: status.status,
+      last_ratio: status.last_ratio !== null ? Number(status.last_ratio) : null,
+      action: `Practice ${concept.name} — currently ${status.status}${status.last_ratio !== null ? `, last scored ${Math.round(Number(status.last_ratio) * 100)}%` : ''}.${prereqNote}`,
+      unmastered_prerequisites: unmasteredPrerequisites,
+    })
+  }
+  return ranked
+}
 
 interface ConceptPerformanceRow {
   concept_id: string
@@ -179,66 +248,7 @@ export async function buildDiagnosisReport(db: Db, evaluationId: string) {
 
   // Actions: worst-first from the student's whole tracker, not just this paper — a Delivery Gap
   // report is about what to do next, and that's tracker-wide, not paper-scoped.
-  const statuses = await conceptStatusRepository.list(db, attempt.student_id)
-  const priorityOrder: Record<string, number> = {
-    Priority: 0,
-    Weak: 1,
-    'Needs Practice': 2,
-    Maintenance: 3,
-    Strong: 4,
-  }
-  const candidates = statuses
-    .filter((s) => s.status === 'Priority' || s.status === 'Weak')
-    .sort(
-      (a, b) => (priorityOrder[a.status] ?? 9) - (priorityOrder[b.status] ?? 9),
-    )
-
-  const ranked: Array<RankedAction> = []
-  for (const status of candidates.slice(0, 3)) {
-    const concept = await db
-      .selectFrom('concepts')
-      .select(['name', 'prerequisite_concept_ids'])
-      .where('id', '=', status.concept_id)
-      .executeTakeFirstOrThrow()
-
-    const prerequisiteIds = concept.prerequisite_concept_ids
-    const unmasteredPrerequisites: Array<UnmasteredPrerequisite> = []
-    for (const prereqId of prerequisiteIds) {
-      const prereqConcept = await db
-        .selectFrom('concepts')
-        .select(['name'])
-        .where('id', '=', prereqId)
-        .executeTakeFirst()
-      if (!prereqConcept) continue // a dangling id (the concept was never real / was replaced)
-
-      const prereqStatus = await conceptStatusRepository.findOne(
-        db,
-        attempt.student_id,
-        prereqId,
-      )
-      if (prereqStatus && MASTERED_STATUSES.has(prereqStatus.status)) continue
-
-      unmasteredPrerequisites.push({
-        concept_id: prereqId,
-        concept_name: prereqConcept.name,
-        status: prereqStatus?.status ?? null, // null == never attempted, not just "not mastered"
-      })
-    }
-
-    const prereqNote =
-      unmasteredPrerequisites.length > 0
-        ? ` This also depends on ${unmasteredPrerequisites.map((p) => p.concept_name).join(', ')}, which isn't solid yet — that may be worth reviewing first.`
-        : ''
-
-    ranked.push({
-      concept_id: status.concept_id,
-      concept_name: concept.name,
-      status: status.status,
-      last_ratio: status.last_ratio !== null ? Number(status.last_ratio) : null,
-      action: `Practice ${concept.name} — currently ${status.status}${status.last_ratio !== null ? `, last scored ${Math.round(Number(status.last_ratio) * 100)}%` : ''}.${prereqNote}`,
-      unmastered_prerequisites: unmasteredPrerequisites,
-    })
-  }
+  const ranked = await getRankedActions(db, attempt.student_id)
 
   const parentAction = ranked[0]
     ? `This week, have your child redo a short practice set on ${ranked[0].concept_name}.`

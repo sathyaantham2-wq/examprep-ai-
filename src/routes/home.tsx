@@ -82,6 +82,12 @@ interface Dashboard {
   recap: SessionRecap
 }
 
+interface DailyNudge {
+  id: string
+  action_text: string
+  status: 'pending' | 'done' | 'skipped'
+}
+
 interface HabitTrendRow {
   habit_id: string
   habit_code: string
@@ -126,6 +132,7 @@ function ParentDashboard() {
   const [dashboard, setDashboard] = useState<Dashboard | null>(null)
   const [loadingDashboard, setLoadingDashboard] = useState(false)
   const [habitTrend, setHabitTrend] = useState<Array<HabitTrendRow>>([])
+  const [nudge, setNudge] = useState<DailyNudge | null>(null)
 
   useEffect(() => {
     if (isPending) return
@@ -162,6 +169,29 @@ function ParentDashboard() {
       .then((r) => r.json())
       .then(setHabitTrend)
   }, [studentId])
+
+  useEffect(() => {
+    if (!studentId) {
+      setNudge(null)
+      return
+    }
+    fetch(`/api/nudges/today?student_id=${studentId}`)
+      .then((r) => r.json())
+      .then((body: { nudge: DailyNudge }) => setNudge(body.nudge))
+  }, [studentId])
+
+  async function markNudge(status: 'done' | 'skipped') {
+    if (!nudge) return
+    const response = await fetch(`/api/nudges/${nudge.id}`, {
+      method: 'PATCH',
+      headers: { 'content-type': 'application/json' },
+      body: JSON.stringify({ student_id: studentId, status }),
+    })
+    if (response.ok) {
+      const body = await response.json()
+      setNudge(body.nudge)
+    }
+  }
 
   if (isPending || !session || (role !== 'parent' && role !== 'admin')) {
     return <div className="p-8 text-body text-muted-foreground">Loading…</div>
@@ -216,6 +246,47 @@ function ParentDashboard() {
             </button>
           ))}
         </div>
+      )}
+
+      {nudge && (
+        <Card className="mb-6">
+          <CardHeader>
+            <CardTitle className="text-h3">Today's action</CardTitle>
+          </CardHeader>
+          <CardContent className="space-y-3">
+            <p
+              className={
+                nudge.status === 'skipped'
+                  ? 'text-body text-muted-foreground line-through'
+                  : 'text-body'
+              }
+            >
+              {nudge.action_text}
+            </p>
+            {nudge.status === 'pending' ? (
+              <div className="flex gap-2">
+                <button
+                  type="button"
+                  onClick={() => markNudge('done')}
+                  className="text-small rounded-md border border-primary bg-primary px-3 py-1.5 text-primary-foreground"
+                >
+                  Done
+                </button>
+                <button
+                  type="button"
+                  onClick={() => markNudge('skipped')}
+                  className="text-small border-input rounded-md border px-3 py-1.5"
+                >
+                  Skip
+                </button>
+              </div>
+            ) : (
+              <p className="text-small text-muted-foreground">
+                Marked {nudge.status} today.
+              </p>
+            )}
+          </CardContent>
+        </Card>
       )}
 
       {loadingDashboard && (

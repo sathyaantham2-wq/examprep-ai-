@@ -245,3 +245,18 @@ export const studyPlansRepository = {
       .execute()
   },
 }
+
+export const dailyNudgesRepository = {
+  ...createScopedRepository('daily_nudges', 'student_id'),
+  // F082: "delivered once daily" -- (student_id, date) is unique, so generateOrGetTodayNudge
+  // (src/lib/daily-nudge.ts) finds today's existing row before ever inserting a new one, the
+  // same idempotent "check the unique key first" shape studyPlansRepository.findForWeek uses.
+  async findForDate(db: Db, studentId: string, date: string) {
+    return db
+      .selectFrom('daily_nudges')
+      .selectAll()
+      .where('student_id', '=', studentId)
+      .where(sql<boolean>`date = ${date}::date`)
+      .executeTakeFirst() as Promise<Selectable<DB['daily_nudges']> | undefined>
+  },
+}

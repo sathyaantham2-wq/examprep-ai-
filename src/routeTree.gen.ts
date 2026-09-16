@@ -41,6 +41,7 @@ import { Route as ApiAdminProductFunnelRouteImport } from './routes/api/admin/pr
 import { Route as ApiAdminSyllabusFidelityRouteImport } from './routes/api/admin/syllabus-fidelity'
 import { Route as ApiAttemptsIdRouteImport } from './routes/api/attempts/$id'
 import { Route as ApiAuthSplatRouteImport } from './routes/api/auth/$'
+import { Route as ApiCronDailyNudgeRouteImport } from './routes/api/cron/daily-nudge'
 import { Route as ApiCronWeeklySummaryRouteImport } from './routes/api/cron/weekly-summary'
 import { Route as ApiDashboardStudentIdRouteImport } from './routes/api/dashboard/$studentId'
 import { Route as ApiEvaluationsIdRouteImport } from './routes/api/evaluations/$id'
@@ -48,6 +49,8 @@ import { Route as ApiHabitDrillsIdRouteImport } from './routes/api/habit-drills/
 import { Route as ApiHabitDrillsGenerateRouteImport } from './routes/api/habit-drills/generate'
 import { Route as ApiHouseholdsMeRouteImport } from './routes/api/households/me'
 import { Route as ApiNotificationsUnsubscribeRouteImport } from './routes/api/notifications/unsubscribe'
+import { Route as ApiNudgesIdRouteImport } from './routes/api/nudges/$id'
+import { Route as ApiNudgesTodayRouteImport } from './routes/api/nudges/today'
 import { Route as ApiPapersIdRouteImport } from './routes/api/papers/$id'
 import { Route as ApiPapersGenerateRouteImport } from './routes/api/papers/generate'
 import { Route as ApiPrivacyDeleteRouteImport } from './routes/api/privacy/delete'
@@ -251,6 +254,11 @@ const ApiAuthSplatRoute = ApiAuthSplatRouteImport.update({
   path: '/api/auth/$',
   getParentRoute: () => rootRouteImport,
 } as any)
+const ApiCronDailyNudgeRoute = ApiCronDailyNudgeRouteImport.update({
+  id: '/api/cron/daily-nudge',
+  path: '/api/cron/daily-nudge',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const ApiCronWeeklySummaryRoute = ApiCronWeeklySummaryRouteImport.update({
   id: '/api/cron/weekly-summary',
   path: '/api/cron/weekly-summary',
@@ -287,6 +295,16 @@ const ApiNotificationsUnsubscribeRoute =
     path: '/api/notifications/unsubscribe',
     getParentRoute: () => rootRouteImport,
   } as any)
+const ApiNudgesIdRoute = ApiNudgesIdRouteImport.update({
+  id: '/api/nudges/$id',
+  path: '/api/nudges/$id',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ApiNudgesTodayRoute = ApiNudgesTodayRouteImport.update({
+  id: '/api/nudges/today',
+  path: '/api/nudges/today',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const ApiPapersIdRoute = ApiPapersIdRouteImport.update({
   id: '/api/papers/$id',
   path: '/api/papers/$id',
@@ -538,6 +556,7 @@ export interface FileRoutesByFullPath {
   '/api/admin/syllabus-fidelity': typeof ApiAdminSyllabusFidelityRoute
   '/api/attempts/$id': typeof ApiAttemptsIdRouteWithChildren
   '/api/auth/$': typeof ApiAuthSplatRoute
+  '/api/cron/daily-nudge': typeof ApiCronDailyNudgeRoute
   '/api/cron/weekly-summary': typeof ApiCronWeeklySummaryRoute
   '/api/dashboard/$studentId': typeof ApiDashboardStudentIdRoute
   '/api/evaluations/$id': typeof ApiEvaluationsIdRouteWithChildren
@@ -545,6 +564,8 @@ export interface FileRoutesByFullPath {
   '/api/habit-drills/generate': typeof ApiHabitDrillsGenerateRoute
   '/api/households/me': typeof ApiHouseholdsMeRoute
   '/api/notifications/unsubscribe': typeof ApiNotificationsUnsubscribeRoute
+  '/api/nudges/$id': typeof ApiNudgesIdRoute
+  '/api/nudges/today': typeof ApiNudgesTodayRoute
   '/api/papers/$id': typeof ApiPapersIdRouteWithChildren
   '/api/papers/generate': typeof ApiPapersGenerateRoute
   '/api/privacy/delete': typeof ApiPrivacyDeleteRoute
@@ -620,6 +641,7 @@ export interface FileRoutesByTo {
   '/api/admin/syllabus-fidelity': typeof ApiAdminSyllabusFidelityRoute
   '/api/attempts/$id': typeof ApiAttemptsIdRouteWithChildren
   '/api/auth/$': typeof ApiAuthSplatRoute
+  '/api/cron/daily-nudge': typeof ApiCronDailyNudgeRoute
   '/api/cron/weekly-summary': typeof ApiCronWeeklySummaryRoute
   '/api/dashboard/$studentId': typeof ApiDashboardStudentIdRoute
   '/api/evaluations/$id': typeof ApiEvaluationsIdRouteWithChildren
@@ -627,6 +649,8 @@ export interface FileRoutesByTo {
   '/api/habit-drills/generate': typeof ApiHabitDrillsGenerateRoute
   '/api/households/me': typeof ApiHouseholdsMeRoute
   '/api/notifications/unsubscribe': typeof ApiNotificationsUnsubscribeRoute
+  '/api/nudges/$id': typeof ApiNudgesIdRoute
+  '/api/nudges/today': typeof ApiNudgesTodayRoute
   '/api/papers/$id': typeof ApiPapersIdRouteWithChildren
   '/api/papers/generate': typeof ApiPapersGenerateRoute
   '/api/privacy/delete': typeof ApiPrivacyDeleteRoute
@@ -703,6 +727,7 @@ export interface FileRoutesById {
   '/api/admin/syllabus-fidelity': typeof ApiAdminSyllabusFidelityRoute
   '/api/attempts/$id': typeof ApiAttemptsIdRouteWithChildren
   '/api/auth/$': typeof ApiAuthSplatRoute
+  '/api/cron/daily-nudge': typeof ApiCronDailyNudgeRoute
   '/api/cron/weekly-summary': typeof ApiCronWeeklySummaryRoute
   '/api/dashboard/$studentId': typeof ApiDashboardStudentIdRoute
   '/api/evaluations/$id': typeof ApiEvaluationsIdRouteWithChildren
@@ -710,6 +735,8 @@ export interface FileRoutesById {
   '/api/habit-drills/generate': typeof ApiHabitDrillsGenerateRoute
   '/api/households/me': typeof ApiHouseholdsMeRoute
   '/api/notifications/unsubscribe': typeof ApiNotificationsUnsubscribeRoute
+  '/api/nudges/$id': typeof ApiNudgesIdRoute
+  '/api/nudges/today': typeof ApiNudgesTodayRoute
   '/api/papers/$id': typeof ApiPapersIdRouteWithChildren
   '/api/papers/generate': typeof ApiPapersGenerateRoute
   '/api/privacy/delete': typeof ApiPrivacyDeleteRoute
@@ -787,6 +814,7 @@ export interface FileRouteTypes {
     | '/api/admin/syllabus-fidelity'
     | '/api/attempts/$id'
     | '/api/auth/$'
+    | '/api/cron/daily-nudge'
     | '/api/cron/weekly-summary'
     | '/api/dashboard/$studentId'
     | '/api/evaluations/$id'
@@ -794,6 +822,8 @@ export interface FileRouteTypes {
     | '/api/habit-drills/generate'
     | '/api/households/me'
     | '/api/notifications/unsubscribe'
+    | '/api/nudges/$id'
+    | '/api/nudges/today'
     | '/api/papers/$id'
     | '/api/papers/generate'
     | '/api/privacy/delete'
@@ -869,6 +899,7 @@ export interface FileRouteTypes {
     | '/api/admin/syllabus-fidelity'
     | '/api/attempts/$id'
     | '/api/auth/$'
+    | '/api/cron/daily-nudge'
     | '/api/cron/weekly-summary'
     | '/api/dashboard/$studentId'
     | '/api/evaluations/$id'
@@ -876,6 +907,8 @@ export interface FileRouteTypes {
     | '/api/habit-drills/generate'
     | '/api/households/me'
     | '/api/notifications/unsubscribe'
+    | '/api/nudges/$id'
+    | '/api/nudges/today'
     | '/api/papers/$id'
     | '/api/papers/generate'
     | '/api/privacy/delete'
@@ -951,6 +984,7 @@ export interface FileRouteTypes {
     | '/api/admin/syllabus-fidelity'
     | '/api/attempts/$id'
     | '/api/auth/$'
+    | '/api/cron/daily-nudge'
     | '/api/cron/weekly-summary'
     | '/api/dashboard/$studentId'
     | '/api/evaluations/$id'
@@ -958,6 +992,8 @@ export interface FileRouteTypes {
     | '/api/habit-drills/generate'
     | '/api/households/me'
     | '/api/notifications/unsubscribe'
+    | '/api/nudges/$id'
+    | '/api/nudges/today'
     | '/api/papers/$id'
     | '/api/papers/generate'
     | '/api/privacy/delete'
@@ -1033,10 +1069,13 @@ export interface RootRouteChildren {
   ApiAdminProductFunnelRoute: typeof ApiAdminProductFunnelRoute
   ApiAdminSyllabusFidelityRoute: typeof ApiAdminSyllabusFidelityRoute
   ApiAuthSplatRoute: typeof ApiAuthSplatRoute
+  ApiCronDailyNudgeRoute: typeof ApiCronDailyNudgeRoute
   ApiCronWeeklySummaryRoute: typeof ApiCronWeeklySummaryRoute
   ApiDashboardStudentIdRoute: typeof ApiDashboardStudentIdRoute
   ApiHouseholdsMeRoute: typeof ApiHouseholdsMeRoute
   ApiNotificationsUnsubscribeRoute: typeof ApiNotificationsUnsubscribeRoute
+  ApiNudgesIdRoute: typeof ApiNudgesIdRoute
+  ApiNudgesTodayRoute: typeof ApiNudgesTodayRoute
   ApiPapersIdRoute: typeof ApiPapersIdRouteWithChildren
   ApiPapersGenerateRoute: typeof ApiPapersGenerateRoute
   ApiPrivacyDeleteRoute: typeof ApiPrivacyDeleteRoute
@@ -1275,6 +1314,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ApiAuthSplatRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/api/cron/daily-nudge': {
+      id: '/api/cron/daily-nudge'
+      path: '/api/cron/daily-nudge'
+      fullPath: '/api/cron/daily-nudge'
+      preLoaderRoute: typeof ApiCronDailyNudgeRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/api/cron/weekly-summary': {
       id: '/api/cron/weekly-summary'
       path: '/api/cron/weekly-summary'
@@ -1322,6 +1368,20 @@ declare module '@tanstack/react-router' {
       path: '/api/notifications/unsubscribe'
       fullPath: '/api/notifications/unsubscribe'
       preLoaderRoute: typeof ApiNotificationsUnsubscribeRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/api/nudges/$id': {
+      id: '/api/nudges/$id'
+      path: '/api/nudges/$id'
+      fullPath: '/api/nudges/$id'
+      preLoaderRoute: typeof ApiNudgesIdRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/api/nudges/today': {
+      id: '/api/nudges/today'
+      path: '/api/nudges/today'
+      fullPath: '/api/nudges/today'
+      preLoaderRoute: typeof ApiNudgesTodayRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/api/papers/$id': {
@@ -1900,10 +1960,13 @@ const rootRouteChildren: RootRouteChildren = {
   ApiAdminProductFunnelRoute: ApiAdminProductFunnelRoute,
   ApiAdminSyllabusFidelityRoute: ApiAdminSyllabusFidelityRoute,
   ApiAuthSplatRoute: ApiAuthSplatRoute,
+  ApiCronDailyNudgeRoute: ApiCronDailyNudgeRoute,
   ApiCronWeeklySummaryRoute: ApiCronWeeklySummaryRoute,
   ApiDashboardStudentIdRoute: ApiDashboardStudentIdRoute,
   ApiHouseholdsMeRoute: ApiHouseholdsMeRoute,
   ApiNotificationsUnsubscribeRoute: ApiNotificationsUnsubscribeRoute,
+  ApiNudgesIdRoute: ApiNudgesIdRoute,
+  ApiNudgesTodayRoute: ApiNudgesTodayRoute,
   ApiPapersIdRoute: ApiPapersIdRouteWithChildren,
   ApiPapersGenerateRoute: ApiPapersGenerateRoute,
   ApiPrivacyDeleteRoute: ApiPrivacyDeleteRoute,

@@ -4,10 +4,14 @@ import { notificationsRepository } from '../db/repositories'
 import { env } from './env'
 import type { WeeklySummary } from './weekly-summary'
 
-// F080: "Paper ready, evaluation complete, weekly summary." The full set this AC names --
-// callers pass one of these as `template` so every row in `notifications` says which of the
-// three this was, matching the dashboard's own event-naming convention (F093's product_events).
-export type EmailTemplate = 'paper_ready' | 'evaluation_complete' | 'weekly_summary'
+// F080: "Paper ready, evaluation complete, weekly summary." 'daily_nudge' is F082's own event,
+// added on top of F080's three -- same delivery plumbing, a fourth `template` value so every
+// `notifications` row still says exactly which of the four this was.
+export type EmailTemplate =
+  | 'paper_ready'
+  | 'evaluation_complete'
+  | 'weekly_summary'
+  | 'daily_nudge'
 
 export function isEmailConfigured(): boolean {
   return Boolean(env.MAKE_EMAIL_WEBHOOK_URL)
@@ -68,6 +72,18 @@ export function buildEvaluationCompleteEmail(input: {
     subject: `${input.studentName}'s attempt is ready for review`,
     html: `<p>${input.studentName}'s attempt on "${input.paperTitle}" has been scored (provisionally ${input.provisionalPercentage}%) and is ready for your review. <a href="${input.reviewUrl}">Review it</a>.</p>`,
     text: `${input.studentName}'s attempt on "${input.paperTitle}" has been scored (provisionally ${input.provisionalPercentage}%) and is ready for your review.\n${input.reviewUrl}`,
+  }
+}
+
+export function buildDailyNudgeEmail(input: {
+  studentName: string
+  actionText: string
+  nudgeUrl: string
+}): EmailContent {
+  return {
+    subject: `Today's action for ${input.studentName}`,
+    html: `<p>${input.actionText}</p><p><a href="${input.nudgeUrl}">Open the app</a> when it's done.</p>`,
+    text: `${input.actionText}\n${input.nudgeUrl}`,
   }
 }
 
