@@ -68,3 +68,7 @@ npx shadcn@latest add button
 Hosting is locked to Vercel (tab 09). `vercel.json` makes framework detection explicit; import the
 repo in Vercel and add production env vars under Settings > Environment Variables. Variables
 prefixed `VITE_` ship to the browser bundle — keep secrets unprefixed so they stay server-only.
+
+**F003**: the repo is connected to Vercel — every push to `main` deploys to production, and a
+branch-protection rule requires the Vercel build check to pass before a PR can merge (Settings >
+Branches on GitHub). Open a PR against `main` to get a preview URL for review.
