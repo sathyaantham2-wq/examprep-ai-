@@ -14,6 +14,15 @@ const envSchema = z.object({
   GOOGLE_CLIENT_ID: z.string().min(1).optional(),
   GOOGLE_CLIENT_SECRET: z.string().min(1).optional(),
   ANTHROPIC_API_KEY: z.string().min(1).optional(),
+  // F080: a Make.com webhook (Custom Webhook -> Gmail "Send an email") -- see src/lib/email.ts.
+  // Optional, same graceful-degradation shape as ANTHROPIC_API_KEY: without it, transactional
+  // email is simply not sent (logged as 'failed' with a reason), never a startup failure.
+  MAKE_EMAIL_WEBHOOK_URL: z.string().url().optional(),
+  // F080: authenticates GET /api/cron/weekly-summary -- Vercel Cron sends this as a Bearer
+  // token on every scheduled invocation so the route can't be triggered by anyone else who
+  // finds the URL. Optional so local dev (no Vercel Cron) doesn't need it set; the route
+  // refuses to run without it configured in a real deployment (never silently skips the check).
+  CRON_SECRET: z.string().min(1).optional(),
 })
 
 export type Env = z.infer<typeof envSchema>

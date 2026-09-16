@@ -15,6 +15,8 @@ import {
   enforceStudentSpendBudget,
 } from '../../../lib/ai-metering'
 import { logProductEvent } from '../../../lib/product-events'
+import { buildPaperReadyEmail, notifyHouseholdParents } from '../../../lib/email'
+import { env } from '../../../lib/env'
 
 // F112: "Student role may generate ... papers within a daily quota." Not a number the plan
 // specifies -- a documented default, the same kind RETEST_LADDER_DAYS (src/lib/mastery.ts) and
@@ -190,6 +192,16 @@ export const Route = createFileRoute('/api/papers/generate')({
           eventType: 'paper_generated',
           householdId: student.household_id,
           studentId: student.id,
+        })
+
+        await notifyHouseholdParents(db, {
+          householdId: student.household_id,
+          template: 'paper_ready',
+          content: buildPaperReadyEmail({
+            studentName: student.name,
+            paperTitle: result.paper.title,
+            paperUrl: `${env.BETTER_AUTH_URL}/home`,
+          }),
         })
 
         return Response.json(result, { status: 201 })

@@ -34,7 +34,7 @@ export type StudyPlanStatus = 'active' | 'completed' | 'superseded'
 export type UploadKind = 'scan' | 'source_pdf'
 export type AiJobStatus = 'success' | 'error' | 'pending'
 export type NotificationChannel = 'email' | 'whatsapp' | 'in_app'
-export type NotificationStatus = 'queued' | 'sent' | 'failed' | 'read'
+export type NotificationStatus = 'queued' | 'sent' | 'failed' | 'read' | 'skipped'
 export type ReviewTier = 'A' | 'B'
 export type ErrorType =
   | 'Conceptual Gap'

@@ -41,11 +41,13 @@ import { Route as ApiAdminProductFunnelRouteImport } from './routes/api/admin/pr
 import { Route as ApiAdminSyllabusFidelityRouteImport } from './routes/api/admin/syllabus-fidelity'
 import { Route as ApiAttemptsIdRouteImport } from './routes/api/attempts/$id'
 import { Route as ApiAuthSplatRouteImport } from './routes/api/auth/$'
+import { Route as ApiCronWeeklySummaryRouteImport } from './routes/api/cron/weekly-summary'
 import { Route as ApiDashboardStudentIdRouteImport } from './routes/api/dashboard/$studentId'
 import { Route as ApiEvaluationsIdRouteImport } from './routes/api/evaluations/$id'
 import { Route as ApiHabitDrillsIdRouteImport } from './routes/api/habit-drills/$id'
 import { Route as ApiHabitDrillsGenerateRouteImport } from './routes/api/habit-drills/generate'
 import { Route as ApiHouseholdsMeRouteImport } from './routes/api/households/me'
+import { Route as ApiNotificationsUnsubscribeRouteImport } from './routes/api/notifications/unsubscribe'
 import { Route as ApiPapersIdRouteImport } from './routes/api/papers/$id'
 import { Route as ApiPapersGenerateRouteImport } from './routes/api/papers/generate'
 import { Route as ApiPrivacyDeleteRouteImport } from './routes/api/privacy/delete'
@@ -249,6 +251,11 @@ const ApiAuthSplatRoute = ApiAuthSplatRouteImport.update({
   path: '/api/auth/$',
   getParentRoute: () => rootRouteImport,
 } as any)
+const ApiCronWeeklySummaryRoute = ApiCronWeeklySummaryRouteImport.update({
+  id: '/api/cron/weekly-summary',
+  path: '/api/cron/weekly-summary',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const ApiDashboardStudentIdRoute = ApiDashboardStudentIdRouteImport.update({
   id: '/api/dashboard/$studentId',
   path: '/api/dashboard/$studentId',
@@ -274,6 +281,12 @@ const ApiHouseholdsMeRoute = ApiHouseholdsMeRouteImport.update({
   path: '/api/households/me',
   getParentRoute: () => rootRouteImport,
 } as any)
+const ApiNotificationsUnsubscribeRoute =
+  ApiNotificationsUnsubscribeRouteImport.update({
+    id: '/api/notifications/unsubscribe',
+    path: '/api/notifications/unsubscribe',
+    getParentRoute: () => rootRouteImport,
+  } as any)
 const ApiPapersIdRoute = ApiPapersIdRouteImport.update({
   id: '/api/papers/$id',
   path: '/api/papers/$id',
@@ -525,11 +538,13 @@ export interface FileRoutesByFullPath {
   '/api/admin/syllabus-fidelity': typeof ApiAdminSyllabusFidelityRoute
   '/api/attempts/$id': typeof ApiAttemptsIdRouteWithChildren
   '/api/auth/$': typeof ApiAuthSplatRoute
+  '/api/cron/weekly-summary': typeof ApiCronWeeklySummaryRoute
   '/api/dashboard/$studentId': typeof ApiDashboardStudentIdRoute
   '/api/evaluations/$id': typeof ApiEvaluationsIdRouteWithChildren
   '/api/habit-drills/$id': typeof ApiHabitDrillsIdRouteWithChildren
   '/api/habit-drills/generate': typeof ApiHabitDrillsGenerateRoute
   '/api/households/me': typeof ApiHouseholdsMeRoute
+  '/api/notifications/unsubscribe': typeof ApiNotificationsUnsubscribeRoute
   '/api/papers/$id': typeof ApiPapersIdRouteWithChildren
   '/api/papers/generate': typeof ApiPapersGenerateRoute
   '/api/privacy/delete': typeof ApiPrivacyDeleteRoute
@@ -605,11 +620,13 @@ export interface FileRoutesByTo {
   '/api/admin/syllabus-fidelity': typeof ApiAdminSyllabusFidelityRoute
   '/api/attempts/$id': typeof ApiAttemptsIdRouteWithChildren
   '/api/auth/$': typeof ApiAuthSplatRoute
+  '/api/cron/weekly-summary': typeof ApiCronWeeklySummaryRoute
   '/api/dashboard/$studentId': typeof ApiDashboardStudentIdRoute
   '/api/evaluations/$id': typeof ApiEvaluationsIdRouteWithChildren
   '/api/habit-drills/$id': typeof ApiHabitDrillsIdRouteWithChildren
   '/api/habit-drills/generate': typeof ApiHabitDrillsGenerateRoute
   '/api/households/me': typeof ApiHouseholdsMeRoute
+  '/api/notifications/unsubscribe': typeof ApiNotificationsUnsubscribeRoute
   '/api/papers/$id': typeof ApiPapersIdRouteWithChildren
   '/api/papers/generate': typeof ApiPapersGenerateRoute
   '/api/privacy/delete': typeof ApiPrivacyDeleteRoute
@@ -686,11 +703,13 @@ export interface FileRoutesById {
   '/api/admin/syllabus-fidelity': typeof ApiAdminSyllabusFidelityRoute
   '/api/attempts/$id': typeof ApiAttemptsIdRouteWithChildren
   '/api/auth/$': typeof ApiAuthSplatRoute
+  '/api/cron/weekly-summary': typeof ApiCronWeeklySummaryRoute
   '/api/dashboard/$studentId': typeof ApiDashboardStudentIdRoute
   '/api/evaluations/$id': typeof ApiEvaluationsIdRouteWithChildren
   '/api/habit-drills/$id': typeof ApiHabitDrillsIdRouteWithChildren
   '/api/habit-drills/generate': typeof ApiHabitDrillsGenerateRoute
   '/api/households/me': typeof ApiHouseholdsMeRoute
+  '/api/notifications/unsubscribe': typeof ApiNotificationsUnsubscribeRoute
   '/api/papers/$id': typeof ApiPapersIdRouteWithChildren
   '/api/papers/generate': typeof ApiPapersGenerateRoute
   '/api/privacy/delete': typeof ApiPrivacyDeleteRoute
@@ -768,11 +787,13 @@ export interface FileRouteTypes {
     | '/api/admin/syllabus-fidelity'
     | '/api/attempts/$id'
     | '/api/auth/$'
+    | '/api/cron/weekly-summary'
     | '/api/dashboard/$studentId'
     | '/api/evaluations/$id'
     | '/api/habit-drills/$id'
     | '/api/habit-drills/generate'
     | '/api/households/me'
+    | '/api/notifications/unsubscribe'
     | '/api/papers/$id'
     | '/api/papers/generate'
     | '/api/privacy/delete'
@@ -848,11 +869,13 @@ export interface FileRouteTypes {
     | '/api/admin/syllabus-fidelity'
     | '/api/attempts/$id'
     | '/api/auth/$'
+    | '/api/cron/weekly-summary'
     | '/api/dashboard/$studentId'
     | '/api/evaluations/$id'
     | '/api/habit-drills/$id'
     | '/api/habit-drills/generate'
     | '/api/households/me'
+    | '/api/notifications/unsubscribe'
     | '/api/papers/$id'
     | '/api/papers/generate'
     | '/api/privacy/delete'
@@ -928,11 +951,13 @@ export interface FileRouteTypes {
     | '/api/admin/syllabus-fidelity'
     | '/api/attempts/$id'
     | '/api/auth/$'
+    | '/api/cron/weekly-summary'
     | '/api/dashboard/$studentId'
     | '/api/evaluations/$id'
     | '/api/habit-drills/$id'
     | '/api/habit-drills/generate'
     | '/api/households/me'
+    | '/api/notifications/unsubscribe'
     | '/api/papers/$id'
     | '/api/papers/generate'
     | '/api/privacy/delete'
@@ -1008,8 +1033,10 @@ export interface RootRouteChildren {
   ApiAdminProductFunnelRoute: typeof ApiAdminProductFunnelRoute
   ApiAdminSyllabusFidelityRoute: typeof ApiAdminSyllabusFidelityRoute
   ApiAuthSplatRoute: typeof ApiAuthSplatRoute
+  ApiCronWeeklySummaryRoute: typeof ApiCronWeeklySummaryRoute
   ApiDashboardStudentIdRoute: typeof ApiDashboardStudentIdRoute
   ApiHouseholdsMeRoute: typeof ApiHouseholdsMeRoute
+  ApiNotificationsUnsubscribeRoute: typeof ApiNotificationsUnsubscribeRoute
   ApiPapersIdRoute: typeof ApiPapersIdRouteWithChildren
   ApiPapersGenerateRoute: typeof ApiPapersGenerateRoute
   ApiPrivacyDeleteRoute: typeof ApiPrivacyDeleteRoute
@@ -1248,6 +1275,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ApiAuthSplatRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/api/cron/weekly-summary': {
+      id: '/api/cron/weekly-summary'
+      path: '/api/cron/weekly-summary'
+      fullPath: '/api/cron/weekly-summary'
+      preLoaderRoute: typeof ApiCronWeeklySummaryRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/api/dashboard/$studentId': {
       id: '/api/dashboard/$studentId'
       path: '/api/dashboard/$studentId'
@@ -1281,6 +1315,13 @@ declare module '@tanstack/react-router' {
       path: '/api/households/me'
       fullPath: '/api/households/me'
       preLoaderRoute: typeof ApiHouseholdsMeRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/api/notifications/unsubscribe': {
+      id: '/api/notifications/unsubscribe'
+      path: '/api/notifications/unsubscribe'
+      fullPath: '/api/notifications/unsubscribe'
+      preLoaderRoute: typeof ApiNotificationsUnsubscribeRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/api/papers/$id': {
@@ -1859,8 +1900,10 @@ const rootRouteChildren: RootRouteChildren = {
   ApiAdminProductFunnelRoute: ApiAdminProductFunnelRoute,
   ApiAdminSyllabusFidelityRoute: ApiAdminSyllabusFidelityRoute,
   ApiAuthSplatRoute: ApiAuthSplatRoute,
+  ApiCronWeeklySummaryRoute: ApiCronWeeklySummaryRoute,
   ApiDashboardStudentIdRoute: ApiDashboardStudentIdRoute,
   ApiHouseholdsMeRoute: ApiHouseholdsMeRoute,
+  ApiNotificationsUnsubscribeRoute: ApiNotificationsUnsubscribeRoute,
   ApiPapersIdRoute: ApiPapersIdRouteWithChildren,
   ApiPapersGenerateRoute: ApiPapersGenerateRoute,
   ApiPrivacyDeleteRoute: ApiPrivacyDeleteRoute,

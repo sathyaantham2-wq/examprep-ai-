@@ -8,6 +8,8 @@ import {
   evaluationItemsRepository,
 } from '../../db/repositories'
 import { logProductEvent } from '../../lib/product-events'
+import { buildEvaluationCompleteEmail, notifyHouseholdParents } from '../../lib/email'
+import { env } from '../../lib/env'
 
 const createEvaluationSchema = z.object({
   attempt_id: z.string().uuid(),
@@ -34,7 +36,9 @@ export const Route = createFileRoute('/api/evaluations')({
         const attempt = await db
           .selectFrom('attempts')
           .innerJoin('students', 'students.id', 'attempts.student_id')
+          .innerJoin('papers', 'papers.id', 'attempts.paper_id')
           .selectAll('attempts')
+          .select(['students.name as student_name', 'papers.title as paper_title'])
           .where('students.household_id', '=', auth.householdId)
           .where('attempts.id', '=', parsed.data.attempt_id)
           .executeTakeFirst()
@@ -70,6 +74,22 @@ export const Route = createFileRoute('/api/evaluations')({
           eventType: 'evaluation_completed',
           householdId: auth.householdId,
           studentId: attempt.student_id,
+        })
+
+        const totalAwarded = result.items.reduce(
+          (sum, item) => sum + Number(item.marks_awarded),
+          0,
+        )
+        const totalMax = result.items.reduce((sum, item) => sum + Number(item.marks_max), 0)
+        await notifyHouseholdParents(db, {
+          householdId: auth.householdId,
+          template: 'evaluation_complete',
+          content: buildEvaluationCompleteEmail({
+            studentName: attempt.student_name,
+            paperTitle: attempt.paper_title,
+            provisionalPercentage: totalMax > 0 ? Math.round((totalAwarded / totalMax) * 100) : 0,
+            reviewUrl: `${env.BETTER_AUTH_URL}/home`,
+          }),
         })
 
         return Response.json(result, { status: 201 })

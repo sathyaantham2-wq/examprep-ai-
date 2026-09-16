@@ -45,7 +45,7 @@ const ACTIVITIES = [
   'Light review — skim your notes, no new questions',
 ] as const
 
-function mostRecentMonday(from: Date): Date {
+export function mostRecentMonday(from: Date): Date {
   const day = from.getUTCDay() // 0 = Sunday ... 6 = Saturday
   const diffToMonday = day === 0 ? 6 : day - 1
   const monday = new Date(from)

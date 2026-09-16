@@ -527,6 +527,7 @@ export interface Users {
   auth_provider: Generated<string>;
   created_at: Generated<Timestamp>;
   email: string;
+  email_notifications_enabled: Generated<boolean>;
   email_verified: Generated<boolean>;
   household_id: string;
   id: Generated<string>;
