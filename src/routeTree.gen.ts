@@ -21,6 +21,7 @@ import { Route as AdminBlueprintsRouteImport } from './routes/admin/blueprints'
 import { Route as AdminCoverageRouteImport } from './routes/admin/coverage'
 import { Route as AdminFunnelRouteImport } from './routes/admin/funnel'
 import { Route as AdminQuestionsRouteImport } from './routes/admin/questions'
+import { Route as AdminSyllabusRouteImport } from './routes/admin/syllabus'
 import { Route as AdminUsageRouteImport } from './routes/admin/usage'
 import { Route as ApiAttemptsRouteImport } from './routes/api/attempts'
 import { Route as ApiAuditLogRouteImport } from './routes/api/audit-log'
@@ -152,6 +153,11 @@ const AdminFunnelRoute = AdminFunnelRouteImport.update({
 const AdminQuestionsRoute = AdminQuestionsRouteImport.update({
   id: '/admin/questions',
   path: '/admin/questions',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AdminSyllabusRoute = AdminSyllabusRouteImport.update({
+  id: '/admin/syllabus',
+  path: '/admin/syllabus',
   getParentRoute: () => rootRouteImport,
 } as any)
 const AdminUsageRoute = AdminUsageRouteImport.update({
@@ -542,6 +548,7 @@ export interface FileRoutesByFullPath {
   '/admin/coverage': typeof AdminCoverageRoute
   '/admin/funnel': typeof AdminFunnelRoute
   '/admin/questions': typeof AdminQuestionsRoute
+  '/admin/syllabus': typeof AdminSyllabusRoute
   '/admin/usage': typeof AdminUsageRoute
   '/api/attempts': typeof ApiAttemptsRouteWithChildren
   '/api/audit-log': typeof ApiAuditLogRoute
@@ -628,6 +635,7 @@ export interface FileRoutesByTo {
   '/admin/coverage': typeof AdminCoverageRoute
   '/admin/funnel': typeof AdminFunnelRoute
   '/admin/questions': typeof AdminQuestionsRoute
+  '/admin/syllabus': typeof AdminSyllabusRoute
   '/admin/usage': typeof AdminUsageRoute
   '/api/attempts': typeof ApiAttemptsRouteWithChildren
   '/api/audit-log': typeof ApiAuditLogRoute
@@ -715,6 +723,7 @@ export interface FileRoutesById {
   '/admin/coverage': typeof AdminCoverageRoute
   '/admin/funnel': typeof AdminFunnelRoute
   '/admin/questions': typeof AdminQuestionsRoute
+  '/admin/syllabus': typeof AdminSyllabusRoute
   '/admin/usage': typeof AdminUsageRoute
   '/api/attempts': typeof ApiAttemptsRouteWithChildren
   '/api/audit-log': typeof ApiAuditLogRoute
@@ -803,6 +812,7 @@ export interface FileRouteTypes {
     | '/admin/coverage'
     | '/admin/funnel'
     | '/admin/questions'
+    | '/admin/syllabus'
     | '/admin/usage'
     | '/api/attempts'
     | '/api/audit-log'
@@ -889,6 +899,7 @@ export interface FileRouteTypes {
     | '/admin/coverage'
     | '/admin/funnel'
     | '/admin/questions'
+    | '/admin/syllabus'
     | '/admin/usage'
     | '/api/attempts'
     | '/api/audit-log'
@@ -975,6 +986,7 @@ export interface FileRouteTypes {
     | '/admin/coverage'
     | '/admin/funnel'
     | '/admin/questions'
+    | '/admin/syllabus'
     | '/admin/usage'
     | '/api/attempts'
     | '/api/audit-log'
@@ -1062,6 +1074,7 @@ export interface RootRouteChildren {
   AdminCoverageRoute: typeof AdminCoverageRoute
   AdminFunnelRoute: typeof AdminFunnelRoute
   AdminQuestionsRoute: typeof AdminQuestionsRoute
+  AdminSyllabusRoute: typeof AdminSyllabusRoute
   AdminUsageRoute: typeof AdminUsageRoute
   ApiAttemptsRoute: typeof ApiAttemptsRouteWithChildren
   ApiAuditLogRoute: typeof ApiAuditLogRoute
@@ -1185,6 +1198,13 @@ declare module '@tanstack/react-router' {
       path: '/admin/questions'
       fullPath: '/admin/questions'
       preLoaderRoute: typeof AdminQuestionsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/admin/syllabus': {
+      id: '/admin/syllabus'
+      path: '/admin/syllabus'
+      fullPath: '/admin/syllabus'
+      preLoaderRoute: typeof AdminSyllabusRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/admin/usage': {
@@ -1961,6 +1981,7 @@ const rootRouteChildren: RootRouteChildren = {
   AdminCoverageRoute: AdminCoverageRoute,
   AdminFunnelRoute: AdminFunnelRoute,
   AdminQuestionsRoute: AdminQuestionsRoute,
+  AdminSyllabusRoute: AdminSyllabusRoute,
   AdminUsageRoute: AdminUsageRoute,
   ApiAttemptsRoute: ApiAttemptsRouteWithChildren,
   ApiAuditLogRoute: ApiAuditLogRoute,
@@ -2002,3 +2023,12 @@ const rootRouteChildren: RootRouteChildren = {
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
   ._addFileTypes<FileRouteTypes>()
+
+import type { getRouter } from './router.tsx'
+import type { createStart } from '@tanstack/react-start'
+declare module '@tanstack/react-start' {
+  interface Register {
+    ssr: true
+    router: Awaited<ReturnType<typeof getRouter>>
+  }
+}
