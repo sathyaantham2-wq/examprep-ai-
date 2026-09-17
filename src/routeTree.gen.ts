@@ -23,6 +23,7 @@ import { Route as AdminFunnelRouteImport } from './routes/admin/funnel'
 import { Route as AdminQuestionsRouteImport } from './routes/admin/questions'
 import { Route as AdminSyllabusRouteImport } from './routes/admin/syllabus'
 import { Route as AdminUsageRouteImport } from './routes/admin/usage'
+import { Route as AdminUsersRouteImport } from './routes/admin/users'
 import { Route as ApiAttemptsRouteImport } from './routes/api/attempts'
 import { Route as ApiAuditLogRouteImport } from './routes/api/audit-log'
 import { Route as ApiBlueprintsRouteImport } from './routes/api/blueprints'
@@ -50,6 +51,7 @@ import { Route as ApiEvaluationsIdRouteImport } from './routes/api/evaluations/$
 import { Route as ApiHabitDrillsIdRouteImport } from './routes/api/habit-drills/$id'
 import { Route as ApiHabitDrillsGenerateRouteImport } from './routes/api/habit-drills/generate'
 import { Route as ApiHouseholdsMeRouteImport } from './routes/api/households/me'
+import { Route as ApiHouseholdsUsersRouteImport } from './routes/api/households/users'
 import { Route as ApiNotificationsUnsubscribeRouteImport } from './routes/api/notifications/unsubscribe'
 import { Route as ApiNudgesIdRouteImport } from './routes/api/nudges/$id'
 import { Route as ApiNudgesTodayRouteImport } from './routes/api/nudges/today'
@@ -77,6 +79,7 @@ import { Route as ApiEvaluationsIdConfirmRouteImport } from './routes/api/evalua
 import { Route as ApiEvaluationsIdHabitsRouteImport } from './routes/api/evaluations/$id/habits'
 import { Route as ApiEvaluationsIdReportRouteImport } from './routes/api/evaluations/$id/report'
 import { Route as ApiHabitDrillsIdAttemptRouteImport } from './routes/api/habit-drills/$id/attempt'
+import { Route as ApiHouseholdsUsersIdRouteImport } from './routes/api/households/users/$id'
 import { Route as ApiPapersIdCoverageRouteImport } from './routes/api/papers/$id/coverage'
 import { Route as ApiPapersIdPdfRouteImport } from './routes/api/papers/$id/pdf'
 import { Route as ApiPapersIdRegenerateSlotRouteImport } from './routes/api/papers/$id/regenerate-slot'
@@ -163,6 +166,11 @@ const AdminSyllabusRoute = AdminSyllabusRouteImport.update({
 const AdminUsageRoute = AdminUsageRouteImport.update({
   id: '/admin/usage',
   path: '/admin/usage',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AdminUsersRoute = AdminUsersRouteImport.update({
+  id: '/admin/users',
+  path: '/admin/users',
   getParentRoute: () => rootRouteImport,
 } as any)
 const ApiAttemptsRoute = ApiAttemptsRouteImport.update({
@@ -299,6 +307,11 @@ const ApiHabitDrillsGenerateRoute = ApiHabitDrillsGenerateRouteImport.update({
 const ApiHouseholdsMeRoute = ApiHouseholdsMeRouteImport.update({
   id: '/api/households/me',
   path: '/api/households/me',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ApiHouseholdsUsersRoute = ApiHouseholdsUsersRouteImport.update({
+  id: '/api/households/users',
+  path: '/api/households/users',
   getParentRoute: () => rootRouteImport,
 } as any)
 const ApiNotificationsUnsubscribeRoute =
@@ -439,6 +452,11 @@ const ApiHabitDrillsIdAttemptRoute = ApiHabitDrillsIdAttemptRouteImport.update({
   path: '/attempt',
   getParentRoute: () => ApiHabitDrillsIdRoute,
 } as any)
+const ApiHouseholdsUsersIdRoute = ApiHouseholdsUsersIdRouteImport.update({
+  id: '/$id',
+  path: '/$id',
+  getParentRoute: () => ApiHouseholdsUsersRoute,
+} as any)
 const ApiPapersIdCoverageRoute = ApiPapersIdCoverageRouteImport.update({
   id: '/coverage',
   path: '/coverage',
@@ -550,6 +568,7 @@ export interface FileRoutesByFullPath {
   '/admin/questions': typeof AdminQuestionsRoute
   '/admin/syllabus': typeof AdminSyllabusRoute
   '/admin/usage': typeof AdminUsageRoute
+  '/admin/users': typeof AdminUsersRoute
   '/api/attempts': typeof ApiAttemptsRouteWithChildren
   '/api/audit-log': typeof ApiAuditLogRoute
   '/api/blueprints': typeof ApiBlueprintsRoute
@@ -577,6 +596,7 @@ export interface FileRoutesByFullPath {
   '/api/habit-drills/$id': typeof ApiHabitDrillsIdRouteWithChildren
   '/api/habit-drills/generate': typeof ApiHabitDrillsGenerateRoute
   '/api/households/me': typeof ApiHouseholdsMeRoute
+  '/api/households/users': typeof ApiHouseholdsUsersRouteWithChildren
   '/api/notifications/unsubscribe': typeof ApiNotificationsUnsubscribeRoute
   '/api/nudges/$id': typeof ApiNudgesIdRoute
   '/api/nudges/today': typeof ApiNudgesTodayRoute
@@ -604,6 +624,7 @@ export interface FileRoutesByFullPath {
   '/api/evaluations/$id/habits': typeof ApiEvaluationsIdHabitsRoute
   '/api/evaluations/$id/report': typeof ApiEvaluationsIdReportRouteWithChildren
   '/api/habit-drills/$id/attempt': typeof ApiHabitDrillsIdAttemptRoute
+  '/api/households/users/$id': typeof ApiHouseholdsUsersIdRoute
   '/api/papers/$id/coverage': typeof ApiPapersIdCoverageRoute
   '/api/papers/$id/pdf': typeof ApiPapersIdPdfRoute
   '/api/papers/$id/regenerate-slot': typeof ApiPapersIdRegenerateSlotRoute
@@ -637,6 +658,7 @@ export interface FileRoutesByTo {
   '/admin/questions': typeof AdminQuestionsRoute
   '/admin/syllabus': typeof AdminSyllabusRoute
   '/admin/usage': typeof AdminUsageRoute
+  '/admin/users': typeof AdminUsersRoute
   '/api/attempts': typeof ApiAttemptsRouteWithChildren
   '/api/audit-log': typeof ApiAuditLogRoute
   '/api/blueprints': typeof ApiBlueprintsRoute
@@ -664,6 +686,7 @@ export interface FileRoutesByTo {
   '/api/habit-drills/$id': typeof ApiHabitDrillsIdRouteWithChildren
   '/api/habit-drills/generate': typeof ApiHabitDrillsGenerateRoute
   '/api/households/me': typeof ApiHouseholdsMeRoute
+  '/api/households/users': typeof ApiHouseholdsUsersRouteWithChildren
   '/api/notifications/unsubscribe': typeof ApiNotificationsUnsubscribeRoute
   '/api/nudges/$id': typeof ApiNudgesIdRoute
   '/api/nudges/today': typeof ApiNudgesTodayRoute
@@ -691,6 +714,7 @@ export interface FileRoutesByTo {
   '/api/evaluations/$id/habits': typeof ApiEvaluationsIdHabitsRoute
   '/api/evaluations/$id/report': typeof ApiEvaluationsIdReportRouteWithChildren
   '/api/habit-drills/$id/attempt': typeof ApiHabitDrillsIdAttemptRoute
+  '/api/households/users/$id': typeof ApiHouseholdsUsersIdRoute
   '/api/papers/$id/coverage': typeof ApiPapersIdCoverageRoute
   '/api/papers/$id/pdf': typeof ApiPapersIdPdfRoute
   '/api/papers/$id/regenerate-slot': typeof ApiPapersIdRegenerateSlotRoute
@@ -725,6 +749,7 @@ export interface FileRoutesById {
   '/admin/questions': typeof AdminQuestionsRoute
   '/admin/syllabus': typeof AdminSyllabusRoute
   '/admin/usage': typeof AdminUsageRoute
+  '/admin/users': typeof AdminUsersRoute
   '/api/attempts': typeof ApiAttemptsRouteWithChildren
   '/api/audit-log': typeof ApiAuditLogRoute
   '/api/blueprints': typeof ApiBlueprintsRoute
@@ -752,6 +777,7 @@ export interface FileRoutesById {
   '/api/habit-drills/$id': typeof ApiHabitDrillsIdRouteWithChildren
   '/api/habit-drills/generate': typeof ApiHabitDrillsGenerateRoute
   '/api/households/me': typeof ApiHouseholdsMeRoute
+  '/api/households/users': typeof ApiHouseholdsUsersRouteWithChildren
   '/api/notifications/unsubscribe': typeof ApiNotificationsUnsubscribeRoute
   '/api/nudges/$id': typeof ApiNudgesIdRoute
   '/api/nudges/today': typeof ApiNudgesTodayRoute
@@ -779,6 +805,7 @@ export interface FileRoutesById {
   '/api/evaluations/$id/habits': typeof ApiEvaluationsIdHabitsRoute
   '/api/evaluations/$id/report': typeof ApiEvaluationsIdReportRouteWithChildren
   '/api/habit-drills/$id/attempt': typeof ApiHabitDrillsIdAttemptRoute
+  '/api/households/users/$id': typeof ApiHouseholdsUsersIdRoute
   '/api/papers/$id/coverage': typeof ApiPapersIdCoverageRoute
   '/api/papers/$id/pdf': typeof ApiPapersIdPdfRoute
   '/api/papers/$id/regenerate-slot': typeof ApiPapersIdRegenerateSlotRoute
@@ -814,6 +841,7 @@ export interface FileRouteTypes {
     | '/admin/questions'
     | '/admin/syllabus'
     | '/admin/usage'
+    | '/admin/users'
     | '/api/attempts'
     | '/api/audit-log'
     | '/api/blueprints'
@@ -841,6 +869,7 @@ export interface FileRouteTypes {
     | '/api/habit-drills/$id'
     | '/api/habit-drills/generate'
     | '/api/households/me'
+    | '/api/households/users'
     | '/api/notifications/unsubscribe'
     | '/api/nudges/$id'
     | '/api/nudges/today'
@@ -868,6 +897,7 @@ export interface FileRouteTypes {
     | '/api/evaluations/$id/habits'
     | '/api/evaluations/$id/report'
     | '/api/habit-drills/$id/attempt'
+    | '/api/households/users/$id'
     | '/api/papers/$id/coverage'
     | '/api/papers/$id/pdf'
     | '/api/papers/$id/regenerate-slot'
@@ -901,6 +931,7 @@ export interface FileRouteTypes {
     | '/admin/questions'
     | '/admin/syllabus'
     | '/admin/usage'
+    | '/admin/users'
     | '/api/attempts'
     | '/api/audit-log'
     | '/api/blueprints'
@@ -928,6 +959,7 @@ export interface FileRouteTypes {
     | '/api/habit-drills/$id'
     | '/api/habit-drills/generate'
     | '/api/households/me'
+    | '/api/households/users'
     | '/api/notifications/unsubscribe'
     | '/api/nudges/$id'
     | '/api/nudges/today'
@@ -955,6 +987,7 @@ export interface FileRouteTypes {
     | '/api/evaluations/$id/habits'
     | '/api/evaluations/$id/report'
     | '/api/habit-drills/$id/attempt'
+    | '/api/households/users/$id'
     | '/api/papers/$id/coverage'
     | '/api/papers/$id/pdf'
     | '/api/papers/$id/regenerate-slot'
@@ -988,6 +1021,7 @@ export interface FileRouteTypes {
     | '/admin/questions'
     | '/admin/syllabus'
     | '/admin/usage'
+    | '/admin/users'
     | '/api/attempts'
     | '/api/audit-log'
     | '/api/blueprints'
@@ -1015,6 +1049,7 @@ export interface FileRouteTypes {
     | '/api/habit-drills/$id'
     | '/api/habit-drills/generate'
     | '/api/households/me'
+    | '/api/households/users'
     | '/api/notifications/unsubscribe'
     | '/api/nudges/$id'
     | '/api/nudges/today'
@@ -1042,6 +1077,7 @@ export interface FileRouteTypes {
     | '/api/evaluations/$id/habits'
     | '/api/evaluations/$id/report'
     | '/api/habit-drills/$id/attempt'
+    | '/api/households/users/$id'
     | '/api/papers/$id/coverage'
     | '/api/papers/$id/pdf'
     | '/api/papers/$id/regenerate-slot'
@@ -1076,6 +1112,7 @@ export interface RootRouteChildren {
   AdminQuestionsRoute: typeof AdminQuestionsRoute
   AdminSyllabusRoute: typeof AdminSyllabusRoute
   AdminUsageRoute: typeof AdminUsageRoute
+  AdminUsersRoute: typeof AdminUsersRoute
   ApiAttemptsRoute: typeof ApiAttemptsRouteWithChildren
   ApiAuditLogRoute: typeof ApiAuditLogRoute
   ApiBlueprintsRoute: typeof ApiBlueprintsRoute
@@ -1099,6 +1136,7 @@ export interface RootRouteChildren {
   ApiCronWeeklySummaryRoute: typeof ApiCronWeeklySummaryRoute
   ApiDashboardStudentIdRoute: typeof ApiDashboardStudentIdRoute
   ApiHouseholdsMeRoute: typeof ApiHouseholdsMeRoute
+  ApiHouseholdsUsersRoute: typeof ApiHouseholdsUsersRouteWithChildren
   ApiNotificationsUnsubscribeRoute: typeof ApiNotificationsUnsubscribeRoute
   ApiNudgesIdRoute: typeof ApiNudgesIdRoute
   ApiNudgesTodayRoute: typeof ApiNudgesTodayRoute
@@ -1212,6 +1250,13 @@ declare module '@tanstack/react-router' {
       path: '/admin/usage'
       fullPath: '/admin/usage'
       preLoaderRoute: typeof AdminUsageRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/admin/users': {
+      id: '/admin/users'
+      path: '/admin/users'
+      fullPath: '/admin/users'
+      preLoaderRoute: typeof AdminUsersRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/api/attempts': {
@@ -1403,6 +1448,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ApiHouseholdsMeRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/api/households/users': {
+      id: '/api/households/users'
+      path: '/api/households/users'
+      fullPath: '/api/households/users'
+      preLoaderRoute: typeof ApiHouseholdsUsersRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/api/notifications/unsubscribe': {
       id: '/api/notifications/unsubscribe'
       path: '/api/notifications/unsubscribe'
@@ -1591,6 +1643,13 @@ declare module '@tanstack/react-router' {
       fullPath: '/api/habit-drills/$id/attempt'
       preLoaderRoute: typeof ApiHabitDrillsIdAttemptRouteImport
       parentRoute: typeof ApiHabitDrillsIdRoute
+    }
+    '/api/households/users/$id': {
+      id: '/api/households/users/$id'
+      path: '/$id'
+      fullPath: '/api/households/users/$id'
+      preLoaderRoute: typeof ApiHouseholdsUsersIdRouteImport
+      parentRoute: typeof ApiHouseholdsUsersRoute
     }
     '/api/papers/$id/coverage': {
       id: '/api/papers/$id/coverage'
@@ -1941,6 +2000,17 @@ const ApiStudyPlanRouteWithChildren = ApiStudyPlanRoute._addFileChildren(
   ApiStudyPlanRouteChildren,
 )
 
+interface ApiHouseholdsUsersRouteChildren {
+  ApiHouseholdsUsersIdRoute: typeof ApiHouseholdsUsersIdRoute
+}
+
+const ApiHouseholdsUsersRouteChildren: ApiHouseholdsUsersRouteChildren = {
+  ApiHouseholdsUsersIdRoute: ApiHouseholdsUsersIdRoute,
+}
+
+const ApiHouseholdsUsersRouteWithChildren =
+  ApiHouseholdsUsersRoute._addFileChildren(ApiHouseholdsUsersRouteChildren)
+
 interface ApiPapersIdRouteChildren {
   ApiPapersIdCoverageRoute: typeof ApiPapersIdCoverageRoute
   ApiPapersIdPdfRoute: typeof ApiPapersIdPdfRoute
@@ -1983,6 +2053,7 @@ const rootRouteChildren: RootRouteChildren = {
   AdminQuestionsRoute: AdminQuestionsRoute,
   AdminSyllabusRoute: AdminSyllabusRoute,
   AdminUsageRoute: AdminUsageRoute,
+  AdminUsersRoute: AdminUsersRoute,
   ApiAttemptsRoute: ApiAttemptsRouteWithChildren,
   ApiAuditLogRoute: ApiAuditLogRoute,
   ApiBlueprintsRoute: ApiBlueprintsRoute,
@@ -2006,6 +2077,7 @@ const rootRouteChildren: RootRouteChildren = {
   ApiCronWeeklySummaryRoute: ApiCronWeeklySummaryRoute,
   ApiDashboardStudentIdRoute: ApiDashboardStudentIdRoute,
   ApiHouseholdsMeRoute: ApiHouseholdsMeRoute,
+  ApiHouseholdsUsersRoute: ApiHouseholdsUsersRouteWithChildren,
   ApiNotificationsUnsubscribeRoute: ApiNotificationsUnsubscribeRoute,
   ApiNudgesIdRoute: ApiNudgesIdRoute,
   ApiNudgesTodayRoute: ApiNudgesTodayRoute,

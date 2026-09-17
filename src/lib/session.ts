@@ -7,6 +7,12 @@ export interface AuthedUser {
   role: UserRole
 }
 
+interface SessionUser {
+  household_id: string
+  role: UserRole
+  is_active: boolean
+}
+
 /**
  * Server-side session/role guards (F007). These enforce auth on the request itself — never rely
  * on a client-side redirect or a hidden button to keep the student role out of parent/admin
@@ -18,10 +24,13 @@ export async function getCurrentUser(
   const session = await auth.api.getSession({ headers: request.headers })
   if (!session) return null
 
-  const user = session.user as typeof session.user & {
-    household_id: string
-    role: UserRole
-  }
+  const user = session.user as typeof session.user & SessionUser
+
+  // F083 (admin users management): a deactivated account's existing session must stop working
+  // on its very next request, not just at next sign-in — deactivation is enforced right here,
+  // the one place every authenticated route already funnels through, rather than trusting every
+  // call site to remember a separate check.
+  if (!user.is_active) return null
 
   return { id: user.id, householdId: user.household_id, role: user.role }
 }
