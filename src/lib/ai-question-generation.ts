@@ -77,9 +77,9 @@ const OBJECTIVE_TYPES = new Set<QuestionType>([
 ])
 
 /**
- * AI-01 (tab07): drafts up to `input.count` questions for one concept at a fixed Bloom level and
- * difficulty. Returns null when no ANTHROPIC_API_KEY is configured -- the caller's documented
- * fallback (per tab07) is "admin writes the question manually; queue stays draft", not a guess.
+ * AI-01 (tab07): generates up to `input.count` candidate questions for one concept at a fixed
+ * Bloom level and difficulty. Returns null when no ANTHROPIC_API_KEY is configured -- the
+ * caller's documented fallback (per tab07) is "admin adds the question manually", not a guess.
  *
  * Guardrail: every accepted candidate must name which IN-scope item it tests (`in_scope_ref`),
  * checked here against the actual IN-scope text this call sent -- not just trusted from the

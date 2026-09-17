@@ -60,7 +60,6 @@ import { Route as ApiPapersGenerateRouteImport } from './routes/api/papers/gener
 import { Route as ApiPrivacyDeleteRouteImport } from './routes/api/privacy/delete'
 import { Route as ApiPrivacyExportRouteImport } from './routes/api/privacy/export'
 import { Route as ApiQuestionsIdRouteImport } from './routes/api/questions/$id'
-import { Route as ApiQuestionsApproveAllRouteImport } from './routes/api/questions/approve-all'
 import { Route as ApiQuestionsBulkImportRouteImport } from './routes/api/questions/bulk-import'
 import { Route as ApiQuestionsCoverageGridRouteImport } from './routes/api/questions/coverage-grid'
 import { Route as ApiQuestionsGenerateRouteImport } from './routes/api/questions/generate'
@@ -84,8 +83,6 @@ import { Route as ApiHouseholdsUsersIdRouteImport } from './routes/api/household
 import { Route as ApiPapersIdCoverageRouteImport } from './routes/api/papers/$id/coverage'
 import { Route as ApiPapersIdPdfRouteImport } from './routes/api/papers/$id/pdf'
 import { Route as ApiPapersIdRegenerateSlotRouteImport } from './routes/api/papers/$id/regenerate-slot'
-import { Route as ApiQuestionsIdApproveRouteImport } from './routes/api/questions/$id/approve'
-import { Route as ApiQuestionsIdRejectRouteImport } from './routes/api/questions/$id/reject'
 import { Route as ApiQuestionsIdStatsRouteImport } from './routes/api/questions/$id/stats'
 import { Route as ApiQuestionsGenerateBatchIdRouteImport } from './routes/api/questions/generate-batch/$id'
 import { Route as ApiRemediationIdAttemptRouteImport } from './routes/api/remediation/$id/attempt'
@@ -356,11 +353,6 @@ const ApiQuestionsIdRoute = ApiQuestionsIdRouteImport.update({
   path: '/$id',
   getParentRoute: () => ApiQuestionsRoute,
 } as any)
-const ApiQuestionsApproveAllRoute = ApiQuestionsApproveAllRouteImport.update({
-  id: '/approve-all',
-  path: '/approve-all',
-  getParentRoute: () => ApiQuestionsRoute,
-} as any)
 const ApiQuestionsBulkImportRoute = ApiQuestionsBulkImportRouteImport.update({
   id: '/bulk-import',
   path: '/bulk-import',
@@ -479,16 +471,6 @@ const ApiPapersIdRegenerateSlotRoute =
     path: '/regenerate-slot',
     getParentRoute: () => ApiPapersIdRoute,
   } as any)
-const ApiQuestionsIdApproveRoute = ApiQuestionsIdApproveRouteImport.update({
-  id: '/approve',
-  path: '/approve',
-  getParentRoute: () => ApiQuestionsIdRoute,
-} as any)
-const ApiQuestionsIdRejectRoute = ApiQuestionsIdRejectRouteImport.update({
-  id: '/reject',
-  path: '/reject',
-  getParentRoute: () => ApiQuestionsIdRoute,
-} as any)
 const ApiQuestionsIdStatsRoute = ApiQuestionsIdStatsRouteImport.update({
   id: '/stats',
   path: '/stats',
@@ -611,7 +593,6 @@ export interface FileRoutesByFullPath {
   '/api/privacy/delete': typeof ApiPrivacyDeleteRoute
   '/api/privacy/export': typeof ApiPrivacyExportRoute
   '/api/questions/$id': typeof ApiQuestionsIdRouteWithChildren
-  '/api/questions/approve-all': typeof ApiQuestionsApproveAllRoute
   '/api/questions/bulk-import': typeof ApiQuestionsBulkImportRoute
   '/api/questions/coverage-grid': typeof ApiQuestionsCoverageGridRoute
   '/api/questions/generate': typeof ApiQuestionsGenerateRoute
@@ -635,8 +616,6 @@ export interface FileRoutesByFullPath {
   '/api/papers/$id/coverage': typeof ApiPapersIdCoverageRoute
   '/api/papers/$id/pdf': typeof ApiPapersIdPdfRoute
   '/api/papers/$id/regenerate-slot': typeof ApiPapersIdRegenerateSlotRoute
-  '/api/questions/$id/approve': typeof ApiQuestionsIdApproveRoute
-  '/api/questions/$id/reject': typeof ApiQuestionsIdRejectRoute
   '/api/questions/$id/stats': typeof ApiQuestionsIdStatsRoute
   '/api/questions/generate-batch/$id': typeof ApiQuestionsGenerateBatchIdRouteWithChildren
   '/api/remediation/$id/attempt': typeof ApiRemediationIdAttemptRoute
@@ -702,7 +681,6 @@ export interface FileRoutesByTo {
   '/api/privacy/delete': typeof ApiPrivacyDeleteRoute
   '/api/privacy/export': typeof ApiPrivacyExportRoute
   '/api/questions/$id': typeof ApiQuestionsIdRouteWithChildren
-  '/api/questions/approve-all': typeof ApiQuestionsApproveAllRoute
   '/api/questions/bulk-import': typeof ApiQuestionsBulkImportRoute
   '/api/questions/coverage-grid': typeof ApiQuestionsCoverageGridRoute
   '/api/questions/generate': typeof ApiQuestionsGenerateRoute
@@ -726,8 +704,6 @@ export interface FileRoutesByTo {
   '/api/papers/$id/coverage': typeof ApiPapersIdCoverageRoute
   '/api/papers/$id/pdf': typeof ApiPapersIdPdfRoute
   '/api/papers/$id/regenerate-slot': typeof ApiPapersIdRegenerateSlotRoute
-  '/api/questions/$id/approve': typeof ApiQuestionsIdApproveRoute
-  '/api/questions/$id/reject': typeof ApiQuestionsIdRejectRoute
   '/api/questions/$id/stats': typeof ApiQuestionsIdStatsRoute
   '/api/questions/generate-batch/$id': typeof ApiQuestionsGenerateBatchIdRouteWithChildren
   '/api/remediation/$id/attempt': typeof ApiRemediationIdAttemptRoute
@@ -794,7 +770,6 @@ export interface FileRoutesById {
   '/api/privacy/delete': typeof ApiPrivacyDeleteRoute
   '/api/privacy/export': typeof ApiPrivacyExportRoute
   '/api/questions/$id': typeof ApiQuestionsIdRouteWithChildren
-  '/api/questions/approve-all': typeof ApiQuestionsApproveAllRoute
   '/api/questions/bulk-import': typeof ApiQuestionsBulkImportRoute
   '/api/questions/coverage-grid': typeof ApiQuestionsCoverageGridRoute
   '/api/questions/generate': typeof ApiQuestionsGenerateRoute
@@ -818,8 +793,6 @@ export interface FileRoutesById {
   '/api/papers/$id/coverage': typeof ApiPapersIdCoverageRoute
   '/api/papers/$id/pdf': typeof ApiPapersIdPdfRoute
   '/api/papers/$id/regenerate-slot': typeof ApiPapersIdRegenerateSlotRoute
-  '/api/questions/$id/approve': typeof ApiQuestionsIdApproveRoute
-  '/api/questions/$id/reject': typeof ApiQuestionsIdRejectRoute
   '/api/questions/$id/stats': typeof ApiQuestionsIdStatsRoute
   '/api/questions/generate-batch/$id': typeof ApiQuestionsGenerateBatchIdRouteWithChildren
   '/api/remediation/$id/attempt': typeof ApiRemediationIdAttemptRoute
@@ -887,7 +860,6 @@ export interface FileRouteTypes {
     | '/api/privacy/delete'
     | '/api/privacy/export'
     | '/api/questions/$id'
-    | '/api/questions/approve-all'
     | '/api/questions/bulk-import'
     | '/api/questions/coverage-grid'
     | '/api/questions/generate'
@@ -911,8 +883,6 @@ export interface FileRouteTypes {
     | '/api/papers/$id/coverage'
     | '/api/papers/$id/pdf'
     | '/api/papers/$id/regenerate-slot'
-    | '/api/questions/$id/approve'
-    | '/api/questions/$id/reject'
     | '/api/questions/$id/stats'
     | '/api/questions/generate-batch/$id'
     | '/api/remediation/$id/attempt'
@@ -978,7 +948,6 @@ export interface FileRouteTypes {
     | '/api/privacy/delete'
     | '/api/privacy/export'
     | '/api/questions/$id'
-    | '/api/questions/approve-all'
     | '/api/questions/bulk-import'
     | '/api/questions/coverage-grid'
     | '/api/questions/generate'
@@ -1002,8 +971,6 @@ export interface FileRouteTypes {
     | '/api/papers/$id/coverage'
     | '/api/papers/$id/pdf'
     | '/api/papers/$id/regenerate-slot'
-    | '/api/questions/$id/approve'
-    | '/api/questions/$id/reject'
     | '/api/questions/$id/stats'
     | '/api/questions/generate-batch/$id'
     | '/api/remediation/$id/attempt'
@@ -1069,7 +1036,6 @@ export interface FileRouteTypes {
     | '/api/privacy/delete'
     | '/api/privacy/export'
     | '/api/questions/$id'
-    | '/api/questions/approve-all'
     | '/api/questions/bulk-import'
     | '/api/questions/coverage-grid'
     | '/api/questions/generate'
@@ -1093,8 +1059,6 @@ export interface FileRouteTypes {
     | '/api/papers/$id/coverage'
     | '/api/papers/$id/pdf'
     | '/api/papers/$id/regenerate-slot'
-    | '/api/questions/$id/approve'
-    | '/api/questions/$id/reject'
     | '/api/questions/$id/stats'
     | '/api/questions/generate-batch/$id'
     | '/api/remediation/$id/attempt'
@@ -1523,13 +1487,6 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ApiQuestionsIdRouteImport
       parentRoute: typeof ApiQuestionsRoute
     }
-    '/api/questions/approve-all': {
-      id: '/api/questions/approve-all'
-      path: '/approve-all'
-      fullPath: '/api/questions/approve-all'
-      preLoaderRoute: typeof ApiQuestionsApproveAllRouteImport
-      parentRoute: typeof ApiQuestionsRoute
-    }
     '/api/questions/bulk-import': {
       id: '/api/questions/bulk-import'
       path: '/bulk-import'
@@ -1690,20 +1647,6 @@ declare module '@tanstack/react-router' {
       fullPath: '/api/papers/$id/regenerate-slot'
       preLoaderRoute: typeof ApiPapersIdRegenerateSlotRouteImport
       parentRoute: typeof ApiPapersIdRoute
-    }
-    '/api/questions/$id/approve': {
-      id: '/api/questions/$id/approve'
-      path: '/approve'
-      fullPath: '/api/questions/$id/approve'
-      preLoaderRoute: typeof ApiQuestionsIdApproveRouteImport
-      parentRoute: typeof ApiQuestionsIdRoute
-    }
-    '/api/questions/$id/reject': {
-      id: '/api/questions/$id/reject'
-      path: '/reject'
-      fullPath: '/api/questions/$id/reject'
-      preLoaderRoute: typeof ApiQuestionsIdRejectRouteImport
-      parentRoute: typeof ApiQuestionsIdRoute
     }
     '/api/questions/$id/stats': {
       id: '/api/questions/$id/stats'
@@ -1887,14 +1830,10 @@ const ApiHabitDrillsRouteWithChildren = ApiHabitDrillsRoute._addFileChildren(
 )
 
 interface ApiQuestionsIdRouteChildren {
-  ApiQuestionsIdApproveRoute: typeof ApiQuestionsIdApproveRoute
-  ApiQuestionsIdRejectRoute: typeof ApiQuestionsIdRejectRoute
   ApiQuestionsIdStatsRoute: typeof ApiQuestionsIdStatsRoute
 }
 
 const ApiQuestionsIdRouteChildren: ApiQuestionsIdRouteChildren = {
-  ApiQuestionsIdApproveRoute: ApiQuestionsIdApproveRoute,
-  ApiQuestionsIdRejectRoute: ApiQuestionsIdRejectRoute,
   ApiQuestionsIdStatsRoute: ApiQuestionsIdStatsRoute,
 }
 
@@ -1934,7 +1873,6 @@ const ApiQuestionsGenerateBatchRouteWithChildren =
 
 interface ApiQuestionsRouteChildren {
   ApiQuestionsIdRoute: typeof ApiQuestionsIdRouteWithChildren
-  ApiQuestionsApproveAllRoute: typeof ApiQuestionsApproveAllRoute
   ApiQuestionsBulkImportRoute: typeof ApiQuestionsBulkImportRoute
   ApiQuestionsCoverageGridRoute: typeof ApiQuestionsCoverageGridRoute
   ApiQuestionsGenerateRoute: typeof ApiQuestionsGenerateRoute
@@ -1943,7 +1881,6 @@ interface ApiQuestionsRouteChildren {
 
 const ApiQuestionsRouteChildren: ApiQuestionsRouteChildren = {
   ApiQuestionsIdRoute: ApiQuestionsIdRouteWithChildren,
-  ApiQuestionsApproveAllRoute: ApiQuestionsApproveAllRoute,
   ApiQuestionsBulkImportRoute: ApiQuestionsBulkImportRoute,
   ApiQuestionsCoverageGridRoute: ApiQuestionsCoverageGridRoute,
   ApiQuestionsGenerateRoute: ApiQuestionsGenerateRoute,

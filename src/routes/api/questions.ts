@@ -28,7 +28,7 @@ const QUESTION_TYPES = [
   'fill_blank',
   'diagram',
 ] as const
-const QUESTION_STATUSES = ['draft', 'approved', 'retired'] as const
+const QUESTION_STATUSES = ['approved', 'retired'] as const
 
 export const Route = createFileRoute('/api/questions')({
   server: {

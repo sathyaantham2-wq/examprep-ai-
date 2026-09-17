@@ -59,8 +59,8 @@ test.beforeAll(async () => {
     text: 'E2E coverage fixture question',
     answer: 'A',
     created_by: 'e2e-coverage-fixture',
-    // 1 mark, mcq, English, no diagram -> Tier A -> auto-approved (computeReviewTier), which is
-    // what the coverage grid actually counts (it only sums status='approved' rows).
+    // Every question is approved immediately on creation, which is what the coverage grid
+    // actually counts (it only sums status='approved' rows).
     options: [{ label: 'A', text: '1', is_correct: true, order_index: 1 }],
   })
   questionIds.push(q.id)

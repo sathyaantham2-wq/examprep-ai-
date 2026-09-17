@@ -5,7 +5,6 @@ import type {
   DifficultyTier,
   QuestionOrigin,
   QuestionType,
-  ReviewTier,
 } from '../db/enums'
 import {
   questionsRepository,
@@ -100,33 +99,6 @@ export const questionInputSchema = z
     }
   })
 
-// Objective, deterministic-answer types — everything else is subjective by nature.
-const OBJECTIVE_TYPES = new Set<QuestionType>([
-  'mcq',
-  'assertion_reason',
-  'match',
-  'multi_statement',
-  'fill_blank',
-])
-
-/**
- * F117: tier is always derived from the question's own shape, never a discretionary admin
- * choice — "never mark a question Tier A to avoid review" (examprep-question-generation skill).
- * Tier A: objective, <=2 marks, English, no diagram. Everything else is Tier B.
- */
-export function computeReviewTier(input: {
-  marks: number
-  type: QuestionType
-  language: string
-  diagram_kind?: string | null
-}): ReviewTier {
-  if (input.marks >= 3) return 'B'
-  if (input.language !== 'English') return 'B'
-  if (input.diagram_kind) return 'B'
-  if (!OBJECTIVE_TYPES.has(input.type)) return 'B'
-  return 'A'
-}
-
 export interface CreateQuestionInput {
   concept_id: string
   board: string
@@ -145,9 +117,7 @@ export interface CreateQuestionInput {
   created_by: string
   source_ref?: string
   is_reversal_word?: boolean
-  // F025: AI-authored questions always land in the review queue as Draft, even when their shape
-  // would otherwise qualify for Tier A auto-approve -- Tier A exists to reduce review load on a
-  // trusted human's routine entries, not to wave through unreviewed AI output.
+  // Provenance only (AI-generated vs. hand-typed vs. bulk-imported) -- does not affect status.
   origin?: QuestionOrigin
   options?: Array<{
     label: string
@@ -159,22 +129,17 @@ export interface CreateQuestionInput {
 }
 
 /**
- * Writes a question plus its options and step marks as one transaction (F020/F021) and assigns
- * its review tier (F117). Tier A auto-approves immediately; Tier B stays draft pending
- * POST /api/questions/:id/approve. F023: flags an exact-hash duplicate within the same concept
- * rather than blocking the save -- "warns with a link to the existing question", not a hard stop.
+ * Writes a question plus its options and step marks as one transaction (F020/F021). Every
+ * question is approved and usable immediately on creation -- there is no review/approval gate
+ * (removed 2026-09-17 at the user's explicit request; see migration 0061). A question later
+ * found to be wrong is retired via the existing Question bank Retire button (F118), not rejected.
+ * F023: an exact-hash duplicate within the same concept is flagged, not blocked -- "warns with a
+ * link to the existing question", not a hard stop.
  */
 export async function createQuestion(db: Db, input: CreateQuestionInput) {
   const language = input.language ?? 'English'
   const origin = input.origin ?? 'manual'
-  const reviewTier = computeReviewTier({
-    marks: input.marks,
-    type: input.type,
-    language,
-    diagram_kind: input.diagram_kind,
-  })
-  const status =
-    origin === 'ai_generated' ? 'draft' : reviewTier === 'A' ? 'approved' : 'draft'
+  const status = 'approved'
   const textHash = computeTextHash(input.text)
 
   const duplicate = await findExactDuplicate(db, input.concept_id, textHash)
@@ -201,7 +166,6 @@ export async function createQuestion(db: Db, input: CreateQuestionInput) {
       status,
       created_by: input.created_by,
       source_ref: input.source_ref,
-      review_tier: reviewTier,
       is_reversal_word: input.is_reversal_word ?? false,
       origin,
     })

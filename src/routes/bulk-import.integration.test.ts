@@ -126,7 +126,7 @@ describe('bulk question import (F022)', () => {
       .where('id', '=', result.rows[0].question_id)
       .executeTakeFirstOrThrow()
     expect(imported.text).toBe('What is 1+1?')
-    expect(imported.status).toBe('approved') // Tier A: mcq, 1 mark, English, no diagram
+    expect(imported.status).toBe('approved') // every imported question is approved immediately
   })
 
   it('imports from JSON with the same row-level reporting', async () => {

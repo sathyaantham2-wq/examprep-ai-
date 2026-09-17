@@ -6,8 +6,6 @@ import { createQuestion } from '../lib/questions'
 import { createParentSession, promoteToAdmin } from '../db/test-helpers'
 import type { TestSession } from '../db/test-helpers'
 import { Route as QuestionByIdRoute } from './api/questions/$id'
-import { Route as RejectRoute } from './api/questions/$id/reject'
-import { Route as ApproveRoute } from './api/questions/$id/approve'
 import { Route as ConceptsRoute } from './api/syllabus/concepts'
 
 type RouteHandler = (opts: {
@@ -20,28 +18,31 @@ function handlerFor(route: { options: { server?: unknown } }, method: string): R
   return handlers[method]
 }
 
-function request(cookie: string, body?: unknown): Request {
+function request(cookie: string, method: 'GET' | 'PATCH' = 'GET', body?: unknown): Request {
   return new Request('http://localhost/test', {
-    method: body ? 'POST' : 'GET',
+    method,
     headers: { cookie, ...(body ? { 'content-type': 'application/json' } : {}) },
     body: body ? JSON.stringify(body) : undefined,
   })
 }
 
 /**
- * F084: the admin review queue's supporting API -- full question detail (including the answer
- * key, legitimate here since an admin reviewing a question IS the answer-key audience), reject
- * (always requires a reason, unlike approve which only requires one for Tier B), and the concept
- * picker used by both the review queue and the AI-generate form.
+ * F084/F118: the admin question-bank's supporting API -- full question detail (including the
+ * answer key, legitimate here since an admin looking at a question IS the answer-key audience),
+ * retiring a question via PATCH (F118's Retire button; a question is never deleted, only pulled
+ * from the pool), and the concept picker used by both the question bank and the AI-generate form.
+ *
+ * There is deliberately no approve/reject coverage here -- that workflow was removed on
+ * 2026-09-17 (migration 0061_remove_question_approval_workflow): every question is approved and
+ * usable immediately on creation, so there is nothing left to approve or reject.
  */
-describe('admin question review (F084)', () => {
+describe('admin question detail (F084/F118)', () => {
   let db: Db
   let admin: TestSession
   let parent: TestSession
   let conceptId: string
   let chapterId: string
-  let tierBQuestionId: string
-  let tierAQuestionId: string
+  let questionId: string
 
   beforeAll(async () => {
     db = createDb()
@@ -72,24 +73,7 @@ describe('admin question review (F084)', () => {
     })
     conceptId = concept.id
 
-    // Tier B: a long-answer question, always needs full review regardless of correctness shape.
-    const tierB = await createQuestion(db, {
-      concept_id: concept.id,
-      board: 'CBSE',
-      class: 7,
-      bloom: 'Apply',
-      difficulty: 'Hard',
-      marks: 3,
-      type: 'long_answer',
-      text: 'Review fixture Tier B question',
-      answer: 'A long expected answer',
-      created_by: 'review-fixture',
-    })
-    tierBQuestionId = tierB.id
-
-    // Tier A: objective, <=2 marks, English, no diagram -- auto-approved by createQuestion, so
-    // reusing it here as an already-approved question to confirm reject still works on it too.
-    const tierA = await createQuestion(db, {
+    const question = await createQuestion(db, {
       concept_id: concept.id,
       board: 'CBSE',
       class: 7,
@@ -97,7 +81,7 @@ describe('admin question review (F084)', () => {
       difficulty: 'Easy',
       marks: 1,
       type: 'mcq',
-      text: 'Review fixture Tier A question',
+      text: 'Review fixture question',
       answer: '4',
       created_by: 'review-fixture',
       options: [
@@ -105,7 +89,7 @@ describe('admin question review (F084)', () => {
         { label: 'B', text: '5', is_correct: false, order_index: 2 },
       ],
     })
-    tierAQuestionId = tierA.id
+    questionId = question.id
   })
 
   afterAll(async () => {
@@ -118,48 +102,46 @@ describe('admin question review (F084)', () => {
   it('GET question detail requires admin', async () => {
     const response = await handlerFor(QuestionByIdRoute, 'GET')({
       request: request(parent.cookie),
-      params: { id: tierAQuestionId },
+      params: { id: questionId },
     })
     expect(response.status).toBe(403)
   })
 
-  it('GET question detail includes options for an admin', async () => {
+  it('GET question detail includes options for an admin and is approved on arrival', async () => {
     const response = await handlerFor(QuestionByIdRoute, 'GET')({
       request: request(admin.cookie),
-      params: { id: tierAQuestionId },
+      params: { id: questionId },
     })
     expect(response.status).toBe(200)
     const body = await response.json()
+    expect(body.status).toBe('approved')
     expect(body.options).toHaveLength(2)
     expect(body.options.some((o: { is_correct: boolean }) => o.is_correct)).toBe(true)
   })
 
-  it('rejecting without a reason is rejected', async () => {
-    const response = await handlerFor(RejectRoute, 'POST')({
-      request: request(admin.cookie, {}),
-      params: { id: tierBQuestionId },
-    })
-    expect(response.status).toBe(400)
-  })
-
-  it('rejecting with a reason retires the question and records the reviewer', async () => {
-    const response = await handlerFor(RejectRoute, 'POST')({
-      request: request(admin.cookie, { note: 'Ambiguous wording' }),
-      params: { id: tierBQuestionId },
+  it('PATCH can retire a question, and retiring again is idempotent', async () => {
+    const response = await handlerFor(QuestionByIdRoute, 'PATCH')({
+      request: request(admin.cookie, 'PATCH', { status: 'retired' }),
+      params: { id: questionId },
     })
     expect(response.status).toBe(200)
     const body = await response.json()
     expect(body.status).toBe('retired')
-    expect(body.review_note).toBe('Ambiguous wording')
-    expect(body.reviewed_by).toBe(admin.userId)
+
+    const again = await handlerFor(QuestionByIdRoute, 'PATCH')({
+      request: request(admin.cookie, 'PATCH', { status: 'approved' }),
+      params: { id: questionId },
+    })
+    expect(again.status).toBe(200)
+    expect((await again.json()).status).toBe('approved')
   })
 
-  it('re-approving an already-approved Tier A question succeeds', async () => {
-    const response = await handlerFor(ApproveRoute, 'POST')({
-      request: request(admin.cookie, {}),
-      params: { id: tierAQuestionId },
+  it('PATCH requires admin', async () => {
+    const response = await handlerFor(QuestionByIdRoute, 'PATCH')({
+      request: request(parent.cookie, 'PATCH', { status: 'retired' }),
+      params: { id: questionId },
     })
-    expect(response.status).toBe(200)
+    expect(response.status).toBe(403)
   })
 
   it('lists concepts by chapter and by subject', async () => {

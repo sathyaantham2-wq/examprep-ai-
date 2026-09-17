@@ -147,16 +147,6 @@ describe('paper PDF and coverage routes (F033/F035/F036/F037)', () => {
         { step_no: 3, description: 'Correct final answer with unit', marks: 1 },
       ],
     })
-    // computeReviewTier (F117) puts anything >=3 marks in Tier B (draft, pending review) -- there
-    // is no review-queue UI yet (F084), so approve it directly the same way earlier fixtures in
-    // this session have stood in for that missing step.
-    await db
-      .updateTable('questions')
-      .set({ status: 'approved' })
-      .where('created_by', '=', 'pdf-fixture')
-      .where('status', '=', 'draft')
-      .execute()
-
     const blueprint = await blueprintsRepository.insert(db, {
       subject_id: subject.id,
       board: 'CBSE',

@@ -46,8 +46,10 @@ Never invent a feature ID. If work doesn't map to an existing F-number, say so a
    with subject/class defaults. Generation is a *top-up* job (target minus current approved count
    per Bloom×difficulty cell), idempotent and safe to re-run. Launch target is 20/concept.
 
-4. **Nothing is deleted.** Questions go Draft → Approved → Retired. Evaluations and the concept
-   ledger are append-only so history stays auditable years later.
+4. **Nothing is deleted.** A question is either Approved (usable immediately on creation — there is
+   no draft/review gate, removed 2026-09-17 at the user's explicit request) or Retired (pulled from
+   the pool, never hard-deleted). Evaluations and the concept ledger are append-only so history
+   stays auditable years later.
 
 5. **Every question traces to an in-scope concept.** A question cannot exist without a concept, and
    a concept cannot exist without a chapter scope record citing the textbook and page range.

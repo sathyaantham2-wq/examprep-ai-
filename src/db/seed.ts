@@ -205,15 +205,6 @@ export async function seedBulkFixtures(db: Db, subjectId: string, sourceId: stri
     }
   }
 
-  // short_answer isn't an objective type, so computeReviewTier (F117) puts it in Tier B
-  // (draft) regardless of marks -- seed data should be immediately usable, not sitting in a
-  // review queue that doesn't have a UI yet (F084), so approve everything this script created.
-  await db
-    .updateTable('questions')
-    .set({ status: 'approved' })
-    .where('created_by', '=', 'seed-script')
-    .execute()
-
   console.log(
     `Seeded ${CHAPTER_TOPICS.length} more chapters, ${seedConceptIds.length} concepts, 200 questions`,
   )

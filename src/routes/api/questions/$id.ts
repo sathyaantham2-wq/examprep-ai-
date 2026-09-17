@@ -18,8 +18,11 @@ const updateQuestionSchema = z
     source_ref: z.string().min(1).nullable(),
     // F118: "can be retired without deleting historical results" -- retiring only flips this
     // column; every paper/attempt/evaluation that already used the question keeps referencing it
-    // untouched (status isn't a FK target anywhere, so nothing cascades on the change).
-    status: z.enum(['draft', 'approved', 'retired']),
+    // untouched (status isn't a FK target anywhere, so nothing cascades on the change). 'draft' is
+    // deliberately not a settable value here -- there is no approval workflow to send a question
+    // back into (removed 2026-09-17); a question is either usable ('approved') or pulled from the
+    // pool ('retired').
+    status: z.enum(['approved', 'retired']),
     // F060: previously settable only via POST /api/questions or bulk import -- there was no way
     // to correct this on a question already in the bank without going around the API entirely.
     is_reversal_word: z.boolean(),

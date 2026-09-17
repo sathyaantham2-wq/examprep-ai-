@@ -47,12 +47,13 @@ const requestSchema = z.object({
 /**
  * F025 / AI-01 (tab07): POST /api/questions/generate per tab05's exact route contract. Admin
  * triggers N questions for one concept at a fixed Bloom/difficulty; accepted candidates are
- * written as Draft (origin='ai_generated' forces this in createQuestion, regardless of F117's
- * Tier A auto-approve) so "only approved questions enter papers" still holds for AI output.
+ * written straight into the bank as Approved (createQuestion has no review/approval gate) and are
+ * immediately eligible for papers.
  *
- * Fallback when AI isn't configured (tab07): "admin writes the question manually; queue stays
- * draft" — reported as a 200 with generated:[] and ai_configured:false, not an error, since this
- * is an expected, documented mode rather than a failure.
+ * Fallback when AI isn't configured (tab07): reported as a 200 with generated:[] and
+ * ai_configured:false, not an error, since this is an expected, documented mode rather than a
+ * failure -- the admin adds questions to the bank manually instead (POST /api/questions or bulk
+ * import).
  */
 export const Route = createFileRoute('/api/questions/generate')({
   server: {
@@ -96,7 +97,7 @@ export const Route = createFileRoute('/api/questions/generate')({
             rejected: [],
             ai_configured: false,
             message:
-              'No AI provider is configured. Admin writes the question manually; the review queue stays Draft-only.',
+              'No AI provider is configured. Add the question manually instead (POST /api/questions or bulk import).',
           })
         }
 
@@ -153,7 +154,7 @@ export const Route = createFileRoute('/api/questions/generate')({
             rejected: [],
             ai_configured: false,
             message:
-              'No AI provider is configured. Admin writes the question manually; the review queue stays Draft-only.',
+              'No AI provider is configured. Add the question manually instead (POST /api/questions or bulk import).',
           })
         }
 

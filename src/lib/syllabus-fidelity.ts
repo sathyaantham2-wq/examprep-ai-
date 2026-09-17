@@ -21,8 +21,8 @@ export interface FidelityViolation {
  *
  * Only approved questions are checked -- a paper can only ever draw from approved questions
  * (F027-032's generator has always filtered status='approved'), so an approved question with no
- * real scope grounding is the actual violation this feature's AC cares about; a draft awaiting
- * review is not yet "in a generated paper."
+ * real scope grounding is the actual violation this feature's AC cares about. Retired questions
+ * are excluded for the same reason: they are no longer "in a generated paper" either.
  */
 export async function auditSyllabusFidelity(db: Db): Promise<Array<FidelityViolation>> {
   const rows = await db

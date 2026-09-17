@@ -90,7 +90,7 @@ describe('syllabus fidelity audit (F106)', () => {
       ],
     })
     violatingQuestionId = question.id
-    expect(question.status).toBe('approved') // Tier A auto-approves — this must be approved to count
+    expect(question.status).toBe('approved') // every question is approved on creation — this must count
 
     const violations = await auditSyllabusFidelity(db)
     const found = violations.find((v) => v.question_id === violatingQuestionId)

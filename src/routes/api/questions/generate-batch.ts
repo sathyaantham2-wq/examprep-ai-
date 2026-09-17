@@ -46,7 +46,7 @@ export const Route = createFileRoute('/api/questions/generate-batch')({
             return Response.json({
               batch: null,
               message:
-                'No AI provider is configured. Admin writes questions manually; the review queue stays Draft-only.',
+                'No AI provider is configured. Add questions manually instead (POST /api/questions or bulk import).',
             })
           }
           return Response.json({

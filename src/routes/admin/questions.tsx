@@ -25,11 +25,6 @@ interface Concept {
   name: string
   code: string
 }
-interface QuestionOption {
-  label: string
-  text: string
-  is_correct: boolean
-}
 interface QuestionRow {
   id: string
   text: string
@@ -38,7 +33,6 @@ interface QuestionRow {
   bloom: string
   difficulty: string
   status: string
-  review_tier: string
   concept_id: string
   answer: string
   is_reversal_word: boolean
@@ -62,9 +56,12 @@ const BLOOM_LEVELS = [
 const DIFFICULTIES = ['Easy', 'Hard', 'Hardest']
 
 /**
- * F084 (tab06 /admin/questions): "Filterable bank, editor, bulk import, AI generate, review
- * queue." Launch scope is CBSE Class 7 (CLAUDE.md) so subjects are fetched for that board/class
- * directly rather than building a full board/class picker nobody needs yet.
+ * F084 (tab06 /admin/questions): "Filterable bank, editor, bulk import, AI generate." Every
+ * question is approved and usable the moment it's created -- there is no review/approval gate
+ * (removed 2026-09-17 at the user's explicit request). A question later found to be wrong is
+ * pulled from the pool with the Question bank section's Retire button, not "rejected". Launch
+ * scope is CBSE Class 7 (CLAUDE.md) so subjects are fetched for that board/class directly rather
+ * than building a full board/class picker nobody needs yet.
  */
 function AdminQuestions() {
   const { data: session, isPending } = useSession()
@@ -75,20 +72,6 @@ function AdminQuestions() {
   const [subjectId, setSubjectId] = useState('')
   const [concepts, setConcepts] = useState<Array<Concept>>([])
   const [conceptId, setConceptId] = useState('')
-
-  const [draftQuestions, setDraftQuestions] =
-    useState<Array<QuestionRow> | null>(null)
-  const [expandedId, setExpandedId] = useState<string | null>(null)
-  const [expandedOptions, setExpandedOptions] = useState<Array<QuestionOption>>(
-    [],
-  )
-  const [rejectNote, setRejectNote] = useState('')
-  const [reviewError, setReviewError] = useState<string | null>(null)
-  const [approvingAll, setApprovingAll] = useState(false)
-  const [approveAllResult, setApproveAllResult] = useState<{
-    approved: number
-    skipped_tier_b: number
-  } | null>(null)
 
   const [genBloom, setGenBloom] = useState('Remember')
   const [genDifficulty, setGenDifficulty] = useState('Easy')
@@ -115,14 +98,6 @@ function AdminQuestions() {
   const [bankError, setBankError] = useState<string | null>(null)
   const [bankPending, setBankPending] = useState<string | null>(null)
 
-  function refreshDrafts() {
-    fetch('/api/questions?status=draft&pageSize=50')
-      .then((r) => r.json())
-      .then((data: { items: Array<QuestionRow> }) =>
-        setDraftQuestions(data.items),
-      )
-  }
-
   useEffect(() => {
     if (isPending) return
     if (!session || role !== 'admin') {
@@ -135,7 +110,6 @@ function AdminQuestions() {
         setSubjects(data)
         if (data.length === 1) setSubjectId(data[0].id)
       })
-    refreshDrafts()
   }, [isPending, session, role, navigate])
 
   useEffect(() => {
@@ -151,9 +125,7 @@ function AdminQuestions() {
     if (!conceptId) return
     fetch(`/api/questions?concept=${conceptId}&pageSize=100`)
       .then((r) => r.json())
-      .then((data: { items: Array<QuestionRow> }) =>
-        setBankQuestions(data.items.filter((q) => q.status !== 'draft')),
-      )
+      .then((data: { items: Array<QuestionRow> }) => setBankQuestions(data.items))
   }
 
   useEffect(() => {
@@ -162,79 +134,9 @@ function AdminQuestions() {
     refreshBank()
   }, [conceptId])
 
-  async function toggleExpand(q: QuestionRow) {
-    if (expandedId === q.id) {
-      setExpandedId(null)
-      return
-    }
-    setExpandedId(q.id)
-    setRejectNote('')
-    setReviewError(null)
-    const detail = await (await fetch(`/api/questions/${q.id}`)).json()
-    setExpandedOptions(detail.options ?? [])
-  }
-
-  async function approve(id: string, note?: string) {
-    setReviewError(null)
-    const response = await fetch(`/api/questions/${id}/approve`, {
-      method: 'POST',
-      headers: { 'content-type': 'application/json' },
-      body: JSON.stringify({ note }),
-    })
-    const body = await response.json()
-    if (!response.ok) {
-      setReviewError(body.error ?? 'Could not approve.')
-      return
-    }
-    setExpandedId(null)
-    refreshDrafts()
-  }
-
-  async function approveAllTierA(includeTierB: boolean) {
-    setReviewError(null)
-    setApproveAllResult(null)
-    setApprovingAll(true)
-    try {
-      const response = await fetch('/api/questions/approve-all', {
-        method: 'POST',
-        headers: { 'content-type': 'application/json' },
-        body: JSON.stringify({ include_tier_b: includeTierB }),
-      })
-      const body = await response.json()
-      if (!response.ok) {
-        setReviewError(body.error ?? 'Could not bulk-approve.')
-        return
-      }
-      setApproveAllResult(body)
-      refreshDrafts()
-    } finally {
-      setApprovingAll(false)
-    }
-  }
-
-  async function reject(id: string) {
-    if (!rejectNote.trim()) {
-      setReviewError('A reason is required to reject a question.')
-      return
-    }
-    setReviewError(null)
-    const response = await fetch(`/api/questions/${id}/reject`, {
-      method: 'POST',
-      headers: { 'content-type': 'application/json' },
-      body: JSON.stringify({ note: rejectNote }),
-    })
-    const body = await response.json()
-    if (!response.ok) {
-      setReviewError(body.error ?? 'Could not reject.')
-      return
-    }
-    setExpandedId(null)
-    refreshDrafts()
-  }
-
   // F060: the only place in any screen a reversal-word tag can be set or corrected -- previously
-  // API/CSV-only. PATCHes and updates local state directly rather than a full refreshDrafts()
-  // round trip, since approve/reject already close the expanded row but this shouldn't.
+  // API/CSV-only. PATCHes and updates local state directly rather than a full refreshBank() round
+  // trip, since that would also drop the currently-loaded stats/expanded state.
   async function toggleReversalWord(q: QuestionRow) {
     const next = !q.is_reversal_word
     const response = await fetch(`/api/questions/${q.id}`, {
@@ -243,7 +145,7 @@ function AdminQuestions() {
       body: JSON.stringify({ is_reversal_word: next }),
     })
     if (!response.ok) return
-    setDraftQuestions(
+    setBankQuestions(
       (prev) =>
         prev?.map((r) =>
           r.id === q.id ? { ...r, is_reversal_word: next } : r,
@@ -304,7 +206,7 @@ function AdminQuestions() {
       })
       const body = await response.json()
       setGenResult(body)
-      refreshDrafts()
+      refreshBank()
     } finally {
       setGenerating(false)
     }
@@ -321,7 +223,7 @@ function AdminQuestions() {
     })
     const body = await response.json()
     setImportResult(body)
-    refreshDrafts()
+    refreshBank()
   }
 
   if (isPending || !session || role !== 'admin') {
@@ -334,118 +236,13 @@ function AdminQuestions() {
         <div>
           <h1 className="text-h1">Question bank admin</h1>
           <p className="text-body text-muted-foreground">
-            Review AI drafts, generate more, and bulk import.
+            Generate, import, and manage the question bank.
           </p>
         </div>
         <div className="no-print">
           <ThemeToggle />
         </div>
       </div>
-
-      <Card className="mb-4">
-        <CardHeader>
-          <div className="flex items-start justify-between gap-4">
-            <div>
-              <CardTitle className="text-h3">Review queue</CardTitle>
-              <CardDescription>
-                Draft questions — only Approved questions are eligible for
-                papers. "Approve all" approves every question shown below at
-                once, including subjective ones.
-              </CardDescription>
-            </div>
-            {!!draftQuestions?.length && (
-              <Button
-                size="sm"
-                disabled={approvingAll}
-                onClick={() => void approveAllTierA(true)}
-              >
-                {approvingAll
-                  ? 'Approving…'
-                  : `Approve all questions (${draftQuestions.length})`}
-              </Button>
-            )}
-          </div>
-        </CardHeader>
-        <CardContent className="space-y-3">
-          {approveAllResult && (
-            <p className="text-small text-muted-foreground">
-              Approved {approveAllResult.approved} question
-              {approveAllResult.approved === 1 ? '' : 's'}.
-            </p>
-          )}
-          {draftQuestions !== null && draftQuestions.length === 0 && (
-            <p className="text-body text-muted-foreground">
-              Nothing pending review.
-            </p>
-          )}
-          {draftQuestions?.map((q) => (
-            <div key={q.id} className="rounded-md border p-3">
-              <button
-                type="button"
-                className="text-body w-full text-left"
-                onClick={() => toggleExpand(q)}
-              >
-                {q.text}{' '}
-                <span className="text-small text-muted-foreground">
-                  ({q.bloom}, {q.difficulty}, {q.marks} mark
-                  {q.marks === 1 ? '' : 's'}, Tier {q.review_tier})
-                </span>
-              </button>
-              {expandedId === q.id && (
-                <div className="mt-3 space-y-2 border-t pt-3">
-                  {expandedOptions.length > 0 && (
-                    <ul className="text-small list-inside list-disc">
-                      {expandedOptions.map((o) => (
-                        <li
-                          key={o.label}
-                          className={o.is_correct ? 'font-medium' : ''}
-                        >
-                          {o.label}. {o.text} {o.is_correct ? '(correct)' : ''}
-                        </li>
-                      ))}
-                    </ul>
-                  )}
-                  <p className="text-small text-muted-foreground">
-                    Answer: {q.answer}
-                  </p>
-                  <label className="text-small flex items-center gap-2">
-                    <input
-                      type="checkbox"
-                      checked={q.is_reversal_word}
-                      onChange={() => toggleReversalWord(q)}
-                    />
-                    Reversal-word (NOT / least / false) — wrong answers here get
-                    classified as reading discipline, not a concept gap
-                  </label>
-                  {reviewError && (
-                    <p className="text-small text-destructive" role="alert">
-                      {reviewError}
-                    </p>
-                  )}
-                  <div className="flex flex-wrap items-center gap-2">
-                    <Button size="sm" onClick={() => approve(q.id, undefined)}>
-                      Approve
-                    </Button>
-                    <input
-                      className="border-input h-8 flex-1 rounded-md border bg-transparent px-2 text-sm"
-                      placeholder="Reason (required to reject)"
-                      value={rejectNote}
-                      onChange={(e) => setRejectNote(e.target.value)}
-                    />
-                    <Button
-                      size="sm"
-                      variant="destructive"
-                      onClick={() => reject(q.id)}
-                    >
-                      Reject
-                    </Button>
-                  </div>
-                </div>
-              )}
-            </div>
-          ))}
-        </CardContent>
-      </Card>
 
       <Card className="mb-4">
         <CardHeader>
@@ -543,9 +340,9 @@ function AdminQuestions() {
                 <p className="text-muted-foreground">{genResult.message}</p>
               ) : (
                 <p>
-                  {genResult.generated.length} question(s) added to the review
-                  queue, {genResult.rejected.length} rejected by the scope
-                  guardrail.
+                  {genResult.generated.length} question(s) added to the
+                  question bank, {genResult.rejected.length} rejected by the
+                  scope guardrail.
                 </p>
               )}
             </div>
@@ -622,6 +419,15 @@ function AdminQuestions() {
                         )}
                       </div>
                     )}
+                    <label className="text-small flex items-center gap-2">
+                      <input
+                        type="checkbox"
+                        checked={q.is_reversal_word}
+                        onChange={() => void toggleReversalWord(q)}
+                      />
+                      Reversal-word (NOT / least / false) — wrong answers here
+                      get classified as reading discipline, not a concept gap
+                    </label>
                     <Button
                       size="sm"
                       variant={q.status === 'retired' ? 'default' : 'outline'}
