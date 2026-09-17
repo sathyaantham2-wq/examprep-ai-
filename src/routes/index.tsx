@@ -71,6 +71,17 @@ function Home() {
     )
   }
 
+  // F006: "email+password and Google OAuth" -- the server side (socialProviders, the
+  // databaseHooks that assign a fresh household_id/role) was already wired and conditional on
+  // GOOGLE_CLIENT_ID/SECRET existing; this button was the missing half, withheld until real
+  // credentials existed to test against. signIn.social redirects to Google and back to this same
+  // page -- the useEffect above (watching useSession()) does the actual post-login redirect,
+  // exactly like the email/password path.
+  async function handleGoogleSignIn() {
+    setError(null)
+    await signIn.social({ provider: 'google', callbackURL: '/' })
+  }
+
   async function handleSubmit(e: React.FormEvent) {
     e.preventDefault()
     setError(null)
@@ -189,6 +200,24 @@ function Home() {
                       : 'Sign up'}
                 </Button>
               </form>
+            )}
+
+            {!signedUp && (
+              <>
+                <div className="my-4 flex items-center gap-3">
+                  <div className="bg-border h-px flex-1" />
+                  <span className="text-small text-muted-foreground">or</span>
+                  <div className="bg-border h-px flex-1" />
+                </div>
+                <Button
+                  type="button"
+                  variant="outline"
+                  className="w-full"
+                  onClick={() => void handleGoogleSignIn()}
+                >
+                  Continue with Google
+                </Button>
+              </>
             )}
 
             {!signedUp && (
