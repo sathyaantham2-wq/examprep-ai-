@@ -43,6 +43,13 @@ interface QuestionRow {
   answer: string
   is_reversal_word: boolean
 }
+interface QuestionStats {
+  attempts: number
+  success_rate: number | null
+  mean_time_sec: number | null
+  success_rate_by_mastery: Record<string, number>
+  anomaly: { flagged: boolean; reasons: Array<string> }
+}
 
 const BLOOM_LEVELS = [
   'Remember',
@@ -95,6 +102,14 @@ function AdminQuestions() {
     rejected?: Array<unknown>
   } | null>(null)
 
+  const [bankQuestions, setBankQuestions] = useState<Array<QuestionRow> | null>(
+    null,
+  )
+  const [bankExpandedId, setBankExpandedId] = useState<string | null>(null)
+  const [bankStats, setBankStats] = useState<QuestionStats | null>(null)
+  const [bankError, setBankError] = useState<string | null>(null)
+  const [bankPending, setBankPending] = useState<string | null>(null)
+
   function refreshDrafts() {
     fetch('/api/questions?status=draft&pageSize=50')
       .then((r) => r.json())
@@ -126,6 +141,21 @@ function AdminQuestions() {
       .then((r) => r.json())
       .then(setConcepts)
   }, [subjectId])
+
+  function refreshBank() {
+    if (!conceptId) return
+    fetch(`/api/questions?concept=${conceptId}&pageSize=100`)
+      .then((r) => r.json())
+      .then((data: { items: Array<QuestionRow> }) =>
+        setBankQuestions(data.items.filter((q) => q.status !== 'draft')),
+      )
+  }
+
+  useEffect(() => {
+    setBankQuestions(null)
+    setBankExpandedId(null)
+    refreshBank()
+  }, [conceptId])
 
   async function toggleExpand(q: QuestionRow) {
     if (expandedId === q.id) {
@@ -192,6 +222,42 @@ function AdminQuestions() {
           r.id === q.id ? { ...r, is_reversal_word: next } : r,
         ) ?? null,
     )
+  }
+
+  async function toggleBankExpand(q: QuestionRow) {
+    if (bankExpandedId === q.id) {
+      setBankExpandedId(null)
+      return
+    }
+    setBankExpandedId(q.id)
+    setBankStats(null)
+    setBankError(null)
+    const stats = await (await fetch(`/api/questions/${q.id}/stats`)).json()
+    setBankStats(stats)
+  }
+
+  // F118: "can be retired without deleting historical results" -- status is the only thing this
+  // flips; every paper/attempt/evaluation that already used the question keeps referencing it
+  // untouched (verified server-side in question-stats.integration.test.ts).
+  async function toggleRetired(q: QuestionRow) {
+    setBankError(null)
+    setBankPending(q.id)
+    try {
+      const nextStatus = q.status === 'retired' ? 'approved' : 'retired'
+      const response = await fetch(`/api/questions/${q.id}`, {
+        method: 'PATCH',
+        headers: { 'content-type': 'application/json' },
+        body: JSON.stringify({ status: nextStatus }),
+      })
+      const body = await response.json()
+      if (!response.ok) {
+        setBankError(body.error ?? 'Could not update that question.')
+        return
+      }
+      refreshBank()
+    } finally {
+      setBankPending(null)
+    }
   }
 
   async function generate() {
@@ -435,6 +501,91 @@ function AdminQuestions() {
             </div>
           )}
         </CardContent>
+      </Card>
+
+      <Card className="mb-4">
+        <CardHeader>
+          <CardTitle className="text-h3">Question bank</CardTitle>
+          <CardDescription>
+            {conceptId
+              ? 'Approved and retired questions for the concept selected above, with live stats (F118).'
+              : 'Select a concept above to browse its approved/retired questions.'}
+          </CardDescription>
+        </CardHeader>
+        {conceptId && (
+          <CardContent className="space-y-3">
+            {bankError && (
+              <p className="text-small text-destructive" role="alert">
+                {bankError}
+              </p>
+            )}
+            {bankQuestions !== null && bankQuestions.length === 0 && (
+              <p className="text-body text-muted-foreground">
+                No approved or retired questions for this concept yet.
+              </p>
+            )}
+            {bankQuestions?.map((q) => (
+              <div key={q.id} className="rounded-md border p-3">
+                <button
+                  type="button"
+                  className="text-body flex w-full items-center justify-between gap-2 text-left"
+                  onClick={() => void toggleBankExpand(q)}
+                >
+                  <span>
+                    {q.text}{' '}
+                    <span className="text-small text-muted-foreground">
+                      ({q.bloom}, {q.difficulty}, {q.marks} mark
+                      {q.marks === 1 ? '' : 's'})
+                    </span>
+                  </span>
+                  <span
+                    className={
+                      q.status === 'retired'
+                        ? 'text-small text-muted-foreground whitespace-nowrap'
+                        : 'text-small whitespace-nowrap font-medium'
+                    }
+                  >
+                    {q.status}
+                  </span>
+                </button>
+                {bankExpandedId === q.id && (
+                  <div className="mt-3 space-y-2 border-t pt-3">
+                    {!bankStats && (
+                      <p className="text-small text-muted-foreground">
+                        Loading stats…
+                      </p>
+                    )}
+                    {bankStats && (
+                      <div className="text-small space-y-1">
+                        <p>
+                          {bankStats.attempts} attempt
+                          {bankStats.attempts === 1 ? '' : 's'}
+                          {bankStats.success_rate !== null &&
+                            ` — ${bankStats.success_rate}% success rate`}
+                          {bankStats.mean_time_sec !== null &&
+                            ` — mean ${bankStats.mean_time_sec}s`}
+                        </p>
+                        {bankStats.anomaly.flagged && (
+                          <p className="text-destructive">
+                            Flagged: {bankStats.anomaly.reasons.join(', ')}
+                          </p>
+                        )}
+                      </div>
+                    )}
+                    <Button
+                      size="sm"
+                      variant={q.status === 'retired' ? 'default' : 'outline'}
+                      disabled={bankPending === q.id}
+                      onClick={() => void toggleRetired(q)}
+                    >
+                      {q.status === 'retired' ? 'Reinstate' : 'Retire'}
+                    </Button>
+                  </div>
+                )}
+              </div>
+            ))}
+          </CardContent>
+        )}
       </Card>
 
       <Card>
