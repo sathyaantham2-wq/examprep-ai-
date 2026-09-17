@@ -60,6 +60,7 @@ import { Route as ApiPapersGenerateRouteImport } from './routes/api/papers/gener
 import { Route as ApiPrivacyDeleteRouteImport } from './routes/api/privacy/delete'
 import { Route as ApiPrivacyExportRouteImport } from './routes/api/privacy/export'
 import { Route as ApiQuestionsIdRouteImport } from './routes/api/questions/$id'
+import { Route as ApiQuestionsApproveAllRouteImport } from './routes/api/questions/approve-all'
 import { Route as ApiQuestionsBulkImportRouteImport } from './routes/api/questions/bulk-import'
 import { Route as ApiQuestionsCoverageGridRouteImport } from './routes/api/questions/coverage-grid'
 import { Route as ApiQuestionsGenerateRouteImport } from './routes/api/questions/generate'
@@ -355,6 +356,11 @@ const ApiQuestionsIdRoute = ApiQuestionsIdRouteImport.update({
   path: '/$id',
   getParentRoute: () => ApiQuestionsRoute,
 } as any)
+const ApiQuestionsApproveAllRoute = ApiQuestionsApproveAllRouteImport.update({
+  id: '/approve-all',
+  path: '/approve-all',
+  getParentRoute: () => ApiQuestionsRoute,
+} as any)
 const ApiQuestionsBulkImportRoute = ApiQuestionsBulkImportRouteImport.update({
   id: '/bulk-import',
   path: '/bulk-import',
@@ -605,6 +611,7 @@ export interface FileRoutesByFullPath {
   '/api/privacy/delete': typeof ApiPrivacyDeleteRoute
   '/api/privacy/export': typeof ApiPrivacyExportRoute
   '/api/questions/$id': typeof ApiQuestionsIdRouteWithChildren
+  '/api/questions/approve-all': typeof ApiQuestionsApproveAllRoute
   '/api/questions/bulk-import': typeof ApiQuestionsBulkImportRoute
   '/api/questions/coverage-grid': typeof ApiQuestionsCoverageGridRoute
   '/api/questions/generate': typeof ApiQuestionsGenerateRoute
@@ -695,6 +702,7 @@ export interface FileRoutesByTo {
   '/api/privacy/delete': typeof ApiPrivacyDeleteRoute
   '/api/privacy/export': typeof ApiPrivacyExportRoute
   '/api/questions/$id': typeof ApiQuestionsIdRouteWithChildren
+  '/api/questions/approve-all': typeof ApiQuestionsApproveAllRoute
   '/api/questions/bulk-import': typeof ApiQuestionsBulkImportRoute
   '/api/questions/coverage-grid': typeof ApiQuestionsCoverageGridRoute
   '/api/questions/generate': typeof ApiQuestionsGenerateRoute
@@ -786,6 +794,7 @@ export interface FileRoutesById {
   '/api/privacy/delete': typeof ApiPrivacyDeleteRoute
   '/api/privacy/export': typeof ApiPrivacyExportRoute
   '/api/questions/$id': typeof ApiQuestionsIdRouteWithChildren
+  '/api/questions/approve-all': typeof ApiQuestionsApproveAllRoute
   '/api/questions/bulk-import': typeof ApiQuestionsBulkImportRoute
   '/api/questions/coverage-grid': typeof ApiQuestionsCoverageGridRoute
   '/api/questions/generate': typeof ApiQuestionsGenerateRoute
@@ -878,6 +887,7 @@ export interface FileRouteTypes {
     | '/api/privacy/delete'
     | '/api/privacy/export'
     | '/api/questions/$id'
+    | '/api/questions/approve-all'
     | '/api/questions/bulk-import'
     | '/api/questions/coverage-grid'
     | '/api/questions/generate'
@@ -968,6 +978,7 @@ export interface FileRouteTypes {
     | '/api/privacy/delete'
     | '/api/privacy/export'
     | '/api/questions/$id'
+    | '/api/questions/approve-all'
     | '/api/questions/bulk-import'
     | '/api/questions/coverage-grid'
     | '/api/questions/generate'
@@ -1058,6 +1069,7 @@ export interface FileRouteTypes {
     | '/api/privacy/delete'
     | '/api/privacy/export'
     | '/api/questions/$id'
+    | '/api/questions/approve-all'
     | '/api/questions/bulk-import'
     | '/api/questions/coverage-grid'
     | '/api/questions/generate'
@@ -1511,6 +1523,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ApiQuestionsIdRouteImport
       parentRoute: typeof ApiQuestionsRoute
     }
+    '/api/questions/approve-all': {
+      id: '/api/questions/approve-all'
+      path: '/approve-all'
+      fullPath: '/api/questions/approve-all'
+      preLoaderRoute: typeof ApiQuestionsApproveAllRouteImport
+      parentRoute: typeof ApiQuestionsRoute
+    }
     '/api/questions/bulk-import': {
       id: '/api/questions/bulk-import'
       path: '/bulk-import'
@@ -1915,6 +1934,7 @@ const ApiQuestionsGenerateBatchRouteWithChildren =
 
 interface ApiQuestionsRouteChildren {
   ApiQuestionsIdRoute: typeof ApiQuestionsIdRouteWithChildren
+  ApiQuestionsApproveAllRoute: typeof ApiQuestionsApproveAllRoute
   ApiQuestionsBulkImportRoute: typeof ApiQuestionsBulkImportRoute
   ApiQuestionsCoverageGridRoute: typeof ApiQuestionsCoverageGridRoute
   ApiQuestionsGenerateRoute: typeof ApiQuestionsGenerateRoute
@@ -1923,6 +1943,7 @@ interface ApiQuestionsRouteChildren {
 
 const ApiQuestionsRouteChildren: ApiQuestionsRouteChildren = {
   ApiQuestionsIdRoute: ApiQuestionsIdRouteWithChildren,
+  ApiQuestionsApproveAllRoute: ApiQuestionsApproveAllRoute,
   ApiQuestionsBulkImportRoute: ApiQuestionsBulkImportRoute,
   ApiQuestionsCoverageGridRoute: ApiQuestionsCoverageGridRoute,
   ApiQuestionsGenerateRoute: ApiQuestionsGenerateRoute,
@@ -2095,12 +2116,3 @@ const rootRouteChildren: RootRouteChildren = {
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
   ._addFileTypes<FileRouteTypes>()
-
-import type { getRouter } from './router.tsx'
-import type { createStart } from '@tanstack/react-start'
-declare module '@tanstack/react-start' {
-  interface Register {
-    ssr: true
-    router: Awaited<ReturnType<typeof getRouter>>
-  }
-}

@@ -84,6 +84,11 @@ function AdminQuestions() {
   )
   const [rejectNote, setRejectNote] = useState('')
   const [reviewError, setReviewError] = useState<string | null>(null)
+  const [approvingAll, setApprovingAll] = useState(false)
+  const [approveAllResult, setApproveAllResult] = useState<{
+    approved: number
+    skipped_tier_b: number
+  } | null>(null)
 
   const [genBloom, setGenBloom] = useState('Remember')
   const [genDifficulty, setGenDifficulty] = useState('Easy')
@@ -183,6 +188,26 @@ function AdminQuestions() {
     }
     setExpandedId(null)
     refreshDrafts()
+  }
+
+  async function approveAllTierA() {
+    setReviewError(null)
+    setApproveAllResult(null)
+    setApprovingAll(true)
+    try {
+      const response = await fetch('/api/questions/approve-all', {
+        method: 'POST',
+      })
+      const body = await response.json()
+      if (!response.ok) {
+        setReviewError(body.error ?? 'Could not bulk-approve.')
+        return
+      }
+      setApproveAllResult(body)
+      refreshDrafts()
+    } finally {
+      setApprovingAll(false)
+    }
   }
 
   async function reject(id: string) {
@@ -317,12 +342,38 @@ function AdminQuestions() {
 
       <Card className="mb-4">
         <CardHeader>
-          <CardTitle className="text-h3">Review queue</CardTitle>
-          <CardDescription>
-            Draft questions — only Approved questions are eligible for papers.
-          </CardDescription>
+          <div className="flex items-start justify-between gap-4">
+            <div>
+              <CardTitle className="text-h3">Review queue</CardTitle>
+              <CardDescription>
+                Draft questions — only Approved questions are eligible for
+                papers. Tier A (objective, 1–2 marks) can be approved in bulk;
+                Tier B needs a reviewer note per question.
+              </CardDescription>
+            </div>
+            {!!draftQuestions?.some((q) => q.review_tier === 'A') && (
+              <Button
+                size="sm"
+                variant="outline"
+                disabled={approvingAll}
+                onClick={() => void approveAllTierA()}
+              >
+                {approvingAll
+                  ? 'Approving…'
+                  : `Approve all Tier A (${draftQuestions.filter((q) => q.review_tier === 'A').length})`}
+              </Button>
+            )}
+          </div>
         </CardHeader>
         <CardContent className="space-y-3">
+          {approveAllResult && (
+            <p className="text-small text-muted-foreground">
+              Approved {approveAllResult.approved} Tier A question
+              {approveAllResult.approved === 1 ? '' : 's'}.
+              {approveAllResult.skipped_tier_b > 0 &&
+                ` ${approveAllResult.skipped_tier_b} Tier B question${approveAllResult.skipped_tier_b === 1 ? '' : 's'} still need individual review.`}
+            </p>
+          )}
           {draftQuestions !== null && draftQuestions.length === 0 && (
             <p className="text-body text-muted-foreground">
               Nothing pending review.
