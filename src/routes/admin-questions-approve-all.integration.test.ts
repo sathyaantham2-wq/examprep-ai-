@@ -23,27 +23,59 @@ function handlerFor(
   return handlers[method]
 }
 
-function request(cookie: string, method: 'GET' | 'POST' = 'POST'): Request {
+function request(cookie: string, method: 'GET' | 'POST' = 'POST', body?: unknown): Request {
   return new Request('http://localhost/test', {
     method,
-    headers: { cookie },
+    headers: {
+      cookie,
+      ...(body ? { 'content-type': 'application/json' } : {}),
+    },
+    body: body ? JSON.stringify(body) : undefined,
   })
 }
 
 /**
  * F084: bulk-approving the review queue one question at a time doesn't scale once a generation
- * batch produces more than a couple of items -- but only Tier A (objective, <=2 marks, no
- * diagram) is safe to fast-track, since that tier is explicitly designed to "auto-approve with a
- * 10% sample check" (examprep-question-generation skill). Tier B keeps requiring
- * POST /api/questions/:id/approve with a reviewer note one at a time.
+ * batch produces more than a couple of items. By default only Tier A (objective, <=2 marks, no
+ * diagram) is fast-tracked, since that tier is explicitly designed to "auto-approve with a 10%
+ * sample check" (examprep-question-generation skill). Passing include_tier_b:true opts into
+ * approving subjective content too, in one request -- the admin explicitly asked for this rather
+ * than clicking through each Tier B item one at a time -- but a review_note is still written to
+ * every Tier B row (a default one if none is given), so there's still an audit trail of who
+ * signed off in bulk and when, same as the existing single-question approve route enforces.
  */
-describe('bulk-approve Tier A draft questions (F084)', () => {
+describe('bulk-approve draft questions (F084)', () => {
   let db: Db
   let admin: TestSession
   let parent: TestSession
   let conceptId: string
-  let tierAId: string
-  let tierBId: string
+  const questionIds: Array<string> = []
+
+  async function makeDraft(overrides: {
+    marks: number
+    type: 'mcq' | 'long_answer'
+    text: string
+  }) {
+    const q = await createQuestion(db, {
+      concept_id: conceptId,
+      board: 'CBSE',
+      class: 7,
+      bloom: 'Remember',
+      difficulty: 'Easy',
+      marks: overrides.marks,
+      type: overrides.type,
+      text: overrides.text,
+      answer: 'answer',
+      created_by: 'approve-all-fixture',
+      origin: 'ai_generated',
+      options:
+        overrides.type === 'mcq'
+          ? [{ label: 'A', text: 'answer', is_correct: true, order_index: 1 }]
+          : undefined,
+    })
+    questionIds.push(q.id)
+    return q.id
+  }
 
   beforeAll(async () => {
     db = createDb()
@@ -72,46 +104,10 @@ describe('bulk-approve Tier A draft questions (F084)', () => {
       target_question_count: 18,
     })
     conceptId = concept.id
-
-    // origin: 'ai_generated' so both land as draft regardless of tier, matching how the
-    // question-generation flow actually produces them (F025).
-    const tierA = await createQuestion(db, {
-      concept_id: conceptId,
-      board: 'CBSE',
-      class: 7,
-      bloom: 'Remember',
-      difficulty: 'Easy',
-      marks: 1,
-      type: 'mcq',
-      text: 'Approve-all fixture Tier A question',
-      answer: 'A',
-      created_by: 'approve-all-fixture',
-      origin: 'ai_generated',
-      options: [{ label: 'A', text: '1', is_correct: true, order_index: 1 }],
-    })
-    tierAId = tierA.id
-
-    const tierB = await createQuestion(db, {
-      concept_id: conceptId,
-      board: 'CBSE',
-      class: 7,
-      bloom: 'Create',
-      difficulty: 'Hard',
-      marks: 3,
-      type: 'long_answer',
-      text: 'Approve-all fixture Tier B question',
-      answer: 'Some long answer',
-      created_by: 'approve-all-fixture',
-      origin: 'ai_generated',
-    })
-    tierBId = tierB.id
   })
 
   afterAll(async () => {
-    await db
-      .deleteFrom('questions')
-      .where('id', 'in', [tierAId, tierBId])
-      .execute()
+    await db.deleteFrom('questions').where('id', 'in', questionIds).execute()
     await db.deleteFrom('concepts').where('id', '=', conceptId).execute()
     await db
       .deleteFrom('households')
@@ -134,7 +130,18 @@ describe('bulk-approve Tier A draft questions (F084)', () => {
     expect(response.status).toBe(403)
   })
 
-  it('approves every draft Tier A question and leaves Tier B alone', async () => {
+  it('by default approves only draft Tier A questions and leaves Tier B alone', async () => {
+    const tierAId = await makeDraft({
+      marks: 1,
+      type: 'mcq',
+      text: 'Approve-all fixture Tier A question 1',
+    })
+    const tierBId = await makeDraft({
+      marks: 3,
+      type: 'long_answer',
+      text: 'Approve-all fixture Tier B question 1',
+    })
+
     const response = await handlerFor(ApproveAllRoute, 'POST')({
       request: request(admin.cookie),
     })
@@ -155,5 +162,29 @@ describe('bulk-approve Tier A draft questions (F084)', () => {
       'GET',
     )({ request: request(admin.cookie, 'GET'), params: { id: tierBId } })
     expect((await tierBAfter.json()).status).toBe('draft')
+  })
+
+  it('with include_tier_b approves Tier B too and records a review note', async () => {
+    const tierBId = await makeDraft({
+      marks: 3,
+      type: 'long_answer',
+      text: 'Approve-all fixture Tier B question 2',
+    })
+
+    const response = await handlerFor(ApproveAllRoute, 'POST')({
+      request: request(admin.cookie, 'POST', { include_tier_b: true }),
+    })
+    expect(response.status).toBe(200)
+    const body: { approved: number; skipped_tier_b: number } =
+      await response.json()
+    expect(body.skipped_tier_b).toBe(0)
+
+    const tierBAfter = await handlerFor(
+      QuestionByIdRoute,
+      'GET',
+    )({ request: request(admin.cookie, 'GET'), params: { id: tierBId } })
+    const updated = await tierBAfter.json()
+    expect(updated.status).toBe('approved')
+    expect(updated.review_note).toBeTruthy()
   })
 })

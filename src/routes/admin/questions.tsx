@@ -190,13 +190,15 @@ function AdminQuestions() {
     refreshDrafts()
   }
 
-  async function approveAllTierA() {
+  async function approveAllTierA(includeTierB: boolean) {
     setReviewError(null)
     setApproveAllResult(null)
     setApprovingAll(true)
     try {
       const response = await fetch('/api/questions/approve-all', {
         method: 'POST',
+        headers: { 'content-type': 'application/json' },
+        body: JSON.stringify({ include_tier_b: includeTierB }),
       })
       const body = await response.json()
       if (!response.ok) {
@@ -347,20 +349,19 @@ function AdminQuestions() {
               <CardTitle className="text-h3">Review queue</CardTitle>
               <CardDescription>
                 Draft questions — only Approved questions are eligible for
-                papers. Tier A (objective, 1–2 marks) can be approved in bulk;
-                Tier B needs a reviewer note per question.
+                papers. "Approve all" approves every question shown below at
+                once, including subjective ones.
               </CardDescription>
             </div>
-            {!!draftQuestions?.some((q) => q.review_tier === 'A') && (
+            {!!draftQuestions?.length && (
               <Button
                 size="sm"
-                variant="outline"
                 disabled={approvingAll}
-                onClick={() => void approveAllTierA()}
+                onClick={() => void approveAllTierA(true)}
               >
                 {approvingAll
                   ? 'Approving…'
-                  : `Approve all Tier A (${draftQuestions.filter((q) => q.review_tier === 'A').length})`}
+                  : `Approve all questions (${draftQuestions.length})`}
               </Button>
             )}
           </div>
@@ -368,10 +369,8 @@ function AdminQuestions() {
         <CardContent className="space-y-3">
           {approveAllResult && (
             <p className="text-small text-muted-foreground">
-              Approved {approveAllResult.approved} Tier A question
+              Approved {approveAllResult.approved} question
               {approveAllResult.approved === 1 ? '' : 's'}.
-              {approveAllResult.skipped_tier_b > 0 &&
-                ` ${approveAllResult.skipped_tier_b} Tier B question${approveAllResult.skipped_tier_b === 1 ? '' : 's'} still need individual review.`}
             </p>
           )}
           {draftQuestions !== null && draftQuestions.length === 0 && (
