@@ -46,7 +46,11 @@ function Onboarding() {
 
   useEffect(() => {
     if (isPending) return
-    if (!session || role !== 'parent') {
+    // F010: POST /api/students and /api/students/:id/login both accept 'parent' or 'admin' --
+    // this screen's own guard excluding admin was a gap, not a deliberate restriction. An admin
+    // household (e.g. the account created for real-content authoring) had no way to add a
+    // student or create that student's own login without it.
+    if (!session || (role !== 'parent' && role !== 'admin')) {
       navigate({ to: '/' })
       return
     }
@@ -124,7 +128,7 @@ function Onboarding() {
     }
   }
 
-  if (isPending || !session || role !== 'parent') {
+  if (isPending || !session || (role !== 'parent' && role !== 'admin')) {
     return <div className="p-8 text-body text-muted-foreground">Loading…</div>
   }
 

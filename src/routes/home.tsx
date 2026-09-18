@@ -206,7 +206,13 @@ function ParentDashboard() {
             Where the marks are going, subject by subject.
           </p>
         </div>
-        <div className="no-print">
+        <div className="no-print flex items-center gap-4">
+          <a
+            href="/onboarding"
+            className="text-small text-primary underline-offset-4 hover:underline"
+          >
+            Manage students
+          </a>
           <ThemeToggle />
         </div>
       </div>
