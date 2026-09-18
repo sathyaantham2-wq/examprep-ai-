@@ -1,7 +1,11 @@
 import { afterAll, beforeAll, describe, expect, it } from 'vitest'
 import { createDb } from '../db/connection'
 import type { Db } from '../db/connection'
-import { conceptsRepository, blueprintsRepository } from '../db/repositories'
+import {
+  conceptsRepository,
+  blueprintsRepository,
+  papersRepository,
+} from '../db/repositories'
 import { createQuestion } from '../lib/questions'
 import {
   createParentSession,
@@ -57,8 +61,10 @@ describe('paper list & attempt entry point (F123)', () => {
   let studentAId: string
   let conceptId: string
   let chapterId: string
+  let subjectId: string
   let blueprintId: string
   let paperId: string
+  let zeroMarkPaperId: string
 
   beforeAll(async () => {
     db = createDb()
@@ -88,6 +94,7 @@ describe('paper list & attempt entry point (F123)', () => {
       .selectAll()
       .where('code', '=', 'MATH-SEED')
       .executeTakeFirstOrThrow()
+    subjectId = subject.id
     const chapter = await db
       .selectFrom('chapters')
       .selectAll()
@@ -160,6 +167,22 @@ describe('paper list & attempt entry point (F123)', () => {
       }),
     })
     paperId = (await generateResponse.json()).paper.id
+
+    // Simulates the real leftover-fixture data this endpoint was found live to be leaking:
+    // a stray test blueprint with no real sections produces a paper with total_marks 0 that
+    // generatePaper() itself would never create (every real blueprint section requires a
+    // positive marks_per_question/count) but that still sits in the shared dev DB forever,
+    // since blueprints/papers are never hard-deleted.
+    const zeroMarkPaper = await papersRepository.insert(db, {
+      student_id: studentAId,
+      blueprint_id: blueprintId,
+      subject_id: subjectId,
+      chapter_ids: [chapterId],
+      title: 'Stray fixture blueprint',
+      total_marks: 0,
+      duration_min: 10,
+    })
+    zeroMarkPaperId = zeroMarkPaper.id
   })
 
   afterAll(async () => {
@@ -181,6 +204,10 @@ describe('paper list & attempt entry point (F123)', () => {
       .where('paper_id', '=', paperId)
       .execute()
     await db.deleteFrom('papers').where('id', '=', paperId).execute()
+    await db
+      .deleteFrom('papers')
+      .where('id', '=', zeroMarkPaperId)
+      .execute()
     await db
       .deleteFrom('households')
       .where('id', 'in', [parentA.householdId, parentB.householdId])
@@ -224,6 +251,14 @@ describe('paper list & attempt entry point (F123)', () => {
     const mine = body.find((p) => p.id === paperId)
     expect(mine).toBeDefined()
     expect(mine!.attempt).toBeNull()
+  })
+
+  it('excludes a stray zero-mark paper (leftover fixture blueprint) from the list', async () => {
+    const response = await handlerFor(PapersListRoute, 'GET')({
+      request: getRequest('http://localhost/test', studentA.cookie),
+    })
+    const body: Array<{ id: string }> = await response.json()
+    expect(body.some((p) => p.id === zeroMarkPaperId)).toBe(false)
   })
 
   it('the parent sees the same paper via student_id', async () => {

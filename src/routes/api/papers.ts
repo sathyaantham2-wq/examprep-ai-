@@ -73,6 +73,17 @@ export const Route = createFileRoute('/api/papers')({
         }
 
         const items = papers
+          // A real generatePaper() call always produces total_marks > 0 -- every blueprint
+          // section requires a positive marks_per_question and count (createBlueprintSchema).
+          // total_marks === 0 only happens for a handful of pre-existing rows in the shared dev
+          // DB whose blueprint was a leftover integration-test fixture (named e.g. "Habit drill
+          // fixture blueprint") with no real sections, surfaced here live: they show up in a
+          // real household's own paper list with zero actual questions, since blueprints/papers
+          // are global reference data this repo's own repositories never delete (see
+          // src/db/repositories/factory.ts's header comment). Filtering here is the safe fix --
+          // it never excludes a paper any real generation flow could produce, and it means this
+          // list stays clean even as more stray fixture data accumulates over time.
+          .filter((paper) => paper.total_marks > 0)
           .map((paper) => {
             const attempt = latestAttemptByPaper.get(paper.id)
             return {
