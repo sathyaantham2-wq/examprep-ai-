@@ -31,6 +31,7 @@ import { Route as ApiErrorsRouteImport } from './routes/api/errors'
 import { Route as ApiEvaluationsRouteImport } from './routes/api/evaluations'
 import { Route as ApiExamCountdownRouteImport } from './routes/api/exam-countdown'
 import { Route as ApiHabitDrillsRouteImport } from './routes/api/habit-drills'
+import { Route as ApiPapersRouteImport } from './routes/api/papers'
 import { Route as ApiQuestionsRouteImport } from './routes/api/questions'
 import { Route as ApiRemediationRouteImport } from './routes/api/remediation'
 import { Route as ApiStudentDashboardRouteImport } from './routes/api/student-dashboard'
@@ -206,6 +207,11 @@ const ApiHabitDrillsRoute = ApiHabitDrillsRouteImport.update({
   path: '/api/habit-drills',
   getParentRoute: () => rootRouteImport,
 } as any)
+const ApiPapersRoute = ApiPapersRouteImport.update({
+  id: '/api/papers',
+  path: '/api/papers',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const ApiQuestionsRoute = ApiQuestionsRouteImport.update({
   id: '/api/questions',
   path: '/api/questions',
@@ -329,14 +335,14 @@ const ApiNudgesTodayRoute = ApiNudgesTodayRouteImport.update({
   getParentRoute: () => rootRouteImport,
 } as any)
 const ApiPapersIdRoute = ApiPapersIdRouteImport.update({
-  id: '/api/papers/$id',
-  path: '/api/papers/$id',
-  getParentRoute: () => rootRouteImport,
+  id: '/$id',
+  path: '/$id',
+  getParentRoute: () => ApiPapersRoute,
 } as any)
 const ApiPapersGenerateRoute = ApiPapersGenerateRouteImport.update({
-  id: '/api/papers/generate',
-  path: '/api/papers/generate',
-  getParentRoute: () => rootRouteImport,
+  id: '/generate',
+  path: '/generate',
+  getParentRoute: () => ApiPapersRoute,
 } as any)
 const ApiPrivacyDeleteRoute = ApiPrivacyDeleteRouteImport.update({
   id: '/api/privacy/delete',
@@ -564,6 +570,7 @@ export interface FileRoutesByFullPath {
   '/api/evaluations': typeof ApiEvaluationsRouteWithChildren
   '/api/exam-countdown': typeof ApiExamCountdownRoute
   '/api/habit-drills': typeof ApiHabitDrillsRouteWithChildren
+  '/api/papers': typeof ApiPapersRouteWithChildren
   '/api/questions': typeof ApiQuestionsRouteWithChildren
   '/api/remediation': typeof ApiRemediationRouteWithChildren
   '/api/student-dashboard': typeof ApiStudentDashboardRoute
@@ -652,6 +659,7 @@ export interface FileRoutesByTo {
   '/api/evaluations': typeof ApiEvaluationsRouteWithChildren
   '/api/exam-countdown': typeof ApiExamCountdownRoute
   '/api/habit-drills': typeof ApiHabitDrillsRouteWithChildren
+  '/api/papers': typeof ApiPapersRouteWithChildren
   '/api/questions': typeof ApiQuestionsRouteWithChildren
   '/api/remediation': typeof ApiRemediationRouteWithChildren
   '/api/student-dashboard': typeof ApiStudentDashboardRoute
@@ -741,6 +749,7 @@ export interface FileRoutesById {
   '/api/evaluations': typeof ApiEvaluationsRouteWithChildren
   '/api/exam-countdown': typeof ApiExamCountdownRoute
   '/api/habit-drills': typeof ApiHabitDrillsRouteWithChildren
+  '/api/papers': typeof ApiPapersRouteWithChildren
   '/api/questions': typeof ApiQuestionsRouteWithChildren
   '/api/remediation': typeof ApiRemediationRouteWithChildren
   '/api/student-dashboard': typeof ApiStudentDashboardRoute
@@ -831,6 +840,7 @@ export interface FileRouteTypes {
     | '/api/evaluations'
     | '/api/exam-countdown'
     | '/api/habit-drills'
+    | '/api/papers'
     | '/api/questions'
     | '/api/remediation'
     | '/api/student-dashboard'
@@ -919,6 +929,7 @@ export interface FileRouteTypes {
     | '/api/evaluations'
     | '/api/exam-countdown'
     | '/api/habit-drills'
+    | '/api/papers'
     | '/api/questions'
     | '/api/remediation'
     | '/api/student-dashboard'
@@ -1007,6 +1018,7 @@ export interface FileRouteTypes {
     | '/api/evaluations'
     | '/api/exam-countdown'
     | '/api/habit-drills'
+    | '/api/papers'
     | '/api/questions'
     | '/api/remediation'
     | '/api/student-dashboard'
@@ -1096,6 +1108,7 @@ export interface RootRouteChildren {
   ApiEvaluationsRoute: typeof ApiEvaluationsRouteWithChildren
   ApiExamCountdownRoute: typeof ApiExamCountdownRoute
   ApiHabitDrillsRoute: typeof ApiHabitDrillsRouteWithChildren
+  ApiPapersRoute: typeof ApiPapersRouteWithChildren
   ApiQuestionsRoute: typeof ApiQuestionsRouteWithChildren
   ApiRemediationRoute: typeof ApiRemediationRouteWithChildren
   ApiStudentDashboardRoute: typeof ApiStudentDashboardRoute
@@ -1116,8 +1129,6 @@ export interface RootRouteChildren {
   ApiNotificationsUnsubscribeRoute: typeof ApiNotificationsUnsubscribeRoute
   ApiNudgesIdRoute: typeof ApiNudgesIdRoute
   ApiNudgesTodayRoute: typeof ApiNudgesTodayRoute
-  ApiPapersIdRoute: typeof ApiPapersIdRouteWithChildren
-  ApiPapersGenerateRoute: typeof ApiPapersGenerateRoute
   ApiPrivacyDeleteRoute: typeof ApiPrivacyDeleteRoute
   ApiPrivacyExportRoute: typeof ApiPrivacyExportRoute
   ApiSyllabusChaptersRoute: typeof ApiSyllabusChaptersRouteWithChildren
@@ -1282,6 +1293,13 @@ declare module '@tanstack/react-router' {
       path: '/api/habit-drills'
       fullPath: '/api/habit-drills'
       preLoaderRoute: typeof ApiHabitDrillsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/api/papers': {
+      id: '/api/papers'
+      path: '/api/papers'
+      fullPath: '/api/papers'
+      preLoaderRoute: typeof ApiPapersRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/api/questions': {
@@ -1454,17 +1472,17 @@ declare module '@tanstack/react-router' {
     }
     '/api/papers/$id': {
       id: '/api/papers/$id'
-      path: '/api/papers/$id'
+      path: '/$id'
       fullPath: '/api/papers/$id'
       preLoaderRoute: typeof ApiPapersIdRouteImport
-      parentRoute: typeof rootRouteImport
+      parentRoute: typeof ApiPapersRoute
     }
     '/api/papers/generate': {
       id: '/api/papers/generate'
-      path: '/api/papers/generate'
+      path: '/generate'
       fullPath: '/api/papers/generate'
       preLoaderRoute: typeof ApiPapersGenerateRouteImport
-      parentRoute: typeof rootRouteImport
+      parentRoute: typeof ApiPapersRoute
     }
     '/api/privacy/delete': {
       id: '/api/privacy/delete'
@@ -1829,6 +1847,36 @@ const ApiHabitDrillsRouteWithChildren = ApiHabitDrillsRoute._addFileChildren(
   ApiHabitDrillsRouteChildren,
 )
 
+interface ApiPapersIdRouteChildren {
+  ApiPapersIdCoverageRoute: typeof ApiPapersIdCoverageRoute
+  ApiPapersIdPdfRoute: typeof ApiPapersIdPdfRoute
+  ApiPapersIdRegenerateSlotRoute: typeof ApiPapersIdRegenerateSlotRoute
+}
+
+const ApiPapersIdRouteChildren: ApiPapersIdRouteChildren = {
+  ApiPapersIdCoverageRoute: ApiPapersIdCoverageRoute,
+  ApiPapersIdPdfRoute: ApiPapersIdPdfRoute,
+  ApiPapersIdRegenerateSlotRoute: ApiPapersIdRegenerateSlotRoute,
+}
+
+const ApiPapersIdRouteWithChildren = ApiPapersIdRoute._addFileChildren(
+  ApiPapersIdRouteChildren,
+)
+
+interface ApiPapersRouteChildren {
+  ApiPapersIdRoute: typeof ApiPapersIdRouteWithChildren
+  ApiPapersGenerateRoute: typeof ApiPapersGenerateRoute
+}
+
+const ApiPapersRouteChildren: ApiPapersRouteChildren = {
+  ApiPapersIdRoute: ApiPapersIdRouteWithChildren,
+  ApiPapersGenerateRoute: ApiPapersGenerateRoute,
+}
+
+const ApiPapersRouteWithChildren = ApiPapersRoute._addFileChildren(
+  ApiPapersRouteChildren,
+)
+
 interface ApiQuestionsIdRouteChildren {
   ApiQuestionsIdStatsRoute: typeof ApiQuestionsIdStatsRoute
 }
@@ -1969,22 +2017,6 @@ const ApiHouseholdsUsersRouteChildren: ApiHouseholdsUsersRouteChildren = {
 const ApiHouseholdsUsersRouteWithChildren =
   ApiHouseholdsUsersRoute._addFileChildren(ApiHouseholdsUsersRouteChildren)
 
-interface ApiPapersIdRouteChildren {
-  ApiPapersIdCoverageRoute: typeof ApiPapersIdCoverageRoute
-  ApiPapersIdPdfRoute: typeof ApiPapersIdPdfRoute
-  ApiPapersIdRegenerateSlotRoute: typeof ApiPapersIdRegenerateSlotRoute
-}
-
-const ApiPapersIdRouteChildren: ApiPapersIdRouteChildren = {
-  ApiPapersIdCoverageRoute: ApiPapersIdCoverageRoute,
-  ApiPapersIdPdfRoute: ApiPapersIdPdfRoute,
-  ApiPapersIdRegenerateSlotRoute: ApiPapersIdRegenerateSlotRoute,
-}
-
-const ApiPapersIdRouteWithChildren = ApiPapersIdRoute._addFileChildren(
-  ApiPapersIdRouteChildren,
-)
-
 interface ApiSyllabusChaptersRouteChildren {
   ApiSyllabusChaptersIdScopeRoute: typeof ApiSyllabusChaptersIdScopeRoute
 }
@@ -2019,6 +2051,7 @@ const rootRouteChildren: RootRouteChildren = {
   ApiEvaluationsRoute: ApiEvaluationsRouteWithChildren,
   ApiExamCountdownRoute: ApiExamCountdownRoute,
   ApiHabitDrillsRoute: ApiHabitDrillsRouteWithChildren,
+  ApiPapersRoute: ApiPapersRouteWithChildren,
   ApiQuestionsRoute: ApiQuestionsRouteWithChildren,
   ApiRemediationRoute: ApiRemediationRouteWithChildren,
   ApiStudentDashboardRoute: ApiStudentDashboardRoute,
@@ -2039,8 +2072,6 @@ const rootRouteChildren: RootRouteChildren = {
   ApiNotificationsUnsubscribeRoute: ApiNotificationsUnsubscribeRoute,
   ApiNudgesIdRoute: ApiNudgesIdRoute,
   ApiNudgesTodayRoute: ApiNudgesTodayRoute,
-  ApiPapersIdRoute: ApiPapersIdRouteWithChildren,
-  ApiPapersGenerateRoute: ApiPapersGenerateRoute,
   ApiPrivacyDeleteRoute: ApiPrivacyDeleteRoute,
   ApiPrivacyExportRoute: ApiPrivacyExportRoute,
   ApiSyllabusChaptersRoute: ApiSyllabusChaptersRouteWithChildren,

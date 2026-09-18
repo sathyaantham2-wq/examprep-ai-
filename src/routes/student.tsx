@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react'
 import { createFileRoute, useNavigate } from '@tanstack/react-router'
+import { Button } from '../components/ui/button'
 import {
   Card,
   CardContent,
@@ -31,10 +32,23 @@ interface StudentDashboard {
   recent_improvements: Array<FocusConcept>
 }
 
+interface PaperListItem {
+  id: string
+  title: string
+  total_marks: number
+  duration_min: number
+  generated_at: string
+  attempt: { id: string; status: string } | null
+}
+
 /**
  * F072 (tab06 /student): "Mastery rings, today's drill, streak, recent wins" — no red shaming
  * language, so this screen never shows a raw status word (Weak/Priority/etc.), only concept
  * names and positive framing.
+ *
+ * F123: also the entry point into the online test engine (M08) -- GET /api/papers lists this
+ * student's generated papers with their attempt status; Start/Continue is the only way a
+ * generated paper was ever reachable before this, since nothing else surfaced a paper's id.
  */
 function StudentHome() {
   const { data: session, isPending } = useSession()
@@ -43,6 +57,9 @@ function StudentHome() {
 
   const [dashboard, setDashboard] = useState<StudentDashboard | null>(null)
   const [loading, setLoading] = useState(true)
+  const [papers, setPapers] = useState<Array<PaperListItem> | null>(null)
+  const [startError, setStartError] = useState<string | null>(null)
+  const [startingId, setStartingId] = useState<string | null>(null)
 
   useEffect(() => {
     if (isPending) return
@@ -54,7 +71,37 @@ function StudentHome() {
       .then((r) => r.json())
       .then(setDashboard)
       .finally(() => setLoading(false))
+    fetch('/api/papers')
+      .then((r) => r.json())
+      .then(setPapers)
   }, [isPending, session, role, navigate])
+
+  // F123: a paper with no attempt yet needs one created (POST /api/attempts) before there's an
+  // id to navigate to; a paper already in_progress just resumes at its existing attempt id --
+  // POST-ing again would be a second, orphaned attempt row for the same paper.
+  async function startOrResume(paper: PaperListItem) {
+    setStartError(null)
+    if (paper.attempt && paper.attempt.status === 'in_progress') {
+      navigate({ to: '/attempt/$id', params: { id: paper.attempt.id } })
+      return
+    }
+    setStartingId(paper.id)
+    try {
+      const response = await fetch('/api/attempts', {
+        method: 'POST',
+        headers: { 'content-type': 'application/json' },
+        body: JSON.stringify({ paper_id: paper.id, mode: 'online' }),
+      })
+      const body = await response.json()
+      if (!response.ok) {
+        setStartError(body.error ?? 'Could not start this paper.')
+        return
+      }
+      navigate({ to: '/attempt/$id', params: { id: body.id } })
+    } finally {
+      setStartingId(null)
+    }
+  }
 
   if (isPending || !session || role !== 'student') {
     return <div className="p-8 text-body text-muted-foreground">Loading…</div>
@@ -75,6 +122,55 @@ function StudentHome() {
           <ThemeToggle />
         </div>
       </div>
+
+      {papers && papers.length > 0 && (
+        <Card className="mb-4">
+          <CardHeader>
+            <CardTitle className="text-h3">Papers to attempt</CardTitle>
+          </CardHeader>
+          <CardContent className="space-y-3">
+            {startError && (
+              <p className="text-small text-destructive" role="alert">
+                {startError}
+              </p>
+            )}
+            {papers.map((p) => {
+              const status = p.attempt?.status
+              const isDone = status === 'submitted' || status === 'evaluated'
+              return (
+                <div
+                  key={p.id}
+                  className="flex items-center justify-between rounded-md border p-3"
+                >
+                  <div>
+                    <p className="text-body">{p.title}</p>
+                    <p className="text-small text-muted-foreground">
+                      {p.total_marks} marks, {p.duration_min} min
+                    </p>
+                  </div>
+                  {isDone ? (
+                    <span className="text-small text-muted-foreground">
+                      Completed
+                    </span>
+                  ) : (
+                    <Button
+                      size="sm"
+                      disabled={startingId === p.id}
+                      onClick={() => void startOrResume(p)}
+                    >
+                      {startingId === p.id
+                        ? 'Starting…'
+                        : status === 'in_progress'
+                          ? 'Continue'
+                          : 'Start'}
+                    </Button>
+                  )}
+                </div>
+              )
+            })}
+          </CardContent>
+        </Card>
+      )}
 
       {loading && <p className="text-body text-muted-foreground">Loading…</p>}
 

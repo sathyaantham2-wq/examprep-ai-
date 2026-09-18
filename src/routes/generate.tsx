@@ -73,7 +73,10 @@ function GeneratePaper() {
 
   useEffect(() => {
     if (isPending) return
-    if (!session || role !== 'parent') {
+    // POST /api/papers/generate accepts 'student'/'parent'/'admin' -- this screen's own guard
+    // excluding admin was the same gap as /onboarding's (fixed 2026-09-18): an admin household
+    // had no UI path to generate a paper at all, only a direct API/script call.
+    if (!session || (role !== 'parent' && role !== 'admin')) {
       navigate({ to: '/' })
       return
     }
@@ -146,7 +149,7 @@ function GeneratePaper() {
     }
   }
 
-  if (isPending || !session || role !== 'parent') {
+  if (isPending || !session || (role !== 'parent' && role !== 'admin')) {
     return <div className="p-8 text-body text-muted-foreground">Loading…</div>
   }
 
