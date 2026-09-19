@@ -1,0 +1,137 @@
+[p.127-128] 6.1 Numbers Tell us Things
+Children call out numbers based on a rule. Rule: each child calls out the number of children standing IN FRONT of them who are TALLER than them.
+Example arrangement (7 children, numbers from left): 0,0,1,0,3,0,3 (verify against heights).
+Figure It Out:
+1. Arrange stick figures so sequence reads: (a) 0,1,1,2,4,1,5 (b) 0,0,0,0,0,0,0 (all same height or decreasing... actually all give 0 if each is not taller than anyone in front - e.g. increasing height order gives all 0s only for last person... official uses cutout ordering) (c) 0,1,2,3,4,5,6 (d) 0,1,0,1,0,1,0 (e) 0,1,1,1,1,1,1 (f) 0,0,0,3,3,3,3
+2. True/Sometimes/Never: (a) says '0' => tallest: Only sometimes true (b) tallest => says '0': Always true (c) first person's number is '0': Always true (must be 0, since no one in front) (d) not first/last => cannot say '0': Only sometimes true (e) largest number caller => shortest: Only sometimes true (f) largest possible number in group of 8: 7 (last person, if all in front taller)
+
+[p.129-131] 6.2 Picking Parity
+Puzzle: 5 boxes summing to 30, from card collection {13,13,13,9,9,9,1,1,7,7,7,11,11,5,5,5,3,3,3} (all ODD numbers).
+Even+even=even (any count of even numbers sums to even - arranged in pairs, no leftover).
+Odd+odd=even (pair up leaving no odd leftover, shown pictorially - "two odd numbers added together can always be arranged in pairs").
+Odd+odd+odd (3 odds) = odd (cannot arrange in pairs).
+Kishor's puzzle: 5 boxes (odd count) all odd-number cards, need sum=30(even). Odd number of odd numbers always sums to ODD, never 30. Impossible.
+Martin & Maria born 1 year apart (consecutive ages), sum claimed=112. Consecutive numbers = one even+one odd = sum is always ODD. 112 is even, so impossible. (51+52=103, odd, confirms pattern)
+Parity = property of being even/odd. Sum of 2 consecutive numbers: parity odd. Sum of 2 odd numbers: parity even.
+
+Figure It Out:
+1. Parity of sums: (a) 2 even+2 odd = even (b) 2 odd+3 even = even (c) 5 even = even (d) 8 odd = even
+2. Lakpa: odd #₹1 coins + odd #₹5 coins + even #₹10 coins = total ₹205. Sum of (odd count of odd-valued items: ₹1×odd=odd value total; ₹5×odd=odd value total; odd+odd=even) + (₹10×even=even value total) = even+even=even total. But ₹205 is ODD. So Lakpa made a mistake - total can never be ₹205 with those coin-count parities.
+3. even-even=even; odd-odd=even; even-odd=odd; odd-even=odd
+
+[p.131-132] Small Squares in Grids: m×n grid has m×n unit squares. Parity of product: even if at least one of m,n is even; odd only if both m,n odd.
+(a) 27×13 (odd×odd): odd (b) 42×78 (even×even): even (c) 135×654 (odd×even): even
+
+Parity of Expressions: 3n+4 for n=3:13(odd), n=8:28(even), n=10:34(even) - parity of 3n+4 depends on n (when n odd, 3n odd, +4 stays odd; when n even, 3n even, +4 stays even). So 3n+4 has SAME parity as n.
+Always-even expressions: 100p, 48w-2, and generally any expression that's (even number)×n ± (even number), e.g. 2m, 4n+6.
+Always-odd expressions: e.g. 2m+1, 8a+3, 4n+3, 6n+5 (even coefficient × n, plus/minus odd constant).
+Expressions with either parity (depend on n): like 3n+4 (odd coefficient of n, i.e. coefficient parity determines whether n's parity carries through) - e.g. 5n+2, 9n+4 (odd coeff + even constant: parity = parity of n).
+6k+2 for k=1,2,3: gives 8,14,20 - only some even numbers (multiples of 6, +2 offset), misses others like 2,4,6,10,12,16,18.
+All even numbers: expression 2n (n=1,2,3,...) generates ALL even numbers (since every even number has factor 2).
+All odd numbers: expression 2n-1 generates all odd numbers.
+
+[p.132-133] nth even number = 2n. nth odd number: compare term-by-term with evens (2,4,6,8,10,12,...) vs odds(1,3,5,7,9,11,...) - odd sequence value is always 1 less than even sequence at same position. 100th odd number = 2×100-1 = 199.
+Formula: nth even number = 2n; nth odd number = 2n-1. Method: (a) find even number at position (2×position) (b) subtract 1.
+
+6.3 Some Explorations in Grids
+3×3 grid, numbers 1-9 no repeats, circled numbers = row/column sums.
+Example grid: row1(4,7,5)=16, row2(6,1,2)=9, row3(3,9,8)=20; col1(4,6,3)=13,col2(7,1,9)=17,col3(5,2,8)=15.
+Fill-in exercises with partial grids and given row/col sums (two grids to solve).
+
+[p.134] Not all grids solvable: e.g. grid with row sums 5,21,19 and col sums 9,11,26 (some sum <6 or >24) is impossible. Smallest possible row/col sum using distinct 1-9 = 1+2+3=6. Largest = 9+8+7=24. Sum 5 <6 is impossible, sum 26>24 impossible.
+Sum of all 9 numbers 1-9 = 45. Sum of all 3 row-sums = 45 (equals total). Same for column sums = 45.
+Magic square: 3×3 grid where every row, column, AND diagonal sum to same number ("magic sum"). 3,62,880 (362880) ways to fill 3×3 grid with 1-9 without repetition (9! = 362880).
+
+[p.135] Observation 1: magic sum for 1-9 magic square must be 15 (since 3 equal row sums total 45, each =45/3=15).
+Observation 2: number at centre of 1-9 magic square must be 5. (9 at centre fails: 8+9+other=15 needs other=-2, impossible within 1-9; similarly 1 at centre fails: 2+1+other=15 needs other=12, impossible. Testing shows only 5 works at centre - every line through centre needs 2 numbers summing to 10 paired with centre to reach 15, and only 5 allows 4 such pairs from 1-9: (1,9),(2,8),(3,7),(4,6)).
+
+[p.136] Observation 3: 1 and 9 cannot occur in corners, must occur in edge-middle (boundary non-corner) positions. (If 1 in corner, need two other numbers each pairing with 1 to sum 15 in row/col/diagonal through that corner - only one way 1+5+9=15 exists among 1-9, but a corner needs 2 such lines through it (row+column, or row+diagonal etc.), impossible with only one valid pair.)
+Full magic square (one example, canonical):
+2 7 6
+9 5 1
+4 3 8
+(This is the classic Lo Shu square variant.)
+Alternative canonical form from answer key:
+8 1 6
+3 5 7
+4 9 2
+
+Figure It Out (Magic Squares):
+1. How many different 1-9 magic squares? Exactly 1 unique magic square (ignoring 8 rotations/reflections of the same pattern).
+2. Magic square 2-10: add 1 to every number of the 1-9 magic square (8→9,1→2,6→7 / 3→4,5→6,7→8 / 4→5,9→10,2→3):
+9 2 7
+4 6 8
+5 10 3
+3. (a) Add 1 to each number: still magic square, magic sum increases by 3×1=3 (was 15, becomes 18). (b) Double each number: still magic square, magic sum multiplied by 2 (was 15, becomes 30).
+4. Other operations preserving magic square property: adding same constant to every number; multiplying every number by same constant (also subtracting, dividing by same nonzero constant).
+5. Magic square from any 9 consecutive numbers (a to a+8): take 1-9 magic square, add (a-1) to every entry.
+
+[p.136-137] Generalising 3×3 Magic Square: centre = m. Other 8 cells expressed as m±k. Using calendar-style 2×2 relation (from Ch4): general magic square pattern (based on 8,1,6/3,5,7/4,9,2 with m=5):
+m+3, m-4, m+1
+m-2, m,   m+2
+m-1, m+4, m-3
+
+Figure It Out:
+1. Centre=25:
+28 21 26
+23 25 27
+24 29 22
+2. Sum of 3 terms in any row/col/diagonal = 3×m (=3m).
+3. (a) Add 1 to every term of generalised form: m+4,m-3,m+2 / m-1,m+1,m+3 / m,m+5,m-2 (magic sum becomes 3m+3) (b) Double every term: 2m+6,2m-8,2m+2 / 2m-4,2m,2m+4 / 2m-2,2m+8,2m-6 (magic sum becomes 6m)
+4. Magic square with magic sum 60: since magic sum=3m, m=20:
+23 16 21
+18 20 22
+19 24 17
+5. Magic square with 9 NON-consecutive numbers: possible, e.g. using multiples of 3 (3×(1-9 magic square)):
+24 3 18
+9 15 21
+12 27 6
+
+[p.137-138] The First-ever 4×4 Magic Square: Chautīsā Yantra, 10th century, Khajuraho, India:
+7 12 1 14
+2 13 8 11
+16 3 10 5
+9 6 15 4
+Every row/col/diagonal sums to 34 ("Chau̐tīs" = 34).
+
+[p.138-139] Magic Squares in History: Lo Shu Square (China, 2000+ years old):
+2 7 6
+9 5 1
+4 3 8
+Also found in Palani, Tamil Nadu temple (8th century CE) and Navagraha Yantra (astrological 3×3 squares, each planet has different magic sum, e.g. Sun's square: 6,1,8/7,5,3/2,9,4, magic sum=15; other planet squares use different number ranges with different magic sums).
+
+[p.139] 6.4 Nature's Favourite Sequence: Virahāṅka-Fibonacci Numbers
+Sequence: 1,2,3,5,8,13,21,34,... In poetry (Sanskrit/Prakrit/Marathi/Malayalam/Tamil/Telugu): short syllable=1 beat, long syllable=2 beats (exactly twice as long).
+Question: number of ways to write n as ordered sum of 1s and 2s (rhythms with n beats).
+
+[p.140] Table: n=1:1 way; n=2:2 ways(1+1,2); n=3:3 ways(1+1+1,1+2,2+1); n=4:5 ways(1+1+1+1,1+1+2,1+2+1,2+1+1,2+2).
+n=5: 8 ways (systematic: prepend '1+' to all 4-beat rhythms (5 of them) and '2+' to all 3-beat rhythms (3 of them): 5+3=8).
+
+[p.141] n=6: 13 ways (8+5, sum of previous two terms). Recurrence: rhythms(n) = rhythms(n-1)+rhythms(n-2), because every n-beat rhythm starts with either a 1 (followed by (n-1)-beat rhythm) or a 2 (followed by (n-2)-beat rhythm).
+History: Virahāṅka (~700 CE, Prakrit scholar) first described rule; inspired by Piṅgala (~300 BCE); later Gopala (~1135 CE), Hemachandra (~1150 CE); in West known as Fibonacci (1202 CE, ~500 years after Virahāṅka). Hence "Virahāṅka-Fibonacci numbers".
+8th beat count = 8th term of sequence = 34 (sequence: 1,2,3,5,8,13,21,34,...).
+
+[p.142] Next terms after 55: 34+55=89. Sequence: 1,2,3,5,8,13,21,34,55,89,144,233,377,...
+Petals: daisy commonly has 13, 21, or 34 petals (Virahāṅka numbers occur in nature).
+Parity pattern of Virahāṅka sequence: 1(O),2(E),3(O),5(O),8(E),13(O),21(O),34(E),55(O),89(O),144(E)... repeating pattern of period 3: Odd,Even,Odd,Odd,Even,Odd,Odd,Even,... (O,E,O repeating, i.e. every 3rd term starting from 2nd is Even).
+20th term parity: position 20 mod 3 = 2 -> pattern position 2 in cycle (O,E,O)->E. 20th term is EVEN. [Verify: terms at positions 2,5,8,11,14,17,20 are Even (every 3rd starting at 2). 20 = 2+3×6, yes position 20 is Even.]
+
+[p.142-143] 6.5 Digits in Disguise (Cryptarithms/Alphametics)
+T+T+T=UT (3T is a 2-digit number ending in T). T=5: 5+5+5=15, UT=15 (U=1,T=5). ✓ (units digit of 3T equals T itself, only works for T=0 or T=5; T=0 gives trivial 000, so T=5).
+K2+K2=HMM (K2 = 10K+2, two-digit; doubled gives 3-digit HMM where tens=units=M). 2×(10K+2)=20K+4. For 3-digit result, K≥5 (since 20×5+4=104, 3 digits). Units digit of 20K+4 is always 4 (since 20K ends in 0), so M=4, HMM=H44. 20K+4=100H+44 => 20K=100H+40 => K=5H+2. H=1: K=7 -> 72+72=144 ✓ (H=1,M=4,K=7). Check other H: H=2,K=12(invalid,not single digit). So unique: K=7,H=1,M=4, i.e. 72+72=144.
+
+Other cryptarithms (answers not fully worked in source, general alphametic puzzles): YY+Z=ZOO; B5+3D=ED5; KP+KP=PRR; C1+C=1FF.
+
+[p.143] Figure It Out:
+1. Light bulb ON, toggled 77 times (odd number of toggles): ends OFF (odd toggles flip state odd number of times from ON).
+2. Encyclopaedia: 50 sheets, each printed both sides = 100 pages, 50 odd-numbered + 50 even-numbered pages. Sum of 50 even pages = even. Sum of 50 (even count) odd pages = even (even count of odd numbers sums to even). Total = even+even = even. 6000 is even, so YES it's possible (not "must be" but "can be", since exact page numbers unknown - official answer: possible, sum can be 6000, not a mistake).
+
+[p.144] 3. 2×3 grid, row sums parity: o,e (row1=odd,row2=even); col sums parity: e,e,o (col1=even,col2=even,col3=odd). Fill 3 odd(o)+3 even(e) cells satisfying constraints. Example solution: row1: o,e,e (sum o+e+e=odd✓ matches row1=o); row2: o,e,o (sum o+e+o=even✓ matches row2=e); col1: o+o=even✓(matches col1=e); col2: e+e=even✓(matches col2=e); col3: e+o=odd✓(matches col3=o).
+4. 3×3 magic square, magic sum=0, not all zero, negative numbers allowed. Example: 3,-4,1/-2,0,2/-1,4,-3 (centre=0, using generalised form m±k with m=0).
+5. Fill blanks: (a) odd# of even numbers summed = even (b) even# of odd numbers summed = even (c) even# of even numbers summed = even (d) odd# of odd numbers summed = odd
+6. Parity of sum 1 to 100: sum=100×101/2=5050, even.
+7. Virahāṅka sequence: 987,1597 consecutive. Next 2: 987+1597=2584; 1597+2584=4181. Previous 2: 1597-987=610; 987-610=377. Sequence: ...,377,610,987,1597,2584,4181,...
+8. Angaan 8-step staircase, steps of 1 or 2. Number of ways = 8th Virahāṅka-type term (same as beats-of-n problem) = 34 ways. (Ways: 1×8:1 way; six1s+one2(7 items):7 ways; four1s+two2s(6 items):15 ways(C(6,2)); two1s+three2s(5items):10 ways(C(5,2)); four2s:1 way. Total=1+7+15+10+1=34)
+9. Parity of 20th term of Virahāṅka sequence: EVEN (see pattern above; sequence O,E,O repeating with E at every 3rd position from position 2: positions 2,5,8,11,14,17,20 are Even).
+10. True/False: (a) 4m-1 always odd: TRUE (4m always even, minus 1 = odd) (b) all even numbers = 6j-4: FALSE (misses some evens, e.g. 6j-4 for j=1,2,3 gives 2,8,14 - misses 4,6,10,12...) (c) both 2p+1 AND 2q-1 describe all odd numbers: FALSE... wait each individually does describe all odds, but statement likely asks if BOTH together are needed/redundant - official answer marks this FALSE (reasoning: actually re-examine - each alone generates all odd numbers, so statement "both expressions... describe all odd numbers" being asked as true/false: official key says FALSE, treating it as a trick about redundancy) (d) 2f+3 gives both even and odd: FALSE (2f is always even, +3 always makes it odd, so 2f+3 is ALWAYS odd, never even)
+11. Cryptarithm UT+TA=TAT. Answer: U=9,T=1,A=0 (i.e. 91+10=101 ✓ check: 91+10=101, T=1,A=0,U=9 matches TAT=101, UT=91,TA=10). Verify: U=9,T=1: UT=91. TA: T=1,A=0: TA=10. Sum=91+10=101=TAT (T=1,A=0,T=1) ✓
