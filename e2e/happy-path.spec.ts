@@ -85,7 +85,11 @@ test.beforeAll(async () => {
     subject_id: subject.id,
     board: 'CBSE',
     class: 7,
-    name: 'E2E fixture blueprint',
+    // Deliberately not named "... fixture blueprint" (every other test's convention) -- GET
+    // /api/blueprints now filters that name pattern out of the real /generate picker (papers.ts's
+    // listBySubject), since a real admin's picker was otherwise full of leftover test junk. This
+    // one needs to actually appear in the UI the test drives.
+    name: 'E2E happy-path blueprint',
     duration_min: 30,
     total_marks: 1,
     sections: JSON.stringify([
@@ -232,26 +236,41 @@ test('happy path: sign in, generate paper, download PDF, attempt, evaluate, trac
   // 2. Generate a paper via the real /generate form.
   await page.goto('/generate', { waitUntil: 'networkidle' })
   await page.waitForTimeout(500)
-  await page.selectOption('#student', studentId)
-  await page.waitForTimeout(300)
-  // Two subjects exist for CBSE/Class 7 (Mathematics, Science) -- generate.tsx only
-  // auto-selects when there's exactly one, so this must be picked explicitly.
+  // generate.tsx auto-selects the student when this household only has one (no #student
+  // dropdown rendered at all in that case -- this fixture creates exactly one, "E2E Kid").
+  // Two subjects exist for CBSE/Class 7 (Mathematics, Science) -- only auto-selected when
+  // there's exactly one, so this must still be picked explicitly.
   await page.selectOption('#subject', subjectId)
   await page.waitForTimeout(300)
+  // Two non-fixture blueprints exist for MATH-SEED (the pre-existing "Seed practice blueprint"
+  // plus this fixture's own) -- the #blueprint dropdown only renders once there's more than one
+  // real option, which is the case here.
   await page.selectOption('#blueprint', blueprintId)
-  await page.getByRole('checkbox').first().check()
+  // Chapters now default to all pre-checked (the sensible default for a prototype-stage bank).
+  // MATH-SEED has 15 chapters, most holding unrelated leftover content from other tests --
+  // uncheck every one except "Ch 1" so this test stays scoped to its own fixture question the
+  // same way it always was, rather than the generator being free to draw from any of them.
+  const chapterLabels = page.locator('label').filter({ hasText: /^I Ch \d+:/ })
+  const chapterCount = await chapterLabels.count()
+  for (let i = 0; i < chapterCount; i++) {
+    const label = chapterLabels.nth(i)
+    const text = await label.textContent()
+    if (!text?.includes('Ch 1:')) {
+      await label.getByRole('checkbox').uncheck()
+    }
+  }
 
   const generateResponsePromise = page.waitForResponse(
     (r) =>
       r.url().includes('/api/papers/generate') &&
       r.request().method() === 'POST',
   )
-  await page.getByRole('button', { name: 'Generate paper' }).click()
+  await page.getByRole('button', { name: 'Create paper' }).click()
   const generateResponse = await generateResponsePromise
   const generated = await generateResponse.json()
   paperId = generated.paper.id
   expect(generated.paperQuestions).toHaveLength(1)
-  await expect(page.getByText(/Paper generated/)).toBeVisible()
+  await expect(page.getByText(/Paper ready/)).toBeVisible()
 
   // 3. Download PDF -- verify the real render pipeline (F033) produces an actual PDF.
   const pdfResponse = await page.request.get(`/api/papers/${paperId}/pdf`)

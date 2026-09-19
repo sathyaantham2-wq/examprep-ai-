@@ -8,11 +8,21 @@ import { createRepository, createScopedRepository } from './factory'
 // Exam patterns are global reference data, not owned by a household.
 export const blueprintsRepository = {
   ...createRepository('blueprints'),
+  // Every test file in this repo that creates its own throwaway blueprint names it
+  // "... fixture blueprint" by convention -- and since this table has no delete method
+  // (factory.ts's header: nothing here is ever hard-deleted), every one of those has
+  // accumulated forever in the shared dev DB, visible to a real admin's /generate picker
+  // alongside genuine blueprints. Filtering by that name convention is a name-sniffing
+  // workaround, not a real flag -- the honest long-term fix is a boolean
+  // (e.g. is_test_fixture) every fixture sets explicitly, which would need updating every
+  // test file that creates a blueprint. This is the pragmatic fix for what a real user sees
+  // today; noted as a follow-up rather than done silently.
   async listBySubject(db: Db, subjectId: string) {
     return db
       .selectFrom('blueprints')
       .selectAll()
       .where('subject_id', '=', subjectId)
+      .where('name', 'not ilike', '%fixture%')
       .orderBy('created_at', 'desc')
       .execute()
   },

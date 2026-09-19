@@ -174,6 +174,11 @@ function Onboarding() {
                     <span className="text-small text-muted-foreground">
                       {s.board} · Class {s.class}
                     </span>
+                    <a href="/generate">
+                      <Button type="button" variant="outline" size="sm">
+                        Generate paper
+                      </Button>
+                    </a>
                     {s.user_id ? (
                       <span className="text-small text-muted-foreground">
                         Login active

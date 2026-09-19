@@ -82,7 +82,12 @@ function GeneratePaper() {
     }
     fetch('/api/students')
       .then((r) => r.json())
-      .then(setStudents)
+      .then((data: Array<Student>) => {
+        setStudents(data)
+        // The common case is one child -- picking her is not a real decision, so it shouldn't
+        // cost a click. A household with more than one still gets the dropdown below.
+        if (data.length === 1) setStudentId(data[0].id)
+      })
   }, [isPending, session, role, navigate])
 
   const selectedStudent = students?.find((s) => s.id === studentId)
@@ -111,10 +116,21 @@ function GeneratePaper() {
     if (!subjectId) return
     fetch(`/api/blueprints?subject_id=${subjectId}`)
       .then((r) => r.json())
-      .then(setBlueprints)
+      .then((data: Array<Blueprint>) => {
+        setBlueprints(data)
+        // A prototype-stage subject typically has exactly one real blueprint -- asking a parent
+        // to choose "which blueprint" when there is only one option is pure friction, so this
+        // only becomes a visible choice once a second one genuinely exists.
+        if (data.length === 1) setBlueprintId(data[0].id)
+      })
     fetch(`/api/syllabus/chapters?subject_id=${subjectId}`)
       .then((r) => r.json())
-      .then(setChapters)
+      .then((data: Array<Chapter>) => {
+        setChapters(data)
+        // Covering every available chapter is the sensible default -- narrowing to a subset is
+        // the exception, not the common case, so it starts pre-checked rather than empty.
+        setChapterIds(data.map((c) => c.id))
+      })
   }, [subjectId])
 
   function toggleChapter(id: string) {
@@ -157,9 +173,13 @@ function GeneratePaper() {
     <div className="mx-auto max-w-2xl p-8">
       <div className="mb-6 flex items-center justify-between">
         <div>
-          <h1 className="text-h1">Generate a paper</h1>
+          <h1 className="text-h1">
+            {selectedStudent ? `Hello, ${selectedStudent.name}` : 'Generate a paper'}
+          </h1>
           <p className="text-body text-muted-foreground">
-            Pick a student, a blueprint and the chapters to cover.
+            {selectedStudent
+              ? 'Pick a subject and generate her next paper.'
+              : 'Pick a student to get started.'}
           </p>
         </div>
         <div className="no-print">
@@ -189,25 +209,27 @@ function GeneratePaper() {
             </p>
           ) : (
             <form onSubmit={handleGenerate} className="space-y-4">
-              <div className="space-y-1.5">
-                <Label htmlFor="student">Student</Label>
-                <select
-                  id="student"
-                  className="border-input flex h-9 w-full rounded-md border bg-transparent px-3 text-sm shadow-xs"
-                  value={studentId}
-                  onChange={(e) => setStudentId(e.target.value)}
-                  required
-                >
-                  <option value="" disabled>
-                    Select a student
-                  </option>
-                  {students?.map((s) => (
-                    <option key={s.id} value={s.id}>
-                      {s.name} (Class {s.class})
+              {students !== null && students.length > 1 && (
+                <div className="space-y-1.5">
+                  <Label htmlFor="student">Student</Label>
+                  <select
+                    id="student"
+                    className="border-input flex h-9 w-full rounded-md border bg-transparent px-3 text-sm shadow-xs"
+                    value={studentId}
+                    onChange={(e) => setStudentId(e.target.value)}
+                    required
+                  >
+                    <option value="" disabled>
+                      Select a student
                     </option>
-                  ))}
-                </select>
-              </div>
+                    {students.map((s) => (
+                      <option key={s.id} value={s.id}>
+                        {s.name} (Class {s.class})
+                      </option>
+                    ))}
+                  </select>
+                </div>
+              )}
 
               {studentId && (
                 <div className="space-y-1.5">
@@ -231,7 +253,7 @@ function GeneratePaper() {
                 </div>
               )}
 
-              {subjectId && (
+              {subjectId && blueprints.length > 1 && (
                 <div className="space-y-1.5">
                   <Label htmlFor="blueprint">Blueprint</Label>
                   <select
@@ -250,16 +272,23 @@ function GeneratePaper() {
                       </option>
                     ))}
                   </select>
-                  {blueprints.length === 0 && (
-                    <p className="text-small text-muted-foreground">
-                      No blueprints exist for this subject yet — an admin needs
-                      to author one (F029, no admin screen exists yet either).
-                    </p>
-                  )}
                 </div>
               )}
+              {subjectId && blueprints.length === 0 && (
+                <p className="text-small text-muted-foreground">
+                  No paper format exists for this subject yet — an admin can
+                  create one at{' '}
+                  <a
+                    href="/admin/blueprints"
+                    className="text-primary underline-offset-4 hover:underline"
+                  >
+                    /admin/blueprints
+                  </a>
+                  .
+                </p>
+              )}
 
-              {subjectId && chapters.length > 0 && (
+              {subjectId && chapters.length > 1 && (
                 <div className="space-y-1.5">
                   <Label>Chapters</Label>
                   <div className="space-y-1 rounded-md border p-3">
@@ -295,38 +324,66 @@ function GeneratePaper() {
                   chapterIds.length === 0
                 }
               >
-                {submitting ? 'Generating…' : 'Generate paper'}
+                {submitting ? 'Creating…' : 'Create paper'}
               </Button>
             </form>
           )}
 
-          {result && (
+          {result && result.paperQuestions.length === 0 ? (
             <div className="text-body mt-6 space-y-2 rounded-md border p-4">
-              <p>
-                Paper generated — {result.paperQuestions.length} questions,{' '}
-                {result.paper.total_marks} marks.
+              <p className="font-medium">
+                Couldn't create a paper this time — the question bank came up
+                empty for this chapter right now.
+              </p>
+              <p className="text-small text-muted-foreground">
+                This usually means most of this chapter's questions were
+                already used in a paper very recently. Try again in a little
+                while, or cover a different chapter.
               </p>
               {result.shortfalls.length > 0 && (
-                <div className="text-small text-destructive">
-                  <p className="font-medium">
-                    Shortfalls (bank came up short):
-                  </p>
-                  <ul className="list-inside list-disc">
-                    {result.shortfalls.map((s, i) => (
-                      <li key={i}>
-                        {s.section}
-                        {s.bucket ? ` (${s.bucket})` : ''}: {s.reason}
-                      </li>
-                    ))}
-                  </ul>
-                </div>
+                <ul className="text-small text-muted-foreground list-inside list-disc">
+                  {result.shortfalls.map((s, i) => (
+                    <li key={i}>{s.reason}</li>
+                  ))}
+                </ul>
               )}
-              <p className="text-small text-muted-foreground">
-                There's no paper detail or PDF-download screen yet — the paper
-                (id {result.paper.id}) exists in the database and its PDF can be
-                fetched via the API, but only that.
-              </p>
             </div>
+          ) : (
+            result && (
+              <div className="text-body mt-6 space-y-3 rounded-md border p-4">
+                <p>
+                  Paper ready — {result.paperQuestions.length} questions,{' '}
+                  {result.paper.total_marks} marks.
+                </p>
+                {result.shortfalls.length > 0 && (
+                  <div className="text-small text-destructive">
+                    <p className="font-medium">
+                      Shortfalls (bank came up short):
+                    </p>
+                    <ul className="list-inside list-disc">
+                      {result.shortfalls.map((s, i) => (
+                        <li key={i}>
+                          {s.section}
+                          {s.bucket ? ` (${s.bucket})` : ''}: {s.reason}
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                )}
+                <div className="flex flex-wrap items-center gap-3">
+                  <a href={`/api/papers/${result.paper.id}/pdf`} target="_blank" rel="noreferrer">
+                    <Button type="button" size="sm">
+                      Download PDF
+                    </Button>
+                  </a>
+                  <p className="text-small text-muted-foreground">
+                    Also ready for web practice — it'll show up in{' '}
+                    {selectedStudent?.name ?? 'her'} own "Papers to attempt"
+                    list next time she logs in.
+                  </p>
+                </div>
+              </div>
+            )
           )}
         </CardContent>
       </Card>
