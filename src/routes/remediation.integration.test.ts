@@ -104,6 +104,10 @@ describe('remediation engine (F066-F068)', () => {
       code: `C7M-1.REMEDIATION-${Date.now()}`,
       name: 'Remediation fixture concept',
       difficulty_base: 'Easy',
+      // F124: exercised by both the generate (buildRemediationPack) and detail (loadTaskView)
+      // tests below -- the two independent code paths that must each surface a curated video.
+      video_url: 'https://www.youtube.com/watch?v=WRfBgT92WGs',
+      video_title: 'Remediation fixture video',
     })
     conceptId = concept.id
 
@@ -359,6 +363,8 @@ describe('remediation engine (F066-F068)', () => {
     // F060: this fixture's Priority escalation happened via a plain (non-reversal-word) wrong
     // answer, so the pack should be a normal concept refresher, not the reading-discipline path.
     expect(body.drill_kind).toBe('concept_refresher')
+    expect(body.video_url).toBe('https://www.youtube.com/watch?v=WRfBgT92WGs')
+    expect(body.video_title).toBe('Remediation fixture video')
     for (const q of body.questions) {
       expect(q).not.toHaveProperty('answer')
       for (const o of q.options) {
@@ -388,6 +394,10 @@ describe('remediation engine (F066-F068)', () => {
     const body = await response.json()
     expect(body.questions).toHaveLength(3)
     expect(body.questions[0]).not.toHaveProperty('answer')
+    // F124: loadTaskView is a separate code path from buildRemediationPack (re-derives the view
+    // for a student reopening an unfinished task) -- its own concept fetch must also surface this.
+    expect(body.video_url).toBe('https://www.youtube.com/watch?v=WRfBgT92WGs')
+    expect(body.video_title).toBe('Remediation fixture video')
   })
 
   it('sustains Priority after one high-scoring drill (sticky, not cleared by a single good attempt)', async () => {

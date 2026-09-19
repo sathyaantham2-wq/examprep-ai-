@@ -40,6 +40,7 @@ import { Route as ApiStudyPlanRouteImport } from './routes/api/study-plan'
 import { Route as AttemptIdRouteImport } from './routes/attempt/$id'
 import { Route as EvaluateAttemptIdRouteImport } from './routes/evaluate/$attemptId'
 import { Route as SummaryWeeklyRouteImport } from './routes/summary/weekly'
+import { Route as TrackerStudentIdRouteImport } from './routes/tracker/$studentId'
 import { Route as ApiAdminAiUsageRouteImport } from './routes/api/admin/ai-usage'
 import { Route as ApiAdminProductFunnelRouteImport } from './routes/api/admin/product-funnel'
 import { Route as ApiAdminSyllabusFidelityRouteImport } from './routes/api/admin/syllabus-fidelity'
@@ -89,6 +90,7 @@ import { Route as ApiQuestionsGenerateBatchIdRouteImport } from './routes/api/qu
 import { Route as ApiRemediationIdAttemptRouteImport } from './routes/api/remediation/$id/attempt'
 import { Route as ApiStudentsIdLoginRouteImport } from './routes/api/students/$id/login'
 import { Route as ApiSummaryWeeklyStudentIdRouteImport } from './routes/api/summary/weekly/$studentId'
+import { Route as ApiSyllabusConceptsIdRouteImport } from './routes/api/syllabus/concepts/$id'
 import { Route as ApiEvaluationsIdItemsItemIdRouteImport } from './routes/api/evaluations/$id/items/$itemId'
 import { Route as ApiEvaluationsIdReportPdfRouteImport } from './routes/api/evaluations/$id/report/pdf'
 import { Route as ApiQuestionsGenerateBatchIdResumeRouteImport } from './routes/api/questions/generate-batch/$id/resume'
@@ -250,6 +252,11 @@ const EvaluateAttemptIdRoute = EvaluateAttemptIdRouteImport.update({
 const SummaryWeeklyRoute = SummaryWeeklyRouteImport.update({
   id: '/summary/weekly',
   path: '/summary/weekly',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const TrackerStudentIdRoute = TrackerStudentIdRouteImport.update({
+  id: '/tracker/$studentId',
+  path: '/tracker/$studentId',
   getParentRoute: () => rootRouteImport,
 } as any)
 const ApiAdminAiUsageRoute = ApiAdminAiUsageRouteImport.update({
@@ -504,6 +511,11 @@ const ApiSummaryWeeklyStudentIdRoute =
     path: '/api/summary/weekly/$studentId',
     getParentRoute: () => rootRouteImport,
   } as any)
+const ApiSyllabusConceptsIdRoute = ApiSyllabusConceptsIdRouteImport.update({
+  id: '/$id',
+  path: '/$id',
+  getParentRoute: () => ApiSyllabusConceptsRoute,
+} as any)
 const ApiEvaluationsIdItemsItemIdRoute =
   ApiEvaluationsIdItemsItemIdRouteImport.update({
     id: '/items/$itemId',
@@ -579,6 +591,7 @@ export interface FileRoutesByFullPath {
   '/attempt/$id': typeof AttemptIdRoute
   '/evaluate/$attemptId': typeof EvaluateAttemptIdRoute
   '/summary/weekly': typeof SummaryWeeklyRoute
+  '/tracker/$studentId': typeof TrackerStudentIdRoute
   '/api/admin/ai-usage': typeof ApiAdminAiUsageRoute
   '/api/admin/product-funnel': typeof ApiAdminProductFunnelRoute
   '/api/admin/syllabus-fidelity': typeof ApiAdminSyllabusFidelityRoute
@@ -609,7 +622,7 @@ export interface FileRoutesByFullPath {
   '/api/students/$id': typeof ApiStudentsIdRouteWithChildren
   '/api/study-plan/generate': typeof ApiStudyPlanGenerateRoute
   '/api/syllabus/chapters': typeof ApiSyllabusChaptersRouteWithChildren
-  '/api/syllabus/concepts': typeof ApiSyllabusConceptsRoute
+  '/api/syllabus/concepts': typeof ApiSyllabusConceptsRouteWithChildren
   '/api/syllabus/subjects': typeof ApiSyllabusSubjectsRoute
   '/api/tracker/$studentId': typeof ApiTrackerStudentIdRoute
   '/evaluation/$id/report': typeof EvaluationIdReportRoute
@@ -628,6 +641,7 @@ export interface FileRoutesByFullPath {
   '/api/remediation/$id/attempt': typeof ApiRemediationIdAttemptRoute
   '/api/students/$id/login': typeof ApiStudentsIdLoginRoute
   '/api/summary/weekly/$studentId': typeof ApiSummaryWeeklyStudentIdRoute
+  '/api/syllabus/concepts/$id': typeof ApiSyllabusConceptsIdRoute
   '/api/evaluations/$id/items/$itemId': typeof ApiEvaluationsIdItemsItemIdRoute
   '/api/evaluations/$id/report/pdf': typeof ApiEvaluationsIdReportPdfRoute
   '/api/questions/generate-batch/$id/resume': typeof ApiQuestionsGenerateBatchIdResumeRoute
@@ -668,6 +682,7 @@ export interface FileRoutesByTo {
   '/attempt/$id': typeof AttemptIdRoute
   '/evaluate/$attemptId': typeof EvaluateAttemptIdRoute
   '/summary/weekly': typeof SummaryWeeklyRoute
+  '/tracker/$studentId': typeof TrackerStudentIdRoute
   '/api/admin/ai-usage': typeof ApiAdminAiUsageRoute
   '/api/admin/product-funnel': typeof ApiAdminProductFunnelRoute
   '/api/admin/syllabus-fidelity': typeof ApiAdminSyllabusFidelityRoute
@@ -698,7 +713,7 @@ export interface FileRoutesByTo {
   '/api/students/$id': typeof ApiStudentsIdRouteWithChildren
   '/api/study-plan/generate': typeof ApiStudyPlanGenerateRoute
   '/api/syllabus/chapters': typeof ApiSyllabusChaptersRouteWithChildren
-  '/api/syllabus/concepts': typeof ApiSyllabusConceptsRoute
+  '/api/syllabus/concepts': typeof ApiSyllabusConceptsRouteWithChildren
   '/api/syllabus/subjects': typeof ApiSyllabusSubjectsRoute
   '/api/tracker/$studentId': typeof ApiTrackerStudentIdRoute
   '/evaluation/$id/report': typeof EvaluationIdReportRoute
@@ -717,6 +732,7 @@ export interface FileRoutesByTo {
   '/api/remediation/$id/attempt': typeof ApiRemediationIdAttemptRoute
   '/api/students/$id/login': typeof ApiStudentsIdLoginRoute
   '/api/summary/weekly/$studentId': typeof ApiSummaryWeeklyStudentIdRoute
+  '/api/syllabus/concepts/$id': typeof ApiSyllabusConceptsIdRoute
   '/api/evaluations/$id/items/$itemId': typeof ApiEvaluationsIdItemsItemIdRoute
   '/api/evaluations/$id/report/pdf': typeof ApiEvaluationsIdReportPdfRoute
   '/api/questions/generate-batch/$id/resume': typeof ApiQuestionsGenerateBatchIdResumeRoute
@@ -758,6 +774,7 @@ export interface FileRoutesById {
   '/attempt/$id': typeof AttemptIdRoute
   '/evaluate/$attemptId': typeof EvaluateAttemptIdRoute
   '/summary/weekly': typeof SummaryWeeklyRoute
+  '/tracker/$studentId': typeof TrackerStudentIdRoute
   '/api/admin/ai-usage': typeof ApiAdminAiUsageRoute
   '/api/admin/product-funnel': typeof ApiAdminProductFunnelRoute
   '/api/admin/syllabus-fidelity': typeof ApiAdminSyllabusFidelityRoute
@@ -788,7 +805,7 @@ export interface FileRoutesById {
   '/api/students/$id': typeof ApiStudentsIdRouteWithChildren
   '/api/study-plan/generate': typeof ApiStudyPlanGenerateRoute
   '/api/syllabus/chapters': typeof ApiSyllabusChaptersRouteWithChildren
-  '/api/syllabus/concepts': typeof ApiSyllabusConceptsRoute
+  '/api/syllabus/concepts': typeof ApiSyllabusConceptsRouteWithChildren
   '/api/syllabus/subjects': typeof ApiSyllabusSubjectsRoute
   '/api/tracker/$studentId': typeof ApiTrackerStudentIdRoute
   '/evaluation/$id/report': typeof EvaluationIdReportRoute
@@ -807,6 +824,7 @@ export interface FileRoutesById {
   '/api/remediation/$id/attempt': typeof ApiRemediationIdAttemptRoute
   '/api/students/$id/login': typeof ApiStudentsIdLoginRoute
   '/api/summary/weekly/$studentId': typeof ApiSummaryWeeklyStudentIdRoute
+  '/api/syllabus/concepts/$id': typeof ApiSyllabusConceptsIdRoute
   '/api/evaluations/$id/items/$itemId': typeof ApiEvaluationsIdItemsItemIdRoute
   '/api/evaluations/$id/report/pdf': typeof ApiEvaluationsIdReportPdfRoute
   '/api/questions/generate-batch/$id/resume': typeof ApiQuestionsGenerateBatchIdResumeRoute
@@ -849,6 +867,7 @@ export interface FileRouteTypes {
     | '/attempt/$id'
     | '/evaluate/$attemptId'
     | '/summary/weekly'
+    | '/tracker/$studentId'
     | '/api/admin/ai-usage'
     | '/api/admin/product-funnel'
     | '/api/admin/syllabus-fidelity'
@@ -898,6 +917,7 @@ export interface FileRouteTypes {
     | '/api/remediation/$id/attempt'
     | '/api/students/$id/login'
     | '/api/summary/weekly/$studentId'
+    | '/api/syllabus/concepts/$id'
     | '/api/evaluations/$id/items/$itemId'
     | '/api/evaluations/$id/report/pdf'
     | '/api/questions/generate-batch/$id/resume'
@@ -938,6 +958,7 @@ export interface FileRouteTypes {
     | '/attempt/$id'
     | '/evaluate/$attemptId'
     | '/summary/weekly'
+    | '/tracker/$studentId'
     | '/api/admin/ai-usage'
     | '/api/admin/product-funnel'
     | '/api/admin/syllabus-fidelity'
@@ -987,6 +1008,7 @@ export interface FileRouteTypes {
     | '/api/remediation/$id/attempt'
     | '/api/students/$id/login'
     | '/api/summary/weekly/$studentId'
+    | '/api/syllabus/concepts/$id'
     | '/api/evaluations/$id/items/$itemId'
     | '/api/evaluations/$id/report/pdf'
     | '/api/questions/generate-batch/$id/resume'
@@ -1027,6 +1049,7 @@ export interface FileRouteTypes {
     | '/attempt/$id'
     | '/evaluate/$attemptId'
     | '/summary/weekly'
+    | '/tracker/$studentId'
     | '/api/admin/ai-usage'
     | '/api/admin/product-funnel'
     | '/api/admin/syllabus-fidelity'
@@ -1076,6 +1099,7 @@ export interface FileRouteTypes {
     | '/api/remediation/$id/attempt'
     | '/api/students/$id/login'
     | '/api/summary/weekly/$studentId'
+    | '/api/syllabus/concepts/$id'
     | '/api/evaluations/$id/items/$itemId'
     | '/api/evaluations/$id/report/pdf'
     | '/api/questions/generate-batch/$id/resume'
@@ -1117,6 +1141,7 @@ export interface RootRouteChildren {
   AttemptIdRoute: typeof AttemptIdRoute
   EvaluateAttemptIdRoute: typeof EvaluateAttemptIdRoute
   SummaryWeeklyRoute: typeof SummaryWeeklyRoute
+  TrackerStudentIdRoute: typeof TrackerStudentIdRoute
   ApiAdminAiUsageRoute: typeof ApiAdminAiUsageRoute
   ApiAdminProductFunnelRoute: typeof ApiAdminProductFunnelRoute
   ApiAdminSyllabusFidelityRoute: typeof ApiAdminSyllabusFidelityRoute
@@ -1132,7 +1157,7 @@ export interface RootRouteChildren {
   ApiPrivacyDeleteRoute: typeof ApiPrivacyDeleteRoute
   ApiPrivacyExportRoute: typeof ApiPrivacyExportRoute
   ApiSyllabusChaptersRoute: typeof ApiSyllabusChaptersRouteWithChildren
-  ApiSyllabusConceptsRoute: typeof ApiSyllabusConceptsRoute
+  ApiSyllabusConceptsRoute: typeof ApiSyllabusConceptsRouteWithChildren
   ApiSyllabusSubjectsRoute: typeof ApiSyllabusSubjectsRoute
   ApiTrackerStudentIdRoute: typeof ApiTrackerStudentIdRoute
   EvaluationIdReportRoute: typeof EvaluationIdReportRoute
@@ -1356,6 +1381,13 @@ declare module '@tanstack/react-router' {
       path: '/summary/weekly'
       fullPath: '/summary/weekly'
       preLoaderRoute: typeof SummaryWeeklyRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/tracker/$studentId': {
+      id: '/tracker/$studentId'
+      path: '/tracker/$studentId'
+      fullPath: '/tracker/$studentId'
+      preLoaderRoute: typeof TrackerStudentIdRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/api/admin/ai-usage': {
@@ -1701,6 +1733,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ApiSummaryWeeklyStudentIdRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/api/syllabus/concepts/$id': {
+      id: '/api/syllabus/concepts/$id'
+      path: '/$id'
+      fullPath: '/api/syllabus/concepts/$id'
+      preLoaderRoute: typeof ApiSyllabusConceptsIdRouteImport
+      parentRoute: typeof ApiSyllabusConceptsRoute
+    }
     '/api/evaluations/$id/items/$itemId': {
       id: '/api/evaluations/$id/items/$itemId'
       path: '/items/$itemId'
@@ -2028,6 +2067,17 @@ const ApiSyllabusChaptersRouteChildren: ApiSyllabusChaptersRouteChildren = {
 const ApiSyllabusChaptersRouteWithChildren =
   ApiSyllabusChaptersRoute._addFileChildren(ApiSyllabusChaptersRouteChildren)
 
+interface ApiSyllabusConceptsRouteChildren {
+  ApiSyllabusConceptsIdRoute: typeof ApiSyllabusConceptsIdRoute
+}
+
+const ApiSyllabusConceptsRouteChildren: ApiSyllabusConceptsRouteChildren = {
+  ApiSyllabusConceptsIdRoute: ApiSyllabusConceptsIdRoute,
+}
+
+const ApiSyllabusConceptsRouteWithChildren =
+  ApiSyllabusConceptsRoute._addFileChildren(ApiSyllabusConceptsRouteChildren)
+
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   GenerateRoute: GenerateRoute,
@@ -2060,6 +2110,7 @@ const rootRouteChildren: RootRouteChildren = {
   AttemptIdRoute: AttemptIdRoute,
   EvaluateAttemptIdRoute: EvaluateAttemptIdRoute,
   SummaryWeeklyRoute: SummaryWeeklyRoute,
+  TrackerStudentIdRoute: TrackerStudentIdRoute,
   ApiAdminAiUsageRoute: ApiAdminAiUsageRoute,
   ApiAdminProductFunnelRoute: ApiAdminProductFunnelRoute,
   ApiAdminSyllabusFidelityRoute: ApiAdminSyllabusFidelityRoute,
@@ -2075,7 +2126,7 @@ const rootRouteChildren: RootRouteChildren = {
   ApiPrivacyDeleteRoute: ApiPrivacyDeleteRoute,
   ApiPrivacyExportRoute: ApiPrivacyExportRoute,
   ApiSyllabusChaptersRoute: ApiSyllabusChaptersRouteWithChildren,
-  ApiSyllabusConceptsRoute: ApiSyllabusConceptsRoute,
+  ApiSyllabusConceptsRoute: ApiSyllabusConceptsRouteWithChildren,
   ApiSyllabusSubjectsRoute: ApiSyllabusSubjectsRoute,
   ApiTrackerStudentIdRoute: ApiTrackerStudentIdRoute,
   EvaluationIdReportRoute: EvaluationIdReportRoute,

@@ -99,16 +99,44 @@ export const conceptStatusRepository = {
     studentId: string,
     filters: { subjectId?: string; status?: ConceptStatusValue },
   ) {
+    // F064's AC wants "last tested date" in the table -- concept_status has no such column
+    // (it's mutable current-state only), but concept_mastery is the append-only per-evaluation
+    // ledger (date + concept_id on every confirmed evaluation), so the most recent row per
+    // concept there is exactly that.
     let query = db
       .selectFrom('concept_status')
       .innerJoin('concepts', 'concepts.id', 'concept_status.concept_id')
       .innerJoin('chapters', 'chapters.id', 'concepts.chapter_id')
+      .innerJoin('subjects', 'subjects.id', 'chapters.subject_id')
+      .leftJoin(
+        (eb) =>
+          eb
+            .selectFrom('concept_mastery')
+            .select([
+              'concept_id',
+              // Cast to text in SQL rather than letting node-postgres parse the DATE column into
+              // a JS Date -- pg's DATE parsing applies the server process's local timezone, which
+              // silently shifts the calendar day by one once re-serialised with .toISOString()
+              // (observed: a 2026-09-19 row round-tripping as "2026-09-18T18:30:00.000Z" on an
+              // IST host). A plain 'YYYY-MM-DD' string sidesteps that entirely.
+              (eb2) =>
+                sql<string>`to_char(max(${eb2.ref('date')}), 'YYYY-MM-DD')`.as(
+                  'last_tested_date',
+                ),
+            ])
+            .where('student_id', '=', studentId)
+            .groupBy('concept_id')
+            .as('last_tested'),
+        (join) =>
+          join.onRef('last_tested.concept_id', '=', 'concept_status.concept_id'),
+      )
       .select([
         'concept_status.student_id',
         'concept_status.concept_id',
         'concepts.code as concept_code',
         'concepts.name as concept_name',
         'chapters.subject_id',
+        'subjects.name as subject_name',
         'concept_status.attempts',
         'concept_status.avg_ratio',
         'concept_status.last_ratio',
@@ -116,6 +144,7 @@ export const conceptStatusRepository = {
         'concept_status.status',
         'concept_status.flagged_at',
         'concept_status.next_retest_at',
+        'last_tested.last_tested_date',
       ])
       .where('concept_status.student_id', '=', studentId)
 

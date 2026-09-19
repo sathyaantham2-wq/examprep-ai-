@@ -52,6 +52,11 @@ export type BuildRemediationPackResult =
       // recent wrong answers on this concept were dominated by that error type, not a genuine
       // knowledge gap -- the caller should present it as a careful-reading drill, not a lesson.
       drill_kind: 'concept_refresher' | 'reading_discipline'
+      // F124: curated per-concept remediation video, admin-set via PATCH /api/concepts/:id.
+      // null on most concepts until curated -- shown only when both are set (F072/F066's "no red
+      // shaming, positive framing" ethos extends to never implying "no video = you're behind").
+      video_url: string | null
+      video_title: string | null
     }
   | {
       ok: false
@@ -204,6 +209,8 @@ export async function buildRemediationPack(
     drill_kind: isReadingDisciplinePack
       ? 'reading_discipline'
       : 'concept_refresher',
+    video_url: concept.video_url,
+    video_title: concept.video_title,
   }
 }
 
@@ -218,6 +225,8 @@ export interface TaskView {
     options: Array<{ label: string; text: string }>
   }>
   drill_kind: 'concept_refresher' | 'reading_discipline'
+  video_url: string | null
+  video_title: string | null
 }
 
 /**
@@ -232,8 +241,10 @@ export async function loadTaskView(
     examples: unknown
     question_ids: Array<string>
     trigger_reason: string
+    concept_id: string
   },
 ): Promise<TaskView> {
+  const concept = await conceptsRepository.findById(db, task.concept_id)
   const questions =
     task.question_ids.length > 0
       ? await db
@@ -269,6 +280,8 @@ export async function loadTaskView(
       task.trigger_reason === READING_DISCIPLINE_TRIGGER_REASON
         ? 'reading_discipline'
         : 'concept_refresher',
+    video_url: concept?.video_url ?? null,
+    video_title: concept?.video_title ?? null,
   }
 }
 

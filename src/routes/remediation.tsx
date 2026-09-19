@@ -62,6 +62,8 @@ interface ConceptTaskDetail {
   examples: Array<WorkedExample>
   questions: Array<DrillQuestion>
   drill_kind: 'concept_refresher' | 'reading_discipline'
+  video_url: string | null
+  video_title: string | null
 }
 
 interface HabitDrillDetail {
@@ -337,8 +339,18 @@ function RemediationHub() {
                     : 'Refresher'}
                 </CardTitle>
               </CardHeader>
-              <CardContent>
+              <CardContent className="space-y-2">
                 <p className="text-body">{conceptDetail.refresher}</p>
+                {conceptDetail.video_url && (
+                  <a
+                    href={conceptDetail.video_url}
+                    target="_blank"
+                    rel="noreferrer"
+                    className="text-small text-primary inline-block underline-offset-4 hover:underline"
+                  >
+                    Watch: {conceptDetail.video_title ?? 'concept video'}
+                  </a>
+                )}
               </CardContent>
             </Card>
           )}

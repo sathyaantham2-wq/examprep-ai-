@@ -215,6 +215,14 @@ function ParentDashboard() {
           </p>
         </div>
         <div className="no-print flex items-center gap-4">
+          {studentId && (
+            <a
+              href={`/tracker/${studentId}`}
+              className="text-small text-primary underline-offset-4 hover:underline"
+            >
+              Concept tracker
+            </a>
+          )}
           <a
             href="/onboarding"
             className="text-small text-primary underline-offset-4 hover:underline"

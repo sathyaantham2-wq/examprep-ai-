@@ -175,6 +175,8 @@ export interface Concepts {
   prerequisite_concept_ids: Generated<string[]>;
   rule: string | null;
   target_question_count: Generated<number>;
+  video_title: string | null;
+  video_url: string | null;
 }
 
 export interface ConceptStatus {
