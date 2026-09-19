@@ -66,6 +66,12 @@ interface SessionRecap {
   pending_items: Array<PendingItem>
 }
 
+interface NeedsEvaluation {
+  attempt_id: string
+  paper_title: string
+  submitted_at: string
+}
+
 const PRIORITY_ORDER: Record<string, number> = {
   Priority: 0,
   Weak: 1,
@@ -224,6 +230,37 @@ export async function buildParentDashboard(db: Db, studentId: string) {
     .orderBy('evaluations.confirmed_at', 'desc')
     .executeTakeFirst()
 
+  // F123 follow-on: the same missing-discoverability pattern as the papers-to-attempt list, one
+  // step further down the pipeline -- a submitted attempt with no confirmed evaluation had no UI
+  // anywhere pointing a parent/admin at /evaluate/:attemptId, discovered live right after the
+  // papers list shipped. "Not yet evaluated" means no CONFIRMED evaluation exists -- an
+  // unconfirmed AI-proposed evaluation still needs a human to finish it, so it counts too.
+  const needsEvaluationRows = await db
+    .selectFrom('attempts')
+    .leftJoin('evaluations', (join) =>
+      join
+        .onRef('evaluations.attempt_id', '=', 'attempts.id')
+        .on('evaluations.confirmed_at', 'is not', null),
+    )
+    .innerJoin('papers', 'papers.id', 'attempts.paper_id')
+    .select([
+      'attempts.id as attempt_id',
+      'papers.title as paper_title',
+      'attempts.submitted_at',
+    ])
+    .where('attempts.student_id', '=', studentId)
+    .where('attempts.status', '=', 'submitted')
+    .where('evaluations.id', 'is', null)
+    .orderBy('attempts.submitted_at', 'asc')
+    .execute()
+  const needsEvaluation: Array<NeedsEvaluation> = needsEvaluationRows.map(
+    (row) => ({
+      attempt_id: row.attempt_id,
+      paper_title: row.paper_title,
+      submitted_at: row.submitted_at!.toISOString(),
+    }),
+  )
+
   const allStatuses = await conceptStatusRepository.listForStudentWithFilter(
     db,
     studentId,
@@ -279,5 +316,6 @@ export async function buildParentDashboard(db: Db, studentId: string) {
     concept_status_distribution: conceptStatusDistribution,
     pattern_frequency: patternFrequency,
     recap,
+    needs_evaluation: needsEvaluation,
   }
 }

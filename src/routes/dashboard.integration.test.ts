@@ -639,3 +639,272 @@ describe('cross-subject pattern roll-up on the dashboard (F065)', () => {
     expect(p1.count).toBe(2)
   })
 })
+
+/**
+ * F123 follow-on: a submitted-but-unevaluated attempt had no UI anywhere pointing a parent/admin
+ * at /evaluate/:attemptId -- discovered live right after the papers-to-attempt list shipped.
+ * needs_evaluation must include a submitted attempt with no evaluation row at all, and must
+ * exclude one whose evaluation has already been confirmed.
+ */
+describe('needs_evaluation on the parent dashboard (F123 follow-on)', () => {
+  let db: Db
+  let parent: TestSession
+  let student: TestSession
+  let studentId: string
+  let blueprintId: string
+  let conceptId: string
+  let chapterId: string
+  const questionIds: Array<string> = []
+  const paperIds: Array<string> = []
+  const attemptIds: Array<string> = []
+  let unevaluatedAttemptId: string
+  let confirmedPaperTitle: string
+
+  beforeAll(async () => {
+    db = createDb()
+    parent = await createParentSession('dash-needs-eval')
+
+    const studentResponse = await handlerFor(
+      StudentsRoute,
+      'POST',
+    )({
+      request: request(parent.cookie, {
+        name: 'Needs Eval Kid',
+        class: 7,
+        board: 'CBSE',
+        consent_accepted: true,
+      }),
+    })
+    studentId = (await studentResponse.json()).id
+    student = await createStudentSession(
+      'dash-needs-eval-student',
+      parent.householdId,
+      studentId,
+    )
+
+    const subject = await db
+      .selectFrom('subjects')
+      .selectAll()
+      .where('code', '=', 'MATH-SEED')
+      .executeTakeFirstOrThrow()
+    const chapter = await db
+      .selectFrom('chapters')
+      .selectAll()
+      .where('subject_id', '=', subject.id)
+      .where('chapter_no', '=', 1)
+      .executeTakeFirstOrThrow()
+    chapterId = chapter.id
+
+    const concept = await conceptsRepository.insert(db, {
+      chapter_id: chapter.id,
+      board: 'CBSE',
+      class: 7,
+      code: `C7M-1.DASHNEEDSEVAL-${Date.now()}`,
+      name: 'Needs eval fixture concept',
+      difficulty_base: 'Easy',
+    })
+    conceptId = concept.id
+
+    for (const suffix of ['A', 'B']) {
+      const question = await createQuestion(db, {
+        concept_id: concept.id,
+        board: 'CBSE',
+        class: 7,
+        bloom: 'Remember',
+        difficulty: 'Easy',
+        marks: 1,
+        type: 'mcq',
+        text: `Needs eval fixture question ${suffix}`,
+        answer: '1',
+        created_by: 'dash-needs-eval-fixture',
+        options: [
+          { label: 'A', text: '1', is_correct: true, order_index: 1 },
+          { label: 'B', text: '2', is_correct: false, order_index: 2 },
+        ],
+      })
+      questionIds.push(question.id)
+    }
+
+    const blueprint = await blueprintsRepository.insert(db, {
+      subject_id: subject.id,
+      board: 'CBSE',
+      class: 7,
+      name: 'Needs eval fixture blueprint',
+      duration_min: 10,
+      total_marks: 1,
+      sections: JSON.stringify([
+        {
+          name: 'Section A',
+          marks_per_question: 1,
+          count: 1,
+          bloom_allowed: ['Remember'],
+        },
+      ]),
+      bloom_targets: JSON.stringify({
+        Remember: 100,
+        Understand: 0,
+        Apply: 0,
+        Analyse: 0,
+        Evaluate: 0,
+        Create: 0,
+      }),
+    })
+    blueprintId = blueprint.id
+
+    // Paper 1: submitted, left unevaluated -- this is the one needs_evaluation must surface.
+    const generate1 = await handlerFor(
+      GenerateRoute,
+      'POST',
+    )({
+      request: request(parent.cookie, {
+        student_id: studentId,
+        blueprint_id: blueprintId,
+        chapter_ids: [chapterId],
+      }),
+    })
+    const generated1 = await generate1.json()
+    paperIds.push(generated1.paper.id)
+    confirmedPaperTitle = generated1.paper.title
+    const attempt1 = await handlerFor(
+      AttemptsRoute,
+      'POST',
+    )({
+      request: request(student.cookie, {
+        paper_id: generated1.paper.id,
+        mode: 'online',
+      }),
+    })
+    unevaluatedAttemptId = (await attempt1.json()).id
+    attemptIds.push(unevaluatedAttemptId)
+    await handlerFor(
+      AttemptAnswerRoute,
+      'PATCH',
+    )({
+      request: request(student.cookie, {
+        paper_question_id: generated1.paperQuestions[0].id,
+        selected_option: 'A',
+      }),
+      params: { id: unevaluatedAttemptId },
+    })
+    await handlerFor(
+      AttemptSubmitRoute,
+      'POST',
+    )({
+      request: request(student.cookie, {}),
+      params: { id: unevaluatedAttemptId },
+    })
+
+    // Paper 2: submitted AND confirmed -- must NOT appear in needs_evaluation.
+    const generate2 = await handlerFor(
+      GenerateRoute,
+      'POST',
+    )({
+      request: request(parent.cookie, {
+        student_id: studentId,
+        blueprint_id: blueprintId,
+        chapter_ids: [chapterId],
+      }),
+    })
+    const generated2 = await generate2.json()
+    paperIds.push(generated2.paper.id)
+    const attempt2 = await handlerFor(
+      AttemptsRoute,
+      'POST',
+    )({
+      request: request(student.cookie, {
+        paper_id: generated2.paper.id,
+        mode: 'online',
+      }),
+    })
+    const attemptId2 = (await attempt2.json()).id
+    attemptIds.push(attemptId2)
+    await handlerFor(
+      AttemptAnswerRoute,
+      'PATCH',
+    )({
+      request: request(student.cookie, {
+        paper_question_id: generated2.paperQuestions[0].id,
+        selected_option: 'A',
+      }),
+      params: { id: attemptId2 },
+    })
+    await handlerFor(
+      AttemptSubmitRoute,
+      'POST',
+    )({
+      request: request(student.cookie, {}),
+      params: { id: attemptId2 },
+    })
+    const eval2 = await handlerFor(
+      EvaluationsRoute,
+      'POST',
+    )({ request: request(parent.cookie, { attempt_id: attemptId2 }) })
+    const evaluation2 = await eval2.json()
+    await handlerFor(
+      EvaluationConfirmRoute,
+      'POST',
+    )({
+      request: request(parent.cookie, {}),
+      params: { id: evaluation2.evaluation.id },
+    })
+  })
+
+  afterAll(async () => {
+    if (attemptIds.length > 0) {
+      await db
+        .deleteFrom('attempt_answers')
+        .where('attempt_id', 'in', attemptIds)
+        .execute()
+    }
+    await db
+      .deleteFrom('evaluation_items')
+      .where(
+        'evaluation_id',
+        'in',
+        db.selectFrom('evaluations').select('id').where('attempt_id', 'in', attemptIds),
+      )
+      .execute()
+    await db
+      .deleteFrom('evaluations')
+      .where('attempt_id', 'in', attemptIds)
+      .execute()
+    if (attemptIds.length > 0) {
+      await db.deleteFrom('attempts').where('id', 'in', attemptIds).execute()
+    }
+    if (paperIds.length > 0) {
+      await db
+        .deleteFrom('paper_questions')
+        .where('paper_id', 'in', paperIds)
+        .execute()
+      await db.deleteFrom('papers').where('id', 'in', paperIds).execute()
+    }
+    await db
+      .deleteFrom('households')
+      .where('id', '=', parent.householdId)
+      .execute()
+    await db.deleteFrom('blueprints').where('id', '=', blueprintId).execute()
+    if (questionIds.length > 0) {
+      await db.deleteFrom('questions').where('id', 'in', questionIds).execute()
+    }
+    await db.deleteFrom('concepts').where('id', '=', conceptId).execute()
+    await db.destroy()
+  })
+
+  it('lists the submitted-unevaluated attempt and excludes the confirmed one', async () => {
+    const response = await handlerFor(
+      DashboardRoute,
+      'GET',
+    )({
+      request: request(parent.cookie),
+      params: { studentId },
+    })
+    expect(response.status).toBe(200)
+    const dashboard = await response.json()
+
+    const needsEval: Array<{ attempt_id: string; paper_title: string }> =
+      dashboard.needs_evaluation
+    expect(needsEval).toHaveLength(1)
+    expect(needsEval[0].attempt_id).toBe(unevaluatedAttemptId)
+    expect(needsEval[0].paper_title).toBe(confirmedPaperTitle)
+  })
+})

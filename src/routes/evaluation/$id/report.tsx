@@ -70,7 +70,9 @@ function Report() {
 
   useEffect(() => {
     if (isPending) return
-    if (!session || role !== 'parent') {
+    // GET /api/evaluations/:id/report has always accepted 'parent' or 'admin' -- same
+    // admin-exclusion gap fixed elsewhere this session (onboarding, generate, home, evaluate).
+    if (!session || (role !== 'parent' && role !== 'admin')) {
       navigate({ to: '/' })
       return
     }
@@ -91,7 +93,7 @@ function Report() {
       .catch(() => setError('Could not load this report.'))
   }, [isPending, session, role, navigate, id])
 
-  if (isPending || !session || role !== 'parent') {
+  if (isPending || !session || (role !== 'parent' && role !== 'admin')) {
     return <div className="p-8 text-body text-muted-foreground">Loading…</div>
   }
   if (error) {

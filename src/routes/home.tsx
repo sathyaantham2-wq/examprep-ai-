@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react'
 import { createFileRoute, useNavigate } from '@tanstack/react-router'
+import { Button } from '../components/ui/button'
 import {
   Card,
   CardContent,
@@ -75,11 +76,18 @@ interface SessionRecap {
   pending_items: Array<PendingItem>
 }
 
+interface NeedsEvaluation {
+  attempt_id: string
+  paper_title: string
+  submitted_at: string
+}
+
 interface Dashboard {
   subjects: Array<SubjectCard>
   concept_status_distribution: Record<string, number>
   pattern_frequency: Array<PatternFrequency>
   recap: SessionRecap
+  needs_evaluation: Array<NeedsEvaluation>
 }
 
 interface DailyNudge {
@@ -216,6 +224,36 @@ function ParentDashboard() {
           <ThemeToggle />
         </div>
       </div>
+
+      {dashboard && dashboard.needs_evaluation.length > 0 && (
+        <Card className="mb-4">
+          <CardHeader>
+            <CardTitle className="text-h3">Needs evaluation</CardTitle>
+            <CardDescription>
+              Submitted, waiting on you to confirm marks before it counts
+              toward mastery.
+            </CardDescription>
+          </CardHeader>
+          <CardContent className="space-y-3">
+            {dashboard.needs_evaluation.map((e) => (
+              <div
+                key={e.attempt_id}
+                className="flex items-center justify-between rounded-md border p-3"
+              >
+                <div>
+                  <p className="text-body">{e.paper_title}</p>
+                  <p className="text-small text-muted-foreground">
+                    Submitted {new Date(e.submitted_at).toLocaleDateString()}
+                  </p>
+                </div>
+                <a href={`/evaluate/${e.attempt_id}`}>
+                  <Button size="sm">Evaluate</Button>
+                </a>
+              </div>
+            ))}
+          </CardContent>
+        </Card>
+      )}
 
       {students !== null && students.length === 0 && (
         <Card>

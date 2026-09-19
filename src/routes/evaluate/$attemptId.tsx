@@ -116,7 +116,10 @@ function Evaluate() {
 
   useEffect(() => {
     if (isPending) return
-    if (!session || role !== 'parent') {
+    // Every /api/evaluations* route this screen calls has always accepted 'parent' or 'admin' --
+    // this guard excluding admin was the same gap as /onboarding, /generate, /home (fixed
+    // 2026-09-18/19): an admin household had no UI path to evaluate a submitted attempt at all.
+    if (!session || (role !== 'parent' && role !== 'admin')) {
       navigate({ to: '/' })
       return
     }
@@ -298,7 +301,7 @@ function Evaluate() {
     }
   }
 
-  if (isPending || !session || role !== 'parent') {
+  if (isPending || !session || (role !== 'parent' && role !== 'admin')) {
     return <div className="p-8 text-body text-muted-foreground">Loading…</div>
   }
   if (loadError) {
