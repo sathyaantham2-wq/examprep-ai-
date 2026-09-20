@@ -59,7 +59,7 @@ function WeeklySummaryScreen() {
 
   useEffect(() => {
     if (isPending) return
-    if (!session || (role !== 'parent' && role !== 'admin')) {
+    if (!session || (role !== 'parent' && role !== 'teacher' && role !== 'admin')) {
       navigate({ to: '/' })
       return
     }
@@ -83,7 +83,7 @@ function WeeklySummaryScreen() {
       .finally(() => setLoading(false))
   }, [studentId])
 
-  if (isPending || !session || (role !== 'parent' && role !== 'admin')) {
+  if (isPending || !session || (role !== 'parent' && role !== 'teacher' && role !== 'admin')) {
     return <div className="p-8 text-body text-muted-foreground">Loading…</div>
   }
 

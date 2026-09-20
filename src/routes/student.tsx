@@ -10,7 +10,7 @@ import {
 } from '../components/ui/card'
 import { MasteryRing } from '../components/mastery-ring'
 import { ThemeToggle } from '../components/theme-toggle'
-import { useSession } from '../lib/auth-client'
+import { signOut, useSession } from '../lib/auth-client'
 
 export const Route = createFileRoute('/student')({ component: StudentHome })
 
@@ -30,6 +30,17 @@ interface StudentDashboard {
   streak_days: number
   today_focus: FocusConcept | null
   recent_improvements: Array<FocusConcept>
+}
+
+interface IncomingInvite {
+  id: string
+  guardian_name: string
+  guardian_role: string
+}
+
+interface SharingState {
+  invites: Array<IncomingInvite>
+  linkedTo: { guardian_name: string; guardian_role: string } | null
 }
 
 interface PaperListItem {
@@ -58,6 +69,8 @@ function StudentHome() {
   const [dashboard, setDashboard] = useState<StudentDashboard | null>(null)
   const [loading, setLoading] = useState(true)
   const [papers, setPapers] = useState<Array<PaperListItem> | null>(null)
+  const [sharing, setSharing] = useState<SharingState | null>(null)
+  const [sharingError, setSharingError] = useState<string | null>(null)
   const [startError, setStartError] = useState<string | null>(null)
   const [startingId, setStartingId] = useState<string | null>(null)
 
@@ -74,7 +87,35 @@ function StudentHome() {
     fetch('/api/papers')
       .then((r) => r.json())
       .then(setPapers)
+    void loadSharing()
   }, [isPending, session, role, navigate])
+
+  async function loadSharing() {
+    const response = await fetch('/api/guardian-invites/incoming')
+    if (response.ok) setSharing(await response.json())
+  }
+
+  // Approving lets a parent or teacher see her progress; she can stop it at any time.
+  async function answerInvite(id: string, approve: boolean) {
+    setSharingError(null)
+    const response = await fetch(`/api/guardian-invites/${id}/respond`, {
+      method: 'POST',
+      headers: { 'content-type': 'application/json' },
+      body: JSON.stringify({ approve }),
+    })
+    if (!response.ok) {
+      const body = await response.json().catch(() => null)
+      setSharingError(body?.error ?? 'Could not answer this request.')
+    }
+    await loadSharing()
+  }
+
+  async function stopSharing() {
+    setSharingError(null)
+    const response = await fetch('/api/guardian-invites/leave', { method: 'POST' })
+    if (!response.ok) setSharingError('Could not stop sharing.')
+    await loadSharing()
+  }
 
   // F123: a paper with no attempt yet needs one created (POST /api/attempts) before there's an
   // id to navigate to; a paper already in_progress just resumes at its existing attempt id --
@@ -118,10 +159,77 @@ function StudentHome() {
               : 'Practice today to start a streak.'}
           </p>
         </div>
-        <div className="no-print">
+        <div className="no-print flex items-center gap-2">
+          <a href="/generate">
+            <Button size="sm">Make a paper</Button>
+          </a>
           <ThemeToggle />
+          <Button
+            variant="ghost"
+            size="sm"
+            onClick={() => signOut().then(() => navigate({ to: '/' }))}
+          >
+            Sign out
+          </Button>
         </div>
       </div>
+
+      {sharing && (sharing.invites.length > 0 || sharing.linkedTo) && (
+        <Card className="mb-4">
+          <CardHeader>
+            <CardTitle className="text-h3">Sharing your progress</CardTitle>
+            <CardDescription>
+              Only people you approve can see your progress. You can stop at any
+              time.
+            </CardDescription>
+          </CardHeader>
+          <CardContent className="space-y-3">
+            {sharingError && (
+              <p className="text-small text-destructive" role="alert">
+                {sharingError}
+              </p>
+            )}
+            {sharing.linkedTo && (
+              <div className="flex items-center justify-between rounded-md border p-3">
+                <p className="text-body">
+                  {sharing.linkedTo.guardian_name} (
+                  {sharing.linkedTo.guardian_role}) can see your progress.
+                </p>
+                <Button
+                  size="sm"
+                  variant="outline"
+                  onClick={() => void stopSharing()}
+                >
+                  Stop sharing
+                </Button>
+              </div>
+            )}
+            {sharing.invites.map((inv) => (
+              <div
+                key={inv.id}
+                className="flex items-center justify-between gap-3 rounded-md border p-3"
+              >
+                <p className="text-body">
+                  {inv.guardian_name} ({inv.guardian_role}) wants to follow your
+                  progress.
+                </p>
+                <div className="flex gap-2">
+                  <Button size="sm" onClick={() => void answerInvite(inv.id, true)}>
+                    Approve
+                  </Button>
+                  <Button
+                    size="sm"
+                    variant="outline"
+                    onClick={() => void answerInvite(inv.id, false)}
+                  >
+                    Decline
+                  </Button>
+                </div>
+              </div>
+            ))}
+          </CardContent>
+        </Card>
+      )}
 
       {papers && papers.length > 0 && (
         <Card className="mb-4">

@@ -4,7 +4,7 @@
 // generated Database type real literal types instead of plain `string`. Keep this file in sync
 // with the CHECK constraints by hand when a migration changes one.
 
-export type UserRole = 'parent' | 'student' | 'admin'
+export type UserRole = 'parent' | 'student' | 'teacher' | 'admin'
 export type ScopeKind = 'IN' | 'OUT'
 export type DifficultyTier = 'Easy' | 'Hard' | 'Hardest'
 export type BloomLevel =

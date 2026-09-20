@@ -10,7 +10,7 @@ export const Route = createFileRoute('/api/households/me')({
   server: {
     handlers: {
       GET: async ({ request }) => {
-        const auth = await requireRole(request, 'parent', 'admin')
+        const auth = await requireRole(request, 'parent', 'teacher', 'admin')
         if (auth instanceof Response) return auth
 
         const db = getSharedDb()

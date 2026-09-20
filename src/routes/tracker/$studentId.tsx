@@ -85,7 +85,7 @@ function ConceptTracker() {
 
   useEffect(() => {
     if (isPending) return
-    if (!session || (role !== 'parent' && role !== 'admin')) {
+    if (!session || (role !== 'parent' && role !== 'teacher' && role !== 'admin')) {
       navigate({ to: '/' })
       return
     }
@@ -178,7 +178,7 @@ function ConceptTracker() {
     )
   }
 
-  if (isPending || !session || (role !== 'parent' && role !== 'admin')) {
+  if (isPending || !session || (role !== 'parent' && role !== 'teacher' && role !== 'admin')) {
     return <div className="p-8 text-body text-muted-foreground">Loading…</div>
   }
 

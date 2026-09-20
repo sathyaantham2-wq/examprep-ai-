@@ -76,12 +76,16 @@ function GeneratePaper() {
     // POST /api/papers/generate accepts 'student'/'parent'/'admin' -- this screen's own guard
     // excluding admin was the same gap as /onboarding's (fixed 2026-09-18): an admin household
     // had no UI path to generate a paper at all, only a direct API/script call.
-    if (!session || (role !== 'parent' && role !== 'admin')) {
+    if (!session || (role !== 'parent' && role !== 'admin' && role !== 'student')) {
       navigate({ to: '/' })
       return
     }
-    fetch('/api/students')
+    // A student makes papers for herself: her own profile is the only "student" on the page.
+    fetch(role === 'student' ? '/api/students/me' : '/api/students')
       .then((r) => r.json())
+      .then((data: Array<Student> | Student) =>
+        Array.isArray(data) ? data : [data],
+      )
       .then((data: Array<Student>) => {
         setStudents(data)
         // The common case is one child -- picking her is not a real decision, so it shouldn't
@@ -163,14 +167,18 @@ function GeneratePaper() {
       // Straight to the paper's page, where the questions and the whole attempt -> review ->
       // report -> dashboard loop are laid out; an empty paper stays here with its explanation.
       if (body.paperQuestions.length > 0) {
-        await navigate({ to: '/paper/$id', params: { id: body.paper.id } })
+        // A student goes back to her own page, where the new paper is waiting under "Papers to
+        // attempt"; the parent-facing paper page holds the answer key and is not hers to open.
+        await (role === 'student'
+          ? navigate({ to: '/student' })
+          : navigate({ to: '/paper/$id', params: { id: body.paper.id } }))
       }
     } finally {
       setSubmitting(false)
     }
   }
 
-  if (isPending || !session || (role !== 'parent' && role !== 'admin')) {
+  if (isPending || !session || (role !== 'parent' && role !== 'admin' && role !== 'student')) {
     return <div className="p-8 text-body text-muted-foreground">Loading…</div>
   }
 

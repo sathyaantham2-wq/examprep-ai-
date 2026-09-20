@@ -30,6 +30,7 @@ import { Route as ApiBlueprintsRouteImport } from './routes/api/blueprints'
 import { Route as ApiErrorsRouteImport } from './routes/api/errors'
 import { Route as ApiEvaluationsRouteImport } from './routes/api/evaluations'
 import { Route as ApiExamCountdownRouteImport } from './routes/api/exam-countdown'
+import { Route as ApiGuardianInvitesRouteImport } from './routes/api/guardian-invites'
 import { Route as ApiHabitDrillsRouteImport } from './routes/api/habit-drills'
 import { Route as ApiPapersRouteImport } from './routes/api/papers'
 import { Route as ApiQuestionsRouteImport } from './routes/api/questions'
@@ -51,6 +52,8 @@ import { Route as ApiCronDailyNudgeRouteImport } from './routes/api/cron/daily-n
 import { Route as ApiCronWeeklySummaryRouteImport } from './routes/api/cron/weekly-summary'
 import { Route as ApiDashboardStudentIdRouteImport } from './routes/api/dashboard/$studentId'
 import { Route as ApiEvaluationsIdRouteImport } from './routes/api/evaluations/$id'
+import { Route as ApiGuardianInvitesIncomingRouteImport } from './routes/api/guardian-invites/incoming'
+import { Route as ApiGuardianInvitesLeaveRouteImport } from './routes/api/guardian-invites/leave'
 import { Route as ApiHabitDrillsIdRouteImport } from './routes/api/habit-drills/$id'
 import { Route as ApiHabitDrillsGenerateRouteImport } from './routes/api/habit-drills/generate'
 import { Route as ApiHouseholdsMeRouteImport } from './routes/api/households/me'
@@ -70,6 +73,7 @@ import { Route as ApiQuestionsGenerateBatchRouteImport } from './routes/api/ques
 import { Route as ApiRemediationIdRouteImport } from './routes/api/remediation/$id'
 import { Route as ApiRemediationGenerateRouteImport } from './routes/api/remediation/generate'
 import { Route as ApiStudentsIdRouteImport } from './routes/api/students/$id'
+import { Route as ApiStudentsMeRouteImport } from './routes/api/students/me'
 import { Route as ApiStudyPlanGenerateRouteImport } from './routes/api/study-plan/generate'
 import { Route as ApiSyllabusChaptersRouteImport } from './routes/api/syllabus/chapters'
 import { Route as ApiSyllabusConceptsRouteImport } from './routes/api/syllabus/concepts'
@@ -81,6 +85,8 @@ import { Route as ApiAttemptsIdSubmitRouteImport } from './routes/api/attempts/$
 import { Route as ApiEvaluationsIdConfirmRouteImport } from './routes/api/evaluations/$id/confirm'
 import { Route as ApiEvaluationsIdHabitsRouteImport } from './routes/api/evaluations/$id/habits'
 import { Route as ApiEvaluationsIdReportRouteImport } from './routes/api/evaluations/$id/report'
+import { Route as ApiGuardianInvitesIdRespondRouteImport } from './routes/api/guardian-invites/$id/respond'
+import { Route as ApiGuardianInvitesIdRevokeRouteImport } from './routes/api/guardian-invites/$id/revoke'
 import { Route as ApiHabitDrillsIdAttemptRouteImport } from './routes/api/habit-drills/$id/attempt'
 import { Route as ApiHouseholdsUsersIdRouteImport } from './routes/api/households/users/$id'
 import { Route as ApiPapersIdCoverageRouteImport } from './routes/api/papers/$id/coverage'
@@ -206,6 +212,11 @@ const ApiExamCountdownRoute = ApiExamCountdownRouteImport.update({
   path: '/api/exam-countdown',
   getParentRoute: () => rootRouteImport,
 } as any)
+const ApiGuardianInvitesRoute = ApiGuardianInvitesRouteImport.update({
+  id: '/api/guardian-invites',
+  path: '/api/guardian-invites',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const ApiHabitDrillsRoute = ApiHabitDrillsRouteImport.update({
   id: '/api/habit-drills',
   path: '/api/habit-drills',
@@ -312,6 +323,17 @@ const ApiEvaluationsIdRoute = ApiEvaluationsIdRouteImport.update({
   path: '/$id',
   getParentRoute: () => ApiEvaluationsRoute,
 } as any)
+const ApiGuardianInvitesIncomingRoute =
+  ApiGuardianInvitesIncomingRouteImport.update({
+    id: '/incoming',
+    path: '/incoming',
+    getParentRoute: () => ApiGuardianInvitesRoute,
+  } as any)
+const ApiGuardianInvitesLeaveRoute = ApiGuardianInvitesLeaveRouteImport.update({
+  id: '/leave',
+  path: '/leave',
+  getParentRoute: () => ApiGuardianInvitesRoute,
+} as any)
 const ApiHabitDrillsIdRoute = ApiHabitDrillsIdRouteImport.update({
   id: '/$id',
   path: '/$id',
@@ -410,6 +432,11 @@ const ApiStudentsIdRoute = ApiStudentsIdRouteImport.update({
   path: '/$id',
   getParentRoute: () => ApiStudentsRoute,
 } as any)
+const ApiStudentsMeRoute = ApiStudentsMeRouteImport.update({
+  id: '/me',
+  path: '/me',
+  getParentRoute: () => ApiStudentsRoute,
+} as any)
 const ApiStudyPlanGenerateRoute = ApiStudyPlanGenerateRouteImport.update({
   id: '/generate',
   path: '/generate',
@@ -465,6 +492,18 @@ const ApiEvaluationsIdReportRoute = ApiEvaluationsIdReportRouteImport.update({
   path: '/report',
   getParentRoute: () => ApiEvaluationsIdRoute,
 } as any)
+const ApiGuardianInvitesIdRespondRoute =
+  ApiGuardianInvitesIdRespondRouteImport.update({
+    id: '/$id/respond',
+    path: '/$id/respond',
+    getParentRoute: () => ApiGuardianInvitesRoute,
+  } as any)
+const ApiGuardianInvitesIdRevokeRoute =
+  ApiGuardianInvitesIdRevokeRouteImport.update({
+    id: '/$id/revoke',
+    path: '/$id/revoke',
+    getParentRoute: () => ApiGuardianInvitesRoute,
+  } as any)
 const ApiHabitDrillsIdAttemptRoute = ApiHabitDrillsIdAttemptRouteImport.update({
   id: '/attempt',
   path: '/attempt',
@@ -593,6 +632,7 @@ export interface FileRoutesByFullPath {
   '/api/errors': typeof ApiErrorsRoute
   '/api/evaluations': typeof ApiEvaluationsRouteWithChildren
   '/api/exam-countdown': typeof ApiExamCountdownRoute
+  '/api/guardian-invites': typeof ApiGuardianInvitesRouteWithChildren
   '/api/habit-drills': typeof ApiHabitDrillsRouteWithChildren
   '/api/papers': typeof ApiPapersRouteWithChildren
   '/api/questions': typeof ApiQuestionsRouteWithChildren
@@ -614,6 +654,8 @@ export interface FileRoutesByFullPath {
   '/api/cron/weekly-summary': typeof ApiCronWeeklySummaryRoute
   '/api/dashboard/$studentId': typeof ApiDashboardStudentIdRoute
   '/api/evaluations/$id': typeof ApiEvaluationsIdRouteWithChildren
+  '/api/guardian-invites/incoming': typeof ApiGuardianInvitesIncomingRoute
+  '/api/guardian-invites/leave': typeof ApiGuardianInvitesLeaveRoute
   '/api/habit-drills/$id': typeof ApiHabitDrillsIdRouteWithChildren
   '/api/habit-drills/generate': typeof ApiHabitDrillsGenerateRoute
   '/api/households/me': typeof ApiHouseholdsMeRoute
@@ -633,6 +675,7 @@ export interface FileRoutesByFullPath {
   '/api/remediation/$id': typeof ApiRemediationIdRouteWithChildren
   '/api/remediation/generate': typeof ApiRemediationGenerateRoute
   '/api/students/$id': typeof ApiStudentsIdRouteWithChildren
+  '/api/students/me': typeof ApiStudentsMeRoute
   '/api/study-plan/generate': typeof ApiStudyPlanGenerateRoute
   '/api/syllabus/chapters': typeof ApiSyllabusChaptersRouteWithChildren
   '/api/syllabus/concepts': typeof ApiSyllabusConceptsRouteWithChildren
@@ -644,6 +687,8 @@ export interface FileRoutesByFullPath {
   '/api/evaluations/$id/confirm': typeof ApiEvaluationsIdConfirmRoute
   '/api/evaluations/$id/habits': typeof ApiEvaluationsIdHabitsRoute
   '/api/evaluations/$id/report': typeof ApiEvaluationsIdReportRouteWithChildren
+  '/api/guardian-invites/$id/respond': typeof ApiGuardianInvitesIdRespondRoute
+  '/api/guardian-invites/$id/revoke': typeof ApiGuardianInvitesIdRevokeRoute
   '/api/habit-drills/$id/attempt': typeof ApiHabitDrillsIdAttemptRoute
   '/api/households/users/$id': typeof ApiHouseholdsUsersIdRoute
   '/api/papers/$id/coverage': typeof ApiPapersIdCoverageRoute
@@ -686,6 +731,7 @@ export interface FileRoutesByTo {
   '/api/errors': typeof ApiErrorsRoute
   '/api/evaluations': typeof ApiEvaluationsRouteWithChildren
   '/api/exam-countdown': typeof ApiExamCountdownRoute
+  '/api/guardian-invites': typeof ApiGuardianInvitesRouteWithChildren
   '/api/habit-drills': typeof ApiHabitDrillsRouteWithChildren
   '/api/papers': typeof ApiPapersRouteWithChildren
   '/api/questions': typeof ApiQuestionsRouteWithChildren
@@ -707,6 +753,8 @@ export interface FileRoutesByTo {
   '/api/cron/weekly-summary': typeof ApiCronWeeklySummaryRoute
   '/api/dashboard/$studentId': typeof ApiDashboardStudentIdRoute
   '/api/evaluations/$id': typeof ApiEvaluationsIdRouteWithChildren
+  '/api/guardian-invites/incoming': typeof ApiGuardianInvitesIncomingRoute
+  '/api/guardian-invites/leave': typeof ApiGuardianInvitesLeaveRoute
   '/api/habit-drills/$id': typeof ApiHabitDrillsIdRouteWithChildren
   '/api/habit-drills/generate': typeof ApiHabitDrillsGenerateRoute
   '/api/households/me': typeof ApiHouseholdsMeRoute
@@ -726,6 +774,7 @@ export interface FileRoutesByTo {
   '/api/remediation/$id': typeof ApiRemediationIdRouteWithChildren
   '/api/remediation/generate': typeof ApiRemediationGenerateRoute
   '/api/students/$id': typeof ApiStudentsIdRouteWithChildren
+  '/api/students/me': typeof ApiStudentsMeRoute
   '/api/study-plan/generate': typeof ApiStudyPlanGenerateRoute
   '/api/syllabus/chapters': typeof ApiSyllabusChaptersRouteWithChildren
   '/api/syllabus/concepts': typeof ApiSyllabusConceptsRouteWithChildren
@@ -737,6 +786,8 @@ export interface FileRoutesByTo {
   '/api/evaluations/$id/confirm': typeof ApiEvaluationsIdConfirmRoute
   '/api/evaluations/$id/habits': typeof ApiEvaluationsIdHabitsRoute
   '/api/evaluations/$id/report': typeof ApiEvaluationsIdReportRouteWithChildren
+  '/api/guardian-invites/$id/respond': typeof ApiGuardianInvitesIdRespondRoute
+  '/api/guardian-invites/$id/revoke': typeof ApiGuardianInvitesIdRevokeRoute
   '/api/habit-drills/$id/attempt': typeof ApiHabitDrillsIdAttemptRoute
   '/api/households/users/$id': typeof ApiHouseholdsUsersIdRoute
   '/api/papers/$id/coverage': typeof ApiPapersIdCoverageRoute
@@ -780,6 +831,7 @@ export interface FileRoutesById {
   '/api/errors': typeof ApiErrorsRoute
   '/api/evaluations': typeof ApiEvaluationsRouteWithChildren
   '/api/exam-countdown': typeof ApiExamCountdownRoute
+  '/api/guardian-invites': typeof ApiGuardianInvitesRouteWithChildren
   '/api/habit-drills': typeof ApiHabitDrillsRouteWithChildren
   '/api/papers': typeof ApiPapersRouteWithChildren
   '/api/questions': typeof ApiQuestionsRouteWithChildren
@@ -801,6 +853,8 @@ export interface FileRoutesById {
   '/api/cron/weekly-summary': typeof ApiCronWeeklySummaryRoute
   '/api/dashboard/$studentId': typeof ApiDashboardStudentIdRoute
   '/api/evaluations/$id': typeof ApiEvaluationsIdRouteWithChildren
+  '/api/guardian-invites/incoming': typeof ApiGuardianInvitesIncomingRoute
+  '/api/guardian-invites/leave': typeof ApiGuardianInvitesLeaveRoute
   '/api/habit-drills/$id': typeof ApiHabitDrillsIdRouteWithChildren
   '/api/habit-drills/generate': typeof ApiHabitDrillsGenerateRoute
   '/api/households/me': typeof ApiHouseholdsMeRoute
@@ -820,6 +874,7 @@ export interface FileRoutesById {
   '/api/remediation/$id': typeof ApiRemediationIdRouteWithChildren
   '/api/remediation/generate': typeof ApiRemediationGenerateRoute
   '/api/students/$id': typeof ApiStudentsIdRouteWithChildren
+  '/api/students/me': typeof ApiStudentsMeRoute
   '/api/study-plan/generate': typeof ApiStudyPlanGenerateRoute
   '/api/syllabus/chapters': typeof ApiSyllabusChaptersRouteWithChildren
   '/api/syllabus/concepts': typeof ApiSyllabusConceptsRouteWithChildren
@@ -831,6 +886,8 @@ export interface FileRoutesById {
   '/api/evaluations/$id/confirm': typeof ApiEvaluationsIdConfirmRoute
   '/api/evaluations/$id/habits': typeof ApiEvaluationsIdHabitsRoute
   '/api/evaluations/$id/report': typeof ApiEvaluationsIdReportRouteWithChildren
+  '/api/guardian-invites/$id/respond': typeof ApiGuardianInvitesIdRespondRoute
+  '/api/guardian-invites/$id/revoke': typeof ApiGuardianInvitesIdRevokeRoute
   '/api/habit-drills/$id/attempt': typeof ApiHabitDrillsIdAttemptRoute
   '/api/households/users/$id': typeof ApiHouseholdsUsersIdRoute
   '/api/papers/$id/coverage': typeof ApiPapersIdCoverageRoute
@@ -875,6 +932,7 @@ export interface FileRouteTypes {
     | '/api/errors'
     | '/api/evaluations'
     | '/api/exam-countdown'
+    | '/api/guardian-invites'
     | '/api/habit-drills'
     | '/api/papers'
     | '/api/questions'
@@ -896,6 +954,8 @@ export interface FileRouteTypes {
     | '/api/cron/weekly-summary'
     | '/api/dashboard/$studentId'
     | '/api/evaluations/$id'
+    | '/api/guardian-invites/incoming'
+    | '/api/guardian-invites/leave'
     | '/api/habit-drills/$id'
     | '/api/habit-drills/generate'
     | '/api/households/me'
@@ -915,6 +975,7 @@ export interface FileRouteTypes {
     | '/api/remediation/$id'
     | '/api/remediation/generate'
     | '/api/students/$id'
+    | '/api/students/me'
     | '/api/study-plan/generate'
     | '/api/syllabus/chapters'
     | '/api/syllabus/concepts'
@@ -926,6 +987,8 @@ export interface FileRouteTypes {
     | '/api/evaluations/$id/confirm'
     | '/api/evaluations/$id/habits'
     | '/api/evaluations/$id/report'
+    | '/api/guardian-invites/$id/respond'
+    | '/api/guardian-invites/$id/revoke'
     | '/api/habit-drills/$id/attempt'
     | '/api/households/users/$id'
     | '/api/papers/$id/coverage'
@@ -968,6 +1031,7 @@ export interface FileRouteTypes {
     | '/api/errors'
     | '/api/evaluations'
     | '/api/exam-countdown'
+    | '/api/guardian-invites'
     | '/api/habit-drills'
     | '/api/papers'
     | '/api/questions'
@@ -989,6 +1053,8 @@ export interface FileRouteTypes {
     | '/api/cron/weekly-summary'
     | '/api/dashboard/$studentId'
     | '/api/evaluations/$id'
+    | '/api/guardian-invites/incoming'
+    | '/api/guardian-invites/leave'
     | '/api/habit-drills/$id'
     | '/api/habit-drills/generate'
     | '/api/households/me'
@@ -1008,6 +1074,7 @@ export interface FileRouteTypes {
     | '/api/remediation/$id'
     | '/api/remediation/generate'
     | '/api/students/$id'
+    | '/api/students/me'
     | '/api/study-plan/generate'
     | '/api/syllabus/chapters'
     | '/api/syllabus/concepts'
@@ -1019,6 +1086,8 @@ export interface FileRouteTypes {
     | '/api/evaluations/$id/confirm'
     | '/api/evaluations/$id/habits'
     | '/api/evaluations/$id/report'
+    | '/api/guardian-invites/$id/respond'
+    | '/api/guardian-invites/$id/revoke'
     | '/api/habit-drills/$id/attempt'
     | '/api/households/users/$id'
     | '/api/papers/$id/coverage'
@@ -1061,6 +1130,7 @@ export interface FileRouteTypes {
     | '/api/errors'
     | '/api/evaluations'
     | '/api/exam-countdown'
+    | '/api/guardian-invites'
     | '/api/habit-drills'
     | '/api/papers'
     | '/api/questions'
@@ -1082,6 +1152,8 @@ export interface FileRouteTypes {
     | '/api/cron/weekly-summary'
     | '/api/dashboard/$studentId'
     | '/api/evaluations/$id'
+    | '/api/guardian-invites/incoming'
+    | '/api/guardian-invites/leave'
     | '/api/habit-drills/$id'
     | '/api/habit-drills/generate'
     | '/api/households/me'
@@ -1101,6 +1173,7 @@ export interface FileRouteTypes {
     | '/api/remediation/$id'
     | '/api/remediation/generate'
     | '/api/students/$id'
+    | '/api/students/me'
     | '/api/study-plan/generate'
     | '/api/syllabus/chapters'
     | '/api/syllabus/concepts'
@@ -1112,6 +1185,8 @@ export interface FileRouteTypes {
     | '/api/evaluations/$id/confirm'
     | '/api/evaluations/$id/habits'
     | '/api/evaluations/$id/report'
+    | '/api/guardian-invites/$id/respond'
+    | '/api/guardian-invites/$id/revoke'
     | '/api/habit-drills/$id/attempt'
     | '/api/households/users/$id'
     | '/api/papers/$id/coverage'
@@ -1155,6 +1230,7 @@ export interface RootRouteChildren {
   ApiErrorsRoute: typeof ApiErrorsRoute
   ApiEvaluationsRoute: typeof ApiEvaluationsRouteWithChildren
   ApiExamCountdownRoute: typeof ApiExamCountdownRoute
+  ApiGuardianInvitesRoute: typeof ApiGuardianInvitesRouteWithChildren
   ApiHabitDrillsRoute: typeof ApiHabitDrillsRouteWithChildren
   ApiPapersRoute: typeof ApiPapersRouteWithChildren
   ApiQuestionsRoute: typeof ApiQuestionsRouteWithChildren
@@ -1338,6 +1414,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ApiExamCountdownRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/api/guardian-invites': {
+      id: '/api/guardian-invites'
+      path: '/api/guardian-invites'
+      fullPath: '/api/guardian-invites'
+      preLoaderRoute: typeof ApiGuardianInvitesRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/api/habit-drills': {
       id: '/api/habit-drills'
       path: '/api/habit-drills'
@@ -1485,6 +1568,20 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ApiEvaluationsIdRouteImport
       parentRoute: typeof ApiEvaluationsRoute
     }
+    '/api/guardian-invites/incoming': {
+      id: '/api/guardian-invites/incoming'
+      path: '/incoming'
+      fullPath: '/api/guardian-invites/incoming'
+      preLoaderRoute: typeof ApiGuardianInvitesIncomingRouteImport
+      parentRoute: typeof ApiGuardianInvitesRoute
+    }
+    '/api/guardian-invites/leave': {
+      id: '/api/guardian-invites/leave'
+      path: '/leave'
+      fullPath: '/api/guardian-invites/leave'
+      preLoaderRoute: typeof ApiGuardianInvitesLeaveRouteImport
+      parentRoute: typeof ApiGuardianInvitesRoute
+    }
     '/api/habit-drills/$id': {
       id: '/api/habit-drills/$id'
       path: '/$id'
@@ -1618,6 +1715,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ApiStudentsIdRouteImport
       parentRoute: typeof ApiStudentsRoute
     }
+    '/api/students/me': {
+      id: '/api/students/me'
+      path: '/me'
+      fullPath: '/api/students/me'
+      preLoaderRoute: typeof ApiStudentsMeRouteImport
+      parentRoute: typeof ApiStudentsRoute
+    }
     '/api/study-plan/generate': {
       id: '/api/study-plan/generate'
       path: '/generate'
@@ -1694,6 +1798,20 @@ declare module '@tanstack/react-router' {
       fullPath: '/api/evaluations/$id/report'
       preLoaderRoute: typeof ApiEvaluationsIdReportRouteImport
       parentRoute: typeof ApiEvaluationsIdRoute
+    }
+    '/api/guardian-invites/$id/respond': {
+      id: '/api/guardian-invites/$id/respond'
+      path: '/$id/respond'
+      fullPath: '/api/guardian-invites/$id/respond'
+      preLoaderRoute: typeof ApiGuardianInvitesIdRespondRouteImport
+      parentRoute: typeof ApiGuardianInvitesRoute
+    }
+    '/api/guardian-invites/$id/revoke': {
+      id: '/api/guardian-invites/$id/revoke'
+      path: '/$id/revoke'
+      fullPath: '/api/guardian-invites/$id/revoke'
+      preLoaderRoute: typeof ApiGuardianInvitesIdRevokeRouteImport
+      parentRoute: typeof ApiGuardianInvitesRoute
     }
     '/api/habit-drills/$id/attempt': {
       id: '/api/habit-drills/$id/attempt'
@@ -1900,6 +2018,23 @@ const ApiEvaluationsRouteWithChildren = ApiEvaluationsRoute._addFileChildren(
   ApiEvaluationsRouteChildren,
 )
 
+interface ApiGuardianInvitesRouteChildren {
+  ApiGuardianInvitesIncomingRoute: typeof ApiGuardianInvitesIncomingRoute
+  ApiGuardianInvitesLeaveRoute: typeof ApiGuardianInvitesLeaveRoute
+  ApiGuardianInvitesIdRespondRoute: typeof ApiGuardianInvitesIdRespondRoute
+  ApiGuardianInvitesIdRevokeRoute: typeof ApiGuardianInvitesIdRevokeRoute
+}
+
+const ApiGuardianInvitesRouteChildren: ApiGuardianInvitesRouteChildren = {
+  ApiGuardianInvitesIncomingRoute: ApiGuardianInvitesIncomingRoute,
+  ApiGuardianInvitesLeaveRoute: ApiGuardianInvitesLeaveRoute,
+  ApiGuardianInvitesIdRespondRoute: ApiGuardianInvitesIdRespondRoute,
+  ApiGuardianInvitesIdRevokeRoute: ApiGuardianInvitesIdRevokeRoute,
+}
+
+const ApiGuardianInvitesRouteWithChildren =
+  ApiGuardianInvitesRoute._addFileChildren(ApiGuardianInvitesRouteChildren)
+
 interface ApiHabitDrillsIdRouteChildren {
   ApiHabitDrillsIdAttemptRoute: typeof ApiHabitDrillsIdAttemptRoute
 }
@@ -2062,10 +2197,12 @@ const ApiStudentsIdRouteWithChildren = ApiStudentsIdRoute._addFileChildren(
 
 interface ApiStudentsRouteChildren {
   ApiStudentsIdRoute: typeof ApiStudentsIdRouteWithChildren
+  ApiStudentsMeRoute: typeof ApiStudentsMeRoute
 }
 
 const ApiStudentsRouteChildren: ApiStudentsRouteChildren = {
   ApiStudentsIdRoute: ApiStudentsIdRouteWithChildren,
+  ApiStudentsMeRoute: ApiStudentsMeRoute,
 }
 
 const ApiStudentsRouteWithChildren = ApiStudentsRoute._addFileChildren(
@@ -2141,6 +2278,7 @@ const rootRouteChildren: RootRouteChildren = {
   ApiErrorsRoute: ApiErrorsRoute,
   ApiEvaluationsRoute: ApiEvaluationsRouteWithChildren,
   ApiExamCountdownRoute: ApiExamCountdownRoute,
+  ApiGuardianInvitesRoute: ApiGuardianInvitesRouteWithChildren,
   ApiHabitDrillsRoute: ApiHabitDrillsRouteWithChildren,
   ApiPapersRoute: ApiPapersRouteWithChildren,
   ApiQuestionsRoute: ApiQuestionsRouteWithChildren,

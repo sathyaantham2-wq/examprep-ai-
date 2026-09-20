@@ -299,6 +299,18 @@ export interface GenerationEvents {
   triggered_by: GenerationTrigger;
 }
 
+export interface GuardianInvites {
+  consent_given: Generated<boolean>;
+  created_at: Generated<Timestamp>;
+  guardian_household_id: string;
+  guardian_user_id: string;
+  id: Generated<string>;
+  responded_at: Timestamp | null;
+  status: Generated<string>;
+  student_email: string;
+  student_id: string | null;
+}
+
 export interface HabitDrillTasks {
   completed_at: Timestamp | null;
   created_at: Generated<Timestamp>;
@@ -506,6 +518,7 @@ export interface Students {
   household_id: string;
   id: Generated<string>;
   name: string;
+  own_household_id: string | null;
   roll_no: string | null;
   school: string | null;
   section: string | null;
@@ -558,6 +571,7 @@ export interface Users {
   is_active: Generated<boolean>;
   name: string;
   role: UserRole;
+  signup_type: string | null;
   updated_at: Generated<Timestamp>;
 }
 
@@ -593,6 +607,7 @@ export interface DB {
   generation_batch_items: GenerationBatchItems;
   generation_batches: GenerationBatches;
   generation_events: GenerationEvents;
+  guardian_invites: GuardianInvites;
   habit_drill_tasks: HabitDrillTasks;
   habit_observations: HabitObservations;
   habits: Habits;

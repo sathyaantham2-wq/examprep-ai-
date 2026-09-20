@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react'
+import { useCallback, useEffect, useState } from 'react'
 import { createFileRoute, useNavigate } from '@tanstack/react-router'
 import { Button } from '../components/ui/button'
 import {
@@ -20,115 +20,102 @@ interface Student {
   name: string
   class: number
   board: string
-  school: string | null
-  user_id: string | null
 }
 
+interface Invite {
+  id: string
+  student_email: string
+  status: 'pending' | 'approved' | 'declined' | 'revoked'
+  student_name: string | null
+}
+
+const STATUS_TEXT: Record<Invite['status'], string> = {
+  pending: 'Waiting for the student to approve',
+  approved: 'Following',
+  declined: 'Declined by the student',
+  revoked: 'Stopped',
+}
+
+// One student, one login: students sign up on their own. A parent or teacher follows a student
+// by sending an invite to her email, and she approves it from her own account.
 function Onboarding() {
   const { data: session, isPending } = useSession()
   const navigate = useNavigate()
   const [students, setStudents] = useState<Array<Student> | null>(null)
-  const [name, setName] = useState('')
-  const [studentClass, setStudentClass] = useState('7')
-  const [board, setBoard] = useState('CBSE')
-  const [school, setSchool] = useState('')
+  const [invites, setInvites] = useState<Array<Invite>>([])
+  const [showForm, setShowForm] = useState(false)
+  const [email, setEmail] = useState('')
   const [consent, setConsent] = useState(false)
   const [error, setError] = useState<string | null>(null)
+  const [notice, setNotice] = useState<string | null>(null)
   const [submitting, setSubmitting] = useState(false)
 
-  const [loginFormFor, setLoginFormFor] = useState<string | null>(null)
-  const [loginEmail, setLoginEmail] = useState('')
-  const [loginPassword, setLoginPassword] = useState('')
-  const [loginError, setLoginError] = useState<string | null>(null)
-  const [loginSubmitting, setLoginSubmitting] = useState(false)
-
   const role = (session?.user as { role?: string } | undefined)?.role
+  const isTeacher = role === 'teacher'
+
+  const load = useCallback(async () => {
+    const [s, i] = await Promise.all([
+      fetch('/api/students').then((r) => r.json()),
+      fetch('/api/guardian-invites').then((r) => r.json()),
+    ])
+    setStudents(s as Array<Student>)
+    setInvites(i as Array<Invite>)
+  }, [])
 
   useEffect(() => {
     if (isPending) return
-    // F010: POST /api/students and /api/students/:id/login both accept 'parent' or 'admin' --
-    // this screen's own guard excluding admin was a gap, not a deliberate restriction. An admin
-    // household (e.g. the account created for real-content authoring) had no way to add a
-    // student or create that student's own login without it.
-    if (!session || (role !== 'parent' && role !== 'admin')) {
+    if (
+      !session ||
+      (role !== 'parent' && role !== 'teacher' && role !== 'admin')
+    ) {
       navigate({ to: '/' })
       return
     }
-    fetch('/api/students')
-      .then((r) => r.json())
-      .then(setStudents)
-  }, [isPending, session, role, navigate])
+    void load()
+  }, [isPending, session, role, navigate, load])
 
-  async function handleAddStudent(e: React.FormEvent) {
+  async function handleInvite(e: React.FormEvent) {
     e.preventDefault()
     setError(null)
+    setNotice(null)
     setSubmitting(true)
     try {
-      const response = await fetch('/api/students', {
+      const response = await fetch('/api/guardian-invites', {
         method: 'POST',
         headers: { 'content-type': 'application/json' },
-        body: JSON.stringify({
-          name,
-          class: Number(studentClass),
-          board,
-          school: school || undefined,
-          consent_accepted: consent,
-        }),
+        body: JSON.stringify({ student_email: email, consent }),
       })
+      const body = await response.json()
       if (!response.ok) {
-        const body = await response.json()
         setError(
-          body.error?.formErrors?.[0] ??
-            body.error?.fieldErrors?.consent_accepted?.[0] ??
-            'Could not add student — check the fields above.',
+          typeof body.error === 'string'
+            ? body.error
+            : 'Enter the student’s email and tick the box to continue.',
         )
         return
       }
-      const created: Student = await response.json()
-      setStudents((prev) => [...(prev ?? []), created])
-      setName('')
-      setSchool('')
+      setNotice(
+        'Request sent. The student signs in with her own account and approves it. Ask her to check her email or her home page.',
+      )
+      setEmail('')
       setConsent(false)
+      setShowForm(false)
+      await load()
     } finally {
       setSubmitting(false)
     }
   }
 
-  async function handleCreateLogin(e: React.FormEvent, studentId: string) {
-    e.preventDefault()
-    setLoginError(null)
-    setLoginSubmitting(true)
-    try {
-      const response = await fetch(`/api/students/${studentId}/login`, {
-        method: 'POST',
-        headers: { 'content-type': 'application/json' },
-        body: JSON.stringify({ email: loginEmail, password: loginPassword }),
-      })
-      if (!response.ok) {
-        const body = await response.json()
-        setLoginError(
-          body.error?.formErrors?.[0] ??
-            (typeof body.error === 'string' ? body.error : null) ??
-            'Could not create a login for this student.',
-        )
-        return
-      }
-      const createdUser: { id: string } = await response.json()
-      setStudents(
-        (prev) =>
-          prev?.map((s) =>
-            s.id === studentId ? { ...s, user_id: createdUser.id } : s,
-          ) ?? null,
-      )
-      setLoginFormFor(null)
-      setLoginEmail('')
-      setLoginPassword('')
-    } finally {
-      setLoginSubmitting(false)
-    }
+  async function handleRevoke(id: string) {
+    await fetch(`/api/guardian-invites/${id}/revoke`, { method: 'POST' })
+    await load()
   }
 
-  if (isPending || !session || (role !== 'parent' && role !== 'admin')) {
+  if (
+    isPending ||
+    !session ||
+    (role !== 'parent' && role !== 'teacher' && role !== 'admin')
+  ) {
     return <div className="p-8 text-body text-muted-foreground">Loading…</div>
   }
 
@@ -136,9 +123,10 @@ function Onboarding() {
     <div className="mx-auto max-w-2xl p-8">
       <div className="mb-6 flex items-center justify-between">
         <div>
-          <h1 className="text-h1">Setup</h1>
+          <h1 className="text-h1">Your students</h1>
           <p className="text-body text-muted-foreground">
-            Add the students in your household. Everything else builds on this.
+            Each student has her own login. Add a student to follow her
+            progress.
           </p>
         </div>
         <div className="flex items-center gap-2 no-print">
@@ -155,172 +143,140 @@ function Onboarding() {
 
       <Card className="mb-6">
         <CardHeader>
-          <CardTitle className="text-h3">Students</CardTitle>
-          <CardDescription>
-            {students === null
-              ? 'Loading…'
-              : students.length === 0
-                ? 'No students yet — add one below.'
-                : `${students.length} student${students.length === 1 ? '' : 's'} on this account.`}
-          </CardDescription>
+          <div className="flex items-center justify-between gap-3">
+            <div>
+              <CardTitle className="text-h3">Students</CardTitle>
+              <CardDescription>
+                {students === null
+                  ? 'Loading…'
+                  : students.length === 0
+                    ? 'No students yet. Use Add student.'
+                    : `${students.length} student${students.length === 1 ? '' : 's'} you follow.`}
+              </CardDescription>
+            </div>
+            <Button type="button" onClick={() => setShowForm((v) => !v)}>
+              {showForm ? 'Cancel' : 'Add student'}
+            </Button>
+          </div>
         </CardHeader>
-        {students && students.length > 0 && (
-          <CardContent className="space-y-3">
-            {students.map((s) => (
-              <div key={s.id} className="rounded-md border px-3 py-2">
-                <div className="text-body flex items-center justify-between">
-                  <span>{s.name}</span>
-                  <div className="flex items-center gap-3">
-                    <span className="text-small text-muted-foreground">
-                      {s.board} · Class {s.class}
-                    </span>
-                    <a href="/generate">
-                      <Button type="button" variant="outline" size="sm">
-                        Generate paper
-                      </Button>
-                    </a>
-                    {s.user_id ? (
-                      <span className="text-small text-muted-foreground">
-                        Login active
-                      </span>
-                    ) : (
-                      <Button
-                        type="button"
-                        variant="outline"
-                        size="sm"
-                        onClick={() => {
-                          setLoginFormFor(loginFormFor === s.id ? null : s.id)
-                          setLoginError(null)
-                        }}
-                      >
-                        {loginFormFor === s.id ? 'Cancel' : 'Create login'}
-                      </Button>
-                    )}
-                  </div>
-                </div>
-                {loginFormFor === s.id && (
-                  <form
-                    onSubmit={(e) => handleCreateLogin(e, s.id)}
-                    className="mt-3 space-y-3 border-t pt-3"
-                  >
-                    <div className="space-y-1.5">
-                      <Label htmlFor={`login-email-${s.id}`}>
-                        {s.name}'s email
-                      </Label>
-                      <Input
-                        id={`login-email-${s.id}`}
-                        type="email"
-                        value={loginEmail}
-                        onChange={(e) => setLoginEmail(e.target.value)}
-                        required
-                      />
-                    </div>
-                    <div className="space-y-1.5">
-                      <Label htmlFor={`login-password-${s.id}`}>Password</Label>
-                      <Input
-                        id={`login-password-${s.id}`}
-                        type="password"
-                        value={loginPassword}
-                        onChange={(e) => setLoginPassword(e.target.value)}
-                        required
-                        minLength={8}
-                      />
-                    </div>
-                    {loginError && (
-                      <p className="text-small text-destructive" role="alert">
-                        {loginError}
-                      </p>
-                    )}
-                    <Button type="submit" size="sm" disabled={loginSubmitting}>
-                      {loginSubmitting ? 'Creating…' : 'Create login'}
+        <CardContent className="space-y-3">
+          {notice && (
+            <p className="text-small text-muted-foreground" role="status">
+              {notice}
+            </p>
+          )}
+          {showForm && (
+            <form
+              onSubmit={handleInvite}
+              className="space-y-3 rounded-md border p-3"
+            >
+              <p className="text-small text-muted-foreground">
+                The student must first create her own account (student sign-up
+                with her email, a username and a password, then confirm her
+                email). Enter the email she used.
+              </p>
+              <div className="space-y-1.5">
+                <Label htmlFor="student-email">Student’s email</Label>
+                <Input
+                  id="student-email"
+                  type="email"
+                  value={email}
+                  onChange={(e) => setEmail(e.target.value)}
+                  required
+                />
+              </div>
+              <Label className="items-start">
+                <input
+                  type="checkbox"
+                  className="mt-0.5"
+                  checked={consent}
+                  onChange={(e) => setConsent(e.target.checked)}
+                />
+                <span className="text-small font-normal">
+                  I am this student’s {isTeacher ? 'teacher' : 'parent or guardian'}{' '}
+                  and I agree to her practice and exam data being used to
+                  generate papers, mark attempts and track her progress.
+                </span>
+              </Label>
+              {error && (
+                <p className="text-small text-destructive" role="alert">
+                  {error}
+                </p>
+              )}
+              <Button type="submit" disabled={submitting || !consent}>
+                {submitting ? 'Sending…' : 'Send request'}
+              </Button>
+            </form>
+          )}
+
+          {students?.map((s) => (
+            <div
+              key={s.id}
+              className="text-body flex flex-wrap items-center justify-between gap-2 rounded-md border px-3 py-2"
+            >
+              <span>
+                {s.name}{' '}
+                <span className="text-small text-muted-foreground">
+                  {s.board} · Class {s.class}
+                </span>
+              </span>
+              <div className="flex flex-wrap items-center gap-2">
+                <a href="/home">
+                  <Button type="button" variant="outline" size="sm">
+                    Dashboard
+                  </Button>
+                </a>
+                <a href={`/tracker/${s.id}`}>
+                  <Button type="button" variant="outline" size="sm">
+                    Concept tracker
+                  </Button>
+                </a>
+                {!isTeacher && (
+                  <a href="/generate">
+                    <Button type="button" size="sm">
+                      Generate paper
                     </Button>
-                  </form>
+                  </a>
+                )}
+              </div>
+            </div>
+          ))}
+        </CardContent>
+      </Card>
+
+      {invites.length > 0 && (
+        <Card>
+          <CardHeader>
+            <CardTitle className="text-h3">Requests</CardTitle>
+          </CardHeader>
+          <CardContent className="space-y-2">
+            {invites.map((inv) => (
+              <div
+                key={inv.id}
+                className="text-body flex flex-wrap items-center justify-between gap-2 rounded-md border px-3 py-2"
+              >
+                <span>
+                  {inv.student_name ?? inv.student_email}
+                  <span className="text-small text-muted-foreground">
+                    {' '}
+                    · {STATUS_TEXT[inv.status]}
+                  </span>
+                </span>
+                {(inv.status === 'pending' || inv.status === 'approved') && (
+                  <Button
+                    type="button"
+                    variant="outline"
+                    size="sm"
+                    onClick={() => void handleRevoke(inv.id)}
+                  >
+                    {inv.status === 'pending' ? 'Cancel request' : 'Stop following'}
+                  </Button>
                 )}
               </div>
             ))}
-            <a
-              href="/generate"
-              className="text-small text-primary underline-offset-4 hover:underline"
-            >
-              Generate a paper →
-            </a>
           </CardContent>
-        )}
-      </Card>
-
-      <Card>
-        <CardHeader>
-          <CardTitle className="text-h3">Add a student</CardTitle>
-          <CardDescription>
-            Consent is required once per student before any paper can be
-            generated for them.
-          </CardDescription>
-        </CardHeader>
-        <CardContent>
-          <form onSubmit={handleAddStudent} className="space-y-4">
-            <div className="space-y-1.5">
-              <Label htmlFor="student-name">Name</Label>
-              <Input
-                id="student-name"
-                value={name}
-                onChange={(e) => setName(e.target.value)}
-                required
-              />
-            </div>
-            <div className="grid grid-cols-2 gap-4">
-              <div className="space-y-1.5">
-                <Label htmlFor="student-class">Class</Label>
-                <Input
-                  id="student-class"
-                  type="number"
-                  min={1}
-                  max={12}
-                  value={studentClass}
-                  onChange={(e) => setStudentClass(e.target.value)}
-                  required
-                />
-              </div>
-              <div className="space-y-1.5">
-                <Label htmlFor="student-board">Board</Label>
-                <Input
-                  id="student-board"
-                  value={board}
-                  onChange={(e) => setBoard(e.target.value)}
-                  required
-                />
-              </div>
-            </div>
-            <div className="space-y-1.5">
-              <Label htmlFor="student-school">School (optional)</Label>
-              <Input
-                id="student-school"
-                value={school}
-                onChange={(e) => setSchool(e.target.value)}
-              />
-            </div>
-            <Label className="items-start">
-              <input
-                type="checkbox"
-                className="mt-0.5"
-                checked={consent}
-                onChange={(e) => setConsent(e.target.checked)}
-              />
-              <span className="text-small font-normal">
-                I consent to this student's data being used to generate and
-                evaluate practice papers.
-              </span>
-            </Label>
-            {error && (
-              <p className="text-small text-destructive" role="alert">
-                {error}
-              </p>
-            )}
-            <Button type="submit" disabled={submitting || !consent}>
-              {submitting ? 'Adding…' : 'Add student'}
-            </Button>
-          </form>
-        </CardContent>
-      </Card>
+        </Card>
+      )}
     </div>
   )
 }

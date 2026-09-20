@@ -26,7 +26,7 @@ export const Route = createFileRoute('/api/papers/$id/pdf')({
   server: {
     handlers: {
       GET: async ({ request, params }) => {
-        const auth = await requireRole(request, 'parent', 'admin')
+        const auth = await requireRole(request, 'parent', 'teacher', 'admin')
         if (auth instanceof Response) return auth
 
         const url = new URL(request.url)

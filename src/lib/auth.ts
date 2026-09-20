@@ -1,7 +1,8 @@
 import { betterAuth } from 'better-auth'
 import { createAuthPool } from '../db/auth-pool'
 import { getSharedDb } from '../db/connection'
-import { householdsRepository } from '../db/repositories'
+import { consentsRepository, householdsRepository, studentsRepository } from '../db/repositories'
+import { CURRENT_CONSENT_VERSION } from './consent'
 import { env } from './env'
 
 export const auth = betterAuth({
@@ -36,14 +37,22 @@ export const auth = betterAuth({
           },
         }
       : undefined,
-  // A brand-new sign-up is always a parent starting their own household (F008) — students get
-  // added afterwards, they don't self-register into an empty household. household_id/role are
-  // `input: false` below precisely so a signup payload can't set them itself.
+  // A brand-new sign-up starts its own household. Which kind of account it is comes from the
+  // sign-up form's `signup_type`: 'student' (one student, one login), 'teacher', or anything else
+  // -- including Google sign-in and a tampered value -- which is a parent. 'admin' can never be
+  // chosen here. household_id/role stay `input: false` below so a payload cannot set them.
   databaseHooks: {
     user: {
       create: {
         before: async (user) => {
           const db = getSharedDb()
+          const signupType = (user as { signup_type?: string }).signup_type
+          const role =
+            signupType === 'student'
+              ? ('student' as const)
+              : signupType === 'teacher'
+                ? ('teacher' as const)
+                : ('parent' as const)
           const household = await householdsRepository.insert(db, {
             name: `${user.name}'s household`,
             plan: 'free',
@@ -52,9 +61,38 @@ export const auth = betterAuth({
             data: {
               ...user,
               household_id: household.id,
-              role: 'parent' as const,
+              role,
+              signup_type: role,
             },
           }
+        },
+        // A student gets her profile right away: launch scope is CBSE Class 7, so those are the
+        // defaults. The sign-up form makes her confirm a parent or guardian agrees to her using
+        // the app; that declaration is recorded as her consent (F095). A guardian who later links
+        // to her gives their own consent when they send the invite.
+        after: async (user) => {
+          const created = user as {
+            id: string
+            name: string
+            household_id?: string
+            role?: string
+          }
+          if (created.role !== 'student' || !created.household_id) return
+          const db = getSharedDb()
+          const student = await studentsRepository.insert(db, {
+            household_id: created.household_id,
+            own_household_id: created.household_id,
+            user_id: created.id,
+            name: created.name,
+            class: 7,
+            board: 'CBSE',
+          })
+          await consentsRepository.insert(db, {
+            household_id: created.household_id,
+            student_id: student.id,
+            given_by_user_id: created.id,
+            purpose_version: CURRENT_CONSENT_VERSION,
+          })
         },
       },
     },
@@ -73,6 +111,8 @@ export const auth = betterAuth({
       household_id: { type: 'string', required: false, input: false },
       role: { type: 'string', required: false, input: false },
       auth_provider: { type: 'string', required: false, input: false },
+      // Read once at sign-up to pick the account type; never used for authorisation.
+      signup_type: { type: 'string', required: false, input: true },
       is_active: {
         type: 'boolean',
         required: false,

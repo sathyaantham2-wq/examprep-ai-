@@ -100,7 +100,7 @@ function PaperWorkflow() {
 
   useEffect(() => {
     if (isPending) return
-    if (!session || (role !== 'parent' && role !== 'admin')) {
+    if (!session || (role !== 'parent' && role !== 'teacher' && role !== 'admin')) {
       navigate({ to: '/' })
       return
     }
@@ -110,7 +110,7 @@ function PaperWorkflow() {
     return () => clearInterval(timer)
   }, [isPending, session, role, navigate, load])
 
-  if (isPending || !session || (role !== 'parent' && role !== 'admin')) {
+  if (isPending || !session || (role !== 'parent' && role !== 'teacher' && role !== 'admin')) {
     return <div className="p-8 text-body text-muted-foreground">Loading…</div>
   }
   if (error) {
@@ -236,7 +236,13 @@ function PaperWorkflow() {
                   The system proposes marks step by step. Nothing counts until you
                   confirm.
                 </p>
-                {submitted && (
+                {submitted && role === 'teacher' && (
+                  <p className="text-small text-muted-foreground">
+                    Only a parent can confirm the marks. You can follow the
+                    result here once they do.
+                  </p>
+                )}
+                {submitted && role !== 'teacher' && (
                   <a href={`/evaluate/${latest.id}`}>
                     <Button type="button" size="sm">
                       {confirmed ? 'Open the review' : 'Review and evaluate'}
