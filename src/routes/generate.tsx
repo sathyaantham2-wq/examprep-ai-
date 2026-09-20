@@ -160,6 +160,11 @@ function GeneratePaper() {
         return
       }
       setResult(body)
+      // Straight to the paper's page, where the questions and the whole attempt -> review ->
+      // report -> dashboard loop are laid out; an empty paper stays here with its explanation.
+      if (body.paperQuestions.length > 0) {
+        await navigate({ to: '/paper/$id', params: { id: body.paper.id } })
+      }
     } finally {
       setSubmitting(false)
     }

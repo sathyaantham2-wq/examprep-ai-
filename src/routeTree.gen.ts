@@ -39,6 +39,7 @@ import { Route as ApiStudentsRouteImport } from './routes/api/students'
 import { Route as ApiStudyPlanRouteImport } from './routes/api/study-plan'
 import { Route as AttemptIdRouteImport } from './routes/attempt/$id'
 import { Route as EvaluateAttemptIdRouteImport } from './routes/evaluate/$attemptId'
+import { Route as PaperIdRouteImport } from './routes/paper/$id'
 import { Route as SummaryWeeklyRouteImport } from './routes/summary/weekly'
 import { Route as TrackerStudentIdRouteImport } from './routes/tracker/$studentId'
 import { Route as ApiAdminAiUsageRouteImport } from './routes/api/admin/ai-usage'
@@ -85,6 +86,7 @@ import { Route as ApiHouseholdsUsersIdRouteImport } from './routes/api/household
 import { Route as ApiPapersIdCoverageRouteImport } from './routes/api/papers/$id/coverage'
 import { Route as ApiPapersIdPdfRouteImport } from './routes/api/papers/$id/pdf'
 import { Route as ApiPapersIdRegenerateSlotRouteImport } from './routes/api/papers/$id/regenerate-slot'
+import { Route as ApiPapersIdWorkflowRouteImport } from './routes/api/papers/$id/workflow'
 import { Route as ApiQuestionsIdStatsRouteImport } from './routes/api/questions/$id/stats'
 import { Route as ApiQuestionsGenerateBatchIdRouteImport } from './routes/api/questions/generate-batch/$id'
 import { Route as ApiRemediationIdAttemptRouteImport } from './routes/api/remediation/$id/attempt'
@@ -247,6 +249,11 @@ const AttemptIdRoute = AttemptIdRouteImport.update({
 const EvaluateAttemptIdRoute = EvaluateAttemptIdRouteImport.update({
   id: '/evaluate/$attemptId',
   path: '/evaluate/$attemptId',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const PaperIdRoute = PaperIdRouteImport.update({
+  id: '/paper/$id',
+  path: '/paper/$id',
   getParentRoute: () => rootRouteImport,
 } as any)
 const SummaryWeeklyRoute = SummaryWeeklyRouteImport.update({
@@ -484,6 +491,11 @@ const ApiPapersIdRegenerateSlotRoute =
     path: '/regenerate-slot',
     getParentRoute: () => ApiPapersIdRoute,
   } as any)
+const ApiPapersIdWorkflowRoute = ApiPapersIdWorkflowRouteImport.update({
+  id: '/workflow',
+  path: '/workflow',
+  getParentRoute: () => ApiPapersIdRoute,
+} as any)
 const ApiQuestionsIdStatsRoute = ApiQuestionsIdStatsRouteImport.update({
   id: '/stats',
   path: '/stats',
@@ -590,6 +602,7 @@ export interface FileRoutesByFullPath {
   '/api/study-plan': typeof ApiStudyPlanRouteWithChildren
   '/attempt/$id': typeof AttemptIdRoute
   '/evaluate/$attemptId': typeof EvaluateAttemptIdRoute
+  '/paper/$id': typeof PaperIdRoute
   '/summary/weekly': typeof SummaryWeeklyRoute
   '/tracker/$studentId': typeof TrackerStudentIdRoute
   '/api/admin/ai-usage': typeof ApiAdminAiUsageRoute
@@ -636,6 +649,7 @@ export interface FileRoutesByFullPath {
   '/api/papers/$id/coverage': typeof ApiPapersIdCoverageRoute
   '/api/papers/$id/pdf': typeof ApiPapersIdPdfRoute
   '/api/papers/$id/regenerate-slot': typeof ApiPapersIdRegenerateSlotRoute
+  '/api/papers/$id/workflow': typeof ApiPapersIdWorkflowRoute
   '/api/questions/$id/stats': typeof ApiQuestionsIdStatsRoute
   '/api/questions/generate-batch/$id': typeof ApiQuestionsGenerateBatchIdRouteWithChildren
   '/api/remediation/$id/attempt': typeof ApiRemediationIdAttemptRoute
@@ -681,6 +695,7 @@ export interface FileRoutesByTo {
   '/api/study-plan': typeof ApiStudyPlanRouteWithChildren
   '/attempt/$id': typeof AttemptIdRoute
   '/evaluate/$attemptId': typeof EvaluateAttemptIdRoute
+  '/paper/$id': typeof PaperIdRoute
   '/summary/weekly': typeof SummaryWeeklyRoute
   '/tracker/$studentId': typeof TrackerStudentIdRoute
   '/api/admin/ai-usage': typeof ApiAdminAiUsageRoute
@@ -727,6 +742,7 @@ export interface FileRoutesByTo {
   '/api/papers/$id/coverage': typeof ApiPapersIdCoverageRoute
   '/api/papers/$id/pdf': typeof ApiPapersIdPdfRoute
   '/api/papers/$id/regenerate-slot': typeof ApiPapersIdRegenerateSlotRoute
+  '/api/papers/$id/workflow': typeof ApiPapersIdWorkflowRoute
   '/api/questions/$id/stats': typeof ApiQuestionsIdStatsRoute
   '/api/questions/generate-batch/$id': typeof ApiQuestionsGenerateBatchIdRouteWithChildren
   '/api/remediation/$id/attempt': typeof ApiRemediationIdAttemptRoute
@@ -773,6 +789,7 @@ export interface FileRoutesById {
   '/api/study-plan': typeof ApiStudyPlanRouteWithChildren
   '/attempt/$id': typeof AttemptIdRoute
   '/evaluate/$attemptId': typeof EvaluateAttemptIdRoute
+  '/paper/$id': typeof PaperIdRoute
   '/summary/weekly': typeof SummaryWeeklyRoute
   '/tracker/$studentId': typeof TrackerStudentIdRoute
   '/api/admin/ai-usage': typeof ApiAdminAiUsageRoute
@@ -819,6 +836,7 @@ export interface FileRoutesById {
   '/api/papers/$id/coverage': typeof ApiPapersIdCoverageRoute
   '/api/papers/$id/pdf': typeof ApiPapersIdPdfRoute
   '/api/papers/$id/regenerate-slot': typeof ApiPapersIdRegenerateSlotRoute
+  '/api/papers/$id/workflow': typeof ApiPapersIdWorkflowRoute
   '/api/questions/$id/stats': typeof ApiQuestionsIdStatsRoute
   '/api/questions/generate-batch/$id': typeof ApiQuestionsGenerateBatchIdRouteWithChildren
   '/api/remediation/$id/attempt': typeof ApiRemediationIdAttemptRoute
@@ -866,6 +884,7 @@ export interface FileRouteTypes {
     | '/api/study-plan'
     | '/attempt/$id'
     | '/evaluate/$attemptId'
+    | '/paper/$id'
     | '/summary/weekly'
     | '/tracker/$studentId'
     | '/api/admin/ai-usage'
@@ -912,6 +931,7 @@ export interface FileRouteTypes {
     | '/api/papers/$id/coverage'
     | '/api/papers/$id/pdf'
     | '/api/papers/$id/regenerate-slot'
+    | '/api/papers/$id/workflow'
     | '/api/questions/$id/stats'
     | '/api/questions/generate-batch/$id'
     | '/api/remediation/$id/attempt'
@@ -957,6 +977,7 @@ export interface FileRouteTypes {
     | '/api/study-plan'
     | '/attempt/$id'
     | '/evaluate/$attemptId'
+    | '/paper/$id'
     | '/summary/weekly'
     | '/tracker/$studentId'
     | '/api/admin/ai-usage'
@@ -1003,6 +1024,7 @@ export interface FileRouteTypes {
     | '/api/papers/$id/coverage'
     | '/api/papers/$id/pdf'
     | '/api/papers/$id/regenerate-slot'
+    | '/api/papers/$id/workflow'
     | '/api/questions/$id/stats'
     | '/api/questions/generate-batch/$id'
     | '/api/remediation/$id/attempt'
@@ -1048,6 +1070,7 @@ export interface FileRouteTypes {
     | '/api/study-plan'
     | '/attempt/$id'
     | '/evaluate/$attemptId'
+    | '/paper/$id'
     | '/summary/weekly'
     | '/tracker/$studentId'
     | '/api/admin/ai-usage'
@@ -1094,6 +1117,7 @@ export interface FileRouteTypes {
     | '/api/papers/$id/coverage'
     | '/api/papers/$id/pdf'
     | '/api/papers/$id/regenerate-slot'
+    | '/api/papers/$id/workflow'
     | '/api/questions/$id/stats'
     | '/api/questions/generate-batch/$id'
     | '/api/remediation/$id/attempt'
@@ -1140,6 +1164,7 @@ export interface RootRouteChildren {
   ApiStudyPlanRoute: typeof ApiStudyPlanRouteWithChildren
   AttemptIdRoute: typeof AttemptIdRoute
   EvaluateAttemptIdRoute: typeof EvaluateAttemptIdRoute
+  PaperIdRoute: typeof PaperIdRoute
   SummaryWeeklyRoute: typeof SummaryWeeklyRoute
   TrackerStudentIdRoute: typeof TrackerStudentIdRoute
   ApiAdminAiUsageRoute: typeof ApiAdminAiUsageRoute
@@ -1374,6 +1399,13 @@ declare module '@tanstack/react-router' {
       path: '/evaluate/$attemptId'
       fullPath: '/evaluate/$attemptId'
       preLoaderRoute: typeof EvaluateAttemptIdRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/paper/$id': {
+      id: '/paper/$id'
+      path: '/paper/$id'
+      fullPath: '/paper/$id'
+      preLoaderRoute: typeof PaperIdRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/summary/weekly': {
@@ -1698,6 +1730,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ApiPapersIdRegenerateSlotRouteImport
       parentRoute: typeof ApiPapersIdRoute
     }
+    '/api/papers/$id/workflow': {
+      id: '/api/papers/$id/workflow'
+      path: '/workflow'
+      fullPath: '/api/papers/$id/workflow'
+      preLoaderRoute: typeof ApiPapersIdWorkflowRouteImport
+      parentRoute: typeof ApiPapersIdRoute
+    }
     '/api/questions/$id/stats': {
       id: '/api/questions/$id/stats'
       path: '/stats'
@@ -1890,12 +1929,14 @@ interface ApiPapersIdRouteChildren {
   ApiPapersIdCoverageRoute: typeof ApiPapersIdCoverageRoute
   ApiPapersIdPdfRoute: typeof ApiPapersIdPdfRoute
   ApiPapersIdRegenerateSlotRoute: typeof ApiPapersIdRegenerateSlotRoute
+  ApiPapersIdWorkflowRoute: typeof ApiPapersIdWorkflowRoute
 }
 
 const ApiPapersIdRouteChildren: ApiPapersIdRouteChildren = {
   ApiPapersIdCoverageRoute: ApiPapersIdCoverageRoute,
   ApiPapersIdPdfRoute: ApiPapersIdPdfRoute,
   ApiPapersIdRegenerateSlotRoute: ApiPapersIdRegenerateSlotRoute,
+  ApiPapersIdWorkflowRoute: ApiPapersIdWorkflowRoute,
 }
 
 const ApiPapersIdRouteWithChildren = ApiPapersIdRoute._addFileChildren(
@@ -2109,6 +2150,7 @@ const rootRouteChildren: RootRouteChildren = {
   ApiStudyPlanRoute: ApiStudyPlanRouteWithChildren,
   AttemptIdRoute: AttemptIdRoute,
   EvaluateAttemptIdRoute: EvaluateAttemptIdRoute,
+  PaperIdRoute: PaperIdRoute,
   SummaryWeeklyRoute: SummaryWeeklyRoute,
   TrackerStudentIdRoute: TrackerStudentIdRoute,
   ApiAdminAiUsageRoute: ApiAdminAiUsageRoute,
@@ -2135,12 +2177,3 @@ const rootRouteChildren: RootRouteChildren = {
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
   ._addFileTypes<FileRouteTypes>()
-
-import type { getRouter } from './router.tsx'
-import type { createStart } from '@tanstack/react-start'
-declare module '@tanstack/react-start' {
-  interface Register {
-    ssr: true
-    router: Awaited<ReturnType<typeof getRouter>>
-  }
-}
