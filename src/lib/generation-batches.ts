@@ -155,6 +155,7 @@ export async function runBatch(
 
       const result = await generateQuestions(db, {
         conceptName: concept.name,
+        syllabusLabel: `${concept.board} Class ${concept.class} Mathematics`,
         conceptIdea: concept.idea,
         conceptRule: concept.rule,
         conceptExample: concept.example,

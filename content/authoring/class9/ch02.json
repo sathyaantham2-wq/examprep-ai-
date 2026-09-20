@@ -1,0 +1,2014 @@
+{
+ "subject": {
+  "code": "MATH9",
+  "name": "Mathematics",
+  "board": "CBSE",
+  "class": 9
+ },
+ "source": {
+  "publisher": "NCERT",
+  "title": "Ganita Manjari",
+  "edition": "First Edition April 2026",
+  "year": 2026
+ },
+ "chapter": {
+  "part": "I",
+  "chapter_no": 2,
+  "name": "Introduction to Linear Polynomials",
+  "blurb": "Polynomials and degree, linear polynomials and equations, linear patterns, linear growth and decay, y = ax + b, and graphs with slope and intercept.",
+  "source_code": "iemh102",
+  "order_index": 2
+ },
+ "scope_in": [
+  {
+   "item": "Terms, variables, coefficients and constants; one-variable polynomials and their degree (linear, quadratic, cubic, constant)",
+   "pages": "16-19"
+  },
+  {
+   "item": "Value of a linear polynomial by substitution; form and solve linear equations from word problems",
+   "pages": "19-21"
+  },
+  {
+   "item": "Linear patterns: constant difference and the nth term as a linear expression",
+   "pages": "21-24"
+  },
+  {
+   "item": "Linear growth and linear decay as models",
+   "pages": "24-26"
+  },
+  {
+   "item": "Find a and b in y = ax + b from two pairs of values",
+   "pages": "26-27"
+  },
+  {
+   "item": "Plot y = ax + b as a straight line, read slope and y-intercept, recognise parallel lines",
+   "pages": "27-36"
+  },
+  {
+   "item": "End-of-chapter problems, including finding a linear polynomial through two points",
+   "pages": "36-39"
+  }
+ ],
+ "scope_out": [
+  {
+   "item": "Factorisation and multiplication of polynomials",
+   "reason": "Not in this chapter; later chapters on identities"
+  },
+  {
+   "item": "Formal definition of slope as rise over run, and the equation of a line in other forms",
+   "reason": "The chapter says slope is studied in the chapter on linear equations"
+  },
+  {
+   "item": "Quadratic and cubic polynomials beyond naming their degree",
+   "reason": "Only linear polynomials are studied in this chapter"
+  },
+  {
+   "item": "Simultaneous linear equations in two variables",
+   "reason": "Only the substitution used to find a and b appears"
+  },
+  {
+   "item": "Polynomials in more than one variable",
+   "reason": "The chapter restricts itself to one variable"
+  }
+ ],
+ "concepts": [
+  {
+   "code": "C9M-2.1",
+   "name": "Algebraic expressions, terms and the degree of a polynomial",
+   "description": "Terms, variables, coefficients and constants of an expression; one-variable (univariate) polynomials and their degree.",
+   "idea": "A polynomial in one variable is an expression built from powers of that variable; its highest power is its degree.",
+   "rule": "In 4x + 5y + 3 the terms are 4x, 5y and 3, the coefficients are 4 and 5, the constant is 3. The highest power of the variable is the degree: 1 linear, 2 quadratic, 3 cubic, 0 constant.",
+   "example": "5y^3 + y^2 + 2y - 1 has degree 3 (a cubic); coefficient of y^3 is 5, of y^2 is 1, of y is 2, constant term -1.",
+   "difficulty_base": "Easy",
+   "questions": [
+    {
+     "b": "Remember",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "In the expression 4x + 5y + 3, the coefficient of x is",
+     "a": "4",
+     "o": [
+      "4",
+      "5",
+      "3",
+      "9"
+     ]
+    },
+    {
+     "b": "Remember",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "The highest power of the variable in a polynomial is called its",
+     "a": "degree",
+     "o": [
+      "degree",
+      "coefficient",
+      "constant",
+      "term"
+     ]
+    },
+    {
+     "b": "Remember",
+     "d": "Easy",
+     "t": "fill_blank",
+     "m": 1,
+     "q": "In the expression 4x + 5y + 3 the constant term is ____.",
+     "a": "3"
+    },
+    {
+     "b": "Remember",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "q": "A polynomial of degree 2 is called a",
+     "a": "quadratic polynomial",
+     "o": [
+      "quadratic polynomial",
+      "linear polynomial",
+      "cubic polynomial",
+      "constant polynomial"
+     ]
+    },
+    {
+     "b": "Understand",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "The degree of 5y^3 + y^2 + 2y - 1 is",
+     "a": "3",
+     "o": [
+      "3",
+      "2",
+      "5",
+      "1"
+     ]
+    },
+    {
+     "b": "Understand",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "3z + 7 is a",
+     "a": "linear polynomial",
+     "o": [
+      "linear polynomial",
+      "quadratic polynomial",
+      "cubic polynomial",
+      "constant polynomial"
+     ]
+    },
+    {
+     "b": "Understand",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "The constant polynomial 8 can be written as 8x^0, so its degree is",
+     "a": "0",
+     "o": [
+      "0",
+      "1",
+      "8",
+      "not defined"
+     ]
+    },
+    {
+     "b": "Understand",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "q": "Which of these is a polynomial in one variable?",
+     "a": "x^2 + 5x + 1",
+     "o": [
+      "x^2 + 5x + 1",
+      "200l + 160w + 50lw",
+      "4x + 5y + 3",
+      "ab + bc"
+     ]
+    },
+    {
+     "b": "Understand",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "q": "Explain why 200l + 160w + 50lw is not a univariate polynomial.",
+     "a": "It uses two variables, l and w. A univariate polynomial has only one variable.",
+     "s": [
+      [
+       "Notes that it has two variables l and w",
+       1
+      ],
+      [
+       "States that univariate means one variable",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "The coefficient of x^2 in x^4 - 3x^3 + 6x^2 - 2x + 7 is",
+     "a": "6",
+     "o": [
+      "6",
+      "-3",
+      "-2",
+      "7"
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Easy",
+     "t": "fill_blank",
+     "m": 1,
+     "q": "The constant term of the polynomial 9x^3 + 5x^2 - 8x - 10 is ____.",
+     "a": "-10"
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "q": "The coefficient of z in the polynomial 4z^3 + 5z^2 - 11 is",
+     "a": "0",
+     "o": [
+      "0",
+      "4",
+      "5",
+      "-11"
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "q": "Find the degree of each: 2x^2 - 5x + 3, -9 and 4z - 3.",
+     "a": "Degrees 2, 0 and 1 respectively.",
+     "s": [
+      [
+       "2x^2 - 5x + 3 has degree 2 and -9 has degree 0",
+       1
+      ],
+      [
+       "4z - 3 has degree 1",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "q": "A 20 cm wire is bent into a rectangle of length x cm. Write the width and the area, and state the degree of the area expression.",
+     "a": "Width (10 - x) cm; area x(10 - x) = 10x - x^2; degree 2.",
+     "s": [
+      [
+       "Width 10 - x and area 10x - x^2",
+       1
+      ],
+      [
+       "Degree 2",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hardest",
+     "t": "long_answer",
+     "m": 3,
+     "q": "Raju buys x red boxes with 4 pens each and y blue boxes with 5 pencils each, and gets 3 extra pens free. Write the total number of pens and pencils, name the terms, coefficients and constant, and find the total for x = 2, y = 3.",
+     "a": "4x + 5y + 3; terms 4x, 5y, 3; coefficients 4 and 5; constant 3. For x = 2, y = 3 the total is 8 + 15 + 3 = 26.",
+     "s": [
+      [
+       "Expression 4x + 5y + 3",
+       1
+      ],
+      [
+       "Terms, coefficients and constant named",
+       1
+      ],
+      [
+       "Value 26",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "q": "After expanding, x(10 - x) is a polynomial of degree",
+     "a": "2",
+     "o": [
+      "2",
+      "1",
+      "10",
+      "0"
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "q": "Is the number 8 a polynomial? If so, what is its degree and why?",
+     "a": "Yes, it is a constant polynomial. 8 = 8x^0 so the power of the variable is 0 and the degree is 0.",
+     "s": [
+      [
+       "States it is a constant polynomial",
+       1
+      ],
+      [
+       "Writes 8 as 8x^0 and gives degree 0",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hardest",
+     "t": "long_answer",
+     "m": 3,
+     "q": "Compare 4x + 5y + 3 and 10x - x^2: how many variables does each have, what are their terms and what is the degree of the second?",
+     "a": "4x + 5y + 3 has two variables (x, y) and terms 4x, 5y, 3. 10x - x^2 has one variable and terms 10x and -x^2 and degree 2.",
+     "s": [
+      [
+       "Variable counts: two and one",
+       1
+      ],
+      [
+       "Terms of each listed correctly",
+       1
+      ],
+      [
+       "Degree of 10x - x^2 is 2",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Evaluate",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "q": "Ravi says 5y^3 + y^2 + 2y - 1 has degree 6 because 3 + 2 + 1 = 6. Evaluate.",
+     "a": "He is wrong. The degree is the highest power of the variable, which is 3, not the sum of the powers.",
+     "s": [
+      [
+       "States he is wrong",
+       1
+      ],
+      [
+       "Says the degree is the highest power, 3",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Create",
+     "d": "Hardest",
+     "t": "long_answer",
+     "m": 3,
+     "q": "Write a polynomial in x of degree 3 whose x^2 coefficient is -7 and constant term is 5. Name its coefficients.",
+     "a": "For example 2x^3 - 7x^2 + x + 5: coefficients 2, -7, 1 and constant 5.",
+     "s": [
+      [
+       "Degree 3 polynomial written",
+       1
+      ],
+      [
+       "x^2 coefficient is -7",
+       1
+      ],
+      [
+       "Constant term is 5",
+       1
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "code": "C9M-2.2",
+   "name": "Linear polynomials, their values and linear equations",
+   "description": "A degree-1 polynomial, finding its value by substitution (input-output view), and forming and solving linear equations from word problems.",
+   "idea": "A linear polynomial gives one output for every input value of x; equating it to a number gives a linear equation.",
+   "rule": "Value of a polynomial: substitute the number for the variable. To form an equation, let the unknown be x, write both sides and solve by inverse operations.",
+   "example": "The sum of two numbers is 64 and one is 10 more than the other: x + (x + 10) = 64, so x = 27 and the numbers are 27 and 37.",
+   "difficulty_base": "Easy",
+   "questions": [
+    {
+     "b": "Remember",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "A polynomial of degree 1 is called a",
+     "a": "linear polynomial",
+     "o": [
+      "linear polynomial",
+      "quadratic polynomial",
+      "constant polynomial",
+      "cubic polynomial"
+     ]
+    },
+    {
+     "b": "Remember",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "The perimeter of a square of side x is the linear polynomial",
+     "a": "4x",
+     "o": [
+      "4x",
+      "x^2",
+      "2x",
+      "x + 4"
+     ]
+    },
+    {
+     "b": "Remember",
+     "d": "Easy",
+     "t": "fill_blank",
+     "m": 1,
+     "q": "The value of 2x + 3 when x = 4 is ____.",
+     "a": "11"
+    },
+    {
+     "b": "Remember",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "q": "When a linear polynomial in one variable is equated to a constant we get a",
+     "a": "linear equation",
+     "o": [
+      "linear equation",
+      "quadratic polynomial",
+      "constant polynomial",
+      "linear pattern"
+     ]
+    },
+    {
+     "b": "Understand",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "The value of 5x - 3 when x = 2 is",
+     "a": "7",
+     "o": [
+      "7",
+      "13",
+      "-13",
+      "2"
+     ]
+    },
+    {
+     "b": "Understand",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "The value of 5x - 3 when x = -1 is",
+     "a": "-8",
+     "o": [
+      "-8",
+      "2",
+      "-2",
+      "8"
+     ]
+    },
+    {
+     "b": "Understand",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "In the input-output view of 2x + 3, the input is",
+     "a": "the value of x",
+     "o": [
+      "the value of x",
+      "the value of 2x + 3",
+      "the number 3",
+      "the number 2"
+     ]
+    },
+    {
+     "b": "Understand",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "q": "Which of these is a linear polynomial?",
+     "a": "6 - 4y",
+     "o": [
+      "6 - 4y",
+      "6y^2 - 4",
+      "y^3 + y",
+      "6 - 4y^2"
+     ]
+    },
+    {
+     "b": "Understand",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "q": "Explain why the expression 2x + 3 can be seen as a function of x, using x = 4 as an example.",
+     "a": "For every input value of x there is exactly one output value of 2x + 3. When x = 4 the output is 2 x 4 + 3 = 11.",
+     "s": [
+      [
+       "States each input x gives one output",
+       1
+      ],
+      [
+       "Shows x = 4 gives 11",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "A chess club charges 200 rupees plus 50 rupees per match. The amount for 5 matches is",
+     "a": "450",
+     "o": [
+      "450",
+      "250",
+      "300",
+      "750"
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Easy",
+     "t": "fill_blank",
+     "m": 1,
+     "q": "The value of 7s^2 - 4s + 6 when s = 0 is ____.",
+     "a": "6"
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "q": "With the chess club fee 200 + 50m, a player paid 750 rupees. The number of matches is",
+     "a": "11",
+     "o": [
+      "11",
+      "12",
+      "10",
+      "15"
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "q": "The sum of two numbers is 64 and one is 10 more than the other. Form an equation and find the numbers.",
+     "a": "x + (x + 10) = 64, so 2x = 54, x = 27. The numbers are 27 and 37.",
+     "s": [
+      [
+       "Equation x + (x + 10) = 64",
+       1
+      ],
+      [
+       "Numbers 27 and 37",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "q": "Salil's mother is three times as old as Salil. After 5 years their ages add up to 70. Find their present ages.",
+     "a": "Let Salil be x years; mother 3x. (x + 5) + (3x + 5) = 70 gives 4x = 60, x = 15. Salil is 15 and his mother is 45.",
+     "s": [
+      [
+       "Equation 4x + 10 = 70",
+       1
+      ],
+      [
+       "Ages 15 and 45",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hardest",
+     "t": "long_answer",
+     "m": 3,
+     "q": "Ruby has 3 times as many two-rupee coins as five-rupee coins and their total value is 88 rupees. How many coins of each type does she have?",
+     "a": "Let there be x five-rupee coins; two-rupee coins 3x. 5x + 2 x 3x = 88, 11x = 88, x = 8. She has 8 five-rupee and 24 two-rupee coins.",
+     "s": [
+      [
+       "Equation 5x + 6x = 88",
+       1
+      ],
+      [
+       "x = 8 five-rupee coins",
+       1
+      ],
+      [
+       "24 two-rupee coins and check 40 + 48 = 88",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "q": "The length of a rectangle is 3 more than twice its width and its perimeter is 24 cm. The width is",
+     "a": "3 cm",
+     "o": [
+      "3 cm",
+      "9 cm",
+      "4 cm",
+      "6 cm"
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "q": "A farmer cuts a 300 ft fence into two pieces. The longer piece is four times the shorter. Find the lengths.",
+     "a": "Shorter x, longer 4x: 5x = 300, x = 60. The pieces are 60 ft and 240 ft.",
+     "s": [
+      [
+       "Equation x + 4x = 300",
+       1
+      ],
+      [
+       "60 ft and 240 ft",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hardest",
+     "t": "long_answer",
+     "m": 3,
+     "q": "The difference between two positive integers is 63 and their ratio is 2 : 5. Find the integers.",
+     "a": "Let the numbers be 2k and 5k. 5k - 2k = 63 so k = 21. The integers are 42 and 105.",
+     "s": [
+      [
+       "Writes the numbers as 2k and 5k",
+       1
+      ],
+      [
+       "3k = 63 giving k = 21",
+       1
+      ],
+      [
+       "42 and 105",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Evaluate",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "q": "Anu solves x + (x + 10) = 64 and writes \"x = 54\". Evaluate her working.",
+     "a": "She forgot that x + x = 2x. 2x + 10 = 64 gives 2x = 54 and x = 27, not 54.",
+     "s": [
+      [
+       "Identifies the slip of not combining x + x",
+       1
+      ],
+      [
+       "Corrects to x = 27",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Create",
+     "d": "Hardest",
+     "t": "long_answer",
+     "m": 3,
+     "q": "Make up a word problem whose equation is 3x + 5 = 20 and solve it.",
+     "a": "For example: three pens and a 5 rupee eraser cost 20 rupees; find the price of a pen. 3x = 15, x = 5.",
+     "s": [
+      [
+       "A sensible story matching the equation",
+       1
+      ],
+      [
+       "Writes 3x + 5 = 20",
+       1
+      ],
+      [
+       "Solves x = 5",
+       1
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "code": "C9M-2.3",
+   "name": "Linear patterns",
+   "description": "Sequences with a constant difference between consecutive terms, and finding the nth term as a linear expression in n.",
+   "idea": "If each stage of a pattern adds the same amount, the nth term is a linear expression in n.",
+   "rule": "A linear pattern has a constant difference d between consecutive terms. Tiles 1, 3, 5, 7, ... give the nth term 2n - 1.",
+   "example": "Bela has 100 rupees and spends 5 rupees a day, so the amount on the nth day is 100 - 5n.",
+   "difficulty_base": "Easy",
+   "questions": [
+    {
+     "b": "Remember",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "A linear pattern is a sequence in which",
+     "a": "the difference between consecutive terms is constant",
+     "o": [
+      "the difference between consecutive terms is constant",
+      "the ratio of consecutive terms is constant",
+      "every term is even",
+      "the terms are all equal"
+     ]
+    },
+    {
+     "b": "Remember",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "For the tile pattern 1, 3, 5, 7, ... the number of tiles at Stage n is",
+     "a": "2n - 1",
+     "o": [
+      "2n - 1",
+      "2n + 1",
+      "n + 2",
+      "n^2"
+     ]
+    },
+    {
+     "b": "Remember",
+     "d": "Easy",
+     "t": "fill_blank",
+     "m": 1,
+     "q": "The term after 9 in the pattern 1, 3, 5, 7, 9, ... is ____.",
+     "a": "11"
+    },
+    {
+     "b": "Remember",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "q": "In a linear pattern the nth term is",
+     "a": "a linear expression in n",
+     "o": [
+      "a linear expression in n",
+      "a quadratic expression in n",
+      "always a constant",
+      "always negative"
+     ]
+    },
+    {
+     "b": "Understand",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "Using 2n - 1, the number of tiles at Stage 5 is",
+     "a": "9",
+     "o": [
+      "9",
+      "11",
+      "10",
+      "7"
+     ]
+    },
+    {
+     "b": "Understand",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "Bela has 100 rupees and spends 5 rupees every day. The amount left on the nth day is",
+     "a": "100 - 5n",
+     "o": [
+      "100 - 5n",
+      "100 + 5n",
+      "5n - 100",
+      "95n"
+     ]
+    },
+    {
+     "b": "Understand",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "The difference between consecutive terms of 1, 3, 5, 7, 9 is",
+     "a": "2",
+     "o": [
+      "2",
+      "1",
+      "3",
+      "9"
+     ]
+    },
+    {
+     "b": "Understand",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "q": "Which sequence is a linear pattern?",
+     "a": "4, 9, 14, 19, ...",
+     "o": [
+      "4, 9, 14, 19, ...",
+      "1, 4, 9, 16, ...",
+      "2, 4, 8, 16, ...",
+      "1, 2, 4, 7, ..."
+     ]
+    },
+    {
+     "b": "Understand",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "q": "Explain why 2n - 1 is a linear polynomial and what the number 2 tells us about the pattern.",
+     "a": "2n - 1 has degree 1 in n. The coefficient 2 is the constant difference: each stage adds 2 tiles.",
+     "s": [
+      [
+       "States degree 1 so linear",
+       1
+      ],
+      [
+       "Says 2 is the constant difference between stages",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "Using 2n - 1, the number of tiles at Stage 15 is",
+     "a": "29",
+     "o": [
+      "29",
+      "30",
+      "31",
+      "28"
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Easy",
+     "t": "fill_blank",
+     "m": 1,
+     "q": "Using 2n - 1, the stage that contains 21 tiles is Stage ____.",
+     "a": "11"
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "q": "Bela's amount on the nth day is 100 - 5n. On the 15th day she has",
+     "a": "25 rupees",
+     "o": [
+      "25 rupees",
+      "75 rupees",
+      "175 rupees",
+      "15 rupees"
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "q": "In the tile pattern with 2n - 1 tiles at Stage n, which stage has 47 tiles?",
+     "a": "2n - 1 = 47 gives 2n = 48 and n = 24. Stage 24.",
+     "s": [
+      [
+       "Sets 2n - 1 = 47",
+       1
+      ],
+      [
+       "n = 24",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "q": "An auto-rickshaw fare is 25 rupees for the first 2 km and then 15 rupees for each extra km. Find the fare for 10 km.",
+     "a": "25 + 15 x 8 = 145 rupees.",
+     "s": [
+      [
+       "Counts 8 extra km",
+       1
+      ],
+      [
+       "Fare 145 rupees",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hardest",
+     "t": "long_answer",
+     "m": 3,
+     "q": "A student has 500 rupees at the end of month 1 and gets 150 rupees pocket money each later month. Write an expression for the amount at the end of the nth month and find it for n = 6.",
+     "a": "Amount = 500 + 150(n - 1) = 150n + 350. For n = 6 it is 1250 rupees.",
+     "s": [
+      [
+       "500 + 150(n - 1)",
+       1
+      ],
+      [
+       "Simplifies to 150n + 350",
+       1
+      ],
+      [
+       "n = 6 gives 1250",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "q": "For an auto fare of 15n - 5 rupees for n km (n at least 2), the distance with fare 130 rupees is",
+     "a": "9 km",
+     "o": [
+      "9 km",
+      "10 km",
+      "8 km",
+      "11 km"
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "q": "A rally starts with 120 members and 9 members drop out every hour. Write the number left after n hours and find it after 5 hours.",
+     "a": "120 - 9n; after 5 hours 120 - 45 = 75 members.",
+     "s": [
+      [
+       "Expression 120 - 9n",
+       1
+      ],
+      [
+       "75 members after 5 hours",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hardest",
+     "t": "long_answer",
+     "m": 3,
+     "q": "Sarita reads a 500-page book at 20 pages a day. Write the pages left after n days, find the pages left after 15 days, and the day the book is finished.",
+     "a": "Pages left = 500 - 20n. After 15 days 200 pages remain. 500 - 20n = 0 gives n = 25, so she finishes on day 25.",
+     "s": [
+      [
+       "500 - 20n",
+       1
+      ],
+      [
+       "200 pages after 15 days",
+       1
+      ],
+      [
+       "Finishes after 25 days",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Evaluate",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "q": "Tom says 1, 3, 6, 10, ... is a linear pattern because the numbers keep increasing. Evaluate.",
+     "a": "Not correct. The differences 2, 3, 4 are not constant, so the pattern is not linear.",
+     "s": [
+      [
+       "Finds the differences 2, 3, 4",
+       1
+      ],
+      [
+       "Concludes not linear because they are not constant",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Create",
+     "d": "Hardest",
+     "t": "long_answer",
+     "m": 3,
+     "q": "Create a linear pattern with first term 4 and common difference 3. Write its nth term and find the 20th term.",
+     "a": "4, 7, 10, 13, ...; nth term 3n + 1; 20th term 61.",
+     "s": [
+      [
+       "First terms written correctly",
+       1
+      ],
+      [
+       "nth term 3n + 1",
+       1
+      ],
+      [
+       "20th term 61",
+       1
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "code": "C9M-2.4",
+   "name": "Linear growth and linear decay",
+   "description": "Modelling situations where a quantity increases or decreases by a fixed amount over equal intervals with a linear function.",
+   "idea": "Linear growth adds a fixed amount each interval; linear decay subtracts a fixed amount each interval.",
+   "rule": "C(d) = 100 + 60d is growth (+60 per km); h(t) = 3 - 0.5t is decay (-0.5 per month).",
+   "example": "A tank with 3 m of water loses 0.5 m a month: after 4 months h = 3 - 0.5 x 4 = 1 m.",
+   "difficulty_base": "Easy",
+   "questions": [
+    {
+     "b": "Remember",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "Linear growth means a quantity",
+     "a": "increases by a constant amount over equal intervals",
+     "o": [
+      "increases by a constant amount over equal intervals",
+      "doubles over equal intervals",
+      "decreases by a constant amount",
+      "stays the same"
+     ]
+    },
+    {
+     "b": "Remember",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "Linear decay means a quantity",
+     "a": "decreases by a constant amount over equal intervals",
+     "o": [
+      "decreases by a constant amount over equal intervals",
+      "increases by a constant amount",
+      "halves every interval",
+      "never changes"
+     ]
+    },
+    {
+     "b": "Remember",
+     "d": "Easy",
+     "t": "fill_blank",
+     "m": 1,
+     "q": "In C(d) = 100 + 60d the cost increases by ____ rupees for every extra km.",
+     "a": "60"
+    },
+    {
+     "b": "Remember",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "q": "Linear growth is represented on a graph by a straight line with",
+     "a": "positive slope",
+     "o": [
+      "positive slope",
+      "negative slope",
+      "zero intercept only",
+      "no slope"
+     ]
+    },
+    {
+     "b": "Understand",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "h(t) = 3 - 0.5t represents",
+     "a": "linear decay",
+     "o": [
+      "linear decay",
+      "linear growth",
+      "a constant",
+      "a quadratic"
+     ]
+    },
+    {
+     "b": "Understand",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "In C(d) = 100 + 60d the value 100 is the cost when",
+     "a": "d = 0",
+     "o": [
+      "d = 0",
+      "d = 1",
+      "d = 100",
+      "d = 60"
+     ]
+    },
+    {
+     "b": "Understand",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "In h(t) = 3 - 0.5t, the number 0.5 tells us that",
+     "a": "the height falls by 0.5 m each month",
+     "o": [
+      "the height falls by 0.5 m each month",
+      "the height rises by 0.5 m each month",
+      "the tank has 0.5 m of water at the start",
+      "the tank empties in 0.5 months"
+     ]
+    },
+    {
+     "b": "Understand",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "q": "A village of 750 people gains 50 people every year. Its population after t years is",
+     "a": "750 + 50t",
+     "o": [
+      "750 + 50t",
+      "750 - 50t",
+      "50 + 750t",
+      "800t"
+     ]
+    },
+    {
+     "b": "Understand",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "q": "A phone worth 10000 rupees loses 800 rupees of value every year. Explain why its value v = 10000 - 800t shows linear decay.",
+     "a": "The value falls by the same 800 rupees each year (a constant amount over equal intervals) and the coefficient of t is negative.",
+     "s": [
+      [
+       "The decrease per year is constant, 800",
+       1
+      ],
+      [
+       "The coefficient of t is negative",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "For C(d) = 100 + 60d, the cost of a 15 km journey is",
+     "a": "1000 rupees",
+     "o": [
+      "1000 rupees",
+      "900 rupees",
+      "160 rupees",
+      "115 rupees"
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Easy",
+     "t": "fill_blank",
+     "m": 1,
+     "q": "For h(t) = 3 - 0.5t the height at the end of 5 months is ____ m.",
+     "a": "0.5"
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "q": "For C(d) = 100 + 60d, the cost is 700 rupees when d is",
+     "a": "10 km",
+     "o": [
+      "10 km",
+      "12 km",
+      "7 km",
+      "11 km"
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "q": "A plant is 1.75 ft tall and grows 0.5 ft every month. Write its height after t months and find it after 7 months.",
+     "a": "h = 1.75 + 0.5t. For t = 7, h = 1.75 + 3.5 = 5.25 ft.",
+     "s": [
+      [
+       "h = 1.75 + 0.5t",
+       1
+      ],
+      [
+       "5.25 ft",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "q": "A phone bought for 10000 rupees loses 800 rupees each year. Find its value after 3 years.",
+     "a": "10000 - 800 x 3 = 7600 rupees.",
+     "s": [
+      [
+       "Expression 10000 - 800t",
+       1
+      ],
+      [
+       "7600 rupees",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hardest",
+     "t": "long_answer",
+     "m": 3,
+     "q": "A prepaid balance of 600 rupees is reduced by 15 rupees each day. Write the balance b(x) after x days, find the balance after 10 days and the day the balance runs out.",
+     "a": "b(x) = 600 - 15x. After 10 days it is 450 rupees. It runs out when 600 - 15x = 0, x = 40 days.",
+     "s": [
+      [
+       "b(x) = 600 - 15x",
+       1
+      ],
+      [
+       "450 rupees after 10 days",
+       1
+      ],
+      [
+       "Balance is zero after 40 days",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "q": "Which of these describes linear decay?",
+     "a": "b = 600 - 15x",
+     "o": [
+      "b = 600 - 15x",
+      "P = 750 + 50t",
+      "C = 100 + 60d",
+      "y = 2x"
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "q": "A village has 750 people and 50 people move in every year. Find the population after 6 years and write the expression.",
+     "a": "P = 750 + 50t; after 6 years P = 1050.",
+     "s": [
+      [
+       "P = 750 + 50t",
+       1
+      ],
+      [
+       "1050 after 6 years",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hardest",
+     "t": "long_answer",
+     "m": 3,
+     "q": "A tank holds 3 m of water and h(t) = 3 - 0.5t. When is it empty, and why can the formula not be used after that?",
+     "a": "3 - 0.5t = 0 gives t = 6 months. After that the formula would give negative heights, which is impossible.",
+     "s": [
+      [
+       "t = 6 months",
+       1
+      ],
+      [
+       "Height cannot be negative",
+       1
+      ],
+      [
+       "The model only applies up to the time the tank is empty",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Evaluate",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "q": "Riya says C(d) = 100 + 60d is linear growth only because the cost is more than 100. Evaluate.",
+     "a": "She is wrong about the reason. It is linear growth because the cost increases by the same 60 rupees for every extra km.",
+     "s": [
+      [
+       "Says her reason is wrong",
+       1
+      ],
+      [
+       "Gives the constant increase of 60 per km",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Create",
+     "d": "Hardest",
+     "t": "long_answer",
+     "m": 3,
+     "q": "Make up a real-life situation of linear decay. Give the formula, the starting value and the rate, and find the value after 4 intervals.",
+     "a": "For example a 500 page book read at 25 pages a day: pages left = 500 - 25n, start 500, rate 25 per day, after 4 days 400.",
+     "s": [
+      [
+       "A situation with constant decrease",
+       1
+      ],
+      [
+       "Formula with starting value and rate",
+       1
+      ],
+      [
+       "Correct value after 4 intervals",
+       1
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "code": "C9M-2.5",
+   "name": "Linear relationships y = ax + b",
+   "description": "Finding the constants a and b of a linear relationship from two known pairs of values.",
+   "idea": "In y = ax + b, a is the change in y for one unit of x and b is the value of y when x = 0.",
+   "rule": "Substitute the two known pairs into y = ax + b, giving two equations, and solve for a and b.",
+   "example": "A bill is 350 for 10 GB and 550 for 20 GB: 350 = 10a + b and 550 = 20a + b give a = 20, b = 150, so y = 20x + 150.",
+   "difficulty_base": "Hard",
+   "questions": [
+    {
+     "b": "Remember",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "A linear relationship between x and y is written as",
+     "a": "y = ax + b",
+     "o": [
+      "y = ax + b",
+      "y = a/x",
+      "y = x^2",
+      "y = ab"
+     ]
+    },
+    {
+     "b": "Remember",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "In the bill relationship y = 20x + 150 the number 150 is the",
+     "a": "fixed monthly fee",
+     "o": [
+      "fixed monthly fee",
+      "cost per GB",
+      "number of GB used",
+      "total bill"
+     ]
+    },
+    {
+     "b": "Remember",
+     "d": "Easy",
+     "t": "fill_blank",
+     "m": 1,
+     "q": "In y = 20x + 150 the number 20 is the cost per ____.",
+     "a": "GB"
+    },
+    {
+     "b": "Remember",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "q": "To find both a and b in y = ax + b we need",
+     "a": "two pairs of values of x and y",
+     "o": [
+      "two pairs of values of x and y",
+      "one pair of values of x and y",
+      "only the value of a",
+      "only the value of b"
+     ]
+    },
+    {
+     "b": "Understand",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "If x is the term number and y the number of tiles, the tile pattern gives",
+     "a": "y = 2x - 1",
+     "o": [
+      "y = 2x - 1",
+      "y = 2x + 1",
+      "y = x - 2",
+      "y = x^2"
+     ]
+    },
+    {
+     "b": "Understand",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "If y = ax + b and x = 10 gives y = 350, then",
+     "a": "350 = 10a + b",
+     "o": [
+      "350 = 10a + b",
+      "350 = 10 + ab",
+      "10 = 350a + b",
+      "a = 350"
+     ]
+    },
+    {
+     "b": "Understand",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "In y = ax + b, the value of y when x = 0 is",
+     "a": "b",
+     "o": [
+      "b",
+      "a",
+      "a + b",
+      "0"
+     ]
+    },
+    {
+     "b": "Understand",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "q": "A bill is 350 for 10 GB and 550 for 20 GB. Then a is",
+     "a": "20",
+     "o": [
+      "20",
+      "15",
+      "200",
+      "150"
+     ]
+    },
+    {
+     "b": "Understand",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "q": "In a mobile bill y = ax + b, explain what a and b stand for.",
+     "a": "a is the extra charge for each unit of data used and b is the fixed fee charged even for no usage.",
+     "s": [
+      [
+       "a is the charge per unit",
+       1
+      ],
+      [
+       "b is the fixed fee",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "If y = 5x + 3, the value of y when x = 2 is",
+     "a": "13",
+     "o": [
+      "13",
+      "10",
+      "15",
+      "7"
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Easy",
+     "t": "fill_blank",
+     "m": 1,
+     "q": "For y = 20x + 150 the bill for 15 GB is ____ rupees.",
+     "a": "450"
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "q": "A bill is 400 rupees for 10 modules and 500 rupees for 14 modules. Then a is",
+     "a": "25",
+     "o": [
+      "25",
+      "10",
+      "100",
+      "35"
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "q": "A bill is 400 rupees for 10 modules and 500 rupees for 14 modules. Find a and b in y = ax + b.",
+     "a": "400 = 10a + b and 500 = 14a + b. Subtracting, 4a = 100 so a = 25 and b = 150.",
+     "s": [
+      [
+       "Two equations written",
+       1
+      ],
+      [
+       "a = 25 and b = 150",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "q": "A gym bill is 800 rupees for 10 hours of court use and 1100 rupees for 15 hours. Find the relation y = ax + b.",
+     "a": "800 = 10a + b and 1100 = 15a + b give 5a = 300, a = 60, b = 200. y = 60x + 200.",
+     "s": [
+      [
+       "a = 60",
+       1
+      ],
+      [
+       "b = 200",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hardest",
+     "t": "long_answer",
+     "m": 3,
+     "q": "Celsius and Fahrenheit are related by C = aF + b. Ice melts at 0 C = 32 F and water boils at 100 C = 212 F. Find a and b.",
+     "a": "0 = 32a + b and 100 = 212a + b. Subtracting: 180a = 100, a = 5/9 and b = -160/9.",
+     "s": [
+      [
+       "Two equations from the two data points",
+       1
+      ],
+      [
+       "a = 5/9",
+       1
+      ],
+      [
+       "b = -160/9",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "q": "For y = 20x + 150, the bill for 30 GB is",
+     "a": "750 rupees",
+     "o": [
+      "750 rupees",
+      "600 rupees",
+      "450 rupees",
+      "900 rupees"
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "q": "The bill y = 20x + 150 is 950 rupees. How many GB were used?",
+     "a": "20x + 150 = 950 gives 20x = 800 and x = 40 GB.",
+     "s": [
+      [
+       "Sets 20x + 150 = 950",
+       1
+      ],
+      [
+       "x = 40",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hardest",
+     "t": "long_answer",
+     "m": 3,
+     "q": "The graph of a linear polynomial p(x) passes through (1, 5) and (3, 11). Find p(x) and the points where its graph cuts the axes.",
+     "a": "a + b = 5 and 3a + b = 11 give a = 3, b = 2, so p(x) = 3x + 2. It cuts the y-axis at (0, 2) and the x-axis at (-2/3, 0).",
+     "s": [
+      [
+       "a = 3 and b = 2",
+       1
+      ],
+      [
+       "Cuts y-axis at (0, 2)",
+       1
+      ],
+      [
+       "Cuts x-axis at (-2/3, 0)",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Evaluate",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "q": "Sam solves 350 = 10a + b and 550 = 20a + b by subtracting and says a = 200. Evaluate.",
+     "a": "Subtracting gives 10a = 200, so a = 20, not 200. He forgot to divide by 10.",
+     "s": [
+      [
+       "Says a = 200 is wrong",
+       1
+      ],
+      [
+       "Shows 10a = 200 so a = 20",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Create",
+     "d": "Hardest",
+     "t": "long_answer",
+     "m": 3,
+     "q": "Make up a fee problem with a fixed fee of 100 rupees and 30 rupees per unit. Write y = ax + b, give two pairs of values and find the bill for 12 units.",
+     "a": "y = 30x + 100. For example x = 2 gives 160 and x = 5 gives 250. For 12 units y = 460.",
+     "s": [
+      [
+       "y = 30x + 100",
+       1
+      ],
+      [
+       "Two correct pairs of values",
+       1
+      ],
+      [
+       "460 rupees for 12 units",
+       1
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "code": "C9M-2.6",
+   "name": "Graphs of linear equations: slope and y-intercept",
+   "description": "Plotting y = ax + b as a straight line, and reading the slope a and the y-intercept b; parallel lines.",
+   "idea": "The graph of y = ax + b is a straight line; a says how steep it is and b tells where it cuts the y-axis.",
+   "rule": "y = ax + b has slope a and y-intercept b, cutting the y-axis at (0, b). y = ax passes through the origin. Equal slopes with different intercepts are parallel. Positive slope is growth; negative slope is decay.",
+   "example": "y = 2x + 5 cuts the y-axis at (0, 5); y = 2x + 1 is parallel to it and cuts at (0, 1).",
+   "difficulty_base": "Hard",
+   "questions": [
+    {
+     "b": "Remember",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "In the line y = ax + b, the number a is called the",
+     "a": "slope",
+     "o": [
+      "slope",
+      "y-intercept",
+      "origin",
+      "degree"
+     ]
+    },
+    {
+     "b": "Remember",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "In the line y = ax + b, the number b is called the",
+     "a": "y-intercept",
+     "o": [
+      "y-intercept",
+      "slope",
+      "x-coordinate",
+      "degree"
+     ]
+    },
+    {
+     "b": "Remember",
+     "d": "Easy",
+     "t": "fill_blank",
+     "m": 1,
+     "q": "The line y = ax always passes through the point ____.",
+     "a": "(0, 0)"
+    },
+    {
+     "b": "Remember",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "q": "The line y = ax + b cuts the y-axis at the point",
+     "a": "(0, b)",
+     "o": [
+      "(0, b)",
+      "(b, 0)",
+      "(a, b)",
+      "(0, a)"
+     ]
+    },
+    {
+     "b": "Understand",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "The line y = 2x + 5 cuts the y-axis at",
+     "a": "(0, 5)",
+     "o": [
+      "(0, 5)",
+      "(5, 0)",
+      "(2, 5)",
+      "(0, 2)"
+     ]
+    },
+    {
+     "b": "Understand",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "The y-intercept of the line y = 3x - 2 is",
+     "a": "-2",
+     "o": [
+      "-2",
+      "3",
+      "2",
+      "-3"
+     ]
+    },
+    {
+     "b": "Understand",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "Lines with equal slopes but different y-intercepts are",
+     "a": "parallel",
+     "o": [
+      "parallel",
+      "perpendicular",
+      "the same line",
+      "always intersecting"
+     ]
+    },
+    {
+     "b": "Understand",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "q": "For y = ax with a > 1, the line compared with y = x is",
+     "a": "steeper",
+     "o": [
+      "steeper",
+      "less steep",
+      "equally steep",
+      "not through the origin"
+     ]
+    },
+    {
+     "b": "Understand",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "q": "Distinguish the graphs of y = 3x + 1 and y = -3x + 1.",
+     "a": "Both cut the y-axis at (0, 1). y = 3x + 1 has slope 3, rises and shows growth; y = -3x + 1 has slope -3, falls and shows decay.",
+     "s": [
+      [
+       "Both cut the y-axis at (0, 1)",
+       1
+      ],
+      [
+       "First slopes upward (positive slope), second downward (negative slope)",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "Which point lies on the line y = 2x + 1?",
+     "a": "(7, 15)",
+     "o": [
+      "(7, 15)",
+      "(7, 14)",
+      "(1, 2)",
+      "(2, 6)"
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Easy",
+     "t": "fill_blank",
+     "m": 1,
+     "q": "The slope of the line y = -4x + 9 is ____.",
+     "a": "-4"
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "q": "Which pair of lines is parallel?",
+     "a": "y = 2x + 1 and y = 2x - 5",
+     "o": [
+      "y = 2x + 1 and y = 2x - 5",
+      "y = 2x + 1 and y = -2x + 1",
+      "y = x + 3 and y = 3x - 2",
+      "y = 3x and y = x/3"
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "q": "Check whether the point (5, 12) lies on the line y = 2x + 1.",
+     "a": "For x = 5, 2x + 1 = 11, which is not 12. So (5, 12) does not lie on the line.",
+     "s": [
+      [
+       "Substitutes x = 5 to get 11",
+       1
+      ],
+      [
+       "Concludes it does not lie on the line",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "q": "Write 2y = 4x + 7 in the form y = ax + b and state its slope and y-intercept.",
+     "a": "y = 2x + 7/2. Slope 2, y-intercept 7/2; it cuts the y-axis at (0, 3.5).",
+     "s": [
+      [
+       "y = 2x + 7/2",
+       1
+      ],
+      [
+       "Slope 2 and y-intercept 7/2",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hardest",
+     "t": "long_answer",
+     "m": 3,
+     "q": "Find the slopes and y-intercepts of 2y = 4x + 7 and 3y = 6x - 11 and say whether the lines are parallel.",
+     "a": "First: y = 2x + 7/2, slope 2, intercept 7/2. Second: y = 2x - 11/3, slope 2, intercept -11/3. Equal slopes and different intercepts, so parallel.",
+     "s": [
+      [
+       "First line slope 2 and intercept 7/2",
+       1
+      ],
+      [
+       "Second line slope 2 and intercept -11/3",
+       1
+      ],
+      [
+       "Concludes parallel",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "q": "Which line is steepest?",
+     "a": "y = 3x",
+     "o": [
+      "y = 3x",
+      "y = x",
+      "y = x/3",
+      "y = x/2"
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "q": "Temperature in Kelvin x and in Fahrenheit y are related by y = (9/5)(x - 273) + 32. Find y when x = 313.",
+     "a": "y = (9/5) x 40 + 32 = 72 + 32 = 104 degrees Fahrenheit.",
+     "s": [
+      [
+       "Substitutes x = 313",
+       1
+      ],
+      [
+       "104 degrees Fahrenheit",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hardest",
+     "t": "long_answer",
+     "m": 3,
+     "q": "Linear polynomial p(x) has a graph through (2, 3) and (6, 11). Polynomial q(x) has a graph through (4, -1) and is parallel to p(x). Find p(x), q(x) and where each meets the x-axis.",
+     "a": "Slope of p = (11 - 3)/(6 - 2) = 2 so p(x) = 2x - 1. q has slope 2: -1 = 8 + d gives d = -9, q(x) = 2x - 9. p meets the x-axis at (1/2, 0) and q at (9/2, 0).",
+     "s": [
+      [
+       "p(x) = 2x - 1",
+       1
+      ],
+      [
+       "q(x) = 2x - 9 using equal slopes",
+       1
+      ],
+      [
+       "x-axis points (1/2, 0) and (9/2, 0)",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Evaluate",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "q": "Meena says y = 2x + 1 and y = 2x + 5 will meet because both are increasing. Evaluate.",
+     "a": "She is wrong. They have the same slope 2 but different y-intercepts, so they are parallel and never meet.",
+     "s": [
+      [
+       "States they do not meet",
+       1
+      ],
+      [
+       "Reason: equal slopes, different intercepts means parallel",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Create",
+     "d": "Hardest",
+     "t": "long_answer",
+     "m": 3,
+     "q": "Write equations of (i) a line parallel to y = 2x + 1, (ii) a line through the origin steeper than y = x, (iii) a line with negative slope cutting the y-axis at (0, 4). Justify each.",
+     "a": "For example (i) y = 2x - 3 (same slope 2); (ii) y = 4x (passes through the origin, slope 4 is more than 1); (iii) y = -x + 4 (slope -1, intercept 4).",
+     "s": [
+      [
+       "Parallel line with slope 2",
+       1
+      ],
+      [
+       "Origin line with slope greater than 1",
+       1
+      ],
+      [
+       "Negative slope with intercept 4",
+       1
+      ]
+     ]
+    }
+   ]
+  }
+ ]
+}

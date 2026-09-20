@@ -119,6 +119,7 @@ export const Route = createFileRoute('/api/questions/generate')({
         try {
           result = await generateQuestions(db, {
             conceptName: concept.name,
+            syllabusLabel: `${concept.board} Class ${concept.class} Mathematics`,
             conceptIdea: concept.idea,
             conceptRule: concept.rule,
             conceptExample: concept.example,

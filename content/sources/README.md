@@ -22,7 +22,22 @@ Class 7 Mathematics — *Ganita Prakash*:
 | gegp206 | II | 6 | Constructions and Tilings |
 | gegp207 | II | 7 | Finding the Unknown |
 
-Two chapter numbering series. Part I ch 3 and Part II ch 4 are different chapters with similar
+Class 9 Mathematics — *Ganita Manjari* (Part I, first edition April 2026):
+
+| Code | Part | Ch | Chapter |
+|---|---|---|---|
+| iemh101 | I | 1 | Orienting Yourself: The Use of Coordinates |
+| iemh102 | I | 2 | Introduction to Linear Polynomials |
+| iemh103 | I | 3 | The World of Numbers |
+| iemh104 | I | 4 | Exploring Algebraic Identities |
+| iemh105 | I | 5 | I'm Up and Down, and Round and Round (circles) |
+| iemh106 | I | 6 | Measuring Space: Perimeter and Area |
+| iemh107 | I | 7 | The Mathematics of Maybe: Introduction to Probability |
+| iemh108 | I | 8 | Predicting What Comes Next: Exploring Sequences and Progressions |
+
+`iemh1ps` is the preliminary pages (not ingested). Part II of Class 9 is not loaded yet.
+
+Two chapter numbering series (Class 7). Part I ch 3 and Part II ch 4 are different chapters with similar
 names. Always carry the part.
 
 Files here are gitignored — they are large and redistributable only under NCERT's terms.

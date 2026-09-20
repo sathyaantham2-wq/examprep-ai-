@@ -26,6 +26,8 @@ export interface ExemplarQuestion {
 
 export interface GenerateQuestionsInput {
   conceptName: string
+  // e.g. "CBSE Class 9 Mathematics"; the class always comes from the concept, never a constant.
+  syllabusLabel?: string
   conceptIdea: string | null
   conceptRule: string | null
   conceptExample: string | null
@@ -107,7 +109,7 @@ export async function generateQuestions(
       ? `"step_marks": [{"step_no": number, "description": "...", "marks": number}, ...summing to exactly ${input.marks}],`
       : ''
 
-  const prompt = `You write exam questions for CBSE Class 7 Mathematics (NCERT Ganita Prakash), strictly for the concept and scope given below. Never use an idea, formula, or term that is not in the IN-scope list or the concept's own idea/rule/example — if you need something from OUT-of-scope or beyond it, do not write that question.
+  const prompt = `You write exam questions for ${input.syllabusLabel ?? 'CBSE school Mathematics'} (NCERT), strictly for the concept and scope given below. Never use an idea, formula, or term that is not in the IN-scope list or the concept's own idea/rule/example — if you need something from OUT-of-scope or beyond it, do not write that question.
 
 Concept: ${input.conceptName}
 ${input.conceptIdea ? `Idea: ${input.conceptIdea}\n` : ''}${input.conceptRule ? `Rule: ${input.conceptRule}\n` : ''}${input.conceptExample ? `Worked example: ${input.conceptExample}\n` : ''}

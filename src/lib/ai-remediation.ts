@@ -49,7 +49,7 @@ export async function generateRemediationContent(
     studentId: input.studentId,
   })
 
-  const prompt = `A CBSE Class 7 Mathematics student has just been flagged as needing extra practice on one concept. Write a short refresher and two worked examples to help them before they attempt practice questions.
+  const prompt = `A CBSE Mathematics student has just been flagged as needing extra practice on one concept. Write a short refresher and two worked examples to help them before they attempt practice questions.
 
 Concept: ${input.conceptName}
 ${input.conceptIdea ? `Idea: ${input.conceptIdea}\n` : ''}${input.conceptRule ? `Rule: ${input.conceptRule}\n` : ''}${input.conceptExample ? `Existing worked example: ${input.conceptExample}\n` : ''}

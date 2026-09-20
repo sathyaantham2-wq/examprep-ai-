@@ -38,7 +38,7 @@ export async function transcribeHandwriting(
     studentId: input.studentId,
   })
 
-  const prompt = `The image is a photo of a Class 7 student's handwritten answer to this exam question:
+  const prompt = `The image is a photo of a school student's handwritten answer to this exam question:
 
 ${input.questionText}
 

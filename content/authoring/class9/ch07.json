@@ -1,0 +1,2010 @@
+{
+ "subject": {
+  "code": "MATH9",
+  "name": "Mathematics",
+  "board": "CBSE",
+  "class": 9
+ },
+ "source": {
+  "publisher": "NCERT",
+  "title": "Ganita Manjari",
+  "edition": "First Edition April 2026",
+  "year": 2026
+ },
+ "chapter": {
+  "part": "I",
+  "chapter_no": 7,
+  "name": "The Mathematics of Maybe: Introduction to Probability",
+  "blurb": "Random events and the probability scale, experimental and theoretical probability, sample spaces and events, tree diagrams and the long-run behaviour of chance.",
+  "source_code": "iemh107",
+  "order_index": 7
+ },
+ "scope_in": [
+  {
+   "item": "Random experiments and events; the probability scale 0 to 1 and words like impossible and certain",
+   "pages": "155-159"
+  },
+  {
+   "item": "Experimental probability as relative frequency; sample versus population",
+   "pages": "160, 162-163, 165-166"
+  },
+  {
+   "item": "Theoretical probability with equally likely outcomes",
+   "pages": "161-162, 170-172"
+  },
+  {
+   "item": "Sample space, sample size and events as subsets",
+   "pages": "166-168"
+  },
+  {
+   "item": "Tree diagrams for multi-step experiments and simple probabilities from them",
+   "pages": "168-169, 171-173"
+  },
+  {
+   "item": "Law of Large Numbers, independence, Gambler's fallacy, fair and unbiased",
+   "pages": "163-164"
+  }
+ ],
+ "scope_out": [
+  {
+   "item": "Conditional probability and Bayes' rule",
+   "reason": "Not introduced in this chapter"
+  },
+  {
+   "item": "Permutations and combinations formulas",
+   "reason": "Counting is done by listing and tree diagrams only"
+  },
+  {
+   "item": "Probability distributions, expected value and variance",
+   "reason": "Not in this chapter"
+  },
+  {
+   "item": "Geometric probability beyond the single dropped-dye exercise",
+   "reason": "Appears only as one starred end-of-chapter problem"
+  },
+  {
+   "item": "Formal treatment of sampling methods",
+   "reason": "The text only introduces sample size and representativeness and points to further reading"
+  }
+ ],
+ "concepts": [
+  {
+   "code": "C9M-7.1",
+   "name": "Randomness and the probability scale",
+   "description": "Random experiments and events, subjective probability, and measuring likelihood on a scale from 0 to 1.",
+   "idea": "A random experiment has known possible outcomes but an unpredictable result; probability measures how likely an event is.",
+   "rule": "Probability lies between 0 and 1: 0 is impossible, 1 is certain, 0.5 is an even chance. 0 <= P(E) <= 1.",
+   "example": "A probability of 0.75 for winning a match means a 75% chance, so winning is more likely than not.",
+   "difficulty_base": "Easy",
+   "questions": [
+    {
+     "b": "Remember",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "The probability of an impossible event is",
+     "a": "0",
+     "o": [
+      "0",
+      "1",
+      "0.5",
+      "-1"
+     ]
+    },
+    {
+     "b": "Remember",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "The probability of an event that is certain to happen is",
+     "a": "1",
+     "o": [
+      "1",
+      "0",
+      "0.5",
+      "100"
+     ]
+    },
+    {
+     "b": "Remember",
+     "d": "Easy",
+     "t": "fill_blank",
+     "m": 1,
+     "q": "Probability is measured on a scale from 0 to ____.",
+     "a": "1"
+    },
+    {
+     "b": "Remember",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "q": "In a random experiment",
+     "a": "all outcomes may be known but which one occurs cannot be predicted",
+     "o": [
+      "all outcomes may be known but which one occurs cannot be predicted",
+      "the result is always known in advance",
+      "only one outcome is possible",
+      "the outcome depends on the experimenter's wish"
+     ]
+    },
+    {
+     "b": "Understand",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "A probability of 0.5 means the event is",
+     "a": "equally likely to happen or not",
+     "o": [
+      "equally likely to happen or not",
+      "impossible",
+      "certain",
+      "more likely than not"
+     ]
+    },
+    {
+     "b": "Understand",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "If the probability of your school winning is 0.75, then the chance of winning is",
+     "a": "75%",
+     "o": [
+      "75%",
+      "25%",
+      "7.5%",
+      "0.75%"
+     ]
+    },
+    {
+     "b": "Understand",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "Getting a number greater than 6 on a standard die is",
+     "a": "impossible",
+     "o": [
+      "impossible",
+      "certain",
+      "an even chance",
+      "more likely than not"
+     ]
+    },
+    {
+     "b": "Understand",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "q": "Which of these cannot be the probability of an event?",
+     "a": "1.2",
+     "o": [
+      "1.2",
+      "0",
+      "0.4",
+      "1"
+     ]
+    },
+    {
+     "b": "Understand",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "q": "Why is tossing a coin considered a fair way to decide which team bats first?",
+     "a": "The two outcomes, heads and tails, are equally likely and nobody can predict or control which will occur, so neither team has an advantage.",
+     "s": [
+      [
+       "Both outcomes are equally likely",
+       1
+      ],
+      [
+       "The result cannot be predicted or controlled",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "\"The next Monday will come after Sunday.\" This event is",
+     "a": "certain",
+     "o": [
+      "certain",
+      "impossible",
+      "an even chance",
+      "less likely"
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Easy",
+     "t": "fill_blank",
+     "m": 1,
+     "q": "The probability of rolling a 7 on a standard die is ____.",
+     "a": "0"
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "q": "Choosing a card numbered 2 to 10 from a pack of 52 cards is",
+     "a": "more likely (36 of 52)",
+     "o": [
+      "more likely (36 of 52)",
+      "impossible",
+      "an even chance",
+      "less likely"
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "q": "Label each event as impossible, less likely, equally likely, more likely or certain: (i) it snows in Mumbai in July, (ii) you greet at least one friend at school tomorrow.",
+     "a": "(i) impossible (or extremely unlikely); (ii) more likely (very nearly certain).",
+     "s": [
+      [
+       "(i) impossible or extremely unlikely with a reason",
+       1
+      ],
+      [
+       "(ii) more likely or almost certain with a reason",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "q": "A deck of six cards has some purple cards. Give the probability of picking a purple card if there are (i) 0 purple cards, (ii) 3 purple cards.",
+     "a": "(i) 0, impossible. (ii) 3/6 = 1/2, an even chance.",
+     "s": [
+      [
+       "P = 0 with 0 purple cards",
+       1
+      ],
+      [
+       "P = 1/2 with 3 purple cards",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hardest",
+     "t": "long_answer",
+     "m": 3,
+     "q": "Place these on the probability scale and label them: the sun rises tomorrow; a fair coin lands heads; a die shows a 3.",
+     "a": "The sun rises tomorrow: 1, certain. Fair coin heads: 1/2, even chance. Die shows a 3: 1/6, less likely.",
+     "s": [
+      [
+       "Sun rises: probability 1, certain",
+       1
+      ],
+      [
+       "Coin heads: 1/2, even chance",
+       1
+      ],
+      [
+       "Die shows 3: 1/6, less likely",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "q": "Which list is in increasing order of likelihood?",
+     "a": "rolling a 3 on a die (1/6), heads on a coin (1/2), a card from 2 to 10 in a pack (36/52)",
+     "o": [
+      "rolling a 3 on a die (1/6), heads on a coin (1/2), a card from 2 to 10 in a pack (36/52)",
+      "heads on a coin, rolling a 3, a card from 2 to 10",
+      "a card from 2 to 10, heads on a coin, rolling a 3",
+      "rolling a 3, a card from 2 to 10, heads on a coin"
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "q": "Explain what subjective probability means, with an example.",
+     "a": "It is a person's own estimate of how likely an event is, based on their reading of the evidence. For example, one friend says it is unlikely to rain because the sun is bright while another says it may rain because it is hot.",
+     "s": [
+      [
+       "It is a personal estimate based on the evidence they see",
+       1
+      ],
+      [
+       "Gives an example such as the rain prediction",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hardest",
+     "t": "long_answer",
+     "m": 3,
+     "q": "Why is rain regarded as a random event, and how can we still speak about its probability?",
+     "a": "Rain depends on many complex factors such as temperature, humidity, wind and pressure, and is so sensitive to them that we cannot predict it with certainty. But from data about past patterns we can estimate how likely rain is, i.e. its probability.",
+     "s": [
+      [
+       "Rain depends on many sensitive factors",
+       1
+      ],
+      [
+       "It cannot be predicted with certainty",
+       1
+      ],
+      [
+       "Probability can still be estimated from data on patterns",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Evaluate",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "q": "Ravi says an event with probability 1.5 is very likely. Evaluate.",
+     "a": "He is wrong. Probabilities lie between 0 and 1, so 1.5 is not a possible probability.",
+     "s": [
+      [
+       "States it is wrong",
+       1
+      ],
+      [
+       "Probability must be between 0 and 1",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Create",
+     "d": "Hardest",
+     "t": "long_answer",
+     "m": 3,
+     "q": "Give one example each of an impossible event, an event with even chance and a certain event, for a die roll or a coin toss, with their probabilities.",
+     "a": "Rolling a 9 on a die: probability 0. Getting heads on a fair coin: 1/2. Rolling a number from 1 to 6 on a die: 1.",
+     "s": [
+      [
+       "Impossible event with probability 0",
+       1
+      ],
+      [
+       "Even-chance event with probability 1/2",
+       1
+      ],
+      [
+       "Certain event with probability 1",
+       1
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "code": "C9M-7.2",
+   "name": "Experimental probability and relative frequency",
+   "description": "Estimating probability from experiments or data as a relative frequency, and using a sample to estimate for a population.",
+   "idea": "When outcomes are not known to be equally likely, we estimate probability from how often an event occurs in trials.",
+   "rule": "Experimental probability = (number of times the event occurred)/(total number of trials), also called the relative frequency. A larger, representative sample gives a more reliable estimate for the population.",
+   "example": "A die rolled 50 times lands on 4 eight times: experimental probability 8/50 = 0.16.",
+   "difficulty_base": "Easy",
+   "questions": [
+    {
+     "b": "Remember",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "Experimental probability of an event is",
+     "a": "number of times it occurred / total number of trials",
+     "o": [
+      "number of times it occurred / total number of trials",
+      "number of favourable outcomes / number of possible outcomes",
+      "total trials / number of times it occurred",
+      "always 1/2"
+     ]
+    },
+    {
+     "b": "Remember",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "The relative frequency of an event is another name for its",
+     "a": "experimental probability",
+     "o": [
+      "experimental probability",
+      "theoretical probability",
+      "sample space",
+      "tree diagram"
+     ]
+    },
+    {
+     "b": "Remember",
+     "d": "Easy",
+     "t": "fill_blank",
+     "m": 1,
+     "q": "An event occurs 8 times in 50 trials. Its relative frequency is ____.",
+     "a": "0.16"
+    },
+    {
+     "b": "Remember",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "q": "A sample is",
+     "a": "a part of the population from which evidence is collected",
+     "o": [
+      "a part of the population from which evidence is collected",
+      "the whole population",
+      "a single outcome",
+      "a tree diagram"
+     ]
+    },
+    {
+     "b": "Understand",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "A die is rolled 50 times and shows 4 exactly 8 times. The experimental probability of a 4 is",
+     "a": "8/50",
+     "o": [
+      "8/50",
+      "1/6",
+      "8/6",
+      "50/8"
+     ]
+    },
+    {
+     "b": "Understand",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "To be more confident about an estimate we should use",
+     "a": "a larger and more representative sample",
+     "o": [
+      "a larger and more representative sample",
+      "a smaller sample",
+      "only one class",
+      "no data"
+     ]
+    },
+    {
+     "b": "Understand",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "Asking 50 students out of a school of 1500 gives evidence from",
+     "a": "a sample of the population",
+     "o": [
+      "a sample of the population",
+      "the whole population",
+      "a sample space",
+      "an event"
+     ]
+    },
+    {
+     "b": "Understand",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "q": "20 of 50 sampled students like mangoes. In a school of 1500 students, the number expected to like mangoes is about",
+     "a": "600",
+     "o": [
+      "600",
+      "20",
+      "300",
+      "1500"
+     ]
+    },
+    {
+     "b": "Understand",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "q": "Why does a larger, more representative sample give a more reliable estimate?",
+     "a": "A larger sample reduces the effect of chance, and a representative one, with students from different classes, reflects the whole population fairly, so the relative frequency is closer to the true probability.",
+     "s": [
+      [
+       "A larger sample reduces chance variation",
+       1
+      ],
+      [
+       "A representative sample reflects the whole population",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "In a sample of 30 sweets, 8 are green. The probability that a randomly picked sweet is green is",
+     "a": "4/15",
+     "o": [
+      "4/15",
+      "8/22",
+      "1/8",
+      "8/38"
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Easy",
+     "t": "fill_blank",
+     "m": 1,
+     "q": "In a sample of 30 sweets, 10 are red. The probability of picking a red sweet is ____ (as a fraction in lowest terms).",
+     "a": "1/3"
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "q": "In a sample of 30 sweets, 7 are yellow. In a bag of 600 sweets, the number expected to be yellow is about",
+     "a": "140",
+     "o": [
+      "140",
+      "70",
+      "200",
+      "420"
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "q": "In a survey of 40 students, 11 like the Arts Club and 9 like the Sports Club. Find the probability that a randomly chosen sampled student likes the Arts Club, and estimate how many of 800 students like the Sports Club.",
+     "a": "P(Arts) = 11/40. Sports: 9/40 x 800 = 180 students.",
+     "s": [
+      [
+       "P(Arts) = 11/40",
+       1
+      ],
+      [
+       "180 students for Sports",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "q": "A die is rolled 12 times and shows a 3 exactly three times. Find the experimental and the theoretical probabilities of a 3.",
+     "a": "Experimental: 3/12 = 1/4. Theoretical: 1/6.",
+     "s": [
+      [
+       "Experimental probability 1/4",
+       1
+      ],
+      [
+       "Theoretical probability 1/6",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hardest",
+     "t": "long_answer",
+     "m": 3,
+     "q": "A tyre company records the distances before replacement in 1000 cases: 20 with under 4000 km, 210 with 4001 to 9000, 325 with 9001 to 14000 and 445 with over 14000. Find the probability that a tyre lasts (i) less than 4000 km, (ii) between 4000 and 14000 km, (iii) more than 14000 km.",
+     "a": "(i) 20/1000 = 0.02. (ii) (210 + 325)/1000 = 0.535. (iii) 445/1000 = 0.445.",
+     "s": [
+      [
+       "(i) 0.02",
+       1
+      ],
+      [
+       "(ii) 0.535 by adding the two middle groups",
+       1
+      ],
+      [
+       "(iii) 0.445",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "q": "Which statement is correct?",
+     "a": "With few trials, experimental probability can differ from theoretical probability",
+     "o": [
+      "With few trials, experimental probability can differ from theoretical probability",
+      "Experimental probability always equals theoretical probability",
+      "Experimental probability is always 0.5",
+      "Theoretical probability needs an experiment"
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "q": "A die rolled 12 times gives a 3 three times. Why might this differ from 1/6, and what happens with 60, 600 or 6000 rolls?",
+     "a": "With only 12 trials chance variation can be large, so 3/12 differs from 1/6. As the number of trials grows the relative frequency tends to get closer to 1/6.",
+     "s": [
+      [
+       "Small number of trials gives chance variation",
+       1
+      ],
+      [
+       "More trials bring the relative frequency close to 1/6",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hardest",
+     "t": "long_answer",
+     "m": 3,
+     "q": "In a survey of 50 students, 15 like football. Give the frequency and the relative frequency, and estimate how many of 1200 students like football.",
+     "a": "Frequency 15; relative frequency 15/50 = 0.3. Estimate: 0.3 x 1200 = 360 students.",
+     "s": [
+      [
+       "Frequency 15 and relative frequency 0.3",
+       1
+      ],
+      [
+       "Multiplies by 1200",
+       1
+      ],
+      [
+       "360 students",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Evaluate",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "q": "Nita says a sample of just 3 students is enough to predict the favourite fruit of the whole school. Evaluate.",
+     "a": "She is wrong. A very small sample can be unrepresentative and chance can dominate, so the estimate would be unreliable. A larger, representative sample is needed.",
+     "s": [
+      [
+       "States it is unreliable",
+       1
+      ],
+      [
+       "Says a larger, representative sample is needed",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Create",
+     "d": "Hardest",
+     "t": "long_answer",
+     "m": 3,
+     "q": "Plan a survey to estimate the probability that a student in your school walks to school. Say the sample size, how you make it representative and how you compute the estimate.",
+     "a": "Ask, say, 100 students chosen from different classes and grades. Count the number who walk. The estimate is (number who walk)/100, and it can be used to predict for the whole school.",
+     "s": [
+      [
+       "A reasonably large sample size",
+       1
+      ],
+      [
+       "Sample drawn from different classes so it is representative",
+       1
+      ],
+      [
+       "Estimate = number who walk / sample size",
+       1
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "code": "C9M-7.3",
+   "name": "Theoretical probability with equally likely outcomes",
+   "description": "Probability as the number of favourable outcomes divided by the number of possible equally likely outcomes.",
+   "idea": "When every outcome is equally likely we can find a probability by counting, without any experiment.",
+   "rule": "P(A) = (number of favourable outcomes)/(number of possible outcomes), when all outcomes are equally likely.",
+   "example": "A letter picked at random from PROBABILITY is B with probability 2/11.",
+   "difficulty_base": "Easy",
+   "questions": [
+    {
+     "b": "Remember",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "Theoretical probability of an event is",
+     "a": "number of favourable outcomes / number of possible outcomes",
+     "o": [
+      "number of favourable outcomes / number of possible outcomes",
+      "number of trials / number of favourable outcomes",
+      "the number of favourable outcomes",
+      "relative frequency of an experiment"
+     ]
+    },
+    {
+     "b": "Remember",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "The probability of getting heads on a fair coin is",
+     "a": "1/2",
+     "o": [
+      "1/2",
+      "1/4",
+      "1",
+      "2"
+     ]
+    },
+    {
+     "b": "Remember",
+     "d": "Easy",
+     "t": "fill_blank",
+     "m": 1,
+     "q": "The probability of rolling a 4 on a fair 6-sided die is ____.",
+     "a": "1/6"
+    },
+    {
+     "b": "Remember",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "q": "The formula for theoretical probability assumes that the outcomes are",
+     "a": "equally likely",
+     "o": [
+      "equally likely",
+      "always two in number",
+      "all favourable",
+      "listed in a table"
+     ]
+    },
+    {
+     "b": "Understand",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "A letter is picked at random from the word PROBABILITY. The probability of picking B is",
+     "a": "2/11",
+     "o": [
+      "2/11",
+      "1/11",
+      "2/9",
+      "1/2"
+     ]
+    },
+    {
+     "b": "Understand",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "The probability of an even number on a fair die is",
+     "a": "1/2",
+     "o": [
+      "1/2",
+      "1/3",
+      "1/6",
+      "2/3"
+     ]
+    },
+    {
+     "b": "Understand",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "The probability of a number greater than 4 on a fair die is",
+     "a": "1/3",
+     "o": [
+      "1/3",
+      "1/2",
+      "2/3",
+      "1/6"
+     ]
+    },
+    {
+     "b": "Understand",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "q": "Which experiment has equally likely outcomes?",
+     "a": "Rolling a fair 6-sided die",
+     "o": [
+      "Rolling a fair 6-sided die",
+      "Choosing a marble from a bag of 3 red and 7 blue marbles",
+      "Whether a car starts or not",
+      "Whether it rains tomorrow"
+     ]
+    },
+    {
+     "b": "Understand",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "q": "Explain why picking a marble from a bag of 3 red and 7 blue marbles does not have equally likely colour outcomes.",
+     "a": "There are more blue marbles than red, so blue is more likely than red. The colours are not equally likely, although each marble is equally likely to be picked.",
+     "s": [
+      [
+       "There are more blue than red marbles",
+       1
+      ],
+      [
+       "So the two colours are not equally likely",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "Ten cards numbered 1 to 10 are placed in a box. The probability of drawing an even number is",
+     "a": "1/2",
+     "o": [
+      "1/2",
+      "1/10",
+      "2/5",
+      "1/5"
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Easy",
+     "t": "fill_blank",
+     "m": 1,
+     "q": "A bag has 3 red, 2 blue and 1 green ball. The probability of picking the green ball is ____.",
+     "a": "1/6"
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "q": "A bag has 3 red, 2 blue and 1 green ball. The probability of picking a ball that is not red is",
+     "a": "1/2",
+     "o": [
+      "1/2",
+      "1/3",
+      "1/6",
+      "2/3"
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "q": "An arrow on a spinner stops at one of the numbers 1 to 8, all equally likely. Find the probability that it points at (i) an odd number, (ii) a number greater than 2.",
+     "a": "(i) 4/8 = 1/2. (ii) 6/8 = 3/4.",
+     "s": [
+      [
+       "(i) 1/2",
+       1
+      ],
+      [
+       "(ii) 3/4",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "q": "The letters of PEACE are on cards and one is drawn at random. Find the probability that it is (i) P, E or C, (ii) not an E.",
+     "a": "(i) The cards P, E, C, E qualify: 4/5. (ii) Not E: 3/5.",
+     "s": [
+      [
+       "(i) 4/5",
+       1
+      ],
+      [
+       "(ii) 3/5",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hardest",
+     "t": "long_answer",
+     "m": 3,
+     "q": "For a spinner with equally likely numbers 1 to 8, find (i) P(8), (ii) P(a multiple of 3), (iii) P(a number less than 9).",
+     "a": "(i) 1/8. (ii) multiples of 3 are 3 and 6, so 2/8 = 1/4. (iii) All 8 numbers, so 8/8 = 1.",
+     "s": [
+      [
+       "P(8) = 1/8",
+       1
+      ],
+      [
+       "P(multiple of 3) = 1/4",
+       1
+      ],
+      [
+       "P(less than 9) = 1",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "q": "A bag has strawberry, lemon and mint candies, one of each. The probability of picking strawberry is",
+     "a": "1/3",
+     "o": [
+      "1/3",
+      "1/2",
+      "1",
+      "3"
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "q": "A box has 5 green balls and 7 red balls and one ball is drawn at random. State the sample size and the probability of a red ball.",
+     "a": "The sample size is 12 and P(red) = 7/12.",
+     "s": [
+      [
+       "Sample size 12",
+       1
+      ],
+      [
+       "P(red) = 7/12",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hardest",
+     "t": "long_answer",
+     "m": 3,
+     "q": "A pair of dice is thrown. Give an event with probability 0 and an event with probability 1, and explain.",
+     "a": "The sum is 13 has probability 0 because the largest sum is 12. The sum is at least 2 has probability 1 because every outcome gives a sum from 2 to 12.",
+     "s": [
+      [
+       "An event with probability 0",
+       1
+      ],
+      [
+       "An event with probability 1",
+       1
+      ],
+      [
+       "Correct explanation using the range of sums 2 to 12",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Evaluate",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "q": "Meera says the probability of picking B from PROBABILITY is 1/9 because there are 9 different letters. Evaluate.",
+     "a": "She is wrong. The letter is picked from all 11 letters, each equally likely, and B appears twice. P(B) = 2/11.",
+     "s": [
+      [
+       "States she is wrong",
+       1
+      ],
+      [
+       "Counts 11 letters and 2 Bs to get 2/11",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Create",
+     "d": "Hardest",
+     "t": "long_answer",
+     "m": 3,
+     "q": "Design a bag of coloured balls in which the probability of picking a red ball is 2/5, and give a second bag with a different number of balls that has the same probability.",
+     "a": "For example 2 red and 3 blue balls give 2/5. A second bag with 4 red and 6 blue balls also gives 4/10 = 2/5.",
+     "s": [
+      [
+       "A bag with 2 red out of 5",
+       1
+      ],
+      [
+       "The probability shown to be 2/5",
+       1
+      ],
+      [
+       "A second bag with the same probability",
+       1
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "code": "C9M-7.4",
+   "name": "Sample spaces and events",
+   "description": "Listing the sample space of an experiment, its sample size, and events as subsets of the sample space.",
+   "idea": "The sample space lists every possible outcome exactly once, and an event is a chosen group of these outcomes.",
+   "rule": "The sample space S must include every outcome once; n(S) is the sample size. An event is a subset of S.",
+   "example": "Tossing two coins: S = {HH, HT, TH, TT}; the event at least one head is {HH, HT, TH}.",
+   "difficulty_base": "Easy",
+   "questions": [
+    {
+     "b": "Remember",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "The set of all possible outcomes of a random experiment is called the",
+     "a": "sample space",
+     "o": [
+      "sample space",
+      "event",
+      "tree",
+      "population"
+     ]
+    },
+    {
+     "b": "Remember",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "The sample space for tossing one coin is",
+     "a": "{H, T}",
+     "o": [
+      "{H, T}",
+      "{H}",
+      "{HH, TT}",
+      "{1, 2}"
+     ]
+    },
+    {
+     "b": "Remember",
+     "d": "Easy",
+     "t": "fill_blank",
+     "m": 1,
+     "q": "The number of elements in a sample space S is called the sample ____ and is written n(S).",
+     "a": "size"
+    },
+    {
+     "b": "Remember",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "q": "An event is",
+     "a": "a subset of the sample space",
+     "o": [
+      "a subset of the sample space",
+      "the whole sample space only",
+      "a number outside the sample space",
+      "always a single outcome"
+     ]
+    },
+    {
+     "b": "Understand",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "The sample space for tossing two coins is",
+     "a": "{HH, HT, TH, TT}",
+     "o": [
+      "{HH, HT, TH, TT}",
+      "{HH, HT, TT}",
+      "{H, T}",
+      "{HH, TT}"
+     ]
+    },
+    {
+     "b": "Understand",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "When a die is rolled, the event \"the number is greater than 4\" is",
+     "a": "{5, 6}",
+     "o": [
+      "{5, 6}",
+      "{4, 5, 6}",
+      "{1, 2, 3, 4}",
+      "{6}"
+     ]
+    },
+    {
+     "b": "Understand",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "In a sample space, an outcome should be listed",
+     "a": "exactly once",
+     "o": [
+      "exactly once",
+      "as many times as it can happen",
+      "never",
+      "twice for fairness"
+     ]
+    },
+    {
+     "b": "Understand",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "q": "To include drizzle, light rain and heavy rain, the sample space {Rain, No Rain} should be",
+     "a": "expanded to {No Rain, Drizzle, Light Rain, Heavy Rain}",
+     "o": [
+      "expanded to {No Rain, Drizzle, Light Rain, Heavy Rain}",
+      "left unchanged",
+      "shortened to {Rain}",
+      "replaced by a number"
+     ]
+    },
+    {
+     "b": "Understand",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "q": "Why might we change the sample space {Rain, No Rain} to a bigger one?",
+     "a": "The sample space must be detailed enough for the question. If we care about the amount of rain, we need outcomes such as drizzle, light rain and heavy rain.",
+     "s": [
+      [
+       "Sample space must match the detail needed",
+       1
+      ],
+      [
+       "Gives the extra outcomes for amount of rain",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "The sample size n(S) when a single die is rolled is",
+     "a": "6",
+     "o": [
+      "6",
+      "1",
+      "12",
+      "2"
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Easy",
+     "t": "fill_blank",
+     "m": 1,
+     "q": "For two coins, the event \"at least one head\" has ____ elements.",
+     "a": "3"
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "q": "A die is rolled and a coin is tossed together. The sample size is",
+     "a": "12",
+     "o": [
+      "12",
+      "8",
+      "6",
+      "36"
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "q": "Write the sample space for choosing a random integer between -5 and +5, including both.",
+     "a": "S = {-5, -4, -3, -2, -1, 0, 1, 2, 3, 4, 5}, with 11 elements.",
+     "s": [
+      [
+       "All 11 integers listed",
+       1
+      ],
+      [
+       "n(S) = 11",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "q": "A fair offers snacks Samosa, Pakora, Bhaji and drinks Chai, Lassi. Find the size of the sample space of a snack and drink choice, and list the event \"Samosa as snack\".",
+     "a": "There are 3 x 2 = 6 combinations. The event is {(Samosa, Chai), (Samosa, Lassi)}.",
+     "s": [
+      [
+       "Sample size 6",
+       1
+      ],
+      [
+       "Event {(Samosa, Chai), (Samosa, Lassi)}",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hardest",
+     "t": "long_answer",
+     "m": 3,
+     "q": "A child has 2 shirts (red, blue) and 3 pants (jeans, khakis, shorts). List all outfits, give the sample size and the probability that the child wears the red shirt with jeans.",
+     "a": "Outfits: (red, jeans), (red, khakis), (red, shorts), (blue, jeans), (blue, khakis), (blue, shorts). n(S) = 6 and P(red, jeans) = 1/6.",
+     "s": [
+      [
+       "All 6 outfits listed",
+       1
+      ],
+      [
+       "n(S) = 6",
+       1
+      ],
+      [
+       "P(red with jeans) = 1/6",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "q": "Three coins are tossed and the number of heads is recorded. A sample space is",
+     "a": "{0, 1, 2, 3}",
+     "o": [
+      "{0, 1, 2, 3}",
+      "{1, 2, 3}",
+      "{0, 1, 2}",
+      "{0, 1, 2, 3, 4}"
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "q": "Three coins are tossed and the number of heads is recorded. Why do {1, 2, 3} and {0, 1, 2, 3, 4} fail to be sample spaces?",
+     "a": "{1, 2, 3} leaves out the possible outcome 0 heads. {0, 1, 2, 3, 4} includes 4, which is impossible with three coins.",
+     "s": [
+      [
+       "{1, 2, 3} misses 0 heads",
+       1
+      ],
+      [
+       "{0, 1, 2, 3, 4} contains the impossible 4",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hardest",
+     "t": "long_answer",
+     "m": 3,
+     "q": "A box has 4 balls numbered 1 to 4. Find the sample size when two balls are drawn (i) with replacement, (ii) without replacement.",
+     "a": "(i) 4 x 4 = 16 ordered pairs. (ii) 4 x 3 = 12 ordered pairs, since the first ball is not replaced.",
+     "s": [
+      [
+       "With replacement: 16",
+       1
+      ],
+      [
+       "Without replacement: 12",
+       1
+      ],
+      [
+       "Reason for the difference",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Evaluate",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "q": "Ria writes the sample space for tossing two coins as {HH, HT, TT}. Evaluate.",
+     "a": "It is incomplete. The outcome TH (tails on the first coin, heads on the second) is missing. The sample space has 4 outcomes: {HH, HT, TH, TT}.",
+     "s": [
+      [
+       "Says TH is missing",
+       1
+      ],
+      [
+       "Gives the correct 4-element sample space",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Create",
+     "d": "Hardest",
+     "t": "long_answer",
+     "m": 3,
+     "q": "A coin is tossed and a card is drawn from cards numbered 1 to 6. Write the sample space and one event described in words.",
+     "a": "S = {(H,1), (H,2), ..., (H,6), (T,1), ..., (T,6)}, 12 outcomes. An event: \"heads and an even number\" = {(H,2), (H,4), (H,6)}.",
+     "s": [
+      [
+       "The 12 outcomes described",
+       1
+      ],
+      [
+       "An event as a subset",
+       1
+      ],
+      [
+       "The event described in words",
+       1
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "code": "C9M-7.5",
+   "name": "Tree diagrams and multi-step experiments",
+   "description": "Using tree diagrams to list all outcomes of experiments with several steps and to find probabilities.",
+   "idea": "A tree diagram shows every path of a multi-step experiment, and each path is one outcome.",
+   "rule": "Draw a branch for every outcome of each step; each complete path is an outcome. Count favourable paths over all paths when they are equally likely, or multiply probabilities along a path.",
+   "example": "Two fair coins: the tree has 4 paths, so P(HH) = 1/4 and P(one head and one tail) = 2/4 = 1/2.",
+   "difficulty_base": "Hard",
+   "questions": [
+    {
+     "b": "Remember",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "A tree diagram is used to",
+     "a": "list all possible outcomes of a multi-step experiment",
+     "o": [
+      "list all possible outcomes of a multi-step experiment",
+      "measure angles",
+      "find the mean of data",
+      "draw circles"
+     ]
+    },
+    {
+     "b": "Remember",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "In a tree diagram each path from the start to the end represents",
+     "a": "one complete outcome",
+     "o": [
+      "one complete outcome",
+      "a probability of 1",
+      "the sample space",
+      "an impossible event"
+     ]
+    },
+    {
+     "b": "Remember",
+     "d": "Easy",
+     "t": "fill_blank",
+     "m": 1,
+     "q": "Tossing a fair coin twice has ____ possible outcomes.",
+     "a": "4"
+    },
+    {
+     "b": "Remember",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "q": "The probability of getting heads twice when a fair coin is tossed twice is",
+     "a": "1/4",
+     "o": [
+      "1/4",
+      "1/2",
+      "1/3",
+      "1"
+     ]
+    },
+    {
+     "b": "Understand",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "The tree diagram for tossing three fair coins has how many complete paths?",
+     "a": "8",
+     "o": [
+      "8",
+      "6",
+      "3",
+      "4"
+     ]
+    },
+    {
+     "b": "Understand",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "When two fair coins are tossed, the probability of exactly one head and one tail is",
+     "a": "1/2",
+     "o": [
+      "1/2",
+      "1/4",
+      "1/3",
+      "3/4"
+     ]
+    },
+    {
+     "b": "Understand",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "A child has 2 shirts and 3 pants. The tree of outfit choices has how many paths?",
+     "a": "6",
+     "o": [
+      "6",
+      "5",
+      "3",
+      "2"
+     ]
+    },
+    {
+     "b": "Understand",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "q": "Basket A has 1 apple and 2 oranges; basket B has 1 banana and 1 mango. One fruit is picked from each. Counting each fruit separately, the number of equally likely pairs is",
+     "a": "6",
+     "o": [
+      "6",
+      "5",
+      "3",
+      "4"
+     ]
+    },
+    {
+     "b": "Understand",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "q": "In the tree for two coin tosses, how do the branch probabilities give P(HH) = 1/4?",
+     "a": "Each toss gives heads with probability 1/2. Along the path H then H the probabilities multiply: 1/2 x 1/2 = 1/4, and there are 4 equally likely paths.",
+     "s": [
+      [
+       "Each branch has probability 1/2",
+       1
+      ],
+      [
+       "Multiplies along the path to get 1/4",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "When two fair coins are tossed, the probability of at least one head is",
+     "a": "3/4",
+     "o": [
+      "3/4",
+      "1/4",
+      "1/2",
+      "2/3"
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Easy",
+     "t": "fill_blank",
+     "m": 1,
+     "q": "When three fair coins are tossed, the probability of exactly two heads is ____.",
+     "a": "3/8"
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "q": "Basket A has 1 apple and 2 oranges; basket B has 1 banana and 1 mango. The probability of picking an apple and a banana is",
+     "a": "1/6",
+     "o": [
+      "1/6",
+      "1/3",
+      "1/2",
+      "1/4"
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "q": "A basket has 4 red and 5 blue balls. Two balls are drawn one after the other without replacing the first. Find the probability of a red ball and then a blue ball.",
+     "a": "P(red first) = 4/9. Then 5 blue among 8 balls: 5/8. P = 4/9 x 5/8 = 20/72 = 5/18.",
+     "s": [
+      [
+       "P(red first) = 4/9",
+       1
+      ],
+      [
+       "Multiplies by 5/8 to get 5/18",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "q": "A basket has 4 red and 5 blue balls. Two balls are drawn without replacement. Find the probability that both are blue.",
+     "a": "P(both blue) = 5/9 x 4/8 = 20/72 = 5/18.",
+     "s": [
+      [
+       "P(first blue) = 5/9 and P(second blue) = 4/8",
+       1
+      ],
+      [
+       "5/18",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hardest",
+     "t": "long_answer",
+     "m": 3,
+     "q": "Three fair coins are tossed. Find the probability that the first coin shows heads and exactly two heads occur in total.",
+     "a": "The outcomes are HHT and HTH, so 2 favourable out of 8. Probability = 2/8 = 1/4.",
+     "s": [
+      [
+       "Lists the favourable outcomes HHT and HTH",
+       1
+      ],
+      [
+       "Sample size 8",
+       1
+      ],
+      [
+       "Probability 1/4",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "q": "A box has 3 red, 4 black and 2 green pens. A pen is picked and replaced, then a friend picks. The probability both pens are the same colour is",
+     "a": "29/81",
+     "o": [
+      "29/81",
+      "1/3",
+      "9/81",
+      "2/9"
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "q": "A student guesses all 3 questions of a test with 4 options each. Find the probability of exactly 2 correct answers.",
+     "a": "There are 3 ways to choose which two are correct. Each such way has probability (1/4) x (1/4) x (3/4) = 3/64. Total 3 x 3/64 = 9/64.",
+     "s": [
+      [
+       "3 ways to pick the two correct questions",
+       1
+      ],
+      [
+       "9/64",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hardest",
+     "t": "long_answer",
+     "m": 3,
+     "q": "Two dice are rolled. Find the probability that the sum is a prime number greater than 5.",
+     "a": "Prime sums greater than 5 are 7 and 11. A sum of 7 occurs in 6 ways and a sum of 11 in 2 ways, out of 36. P = 8/36 = 2/9.",
+     "s": [
+      [
+       "Identifies the sums 7 and 11",
+       1
+      ],
+      [
+       "Counts 6 + 2 favourable outcomes out of 36",
+       1
+      ],
+      [
+       "P = 2/9",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Evaluate",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "q": "Sam says that for two coin tosses P(two heads) = 1/3 because the outcomes are \"no head\", \"one head\", \"two heads\". Evaluate.",
+     "a": "He is wrong. Those three outcomes are not equally likely. The tree shows 4 equally likely outcomes HH, HT, TH, TT, so P(two heads) = 1/4.",
+     "s": [
+      [
+       "Says the three outcomes are not equally likely",
+       1
+      ],
+      [
+       "Uses the tree to get 1/4",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Create",
+     "d": "Hardest",
+     "t": "long_answer",
+     "m": 3,
+     "q": "Describe the tree diagram for tossing a coin and then rolling a die. How many paths does it have and what is the probability of heads and a 6?",
+     "a": "The first stage has 2 branches (H, T). From each branch there are 6 branches for the die. So there are 12 paths and P(heads and 6) = 1/12.",
+     "s": [
+      [
+       "Two branches then six from each",
+       1
+      ],
+      [
+       "12 paths",
+       1
+      ],
+      [
+       "P = 1/12",
+       1
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "code": "C9M-7.6",
+   "name": "Long-run behaviour, the Gambler's fallacy and fair experiments",
+   "description": "The Law of Large Numbers, independence of trials, the Gambler's fallacy and what fair and unbiased mean.",
+   "idea": "Probability describes what happens in the long run; it does not say what the next trial will be, and a fair coin has no memory.",
+   "rule": "As the number of trials increases the experimental probability tends to the theoretical probability (Law of Large Numbers). Trials are independent: past results do not change the next probability. The Gambler's fallacy is thinking they do.",
+   "example": "After six heads in a row, a fair coin still has probability 1/2 of tails on the next toss.",
+   "difficulty_base": "Hard",
+   "questions": [
+    {
+     "b": "Remember",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "The Law of Large Numbers says that as the number of trials increases,",
+     "a": "experimental probability tends to get closer to theoretical probability",
+     "o": [
+      "experimental probability tends to get closer to theoretical probability",
+      "experimental probability becomes 0",
+      "theoretical probability changes",
+      "every outcome occurs equally often"
+     ]
+    },
+    {
+     "b": "Remember",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "The Gambler's fallacy is the wrong belief that",
+     "a": "after a run of one outcome the opposite outcome becomes more likely",
+     "o": [
+      "after a run of one outcome the opposite outcome becomes more likely",
+      "coins are always fair",
+      "probability is between 0 and 1",
+      "dice have six faces"
+     ]
+    },
+    {
+     "b": "Remember",
+     "d": "Easy",
+     "t": "fill_blank",
+     "m": 1,
+     "q": "A fair coin is also called an ____ coin.",
+     "a": "unbiased"
+    },
+    {
+     "b": "Remember",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "q": "Successive tosses of a fair coin are",
+     "a": "independent of each other",
+     "o": [
+      "independent of each other",
+      "always opposite",
+      "always the same",
+      "dependent on all earlier tosses"
+     ]
+    },
+    {
+     "b": "Understand",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "A fair coin has come up heads six times in a row. The probability of tails on the next toss is",
+     "a": "1/2",
+     "o": [
+      "1/2",
+      "1/64",
+      "more than 1/2",
+      "less than 1/2"
+     ]
+    },
+    {
+     "b": "Understand",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "We say a coin \"has no memory\" to mean that",
+     "a": "past tosses do not change the next toss probabilities",
+     "o": [
+      "past tosses do not change the next toss probabilities",
+      "the coin cannot be tossed twice",
+      "the coin is unfair",
+      "the outcomes are certain"
+     ]
+    },
+    {
+     "b": "Understand",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "A fair die shows three 6s in a row. The probability of a 6 on the next roll is",
+     "a": "1/6",
+     "o": [
+      "1/6",
+      "0",
+      "1/2",
+      "1/216"
+     ]
+    },
+    {
+     "b": "Understand",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "q": "Which statement is true?",
+     "a": "A small number of trials can give an experimental probability far from the theoretical value",
+     "o": [
+      "A small number of trials can give an experimental probability far from the theoretical value",
+      "In 10 tosses of a fair coin exactly 5 heads always occur",
+      "A coin that landed heads must land tails next",
+      "Theoretical probability changes after each trial"
+     ]
+    },
+    {
+     "b": "Understand",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "q": "What does it mean for a coin to be fair?",
+     "a": "A fair coin is symmetrical, so there is no reason for it to land on one side more often than the other; heads and tails are equally likely.",
+     "s": [
+      [
+       "It is symmetrical",
+       1
+      ],
+      [
+       "Both sides are equally likely",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "A die has been rolled three times and each time showed 6. The chance of a 6 on the fourth roll is",
+     "a": "1/6",
+     "o": [
+      "1/6",
+      "0",
+      "1/3",
+      "1/2"
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Easy",
+     "t": "fill_blank",
+     "m": 1,
+     "q": "A fair coin has landed heads 8 times in a row. The probability of heads on the next toss is ____.",
+     "a": "1/2"
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "q": "Which statement shows the Gambler's fallacy?",
+     "a": "\"I have thrown three sixes, so I cannot throw another\"",
+     "o": [
+      "\"I have thrown three sixes, so I cannot throw another\"",
+      "\"Each roll of a fair die is independent\"",
+      "\"The chance of a 6 is 1/6 every time\"",
+      "\"Probability describes the long run\""
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "q": "In Snakes and Ladders Asha has rolled 6 three times in a row and says she cannot get another 6. Explain her mistake.",
+     "a": "This is the Gambler's fallacy. Each roll of a fair die is independent, so the probability of a 6 is still 1/6 on the next roll.",
+     "s": [
+      [
+       "Names it as the Gambler's fallacy or says rolls are independent",
+       1
+      ],
+      [
+       "States the probability is still 1/6",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "q": "A fair coin is tossed 100 times. What relative frequency of heads do you expect, and will it be exactly this?",
+     "a": "Close to 0.5. It need not be exactly 0.5 because chance causes small variations.",
+     "s": [
+      [
+       "Expects about 0.5",
+       1
+      ],
+      [
+       "Says exactness is not guaranteed because of chance",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hardest",
+     "t": "long_answer",
+     "m": 3,
+     "q": "A die is rolled 12 times and shows a 3 three times. Give the experimental and theoretical probabilities of a 3 and the number of 3s you would expect in 6000 rolls.",
+     "a": "Experimental 3/12 = 1/4; theoretical 1/6. In 6000 rolls expect about 6000 x 1/6 = 1000 threes.",
+     "s": [
+      [
+       "Experimental 1/4",
+       1
+      ],
+      [
+       "Theoretical 1/6",
+       1
+      ],
+      [
+       "About 1000 threes in 6000 rolls",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "q": "A fair coin is tossed 10 times. Which is true?",
+     "a": "Exactly 5 heads is not guaranteed",
+     "o": [
+      "Exactly 5 heads is not guaranteed",
+      "Exactly 5 heads must occur",
+      "Heads must alternate with tails",
+      "Tails must occur at least 6 times"
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "q": "Explain the statement \"probability does not tell you what will happen next but what will happen in the long run\".",
+     "a": "For one trial the outcome is unpredictable. But over very many trials the relative frequency settles near the theoretical probability, as in the Law of Large Numbers.",
+     "s": [
+      [
+       "A single trial cannot be predicted",
+       1
+      ],
+      [
+       "Long-run relative frequency tends to the probability",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hardest",
+     "t": "long_answer",
+     "m": 3,
+     "q": "A friend tosses a coin 5 times and gets 5 heads, and says the coin must be biased. Evaluate.",
+     "a": "For a fair coin the probability of 5 heads in 5 tosses is (1/2)^5 = 1/32, which is small but not impossible. With so few trials this is weak evidence. He should toss it many more times before concluding.",
+     "s": [
+      [
+       "P(5 heads) = 1/32 for a fair coin",
+       1
+      ],
+      [
+       "Says 5 tosses is too few to decide",
+       1
+      ],
+      [
+       "Suggests more trials",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Evaluate",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "q": "Vik says that after six heads in a row tails is \"due\" and is now more likely. Evaluate.",
+     "a": "He is wrong. This is the Gambler's fallacy. The coin has no memory, so tails still has probability 1/2.",
+     "s": [
+      [
+       "States it is the Gambler's fallacy",
+       1
+      ],
+      [
+       "Probability of tails is still 1/2",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Create",
+     "d": "Hardest",
+     "t": "long_answer",
+     "m": 3,
+     "q": "Design an experiment to check whether a coin is fair.",
+     "a": "Toss the coin a large number of times, say 500, and record the heads. Compute the relative frequency of heads. If it stays close to 0.5 as the number of tosses grows, the coin looks fair. If it stays far from 0.5, it may be biased.",
+     "s": [
+      [
+       "Toss many times and record results",
+       1
+      ],
+      [
+       "Compute the relative frequency of heads",
+       1
+      ],
+      [
+       "Compare with 0.5 as the trials increase",
+       1
+      ]
+     ]
+    }
+   ]
+  }
+ ]
+}
