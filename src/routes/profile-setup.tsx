@@ -14,6 +14,12 @@ import { SubjectCard } from '../components/subject-card'
 import { ThemeToggle } from '../components/theme-toggle'
 import { signOut, useSession } from '../lib/auth-client'
 
+// Classes shown in the class list even before their content is loaded.
+const PLANNED_CLASSES = [6, 7, 8, 9, 10, 11, 12]
+// Stands for the competitive-exam track (Civil Services, Groups). It is not a school class and is
+// never saved: there is nothing to save until its subjects exist.
+const CIVILS = -1
+
 export const Route = createFileRoute('/profile-setup')({ component: ProfileSetup })
 
 interface ProfileSubject {
@@ -83,8 +89,16 @@ function ProfileSetup() {
   }, [isPending, session, role, navigate])
 
   const boards = useMemo(() => [...new Set((options ?? []).map((o) => o.board))], [options])
+  // Every class from 6 to 12 is listed, and classes the admin has switched on are added, so a
+  // student can see what is planned. Classes with no subjects yet say so and cannot be saved.
   const classes = useMemo(
-    () => (options ?? []).filter((o) => o.board === board).map((o) => o.class),
+    () =>
+      [
+        ...new Set([
+          ...PLANNED_CLASSES,
+          ...(options ?? []).filter((o) => o.board === board).map((o) => o.class),
+        ]),
+      ].sort((a, b) => a - b),
     [options, board],
   )
   const subjects = useMemo(
@@ -192,6 +206,7 @@ function ProfileSetup() {
                       Class {c}
                     </option>
                   ))}
+                  <option value={CIVILS}>Civil Services / Groups</option>
                 </select>
               </div>
               <div className="space-y-1.5">
@@ -226,7 +241,11 @@ function ProfileSetup() {
           <CardContent>
             {subjects.length === 0 ? (
               <p className="text-body text-muted-foreground">
-                No subjects are available for this class yet.
+                {classNo === CIVILS
+                  ? 'Civil Services / Groups (Polity, General Studies) is coming soon.'
+                  : classNo === null
+                    ? 'Choose your class to see its subjects.'
+                    : 'No subjects are available for this class yet. Content is coming soon.'}
               </p>
             ) : (
               <div className="grid gap-3 sm:grid-cols-2" role="group" aria-label="Subjects">
