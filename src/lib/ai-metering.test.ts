@@ -22,6 +22,13 @@ import {
 } from './ai-metering'
 
 describe('estimateCostInr (F091 / F116 cost cap)', () => {
+  it('costs nothing for a Gemini model on the free plan, and Claude rates are unchanged', () => {
+    const usage = { inputTokens: 1_000_000, outputTokens: 1_000_000 }
+    expect(estimateCostInr(usage, 'gemini-2.5-flash')).toBe(0)
+    expect(estimateCostInr(usage, 'claude-sonnet-5')).toBe(estimateCostInr(usage))
+    expect(estimateCostInr(usage, 'claude-sonnet-5')).toBeGreaterThan(0)
+  })
+
   it('prices at Claude Sonnet 5 published rates ($2/$10 per 1M tokens) converted to INR', () => {
     const cost = estimateCostInr({ inputTokens: 1_000_000, outputTokens: 1_000_000 })
     // (2 + 10) USD * 83 INR/USD

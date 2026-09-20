@@ -17,6 +17,14 @@ export const Route = createFileRoute('/admin/adaptive')({ component: AdminAdapti
 
 type Json = { [key: string]: number | Array<number> | Json }
 
+interface AiStatus {
+  provider: 'anthropic' | 'gemini' | null
+  anthropic_key_set: boolean
+  gemini_key_set: boolean
+  forced: string | null
+  models: { strong: string; cheap: string } | null
+}
+
 interface Subject {
   id: string
   board: string
@@ -115,6 +123,8 @@ function AdminAdaptive() {
   const [message, setMessage] = useState<string | null>(null)
   const [error, setError] = useState<string | null>(null)
   const [subjects, setSubjects] = useState<Array<Subject>>([])
+  const [ai, setAi] = useState<AiStatus | null>(null)
+  const [aiTest, setAiTest] = useState<string | null>(null)
   const [form, setForm] = useState({ board: 'CBSE', class: 7, name: '', code: '' })
 
   async function loadSubjects() {
@@ -135,7 +145,21 @@ function AdminAdaptive() {
         setDefaults(d.defaults)
       })
     void loadSubjects()
+    fetch('/api/admin/ai-status')
+      .then((r) => r.json())
+      .then(setAi)
   }, [isPending, session, role, navigate])
+
+  async function testAi() {
+    setAiTest('Testing…')
+    const response = await fetch('/api/admin/ai-status', { method: 'POST' })
+    const body = (await response.json()) as { ok: boolean; provider?: string; model?: string; latency_ms?: number; error?: string | null }
+    setAiTest(
+      body.ok
+        ? `Working: ${body.provider} (${body.model}) answered in ${body.latency_ms} ms.`
+        : `Not working: ${body.error ?? 'unknown error'}`,
+    )
+  }
 
   async function saveConfig() {
     setMessage(null)
@@ -203,6 +227,37 @@ function AdminAdaptive() {
         </div>
         <ThemeToggle />
       </div>
+
+      <Card>
+        <CardHeader>
+          <CardTitle className="text-h3">AI provider</CardTitle>
+          <CardDescription>
+            Set ANTHROPIC_API_KEY or GEMINI_API_KEY in the deployment settings (see .env.example). Keys are never shown here.
+          </CardDescription>
+        </CardHeader>
+        <CardContent className="space-y-3">
+          {ai && (
+            <p className="text-body">
+              {ai.provider === null
+                ? 'No AI key is set. Written answers wait for a parent to mark them.'
+                : `In use: ${ai.provider === 'gemini' ? 'Google Gemini' : 'Anthropic Claude'}` +
+                  (ai.models ? ` · main model ${ai.models.strong}, backup ${ai.models.cheap}` : '')}
+            </p>
+          )}
+          {ai && (
+            <p className="text-small text-muted-foreground">
+              Anthropic key: {ai.anthropic_key_set ? 'set' : 'not set'} · Gemini key: {ai.gemini_key_set ? 'set' : 'not set'}
+              {ai.forced ? ` · forced to ${ai.forced}` : ''}
+            </p>
+          )}
+          <div className="flex items-center gap-3">
+            <Button type="button" variant="outline" disabled={!ai?.provider} onClick={() => void testAi()}>
+              Test connection
+            </Button>
+            {aiTest && <span className="text-small text-muted-foreground" role="status">{aiTest}</span>}
+          </div>
+        </CardContent>
+      </Card>
 
       <Card>
         <CardHeader>

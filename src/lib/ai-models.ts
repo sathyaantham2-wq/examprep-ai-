@@ -5,6 +5,10 @@
 // and it's declarative for the tab07 functions this codebase hasn't built yet too (AI-02/07/08/11,
 // ...) so a future implementation plugs into an entry that already exists rather than inventing
 // its own model string.
+import { activeProvider } from './ai-provider'
+import type { AiProvider } from './ai-provider'
+import { env } from './env'
+
 export type ModelTier = 'strong' | 'mid' | 'cheap'
 
 export const MODEL_TIER_BY_FEATURE: Partial<Record<string, ModelTier>> = {
@@ -25,25 +29,44 @@ export const MODEL_TIER_BY_FEATURE: Partial<Record<string, ModelTier>> = {
 // model has been identified/provisioned separately yet (documented gap, not a guess) -- it
 // defaults to the strong model until one is, so a mid-tier feature never silently downgrades
 // quality by resolving to an unintended tier.
-const MODEL_BY_TIER: Record<ModelTier, string> = {
+const ANTHROPIC_MODELS: Record<ModelTier, string> = {
   strong: 'claude-sonnet-5',
   mid: 'claude-sonnet-5',
   cheap: 'claude-haiku-4-5-20251001',
 }
 
-export function modelForFeature(feature: string): string {
+// Gemini: Flash is the strong tier because it is available on the free plan; Flash-Lite is the
+// cheap tier. Override either with GEMINI_MODEL_STRONG / GEMINI_MODEL_CHEAP (e.g. a Pro model).
+function geminiModels(): Record<ModelTier, string> {
+  const strong = env.GEMINI_MODEL_STRONG ?? 'gemini-2.5-flash'
+  return { strong, mid: strong, cheap: env.GEMINI_MODEL_CHEAP ?? 'gemini-2.5-flash-lite' }
+}
+
+function modelsFor(provider: AiProvider): Record<ModelTier, string> {
+  return provider === 'gemini' ? geminiModels() : ANTHROPIC_MODELS
+}
+
+export function modelForFeature(
+  feature: string,
+  provider: AiProvider = activeProvider() ?? 'anthropic',
+): string {
   const tier = MODEL_TIER_BY_FEATURE[feature]
   if (!tier) {
     throw new Error(`ai-models: no model tier mapped for AI feature "${feature}"`)
   }
-  return MODEL_BY_TIER[tier]
+  return modelsFor(provider)[tier]
+}
+
+/** The cheap-tier model of the active vendor, used as the retry model. */
+export function fallbackModel(provider: AiProvider = activeProvider() ?? 'anthropic'): string {
+  return modelsFor(provider).cheap
 }
 
 // The fallback model on a primary-model failure -- deliberately the cheap tier's model rather
 // than retrying the same strong model, since a genuine outage/overload on one model is unlikely
 // to clear in the time of a single retry, while a different model is a real independent path
 // that might still answer. Never the fallback FOR ITSELF: see callWithModelFallback below.
-export const FALLBACK_MODEL = 'claude-haiku-4-5-20251001'
+export const FALLBACK_MODEL = ANTHROPIC_MODELS.cheap
 
 export interface ModelFallbackResult<T> {
   result: T
@@ -67,8 +90,9 @@ export async function callWithModelFallback<T>(
     const result = await fn(primaryModel)
     return { result, modelUsed: primaryModel, usedFallback: false }
   } catch (err) {
-    if (primaryModel === FALLBACK_MODEL) throw err
-    const result = await fn(FALLBACK_MODEL)
-    return { result, modelUsed: FALLBACK_MODEL, usedFallback: true }
+    const retryModel = fallbackModel()
+    if (primaryModel === retryModel) throw err
+    const result = await fn(retryModel)
+    return { result, modelUsed: retryModel, usedFallback: true }
   }
 }

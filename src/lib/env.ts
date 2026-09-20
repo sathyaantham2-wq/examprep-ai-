@@ -14,6 +14,16 @@ const envSchema = z.object({
   GOOGLE_CLIENT_ID: z.string().min(1).optional(),
   GOOGLE_CLIENT_SECRET: z.string().min(1).optional(),
   ANTHROPIC_API_KEY: z.string().min(1).optional(),
+  // Google Gemini is the alternative AI vendor (has a free tier). AI_PROVIDER forces one when both
+  // keys are set; unset, Anthropic is used if it has a key, else Gemini. See src/lib/ai-provider.ts.
+  GEMINI_API_KEY: z.string().min(1).optional(),
+  AI_PROVIDER: z.enum(['anthropic', 'gemini']).optional(),
+  GEMINI_MODEL_STRONG: z.string().min(1).optional(),
+  GEMINI_MODEL_CHEAP: z.string().min(1).optional(),
+  // Gemini's free tier costs nothing; on a paid plan set the real per-1M-token USD prices so the
+  // spend caps (F121) count Gemini calls. Both default to 0.
+  GEMINI_USD_PER_1M_INPUT: z.coerce.number().nonnegative().optional(),
+  GEMINI_USD_PER_1M_OUTPUT: z.coerce.number().nonnegative().optional(),
   // F080: a Make.com webhook (Custom Webhook -> Gmail "Send an email") -- see src/lib/email.ts.
   // Optional, same graceful-degradation shape as ANTHROPIC_API_KEY: without it, transactional
   // email is simply not sent (logged as 'failed' with a reason), never a startup failure.
@@ -32,7 +42,9 @@ const envSchema = z.object({
 export type Env = z.infer<typeof envSchema>
 
 function loadEnv(): Env {
-  const parsed = envSchema.safeParse(process.env)
+  // A blank line in .env (KEY=) means "not set", not an invalid empty value.
+  const present = Object.fromEntries(Object.entries(process.env).filter(([, v]) => v !== ''))
+  const parsed = envSchema.safeParse(present)
   if (!parsed.success) {
     const issues = parsed.error.issues
       .map((issue) => `  - ${issue.path.join('.')}: ${issue.message}`)

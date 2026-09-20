@@ -1,7 +1,6 @@
-import Anthropic from '@anthropic-ai/sdk'
 import type { Db } from '../db/connection'
 import type { ErrorType } from '../db/enums'
-import { env } from './env'
+import { completeText, isAiConfigured } from './ai-provider'
 import { enforceAiCallBudget, logAiJob } from './ai-metering'
 import { callWithModelFallback, modelForFeature } from './ai-models'
 
@@ -18,15 +17,12 @@ const ERROR_TYPES = [
 // (src/lib/ai-models.ts), not a hardcoded literal, so this stays in sync if that mapping changes.
 const MODEL = modelForFeature('AI-05')
 
-let cachedClient: Anthropic | null = null
-function getClient(): Anthropic | null {
-  if (!env.ANTHROPIC_API_KEY) return null
-  cachedClient ??= new Anthropic({ apiKey: env.ANTHROPIC_API_KEY })
-  return cachedClient
-}
+// Marks proposed with less confidence than this are never used: the answer goes to a person. This
+// is what stops an uncertain AI grade from being confirmed automatically on adaptive papers.
+export const MIN_GRADING_CONFIDENCE = 0.7
 
 export function isAiGradingConfigured(): boolean {
-  return Boolean(env.ANTHROPIC_API_KEY)
+  return isAiConfigured()
 }
 
 export interface SubjectiveGradingInput {
@@ -68,15 +64,15 @@ const NEEDS_MANUAL_MARKING: SubjectiveGradingResult = {
  * AI-05 (tab07): proposes marks per step with justification against the stored marking scheme.
  * Never final — the caller writes this to evaluation_items.ai_marks/ai_error_type, never directly
  * to marks_awarded/error_type, so a human must confirm before it counts (CLAUDE.md hard rule).
- * Returns null if no ANTHROPIC_API_KEY is configured — the caller falls back to "needs manual
- * marking" (this module's documented fallback per tab07), not a guess.
+ * Returns null if no AI key (Anthropic or Gemini) is configured — the caller falls back to "needs
+ * manual marking" (this module's documented fallback per tab07), not a guess. An API failure or a
+ * low-confidence grade also falls back to manual marking.
  */
 export async function gradeSubjectiveAnswer(
   db: Db,
   input: SubjectiveGradingInput,
 ): Promise<SubjectiveGradingResult | null> {
-  const client = getClient()
-  if (!client) return null
+  if (!isAiConfigured()) return null
   await enforceAiCallBudget(db, {
     feature: 'AI-05',
     model: MODEL,
@@ -107,17 +103,13 @@ Respond with ONLY a JSON object, no other text, matching exactly:
 }`
 
   const startedAt = Date.now()
-  let response: Awaited<ReturnType<typeof client.messages.create>>
+  let response: Awaited<ReturnType<typeof completeText>>
   let modelUsed = MODEL
   try {
     // F094: "automatic fallback on failure" -- a primary-model error (rate limit, outage, ...)
     // gets one retry against the cheap-tier model before this call gives up entirely.
     const outcome = await callWithModelFallback(MODEL, (model) =>
-      client.messages.create({
-        model,
-        max_tokens: 1024,
-        messages: [{ role: 'user', content: prompt }],
-      }),
+      completeText({ model, prompt, maxTokens: 1024 }),
     )
     response = outcome.result
     modelUsed = outcome.modelUsed
@@ -131,25 +123,25 @@ Respond with ONLY a JSON object, no other text, matching exactly:
       status: 'error',
       error: err instanceof Error ? err.message : String(err),
     })
-    throw err
+    // A vendor outage or rate limit must not break marking: the answer simply goes to a person.
+    return NEEDS_MANUAL_MARKING
   }
   await logAiJob(db, {
     feature: 'AI-05',
     model: modelUsed,
     householdId: input.householdId,
     studentId: input.studentId,
-    tokensIn: response.usage.input_tokens,
-    tokensOut: response.usage.output_tokens,
+    tokensIn: response.tokensIn,
+    tokensOut: response.tokensOut,
     latencyMs: Date.now() - startedAt,
     status: 'success',
   })
 
-  const textBlock = response.content.find((block) => block.type === 'text')
-  if (!textBlock) return NEEDS_MANUAL_MARKING
+  if (!response.text) return NEEDS_MANUAL_MARKING
 
   let parsed: unknown
   try {
-    parsed = JSON.parse(textBlock.text)
+    parsed = JSON.parse(response.text)
   } catch {
     return NEEDS_MANUAL_MARKING
   }
@@ -168,15 +160,33 @@ Respond with ONLY a JSON object, no other text, matching exactly:
 
   if (result.unreadable) return NEEDS_MANUAL_MARKING
 
-  const steps = result.steps ?? []
-  const totalMarks = steps.reduce((sum, step) => sum + step.marks_awarded, 0)
+  const confidence = typeof result.confidence === 'number' ? result.confidence : 0
+  if (confidence < MIN_GRADING_CONFIDENCE) return NEEDS_MANUAL_MARKING
+
+  // Never trust the model's arithmetic: each step is capped at what the scheme allows for it, and
+  // the total at the question's marks.
+  const schemeMarks = new Map(input.stepMarks.map((s) => [s.step_no, s.marks]))
+  const steps = (result.steps ?? [])
+    .filter((s) => Number.isFinite(s.marks_awarded))
+    .map((s) => ({
+      ...s,
+      marks_awarded: Math.min(
+        Math.max(s.marks_awarded, 0),
+        schemeMarks.get(s.step_no) ?? input.marksMax,
+      ),
+    }))
+  if (steps.length === 0) return NEEDS_MANUAL_MARKING
+  const totalMarks = Math.min(
+    steps.reduce((sum, step) => sum + step.marks_awarded, 0),
+    input.marksMax,
+  )
 
   return {
     stepMarksAwarded: steps,
     totalMarks,
     errorType: result.error_type ?? null,
     feedback: result.feedback ?? '',
-    confidence: result.confidence ?? 0,
+    confidence,
     needsManualMarking: false,
   }
 }

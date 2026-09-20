@@ -1,7 +1,6 @@
-import Anthropic from '@anthropic-ai/sdk'
 import type { Db } from '../db/connection'
 import type { BloomLevel, DifficultyTier, QuestionType } from '../db/enums'
-import { env } from './env'
+import { completeText, isAiConfigured } from './ai-provider'
 import { enforceAiCallBudget, logAiJob } from './ai-metering'
 import { callWithModelFallback, modelForFeature } from './ai-models'
 
@@ -9,15 +8,8 @@ import { callWithModelFallback, modelForFeature } from './ai-models'
 // literal -- AI-01 is "strong model" tier, same as AI-05's subjective grading.
 const MODEL = modelForFeature('AI-01')
 
-let cachedClient: Anthropic | null = null
-function getClient(): Anthropic | null {
-  if (!env.ANTHROPIC_API_KEY) return null
-  cachedClient ??= new Anthropic({ apiKey: env.ANTHROPIC_API_KEY })
-  return cachedClient
-}
-
 export function isAiQuestionGenerationConfigured(): boolean {
-  return Boolean(env.ANTHROPIC_API_KEY)
+  return isAiConfigured()
 }
 
 export interface ScopeItem {
@@ -90,8 +82,7 @@ export async function generateQuestions(
   db: Db,
   input: GenerateQuestionsInput,
 ): Promise<GenerateQuestionsResult | null> {
-  const client = getClient()
-  if (!client) return null
+  if (!isAiConfigured()) return null
   await enforceAiCallBudget(db, {
     feature: 'AI-01',
     model: MODEL,
@@ -145,16 +136,12 @@ Respond with ONLY a JSON array, no other text, each element matching exactly:
 }`
 
   const startedAt = Date.now()
-  let response: Awaited<ReturnType<typeof client.messages.create>>
+  let response: Awaited<ReturnType<typeof completeText>>
   let modelUsed = MODEL
   try {
     // F094: one retry against the cheap-tier model on a primary-model failure.
     const outcome = await callWithModelFallback(MODEL, (model) =>
-      client.messages.create({
-        model,
-        max_tokens: 4096,
-        messages: [{ role: 'user', content: prompt }],
-      }),
+      completeText({ model, prompt, maxTokens: 4096 }),
     )
     response = outcome.result
     modelUsed = outcome.modelUsed
@@ -171,8 +158,8 @@ Respond with ONLY a JSON array, no other text, each element matching exactly:
     throw err
   }
   const usage = {
-    inputTokens: response.usage.input_tokens,
-    outputTokens: response.usage.output_tokens,
+    inputTokens: response.tokensIn,
+    outputTokens: response.tokensOut,
   }
   await logAiJob(db, {
     feature: 'AI-01',
@@ -185,16 +172,16 @@ Respond with ONLY a JSON array, no other text, each element matching exactly:
     status: 'success',
   })
 
-  const textBlock = response.content.find((block) => block.type === 'text')
-  if (!textBlock) return { accepted: [], rejected: [], usage }
+  if (!response.text) return { accepted: [], rejected: [], usage }
+  const outputText = response.text
 
   let parsed: unknown
   try {
-    parsed = JSON.parse(textBlock.text)
+    parsed = JSON.parse(outputText)
   } catch {
     return {
       accepted: [],
-      rejected: [{ reason: 'Model output was not valid JSON', raw: textBlock.text }],
+      rejected: [{ reason: 'Model output was not valid JSON', raw: outputText }],
       usage,
     }
   }

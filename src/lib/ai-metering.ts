@@ -1,6 +1,8 @@
 import type { Db } from '../db/connection'
 import type { AiJobStatus } from '../db/enums'
 import { aiJobsRepository, notificationsRepository } from '../db/repositories'
+import { activeProvider } from './ai-provider'
+import { env } from './env'
 
 // Claude Sonnet 5 published rate: $2.00 / 1M input tokens, $10.00 / 1M output tokens. INR
 // conversion uses a fixed approximate rate (documented assumption, not a live FX lookup) since
@@ -9,13 +11,22 @@ const USD_PER_1M_INPUT = 2.0
 const USD_PER_1M_OUTPUT = 10.0
 const USD_TO_INR = 83
 
-export function estimateCostInr(usage: {
-  inputTokens: number
-  outputTokens: number
-}): number {
+// Gemini is priced by environment (default 0, the free tier) because its models and prices change.
+function ratesFor(model: string | undefined): { input: number; output: number } {
+  const isGemini = model ? model.startsWith('gemini') : activeProvider() === 'gemini'
+  return isGemini
+    ? { input: env.GEMINI_USD_PER_1M_INPUT ?? 0, output: env.GEMINI_USD_PER_1M_OUTPUT ?? 0 }
+    : { input: USD_PER_1M_INPUT, output: USD_PER_1M_OUTPUT }
+}
+
+export function estimateCostInr(
+  usage: { inputTokens: number; outputTokens: number },
+  model?: string,
+): number {
+  const rates = ratesFor(model)
   const usd =
-    (usage.inputTokens / 1_000_000) * USD_PER_1M_INPUT +
-    (usage.outputTokens / 1_000_000) * USD_PER_1M_OUTPUT
+    (usage.inputTokens / 1_000_000) * rates.input +
+    (usage.outputTokens / 1_000_000) * rates.output
   return usd * USD_TO_INR
 }
 
@@ -46,10 +57,10 @@ export async function logAiJob(
 ): Promise<void> {
   const costInr =
     input.tokensIn != null && input.tokensOut != null
-      ? estimateCostInr({
-          inputTokens: input.tokensIn,
-          outputTokens: input.tokensOut,
-        })
+      ? estimateCostInr(
+          { inputTokens: input.tokensIn, outputTokens: input.tokensOut },
+          input.model,
+        )
       : null
   try {
     await aiJobsRepository.insert(db, {

@@ -1,6 +1,5 @@
-import Anthropic from '@anthropic-ai/sdk'
 import type { Db } from '../db/connection'
-import { env } from './env'
+import { completeText, isAiConfigured } from './ai-provider'
 import { enforceAiCallBudget, logAiJob } from './ai-metering'
 import { callWithModelFallback, modelForFeature } from './ai-models'
 
@@ -8,15 +7,8 @@ import { callWithModelFallback, modelForFeature } from './ai-models'
 // literal -- AI-09 is "strong model" tier, same as AI-01/AI-05.
 const MODEL = modelForFeature('AI-09')
 
-let cachedClient: Anthropic | null = null
-function getClient(): Anthropic | null {
-  if (!env.ANTHROPIC_API_KEY) return null
-  cachedClient ??= new Anthropic({ apiKey: env.ANTHROPIC_API_KEY })
-  return cachedClient
-}
-
 export function isAiRemediationConfigured(): boolean {
-  return Boolean(env.ANTHROPIC_API_KEY)
+  return isAiConfigured()
 }
 
 export interface WorkedExample {
@@ -49,8 +41,7 @@ export async function generateRemediationContent(
     studentId: string
   },
 ): Promise<RemediationContent | null> {
-  const client = getClient()
-  if (!client) return null
+  if (!isAiConfigured()) return null
   await enforceAiCallBudget(db, {
     feature: 'AI-09',
     model: MODEL,
@@ -72,16 +63,12 @@ Respond with ONLY a JSON object, no other text, matching exactly:
 }`
 
   const startedAt = Date.now()
-  let response: Awaited<ReturnType<typeof client.messages.create>>
+  let response: Awaited<ReturnType<typeof completeText>>
   let modelUsed = MODEL
   try {
     // F094: one retry against the cheap-tier model on a primary-model failure.
     const outcome = await callWithModelFallback(MODEL, (model) =>
-      client.messages.create({
-        model,
-        max_tokens: 2048,
-        messages: [{ role: 'user', content: prompt }],
-      }),
+      completeText({ model, prompt, maxTokens: 2048 }),
     )
     response = outcome.result
     modelUsed = outcome.modelUsed
@@ -102,17 +89,16 @@ Respond with ONLY a JSON object, no other text, matching exactly:
     model: modelUsed,
     householdId: input.householdId,
     studentId: input.studentId,
-    tokensIn: response.usage.input_tokens,
-    tokensOut: response.usage.output_tokens,
+    tokensIn: response.tokensIn,
+    tokensOut: response.tokensOut,
     latencyMs: Date.now() - startedAt,
     status: 'success',
   })
 
-  const textBlock = response.content.find((block) => block.type === 'text')
-  if (!textBlock) return { refresher: null, examples: [] }
+  if (!response.text) return { refresher: null, examples: [] }
 
   try {
-    const parsed = JSON.parse(textBlock.text) as {
+    const parsed = JSON.parse(response.text) as {
       refresher?: string
       examples?: Array<{ problem: string; steps: Array<string> }>
     }

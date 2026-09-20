@@ -48,6 +48,7 @@ import { Route as SummaryWeeklyRouteImport } from './routes/summary/weekly'
 import { Route as TrackerStudentIdRouteImport } from './routes/tracker/$studentId'
 import { Route as ApiAdaptiveOverviewRouteImport } from './routes/api/adaptive/overview'
 import { Route as ApiAdaptivePlanRouteImport } from './routes/api/adaptive/plan'
+import { Route as ApiAdminAiStatusRouteImport } from './routes/api/admin/ai-status'
 import { Route as ApiAdminAiUsageRouteImport } from './routes/api/admin/ai-usage'
 import { Route as ApiAdminMasterySettingsRouteImport } from './routes/api/admin/mastery-settings'
 import { Route as ApiAdminProductFunnelRouteImport } from './routes/api/admin/product-funnel'
@@ -310,6 +311,11 @@ const ApiAdaptiveOverviewRoute = ApiAdaptiveOverviewRouteImport.update({
 const ApiAdaptivePlanRoute = ApiAdaptivePlanRouteImport.update({
   id: '/api/adaptive/plan',
   path: '/api/adaptive/plan',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ApiAdminAiStatusRoute = ApiAdminAiStatusRouteImport.update({
+  id: '/api/admin/ai-status',
+  path: '/api/admin/ai-status',
   getParentRoute: () => rootRouteImport,
 } as any)
 const ApiAdminAiUsageRoute = ApiAdminAiUsageRouteImport.update({
@@ -710,6 +716,7 @@ export interface FileRoutesByFullPath {
   '/tracker/$studentId': typeof TrackerStudentIdRoute
   '/api/adaptive/overview': typeof ApiAdaptiveOverviewRoute
   '/api/adaptive/plan': typeof ApiAdaptivePlanRoute
+  '/api/admin/ai-status': typeof ApiAdminAiStatusRoute
   '/api/admin/ai-usage': typeof ApiAdminAiUsageRoute
   '/api/admin/mastery-settings': typeof ApiAdminMasterySettingsRoute
   '/api/admin/product-funnel': typeof ApiAdminProductFunnelRoute
@@ -819,6 +826,7 @@ export interface FileRoutesByTo {
   '/tracker/$studentId': typeof TrackerStudentIdRoute
   '/api/adaptive/overview': typeof ApiAdaptiveOverviewRoute
   '/api/adaptive/plan': typeof ApiAdaptivePlanRoute
+  '/api/admin/ai-status': typeof ApiAdminAiStatusRoute
   '/api/admin/ai-usage': typeof ApiAdminAiUsageRoute
   '/api/admin/mastery-settings': typeof ApiAdminMasterySettingsRoute
   '/api/admin/product-funnel': typeof ApiAdminProductFunnelRoute
@@ -929,6 +937,7 @@ export interface FileRoutesById {
   '/tracker/$studentId': typeof TrackerStudentIdRoute
   '/api/adaptive/overview': typeof ApiAdaptiveOverviewRoute
   '/api/adaptive/plan': typeof ApiAdaptivePlanRoute
+  '/api/admin/ai-status': typeof ApiAdminAiStatusRoute
   '/api/admin/ai-usage': typeof ApiAdminAiUsageRoute
   '/api/admin/mastery-settings': typeof ApiAdminMasterySettingsRoute
   '/api/admin/product-funnel': typeof ApiAdminProductFunnelRoute
@@ -1040,6 +1049,7 @@ export interface FileRouteTypes {
     | '/tracker/$studentId'
     | '/api/adaptive/overview'
     | '/api/adaptive/plan'
+    | '/api/admin/ai-status'
     | '/api/admin/ai-usage'
     | '/api/admin/mastery-settings'
     | '/api/admin/product-funnel'
@@ -1149,6 +1159,7 @@ export interface FileRouteTypes {
     | '/tracker/$studentId'
     | '/api/adaptive/overview'
     | '/api/adaptive/plan'
+    | '/api/admin/ai-status'
     | '/api/admin/ai-usage'
     | '/api/admin/mastery-settings'
     | '/api/admin/product-funnel'
@@ -1258,6 +1269,7 @@ export interface FileRouteTypes {
     | '/tracker/$studentId'
     | '/api/adaptive/overview'
     | '/api/adaptive/plan'
+    | '/api/admin/ai-status'
     | '/api/admin/ai-usage'
     | '/api/admin/mastery-settings'
     | '/api/admin/product-funnel'
@@ -1368,6 +1380,7 @@ export interface RootRouteChildren {
   TrackerStudentIdRoute: typeof TrackerStudentIdRoute
   ApiAdaptiveOverviewRoute: typeof ApiAdaptiveOverviewRoute
   ApiAdaptivePlanRoute: typeof ApiAdaptivePlanRoute
+  ApiAdminAiStatusRoute: typeof ApiAdminAiStatusRoute
   ApiAdminAiUsageRoute: typeof ApiAdminAiUsageRoute
   ApiAdminMasterySettingsRoute: typeof ApiAdminMasterySettingsRoute
   ApiAdminProductFunnelRoute: typeof ApiAdminProductFunnelRoute
@@ -1665,6 +1678,13 @@ declare module '@tanstack/react-router' {
       path: '/api/adaptive/plan'
       fullPath: '/api/adaptive/plan'
       preLoaderRoute: typeof ApiAdaptivePlanRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/api/admin/ai-status': {
+      id: '/api/admin/ai-status'
+      path: '/api/admin/ai-status'
+      fullPath: '/api/admin/ai-status'
+      preLoaderRoute: typeof ApiAdminAiStatusRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/api/admin/ai-usage': {
@@ -2518,6 +2538,7 @@ const rootRouteChildren: RootRouteChildren = {
   TrackerStudentIdRoute: TrackerStudentIdRoute,
   ApiAdaptiveOverviewRoute: ApiAdaptiveOverviewRoute,
   ApiAdaptivePlanRoute: ApiAdaptivePlanRoute,
+  ApiAdminAiStatusRoute: ApiAdminAiStatusRoute,
   ApiAdminAiUsageRoute: ApiAdminAiUsageRoute,
   ApiAdminMasterySettingsRoute: ApiAdminMasterySettingsRoute,
   ApiAdminProductFunnelRoute: ApiAdminProductFunnelRoute,
