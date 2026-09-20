@@ -1,9 +1,10 @@
+import { existsSync } from 'node:fs'
 import { defineConfig } from '@playwright/test'
 
 // Whatever env-loading nitro's dev server normally does for `npm run dev` doesn't seem to run
 // the same way once the process is spawned as Playwright's webServer child -- load .env directly
 // here instead of relying on that, and pass it through explicitly.
-process.loadEnvFile('.env')
+if (existsSync('.env')) process.loadEnvFile('.env')
 
 // F104: "green before every deploy." Separate from the vitest suite -- this drives a real
 // browser against a real running dev server and the real dev DB, so it's a slower, heavier gate
