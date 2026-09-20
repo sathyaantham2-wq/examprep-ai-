@@ -16,6 +16,15 @@ export const auth = betterAuth({
       generateId: 'uuid',
     },
   },
+  // The default limit for sign-in and sign-up is 3 requests per 10 seconds per IP address, which a
+  // family on one home network trips just by mistyping a password twice. Ten a minute still
+  // blocks password guessing. (Rate limiting only runs in production.)
+  rateLimit: {
+    customRules: {
+      '/sign-in/email': { window: 60, max: 10 },
+      '/sign-up/email': { window: 60, max: 10 },
+    },
+  },
   // No email confirmation (owner decision 2026-09-20): a new account signs in at once.
   emailAndPassword: {
     enabled: true,
