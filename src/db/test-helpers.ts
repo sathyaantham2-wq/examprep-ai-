@@ -19,29 +19,16 @@ export interface TestSession {
   password: string
 }
 
-/** Signs up, captures the verification link from the console (there's no email provider — see
- * src/lib/auth.ts's sendVerificationEmail stub), verifies, and signs in. Every fresh sign-up is
- * a parent starting a new household, per the databaseHooks in src/lib/auth.ts. */
+/** Signs up and signs in (there is no email confirmation step). Every fresh sign-up is a parent
+ * starting a new household, per the databaseHooks in src/lib/auth.ts. */
 export async function createParentSession(
   namePrefix: string,
 ): Promise<TestSession> {
   const email = `${namePrefix}-${Date.now()}-${Math.random().toString(36).slice(2)}@example.com`
 
-  let verificationUrl = ''
-  const originalLog = console.log
-  console.log = (...args: Array<unknown>) => {
-    const line = args.join(' ')
-    const match = /verification link for [^:]+: (\S+)/.exec(line)
-    if (match) verificationUrl = match[1]
-  }
   const signUp = await auth.api.signUpEmail({
     body: { email, password: TEST_PASSWORD, name: `${namePrefix} test user` },
   })
-  console.log = originalLog
-
-  const token = new URL(verificationUrl).searchParams.get('token')
-  if (!token) throw new Error('No verification link was captured from sign-up')
-  await auth.api.verifyEmail({ query: { token } })
 
   const signIn = await auth.api.signInEmail({
     body: { email, password: TEST_PASSWORD },

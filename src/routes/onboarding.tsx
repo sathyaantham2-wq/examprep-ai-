@@ -172,8 +172,8 @@ function Onboarding() {
             >
               <p className="text-small text-muted-foreground">
                 The student must first create her own account (student sign-up
-                with her email, a username and a password, then confirm her
-                email). Enter the email she used.
+                with her email, a username and a password). Enter the email
+                she used.
               </p>
               <div className="space-y-1.5">
                 <Label htmlFor="student-email">Student’s email</Label>

@@ -29,7 +29,6 @@ function Home() {
   const [guardianOk, setGuardianOk] = useState(false)
   const [error, setError] = useState<string | null>(null)
   const [submitting, setSubmitting] = useState(false)
-  const [signedUp, setSignedUp] = useState(false)
 
   const role = (session?.user as { role?: string } | undefined)?.role
 
@@ -131,10 +130,13 @@ function Home() {
           setError(result.error.message ?? 'Sign up failed')
           return
         }
-        // F006: requireEmailVerification is on and M16 (transactional email) doesn't exist yet --
-        // the server logs the verification link to its own console rather than emailing it, so
-        // there is nothing more this screen can do for a real user until M16 lands.
-        setSignedUp(true)
+        // No email confirmation step: the account works immediately, so sign straight in and let
+        // the redirect effect above take her to her first screen.
+        const signedIn = await signIn.email({ email, password })
+        if (signedIn.error) {
+          setError(signedIn.error.message ?? 'Account created. Please sign in.')
+          setMode('sign-in')
+        }
       }
     } finally {
       setSubmitting(false)
@@ -165,25 +167,7 @@ function Home() {
             </CardDescription>
           </CardHeader>
           <CardContent>
-            {signedUp ? (
-              <div className="text-body space-y-4">
-                <p>
-                  Account created. Open the confirmation link sent to your
-                  email, then sign in. (Email delivery is still being set up. If
-                  no email arrives, ask the site owner for the link.)
-                </p>
-                <Button
-                  variant="outline"
-                  className="w-full"
-                  onClick={() => {
-                    setSignedUp(false)
-                    setMode('sign-in')
-                  }}
-                >
-                  Back to sign in
-                </Button>
-              </div>
-            ) : (
+            {(
               <form onSubmit={handleSubmit} className="space-y-4">
                 {mode === 'sign-up' && (
                   <>
@@ -279,7 +263,7 @@ function Home() {
               </form>
             )}
 
-            {!signedUp && mode === 'sign-in' && (
+            {mode === 'sign-in' && (
               <>
                 <div className="my-4 flex items-center gap-3">
                   <div className="bg-border h-px flex-1" />
@@ -297,7 +281,7 @@ function Home() {
               </>
             )}
 
-            {!signedUp && (
+            {(
               <p className="text-small text-muted-foreground mt-4 text-center">
                 {mode === 'sign-in' ? (
                   <>

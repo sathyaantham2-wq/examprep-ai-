@@ -16,16 +16,10 @@ export const auth = betterAuth({
       generateId: 'uuid',
     },
   },
+  // No email confirmation (owner decision 2026-09-20): a new account signs in at once.
   emailAndPassword: {
     enabled: true,
-    requireEmailVerification: true,
-  },
-  emailVerification: {
-    // Resend integration (M16) doesn't exist yet — log the link server-side so sign-up is
-    // testable in dev instead of silently stranding every new account unable to verify.
-    sendVerificationEmail: async ({ user, url }) => {
-      console.log(`[auth] verification link for ${user.email}: ${url}`)
-    },
+    requireEmailVerification: false,
   },
   // Google is optional in dev — only registered once real OAuth credentials exist.
   socialProviders:

@@ -43,16 +43,10 @@ interface Session {
   householdId: string
 }
 
-// Signs up through the real better-auth path with the sign-up form's signup_type, captures the
-// verification link (there is no mail service yet), verifies and signs in.
+// Signs up through the real better-auth path with the sign-up form's signup_type and signs in
+// (there is no email confirmation step).
 async function signUpAs(prefix: string, signupType: string): Promise<Session> {
   const email = `${prefix}-${Date.now()}-${Math.random().toString(36).slice(2)}@example.com`
-  let url = ''
-  const originalLog = console.log
-  console.log = (...args: Array<unknown>) => {
-    const match = /verification link for [^:]+: (\S+)/.exec(args.join(' '))
-    if (match) url = match[1]
-  }
   const signUp = await auth.api.signUpEmail({
     body: {
       email,
@@ -61,10 +55,6 @@ async function signUpAs(prefix: string, signupType: string): Promise<Session> {
       signup_type: signupType,
     },
   })
-  console.log = originalLog
-  const token = new URL(url).searchParams.get('token')
-  if (!token) throw new Error('no verification link captured')
-  await auth.api.verifyEmail({ query: { token } })
   const signIn = await auth.api.signInEmail({
     body: { email, password: TEST_PASSWORD },
     asResponse: true,
