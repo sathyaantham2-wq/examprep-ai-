@@ -30,6 +30,8 @@ jobs:
           --health-retries 10
     env:
       DATABASE_URL: postgresql://postgres:postgres@localhost:5432/postgres
+      BETTER_AUTH_SECRET: ci-test-secret-not-used-for-anything-real
+      BETTER_AUTH_URL: http://localhost:3000
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-node@v4
