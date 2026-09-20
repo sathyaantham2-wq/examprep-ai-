@@ -60,6 +60,13 @@ export const Route = createFileRoute('/api/papers/$id/pdf')({
         ])
         if (!student) return new Response(null, { status: 404 })
 
+        const conceptRows = await db
+          .selectFrom('concepts')
+          .select(['id', 'name'])
+          .where('id', 'in', [...new Set(slots.map((s) => s.concept_id))])
+          .execute()
+        const conceptName = new Map(conceptRows.map((c) => [c.id, c.name]))
+
         const optionsByQuestion = new Map(
           await Promise.all(
             slots.map(
@@ -102,6 +109,7 @@ export const Route = createFileRoute('/api/papers/$id/pdf')({
             text: s.text,
             diagram_kind: s.diagram_kind,
             diagram_params: s.diagram_params,
+            concept_name: conceptName.get(s.concept_id) ?? null,
             choice_group: s.choice_group,
             options: (optionsByQuestion.get(s.question_id) ?? []).map((o) => ({
               label: o.label,

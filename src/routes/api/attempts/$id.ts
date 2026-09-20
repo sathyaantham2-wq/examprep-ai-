@@ -8,6 +8,7 @@ import {
   paperQuestionsRepository,
   questionOptionsRepository,
   attemptAnswersRepository,
+  chaptersRepository,
 } from '../../../db/repositories'
 import { wrapRouteHandlers } from '../../../lib/error-log'
 
@@ -54,6 +55,18 @@ export const Route = createFileRoute('/api/attempts/$id')({
           attemptAnswersRepository.listForAttempt(db, attempt.id),
         ])
 
+        // Header and per-question context for the student: her own name and class, the chapters
+        // this paper covers, and which concept each question belongs to. None of it is a key.
+        const [chapters, concepts] = await Promise.all([
+          chaptersRepository.listByIds(db, paper.chapter_ids),
+          db
+            .selectFrom('concepts')
+            .select(['id', 'name'])
+            .where('id', 'in', [...new Set(slots.map((s) => s.concept_id))])
+            .execute(),
+        ])
+        const conceptName = new Map(concepts.map((c) => [c.id, c.name]))
+
         const optionsByQuestion = new Map(
           await Promise.all(
             slots.map(async (slot) => {
@@ -79,6 +92,12 @@ export const Route = createFileRoute('/api/attempts/$id')({
             mode: attempt.mode,
             started_at: attempt.started_at,
           },
+          student: { name: student.name, class: student.class, board: student.board },
+          chapters: chapters.map((c) => ({
+            part: c.part,
+            chapter_no: c.chapter_no,
+            name: c.name,
+          })),
           paper: {
             id: paper.id,
             title: paper.title,
@@ -89,6 +108,7 @@ export const Route = createFileRoute('/api/attempts/$id')({
             paper_question_id: slot.id,
             position: slot.position,
             section: slot.section,
+            concept_name: conceptName.get(slot.concept_id) ?? null,
             marks: slot.marks,
             type: slot.type,
             text: slot.text,

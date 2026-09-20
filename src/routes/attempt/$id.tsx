@@ -17,6 +17,7 @@ interface Question {
   paper_question_id: string
   position: number
   section: string
+  concept_name: string | null
   marks: number
   type: string
   text: string
@@ -30,6 +31,8 @@ interface Question {
 
 interface AttemptData {
   attempt: { id: string; status: string; mode: string; started_at: string }
+  student: { name: string; class: number; board: string }
+  chapters: Array<{ part: string; chapter_no: number; name: string }>
   paper: {
     id: string
     title: string
@@ -204,8 +207,16 @@ function Attempt() {
         <div>
           <h1 className="text-h1">{data.paper.title}</h1>
           <p className="text-small text-muted-foreground">
+            {data.student.name} · Class {data.student.class} ·{' '}
             {data.paper.total_marks} marks
           </p>
+          {data.chapters.length > 0 && (
+            <p className="text-small text-muted-foreground">
+              {data.chapters
+                .map((c) => `Ch ${c.chapter_no}: ${c.name}`)
+                .join(' · ')}
+            </p>
+          )}
         </div>
         <div className="flex items-center gap-3 no-print">
           <span
@@ -315,6 +326,11 @@ function Attempt() {
                                 })
                               }
                             />
+                          )}
+                          {q.concept_name && (
+                            <p className="text-small text-muted-foreground mt-3">
+                              Concept: {q.concept_name}
+                            </p>
                           )}
                         </CardContent>
                       </Card>
