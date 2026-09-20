@@ -60,9 +60,12 @@ export const auth = betterAuth({
   databaseHooks: {
     user: {
       create: {
-        before: async (user) => {
+        before: async (user, context) => {
           const db = getSharedDb()
-          const signupType = (user as { signup_type?: string }).signup_type
+          // Signing in with Google (the OAuth callback) carries no sign-up form, and only students
+          // can sign up for now, so that account is a student.
+          const viaSocial = context?.path?.startsWith('/callback/') ?? false
+          const signupType = viaSocial ? 'student' : (user as { signup_type?: string }).signup_type
           const role =
             signupType === 'student'
               ? ('student' as const)
