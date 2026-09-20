@@ -5,11 +5,13 @@ on:
     paths:
       - 'src/db/**'
       - 'package.json'
+      - '.github/workflows/migrations.yml'
   push:
     branches: [main]
     paths:
       - 'src/db/**'
       - 'package.json'
+      - '.github/workflows/migrations.yml'
 
 jobs:
   migrate-scratch-db:
