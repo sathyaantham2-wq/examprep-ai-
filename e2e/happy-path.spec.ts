@@ -289,6 +289,7 @@ test('happy path: sign in, generate paper, download PDF, attempt, evaluate, trac
   // First sign-in: a student finishes her profile before anything else. The parent already gave
   // her name, class and syllabus, so only the subject choice is left.
   await page.waitForURL('**/profile-setup')
+  await page.selectOption('#student-class', '7')
   await page.getByRole('checkbox').first().click()
   await page.getByRole('button', { name: 'Save and continue' }).click()
   await page.waitForURL('**/student')

@@ -68,10 +68,17 @@ function ProfileSetup() {
         const match = data.options.find(
           (o) => o.board === data.profile.board && o.class === data.profile.class,
         )
-        const start = match ?? data.options.at(0)
-        setBoard(start?.board ?? '')
-        setClassNo(start?.class ?? null)
-        setSelected(data.profile.subject_ids)
+        // A new student picks her own class: nothing is pre-selected until the profile is saved.
+        const boardsOffered = [...new Set(data.options.map((o) => o.board))]
+        if (data.profile.profile_complete && match) {
+          setBoard(match.board)
+          setClassNo(match.class)
+          setSelected(data.profile.subject_ids)
+        } else {
+          setBoard(boardsOffered.length === 1 ? boardsOffered[0] : '')
+          setClassNo(null)
+          setSelected([])
+        }
       })
   }, [isPending, session, role, navigate])
 
@@ -87,8 +94,7 @@ function ProfileSetup() {
 
   function changeBoard(next: string) {
     setBoard(next)
-    const firstClass = (options ?? []).find((o) => o.board === next)?.class ?? null
-    setClassNo(firstClass)
+    setClassNo(null)
     setSelected([])
   }
 
@@ -178,6 +184,9 @@ function ProfileSetup() {
                   value={classNo ?? ''}
                   onChange={(e) => changeClass(Number(e.target.value))}
                 >
+                  <option value="" disabled>
+                    Choose your class
+                  </option>
                   {classes.map((c) => (
                     <option key={c} value={c}>
                       Class {c}
@@ -193,6 +202,9 @@ function ProfileSetup() {
                   value={board}
                   onChange={(e) => changeBoard(e.target.value)}
                 >
+                  <option value="" disabled>
+                    Choose your syllabus
+                  </option>
                   {boards.map((b) => (
                     <option key={b} value={b}>
                       {b}

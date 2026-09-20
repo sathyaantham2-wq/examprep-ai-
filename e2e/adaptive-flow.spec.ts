@@ -135,6 +135,8 @@ test('first-time student: profile, personalised home, Easy assessment, marked at
   await page.waitForURL('**/profile-setup')
   await expect(page.getByRole('heading', { name: 'Set up your profile' })).toBeVisible()
   await page.waitForTimeout(800)
+  // No class is pre-selected: she chooses her own.
+  await page.selectOption('#student-class', '7')
 
   const card = page.getByRole('checkbox', { name: new RegExp(subjectName) })
   await expect(card).toHaveAttribute('aria-checked', 'false')
