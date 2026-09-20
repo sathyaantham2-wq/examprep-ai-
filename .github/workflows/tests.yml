@@ -28,7 +28,7 @@ jobs:
       - uses: actions/checkout@v4
       - uses: actions/setup-node@v4
         with:
-          node-version: 22
+          node-version: 24
       - run: npm ci
       # F033's PDF renderer (papers-pdf.integration.test.ts) launches a real headless Chromium via
       # Playwright -- npm ci only installs the npm package, not the browser binary itself.
@@ -73,7 +73,7 @@ jobs:
       - uses: actions/checkout@v4
       - uses: actions/setup-node@v4
         with:
-          node-version: 22
+          node-version: 24
       - run: npm ci
       - name: Install Playwright Chromium
         run: npx playwright install --with-deps chromium
