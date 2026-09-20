@@ -9,6 +9,8 @@ import {
   CardTitle,
 } from '../components/ui/card'
 import { MasteryRing } from '../components/mastery-ring'
+import { AdaptiveOverview } from '../components/adaptive-overview'
+import type { AdaptiveOverviewData, SubjectChip } from '../components/adaptive-overview'
 import { ThemeToggle } from '../components/theme-toggle'
 import { signOut, useSession } from '../lib/auth-client'
 
@@ -67,6 +69,8 @@ function StudentHome() {
   const role = (session?.user as { role?: string } | undefined)?.role
 
   const [dashboard, setDashboard] = useState<StudentDashboard | null>(null)
+  const [overview, setOverview] = useState<AdaptiveOverviewData | null>(null)
+  const [chips, setChips] = useState<Array<SubjectChip>>([])
   const [loading, setLoading] = useState(true)
   const [papers, setPapers] = useState<Array<PaperListItem> | null>(null)
   const [sharing, setSharing] = useState<SharingState | null>(null)
@@ -80,6 +84,41 @@ function StudentHome() {
       navigate({ to: '/' })
       return
     }
+    // A student who has not finished her profile goes there first.
+    fetch('/api/students/me/profile')
+      .then((r) => (r.ok ? r.json() : null))
+      .then(
+        (
+          data: {
+            profile: { board: string; class: number; profile_complete: boolean; subject_ids: Array<string> }
+            options: Array<{
+              board: string
+              class: number
+              subjects: Array<{ id: string; name: string; has_content: boolean }>
+            }>
+          } | null,
+        ) => {
+          if (!data) return
+          if (!data.profile.profile_complete) {
+            navigate({ to: '/profile-setup' })
+            return
+          }
+          const offered =
+            data.options.find((o) => o.board === data.profile.board && o.class === data.profile.class)
+              ?.subjects ?? []
+          setChips(
+            offered.map((subject) => ({
+              id: subject.id,
+              name: subject.name,
+              has_content: subject.has_content,
+              selected: data.profile.subject_ids.includes(subject.id),
+            })),
+          )
+        },
+      )
+    fetch('/api/adaptive/overview')
+      .then((r) => (r.ok ? r.json() : null))
+      .then(setOverview)
     fetch('/api/student-dashboard')
       .then((r) => r.json())
       .then(setDashboard)
@@ -148,6 +187,57 @@ function StudentHome() {
     return <div className="p-8 text-body text-muted-foreground">Loading…</div>
   }
 
+  const papersCard =
+    papers && papers.length > 0 ? (
+            <Card>
+              <CardHeader>
+                <CardTitle className="text-h3">Papers to attempt</CardTitle>
+              </CardHeader>
+              <CardContent className="space-y-3">
+                {startError && (
+                  <p className="text-small text-destructive" role="alert">
+                    {startError}
+                  </p>
+                )}
+                {papers.map((p) => {
+                  const status = p.attempt?.status
+                  const isDone = status === 'submitted' || status === 'evaluated'
+                  return (
+                    <div
+                      key={p.id}
+                      className="flex items-center justify-between rounded-md border p-3"
+                    >
+                      <div>
+                        <p className="text-body">{p.title}</p>
+                        <p className="text-small text-muted-foreground">
+                          {p.total_marks} marks, {p.duration_min} min
+                        </p>
+                      </div>
+                      {isDone ? (
+                        <span className="text-small text-muted-foreground">
+                          Completed
+                        </span>
+                      ) : (
+                        <Button
+                          size="sm"
+                          disabled={startingId === p.id}
+                          onClick={() => void startOrResume(p)}
+                        >
+                          {startingId === p.id
+                            ? 'Starting…'
+                            : status === 'in_progress'
+                              ? 'Continue'
+                              : 'Start'}
+                        </Button>
+                      )}
+                    </div>
+                  )
+                })}
+              </CardContent>
+            </Card>
+      
+    ) : null
+
   return (
     <div className="mx-auto max-w-3xl p-8">
       <div className="mb-6 flex items-center justify-between">
@@ -160,7 +250,7 @@ function StudentHome() {
           </p>
         </div>
         <div className="no-print flex items-center gap-2">
-          <a href="/generate">
+          <a href="/my-paper">
             <Button size="sm">Make a paper</Button>
           </a>
           <ThemeToggle />
@@ -231,53 +321,12 @@ function StudentHome() {
         </Card>
       )}
 
-      {papers && papers.length > 0 && (
-        <Card className="mb-4">
-          <CardHeader>
-            <CardTitle className="text-h3">Papers to attempt</CardTitle>
-          </CardHeader>
-          <CardContent className="space-y-3">
-            {startError && (
-              <p className="text-small text-destructive" role="alert">
-                {startError}
-              </p>
-            )}
-            {papers.map((p) => {
-              const status = p.attempt?.status
-              const isDone = status === 'submitted' || status === 'evaluated'
-              return (
-                <div
-                  key={p.id}
-                  className="flex items-center justify-between rounded-md border p-3"
-                >
-                  <div>
-                    <p className="text-body">{p.title}</p>
-                    <p className="text-small text-muted-foreground">
-                      {p.total_marks} marks, {p.duration_min} min
-                    </p>
-                  </div>
-                  {isDone ? (
-                    <span className="text-small text-muted-foreground">
-                      Completed
-                    </span>
-                  ) : (
-                    <Button
-                      size="sm"
-                      disabled={startingId === p.id}
-                      onClick={() => void startOrResume(p)}
-                    >
-                      {startingId === p.id
-                        ? 'Starting…'
-                        : status === 'in_progress'
-                          ? 'Continue'
-                          : 'Start'}
-                    </Button>
-                  )}
-                </div>
-              )
-            })}
-          </CardContent>
-        </Card>
+      {overview ? (
+        <div className="mb-4">
+          <AdaptiveOverview data={overview} chips={chips} afterRecommended={papersCard} />
+        </div>
+      ) : (
+        papersCard && <div className="mb-4">{papersCard}</div>
       )}
 
       {loading && <p className="text-body text-muted-foreground">Loading…</p>}

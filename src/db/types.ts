@@ -133,6 +133,22 @@ export interface ChapterScope {
   page_ref: string | null;
 }
 
+export interface ConceptAnswerLog {
+  answered_at: Timestamp;
+  concept_id: string;
+  created_at: Generated<Timestamp>;
+  credit: Numeric;
+  evaluation_id: string;
+  id: Generated<string>;
+  level: number;
+  marks_awarded: Numeric;
+  marks_max: Numeric;
+  paper_question_id: string;
+  question_id: string;
+  student_id: string;
+  time_spent_sec: number | null;
+}
+
 export interface ConceptMastery {
   concept_id: string;
   created_at: Generated<Timestamp>;
@@ -350,6 +366,31 @@ export interface Households {
   plan: Generated<string>;
 }
 
+export interface MasteryHistory {
+  accuracy: Numeric;
+  components: Json;
+  concept_id: string;
+  consistency_score: Numeric;
+  created_at: Generated<Timestamp>;
+  current_difficulty: number;
+  difficulty_score: Numeric;
+  evaluation_id: string;
+  evidence_met: boolean;
+  id: Generated<string>;
+  mastery_level: string;
+  mastery_score: Numeric;
+  questions_attempted: number;
+  recent_accuracy: Numeric;
+  student_id: string;
+}
+
+export interface MasterySettings {
+  key: string;
+  updated_at: Generated<Timestamp>;
+  updated_by: string | null;
+  value: Json;
+}
+
 export interface Notifications {
   channel: NotificationChannel;
   created_at: Generated<Timestamp>;
@@ -508,6 +549,38 @@ export interface Sources {
   year: number | null;
 }
 
+export interface StudentConceptPerformance {
+  accuracy: Generated<Numeric>;
+  assessment_count: Generated<number>;
+  avg_response_sec: number | null;
+  chapter_id: string;
+  components: Generated<Json>;
+  concept_id: string;
+  consecutive_correct: Generated<number>;
+  consecutive_wrong: Generated<number>;
+  consistency_score: Generated<Numeric>;
+  correct_answers: Generated<number>;
+  created_at: Generated<Timestamp>;
+  current_difficulty: Generated<number>;
+  difficulty_score: Generated<Numeric>;
+  evidence_blockers: Generated<Json>;
+  evidence_met: Generated<boolean>;
+  hard_questions_correct: Generated<number>;
+  last_assessed_at: Timestamp | null;
+  master_questions_correct: Generated<number>;
+  mastery_level: Generated<string>;
+  mastery_score: Generated<Numeric>;
+  next_retention_at: Timestamp | null;
+  questions_attempted: Generated<number>;
+  recent_accuracy: Generated<Numeric>;
+  retention_stage: Generated<number>;
+  retention_status: Generated<string>;
+  student_id: string;
+  subject_id: string;
+  updated_at: Generated<Timestamp>;
+  wrong_answers: Generated<number>;
+}
+
 export interface Students {
   access_enabled: Generated<boolean>;
   board: string;
@@ -519,11 +592,20 @@ export interface Students {
   id: Generated<string>;
   name: string;
   own_household_id: string | null;
+  profile_completed_at: Timestamp | null;
   roll_no: string | null;
   school: string | null;
   section: string | null;
   target_exams: Generated<Json>;
   user_id: string | null;
+}
+
+export interface StudentSubjects {
+  created_at: Generated<Timestamp>;
+  is_active: Generated<boolean>;
+  student_id: string;
+  subject_id: string;
+  updated_at: Generated<Timestamp>;
 }
 
 export interface StudyPlans {
@@ -593,6 +675,7 @@ export interface DB {
   blueprints: Blueprints;
   chapter_scope: ChapterScope;
   chapters: Chapters;
+  concept_answer_log: ConceptAnswerLog;
   concept_mastery: ConceptMastery;
   concept_prereqs: ConceptPrereqs;
   concept_remediation_content: ConceptRemediationContent;
@@ -612,6 +695,8 @@ export interface DB {
   habit_observations: HabitObservations;
   habits: Habits;
   households: Households;
+  mastery_history: MasteryHistory;
+  mastery_settings: MasterySettings;
   notifications: Notifications;
   paper_questions: PaperQuestions;
   papers: Papers;
@@ -625,6 +710,8 @@ export interface DB {
   remediation_tasks: RemediationTasks;
   sessions: Sessions;
   sources: Sources;
+  student_concept_performance: StudentConceptPerformance;
+  student_subjects: StudentSubjects;
   students: Students;
   study_plans: StudyPlans;
   subjects: Subjects;

@@ -48,7 +48,14 @@ function Home() {
           navigate({ to: students.length > 0 ? '/home' : '/onboarding' })
         })
     } else if (role === 'student') {
-      navigate({ to: '/student' })
+      // First sign-in: a student finishes her profile (name, class, syllabus, subjects) before
+      // anything else. A paused or failing profile call just falls through to her home screen.
+      fetch('/api/students/me')
+        .then((r) => (r.ok ? r.json() : null))
+        .then((me: { profile_complete?: boolean } | null) => {
+          navigate({ to: me && me.profile_complete === false ? '/profile-setup' : '/student' })
+        })
+        .catch(() => navigate({ to: '/student' }))
     }
   }, [isPending, session, role, navigate])
 

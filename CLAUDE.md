@@ -56,8 +56,13 @@ Never invent a feature ID. If work doesn't map to an existing F-number, say so a
 
 ## Hard rules
 
-- **AI never finalises a mark.** It proposes marks with per-step justification; a human confirms.
-  The concept tracker only ever consumes confirmed values. (Tab 07 AI-05, tab 03 F047.)
+- **AI never finalises a mark on a normal paper.** It proposes marks with per-step justification;
+  a human confirms. The concept tracker only ever consumes confirmed values. (Tab 07 AI-05, tab 03
+  F047.) **Exception, user decision 2026-09-20:** on *adaptive practice papers* the system confirms
+  marks itself at submit time (answer key for MCQs, the AI grader for written answers) so a student
+  with nobody linked still builds a mastery record. It only does so when every written answer got
+  a confident AI grade; otherwise the paper waits for a parent. Each automatic confirmation is
+  written to the audit log as `evaluation.auto_confirmed`.
 - **The student role can never see or download an answer key**, override a mark, or read another
   student's data. Enforced server-side, not by hiding a button. (T09.)
 - **Never build a chat tutor that solves the problem.** Withholding the answer is the product.

@@ -9,6 +9,17 @@ import {
   questionUsageRepository,
   chaptersRepository,
 } from '../db/repositories'
+import { adaptiveLevel } from './adaptive/levels'
+import type { AdaptiveLevel } from './adaptive/levels'
+import { loadMasteryConfig, signalsForConcepts } from './adaptive/service'
+import {
+  allocateQuestions,
+  bucketForConcept,
+  bucketWeighting,
+  computeConceptWeights,
+  guaranteeRetention,
+} from './adaptive/weights'
+import type { ConceptSignal, ConceptWeight } from './adaptive/weights'
 
 const DIFFICULTY_ORDER: Array<DifficultyTier> = ['Easy', 'Hard', 'Hardest']
 
@@ -131,6 +142,20 @@ export interface GeneratePaperInput {
   chapter_weighting_override?: Record<string, number>
   // How far back "recently served" looks when avoiding repeats — a lightweight version of F026.
   recentUsageWindowDays?: number
+  // Concept-level adaptive mode: buckets, per-concept question counts and per-concept difficulty
+  // come from the student's own mastery. A student with no history starts at Easy (level 1).
+  adaptive?: boolean
+  // Overrides the blueprint name as the paper title (adaptive papers use a friendlier one).
+  title?: string
+}
+
+interface AdaptiveContext {
+  signals: Array<ConceptSignal>
+  weights: Array<ConceptWeight>
+  targetByConcept: Map<string, number>
+  assignedByConcept: Map<string, number>
+  levelByConcept: Map<string, AdaptiveLevel>
+  relaxedSlots: number
 }
 
 interface Shortfall {
@@ -167,7 +192,7 @@ export async function generatePaper(db: Db, input: GeneratePaperInput) {
   const choicePairCountBySection = new Map(
     choiceRules.map((r) => [r.section, r.count]),
   )
-  const weighting = input.weighting_override ?? DEFAULT_WEIGHTING
+  let weighting = input.weighting_override ?? DEFAULT_WEIGHTING
   const difficultiesAllowed = difficultiesUpTo(
     input.difficulty_ceiling ?? 'Hardest',
   )
@@ -208,12 +233,42 @@ export async function generatePaper(db: Db, input: GeneratePaperInput) {
   const statuses = await conceptStatusRepository.list(db, input.student_id)
   const statusByConcept = new Map(statuses.map((s) => [s.concept_id, s.status]))
 
+  const now = new Date()
+  let adaptiveCtx: AdaptiveContext | null = null
+  let adaptiveConfig: Awaited<ReturnType<typeof loadMasteryConfig>> | null = null
+  if (input.adaptive) {
+    adaptiveConfig = await loadMasteryConfig(db)
+    const signals = await signalsForConcepts(db, input.student_id, conceptIds, now)
+    const weights = computeConceptWeights(signals, adaptiveConfig, now)
+    const totalSlots = sections.reduce((sum, s) => sum + s.count, 0)
+    adaptiveCtx = {
+      signals,
+      weights,
+      targetByConcept: guaranteeRetention(
+        allocateQuestions(weights, totalSlots, (id) => chapterByConceptId.get(id) ?? id),
+        signals,
+        totalSlots,
+      ),
+      assignedByConcept: new Map(),
+      levelByConcept: new Map(signals.map((s) => [s.conceptId, s.currentLevel])),
+      relaxedSlots: 0,
+    }
+    if (!input.weighting_override) {
+      weighting = bucketWeighting(weights, signals, adaptiveConfig)
+    }
+  }
+
   const buckets: Record<Bucket, Array<string>> = {
     weak_priority: [],
     needs_practice: [],
     strong: [],
   }
   for (const conceptId of conceptIds) {
+    if (adaptiveCtx && adaptiveConfig) {
+      const signal = adaptiveCtx.signals.find((s) => s.conceptId === conceptId)
+      buckets[signal ? bucketForConcept(signal, adaptiveConfig) : 'needs_practice'].push(conceptId)
+      continue
+    }
     const status = statusByConcept.get(conceptId)
     if (status === 'Weak' || status === 'Priority')
       buckets.weak_priority.push(conceptId)
@@ -225,17 +280,22 @@ export async function generatePaper(db: Db, input: GeneratePaperInput) {
   // F069: "re-test items appear automatically in the next generated paper." A cleared concept
   // whose spaced-retest date has passed gets first refusal on any 'strong' bucket slot -- see the
   // due-pool preference a few lines below, inside the section loop.
-  const now = new Date()
-  const dueRetestConceptIds = new Set(
-    statuses
-      .filter(
-        (s) =>
-          (s.status === 'Strong' || s.status === 'Maintenance') &&
-          s.next_retest_at !== null &&
-          new Date(s.next_retest_at) <= now,
+  const dueRetestConceptIds = adaptiveCtx
+    ? new Set(
+        adaptiveCtx.signals
+          .filter((s) => s.retention === 'due' || s.retention === 'lapsed')
+          .map((s) => s.conceptId),
       )
-      .map((s) => s.concept_id),
-  )
+    : new Set(
+        statuses
+          .filter(
+            (s) =>
+              (s.status === 'Strong' || s.status === 'Maintenance') &&
+              s.next_retest_at !== null &&
+              new Date(s.next_retest_at) <= now,
+          )
+          .map((s) => s.concept_id),
+      )
 
   const excludeQuestionIds = new Set(
     await questionUsageRepository.listRecentQuestionIds(
@@ -244,6 +304,50 @@ export async function generatePaper(db: Db, input: GeneratePaperInput) {
       recentWindowDays,
     ),
   )
+
+  type Candidate = { id: string; bloom: BloomLevel; concept_id: string; difficulty: DifficultyTier }
+
+  // One place that fetches a question for a slot. Normal mode is the original single query over
+  // the pool. Adaptive mode walks the pool from the concept with the biggest unmet question target
+  // and only offers questions at or below that concept's current difficulty level (preferring the
+  // level itself), so a new student starts on Easy and a strong concept gets harder questions.
+  async function findForSlot(
+    pool: Array<string>,
+    section: BlueprintSection,
+  ): Promise<Candidate | undefined> {
+    const base = {
+      bloomAllowed: section.bloom_allowed,
+      difficultiesAllowed,
+      marks: section.marks_per_question,
+      excludeQuestionIds: [...excludeQuestionIds],
+    }
+    if (!adaptiveCtx) {
+      const rows = await questionsRepository.findEligibleForSlot(db, { conceptIds: pool, ...base }, 1)
+      return rows.at(0)
+    }
+    const ctx = adaptiveCtx
+    const deficit = (id: string) =>
+      (ctx.targetByConcept.get(id) ?? 0) - (ctx.assignedByConcept.get(id) ?? 0)
+    const ordered = [...pool]
+      .map((id) => ({ id, d: deficit(id) + Math.random() * 0.01 }))
+      .sort((a, b) => b.d - a.d)
+      .map((x) => x.id)
+    let fallback: Candidate | undefined
+    for (const conceptId of ordered) {
+      const level = ctx.levelByConcept.get(conceptId) ?? 1
+      const rows = await questionsRepository.findEligibleForSlot(db, { conceptIds: [conceptId], ...base }, 12)
+      if (rows.length === 0) continue
+      const withLevel = rows.map((q) => ({ q, l: adaptiveLevel(q.bloom, q.difficulty) }))
+      const usable = withLevel.filter((x) => x.l <= level)
+      if (usable.length > 0) {
+        return (usable.find((x) => x.l === level) ?? usable[0]).q
+      }
+      const lowest = withLevel.sort((a, b) => a.l - b.l)[0]
+      if (!fallback || adaptiveLevel(fallback.bloom, fallback.difficulty) > lowest.l) fallback = lowest.q
+    }
+    if (fallback) ctx.relaxedSlots += 1
+    return fallback
+  }
 
   const selected: Array<{
     section: string
@@ -287,7 +391,7 @@ export async function generatePaper(db: Db, input: GeneratePaperInput) {
             (chapterMarksTargets[a] - chapterMarksAssigned[a]),
         )
 
-        let picked: { id: string; bloom: BloomLevel } | undefined
+        let picked: Candidate | undefined
         let chosenChapterId: string | undefined
 
         for (const chapterId of chaptersByDeficit) {
@@ -305,38 +409,18 @@ export async function generatePaper(db: Db, input: GeneratePaperInput) {
               dueRetestConceptIds.has(id),
             )
             if (duePool.length > 0) {
-              const dueEligible = await questionsRepository.findEligibleForSlot(
-                db,
-                {
-                  conceptIds: duePool,
-                  bloomAllowed: section.bloom_allowed,
-                  difficultiesAllowed,
-                  marks: section.marks_per_question,
-                  excludeQuestionIds: [...excludeQuestionIds],
-                },
-                1,
-              )
-              if (dueEligible.at(0)) {
-                picked = dueEligible.at(0)
+              const dueEligible = await findForSlot(duePool, section)
+              if (dueEligible) {
+                picked = dueEligible
                 chosenChapterId = chapterId
                 break
               }
             }
           }
 
-          const eligible = await questionsRepository.findEligibleForSlot(
-            db,
-            {
-              conceptIds: chapterPool,
-              bloomAllowed: section.bloom_allowed,
-              difficultiesAllowed,
-              marks: section.marks_per_question,
-              excludeQuestionIds: [...excludeQuestionIds],
-            },
-            1,
-          )
-          if (eligible.at(0)) {
-            picked = eligible.at(0)
+          const eligible = await findForSlot(chapterPool, section)
+          if (eligible) {
+            picked = eligible
             chosenChapterId = chapterId
             break
           }
@@ -346,20 +430,9 @@ export async function generatePaper(db: Db, input: GeneratePaperInput) {
         // (old, chapter-agnostic behaviour) so the paper still fills, and say so rather than
         // silently drifting from the proportional target (F032's "report, never hide").
         if (!picked) {
-          const eligible = await questionsRepository.findEligibleForSlot(
-            db,
-            {
-              conceptIds: pool,
-              bloomAllowed: section.bloom_allowed,
-              difficultiesAllowed,
-              marks: section.marks_per_question,
-              excludeQuestionIds: [...excludeQuestionIds],
-            },
-            1,
-          )
-          picked = eligible.at(0)
+          picked = await findForSlot(pool, section)
           chosenChapterId = picked
-            ? chapterByConceptId.get(picked.id)
+            ? chapterByConceptId.get(picked.concept_id)
             : undefined
           if (picked) {
             shortfalls.push({
@@ -380,6 +453,12 @@ export async function generatePaper(db: Db, input: GeneratePaperInput) {
         }
 
         excludeQuestionIds.add(picked.id)
+        if (adaptiveCtx) {
+          adaptiveCtx.assignedByConcept.set(
+            picked.concept_id,
+            (adaptiveCtx.assignedByConcept.get(picked.concept_id) ?? 0) + 1,
+          )
+        }
         if (chosenChapterId) {
           chapterMarksAssigned[chosenChapterId] =
             (chapterMarksAssigned[chosenChapterId] ?? 0) +
@@ -397,18 +476,10 @@ export async function generatePaper(db: Db, input: GeneratePaperInput) {
           const alternatePool = chosenChapterId
             ? pool.filter((id) => chapterByConceptId.get(id) === chosenChapterId)
             : pool
-          const alternateEligible = await questionsRepository.findEligibleForSlot(
-            db,
-            {
-              conceptIds: alternatePool.length > 0 ? alternatePool : pool,
-              bloomAllowed: section.bloom_allowed,
-              difficultiesAllowed,
-              marks: section.marks_per_question,
-              excludeQuestionIds: [...excludeQuestionIds],
-            },
-            1,
+          const alternate = await findForSlot(
+            alternatePool.length > 0 ? alternatePool : pool,
+            section,
           )
-          const alternate = alternateEligible.at(0)
           if (alternate) {
             choiceGroup = `${section.name}#${sectionSlotIndex}`
             excludeQuestionIds.add(alternate.id)
@@ -467,9 +538,10 @@ export async function generatePaper(db: Db, input: GeneratePaperInput) {
     bloomActual[bloom] =
       Math.round((count / Math.max(countedSelected.length, 1)) * 1000) / 10
   }
-  for (const [bloom, target] of Object.entries(bloomTargets) as Array<
-    [BloomLevel, number]
-  >) {
+  // Adaptive papers choose by difficulty level, so a fixed Bloom mix does not apply to them.
+  for (const [bloom, target] of (input.adaptive
+    ? []
+    : Object.entries(bloomTargets)) as Array<[BloomLevel, number]>) {
     const actual = bloomActual[bloom] ?? 0
     if (Math.abs(actual - target) > 5) {
       shortfalls.push({
@@ -526,7 +598,7 @@ export async function generatePaper(db: Db, input: GeneratePaperInput) {
       blueprint_version: blueprint.version,
       subject_id: blueprint.subject_id,
       chapter_ids: input.chapter_ids,
-      title: blueprint.name,
+      title: input.title ?? blueprint.name,
       total_marks: totalMarks,
       duration_min: blueprint.duration_min,
       theme: input.theme ?? 'Clean School',
@@ -537,6 +609,22 @@ export async function generatePaper(db: Db, input: GeneratePaperInput) {
         bloom_actual: bloomActual,
         chapter_target: chapterMarksTargets,
         chapter_actual: chapterMarksAssigned,
+        ...(adaptiveCtx
+          ? {
+              adaptive: {
+                enabled: true,
+                relaxed_slots: adaptiveCtx.relaxedSlots,
+                concepts: adaptiveCtx.weights.map((w) => ({
+                  concept_id: w.conceptId,
+                  weight: Math.round(w.weight * 1000) / 1000,
+                  reasons: w.reasons,
+                  level: adaptiveCtx.levelByConcept.get(w.conceptId) ?? 1,
+                  target: adaptiveCtx.targetByConcept.get(w.conceptId) ?? 0,
+                  assigned: adaptiveCtx.assignedByConcept.get(w.conceptId) ?? 0,
+                })),
+              },
+            }
+          : {}),
       }),
       shortfalls:
         shortfalls.length > 0 ? JSON.stringify(shortfalls) : undefined,

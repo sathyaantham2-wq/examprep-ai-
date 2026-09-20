@@ -7,14 +7,23 @@ import { createRepository } from './factory'
 // Global reference data — same content regardless of household, so unscoped.
 export const subjectsRepository = {
   ...createRepository('subjects'),
-  async listByBoardClass(db: Db, board: string, classNum: number) {
-    return db
+  // withContent hides subjects that have no chapters yet (a student may pick such a subject as an
+  // interest, but there is nothing to generate a paper from).
+  async listByBoardClass(db: Db, board: string, classNum: number, withContent = false) {
+    let query = db
       .selectFrom('subjects')
       .selectAll()
       .where('board', '=', board)
       .where('class', '=', classNum)
       .where('is_active', '=', true)
-      .execute()
+    if (withContent) {
+      query = query.where((eb) =>
+        eb.exists(
+          eb.selectFrom('chapters').select('chapters.id').whereRef('chapters.subject_id', '=', 'subjects.id'),
+        ),
+      )
+    }
+    return query.execute()
   },
 }
 

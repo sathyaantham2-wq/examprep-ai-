@@ -9,6 +9,7 @@ import {
   attemptAnswersRepository,
 } from '../../../../db/repositories'
 import { logProductEvent } from '../../../../lib/product-events'
+import { autoConfirmAttempt } from '../../../../lib/adaptive/auto-confirm'
 import { wrapRouteHandlers } from '../../../../lib/error-log'
 
 const submitSchema = z.object({
@@ -102,9 +103,11 @@ export const Route = createFileRoute('/api/attempts/$id/submit')({
           studentId: student.id,
         })
 
-        // "Objective scoring queued" per tab05 is M09's job (auto-evaluation), which doesn't
-        // exist yet — this endpoint only closes the attempt.
-        return Response.json(updated)
+        // Adaptive practice is marked and confirmed straight away when every mark has a basis (the
+        // answer key, or a confident AI grade); every other paper waits for a parent.
+        const evaluationId = await autoConfirmAttempt(db, attempt)
+
+        return Response.json({ ...updated, evaluation_id: evaluationId })
       },
     },
   },

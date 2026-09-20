@@ -3,6 +3,7 @@ import { z } from 'zod'
 import { requireRole } from '../../../lib/session'
 import { resolveEnabledStudent } from '../../../lib/access'
 import { generatePaper } from '../../../lib/papers'
+import { buildPaperPlan, ensureAdaptiveBlueprint } from '../../../lib/adaptive/plan'
 import { getSharedDb } from '../../../db/connection'
 import {
   studentsRepository,
@@ -54,7 +55,13 @@ const generateSchema = z
     // (always themselves -- never trust a body-supplied id for who a student generates as, the
     // same reasoning POST /api/attempts already applies).
     student_id: z.string().uuid().optional(),
-    blueprint_id: z.string().uuid(),
+    // Optional only in adaptive mode, where the server builds the blueprint from the student's own
+    // mastery (needs subject_id).
+    blueprint_id: z.string().uuid().optional(),
+    subject_id: z.string().uuid().optional(),
+    // Concept-level adaptive generation. Opt-in: the student's "Generate my question paper" page
+    // always sends it; every existing caller keeps the blueprint-driven behaviour.
+    adaptive: z.boolean().optional(),
     chapter_ids: z.array(z.string().uuid()).min(1),
     // F034: "selectable at generation" -- the moment this actually gets validated; the PDF
     // route's own ?theme= override is deliberately more lenient (falls back rather than 400s,
@@ -70,6 +77,10 @@ const generateSchema = z
     // never through the real route. Defaults to generatePaper()'s own 14-day default when
     // omitted.
     recent_usage_window_days: z.number().int().nonnegative().optional(),
+  })
+  .refine((v) => Boolean(v.blueprint_id) || (v.adaptive === true && Boolean(v.subject_id)), {
+    message: 'blueprint_id is required unless adaptive mode is on with a subject_id',
+    path: ['blueprint_id'],
   })
   .refine(
     (v) =>
@@ -176,8 +187,35 @@ export const Route = createFileRoute('/api/papers/generate')({
           }
         }
 
+        const adaptive = parsed.data.adaptive ?? false
+        let blueprintId = parsed.data.blueprint_id
+        let plan = null
+        if (adaptive && !blueprintId) {
+          plan = await buildPaperPlan(db, {
+            studentId: student.id,
+            subjectId: parsed.data.subject_id!,
+            chapterIds: parsed.data.chapter_ids,
+          })
+          if (!plan) {
+            return Response.json(
+              { error: 'no_content', message: 'Questions for this subject and chapters are not available yet.' },
+              { status: 404 },
+            )
+          }
+          const blueprint = await ensureAdaptiveBlueprint(db, {
+            subjectId: parsed.data.subject_id!,
+            plan,
+          })
+          blueprintId = blueprint.id
+        }
+
         const result = await generatePaper(db, {
           ...parsed.data,
+          blueprint_id: blueprintId!,
+          adaptive,
+          title: plan
+            ? `${plan.subject_name} ${plan.is_initial_assessment ? 'first assessment' : 'practice'}`
+            : undefined,
           student_id: student.id,
           recentUsageWindowDays: parsed.data.recent_usage_window_days,
         })
@@ -205,7 +243,7 @@ export const Route = createFileRoute('/api/papers/generate')({
           }),
         })
 
-        return Response.json(result, { status: 201 })
+        return Response.json({ ...result, plan }, { status: 201 })
       },
     },
   },

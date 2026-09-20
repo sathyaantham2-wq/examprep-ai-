@@ -42,6 +42,22 @@ interface AttemptData {
   questions: Array<Question>
 }
 
+interface AttemptResult {
+  evaluated: boolean
+  score: number
+  total_marks: number
+  percentage: number
+  concepts: Array<{
+    concept_id: string
+    concept_name: string
+    questions: number
+    marks: number
+    marks_max: number
+    mastery_level: string | null
+    previous_level: string | null
+  }>
+}
+
 interface AnswerState {
   selected_option?: string
   response_text?: string
@@ -70,10 +86,15 @@ function Attempt() {
   const [submitting, setSubmitting] = useState(false)
   const [submitError, setSubmitError] = useState<string | null>(null)
   const [submitted, setSubmitted] = useState(false)
+  const [result, setResult] = useState<AttemptResult | null>(null)
   const [now, setNow] = useState(() => Date.now())
   const saveTimers = useRef<
     Partial<Record<string, ReturnType<typeof setTimeout>>>
   >({})
+  // Seconds spent per question, estimated as the time since her previous answer (capped so a
+  // break does not count). Feeds the concept's average response time.
+  const lastEventAt = useRef<number>(Date.now())
+  const secondsSpent = useRef<Partial<Record<string, number>>>({})
 
   useEffect(() => {
     if (isPending) return
@@ -121,6 +142,10 @@ function Attempt() {
   }, [data, now])
 
   function saveAnswer(paperQuestionId: string, next: AnswerState) {
+    const stamp = Date.now()
+    const elapsed = Math.min(600, Math.max(0, Math.round((stamp - lastEventAt.current) / 1000)))
+    lastEventAt.current = stamp
+    secondsSpent.current[paperQuestionId] = (secondsSpent.current[paperQuestionId] ?? 0) + elapsed
     setAnswers((prev) => ({ ...prev, [paperQuestionId]: next }))
     if (saveTimers.current[paperQuestionId]) {
       clearTimeout(saveTimers.current[paperQuestionId])
@@ -132,6 +157,7 @@ function Attempt() {
         body: JSON.stringify({
           paper_question_id: paperQuestionId,
           ...next,
+          time_spent_sec: secondsSpent.current[paperQuestionId] ?? 0,
         }),
       }).catch(() => {
         // F040 autosave -- a single dropped save isn't fatal, the next edit or the review-step
@@ -168,7 +194,13 @@ function Attempt() {
         setSubmitError(body.message ?? body.error ?? 'Could not submit.')
         return
       }
+      const body = (await response.json().catch(() => null)) as { evaluation_id?: string | null } | null
       setSubmitted(true)
+      // A paper made only of multiple-choice questions is marked at once; show how it went.
+      if (body?.evaluation_id) {
+        const marked = await fetch(`/api/attempts/${id}/result`)
+        if (marked.ok) setResult(await marked.json())
+      }
     } finally {
       setSubmitting(false)
     }
@@ -184,6 +216,38 @@ function Attempt() {
     return <div className="p-8 text-body text-muted-foreground">Loading…</div>
   }
   if (data.attempt.status !== 'in_progress' || submitted) {
+    if (result?.evaluated) {
+      return (
+        <div className="mx-auto max-w-2xl space-y-4 p-4 sm:p-8">
+          <h1 className="text-h1">Well done, {data.student.name}</h1>
+          <p className="text-body">
+            You scored {result.score} out of {result.total_marks} ({Math.round(result.percentage)}%).
+          </p>
+          <div className="space-y-2">
+            {result.concepts.map((c) => (
+              <div key={c.concept_id} className="text-body rounded-md border p-3">
+                <p className="font-medium">{c.concept_name}</p>
+                <p className="text-small text-muted-foreground">
+                  {c.marks} of {c.marks_max} marks on {c.questions} question{c.questions === 1 ? '' : 's'}
+                  {c.mastery_level ? ` · now ${c.mastery_level}` : ''}
+                  {c.previous_level && c.mastery_level && c.previous_level !== c.mastery_level
+                    ? ` (was ${c.previous_level})`
+                    : ''}
+                </p>
+              </div>
+            ))}
+          </div>
+          <div className="flex flex-wrap gap-3">
+            <a href="/my-paper">
+              <Button>Practise again</Button>
+            </a>
+            <a href="/student">
+              <Button variant="outline">Back to my progress</Button>
+            </a>
+          </div>
+        </div>
+      )
+    }
     return (
       <div className="mx-auto max-w-2xl p-8">
         <h1 className="text-h1 mb-2">
@@ -194,6 +258,9 @@ function Attempt() {
             ? 'Your answers have been recorded. Your parent will review and confirm the marks.'
             : 'This attempt is no longer in progress.'}
         </p>
+        <a href="/student" className="text-small text-primary mt-4 inline-block underline-offset-4 hover:underline">
+          Back to my progress
+        </a>
       </div>
     )
   }

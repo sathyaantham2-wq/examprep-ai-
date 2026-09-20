@@ -23,6 +23,7 @@ export const blueprintsRepository = {
       .selectAll()
       .where('subject_id', '=', subjectId)
       .where('name', 'not ilike', '%fixture%')
+      .where('name', 'not like', 'Adaptive (auto)%')
       .orderBy('created_at', 'desc')
       .execute()
   },

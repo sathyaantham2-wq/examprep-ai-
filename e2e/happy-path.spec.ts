@@ -286,6 +286,11 @@ test('happy path: sign in, generate paper, download PDF, attempt, evaluate, trac
   // response), and signInUi returns as soon as the button is clicked -- without waiting for the
   // student's post-login redirect, the very next page.request call can fire before the cookie
   // exists, hitting requireRole's 401 (null body, hence "Unexpected end of JSON input" on .json()).
+  // First sign-in: a student finishes her profile before anything else. The parent already gave
+  // her name, class and syllabus, so only the subject choice is left.
+  await page.waitForURL('**/profile-setup')
+  await page.getByRole('checkbox').first().click()
+  await page.getByRole('button', { name: 'Save and continue' }).click()
   await page.waitForURL('**/student')
 
   const attemptCreate = await page.request.post('/api/attempts', {

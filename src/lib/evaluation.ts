@@ -16,6 +16,9 @@ import {
 import { gradeSubjectiveAnswer } from './ai-grading'
 import { AiCapReachedError, StudentSpendCapReachedError, enforceStudentSpendBudget } from './ai-metering'
 import { recordMasteryAttempt } from './mastery'
+import { recordConfirmedAnswers } from './adaptive/service'
+import { captureError, describeError } from './error-log'
+import { randomUUID } from 'node:crypto'
 
 // A generic placeholder band, not a school- or board-specific grading scale — none is defined
 // anywhere in the plan. Swap this out once a real one is decided.
@@ -216,7 +219,7 @@ export async function createEvaluation(db: Db, attemptId: string) {
  * ledger entry — the ledger models one row per (student, concept, sitting), not per question.
  */
 export async function confirmEvaluation(db: Db, evaluationId: string) {
-  return db.transaction().execute(async (trx) => {
+  const confirmed = await db.transaction().execute(async (trx) => {
     const evaluation = await evaluationsRepository.findById(trx, evaluationId)
     if (!evaluation) throw new Error('Evaluation not found')
     if (evaluation.confirmed_at)
@@ -307,4 +310,22 @@ export async function confirmEvaluation(db: Db, evaluationId: string) {
 
     return updatedEvaluation
   })
+
+  // Concept-level adaptive layer, built from the same confirmed marks. It is derived data that can
+  // always be rebuilt from the evaluation (backfillStudent), so it runs after the confirmation has
+  // committed and a failure is recorded instead of undoing a parent's confirmed marks.
+  try {
+    await recordConfirmedAnswers(db, evaluationId)
+  } catch (error) {
+    const { message, stack } = describeError(error)
+    await captureError({
+      requestId: randomUUID(),
+      source: 'server',
+      route: 'evaluation-confirm:adaptive-mastery',
+      message,
+      stack,
+    })
+  }
+
+  return confirmed
 }

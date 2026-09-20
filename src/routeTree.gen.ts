@@ -12,11 +12,14 @@ import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
 import { Route as GenerateRouteImport } from './routes/generate'
 import { Route as HomeRouteImport } from './routes/home'
+import { Route as MyPaperRouteImport } from './routes/my-paper'
 import { Route as OnboardingRouteImport } from './routes/onboarding'
 import { Route as PlanRouteImport } from './routes/plan'
+import { Route as ProfileSetupRouteImport } from './routes/profile-setup'
 import { Route as RemediationRouteImport } from './routes/remediation'
 import { Route as SettingsRouteImport } from './routes/settings'
 import { Route as StudentRouteImport } from './routes/student'
+import { Route as AdminAdaptiveRouteImport } from './routes/admin/adaptive'
 import { Route as AdminBlueprintsRouteImport } from './routes/admin/blueprints'
 import { Route as AdminCoverageRouteImport } from './routes/admin/coverage'
 import { Route as AdminFunnelRouteImport } from './routes/admin/funnel'
@@ -43,8 +46,12 @@ import { Route as EvaluateAttemptIdRouteImport } from './routes/evaluate/$attemp
 import { Route as PaperIdRouteImport } from './routes/paper/$id'
 import { Route as SummaryWeeklyRouteImport } from './routes/summary/weekly'
 import { Route as TrackerStudentIdRouteImport } from './routes/tracker/$studentId'
+import { Route as ApiAdaptiveOverviewRouteImport } from './routes/api/adaptive/overview'
+import { Route as ApiAdaptivePlanRouteImport } from './routes/api/adaptive/plan'
 import { Route as ApiAdminAiUsageRouteImport } from './routes/api/admin/ai-usage'
+import { Route as ApiAdminMasterySettingsRouteImport } from './routes/api/admin/mastery-settings'
 import { Route as ApiAdminProductFunnelRouteImport } from './routes/api/admin/product-funnel'
+import { Route as ApiAdminSubjectsRouteImport } from './routes/api/admin/subjects'
 import { Route as ApiAdminSyllabusFidelityRouteImport } from './routes/api/admin/syllabus-fidelity'
 import { Route as ApiAttemptsIdRouteImport } from './routes/api/attempts/$id'
 import { Route as ApiAuthSplatRouteImport } from './routes/api/auth/$'
@@ -80,7 +87,9 @@ import { Route as ApiSyllabusConceptsRouteImport } from './routes/api/syllabus/c
 import { Route as ApiSyllabusSubjectsRouteImport } from './routes/api/syllabus/subjects'
 import { Route as ApiTrackerStudentIdRouteImport } from './routes/api/tracker/$studentId'
 import { Route as EvaluationIdReportRouteImport } from './routes/evaluation/$id/report'
+import { Route as ApiAdminSubjectsIdRouteImport } from './routes/api/admin/subjects/$id'
 import { Route as ApiAttemptsIdAnswerRouteImport } from './routes/api/attempts/$id/answer'
+import { Route as ApiAttemptsIdResultRouteImport } from './routes/api/attempts/$id/result'
 import { Route as ApiAttemptsIdSubmitRouteImport } from './routes/api/attempts/$id/submit'
 import { Route as ApiEvaluationsIdConfirmRouteImport } from './routes/api/evaluations/$id/confirm'
 import { Route as ApiEvaluationsIdHabitsRouteImport } from './routes/api/evaluations/$id/habits'
@@ -97,6 +106,7 @@ import { Route as ApiQuestionsIdStatsRouteImport } from './routes/api/questions/
 import { Route as ApiQuestionsGenerateBatchIdRouteImport } from './routes/api/questions/generate-batch/$id'
 import { Route as ApiRemediationIdAttemptRouteImport } from './routes/api/remediation/$id/attempt'
 import { Route as ApiStudentsIdLoginRouteImport } from './routes/api/students/$id/login'
+import { Route as ApiStudentsMeProfileRouteImport } from './routes/api/students/me/profile'
 import { Route as ApiSummaryWeeklyStudentIdRouteImport } from './routes/api/summary/weekly/$studentId'
 import { Route as ApiSyllabusConceptsIdRouteImport } from './routes/api/syllabus/concepts/$id'
 import { Route as ApiEvaluationsIdItemsItemIdRouteImport } from './routes/api/evaluations/$id/items/$itemId'
@@ -122,6 +132,11 @@ const HomeRoute = HomeRouteImport.update({
   path: '/home',
   getParentRoute: () => rootRouteImport,
 } as any)
+const MyPaperRoute = MyPaperRouteImport.update({
+  id: '/my-paper',
+  path: '/my-paper',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const OnboardingRoute = OnboardingRouteImport.update({
   id: '/onboarding',
   path: '/onboarding',
@@ -130,6 +145,11 @@ const OnboardingRoute = OnboardingRouteImport.update({
 const PlanRoute = PlanRouteImport.update({
   id: '/plan',
   path: '/plan',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ProfileSetupRoute = ProfileSetupRouteImport.update({
+  id: '/profile-setup',
+  path: '/profile-setup',
   getParentRoute: () => rootRouteImport,
 } as any)
 const RemediationRoute = RemediationRouteImport.update({
@@ -145,6 +165,11 @@ const SettingsRoute = SettingsRouteImport.update({
 const StudentRoute = StudentRouteImport.update({
   id: '/student',
   path: '/student',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AdminAdaptiveRoute = AdminAdaptiveRouteImport.update({
+  id: '/admin/adaptive',
+  path: '/admin/adaptive',
   getParentRoute: () => rootRouteImport,
 } as any)
 const AdminBlueprintsRoute = AdminBlueprintsRouteImport.update({
@@ -277,14 +302,34 @@ const TrackerStudentIdRoute = TrackerStudentIdRouteImport.update({
   path: '/tracker/$studentId',
   getParentRoute: () => rootRouteImport,
 } as any)
+const ApiAdaptiveOverviewRoute = ApiAdaptiveOverviewRouteImport.update({
+  id: '/api/adaptive/overview',
+  path: '/api/adaptive/overview',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ApiAdaptivePlanRoute = ApiAdaptivePlanRouteImport.update({
+  id: '/api/adaptive/plan',
+  path: '/api/adaptive/plan',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const ApiAdminAiUsageRoute = ApiAdminAiUsageRouteImport.update({
   id: '/api/admin/ai-usage',
   path: '/api/admin/ai-usage',
   getParentRoute: () => rootRouteImport,
 } as any)
+const ApiAdminMasterySettingsRoute = ApiAdminMasterySettingsRouteImport.update({
+  id: '/api/admin/mastery-settings',
+  path: '/api/admin/mastery-settings',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const ApiAdminProductFunnelRoute = ApiAdminProductFunnelRouteImport.update({
   id: '/api/admin/product-funnel',
   path: '/api/admin/product-funnel',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ApiAdminSubjectsRoute = ApiAdminSubjectsRouteImport.update({
+  id: '/api/admin/subjects',
+  path: '/api/admin/subjects',
   getParentRoute: () => rootRouteImport,
 } as any)
 const ApiAdminSyllabusFidelityRoute =
@@ -467,9 +512,19 @@ const EvaluationIdReportRoute = EvaluationIdReportRouteImport.update({
   path: '/evaluation/$id/report',
   getParentRoute: () => rootRouteImport,
 } as any)
+const ApiAdminSubjectsIdRoute = ApiAdminSubjectsIdRouteImport.update({
+  id: '/$id',
+  path: '/$id',
+  getParentRoute: () => ApiAdminSubjectsRoute,
+} as any)
 const ApiAttemptsIdAnswerRoute = ApiAttemptsIdAnswerRouteImport.update({
   id: '/answer',
   path: '/answer',
+  getParentRoute: () => ApiAttemptsIdRoute,
+} as any)
+const ApiAttemptsIdResultRoute = ApiAttemptsIdResultRouteImport.update({
+  id: '/result',
+  path: '/result',
   getParentRoute: () => ApiAttemptsIdRoute,
 } as any)
 const ApiAttemptsIdSubmitRoute = ApiAttemptsIdSubmitRouteImport.update({
@@ -556,6 +611,11 @@ const ApiStudentsIdLoginRoute = ApiStudentsIdLoginRouteImport.update({
   path: '/login',
   getParentRoute: () => ApiStudentsIdRoute,
 } as any)
+const ApiStudentsMeProfileRoute = ApiStudentsMeProfileRouteImport.update({
+  id: '/profile',
+  path: '/profile',
+  getParentRoute: () => ApiStudentsMeRoute,
+} as any)
 const ApiSummaryWeeklyStudentIdRoute =
   ApiSummaryWeeklyStudentIdRouteImport.update({
     id: '/api/summary/weekly/$studentId',
@@ -614,11 +674,14 @@ export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/generate': typeof GenerateRoute
   '/home': typeof HomeRoute
+  '/my-paper': typeof MyPaperRoute
   '/onboarding': typeof OnboardingRoute
   '/plan': typeof PlanRoute
+  '/profile-setup': typeof ProfileSetupRoute
   '/remediation': typeof RemediationRoute
   '/settings': typeof SettingsRoute
   '/student': typeof StudentRoute
+  '/admin/adaptive': typeof AdminAdaptiveRoute
   '/admin/blueprints': typeof AdminBlueprintsRoute
   '/admin/coverage': typeof AdminCoverageRoute
   '/admin/funnel': typeof AdminFunnelRoute
@@ -645,8 +708,12 @@ export interface FileRoutesByFullPath {
   '/paper/$id': typeof PaperIdRoute
   '/summary/weekly': typeof SummaryWeeklyRoute
   '/tracker/$studentId': typeof TrackerStudentIdRoute
+  '/api/adaptive/overview': typeof ApiAdaptiveOverviewRoute
+  '/api/adaptive/plan': typeof ApiAdaptivePlanRoute
   '/api/admin/ai-usage': typeof ApiAdminAiUsageRoute
+  '/api/admin/mastery-settings': typeof ApiAdminMasterySettingsRoute
   '/api/admin/product-funnel': typeof ApiAdminProductFunnelRoute
+  '/api/admin/subjects': typeof ApiAdminSubjectsRouteWithChildren
   '/api/admin/syllabus-fidelity': typeof ApiAdminSyllabusFidelityRoute
   '/api/attempts/$id': typeof ApiAttemptsIdRouteWithChildren
   '/api/auth/$': typeof ApiAuthSplatRoute
@@ -675,14 +742,16 @@ export interface FileRoutesByFullPath {
   '/api/remediation/$id': typeof ApiRemediationIdRouteWithChildren
   '/api/remediation/generate': typeof ApiRemediationGenerateRoute
   '/api/students/$id': typeof ApiStudentsIdRouteWithChildren
-  '/api/students/me': typeof ApiStudentsMeRoute
+  '/api/students/me': typeof ApiStudentsMeRouteWithChildren
   '/api/study-plan/generate': typeof ApiStudyPlanGenerateRoute
   '/api/syllabus/chapters': typeof ApiSyllabusChaptersRouteWithChildren
   '/api/syllabus/concepts': typeof ApiSyllabusConceptsRouteWithChildren
   '/api/syllabus/subjects': typeof ApiSyllabusSubjectsRoute
   '/api/tracker/$studentId': typeof ApiTrackerStudentIdRoute
   '/evaluation/$id/report': typeof EvaluationIdReportRoute
+  '/api/admin/subjects/$id': typeof ApiAdminSubjectsIdRoute
   '/api/attempts/$id/answer': typeof ApiAttemptsIdAnswerRoute
+  '/api/attempts/$id/result': typeof ApiAttemptsIdResultRoute
   '/api/attempts/$id/submit': typeof ApiAttemptsIdSubmitRoute
   '/api/evaluations/$id/confirm': typeof ApiEvaluationsIdConfirmRoute
   '/api/evaluations/$id/habits': typeof ApiEvaluationsIdHabitsRoute
@@ -699,6 +768,7 @@ export interface FileRoutesByFullPath {
   '/api/questions/generate-batch/$id': typeof ApiQuestionsGenerateBatchIdRouteWithChildren
   '/api/remediation/$id/attempt': typeof ApiRemediationIdAttemptRoute
   '/api/students/$id/login': typeof ApiStudentsIdLoginRoute
+  '/api/students/me/profile': typeof ApiStudentsMeProfileRoute
   '/api/summary/weekly/$studentId': typeof ApiSummaryWeeklyStudentIdRoute
   '/api/syllabus/concepts/$id': typeof ApiSyllabusConceptsIdRoute
   '/api/evaluations/$id/items/$itemId': typeof ApiEvaluationsIdItemsItemIdRoute
@@ -713,11 +783,14 @@ export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/generate': typeof GenerateRoute
   '/home': typeof HomeRoute
+  '/my-paper': typeof MyPaperRoute
   '/onboarding': typeof OnboardingRoute
   '/plan': typeof PlanRoute
+  '/profile-setup': typeof ProfileSetupRoute
   '/remediation': typeof RemediationRoute
   '/settings': typeof SettingsRoute
   '/student': typeof StudentRoute
+  '/admin/adaptive': typeof AdminAdaptiveRoute
   '/admin/blueprints': typeof AdminBlueprintsRoute
   '/admin/coverage': typeof AdminCoverageRoute
   '/admin/funnel': typeof AdminFunnelRoute
@@ -744,8 +817,12 @@ export interface FileRoutesByTo {
   '/paper/$id': typeof PaperIdRoute
   '/summary/weekly': typeof SummaryWeeklyRoute
   '/tracker/$studentId': typeof TrackerStudentIdRoute
+  '/api/adaptive/overview': typeof ApiAdaptiveOverviewRoute
+  '/api/adaptive/plan': typeof ApiAdaptivePlanRoute
   '/api/admin/ai-usage': typeof ApiAdminAiUsageRoute
+  '/api/admin/mastery-settings': typeof ApiAdminMasterySettingsRoute
   '/api/admin/product-funnel': typeof ApiAdminProductFunnelRoute
+  '/api/admin/subjects': typeof ApiAdminSubjectsRouteWithChildren
   '/api/admin/syllabus-fidelity': typeof ApiAdminSyllabusFidelityRoute
   '/api/attempts/$id': typeof ApiAttemptsIdRouteWithChildren
   '/api/auth/$': typeof ApiAuthSplatRoute
@@ -774,14 +851,16 @@ export interface FileRoutesByTo {
   '/api/remediation/$id': typeof ApiRemediationIdRouteWithChildren
   '/api/remediation/generate': typeof ApiRemediationGenerateRoute
   '/api/students/$id': typeof ApiStudentsIdRouteWithChildren
-  '/api/students/me': typeof ApiStudentsMeRoute
+  '/api/students/me': typeof ApiStudentsMeRouteWithChildren
   '/api/study-plan/generate': typeof ApiStudyPlanGenerateRoute
   '/api/syllabus/chapters': typeof ApiSyllabusChaptersRouteWithChildren
   '/api/syllabus/concepts': typeof ApiSyllabusConceptsRouteWithChildren
   '/api/syllabus/subjects': typeof ApiSyllabusSubjectsRoute
   '/api/tracker/$studentId': typeof ApiTrackerStudentIdRoute
   '/evaluation/$id/report': typeof EvaluationIdReportRoute
+  '/api/admin/subjects/$id': typeof ApiAdminSubjectsIdRoute
   '/api/attempts/$id/answer': typeof ApiAttemptsIdAnswerRoute
+  '/api/attempts/$id/result': typeof ApiAttemptsIdResultRoute
   '/api/attempts/$id/submit': typeof ApiAttemptsIdSubmitRoute
   '/api/evaluations/$id/confirm': typeof ApiEvaluationsIdConfirmRoute
   '/api/evaluations/$id/habits': typeof ApiEvaluationsIdHabitsRoute
@@ -798,6 +877,7 @@ export interface FileRoutesByTo {
   '/api/questions/generate-batch/$id': typeof ApiQuestionsGenerateBatchIdRouteWithChildren
   '/api/remediation/$id/attempt': typeof ApiRemediationIdAttemptRoute
   '/api/students/$id/login': typeof ApiStudentsIdLoginRoute
+  '/api/students/me/profile': typeof ApiStudentsMeProfileRoute
   '/api/summary/weekly/$studentId': typeof ApiSummaryWeeklyStudentIdRoute
   '/api/syllabus/concepts/$id': typeof ApiSyllabusConceptsIdRoute
   '/api/evaluations/$id/items/$itemId': typeof ApiEvaluationsIdItemsItemIdRoute
@@ -813,11 +893,14 @@ export interface FileRoutesById {
   '/': typeof IndexRoute
   '/generate': typeof GenerateRoute
   '/home': typeof HomeRoute
+  '/my-paper': typeof MyPaperRoute
   '/onboarding': typeof OnboardingRoute
   '/plan': typeof PlanRoute
+  '/profile-setup': typeof ProfileSetupRoute
   '/remediation': typeof RemediationRoute
   '/settings': typeof SettingsRoute
   '/student': typeof StudentRoute
+  '/admin/adaptive': typeof AdminAdaptiveRoute
   '/admin/blueprints': typeof AdminBlueprintsRoute
   '/admin/coverage': typeof AdminCoverageRoute
   '/admin/funnel': typeof AdminFunnelRoute
@@ -844,8 +927,12 @@ export interface FileRoutesById {
   '/paper/$id': typeof PaperIdRoute
   '/summary/weekly': typeof SummaryWeeklyRoute
   '/tracker/$studentId': typeof TrackerStudentIdRoute
+  '/api/adaptive/overview': typeof ApiAdaptiveOverviewRoute
+  '/api/adaptive/plan': typeof ApiAdaptivePlanRoute
   '/api/admin/ai-usage': typeof ApiAdminAiUsageRoute
+  '/api/admin/mastery-settings': typeof ApiAdminMasterySettingsRoute
   '/api/admin/product-funnel': typeof ApiAdminProductFunnelRoute
+  '/api/admin/subjects': typeof ApiAdminSubjectsRouteWithChildren
   '/api/admin/syllabus-fidelity': typeof ApiAdminSyllabusFidelityRoute
   '/api/attempts/$id': typeof ApiAttemptsIdRouteWithChildren
   '/api/auth/$': typeof ApiAuthSplatRoute
@@ -874,14 +961,16 @@ export interface FileRoutesById {
   '/api/remediation/$id': typeof ApiRemediationIdRouteWithChildren
   '/api/remediation/generate': typeof ApiRemediationGenerateRoute
   '/api/students/$id': typeof ApiStudentsIdRouteWithChildren
-  '/api/students/me': typeof ApiStudentsMeRoute
+  '/api/students/me': typeof ApiStudentsMeRouteWithChildren
   '/api/study-plan/generate': typeof ApiStudyPlanGenerateRoute
   '/api/syllabus/chapters': typeof ApiSyllabusChaptersRouteWithChildren
   '/api/syllabus/concepts': typeof ApiSyllabusConceptsRouteWithChildren
   '/api/syllabus/subjects': typeof ApiSyllabusSubjectsRoute
   '/api/tracker/$studentId': typeof ApiTrackerStudentIdRoute
   '/evaluation/$id/report': typeof EvaluationIdReportRoute
+  '/api/admin/subjects/$id': typeof ApiAdminSubjectsIdRoute
   '/api/attempts/$id/answer': typeof ApiAttemptsIdAnswerRoute
+  '/api/attempts/$id/result': typeof ApiAttemptsIdResultRoute
   '/api/attempts/$id/submit': typeof ApiAttemptsIdSubmitRoute
   '/api/evaluations/$id/confirm': typeof ApiEvaluationsIdConfirmRoute
   '/api/evaluations/$id/habits': typeof ApiEvaluationsIdHabitsRoute
@@ -898,6 +987,7 @@ export interface FileRoutesById {
   '/api/questions/generate-batch/$id': typeof ApiQuestionsGenerateBatchIdRouteWithChildren
   '/api/remediation/$id/attempt': typeof ApiRemediationIdAttemptRoute
   '/api/students/$id/login': typeof ApiStudentsIdLoginRoute
+  '/api/students/me/profile': typeof ApiStudentsMeProfileRoute
   '/api/summary/weekly/$studentId': typeof ApiSummaryWeeklyStudentIdRoute
   '/api/syllabus/concepts/$id': typeof ApiSyllabusConceptsIdRoute
   '/api/evaluations/$id/items/$itemId': typeof ApiEvaluationsIdItemsItemIdRoute
@@ -914,11 +1004,14 @@ export interface FileRouteTypes {
     | '/'
     | '/generate'
     | '/home'
+    | '/my-paper'
     | '/onboarding'
     | '/plan'
+    | '/profile-setup'
     | '/remediation'
     | '/settings'
     | '/student'
+    | '/admin/adaptive'
     | '/admin/blueprints'
     | '/admin/coverage'
     | '/admin/funnel'
@@ -945,8 +1038,12 @@ export interface FileRouteTypes {
     | '/paper/$id'
     | '/summary/weekly'
     | '/tracker/$studentId'
+    | '/api/adaptive/overview'
+    | '/api/adaptive/plan'
     | '/api/admin/ai-usage'
+    | '/api/admin/mastery-settings'
     | '/api/admin/product-funnel'
+    | '/api/admin/subjects'
     | '/api/admin/syllabus-fidelity'
     | '/api/attempts/$id'
     | '/api/auth/$'
@@ -982,7 +1079,9 @@ export interface FileRouteTypes {
     | '/api/syllabus/subjects'
     | '/api/tracker/$studentId'
     | '/evaluation/$id/report'
+    | '/api/admin/subjects/$id'
     | '/api/attempts/$id/answer'
+    | '/api/attempts/$id/result'
     | '/api/attempts/$id/submit'
     | '/api/evaluations/$id/confirm'
     | '/api/evaluations/$id/habits'
@@ -999,6 +1098,7 @@ export interface FileRouteTypes {
     | '/api/questions/generate-batch/$id'
     | '/api/remediation/$id/attempt'
     | '/api/students/$id/login'
+    | '/api/students/me/profile'
     | '/api/summary/weekly/$studentId'
     | '/api/syllabus/concepts/$id'
     | '/api/evaluations/$id/items/$itemId'
@@ -1013,11 +1113,14 @@ export interface FileRouteTypes {
     | '/'
     | '/generate'
     | '/home'
+    | '/my-paper'
     | '/onboarding'
     | '/plan'
+    | '/profile-setup'
     | '/remediation'
     | '/settings'
     | '/student'
+    | '/admin/adaptive'
     | '/admin/blueprints'
     | '/admin/coverage'
     | '/admin/funnel'
@@ -1044,8 +1147,12 @@ export interface FileRouteTypes {
     | '/paper/$id'
     | '/summary/weekly'
     | '/tracker/$studentId'
+    | '/api/adaptive/overview'
+    | '/api/adaptive/plan'
     | '/api/admin/ai-usage'
+    | '/api/admin/mastery-settings'
     | '/api/admin/product-funnel'
+    | '/api/admin/subjects'
     | '/api/admin/syllabus-fidelity'
     | '/api/attempts/$id'
     | '/api/auth/$'
@@ -1081,7 +1188,9 @@ export interface FileRouteTypes {
     | '/api/syllabus/subjects'
     | '/api/tracker/$studentId'
     | '/evaluation/$id/report'
+    | '/api/admin/subjects/$id'
     | '/api/attempts/$id/answer'
+    | '/api/attempts/$id/result'
     | '/api/attempts/$id/submit'
     | '/api/evaluations/$id/confirm'
     | '/api/evaluations/$id/habits'
@@ -1098,6 +1207,7 @@ export interface FileRouteTypes {
     | '/api/questions/generate-batch/$id'
     | '/api/remediation/$id/attempt'
     | '/api/students/$id/login'
+    | '/api/students/me/profile'
     | '/api/summary/weekly/$studentId'
     | '/api/syllabus/concepts/$id'
     | '/api/evaluations/$id/items/$itemId'
@@ -1112,11 +1222,14 @@ export interface FileRouteTypes {
     | '/'
     | '/generate'
     | '/home'
+    | '/my-paper'
     | '/onboarding'
     | '/plan'
+    | '/profile-setup'
     | '/remediation'
     | '/settings'
     | '/student'
+    | '/admin/adaptive'
     | '/admin/blueprints'
     | '/admin/coverage'
     | '/admin/funnel'
@@ -1143,8 +1256,12 @@ export interface FileRouteTypes {
     | '/paper/$id'
     | '/summary/weekly'
     | '/tracker/$studentId'
+    | '/api/adaptive/overview'
+    | '/api/adaptive/plan'
     | '/api/admin/ai-usage'
+    | '/api/admin/mastery-settings'
     | '/api/admin/product-funnel'
+    | '/api/admin/subjects'
     | '/api/admin/syllabus-fidelity'
     | '/api/attempts/$id'
     | '/api/auth/$'
@@ -1180,7 +1297,9 @@ export interface FileRouteTypes {
     | '/api/syllabus/subjects'
     | '/api/tracker/$studentId'
     | '/evaluation/$id/report'
+    | '/api/admin/subjects/$id'
     | '/api/attempts/$id/answer'
+    | '/api/attempts/$id/result'
     | '/api/attempts/$id/submit'
     | '/api/evaluations/$id/confirm'
     | '/api/evaluations/$id/habits'
@@ -1197,6 +1316,7 @@ export interface FileRouteTypes {
     | '/api/questions/generate-batch/$id'
     | '/api/remediation/$id/attempt'
     | '/api/students/$id/login'
+    | '/api/students/me/profile'
     | '/api/summary/weekly/$studentId'
     | '/api/syllabus/concepts/$id'
     | '/api/evaluations/$id/items/$itemId'
@@ -1212,11 +1332,14 @@ export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   GenerateRoute: typeof GenerateRoute
   HomeRoute: typeof HomeRoute
+  MyPaperRoute: typeof MyPaperRoute
   OnboardingRoute: typeof OnboardingRoute
   PlanRoute: typeof PlanRoute
+  ProfileSetupRoute: typeof ProfileSetupRoute
   RemediationRoute: typeof RemediationRoute
   SettingsRoute: typeof SettingsRoute
   StudentRoute: typeof StudentRoute
+  AdminAdaptiveRoute: typeof AdminAdaptiveRoute
   AdminBlueprintsRoute: typeof AdminBlueprintsRoute
   AdminCoverageRoute: typeof AdminCoverageRoute
   AdminFunnelRoute: typeof AdminFunnelRoute
@@ -1243,8 +1366,12 @@ export interface RootRouteChildren {
   PaperIdRoute: typeof PaperIdRoute
   SummaryWeeklyRoute: typeof SummaryWeeklyRoute
   TrackerStudentIdRoute: typeof TrackerStudentIdRoute
+  ApiAdaptiveOverviewRoute: typeof ApiAdaptiveOverviewRoute
+  ApiAdaptivePlanRoute: typeof ApiAdaptivePlanRoute
   ApiAdminAiUsageRoute: typeof ApiAdminAiUsageRoute
+  ApiAdminMasterySettingsRoute: typeof ApiAdminMasterySettingsRoute
   ApiAdminProductFunnelRoute: typeof ApiAdminProductFunnelRoute
+  ApiAdminSubjectsRoute: typeof ApiAdminSubjectsRouteWithChildren
   ApiAdminSyllabusFidelityRoute: typeof ApiAdminSyllabusFidelityRoute
   ApiAuthSplatRoute: typeof ApiAuthSplatRoute
   ApiCronDailyNudgeRoute: typeof ApiCronDailyNudgeRoute
@@ -1288,6 +1415,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof HomeRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/my-paper': {
+      id: '/my-paper'
+      path: '/my-paper'
+      fullPath: '/my-paper'
+      preLoaderRoute: typeof MyPaperRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/onboarding': {
       id: '/onboarding'
       path: '/onboarding'
@@ -1300,6 +1434,13 @@ declare module '@tanstack/react-router' {
       path: '/plan'
       fullPath: '/plan'
       preLoaderRoute: typeof PlanRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/profile-setup': {
+      id: '/profile-setup'
+      path: '/profile-setup'
+      fullPath: '/profile-setup'
+      preLoaderRoute: typeof ProfileSetupRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/remediation': {
@@ -1321,6 +1462,13 @@ declare module '@tanstack/react-router' {
       path: '/student'
       fullPath: '/student'
       preLoaderRoute: typeof StudentRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/admin/adaptive': {
+      id: '/admin/adaptive'
+      path: '/admin/adaptive'
+      fullPath: '/admin/adaptive'
+      preLoaderRoute: typeof AdminAdaptiveRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/admin/blueprints': {
@@ -1505,6 +1653,20 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof TrackerStudentIdRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/api/adaptive/overview': {
+      id: '/api/adaptive/overview'
+      path: '/api/adaptive/overview'
+      fullPath: '/api/adaptive/overview'
+      preLoaderRoute: typeof ApiAdaptiveOverviewRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/api/adaptive/plan': {
+      id: '/api/adaptive/plan'
+      path: '/api/adaptive/plan'
+      fullPath: '/api/adaptive/plan'
+      preLoaderRoute: typeof ApiAdaptivePlanRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/api/admin/ai-usage': {
       id: '/api/admin/ai-usage'
       path: '/api/admin/ai-usage'
@@ -1512,11 +1674,25 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ApiAdminAiUsageRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/api/admin/mastery-settings': {
+      id: '/api/admin/mastery-settings'
+      path: '/api/admin/mastery-settings'
+      fullPath: '/api/admin/mastery-settings'
+      preLoaderRoute: typeof ApiAdminMasterySettingsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/api/admin/product-funnel': {
       id: '/api/admin/product-funnel'
       path: '/api/admin/product-funnel'
       fullPath: '/api/admin/product-funnel'
       preLoaderRoute: typeof ApiAdminProductFunnelRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/api/admin/subjects': {
+      id: '/api/admin/subjects'
+      path: '/api/admin/subjects'
+      fullPath: '/api/admin/subjects'
+      preLoaderRoute: typeof ApiAdminSubjectsRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/api/admin/syllabus-fidelity': {
@@ -1764,11 +1940,25 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof EvaluationIdReportRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/api/admin/subjects/$id': {
+      id: '/api/admin/subjects/$id'
+      path: '/$id'
+      fullPath: '/api/admin/subjects/$id'
+      preLoaderRoute: typeof ApiAdminSubjectsIdRouteImport
+      parentRoute: typeof ApiAdminSubjectsRoute
+    }
     '/api/attempts/$id/answer': {
       id: '/api/attempts/$id/answer'
       path: '/answer'
       fullPath: '/api/attempts/$id/answer'
       preLoaderRoute: typeof ApiAttemptsIdAnswerRouteImport
+      parentRoute: typeof ApiAttemptsIdRoute
+    }
+    '/api/attempts/$id/result': {
+      id: '/api/attempts/$id/result'
+      path: '/result'
+      fullPath: '/api/attempts/$id/result'
+      preLoaderRoute: typeof ApiAttemptsIdResultRouteImport
       parentRoute: typeof ApiAttemptsIdRoute
     }
     '/api/attempts/$id/submit': {
@@ -1883,6 +2073,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ApiStudentsIdLoginRouteImport
       parentRoute: typeof ApiStudentsIdRoute
     }
+    '/api/students/me/profile': {
+      id: '/api/students/me/profile'
+      path: '/profile'
+      fullPath: '/api/students/me/profile'
+      preLoaderRoute: typeof ApiStudentsMeProfileRouteImport
+      parentRoute: typeof ApiStudentsMeRoute
+    }
     '/api/summary/weekly/$studentId': {
       id: '/api/summary/weekly/$studentId'
       path: '/api/summary/weekly/$studentId'
@@ -1951,11 +2148,13 @@ declare module '@tanstack/react-router' {
 
 interface ApiAttemptsIdRouteChildren {
   ApiAttemptsIdAnswerRoute: typeof ApiAttemptsIdAnswerRoute
+  ApiAttemptsIdResultRoute: typeof ApiAttemptsIdResultRoute
   ApiAttemptsIdSubmitRoute: typeof ApiAttemptsIdSubmitRoute
 }
 
 const ApiAttemptsIdRouteChildren: ApiAttemptsIdRouteChildren = {
   ApiAttemptsIdAnswerRoute: ApiAttemptsIdAnswerRoute,
+  ApiAttemptsIdResultRoute: ApiAttemptsIdResultRoute,
   ApiAttemptsIdSubmitRoute: ApiAttemptsIdSubmitRoute,
 }
 
@@ -2195,14 +2394,26 @@ const ApiStudentsIdRouteWithChildren = ApiStudentsIdRoute._addFileChildren(
   ApiStudentsIdRouteChildren,
 )
 
+interface ApiStudentsMeRouteChildren {
+  ApiStudentsMeProfileRoute: typeof ApiStudentsMeProfileRoute
+}
+
+const ApiStudentsMeRouteChildren: ApiStudentsMeRouteChildren = {
+  ApiStudentsMeProfileRoute: ApiStudentsMeProfileRoute,
+}
+
+const ApiStudentsMeRouteWithChildren = ApiStudentsMeRoute._addFileChildren(
+  ApiStudentsMeRouteChildren,
+)
+
 interface ApiStudentsRouteChildren {
   ApiStudentsIdRoute: typeof ApiStudentsIdRouteWithChildren
-  ApiStudentsMeRoute: typeof ApiStudentsMeRoute
+  ApiStudentsMeRoute: typeof ApiStudentsMeRouteWithChildren
 }
 
 const ApiStudentsRouteChildren: ApiStudentsRouteChildren = {
   ApiStudentsIdRoute: ApiStudentsIdRouteWithChildren,
-  ApiStudentsMeRoute: ApiStudentsMeRoute,
+  ApiStudentsMeRoute: ApiStudentsMeRouteWithChildren,
 }
 
 const ApiStudentsRouteWithChildren = ApiStudentsRoute._addFileChildren(
@@ -2222,6 +2433,17 @@ const ApiStudyPlanRouteChildren: ApiStudyPlanRouteChildren = {
 const ApiStudyPlanRouteWithChildren = ApiStudyPlanRoute._addFileChildren(
   ApiStudyPlanRouteChildren,
 )
+
+interface ApiAdminSubjectsRouteChildren {
+  ApiAdminSubjectsIdRoute: typeof ApiAdminSubjectsIdRoute
+}
+
+const ApiAdminSubjectsRouteChildren: ApiAdminSubjectsRouteChildren = {
+  ApiAdminSubjectsIdRoute: ApiAdminSubjectsIdRoute,
+}
+
+const ApiAdminSubjectsRouteWithChildren =
+  ApiAdminSubjectsRoute._addFileChildren(ApiAdminSubjectsRouteChildren)
 
 interface ApiHouseholdsUsersRouteChildren {
   ApiHouseholdsUsersIdRoute: typeof ApiHouseholdsUsersIdRoute
@@ -2260,11 +2482,14 @@ const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   GenerateRoute: GenerateRoute,
   HomeRoute: HomeRoute,
+  MyPaperRoute: MyPaperRoute,
   OnboardingRoute: OnboardingRoute,
   PlanRoute: PlanRoute,
+  ProfileSetupRoute: ProfileSetupRoute,
   RemediationRoute: RemediationRoute,
   SettingsRoute: SettingsRoute,
   StudentRoute: StudentRoute,
+  AdminAdaptiveRoute: AdminAdaptiveRoute,
   AdminBlueprintsRoute: AdminBlueprintsRoute,
   AdminCoverageRoute: AdminCoverageRoute,
   AdminFunnelRoute: AdminFunnelRoute,
@@ -2291,8 +2516,12 @@ const rootRouteChildren: RootRouteChildren = {
   PaperIdRoute: PaperIdRoute,
   SummaryWeeklyRoute: SummaryWeeklyRoute,
   TrackerStudentIdRoute: TrackerStudentIdRoute,
+  ApiAdaptiveOverviewRoute: ApiAdaptiveOverviewRoute,
+  ApiAdaptivePlanRoute: ApiAdaptivePlanRoute,
   ApiAdminAiUsageRoute: ApiAdminAiUsageRoute,
+  ApiAdminMasterySettingsRoute: ApiAdminMasterySettingsRoute,
   ApiAdminProductFunnelRoute: ApiAdminProductFunnelRoute,
+  ApiAdminSubjectsRoute: ApiAdminSubjectsRouteWithChildren,
   ApiAdminSyllabusFidelityRoute: ApiAdminSyllabusFidelityRoute,
   ApiAuthSplatRoute: ApiAuthSplatRoute,
   ApiCronDailyNudgeRoute: ApiCronDailyNudgeRoute,
@@ -2315,3 +2544,12 @@ const rootRouteChildren: RootRouteChildren = {
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
   ._addFileTypes<FileRouteTypes>()
+
+import type { getRouter } from './router.tsx'
+import type { createStart } from '@tanstack/react-start'
+declare module '@tanstack/react-start' {
+  interface Register {
+    ssr: true
+    router: Awaited<ReturnType<typeof getRouter>>
+  }
+}

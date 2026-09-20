@@ -35,6 +35,7 @@ export const Route = createFileRoute('/api/syllabus/subjects')({
           db,
           board,
           classNum,
+          url.searchParams.get('with_content') === '1',
         )
         return Response.json(subjects)
       },

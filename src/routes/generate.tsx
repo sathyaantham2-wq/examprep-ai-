@@ -80,12 +80,13 @@ function GeneratePaper() {
       navigate({ to: '/' })
       return
     }
-    // A student makes papers for herself: her own profile is the only "student" on the page.
-    fetch(role === 'student' ? '/api/students/me' : '/api/students')
+    // A student's papers are built from her own mastery on her own page.
+    if (role === 'student') {
+      navigate({ to: '/my-paper' })
+      return
+    }
+    fetch('/api/students')
       .then((r) => r.json())
-      .then((data: Array<Student> | Student) =>
-        Array.isArray(data) ? data : [data],
-      )
       .then((data: Array<Student>) => {
         setStudents(data)
         // The common case is one child -- picking her is not a real decision, so it shouldn't
@@ -101,7 +102,7 @@ function GeneratePaper() {
     setSubjects([])
     if (!selectedStudent) return
     fetch(
-      `/api/syllabus/subjects?board=${encodeURIComponent(selectedStudent.board)}&class=${selectedStudent.class}`,
+      `/api/syllabus/subjects?board=${encodeURIComponent(selectedStudent.board)}&class=${selectedStudent.class}&with_content=1`,
     )
       .then((r) => r.json())
       .then((data: Array<Subject>) => {

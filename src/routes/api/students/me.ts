@@ -2,6 +2,7 @@ import { createFileRoute } from '@tanstack/react-router'
 import { requireRole } from '../../../lib/session'
 import { resolveEnabledStudent } from '../../../lib/access'
 import { getSharedDb } from '../../../db/connection'
+import { getStudentProfile } from '../../../lib/student-profile'
 import { wrapRouteHandlers } from '../../../lib/error-log'
 
 // The signed-in student's own profile: just what the paper generator needs (class and board).
@@ -13,11 +14,14 @@ export const Route = createFileRoute('/api/students/me')({
         if (auth instanceof Response) return auth
         const student = await resolveEnabledStudent(getSharedDb(), auth.id)
         if (student instanceof Response) return student
+        const profile = await getStudentProfile(getSharedDb(), student.id)
         return Response.json({
           id: student.id,
           name: student.name,
           class: student.class,
           board: student.board,
+          profile_complete: profile?.profile_complete ?? false,
+          subject_ids: profile?.subject_ids ?? [],
         })
       },
     },
