@@ -85,3 +85,20 @@ Class 7 Social Science — *Exploring Society: India and Beyond* (Grade 7 Parts 
 | gees208 | II | 8 | Banks and the Magic of Finance |
 
 `gees1ps`/`gees2ps`/`gees1gl`/`gees2gl` are preliminary pages and glossaries (not ingested).
+
+Class 7 Science — *Curiosity* (Grade 7). Ingested 2026-09-20; questions not yet authored.
+
+| Code | Ch | Chapter |
+|---|---|---|
+| gecu101 | 1 | The Ever-Evolving World of Science |
+| gecu102 | 2 | Exploring Substances: Acidic, Basic, and Neutral |
+| gecu103 | 3 | Electricity: Circuits and their Components |
+| gecu104 | 4 | The World of Metals and Non-metals |
+| gecu105 | 5 | Changes Around Us: Physical and Chemical |
+| gecu106 | 6 | Adolescence: A Stage of Growth and Change |
+| gecu107 | 7 | Heat Transfer in Nature |
+| gecu108 | 8 | Measurement of Time and Motion |
+| gecu109 | 9 | Life Processes in Animals |
+| gecu110 | 10 | Life Processes in Plants |
+| gecu111 | 11 | Light: Shadows and Reflections |
+| gecu112 | 12 | Earth, Moon, and the Sun |
