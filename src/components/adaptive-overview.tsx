@@ -16,6 +16,8 @@ export interface ConceptView {
   questions_attempted: number
   retention: string
   why: Array<string>
+  video_url: string | null
+  video_title: string | null
 }
 
 export interface ChapterView {
@@ -44,6 +46,23 @@ interface Brief {
   subject_name: string
   mastery_score: number
   mastery_level: string
+  video_url?: string | null
+  video_title?: string | null
+}
+
+// Links are shown to a student, so only real https addresses are made clickable.
+export function VideoLink({ url, title }: { url: string | null | undefined; title?: string | null }) {
+  if (!url || !url.startsWith('https://')) return null
+  return (
+    <a
+      href={url}
+      target="_blank"
+      rel="noreferrer noopener"
+      className="text-small text-primary inline-block underline-offset-4 hover:underline"
+    >
+      Watch: {title ?? 'concept video'}
+    </a>
+  )
 }
 
 export interface AdaptiveOverviewData {
@@ -68,6 +87,8 @@ export interface AdaptiveOverviewData {
     current_difficulty: string
     recommended_difficulty: string
     is_initial_assessment: boolean
+    video_url: string | null
+    video_title: string | null
   } | null
 }
 
@@ -165,9 +186,12 @@ export function AdaptiveOverview({
               Current level: {next.level === 'Not started' ? 'not assessed yet' : next.level} · Recommended difficulty:{' '}
               {next.recommended_difficulty}
             </p>
-            <a href={`/my-paper?subject=${next.subject_id}`}>
-              <Button>{next.is_initial_assessment ? 'Take my first assessment' : 'Generate my question paper'}</Button>
-            </a>
+            <div className="flex flex-wrap items-center gap-4">
+              <a href={`/my-paper?subject=${next.subject_id}`}>
+                <Button>{next.is_initial_assessment ? 'Take my first assessment' : 'Generate my question paper'}</Button>
+              </a>
+              {!next.is_initial_assessment && <VideoLink url={next.video_url} title={next.video_title} />}
+            </div>
           </CardContent>
         </Card>
       )}
@@ -225,13 +249,18 @@ export function AdaptiveOverview({
             <Card>
               <CardHeader>
                 <CardTitle className="text-h3">Needs improvement</CardTitle>
-                <CardDescription>These get more questions in your next paper.</CardDescription>
+                <CardDescription>
+                  These get more questions in your next paper. Watch the video first if there is one.
+                </CardDescription>
               </CardHeader>
-              <CardContent className="space-y-2">
+              <CardContent className="space-y-3">
                 {data.needs_improvement.map((c) => (
-                  <div key={c.concept_id} className="flex items-center justify-between gap-2">
-                    <span className="text-body">{c.concept_name}</span>
-                    <LevelBadge level={c.mastery_level} />
+                  <div key={c.concept_id} className="space-y-1">
+                    <div className="flex items-center justify-between gap-2">
+                      <span className="text-body">{c.concept_name}</span>
+                      <LevelBadge level={c.mastery_level} />
+                    </div>
+                    <VideoLink url={c.video_url} title={c.video_title} />
                   </div>
                 ))}
               </CardContent>
@@ -307,6 +336,7 @@ export function AdaptiveOverview({
                               {concept.why.map((line, i) => (
                                 <p key={i}>{line}</p>
                               ))}
+                              <VideoLink url={concept.video_url} title={concept.video_title} />
                             </div>
                           )}
                         </div>

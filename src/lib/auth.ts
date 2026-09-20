@@ -1,4 +1,5 @@
 import { betterAuth } from 'better-auth'
+import { APIError, createAuthMiddleware } from 'better-auth/api'
 import { createAuthPool } from '../db/auth-pool'
 import { getSharedDb } from '../db/connection'
 import { consentsRepository, householdsRepository, studentsRepository } from '../db/repositories'
@@ -15,6 +16,18 @@ export const auth = betterAuth({
     database: {
       generateId: 'uuid',
     },
+  },
+  // Only students can sign up for now (owner decision 2026-09-20; parent and teacher accounts come
+  // later). Enforced here, not just by hiding the choice on the form, for requests that arrive over
+  // HTTP. Server-side calls (tests, scripts) carry no request and are not affected.
+  hooks: {
+    before: createAuthMiddleware(async (ctx) => {
+      if (ctx.path !== '/sign-up/email' || !ctx.request) return
+      const type = (ctx.body as { signup_type?: string } | undefined)?.signup_type
+      if (type !== 'student') {
+        throw new APIError('FORBIDDEN', { message: 'Only student sign-up is open right now.' })
+      }
+    }),
   },
   // The default limit for sign-in and sign-up is 3 requests per 10 seconds per IP address, which a
   // family on one home network trips just by mistyping a password twice. Ten a minute still

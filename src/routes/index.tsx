@@ -25,7 +25,6 @@ function Home() {
   const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
   const [confirmPassword, setConfirmPassword] = useState('')
-  const [accountType, setAccountType] = useState<'student' | 'parent' | 'teacher'>('student')
   const [guardianOk, setGuardianOk] = useState(false)
   const [error, setError] = useState<string | null>(null)
   const [submitting, setSubmitting] = useState(false)
@@ -116,7 +115,7 @@ function Home() {
           setError('The two passwords do not match.')
           return
         }
-        if (accountType === 'student' && !guardianOk) {
+        if (!guardianOk) {
           setError('Please confirm that your parent or guardian agrees.')
           return
         }
@@ -124,7 +123,7 @@ function Home() {
           name,
           email,
           password,
-          signup_type: accountType,
+          signup_type: 'student',
         })
         if (result.error) {
           setError(result.error.message ?? 'Sign up failed')
@@ -162,8 +161,8 @@ function Home() {
             </CardTitle>
             <CardDescription>
               {mode === 'sign-in'
-                ? 'Students, parents and teachers all sign in here.'
-                : 'Every student has her own login. Parents and teachers create their own account and add students later.'}
+                ? 'Sign in with the email and password you signed up with.'
+                : 'Create your own student login. You will set up your class and subjects next.'}
             </CardDescription>
           </CardHeader>
           <CardContent>
@@ -171,23 +170,6 @@ function Home() {
               <form onSubmit={handleSubmit} className="space-y-4">
                 {mode === 'sign-up' && (
                   <>
-                    <div className="space-y-1.5">
-                      <Label htmlFor="account-type">I am a</Label>
-                      <select
-                        id="account-type"
-                        className="border-input flex h-9 w-full rounded-md border bg-transparent px-3 text-sm shadow-xs"
-                        value={accountType}
-                        onChange={(e) =>
-                          setAccountType(
-                            e.target.value as 'student' | 'parent' | 'teacher',
-                          )
-                        }
-                      >
-                        <option value="student">Student</option>
-                        <option value="parent">Parent</option>
-                        <option value="teacher">Teacher</option>
-                      </select>
-                    </div>
                     <div className="space-y-1.5">
                       <Label htmlFor="name">User name</Label>
                       <Input
@@ -233,19 +215,17 @@ function Home() {
                         minLength={8}
                       />
                     </div>
-                    {accountType === 'student' && (
-                      <Label className="items-start">
-                        <input
-                          type="checkbox"
-                          className="mt-0.5"
-                          checked={guardianOk}
-                          onChange={(e) => setGuardianOk(e.target.checked)}
-                        />
-                        <span className="text-small font-normal">
-                          My parent or guardian agrees to my using ExamPrep AI.
-                        </span>
-                      </Label>
-                    )}
+                    <Label className="items-start">
+                      <input
+                        type="checkbox"
+                        className="mt-0.5"
+                        checked={guardianOk}
+                        onChange={(e) => setGuardianOk(e.target.checked)}
+                      />
+                      <span className="text-small font-normal">
+                        My parent or guardian agrees to my using ExamPrep AI.
+                      </span>
+                    </Label>
                   </>
                 )}
                 {error && (

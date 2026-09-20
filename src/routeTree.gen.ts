@@ -27,6 +27,7 @@ import { Route as AdminQuestionsRouteImport } from './routes/admin/questions'
 import { Route as AdminSyllabusRouteImport } from './routes/admin/syllabus'
 import { Route as AdminUsageRouteImport } from './routes/admin/usage'
 import { Route as AdminUsersRouteImport } from './routes/admin/users'
+import { Route as AdminVideosRouteImport } from './routes/admin/videos'
 import { Route as ApiAttemptsRouteImport } from './routes/api/attempts'
 import { Route as ApiAuditLogRouteImport } from './routes/api/audit-log'
 import { Route as ApiBlueprintsRouteImport } from './routes/api/blueprints'
@@ -211,6 +212,11 @@ const AdminUsageRoute = AdminUsageRouteImport.update({
 const AdminUsersRoute = AdminUsersRouteImport.update({
   id: '/admin/users',
   path: '/admin/users',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AdminVideosRoute = AdminVideosRouteImport.update({
+  id: '/admin/videos',
+  path: '/admin/videos',
   getParentRoute: () => rootRouteImport,
 } as any)
 const ApiAttemptsRoute = ApiAttemptsRouteImport.update({
@@ -728,6 +734,7 @@ export interface FileRoutesByFullPath {
   '/admin/syllabus': typeof AdminSyllabusRoute
   '/admin/usage': typeof AdminUsageRoute
   '/admin/users': typeof AdminUsersRoute
+  '/admin/videos': typeof AdminVideosRoute
   '/api/attempts': typeof ApiAttemptsRouteWithChildren
   '/api/audit-log': typeof ApiAuditLogRoute
   '/api/blueprints': typeof ApiBlueprintsRoute
@@ -843,6 +850,7 @@ export interface FileRoutesByTo {
   '/admin/syllabus': typeof AdminSyllabusRoute
   '/admin/usage': typeof AdminUsageRoute
   '/admin/users': typeof AdminUsersRoute
+  '/admin/videos': typeof AdminVideosRoute
   '/api/attempts': typeof ApiAttemptsRouteWithChildren
   '/api/audit-log': typeof ApiAuditLogRoute
   '/api/blueprints': typeof ApiBlueprintsRoute
@@ -959,6 +967,7 @@ export interface FileRoutesById {
   '/admin/syllabus': typeof AdminSyllabusRoute
   '/admin/usage': typeof AdminUsageRoute
   '/admin/users': typeof AdminUsersRoute
+  '/admin/videos': typeof AdminVideosRoute
   '/api/attempts': typeof ApiAttemptsRouteWithChildren
   '/api/audit-log': typeof ApiAuditLogRoute
   '/api/blueprints': typeof ApiBlueprintsRoute
@@ -1076,6 +1085,7 @@ export interface FileRouteTypes {
     | '/admin/syllabus'
     | '/admin/usage'
     | '/admin/users'
+    | '/admin/videos'
     | '/api/attempts'
     | '/api/audit-log'
     | '/api/blueprints'
@@ -1191,6 +1201,7 @@ export interface FileRouteTypes {
     | '/admin/syllabus'
     | '/admin/usage'
     | '/admin/users'
+    | '/admin/videos'
     | '/api/attempts'
     | '/api/audit-log'
     | '/api/blueprints'
@@ -1306,6 +1317,7 @@ export interface FileRouteTypes {
     | '/admin/syllabus'
     | '/admin/usage'
     | '/admin/users'
+    | '/admin/videos'
     | '/api/attempts'
     | '/api/audit-log'
     | '/api/blueprints'
@@ -1422,6 +1434,7 @@ export interface RootRouteChildren {
   AdminSyllabusRoute: typeof AdminSyllabusRoute
   AdminUsageRoute: typeof AdminUsageRoute
   AdminUsersRoute: typeof AdminUsersRoute
+  AdminVideosRoute: typeof AdminVideosRoute
   ApiAttemptsRoute: typeof ApiAttemptsRouteWithChildren
   ApiAuditLogRoute: typeof ApiAuditLogRoute
   ApiBlueprintsRoute: typeof ApiBlueprintsRoute
@@ -1594,6 +1607,13 @@ declare module '@tanstack/react-router' {
       path: '/admin/users'
       fullPath: '/admin/users'
       preLoaderRoute: typeof AdminUsersRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/admin/videos': {
+      id: '/admin/videos'
+      path: '/admin/videos'
+      fullPath: '/admin/videos'
+      preLoaderRoute: typeof AdminVideosRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/api/attempts': {
@@ -2625,6 +2645,7 @@ const rootRouteChildren: RootRouteChildren = {
   AdminSyllabusRoute: AdminSyllabusRoute,
   AdminUsageRoute: AdminUsageRoute,
   AdminUsersRoute: AdminUsersRoute,
+  AdminVideosRoute: AdminVideosRoute,
   ApiAttemptsRoute: ApiAttemptsRouteWithChildren,
   ApiAuditLogRoute: ApiAuditLogRoute,
   ApiBlueprintsRoute: ApiBlueprintsRoute,

@@ -483,6 +483,21 @@ describe('concept-level adaptive learning', () => {
       expect(['Beginner', 'Developing']).toContain(weak.mastery_level)
       expect(overview.recommended_next).not.toBeNull()
       expect(overview.needs_improvement.some((c: { concept_id: string }) => c.concept_id === weakConceptId)).toBe(true)
+
+      // A video the admin attached to the weak concept is offered to the student.
+      await db
+        .updateTable('concepts')
+        .set({ video_url: 'https://www.youtube.com/watch?v=fixture', video_title: 'Fixture video' })
+        .where('id', '=', weakConceptId)
+        .execute()
+      const again = await (await handlerFor(OverviewRoute, 'GET')({ request: request(student.cookie) })).json()
+      const weakItem = again.needs_improvement.find((c: { concept_id: string }) => c.concept_id === weakConceptId)
+      expect(weakItem).toMatchObject({ video_url: 'https://www.youtube.com/watch?v=fixture', video_title: 'Fixture video' })
+      const weakConcept = again.subjects
+        .flatMap((s: { chapters: Array<{ concepts: Array<{ concept_id: string; video_url: string | null }> }> }) => s.chapters)
+        .flatMap((c: { concepts: Array<{ concept_id: string; video_url: string | null }> }) => c.concepts)
+        .find((c: { concept_id: string }) => c.concept_id === weakConceptId)
+      expect(weakConcept.video_url).toBe('https://www.youtube.com/watch?v=fixture')
       const noContent = overview.subjects.find((s: { has_content: boolean }) => !s.has_content)
       expect(noContent).toBeTruthy()
     })

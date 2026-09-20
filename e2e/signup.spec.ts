@@ -13,7 +13,8 @@ test('student sign-up needs no email confirmation and lands on profile setup', a
     // Hydration margin, same reason as the other specs.
     await page.waitForTimeout(2000)
     await page.getByRole('button', { name: 'Create an account' }).click()
-    await page.selectOption('#account-type', 'student')
+    // There is no account-type choice any more: only students can sign up.
+    await expect(page.locator('#account-type')).toHaveCount(0)
     await page.fill('#name', 'Signup Kid')
     await page.fill('#email', email)
     await page.fill('#password', 'correcthorsebatterystaple')

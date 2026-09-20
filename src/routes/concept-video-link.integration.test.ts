@@ -99,6 +99,16 @@ describe('concept video link (F124)', () => {
     expect(response.status).toBe(400)
   })
 
+  it('rejects a link that is not https, such as a javascript: address', async () => {
+    for (const video_url of ['javascript:alert(1)', 'http://youtube.com/watch?v=abc', 'data:text/html,hi']) {
+      const response = await handlerFor(ConceptByIdRoute, 'PATCH')({
+        request: request(admin.cookie, { video_url }),
+        params: { id: conceptId },
+      })
+      expect(response.status).toBe(400)
+    }
+  })
+
   it('404s an unknown concept id', async () => {
     const response = await handlerFor(
       ConceptByIdRoute,

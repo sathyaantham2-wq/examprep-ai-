@@ -223,7 +223,12 @@ function AdminAdaptive() {
       <div className="flex items-center justify-between">
         <div>
           <h1 className="text-h1">Adaptive learning settings</h1>
-          <p className="text-body text-muted-foreground">Subjects, mastery rules and question weightage.</p>
+          <p className="text-body text-muted-foreground">
+            Subjects, mastery rules and question weightage.{' '}
+            <a href="/admin/videos" className="text-primary underline-offset-4 hover:underline">
+              Concept videos
+            </a>
+          </p>
         </div>
         <ThemeToggle />
       </div>

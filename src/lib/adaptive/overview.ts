@@ -29,6 +29,8 @@ export interface ConceptView {
   assessment_count: number
   retention: string
   why: Array<string>
+  video_url: string | null
+  video_title: string | null
 }
 
 export interface ChapterView {
@@ -62,7 +64,15 @@ export interface AdaptiveOverview {
   }
   current_difficulty: string
   strong_concepts: Array<{ concept_id: string; concept_name: string; subject_name: string; mastery_score: number; mastery_level: string }>
-  needs_improvement: Array<{ concept_id: string; concept_name: string; subject_name: string; mastery_score: number; mastery_level: string }>
+  needs_improvement: Array<{
+    concept_id: string
+    concept_name: string
+    subject_name: string
+    mastery_score: number
+    mastery_level: string
+    video_url: string | null
+    video_title: string | null
+  }>
   retention_due: Array<{ concept_id: string; concept_name: string; subject_name: string }>
   recommended_next: {
     subject_id: string
@@ -73,6 +83,8 @@ export interface AdaptiveOverview {
     current_difficulty: string
     recommended_difficulty: string
     is_initial_assessment: boolean
+    video_url: string | null
+    video_title: string | null
   } | null
 }
 
@@ -118,6 +130,8 @@ export async function buildAdaptiveOverview(
           'c.id as concept_id',
           'c.code as concept_code',
           'c.name as concept_name',
+          'c.video_url',
+          'c.video_title',
           'ch.id as chapter_id',
           'ch.name as chapter_name',
           'ch.part',
@@ -182,6 +196,8 @@ export async function buildAdaptiveOverview(
         assessment_count: 0,
         retention: 'not_applicable',
         why: explainMastery({ questionsAttempted: 0 } as MasteryState, config),
+        video_url: r.video_url,
+        video_title: r.video_title,
       }
     }
     const state = {
@@ -206,6 +222,8 @@ export async function buildAdaptiveOverview(
       assessment_count: p.assessment_count,
       retention: p.retention,
       why: Object.keys(state.components).length > 0 ? explainMastery(state, config) : [],
+      video_url: r.video_url,
+      video_title: r.video_title,
     }
   }
 
@@ -264,7 +282,7 @@ export async function buildAdaptiveOverview(
     .filter((x) => (x.v.mastery_score as number) < config.levels.proficient)
     .sort((a, b) => (a.v.mastery_score as number) - (b.v.mastery_score as number))
     .slice(0, 5)
-    .map(brief)
+    .map((x) => ({ ...brief(x), video_url: x.v.video_url, video_title: x.v.video_title }))
   const due = flat
     .filter((x) => x.v.retention === 'due' || x.v.retention === 'lapsed')
     .map((x) => ({
@@ -306,6 +324,8 @@ export async function buildAdaptiveOverview(
           current_difficulty: next.v.current_difficulty,
           recommended_difficulty: RECOMMENDED_DIFFICULTY[next.v.current_level],
           is_initial_assessment: assessed.length === 0,
+          video_url: next.v.video_url,
+          video_title: next.v.video_title,
         }
       : null,
   }

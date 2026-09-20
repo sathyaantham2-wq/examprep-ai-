@@ -12,7 +12,12 @@ import { wrapRouteHandlers } from '../../../../lib/error-log'
 // unset without a new migration or a direct DB edit.
 const patchSchema = z
   .object({
-    video_url: z.string().url().nullable(),
+    // https only: the link is shown to students as a clickable address.
+    video_url: z
+      .string()
+      .url()
+      .refine((v) => v.startsWith('https://'), { message: 'Use an https:// link' })
+      .nullable(),
     video_title: z.string().min(1).nullable(),
   })
   .partial()
