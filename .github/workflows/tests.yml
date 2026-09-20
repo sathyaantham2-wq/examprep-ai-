@@ -40,6 +40,8 @@ jobs:
       # as every manual verification run against the dev DB this project has relied on so far.
       - name: Seed fixture data
         run: npm run db:seed
+      - name: Seed patterns and habits
+        run: npm run db:seed:patterns && npm run db:seed:habits
       - name: Lint
         run: npm run lint
       - name: Typecheck
@@ -81,6 +83,8 @@ jobs:
         run: npm run db:migrate
       - name: Seed fixture data
         run: npm run db:seed
+      - name: Seed patterns and habits
+        run: npm run db:seed:patterns && npm run db:seed:habits
       - name: E2E
         run: npm run test:e2e
       - name: Upload trace on failure
