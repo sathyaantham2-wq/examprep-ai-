@@ -58,3 +58,30 @@ names. Always carry the part.
 
 Files here are gitignored — they are large and redistributable only under NCERT's terms.
 Commit the extracted text in `content/extracted/` instead.
+
+Class 7 Social Science — *Exploring Society: India and Beyond* (Grade 7 Parts 1 and 2). Ingested 2026-09-20; questions not yet authored.
+
+| Code | Part | Ch | Chapter |
+|---|---|---|---|
+| gees101 | I | 1 | Geographical Diversity of India |
+| gees102 | I | 2 | Understanding the Weather |
+| gees103 | I | 3 | Climates of India |
+| gees104 | I | 4 | New Beginnings: Cities and States |
+| gees105 | I | 5 | The Rise of Empires |
+| gees106 | I | 6 | The Age of Reorganisation |
+| gees107 | I | 7 | The Gupta Era: An Age of Tireless Creativity |
+| gees108 | I | 8 | How the Land Becomes Sacred |
+| gees109 | I | 9 | From the Rulers to the Ruled: Types of Governments |
+| gees110 | I | 10 | The Constitution of India: An Introduction |
+| gees111 | I | 11 | From Barter to Money |
+| gees112 | I | 12 | Understanding Markets |
+| gees201 | II | 1 | The Story of Indian Farming |
+| gees202 | II | 2 | India and Her Neighbours |
+| gees203 | II | 3 | Empires and Kingdoms: 6th to 10th Centuries |
+| gees204 | II | 4 | Turning Tides: 11th and 12th Centuries |
+| gees205 | II | 5 | India, a Home to Many |
+| gees206 | II | 6 | The State, the Government, and You |
+| gees207 | II | 7 | Infrastructure: Engine of Growth |
+| gees208 | II | 8 | Banks and the Magic of Finance |
+
+`gees1ps`/`gees2ps`/`gees1gl`/`gees2gl` are preliminary pages and glossaries (not ingested).
