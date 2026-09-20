@@ -32,10 +32,18 @@ export function isAiConfigured(): boolean {
   return activeProvider() !== null
 }
 
+export interface CompletionImage {
+  mediaType: string
+  // Base64 without the "data:...;base64," prefix.
+  base64: string
+}
+
 export interface CompletionInput {
   model: string
   prompt: string
   maxTokens: number
+  // Photos the model should look at (handwriting). Both vendors accept them.
+  images?: Array<CompletionImage>
 }
 
 export interface CompletionResult {
@@ -61,7 +69,22 @@ async function completeAnthropic(input: CompletionInput, apiKey: string): Promis
   const response = await anthropicClient.client.messages.create({
     model: input.model,
     max_tokens: input.maxTokens,
-    messages: [{ role: 'user', content: input.prompt }],
+    messages: [
+      {
+        role: 'user',
+        content: [
+          ...(input.images ?? []).map((image) => ({
+            type: 'image' as const,
+            source: {
+              type: 'base64' as const,
+              media_type: image.mediaType as 'image/jpeg' | 'image/png' | 'image/webp' | 'image/gif',
+              data: image.base64,
+            },
+          })),
+          { type: 'text' as const, text: input.prompt },
+        ],
+      },
+    ],
   })
   const block = response.content.find((b) => b.type === 'text')
   return {
@@ -91,7 +114,17 @@ async function completeGemini(input: CompletionInput, apiKey: string): Promise<C
     method: 'POST',
     headers: { 'content-type': 'application/json', 'x-goog-api-key': apiKey },
     body: JSON.stringify({
-      contents: [{ role: 'user', parts: [{ text: input.prompt }] }],
+      contents: [
+        {
+          role: 'user',
+          parts: [
+            ...(input.images ?? []).map((image) => ({
+              inlineData: { mimeType: image.mediaType, data: image.base64 },
+            })),
+            { text: input.prompt },
+          ],
+        },
+      ],
       generationConfig: {
         // Gemini 2.5 models count their internal reasoning against this budget, so leave room.
         maxOutputTokens: input.maxTokens * 4,

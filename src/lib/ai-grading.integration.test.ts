@@ -2,7 +2,7 @@ import { afterAll, beforeAll, beforeEach, describe, expect, it, vi } from 'vites
 import { createDb } from '../db/connection'
 import type { Db } from '../db/connection'
 import { householdsRepository, studentsRepository } from '../db/repositories'
-import { MIN_GRADING_CONFIDENCE, gradeSubjectiveAnswer } from './ai-grading'
+import { MIN_GRADING_CONFIDENCE, gradeSubjectiveAnswer, reviewDisputedAnswer } from './ai-grading'
 import { completeText } from './ai-provider'
 
 // The vendor call is replaced; everything else (budget check, job logging) is real.
@@ -131,5 +131,73 @@ describe('gradeSubjectiveAnswer safeguards', () => {
   it('needs manual marking when the model gives no step marks at all', async () => {
     reply({ unreadable: false, steps: [], error_type: null, feedback: '', confidence: 1 })
     expect((await gradeSubjectiveAnswer(db, input()))?.needsManualMarking).toBe(true)
+  })
+
+  it('asks the model to be generous when it first marks an answer', async () => {
+    reply({ unreadable: false, steps: [{ step_no: 1, marks_awarded: 1, justification: 'x' }], error_type: null, feedback: '', confidence: 1 })
+    await gradeSubjectiveAnswer(db, input())
+    const sent = vi.mocked(completeText).mock.calls[0][0].prompt
+    expect(sent).toMatch(/GENEROUS/)
+    expect(sent).toMatch(/valid alternative/i)
+  })
+
+  describe('reviewDisputedAnswer (the student questions a mark)', () => {
+    const dispute = () => ({
+      questionText: 'q',
+      expectedAnswer: 'PRIVATE-ANSWER',
+      marksMax: 3,
+      stepMarks,
+      studentResponse: 'a worked answer',
+      previousMarks: 1,
+      previousFeedback: 'Show the last step.',
+      studentComment: 'I did show it in the second line',
+      householdId,
+      studentId,
+    })
+
+    it('raises the mark when the model agrees, and tells the model not to reveal the answer', async () => {
+      reply({
+        steps: [
+          { step_no: 1, marks_awarded: 1, justification: 'ok' },
+          { step_no: 2, marks_awarded: 2, justification: 'the student was right' },
+        ],
+        reply: 'You are right. I have raised your mark.',
+      })
+      const result = await reviewDisputedAnswer(db, dispute())
+      expect(result).toMatchObject({ changed: true, totalMarks: 3, reply: 'You are right. I have raised your mark.' })
+      const sent = vi.mocked(completeText).mock.calls[0][0].prompt
+      expect(sent).toMatch(/GENEROUS/)
+      expect(sent).toMatch(/NEVER reveal the correct answer/)
+      expect(sent).toContain('I did show it in the second line')
+    })
+
+    it('never lowers a mark because the student asked', async () => {
+      reply({ steps: [{ step_no: 1, marks_awarded: 0, justification: 'harsher' }], reply: 'Looking again, I would give less.' })
+      const result = await reviewDisputedAnswer(db, dispute())
+      expect(result).toMatchObject({ changed: false, totalMarks: 1 })
+    })
+
+    it('caps a raised mark at the scheme', async () => {
+      reply({
+        steps: [
+          { step_no: 1, marks_awarded: 9, justification: 'x' },
+          { step_no: 2, marks_awarded: 9, justification: 'x' },
+        ],
+        reply: 'Raised.',
+      })
+      expect((await reviewDisputedAnswer(db, dispute()))?.totalMarks).toBe(3)
+    })
+
+    it('throws on an unusable reply so the student can try again', async () => {
+      vi.mocked(completeText).mockResolvedValue({ text: 'not json', tokensIn: 1, tokensOut: 1 })
+      await expect(reviewDisputedAnswer(db, dispute())).rejects.toThrow(/could not be read/)
+      reply({ steps: [], reply: '' })
+      await expect(reviewDisputedAnswer(db, dispute())).rejects.toThrow(/could not be read/)
+    })
+
+    it('throws when the vendor call fails', async () => {
+      vi.mocked(completeText).mockRejectedValue(new Error('Gemini API 429'))
+      await expect(reviewDisputedAnswer(db, dispute())).rejects.toThrow(/429/)
+    })
   })
 })

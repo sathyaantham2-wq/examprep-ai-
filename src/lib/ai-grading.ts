@@ -80,7 +80,7 @@ export async function gradeSubjectiveAnswer(
     studentId: input.studentId,
   })
 
-  const prompt = `You are grading one student's exam answer against a marking scheme. Only use what the response actually shows — never infer understanding it doesn't demonstrate. If the response is blank or genuinely illegible/unparseable, set "unreadable": true instead of guessing marks.
+  const prompt = `You are grading one student's exam answer against a marking scheme. Be GENEROUS: this is practice for a Class 7 student, so give the benefit of the doubt. Award full marks for any correct method or valid alternative reasoning even if it differs from the expected answer, give partial marks for every step that is partly right, and do not deduct for spelling, grammar, neatness, or missing units unless the question is specifically about them. Do not award marks for something the response does not show at all. If the response is blank or genuinely illegible/unparseable, set "unreadable": true instead of guessing marks.
 
 Question: ${input.questionText}
 Expected answer: ${input.expectedAnswer}
@@ -163,23 +163,9 @@ Respond with ONLY a JSON object, no other text, matching exactly:
   const confidence = typeof result.confidence === 'number' ? result.confidence : 0
   if (confidence < MIN_GRADING_CONFIDENCE) return NEEDS_MANUAL_MARKING
 
-  // Never trust the model's arithmetic: each step is capped at what the scheme allows for it, and
-  // the total at the question's marks.
-  const schemeMarks = new Map(input.stepMarks.map((s) => [s.step_no, s.marks]))
-  const steps = (result.steps ?? [])
-    .filter((s) => Number.isFinite(s.marks_awarded))
-    .map((s) => ({
-      ...s,
-      marks_awarded: Math.min(
-        Math.max(s.marks_awarded, 0),
-        schemeMarks.get(s.step_no) ?? input.marksMax,
-      ),
-    }))
-  if (steps.length === 0) return NEEDS_MANUAL_MARKING
-  const totalMarks = Math.min(
-    steps.reduce((sum, step) => sum + step.marks_awarded, 0),
-    input.marksMax,
-  )
+  const normalised = normaliseSteps(result.steps ?? [], input.stepMarks, input.marksMax)
+  if (!normalised) return NEEDS_MANUAL_MARKING
+  const { steps, totalMarks } = normalised
 
   return {
     stepMarksAwarded: steps,
@@ -188,5 +174,156 @@ Respond with ONLY a JSON object, no other text, matching exactly:
     feedback: result.feedback ?? '',
     confidence,
     needsManualMarking: false,
+  }
+}
+
+interface RawStep {
+  step_no: number
+  marks_awarded: number
+  justification: string
+}
+
+/**
+ * Never trust the model's arithmetic: each step is capped at what the scheme allows for it, none
+ * is negative, and the total is capped at the question's marks. Null when it gave no usable step.
+ */
+export function normaliseSteps(
+  raw: Array<RawStep>,
+  scheme: Array<{ step_no: number; marks: number }>,
+  marksMax: number,
+): { steps: Array<RawStep>; totalMarks: number } | null {
+  const schemeMarks = new Map(scheme.map((s) => [s.step_no, s.marks]))
+  const steps = raw
+    .filter((s) => Number.isFinite(s.marks_awarded))
+    .map((s) => ({
+      ...s,
+      marks_awarded: Math.min(Math.max(s.marks_awarded, 0), schemeMarks.get(s.step_no) ?? marksMax),
+    }))
+  if (steps.length === 0) return null
+  return {
+    steps,
+    totalMarks: Math.min(
+      steps.reduce((sum, step) => sum + step.marks_awarded, 0),
+      marksMax,
+    ),
+  }
+}
+
+export interface DisputeReviewInput {
+  questionText: string
+  expectedAnswer: string
+  marksMax: number
+  stepMarks: Array<{ step_no: number; description: string; marks: number }>
+  studentResponse: string
+  previousMarks: number
+  previousFeedback: string
+  studentComment: string
+  householdId: string
+  studentId: string
+}
+
+export interface DisputeReviewResult {
+  stepMarksAwarded: Array<RawStep>
+  totalMarks: number
+  reply: string
+  changed: boolean
+}
+
+/**
+ * The student disagrees with a mark and says why. The AI looks again, fairly and generously, and
+ * answers in a few words. It may raise the mark or keep it, never lower it (asking must not cost
+ * anything), and it must not reveal the correct answer or solve the problem. Returns null when no
+ * AI is configured; throws when the vendor call fails or the reply is unusable, so the caller can
+ * ask the student to retry without using up her one re-review.
+ */
+export async function reviewDisputedAnswer(
+  db: Db,
+  input: DisputeReviewInput,
+): Promise<DisputeReviewResult | null> {
+  if (!isAiConfigured()) return null
+  await enforceAiCallBudget(db, {
+    feature: 'AI-05',
+    model: MODEL,
+    householdId: input.householdId,
+    studentId: input.studentId,
+  })
+
+  const scheme = input.stepMarks
+    .map((s) => `  Step ${s.step_no} (${s.marks} mark${s.marks === 1 ? '' : 's'}): ${s.description}`)
+    .join('\n')
+  const prompt = `A Class 7 student disagrees with the mark you gave for one exam answer. Re-read the answer with the student's point in mind and mark it again. Be GENEROUS and fair: if the student is right, or their answer is reasonable, raise the mark; if the mark was already right, keep it and explain kindly. You may only keep or raise the mark, never lower it. NEVER reveal the correct answer, a model solution or the marking scheme: say only what the answer showed and what was missing, in general words.
+
+Question: ${input.questionText}
+Expected answer (private, do not reveal): ${input.expectedAnswer}
+Total marks available: ${input.marksMax}
+Marking scheme (private):
+${scheme}
+
+Student's answer:
+"""
+${input.studentResponse}
+"""
+
+Your earlier mark: ${input.previousMarks} out of ${input.marksMax}. Your earlier feedback: ${input.previousFeedback}
+The student says:
+"""
+${input.studentComment}
+"""
+
+Respond with ONLY a JSON object, no other text, matching exactly:
+{
+  "steps": [{"step_no": number, "marks_awarded": number, "justification": "short reason"}],
+  "reply": "2 or 3 friendly sentences to the student, max 60 words, saying whether the mark changed and why, without giving the answer"
+}`
+
+  const startedAt = Date.now()
+  let response: Awaited<ReturnType<typeof completeText>>
+  let modelUsed = MODEL
+  try {
+    const outcome = await callWithModelFallback(MODEL, (model) =>
+      completeText({ model, prompt, maxTokens: 1024 }),
+    )
+    response = outcome.result
+    modelUsed = outcome.modelUsed
+  } catch (err) {
+    await logAiJob(db, {
+      feature: 'AI-05',
+      model: MODEL,
+      householdId: input.householdId,
+      studentId: input.studentId,
+      latencyMs: Date.now() - startedAt,
+      status: 'error',
+      error: err instanceof Error ? err.message : String(err),
+    })
+    throw err
+  }
+  await logAiJob(db, {
+    feature: 'AI-05',
+    model: modelUsed,
+    householdId: input.householdId,
+    studentId: input.studentId,
+    tokensIn: response.tokensIn,
+    tokensOut: response.tokensOut,
+    latencyMs: Date.now() - startedAt,
+    status: 'success',
+  })
+
+  let parsed: { steps?: Array<RawStep>; reply?: string } | null = null
+  try {
+    parsed = response.text ? (JSON.parse(response.text) as { steps?: Array<RawStep>; reply?: string }) : null
+  } catch {
+    parsed = null
+  }
+  const normalised = parsed ? normaliseSteps(parsed.steps ?? [], input.stepMarks, input.marksMax) : null
+  const reply = typeof parsed?.reply === 'string' ? parsed.reply.trim().slice(0, 600) : ''
+  if (!normalised || reply === '') {
+    throw new Error('The re-review could not be read')
+  }
+  const raised = normalised.totalMarks > input.previousMarks
+  return {
+    stepMarksAwarded: raised ? normalised.steps : [],
+    totalMarks: raised ? normalised.totalMarks : input.previousMarks,
+    reply,
+    changed: raised,
   }
 }

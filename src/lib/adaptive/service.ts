@@ -109,6 +109,7 @@ export async function recordConfirmedAnswers(
       'ei.marks_awarded',
       'ei.marks_max',
       'ei.error_type',
+      'ei.excluded_by_student',
       'pq.position',
       'q.id as question_id',
       'q.concept_id',
@@ -124,7 +125,7 @@ export async function recordConfirmedAnswers(
   const touched = new Set<string>()
   for (const item of items) {
     const max = Number(item.marks_max)
-    if (max <= 0 || item.error_type === 'Not Attempted') continue
+    if (max <= 0 || item.error_type === 'Not Attempted' || item.excluded_by_student) continue
     const awarded = Number(item.marks_awarded)
     await db
       .insertInto('concept_answer_log')

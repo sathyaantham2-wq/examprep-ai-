@@ -99,7 +99,8 @@ export async function createEvaluation(db: Db, attemptId: string) {
     feedback: string
   }> = []
 
-  for (const slot of slots) {
+  type EvaluationItemDraft = (typeof items)[number]
+  const buildItem = async (slot: (typeof slots)[number]): Promise<EvaluationItemDraft> => {
     const answer = answerBySlot.get(slot.id)
     const concept = await db
       .selectFrom('concepts')
@@ -124,7 +125,7 @@ export async function createEvaluation(db: Db, attemptId: string) {
         isReversalWord: slot.is_reversal_word,
       })
       anyAutoScored = true
-      items.push({
+      return {
         paper_question_id: slot.id,
         marks_awarded: marksAwarded,
         marks_max: slot.marks,
@@ -132,8 +133,7 @@ export async function createEvaluation(db: Db, attemptId: string) {
         error_type: errorType,
         ai_error_type: null,
         feedback: templateFeedback(errorType, conceptName),
-      })
-      continue
+      }
     }
 
     const stepMarks = await questionStepMarksRepository.listByQuestion(
@@ -169,7 +169,7 @@ export async function createEvaluation(db: Db, attemptId: string) {
 
     if (aiResult && !aiResult.needsManualMarking) {
       anyAutoScored = true
-      items.push({
+      return {
         paper_question_id: slot.id,
         marks_awarded: aiResult.totalMarks,
         marks_max: slot.marks,
@@ -177,19 +177,32 @@ export async function createEvaluation(db: Db, attemptId: string) {
         error_type: aiResult.errorType,
         ai_error_type: aiResult.errorType,
         feedback: aiResult.feedback,
-      })
-    } else {
-      items.push({
-        paper_question_id: slot.id,
-        marks_awarded: 0,
-        marks_max: slot.marks,
-        ai_marks: null,
-        error_type: null,
-        ai_error_type: null,
-        feedback: 'Needs manual marking.',
-      })
+      }
+    }
+    return {
+      paper_question_id: slot.id,
+      marks_awarded: 0,
+      marks_max: slot.marks,
+      ai_marks: null,
+      error_type: null,
+      ai_error_type: null,
+      feedback: 'Needs manual marking.',
     }
   }
+
+  // Written answers each wait on the AI, so a few are marked at a time to keep a paper quick
+  // without flooding the vendor's rate limit. Order is kept.
+  const drafts: Array<EvaluationItemDraft> = new Array<EvaluationItemDraft>(slots.length)
+  let next = 0
+  await Promise.all(
+    Array.from({ length: Math.min(3, slots.length) }, async () => {
+      while (next < slots.length) {
+        const index = next++
+        drafts[index] = await buildItem(slots[index])
+      }
+    }),
+  )
+  items.push(...drafts)
 
   const totalMarks = slots.reduce((sum, slot) => sum + slot.marks, 0)
 
@@ -225,7 +238,7 @@ export async function confirmEvaluation(db: Db, evaluationId: string) {
     if (evaluation.confirmed_at)
       throw new Error('This evaluation is already confirmed')
 
-    const items = await evaluationItemsRepository.listForEvaluation(
+    let items = await evaluationItemsRepository.listForEvaluation(
       trx,
       evaluationId,
     )
@@ -235,11 +248,19 @@ export async function confirmEvaluation(db: Db, evaluationId: string) {
       .where('id', '=', evaluation.attempt_id)
       .executeTakeFirstOrThrow()
 
+    // A question the student removed after questioning its mark is left out of her grade, the
+    // paper total and her concept results; the row itself is kept.
+    const removed = items.filter((item) => item.excluded_by_student)
+    items = items.filter((item) => !item.excluded_by_student)
+
     const actualScore = items.reduce(
       (sum, item) => sum + Number(item.marks_awarded),
       0,
     )
-    const totalMarks = Number(evaluation.total_marks)
+    const totalMarks =
+      removed.length > 0
+        ? items.reduce((sum, item) => sum + Number(item.marks_max), 0)
+        : Number(evaluation.total_marks)
     const wasOverridden = items.some((item) => item.overridden_by != null)
 
     // F055/F056: Knowledge Score credits back marks lost to a delivery habit (the reviewer
@@ -261,6 +282,7 @@ export async function confirmEvaluation(db: Db, evaluationId: string) {
       evaluationId,
       {
         confirmed_at: new Date(),
+        total_marks: totalMarks,
         actual_score: actualScore,
         knowledge_score: knowledgeScore,
         delivery_gap: deliveryGap,

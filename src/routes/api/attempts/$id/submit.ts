@@ -103,11 +103,16 @@ export const Route = createFileRoute('/api/attempts/$id/submit')({
           studentId: student.id,
         })
 
-        // Adaptive practice is marked and confirmed straight away when every mark has a basis (the
-        // answer key, or a confident AI grade); every other paper waits for a parent.
-        const evaluationId = await autoConfirmAttempt(db, attempt)
+        // Adaptive practice is marked with no parent: multiple-choice papers are confirmed at once,
+        // and written answers are marked by the AI for the student to review. Every other paper
+        // waits for a parent.
+        const outcome = await autoConfirmAttempt(db, attempt)
 
-        return Response.json({ ...updated, evaluation_id: evaluationId })
+        return Response.json({
+          ...updated,
+          evaluation_id: outcome.evaluationId,
+          review_pending: outcome.reviewPending,
+        })
       },
     },
   },

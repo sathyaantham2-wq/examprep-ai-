@@ -1,4 +1,4 @@
-import { useEffect, useMemo, useRef, useState } from 'react'
+import { useCallback, useEffect, useMemo, useRef, useState } from 'react'
 import { createFileRoute, useNavigate } from '@tanstack/react-router'
 import { Button } from '../../components/ui/button'
 import {
@@ -9,6 +9,8 @@ import {
   CardTitle,
 } from '../../components/ui/card'
 import { ThemeToggle } from '../../components/theme-toggle'
+import { AnswerReview } from '../../components/answer-review'
+import { WrittenAnswerInput } from '../../components/written-answer-input'
 import { useSession } from '../../lib/auth-client'
 
 export const Route = createFileRoute('/attempt/$id')({ component: Attempt })
@@ -180,6 +182,12 @@ function Attempt() {
     return !a || (!a.selected_option && !(a.response_text?.trim() ?? ''))
   }
 
+  // Loads the finished result once marks are final (also called by the review screen).
+  const showResult = useCallback(async () => {
+    const marked = await fetch(`/api/attempts/${id}/result`)
+    if (marked.ok) setResult((await marked.json()) as AttemptResult)
+  }, [id])
+
   async function doSubmit(confirmBlanks: boolean) {
     setSubmitting(true)
     setSubmitError(null)
@@ -197,10 +205,7 @@ function Attempt() {
       const body = (await response.json().catch(() => null)) as { evaluation_id?: string | null } | null
       setSubmitted(true)
       // A paper made only of multiple-choice questions is marked at once; show how it went.
-      if (body?.evaluation_id) {
-        const marked = await fetch(`/api/attempts/${id}/result`)
-        if (marked.ok) setResult(await marked.json())
-      }
+      if (body?.evaluation_id) await showResult()
     } finally {
       setSubmitting(false)
     }
@@ -248,21 +253,7 @@ function Attempt() {
         </div>
       )
     }
-    return (
-      <div className="mx-auto max-w-2xl p-8">
-        <h1 className="text-h1 mb-2">
-          {submitted ? 'Submitted' : 'Already closed'}
-        </h1>
-        <p className="text-body text-muted-foreground">
-          {submitted
-            ? 'Your answers have been recorded. Your parent will review and confirm the marks.'
-            : 'This attempt is no longer in progress.'}
-        </p>
-        <a href="/student" className="text-small text-primary mt-4 inline-block underline-offset-4 hover:underline">
-          Back to my progress
-        </a>
-      </div>
-    )
+    return <AnswerReview attemptId={id} onEvaluated={() => void showResult()} />
   }
 
   const blanks = data.questions.filter(isBlank)
@@ -381,15 +372,16 @@ function Attempt() {
                               ))}
                             </div>
                           ) : (
-                            <textarea
-                              className="border-input min-h-24 w-full rounded-md border bg-transparent p-2 text-sm shadow-xs"
+                            <WrittenAnswerInput
+                              attemptId={id}
+                              paperQuestionId={q.paper_question_id}
                               value={
                                 answers[q.paper_question_id]?.response_text ??
                                 ''
                               }
-                              onChange={(e) =>
+                              onChange={(text) =>
                                 saveAnswer(q.paper_question_id, {
-                                  response_text: e.target.value,
+                                  response_text: text,
                                 })
                               }
                             />

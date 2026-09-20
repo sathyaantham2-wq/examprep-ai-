@@ -11,6 +11,8 @@ import { Route as GenerateRoute } from './api/papers/generate'
 import { Route as AttemptsRoute } from './api/attempts'
 import { Route as AttemptAnswerRoute } from './api/attempts/$id/answer'
 import { Route as AttemptSubmitRoute } from './api/attempts/$id/submit'
+import { Route as ReviewRoute } from './api/attempts/$id/review'
+import { Route as FinalizeRoute } from './api/attempts/$id/finalize'
 
 // The real grader needs an API key. Each test decides what it returns.
 vi.mock('../lib/ai-grading', async () => ({
@@ -28,7 +30,7 @@ function json(cookie: string, method: string, body: unknown): Request {
   return new Request('http://localhost/test', {
     method,
     headers: { cookie, 'content-type': 'application/json' },
-    body: JSON.stringify(body),
+    body: method === 'GET' ? undefined : JSON.stringify(body),
   })
 }
 
@@ -209,7 +211,7 @@ describe('adaptive paper with a written answer', () => {
     expect(logged).toHaveLength(0)
   })
 
-  it('confirms automatically, with an audit entry, when the AI is confident', async () => {
+  it('leaves AI-marked written answers for the student to review, then confirms when she accepts', async () => {
     vi.mocked(gradeSubjectiveAnswer).mockResolvedValue({
       stepMarksAwarded: [
         { step_no: 1, marks_awarded: 1, justification: 'Set up correctly' },
@@ -222,12 +224,37 @@ describe('adaptive paper with a written answer', () => {
       needsManualMarking: false,
     })
     const result = await submitPaper()
-    expect(result.evaluation_id).toEqual(expect.any(String))
+    expect(result.evaluation_id).toBeNull()
+    expect(result.review_pending).toBe(true)
+    const attemptId = attemptIds[attemptIds.length - 1]
+
+    // Nothing is final, and nothing has reached her mastery record yet.
+    const pending = await db
+      .selectFrom('evaluations')
+      .select(['id', 'confirmed_at'])
+      .where('attempt_id', '=', attemptId)
+      .executeTakeFirstOrThrow()
+    expect(pending.confirmed_at).toBeNull()
+    const before = await db.selectFrom('concept_answer_log').select('id').where('evaluation_id', '=', pending.id).execute()
+    expect(before).toHaveLength(0)
+
+    const review = await (
+      await handlerFor(ReviewRoute, 'GET')({ request: json(student.cookie, 'GET', undefined), params: { id: attemptId } })
+    ).json()
+    expect(review.state).toBe('review')
+    expect(review.written).toHaveLength(1)
+    expect(review.written[0].marks_awarded).toBe(1)
+
+    const finalized = await handlerFor(FinalizeRoute, 'POST')({
+      request: json(student.cookie, 'POST', {}),
+      params: { id: attemptId },
+    })
+    expect(finalized.status).toBe(200)
 
     const evaluation = await db
       .selectFrom('evaluations')
       .select(['confirmed_at', 'actual_score', 'evaluated_by'])
-      .where('id', '=', result.evaluation_id)
+      .where('id', '=', pending.id)
       .executeTakeFirstOrThrow()
     expect(evaluation.confirmed_at).not.toBeNull()
     expect(Number(evaluation.actual_score)).toBe(2)
@@ -236,15 +263,15 @@ describe('adaptive paper with a written answer', () => {
     const audit = await db
       .selectFrom('audit_log')
       .select('action')
-      .where('entity_id', '=', result.evaluation_id)
-      .where('action', '=', 'evaluation.auto_confirmed')
+      .where('entity_id', '=', pending.id)
+      .where('action', '=', 'evaluation.student_finalized')
       .execute()
     expect(audit).toHaveLength(1)
 
     const partial = await db
       .selectFrom('concept_answer_log')
       .select(['credit', 'level'])
-      .where('evaluation_id', '=', result.evaluation_id)
+      .where('evaluation_id', '=', pending.id)
       .orderBy('level')
       .execute()
     expect(partial.map((p) => Number(p.credit))).toEqual([1, 0.5])

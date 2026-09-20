@@ -61,6 +61,17 @@ export interface AiJobs {
   tokens_out: number | null;
 }
 
+export interface AnswerDisputes {
+  ai_reply: string;
+  created_at: Generated<Timestamp>;
+  evaluation_item_id: string;
+  id: Generated<string>;
+  marks_after: Numeric;
+  marks_before: Numeric;
+  student_comment: string;
+  student_id: string;
+}
+
 export interface AttemptAnswers {
   attempt_id: string;
   created_at: Generated<Timestamp>;
@@ -258,6 +269,8 @@ export interface EvaluationItems {
   created_at: Generated<Timestamp>;
   error_type: ErrorType | null;
   evaluation_id: string;
+  excluded_at: Timestamp | null;
+  excluded_by_student: Generated<boolean>;
   feedback: string | null;
   id: Generated<string>;
   knowledge_known: boolean | null;
@@ -669,6 +682,7 @@ export interface Verifications {
 export interface DB {
   accounts: Accounts;
   ai_jobs: AiJobs;
+  answer_disputes: AnswerDisputes;
   attempt_answers: AttemptAnswers;
   attempts: Attempts;
   audit_log: AuditLog;

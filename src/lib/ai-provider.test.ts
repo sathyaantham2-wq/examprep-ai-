@@ -71,6 +71,20 @@ describe('completeText with Gemini', () => {
     expect(sent.generationConfig.maxOutputTokens).toBeGreaterThan(100)
   })
 
+  it('sends photos to Gemini as inline data ahead of the prompt', async () => {
+    const fetchMock = stubFetch({ candidates: [{ content: { parts: [{ text: '{}' }] } }] })
+    await completeText(
+      { model: 'm', prompt: 'read this', maxTokens: 10, images: [{ mediaType: 'image/png', base64: 'AAAA' }] },
+      'gemini',
+      { GEMINI_API_KEY: 'k' },
+    )
+    const sent = JSON.parse((fetchMock.mock.calls[0] as [string, RequestInit])[1].body as string)
+    expect(sent.contents[0].parts).toEqual([
+      { inlineData: { mimeType: 'image/png', data: 'AAAA' } },
+      { text: 'read this' },
+    ])
+  })
+
   it('skips reasoning parts and strips a code fence', async () => {
     stubFetch({
       candidates: [

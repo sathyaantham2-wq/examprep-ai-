@@ -201,7 +201,8 @@ function StudentHome() {
                 )}
                 {papers.map((p) => {
                   const status = p.attempt?.status
-                  const isDone = status === 'submitted' || status === 'evaluated'
+                  const isDone = status === 'evaluated'
+                  const awaitingMarks = status === 'submitted'
                   return (
                     <div
                       key={p.id}
@@ -217,6 +218,12 @@ function StudentHome() {
                         <span className="text-small text-muted-foreground">
                           Completed
                         </span>
+                      ) : awaitingMarks && p.attempt ? (
+                        <a href={`/attempt/${p.attempt.id}`}>
+                          <Button size="sm" variant="outline">
+                            See my marks
+                          </Button>
+                        </a>
                       ) : (
                         <Button
                           size="sm"

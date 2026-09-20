@@ -15,6 +15,7 @@ export const MODEL_TIER_BY_FEATURE: Partial<Record<string, ModelTier>> = {
   'AI-01': 'strong', // Question generation
   'AI-02': 'cheap', // Distractor quality check
   'AI-05': 'strong', // Subjective answer grading
+  'AI-06': 'strong', // Handwriting transcription (vision)
   'AI-07': 'mid', // Error pattern classification
   'AI-08': 'mid', // Feedback line writing
   'AI-09': 'strong', // Remediation pack authoring
