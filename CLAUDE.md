@@ -12,7 +12,7 @@ The one-line test for any feature: *does it help answer "which marks did she los
 didn't know it, and which because she stopped writing too early?"* If not, it is out of scope.
 
 **Launch scope:** CBSE Class 7 Mathematics, NCERT *Ganita Prakash* (Part I ch 1–8, Part II ch 1–7).
-**Added 2026-09-20 at the user's request:** CBSE Class 9 Mathematics, NCERT *Ganita Manjari* Part I ch 1–8 (subject code `MATH9`, sources `iemh101`–`iemh108`, 6 concepts per chapter, 20 questions per concept, authored files in `content/authoring/class9/`). Part II of Class 9 is not loaded. No F-number covers this yet.
+**Added 2026-09-20 at the user's request:** CBSE Class 9 Mathematics, NCERT *Ganita Manjari* Part I ch 1–8 (subject code `MATH9`, sources `iemh101`–`iemh108`, 6 concepts per chapter, 20 questions per concept, authored files in `content/authoring/class9/`). Part II of Class 9 is not loaded. **Also added 2026-09-20:** CBSE Class 9 Social Science, NCERT *Understanding Society: India and Beyond* Part 1 ch 1–9 (subject code `SST9`, sources `iest101`–`iest109`, concept codes `C9S-n.m`, authored files in `content/authoring/class9s/`). No F-number covers this yet.
 Other classes and subjects follow later — see `docs/` tab 17.
 
 ## The plan lives in a spreadsheet

@@ -37,6 +37,22 @@ Class 9 Mathematics — *Ganita Manjari* (Part I, first edition April 2026):
 
 `iemh1ps` is the preliminary pages (not ingested). Part II of Class 9 is not loaded yet.
 
+Class 9 Social Science — *Understanding Society: India and Beyond* (Grade 9 Part 1, 2026):
+
+| Code | Part | Ch | Chapter |
+|---|---|---|---|
+| iest101 | I | 1 | Understanding Social Science |
+| iest102 | I | 2 | Shaping of the Earth's Surface |
+| iest103 | I | 3 | Atmosphere and Climate |
+| iest104 | I | 4 | Early Humans and Beginning of Civilisation |
+| iest105 | I | 5 | State and Society up to 1000 CE |
+| iest106 | I | 6 | Democracy |
+| iest107 | I | 7 | Elections |
+| iest108 | I | 8 | Building Blocks in Economics: The Problem of Choice |
+| iest109 | I | 9 | The Price Puzzle: What Drives the Market |
+
+`iest1ps` is the preliminary pages (not ingested). Part 2 of Class 9 Social Science is not loaded yet.
+
 Two chapter numbering series (Class 7). Part I ch 3 and Part II ch 4 are different chapters with similar
 names. Always carry the part.
 
