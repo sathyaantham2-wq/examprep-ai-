@@ -89,7 +89,7 @@ export async function getStudentProfile(db: Db, studentId: string): Promise<Stud
 
 export const profileInputSchema = z.object({
   name: z.string().trim().min(1, 'Enter the student name').max(100),
-  class: z.number().int().min(1).max(12),
+  class: z.number().int().min(0).max(12),
   board: z.string().trim().min(1),
   subject_ids: z.array(z.string().uuid()).min(1, 'Choose at least one subject'),
 })

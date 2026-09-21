@@ -55,7 +55,7 @@ export const questionInputSchema = z
   .object({
     concept_id: z.string().uuid(),
     board: z.string().min(1),
-    class: z.number().int().min(1).max(12),
+    class: z.number().int().min(0).max(12),
     bloom: z.enum(BLOOM_LEVELS),
     difficulty: z.enum(DIFFICULTY_TIERS),
     marks: z.number().int().positive(),

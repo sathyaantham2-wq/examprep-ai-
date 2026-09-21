@@ -150,7 +150,7 @@ export function AdaptiveOverview({
         <CardHeader>
           <CardTitle className="text-h2">Welcome, {data.student.name}</CardTitle>
           <CardDescription>
-            Class {data.student.class} · {data.student.board} syllabus
+            {data.student.class === 0 ? "Competitive exam" : `Class ${data.student.class}`} · {data.student.board === "CIVILS" ? "Civil Services / UPSC" : data.student.board} syllabus
           </CardDescription>
         </CardHeader>
         <CardContent className="space-y-3">

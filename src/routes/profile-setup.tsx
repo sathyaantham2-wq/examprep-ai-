@@ -19,10 +19,10 @@ const PLANNED_CLASSES = [6, 7, 8, 9, 10, 11, 12]
 // Competitive-exam syllabuses offered next to the school boards. They are not school classes, so the
 // class list does not apply to them, and they are never saved: there is nothing to save until their
 // subjects exist.
-const PLANNED_SYLLABUSES = [
-  { value: 'planned:civil-services', label: 'Civil Services / UPSC' },
-  { value: 'planned:groups', label: 'Groups (State PSC)' },
-]
+const PLANNED_SYLLABUSES = [{ value: 'planned:groups', label: 'Groups (State PSC)' }]
+// The competitive-exam track is stored as board CIVILS with class 0 (no school class).
+const COMPETITIVE_BOARD = 'CIVILS'
+const boardLabel = (board: string) => (board === COMPETITIVE_BOARD ? 'Civil Services / UPSC' : board)
 const isPlannedSyllabus = (value: string) => value.startsWith('planned:')
 
 export const Route = createFileRoute('/profile-setup')({ component: ProfileSetup })
@@ -86,7 +86,7 @@ function ProfileSetup() {
           setClassNo(match.class)
           setSelected(data.profile.subject_ids)
         } else {
-          setBoard(boardsOffered.length === 1 ? boardsOffered[0] : '')
+          setBoard(boardsOffered.includes('CBSE') ? 'CBSE' : boardsOffered.length === 1 ? boardsOffered[0] : '')
           setClassNo(null)
           setSelected([])
         }
@@ -97,15 +97,18 @@ function ProfileSetup() {
   // Every class from 6 to 12 is listed, and classes the admin has switched on are added, so a
   // student can see what is planned. Classes with no subjects yet say so and cannot be saved.
   const plannedBoard = isPlannedSyllabus(board)
+  const competitive = board === COMPETITIVE_BOARD
   const classes = useMemo(
     () =>
-      [
+      competitive
+        ? [0]
+        : [
         ...new Set([
           ...PLANNED_CLASSES,
           ...(options ?? []).filter((o) => o.board === board).map((o) => o.class),
         ]),
       ].sort((a, b) => a - b),
-    [options, board],
+    [options, board, competitive],
   )
   const subjects = useMemo(
     () => (options ?? []).find((o) => o.board === board && o.class === classNo)?.subjects ?? [],
@@ -114,7 +117,7 @@ function ProfileSetup() {
 
   function changeBoard(next: string) {
     setBoard(next)
-    setClassNo(null)
+    setClassNo(next === COMPETITIVE_BOARD ? 0 : null)
     setSelected([])
   }
 
@@ -203,7 +206,7 @@ function ProfileSetup() {
                   id="student-class"
                   className="border-input flex h-9 w-full rounded-md border bg-transparent px-3 text-sm shadow-xs"
                   value={plannedBoard ? '' : (classNo ?? '')}
-                  disabled={plannedBoard}
+                  disabled={plannedBoard || competitive}
                   onChange={(e) => changeClass(Number(e.target.value))}
                 >
                   <option value="" disabled>
@@ -211,7 +214,7 @@ function ProfileSetup() {
                   </option>
                   {classes.map((c) => (
                     <option key={c} value={c}>
-                      Class {c}
+                      {c === 0 ? 'Not applicable (competitive exam)' : `Class ${c}`}
                     </option>
                   ))}
                 </select>
@@ -229,7 +232,7 @@ function ProfileSetup() {
                   </option>
                   {boards.map((b) => (
                     <option key={b} value={b}>
-                      {b}
+                      {boardLabel(b)}
                     </option>
                   ))}
                   {PLANNED_SYLLABUSES.map((b) => (

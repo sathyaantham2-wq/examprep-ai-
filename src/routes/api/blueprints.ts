@@ -32,7 +32,7 @@ const createBlueprintSchema = z
   .object({
     subject_id: z.string().uuid(),
     board: z.string().min(1),
-    class: z.number().int().min(1).max(12),
+    class: z.number().int().min(0).max(12),
     name: z.string().min(1),
     duration_min: z.number().int().positive(),
     sections: z.array(sectionSchema).min(1),

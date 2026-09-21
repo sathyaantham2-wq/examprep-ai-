@@ -265,7 +265,7 @@ function Attempt() {
         <div>
           <h1 className="text-h1">{data.paper.title}</h1>
           <p className="text-small text-muted-foreground">
-            {data.student.name} · Class {data.student.class} ·{' '}
+            {data.student.name} · {data.student.class === 0 ? 'Competitive exam' : `Class ${data.student.class}`} ·{' '}
             {data.paper.total_marks} marks
           </p>
           {data.chapters.length > 0 && (

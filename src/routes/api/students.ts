@@ -16,7 +16,7 @@ const targetExamSchema = z.object({
 
 const createStudentSchema = z.object({
   name: z.string().min(1),
-  class: z.number().int().min(1).max(12),
+  class: z.number().int().min(0).max(12),
   board: z.string().min(1),
   school: z.string().min(1).optional(),
   section: z.string().min(1).optional(),

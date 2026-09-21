@@ -14,7 +14,7 @@ const targetExamSchema = z.object({
 const updateStudentSchema = z
   .object({
     name: z.string().min(1),
-    class: z.number().int().min(1).max(12),
+    class: z.number().int().min(0).max(12),
     section: z.string().min(1).nullable(),
     roll_no: z.string().min(1).nullable(),
     board: z.string().min(1),

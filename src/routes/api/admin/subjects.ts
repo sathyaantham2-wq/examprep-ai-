@@ -7,7 +7,7 @@ import { wrapRouteHandlers } from '../../../lib/error-log'
 
 const createSchema = z.object({
   board: z.string().trim().min(1),
-  class: z.number().int().min(1).max(12),
+  class: z.number().int().min(0).max(12),
   name: z.string().trim().min(1).max(80),
   code: z.string().trim().min(1).max(20).regex(/^[A-Za-z0-9_-]+$/),
   language: z.string().trim().min(1).optional(),
