@@ -16,9 +16,14 @@ import { signOut, useSession } from '../lib/auth-client'
 
 // Classes shown in the class list even before their content is loaded.
 const PLANNED_CLASSES = [6, 7, 8, 9, 10, 11, 12]
-// Stands for the competitive-exam track (Civil Services, Groups). It is not a school class and is
-// never saved: there is nothing to save until its subjects exist.
-const CIVILS = -1
+// Competitive-exam syllabuses offered next to the school boards. They are not school classes, so the
+// class list does not apply to them, and they are never saved: there is nothing to save until their
+// subjects exist.
+const PLANNED_SYLLABUSES = [
+  { value: 'planned:civil-services', label: 'Civil Services / UPSC' },
+  { value: 'planned:groups', label: 'Groups (State PSC)' },
+]
+const isPlannedSyllabus = (value: string) => value.startsWith('planned:')
 
 export const Route = createFileRoute('/profile-setup')({ component: ProfileSetup })
 
@@ -91,6 +96,7 @@ function ProfileSetup() {
   const boards = useMemo(() => [...new Set((options ?? []).map((o) => o.board))], [options])
   // Every class from 6 to 12 is listed, and classes the admin has switched on are added, so a
   // student can see what is planned. Classes with no subjects yet say so and cannot be saved.
+  const plannedBoard = isPlannedSyllabus(board)
   const classes = useMemo(
     () =>
       [
@@ -127,6 +133,7 @@ function ProfileSetup() {
     e.preventDefault()
     setError(null)
     if (!name.trim()) return setError('Enter your name.')
+    if (plannedBoard) return setError('This syllabus is coming soon. Choose CBSE to continue.')
     if (classNo === null || !board) return setError('Choose your class and syllabus.')
     if (selected.length === 0) return setError('Choose at least one subject.')
     setSaving(true)
@@ -195,18 +202,18 @@ function ProfileSetup() {
                 <select
                   id="student-class"
                   className="border-input flex h-9 w-full rounded-md border bg-transparent px-3 text-sm shadow-xs"
-                  value={classNo ?? ''}
+                  value={plannedBoard ? '' : (classNo ?? '')}
+                  disabled={plannedBoard}
                   onChange={(e) => changeClass(Number(e.target.value))}
                 >
                   <option value="" disabled>
-                    Choose your class
+                    {plannedBoard ? 'Not applicable' : 'Choose your class'}
                   </option>
                   {classes.map((c) => (
                     <option key={c} value={c}>
                       Class {c}
                     </option>
                   ))}
-                  <option value={CIVILS}>Civil Services / Groups</option>
                 </select>
               </div>
               <div className="space-y-1.5">
@@ -225,6 +232,11 @@ function ProfileSetup() {
                       {b}
                     </option>
                   ))}
+                  {PLANNED_SYLLABUSES.map((b) => (
+                    <option key={b.value} value={b.value}>
+                      {b.label}
+                    </option>
+                  ))}
                 </select>
               </div>
             </div>
@@ -241,8 +253,8 @@ function ProfileSetup() {
           <CardContent>
             {subjects.length === 0 ? (
               <p className="text-body text-muted-foreground">
-                {classNo === CIVILS
-                  ? 'Civil Services / Groups (Polity, General Studies) is coming soon.'
+                {plannedBoard
+                  ? 'Civil Services / UPSC and Groups (Polity, General Studies) are coming soon.'
                   : classNo === null
                     ? 'Choose your class to see its subjects.'
                     : 'No subjects are available for this class yet. Content is coming soon.'}
