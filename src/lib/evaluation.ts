@@ -16,6 +16,8 @@ import {
 import { gradeSubjectiveAnswer } from './ai-grading'
 import { AiCapReachedError, StudentSpendCapReachedError, enforceStudentSpendBudget } from './ai-metering'
 import { recordMasteryAttempt } from './mastery'
+import { recordPointsForConfirmedItems } from './points'
+import type { GradedObjectiveItem } from './points'
 import { recordConfirmedAnswers } from './adaptive/service'
 import { captureError, describeError } from './error-log'
 import { randomUUID } from 'node:crypto'
@@ -301,11 +303,12 @@ export async function confirmEvaluation(db: Db, evaluationId: string) {
       .execute()
 
     const byConcept = new Map<string, { marks: number; marksMax: number }>()
+    const gradedObjectiveItems: Array<GradedObjectiveItem> = []
     for (const item of items) {
       const slot = await trx
         .selectFrom('paper_questions')
         .innerJoin('questions', 'questions.id', 'paper_questions.question_id')
-        .select(['questions.concept_id'])
+        .select(['questions.concept_id', 'questions.type', 'questions.difficulty'])
         .where('paper_questions.id', '=', item.paper_question_id)
         .executeTakeFirstOrThrow()
 
@@ -316,6 +319,15 @@ export async function confirmEvaluation(db: Db, evaluationId: string) {
       existing.marks += Number(item.marks_awarded)
       existing.marksMax += Number(item.marks_max)
       byConcept.set(slot.concept_id, existing)
+
+      gradedObjectiveItems.push({
+        evaluationItemId: item.id,
+        conceptId: slot.concept_id,
+        questionType: slot.type,
+        difficulty: slot.difficulty,
+        marksAwarded: Number(item.marks_awarded),
+        marksMax: Number(item.marks_max),
+      })
     }
 
     const today = new Date().toISOString().slice(0, 10)
@@ -329,6 +341,11 @@ export async function confirmEvaluation(db: Db, evaluationId: string) {
         marks_max: totals.marksMax,
       })
     }
+
+    // F125 (first slice): points/coins for MCQ-family items whose (now-confirmed) mark is fully
+    // correct. removed/excluded items never reached gradedObjectiveItems (filtered out above),
+    // so a question the student disputed away never pays out.
+    await recordPointsForConfirmedItems(trx, attempt.student_id, gradedObjectiveItems)
 
     return updatedEvaluation
   })

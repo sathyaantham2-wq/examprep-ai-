@@ -594,6 +594,17 @@ export interface StudentConceptPerformance {
   wrong_answers: Generated<number>;
 }
 
+export interface StudentPointsLedger {
+  coins: number;
+  concept_id: string;
+  created_at: Generated<Timestamp>;
+  difficulty: string;
+  evaluation_item_id: string;
+  id: Generated<string>;
+  points: number;
+  student_id: string;
+}
+
 export interface Students {
   access_enabled: Generated<boolean>;
   board: string;
@@ -603,6 +614,8 @@ export interface Students {
   generation_monthly_cap_inr: Numeric | null;
   household_id: string;
   id: Generated<string>;
+  leaderboard_nickname: string | null;
+  leaderboard_opt_in: Generated<boolean>;
   name: string;
   own_household_id: string | null;
   profile_completed_at: Timestamp | null;
@@ -725,6 +738,7 @@ export interface DB {
   sessions: Sessions;
   sources: Sources;
   student_concept_performance: StudentConceptPerformance;
+  student_points_ledger: StudentPointsLedger;
   student_subjects: StudentSubjects;
   students: Students;
   study_plans: StudyPlans;
