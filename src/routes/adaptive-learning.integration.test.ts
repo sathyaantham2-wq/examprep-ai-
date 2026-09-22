@@ -372,7 +372,10 @@ describe('concept-level adaptive learning', () => {
       })
     })
 
-    it('shows a student her score and concept levels but no answer key', async () => {
+    it('shows a student her score, concept levels, and the correct answer per question (T09 amendment, 2026-09-22)', async () => {
+      // Reuses the attempt the previous test ('draws only Easy questions...') already created
+      // and submitted -- not a fresh takeTest() round, which would shift the assessment-count/
+      // mastery-history expectations the tests further down this file depend on.
       const attemptId = attemptIds[0]
       const response = await handlerFor(AttemptResultRoute, 'GET')({
         request: request(student.cookie),
@@ -381,8 +384,15 @@ describe('concept-level adaptive learning', () => {
       const body = await response.json()
       expect(body.evaluated).toBe(true)
       expect(body.total_marks).toBe(10)
+      expect(body.questions).toHaveLength(10)
+      // Never the raw is_correct flag or an unresolved option -- only the resolved correct answer.
       const text = JSON.stringify(body)
-      expect(text).not.toMatch(/is_correct|"answer"|correct_option/)
+      expect(text).not.toMatch(/is_correct/)
+      // Every fixture question's correct option is 'A' ("right") -- true whether she got it right
+      // (strong concepts) or wrong (weakConceptId, on purpose, per takeTest).
+      for (const q of body.questions) {
+        expect(q.correct_answer).toBe('A. right')
+      }
     })
   })
 

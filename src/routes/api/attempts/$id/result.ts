@@ -7,13 +7,16 @@ import { wrapRouteHandlers } from '../../../../lib/error-log'
 
 /**
  * GET /api/attempts/:id/result -- what a student may see after a paper whose marks were confirmed
- * on submission: her score, per-question marks (so she can see how each of her own answers was
- * marked), and per concept, how many questions and where that concept now stands. Deliberately no
- * *correct* answers anywhere in this response -- only marks_awarded/marks_max per question she
- * already answered, never the answer key itself (CLAUDE.md hard rule, T09; same narrow-projection
- * approach GET /api/attempts/:id documents). The frontend merges this by paper_question_id with
- * the question text/her own answer it already holds from that same endpoint. Returns
- * { evaluated: false } while a parent still has to confirm the marks.
+ * on submission: her score, per-question marks and the correct answer for each question, and per
+ * concept, how many questions and where that concept now stands.
+ *
+ * CLAUDE.md's T09 hard rule ("never see or download an answer key") was amended by the user,
+ * 2026-09-22: once her own attempt is submitted and confirmed, seeing the correct answer next to
+ * her own is how she learns from it -- including for a question that gets re-served later and she
+ * simply remembers it, which the user was explicit is fine (the point is learning, not testing
+ * recall of one specific item). This still never applies before or during an attempt (GET
+ * /api/attempts/:id, unchanged, still never selects `answer`/`is_correct`), never as a
+ * downloadable/printable key, and never to another student's data.
  */
 export const Route = createFileRoute('/api/attempts/$id/result')({
   server: {
@@ -41,6 +44,7 @@ export const Route = createFileRoute('/api/attempts/$id/result')({
           .innerJoin('concepts as c', 'c.id', 'l.concept_id')
           .select([
             'l.paper_question_id',
+            'l.question_id',
             'l.concept_id',
             'c.name as concept_name',
             'l.marks_awarded',
@@ -49,6 +53,41 @@ export const Route = createFileRoute('/api/attempts/$id/result')({
           .where('l.evaluation_id', '=', evaluation.id)
           .where('l.student_id', '=', student.id)
           .execute()
+
+        // The correct answer for each question she answered -- see this file's own doc comment
+        // for why this is allowed post-confirmation. MCQ: the option marked is_correct. Written:
+        // the question's own reference/model answer (the same text the AI grader is given).
+        const questionIds = [...new Set(answers.map((a) => a.question_id))]
+        const [questionRows, correctOptions] = await Promise.all([
+          questionIds.length > 0
+            ? db
+                .selectFrom('questions')
+                .select(['id', 'type', 'answer'])
+                .where('id', 'in', questionIds)
+                .execute()
+            : Promise.resolve([]),
+          questionIds.length > 0
+            ? db
+                .selectFrom('question_options')
+                .select(['question_id', 'label', 'text'])
+                .where('question_id', 'in', questionIds)
+                .where('is_correct', '=', true)
+                .execute()
+            : Promise.resolve([]),
+        ])
+        const questionById = new Map(questionRows.map((q) => [q.id, q]))
+        const correctOptionByQuestion = new Map(
+          correctOptions.map((o) => [o.question_id, o]),
+        )
+        const correctAnswerFor = (questionId: string): string | null => {
+          const question = questionById.get(questionId)
+          if (!question) return null
+          if (question.type === 'mcq') {
+            const opt = correctOptionByQuestion.get(questionId)
+            return opt ? `${opt.label}. ${opt.text}` : null
+          }
+          return question.answer
+        }
 
         const byConcept = new Map<
           string,
@@ -99,6 +138,7 @@ export const Route = createFileRoute('/api/attempts/$id/result')({
             paper_question_id: a.paper_question_id,
             marks_awarded: Number(a.marks_awarded),
             marks_max: Number(a.marks_max),
+            correct_answer: correctAnswerFor(a.question_id),
           })),
         })
       },

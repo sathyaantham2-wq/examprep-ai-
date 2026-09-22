@@ -59,12 +59,14 @@ interface AttemptResult {
     mastery_level: string | null
     previous_level: string | null
   }>
-  // Per question: only her own marks, never the correct answer (T09) -- merged client-side with
-  // the question text/her own saved answer this screen already holds from GET /api/attempts/:id.
+  // Per question: her marks and the correct answer -- allowed here, post-submission, per
+  // CLAUDE.md's T09 amendment (2026-09-22). Merged client-side with the question text/her own
+  // saved answer this screen already holds from GET /api/attempts/:id.
   questions: Array<{
     paper_question_id: string
     marks_awarded: number
     marks_max: number
+    correct_answer: string | null
   }>
 }
 
@@ -293,9 +295,9 @@ function Attempt() {
             ))}
           </div>
 
-          {/* Her own paper back, with her own answers marked -- her marks per question, never the
-              correct answer for one she got wrong (T09; GET /api/attempts/:id/result documents
-              why). data.questions still holds the text/options/her saved answer from the earlier
+          {/* Her own paper back, with her own answers marked, plus the correct answer next to
+              them (T09 amendment, 2026-09-22 -- GET /api/attempts/:id/result documents why).
+              data.questions still holds the text/options/her saved answer from the earlier
               GET /api/attempts/:id fetch -- merged here by paper_question_id, not re-fetched. */}
           <div className="space-y-3">
             <h2 className="text-h3">Your answers</h2>
@@ -338,13 +340,25 @@ function Attempt() {
                       )}
                     </div>
                   </CardHeader>
-                  <CardContent>
-                    <p className="text-small text-muted-foreground">
-                      Your answer
-                    </p>
-                    <p className="text-body whitespace-pre-wrap">
-                      {yourAnswer}
-                    </p>
+                  <CardContent className="space-y-3">
+                    <div>
+                      <p className="text-small text-muted-foreground">
+                        Your answer
+                      </p>
+                      <p className="text-body whitespace-pre-wrap">
+                        {yourAnswer}
+                      </p>
+                    </div>
+                    {scored?.correct_answer && (
+                      <div>
+                        <p className="text-small text-muted-foreground">
+                          Correct answer
+                        </p>
+                        <p className="text-body whitespace-pre-wrap">
+                          {scored.correct_answer}
+                        </p>
+                      </div>
+                    )}
                   </CardContent>
                 </Card>
               )

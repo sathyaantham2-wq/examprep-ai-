@@ -67,9 +67,16 @@ Never invent a feature ID. If work doesn't map to an existing F-number, say so a
   is what confirms the marks. If the AI cannot grade a written answer confidently, the paper waits
   for a parent as before. Confirmations are written to the audit log (`evaluation.auto_confirmed`,
   `evaluation.student_finalized`).
-- **The student role can never see or download an answer key**, override a mark, or read another
-  student's data. Enforced server-side, not by hiding a button. (T09.)
-- **Never build a chat tutor that solves the problem.** Withholding the answer is the product.
+- **The student role can never see or download an answer key** before or during an attempt,
+  override a mark, or read another student's data. Enforced server-side, not by hiding a button.
+  (T09.) **Exception, user decision 2026-09-22:** once her own attempt is submitted and its marks
+  are confirmed, she may see the correct answer next to her own for every question -- reviewing
+  what she got wrong (and why) is itself how she learns from it. If the same question is served to
+  her again later and she simply remembers the answer, that is fine too; the purpose is learning,
+  not testing recall of one specific item. This does not extend to a downloadable/printable key, to
+  marks not yet confirmed, or to another student's data -- all still forbidden.
+- **Never build a chat tutor that solves the problem.** Withholding the answer is the product
+  *during* an attempt; the T09 exception above is about *after* it's over, and is not a contradiction.
 - **Paper themes use original artwork only.** "Manga" is a genre and is fine to evoke; named
   franchises, their characters, logos and typefaces are not. The doodle theme is called
   **Doodle Journal** — never reference *Diary of a Wimpy Kid* in code, comments, assets or prompts.
