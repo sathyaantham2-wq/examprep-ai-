@@ -395,44 +395,9 @@ function MyPaper() {
               </Card>
             )}
 
-            <Card>
-              <CardHeader>
-                <CardTitle className="text-h3">
-                  What this paper covers
-                </CardTitle>
-              </CardHeader>
-              <CardContent>
-                <table className="text-small w-full">
-                  <thead>
-                    <tr className="text-left text-muted-foreground">
-                      <th className="pb-2 font-normal">Concept</th>
-                      <th className="pb-2 font-normal">Level</th>
-                      <th className="pb-2 text-right font-normal">Questions</th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                    {plan.concepts.map((c) => (
-                      <tr key={c.concept_id} className="border-t">
-                        <td className="py-2 pr-2">
-                          {c.concept_name}
-                          {c.reasons.length > 0 && (
-                            <span className="block text-muted-foreground">
-                              {c.reasons.join(', ')}
-                            </span>
-                          )}
-                        </td>
-                        <td className="py-2 pr-2">
-                          {c.mastery_level ?? 'New'}
-                        </td>
-                        <td className="py-2 text-right">
-                          {c.questions_planned}
-                        </td>
-                      </tr>
-                    ))}
-                  </tbody>
-                </table>
-              </CardContent>
-            </Card>
+            {/* "What this paper covers" (plan.concepts breakdown) is intentionally hidden
+                here at the user's request -- the data is still fetched and used elsewhere
+                on this screen (summary fields above), just not rendered as its own table. */}
 
             <Card>
               <CardHeader>
