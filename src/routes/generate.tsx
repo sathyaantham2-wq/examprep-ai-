@@ -1,16 +1,17 @@
-import { useEffect, useState } from 'react'
+import { useEffect, useMemo, useState } from 'react'
 import { createFileRoute, useNavigate } from '@tanstack/react-router'
 import { Button } from '../components/ui/button'
 import {
   Card,
   CardContent,
-  CardDescription,
   CardHeader,
   CardTitle,
 } from '../components/ui/card'
 import { Label } from '../components/ui/label'
 import { ThemeToggle } from '../components/theme-toggle'
 import { useSession } from '../lib/auth-client'
+import { PAPER_THEMES, DEFAULT_THEME } from '../lib/pdf/themes'
+import type { PaperTheme } from '../lib/pdf/themes'
 
 export const Route = createFileRoute('/generate')({ component: GeneratePaper })
 
@@ -52,6 +53,14 @@ interface GenerateResult {
   shortfalls: Array<Shortfall>
 }
 
+// F034/F120: one short line per theme, describing the pack's actual ornament (themes.ts) rather
+// than inventing new copy -- Clean School deliberately carries none.
+const THEME_BLURB: Record<PaperTheme, string> = {
+  'Clean School': 'No ornament. Plain, exam-standard layout.',
+  'Doodle Journal': 'An original hand-drawn-style squiggle border.',
+  Manga: 'Bold original speed-line corner artwork.',
+}
+
 function GeneratePaper() {
   const { data: session, isPending } = useSession()
   const navigate = useNavigate()
@@ -66,6 +75,7 @@ function GeneratePaper() {
   const [subjectId, setSubjectId] = useState('')
   const [blueprintId, setBlueprintId] = useState('')
   const [chapterIds, setChapterIds] = useState<Array<string>>([])
+  const [theme, setTheme] = useState<PaperTheme>(DEFAULT_THEME)
 
   const [error, setError] = useState<string | null>(null)
   const [submitting, setSubmitting] = useState(false)
@@ -144,6 +154,25 @@ function GeneratePaper() {
     )
   }
 
+  // Chapters render grouped under their part (Part I / Part II / ...) rather than as one flat
+  // list -- CLAUDE.md: chapter identity is (book, part, chapter_number), never the number alone,
+  // and Ganita Prakash's repeated chapter numbers across parts make that distinction visible to
+  // a parent, not just to the schema. Order of first appearance in the fetched list is kept.
+  const chaptersByPart = useMemo(() => {
+    const groups: Array<{ part: string; chapters: Array<Chapter> }> = []
+    for (const c of chapters) {
+      let group = groups.find((g) => g.part === c.part)
+      if (!group) {
+        group = { part: c.part, chapters: [] }
+        groups.push(group)
+      }
+      group.chapters.push(c)
+    }
+    return groups
+  }, [chapters])
+
+  const selectedBlueprint = blueprints.find((b) => b.id === blueprintId)
+
   async function handleGenerate(e: React.FormEvent) {
     e.preventDefault()
     setError(null)
@@ -157,6 +186,7 @@ function GeneratePaper() {
           student_id: studentId,
           blueprint_id: blueprintId,
           chapter_ids: chapterIds,
+          theme,
         }),
       })
       const body = await response.json()
@@ -183,34 +213,93 @@ function GeneratePaper() {
     return <div className="p-8 text-body text-muted-foreground">Loading…</div>
   }
 
+  const resultPanel = result && (
+    <div className="mt-6">
+      {result.paperQuestions.length === 0 ? (
+        <div className="text-body space-y-2 rounded-md border p-4">
+          <p className="font-medium">
+            Couldn't create a paper this time — the question bank came up
+            empty for this chapter right now.
+          </p>
+          <p className="text-small text-muted-foreground">
+            This usually means most of this chapter's questions were already
+            used in a paper very recently. Try again in a little while, or
+            cover a different chapter.
+          </p>
+          {result.shortfalls.length > 0 && (
+            <ul className="text-small text-muted-foreground list-inside list-disc">
+              {result.shortfalls.map((s, i) => (
+                <li key={i}>{s.reason}</li>
+              ))}
+            </ul>
+          )}
+        </div>
+      ) : (
+        <div className="text-body bg-primary/5 border-primary/20 space-y-3 rounded-md border p-4">
+          <p>
+            Paper ready — {result.paperQuestions.length} questions,{' '}
+            {result.paper.total_marks} marks.
+          </p>
+          {result.shortfalls.length > 0 && (
+            <div className="text-small text-destructive">
+              <p className="font-medium">Shortfalls (bank came up short):</p>
+              <ul className="list-inside list-disc">
+                {result.shortfalls.map((s, i) => (
+                  <li key={i}>
+                    {s.section}
+                    {s.bucket ? ` (${s.bucket})` : ''}: {s.reason}
+                  </li>
+                ))}
+              </ul>
+            </div>
+          )}
+          <div className="flex flex-wrap items-center gap-3">
+            <a
+              href={`/api/papers/${result.paper.id}/pdf`}
+              target="_blank"
+              rel="noreferrer"
+            >
+              <Button type="button" size="sm">
+                Download PDF
+              </Button>
+            </a>
+            <p className="text-small text-muted-foreground">
+              Also ready for web practice — it'll show up in{' '}
+              {selectedStudent?.name ?? 'her'} own "Papers to attempt" list
+              next time she logs in.
+            </p>
+          </div>
+        </div>
+      )}
+    </div>
+  )
+
   return (
-    <div className="mx-auto max-w-2xl p-8">
-      <div className="mb-6 flex items-center justify-between">
+    <div className="mx-auto max-w-5xl p-6 md:p-8">
+      <div className="mb-8 flex flex-wrap items-start justify-between gap-4">
         <div>
-          <h1 className="text-h1">
+          <h1 className="display-title text-display">
             {selectedStudent ? `Hello, ${selectedStudent.name}` : 'Generate a paper'}
           </h1>
-          <p className="text-body text-muted-foreground">
+          <p className="text-body text-muted-foreground mt-1">
             {selectedStudent
               ? 'Pick a subject and generate her next paper.'
               : 'Pick a student to get started.'}
           </p>
+          {selectedStudent && (
+            <span className="text-caption text-muted-foreground border-border mt-3 inline-flex w-fit items-center gap-1.5 rounded-full border px-3 py-1">
+              {selectedStudent.board} · Class {selectedStudent.class}
+            </span>
+          )}
         </div>
         <div className="no-print">
           <ThemeToggle />
         </div>
       </div>
 
-      <Card>
-        <CardHeader>
-          <CardTitle className="text-h3">New paper</CardTitle>
-          <CardDescription>
-            Question selection weights weak and priority concepts regardless of
-            any difficulty you'd otherwise pick -- see F119.
-          </CardDescription>
-        </CardHeader>
-        <CardContent>
-          {students !== null && students.length === 0 ? (
+      {students !== null && students.length === 0 ? (
+        <Card>
+          <CardContent className="pt-6">
             <p className="text-body text-muted-foreground">
               No students yet.{' '}
               <a
@@ -221,106 +310,166 @@ function GeneratePaper() {
               </a>
               .
             </p>
-          ) : (
-            <form onSubmit={handleGenerate} className="space-y-4">
-              {students !== null && students.length > 1 && (
-                <div className="space-y-1.5">
-                  <Label htmlFor="student">Student</Label>
-                  <select
-                    id="student"
-                    className="border-input flex h-9 w-full rounded-md border bg-transparent px-3 text-sm shadow-xs"
-                    value={studentId}
-                    onChange={(e) => setStudentId(e.target.value)}
-                    required
-                  >
-                    <option value="" disabled>
-                      Select a student
-                    </option>
-                    {students.map((s) => (
-                      <option key={s.id} value={s.id}>
-                        {s.name} (Class {s.class})
-                      </option>
-                    ))}
-                  </select>
-                </div>
-              )}
+          </CardContent>
+        </Card>
+      ) : (
+        <div className="grid gap-6 md:grid-cols-3">
+          <div className="space-y-6 md:col-span-2">
+            <form onSubmit={handleGenerate} className="space-y-6">
+              <Card>
+                <CardHeader>
+                  <CardTitle className="text-h3">1 · Student &amp; subject</CardTitle>
+                </CardHeader>
+                <CardContent className="space-y-4">
+                  {students !== null && students.length > 1 && (
+                    <div className="space-y-1.5">
+                      <Label htmlFor="student">Student</Label>
+                      <select
+                        id="student"
+                        className="border-input flex h-9 w-full rounded-md border bg-transparent px-3 text-sm shadow-xs"
+                        value={studentId}
+                        onChange={(e) => setStudentId(e.target.value)}
+                        required
+                      >
+                        <option value="" disabled>
+                          Select a student
+                        </option>
+                        {students.map((s) => (
+                          <option key={s.id} value={s.id}>
+                            {s.name} (Class {s.class})
+                          </option>
+                        ))}
+                      </select>
+                    </div>
+                  )}
 
-              {studentId && (
-                <div className="space-y-1.5">
-                  <Label htmlFor="subject">Subject</Label>
-                  <select
-                    id="subject"
-                    className="border-input flex h-9 w-full rounded-md border bg-transparent px-3 text-sm shadow-xs"
-                    value={subjectId}
-                    onChange={(e) => setSubjectId(e.target.value)}
-                    required
-                  >
-                    <option value="" disabled>
-                      Select a subject
-                    </option>
-                    {subjects.map((s) => (
-                      <option key={s.id} value={s.id}>
-                        {s.name}
-                      </option>
-                    ))}
-                  </select>
-                </div>
-              )}
+                  {studentId && (
+                    <div className="space-y-1.5">
+                      <Label htmlFor="subject">Subject</Label>
+                      <select
+                        id="subject"
+                        className="border-input flex h-9 w-full rounded-md border bg-transparent px-3 text-sm shadow-xs"
+                        value={subjectId}
+                        onChange={(e) => setSubjectId(e.target.value)}
+                        required
+                      >
+                        <option value="" disabled>
+                          Select a subject
+                        </option>
+                        {subjects.map((s) => (
+                          <option key={s.id} value={s.id}>
+                            {s.name}
+                          </option>
+                        ))}
+                      </select>
+                    </div>
+                  )}
 
-              {subjectId && blueprints.length > 1 && (
-                <div className="space-y-1.5">
-                  <Label htmlFor="blueprint">Blueprint</Label>
-                  <select
-                    id="blueprint"
-                    className="border-input flex h-9 w-full rounded-md border bg-transparent px-3 text-sm shadow-xs"
-                    value={blueprintId}
-                    onChange={(e) => setBlueprintId(e.target.value)}
-                    required
-                  >
-                    <option value="" disabled>
-                      Select a blueprint
-                    </option>
-                    {blueprints.map((b) => (
-                      <option key={b.id} value={b.id}>
-                        {b.name} — {b.total_marks} marks, {b.duration_min} min
-                      </option>
-                    ))}
-                  </select>
-                </div>
-              )}
-              {subjectId && blueprints.length === 0 && (
-                <p className="text-small text-muted-foreground">
-                  No paper format exists for this subject yet — an admin can
-                  create one at{' '}
-                  <a
-                    href="/admin/blueprints"
-                    className="text-primary underline-offset-4 hover:underline"
-                  >
-                    /admin/blueprints
-                  </a>
-                  .
-                </p>
-              )}
+                  {subjectId && blueprints.length > 1 && (
+                    <div className="space-y-1.5">
+                      <Label htmlFor="blueprint">Blueprint</Label>
+                      <select
+                        id="blueprint"
+                        className="border-input flex h-9 w-full rounded-md border bg-transparent px-3 text-sm shadow-xs"
+                        value={blueprintId}
+                        onChange={(e) => setBlueprintId(e.target.value)}
+                        required
+                      >
+                        <option value="" disabled>
+                          Select a blueprint
+                        </option>
+                        {blueprints.map((b) => (
+                          <option key={b.id} value={b.id}>
+                            {b.name} — {b.total_marks} marks, {b.duration_min} min
+                          </option>
+                        ))}
+                      </select>
+                    </div>
+                  )}
+                  {subjectId && blueprints.length === 0 && (
+                    <p className="text-small text-muted-foreground">
+                      No paper format exists for this subject yet — an admin
+                      can create one at{' '}
+                      <a
+                        href="/admin/blueprints"
+                        className="text-primary underline-offset-4 hover:underline"
+                      >
+                        /admin/blueprints
+                      </a>
+                      .
+                    </p>
+                  )}
+                </CardContent>
+              </Card>
 
               {subjectId && chapters.length > 1 && (
-                <div className="space-y-1.5">
-                  <Label>Chapters</Label>
-                  <div className="space-y-1 rounded-md border p-3">
-                    {chapters.map((c) => (
-                      <label
-                        key={c.id}
-                        className="text-small flex items-center gap-2"
-                      >
-                        <input
-                          type="checkbox"
-                          checked={chapterIds.includes(c.id)}
-                          onChange={() => toggleChapter(c.id)}
-                        />
-                        {c.part} Ch {c.chapter_no}: {c.name}
-                      </label>
+                <Card>
+                  <CardHeader>
+                    <CardTitle className="text-h3">2 · Chapters</CardTitle>
+                  </CardHeader>
+                  <CardContent className="space-y-5">
+                    {chaptersByPart.map((group) => (
+                      <div key={group.part}>
+                        <div className="text-caption text-muted-foreground mb-2 font-semibold tracking-wide uppercase">
+                          Part {group.part}
+                        </div>
+                        <div className="rounded-md border">
+                          {group.chapters.map((c) => (
+                            <label
+                              key={c.id}
+                              className="text-small hover:bg-muted/50 flex items-center gap-3 border-b px-3 py-2.5 last:border-b-0"
+                            >
+                              <input
+                                type="checkbox"
+                                checked={chapterIds.includes(c.id)}
+                                onChange={() => toggleChapter(c.id)}
+                                className="size-4 shrink-0"
+                              />
+                              <span>
+                                {c.part} Ch {c.chapter_no}: {c.name}
+                              </span>
+                            </label>
+                          ))}
+                        </div>
+                      </div>
                     ))}
-                  </div>
-                </div>
+                  </CardContent>
+                </Card>
+              )}
+
+              {subjectId && (
+                <Card>
+                  <CardHeader>
+                    <CardTitle className="text-h3">3 · Theme</CardTitle>
+                  </CardHeader>
+                  <CardContent>
+                    <div className="grid gap-3 sm:grid-cols-3">
+                      {PAPER_THEMES.map((t) => (
+                        <label
+                          key={t}
+                          className={`has-[:focus-visible]:ring-ring flex cursor-pointer flex-col gap-1 rounded-lg border p-3 transition-colors has-[:focus-visible]:ring-2 ${
+                            theme === t
+                              ? 'border-primary bg-primary/5 ring-primary ring-1'
+                              : 'border-input hover:bg-muted/50'
+                          }`}
+                        >
+                          <input
+                            type="radio"
+                            name="theme"
+                            value={t}
+                            checked={theme === t}
+                            onChange={() => setTheme(t)}
+                            className="sr-only"
+                          />
+                          <span className="text-small font-semibold">{t}</span>
+                          <span className="text-caption text-muted-foreground">
+                            {THEME_BLURB[t]}
+                          </span>
+                        </label>
+                      ))}
+                    </div>
+                  </CardContent>
+                </Card>
               )}
 
               {error && (
@@ -331,6 +480,7 @@ function GeneratePaper() {
 
               <Button
                 type="submit"
+                size="lg"
                 disabled={
                   submitting ||
                   !studentId ||
@@ -341,66 +491,50 @@ function GeneratePaper() {
                 {submitting ? 'Creating…' : 'Create paper'}
               </Button>
             </form>
-          )}
 
-          {result && result.paperQuestions.length === 0 ? (
-            <div className="text-body mt-6 space-y-2 rounded-md border p-4">
-              <p className="font-medium">
-                Couldn't create a paper this time — the question bank came up
-                empty for this chapter right now.
-              </p>
-              <p className="text-small text-muted-foreground">
-                This usually means most of this chapter's questions were
-                already used in a paper very recently. Try again in a little
-                while, or cover a different chapter.
-              </p>
-              {result.shortfalls.length > 0 && (
-                <ul className="text-small text-muted-foreground list-inside list-disc">
-                  {result.shortfalls.map((s, i) => (
-                    <li key={i}>{s.reason}</li>
-                  ))}
-                </ul>
-              )}
-            </div>
-          ) : (
-            result && (
-              <div className="text-body mt-6 space-y-3 rounded-md border p-4">
-                <p>
-                  Paper ready — {result.paperQuestions.length} questions,{' '}
-                  {result.paper.total_marks} marks.
-                </p>
-                {result.shortfalls.length > 0 && (
-                  <div className="text-small text-destructive">
-                    <p className="font-medium">
-                      Shortfalls (bank came up short):
-                    </p>
-                    <ul className="list-inside list-disc">
-                      {result.shortfalls.map((s, i) => (
-                        <li key={i}>
-                          {s.section}
-                          {s.bucket ? ` (${s.bucket})` : ''}: {s.reason}
-                        </li>
-                      ))}
-                    </ul>
-                  </div>
-                )}
-                <div className="flex flex-wrap items-center gap-3">
-                  <a href={`/api/papers/${result.paper.id}/pdf`} target="_blank" rel="noreferrer">
-                    <Button type="button" size="sm">
-                      Download PDF
-                    </Button>
-                  </a>
-                  <p className="text-small text-muted-foreground">
-                    Also ready for web practice — it'll show up in{' '}
-                    {selectedStudent?.name ?? 'her'} own "Papers to attempt"
-                    list next time she logs in.
-                  </p>
+            {resultPanel}
+          </div>
+
+          <div className="md:col-span-1">
+            <Card className="md:sticky md:top-6">
+              <CardHeader>
+                <CardTitle className="text-h3">Paper summary</CardTitle>
+              </CardHeader>
+              <CardContent className="text-small space-y-3">
+                <div className="flex items-center justify-between">
+                  <span className="text-muted-foreground">Subject</span>
+                  <span className="font-medium">
+                    {subjects.find((s) => s.id === subjectId)?.name ?? '—'}
+                  </span>
                 </div>
-              </div>
-            )
-          )}
-        </CardContent>
-      </Card>
+                <div className="flex items-center justify-between">
+                  <span className="text-muted-foreground">Format</span>
+                  <span className="font-medium">
+                    {selectedBlueprint
+                      ? `${selectedBlueprint.total_marks} marks · ${selectedBlueprint.duration_min} min`
+                      : '—'}
+                  </span>
+                </div>
+                <div className="flex items-center justify-between">
+                  <span className="text-muted-foreground">Chapters</span>
+                  <span className="font-medium">
+                    {chapterIds.length} of {chapters.length} selected
+                  </span>
+                </div>
+                <div className="flex items-center justify-between">
+                  <span className="text-muted-foreground">Theme</span>
+                  <span className="font-medium">{theme}</span>
+                </div>
+                <div className="bg-muted text-caption text-muted-foreground rounded-md p-3 leading-relaxed">
+                  Question selection weights weak and priority concepts
+                  regardless of any difficulty you'd otherwise pick — see
+                  F119.
+                </div>
+              </CardContent>
+            </Card>
+          </div>
+        </div>
+      )}
     </div>
   )
 }
