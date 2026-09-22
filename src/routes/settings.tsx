@@ -9,7 +9,7 @@ import {
 } from '../components/ui/card'
 import { Button } from '../components/ui/button'
 import { Label } from '../components/ui/label'
-import { ThemeToggle } from '../components/theme-toggle'
+import { AppShell } from '../components/app-shell'
 import { useSession, signOut } from '../lib/auth-client'
 
 export const Route = createFileRoute('/settings')({ component: Settings })
@@ -96,70 +96,69 @@ function Settings() {
   }
 
   return (
-    <div className="mx-auto max-w-2xl p-8">
-      <div className="mb-6 flex items-center justify-between">
-        <div>
+    <AppShell active="settings">
+      <div className="mx-auto max-w-2xl p-8">
+        <div className="mb-6">
           <h1 className="text-h1">Settings</h1>
           <p className="text-body text-muted-foreground">{household?.name}</p>
         </div>
-        <div className="no-print">
-          <ThemeToggle />
-        </div>
+
+        <Card className="mb-4">
+          <CardHeader>
+            <CardTitle className="text-h3">Export your data</CardTitle>
+            <CardDescription>
+              Downloads every record for your household as a JSON file.
+            </CardDescription>
+          </CardHeader>
+          <CardContent>
+            {exportError && (
+              <p className="text-small text-destructive mb-2" role="alert">
+                {exportError}
+              </p>
+            )}
+            <Button onClick={handleExport} disabled={exporting}>
+              {exporting ? 'Preparing…' : 'Export my data'}
+            </Button>
+          </CardContent>
+        </Card>
+
+        <Card>
+          <CardHeader>
+            <CardTitle className="text-h3">Delete your account</CardTitle>
+            <CardDescription>
+              Permanently deletes your household and everything in it —
+              students, papers, evaluations, and history. This cannot be undone.
+            </CardDescription>
+          </CardHeader>
+          <CardContent className="space-y-3">
+            <div className="space-y-1.5">
+              <Label htmlFor="confirm-name">
+                Type "{household?.name}" to confirm
+              </Label>
+              <input
+                id="confirm-name"
+                className="border-input flex h-9 w-full rounded-md border bg-transparent px-3 text-sm"
+                value={confirmName}
+                onChange={(e) => setConfirmName(e.target.value)}
+              />
+            </div>
+            {deleteError && (
+              <p className="text-small text-destructive" role="alert">
+                {deleteError}
+              </p>
+            )}
+            <Button
+              variant="destructive"
+              onClick={handleDelete}
+              disabled={
+                deleting || !household || confirmName !== household.name
+              }
+            >
+              {deleting ? 'Deleting…' : 'Permanently delete my household'}
+            </Button>
+          </CardContent>
+        </Card>
       </div>
-
-      <Card className="mb-4">
-        <CardHeader>
-          <CardTitle className="text-h3">Export your data</CardTitle>
-          <CardDescription>
-            Downloads every record for your household as a JSON file.
-          </CardDescription>
-        </CardHeader>
-        <CardContent>
-          {exportError && (
-            <p className="text-small text-destructive mb-2" role="alert">
-              {exportError}
-            </p>
-          )}
-          <Button onClick={handleExport} disabled={exporting}>
-            {exporting ? 'Preparing…' : 'Export my data'}
-          </Button>
-        </CardContent>
-      </Card>
-
-      <Card>
-        <CardHeader>
-          <CardTitle className="text-h3">Delete your account</CardTitle>
-          <CardDescription>
-            Permanently deletes your household and everything in it — students, papers,
-            evaluations, and history. This cannot be undone.
-          </CardDescription>
-        </CardHeader>
-        <CardContent className="space-y-3">
-          <div className="space-y-1.5">
-            <Label htmlFor="confirm-name">
-              Type "{household?.name}" to confirm
-            </Label>
-            <input
-              id="confirm-name"
-              className="border-input flex h-9 w-full rounded-md border bg-transparent px-3 text-sm"
-              value={confirmName}
-              onChange={(e) => setConfirmName(e.target.value)}
-            />
-          </div>
-          {deleteError && (
-            <p className="text-small text-destructive" role="alert">
-              {deleteError}
-            </p>
-          )}
-          <Button
-            variant="destructive"
-            onClick={handleDelete}
-            disabled={deleting || !household || confirmName !== household.name}
-          >
-            {deleting ? 'Deleting…' : 'Permanently delete my household'}
-          </Button>
-        </CardContent>
-      </Card>
-    </div>
+    </AppShell>
   )
 }
