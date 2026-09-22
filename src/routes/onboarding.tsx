@@ -10,7 +10,7 @@ import {
 } from '../components/ui/card'
 import { Input } from '../components/ui/input'
 import { Label } from '../components/ui/label'
-import { ThemeToggle } from '../components/theme-toggle'
+import { AppShell } from '../components/app-shell'
 import { signOut, useSession } from '../lib/auth-client'
 
 export const Route = createFileRoute('/onboarding')({ component: Onboarding })
@@ -120,163 +120,167 @@ function Onboarding() {
   }
 
   return (
-    <div className="mx-auto max-w-2xl p-8">
-      <div className="mb-6 flex items-center justify-between">
-        <div>
-          <h1 className="text-h1">Your students</h1>
-          <p className="text-body text-muted-foreground">
-            Each student has her own login. Add a student to follow her
-            progress.
-          </p>
-        </div>
-        <div className="flex items-center gap-2 no-print">
-          <ThemeToggle />
-          <Button
-            variant="ghost"
-            size="sm"
-            onClick={() => signOut().then(() => navigate({ to: '/' }))}
-          >
-            Sign out
-          </Button>
-        </div>
-      </div>
-
-      <Card className="mb-6">
-        <CardHeader>
-          <div className="flex items-center justify-between gap-3">
-            <div>
-              <CardTitle className="text-h3">Students</CardTitle>
-              <CardDescription>
-                {students === null
-                  ? 'Loading…'
-                  : students.length === 0
-                    ? 'No students yet. Use Add student.'
-                    : `${students.length} student${students.length === 1 ? '' : 's'} you follow.`}
-              </CardDescription>
-            </div>
-            <Button type="button" onClick={() => setShowForm((v) => !v)}>
-              {showForm ? 'Cancel' : 'Add student'}
+    <AppShell active={null}>
+      <div className="mx-auto max-w-2xl p-8">
+        <div className="mb-6 flex items-center justify-between">
+          <div>
+            <h1 className="text-h1">Your students</h1>
+            <p className="text-body text-muted-foreground">
+              Each student has her own login. Add a student to follow her
+              progress.
+            </p>
+          </div>
+          <div className="flex items-center gap-2 no-print">
+            <Button
+              variant="ghost"
+              size="sm"
+              onClick={() => signOut().then(() => navigate({ to: '/' }))}
+            >
+              Sign out
             </Button>
           </div>
-        </CardHeader>
-        <CardContent className="space-y-3">
-          {notice && (
-            <p className="text-small text-muted-foreground" role="status">
-              {notice}
-            </p>
-          )}
-          {showForm && (
-            <form
-              onSubmit={handleInvite}
-              className="space-y-3 rounded-md border p-3"
-            >
-              <p className="text-small text-muted-foreground">
-                The student must first create her own account (student sign-up
-                with her email, a username and a password). Enter the email
-                she used.
-              </p>
-              <div className="space-y-1.5">
-                <Label htmlFor="student-email">Student’s email</Label>
-                <Input
-                  id="student-email"
-                  type="email"
-                  value={email}
-                  onChange={(e) => setEmail(e.target.value)}
-                  required
-                />
-              </div>
-              <Label className="items-start">
-                <input
-                  type="checkbox"
-                  className="mt-0.5"
-                  checked={consent}
-                  onChange={(e) => setConsent(e.target.checked)}
-                />
-                <span className="text-small font-normal">
-                  I am this student’s {isTeacher ? 'teacher' : 'parent or guardian'}{' '}
-                  and I agree to her practice and exam data being used to
-                  generate papers, mark attempts and track her progress.
-                </span>
-              </Label>
-              {error && (
-                <p className="text-small text-destructive" role="alert">
-                  {error}
-                </p>
-              )}
-              <Button type="submit" disabled={submitting || !consent}>
-                {submitting ? 'Sending…' : 'Send request'}
-              </Button>
-            </form>
-          )}
+        </div>
 
-          {students?.map((s) => (
-            <div
-              key={s.id}
-              className="text-body flex flex-wrap items-center justify-between gap-2 rounded-md border px-3 py-2"
-            >
-              <span>
-                {s.name}{' '}
-                <span className="text-small text-muted-foreground">
-                  {s.board} · Class {s.class}
-                </span>
-              </span>
-              <div className="flex flex-wrap items-center gap-2">
-                <a href="/home">
-                  <Button type="button" variant="outline" size="sm">
-                    Dashboard
-                  </Button>
-                </a>
-                <a href={`/tracker/${s.id}`}>
-                  <Button type="button" variant="outline" size="sm">
-                    Concept tracker
-                  </Button>
-                </a>
-                {!isTeacher && (
-                  <a href="/generate">
-                    <Button type="button" size="sm">
-                      Generate paper
-                    </Button>
-                  </a>
-                )}
-              </div>
-            </div>
-          ))}
-        </CardContent>
-      </Card>
-
-      {invites.length > 0 && (
-        <Card>
+        <Card className="mb-6">
           <CardHeader>
-            <CardTitle className="text-h3">Requests</CardTitle>
+            <div className="flex items-center justify-between gap-3">
+              <div>
+                <CardTitle className="text-h3">Students</CardTitle>
+                <CardDescription>
+                  {students === null
+                    ? 'Loading…'
+                    : students.length === 0
+                      ? 'No students yet. Use Add student.'
+                      : `${students.length} student${students.length === 1 ? '' : 's'} you follow.`}
+                </CardDescription>
+              </div>
+              <Button type="button" onClick={() => setShowForm((v) => !v)}>
+                {showForm ? 'Cancel' : 'Add student'}
+              </Button>
+            </div>
           </CardHeader>
-          <CardContent className="space-y-2">
-            {invites.map((inv) => (
+          <CardContent className="space-y-3">
+            {notice && (
+              <p className="text-small text-muted-foreground" role="status">
+                {notice}
+              </p>
+            )}
+            {showForm && (
+              <form
+                onSubmit={handleInvite}
+                className="space-y-3 rounded-md border p-3"
+              >
+                <p className="text-small text-muted-foreground">
+                  The student must first create her own account (student sign-up
+                  with her email, a username and a password). Enter the email
+                  she used.
+                </p>
+                <div className="space-y-1.5">
+                  <Label htmlFor="student-email">Student’s email</Label>
+                  <Input
+                    id="student-email"
+                    type="email"
+                    value={email}
+                    onChange={(e) => setEmail(e.target.value)}
+                    required
+                  />
+                </div>
+                <Label className="items-start">
+                  <input
+                    type="checkbox"
+                    className="mt-0.5"
+                    checked={consent}
+                    onChange={(e) => setConsent(e.target.checked)}
+                  />
+                  <span className="text-small font-normal">
+                    I am this student’s{' '}
+                    {isTeacher ? 'teacher' : 'parent or guardian'} and I agree
+                    to her practice and exam data being used to generate papers,
+                    mark attempts and track her progress.
+                  </span>
+                </Label>
+                {error && (
+                  <p className="text-small text-destructive" role="alert">
+                    {error}
+                  </p>
+                )}
+                <Button type="submit" disabled={submitting || !consent}>
+                  {submitting ? 'Sending…' : 'Send request'}
+                </Button>
+              </form>
+            )}
+
+            {students?.map((s) => (
               <div
-                key={inv.id}
+                key={s.id}
                 className="text-body flex flex-wrap items-center justify-between gap-2 rounded-md border px-3 py-2"
               >
                 <span>
-                  {inv.student_name ?? inv.student_email}
+                  {s.name}{' '}
                   <span className="text-small text-muted-foreground">
-                    {' '}
-                    · {STATUS_TEXT[inv.status]}
+                    {s.board} · Class {s.class}
                   </span>
                 </span>
-                {(inv.status === 'pending' || inv.status === 'approved') && (
-                  <Button
-                    type="button"
-                    variant="outline"
-                    size="sm"
-                    onClick={() => void handleRevoke(inv.id)}
-                  >
-                    {inv.status === 'pending' ? 'Cancel request' : 'Stop following'}
-                  </Button>
-                )}
+                <div className="flex flex-wrap items-center gap-2">
+                  <a href="/home">
+                    <Button type="button" variant="outline" size="sm">
+                      Dashboard
+                    </Button>
+                  </a>
+                  <a href={`/tracker/${s.id}`}>
+                    <Button type="button" variant="outline" size="sm">
+                      Concept tracker
+                    </Button>
+                  </a>
+                  {!isTeacher && (
+                    <a href="/generate">
+                      <Button type="button" size="sm">
+                        Generate paper
+                      </Button>
+                    </a>
+                  )}
+                </div>
               </div>
             ))}
           </CardContent>
         </Card>
-      )}
-    </div>
+
+        {invites.length > 0 && (
+          <Card>
+            <CardHeader>
+              <CardTitle className="text-h3">Requests</CardTitle>
+            </CardHeader>
+            <CardContent className="space-y-2">
+              {invites.map((inv) => (
+                <div
+                  key={inv.id}
+                  className="text-body flex flex-wrap items-center justify-between gap-2 rounded-md border px-3 py-2"
+                >
+                  <span>
+                    {inv.student_name ?? inv.student_email}
+                    <span className="text-small text-muted-foreground">
+                      {' '}
+                      · {STATUS_TEXT[inv.status]}
+                    </span>
+                  </span>
+                  {(inv.status === 'pending' || inv.status === 'approved') && (
+                    <Button
+                      type="button"
+                      variant="outline"
+                      size="sm"
+                      onClick={() => void handleRevoke(inv.id)}
+                    >
+                      {inv.status === 'pending'
+                        ? 'Cancel request'
+                        : 'Stop following'}
+                    </Button>
+                  )}
+                </div>
+              ))}
+            </CardContent>
+          </Card>
+        )}
+      </div>
+    </AppShell>
   )
 }

@@ -16,7 +16,10 @@ export type AppShellActive =
   'home' | 'generate' | 'papers' | 'progress' | 'settings'
 
 interface AppShellProps {
-  active: AppShellActive
+  /** null for a real screen that just has no nav item of its own (e.g. /onboarding, reached via
+   * a link on /home rather than the sidebar itself) -- no item highlights, rather than picking a
+   * misleading nearest match. */
+  active: AppShellActive | null
   /** The parent's currently-relevant student, for the Progress link (/tracker/:studentId). Progress is left out of the nav entirely when this is not known yet, rather than linking somewhere broken. */
   studentId?: string | null
   children: ReactNode
