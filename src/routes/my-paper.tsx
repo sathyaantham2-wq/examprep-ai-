@@ -8,11 +8,10 @@ import {
   CardHeader,
   CardTitle,
 } from '../components/ui/card'
-import { SubjectCard } from '../components/subject-card'
+import { Label } from '../components/ui/label'
 import { AppShell } from '../components/app-shell'
 import { useSession } from '../lib/auth-client'
-import { PAPER_THEMES, DEFAULT_THEME, THEME_BLURB } from '../lib/pdf/themes'
-import type { PaperTheme } from '../lib/pdf/themes'
+import { DEFAULT_THEME } from '../lib/pdf/themes'
 
 export const Route = createFileRoute('/my-paper')({
   component: MyPaper,
@@ -78,11 +77,10 @@ function MyPaper() {
   const [loadingPlan, setLoadingPlan] = useState(false)
   const [error, setError] = useState<string | null>(null)
   const [starting, setStarting] = useState(false)
-  // No F-number covers the adaptive layer itself yet (see memory examprep_adaptive_learning.md)
-  // -- this rides the same already-Done F034/F120 theme pack pipeline the parent's /generate
-  // screen exposes, just on the student's own paper. Hers to pick: it only changes how the PDF
-  // looks, never a mark or a question.
-  const [theme, setTheme] = useState<PaperTheme>(DEFAULT_THEME)
+  // No F-number covers the adaptive layer itself yet (see memory examprep_adaptive_learning.md).
+  // The theme picker was removed from this screen at the user's request -- every paper from here
+  // still renders through the same already-Done F034/F120 theme pack pipeline, just fixed to the
+  // default theme rather than exposing a choice.
 
   useEffect(() => {
     if (isPending) return
@@ -175,7 +173,7 @@ function MyPaper() {
           adaptive: true,
           subject_id: subjectId,
           chapter_ids: chapterIds,
-          theme,
+          theme: DEFAULT_THEME,
         }),
       })
       const paper = await generated.json()
@@ -292,19 +290,20 @@ function MyPaper() {
         )}
 
         {withContent.length > 1 && (
-          <div
-            className="mb-4 grid gap-3 sm:grid-cols-2"
-            role="radiogroup"
-            aria-label="Subject"
-          >
-            {withContent.map((s) => (
-              <SubjectCard
-                key={s.id}
-                name={s.name}
-                selected={s.id === subjectId}
-                onToggle={() => setSubjectId(s.id)}
-              />
-            ))}
+          <div className="mb-4 max-w-xs space-y-1.5">
+            <Label htmlFor="my-paper-subject">Subject</Label>
+            <select
+              id="my-paper-subject"
+              className="border-input flex h-9 w-full rounded-md border bg-transparent px-3 text-sm shadow-xs"
+              value={subjectId}
+              onChange={(e) => setSubjectId(e.target.value)}
+            >
+              {withContent.map((s) => (
+                <option key={s.id} value={s.id}>
+                  {s.name}
+                </option>
+              ))}
+            </select>
           </div>
         )}
 
@@ -330,42 +329,69 @@ function MyPaper() {
                 </CardDescription>
               </CardHeader>
               <CardContent>
-                <dl className="text-body grid grid-cols-2 gap-x-4 gap-y-3 sm:grid-cols-4">
-                  <div>
-                    <dt className="text-small text-muted-foreground">
-                      Subject
-                    </dt>
-                    <dd>{plan.subject_name}</dd>
+                {/* Every value here comes straight from her mastery -- shown as select-style
+                    boxes to match the rest of the app's paper-setup screens, but they're a
+                    read-only recap, not editable controls: the adaptive plan (weak/priority
+                    concept weighting, question count, difficulty spread) is computed server-side,
+                    not something to override from this screen. */}
+                <div className="grid gap-4 sm:grid-cols-2">
+                  <div className="space-y-1.5">
+                    <Label>Subject</Label>
+                    <div className="border-input flex h-9 w-full items-center rounded-md border bg-transparent px-3 text-sm">
+                      {plan.subject_name}
+                    </div>
                   </div>
-                  <div>
-                    <dt className="text-small text-muted-foreground">
-                      Questions
-                    </dt>
-                    <dd>
+
+                  <div className="space-y-1.5">
+                    <Label>Questions</Label>
+                    <div className="border-input flex h-9 w-full items-center rounded-md border bg-transparent px-3 text-sm">
                       {plan.total_questions} ({plan.total_marks} marks)
-                    </dd>
+                    </div>
                   </div>
-                  <div>
-                    <dt className="text-small text-muted-foreground">
-                      Difficulty
-                    </dt>
-                    <dd>
+
+                  <div className="space-y-1.5">
+                    <Label>Difficulty</Label>
+                    <div className="border-input flex h-9 w-full items-center rounded-md border bg-transparent px-3 text-sm">
                       {plan.difficulty_range.min === plan.difficulty_range.max
                         ? plan.difficulty_range.min
                         : `${plan.difficulty_range.min} to ${plan.difficulty_range.max}`}
-                    </dd>
+                    </div>
                   </div>
-                  <div>
-                    <dt className="text-small text-muted-foreground">Time</dt>
-                    <dd>About {plan.estimated_minutes} min</dd>
+
+                  <div className="space-y-1.5">
+                    <Label>Time</Label>
+                    <div className="border-input text-muted-foreground flex h-9 w-full items-center gap-2 rounded-md border bg-transparent px-3 text-sm">
+                      <svg
+                        width="14"
+                        height="14"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        strokeWidth="2"
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        className="shrink-0"
+                      >
+                        <circle cx="12" cy="12" r="9" />
+                        <path d="M12 7v5l3 3" />
+                      </svg>
+                      About {plan.estimated_minutes} min
+                    </div>
                   </div>
-                  <div className="col-span-2 sm:col-span-4">
-                    <dt className="text-small text-muted-foreground">
-                      Question types
-                    </dt>
-                    <dd>{plan.question_types.join(', ')}</dd>
+
+                  <div className="space-y-1.5 sm:col-span-2">
+                    <Label>Question type</Label>
+                    <div className="border-input flex h-9 w-full items-center rounded-md border bg-transparent px-3 text-sm">
+                      {plan.question_types.length > 1
+                        ? `Combined (${plan.question_types.join(' + ')})`
+                        : plan.question_types[0]}
+                    </div>
                   </div>
-                </dl>
+                </div>
+                <p className="text-caption text-muted-foreground mt-3">
+                  Picked automatically from what she already knows -- weak and
+                  priority concepts get more questions, same as F119.
+                </p>
               </CardContent>
             </Card>
 
@@ -398,42 +424,6 @@ function MyPaper() {
             {/* "What this paper covers" (plan.concepts breakdown) is intentionally hidden
                 here at the user's request -- the data is still fetched and used elsewhere
                 on this screen (summary fields above), just not rendered as its own table. */}
-
-            <Card>
-              <CardHeader>
-                <CardTitle className="text-h3">Paper look</CardTitle>
-                <CardDescription>
-                  Just the PDF's style -- pick whichever you like.
-                </CardDescription>
-              </CardHeader>
-              <CardContent>
-                <div className="grid gap-3 sm:grid-cols-3">
-                  {PAPER_THEMES.map((t) => (
-                    <label
-                      key={t}
-                      className={`has-[:focus-visible]:ring-ring flex cursor-pointer flex-col gap-1 rounded-lg border p-3 transition-colors has-[:focus-visible]:ring-2 ${
-                        theme === t
-                          ? 'border-primary bg-primary/5 ring-primary ring-1'
-                          : 'border-input hover:bg-muted/50'
-                      }`}
-                    >
-                      <input
-                        type="radio"
-                        name="theme"
-                        value={t}
-                        checked={theme === t}
-                        onChange={() => setTheme(t)}
-                        className="sr-only"
-                      />
-                      <span className="text-small font-semibold">{t}</span>
-                      <span className="text-caption text-muted-foreground">
-                        {THEME_BLURB[t]}
-                      </span>
-                    </label>
-                  ))}
-                </div>
-              </CardContent>
-            </Card>
 
             {error && (
               <p className="text-small text-destructive" role="alert">
