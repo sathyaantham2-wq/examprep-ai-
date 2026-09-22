@@ -265,12 +265,19 @@ test('happy path: sign in, generate paper, download PDF, attempt, evaluate, trac
       r.url().includes('/api/papers/generate') &&
       r.request().method() === 'POST',
   )
-  await page.getByRole('button', { name: 'Create paper' }).click()
+  await page.getByRole('button', { name: 'Generate question paper' }).click()
   const generateResponse = await generateResponsePromise
   const generated = await generateResponse.json()
   paperId = generated.paper.id
   expect(generated.paperQuestions).toHaveLength(1)
-  await expect(page.getByText(/Paper ready/)).toBeVisible()
+  // generate.tsx navigates straight to the paper's own page on success (never lingers on
+  // /generate to show its "Paper ready" text -- that only stays put for the empty/shortfall
+  // case) -- assert the destination actually loaded, rather than a transient state on the page
+  // being left.
+  await page.waitForURL('**/paper/**')
+  // CardTitle renders a div, not a heading element (same reason other assertions in this file
+  // use getByText rather than getByRole('heading', ...) for one).
+  await expect(page.getByText('What happens next')).toBeVisible()
 
   // 3. Download PDF -- verify the real render pipeline (F033) produces an actual PDF.
   const pdfResponse = await page.request.get(`/api/papers/${paperId}/pdf`)
