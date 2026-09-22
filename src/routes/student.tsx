@@ -10,8 +10,11 @@ import {
 } from '../components/ui/card'
 import { MasteryRing } from '../components/mastery-ring'
 import { AdaptiveOverview } from '../components/adaptive-overview'
-import type { AdaptiveOverviewData, SubjectChip } from '../components/adaptive-overview'
-import { ThemeToggle } from '../components/theme-toggle'
+import type {
+  AdaptiveOverviewData,
+  SubjectChip,
+} from '../components/adaptive-overview'
+import { AppShell } from '../components/app-shell'
 import { signOut, useSession } from '../lib/auth-client'
 
 export const Route = createFileRoute('/student')({ component: StudentHome })
@@ -90,11 +93,20 @@ function StudentHome() {
       .then(
         (
           data: {
-            profile: { board: string; class: number; profile_complete: boolean; subject_ids: Array<string> }
+            profile: {
+              board: string
+              class: number
+              profile_complete: boolean
+              subject_ids: Array<string>
+            }
             options: Array<{
               board: string
               class: number
-              subjects: Array<{ id: string; name: string; has_content: boolean }>
+              subjects: Array<{
+                id: string
+                name: string
+                has_content: boolean
+              }>
             }>
           } | null,
         ) => {
@@ -104,8 +116,11 @@ function StudentHome() {
             return
           }
           const offered =
-            data.options.find((o) => o.board === data.profile.board && o.class === data.profile.class)
-              ?.subjects ?? []
+            data.options.find(
+              (o) =>
+                o.board === data.profile.board &&
+                o.class === data.profile.class,
+            )?.subjects ?? []
           setChips(
             offered.map((subject) => ({
               id: subject.id,
@@ -151,7 +166,9 @@ function StudentHome() {
 
   async function stopSharing() {
     setSharingError(null)
-    const response = await fetch('/api/guardian-invites/leave', { method: 'POST' })
+    const response = await fetch('/api/guardian-invites/leave', {
+      method: 'POST',
+    })
     if (!response.ok) setSharingError('Could not stop sharing.')
     await loadSharing()
   }
@@ -189,216 +206,223 @@ function StudentHome() {
 
   const papersCard =
     papers && papers.length > 0 ? (
-            <Card>
-              <CardHeader>
-                <CardTitle className="text-h3">Papers to attempt</CardTitle>
-              </CardHeader>
-              <CardContent className="space-y-3">
-                {startError && (
-                  <p className="text-small text-destructive" role="alert">
-                    {startError}
+      <Card>
+        <CardHeader>
+          <CardTitle className="text-h3">Papers to attempt</CardTitle>
+        </CardHeader>
+        <CardContent className="space-y-3">
+          {startError && (
+            <p className="text-small text-destructive" role="alert">
+              {startError}
+            </p>
+          )}
+          {papers.map((p) => {
+            const status = p.attempt?.status
+            const isDone = status === 'evaluated'
+            const awaitingMarks = status === 'submitted'
+            return (
+              <div
+                key={p.id}
+                className="flex items-center justify-between rounded-md border p-3"
+              >
+                <div>
+                  <p className="text-body">{p.title}</p>
+                  <p className="text-small text-muted-foreground">
+                    {p.total_marks} marks, {p.duration_min} min
                   </p>
+                </div>
+                {isDone ? (
+                  <span className="text-small text-muted-foreground">
+                    Completed
+                  </span>
+                ) : awaitingMarks && p.attempt ? (
+                  <a href={`/attempt/${p.attempt.id}`}>
+                    <Button size="sm" variant="outline">
+                      See my marks
+                    </Button>
+                  </a>
+                ) : (
+                  <Button
+                    size="sm"
+                    disabled={startingId === p.id}
+                    onClick={() => void startOrResume(p)}
+                  >
+                    {startingId === p.id
+                      ? 'Starting…'
+                      : status === 'in_progress'
+                        ? 'Continue'
+                        : 'Start'}
+                  </Button>
                 )}
-                {papers.map((p) => {
-                  const status = p.attempt?.status
-                  const isDone = status === 'evaluated'
-                  const awaitingMarks = status === 'submitted'
-                  return (
-                    <div
-                      key={p.id}
-                      className="flex items-center justify-between rounded-md border p-3"
-                    >
-                      <div>
-                        <p className="text-body">{p.title}</p>
-                        <p className="text-small text-muted-foreground">
-                          {p.total_marks} marks, {p.duration_min} min
-                        </p>
-                      </div>
-                      {isDone ? (
-                        <span className="text-small text-muted-foreground">
-                          Completed
-                        </span>
-                      ) : awaitingMarks && p.attempt ? (
-                        <a href={`/attempt/${p.attempt.id}`}>
-                          <Button size="sm" variant="outline">
-                            See my marks
-                          </Button>
-                        </a>
-                      ) : (
-                        <Button
-                          size="sm"
-                          disabled={startingId === p.id}
-                          onClick={() => void startOrResume(p)}
-                        >
-                          {startingId === p.id
-                            ? 'Starting…'
-                            : status === 'in_progress'
-                              ? 'Continue'
-                              : 'Start'}
-                        </Button>
-                      )}
-                    </div>
-                  )
-                })}
-              </CardContent>
-            </Card>
-      
+              </div>
+            )
+          })}
+        </CardContent>
+      </Card>
     ) : null
 
   return (
-    <div className="mx-auto max-w-3xl p-8">
-      <div className="mb-6 flex items-center justify-between">
-        <div>
-          <h1 className="text-h1">Your progress</h1>
-          <p className="text-body text-muted-foreground">
-            {dashboard && dashboard.streak_days > 0
-              ? `${dashboard.streak_days} day streak — keep it going!`
-              : 'Practice today to start a streak.'}
-          </p>
-        </div>
-        <div className="no-print flex items-center gap-2">
-          <a href="/my-paper">
-            <Button size="sm">Make a paper</Button>
-          </a>
-          <a href="/leaderboard">
-            <Button variant="outline" size="sm">
-              Leaderboard
+    <AppShell variant="student" active="home">
+      <div className="mx-auto max-w-3xl p-8">
+        <div className="mb-6 flex items-center justify-between">
+          <div>
+            <h1 className="text-h1">Your progress</h1>
+            <p className="text-body text-muted-foreground">
+              {dashboard && dashboard.streak_days > 0
+                ? `${dashboard.streak_days} day streak — keep it going!`
+                : 'Practice today to start a streak.'}
+            </p>
+          </div>
+          <div className="no-print flex items-center gap-2">
+            {/* Leaderboard is now the sidebar's own link -- kept here would be a duplicate. Make a
+              paper stays as the page's primary call to action even though Generate Paper is also
+              in the sidebar now. */}
+            <a href="/my-paper">
+              <Button size="sm">Make a paper</Button>
+            </a>
+            <Button
+              variant="ghost"
+              size="sm"
+              onClick={() => signOut().then(() => navigate({ to: '/' }))}
+            >
+              Sign out
             </Button>
-          </a>
-          <ThemeToggle />
-          <Button
-            variant="ghost"
-            size="sm"
-            onClick={() => signOut().then(() => navigate({ to: '/' }))}
-          >
-            Sign out
-          </Button>
+          </div>
         </div>
-      </div>
 
-      {sharing && (sharing.invites.length > 0 || sharing.linkedTo) && (
-        <Card className="mb-4">
-          <CardHeader>
-            <CardTitle className="text-h3">Sharing your progress</CardTitle>
-            <CardDescription>
-              Only people you approve can see your progress. You can stop at any
-              time.
-            </CardDescription>
-          </CardHeader>
-          <CardContent className="space-y-3">
-            {sharingError && (
-              <p className="text-small text-destructive" role="alert">
-                {sharingError}
-              </p>
-            )}
-            {sharing.linkedTo && (
-              <div className="flex items-center justify-between rounded-md border p-3">
-                <p className="text-body">
-                  {sharing.linkedTo.guardian_name} (
-                  {sharing.linkedTo.guardian_role}) can see your progress.
+        {sharing && (sharing.invites.length > 0 || sharing.linkedTo) && (
+          <Card className="mb-4">
+            <CardHeader>
+              <CardTitle className="text-h3">Sharing your progress</CardTitle>
+              <CardDescription>
+                Only people you approve can see your progress. You can stop at
+                any time.
+              </CardDescription>
+            </CardHeader>
+            <CardContent className="space-y-3">
+              {sharingError && (
+                <p className="text-small text-destructive" role="alert">
+                  {sharingError}
                 </p>
-                <Button
-                  size="sm"
-                  variant="outline"
-                  onClick={() => void stopSharing()}
-                >
-                  Stop sharing
-                </Button>
-              </div>
-            )}
-            {sharing.invites.map((inv) => (
-              <div
-                key={inv.id}
-                className="flex items-center justify-between gap-3 rounded-md border p-3"
-              >
-                <p className="text-body">
-                  {inv.guardian_name} ({inv.guardian_role}) wants to follow your
-                  progress.
-                </p>
-                <div className="flex gap-2">
-                  <Button size="sm" onClick={() => void answerInvite(inv.id, true)}>
-                    Approve
-                  </Button>
+              )}
+              {sharing.linkedTo && (
+                <div className="flex items-center justify-between rounded-md border p-3">
+                  <p className="text-body">
+                    {sharing.linkedTo.guardian_name} (
+                    {sharing.linkedTo.guardian_role}) can see your progress.
+                  </p>
                   <Button
                     size="sm"
                     variant="outline"
-                    onClick={() => void answerInvite(inv.id, false)}
+                    onClick={() => void stopSharing()}
                   >
-                    Decline
+                    Stop sharing
                   </Button>
                 </div>
-              </div>
-            ))}
-          </CardContent>
-        </Card>
-      )}
-
-      {overview ? (
-        <div className="mb-4">
-          <AdaptiveOverview data={overview} chips={chips} afterRecommended={papersCard} />
-        </div>
-      ) : (
-        papersCard && <div className="mb-4">{papersCard}</div>
-      )}
-
-      {loading && <p className="text-body text-muted-foreground">Loading…</p>}
-
-      {dashboard && (
-        <div className="space-y-4">
-          {dashboard.today_focus && (
-            <Card>
-              <CardHeader>
-                <CardTitle className="text-h3">Today's focus</CardTitle>
-                <CardDescription>
-                  A good concept to practice next.
-                </CardDescription>
-              </CardHeader>
-              <CardContent>
-                <p className="text-body">{dashboard.today_focus.concept_name}</p>
-              </CardContent>
-            </Card>
-          )}
-
-          <Card>
-            <CardHeader>
-              <CardTitle className="text-h3">Chapter mastery</CardTitle>
-            </CardHeader>
-            <CardContent>
-              {dashboard.chapters.length === 0 ? (
-                <p className="text-body text-muted-foreground">
-                  No chapters attempted yet — your first paper will show up
-                  here.
-                </p>
-              ) : (
-                <div className="flex flex-wrap gap-6">
-                  {dashboard.chapters.map((c) => (
-                    <MasteryRing
-                      key={c.chapter_id}
-                      percent={c.mastery_pct}
-                      label={c.chapter_name}
-                    />
-                  ))}
-                </div>
               )}
+              {sharing.invites.map((inv) => (
+                <div
+                  key={inv.id}
+                  className="flex items-center justify-between gap-3 rounded-md border p-3"
+                >
+                  <p className="text-body">
+                    {inv.guardian_name} ({inv.guardian_role}) wants to follow
+                    your progress.
+                  </p>
+                  <div className="flex gap-2">
+                    <Button
+                      size="sm"
+                      onClick={() => void answerInvite(inv.id, true)}
+                    >
+                      Approve
+                    </Button>
+                    <Button
+                      size="sm"
+                      variant="outline"
+                      onClick={() => void answerInvite(inv.id, false)}
+                    >
+                      Decline
+                    </Button>
+                  </div>
+                </div>
+              ))}
             </CardContent>
           </Card>
+        )}
 
-          {dashboard.recent_improvements.length > 0 && (
+        {overview ? (
+          <div className="mb-4">
+            <AdaptiveOverview
+              data={overview}
+              chips={chips}
+              afterRecommended={papersCard}
+            />
+          </div>
+        ) : (
+          papersCard && <div className="mb-4">{papersCard}</div>
+        )}
+
+        {loading && <p className="text-body text-muted-foreground">Loading…</p>}
+
+        {dashboard && (
+          <div className="space-y-4">
+            {dashboard.today_focus && (
+              <Card>
+                <CardHeader>
+                  <CardTitle className="text-h3">Today's focus</CardTitle>
+                  <CardDescription>
+                    A good concept to practice next.
+                  </CardDescription>
+                </CardHeader>
+                <CardContent>
+                  <p className="text-body">
+                    {dashboard.today_focus.concept_name}
+                  </p>
+                </CardContent>
+              </Card>
+            )}
+
             <Card>
               <CardHeader>
-                <CardTitle className="text-h3">Recent wins</CardTitle>
+                <CardTitle className="text-h3">Chapter mastery</CardTitle>
               </CardHeader>
               <CardContent>
-                <ul className="text-body list-inside list-disc">
-                  {dashboard.recent_improvements.map((c) => (
-                    <li key={c.concept_id}>{c.concept_name}</li>
-                  ))}
-                </ul>
+                {dashboard.chapters.length === 0 ? (
+                  <p className="text-body text-muted-foreground">
+                    No chapters attempted yet — your first paper will show up
+                    here.
+                  </p>
+                ) : (
+                  <div className="flex flex-wrap gap-6">
+                    {dashboard.chapters.map((c) => (
+                      <MasteryRing
+                        key={c.chapter_id}
+                        percent={c.mastery_pct}
+                        label={c.chapter_name}
+                      />
+                    ))}
+                  </div>
+                )}
               </CardContent>
             </Card>
-          )}
-        </div>
-      )}
-    </div>
+
+            {dashboard.recent_improvements.length > 0 && (
+              <Card>
+                <CardHeader>
+                  <CardTitle className="text-h3">Recent wins</CardTitle>
+                </CardHeader>
+                <CardContent>
+                  <ul className="text-body list-inside list-disc">
+                    {dashboard.recent_improvements.map((c) => (
+                      <li key={c.concept_id}>{c.concept_name}</li>
+                    ))}
+                  </ul>
+                </CardContent>
+              </Card>
+            )}
+          </div>
+        )}
+      </div>
+    </AppShell>
   )
 }

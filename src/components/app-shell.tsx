@@ -1,26 +1,32 @@
 import type { ReactNode } from 'react'
 import { ThemeToggle } from './theme-toggle'
 
-// A persistent sidebar shell for the parent-facing screens (F005: the design system's second
-// real screen to use it beyond /generate itself, in the sense that this is the first shared
-// layout piece more than one screen can reuse). Deliberately built from real routes only --
-// "Practice Tests" and "Question Bank" from the reference mockup have no real parent-facing page
-// (Question Bank is admin-only, under /admin/questions) so they are left out rather than linking
-// to something that does not exist. tab06's /papers "Paper library" screen is ALSO not built yet
-// (F123's own commit notes flag this exact gap -- only the student-facing paper list on /student
-// exists) -- 'papers' stays in the type below so this shell is ready the day that screen ships,
-// but the nav item itself is commented out until then; do not uncomment it without actually
-// building /papers first. Not yet wired into every screen (tab06 has 24 of them); each screen
-// opts in by wrapping itself in <AppShell>, same as any other shared component.
+// A persistent sidebar shell, in two variants -- 'parent' (the original: Home/Generate
+// Paper/Progress/Settings) and 'student' (Home/Generate Paper/Leaderboard, added at the user's
+// explicit request 2026-09-22 so a student landing here after sign-up gets the same sidebar+hero
+// treatment, not just her parent). Each variant is built from that role's own real, reachable
+// routes only -- a student's "Generate Paper" goes to /my-paper (her adaptive practice paper,
+// AI-graded, no parent needed per CLAUDE.md's 2026-09-20 exception), never /generate, which
+// redirects a student role away; a student has no /settings or /tracker/:id access at all, so
+// neither appears in her nav. "Practice Tests" and "Question Bank" from the original reference
+// mockup still have no real page for either role and stay left out. tab06's /papers "Paper
+// library" is also still unbuilt (F123's own commit notes) -- 'papers' stays in the type below,
+// ready the day that screen ships, but its nav item stays commented out until then.
 export type AppShellActive =
-  'home' | 'generate' | 'papers' | 'progress' | 'settings'
+  'home' | 'generate' | 'papers' | 'progress' | 'settings' | 'leaderboard'
+export type AppShellVariant = 'parent' | 'student'
 
 interface AppShellProps {
+  /** Defaults to 'parent' -- every call site before the student variant existed already means
+   * that. */
+  variant?: AppShellVariant
   /** null for a real screen that just has no nav item of its own (e.g. /onboarding, reached via
    * a link on /home rather than the sidebar itself) -- no item highlights, rather than picking a
    * misleading nearest match. */
   active: AppShellActive | null
-  /** The parent's currently-relevant student, for the Progress link (/tracker/:studentId). Progress is left out of the nav entirely when this is not known yet, rather than linking somewhere broken. */
+  /** Parent variant only: the parent's currently-relevant student, for the Progress link
+   * (/tracker/:studentId). Progress is left out of the nav entirely when this is not known yet,
+   * rather than linking somewhere broken. Unused by the student variant. */
   studentId?: string | null
   children: ReactNode
 }
@@ -96,40 +102,80 @@ function SettingsIcon() {
     </svg>
   )
 }
+function LeaderboardIcon() {
+  return (
+    <svg
+      width="17"
+      height="17"
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="2"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+    >
+      <path d="M8 21h8M12 17v4" />
+      <path d="M7 4h10v6a5 5 0 0 1-10 0Z" />
+      <path d="M7 6H4a1 1 0 0 0-1 1v1a3 3 0 0 0 3 3M17 6h3a1 1 0 0 1 1 1v1a3 3 0 0 1-3 3" />
+    </svg>
+  )
+}
 
-export function AppShell({ active, studentId, children }: AppShellProps) {
+export function AppShell({
+  variant = 'parent',
+  active,
+  studentId,
+  children,
+}: AppShellProps) {
   const items: Array<{
     key: AppShellActive
     label: string
     href: string
     icon: ReactNode
-  }> = [
-    { key: 'home', label: 'Home', href: '/home', icon: <HomeIcon /> },
-    {
-      key: 'generate',
-      label: 'Generate Paper',
-      href: '/generate',
-      icon: <GenerateIcon />,
-    },
-    // 'My Papers' intentionally omitted -- /papers does not exist yet (see the note above
-    // AppShellActive). PapersIcon stays imported/used once it does.
-    ...(studentId
+  }> =
+    variant === 'student'
       ? [
+          { key: 'home', label: 'Home', href: '/student', icon: <HomeIcon /> },
           {
-            key: 'progress' as const,
-            label: 'Progress',
-            href: `/tracker/${studentId}`,
-            icon: <ProgressIcon />,
+            key: 'generate',
+            label: 'Generate Paper',
+            href: '/my-paper',
+            icon: <GenerateIcon />,
+          },
+          {
+            key: 'leaderboard',
+            label: 'Leaderboard',
+            href: '/leaderboard',
+            icon: <LeaderboardIcon />,
           },
         ]
-      : []),
-    {
-      key: 'settings',
-      label: 'Settings',
-      href: '/settings',
-      icon: <SettingsIcon />,
-    },
-  ]
+      : [
+          { key: 'home', label: 'Home', href: '/home', icon: <HomeIcon /> },
+          {
+            key: 'generate',
+            label: 'Generate Paper',
+            href: '/generate',
+            icon: <GenerateIcon />,
+          },
+          // 'My Papers' intentionally omitted -- /papers does not exist yet (see the note above
+          // AppShellActive). PapersIcon stays imported/used once it does.
+          ...(studentId
+            ? [
+                {
+                  key: 'progress' as const,
+                  label: 'Progress',
+                  href: `/tracker/${studentId}`,
+                  icon: <ProgressIcon />,
+                },
+              ]
+            : []),
+          {
+            key: 'settings',
+            label: 'Settings',
+            href: '/settings',
+            icon: <SettingsIcon />,
+          },
+        ]
 
   return (
     <div className="flex min-h-screen">

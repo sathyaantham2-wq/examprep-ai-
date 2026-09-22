@@ -8,7 +8,7 @@ import {
   CardHeader,
   CardTitle,
 } from '../components/ui/card'
-import { ThemeToggle } from '../components/theme-toggle'
+import { AppShell } from '../components/app-shell'
 import { useSession } from '../lib/auth-client'
 
 export const Route = createFileRoute('/leaderboard')({ component: Leaderboard })
@@ -27,7 +27,12 @@ interface LeaderboardEntry {
 
 interface LeaderboardView {
   entries: Array<LeaderboardEntry>
-  me: { points: number; rank: number | null; optedIn: boolean; nickname: string | null } | null
+  me: {
+    points: number
+    rank: number | null
+    optedIn: boolean
+    nickname: string | null
+  } | null
 }
 
 /**
@@ -60,12 +65,21 @@ function Leaderboard() {
       .then(
         (data: {
           profile: { board: string; class: number; subject_ids: Array<string> }
-          options: Array<{ board: string; class: number; subjects: Array<ProfileSubject> }>
+          options: Array<{
+            board: string
+            class: number
+            subjects: Array<ProfileSubject>
+          }>
         }) => {
           const offered =
-            data.options.find((o) => o.board === data.profile.board && o.class === data.profile.class)
-              ?.subjects ?? []
-          const mine = offered.filter((s) => data.profile.subject_ids.includes(s.id) && s.has_content)
+            data.options.find(
+              (o) =>
+                o.board === data.profile.board &&
+                o.class === data.profile.class,
+            )?.subjects ?? []
+          const mine = offered.filter(
+            (s) => data.profile.subject_ids.includes(s.id) && s.has_content,
+          )
           setSubjects(mine)
           if (mine.length > 0) setSubjectId(mine[0].id)
         },
@@ -135,135 +149,137 @@ function Leaderboard() {
   }
 
   return (
-    <div className="mx-auto max-w-2xl p-4 sm:p-8">
-      <div className="mb-6 flex items-center justify-between">
-        <div>
+    <AppShell variant="student" active="leaderboard">
+      <div className="mx-auto max-w-2xl p-4 sm:p-8">
+        <div className="mb-6">
           <h1 className="text-h1">Leaderboard</h1>
           <p className="text-body text-muted-foreground">
             Points for correct answers -- harder questions pay more.
           </p>
         </div>
-        <div className="no-print flex items-center gap-2">
-          <a href="/student">
-            <Button variant="ghost" size="sm">
-              Back
-            </Button>
-          </a>
-          <ThemeToggle />
-        </div>
-      </div>
 
-      {subjects.length > 1 && (
-        <div className="mb-4 flex flex-wrap gap-2" role="radiogroup" aria-label="Subject">
-          {subjects.map((s) => (
-            <Button
-              key={s.id}
-              type="button"
-              size="sm"
-              variant={s.id === subjectId ? 'default' : 'outline'}
-              onClick={() => setSubjectId(s.id)}
-            >
-              {s.name}
-            </Button>
-          ))}
-        </div>
-      )}
-
-      {error && (
-        <p className="text-small text-destructive mb-4" role="alert">
-          {error}
-        </p>
-      )}
-
-      {view?.me && (
-        <Card className="mb-4">
-          <CardHeader>
-            <CardTitle className="text-h3">You</CardTitle>
-            <CardDescription>
-              {view.me.optedIn
-                ? "Visible on the leaderboard below as your nickname -- never your real name."
-                : 'Your points are private until you join the leaderboard below.'}
-            </CardDescription>
-          </CardHeader>
-          <CardContent className="space-y-3">
-            <div className="text-body flex items-center justify-between">
-              <span className="text-muted-foreground">Points</span>
-              <span className="font-medium">{view.me.points}</span>
-            </div>
-            {view.me.optedIn && (
-              <>
-                <div className="text-body flex items-center justify-between">
-                  <span className="text-muted-foreground">Your rank</span>
-                  <span className="font-medium">{view.me.rank ?? '—'}</span>
-                </div>
-                <div className="text-body flex items-center justify-between">
-                  <span className="text-muted-foreground">Your nickname</span>
-                  <span className="font-medium">{view.me.nickname}</span>
-                </div>
-              </>
-            )}
-            <div className="flex flex-wrap gap-2 pt-1">
+        {subjects.length > 1 && (
+          <div
+            className="mb-4 flex flex-wrap gap-2"
+            role="radiogroup"
+            aria-label="Subject"
+          >
+            {subjects.map((s) => (
               <Button
+                key={s.id}
                 type="button"
                 size="sm"
-                disabled={saving}
-                onClick={() => void toggleOptIn(!view.me!.optedIn)}
+                variant={s.id === subjectId ? 'default' : 'outline'}
+                onClick={() => setSubjectId(s.id)}
               >
-                {view.me.optedIn ? 'Leave the leaderboard' : 'Join the leaderboard'}
+                {s.name}
               </Button>
+            ))}
+          </div>
+        )}
+
+        {error && (
+          <p className="text-small text-destructive mb-4" role="alert">
+            {error}
+          </p>
+        )}
+
+        {view?.me && (
+          <Card className="mb-4">
+            <CardHeader>
+              <CardTitle className="text-h3">You</CardTitle>
+              <CardDescription>
+                {view.me.optedIn
+                  ? 'Visible on the leaderboard below as your nickname -- never your real name.'
+                  : 'Your points are private until you join the leaderboard below.'}
+              </CardDescription>
+            </CardHeader>
+            <CardContent className="space-y-3">
+              <div className="text-body flex items-center justify-between">
+                <span className="text-muted-foreground">Points</span>
+                <span className="font-medium">{view.me.points}</span>
+              </div>
               {view.me.optedIn && (
+                <>
+                  <div className="text-body flex items-center justify-between">
+                    <span className="text-muted-foreground">Your rank</span>
+                    <span className="font-medium">{view.me.rank ?? '—'}</span>
+                  </div>
+                  <div className="text-body flex items-center justify-between">
+                    <span className="text-muted-foreground">Your nickname</span>
+                    <span className="font-medium">{view.me.nickname}</span>
+                  </div>
+                </>
+              )}
+              <div className="flex flex-wrap gap-2 pt-1">
                 <Button
                   type="button"
                   size="sm"
-                  variant="outline"
                   disabled={saving}
-                  onClick={() => void rerollNickname()}
+                  onClick={() => void toggleOptIn(!view.me!.optedIn)}
                 >
-                  New nickname
+                  {view.me.optedIn
+                    ? 'Leave the leaderboard'
+                    : 'Join the leaderboard'}
                 </Button>
-              )}
-            </div>
+                {view.me.optedIn && (
+                  <Button
+                    type="button"
+                    size="sm"
+                    variant="outline"
+                    disabled={saving}
+                    onClick={() => void rerollNickname()}
+                  >
+                    New nickname
+                  </Button>
+                )}
+              </div>
+            </CardContent>
+          </Card>
+        )}
+
+        <Card>
+          <CardHeader>
+            <CardTitle className="text-h3">Top of the class</CardTitle>
+            <CardDescription>
+              Same board, class and subject as you. Anonymous names only.
+            </CardDescription>
+          </CardHeader>
+          <CardContent>
+            {loading && (
+              <p className="text-body text-muted-foreground">Loading…</p>
+            )}
+            {!loading && view && view.entries.length === 0 && (
+              <p className="text-body text-muted-foreground">
+                Nobody has joined the leaderboard here yet -- be the first!
+              </p>
+            )}
+            {!loading && view && view.entries.length > 0 && (
+              <table className="text-small w-full">
+                <thead>
+                  <tr className="text-left text-muted-foreground">
+                    <th className="pb-2 font-normal">Rank</th>
+                    <th className="pb-2 font-normal">Nickname</th>
+                    <th className="pb-2 text-right font-normal">Points</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {view.entries.map((e) => (
+                    <tr
+                      key={e.rank}
+                      className={`border-t ${e.nickname === view.me?.nickname ? 'bg-primary/5' : ''}`}
+                    >
+                      <td className="py-2 pr-2">{e.rank}</td>
+                      <td className="py-2 pr-2">{e.nickname}</td>
+                      <td className="py-2 text-right">{e.points}</td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            )}
           </CardContent>
         </Card>
-      )}
-
-      <Card>
-        <CardHeader>
-          <CardTitle className="text-h3">Top of the class</CardTitle>
-          <CardDescription>Same board, class and subject as you. Anonymous names only.</CardDescription>
-        </CardHeader>
-        <CardContent>
-          {loading && <p className="text-body text-muted-foreground">Loading…</p>}
-          {!loading && view && view.entries.length === 0 && (
-            <p className="text-body text-muted-foreground">
-              Nobody has joined the leaderboard here yet -- be the first!
-            </p>
-          )}
-          {!loading && view && view.entries.length > 0 && (
-            <table className="text-small w-full">
-              <thead>
-                <tr className="text-left text-muted-foreground">
-                  <th className="pb-2 font-normal">Rank</th>
-                  <th className="pb-2 font-normal">Nickname</th>
-                  <th className="pb-2 text-right font-normal">Points</th>
-                </tr>
-              </thead>
-              <tbody>
-                {view.entries.map((e) => (
-                  <tr
-                    key={e.rank}
-                    className={`border-t ${e.nickname === view.me?.nickname ? 'bg-primary/5' : ''}`}
-                  >
-                    <td className="py-2 pr-2">{e.rank}</td>
-                    <td className="py-2 pr-2">{e.nickname}</td>
-                    <td className="py-2 text-right">{e.points}</td>
-                  </tr>
-                ))}
-              </tbody>
-            </table>
-          )}
-        </CardContent>
-      </Card>
-    </div>
+      </div>
+    </AppShell>
   )
 }
