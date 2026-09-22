@@ -10,7 +10,7 @@ import {
 import { Label } from '../components/ui/label'
 import { ThemeToggle } from '../components/theme-toggle'
 import { useSession } from '../lib/auth-client'
-import { PAPER_THEMES, DEFAULT_THEME } from '../lib/pdf/themes'
+import { PAPER_THEMES, DEFAULT_THEME, THEME_BLURB } from '../lib/pdf/themes'
 import type { PaperTheme } from '../lib/pdf/themes'
 
 export const Route = createFileRoute('/generate')({ component: GeneratePaper })
@@ -51,14 +51,6 @@ interface GenerateResult {
   paper: { id: string; total_marks: number }
   paperQuestions: Array<unknown>
   shortfalls: Array<Shortfall>
-}
-
-// F034/F120: one short line per theme, describing the pack's actual ornament (themes.ts) rather
-// than inventing new copy -- Clean School deliberately carries none.
-const THEME_BLURB: Record<PaperTheme, string> = {
-  'Clean School': 'No ornament. Plain, exam-standard layout.',
-  'Doodle Journal': 'An original hand-drawn-style squiggle border.',
-  Manga: 'Bold original speed-line corner artwork.',
 }
 
 function GeneratePaper() {

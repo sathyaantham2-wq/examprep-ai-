@@ -20,6 +20,15 @@ export function isKnownTheme(value: string | null | undefined): value is PaperTh
   return (PAPER_THEMES as readonly string[]).includes(value ?? '')
 }
 
+// One short, factual line per theme for any screen that lets someone pick one (parent's
+// /generate, student's /my-paper) -- describes the pack's actual ornament above rather than
+// duplicating copy per screen. Clean School deliberately carries none.
+export const THEME_BLURB: Record<PaperTheme, string> = {
+  'Clean School': 'No ornament. Plain, exam-standard layout.',
+  'Doodle Journal': 'An original hand-drawn-style squiggle border.',
+  Manga: 'Bold original speed-line corner artwork.',
+}
+
 export interface ThemePack {
   fontFamily: string
   headerBorder: string

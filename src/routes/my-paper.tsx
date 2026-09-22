@@ -11,6 +11,8 @@ import {
 import { SubjectCard } from '../components/subject-card'
 import { ThemeToggle } from '../components/theme-toggle'
 import { useSession } from '../lib/auth-client'
+import { PAPER_THEMES, DEFAULT_THEME, THEME_BLURB } from '../lib/pdf/themes'
+import type { PaperTheme } from '../lib/pdf/themes'
 
 export const Route = createFileRoute('/my-paper')({
   component: MyPaper,
@@ -71,6 +73,11 @@ function MyPaper() {
   const [loadingPlan, setLoadingPlan] = useState(false)
   const [error, setError] = useState<string | null>(null)
   const [starting, setStarting] = useState(false)
+  // No F-number covers the adaptive layer itself yet (see memory examprep_adaptive_learning.md)
+  // -- this rides the same already-Done F034/F120 theme pack pipeline the parent's /generate
+  // screen exposes, just on the student's own paper. Hers to pick: it only changes how the PDF
+  // looks, never a mark or a question.
+  const [theme, setTheme] = useState<PaperTheme>(DEFAULT_THEME)
 
   useEffect(() => {
     if (isPending) return
@@ -144,7 +151,12 @@ function MyPaper() {
       const generated = await fetch('/api/papers/generate', {
         method: 'POST',
         headers: { 'content-type': 'application/json' },
-        body: JSON.stringify({ adaptive: true, subject_id: subjectId, chapter_ids: chapterIds }),
+        body: JSON.stringify({
+          adaptive: true,
+          subject_id: subjectId,
+          chapter_ids: chapterIds,
+          theme,
+        }),
       })
       const paper = await generated.json()
       if (!generated.ok) {
@@ -316,6 +328,38 @@ function MyPaper() {
                   ))}
                 </tbody>
               </table>
+            </CardContent>
+          </Card>
+
+          <Card>
+            <CardHeader>
+              <CardTitle className="text-h3">Paper look</CardTitle>
+              <CardDescription>Just the PDF's style -- pick whichever you like.</CardDescription>
+            </CardHeader>
+            <CardContent>
+              <div className="grid gap-3 sm:grid-cols-3">
+                {PAPER_THEMES.map((t) => (
+                  <label
+                    key={t}
+                    className={`has-[:focus-visible]:ring-ring flex cursor-pointer flex-col gap-1 rounded-lg border p-3 transition-colors has-[:focus-visible]:ring-2 ${
+                      theme === t
+                        ? 'border-primary bg-primary/5 ring-primary ring-1'
+                        : 'border-input hover:bg-muted/50'
+                    }`}
+                  >
+                    <input
+                      type="radio"
+                      name="theme"
+                      value={t}
+                      checked={theme === t}
+                      onChange={() => setTheme(t)}
+                      className="sr-only"
+                    />
+                    <span className="text-small font-semibold">{t}</span>
+                    <span className="text-caption text-muted-foreground">{THEME_BLURB[t]}</span>
+                  </label>
+                ))}
+              </div>
             </CardContent>
           </Card>
 
