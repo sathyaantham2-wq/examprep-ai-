@@ -69,6 +69,10 @@ const generateSchema = z
     theme: z.enum(PAPER_THEMES).optional(),
     // F119: this is a ceiling on difficulty, never a filter on which concepts get picked.
     difficulty_ceiling: z.enum(DIFFICULTY_TIERS).optional(),
+    // Adaptive mode only -- overrides buildPaperPlan's mastery-driven size/mix. Ignored by
+    // blueprint-driven generation, same as adaptive/subject_id are.
+    adaptive_question_count: z.number().int().positive().optional(),
+    adaptive_question_type: z.enum(['combined', 'mcq', 'written']).optional(),
     weighting_override: weightingSchema.optional(),
     // F113: overrides the concept-count-proportional per-chapter marks split.
     chapter_weighting_override: chapterWeightingSchema.optional(),
@@ -195,6 +199,8 @@ export const Route = createFileRoute('/api/papers/generate')({
             studentId: student.id,
             subjectId: parsed.data.subject_id!,
             chapterIds: parsed.data.chapter_ids,
+            questionCount: parsed.data.adaptive_question_count,
+            questionType: parsed.data.adaptive_question_type,
           })
           if (!plan) {
             return Response.json(

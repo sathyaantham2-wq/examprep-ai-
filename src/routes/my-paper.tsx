@@ -20,6 +20,24 @@ export const Route = createFileRoute('/my-paper')({
   }),
 })
 
+// Real tiers, not "Medium" -- same DIFFICULTY_TIERS /generate.tsx uses (sourced from
+// src/routes/api/papers/generate.ts). '' means no ceiling (F119's default: every difficulty
+// stays eligible, weighted toward weak/priority concepts).
+const DIFFICULTY_TIERS = ['Easy', 'Hard', 'Hardest'] as const
+type DifficultyTier = (typeof DIFFICULTY_TIERS)[number]
+
+// Mirrors src/lib/adaptive/plan.ts's QUESTION_COUNT_OPTIONS -- kept as a local literal rather
+// than an import, since that file pulls in server-only modules (db/connection, pg) that must
+// never end up in the client bundle.
+const QUESTION_COUNT_OPTIONS = [10, 20, 30] as const
+
+const QUESTION_TYPES = [
+  { value: 'combined', label: 'Combined' },
+  { value: 'mcq', label: 'Multiple choice' },
+  { value: 'written', label: 'Written' },
+] as const
+type QuestionType = (typeof QUESTION_TYPES)[number]['value']
+
 interface ProfileSubject {
   id: string
   name: string
@@ -82,6 +100,16 @@ function MyPaper() {
   // still renders through the same already-Done F034/F120 theme pack pipeline, just fixed to the
   // default theme rather than exposing a choice.
 
+  // Real, student-driven controls -- unlike the theme, these actually change what gets generated
+  // (buildPaperPlan honours all three; difficulty_ceiling already worked for adaptive papers
+  // before this screen exposed it, same as /generate's F119 selector).
+  const [questionCount, setQuestionCount] =
+    useState<(typeof QUESTION_COUNT_OPTIONS)[number]>(10)
+  const [questionType, setQuestionType] = useState<QuestionType>('combined')
+  const [difficultyCeiling, setDifficultyCeiling] = useState<
+    DifficultyTier | ''
+  >('')
+
   useEffect(() => {
     if (isPending) return
     if (!session || role !== 'student') {
@@ -126,14 +154,27 @@ function MyPaper() {
     fetch(`/api/syllabus/chapters?subject_id=${subjectId}`)
       .then((r) => r.json())
       .then((data: Array<ChapterChoice>) => setAllChapters(data))
-    void loadPlan(subjectId, null)
+    void loadPlan(subjectId, null, questionCount, questionType)
+    // Only the subject should reset chapters and re-fetch them -- questionCount/questionType
+    // changes reuse the current chapter selection via their own handlers (updateQuestionCount/
+    // updateQuestionType below) instead of an effect, so they're deliberately not dependencies
+    // here.
   }, [subjectId])
 
-  async function loadPlan(subject: string, chapters: Array<string> | null) {
+  async function loadPlan(
+    subject: string,
+    chapters: Array<string> | null,
+    count: number,
+    type: QuestionType,
+  ) {
     setLoadingPlan(true)
     setError(null)
     try {
-      const query = new URLSearchParams({ subject_id: subject })
+      const query = new URLSearchParams({
+        subject_id: subject,
+        question_count: String(count),
+        question_type: type,
+      })
       if (chapters && chapters.length > 0)
         query.set('chapter_ids', chapters.join(','))
       const response = await fetch(`/api/adaptive/plan?${query}`)
@@ -158,7 +199,17 @@ function MyPaper() {
       : [...current, id]
     if (next.length === 0) return
     setChapterIds(next)
-    void loadPlan(subjectId, next)
+    void loadPlan(subjectId, next, questionCount, questionType)
+  }
+
+  function updateQuestionCount(count: (typeof QUESTION_COUNT_OPTIONS)[number]) {
+    setQuestionCount(count)
+    if (subjectId) void loadPlan(subjectId, chapterIds, count, questionType)
+  }
+
+  function updateQuestionType(type: QuestionType) {
+    setQuestionType(type)
+    if (subjectId) void loadPlan(subjectId, chapterIds, questionCount, type)
   }
 
   async function startTest() {
@@ -174,6 +225,11 @@ function MyPaper() {
           subject_id: subjectId,
           chapter_ids: chapterIds,
           theme: DEFAULT_THEME,
+          adaptive_question_count: questionCount,
+          adaptive_question_type: questionType,
+          ...(difficultyCeiling
+            ? { difficulty_ceiling: difficultyCeiling }
+            : {}),
         }),
       })
       const paper = await generated.json()
@@ -289,112 +345,125 @@ function MyPaper() {
           </Card>
         )}
 
-        {withContent.length > 1 && (
-          <div className="mb-4 max-w-xs space-y-1.5">
-            <Label htmlFor="my-paper-subject">Subject</Label>
-            <select
-              id="my-paper-subject"
-              className="border-input flex h-9 w-full rounded-md border bg-transparent px-3 text-sm shadow-xs"
-              value={subjectId}
-              onChange={(e) => setSubjectId(e.target.value)}
-            >
-              {withContent.map((s) => (
-                <option key={s.id} value={s.id}>
-                  {s.name}
-                </option>
-              ))}
-            </select>
-          </div>
-        )}
+        {withContent.length > 0 && (
+          <Card className="mb-4">
+            <CardHeader>
+              <CardTitle className="text-h3">Assessment details</CardTitle>
+            </CardHeader>
+            <CardContent>
+              <div className="grid gap-4 sm:grid-cols-2">
+                <div className="space-y-1.5">
+                  <Label htmlFor="my-paper-subject">Subject</Label>
+                  <select
+                    id="my-paper-subject"
+                    className="border-input flex h-9 w-full rounded-md border bg-transparent px-3 text-sm shadow-xs"
+                    value={subjectId}
+                    onChange={(e) => setSubjectId(e.target.value)}
+                  >
+                    {withContent.map((s) => (
+                      <option key={s.id} value={s.id}>
+                        {s.name}
+                      </option>
+                    ))}
+                  </select>
+                </div>
 
-        {loadingPlan && !plan && (
-          <p className="text-body text-muted-foreground">
-            Preparing your paper…
-          </p>
+                <div className="space-y-1.5">
+                  <Label htmlFor="my-paper-questions">Questions</Label>
+                  <select
+                    id="my-paper-questions"
+                    className="border-input flex h-9 w-full rounded-md border bg-transparent px-3 text-sm shadow-xs"
+                    value={questionCount}
+                    onChange={(e) =>
+                      updateQuestionCount(
+                        Number(e.target.value) as (typeof QUESTION_COUNT_OPTIONS)[number],
+                      )
+                    }
+                  >
+                    {QUESTION_COUNT_OPTIONS.map((n) => (
+                      <option key={n} value={n}>
+                        {n} questions
+                      </option>
+                    ))}
+                  </select>
+                </div>
+
+                <div className="space-y-1.5">
+                  <Label htmlFor="my-paper-difficulty">Difficulty</Label>
+                  <select
+                    id="my-paper-difficulty"
+                    className="border-input flex h-9 w-full rounded-md border bg-transparent px-3 text-sm shadow-xs"
+                    value={difficultyCeiling}
+                    onChange={(e) =>
+                      setDifficultyCeiling(e.target.value as DifficultyTier | '')
+                    }
+                  >
+                    <option value="">Any (auto)</option>
+                    {DIFFICULTY_TIERS.map((tier) => (
+                      <option key={tier} value={tier}>
+                        {tier}
+                      </option>
+                    ))}
+                  </select>
+                </div>
+
+                <div className="space-y-1.5">
+                  <Label>Time</Label>
+                  <div className="border-input text-muted-foreground flex h-9 w-full items-center gap-2 rounded-md border bg-transparent px-3 text-sm">
+                    <svg
+                      width="14"
+                      height="14"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      strokeWidth="2"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      className="shrink-0"
+                    >
+                      <circle cx="12" cy="12" r="9" />
+                      <path d="M12 7v5l3 3" />
+                    </svg>
+                    {plan ? `About ${plan.estimated_minutes} min` : '—'}
+                  </div>
+                </div>
+
+                <div className="space-y-1.5 sm:col-span-2">
+                  <Label htmlFor="my-paper-question-type">
+                    Question type
+                  </Label>
+                  <select
+                    id="my-paper-question-type"
+                    className="border-input flex h-9 w-full rounded-md border bg-transparent px-3 text-sm shadow-xs"
+                    value={questionType}
+                    onChange={(e) =>
+                      updateQuestionType(e.target.value as QuestionType)
+                    }
+                  >
+                    {QUESTION_TYPES.map((t) => (
+                      <option key={t.value} value={t.value}>
+                        {t.label}
+                      </option>
+                    ))}
+                  </select>
+                </div>
+              </div>
+
+              <p className="text-caption text-muted-foreground mt-3">
+                {plan
+                  ? `This paper will have ${plan.total_questions} question${plan.total_questions === 1 ? '' : 's'} (${plan.total_marks} marks) -- ${plan.question_types.join(', ')}. Weak and priority concepts still get more questions, same as F119.`
+                  : loadingPlan
+                    ? 'Preparing your paper…'
+                    : questionType === 'written'
+                      ? "Written practice only appears once she's ready for it -- if she isn't yet, this falls back to multiple choice."
+                      : 'Weak and priority concepts get more questions, same as F119.'}
+              </p>
+            </CardContent>
+          </Card>
         )}
 
         {plan && (
           <div className="space-y-4">
-            <Card>
-              <CardHeader>
-                <CardTitle className="text-h3">
-                  {plan.is_initial_assessment
-                    ? 'Your first assessment'
-                    : `${plan.subject_name} practice`}
-                </CardTitle>
-                <CardDescription>
-                  {plan.is_initial_assessment
-                    ? 'Easy questions to find out what you already know. There is no pressure.'
-                    : 'More questions on concepts you are still learning, a few revision questions on the ones you know well.'}
-                </CardDescription>
-              </CardHeader>
-              <CardContent>
-                {/* Every value here comes straight from her mastery -- shown as select-style
-                    boxes to match the rest of the app's paper-setup screens, but they're a
-                    read-only recap, not editable controls: the adaptive plan (weak/priority
-                    concept weighting, question count, difficulty spread) is computed server-side,
-                    not something to override from this screen. */}
-                <div className="grid gap-4 sm:grid-cols-2">
-                  <div className="space-y-1.5">
-                    <Label>Subject</Label>
-                    <div className="border-input flex h-9 w-full items-center rounded-md border bg-transparent px-3 text-sm">
-                      {plan.subject_name}
-                    </div>
-                  </div>
-
-                  <div className="space-y-1.5">
-                    <Label>Questions</Label>
-                    <div className="border-input flex h-9 w-full items-center rounded-md border bg-transparent px-3 text-sm">
-                      {plan.total_questions} ({plan.total_marks} marks)
-                    </div>
-                  </div>
-
-                  <div className="space-y-1.5">
-                    <Label>Difficulty</Label>
-                    <div className="border-input flex h-9 w-full items-center rounded-md border bg-transparent px-3 text-sm">
-                      {plan.difficulty_range.min === plan.difficulty_range.max
-                        ? plan.difficulty_range.min
-                        : `${plan.difficulty_range.min} to ${plan.difficulty_range.max}`}
-                    </div>
-                  </div>
-
-                  <div className="space-y-1.5">
-                    <Label>Time</Label>
-                    <div className="border-input text-muted-foreground flex h-9 w-full items-center gap-2 rounded-md border bg-transparent px-3 text-sm">
-                      <svg
-                        width="14"
-                        height="14"
-                        viewBox="0 0 24 24"
-                        fill="none"
-                        stroke="currentColor"
-                        strokeWidth="2"
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        className="shrink-0"
-                      >
-                        <circle cx="12" cy="12" r="9" />
-                        <path d="M12 7v5l3 3" />
-                      </svg>
-                      About {plan.estimated_minutes} min
-                    </div>
-                  </div>
-
-                  <div className="space-y-1.5 sm:col-span-2">
-                    <Label>Question type</Label>
-                    <div className="border-input flex h-9 w-full items-center rounded-md border bg-transparent px-3 text-sm">
-                      {plan.question_types.length > 1
-                        ? `Combined (${plan.question_types.join(' + ')})`
-                        : plan.question_types[0]}
-                    </div>
-                  </div>
-                </div>
-                <p className="text-caption text-muted-foreground mt-3">
-                  Picked automatically from what she already knows -- weak and
-                  priority concepts get more questions, same as F119.
-                </p>
-              </CardContent>
-            </Card>
-
             {allChapters.length > 1 && (
               <Card>
                 <CardHeader>

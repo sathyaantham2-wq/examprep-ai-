@@ -162,11 +162,15 @@ test('first-time student: profile, personalised home, Easy assessment, marked at
   await expect(page.getByText('Recommended next')).toBeVisible()
   await page.getByRole('link', { name: /Take my first assessment/ }).click()
 
-  // "Generate my question paper": a short Easy assessment made from her profile.
+  // "Generate my question paper": a short Easy assessment made from her profile -- Subject,
+  // Questions, Difficulty and Question type are real controls now, defaulting to the same 10
+  // Easy MCQ-only shape a first assessment always used to be.
   await page.waitForURL('**/my-paper**')
-  await expect(page.getByText('Your first assessment')).toBeVisible()
-  await expect(page.getByText('Easy questions to find out what you already know')).toBeVisible()
-  await expect(page.getByText('10 (10 marks)')).toBeVisible()
+  await expect(page.getByText('Assessment details')).toBeVisible()
+  await expect(page.getByLabel('Questions')).toHaveValue('10')
+  await expect(
+    page.getByText('10 questions (10 marks)', { exact: false }),
+  ).toBeVisible()
   await expect(page.getByText('Multiple choice')).toBeVisible()
   await page.getByRole('button', { name: 'Start test' }).click()
 

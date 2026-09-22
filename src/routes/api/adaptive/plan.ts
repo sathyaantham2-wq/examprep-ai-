@@ -8,6 +8,8 @@ import { wrapRouteHandlers } from '../../../lib/error-log'
 const querySchema = z.object({
   subject_id: z.string().uuid(),
   chapter_ids: z.string().optional(),
+  question_count: z.coerce.number().int().positive().optional(),
+  question_type: z.enum(['combined', 'mcq', 'written']).optional(),
 })
 
 // The paper recommended for this student and subject: chapters, questions per concept, difficulty
@@ -24,6 +26,8 @@ export const Route = createFileRoute('/api/adaptive/plan')({
         const parsed = querySchema.safeParse({
           subject_id: url.searchParams.get('subject_id') ?? undefined,
           chapter_ids: url.searchParams.get('chapter_ids') ?? undefined,
+          question_count: url.searchParams.get('question_count') ?? undefined,
+          question_type: url.searchParams.get('question_type') ?? undefined,
         })
         if (!parsed.success) {
           return Response.json({ error: parsed.error.flatten() }, { status: 400 })
@@ -40,6 +44,8 @@ export const Route = createFileRoute('/api/adaptive/plan')({
           studentId: resolved.student.id,
           subjectId: parsed.data.subject_id,
           chapterIds,
+          questionCount: parsed.data.question_count,
+          questionType: parsed.data.question_type,
         })
         if (!plan) {
           return Response.json(

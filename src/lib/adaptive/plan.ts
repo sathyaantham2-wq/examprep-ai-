@@ -10,10 +10,16 @@ import {
 } from './weights'
 
 // The size of a recommended paper. Not values the product plan specifies, so they live here in
-// one place: a first assessment is short and Easy, later practice is a little longer.
+// one place: a first assessment is short and Easy, later practice is a little longer. A student
+// can override this (see buildPaperPlan's questionCount) within this range.
 export const INITIAL_QUESTIONS = 10
 export const PRACTICE_QUESTIONS = 12
+export const QUESTION_COUNT_OPTIONS = [10, 20, 30] as const
+const MIN_QUESTION_COUNT = 5
+const MAX_QUESTION_COUNT = 40
 const MAX_RECOMMENDED_CHAPTERS = 2
+
+export type PlanQuestionType = 'combined' | 'mcq' | 'written'
 
 export interface PlanSection {
   name: string
@@ -67,6 +73,17 @@ export async function buildPaperPlan(
     chapterIds?: Array<string>
     // Short and long answer sections for concepts that have moved up. On by default.
     includeWritten?: boolean
+    // Overrides the paper's size (Section A's count). Clamped to a sane range; the student's own
+    // "Questions" dropdown on /my-paper offers QUESTION_COUNT_OPTIONS. Unset keeps the original
+    // mastery-driven default (INITIAL_QUESTIONS / PRACTICE_QUESTIONS).
+    questionCount?: number
+    // 'mcq' drops any written sections a student would otherwise have qualified for; 'written'
+    // keeps only the written ones (and, if she hasn't qualified for any yet, falls back to the
+    // normal MCQ section rather than handing back an empty paper -- a student can ask for written
+    // practice before the adaptive system would have proactively offered it, but not conjure
+    // written questions for concepts that don't have any). Unset ('combined') is the original
+    // mastery-gated mix.
+    questionType?: PlanQuestionType
   },
 ): Promise<PaperPlan | null> {
   const subject = await db
@@ -155,8 +172,12 @@ export async function buildPaperPlan(
   const maxLevel = Math.max(...levels) as AdaptiveLevel
   const avgLevel = levels.reduce((a, b) => a + b, 0) / levels.length
 
-  const objective = isInitial ? INITIAL_QUESTIONS : PRACTICE_QUESTIONS
-  const sections: Array<PlanSection> = [
+  const objective = input.questionCount
+    ? Math.min(MAX_QUESTION_COUNT, Math.max(MIN_QUESTION_COUNT, Math.round(input.questionCount)))
+    : isInitial
+      ? INITIAL_QUESTIONS
+      : PRACTICE_QUESTIONS
+  let sections: Array<PlanSection> = [
     {
       name: 'Section A',
       count: objective,
@@ -181,6 +202,15 @@ export async function buildPaperPlan(
         bloom_allowed: ['Create'],
       })
     }
+  }
+  if (input.questionType === 'mcq') {
+    sections = sections.filter((s) => s.marks_per_question === 1)
+  } else if (input.questionType === 'written') {
+    const written = sections.filter((s) => s.marks_per_question !== 1)
+    // She hasn't qualified for any written section yet -- offer what's actually available
+    // (Section A) rather than an empty paper; F032's "shortfalls are reported, never hidden"
+    // spirit, just for a plan instead of a generated paper.
+    sections = written.length > 0 ? written : sections
   }
   const totalQuestions = sections.reduce((a, s) => s.count + a, 0)
   const totalMarks = sections.reduce((a, s) => a + s.count * s.marks_per_question, 0)
