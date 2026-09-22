@@ -92,27 +92,27 @@ function MyPaper() {
       .then((r) => r.json())
       .then(
         (data: {
-          profile: { board: string; class: number; subject_ids: Array<string> }
+          profile: { board: string; class: number }
           options: Array<{
             board: string
             class: number
             subjects: Array<ProfileSubject>
           }>
         }) => {
+          // Every subject offered for her board + class, not just the ones she pre-selected
+          // during profile setup -- picking a subject now happens right here, at generation
+          // time, instead of being locked in earlier.
           const offered =
             data.options.find(
               (o) =>
                 o.board === data.profile.board &&
                 o.class === data.profile.class,
             )?.subjects ?? []
-          const mine = offered.filter((s) =>
-            data.profile.subject_ids.includes(s.id),
-          )
-          setSubjects(mine)
-          const preferred = mine.find(
+          setSubjects(offered)
+          const preferred = offered.find(
             (s) => s.id === search.subject && s.has_content,
           )
-          const first = preferred ?? mine.find((s) => s.has_content)
+          const first = preferred ?? offered.find((s) => s.has_content)
           if (first) setSubjectId(first.id)
         },
       )

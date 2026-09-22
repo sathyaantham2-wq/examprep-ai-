@@ -2,7 +2,6 @@ import { useState } from 'react'
 import type { ReactNode } from 'react'
 import { Button } from './ui/button'
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from './ui/card'
-import { SubjectCard } from './subject-card'
 
 export interface ConceptView {
   concept_id: string
@@ -92,13 +91,6 @@ export interface AdaptiveOverviewData {
   } | null
 }
 
-export interface SubjectChip {
-  id: string
-  name: string
-  selected: boolean
-  has_content: boolean
-}
-
 // One shade family for every level, so no level reads as a warning colour.
 const LEVEL_STYLE: Record<string, string> = {
   'Not started': 'bg-muted text-muted-foreground',
@@ -119,7 +111,7 @@ export function LevelBadge({ level }: { level: string }) {
   )
 }
 
-function ScoreBar({ score }: { score: number | null }) {
+export function ScoreBar({ score }: { score: number | null }) {
   const pct = Math.max(0, Math.min(100, score ?? 0))
   return (
     <div
@@ -134,11 +126,9 @@ function ScoreBar({ score }: { score: number | null }) {
 
 export function AdaptiveOverview({
   data,
-  chips,
   afterRecommended,
 }: {
   data: AdaptiveOverviewData
-  chips: Array<SubjectChip>
   afterRecommended?: ReactNode
 }) {
   const [openConcept, setOpenConcept] = useState<string | null>(null)
@@ -153,21 +143,6 @@ export function AdaptiveOverview({
             {data.student.class === 0 ? "Competitive exam" : `Class ${data.student.class}`} · {data.student.board === "CIVILS" ? "Civil Services / UPSC" : data.student.board} syllabus
           </CardDescription>
         </CardHeader>
-        <CardContent className="space-y-3">
-          <div className="grid gap-3 sm:grid-cols-2" aria-label="Your subjects">
-            {chips.map((chip) => (
-              <SubjectCard
-                key={chip.id}
-                name={chip.name}
-                selected={chip.selected}
-                note={chip.selected && !chip.has_content ? 'Practice papers coming soon' : undefined}
-              />
-            ))}
-          </div>
-          <a href="/profile-setup" className="text-small text-primary underline-offset-4 hover:underline">
-            Change class or subjects
-          </a>
-        </CardContent>
       </Card>
 
       {next && (
@@ -246,23 +221,19 @@ export function AdaptiveOverview({
             </Card>
           )}
           {data.needs_improvement.length > 0 && (
-            <Card>
+            <Card className="border-blue-600">
               <CardHeader>
                 <CardTitle className="text-h3">Needs improvement</CardTitle>
                 <CardDescription>
-                  These get more questions in your next paper. Watch the video first if there is one.
+                  {data.needs_improvement.length} concept
+                  {data.needs_improvement.length === 1 ? '' : 's'} could use
+                  more practice. These get more questions in your next paper.
                 </CardDescription>
               </CardHeader>
-              <CardContent className="space-y-3">
-                {data.needs_improvement.map((c) => (
-                  <div key={c.concept_id} className="space-y-1">
-                    <div className="flex items-center justify-between gap-2">
-                      <span className="text-body">{c.concept_name}</span>
-                      <LevelBadge level={c.mastery_level} />
-                    </div>
-                    <VideoLink url={c.video_url} title={c.video_title} />
-                  </div>
-                ))}
+              <CardContent>
+                <a href="/needs-improvement">
+                  <Button size="sm">See what needs improvement</Button>
+                </a>
               </CardContent>
             </Card>
           )}

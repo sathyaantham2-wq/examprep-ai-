@@ -14,6 +14,7 @@ import { Route as GenerateRouteImport } from './routes/generate'
 import { Route as HomeRouteImport } from './routes/home'
 import { Route as LeaderboardRouteImport } from './routes/leaderboard'
 import { Route as MyPaperRouteImport } from './routes/my-paper'
+import { Route as NeedsImprovementRouteImport } from './routes/needs-improvement'
 import { Route as OnboardingRouteImport } from './routes/onboarding'
 import { Route as PlanRouteImport } from './routes/plan'
 import { Route as ProfileSetupRouteImport } from './routes/profile-setup'
@@ -150,6 +151,11 @@ const LeaderboardRoute = LeaderboardRouteImport.update({
 const MyPaperRoute = MyPaperRouteImport.update({
   id: '/my-paper',
   path: '/my-paper',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const NeedsImprovementRoute = NeedsImprovementRouteImport.update({
+  id: '/needs-improvement',
+  path: '/needs-improvement',
   getParentRoute: () => rootRouteImport,
 } as any)
 const OnboardingRoute = OnboardingRouteImport.update({
@@ -740,6 +746,7 @@ export interface FileRoutesByFullPath {
   '/home': typeof HomeRoute
   '/leaderboard': typeof LeaderboardRoute
   '/my-paper': typeof MyPaperRoute
+  '/needs-improvement': typeof NeedsImprovementRoute
   '/onboarding': typeof OnboardingRoute
   '/plan': typeof PlanRoute
   '/profile-setup': typeof ProfileSetupRoute
@@ -859,6 +866,7 @@ export interface FileRoutesByTo {
   '/home': typeof HomeRoute
   '/leaderboard': typeof LeaderboardRoute
   '/my-paper': typeof MyPaperRoute
+  '/needs-improvement': typeof NeedsImprovementRoute
   '/onboarding': typeof OnboardingRoute
   '/plan': typeof PlanRoute
   '/profile-setup': typeof ProfileSetupRoute
@@ -979,6 +987,7 @@ export interface FileRoutesById {
   '/home': typeof HomeRoute
   '/leaderboard': typeof LeaderboardRoute
   '/my-paper': typeof MyPaperRoute
+  '/needs-improvement': typeof NeedsImprovementRoute
   '/onboarding': typeof OnboardingRoute
   '/plan': typeof PlanRoute
   '/profile-setup': typeof ProfileSetupRoute
@@ -1100,6 +1109,7 @@ export interface FileRouteTypes {
     | '/home'
     | '/leaderboard'
     | '/my-paper'
+    | '/needs-improvement'
     | '/onboarding'
     | '/plan'
     | '/profile-setup'
@@ -1219,6 +1229,7 @@ export interface FileRouteTypes {
     | '/home'
     | '/leaderboard'
     | '/my-paper'
+    | '/needs-improvement'
     | '/onboarding'
     | '/plan'
     | '/profile-setup'
@@ -1338,6 +1349,7 @@ export interface FileRouteTypes {
     | '/home'
     | '/leaderboard'
     | '/my-paper'
+    | '/needs-improvement'
     | '/onboarding'
     | '/plan'
     | '/profile-setup'
@@ -1458,6 +1470,7 @@ export interface RootRouteChildren {
   HomeRoute: typeof HomeRoute
   LeaderboardRoute: typeof LeaderboardRoute
   MyPaperRoute: typeof MyPaperRoute
+  NeedsImprovementRoute: typeof NeedsImprovementRoute
   OnboardingRoute: typeof OnboardingRoute
   PlanRoute: typeof PlanRoute
   ProfileSetupRoute: typeof ProfileSetupRoute
@@ -1555,6 +1568,13 @@ declare module '@tanstack/react-router' {
       path: '/my-paper'
       fullPath: '/my-paper'
       preLoaderRoute: typeof MyPaperRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/needs-improvement': {
+      id: '/needs-improvement'
+      path: '/needs-improvement'
+      fullPath: '/needs-improvement'
+      preLoaderRoute: typeof NeedsImprovementRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/onboarding': {
@@ -2694,6 +2714,7 @@ const rootRouteChildren: RootRouteChildren = {
   HomeRoute: HomeRoute,
   LeaderboardRoute: LeaderboardRoute,
   MyPaperRoute: MyPaperRoute,
+  NeedsImprovementRoute: NeedsImprovementRoute,
   OnboardingRoute: OnboardingRoute,
   PlanRoute: PlanRoute,
   ProfileSetupRoute: ProfileSetupRoute,
@@ -2758,12 +2779,3 @@ const rootRouteChildren: RootRouteChildren = {
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
   ._addFileTypes<FileRouteTypes>()
-
-import type { getRouter } from './router.tsx'
-import type { createStart } from '@tanstack/react-start'
-declare module '@tanstack/react-start' {
-  interface Register {
-    ssr: true
-    router: Awaited<ReturnType<typeof getRouter>>
-  }
-}

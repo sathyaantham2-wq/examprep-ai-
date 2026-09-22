@@ -10,10 +10,7 @@ import {
 } from '../components/ui/card'
 import { MasteryRing } from '../components/mastery-ring'
 import { AdaptiveOverview } from '../components/adaptive-overview'
-import type {
-  AdaptiveOverviewData,
-  SubjectChip,
-} from '../components/adaptive-overview'
+import type { AdaptiveOverviewData } from '../components/adaptive-overview'
 import { AppShell } from '../components/app-shell'
 import { signOut, useSession } from '../lib/auth-client'
 
@@ -73,7 +70,6 @@ function StudentHome() {
 
   const [dashboard, setDashboard] = useState<StudentDashboard | null>(null)
   const [overview, setOverview] = useState<AdaptiveOverviewData | null>(null)
-  const [chips, setChips] = useState<Array<SubjectChip>>([])
   const [loading, setLoading] = useState(true)
   const [papers, setPapers] = useState<Array<PaperListItem> | null>(null)
   const [sharing, setSharing] = useState<SharingState | null>(null)
@@ -87,50 +83,16 @@ function StudentHome() {
       navigate({ to: '/' })
       return
     }
-    // A student who has not finished her profile goes there first.
+    // A student who has not finished her profile goes there first. Subject choice itself now
+    // happens on /my-paper (its dropdown offers every subject in her class), so this fetch only
+    // needs to check profile_complete.
     fetch('/api/students/me/profile')
       .then((r) => (r.ok ? r.json() : null))
-      .then(
-        (
-          data: {
-            profile: {
-              board: string
-              class: number
-              profile_complete: boolean
-              subject_ids: Array<string>
-            }
-            options: Array<{
-              board: string
-              class: number
-              subjects: Array<{
-                id: string
-                name: string
-                has_content: boolean
-              }>
-            }>
-          } | null,
-        ) => {
-          if (!data) return
-          if (!data.profile.profile_complete) {
-            navigate({ to: '/profile-setup' })
-            return
-          }
-          const offered =
-            data.options.find(
-              (o) =>
-                o.board === data.profile.board &&
-                o.class === data.profile.class,
-            )?.subjects ?? []
-          setChips(
-            offered.map((subject) => ({
-              id: subject.id,
-              name: subject.name,
-              has_content: subject.has_content,
-              selected: data.profile.subject_ids.includes(subject.id),
-            })),
-          )
-        },
-      )
+      .then((data: { profile: { profile_complete: boolean } } | null) => {
+        if (data && !data.profile.profile_complete) {
+          navigate({ to: '/profile-setup' })
+        }
+      })
     fetch('/api/adaptive/overview')
       .then((r) => (r.ok ? r.json() : null))
       .then(setOverview)
@@ -352,11 +314,7 @@ function StudentHome() {
 
         {overview ? (
           <div className="mb-4">
-            <AdaptiveOverview
-              data={overview}
-              chips={chips}
-              afterRecommended={papersCard}
-            />
+            <AdaptiveOverview data={overview} afterRecommended={papersCard} />
           </div>
         ) : (
           papersCard && <div className="mb-4">{papersCard}</div>
