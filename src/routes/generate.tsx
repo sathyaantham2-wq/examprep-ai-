@@ -9,6 +9,10 @@ import { PAPER_THEMES, DEFAULT_THEME, THEME_BLURB } from '../lib/pdf/themes'
 import type { PaperTheme } from '../lib/pdf/themes'
 
 const FORM_ID = 'generate-paper-form'
+// Real tiers, not the reference mockup's "Medium" -- src/routes/api/papers/generate.ts's own
+// DIFFICULTY_TIERS. '' means no ceiling chosen (every difficulty stays eligible, F119's default).
+const DIFFICULTY_TIERS = ['Easy', 'Hard', 'Hardest'] as const
+type DifficultyTier = (typeof DIFFICULTY_TIERS)[number]
 
 export const Route = createFileRoute('/generate')({ component: GeneratePaper })
 
@@ -66,6 +70,12 @@ function GeneratePaper() {
   const [chapterIds, setChapterIds] = useState<Array<string>>([])
   const [chapterSearch, setChapterSearch] = useState('')
   const [theme, setTheme] = useState<PaperTheme>(DEFAULT_THEME)
+  // F119: "a ceiling, not a filter on weakness" -- unset (no ceiling) is the honest default,
+  // since the backend already exists for this (POST /api/papers/generate's difficulty_ceiling)
+  // but no screen has ever exposed a control for it until now.
+  const [difficultyCeiling, setDifficultyCeiling] = useState<
+    DifficultyTier | ''
+  >('')
 
   const [error, setError] = useState<string | null>(null)
   const [submitting, setSubmitting] = useState(false)
@@ -195,6 +205,9 @@ function GeneratePaper() {
           blueprint_id: blueprintId,
           chapter_ids: chapterIds,
           theme,
+          ...(difficultyCeiling
+            ? { difficulty_ceiling: difficultyCeiling }
+            : {}),
         }),
       })
       const body = await response.json()
@@ -289,9 +302,9 @@ function GeneratePaper() {
   return (
     <AppShell active="generate" studentId={studentId || undefined}>
       <div className="mx-auto max-w-5xl p-6 md:p-8">
-        {/* Hero: the app's own tokens (primary at low opacity), not a stock sky-gradient
-            illustration -- one original line-art icon, no purchased/AI-trope artwork. */}
-        <div className="from-primary/10 via-card to-card border-border relative mb-6 overflow-hidden rounded-2xl border bg-gradient-to-br p-6 sm:p-8">
+        {/* Hero: the app's own tokens across a richer blend, not a stock sky-gradient
+            illustration -- original line-art icons only, no purchased/AI-trope artwork. */}
+        <div className="from-primary/20 via-primary/5 to-card border-border relative mb-6 overflow-hidden rounded-2xl border bg-gradient-to-br p-6 sm:p-8">
           <div className="max-w-lg">
             <h1 className="display-title text-display">
               {selectedStudent
@@ -345,12 +358,27 @@ function GeneratePaper() {
             strokeWidth="1.5"
             strokeLinecap="round"
             strokeLinejoin="round"
-            className="text-primary/25 pointer-events-none absolute right-4 bottom-0 hidden sm:block md:right-8"
+            className="text-primary/30 pointer-events-none absolute right-4 bottom-0 hidden sm:block md:right-10"
             aria-hidden="true"
           >
             <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20" />
             <path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2Z" />
             <path d="M9 7h7M9 11h7" />
+          </svg>
+          <svg
+            width="44"
+            height="44"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            strokeWidth="1.5"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+            className="text-primary/40 pointer-events-none absolute top-6 right-24 hidden sm:block md:right-40"
+            aria-hidden="true"
+          >
+            <path d="M9 18h6M10 21h4" />
+            <path d="M12 3a6 6 0 0 0-3.5 10.9c.4.3.5.8.5 1.3V16h6v-.8c0-.5.1-1 .5-1.3A6 6 0 0 0 12 3Z" />
           </svg>
         </div>
 
@@ -446,7 +474,7 @@ function GeneratePaper() {
                 <Card>
                   <CardHeader>
                     <CardTitle className="text-h3">
-                      1 · Student &amp; subject
+                      1 · Assessment details
                     </CardTitle>
                   </CardHeader>
                   <CardContent className="space-y-4">
@@ -472,63 +500,128 @@ function GeneratePaper() {
                       </div>
                     )}
 
+                    {/* Two columns, not four -- this card sits in the left 2/3 of a 3-column
+                        page layout, so it never actually gets viewport-width's "lg" breakpoint
+                        worth of room; four columns here overlapped the Difficulty/Time controls
+                        in testing. */}
                     {studentId && (
-                      <div className="space-y-1.5">
-                        <Label htmlFor="subject">Subject</Label>
-                        <select
-                          id="subject"
-                          className="border-input flex h-9 w-full rounded-md border bg-transparent px-3 text-sm shadow-xs"
-                          value={subjectId}
-                          onChange={(e) => setSubjectId(e.target.value)}
-                          required
-                        >
-                          <option value="" disabled>
-                            Select a subject
-                          </option>
-                          {subjects.map((s) => (
-                            <option key={s.id} value={s.id}>
-                              {s.name}
+                      <div className="grid gap-4 sm:grid-cols-2">
+                        <div className="space-y-1.5">
+                          <Label htmlFor="subject">Subject</Label>
+                          <select
+                            id="subject"
+                            className="border-input flex h-9 w-full rounded-md border bg-transparent px-3 text-sm shadow-xs"
+                            value={subjectId}
+                            onChange={(e) => setSubjectId(e.target.value)}
+                            required
+                          >
+                            <option value="" disabled>
+                              Select a subject
                             </option>
-                          ))}
-                        </select>
-                      </div>
-                    )}
+                            {subjects.map((s) => (
+                              <option key={s.id} value={s.id}>
+                                {s.name}
+                              </option>
+                            ))}
+                          </select>
+                        </div>
 
-                    {subjectId && blueprints.length > 1 && (
-                      <div className="space-y-1.5">
-                        <Label htmlFor="blueprint">Blueprint</Label>
-                        <select
-                          id="blueprint"
-                          className="border-input flex h-9 w-full rounded-md border bg-transparent px-3 text-sm shadow-xs"
-                          value={blueprintId}
-                          onChange={(e) => setBlueprintId(e.target.value)}
-                          required
-                        >
-                          <option value="" disabled>
-                            Select a blueprint
-                          </option>
-                          {blueprints.map((b) => (
-                            <option key={b.id} value={b.id}>
-                              {b.name} — {b.total_marks} marks, {b.duration_min}{' '}
-                              min
-                            </option>
-                          ))}
-                        </select>
+                        <div className="space-y-1.5">
+                          <Label htmlFor="blueprint">Number of questions</Label>
+                          {blueprints.length > 1 ? (
+                            <select
+                              id="blueprint"
+                              className="border-input flex h-9 w-full rounded-md border bg-transparent px-3 text-sm shadow-xs"
+                              value={blueprintId}
+                              onChange={(e) => setBlueprintId(e.target.value)}
+                              required
+                            >
+                              <option value="" disabled>
+                                Select
+                              </option>
+                              {blueprints.map((b) => (
+                                <option key={b.id} value={b.id}>
+                                  {b.name} ({b.total_marks} marks)
+                                </option>
+                              ))}
+                            </select>
+                          ) : (
+                            <div className="border-input text-muted-foreground flex h-9 w-full items-center rounded-md border bg-transparent px-3 text-sm">
+                              {selectedBlueprint
+                                ? `${selectedBlueprint.total_marks} (${selectedBlueprint.total_marks} marks)`
+                                : subjectId
+                                  ? '—'
+                                  : 'Pick a subject first'}
+                            </div>
+                          )}
+                          {subjectId && blueprints.length === 0 && (
+                            <p className="text-caption text-muted-foreground">
+                              No paper format for this subject yet — an admin
+                              can create one at{' '}
+                              <a
+                                href="/admin/blueprints"
+                                className="text-primary underline-offset-4 hover:underline"
+                              >
+                                /admin/blueprints
+                              </a>
+                              .
+                            </p>
+                          )}
+                        </div>
+
+                        <div className="space-y-1.5">
+                          <Label>Difficulty level</Label>
+                          <div className="flex gap-1.5">
+                            {DIFFICULTY_TIERS.map((tier) => (
+                              <button
+                                key={tier}
+                                type="button"
+                                onClick={() =>
+                                  setDifficultyCeiling((prev) =>
+                                    prev === tier ? '' : tier,
+                                  )
+                                }
+                                className={
+                                  difficultyCeiling === tier
+                                    ? 'bg-primary text-primary-foreground flex-1 rounded-md px-2 py-2 text-sm font-semibold'
+                                    : 'border-input hover:bg-muted/50 flex-1 rounded-md border px-2 py-2 text-sm font-medium'
+                                }
+                              >
+                                {tier}
+                              </button>
+                            ))}
+                          </div>
+                        </div>
+
+                        <div className="space-y-1.5">
+                          <Label>Time</Label>
+                          <div className="border-input text-muted-foreground flex h-9 w-full items-center gap-2 rounded-md border bg-transparent px-3 text-sm">
+                            <svg
+                              width="14"
+                              height="14"
+                              viewBox="0 0 24 24"
+                              fill="none"
+                              stroke="currentColor"
+                              strokeWidth="2"
+                              strokeLinecap="round"
+                              strokeLinejoin="round"
+                              className="shrink-0"
+                            >
+                              <circle cx="12" cy="12" r="9" />
+                              <path d="M12 7v5l3 3" />
+                            </svg>
+                            {selectedBlueprint
+                              ? `About ${selectedBlueprint.duration_min} min`
+                              : '—'}
+                          </div>
+                        </div>
                       </div>
                     )}
-                    {subjectId && blueprints.length === 0 && (
-                      <p className="text-small text-muted-foreground">
-                        No paper format exists for this subject yet — an admin
-                        can create one at{' '}
-                        <a
-                          href="/admin/blueprints"
-                          className="text-primary underline-offset-4 hover:underline"
-                        >
-                          /admin/blueprints
-                        </a>
-                        .
-                      </p>
-                    )}
+                    <p className="text-caption text-muted-foreground">
+                      {difficultyCeiling
+                        ? `Difficulty is a ceiling, not a filter -- weak and priority concepts are still weighted in even at ${difficultyCeiling}. See F119.`
+                        : 'No ceiling picked -- every difficulty stays eligible, weighted toward weak and priority concepts (F119).'}
+                    </p>
                   </CardContent>
                 </Card>
 
@@ -691,6 +784,14 @@ function GeneratePaper() {
                     <span className="text-muted-foreground">Chapters</span>
                     <span className="font-medium">
                       {chapterIds.length} of {chapters.length} selected
+                    </span>
+                  </div>
+                  <div className="flex items-center justify-between">
+                    <span className="text-muted-foreground">
+                      Difficulty ceiling
+                    </span>
+                    <span className="font-medium">
+                      {difficultyCeiling || 'Any'}
                     </span>
                   </div>
                   <div className="flex items-center justify-between">
