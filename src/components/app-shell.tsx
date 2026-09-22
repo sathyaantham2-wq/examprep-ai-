@@ -6,8 +6,12 @@ import { ThemeToggle } from './theme-toggle'
 // layout piece more than one screen can reuse). Deliberately built from real routes only --
 // "Practice Tests" and "Question Bank" from the reference mockup have no real parent-facing page
 // (Question Bank is admin-only, under /admin/questions) so they are left out rather than linking
-// to something that does not exist. Not yet wired into every screen (tab06 has 24 of them); each
-// screen opts in by wrapping itself in <AppShell>, same as any other shared component.
+// to something that does not exist. tab06's /papers "Paper library" screen is ALSO not built yet
+// (F123's own commit notes flag this exact gap -- only the student-facing paper list on /student
+// exists) -- 'papers' stays in the type below so this shell is ready the day that screen ships,
+// but the nav item itself is commented out until then; do not uncomment it without actually
+// building /papers first. Not yet wired into every screen (tab06 has 24 of them); each screen
+// opts in by wrapping itself in <AppShell>, same as any other shared component.
 export type AppShellActive =
   'home' | 'generate' | 'papers' | 'progress' | 'settings'
 
@@ -52,23 +56,9 @@ function GenerateIcon() {
     </svg>
   )
 }
-function PapersIcon() {
-  return (
-    <svg
-      width="17"
-      height="17"
-      viewBox="0 0 24 24"
-      fill="none"
-      stroke="currentColor"
-      strokeWidth="2"
-      strokeLinecap="round"
-      strokeLinejoin="round"
-    >
-      <path d="M14 3v4a1 1 0 0 0 1 1h4" />
-      <path d="M17 21H7a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h7l5 5v11a2 2 0 0 1-2 2Z" />
-    </svg>
-  )
-}
+// PapersIcon intentionally removed -- see the note above AppShellActive. Re-add it (a document
+// icon: path d="M14 3v4a1 1 0 0 0 1 1h4" / "M17 21H7a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h7l5 5v11a2 2 0
+// 0 1-2 2Z") when /papers actually exists.
 function ProgressIcon() {
   return (
     <svg
@@ -118,12 +108,8 @@ export function AppShell({ active, studentId, children }: AppShellProps) {
       href: '/generate',
       icon: <GenerateIcon />,
     },
-    {
-      key: 'papers',
-      label: 'My Papers',
-      href: '/papers',
-      icon: <PapersIcon />,
-    },
+    // 'My Papers' intentionally omitted -- /papers does not exist yet (see the note above
+    // AppShellActive). PapersIcon stays imported/used once it does.
     ...(studentId
       ? [
           {
