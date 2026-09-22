@@ -12,6 +12,7 @@ import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
 import { Route as GenerateRouteImport } from './routes/generate'
 import { Route as HomeRouteImport } from './routes/home'
+import { Route as LeaderboardRouteImport } from './routes/leaderboard'
 import { Route as MyPaperRouteImport } from './routes/my-paper'
 import { Route as OnboardingRouteImport } from './routes/onboarding'
 import { Route as PlanRouteImport } from './routes/plan'
@@ -36,6 +37,7 @@ import { Route as ApiEvaluationsRouteImport } from './routes/api/evaluations'
 import { Route as ApiExamCountdownRouteImport } from './routes/api/exam-countdown'
 import { Route as ApiGuardianInvitesRouteImport } from './routes/api/guardian-invites'
 import { Route as ApiHabitDrillsRouteImport } from './routes/api/habit-drills'
+import { Route as ApiLeaderboardRouteImport } from './routes/api/leaderboard'
 import { Route as ApiPapersRouteImport } from './routes/api/papers'
 import { Route as ApiQuestionsRouteImport } from './routes/api/questions'
 import { Route as ApiRemediationRouteImport } from './routes/api/remediation'
@@ -111,6 +113,7 @@ import { Route as ApiQuestionsIdStatsRouteImport } from './routes/api/questions/
 import { Route as ApiQuestionsGenerateBatchIdRouteImport } from './routes/api/questions/generate-batch/$id'
 import { Route as ApiRemediationIdAttemptRouteImport } from './routes/api/remediation/$id/attempt'
 import { Route as ApiStudentsIdLoginRouteImport } from './routes/api/students/$id/login'
+import { Route as ApiStudentsMeLeaderboardOptInRouteImport } from './routes/api/students/me/leaderboard-opt-in'
 import { Route as ApiStudentsMeProfileRouteImport } from './routes/api/students/me/profile'
 import { Route as ApiSummaryWeeklyStudentIdRouteImport } from './routes/api/summary/weekly/$studentId'
 import { Route as ApiSyllabusConceptsIdRouteImport } from './routes/api/syllabus/concepts/$id'
@@ -137,6 +140,11 @@ const GenerateRoute = GenerateRouteImport.update({
 const HomeRoute = HomeRouteImport.update({
   id: '/home',
   path: '/home',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const LeaderboardRoute = LeaderboardRouteImport.update({
+  id: '/leaderboard',
+  path: '/leaderboard',
   getParentRoute: () => rootRouteImport,
 } as any)
 const MyPaperRoute = MyPaperRouteImport.update({
@@ -257,6 +265,11 @@ const ApiGuardianInvitesRoute = ApiGuardianInvitesRouteImport.update({
 const ApiHabitDrillsRoute = ApiHabitDrillsRouteImport.update({
   id: '/api/habit-drills',
   path: '/api/habit-drills',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ApiLeaderboardRoute = ApiLeaderboardRouteImport.update({
+  id: '/api/leaderboard',
+  path: '/api/leaderboard',
   getParentRoute: () => rootRouteImport,
 } as any)
 const ApiPapersRoute = ApiPapersRouteImport.update({
@@ -644,6 +657,12 @@ const ApiStudentsIdLoginRoute = ApiStudentsIdLoginRouteImport.update({
   path: '/login',
   getParentRoute: () => ApiStudentsIdRoute,
 } as any)
+const ApiStudentsMeLeaderboardOptInRoute =
+  ApiStudentsMeLeaderboardOptInRouteImport.update({
+    id: '/leaderboard-opt-in',
+    path: '/leaderboard-opt-in',
+    getParentRoute: () => ApiStudentsMeRoute,
+  } as any)
 const ApiStudentsMeProfileRoute = ApiStudentsMeProfileRouteImport.update({
   id: '/profile',
   path: '/profile',
@@ -719,6 +738,7 @@ export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/generate': typeof GenerateRoute
   '/home': typeof HomeRoute
+  '/leaderboard': typeof LeaderboardRoute
   '/my-paper': typeof MyPaperRoute
   '/onboarding': typeof OnboardingRoute
   '/plan': typeof PlanRoute
@@ -743,6 +763,7 @@ export interface FileRoutesByFullPath {
   '/api/exam-countdown': typeof ApiExamCountdownRoute
   '/api/guardian-invites': typeof ApiGuardianInvitesRouteWithChildren
   '/api/habit-drills': typeof ApiHabitDrillsRouteWithChildren
+  '/api/leaderboard': typeof ApiLeaderboardRoute
   '/api/papers': typeof ApiPapersRouteWithChildren
   '/api/questions': typeof ApiQuestionsRouteWithChildren
   '/api/remediation': typeof ApiRemediationRouteWithChildren
@@ -818,6 +839,7 @@ export interface FileRoutesByFullPath {
   '/api/questions/generate-batch/$id': typeof ApiQuestionsGenerateBatchIdRouteWithChildren
   '/api/remediation/$id/attempt': typeof ApiRemediationIdAttemptRoute
   '/api/students/$id/login': typeof ApiStudentsIdLoginRoute
+  '/api/students/me/leaderboard-opt-in': typeof ApiStudentsMeLeaderboardOptInRoute
   '/api/students/me/profile': typeof ApiStudentsMeProfileRoute
   '/api/summary/weekly/$studentId': typeof ApiSummaryWeeklyStudentIdRoute
   '/api/syllabus/concepts/$id': typeof ApiSyllabusConceptsIdRoute
@@ -835,6 +857,7 @@ export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/generate': typeof GenerateRoute
   '/home': typeof HomeRoute
+  '/leaderboard': typeof LeaderboardRoute
   '/my-paper': typeof MyPaperRoute
   '/onboarding': typeof OnboardingRoute
   '/plan': typeof PlanRoute
@@ -859,6 +882,7 @@ export interface FileRoutesByTo {
   '/api/exam-countdown': typeof ApiExamCountdownRoute
   '/api/guardian-invites': typeof ApiGuardianInvitesRouteWithChildren
   '/api/habit-drills': typeof ApiHabitDrillsRouteWithChildren
+  '/api/leaderboard': typeof ApiLeaderboardRoute
   '/api/papers': typeof ApiPapersRouteWithChildren
   '/api/questions': typeof ApiQuestionsRouteWithChildren
   '/api/remediation': typeof ApiRemediationRouteWithChildren
@@ -934,6 +958,7 @@ export interface FileRoutesByTo {
   '/api/questions/generate-batch/$id': typeof ApiQuestionsGenerateBatchIdRouteWithChildren
   '/api/remediation/$id/attempt': typeof ApiRemediationIdAttemptRoute
   '/api/students/$id/login': typeof ApiStudentsIdLoginRoute
+  '/api/students/me/leaderboard-opt-in': typeof ApiStudentsMeLeaderboardOptInRoute
   '/api/students/me/profile': typeof ApiStudentsMeProfileRoute
   '/api/summary/weekly/$studentId': typeof ApiSummaryWeeklyStudentIdRoute
   '/api/syllabus/concepts/$id': typeof ApiSyllabusConceptsIdRoute
@@ -952,6 +977,7 @@ export interface FileRoutesById {
   '/': typeof IndexRoute
   '/generate': typeof GenerateRoute
   '/home': typeof HomeRoute
+  '/leaderboard': typeof LeaderboardRoute
   '/my-paper': typeof MyPaperRoute
   '/onboarding': typeof OnboardingRoute
   '/plan': typeof PlanRoute
@@ -976,6 +1002,7 @@ export interface FileRoutesById {
   '/api/exam-countdown': typeof ApiExamCountdownRoute
   '/api/guardian-invites': typeof ApiGuardianInvitesRouteWithChildren
   '/api/habit-drills': typeof ApiHabitDrillsRouteWithChildren
+  '/api/leaderboard': typeof ApiLeaderboardRoute
   '/api/papers': typeof ApiPapersRouteWithChildren
   '/api/questions': typeof ApiQuestionsRouteWithChildren
   '/api/remediation': typeof ApiRemediationRouteWithChildren
@@ -1051,6 +1078,7 @@ export interface FileRoutesById {
   '/api/questions/generate-batch/$id': typeof ApiQuestionsGenerateBatchIdRouteWithChildren
   '/api/remediation/$id/attempt': typeof ApiRemediationIdAttemptRoute
   '/api/students/$id/login': typeof ApiStudentsIdLoginRoute
+  '/api/students/me/leaderboard-opt-in': typeof ApiStudentsMeLeaderboardOptInRoute
   '/api/students/me/profile': typeof ApiStudentsMeProfileRoute
   '/api/summary/weekly/$studentId': typeof ApiSummaryWeeklyStudentIdRoute
   '/api/syllabus/concepts/$id': typeof ApiSyllabusConceptsIdRoute
@@ -1070,6 +1098,7 @@ export interface FileRouteTypes {
     | '/'
     | '/generate'
     | '/home'
+    | '/leaderboard'
     | '/my-paper'
     | '/onboarding'
     | '/plan'
@@ -1094,6 +1123,7 @@ export interface FileRouteTypes {
     | '/api/exam-countdown'
     | '/api/guardian-invites'
     | '/api/habit-drills'
+    | '/api/leaderboard'
     | '/api/papers'
     | '/api/questions'
     | '/api/remediation'
@@ -1169,6 +1199,7 @@ export interface FileRouteTypes {
     | '/api/questions/generate-batch/$id'
     | '/api/remediation/$id/attempt'
     | '/api/students/$id/login'
+    | '/api/students/me/leaderboard-opt-in'
     | '/api/students/me/profile'
     | '/api/summary/weekly/$studentId'
     | '/api/syllabus/concepts/$id'
@@ -1186,6 +1217,7 @@ export interface FileRouteTypes {
     | '/'
     | '/generate'
     | '/home'
+    | '/leaderboard'
     | '/my-paper'
     | '/onboarding'
     | '/plan'
@@ -1210,6 +1242,7 @@ export interface FileRouteTypes {
     | '/api/exam-countdown'
     | '/api/guardian-invites'
     | '/api/habit-drills'
+    | '/api/leaderboard'
     | '/api/papers'
     | '/api/questions'
     | '/api/remediation'
@@ -1285,6 +1318,7 @@ export interface FileRouteTypes {
     | '/api/questions/generate-batch/$id'
     | '/api/remediation/$id/attempt'
     | '/api/students/$id/login'
+    | '/api/students/me/leaderboard-opt-in'
     | '/api/students/me/profile'
     | '/api/summary/weekly/$studentId'
     | '/api/syllabus/concepts/$id'
@@ -1302,6 +1336,7 @@ export interface FileRouteTypes {
     | '/'
     | '/generate'
     | '/home'
+    | '/leaderboard'
     | '/my-paper'
     | '/onboarding'
     | '/plan'
@@ -1326,6 +1361,7 @@ export interface FileRouteTypes {
     | '/api/exam-countdown'
     | '/api/guardian-invites'
     | '/api/habit-drills'
+    | '/api/leaderboard'
     | '/api/papers'
     | '/api/questions'
     | '/api/remediation'
@@ -1401,6 +1437,7 @@ export interface FileRouteTypes {
     | '/api/questions/generate-batch/$id'
     | '/api/remediation/$id/attempt'
     | '/api/students/$id/login'
+    | '/api/students/me/leaderboard-opt-in'
     | '/api/students/me/profile'
     | '/api/summary/weekly/$studentId'
     | '/api/syllabus/concepts/$id'
@@ -1419,6 +1456,7 @@ export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   GenerateRoute: typeof GenerateRoute
   HomeRoute: typeof HomeRoute
+  LeaderboardRoute: typeof LeaderboardRoute
   MyPaperRoute: typeof MyPaperRoute
   OnboardingRoute: typeof OnboardingRoute
   PlanRoute: typeof PlanRoute
@@ -1443,6 +1481,7 @@ export interface RootRouteChildren {
   ApiExamCountdownRoute: typeof ApiExamCountdownRoute
   ApiGuardianInvitesRoute: typeof ApiGuardianInvitesRouteWithChildren
   ApiHabitDrillsRoute: typeof ApiHabitDrillsRouteWithChildren
+  ApiLeaderboardRoute: typeof ApiLeaderboardRoute
   ApiPapersRoute: typeof ApiPapersRouteWithChildren
   ApiQuestionsRoute: typeof ApiQuestionsRouteWithChildren
   ApiRemediationRoute: typeof ApiRemediationRouteWithChildren
@@ -1502,6 +1541,13 @@ declare module '@tanstack/react-router' {
       path: '/home'
       fullPath: '/home'
       preLoaderRoute: typeof HomeRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/leaderboard': {
+      id: '/leaderboard'
+      path: '/leaderboard'
+      fullPath: '/leaderboard'
+      preLoaderRoute: typeof LeaderboardRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/my-paper': {
@@ -1670,6 +1716,13 @@ declare module '@tanstack/react-router' {
       path: '/api/habit-drills'
       fullPath: '/api/habit-drills'
       preLoaderRoute: typeof ApiHabitDrillsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/api/leaderboard': {
+      id: '/api/leaderboard'
+      path: '/api/leaderboard'
+      fullPath: '/api/leaderboard'
+      preLoaderRoute: typeof ApiLeaderboardRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/api/papers': {
@@ -2197,6 +2250,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ApiStudentsIdLoginRouteImport
       parentRoute: typeof ApiStudentsIdRoute
     }
+    '/api/students/me/leaderboard-opt-in': {
+      id: '/api/students/me/leaderboard-opt-in'
+      path: '/leaderboard-opt-in'
+      fullPath: '/api/students/me/leaderboard-opt-in'
+      preLoaderRoute: typeof ApiStudentsMeLeaderboardOptInRouteImport
+      parentRoute: typeof ApiStudentsMeRoute
+    }
     '/api/students/me/profile': {
       id: '/api/students/me/profile'
       path: '/profile'
@@ -2543,10 +2603,12 @@ const ApiStudentsIdRouteWithChildren = ApiStudentsIdRoute._addFileChildren(
 )
 
 interface ApiStudentsMeRouteChildren {
+  ApiStudentsMeLeaderboardOptInRoute: typeof ApiStudentsMeLeaderboardOptInRoute
   ApiStudentsMeProfileRoute: typeof ApiStudentsMeProfileRoute
 }
 
 const ApiStudentsMeRouteChildren: ApiStudentsMeRouteChildren = {
+  ApiStudentsMeLeaderboardOptInRoute: ApiStudentsMeLeaderboardOptInRoute,
   ApiStudentsMeProfileRoute: ApiStudentsMeProfileRoute,
 }
 
@@ -2630,6 +2692,7 @@ const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   GenerateRoute: GenerateRoute,
   HomeRoute: HomeRoute,
+  LeaderboardRoute: LeaderboardRoute,
   MyPaperRoute: MyPaperRoute,
   OnboardingRoute: OnboardingRoute,
   PlanRoute: PlanRoute,
@@ -2654,6 +2717,7 @@ const rootRouteChildren: RootRouteChildren = {
   ApiExamCountdownRoute: ApiExamCountdownRoute,
   ApiGuardianInvitesRoute: ApiGuardianInvitesRouteWithChildren,
   ApiHabitDrillsRoute: ApiHabitDrillsRouteWithChildren,
+  ApiLeaderboardRoute: ApiLeaderboardRoute,
   ApiPapersRoute: ApiPapersRouteWithChildren,
   ApiQuestionsRoute: ApiQuestionsRouteWithChildren,
   ApiRemediationRoute: ApiRemediationRouteWithChildren,

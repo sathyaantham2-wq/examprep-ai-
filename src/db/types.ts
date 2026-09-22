@@ -603,6 +603,7 @@ export interface StudentPointsLedger {
   id: Generated<string>;
   points: number;
   student_id: string;
+  subject_id: string;
 }
 
 export interface Students {

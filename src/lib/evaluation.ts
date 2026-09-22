@@ -249,6 +249,11 @@ export async function confirmEvaluation(db: Db, evaluationId: string) {
       .selectAll()
       .where('id', '=', evaluation.attempt_id)
       .executeTakeFirstOrThrow()
+    const paper = await trx
+      .selectFrom('papers')
+      .select('subject_id')
+      .where('id', '=', attempt.paper_id)
+      .executeTakeFirstOrThrow()
 
     // A question the student removed after questioning its mark is left out of her grade, the
     // paper total and her concept results; the row itself is kept.
@@ -345,7 +350,12 @@ export async function confirmEvaluation(db: Db, evaluationId: string) {
     // F125 (first slice): points/coins for MCQ-family items whose (now-confirmed) mark is fully
     // correct. removed/excluded items never reached gradedObjectiveItems (filtered out above),
     // so a question the student disputed away never pays out.
-    await recordPointsForConfirmedItems(trx, attempt.student_id, gradedObjectiveItems)
+    await recordPointsForConfirmedItems(
+      trx,
+      attempt.student_id,
+      paper.subject_id,
+      gradedObjectiveItems,
+    )
 
     return updatedEvaluation
   })

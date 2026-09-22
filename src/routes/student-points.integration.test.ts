@@ -26,6 +26,8 @@ describe('student points ledger (F125)', () => {
   let db: Db
   let household: Awaited<ReturnType<typeof householdsRepository.insert>>
   let studentId: string
+  let subjectId: string
+  let chapterId: string
   let blueprintId: string
   let easyConceptId: string
   let hardConceptId: string
@@ -56,12 +58,32 @@ describe('student points ledger (F125)', () => {
       .selectAll()
       .where('code', '=', 'MATH-SEED')
       .executeTakeFirstOrThrow()
-    const chapter = await db
+    subjectId = subject.id
+    // A DEDICATED chapter, not chapter_no=1 -- F012's own migration note warns that adding more
+    // approved questions to MATH-SEED's chapter 1 makes other tests' random picks
+    // nondeterministic, and that cuts both ways: this test's own generatePaper() call is just as
+    // vulnerable to picking one of THOSE other tests' fixture questions instead of the ones
+    // created below when several integration test files' fixtures share chapter 1's pool. A
+    // fresh chapter_no (unique per run) keeps this test's eligible-question pool to exactly the
+    // two questions it creates, deterministically, regardless of what else is running.
+    const anyChapter = await db
       .selectFrom('chapters')
-      .selectAll()
+      .select('source_id')
       .where('subject_id', '=', subject.id)
-      .where('chapter_no', '=', 1)
       .executeTakeFirstOrThrow()
+    const chapter = await db
+      .insertInto('chapters')
+      .values({
+        subject_id: subject.id,
+        source_id: anyChapter.source_id,
+        part: 'I',
+        chapter_no: 9000 + Math.floor(Math.random() * 90000),
+        name: 'Points fixture chapter',
+        order_index: 9000,
+      })
+      .returningAll()
+      .executeTakeFirstOrThrow()
+    chapterId = chapter.id
 
     const easyConcept = await conceptsRepository.insert(db, {
       chapter_id: chapter.id,
@@ -187,6 +209,7 @@ describe('student points ledger (F125)', () => {
     await db.deleteFrom('blueprints').where('id', '=', blueprintId).execute()
     await db.deleteFrom('questions').where('id', 'in', [easyQuestionId, hardQuestionId]).execute()
     await db.deleteFrom('concepts').where('id', 'in', [easyConceptId, hardConceptId]).execute()
+    await db.deleteFrom('chapters').where('id', '=', chapterId).execute()
     await db.destroy()
   })
 
@@ -197,6 +220,7 @@ describe('student points ledger (F125)', () => {
     expect(rows[0].difficulty).toBe('Easy')
     expect(rows[0].points).toBe(POINTS_BY_DIFFICULTY.Easy)
     expect(rows[0].coins).toBe(POINTS_BY_DIFFICULTY.Easy)
+    expect(rows[0].subject_id).toBe(subjectId)
   })
 
   it('totalForStudent rolls the ledger up', async () => {

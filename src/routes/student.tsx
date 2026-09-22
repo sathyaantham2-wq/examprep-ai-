@@ -260,6 +260,11 @@ function StudentHome() {
           <a href="/my-paper">
             <Button size="sm">Make a paper</Button>
           </a>
+          <a href="/leaderboard">
+            <Button variant="outline" size="sm">
+              Leaderboard
+            </Button>
+          </a>
           <ThemeToggle />
           <Button
             variant="ghost"

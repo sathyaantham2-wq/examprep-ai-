@@ -47,6 +47,7 @@ export interface GradedObjectiveItem {
 export async function recordPointsForConfirmedItems(
   db: Db,
   studentId: string,
+  subjectId: string,
   items: Array<GradedObjectiveItem>,
 ): Promise<void> {
   for (const item of items) {
@@ -56,6 +57,7 @@ export async function recordPointsForConfirmedItems(
     const points = pointsForDifficulty(item.difficulty)
     await studentPointsLedgerRepository.insert(db, {
       student_id: studentId,
+      subject_id: subjectId,
       evaluation_item_id: item.evaluationItemId,
       concept_id: item.conceptId,
       difficulty: item.difficulty,
