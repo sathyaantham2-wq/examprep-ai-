@@ -8,7 +8,7 @@ import {
   CardTitle,
 } from '../../components/ui/card'
 import { Button } from '../../components/ui/button'
-import { ThemeToggle } from '../../components/theme-toggle'
+import { AppShell } from '../../components/app-shell'
 import { useSession } from '../../lib/auth-client'
 
 export const Route = createFileRoute('/tracker/$studentId')({
@@ -85,7 +85,10 @@ function ConceptTracker() {
 
   useEffect(() => {
     if (isPending) return
-    if (!session || (role !== 'parent' && role !== 'teacher' && role !== 'admin')) {
+    if (
+      !session ||
+      (role !== 'parent' && role !== 'teacher' && role !== 'admin')
+    ) {
       navigate({ to: '/' })
       return
     }
@@ -149,14 +152,20 @@ function ConceptTracker() {
           toCsvValue(r.concept_name),
           toCsvValue(r.subject_name),
           toCsvValue(r.attempts),
-          toCsvValue(r.last_ratio !== null ? `${Math.round(Number(r.last_ratio) * 100)}%` : ''),
+          toCsvValue(
+            r.last_ratio !== null
+              ? `${Math.round(Number(r.last_ratio) * 100)}%`
+              : '',
+          ),
           toCsvValue(r.trend ?? ''),
           toCsvValue(r.status),
           toCsvValue(r.last_tested_date ?? ''),
         ].join(','),
       )
     }
-    const blob = new Blob([lines.join('\n')], { type: 'text/csv;charset=utf-8;' })
+    const blob = new Blob([lines.join('\n')], {
+      type: 'text/csv;charset=utf-8;',
+    })
     const url = URL.createObjectURL(blob)
     const a = document.createElement('a')
     a.href = url
@@ -178,104 +187,122 @@ function ConceptTracker() {
     )
   }
 
-  if (isPending || !session || (role !== 'parent' && role !== 'teacher' && role !== 'admin')) {
+  if (
+    isPending ||
+    !session ||
+    (role !== 'parent' && role !== 'teacher' && role !== 'admin')
+  ) {
     return <div className="p-8 text-body text-muted-foreground">Loading…</div>
   }
 
   return (
-    <div className="mx-auto max-w-4xl p-8">
-      <div className="mb-6 flex items-center justify-between">
-        <div>
-          <h1 className="text-h1">Concept tracker</h1>
-          <p className="text-body text-muted-foreground">
-            Every tracked concept, cumulative across all attempts.
-          </p>
+    <AppShell active="progress" studentId={studentId}>
+      <div className="mx-auto max-w-4xl p-8">
+        <div className="mb-6 flex items-center justify-between">
+          <div>
+            <h1 className="text-h1">Concept tracker</h1>
+            <p className="text-body text-muted-foreground">
+              Every tracked concept, cumulative across all attempts.
+            </p>
+          </div>
+          <div className="no-print flex items-center gap-4">
+            <Button
+              size="sm"
+              variant="outline"
+              onClick={exportCsv}
+              disabled={!rows?.length}
+            >
+              Export CSV
+            </Button>
+          </div>
         </div>
-        <div className="no-print flex items-center gap-4">
-          <Button size="sm" variant="outline" onClick={exportCsv} disabled={!rows?.length}>
-            Export CSV
-          </Button>
-          <ThemeToggle />
-        </div>
-      </div>
 
-      <Card>
-        <CardHeader>
-          <CardTitle className="text-h3">Filter</CardTitle>
-          <CardDescription>Narrow the table to one status.</CardDescription>
-        </CardHeader>
-        <CardContent>
-          <select
-            className="border-input flex h-9 w-full max-w-xs rounded-md border bg-transparent px-3 text-sm shadow-xs"
-            value={statusFilter}
-            onChange={(e) => setStatusFilter(e.target.value)}
-          >
-            <option value="">All statuses</option>
-            {STATUSES.map((s) => (
-              <option key={s} value={s}>
-                {s}
-              </option>
-            ))}
-          </select>
-        </CardContent>
-      </Card>
-
-      {error && (
-        <p className="text-small text-destructive mt-4" role="alert">
-          {error}
-        </p>
-      )}
-
-      {rows !== null && rows.length === 0 && (
-        <p className="text-body text-muted-foreground mt-4">
-          No tracked concepts yet — they appear here once a paper for this
-          student has been evaluated and confirmed.
-        </p>
-      )}
-
-      {rows !== null && rows.length > 0 && (
-        <div className="mt-4 overflow-x-auto rounded-md border">
-          <table className="w-full text-left text-sm">
-            <thead className="border-b bg-muted/50">
-              <tr>
-                <th className="p-2">{sortHeader('concept_code', 'Concept')}</th>
-                <th className="p-2">{sortHeader('subject_name', 'Subject')}</th>
-                <th className="p-2">{sortHeader('attempts', 'Attempts')}</th>
-                <th className="p-2">{sortHeader('last_ratio', 'Latest %')}</th>
-                <th className="p-2">Trend</th>
-                <th className="p-2">{sortHeader('status', 'Status')}</th>
-                <th className="p-2">
-                  {sortHeader('last_tested_date', 'Last tested')}
-                </th>
-              </tr>
-            </thead>
-            <tbody>
-              {sortedRows.map((r) => (
-                <tr key={r.concept_id} className="border-b last:border-0">
-                  <td className="p-2">
-                    <div className="font-medium">{r.concept_code}</div>
-                    <div className="text-muted-foreground text-xs">
-                      {r.concept_name}
-                    </div>
-                  </td>
-                  <td className="p-2">{r.subject_name}</td>
-                  <td className="p-2">{r.attempts}</td>
-                  <td className="p-2">
-                    {r.last_ratio !== null
-                      ? `${Math.round(Number(r.last_ratio) * 100)}%`
-                      : '—'}
-                  </td>
-                  <td className={`p-2 ${r.trend ? TREND_CLASS[r.trend] : ''}`}>
-                    {r.trend ? TREND_SYMBOL[r.trend] : '—'}
-                  </td>
-                  <td className="p-2">{r.status}</td>
-                  <td className="p-2">{r.last_tested_date ?? '—'}</td>
-                </tr>
+        <Card>
+          <CardHeader>
+            <CardTitle className="text-h3">Filter</CardTitle>
+            <CardDescription>Narrow the table to one status.</CardDescription>
+          </CardHeader>
+          <CardContent>
+            <select
+              className="border-input flex h-9 w-full max-w-xs rounded-md border bg-transparent px-3 text-sm shadow-xs"
+              value={statusFilter}
+              onChange={(e) => setStatusFilter(e.target.value)}
+            >
+              <option value="">All statuses</option>
+              {STATUSES.map((s) => (
+                <option key={s} value={s}>
+                  {s}
+                </option>
               ))}
-            </tbody>
-          </table>
-        </div>
-      )}
-    </div>
+            </select>
+          </CardContent>
+        </Card>
+
+        {error && (
+          <p className="text-small text-destructive mt-4" role="alert">
+            {error}
+          </p>
+        )}
+
+        {rows !== null && rows.length === 0 && (
+          <p className="text-body text-muted-foreground mt-4">
+            No tracked concepts yet — they appear here once a paper for this
+            student has been evaluated and confirmed.
+          </p>
+        )}
+
+        {rows !== null && rows.length > 0 && (
+          <div className="mt-4 overflow-x-auto rounded-md border">
+            <table className="w-full text-left text-sm">
+              <thead className="border-b bg-muted/50">
+                <tr>
+                  <th className="p-2">
+                    {sortHeader('concept_code', 'Concept')}
+                  </th>
+                  <th className="p-2">
+                    {sortHeader('subject_name', 'Subject')}
+                  </th>
+                  <th className="p-2">{sortHeader('attempts', 'Attempts')}</th>
+                  <th className="p-2">
+                    {sortHeader('last_ratio', 'Latest %')}
+                  </th>
+                  <th className="p-2">Trend</th>
+                  <th className="p-2">{sortHeader('status', 'Status')}</th>
+                  <th className="p-2">
+                    {sortHeader('last_tested_date', 'Last tested')}
+                  </th>
+                </tr>
+              </thead>
+              <tbody>
+                {sortedRows.map((r) => (
+                  <tr key={r.concept_id} className="border-b last:border-0">
+                    <td className="p-2">
+                      <div className="font-medium">{r.concept_code}</div>
+                      <div className="text-muted-foreground text-xs">
+                        {r.concept_name}
+                      </div>
+                    </td>
+                    <td className="p-2">{r.subject_name}</td>
+                    <td className="p-2">{r.attempts}</td>
+                    <td className="p-2">
+                      {r.last_ratio !== null
+                        ? `${Math.round(Number(r.last_ratio) * 100)}%`
+                        : '—'}
+                    </td>
+                    <td
+                      className={`p-2 ${r.trend ? TREND_CLASS[r.trend] : ''}`}
+                    >
+                      {r.trend ? TREND_SYMBOL[r.trend] : '—'}
+                    </td>
+                    <td className="p-2">{r.status}</td>
+                    <td className="p-2">{r.last_tested_date ?? '—'}</td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
+        )}
+      </div>
+    </AppShell>
   )
 }
