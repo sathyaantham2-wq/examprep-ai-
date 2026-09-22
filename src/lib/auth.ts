@@ -2,7 +2,11 @@ import { betterAuth } from 'better-auth'
 import { APIError, createAuthMiddleware } from 'better-auth/api'
 import { createAuthPool } from '../db/auth-pool'
 import { getSharedDb } from '../db/connection'
-import { consentsRepository, householdsRepository, studentsRepository } from '../db/repositories'
+import {
+  consentsRepository,
+  householdsRepository,
+  studentsRepository,
+} from '../db/repositories'
 import { CURRENT_CONSENT_VERSION } from './consent'
 import { env } from './env'
 
@@ -17,15 +21,21 @@ export const auth = betterAuth({
       generateId: 'uuid',
     },
   },
-  // Only students can sign up for now (owner decision 2026-09-20; parent and teacher accounts come
-  // later). Enforced here, not just by hiding the choice on the form, for requests that arrive over
-  // HTTP. Server-side calls (tests, scripts) carry no request and are not affected.
+  // Student and parent sign-up are both open (owner decision 2026-09-22, reopening parent
+  // sign-up -- it had been closed since 2026-09-20 while only the student path was ready).
+  // Teacher accounts still come later. Enforced here, not just by hiding the choice on the form,
+  // for requests that arrive over HTTP. Server-side calls (tests, scripts) carry no request and
+  // are not affected. databaseHooks below already maps any signup_type other than
+  // 'student'/'teacher' to role 'parent', so 'parent' just needed to clear this gate.
   hooks: {
     before: createAuthMiddleware(async (ctx) => {
       if (ctx.path !== '/sign-up/email' || !ctx.request) return
-      const type = (ctx.body as { signup_type?: string } | undefined)?.signup_type
-      if (type !== 'student') {
-        throw new APIError('FORBIDDEN', { message: 'Only student sign-up is open right now.' })
+      const type = (ctx.body as { signup_type?: string } | undefined)
+        ?.signup_type
+      if (type !== 'student' && type !== 'parent') {
+        throw new APIError('FORBIDDEN', {
+          message: 'Only student and parent sign-up are open right now.',
+        })
       }
     }),
   },
@@ -65,7 +75,9 @@ export const auth = betterAuth({
           // Signing in with Google (the OAuth callback) carries no sign-up form, and only students
           // can sign up for now, so that account is a student.
           const viaSocial = context?.path?.startsWith('/callback/') ?? false
-          const signupType = viaSocial ? 'student' : (user as { signup_type?: string }).signup_type
+          const signupType = viaSocial
+            ? 'student'
+            : (user as { signup_type?: string }).signup_type
           const role =
             signupType === 'student'
               ? ('student' as const)

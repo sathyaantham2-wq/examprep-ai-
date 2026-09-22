@@ -16,11 +16,16 @@ import { signIn, signOut, signUp, useSession } from '../lib/auth-client'
 export const Route = createFileRoute('/')({ component: Home })
 
 type Mode = 'sign-in' | 'sign-up'
+type AccountType = 'student' | 'parent'
 
 function Home() {
   const { data: session, isPending } = useSession()
   const navigate = useNavigate()
   const [mode, setMode] = useState<Mode>('sign-in')
+  // Owner decision 2026-09-22: parent sign-up reopened (auth.ts's before-hook gates the actual
+  // HTTP request; this is just the form's half). Student stays the default -- it was the only
+  // option until now, and is still the more common case.
+  const [accountType, setAccountType] = useState<AccountType>('student')
   const [name, setName] = useState('')
   const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
@@ -51,7 +56,12 @@ function Home() {
       fetch('/api/students/me')
         .then((r) => (r.ok ? r.json() : null))
         .then((me: { profile_complete?: boolean } | null) => {
-          navigate({ to: me && me.profile_complete === false ? '/profile-setup' : '/student' })
+          navigate({
+            to:
+              me && me.profile_complete === false
+                ? '/profile-setup'
+                : '/student',
+          })
         })
         .catch(() => navigate({ to: '/student' }))
     }
@@ -115,7 +125,7 @@ function Home() {
           setError('The two passwords do not match.')
           return
         }
-        if (!guardianOk) {
+        if (accountType === 'student' && !guardianOk) {
           setError('Please confirm that your parent or guardian agrees.')
           return
         }
@@ -123,7 +133,7 @@ function Home() {
           name,
           email,
           password,
-          signup_type: 'student',
+          signup_type: accountType,
         })
         if (result.error) {
           setError(result.error.message ?? 'Sign up failed')
@@ -162,16 +172,42 @@ function Home() {
             <CardDescription>
               {mode === 'sign-in'
                 ? 'Sign in with the email and password you signed up with.'
-                : 'Create your own student login. You will set up your class and subjects next.'}
+                : accountType === 'student'
+                  ? 'Create your own student login. You will set up your class and subjects next.'
+                  : 'Create your parent login. You will add your child and pick her syllabus next.'}
             </CardDescription>
           </CardHeader>
           <CardContent>
-            {(
+            {
               <form onSubmit={handleSubmit} className="space-y-4">
                 {mode === 'sign-up' && (
                   <>
                     <div className="space-y-1.5">
-                      <Label htmlFor="name">User name</Label>
+                      <Label>I am signing up as a</Label>
+                      <div className="grid grid-cols-2 gap-2">
+                        {(['student', 'parent'] as const).map((t) => (
+                          <button
+                            key={t}
+                            type="button"
+                            onClick={() => setAccountType(t)}
+                            className={
+                              'rounded-md border px-3 py-2 text-sm font-medium capitalize ' +
+                              (accountType === t
+                                ? 'border-primary bg-primary text-primary-foreground'
+                                : 'border-input')
+                            }
+                          >
+                            {t === 'student' ? 'Student' : 'Parent / Guardian'}
+                          </button>
+                        ))}
+                      </div>
+                    </div>
+                    <div className="space-y-1.5">
+                      <Label htmlFor="name">
+                        {accountType === 'student'
+                          ? 'Your name'
+                          : 'Your name (parent/guardian)'}
+                      </Label>
                       <Input
                         id="name"
                         value={name}
@@ -215,17 +251,19 @@ function Home() {
                         minLength={8}
                       />
                     </div>
-                    <Label className="items-start">
-                      <input
-                        type="checkbox"
-                        className="mt-0.5"
-                        checked={guardianOk}
-                        onChange={(e) => setGuardianOk(e.target.checked)}
-                      />
-                      <span className="text-small font-normal">
-                        My parent or guardian agrees to my using ExamPrep AI.
-                      </span>
-                    </Label>
+                    {accountType === 'student' && (
+                      <Label className="items-start">
+                        <input
+                          type="checkbox"
+                          className="mt-0.5"
+                          checked={guardianOk}
+                          onChange={(e) => setGuardianOk(e.target.checked)}
+                        />
+                        <span className="text-small font-normal">
+                          My parent or guardian agrees to my using ExamPrep AI.
+                        </span>
+                      </Label>
+                    )}
                   </>
                 )}
                 {error && (
@@ -241,7 +279,7 @@ function Home() {
                       : 'Sign up'}
                 </Button>
               </form>
-            )}
+            }
 
             {mode === 'sign-in' && (
               <>
@@ -261,7 +299,7 @@ function Home() {
               </>
             )}
 
-            {(
+            {
               <p className="text-small text-muted-foreground mt-4 text-center">
                 {mode === 'sign-in' ? (
                   <>
@@ -287,7 +325,7 @@ function Home() {
                   </>
                 )}
               </p>
-            )}
+            }
           </CardContent>
         </Card>
       </div>

@@ -19,8 +19,12 @@ function signUp(email: string, signupType?: string) {
   )
 }
 
-/** Only student accounts can be created over HTTP for now. */
-describe('sign-up is student only', () => {
+/**
+ * Owner decision 2026-09-22: parent sign-up reopened over HTTP (it had been student-only since
+ * 2026-09-20). Teacher and admin still are not self-serve. Supersedes the old
+ * signup-student-only.integration.test.ts, same fixture pattern.
+ */
+describe('sign-up: student and parent are open, teacher/admin/untyped are not', () => {
   afterAll(async () => {
     const db = createDb()
     for (const email of created) {
@@ -34,8 +38,8 @@ describe('sign-up is student only', () => {
     await db.destroy()
   })
 
-  it('refuses parent, teacher and untyped sign-ups', async () => {
-    for (const type of ['parent', 'teacher', 'admin', undefined]) {
+  it('refuses teacher, admin and untyped sign-ups', async () => {
+    for (const type of ['teacher', 'admin', undefined]) {
       const email = `guard-${type ?? 'none'}-${Date.now()}@example.com`
       const response = await signUp(email, type)
       expect(response.status).toBe(403)
@@ -55,5 +59,26 @@ describe('sign-up is student only', () => {
     const row = await db.selectFrom('users').select('role').where('email', '=', email).executeTakeFirstOrThrow()
     await db.destroy()
     expect(row.role).toBe('student')
+  })
+
+  it('accepts a parent sign-up, with her own fresh household and no student yet', async () => {
+    const email = `guard-parent-${Date.now()}@example.com`
+    created.push(email)
+    const response = await signUp(email, 'parent')
+    expect(response.status).toBe(200)
+    const db = createDb()
+    const row = await db
+      .selectFrom('users')
+      .select(['role', 'household_id'])
+      .where('email', '=', email)
+      .executeTakeFirstOrThrow()
+    expect(row.role).toBe('parent')
+    const students = await db
+      .selectFrom('students')
+      .select('id')
+      .where('household_id', '=', row.household_id)
+      .execute()
+    await db.destroy()
+    expect(students).toHaveLength(0)
   })
 })
