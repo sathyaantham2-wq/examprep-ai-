@@ -3,6 +3,11 @@ import type { DifficultyTier, QuestionType } from '../db/enums'
 import { studentPointsLedgerRepository } from '../db/repositories'
 import { isObjectiveType } from './scoring'
 
+export interface PointsEarned {
+  points: number
+  coins: number
+}
+
 // F125 (first slice): no external spec sets these -- a documented default, same convention
 // F118/F063 already use for an undocumented threshold. Harder questions pay more so the incentive
 // points toward attempting Hard/Hardest rather than farming Easy ones. Coins mirror points 1:1
@@ -65,4 +70,32 @@ export async function recordPointsForConfirmedItems(
       coins: coinsForPoints(points),
     })
   }
+}
+
+/**
+ * What THIS evaluation's confirm just paid out -- POST /api/attempts/:id/submit calls this right
+ * after an all-MCQ adaptive paper auto-confirms (F119), to tell the student's own client how much
+ * to celebrate. A query rather than a return value from recordPointsForConfirmedItems() /
+ * confirmEvaluation() on purpose: several existing callers already depend on confirmEvaluation's
+ * current return shape (the evaluation row), and this is cheap enough to ask for separately
+ * rather than thread a new field through all of them.
+ */
+export async function getPointsEarnedForEvaluation(
+  db: Db,
+  evaluationId: string,
+): Promise<PointsEarned> {
+  const row = await db
+    .selectFrom('student_points_ledger')
+    .innerJoin(
+      'evaluation_items',
+      'evaluation_items.id',
+      'student_points_ledger.evaluation_item_id',
+    )
+    .select((eb) => [
+      eb.fn.sum<string>('student_points_ledger.points').as('points'),
+      eb.fn.sum<string>('student_points_ledger.coins').as('coins'),
+    ])
+    .where('evaluation_items.evaluation_id', '=', evaluationId)
+    .executeTakeFirst()
+  return { points: Number(row?.points ?? 0), coins: Number(row?.coins ?? 0) }
 }

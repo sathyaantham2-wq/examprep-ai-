@@ -10,6 +10,7 @@ import {
 } from '../db/test-helpers'
 import type { TestSession } from '../db/test-helpers'
 import { adaptiveLevel } from '../lib/adaptive/levels'
+import { POINTS_BY_DIFFICULTY } from '../lib/points'
 import { DEFAULT_MASTERY_CONFIG } from '../lib/adaptive/config'
 import { Route as StudentsRoute } from './api/students'
 import { Route as ProfileRoute } from './api/students/me/profile'
@@ -360,6 +361,15 @@ describe('concept-level adaptive learning', () => {
         .execute()
       expect(logged.length).toBe(10)
       expect(logged.every((l) => l.time_spent_sec === 20)).toBe(true)
+
+      // F125: points/coins pay out at exactly this same auto-confirm moment, one Easy question's
+      // worth (10) per question answered right (the strong concept's questions, per takeTest's
+      // own "strong right, weak wrong" rule) -- never for the wrong ones.
+      const correctCount = round.questions.filter((q) => q.conceptId !== weakConceptId).length
+      expect(round.submit.points_earned).toEqual({
+        points: correctCount * POINTS_BY_DIFFICULTY.Easy,
+        coins: correctCount * POINTS_BY_DIFFICULTY.Easy,
+      })
     })
 
     it('shows a student her score and concept levels but no answer key', async () => {

@@ -12,6 +12,7 @@ import { ThemeToggle } from '../../components/theme-toggle'
 import { AnswerReview } from '../../components/answer-review'
 import { WrittenAnswerInput } from '../../components/written-answer-input'
 import { useSession } from '../../lib/auth-client'
+import { playCoinSound } from '../../lib/reward-sound'
 
 export const Route = createFileRoute('/attempt/$id')({ component: Attempt })
 
@@ -89,6 +90,7 @@ function Attempt() {
   const [submitError, setSubmitError] = useState<string | null>(null)
   const [submitted, setSubmitted] = useState(false)
   const [result, setResult] = useState<AttemptResult | null>(null)
+  const [pointsEarned, setPointsEarned] = useState<{ points: number; coins: number } | null>(null)
   const [now, setNow] = useState(() => Date.now())
   const saveTimers = useRef<
     Partial<Record<string, ReturnType<typeof setTimeout>>>
@@ -202,10 +204,19 @@ function Attempt() {
         setSubmitError(body.message ?? body.error ?? 'Could not submit.')
         return
       }
-      const body = (await response.json().catch(() => null)) as { evaluation_id?: string | null } | null
+      const body = (await response.json().catch(() => null)) as {
+        evaluation_id?: string | null
+        points_earned?: { points: number; coins: number } | null
+      } | null
       setSubmitted(true)
       // A paper made only of multiple-choice questions is marked at once; show how it went.
       if (body?.evaluation_id) await showResult()
+      // F125: best-effort reward -- a missing/failed sound (autoplay policy, no Web Audio) never
+      // blocks or delays the result above, which is why this runs after, not gating, showResult().
+      if (body?.points_earned && body.points_earned.points > 0) {
+        setPointsEarned(body.points_earned)
+        playCoinSound()
+      }
     } finally {
       setSubmitting(false)
     }
@@ -228,6 +239,38 @@ function Attempt() {
           <p className="text-body">
             You scored {result.score} out of {result.total_marks} ({Math.round(result.percentage)}%).
           </p>
+          {pointsEarned && pointsEarned.points > 0 && (
+            <div
+              className="coin-reward bg-primary/5 border-primary/20 flex items-center gap-3 rounded-md border p-3"
+              role="status"
+            >
+              <svg
+                width="28"
+                height="28"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth="2"
+                className="text-primary shrink-0"
+                aria-hidden="true"
+              >
+                <circle cx="12" cy="12" r="9" />
+                <path d="M9.5 9a2.5 2.5 0 0 1 5 0c0 1.5-2.5 2-2.5 3.5M12 16h.01" />
+              </svg>
+              <p className="text-body">
+                <span className="font-semibold">
+                  +{pointsEarned.points} points, +{pointsEarned.coins} coins!
+                </span>{' '}
+                <span className="text-muted-foreground">
+                  See where you stand on the{' '}
+                  <a href="/leaderboard" className="text-primary underline-offset-4 hover:underline">
+                    leaderboard
+                  </a>
+                  .
+                </span>
+              </p>
+            </div>
+          )}
           <div className="space-y-2">
             {result.concepts.map((c) => (
               <div key={c.concept_id} className="text-body rounded-md border p-3">
