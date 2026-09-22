@@ -7,8 +7,12 @@ import { wrapRouteHandlers } from '../../../../lib/error-log'
 
 /**
  * GET /api/attempts/:id/result -- what a student may see after a paper whose marks were confirmed
- * on submission: her score and, per concept, how many questions and where that concept now stands.
- * Deliberately no per-question correct answers or answer key (CLAUDE.md hard rule, T09). Returns
+ * on submission: her score, per-question marks (so she can see how each of her own answers was
+ * marked), and per concept, how many questions and where that concept now stands. Deliberately no
+ * *correct* answers anywhere in this response -- only marks_awarded/marks_max per question she
+ * already answered, never the answer key itself (CLAUDE.md hard rule, T09; same narrow-projection
+ * approach GET /api/attempts/:id documents). The frontend merges this by paper_question_id with
+ * the question text/her own answer it already holds from that same endpoint. Returns
  * { evaluated: false } while a parent still has to confirm the marks.
  */
 export const Route = createFileRoute('/api/attempts/$id/result')({
@@ -35,7 +39,13 @@ export const Route = createFileRoute('/api/attempts/$id/result')({
         const answers = await db
           .selectFrom('concept_answer_log as l')
           .innerJoin('concepts as c', 'c.id', 'l.concept_id')
-          .select(['l.concept_id', 'c.name as concept_name', 'l.marks_awarded', 'l.marks_max'])
+          .select([
+            'l.paper_question_id',
+            'l.concept_id',
+            'c.name as concept_name',
+            'l.marks_awarded',
+            'l.marks_max',
+          ])
           .where('l.evaluation_id', '=', evaluation.id)
           .where('l.student_id', '=', student.id)
           .execute()
@@ -85,6 +95,11 @@ export const Route = createFileRoute('/api/attempts/$id/result')({
           total_marks: Number(evaluation.total_marks),
           percentage: Number(evaluation.percentage ?? 0),
           concepts,
+          questions: answers.map((a) => ({
+            paper_question_id: a.paper_question_id,
+            marks_awarded: Number(a.marks_awarded),
+            marks_max: Number(a.marks_max),
+          })),
         })
       },
     },

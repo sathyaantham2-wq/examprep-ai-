@@ -59,6 +59,13 @@ interface AttemptResult {
     mastery_level: string | null
     previous_level: string | null
   }>
+  // Per question: only her own marks, never the correct answer (T09) -- merged client-side with
+  // the question text/her own saved answer this screen already holds from GET /api/attempts/:id.
+  questions: Array<{
+    paper_question_id: string
+    marks_awarded: number
+    marks_max: number
+  }>
 }
 
 interface AnswerState {
@@ -285,6 +292,65 @@ function Attempt() {
               </div>
             ))}
           </div>
+
+          {/* Her own paper back, with her own answers marked -- her marks per question, never the
+              correct answer for one she got wrong (T09; GET /api/attempts/:id/result documents
+              why). data.questions still holds the text/options/her saved answer from the earlier
+              GET /api/attempts/:id fetch -- merged here by paper_question_id, not re-fetched. */}
+          <div className="space-y-3">
+            <h2 className="text-h3">Your answers</h2>
+            {data.questions.map((q) => {
+              const scored = result.questions.find(
+                (r) => r.paper_question_id === q.paper_question_id,
+              )
+              const correct =
+                scored != null && scored.marks_max > 0
+                  ? scored.marks_awarded >= scored.marks_max
+                  : null
+              const yourAnswer =
+                q.type === 'mcq'
+                  ? q.saved_answer?.selected_option
+                    ? `${q.saved_answer.selected_option}. ${
+                        q.options.find(
+                          (o) => o.label === q.saved_answer?.selected_option,
+                        )?.text ?? ''
+                      }`
+                    : '(blank)'
+                  : q.saved_answer?.response_text || '(blank)'
+              return (
+                <Card key={q.paper_question_id}>
+                  <CardHeader>
+                    <div className="flex items-start justify-between gap-4">
+                      <CardTitle className="text-body font-medium">
+                        {q.position}. {q.text}
+                      </CardTitle>
+                      {scored && (
+                        <span
+                          className={
+                            correct
+                              ? 'text-small shrink-0 font-medium text-emerald-600 dark:text-emerald-400'
+                              : 'text-small text-destructive shrink-0 font-medium'
+                          }
+                        >
+                          {correct ? '✓' : '✗'} {scored.marks_awarded}/
+                          {scored.marks_max}
+                        </span>
+                      )}
+                    </div>
+                  </CardHeader>
+                  <CardContent>
+                    <p className="text-small text-muted-foreground">
+                      Your answer
+                    </p>
+                    <p className="text-body whitespace-pre-wrap">
+                      {yourAnswer}
+                    </p>
+                  </CardContent>
+                </Card>
+              )
+            })}
+          </div>
+
           <div className="flex flex-wrap gap-3">
             <a href="/my-paper">
               <Button>Practise again</Button>
