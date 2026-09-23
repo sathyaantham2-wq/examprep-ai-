@@ -163,7 +163,10 @@ test('first-time student: profile, personalised home, Easy assessment, marked at
   // Easy MCQ-only shape a first assessment always used to be.
   await page.waitForURL('**/my-paper**')
   await expect(page.getByText('Assessment Details')).toBeVisible()
-  await expect(page.getByLabel('Questions')).toHaveValue('10')
+  // exact: true matters here -- getByLabel is case-insensitive substring matching by default,
+  // and the TanStack devtools overlay the dev server renders carries aria-labels like
+  // "Open match details for /admin/questions", which a bare 'Questions' also matches.
+  await expect(page.getByLabel('Questions', { exact: true })).toHaveValue('10')
   await expect(
     page.getByText('10 questions (10 marks)', { exact: false }),
   ).toBeVisible()
