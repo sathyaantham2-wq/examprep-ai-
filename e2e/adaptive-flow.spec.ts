@@ -155,24 +155,20 @@ test('first-time student: profile, personalised home, Easy assessment, marked at
   await card.click()
   await saveButton.click()
 
-  // Personalised home.
-  await page.waitForURL('**/student')
-  await expect(page.getByText('Welcome, Adaptive E2E Kid')).toBeVisible()
-  await expect(page.getByText('Class 7 · CBSE syllabus')).toBeVisible()
-  await expect(page.getByText('Recommended next')).toBeVisible()
-  await page.getByRole('link', { name: /Take my first assessment/ }).click()
-
+  // Owner decision 2026-09-23: /my-paper is her default landing page now, straight after
+  // finishing her profile -- not /student ("Your progress"), which is still reachable from the
+  // sidebar (checked later, via "Back to my progress" after this attempt is marked).
   // "Generate my question paper": a short Easy assessment made from her profile -- Subject,
   // Questions, Difficulty and Question type are real controls now, defaulting to the same 10
   // Easy MCQ-only shape a first assessment always used to be.
   await page.waitForURL('**/my-paper**')
-  await expect(page.getByText('Assessment details')).toBeVisible()
+  await expect(page.getByText('Assessment Details')).toBeVisible()
   await expect(page.getByLabel('Questions')).toHaveValue('10')
   await expect(
     page.getByText('10 questions (10 marks)', { exact: false }),
   ).toBeVisible()
   await expect(page.getByText('Multiple choice')).toBeVisible()
-  await page.getByRole('button', { name: 'Start test' }).click()
+  await page.getByRole('button', { name: 'Generate Assessment' }).click()
 
   // Answer every question (all the right option), then submit.
   await page.waitForURL('**/attempt/**')

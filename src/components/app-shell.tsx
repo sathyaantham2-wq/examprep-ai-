@@ -1,3 +1,4 @@
+import { useState } from 'react'
 import type { ReactNode } from 'react'
 import { ThemeToggle } from './theme-toggle'
 
@@ -120,6 +121,38 @@ function LeaderboardIcon() {
     </svg>
   )
 }
+function MenuIcon() {
+  return (
+    <svg
+      width="20"
+      height="20"
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="2"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+    >
+      <path d="M4 6h16M4 12h16M4 18h16" />
+    </svg>
+  )
+}
+function CloseIcon() {
+  return (
+    <svg
+      width="18"
+      height="18"
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="2"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+    >
+      <path d="M18 6 6 18M6 6l12 12" />
+    </svg>
+  )
+}
 
 export function AppShell({
   variant = 'parent',
@@ -135,13 +168,15 @@ export function AppShell({
   }> =
     variant === 'student'
       ? [
-          { key: 'home', label: 'Home', href: '/student', icon: <HomeIcon /> },
+          // Generate Paper first -- it's her default landing page now (owner decision
+          // 2026-09-23), not /student ("Your progress"), which stays one click away as "Home".
           {
             key: 'generate',
             label: 'Generate Paper',
             href: '/my-paper',
             icon: <GenerateIcon />,
           },
+          { key: 'home', label: 'Home', href: '/student', icon: <HomeIcon /> },
           {
             key: 'leaderboard',
             label: 'Leaderboard',
@@ -177,47 +212,98 @@ export function AppShell({
           },
         ]
 
+  const [mobileOpen, setMobileOpen] = useState(false)
+
+  const logo = (
+    <div className="flex items-center gap-2.5 px-2">
+      <div className="bg-primary flex size-[34px] shrink-0 items-center justify-center rounded-[9px]">
+        <svg
+          width="18"
+          height="18"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="var(--primary-foreground)"
+          strokeWidth="2"
+          strokeLinecap="round"
+          strokeLinejoin="round"
+        >
+          <path d="M22 10 12 5 2 10l10 5 10-5Z" />
+          <path d="M6 12v5c0 1.5 2.7 3 6 3s6-1.5 6-3v-5" />
+        </svg>
+      </div>
+      <div className="display-title text-h3 leading-tight">ExamPrep AI</div>
+    </div>
+  )
+
+  const nav = (
+    <nav className="flex flex-col gap-0.5">
+      {items.map((item) => (
+        <a
+          key={item.key}
+          href={item.href}
+          aria-current={item.key === active ? 'page' : undefined}
+          onClick={() => setMobileOpen(false)}
+          className={
+            item.key === active
+              ? 'bg-primary/10 text-primary flex items-center gap-3 rounded-md px-3 py-2.5 text-sm font-semibold'
+              : 'text-muted-foreground hover:bg-accent hover:text-accent-foreground flex items-center gap-3 rounded-md px-3 py-2.5 text-sm'
+          }
+        >
+          {item.icon}
+          {item.label}
+        </a>
+      ))}
+    </nav>
+  )
+
   return (
-    <div className="flex min-h-screen">
-      <div className="no-print bg-card border-border flex w-[232px] shrink-0 flex-col border-r p-[18px] pt-7">
-        <div className="mb-7 flex items-center gap-2.5 px-2">
-          <div className="bg-primary flex size-[34px] shrink-0 items-center justify-center rounded-[9px]">
-            <svg
-              width="18"
-              height="18"
-              viewBox="0 0 24 24"
-              fill="none"
-              stroke="var(--primary-foreground)"
-              strokeWidth="2"
-              strokeLinecap="round"
-              strokeLinejoin="round"
-            >
-              <path d="M22 10 12 5 2 10l10 5 10-5Z" />
-              <path d="M6 12v5c0 1.5 2.7 3 6 3s6-1.5 6-3v-5" />
-            </svg>
-          </div>
-          <div className="display-title text-h3 leading-tight">ExamPrep AI</div>
+    <div className="min-h-screen lg:flex">
+      {/* Mobile/tablet top bar -- the sidebar itself becomes an off-canvas drawer below `lg`,
+          since a permanently fixed 232px column has no way to fit a phone or a portrait tablet.
+          "Dynamic sidebar" per the user's 2026-09-23 request. */}
+      <div className="no-print bg-card border-border sticky top-0 z-30 flex items-center justify-between border-b p-3 lg:hidden">
+        <div className="flex items-center gap-2">
+          <button
+            type="button"
+            onClick={() => setMobileOpen(true)}
+            aria-label="Open menu"
+            className="text-muted-foreground hover:bg-accent hover:text-accent-foreground flex size-9 shrink-0 items-center justify-center rounded-md"
+          >
+            <MenuIcon />
+          </button>
+          {logo}
+        </div>
+        <ThemeToggle />
+      </div>
+
+      {mobileOpen && (
+        <div
+          className="fixed inset-0 z-30 bg-black/40 lg:hidden"
+          onClick={() => setMobileOpen(false)}
+          aria-hidden="true"
+        />
+      )}
+
+      <div
+        className={`no-print bg-card border-border fixed inset-y-0 left-0 z-40 flex w-[260px] max-w-[80vw] shrink-0 flex-col border-r p-[18px] pt-7 transition-transform duration-200 lg:sticky lg:top-0 lg:h-screen lg:w-[232px] lg:max-w-none lg:translate-x-0 ${
+          mobileOpen ? 'translate-x-0' : '-translate-x-full'
+        }`}
+      >
+        <div className="mb-7 flex items-center justify-between">
+          {logo}
+          <button
+            type="button"
+            onClick={() => setMobileOpen(false)}
+            aria-label="Close menu"
+            className="text-muted-foreground hover:bg-accent hover:text-accent-foreground flex size-8 shrink-0 items-center justify-center rounded-md lg:hidden"
+          >
+            <CloseIcon />
+          </button>
         </div>
 
-        <nav className="flex flex-col gap-0.5">
-          {items.map((item) => (
-            <a
-              key={item.key}
-              href={item.href}
-              aria-current={item.key === active ? 'page' : undefined}
-              className={
-                item.key === active
-                  ? 'bg-primary/10 text-primary flex items-center gap-3 rounded-md px-3 py-2.5 text-sm font-semibold'
-                  : 'text-muted-foreground hover:bg-accent hover:text-accent-foreground flex items-center gap-3 rounded-md px-3 py-2.5 text-sm'
-              }
-            >
-              {item.icon}
-              {item.label}
-            </a>
-          ))}
-        </nav>
+        {nav}
 
-        <div className="mt-auto pt-4">
+        <div className="mt-auto hidden pt-4 lg:block">
           <ThemeToggle />
         </div>
       </div>

@@ -299,7 +299,8 @@ test('happy path: sign in, generate paper, download PDF, attempt, evaluate, trac
   await page.selectOption('#student-class', '7')
   await page.getByRole('checkbox').first().click()
   await page.getByRole('button', { name: 'Save and continue' }).click()
-  await page.waitForURL('**/student')
+  // Owner decision 2026-09-23: /my-paper is her default landing page now, not /student.
+  await page.waitForURL('**/my-paper**')
 
   const attemptCreate = await page.request.post('/api/attempts', {
     data: { paper_id: paperId, mode: 'online' },

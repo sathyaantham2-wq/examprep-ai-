@@ -38,6 +38,126 @@ const QUESTION_TYPES = [
 ] as const
 type QuestionType = (typeof QUESTION_TYPES)[number]['value']
 
+// Small field icons for the Assessment Details card -- same inline-SVG convention as the rest of
+// the app (no icon library), one per field so each reads at a glance rather than by label text
+// alone, matching the reference design.
+function BookIcon() {
+  return (
+    <svg
+      width="14"
+      height="14"
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="2"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+    >
+      <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20" />
+      <path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2Z" />
+    </svg>
+  )
+}
+function HashIcon() {
+  return (
+    <svg
+      width="14"
+      height="14"
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="2"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+    >
+      <path d="M5 9h14M5 15h14M10 3 8 21M16 3l-2 18" />
+    </svg>
+  )
+}
+function BarsIcon() {
+  return (
+    <svg
+      width="14"
+      height="14"
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="2"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+    >
+      <path d="M3 20V10M10 20V4M17 20v-7" />
+    </svg>
+  )
+}
+function ClockIcon() {
+  return (
+    <svg
+      width="14"
+      height="14"
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="2"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+    >
+      <circle cx="12" cy="12" r="9" />
+      <path d="M12 7v5l3 3" />
+    </svg>
+  )
+}
+function ListIcon() {
+  return (
+    <svg
+      width="14"
+      height="14"
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="2"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+    >
+      <path d="M8 6h13M8 12h13M8 18h13M3 6h.01M3 12h.01M3 18h.01" />
+    </svg>
+  )
+}
+function ResetIcon() {
+  return (
+    <svg
+      width="15"
+      height="15"
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="2"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+    >
+      <path d="M3 12a9 9 0 1 0 3-6.7" />
+      <path d="M3 3v5h5" />
+    </svg>
+  )
+}
+function BulbIcon() {
+  return (
+    <svg
+      width="14"
+      height="14"
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="2"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+    >
+      <path d="M9 18h6M10 21h4" />
+      <path d="M12 3a6 6 0 0 0-3.5 10.9c.4.3.5.8.5 1.3V16h6v-.8c0-.5.1-1 .5-1.3A6 6 0 0 0 12 3Z" />
+    </svg>
+  )
+}
+
 interface ProfileSubject {
   id: string
   name: string
@@ -212,6 +332,13 @@ function MyPaper() {
     if (subjectId) void loadPlan(subjectId, chapterIds, questionCount, type)
   }
 
+  function resetPreferences() {
+    setQuestionCount(10)
+    setQuestionType('combined')
+    setDifficultyCeiling('')
+    if (subjectId) void loadPlan(subjectId, chapterIds, 10, 'combined')
+  }
+
   async function startTest() {
     if (!plan || !chapterIds) return
     setStarting(true)
@@ -274,9 +401,11 @@ function MyPaper() {
 
   const withContent = subjects.filter((s) => s.has_content)
 
+  const readyToGenerate = Boolean(plan) && Boolean(chapterIds)
+
   return (
     <AppShell variant="student" active="generate">
-      <div className="mx-auto max-w-3xl p-4 sm:p-8">
+      <div className="mx-auto max-w-5xl p-4 sm:p-8">
         {/* Hero: same treatment as the parent's /generate -- the app's own --primary token at low
           opacity, one original line-art icon, never a stock illustration. */}
         <div className="from-primary/10 via-card to-card border-border relative mb-6 overflow-hidden rounded-2xl border bg-gradient-to-br p-6 sm:p-8">
@@ -348,12 +477,53 @@ function MyPaper() {
         {withContent.length > 0 && (
           <Card className="mb-4">
             <CardHeader>
-              <CardTitle className="text-h3">Assessment details</CardTitle>
+              <div className="flex flex-wrap items-start justify-between gap-3">
+                <div className="flex items-start gap-3">
+                  <div className="bg-primary/10 text-primary mt-0.5 flex size-9 shrink-0 items-center justify-center rounded-lg">
+                    <svg
+                      width="18"
+                      height="18"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      strokeWidth="2"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                    >
+                      <path d="M15 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7Z" />
+                      <path d="M14 2v4a2 2 0 0 0 2 2h4M9 13h6M9 17h6" />
+                    </svg>
+                  </div>
+                  <div>
+                    <CardTitle className="text-h3">
+                      Assessment Details
+                    </CardTitle>
+                    <CardDescription>
+                      Set your preferences and generate your assessment
+                    </CardDescription>
+                  </div>
+                </div>
+                <span className="text-caption bg-primary/10 text-primary inline-flex shrink-0 items-center gap-1.5 rounded-full px-3 py-1.5 font-medium">
+                  <BulbIcon />
+                  {questionCount} Qs
+                  {plan ? ` ≈ ${plan.estimated_minutes} min` : ''}
+                </span>
+              </div>
             </CardHeader>
             <CardContent>
-              <div className="grid gap-4 sm:grid-cols-2">
+              {/* Single row from `lg` up (matches the reference design), stacking to 2 then 1
+                  column below that -- 5 items never fit one line on a phone or portrait tablet
+                  without becoming unreadable, so this is "single line" on desktop, gracefully
+                  wrapped everywhere narrower. */}
+              <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-5">
                 <div className="space-y-1.5">
-                  <Label htmlFor="my-paper-subject">Subject</Label>
+                  <Label
+                    htmlFor="my-paper-subject"
+                    className="text-muted-foreground flex items-center gap-1.5"
+                  >
+                    <BookIcon />
+                    Subject
+                  </Label>
                   <select
                     id="my-paper-subject"
                     className="border-input flex h-9 w-full rounded-md border bg-transparent px-3 text-sm shadow-xs"
@@ -369,7 +539,13 @@ function MyPaper() {
                 </div>
 
                 <div className="space-y-1.5">
-                  <Label htmlFor="my-paper-questions">Questions</Label>
+                  <Label
+                    htmlFor="my-paper-questions"
+                    className="text-muted-foreground flex items-center gap-1.5"
+                  >
+                    <HashIcon />
+                    Questions
+                  </Label>
                   <select
                     id="my-paper-questions"
                     className="border-input flex h-9 w-full rounded-md border bg-transparent px-3 text-sm shadow-xs"
@@ -389,7 +565,13 @@ function MyPaper() {
                 </div>
 
                 <div className="space-y-1.5">
-                  <Label htmlFor="my-paper-difficulty">Difficulty</Label>
+                  <Label
+                    htmlFor="my-paper-difficulty"
+                    className="text-muted-foreground flex items-center gap-1.5"
+                  >
+                    <BarsIcon />
+                    Difficulty
+                  </Label>
                   <select
                     id="my-paper-difficulty"
                     className="border-input flex h-9 w-full rounded-md border bg-transparent px-3 text-sm shadow-xs"
@@ -408,28 +590,21 @@ function MyPaper() {
                 </div>
 
                 <div className="space-y-1.5">
-                  <Label>Time</Label>
-                  <div className="border-input text-muted-foreground flex h-9 w-full items-center gap-2 rounded-md border bg-transparent px-3 text-sm">
-                    <svg
-                      width="14"
-                      height="14"
-                      viewBox="0 0 24 24"
-                      fill="none"
-                      stroke="currentColor"
-                      strokeWidth="2"
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      className="shrink-0"
-                    >
-                      <circle cx="12" cy="12" r="9" />
-                      <path d="M12 7v5l3 3" />
-                    </svg>
-                    {plan ? `About ${plan.estimated_minutes} min` : '—'}
+                  <Label className="text-muted-foreground flex items-center gap-1.5">
+                    <ClockIcon />
+                    Time
+                  </Label>
+                  <div className="border-input text-muted-foreground flex h-9 w-full items-center rounded-md border bg-transparent px-3 text-sm">
+                    {plan ? `~ ${plan.estimated_minutes} min` : '—'}
                   </div>
                 </div>
 
-                <div className="space-y-1.5 sm:col-span-2">
-                  <Label htmlFor="my-paper-question-type">
+                <div className="space-y-1.5">
+                  <Label
+                    htmlFor="my-paper-question-type"
+                    className="text-muted-foreground flex items-center gap-1.5"
+                  >
+                    <ListIcon />
                     Question type
                   </Label>
                   <select
@@ -449,7 +624,10 @@ function MyPaper() {
                 </div>
               </div>
 
-              <p className="text-caption text-muted-foreground mt-3">
+              <p className="text-caption text-muted-foreground bg-muted mt-4 flex items-start gap-2 rounded-md p-3">
+                <span className="shrink-0 pt-0.5">
+                  <BulbIcon />
+                </span>
                 {plan
                   ? `This paper will have ${plan.total_questions} question${plan.total_questions === 1 ? '' : 's'} (${plan.total_marks} marks) -- ${plan.question_types.join(', ')}. Weak and priority concepts still get more questions, same as F119.`
                   : loadingPlan
@@ -458,6 +636,25 @@ function MyPaper() {
                       ? "Written practice only appears once she's ready for it -- if she isn't yet, this falls back to multiple choice."
                       : 'Weak and priority concepts get more questions, same as F119.'}
               </p>
+
+              {error && (
+                <p className="text-small text-destructive mt-3" role="alert">
+                  {error}
+                </p>
+              )}
+
+              <div className="mt-4 flex flex-col-reverse gap-2 sm:flex-row sm:justify-end">
+                <Button type="button" variant="outline" onClick={resetPreferences}>
+                  <ResetIcon />
+                  Reset
+                </Button>
+                <Button
+                  disabled={starting || loadingPlan || !readyToGenerate}
+                  onClick={() => void startTest()}
+                >
+                  {starting ? 'Getting your test ready…' : 'Generate Assessment'}
+                </Button>
+              </div>
             </CardContent>
           </Card>
         )}
@@ -492,28 +689,10 @@ function MyPaper() {
 
             {/* "What this paper covers" (plan.concepts breakdown) is intentionally hidden
                 here at the user's request -- the data is still fetched and used elsewhere
-                on this screen (summary fields above), just not rendered as its own table. */}
-
-            {error && (
-              <p className="text-small text-destructive" role="alert">
-                {error}
-              </p>
-            )}
-            <Button
-              className="w-full"
-              size="lg"
-              disabled={starting || loadingPlan}
-              onClick={() => void startTest()}
-            >
-              {starting ? 'Getting your test ready…' : 'Start test'}
-            </Button>
+                on this screen (summary fields above), just not rendered as its own table.
+                "Generate Assessment" and its error display now live in the Assessment Details
+                card above, next to the preferences that drive it. */}
           </div>
-        )}
-
-        {!plan && error && (
-          <p className="text-small text-destructive" role="alert">
-            {error}
-          </p>
         )}
       </div>
     </AppShell>

@@ -52,7 +52,9 @@ function Home() {
         })
     } else if (role === 'student') {
       // First sign-in: a student finishes her profile (name, class, syllabus, subjects) before
-      // anything else. A paused or failing profile call just falls through to her home screen.
+      // anything else. A paused or failing profile call just falls through to her default screen.
+      // Owner decision 2026-09-23: /my-paper (Generate Paper) is her default landing page now,
+      // not /student ("Your progress") -- the dashboard is still reachable from the sidebar.
       fetch('/api/students/me')
         .then((r) => (r.ok ? r.json() : null))
         .then((me: { profile_complete?: boolean } | null) => {
@@ -60,10 +62,10 @@ function Home() {
             to:
               me && me.profile_complete === false
                 ? '/profile-setup'
-                : '/student',
+                : '/my-paper',
           })
         })
-        .catch(() => navigate({ to: '/student' }))
+        .catch(() => navigate({ to: '/my-paper' }))
     }
   }, [isPending, session, role, navigate])
 

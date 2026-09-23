@@ -151,7 +151,8 @@ function ProfileSetup() {
         setError(typeof body?.error === 'string' ? body.error : 'Could not save. Check the form and try again.')
         return
       }
-      navigate({ to: '/student' })
+      // Owner decision 2026-09-23: /my-paper is her default landing page now, not /student.
+      navigate({ to: '/my-paper' })
     } finally {
       setSaving(false)
     }
