@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react'
+import { useEffect, useMemo, useState } from 'react'
 import { createFileRoute, useNavigate } from '@tanstack/react-router'
 import { Button } from '../components/ui/button'
 import {
@@ -157,6 +157,102 @@ function BulbIcon() {
     </svg>
   )
 }
+function SearchIcon() {
+  return (
+    <svg
+      width="15"
+      height="15"
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="2"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+    >
+      <circle cx="11" cy="11" r="7" />
+      <path d="m21 21-4.3-4.3" />
+    </svg>
+  )
+}
+function ChevronIcon({ up }: { up: boolean }) {
+  return (
+    <svg
+      width="16"
+      height="16"
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="2"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      className={`transition-transform ${up ? '' : 'rotate-180'}`}
+    >
+      <path d="m18 15-6-6-6 6" />
+    </svg>
+  )
+}
+function ChevronRightIcon() {
+  return (
+    <svg
+      width="15"
+      height="15"
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="2"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+    >
+      <path d="m9 18 6-6-6-6" />
+    </svg>
+  )
+}
+function CheckIcon() {
+  return (
+    <svg
+      width="12"
+      height="12"
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="3"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+    >
+      <path d="M20 6 9 17l-5-5" />
+    </svg>
+  )
+}
+
+// Colour per part -- cycles for however many parts a subject has (matches the reference design's
+// blue Part I / green Part II exactly for the common 2-part case; amber/purple cover a third or
+// fourth part rather than reusing blue, which would make two different parts look like one).
+const PART_COLORS = [
+  {
+    badge: 'bg-blue-600',
+    header: 'bg-blue-50 dark:bg-blue-950/40',
+    pill: 'bg-blue-100 text-blue-700 dark:bg-blue-900 dark:text-blue-200',
+    row: 'bg-blue-50/60 border-blue-200 dark:bg-blue-950/30 dark:border-blue-900',
+  },
+  {
+    badge: 'bg-emerald-600',
+    header: 'bg-emerald-50 dark:bg-emerald-950/40',
+    pill: 'bg-emerald-100 text-emerald-700 dark:bg-emerald-900 dark:text-emerald-200',
+    row: 'bg-emerald-50/60 border-emerald-200 dark:bg-emerald-950/30 dark:border-emerald-900',
+  },
+  {
+    badge: 'bg-amber-600',
+    header: 'bg-amber-50 dark:bg-amber-950/40',
+    pill: 'bg-amber-100 text-amber-700 dark:bg-amber-900 dark:text-amber-200',
+    row: 'bg-amber-50/60 border-amber-200 dark:bg-amber-950/30 dark:border-amber-900',
+  },
+  {
+    badge: 'bg-purple-600',
+    header: 'bg-purple-50 dark:bg-purple-950/40',
+    pill: 'bg-purple-100 text-purple-700 dark:bg-purple-900 dark:text-purple-200',
+    row: 'bg-purple-50/60 border-purple-200 dark:bg-purple-950/30 dark:border-purple-900',
+  },
+] as const
 
 interface ProfileSubject {
   id: string
@@ -211,6 +307,8 @@ function MyPaper() {
   const [subjectId, setSubjectId] = useState('')
   const [allChapters, setAllChapters] = useState<Array<ChapterChoice>>([])
   const [chapterIds, setChapterIds] = useState<Array<string> | null>(null)
+  const [chapterSearch, setChapterSearch] = useState('')
+  const [collapsedParts, setCollapsedParts] = useState<Set<string>>(new Set())
   const [plan, setPlan] = useState<Plan | null>(null)
   const [loadingPlan, setLoadingPlan] = useState(false)
   const [error, setError] = useState<string | null>(null)
@@ -317,9 +415,32 @@ function MyPaper() {
     const next = current.includes(id)
       ? current.filter((c) => c !== id)
       : [...current, id]
-    if (next.length === 0) return
     setChapterIds(next)
-    void loadPlan(subjectId, next, questionCount, questionType)
+    // A momentarily-empty selection (the last box unchecked, or Clear All) just isn't sent to
+    // GET /api/adaptive/plan -- an empty chapter_ids param is indistinguishable from "none given"
+    // there, which would silently fall back to the server's own recommended chapters rather than
+    // genuinely showing zero. readyToGenerate (chapterIds.length > 0) blocks generating instead.
+    if (next.length > 0)
+      void loadPlan(subjectId, next, questionCount, questionType)
+  }
+
+  function selectAllChapters() {
+    const all = allChapters.map((c) => c.id)
+    setChapterIds(all)
+    void loadPlan(subjectId, all, questionCount, questionType)
+  }
+
+  function clearAllChapters() {
+    setChapterIds([])
+  }
+
+  function togglePartCollapsed(part: string) {
+    setCollapsedParts((prev) => {
+      const next = new Set(prev)
+      if (next.has(part)) next.delete(part)
+      else next.add(part)
+      return next
+    })
   }
 
   function updateQuestionCount(count: (typeof QUESTION_COUNT_OPTIONS)[number]) {
@@ -395,13 +516,35 @@ function MyPaper() {
     }
   }
 
+  // Grouped by part (same reasoning as /generate.tsx: chapter identity is (book, part, number),
+  // never the number alone -- Ganita Prakash repeats chapter numbers across parts). Search filters
+  // within that same grouped structure; Select All / Clear All always act on every chapter, not
+  // just what's currently visible, so the "N selected" count never surprises her mid-search.
+  const chaptersByPart = useMemo(() => {
+    const query = chapterSearch.trim().toLowerCase()
+    const matches = query
+      ? allChapters.filter((c) => c.name.toLowerCase().includes(query))
+      : allChapters
+    const groups: Array<{ part: string; chapters: Array<ChapterChoice> }> = []
+    for (const c of matches) {
+      let group = groups.find((g) => g.part === c.part)
+      if (!group) {
+        group = { part: c.part, chapters: [] }
+        groups.push(group)
+      }
+      group.chapters.push(c)
+    }
+    return groups
+  }, [allChapters, chapterSearch])
+
   if (isPending || !session || role !== 'student') {
     return <div className="p-8 text-body text-muted-foreground">Loading…</div>
   }
 
   const withContent = subjects.filter((s) => s.has_content)
 
-  const readyToGenerate = Boolean(plan) && Boolean(chapterIds)
+  const readyToGenerate =
+    Boolean(plan) && Boolean(chapterIds) && (chapterIds?.length ?? 0) > 0
 
   return (
     <AppShell variant="student" active="generate">
@@ -664,25 +807,156 @@ function MyPaper() {
             {allChapters.length > 1 && (
               <Card>
                 <CardHeader>
-                  <CardTitle className="text-h3">Chapters</CardTitle>
-                  <CardDescription>
-                    We picked these for you. You can change them.
-                  </CardDescription>
+                  <div className="flex flex-wrap items-start justify-between gap-3">
+                    <div className="flex items-start gap-3">
+                      <div className="bg-primary/10 text-primary mt-0.5 flex size-9 shrink-0 items-center justify-center rounded-lg">
+                        <BookIcon />
+                      </div>
+                      <div>
+                        <CardTitle className="text-h3">
+                          Select Chapters
+                        </CardTitle>
+                        <CardDescription>
+                          We picked these for you. You can change them anytime.
+                        </CardDescription>
+                      </div>
+                    </div>
+                    <div className="flex flex-wrap items-center gap-2">
+                      <span className="text-caption bg-primary/10 text-primary rounded-full px-3 py-1.5 font-medium">
+                        {(chapterIds ?? []).length} selected
+                      </span>
+                      <Button
+                        type="button"
+                        variant="outline"
+                        size="sm"
+                        onClick={selectAllChapters}
+                      >
+                        Select All
+                      </Button>
+                      <Button
+                        type="button"
+                        variant="outline"
+                        size="sm"
+                        className="text-destructive border-destructive/40 hover:bg-destructive/10"
+                        onClick={clearAllChapters}
+                      >
+                        Clear All
+                      </Button>
+                    </div>
+                  </div>
+
+                  <div className="border-input mt-4 flex h-9 items-center gap-2 rounded-md border px-3">
+                    <span className="text-muted-foreground shrink-0">
+                      <SearchIcon />
+                    </span>
+                    <input
+                      type="text"
+                      value={chapterSearch}
+                      onChange={(e) => setChapterSearch(e.target.value)}
+                      placeholder="Search chapters…"
+                      className="placeholder:text-muted-foreground w-full bg-transparent text-sm outline-none"
+                    />
+                  </div>
                 </CardHeader>
-                <CardContent className="space-y-1">
-                  {allChapters.map((c) => (
-                    <label
-                      key={c.id}
-                      className="text-small flex items-center gap-2"
-                    >
-                      <input
-                        type="checkbox"
-                        checked={(chapterIds ?? []).includes(c.id)}
-                        onChange={() => toggleChapter(c.id)}
-                      />
-                      {c.part} Ch {c.chapter_no}: {c.name}
-                    </label>
-                  ))}
+                <CardContent>
+                  {chaptersByPart.length === 0 && (
+                    <p className="text-small text-muted-foreground">
+                      No chapter matches "{chapterSearch}".
+                    </p>
+                  )}
+                  <div className="grid gap-4 sm:grid-cols-2">
+                    {chaptersByPart.map((group, i) => {
+                      const colors = PART_COLORS[i % PART_COLORS.length]
+                      const selectedInPart = group.chapters.filter((c) =>
+                        (chapterIds ?? []).includes(c.id),
+                      ).length
+                      const collapsed = collapsedParts.has(group.part)
+                      return (
+                        <div
+                          key={group.part}
+                          className="border-border overflow-hidden rounded-lg border"
+                        >
+                          <button
+                            type="button"
+                            onClick={() => togglePartCollapsed(group.part)}
+                            aria-expanded={!collapsed}
+                            className={`flex w-full items-center gap-3 px-4 py-3 text-left ${colors.header}`}
+                          >
+                            <span
+                              className={`flex size-7 shrink-0 items-center justify-center rounded-full text-sm font-bold text-white ${colors.badge}`}
+                            >
+                              {group.part}
+                            </span>
+                            <span className="text-body flex-1 font-semibold">
+                              Part {group.part}
+                            </span>
+                            <span className="text-small text-muted-foreground">
+                              {selectedInPart} / {group.chapters.length}
+                            </span>
+                            <ChevronIcon up={!collapsed} />
+                          </button>
+
+                          {!collapsed && (
+                            <div className="divide-border divide-y">
+                              {group.chapters.map((c) => {
+                                const selected = (chapterIds ?? []).includes(
+                                  c.id,
+                                )
+                                return (
+                                  <label
+                                    key={c.id}
+                                    className={`flex cursor-pointer items-center gap-3 border-l-2 px-4 py-2.5 transition-colors ${
+                                      selected
+                                        ? colors.row
+                                        : 'hover:bg-muted/50 border-transparent'
+                                    }`}
+                                  >
+                                    <input
+                                      type="checkbox"
+                                      checked={selected}
+                                      onChange={() => toggleChapter(c.id)}
+                                      className="sr-only"
+                                    />
+                                    <span
+                                      className={`flex size-4 shrink-0 items-center justify-center rounded border-2 ${
+                                        selected
+                                          ? `${colors.badge} border-transparent text-white`
+                                          : 'border-input text-transparent'
+                                      }`}
+                                      aria-hidden="true"
+                                    >
+                                      <CheckIcon />
+                                    </span>
+                                    <span
+                                      className={`text-small flex size-6 shrink-0 items-center justify-center rounded-full font-medium ${
+                                        selected
+                                          ? colors.pill
+                                          : 'bg-muted text-muted-foreground'
+                                      }`}
+                                    >
+                                      {c.chapter_no}
+                                    </span>
+                                    <span className="text-small flex-1">
+                                      {c.name}
+                                    </span>
+                                    <span className="text-muted-foreground shrink-0">
+                                      <ChevronRightIcon />
+                                    </span>
+                                  </label>
+                                )
+                              })}
+                            </div>
+                          )}
+                        </div>
+                      )
+                    })}
+                  </div>
+
+                  <p className="text-small text-muted-foreground mt-4">
+                    {(chapterIds ?? []).length} chapter
+                    {(chapterIds ?? []).length === 1 ? '' : 's'} selected. You
+                    can modify your selection anytime.
+                  </p>
                 </CardContent>
               </Card>
             )}
