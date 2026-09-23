@@ -359,7 +359,9 @@ function Attempt() {
                   ? scored.marks_awarded >= scored.marks_max
                   : null
               const yourAnswer =
-                q.type === 'mcq'
+                // Same rule as the answering screen above: option-bearing types show the option
+                // she picked, everything else shows what she wrote.
+                q.options.length > 0
                   ? q.saved_answer?.selected_option
                     ? `${q.saved_answer.selected_option}. ${
                         q.options.find(
@@ -571,7 +573,13 @@ function Attempt() {
                           )}
                         </CardHeader>
                         <CardContent>
-                          {q.type === 'mcq' && q.options.length > 0 ? (
+                          {/* Any objective type that carries options gets the radio list, not
+                              just 'mcq': assertion_reason, match and multi_statement are already
+                              objective in scoring.ts (compared, never AI-graded) and already
+                              render their options in the PDF templates, but this screen used to
+                              drop them into the free-text box, so a student saw four options on
+                              the printed paper and none on screen. */}
+                          {q.options.length > 0 ? (
                             <div className="space-y-2">
                               {q.options.map((opt) => (
                                 <label
