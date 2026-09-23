@@ -472,6 +472,15 @@ export interface ProductEvents {
   student_id: string;
 }
 
+export interface QuestionExplanations {
+  created_at: Generated<Timestamp>;
+  explanation: string;
+  model: string | null;
+  question_id: string;
+  source: string;
+  updated_at: Generated<Timestamp>;
+}
+
 export interface QuestionOptions {
   created_at: Generated<Timestamp>;
   id: Generated<string>;
@@ -731,6 +740,7 @@ export interface DB {
   pattern_hits: PatternHits;
   patterns: Patterns;
   product_events: ProductEvents;
+  question_explanations: QuestionExplanations;
   question_options: QuestionOptions;
   question_step_marks: QuestionStepMarks;
   question_usage: QuestionUsage;

@@ -3,6 +3,7 @@ import { requireRole } from '../../../../lib/session'
 import { resolveEnabledStudent } from '../../../../lib/access'
 import { getSharedDb } from '../../../../db/connection'
 import { attemptsRepository } from '../../../../db/repositories'
+import { getCachedExplanations } from '../../../../lib/explanations'
 import { wrapRouteHandlers } from '../../../../lib/error-log'
 
 /**
@@ -85,6 +86,11 @@ export const Route = createFileRoute('/api/attempts/$id/result')({
                 .execute()
             : Promise.resolve([]),
         ])
+        // F126: only explanations already cached. Generating one is an explicit POST to
+        // /explanation, so simply opening a result never triggers a paid call for every question
+        // on the paper.
+        const explanations = await getCachedExplanations(db, questionIds)
+
         const questionById = new Map(questionRows.map((q) => [q.id, q]))
         const correctOptionByQuestion = new Map(
           correctOptions.map((o) => [o.question_id, o]),
@@ -151,6 +157,7 @@ export const Route = createFileRoute('/api/attempts/$id/result')({
             correct_answer: correctAnswerFor(a.question_id),
             feedback: itemBySlot.get(a.paper_question_id)?.feedback ?? null,
             error_type: itemBySlot.get(a.paper_question_id)?.error_type ?? null,
+            explanation: explanations.get(a.question_id)?.explanation ?? null,
           })),
         })
       },

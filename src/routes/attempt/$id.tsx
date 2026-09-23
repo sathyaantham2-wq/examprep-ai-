@@ -71,6 +71,8 @@ interface AttemptResult {
     // got right.
     feedback: string | null
     error_type: string | null
+    // F126 / AI-13: null until someone asks for it; cached per question once generated.
+    explanation: string | null
   }>
 }
 
@@ -104,6 +106,17 @@ function Attempt() {
   const [submitted, setSubmitted] = useState(false)
   const [result, setResult] = useState<AttemptResult | null>(null)
   const [pointsEarned, setPointsEarned] = useState<{ points: number; coins: number } | null>(null)
+  // F126: explanations fetched after the result loaded, keyed by paper_question_id. Kept apart
+  // from `result` so asking for one never re-renders the whole marked paper.
+  // Partial<Record<...>>, same as `answers` above: indexing a key that isn't there yet is the
+  // normal case here, and the type should say so.
+  const [explanations, setExplanations] = useState<
+    Partial<Record<string, string>>
+  >({})
+  const [explaining, setExplaining] = useState<string | null>(null)
+  const [explainError, setExplainError] = useState<
+    Partial<Record<string, string>>
+  >({})
   const [now, setNow] = useState(() => Date.now())
   const saveTimers = useRef<
     Partial<Record<string, ReturnType<typeof setTimeout>>>
@@ -202,6 +215,38 @@ function Attempt() {
     const marked = await fetch(`/api/attempts/${id}/result`)
     if (marked.ok) setResult((await marked.json()) as AttemptResult)
   }, [id])
+
+  // F126: generating is an explicit action, not something opening the result triggers for every
+  // question -- the first request for a given question pays for it, everyone after reads the cache.
+  async function explain(paperQuestionId: string) {
+    setExplaining(paperQuestionId)
+    setExplainError((prev) => ({ ...prev, [paperQuestionId]: '' }))
+    try {
+      const response = await fetch(`/api/attempts/${id}/explanation`, {
+        method: 'POST',
+        headers: { 'content-type': 'application/json' },
+        body: JSON.stringify({ paper_question_id: paperQuestionId }),
+      })
+      const body = (await response.json().catch(() => null)) as {
+        explanation?: string
+        message?: string
+      } | null
+      if (!response.ok || !body?.explanation) {
+        setExplainError((prev) => ({
+          ...prev,
+          [paperQuestionId]:
+            body?.message ?? 'Could not explain this one right now.',
+        }))
+        return
+      }
+      setExplanations((prev) => ({
+        ...prev,
+        [paperQuestionId]: body.explanation!,
+      }))
+    } finally {
+      setExplaining(null)
+    }
+  }
 
   async function doSubmit(confirmBlanks: boolean) {
     setSubmitting(true)
@@ -372,6 +417,49 @@ function Attempt() {
                         <p className="text-body">{scored.feedback}</p>
                       </div>
                     )}
+
+                    {(() => {
+                      const shown =
+                        explanations[q.paper_question_id] ??
+                        scored?.explanation ??
+                        null
+                      const failed = explainError[q.paper_question_id]
+                      if (shown) {
+                        return (
+                          <div className="bg-primary/5 border-primary/20 rounded-md border p-3">
+                            <p className="text-small text-muted-foreground mb-1">
+                              How to do it
+                            </p>
+                            <p className="text-body whitespace-pre-wrap">
+                              {shown}
+                            </p>
+                          </div>
+                        )
+                      }
+                      return (
+                        <div>
+                          <Button
+                            type="button"
+                            variant="outline"
+                            size="sm"
+                            disabled={explaining === q.paper_question_id}
+                            onClick={() => void explain(q.paper_question_id)}
+                          >
+                            {explaining === q.paper_question_id
+                              ? 'Working it out…'
+                              : 'Explain this'}
+                          </Button>
+                          {failed && (
+                            <p
+                              className="text-small text-destructive mt-2"
+                              role="alert"
+                            >
+                              {failed}
+                            </p>
+                          )}
+                        </div>
+                      )
+                    })()}
                   </CardContent>
                 </Card>
               )

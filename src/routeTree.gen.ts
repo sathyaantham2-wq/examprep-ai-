@@ -95,6 +95,7 @@ import { Route as EvaluationIdReportRouteImport } from './routes/evaluation/$id/
 import { Route as ApiAdminSubjectsIdRouteImport } from './routes/api/admin/subjects/$id'
 import { Route as ApiAttemptsIdAnswerRouteImport } from './routes/api/attempts/$id/answer'
 import { Route as ApiAttemptsIdAnswerImageRouteImport } from './routes/api/attempts/$id/answer-image'
+import { Route as ApiAttemptsIdExplanationRouteImport } from './routes/api/attempts/$id/explanation'
 import { Route as ApiAttemptsIdFinalizeRouteImport } from './routes/api/attempts/$id/finalize'
 import { Route as ApiAttemptsIdResultRouteImport } from './routes/api/attempts/$id/result'
 import { Route as ApiAttemptsIdReviewRouteImport } from './routes/api/attempts/$id/review'
@@ -564,6 +565,12 @@ const ApiAttemptsIdAnswerImageRoute =
     path: '/answer-image',
     getParentRoute: () => ApiAttemptsIdRoute,
   } as any)
+const ApiAttemptsIdExplanationRoute =
+  ApiAttemptsIdExplanationRouteImport.update({
+    id: '/explanation',
+    path: '/explanation',
+    getParentRoute: () => ApiAttemptsIdRoute,
+  } as any)
 const ApiAttemptsIdFinalizeRoute = ApiAttemptsIdFinalizeRouteImport.update({
   id: '/finalize',
   path: '/finalize',
@@ -827,6 +834,7 @@ export interface FileRoutesByFullPath {
   '/api/admin/subjects/$id': typeof ApiAdminSubjectsIdRoute
   '/api/attempts/$id/answer': typeof ApiAttemptsIdAnswerRoute
   '/api/attempts/$id/answer-image': typeof ApiAttemptsIdAnswerImageRoute
+  '/api/attempts/$id/explanation': typeof ApiAttemptsIdExplanationRoute
   '/api/attempts/$id/finalize': typeof ApiAttemptsIdFinalizeRoute
   '/api/attempts/$id/result': typeof ApiAttemptsIdResultRoute
   '/api/attempts/$id/review': typeof ApiAttemptsIdReviewRoute
@@ -947,6 +955,7 @@ export interface FileRoutesByTo {
   '/api/admin/subjects/$id': typeof ApiAdminSubjectsIdRoute
   '/api/attempts/$id/answer': typeof ApiAttemptsIdAnswerRoute
   '/api/attempts/$id/answer-image': typeof ApiAttemptsIdAnswerImageRoute
+  '/api/attempts/$id/explanation': typeof ApiAttemptsIdExplanationRoute
   '/api/attempts/$id/finalize': typeof ApiAttemptsIdFinalizeRoute
   '/api/attempts/$id/result': typeof ApiAttemptsIdResultRoute
   '/api/attempts/$id/review': typeof ApiAttemptsIdReviewRoute
@@ -1068,6 +1077,7 @@ export interface FileRoutesById {
   '/api/admin/subjects/$id': typeof ApiAdminSubjectsIdRoute
   '/api/attempts/$id/answer': typeof ApiAttemptsIdAnswerRoute
   '/api/attempts/$id/answer-image': typeof ApiAttemptsIdAnswerImageRoute
+  '/api/attempts/$id/explanation': typeof ApiAttemptsIdExplanationRoute
   '/api/attempts/$id/finalize': typeof ApiAttemptsIdFinalizeRoute
   '/api/attempts/$id/result': typeof ApiAttemptsIdResultRoute
   '/api/attempts/$id/review': typeof ApiAttemptsIdReviewRoute
@@ -1190,6 +1200,7 @@ export interface FileRouteTypes {
     | '/api/admin/subjects/$id'
     | '/api/attempts/$id/answer'
     | '/api/attempts/$id/answer-image'
+    | '/api/attempts/$id/explanation'
     | '/api/attempts/$id/finalize'
     | '/api/attempts/$id/result'
     | '/api/attempts/$id/review'
@@ -1310,6 +1321,7 @@ export interface FileRouteTypes {
     | '/api/admin/subjects/$id'
     | '/api/attempts/$id/answer'
     | '/api/attempts/$id/answer-image'
+    | '/api/attempts/$id/explanation'
     | '/api/attempts/$id/finalize'
     | '/api/attempts/$id/result'
     | '/api/attempts/$id/review'
@@ -1430,6 +1442,7 @@ export interface FileRouteTypes {
     | '/api/admin/subjects/$id'
     | '/api/attempts/$id/answer'
     | '/api/attempts/$id/answer-image'
+    | '/api/attempts/$id/explanation'
     | '/api/attempts/$id/finalize'
     | '/api/attempts/$id/result'
     | '/api/attempts/$id/review'
@@ -2137,6 +2150,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ApiAttemptsIdAnswerImageRouteImport
       parentRoute: typeof ApiAttemptsIdRoute
     }
+    '/api/attempts/$id/explanation': {
+      id: '/api/attempts/$id/explanation'
+      path: '/explanation'
+      fullPath: '/api/attempts/$id/explanation'
+      preLoaderRoute: typeof ApiAttemptsIdExplanationRouteImport
+      parentRoute: typeof ApiAttemptsIdRoute
+    }
     '/api/attempts/$id/finalize': {
       id: '/api/attempts/$id/finalize'
       path: '/finalize'
@@ -2367,6 +2387,7 @@ declare module '@tanstack/react-router' {
 interface ApiAttemptsIdRouteChildren {
   ApiAttemptsIdAnswerRoute: typeof ApiAttemptsIdAnswerRoute
   ApiAttemptsIdAnswerImageRoute: typeof ApiAttemptsIdAnswerImageRoute
+  ApiAttemptsIdExplanationRoute: typeof ApiAttemptsIdExplanationRoute
   ApiAttemptsIdFinalizeRoute: typeof ApiAttemptsIdFinalizeRoute
   ApiAttemptsIdResultRoute: typeof ApiAttemptsIdResultRoute
   ApiAttemptsIdReviewRoute: typeof ApiAttemptsIdReviewRoute
@@ -2378,6 +2399,7 @@ interface ApiAttemptsIdRouteChildren {
 const ApiAttemptsIdRouteChildren: ApiAttemptsIdRouteChildren = {
   ApiAttemptsIdAnswerRoute: ApiAttemptsIdAnswerRoute,
   ApiAttemptsIdAnswerImageRoute: ApiAttemptsIdAnswerImageRoute,
+  ApiAttemptsIdExplanationRoute: ApiAttemptsIdExplanationRoute,
   ApiAttemptsIdFinalizeRoute: ApiAttemptsIdFinalizeRoute,
   ApiAttemptsIdResultRoute: ApiAttemptsIdResultRoute,
   ApiAttemptsIdReviewRoute: ApiAttemptsIdReviewRoute,
@@ -2779,3 +2801,12 @@ const rootRouteChildren: RootRouteChildren = {
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
   ._addFileTypes<FileRouteTypes>()
+
+import type { getRouter } from './router.tsx'
+import type { createStart } from '@tanstack/react-start'
+declare module '@tanstack/react-start' {
+  interface Register {
+    ssr: true
+    router: Awaited<ReturnType<typeof getRouter>>
+  }
+}

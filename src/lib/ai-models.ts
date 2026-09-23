@@ -21,6 +21,11 @@ export const MODEL_TIER_BY_FEATURE: Partial<Record<string, ModelTier>> = {
   'AI-09': 'strong', // Remediation pack authoring
   'AI-10': 'strong', // Diagnosis narrative
   'AI-11': 'mid', // Weekly summary
+  // F126. Strong, not mid, despite being short: this text is shown to a child as the reason an
+  // answer is right, and a confidently wrong explanation is worse than none at all. The cost of
+  // the stronger tier is paid once per question ever (cached in question_explanations), not once
+  // per student who reads it.
+  'AI-13': 'strong', // Per-question worked explanation
 }
 
 // Claude Sonnet 5 is the only "strong" model this app has ever called (ai-grading.ts /
