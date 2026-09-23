@@ -91,6 +91,25 @@ TanStack Start (React 19) · TypeScript strict · Tailwind v4 + shadcn/ui · Pos
 Supabase) · Kysely · better-auth · Vercel. Server-side HTML→PDF for papers. See tab 09 for
 rationale and rejected alternatives; do not swap a layer without updating that tab.
 
+## Databases — tests never share one with real users
+
+Three separate databases, and this separation is load-bearing:
+
+| Which | Where | Used by |
+|---|---|---|
+| Production | Supabase `examprep-ai-dev` (name is historical) | the deployed app, real students |
+| Local dev | whatever `.env` points at | `npm run dev` |
+| **Test** | **local Postgres only**, via `.env.test` | `npm test`, `npm run test:e2e`, CI |
+
+`vitest.setup.ts` loads `.env.test` and **refuses to start** if `DATABASE_URL` resolves to a
+non-local host. There is no override flag. The suite creates and deletes fixture rows, and until
+2026-09-23 it ran against the same Supabase project that serves real users — a crashed run left an
+"Adaptive fixture subject" row active and a real student saw it in her own subject list, twice.
+CI is unaffected: it already runs against an ephemeral `postgres:17` service on localhost.
+
+First-time setup: install Postgres 17 locally, `createdb examprep_test`, copy `.env.test.example`
+to `.env.test`, then `npm run db:setup:test` (migrate + seed).
+
 ## Conventions
 
 - Concept codes: `C7M-3.2` = Class 7, Maths, chapter 3, concept 2. Namespaced by class + subject.

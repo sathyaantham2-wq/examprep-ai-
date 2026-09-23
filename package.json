@@ -24,6 +24,9 @@
     "db:seed": "tsx src/db/seed.ts",
     "db:seed:patterns": "tsx src/db/seed-patterns.ts",
     "db:seed:habits": "tsx src/db/seed-habits.ts",
+    "db:migrate:test": "node scripts/with-test-env.mjs npx tsx src/db/migrate.ts latest",
+    "db:seed:test": "node scripts/with-test-env.mjs npx tsx src/db/seed.ts && node scripts/with-test-env.mjs npx tsx src/db/seed-patterns.ts && node scripts/with-test-env.mjs npx tsx src/db/seed-habits.ts",
+    "db:setup:test": "npm run db:migrate:test && npm run db:seed:test",
     "loadtest": "tsx scripts/load-test.ts"
   },
   "dependencies": {
