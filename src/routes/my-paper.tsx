@@ -543,6 +543,9 @@ function MyPaper() {
 
   const withContent = subjects.filter((s) => s.has_content)
 
+  // chapterIds === null means "not loaded yet" (the server picks her chapters); an empty array
+  // means she actively cleared them, which is the only case worth calling out to her.
+  const noChaptersSelected = chapterIds !== null && chapterIds.length === 0
   const readyToGenerate =
     Boolean(plan) && Boolean(chapterIds) && (chapterIds?.length ?? 0) > 0
 
@@ -767,17 +770,29 @@ function MyPaper() {
                 </div>
               </div>
 
-              <p className="text-caption text-muted-foreground bg-muted mt-4 flex items-start gap-2 rounded-md p-3">
+              {/* No chapters selected takes priority over the plan summary: the plan still in
+                  state is the last one loaded (it isn't re-fetched for an empty selection, see
+                  toggleChapter), so showing it here would describe a paper the disabled button
+                  can't actually generate -- a dead end with no explanation. */}
+              <p
+                className={`text-caption mt-4 flex items-start gap-2 rounded-md p-3 ${
+                  noChaptersSelected
+                    ? 'bg-destructive/10 text-destructive'
+                    : 'text-muted-foreground bg-muted'
+                }`}
+              >
                 <span className="shrink-0 pt-0.5">
                   <BulbIcon />
                 </span>
-                {plan
-                  ? `This paper will have ${plan.total_questions} question${plan.total_questions === 1 ? '' : 's'} (${plan.total_marks} marks) -- ${plan.question_types.join(', ')}. Weak and priority concepts still get more questions, same as F119.`
-                  : loadingPlan
-                    ? 'Preparing your paper…'
-                    : questionType === 'written'
-                      ? "Written practice only appears once she's ready for it -- if she isn't yet, this falls back to multiple choice."
-                      : 'Weak and priority concepts get more questions, same as F119.'}
+                {noChaptersSelected
+                  ? 'Pick at least one chapter below to generate a paper.'
+                  : plan
+                    ? `This paper will have ${plan.total_questions} question${plan.total_questions === 1 ? '' : 's'} (${plan.total_marks} marks) -- ${plan.question_types.join(', ')}. Weak and priority concepts still get more questions, same as F119.`
+                    : loadingPlan
+                      ? 'Preparing your paper…'
+                      : questionType === 'written'
+                        ? "Written practice only appears once she's ready for it -- if she isn't yet, this falls back to multiple choice."
+                        : 'Weak and priority concepts get more questions, same as F119.'}
               </p>
 
               {error && (
