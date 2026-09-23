@@ -54,6 +54,16 @@ export const Route = createFileRoute('/api/attempts/$id/result')({
           .where('l.student_id', '=', student.id)
           .execute()
 
+        // F049 / tab07 AI-08 ("feedback line writing, per lost-mark question") already writes a
+        // line and an error type onto every item that lost marks -- it was only ever surfaced to
+        // the parent's review workspace, never to the student whose paper it describes.
+        const items = await db
+          .selectFrom('evaluation_items')
+          .select(['paper_question_id', 'feedback', 'error_type'])
+          .where('evaluation_id', '=', evaluation.id)
+          .execute()
+        const itemBySlot = new Map(items.map((i) => [i.paper_question_id, i]))
+
         // The correct answer for each question she answered -- see this file's own doc comment
         // for why this is allowed post-confirmation. MCQ: the option marked is_correct. Written:
         // the question's own reference/model answer (the same text the AI grader is given).
@@ -139,6 +149,8 @@ export const Route = createFileRoute('/api/attempts/$id/result')({
             marks_awarded: Number(a.marks_awarded),
             marks_max: Number(a.marks_max),
             correct_answer: correctAnswerFor(a.question_id),
+            feedback: itemBySlot.get(a.paper_question_id)?.feedback ?? null,
+            error_type: itemBySlot.get(a.paper_question_id)?.error_type ?? null,
           })),
         })
       },

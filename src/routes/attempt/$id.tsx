@@ -67,6 +67,10 @@ interface AttemptResult {
     marks_awarded: number
     marks_max: number
     correct_answer: string | null
+    // F049 / AI-08: written per lost-mark question at evaluation time; null on the ones she
+    // got right.
+    feedback: string | null
+    error_type: string | null
   }>
 }
 
@@ -357,6 +361,15 @@ function Attempt() {
                         <p className="text-body whitespace-pre-wrap">
                           {scored.correct_answer}
                         </p>
+                      </div>
+                    )}
+                    {scored?.feedback && (
+                      <div className="bg-muted rounded-md p-3">
+                        <p className="text-small text-muted-foreground">
+                          What to fix
+                          {scored.error_type ? ` · ${scored.error_type}` : ''}
+                        </p>
+                        <p className="text-body">{scored.feedback}</p>
                       </div>
                     )}
                   </CardContent>
