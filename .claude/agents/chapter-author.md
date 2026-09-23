@@ -33,6 +33,12 @@ Then **verify, do not trust**:
   use the real title.
 - Check `needs_ocr_pages` is empty. If it is not, report which pages and stop — an incomplete
   chapter must not be authored around.
+- **`needs_ocr_pages` empty does not mean every page has real text.** A full-page plate (a
+  photograph or a historical-numeral chart, say) can extract to just a running-header footer —
+  a few dozen bytes — while the script still calls it fine because *something* came back. Skim
+  every extracted page's byte count or word count; anything far shorter than its neighbours is
+  suspect. Render that page with pypdfium2 and read it visually rather than authoring around
+  its content, or working from the caption alone.
 - **Find the page-number offset.** The extracted files are numbered from 1, but the book's own
   printed page numbers usually start elsewhere (Class 8 Maths chapter 2 begins on printed page
   19, so extracted `p004` is printed page 22). Every page citation you write must be the
