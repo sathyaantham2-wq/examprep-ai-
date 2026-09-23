@@ -167,7 +167,12 @@ test('first-time student: profile, personalised home, Easy assessment, marked at
   await expect(
     page.getByText('10 questions (10 marks)', { exact: false }),
   ).toBeVisible()
-  await expect(page.getByText('Multiple choice')).toBeVisible()
+  // Scoped to the plan summary on purpose: "Multiple choice" is now also an <option> in the
+  // Question type dropdown, so a bare getByText('Multiple choice') resolves to two elements and
+  // fails Playwright's strict mode.
+  await expect(
+    page.getByText('(10 marks) -- Multiple choice', { exact: false }),
+  ).toBeVisible()
   await page.getByRole('button', { name: 'Generate Assessment' }).click()
 
   // Answer every question (all the right option), then submit.

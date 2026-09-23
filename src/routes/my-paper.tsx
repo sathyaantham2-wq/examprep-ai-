@@ -920,7 +920,11 @@ function MyPaper() {
                                 return (
                                   <label
                                     key={c.id}
-                                    className={`flex cursor-pointer items-center gap-3 border-l-2 px-4 py-2.5 transition-colors ${
+                                    // The real checkbox is sr-only (a custom tick replaces it),
+                                    // so the row itself has to carry the focus ring -- same
+                                    // has-[:focus-visible] pattern /generate.tsx uses -- or this
+                                    // list becomes invisible to keyboard users.
+                                    className={`has-[:focus-visible]:ring-ring flex cursor-pointer items-center gap-3 border-l-2 px-4 py-2.5 transition-colors has-[:focus-visible]:ring-2 has-[:focus-visible]:ring-inset ${
                                       selected
                                         ? colors.row
                                         : 'hover:bg-muted/50 border-transparent'
