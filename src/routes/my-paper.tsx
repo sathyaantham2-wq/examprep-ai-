@@ -90,23 +90,6 @@ function BarsIcon() {
     </svg>
   )
 }
-function ClockIcon() {
-  return (
-    <svg
-      width="14"
-      height="14"
-      viewBox="0 0 24 24"
-      fill="none"
-      stroke="currentColor"
-      strokeWidth="2"
-      strokeLinecap="round"
-      strokeLinejoin="round"
-    >
-      <circle cx="12" cy="12" r="9" />
-      <path d="M12 7v5l3 3" />
-    </svg>
-  )
-}
 function ListIcon() {
   return (
     <svg
@@ -624,14 +607,18 @@ function MyPaper() {
         )}
 
         {withContent.length > 0 && (
-          <Card className="mb-4">
-            <CardHeader>
-              <div className="flex flex-wrap items-start justify-between gap-3">
-                <div className="flex items-start gap-3">
-                  <div className="bg-primary/10 text-primary mt-0.5 flex size-9 shrink-0 items-center justify-center rounded-lg">
+          // Sized down proportionally to the hero above (2026-09-24 user feedback): smaller
+          // header icon/title/description, tighter padding and gaps, and the Time field removed
+          // (it was never an independent input -- it's derived from the question count, and
+          // already shown in the "Qs ~ min" badge here, so a separate field just repeated it).
+          <Card className="mb-4 py-4">
+            <CardHeader className="px-4">
+              <div className="flex flex-wrap items-start justify-between gap-2">
+                <div className="flex items-start gap-2">
+                  <div className="bg-primary/10 text-primary mt-0.5 flex size-7 shrink-0 items-center justify-center rounded-lg">
                     <svg
-                      width="18"
-                      height="18"
+                      width="14"
+                      height="14"
                       viewBox="0 0 24 24"
                       fill="none"
                       stroke="currentColor"
@@ -644,38 +631,38 @@ function MyPaper() {
                     </svg>
                   </div>
                   <div>
-                    <CardTitle className="text-h3">
+                    <CardTitle className="text-[0.85rem]">
                       Assessment Details
                     </CardTitle>
-                    <CardDescription>
+                    <CardDescription className="text-caption">
                       Set your preferences and generate your assessment
                     </CardDescription>
                   </div>
                 </div>
-                <span className="text-caption bg-primary/10 text-primary inline-flex shrink-0 items-center gap-1.5 rounded-full px-3 py-1.5 font-medium">
+                <span className="text-caption bg-primary/10 text-primary inline-flex shrink-0 items-center gap-1 rounded-full px-2 py-1 font-medium">
                   <BulbIcon />
                   {questionCount} Qs
                   {plan ? ` ≈ ${plan.estimated_minutes} min` : ''}
                 </span>
               </div>
             </CardHeader>
-            <CardContent>
+            <CardContent className="px-4">
               {/* Single row from `lg` up (matches the reference design), stacking to 2 then 1
-                  column below that -- 5 items never fit one line on a phone or portrait tablet
+                  column below that -- 4 items never fit one line on a phone or portrait tablet
                   without becoming unreadable, so this is "single line" on desktop, gracefully
                   wrapped everywhere narrower. */}
-              <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-5">
-                <div className="space-y-1.5">
+              <div className="grid grid-cols-1 gap-3 sm:grid-cols-2 lg:grid-cols-4">
+                <div className="space-y-1">
                   <Label
                     htmlFor="my-paper-subject"
-                    className="text-muted-foreground flex items-center gap-1.5"
+                    className="text-muted-foreground text-xs flex items-center gap-1.5"
                   >
                     <BookIcon />
                     Subject
                   </Label>
                   <select
                     id="my-paper-subject"
-                    className="border-input flex h-9 w-full rounded-md border bg-transparent px-3 text-sm shadow-xs"
+                    className="border-input flex h-8 w-full rounded-md border bg-transparent px-2 text-sm shadow-xs"
                     value={subjectId}
                     onChange={(e) => setSubjectId(e.target.value)}
                   >
@@ -687,17 +674,17 @@ function MyPaper() {
                   </select>
                 </div>
 
-                <div className="space-y-1.5">
+                <div className="space-y-1">
                   <Label
                     htmlFor="my-paper-questions"
-                    className="text-muted-foreground flex items-center gap-1.5"
+                    className="text-muted-foreground text-xs flex items-center gap-1.5"
                   >
                     <HashIcon />
                     Questions
                   </Label>
                   <select
                     id="my-paper-questions"
-                    className="border-input flex h-9 w-full rounded-md border bg-transparent px-3 text-sm shadow-xs"
+                    className="border-input flex h-8 w-full rounded-md border bg-transparent px-2 text-sm shadow-xs"
                     value={questionCount}
                     onChange={(e) =>
                       updateQuestionCount(
@@ -713,17 +700,17 @@ function MyPaper() {
                   </select>
                 </div>
 
-                <div className="space-y-1.5">
+                <div className="space-y-1">
                   <Label
                     htmlFor="my-paper-difficulty"
-                    className="text-muted-foreground flex items-center gap-1.5"
+                    className="text-muted-foreground text-xs flex items-center gap-1.5"
                   >
                     <BarsIcon />
                     Difficulty
                   </Label>
                   <select
                     id="my-paper-difficulty"
-                    className="border-input flex h-9 w-full rounded-md border bg-transparent px-3 text-sm shadow-xs"
+                    className="border-input flex h-8 w-full rounded-md border bg-transparent px-2 text-sm shadow-xs"
                     value={difficultyCeiling}
                     onChange={(e) =>
                       setDifficultyCeiling(e.target.value as DifficultyTier | '')
@@ -738,27 +725,17 @@ function MyPaper() {
                   </select>
                 </div>
 
-                <div className="space-y-1.5">
-                  <Label className="text-muted-foreground flex items-center gap-1.5">
-                    <ClockIcon />
-                    Time
-                  </Label>
-                  <div className="border-input text-muted-foreground flex h-9 w-full items-center rounded-md border bg-transparent px-3 text-sm">
-                    {plan ? `~ ${plan.estimated_minutes} min` : '—'}
-                  </div>
-                </div>
-
-                <div className="space-y-1.5">
+                <div className="space-y-1">
                   <Label
                     htmlFor="my-paper-question-type"
-                    className="text-muted-foreground flex items-center gap-1.5"
+                    className="text-muted-foreground text-xs flex items-center gap-1.5"
                   >
                     <ListIcon />
                     Question type
                   </Label>
                   <select
                     id="my-paper-question-type"
-                    className="border-input flex h-9 w-full rounded-md border bg-transparent px-3 text-sm shadow-xs"
+                    className="border-input flex h-8 w-full rounded-md border bg-transparent px-2 text-sm shadow-xs"
                     value={questionType}
                     onChange={(e) =>
                       updateQuestionType(e.target.value as QuestionType)
@@ -773,30 +750,18 @@ function MyPaper() {
                 </div>
               </div>
 
-              {/* No chapters selected takes priority over the plan summary: the plan still in
-                  state is the last one loaded (it isn't re-fetched for an empty selection, see
-                  toggleChapter), so showing it here would describe a paper the disabled button
-                  can't actually generate -- a dead end with no explanation. */}
-              <p
-                className={`text-caption mt-4 flex items-start gap-2 rounded-md p-3 ${
-                  noChaptersSelected
-                    ? 'bg-destructive/10 text-destructive'
-                    : 'text-muted-foreground bg-muted'
-                }`}
-              >
-                <span className="shrink-0 pt-0.5">
-                  <BulbIcon />
-                </span>
-                {noChaptersSelected
-                  ? 'Pick at least one chapter below to generate a paper.'
-                  : plan
-                    ? `This paper will have ${plan.total_questions} question${plan.total_questions === 1 ? '' : 's'} (${plan.total_marks} marks) -- ${plan.question_types.join(', ')}. Weak and priority concepts still get more questions, same as F119.`
-                    : loadingPlan
-                      ? 'Preparing your paper…'
-                      : questionType === 'written'
-                        ? "Written practice only appears once she's ready for it -- if she isn't yet, this falls back to multiple choice."
-                        : 'Weak and priority concepts get more questions, same as F119.'}
-              </p>
+              {/* Only the no-chapters-selected guard remains here now -- the plan-summary
+                  sentence ("This paper will have N questions...") was removed at the user's
+                  request (2026-09-24); this one stays because it explains an otherwise
+                  unexplained disabled button, the same reason it was added in the first place. */}
+              {noChaptersSelected && (
+                <p className="text-caption bg-destructive/10 text-destructive mt-3 flex items-start gap-2 rounded-md p-2.5">
+                  <span className="shrink-0 pt-0.5">
+                    <BulbIcon />
+                  </span>
+                  Pick at least one chapter below to generate a paper.
+                </p>
+              )}
 
               {error && (
                 <p className="text-small text-destructive mt-3" role="alert">
@@ -804,7 +769,7 @@ function MyPaper() {
                 </p>
               )}
 
-              <div className="mt-4 flex flex-col-reverse gap-2 sm:flex-row sm:justify-end">
+              <div className="mt-3 flex flex-col-reverse gap-2 sm:flex-row sm:justify-end">
                 <Button type="button" variant="outline" onClick={resetPreferences}>
                   <ResetIcon />
                   Reset
