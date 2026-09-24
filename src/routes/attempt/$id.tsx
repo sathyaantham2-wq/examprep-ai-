@@ -329,21 +329,6 @@ function Attempt() {
               </p>
             </div>
           )}
-          <div className="space-y-2">
-            {result.concepts.map((c) => (
-              <div key={c.concept_id} className="text-body rounded-md border p-3">
-                <p className="font-medium">{c.concept_name}</p>
-                <p className="text-small text-muted-foreground">
-                  {c.marks} of {c.marks_max} marks on {c.questions} question{c.questions === 1 ? '' : 's'}
-                  {c.mastery_level ? ` · now ${c.mastery_level}` : ''}
-                  {c.previous_level && c.mastery_level && c.previous_level !== c.mastery_level
-                    ? ` (was ${c.previous_level})`
-                    : ''}
-                </p>
-              </div>
-            ))}
-          </div>
-
           {/* Her own paper back, with her own answers marked, plus the correct answer next to
               them (T09 amendment, 2026-09-22 -- GET /api/attempts/:id/result documents why).
               data.questions still holds the text/options/her saved answer from the earlier
