@@ -1,0 +1,2036 @@
+{
+  "subject": {
+    "code": "MATH8",
+    "name": "Mathematics",
+    "board": "CBSE",
+    "class": 8
+  },
+  "source": {
+    "publisher": "NCERT",
+    "title": "Ganita Prakash",
+    "edition": "Reprint 2026-27",
+    "year": 2026
+  },
+  "depth": 20,
+  "chapter": {
+    "part": "II",
+    "chapter_no": 4,
+    "name": "Exploring Some Geometric Themes",
+    "blurb": "Two geometric themes: constructing self-similar fractals (Sierpinski Carpet, Sierpinski Gasket, Koch Snowflake) and visualising solids through their faces/edges/vertices, nets, shortest surface paths, projections (front/top/side views) and isometric drawing.",
+    "source_code": "hegp204",
+    "order_index": 11
+  },
+  "scope_in": [
+    {
+      "item": "Construct the Sierpinski Carpet and Sierpinski Gasket fractals by repeated removal of a central piece, and find the number of remaining pieces and holes at a given step using the recursive relations shown in the chapter",
+      "pages": "70-72"
+    },
+    {
+      "item": "Construct the Koch Snowflake fractal by repeatedly replacing the middle third of every side with two new sides, and find the number of sides and the perimeter at a given step",
+      "pages": "73"
+    },
+    {
+      "item": "Recognise fractal-like self-similar patterns in human-made art and architecture, such as the Kandariya Mahadev Temple, Nigerian Fulani wedding blankets, and M.C. Escher's 'Smaller and Smaller'",
+      "pages": "74-75"
+    },
+    {
+      "item": "Identify faces, edges and vertices of solids, and name and count them for prisms and pyramids with an n-sided polygonal base, including recognising the regular tetrahedron",
+      "pages": "77-81"
+    },
+    {
+      "item": "Identify and construct nets of a cube (including which of several candidate layouts are valid, and that a cube has 11 distinct nets), a cuboid with given dimensions, and a regular tetrahedron (2 distinct nets)",
+      "pages": "80-81"
+    },
+    {
+      "item": "Identify and construct nets of a cylinder (two circles and a rectangle whose length equals the circumference) and a cone (a circle and a sector), and state as facts the number of nets of an octahedron (11) and a dodecahedron (43,380), and that a sphere has no flat net",
+      "pages": "82-84"
+    },
+    {
+      "item": "Find the shortest path between two points on the surface of a cuboid by unfolding it into a net, trying different valid unfoldings, and using the Baudhayana (Pythagoras) theorem to compute straight-line distances on the net",
+      "pages": "84-87"
+    },
+    {
+      "item": "Define the projection of a point and of an object onto a plane using a perpendicular foot, and relate this to the earlier idea of an object's profile from a viewpoint",
+      "pages": "75-77, 88-89"
+    },
+    {
+      "item": "Determine when a projected line's length equals its actual length (only when the line is parallel to the plane), and that projection preserves parallel lines, so a parallelogram's projection is always a parallelogram",
+      "pages": "89-90, 94-95"
+    },
+    {
+      "item": "Identify the front view, top view and side view of a solid or a combination of identical cubes, draw these views, and match a given solid to its three views (or vice versa), understanding that a projection does not uniquely determine the object",
+      "pages": "90-93, 95-97"
+    },
+    {
+      "item": "Define the isometric projection of a cube (balanced on a corner vertex) as a regular hexagon, and identify the three principal axes -- height, length and depth -- associated with the three directions of an isometric grid",
+      "pages": "97-98"
+    },
+    {
+      "item": "Draw combinations of identical unit cubes on an isometric grid by counting units along the height, length and depth axes",
+      "pages": "98-102"
+    }
+  ],
+  "scope_out": [
+    {
+      "item": "Computing surface area or volume of any solid named in this chapter (cuboid, cylinder, cone, prism, pyramid, etc.)",
+      "reason": "This chapter is entirely about visualising, representing, and unfolding solids -- no surface area or volume formula is introduced or used anywhere in it"
+    },
+    {
+      "item": "The fractal dimension formula (D = log N / log s) or any measure of a fractal's dimension",
+      "reason": "The chapter only asks students to count remaining pieces, holes, sides and perimeter at a given finite step using simple recursive multiplication; it never introduces the concept of fractal dimension or logarithms"
+    },
+    {
+      "item": "Infinite sums or limits of the perimeter/area sequences of the Koch Snowflake or Sierpinski fractals",
+      "reason": "All 'Figure it Out' questions ask for the value at the nth step (a finite step number), never for the limiting value as n approaches infinity"
+    },
+    {
+      "item": "Euler's formula (F + V - E = 2) named or applied explicitly",
+      "reason": "The chapter has students count faces, edges and vertices directly and by pattern for prisms and pyramids, but never names or states Euler's formula"
+    },
+    {
+      "item": "Trigonometric ratios or vector methods for computing projections",
+      "reason": "Projection is defined only informally via a perpendicular foot from a point to a plane; no sine, cosine, or vector-based calculation is used anywhere in the chapter"
+    },
+    {
+      "item": "The icosahedron, or any Platonic-solid classification beyond the tetrahedron, cube, octahedron and dodecahedron the chapter actually names",
+      "reason": "The chapter mentions only these four solids by name in its nets discussion; it never introduces the icosahedron or the general theory of the five Platonic solids"
+    },
+    {
+      "item": "A formal proof of why the isometric projection of a cube preserves equal edge lengths",
+      "reason": "The chapter poses this as a 'Math Talk' discussion prompt ('try to understand why') rather than providing or requiring a written proof"
+    },
+    {
+      "item": "Deriving or counting the number of nets of an octahedron (11) or a dodecahedron (43,380) from first principles",
+      "reason": "These counts are given to students as stated facts about which mathematicians have determined the totals; the chapter does not ask students to derive or verify them"
+    },
+    {
+      "item": "Surface-path shortest-distance problems on solids other than a cuboid, such as a cylinder or a cone",
+      "reason": "Every ant-and-laddu shortest-path example and exercise in the chapter uses a cuboid; cylinders and cones appear only in the separate nets discussion, not in the shortest-path problems"
+    },
+    {
+      "item": "The 'impossible triangle' (Figure it Out Q4 on p.101) as a testable exercise beyond simple recognition that it cannot be built from real cubes",
+      "reason": "The chapter poses it as an open visualisation discussion prompt without a definite numeric or provable answer, so it is not suitable for a graded question"
+    }
+  ],
+  "concepts": [
+    {
+      "code": "C8M-4.1",
+      "name": "Sierpinski Carpet and Sierpinski Gasket",
+      "description": "Building these two fractals by repeatedly removing a central piece, and finding the number of remaining pieces and holes at a given step.",
+      "idea": "Repeating one simple geometric rule on a shape, over and over at smaller and smaller scales, produces a fractal -- a shape that looks similar to itself at every scale.",
+      "rule": "Sierpinski Carpet: start with a square (Step 0), divide into 9 equal smaller squares and remove the centre one (Step 1), then repeat the same rule on each of the 8 remaining squares. If R(n) is the number of remaining smallest squares at step n, R(n+1) = 8 R(n) and R(0)=1, so R(n) = 8^n; if H(n) is the number of holes, H(n+1) = H(n) + R(n). Sierpinski Gasket: start with an equilateral triangle (Step 0), join the midpoints of its sides to break it into 4 identical smaller triangles and remove the central (inverted) one (Step 1), then repeat on each of the 3 remaining triangles.",
+      "example": "At Step 2 of the Sierpinski Carpet, each of the 8 squares from Step 1 is itself divided into 9 and has its centre removed, leaving 8x8=64 remaining squares.",
+      "difficulty_base": "Easy",
+      "questions": [
+        {
+          "b": "Remember",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "At Step 1 of the Sierpinski Carpet, a square is divided into 9 equal smaller squares and one square is removed. Which square is removed?",
+          "a": "The centre square",
+          "o": [
+            "The centre square",
+            "One of the four corner squares",
+            "All four corner squares",
+            "The square is not divided at all at Step 1"
+          ]
+        },
+        {
+          "b": "Remember",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "At Step 1 of the Sierpinski Gasket, an equilateral triangle is divided using the midpoints of its sides. How many identical smaller triangles does this create in total (before any removal)?",
+          "a": "4",
+          "o": [
+            "4",
+            "3",
+            "9",
+            "2"
+          ]
+        },
+        {
+          "b": "Remember",
+          "d": "Easy",
+          "t": "fill_blank",
+          "m": 1,
+          "q": "In the Sierpinski Carpet, the number of smallest squares remaining after Step 1 is ____.",
+          "a": "8"
+        },
+        {
+          "b": "Remember",
+          "d": "Hard",
+          "t": "mcq",
+          "m": 1,
+          "q": "Which of these statements about the Sierpinski Carpet's construction is correct?",
+          "a": "The same 'divide into 9 and remove the centre' rule is applied again to every square that remains from the previous step",
+          "o": [
+            "The same 'divide into 9 and remove the centre' rule is applied again to every square that remains from the previous step",
+            "The rule is applied only once, to the original square",
+            "A different rule is applied at every step",
+            "The removed squares are put back at the next step"
+          ]
+        },
+        {
+          "b": "Understand",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "Why is the Sierpinski Carpet called self-similar?",
+          "a": "Because zooming into any one of its remaining squares shows the same carpet pattern repeated at a smaller scale",
+          "o": [
+            "Because zooming into any one of its remaining squares shows the same carpet pattern repeated at a smaller scale",
+            "Because every square in it is coloured the same colour",
+            "Because it has the same area at every step",
+            "Because it can only be drawn using squares of one fixed size"
+          ]
+        },
+        {
+          "b": "Understand",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "In the Sierpinski Gasket, why does removing the central (inverted) triangle at each step leave the remaining figure looking like smaller copies of the step before?",
+          "a": "Because each of the 3 remaining triangles is a smaller equilateral triangle, and the same removal rule will be applied to each of them next",
+          "o": [
+            "Because each of the 3 remaining triangles is a smaller equilateral triangle, and the same removal rule will be applied to each of them next",
+            "Because the removed triangle is put back at the next step",
+            "Because only the outer boundary of the triangle changes",
+            "Because the 3 remaining triangles are all different shapes from the original"
+          ]
+        },
+        {
+          "b": "Understand",
+          "d": "Easy",
+          "t": "short_answer",
+          "m": 2,
+          "q": "Explain why R(n+1) = 8 x R(n) for the Sierpinski Carpet, where R(n) is the number of remaining squares at step n.",
+          "a": "Every square that remains at step n is itself divided into 9 smaller squares with the centre one removed at step n+1, so each such square gives rise to 8 remaining squares; with R(n) squares each producing 8 new squares, the total at step n+1 is 8 x R(n).",
+          "s": [
+            [
+              "States that each remaining square at step n is divided into 9 and its centre removed, leaving 8 squares from it",
+              1
+            ],
+            [
+              "Concludes that R(n) squares each give 8 squares, so R(n+1)=8R(n)",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Understand",
+          "d": "Hard",
+          "t": "mcq",
+          "m": 1,
+          "q": "A student says the Sierpinski Gasket at Step 2 has 4 x 4 = 16 small triangles remaining, using the same doubling idea as the Carpet's x8 rule. What is wrong with this reasoning?",
+          "a": "Each remaining triangle produces 3 new triangles, not 4, since the central one of the 4 is always removed; so the multiplier should be 3, not 4",
+          "o": [
+            "Each remaining triangle produces 3 new triangles, not 4, since the central one of the 4 is always removed; so the multiplier should be 3, not 4",
+            "The multiplier should be 8, the same as the Carpet",
+            "The Gasket does not have a multiplier pattern at all",
+            "4 is correct because 4 triangles are created at every step"
+          ]
+        },
+        {
+          "b": "Understand",
+          "d": "Hard",
+          "t": "mcq",
+          "m": 1,
+          "q": "If H(n) is the number of holes in the Sierpinski Carpet at step n, why does H(n+1) = H(n) + R(n)?",
+          "a": "All H(n) existing holes remain unchanged, and every one of the R(n) remaining squares creates exactly one new hole when it is divided at the next step",
+          "o": [
+            "All H(n) existing holes remain unchanged, and every one of the R(n) remaining squares creates exactly one new hole when it is divided at the next step",
+            "Because each hole splits into R(n) smaller holes",
+            "Because holes disappear and are replaced by R(n) new ones",
+            "Because H(n) and R(n) are always equal, so H(n+1)=2R(n)"
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Easy",
+          "t": "fill_blank",
+          "m": 1,
+          "q": "Using R(n) = 8^n, the number of smallest remaining squares in the Sierpinski Carpet at Step 2 is ____.",
+          "a": "64"
+        },
+        {
+          "b": "Apply",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "Using the same reasoning as the Carpet, if T(n) is the number of remaining triangles in the Sierpinski Gasket at step n, T(0)=1 and T(n+1)=3T(n), what is T(2)?",
+          "a": "9",
+          "o": [
+            "9",
+            "6",
+            "3",
+            "27"
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Hard",
+          "t": "short_answer",
+          "m": 2,
+          "q": "Find H(2), the number of holes in the Sierpinski Carpet at Step 2, given H(0)=0, H(1)=1 and H(n+1)=H(n)+R(n).",
+          "a": "H(2) = H(1) + R(1) = 1 + 8 = 9.",
+          "s": [
+            [
+              "Identifies R(1) = 8 and applies the recursion H(2) = H(1) + R(1)",
+              1
+            ],
+            [
+              "Computes H(2) = 1 + 8 = 9",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Hard",
+          "t": "short_answer",
+          "m": 2,
+          "q": "Find the number of remaining triangles at Step 3 of the Sierpinski Gasket, given T(0) = 1 and T(n+1) = 3T(n).",
+          "a": "T(1)=3, T(2)=9, T(3)=27.",
+          "s": [
+            [
+              "Applies the x3 rule twice to reach T(2) = 9",
+              1
+            ],
+            [
+              "Applies the rule once more to get T(3) = 27",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Hard",
+          "t": "mcq",
+          "m": 1,
+          "q": "At Step 3 of the Sierpinski Carpet, the number of remaining smallest squares is",
+          "a": "512",
+          "o": [
+            "512",
+            "64",
+            "24",
+            "4096"
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Hardest",
+          "t": "long_answer",
+          "m": 3,
+          "q": "The Sierpinski Gasket's holes follow H(0)=0 and H(n+1)=H(n)+T(n), where T(n)=3^n. Find H(3), showing your working at each step.",
+          "a": "H(1) = H(0)+T(0) = 0+1 = 1. H(2) = H(1)+T(1) = 1+3 = 4. H(3) = H(2)+T(2) = 4+9 = 13.",
+          "s": [
+            [
+              "Computes H(1) = 1 using T(0)=1",
+              1
+            ],
+            [
+              "Computes H(2) = 1+3 = 4 using T(1)=3",
+              1
+            ],
+            [
+              "Computes H(3) = 4+9 = 13 using T(2)=9",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Analyse",
+          "d": "Hard",
+          "t": "assertion_reason",
+          "m": 1,
+          "q": "Assertion (A): The Sierpinski Carpet and the Sierpinski Gasket are both fractals. Reason (R): Both are built by repeating the same removal rule on every remaining piece, at smaller and smaller scales, forever.",
+          "a": "Both A and R are true, and R is the correct explanation of A",
+          "o": [
+            "Both A and R are true, and R is the correct explanation of A",
+            "Both A and R are true, but R is not the correct explanation of A",
+            "A is true but R is false",
+            "A is false but R is true"
+          ]
+        },
+        {
+          "b": "Analyse",
+          "d": "Hard",
+          "t": "multi_statement",
+          "m": 1,
+          "q": "Consider: (I) In the Sierpinski Carpet, the number of remaining squares increases at every step. (II) In the Sierpinski Carpet, the number of holes increases at every step. Which is or are correct?",
+          "a": "Both I and II",
+          "o": [
+            "Both I and II",
+            "Only I",
+            "Only II",
+            "Neither I nor II"
+          ]
+        },
+        {
+          "b": "Analyse",
+          "d": "Hardest",
+          "t": "long_answer",
+          "m": 3,
+          "q": "A student claims that since the Sierpinski Carpet keeps removing squares forever, eventually 'nothing will be left' and the remaining shape will vanish completely. Analyse whether this claim about the number of remaining squares is consistent with the formula R(n) = 8^n.",
+          "a": "The claim is not consistent with the formula. Since R(n) = 8^n, the number of remaining squares grows without bound as n increases (8, 64, 512, ...), it never reaches zero or shrinks; what changes is that each remaining square becomes smaller in size, not that the count of squares vanishes.",
+          "s": [
+            [
+              "States the claim is inconsistent with the formula",
+              1
+            ],
+            [
+              "Shows R(n)=8^n grows without bound rather than decreasing to 0",
+              1
+            ],
+            [
+              "Distinguishes that the squares get smaller in size even as their count grows, so the shape does not vanish",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Evaluate",
+          "d": "Hard",
+          "t": "short_answer",
+          "m": 2,
+          "q": "A classmate says the Sierpinski Gasket and the Sierpinski Carpet use 'exactly the same rule, just on a triangle instead of a square.' Judge this statement and explain the key numerical difference between the two rules.",
+          "a": "The statement is only partly right. Both remove a central piece at each step, but the Carpet divides each square into 9 parts and keeps 8 of them (multiplier 8), while the Gasket divides each triangle into 4 parts and keeps 3 of them (multiplier 3) -- the division counts and the growth multiplier are different.",
+          "s": [
+            [
+              "States the claim is only partly correct, since both remove a central piece",
+              1
+            ],
+            [
+              "Identifies the different multipliers: Carpet uses 9 parts/8 kept, Gasket uses 4 parts/3 kept",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Create",
+          "d": "Hardest",
+          "t": "long_answer",
+          "m": 3,
+          "q": "Design your own fractal rule for a square: state what fraction of the square you divide it into, which piece(s) you remove at each step, and give the formula for R(n) (remaining pieces at step n) that your rule produces.",
+          "a": "Example: divide the square into 4 equal smaller squares and remove one corner square, keeping 3 at each step. Then R(0)=1 and R(n+1)=3R(n), so R(n)=3^n.",
+          "s": [
+            [
+              "States a division of the square into equal parts and which are removed",
+              1
+            ],
+            [
+              "States how many parts are kept at each step",
+              1
+            ],
+            [
+              "Gives the correct formula R(n) for the chosen rule",
+              1
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "code": "C8M-4.2",
+      "name": "Koch Snowflake and Fractals in Art",
+      "description": "Building the Koch Snowflake by replacing the middle third of every side, finding its side count and perimeter at a given step, and recognising self-similar fractal patterns in real-world art and architecture.",
+      "idea": "The same 'replace the middle third with a bump' rule, applied to every side again and again, turns a triangle into the ever more detailed Koch Snowflake, and the same self-similar repetition appears in human-made art and architecture.",
+      "rule": "Starting from an equilateral triangle (3 sides), each step divides every side into 3 equal parts, raises an equilateral triangle outward on the middle part, and removes that middle part, replacing each side with 4 shorter segments. The number of sides at step n is S(n) = 3 x 4^n, and the perimeter is P(n) = 3 x (4/3)^n if the starting side length is 1 unit. Self-similar, fractal-like patterns also appear in human-made art and architecture, such as the Kandariya Mahadev Temple (Khajuraho), Nigerian Fulani wedding blankets, and M.C. Escher's print 'Smaller and Smaller'.",
+      "example": "A Koch Snowflake starting with a triangle of perimeter 3 units has perimeter 3 x 4/3 = 4 units after Step 1.",
+      "difficulty_base": "Easy",
+      "questions": [
+        {
+          "b": "Remember",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "At each step of building the Koch Snowflake, what happens to every straight side of the current shape?",
+          "a": "It is divided into 3 equal parts, and an equilateral triangle is raised on the middle part, replacing that side with 4 smaller segments",
+          "o": [
+            "It is divided into 3 equal parts, and an equilateral triangle is raised on the middle part, replacing that side with 4 smaller segments",
+            "It is divided into 4 equal parts and the second part is removed",
+            "It is divided into 2 equal parts and folded outward",
+            "An equilateral triangle is raised on the whole side, doubling its length"
+          ]
+        },
+        {
+          "b": "Remember",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "The Koch Snowflake in this chapter starts with which shape at Step 0?",
+          "a": "An equilateral triangle",
+          "o": [
+            "An equilateral triangle",
+            "A square",
+            "A regular hexagon",
+            "A single straight line segment"
+          ]
+        },
+        {
+          "b": "Remember",
+          "d": "Easy",
+          "t": "fill_blank",
+          "m": 1,
+          "q": "The Dutch artist famous for fractal-inspired prints such as 'Smaller and Smaller', which shows lizards repeating at smaller and smaller scales, is ____.",
+          "a": "M.C. Escher"
+        },
+        {
+          "b": "Remember",
+          "d": "Hard",
+          "t": "mcq",
+          "m": 1,
+          "q": "Which of these is NOT one of the locations mentioned in the chapter for fractal-like patterns in Indian temple architecture?",
+          "a": "Konark",
+          "o": [
+            "Konark",
+            "Khajuraho",
+            "Madurai",
+            "Varanasi"
+          ],
+          "rev": true
+        },
+        {
+          "b": "Understand",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "Why does each 'bump' added to a side of the Koch Snowflake use an equilateral triangle specifically, raised on the middle third?",
+          "a": "So that the two new slanted segments have the same length as the two remaining straight segments, keeping every one of the 4 new segments equal in length",
+          "o": [
+            "So that the two new slanted segments have the same length as the two remaining straight segments, keeping every one of the 4 new segments equal in length",
+            "Because equilateral triangles are the only triangles that exist in geometry",
+            "So that the overall shape stays a square",
+            "To make the perimeter of the shape decrease at each step"
+          ]
+        },
+        {
+          "b": "Understand",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "What do the Kandariya Mahadev Temple and the Sierpinski Carpet have in common, according to the chapter?",
+          "a": "Both show a pattern of smaller copies of a structure repeating at smaller and smaller scales, which is the property of self-similarity",
+          "o": [
+            "Both show a pattern of smaller copies of a structure repeating at smaller and smaller scales, which is the property of self-similarity",
+            "Both are built using only straight square shapes",
+            "Both were designed using the exact numerical formula R(n) = 8^n",
+            "Both have exactly the same number of remaining pieces at every step"
+          ]
+        },
+        {
+          "b": "Understand",
+          "d": "Easy",
+          "t": "short_answer",
+          "m": 2,
+          "q": "Explain, using the idea of self-similarity, why the Fulani wedding blanket pattern described in the chapter (diamonds inside diamonds, repeating at smaller scales) counts as a fractal-like pattern.",
+          "a": "The blanket shows the same diamond shape appearing again inside itself at a smaller scale, and this pattern of nested diamonds repeats further at even smaller scales -- this repeating of the same pattern at smaller and smaller scales is exactly what makes a pattern self-similar, which is the defining property of a fractal.",
+          "s": [
+            [
+              "States that the same diamond shape repeats inside itself at smaller scales",
+              1
+            ],
+            [
+              "Connects this repetition at smaller and smaller scales to the definition of self-similarity/fractal",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Understand",
+          "d": "Hard",
+          "t": "mcq",
+          "m": 1,
+          "q": "A student says the Koch Snowflake's perimeter must decrease at every step because pieces of each side are being 'cut out' along the way. What is the flaw in this reasoning?",
+          "a": "No length is actually removed -- the middle third of each side is replaced by two new slanted segments of the same length, so each side is replaced by 4 shorter segments, and the total length increases rather than decreases",
+          "o": [
+            "No length is actually removed -- the middle third of each side is replaced by two new slanted segments of the same length, so each side is replaced by 4 shorter segments, and the total length increases rather than decreases",
+            "There is no flaw; the perimeter does decrease at every step",
+            "The flaw is that only some sides are replaced, not all of them",
+            "The flaw is that the equilateral triangle raised on the middle part is invisible"
+          ]
+        },
+        {
+          "b": "Understand",
+          "d": "Hard",
+          "t": "mcq",
+          "m": 1,
+          "q": "Escher's print 'Smaller and Smaller' is described in the chapter as an example of a fractal because",
+          "a": "it shows the identical pattern of lizards repeating at smaller and smaller scales",
+          "o": [
+            "it shows the identical pattern of lizards repeating at smaller and smaller scales",
+            "it uses only squares of exactly one size",
+            "it was created using the Sierpinski Carpet's step-by-step rule",
+            "it shows a single lizard drawn very small"
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Easy",
+          "t": "fill_blank",
+          "m": 1,
+          "q": "Since the Koch Snowflake starts with a triangle (3 sides) and each side becomes 4 sides at every step, the number of sides at Step 1 is ____.",
+          "a": "12"
+        },
+        {
+          "b": "Apply",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "If the Koch Snowflake's starting equilateral triangle has a side length of 9 cm, what is the length of each of the 4 new segments on that side after Step 1?",
+          "a": "3 cm",
+          "o": [
+            "3 cm",
+            "4.5 cm",
+            "9 cm",
+            "2.25 cm"
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Hard",
+          "t": "short_answer",
+          "m": 2,
+          "q": "Using S(n) = 3 x 4^n for the number of sides of the Koch Snowflake at step n, find the number of sides at Step 2.",
+          "a": "S(2) = 3 x 4^2 = 3 x 16 = 48.",
+          "s": [
+            [
+              "Substitutes n=2 into S(n) = 3x4^n to get 3x16",
+              1
+            ],
+            [
+              "Computes the final value S(2) = 48",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Hard",
+          "t": "short_answer",
+          "m": 2,
+          "q": "The starting triangle of a Koch Snowflake has a perimeter of 3 units (side length 1 unit each). Using the fact that the perimeter is multiplied by 4/3 at each step, find the perimeter after Step 1.",
+          "a": "Perimeter after Step 1 = 3 x 4/3 = 4 units.",
+          "s": [
+            [
+              "States the perimeter is multiplied by 4/3",
+              1
+            ],
+            [
+              "Computes 3 x 4/3 = 4 units",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Hard",
+          "t": "mcq",
+          "m": 1,
+          "q": "A Koch Snowflake starts with a triangle of side length 12 cm. What is the length of the middle part removed from one side during Step 1?",
+          "a": "4 cm",
+          "o": [
+            "4 cm",
+            "3 cm",
+            "6 cm",
+            "8 cm"
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Hardest",
+          "t": "long_answer",
+          "m": 3,
+          "q": "The starting triangle of a Koch Snowflake has perimeter 3 units. Using perimeter multiplied by 4/3 at each step, find the perimeter after Step 3, showing the perimeter at each intermediate step.",
+          "a": "P(0) = 3. P(1) = 3 x 4/3 = 4. P(2) = 4 x 4/3 = 16/3. P(3) = 16/3 x 4/3 = 64/9.",
+          "s": [
+            [
+              "Computes P(1) = 4",
+              1
+            ],
+            [
+              "Computes P(2) = 16/3",
+              1
+            ],
+            [
+              "Computes P(3) = 64/9",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Analyse",
+          "d": "Hard",
+          "t": "assertion_reason",
+          "m": 1,
+          "q": "Assertion (A): The Koch Snowflake's perimeter grows without bound as more steps are applied. Reason (R): At every step, each side is replaced by 4 segments each 1/3 of the previous length, and 4 x 1/3 is greater than 1.",
+          "a": "Both A and R are true, and R is the correct explanation of A",
+          "o": [
+            "Both A and R are true, and R is the correct explanation of A",
+            "Both A and R are true, but R is not the correct explanation of A",
+            "A is true but R is false",
+            "A is false but R is true"
+          ]
+        },
+        {
+          "b": "Analyse",
+          "d": "Hard",
+          "t": "multi_statement",
+          "m": 1,
+          "q": "Consider: (I) The Kandariya Mahadev Temple is described in the chapter as an example of a mathematical fractal generated by a formula. (II) The Kandariya Mahadev Temple is described in the chapter as showing smaller copies of its structure repeating, similar to a fractal pattern. Which is or are correct?",
+          "a": "Only II",
+          "o": [
+            "Only II",
+            "Only I",
+            "Both I and II",
+            "Neither I nor II"
+          ]
+        },
+        {
+          "b": "Analyse",
+          "d": "Hardest",
+          "t": "long_answer",
+          "m": 3,
+          "q": "Compare the growth of the number of sides (S(n) = 3x4^n) with the growth of the perimeter (P(n) = 3x(4/3)^n) of the Koch Snowflake as n increases. Explain why the number of sides grows much faster than the perimeter, even though both increase forever.",
+          "a": "The number of sides grows by a factor of 4 at every step, while the perimeter grows by a factor of only 4/3 at every step, since each side also gets 3 times shorter even as it splits into 4. Because 4 is a much larger multiplier than 4/3, S(n) grows far faster than P(n) -- for example, by Step 3, S(3)=192 while P(3) is only 64/9, close to 7, even though the number of sides has grown by 64 times.",
+          "s": [
+            [
+              "States the side count grows by factor 4 each step while perimeter grows by factor 4/3",
+              1
+            ],
+            [
+              "Explains this is because each new segment is 1/3 as long even though there are 4 of them",
+              1
+            ],
+            [
+              "Uses or states a comparison of actual values (e.g. S(3) vs P(3)) to show the difference in growth rate",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Evaluate",
+          "d": "Hard",
+          "t": "short_answer",
+          "m": 2,
+          "q": "A student argues that because the Koch Snowflake has an ever-growing perimeter, it must also have an ever-growing area, so there is no limit to how big the snowflake can get. Judge this reasoning using what the chapter's 'Figure it Out' asks about area (assume the starting triangle has area 1 sq. unit).",
+          "a": "The reasoning is not sound. While the perimeter does grow without bound, the area added at each step is confined within the original triangle's boundary and the added bumps get smaller and smaller, so the shape's area approaches a fixed limit rather than growing without bound -- an ever-growing perimeter does not by itself mean an ever-growing area.",
+          "s": [
+            [
+              "States the reasoning is not sound / area behaves differently from perimeter",
+              1
+            ],
+            [
+              "Explains the added area at each step shrinks and stays bounded, unlike the perimeter",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Create",
+          "d": "Hardest",
+          "t": "long_answer",
+          "m": 3,
+          "q": "Design your own 'bump' rule for building a fractal from a square: state how you divide each side and where you raise a new shape, then state whether your rule makes the perimeter grow, shrink or stay the same at each step, with a reason.",
+          "a": "Example rule: divide each side of the square into 3 equal parts and raise a smaller square (not a triangle) outward on the middle third, keeping its own 4 exposed sides and removing the shared middle segment -- this replaces each side (1 part) with 3 straight parts plus 3 new square sides = 6 segments of 1/3 the original length, so the multiplier is 6 x 1/3 = 2, meaning the perimeter grows (doubles) at every step, similar to how the Koch Snowflake's perimeter grows.",
+          "s": [
+            [
+              "Describes a clear division-and-raise rule for a new fractal on a square",
+              1
+            ],
+            [
+              "States correctly whether the perimeter grows, shrinks, or stays the same under this rule",
+              1
+            ],
+            [
+              "Gives a reason (multiplier reasoning) supporting that conclusion",
+              1
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "code": "C8M-4.3",
+      "name": "Solids: Faces, Edges, Vertices, and Nets of Cube, Cuboid and Tetrahedron",
+      "description": "Naming and counting the faces, edges and vertices of prisms and pyramids, and identifying and constructing valid nets of a cube, a cuboid and a regular tetrahedron.",
+      "idea": "A solid can be described by its faces (flat surfaces), edges (where two faces meet) and vertices (corner points), and many solids can be built by folding a flat 'net' -- a 2-D shape that folds up into the solid.",
+      "rule": "A cuboid/cube has 6 faces, 12 edges, 8 vertices. A prism has two congruent polygon 'end' faces plus parallelogram side faces; an n-sided-base prism has (n+2) faces, 3n edges, 2n vertices. A pyramid has one polygon base and triangular side faces meeting at an apex; an n-sided-base pyramid has (n+1) faces, 2n edges, (n+1) vertices. A triangular pyramid with all faces equilateral triangles is a regular tetrahedron. A cube has 11 distinct nets (up to rotation/flip); a regular tetrahedron has only 2 distinct nets. Not every arrangement of the right number of squares (or triangles) is a valid net -- the pieces must fold up without gaps or overlaps.",
+      "example": "A pentagonal prism has 5+2=7 faces, 3x5=15 edges, and 2x5=10 vertices.",
+      "difficulty_base": "Easy",
+      "questions": [
+        {
+          "b": "Remember",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "Faces, edges and vertices of a solid are defined as",
+          "a": "the flat surfaces, the line segments where faces meet, and the points where edges meet, respectively",
+          "o": [
+            "the flat surfaces, the line segments where faces meet, and the points where edges meet, respectively",
+            "the curved surfaces, the corner points, and the flat surfaces, respectively",
+            "the corner points, the flat surfaces, and the line segments, respectively",
+            "the flat surfaces, the points where edges meet, and the line segments where faces meet, respectively"
+          ]
+        },
+        {
+          "b": "Remember",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "A cube has how many faces, edges and vertices respectively?",
+          "a": "6 faces, 12 edges, 8 vertices",
+          "o": [
+            "6 faces, 12 edges, 8 vertices",
+            "8 faces, 12 edges, 6 vertices",
+            "6 faces, 8 edges, 12 vertices",
+            "12 faces, 6 edges, 8 vertices"
+          ]
+        },
+        {
+          "b": "Remember",
+          "d": "Easy",
+          "t": "fill_blank",
+          "m": 1,
+          "q": "A shape that can be folded to form a solid, obtained by 'unfolding' the solid onto a flat surface, is called a ____ of the solid.",
+          "a": "net"
+        },
+        {
+          "b": "Remember",
+          "d": "Hard",
+          "t": "mcq",
+          "m": 1,
+          "q": "Which of the following is NOT a correct description of a pyramid, as given in the chapter?",
+          "a": "It has two congruent polygon faces connected by parallelogram faces",
+          "o": [
+            "It has two congruent polygon faces connected by parallelogram faces",
+            "It has a polygonal base and a point outside it (apex)",
+            "Its side faces meet at a single point",
+            "A triangular pyramid is also called a tetrahedron"
+          ],
+          "rev": true
+        },
+        {
+          "b": "Understand",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "Why does a triangular prism have 5 faces (not 6 like a cube)?",
+          "a": "It has 2 triangular end faces plus 3 rectangular side faces (one for each side of the triangle), giving 2+3=5 faces in total",
+          "o": [
+            "It has 2 triangular end faces plus 3 rectangular side faces (one for each side of the triangle), giving 2+3=5 faces in total",
+            "Because a triangle has only 5 sides",
+            "Because one of the rectangular faces is missing compared to a cube",
+            "Because the two triangular faces are counted as one face"
+          ]
+        },
+        {
+          "b": "Understand",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "Why is a cube considered a special case of a prism?",
+          "a": "Because a cube has two congruent square 'end' faces connected by parallelogram (square) side faces, which fits the general definition of a prism with a square base",
+          "o": [
+            "Because a cube has two congruent square 'end' faces connected by parallelogram (square) side faces, which fits the general definition of a prism with a square base",
+            "Because a cube has a pointed apex like a pyramid",
+            "Because a cube's faces are all triangles",
+            "Because a cube can only be built from a cylinder's net"
+          ]
+        },
+        {
+          "b": "Understand",
+          "d": "Easy",
+          "t": "short_answer",
+          "m": 2,
+          "q": "Using the general rule for a prism with an n-sided base ((n+2) faces), explain how many faces a hexagonal prism has and why.",
+          "a": "A hexagonal prism has an n=6 sided base, so by the rule (n+2) faces, it has 6+2=8 faces: the 2 congruent hexagonal end faces plus 6 rectangular side faces, one for each side of the hexagon.",
+          "s": [
+            [
+              "States n=6 for a hexagonal base and applies the (n+2) rule",
+              1
+            ],
+            [
+              "Explains the 8 faces as 2 hexagonal ends plus 6 rectangular sides",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Understand",
+          "d": "Hard",
+          "t": "mcq",
+          "m": 1,
+          "q": "A student claims a square pyramid and a cube have the same number of faces because both have a 'square' involved. What is wrong with this reasoning?",
+          "a": "A square pyramid has 1 square base plus 4 triangular side faces = 5 faces, while a cube has 6 square faces; having a square in the description does not make the face counts equal",
+          "o": [
+            "A square pyramid has 1 square base plus 4 triangular side faces = 5 faces, while a cube has 6 square faces; having a square in the description does not make the face counts equal",
+            "There is nothing wrong; both really do have the same number of faces",
+            "The reasoning is wrong because a square pyramid actually has more faces than a cube",
+            "The reasoning is wrong because a cube is not related to squares at all"
+          ]
+        },
+        {
+          "b": "Understand",
+          "d": "Hard",
+          "t": "mcq",
+          "m": 1,
+          "q": "Why can a cube be built from 11 different nets, all of which are considered different arrangements of the same 6 squares?",
+          "a": "Because there are 11 distinct ways to arrange 6 connected squares in a flat layout, other than by rotating or flipping the whole arrangement, that fold up without gaps or overlaps into a cube",
+          "o": [
+            "Because there are 11 distinct ways to arrange 6 connected squares in a flat layout, other than by rotating or flipping the whole arrangement, that fold up without gaps or overlaps into a cube",
+            "Because a cube can be made from any arrangement of 6 connected squares",
+            "Because a cube has 11 faces in total",
+            "Because each face of the cube needs its own separate net"
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Easy",
+          "t": "fill_blank",
+          "m": 1,
+          "q": "A pentagonal prism has a base with 5 sides, so by the rule (n+2) faces, it has ____ faces.",
+          "a": "7"
+        },
+        {
+          "b": "Apply",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "A pyramid has a base with 8 sides (an octagonal base). Using the rule that an n-sided-base pyramid has (n+1) vertices, how many vertices does it have?",
+          "a": "9",
+          "o": [
+            "9",
+            "8",
+            "16",
+            "17"
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Hard",
+          "t": "short_answer",
+          "m": 2,
+          "q": "A prism has a decagon (10-sided polygon) as its base. Find the number of faces and the number of edges it has, using (n+2) faces and 3n edges.",
+          "a": "Faces = n+2 = 10+2 = 12. Edges = 3n = 3x10 = 30.",
+          "s": [
+            [
+              "Computes faces = 12 using n+2 with n=10",
+              1
+            ],
+            [
+              "Computes edges = 30 using 3n with n=10",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Hard",
+          "t": "short_answer",
+          "m": 2,
+          "q": "A pyramid has a base with 12 sides. Find its number of faces and edges, using (n+1) faces and 2n edges.",
+          "a": "Faces = n+1 = 12+1 = 13. Edges = 2n = 2x12 = 24.",
+          "s": [
+            [
+              "Computes faces = 13 using n+1 with n=12",
+              1
+            ],
+            [
+              "Computes edges = 24 using 2n with n=12",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Hard",
+          "t": "mcq",
+          "m": 1,
+          "q": "A prism has 20 edges in total. Using 3n edges for an n-sided base, how many sides does its base polygon have?",
+          "a": "Not a whole number, so no such prism exists",
+          "o": [
+            "Not a whole number, so no such prism exists",
+            "A base with 20/3 = 6.67 sides, rounded to 7",
+            "A base with 60 sides, multiplying instead of dividing",
+            "A base with 17 sides, from 20-3"
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Hardest",
+          "t": "long_answer",
+          "m": 3,
+          "q": "A prism's base is an n-sided polygon. Show that the number of edges of the prism is always exactly 1.5 times the number of vertices, using the formulas 3n edges and 2n vertices.",
+          "a": "Edges = 3n and vertices = 2n. Dividing, edges/vertices = 3n/2n = 3/2 = 1.5. So the number of edges is always 1.5 times the number of vertices, for any n.",
+          "s": [
+            [
+              "States the formulas 3n for edges and 2n for vertices",
+              1
+            ],
+            [
+              "Forms the ratio 3n/2n",
+              1
+            ],
+            [
+              "Simplifies to 3/2 = 1.5 and concludes this holds for any n",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Analyse",
+          "d": "Hard",
+          "t": "assertion_reason",
+          "m": 1,
+          "q": "Assertion (A): A regular tetrahedron has only 2 distinct nets, while a cube has 11. Reason (R): A tetrahedron has fewer faces (4) than a cube (6), so there are fewer flat surfaces to arrange into different layouts.",
+          "a": "Both A and R are true, but R is not the correct explanation of A",
+          "o": [
+            "Both A and R are true, but R is not the correct explanation of A",
+            "Both A and R are true, and R is the correct explanation of A",
+            "A is true but R is false",
+            "A is false but R is true"
+          ]
+        },
+        {
+          "b": "Analyse",
+          "d": "Hard",
+          "t": "multi_statement",
+          "m": 1,
+          "q": "Consider: (I) A cuboid with all edges of different lengths still has exactly 6 faces, 12 edges, and 8 vertices, same as a cube. (II) A cuboid always has all its faces as squares, like a cube. Which is or are correct?",
+          "a": "Only I",
+          "o": [
+            "Only I",
+            "Only II",
+            "Both I and II",
+            "Neither I nor II"
+          ]
+        },
+        {
+          "b": "Analyse",
+          "d": "Hardest",
+          "t": "long_answer",
+          "m": 3,
+          "q": "A student says: 'Since a cube has 11 nets and a tetrahedron has 2 nets, solids with more faces must always have more nets.' Analyse this claim using the fact, stated in the chapter, that a dodecahedron (12 faces) has 43,380 nets while an octahedron (8 faces) has 11 nets.",
+          "a": "The general trend (more faces tending to allow more possible net arrangements) does seem to hold loosely across these examples -- 2 (4 faces) < 11 (6 or 8 faces) < 43,380 (12 faces) -- but the claim that it 'must always' hold is too strong, since the chapter only states these specific counts as facts without proving any rule connecting face count to net count in general; a solid with more faces is not guaranteed by any stated rule to always have more nets than one with fewer faces.",
+          "s": [
+            [
+              "States the trend loosely appears to hold across the given examples",
+              1
+            ],
+            [
+              "Notes the cube and octahedron have different face counts (6 vs 8) yet the same net count (11), which challenges a strict rule",
+              1
+            ],
+            [
+              "Concludes the 'must always' claim is too strong since no general rule is given in the chapter",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Evaluate",
+          "d": "Hard",
+          "t": "short_answer",
+          "m": 2,
+          "q": "A student builds a flat layout of 6 squares joined edge-to-edge and says 'this must be a net of a cube since it has exactly 6 squares.' Judge this reasoning.",
+          "a": "The reasoning is not sound. Having exactly 6 connected squares is necessary but not sufficient for a valid cube net -- only 11 particular arrangements out of the many possible layouts of 6 connected squares actually fold up into a cube without gaps or overlaps, so the square count alone does not guarantee it is a valid net.",
+          "s": [
+            [
+              "States the reasoning is not sound / not sufficient",
+              1
+            ],
+            [
+              "Explains that only specific arrangements (11 of them) of 6 squares are valid cube nets, not any arrangement",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Create",
+          "d": "Hardest",
+          "t": "long_answer",
+          "m": 3,
+          "q": "Design a net for a triangular prism whose triangular ends are equilateral with side 4 cm and whose length is 7 cm. Describe the shape and dimensions of every piece in your net.",
+          "a": "The net has 2 equilateral triangles with side 4 cm (the two ends) and 3 rectangles, each 7 cm by 4 cm (the three rectangular side faces, one for each side of the triangle), arranged so that each rectangle's 4 cm edge is attached to a side of a triangle.",
+          "s": [
+            [
+              "States the net has 2 equilateral triangles of side 4 cm",
+              1
+            ],
+            [
+              "States the net has 3 rectangles of dimensions 7 cm by 4 cm",
+              1
+            ],
+            [
+              "Describes how these pieces connect (rectangle's 4 cm side attached to a triangle side)",
+              1
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "code": "C8M-4.4",
+      "name": "Nets of Cylinder and Cone, and Shortest Paths on a Cuboid",
+      "description": "Constructing nets of curved solids, and finding the shortest path between two points on a cuboid's surface by unfolding it and using the Baudhayana (Pythagoras) theorem.",
+      "idea": "Curved solids like cylinders and cones can also be 'unfolded' into flat nets, and unfolding a solid's surface turns the problem of finding the shortest path between two points on the solid's surface into an easier problem of finding the shortest straight-line path on the flat net.",
+      "rule": "A cylinder's net consists of 2 circles (top and bottom) and 1 rectangle (the curved side unrolled); the rectangle's length equals the circle's circumference (2 pi r) and its width equals the cylinder's height. A cone's net consists of 1 circle (the base) and a sector of a larger circle (the unrolled curved surface), whose radius equals the cone's slant length. A sphere has no flat net that wraps around it without wrinkles or gaps. On a cuboid, the shortest path between two points on its surface is found by unfolding the cuboid flat along the faces the path crosses and drawing the straight-line distance on the net; different unfoldings give different straight-line lengths, so multiple unfoldings must be tried, and right-triangle side lengths on the net are found using the Baudhayana theorem (Pythagoras theorem).",
+      "example": "Unfolding two adjacent faces of a cuboid into one flat rectangle of size 24 cm by 32 cm turns a surface-path problem into finding the diagonal of that rectangle, which is sqrt(24^2+32^2) = 40 cm using the Baudhayana (Pythagoras) theorem.",
+      "difficulty_base": "Hard",
+      "questions": [
+        {
+          "b": "Remember",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "The net of a cylinder consists of",
+          "a": "two circles and one rectangle",
+          "o": [
+            "two circles and one rectangle",
+            "one circle and one rectangle",
+            "two circles and one sector",
+            "two rectangles and one circle"
+          ]
+        },
+        {
+          "b": "Remember",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "The net of a cone consists of",
+          "a": "one circle and one sector of a larger circle",
+          "o": [
+            "one circle and one sector of a larger circle",
+            "two circles and a rectangle",
+            "one circle and one rectangle",
+            "one triangle and one circle"
+          ]
+        },
+        {
+          "b": "Remember",
+          "d": "Easy",
+          "t": "fill_blank",
+          "m": 1,
+          "q": "In the ant-and-laddu problem, the shortest path between two points on the surface of a cuboid is found by first drawing the cuboid's ____ and then finding the straight-line distance between the points on it.",
+          "a": "net"
+        },
+        {
+          "b": "Remember",
+          "d": "Hard",
+          "t": "mcq",
+          "m": 1,
+          "q": "Which of these solids does NOT have a flat net that can wrap around it perfectly without wrinkles, gaps or overlaps, according to the chapter?",
+          "a": "A sphere",
+          "o": [
+            "A sphere",
+            "A cylinder",
+            "A cone",
+            "A cube"
+          ],
+          "rev": true
+        },
+        {
+          "b": "Understand",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "Why is the width of the rectangle in a cylinder's net equal to the circumference of its circular face?",
+          "a": "Because the rectangle is formed by unrolling the curved side of the cylinder along a straight cut, and the length once travelled all the way around the circular edge equals the circle's circumference",
+          "o": [
+            "Because the rectangle is formed by unrolling the curved side of the cylinder along a straight cut, and the length once travelled all the way around the circular edge equals the circle's circumference",
+            "Because the rectangle's width is always equal to the cylinder's height",
+            "Because the width is fixed at 2 times the radius, the diameter",
+            "Because the curved surface is cut into equal strips first"
+          ]
+        },
+        {
+          "b": "Understand",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "Why does the net of a cone form a sector (a 'pie slice') rather than a full circle or a rectangle?",
+          "a": "Because unrolling the curved surface of a cone produces a flat shape whose boundary is a portion of a circle centred at the cone's apex, since every point on the base rim is the same slant distance from the apex",
+          "o": [
+            "Because unrolling the curved surface of a cone produces a flat shape whose boundary is a portion of a circle centred at the cone's apex, since every point on the base rim is the same slant distance from the apex",
+            "Because a cone has a square base, which unrolls into a sector",
+            "Because the base circle itself becomes a sector when it is unfolded",
+            "Because the cone's height determines the sector's straight edges"
+          ]
+        },
+        {
+          "b": "Understand",
+          "d": "Easy",
+          "t": "short_answer",
+          "m": 2,
+          "q": "Explain why the way a cuboid is unfolded can matter when finding the shortest path between two points on its surface.",
+          "a": "Different ways of unfolding the cuboid lay the same two faces out in different relative positions, so the straight line joining the two points can pass through different combinations of faces and have different lengths on the net; only some of these unfoldings give a straight line that actually corresponds to a real path on the cuboid's surface, and among these the unfolding giving the shortest straight-line distance gives the true shortest path.",
+          "s": [
+            [
+              "States that different unfoldings place the faces in different relative positions, changing the straight-line length",
+              1
+            ],
+            [
+              "Notes that only some unfoldings correspond to a real path, and the shortest such one gives the answer",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Understand",
+          "d": "Hard",
+          "t": "mcq",
+          "m": 1,
+          "q": "A student unfolds a cuboid and draws a straight line between the ant and the laddu, but the line passes outside the net's boundary. What does this indicate?",
+          "a": "That particular unfolding does not correspond to any real path on the cuboid's surface, so a different unfolding must be tried",
+          "o": [
+            "That particular unfolding does not correspond to any real path on the cuboid's surface, so a different unfolding must be tried",
+            "The ant and laddu positions were marked incorrectly and must be recomputed",
+            "This means there is no shortest path on that cuboid at all",
+            "The line should simply be redrawn inside the net at the same length"
+          ]
+        },
+        {
+          "b": "Understand",
+          "d": "Hard",
+          "t": "mcq",
+          "m": 1,
+          "q": "Why is the Baudhayana (Pythagoras) theorem useful for finding lengths on a cuboid's net?",
+          "a": "Because once the cuboid is unfolded flat, the straight-line path between two points often forms the hypotenuse of a right triangle whose two other sides are known lengths along the net",
+          "o": [
+            "Because once the cuboid is unfolded flat, the straight-line path between two points often forms the hypotenuse of a right triangle whose two other sides are known lengths along the net",
+            "Because every face of a cuboid is a right triangle",
+            "Because the theorem gives the exact shape of the net directly",
+            "Because the net of a cuboid is always a single square"
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Easy",
+          "t": "fill_blank",
+          "m": 1,
+          "q": "A cylinder has a circular base of circumference 22 cm and a height of 10 cm. The rectangle in its net has dimensions 22 cm by ____ cm.",
+          "a": "10"
+        },
+        {
+          "b": "Apply",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "A cone's net has a base circle and a sector whose radius equals the cone's",
+          "a": "slant length",
+          "o": [
+            "slant length",
+            "height",
+            "base radius",
+            "diameter"
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Hard",
+          "t": "short_answer",
+          "m": 2,
+          "q": "Two faces of a cuboid, each 6 cm by 8 cm, are unfolded flat to lie side by side along their 8 cm edges, forming one flat rectangle. A point is at one corner and another point is at the diagonally opposite corner of this combined rectangle. Find the straight-line distance between them using the Baudhayana theorem, given the combined rectangle is 12 cm by 8 cm.",
+          "a": "Distance^2 = 12^2 + 8^2 = 144 + 64 = 208, so distance = sqrt(208) = 4sqrt(13) cm.",
+          "s": [
+            [
+              "Sets up distance^2 = 12^2 + 8^2 using the two sides of the combined rectangle",
+              1
+            ],
+            [
+              "Computes distance = sqrt(208) = 4sqrt(13) cm (or equivalent simplified/decimal form)",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Hard",
+          "t": "short_answer",
+          "m": 2,
+          "q": "A cylindrical pillar has a circular cross-section of radius 7 cm (use pi = 22/7) and a height of 15 cm. Find the length and width of the rectangle in its net.",
+          "a": "Length = circumference = 2 x 22/7 x 7 = 44 cm. Width = height = 15 cm.",
+          "s": [
+            [
+              "Computes circumference = 2 x 22/7 x 7 = 44 cm as the rectangle's length",
+              1
+            ],
+            [
+              "States the rectangle's width equals the cylinder's height, 15 cm",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Hard",
+          "t": "mcq",
+          "m": 1,
+          "q": "An ant needs to travel between two points on a cuboid's surface. When two different valid unfoldings give straight-line distances of 40 cm and 46 cm respectively, the shortest path length is",
+          "a": "40 cm",
+          "o": [
+            "40 cm",
+            "46 cm",
+            "43 cm, the average of the two",
+            "86 cm, the sum of the two"
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Hardest",
+          "t": "long_answer",
+          "m": 3,
+          "q": "A cuboid box is 24 cm long, 18 cm wide and 12 cm tall. Two adjacent faces -- the 24 cm by 12 cm front face and the 18 cm by 12 cm side face -- are unfolded flat along their shared 12 cm edge, forming a combined rectangle of length (24+18) cm and height 12 cm. Find the straight-line distance between the bottom-left corner of the front face and the top-right corner of the side face on this combined net.",
+          "a": "Combined rectangle length = 24 + 18 = 42 cm, height = 12 cm. Distance^2 = 42^2 + 12^2 = 1764 + 144 = 1908, so distance = sqrt(1908), approximately 43.68 cm.",
+          "s": [
+            [
+              "Computes the combined rectangle's length as 24+18=42 cm",
+              1
+            ],
+            [
+              "Sets up distance^2 = 42^2 + 12^2",
+              1
+            ],
+            [
+              "Computes distance = sqrt(1908), approximately 43.68 cm",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Analyse",
+          "d": "Hard",
+          "t": "assertion_reason",
+          "m": 1,
+          "q": "Assertion (A): A sphere has no flat net that wraps around it perfectly. Reason (R): Every point on a sphere's surface is equally curved, so no flat piece of material can cover any part of it without stretching, wrinkling, or leaving gaps.",
+          "a": "Both A and R are true, and R is the correct explanation of A",
+          "o": [
+            "Both A and R are true, and R is the correct explanation of A",
+            "Both A and R are true, but R is not the correct explanation of A",
+            "A is true but R is false",
+            "A is false but R is true"
+          ]
+        },
+        {
+          "b": "Analyse",
+          "d": "Hard",
+          "t": "multi_statement",
+          "m": 1,
+          "q": "Consider: (I) The rectangle in a cylinder's net always has the same width as the cylinder's height. (II) The sector in a cone's net always has a radius equal to the cone's base radius. Which is or are correct?",
+          "a": "Only I",
+          "o": [
+            "Only I",
+            "Only II",
+            "Both I and II",
+            "Neither I nor II"
+          ]
+        },
+        {
+          "b": "Analyse",
+          "d": "Hardest",
+          "t": "long_answer",
+          "m": 3,
+          "q": "For the same pair of points -- an ant at the centre of a side face and a laddu at the centre of an edge of a cuboid -- the chapter shows two candidate paths on the cuboid, only one of which is shortest. Analyse how unfolding the cuboid into its net helps decide which candidate path is truly shortest, rather than just guessing by eye.",
+          "a": "By unfolding the cuboid along the faces each candidate path crosses, every surface path becomes a path on a flat net, where its length can be measured directly, and a path on the surface is shortest exactly when it becomes a straight line on some valid net -- so instead of guessing by eye, one draws each candidate on its net, checks which one straightens into a single straight line (or gives the smallest straight-line length among valid unfoldings), and that one is the true shortest path.",
+          "s": [
+            [
+              "States that unfolding converts each surface path into a path on a flat net where length can be measured",
+              1
+            ],
+            [
+              "States that a surface path is shortest exactly when it becomes a straight line on a valid net",
+              1
+            ],
+            [
+              "Explains this replaces guessing with comparing straight-line lengths across valid unfoldings",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Evaluate",
+          "d": "Hard",
+          "t": "short_answer",
+          "m": 2,
+          "q": "A student always uses the same single unfolding of a cuboid to solve every ant-and-laddu shortest-path problem, regardless of where the ant and laddu are placed. Judge whether this approach is reliable, referring to what the chapter shows about the trickier shortest-path example.",
+          "a": "This approach is not reliable. The chapter's trickier example shows that different positions of the ant and laddu require different unfoldings to get the true shortest path, and using only one fixed unfolding may make the straight line pass outside the net or give a longer distance than the actual shortest path, so each problem must be checked with the unfolding (or unfoldings) appropriate to it.",
+          "s": [
+            [
+              "States the approach is not reliable",
+              1
+            ],
+            [
+              "Explains, referencing the trickier example, that different point positions need different unfoldings to find the true shortest path",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Create",
+          "d": "Hardest",
+          "t": "long_answer",
+          "m": 3,
+          "q": "Design your own ant-and-laddu problem on a cuboid: choose the cuboid's length, width and height, place the ant at the centre of one face and the laddu at the centre of an adjacent face, describe how you would unfold the cuboid to find the shortest path, and state which theorem you would use to compute its length.",
+          "a": "Example: take a cuboid 10 cm by 8 cm by 6 cm, with the ant at the centre of the 10 cm by 6 cm face and the laddu at the centre of the adjacent 8 cm by 6 cm face. Unfold these two faces flat along their shared 6 cm edge so they lie in one plane; then use the Baudhayana (Pythagoras) theorem on the resulting right triangle, formed by the horizontal and vertical distances between the two centre points on the net, to compute the straight-line distance as the shortest path.",
+          "s": [
+            [
+              "States a chosen cuboid's dimensions and the ant/laddu positions on adjacent faces",
+              1
+            ],
+            [
+              "Describes unfolding the two faces flat along their shared edge into one plane",
+              1
+            ],
+            [
+              "States that the Baudhayana (Pythagoras) theorem is used to compute the resulting straight-line distance",
+              1
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "code": "C8M-4.5",
+      "name": "Projections: Front, Top and Side Views",
+      "description": "Defining the projection of a point and an object onto a plane, and identifying, drawing and matching the front, top and side views of solids and cube combinations.",
+      "idea": "The view of a solid from one direction alone doesn't fully describe it, so engineers standardise on three mutually perpendicular projections -- front view, top view, and side view -- to represent a 3-D solid on a flat page.",
+      "rule": "A point's projection on a plane is the foot of the perpendicular dropped from that point to the plane; the projection of an object is the set of projections of all its points. The length of a projected line segment is always less than or equal to its actual length, and equals it only when the segment is parallel to the plane it's being projected onto. Parallel lines project to parallel lines, so a parallelogram's projection is always a parallelogram. The front view is the projection onto the vertical plane in front of the object, the top view onto the horizontal plane below it, and the side view onto the side plane; a given projection does not uniquely determine the object.",
+      "example": "A cylinder standing upright has a rectangular front view, a circular top view, and a rectangular side view (identical to the front view).",
+      "difficulty_base": "Easy",
+      "questions": [
+        {
+          "b": "Remember",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "The projection of a point P onto a plane M is the point O on the plane such that",
+          "a": "the line segment OP is perpendicular to the plane M",
+          "o": [
+            "the line segment OP is perpendicular to the plane M",
+            "O is the point on the plane nearest to any corner of the object",
+            "OP is parallel to the plane M",
+            "O is the midpoint of the object's outline"
+          ]
+        },
+        {
+          "b": "Remember",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "The three standard views used to represent a solid are the",
+          "a": "front view, top view and side view",
+          "o": [
+            "front view, top view and side view",
+            "front view, back view and top view",
+            "top view, bottom view and side view",
+            "front view, side view and diagonal view"
+          ]
+        },
+        {
+          "b": "Remember",
+          "d": "Easy",
+          "t": "fill_blank",
+          "m": 1,
+          "q": "The front view of a solid is its projection onto the ____ plane.",
+          "a": "vertical"
+        },
+        {
+          "b": "Remember",
+          "d": "Hard",
+          "t": "mcq",
+          "m": 1,
+          "q": "Which of these is NOT true about the projection of a line segment onto a plane?",
+          "a": "The projected length is always greater than the actual length of the segment",
+          "o": [
+            "The projected length is always greater than the actual length of the segment",
+            "The projected length can be equal to the actual length, if the segment is parallel to the plane",
+            "The projected length is always less than or equal to the actual length",
+            "Two different line segments can sometimes have the same projection"
+          ],
+          "rev": true
+        },
+        {
+          "b": "Understand",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "Why can a given projection be produced by more than one different object, as shown in the chapter with different lines and cuboids?",
+          "a": "Because the projection only records information about points along the direction of projection, so details about depth (how far each point is from the plane) are lost",
+          "o": [
+            "Because the projection only records information about points along the direction of projection, so details about depth (how far each point is from the plane) are lost",
+            "Because every object has exactly the same projection regardless of shape",
+            "Because projections are always drawn inaccurately",
+            "Because only round objects can share projections with other shapes"
+          ]
+        },
+        {
+          "b": "Understand",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "Why does the projection of a parallelogram always stay a parallelogram, no matter how it is oriented?",
+          "a": "Because projection preserves the property of lines being parallel -- a pair of parallel lines always projects to a pair of parallel lines",
+          "o": [
+            "Because projection preserves the property of lines being parallel -- a pair of parallel lines always projects to a pair of parallel lines",
+            "Because a parallelogram's angles never change under projection",
+            "Because a parallelogram is always projected onto a plane that is parallel to it",
+            "Because only parallelograms can be projected onto planes, other shapes cannot"
+          ]
+        },
+        {
+          "b": "Understand",
+          "d": "Easy",
+          "t": "short_answer",
+          "m": 2,
+          "q": "Explain, using the profile idea from earlier in the chapter, why a cylinder lying on its side has a rectangular profile from one viewpoint but a circular profile from another.",
+          "a": "Looking at the cylinder from the side (perpendicular to its curved surface) shows its rectangular outline (length by diameter), while looking at it from one of its flat circular ends shows the circular outline of that end -- the profile depends on the viewpoint chosen, since different faces or outlines of the solid are visible from different directions.",
+          "s": [
+            [
+              "States that viewing from the side shows the rectangular outline (length by diameter)",
+              1
+            ],
+            [
+              "States that viewing from an end shows the circular outline, since the profile depends on viewpoint",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Understand",
+          "d": "Hard",
+          "t": "mcq",
+          "m": 1,
+          "q": "A student measures the projected length of a slanted line segment onto a plane and finds it shorter than the segment's actual length. What does this indicate about the segment's orientation relative to the plane?",
+          "a": "The segment is not parallel to the plane -- it is inclined at some angle to it, causing its projection to be foreshortened",
+          "o": [
+            "The segment is not parallel to the plane -- it is inclined at some angle to it, causing its projection to be foreshortened",
+            "The segment must be perpendicular to the plane",
+            "The measurement must be wrong, since projected length always equals actual length",
+            "The plane must be curved rather than flat"
+          ]
+        },
+        {
+          "b": "Understand",
+          "d": "Hard",
+          "t": "mcq",
+          "m": 1,
+          "q": "Why do engineers typically draw three views (front, top and side) of an object rather than just one?",
+          "a": "Because a single projection loses depth information and can match more than one possible object, so combining three mutually perpendicular views gives a much more complete description of the shape",
+          "o": [
+            "Because a single projection loses depth information and can match more than one possible object, so combining three mutually perpendicular views gives a much more complete description of the shape",
+            "Because a single view is against engineering regulations",
+            "Because three views always make an object look bigger",
+            "Because each of the three views must be a different shape by rule"
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Easy",
+          "t": "fill_blank",
+          "m": 1,
+          "q": "A cube resting flat on a table has a front view, top view and side view that are all the same shape: a ____.",
+          "a": "square"
+        },
+        {
+          "b": "Apply",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "A cone standing upright on its circular base has which shape as its top view?",
+          "a": "A circle",
+          "o": [
+            "A circle",
+            "A triangle",
+            "A rectangle",
+            "A point"
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Hard",
+          "t": "short_answer",
+          "m": 2,
+          "q": "A rectangular box (cuboid) stands with its 6 cm by 4 cm face as the base. State the shape of its top view and the shape of its front view (assume the box's height is 10 cm and its base is 6 cm by 4 cm, viewed so the 6 cm side faces forward).",
+          "a": "Top view: a 6 cm by 4 cm rectangle (the base shape). Front view: a 6 cm by 10 cm rectangle (the width of the forward-facing side by the height).",
+          "s": [
+            [
+              "States the top view is a 6 cm by 4 cm rectangle, matching the base",
+              1
+            ],
+            [
+              "States the front view is a 6 cm by 10 cm rectangle, using the forward side and the height",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Hard",
+          "t": "short_answer",
+          "m": 2,
+          "q": "A line segment 10 cm long is projected onto a plane and its projection measures 6 cm. Using the right-triangle relation from the chapter (projected length p, actual length l), can this projected length ever become exactly 10 cm as the segment's orientation changes, and under what condition?",
+          "a": "Yes, the projected length can become exactly 10 cm, equal to the actual length, exactly when the segment becomes parallel to the plane it is projected onto.",
+          "s": [
+            [
+              "States that the projected length can equal the actual length",
+              1
+            ],
+            [
+              "States the condition: the segment must be parallel to the plane",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Hard",
+          "t": "mcq",
+          "m": 1,
+          "q": "Two different cuboids are found to have exactly the same front view and the same top view, but different side views. What can be concluded?",
+          "a": "The two cuboids are not identical, since even though two of their three standard views match, their side views differ",
+          "o": [
+            "The two cuboids are not identical, since even though two of their three standard views match, their side views differ",
+            "The two cuboids must be identical, since two matching views are always enough",
+            "Matching front and top views is impossible for cuboids",
+            "Only the side view actually matters; the front and top views can be ignored"
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Hardest",
+          "t": "long_answer",
+          "m": 3,
+          "q": "A solid is built from identical cubes and its front view looks like the letter 'T', and its top view looks like a straight row of cubes. Describe, in words, a combination of cubes consistent with both views, and explain how you checked that your combination matches each given view.",
+          "a": "Example: place 3 cubes in a row along the depth direction, and add one more cube on top of the middle cube of that row, so that looking from the front the top cube plus the row beneath forms a 'T' shape, while looking from directly above, only the row of 3 cubes in a line is visible (the topmost cube is directly above the middle one, so it does not add anything new to the top view). Checked by mentally viewing the arrangement from the front (seeing the vertical stem and horizontal bar of the T) and from above (seeing only the single row).",
+          "s": [
+            [
+              "Describes a specific combination of cubes (e.g. a row plus one cube stacked on the middle)",
+              1
+            ],
+            [
+              "Explains why the front view of this combination looks like a 'T'",
+              1
+            ],
+            [
+              "Explains why the top view of this combination is a straight row",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Analyse",
+          "d": "Hard",
+          "t": "assertion_reason",
+          "m": 1,
+          "q": "Assertion (A): A given top view alone cannot always tell us the height of a solid. Reason (R): The top view is the projection onto the horizontal plane, which records only the outline seen from directly above and does not record how far each point is above that plane.",
+          "a": "Both A and R are true, and R is the correct explanation of A",
+          "o": [
+            "Both A and R are true, and R is the correct explanation of A",
+            "Both A and R are true, but R is not the correct explanation of A",
+            "A is true but R is false",
+            "A is false but R is true"
+          ]
+        },
+        {
+          "b": "Analyse",
+          "d": "Hard",
+          "t": "multi_statement",
+          "m": 1,
+          "q": "Consider: (I) The projection of a pair of parallel lines is always a pair of parallel lines. (II) The projected length of every line segment is always strictly less than its actual length, with no exceptions. Which is or are correct?",
+          "a": "Only I",
+          "o": [
+            "Only I",
+            "Only II",
+            "Both I and II",
+            "Neither I nor II"
+          ]
+        },
+        {
+          "b": "Analyse",
+          "d": "Hardest",
+          "t": "long_answer",
+          "m": 3,
+          "q": "Explain why 'a given projection is not made by a unique object', using two different examples: (a) different lines that give the same projection, and (b) different cuboids that give the same projection, referring to how projection loses information.",
+          "a": "Projection records only how points fall onto the plane along the perpendicular direction, discarding all information about distance from the plane. (a) Two lines at different depths but the same position and length when seen from the projecting direction will project to the same line segment on the plane -- their difference in depth is invisible in the projection. (b) Similarly, two cuboids of different depths, but with the same height and width facing the viewer, will have identical front-view projections, since the projection only shows the outline facing that direction, not how far back the cuboid extends. In both cases, the missing 'depth' information means multiple different objects share one projection.",
+          "s": [
+            [
+              "States that projection discards depth information along the projecting direction",
+              1
+            ],
+            [
+              "Gives a valid example of two differently-placed/depthed lines sharing one projection",
+              1
+            ],
+            [
+              "Gives a valid example of two cuboids of different depth sharing the same front-view projection",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Evaluate",
+          "d": "Hard",
+          "t": "short_answer",
+          "m": 2,
+          "q": "A student says: 'If I know an object's front view and top view, I always know exactly what the object looks like, no need for a side view.' Judge this claim.",
+          "a": "The claim is not correct in general. Even with matching front and top views, different objects can still differ in their side view, as the chapter's projection examples show; a third, independent view (the side view) can carry extra information not captured by the other two, so relying on only two views can still leave the object's shape ambiguous.",
+          "s": [
+            [
+              "States the claim is not correct in general",
+              1
+            ],
+            [
+              "Explains that two objects can share front and top views yet differ in side view, so ambiguity can remain",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Create",
+          "d": "Hardest",
+          "t": "long_answer",
+          "m": 3,
+          "q": "Design a solid built from identical cubes so that its front view is a plus/cross shape ('+') and its side view is a single square. Describe your solid and state what its top view would then look like.",
+          "a": "Example: place 5 cubes flat in a plus shape lying in one vertical plane (one central cube with one cube attached above, below, left and right of it, all in the same front-facing plane, no depth added). Viewed from the front this gives a '+' shape. Viewed from the side, since every cube lies in the same single plane of depth, the side view collapses to a single square (the depth is only 1 cube thick). The top view would then show only a single row of 3 cubes (the horizontal arm of the plus, since the top and bottom cubes of the vertical arm are directly above/below the centre cube and add nothing new when seen from above).",
+          "s": [
+            [
+              "Describes a specific cube combination that gives a '+' front view",
+              1
+            ],
+            [
+              "Explains why the side view collapses to a single square (1 cube of depth)",
+              1
+            ],
+            [
+              "States and justifies the resulting top view shape (a row of 3)",
+              1
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "code": "C8M-4.6",
+      "name": "Isometric Projections and the Isometric Grid",
+      "description": "Defining the isometric projection of a cube as a regular hexagon, and drawing combinations of unit cubes on an isometric grid along the height, length and depth axes.",
+      "idea": "When a cube is oriented so all its edges project to equal lengths (balanced on a corner), its projection -- called an isometric projection -- is a regular hexagon, and tiling the plane with such hexagons gives an isometric grid on which 3-D combinations of cubes can be drawn with all unit lengths preserved along three principal directions.",
+      "rule": "'Isometric' means 'equal measure'. On an isometric grid, the three families of parallel edges correspond to the height, length and depth axes of the solid being drawn; a vertical line on the paper always represents the height axis, while the two slanted directions represent length and depth. Because projection preserves parallel lines and the isometric projection preserves equal unit lengths along all three axes, a solid built from unit cubes can be drawn accurately on the isometric grid by counting grid units along the appropriate axis for each edge.",
+      "example": "A 1x1x1 cube is drawn on isometric paper as a hexagon outline with three visible faces (top, front-left, front-right), each drawn as a rhombus with all sides of equal length on the grid.",
+      "difficulty_base": "Hard",
+      "questions": [
+        {
+          "b": "Remember",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "The word 'isometric' means",
+          "a": "equal measure",
+          "o": [
+            "equal measure",
+            "equal angle",
+            "same shape",
+            "three-sided"
+          ]
+        },
+        {
+          "b": "Remember",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "The isometric projection of a cube (balanced on one of its corner vertices) is a",
+          "a": "regular hexagon",
+          "o": [
+            "regular hexagon",
+            "square",
+            "equilateral triangle",
+            "rectangle"
+          ]
+        },
+        {
+          "b": "Remember",
+          "d": "Easy",
+          "t": "fill_blank",
+          "m": 1,
+          "q": "An isometric grid is formed by tiling the plane with ____.",
+          "a": "hexagons"
+        },
+        {
+          "b": "Remember",
+          "d": "Hard",
+          "t": "mcq",
+          "m": 1,
+          "q": "Which of the following is NOT one of the three principal axes associated with the isometric grid, as named in the chapter?",
+          "a": "Diagonal",
+          "o": [
+            "Diagonal",
+            "Height",
+            "Length",
+            "Depth"
+          ],
+          "rev": true
+        },
+        {
+          "b": "Understand",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "Why is the isometric projection of a cube specifically a regular hexagon, and not some other six-sided shape?",
+          "a": "Because in this orientation the projections of all the cube's edges are equal in length, so the hexagon's sides are all equal, making it a regular hexagon",
+          "o": [
+            "Because in this orientation the projections of all the cube's edges are equal in length, so the hexagon's sides are all equal, making it a regular hexagon",
+            "Because a cube already has 6 faces, and each face becomes one side of the hexagon",
+            "Because hexagons are the only shape that can tile a plane",
+            "Because the cube is viewed from directly above one of its faces"
+          ]
+        },
+        {
+          "b": "Understand",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "On an isometric grid, why does a vertical line always represent the height axis of the solid being drawn, regardless of which cube combination is drawn?",
+          "a": "Because the isometric grid's three edge-orientations are fixed and consistently assigned so that the vertical direction on the paper always corresponds to the height direction of the solid",
+          "o": [
+            "Because the isometric grid's three edge-orientations are fixed and consistently assigned so that the vertical direction on the paper always corresponds to the height direction of the solid",
+            "Because every solid drawn on the grid must be taller than it is wide",
+            "Because vertical lines are the only lines allowed on isometric paper",
+            "Because height is always the largest of the three dimensions"
+          ]
+        },
+        {
+          "b": "Understand",
+          "d": "Easy",
+          "t": "short_answer",
+          "m": 2,
+          "q": "Explain why the fact that 'parallel lines project to parallel lines' is important for drawing accurately on an isometric grid.",
+          "a": "Since parallel edges on the solid stay parallel in the projection, all the edges of the solid running along one of the three principal directions (height, length or depth) project to lines that are parallel to each other on the isometric paper, letting the drawer follow the grid's three fixed directions consistently for each axis instead of guessing new directions for every edge.",
+          "s": [
+            [
+              "States that parallel edges on the solid remain parallel in the projection",
+              1
+            ],
+            [
+              "Explains this lets all edges along one axis be drawn using the same fixed grid direction",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Understand",
+          "d": "Hard",
+          "t": "mcq",
+          "m": 1,
+          "q": "A student draws a 2x2x2 cube arrangement cube-by-cube on isometric paper and finds some lines hidden behind other cubes. What should the student do with these hidden lines, according to the chapter's suggestion?",
+          "a": "Erase the hidden lines, or draw faint lines initially and darken only the visible ones later",
+          "o": [
+            "Erase the hidden lines, or draw faint lines initially and darken only the visible ones later",
+            "Leave every line fully drawn and dark, whether hidden or visible",
+            "Redraw the entire solid from a different, non-isometric orientation",
+            "Add shading only to the hidden lines to make them stand out more"
+          ]
+        },
+        {
+          "b": "Understand",
+          "d": "Hard",
+          "t": "mcq",
+          "m": 1,
+          "q": "Why can the same tetris-like combination of 4 cubes look different depending on which of the three axes it is oriented along when drawn on isometric paper?",
+          "a": "Because the row of cubes can be laid out along the height, length, or depth direction, and each choice uses a different one of the grid's three fixed directions, changing the drawing's orientation on the page even though the solid itself is unchanged",
+          "o": [
+            "Because the row of cubes can be laid out along the height, length, or depth direction, and each choice uses a different one of the grid's three fixed directions, changing the drawing's orientation on the page even though the solid itself is unchanged",
+            "Because the cubes themselves physically change shape depending on orientation",
+            "Because isometric paper only allows one fixed orientation for any drawing",
+            "Because larger combinations of cubes cannot be drawn on isometric paper at all"
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Easy",
+          "t": "fill_blank",
+          "m": 1,
+          "q": "On the isometric grid, moving in the vertical direction on the paper corresponds to moving along the ____ axis of the solid.",
+          "a": "height"
+        },
+        {
+          "b": "Apply",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "A single unit cube is drawn on isometric paper. How many of its faces are typically visible in this standard isometric view?",
+          "a": "3",
+          "o": [
+            "3",
+            "6",
+            "1",
+            "2"
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Hard",
+          "t": "short_answer",
+          "m": 2,
+          "q": "A row of 5 identical unit cubes is glued face-to-face and oriented along the length axis. On an isometric grid, how many grid units long would this row appear along the length direction, and why?",
+          "a": "It would appear 5 units long along the length direction, because each of the 5 cubes contributes 1 unit of length along that axis, and the isometric projection preserves equal unit lengths along each of the three axes.",
+          "s": [
+            [
+              "States the row appears 5 units long along the length direction",
+              1
+            ],
+            [
+              "Explains this is because each cube contributes 1 unit and isometric projection preserves equal unit lengths",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Hard",
+          "t": "short_answer",
+          "m": 2,
+          "q": "A solid is made of 8 unit cubes arranged in a 2x2x2 block. State how many grid units it would span along each of the three axes (height, length, depth) when drawn on isometric paper.",
+          "a": "It would span 2 units along each of the three axes -- height, length and depth -- since the block is 2 cubes wide in every direction.",
+          "s": [
+            [
+              "States the block spans 2 units along each axis",
+              1
+            ],
+            [
+              "Explains this is because the block is 2 cubes wide in every direction (2x2x2)",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Hard",
+          "t": "mcq",
+          "m": 1,
+          "q": "A student wants to draw a stack of cubes 3 units tall, 1 unit long and 1 unit deep on isometric paper. Along which single grid direction should this stack mostly be drawn?",
+          "a": "The vertical direction, since it represents the height axis",
+          "o": [
+            "The vertical direction, since it represents the height axis",
+            "One of the two slanted directions, since height is drawn slanted",
+            "Any direction, since all three grid directions are interchangeable for any axis",
+            "A new direction must be invented, since 3-tall stacks cannot be shown with the existing grid"
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Hardest",
+          "t": "long_answer",
+          "m": 3,
+          "q": "A student wants to draw a rectangular block of unit cubes that is 4 units long, 2 units deep and 3 units tall on isometric paper. Describe, step by step, how many grid units you would count along each of the three fixed grid directions to draw this block, edge by edge.",
+          "a": "Along the vertical grid direction (height axis), count 3 units. Along one of the two slanted grid directions (length axis), count 4 units. Along the other slanted grid direction (depth axis), count 2 units. Starting from one corner, draw the length edge 4 units, the depth edge 2 units, and the height edge 3 units, then complete the remaining parallel edges of the block using the same unit counts in each of the three fixed directions.",
+          "s": [
+            [
+              "States 3 units along the vertical (height) direction",
+              1
+            ],
+            [
+              "States 4 units along the length direction and 2 units along the depth direction",
+              1
+            ],
+            [
+              "Describes completing the block by repeating these counts along the corresponding parallel edges",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Analyse",
+          "d": "Hard",
+          "t": "assertion_reason",
+          "m": 1,
+          "q": "Assertion (A): The isometric projection of a cube preserves the equal length of all its edges in the drawing. Reason (R): The cube is oriented so that it is balanced on one of its corner vertices before being projected.",
+          "a": "Both A and R are true, and R is the correct explanation of A",
+          "o": [
+            "Both A and R are true, and R is the correct explanation of A",
+            "Both A and R are true, but R is not the correct explanation of A",
+            "A is true but R is false",
+            "A is false but R is true"
+          ]
+        },
+        {
+          "b": "Analyse",
+          "d": "Hard",
+          "t": "multi_statement",
+          "m": 1,
+          "q": "Consider: (I) On an isometric grid, all three principal directions (height, length, depth) represent equal unit lengths. (II) An isometric grid can only be used to draw single unit cubes, not combinations of several cubes. Which is or are correct?",
+          "a": "Only I",
+          "o": [
+            "Only I",
+            "Only II",
+            "Both I and II",
+            "Neither I nor II"
+          ]
+        },
+        {
+          "b": "Analyse",
+          "d": "Hardest",
+          "t": "long_answer",
+          "m": 3,
+          "q": "Two students draw the same 3-cube row on isometric paper, one orienting it along the length axis and the other along the depth axis. Analyse whether their two drawings represent different solids, or the same solid drawn differently, and explain what stays the same and what changes between the two drawings.",
+          "a": "Both drawings represent the same solid -- a row of 3 identical unit cubes glued face to face -- since orientation along an axis is a choice made by the drawer, not a property of the solid itself. What changes between the drawings is which of the two slanted grid directions is used to represent the row (length vs depth), so the drawings look different on the page. What stays the same is the number of cubes (3), the fact that every unit length along the row's axis is preserved equally on the grid, and the underlying 3-D shape being represented.",
+          "s": [
+            [
+              "States both drawings represent the same solid, since axis choice is the drawer's choice not a property of the solid",
+              1
+            ],
+            [
+              "Identifies what changes: which grid direction (length vs depth) is used",
+              1
+            ],
+            [
+              "Identifies what stays the same: cube count, equal unit lengths, and the underlying shape",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Evaluate",
+          "d": "Hard",
+          "t": "short_answer",
+          "m": 2,
+          "q": "A student claims that since isometric drawing preserves equal lengths along all three axes, it must also show every face of a solid in its true, undistorted shape. Judge this claim, referring to the fact that a cube's isometric projection is a hexagon rather than a set of squares.",
+          "a": "The claim is not correct. Although isometric projection preserves equal unit lengths along the three axes, the faces themselves appear as rhombuses (parallelogram-shaped), not as true squares, in the drawing -- the cube's overall isometric outline is a hexagon rather than 3 squares meeting at right angles as they would in reality, showing that face shapes are distorted even though edge lengths are preserved.",
+          "s": [
+            [
+              "States the claim is not correct",
+              1
+            ],
+            [
+              "Explains that face shapes (e.g. squares) appear distorted as rhombuses even though edge lengths are preserved, as shown by the hexagon outline",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Create",
+          "d": "Hardest",
+          "t": "long_answer",
+          "m": 3,
+          "q": "Design your own solid made of 6 unit cubes (not simply a straight row) and describe how you would draw it on isometric paper, stating how many units it spans along each of the three axes.",
+          "a": "Example: build an L-shaped solid -- a row of 4 cubes along the length axis, with 2 additional cubes stacked directly on top of one end cube (along the height axis). This solid spans 4 units along the length axis, 1 unit along the depth axis, and 3 units along the height axis (1 for the base row plus 2 stacked cubes). To draw it, first draw the base row of 4 units along the length grid direction, then from one end draw 2 more units upward along the vertical (height) grid direction to add the stacked cubes.",
+          "s": [
+            [
+              "Describes a specific 6-cube L-shaped (or other non-trivial) solid",
+              1
+            ],
+            [
+              "States the correct span along each of the three axes for the chosen solid",
+              1
+            ],
+            [
+              "Describes the order of drawing it on the isometric grid using the fixed grid directions",
+              1
+            ]
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,41 @@
+71
+Exploring Some Geometric Themes
+Sierpinski Carpet
+Draw the initial few steps (at least till Step 2) of the shape sequence that 
+leads to the Sierpinski Carpet.
+By its construction, each step in the sequence has 
+(i) squares of the same size that remain in the figure, and the size of 
+these squares becomes smaller and smaller as the step number 
+increases, and 
+(ii) square holes that are formed by removing square pieces. 
+Do you see any pattern in the number of holes and squares that remain 
+at each step? 
+Let Rn represent the number of remaining squares at the nth step, and 
+Hn represent the number of holes at the nth step. 
+Let us understand how these numbers grow by analysing how the 
+holes and squares that remain are generated from the previous step. 
+Every square that remains at a given step, say Step n, gives rise to 
+8 squares that remain at the (n + 1)th step. Thus, we have
+Rn + 1 = 8 Rn.
+Can this be used to get a formula for Rn?
+We have
+R0 = 1
+R1 = 8 × 1 = 8
+R2 = 8 × 8 = 82
+.
+In general, Rn = 8n
+.
+Similarly, how do we find the number of holes at a given step?
+Every square that remains at the nth step gives rise to a hole in the 
+(n + 1)th step. All the holes present at the nth step remain in the (n + 1)th 
+step as well. Thus,
+Hn + 1 = Hn + Rn.
+So we have
+R0 = 1 H0 = 0
+R1 = 8 H1 = 1
+R2 = 82 H2 = 1 + 8
+R3 = 83 H3 = 1 + 8 + 82
+.
+.
+.
+04_Chapter 4.indd 71 20-12-2025 16:43:40
