@@ -20,10 +20,11 @@ import { buildPaperReadyEmail, notifyHouseholdParents } from '../../../lib/email
 import { env } from '../../../lib/env'
 import { wrapRouteHandlers } from '../../../lib/error-log'
 
-// F112: "Student role may generate ... papers within a daily quota." Not a number the plan
-// specifies -- a documented default, the same kind RETEST_LADDER_DAYS (src/lib/mastery.ts) and
-// MARK_TO_POINT_MIN_CHARS (src/lib/habit-drills.ts) already are elsewhere in this codebase.
-export const STUDENT_DAILY_GENERATION_QUOTA = 3
+// F112 originally specified "within a daily quota" and this file enforced a documented default
+// of 3 (the same kind RETEST_LADDER_DAYS / MARK_TO_POINT_MIN_CHARS already are elsewhere in this
+// codebase). Removed 2026-09-24 at the user's explicit request ("dont put any limits") -- see
+// CLAUDE.md's Hard rules for the dated record and the spend-cap enforcement below, which is the
+// limit that remains.
 
 const DIFFICULTY_TIERS = ['Easy', 'Hard', 'Hardest'] as const
 
@@ -158,26 +159,13 @@ export const Route = createFileRoute('/api/papers/generate')({
         }
 
         if (auth.role === 'student') {
-          const usedToday =
-            await generationEventsRepository.countTodayByStudentAndTrigger(
-              db,
-              student.id,
-              'student',
-            )
-          if (usedToday >= STUDENT_DAILY_GENERATION_QUOTA) {
-            return Response.json(
-              {
-                error: 'daily_quota_exceeded',
-                message: `You've reached today's limit of ${STUDENT_DAILY_GENERATION_QUOTA} papers -- try again tomorrow.`,
-              },
-              { status: 429 },
-            )
-          }
-
-          // F121: a second, independent ceiling alongside F112's raw call-count quota above --
-          // this one is INR spend (generation + this student's own grading, F091/ai_jobs.cost_inr),
-          // so a handful of unusually large/expensive calls can still be capped even while under
-          // the daily paper-count quota.
+          // F121: INR spend ceiling (generation + this student's own grading, F091/
+          // ai_jobs.cost_inr) -- the one limit still enforced here. F112's own raw daily
+          // paper-COUNT quota (STUDENT_DAILY_GENERATION_QUOTA, "you've reached today's limit of
+          // 3 papers") was removed 2026-09-24 at the user's explicit request ("dont put any
+          // limits") -- see CLAUDE.md's Hard rules for the dated record. generate.ts still logs
+          // every generation to generation_events (below), so a per-day count is still there to
+          // look at if it's ever wanted again; it just no longer blocks anything on its own.
           try {
             await enforceStudentSpendBudget(db, { studentId: student.id })
           } catch (err) {

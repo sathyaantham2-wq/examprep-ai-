@@ -7,10 +7,7 @@ import { createParentSession, createStudentSession } from '../db/test-helpers'
 import type { TestSession } from '../db/test-helpers'
 import { Route as StudentsRoute } from './api/students'
 import { Route as StudentByIdRoute } from './api/students/$id'
-import {
-  Route as GenerateRoute,
-  STUDENT_DAILY_GENERATION_QUOTA,
-} from './api/papers/generate'
+import { Route as GenerateRoute } from './api/papers/generate'
 
 type RouteHandler = (opts: {
   request: Request
@@ -39,12 +36,16 @@ function request(cookie: string, body?: unknown): Request {
 }
 
 /**
- * F112: "Student role may generate ... papers within a daily quota." Passes
- * recent_usage_window_days: 0 on every generate call so the same single fixture question can be
- * reused across repeated generations without F026's recent-usage exclusion causing a shortfall --
- * the quota, not question supply, is what this test is proving.
+ * F112 originally specified "within a daily quota" and this file proved it (generate up to 3,
+ * the 4th refused with 429 daily_quota_exceeded). Removed 2026-09-24 at the user's explicit
+ * request ("dont put any limits") -- see CLAUDE.md's Hard rules for the dated record and
+ * src/routes/api/papers/generate.ts's own comment where the check used to be. This file now
+ * proves the opposite: repeated same-day generation is never blocked by a count -- and keeps the
+ * other, unrelated access-control assertions this route also carries (an explicit student_id is
+ * still required for a parent/admin caller; a disabled student is still locked out; a student
+ * still can't generate as anyone but herself), none of which were ever about the quota.
  */
-describe('student self-service paper generation with a daily quota (F112)', () => {
+describe('student self-service paper generation (F112) -- no daily count limit', () => {
   let db: Db
   let parent: TestSession
   let student: TestSession
@@ -74,8 +75,8 @@ describe('student self-service paper generation with a daily quota (F112)', () =
     studentId = (await studentResponse.json()).id
     student = await createStudentSession('quota-student', parent.householdId, studentId)
 
-    // A second student under the same household to prove the quota is per-student, not
-    // per-household.
+    // A second student under the same household -- proves generation for one never touches the
+    // other's, same as before this file was about a quota.
     const otherResponse = await handlerFor(
       StudentsRoute,
       'POST',
@@ -179,19 +180,24 @@ describe('student self-service paper generation with a daily quota (F112)', () =
     await db.destroy()
   })
 
-  it('a student can generate up to the daily quota', async () => {
-    let response
-    for (let i = 0; i < STUDENT_DAILY_GENERATION_QUOTA; i++) {
-      response = await handlerFor(
-        GenerateRoute,
-        'POST',
-      )({
-        request: request(student.cookie, {
-          blueprint_id: blueprintId,
-          chapter_ids: [chapterId],
-          recent_usage_window_days: 0,
-        }),
-      })
+  function generate(cookie: string, body: Record<string, unknown> = {}) {
+    return handlerFor(
+      GenerateRoute,
+      'POST',
+    )({
+      request: request(cookie, {
+        blueprint_id: blueprintId,
+        chapter_ids: [chapterId],
+        recent_usage_window_days: 0,
+        ...body,
+      }),
+    })
+  }
+
+  it('a student can generate the same paper well past the old 3-a-day limit, none refused', async () => {
+    // The old quota was 3; 6 in a row with no 429 is the direct proof it is gone, not just raised.
+    for (let i = 0; i < 6; i++) {
+      const response = await generate(student.cookie)
       expect(response.status).toBe(201)
       const body = await response.json()
       paperIds.push(body.paper.id)
@@ -199,76 +205,32 @@ describe('student self-service paper generation with a daily quota (F112)', () =
     }
   })
 
-  it('the next generation past the quota is refused with 429', async () => {
-    const response = await handlerFor(
-      GenerateRoute,
-      'POST',
-    )({
-      request: request(student.cookie, {
-        blueprint_id: blueprintId,
-        chapter_ids: [chapterId],
-        recent_usage_window_days: 0,
-      }),
-    })
-    expect(response.status).toBe(429)
-    const body = await response.json()
-    expect(body.error).toBe('daily_quota_exceeded')
-  })
-
-  it("the quota is per-student, not per-household -- the sibling student is unaffected", async () => {
+  it('generation for one student never touches the other, same as before', async () => {
     const otherSession = await createStudentSession(
       'quota-student-two',
       parent.householdId,
       otherStudentId,
     )
-    const response = await handlerFor(
-      GenerateRoute,
-      'POST',
-    )({
-      request: request(otherSession.cookie, {
-        blueprint_id: blueprintId,
-        chapter_ids: [chapterId],
-        recent_usage_window_days: 0,
-      }),
-    })
+    const response = await generate(otherSession.cookie)
     expect(response.status).toBe(201)
     const body = await response.json()
     paperIds.push(body.paper.id)
   })
 
-  it("the parent generating for this student isn't blocked by the student's own quota", async () => {
-    const response = await handlerFor(
-      GenerateRoute,
-      'POST',
-    )({
-      request: request(parent.cookie, {
-        student_id: studentId,
-        blueprint_id: blueprintId,
-        chapter_ids: [chapterId],
-        recent_usage_window_days: 0,
-      }),
-    })
+  it("the parent generating for this student isn't blocked by anything the student's own calls did", async () => {
+    const response = await generate(parent.cookie, { student_id: studentId })
     expect(response.status).toBe(201)
     const body = await response.json()
     paperIds.push(body.paper.id)
   })
 
-  it('a body-supplied student_id is ignored for a student caller -- always generates as themselves', async () => {
-    // This student is already at quota from the earlier test, so the body's student_id override
-    // attempt is expected to be refused for THIS student's own quota, not silently redirected to
-    // otherStudentId.
-    const response = await handlerFor(
-      GenerateRoute,
-      'POST',
-    )({
-      request: request(student.cookie, {
-        student_id: otherStudentId,
-        blueprint_id: blueprintId,
-        chapter_ids: [chapterId],
-        recent_usage_window_days: 0,
-      }),
-    })
-    expect(response.status).toBe(429)
+  it('a body-supplied student_id is still ignored for a student caller -- always generates as themselves', async () => {
+    const response = await generate(student.cookie, { student_id: otherStudentId })
+    expect(response.status).toBe(201)
+    const body = await response.json()
+    paperIds.push(body.paper.id)
+    // Not otherStudentId, despite the body -- F010's identity rule, unrelated to the old quota.
+    expect(body.paper.student_id).toBe(studentId)
   })
 
   it('parent/admin still needs an explicit student_id', async () => {
@@ -293,16 +255,7 @@ describe('student self-service paper generation with a daily quota (F112)', () =
       params: { id: studentId },
     })
 
-    const response = await handlerFor(
-      GenerateRoute,
-      'POST',
-    )({
-      request: request(student.cookie, {
-        blueprint_id: blueprintId,
-        chapter_ids: [chapterId],
-        recent_usage_window_days: 0,
-      }),
-    })
+    const response = await generate(student.cookie)
     expect(response.status).toBe(423)
 
     // Restore for cleanliness / in case this file's fixtures are ever re-run against a persistent

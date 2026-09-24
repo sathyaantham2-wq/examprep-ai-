@@ -85,6 +85,11 @@ Never invent a feature ID. If work doesn't map to an existing F-number, say so a
   weak/priority concept weighting still applies. (F119.)
 - **Shortfalls are reported, never hidden.** If the bank can't fill a blueprint slot, generate the
   paper anyway with a printed note naming the concept and cell that came up short. (F032.)
+- **A student may generate as many papers a day as she wants.** F112's original acceptance
+  criteria said "within a daily quota"; this app enforced a default of 3 ("You've reached today's
+  limit of 3 papers -- try again tomorrow"). **Removed 2026-09-24 at the user's explicit request**
+  ("dont put any limits"). The independent INR spend ceiling (F121, `enforceStudentSpendBudget`)
+  is unaffected and still applies -- this is only the raw daily paper-count check.
 
 ## Stack
 
