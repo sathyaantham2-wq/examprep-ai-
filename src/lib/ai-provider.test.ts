@@ -68,7 +68,10 @@ describe('completeText with Gemini', () => {
     const sent = JSON.parse(init.body as string)
     expect(sent.contents[0].parts[0].text).toBe('hello')
     expect(sent.generationConfig.responseMimeType).toBe('application/json')
-    expect(sent.generationConfig.maxOutputTokens).toBeGreaterThan(100)
+    // 2026-09-24: thinking disabled (see ai-provider.ts's own comment on why) -- maxOutputTokens
+    // no longer needs headroom for a reasoning budget the model won't spend.
+    expect(sent.generationConfig.thinkingConfig).toEqual({ thinkingBudget: 0 })
+    expect(sent.generationConfig.maxOutputTokens).toBe(100)
   })
 
   it('sends photos to Gemini as inline data ahead of the prompt', async () => {

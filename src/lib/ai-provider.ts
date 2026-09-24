@@ -126,8 +126,19 @@ async function completeGemini(input: CompletionInput, apiKey: string): Promise<C
         },
       ],
       generationConfig: {
-        // Gemini 2.5 models count their internal reasoning against this budget, so leave room.
-        maxOutputTokens: input.maxTokens * 4,
+        // 2026-09-24, user request ("optimise... time to first token _most important for user
+        // experience"): every AI-13 call observed in production took 15-46s, almost certainly
+        // Gemini's extended "thinking" phase before it emits any output -- none of this app's
+        // prompts (a 2-4 step explanation, a grading justification, a distractor check) are the
+        // kind of deep multi-step reasoning task thinking mode is for, and the existing Anthropic
+        // path (completeAnthropic above) has never used extended thinking either, so this brings
+        // Gemini in line with the quality bar the app already assumes. thinkingBudget: 0 disables
+        // it outright (0-24576 range, -1 is dynamic/auto) -- confirmed against ai_jobs.error after
+        // deploy, the same way the 2.5->3.5 model-name fix was, in case this field name has also
+        // moved since (Gemini's newer docs describe a thinking_level enum for some model lines).
+        thinkingConfig: { thinkingBudget: 0 },
+        // maxOutputTokens no longer needs the x4 headroom for a reasoning budget it won't spend.
+        maxOutputTokens: input.maxTokens,
         temperature: 0.2,
         responseMimeType: 'application/json',
       },
