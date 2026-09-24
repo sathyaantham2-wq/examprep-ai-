@@ -1,0 +1,1520 @@
+{
+  "subject": {
+    "code": "MATH8",
+    "name": "Mathematics",
+    "board": "CBSE",
+    "class": 8
+  },
+  "source": {
+    "publisher": "NCERT",
+    "title": "Ganita Prakash",
+    "edition": "Reprint 2026-27",
+    "year": 2026
+  },
+  "chapter": {
+    "part": "II",
+    "chapter_no": 6,
+    "name": "Algebra Play",
+    "blurb": "Using algebra to explain and invent 'think of a number' and date-guessing tricks, number pyramids, calendar and shape grids, the largest-product digit puzzle, and divisibility tricks based on digit reversal, cyclic rotation and repetition.",
+    "source_code": "hegp206",
+    "order_index": 13
+  },
+  "scope_in": [
+    {
+      "item": "Representing a 'think of a number' trick as an algebraic expression in one variable x, and simplifying it to show whether the result is a fixed constant or still depends on x",
+      "pages": "135-136"
+    },
+    {
+      "item": "Modifying the steps of a 'think of a number' trick (e.g. changing the constant added) so that it produces a different fixed final answer",
+      "pages": "136"
+    },
+    {
+      "item": "The date-guessing trick: writing algebraic expressions in two letters, month M and day D (5M, 5M+6, 20M+24, 20M+33, 100M+165, 100M+165+D), and decoding a reported total back into the original month and day",
+      "pages": "136-137"
+    },
+    {
+      "item": "The number pyramid rule (each entry is the sum of the two entries directly below it); filling numeric pyramids of 2, 3 and 4 rows given the bottom row",
+      "pages": "137-138"
+    },
+    {
+      "item": "Writing and using algebraic expressions for the topmost entry of a pyramid in terms of letter-numbers in the bottom row (a+b for 2 rows, a+2b+c for 3 rows, a+3b+3c+d for 4 rows)",
+      "pages": "139-140"
+    },
+    {
+      "item": "The first few Virahanka-Fibonacci numbers used as the bottom row of a pyramid, and reasoning about the resulting entries",
+      "pages": "140"
+    },
+    {
+      "item": "Setting up and solving linear equations for an unknown letter-number in a pyramid from the top total and one other clue (e.g. a+b=60, 12+c=a, c+8=b)",
+      "pages": "138-139"
+    },
+    {
+      "item": "Calendar Magic: expressing the four entries of a 2x2 calendar grid in terms of the top-left value a (a, a+1, a+7, a+8), forming and solving 4a+16 equals a given sum",
+      "pages": "141"
+    },
+    {
+      "item": "Algebra Grids: shapes representing unknown numbers, each row's shapes summing to a given total, and solving the resulting equations for each shape's value (grids of two or three distinct shapes, two or three rows)",
+      "pages": "142"
+    },
+    {
+      "item": "Arranging three given digits into a (2-digit) x (1-digit) multiplication to find the largest possible product, first by comparing all six arrangements and then by the algebraic proof that the largest digit should be the multiplier and the remaining two digits placed in decreasing order",
+      "pages": "142-144"
+    },
+    {
+      "item": "Writing a 2-digit number as 10a+b and its digit-reversal as 10b+a, and proving algebraically that their difference is always a multiple of 9 and their sum is always a multiple of 11",
+      "pages": "144-145"
+    },
+    {
+      "item": "Writing a 3-digit number as 100a+10b+c, forming its two cyclic digit-rotations, and proving algebraically that the sum of all three is always a multiple of 37 (and of 3)",
+      "pages": "145"
+    },
+    {
+      "item": "Recognising that repeating a 3-digit number to form a 6-digit number is equivalent to multiplying by 1001 = 7 x 11 x 13, so dividing successively by 7, 11 and 13 recovers the original number",
+      "pages": "145"
+    }
+  ],
+  "scope_out": [
+    {
+      "item": "Designing an entirely new two-variable trick with different coefficients from scratch (the book's 'invent your own trick' prompts)",
+      "reason": "Open-ended creative design of new coefficient sequences has no fixed answer to check against; only the book's own date-trick structure and its numeric decoding are treated as testable content"
+    },
+    {
+      "item": "General nth-row or nth-term proofs for arbitrary pyramid height, beyond the 2, 3 and 4-row cases the book works through",
+      "reason": "The book poses these as open pattern-exploration questions (Figure It Out items 4-6 on page 140) without a worked proof; testing them as fixed-answer items would go beyond what the book itself demonstrates"
+    },
+    {
+      "item": "Calendar grids other than a plain 2x2 block (the book's 'create your own grid of a different size and shape' prompt), and irregular or non-rectangular grid shapes",
+      "reason": "These are open creative prompts with no single fixed grid to check answers against"
+    },
+    {
+      "item": "Algebra Grids with more than three distinct unknown shapes or more than three rows",
+      "reason": "The book's own worked examples and practice grids stay at two or three shapes across two or three rows; larger systems are not shown or practised in this chapter"
+    },
+    {
+      "item": "Smallest-product versions of the digit-arrangement puzzle",
+      "reason": "The chapter's heading and every worked example is about the LARGEST product only; a smallest-product question, while solvable with the same technique, is not something this chapter poses"
+    },
+    {
+      "item": "The genie-and-coins riddle, the horses-and-hens problem, the mother-and-daughter age problem, the dosa-cart pricing problem, the cowherds'-cows problem, and the odd-number-fraction-sequence pattern (Figure It Out items 5 to 10 on pages 145-146)",
+      "reason": "These are independent linear-equation word problems bundled at the end of the chapter under general practice; they exercise equation-solving skills taught elsewhere in the book, not the digit-representation divisibility-trick reasoning that section 6.6 is actually about, and folding them into that concept would blur its boundary"
+    },
+    {
+      "item": "The back-of-book problem-set appendix hegp2ps.pdf",
+      "reason": "It mirrors Part I's hegp1ps.pdf appendix and is out of scope for the same reason: it is a separate cumulative problem bank, not part of this chapter's own content"
+    }
+  ],
+  "concepts": [
+    {
+      "code": "C8M-6.1",
+      "name": "Think of a Number tricks with one variable",
+      "description": "Representing a 'think of a number' trick as an algebraic expression in one variable and simplifying it to show whether the result depends on the starting number.",
+      "idea": "If we call the unknown starting number x, each instruction in the trick becomes an algebraic operation on x; simplifying the resulting expression often makes the x cancel out, leaving a fixed number.",
+      "rule": "To explain a 'think of a number' trick, write the starting number as x, translate every step into an expression in x, and simplify. If x cancels out, the final result is the same for every starting number; if x remains, the result still depends on the number chosen.",
+      "example": "Think of a number x. Double it: 2x. Add four: 2x + 4. Divide by two: x + 2. Subtract the original number: x + 2 - x = 2. The result is always 2, whatever x is.",
+      "difficulty_base": "Easy",
+      "questions": [
+        {
+          "b": "Remember",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "In the trick 'think of a number, double it, add four, divide by two, subtract the number you first thought of', the starting number is written algebraically as",
+          "a": "x",
+          "o": ["x", "2x", "x + 2", "2"]
+        },
+        {
+          "b": "Remember",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "'Double it' applied to the letter-number x is written as",
+          "a": "2x",
+          "o": ["2x", "x squared", "x + 2", "x/2"]
+        },
+        {
+          "b": "Remember",
+          "d": "Easy",
+          "t": "fill_blank",
+          "m": 1,
+          "q": "In the trick, after doubling x and adding four, the expression becomes ____.",
+          "a": "2x + 4"
+        },
+        {
+          "b": "Remember",
+          "d": "Hard",
+          "t": "mcq",
+          "m": 1,
+          "q": "After 'divide by two' is applied to the expression 2x + 4, the result simplifies to",
+          "a": "x + 2",
+          "o": ["x + 2", "x + 4", "2x + 2", "x"]
+        },
+        {
+          "b": "Understand",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "Why does the final result of the classic trick (double, add four, halve, subtract the original number) always come out the same, no matter what number you start with?",
+          "a": "Because the letter x cancels out when the expression is simplified",
+          "o": [
+            "Because the letter x cancels out when the expression is simplified",
+            "Because doubling and halving always give zero",
+            "Because four is an even number",
+            "Because subtraction always gives zero"
+          ]
+        },
+        {
+          "b": "Understand",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "In the expression x + 2 - x, what happens to the letter-number x?",
+          "a": "It cancels out, leaving just 2",
+          "o": [
+            "It cancels out, leaving just 2",
+            "It becomes x squared",
+            "It doubles to 2x",
+            "It cannot be simplified further"
+          ]
+        },
+        {
+          "b": "Understand",
+          "d": "Easy",
+          "t": "short_answer",
+          "m": 2,
+          "q": "Explain why subtracting the original number you thought of is the key step that makes a 'think of a number' trick always give the same answer.",
+          "a": "Because it removes the letter x from the simplified expression, leaving only the fixed numbers that were added or divided along the way.",
+          "s": [
+            ["States that this step removes or cancels the x term", 1],
+            ["Explains that only the fixed numbers remain, giving a constant result", 1]
+          ]
+        },
+        {
+          "b": "Understand",
+          "d": "Hard",
+          "t": "mcq",
+          "m": 1,
+          "q": "A trick is: think of a number x, add six, multiply by two, subtract twelve, divide by two. Which of these is NOT one of the correct intermediate expressions produced while simplifying this trick?",
+          "a": "2x + 6",
+          "o": ["2x + 6", "x + 6", "2x + 12", "2x"],
+          "rev": true
+        },
+        {
+          "b": "Understand",
+          "d": "Hard",
+          "t": "short_answer",
+          "m": 2,
+          "q": "A trick is: think of a number, add six, multiply by two, subtract twelve, divide by two. Simplify the expression using x for the starting number, and state the final result.",
+          "a": "x + 6, then 2x + 12, then 2x, then x. The final result equals the number you started with, not a fixed constant.",
+          "s": [
+            ["Correctly simplifies through each step to reach 2x before the final division", 1],
+            ["States that the final result equals x, the original number", 1]
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "Aliya invents a trick: think of a number, add ten, then subtract the original number. Which expression is left after simplifying?",
+          "a": "10",
+          "o": ["10", "x + 10", "2x + 10", "0"]
+        },
+        {
+          "b": "Apply",
+          "d": "Easy",
+          "t": "fill_blank",
+          "m": 1,
+          "q": "Think of a number x, triple it, then subtract the original number twice (that is, subtract x, then subtract x again). The simplified expression is ____.",
+          "a": "x"
+        },
+        {
+          "b": "Apply",
+          "d": "Hard",
+          "t": "mcq",
+          "m": 1,
+          "q": "A trick is: think of a number, add eight, multiply by three, subtract twenty-four. What does the simplified expression equal?",
+          "a": "3x",
+          "o": ["3x", "3x + 24", "x + 8", "3x - 24"]
+        },
+        {
+          "b": "Apply",
+          "d": "Hard",
+          "t": "short_answer",
+          "m": 2,
+          "q": "Modify the classic trick (think of a number, double it, add four, divide by two, subtract the original number) so that the final answer is always 5 instead of 2. State the one change you would make.",
+          "a": "Change 'add four' to 'add ten': doubling x gives 2x, adding ten gives 2x + 10, dividing by two gives x + 5, and subtracting the original number x leaves 5.",
+          "s": [
+            ["Identifies that changing the added constant is the key modification", 1],
+            ["Gives a correct new constant (e.g. add ten) and verifies the result is 5", 1]
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Hard",
+          "t": "short_answer",
+          "m": 2,
+          "q": "A trick says: think of a number, multiply by four, add the original number three times (that is, add x, add x, add x), then divide by seven. Simplify and state the result.",
+          "a": "4x, then 4x + x + x + x = 7x, then divided by 7 gives x. The result equals the original number.",
+          "s": [
+            ["Correctly adds x three times to 4x to reach 7x", 1],
+            ["Divides by 7 to correctly get x, the original number", 1]
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Hardest",
+          "t": "long_answer",
+          "m": 3,
+          "q": "Design your own 'think of a number' trick using exactly four steps (a multiplication, an addition, a division, and a subtraction of the original number) so that the final answer is always 7. Write the steps, the algebraic simplification, and check it with the starting number 6.",
+          "a": "Example: think of a number x, multiply by 2 (2x), add 14 (2x + 14), divide by 2 (x + 7), subtract the original number (7). Check with x = 6: 6 doubles to 12, plus 14 is 26, divided by 2 is 13, minus 6 is 7.",
+          "s": [
+            ["Writes four valid steps (multiply, add, divide, subtract original) with correct constants", 1],
+            ["Simplifies the expression algebraically in x to show it equals 7", 1],
+            ["Checks correctly with the starting number 6", 1]
+          ]
+        },
+        {
+          "b": "Analyse",
+          "d": "Hard",
+          "t": "assertion_reason",
+          "m": 1,
+          "q": "Assertion (A): The trick 'think of a number, double it, add four, divide by two, subtract the original number' always gives 2. Reason (R): when simplified algebraically, the letter x cancels out, leaving only 2.",
+          "a": "Both A and R are true, and R is the correct explanation of A",
+          "o": [
+            "Both A and R are true, and R is the correct explanation of A",
+            "Both A and R are true, but R is not the correct explanation of A",
+            "A is true but R is false",
+            "A is false but R is true"
+          ]
+        },
+        {
+          "b": "Analyse",
+          "d": "Hard",
+          "t": "multi_statement",
+          "m": 1,
+          "q": "Consider: (I) In the expression x + 2 - x, the terms with x cancel because they have opposite signs. (II) Any 'think of a number' trick that ends by subtracting the original number will always give a fixed constant answer. Which is or are correct?",
+          "a": "Only I",
+          "o": ["Only I", "Only II", "Both I and II", "Neither I nor II"]
+        },
+        {
+          "b": "Analyse",
+          "d": "Hardest",
+          "t": "long_answer",
+          "m": 3,
+          "q": "A trick is: think of a number, multiply it by itself (square it), subtract four times the number, then add four. A friend claims this trick's algebraic form simplifies to (x - 2) squared, and says the final answer is always the same. Is the friend right? Explain using algebra, and test with two different starting numbers.",
+          "a": "The expression is x squared - 4x + 4, which does equal (x - 2) squared. But this is NOT a constant, since its value still changes with x (for example x = 6 gives 16, x = 10 gives 64). So the friend is only half right: the algebraic identity is correct, but the trick does not give a fixed answer, unlike the linear tricks in this chapter.",
+          "s": [
+            ["Confirms x squared - 4x + 4 equals (x - 2) squared algebraically", 1],
+            ["Recognises this expression is not a constant since it still contains x", 1],
+            ["Tests with two different starting numbers and shows the results differ", 1]
+          ]
+        },
+        {
+          "b": "Evaluate",
+          "d": "Hard",
+          "t": "short_answer",
+          "m": 2,
+          "q": "A student simplifies the trick 'think of a number, double it, add four, divide by two, subtract the original number' as follows: 2x, then 2x+4, then x+4, then x+4-x=4. Identify the student's mistake and give the correct final answer.",
+          "a": "The student divided only the 2x term by two and forgot to divide the +4 as well, writing x+4 instead of x+2. The correct final answer is 2.",
+          "s": [
+            ["Identifies that the student failed to divide the +4 by two as well", 1],
+            ["States the correct final answer, 2", 1]
+          ]
+        },
+        {
+          "b": "Create",
+          "d": "Hardest",
+          "t": "long_answer",
+          "m": 3,
+          "q": "Invent your own 'think of a number' trick with at least four steps that always ends in the number 9. Write out the steps in words, show the algebraic simplification, and verify it works for the starting number 15.",
+          "a": "Example: think of a number x; multiply by three (3x); add nine (3x + 9); subtract three times the original number (3x + 9 - 3x = 9). Check with x = 15: 15 x 3 = 45, plus 9 is 54, minus 3 x 15 = 45, gives 9.",
+          "s": [
+            ["Writes at least four clear steps that are internally consistent", 1],
+            ["Shows correct algebraic simplification ending in the constant 9", 1],
+            ["Verifies correctly using the starting number 15", 1]
+          ]
+        }
+      ]
+    },
+    {
+      "code": "C8M-6.2",
+      "name": "Two-variable algebra: the date-guessing trick",
+      "description": "Representing the date-guessing trick using two letter-numbers, month M and day D, and decoding a reported final answer back into the original date.",
+      "idea": "When a trick depends on two separate pieces of information, here the month and the day, algebra needs two letters, and the final expression combines both; a friend's single reported number can still be decoded because of how the digits of M and D sit within it.",
+      "rule": "For the date trick, multiply the month M by 5 to get 5M, add 6 to get 5M+6, multiply by 4 to get 20M+24, add 9 to get 20M+33, multiply by 5 to get 100M+165, then add the day D to get 100M+165+D. To decode a reported total, subtract 165: the last two digits of what remains give the day D, and whatever is left in front gives the month M.",
+      "example": "For the date 26th January (M=1, D=26): 100(1)+165+26=291. Subtracting 165 from 291 gives 126; the last two digits, 26, give the day, and the remaining 1 gives the month, so it decodes back to 26th January.",
+      "difficulty_base": "Hard",
+      "questions": [
+        {
+          "b": "Remember",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "In the date-guessing trick, if M stands for the month number, what does 'multiply the month by 5' give?",
+          "a": "5M",
+          "o": ["5M", "M + 5", "5 + M", "M/5"]
+        },
+        {
+          "b": "Remember",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "Which of these is NOT equal to 5M + 6?",
+          "a": "6M + 5",
+          "o": ["6M + 5", "5M + 6", "6 + 5M", "5M + 2 + 4"],
+          "rev": true
+        },
+        {
+          "b": "Remember",
+          "d": "Easy",
+          "t": "fill_blank",
+          "m": 1,
+          "q": "In the trick, after multiplying the month by 5, adding 6, and then multiplying by 4, the expression becomes ____.",
+          "a": "20M + 24"
+        },
+        {
+          "b": "Remember",
+          "d": "Hard",
+          "t": "mcq",
+          "m": 1,
+          "q": "The final expression in the date-guessing trick, after every step, is",
+          "a": "100M + 165 + D",
+          "o": ["100M + 165 + D", "100M + 165", "165M + 100 + D", "10M + 165 + D"]
+        },
+        {
+          "b": "Understand",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "Why does the date trick use two letters, M and D, instead of just one?",
+          "a": "Because the trick depends on two separate unknown quantities, the month and the day",
+          "o": [
+            "Because the trick depends on two separate unknown quantities, the month and the day",
+            "Because the answer must always be a two-digit number",
+            "Because algebra rules require exactly two letters",
+            "Because M and D must always be equal"
+          ]
+        },
+        {
+          "b": "Understand",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "In the final total 100M + 165 + D, why does the day D not get multiplied by any of the numbers in the trick?",
+          "a": "Because the day is only added at the very last step, after all the multiplications are already done",
+          "o": [
+            "Because the day is only added at the very last step, after all the multiplications are already done",
+            "Because the day is always smaller than the month",
+            "Because days cannot be multiplied in algebra",
+            "Because only odd-numbered steps involve multiplication"
+          ]
+        },
+        {
+          "b": "Understand",
+          "d": "Easy",
+          "t": "short_answer",
+          "m": 2,
+          "q": "Explain why knowing that a day D is at most 31 (so at most two digits) lets us recover D from the final total after subtracting 165.",
+          "a": "Because D never needs more than two digits, whatever forms the last two digits of the number left after subtracting 165 must be D, and whatever comes before that must be the month M.",
+          "s": [
+            ["States that D is at most two digits since days go up to 31", 1],
+            ["Explains that the last two digits of (total - 165) are read off as D, leaving M in front", 1]
+          ]
+        },
+        {
+          "b": "Understand",
+          "d": "Hard",
+          "t": "mcq",
+          "m": 1,
+          "q": "A friend reports a final total of 482 for the date trick. What is 482 - 165?",
+          "a": "317",
+          "o": ["317", "327", "307", "417"]
+        },
+        {
+          "b": "Understand",
+          "d": "Hard",
+          "t": "short_answer",
+          "m": 2,
+          "q": "Using 317 (the result of subtracting 165 from 482), decode the month and day the friend started with.",
+          "a": "The last two digits, 17, give the day D=17. The digit before that, 3, gives the month M=3, so the date is 17th March.",
+          "s": [
+            ["Reads off the last two digits as D = 17", 1],
+            ["Reads off the remaining digit as M = 3 and names the date, 17th March", 1]
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "If the month is June (M=6) and the day is 9, what is 100M + 165 + D?",
+          "a": "774",
+          "o": ["774", "765", "784", "674"]
+        },
+        {
+          "b": "Apply",
+          "d": "Easy",
+          "t": "fill_blank",
+          "m": 1,
+          "q": "If the month is October (M=10) and the day is 4, the final total 100M+165+D equals ____.",
+          "a": "1169"
+        },
+        {
+          "b": "Apply",
+          "d": "Hard",
+          "t": "mcq",
+          "m": 1,
+          "q": "If the month is December (M=12) and the day is 3, what is 100M + 165 + D?",
+          "a": "1368",
+          "o": ["1368", "1365", "368", "1358"]
+        },
+        {
+          "b": "Apply",
+          "d": "Hard",
+          "t": "short_answer",
+          "m": 2,
+          "q": "A friend's final total for the date trick is 580. Decode the date.",
+          "a": "580 - 165 = 415. The last two digits, 15, give the day, and the remaining digit, 4, gives the month, so the date is 15th April.",
+          "s": [
+            ["Subtracts 165 from 580 to get 415", 1],
+            ["Correctly reads off day = 15 and month = 4 (15th April)", 1]
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Hard",
+          "t": "short_answer",
+          "m": 2,
+          "q": "A friend's final total for the date trick is 1069. Decode the date.",
+          "a": "1069 - 165 = 904. The last two digits, 04, give the day 4, and the remaining digit, 9, gives the month, so the date is 4th September.",
+          "s": [
+            ["Subtracts 165 from 1069 to get 904", 1],
+            ["Correctly reads off day = 4 and month = 9 (4th September)", 1]
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Hardest",
+          "t": "long_answer",
+          "m": 3,
+          "q": "A friend changes the trick slightly: multiply the month by 5, add 6, multiply by 4, add 9, multiply by 5, add TWICE the day (instead of just the day). Find the new algebraic expression for the final total in terms of M and D, and explain what you would still need to subtract before reading off the date, and why the simple 'last two digits' read-off might now fail.",
+          "a": "Following the same steps as before but adding 2D at the end gives 100M + 165 + 2D. You would still subtract 165 first, but the remainder, 100M + 2D, no longer has D sitting cleanly in the last two digits since it is doubled; if D is large enough, the doubled value can carry into the digits used for the month, so the simple last-two-digits read-off can fail.",
+          "s": [
+            ["Re-derives the algebra correctly to reach 100M + 165 + 2D", 1],
+            ["States that 165 must still be subtracted first", 1],
+            ["Explains why doubling D can break the clean last-two-digit read-off, with a reason", 1]
+          ]
+        },
+        {
+          "b": "Analyse",
+          "d": "Hard",
+          "t": "assertion_reason",
+          "m": 1,
+          "q": "Assertion (A): From the final total of the date trick, subtracting 165 and then reading the last two digits always gives the day. Reason (R): since the day is at most 31, it never needs more than two digits, so it always occupies exactly the last two digits of (total - 165).",
+          "a": "Both A and R are true, and R is the correct explanation of A",
+          "o": [
+            "Both A and R are true, and R is the correct explanation of A",
+            "Both A and R are true, but R is not the correct explanation of A",
+            "A is true but R is false",
+            "A is false but R is true"
+          ]
+        },
+        {
+          "b": "Analyse",
+          "d": "Hard",
+          "t": "multi_statement",
+          "m": 1,
+          "q": "Consider: (I) In the expression 100M + 165 + D, the coefficient of M is 100 because the month was multiplied by 5, then by 4, then by 5 again (5 x 4 x 5 = 100). (II) The day D also gets multiplied by 100 in the final expression, just like the month. Which is or are correct?",
+          "a": "Only I",
+          "o": ["Only I", "Only II", "Both I and II", "Neither I nor II"]
+        },
+        {
+          "b": "Analyse",
+          "d": "Hardest",
+          "t": "long_answer",
+          "m": 3,
+          "q": "A student claims that because 100M + 165 + D is always at least 266 (using the smallest month M=1 and the smallest day D=1: 100+165+1=266), the trick cannot correctly be used to identify a month greater than 9. Test this claim using December (M=12, D=1) and explain whether it is correct.",
+          "a": "For December with D=1: 100(12)+165+1=1366. Decoding: 1366-165=1201; the last two digits, 01, give the day, and the remaining digits, 12, give the month, so it decodes correctly to 1st December. So the student's claim is wrong: the trick works for two-digit months just as well, because the coefficient 100 is exactly chosen to keep the day and month digits from overlapping regardless of the month's size.",
+          "s": [
+            ["Computes the total correctly for December with D=1 (1366)", 1],
+            ["Decodes it correctly back to M=12, D=01", 1],
+            ["Concludes the student's claim is false, with the reason that the coefficient 100 keeps month and day digits separate", 1]
+          ]
+        },
+        {
+          "b": "Evaluate",
+          "d": "Hard",
+          "t": "short_answer",
+          "m": 2,
+          "q": "A student decodes a final total of 580 by subtracting 165 to get 415, then reads it as 'the 41st day of the 5th month'. Identify the mistake and give the correct date.",
+          "a": "The student split the digits from the wrong end: the LAST two digits (15) are the day, and what remains (4) is the month, not the first two digits. The correct date is 15th April.",
+          "s": [
+            ["Identifies that the digit split was taken from the wrong end (first two digits instead of last two)", 1],
+            ["Gives the correct date, 15th April", 1]
+          ]
+        },
+        {
+          "b": "Create",
+          "d": "Hardest",
+          "t": "long_answer",
+          "m": 3,
+          "q": "Design your own version of the date trick using different numbers (not 5, 6, 4, 9, 5) so that the final expression still separates cleanly into 100M + (some constant) + D. Show your steps, the resulting algebraic expression, and encode and decode a date of your choosing.",
+          "a": "Example trick: multiply the month by 10, multiply by 10 again, add 50, then add the day. This gives 100M + 50 + D. For 8th July (M=7, D=8): 100(7)+50+8=758. To decode, subtract 50 to get 708; the last two digits, 08, give the day, and the remaining digit, 7, gives the month, so it decodes back to 8th July.",
+          "s": [
+            ["Designs valid steps whose multiplications combine to give coefficient 100 for M", 1],
+            ["States the correct resulting expression, 100M + 50 + D (or equivalent)", 1],
+            ["Demonstrates encoding and decoding correctly with a chosen date", 1]
+          ]
+        }
+      ]
+    },
+    {
+      "code": "C8M-6.3",
+      "name": "Number pyramids: expressions for the top entry",
+      "description": "Using the rule that each entry is the sum of the two entries directly below it to write algebraic expressions for the topmost entry of a pyramid, given letter-numbers in the bottom row.",
+      "idea": "If the bottom row of a pyramid is written using letters, each row above can be built by adding neighbouring pairs, so the top entry becomes a single algebraic expression combining all the bottom letters.",
+      "rule": "For a 2-row pyramid with bottom a, b, the top is a+b. For a 3-row pyramid with bottom a, b, c, the middle row is a+b and b+c, and the top is (a+b)+(b+c) = a+2b+c. For a 4-row pyramid with bottom a, b, c, d, the same rule repeats one row further to give a+3b+3c+d.",
+      "example": "Bottom row 4, 1, 10: the middle row is 4+1=5 and 1+10=11; the top is 5+11=16, which matches a+2b+c = 4+2(1)+10 = 16.",
+      "difficulty_base": "Easy",
+      "questions": [
+        {
+          "b": "Remember",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "In a number pyramid, each entry equals",
+          "a": "the sum of the two numbers directly below it",
+          "o": [
+            "the sum of the two numbers directly below it",
+            "the product of the two numbers directly below it",
+            "the difference of the two numbers directly below it",
+            "double the number directly below it"
+          ]
+        },
+        {
+          "b": "Remember",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "For a 2-row pyramid with bottom entries a and b, the top entry is",
+          "a": "a + b",
+          "o": ["a + b", "a - b", "ab", "2a + 2b"]
+        },
+        {
+          "b": "Remember",
+          "d": "Easy",
+          "t": "fill_blank",
+          "m": 1,
+          "q": "For a 3-row pyramid with bottom row a, b, c, the middle row entries are a+b and ____.",
+          "a": "b + c"
+        },
+        {
+          "b": "Remember",
+          "d": "Hard",
+          "t": "mcq",
+          "m": 1,
+          "q": "Which of these is NOT equal to a + 2b + c, the top entry of a 3-row pyramid with bottom row a, b, c?",
+          "a": "a + b + c",
+          "o": ["a + b + c", "(a + b) + (b + c)", "a + b + b + c", "2b + a + c"],
+          "rev": true
+        },
+        {
+          "b": "Understand",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "Why does the letter b appear twice (as 2b) in the simplified top entry of a 3-row pyramid with bottom a, b, c?",
+          "a": "Because b is used in both middle-row sums, a+b and b+c, so it gets added in twice when those are combined",
+          "o": [
+            "Because b is used in both middle-row sums, a+b and b+c, so it gets added in twice when those are combined",
+            "Because b is always the largest number",
+            "Because the pyramid rule doubles the middle entry",
+            "Because a and c must always be equal to b"
+          ]
+        },
+        {
+          "b": "Understand",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "In a 3-row pyramid, the middle row is a+b and b+c. What is their sum?",
+          "a": "a + 2b + c",
+          "o": ["a + 2b + c", "a + b + c", "2a + 2b + 2c", "ab + bc"]
+        },
+        {
+          "b": "Understand",
+          "d": "Easy",
+          "t": "short_answer",
+          "m": 2,
+          "q": "Explain, using the bottom row 4, 1, 10, why the top of the 3-row pyramid is 16, both by adding row by row and by using the expression a+2b+c.",
+          "a": "Row by row: the middle row is 4+1=5 and 1+10=11, so the top is 5+11=16. Using the expression with a=4, b=1, c=10: a+2b+c = 4+2+10=16, which matches.",
+          "s": [
+            ["Correctly builds the pyramid row by row to get 16", 1],
+            ["Correctly substitutes into a+2b+c and confirms it also gives 16", 1]
+          ]
+        },
+        {
+          "b": "Understand",
+          "d": "Hard",
+          "t": "mcq",
+          "m": 1,
+          "q": "For a 4-row pyramid with bottom row a, b, c, d, which expression correctly gives the topmost entry?",
+          "a": "a + 3b + 3c + d",
+          "o": ["a + 3b + 3c + d", "a + 2b + 2c + d", "a + 4b + 4c + d", "a + 3b + 3c + 3d"]
+        },
+        {
+          "b": "Understand",
+          "d": "Hard",
+          "t": "short_answer",
+          "m": 2,
+          "q": "Show that for the 4-row pyramid with bottom row 1, 3, 3, 1, the top entry given by a+3b+3c+d equals 20, and verify this by building the pyramid row by row.",
+          "a": "Row by row: bottom 1, 3, 3, 1 gives the next row 4, 6, 4; then 10, 10; then the top, 20. Using a+3b+3c+d = 1+3(3)+3(3)+1 = 1+9+9+1 = 20, which matches.",
+          "s": [
+            ["Builds the pyramid correctly row by row to reach the top value 20", 1],
+            ["Substitutes correctly into a+3b+3c+d and confirms it also equals 20", 1]
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "Using a+2b+c for a 3-row pyramid, what is the top entry when the bottom row is 5, 2, 6?",
+          "a": "15",
+          "o": ["15", "13", "17", "11"]
+        },
+        {
+          "b": "Apply",
+          "d": "Easy",
+          "t": "fill_blank",
+          "m": 1,
+          "q": "The bottom row of a 2-row pyramid is 9 and 14. The top entry is ____.",
+          "a": "23"
+        },
+        {
+          "b": "Apply",
+          "d": "Hard",
+          "t": "mcq",
+          "m": 1,
+          "q": "Using the expression a+2b+c, what is the top of a 3-row pyramid whose bottom row is 8, 0, 8?",
+          "a": "16",
+          "o": ["16", "24", "8", "0"]
+        },
+        {
+          "b": "Apply",
+          "d": "Hard",
+          "t": "short_answer",
+          "m": 2,
+          "q": "The top of a 3-row pyramid is 30, and the bottom row is a, 5, c with a+2b+c=30. If a=10, find c.",
+          "a": "10 + 2(5) + c = 30, so 10 + 10 + c = 30, giving c = 10.",
+          "s": [
+            ["Substitutes a=10, b=5 into a+2b+c=30", 1],
+            ["Solves correctly to get c = 10", 1]
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Hard",
+          "t": "short_answer",
+          "m": 2,
+          "q": "Without building the whole pyramid, find the top entry of a 3-row pyramid whose bottom row is 12, 7, 3.",
+          "a": "a+2b+c = 12 + 2(7) + 3 = 12 + 14 + 3 = 29.",
+          "s": [
+            ["Correctly identifies a=12, b=7, c=3 and the formula a+2b+c", 1],
+            ["Computes 12 + 2(7) + 3 = 29 correctly", 1]
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Hardest",
+          "t": "long_answer",
+          "m": 3,
+          "q": "Without building the entire pyramid, find the top of a 4-row pyramid whose bottom row is 6, 4, 9, 2, using the expression a+3b+3c+d. Show your substitution and the final answer, then check your answer by building the first two rows above the bottom.",
+          "a": "a+3b+3c+d = 6+3(4)+3(9)+2 = 6+12+27+2 = 47. Checking: the row above the bottom is 6+4=10, 4+9=13, 9+2=11; the next row is 10+13=23, 13+11=24; the top is 23+24=47, which matches.",
+          "s": [
+            ["Substitutes correctly into a+3b+3c+d to get 47", 1],
+            ["Shows correct working of the substitution arithmetic", 1],
+            ["Verifies by building at least two rows of the pyramid and reaching the same top value", 1]
+          ]
+        },
+        {
+          "b": "Analyse",
+          "d": "Hard",
+          "t": "assertion_reason",
+          "m": 1,
+          "q": "Assertion (A): In a 3-row pyramid, the middle letter b of the bottom row contributes more to the top entry than a or c do. Reason (R): the simplified top entry is a + 2b + c, so b is multiplied by 2 while a and c are each multiplied by 1.",
+          "a": "Both A and R are true, and R is the correct explanation of A",
+          "o": [
+            "Both A and R are true, and R is the correct explanation of A",
+            "Both A and R are true, but R is not the correct explanation of A",
+            "A is true but R is false",
+            "A is false but R is true"
+          ]
+        },
+        {
+          "b": "Analyse",
+          "d": "Hard",
+          "t": "multi_statement",
+          "m": 1,
+          "q": "Consider: (I) In a 4-row pyramid with bottom a, b, c, d, the coefficient of a in the top entry is always 1, no matter how many rows the pyramid has. (II) In a 4-row pyramid, b and c always have the same coefficient as each other in the top entry. Which is or are correct?",
+          "a": "Both I and II",
+          "o": ["Both I and II", "Only I", "Only II", "Neither I nor II"]
+        },
+        {
+          "b": "Analyse",
+          "d": "Hardest",
+          "t": "long_answer",
+          "m": 3,
+          "q": "A student says that doubling every number in the bottom row of a 3-row pyramid will always exactly double the top entry. Test this using the bottom rows 2, 1, 5 and then 4, 2, 10 (double of the first), and explain algebraically why this is true in general.",
+          "a": "For 2, 1, 5: a+2b+c = 2+2+5=9. For 4, 2, 10: a+2b+c = 4+4+10=18, exactly double 9. Algebraically, if every bottom entry doubles (a, b, c become 2a, 2b, 2c), the top entry becomes 2a+2(2b)+2c = 2(a+2b+c), which is exactly double the original top entry, so the student is correct.",
+          "s": [
+            ["Computes the top entry for both bottom rows correctly (9 and 18)", 1],
+            ["Notes that 18 is exactly double 9", 1],
+            ["Gives the correct algebraic reason: 2a+4b+2c = 2(a+2b+c)", 1]
+          ]
+        },
+        {
+          "b": "Evaluate",
+          "d": "Hard",
+          "t": "short_answer",
+          "m": 2,
+          "q": "A student says the top of a 3-row pyramid with bottom row 3, 6, 2 is a+b+c = 3+6+2 = 11. Identify the mistake and give the correct top entry.",
+          "a": "The student used a+b+c instead of the correct formula a+2b+c, forgetting that the middle letter b is counted twice. The correct top entry is 3+2(6)+2=17.",
+          "s": [
+            ["Identifies that the student used the wrong formula (b not doubled)", 1],
+            ["Gives the correct top entry, 17", 1]
+          ]
+        },
+        {
+          "b": "Create",
+          "d": "Hardest",
+          "t": "long_answer",
+          "m": 3,
+          "q": "Design a 3-row number pyramid (choose your own three bottom numbers) whose top entry is exactly 50. Show the bottom row you chose, the algebraic substitution into a+2b+c, and verify by building the pyramid row by row.",
+          "a": "Example: choose bottom row 10, 15, 10. a+2b+c = 10+30+10=50. Row by row: the middle row is 10+15=25 and 15+10=25; the top is 25+25=50, which matches.",
+          "s": [
+            ["Chooses a valid bottom row and correctly substitutes into a+2b+c", 1],
+            ["Shows the substitution correctly equals 50", 1],
+            ["Verifies by building the pyramid row by row and reaching 50", 1]
+          ]
+        }
+      ]
+    },
+    {
+      "code": "C8M-6.4",
+      "name": "Solving pyramids and grids by setting up equations",
+      "description": "Using the pyramid or grid rule together with given totals to form and solve linear equations for unknown entries, including the Calendar Magic 2x2 grid and shape-based Algebra Grids.",
+      "idea": "When some entries of a pyramid or grid are unknown but their relationships and one or more totals are known, the pyramid or grid rule turns into equations that can be solved for the unknowns, exactly as with any letter-number puzzle.",
+      "rule": "Write each known relationship as an equation (for a pyramid: upper equals the sum of the two below; for Calendar Magic: a 2x2 grid's entries are a, a+1, a+7, a+8, so their sum is 4a+16; for Algebra Grids: each row's shapes sum to the value given in the last column), then solve the resulting equation or equations for the unknown letter or shape.",
+      "example": "In a pyramid with top 60 and bottom-left 12, so a+b=60, 12+c=a, c+8=b, substituting gives (12+c)+(c+8)=60, so 20+2c=60, c=20.",
+      "difficulty_base": "Hard",
+      "questions": [
+        {
+          "b": "Remember",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "In the Calendar Magic 2x2 grid, if the top-left number is a, what are the other three numbers in the grid (using a normal calendar with 7 days in a row)?",
+          "a": "a+1, a+7, a+8",
+          "o": ["a+1, a+7, a+8", "a+1, a+6, a+7", "a+7, a+8, a+9", "a+2, a+7, a+9"]
+        },
+        {
+          "b": "Remember",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "In an Algebra Grid, what does the last column of each row represent?",
+          "a": "The sum of the shape-values in that row",
+          "o": [
+            "The sum of the shape-values in that row",
+            "The product of the shape-values in that row",
+            "The largest shape-value in that row",
+            "The number of shapes in that row"
+          ]
+        },
+        {
+          "b": "Remember",
+          "d": "Easy",
+          "t": "fill_blank",
+          "m": 1,
+          "q": "If three squares in a row sum to 27, then one square is worth ____.",
+          "a": "9"
+        },
+        {
+          "b": "Remember",
+          "d": "Hard",
+          "t": "mcq",
+          "m": 1,
+          "q": "Which of these is NOT equal to a + (a+1) + (a+7) + (a+8), the sum of a Calendar Magic 2x2 grid?",
+          "a": "4a + 17",
+          "o": ["4a + 17", "4a + 16", "2(2a + 8)", "16 + 4a"],
+          "rev": true
+        },
+        {
+          "b": "Understand",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "Why is 4a+16 the correct simplified sum for the Calendar Magic 2x2 grid?",
+          "a": "Because adding a, a+1, a+7 and a+8 gives 4 lots of a plus (0+1+7+8=16)",
+          "o": [
+            "Because adding a, a+1, a+7 and a+8 gives 4 lots of a plus (0+1+7+8=16)",
+            "Because every calendar grid always totals 16",
+            "Because a always equals 4",
+            "Because the sum of any four calendar numbers is always the same"
+          ]
+        },
+        {
+          "b": "Understand",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "If circle+circle+square=19 and square=9, how do you find the value of one circle?",
+          "a": "Substitute square=9, then solve 2 x circle + 9 = 19 for circle",
+          "o": [
+            "Substitute square=9, then solve 2 x circle + 9 = 19 for circle",
+            "Add 9 to 19 and divide by 2",
+            "Multiply 19 by 9",
+            "Subtract circle from 9"
+          ]
+        },
+        {
+          "b": "Understand",
+          "d": "Easy",
+          "t": "short_answer",
+          "m": 2,
+          "q": "Explain the two-step method used to solve an Algebra Grid: square+square+square=27 and circle+circle+square=19.",
+          "a": "First use the row with only one shape type (three squares = 27) to find square=9. Then substitute this value into the second row to get 2 x circle + 9 = 19, and solve to find circle=5.",
+          "s": [
+            ["States that the all-square row is solved first to find square=9", 1],
+            ["Explains substituting this into the second row to solve for circle", 1]
+          ]
+        },
+        {
+          "b": "Understand",
+          "d": "Hard",
+          "t": "mcq",
+          "m": 1,
+          "q": "In a pyramid with equations a+b=60, 12+c=a, c+8=b, why can we write (12+c)+(c+8) = a+b?",
+          "a": "Because a equals 12+c and b equals c+8, so replacing a and b with these expressions keeps the equation true",
+          "o": [
+            "Because a equals 12+c and b equals c+8, so replacing a and b with these expressions keeps the equation true",
+            "Because 12+c and c+8 always equal 60",
+            "Because a and b are unrelated to c",
+            "Because addition can be done in any order regardless of the values"
+          ]
+        },
+        {
+          "b": "Understand",
+          "d": "Hard",
+          "t": "short_answer",
+          "m": 2,
+          "q": "In the pyramid with a+b=60, 12+c=a and c+8=b, explain why combining the last two equations gives 20+2c=60.",
+          "a": "Adding 12+c and c+8 gives 20+2c (the constants 12 and 8 add to 20, and the two c's combine to 2c), and since 12+c=a and c+8=b, this sum equals a+b, which is 60.",
+          "s": [
+            ["Correctly combines 12+c and c+8 to get 20+2c", 1],
+            ["Explains that this equals a+b=60, giving the equation 20+2c=60", 1]
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "In a Calendar Magic 2x2 grid, if the top-left number a=15, what is the sum of all four numbers?",
+          "a": "76",
+          "o": ["76", "75", "91", "64"]
+        },
+        {
+          "b": "Apply",
+          "d": "Easy",
+          "t": "fill_blank",
+          "m": 1,
+          "q": "If a 2x2 Calendar Magic grid sums to 4a+16=52, then a = ____.",
+          "a": "9"
+        },
+        {
+          "b": "Apply",
+          "d": "Hard",
+          "t": "mcq",
+          "m": 1,
+          "q": "If square+square+square=24 and circle+circle+square=22, what is the value of one square?",
+          "a": "8",
+          "o": ["8", "6", "24", "3"]
+        },
+        {
+          "b": "Apply",
+          "d": "Hard",
+          "t": "short_answer",
+          "m": 2,
+          "q": "Continuing from the previous grid (square=8, circle+circle+square=22), find the value of one circle.",
+          "a": "circle + circle + 8 = 22, so 2 x circle = 14, circle = 7.",
+          "s": [
+            ["Substitutes square=8 into circle+circle+square=22", 1],
+            ["Solves correctly to get circle = 7", 1]
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Hard",
+          "t": "short_answer",
+          "m": 2,
+          "q": "A Calendar Magic 2x2 grid sums to 68. Find the top-left number a, and state the other three numbers in the grid.",
+          "a": "4a+16=68, so 4a=52, a=13. The other numbers are a+1=14, a+7=20, a+8=21.",
+          "s": [
+            ["Solves 4a+16=68 correctly to get a=13", 1],
+            ["States the other three numbers correctly: 14, 20, 21", 1]
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Hardest",
+          "t": "long_answer",
+          "m": 3,
+          "q": "A pyramid has top value 84, and the bottom-left corner is 20. Using the same method shown in the chapter (a+b=84, 20+c=a, c+8=b), find c, then find a and b.",
+          "a": "From 20+c=a and c+8=b: a+b = (20+c)+(c+8) = 28+2c = 84, so 2c=56, c=28. Then a=20+28=48 and b=c+8=36. Check: a+b=48+36=84, correct.",
+          "s": [
+            ["Sets up the equation 28+2c=84 correctly", 1],
+            ["Solves for c correctly to get c=28", 1],
+            ["Finds a=48 and b=36 and verifies a+b=84", 1]
+          ]
+        },
+        {
+          "b": "Analyse",
+          "d": "Hard",
+          "t": "assertion_reason",
+          "m": 1,
+          "q": "Assertion (A): To solve an Algebra Grid with two unknown shapes, it helps to first find a row that contains only one type of shape. Reason (R): a row with only one shape type gives an equation in a single unknown, which can be solved directly without needing to know the other shape's value first.",
+          "a": "Both A and R are true, and R is the correct explanation of A",
+          "o": [
+            "Both A and R are true, and R is the correct explanation of A",
+            "Both A and R are true, but R is not the correct explanation of A",
+            "A is true but R is false",
+            "A is false but R is true"
+          ]
+        },
+        {
+          "b": "Analyse",
+          "d": "Hard",
+          "t": "multi_statement",
+          "m": 1,
+          "q": "Consider: (I) In the Calendar Magic grid, the number directly below the top-left number a is always a+7, because there are 7 days in a week. (II) The number a+16 always appears somewhere in a 2x2 Calendar Magic grid. Which is or are correct?",
+          "a": "Only I",
+          "o": ["Only I", "Only II", "Both I and II", "Neither I nor II"]
+        },
+        {
+          "b": "Analyse",
+          "d": "Hardest",
+          "t": "long_answer",
+          "m": 3,
+          "q": "A student claims that a Calendar Magic 2x2 grid sum can never be an odd number, no matter which top-left value a is chosen. Test this claim with a=3 and a=4, and explain algebraically whether the student is correct.",
+          "a": "For a=3: sum=4(3)+16=28, even. For a=4: sum=4(4)+16=32, even. Algebraically, the sum 4a+16 is always 4 times a plus 16, and since 4a is always a multiple of 4 (hence even) and 16 is even, their sum is always even, whatever a is. So the student is correct.",
+          "s": [
+            ["Computes the sum correctly for a=3 and a=4, getting even results both times", 1],
+            ["States that 4a is always even (a multiple of 4)", 1],
+            ["Concludes the sum 4a+16 is always even, confirming the student's claim, with a correct algebraic reason", 1]
+          ]
+        },
+        {
+          "b": "Evaluate",
+          "d": "Hard",
+          "t": "short_answer",
+          "m": 2,
+          "q": "A student solving square+square+square=27 and circle+circle+square=19 writes: '2 x circle = 19, so circle = 9.5'. Identify the mistake and give the correct value of circle.",
+          "a": "The student forgot to substitute square=9 into the second equation before isolating circle; they should first write 2 x circle + 9 = 19, then 2 x circle = 10, giving circle = 5, not 9.5.",
+          "s": [
+            ["Identifies that the student skipped substituting square=9 first", 1],
+            ["Gives the correct value, circle=5", 1]
+          ]
+        },
+        {
+          "b": "Create",
+          "d": "Hardest",
+          "t": "long_answer",
+          "m": 3,
+          "q": "Design your own Algebra Grid with two shapes (like square and circle) across two rows, so that solving it gives square=6 and circle=4. Write the two row equations, and show how they can be solved to recover these values.",
+          "a": "Example: row 1: square+square+square=18 (so square=6); row 2: circle+circle+square=14 (so 2 x circle + 6 = 14, giving circle=4). Solving row 1 first gives square=6, substituting into row 2 gives circle=4, as intended.",
+          "s": [
+            ["Designs a valid all-square row that correctly gives square=6", 1],
+            ["Designs a valid mixed row that correctly gives circle=4 once square is substituted", 1],
+            ["Shows the solving steps correctly recovering both values", 1]
+          ]
+        }
+      ]
+    },
+    {
+      "code": "C8M-6.5",
+      "name": "Arranging digits for the largest product",
+      "description": "Placing three distinct one-digit numbers into a 2-digit x 1-digit multiplication to obtain the largest possible product, and the algebraic reasoning that proves which arrangement wins.",
+      "idea": "With three digits to place into two boxes forming a 2-digit number, and one box forming the multiplier, only six arrangements are possible; comparing them systematically, and by expanding algebraically, shows the largest digit should be the 1-digit multiplier, and the remaining two digits should be arranged in decreasing order in the 2-digit multiplicand.",
+      "rule": "For three distinct digits p<q<r, the largest product among all six arrangements of the form (2-digit) x (1-digit) is qp x r: put the largest digit r alone as the multiplier, and arrange the other two digits in decreasing order (q then p) as the multiplicand.",
+      "example": "For digits 2, 3, 5: the six products are 23x5, 25x3, 32x5, 35x2, 52x3, 53x2. The largest is 32x5=160, matching the rule (largest digit 5 as multiplier, remaining digits 3, 2 in decreasing order).",
+      "difficulty_base": "Hard",
+      "questions": [
+        {
+          "b": "Remember",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "For three distinct digits placed into (2-digit) x (1-digit), how many different arrangements are possible in total?",
+          "a": "6",
+          "o": ["6", "3", "9", "2"]
+        },
+        {
+          "b": "Remember",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "Which of these is NOT part of the chapter's rule for getting the largest product from three digits?",
+          "a": "Placing the largest digit in the tens place of the multiplicand",
+          "o": [
+            "Placing the largest digit in the tens place of the multiplicand",
+            "Placing the largest digit as the 1-digit multiplier",
+            "Arranging the two smaller digits in decreasing order",
+            "Comparing all six possible arrangements systematically"
+          ],
+          "rev": true
+        },
+        {
+          "b": "Remember",
+          "d": "Easy",
+          "t": "fill_blank",
+          "m": 1,
+          "q": "For digits 2, 3, 5, the largest product using the chapter's rule is ____.",
+          "a": "160"
+        },
+        {
+          "b": "Remember",
+          "d": "Hard",
+          "t": "mcq",
+          "m": 1,
+          "q": "For digits 1, 3, 7, using the rule (largest digit as multiplier, remaining two in decreasing order), which product is the largest?",
+          "a": "71 x 3",
+          "o": ["71 x 3", "73 x 1", "31 x 7", "17 x 3"]
+        },
+        {
+          "b": "Understand",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "Why does putting the largest digit as the multiplier (rather than in the multiplicand) tend to give a bigger product?",
+          "a": "Because the multiplier multiplies the whole 2-digit number, so a larger multiplier scales up the result the most",
+          "o": [
+            "Because the multiplier multiplies the whole 2-digit number, so a larger multiplier scales up the result the most",
+            "Because the multiplier is always a 2-digit number",
+            "Because the largest digit must always be in the tens place",
+            "Because multiplication order does not affect the product"
+          ]
+        },
+        {
+          "b": "Understand",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "Within the two digits placed in the 2-digit multiplicand, why should the larger of the two go in the tens place?",
+          "a": "Because the tens digit is worth ten times as much as the units digit, so placing the larger digit there increases the multiplicand the most",
+          "o": [
+            "Because the tens digit is worth ten times as much as the units digit, so placing the larger digit there increases the multiplicand the most",
+            "Because the tens place must always contain an even digit",
+            "Because the units digit cannot be larger than the tens digit by rule",
+            "Because the tens digit does not affect the value of the number"
+          ]
+        },
+        {
+          "b": "Understand",
+          "d": "Easy",
+          "t": "short_answer",
+          "m": 2,
+          "q": "Using digits 2, 3, 5, list the six possible products and identify the largest one.",
+          "a": "23x5=115, 25x3=75, 32x5=160, 35x2=70, 52x3=156, 53x2=106. The largest is 32x5=160.",
+          "s": [
+            ["Correctly lists at least five of the six products", 1],
+            ["Correctly identifies 32x5=160 as the largest", 1]
+          ]
+        },
+        {
+          "b": "Understand",
+          "d": "Hard",
+          "t": "mcq",
+          "m": 1,
+          "q": "Comparing 32x5 and 52x3 for digits 2, 3, 5, the chapter's algebraic expansion shows 32x5 = (3x10x5)+(2x5) and 52x3 = (5x10x3)+(2x3). Since the first terms are equal, which second term decides the winner?",
+          "a": "2x5=10 is bigger than 2x3=6, so 32x5 is larger",
+          "o": [
+            "2x5=10 is bigger than 2x3=6, so 32x5 is larger",
+            "2x3=6 is bigger than 2x5=10, so 52x3 is larger",
+            "The first terms decide it, not the second",
+            "Both second terms are equal so the products are equal"
+          ]
+        },
+        {
+          "b": "Understand",
+          "d": "Hard",
+          "t": "short_answer",
+          "m": 2,
+          "q": "For digits 1, 4, 6, expand 61x4 and 41x6 in the form (tens digit x 10 x multiplier) + (units digit x multiplier), and use this to say which is larger.",
+          "a": "61x4 = (6x10x4)+(1x4) = 240+4 = 244. 41x6 = (4x10x6)+(1x6) = 240+6 = 246. Since the first terms are equal, the second term decides it: 6 is bigger than 4, so 41x6 is larger.",
+          "s": [
+            ["Correctly expands both products into the two-term form", 1],
+            ["Correctly identifies 41x6 as larger by comparing the second terms", 1]
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "For digits 4, 6, 9, which digit should be the 1-digit multiplier to get the largest product?",
+          "a": "9",
+          "o": ["9", "6", "4", "any of them"]
+        },
+        {
+          "b": "Apply",
+          "d": "Easy",
+          "t": "fill_blank",
+          "m": 1,
+          "q": "For digits 4, 6, 9, using the chapter's rule, the largest product is ____.",
+          "a": "576"
+        },
+        {
+          "b": "Apply",
+          "d": "Hard",
+          "t": "mcq",
+          "m": 1,
+          "q": "For digits 1, 2, 8, which product is the largest, using the chapter's rule?",
+          "a": "21 x 8",
+          "o": ["21 x 8", "81 x 2", "28 x 1", "12 x 8"]
+        },
+        {
+          "b": "Apply",
+          "d": "Hard",
+          "t": "short_answer",
+          "m": 2,
+          "q": "For digits 3, 5, 7, use the chapter's rule to state which product is the largest, and compute it.",
+          "a": "Largest digit 7 as multiplier, remaining 5, 3 in decreasing order as the multiplicand 53. Largest product = 53x7=371.",
+          "s": [
+            ["Correctly applies the rule to identify multiplicand 53 and multiplier 7", 1],
+            ["Computes 53x7=371 correctly", 1]
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Hard",
+          "t": "short_answer",
+          "m": 2,
+          "q": "For digits 3, 5, 8, use the chapter's rule to state which product is the largest, and compute it.",
+          "a": "Largest digit 8 as multiplier, remaining 5, 3 in decreasing order as the multiplicand 53. Largest product = 53x8=424.",
+          "s": [
+            ["Correctly applies the rule to identify multiplicand 53 and multiplier 8", 1],
+            ["Computes 53x8=424 correctly", 1]
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Hardest",
+          "t": "long_answer",
+          "m": 3,
+          "q": "For four digits 1, 4, 5, 8 arranged as (3-digit) x (1-digit), extend the chapter's reasoning to decide which digit should be the multiplier and how the other three should be ordered, to make the product as large as possible. State your answer and verify it by computing that product and one other reasonably large alternative.",
+          "a": "Following the same reasoning (multiplying by the largest digit scales the whole number up the most, and the remaining digits should be placed in decreasing order), the largest digit, 8, should be the multiplier, and the remaining 1, 4, 5 should be arranged in decreasing order as 541. This gives 541x8=4328. As a check, an alternative using 5 as the multiplier, 518x4, gives 518x4=2072, which is much smaller, confirming the rule.",
+          "s": [
+            ["Correctly identifies that the largest digit, 8, should be the multiplier", 1],
+            ["Correctly arranges the remaining digits in decreasing order as 541 and computes 541x8=4328", 1],
+            ["Compares against at least one sensible alternative arrangement and shows it is smaller", 1]
+          ]
+        },
+        {
+          "b": "Analyse",
+          "d": "Hard",
+          "t": "assertion_reason",
+          "m": 1,
+          "q": "Assertion (A): For digits 2, 3, 5, the product 32x5 is larger than 52x3. Reason (R): when 32x5 and 52x3 are expanded, they share the same first term (150), and the second term of 32x5 (2x5=10) is larger than the second term of 52x3 (2x3=6).",
+          "a": "Both A and R are true, and R is the correct explanation of A",
+          "o": [
+            "Both A and R are true, and R is the correct explanation of A",
+            "Both A and R are true, but R is not the correct explanation of A",
+            "A is true but R is false",
+            "A is false but R is true"
+          ]
+        },
+        {
+          "b": "Analyse",
+          "d": "Hard",
+          "t": "multi_statement",
+          "m": 1,
+          "q": "Consider: (I) For any three distinct digits, the largest possible product always uses the largest digit as the 1-digit multiplier. (II) For any three distinct digits, the largest possible product always uses the two smaller digits with the larger of those two in the tens place. Which is or are correct?",
+          "a": "Both I and II",
+          "o": ["Both I and II", "Only I", "Only II", "Neither I nor II"]
+        },
+        {
+          "b": "Analyse",
+          "d": "Hardest",
+          "t": "long_answer",
+          "m": 3,
+          "q": "A student claims that for digits 4, 5, 6, using the LARGEST digit as the multiplicand's tens digit (rather than as the multiplier) gives a bigger product, since '6 in the tens place is worth 60'. Test this by comparing 65x4 (multiplier 4) against 54x6 (multiplier 6), and explain algebraically why the student is wrong.",
+          "a": "65x4 = (6x10x4)+(5x4) = 240+20=260. 54x6 = (5x10x6)+(4x6) = 300+24=324. So 54x6 is larger, meaning the student is wrong: putting the largest digit as the MULTIPLIER, not the tens digit, gives the bigger product, because the multiplier scales the entire multiplicand, including its tens digit, so a larger multiplier has a bigger overall effect.",
+          "s": [
+            ["Computes 65x4=260 correctly", 1],
+            ["Computes 54x6=324 correctly and identifies it as larger", 1],
+            ["Explains algebraically why the largest digit as multiplier wins, refuting the student's claim", 1]
+          ]
+        },
+        {
+          "b": "Evaluate",
+          "d": "Hard",
+          "t": "short_answer",
+          "m": 2,
+          "q": "A student says the largest product from digits 3, 4, 8 is 34x8. Identify the mistake and give the correct largest product.",
+          "a": "The student correctly chose 8 as the multiplier, but wrote the multiplicand as 34 instead of 43. Since 4 is bigger than 3, the larger remaining digit should go in the tens place, so the multiplicand should be 43, giving the correct largest product 43x8=344 (compared to the smaller 34x8=272).",
+          "s": [
+            ["Identifies that the multiplicand's digits were arranged in the wrong order (34 instead of 43)", 1],
+            ["Gives the correct largest product, 43x8=344", 1]
+          ]
+        },
+        {
+          "b": "Create",
+          "d": "Hardest",
+          "t": "long_answer",
+          "m": 3,
+          "q": "Choose your own three distinct digits (not 2, 3, 5 or any used elsewhere in this chapter) and find the largest possible (2-digit)x(1-digit) product using the chapter's rule. Show the rule being applied, the product, and verify by computing at least one other arrangement to confirm yours is larger.",
+          "a": "Example digits: 1, 6, 9. Rule: largest digit 9 as multiplier, remaining 6, 1 in decreasing order as the multiplicand 61. Largest product = 61x9=549. Check against an alternative, 91x6=546, which is indeed a little less than 549, confirming 61x9 is the true largest.",
+          "s": [
+            ["Chooses three distinct digits not used elsewhere in the chapter", 1],
+            ["Correctly applies the rule to find the largest product (61x9=549 in the example)", 1],
+            ["Checks against at least one alternative arrangement and confirms it is smaller", 1]
+          ]
+        }
+      ]
+    },
+    {
+      "code": "C8M-6.6",
+      "name": "Decoding divisibility tricks using algebra",
+      "description": "Writing 2-digit and 3-digit numbers algebraically to prove why certain digit-reversal, digit-sum and digit-repeating tricks always produce a multiple of 9, 11, 37 or 1001.",
+      "idea": "A 2-digit number ab really means 10a+b, and its reverse ba means 10b+a; subtracting or adding these expressions and factoring reveals a hidden common factor, which is why the trick's result is always divisible by that factor, whatever digits were chosen.",
+      "rule": "For a 2-digit number with tens digit a and units digit b (b>a), reversing and subtracting gives (10b+a)-(10a+b) = 9(b-a), always a multiple of 9. Adding instead gives (10a+b)+(10b+a) = 11(a+b), always a multiple of 11. For a 3-digit number abc = 100a+10b+c, cycling its digits to bca and cab and adding all three gives 111(a+b+c) = 3x37x(a+b+c), always a multiple of 37 (and of 3). Repeating a 3-digit number abc to form the 6-digit number abcabc is the same as abc x 1001, and since 1001 = 7x11x13, dividing successively by 7, 11 and 13 always returns abc.",
+      "example": "For the 2-digit number 47: reversed is 74; the difference 74-47=27=9x3, matching 9(7-4)=27.",
+      "difficulty_base": "Hard",
+      "questions": [
+        {
+          "b": "Remember",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "A 2-digit number with tens digit a and units digit b is written algebraically as",
+          "a": "10a + b",
+          "o": ["10a + b", "a + b", "ab", "a x b"]
+        },
+        {
+          "b": "Remember",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "The reverse of the 2-digit number 10a+b (swapping its digits) is written as",
+          "a": "10b + a",
+          "o": ["10b + a", "10a + b", "ab", "a - b"]
+        },
+        {
+          "b": "Remember",
+          "d": "Easy",
+          "t": "fill_blank",
+          "m": 1,
+          "q": "A 3-digit number with digits a, b, c (hundreds, tens, units) is written algebraically as ____.",
+          "a": "100a + 10b + c"
+        },
+        {
+          "b": "Remember",
+          "d": "Hard",
+          "t": "mcq",
+          "m": 1,
+          "q": "Which of these is NOT equal to (10b+a) - (10a+b)?",
+          "a": "9(a - b)",
+          "o": ["9(a - b)", "9(b - a)", "9b - 9a", "10b + a - 10a - b"],
+          "rev": true
+        },
+        {
+          "b": "Understand",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "Why is the difference between a 2-digit number and its digit-reversal always divisible by 9?",
+          "a": "Because the difference algebraically simplifies to 9 times (b - a), which is always a multiple of 9",
+          "o": [
+            "Because the difference algebraically simplifies to 9 times (b - a), which is always a multiple of 9",
+            "Because subtraction always produces a multiple of 9",
+            "Because 2-digit numbers are always multiples of 9",
+            "Because the digits a and b must always differ by 9"
+          ]
+        },
+        {
+          "b": "Understand",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "Why is the SUM of a 2-digit number and its digit-reversal always divisible by 11?",
+          "a": "Because the sum algebraically simplifies to 11 times (a + b)",
+          "o": [
+            "Because the sum algebraically simplifies to 11 times (a + b)",
+            "Because addition always produces a multiple of 11",
+            "Because the digits a and b must always add to 11",
+            "Because 2-digit numbers are always multiples of 11"
+          ]
+        },
+        {
+          "b": "Understand",
+          "d": "Easy",
+          "t": "short_answer",
+          "m": 2,
+          "q": "Starting from 10a+b and its reverse 10b+a, show the algebra that proves their SUM is always a multiple of 11.",
+          "a": "(10a+b)+(10b+a) = 11a+11b = 11(a+b), which is always a multiple of 11.",
+          "s": [
+            ["Correctly adds 10a+b and 10b+a to get 11a+11b", 1],
+            ["Factors this as 11(a+b) and states it is always a multiple of 11", 1]
+          ]
+        },
+        {
+          "b": "Understand",
+          "d": "Hard",
+          "t": "mcq",
+          "m": 1,
+          "q": "For a 3-digit number abc=100a+10b+c and its two cyclic rotations bca=100b+10c+a and cab=100c+10a+b, what do all three numbers add up to?",
+          "a": "111(a + b + c)",
+          "o": ["111(a + b + c)", "100(a + b + c)", "37(a + b + c)", "3(a + b + c)"]
+        },
+        {
+          "b": "Understand",
+          "d": "Hard",
+          "t": "short_answer",
+          "m": 2,
+          "q": "Explain why 111(a+b+c) is always divisible by 37, using the fact that 111 = 3 x 37.",
+          "a": "Since 111(a+b+c) = 3 x 37 x (a+b+c), the factor 37 is always present, so the sum is always divisible by 37, whatever a, b and c are (and it is also divisible by 3 for the same reason).",
+          "s": [
+            ["States that 111 = 3x37, so 111(a+b+c) contains 37 as a factor", 1],
+            ["Concludes the sum is always divisible by 37 (and by 3), for any digits a, b, c", 1]
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "For the 2-digit number 82, reversed is 28. What is 82 - 28?",
+          "a": "54",
+          "o": ["54", "45", "64", "50"]
+        },
+        {
+          "b": "Apply",
+          "d": "Easy",
+          "t": "fill_blank",
+          "m": 1,
+          "q": "For 82 and its reverse 28, the difference 54 equals 9 multiplied by ____ (the difference between the two digits 8 and 2).",
+          "a": "6"
+        },
+        {
+          "b": "Apply",
+          "d": "Hard",
+          "t": "mcq",
+          "m": 1,
+          "q": "For the 2-digit number 91, reversed is 19. What is 91-19, and is it a multiple of 9?",
+          "a": "72, yes",
+          "o": ["72, yes", "72, no", "81, yes", "63, yes"]
+        },
+        {
+          "b": "Apply",
+          "d": "Hard",
+          "t": "short_answer",
+          "m": 2,
+          "q": "For the 2-digit number 63, add it to its reverse (36), and verify that the result is divisible by 11 by identifying the quotient.",
+          "a": "63+36=99=11x9, so the quotient is 9.",
+          "s": [
+            ["Correctly computes 63+36=99", 1],
+            ["Identifies 99=11x9, confirming divisibility by 11 with quotient 9", 1]
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Hard",
+          "t": "short_answer",
+          "m": 2,
+          "q": "For the 3-digit number 123, its cyclic rotations are 231 and 312. Find the sum of all three numbers and check it is a multiple of 37.",
+          "a": "123+231+312=666=37x18, so it is indeed a multiple of 37.",
+          "s": [
+            ["Correctly adds 123+231+312=666", 1],
+            ["Verifies 666=37x18, confirming divisibility by 37", 1]
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Hardest",
+          "t": "long_answer",
+          "m": 3,
+          "q": "Take the 3-digit number 405, and repeat its digits to make the 6-digit number 405405. Explain why dividing this number successively by 7, then 11, then 13 must return 405, and verify at least one of those three divisions.",
+          "a": "Repeating a 3-digit number abc to form abcabc is the same as multiplying abc by 1001, since abcabc = abc x 1000 + abc = abc x 1001. Because 1001 = 7 x 11 x 13, dividing abcabc successively by 7, 11 and 13 removes exactly the factor 1001, leaving abc=405. Checking one step: 405405 / 7 = 57915.",
+          "s": [
+            ["Explains that repeating the digits is equivalent to multiplying by 1001", 1],
+            ["States that 1001=7x11x13, so dividing by all three recovers the original number", 1],
+            ["Correctly verifies at least one of the divisions (e.g. 405405/7=57915)", 1]
+          ]
+        },
+        {
+          "b": "Analyse",
+          "d": "Hard",
+          "t": "assertion_reason",
+          "m": 1,
+          "q": "Assertion (A): The difference between any 2-digit number and its digit-reversal is always divisible by 9. Reason (R): algebraically, this difference always simplifies to 9 times the difference of the two digits.",
+          "a": "Both A and R are true, and R is the correct explanation of A",
+          "o": [
+            "Both A and R are true, and R is the correct explanation of A",
+            "Both A and R are true, but R is not the correct explanation of A",
+            "A is true but R is false",
+            "A is false but R is true"
+          ]
+        },
+        {
+          "b": "Analyse",
+          "d": "Hard",
+          "t": "multi_statement",
+          "m": 1,
+          "q": "Consider: (I) The sum of a 3-digit number and its two cyclic rotations is always divisible by 3. (II) The sum of a 3-digit number and its two cyclic rotations is always divisible by 9. Which is or are correct?",
+          "a": "Only I",
+          "o": ["Only I", "Only II", "Both I and II", "Neither I nor II"]
+        },
+        {
+          "b": "Analyse",
+          "d": "Hardest",
+          "t": "long_answer",
+          "m": 3,
+          "q": "A student claims that IF the digit sum a+b+c of a 3-digit number is itself a multiple of 3, then the sum of the number and its two cyclic rotations is divisible by 9 (not just by 3). Test this using the number 123 (digit sum 6, a multiple of 3) and explain algebraically why the student is right.",
+          "a": "123+231+312=666. 666/9=74 exactly, so it is indeed divisible by 9 here. Algebraically, the sum of a number and its two rotations is always 111(a+b+c) = 3x37x(a+b+c). If a+b+c is itself a multiple of 3, say a+b+c=3k, then the total sum is 3x37x3k = 9x37xk, which is clearly divisible by 9. So the student is correct: divisibility by 9 additionally requires the digit sum itself to be a multiple of 3.",
+          "s": [
+            ["Verifies the claim numerically with 123 (sum=666, divisible by 9)", 1],
+            ["Gives the correct algebraic form 111(a+b+c)=3x37x(a+b+c)", 1],
+            ["Explains that when a+b+c is itself a multiple of 3, the total becomes a multiple of 9, confirming the student is right", 1]
+          ]
+        },
+        {
+          "b": "Evaluate",
+          "d": "Hard",
+          "t": "short_answer",
+          "m": 2,
+          "q": "A student checks the number 58 and its reverse 85, computes 85-58=27, and concludes 'this proves the sum-divisible-by-11 rule'. Identify the mistake in the student's reasoning.",
+          "a": "The student mixed up the two different tricks: taking the DIFFERENCE of a number and its reverse relates to divisibility by 9 (and indeed 27=9x3), not 11. The divisible-by-11 rule applies to the SUM of a number and its reverse (58+85=143=11x13), not the difference.",
+          "s": [
+            ["Identifies that the student confused the difference-trick (divisible by 9) with the sum-trick (divisible by 11)", 1],
+            ["Gives the correct check, e.g. that 27 is a multiple of 9, or that 58+85=143 is the correct multiple of 11", 1]
+          ]
+        },
+        {
+          "b": "Create",
+          "d": "Hardest",
+          "t": "long_answer",
+          "m": 3,
+          "q": "Choose your own 2-digit number (not 47, 82, 91 or 63, which are used elsewhere in this chapter), find its reverse, and show algebraically and numerically that BOTH the difference and the sum of the number and its reverse behave as the chapter predicts (divisible by 9 and by 11 respectively).",
+          "a": "Example: choose 74, reverse is 47. Difference: 74-47=27=9x3, confirming divisibility by 9 (matches 9 x |7-4| = 9x3=27). Sum: 74+47=121=11x11, confirming divisibility by 11 (matches 11 x (7+4) = 11x11=121).",
+          "s": [
+            ["Chooses a valid 2-digit number not used elsewhere and finds its reverse", 1],
+            ["Correctly computes and verifies the difference is a multiple of 9", 1],
+            ["Correctly computes and verifies the sum is a multiple of 11", 1]
+          ]
+        }
+      ]
+    }
+  ]
+}
