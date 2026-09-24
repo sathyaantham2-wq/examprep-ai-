@@ -166,11 +166,27 @@ function StudentHome() {
     return <div className="p-8 text-body text-muted-foreground">Loading…</div>
   }
 
+  // 2026-09-24, user feedback: this card was showing completed papers too, under a label that
+  // says "to attempt" -- confusing, and a completed row here did nothing when clicked. Completed
+  // papers now live on their own page (/papers-attempted), linked from the sidebar and from here
+  // when there's at least one; this card goes back to only what its name says.
+  const toAttempt = (papers ?? []).filter((p) => p.attempt?.status !== 'evaluated')
+  const hasCompleted = (papers ?? []).some((p) => p.attempt?.status === 'evaluated')
   const papersCard =
-    papers && papers.length > 0 ? (
+    toAttempt.length > 0 ? (
       <Card>
         <CardHeader>
-          <CardTitle className="text-h3">Papers to attempt</CardTitle>
+          <div className="flex items-center justify-between gap-3">
+            <CardTitle className="text-h3">Papers to attempt</CardTitle>
+            {hasCompleted && (
+              <a
+                href="/papers-attempted"
+                className="text-small text-primary underline-offset-4 hover:underline"
+              >
+                See papers attempted
+              </a>
+            )}
+          </div>
         </CardHeader>
         <CardContent className="space-y-3">
           {startError && (
@@ -178,9 +194,8 @@ function StudentHome() {
               {startError}
             </p>
           )}
-          {papers.map((p) => {
+          {toAttempt.map((p) => {
             const status = p.attempt?.status
-            const isDone = status === 'evaluated'
             const awaitingMarks = status === 'submitted'
             return (
               <div
@@ -193,11 +208,7 @@ function StudentHome() {
                     {p.total_marks} marks, {p.duration_min} min
                   </p>
                 </div>
-                {isDone ? (
-                  <span className="text-small text-muted-foreground">
-                    Completed
-                  </span>
-                ) : awaitingMarks && p.attempt ? (
+                {awaitingMarks && p.attempt ? (
                   <a href={`/attempt/${p.attempt.id}`}>
                     <Button size="sm" variant="outline">
                       See my marks

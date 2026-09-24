@@ -3,16 +3,17 @@ import type { ReactNode } from 'react'
 import { ThemeToggle } from './theme-toggle'
 
 // A persistent sidebar shell, in two variants -- 'parent' (the original: Home/Generate
-// Paper/Progress/Settings) and 'student' (Home/Generate Paper/Leaderboard, added at the user's
-// explicit request 2026-09-22 so a student landing here after sign-up gets the same sidebar+hero
-// treatment, not just her parent). Each variant is built from that role's own real, reachable
-// routes only -- a student's "Generate Paper" goes to /my-paper (her adaptive practice paper,
-// AI-graded, no parent needed per CLAUDE.md's 2026-09-20 exception), never /generate, which
+// Paper/Progress/Settings) and 'student' (Home/Generate Paper/Papers Attempted/Leaderboard, added
+// at the user's explicit request 2026-09-22 so a student landing here after sign-up gets the same
+// sidebar+hero treatment, not just her parent). Each variant is built from that role's own real,
+// reachable routes only -- a student's "Generate Paper" goes to /my-paper (her adaptive practice
+// paper, AI-graded, no parent needed per CLAUDE.md's 2026-09-20 exception), never /generate, which
 // redirects a student role away; a student has no /settings or /tracker/:id access at all, so
 // neither appears in her nav. "Practice Tests" and "Question Bank" from the original reference
 // mockup still have no real page for either role and stay left out. tab06's /papers "Paper
-// library" is also still unbuilt (F123's own commit notes) -- 'papers' stays in the type below,
-// ready the day that screen ships, but its nav item stays commented out until then.
+// library" now exists for the student variant (/papers-attempted, 2026-09-24); the parent-facing
+// version is still unbuilt (F123's own commit notes), so 'My Papers' stays left out of that
+// branch below until it is.
 export type AppShellActive =
   'home' | 'generate' | 'papers' | 'progress' | 'settings' | 'leaderboard'
 export type AppShellVariant = 'parent' | 'student'
@@ -66,9 +67,25 @@ function GenerateIcon() {
     </svg>
   )
 }
-// PapersIcon intentionally removed -- see the note above AppShellActive. Re-add it (a document
-// icon: path d="M14 3v4a1 1 0 0 0 1 1h4" / "M17 21H7a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h7l5 5v11a2 2 0
-// 0 1-2 2Z") when /papers actually exists.
+// Re-added 2026-09-24: /papers-attempted now exists (student variant only -- the parent-facing
+// "Paper library" from tab06 is still unbuilt, so 'My Papers' stays left out of that branch below).
+function PapersIcon() {
+  return (
+    <svg
+      width="17"
+      height="17"
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="2"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+    >
+      <path d="M14 3v4a1 1 0 0 0 1 1h4" />
+      <path d="M17 21H7a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h7l5 5v11a2 2 0 0 1-2 2Z" />
+    </svg>
+  )
+}
 function ProgressIcon() {
   return (
     <svg
@@ -177,6 +194,12 @@ export function AppShell({
             icon: <GenerateIcon />,
           },
           { key: 'home', label: 'Home', href: '/student', icon: <HomeIcon /> },
+          {
+            key: 'papers',
+            label: 'Papers Attempted',
+            href: '/papers-attempted',
+            icon: <PapersIcon />,
+          },
           {
             key: 'leaderboard',
             label: 'Leaderboard',

@@ -196,4 +196,18 @@ test('first-time student: profile, personalised home, Easy assessment, marked at
   await expect(page.getByText('Adaptive E2E concept').first()).toBeVisible()
   await expect(page.getByText('Concepts started').first()).toBeVisible()
   await expect(page.getByText('1 of 1', { exact: true })).toBeVisible()
+
+  // F123 follow-up (2026-09-24, user feedback): a finished paper no longer sits, unclickable,
+  // in "Papers to attempt" under a "Completed" label -- it has its own page now, reachable from
+  // the sidebar (this student has nothing left to attempt, so the in-card link that also points
+  // there never renders -- the sidebar is the one path guaranteed to exist), and opening it goes
+  // right back to the same marked result.
+  await expect(page.getByText('Papers to attempt')).toHaveCount(0)
+  await page.getByRole('link', { name: 'Papers Attempted' }).click()
+  await page.waitForURL('**/papers-attempted')
+  await expect(page.getByRole('heading', { name: 'Papers attempted' })).toBeVisible()
+  await expect(page.getByText('Completed', { exact: true })).toBeVisible()
+  await page.locator('a').filter({ hasText: 'Completed' }).click()
+  await page.waitForURL('**/attempt/**')
+  await expect(page.getByRole('heading', { name: 'Well done, Adaptive E2E Kid' })).toBeVisible()
 })

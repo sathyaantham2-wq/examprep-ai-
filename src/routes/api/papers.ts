@@ -93,7 +93,15 @@ export const Route = createFileRoute('/api/papers')({
               duration_min: paper.duration_min,
               generated_at: paper.generated_at,
               attempt: attempt
-                ? { id: attempt.id, status: attempt.status }
+                ? {
+                    id: attempt.id,
+                    status: attempt.status,
+                    // F123 follow-up (2026-09-24, user decision): a dedicated "papers attempted"
+                    // page needs a date to show per attempt. submitted_at is null until she
+                    // finishes, so started_at is the fallback for an in-progress/awaiting-marks
+                    // row rather than showing nothing.
+                    attempted_at: attempt.submitted_at ?? attempt.started_at,
+                  }
                 : null,
             }
           })

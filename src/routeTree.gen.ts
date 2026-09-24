@@ -16,6 +16,7 @@ import { Route as LeaderboardRouteImport } from './routes/leaderboard'
 import { Route as MyPaperRouteImport } from './routes/my-paper'
 import { Route as NeedsImprovementRouteImport } from './routes/needs-improvement'
 import { Route as OnboardingRouteImport } from './routes/onboarding'
+import { Route as PapersAttemptedRouteImport } from './routes/papers-attempted'
 import { Route as PlanRouteImport } from './routes/plan'
 import { Route as ProfileSetupRouteImport } from './routes/profile-setup'
 import { Route as RemediationRouteImport } from './routes/remediation'
@@ -162,6 +163,11 @@ const NeedsImprovementRoute = NeedsImprovementRouteImport.update({
 const OnboardingRoute = OnboardingRouteImport.update({
   id: '/onboarding',
   path: '/onboarding',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const PapersAttemptedRoute = PapersAttemptedRouteImport.update({
+  id: '/papers-attempted',
+  path: '/papers-attempted',
   getParentRoute: () => rootRouteImport,
 } as any)
 const PlanRoute = PlanRouteImport.update({
@@ -755,6 +761,7 @@ export interface FileRoutesByFullPath {
   '/my-paper': typeof MyPaperRoute
   '/needs-improvement': typeof NeedsImprovementRoute
   '/onboarding': typeof OnboardingRoute
+  '/papers-attempted': typeof PapersAttemptedRoute
   '/plan': typeof PlanRoute
   '/profile-setup': typeof ProfileSetupRoute
   '/remediation': typeof RemediationRoute
@@ -876,6 +883,7 @@ export interface FileRoutesByTo {
   '/my-paper': typeof MyPaperRoute
   '/needs-improvement': typeof NeedsImprovementRoute
   '/onboarding': typeof OnboardingRoute
+  '/papers-attempted': typeof PapersAttemptedRoute
   '/plan': typeof PlanRoute
   '/profile-setup': typeof ProfileSetupRoute
   '/remediation': typeof RemediationRoute
@@ -998,6 +1006,7 @@ export interface FileRoutesById {
   '/my-paper': typeof MyPaperRoute
   '/needs-improvement': typeof NeedsImprovementRoute
   '/onboarding': typeof OnboardingRoute
+  '/papers-attempted': typeof PapersAttemptedRoute
   '/plan': typeof PlanRoute
   '/profile-setup': typeof ProfileSetupRoute
   '/remediation': typeof RemediationRoute
@@ -1121,6 +1130,7 @@ export interface FileRouteTypes {
     | '/my-paper'
     | '/needs-improvement'
     | '/onboarding'
+    | '/papers-attempted'
     | '/plan'
     | '/profile-setup'
     | '/remediation'
@@ -1242,6 +1252,7 @@ export interface FileRouteTypes {
     | '/my-paper'
     | '/needs-improvement'
     | '/onboarding'
+    | '/papers-attempted'
     | '/plan'
     | '/profile-setup'
     | '/remediation'
@@ -1363,6 +1374,7 @@ export interface FileRouteTypes {
     | '/my-paper'
     | '/needs-improvement'
     | '/onboarding'
+    | '/papers-attempted'
     | '/plan'
     | '/profile-setup'
     | '/remediation'
@@ -1485,6 +1497,7 @@ export interface RootRouteChildren {
   MyPaperRoute: typeof MyPaperRoute
   NeedsImprovementRoute: typeof NeedsImprovementRoute
   OnboardingRoute: typeof OnboardingRoute
+  PapersAttemptedRoute: typeof PapersAttemptedRoute
   PlanRoute: typeof PlanRoute
   ProfileSetupRoute: typeof ProfileSetupRoute
   RemediationRoute: typeof RemediationRoute
@@ -1595,6 +1608,13 @@ declare module '@tanstack/react-router' {
       path: '/onboarding'
       fullPath: '/onboarding'
       preLoaderRoute: typeof OnboardingRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/papers-attempted': {
+      id: '/papers-attempted'
+      path: '/papers-attempted'
+      fullPath: '/papers-attempted'
+      preLoaderRoute: typeof PapersAttemptedRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/plan': {
@@ -2738,6 +2758,7 @@ const rootRouteChildren: RootRouteChildren = {
   MyPaperRoute: MyPaperRoute,
   NeedsImprovementRoute: NeedsImprovementRoute,
   OnboardingRoute: OnboardingRoute,
+  PapersAttemptedRoute: PapersAttemptedRoute,
   PlanRoute: PlanRoute,
   ProfileSetupRoute: ProfileSetupRoute,
   RemediationRoute: RemediationRoute,
