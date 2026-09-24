@@ -154,24 +154,36 @@ export interface ProviderChainResult<T> {
   label: string
 }
 
+export interface ChainAttempt {
+  provider: AiProvider
+  model: string
+  error: string
+}
+
 // 2026-09-24: every ai-*.ts caller's error-path logAiJob() logged its own constant MODEL, not
 // whichever model actually threw -- harmless while the primary model worked, but the exact case
-// that needed this (Gemini retiring the 2.5 generation) is also the case where it matters: ai_jobs
-// showed a working model's name attached to a DIFFERENT model's error, because only the LAST
-// attempt's failure propagates (see callWithProviderChain's own doc comment) while every earlier
-// one in the chain is silently swallowed. Attaching which (provider, model) pair actually threw
-// onto the error itself, here, is the one place that can know it.
+// that needed this (Gemini retiring the 2.5 generation) is also the case where it matters.
+// Extended the same day, same reason: an early version of this only kept the LAST provider's
+// failure, silently dropping every earlier one in the chain -- so when Groq was added and this
+// still showed only a Gemini error, there was no way to tell from ai_jobs alone whether Groq was
+// even tried and failed, or never reached at all (no key, wrong chain order, ...). `attempts`
+// carries every (provider, model, error) tried, in order, so the message alone answers that.
 export class ModelCallError extends Error {
   readonly failedProvider: AiProvider
   readonly failedModel: string
   readonly label: string
-  constructor(failedProvider: AiProvider, failedModel: string, cause: unknown) {
-    super(cause instanceof Error ? cause.message : String(cause))
+  readonly attempts: Array<ChainAttempt>
+  constructor(attempts: Array<ChainAttempt>) {
+    const last = attempts[attempts.length - 1]
+    const summary = attempts
+      .map((a) => `${a.provider}/${a.model}: ${a.error}`)
+      .join(' | ')
+    super(summary)
     this.name = 'ModelCallError'
-    this.failedProvider = failedProvider
-    this.failedModel = failedModel
-    this.label = modelLabel(failedProvider, failedModel)
-    if (cause instanceof Error && cause.stack) this.stack = cause.stack
+    this.failedProvider = last.provider
+    this.failedModel = last.model
+    this.label = modelLabel(last.provider, last.model)
+    this.attempts = attempts
   }
 }
 
@@ -181,8 +193,8 @@ export class ModelCallError extends Error {
  * priority order, until one succeeds. A single vendor's own outage or rate limit no longer needs a
  * same-vendor retry to paper over (Gemini's within-vendor Flash/Flash-Lite fallback used to be the
  * only fallback that existed) -- a different vendor's infrastructure is a real independent path.
- * Throws ModelCallError for the LAST provider tried if every configured one fails, or a plain
- * Error immediately if none is configured at all.
+ * Throws a ModelCallError carrying every attempt made if every configured provider fails, or a
+ * plain Error immediately if none is configured at all.
  */
 export async function callWithProviderChain<T>(
   feature: string,
@@ -195,15 +207,19 @@ export async function callWithProviderChain<T>(
       `callWithProviderChain: no AI provider is configured (feature "${feature}")`,
     )
   }
-  let lastErr: unknown
+  const attempts: Array<ChainAttempt> = []
   for (const provider of chain) {
     const model = modelForFeature(feature, provider)
     try {
       const result = await fn(provider, model)
       return { result, provider, model, label: modelLabel(provider, model) }
     } catch (err) {
-      lastErr = new ModelCallError(provider, model, err)
+      attempts.push({
+        provider,
+        model,
+        error: err instanceof Error ? err.message : String(err),
+      })
     }
   }
-  throw lastErr
+  throw new ModelCallError(attempts)
 }
