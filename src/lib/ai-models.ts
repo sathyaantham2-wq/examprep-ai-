@@ -5,7 +5,7 @@
 // and it's declarative for the tab07 functions this codebase hasn't built yet too (AI-02/07/08/11,
 // ...) so a future implementation plugs into an entry that already exists rather than inventing
 // its own model string.
-import { activeProvider } from './ai-provider'
+import { resolveProviderChain } from './ai-provider'
 import type { AiProvider } from './ai-provider'
 import { env } from './env'
 
@@ -47,91 +47,163 @@ const ANTHROPIC_MODELS: Record<ModelTier, string> = {
 // 2026-09-24: the 2.5 generation was retired without notice -- every AI-13 (F126 explanation)
 // call in production failed with a Gemini 404 ("This model models/gemini-2.5-flash-lite is no
 // longer available to new users. Please update your code to use models/gemini-3.5-flash-lite"),
-// which is why the defaults below are 3.5, not 2.5. Confirmed only for the -lite (cheap) name
-// directly from that error; the non-lite (strong) name is inferred from the same generation bump,
-// since Google ships a Flash/Flash-Lite pair together, not verified independently. If Gemini
-// retires a generation again, ai_jobs.error on a fresh AI-13 row has the live model name.
+// which is why the defaults below are 3.5, not 2.5. Confirmed for both names directly from
+// production ai_jobs after the fix deployed (both gemini-3.5-flash and gemini-3.5-flash-lite have
+// succeeded there). If Gemini retires a generation again, ai_jobs.error on a fresh row has the
+// live model name -- same for any provider below.
 function geminiModels(): Record<ModelTier, string> {
   const strong = env.GEMINI_MODEL_STRONG ?? 'gemini-3.5-flash'
-  return { strong, mid: strong, cheap: env.GEMINI_MODEL_CHEAP ?? 'gemini-3.5-flash-lite' }
+  return {
+    strong,
+    mid: strong,
+    cheap: env.GEMINI_MODEL_CHEAP ?? 'gemini-3.5-flash-lite',
+  }
+}
+
+// 2026-09-24, user request ("another option of api key along with gemini and side by side...
+// groq, cerebras, openrouter"): three more vendors, each checked against its own current docs
+// before picking a default (not remembered/guessed) --
+//   Groq:       console.groq.com/docs -- llama-3.3-70b-versatile (strong), llama-3.1-8b-instant
+//               (cheap), both explicitly current in Groq's own docs as of this date.
+//   Cerebras:   inference-docs.cerebras.ai -- gpt-oss-120b (strong), a materially smaller model
+//               for cheap; Cerebras's own docs excerpt available at research time was partial, so
+//               this is the least-confirmed of the three defaults here -- ai_jobs.error is the
+//               fallback verification if it's wrong, same as Gemini's fix was.
+//   OpenRouter: an aggregator, not a vendor of its own models -- model ids are "vendor/model"
+//               (e.g. "meta-llama/llama-3.3-70b-instruct"); a well-known free-tier-eligible model
+//               is used as the default since OpenRouter's whole point here is breadth/fallback,
+//               not a specific vendor's flagship.
+// All three: override with <PROVIDER>_MODEL_STRONG / <PROVIDER>_MODEL_CHEAP if a default is wrong
+// or a different model is preferred.
+function groqModels(): Record<ModelTier, string> {
+  const strong = env.GROQ_MODEL_STRONG ?? 'llama-3.3-70b-versatile'
+  return {
+    strong,
+    mid: strong,
+    cheap: env.GROQ_MODEL_CHEAP ?? 'llama-3.1-8b-instant',
+  }
+}
+
+function cerebrasModels(): Record<ModelTier, string> {
+  const strong = env.CEREBRAS_MODEL_STRONG ?? 'gpt-oss-120b'
+  return {
+    strong,
+    mid: strong,
+    cheap: env.CEREBRAS_MODEL_CHEAP ?? 'llama3.1-8b',
+  }
+}
+
+function openrouterModels(): Record<ModelTier, string> {
+  const strong =
+    env.OPENROUTER_MODEL_STRONG ?? 'meta-llama/llama-3.3-70b-instruct'
+  return {
+    strong,
+    mid: strong,
+    cheap: env.OPENROUTER_MODEL_CHEAP ?? 'meta-llama/llama-3.2-3b-instruct',
+  }
 }
 
 function modelsFor(provider: AiProvider): Record<ModelTier, string> {
-  return provider === 'gemini' ? geminiModels() : ANTHROPIC_MODELS
+  switch (provider) {
+    case 'anthropic':
+      return ANTHROPIC_MODELS
+    case 'gemini':
+      return geminiModels()
+    case 'groq':
+      return groqModels()
+    case 'cerebras':
+      return cerebrasModels()
+    case 'openrouter':
+      return openrouterModels()
+  }
 }
 
-export function modelForFeature(
-  feature: string,
-  provider: AiProvider = activeProvider() ?? 'anthropic',
-): string {
+export function modelForFeature(feature: string, provider: AiProvider): string {
   const tier = MODEL_TIER_BY_FEATURE[feature]
   if (!tier) {
-    throw new Error(`ai-models: no model tier mapped for AI feature "${feature}"`)
+    throw new Error(
+      `ai-models: no model tier mapped for AI feature "${feature}"`,
+    )
   }
   return modelsFor(provider)[tier]
 }
 
-/** The cheap-tier model of the active vendor, used as the retry model. */
-export function fallbackModel(provider: AiProvider = activeProvider() ?? 'anthropic'): string {
+/** The cheap-tier model of a vendor -- used by the admin ai-status check, a cheap/fast smoke test. */
+export function fallbackModel(provider: AiProvider): string {
   return modelsFor(provider).cheap
 }
 
-// The fallback model on a primary-model failure -- deliberately the cheap tier's model rather
-// than retrying the same strong model, since a genuine outage/overload on one model is unlikely
-// to clear in the time of a single retry, while a different model is a real independent path
-// that might still answer. Never the fallback FOR ITSELF: see callWithModelFallback below.
+// Kept for src/lib/ai-metering.ts's rate lookup, which pre-dates the provider chain and still
+// wants "the cheap Anthropic model" as its one hardcoded reference point.
 export const FALLBACK_MODEL = ANTHROPIC_MODELS.cheap
 
-export interface ModelFallbackResult<T> {
+// "provider/model" -- what actually goes in ai_jobs.model now (previously just a bare model name,
+// e.g. "claude-sonnet-5"). Necessary once more than one vendor can serve the same feature: a bare
+// model name is no longer enough to know which vendor's rate card applies (src/lib/ai-metering.ts's
+// ratesFor), or, for a name like a Groq/Cerebras/OpenRouter-hosted open model, which vendor it even
+// ran on at all. Existing rows from before this change keep their old bare-name model column;
+// ratesFor treats an unprefixed model as Anthropic, its original assumption, for those.
+export function modelLabel(provider: AiProvider, model: string): string {
+  return `${provider}/${model}`
+}
+
+export interface ProviderChainResult<T> {
   result: T
-  modelUsed: string
-  usedFallback: boolean
+  provider: AiProvider
+  model: string
+  label: string
 }
 
 // 2026-09-24: every ai-*.ts caller's error-path logAiJob() logged its own constant MODEL, not
 // whichever model actually threw -- harmless while the primary model worked, but the exact case
 // that needed this (Gemini retiring the 2.5 generation) is also the case where it matters: ai_jobs
-// showed "gemini-2.5-flash" failing with an error that was actually about "gemini-2.5-flash-lite",
-// the RETRY model, because the retry's failure is what propagates (see this function's own doc
-// comment below) while the primary's failure is silently swallowed. Attaching the model that
-// actually threw onto the error itself, here, is the one place that can know it -- neither
-// `catch` block a caller writes around this function's own throw can otherwise tell primary and
-// retry apart.
+// showed a working model's name attached to a DIFFERENT model's error, because only the LAST
+// attempt's failure propagates (see callWithProviderChain's own doc comment) while every earlier
+// one in the chain is silently swallowed. Attaching which (provider, model) pair actually threw
+// onto the error itself, here, is the one place that can know it.
 export class ModelCallError extends Error {
+  readonly failedProvider: AiProvider
   readonly failedModel: string
-  constructor(failedModel: string, cause: unknown) {
+  readonly label: string
+  constructor(failedProvider: AiProvider, failedModel: string, cause: unknown) {
     super(cause instanceof Error ? cause.message : String(cause))
     this.name = 'ModelCallError'
+    this.failedProvider = failedProvider
     this.failedModel = failedModel
+    this.label = modelLabel(failedProvider, failedModel)
     if (cause instanceof Error && cause.stack) this.stack = cause.stack
   }
 }
 
 /**
- * F094: "automatic fallback on failure." Calls `fn` with `primaryModel`; if that throws, retries
- * once with FALLBACK_MODEL and reports which model actually produced the result so the caller can
- * log it accurately (ai_jobs.model). If `primaryModel` already *is* the fallback model, there is
- * nothing left to fall back to -- the original error propagates rather than calling the exact same
- * model twice. If the fallback attempt also throws, that second error propagates (not the first),
- * since it's the more recent, more relevant failure for the caller's own error log -- as a
- * ModelCallError carrying which model (primary or retry) actually threw, so a caller's own catch
- * block can log `err.failedModel` instead of guessing.
+ * F094 "automatic fallback on failure", extended 2026-09-24 into a real cross-vendor chain: tries
+ * every configured provider's strong-tier model for `feature`, in resolveProviderChain()'s
+ * priority order, until one succeeds. A single vendor's own outage or rate limit no longer needs a
+ * same-vendor retry to paper over (Gemini's within-vendor Flash/Flash-Lite fallback used to be the
+ * only fallback that existed) -- a different vendor's infrastructure is a real independent path.
+ * Throws ModelCallError for the LAST provider tried if every configured one fails, or a plain
+ * Error immediately if none is configured at all.
  */
-export async function callWithModelFallback<T>(
-  primaryModel: string,
-  fn: (model: string) => Promise<T>,
-): Promise<ModelFallbackResult<T>> {
-  try {
-    const result = await fn(primaryModel)
-    return { result, modelUsed: primaryModel, usedFallback: false }
-  } catch (err) {
-    const retryModel = fallbackModel()
-    if (primaryModel === retryModel) throw new ModelCallError(primaryModel, err)
+export async function callWithProviderChain<T>(
+  feature: string,
+  fn: (provider: AiProvider, model: string) => Promise<T>,
+  config: Parameters<typeof resolveProviderChain>[0] = undefined,
+): Promise<ProviderChainResult<T>> {
+  const chain = resolveProviderChain(config)
+  if (chain.length === 0) {
+    throw new Error(
+      `callWithProviderChain: no AI provider is configured (feature "${feature}")`,
+    )
+  }
+  let lastErr: unknown
+  for (const provider of chain) {
+    const model = modelForFeature(feature, provider)
     try {
-      const result = await fn(retryModel)
-      return { result, modelUsed: retryModel, usedFallback: true }
-    } catch (retryErr) {
-      throw new ModelCallError(retryModel, retryErr)
+      const result = await fn(provider, model)
+      return { result, provider, model, label: modelLabel(provider, model) }
+    } catch (err) {
+      lastErr = new ModelCallError(provider, model, err)
     }
   }
+  throw lastErr
 }

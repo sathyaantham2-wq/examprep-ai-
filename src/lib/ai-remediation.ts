@@ -1,11 +1,11 @@
 import type { Db } from '../db/connection'
 import { completeText, isAiConfigured } from './ai-provider'
 import { enforceAiCallBudget, logAiJob } from './ai-metering'
-import { ModelCallError, callWithModelFallback, modelForFeature } from './ai-models'
+import { ModelCallError, callWithProviderChain } from './ai-models'
 
 // F094: resolved from tab07's task-to-model map (src/lib/ai-models.ts) rather than a hardcoded
 // literal -- AI-09 is "strong model" tier, same as AI-01/AI-05.
-const MODEL = modelForFeature('AI-09')
+const FEATURE = 'AI-09'
 
 export function isAiRemediationConfigured(): boolean {
   return isAiConfigured()
@@ -43,8 +43,8 @@ export async function generateRemediationContent(
 ): Promise<RemediationContent | null> {
   if (!isAiConfigured()) return null
   await enforceAiCallBudget(db, {
-    feature: 'AI-09',
-    model: MODEL,
+    feature: FEATURE,
+    model: FEATURE,
     householdId: input.householdId,
     studentId: input.studentId,
   })
@@ -64,20 +64,19 @@ Respond with ONLY a JSON object, no other text, matching exactly:
 
   const startedAt = Date.now()
   let response: Awaited<ReturnType<typeof completeText>>
-  let modelUsed = MODEL
+  let modelUsed = FEATURE
   try {
-    // F094: one retry against the cheap-tier model on a primary-model failure.
-    const outcome = await callWithModelFallback(MODEL, (model) =>
-      completeText({ model, prompt, maxTokens: 2048 }),
+    // 2026-09-24: tries every configured vendor in priority order, not just one vendor's tiers.
+    const outcome = await callWithProviderChain(FEATURE, (provider, model) =>
+      completeText({ model, prompt, maxTokens: 2048 }, provider),
     )
     response = outcome.result
-    modelUsed = outcome.modelUsed
+    modelUsed = outcome.label
   } catch (err) {
-    // 2026-09-24: log whichever model actually threw (see ai-models.ts's ModelCallError), not
-    // always this constant -- a retry failure was otherwise misattributed to the primary model.
+    // Log whichever (provider, model) pair actually threw last, not a guess.
     await logAiJob(db, {
-      feature: 'AI-09',
-      model: err instanceof ModelCallError ? err.failedModel : MODEL,
+      feature: FEATURE,
+      model: err instanceof ModelCallError ? err.label : FEATURE,
       householdId: input.householdId,
       studentId: input.studentId,
       latencyMs: Date.now() - startedAt,
@@ -87,7 +86,7 @@ Respond with ONLY a JSON object, no other text, matching exactly:
     throw err
   }
   await logAiJob(db, {
-    feature: 'AI-09',
+    feature: FEATURE,
     model: modelUsed,
     householdId: input.householdId,
     studentId: input.studentId,

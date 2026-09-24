@@ -1,11 +1,11 @@
 import type { Db } from '../db/connection'
 import { completeText, isAiConfigured } from './ai-provider'
 import { enforceAiCallBudget, logAiJob } from './ai-metering'
-import { ModelCallError, callWithModelFallback, modelForFeature } from './ai-models'
+import { ModelCallError, callWithProviderChain } from './ai-models'
 
 // F126 / tab07 AI-13: "per-question worked explanation". Same shape as AI-09's generator
 // (src/lib/ai-remediation.ts) -- resolved model tier, budget check, fallback, job logging.
-const MODEL = modelForFeature('AI-13')
+const FEATURE = 'AI-13'
 
 export function isAiExplanationConfigured(): boolean {
   return isAiConfigured()
@@ -40,8 +40,10 @@ export async function generateQuestionExplanation(
 ): Promise<string | null> {
   if (!isAiConfigured()) return null
   await enforceAiCallBudget(db, {
-    feature: 'AI-13',
-    model: MODEL,
+    feature: FEATURE,
+    // Only used for the log line if the cap is already reached, before any provider is tried --
+    // the feature code itself is an honest placeholder for "no attempt made yet".
+    model: FEATURE,
     householdId: input.householdId,
     studentId: input.studentId,
   })
@@ -67,20 +69,21 @@ Respond with ONLY a JSON object, no other text, matching exactly:
 
   const startedAt = Date.now()
   let response: Awaited<ReturnType<typeof completeText>>
-  let modelUsed = MODEL
+  let modelUsed = FEATURE
   try {
-    const outcome = await callWithModelFallback(MODEL, (model) =>
-      completeText({ model, prompt, maxTokens: 700 }),
+    // 2026-09-24: tries every configured vendor in priority order (Groq/Cerebras first for
+    // speed, then Anthropic, OpenRouter, Gemini last), not just one vendor's own two tiers.
+    const outcome = await callWithProviderChain(FEATURE, (provider, model) =>
+      completeText({ model, prompt, maxTokens: 700 }, provider),
     )
     response = outcome.result
-    modelUsed = outcome.modelUsed
+    modelUsed = outcome.label
   } catch (err) {
-    // 2026-09-24: log whichever model actually threw (the retry, if the primary already failed
-    // and got swallowed by callWithModelFallback) rather than always the primary MODEL constant --
-    // this is what caught Gemini's 2.5 retirement showing up in ai_jobs under the wrong model name.
+    // Log whichever (provider, model) pair actually threw last, not a guess -- see
+    // ai-models.ts's ModelCallError for why this is the only place that can know it.
     await logAiJob(db, {
-      feature: 'AI-13',
-      model: err instanceof ModelCallError ? err.failedModel : MODEL,
+      feature: FEATURE,
+      model: err instanceof ModelCallError ? err.label : FEATURE,
       householdId: input.householdId,
       studentId: input.studentId,
       latencyMs: Date.now() - startedAt,
@@ -90,7 +93,7 @@ Respond with ONLY a JSON object, no other text, matching exactly:
     throw err
   }
   await logAiJob(db, {
-    feature: 'AI-13',
+    feature: FEATURE,
     model: modelUsed,
     householdId: input.householdId,
     studentId: input.studentId,

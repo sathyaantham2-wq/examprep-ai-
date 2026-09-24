@@ -14,16 +14,37 @@ const envSchema = z.object({
   GOOGLE_CLIENT_ID: z.string().min(1).optional(),
   GOOGLE_CLIENT_SECRET: z.string().min(1).optional(),
   ANTHROPIC_API_KEY: z.string().min(1).optional(),
-  // Google Gemini is the alternative AI vendor (has a free tier). AI_PROVIDER forces one when both
-  // keys are set; unset, Anthropic is used if it has a key, else Gemini. See src/lib/ai-provider.ts.
+  // 2026-09-24, user request: several AI vendors side by side, tried in a fixed priority order
+  // (src/lib/ai-provider.ts's PROVIDER_PRIORITY) with automatic fallover to the next configured
+  // one on any failure -- not just one vendor at a time. AI_PROVIDER, if set, forces exactly one
+  // (and only that one) instead of the chain. Groq/Cerebras/OpenRouter are all OpenAI-compatible
+  // chat-completions APIs, so they share one implementation (completeOpenAiCompatible).
   GEMINI_API_KEY: z.string().min(1).optional(),
-  AI_PROVIDER: z.enum(['anthropic', 'gemini']).optional(),
+  GROQ_API_KEY: z.string().min(1).optional(),
+  CEREBRAS_API_KEY: z.string().min(1).optional(),
+  OPENROUTER_API_KEY: z.string().min(1).optional(),
+  AI_PROVIDER: z
+    .enum(['anthropic', 'gemini', 'groq', 'cerebras', 'openrouter'])
+    .optional(),
   GEMINI_MODEL_STRONG: z.string().min(1).optional(),
   GEMINI_MODEL_CHEAP: z.string().min(1).optional(),
-  // Gemini's free tier costs nothing; on a paid plan set the real per-1M-token USD prices so the
-  // spend caps (F121) count Gemini calls. Both default to 0.
+  GROQ_MODEL_STRONG: z.string().min(1).optional(),
+  GROQ_MODEL_CHEAP: z.string().min(1).optional(),
+  CEREBRAS_MODEL_STRONG: z.string().min(1).optional(),
+  CEREBRAS_MODEL_CHEAP: z.string().min(1).optional(),
+  OPENROUTER_MODEL_STRONG: z.string().min(1).optional(),
+  OPENROUTER_MODEL_CHEAP: z.string().min(1).optional(),
+  // Every vendor here except Anthropic has a real free tier; each defaults to 0 cost the same way
+  // Gemini already did, and only needs a real per-1M-token USD price set if that vendor's plan
+  // actually charges (F121 spend caps).
   GEMINI_USD_PER_1M_INPUT: z.coerce.number().nonnegative().optional(),
   GEMINI_USD_PER_1M_OUTPUT: z.coerce.number().nonnegative().optional(),
+  GROQ_USD_PER_1M_INPUT: z.coerce.number().nonnegative().optional(),
+  GROQ_USD_PER_1M_OUTPUT: z.coerce.number().nonnegative().optional(),
+  CEREBRAS_USD_PER_1M_INPUT: z.coerce.number().nonnegative().optional(),
+  CEREBRAS_USD_PER_1M_OUTPUT: z.coerce.number().nonnegative().optional(),
+  OPENROUTER_USD_PER_1M_INPUT: z.coerce.number().nonnegative().optional(),
+  OPENROUTER_USD_PER_1M_OUTPUT: z.coerce.number().nonnegative().optional(),
   // F080: a Make.com webhook (Custom Webhook -> Gmail "Send an email") -- see src/lib/email.ts.
   // Optional, same graceful-degradation shape as ANTHROPIC_API_KEY: without it, transactional
   // email is simply not sent (logged as 'failed' with a reason), never a startup failure.
@@ -43,7 +64,9 @@ export type Env = z.infer<typeof envSchema>
 
 function loadEnv(): Env {
   // A blank line in .env (KEY=) means "not set", not an invalid empty value.
-  const present = Object.fromEntries(Object.entries(process.env).filter(([, v]) => v !== ''))
+  const present = Object.fromEntries(
+    Object.entries(process.env).filter(([, v]) => v !== ''),
+  )
   const parsed = envSchema.safeParse(present)
   if (!parsed.success) {
     const issues = parsed.error.issues

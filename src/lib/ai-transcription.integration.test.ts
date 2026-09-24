@@ -1,13 +1,24 @@
-import { afterAll, beforeAll, beforeEach, describe, expect, it, vi } from 'vitest'
+import {
+  afterAll,
+  beforeAll,
+  beforeEach,
+  describe,
+  expect,
+  it,
+  vi,
+} from 'vitest'
 import { createDb } from '../db/connection'
 import type { Db } from '../db/connection'
 import { householdsRepository, studentsRepository } from '../db/repositories'
 import { transcribeHandwriting } from './ai-transcription'
 import { completeText } from './ai-provider'
 
+// resolveProviderChain is stubbed the same way and for the same reason as
+// ai-grading.integration.test.ts -- see that file's comment.
 vi.mock('./ai-provider', async () => ({
   ...(await vi.importActual<Record<string, unknown>>('./ai-provider')),
   isAiConfigured: () => true,
+  resolveProviderChain: () => ['anthropic'],
   completeText: vi.fn(),
 }))
 
@@ -25,7 +36,10 @@ describe('transcribeHandwriting (AI-06)', () => {
 
   beforeAll(async () => {
     db = createDb()
-    const household = await householdsRepository.insert(db, { name: 'AI transcription fixture household', plan: 'free' })
+    const household = await householdsRepository.insert(db, {
+      name: 'AI transcription fixture household',
+      plan: 'free',
+    })
     householdId = household.id
     const student = await studentsRepository.insert(db, {
       household_id: household.id,
@@ -42,24 +56,37 @@ describe('transcribeHandwriting (AI-06)', () => {
   })
 
   afterAll(async () => {
-    await db.deleteFrom('ai_jobs').where('household_id', '=', householdId).execute()
+    await db
+      .deleteFrom('ai_jobs')
+      .where('household_id', '=', householdId)
+      .execute()
     await db.deleteFrom('households').where('id', '=', householdId).execute()
     await db.destroy()
   })
 
   it('sends the photo to the model and returns the text and confidence', async () => {
     vi.mocked(completeText).mockResolvedValue({
-      text: JSON.stringify({ legible: true, text: '2 + 3 = 5', confidence: 0.8 }),
+      text: JSON.stringify({
+        legible: true,
+        text: '2 + 3 = 5',
+        confidence: 0.8,
+      }),
       tokensIn: 300,
       tokensOut: 20,
     })
     const result = await transcribeHandwriting(db, input())
     expect(result).toEqual({ text: '2 + 3 = 5', confidence: 0.8 })
     const call = vi.mocked(completeText).mock.calls[0][0]
-    expect(call.images).toEqual([{ mediaType: 'image/jpeg', base64: 'QUJD'.repeat(40) }])
+    expect(call.images).toEqual([
+      { mediaType: 'image/jpeg', base64: 'QUJD'.repeat(40) },
+    ])
     expect(call.prompt).toMatch(/Telugu/)
     expect(call.prompt).toMatch(/Do NOT solve/)
-    const jobs = await db.selectFrom('ai_jobs').select('feature').where('household_id', '=', householdId).execute()
+    const jobs = await db
+      .selectFrom('ai_jobs')
+      .select('feature')
+      .where('household_id', '=', householdId)
+      .execute()
     expect(jobs.map((j) => j.feature)).toContain('AI-06')
   })
 
@@ -70,9 +97,17 @@ describe('transcribeHandwriting (AI-06)', () => {
       tokensOut: 1,
     })
     expect(await transcribeHandwriting(db, input())).toBeNull()
-    vi.mocked(completeText).mockResolvedValue({ text: 'sorry', tokensIn: 1, tokensOut: 1 })
+    vi.mocked(completeText).mockResolvedValue({
+      text: 'sorry',
+      tokensIn: 1,
+      tokensOut: 1,
+    })
     expect(await transcribeHandwriting(db, input())).toBeNull()
-    vi.mocked(completeText).mockResolvedValue({ text: null, tokensIn: 1, tokensOut: 0 })
+    vi.mocked(completeText).mockResolvedValue({
+      text: null,
+      tokensIn: 1,
+      tokensOut: 0,
+    })
     expect(await transcribeHandwriting(db, input())).toBeNull()
   })
 

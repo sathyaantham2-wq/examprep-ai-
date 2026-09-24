@@ -1,12 +1,28 @@
 import type { Db } from '../db/connection'
 import { enforceAiCallBudget, logAiJob } from './ai-metering'
-import { callWithModelFallback, modelForFeature } from './ai-models'
+import { ModelCallError, callWithProviderChain } from './ai-models'
 import { completeText, isAiConfigured } from './ai-provider'
 
 // AI-06 (tab07): handwriting transcription by a vision model.
-const MODEL = modelForFeature('AI-06')
+//
+// 2026-09-24: this now goes through the same cross-vendor chain every other AI-*.ts feature does
+// (see ai-models.ts's callWithProviderChain), but vision is the one case where that's a real risk
+// the others aren't: Groq/Cerebras's default models here (llama-3.3-70b-versatile, gpt-oss-120b)
+// are text-only. If the chain reaches one of them for this feature, the photo is silently ignored
+// rather than read -- the model just answers from the prompt text alone, which asks it to
+// transcribe an image it was never actually given, and it will most likely say so (legible:
+// false) rather than hallucinate a transcription, but this hasn't been exercised against a real
+// text-only model's actual behaviour. If handwriting transcription sees real use, either pin
+// GROQ_MODEL_STRONG / CEREBRAS_MODEL_STRONG to a vision-capable model for those vendors, or -- more
+// robustly -- give AI-06 its own chain that only includes vendors/models known to support images
+// (Anthropic and Gemini both do today).
+const FEATURE = 'AI-06'
 
-export const ALLOWED_IMAGE_TYPES = ['image/jpeg', 'image/png', 'image/webp'] as const
+export const ALLOWED_IMAGE_TYPES = [
+  'image/jpeg',
+  'image/png',
+  'image/webp',
+] as const
 // About 3 MB of image once encoded, which stays under a serverless request-body limit.
 export const MAX_IMAGE_BASE64_CHARS = 4_000_000
 
@@ -32,8 +48,8 @@ export async function transcribeHandwriting(
 ): Promise<TranscriptionResult | null> {
   if (!isAiConfigured()) return null
   await enforceAiCallBudget(db, {
-    feature: 'AI-06',
-    model: MODEL,
+    feature: FEATURE,
+    model: FEATURE,
     householdId: input.householdId,
     studentId: input.studentId,
   })
@@ -53,22 +69,25 @@ Respond with ONLY a JSON object, no other text, matching exactly:
 
   const startedAt = Date.now()
   let response: Awaited<ReturnType<typeof completeText>>
-  let modelUsed = MODEL
+  let modelUsed = FEATURE
   try {
-    const outcome = await callWithModelFallback(MODEL, (model) =>
-      completeText({
-        model,
-        prompt,
-        maxTokens: 1500,
-        images: [{ mediaType: input.mediaType, base64: input.imageBase64 }],
-      }),
+    const outcome = await callWithProviderChain(FEATURE, (provider, model) =>
+      completeText(
+        {
+          model,
+          prompt,
+          maxTokens: 1500,
+          images: [{ mediaType: input.mediaType, base64: input.imageBase64 }],
+        },
+        provider,
+      ),
     )
     response = outcome.result
-    modelUsed = outcome.modelUsed
+    modelUsed = outcome.label
   } catch (err) {
     await logAiJob(db, {
-      feature: 'AI-06',
-      model: MODEL,
+      feature: FEATURE,
+      model: err instanceof ModelCallError ? err.label : FEATURE,
       householdId: input.householdId,
       studentId: input.studentId,
       latencyMs: Date.now() - startedAt,
@@ -78,7 +97,7 @@ Respond with ONLY a JSON object, no other text, matching exactly:
     throw err
   }
   await logAiJob(db, {
-    feature: 'AI-06',
+    feature: FEATURE,
     model: modelUsed,
     householdId: input.householdId,
     studentId: input.studentId,
@@ -90,12 +109,19 @@ Respond with ONLY a JSON object, no other text, matching exactly:
 
   if (!response.text) return null
   try {
-    const parsed = JSON.parse(response.text) as { legible?: boolean; text?: string; confidence?: number }
+    const parsed = JSON.parse(response.text) as {
+      legible?: boolean
+      text?: string
+      confidence?: number
+    }
     const text = typeof parsed.text === 'string' ? parsed.text.trim() : ''
     if (parsed.legible === false || text === '') return null
     return {
       text: text.slice(0, 4000),
-      confidence: typeof parsed.confidence === 'number' ? Math.min(1, Math.max(0, parsed.confidence)) : 0,
+      confidence:
+        typeof parsed.confidence === 'number'
+          ? Math.min(1, Math.max(0, parsed.confidence))
+          : 0,
     }
   } catch {
     return null

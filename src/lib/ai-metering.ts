@@ -2,6 +2,7 @@ import type { Db } from '../db/connection'
 import type { AiJobStatus } from '../db/enums'
 import { aiJobsRepository, notificationsRepository } from '../db/repositories'
 import { activeProvider } from './ai-provider'
+import type { AiProvider } from './ai-provider'
 import { env } from './env'
 
 // Claude Sonnet 5 published rate: $2.00 / 1M input tokens, $10.00 / 1M output tokens. INR
@@ -11,12 +12,61 @@ const USD_PER_1M_INPUT = 2.0
 const USD_PER_1M_OUTPUT = 10.0
 const USD_TO_INR = 83
 
-// Gemini is priced by environment (default 0, the free tier) because its models and prices change.
-function ratesFor(model: string | undefined): { input: number; output: number } {
-  const isGemini = model ? model.startsWith('gemini') : activeProvider() === 'gemini'
-  return isGemini
-    ? { input: env.GEMINI_USD_PER_1M_INPUT ?? 0, output: env.GEMINI_USD_PER_1M_OUTPUT ?? 0 }
-    : { input: USD_PER_1M_INPUT, output: USD_PER_1M_OUTPUT }
+// 2026-09-24: ai_jobs.model is now "provider/model" (src/lib/ai-models.ts's modelLabel), not a
+// bare model name -- necessary once more than one vendor can serve the same feature, since a bare
+// name alone can no longer say which vendor's rate card applies (a Llama model name, for
+// instance, says nothing about whether it ran on Groq, Cerebras or OpenRouter). Rows logged before
+// this change have no "/" and no known provider prefix; those keep falling back to the Gemini-
+// prefix sniff below, which is what they were always priced by.
+function providerFromModel(model: string | undefined): AiProvider | null {
+  if (!model) return activeProvider()
+  const slash = model.indexOf('/')
+  if (slash === -1) return model.startsWith('gemini') ? 'gemini' : null
+  const prefix = model.slice(0, slash)
+  return prefix === 'anthropic' ||
+    prefix === 'gemini' ||
+    prefix === 'groq' ||
+    prefix === 'cerebras' ||
+    prefix === 'openrouter'
+    ? prefix
+    : null
+}
+
+// Every vendor here has a real free tier except Anthropic; each is priced by environment (default
+// 0) the same way Gemini always was, since free-tier availability and pricing both change vendor
+// by vendor and this app has no live billing/FX lookup.
+const FREE_TIER_RATES: Partial<
+  Record<AiProvider, { input: number; output: number }>
+> = {
+  gemini: {
+    input: env.GEMINI_USD_PER_1M_INPUT ?? 0,
+    output: env.GEMINI_USD_PER_1M_OUTPUT ?? 0,
+  },
+  groq: {
+    input: env.GROQ_USD_PER_1M_INPUT ?? 0,
+    output: env.GROQ_USD_PER_1M_OUTPUT ?? 0,
+  },
+  cerebras: {
+    input: env.CEREBRAS_USD_PER_1M_INPUT ?? 0,
+    output: env.CEREBRAS_USD_PER_1M_OUTPUT ?? 0,
+  },
+  openrouter: {
+    input: env.OPENROUTER_USD_PER_1M_INPUT ?? 0,
+    output: env.OPENROUTER_USD_PER_1M_OUTPUT ?? 0,
+  },
+}
+
+function ratesFor(model: string | undefined): {
+  input: number
+  output: number
+} {
+  const provider = providerFromModel(model)
+  return (
+    (provider && FREE_TIER_RATES[provider]) || {
+      input: USD_PER_1M_INPUT,
+      output: USD_PER_1M_OUTPUT,
+    }
+  )
 }
 
 export function estimateCostInr(
@@ -124,7 +174,11 @@ async function alertAdminOnce(
     .executeTakeFirst()
   if (already) return
 
-  const admins = await db.selectFrom('users').select('id').where('role', '=', 'admin').execute()
+  const admins = await db
+    .selectFrom('users')
+    .select('id')
+    .where('role', '=', 'admin')
+    .execute()
   for (const admin of admins) {
     await notificationsRepository.insert(db, {
       user_id: admin.id,
@@ -146,7 +200,12 @@ async function alertAdminOnce(
  */
 export async function enforceAiCallBudget(
   db: Db,
-  input: { feature: string; model: string; householdId: string | null; studentId?: string | null },
+  input: {
+    feature: string
+    model: string
+    householdId: string | null
+    studentId?: string | null
+  },
 ): Promise<void> {
   const today = startOfTodayUtc()
   const since = new Date(`${today}T00:00:00.000Z`)
@@ -173,7 +232,11 @@ export async function enforceAiCallBudget(
   }
 
   if (input.householdId) {
-    const householdCount = await aiJobsRepository.countSince(db, since, input.householdId)
+    const householdCount = await aiJobsRepository.countSince(
+      db,
+      since,
+      input.householdId,
+    )
     if (householdCount >= PER_HOUSEHOLD_DAILY_AI_CALL_CAP) {
       await logAiJob(db, {
         feature: input.feature,
@@ -186,13 +249,20 @@ export async function enforceAiCallBudget(
       })
       throw new AiCapReachedError('household')
     }
-    if (householdCount >= PER_HOUSEHOLD_DAILY_AI_CALL_CAP * CAP_ALERT_THRESHOLD) {
-      await alertAdminOnce(db, `ai_cap_80pct_household_${input.householdId}_${today}`, {
-        scope: 'household',
-        household_id: input.householdId,
-        count: householdCount,
-        cap: PER_HOUSEHOLD_DAILY_AI_CALL_CAP,
-      })
+    if (
+      householdCount >=
+      PER_HOUSEHOLD_DAILY_AI_CALL_CAP * CAP_ALERT_THRESHOLD
+    ) {
+      await alertAdminOnce(
+        db,
+        `ai_cap_80pct_household_${input.householdId}_${today}`,
+        {
+          scope: 'household',
+          household_id: input.householdId,
+          count: householdCount,
+          cap: PER_HOUSEHOLD_DAILY_AI_CALL_CAP,
+        },
+      )
     }
   }
 }

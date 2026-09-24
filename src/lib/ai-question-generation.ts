@@ -2,11 +2,11 @@ import type { Db } from '../db/connection'
 import type { BloomLevel, DifficultyTier, QuestionType } from '../db/enums'
 import { completeText, isAiConfigured } from './ai-provider'
 import { enforceAiCallBudget, logAiJob } from './ai-metering'
-import { ModelCallError, callWithModelFallback, modelForFeature } from './ai-models'
+import { ModelCallError, callWithProviderChain } from './ai-models'
 
 // F094: resolved from tab07's task-to-model map (src/lib/ai-models.ts) rather than a hardcoded
 // literal -- AI-01 is "strong model" tier, same as AI-05's subjective grading.
-const MODEL = modelForFeature('AI-01')
+const FEATURE = 'AI-01'
 
 export function isAiQuestionGenerationConfigured(): boolean {
   return isAiConfigured()
@@ -86,8 +86,8 @@ export async function generateQuestions(
 ): Promise<GenerateQuestionsResult | null> {
   if (!isAiConfigured()) return null
   await enforceAiCallBudget(db, {
-    feature: 'AI-01',
-    model: MODEL,
+    feature: FEATURE,
+    model: FEATURE,
     householdId: input.householdId ?? null,
     studentId: input.studentId,
   })
@@ -139,20 +139,19 @@ Respond with ONLY a JSON array, no other text, each element matching exactly:
 
   const startedAt = Date.now()
   let response: Awaited<ReturnType<typeof completeText>>
-  let modelUsed = MODEL
+  let modelUsed = FEATURE
   try {
-    // F094: one retry against the cheap-tier model on a primary-model failure.
-    const outcome = await callWithModelFallback(MODEL, (model) =>
-      completeText({ model, prompt, maxTokens: 4096 }),
+    // 2026-09-24: tries every configured vendor in priority order, not just one vendor's tiers.
+    const outcome = await callWithProviderChain(FEATURE, (provider, model) =>
+      completeText({ model, prompt, maxTokens: 4096 }, provider),
     )
     response = outcome.result
-    modelUsed = outcome.modelUsed
+    modelUsed = outcome.label
   } catch (err) {
-    // 2026-09-24: log whichever model actually threw (see ai-models.ts's ModelCallError), not
-    // always this constant -- a retry failure was otherwise misattributed to the primary model.
+    // Log whichever (provider, model) pair actually threw last, not a guess.
     await logAiJob(db, {
-      feature: 'AI-01',
-      model: err instanceof ModelCallError ? err.failedModel : MODEL,
+      feature: FEATURE,
+      model: err instanceof ModelCallError ? err.label : FEATURE,
       householdId: input.householdId,
       studentId: input.studentId,
       latencyMs: Date.now() - startedAt,
@@ -166,7 +165,7 @@ Respond with ONLY a JSON array, no other text, each element matching exactly:
     outputTokens: response.tokensOut,
   }
   await logAiJob(db, {
-    feature: 'AI-01',
+    feature: FEATURE,
     model: modelUsed,
     householdId: input.householdId,
     studentId: input.studentId,
@@ -185,7 +184,9 @@ Respond with ONLY a JSON array, no other text, each element matching exactly:
   } catch {
     return {
       accepted: [],
-      rejected: [{ reason: 'Model output was not valid JSON', raw: outputText }],
+      rejected: [
+        { reason: 'Model output was not valid JSON', raw: outputText },
+      ],
       usage,
     }
   }
@@ -226,7 +227,8 @@ export function validateCandidates(
     const c = raw as Record<string, unknown>
     const text = typeof c.text === 'string' ? c.text : ''
     const answer = typeof c.answer === 'string' ? c.answer : ''
-    const inScopeRef = typeof c.in_scope_ref === 'string' ? c.in_scope_ref.trim() : ''
+    const inScopeRef =
+      typeof c.in_scope_ref === 'string' ? c.in_scope_ref.trim() : ''
 
     if (!text || !answer) {
       rejected.push({ reason: 'Missing text or answer', raw })
@@ -244,20 +246,29 @@ export function validateCandidates(
       (out) => out.length > 0 && text.toLowerCase().includes(out),
     )
     if (mentionsOutScope) {
-      rejected.push({ reason: 'Question text references an OUT-of-scope item', raw })
+      rejected.push({
+        reason: 'Question text references an OUT-of-scope item',
+        raw,
+      })
       continue
     }
     if (ctx.isMcq) {
-      const options = Array.isArray(c.options) ? (c.options) : []
+      const options = Array.isArray(c.options) ? c.options : []
       const correctCount = options.filter((o) => o?.is_correct).length
       if (options.length < 2 || correctCount !== 1) {
-        rejected.push({ reason: 'mcq must have >=2 options with exactly one is_correct', raw })
+        rejected.push({
+          reason: 'mcq must have >=2 options with exactly one is_correct',
+          raw,
+        })
         continue
       }
     }
     if (ctx.marks >= 3) {
-      const stepMarks = Array.isArray(c.step_marks) ? (c.step_marks) : []
-      const sum = stepMarks.reduce((total, s) => total + (Number(s?.marks) || 0), 0)
+      const stepMarks = Array.isArray(c.step_marks) ? c.step_marks : []
+      const sum = stepMarks.reduce(
+        (total, s) => total + (Number(s?.marks) || 0),
+        0,
+      )
       if (stepMarks.length === 0 || sum !== ctx.marks) {
         rejected.push({ reason: `step_marks must sum to ${ctx.marks}`, raw })
         continue
@@ -272,10 +283,16 @@ export function validateCandidates(
         ? c.tags.filter((t): t is string => typeof t === 'string')
         : [],
       options: ctx.isMcq
-        ? (c.options as Array<{ label: string; text: string; is_correct: boolean }>)
+        ? (c.options as Array<{
+            label: string
+            text: string
+            is_correct: boolean
+          }>)
         : undefined,
       step_marks:
-        ctx.marks >= 3 ? (c.step_marks as GeneratedQuestionCandidate['step_marks']) : undefined,
+        ctx.marks >= 3
+          ? (c.step_marks as GeneratedQuestionCandidate['step_marks'])
+          : undefined,
       in_scope_ref: inScopeRef,
     })
   }

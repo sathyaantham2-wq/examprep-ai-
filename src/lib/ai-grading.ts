@@ -2,7 +2,7 @@ import type { Db } from '../db/connection'
 import type { ErrorType } from '../db/enums'
 import { completeText, isAiConfigured } from './ai-provider'
 import { enforceAiCallBudget, logAiJob } from './ai-metering'
-import { ModelCallError, callWithModelFallback, modelForFeature } from './ai-models'
+import { ModelCallError, callWithProviderChain } from './ai-models'
 
 const ERROR_TYPES = [
   'Conceptual Gap',
@@ -15,7 +15,7 @@ const ERROR_TYPES = [
 
 // F094: "strong model for generation and grading" -- resolved from tab07's task-to-model map
 // (src/lib/ai-models.ts), not a hardcoded literal, so this stays in sync if that mapping changes.
-const MODEL = modelForFeature('AI-05')
+const FEATURE = 'AI-05'
 
 // Marks proposed with less confidence than this are never used: the answer goes to a person. This
 // is what stops an uncertain AI grade from being confirmed automatically on adaptive papers.
@@ -74,8 +74,8 @@ export async function gradeSubjectiveAnswer(
 ): Promise<SubjectiveGradingResult | null> {
   if (!isAiConfigured()) return null
   await enforceAiCallBudget(db, {
-    feature: 'AI-05',
-    model: MODEL,
+    feature: FEATURE,
+    model: FEATURE,
     householdId: input.householdId,
     studentId: input.studentId,
   })
@@ -104,21 +104,19 @@ Respond with ONLY a JSON object, no other text, matching exactly:
 
   const startedAt = Date.now()
   let response: Awaited<ReturnType<typeof completeText>>
-  let modelUsed = MODEL
+  let modelUsed = FEATURE
   try {
-    // F094: "automatic fallback on failure" -- a primary-model error (rate limit, outage, ...)
-    // gets one retry against the cheap-tier model before this call gives up entirely.
-    const outcome = await callWithModelFallback(MODEL, (model) =>
-      completeText({ model, prompt, maxTokens: 1024 }),
+    // 2026-09-24: tries every configured vendor in priority order, not just one vendor's tiers.
+    const outcome = await callWithProviderChain(FEATURE, (provider, model) =>
+      completeText({ model, prompt, maxTokens: 1024 }, provider),
     )
     response = outcome.result
-    modelUsed = outcome.modelUsed
+    modelUsed = outcome.label
   } catch (err) {
-    // 2026-09-24: log whichever model actually threw (see ai-models.ts's ModelCallError), not
-    // always this constant -- a retry failure was otherwise misattributed to the primary model.
+    // Log whichever (provider, model) pair actually threw last, not a guess.
     await logAiJob(db, {
-      feature: 'AI-05',
-      model: err instanceof ModelCallError ? err.failedModel : MODEL,
+      feature: FEATURE,
+      model: err instanceof ModelCallError ? err.label : FEATURE,
       householdId: input.householdId,
       studentId: input.studentId,
       latencyMs: Date.now() - startedAt,
@@ -162,10 +160,15 @@ Respond with ONLY a JSON object, no other text, matching exactly:
 
   if (result.unreadable) return NEEDS_MANUAL_MARKING
 
-  const confidence = typeof result.confidence === 'number' ? result.confidence : 0
+  const confidence =
+    typeof result.confidence === 'number' ? result.confidence : 0
   if (confidence < MIN_GRADING_CONFIDENCE) return NEEDS_MANUAL_MARKING
 
-  const normalised = normaliseSteps(result.steps ?? [], input.stepMarks, input.marksMax)
+  const normalised = normaliseSteps(
+    result.steps ?? [],
+    input.stepMarks,
+    input.marksMax,
+  )
   if (!normalised) return NEEDS_MANUAL_MARKING
   const { steps, totalMarks } = normalised
 
@@ -199,7 +202,10 @@ export function normaliseSteps(
     .filter((s) => Number.isFinite(s.marks_awarded))
     .map((s) => ({
       ...s,
-      marks_awarded: Math.min(Math.max(s.marks_awarded, 0), schemeMarks.get(s.step_no) ?? marksMax),
+      marks_awarded: Math.min(
+        Math.max(s.marks_awarded, 0),
+        schemeMarks.get(s.step_no) ?? marksMax,
+      ),
     }))
   if (steps.length === 0) return null
   return {
@@ -244,14 +250,17 @@ export async function reviewDisputedAnswer(
 ): Promise<DisputeReviewResult | null> {
   if (!isAiConfigured()) return null
   await enforceAiCallBudget(db, {
-    feature: 'AI-05',
-    model: MODEL,
+    feature: FEATURE,
+    model: FEATURE,
     householdId: input.householdId,
     studentId: input.studentId,
   })
 
   const scheme = input.stepMarks
-    .map((s) => `  Step ${s.step_no} (${s.marks} mark${s.marks === 1 ? '' : 's'}): ${s.description}`)
+    .map(
+      (s) =>
+        `  Step ${s.step_no} (${s.marks} mark${s.marks === 1 ? '' : 's'}): ${s.description}`,
+    )
     .join('\n')
   const prompt = `A school student disagrees with the mark you gave for one exam answer. Re-read the answer with the student's point in mind and mark it again. Be GENEROUS and fair: if the student is right, or their answer is reasonable, raise the mark; if the mark was already right, keep it and explain kindly. You may only keep or raise the mark, never lower it. NEVER reveal the correct answer, a model solution or the marking scheme: say only what the answer showed and what was missing, in general words.
 
@@ -280,19 +289,19 @@ Respond with ONLY a JSON object, no other text, matching exactly:
 
   const startedAt = Date.now()
   let response: Awaited<ReturnType<typeof completeText>>
-  let modelUsed = MODEL
+  let modelUsed = FEATURE
   try {
-    const outcome = await callWithModelFallback(MODEL, (model) =>
-      completeText({ model, prompt, maxTokens: 1024 }),
+    // 2026-09-24: tries every configured vendor in priority order, not just one vendor's tiers.
+    const outcome = await callWithProviderChain(FEATURE, (provider, model) =>
+      completeText({ model, prompt, maxTokens: 1024 }, provider),
     )
     response = outcome.result
-    modelUsed = outcome.modelUsed
+    modelUsed = outcome.label
   } catch (err) {
-    // 2026-09-24: log whichever model actually threw (see ai-models.ts's ModelCallError), not
-    // always this constant -- a retry failure was otherwise misattributed to the primary model.
+    // Log whichever (provider, model) pair actually threw last, not a guess.
     await logAiJob(db, {
-      feature: 'AI-05',
-      model: err instanceof ModelCallError ? err.failedModel : MODEL,
+      feature: FEATURE,
+      model: err instanceof ModelCallError ? err.label : FEATURE,
       householdId: input.householdId,
       studentId: input.studentId,
       latencyMs: Date.now() - startedAt,
@@ -302,7 +311,7 @@ Respond with ONLY a JSON object, no other text, matching exactly:
     throw err
   }
   await logAiJob(db, {
-    feature: 'AI-05',
+    feature: FEATURE,
     model: modelUsed,
     householdId: input.householdId,
     studentId: input.studentId,
@@ -314,12 +323,20 @@ Respond with ONLY a JSON object, no other text, matching exactly:
 
   let parsed: { steps?: Array<RawStep>; reply?: string } | null = null
   try {
-    parsed = response.text ? (JSON.parse(response.text) as { steps?: Array<RawStep>; reply?: string }) : null
+    parsed = response.text
+      ? (JSON.parse(response.text) as {
+          steps?: Array<RawStep>
+          reply?: string
+        })
+      : null
   } catch {
     parsed = null
   }
-  const normalised = parsed ? normaliseSteps(parsed.steps ?? [], input.stepMarks, input.marksMax) : null
-  const reply = typeof parsed?.reply === 'string' ? parsed.reply.trim().slice(0, 600) : ''
+  const normalised = parsed
+    ? normaliseSteps(parsed.steps ?? [], input.stepMarks, input.marksMax)
+    : null
+  const reply =
+    typeof parsed?.reply === 'string' ? parsed.reply.trim().slice(0, 600) : ''
   if (!normalised || reply === '') {
     throw new Error('The re-review could not be read')
   }
