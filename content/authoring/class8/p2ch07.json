@@ -1,0 +1,1999 @@
+{
+  "subject": {
+    "code": "MATH8",
+    "name": "Mathematics",
+    "board": "CBSE",
+    "class": 8
+  },
+  "source": {
+    "publisher": "NCERT",
+    "title": "Ganita Prakash",
+    "edition": "Reprint 2026-27",
+    "year": 2026
+  },
+  "depth": 20,
+  "chapter": {
+    "part": "II",
+    "chapter_no": 7,
+    "name": "Area",
+    "blurb": "Area of a rectangle and square and why perimeter does not measure it; deriving the triangle area formula 1/2 x base x height via an enclosing rectangle and using it to prove equal-area results from a rectangle's diagonals, a triangle's median, and triangles between parallels; finding the area of any polygon by triangulation; dissecting a parallelogram, rhombus and trapezium into a rectangle to derive their area formulas, including the diagonal-product formula for a rhombus; and real-life area units and conversions.",
+    "source_code": "hegp207",
+    "order_index": 14
+  },
+  "scope_in": [
+    {
+      "item": "Area of a rectangle and a square as the count of unit squares covering it (Area = length x width; Area = side x side), and why the perimeter of a region does not determine its area",
+      "pages": "148-153"
+    },
+    {
+      "item": "Deriving the area of a triangle by enclosing it in a rectangle: Area = 1/2 x base x height, shown to hold for right, acute and obtuse triangles, and using it to find an unknown base or height",
+      "pages": "153-155"
+    },
+    {
+      "item": "Applications of the triangle area formula that compare areas without computing them: the four triangles formed by a rectangle's diagonals are equal in area, a median divides a triangle into two equal-area triangles, and triangles sharing a base between the same two parallel lines have equal area",
+      "pages": "155-158"
+    },
+    {
+      "item": "Finding the area of any polygon by triangulation: splitting a quadrilateral along a diagonal into two triangles and adding their areas, and the general principle that any polygon (e.g. a pentagon or hexagon) can be divided into triangles",
+      "pages": "159-160"
+    },
+    {
+      "item": "Deriving the area of a parallelogram by dissecting it into a rectangle: Area = base x height, using any side as the base with its matching perpendicular height",
+      "pages": "161-163"
+    },
+    {
+      "item": "Area of a rhombus: since a rhombus is a parallelogram, base x height applies; the special formula Area = 1/2 x product of the diagonals, derived from the rhombus's diagonals bisecting each other at right angles",
+      "pages": "164-166"
+    },
+    {
+      "item": "Deriving the area of a trapezium by dissection (breaking it into a rectangle and triangles, into a parallelogram and a triangle, or by joining two copies of it into a parallelogram): Area = 1/2 x height x sum of the parallel sides",
+      "pages": "166-170"
+    },
+    {
+      "item": "Area units and conversions used in real life: 1 in = 2.54 cm, 1 ft = 12 in, 1 in2 = 6.4516 cm2, 1 acre = 43,560 ft2, and larger areas measured in m2 and km2, applied to estimating everyday areas such as an A4 sheet, a room or a plot of land",
+      "pages": "170-171"
+    }
+  ],
+  "scope_out": [
+    {
+      "item": "The reflection/mirror-image proof that the minimum-perimeter triangle between two parallel lines with a common base is found using the perpendicular bisector",
+      "reason": "This is an exploratory 'Math Talk' investigation about minimum perimeter (pp. 156-157), not about area, and it is not restated in the chapter's own SUMMARY of what it taught"
+    },
+    {
+      "item": "The Sulba-Sutra and Euclid's Elements dissection problems posed as open-ended 'give a method' construction tasks, such as converting a rectangle into a triangle of equal area or an isosceles triangle into a rectangle",
+      "reason": "These are hands-on construction and investigation exercises inviting the reader's own method rather than a single computable factual answer; they are illustrative asides the chapter does not restate as a testable rule"
+    },
+    {
+      "item": "Numeric conversion factors for local area units such as bigha, gaj, katha, dhur, cent and ankanam",
+      "reason": "The chapter only names these as units that vary by region and asks the reader to find out the local one; no conversion factor for any of them is given in the book"
+    },
+    {
+      "item": "The actual areas of real cities, villages, towns, or the largest/smallest cities in India and the world",
+      "reason": "These are open 'find out' research prompts on p. 171 with no answer given in the chapter, not stated facts"
+    },
+    {
+      "item": "The Learning Material Sheets and isometric grid pages at the end of the PDF (printed pages 172-176)",
+      "reason": "These are blank grid and dot paper provided for hands-on cutting, folding and drawing activities, not chapter content with facts or formulas to test"
+    },
+    {
+      "item": "Perimeter formulas as a topic in their own right, and the area of a circle",
+      "reason": "Perimeter is used only as a foil to explain why it cannot measure area; the area of a circle is not discussed anywhere in this chapter, which covers only triangles and quadrilaterals"
+    }
+  ],
+  "concepts": [
+    {
+      "code": "C8M-7.1",
+      "name": "Area of a rectangle and square, and why perimeter is not area",
+      "description": "Measuring area by counting unit squares, the formula Area = length x width for a rectangle (and side squared for a square), and why the perimeter of a region does not determine its area.",
+      "idea": "Area is the number of unit squares (or fractions of them) that cover a region; two regions can share a perimeter yet have different areas, so perimeter never measures area.",
+      "rule": "Area of a rectangle = length x width; area of a square of side s = s x s. Two regions can have equal perimeters but different areas, and a region with a larger perimeter can have a smaller area than one with a smaller perimeter -- perimeter is not indicative of area.",
+      "example": "A 7 cm by 4 cm rectangle and an 8 cm by 3 cm rectangle both have perimeter 22 cm, since 2x(7+4)=22 and 2x(8+3)=22, yet their areas are 28 cm2 and 24 cm2, which are different.",
+      "difficulty_base": "Easy",
+      "questions": [
+        {
+          "b": "Remember",
+          "d": "Easy",
+          "t": "fill_blank",
+          "m": 1,
+          "q": "The area of a rectangle is length times ____.",
+          "a": "width"
+        },
+        {
+          "b": "Remember",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "Area of a rectangle with length 7 cm and width 4 cm is",
+          "a": "28 cm2",
+          "o": [
+            "28 cm2",
+            "22 cm2",
+            "24 cm2",
+            "11 cm2"
+          ]
+        },
+        {
+          "b": "Remember",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "Area is measured by counting the number of ____ that cover a region.",
+          "a": "unit squares",
+          "o": [
+            "unit squares",
+            "boundary lines",
+            "diagonals",
+            "vertices"
+          ]
+        },
+        {
+          "b": "Remember",
+          "d": "Hard",
+          "t": "mcq",
+          "m": 1,
+          "q": "A square has side length 9 cm. Its area is",
+          "a": "81 cm2",
+          "o": [
+            "81 cm2",
+            "36 cm2",
+            "18 cm2",
+            "729 cm2"
+          ]
+        },
+        {
+          "b": "Understand",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "Which best explains why perimeter cannot be used to measure area?",
+          "a": "Regions with equal perimeters can enclose different areas",
+          "o": [
+            "Regions with equal perimeters can enclose different areas",
+            "Perimeter is always larger than area",
+            "Area and perimeter use different units only",
+            "Only squares have a fixed perimeter"
+          ]
+        },
+        {
+          "b": "Understand",
+          "d": "Easy",
+          "t": "fill_blank",
+          "m": 1,
+          "q": "A rectangle 7 cm by 4 cm and a rectangle 8 cm by 3 cm both have perimeter ____ cm.",
+          "a": "22"
+        },
+        {
+          "b": "Understand",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "Two rectangles can have the same perimeter but different areas because area depends on the product of length and width, while perimeter depends on their",
+          "a": "sum",
+          "o": [
+            "sum",
+            "product",
+            "difference",
+            "ratio"
+          ]
+        },
+        {
+          "b": "Understand",
+          "d": "Hard",
+          "t": "mcq",
+          "m": 1,
+          "q": "A 7 cm by 4 cm rectangle and an 8 cm by 3 cm rectangle both have perimeter 22 cm. Which has the greater area, and by how much?",
+          "a": "The 7 cm by 4 cm rectangle, by 4 cm2",
+          "o": [
+            "The 7 cm by 4 cm rectangle, by 4 cm2",
+            "The 8 cm by 3 cm rectangle, by 4 cm2",
+            "The 7 cm by 4 cm rectangle, by 22 cm2",
+            "Both have the same area since the perimeters are equal"
+          ]
+        },
+        {
+          "b": "Understand",
+          "d": "Hard",
+          "t": "short_answer",
+          "m": 2,
+          "q": "A rectangular park is 12 m long and 8 m wide. Find its area, and state whether doubling both the length and width will double the area.",
+          "a": "Area = 12x8 = 96 m2; doubling both sides gives 24x16 = 384 m2, which is 4 times as much, not double.",
+          "s": [
+            [
+              "Area 96 m2",
+              1
+            ],
+            [
+              "Doubling effect explained",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "A square has area 64 cm2. Its side length is",
+          "a": "8 cm",
+          "o": [
+            "8 cm",
+            "16 cm",
+            "32 cm",
+            "4 cm"
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "A rectangular tile is 25 cm long and 20 cm wide. Its area is",
+          "a": "500 cm2",
+          "o": [
+            "500 cm2",
+            "450 cm2",
+            "45 cm2",
+            "1000 cm2"
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Hard",
+          "t": "short_answer",
+          "m": 2,
+          "q": "The area of a rectangle is 96 cm2 and its length is 12 cm. Find its width and its perimeter.",
+          "a": "Width = 96/12 = 8 cm; Perimeter = 2x(12+8) = 40 cm.",
+          "s": [
+            [
+              "Width 8 cm",
+              1
+            ],
+            [
+              "Perimeter 40 cm",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Hard",
+          "t": "short_answer",
+          "m": 2,
+          "q": "A rectangle on grid paper covers exactly 45 unit squares, arranged with 9 squares along one side. How many unit squares lie along the other side, and what are the rectangle's dimensions if each unit square has side 1 cm?",
+          "a": "45/9 = 5 squares along the other side; the rectangle is 9 cm by 5 cm.",
+          "s": [
+            [
+              "5 squares",
+              1
+            ],
+            [
+              "Dimensions 9 cm by 5 cm",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Hard",
+          "t": "mcq",
+          "m": 1,
+          "q": "A room is 6 m by 5 m. A carpet covering it costs Rs 150 per m2. What is the total cost of carpeting the room?",
+          "a": "Rs 4500",
+          "o": [
+            "Rs 4500",
+            "Rs 3300",
+            "Rs 2250",
+            "Rs 1650"
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Hardest",
+          "t": "long_answer",
+          "m": 3,
+          "q": "A square lawn of side 20 m has a path of uniform width 2 m built all around it on the outside. Find the area of the path.",
+          "a": "Outer square side = 20+2+2 = 24 m, outer area = 576 m2; lawn area = 400 m2; path area = 576-400 = 176 m2.",
+          "s": [
+            [
+              "Outer side 24 m",
+              1
+            ],
+            [
+              "Outer area 576 m2, lawn area 400 m2",
+              1
+            ],
+            [
+              "Path area 176 m2",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Analyse",
+          "d": "Hard",
+          "t": "assertion_reason",
+          "m": 1,
+          "q": "Assertion (A): The 7 cm by 4 cm rectangle and the 8 cm by 3 cm rectangle have equal area. Reason (R): Both rectangles have the same perimeter, 22 cm.",
+          "a": "A is false but R is true",
+          "o": [
+            "A is false but R is true",
+            "Both A and R are true, and R is the correct explanation of A",
+            "Both A and R are true, but R is not the correct explanation of A",
+            "A is true but R is false"
+          ]
+        },
+        {
+          "b": "Analyse",
+          "d": "Hard",
+          "t": "multi_statement",
+          "m": 1,
+          "q": "Consider: (I) Two rectangles with the same perimeter always have the same area. (II) A rectangle 7 cm by 4 cm and a rectangle 8 cm by 3 cm both have perimeter 22 cm but different areas. Which is or are correct?",
+          "a": "Only II",
+          "o": [
+            "Only II",
+            "Only I",
+            "Both I and II",
+            "Neither I nor II"
+          ]
+        },
+        {
+          "b": "Analyse",
+          "d": "Hardest",
+          "t": "long_answer",
+          "m": 3,
+          "q": "Explain, using the 7 cm by 4 cm and 8 cm by 3 cm rectangles (both of perimeter 22 cm), why perimeter cannot be used as a measure of area.",
+          "a": "Both rectangles have the same perimeter, 22 cm, since 2x(7+4)=22 and 2x(8+3)=22. But their areas are 28 cm2 and 24 cm2, which are different. So two regions with equal perimeter can have different areas, showing perimeter does not determine area.",
+          "s": [
+            [
+              "Equal perimeters shown",
+              1
+            ],
+            [
+              "Areas computed and shown to differ",
+              1
+            ],
+            [
+              "Conclusion about perimeter stated",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Evaluate",
+          "d": "Hard",
+          "t": "short_answer",
+          "m": 2,
+          "q": "A farmer can build a rectangular pen with 40 m of fencing (perimeter 40 m). Should he choose a 15 m by 5 m pen or a 10 m by 10 m pen to enclose the most area? Justify.",
+          "a": "The 10 m by 10 m (square) pen, since its area is 100 m2, more than the 15 m by 5 m pen's area of 75 m2, even though both use the same 40 m of fencing.",
+          "s": [
+            [
+              "Correct choice",
+              1
+            ],
+            [
+              "Reason with areas compared",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Create",
+          "d": "Hardest",
+          "t": "long_answer",
+          "m": 3,
+          "q": "Design two different rectangles, each with perimeter 28 cm, and find and compare their areas.",
+          "a": "For example, a 10 cm by 4 cm rectangle (perimeter 28 cm, area 40 cm2) and a 7 cm by 7 cm square (perimeter 28 cm, area 49 cm2); the square has the greater area.",
+          "s": [
+            [
+              "Two valid rectangles with perimeter 28 cm",
+              1
+            ],
+            [
+              "Areas computed correctly",
+              1
+            ],
+            [
+              "Comparison made",
+              1
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "code": "C8M-7.2",
+      "name": "Area of a triangle: formula and derivation",
+      "description": "Deriving the triangle area formula by enclosing a triangle in a rectangle, and showing the formula holds for every triangle, including obtuse ones.",
+      "idea": "A triangle's area is half the area of a rectangle built on its base and height, so Area = half times base times height, for any triangle.",
+      "rule": "Draw a rectangle around the triangle using its base and height (the perpendicular distance from the opposite vertex to the base or its extension). The triangle covers exactly half this rectangle, so Area of a triangle = 1/2 x base x height. For an obtuse triangle, where the foot of the perpendicular falls outside the base, the same formula is obtained as the difference of two right-triangle areas: Area(ABC) = 1/2 x h x DC - 1/2 x h x DB = 1/2 x h x BC.",
+      "example": "A rectangle with sidelengths 7 cm and 4 cm is split by its diagonal into two triangles, each of area 1/2x7x4 = 14 cm2.",
+      "difficulty_base": "Easy",
+      "questions": [
+        {
+          "b": "Remember",
+          "d": "Easy",
+          "t": "fill_blank",
+          "m": 1,
+          "q": "Area of a triangle = 1/2 x base x ____.",
+          "a": "height"
+        },
+        {
+          "b": "Remember",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "The area of a triangle with base 10 cm and height 6 cm is",
+          "a": "30 cm2",
+          "o": [
+            "30 cm2",
+            "60 cm2",
+            "12 cm2",
+            "8 cm2"
+          ]
+        },
+        {
+          "b": "Remember",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "In the formula for the area of a triangle, the height means",
+          "a": "the perpendicular distance from the opposite vertex to the base",
+          "o": [
+            "the perpendicular distance from the opposite vertex to the base",
+            "any side of the triangle other than the base",
+            "the longest side of the triangle",
+            "the distance between the two ends of the base"
+          ]
+        },
+        {
+          "b": "Remember",
+          "d": "Hard",
+          "t": "mcq",
+          "m": 1,
+          "q": "A triangle has area 40 cm2 and base 8 cm. Its height is",
+          "a": "10 cm",
+          "o": [
+            "10 cm",
+            "5 cm",
+            "2.5 cm",
+            "160 cm"
+          ]
+        },
+        {
+          "b": "Understand",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "The diagonal of a rectangle divides it into two triangles that are",
+          "a": "congruent, and each has half the rectangle's area",
+          "o": [
+            "congruent, and each has half the rectangle's area",
+            "similar but not congruent",
+            "equal in perimeter only, not area",
+            "unequal in area"
+          ]
+        },
+        {
+          "b": "Understand",
+          "d": "Easy",
+          "t": "fill_blank",
+          "m": 1,
+          "q": "A rectangle with sidelengths 7 cm and 4 cm is divided by its diagonal into two triangles, each of area ____ cm2.",
+          "a": "14"
+        },
+        {
+          "b": "Understand",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "For the area formula of a triangle to apply, the base and height must be",
+          "a": "perpendicular to each other",
+          "o": [
+            "perpendicular to each other",
+            "equal in length",
+            "both odd numbers",
+            "measured in different units"
+          ]
+        },
+        {
+          "b": "Understand",
+          "d": "Hard",
+          "t": "mcq",
+          "m": 1,
+          "q": "For an obtuse triangle, where does the foot of the perpendicular from the apex to the base line often fall?",
+          "a": "outside the base, on its extension",
+          "o": [
+            "outside the base, on its extension",
+            "exactly at the midpoint of the base",
+            "always inside the base",
+            "at one of the two base vertices"
+          ]
+        },
+        {
+          "b": "Understand",
+          "d": "Hard",
+          "t": "short_answer",
+          "m": 2,
+          "q": "Explain in your own words why the formula Area = 1/2 x base x height still works for a triangle where the height falls outside the base.",
+          "a": "The triangle's area can be found as the difference of two right-triangle areas, each half of a rectangle, and this difference simplifies to 1/2 x height x base, the same formula as before.",
+          "s": [
+            [
+              "Difference-of-two-areas idea",
+              1
+            ],
+            [
+              "Simplifies to the same formula",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "A triangle has base 12 cm and height 9 cm. Its area is",
+          "a": "54 cm2",
+          "o": [
+            "54 cm2",
+            "108 cm2",
+            "21 cm2",
+            "4.5 cm2"
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "A right triangle has legs 6 cm and 8 cm meeting at the right angle. Taking these legs as base and height, its area is",
+          "a": "24 cm2",
+          "o": [
+            "24 cm2",
+            "48 cm2",
+            "14 cm2",
+            "10 cm2"
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Hard",
+          "t": "short_answer",
+          "m": 2,
+          "q": "A triangular flag has area 60 cm2 and height 15 cm measured from the base. Find the base.",
+          "a": "Base = (2x60)/15 = 8 cm.",
+          "s": [
+            [
+              "Formula rearranged correctly",
+              1
+            ],
+            [
+              "Base = 8 cm",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Hard",
+          "t": "short_answer",
+          "m": 2,
+          "q": "Triangle ABC has AX perpendicular to BC with AX = 5 units and BC = 6 units. Find Area(ABC), and then find BY if BY is perpendicular to AC and AC = 4 units.",
+          "a": "Area = 1/2x6x5 = 15 sq units. Using AC as base, 15 = 1/2x4xBY, so BY = 30/4 = 7.5 units.",
+          "s": [
+            [
+              "Area = 15 sq units",
+              1
+            ],
+            [
+              "BY = 7.5 units",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Hard",
+          "t": "mcq",
+          "m": 1,
+          "q": "A triangular plot has base 18 m and height 11 m. Mesh fencing to cover it costs Rs 80 per m2. Find the total cost.",
+          "a": "Rs 7920",
+          "o": [
+            "Rs 7920",
+            "Rs 15840",
+            "Rs 2320",
+            "Rs 3960"
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Hardest",
+          "t": "long_answer",
+          "m": 3,
+          "q": "A field is triangular with base 40 m. Its height is 3 m more than half the base. Find the height and the area of the field.",
+          "a": "Half the base = 20 m, so height = 20+3 = 23 m. Area = 1/2x40x23 = 460 m2.",
+          "s": [
+            [
+              "Height = 23 m",
+              1
+            ],
+            [
+              "Area formula applied",
+              1
+            ],
+            [
+              "Area = 460 m2",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Analyse",
+          "d": "Hard",
+          "t": "assertion_reason",
+          "m": 1,
+          "q": "Assertion (A): The area of a triangle with base 10 cm and height 6 cm is 30 cm2. Reason (R): Area of a triangle = 1/2 x base x height, and 1/2x10x6 = 30.",
+          "a": "Both A and R are true, and R is the correct explanation of A",
+          "o": [
+            "Both A and R are true, and R is the correct explanation of A",
+            "Both A and R are true, but R is not the correct explanation of A",
+            "A is true but R is false",
+            "A is false but R is true"
+          ]
+        },
+        {
+          "b": "Analyse",
+          "d": "Hard",
+          "t": "multi_statement",
+          "m": 1,
+          "q": "Consider: (I) The formula Area = 1/2 x base x height holds only for right-angled triangles. (II) The formula Area = 1/2 x base x height holds for every triangle, including obtuse ones. Which is or are correct?",
+          "a": "Only II",
+          "o": [
+            "Only II",
+            "Only I",
+            "Both I and II",
+            "Neither I nor II"
+          ]
+        },
+        {
+          "b": "Analyse",
+          "d": "Hardest",
+          "t": "long_answer",
+          "m": 3,
+          "q": "In rectangle ABCD, diagonal AC is drawn. Explain step by step why Area(ABC) = Area(ACD), and state what fraction each is of the rectangle's area.",
+          "a": "In triangles ABC and ACD, AB=CD and BC=AD (opposite sides of the rectangle), and AC is common, so by SSS, triangle ABC is congruent to triangle ACD. Congruent triangles have equal area. Since the two triangles together make up the whole rectangle with no overlap, and their areas are equal, each is exactly half of the rectangle's area.",
+          "s": [
+            [
+              "SSS congruence set up",
+              1
+            ],
+            [
+              "Equal area follows from congruence",
+              1
+            ],
+            [
+              "Each is half the rectangle, reasoned",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Evaluate",
+          "d": "Hard",
+          "t": "short_answer",
+          "m": 2,
+          "q": "A student says, 'Since Area = 1/2 x base x height, if I double the base, the area always doubles, no matter what.' Is this true? Justify.",
+          "a": "True, provided the height stays the same, because area is directly proportional to the base when height is fixed; doubling the base doubles the product and hence the area.",
+          "s": [
+            [
+              "Judgement stated (true, with condition)",
+              1
+            ],
+            [
+              "Justification given",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Create",
+          "d": "Hardest",
+          "t": "long_answer",
+          "m": 3,
+          "q": "Sketch and describe two different triangles, both with area 24 cm2, one with an obtuse angle and one right-angled. Give their base and height.",
+          "a": "For example, a right triangle with base 8 cm and height 6 cm (1/2x8x6=24), and an obtuse triangle with base 12 cm and height 4 cm (1/2x12x4=24), where the height falls outside the base.",
+          "s": [
+            [
+              "Right triangle example valid",
+              1
+            ],
+            [
+              "Obtuse triangle example valid",
+              1
+            ],
+            [
+              "Both areas equal 24 cm2",
+              1
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "code": "C8M-7.3",
+      "name": "Equal-area results from the triangle area formula",
+      "description": "Using the fact that a triangle's area depends only on its base and height to show, without computing either area, that certain pairs of triangles have equal area.",
+      "idea": "Because area depends only on base and height, a rectangle's diagonals, a triangle's median, and triangles sharing a base between two parallel lines all produce triangles of provably equal area.",
+      "rule": "The diagonals of a rectangle divide it into 4 triangles of equal area, since opposite triangles share equal bases (halves of the diagonals, which bisect each other) and the same height. A median (from a vertex to the midpoint of the opposite side) divides a triangle into two triangles of equal area, since they share equal bases and the same height from the opposite vertex. Triangles with the same base and third vertex on a line parallel to the base all have equal area, since they share the same base and the same perpendicular height.",
+      "example": "In rectangle ABCD with diagonals meeting at O, triangles AOB, BOC, COD and DOA all have equal area, each one-quarter of the rectangle.",
+      "difficulty_base": "Easy",
+      "questions": [
+        {
+          "b": "Remember",
+          "d": "Easy",
+          "t": "fill_blank",
+          "m": 1,
+          "q": "The line from a vertex of a triangle to the midpoint of the opposite side is called a ____.",
+          "a": "median"
+        },
+        {
+          "b": "Remember",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "The diagonals of a rectangle always",
+          "a": "bisect each other",
+          "o": [
+            "bisect each other",
+            "are perpendicular to each other",
+            "are equal to the sides",
+            "trisect each other"
+          ]
+        },
+        {
+          "b": "Remember",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "A median of a triangle divides it into two triangles of",
+          "a": "equal area",
+          "o": [
+            "equal area",
+            "equal perimeter",
+            "equal height only",
+            "unequal area always"
+          ]
+        },
+        {
+          "b": "Remember",
+          "d": "Hard",
+          "t": "mcq",
+          "m": 1,
+          "q": "Triangles sharing the same base and having their third vertex on a line parallel to the base have equal areas because they share the same",
+          "a": "base and perpendicular height",
+          "o": [
+            "base and perpendicular height",
+            "perimeter",
+            "third side",
+            "angle at the apex"
+          ]
+        },
+        {
+          "b": "Understand",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "Why do the two triangles formed by a rectangle's diagonal have equal area?",
+          "a": "They are congruent, since the diagonal splits the rectangle into two mirror-image triangles",
+          "o": [
+            "They are congruent, since the diagonal splits the rectangle into two mirror-image triangles",
+            "They have different bases but the same height",
+            "One is always larger because rectangles are not symmetric",
+            "Only squares have this property"
+          ]
+        },
+        {
+          "b": "Understand",
+          "d": "Easy",
+          "t": "fill_blank",
+          "m": 1,
+          "q": "If a rectangle's diagonals divide it into 4 triangles, each triangle is ____ of the rectangle's total area.",
+          "a": "one-quarter"
+        },
+        {
+          "b": "Understand",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "A triangle is split by a median into two smaller triangles. What must be true of the two smaller triangles' bases?",
+          "a": "They are equal, since the median goes to the midpoint",
+          "o": [
+            "They are equal, since the median goes to the midpoint",
+            "They are in ratio 2:1",
+            "One base is always zero",
+            "They depend on which vertex is chosen"
+          ]
+        },
+        {
+          "b": "Understand",
+          "d": "Hard",
+          "t": "mcq",
+          "m": 1,
+          "q": "Two triangles share the same base BC. Their third vertices, A and A', both lie on a line l parallel to BC. What can we conclude?",
+          "a": "Both triangles have equal area, since they have equal base and equal height",
+          "o": [
+            "Both triangles have equal area, since they have equal base and equal height",
+            "The triangles are congruent to each other",
+            "Triangle A has a larger area since it is drawn first",
+            "No conclusion can be drawn without knowing the exact position of A and A'"
+          ]
+        },
+        {
+          "b": "Understand",
+          "d": "Hard",
+          "t": "short_answer",
+          "m": 2,
+          "q": "A rectangle's diagonals meet at O. Explain why triangle AOB and triangle COD, which are opposite each other, have equal areas.",
+          "a": "OB = OD and OA = OC since the diagonals bisect each other, and the vertical angles at O are equal, so the triangles are congruent by SAS, giving equal areas.",
+          "s": [
+            [
+              "Diagonals bisect, equal segments noted",
+              1
+            ],
+            [
+              "Congruence gives equal area",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "A rectangle has area 60 cm2. Its diagonals divide it into 4 triangles. What is the area of each triangle?",
+          "a": "15 cm2",
+          "o": [
+            "15 cm2",
+            "30 cm2",
+            "12 cm2",
+            "7.5 cm2"
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "A triangle has area 50 cm2. A median is drawn from one vertex. What is the area of each of the two smaller triangles formed?",
+          "a": "25 cm2",
+          "o": [
+            "25 cm2",
+            "50 cm2",
+            "100 cm2",
+            "12.5 cm2"
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Hard",
+          "t": "short_answer",
+          "m": 2,
+          "q": "In triangle PQR, area = 84 cm2. M is the midpoint of QR. Find Area(PQM) and Area(PMR).",
+          "a": "Both equal 42 cm2, since PM is a median and splits the triangle into two equal-area parts.",
+          "s": [
+            [
+              "Each area = 42 cm2",
+              1
+            ],
+            [
+              "Reason: median gives equal areas",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Hard",
+          "t": "short_answer",
+          "m": 2,
+          "q": "Rectangle WXYZ has area 96 cm2. Diagonals meet at O. Find the area of triangle WOX, and state what fraction it is of the whole rectangle.",
+          "a": "Area(WOX) = 96/4 = 24 cm2, which is one-quarter of the rectangle.",
+          "s": [
+            [
+              "24 cm2",
+              1
+            ],
+            [
+              "One-quarter fraction stated",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Hard",
+          "t": "mcq",
+          "m": 1,
+          "q": "Line l is parallel to BC and 5 cm from it. BC = 12 cm. A triangle has its third vertex anywhere on l. What is the area of every such triangle?",
+          "a": "30 cm2",
+          "o": [
+            "30 cm2",
+            "60 cm2",
+            "17 cm2",
+            "8.5 cm2"
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Hardest",
+          "t": "long_answer",
+          "m": 3,
+          "q": "A rectangular garden PQRS has area 200 m2. Its diagonals meet at O, dividing it into 4 triangular beds. If a fifth, separate flower bed equal in area to one of these triangular beds is added, what is the total area of the garden plus the new bed?",
+          "a": "Each triangular bed = 200/4 = 50 m2. Adding one more bed of 50 m2 gives a total of 200+50 = 250 m2.",
+          "s": [
+            [
+              "Each bed = 50 m2",
+              1
+            ],
+            [
+              "New bed = 50 m2 noted",
+              1
+            ],
+            [
+              "Total = 250 m2",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Analyse",
+          "d": "Hard",
+          "t": "assertion_reason",
+          "m": 1,
+          "q": "Assertion (A): In a rectangle, the two triangles formed by one diagonal always have equal area. Reason (R): The diagonal divides the rectangle into two congruent triangles.",
+          "a": "Both A and R are true, and R is the correct explanation of A",
+          "o": [
+            "Both A and R are true, and R is the correct explanation of A",
+            "Both A and R are true, but R is not the correct explanation of A",
+            "A is true but R is false",
+            "A is false but R is true"
+          ]
+        },
+        {
+          "b": "Analyse",
+          "d": "Hard",
+          "t": "multi_statement",
+          "m": 1,
+          "q": "Consider: (I) A median of a triangle divides it into two triangles of equal area. (II) Two triangles with the same base but lying on different parallel lines, at different distances from the base, always have equal area. Which is or are correct?",
+          "a": "Only I",
+          "o": [
+            "Only I",
+            "Only II",
+            "Both I and II",
+            "Neither I nor II"
+          ]
+        },
+        {
+          "b": "Analyse",
+          "d": "Hardest",
+          "t": "long_answer",
+          "m": 3,
+          "q": "In rectangle ABCD, diagonal AC divides it into triangles ABC and ACD. Prove using congruency that these two triangles have equal area, and then explain why each is exactly half of the rectangle.",
+          "a": "In triangles ABC and ACD, AB=CD, BC=AD (opposite sides of a rectangle) and AC is common, so by SSS, triangle ABC is congruent to triangle ACD. Congruent triangles have equal area. Since the two triangles together make up the whole rectangle with no overlap, and their areas are equal, each is exactly half of the rectangle's area.",
+          "s": [
+            [
+              "SSS congruence set up",
+              1
+            ],
+            [
+              "Equal area from congruence",
+              1
+            ],
+            [
+              "Each is half, reasoning given",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Evaluate",
+          "d": "Hard",
+          "t": "short_answer",
+          "m": 2,
+          "q": "A classmate says finding the area of each of the 4 rectangle-diagonal triangles requires measuring all 4 triangles separately. Do you agree? Justify a faster method.",
+          "a": "No; since all 4 triangles have equal area, each one-quarter of the rectangle, it is enough to compute the rectangle's area once and divide by 4.",
+          "s": [
+            [
+              "Disagree, correctly",
+              1
+            ],
+            [
+              "Faster method justified",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Create",
+          "d": "Hardest",
+          "t": "long_answer",
+          "m": 3,
+          "q": "Design a triangle PQR with area 40 cm2 and then describe how to draw a second triangle PQR' with the same base PQ and the same area, but a different shape from the first.",
+          "a": "For example, PQ = 10 cm and height 8 cm gives area 40 cm2 (1/2x10x8). Drawing a line through R parallel to PQ, at the same 8 cm distance, and choosing any other point R' on it (not equal to R) gives a second, differently shaped triangle PQR' with the same base and height, hence the same area 40 cm2.",
+          "s": [
+            [
+              "Valid first triangle given",
+              1
+            ],
+            [
+              "Method for second triangle via a parallel line",
+              1
+            ],
+            [
+              "Explains equal area, different shape",
+              1
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "code": "C8M-7.4",
+      "name": "Area of any polygon by triangulation",
+      "description": "Finding the area of a quadrilateral or any polygon by splitting it into triangles and adding their areas.",
+      "idea": "Any polygon can be divided into triangles, so once we know how to find a triangle's area, we can find the area of any polygon by adding up the triangles' areas.",
+      "rule": "A diagonal of a quadrilateral divides it into two triangles; the sum of their areas is the quadrilateral's area. A pentagon can be divided into three triangles from one vertex, and in general any n-sided polygon can always be divided into triangles.",
+      "example": "In quadrilateral ABCD, diagonal AC = 22 cm; BM is perpendicular to AC with BM = 3 cm and DN is perpendicular to AC with DN = 3 cm. Area(ABCD) = Area(ABC) + Area(ACD) = 1/2x22x3 + 1/2x22x3 = 33+33 = 66 cm2.",
+      "difficulty_base": "Easy",
+      "questions": [
+        {
+          "b": "Remember",
+          "d": "Easy",
+          "t": "fill_blank",
+          "m": 1,
+          "q": "Any polygon can always be divided into ____.",
+          "a": "triangles"
+        },
+        {
+          "b": "Remember",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "A diagonal of a quadrilateral divides it into",
+          "a": "two triangles",
+          "o": [
+            "two triangles",
+            "two rectangles",
+            "two trapeziums",
+            "three triangles"
+          ]
+        },
+        {
+          "b": "Remember",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "To find the area of a quadrilateral using a diagonal, we",
+          "a": "add the areas of the two triangles formed",
+          "o": [
+            "add the areas of the two triangles formed",
+            "subtract the smaller triangle's area from the larger",
+            "multiply the two triangles' areas",
+            "find the average of the two triangles' areas"
+          ]
+        },
+        {
+          "b": "Remember",
+          "d": "Hard",
+          "t": "mcq",
+          "m": 1,
+          "q": "A pentagon can be divided into triangles from one of its vertices by drawing",
+          "a": "diagonals from that vertex to the other non-adjacent vertices",
+          "o": [
+            "diagonals from that vertex to the other non-adjacent vertices",
+            "a single line through its centre",
+            "perpendiculars to every side",
+            "circles inscribed in each corner"
+          ]
+        },
+        {
+          "b": "Understand",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "Why can any polygon's area be found once we know how to find a triangle's area?",
+          "a": "Because every polygon can be broken into triangles, and their areas simply add up",
+          "o": [
+            "Because every polygon can be broken into triangles, and their areas simply add up",
+            "Because every polygon is actually a triangle in disguise",
+            "Because polygons and triangles have the same perimeter formula",
+            "Because only 4-sided polygons can be divided this way"
+          ]
+        },
+        {
+          "b": "Understand",
+          "d": "Easy",
+          "t": "fill_blank",
+          "m": 1,
+          "q": "In quadrilateral ABCD, if diagonal AC divides it into triangle ABC and triangle ACD, then Area(ABCD) = Area(ABC) + Area(____).",
+          "a": "ACD"
+        },
+        {
+          "b": "Understand",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "For quadrilateral ABCD with diagonal AC, what extra measurements are needed to find its area by triangulation?",
+          "a": "the length of AC and the perpendicular heights from B and D onto AC",
+          "o": [
+            "the length of AC and the perpendicular heights from B and D onto AC",
+            "only the length of AC",
+            "only the perimeter of ABCD",
+            "the lengths of AB, BC, CD and DA only"
+          ]
+        },
+        {
+          "b": "Understand",
+          "d": "Hard",
+          "t": "mcq",
+          "m": 1,
+          "q": "A hexagon is divided into triangles from one vertex. How many triangles are formed?",
+          "a": "4",
+          "o": [
+            "4",
+            "6",
+            "3",
+            "5"
+          ]
+        },
+        {
+          "b": "Understand",
+          "d": "Hard",
+          "t": "short_answer",
+          "m": 2,
+          "q": "Explain why joining diagonal BD instead of AC in a quadrilateral ABCD might give a different pair of triangles but the same total area.",
+          "a": "Either diagonal splits the same quadrilateral into two triangles that together cover exactly the same region with no gaps or overlaps, so their combined area must equal the quadrilateral's area either way.",
+          "s": [
+            [
+              "Two triangles cover the same region",
+              1
+            ],
+            [
+              "So total area is the same either way",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "Quadrilateral ABCD has diagonal AC = 10 cm. BM is perpendicular to AC with BM = 4 cm and DN is perpendicular to AC with DN = 6 cm. Find its area.",
+          "a": "50 cm2",
+          "o": [
+            "50 cm2",
+            "20 cm2",
+            "30 cm2",
+            "100 cm2"
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "A pentagon is split into 3 triangles with areas 12 cm2, 15 cm2 and 9 cm2. The total area of the pentagon is",
+          "a": "36 cm2",
+          "o": [
+            "36 cm2",
+            "27 cm2",
+            "21 cm2",
+            "45 cm2"
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Hard",
+          "t": "short_answer",
+          "m": 2,
+          "q": "Quadrilateral PQRS has diagonal PR = 18 cm. The perpendicular from Q to PR is 5 cm and from S to PR is 7 cm. Find the area of PQRS.",
+          "a": "Area = 1/2x18x5 + 1/2x18x7 = 45+63 = 108 cm2.",
+          "s": [
+            [
+              "Two triangle areas found",
+              1
+            ],
+            [
+              "Total = 108 cm2",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Hard",
+          "t": "short_answer",
+          "m": 2,
+          "q": "A quadrilateral is split by diagonal AC = 22 cm into two triangles, each with the same height 3 cm from B and D respectively. Find its total area.",
+          "a": "Area = 1/2x22x3 + 1/2x22x3 = 33+33 = 66 cm2.",
+          "s": [
+            [
+              "Each triangle = 33 cm2",
+              1
+            ],
+            [
+              "Total = 66 cm2",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Hard",
+          "t": "mcq",
+          "m": 1,
+          "q": "A hexagonal plot is split into 4 triangles of area 20 m2, 25 m2, 18 m2 and 22 m2. The total area of the plot, in hectares, is closest to (1 hectare = 10,000 m2)",
+          "a": "0.0085 hectares",
+          "o": [
+            "0.0085 hectares",
+            "0.85 hectares",
+            "8.5 hectares",
+            "0.085 hectares"
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Hardest",
+          "t": "long_answer",
+          "m": 3,
+          "q": "A garden shaped like quadrilateral ABCD has diagonal BD = 30 m. The perpendicular distances from A and C to BD are 8 m and 12 m. Find the area of the garden in square metres, and then in square kilometres (1 km2 = 1,000,000 m2).",
+          "a": "Area = 1/2x30x8 + 1/2x30x12 = 120+180 = 300 m2. In km2, this is 300/1,000,000 = 0.0003 km2.",
+          "s": [
+            [
+              "Two triangle areas correct",
+              1
+            ],
+            [
+              "Total 300 m2",
+              1
+            ],
+            [
+              "Converted to 0.0003 km2",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Analyse",
+          "d": "Hard",
+          "t": "assertion_reason",
+          "m": 1,
+          "q": "Assertion (A): The area of quadrilateral ABCD found using diagonal AC must equal the area found using diagonal BD. Reason (R): Both diagonals divide the same quadrilateral into two triangles that together cover the whole quadrilateral exactly once.",
+          "a": "Both A and R are true, and R is the correct explanation of A",
+          "o": [
+            "Both A and R are true, and R is the correct explanation of A",
+            "Both A and R are true, but R is not the correct explanation of A",
+            "A is true but R is false",
+            "A is false but R is true"
+          ]
+        },
+        {
+          "b": "Analyse",
+          "d": "Hard",
+          "t": "multi_statement",
+          "m": 1,
+          "q": "Consider: (I) Any polygon can be divided into triangles to find its area. (II) A pentagon can only be divided into triangles if it is a regular pentagon. Which is or are correct?",
+          "a": "Only I",
+          "o": [
+            "Only I",
+            "Only II",
+            "Both I and II",
+            "Neither I nor II"
+          ]
+        },
+        {
+          "b": "Analyse",
+          "d": "Hardest",
+          "t": "long_answer",
+          "m": 3,
+          "q": "Quadrilateral ABCD is split by diagonal AC into triangle ABC (area 40 cm2) and triangle ACD (area 35 cm2). A second quadrilateral, PQRS, has diagonal PR splitting it into two triangles of areas 30 cm2 and 45 cm2. Verify whether the two quadrilaterals have equal total area, showing your reasoning.",
+          "a": "Area of ABCD = 40+35 = 75 cm2. Area of PQRS = 30+45 = 75 cm2. Since both totals equal 75 cm2, the two quadrilaterals do have equal total area, even though they were split into differently sized triangle pairs.",
+          "s": [
+            [
+              "ABCD total = 75 cm2",
+              1
+            ],
+            [
+              "PQRS total = 75 cm2",
+              1
+            ],
+            [
+              "Correct verification and conclusion",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Evaluate",
+          "d": "Hard",
+          "t": "short_answer",
+          "m": 2,
+          "q": "Is it always true that the two triangles formed by a quadrilateral's diagonal have equal area? Justify with reference to a rectangle and a general quadrilateral.",
+          "a": "No, not always. In a rectangle, the diagonal always gives two equal-area triangles because of congruence. But in a general quadrilateral, the two triangles formed by a diagonal can have different areas, since the perpendicular heights from the two opposite vertices to the diagonal can differ.",
+          "s": [
+            [
+              "Correct judgement: not always",
+              1
+            ],
+            [
+              "Justified with rectangle vs general case",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Create",
+          "d": "Hardest",
+          "t": "long_answer",
+          "m": 3,
+          "q": "Design an irregular pentagon and show how you would find its area by dividing it into 3 triangles from one vertex, listing what measurements you would need for each triangle.",
+          "a": "For example, label the pentagon ABCDE; from vertex A, draw diagonals AC and AD, splitting it into triangle ABC, triangle ACD and triangle ADE. For each triangle, measure one side as the base and the perpendicular height to that base from the opposite vertex, then add the three triangle areas for the pentagon's total area.",
+          "s": [
+            [
+              "Valid pentagon and diagonals chosen",
+              1
+            ],
+            [
+              "Three triangles correctly identified",
+              1
+            ],
+            [
+              "States measurements needed and adds areas",
+              1
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "code": "C8M-7.5",
+      "name": "Area of a parallelogram and a rhombus",
+      "description": "Dissecting a parallelogram into a rectangle of equal area to derive Area = base x height, and using the rhombus's diagonals to derive the special formula Area = half the product of the diagonals.",
+      "idea": "A parallelogram can be cut and rearranged into a rectangle of equal area, giving Area = base x height for any side taken as base; a rhombus, being a parallelogram, also has Area = half x product of its diagonals.",
+      "rule": "Drop a perpendicular from a vertex to the opposite side (or its extension) to get the height; cutting off the resulting triangle and moving it to the other end forms a rectangle of the same area, so Area of a parallelogram = base x height, and any side can be used as base with its matching height. A rhombus has all sides equal and diagonals that bisect each other at right angles; splitting it by its diagonals into 4 right triangles gives Area of a rhombus = 1/2 x product of the diagonals.",
+      "example": "A parallelogram with base 7 cm and height 4 cm has area 28 cm2. A rhombus with diagonals 20 cm and 15 cm has area 1/2x20x15 = 150 cm2.",
+      "difficulty_base": "Easy",
+      "questions": [
+        {
+          "b": "Remember",
+          "d": "Easy",
+          "t": "fill_blank",
+          "m": 1,
+          "q": "Area of a parallelogram = base x ____.",
+          "a": "height"
+        },
+        {
+          "b": "Remember",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "Area of a rhombus in terms of its diagonals is",
+          "a": "half x product of the diagonals",
+          "o": [
+            "half x product of the diagonals",
+            "product of the diagonals",
+            "quarter x product of the diagonals",
+            "sum of the diagonals"
+          ]
+        },
+        {
+          "b": "Remember",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "The process of cutting a shape into pieces and rearranging them into another shape of equal area is called",
+          "a": "dissection",
+          "o": [
+            "dissection",
+            "congruence",
+            "translation",
+            "tessellation"
+          ]
+        },
+        {
+          "b": "Remember",
+          "d": "Hard",
+          "t": "mcq",
+          "m": 1,
+          "q": "A rhombus has diagonals 24 cm and 10 cm. Its area is",
+          "a": "120 cm2",
+          "o": [
+            "120 cm2",
+            "240 cm2",
+            "34 cm2",
+            "17 cm2"
+          ]
+        },
+        {
+          "b": "Understand",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "Every rhombus is also a",
+          "a": "parallelogram",
+          "o": [
+            "parallelogram",
+            "rectangle",
+            "trapezium only",
+            "circle"
+          ]
+        },
+        {
+          "b": "Understand",
+          "d": "Easy",
+          "t": "fill_blank",
+          "m": 1,
+          "q": "In a rhombus, the diagonals bisect each other at ____ degrees.",
+          "a": "90"
+        },
+        {
+          "b": "Understand",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "Since a rhombus is a parallelogram, which formula also correctly gives its area?",
+          "a": "base x height",
+          "o": [
+            "base x height",
+            "side x side",
+            "half x side squared",
+            "perimeter x height"
+          ]
+        },
+        {
+          "b": "Understand",
+          "d": "Hard",
+          "t": "mcq",
+          "m": 1,
+          "q": "A parallelogram is dissected by cutting off a triangle from one end and attaching it to the other end to form a rectangle. What stays the same in this process?",
+          "a": "The total area",
+          "o": [
+            "The total area",
+            "The perimeter",
+            "The lengths of all four sides",
+            "The position of every point"
+          ]
+        },
+        {
+          "b": "Understand",
+          "d": "Hard",
+          "t": "short_answer",
+          "m": 2,
+          "q": "Explain why any side of a parallelogram can be used as its base to calculate area, as long as the correct height is used.",
+          "a": "Whichever side is chosen as the base, dissecting the parallelogram using the perpendicular height to that side always converts it into a rectangle of the same area, so base x height gives the same total area regardless of which side is chosen.",
+          "s": [
+            [
+              "Any side works as base, stated",
+              1
+            ],
+            [
+              "Reasoning via dissection into a rectangle",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "A parallelogram has base 9 cm and height 5 cm. Its area is",
+          "a": "45 cm2",
+          "o": [
+            "45 cm2",
+            "22.5 cm2",
+            "14 cm2",
+            "25 cm2"
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "A rhombus has diagonals 16 cm and 12 cm. Its area is",
+          "a": "96 cm2",
+          "o": [
+            "96 cm2",
+            "192 cm2",
+            "28 cm2",
+            "48 cm2"
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Hard",
+          "t": "short_answer",
+          "m": 2,
+          "q": "A parallelogram has area 72 cm2 and base 8 cm. Find its height, and then find the height for the same parallelogram if the 12 cm side is used as the base instead (area unchanged).",
+          "a": "Height for base 8 cm = 72/8 = 9 cm. Height for base 12 cm = 72/12 = 6 cm.",
+          "s": [
+            [
+              "First height = 9 cm",
+              1
+            ],
+            [
+              "Second height = 6 cm",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Hard",
+          "t": "short_answer",
+          "m": 2,
+          "q": "A rhombus-shaped kite has diagonals in the ratio 4:3 and area 96 cm2. Find the lengths of the diagonals.",
+          "a": "Let the diagonals be 4x and 3x. 1/2x4xx3x = 96, so 6x2 = 96, x2 = 16, x = 4. Diagonals are 16 cm and 12 cm.",
+          "s": [
+            [
+              "Equation set up and solved for x",
+              1
+            ],
+            [
+              "Diagonals = 16 cm and 12 cm",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Hard",
+          "t": "mcq",
+          "m": 1,
+          "q": "A parallelogram-shaped field has base 40 m and height 25 m. At Rs 120 per m2, the cost to level the field is",
+          "a": "Rs 120000",
+          "o": [
+            "Rs 120000",
+            "Rs 60000",
+            "Rs 240000",
+            "Rs 7800"
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Hardest",
+          "t": "long_answer",
+          "m": 3,
+          "q": "A rhombus has area 168 cm2 and one diagonal 24 cm. Find the other diagonal, and then find the rhombus's area if that diagonal were doubled while the first stays the same.",
+          "a": "Other diagonal: 168 = 1/2x24xd, so d = 336/24 = 14 cm. If this diagonal doubles to 28 cm, new area = 1/2x24x28 = 336 cm2.",
+          "s": [
+            [
+              "Other diagonal = 14 cm",
+              1
+            ],
+            [
+              "New diagonal noted as 28 cm",
+              1
+            ],
+            [
+              "New area = 336 cm2",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Analyse",
+          "d": "Hard",
+          "t": "assertion_reason",
+          "m": 1,
+          "q": "Assertion (A): A rhombus with diagonals 20 cm and 15 cm has area 150 cm2. Reason (R): Area of a rhombus = half x product of its diagonals.",
+          "a": "Both A and R are true, and R is the correct explanation of A",
+          "o": [
+            "Both A and R are true, and R is the correct explanation of A",
+            "Both A and R are true, but R is not the correct explanation of A",
+            "A is true but R is false",
+            "A is false but R is true"
+          ]
+        },
+        {
+          "b": "Analyse",
+          "d": "Hard",
+          "t": "multi_statement",
+          "m": 1,
+          "q": "Consider: (I) Every rhombus is a parallelogram, so base x height also gives its area. (II) The diagonals of a rhombus are always equal in length. Which is or are correct?",
+          "a": "Only I",
+          "o": [
+            "Only I",
+            "Only II",
+            "Both I and II",
+            "Neither I nor II"
+          ]
+        },
+        {
+          "b": "Analyse",
+          "d": "Hardest",
+          "t": "long_answer",
+          "m": 3,
+          "q": "Prove that Area of a rhombus = half x product of its diagonals, using the fact that the diagonals bisect each other at right angles, by finding the sum of the areas of the four right triangles formed at the centre.",
+          "a": "Let the diagonals be AC and BD, meeting at O, with AC=d1, BD=d2, and OA=OC=d1/2, OB=OD=d2/2, meeting at right angles. Each of the 4 triangles, such as triangle AOB, has area 1/2x(d1/2)x(d2/2). Adding all 4 equal triangles: 4x1/2x(d1/2)x(d2/2) = 4x(d1xd2)/8 = (d1xd2)/2 = 1/2xd1xd2.",
+          "s": [
+            [
+              "Sets up half-diagonal lengths and right angle",
+              1
+            ],
+            [
+              "Finds area of one small triangle",
+              1
+            ],
+            [
+              "Sums 4 triangles to get half x d1 x d2",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Evaluate",
+          "d": "Hard",
+          "t": "short_answer",
+          "m": 2,
+          "q": "A classmate says, 'Since a rhombus has 4 equal sides, its area must be side x side, just like a square.' Is this correct? Justify with an example.",
+          "a": "No. A rhombus's area depends on its height (or diagonals), not just its side length, because a rhombus can be squashed at different angles while keeping the same side length but changing its area; for example, a rhombus of side 10 cm can have height 8 cm (area 80 cm2) or height 6 cm (area 60 cm2) depending on its angle.",
+          "s": [
+            [
+              "Correct judgement: no",
+              1
+            ],
+            [
+              "Justification with example",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Create",
+          "d": "Hardest",
+          "t": "long_answer",
+          "m": 3,
+          "q": "Design a rhombus with area exactly 150 cm2 using two different pairs of diagonal lengths, and verify both give the same area.",
+          "a": "For example, diagonals 20 cm and 15 cm give 1/2x20x15=150 cm2. Also, diagonals 30 cm and 10 cm give 1/2x30x10=150 cm2. Both pairs give the required area of 150 cm2.",
+          "s": [
+            [
+              "First valid diagonal pair",
+              1
+            ],
+            [
+              "Second valid diagonal pair",
+              1
+            ],
+            [
+              "Both verified as 150 cm2",
+              1
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "code": "C8M-7.6",
+      "name": "Area of a trapezium, and area units in real life",
+      "description": "Deriving the trapezium area formula by dissection, and converting and estimating real-life areas using cm2, in2, ft2, m2, acres and km2.",
+      "idea": "A trapezium's area can be found by dissection into a rectangle and triangles, or by joining two copies of it into a parallelogram, giving Area = half x height x sum of the parallel sides; real-world areas are measured and converted between several different units.",
+      "rule": "For a trapezium with parallel sides a and b and height h, Area = 1/2 x h x (a+b). Two identical copies of the trapezium, one rotated 180 degrees and joined along a slanted side, form a parallelogram of base (a+b) and height h; the trapezium is exactly half of that parallelogram's area h(a+b). For units: 1 in = 2.54 cm, so 1 in2 = 2.54x2.54 = 6.4516 cm2; 1 ft = 12 in; 1 acre = 43,560 ft2; 1 km2 = 1,000,000 m2.",
+      "example": "A trapezium with parallel sides 10 cm and 14 cm and height 6 cm has area 1/2x6x(10+14) = 72 cm2. An A4 sheet, 21 cm by 29.7 cm, has area about 624 cm2.",
+      "difficulty_base": "Easy",
+      "questions": [
+        {
+          "b": "Remember",
+          "d": "Easy",
+          "t": "fill_blank",
+          "m": 1,
+          "q": "Area of a trapezium = 1/2 x height x sum of the ____ sides.",
+          "a": "parallel"
+        },
+        {
+          "b": "Remember",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "1 inch equals",
+          "a": "2.54 cm",
+          "o": [
+            "2.54 cm",
+            "12 cm",
+            "2.54 m",
+            "25.4 cm"
+          ]
+        },
+        {
+          "b": "Remember",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "1 foot equals",
+          "a": "12 inches",
+          "o": [
+            "12 inches",
+            "10 inches",
+            "100 inches",
+            "2.54 inches"
+          ]
+        },
+        {
+          "b": "Remember",
+          "d": "Hard",
+          "t": "mcq",
+          "m": 1,
+          "q": "1 acre equals",
+          "a": "43,560 ft2",
+          "o": [
+            "43,560 ft2",
+            "4,356 ft2",
+            "435,600 ft2",
+            "1,000 ft2"
+          ]
+        },
+        {
+          "b": "Understand",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "One method to find a trapezium's area is by joining two identical copies of it, one rotated, to form a",
+          "a": "parallelogram",
+          "o": [
+            "parallelogram",
+            "triangle",
+            "rectangle only",
+            "circle"
+          ]
+        },
+        {
+          "b": "Understand",
+          "d": "Easy",
+          "t": "fill_blank",
+          "m": 1,
+          "q": "1 in2 equals ____ cm2 (to 4 decimal places).",
+          "a": "6.4516"
+        },
+        {
+          "b": "Understand",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "When two identical copies of a trapezium are joined to form a parallelogram of base (a+b) and height h, the trapezium's area is",
+          "a": "half the parallelogram's area",
+          "o": [
+            "half the parallelogram's area",
+            "equal to the parallelogram's area",
+            "double the parallelogram's area",
+            "one-quarter of the parallelogram's area"
+          ]
+        },
+        {
+          "b": "Understand",
+          "d": "Hard",
+          "t": "mcq",
+          "m": 1,
+          "q": "In the rectangle-and-triangles method for a trapezium's area, the trapezium is broken into",
+          "a": "one rectangle and two triangles",
+          "o": [
+            "one rectangle and two triangles",
+            "two rectangles only",
+            "one triangle and one rhombus",
+            "four triangles only"
+          ]
+        },
+        {
+          "b": "Understand",
+          "d": "Hard",
+          "t": "short_answer",
+          "m": 2,
+          "q": "Explain why joining two copies of a trapezium, with one copy rotated 180 degrees, forms a parallelogram, using the fact that co-interior angles on the same side of a transversal between parallel lines add up to 180 degrees.",
+          "a": "When the rotated copy is joined along a slanted side, the two angles meeting there are the trapezium's original co-interior angles, which add up to 180 degrees, so the two sides become one straight line; this happens on both slanted sides, giving a four-sided figure with two pairs of parallel sides, which is a parallelogram.",
+          "s": [
+            [
+              "Angles add to 180, straight lines form",
+              1
+            ],
+            [
+              "Concludes parallelogram",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "A trapezium has parallel sides 8 cm and 12 cm and height 5 cm. Its area is",
+          "a": "50 cm2",
+          "o": [
+            "50 cm2",
+            "100 cm2",
+            "30 cm2",
+            "20 cm2"
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "An A4 sheet measures 21 cm by 29.7 cm. Its area, to the nearest whole number, is",
+          "a": "624 cm2",
+          "o": [
+            "624 cm2",
+            "51 cm2",
+            "1247 cm2",
+            "311 cm2"
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Hard",
+          "t": "short_answer",
+          "m": 2,
+          "q": "A trapezium-shaped table top has parallel sides 90 cm and 60 cm, and height 40 cm. Find its area in cm2, and then in m2 (1 m2 = 10,000 cm2).",
+          "a": "Area = 1/2x40x(90+60) = 20x150 = 3000 cm2 = 0.3 m2.",
+          "s": [
+            [
+              "Area = 3000 cm2",
+              1
+            ],
+            [
+              "Converted to 0.3 m2",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Hard",
+          "t": "short_answer",
+          "m": 2,
+          "q": "A plot of land is 2 acres. Find its area in square feet, and then estimate roughly how many A4 sheets (each about 0.72 ft2) would be needed to cover it, to the nearest thousand.",
+          "a": "Area = 2x43,560 = 87,120 ft2. Number of A4 sheets is about 87,120/0.72, which is about 121,000 sheets.",
+          "s": [
+            [
+              "Area = 87,120 ft2",
+              1
+            ],
+            [
+              "Estimate about 121,000 sheets",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Hard",
+          "t": "mcq",
+          "m": 1,
+          "q": "How many cm2 is 25 in2?",
+          "a": "161.29 cm2",
+          "o": [
+            "161.29 cm2",
+            "63.5 cm2",
+            "645.16 cm2",
+            "16.129 cm2"
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Hardest",
+          "t": "long_answer",
+          "m": 3,
+          "q": "A trapezium-shaped garden has parallel sides 15 m and 25 m and area 300 m2. Find its height, and then find the cost of laying turf on it at Rs 85 per m2.",
+          "a": "300 = 1/2xhx(15+25) = 1/2xhx40 = 20h, so h = 300/20 = 15 m. Cost = 300x85 = Rs 25,500.",
+          "s": [
+            [
+              "Height = 15 m",
+              1
+            ],
+            [
+              "Uses area for the cost calculation",
+              1
+            ],
+            [
+              "Cost = Rs 25,500",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Analyse",
+          "d": "Hard",
+          "t": "assertion_reason",
+          "m": 1,
+          "q": "Assertion (A): A trapezium with parallel sides 10 cm and 14 cm and height 6 cm has area 72 cm2. Reason (R): Area of a trapezium = 1/2 x height x sum of the parallel sides.",
+          "a": "Both A and R are true, and R is the correct explanation of A",
+          "o": [
+            "Both A and R are true, and R is the correct explanation of A",
+            "Both A and R are true, but R is not the correct explanation of A",
+            "A is true but R is false",
+            "A is false but R is true"
+          ]
+        },
+        {
+          "b": "Analyse",
+          "d": "Hard",
+          "t": "multi_statement",
+          "m": 1,
+          "q": "Consider: (I) 1 acre equals 43,560 ft2. (II) 1 in2 equals 6.4516 cm2. Which is or are correct?",
+          "a": "Both I and II",
+          "o": [
+            "Both I and II",
+            "Only I",
+            "Only II",
+            "Neither I nor II"
+          ]
+        },
+        {
+          "b": "Analyse",
+          "d": "Hardest",
+          "t": "long_answer",
+          "m": 3,
+          "q": "Derive the trapezium area formula Area = 1/2 h(a+b) by considering two congruent copies of a trapezium with parallel sides a and b and height h joined to form a parallelogram, explaining each step.",
+          "a": "Two copies of the trapezium, one rotated 180 degrees and joined along a slanted side, form a parallelogram whose base is a+b (the two parallel sides placed end to end) and whose height is still h, the same as the trapezium's height. The parallelogram's area is base x height = h(a+b). Since the parallelogram is made of exactly two copies of the trapezium, the trapezium's own area is half of this, giving Area = 1/2 h(a+b).",
+          "s": [
+            [
+              "Parallelogram base = a+b explained",
+              1
+            ],
+            [
+              "Parallelogram area = h(a+b)",
+              1
+            ],
+            [
+              "Trapezium area = half, final formula",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Evaluate",
+          "d": "Hard",
+          "t": "short_answer",
+          "m": 2,
+          "q": "A farmer wants to convert his 2-acre plot's area into square metres to compare with a neighbouring plot measured in m2. Is converting through square feet (acre to ft2 to m2) a reasonable approach? Justify.",
+          "a": "Yes, this is a reasonable approach, since acres and square metres are not directly related by a simple factor given in the chapter, but ft2 is a bridge unit whose relation to both acres (1 acre = 43,560 ft2) and metres is known, so converting via ft2 correctly gives the m2 value.",
+          "s": [
+            [
+              "Judgement: yes, reasonable",
+              1
+            ],
+            [
+              "Justification using a bridge unit",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Create",
+          "d": "Hardest",
+          "t": "long_answer",
+          "m": 3,
+          "q": "Design a trapezium-shaped plot of land with area exactly 500 m2, choosing your own values for the two parallel sides and the height, and then state its area in acres (1 acre is about 4046.86 m2).",
+          "a": "For example, parallel sides 30 m and 20 m and height 20 m give Area = 1/2x20x(30+20) = 10x50 = 500 m2. In acres, this is about 500/4046.86, which is about 0.124 acres.",
+          "s": [
+            [
+              "Valid dimensions chosen, area 500 m2",
+              1
+            ],
+            [
+              "Correct arithmetic check",
+              1
+            ],
+            [
+              "Converted to about 0.124 acres",
+              1
+            ]
+          ]
+        }
+      ]
+    }
+  ]
+}
