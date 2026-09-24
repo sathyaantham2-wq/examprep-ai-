@@ -1,0 +1,1434 @@
+{
+  "subject": {
+    "code": "MATH8",
+    "name": "Mathematics",
+    "board": "CBSE",
+    "class": 8
+  },
+  "source": {
+    "publisher": "NCERT",
+    "title": "Ganita Prakash",
+    "edition": "Reprint 2026-27",
+    "year": 2026
+  },
+  "depth": 20,
+  "chapter": {
+    "part": "II",
+    "chapter_no": 2,
+    "name": "The Baudhayana-Pythagoras Theorem",
+    "blurb": "Doubling and halving a square using its diagonal; the hypotenuse of an isosceles right triangle and the square root of 2; combining two different squares to derive a squared + b squared = c squared; Baudhayana (Pythagorean) triples, primitive and scaled, and Fermat's Last Theorem as a historical aside; and applications to word problems, rhombi, rectangles and equilateral triangles.",
+    "source_code": "hegp202",
+    "order_index": 9
+  },
+  "scope_in": [
+    {
+      "item": "Doubling a square by constructing a new square on its diagonal, and why this works (the original square's two triangles fit inside the new square's four congruent triangles)",
+      "pages": "33-35"
+    },
+    {
+      "item": "Halving a square by folding through the midpoints of its sides (or by reversing the doubling construction), producing a tilted inner square of half the area",
+      "pages": "36-37"
+    },
+    {
+      "item": "The hypotenuse of an isosceles right triangle: deriving c squared = 2 times a squared from the doubling construction, and using it to find c given a, or a given c",
+      "pages": "37-38, 40-41"
+    },
+    {
+      "item": "Decimal bounds for the square root of 2 (between 1 and 2, and more closely between 1.414 and 1.415) found by successive squaring, and the argument that the square root of 2 cannot be a terminating decimal or a fraction m/n",
+      "pages": "38-39"
+    },
+    {
+      "item": "Combining two different-sized squares into one larger square using Baudhayana's rectangle-and-diagonal construction, leading to the general theorem a squared + b squared = c squared for any right-angled triangle",
+      "pages": "41-47"
+    },
+    {
+      "item": "Baudhayana (Pythagorean) triples: the definition a squared + b squared = c squared for positive integers, scaling a triple by a positive integer k, primitive triples, and generating triples from consecutive odd squares",
+      "pages": "48-50"
+    },
+    {
+      "item": "Fermat's Last Theorem as a historical extension of Baudhayana triples to higher powers, stated without proof, and its proof by Andrew Wiles in 1994",
+      "pages": "50-51"
+    },
+    {
+      "item": "Applying a squared + b squared = c squared to word problems (such as the Lilavati lotus-in-the-lake problem) and to geometric figures: the diagonal of a square or rectangle, the side of a rhombus from its diagonals, the hypotenuse as the longest side of a right triangle, integer-sided rectangles, and the area of an equilateral triangle via its altitude",
+      "pages": "52-54"
+    }
+  ],
+  "scope_out": [
+    {
+      "item": "A general proof of the Pythagoras theorem using similar triangles or the altitude drawn to the hypotenuse",
+      "reason": "This book proves the theorem only through Baudhayana's square-combining dissection; the similar-triangles proof is not used here"
+    },
+    {
+      "item": "Trigonometric ratios such as sine, cosine and tangent",
+      "reason": "Not introduced anywhere in this chapter"
+    },
+    {
+      "item": "The distance formula between two points on a coordinate plane",
+      "reason": "Coordinates are not used in this chapter; the grid and rhombus questions are solved by direct right-triangle reasoning, not a named formula"
+    },
+    {
+      "item": "A proof of Fermat's Last Theorem, or details of Andrew Wiles's method",
+      "reason": "The chapter presents the theorem and its history as a story; it explicitly says no one could find Fermat's own proof"
+    },
+    {
+      "item": "Irrationality proofs for square roots other than the square root of 2, such as the square root of 3 or the square root of 5",
+      "reason": "The chapter proves only the square root of 2 is irrational, using a prime-factorisation argument specific to the number 2"
+    },
+    {
+      "item": "Three-dimensional applications such as the space diagonal of a cuboid",
+      "reason": "This chapter stays with plane figures; solids are not discussed"
+    }
+  ],
+  "concepts": [
+    {
+      "code": "C8M-2.1",
+      "name": "Doubling and Halving a Square",
+      "description": "Constructing a square with double or half the area of a given square, using the diagonal.",
+      "idea": "The square built on the diagonal of a given square has exactly double the area; reversing the construction halves the area.",
+      "rule": "If a new square is built on the diagonal of a given square, its area is double the original. A square built by folding through the midpoints of the sides (or by reversing the doubling construction) has half the area of the original.",
+      "example": "A square of side 4 units has area 16 sq. units; a square built on its diagonal has area 32 sq. units.",
+      "difficulty_base": "Easy",
+      "questions": [
+        {
+          "b": "Remember",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "The square built on the diagonal of a given square has area that is ____ the area of the original square.",
+          "a": "double",
+          "o": ["double", "half", "triple", "the same as"]
+        },
+        {
+          "b": "Remember",
+          "d": "Easy",
+          "t": "fill_blank",
+          "m": 1,
+          "q": "According to Baudhayana, doubling a square is done by constructing a new square on the ____ of the original square.",
+          "a": "diagonal"
+        },
+        {
+          "b": "Remember",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "To construct a square with half the area of a given square, one method folds the square so the crease lines pass through the ____ of its sides.",
+          "a": "midpoints",
+          "o": ["midpoints", "corners", "one side only", "centre of one side only"]
+        },
+        {
+          "b": "Remember",
+          "d": "Hard",
+          "t": "mcq",
+          "m": 1,
+          "q": "Which statement about the square built on the diagonal of a square is NOT correct?",
+          "a": "Its side length equals twice the side of the original square",
+          "o": [
+            "Its side length equals twice the side of the original square",
+            "Its area is double the area of the original square",
+            "The original square is made up of two of the four triangles composing the new square",
+            "Its side length equals the diagonal of the original square"
+          ],
+          "rev": true
+        },
+        {
+          "b": "Understand",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "A square of side 6 units is used to build a new square on its diagonal. What is the area of the new square?",
+          "a": "72 sq. units",
+          "o": ["72 sq. units", "36 sq. units", "144 sq. units", "12 sq. units"]
+        },
+        {
+          "b": "Understand",
+          "d": "Easy",
+          "t": "fill_blank",
+          "m": 1,
+          "q": "A square has area 20 sq. units. The square built on its diagonal has area ____ sq. units.",
+          "a": "40"
+        },
+        {
+          "b": "Understand",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "Why does simply doubling the side length of a square NOT double its area?",
+          "a": "Because doubling each side multiplies the area by 4, not 2",
+          "o": [
+            "Because doubling each side multiplies the area by 4, not 2",
+            "Because area does not depend on side length",
+            "Because a square's area formula only works for the original square",
+            "Because doubling a side leaves the area unchanged"
+          ],
+          "rev": true
+        },
+        {
+          "b": "Understand",
+          "d": "Hard",
+          "t": "mcq",
+          "m": 1,
+          "q": "A square is built on the diagonal of a square of side a. In terms of a, what is the side length of the new square?",
+          "a": "a times the square root of 2",
+          "o": ["a times the square root of 2", "2a", "a squared", "2 times a squared"]
+        },
+        {
+          "b": "Understand",
+          "d": "Hard",
+          "t": "mcq",
+          "m": 1,
+          "q": "A square is folded through the midpoints of its sides to make a smaller square PQRS. If the original square has area 50 sq. units, what is the area of PQRS?",
+          "a": "25 sq. units",
+          "o": ["25 sq. units", "100 sq. units", "12.5 sq. units", "50 sq. units"]
+        },
+        {
+          "b": "Apply",
+          "d": "Easy",
+          "t": "fill_blank",
+          "m": 1,
+          "q": "A square of side 9 cm is used to construct a new square on its diagonal. The new square's area is ____ sq. cm.",
+          "a": "162"
+        },
+        {
+          "b": "Apply",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "A square has area 18 sq. units. What is the area of the square obtained by halving it using the fold-through-midpoints method?",
+          "a": "9 sq. units",
+          "o": ["9 sq. units", "36 sq. units", "6 sq. units", "3 sq. units"]
+        },
+        {
+          "b": "Apply",
+          "d": "Hard",
+          "t": "mcq",
+          "m": 1,
+          "q": "The diagonal of a square is 10 cm. What is the area of the square built on this diagonal?",
+          "a": "100 sq. cm",
+          "o": ["100 sq. cm", "50 sq. cm", "200 sq. cm", "10 sq. cm"]
+        },
+        {
+          "b": "Apply",
+          "d": "Hard",
+          "t": "short_answer",
+          "m": 2,
+          "q": "A square garden has area 32 sq. m. A gardener wants to build a path in the shape of a square with double this area, using Baudhayana's diagonal method. Find the area and the side length (a whole number of metres) of the new square.",
+          "a": "New area = 64 sq. m; side = 8 m.",
+          "s": [
+            ["Doubles the area to get 64 sq. m", 1],
+            ["Finds the side length 8 m since 8 x 8 = 64", 1]
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Hard",
+          "t": "mcq",
+          "m": 1,
+          "q": "A square of side 7 units is doubled using Baudhayana's method, and the resulting square is doubled again in the same way. What is the area of the final square?",
+          "a": "196 sq. units",
+          "o": ["196 sq. units", "98 sq. units", "392 sq. units", "49 sq. units"]
+        },
+        {
+          "b": "Apply",
+          "d": "Hardest",
+          "t": "long_answer",
+          "m": 3,
+          "q": "A square sheet of paper has area 40 sq. cm. Ira first halves it using the fold-through-midpoints method, then doubles the resulting square using the diagonal method. Find the area of paper she ends up with, and state how it compares to the original 40 sq. cm sheet.",
+          "a": "Halving gives 20 sq. cm; doubling that gives 40 sq. cm again, so the final square has the same area as the original.",
+          "s": [
+            ["Halves 40 to get 20 sq. cm", 1],
+            ["Doubles 20 to get 40 sq. cm", 1],
+            ["States the final area equals the original 40 sq. cm", 1]
+          ]
+        },
+        {
+          "b": "Analyse",
+          "d": "Hard",
+          "t": "assertion_reason",
+          "m": 1,
+          "q": "Assertion (A): The square built on the diagonal of a square has exactly double its area. Reason (R): The original square is made of 2 congruent triangles, while the new square is made of 4 triangles congruent to them.",
+          "a": "Both A and R are true, and R is the correct explanation of A",
+          "o": [
+            "Both A and R are true, and R is the correct explanation of A",
+            "Both A and R are true, but R is not the correct explanation of A",
+            "A is true but R is false",
+            "A is false but R is true"
+          ]
+        },
+        {
+          "b": "Analyse",
+          "d": "Hard",
+          "t": "multi_statement",
+          "m": 1,
+          "q": "Consider these statements about halving a square by the fold-through-midpoints method. (I) The resulting square PQRS always has exactly half the area of the original. (II) The side of PQRS is always half the side of the original. Which is or are correct?",
+          "a": "Only I",
+          "o": ["Only I", "Only II", "Both I and II", "Neither I nor II"]
+        },
+        {
+          "b": "Analyse",
+          "d": "Hardest",
+          "t": "long_answer",
+          "m": 3,
+          "q": "Meera claims that if you double a square's area using Baudhayana's method and then halve the result using the fold-through-midpoints method, you can never get back exactly the original square. Investigate her claim using a square of side 5 units, and state whether it is true.",
+          "a": "Doubling area 25 gives 50; halving 50 gives 25, so the resulting square has area 25 -- the same as the original. Meera's claim is false.",
+          "s": [
+            ["Finds the doubled area 50 from the original area 25", 1],
+            ["Halves 50 to get 25", 1],
+            ["Concludes the claim is false since 25 equals the original area", 1]
+          ]
+        },
+        {
+          "b": "Evaluate",
+          "d": "Hard",
+          "t": "short_answer",
+          "m": 2,
+          "q": "A student says, 'To double a square's area, I just draw a new square whose side is twice the diagonal of the old one.' Identify the mistake and state the correct construction.",
+          "a": "The mistake is using twice the diagonal instead of the diagonal itself as the new side; the new square's side should simply be the diagonal of the original square.",
+          "s": [
+            ["Identifies that using twice the diagonal is wrong", 1],
+            ["States that the new side should be the diagonal itself", 1]
+          ]
+        },
+        {
+          "b": "Create",
+          "d": "Hardest",
+          "t": "long_answer",
+          "m": 3,
+          "q": "Design a square garden plan: start with a square flower bed of side 3 m, and describe a sequence of Baudhayana-style doubling steps to reach a bed of area 24 sq. m or more, stating the area after each step.",
+          "a": "Start area = 9 sq. m. Double once: 18 sq. m. Double again: 36 sq. m, which exceeds 24 sq. m after two doublings.",
+          "s": [
+            ["States the starting area 9 sq. m", 1],
+            ["Doubles once to 18 sq. m", 1],
+            ["Doubles again to 36 sq. m and confirms it exceeds 24 sq. m", 1]
+          ]
+        }
+      ]
+    },
+    {
+      "code": "C8M-2.2",
+      "name": "The Hypotenuse of an Isosceles Right Triangle",
+      "description": "The relationship c squared = 2 times a squared between the equal sides and hypotenuse of an isosceles right triangle, derived from the doubling-a-square construction.",
+      "idea": "A unit isosceles right triangle's hypotenuse is the side of a square with twice the area of the square on its leg, giving c squared = 2 times a squared.",
+      "rule": "For an isosceles right triangle with equal sides a and hypotenuse c, c squared = 2 times a squared. This can be used to find c from a, or a from c.",
+      "example": "For a = 12, c squared = 2 x 144 = 288, so c lies between 16 and 17 (since 16 squared = 256 and 17 squared = 289).",
+      "difficulty_base": "Easy",
+      "questions": [
+        {
+          "b": "Remember",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "For an isosceles right triangle with equal sides a and hypotenuse c, which formula is correct?",
+          "a": "c squared = 2 times a squared",
+          "o": ["c squared = 2 times a squared", "c = 2a", "c squared = a squared + a", "c squared = 4 times a squared"]
+        },
+        {
+          "b": "Remember",
+          "d": "Easy",
+          "t": "fill_blank",
+          "m": 1,
+          "q": "In an isosceles right triangle, the two sides other than the hypotenuse are called the ____ sides.",
+          "a": "equal"
+        },
+        {
+          "b": "Remember",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "A square of side 1 unit is made up of two isosceles right triangles joined along the",
+          "a": "diagonal",
+          "o": ["diagonal", "a side", "the midpoint of a side", "a single vertex"]
+        },
+        {
+          "b": "Remember",
+          "d": "Hard",
+          "t": "mcq",
+          "m": 1,
+          "q": "For an isosceles right triangle with equal sides of length 10 units, which of these is NOT correct?",
+          "a": "c squared = 100",
+          "o": ["c squared = 100", "c squared = 200", "c = the square root of 200", "c is a little more than 14"],
+          "rev": true
+        },
+        {
+          "b": "Understand",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "If the equal sides of an isosceles right triangle are 5 units each, what is c squared?",
+          "a": "50",
+          "o": ["50", "25", "10", "100"]
+        },
+        {
+          "b": "Understand",
+          "d": "Easy",
+          "t": "fill_blank",
+          "m": 1,
+          "q": "If c squared = 2 times a squared and a = 7, then c squared = ____.",
+          "a": "98"
+        },
+        {
+          "b": "Understand",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "Why is c squared = 2 times a squared true for an isosceles right triangle with equal sides a?",
+          "a": "Because the square on the hypotenuse has double the area of the square on either equal side, by Baudhayana's doubling construction",
+          "o": [
+            "Because the square on the hypotenuse has double the area of the square on either equal side, by Baudhayana's doubling construction",
+            "Because the hypotenuse is always twice as long as each equal side",
+            "Because all right triangles satisfy this rule",
+            "Because a and c must always be whole numbers"
+          ]
+        },
+        {
+          "b": "Understand",
+          "d": "Hard",
+          "t": "mcq",
+          "m": 1,
+          "q": "The equal sides of an isosceles right triangle are each 9 cm. Between which two whole numbers does the hypotenuse lie?",
+          "a": "12 and 13",
+          "o": ["12 and 13", "9 and 10", "13 and 14", "11 and 12"]
+        },
+        {
+          "b": "Understand",
+          "d": "Hard",
+          "t": "mcq",
+          "m": 1,
+          "q": "If the hypotenuse of an isosceles right triangle is c and c squared = 128, what is a squared?",
+          "a": "64",
+          "o": ["64", "32", "256", "16"]
+        },
+        {
+          "b": "Apply",
+          "d": "Easy",
+          "t": "fill_blank",
+          "m": 1,
+          "q": "Using c squared = 2 times a squared, if a = 6, then c squared = ____.",
+          "a": "72"
+        },
+        {
+          "b": "Apply",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "An isosceles right triangle has equal sides of 4 units. What is c squared?",
+          "a": "32",
+          "o": ["32", "16", "8", "64"]
+        },
+        {
+          "b": "Apply",
+          "d": "Hard",
+          "t": "mcq",
+          "m": 1,
+          "q": "Find the hypotenuse of an isosceles right triangle whose equal sides have length 15 units. Between which two integers does it lie?",
+          "a": "21 and 22",
+          "o": ["21 and 22", "20 and 21", "22 and 23", "15 and 16"]
+        },
+        {
+          "b": "Apply",
+          "d": "Hard",
+          "t": "short_answer",
+          "m": 2,
+          "q": "The hypotenuse of an isosceles right triangle is 8 units. Find a squared and simplify as far as possible.",
+          "a": "c squared = 2 times a squared gives 2 times a squared = 64, so a squared = 32 (a = the square root of 32).",
+          "s": [
+            ["Applies c squared = 2 times a squared with c = 8 to get 2 times a squared = 64", 1],
+            ["Finds a squared = 32", 1]
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Hard",
+          "t": "mcq",
+          "m": 1,
+          "q": "If the hypotenuse of an isosceles right triangle is 6 units, what is a squared?",
+          "a": "18",
+          "o": ["18", "36", "12", "9"]
+        },
+        {
+          "b": "Apply",
+          "d": "Hardest",
+          "t": "long_answer",
+          "m": 3,
+          "q": "Find the hypotenuse of an isosceles right triangle whose equal sides are 20 units each, and state the two consecutive integers between which it lies.",
+          "a": "c squared = 2 x 400 = 800. 28 squared = 784 and 29 squared = 841, so 28 < c < 29.",
+          "s": [
+            ["Computes c squared = 2 x 400 = 800", 1],
+            ["Finds 28 squared = 784 and 29 squared = 841", 1],
+            ["States 28 < c < 29", 1]
+          ]
+        },
+        {
+          "b": "Analyse",
+          "d": "Hard",
+          "t": "assertion_reason",
+          "m": 1,
+          "q": "Assertion (A): In an isosceles right triangle with equal sides 3 units, the hypotenuse equals 3 times the square root of 2 units. Reason (R): c squared = 2 times a squared gives c = a times the square root of 2 for any isosceles right triangle.",
+          "a": "Both A and R are true, and R is the correct explanation of A",
+          "o": [
+            "Both A and R are true, and R is the correct explanation of A",
+            "Both A and R are true, but R is not the correct explanation of A",
+            "A is true but R is false",
+            "A is false but R is true"
+          ]
+        },
+        {
+          "b": "Analyse",
+          "d": "Hard",
+          "t": "multi_statement",
+          "m": 1,
+          "q": "Consider these statements about isosceles right triangles. (I) If a is a whole number, c squared is always a whole number. (II) If a is a whole number, c is always a whole number. Which is or are correct?",
+          "a": "Only I",
+          "o": ["Only I", "Only II", "Both I and II", "Neither I nor II"]
+        },
+        {
+          "b": "Analyse",
+          "d": "Hardest",
+          "t": "long_answer",
+          "m": 3,
+          "q": "A carpenter wants an isosceles right triangle bracket whose hypotenuse is exactly 20 cm and whose equal sides are a whole number of centimetres. Investigate whether this is possible, showing your working.",
+          "a": "c squared = 2 times a squared gives a squared = 200, so a = the square root of 200, which is about 14.14 cm and not a whole number. So no whole-number equal-side length gives a hypotenuse of exactly 20 cm.",
+          "s": [
+            ["Sets up a squared = 200 from c squared = 2 times a squared with c = 20", 1],
+            ["Finds a = the square root of 200, which is not a whole number", 1],
+            ["Concludes no whole-number equal side gives hypotenuse exactly 20", 1]
+          ]
+        },
+        {
+          "b": "Evaluate",
+          "d": "Hard",
+          "t": "short_answer",
+          "m": 2,
+          "q": "A student computes the hypotenuse of an isosceles right triangle with a = 5 as c squared = 2 + 5 = 7. Identify the mistake and give the correct value of c squared.",
+          "a": "The mistake is adding 2 and a instead of using c squared = 2 times a squared (squaring a, then doubling). The correct value is c squared = 2 x 25 = 50.",
+          "s": [
+            ["Identifies the mistake of adding instead of squaring and doubling", 1],
+            ["States the correct value c squared = 50", 1]
+          ]
+        },
+        {
+          "b": "Create",
+          "d": "Hardest",
+          "t": "long_answer",
+          "m": 3,
+          "q": "Design an isosceles right triangle bracket where the equal sides are a whole number of centimetres and the hypotenuse lies strictly between 9 and 10 cm. State the side length you choose and show it satisfies this condition.",
+          "a": "Example: a = 7. c squared = 2 x 49 = 98. 9 squared = 81 and 10 squared = 100, and 81 < 98 < 100, so 9 < c < 10.",
+          "s": [
+            ["Chooses a whole-number value of a", 1],
+            ["Computes c squared = 2 times a squared", 1],
+            ["Checks c squared lies between the two chosen consecutive squares", 1]
+          ]
+        }
+      ]
+    },
+    {
+      "code": "C8M-2.3",
+      "name": "The Number the square root of 2",
+      "description": "The value of the square root of 2 as the hypotenuse of a unit isosceles right triangle, its decimal bounds, and why it cannot be written as a terminating decimal or a fraction.",
+      "idea": "The square root of 2 lies strictly between 1 and 2, and closer bounds such as 1.414 and 1.415 can be found by squaring successive decimals.",
+      "rule": "1 < the square root of 2 < 2, and more precisely 1.414 < the square root of 2 < 1.415. The square root of 2 cannot be written as a terminating decimal, because a terminating decimal squared is also a terminating decimal and never lands exactly on 2. It also cannot be written as a fraction m/n, because that would force the prime 2 to occur an odd number of times on one side of 2 times n squared = m squared and an even number of times on the other, which is impossible.",
+      "example": "1.41 squared = 1.9881 and 1.42 squared = 2.0164, so 1.41 < the square root of 2 < 1.42.",
+      "difficulty_base": "Easy",
+      "questions": [
+        {
+          "b": "Remember",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "The square root of 2 lies between which two whole numbers?",
+          "a": "1 and 2",
+          "o": ["1 and 2", "0 and 1", "2 and 3", "1 and 3"]
+        },
+        {
+          "b": "Remember",
+          "d": "Easy",
+          "t": "fill_blank",
+          "m": 1,
+          "q": "The square root of 2 lies between the decimals 1.414 and ____.",
+          "a": "1.415"
+        },
+        {
+          "b": "Remember",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "The square root of 2 cannot be written as a fraction m/n because it is a(n) ____ number.",
+          "a": "irrational",
+          "o": ["irrational", "even", "negative", "whole"],
+          "rev": true
+        },
+        {
+          "b": "Remember",
+          "d": "Hard",
+          "t": "mcq",
+          "m": 1,
+          "q": "Which of these is NOT true about the square root of 2?",
+          "a": "It can be written exactly as a terminating decimal",
+          "o": [
+            "It can be written exactly as a terminating decimal",
+            "It lies between 1 and 2",
+            "It is greater than 1.414",
+            "It cannot be written as a fraction of two whole numbers"
+          ],
+          "rev": true
+        },
+        {
+          "b": "Understand",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "Since 1 squared = 1 and 2 squared = 4, and 2 lies between 1 and 4, what can we conclude about the square root of 2?",
+          "a": "The square root of 2 lies between 1 and 2",
+          "o": ["The square root of 2 lies between 1 and 2", "The square root of 2 lies between 2 and 4", "The square root of 2 equals 1.5", "The square root of 2 is greater than 2"]
+        },
+        {
+          "b": "Understand",
+          "d": "Easy",
+          "t": "fill_blank",
+          "m": 1,
+          "q": "Since 1.41 squared = 1.9881 and 1.42 squared = 2.0164, the square root of 2 lies between 1.41 and ____.",
+          "a": "1.42"
+        },
+        {
+          "b": "Understand",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "Why must the decimal expansion of the square root of 2 go on forever without terminating?",
+          "a": "Because a terminating decimal, when squared, is also a terminating decimal, and none of these ever lands exactly on 2",
+          "o": [
+            "Because a terminating decimal, when squared, is also a terminating decimal, and none of these ever lands exactly on 2",
+            "Because the square root of 2 is a very large number",
+            "Because 2 is a prime number",
+            "Because calculators cannot show enough digits"
+          ]
+        },
+        {
+          "b": "Understand",
+          "d": "Hard",
+          "t": "mcq",
+          "m": 1,
+          "q": "In the argument that the square root of 2 is not a fraction, the equation 2 times n squared = m squared is used. What does the prime factorisation of a square number tell us that makes this equation impossible?",
+          "a": "Every prime occurs an even number of times in a square number's prime factorisation",
+          "o": [
+            "Every prime occurs an even number of times in a square number's prime factorisation",
+            "Every prime occurs exactly once in a square number's prime factorisation",
+            "Square numbers have no prime factors",
+            "Only even primes can appear in a square number"
+          ]
+        },
+        {
+          "b": "Understand",
+          "d": "Hard",
+          "t": "mcq",
+          "m": 1,
+          "q": "If the square root of 2 could be written as m/n, squaring both sides gives 2 = m squared/n squared. What is the next correct step?",
+          "a": "Multiply both sides by n squared to get 2 times n squared = m squared",
+          "o": [
+            "Multiply both sides by n squared to get 2 times n squared = m squared",
+            "Take the square root of both sides again",
+            "Add n squared to both sides",
+            "Divide both sides by 2 to get 1 = m squared/2 times n squared"
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Easy",
+          "t": "fill_blank",
+          "m": 1,
+          "q": "Since 1.414 squared = 1.999396 and 1.415 squared = 2.002225, the square root of 2 lies between 1.414 and ____.",
+          "a": "1.415"
+        },
+        {
+          "b": "Apply",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "Which of these numbers is closest to the square root of 2?",
+          "a": "1.414",
+          "o": ["1.414", "1.5", "1.4", "1.42"]
+        },
+        {
+          "b": "Apply",
+          "d": "Hard",
+          "t": "mcq",
+          "m": 1,
+          "q": "Which of these numbers, when squared, gives a value less than 2?",
+          "a": "1.41",
+          "o": ["1.41", "1.42", "1.5", "1.415"]
+        },
+        {
+          "b": "Apply",
+          "d": "Hard",
+          "t": "short_answer",
+          "m": 2,
+          "q": "Given that 1.4142 squared is approximately 1.99996, explain whether 1.4142 is less than or greater than the square root of 2, and to what accuracy this pins down the square root of 2.",
+          "a": "Since 1.4142 squared is slightly less than 2, 1.4142 < the square root of 2, so the square root of 2 is known accurate to about 4 decimal places (1.4142...).",
+          "s": [
+            ["States 1.4142 < the square root of 2 since its square is less than 2", 1],
+            ["States this gives the square root of 2 to about 4 decimal places", 1]
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Hard",
+          "t": "mcq",
+          "m": 1,
+          "q": "A student wants a closer lower bound for the square root of 2 than 1.414. Which of these values is a valid closer lower bound?",
+          "a": "1.4142",
+          "o": ["1.4142", "1.41", "1.5", "1.4"]
+        },
+        {
+          "b": "Apply",
+          "d": "Hardest",
+          "t": "long_answer",
+          "m": 3,
+          "q": "Without using a calculator, find two consecutive two-decimal-place numbers between which the square root of 2 lies, by squaring successive candidates starting from 1.40. Show your working.",
+          "a": "1.40 squared = 1.96, 1.41 squared = 1.9881, 1.42 squared = 2.0164. Since 1.9881 < 2 < 2.0164, the square root of 2 lies between 1.41 and 1.42.",
+          "s": [
+            ["Squares 1.40 and 1.41 and compares each to 2", 1],
+            ["Squares 1.42 and compares it to 2", 1],
+            ["Concludes the square root of 2 lies between 1.41 and 1.42", 1]
+          ]
+        },
+        {
+          "b": "Analyse",
+          "d": "Hard",
+          "t": "assertion_reason",
+          "m": 1,
+          "q": "Assertion (A): The square root of 2 cannot be written as a terminating decimal. Reason (R): If a terminating decimal ending in a non-zero digit is squared, its square also ends in a non-zero digit after the decimal point, so it can never be exactly 2.000...",
+          "a": "Both A and R are true, and R is the correct explanation of A",
+          "o": [
+            "Both A and R are true, and R is the correct explanation of A",
+            "Both A and R are true, but R is not the correct explanation of A",
+            "A is true but R is false",
+            "A is false but R is true"
+          ]
+        },
+        {
+          "b": "Analyse",
+          "d": "Hard",
+          "t": "multi_statement",
+          "m": 1,
+          "q": "Consider these statements about the square root of 2. (I) the square root of 2 is greater than 1.4 and less than 1.5. (II) the square root of 2 can be written as a fraction with a very large denominator. Which is or are correct?",
+          "a": "Only I",
+          "o": ["Only I", "Only II", "Both I and II", "Neither I nor II"]
+        },
+        {
+          "b": "Analyse",
+          "d": "Hardest",
+          "t": "long_answer",
+          "m": 3,
+          "q": "In the proof that the square root of 2 is not a fraction, the equation 2 times n squared = m squared leads to a contradiction about how many times the prime 2 appears on each side. Explain this contradiction in your own words, using the fact that squares have primes appearing an even number of times.",
+          "a": "In m squared, the prime 2 occurs an even number of times (since m squared is a square). In 2 times n squared, the prime 2 occurs an odd number of times (an even number of times from n squared, plus one more from the lone factor of 2). Since 2 times n squared = m squared, the same number cannot have the prime 2 occurring both an odd and an even number of times, which is impossible.",
+          "s": [
+            ["States prime 2 occurs an even number of times in m squared", 1],
+            ["States prime 2 occurs an odd number of times in 2 times n squared", 1],
+            ["Concludes this is a contradiction, so the square root of 2 is not a fraction", 1]
+          ]
+        },
+        {
+          "b": "Evaluate",
+          "d": "Hard",
+          "t": "short_answer",
+          "m": 2,
+          "q": "A student says 'since 1.5 squared = 2.25 is close to 2, the square root of 2 must be about 1.5, accurate to one decimal place.' Identify what is wrong with this reasoning and give a better one-decimal-place bound using squares.",
+          "a": "1.5 is not actually close because 1.5 squared = 2.25, which is well above 2. A better bound is 1.4, since 1.4 squared = 1.96 is much closer to 2, giving 1.4 < the square root of 2 < 1.5.",
+          "s": [
+            ["Identifies that 1.5 squared = 2.25 is not actually close to 2", 1],
+            ["Gives a better bound such as 1.4 with the supporting square 1.96", 1]
+          ]
+        },
+        {
+          "b": "Create",
+          "d": "Hardest",
+          "t": "long_answer",
+          "m": 3,
+          "q": "Using only the squeezing method shown in this chapter, find the value of the square root of 2 correct to two decimal places, starting your search from 1.4, and show at least two rounds of squaring.",
+          "a": "1.4 squared = 1.96 (too low), 1.5 squared = 2.25 (too high), so the square root of 2 is between 1.4 and 1.5. 1.41 squared = 1.9881 (too low), 1.42 squared = 2.0164 (too high), so the square root of 2 is between 1.41 and 1.42, i.e. the square root of 2 is about 1.41 to two decimal places.",
+          "s": [
+            ["Squares 1.4 and 1.5 to bracket the square root of 2 between them", 1],
+            ["Squares 1.41 and 1.42 to narrow the bracket further", 1],
+            ["States the square root of 2 is about 1.41 to two decimal places", 1]
+          ]
+        }
+      ]
+    },
+    {
+      "code": "C8M-2.4",
+      "name": "The Baudhayana-Pythagoras Theorem",
+      "description": "Combining two different-sized squares into one larger square using Baudhayana's rectangle-and-diagonal construction, and the resulting theorem relating the three sides of a right triangle.",
+      "idea": "Marking a rectangle inside the bigger square using the smaller square's side, and drawing its diagonal, produces four congruent right triangles whose outer figure is itself a square -- showing the sum of the two smaller squares equals the square on the hypotenuse.",
+      "rule": "For a right-angled triangle with shorter sides a and b and hypotenuse c, a squared + b squared = c squared. This is the Baudhayana-Pythagoras theorem, also called the Pythagorean theorem.",
+      "example": "For a right triangle with sides 3 and 4, 3 squared + 4 squared = 9 + 16 = 25 = 5 squared, so the hypotenuse is 5.",
+      "difficulty_base": "Easy",
+      "questions": [
+        {
+          "b": "Remember",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "In a right-angled triangle with shorter sides a and b and hypotenuse c, Baudhayana's theorem states",
+          "a": "a squared + b squared = c squared",
+          "o": ["a squared + b squared = c squared", "a + b = c", "a squared - b squared = c squared", "a squared x b squared = c squared"]
+        },
+        {
+          "b": "Remember",
+          "d": "Easy",
+          "t": "fill_blank",
+          "m": 1,
+          "q": "The side opposite the right angle in a right triangle is called the ____.",
+          "a": "hypotenuse"
+        },
+        {
+          "b": "Remember",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "The Baudhayana-Pythagoras theorem is also commonly known as the",
+          "a": "Pythagorean theorem",
+          "o": ["Pythagorean theorem", "Euclid's theorem", "Fermat's theorem", "Bhaskaracharya's theorem"]
+        },
+        {
+          "b": "Remember",
+          "d": "Hard",
+          "t": "mcq",
+          "m": 1,
+          "q": "Which of these is NOT correct about the Baudhayana-Pythagoras theorem?",
+          "a": "It applies only to isosceles right triangles",
+          "o": [
+            "It applies only to isosceles right triangles",
+            "It relates the two shorter sides and the hypotenuse of any right triangle",
+            "Baudhayana stated a general version of it in his Sulba-Sutra",
+            "Pythagoras lived after Baudhayana and is also associated with the theorem"
+          ],
+          "rev": true
+        },
+        {
+          "b": "Understand",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "A right triangle has shorter sides 6 and 8. What is c squared?",
+          "a": "100",
+          "o": ["100", "48", "14", "196"]
+        },
+        {
+          "b": "Understand",
+          "d": "Easy",
+          "t": "fill_blank",
+          "m": 1,
+          "q": "If a = 5 and b = 12 in a right triangle, then c squared = ____.",
+          "a": "169"
+        },
+        {
+          "b": "Understand",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "Why is the four-sided figure formed by joining four congruent right triangles around a tilted inner square itself a square?",
+          "a": "Because all four of its sides are equal in length and all four of its angles are right angles",
+          "o": [
+            "Because all four of its sides are equal in length and all four of its angles are right angles",
+            "Because it has four equal sides only",
+            "Because the four triangles are all different sizes",
+            "Because it always has a smaller area than either original square"
+          ]
+        },
+        {
+          "b": "Understand",
+          "d": "Hard",
+          "t": "mcq",
+          "m": 1,
+          "q": "A right triangle has a = 9 and c = 15. What is b squared?",
+          "a": "144",
+          "o": ["144", "81", "225", "306"]
+        },
+        {
+          "b": "Understand",
+          "d": "Hard",
+          "t": "mcq",
+          "m": 1,
+          "q": "In Baudhayana's construction combining two squares of side a and b (with b greater than a), a rectangle of sides a and (b - a) is marked inside the larger square. What does drawing this rectangle's diagonal create?",
+          "a": "A right triangle with perpendicular sides a and b",
+          "o": [
+            "A right triangle with perpendicular sides a and b",
+            "A right triangle with perpendicular sides a and (b - a)",
+            "A square with side (b - a)",
+            "A rectangle with sides a and b"
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Easy",
+          "t": "fill_blank",
+          "m": 1,
+          "q": "A right triangle has shorter sides 9 and 12. Its hypotenuse is ____.",
+          "a": "15"
+        },
+        {
+          "b": "Apply",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "A right triangle has hypotenuse 13 and one shorter side 5. What is the other shorter side?",
+          "a": "12",
+          "o": ["12", "8", "144", "18"]
+        },
+        {
+          "b": "Apply",
+          "d": "Hard",
+          "t": "mcq",
+          "m": 1,
+          "q": "A right triangle has shorter sides 7 and 24. What is its hypotenuse?",
+          "a": "25",
+          "o": ["25", "31", "17", "28"]
+        },
+        {
+          "b": "Apply",
+          "d": "Hard",
+          "t": "short_answer",
+          "m": 2,
+          "q": "A ladder forms a right triangle with a wall: it reaches 15 m up the wall and its base is 8 m from the wall. Find the length of the ladder.",
+          "a": "c squared = 15 squared + 8 squared = 225 + 64 = 289, so c = 17 m.",
+          "s": [
+            ["Sets up c squared = 225 + 64 = 289", 1],
+            ["Finds c = 17 m", 1]
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Hard",
+          "t": "mcq",
+          "m": 1,
+          "q": "A right triangle has hypotenuse 25 and one shorter side 15. What is the other shorter side?",
+          "a": "20",
+          "o": ["20", "10", "400", "24"]
+        },
+        {
+          "b": "Apply",
+          "d": "Hardest",
+          "t": "long_answer",
+          "m": 3,
+          "q": "A rectangular park is 24 m by 18 m. Find the length of a diagonal path across the park, using the Baudhayana-Pythagoras theorem.",
+          "a": "c squared = 24 squared + 18 squared = 576 + 324 = 900, so c = 30 m.",
+          "s": [
+            ["Sets up c squared = 576 + 324", 1],
+            ["Computes c squared = 900", 1],
+            ["Finds c = 30 m", 1]
+          ]
+        },
+        {
+          "b": "Analyse",
+          "d": "Hard",
+          "t": "assertion_reason",
+          "m": 1,
+          "q": "Assertion (A): A triangle with sides 6, 8 and 10 is a right triangle. Reason (R): 6 squared + 8 squared = 10 squared.",
+          "a": "Both A and R are true, and R is the correct explanation of A",
+          "o": [
+            "Both A and R are true, and R is the correct explanation of A",
+            "Both A and R are true, but R is not the correct explanation of A",
+            "A is true but R is false",
+            "A is false but R is true"
+          ]
+        },
+        {
+          "b": "Analyse",
+          "d": "Hard",
+          "t": "multi_statement",
+          "m": 1,
+          "q": "Consider these statements about the Baudhayana-Pythagoras theorem. (I) It applies to every right-angled triangle, not just isosceles ones. (II) It also applies to any triangle that is not right-angled, as long as one angle is close to 90 degrees. Which is or are correct?",
+          "a": "Only I",
+          "o": ["Only I", "Only II", "Both I and II", "Neither I nor II"]
+        },
+        {
+          "b": "Analyse",
+          "d": "Hardest",
+          "t": "long_answer",
+          "m": 3,
+          "q": "A triangle has sides 9, 12 and 16. Investigate whether it is a right triangle, using the Baudhayana-Pythagoras theorem.",
+          "a": "9 squared + 12 squared = 81 + 144 = 225. 16 squared = 256. Since 225 is not equal to 256, the triangle is not a right triangle.",
+          "s": [
+            ["Computes 9 squared + 12 squared = 225", 1],
+            ["Computes 16 squared = 256", 1],
+            ["Concludes it is not a right triangle since 225 is not equal to 256", 1]
+          ]
+        },
+        {
+          "b": "Evaluate",
+          "d": "Hard",
+          "t": "short_answer",
+          "m": 2,
+          "q": "A student says 'For a triangle with sides 5, 6 and 7, since 5 + 6 = 11 is close to 7, it must be a right triangle.' Identify the mistake in this reasoning and check correctly whether the triangle is right-angled.",
+          "a": "The mistake is comparing sums of sides instead of comparing the sum of the squares of the two shorter sides to the square of the longest side. Checking: 5 squared + 6 squared = 61, but 7 squared = 49, and 61 is not equal to 49, so it is not a right triangle.",
+          "s": [
+            ["Identifies the mistake of comparing sides instead of squares", 1],
+            ["Correctly checks 5 squared + 6 squared is not equal to 7 squared and concludes it is not a right triangle", 1]
+          ]
+        },
+        {
+          "b": "Create",
+          "d": "Hardest",
+          "t": "long_answer",
+          "m": 3,
+          "q": "Find three whole numbers a, b, c (other than 3, 4, 5 or its multiples) that could be the sides of a right triangle, and verify that they satisfy the Baudhayana-Pythagoras theorem.",
+          "a": "Example: 5, 12, 13. Check: 5 squared + 12 squared = 25 + 144 = 169 = 13 squared. So (5, 12, 13) works.",
+          "s": [
+            ["Chooses a set of three whole numbers", 1],
+            ["Computes the sum of squares of the two smaller numbers", 1],
+            ["Verifies it equals the square of the largest number", 1]
+          ]
+        }
+      ]
+    },
+    {
+      "code": "C8M-2.5",
+      "name": "Baudhayana (Pythagorean) Triples",
+      "description": "Sets of three positive integers satisfying a squared + b squared = c squared, including primitive triples, scaled versions, and Fermat's Last Theorem as a related historical fact.",
+      "idea": "If (a, b, c) is a Baudhayana triple, then (ka, kb, kc) is also one for any positive integer k; a triple with no common factor greater than 1 is called primitive.",
+      "rule": "(a, b, c) is a Baudhayana triple if a squared + b squared = c squared. Scaling every term by the same positive integer k gives another triple. A primitive triple has no common factor greater than 1 among a, b and c. Fermat's Last Theorem states a to the power n + b to the power n = c to the power n has no positive whole-number solution for whole number n greater than 2; it was proved by Andrew Wiles in 1994.",
+      "example": "(3, 4, 5) is a primitive Baudhayana triple; (6, 8, 10) is a scaled, non-primitive version of it.",
+      "difficulty_base": "Easy",
+      "questions": [
+        {
+          "b": "Remember",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "Which of these is a Baudhayana triple?",
+          "a": "(3, 4, 5)",
+          "o": ["(3, 4, 5)", "(2, 3, 4)", "(4, 5, 6)", "(1, 2, 3)"]
+        },
+        {
+          "b": "Remember",
+          "d": "Easy",
+          "t": "fill_blank",
+          "m": 1,
+          "q": "A Baudhayana triple with no common factor greater than 1 is called a ____ triple.",
+          "a": "primitive"
+        },
+        {
+          "b": "Remember",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "Fermat's Last Theorem was proved by",
+          "a": "Andrew Wiles",
+          "o": ["Andrew Wiles", "Pythagoras", "Baudhayana", "Bhaskaracharya"]
+        },
+        {
+          "b": "Remember",
+          "d": "Hard",
+          "t": "mcq",
+          "m": 1,
+          "q": "Which of these is NOT a Baudhayana triple?",
+          "a": "(4, 5, 6)",
+          "o": ["(4, 5, 6)", "(5, 12, 13)", "(8, 15, 17)", "(9, 12, 15)"],
+          "rev": true
+        },
+        {
+          "b": "Understand",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "(6, 8, 10) is a scaled version of which primitive triple?",
+          "a": "(3, 4, 5)",
+          "o": ["(3, 4, 5)", "(2, 3, 4)", "(1, 2, 3)", "(4, 5, 6)"]
+        },
+        {
+          "b": "Understand",
+          "d": "Easy",
+          "t": "fill_blank",
+          "m": 1,
+          "q": "(9, 12, 15) is a scaled version of (3, 4, 5) using the scale factor k = ____.",
+          "a": "3"
+        },
+        {
+          "b": "Understand",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "Is (9, 12, 15) a primitive Baudhayana triple?",
+          "a": "No, because 9, 12 and 15 share a common factor of 3",
+          "o": [
+            "No, because 9, 12 and 15 share a common factor of 3",
+            "Yes, because 9 squared + 12 squared = 15 squared",
+            "No, because it does not satisfy a squared + b squared = c squared",
+            "Yes, because 9, 12 and 15 have no common factor"
+          ]
+        },
+        {
+          "b": "Understand",
+          "d": "Hard",
+          "t": "mcq",
+          "m": 1,
+          "q": "If (a, b, c) is a Baudhayana triple, which of these is also guaranteed to be one?",
+          "a": "(5a, 5b, 5c)",
+          "o": ["(5a, 5b, 5c)", "(a + 5, b + 5, c + 5)", "(a squared, b squared, c squared)", "(a - 1, b - 1, c - 1)"]
+        },
+        {
+          "b": "Understand",
+          "d": "Hard",
+          "t": "mcq",
+          "m": 1,
+          "q": "Is (5, 12, 13) a primitive Baudhayana triple?",
+          "a": "Yes, because 5, 12 and 13 share no common factor greater than 1",
+          "o": [
+            "Yes, because 5, 12 and 13 share no common factor greater than 1",
+            "No, because 5, 12 and 13 share a common factor",
+            "Yes, because it can be scaled from (1, 2, 3)",
+            "No, because 5 squared + 12 squared is not equal to 13 squared"
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Easy",
+          "t": "fill_blank",
+          "m": 1,
+          "q": "Scaling the triple (5, 12, 13) by k = 2 gives the triple (10, 24, ____).",
+          "a": "26"
+        },
+        {
+          "b": "Apply",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "Which of these is a scaled version of (8, 15, 17)?",
+          "a": "(16, 30, 34)",
+          "o": ["(16, 30, 34)", "(9, 16, 18)", "(8, 16, 18)", "(24, 30, 34)"]
+        },
+        {
+          "b": "Apply",
+          "d": "Hard",
+          "t": "mcq",
+          "m": 1,
+          "q": "Which scale factor k turns (7, 24, 25) into (21, 72, 75)?",
+          "a": "3",
+          "o": ["3", "7", "21", "9"]
+        },
+        {
+          "b": "Apply",
+          "d": "Hard",
+          "t": "short_answer",
+          "m": 2,
+          "q": "Show that (12, 16, 20) is a Baudhayana triple, and state whether it is primitive.",
+          "a": "12 squared + 16 squared = 144 + 256 = 400 = 20 squared, so it is a Baudhayana triple. It is not primitive since 12, 16 and 20 share a common factor of 4.",
+          "s": [
+            ["Verifies 12 squared + 16 squared = 400 = 20 squared", 1],
+            ["States it is not primitive because of the common factor 4", 1]
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Hard",
+          "t": "mcq",
+          "m": 1,
+          "q": "Using the pattern (n-1) squared + (2n-1) = n squared with n = 25 (since 49 = 2 x 25 - 1 is an odd square), which Baudhayana triple is generated?",
+          "a": "(24, 7, 25)",
+          "o": ["(24, 7, 25)", "(24, 8, 25)", "(23, 7, 24)", "(24, 7, 26)"]
+        },
+        {
+          "b": "Apply",
+          "d": "Hardest",
+          "t": "long_answer",
+          "m": 3,
+          "q": "121 = 11 squared is the 61st odd number (since 121 = 2 x 61 - 1). Using the pattern (n-1) squared + (2n-1) = n squared for n = 61, find the Baudhayana triple generated, and verify it satisfies a squared + b squared = c squared.",
+          "a": "n = 61 gives (n - 1) = 60 and (2n - 1) = 121 = 11 squared. So the triple is (60, 11, 61). Check: 60 squared + 11 squared = 3600 + 121 = 3721 = 61 squared. Verified.",
+          "s": [
+            ["Finds n - 1 = 60 and 2n - 1 = 121", 1],
+            ["States the triple (60, 11, 61)", 1],
+            ["Verifies 60 squared + 11 squared = 61 squared", 1]
+          ]
+        },
+        {
+          "b": "Analyse",
+          "d": "Hard",
+          "t": "assertion_reason",
+          "m": 1,
+          "q": "Assertion (A): (15, 36, 39) is a Baudhayana triple. Reason (R): It is 3 times the primitive triple (5, 12, 13).",
+          "a": "Both A and R are true, and R is the correct explanation of A",
+          "o": [
+            "Both A and R are true, and R is the correct explanation of A",
+            "Both A and R are true, but R is not the correct explanation of A",
+            "A is true but R is false",
+            "A is false but R is true"
+          ]
+        },
+        {
+          "b": "Analyse",
+          "d": "Hard",
+          "t": "multi_statement",
+          "m": 1,
+          "q": "Consider these statements about Baudhayana triples. (I) Every Baudhayana triple is either primitive or a scaled version of a primitive triple. (II) There are only finitely many Baudhayana triples. Which is or are correct?",
+          "a": "Only I",
+          "o": ["Only I", "Only II", "Both I and II", "Neither I nor II"]
+        },
+        {
+          "b": "Analyse",
+          "d": "Hardest",
+          "t": "long_answer",
+          "m": 3,
+          "q": "A student lists (2, 3, 4) as a Baudhayana triple because 2 + 3 = 5 is close to 4 + 1. Investigate whether (2, 3, 4) is actually a Baudhayana triple, and explain the correct test to use.",
+          "a": "Check a squared + b squared = c squared: 2 squared + 3 squared = 4 + 9 = 13, but 4 squared = 16. Since 13 is not equal to 16, (2, 3, 4) is not a Baudhayana triple. The correct test compares the sum of squares of the two smaller numbers to the square of the largest, not a sum of the numbers themselves.",
+          "s": [
+            ["Computes 2 squared + 3 squared = 13", 1],
+            ["Compares to 4 squared = 16 and finds they are unequal", 1],
+            ["States the correct test uses squares, not the numbers themselves", 1]
+          ]
+        },
+        {
+          "b": "Evaluate",
+          "d": "Hard",
+          "t": "short_answer",
+          "m": 2,
+          "q": "A student says 'Fermat's Last Theorem proves that a squared + b squared = c squared has no whole-number solutions.' Identify the error in this statement and state correctly what Fermat's Last Theorem says.",
+          "a": "The error is that the theorem is about powers greater than 2 (n > 2); it says nothing about n = 2, which is exactly when Baudhayana triples do exist. Fermat's Last Theorem says a to the power n + b to the power n = c to the power n has no positive whole-number solutions when n is a whole number greater than 2.",
+          "s": [
+            ["Identifies that the student wrongly applied the theorem to n = 2", 1],
+            ["States the theorem correctly applies only to n greater than 2", 1]
+          ]
+        },
+        {
+          "b": "Create",
+          "d": "Hardest",
+          "t": "long_answer",
+          "m": 3,
+          "q": "Using the primitive triple (9, 40, 41), generate two different scaled (non-primitive) Baudhayana triples, and verify that one of them satisfies a squared + b squared = c squared.",
+          "a": "Scaling by k = 2 gives (18, 80, 82); scaling by k = 3 gives (27, 120, 123). Check k = 2: 18 squared + 80 squared = 324 + 6400 = 6724 = 82 squared. Verified.",
+          "s": [
+            ["States two scaled triples using different values of k", 1],
+            ["Chooses one to verify", 1],
+            ["Confirms a squared + b squared = c squared for the chosen triple", 1]
+          ]
+        }
+      ]
+    },
+    {
+      "code": "C8M-2.6",
+      "name": "Applying the Pythagoras Theorem",
+      "description": "Using a squared + b squared = c squared to solve word problems and geometric problems: diagonals of squares and rectangles, sides of rhombi, checking the longest side of a right triangle, integer-sided rectangles, and the height of an equilateral triangle.",
+      "idea": "Once a right triangle can be identified inside a shape or a story problem, the theorem turns a geometry question into an equation to solve.",
+      "rule": "In any right triangle, a squared + b squared = c squared, and c (the hypotenuse) is always the longest side. The diagonals of a rhombus cross at right angles and bisect each other, so half of each diagonal and the side form a right triangle. The altitude of an equilateral triangle bisects the base and forms a right triangle with the side and half the base.",
+      "example": "A rhombus with diagonals 24 and 70 has half-diagonals 12 and 35, so its side is the square root of (12 squared + 35 squared) = 37 units.",
+      "difficulty_base": "Easy",
+      "questions": [
+        {
+          "b": "Remember",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "In any right triangle, the hypotenuse is always the",
+          "a": "longest side",
+          "o": ["longest side", "shortest side", "side opposite the smallest angle", "same length as one of the other two sides"]
+        },
+        {
+          "b": "Remember",
+          "d": "Easy",
+          "t": "fill_blank",
+          "m": 1,
+          "q": "The diagonals of a rhombus cross each other at ____ angles.",
+          "a": "right"
+        },
+        {
+          "b": "Remember",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "To find the height of an equilateral triangle using the Pythagoras theorem, the altitude is drawn so that it",
+          "a": "bisects the base",
+          "o": ["bisects the base", "doubles the base", "is parallel to the base", "equals the base"]
+        },
+        {
+          "b": "Remember",
+          "d": "Hard",
+          "t": "mcq",
+          "m": 1,
+          "q": "Which of these is NOT true about the diagonal of a square?",
+          "a": "It is always shorter than the side of the square",
+          "o": [
+            "It is always shorter than the side of the square",
+            "It is longer than each side of the square",
+            "It can be found using the Pythagoras theorem with both legs equal to the side",
+            "It is the hypotenuse of a right triangle formed by two sides of the square"
+          ],
+          "rev": true
+        },
+        {
+          "b": "Understand",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "A square has side 5 cm. What is the length of its diagonal (leave the answer in root form)?",
+          "a": "The square root of 50 cm",
+          "o": ["The square root of 50 cm", "The square root of 25 cm", "10 cm", "The square root of 10 cm"]
+        },
+        {
+          "b": "Understand",
+          "d": "Easy",
+          "t": "fill_blank",
+          "m": 1,
+          "q": "A rhombus has diagonals of length 24 and 70 units. Half of each diagonal is 12 and ____.",
+          "a": "35"
+        },
+        {
+          "b": "Understand",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "Why can the side of a rhombus be found from half its two diagonals using the Pythagoras theorem?",
+          "a": "Because the diagonals of a rhombus bisect each other at right angles, forming a right triangle with the side as hypotenuse",
+          "o": [
+            "Because the diagonals of a rhombus bisect each other at right angles, forming a right triangle with the side as hypotenuse",
+            "Because a rhombus is always a square",
+            "Because the diagonals of a rhombus are always equal",
+            "Because the side of a rhombus is always the shorter diagonal"
+          ]
+        },
+        {
+          "b": "Understand",
+          "d": "Hard",
+          "t": "mcq",
+          "m": 1,
+          "q": "A right triangle has sides 9, 12 and 15. Which side must be the hypotenuse?",
+          "a": "15, because it is the longest side",
+          "o": [
+            "15, because it is the longest side",
+            "9, because it is the shortest side",
+            "12, because it is the middle value",
+            "Any of the three sides could be the hypotenuse"
+          ]
+        },
+        {
+          "b": "Understand",
+          "d": "Hard",
+          "t": "mcq",
+          "m": 1,
+          "q": "A rectangle has integer sidelengths 6 and 8. What is its diagonal?",
+          "a": "10",
+          "o": ["10", "14", "48", "100"]
+        },
+        {
+          "b": "Apply",
+          "d": "Easy",
+          "t": "fill_blank",
+          "m": 1,
+          "q": "A square has diagonal 10 cm. Its side satisfies side squared = ____ sq. cm.",
+          "a": "50"
+        },
+        {
+          "b": "Apply",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "A rectangle has sides 5 and 12 units. What is the length of its diagonal?",
+          "a": "13 units",
+          "o": ["13 units", "17 units", "7 units", "60 units"]
+        },
+        {
+          "b": "Apply",
+          "d": "Hard",
+          "t": "mcq",
+          "m": 1,
+          "q": "An equilateral triangle has side 6 units. Using the altitude h, which equation correctly finds h?",
+          "a": "h squared + 3 squared = 6 squared",
+          "o": ["h squared + 3 squared = 6 squared", "h squared + 6 squared = 3 squared", "h squared = 6 squared - 6 squared", "h + 3 = 6"]
+        },
+        {
+          "b": "Apply",
+          "d": "Hard",
+          "t": "short_answer",
+          "m": 2,
+          "q": "Find the side of a rhombus whose diagonals are 16 units and 30 units.",
+          "a": "Half-diagonals are 8 and 15. side squared = 8 squared + 15 squared = 64 + 225 = 289, so side = 17 units.",
+          "s": [
+            ["Halves the diagonals to get 8 and 15", 1],
+            ["Computes side = the square root of (8 squared + 15 squared) = 17 units", 1]
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Hard",
+          "t": "mcq",
+          "m": 1,
+          "q": "A lotus stem sticks 1 unit above the water. When swayed by the breeze, it touches the water 3 units from its original position. If x is the depth of the lake, which equation correctly represents this situation?",
+          "a": "3 squared + x squared = (x + 1) squared",
+          "o": ["3 squared + x squared = (x + 1) squared", "3 squared + (x + 1) squared = x squared", "3 + x = x + 1", "3 squared = x squared + 1 squared"]
+        },
+        {
+          "b": "Apply",
+          "d": "Hardest",
+          "t": "long_answer",
+          "m": 3,
+          "q": "Find the area of an equilateral triangle with side 6 units, using the fact that the altitude bisects the base and forms a right triangle.",
+          "a": "Half the base = 3 units. height squared = 6 squared - 3 squared = 36 - 9 = 27, so height = the square root of 27 = 3 times the square root of 3 units. Area = (1/2) x base x height = (1/2) x 6 x 3 times the square root of 3 = 9 times the square root of 3 sq. units.",
+          "s": [
+            ["Sets up height squared = 6 squared - 3 squared = 27", 1],
+            ["Finds height = 3 times the square root of 3 units", 1],
+            ["Computes area = 9 times the square root of 3 sq. units", 1]
+          ]
+        },
+        {
+          "b": "Analyse",
+          "d": "Hard",
+          "t": "assertion_reason",
+          "m": 1,
+          "q": "Assertion (A): In the lotus problem, if the stem sticks 1 unit above the water and sways to touch the water 3 units away, the depth of the lake is 4 units. Reason (R): The equation 3 squared + x squared = (x + 1) squared simplifies to 9 = 2x + 1, giving x = 4.",
+          "a": "Both A and R are true, and R is the correct explanation of A",
+          "o": [
+            "Both A and R are true, and R is the correct explanation of A",
+            "Both A and R are true, but R is not the correct explanation of A",
+            "A is true but R is false",
+            "A is false but R is true"
+          ]
+        },
+        {
+          "b": "Analyse",
+          "d": "Hard",
+          "t": "multi_statement",
+          "m": 1,
+          "q": "Consider these statements about applying the Pythagoras theorem to shapes. (I) The side of a rhombus can be found from half of each diagonal, since they meet at right angles. (II) The diagonal of any rectangle can be found from its two sidelengths using a squared + b squared = c squared. Which is or are correct?",
+          "a": "Both I and II",
+          "o": ["Both I and II", "Only I", "Only II", "Neither I nor II"]
+        },
+        {
+          "b": "Analyse",
+          "d": "Hardest",
+          "t": "long_answer",
+          "m": 3,
+          "q": "A student claims that for any triangle at all (not just right triangles), the longest side squared equals the sum of the squares of the other two sides. Test this claim on a triangle with sides 5, 6 and 9, and state whether the claim is generally true.",
+          "a": "5 squared + 6 squared = 25 + 36 = 61, but 9 squared = 81. Since 61 is not equal to 81, the relation does not hold for this triangle, which is not a right triangle. So the claim is false in general -- it only holds for right triangles.",
+          "s": [
+            ["Computes 5 squared + 6 squared = 61", 1],
+            ["Compares to 9 squared = 81 and finds they are unequal", 1],
+            ["Concludes the claim is false in general and only holds for right triangles", 1]
+          ]
+        },
+        {
+          "b": "Evaluate",
+          "d": "Hard",
+          "t": "short_answer",
+          "m": 2,
+          "q": "A student finds the diagonal of a rectangle with sides 7 and 24 by computing 7 + 24 = 31. Identify the mistake and give the correct diagonal.",
+          "a": "The mistake is adding the sides instead of using the Pythagoras theorem. The correct diagonal is the square root of (7 squared + 24 squared) = the square root of (49 + 576) = the square root of 625 = 25 units.",
+          "s": [
+            ["Identifies the mistake of adding the sides instead of applying a squared + b squared = c squared", 1],
+            ["Gives the correct diagonal 25 units", 1]
+          ]
+        },
+        {
+          "b": "Create",
+          "d": "Hardest",
+          "t": "long_answer",
+          "m": 3,
+          "q": "Design a word problem (different from the lotus-in-the-lake problem in this chapter) that can be solved using the Pythagoras theorem, involving a ladder, a pole or a similar real object. State your problem and solve it.",
+          "a": "Example: A 13 m ladder leans against a wall with its base 5 m from the wall. How high up the wall does it reach? height squared = 13 squared - 5 squared = 169 - 25 = 144, so height = 12 m.",
+          "s": [
+            ["States a sensible real-world right-triangle word problem", 1],
+            ["Sets up the correct Pythagoras equation for it", 1],
+            ["Solves it to a correct final answer", 1]
+          ]
+        }
+      ]
+    }
+  ]
+}
