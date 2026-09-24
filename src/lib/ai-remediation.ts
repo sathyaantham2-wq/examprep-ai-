@@ -1,7 +1,7 @@
 import type { Db } from '../db/connection'
 import { completeText, isAiConfigured } from './ai-provider'
 import { enforceAiCallBudget, logAiJob } from './ai-metering'
-import { callWithModelFallback, modelForFeature } from './ai-models'
+import { ModelCallError, callWithModelFallback, modelForFeature } from './ai-models'
 
 // F094: resolved from tab07's task-to-model map (src/lib/ai-models.ts) rather than a hardcoded
 // literal -- AI-09 is "strong model" tier, same as AI-01/AI-05.
@@ -73,9 +73,11 @@ Respond with ONLY a JSON object, no other text, matching exactly:
     response = outcome.result
     modelUsed = outcome.modelUsed
   } catch (err) {
+    // 2026-09-24: log whichever model actually threw (see ai-models.ts's ModelCallError), not
+    // always this constant -- a retry failure was otherwise misattributed to the primary model.
     await logAiJob(db, {
       feature: 'AI-09',
-      model: MODEL,
+      model: err instanceof ModelCallError ? err.failedModel : MODEL,
       householdId: input.householdId,
       studentId: input.studentId,
       latencyMs: Date.now() - startedAt,

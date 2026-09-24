@@ -2,7 +2,7 @@ import type { Db } from '../db/connection'
 import type { ErrorType } from '../db/enums'
 import { completeText, isAiConfigured } from './ai-provider'
 import { enforceAiCallBudget, logAiJob } from './ai-metering'
-import { callWithModelFallback, modelForFeature } from './ai-models'
+import { ModelCallError, callWithModelFallback, modelForFeature } from './ai-models'
 
 const ERROR_TYPES = [
   'Conceptual Gap',
@@ -114,9 +114,11 @@ Respond with ONLY a JSON object, no other text, matching exactly:
     response = outcome.result
     modelUsed = outcome.modelUsed
   } catch (err) {
+    // 2026-09-24: log whichever model actually threw (see ai-models.ts's ModelCallError), not
+    // always this constant -- a retry failure was otherwise misattributed to the primary model.
     await logAiJob(db, {
       feature: 'AI-05',
-      model: MODEL,
+      model: err instanceof ModelCallError ? err.failedModel : MODEL,
       householdId: input.householdId,
       studentId: input.studentId,
       latencyMs: Date.now() - startedAt,
@@ -286,9 +288,11 @@ Respond with ONLY a JSON object, no other text, matching exactly:
     response = outcome.result
     modelUsed = outcome.modelUsed
   } catch (err) {
+    // 2026-09-24: log whichever model actually threw (see ai-models.ts's ModelCallError), not
+    // always this constant -- a retry failure was otherwise misattributed to the primary model.
     await logAiJob(db, {
       feature: 'AI-05',
-      model: MODEL,
+      model: err instanceof ModelCallError ? err.failedModel : MODEL,
       householdId: input.householdId,
       studentId: input.studentId,
       latencyMs: Date.now() - startedAt,

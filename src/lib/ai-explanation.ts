@@ -1,7 +1,7 @@
 import type { Db } from '../db/connection'
 import { completeText, isAiConfigured } from './ai-provider'
 import { enforceAiCallBudget, logAiJob } from './ai-metering'
-import { callWithModelFallback, modelForFeature } from './ai-models'
+import { ModelCallError, callWithModelFallback, modelForFeature } from './ai-models'
 
 // F126 / tab07 AI-13: "per-question worked explanation". Same shape as AI-09's generator
 // (src/lib/ai-remediation.ts) -- resolved model tier, budget check, fallback, job logging.
@@ -75,9 +75,12 @@ Respond with ONLY a JSON object, no other text, matching exactly:
     response = outcome.result
     modelUsed = outcome.modelUsed
   } catch (err) {
+    // 2026-09-24: log whichever model actually threw (the retry, if the primary already failed
+    // and got swallowed by callWithModelFallback) rather than always the primary MODEL constant --
+    // this is what caught Gemini's 2.5 retirement showing up in ai_jobs under the wrong model name.
     await logAiJob(db, {
       feature: 'AI-13',
-      model: MODEL,
+      model: err instanceof ModelCallError ? err.failedModel : MODEL,
       householdId: input.householdId,
       studentId: input.studentId,
       latencyMs: Date.now() - startedAt,

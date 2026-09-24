@@ -88,13 +88,34 @@ export interface ModelFallbackResult<T> {
   usedFallback: boolean
 }
 
+// 2026-09-24: every ai-*.ts caller's error-path logAiJob() logged its own constant MODEL, not
+// whichever model actually threw -- harmless while the primary model worked, but the exact case
+// that needed this (Gemini retiring the 2.5 generation) is also the case where it matters: ai_jobs
+// showed "gemini-2.5-flash" failing with an error that was actually about "gemini-2.5-flash-lite",
+// the RETRY model, because the retry's failure is what propagates (see this function's own doc
+// comment below) while the primary's failure is silently swallowed. Attaching the model that
+// actually threw onto the error itself, here, is the one place that can know it -- neither
+// `catch` block a caller writes around this function's own throw can otherwise tell primary and
+// retry apart.
+export class ModelCallError extends Error {
+  readonly failedModel: string
+  constructor(failedModel: string, cause: unknown) {
+    super(cause instanceof Error ? cause.message : String(cause))
+    this.name = 'ModelCallError'
+    this.failedModel = failedModel
+    if (cause instanceof Error && cause.stack) this.stack = cause.stack
+  }
+}
+
 /**
  * F094: "automatic fallback on failure." Calls `fn` with `primaryModel`; if that throws, retries
  * once with FALLBACK_MODEL and reports which model actually produced the result so the caller can
  * log it accurately (ai_jobs.model). If `primaryModel` already *is* the fallback model, there is
  * nothing left to fall back to -- the original error propagates rather than calling the exact same
  * model twice. If the fallback attempt also throws, that second error propagates (not the first),
- * since it's the more recent, more relevant failure for the caller's own error log.
+ * since it's the more recent, more relevant failure for the caller's own error log -- as a
+ * ModelCallError carrying which model (primary or retry) actually threw, so a caller's own catch
+ * block can log `err.failedModel` instead of guessing.
  */
 export async function callWithModelFallback<T>(
   primaryModel: string,
@@ -105,8 +126,12 @@ export async function callWithModelFallback<T>(
     return { result, modelUsed: primaryModel, usedFallback: false }
   } catch (err) {
     const retryModel = fallbackModel()
-    if (primaryModel === retryModel) throw err
-    const result = await fn(retryModel)
-    return { result, modelUsed: retryModel, usedFallback: true }
+    if (primaryModel === retryModel) throw new ModelCallError(primaryModel, err)
+    try {
+      const result = await fn(retryModel)
+      return { result, modelUsed: retryModel, usedFallback: true }
+    } catch (retryErr) {
+      throw new ModelCallError(retryModel, retryErr)
+    }
   }
 }
