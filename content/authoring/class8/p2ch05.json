@@ -1,0 +1,2024 @@
+{
+  "subject": {
+    "code": "MATH8",
+    "name": "Mathematics",
+    "board": "CBSE",
+    "class": 8
+  },
+  "source": {
+    "publisher": "NCERT",
+    "title": "Ganita Prakash",
+    "edition": "Reprint 2026-27",
+    "year": 2026
+  },
+  "depth": 20,
+  "chapter": {
+    "part": "II",
+    "chapter_no": 5,
+    "name": "Tales by Dots and Lines",
+    "blurb": "The mean and median as a 'balancing point' of data -- how they change when a value is added, removed, or when every value is shifted or scaled by a fixed number; finding an unknown value given the mean; finding the mean and median of frequency-table data; basic spreadsheet cell references and SUM/AVERAGE formulas; and reading, comparing and interpreting line graphs of data that changes over time.",
+    "source_code": "hegp205",
+    "order_index": 12
+  },
+  "scope_in": [
+    {
+      "item": "The mean as a 'balancing point': the sum of the distances of values below it equals the sum of distances of values above it, and why there is only one such centre",
+      "pages": "103-104"
+    },
+    {
+      "item": "How the mean changes when a value greater than, less than, or equal to it is included in or removed from the data",
+      "pages": "103-106"
+    },
+    {
+      "item": "Finding combinations of values that can be included in or removed from the data without changing the mean",
+      "pages": "106"
+    },
+    {
+      "item": "How the mean changes when a fixed number is added to, subtracted from, or multiplied with every value in the data, proved algebraically using x1, x2, ..., xn",
+      "pages": "106-108"
+    },
+    {
+      "item": "How the median changes when a value greater than or less than it is included in the data",
+      "pages": "108-109"
+    },
+    {
+      "item": "Finding an unknown/missing value in a data set given its mean and the other values, including correcting a data set for a recording error",
+      "pages": "109"
+    },
+    {
+      "item": "Finding the mean and median of data presented in a frequency table, using value times frequency and cumulative frequency to locate the median's position",
+      "pages": "110"
+    },
+    {
+      "item": "Reading and writing basic spreadsheet cell references (e.g. E5), range notation (Start:End, e.g. B3:G3), and SUM/AVERAGE formulas",
+      "pages": "111-113"
+    },
+    {
+      "item": "Figure It Out problems on mean and median: reverse problems, dot plots, and true/sometimes/never justification of statements about how mean and median change",
+      "pages": "113-115, 127-129"
+    },
+    {
+      "item": "Reading a line graph: identifying axes, scale and what each line represents (Step 1), then inferring and interpreting trends and comparisons (Step 2)",
+      "pages": "116-120"
+    },
+    {
+      "item": "Why a line graph is preferred over a clustered-column graph for data with many points that changes over time",
+      "pages": "120"
+    },
+    {
+      "item": "Reading and comparing multiple lines on the same line graph (e.g. monthly rainfall across several cities)",
+      "pages": "121"
+    },
+    {
+      "item": "The chapter's summary statements on the balancing property of mean and median, and on line graphs showing change over time",
+      "pages": "133"
+    }
+  ],
+  "scope_out": [
+    {
+      "item": "The rice-vs-wheat preference infographic, a colour-coded map with values from -100 to +100",
+      "reason": "Not answerable without the coloured map image, which cannot be reproduced in a text-based question"
+    },
+    {
+      "item": "The coloured 'activity strip' representation of a day (Manoj's sleeping/eating/travelling strip) and questions asking to read specific colours or time blocks from it",
+      "reason": "Depends entirely on a coloured image not present in the extracted text, with no data table equivalent given"
+    },
+    {
+      "item": "The exact 'Sleepy-Deepy' sleep-duration line graph across ages 6-75, and the specific sunrise/sunset, moonrise/moonset, kerosene-vs-electricity, and hobbies-and-games line graphs in the Figure It Out exercises",
+      "reason": "These figures give no accompanying data table in the text; unlike the temperature and rainfall examples (which do give numbers in prose or a table), their values are only readable from images not available for authoring"
+    },
+    {
+      "item": "Individual and small-group data-collection projects (Figure It Out Q12, Q13: tracking one's own or one's family's daily activities or sleep)",
+      "reason": "Open-ended fieldwork with no fixed correct answer, not a testable exam question"
+    },
+    {
+      "item": "The 'Game of Hex' board game on the chapter's last printed page (p.134)",
+      "reason": "A stand-alone recreational puzzle unrelated to mean, median or line graphs, with no statistics content of its own"
+    },
+    {
+      "item": "Actually entering data and running formulas on computer spreadsheet software (Excel, Google Sheets, LibreOffice Calc)",
+      "reason": "Requires hands-on computer access; authoring covers only the paper-answerable cell-reference and formula knowledge the chapter itself tests in its Figure It Out questions"
+    }
+  ],
+  "concepts": [
+    {
+      "code": "C8M-5.1",
+      "name": "Mean and median as a balancing centre: effect of including or removing a value",
+      "description": "How the mean and median change when a value greater than, less than, or equal to them is included in or removed from a data set.",
+      "idea": "The mean is the point where the total distance of values below it equals the total distance of values above it, so including a value greater than the mean pulls the mean up and including one less than the mean pulls it down; the median moves the same way when a value is included.",
+      "rule": "For a data set with mean m: including a new value greater than m makes the new mean greater than m; including a value less than m makes the new mean less than m; including a value equal to m leaves the mean unchanged. Removing a value works the opposite way -- removing a value greater than the mean decreases the mean, and removing a value less than the mean increases it. Two or more values can be included or removed together, some above and some below the current mean, so that their effects cancel and the mean stays the same. The median moves the same way: including a value greater than the current median increases the median, and including a value less than it decreases the median.",
+      "example": "The data 10, 10, 11, 17 has mean 12. Including the value 20 (greater than 12) raises the mean to 13.6. Including the value 5 (less than 12) lowers the mean to 10.6.",
+      "difficulty_base": "Easy",
+      "questions": [
+        {
+          "b": "Remember",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "A data set has mean 18. A new value of 25 is included in the data. What happens to the new mean?",
+          "a": "It becomes greater than 18",
+          "o": [
+            "It becomes greater than 18",
+            "It becomes less than 18",
+            "It stays exactly 18",
+            "It becomes exactly 25"
+          ]
+        },
+        {
+          "b": "Remember",
+          "d": "Easy",
+          "t": "fill_blank",
+          "m": 1,
+          "q": "If a value equal to the mean of a data set is removed from the data, the mean of the remaining data will be ____.",
+          "a": "unchanged"
+        },
+        {
+          "b": "Remember",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "The mean of a data set is described as a 'balancing point' because",
+          "a": "the sum of the distances of values below it equals the sum of the distances of values above it",
+          "o": [
+            "the sum of the distances of values below it equals the sum of the distances of values above it",
+            "it is always exactly halfway between the smallest and largest value",
+            "it is always equal to the median",
+            "it is the value that occurs most often in the data"
+          ]
+        },
+        {
+          "b": "Remember",
+          "d": "Hard",
+          "t": "mcq",
+          "m": 1,
+          "q": "A data set has median 20. A new value of 15 is included in the data (15 is less than the median). What happens to the new median?",
+          "a": "It decreases (becomes less than 20)",
+          "o": [
+            "It decreases (becomes less than 20)",
+            "It increases (becomes greater than 20)",
+            "It stays exactly 20",
+            "It becomes exactly 15"
+          ]
+        },
+        {
+          "b": "Understand",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "The data 4, 6, 8 has mean 6. A new value of 12 is included. What happens to the mean?",
+          "a": "It increases to 7.5, a value between 6 and 12",
+          "o": [
+            "It increases to 7.5, a value between 6 and 12",
+            "It increases to 9, exactly halfway between 6 and 12",
+            "It increases all the way to 12, since the new value pulls it up",
+            "It decreases, since there are now more values than before"
+          ]
+        },
+        {
+          "b": "Understand",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "The data 10, 14, 18, 22 has median 16. Which of these values, if included in the data, would NOT increase the median?",
+          "a": "12",
+          "o": [
+            "12",
+            "25",
+            "30",
+            "40"
+          ],
+          "rev": true
+        },
+        {
+          "b": "Understand",
+          "d": "Easy",
+          "t": "short_answer",
+          "m": 2,
+          "q": "The mean of the data 6, 9, 12 is 9. A new value of 9 (equal to the mean) is included. Explain, without doing long division, why the new mean must still be 9.",
+          "a": "Adding a value equal to the current mean does not shift the balance, since it lies exactly at the centre; checking directly, the new mean is (6+9+12+9)/4 = 36/4 = 9, matching the old mean.",
+          "s": [
+            [
+              "States that adding a value equal to the current mean does not shift the balance because it lies exactly at the centre",
+              1
+            ],
+            [
+              "Confirms new mean = (6+9+12+9)/4 = 36/4 = 9, matching the old mean",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Understand",
+          "d": "Hard",
+          "t": "mcq",
+          "m": 1,
+          "q": "The data set 20, 22, 24 has mean 22. Two new values, 18 and 26, are included together. What happens to the mean?",
+          "a": "The mean stays exactly 22, because 18 and 26 are equally below and above the mean",
+          "o": [
+            "The mean stays exactly 22, because 18 and 26 are equally below and above the mean",
+            "The mean increases slightly, since 26 is included",
+            "The mean decreases slightly, since 18 is included",
+            "The mean cannot be determined without recomputing it from scratch"
+          ]
+        },
+        {
+          "b": "Understand",
+          "d": "Hard",
+          "t": "mcq",
+          "m": 1,
+          "q": "The sorted data 3, 7, 9, 9, 9, 15, 20 has median 9 (the 4th value). If one of the values equal to 9 is removed, what happens to the median of the remaining 6 values?",
+          "a": "The median stays 9",
+          "o": [
+            "The median stays 9",
+            "The median decreases, because a value was removed",
+            "The median becomes the average of all the remaining values",
+            "The median can no longer be found because there are now an even number of values"
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Easy",
+          "t": "fill_blank",
+          "m": 1,
+          "q": "The data 15, 20, 25 has mean 20. If a new value of 20 is included, the new mean is ____.",
+          "a": "20"
+        },
+        {
+          "b": "Apply",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "The data 10, 12, 14 has mean 12. A new value of 18 is included. What is the new mean?",
+          "a": "13.5",
+          "o": [
+            "13.5",
+            "15",
+            "18",
+            "9"
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Hard",
+          "t": "short_answer",
+          "m": 2,
+          "q": "The data set 8, 10, 12, 14, 16 has mean 12. A new value is included and the new mean becomes 13. Find the value that was included.",
+          "a": "The value included is 18.",
+          "s": [
+            [
+              "Sets up the equation (60 + x) / 6 = 13, using the original sum 8+10+12+14+16 = 60",
+              1
+            ],
+            [
+              "Solves to get x = 18",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Hard",
+          "t": "short_answer",
+          "m": 2,
+          "q": "The data 5, 9, 13, 17, 21 has mean 13. If the value 21 (greater than the mean) is removed, will the new mean be greater than, less than, or equal to 13? Find the new mean to confirm.",
+          "a": "Removing a value greater than the mean decreases the mean; the new mean is (5+9+13+17)/4 = 44/4 = 11, which is less than 13.",
+          "s": [
+            [
+              "States that removing a value greater than the mean decreases the mean",
+              1
+            ],
+            [
+              "Computes new mean = (5+9+13+17)/4 = 44/4 = 11",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Hard",
+          "t": "mcq",
+          "m": 1,
+          "q": "The data 6, 10, 14 has median 10. A value of 10 (equal to the median) is included, giving 6, 10, 10, 14. What is the new median?",
+          "a": "10, unchanged",
+          "o": [
+            "10, unchanged",
+            "12, the average of the two middle values 10 and 14",
+            "5, half of the smallest included value",
+            "14, the largest value becomes the new median"
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Hardest",
+          "t": "long_answer",
+          "m": 3,
+          "q": "The data 6, 10, 14, 18 has mean 12. Two new values are included: one that is 5 more than the mean, and one that is 5 less than the mean. (a) State, without calculating, what you expect the new mean to be, and why. (b) Verify by finding the actual new mean.",
+          "a": "(a) The new mean should still be 12, since the two new values (17 and 7) are equally above and below the current mean and so cancel out. (b) New data: 6, 10, 14, 18, 17, 7; sum = 72; new mean = 72/6 = 12, confirming part (a).",
+          "s": [
+            [
+              "States the new mean will still be 12 because the two new values are equally spaced above and below the mean and cancel each other's effect",
+              1
+            ],
+            [
+              "Identifies the two values as 17 (12+5) and 7 (12-5)",
+              1
+            ],
+            [
+              "Computes new mean = 72/6 = 12, confirming part (a)",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Analyse",
+          "d": "Hard",
+          "t": "assertion_reason",
+          "m": 1,
+          "q": "Assertion (A): Including a new value that is less than the current mean of a data set always decreases the mean. Reason (R): The mean of a data set always lies exactly halfway between its smallest and its largest value.",
+          "a": "A is true but R is false",
+          "o": [
+            "A is true but R is false",
+            "Both A and R are true, and R is the correct explanation of A",
+            "Both A and R are true, but R is not the correct explanation of A",
+            "A is false but R is true"
+          ]
+        },
+        {
+          "b": "Analyse",
+          "d": "Hard",
+          "t": "multi_statement",
+          "m": 1,
+          "q": "Consider: (I) Removing a value equal to the mean from a data set never changes the mean of the remaining data. (II) Including two values, one 3 more and one 3 less than the current mean, always leaves the mean unchanged. Which is or are correct?",
+          "a": "Both I and II",
+          "o": [
+            "Both I and II",
+            "Only I",
+            "Only II",
+            "Neither I nor II"
+          ]
+        },
+        {
+          "b": "Analyse",
+          "d": "Hardest",
+          "t": "long_answer",
+          "m": 3,
+          "q": "A student claims: 'If I remove the largest value from a data set, the mean will always decrease.' Using the data 4, 6, 8, 50 (mean 17), check whether removing the largest value (50) decreases the mean, and then decide whether the student's claim is true in general. Justify using the balancing rule for the mean.",
+          "a": "Removing 50 leaves 4, 6, 8 with mean 6, which is less than 17, confirming the claim in this example. In general, the largest value in a data set is always greater than or equal to the mean, so removing it must decrease the mean, by the rule that removing a value greater than the mean decreases it -- true whenever the values are not all equal. If every value in the data set is equal, the largest value equals the mean, and removing it does not change the mean at all.",
+          "s": [
+            [
+              "Computes that removing 50 from 4, 6, 8, 50 gives mean 6, less than the original mean 17, confirming the claim in this example",
+              1
+            ],
+            [
+              "States the general reason: the largest value in a data set is always greater than or equal to the mean, so by the rule that removing a value greater than the mean decreases the mean, the claim holds whenever the values are not all equal",
+              1
+            ],
+            [
+              "Notes the exception: if all values in the data set are equal, the largest value equals the mean, and removing it does not change the mean at all",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Evaluate",
+          "d": "Hard",
+          "t": "short_answer",
+          "m": 2,
+          "q": "A data set has 5 values with mean 10, and its largest value is 10 (equal to the mean). Two students disagree: Aisha says 'the largest value must be greater than the mean, since it's the maximum,' while Rohan says 'it's possible for the maximum to equal the mean.' Whose reasoning is correct, and give an example of a 5-value data set with mean 10 where the maximum value is exactly 10, to support your answer.",
+          "a": "Rohan is correct. Example: 10, 10, 10, 10, 10 -- all five values are 10, so the mean is 10 and the maximum value is also 10.",
+          "s": [
+            [
+              "States that Rohan is correct -- the maximum can equal the mean",
+              1
+            ],
+            [
+              "Gives a valid 5-value example with mean 10 where the maximum equals 10 (e.g. all values equal to 10)",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Create",
+          "d": "Hardest",
+          "t": "long_answer",
+          "m": 3,
+          "q": "Design a data set of exactly 4 whole numbers with a mean of 15, such that: (a) including the value 25 would increase the mean, and (b) removing the smallest value would increase the mean. Write your 4 numbers and briefly justify that both conditions hold.",
+          "a": "Example: 5, 15, 18, 22 (sum 60, mean 15). (a) Since 25 is greater than the mean 15, including it must increase the mean. (b) The smallest value, 5, is less than the mean 15, so removing it must increase the mean; checking, the remaining values 15, 18, 22 have mean 55/3 = 18.33, which is greater than 15.",
+          "s": [
+            [
+              "Gives 4 whole numbers summing to 60 (e.g. 5, 15, 18, 22)",
+              1
+            ],
+            [
+              "Confirms mean = 60/4 = 15",
+              1
+            ],
+            [
+              "Justifies that including 25 (greater than 15) increases the mean, and that the smallest value (5, less than the mean) being removed also increases the mean",
+              1
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "code": "C8M-5.2",
+      "name": "Effect on the mean of a fixed change applied to every value",
+      "description": "How the mean changes when a fixed number is added to, subtracted from, or multiplied with every value in a data set, proved algebraically.",
+      "idea": "If every value of a data set is increased, decreased, or scaled by the same fixed number, the mean changes in exactly the same way -- add k to every value and the mean increases by k; multiply every value by k and the mean is multiplied by k.",
+      "rule": "If a data set has mean a and every value has a fixed number k added to it, the new mean is a + k. If every value has k subtracted, the new mean is a - k. If every value is multiplied by a fixed number k, the new mean is a * k. This follows from writing the mean as (x1+x2+...+xn)/n = a and applying the operation to each xi inside the sum.",
+      "example": "The data 2, 4, 6 has mean 4. Adding 10 to every value gives 12, 14, 16, with mean 14 = 4 + 10. Multiplying every value by 3 gives 6, 12, 18, with mean 12 = 4 * 3.",
+      "difficulty_base": "Hard",
+      "questions": [
+        {
+          "b": "Remember",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "If every value in a data set is increased by 5, what happens to the mean?",
+          "a": "The mean also increases by 5",
+          "o": [
+            "The mean also increases by 5",
+            "The mean stays the same",
+            "The mean increases by 5 times the number of values",
+            "The mean cannot be determined without the original data"
+          ]
+        },
+        {
+          "b": "Remember",
+          "d": "Easy",
+          "t": "fill_blank",
+          "m": 1,
+          "q": "A data set has mean 20. If every value in it is multiplied by 4, the new mean is ____.",
+          "a": "80"
+        },
+        {
+          "b": "Remember",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "A data set has mean 12. If every value is reduced by 3, the new mean is",
+          "a": "9",
+          "o": [
+            "9",
+            "15",
+            "36",
+            "12"
+          ]
+        },
+        {
+          "b": "Remember",
+          "d": "Hard",
+          "t": "mcq",
+          "m": 1,
+          "q": "A data set has mean 6. Every value is first doubled, then increased by 1. What is the new mean?",
+          "a": "13",
+          "o": [
+            "13",
+            "12",
+            "7",
+            "14"
+          ]
+        },
+        {
+          "b": "Understand",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "The data 10, 20, 30 has mean 20. Why does multiplying every value by 2 give a new mean of 40, rather than some other number?",
+          "a": "Because scaling every value by the same factor scales their sum, and hence their mean, by that same factor",
+          "o": [
+            "Because scaling every value by the same factor scales their sum, and hence their mean, by that same factor",
+            "Because only the largest value affects the mean",
+            "Because the mean only changes if the number of values changes",
+            "Because 40 is double the smallest value plus a correction"
+          ]
+        },
+        {
+          "b": "Understand",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "A data set has mean 15. A student adds 5 to every value and gets a new mean of 15 (unchanged). What mistake could explain this wrong answer?",
+          "a": "The student may have added 5 to only one value instead of every value in the data set",
+          "o": [
+            "The student may have added 5 to only one value instead of every value in the data set",
+            "The student used the correct rule and the answer is actually right",
+            "The student correctly applied the rule that adding a constant never changes the mean",
+            "The student divided by one extra value by mistake"
+          ]
+        },
+        {
+          "b": "Understand",
+          "d": "Easy",
+          "t": "short_answer",
+          "m": 2,
+          "q": "The data 4, 6, 8 has mean 6. Without recalculating from scratch, state what the new mean will be if 10 is subtracted from every value, and explain why using the algebraic rule for the mean.",
+          "a": "The new mean will be 6 - 10 = -4. Subtracting the same number k from every value subtracts k from the mean, since (x1-k)+(x2-k)+...+(xn-k), all over n, equals the old mean minus k.",
+          "s": [
+            [
+              "States new mean = 6 - 10 = -4",
+              1
+            ],
+            [
+              "Explains that subtracting the same number k from every value subtracts k from the mean, using the algebraic sum",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Understand",
+          "d": "Hard",
+          "t": "mcq",
+          "m": 1,
+          "q": "A data set has mean a. Every value is multiplied by 3 and then 4 is added to each resulting value. What is the new mean, in terms of a?",
+          "a": "3a + 4",
+          "o": [
+            "3a + 4",
+            "3(a + 4)",
+            "a + 12",
+            "3a"
+          ]
+        },
+        {
+          "b": "Understand",
+          "d": "Hard",
+          "t": "mcq",
+          "m": 1,
+          "q": "A data set has mean a. Which of the following would NOT change the mean?",
+          "a": "Including a new value equal to a",
+          "o": [
+            "Including a new value equal to a",
+            "Adding 5 to every value in the data set",
+            "Multiplying every value in the data set by 2",
+            "Removing the largest value in the data set (assuming it is not equal to a)"
+          ],
+          "rev": true
+        },
+        {
+          "b": "Apply",
+          "d": "Easy",
+          "t": "fill_blank",
+          "m": 1,
+          "q": "A data set has mean 18. If every value is increased by 2 and then decreased by 5, the new mean is ____.",
+          "a": "15"
+        },
+        {
+          "b": "Apply",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "The temperatures -2 degrees C, 0 degrees C, 8 degrees C have mean 2 degrees C. If every temperature is increased by 5 degrees C, the new mean is",
+          "a": "7 degrees C",
+          "o": [
+            "7 degrees C",
+            "-3 degrees C",
+            "10 degrees C",
+            "2 degrees C"
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Hard",
+          "t": "short_answer",
+          "m": 2,
+          "q": "A set of 6 numbers has mean 22. Each number is multiplied by 3. Find the new sum of all 6 numbers.",
+          "a": "Original sum = 22 x 6 = 132. New sum = 132 x 3 = 396.",
+          "s": [
+            [
+              "Finds original sum = 22 x 6 = 132",
+              1
+            ],
+            [
+              "Finds new sum = 132 x 3 = 396",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Hard",
+          "t": "short_answer",
+          "m": 2,
+          "q": "The mean height of 10 students is 142 cm. Each student then grows by 3 cm over the year. Find the new mean height, and the new total height of all 10 students.",
+          "a": "New mean height = 142 + 3 = 145 cm. New total height = 145 x 10 = 1450 cm.",
+          "s": [
+            [
+              "New mean = 142 + 3 = 145 cm",
+              1
+            ],
+            [
+              "New total height = 145 x 10 = 1450 cm",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Hard",
+          "t": "mcq",
+          "m": 1,
+          "q": "The mean weight of a batch of parcels is 4 kg. Each parcel's weight is converted from kilograms to grams (multiplied by 1000). What is the new mean weight in grams?",
+          "a": "4000 g",
+          "o": [
+            "4000 g",
+            "4 g",
+            "1000 g",
+            "4004 g"
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Hardest",
+          "t": "long_answer",
+          "m": 3,
+          "q": "A cricket team's mean score per match over a season was 150 runs. Next season, every match score is expected to be 20% higher, i.e. multiplied by 1.2, and then a fixed bonus of 5 runs per match is added because of a new scoring rule. (a) Find the expected new mean score. (b) If there are 12 matches next season, find the expected total runs scored across the season.",
+          "a": "(a) 150 x 1.2 = 180, then + 5 = 185, so the expected new mean is 185 runs. (b) Total = 185 x 12 = 2220 runs.",
+          "s": [
+            [
+              "Computes 150 x 1.2 = 180, then adds 5 to get 185",
+              1
+            ],
+            [
+              "States the new expected mean is 185 runs",
+              1
+            ],
+            [
+              "Computes total = 185 x 12 = 2220 runs",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Analyse",
+          "d": "Hard",
+          "t": "assertion_reason",
+          "m": 1,
+          "q": "Assertion (A): If every value in a data set is multiplied by a negative number, the new mean is negative even if the original mean was positive. Reason (R): Multiplying every value in a data set by k multiplies the mean by k, and multiplying a positive number by a negative k gives a negative result.",
+          "a": "Both A and R are true, and R is the correct explanation of A",
+          "o": [
+            "Both A and R are true, and R is the correct explanation of A",
+            "Both A and R are true, but R is not the correct explanation of A",
+            "A is true but R is false",
+            "A is false but R is true"
+          ]
+        },
+        {
+          "b": "Analyse",
+          "d": "Hard",
+          "t": "multi_statement",
+          "m": 1,
+          "q": "Consider: (I) Adding a fixed number k to every value in a data set adds k to the mean, regardless of how many values there are. (II) Multiplying every value in a data set by k multiplies the mean by k, but only when k is a whole number. Which is or are correct?",
+          "a": "Only I",
+          "o": [
+            "Only I",
+            "Only II",
+            "Both I and II",
+            "Neither I nor II"
+          ]
+        },
+        {
+          "b": "Analyse",
+          "d": "Hardest",
+          "t": "long_answer",
+          "m": 3,
+          "q": "A student says: 'If I add 5 to every value in a data set, and then also insert one more data point equal to the new mean, the final mean will be greater than the original mean plus 5.' Investigate this claim using the data 10, 20, 30 (mean 20): first add 5 to every value (new data 15, 25, 35, mean 25), then insert an extra value equal to 25. Find the final mean and decide if the student's claim is true.",
+          "a": "After adding 5 to every value, the data is 15, 25, 35 with mean 25. Inserting an extra value equal to the mean (25) does not change the mean, so the final mean stays 25 -- exactly the original mean (20) plus 5, not greater than it. The student's claim is false.",
+          "s": [
+            [
+              "Computes data after adding 5 to every value: 15, 25, 35 with mean 25",
+              1
+            ],
+            [
+              "Adds the extra value 25 (equal to the new mean) and notes the mean stays 25, using the rule that a value equal to the current mean does not change it",
+              1
+            ],
+            [
+              "Concludes the final mean (25) equals the original mean plus 5 exactly, so the student's claim that it would be greater is false",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Evaluate",
+          "d": "Hard",
+          "t": "short_answer",
+          "m": 2,
+          "q": "Two students compute the new mean after multiplying every value of a 4-number data set (mean 9) by 5. Meera says the new mean is 45. Dev says you need to know the actual 4 numbers to find the new mean. Whose method is correct, and why?",
+          "a": "Meera is correct. The mean scales by the same factor as every value, so the new mean can be found directly from the old mean (9 x 5 = 45) without knowing the individual numbers.",
+          "s": [
+            [
+              "States that Meera is correct",
+              1
+            ],
+            [
+              "Explains that the mean scales by the same factor as every value, so 9 x 5 = 45 can be found without knowing the individual numbers",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Create",
+          "d": "Hardest",
+          "t": "long_answer",
+          "m": 3,
+          "q": "Design a data set of 3 whole numbers whose mean is 8, then state what its mean would become after (a) subtracting 3 from every value, and (b) then multiplying every resulting value by 2. Show your 3 numbers and both new means.",
+          "a": "Example: 6, 8, 10 (mean 8). (a) Subtracting 3 from every value gives 3, 5, 7, mean 5. (b) Multiplying every value in this new data by 2 gives 6, 10, 14, mean 10.",
+          "s": [
+            [
+              "Gives 3 whole numbers with mean 8 (e.g. 6, 8, 10)",
+              1
+            ],
+            [
+              "Finds mean after subtracting 3 from every value = 5",
+              1
+            ],
+            [
+              "Finds mean after then multiplying every value by 2 = 10",
+              1
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "code": "C8M-5.3",
+      "name": "Finding an unknown value in a data set from its mean",
+      "description": "Finding a missing value in a data set from its mean and the other known values, including correcting a data set for a recording error.",
+      "idea": "When the mean of a data set and all but one value are known, the missing value can be found by first finding the total sum (mean times number of values) and then subtracting the sum of the known values.",
+      "rule": "If a data set of n values has mean m, the sum of all values is m times n. Given n-1 of the values, the missing value equals (m times n) minus the sum of the known values. The same reverse-reasoning approach can correct a data set for a recording error: subtract or add the size of the error to the recorded total, then divide by the number of values to get the corrected mean.",
+      "example": "Ten wrestlers' weights have mean 39.2 kg, and nine of them sum to 349 kg. The tenth weight is 39.2 x 10 - 349 = 43 kg.",
+      "difficulty_base": "Easy",
+      "questions": [
+        {
+          "b": "Remember",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "To find a missing value in a data set when the mean and the other values are known, the first step is to",
+          "a": "find the total sum of all the values by multiplying the mean by the number of values",
+          "o": [
+            "find the total sum of all the values by multiplying the mean by the number of values",
+            "add the mean to the known values",
+            "divide the mean by the number of known values",
+            "subtract the mean from each known value"
+          ]
+        },
+        {
+          "b": "Remember",
+          "d": "Easy",
+          "t": "fill_blank",
+          "m": 1,
+          "q": "If a data set of 8 values has mean 15, the sum of all 8 values is ____.",
+          "a": "120"
+        },
+        {
+          "b": "Remember",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "A data set of 5 values has mean 20, so the sum of all 5 values is 100. If 4 of the values are known and sum to 76, the fifth value is",
+          "a": "24",
+          "o": [
+            "24",
+            "20",
+            "76",
+            "176"
+          ]
+        },
+        {
+          "b": "Remember",
+          "d": "Hard",
+          "t": "mcq",
+          "m": 1,
+          "q": "The mean of 6 numbers is 14. Five of the numbers are 10, 12, 13, 15, 18. What is the sixth number?",
+          "a": "16",
+          "o": [
+            "16",
+            "14",
+            "68",
+            "22"
+          ]
+        },
+        {
+          "b": "Understand",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "A student wants to find a missing weight given the mean weight of 10 people and the other 9 weights. Which equation correctly represents the unknown weight w?",
+          "a": "w = (mean x 10) - (sum of the other 9 weights)",
+          "o": [
+            "w = (mean x 10) - (sum of the other 9 weights)",
+            "w = mean - (sum of the other 9 weights)",
+            "w = (mean x 9) - (sum of the other 9 weights)",
+            "w = (sum of the other 9 weights) - mean"
+          ]
+        },
+        {
+          "b": "Understand",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "A set of 7 numbers has mean 30, so the total sum needed is 210. If the sum of 6 of them is already 250, what does this tell us about the seventh number?",
+          "a": "It must be -40, since the known 6 numbers already sum to more than the total needed",
+          "o": [
+            "It must be -40, since the known 6 numbers already sum to more than the total needed",
+            "It must be 20",
+            "It must be 40",
+            "It is impossible for the seventh number to be negative"
+          ]
+        },
+        {
+          "b": "Understand",
+          "d": "Easy",
+          "t": "short_answer",
+          "m": 2,
+          "q": "A data set of 4 numbers has mean 25, so their total sum is 100. Three of the numbers are 20, 30, 35. Find the fourth number, showing your working.",
+          "a": "Sum of the three known numbers = 20+30+35 = 85. Fourth number = 100 - 85 = 15.",
+          "s": [
+            [
+              "Finds sum of the three known numbers = 20+30+35 = 85",
+              1
+            ],
+            [
+              "Finds fourth number = 100 - 85 = 15",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Understand",
+          "d": "Hard",
+          "t": "mcq",
+          "m": 1,
+          "q": "The mean of the numbers 8, 13, 10, 4, 5, 20, y, 10 is 10.375. What is the value of y?",
+          "a": "13",
+          "o": [
+            "13",
+            "10.375",
+            "70",
+            "17"
+          ]
+        },
+        {
+          "b": "Understand",
+          "d": "Hard",
+          "t": "mcq",
+          "m": 1,
+          "q": "The mean of a set of 15 values is 134. It is later found that one value was recorded 60 more than the correct value (a mistake in copying it down). What is the corrected mean once this error is fixed?",
+          "a": "130",
+          "o": [
+            "130",
+            "134",
+            "138",
+            "129"
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Easy",
+          "t": "fill_blank",
+          "m": 1,
+          "q": "The mean of a set of 15 values is 134. The sum of all 15 values is ____.",
+          "a": "2010"
+        },
+        {
+          "b": "Apply",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "Venkayya calculates the average coconut harvest per tree as 25.6, based on 15 trees. What is the total number of coconuts harvested?",
+          "a": "384",
+          "o": [
+            "384",
+            "25.6",
+            "375",
+            "400"
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Hard",
+          "t": "short_answer",
+          "m": 2,
+          "q": "A coach recorded the weights of 10 wrestlers and found the mean weight to be 39.2 kg. Nine of the weights are known and sum to 349 kg. Find the missing weight.",
+          "a": "Total sum = 39.2 x 10 = 392 kg. Missing weight = 392 - 349 = 43 kg.",
+          "s": [
+            [
+              "Finds total sum = 39.2 x 10 = 392 kg",
+              1
+            ],
+            [
+              "Finds missing weight = 392 - 349 = 43 kg",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Hard",
+          "t": "short_answer",
+          "m": 2,
+          "q": "Venkayya calculated the average coconut harvest per tree as 25.6, based on 15 trees, but later found that one tree's harvest count was mistakenly recorded as 3 more than the actual number. Find the correct average harvest per tree.",
+          "a": "Recorded total = 25.6 x 15 = 384. Correct total = 384 - 3 = 381. Correct average = 381 / 15 = 25.4.",
+          "s": [
+            [
+              "Finds the recorded total = 25.6 x 15 = 384",
+              1
+            ],
+            [
+              "Finds the correct total = 384 - 3 = 381 and correct average = 381/15 = 25.4",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Hard",
+          "t": "mcq",
+          "m": 1,
+          "q": "The mean of 6 numbers is 45. Five of them are 40, 42, 44, 46, 50. Which of these is the sixth number?",
+          "a": "48",
+          "o": [
+            "48",
+            "45",
+            "222",
+            "50"
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Hardest",
+          "t": "long_answer",
+          "m": 3,
+          "q": "A shopkeeper recorded the daily sales (in rupees) for 7 days and found the mean sale to be Rs 2400. Later, she realises Monday's sale was wrongly recorded as Rs 500 more than it actually was, and Friday's sale was wrongly recorded as Rs 200 less than it actually was. (a) Find the total sale recorded for the 7 days (with the errors). (b) Find the corrected total. (c) Find the corrected mean daily sale.",
+          "a": "(a) Recorded total = 2400 x 7 = 16800. (b) Corrected total = 16800 - 500 + 200 = 16500. (c) Corrected mean = 16500 / 7 = about Rs 2357.14.",
+          "s": [
+            [
+              "Recorded total = 2400 x 7 = 16800",
+              1
+            ],
+            [
+              "Corrected total = 16800 - 500 + 200 = 16500",
+              1
+            ],
+            [
+              "Corrected mean = 16500 / 7 = about 2357.14",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Analyse",
+          "d": "Hard",
+          "t": "assertion_reason",
+          "m": 1,
+          "q": "Assertion (A): If the mean of a data set and all but one value are known, the missing value can always be found. Reason (R): The sum of all values in a data set equals its mean multiplied by the number of values.",
+          "a": "Both A and R are true, and R is the correct explanation of A",
+          "o": [
+            "Both A and R are true, and R is the correct explanation of A",
+            "Both A and R are true, but R is not the correct explanation of A",
+            "A is true but R is false",
+            "A is false but R is true"
+          ]
+        },
+        {
+          "b": "Analyse",
+          "d": "Hard",
+          "t": "multi_statement",
+          "m": 1,
+          "q": "Consider: (I) If the mean and total number of values in a data set are known, along with all but one value, the missing value can always be calculated exactly. (II) If only the median and one value on each side of it are known, the exact value of any other value in the data set can always be calculated. Which is or are correct?",
+          "a": "Only I",
+          "o": [
+            "Only I",
+            "Only II",
+            "Both I and II",
+            "Neither I nor II"
+          ]
+        },
+        {
+          "b": "Analyse",
+          "d": "Hardest",
+          "t": "long_answer",
+          "m": 3,
+          "q": "A student says: 'If I know the mean of a data set and one value is missing, I can always find that missing value -- even if I don't know how many values are in the data set.' Test this claim: a data set has mean 20, and the known values sum to 140. Show that without knowing the number of values in the data set, the missing value cannot be pinned to a single number, by finding two different possible answers using two different possible counts of values.",
+          "a": "If the data set has 8 values in total: total sum = 20 x 8 = 160, so missing value = 160 - 140 = 20. If the data set has 9 values in total: total sum = 20 x 9 = 180, so missing value = 180 - 140 = 40. Since different assumed counts give different missing values, the student's claim is false -- the number of values must also be known.",
+          "s": [
+            [
+              "Tries n = 8: total sum = 20 x 8 = 160, missing value = 160 - 140 = 20",
+              1
+            ],
+            [
+              "Tries n = 9: total sum = 20 x 9 = 180, missing value = 180 - 140 = 40",
+              1
+            ],
+            [
+              "Concludes that different assumed counts give different missing values, so the student's claim is false",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Evaluate",
+          "d": "Hard",
+          "t": "short_answer",
+          "m": 2,
+          "q": "A classmate claims: 'If the median of a data set is known, along with all the other values except one, the missing value can always be found exactly, just like with the mean.' Evaluate this claim using the data 4, 9, ?, 18, 25 (5 values, median 15), and explain how finding a missing value from the median differs from finding one from the mean.",
+          "a": "The missing value must be 15 (the median itself), since it occupies the middle sorted position between 9 and 18. Unlike the mean case, finding a missing value from the median usually needs no arithmetic -- if the missing value is the middle one, it simply equals the median. So the classmate's claim is true in a placement-friendly case like this one, but works for a different reason than with the mean.",
+          "s": [
+            [
+              "Determines the missing value must be 15 (the median itself, since it occupies the middle sorted position)",
+              1
+            ],
+            [
+              "Explains that unlike the mean case, this needs no arithmetic -- the missing middle value simply equals the median",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Create",
+          "d": "Hardest",
+          "t": "long_answer",
+          "m": 3,
+          "q": "Create your own 'missing value' word problem in the style of the coconut-harvest example: invent a context, a mean, a count of items, and a recording error, such that the corrected average works out to a whole number. Write your problem and solve it fully, showing the recorded total, the correction, and the corrected average.",
+          "a": "Example: 'A farmer's average tomato yield per plant is recorded as 20, over 10 plants. Later it is found one plant's count was recorded 10 more than the actual count. Find the corrected average.' Recorded total = 20 x 10 = 200. Corrected total = 200 - 10 = 190. Corrected average = 190 / 10 = 19, a whole number.",
+          "s": [
+            [
+              "States a complete original word problem with a context, a given mean and count of items, and a described recording error",
+              1
+            ],
+            [
+              "Computes the recorded total correctly from the given mean and count",
+              1
+            ],
+            [
+              "Applies the correction and computes a corrected average that comes out to a whole number",
+              1
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "code": "C8M-5.4",
+      "name": "Mean and median of data in a frequency table",
+      "description": "Finding the mean and median of data organised in a frequency table, using value times frequency and cumulative frequency.",
+      "idea": "When many values repeat, a frequency table lists each distinct value with how many times it occurs; the mean is found by weighting each value by its frequency, and the median is found by locating the middle position(s) using running totals of the frequencies.",
+      "rule": "For data in a frequency table, mean = (sum of value times frequency for every row) divided by (sum of all frequencies). To find the median, add up the frequencies in order until the running total first reaches or passes the position(s) of the middle value(s); the value in that row is the median (for an even total count, the median is the average of the two middle values, if they fall in different rows).",
+      "example": "Family sizes 3, 4, 5, 6, 7, 8, 9, 10 have frequencies 3, 11, 9, 7, 3, 1, 1, 1 (total 36). The mean is 188/36 = 5.22, and the median (average of the 18th and 19th positions) is 5.",
+      "difficulty_base": "Hard",
+      "questions": [
+        {
+          "b": "Remember",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "In a frequency table, the 'frequency' of a value tells us",
+          "a": "how many times that value occurs in the data",
+          "o": [
+            "how many times that value occurs in the data",
+            "the position of that value among the data, once sorted",
+            "the sum of that value and all values before it",
+            "how far that value is from the mean"
+          ]
+        },
+        {
+          "b": "Remember",
+          "d": "Easy",
+          "t": "fill_blank",
+          "m": 1,
+          "q": "A frequency table shows the value 7 occurring 4 times. In the sum used to calculate the mean, this contributes ____ to the total.",
+          "a": "28"
+        },
+        {
+          "b": "Remember",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "Which of the following is NOT needed to calculate the mean of data given in a frequency table?",
+          "a": "The median of the data",
+          "o": [
+            "The median of the data",
+            "The distinct values listed in the table",
+            "The frequency of each distinct value",
+            "The total of all the frequencies"
+          ],
+          "rev": true
+        },
+        {
+          "b": "Remember",
+          "d": "Hard",
+          "t": "mcq",
+          "m": 1,
+          "q": "A frequency table has values 2, 4, 6 with frequencies 5, 3, 2. What is the sum of value times frequency across the table?",
+          "a": "34",
+          "o": [
+            "34",
+            "12",
+            "22",
+            "10"
+          ]
+        },
+        {
+          "b": "Understand",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "A frequency table lists marks 10, 20, 30 with frequencies 2, 5, 3 (10 students in total). Which calculation correctly gives the mean mark?",
+          "a": "(10x2 + 20x5 + 30x3) / 10",
+          "o": [
+            "(10x2 + 20x5 + 30x3) / 10",
+            "(10+20+30) / 10",
+            "(10x2 + 20x5 + 30x3) / 3",
+            "(2+5+3) / (10+20+30)"
+          ]
+        },
+        {
+          "b": "Understand",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "Why can we not find the mean of data in a frequency table just by averaging the distinct values themselves, ignoring frequency?",
+          "a": "Because values that occur more often should count more heavily toward the mean, and ignoring frequency treats every value as equally common",
+          "o": [
+            "Because values that occur more often should count more heavily toward the mean, and ignoring frequency treats every value as equally common",
+            "Because the mean formula only works for ungrouped, individual data",
+            "Because frequency tables can only be used to find the median, not the mean",
+            "Because the total frequency is always different from the number of distinct values, making averaging impossible"
+          ]
+        },
+        {
+          "b": "Understand",
+          "d": "Easy",
+          "t": "short_answer",
+          "m": 2,
+          "q": "A frequency table shows the value 5 occurring 6 times and the value 9 occurring 4 times (10 values in total). Explain, without finding the exact mean, why the mean of this data must be closer to 5 than to 9.",
+          "a": "Since 5 occurs more often (6 times) than 9 (4 times), most of the data values equal 5, so the mean is pulled closer to 5 than to 9.",
+          "s": [
+            [
+              "States that 5 occurs more often (6 times) than 9 (4 times)",
+              1
+            ],
+            [
+              "Explains that because most of the data values equal 5, the mean is pulled closer to 5",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Understand",
+          "d": "Hard",
+          "t": "mcq",
+          "m": 1,
+          "q": "A frequency table has 36 total values. To find the median, at which running position(s) should a student look?",
+          "a": "The 18th and 19th positions, since 36 is even and the median is their average",
+          "o": [
+            "The 18th and 19th positions, since 36 is even and the median is their average",
+            "The 18th position only",
+            "The 36th position",
+            "The 17th and 20th positions"
+          ]
+        },
+        {
+          "b": "Understand",
+          "d": "Hard",
+          "t": "mcq",
+          "m": 1,
+          "q": "A frequency table has 25 total values. At which running (cumulative) position is the median located?",
+          "a": "The 13th position",
+          "o": [
+            "The 13th position",
+            "The 12th and 13th positions",
+            "The 25th position",
+            "The 12.5th position"
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Easy",
+          "t": "fill_blank",
+          "m": 1,
+          "q": "A frequency table shows the value 6 occurring 5 times and the value 8 occurring 3 times, with no other values (8 values total). The sum of all the data values is ____.",
+          "a": "54"
+        },
+        {
+          "b": "Apply",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "Using the frequency table: value 6 occurs 5 times, value 8 occurs 3 times (8 values total, sum 54). What is the mean?",
+          "a": "6.75",
+          "o": [
+            "6.75",
+            "7",
+            "54",
+            "6.5"
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Hard",
+          "t": "short_answer",
+          "m": 2,
+          "q": "A frequency table shows: value 3 with frequency 2, value 5 with frequency 6, value 9 with frequency 2 (10 values total). Find the mean.",
+          "a": "Sum = (3x2)+(5x6)+(9x2) = 6+30+18 = 54. Mean = 54 / 10 = 5.4.",
+          "s": [
+            [
+              "Finds sum = (3x2)+(5x6)+(9x2) = 6+30+18 = 54",
+              1
+            ],
+            [
+              "Finds mean = 54 / 10 = 5.4",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Hard",
+          "t": "short_answer",
+          "m": 2,
+          "q": "A frequency table shows: value 4 with frequency 3, value 7 with frequency 5, value 10 with frequency 4 (12 values total). Find the median using the cumulative-frequency method.",
+          "a": "Running totals: up to 4 is 3, up to 7 is 3+5=8, up to 10 is 8+4=12. Since n=12 is even, the median positions are the 6th and 7th, and both fall within the value-7 group (positions 4 to 8), so the median is 7.",
+          "s": [
+            [
+              "Builds running totals 3, 8, 12 and identifies the median positions as the 6th and 7th (n=12 is even)",
+              1
+            ],
+            [
+              "Finds both positions fall in the value-7 group (positions 4-8), so the median is 7",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Hard",
+          "t": "mcq",
+          "m": 1,
+          "q": "A frequency table shows: value 12 with frequency 4, value 15 with frequency 5, value 20 with frequency 1 (10 values total). What is the median?",
+          "a": "15",
+          "o": [
+            "15",
+            "12",
+            "16",
+            "13.5"
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Hardest",
+          "t": "long_answer",
+          "m": 3,
+          "q": "A survey of 20 families recorded the number of children per family in this frequency table: 0 children - 3 families, 1 child - 6 families, 2 children - 8 families, 3 children - 3 families. Find (a) the mean number of children per family, and (b) the median number of children per family.",
+          "a": "(a) Sum = (0x3)+(1x6)+(2x8)+(3x3) = 0+6+16+9 = 31; mean = 31/20 = 1.55. (b) Running totals: 3, 9, 17, 20; median positions are the 10th and 11th (n=20 is even), both falling in the '2 children' group (positions 10-17), so the median is 2 children.",
+          "s": [
+            [
+              "Finds sum = 0+6+16+9 = 31, mean = 31/20 = 1.55",
+              1
+            ],
+            [
+              "Builds running totals 3, 9, 17, 20 and identifies median positions as the 10th and 11th (n=20 even)",
+              1
+            ],
+            [
+              "Finds both positions fall in the '2 children' group (positions 10-17), so the median is 2 children",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Analyse",
+          "d": "Hard",
+          "t": "assertion_reason",
+          "m": 1,
+          "q": "Assertion (A): In a frequency table where one value has a much higher frequency than all the others, the median is likely to equal that value. Reason (R): The median is located using cumulative frequencies, so a value with a very high frequency covers a wide range of running positions, including the middle one(s).",
+          "a": "Both A and R are true, and R is the correct explanation of A",
+          "o": [
+            "Both A and R are true, and R is the correct explanation of A",
+            "Both A and R are true, but R is not the correct explanation of A",
+            "A is true but R is false",
+            "A is false but R is true"
+          ]
+        },
+        {
+          "b": "Analyse",
+          "d": "Hard",
+          "t": "multi_statement",
+          "m": 1,
+          "q": "Consider: (I) In a frequency table, the value with the highest frequency is always the median. (II) In a frequency table, the mean can be calculated by summing (value times frequency) for every row and dividing by the total frequency. Which is or are correct?",
+          "a": "Only II",
+          "o": [
+            "Only II",
+            "Only I",
+            "Both I and II",
+            "Neither I nor II"
+          ]
+        },
+        {
+          "b": "Analyse",
+          "d": "Hardest",
+          "t": "long_answer",
+          "m": 3,
+          "q": "A student built this frequency table for a class's quiz scores: score 5 - 2 students, score 6 - 1 student, score 9 - 10 students, score 10 - 2 students (15 students total). (a) Find the mean score. (b) Find the median score. (c) Explain why the mean and median are close in value here even though a few scores (5 and 6) are far from most of the others.",
+          "a": "(a) Sum = (5x2)+(6x1)+(9x10)+(10x2) = 10+6+90+20 = 126; mean = 126/15 = 8.4. (b) Running totals: 2, 3, 13, 15; median position is the 8th (n=15 odd), falling in the score-9 group (positions 4-13), so median = 9. (c) Because most students (10 of 15) scored 9, both the mean and the median are pulled strongly toward 9, despite a few low scores.",
+          "s": [
+            [
+              "Finds sum = 126, mean = 126/15 = 8.4",
+              1
+            ],
+            [
+              "Builds running totals 2, 3, 13, 15 and finds median position 8th falls in the score-9 group, so median = 9",
+              1
+            ],
+            [
+              "Explains that because most students (10 of 15) scored 9, both measures are pulled strongly toward 9",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Evaluate",
+          "d": "Hard",
+          "t": "short_answer",
+          "m": 2,
+          "q": "A classmate says: 'For frequency-table data, the mean and the median will always come out equal, since both use the same frequencies.' Using the family-size example from this chapter (mean 5.22, median 5), judge whether this claim is true, and explain why the two measures can differ even though they're based on the same table.",
+          "a": "The claim is false -- the example gives mean 5.22 but median 5, which are not equal. The mean weighs every value by how far it is from the centre (affected by extreme or skewed values), while the median only depends on which value sits at the middle position(s), so the two can differ.",
+          "s": [
+            [
+              "Judges the claim to be false, noting the example gives mean 5.22 but median 5",
+              1
+            ],
+            [
+              "Explains the mean is affected by every value's distance from centre while the median only depends on the middle position(s)",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Create",
+          "d": "Hardest",
+          "t": "long_answer",
+          "m": 3,
+          "q": "Design your own frequency table for exactly 4 distinct shoe sizes worn by a group of 20 students, such that the mean shoe size comes out to a value with a decimal part (not a whole number), and the median comes out to a whole number. Write your table (value and frequency for each of the 4 sizes, frequencies summing to 20), then compute both the mean and the median to show your design works.",
+          "a": "Example: size 4 - 3 students, size 5 - 9 students, size 6 - 6 students, size 7 - 2 students (total 20). Mean = (4x3+5x9+6x6+7x2)/20 = (12+45+36+14)/20 = 107/20 = 5.35. Running totals: 3, 12, 18, 20; median position is the 10th and 11th (n=20 even), both fall in the size-5 group (positions 4-12), so median = 5.",
+          "s": [
+            [
+              "Gives a complete frequency table with 4 distinct values and frequencies summing to 20",
+              1
+            ],
+            [
+              "Computes the mean correctly from the table and confirms it has a decimal part",
+              1
+            ],
+            [
+              "Computes the median correctly using cumulative frequencies and confirms it is a whole number",
+              1
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "code": "C8M-5.5",
+      "name": "Spreadsheet cell references, ranges and SUM/AVERAGE formulas",
+      "description": "Cell references, range notation, and the SUM and AVERAGE formulas used in a spreadsheet to total and average data.",
+      "idea": "A spreadsheet organises data into cells named by a column letter and row number; a range of cells in a row or column is written as Start:End, and formulas such as SUM and AVERAGE let a computer add up or average many cells at once instead of doing it by hand.",
+      "rule": "A cell is named by its column letter followed by its row number, e.g. E5 is in column E, row 5. A range of consecutive cells in one row or column is written Start:End, e.g. B3:G3 for row 3 from column B to G, or D2:D6 for column D from row 2 to 6. The formula =SUM(range) adds up all values in the range; =AVERAGE(range) finds their mean.",
+      "example": "If Nagesh's marks across 6 subjects are in cells B3 to G3, then =SUM(B3:G3) gives his total marks and =AVERAGE(B3:G3) gives his average mark.",
+      "difficulty_base": "Easy",
+      "questions": [
+        {
+          "b": "Remember",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "In a spreadsheet, a cell is named using",
+          "a": "its column letter followed by its row number, e.g. C4",
+          "o": [
+            "its column letter followed by its row number, e.g. C4",
+            "its row number followed by its column letter, e.g. 4C",
+            "the value stored in it",
+            "the formula used in it"
+          ]
+        },
+        {
+          "b": "Remember",
+          "d": "Easy",
+          "t": "fill_blank",
+          "m": 1,
+          "q": "The cell in column D, row 7 of a spreadsheet is named ____.",
+          "a": "D7"
+        },
+        {
+          "b": "Remember",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "Which formula would you type into a spreadsheet cell to find the sum of the values in cells B2 to B10?",
+          "a": "=SUM(B2:B10)",
+          "o": [
+            "=SUM(B2:B10)",
+            "=SUM(B2,B10)",
+            "=AVERAGE(B2:B10)",
+            "SUM(B2:B10)"
+          ]
+        },
+        {
+          "b": "Remember",
+          "d": "Hard",
+          "t": "mcq",
+          "m": 1,
+          "q": "The expression B3:G3 in a spreadsheet formula refers to",
+          "a": "all the cells from B3 to G3 in row 3",
+          "o": [
+            "all the cells from B3 to G3 in row 3",
+            "just the two cells B3 and G3",
+            "all the cells from B3 to G3 down column B",
+            "the single cell formed by combining B3 and G3"
+          ]
+        },
+        {
+          "b": "Understand",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "A teacher wants the average of a student's marks stored in cells C5 to H5. Which formula gives this?",
+          "a": "=AVERAGE(C5:H5)",
+          "o": [
+            "=AVERAGE(C5:H5)",
+            "=SUM(C5:H5)",
+            "=AVERAGE(C5,H5)",
+            "=AVERAGE(C5:H5)/6"
+          ]
+        },
+        {
+          "b": "Understand",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "In a spreadsheet, the columns Name, Odia, Telugu, English, Maths, Social Science, Science are labelled A to G, and Farooq's marks are in row 5. Which cell holds his Mathematics score?",
+          "a": "E5",
+          "o": [
+            "E5",
+            "D5",
+            "E4",
+            "F5"
+          ]
+        },
+        {
+          "b": "Understand",
+          "d": "Easy",
+          "t": "short_answer",
+          "m": 2,
+          "q": "Explain what the formula =SUM(D2:D6) calculates, in terms of rows and columns, and what real-world quantity it might represent if column D holds each student's English marks.",
+          "a": "It adds up the values in column D from row 2 to row 6. If column D holds English marks, this could represent the total English marks of the first five students (rows 2-6).",
+          "s": [
+            [
+              "Explains it adds up the values in column D from row 2 to row 6",
+              1
+            ],
+            [
+              "States this could represent the total English marks of the first five students (rows 2-6)",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Understand",
+          "d": "Hard",
+          "t": "mcq",
+          "m": 1,
+          "q": "A student writes =SUM(B3:G3) in a spreadsheet to get Nagesh's total marks across 6 subjects in row 3. What does changing this formula to =AVERAGE(B3:G3) achieve instead?",
+          "a": "It gives Nagesh's average mark across the 6 subjects instead of his total",
+          "o": [
+            "It gives Nagesh's average mark across the 6 subjects instead of his total",
+            "It gives the same result as SUM, since both add up all the values",
+            "It gives the total marks of all students instead of just Nagesh",
+            "It gives an error, since AVERAGE cannot be used on a row range"
+          ]
+        },
+        {
+          "b": "Understand",
+          "d": "Hard",
+          "t": "mcq",
+          "m": 1,
+          "q": "Which of the following, if typed into a spreadsheet cell, would NOT correctly calculate a sum or an average?",
+          "a": "AVERAGE(B2:B10)",
+          "o": [
+            "AVERAGE(B2:B10)",
+            "=SUM(B2:B10)",
+            "=AVERAGE(B2:B10)",
+            "=SUM(B2:B5)+SUM(B6:B10)"
+          ],
+          "rev": true
+        },
+        {
+          "b": "Apply",
+          "d": "Easy",
+          "t": "fill_blank",
+          "m": 1,
+          "q": "To find the total marks scored by Gowri, whose marks in Odia, Telugu, and English are in cells B7, C7, D7, you could write the formula =SUM(____).",
+          "a": "B7:D7"
+        },
+        {
+          "b": "Apply",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "A spreadsheet has students' Science marks in column F, from row 2 to row 21 (20 students). Which formula finds the class average Science mark?",
+          "a": "=AVERAGE(F2:F21)",
+          "o": [
+            "=AVERAGE(F2:F21)",
+            "=AVERAGE(F2:F20)",
+            "=SUM(F2:F21)",
+            "=AVERAGE(A2:F21)"
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Hard",
+          "t": "short_answer",
+          "m": 2,
+          "q": "A spreadsheet has 5 students' Odia marks in cells B2 to B6, and their Telugu marks in cells C2 to C6. Write a formula that finds the combined class average across both subjects together (all 10 marks), and explain which cells it covers.",
+          "a": "=AVERAGE(B2:C6). This range covers all cells from column B to column C, rows 2 to 6, i.e. all 10 marks across both subjects.",
+          "s": [
+            [
+              "Gives the formula =AVERAGE(B2:C6)",
+              1
+            ],
+            [
+              "Explains that B2:C6 covers all cells from column B to C, rows 2 to 6, i.e. all 10 marks across both subjects",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Hard",
+          "t": "short_answer",
+          "m": 2,
+          "q": "Sanskruti's marks are in row 16 (columns B to G, one column per subject). Write the formula to find her total marks, and then, given her marks are 35, 42, 41, 46, 38, 40, compute what the formula would return.",
+          "a": "Formula: =SUM(B16:G16). Total = 35+42+41+46+38+40 = 242.",
+          "s": [
+            [
+              "Gives the formula =SUM(B16:G16)",
+              1
+            ],
+            [
+              "Computes the total = 35+42+41+46+38+40 = 242",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Hard",
+          "t": "mcq",
+          "m": 1,
+          "q": "A teacher has already computed each student's total marks in column H (rows 2 to 21) using SUM formulas. Which formula would give the average TOTAL marks across the whole class?",
+          "a": "=AVERAGE(H2:H21)",
+          "o": [
+            "=AVERAGE(H2:H21)",
+            "=SUM(H2:H21)",
+            "=AVERAGE(B2:G21)",
+            "=AVERAGE(H2:H20)"
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Hardest",
+          "t": "long_answer",
+          "m": 3,
+          "q": "A spreadsheet stores 22 students' marks in 6 subjects (columns B to G), with names in column A, in rows 2 to 23. (a) Write the formula for a new column H that gives each student's total marks (for the student in row 2, i.e. cell H2). (b) Write the formula for the class average total marks, referring to column H. (c) If this average total works out to 210 out of a maximum of 300 (6 subjects x 50 marks), express this as a percentage.",
+          "a": "(a) H2 = SUM(B2:G2). (b) Class average = AVERAGE(H2:H23). (c) Percentage = (210/300) x 100 = 70%.",
+          "s": [
+            [
+              "Gives H2's formula as =SUM(B2:G2)",
+              1
+            ],
+            [
+              "Gives the class-average formula as =AVERAGE(H2:H23)",
+              1
+            ],
+            [
+              "Computes the percentage as (210/300) x 100 = 70%",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Analyse",
+          "d": "Hard",
+          "t": "assertion_reason",
+          "m": 1,
+          "q": "Assertion (A): The formula =AVERAGE(B2:B21) will always give exactly the same result as =SUM(B2:B21)/20. Reason (R): AVERAGE(range) is defined as the sum of the values in the range divided by the number of cells in that range, and B2:B21 contains exactly 20 cells.",
+          "a": "Both A and R are true, and R is the correct explanation of A",
+          "o": [
+            "Both A and R are true, and R is the correct explanation of A",
+            "Both A and R are true, but R is not the correct explanation of A",
+            "A is true but R is false",
+            "A is false but R is true"
+          ]
+        },
+        {
+          "b": "Analyse",
+          "d": "Hard",
+          "t": "multi_statement",
+          "m": 1,
+          "q": "Consider: (I) The range B3:G3 and the range B3:B8 refer to the same set of cells. (II) A range written as Start:End can represent either a row of cells or a column of cells, depending on whether the row number or the column letter stays fixed. Which is or are correct?",
+          "a": "Only II",
+          "o": [
+            "Only II",
+            "Only I",
+            "Both I and II",
+            "Neither I nor II"
+          ]
+        },
+        {
+          "b": "Analyse",
+          "d": "Hardest",
+          "t": "long_answer",
+          "m": 3,
+          "q": "A student writes =AVERAGE(B2:B22) to find the class average Odia mark, believing the class has 21 students in rows 2 to 22. It turns out row 22 is empty (there are only 20 students, in rows 2 to 21), but the empty cell still counts as 0 in this spreadsheet. (a) Explain what effect this empty cell has on the computed average, compared to the true average of the 20 real marks. (b) If the 20 real marks sum to 1200 (true average 60), find what the flawed formula would compute instead.",
+          "a": "(a) The empty cell (counted as 0) is included in both the sum and the count; since it adds 0 to the sum but still adds 1 to the count, it pulls the computed average down below the true average. (b) Flawed average = 1200 / 21, which is about 57.14 -- lower than the true average of 60, as predicted.",
+          "s": [
+            [
+              "Explains the empty cell adds 0 to the sum but still adds 1 to the count, pulling the average down",
+              1
+            ],
+            [
+              "Computes the flawed average = 1200 / 21 (about 57.14)",
+              1
+            ],
+            [
+              "Notes this is lower than the true average of 60, confirming the direction predicted in part (a)",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Evaluate",
+          "d": "Hard",
+          "t": "short_answer",
+          "m": 2,
+          "q": "A classmate argues: 'Since =SUM(B2:B21) and typing out =B2+B3+B4+...+B21 by hand both give the total, there's no real advantage to using the SUM formula for 20 cells.' Evaluate this claim.",
+          "a": "The claim is largely false in practice. SUM(range) is much faster to write and less error-prone for 20 cells than typing out 20 individual additions, and it updates automatically if the range's values change.",
+          "s": [
+            [
+              "Judges the claim to be weak or largely false for practical purposes",
+              1
+            ],
+            [
+              "Explains SUM is faster and less error-prone for many cells, and updates automatically if values change",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Create",
+          "d": "Hardest",
+          "t": "long_answer",
+          "m": 3,
+          "q": "Design a small spreadsheet layout for recording 4 students' marks in 3 subjects (choose your own subject names), placing names in column A starting at row 2, and one subject per column B, C, D. Then write (a) the formula for the first student's total marks, and (b) the formula for the class average marks in the second subject.",
+          "a": "Layout: names in A2:A5, subjects in columns B, C, D, one row per student (rows 2-5). (a) First student's total = SUM(B2:D2). (b) Class average for the second subject (column C) = AVERAGE(C2:C5).",
+          "s": [
+            [
+              "Describes a clear layout: names in A2:A5, three subject columns B, C, D, one row per student",
+              1
+            ],
+            [
+              "Gives the first student's total-marks formula as =SUM(B2:D2)",
+              1
+            ],
+            [
+              "Gives the class average for the second subject (column C) as =AVERAGE(C2:C5)",
+              1
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "code": "C8M-5.6",
+      "name": "Reading and interpreting line graphs",
+      "description": "Reading a line graph's axes and scale, and drawing valid inferences and comparisons from the trend it shows.",
+      "idea": "A line graph plots values against time and connects them with line segments, making it easy to see how a quantity rises, falls, or stays steady, and to compare two or more trends on the same graph.",
+      "rule": "On a line graph, the horizontal axis usually shows time (or another ordered variable) and the vertical axis shows the quantity being measured; a steeper line segment means a faster rate of change than a flatter one. Reading a line graph has two steps: Step 1 -- identify what is given (axes, scale, how many lines/colours, what each represents); Step 2 -- infer and interpret (state observations and conclusions that the graph's data actually supports, without assuming information the graph doesn't show). Line graphs suit data that changes over time better than column/bar graphs, especially when there are many time points, because connecting points with lines keeps the picture uncluttered.",
+      "example": "A line graph of monthly maximum temperature in two states lets you read off each state's highest and lowest month, and compare how much each one's temperature varies across the year, just from the shape and steepness of the two lines.",
+      "difficulty_base": "Hard",
+      "questions": [
+        {
+          "b": "Remember",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "On a line graph showing temperature over the months of a year, the horizontal axis usually represents",
+          "a": "time (the months)",
+          "o": [
+            "time (the months)",
+            "the temperature values",
+            "the number of cities being compared",
+            "the scale of the graph"
+          ]
+        },
+        {
+          "b": "Remember",
+          "d": "Easy",
+          "t": "fill_blank",
+          "m": 1,
+          "q": "A line graph that shows the number of objects launched into space each year from 2012 to 2024 would have ____ on its horizontal axis.",
+          "a": "the years"
+        },
+        {
+          "b": "Remember",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "In a line graph, a steeper line segment between two points means",
+          "a": "the quantity changed faster (a bigger increase or decrease) between those two points",
+          "o": [
+            "the quantity changed faster (a bigger increase or decrease) between those two points",
+            "the quantity changed more slowly between those two points",
+            "the two points must be further apart in time",
+            "the graph is less accurate at that point"
+          ]
+        },
+        {
+          "b": "Remember",
+          "d": "Hard",
+          "t": "mcq",
+          "m": 1,
+          "q": "Why is a line graph generally better than a clustered-column graph for showing how a quantity changes across many years, such as 13 years?",
+          "a": "Because connecting points with lines avoids the clutter of many separate columns and shows the trend more clearly",
+          "o": [
+            "Because connecting points with lines avoids the clutter of many separate columns and shows the trend more clearly",
+            "Because a line graph needs fewer numbers to draw",
+            "Because column graphs cannot be used for numerical data",
+            "Because line graphs are always more accurate than column graphs"
+          ]
+        },
+        {
+          "b": "Understand",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "A shop's daily sales (in Rs '00) for a week: Mon 20, Tue 25, Wed 22, Thu 30, Fri 28, Sat 35, Sun 32. Between which two consecutive days did sales increase the most?",
+          "a": "Wednesday to Thursday",
+          "o": [
+            "Wednesday to Thursday",
+            "Friday to Saturday",
+            "Monday to Tuesday",
+            "Saturday to Sunday"
+          ]
+        },
+        {
+          "b": "Understand",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "Using the same shop's daily sales (Mon 20, Tue 25, Wed 22, Thu 30, Fri 28, Sat 35, Sun 32, all Rs '00), which day had the lowest sales that week?",
+          "a": "Monday",
+          "o": [
+            "Monday",
+            "Wednesday",
+            "Sunday",
+            "Saturday"
+          ]
+        },
+        {
+          "b": "Understand",
+          "d": "Easy",
+          "t": "short_answer",
+          "m": 2,
+          "q": "Two towns' monthly rainfall (in mm) for three months: Town A - Apr 40, May 90, Jun 150; Town B - Apr 60, May 80, Jun 100. Describe, in one or two sentences, how the trends of the two towns compare over these three months.",
+          "a": "Both towns' rainfall increases from April to June, but Town A rises by a larger amount (110 mm, from 40 to 150) than Town B (40 mm, from 60 to 100) over the same period.",
+          "s": [
+            [
+              "States both towns' rainfall increases from April to June",
+              1
+            ],
+            [
+              "Compares the amount of increase: Town A rises by 110 mm, more than Town B's 40 mm",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Understand",
+          "d": "Hard",
+          "t": "mcq",
+          "m": 1,
+          "q": "A two-step process for reading a line graph is Step 1: identify what is given, and Step 2: infer and interpret. Which of these does NOT belong to Step 2?",
+          "a": "Noting that the horizontal axis shows months and the vertical axis shows temperature in degrees C",
+          "o": [
+            "Noting that the horizontal axis shows months and the vertical axis shows temperature in degrees C",
+            "Concluding that Punjab's temperature varies more across the year than Kerala's",
+            "Stating that Punjab's winter is colder than its summer, based on the shape of the line",
+            "Explaining why Punjab and Kerala have different climate trends, based on the graph's pattern"
+          ],
+          "rev": true
+        },
+        {
+          "b": "Understand",
+          "d": "Hard",
+          "t": "mcq",
+          "m": 1,
+          "q": "Using the shop's daily sales (Mon 20, Tue 25, Wed 22, Thu 30, Fri 28, Sat 35, Sun 32, all Rs '00), a classmate says 'Sales were increasing every single day that week.' Is this a valid conclusion?",
+          "a": "No -- sales dropped from Tuesday (25) to Wednesday (22), and again from Saturday (35) to Sunday (32)",
+          "o": [
+            "No -- sales dropped from Tuesday (25) to Wednesday (22), and again from Saturday (35) to Sunday (32)",
+            "Yes, because the overall trend from Monday to Sunday is upward",
+            "Yes, because the highest value (Saturday) comes after the lowest value (Monday)",
+            "No, because sales never increased at all during the week"
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Easy",
+          "t": "fill_blank",
+          "m": 1,
+          "q": "Using the shop's daily sales table (Mon 20, Tue 25, Wed 22, Thu 30, Fri 28, Sat 35, Sun 32, all Rs '00), the increase in sales from Wednesday to Thursday was Rs ____ ('00).",
+          "a": "8"
+        },
+        {
+          "b": "Apply",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "Using the rainfall table (Town A: Apr 40, May 90, Jun 150 mm), by how much did Town A's rainfall increase from April to June?",
+          "a": "110 mm",
+          "o": [
+            "110 mm",
+            "150 mm",
+            "50 mm",
+            "190 mm"
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Hard",
+          "t": "short_answer",
+          "m": 2,
+          "q": "A line graph shows a country's population (in millions) at four time points: 2000 - 100, 2010 - 130, 2020 - 150, 2024 - 155. Between which consecutive time interval did the population grow the fastest per year, and what was that rate (million per year)?",
+          "a": "The per-year rates are 3 (2000-2010), 2 (2010-2020), and 1.25 (2020-2024) million per year. The fastest is 2000-2010, at 3 million per year.",
+          "s": [
+            [
+              "Computes the per-year growth rate for each interval: 3, 2, and 1.25 million per year",
+              1
+            ],
+            [
+              "Identifies 2000-2010 as the fastest-growing interval, at 3 million per year",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Hard",
+          "t": "short_answer",
+          "m": 2,
+          "q": "Using the same population data (2000: 100, 2010: 130, 2020: 150, 2024: 155, all in millions), a line graph is drawn with these four points connected by straight segments. Which segment of the graph is the steepest, and what does that tell us about the population's growth during that period?",
+          "a": "The 2000-2010 segment is the steepest, matching the fastest rate found (3 million per year). A steeper segment means the population grew faster during that period compared to the flatter later segments.",
+          "s": [
+            [
+              "Identifies the 2000-2010 segment as the steepest",
+              1
+            ],
+            [
+              "Explains that a steeper segment means faster growth compared to the flatter later segments",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Hard",
+          "t": "mcq",
+          "m": 1,
+          "q": "A line graph plots two cities' average monthly electricity usage (in units) over a year. City X's line is mostly flat around 200 units all year; City Y's line rises from 150 in January to 350 in June, then falls back to 150 by December. Which statement is best supported by this description?",
+          "a": "City Y's electricity usage varies much more across the year than City X's",
+          "o": [
+            "City Y's electricity usage varies much more across the year than City X's",
+            "City X uses more electricity than City Y in every month of the year",
+            "City Y's usage increases every single month of the year",
+            "Both cities use exactly the same amount of electricity in January"
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Hardest",
+          "t": "long_answer",
+          "m": 3,
+          "q": "A line graph shows a school's enrolment (number of students) over 5 years: 2020 - 400, 2021 - 420, 2022 - 460, 2023 - 450, 2024 - 500. (a) In which year did enrolment decrease compared to the year before? (b) Find the overall increase in enrolment from 2020 to 2024, and the average yearly increase over this period. (c) Is it valid to conclude that enrolment increased every year? Justify your answer.",
+          "a": "(a) 2023, when enrolment dropped from 460 to 450 (a decrease of 10). (b) Overall increase 2020-2024 = 500-400 = 100; average yearly increase = 100/4 = 25 students per year. (c) No, it is not valid -- the 2023 decrease is a counterexample to 'increased every year.'",
+          "s": [
+            [
+              "Identifies 2023 as the year enrolment decreased (460 to 450)",
+              1
+            ],
+            [
+              "Finds overall increase = 100 and average yearly increase = 100/4 = 25 students per year",
+              1
+            ],
+            [
+              "States it is not valid to conclude enrolment increased every year, citing the 2023 decrease",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Analyse",
+          "d": "Hard",
+          "t": "assertion_reason",
+          "m": 1,
+          "q": "Assertion (A): A line graph with 80 closely-spaced data points can look like a smooth curve rather than a series of straight segments. Reason (R): When data points are placed very close together, the short straight-line segments joining them become hard to distinguish individually, making the overall shape appear curved.",
+          "a": "Both A and R are true, and R is the correct explanation of A",
+          "o": [
+            "Both A and R are true, and R is the correct explanation of A",
+            "Both A and R are true, but R is not the correct explanation of A",
+            "A is true but R is false",
+            "A is false but R is true"
+          ]
+        },
+        {
+          "b": "Analyse",
+          "d": "Hard",
+          "t": "multi_statement",
+          "m": 1,
+          "q": "Consider, for a line graph comparing two cities' rainfall across 12 months: (I) If City A's line is always above City B's line, City A received more rainfall than City B in every month shown. (II) If two lines on a graph cross at some point, the two cities must have received exactly the same rainfall in every month after that point. Which is or are correct?",
+          "a": "Only I",
+          "o": [
+            "Only I",
+            "Only II",
+            "Both I and II",
+            "Neither I nor II"
+          ]
+        },
+        {
+          "b": "Analyse",
+          "d": "Hardest",
+          "t": "long_answer",
+          "m": 3,
+          "q": "A line graph shows the number of visitors to a museum over 6 months: Jan 200, Feb 250, Mar 400, Apr 380, May 420, Jun 600. A student claims: 'The graph shows visitors kept doubling roughly every two months.' (a) Check this claim using the January and March figures, and the March and May figures. (b) Decide if the claim holds for the whole graph and explain any exception.",
+          "a": "(a) Jan to Mar: 200 doubled to 400, so the claim holds for this pair. Mar to May: 400 would need to reach 800 to double, but it only reached 420, so the claim does NOT hold for this pair. (b) The claim is false overall -- growth was much slower between March and May, so 'kept doubling' does not describe the whole graph.",
+          "s": [
+            [
+              "Confirms Jan to Mar: 200 doubled to 400, so the claim holds for this pair",
+              1
+            ],
+            [
+              "Checks Mar to May: 400 would need to reach 800 to double, but only reached 420, so the claim fails here",
+              1
+            ],
+            [
+              "Concludes the claim is false overall, since growth was much slower between March and May",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Evaluate",
+          "d": "Hard",
+          "t": "short_answer",
+          "m": 2,
+          "q": "A classmate looks at a line graph of a company's monthly profit, which rises steadily from January to June, and says: 'Since the trend has been rising for 6 months straight, profit is guaranteed to keep rising in July too.' Evaluate this claim.",
+          "a": "The claim is false/unjustified. A line graph only shows what has already happened; a past trend does not guarantee the same direction will continue into a future month not shown in the data.",
+          "s": [
+            [
+              "Judges the claim to be false or unjustified",
+              1
+            ],
+            [
+              "Explains that a past trend does not guarantee the same direction continues into a future, unshown month",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Create",
+          "d": "Hardest",
+          "t": "long_answer",
+          "m": 3,
+          "q": "Design your own small data set (5 time points, e.g. 5 years or 5 months) for a line graph showing a quantity of your choice, such that: (a) the quantity increases overall from the first point to the last, but (b) there is at least one point where it decreases compared to the point before it. State your 5 values and identify which pair of consecutive points shows the decrease.",
+          "a": "Example (yearly rainfall in mm): 10, 15, 12, 20, 25. Overall, the value rises from 10 to 25 (an increase). But from point 2 to point 3, it decreases from 15 to 12, showing the required dip.",
+          "s": [
+            [
+              "Gives 5 values for a chosen quantity where the overall trend from first to last point is an increase",
+              1
+            ],
+            [
+              "Ensures at least one consecutive pair decreases, and correctly identifies that pair",
+              1
+            ],
+            [
+              "Confirms explicitly that the first value to the last value is an increase despite the dip",
+              1
+            ]
+          ]
+        }
+      ]
+    }
+  ]
+}
