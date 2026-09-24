@@ -553,25 +553,28 @@ function MyPaper() {
     <AppShell variant="student" active="generate">
       <div className="mx-auto max-w-5xl p-4 sm:p-8">
         {/* Hero: same treatment as the parent's /generate -- the app's own --primary token at low
-          opacity, one original line-art icon, never a stock illustration. */}
-        <div className="from-primary/10 via-card to-card border-border relative mb-6 overflow-hidden rounded-2xl border bg-gradient-to-br p-6 sm:p-8">
+          opacity, one original line-art icon, never a stock illustration.
+          Sized down ~33% from the shared .text-display scale at the user's request (2026-09-24)
+          -- overridden locally rather than in that shared token, since text-display is F005's
+          common type scale used by other screens' heroes too. */}
+        <div className="from-primary/10 via-card to-card border-border relative mb-4 overflow-hidden rounded-2xl border bg-gradient-to-br p-4 sm:p-5">
           <div className="max-w-lg">
-            <h1 className="display-title text-display">
+            <h1 className="display-title text-[1.7rem] leading-[1.15] font-bold tracking-tight">
               Generate my question paper
             </h1>
-            <p className="text-body text-muted-foreground mt-2">
+            <p className="text-small text-muted-foreground mt-1.5">
               Built from what you already know and what needs more practice.
             </p>
-            <div className="mt-4 flex flex-wrap gap-2">
+            <div className="mt-2.5 flex flex-wrap gap-1.5">
               {['Personalised for you', 'Graded instantly', 'No pressure'].map(
                 (label) => (
                   <span
                     key={label}
-                    className="text-caption bg-card border-border inline-flex items-center gap-1.5 rounded-full border px-3 py-1 font-medium"
+                    className="text-caption bg-card border-border inline-flex items-center gap-1 rounded-full border px-2 py-0.5 font-medium"
                   >
                     <svg
-                      width="12"
-                      height="12"
+                      width="9"
+                      height="9"
                       viewBox="0 0 24 24"
                       fill="none"
                       stroke="currentColor"
@@ -589,15 +592,15 @@ function MyPaper() {
             </div>
           </div>
           <svg
-            width="80"
-            height="80"
+            width="54"
+            height="54"
             viewBox="0 0 24 24"
             fill="none"
             stroke="currentColor"
             strokeWidth="1.5"
             strokeLinecap="round"
             strokeLinejoin="round"
-            className="text-primary/25 pointer-events-none absolute right-4 bottom-0 hidden sm:block md:right-8"
+            className="text-primary/25 pointer-events-none absolute right-3 bottom-0 hidden sm:block md:right-6"
             aria-hidden="true"
           >
             <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20" />
