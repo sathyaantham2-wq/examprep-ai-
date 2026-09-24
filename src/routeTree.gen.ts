@@ -120,6 +120,7 @@ import { Route as ApiStudentsMeLeaderboardOptInRouteImport } from './routes/api/
 import { Route as ApiStudentsMeProfileRouteImport } from './routes/api/students/me/profile'
 import { Route as ApiSummaryWeeklyStudentIdRouteImport } from './routes/api/summary/weekly/$studentId'
 import { Route as ApiSyllabusConceptsIdRouteImport } from './routes/api/syllabus/concepts/$id'
+import { Route as ApiAdaptiveConceptsConceptIdWrongQuestionsRouteImport } from './routes/api/adaptive/concepts/$conceptId/wrong-questions'
 import { Route as ApiEvaluationsIdItemsItemIdRouteImport } from './routes/api/evaluations/$id/items/$itemId'
 import { Route as ApiEvaluationsIdReportPdfRouteImport } from './routes/api/evaluations/$id/report/pdf'
 import { Route as ApiQuestionsGenerateBatchIdResumeRouteImport } from './routes/api/questions/generate-batch/$id/resume'
@@ -698,6 +699,12 @@ const ApiSyllabusConceptsIdRoute = ApiSyllabusConceptsIdRouteImport.update({
   path: '/$id',
   getParentRoute: () => ApiSyllabusConceptsRoute,
 } as any)
+const ApiAdaptiveConceptsConceptIdWrongQuestionsRoute =
+  ApiAdaptiveConceptsConceptIdWrongQuestionsRouteImport.update({
+    id: '/api/adaptive/concepts/$conceptId/wrong-questions',
+    path: '/api/adaptive/concepts/$conceptId/wrong-questions',
+    getParentRoute: () => rootRouteImport,
+  } as any)
 const ApiEvaluationsIdItemsItemIdRoute =
   ApiEvaluationsIdItemsItemIdRouteImport.update({
     id: '/items/$itemId',
@@ -865,6 +872,7 @@ export interface FileRoutesByFullPath {
   '/api/students/me/profile': typeof ApiStudentsMeProfileRoute
   '/api/summary/weekly/$studentId': typeof ApiSummaryWeeklyStudentIdRoute
   '/api/syllabus/concepts/$id': typeof ApiSyllabusConceptsIdRoute
+  '/api/adaptive/concepts/$conceptId/wrong-questions': typeof ApiAdaptiveConceptsConceptIdWrongQuestionsRoute
   '/api/evaluations/$id/items/$itemId': typeof ApiEvaluationsIdItemsItemIdRoute
   '/api/evaluations/$id/report/pdf': typeof ApiEvaluationsIdReportPdfRoute
   '/api/questions/generate-batch/$id/resume': typeof ApiQuestionsGenerateBatchIdResumeRoute
@@ -987,6 +995,7 @@ export interface FileRoutesByTo {
   '/api/students/me/profile': typeof ApiStudentsMeProfileRoute
   '/api/summary/weekly/$studentId': typeof ApiSummaryWeeklyStudentIdRoute
   '/api/syllabus/concepts/$id': typeof ApiSyllabusConceptsIdRoute
+  '/api/adaptive/concepts/$conceptId/wrong-questions': typeof ApiAdaptiveConceptsConceptIdWrongQuestionsRoute
   '/api/evaluations/$id/items/$itemId': typeof ApiEvaluationsIdItemsItemIdRoute
   '/api/evaluations/$id/report/pdf': typeof ApiEvaluationsIdReportPdfRoute
   '/api/questions/generate-batch/$id/resume': typeof ApiQuestionsGenerateBatchIdResumeRoute
@@ -1110,6 +1119,7 @@ export interface FileRoutesById {
   '/api/students/me/profile': typeof ApiStudentsMeProfileRoute
   '/api/summary/weekly/$studentId': typeof ApiSummaryWeeklyStudentIdRoute
   '/api/syllabus/concepts/$id': typeof ApiSyllabusConceptsIdRoute
+  '/api/adaptive/concepts/$conceptId/wrong-questions': typeof ApiAdaptiveConceptsConceptIdWrongQuestionsRoute
   '/api/evaluations/$id/items/$itemId': typeof ApiEvaluationsIdItemsItemIdRoute
   '/api/evaluations/$id/report/pdf': typeof ApiEvaluationsIdReportPdfRoute
   '/api/questions/generate-batch/$id/resume': typeof ApiQuestionsGenerateBatchIdResumeRoute
@@ -1234,6 +1244,7 @@ export interface FileRouteTypes {
     | '/api/students/me/profile'
     | '/api/summary/weekly/$studentId'
     | '/api/syllabus/concepts/$id'
+    | '/api/adaptive/concepts/$conceptId/wrong-questions'
     | '/api/evaluations/$id/items/$itemId'
     | '/api/evaluations/$id/report/pdf'
     | '/api/questions/generate-batch/$id/resume'
@@ -1356,6 +1367,7 @@ export interface FileRouteTypes {
     | '/api/students/me/profile'
     | '/api/summary/weekly/$studentId'
     | '/api/syllabus/concepts/$id'
+    | '/api/adaptive/concepts/$conceptId/wrong-questions'
     | '/api/evaluations/$id/items/$itemId'
     | '/api/evaluations/$id/report/pdf'
     | '/api/questions/generate-batch/$id/resume'
@@ -1478,6 +1490,7 @@ export interface FileRouteTypes {
     | '/api/students/me/profile'
     | '/api/summary/weekly/$studentId'
     | '/api/syllabus/concepts/$id'
+    | '/api/adaptive/concepts/$conceptId/wrong-questions'
     | '/api/evaluations/$id/items/$itemId'
     | '/api/evaluations/$id/report/pdf'
     | '/api/questions/generate-batch/$id/resume'
@@ -1557,6 +1570,7 @@ export interface RootRouteChildren {
   ApiTrackerStudentIdRoute: typeof ApiTrackerStudentIdRoute
   EvaluationIdReportRoute: typeof EvaluationIdReportRoute
   ApiSummaryWeeklyStudentIdRoute: typeof ApiSummaryWeeklyStudentIdRoute
+  ApiAdaptiveConceptsConceptIdWrongQuestionsRoute: typeof ApiAdaptiveConceptsConceptIdWrongQuestionsRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -2338,6 +2352,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ApiSyllabusConceptsIdRouteImport
       parentRoute: typeof ApiSyllabusConceptsRoute
     }
+    '/api/adaptive/concepts/$conceptId/wrong-questions': {
+      id: '/api/adaptive/concepts/$conceptId/wrong-questions'
+      path: '/api/adaptive/concepts/$conceptId/wrong-questions'
+      fullPath: '/api/adaptive/concepts/$conceptId/wrong-questions'
+      preLoaderRoute: typeof ApiAdaptiveConceptsConceptIdWrongQuestionsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/api/evaluations/$id/items/$itemId': {
       id: '/api/evaluations/$id/items/$itemId'
       path: '/items/$itemId'
@@ -2818,16 +2839,9 @@ const rootRouteChildren: RootRouteChildren = {
   ApiTrackerStudentIdRoute: ApiTrackerStudentIdRoute,
   EvaluationIdReportRoute: EvaluationIdReportRoute,
   ApiSummaryWeeklyStudentIdRoute: ApiSummaryWeeklyStudentIdRoute,
+  ApiAdaptiveConceptsConceptIdWrongQuestionsRoute:
+    ApiAdaptiveConceptsConceptIdWrongQuestionsRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
   ._addFileTypes<FileRouteTypes>()
-
-import type { getRouter } from './router.tsx'
-import type { createStart } from '@tanstack/react-start'
-declare module '@tanstack/react-start' {
-  interface Register {
-    ssr: true
-    router: Awaited<ReturnType<typeof getRouter>>
-  }
-}

@@ -288,9 +288,13 @@ describe('paper list & attempt entry point (F123)', () => {
     })
     const body: Array<{
       id: string
-      attempt: { id: string; status: string } | null
+      attempt: { id: string; status: string; attempted_at: string } | null
     }> = await response.json()
     const mine = body.find((p) => p.id === paperId)
-    expect(mine!.attempt).toEqual({ id: attempt.id, status: 'in_progress' })
+    // attempted_at (2026-09-24, F123 follow-up for /papers-attempted): submitted_at is still null
+    // this early, so it falls back to started_at -- a real server timestamp, not asserted exactly.
+    expect(mine!.attempt?.id).toBe(attempt.id)
+    expect(mine!.attempt?.status).toBe('in_progress')
+    expect(new Date(mine!.attempt!.attempted_at).toString()).not.toBe('Invalid Date')
   })
 })

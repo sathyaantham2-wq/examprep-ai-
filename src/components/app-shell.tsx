@@ -13,9 +13,17 @@ import { ThemeToggle } from './theme-toggle'
 // mockup still have no real page for either role and stay left out. tab06's /papers "Paper
 // library" now exists for the student variant (/papers-attempted, 2026-09-24); the parent-facing
 // version is still unbuilt (F123's own commit notes), so 'My Papers' stays left out of that
-// branch below until it is.
+// branch below until it is. 'drills' (2026-09-24): /remediation (F066-F070's refresher/worked-
+// examples/practice-questions hub) was fully built but had no nav link anywhere -- a parent could
+// trigger a task for her via its own API, but she had no way to discover or open it herself.
 export type AppShellActive =
-  'home' | 'generate' | 'papers' | 'progress' | 'settings' | 'leaderboard'
+  | 'home'
+  | 'generate'
+  | 'papers'
+  | 'drills'
+  | 'progress'
+  | 'settings'
+  | 'leaderboard'
 export type AppShellVariant = 'parent' | 'student'
 
 interface AppShellProps {
@@ -120,6 +128,24 @@ function SettingsIcon() {
     </svg>
   )
 }
+function DrillsIcon() {
+  return (
+    <svg
+      width="17"
+      height="17"
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="2"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+    >
+      <circle cx="12" cy="12" r="9" />
+      <circle cx="12" cy="12" r="5" />
+      <circle cx="12" cy="12" r="1" />
+    </svg>
+  )
+}
 function LeaderboardIcon() {
   return (
     <svg
@@ -199,6 +225,12 @@ export function AppShell({
             label: 'Papers Attempted',
             href: '/papers-attempted',
             icon: <PapersIcon />,
+          },
+          {
+            key: 'drills',
+            label: 'Practice Drills',
+            href: '/remediation',
+            icon: <DrillsIcon />,
           },
           {
             key: 'leaderboard',

@@ -3,8 +3,6 @@ import { loadMasteryConfig, listPerformance } from './service'
 import type { ConceptPerformance } from './service'
 import { computeConceptWeights } from './weights'
 import type { ConceptSignal } from './weights'
-import { explainMastery } from './engine'
-import type { MasteryState } from './engine'
 import { LEVEL_NAMES } from './levels'
 import type { AdaptiveLevel } from './levels'
 
@@ -13,6 +11,36 @@ const RECOMMENDED_DIFFICULTY: Record<AdaptiveLevel, string> = {
   2: 'Easy + Medium',
   3: 'Medium + Hard',
   4: 'Hard + Master',
+}
+
+// 2026-09-24, user feedback with a screenshot: explainMastery()'s output (engine.ts, written "for
+// the audit view") was the only thing ever wired into ConceptView.why, and it was the ONLY
+// consumer of that function -- weights and coefficients ("Accuracy 66.7% x 0.6, recent 83.3% x
+// 0.2, difficulty reached 0 x 0.1, consistency 5.7 x 0.1 = 57.2") shown directly to a student, who
+// has no reason to know this scoring model exists. explainMastery() itself is untouched (a real
+// audit view may still want it one day); this is what a student actually sees instead -- one
+// plain sentence of where she stands, and the single nearest thing to work on, not every rule at
+// once.
+function friendlySummary(p: ConceptPerformance): Array<string> {
+  if (p.questions_attempted === 0) {
+    return ['Not attempted yet -- her first questions here will be Easy.']
+  }
+  const acc = Math.round(p.accuracy)
+  const lines = [
+    `${p.questions_attempted} question${p.questions_attempted === 1 ? '' : 's'} answered, ${acc}% correct overall.`,
+  ]
+  if (p.mastery_level === 'Mastered') {
+    lines.push(
+      'Mastered. It will come back for a quick revision from time to time to stay fresh.',
+    )
+  } else if (!p.evidence_met && p.evidence_blockers.length > 0) {
+    // Only the nearest blocker -- explainMastery() joined every unmet rule at once, which read as
+    // a checklist of demands rather than "the one thing to do next".
+    lines.push(`To move up a level: ${p.evidence_blockers[0]}.`)
+  } else {
+    lines.push('A few more correct answers in a row will move this up a level.')
+  }
+  return lines
 }
 
 export interface ConceptView {
@@ -63,7 +91,13 @@ export interface AdaptiveOverview {
     mastered_count: number
   }
   current_difficulty: string
-  strong_concepts: Array<{ concept_id: string; concept_name: string; subject_name: string; mastery_score: number; mastery_level: string }>
+  strong_concepts: Array<{
+    concept_id: string
+    concept_name: string
+    subject_name: string
+    mastery_score: number
+    mastery_level: string
+  }>
   needs_improvement: Array<{
     concept_id: string
     concept_name: string
@@ -73,7 +107,11 @@ export interface AdaptiveOverview {
     video_url: string | null
     video_title: string | null
   }>
-  retention_due: Array<{ concept_id: string; concept_name: string; subject_name: string }>
+  retention_due: Array<{
+    concept_id: string
+    concept_name: string
+    subject_name: string
+  }>
   recommended_next: {
     subject_id: string
     subject_name: string
@@ -139,7 +177,11 @@ export async function buildAdaptiveOverview(
           'ch.order_index',
           'ch.subject_id',
         ])
-        .where('ch.subject_id', 'in', selected.map((s) => s.id))
+        .where(
+          'ch.subject_id',
+          'in',
+          selected.map((s) => s.id),
+        )
         .orderBy('ch.order_index')
         .orderBy('c.code')
         .execute()
@@ -169,18 +211,14 @@ export async function buildAdaptiveOverview(
           retention: 'not_applicable' as const,
         }
   })
-  const weights = new Map(computeConceptWeights(signals, config, now).map((w) => [w.conceptId, w]))
+  const weights = new Map(
+    computeConceptWeights(signals, config, now).map((w) => [w.conceptId, w]),
+  )
 
-  const componentsRows = performance.length
-    ? await db
-        .selectFrom('student_concept_performance')
-        .select(['concept_id', 'components'])
-        .where('student_id', '=', studentId)
-        .execute()
-    : []
-  const componentsByConcept = new Map(componentsRows.map((r) => [r.concept_id, r.components]))
-
-  function view(r: (typeof conceptRows)[number], p: ConceptPerformance | undefined): ConceptView {
+  function view(
+    r: (typeof conceptRows)[number],
+    p: ConceptPerformance | undefined,
+  ): ConceptView {
     if (!p || p.questions_attempted === 0) {
       return {
         concept_id: r.concept_id,
@@ -195,19 +233,11 @@ export async function buildAdaptiveOverview(
         questions_attempted: 0,
         assessment_count: 0,
         retention: 'not_applicable',
-        why: explainMastery({ questionsAttempted: 0 } as MasteryState, config),
+        why: friendlySummary({ questions_attempted: 0 } as ConceptPerformance),
         video_url: r.video_url,
         video_title: r.video_title,
       }
     }
-    const state = {
-      questionsAttempted: p.questions_attempted,
-      masteryScore: p.mastery_score,
-      masteryLevel: p.mastery_level,
-      assessmentCount: p.assessment_count,
-      components: componentsByConcept.get(p.concept_id) ?? {},
-      evidence: { met: p.evidence_met, blockers: p.evidence_blockers },
-    } as unknown as MasteryState
     return {
       concept_id: r.concept_id,
       concept_code: r.concept_code,
@@ -221,7 +251,7 @@ export async function buildAdaptiveOverview(
       questions_attempted: p.questions_attempted,
       assessment_count: p.assessment_count,
       retention: p.retention,
-      why: Object.keys(state.components).length > 0 ? explainMastery(state, config) : [],
+      why: friendlySummary(p),
       video_url: r.video_url,
       video_title: r.video_title,
     }
@@ -243,8 +273,12 @@ export async function buildAdaptiveOverview(
       chapters.set(r.chapter_id, chapter)
     }
     for (const chapter of chapters.values()) {
-      const scores = chapter.concepts.filter((c) => c.mastery_score !== null).map((c) => c.mastery_score as number)
-      chapter.average_mastery = scores.length ? round1(scores.reduce((a, b) => a + b, 0) / scores.length) : null
+      const scores = chapter.concepts
+        .filter((c) => c.mastery_score !== null)
+        .map((c) => c.mastery_score as number)
+      chapter.average_mastery = scores.length
+        ? round1(scores.reduce((a, b) => a + b, 0) / scores.length)
+        : null
     }
     const all = [...chapters.values()].flatMap((c) => c.concepts)
     const assessed = all.filter((c) => c.mastery_score !== null)
@@ -255,7 +289,10 @@ export async function buildAdaptiveOverview(
       concepts_total: all.length,
       concepts_assessed: assessed.length,
       average_mastery: assessed.length
-        ? round1(assessed.reduce((a, b) => a + (b.mastery_score as number), 0) / assessed.length)
+        ? round1(
+            assessed.reduce((a, b) => a + (b.mastery_score as number), 0) /
+              assessed.length,
+          )
         : null,
       mastered_count: all.filter((c) => c.mastery_level === 'Mastered').length,
       chapters: [...chapters.values()],
@@ -263,7 +300,10 @@ export async function buildAdaptiveOverview(
   })
 
   const subjectName = new Map(selected.map((s) => [s.id, s.name]))
-  const flat = conceptRows.map((r) => ({ r, v: view(r, perfByConcept.get(r.concept_id)) }))
+  const flat = conceptRows.map((r) => ({
+    r,
+    v: view(r, perfByConcept.get(r.concept_id)),
+  }))
   const assessed = flat.filter((x) => x.v.mastery_score !== null)
   const brief = (x: (typeof flat)[number]) => ({
     concept_id: x.r.concept_id,
@@ -274,15 +314,26 @@ export async function buildAdaptiveOverview(
   })
 
   const strong = assessed
-    .filter((x) => x.v.mastery_level === 'Mastered' || x.v.mastery_level === 'Advanced')
-    .sort((a, b) => (b.v.mastery_score as number) - (a.v.mastery_score as number))
+    .filter(
+      (x) =>
+        x.v.mastery_level === 'Mastered' || x.v.mastery_level === 'Advanced',
+    )
+    .sort(
+      (a, b) => (b.v.mastery_score as number) - (a.v.mastery_score as number),
+    )
     .slice(0, 5)
     .map(brief)
   const weak = assessed
     .filter((x) => (x.v.mastery_score as number) < config.levels.proficient)
-    .sort((a, b) => (a.v.mastery_score as number) - (b.v.mastery_score as number))
+    .sort(
+      (a, b) => (a.v.mastery_score as number) - (b.v.mastery_score as number),
+    )
     .slice(0, 5)
-    .map((x) => ({ ...brief(x), video_url: x.v.video_url, video_title: x.v.video_title }))
+    .map((x) => ({
+      ...brief(x),
+      video_url: x.v.video_url,
+      video_title: x.v.video_title,
+    }))
   const due = flat
     .filter((x) => x.v.retention === 'due' || x.v.retention === 'lapsed')
     .map((x) => ({
@@ -292,11 +343,18 @@ export async function buildAdaptiveOverview(
     }))
 
   const levels = assessed.map((x) => x.v.current_level)
-  const meanLevel = levels.length ? Math.round(levels.reduce((a, b) => a + b, 0) / levels.length) : 1
-  const currentDifficulty = LEVEL_NAMES[Math.min(4, Math.max(1, meanLevel)) as AdaptiveLevel]
+  const meanLevel = levels.length
+    ? Math.round(levels.reduce((a, b) => a + b, 0) / levels.length)
+    : 1
+  const currentDifficulty =
+    LEVEL_NAMES[Math.min(4, Math.max(1, meanLevel)) as AdaptiveLevel]
 
   const next = [...flat]
-    .sort((a, b) => (weights.get(b.r.concept_id)?.weight ?? 0) - (weights.get(a.r.concept_id)?.weight ?? 0))
+    .sort(
+      (a, b) =>
+        (weights.get(b.r.concept_id)?.weight ?? 0) -
+        (weights.get(a.r.concept_id)?.weight ?? 0),
+    )
     .at(0)
 
   return {
@@ -306,9 +364,13 @@ export async function buildAdaptiveOverview(
       concepts_total: flat.length,
       concepts_assessed: assessed.length,
       average_mastery: assessed.length
-        ? round1(assessed.reduce((a, b) => a + (b.v.mastery_score as number), 0) / assessed.length)
+        ? round1(
+            assessed.reduce((a, b) => a + (b.v.mastery_score as number), 0) /
+              assessed.length,
+          )
         : null,
-      mastered_count: flat.filter((x) => x.v.mastery_level === 'Mastered').length,
+      mastered_count: flat.filter((x) => x.v.mastery_level === 'Mastered')
+        .length,
     },
     current_difficulty: currentDifficulty,
     strong_concepts: strong,
