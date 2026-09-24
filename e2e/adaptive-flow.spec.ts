@@ -8,11 +8,12 @@ import { createParentSession, createStudentSession } from '../src/db/test-helper
 import type { TestSession } from '../src/db/test-helpers'
 
 /**
- * The first-time student journey in a real browser: sign in, finish the profile (subject cards
- * turn blue with a tick, and clicking again clears them), see the personalised home, take the
- * Easy first assessment from "Generate my question paper", get marked at once, and see the concept
- * level on the home page. Fixtures (a subject with one chapter, one concept and its questions) are
- * built directly in the database, like the other E2E specs.
+ * The first-time student journey in a real browser: sign in, finish the profile (choosing her
+ * class is all that's needed now -- every subject offered for it is enabled automatically, see
+ * 2026-09-24), see the personalised home, take the Easy first assessment from "Generate my
+ * question paper", get marked at once, and see the concept level on the home page. Fixtures (a
+ * subject with one chapter, one concept and its questions) are built directly in the database,
+ * like the other E2E specs.
  */
 
 let db: Db
@@ -135,24 +136,13 @@ test('first-time student: profile, personalised home, Easy assessment, marked at
   await page.waitForURL('**/profile-setup')
   await expect(page.getByRole('heading', { name: 'Set up your profile' })).toBeVisible()
   await page.waitForTimeout(800)
-  // No class is pre-selected: she chooses her own.
+  // No class is pre-selected: she chooses her own. There is no subject picker any more
+  // (2026-09-24, user decision): every subject offered for her class/board is enabled
+  // automatically, so Save is ready as soon as a class is chosen.
   await page.selectOption('#student-class', '7')
 
-  const card = page.getByRole('checkbox', { name: new RegExp(subjectName) })
-  await expect(card).toHaveAttribute('aria-checked', 'false')
   const saveButton = page.getByRole('button', { name: 'Save and continue' })
-  await expect(saveButton).toBeDisabled()
-
-  // Selecting turns the card blue with a tick; selecting again clears it.
-  await card.click()
-  await expect(card).toHaveAttribute('aria-checked', 'true')
-  await expect(card).toHaveClass(/bg-blue-600/)
-  await expect(card).toContainText('✓')
-  await card.click()
-  await expect(card).toHaveAttribute('aria-checked', 'false')
-  await expect(saveButton).toBeDisabled()
-
-  await card.click()
+  await expect(saveButton).toBeEnabled()
   await saveButton.click()
 
   // Owner decision 2026-09-23: /my-paper is her default landing page now, straight after
@@ -167,15 +157,10 @@ test('first-time student: profile, personalised home, Easy assessment, marked at
   // and the TanStack devtools overlay the dev server renders carries aria-labels like
   // "Open match details for /admin/questions", which a bare 'Questions' also matches.
   await expect(page.getByLabel('Questions', { exact: true })).toHaveValue('10')
-  await expect(
-    page.getByText('10 questions (10 marks)', { exact: false }),
-  ).toBeVisible()
-  // Scoped to the plan summary on purpose: "Multiple choice" is now also an <option> in the
-  // Question type dropdown, so a bare getByText('Multiple choice') resolves to two elements and
-  // fails Playwright's strict mode.
-  await expect(
-    page.getByText('(10 marks) -- Multiple choice', { exact: false }),
-  ).toBeVisible()
+  // The plan-summary sentence ("This paper will have 10 questions...") and the Time field were
+  // both removed (2026-09-24, user decision) -- the header badge is what's left that reflects
+  // the plan (question count and estimated minutes, derived from the count, not chosen directly).
+  await expect(page.getByText('10 Qs', { exact: false })).toBeVisible()
   await page.getByRole('button', { name: 'Generate Assessment' }).click()
 
   // Answer every question (all the right option), then submit.
@@ -194,11 +179,11 @@ test('first-time student: profile, personalised home, Easy assessment, marked at
   await page.getByRole('button', { name: 'Review & submit' }).click()
   await page.getByRole('button', { name: 'Submit' }).click()
 
-  // Marked at once: score plus the concept's level, and no answer key anywhere.
+  // Marked at once: score, and no answer key anywhere. The per-concept mastery breakdown that
+  // used to appear here too was removed from this screen (2026-09-24, user decision) -- her
+  // concept's new level is still checked below, on the home page, where it still shows.
   await expect(page.getByRole('heading', { name: 'Well done, Adaptive E2E Kid' })).toBeVisible()
   await expect(page.getByText('You scored 10 out of 10 (100%).')).toBeVisible()
-  await expect(page.getByText('Adaptive E2E concept')).toBeVisible()
-  await expect(page.getByText(/now (Developing|Proficient|Beginner)/)).toBeVisible()
 
   const papers = await db.selectFrom('papers').select('id').where('student_id', '=', studentId).execute()
   paperIds.push(...papers.map((p) => p.id))

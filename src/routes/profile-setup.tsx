@@ -1,16 +1,9 @@
 import { useEffect, useMemo, useState } from 'react'
 import { createFileRoute, useNavigate } from '@tanstack/react-router'
 import { Button } from '../components/ui/button'
-import {
-  Card,
-  CardContent,
-  CardDescription,
-  CardHeader,
-  CardTitle,
-} from '../components/ui/card'
+import { Card, CardContent, CardHeader, CardTitle } from '../components/ui/card'
 import { Input } from '../components/ui/input'
 import { Label } from '../components/ui/label'
-import { SubjectCard } from '../components/subject-card'
 import { ThemeToggle } from '../components/theme-toggle'
 import { signOut, useSession } from '../lib/auth-client'
 
@@ -79,16 +72,17 @@ function ProfileSetup() {
         const match = data.options.find(
           (o) => o.board === data.profile.board && o.class === data.profile.class,
         )
-        // A new student picks her own class: nothing is pre-selected until the profile is saved.
+        // A new student picks her own class; classNo stays null until she does. Either way,
+        // `selected` itself is filled in by the subjects-effect below once the class/board (and
+        // so the subject list) are known -- not read from data.profile.subject_ids here, since
+        // every offered subject is enabled now, not just whichever subset an old profile saved.
         const boardsOffered = [...new Set(data.options.map((o) => o.board))]
         if (data.profile.profile_complete && match) {
           setBoard(match.board)
           setClassNo(match.class)
-          setSelected(data.profile.subject_ids)
         } else {
           setBoard(boardsOffered.includes('CBSE') ? 'CBSE' : boardsOffered.length === 1 ? boardsOffered[0] : '')
           setClassNo(null)
-          setSelected([])
         }
       })
   }, [isPending, session, role, navigate])
@@ -115,21 +109,21 @@ function ProfileSetup() {
     [options, board, classNo],
   )
 
+  // 2026-09-24, user decision: she no longer ticks subjects here -- every subject offered for her
+  // class/board is enabled automatically, and which ONE to build a paper from is chosen later, on
+  // /my-paper's own Subject dropdown at generation time. This keeps subject_ids populated (the
+  // server still requires at least one) without asking her to choose anything on this screen.
+  useEffect(() => {
+    setSelected(subjects.map((s) => s.id))
+  }, [subjects])
+
   function changeBoard(next: string) {
     setBoard(next)
     setClassNo(next === COMPETITIVE_BOARD ? 0 : null)
-    setSelected([])
   }
 
   function changeClass(next: number) {
     setClassNo(next)
-    setSelected([])
-  }
-
-  function toggle(id: string) {
-    setSelected((current) =>
-      current.includes(id) ? current.filter((s) => s !== id) : [...current, id],
-    )
   }
 
   async function save(e: React.FormEvent) {
@@ -168,7 +162,7 @@ function ProfileSetup() {
         <div>
           <h1 className="text-h1">{isEdit ? 'Your profile' : 'Set up your profile'}</h1>
           <p className="text-body text-muted-foreground">
-            Tell us your class and subjects. Your practice papers are built around this.
+            Tell us your class and syllabus. Your practice papers are built around this.
           </p>
         </div>
         <div className="no-print flex items-center gap-2">
@@ -247,37 +241,16 @@ function ProfileSetup() {
           </CardContent>
         </Card>
 
-        <Card>
-          <CardHeader>
-            <CardTitle className="text-h3">Subjects you want to practise</CardTitle>
-            <CardDescription>
-              Tap a subject to select it. Tap again to remove it. Choose one or more.
-            </CardDescription>
-          </CardHeader>
-          <CardContent>
-            {subjects.length === 0 ? (
-              <p className="text-body text-muted-foreground">
-                {plannedBoard
-                  ? 'Civil Services / UPSC and Groups (Polity, General Studies) are coming soon.'
-                  : classNo === null
-                    ? 'Choose your class to see its subjects.'
-                    : 'No subjects are available for this class yet. Content is coming soon.'}
-              </p>
-            ) : (
-              <div className="grid gap-3 sm:grid-cols-2" role="group" aria-label="Subjects">
-                {subjects.map((subject) => (
-                  <SubjectCard
-                    key={subject.id}
-                    name={subject.name}
-                    note={subject.has_content ? undefined : 'Practice papers coming soon'}
-                    selected={selected.includes(subject.id)}
-                    onToggle={() => toggle(subject.id)}
-                  />
-                ))}
-              </div>
-            )}
-          </CardContent>
-        </Card>
+        {/* No subject picker here any more (2026-09-24, user decision): every subject offered for
+            her class/board is enabled automatically -- which one to build a paper from is chosen
+            later, on /my-paper's own Subject dropdown. This note only covers the one case that
+            used to be explained inside that removed card: a class/board with nothing to enable
+            yet, which is also why Save stays disabled. */}
+        {classNo !== null && !plannedBoard && subjects.length === 0 && (
+          <p className="text-small text-muted-foreground" role="status">
+            No subjects are available for this class yet. Content is coming soon.
+          </p>
+        )}
 
         {error && (
           <p className="text-small text-destructive" role="alert">
