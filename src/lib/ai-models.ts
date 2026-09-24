@@ -43,9 +43,17 @@ const ANTHROPIC_MODELS: Record<ModelTier, string> = {
 
 // Gemini: Flash is the strong tier because it is available on the free plan; Flash-Lite is the
 // cheap tier. Override either with GEMINI_MODEL_STRONG / GEMINI_MODEL_CHEAP (e.g. a Pro model).
+//
+// 2026-09-24: the 2.5 generation was retired without notice -- every AI-13 (F126 explanation)
+// call in production failed with a Gemini 404 ("This model models/gemini-2.5-flash-lite is no
+// longer available to new users. Please update your code to use models/gemini-3.5-flash-lite"),
+// which is why the defaults below are 3.5, not 2.5. Confirmed only for the -lite (cheap) name
+// directly from that error; the non-lite (strong) name is inferred from the same generation bump,
+// since Google ships a Flash/Flash-Lite pair together, not verified independently. If Gemini
+// retires a generation again, ai_jobs.error on a fresh AI-13 row has the live model name.
 function geminiModels(): Record<ModelTier, string> {
-  const strong = env.GEMINI_MODEL_STRONG ?? 'gemini-2.5-flash'
-  return { strong, mid: strong, cheap: env.GEMINI_MODEL_CHEAP ?? 'gemini-2.5-flash-lite' }
+  const strong = env.GEMINI_MODEL_STRONG ?? 'gemini-3.5-flash'
+  return { strong, mid: strong, cheap: env.GEMINI_MODEL_CHEAP ?? 'gemini-3.5-flash-lite' }
 }
 
 function modelsFor(provider: AiProvider): Record<ModelTier, string> {

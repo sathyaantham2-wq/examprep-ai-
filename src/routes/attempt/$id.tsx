@@ -358,18 +358,31 @@ function Attempt() {
                 scored != null && scored.marks_max > 0
                   ? scored.marks_awarded >= scored.marks_max
                   : null
+              // `answers` (local state) is what she actually submitted: it starts seeded from
+              // q.saved_answer on page load (see the initial GET effect above) and is then kept
+              // live as she answers/changes her mind during the exam. q.saved_answer itself is
+              // never refetched after that initial load, so on a paper answered and reviewed in
+              // one sitting it is a snapshot from BEFORE she started -- typically blank -- even
+              // though she went on to answer and score correctly. Falling back to q.saved_answer
+              // only matters when this screen is opened fresh in a later session, where `answers`
+              // was just re-seeded from the (by then accurate) saved_answer anyway.
+              const savedSelected =
+                answers[q.paper_question_id]?.selected_option ??
+                q.saved_answer?.selected_option
+              const savedText =
+                answers[q.paper_question_id]?.response_text ??
+                q.saved_answer?.response_text
               const yourAnswer =
                 // Same rule as the answering screen above: option-bearing types show the option
                 // she picked, everything else shows what she wrote.
                 q.options.length > 0
-                  ? q.saved_answer?.selected_option
-                    ? `${q.saved_answer.selected_option}. ${
-                        q.options.find(
-                          (o) => o.label === q.saved_answer?.selected_option,
-                        )?.text ?? ''
+                  ? savedSelected
+                    ? `${savedSelected}. ${
+                        q.options.find((o) => o.label === savedSelected)
+                          ?.text ?? ''
                       }`
                     : '(blank)'
-                  : q.saved_answer?.response_text || '(blank)'
+                  : savedText || '(blank)'
               return (
                 <Card key={q.paper_question_id}>
                   <CardHeader>

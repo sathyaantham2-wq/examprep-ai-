@@ -17,9 +17,9 @@ describe('modelForFeature (F094 task-to-model map)', () => {
   })
 
   it('maps to Gemini models when the provider is Gemini', () => {
-    expect(modelForFeature('AI-05', 'gemini')).toBe('gemini-2.5-flash')
-    expect(modelForFeature('AI-02', 'gemini')).toBe('gemini-2.5-flash-lite')
-    expect(fallbackModel('gemini')).toBe('gemini-2.5-flash-lite')
+    expect(modelForFeature('AI-05', 'gemini')).toBe('gemini-3.5-flash')
+    expect(modelForFeature('AI-02', 'gemini')).toBe('gemini-3.5-flash-lite')
+    expect(fallbackModel('gemini')).toBe('gemini-3.5-flash-lite')
     expect(fallbackModel('anthropic')).toBe(FALLBACK_MODEL)
   })
 
