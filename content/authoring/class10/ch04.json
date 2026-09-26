@@ -1,0 +1,2296 @@
+{
+ "subject": {
+  "code": "MATH10",
+  "name": "Mathematics",
+  "board": "CBSE",
+  "class": 10
+ },
+ "source": {
+  "publisher": "NCERT",
+  "title": "Mathematics",
+  "edition": "Textbook for Class X, Reprint 2026-27",
+  "year": 2026
+ },
+ "chapter": {
+  "part": "I",
+  "chapter_no": 4,
+  "name": "Quadratic Equations",
+  "blurb": "Defining a quadratic equation in standard form, representing real-life situations as one, solving by factorisation and by the quadratic formula, and using the discriminant to decide the nature of the roots and to solve applied problems.",
+  "source_code": "jemh104",
+  "order_index": 4
+ },
+ "scope_in": [
+  {
+   "item": "Definition of a quadratic equation and its standard form ax^2 + bx + c = 0 (a not equal to 0); checking whether a given equation, after simplification, is quadratic",
+   "pages": "39-41"
+  },
+  {
+   "item": "Representing real-life situations (areas, ages, products of numbers, speed-distance-time, cost of production) as a quadratic equation in standard form",
+   "pages": "38-39, 41-42"
+  },
+  {
+   "item": "Meaning of a root/solution of a quadratic equation (a(alpha)^2 + b(alpha) + c = 0) and verifying a given value by substitution; a quadratic equation has at most two roots",
+   "pages": "42"
+  },
+  {
+   "item": "Solving a quadratic equation by factorisation: splitting the middle term and equating each linear factor to zero, including equations with surd coefficients and repeated (equal) roots",
+   "pages": "42-44"
+  },
+  {
+   "item": "The quadratic formula x = (-b +/- sqrt(b^2 - 4ac)) / 2a and using it to find real roots",
+   "pages": "44-46"
+  },
+  {
+   "item": "The discriminant b^2 - 4ac and the three-way classification of the nature of roots (two distinct real roots, two equal real roots, no real roots), including finding an unknown coefficient for equal roots",
+   "pages": "45-47"
+  },
+  {
+   "item": "Forming a quadratic equation from a word problem, solving it by factorisation or the formula, and accepting or rejecting each root against the real-world conditions of the problem",
+   "pages": "38-39, 44-47"
+  }
+ ],
+ "scope_out": [
+  {
+   "item": "Solving a quadratic equation by completing the square as a general, named method",
+   "reason": "This rationalised edition removed the separate completing-the-square section; only factorisation and the ready-made quadratic formula are taught as solution methods, and the formula's own derivation is not walked through for students to repeat"
+  },
+  {
+   "item": "Sum and product of the roots (alpha + beta = -b/a, alpha * beta = c/a) as named results",
+   "reason": "Not stated or used anywhere in this chapter"
+  },
+  {
+   "item": "Complex or imaginary roots when the discriminant is negative",
+   "reason": "The book states only 'no real roots' in this case and never introduces a number system beyond the reals here"
+  },
+  {
+   "item": "Graphical method: sketching y = ax^2 + bx + c and reading the roots off as x-intercepts",
+   "reason": "Not part of this chapter; there is no graph or coordinate-plane treatment of quadratic equations here. Confirmed by rendering the one page with no text layer (printed p.48): it is a blank 'NOTE' page ruled for the student's own notes, not a graph or diagram"
+  },
+  {
+   "item": "Forming a quadratic equation when only its roots are given (the reverse construction x^2 - (sum)x + (product) = 0)",
+   "reason": "Not developed in this chapter"
+  },
+  {
+   "item": "Equations of degree higher than 2 reduced to quadratic form by substitution (e.g. biquadratic equations)",
+   "reason": "Outside this chapter; every equation here is quadratic after at most one simplification pass"
+  },
+  {
+   "item": "The historical figures named in the introduction (Babylonians, Euclid, Brahmagupta, Sridharacharya, Al-Khwarizmi, Abraham bar Hiyya Ha-Nasi)",
+   "reason": "Mentioned only as scene-setting narrative on pages 38-39; not developed into a testable point, so kept out of the question grid rather than tested as trivia"
+  }
+ ],
+ "concepts": [
+  {
+   "code": "C10M-4.1",
+   "name": "Quadratic Equations: Definition and Standard Form",
+   "description": "The general standard form ax^2 + bx + c = 0 of a quadratic equation in one variable, and how to tell whether a given equation is quadratic after simplifying it.",
+   "idea": "An equation is quadratic when, after simplifying both sides fully, the variable's highest power is exactly 2.",
+   "rule": "ax^2 + bx + c = 0, where a, b, c are real numbers and a is not equal to 0, is the standard form of a quadratic equation in x. Any equation p(x) = 0, where p(x) is a polynomial of degree 2, is a quadratic equation.",
+   "example": "(x - 2)^2 + 1 = 2x - 3 simplifies to x^2 - 6x + 8 = 0, which is quadratic. But x(x + 1) + 8 = (x + 2)(x - 2) simplifies to x + 12 = 0, degree 1, so it is not quadratic.",
+   "difficulty_base": "Easy",
+   "questions": [
+    {
+     "b": "Remember",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "The standard form of a quadratic equation in the variable x is",
+     "a": "ax^2 + bx + c = 0, where a, b, c are real numbers and a is not equal to 0",
+     "o": [
+      "ax^2 + bx + c = 0, where a, b, c are real numbers and a is not equal to 0",
+      "ax + b = 0, where a is not equal to 0",
+      "ax^3 + bx^2 + cx + d = 0, where a is not equal to 0",
+      "ax^2 + bx + c = 0, where a, b, c are real numbers and a = 0"
+     ]
+    },
+    {
+     "b": "Remember",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "In the standard form ax^2 + bx + c = 0 of a quadratic equation, which condition must always hold?",
+     "a": "a is not equal to 0",
+     "o": [
+      "a is not equal to 0",
+      "b is not equal to 0",
+      "c is not equal to 0",
+      "a, b and c must all be positive"
+     ]
+    },
+    {
+     "b": "Remember",
+     "d": "Easy",
+     "t": "fill_blank",
+     "m": 1,
+     "q": "A quadratic equation in the variable x is an equation of the form ax^2 + bx + c = 0, where a, b, c are real numbers and a is not equal to ____.",
+     "a": "0"
+    },
+    {
+     "b": "Remember",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "rev": true,
+     "q": "Which of the following statements about the standard form ax^2 + bx + c = 0 of a quadratic equation (a is not equal to 0) is NOT correct?",
+     "a": "It always has two distinct real roots, whatever the values of a, b and c",
+     "o": [
+      "It always has two distinct real roots, whatever the values of a, b and c",
+      "a, b and c are real numbers",
+      "The term ax^2 is written first because standard form lists the terms in descending order of degree",
+      "The coefficient a cannot be 0, otherwise the equation would not be quadratic"
+     ]
+    },
+    {
+     "b": "Understand",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "Which of the following is a quadratic equation?",
+     "a": "2x^2 + x - 300 = 0",
+     "o": [
+      "2x^2 + x - 300 = 0",
+      "2x - 300 = 0",
+      "x^3 - 300 = 0",
+      "2/x + x - 300 = 0"
+     ]
+    },
+    {
+     "b": "Understand",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "In the quadratic equation 2x^2 - 3x + 1 = 0, the value of c (the constant term) is",
+     "a": "1",
+     "o": [
+      "1",
+      "2",
+      "-3",
+      "0"
+     ]
+    },
+    {
+     "b": "Understand",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "Any equation of the form p(x) = 0, where p(x) is a polynomial, is a quadratic equation only when the degree of p(x) is",
+     "a": "2",
+     "o": [
+      "2",
+      "1",
+      "3",
+      "any degree greater than 1"
+     ]
+    },
+    {
+     "b": "Understand",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "q": "Simplifying both sides of x(x + 1) + 8 = (x + 2)(x - 2), what kind of equation results?",
+     "a": "A linear equation, since the x^2 terms cancel",
+     "o": [
+      "A linear equation, since the x^2 terms cancel",
+      "A quadratic equation with a = 1",
+      "A quadratic equation with a = 3",
+      "A cubic equation"
+     ]
+    },
+    {
+     "b": "Understand",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "q": "Show whether (x + 2)^3 = x^3 - 4 is a quadratic equation.",
+     "a": "Expanding (x + 2)^3 = x^3 + 6x^2 + 12x + 8, so the equation becomes x^3 + 6x^2 + 12x + 8 = x^3 - 4. The x^3 terms cancel, leaving 6x^2 + 12x + 12 = 0, i.e. x^2 + 2x + 2 = 0, which is quadratic.",
+     "s": [
+      [
+       "Expands (x + 2)^3 correctly and cancels the x^3 terms",
+       1
+      ],
+      [
+       "States the reduced equation x^2 + 2x + 2 = 0 and concludes it is quadratic",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "Written in standard form, the equation 2x^2 = 4x - 3 becomes",
+     "a": "2x^2 - 4x + 3 = 0",
+     "o": [
+      "2x^2 - 4x + 3 = 0",
+      "2x^2 + 4x - 3 = 0",
+      "2x^2 - 4x - 3 = 0",
+      "4x^2 - 4x + 3 = 0"
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Easy",
+     "t": "fill_blank",
+     "m": 1,
+     "q": "In the standard form of the quadratic equation 5 - x^2 = 3x, written as ax^2 + bx + c = 0 with a positive, a = ____.",
+     "a": "1"
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "q": "Simplify both sides of (x - 2)(x + 1) = (x - 1)(x + 3). What kind of equation results?",
+     "a": "A linear equation, since the x^2 terms cancel",
+     "o": [
+      "A linear equation, since the x^2 terms cancel",
+      "A quadratic equation with a = 1",
+      "A quadratic equation with a = 3",
+      "A cubic equation"
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "q": "After simplifying, x^3 - 4x^2 - x + 1 = (x - 2)^3 reduces to a quadratic equation. Its value of a (the coefficient of x^2, taken positive), is",
+     "a": "2",
+     "o": [
+      "2",
+      "-13",
+      "9",
+      "1"
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "q": "Simplify (x - 3)(2x + 1) = x(x + 5) into standard form ax^2 + bx + c = 0 and state a, b and c.",
+     "a": "x^2 - 10x - 3 = 0, so a = 1, b = -10, c = -3.",
+     "s": [
+      [
+       "Expands both sides correctly (2x^2 - 5x - 3 and x^2 + 5x)",
+       1
+      ],
+      [
+       "Rearranges to x^2 - 10x - 3 = 0 and states a = 1, b = -10, c = -3",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hardest",
+     "t": "long_answer",
+     "m": 3,
+     "q": "Represent the equation (2x - 1)(x - 3) = (x + 5)(x - 1) in standard form ax^2 + bx + c = 0, name a, b and c, and check whether x = 2 satisfies the resulting equation.",
+     "a": "x^2 - 11x + 8 = 0, so a = 1, b = -11, c = 8. Substituting x = 2 gives 4 - 22 + 8 = -10, not 0, so x = 2 does not satisfy the equation.",
+     "s": [
+      [
+       "Expands both sides correctly",
+       1
+      ],
+      [
+       "Rearranges to x^2 - 11x + 8 = 0 with a = 1, b = -11, c = 8",
+       1
+      ],
+      [
+       "Substitutes x = 2 and correctly concludes -10 is not 0, so x = 2 is not a solution",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "assertion_reason",
+     "m": 1,
+     "q": "Assertion (A): The equation x(x + 1) + 8 = (x + 2)(x - 2) is a quadratic equation. Reason (R): A quadratic equation must be written with its terms in descending powers of x before its coefficients a, b and c can be read off. Choose the correct option.",
+     "a": "A is false, R is true",
+     "o": [
+      "A is false, R is true",
+      "A is true, R is false",
+      "Both A and R are true, and R is the correct explanation of A",
+      "Both A and R are true, but R is not the correct explanation of A"
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "multi_statement",
+     "m": 1,
+     "q": "Consider these statements about the equation (x + 2)^3 = x^3 - 4. (I) Before simplifying, the equation looks like a cubic equation of degree 3. (II) After simplifying both sides and cancelling the x^3 terms, the equation reduces to a quadratic equation in standard form. Which is or are correct?",
+     "a": "Both I and II",
+     "o": [
+      "Both I and II",
+      "Only I",
+      "Only II",
+      "Neither I nor II"
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hardest",
+     "t": "long_answer",
+     "m": 3,
+     "q": "A student claims that x^3 - 4x^2 - x + 1 = (x - 2)^3 is a cubic equation because both sides contain an x^3 term. Examine this claim by expanding (x - 2)^3, and state the actual degree of the simplified equation.",
+     "a": "Expanding (x - 2)^3 = x^3 - 6x^2 + 12x - 8. Subtracting, the x^3 terms cancel, leaving 2x^2 - 13x + 9 = 0. So the claim is wrong; the simplified equation has degree 2, i.e. it is quadratic, not cubic.",
+     "s": [
+      [
+       "Expands (x - 2)^3 correctly",
+       1
+      ],
+      [
+       "Shows the x^3 terms cancel on simplifying",
+       1
+      ],
+      [
+       "Concludes the equation is quadratic (degree 2), not cubic",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Evaluate",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "q": "Rahul says: \"Since (x + 2)^3 = x^3 - 4 has x^3 on both sides before simplifying, it can never turn into a quadratic equation.\" Evaluate his claim using the working.",
+     "a": "Rahul is wrong. Expanding gives x^3 + 6x^2 + 12x + 8 = x^3 - 4; the x^3 terms are identical on both sides and cancel when subtracted, leaving 6x^2 + 12x + 12 = 0, i.e. x^2 + 2x + 2 = 0, which is quadratic.",
+     "s": [
+      [
+       "States Rahul's claim is wrong",
+       1
+      ],
+      [
+       "Shows the x^3 terms cancel, leaving a quadratic equation x^2 + 2x + 2 = 0",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Create",
+     "d": "Hardest",
+     "t": "long_answer",
+     "m": 3,
+     "q": "Create your own equation of the form p(x) = 0 where p(x) is a polynomial of degree 2, using coefficients that are not all whole numbers (at least one of a, b, c should be a fraction or decimal). Write it in standard form and name a, b and c.",
+     "a": "For example, x^2/2 + 3x - 1.5 = 0 has a = 1/2 (or 0.5), b = 3, c = -1.5. Any similar equation with a not equal to 0 and at least one non-whole-number coefficient is acceptable.",
+     "s": [
+      [
+       "Writes a valid equation of degree 2 in one variable with a not equal to 0",
+       1
+      ],
+      [
+       "At least one coefficient is a fraction or decimal, as required",
+       1
+      ],
+      [
+       "Correctly names a, b and c for the equation written",
+       1
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "code": "C10M-4.2",
+   "name": "Representing Real-Life Situations as Quadratic Equations",
+   "description": "Translating a real-life situation (areas, ages, products of numbers, speeds) into a quadratic equation in one variable.",
+   "idea": "Choose a letter for the unknown, write the other quantities in terms of it from the given conditions, and set up an equation; many area, product and age-type situations give an equation with a squared term.",
+   "rule": "Translate each condition of the situation into an algebraic expression, form the equation, and rewrite it in standard form ax^2 + bx + c = 0.",
+   "example": "A hall has carpet area 300 m^2 and length one metre more than twice its breadth x. Area = (2x + 1)(x) = 300, giving 2x^2 + x - 300 = 0.",
+   "difficulty_base": "Easy",
+   "questions": [
+    {
+     "b": "Remember",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "To represent a real-life situation as a quadratic equation, the first step is usually to",
+     "a": "choose a letter for the unknown quantity and write the other quantities in terms of it",
+     "o": [
+      "choose a letter for the unknown quantity and write the other quantities in terms of it",
+      "guess two numbers that multiply to give the answer",
+      "apply the quadratic formula directly to the given numbers",
+      "draw a graph of the situation"
+     ]
+    },
+    {
+     "b": "Remember",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "In the prayer hall problem, the breadth is taken as x metres. In terms of x, the length is",
+     "a": "(2x + 1) metres",
+     "o": [
+      "(2x + 1) metres",
+      "(2x - 1) metres",
+      "(x + 1) metres",
+      "2x metres"
+     ]
+    },
+    {
+     "b": "Remember",
+     "d": "Easy",
+     "t": "fill_blank",
+     "m": 1,
+     "q": "In the prayer hall problem, the area equation (2x + 1)(x) = 300 rearranges to the standard form 2x^2 + x - ____ = 0.",
+     "a": "300"
+    },
+    {
+     "b": "Remember",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "rev": true,
+     "q": "Which of the following about representing a real-life situation as a quadratic equation is NOT correct?",
+     "a": "The equation formed can only be solved using the quadratic formula, never by factorisation",
+     "o": [
+      "The equation formed can only be solved using the quadratic formula, never by factorisation",
+      "The letter chosen for the unknown must be clearly stated in words before it is used",
+      "Two different quantities in the same problem can both be written in terms of one variable x",
+      "The final equation should be rearranged into the standard form ax^2 + bx + c = 0"
+     ]
+    },
+    {
+     "b": "Understand",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "John and Jivanti together have 45 marbles. If John has x marbles, Jivanti has",
+     "a": "(45 - x) marbles",
+     "o": [
+      "(45 - x) marbles",
+      "(45 + x) marbles",
+      "(x - 45) marbles",
+      "45x marbles"
+     ]
+    },
+    {
+     "b": "Understand",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "A cottage industry produces x toys in a day; the cost of each toy is Rs (55 - x). The total cost of production that day is",
+     "a": "x(55 - x) rupees",
+     "o": [
+      "x(55 - x) rupees",
+      "(55 - x) rupees",
+      "x + (55 - x) rupees",
+      "55x rupees"
+     ]
+    },
+    {
+     "b": "Understand",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "After John and Jivanti each lose 5 marbles, John is left with (x - 5) marbles. Jivanti, who had (45 - x) marbles, is left with",
+     "a": "(40 - x) marbles",
+     "o": [
+      "(40 - x) marbles",
+      "(50 - x) marbles",
+      "(45 - x) marbles",
+      "(35 - x) marbles"
+     ]
+    },
+    {
+     "b": "Understand",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "q": "The product of John's and Jivanti's remaining marbles, (x - 5)(40 - x), expands to",
+     "a": "-x^2 + 45x - 200",
+     "o": [
+      "-x^2 + 45x - 200",
+      "x^2 + 45x - 200",
+      "-x^2 - 45x - 200",
+      "-x^2 + 45x + 200"
+     ]
+    },
+    {
+     "b": "Understand",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "q": "A rectangular plot has area 528 m^2. Its length (in metres) is one more than twice its breadth x. Form the quadratic equation for x in standard form.",
+     "a": "Length = 2x + 1. Area = (2x + 1)(x) = 528, so 2x^2 + x - 528 = 0.",
+     "s": [
+      [
+       "Writes length as (2x + 1) and the area equation (2x + 1)(x) = 528",
+       1
+      ],
+      [
+       "Rearranges to standard form 2x^2 + x - 528 = 0",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "The product of two consecutive positive integers is 306. If the smaller integer is x, the equation formed is",
+     "a": "x(x + 1) = 306",
+     "o": [
+      "x(x + 1) = 306",
+      "x(x - 1) = 306",
+      "x + (x + 1) = 306",
+      "x^2 = 306"
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Easy",
+     "t": "fill_blank",
+     "m": 1,
+     "q": "Rohan's mother is 26 years older than him. If Rohan's present age is x years, his mother's present age is ____ years.",
+     "a": "x + 26"
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "q": "Rohan's mother is 26 years older than him; the product of their ages 3 years from now will be 360. If Rohan's present age is x years, the equation is",
+     "a": "(x + 3)(x + 29) = 360",
+     "o": [
+      "(x + 3)(x + 29) = 360",
+      "(x + 3)(x + 26) = 360",
+      "(x + 3)(x + 23) = 360",
+      "x(x + 26) = 360"
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "q": "A train travels 480 km at a uniform speed. If the speed had been 8 km/h less, it would have taken 3 hours more for the same distance. Taking the speed as x km/h, form the quadratic equation (do not simplify further).",
+     "a": "Time at speed x is 480/x hours; time at speed (x - 8) is 480/(x - 8) hours, and this is 3 hours more: 480/(x - 8) - 480/x = 3, which is a quadratic equation in x after clearing denominators.",
+     "s": [
+      [
+       "Writes the two times as 480/x and 480/(x - 8)",
+       1
+      ],
+      [
+       "States the equation 480/(x - 8) - 480/x = 3",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "q": "The altitude of a right triangle is 7 cm less than its base. If the base is x cm and the hypotenuse is 13 cm, the equation connecting x is",
+     "a": "x^2 + (x - 7)^2 = 13^2",
+     "o": [
+      "x^2 + (x - 7)^2 = 13^2",
+      "x^2 + (x + 7)^2 = 13^2",
+      "x + (x - 7) = 13",
+      "x^2 - (x - 7)^2 = 13^2"
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hardest",
+     "t": "long_answer",
+     "m": 3,
+     "q": "A cottage industry produces pottery articles. The cost of production of each article (in rupees) was 3 more than twice the number of articles x produced that day, and the total cost was Rs 90. Form the quadratic equation for x and write it in standard form.",
+     "a": "Cost per article = (2x + 3) rupees. Total cost: x(2x + 3) = 90, i.e. 2x^2 + 3x - 90 = 0.",
+     "s": [
+      [
+       "States cost per article as (2x + 3)",
+       1
+      ],
+      [
+       "Writes the equation x(2x + 3) = 90",
+       1
+      ],
+      [
+       "Rearranges to standard form 2x^2 + 3x - 90 = 0",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "assertion_reason",
+     "m": 1,
+     "q": "Assertion (A): The equation representing 'John and Jivanti together have 45 marbles; after each loses 5, the product of their remaining marbles is 124' is x^2 - 45x + 324 = 0, where x is the number of marbles John had at first. Reason (R): This equation has this form because the number of marbles Jivanti had at first must be written as (45 + x). Choose the correct option.",
+     "a": "A is true, R is false",
+     "o": [
+      "A is true, R is false",
+      "A is false, R is true",
+      "Both A and R are true, and R is the correct explanation of A",
+      "Both A and R are true, but R is not the correct explanation of A"
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "multi_statement",
+     "m": 1,
+     "q": "Consider these statements about the toy-production problem (cost per toy in rupees = 55 minus the number of toys x produced that day; total cost was Rs 750). (I) The total cost is represented as x(55 - x) = 750. (II) This gives the standard-form equation x^2 + 55x - 750 = 0 after rearranging. Which is or are correct?",
+     "a": "Only I",
+     "o": [
+      "Only I",
+      "Only II",
+      "Both I and II",
+      "Neither I nor II"
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hardest",
+     "t": "long_answer",
+     "m": 3,
+     "q": "Is it possible to design a rectangular park of perimeter 80 m and area 400 m^2? Form the quadratic equation for the length x, and identify a, b, c (do not solve it yet).",
+     "a": "Breadth = (40 - x) m since length + breadth = 40. Area: x(40 - x) = 400, i.e. x^2 - 40x + 400 = 0, so a = 1, b = -40, c = 400.",
+     "s": [
+      [
+       "Uses the perimeter to write breadth as (40 - x)",
+       1
+      ],
+      [
+       "Forms the area equation x(40 - x) = 400",
+       1
+      ],
+      [
+       "Rearranges to x^2 - 40x + 400 = 0 and names a, b, c",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Evaluate",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "q": "Priya represents 'the product of two consecutive positive integers is 306' as x(x + 2) = 306, using x for the smaller integer. Evaluate whether this is correct.",
+     "a": "Incorrect. Consecutive integers differ by 1, not 2, so the correct equation is x(x + 1) = 306.",
+     "s": [
+      [
+       "States Priya's equation is incorrect",
+       1
+      ],
+      [
+       "Gives the correct equation x(x + 1) = 306, noting consecutive integers differ by 1",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Create",
+     "d": "Hardest",
+     "t": "long_answer",
+     "m": 3,
+     "q": "Make up your own real-life situation (about area, ages, or a product of numbers) that leads to a quadratic equation. State the situation, define your variable in words, and write the resulting equation in standard form.",
+     "a": "For example: 'A square garden has a path of width 2 m added to one side, making a rectangle of area 48 m^2 where the square's side is x m.' Then x(x + 2) = 48, i.e. x^2 + 2x - 48 = 0. Any situation leading to a genuine standard-form quadratic equation, clearly defined, is acceptable.",
+     "s": [
+      [
+       "States a clear real-life situation with the variable defined in words",
+       1
+      ],
+      [
+       "Forms an equation correctly modelling the stated situation",
+       1
+      ],
+      [
+       "Writes the equation in standard form ax^2 + bx + c = 0 with a not equal to 0",
+       1
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "code": "C10M-4.3",
+   "name": "Roots of a Quadratic Equation: Meaning and Verification",
+   "description": "What it means for a number to be a root of a quadratic equation, and verifying a given value by substitution.",
+   "idea": "A root is a value of the variable that makes the equation true; substitute it back in to check.",
+   "rule": "A real number alpha is a root of ax^2 + bx + c = 0 (a not equal to 0) if a(alpha)^2 + b(alpha) + c = 0. The roots of the equation are the same as the zeroes of the polynomial ax^2 + bx + c. A quadratic equation has at most two roots.",
+   "example": "For 2x^2 - 3x + 1 = 0, putting x = 1 gives 2(1)^2 - 3(1) + 1 = 2 - 3 + 1 = 0, so x = 1 is a root.",
+   "difficulty_base": "Easy",
+   "questions": [
+    {
+     "b": "Remember",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "A real number alpha is called a root of the quadratic equation ax^2 + bx + c = 0 if",
+     "a": "a(alpha)^2 + b(alpha) + c = 0",
+     "o": [
+      "a(alpha)^2 + b(alpha) + c = 0",
+      "a(alpha) + b = 0",
+      "alpha = -b/a",
+      "a + b(alpha) + c = 0"
+     ]
+    },
+    {
+     "b": "Remember",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "The roots of the quadratic equation ax^2 + bx + c = 0 are the same as the",
+     "a": "zeroes of the quadratic polynomial ax^2 + bx + c",
+     "o": [
+      "zeroes of the quadratic polynomial ax^2 + bx + c",
+      "coefficients a, b and c",
+      "value of the discriminant b^2 - 4ac",
+      "sum a + b + c"
+     ]
+    },
+    {
+     "b": "Remember",
+     "d": "Easy",
+     "t": "fill_blank",
+     "m": 1,
+     "q": "A quadratic equation can have at most ____ roots.",
+     "a": "two"
+    },
+    {
+     "b": "Remember",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "rev": true,
+     "q": "Which statement about the roots of a quadratic equation ax^2 + bx + c = 0 is NOT correct?",
+     "a": "Every quadratic equation can be solved by factorisation using whole-number splits of the middle term",
+     "o": [
+      "Every quadratic equation can be solved by factorisation using whole-number splits of the middle term",
+      "A root alpha satisfies a(alpha)^2 + b(alpha) + c = 0",
+      "The roots of the equation are the same as the zeroes of the quadratic polynomial ax^2 + bx + c",
+      "A quadratic equation has at most two roots"
+     ]
+    },
+    {
+     "b": "Understand",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "To check whether x = 1 is a root of 2x^2 - 3x + 1 = 0, we substitute x = 1 and find",
+     "a": "2(1)^2 - 3(1) + 1 = 0, so x = 1 is a root",
+     "o": [
+      "2(1)^2 - 3(1) + 1 = 0, so x = 1 is a root",
+      "2(1)^2 - 3(1) + 1 = 2, so x = 1 is not a root",
+      "2(1)^2 - 3(1) + 1 = -2, so x = 1 is not a root",
+      "2(1)^2 - 3(1) + 1 = 6, so x = 1 is not a root"
+     ]
+    },
+    {
+     "b": "Understand",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "If x = alpha satisfies a quadratic equation, alpha is also called a",
+     "a": "solution of the equation",
+     "o": [
+      "solution of the equation",
+      "coefficient of the equation",
+      "discriminant of the equation",
+      "degree of the equation"
+     ]
+    },
+    {
+     "b": "Understand",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "Since a quadratic polynomial has at most two zeroes, a quadratic equation has at most",
+     "a": "two roots",
+     "o": [
+      "two roots",
+      "one root",
+      "three roots",
+      "four roots"
+     ]
+    },
+    {
+     "b": "Understand",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "q": "For the equation 2x^2 - 5x + 3 = 0, substituting x = 3/2 gives",
+     "a": "2(3/2)^2 - 5(3/2) + 3 = 0, so x = 3/2 is a root",
+     "o": [
+      "2(3/2)^2 - 5(3/2) + 3 = 0, so x = 3/2 is a root",
+      "2(3/2)^2 - 5(3/2) + 3 = 1, so x = 3/2 is not a root",
+      "2(3/2)^2 - 5(3/2) + 3 = -1, so x = 3/2 is not a root",
+      "2(3/2)^2 - 5(3/2) + 3 = 3, so x = 3/2 is not a root"
+     ]
+    },
+    {
+     "b": "Understand",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "q": "Verify that x = -1/2 is a root of the equation 6x^2 - x - 2 = 0.",
+     "a": "6(-1/2)^2 - (-1/2) - 2 = 6(1/4) + 1/2 - 2 = 1.5 + 0.5 - 2 = 0, so x = -1/2 is a root.",
+     "s": [
+      [
+       "Substitutes x = -1/2 into 6x^2 - x - 2 correctly",
+       1
+      ],
+      [
+       "Simplifies to 0 and concludes it is a root",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "Which of these is a root of x^2 - 3x - 10 = 0?",
+     "a": "5",
+     "o": [
+      "5",
+      "3",
+      "-3",
+      "2"
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Easy",
+     "t": "fill_blank",
+     "m": 1,
+     "q": "If x = 2 is a root of x^2 + kx - 6 = 0, then k = ____.",
+     "a": "1"
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "q": "If both x = 2 and x = 3 are roots of x^2 - px + q = 0, then p and q are",
+     "a": "p = 5, q = 6",
+     "o": [
+      "p = 5, q = 6",
+      "p = 6, q = 5",
+      "p = -5, q = 6",
+      "p = 5, q = -6"
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "q": "Show that x = 1 and x = 3/2 are both roots of 2x^2 - 5x + 3 = 0.",
+     "a": "At x = 1: 2(1) - 5(1) + 3 = 0. At x = 3/2: 2(9/4) - 5(3/2) + 3 = 4.5 - 7.5 + 3 = 0. Both satisfy the equation, so both are roots.",
+     "s": [
+      [
+       "Verifies x = 1 gives 0",
+       1
+      ],
+      [
+       "Verifies x = 3/2 gives 0",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "q": "A quadratic equation ax^2 + bx + c = 0 has x = 0 as one of its roots. This means",
+     "a": "c = 0",
+     "o": [
+      "c = 0",
+      "a = 0",
+      "b = 0",
+      "a = b"
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hardest",
+     "t": "long_answer",
+     "m": 3,
+     "q": "If x = -2 is a root of 3x^2 + 7x + p = 0, find p. Then verify your value of p by substituting x = -2 again.",
+     "a": "Substituting x = -2: 3(4) + 7(-2) + p = 0, i.e. 12 - 14 + p = 0, so p = 2. Verification: 3(-2)^2 + 7(-2) + 2 = 12 - 14 + 2 = 0, confirmed.",
+     "s": [
+      [
+       "Substitutes x = -2 into the equation",
+       1
+      ],
+      [
+       "Solves to get p = 2",
+       1
+      ],
+      [
+       "Verifies by substituting back and getting 0",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "assertion_reason",
+     "m": 1,
+     "q": "Assertion (A): x = 1 and x = 3/2 are both roots of the equation 2x^2 - 5x + 3 = 0. Reason (R): Substituting each of these values for x makes the expression 2x^2 - 5x + 3 equal to 0. Choose the correct option.",
+     "a": "Both A and R are true, and R is the correct explanation of A",
+     "o": [
+      "Both A and R are true, and R is the correct explanation of A",
+      "A is false, R is true",
+      "A is true, R is false",
+      "Both A and R are true, but R is not the correct explanation of A"
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "multi_statement",
+     "m": 1,
+     "q": "Consider these statements about the equation x^2 - 45x + 324 = 0, which models John's marbles. (I) x = 36 is a root of this equation, since 36^2 - 45(36) + 324 = 0. (II) x = 9 is also a root of this equation. Which is or are correct?",
+     "a": "Both I and II",
+     "o": [
+      "Both I and II",
+      "Only I",
+      "Only II",
+      "Neither I nor II"
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hardest",
+     "t": "long_answer",
+     "m": 3,
+     "q": "A quadratic equation x^2 + bx + c = 0 has x = -3 and x = -4 as its two roots. Find b and c using the root definition (substitute each root and solve the resulting pair of equations).",
+     "a": "Substituting x = -3: 9 - 3b + c = 0. Substituting x = -4: 16 - 4b + c = 0. Subtracting gives 7 - b = 0, so b = 7; then c = 12.",
+     "s": [
+      [
+       "Substitutes both roots to get two equations",
+       1
+      ],
+      [
+       "Solves for b = 7",
+       1
+      ],
+      [
+       "Solves for c = 12",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Evaluate",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "q": "Sana says: 'x = -1 is a root of 6x^2 - x - 2 = 0 because it is a small, simple number.' Evaluate her reasoning and check correctly.",
+     "a": "Her reasoning is not valid; a root must be checked by substitution, not guessed from simplicity. Substituting x = -1: 6(1) - (-1) - 2 = 6 + 1 - 2 = 5, not 0, so x = -1 is not a root.",
+     "s": [
+      [
+       "Rejects the reasoning that a root can be guessed because it looks simple",
+       1
+      ],
+      [
+       "Substitutes x = -1 correctly and shows the result is 5, not 0",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Create",
+     "d": "Hardest",
+     "t": "long_answer",
+     "m": 3,
+     "q": "Create a quadratic equation of the form x^2 + bx + c = 0 that has x = 4 as one of its roots. Show your working and verify.",
+     "a": "For example, choose the equation to also have root x = 1: (x - 4)(x - 1) = x^2 - 5x + 4 = 0. Verification: 16 - 20 + 4 = 0. Any equation of the form x^2 + bx + c = 0 with 16 + 4b + c = 0 is acceptable.",
+     "s": [
+      [
+       "Constructs an equation x^2 + bx + c = 0 satisfying 16 + 4b + c = 0",
+       1
+      ],
+      [
+       "Shows correct working (e.g. via a second chosen root or direct substitution)",
+       1
+      ],
+      [
+       "Verifies x = 4 satisfies the final equation",
+       1
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "code": "C10M-4.4",
+   "name": "Solving Quadratic Equations by Factorisation",
+   "description": "Finding the roots of a quadratic equation by splitting the middle term and factorising into two linear factors.",
+   "idea": "Split the middle term into two terms whose product equals a*c (the product of the outer coefficients) and whose sum equals b, then group in pairs to pull out a common factor twice.",
+   "rule": "If ax^2 + bx + c can be written as a product of two linear factors, the roots are found by setting each factor equal to 0. A repeated linear factor gives one root counted twice (equal roots).",
+   "example": "6x^2 - x - 2 = 6x^2 + 3x - 4x - 2 = 3x(2x + 1) - 2(2x + 1) = (3x - 2)(2x + 1), so the roots are x = 2/3 and x = -1/2.",
+   "difficulty_base": "Hard",
+   "questions": [
+    {
+     "b": "Remember",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "To solve a quadratic equation by factorisation, the middle term bx is split into two terms whose product equals",
+     "a": "the product of the coefficient of x^2 and the constant term (ac)",
+     "o": [
+      "the product of the coefficient of x^2 and the constant term (ac)",
+      "the coefficient of x^2 alone (a)",
+      "the constant term alone (c)",
+      "the sum a + c"
+     ]
+    },
+    {
+     "b": "Remember",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "Once ax^2 + bx + c is written as a product of two linear factors, say (px + q)(rx + s), the roots are found by",
+     "a": "setting each factor equal to 0",
+     "o": [
+      "setting each factor equal to 0",
+      "adding the two factors and setting the sum to 0",
+      "multiplying the two factors together again",
+      "setting p, q, r and s all equal to 0"
+     ]
+    },
+    {
+     "b": "Remember",
+     "d": "Easy",
+     "t": "fill_blank",
+     "m": 1,
+     "q": "If (2x - 3)(x - 1) = 0, then either 2x - 3 = 0 or ____ = 0.",
+     "a": "x - 1"
+    },
+    {
+     "b": "Remember",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "rev": true,
+     "q": "Which statement about solving a quadratic equation by factorisation is NOT correct?",
+     "a": "Solving by factorisation always gives two different (unequal) real roots",
+     "o": [
+      "Solving by factorisation always gives two different (unequal) real roots",
+      "The middle term is split into two terms whose product equals the product of the coefficient of x^2 and the constant term",
+      "Once the expression is written as a product of two linear factors, each factor is equated to zero to get the roots",
+      "A repeated linear factor gives one root that is counted twice (equal roots)"
+     ]
+    },
+    {
+     "b": "Understand",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "To factorise 2x^2 - 5x + 3, the middle term -5x is split as",
+     "a": "-2x - 3x",
+     "o": [
+      "-2x - 3x",
+      "-2x + 3x",
+      "-5x + 0",
+      "-1x - 4x"
+     ]
+    },
+    {
+     "b": "Understand",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "2x^2 - 5x + 3 factorises as",
+     "a": "(2x - 3)(x - 1)",
+     "o": [
+      "(2x - 3)(x - 1)",
+      "(2x + 3)(x + 1)",
+      "(2x - 1)(x - 3)",
+      "(x - 3)(x - 1)"
+     ]
+    },
+    {
+     "b": "Understand",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "The roots of 2x^2 - 5x + 3 = 0 are",
+     "a": "1 and 3/2",
+     "o": [
+      "1 and 3/2",
+      "-1 and -3/2",
+      "1 and -3/2",
+      "-1 and 3/2"
+     ]
+    },
+    {
+     "b": "Understand",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "q": "To factorise 6x^2 - x - 2, the middle term -x is split as",
+     "a": "3x - 4x",
+     "o": [
+      "3x - 4x",
+      "3x + 4x",
+      "-3x + 4x",
+      "6x - 7x"
+     ]
+    },
+    {
+     "b": "Understand",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "q": "Factorise 6x^2 - x - 2 and state its roots.",
+     "a": "6x^2 - x - 2 = 6x^2 + 3x - 4x - 2 = 3x(2x + 1) - 2(2x + 1) = (3x - 2)(2x + 1). Roots: x = 2/3 and x = -1/2.",
+     "s": [
+      [
+       "Splits the middle term and factorises to (3x - 2)(2x + 1)",
+       1
+      ],
+      [
+       "States the roots 2/3 and -1/2",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "The roots of x^2 - 3x - 10 = 0 are",
+     "a": "5 and -2",
+     "o": [
+      "5 and -2",
+      "-5 and 2",
+      "5 and 2",
+      "-5 and -2"
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Easy",
+     "t": "fill_blank",
+     "m": 1,
+     "q": "The roots of 100x^2 - 20x + 1 = 0 are both equal to ____.",
+     "a": "1/10"
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "q": "Solving 2x^2 + x - 6 = 0 by factorisation, the middle term x is split as",
+     "a": "4x - 3x",
+     "o": [
+      "4x - 3x",
+      "4x + 3x",
+      "-4x + 3x",
+      "2x - x"
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "q": "The roots of 2x^2 + x - 6 = 0 are",
+     "a": "3/2 and -2",
+     "o": [
+      "3/2 and -2",
+      "-3/2 and 2",
+      "3/2 and 2",
+      "-3/2 and -2"
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "q": "Solve 2x^2 - x + 1/8 = 0 by factorisation.",
+     "a": "Multiply throughout by 8: 16x^2 - 8x + 1 = 0, which is (4x - 1)^2 = 0. So x = 1/4 (a repeated root).",
+     "s": [
+      [
+       "Clears the fraction to get 16x^2 - 8x + 1 = 0",
+       1
+      ],
+      [
+       "Factorises as (4x - 1)^2 = 0 and gives root x = 1/4",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hardest",
+     "t": "long_answer",
+     "m": 3,
+     "q": "Solve sqrt(2)x^2 + 7x + 5*sqrt(2) = 0 by factorisation.",
+     "a": "Since a*c = sqrt(2) * 5*sqrt(2) = 10 and 5 + 2 = 7, split as sqrt(2)x^2 + 5x + 2x + 5*sqrt(2) = 0. Group: x(sqrt(2)x + 5) + sqrt(2)(sqrt(2)x + 5) = 0, i.e. (sqrt(2)x + 5)(x + sqrt(2)) = 0. Roots: x = -5/sqrt(2) and x = -sqrt(2).",
+     "s": [
+      [
+       "Finds the split 5x + 2x using product ac = 10 and sum 7",
+       1
+      ],
+      [
+       "Groups and factorises to (sqrt(2)x + 5)(x + sqrt(2)) = 0",
+       1
+      ],
+      [
+       "States both roots x = -5/sqrt(2) and x = -sqrt(2)",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "assertion_reason",
+     "m": 1,
+     "q": "Assertion (A): 3x^2 - 2*sqrt(6)x + 2 = 0 has the repeated root x = sqrt(2/3). Reason (R): The quadratic formula x = (-b +/- sqrt(b^2 - 4ac)) / 2a can be used to find the roots of any quadratic equation whenever b^2 - 4ac is greater than or equal to 0. Choose the correct option.",
+     "a": "Both A and R are true, but R is not the correct explanation of A",
+     "o": [
+      "Both A and R are true, but R is not the correct explanation of A",
+      "A is false, R is true",
+      "A is true, R is false",
+      "Both A and R are true, and R is the correct explanation of A"
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "multi_statement",
+     "m": 1,
+     "q": "Consider these statements about solving 100x^2 - 20x + 1 = 0 by factorisation. (I) It factorises as (10x - 1)(10x - 1). (II) It has two different real roots. Which is or are correct?",
+     "a": "Only I",
+     "o": [
+      "Only I",
+      "Only II",
+      "Both I and II",
+      "Neither I nor II"
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hardest",
+     "t": "long_answer",
+     "m": 3,
+     "q": "Solve the equation 2x^2 + x - 300 = 0 by factorisation, showing the middle-term split.",
+     "a": "Since a*c = 2*(-300) = -600, and we need two numbers with product -600 and sum 1: 25 and -24. Split: 2x^2 - 24x + 25x - 300 = 0. Group: 2x(x - 12) + 25(x - 12) = 0, i.e. (x - 12)(2x + 25) = 0. Roots: x = 12 and x = -12.5.",
+     "s": [
+      [
+       "Finds the correct split -24x + 25x using product -600 and sum 1",
+       1
+      ],
+      [
+       "Groups and factorises to (x - 12)(2x + 25) = 0",
+       1
+      ],
+      [
+       "States both roots x = 12 and x = -12.5",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Evaluate",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "q": "Kabir factorises 2x^2 - 5x + 3 as (2x - 1)(x - 3). Evaluate whether this is correct by expanding his factors.",
+     "a": "Incorrect. Expanding (2x - 1)(x - 3) = 2x^2 - 6x - x + 3 = 2x^2 - 7x + 3, which is not 2x^2 - 5x + 3. The correct factorisation is (2x - 3)(x - 1).",
+     "s": [
+      [
+       "Expands Kabir's factors and shows they give 2x^2 - 7x + 3, not the original",
+       1
+      ],
+      [
+       "States the correct factorisation (2x - 3)(x - 1)",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Create",
+     "d": "Hardest",
+     "t": "long_answer",
+     "m": 3,
+     "q": "Create a quadratic equation of the form ax^2 + bx + c = 0 (with a, b, c whole numbers, a not equal to 1) that factorises into two distinct linear factors with whole-number coefficients. Show the factorisation and the roots.",
+     "a": "For example, 3x^2 + 11x + 6 = 0: split 11x as 9x + 2x, giving 3x^2 + 9x + 2x + 6 = 3x(x + 3) + 2(x + 3) = (3x + 2)(x + 3) = 0. Roots: x = -2/3 and x = -3. Any correctly factorised example with a not equal to 1 is acceptable.",
+     "s": [
+      [
+       "Writes a valid quadratic equation with a not equal to 1",
+       1
+      ],
+      [
+       "Shows a correct middle-term split and factorisation",
+       1
+      ],
+      [
+       "States both roots correctly, matching the chosen equation",
+       1
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "code": "C10M-4.5",
+   "name": "The Quadratic Formula",
+   "description": "The ready-made quadratic formula for the roots of any quadratic equation, and applying it directly.",
+   "idea": "Completing the square on the general equation ax^2 + bx + c = 0 once and for all gives a ready-made formula for the roots of any quadratic equation.",
+   "rule": "The roots of ax^2 + bx + c = 0 (a not equal to 0) are given by x = (-b +/- sqrt(b^2 - 4ac)) / (2a), provided b^2 - 4ac is greater than or equal to 0.",
+   "example": "For x^2 + 7x - 60 = 0, a = 1, b = 7, c = -60: x = (-7 +/- sqrt(49 + 240)) / 2 = (-7 +/- 17) / 2, giving x = 5 or x = -12.",
+   "difficulty_base": "Hard",
+   "questions": [
+    {
+     "b": "Remember",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "For a quadratic equation ax^2 + bx + c = 0 (a not equal to 0), the quadratic formula gives x equal to",
+     "a": "(-b +/- sqrt(b^2 - 4ac)) / (2a)",
+     "o": [
+      "(-b +/- sqrt(b^2 - 4ac)) / (2a)",
+      "(-b +/- sqrt(b^2 + 4ac)) / (2a)",
+      "(b +/- sqrt(b^2 - 4ac)) / (2a)",
+      "(-b +/- sqrt(b^2 - 4ac)) / a"
+     ]
+    },
+    {
+     "b": "Remember",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "The quadratic formula can be used to find real roots only when",
+     "a": "b^2 - 4ac >= 0",
+     "o": [
+      "b^2 - 4ac >= 0",
+      "b^2 - 4ac <= 0",
+      "b^2 - 4ac = 1",
+      "a = 1"
+     ]
+    },
+    {
+     "b": "Remember",
+     "d": "Easy",
+     "t": "fill_blank",
+     "m": 1,
+     "q": "Using the quadratic formula, the two roots of ax^2 + bx + c = 0 are -b/2a + sqrt(b^2 - 4ac)/2a and -b/2a - sqrt(b^2 - 4ac)/____.",
+     "a": "2a"
+    },
+    {
+     "b": "Remember",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "rev": true,
+     "q": "Which of the following about the quadratic formula is NOT correct?",
+     "a": "It can only be used when the quadratic expression cannot be factorised",
+     "o": [
+      "It can only be used when the quadratic expression cannot be factorised",
+      "It is derived so as to work for any quadratic equation ax^2 + bx + c = 0 with a not equal to 0",
+      "The two roots are (-b + sqrt(b^2 - 4ac))/2a and (-b - sqrt(b^2 - 4ac))/2a",
+      "It requires b^2 - 4ac to be greater than or equal to 0 for the roots to be real"
+     ]
+    },
+    {
+     "b": "Understand",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "For the equation x^2 + 7x - 60 = 0, using the quadratic formula, a, b, c are",
+     "a": "a = 1, b = 7, c = -60",
+     "o": [
+      "a = 1, b = 7, c = -60",
+      "a = 1, b = -7, c = 60",
+      "a = 1, b = 7, c = 60",
+      "a = 7, b = 1, c = -60"
+     ]
+    },
+    {
+     "b": "Understand",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "For x^2 + 7x - 60 = 0, the value of b^2 - 4ac under the square root is",
+     "a": "289",
+     "o": [
+      "289",
+      "49",
+      "240",
+      "-191"
+     ]
+    },
+    {
+     "b": "Understand",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "Applying the quadratic formula to x^2 + 7x - 60 = 0, the two roots are",
+     "a": "5 and -12",
+     "o": [
+      "5 and -12",
+      "-5 and 12",
+      "6 and -10",
+      "10 and -6"
+     ]
+    },
+    {
+     "b": "Understand",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "q": "In the formula x = (-b +/- sqrt(b^2 - 4ac)) / 2a applied to 2x^2 - 4x + 3 = 0, the value of b^2 - 4ac is",
+     "a": "-8",
+     "o": [
+      "-8",
+      "8",
+      "40",
+      "4"
+     ]
+    },
+    {
+     "b": "Understand",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "q": "Using the quadratic formula, find the roots of x^2 + 7x - 60 = 0, showing the substitution step.",
+     "a": "x = (-7 +/- sqrt(49 + 240))/2 = (-7 +/- sqrt(289))/2 = (-7 +/- 17)/2. So x = 5 or x = -12.",
+     "s": [
+      [
+       "Substitutes a = 1, b = 7, c = -60 correctly into the formula and simplifies under the root to sqrt(289)",
+       1
+      ],
+      [
+       "Gives both roots x = 5 and x = -12",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "Using the quadratic formula for x^2 - 3x - 10 = 0, b^2 - 4ac equals",
+     "a": "49",
+     "o": [
+      "49",
+      "9",
+      "40",
+      "-31"
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Easy",
+     "t": "fill_blank",
+     "m": 1,
+     "q": "For 3x^2 - 2x + 1/3 = 0, using a = 3, b = -2, c = 1/3 in the quadratic formula, the discriminant b^2 - 4ac equals ____.",
+     "a": "0"
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "q": "The roots of 3x^2 - 2x + 1/3 = 0, found using the quadratic formula (since the discriminant is 0), are",
+     "a": "1/3 and 1/3",
+     "o": [
+      "1/3 and 1/3",
+      "1/3 and -1/3",
+      "2/3 and 2/3",
+      "-1/3 and -1/3"
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "q": "Use the quadratic formula to find the roots of 2x^2 - 3x + 5 = 0, or show that no real roots exist.",
+     "a": "b^2 - 4ac = 9 - 40 = -31, which is negative, so the equation has no real roots.",
+     "s": [
+      [
+       "Computes the discriminant 9 - 40 = -31",
+       1
+      ],
+      [
+       "Concludes there are no real roots since it is negative",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "q": "For 2x^2 - 6x + 3 = 0, the roots found by the quadratic formula are",
+     "a": "(3 +/- sqrt(3)) / 2",
+     "o": [
+      "(3 +/- sqrt(3)) / 2",
+      "(6 +/- sqrt(3)) / 2",
+      "(3 +/- sqrt(12)) / 4",
+      "3 +/- sqrt(3)"
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hardest",
+     "t": "long_answer",
+     "m": 3,
+     "q": "Find the values of k for which 2x^2 + kx + 3 = 0 has two equal roots, using the condition on the discriminant.",
+     "a": "For equal roots, b^2 - 4ac = 0: k^2 - 24 = 0, so k^2 = 24, giving k = 2*sqrt(6) or k = -2*sqrt(6).",
+     "s": [
+      [
+       "Sets up the discriminant k^2 - 4(2)(3)",
+       1
+      ],
+      [
+       "Sets it equal to 0: k^2 - 24 = 0",
+       1
+      ],
+      [
+       "Solves to get k = +/- 2*sqrt(6)",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "assertion_reason",
+     "m": 1,
+     "q": "Assertion (A): The quadratic formula can be applied to 2x^2 - 4x + 3 = 0 to obtain two real roots. Reason (R): A quadratic equation ax^2 + bx + c = 0 has real roots only when b^2 - 4ac is greater than or equal to 0. Choose the correct option.",
+     "a": "A is false, R is true",
+     "o": [
+      "A is false, R is true",
+      "A is true, R is false",
+      "Both A and R are true, and R is the correct explanation of A",
+      "Both A and R are true, but R is not the correct explanation of A"
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "multi_statement",
+     "m": 1,
+     "q": "Consider these statements about using the quadratic formula on x^2 + 7x - 60 = 0. (I) Substituting a = 1, b = 7, c = -60 gives x = (-7 +/- sqrt(289))/2. (II) The two values obtained are x = 5 and x = -12, and both are valid roots of the equation. Which is or are correct?",
+     "a": "Both I and II",
+     "o": [
+      "Both I and II",
+      "Only I",
+      "Only II",
+      "Neither I nor II"
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hardest",
+     "t": "long_answer",
+     "m": 3,
+     "q": "Using the quadratic formula, find the roots of 3x^2 - 4*sqrt(3)x + 4 = 0, and state whether the roots are equal.",
+     "a": "Discriminant = (4*sqrt(3))^2 - 4(3)(4) = 48 - 48 = 0, so the roots are equal. Both roots = 4*sqrt(3)/(2*3) = 2*sqrt(3)/3.",
+     "s": [
+      [
+       "Computes the discriminant and gets 0",
+       1
+      ],
+      [
+       "States the roots are equal (repeated root)",
+       1
+      ],
+      [
+       "Gives the value 2*sqrt(3)/3 for both roots",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Evaluate",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "q": "Deepak substitutes into the quadratic formula for x^2 - 3x + 5 = 0 and writes x = (3 +/- sqrt(9 - 20))/2 = (3 +/- sqrt(-11))/2 as his final answer. Evaluate his conclusion.",
+     "a": "His substitution is correct, but sqrt(-11) is not a real number, so the equation actually has no real roots; he should not present (3 +/- sqrt(-11))/2 as a final answer.",
+     "s": [
+      [
+       "Confirms the substitution/discriminant -11 is correct",
+       1
+      ],
+      [
+       "States that since the discriminant is negative there are no real roots, so his final answer is not valid",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Create",
+     "d": "Hardest",
+     "t": "long_answer",
+     "m": 3,
+     "q": "Create a quadratic equation ax^2 + bx + c = 0 with a, b, c whole numbers, whose discriminant equals exactly 100, and find its two roots using the quadratic formula.",
+     "a": "For example, a = 1, b = 0, c = -25: discriminant = 0 - 4(1)(-25) = 100. Roots: x = (0 +/- sqrt(100))/2 = +/-5. Any equation with b^2 - 4ac = 100 is acceptable.",
+     "s": [
+      [
+       "Writes an equation with whole-number a, b, c",
+       1
+      ],
+      [
+       "Shows the discriminant equals 100",
+       1
+      ],
+      [
+       "Finds both roots correctly using the formula",
+       1
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "code": "C10M-4.6",
+   "name": "The Discriminant and Nature of Roots",
+   "description": "The discriminant b^2 - 4ac of a quadratic equation and what its sign tells us about the number and type of real roots.",
+   "idea": "The sign of b^2 - 4ac under the square root decides, without fully solving, whether the equation has two different real roots, two equal real roots, or none.",
+   "rule": "For ax^2 + bx + c = 0, the discriminant is D = b^2 - 4ac. Two distinct real roots if D > 0; two equal real roots if D = 0; no real roots if D < 0.",
+   "example": "For 2x^2 - 4x + 3 = 0, D = (-4)^2 - 4(2)(3) = 16 - 24 = -8 < 0, so it has no real roots.",
+   "difficulty_base": "Hard",
+   "questions": [
+    {
+     "b": "Remember",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "The discriminant of the quadratic equation ax^2 + bx + c = 0 is",
+     "a": "b^2 - 4ac",
+     "o": [
+      "b^2 - 4ac",
+      "b^2 + 4ac",
+      "4ac - b^2",
+      "b^2 - 2ac"
+     ]
+    },
+    {
+     "b": "Remember",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "If the discriminant of a quadratic equation is positive, the equation has",
+     "a": "two distinct real roots",
+     "o": [
+      "two distinct real roots",
+      "two equal real roots",
+      "no real roots",
+      "exactly one root"
+     ]
+    },
+    {
+     "b": "Remember",
+     "d": "Easy",
+     "t": "fill_blank",
+     "m": 1,
+     "q": "A quadratic equation ax^2 + bx + c = 0 has two equal real roots when b^2 - 4ac = ____.",
+     "a": "0"
+    },
+    {
+     "b": "Remember",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "rev": true,
+     "q": "Which of the following about the discriminant b^2 - 4ac of ax^2 + bx + c = 0 is NOT correct?",
+     "a": "When b^2 - 4ac is negative, the equation still has two real roots, just very close together",
+     "o": [
+      "When b^2 - 4ac is negative, the equation still has two real roots, just very close together",
+      "If b^2 - 4ac > 0, the equation has two distinct real roots",
+      "If b^2 - 4ac = 0, the equation has two equal real roots",
+      "If b^2 - 4ac < 0, the equation has no real roots"
+     ]
+    },
+    {
+     "b": "Understand",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "For 2x^2 - 4x + 3 = 0, a = 2, b = -4, c = 3. The discriminant is",
+     "a": "-8",
+     "o": [
+      "-8",
+      "8",
+      "40",
+      "4"
+     ]
+    },
+    {
+     "b": "Understand",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "Since the discriminant of 2x^2 - 4x + 3 = 0 is negative, the equation has",
+     "a": "no real roots",
+     "o": [
+      "no real roots",
+      "two distinct real roots",
+      "two equal real roots",
+      "exactly one real root"
+     ]
+    },
+    {
+     "b": "Understand",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "The discriminant is called by that name because it",
+     "a": "determines whether the equation has real roots or not",
+     "o": [
+      "determines whether the equation has real roots or not",
+      "determines the sum of the roots",
+      "is always equal to one of the roots",
+      "determines the value of a"
+     ]
+    },
+    {
+     "b": "Understand",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "q": "For 3x^2 - 2x + 1/3 = 0, a = 3, b = -2, c = 1/3. The discriminant is",
+     "a": "0",
+     "o": [
+      "0",
+      "4",
+      "-4",
+      "-8"
+     ]
+    },
+    {
+     "b": "Understand",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "q": "Find the discriminant of x^2 + 7x - 60 = 0 and state the nature of its roots.",
+     "a": "Discriminant = 49 - 4(1)(-60) = 49 + 240 = 289, which is greater than 0, so the equation has two distinct real roots.",
+     "s": [
+      [
+       "Computes the discriminant as 289",
+       1
+      ],
+      [
+       "States that since it is positive, the roots are two distinct real roots",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "The nature of the roots of 2x^2 - 3x + 5 = 0 is",
+     "a": "no real roots, since the discriminant is 9 - 40 = -31 < 0",
+     "o": [
+      "no real roots, since the discriminant is 9 - 40 = -31 < 0",
+      "two distinct real roots",
+      "two equal real roots",
+      "cannot be decided without solving further"
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Easy",
+     "t": "fill_blank",
+     "m": 1,
+     "q": "For 2x^2 - 6x + 3 = 0, the discriminant b^2 - 4ac equals ____.",
+     "a": "12"
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "q": "Since the discriminant of 2x^2 - 6x + 3 = 0 is 12, which is positive but not a perfect square, the equation has",
+     "a": "two distinct real roots that are irrational",
+     "o": [
+      "two distinct real roots that are irrational",
+      "two equal real roots",
+      "no real roots",
+      "two distinct rational roots"
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "q": "Find the value(s) of k for which kx(x - 2) + 6 = 0 has two equal roots.",
+     "a": "Rewrite as kx^2 - 2kx + 6 = 0. Discriminant = (-2k)^2 - 4(k)(6) = 4k^2 - 24k. Setting this to 0: 4k(k - 6) = 0, so k = 0 or k = 6. Since k = 0 makes the equation not quadratic, k = 6.",
+     "s": [
+      [
+       "Rewrites the equation as kx^2 - 2kx + 6 = 0 and sets the discriminant 4k^2 - 24k to 0",
+       1
+      ],
+      [
+       "Solves to get k = 0 or k = 6 and rejects k = 0 since it is not quadratic, concluding k = 6",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "q": "A quadratic equation has discriminant exactly equal to 49. Its roots are",
+     "a": "two distinct real roots, and since 49 is a perfect square they are rational",
+     "o": [
+      "two distinct real roots, and since 49 is a perfect square they are rational",
+      "two equal real roots",
+      "no real roots",
+      "two distinct irrational roots"
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hardest",
+     "t": "long_answer",
+     "m": 3,
+     "q": "Is it possible to design a rectangular mango grove whose length is twice its breadth and whose area is 800 m^2? Use the discriminant of the resulting equation to decide, before finding the actual breadth.",
+     "a": "Let breadth = x, length = 2x. Area: 2x * x = 800, i.e. 2x^2 - 800 = 0, or x^2 - 400 = 0. Discriminant = 0^2 - 4(1)(-400) = 1600, which is positive, so real roots exist and the design is possible. (Solving gives x = 20 m, so breadth 20 m and length 40 m.)",
+     "s": [
+      [
+       "Forms the equation x^2 - 400 = 0 (or equivalent) from the area condition",
+       1
+      ],
+      [
+       "Computes the discriminant 1600 and notes it is positive, so it is possible",
+       1
+      ],
+      [
+       "States the breadth as 20 m (rejecting the negative root)",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "assertion_reason",
+     "m": 1,
+     "q": "Assertion (A): The equation 3x^2 - 2*sqrt(6)x + 2 = 0 has two equal real roots. Reason (R): Its discriminant, computed as b^2 - 4ac, equals 24. Choose the correct option.",
+     "a": "A is true, R is false",
+     "o": [
+      "A is true, R is false",
+      "A is false, R is true",
+      "Both A and R are true, and R is the correct explanation of A",
+      "Both A and R are true, but R is not the correct explanation of A"
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "multi_statement",
+     "m": 1,
+     "q": "Consider these statements about 3x^2 - 4*sqrt(3)x + 4 = 0. (I) Its discriminant is 0. (II) It has two distinct real roots. Which is or are correct?",
+     "a": "Only I",
+     "o": [
+      "Only I",
+      "Only II",
+      "Both I and II",
+      "Neither I nor II"
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hardest",
+     "t": "long_answer",
+     "m": 3,
+     "q": "The rectangular park problem (perimeter 80 m, area 400 m^2, length x m) leads to the equation x^2 - 40x + 400 = 0. Find its discriminant, decide if the design is possible, and find x if it is.",
+     "a": "Discriminant = (-40)^2 - 4(1)(400) = 1600 - 1600 = 0, so the equation has two equal real roots -- the design is possible. Solving gives x = 40/2 = 20, so the park is a 20 m by 20 m square.",
+     "s": [
+      [
+       "Computes the discriminant as 0",
+       1
+      ],
+      [
+       "States equal real roots exist, so the design is possible",
+       1
+      ],
+      [
+       "Finds x = 20 (length = breadth = 20 m)",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Evaluate",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "q": "Meena says: 'Since x^2 - 400 = 0 has b = 0, it cannot have real roots, because the quadratic formula needs b to find the roots.' Evaluate her claim.",
+     "a": "She is wrong. The discriminant is 0^2 - 4(1)(-400) = 1600, which is positive, so the equation does have two distinct real roots (x = 20 and x = -20); b being 0 does not prevent real roots.",
+     "s": [
+      [
+       "States Meena's claim is wrong",
+       1
+      ],
+      [
+       "Shows the discriminant 1600 is positive, giving real roots x = 20 and x = -20",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Create",
+     "d": "Hardest",
+     "t": "long_answer",
+     "m": 3,
+     "q": "Create a quadratic equation ax^2 + bx + c = 0 (whole-number coefficients) whose discriminant is negative, and confirm using the discriminant that it has no real roots.",
+     "a": "For example, x^2 + 2x + 5 = 0: discriminant = 4 - 20 = -16, which is negative, confirming no real roots. Any equation with b^2 - 4ac < 0 is acceptable.",
+     "s": [
+      [
+       "Writes a quadratic equation with whole-number coefficients",
+       1
+      ],
+      [
+       "Computes its discriminant correctly",
+       1
+      ],
+      [
+       "Confirms the discriminant is negative, so there are no real roots",
+       1
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "code": "C10M-4.7",
+   "name": "Applications: Forming and Solving Quadratic Equations",
+   "description": "Using a quadratic equation end to end on a word problem: form it, solve it, and accept or reject each root using the problem's own conditions.",
+   "idea": "Model the situation as a quadratic equation, solve it by factorisation or the formula, then check both roots against the real-world conditions and reject any that do not make sense.",
+   "rule": "After solving, discard roots that give a negative length, age, speed, or count, or any value the situation rules out; keep only the admissible root(s).",
+   "example": "A pole on a circular park of diameter 13 m has distances differing by 7 m from two diametrically opposite gates; this gives x^2 + 7x - 60 = 0 with roots x = 5 and x = -12, and x = -12 is rejected since a distance cannot be negative, so the pole is 5 m from one gate and 12 m from the other.",
+   "difficulty_base": "Hard",
+   "questions": [
+    {
+     "b": "Remember",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "After solving a quadratic equation formed from a real-life problem, a root that gives a negative length, age or speed is usually",
+     "a": "rejected, since it does not fit the real-life conditions of the problem",
+     "o": [
+      "rejected, since it does not fit the real-life conditions of the problem",
+      "accepted as the final answer regardless",
+      "doubled to make it positive",
+      "ignored only if it is exactly zero"
+     ]
+    },
+    {
+     "b": "Remember",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "In the prayer hall problem, the equation 2x^2 + x - 300 = 0 has roots x = 12 and x = -12.5. Since x represents a breadth, the answer is",
+     "a": "x = 12 only, as breadth cannot be negative",
+     "o": [
+      "x = 12 only, as breadth cannot be negative",
+      "x = -12.5 only",
+      "both x = 12 and x = -12.5",
+      "neither value, since both must be rejected"
+     ]
+    },
+    {
+     "b": "Remember",
+     "d": "Easy",
+     "t": "fill_blank",
+     "m": 1,
+     "q": "In a word problem solved using a quadratic equation, once both roots are found, each root must be checked against the ____ of the original problem.",
+     "a": "conditions"
+    },
+    {
+     "b": "Remember",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "rev": true,
+     "q": "When a quadratic equation modelling a real-life problem (a length, age, speed or count) is solved, which of the following is NOT correct?",
+     "a": "Both roots of the equation obtained from a real-life problem are always valid answers to the problem",
+     "o": [
+      "Both roots of the equation obtained from a real-life problem are always valid answers to the problem",
+      "Both algebraic roots of the equation should be checked against the conditions of the problem before stating the final answer",
+      "A root that makes a length, age, speed or count negative is usually rejected as not possible in that context",
+      "The equation itself may need to be simplified or rearranged into standard form before it is solved"
+     ]
+    },
+    {
+     "b": "Understand",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "The breadth of the prayer hall, from 2x^2 + x - 300 = 0, works out to x = 12 m. Its length, 2x + 1, is therefore",
+     "a": "25 m",
+     "o": [
+      "25 m",
+      "24 m",
+      "13 m",
+      "23 m"
+     ]
+    },
+    {
+     "b": "Understand",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "A pole is erected on a circular park of diameter 13 m so that its distances from two diametrically opposite gates differ by 7 m. This leads to the equation",
+     "a": "x^2 + 7x - 60 = 0, where x is the distance from one gate",
+     "o": [
+      "x^2 + 7x - 60 = 0, where x is the distance from one gate",
+      "x^2 - 7x - 60 = 0",
+      "x^2 + 7x + 60 = 0",
+      "x^2 + 13x - 60 = 0"
+     ]
+    },
+    {
+     "b": "Understand",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "Solving x^2 + 7x - 60 = 0 for the pole problem gives x = 5 or x = -12. Since x is a distance, the answer is",
+     "a": "x = 5 m from one gate",
+     "o": [
+      "x = 5 m from one gate",
+      "x = -12 m from one gate",
+      "both 5 m and -12 m",
+      "neither, since distances cannot be found this way"
+     ]
+    },
+    {
+     "b": "Understand",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "q": "In the pole problem, since BP = x = 5 m and AP = x + 7, the pole is at distances",
+     "a": "5 m from gate B and 12 m from gate A",
+     "o": [
+      "5 m from gate B and 12 m from gate A",
+      "12 m from gate B and 5 m from gate A",
+      "5 m from gate B and 5 m from gate A",
+      "17 m from gate B and 12 m from gate A"
+     ]
+    },
+    {
+     "b": "Understand",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "q": "Find two consecutive positive integers whose squares sum to 365.",
+     "a": "Let the integers be x and x+1. x^2 + (x+1)^2 = 365 gives 2x^2 + 2x - 364 = 0, i.e. x^2 + x - 182 = 0, i.e. (x - 13)(x + 14) = 0, so x = 13 (rejecting x = -14 since the integer must be positive). The integers are 13 and 14.",
+     "s": [
+      [
+       "Forms the equation x^2 + (x+1)^2 = 365 and simplifies to x^2 + x - 182 = 0",
+       1
+      ],
+      [
+       "Solves and rejects the negative root, giving integers 13 and 14",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "Find two numbers whose sum is 27 and product is 182. Taking one number as x, the equation is",
+     "a": "x(27 - x) = 182",
+     "o": [
+      "x(27 - x) = 182",
+      "x + (27 - x) = 182",
+      "x(27 + x) = 182",
+      "x^2 = 182"
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Easy",
+     "t": "fill_blank",
+     "m": 1,
+     "q": "Solving x(27 - x) = 182 gives x^2 - 27x + 182 = 0, which factorises as (x - 13)(x - 14) = 0. The two numbers are 13 and ____.",
+     "a": "14"
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "q": "The altitude of a right triangle is 7 cm less than its base x cm, and the hypotenuse is 13 cm. Solving x^2 + (x - 7)^2 = 169 gives x = 12 or x = -5. The base and altitude are",
+     "a": "base 12 cm and altitude 5 cm",
+     "o": [
+      "base 12 cm and altitude 5 cm",
+      "base 5 cm and altitude 12 cm",
+      "base -5 cm and altitude -12 cm",
+      "base 12 cm and altitude 7 cm"
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "q": "Is it possible to design a rectangular mango grove of length twice its breadth and area 800 m^2? If so, find its length and breadth.",
+     "a": "Breadth x, length 2x: 2x^2 = 800, x^2 = 400, x = 20 (rejecting x = -20). Breadth = 20 m, length = 40 m.",
+     "s": [
+      [
+       "Forms and solves x^2 = 400 to get x = 20 (rejecting -20)",
+       1
+      ],
+      [
+       "States breadth 20 m and length 40 m",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "q": "Two friends' ages sum to 20 years; four years ago the product of their ages was 48. Taking one friend's present age as x, the equation for four years ago is",
+     "a": "(x - 4)(16 - x) = 48",
+     "o": [
+      "(x - 4)(16 - x) = 48",
+      "(x - 4)(20 - x) = 48",
+      "(x + 4)(16 + x) = 48",
+      "x(20 - x) = 48"
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hardest",
+     "t": "long_answer",
+     "m": 3,
+     "q": "The sum of the ages of two friends is 20 years. Four years ago, the product of their ages was 48. Is this situation possible? Find their present ages if so.",
+     "a": "Equation: (x - 4)(16 - x) = 48 leads to x^2 - 20x + 112 = 0. Discriminant = 400 - 448 = -48, which is negative. So the situation is not possible -- no real ages satisfy both conditions.",
+     "s": [
+      [
+       "Forms the equation and simplifies to x^2 - 20x + 112 = 0",
+       1
+      ],
+      [
+       "Computes the discriminant as -48",
+       1
+      ],
+      [
+       "Concludes the situation is not possible since the discriminant is negative",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "assertion_reason",
+     "m": 1,
+     "q": "Assertion (A): In the circular-park pole problem, x = -12 is rejected even though it satisfies the equation x^2 + 7x - 60 = 0. Reason (R): x represents a distance in that problem, and a distance cannot be negative. Choose the correct option.",
+     "a": "Both A and R are true, and R is the correct explanation of A",
+     "o": [
+      "Both A and R are true, and R is the correct explanation of A",
+      "A is false, R is true",
+      "A is true, R is false",
+      "Both A and R are true, but R is not the correct explanation of A"
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "multi_statement",
+     "m": 1,
+     "q": "Consider these statements about the two-friends'-ages problem (sum of ages 20 years; four years ago the product of their ages was 48). (I) The situation leads to the equation x^2 - 20x + 112 = 0. (II) This situation is possible, with real present ages. Which is or are correct?",
+     "a": "Only I",
+     "o": [
+      "Only I",
+      "Only II",
+      "Both I and II",
+      "Neither I nor II"
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hardest",
+     "t": "long_answer",
+     "m": 3,
+     "q": "A train travels 480 km at a uniform speed of x km/h. If the speed had been 8 km/h less, it would have taken 3 hours more for the same distance. Form the quadratic equation for x, simplify it to standard form, and solve it, rejecting any root that is not a valid speed.",
+     "a": "Time equation: 480/(x - 8) - 480/x = 3. Multiplying through by x(x - 8) and simplifying gives x^2 - 8x - 1280 = 0. Discriminant = 64 + 5120 = 5184 = 72^2, so x = (8 +/- 72)/2, giving x = 40 or x = -32. Since speed cannot be negative, x = -32 is rejected, so the speed is 40 km/h.",
+     "s": [
+      [
+       "Forms the time equation 480/(x - 8) - 480/x = 3 and simplifies to x^2 - 8x - 1280 = 0",
+       1
+      ],
+      [
+       "Solves to get x = 40 or x = -32",
+       1
+      ],
+      [
+       "Rejects the negative speed and concludes x = 40 km/h",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Evaluate",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "q": "Farah solves the pole problem's equation x^2 + 7x - 60 = 0 and gets roots x = 5 and x = -12. She reports the pole's distance from gate B as '5 m or -12 m, whichever the park owner prefers.' Evaluate her final answer.",
+     "a": "Her final answer is wrong. Since x represents a distance, it cannot be negative, so x = -12 must be rejected; the only valid distance is x = 5 m. She should not offer -12 m as an option at all.",
+     "s": [
+      [
+       "States that offering -12 m is wrong since a distance cannot be negative",
+       1
+      ],
+      [
+       "Concludes the only valid answer is x = 5 m",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Create",
+     "d": "Hardest",
+     "t": "long_answer",
+     "m": 3,
+     "q": "Create your own word problem (about a length, age, speed or count) that leads to a quadratic equation with one positive and one negative root, where the negative root must be rejected. State the problem, the equation, both roots, and your final answer.",
+     "a": "For example: 'The length of a rectangular field is 3 m more than its breadth, and its area is 40 m^2. Find the breadth.' Taking breadth x: x(x + 3) = 40, i.e. x^2 + 3x - 40 = 0, which factorises as (x + 8)(x - 5) = 0, giving x = 5 or x = -8. Since breadth cannot be negative, x = -8 is rejected, so the breadth is 5 m. Any similar problem with a correctly rejected negative root is acceptable.",
+     "s": [
+      [
+       "States a clear real-life problem leading to a quadratic equation",
+       1
+      ],
+      [
+       "Forms and solves the equation correctly, obtaining one positive and one negative root",
+       1
+      ],
+      [
+       "Rejects the negative root with a valid real-world reason and states the final answer",
+       1
+      ]
+     ]
+    }
+   ]
+  }
+ ]
+}
