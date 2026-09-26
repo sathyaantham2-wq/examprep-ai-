@@ -1,0 +1,2160 @@
+{
+  "subject": {
+    "code": "MATH10",
+    "name": "Mathematics",
+    "board": "CBSE",
+    "class": 10
+  },
+  "source": {
+    "publisher": "NCERT",
+    "title": "Mathematics",
+    "edition": "Textbook for Class X, Reprint 2026-27",
+    "year": 2026
+  },
+  "chapter": {
+    "part": "I",
+    "chapter_no": 3,
+    "name": "Pair of Linear Equations in Two Variables",
+    "blurb": "Forming a pair of linear equations from a real-life situation, solving it graphically, classifying it by comparing ratios of coefficients, and solving it algebraically by substitution or elimination, including recognising when it has infinitely many solutions or none.",
+    "source_code": "jemh103",
+    "order_index": 3
+  },
+  "scope_in": [
+    {
+      "item": "Translate a real-life situation involving two unknown quantities into a pair of linear equations in two variables, using clearly named variables",
+      "pages": "24-25, 27-28, 31-32, 34-36"
+    },
+    {
+      "item": "Write a linear equation in two variables in the general (standard) form ax + by + c = 0",
+      "pages": "24-25"
+    },
+    {
+      "item": "Find at least two solutions of a linear equation in two variables and plot them to draw its graph as a straight line",
+      "pages": "26-28"
+    },
+    {
+      "item": "Solve a pair of linear equations graphically by finding the point where the two plotted lines intersect",
+      "pages": "26-28"
+    },
+    {
+      "item": "Define and distinguish a consistent pair (unique solution), an inconsistent pair (no solution), and a dependent pair (infinitely many solutions), and match each to intersecting, parallel, and coincident lines respectively",
+      "pages": "25-26"
+    },
+    {
+      "item": "Compare the ratios a1/a2, b1/b2 and c1/c2 of a pair of equations a1x+b1y+c1=0 and a2x+b2y+c2=0 to determine, without graphing, whether the pair is consistent, inconsistent or dependent",
+      "pages": "25-27, 29"
+    },
+    {
+      "item": "Solve a pair of linear equations by the substitution method: express one variable in terms of the other, substitute, solve, and back-substitute",
+      "pages": "30-33"
+    },
+    {
+      "item": "Solve a pair of linear equations by the elimination method: scale the equations to equalise one variable's coefficient, add or subtract to eliminate it, solve, and back-substitute",
+      "pages": "34-36"
+    },
+    {
+      "item": "Recognise, from a true statement with no variable (such as 18 = 18), that a pair solved by substitution or elimination has infinitely many solutions, and from a false statement (such as -4 = 0 or 0 = 9), that it has no solution",
+      "pages": "31-33, 35"
+    },
+    {
+      "item": "Represent and solve word problems -- on ages, costs, incomes and expenditures, fractions, and two-digit numbers and their digit-reversals -- as a pair of linear equations, by substitution or elimination",
+      "pages": "28, 31-36"
+    }
+  ],
+  "scope_out": [
+    {
+      "item": "The cross-multiplication method for solving a pair of linear equations",
+      "reason": "This chapter (Reprint 2026-27) teaches only the graphical, substitution and elimination methods; the Summary on p.37 lists exactly these two algebraic methods, with no cross-multiplication formula or section anywhere in the chapter's 14 pages"
+    },
+    {
+      "item": "Reducing equations involving terms like 1/x, 1/y, or 1/(x+y) to linear form by substituting a new variable such as u = 1/x",
+      "reason": "The Summary (p.37, point 5) only makes a passing general remark that some situations 'are not linear to start with'; no worked example or named method for this appears anywhere in the chapter's 14 pages"
+    },
+    {
+      "item": "Pairs of linear equations in three or more variables",
+      "reason": "Every situation and every worked example in this chapter uses exactly two unknowns"
+    },
+    {
+      "item": "Quadratic, exponential or other non-linear pairs of equations",
+      "reason": "The chapter title and every worked example restrict to linear equations only"
+    },
+    {
+      "item": "Matrix or determinant methods (e.g. Cramer's rule) for solving a linear system",
+      "reason": "Not part of this NCERT chapter or the CBSE Class 10 syllabus at this stage"
+    },
+    {
+      "item": "Solving a pair of equations whose coefficients are irrational (surd) numbers, as a distinct worked technique",
+      "reason": "The only mention is a passing aside on p.30 about graphs having 'non-integral' solution coordinates like (square root of 3, 2 times the square root of 7); no worked Example in the chapter's 14 pages solves an equation with irrational coefficients, and the one exercise item that appears to use them is not legible in the extracted text, so it is left out of the authored question set as a deliberate judgement call rather than a source-verified item"
+    },
+    {
+      "item": "Graphs of linear inequalities, or shading a region that satisfies an inequality",
+      "reason": "This chapter's graphical work is limited to plotting equations (equalities) and reading their intersection point; inequalities are not discussed anywhere in these pages"
+    }
+  ],
+  "concepts": [
+    {
+      "code": "C10M-3.1",
+      "name": "Forming a pair of linear equations from a word situation",
+      "description": "Translating a real-life situation with two unknown quantities into two linear equations in two variables, each written in the standard form ax + by + c = 0.",
+      "idea": "Give the two unknown quantities names, usually x and y, then turn each separate piece of information in the situation into one linear equation connecting them.",
+      "rule": "Choose x and y for the two unknowns, write each given condition as a linear equation in x and y, and, if needed, rearrange it into the general form ax + by + c = 0.",
+      "example": "Akhila's rides cost Rs 3 each and Hoopla costs Rs 4 a game; if x is the number of rides and y the number of Hoopla games, 'Hoopla played is half the rides' gives y = x/2, and 'total spend is Rs 20' gives 3x + 4y = 20.",
+      "difficulty_base": "Easy",
+      "questions": [
+        {
+          "b": "Remember",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "The general (standard) form of a linear equation in two variables x and y is",
+          "a": "ax + by + c = 0, where a and b are not both zero",
+          "o": [
+            "ax + by + c = 0, where a and b are not both zero",
+            "ax + b = 0, where a is not zero",
+            "ax squared + by + c = 0",
+            "a + b = cx + y"
+          ]
+        },
+        {
+          "b": "Remember",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "A pair of linear equations formed from a word situation represents how many unknown quantities?",
+          "a": "Two",
+          "o": [
+            "Two",
+            "One",
+            "Three",
+            "As many as there are sentences in the situation"
+          ]
+        },
+        {
+          "b": "Remember",
+          "d": "Easy",
+          "t": "fill_blank",
+          "m": 1,
+          "q": "A linear equation formed from a real-life situation is usually rearranged into the standard form ax + by + c = ____.",
+          "a": "0"
+        },
+        {
+          "b": "Remember",
+          "d": "Hard",
+          "t": "mcq",
+          "m": 1,
+          "q": "Which of these is NOT a step in forming a pair of linear equations from a word situation?",
+          "a": "Comparing a1/a2 and b1/b2 to check whether the equations are parallel",
+          "o": [
+            "Comparing a1/a2 and b1/b2 to check whether the equations are parallel",
+            "Assigning a letter such as x or y to each unknown quantity in the situation",
+            "Writing each given condition in the situation as one linear equation",
+            "Keeping the same two variables in both equations of the pair"
+          ],
+          "rev": true
+        },
+        {
+          "b": "Understand",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "'The sum of two numbers x and y is 20' is represented by",
+          "a": "x + y = 20",
+          "o": [
+            "x + y = 20",
+            "x - y = 20",
+            "xy = 20",
+            "x + y = 0"
+          ]
+        },
+        {
+          "b": "Understand",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "'Twice a number x exceeds a number y by 5' is represented by",
+          "a": "2x - y = 5",
+          "o": [
+            "2x - y = 5",
+            "2x + y = 5",
+            "y - 2x = 5",
+            "x - 2y = 5"
+          ]
+        },
+        {
+          "b": "Understand",
+          "d": "Easy",
+          "t": "fill_blank",
+          "m": 1,
+          "q": "If a pencil costs Rs x and a pen costs Rs y, the total cost of 5 pencils and 7 pens is Rs ____.",
+          "a": "5x + 7y"
+        },
+        {
+          "b": "Understand",
+          "d": "Hard",
+          "t": "mcq",
+          "m": 1,
+          "q": "The equation y = 3x - 4, written in the standard form ax + by + c = 0, is",
+          "a": "3x - y - 4 = 0",
+          "o": [
+            "3x - y - 4 = 0",
+            "3x + y - 4 = 0",
+            "3x - y + 4 = 0",
+            "x - 3y - 4 = 0"
+          ]
+        },
+        {
+          "b": "Understand",
+          "d": "Hard",
+          "t": "short_answer",
+          "m": 2,
+          "q": "A number is 4 more than another number. Denoting the smaller number by x and the larger by y, write the equation connecting them, and then state it in the standard form ax + by + c = 0.",
+          "a": "y = x + 4, which in standard form is x - y + 4 = 0.",
+          "s": [
+            [
+              "Writes y = x + 4 (or an equivalent correct equation)",
+              1
+            ],
+            [
+              "States the standard form x - y + 4 = 0",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Easy",
+          "t": "short_answer",
+          "m": 2,
+          "q": "The length of a rectangle is 5 cm more than its breadth. Taking the breadth as x cm and the length as y cm, form the pair of linear equations if the perimeter of the rectangle is 50 cm.",
+          "a": "y = x + 5 and 2x + 2y = 50 (equivalently x + y = 25).",
+          "s": [
+            [
+              "Writes y = x + 5",
+              1
+            ],
+            [
+              "Writes 2x + 2y = 50 or the equivalent x + y = 25",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Easy",
+          "t": "short_answer",
+          "m": 2,
+          "q": "A bag has x five-rupee coins and y ten-rupee coins. There are 20 coins in all, worth Rs 140. Form the pair of linear equations representing this.",
+          "a": "x + y = 20 and 5x + 10y = 140.",
+          "s": [
+            [
+              "Writes x + y = 20",
+              1
+            ],
+            [
+              "Writes 5x + 10y = 140",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Hard",
+          "t": "short_answer",
+          "m": 2,
+          "q": "Six years from now, Meera's age will be twice her daughter's age then; six years ago, Meera's age was five times her daughter's age then. Taking Meera's present age as x years and her daughter's present age as y years, form the pair of linear equations.",
+          "a": "x - 2y = 6 and x - 5y = -24.",
+          "s": [
+            [
+              "Writes (x + 6) = 2(y + 6), simplified to x - 2y = 6",
+              1
+            ],
+            [
+              "Writes (x - 6) = 5(y - 6), simplified to x - 5y = -24",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Hard",
+          "t": "short_answer",
+          "m": 2,
+          "q": "The cost of 3 notebooks and 2 pens is Rs 78, and the cost of 5 notebooks and 4 pens is Rs 138. Taking the cost of a notebook as Rs x and a pen as Rs y, form the pair of linear equations.",
+          "a": "3x + 2y = 78 and 5x + 4y = 138.",
+          "s": [
+            [
+              "Writes 3x + 2y = 78",
+              1
+            ],
+            [
+              "Writes 5x + 4y = 138",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Hard",
+          "t": "short_answer",
+          "m": 2,
+          "q": "A fraction becomes 5/6 when 2 is added to both its numerator and denominator, and becomes 3/4 when 1 is added to both. Taking the numerator as x and the denominator as y, form the pair of linear equations.",
+          "a": "6x - 5y = -2 and 4x - 3y = -1.",
+          "s": [
+            [
+              "Cross-multiplies (x+2)/(y+2) = 5/6 to get 6x - 5y = -2",
+              1
+            ],
+            [
+              "Cross-multiplies (x+1)/(y+1) = 3/4 to get 4x - 3y = -1",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Hardest",
+          "t": "long_answer",
+          "m": 3,
+          "q": "In a garden there are x rose plants and y marigold plants. Three times the number of rose plants exceeds twice the number of marigold plants by 15, and the total number of plants is 105. Form the pair of linear equations representing this information, writing each in the standard form ax + by + c = 0.",
+          "a": "3x - 2y - 15 = 0 and x + y - 105 = 0.",
+          "s": [
+            [
+              "Writes 3x - 2y = 15 from the first condition",
+              1
+            ],
+            [
+              "Writes x + y = 105 from the second condition",
+              1
+            ],
+            [
+              "Rewrites both in standard form: 3x - 2y - 15 = 0 and x + y - 105 = 0",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Analyse",
+          "d": "Hard",
+          "t": "assertion_reason",
+          "m": 1,
+          "q": "Assertion (A): The situation 'the sum of two numbers is 18 and their difference is 4' can be represented by the pair x + y = 18 and x - y = 4. Reason (R): Each separate condition given in the situation is translated into one linear equation in the same two variables. Choose the correct option.",
+          "a": "Both A and R are true, and R is the correct explanation of A",
+          "o": [
+            "Both A and R are true, and R is the correct explanation of A",
+            "Both A and R are true, but R is not the correct explanation of A",
+            "A is true, R is false",
+            "A is false, R is true"
+          ]
+        },
+        {
+          "b": "Analyse",
+          "d": "Hard",
+          "t": "multi_statement",
+          "m": 1,
+          "q": "Consider: (I) The situation 'a number x is 7 more than a number y' can be written as x = y + 7. (II) The same situation can also be written as x - y = 7. Which is or are correct?",
+          "a": "Both I and II",
+          "o": [
+            "Both I and II",
+            "Only I",
+            "Only II",
+            "Neither I nor II"
+          ]
+        },
+        {
+          "b": "Analyse",
+          "d": "Hardest",
+          "t": "long_answer",
+          "m": 3,
+          "q": "A bat costs Rs x and a ball costs Rs y. Three bats and 2 balls cost Rs 1300 in all, and the cost of 4 balls is Rs 200 more than the cost of one bat. A student wrote the pair: 3x + 2y = 1300 and 4y + 200 = x. Explain what is wrong with the student's second equation, write the corrected equation, and give both equations in standard form ax + by + c = 0.",
+          "a": "The student reversed the 'more than' direction: 4 balls should cost the bat's price plus 200, i.e. 4y = x + 200, not 4y + 200 = x. Standard form: 3x + 2y - 1300 = 0 and x - 4y + 200 = 0.",
+          "s": [
+            [
+              "Explains that the direction is reversed: 4 balls should equal one bat's cost plus 200, not the other way round",
+              1
+            ],
+            [
+              "Writes the corrected equation 4y = x + 200",
+              1
+            ],
+            [
+              "Gives both equations in standard form: 3x + 2y - 1300 = 0 and x - 4y + 200 = 0",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Evaluate",
+          "d": "Hard",
+          "t": "short_answer",
+          "m": 2,
+          "q": "Two students form equations for 'Twice a father's age exceeds three times his son's age by 8', taking x as the father's age and y as the son's age. One writes 2x - 3y = 8, the other writes 3y - 2x = 8. Evaluate which student is correct, and justify your answer.",
+          "a": "The first student (2x - 3y = 8) is correct, because 'exceeds by 8' means the first quantity minus the second equals 8.",
+          "s": [
+            [
+              "Identifies the first student (2x - 3y = 8) as correct",
+              1
+            ],
+            [
+              "Justifies using the meaning of 'exceeds by': the larger quantity minus the smaller equals 8",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Create",
+          "d": "Hardest",
+          "t": "long_answer",
+          "m": 3,
+          "q": "Invent your own real-life situation, different from any seen before, that leads to the pair of linear equations x + y = 40 and x - y = 10, where x and y are two unknown quantities of your choosing. State clearly what x and y represent, and show that your situation matches both equations.",
+          "a": "Any valid situation with two clearly defined quantities whose sum is 40 and whose difference is 10 is acceptable, e.g. two friends' marks, ages, or amounts of money.",
+          "s": [
+            [
+              "States a valid situation with two clearly defined unknowns x and y",
+              1
+            ],
+            [
+              "Shows the first condition in the situation gives x + y = 40",
+              1
+            ],
+            [
+              "Shows the second condition gives x - y = 10",
+              1
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "code": "C10M-3.2",
+      "name": "Graphical method of solving a pair of linear equations",
+      "description": "Drawing the two lines of a pair of linear equations from a table of solutions and reading their point of intersection as the solution of the pair.",
+      "idea": "Every linear equation in two variables is a straight line; plotting both lines on the same graph and finding where they meet shows the pair's common solution directly.",
+      "rule": "Find at least two solution points for each equation, plot both lines on the same axes, and read off the coordinates of the point where they cross as x and y.",
+      "example": "For x + 3y = 6 and 2x - 3y = 12, plotting points such as (0, 2), (6, 0) and (0, -4), (3, -2) gives two lines that cross at (6, 0), so x = 6, y = 0 is the solution.",
+      "difficulty_base": "Easy",
+      "questions": [
+        {
+          "b": "Remember",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "To solve a pair of linear equations graphically, each equation is represented on the graph paper as a",
+          "a": "straight line",
+          "o": [
+            "straight line",
+            "curve",
+            "single point",
+            "parabola"
+          ]
+        },
+        {
+          "b": "Remember",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "The solution of a pair of linear equations, found graphically, is read off as the",
+          "a": "point where the two lines intersect",
+          "o": [
+            "point where the two lines intersect",
+            "point where either line crosses the x-axis",
+            "midpoint of the two lines",
+            "point where either line crosses the y-axis"
+          ]
+        },
+        {
+          "b": "Remember",
+          "d": "Easy",
+          "t": "fill_blank",
+          "m": 1,
+          "q": "To draw the graph of a linear equation in two variables, we first find at least ____ solutions (points) that satisfy it.",
+          "a": "two"
+        },
+        {
+          "b": "Remember",
+          "d": "Hard",
+          "t": "mcq",
+          "m": 1,
+          "q": "Which of these is NOT a valid way to read the solution of a pair of linear equations from their graph?",
+          "a": "Comparing a1/a2 and b1/b2 numerically without drawing anything",
+          "o": [
+            "Comparing a1/a2 and b1/b2 numerically without drawing anything",
+            "Plotting at least two points for each equation and drawing the line through them",
+            "Finding the coordinates of the point where the two lines cross",
+            "Checking that the coordinates found satisfy both original equations"
+          ],
+          "rev": true
+        },
+        {
+          "b": "Understand",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "Which of these points lies on the graph of x + y = 5?",
+          "a": "(2, 3)",
+          "o": [
+            "(2, 3)",
+            "(2, 2)",
+            "(3, 3)",
+            "(1, 3)"
+          ]
+        },
+        {
+          "b": "Understand",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "If the graphs of a pair of linear equations are two lines that cross at exactly one point, the pair is called",
+          "a": "consistent, with a unique solution",
+          "o": [
+            "consistent, with a unique solution",
+            "inconsistent, with no solution",
+            "dependent, with infinitely many solutions",
+            "undefined"
+          ]
+        },
+        {
+          "b": "Understand",
+          "d": "Easy",
+          "t": "fill_blank",
+          "m": 1,
+          "q": "If the two lines drawn for a pair of linear equations are parallel, the pair has ____ solution(s).",
+          "a": "no"
+        },
+        {
+          "b": "Understand",
+          "d": "Hard",
+          "t": "mcq",
+          "m": 1,
+          "q": "A line is drawn through the points (0, 4) and (4, 0). Which of these equations does this line represent?",
+          "a": "x + y = 4",
+          "o": [
+            "x + y = 4",
+            "x - y = 4",
+            "2x + y = 4",
+            "y - x = 4"
+          ]
+        },
+        {
+          "b": "Understand",
+          "d": "Hard",
+          "t": "short_answer",
+          "m": 2,
+          "q": "Two solutions of a linear equation are recorded as: when x = 0, y = 6; when x = 3, y = 0. Write the linear equation in the form ax + by = c that these two points satisfy.",
+          "a": "2x + y = 6.",
+          "s": [
+            [
+              "Finds the pattern relating the two points (each step of 1 in x changes y by -2)",
+              1
+            ],
+            [
+              "Writes the equation 2x + y = 6",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Easy",
+          "t": "short_answer",
+          "m": 2,
+          "q": "Draw up a table of two solutions each for the equations x + y = 7 and x - y = 1, then state the point where their graphs would intersect.",
+          "a": "Intersection point (4, 3).",
+          "s": [
+            [
+              "Gives two valid solutions for x + y = 7, e.g. (0, 7) and (7, 0)",
+              1
+            ],
+            [
+              "Gives two valid solutions for x - y = 1, e.g. (1, 0) and (2, 1), and states the intersection point (4, 3)",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Easy",
+          "t": "short_answer",
+          "m": 2,
+          "q": "For the equation 3x + y = 9, find the two points where the line crosses the x-axis and the y-axis.",
+          "a": "x-axis: (3, 0); y-axis: (0, 9).",
+          "s": [
+            [
+              "Sets y = 0 to find the x-intercept (3, 0)",
+              1
+            ],
+            [
+              "Sets x = 0 to find the y-intercept (0, 9)",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Hard",
+          "t": "short_answer",
+          "m": 2,
+          "q": "The graphs of x - 2y = 0 and 3x + 4y = 20 are drawn on the same axes. Using x = 0 and x = 4 to find points on each line, write the points plotted for each.",
+          "a": "First line: (0, 0) and (4, 2). Second line: (0, 5) and (4, 2).",
+          "s": [
+            [
+              "Finds (0, 0) and (4, 2) on the first line",
+              1
+            ],
+            [
+              "Finds (0, 5) and (4, 2) on the second line",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Hard",
+          "t": "long_answer",
+          "m": 3,
+          "q": "Solve the pair of equations x + y = 6 and x - y = 2 graphically by first tabulating two solutions for each, then stating the point of intersection. Verify your answer satisfies both equations.",
+          "a": "Intersection point (4, 2); 4 + 2 = 6 and 4 - 2 = 2, so both equations are satisfied.",
+          "s": [
+            [
+              "Gives two valid solutions for x + y = 6, e.g. (0, 6) and (6, 0)",
+              1
+            ],
+            [
+              "Gives two valid solutions for x - y = 2, e.g. (2, 0) and (0, -2)",
+              1
+            ],
+            [
+              "States the intersection (4, 2) and verifies it satisfies both equations",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Hard",
+          "t": "long_answer",
+          "m": 3,
+          "q": "A line is drawn through (0, 4) and (2, 0), and a second line through (0, 4) and (4, 2). Without finding their equations, explain how you can tell from the graph alone that (0, 4) is a common solution of the pair of linear equations represented by these two lines, and state what this means about the pair.",
+          "a": "(0, 4) lies on both lines because it is a listed point for each; it is therefore their point of intersection and the pair's common solution, so the pair is consistent.",
+          "s": [
+            [
+              "States that (0, 4) lies on both lines because it is listed as a point for each",
+              1
+            ],
+            [
+              "Identifies (0, 4) as the point of intersection / common solution",
+              1
+            ],
+            [
+              "States the pair is consistent, with (0, 4) as its unique solution",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Hardest",
+          "t": "long_answer",
+          "m": 4,
+          "q": "Form and then graphically outline the solution for: 'The sum of twice a number x and a number y is 10, and the difference x minus y is 2.' Give a table of two solutions for each resulting equation and state the point of intersection.",
+          "a": "2x + y = 10 and x - y = 2; intersection point (4, 2).",
+          "s": [
+            [
+              "Correctly forms 2x + y = 10 and x - y = 2 from the description",
+              1
+            ],
+            [
+              "Gives two valid solutions for 2x + y = 10, e.g. (0, 10) and (5, 0)",
+              1
+            ],
+            [
+              "Gives two valid solutions for x - y = 2, e.g. (2, 0) and (0, -2)",
+              1
+            ],
+            [
+              "States the intersection point (4, 2) as the solution",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Analyse",
+          "d": "Hard",
+          "t": "assertion_reason",
+          "m": 1,
+          "q": "Assertion (A): The graphs of x - 2y = 0 and 3x + 4y = 20 intersect at exactly one point. Reason (R): Every pair of straight lines drawn on a graph must intersect at exactly one point. Choose the correct option.",
+          "a": "A is true, R is false",
+          "o": [
+            "A is true, R is false",
+            "A is false, R is true",
+            "Both A and R are true, and R is the correct explanation of A",
+            "Both A and R are true, but R is not the correct explanation of A"
+          ]
+        },
+        {
+          "b": "Analyse",
+          "d": "Hard",
+          "t": "multi_statement",
+          "m": 1,
+          "q": "Consider: (I) If two lines drawn for a pair of linear equations are parallel, the pair has no common point and no solution. (II) If two lines drawn for a pair of linear equations cross at two different points, the pair has exactly two solutions. Which is or are correct?",
+          "a": "Only I",
+          "o": [
+            "Only I",
+            "Only II",
+            "Both I and II",
+            "Neither I nor II"
+          ]
+        },
+        {
+          "b": "Analyse",
+          "d": "Hardest",
+          "t": "long_answer",
+          "m": 3,
+          "q": "The graphs of a pair of linear equations are drawn and found to be two DIFFERENT lines that do not meet anywhere on the graph paper, however far it is extended. What can you conclude about (a) whether the pair has a solution, and (b) the relationship between the coefficients a1, b1 and a2, b2 of the two equations a1x+b1y+c1=0 and a2x+b2y+c2=0?",
+          "a": "(a) The pair has no solution, since two different lines that never meet are parallel. (b) a1/a2 = b1/b2, but this is not equal to c1/c2.",
+          "s": [
+            [
+              "States the pair has no solution because the lines are parallel",
+              1
+            ],
+            [
+              "States a1/a2 = b1/b2",
+              1
+            ],
+            [
+              "States this ratio is not equal to c1/c2, since the lines are not coincident",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Evaluate",
+          "d": "Hard",
+          "t": "short_answer",
+          "m": 2,
+          "q": "A classmate claims: 'If I can find even one point that lies on both lines of a pair of linear equations, I can be sure it is the pair's unique solution.' Evaluate whether this claim is always true, and justify your answer.",
+          "a": "Not always true: it is the unique solution only if the two lines are not coincident. If the lines are coincident, every point on the line is a common point, giving infinitely many solutions.",
+          "s": [
+            [
+              "States the claim is not always true",
+              1
+            ],
+            [
+              "Justifies using the coincident-lines case, where infinitely many points are common",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Create",
+          "d": "Hardest",
+          "t": "long_answer",
+          "m": 3,
+          "q": "Choose your own two different points, and use them to state a linear equation that passes through both. Then choose a second, different linear equation whose graph intersects your first line at exactly one of your two chosen points. Write both equations and name the common point.",
+          "a": "Answers vary; the two equations must be genuinely different and must share exactly the named point.",
+          "s": [
+            [
+              "Correctly derives a linear equation through the two chosen points",
+              1
+            ],
+            [
+              "Writes a second, genuinely different equation passing through one of the same points",
+              1
+            ],
+            [
+              "Correctly names that shared point as the pair's solution",
+              1
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "code": "C10M-3.3",
+      "name": "Consistent, inconsistent and dependent pairs by comparing ratios",
+      "description": "Classifying a pair of linear equations a1x+b1y+c1=0 and a2x+b2y+c2=0 as consistent (unique solution), inconsistent (no solution) or dependent (infinitely many solutions) by comparing a1/a2, b1/b2 and c1/c2, and matching each case to intersecting, parallel or coincident lines.",
+      "idea": "The relationship between the two lines -- crossing once, running parallel, or lying on top of each other -- is decided entirely by comparing the ratios of their coefficients, without drawing anything.",
+      "rule": "If a1/a2 is not equal to b1/b2, the lines intersect and the pair is consistent with a unique solution. If a1/a2 = b1/b2 but this is not equal to c1/c2, the lines are parallel and the pair is inconsistent with no solution. If a1/a2 = b1/b2 = c1/c2, the lines are coincident and the pair is dependent (consistent) with infinitely many solutions.",
+      "example": "For 2x + 3y - 9 = 0 and 4x + 6y - 18 = 0, a1/a2 = 2/4 = 1/2, b1/b2 = 3/6 = 1/2 and c1/c2 = -9/-18 = 1/2, all equal, so the lines are coincident and the pair has infinitely many solutions.",
+      "difficulty_base": "Hard",
+      "questions": [
+        {
+          "b": "Remember",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "For a pair of equations a1x+b1y+c1=0 and a2x+b2y+c2=0, if a1/a2 is not equal to b1/b2, the pair is",
+          "a": "consistent, with a unique solution",
+          "o": [
+            "consistent, with a unique solution",
+            "inconsistent, with no solution",
+            "dependent, with infinitely many solutions",
+            "impossible to classify without graphing"
+          ]
+        },
+        {
+          "b": "Remember",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "If a1/a2 = b1/b2 = c1/c2 for a pair of linear equations, the lines represented are",
+          "a": "coincident",
+          "o": [
+            "coincident",
+            "intersecting",
+            "parallel",
+            "perpendicular"
+          ]
+        },
+        {
+          "b": "Remember",
+          "d": "Easy",
+          "t": "fill_blank",
+          "m": 1,
+          "q": "A pair of linear equations that has no solution is called ____.",
+          "a": "inconsistent"
+        },
+        {
+          "b": "Remember",
+          "d": "Hard",
+          "t": "mcq",
+          "m": 1,
+          "q": "Which of these is NOT one of the three possibilities for a pair of linear equations in two variables?",
+          "a": "A solution found only by substituting one variable's expression into the other equation",
+          "o": [
+            "A solution found only by substituting one variable's expression into the other equation",
+            "A unique solution, with intersecting lines",
+            "Infinitely many solutions, with coincident lines",
+            "No solution, with parallel lines"
+          ],
+          "rev": true
+        },
+        {
+          "b": "Understand",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "For the pair 4x + 3y = 7 and 8x + 6y = 14, the values of a1/a2 and b1/b2 are",
+          "a": "equal (both 1/2)",
+          "o": [
+            "equal (both 1/2)",
+            "not equal",
+            "equal (both 2)",
+            "undefined"
+          ]
+        },
+        {
+          "b": "Understand",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "For the pair x + y = 5 and x + y = 9, the lines represented are",
+          "a": "parallel, so the pair has no solution",
+          "o": [
+            "parallel, so the pair has no solution",
+            "coincident, so the pair has infinitely many solutions",
+            "intersecting, so the pair has a unique solution",
+            "perpendicular"
+          ]
+        },
+        {
+          "b": "Understand",
+          "d": "Easy",
+          "t": "fill_blank",
+          "m": 1,
+          "q": "If a1/a2 = b1/b2 but this is not equal to c1/c2, the lines are ____.",
+          "a": "parallel"
+        },
+        {
+          "b": "Understand",
+          "d": "Hard",
+          "t": "mcq",
+          "m": 1,
+          "q": "For the pair 2x - 3y + 8 = 0 and 4x - 6y + 7 = 0, the pair is",
+          "a": "inconsistent (no solution)",
+          "o": [
+            "inconsistent (no solution)",
+            "consistent, with a unique solution",
+            "dependent, with infinitely many solutions",
+            "impossible to determine"
+          ]
+        },
+        {
+          "b": "Understand",
+          "d": "Hard",
+          "t": "short_answer",
+          "m": 2,
+          "q": "Without drawing any graph, determine whether the pair 3x + 2y = 6 and 6x + 4y = 12 is consistent with a unique solution, or has infinitely many solutions, showing the ratio comparison.",
+          "a": "a1/a2 = 1/2, b1/b2 = 1/2, c1/c2 = 1/2, all equal, so the pair has infinitely many solutions.",
+          "s": [
+            [
+              "Computes a1/a2 = 1/2, b1/b2 = 1/2 and c1/c2 = 1/2",
+              1
+            ],
+            [
+              "Concludes the pair has infinitely many solutions since all three ratios are equal",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Easy",
+          "t": "short_answer",
+          "m": 2,
+          "q": "For the pair 5x - y = 3 and 10x - 2y = 6, compute a1/a2, b1/b2 and c1/c2, and state whether the pair is consistent.",
+          "a": "All three ratios equal 1/2, so the pair is consistent, with infinitely many solutions.",
+          "s": [
+            [
+              "Computes all three ratios correctly as 1/2",
+              1
+            ],
+            [
+              "States the pair is consistent, with infinitely many solutions",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Easy",
+          "t": "short_answer",
+          "m": 2,
+          "q": "For the pair x + 2y = 5 and 2x + 4y = 8, compute a1/a2 and b1/b2, and c1/c2, then classify the pair.",
+          "a": "a1/a2 = 1/2 = b1/b2, but c1/c2 = 5/8, which is not equal to 1/2, so the pair is inconsistent with no solution.",
+          "s": [
+            [
+              "Computes a1/a2 = 1/2 and b1/b2 = 1/2",
+              1
+            ],
+            [
+              "Notes c1/c2 = 5/8 is not equal to 1/2 and concludes the pair is inconsistent with no solution",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Hard",
+          "t": "short_answer",
+          "m": 2,
+          "q": "For the pair 3x + 5y = 4 and 6x - 10y = 9, determine whether the pair has a unique solution.",
+          "a": "a1/a2 = 1/2 and b1/b2 = -1/2, which are not equal, so the pair has a unique solution.",
+          "s": [
+            [
+              "Computes a1/a2 = 1/2 and b1/b2 = -1/2",
+              1
+            ],
+            [
+              "Since they are not equal, concludes the pair has a unique solution",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Hard",
+          "t": "long_answer",
+          "m": 3,
+          "q": "A pair of equations is 2x + 3y = 12 and kx + 6y = 24. Find the value of k for which the pair has infinitely many solutions.",
+          "a": "k = 4.",
+          "s": [
+            [
+              "States the condition for infinitely many solutions is a1/a2 = b1/b2 = c1/c2",
+              1
+            ],
+            [
+              "Computes b1/b2 = 1/2 and c1/c2 = 1/2",
+              1
+            ],
+            [
+              "Solves 2/k = 1/2 to get k = 4",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Hard",
+          "t": "long_answer",
+          "m": 3,
+          "q": "A pair of equations is 3x - y = 7 and 6x - 2y = k. Find a value of k for which the pair has NO solution, and explain why no value of k can make the pair have a unique solution.",
+          "a": "Any k except 14 gives no solution, e.g. k = 10; a1/a2 = 1/2 = b1/b2 for every k, so the pair can never have a unique solution.",
+          "s": [
+            [
+              "Computes a1/a2 = 1/2 = b1/b2 for every value of k, since these ratios do not involve k",
+              1
+            ],
+            [
+              "Explains that because a1/a2 always equals b1/b2, the pair can never have a unique solution, only no solution or infinitely many",
+              1
+            ],
+            [
+              "States that k must not equal 14 for no solution, e.g. k = 10 works, but k = 14 gives infinitely many solutions instead",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Hardest",
+          "t": "long_answer",
+          "m": 4,
+          "q": "For what values of p does the pair of linear equations px + 3y - (p - 3) = 0 and 12x + py - p = 0 have a unique solution? Show the ratio condition you use, and state the values of p that must be excluded.",
+          "a": "p can be any value except 6 and -6.",
+          "s": [
+            [
+              "States the condition for a unique solution is a1/a2 not equal to b1/b2",
+              1
+            ],
+            [
+              "Sets up p/12 not equal to 3/p",
+              1
+            ],
+            [
+              "Cross-multiplies to get p squared not equal to 36",
+              1
+            ],
+            [
+              "Concludes p can be any value except 6 and -6",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Analyse",
+          "d": "Hard",
+          "t": "assertion_reason",
+          "m": 1,
+          "q": "Assertion (A): The pair of equations 2x + 3y - 9 = 0 and 4x + 6y - 18 = 0 has infinitely many solutions. Reason (R): Both equations have positive coefficients for x and y. Choose the correct option.",
+          "a": "Both A and R are true, but R is not the correct explanation of A",
+          "o": [
+            "Both A and R are true, but R is not the correct explanation of A",
+            "A is false, R is true",
+            "A is true, R is false",
+            "Both A and R are true, and R is the correct explanation of A"
+          ]
+        },
+        {
+          "b": "Analyse",
+          "d": "Hard",
+          "t": "multi_statement",
+          "m": 1,
+          "q": "Consider: (I) If a1/a2 = b1/b2 = c1/c2 for a pair of linear equations, the two equations are just constant multiples of each other. (II) A pair of linear equations in two variables can have exactly two common solutions. Which is or are correct?",
+          "a": "Only I",
+          "o": [
+            "Only I",
+            "Only II",
+            "Both I and II",
+            "Neither I nor II"
+          ]
+        },
+        {
+          "b": "Analyse",
+          "d": "Hardest",
+          "t": "long_answer",
+          "m": 3,
+          "q": "A pair of linear equations a1x+b1y+c1=0 and a2x+b2y+c2=0 is known to have a1/a2 = b1/b2. A student claims this alone is enough to conclude the pair is inconsistent (no solution). Explain why the student's claim is incomplete, describing the two different outcomes that are still possible.",
+          "a": "a1/a2 = b1/b2 alone does not fix c1/c2: if c1/c2 also equals that ratio, the pair is coincident with infinitely many solutions (dependent, consistent); if c1/c2 differs, the pair is parallel with no solution (inconsistent).",
+          "s": [
+            [
+              "States that a1/a2 = b1/b2 alone does not determine the outcome; c1/c2 must also be checked",
+              1
+            ],
+            [
+              "Describes that if c1/c2 also equals that ratio, the pair is coincident with infinitely many solutions",
+              1
+            ],
+            [
+              "Describes that if c1/c2 differs from that ratio, the pair is parallel with no solution",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Evaluate",
+          "d": "Hard",
+          "t": "short_answer",
+          "m": 2,
+          "q": "A classmate says: 'To check whether a pair of linear equations is consistent, it is always necessary to compute all three ratios a1/a2, b1/b2 and c1/c2.' Evaluate this claim.",
+          "a": "Not always necessary: if a1/a2 is already found to be not equal to b1/b2, the pair is consistent without needing c1/c2 at all.",
+          "s": [
+            [
+              "Judges the claim as not always correct",
+              1
+            ],
+            [
+              "Justifies that c1/c2 is only needed when a1/a2 = b1/b2; if they are already unequal, the pair is consistent regardless of c1/c2",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Create",
+          "d": "Hardest",
+          "t": "long_answer",
+          "m": 3,
+          "q": "Write a pair of linear equations, different from any seen before, that is inconsistent (has no solution). Show the values of a1, b1, c1, a2, b2, c2, and verify using the ratio condition that your pair is indeed inconsistent.",
+          "a": "Answers vary; the pair must satisfy a1/a2 = b1/b2, not equal to c1/c2.",
+          "s": [
+            [
+              "Writes two linear equations with the coefficients clearly identified",
+              1
+            ],
+            [
+              "Computes a1/a2 and b1/b2 and shows they are equal",
+              1
+            ],
+            [
+              "Computes c1/c2 and shows it differs from a1/a2, confirming the pair is inconsistent",
+              1
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "code": "C10M-3.4",
+      "name": "Substitution method",
+      "description": "Solving a pair of linear equations by expressing one variable in terms of the other from one equation, substituting it into the second equation, and solving the resulting single-variable equation.",
+      "idea": "If one equation tells you what one variable equals in terms of the other, you can replace that variable everywhere it appears in the second equation, turning two unknowns into one.",
+      "rule": "Step 1: from either equation, write one variable in terms of the other. Step 2: substitute this into the other equation and solve the resulting equation in one variable. Step 3: substitute this value back to find the other variable.",
+      "example": "For 7x - 15y = 2 and x + 2y = 3: from the second equation x = 3 - 2y; substituting gives 7(3-2y) - 15y = 2, i.e. -29y = -19, so y = 19/29, and then x = 3 - 2(19/29) = 49/29.",
+      "difficulty_base": "Hard",
+      "questions": [
+        {
+          "b": "Remember",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "In the substitution method, the first step is to",
+          "a": "express one variable in terms of the other from either equation",
+          "o": [
+            "express one variable in terms of the other from either equation",
+            "multiply both equations by a constant",
+            "plot both equations on a graph",
+            "add the two equations directly"
+          ]
+        },
+        {
+          "b": "Remember",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "After substituting the expression for one variable into the other equation, the result is an equation in",
+          "a": "one variable",
+          "o": [
+            "one variable",
+            "two variables",
+            "no variables",
+            "three variables"
+          ]
+        },
+        {
+          "b": "Remember",
+          "d": "Easy",
+          "t": "fill_blank",
+          "m": 1,
+          "q": "In the substitution method, once the value of one variable is found, it is put back into the Step 1 equation to find the ____.",
+          "a": "other variable"
+        },
+        {
+          "b": "Remember",
+          "d": "Hard",
+          "t": "mcq",
+          "m": 1,
+          "q": "Which of these is NOT a step of the substitution method?",
+          "a": "Multiplying both equations by constants so that one variable's coefficients become numerically equal",
+          "o": [
+            "Multiplying both equations by constants so that one variable's coefficients become numerically equal",
+            "Expressing one variable in terms of the other from one equation",
+            "Substituting that expression into the other equation",
+            "Solving the resulting equation in a single variable"
+          ],
+          "rev": true
+        },
+        {
+          "b": "Understand",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "From the equation x + 3y = 12, x expressed in terms of y is",
+          "a": "x = 12 - 3y",
+          "o": [
+            "x = 12 - 3y",
+            "x = 12 + 3y",
+            "x = 3y - 12",
+            "x = 12/3 - y"
+          ]
+        },
+        {
+          "b": "Understand",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "From the equation 2y - x = 6, x expressed in terms of y is",
+          "a": "x = 2y - 6",
+          "o": [
+            "x = 2y - 6",
+            "x = 6 - 2y",
+            "x = 2y + 6",
+            "x = 6/2 - y"
+          ]
+        },
+        {
+          "b": "Understand",
+          "d": "Easy",
+          "t": "fill_blank",
+          "m": 1,
+          "q": "Substituting x = 5 - y into 2x + y = 7 and simplifying the left side gives 10 - y = ____.",
+          "a": "7"
+        },
+        {
+          "b": "Understand",
+          "d": "Hard",
+          "t": "mcq",
+          "m": 1,
+          "q": "Solving 10 - y = 7 (obtained after a substitution step) gives y equal to",
+          "a": "3",
+          "o": [
+            "3",
+            "7",
+            "10",
+            "-3"
+          ]
+        },
+        {
+          "b": "Understand",
+          "d": "Hard",
+          "t": "short_answer",
+          "m": 2,
+          "q": "From x + 2y = 9, write x in terms of y, then substitute this expression into 3x - y = 7 and simplify the left-hand side (do not solve further).",
+          "a": "x = 9 - 2y; substituting gives 3(9-2y) - y = 27 - 7y.",
+          "s": [
+            [
+              "Correctly writes x = 9 - 2y",
+              1
+            ],
+            [
+              "Correctly substitutes and simplifies to 27 - 7y",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Easy",
+          "t": "short_answer",
+          "m": 2,
+          "q": "Solve by substitution: x + y = 10 and x - y = 2.",
+          "a": "x = 6, y = 4.",
+          "s": [
+            [
+              "Expresses x = 10 - y and substitutes to get 10 - y - y = 2, i.e. 10 - 2y = 2",
+              1
+            ],
+            [
+              "Solves to get y = 4 and x = 6",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Easy",
+          "t": "short_answer",
+          "m": 2,
+          "q": "Solve by substitution: y = 2x and x + y = 9.",
+          "a": "x = 3, y = 6.",
+          "s": [
+            [
+              "Substitutes y = 2x into x + y = 9 to get x + 2x = 9",
+              1
+            ],
+            [
+              "Solves to get x = 3 and y = 6",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Hard",
+          "t": "long_answer",
+          "m": 3,
+          "q": "Solve by substitution: 2x + y = 11 and x - y = 1.",
+          "a": "x = 4, y = 3.",
+          "s": [
+            [
+              "Expresses x = 1 + y from the second equation",
+              1
+            ],
+            [
+              "Substitutes to get 2(1+y) + y = 11 and simplifies to 3y = 9",
+              1
+            ],
+            [
+              "Solves y = 3 and finds x = 4",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Hard",
+          "t": "long_answer",
+          "m": 3,
+          "q": "Solve by substitution: 4x + 3y = 25 and x - 3y = -5.",
+          "a": "x = 4, y = 3.",
+          "s": [
+            [
+              "Expresses x = 3y - 5 from the second equation",
+              1
+            ],
+            [
+              "Substitutes to get 4(3y-5) + 3y = 25 and simplifies to 15y = 45",
+              1
+            ],
+            [
+              "Solves y = 3 and finds x = 4",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Hard",
+          "t": "long_answer",
+          "m": 3,
+          "q": "The sum of two numbers is 42, and one number is 6 more than the other. Using substitution, find the two numbers.",
+          "a": "18 and 24.",
+          "s": [
+            [
+              "Forms y = x + 6 and x + y = 42",
+              1
+            ],
+            [
+              "Substitutes to get x + (x+6) = 42, i.e. 2x = 36",
+              1
+            ],
+            [
+              "Solves x = 18 and y = 24",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Hardest",
+          "t": "long_answer",
+          "m": 4,
+          "q": "Three years ago, a mother's age was three times her daughter's age then. Six years from now, the mother's age will be twice her daughter's age then. Using the substitution method, find their present ages.",
+          "a": "Mother 30 years, daughter 12 years.",
+          "s": [
+            [
+              "Forms x - 3 = 3(y - 3) and x + 6 = 2(y + 6) from the two given conditions",
+              1
+            ],
+            [
+              "Simplifies both to x = 3y - 6 and x = 2y + 6",
+              1
+            ],
+            [
+              "Substitutes/equates to solve y = 12",
+              1
+            ],
+            [
+              "Finds x = 30 and states both present ages",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Analyse",
+          "d": "Hard",
+          "t": "assertion_reason",
+          "m": 1,
+          "q": "Assertion (A): Solving x + y = 14 and x - y = 4 by substitution gives x = 5 and y = 9. Reason (R): Adding the two equations x + y = 14 and x - y = 4 gives 2x = 18, so x = 9, and then y = 5. Choose the correct option.",
+          "a": "A is false, R is true",
+          "o": [
+            "A is false, R is true",
+            "A is true, R is false",
+            "Both A and R are true, and R is the correct explanation of A",
+            "Both A and R are true, but R is not the correct explanation of A"
+          ]
+        },
+        {
+          "b": "Analyse",
+          "d": "Hard",
+          "t": "multi_statement",
+          "m": 1,
+          "q": "Consider: (I) In the substitution method, either of the two variables may be chosen first to express in terms of the other. (II) The substitution method and the elimination method, when both applied correctly to the same pair of equations, must give the same solution. Which is or are correct?",
+          "a": "Both I and II",
+          "o": [
+            "Both I and II",
+            "Only I",
+            "Only II",
+            "Neither I nor II"
+          ]
+        },
+        {
+          "b": "Analyse",
+          "d": "Hardest",
+          "t": "long_answer",
+          "m": 3,
+          "q": "A pair of equations is solved by substitution. After finding y = 4, one student substitutes y = 4 into the ORIGINAL first equation to find x, while a second student substitutes y = 4 into the Step-1 expression (the 'x = ...' equation written before any solving began). Explain why both students will get the same value of x, even though they substituted into different-looking equations.",
+          "a": "The Step-1 expression was obtained by rearranging the original first equation, so the two are algebraically the same equation, and substituting into either must give the same x.",
+          "s": [
+            [
+              "Explains that the Step-1 expression for x was obtained by rearranging the original first equation",
+              1
+            ],
+            [
+              "Concludes both substitutions must therefore give the identical value of x",
+              1
+            ],
+            [
+              "Notes this holds provided the Step-1 expression was correctly derived, with no rearrangement error",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Evaluate",
+          "d": "Hard",
+          "t": "short_answer",
+          "m": 2,
+          "q": "A classmate says: 'The substitution method only works if I solve for x first, never for y first.' Evaluate this claim.",
+          "a": "The claim is incorrect: either variable may be isolated first; the choice is a matter of convenience, not a rule of the method.",
+          "s": [
+            [
+              "Judges the claim to be incorrect",
+              1
+            ],
+            [
+              "Justifies that either variable may be isolated first, as a matter of convenience",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Create",
+          "d": "Hardest",
+          "t": "long_answer",
+          "m": 3,
+          "q": "Construct your own pair of linear equations, different from any seen before, for which substitution is clearly more convenient than elimination (for example, because one equation already has a variable with coefficient 1). Show your pair and carry out the first substitution step.",
+          "a": "Answers vary; one equation should have a variable with coefficient 1 to make isolating it immediate.",
+          "s": [
+            [
+              "Writes an original pair of linear equations where one variable has coefficient 1 in at least one equation",
+              1
+            ],
+            [
+              "Correctly isolates that variable in terms of the other",
+              1
+            ],
+            [
+              "Shows the correct substitution into the second equation",
+              1
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "code": "C10M-3.5",
+      "name": "Elimination method",
+      "description": "Solving a pair of linear equations by multiplying the equations to make the coefficients of one variable numerically equal, then adding or subtracting the equations to eliminate that variable.",
+      "idea": "Scaling both equations so that one variable has matching coefficients lets you cancel that variable by adding or subtracting the whole equations, leaving a single equation in the other variable.",
+      "rule": "Step 1: multiply the equations by suitable non-zero constants to make the coefficients of one variable numerically equal. Step 2: add or subtract the equations to eliminate that variable and solve the equation that remains. Step 3: substitute this value into either original equation to find the other variable.",
+      "example": "For 9x - 4y = 2000 and 7x - 3y = 2000: multiplying by 3 and 4 gives 27x - 12y = 6000 and 28x - 12y = 8000; subtracting eliminates y, giving x = 2000, and substituting back gives y = 4000.",
+      "difficulty_base": "Hard",
+      "questions": [
+        {
+          "b": "Remember",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "In the elimination method, equations are first multiplied by suitable constants so that the coefficients of one variable become",
+          "a": "numerically equal",
+          "o": [
+            "numerically equal",
+            "zero",
+            "equal to 1",
+            "negatives of the variable's original value"
+          ]
+        },
+        {
+          "b": "Remember",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "After the coefficients of one variable are made equal, that variable is eliminated by",
+          "a": "adding or subtracting the two equations",
+          "o": [
+            "adding or subtracting the two equations",
+            "multiplying the two equations together",
+            "dividing one equation by the other",
+            "graphing both equations"
+          ]
+        },
+        {
+          "b": "Remember",
+          "d": "Easy",
+          "t": "fill_blank",
+          "m": 1,
+          "q": "In the elimination method, once one variable's value is found, it is substituted into either original equation to find the ____.",
+          "a": "other variable"
+        },
+        {
+          "b": "Remember",
+          "d": "Hard",
+          "t": "mcq",
+          "m": 1,
+          "q": "Which of these is NOT a step of the elimination method?",
+          "a": "Expressing one variable directly in terms of the other and substituting it into the second equation",
+          "o": [
+            "Expressing one variable directly in terms of the other and substituting it into the second equation",
+            "Multiplying the equations to equalise one variable's coefficients",
+            "Adding or subtracting the equations to remove that variable",
+            "Substituting the found value back into an original equation"
+          ],
+          "rev": true
+        },
+        {
+          "b": "Understand",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "To eliminate y from 2x + 3y = 7 and 4x + 3y = 11, which already have equal y-coefficients, we should",
+          "a": "subtract one equation from the other",
+          "o": [
+            "subtract one equation from the other",
+            "add the two equations",
+            "multiply the two equations",
+            "divide the first equation by the second"
+          ]
+        },
+        {
+          "b": "Understand",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "To make the x-coefficients equal in 3x + y = 5 and x - y = 3, we should multiply the second equation by",
+          "a": "3",
+          "o": [
+            "3",
+            "1",
+            "5",
+            "-3"
+          ]
+        },
+        {
+          "b": "Understand",
+          "d": "Easy",
+          "t": "fill_blank",
+          "m": 1,
+          "q": "Subtracting 4x + 3y = 11 from 2x + 3y = 7 would eliminate the variable ____.",
+          "a": "y"
+        },
+        {
+          "b": "Understand",
+          "d": "Hard",
+          "t": "mcq",
+          "m": 1,
+          "q": "Adding the equations 3x - 2y = 4 and 3x + 2y = 10 gives",
+          "a": "6x = 14",
+          "o": [
+            "6x = 14",
+            "6x = 6",
+            "4y = 6",
+            "6x - 4y = 14"
+          ]
+        },
+        {
+          "b": "Understand",
+          "d": "Hard",
+          "t": "short_answer",
+          "m": 2,
+          "q": "Which variable is eliminated by ADDING the equations 5x - 4y = 2 and 3x + 4y = 14, and what single-variable equation results?",
+          "a": "y is eliminated; the result is 8x = 16.",
+          "s": [
+            [
+              "States y is eliminated",
+              1
+            ],
+            [
+              "Gives the resulting equation 8x = 16",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Easy",
+          "t": "short_answer",
+          "m": 2,
+          "q": "Solve by elimination: x + y = 12 and x - y = 4.",
+          "a": "x = 8, y = 4.",
+          "s": [
+            [
+              "Adds the equations to get 2x = 16",
+              1
+            ],
+            [
+              "Solves x = 8 and finds y = 4",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Easy",
+          "t": "short_answer",
+          "m": 2,
+          "q": "Solve by elimination: 2x + y = 11 and 2x - y = 5.",
+          "a": "x = 4, y = 3.",
+          "s": [
+            [
+              "Adds the equations to get 4x = 16",
+              1
+            ],
+            [
+              "Solves x = 4 and finds y = 3",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Hard",
+          "t": "long_answer",
+          "m": 3,
+          "q": "Solve by elimination: 3x + 2y = 17 and 5x - 2y = 7.",
+          "a": "x = 3, y = 4.",
+          "s": [
+            [
+              "Adds the equations to eliminate y, giving 8x = 24",
+              1
+            ],
+            [
+              "Solves x = 3",
+              1
+            ],
+            [
+              "Substitutes back to find y = 4",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Hard",
+          "t": "long_answer",
+          "m": 3,
+          "q": "Solve by elimination: 4x + 3y = 25 and 3x + 4y = 24, by first multiplying to equalise the coefficients of x.",
+          "a": "x = 4, y = 3.",
+          "s": [
+            [
+              "Multiplies the first equation by 3 and the second by 4 to get 12x+9y=75 and 12x+16y=96",
+              1
+            ],
+            [
+              "Subtracts to get 7y = 21, so y = 3",
+              1
+            ],
+            [
+              "Substitutes back into an original equation to find x = 4",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Hard",
+          "t": "long_answer",
+          "m": 3,
+          "q": "Solve by elimination: 5x + 3y = 19 and 3x + 2y = 12.",
+          "a": "x = 2, y = 3.",
+          "s": [
+            [
+              "Multiplies the first equation by 2 and the second by 3 to make the y-coefficients equal: 10x+6y=38 and 9x+6y=36",
+              1
+            ],
+            [
+              "Subtracts to get x = 2",
+              1
+            ],
+            [
+              "Substitutes back to find y = 3",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Hardest",
+          "t": "long_answer",
+          "m": 4,
+          "q": "The ratio of the monthly incomes of two people is 11:9, and the ratio of their monthly expenditures is 5:4. If each saves Rs 3000 a month, find their monthly incomes using elimination.",
+          "a": "Rs 33000 and Rs 27000.",
+          "s": [
+            [
+              "Forms 11x - 5y = 3000 and 9x - 4y = 3000 from the income ratio (11x, 9x), expenditure ratio (5y, 4y) and the common savings",
+              1
+            ],
+            [
+              "Multiplies to equalise the y-coefficients, e.g. first by 4 and second by 5, to get 44x-20y=12000 and 45x-20y=15000",
+              1
+            ],
+            [
+              "Subtracts to find x = 3000",
+              1
+            ],
+            [
+              "Substitutes back to find y = 6000, giving incomes of Rs 33000 and Rs 27000",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Analyse",
+          "d": "Hard",
+          "t": "assertion_reason",
+          "m": 1,
+          "q": "Assertion (A): Solving 4x + 3y = 25 and 3x + 4y = 24 by elimination gives x = 4 and y = 3. Reason (R): In the elimination method, both equations must always be added together to eliminate a variable, never subtracted. Choose the correct option.",
+          "a": "A is true, R is false",
+          "o": [
+            "A is true, R is false",
+            "A is false, R is true",
+            "Both A and R are true, and R is the correct explanation of A",
+            "Both A and R are true, but R is not the correct explanation of A"
+          ]
+        },
+        {
+          "b": "Analyse",
+          "d": "Hard",
+          "t": "multi_statement",
+          "m": 1,
+          "q": "Consider: (I) In the elimination method, multiplying an equation by a negative constant is not allowed, since coefficients must stay positive. (II) In the elimination method, the two equations may need to be multiplied by different constants before one variable can be eliminated. Which is or are correct?",
+          "a": "Only II",
+          "o": [
+            "Only II",
+            "Only I",
+            "Both I and II",
+            "Neither I nor II"
+          ]
+        },
+        {
+          "b": "Analyse",
+          "d": "Hardest",
+          "t": "long_answer",
+          "m": 3,
+          "q": "A pair of equations, after scaling, becomes 15x + 9y = 30 and 15x - 4y = 10. A student subtracts the second equation from the first and writes 13y = 40. Check the student's working line by line and identify exactly which part is wrong.",
+          "a": "The left side, 13y, is correct since 9y - (-4y) = 13y, but the right side should be 30 - 10 = 20, not 40; the student incorrectly added the right-hand sides instead of subtracting them.",
+          "s": [
+            [
+              "Confirms the left side 13y is correct, since 9y - (-4y) = 13y",
+              1
+            ],
+            [
+              "Identifies that the right side should be 30 - 10 = 20, not 40",
+              1
+            ],
+            [
+              "States the student incorrectly added the right-hand sides instead of subtracting them",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Evaluate",
+          "d": "Hard",
+          "t": "short_answer",
+          "m": 2,
+          "q": "To solve 2x + 3y = 7 and 5x - 2y = 9, one student chooses to eliminate x first, while another chooses to eliminate y first. Evaluate whether both approaches are equally valid, and explain why.",
+          "a": "Yes, both are equally valid; the elimination method permits removing either variable first, and both must lead to the same final solution.",
+          "s": [
+            [
+              "Judges that both approaches are equally valid",
+              1
+            ],
+            [
+              "Explains that the method permits removing either variable first, and both must give the same solution",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Create",
+          "d": "Hardest",
+          "t": "long_answer",
+          "m": 3,
+          "q": "Construct your own pair of linear equations, different from any seen before, that can be solved by eliminating y after multiplying the first equation by 2 and the second by 3. Show your pair, the scaled equations, and the resulting single-variable equation.",
+          "a": "Answers vary; the y-coefficients must become numerically equal after scaling by 2 and 3 respectively.",
+          "s": [
+            [
+              "Writes an original pair of linear equations in x and y",
+              1
+            ],
+            [
+              "Correctly scales them by 2 and 3 so the y-coefficients become numerically equal",
+              1
+            ],
+            [
+              "Adds or subtracts to show the correct resulting single-variable equation",
+              1
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "code": "C10M-3.6",
+      "name": "Recognising infinitely many solutions or no solution algebraically",
+      "description": "During substitution or elimination, recognising that a resulting statement with no variable left that is always true means the pair has infinitely many solutions, while one that is false means the pair has no solution, and applying this alongside the chosen method to word problems, including two-digit numbers and their digit-reversals.",
+      "idea": "If both equations are really the same line in disguise, every trace of the variable cancels out and leaves a true statement like 18=18; if the two lines are parallel, the variable also cancels out but leaves a false statement like -4=0.",
+      "rule": "While solving by substitution or elimination, if the working reduces to a true statement containing no variable, the pair has infinitely many solutions (dependent); if it reduces to a false statement containing no variable, the pair has no solution (inconsistent); otherwise continue to solve for the unique values of x and y.",
+      "example": "Solving 2x + 3y = 8 and 4x + 6y = 7 by elimination (double the first equation and subtract) gives 0 = 9, a false statement, so the pair has no solution.",
+      "difficulty_base": "Hard",
+      "questions": [
+        {
+          "b": "Remember",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "While solving a pair of linear equations, if all variables cancel out and a TRUE statement remains (such as 12 = 12), the pair has",
+          "a": "infinitely many solutions",
+          "o": [
+            "infinitely many solutions",
+            "no solution",
+            "exactly one solution",
+            "exactly two solutions"
+          ]
+        },
+        {
+          "b": "Remember",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "While solving a pair of linear equations, if all variables cancel out and a FALSE statement remains (such as 0 = 9), the pair has",
+          "a": "no solution",
+          "o": [
+            "no solution",
+            "infinitely many solutions",
+            "exactly one solution",
+            "a solution of x = 0, y = 9"
+          ]
+        },
+        {
+          "b": "Remember",
+          "d": "Easy",
+          "t": "fill_blank",
+          "m": 1,
+          "q": "If a two-digit number has tens digit x and units digit y, the number itself is written as ____.",
+          "a": "10x + y"
+        },
+        {
+          "b": "Remember",
+          "d": "Hard",
+          "t": "mcq",
+          "m": 1,
+          "q": "Which of these statements is NOT correct?",
+          "a": "If a1/a2 is not equal to b1/b2 for a pair of equations, the pair has infinitely many solutions",
+          "o": [
+            "If a1/a2 is not equal to b1/b2 for a pair of equations, the pair has infinitely many solutions",
+            "A true statement with no variable left, such as 12 = 12, means the pair has infinitely many solutions",
+            "A false statement with no variable left, such as 0 = 9, means the pair has no solution",
+            "A two-digit number with tens digit x and units digit y is written as 10x + y"
+          ],
+          "rev": true
+        },
+        {
+          "b": "Understand",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "Solving 3x + 5y = 10 and 6x + 10y = 20 by substitution, the working reduces to 20 = 20. This means the pair has",
+          "a": "infinitely many solutions",
+          "o": [
+            "infinitely many solutions",
+            "no solution",
+            "a unique solution x = 20, y = 20",
+            "no meaning at all"
+          ]
+        },
+        {
+          "b": "Understand",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "The reverse of a two-digit number with tens digit x and units digit y is written as",
+          "a": "10y + x",
+          "o": [
+            "10y + x",
+            "10x + y",
+            "x + y",
+            "10(x + y)"
+          ]
+        },
+        {
+          "b": "Understand",
+          "d": "Easy",
+          "t": "fill_blank",
+          "m": 1,
+          "q": "If the working to solve a pair of equations reduces to -5 = 0, the pair has ____ solution(s).",
+          "a": "no"
+        },
+        {
+          "b": "Understand",
+          "d": "Hard",
+          "t": "mcq",
+          "m": 1,
+          "q": "Solving 2x + y = 6 and 6x + 3y = 18 by elimination (multiply the first equation by 3, then subtract) leads to",
+          "a": "0 = 0, so infinitely many solutions",
+          "o": [
+            "0 = 0, so infinitely many solutions",
+            "0 = 6, so no solution",
+            "a unique solution x = 3, y = 0",
+            "a unique solution x = 2, y = 2"
+          ]
+        },
+        {
+          "b": "Understand",
+          "d": "Hard",
+          "t": "short_answer",
+          "m": 2,
+          "q": "A two-digit number has tens digit x and units digit y. Write an expression for the number, and for the number formed by reversing its digits.",
+          "a": "The number is 10x + y; the reversed number is 10y + x.",
+          "s": [
+            [
+              "States the original number is 10x + y",
+              1
+            ],
+            [
+              "States the reversed number is 10y + x",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Easy",
+          "t": "short_answer",
+          "m": 2,
+          "q": "Solve 5x + 2y = 8 and 15x + 6y = 20 far enough to determine whether the pair is dependent (infinitely many solutions) or inconsistent (no solution).",
+          "a": "Inconsistent, no solution.",
+          "s": [
+            [
+              "Multiplies the first equation by 3 to get 15x + 6y = 24",
+              1
+            ],
+            [
+              "Compares with 15x + 6y = 20 to get the false statement 24 = 20 (or 0 = 4), concluding no solution",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Easy",
+          "t": "short_answer",
+          "m": 2,
+          "q": "Solve 4x - 6y = 10 and 6x - 9y = 15 far enough to determine whether the pair is dependent or inconsistent.",
+          "a": "Dependent, infinitely many solutions.",
+          "s": [
+            [
+              "Scales both equations to 12x - 18y = 30 in each case (first by 3, second by 2)",
+              1
+            ],
+            [
+              "Notes both sides match exactly, giving the true statement 0 = 0 and concluding infinitely many solutions",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Hard",
+          "t": "long_answer",
+          "m": 3,
+          "q": "The sum of a two-digit number and the number obtained by reversing its digits is 132. If the tens digit is x and the units digit is y, form the equation this condition gives, and simplify it as far as possible.",
+          "a": "x + y = 12.",
+          "s": [
+            [
+              "Writes the sum as (10x + y) + (10y + x)",
+              1
+            ],
+            [
+              "Simplifies to 11(x + y) = 132",
+              1
+            ],
+            [
+              "Simplifies further to x + y = 12",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Hard",
+          "t": "long_answer",
+          "m": 3,
+          "q": "A two-digit number's digits differ by 3, with the tens digit the larger one, and the sum of the digits is 9. Taking the tens digit as x and the units digit as y, find the two-digit number using elimination.",
+          "a": "63.",
+          "s": [
+            [
+              "Forms x - y = 3 and x + y = 9",
+              1
+            ],
+            [
+              "Adds to eliminate y, giving 2x = 12, so x = 6, then y = 3",
+              1
+            ],
+            [
+              "States the number is 63",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Hard",
+          "t": "long_answer",
+          "m": 3,
+          "q": "While solving a pair of equations by substitution, a student reaches the line '0 = 0' and concludes the pair has NO solution. Is the student's conclusion correct? Explain, and state the correct conclusion.",
+          "a": "No, the student is wrong: 0 = 0 is a true statement, which means infinitely many solutions, not no solution.",
+          "s": [
+            [
+              "States the student's conclusion is incorrect",
+              1
+            ],
+            [
+              "Explains that 0 = 0 is a true statement, which means infinitely many solutions, not no solution",
+              1
+            ],
+            [
+              "Gives the correct conclusion: infinitely many solutions",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Hardest",
+          "t": "long_answer",
+          "m": 4,
+          "q": "The sum of a two-digit number and the number obtained by reversing its digits is 132, and the digits differ by 6. Using elimination, find all such two-digit numbers.",
+          "a": "93 and 39.",
+          "s": [
+            [
+              "Forms x + y = 12 from the sum condition, and considers both x - y = 6 and y - x = 6 for the difference",
+              1
+            ],
+            [
+              "Solves the first case: adding x + y = 12 and x - y = 6 gives 2x = 18, so x = 9, y = 3, giving 93",
+              1
+            ],
+            [
+              "Solves the second case: adding x + y = 12 and y - x = 6 gives 2y = 18, so y = 9, x = 3, giving 39",
+              1
+            ],
+            [
+              "States both numbers, 93 and 39, satisfy the conditions",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Analyse",
+          "d": "Hard",
+          "t": "assertion_reason",
+          "m": 1,
+          "q": "Assertion (A): The pair of equations 2x + 3y = 8 and 4x + 6y = 7 has infinitely many solutions. Reason (R): For this pair, a1/a2 = b1/b2, but this ratio is not equal to c1/c2. Choose the correct option.",
+          "a": "A is false, R is true",
+          "o": [
+            "A is false, R is true",
+            "A is true, R is false",
+            "Both A and R are true, and R is the correct explanation of A",
+            "Both A and R are true, but R is not the correct explanation of A"
+          ]
+        },
+        {
+          "b": "Analyse",
+          "d": "Hard",
+          "t": "multi_statement",
+          "m": 1,
+          "q": "Consider: (I) A statement like 0 = 0, obtained with no variable remaining, always means the two original equations were identical to begin with. (II) A statement like 0 = 7, obtained with no variable remaining, means the two lines are parallel and do not coincide. Which is or are correct?",
+          "a": "Only II",
+          "o": [
+            "Only II",
+            "Only I",
+            "Both I and II",
+            "Neither I nor II"
+          ]
+        },
+        {
+          "b": "Analyse",
+          "d": "Hardest",
+          "t": "long_answer",
+          "m": 3,
+          "q": "Two different pairs of linear equations both reduce, during elimination, to a statement with no variable left. Pair P reduces to 0 = 0, and Pair Q reduces to 0 = 5. Explain what each result means for its pair, and explain why the SAME elimination process can lead to two completely different conclusions.",
+          "a": "Pair P (0=0) has infinitely many solutions, since the equations are equivalent. Pair Q (0=5) has no solution, since the lines are parallel but not coincident. Both start with proportional x,y coefficients (so the variables cancel either way), but they differ in whether the constant terms are also in that same proportion.",
+          "s": [
+            [
+              "Explains 0=0 (Pair P) means infinitely many solutions because the equations are equivalent",
+              1
+            ],
+            [
+              "Explains 0=5 (Pair Q) means no solution because the equations describe parallel, non-coincident lines",
+              1
+            ],
+            [
+              "Explains that both start with proportional x and y coefficients, but differ in whether the constant terms are also in that same proportion",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Evaluate",
+          "d": "Hard",
+          "t": "short_answer",
+          "m": 2,
+          "q": "A classmate says: 'Whenever I solve a word problem about a two-digit number and its reverse, I can always just assume the tens digit is the bigger one.' Evaluate this claim using the numbers 42 and 24 (which sum to 66 and whose digits differ by 2) as a test case.",
+          "a": "The claim is false in general: both 42 (tens digit larger) and 24 (units digit larger) are valid answers to the same conditions, so assuming the tens digit is always bigger would wrongly exclude 24.",
+          "s": [
+            [
+              "Judges the claim to be false in general",
+              1
+            ],
+            [
+              "Justifies using both 42 and 24 as valid answers, showing the assumption would wrongly exclude 24",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Create",
+          "d": "Hardest",
+          "t": "long_answer",
+          "m": 3,
+          "q": "Construct your own pair of linear equations, different from any seen before, that reduces to a FALSE statement with no variable when solved by elimination. Show your two equations, the elimination step, and the false statement obtained.",
+          "a": "Answers vary; the pair must have proportional x and y coefficients but non-proportional constant terms.",
+          "s": [
+            [
+              "Writes an original pair of linear equations with proportional x and y coefficients",
+              1
+            ],
+            [
+              "Shows the elimination working where the variable terms cancel",
+              1
+            ],
+            [
+              "Obtains and states a false constant statement, correctly concluding no solution",
+              1
+            ]
+          ]
+        }
+      ]
+    }
+  ]
+}
