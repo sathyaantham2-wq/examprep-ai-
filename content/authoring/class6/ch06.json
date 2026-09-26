@@ -1,0 +1,1232 @@
+{
+ "subject": {
+  "code": "MATH6",
+  "name": "Mathematics",
+  "board": "CBSE",
+  "class": 6
+ },
+ "source": {
+  "publisher": "NCERT",
+  "title": "Ganita Prakash",
+  "edition": "Reprint 2026-27",
+  "year": 2026
+ },
+ "chapter": {
+  "part": "I",
+  "chapter_no": 6,
+  "name": "Perimeter and Area",
+  "blurb": "Revises the perimeter of rectangles, squares and triangles and extends it to regular polygons and to shapes made by cutting and rejoining pieces; introduces the area of rectangles, squares and composite figures, estimating area on a squared grid, the area of a triangle as half of an enclosing rectangle, and the relationship between area and perimeter for a fixed amount of material.",
+  "source_code": "fegp106",
+  "order_index": 6
+ },
+ "scope_in": [
+  {
+   "item": "Perimeter of rectangles, squares and triangles; perimeter of any polygon as the sum of its side lengths",
+   "pages": "129-132"
+  },
+  {
+   "item": "Perimeter of regular polygons (n x side length, including the equilateral triangle) and the effect on perimeter of cutting a shape into pieces and rejoining them differently",
+   "pages": "132-136"
+  },
+  {
+   "item": "Area of rectangles and squares, and finding the area of composite/irregular straight-edged shapes by splitting them into rectangles",
+   "pages": "137-139"
+  },
+  {
+   "item": "Estimating the area of an irregular shape by tracing it onto squared/graph paper and applying the counting convention (full, more than half, exactly half, less than half covered squares)",
+   "pages": "140-141"
+  },
+  {
+   "item": "Area of a triangle as half the area of an enclosing rectangle that shares the same base and height",
+   "pages": "142-144"
+  },
+  {
+   "item": "The relationship between area and perimeter: the same area can give different perimeters and vice versa; minimum/maximum perimeter for a fixed number of unit squares; solving for a missing dimension or area in a composite rectangular figure",
+   "pages": "144-150"
+  }
+ ],
+ "scope_out": [
+  {
+   "item": "The tangram piece area-comparison activity (Shapes A-G)",
+   "reason": "Relies on a specific tangram diagram that cannot be reconstructed from the extracted text; the underlying area-comparison skill is tested through the composite-figure and grid-estimation concepts instead"
+  },
+  {
+   "item": "The 'why squares and not circles' circle-packing exploration",
+   "reason": "Open-ended qualitative reasoning about tiling efficiency with no single computable numeric answer"
+  },
+  {
+   "item": "The 'Estimate and Verify' activity of cutting random paper shapes and measuring them with a scale or tape",
+   "reason": "A physical hands-on measurement activity with no answer that can be checked from text"
+  },
+  {
+   "item": "Deep Dive: finding common starting positions for two runners on square tracks with a shared finishing line",
+   "reason": "Marked in the book as an optional 'Deep Dive' extension; a multi-step spatial-positioning puzzle that depends on interpreting a specific track diagram not reproducible from the extracted text"
+  },
+  {
+   "item": "Charan's and Sharan's specific house floor plans",
+   "reason": "Relies on a specific room-layout diagram not reproducible from the extracted text; the underlying skill of finding a missing dimension or area in a composite rectangular figure is tested with original floor-plan-style problems instead"
+  },
+  {
+   "item": "The area maze puzzle figures on page 148",
+   "reason": "Relies on a specific nested-region diagram not reproducible from the extracted text; original missing-value puzzles on composite rectangles are used instead"
+  },
+  {
+   "item": "General triangle-area situations not derived by the enclosing-rectangle method shown here (e.g. Heron's formula, or a height that falls outside the triangle)",
+   "reason": "This chapter only develops the triangle-area relationship for a triangle fitting inside a rectangle sharing its base; other formulas and the obtuse/external-height case belong to a later grade"
+  },
+  {
+   "item": "Area of circles or other curved shapes",
+   "reason": "This chapter and grade cover only polygons, rectangles, triangles and grid-based estimation of straight-edged shapes; circle area is introduced in a later grade"
+  },
+  {
+   "item": "Drawing a border on the reader's own physical textbook page, and other freehand drawing tasks with no fixed numeric target",
+   "reason": "Physical or open-ended drawing exercises with no single checkable numeric answer"
+  },
+  {
+   "item": "The cross-reference to the 'Shape Sequence' of regular polygons from Chapter 1",
+   "reason": "Content of Chapter 1; only mentioned here in passing"
+  }
+ ],
+ "concepts": [
+  {
+   "code": "C6M-6.1",
+   "name": "Perimeter of rectangles, squares and triangles",
+   "description": "The perimeter of a closed figure is the total distance around its boundary; for rectangles, squares and triangles this reduces to simple sum-of-sides formulas.",
+   "idea": "Perimeter is always just the sum of the lengths of all the sides of a closed figure, however the figure is described.",
+   "rule": "Perimeter of a polygon = sum of the lengths of all its sides. Perimeter of a rectangle = 2 x (length + breadth). Perimeter of a square = 4 x side. Perimeter of a triangle = sum of its three sides.",
+   "example": "A rectangular tablecloth 3 m long and 2 m wide needs 2 x (3 + 2) = 10 m of lace to go all around it.",
+   "difficulty_base": "Easy",
+   "questions": [
+    {
+     "b": "Remember",
+     "d": "Easy",
+     "t": "fill_blank",
+     "m": 1,
+     "q": "The perimeter of a closed plane figure is the ____ covered along its boundary when you go around it once.",
+     "a": "distance"
+    },
+    {
+     "b": "Remember",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "The perimeter of a rectangle is given by",
+     "a": "2 x (length + breadth)",
+     "o": ["2 x (length + breadth)", "length x breadth", "length + breadth", "4 x length"]
+    },
+    {
+     "b": "Remember",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "The perimeter of a square of side s is",
+     "a": "4 x s",
+     "o": ["4 x s", "2 x s", "s x s", "s divided by 4"]
+    },
+    {
+     "b": "Remember",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "rev": true,
+     "q": "Which of these is NOT needed to find the perimeter of a triangle?",
+     "a": "the triangle's area",
+     "o": ["the triangle's area", "the length of the first side", "the length of the second side", "the length of the third side"]
+    },
+    {
+     "b": "Understand",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "A rectangle is 12 cm long and 8 cm wide. Its perimeter is",
+     "a": "40 cm",
+     "o": ["40 cm", "20 cm", "96 cm", "32 cm"]
+    },
+    {
+     "b": "Understand",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "A square has a side of 9 cm. Its perimeter is",
+     "a": "36 cm",
+     "o": ["36 cm", "18 cm", "81 cm", "13 cm"]
+    },
+    {
+     "b": "Understand",
+     "d": "Easy",
+     "t": "fill_blank",
+     "m": 1,
+     "q": "A triangle has sides 6 cm, 8 cm and 10 cm. Its perimeter is ____ cm.",
+     "a": "24"
+    },
+    {
+     "b": "Understand",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "q": "A rectangle has perimeter 40 cm and length 12 cm. Its breadth is",
+     "a": "8 cm",
+     "o": ["8 cm", "28 cm", "20 cm", "12 cm"]
+    },
+    {
+     "b": "Understand",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "q": "A square garden has a perimeter of 52 m. Find the length of one side, and the area of the garden.",
+     "a": "Side = 52 divided by 4 = 13 m; area = 13 x 13 = 169 sq m.",
+     "s": [["Finds the side = 13 m", 1], ["Finds the area = 169 sq m", 1]]
+    },
+    {
+     "b": "Apply",
+     "d": "Easy",
+     "t": "short_answer",
+     "m": 2,
+     "q": "Akhila wants to put a ribbon all around a rectangular photo frame that is 25 cm long and 18 cm wide. Find the length of ribbon required.",
+     "a": "Perimeter = 2 x (25 + 18) = 86 cm, so 86 cm of ribbon is required.",
+     "s": [["Sets up perimeter = 2 x (length + breadth)", 1], ["Computes 86 cm", 1]]
+    },
+    {
+     "b": "Apply",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "The cost of fencing a square field of side 45 m at Rs 30 per metre is",
+     "a": "Rs 5400",
+     "o": ["Rs 5400", "Rs 4050", "Rs 180", "Rs 2700"]
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "q": "A triangular park has sides 40 m, 55 m and 65 m. Three rounds of the park cover a distance of",
+     "a": "480 m",
+     "o": ["480 m", "320 m", "160 m", "600 m"]
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 3,
+     "q": "A wire of length 84 cm is bent to form a rectangle whose length is twice its breadth. Find the length and breadth of the rectangle.",
+     "a": "Let breadth = b, length = 2b. Perimeter = 2 x (2b + b) = 6b = 84, so b = 14 cm and length = 28 cm.",
+     "s": [["Sets up 2 x (2b + b) = 84", 1], ["Solves 6b = 84 to get b = 14", 1], ["States length = 28 cm, breadth = 14 cm", 1]]
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "long_answer",
+     "m": 3,
+     "q": "Ravi's rectangular plot is 65 m long and 48 m wide. He fences it with 2 rounds of wire. If wire costs Rs 15 per metre, find the total cost of fencing.",
+     "a": "Perimeter = 2 x (65 + 48) = 226 m. Two rounds = 452 m. Cost = 452 x 15 = Rs 6780.",
+     "s": [["Finds perimeter = 226 m", 1], ["Finds two rounds = 452 m", 1], ["Finds cost = Rs 6780", 1]]
+    },
+    {
+     "b": "Apply",
+     "d": "Hardest",
+     "t": "long_answer",
+     "m": 4,
+     "q": "A rectangular field is 120 m long and 90 m wide. A square field has the same perimeter as this rectangular field. Find the side of the square field, and state which field -- the rectangle or the square -- has the greater area, given they have equal perimeters.",
+     "a": "Perimeter of the rectangle = 2 x (120 + 90) = 420 m. Side of the square = 420 divided by 4 = 105 m. Area of the rectangle = 120 x 90 = 10800 sq m; area of the square = 105 x 105 = 11025 sq m. The square has the greater area.",
+     "s": [["Finds the rectangle's perimeter = 420 m", 1], ["Finds the square's side = 105 m", 1], ["Computes both areas (10800 and 11025 sq m)", 1], ["Concludes the square has the greater area", 1]]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "assertion_reason",
+     "m": 1,
+     "q": "Assertion (A): Two rectangles can have the same perimeter but different areas. Reason (R): Perimeter depends only on the sum of the sides, while area depends on how the length and breadth are combined by multiplication.",
+     "a": "Both A and R are true, and R is the correct explanation of A",
+     "o": ["Both A and R are true, and R is the correct explanation of A", "Both A and R are true, but R is not the correct explanation of A", "A is true but R is false", "A is false but R is true"]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "q": "A rectangle has length 20 cm and breadth 5 cm. A square is formed using the same length of wire. Which shape has the greater area, and by how much?",
+     "a": "Perimeter = 2 x (20 + 5) = 50 cm, so the square's side = 50 divided by 4 = 12.5 cm. Rectangle's area = 20 x 5 = 100 sq cm; square's area = 12.5 x 12.5 = 156.25 sq cm. The square has the greater area, by 56.25 sq cm.",
+     "s": [["Finds the square's side = 12.5 cm and both areas", 1], ["States the square is greater, by 56.25 sq cm", 1]]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hardest",
+     "t": "long_answer",
+     "m": 4,
+     "q": "Three friends made triangles from the same 36 cm long wire: Meena made an equilateral triangle, Raj made a triangle with sides 10 cm, 12 cm and 14 cm, and Sara made a triangle with sides 6 cm, 15 cm and 15 cm. Whose triangles are valid, and do they all have the same perimeter? Explain.",
+     "a": "All three use the full 36 cm wire, so all three perimeters are 36 cm -- the same. Meena's equilateral triangle (12, 12, 12), Raj's (10, 12, 14) and Sara's (6, 15, 15) are all valid triangles, since in each the sum of any two sides exceeds the third. So all three are valid triangles with equal perimeter 36 cm, even though their shapes differ.",
+     "s": [["States all three perimeters equal 36 cm", 1], ["Checks the triangle inequality for at least two of the three triangles", 2], ["Concludes all three are valid despite different shapes", 1]]
+    },
+    {
+     "b": "Evaluate",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "q": "A shopkeeper claims that doubling the length of a rectangle while keeping the breadth the same will double its perimeter. Is this claim correct? Justify with an example.",
+     "a": "Not correct in general. For a rectangle of length l and breadth b, perimeter = 2(l+b). Doubling only l gives 2(2l+b), which is not 2 x 2(l+b) unless b = 0. Example: l = 10, b = 5 gives perimeter 30; doubling l to 20 gives perimeter 2(20+5) = 50, not 60.",
+     "s": [["States the claim is false and explains why using the formula", 1], ["Gives a numerical example showing the perimeter does not double", 1]]
+    },
+    {
+     "b": "Create",
+     "d": "Hardest",
+     "t": "long_answer",
+     "m": 4,
+     "q": "Design a rectangular vegetable patch with a perimeter of exactly 60 m such that its length is at least twice its breadth. State one valid pair of length and breadth, and find the area of your patch.",
+     "a": "Perimeter = 60 m means length + breadth = 30. Choosing breadth = 8 m gives length = 22 m, and 22 is more than twice 8 (16), so this satisfies length at least twice the breadth. Area = 22 x 8 = 176 sq m.",
+     "s": [["States length + breadth = 30 from the perimeter", 1], ["Chooses a valid pair with length at least twice the breadth", 2], ["Computes the area for the chosen pair", 1]]
+    }
+   ]
+  },
+  {
+   "code": "C6M-6.2",
+   "name": "Perimeter of regular polygons and rearranged shapes",
+   "description": "A regular polygon has all sides and angles equal, so its perimeter is simply the number of sides times one side's length; cutting and rejoining the pieces of a shape keeps its total area the same but can change its perimeter.",
+   "idea": "Because a regular polygon's sides are all equal, its perimeter formula is just (number of sides) x (one side's length); and because perimeter depends on how the boundary is arranged, cutting a shape into pieces and rejoining them differently can give a different perimeter even though no material has been added or removed.",
+   "rule": "Perimeter of a regular polygon with n equal sides = n x (length of one side). Perimeter of an equilateral triangle = 3 x side. When the pieces of a shape are cut and rejoined differently, the total area of material stays the same but the perimeter can increase, decrease, or stay the same.",
+   "example": "An equilateral triangle with side 7 cm has perimeter 3 x 7 = 21 cm.",
+   "difficulty_base": "Easy",
+   "questions": [
+    {
+     "b": "Remember",
+     "d": "Easy",
+     "t": "fill_blank",
+     "m": 1,
+     "q": "A closed figure in which all sides and all angles are equal is called a ____ polygon.",
+     "a": "regular"
+    },
+    {
+     "b": "Remember",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "The perimeter of an equilateral triangle with side 7 cm is",
+     "a": "21 cm",
+     "o": ["21 cm", "14 cm", "49 cm", "10 cm"]
+    },
+    {
+     "b": "Remember",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "A regular hexagon (6 equal sides) has perimeter equal to",
+     "a": "6 x (length of one side)",
+     "o": ["6 x (length of one side)", "3 x (length of one side)", "12 x (length of one side)", "(length of one side) divided by 6"]
+    },
+    {
+     "b": "Remember",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "rev": true,
+     "q": "Which of these is NOT a regular polygon?",
+     "a": "a rectangle that is not a square",
+     "o": ["a rectangle that is not a square", "an equilateral triangle", "a square", "a regular pentagon"]
+    },
+    {
+     "b": "Understand",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "A regular pentagon has a perimeter of 45 cm. The length of each side is",
+     "a": "9 cm",
+     "o": ["9 cm", "7.5 cm", "22.5 cm", "15 cm"]
+    },
+    {
+     "b": "Understand",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "A piece of wire is straightened out from a rectangle and bent into a square. Compared to the rectangle, the square's perimeter",
+     "a": "stays the same",
+     "o": ["stays the same", "doubles", "is halved", "cannot be determined"]
+    },
+    {
+     "b": "Understand",
+     "d": "Easy",
+     "t": "fill_blank",
+     "m": 1,
+     "q": "A rectangular chit of paper is cut into two pieces and rejoined edge to edge in a new way. The total area of the two pieces together ____ (increases / decreases / stays the same), even though the perimeter can change.",
+     "a": "stays the same"
+    },
+    {
+     "b": "Understand",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "q": "A figure's perimeter is written as 6s + 3d, where s and d are two different unit lengths. This means the figure has",
+     "a": "6 sides measured in straight units and 3 sides measured in diagonal units",
+     "o": ["6 sides measured in straight units and 3 sides measured in diagonal units", "6 sides in total, 3 of which are diagonal units added twice", "9 sides, all measured in the same unit", "6 diagonal sides and 3 straight sides"]
+    },
+    {
+     "b": "Understand",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "q": "A 6 cm by 4 cm rectangular paper chit is cut into two equal 6 cm by 2 cm pieces and joined edge to edge along their 2 cm sides to form one long strip. Find the perimeter of the strip.",
+     "a": "The strip is 12 cm long and 2 cm wide, so its perimeter = 2 x (12 + 2) = 28 cm.",
+     "s": [["Finds the strip's dimensions as 12 cm by 2 cm", 1], ["Computes the perimeter = 28 cm", 1]]
+    },
+    {
+     "b": "Apply",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "A regular octagon (8 equal sides) has a side of length 5 cm. Its perimeter is",
+     "a": "40 cm",
+     "o": ["40 cm", "35 cm", "45 cm", "13 cm"]
+    },
+    {
+     "b": "Apply",
+     "d": "Easy",
+     "t": "short_answer",
+     "m": 2,
+     "q": "An equilateral triangle and a square are made from two separate pieces of wire, each 24 cm long. Find the side of the triangle and the side of the square.",
+     "a": "Triangle's side = 24 divided by 3 = 8 cm; square's side = 24 divided by 4 = 6 cm.",
+     "s": [["Finds the triangle's side = 8 cm", 1], ["Finds the square's side = 6 cm", 1]]
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "q": "A square piece of paper of side 10 cm is folded exactly in half and cut along the fold into two equal rectangles. The sum of the perimeters of the two rectangles, compared to the perimeter of the original square, is",
+     "a": "1.5 times the square's perimeter",
+     "o": ["1.5 times the square's perimeter", "equal to the square's perimeter", "double the square's perimeter", "half the square's perimeter"]
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "q": "A regular pentagon and a regular hexagon are made from wires of the same total length, 60 cm. Which shape has the longer side, and by how much?",
+     "a": "Pentagon's side = 60 divided by 5 = 12 cm; hexagon's side = 60 divided by 6 = 10 cm. The pentagon has the longer side, by 2 cm.",
+     "s": [["Finds both side lengths (12 cm and 10 cm)", 1], ["States the pentagon's side is longer, by 2 cm", 1]]
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "long_answer",
+     "m": 3,
+     "q": "An 8 cm by 6 cm rectangular sheet of paper is cut exactly in half into two 4 cm by 6 cm pieces. If the two pieces are rejoined along their 6 cm edges, the original 8 cm by 6 cm rectangle is recreated. If instead they are rejoined along their 4 cm edges, a new rectangle is formed. Find the perimeter of each of the two possible rejoined rectangles.",
+     "a": "Rejoining along the 6 cm edges recreates the 8 cm by 6 cm rectangle: perimeter = 2 x (8 + 6) = 28 cm. Rejoining along the 4 cm edges instead gives a 4 cm by 12 cm rectangle: perimeter = 2 x (4 + 12) = 32 cm.",
+     "s": [["Finds the first rejoined rectangle's dimensions and perimeter (28 cm)", 1], ["Finds the second rejoined rectangle's dimensions and perimeter (32 cm)", 1], ["Correctly identifies both new rectangles' dimensions from the cut pieces", 1]]
+    },
+    {
+     "b": "Apply",
+     "d": "Hardest",
+     "t": "long_answer",
+     "m": 4,
+     "q": "A rectangular strip of wire 6 cm by 2 cm (perimeter 16 cm) is straightened out and then bent to form a regular hexagon. Find the side of the hexagon, and then find by how much its perimeter would change if it were instead bent into an equilateral triangle using the same wire.",
+     "a": "Perimeter of the strip = 2 x (6 + 2) = 16 cm. Hexagon's side = 16 divided by 6 = 8/3 cm (about 2.67 cm). If bent into an equilateral triangle instead, the same 16 cm of wire is used, so the triangle's perimeter is also 16 cm -- it does not change; only the side length (16/3 cm each) and the shape change.",
+     "s": [["Finds the strip's perimeter = 16 cm", 1], ["Finds the hexagon's side = 8/3 cm", 1], ["States the triangle's perimeter is still 16 cm (unchanged)", 1], ["Explains that only the shape and side length change, not the total wire length", 1]]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "multi_statement",
+     "m": 1,
+     "q": "Consider: (I) A square is always a regular polygon. (II) A rectangle that is not a square is always a regular polygon. Which is or are correct?",
+     "a": "Only I",
+     "o": ["Only I", "Only II", "Both I and II", "Neither I nor II"]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "q": "A 12 cm by 3 cm rectangular strip (area 36 sq cm) is cut into two 6 cm by 3 cm pieces. Explain whether it is possible to rejoin the two pieces into a shape with a smaller perimeter than the original 12 cm by 3 cm strip, and if so, describe one such arrangement.",
+     "a": "Yes. The original strip's perimeter is 2 x (12 + 3) = 30 cm. If the two 6 cm by 3 cm pieces are instead joined along their 3 cm edges to form a 6 cm by 6 cm square, its perimeter is 4 x 6 = 24 cm, which is smaller than 30 cm, even though the total area (36 sq cm) has not changed.",
+     "s": [["States it is possible and gives the original perimeter (30 cm) for comparison", 1], ["Describes a valid rejoined arrangement (e.g. a 6 cm by 6 cm square) with a smaller perimeter (24 cm)", 1]]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hardest",
+     "t": "long_answer",
+     "m": 4,
+     "q": "A 10 cm by 4 cm rectangular sheet (area 40 sq cm) is cut into two pieces in two different ways: Way 1 cuts it into two 5 cm by 4 cm pieces (a straight cut across the middle of the 10 cm side); Way 2 cuts it into two 10 cm by 2 cm pieces (a straight cut across the middle of the 4 cm side). For each way, find the total perimeter of the two separate pieces (before rejoining), and explain why the two ways give different totals even though both start from the same original sheet.",
+     "a": "Way 1: each piece is 5 cm by 4 cm, perimeter = 2 x (5 + 4) = 18 cm; two pieces total = 36 cm. Way 2: each piece is 10 cm by 2 cm, perimeter = 2 x (10 + 2) = 24 cm; two pieces total = 48 cm. The totals differ because each way creates a new cut edge of a different length (4 cm in Way 1, 10 cm in Way 2), and that new edge appears twice (once on each piece) in the total, so a longer cut edge adds more extra perimeter.",
+     "s": [["Finds Way 1's two perimeters and their total (36 cm)", 1], ["Finds Way 2's two perimeters and their total (48 cm)", 1], ["States the totals differ", 1], ["Explains the difference using the length of the new cut edge appearing twice", 1]]
+    },
+    {
+     "b": "Evaluate",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "q": "A student says, 'Since both a 6 cm equilateral triangle and a 4.5 cm square use the same total wire length, they must have the same area.' Evaluate this claim.",
+     "a": "The claim is false. Both use 18 cm of wire (equal perimeter), but equal perimeter does not mean equal area -- the square's area is 4.5 x 4.5 = 20.25 sq cm, while the equilateral triangle's area is a different value; shapes with equal perimeter generally have different areas.",
+     "s": [["States the claim is false", 1], ["Justifies using equal perimeter not guaranteeing equal area, with the square's area 20.25 sq cm as evidence", 1]]
+    },
+    {
+     "b": "Create",
+     "d": "Hardest",
+     "t": "long_answer",
+     "m": 4,
+     "q": "Design two pieces that can be cut from a single 12 cm by 4 cm rectangular sheet (area 48 sq cm) and rejoined edge to edge, with no overlap and no gap, into a new rectangle whose perimeter is smaller than the original sheet's perimeter. State how you would cut the sheet, how you would rejoin the pieces, and the perimeter of your new rectangle.",
+     "a": "Original sheet's perimeter = 2 x (12 + 4) = 32 cm. Cut the sheet into two 6 cm by 4 cm pieces (a straight cut across the middle of the 12 cm side). Rejoin them along their 4 cm edges so the two 4 cm widths sit side by side, giving a 6 cm by 8 cm rectangle. Its perimeter = 2 x (6 + 8) = 28 cm, which is smaller than the original 32 cm, even though the total area is still 48 sq cm.",
+     "s": [["States the original sheet's perimeter (32 cm)", 1], ["Describes a valid cut into two pieces", 1], ["Describes a valid rejoining into a new rectangle", 1], ["Computes the new rectangle's smaller perimeter (28 cm) and confirms it is smaller", 1]]
+    }
+   ]
+  },
+  {
+   "code": "C6M-6.3",
+   "name": "Area of rectangles, squares and composite figures",
+   "description": "The area of a rectangle or square can be found directly from its length and side; the area of a more complex straight-edged shape is found by splitting it into rectangles.",
+   "idea": "Any closed figure made up entirely of straight, right-angled edges can be broken down into a set of rectangles whose areas are easy to compute and then combined by addition or subtraction to get the whole figure's area.",
+   "rule": "Area of a rectangle = length x width. Area of a square = side x side. The area of a composite shape = the sum (or difference) of the areas of the rectangles it can be split into.",
+   "example": "A 5 m by 4 m floor (20 sq m) with a 3 m square carpet (9 sq m) on it has 20 - 9 = 11 sq m left uncarpeted.",
+   "difficulty_base": "Easy",
+   "questions": [
+    {
+     "b": "Remember",
+     "d": "Easy",
+     "t": "fill_blank",
+     "m": 1,
+     "q": "The area of a rectangle is its length multiplied by its ____.",
+     "a": "width"
+    },
+    {
+     "b": "Remember",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "The area of a square of side 6 cm is",
+     "a": "36 sq cm",
+     "o": ["36 sq cm", "24 sq cm", "12 sq cm", "18 sq cm"]
+    },
+    {
+     "b": "Remember",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "Area is generally measured in",
+     "a": "square units",
+     "o": ["square units", "linear units", "cubic units", "no fixed units"]
+    },
+    {
+     "b": "Remember",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "rev": true,
+     "q": "Which of these is NOT needed to find the area of a rectangle?",
+     "a": "the length of its diagonal",
+     "o": ["the length of its diagonal", "its length", "its breadth", "the unit of measurement"]
+    },
+    {
+     "b": "Understand",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "A rectangular table top is 5 m long and 4 m wide. Its area is",
+     "a": "20 sq m",
+     "o": ["20 sq m", "18 sq m", "9 sq m", "25 sq m"]
+    },
+    {
+     "b": "Understand",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "A rectangular garden is 25 m long and has an area of 300 sq m. Its width is",
+     "a": "12 m",
+     "o": ["12 m", "275 m", "12.5 m", "6 m"]
+    },
+    {
+     "b": "Understand",
+     "d": "Easy",
+     "t": "fill_blank",
+     "m": 1,
+     "q": "To find the area of an irregular straight-edged shape, it is split into ____ whose areas can each be calculated and then added.",
+     "a": "rectangles"
+    },
+    {
+     "b": "Understand",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "q": "A floor is 5 m long and 4 m wide. A square carpet of side 3 m is placed on it. The area of the floor NOT covered by the carpet is",
+     "a": "11 sq m",
+     "o": ["11 sq m", "29 sq m", "9 sq m", "17 sq m"]
+    },
+    {
+     "b": "Understand",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "q": "A rectangular plot is 12 m long and 10 m wide. Four square flower beds, each of side 4 m, are dug at its four corners. Find the area of land left after digging the flower beds.",
+     "a": "Area of plot = 12 x 10 = 120 sq m. Area of the 4 beds = 4 x (4 x 4) = 64 sq m. Remaining area = 120 - 64 = 56 sq m.",
+     "s": [["Finds the plot's total area = 120 sq m and the beds' total area = 64 sq m", 1], ["Finds the remaining area = 56 sq m", 1]]
+    },
+    {
+     "b": "Apply",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "The cost of tiling a rectangular plot 20 m long and 15 m wide at Rs 8 per sq m is",
+     "a": "Rs 2400",
+     "o": ["Rs 2400", "Rs 560", "Rs 300", "Rs 1200"]
+    },
+    {
+     "b": "Apply",
+     "d": "Easy",
+     "t": "short_answer",
+     "m": 2,
+     "q": "A rectangular coconut grove is 100 m long and 50 m wide. If each coconut tree needs 25 sq m of space, find the maximum number of trees that can be planted.",
+     "a": "Area of grove = 100 x 50 = 5000 sq m. Number of trees = 5000 divided by 25 = 200 trees.",
+     "s": [["Finds the grove's area = 5000 sq m", 1], ["Finds the number of trees = 200", 1]]
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "q": "An L-shaped room is formed by removing a 3 m by 2 m rectangular corner from a 10 m by 6 m rectangular room. Its area is",
+     "a": "54 sq m",
+     "o": ["54 sq m", "66 sq m", "58 sq m", "6 sq m"]
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 3,
+     "q": "A rectangular hall 18 m long and 12 m wide has a square stage of side 5 m built in one corner. Find the area of the hall not covered by the stage, and the cost of carpeting this remaining area at Rs 120 per sq m.",
+     "a": "Area of hall = 18 x 12 = 216 sq m. Area of stage = 5 x 5 = 25 sq m. Remaining area = 216 - 25 = 191 sq m. Cost = 191 x 120 = Rs 22,920.",
+     "s": [["Finds the hall area = 216 sq m and stage area = 25 sq m", 1], ["Finds the remaining area = 191 sq m", 1], ["Finds the cost = Rs 22,920", 1]]
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "long_answer",
+     "m": 3,
+     "q": "A garden is made up of a 15 m by 8 m rectangular lawn with a 15 m by 3 m rectangular flower strip running along one full length of the lawn (not overlapping it). Find the total area of the garden.",
+     "a": "Lawn area = 15 x 8 = 120 sq m. Strip area = 15 x 3 = 45 sq m. Total garden area = 120 + 45 = 165 sq m.",
+     "s": [["Finds the lawn area = 120 sq m", 1], ["Finds the strip area = 45 sq m", 1], ["Finds the total area = 165 sq m", 1]]
+    },
+    {
+     "b": "Apply",
+     "d": "Hardest",
+     "t": "long_answer",
+     "m": 4,
+     "q": "A rectangular hall 20 m long and 15 m wide is to be covered with square tiles of side 50 cm. Find the number of tiles needed, and the total cost if each tile costs Rs 35.",
+     "a": "Hall area = 20 x 15 = 300 sq m. Tile side = 0.5 m, so tile area = 0.25 sq m. Number of tiles = 300 divided by 0.25 = 1200. Cost = 1200 x 35 = Rs 42,000.",
+     "s": [["Finds the hall's area = 300 sq m", 1], ["Converts the tile side to metres and finds the tile area = 0.25 sq m", 1], ["Finds the number of tiles = 1200", 1], ["Finds the total cost = Rs 42,000", 1]]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "assertion_reason",
+     "m": 1,
+     "q": "Assertion (A): The area of a rectangle 8 m by 2 m is the same as the area of a square of side 4 m. Reason (R): Both shapes have the same perimeter.",
+     "a": "A is true but R is false",
+     "o": ["A is true but R is false", "Both A and R are true, and R is the correct explanation of A", "Both A and R are true, but R is not the correct explanation of A", "A is false but R is true"]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "q": "Two rectangular plots have the same area of 96 sq m. Plot X is 12 m by 8 m and Plot Y is 16 m by 6 m. Which plot has the smaller perimeter, and what does this tell you about rectangles with equal area?",
+     "a": "Perimeter of X = 2 x (12 + 8) = 40 m; perimeter of Y = 2 x (16 + 6) = 44 m. Plot X has the smaller perimeter. This shows that among rectangles of equal area, the one closer to a square shape tends to have the smaller perimeter.",
+     "s": [["Computes both perimeters (40 m and 44 m) and identifies X as smaller", 1], ["States that a shape closer to a square has a smaller perimeter for the same area", 1]]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hardest",
+     "t": "long_answer",
+     "m": 4,
+     "q": "A rectangular plot 24 m by 18 m is divided into three equal rectangular strips of the same width, running parallel to the 18 m side. Find the area of one strip, and verify that the three strips' areas add up to the whole plot's area.",
+     "a": "Whole plot area = 24 x 18 = 432 sq m. Each strip is 24 divided by 3 = 8 m wide and 18 m long, so one strip's area = 8 x 18 = 144 sq m. Three strips = 3 x 144 = 432 sq m, which equals the whole plot's area, confirming the split is correct.",
+     "s": [["Finds the whole plot's area = 432 sq m", 1], ["Finds each strip's dimensions (8 m by 18 m)", 1], ["Finds one strip's area = 144 sq m", 1], ["Verifies 3 x 144 = 432 sq m matches the whole plot", 1]]
+    },
+    {
+     "b": "Evaluate",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "q": "A student finds the area of an L-shaped plot by splitting it into two rectangles and adding their areas, getting 210 sq m. Another student splits it differently, into a different pair of rectangles, and also gets 210 sq m. Explain why both methods should agree.",
+     "a": "As long as the two rectangles in each split together cover the L-shaped plot exactly once, with no overlap and no gap, their total area must equal the fixed area of the plot -- the way it is split does not change the total area, only how it is calculated.",
+     "s": [["States both totals must equal the plot's fixed total area", 1], ["Explains this holds as long as the split has no overlaps or gaps", 1]]
+    },
+    {
+     "b": "Create",
+     "d": "Hardest",
+     "t": "long_answer",
+     "m": 4,
+     "q": "Design a garden with a total area of exactly 200 sq m made up of one rectangular lawn and one square flower bed placed beside it (not overlapping), such that the flower bed's area is less than a quarter of the lawn's area. State your lawn's dimensions, your flower bed's side, and check that your design meets the total area and the condition.",
+     "a": "Choose the flower bed as a 4 m square: area = 16 sq m. The lawn's area must then be 200 - 16 = 184 sq m; choosing lawn dimensions 23 m by 8 m gives area 23 x 8 = 184 sq m. Check: a quarter of the lawn's area is 184 divided by 4 = 46 sq m, and the flower bed's area 16 sq m is indeed less than 46 sq m, so the design meets the condition.",
+     "s": [["Chooses a flower bed side and computes its area", 1], ["Computes the required lawn area from the total (200 minus flower bed area)", 1], ["States valid lawn dimensions multiplying to that area", 1], ["Checks the flower bed's area is less than a quarter of the lawn's area", 1]]
+    }
+   ]
+  },
+  {
+   "code": "C6M-6.4",
+   "name": "Estimating area on a squared grid",
+   "description": "The area of an irregular shape can be estimated by tracing it onto squared or graph paper and counting squares according to a fixed convention for full, more-than-half, exactly-half and less-than-half covered squares.",
+   "idea": "Since a curved or irregular boundary cannot be measured exactly using square units, a simple, consistent counting rule turns a messy shape into a countable estimate of its area, and this estimate gets closer to the true area as the grid gets finer.",
+   "rule": "On a squared grid: a fully covered square counts as 1 sq unit; a square more than half covered counts as 1 sq unit; a square exactly half covered counts as 1/2 sq unit; a square less than half covered is ignored (counted as 0). The estimated area is the sum of all these counts.",
+   "example": "A shape covering 4 full squares and 2 exactly-half squares has estimated area 4 + 2 x (1/2) = 5 sq units.",
+   "difficulty_base": "Hard",
+   "questions": [
+    {
+     "b": "Remember",
+     "d": "Easy",
+     "t": "fill_blank",
+     "m": 1,
+     "q": "On squared or graph paper, the area of one full small square is taken as ____ sq unit.",
+     "a": "1"
+    },
+    {
+     "b": "Remember",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "When estimating area on a grid, a square that is exactly half covered by the shape is counted as",
+     "a": "1/2 sq unit",
+     "o": ["1/2 sq unit", "1 sq unit", "0 sq unit", "2 sq units"]
+    },
+    {
+     "b": "Remember",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "When estimating area on a grid, a square with less than half of its area covered by the shape is",
+     "a": "ignored (counted as 0)",
+     "o": ["ignored (counted as 0)", "counted as 1 sq unit", "counted as 1/2 sq unit", "counted as 2 sq units"]
+    },
+    {
+     "b": "Remember",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "rev": true,
+     "q": "Which of these is NOT one of the grid-estimation rules for area?",
+     "a": "a square more than half covered is counted as 2 sq units",
+     "o": ["a square more than half covered is counted as 2 sq units", "a fully covered square is counted as 1 sq unit", "a square exactly half covered is counted as 1/2 sq unit", "a square less than half covered is ignored"]
+    },
+    {
+     "b": "Understand",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "A shape traced on grid paper covers 6 full squares and no partial squares. Its estimated area is",
+     "a": "6 sq units",
+     "o": ["6 sq units", "3 sq units", "12 sq units", "6.5 sq units"]
+    },
+    {
+     "b": "Understand",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "A shape covers 4 full squares and 2 squares that are exactly half covered. Its estimated area is",
+     "a": "5 sq units",
+     "o": ["5 sq units", "6 sq units", "4 sq units", "8 sq units"]
+    },
+    {
+     "b": "Understand",
+     "d": "Easy",
+     "t": "fill_blank",
+     "m": 1,
+     "q": "To estimate the area of an irregular shape, we trace it onto squared or graph paper, count the squares using the standard convention, and then ____ up all the counted values.",
+     "a": "add"
+    },
+    {
+     "b": "Understand",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "q": "A shape covers 3 full squares, 4 squares more than half covered, 2 squares exactly half covered, and 3 squares less than half covered. Its estimated area is",
+     "a": "8 sq units",
+     "o": ["8 sq units", "12 sq units", "10 sq units", "7 sq units"]
+    },
+    {
+     "b": "Understand",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "q": "Explain why a circle is harder to measure accurately using square grid units than a rectangle is.",
+     "a": "A rectangle's straight edges line up exactly along grid lines, so it can be covered by whole squares with no gaps or overlaps. A circle's curved boundary cuts through squares at an angle, so many squares are only partly covered, and counting full/half/partial squares can only ever give an estimate, not the exact area.",
+     "s": [["States a rectangle's edges align with the grid so no gaps or overlaps occur", 1], ["States a circle's curved edge only partly covers many squares, giving only an estimate", 1]]
+    },
+    {
+     "b": "Apply",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "A shape covers 5 full squares and 3 squares that are more than half covered. Its estimated area is",
+     "a": "8 sq units",
+     "o": ["8 sq units", "5 sq units", "11 sq units", "15 sq units"]
+    },
+    {
+     "b": "Apply",
+     "d": "Easy",
+     "t": "short_answer",
+     "m": 2,
+     "q": "A leaf traced on grid paper covers 7 full squares, 1 square that is more than half covered, and 2 squares that are exactly half covered. Estimate its area.",
+     "a": "Area = 7 (full) + 1 (more than half, counted as 1) + 2 x (1/2) (half squares) = 7 + 1 + 1 = 9 sq units.",
+     "s": [["Applies the correct count for each category (7, 1, and 1 from the two halves)", 1], ["Adds them to get 9 sq units", 1]]
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "q": "Two shapes, A and B, are traced on the same grid. Shape A covers 10 full squares with no partial squares. Shape B covers 5 full squares, 2 squares more than half covered, and 2 squares exactly half covered. Which shape has the larger estimated area?",
+     "a": "Shape A",
+     "o": ["Shape A", "Shape B", "Both have exactly the same estimated area", "It cannot be estimated without seeing the actual grid"]
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 3,
+     "q": "A pond traced on a 1 cm grid covers 12 full squares, 5 squares more than half covered, 3 squares exactly half covered, and 6 squares less than half covered. Estimate the pond's area in sq cm, and state which category of squares does not add anything to the estimate.",
+     "a": "Area = 12 (full) + 5 (more than half, counted as 1 each) + 3 x 0.5 (half squares) + 0 (less than half, ignored) = 12 + 5 + 1.5 + 0 = 18.5 sq cm. The less-than-half squares add nothing to the estimate.",
+     "s": [["Computes the full and more-than-half contributions (12 + 5 = 17)", 1], ["Adds the half-square contribution (1.5) to get 18.5 sq cm", 1], ["States the less-than-half squares contribute 0", 1]]
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "long_answer",
+     "m": 3,
+     "q": "A student traces a leaf shape twice, once on a fine 0.5 cm grid and once on a coarse 2 cm grid. Explain, using the counting rules, why the estimate from the fine grid is usually more accurate, and describe what happens to the 'less than half' and 'more than half' misestimate as the grid gets finer.",
+     "a": "On a coarser grid, each square is large, so a curved boundary can leave big uncounted or over-counted slivers inside squares that are labelled 'less than half' or 'more than half', causing a bigger error. On a finer grid, the squares are much smaller, so the boundary cuts through each square by only a tiny amount, making the 'less than half' and 'more than half' misestimates much smaller in total, so the overall estimate is closer to the true area.",
+     "s": [["Explains coarse squares create larger errors from partial coverage", 1], ["Explains finer squares reduce the size of the miscounted boundary regions", 1], ["Concludes the finer grid gives a more accurate estimate", 1]]
+    },
+    {
+     "b": "Apply",
+     "d": "Hardest",
+     "t": "long_answer",
+     "m": 4,
+     "q": "A pond is traced on a grid and its estimated area comes to 42 sq units, made up of F full squares, H squares exactly half covered, and M squares more than half covered (each counted as 1 unit), with the rest ignored. If F = 30 and H = 8, find M.",
+     "a": "Estimated area = F + M + 0.5 x H = 42. So 30 + M + 0.5 x 8 = 42, giving 30 + M + 4 = 42, so M = 8.",
+     "s": [["Sets up the equation F + M + 0.5H = 42", 1], ["Substitutes F = 30 and H = 8 to get 34 + M = 42", 2], ["Solves M = 8", 1]]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "multi_statement",
+     "m": 1,
+     "q": "Consider: (I) Using a finer grid generally gives a more accurate area estimate for a curved shape. (II) The grid-estimation method gives the exact area for any shape, no matter how curved its boundary. Which is or are correct?",
+     "a": "Only I",
+     "o": ["Only I", "Only II", "Both I and II", "Neither I nor II"]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "q": "A rectangle of exact dimensions 6 cm by 4 cm is traced on a 1 cm grid. Explain why the grid-counting method should give exactly 24 sq cm for this shape, with no partial squares involved at all.",
+     "a": "Since the rectangle's sides are 6 cm and 4 cm, both whole numbers of grid units, and its edges are straight and aligned with the grid lines, every square inside it is either fully inside or fully outside the rectangle -- there are no partially covered squares, so the full-square count of 6 x 4 = 24 gives the exact area, not just an estimate.",
+     "s": [["States the rectangle's straight, grid-aligned edges leave no partial squares", 1], ["Concludes the full-square count of 24 gives the exact area", 1]]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hardest",
+     "t": "long_answer",
+     "m": 4,
+     "q": "Two identical leaf shapes are each traced on a different grid: Grid X has smaller squares than Grid Y. On Grid X, the estimate comes out to 18.5 sq units of Grid X's own square size; on Grid Y, the estimate comes out to 19 sq units of Grid Y's own larger square size. Explain how both estimates can be considered reasonable for the same leaf even though the numbers differ, and which estimate you would trust more, and why.",
+     "a": "Because the two grids use different-sized squares as their unit, the numeric totals (18.5 vs 19) are not directly comparable as raw numbers -- what matters is how close each estimate is, in real area (say sq cm), to the leaf's true area, once each unit square's real size is accounted for. The finer grid (Grid X) breaks the boundary into smaller pieces, so its 'more/less than half' misestimates are individually smaller, making its estimate, once converted to the same real units, generally the more trustworthy of the two.",
+     "s": [["States the two totals are not directly comparable since the unit square sizes differ", 1], ["Explains that comparison must be made in real area units, not raw square counts", 1], ["States the finer grid (Grid X) generally gives a more trustworthy estimate", 1], ["Justifies this with the reduced size of boundary misestimates on a finer grid", 1]]
+    },
+    {
+     "b": "Evaluate",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "q": "A student estimates a shape's area by counting only the full squares and ignoring every partially covered square, treating them all as 0, even the more-than-half ones. Evaluate whether this method will overestimate, underestimate, or correctly estimate the true area, and why.",
+     "a": "This method will underestimate the true area, because it throws away the more-than-half and exactly-half squares completely, even though those squares are mostly or partly inside the shape and should contribute at least some area to the total.",
+     "s": [["States the method underestimates the area", 1], ["Explains this is because it discards the more-than-half and half squares, which should contribute something", 1]]
+    },
+    {
+     "b": "Create",
+     "d": "Hardest",
+     "t": "long_answer",
+     "m": 4,
+     "q": "Design a shape on a 1 cm grid, by describing how many full, more-than-half, exactly-half, and less-than-half squares it covers, so that its estimated area comes out to exactly 15 sq cm, using at least one square from each of the four categories.",
+     "a": "One valid design: 10 full squares, 3 squares more than half covered, 4 squares exactly half covered, and 2 squares less than half covered (which contribute nothing). Estimated area = 10 (full) + 3 (more than half) + 4 x 0.5 (half squares, = 2) + 0 (less than half) = 10 + 3 + 2 + 0 = 15 sq cm.",
+     "s": [["Chooses counts for full and more-than-half squares that sum appropriately", 1], ["Chooses a number of exactly-half squares whose half-count completes the total", 1], ["Includes at least one less-than-half square contributing 0", 1], ["Verifies the total adds to exactly 15 sq cm", 1]]
+    }
+   ]
+  },
+  {
+   "code": "C6M-6.5",
+   "name": "Area of a triangle as half a rectangle",
+   "description": "A triangle that shares a base and a height with a rectangle always has exactly half of that rectangle's area, whether the triangle comes from cutting the rectangle along a diagonal or is formed using an altitude.",
+   "idea": "Splitting a rectangle along its diagonal, or splitting a triangle using the perpendicular from a vertex to the opposite side, always shows the triangle's area to be half of the area of a rectangle built on the same base and height.",
+   "rule": "Area of a triangle formed by a rectangle's diagonal = half of the rectangle's area. More generally, area of a triangle = 1/2 x base x height, where base and height are the base and the perpendicular height of a rectangle enclosing the triangle.",
+   "example": "A rectangle 10 cm by 6 cm cut along its diagonal gives two triangles, each of area 1/2 x 10 x 6 = 30 sq cm.",
+   "difficulty_base": "Hard",
+   "questions": [
+    {
+     "b": "Remember",
+     "d": "Easy",
+     "t": "fill_blank",
+     "m": 1,
+     "q": "When a rectangle is cut along one of its diagonals, the area of each resulting triangle is ____ the area of the rectangle.",
+     "a": "half"
+    },
+    {
+     "b": "Remember",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "The area of a triangle formed by cutting a rectangle along its diagonal is",
+     "a": "half of the rectangle's area",
+     "o": ["half of the rectangle's area", "equal to the rectangle's area", "twice the rectangle's area", "a quarter of the rectangle's area"]
+    },
+    {
+     "b": "Remember",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "If a rectangle has base b and height h, the area of a triangle with the same base and height, fitted inside it, is",
+     "a": "1/2 x b x h",
+     "o": ["1/2 x b x h", "b x h", "2 x b x h", "b + h"]
+    },
+    {
+     "b": "Remember",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "rev": true,
+     "q": "Which of these does NOT change the area of a triangle formed by cutting a rectangle along its diagonal?",
+     "a": "which of the two diagonals of the rectangle is chosen for the cut",
+     "o": ["which of the two diagonals of the rectangle is chosen for the cut", "the rectangle's length", "the rectangle's breadth", "the rectangle's total area"]
+    },
+    {
+     "b": "Understand",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "A rectangle 10 cm by 6 cm is cut along its diagonal. The area of each triangle formed is",
+     "a": "30 sq cm",
+     "o": ["30 sq cm", "60 sq cm", "15 sq cm", "16 sq cm"]
+    },
+    {
+     "b": "Understand",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "A triangle has base 8 cm and height 5 cm, and fits exactly inside a rectangle of the same base and height. The triangle's area is",
+     "a": "20 sq cm",
+     "o": ["20 sq cm", "40 sq cm", "13 sq cm", "10 sq cm"]
+    },
+    {
+     "b": "Understand",
+     "d": "Easy",
+     "t": "fill_blank",
+     "m": 1,
+     "q": "The area of a triangle = 1/2 x base x ____.",
+     "a": "height"
+    },
+    {
+     "b": "Understand",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "q": "A right-angled triangle has its two shorter sides, forming the right angle, measuring 9 cm and 12 cm. Treating these as the base and height, its area is",
+     "a": "54 sq cm",
+     "o": ["54 sq cm", "108 sq cm", "21 sq cm", "10.5 sq cm"]
+    },
+    {
+     "b": "Understand",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "q": "A rectangular plot 14 m by 9 m has a triangular garden inside it, with the same 14 m base and the same 9 m height as the rectangle. Find the triangular garden's area, and state what fraction of the plot's area it occupies.",
+     "a": "Rectangle's area = 14 x 9 = 126 sq m. Triangle's area = half of this = 63 sq m. The garden occupies exactly half (1/2) of the plot's area.",
+     "s": [["Finds the rectangle's area (126 sq m) and the triangle's area (63 sq m)", 1], ["States the triangle occupies half the plot's area", 1]]
+    },
+    {
+     "b": "Apply",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "A triangular flag has base 40 cm and height 25 cm. Its area is",
+     "a": "500 sq cm",
+     "o": ["500 sq cm", "1000 sq cm", "65 sq cm", "250 sq cm"]
+    },
+    {
+     "b": "Apply",
+     "d": "Easy",
+     "t": "short_answer",
+     "m": 2,
+     "q": "A triangular flower bed has a base of 16 m and a height of 7 m. Find its area.",
+     "a": "Area = 1/2 x 16 x 7 = 56 sq m.",
+     "s": [["Sets up 1/2 x base x height", 1], ["Computes the area = 56 sq m", 1]]
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "q": "A rectangle ABCD has AB = 18 cm and BC = 10 cm. Diagonal AC splits it into two triangles. If triangle ABC is further split by a line from B to the midpoint of AC, how does the area of one of these two smaller triangles compare to the area of the whole rectangle?",
+     "a": "It is a quarter of the rectangle's area",
+     "o": ["It is a quarter of the rectangle's area", "It is half of the rectangle's area", "It is the same as the rectangle's area", "It is an eighth of the rectangle's area"]
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 3,
+     "q": "A field shaped like a right triangle has its two perpendicular sides measuring 60 m and 45 m. Find its area, and the cost of levelling it at Rs 25 per sq m.",
+     "a": "Area = 1/2 x 60 x 45 = 1350 sq m. Cost = 1350 x 25 = Rs 33,750.",
+     "s": [["Sets up the area as 1/2 x 60 x 45", 1], ["Computes the area = 1350 sq m", 1], ["Computes the cost = Rs 33,750", 1]]
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "long_answer",
+     "m": 3,
+     "q": "A rectangular park 30 m by 20 m has a triangular flower patch built inside it, using the full 30 m side as the triangle's base, with the triangle's height equal to the park's full width, 20 m. Find the flower patch's area, and the area of the remaining part of the park.",
+     "a": "Park's area = 30 x 20 = 600 sq m. Triangle's area = 1/2 x 30 x 20 = 300 sq m. Remaining area = 600 - 300 = 300 sq m.",
+     "s": [["Finds the park's area = 600 sq m", 1], ["Finds the triangle's area = 300 sq m", 1], ["Finds the remaining area = 300 sq m", 1]]
+    },
+    {
+     "b": "Apply",
+     "d": "Hardest",
+     "t": "long_answer",
+     "m": 4,
+     "q": "A composite plot is made of a rectangle 22 m by 10 m with a triangular extension attached to one of its 10 m sides; the triangle has the same 10 m side as its base and a height of 8 m running away from the rectangle. Find the total area of the composite plot.",
+     "a": "Rectangle's area = 22 x 10 = 220 sq m. Triangle's area = 1/2 x 10 x 8 = 40 sq m. Total area = 220 + 40 = 260 sq m.",
+     "s": [["Finds the rectangle's area = 220 sq m", 1], ["Finds the triangle's area = 40 sq m", 1], ["Adds them for a total of 260 sq m", 1], ["Correctly identifies the triangle's base (10 m, shared with the rectangle) and height (8 m)", 1]]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "assertion_reason",
+     "m": 1,
+     "q": "Assertion (A): A triangle with base 12 cm and height 5 cm has the same area as a triangle with base 5 cm and height 12 cm. Reason (R): Swapping which side is called the 'base' and which is the 'height' does not change the value of 1/2 x base x height.",
+     "a": "Both A and R are true, and R is the correct explanation of A",
+     "o": ["Both A and R are true, and R is the correct explanation of A", "Both A and R are true, but R is not the correct explanation of A", "A is true but R is false", "A is false but R is true"]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "q": "A triangle and a rectangle have the same base and the same height. Explain how their areas are related, and use this to find the triangle's area if the rectangle's area is 84 sq cm.",
+     "a": "A triangle with the same base and height as a rectangle always has half the rectangle's area, because it can be seen as one of the two triangles formed by the rectangle's diagonal. So the triangle's area = 84 divided by 2 = 42 sq cm.",
+     "s": [["States the triangle's area is always half the rectangle's area for the same base and height", 1], ["Applies this to find the triangle's area = 42 sq cm", 1]]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hardest",
+     "t": "long_answer",
+     "m": 4,
+     "q": "A quadrilateral field is split by one of its diagonals into two triangles: one with base 26 m and height 14 m, and the other with the same 26 m base (the diagonal) and height 9 m. Find the total area of the quadrilateral, and explain why using the diagonal as a shared base is a useful strategy for finding the area of an irregular quadrilateral.",
+     "a": "Area of the first triangle = 1/2 x 26 x 14 = 182 sq m. Area of the second triangle = 1/2 x 26 x 9 = 117 sq m. Total area of the quadrilateral = 182 + 117 = 299 sq m. Using the diagonal as a shared base is useful because it splits any quadrilateral into two triangles, and each triangle's area can be found directly once its height, the perpendicular distance from the opposite vertex to the diagonal, is known -- this turns a shape without a simple area formula into two shapes that do have one.",
+     "s": [["Finds the first triangle's area = 182 sq m", 1], ["Finds the second triangle's area = 117 sq m", 1], ["Adds them for a total of 299 sq m", 1], ["Explains why splitting along a shared diagonal is a useful general strategy", 1]]
+    },
+    {
+     "b": "Evaluate",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "q": "A student says, 'Since a triangle is half of a rectangle, a triangle's perimeter must also be half of the corresponding rectangle's perimeter.' Evaluate this claim.",
+     "a": "The claim is false. The half relationship applies only to area, not perimeter -- a triangle formed from a rectangle's diagonal has one extra side, the diagonal, which is usually longer than either the length or breadth, so its perimeter is not simply half the rectangle's perimeter; for example, a 3-4-5 right triangle from a 3 cm by 4 cm rectangle has perimeter 12 cm, while half the rectangle's perimeter (14 cm) is 7 cm -- they don't match.",
+     "s": [["States the claim is false", 1], ["Justifies with an example or explanation showing the perimeter does not simply halve", 1]]
+    },
+    {
+     "b": "Create",
+     "d": "Hardest",
+     "t": "long_answer",
+     "m": 4,
+     "q": "Design a triangular sail with an area of exactly 96 sq m by choosing a suitable base and height, using the rule that its area equals half of a rectangle with the same base and height, such that the base is more than twice the height. State your chosen base and height and verify the area.",
+     "a": "Choose height = 8 m; then base must satisfy 1/2 x base x 8 = 96, so base = 24 m. Check: is the base (24 m) more than twice the height (2 x 8 = 16 m)? Yes, 24 > 16, so this satisfies the condition. Verify: 1/2 x 24 x 8 = 96 sq m, as required.",
+     "s": [["Chooses a height and sets up 1/2 x base x height = 96", 2], ["Solves for a base value", 1], ["Checks the base is more than twice the height and verifies the area", 1]]
+    }
+   ]
+  },
+  {
+   "code": "C6M-6.6",
+   "name": "Relationship between area and perimeter",
+   "description": "The same area can be arranged to give many different perimeters, and the same perimeter can enclose many different areas; this idea is used to find the smallest or largest possible perimeter for a fixed number of unit squares and to solve for missing dimensions in composite rectangular figures.",
+   "idea": "Area and perimeter are independent of each other: fixing one does not fix the other, so exploring different arrangements of the same building blocks (unit squares, or the rooms of a floor plan) can change the perimeter while the total area stays the same.",
+   "rule": "Two closed figures can have the same area with different perimeters, or the same perimeter with different areas. Among arrangements of a fixed number of unit squares joined edge to edge with no holes, a compact, square-like arrangement gives close to the smallest possible perimeter, while a single straight row gives the largest. In a composite rectangular figure, a missing dimension or area can be found from area = length x width together with the other known parts.",
+   "example": "Nine unit squares arranged as a 3x3 block have perimeter 12 units, but the same nine squares arranged in a single row have perimeter 20 units.",
+   "difficulty_base": "Hard",
+   "questions": [
+    {
+     "b": "Remember",
+     "d": "Easy",
+     "t": "fill_blank",
+     "m": 1,
+     "q": "Two closed figures can have the same area but ____ perimeters.",
+     "a": "different"
+    },
+    {
+     "b": "Remember",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "Which statement is true about area and perimeter?",
+     "a": "Two shapes with the same perimeter can have different areas",
+     "o": ["Two shapes with the same perimeter can have different areas", "Two shapes with the same area must always have the same perimeter", "Two shapes with the same perimeter must always have the same area", "Area and perimeter always increase or decrease together"]
+    },
+    {
+     "b": "Remember",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "Using a fixed number of identical unit squares joined edge to edge, with no holes and no overlaps, the arrangement with close to the smallest possible perimeter is generally the one that is",
+     "a": "closest to a square shape",
+     "o": ["closest to a square shape", "spread out in a single straight line", "arranged in a zig-zag", "arranged in an L-shape"]
+    },
+    {
+     "b": "Remember",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "rev": true,
+     "q": "Which of these does NOT change if 9 unit squares are rearranged into a different connected shape, with no holes and no overlaps?",
+     "a": "the total area",
+     "o": ["the total area", "the perimeter", "the overall outline shape", "the number of sides on the boundary"]
+    },
+    {
+     "b": "Understand",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "Nine unit squares are arranged into a compact 3x3 square block. Its perimeter is",
+     "a": "12 units",
+     "o": ["12 units", "9 units", "36 units", "6 units"]
+    },
+    {
+     "b": "Understand",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "Nine unit squares are arranged in a single straight row. Its perimeter is",
+     "a": "20 units",
+     "o": ["20 units", "18 units", "36 units", "9 units"]
+    },
+    {
+     "b": "Understand",
+     "d": "Easy",
+     "t": "fill_blank",
+     "m": 1,
+     "q": "Among all arrangements of a fixed number of unit squares joined edge to edge, the arrangement stretched into a single row has the ____ possible perimeter.",
+     "a": "largest"
+    },
+    {
+     "b": "Understand",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "q": "A new unit square is attached to an existing figure so that it shares exactly two of its four sides with the figure, fitting into a notch. Compared to before attaching it, the figure's perimeter",
+     "a": "stays the same",
+     "o": ["stays the same", "increases by 2 units", "increases by 4 units", "decreases by 4 units"]
+    },
+    {
+     "b": "Understand",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "q": "A rectangular room 6 m by 4 m has a rectangular room 3 m by 4 m built next to it, sharing the full 4 m side. Find the combined area, and explain in one sentence whether you can find the combined perimeter just by adding the two rooms' individual perimeters.",
+     "a": "Combined area = (6 x 4) + (3 x 4) = 24 + 12 = 36 sq m. No, the perimeters cannot simply be added, because the 4 m shared wall is internal to the combined shape and is not part of its outer boundary.",
+     "s": [["Finds the combined area = 36 sq m", 1], ["States the shared side must be excluded, so perimeters cannot simply be added", 1]]
+    },
+    {
+     "b": "Apply",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "A rectangular room 8 m by 5 m has area 40 sq m. Another rectangular room also has area 40 sq m but dimensions 10 m by 4 m. Which room has the smaller perimeter?",
+     "a": "the 8 m by 5 m room",
+     "o": ["the 8 m by 5 m room", "the 10 m by 4 m room", "both have the same perimeter", "cannot be determined from the given information"]
+    },
+    {
+     "b": "Apply",
+     "d": "Easy",
+     "t": "short_answer",
+     "m": 2,
+     "q": "A garden's total area is split into a lawn of area 130 sq m and a path of area 20 sq m, with no overlap. Find the total area of the garden, and state whether this total would change if the path were shaped differently but kept the same area.",
+     "a": "Total area = 130 + 20 = 150 sq m. The total would not change if the path's shape changed but its area stayed 20 sq m, since total area only depends on the sum of the parts' areas, not their shapes.",
+     "s": [["Finds the total area = 150 sq m", 1], ["States the total is unaffected by the path's shape as long as its area is unchanged", 1]]
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "q": "A rectangular kitchen has area 180 sq ft and is 15 ft long. Its breadth, and its perimeter, are",
+     "a": "12 ft; perimeter 54 ft",
+     "o": ["12 ft; perimeter 54 ft", "15 ft; perimeter 60 ft", "12 ft; perimeter 27 ft", "18 ft; perimeter 66 ft"]
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 3,
+     "q": "A rectangular plot has area 240 sq m. Two possible shapes fit this area: Plot A is 20 m by 12 m, and Plot B is 30 m by 8 m. Find both perimeters and identify which plot needs less fencing.",
+     "a": "Perimeter of A = 2 x (20 + 12) = 64 m. Perimeter of B = 2 x (30 + 8) = 76 m. Plot A needs less fencing.",
+     "s": [["Finds perimeter of Plot A = 64 m", 1], ["Finds perimeter of Plot B = 76 m", 1], ["States Plot A needs less fencing", 1]]
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "long_answer",
+     "m": 3,
+     "q": "A house plan has a rectangular hall of unknown width but known length 23 ft, with an area of 276 sq ft. Next to it, sharing its full 23 ft side, is a kitchen 18 ft by 10 ft (area 180 sq ft). Find the hall's width, and the combined area of the hall and kitchen.",
+     "a": "Hall's width = 276 divided by 23 = 12 ft. Combined area = 276 + 180 = 456 sq ft.",
+     "s": [["Finds the hall's width = 12 ft", 1], ["States the kitchen's area = 180 sq ft (given)", 1], ["Finds the combined area = 456 sq ft", 1]]
+    },
+    {
+     "b": "Apply",
+     "d": "Hardest",
+     "t": "long_answer",
+     "m": 4,
+     "q": "Using 16 unit squares joined edge to edge with no holes, find the smallest possible perimeter, stating the arrangement, and the largest possible perimeter, stating the arrangement, and find the difference between them.",
+     "a": "Smallest: arrange as a 4x4 square block; perimeter = 4 x 4 = 16 units. Largest: arrange all 16 in a single straight row; perimeter = 2 x (16 + 1) = 34 units. Difference = 34 - 16 = 18 units.",
+     "s": [["States the compact 4x4 arrangement and its perimeter (16 units)", 2], ["States the row arrangement and its perimeter (34 units)", 1], ["Finds the difference = 18 units", 1]]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "multi_statement",
+     "m": 1,
+     "q": "Consider: (I) Rearranging a fixed number of unit squares can change the perimeter of the combined figure. (II) Rearranging a fixed number of unit squares can change the total area of the combined figure. Which is or are correct?",
+     "a": "Only I",
+     "o": ["Only I", "Only II", "Both I and II", "Neither I nor II"]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "q": "A figure made of unit squares has a perimeter of 24 units. One new unit square is attached, and the new perimeter is measured as 26 units. How many sides of the new square were shared with the existing figure, and how do you know?",
+     "a": "Exactly one side was shared. Attaching a square with one shared side adds 4 units of new boundary but removes 2 units, the shared side counted on both sides, giving a net increase of 2 units, which matches 26 - 24 = 2.",
+     "s": [["States exactly one side was shared", 1], ["Explains the net change of +2 units matches a single shared side (4 - 2 = 2)", 1]]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hardest",
+     "t": "long_answer",
+     "m": 4,
+     "q": "A rectangular building plot has area 360 sq m. The owner is considering three rectangular shapes for it: 40 m by 9 m, 24 m by 15 m, and 20 m by 18 m. Find all three perimeters, rank the shapes from least to most fencing required, and state which shape is closest to a square.",
+     "a": "Perimeter of 40x9 = 2 x (40 + 9) = 98 m. Perimeter of 24x15 = 2 x (24 + 15) = 78 m. Perimeter of 20x18 = 2 x (20 + 18) = 76 m. Ranked from least to most fencing: 20x18 (76 m), 24x15 (78 m), 40x9 (98 m). The 20 m by 18 m plot is closest to a square and needs the least fencing.",
+     "s": [["Finds all three perimeters (98, 78 and 76 m)", 2], ["Ranks them from least to most fencing", 1], ["States the 20 by 18 shape is closest to a square and needs least fencing", 1]]
+    },
+    {
+     "b": "Evaluate",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "q": "A gardener claims, 'If I want to enclose the largest possible area using a fixed length of fencing, I should always make a long, narrow rectangle rather than a square.' Evaluate this claim using an example with 40 m of fencing.",
+     "a": "The claim is false. With 40 m of fencing (so length + breadth = 20), a square (10 m by 10 m) gives area 100 sq m, while a long narrow rectangle such as 18 m by 2 m gives area only 36 sq m, much less. For a fixed perimeter, a shape closer to a square encloses more area, not a long narrow one.",
+     "s": [["States the claim is false", 1], ["Supports this with a numerical comparison, e.g. a square giving 100 sq m vs a narrow rectangle giving much less", 1]]
+    },
+    {
+     "b": "Create",
+     "d": "Hardest",
+     "t": "long_answer",
+     "m": 4,
+     "q": "Design a rectangular house plan with a total area of 400 sq ft made of two rooms placed side by side, sharing one full wall: a square bedroom and a rectangular hall. Choose the bedroom's side and the hall's dimensions so the plan works out to exactly 400 sq ft, and find the total perimeter of the combined outer boundary if both rooms are 10 ft tall (i.e. the shared wall is 10 ft).",
+     "a": "Choose the bedroom as a 10 ft square: area = 100 sq ft. The hall must then have area 400 - 100 = 300 sq ft; with height 10 ft (matching the shared wall), the hall's length = 300 divided by 10 = 30 ft. The combined outer boundary is then one big rectangle 40 ft (10+30) by 10 ft, so its perimeter = 2 x (40 + 10) = 100 ft.",
+     "s": [["Chooses the bedroom's side (10 ft) and finds its area (100 sq ft)", 1], ["Finds the required hall area (300 sq ft) and its length (30 ft) given height 10 ft", 1], ["Identifies the combined shape as a 40 ft by 10 ft rectangle", 1], ["Computes the combined perimeter = 100 ft", 1]]
+    }
+   ]
+  }
+ ]
+}
