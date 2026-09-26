@@ -20,22 +20,64 @@
     "order_index": 1
   },
   "scope_in": [
-    { "item": "Recognise and extend the basic number sequences: All 1's, counting numbers, odd numbers, even numbers, triangular numbers, square numbers, cube numbers, Virahanka numbers, powers of 2 and powers of 3", "pages": "2-3" },
-    { "item": "Represent number sequences pictorially with dot arrangements -- squares as square grids, triangular numbers as staircases, cubes as three-dimensional dot blocks -- and explain the sequence names from the pictures", "pages": "4-6" },
-    { "item": "Explain, using a dot picture, why the sum of consecutive odd numbers starting from 1 always gives a perfect square, and compute such sums, e.g. the sum of the first 10 or first 100 odd numbers", "pages": "6-8" },
-    { "item": "Explain, using a dot picture, why adding the counting numbers 'up and down' (1+2+...+n+...+2+1) gives a perfect square", "pages": "7-8" },
-    { "item": "Identify and use further additive relations among number sequences: consecutive triangular numbers sum to a square number; 6 times a triangular number plus 1 gives a hexagonal number; the running sum of powers of 2 starting at 1, plus 1, gives the next power of 2; the running sum of hexagonal numbers gives cube numbers", "pages": "8-9" },
-    { "item": "Recognise and extend the basic shape sequences: regular polygons, complete graphs, stacked triangles, stacked squares, and Koch Snowflake iterations", "pages": "9-11" },
-    { "item": "Relate a counted feature of a shape sequence to a number sequence already met: number of sides/corners of regular polygons to counting numbers from 3; number of lines in complete graphs to triangular numbers; number of small squares/triangles in the stacked sequences to square numbers; number of segments in the Koch Snowflake to 3 times powers of 4", "pages": "11-12" }
+    {
+      "item": "Recognise and extend the basic number sequences: All 1's, counting numbers, odd numbers, even numbers, triangular numbers, square numbers, cube numbers, Virahanka numbers, powers of 2 and powers of 3",
+      "pages": "2-3"
+    },
+    {
+      "item": "Represent number sequences pictorially with dot arrangements -- squares as square grids, triangular numbers as staircases, cubes as three-dimensional dot blocks -- and explain the sequence names from the pictures",
+      "pages": "4-6"
+    },
+    {
+      "item": "Explain, using a dot picture, why the sum of consecutive odd numbers starting from 1 always gives a perfect square, and compute such sums, e.g. the sum of the first 10 or first 100 odd numbers",
+      "pages": "6-8"
+    },
+    {
+      "item": "Explain, using a dot picture, why adding the counting numbers 'up and down' (1+2+...+n+...+2+1) gives a perfect square",
+      "pages": "7-8"
+    },
+    {
+      "item": "Identify and use further additive relations among number sequences: consecutive triangular numbers sum to a square number; 6 times a triangular number plus 1 gives a hexagonal number; the running sum of powers of 2 starting at 1, plus 1, gives the next power of 2; the running sum of hexagonal numbers gives cube numbers",
+      "pages": "8-9"
+    },
+    {
+      "item": "Recognise and extend the basic shape sequences: regular polygons, complete graphs, stacked triangles, stacked squares, and Koch Snowflake iterations",
+      "pages": "9-11"
+    },
+    {
+      "item": "Relate a counted feature of a shape sequence to a number sequence already met: number of sides/corners of regular polygons to counting numbers from 3; number of lines in complete graphs to triangular numbers; number of small squares/triangles in the stacked sequences to square numbers; number of segments in the Koch Snowflake to 3 times powers of 4",
+      "pages": "11-12"
+    }
   ],
   "scope_out": [
-    { "item": "Formal algebraic notation for the nth term of a sequence (e.g. a subscript n equals n squared) or summation notation", "reason": "This chapter's explanations are entirely pictorial and inductive; variables and algebraic notation are not introduced until later chapters" },
-    { "item": "Arithmetic and geometric progression formulas for the nth term or sum of a progression", "reason": "Not this book's method here; results are justified by pictures and pattern-spotting, not by formula derivation" },
-    { "item": "Prime numbers and prime factorisation", "reason": "Covered separately in Chapter 5, Prime Time" },
-    { "item": "Angles and properties of lines, including angle sums of polygons", "reason": "Covered separately in Chapter 2, Lines and Angles" },
-    { "item": "Perimeter and area formulas of squares or other shapes", "reason": "Covered separately in Chapter 6, Perimeter and Area; the square-dot pictures here are only for counting, not for measuring physical area" },
-    { "item": "Symmetry of the shape sequences shown, e.g. rotational symmetry of the Koch Snowflake", "reason": "Covered separately in Chapter 9, Symmetry" },
-    { "item": "The golden ratio or any connection between Virahanka numbers and the golden ratio", "reason": "Not mentioned anywhere in this chapter; would be pulling in an outside fact the book does not use here" }
+    {
+      "item": "Formal algebraic notation for the nth term of a sequence (e.g. a subscript n equals n squared) or summation notation",
+      "reason": "This chapter's explanations are entirely pictorial and inductive; variables and algebraic notation are not introduced until later chapters"
+    },
+    {
+      "item": "Arithmetic and geometric progression formulas for the nth term or sum of a progression",
+      "reason": "Not this book's method here; results are justified by pictures and pattern-spotting, not by formula derivation"
+    },
+    {
+      "item": "Prime numbers and prime factorisation",
+      "reason": "Covered separately in Chapter 5, Prime Time"
+    },
+    {
+      "item": "Angles and properties of lines, including angle sums of polygons",
+      "reason": "Covered separately in Chapter 2, Lines and Angles"
+    },
+    {
+      "item": "Perimeter and area formulas of squares or other shapes",
+      "reason": "Covered separately in Chapter 6, Perimeter and Area; the square-dot pictures here are only for counting, not for measuring physical area"
+    },
+    {
+      "item": "Symmetry of the shape sequences shown, e.g. rotational symmetry of the Koch Snowflake",
+      "reason": "Covered separately in Chapter 9, Symmetry"
+    },
+    {
+      "item": "The golden ratio or any connection between Virahanka numbers and the golden ratio",
+      "reason": "Not mentioned anywhere in this chapter; would be pulling in an outside fact the book does not use here"
+    }
   ],
   "concepts": [
     {
@@ -47,26 +89,311 @@
       "example": "The triangular numbers 1, 3, 6, 10, 15, ... continue 21, 28, 36 because each new term adds one more than the last addition (add 6, then 7, then 8).",
       "difficulty_base": "Easy",
       "questions": [
-        { "b": "Remember", "d": "Easy", "t": "mcq", "m": 1, "q": "Which number sequence is 2, 4, 6, 8, 10, ...?", "a": "Even numbers", "o": ["Even numbers", "Odd numbers", "Counting numbers", "Triangular numbers"] },
-        { "b": "Remember", "d": "Easy", "t": "mcq", "m": 1, "q": "The sequence 1, 3, 6, 10, 15, ... is called", "a": "Triangular numbers", "o": ["Triangular numbers", "Square numbers", "Cube numbers", "Counting numbers"] },
-        { "b": "Remember", "d": "Easy", "t": "fill_blank", "m": 1, "q": "The next term after 25 in the sequence of squares 1, 4, 9, 16, 25, ... is ____.", "a": "36" },
-        { "b": "Remember", "d": "Hard", "t": "mcq", "m": 1, "q": "Which of these sequences is NOT one of the number sequences studied in this chapter?", "a": "Prime numbers", "o": ["Prime numbers", "Triangular numbers", "Virahanka numbers", "Powers of 3"], "rev": true },
-        { "b": "Understand", "d": "Easy", "t": "mcq", "m": 1, "q": "In the sequence of cubes 1, 8, 27, 64, 125, ..., each term is obtained by", "a": "multiplying a counting number by itself three times", "o": ["multiplying a counting number by itself three times", "multiplying a counting number by itself twice", "adding the previous two terms", "adding consecutive odd numbers"] },
-        { "b": "Understand", "d": "Easy", "t": "mcq", "m": 1, "q": "The Virahanka number sequence 1, 2, 3, 5, 8, 13, 21, ... is formed by", "a": "adding the two numbers immediately before it", "o": ["adding the two numbers immediately before it", "doubling the previous number", "adding one more each time than the previous step", "multiplying the previous two numbers"] },
-        { "b": "Understand", "d": "Easy", "t": "short_answer", "m": 2, "q": "Explain how each term of the powers-of-3 sequence 1, 3, 9, 27, 81, ... is obtained from the one before it, and write the next term.", "a": "Each term is obtained by multiplying the previous term by 3; the next term after 81 is 243.", "s": [["States each term is 3 times the previous term", 1], ["Gives the next term as 243", 1]] },
-        { "b": "Understand", "d": "Hard", "t": "mcq", "m": 1, "q": "Powers of 2 are 1, 2, 4, 8, 16, .... What is the rule that generates this sequence?", "a": "Multiply the previous term by 2", "o": ["Multiply the previous term by 2", "Add 2 to the previous term", "Add the previous two terms", "Multiply the previous term by 3"] },
-        { "b": "Understand", "d": "Hard", "t": "mcq", "m": 1, "q": "The sequences of Odd numbers and Powers of 3 both begin 1, 3, .... How do their next terms differ?", "a": "Odd numbers continue 5, 7, 9, ...; Powers of 3 continue 9, 27, 81, ...", "o": ["Odd numbers continue 5, 7, 9, ...; Powers of 3 continue 9, 27, 81, ...", "Odd numbers continue 9, 27, 81, ...; Powers of 3 continue 5, 7, 9, ...", "Both continue the same way: 5, 7, 9, ...", "Both continue the same way: 9, 27, 81, ..."] },
-        { "b": "Apply", "d": "Easy", "t": "fill_blank", "m": 1, "q": "The 6th triangular number is ____.", "a": "21" },
-        { "b": "Apply", "d": "Easy", "t": "mcq", "m": 1, "q": "The 5th term of the Virahanka number sequence 1, 2, 3, 5, 8, ... is", "a": "8", "o": ["8", "5", "13", "7"] },
-        { "b": "Apply", "d": "Hard", "t": "mcq", "m": 1, "q": "Continuing the sequence 1, 2, 4, 8, 16, 32, ..., the next two terms are", "a": "64, 128", "o": ["64, 128", "64, 96", "48, 96", "62, 124"] },
-        { "b": "Apply", "d": "Hard", "t": "mcq", "m": 1, "q": "What are the next two terms of the cube sequence 1, 8, 27, 64, 125, ...?", "a": "216, 343", "o": ["216, 343", "215, 342", "196, 325", "210, 336"] },
-        { "b": "Apply", "d": "Hard", "t": "short_answer", "m": 2, "q": "Write the next three terms of the sequence of odd numbers 1, 3, 5, 7, 9, ... and state the rule you used.", "a": "11, 13, 15; each term is 2 more than the previous term.", "s": [["Gives 11, 13, 15", 1], ["States the rule: add 2 to get the next term", 1]] },
-        { "b": "Apply", "d": "Hardest", "t": "long_answer", "m": 3, "q": "A sequence begins 1, 4, 9, 16, .... Without listing every term, find its 10th term and explain the method you used.", "a": "The sequence is the squares; the nth term is n squared, so the 10th term is 10 squared = 100.", "s": [["Identifies the sequence as square numbers", 1], ["States the rule that the nth term is n squared", 1], ["Computes the 10th term as 100", 1]] },
-        { "b": "Analyse", "d": "Hard", "t": "assertion_reason", "m": 1, "q": "Assertion (A): The sequence 1, 2, 4, 8, 16, ... is a sequence of powers of 2. Reason (R): Each term is obtained by multiplying the previous term by 2.", "a": "Both A and R are true, and R is the correct explanation of A", "o": ["Both A and R are true, and R is the correct explanation of A", "Both A and R are true, but R is not the correct explanation of A", "A is true but R is false", "A is false but R is true"] },
-        { "b": "Analyse", "d": "Hard", "t": "multi_statement", "m": 1, "q": "Consider: (I) The sequence of cubes grows faster than the sequence of squares for terms beyond the first. (II) The sequence of powers of 3 grows faster than the sequence of powers of 2 for terms beyond the first. Which is or are correct?", "a": "Both I and II", "o": ["Both I and II", "Only I", "Only II", "Neither I nor II"] },
-        { "b": "Analyse", "d": "Hardest", "t": "long_answer", "m": 3, "q": "Explain why the sequence of Virahanka numbers 1, 2, 3, 5, 8, 13, 21, ... cannot be produced by 'multiply the previous term by a fixed number', unlike the powers of 2 or powers of 3 sequences. Support your answer with two consecutive ratios from the sequence.", "a": "In powers of 2 or 3 every term is the previous term times a fixed number (2 or 3), but in the Virahanka sequence the ratio between consecutive terms keeps changing, e.g. 3/2 = 1.5 and 8/5 = 1.6, so no single fixed multiplier works; instead each term is the sum of the two before it.", "s": [["States that powers of 2/3 use a fixed multiplier each step", 1], ["Gives two different consecutive ratios such as 3/2=1.5 and 8/5=1.6 to show the ratio is not fixed", 1], ["Concludes the Virahanka rule is addition of the previous two terms, not a fixed multiplier", 1]] },
-        { "b": "Evaluate", "d": "Hard", "t": "short_answer", "m": 2, "q": "A classmate claims: 'The sequence of even numbers 2, 4, 6, 8, ... is just the counting numbers multiplied by 2, so it is not really a new sequence worth naming separately.' Do you agree or disagree? Justify your answer in one or two sentences.", "a": "Disagree -- although each even number is 2 times a counting number, the even-number sequence has its own distinct pattern and property (every term divisible by 2) that is worth studying and naming on its own.", "s": [["Takes a clear position (agree or disagree)", 1], ["Justifies it with a valid mathematical reason, e.g. relating it to counting numbers or its own distinct property", 1]] },
-        { "b": "Create", "d": "Hardest", "t": "long_answer", "m": 3, "q": "Invent your own new number sequence (different from every sequence in this chapter) using a clear rule, write its first five terms, and state the rule in words.", "a": "Sample: Rule -- start at 2 and add 3 each time. Terms: 2, 5, 8, 11, 14.", "s": [["States a clear rule for generating terms", 1], ["Gives five terms that correctly follow the stated rule", 1], ["The sequence is genuinely different from every sequence already listed in this chapter", 1]] }
+        {
+          "b": "Remember",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "Which number sequence is 2, 4, 6, 8, 10, ...?",
+          "a": "Even numbers",
+          "o": [
+            "Even numbers",
+            "Odd numbers",
+            "Counting numbers",
+            "Triangular numbers"
+          ]
+        },
+        {
+          "b": "Remember",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "The sequence 1, 3, 6, 10, 15, ... is called",
+          "a": "Triangular numbers",
+          "o": [
+            "Triangular numbers",
+            "Square numbers",
+            "Cube numbers",
+            "Counting numbers"
+          ]
+        },
+        {
+          "b": "Remember",
+          "d": "Easy",
+          "t": "fill_blank",
+          "m": 1,
+          "q": "The next term after 25 in the sequence of squares 1, 4, 9, 16, 25, ... is ____.",
+          "a": "36"
+        },
+        {
+          "b": "Remember",
+          "d": "Hard",
+          "t": "mcq",
+          "m": 1,
+          "q": "Which of these sequences is NOT one of the number sequences studied in this chapter?",
+          "a": "Prime numbers",
+          "o": [
+            "Prime numbers",
+            "Triangular numbers",
+            "Virahanka numbers",
+            "Powers of 3"
+          ],
+          "rev": true
+        },
+        {
+          "b": "Understand",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "In the sequence of cubes 1, 8, 27, 64, 125, ..., each term is obtained by",
+          "a": "multiplying a counting number by itself three times",
+          "o": [
+            "multiplying a counting number by itself three times",
+            "multiplying a counting number by itself twice",
+            "adding the previous two terms",
+            "adding consecutive odd numbers"
+          ]
+        },
+        {
+          "b": "Understand",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "The Virahanka number sequence 1, 2, 3, 5, 8, 13, 21, ... is formed by",
+          "a": "adding the two numbers immediately before it",
+          "o": [
+            "adding the two numbers immediately before it",
+            "doubling the previous number",
+            "adding one more each time than the previous step",
+            "multiplying the previous two numbers"
+          ]
+        },
+        {
+          "b": "Understand",
+          "d": "Easy",
+          "t": "short_answer",
+          "m": 2,
+          "q": "Explain how each term of the powers-of-3 sequence 1, 3, 9, 27, 81, ... is obtained from the one before it, and write the next term.",
+          "a": "Each term is obtained by multiplying the previous term by 3; the next term after 81 is 243.",
+          "s": [
+            [
+              "States each term is 3 times the previous term",
+              1
+            ],
+            [
+              "Gives the next term as 243",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Understand",
+          "d": "Hard",
+          "t": "mcq",
+          "m": 1,
+          "q": "Powers of 2 are 1, 2, 4, 8, 16, .... What is the rule that generates this sequence?",
+          "a": "Multiply the previous term by 2",
+          "o": [
+            "Multiply the previous term by 2",
+            "Add 2 to the previous term",
+            "Add the previous two terms",
+            "Multiply the previous term by 3"
+          ]
+        },
+        {
+          "b": "Understand",
+          "d": "Hard",
+          "t": "mcq",
+          "m": 1,
+          "q": "The sequences of Odd numbers and Powers of 3 both begin 1, 3, .... How do their next terms differ?",
+          "a": "Odd numbers continue 5, 7, 9, ...; Powers of 3 continue 9, 27, 81, ...",
+          "o": [
+            "Odd numbers continue 5, 7, 9, ...; Powers of 3 continue 9, 27, 81, ...",
+            "Odd numbers continue 9, 27, 81, ...; Powers of 3 continue 5, 7, 9, ...",
+            "Both continue the same way: 5, 7, 9, ...",
+            "Both continue the same way: 9, 27, 81, ..."
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Easy",
+          "t": "fill_blank",
+          "m": 1,
+          "q": "The 6th triangular number is ____.",
+          "a": "21"
+        },
+        {
+          "b": "Apply",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "The 5th term of the Virahanka number sequence 1, 2, 3, 5, 8, ... is",
+          "a": "8",
+          "o": [
+            "8",
+            "5",
+            "13",
+            "7"
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Hard",
+          "t": "mcq",
+          "m": 1,
+          "q": "Continuing the sequence 1, 2, 4, 8, 16, 32, ..., the next two terms are",
+          "a": "64, 128",
+          "o": [
+            "64, 128",
+            "64, 96",
+            "48, 96",
+            "62, 124"
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Hard",
+          "t": "mcq",
+          "m": 1,
+          "q": "What are the next two terms of the cube sequence 1, 8, 27, 64, 125, ...?",
+          "a": "216, 343",
+          "o": [
+            "216, 343",
+            "215, 342",
+            "196, 325",
+            "210, 336"
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Hard",
+          "t": "short_answer",
+          "m": 2,
+          "q": "Write the next three terms of the sequence of odd numbers 1, 3, 5, 7, 9, ... and state the rule you used.",
+          "a": "11, 13, 15; each term is 2 more than the previous term.",
+          "s": [
+            [
+              "Gives 11, 13, 15",
+              1
+            ],
+            [
+              "States the rule: add 2 to get the next term",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Hardest",
+          "t": "long_answer",
+          "m": 3,
+          "q": "A sequence begins 1, 4, 9, 16, .... Without listing every term, find its 10th term and explain the method you used.",
+          "a": "The sequence is the squares; the nth term is n squared, so the 10th term is 10 squared = 100.",
+          "s": [
+            [
+              "Identifies the sequence as square numbers",
+              1
+            ],
+            [
+              "States the rule that the nth term is n squared",
+              1
+            ],
+            [
+              "Computes the 10th term as 100",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Analyse",
+          "d": "Hard",
+          "t": "assertion_reason",
+          "m": 1,
+          "q": "Assertion (A): The sequence 1, 2, 4, 8, 16, ... is a sequence of powers of 2. Reason (R): Each term is obtained by multiplying the previous term by 2.",
+          "a": "Both A and R are true, and R is the correct explanation of A",
+          "o": [
+            "Both A and R are true, and R is the correct explanation of A",
+            "Both A and R are true, but R is not the correct explanation of A",
+            "A is true but R is false",
+            "A is false but R is true"
+          ]
+        },
+        {
+          "b": "Analyse",
+          "d": "Hard",
+          "t": "multi_statement",
+          "m": 1,
+          "q": "Consider: (I) The sequence of cubes grows faster than the sequence of squares for terms beyond the first. (II) The sequence of powers of 3 grows faster than the sequence of powers of 2 for terms beyond the first. Which is or are correct?",
+          "a": "Both I and II",
+          "o": [
+            "Both I and II",
+            "Only I",
+            "Only II",
+            "Neither I nor II"
+          ]
+        },
+        {
+          "b": "Analyse",
+          "d": "Hardest",
+          "t": "long_answer",
+          "m": 3,
+          "q": "Explain why the sequence of Virahanka numbers 1, 2, 3, 5, 8, 13, 21, ... cannot be produced by 'multiply the previous term by a fixed number', unlike the powers of 2 or powers of 3 sequences. Support your answer with two consecutive ratios from the sequence.",
+          "a": "In powers of 2 or 3 every term is the previous term times a fixed number (2 or 3), but in the Virahanka sequence the ratio between consecutive terms keeps changing, e.g. 3/2 = 1.5 and 8/5 = 1.6, so no single fixed multiplier works; instead each term is the sum of the two before it.",
+          "s": [
+            [
+              "States that powers of 2/3 use a fixed multiplier each step",
+              1
+            ],
+            [
+              "Gives two different consecutive ratios such as 3/2=1.5 and 8/5=1.6 to show the ratio is not fixed",
+              1
+            ],
+            [
+              "Concludes the Virahanka rule is addition of the previous two terms, not a fixed multiplier",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Evaluate",
+          "d": "Hard",
+          "t": "short_answer",
+          "m": 2,
+          "q": "A classmate claims: 'The sequence of even numbers 2, 4, 6, 8, ... is just the counting numbers multiplied by 2, so it is not really a new sequence worth naming separately.' Do you agree or disagree? Justify your answer in one or two sentences.",
+          "a": "Disagree -- although each even number is 2 times a counting number, the even-number sequence has its own distinct pattern and property (every term divisible by 2) that is worth studying and naming on its own.",
+          "s": [
+            [
+              "Takes a clear position (agree or disagree)",
+              1
+            ],
+            [
+              "Justifies it with a valid mathematical reason, e.g. relating it to counting numbers or its own distinct property",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Create",
+          "d": "Hardest",
+          "t": "long_answer",
+          "m": 3,
+          "q": "Invent your own new number sequence (different from every sequence in this chapter) using a clear rule, write its first five terms, and state the rule in words.",
+          "a": "Sample: Rule -- start at 2 and add 3 each time. Terms: 2, 5, 8, 11, 14.",
+          "s": [
+            [
+              "States a clear rule for generating terms",
+              1
+            ],
+            [
+              "Gives five terms that correctly follow the stated rule",
+              1
+            ],
+            [
+              "The sequence is genuinely different from every sequence already listed in this chapter",
+              1
+            ]
+          ]
+        }
       ]
     },
     {
@@ -78,26 +405,311 @@
       "example": "36 dots form a perfect 6-by-6 square, and also a triangular staircase of 8 rows (1+2+...+8=36), so 36 is both a square number and a triangular number.",
       "difficulty_base": "Easy",
       "questions": [
-        { "b": "Remember", "d": "Easy", "t": "mcq", "m": 1, "q": "In the dot-picture for square numbers, how are the dots arranged?", "a": "In a square grid, with the same number of rows as columns", "o": ["In a square grid, with the same number of rows as columns", "In a triangle-shaped staircase", "In a single straight line", "In a 3-dimensional cube"] },
-        { "b": "Remember", "d": "Easy", "t": "mcq", "m": 1, "q": "In the dot-picture for triangular numbers, how are the dots arranged?", "a": "In a staircase triangle, with one more dot in each row than the row above", "o": ["In a staircase triangle, with one more dot in each row than the row above", "In a perfect square grid", "In a straight line of equal dots", "In a 3-dimensional cube"] },
-        { "b": "Remember", "d": "Easy", "t": "fill_blank", "m": 1, "q": "36 dots can be arranged as a perfect square of side ____.", "a": "6" },
-        { "b": "Remember", "d": "Hard", "t": "mcq", "m": 1, "q": "Which of these number sequences is pictured using a 3-dimensional arrangement of dots, NOT a flat 2-dimensional one?", "a": "Cubes", "o": ["Cubes", "Squares", "Triangular numbers", "Counting numbers"], "rev": true },
-        { "b": "Understand", "d": "Easy", "t": "mcq", "m": 1, "q": "Why is 1, 4, 9, 16, 25, ... called the sequence of 'squares'?", "a": "Because each term's dots can be arranged into a square grid", "o": ["Because each term's dots can be arranged into a square grid", "Because each term is an odd number", "Because each term is divisible by 4", "Because the terms increase by a constant amount"] },
-        { "b": "Understand", "d": "Easy", "t": "mcq", "m": 1, "q": "Why is 1, 3, 6, 10, 15, ... called the sequence of 'triangular numbers'?", "a": "Because each term's dots can be arranged into a triangular staircase shape", "o": ["Because each term's dots can be arranged into a triangular staircase shape", "Because each term is three times the one before it", "Because the terms are all multiples of 3", "Because each term is a prime number"] },
-        { "b": "Understand", "d": "Easy", "t": "short_answer", "m": 2, "q": "36 is both a triangular number and a square number. Describe briefly, in words, the two different dot-arrangements that show this.", "a": "36 dots can be arranged into a 6-by-6 square, and also into a triangular staircase of 8 rows (1+2+...+8=36).", "s": [["Describes the square arrangement (6 by 6)", 1], ["Describes the triangular staircase arrangement (rows 1 to 8 adding to 36)", 1]] },
-        { "b": "Understand", "d": "Hard", "t": "mcq", "m": 1, "q": "A picture shows dots arranged in rings of 1, 7, 19, 37 dots around a growing hexagon. This picture represents", "a": "Hexagonal numbers", "o": ["Hexagonal numbers", "Triangular numbers", "Square numbers", "Powers of 3"] },
-        { "b": "Understand", "d": "Hard", "t": "mcq", "m": 1, "q": "Which statement correctly compares the picture of a cube number with the picture of a square number?", "a": "A cube number's picture needs three directions (length, breadth, height); a square number's picture needs only two", "o": ["A cube number's picture needs three directions (length, breadth, height); a square number's picture needs only two", "Both need exactly two directions to draw", "A cube number's picture needs only one direction; a square number needs two", "Both need three directions to draw"] },
-        { "b": "Apply", "d": "Easy", "t": "fill_blank", "m": 1, "q": "The dot-picture of the 5th triangular number has ____ rows, with 1, 2, 3, 4 and 5 dots in successive rows.", "a": "5" },
-        { "b": "Apply", "d": "Easy", "t": "mcq", "m": 1, "q": "Which number can be arranged as a triangular staircase of exactly 4 rows (1+2+3+4 dots)?", "a": "10", "o": ["10", "9", "6", "16"] },
-        { "b": "Apply", "d": "Hard", "t": "mcq", "m": 1, "q": "A square grid picture has 8 dots along each side. How many dots does it contain in total?", "a": "64", "o": ["64", "32", "16", "56"] },
-        { "b": "Apply", "d": "Hard", "t": "mcq", "m": 1, "q": "A cube picture is built 3 dots long, 3 dots wide and 3 dots high. How many dots does it contain in total?", "a": "27", "o": ["27", "9", "18", "24"] },
-        { "b": "Apply", "d": "Hard", "t": "short_answer", "m": 2, "q": "Describe in words the dot-picture that shows why 15 is a triangular number, stating how many dots are in each row.", "a": "15 dots are arranged in 5 rows with 1, 2, 3, 4 and 5 dots respectively (1+2+3+4+5=15).", "s": [["States 5 rows", 1], ["Gives the correct row counts 1, 2, 3, 4, 5 summing to 15", 1]] },
-        { "b": "Apply", "d": "Hardest", "t": "long_answer", "m": 3, "q": "The number 49 is a square number. Is it also a triangular number? Show your working using the triangular number sequence up to at least 55, and explain your conclusion.", "a": "Triangular numbers near 49 are 45 (the 9th) and 55 (the 10th); 49 is not in this list, so 49 is a square number but not a triangular number.", "s": [["Lists nearby triangular numbers such as 45 and 55", 1], ["Checks 49 against this list", 1], ["Correctly concludes 49 is not triangular", 1]] },
-        { "b": "Analyse", "d": "Hard", "t": "assertion_reason", "m": 1, "q": "Assertion (A): The picture for triangular numbers can also explain why the sum 1+2+3+...+n grows as a staircase. Reason (R): Each new row added to the triangular staircase has exactly one more dot than the row before it.", "a": "Both A and R are true, and R is the correct explanation of A", "o": ["Both A and R are true, and R is the correct explanation of A", "Both A and R are true, but R is not the correct explanation of A", "A is true but R is false", "A is false but R is true"] },
-        { "b": "Analyse", "d": "Hard", "t": "multi_statement", "m": 1, "q": "Consider: (I) Every square number's picture can be split into an L-shaped border and a smaller square inside it. (II) Every triangular number's picture can be split into a smaller triangular number's picture and one extra row. Which is or are correct?", "a": "Both I and II", "o": ["Both I and II", "Only I", "Only II", "Neither I nor II"] },
-        { "b": "Analyse", "d": "Hardest", "t": "long_answer", "m": 3, "q": "Explain, using the idea of an L-shaped border of dots, why removing the outer L-border from the picture of 25 (a 5-by-5 square) leaves the picture of the previous square number, 16. State how many dots are in the L-border you removed.", "a": "The 5-by-5 square picture of 25 can be split into a 4-by-4 square (16 dots) plus an L-shaped border along one side and the bottom with 9 dots; removing this leaves the 16-dot square, and 25-16=9 confirms the border has 9 dots.", "s": [["Identifies that 25 splits into the 4-by-4 square (16) plus a border", 1], ["Explains the border is L-shaped along one side and the bottom", 1], ["Correctly finds the border has 9 dots (25-16)", 1]] },
-        { "b": "Evaluate", "d": "Hard", "t": "short_answer", "m": 2, "q": "A classmate says 'the triangular-number picture and the square-number picture are really the same shape, just drawn differently'. Do you agree? Justify your answer by comparing how 16 dots are arranged as a square with how 15 dots are arranged as a triangular number.", "a": "Disagree -- a square picture of 16 has 4 equal rows of 4 dots each, while a triangular picture of 15 has rows of increasing length 1, 2, 3, 4, 5, forming a staircase; the two arrangements are structurally different even though both are 'number pictures'.", "s": [["Takes a clear position (agree/disagree) with reasoning", 1], ["Correctly contrasts the square arrangement (equal rows) with the triangular arrangement (increasing rows)", 1]] },
-        { "b": "Create", "d": "Hardest", "t": "long_answer", "m": 3, "q": "Design your own dot-picture rule for a new sequence that grows by adding one more dot to each of two opposite sides every step (different from squares, triangles or cubes already studied). Describe the first four terms and give the number of dots in each.", "a": "Sample: Rule -- start with 1 dot; each step adds 2 dots, one on each of two opposite sides, forming a straight line that grows by 2 each time. Terms: 1, 3, 5, 7 dots.", "s": [["States a clear rule for the new picture sequence", 1], ["Gives four terms consistent with the rule", 1], ["The sequence/picture genuinely differs from squares, triangles and cubes already covered", 1]] }
+        {
+          "b": "Remember",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "In the dot-picture for square numbers, how are the dots arranged?",
+          "a": "In a square grid, with the same number of rows as columns",
+          "o": [
+            "In a square grid, with the same number of rows as columns",
+            "In a triangle-shaped staircase",
+            "In a single straight line",
+            "In a 3-dimensional cube"
+          ]
+        },
+        {
+          "b": "Remember",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "In the dot-picture for triangular numbers, how are the dots arranged?",
+          "a": "In a staircase triangle, with one more dot in each row than the row above",
+          "o": [
+            "In a staircase triangle, with one more dot in each row than the row above",
+            "In a perfect square grid",
+            "In a straight line of equal dots",
+            "In a 3-dimensional cube"
+          ]
+        },
+        {
+          "b": "Remember",
+          "d": "Easy",
+          "t": "fill_blank",
+          "m": 1,
+          "q": "36 dots can be arranged as a perfect square of side ____.",
+          "a": "6"
+        },
+        {
+          "b": "Remember",
+          "d": "Hard",
+          "t": "mcq",
+          "m": 1,
+          "q": "Which of these number sequences is pictured using a 3-dimensional arrangement of dots, NOT a flat 2-dimensional one?",
+          "a": "Cubes",
+          "o": [
+            "Cubes",
+            "Squares",
+            "Triangular numbers",
+            "Counting numbers"
+          ],
+          "rev": true
+        },
+        {
+          "b": "Understand",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "Why is 1, 4, 9, 16, 25, ... called the sequence of 'squares'?",
+          "a": "Because each term's dots can be arranged into a square grid",
+          "o": [
+            "Because each term's dots can be arranged into a square grid",
+            "Because each term is an odd number",
+            "Because each term is divisible by 4",
+            "Because the terms increase by a constant amount"
+          ]
+        },
+        {
+          "b": "Understand",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "Why is 1, 3, 6, 10, 15, ... called the sequence of 'triangular numbers'?",
+          "a": "Because each term's dots can be arranged into a triangular staircase shape",
+          "o": [
+            "Because each term's dots can be arranged into a triangular staircase shape",
+            "Because each term is three times the one before it",
+            "Because the terms are all multiples of 3",
+            "Because each term is a prime number"
+          ]
+        },
+        {
+          "b": "Understand",
+          "d": "Easy",
+          "t": "short_answer",
+          "m": 2,
+          "q": "36 is both a triangular number and a square number. Describe briefly, in words, the two different dot-arrangements that show this.",
+          "a": "36 dots can be arranged into a 6-by-6 square, and also into a triangular staircase of 8 rows (1+2+...+8=36).",
+          "s": [
+            [
+              "Describes the square arrangement (6 by 6)",
+              1
+            ],
+            [
+              "Describes the triangular staircase arrangement (rows 1 to 8 adding to 36)",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Understand",
+          "d": "Hard",
+          "t": "mcq",
+          "m": 1,
+          "q": "A picture shows dots arranged in rings of 1, 7, 19, 37 dots around a growing hexagon. This picture represents",
+          "a": "Hexagonal numbers",
+          "o": [
+            "Hexagonal numbers",
+            "Triangular numbers",
+            "Square numbers",
+            "Powers of 3"
+          ]
+        },
+        {
+          "b": "Understand",
+          "d": "Hard",
+          "t": "mcq",
+          "m": 1,
+          "q": "Which statement correctly compares the picture of a cube number with the picture of a square number?",
+          "a": "A cube number's picture needs three directions (length, breadth, height); a square number's picture needs only two",
+          "o": [
+            "A cube number's picture needs three directions (length, breadth, height); a square number's picture needs only two",
+            "Both need exactly two directions to draw",
+            "A cube number's picture needs only one direction; a square number needs two",
+            "Both need three directions to draw"
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Easy",
+          "t": "fill_blank",
+          "m": 1,
+          "q": "The dot-picture of the 5th triangular number has ____ rows, with 1, 2, 3, 4 and 5 dots in successive rows.",
+          "a": "5"
+        },
+        {
+          "b": "Apply",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "Which number can be arranged as a triangular staircase of exactly 4 rows (1+2+3+4 dots)?",
+          "a": "10",
+          "o": [
+            "10",
+            "9",
+            "6",
+            "16"
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Hard",
+          "t": "mcq",
+          "m": 1,
+          "q": "A square grid picture has 8 dots along each side. How many dots does it contain in total?",
+          "a": "64",
+          "o": [
+            "64",
+            "32",
+            "16",
+            "56"
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Hard",
+          "t": "mcq",
+          "m": 1,
+          "q": "A cube picture is built 3 dots long, 3 dots wide and 3 dots high. How many dots does it contain in total?",
+          "a": "27",
+          "o": [
+            "27",
+            "9",
+            "18",
+            "24"
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Hard",
+          "t": "short_answer",
+          "m": 2,
+          "q": "Describe in words the dot-picture that shows why 15 is a triangular number, stating how many dots are in each row.",
+          "a": "15 dots are arranged in 5 rows with 1, 2, 3, 4 and 5 dots respectively (1+2+3+4+5=15).",
+          "s": [
+            [
+              "States 5 rows",
+              1
+            ],
+            [
+              "Gives the correct row counts 1, 2, 3, 4, 5 summing to 15",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Hardest",
+          "t": "long_answer",
+          "m": 3,
+          "q": "The number 49 is a square number. Is it also a triangular number? Show your working using the triangular number sequence up to at least 55, and explain your conclusion.",
+          "a": "Triangular numbers near 49 are 45 (the 9th) and 55 (the 10th); 49 is not in this list, so 49 is a square number but not a triangular number.",
+          "s": [
+            [
+              "Lists nearby triangular numbers such as 45 and 55",
+              1
+            ],
+            [
+              "Checks 49 against this list",
+              1
+            ],
+            [
+              "Correctly concludes 49 is not triangular",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Analyse",
+          "d": "Hard",
+          "t": "assertion_reason",
+          "m": 1,
+          "q": "Assertion (A): The number 36 can be arranged as a dot-picture in a perfect 6-by-6 square. Reason (R): The sum of the first 6 odd numbers, 1+3+5+7+9+11, is 36. Choose the correct option.",
+          "a": "Both A and R are true, but R is not the correct explanation of A",
+          "o": [
+            "Both A and R are true, but R is not the correct explanation of A",
+            "A is false, R is true",
+            "A is true, R is false",
+            "Both A and R are true, and R is the correct explanation of A"
+          ]
+        },
+        {
+          "b": "Analyse",
+          "d": "Hard",
+          "t": "multi_statement",
+          "m": 1,
+          "q": "Consider: (I) Every square number's picture can be split into an L-shaped border and a smaller square inside it. (II) Every triangular number's picture can be split into a smaller triangular number's picture and one extra row. Which is or are correct?",
+          "a": "Both I and II",
+          "o": [
+            "Both I and II",
+            "Only I",
+            "Only II",
+            "Neither I nor II"
+          ]
+        },
+        {
+          "b": "Analyse",
+          "d": "Hardest",
+          "t": "long_answer",
+          "m": 3,
+          "q": "Explain, using the idea of an L-shaped border of dots, why removing the outer L-border from the picture of 25 (a 5-by-5 square) leaves the picture of the previous square number, 16. State how many dots are in the L-border you removed.",
+          "a": "The 5-by-5 square picture of 25 can be split into a 4-by-4 square (16 dots) plus an L-shaped border along one side and the bottom with 9 dots; removing this leaves the 16-dot square, and 25-16=9 confirms the border has 9 dots.",
+          "s": [
+            [
+              "Identifies that 25 splits into the 4-by-4 square (16) plus a border",
+              1
+            ],
+            [
+              "Explains the border is L-shaped along one side and the bottom",
+              1
+            ],
+            [
+              "Correctly finds the border has 9 dots (25-16)",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Evaluate",
+          "d": "Hard",
+          "t": "short_answer",
+          "m": 2,
+          "q": "A classmate says 'the triangular-number picture and the square-number picture are really the same shape, just drawn differently'. Do you agree? Justify your answer by comparing how 16 dots are arranged as a square with how 15 dots are arranged as a triangular number.",
+          "a": "Disagree -- a square picture of 16 has 4 equal rows of 4 dots each, while a triangular picture of 15 has rows of increasing length 1, 2, 3, 4, 5, forming a staircase; the two arrangements are structurally different even though both are 'number pictures'.",
+          "s": [
+            [
+              "Takes a clear position (agree/disagree) with reasoning",
+              1
+            ],
+            [
+              "Correctly contrasts the square arrangement (equal rows) with the triangular arrangement (increasing rows)",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Create",
+          "d": "Hardest",
+          "t": "long_answer",
+          "m": 3,
+          "q": "Design your own dot-picture rule for a new sequence that grows by adding one more dot to each of two opposite sides every step (different from squares, triangles or cubes already studied). Describe the first four terms and give the number of dots in each.",
+          "a": "Sample: Rule -- start with 1 dot; each step adds 2 dots, one on each of two opposite sides, forming a straight line that grows by 2 each time. Terms: 1, 3, 5, 7 dots.",
+          "s": [
+            [
+              "States a clear rule for the new picture sequence",
+              1
+            ],
+            [
+              "Gives four terms consistent with the rule",
+              1
+            ],
+            [
+              "The sequence/picture genuinely differs from squares, triangles and cubes already covered",
+              1
+            ]
+          ]
+        }
       ]
     },
     {
@@ -109,26 +721,311 @@
       "example": "The sum of the first 6 odd numbers, 1+3+5+7+9+11, equals 36, which is 6 squared.",
       "difficulty_base": "Hard",
       "questions": [
-        { "b": "Remember", "d": "Easy", "t": "mcq", "m": 1, "q": "1 + 3 + 5 =", "a": "9", "o": ["9", "8", "15", "6"] },
-        { "b": "Remember", "d": "Easy", "t": "mcq", "m": 1, "q": "1 + 3 + 5 + 7 + 9 =", "a": "25", "o": ["25", "16", "24", "20"] },
-        { "b": "Remember", "d": "Easy", "t": "fill_blank", "m": 1, "q": "1 + 3 + 5 + 7 = ____", "a": "16" },
-        { "b": "Remember", "d": "Hard", "t": "mcq", "m": 1, "q": "Which of these sums does NOT equal a perfect square?", "a": "1 + 3 + 5 + 6", "o": ["1 + 3 + 5 + 6", "1 + 3 + 5 + 7", "1 + 3", "1 + 3 + 5"], "rev": true },
-        { "b": "Understand", "d": "Easy", "t": "mcq", "m": 1, "q": "The sum of the first n odd numbers, starting at 1, always equals", "a": "n squared", "o": ["n squared", "n cubed", "2 times n", "n plus 1"] },
-        { "b": "Understand", "d": "Easy", "t": "mcq", "m": 1, "q": "Why does 1 + 3 + 5 + 7 + 9 equal a perfect square?", "a": "Because it is the sum of the first 5 consecutive odd numbers starting at 1", "o": ["Because it is the sum of the first 5 consecutive odd numbers starting at 1", "Because 5 odd numbers are always multiples of 5", "Because the numbers happen to add up that way by coincidence", "Because odd numbers are always perfect squares"] },
-        { "b": "Understand", "d": "Easy", "t": "short_answer", "m": 2, "q": "State, in your own words, the general rule connecting the sum of consecutive odd numbers (starting from 1) to square numbers.", "a": "Adding up the first n odd numbers, starting from 1, always gives the square number n squared.", "s": [["States the sum of the first n odd numbers equals n squared", 1], ["Mentions the sum starts from 1 and uses consecutive odd numbers", 1]] },
-        { "b": "Understand", "d": "Hard", "t": "mcq", "m": 1, "q": "A picture shows a square grid being built up by adding L-shaped layers of dots. What do the sizes of the successive L-shaped layers represent?", "a": "The consecutive odd numbers 1, 3, 5, 7, ...", "o": ["The consecutive odd numbers 1, 3, 5, 7, ...", "The consecutive even numbers 2, 4, 6, 8, ...", "The consecutive counting numbers 1, 2, 3, 4, ...", "The consecutive triangular numbers 1, 3, 6, 10, ..."] },
-        { "b": "Understand", "d": "Hard", "t": "mcq", "m": 1, "q": "If the sum of the first n odd numbers is n squared, what is the sum of the first 6 odd numbers?", "a": "36", "o": ["36", "30", "21", "42"] },
-        { "b": "Apply", "d": "Easy", "t": "fill_blank", "m": 1, "q": "The sum of the first 10 odd numbers (1+3+5+...+19) is ____.", "a": "100" },
-        { "b": "Apply", "d": "Easy", "t": "mcq", "m": 1, "q": "1 + 3 + 5 + 7 + 9 + 11 =", "a": "36", "o": ["36", "35", "30", "42"] },
-        { "b": "Apply", "d": "Hard", "t": "mcq", "m": 1, "q": "The sum of the first 100 odd numbers, starting from 1, is", "a": "10000", "o": ["10000", "100", "1000", "5000"] },
-        { "b": "Apply", "d": "Hard", "t": "mcq", "m": 1, "q": "Which sum of consecutive odd numbers (starting at 1) gives 49?", "a": "1+3+5+7+9+11+13", "o": ["1+3+5+7+9+11+13", "1+3+5+7+9+11", "1+3+5+7+9", "1+3+5+7+9+11+13+15"] },
-        { "b": "Apply", "d": "Hard", "t": "short_answer", "m": 2, "q": "Without adding term by term, find 1+3+5+7+...+25 (the sum of all odd numbers from 1 to 25), and show your method.", "a": "There are 13 odd numbers from 1 to 25, so the sum is 13 squared = 169.", "s": [["Counts 13 odd numbers from 1 to 25", 1], ["Computes the sum as 13 squared = 169", 1]] },
-        { "b": "Apply", "d": "Hardest", "t": "long_answer", "m": 3, "q": "Find the sum of all odd numbers from 1 to 39, explaining how you used the odd-numbers-to-squares rule instead of adding every term.", "a": "There are 20 odd numbers from 1 to 39 (since 39 = 2x20-1). By the rule, their sum is 20 squared = 400.", "s": [["Correctly counts 20 odd numbers up to 39", 1], ["States/uses the rule sum = n squared", 1], ["Computes the final answer 400", 1]] },
-        { "b": "Analyse", "d": "Hard", "t": "assertion_reason", "m": 1, "q": "Assertion (A): 1+3+5+7+9+11+13+15 = 64. Reason (R): The sum of the first n odd numbers is n squared, and here n = 8.", "a": "Both A and R are true, and R is the correct explanation of A", "o": ["Both A and R are true, and R is the correct explanation of A", "Both A and R are true, but R is not the correct explanation of A", "A is true but R is false", "A is false but R is true"] },
-        { "b": "Analyse", "d": "Hard", "t": "multi_statement", "m": 1, "q": "Consider: (I) 1+3+5+...+17 (the first 9 odd numbers) equals 81. (II) Adding one more odd number, 19, to this sum gives the 10th square number, 100. Which is or are correct?", "a": "Both I and II", "o": ["Both I and II", "Only I", "Only II", "Neither I nor II"] },
-        { "b": "Analyse", "d": "Hardest", "t": "long_answer", "m": 3, "q": "A student computes 1+3+5+...+21 and gets 100. Check whether this is correct by counting how many odd numbers are being added, and correct the error if there is one.", "a": "There are 11 odd numbers from 1 to 21, so the correct sum is 11 squared = 121, not 100; the student's answer is wrong.", "s": [["Correctly counts 11 odd numbers up to 21", 1], ["States the correct sum should be 11 squared", 1], ["Identifies 121 as the correct value and that 100 was wrong", 1]] },
-        { "b": "Evaluate", "d": "Hard", "t": "short_answer", "m": 2, "q": "A classmate says: 'Since 1+3+5+7=16 and 16 is a perfect square, every sum of four numbers is a perfect square.' Explain what is wrong with this reasoning.", "a": "The rule only applies to the sum of four consecutive odd numbers starting from 1; summing any other four numbers, e.g. 1+2+3+4=10, does not generally give a perfect square.", "s": [["Identifies that the rule needs consecutive odd numbers starting from 1, not any four numbers", 1], ["Gives a counter-example, e.g. 1+2+3+4=10, which is not a perfect square", 1]] },
-        { "b": "Create", "d": "Hardest", "t": "long_answer", "m": 3, "q": "Using the odd-numbers-to-squares idea, design a similar 'sum rule' for a different sequence from this chapter that also produces perfect squares, and check it works for at least the first three terms.", "a": "Sample: adding the counting numbers 'up and down' also gives squares -- 1; 1+2+1=4; 1+2+3+2+1=9.", "s": [["Proposes a rule/sequence different from consecutive odd numbers", 1], ["Shows the sums for at least three terms", 1], ["Correctly verifies the results are perfect squares", 1]] }
+        {
+          "b": "Remember",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "1 + 3 + 5 =",
+          "a": "9",
+          "o": [
+            "9",
+            "8",
+            "15",
+            "6"
+          ]
+        },
+        {
+          "b": "Remember",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "1 + 3 + 5 + 7 + 9 =",
+          "a": "25",
+          "o": [
+            "25",
+            "16",
+            "24",
+            "20"
+          ]
+        },
+        {
+          "b": "Remember",
+          "d": "Easy",
+          "t": "fill_blank",
+          "m": 1,
+          "q": "1 + 3 + 5 + 7 = ____",
+          "a": "16"
+        },
+        {
+          "b": "Remember",
+          "d": "Hard",
+          "t": "mcq",
+          "m": 1,
+          "q": "Which of these sums does NOT equal a perfect square?",
+          "a": "1 + 3 + 5 + 6",
+          "o": [
+            "1 + 3 + 5 + 6",
+            "1 + 3 + 5 + 7",
+            "1 + 3",
+            "1 + 3 + 5"
+          ],
+          "rev": true
+        },
+        {
+          "b": "Understand",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "The sum of the first n odd numbers, starting at 1, always equals",
+          "a": "n squared",
+          "o": [
+            "n squared",
+            "n cubed",
+            "2 times n",
+            "n plus 1"
+          ]
+        },
+        {
+          "b": "Understand",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "Why does 1 + 3 + 5 + 7 + 9 equal a perfect square?",
+          "a": "Because it is the sum of the first 5 consecutive odd numbers starting at 1",
+          "o": [
+            "Because it is the sum of the first 5 consecutive odd numbers starting at 1",
+            "Because 5 odd numbers are always multiples of 5",
+            "Because the numbers happen to add up that way by coincidence",
+            "Because odd numbers are always perfect squares"
+          ]
+        },
+        {
+          "b": "Understand",
+          "d": "Easy",
+          "t": "short_answer",
+          "m": 2,
+          "q": "State, in your own words, the general rule connecting the sum of consecutive odd numbers (starting from 1) to square numbers.",
+          "a": "Adding up the first n odd numbers, starting from 1, always gives the square number n squared.",
+          "s": [
+            [
+              "States the sum of the first n odd numbers equals n squared",
+              1
+            ],
+            [
+              "Mentions the sum starts from 1 and uses consecutive odd numbers",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Understand",
+          "d": "Hard",
+          "t": "mcq",
+          "m": 1,
+          "q": "A picture shows a square grid being built up by adding L-shaped layers of dots. What do the sizes of the successive L-shaped layers represent?",
+          "a": "The consecutive odd numbers 1, 3, 5, 7, ...",
+          "o": [
+            "The consecutive odd numbers 1, 3, 5, 7, ...",
+            "The consecutive even numbers 2, 4, 6, 8, ...",
+            "The consecutive counting numbers 1, 2, 3, 4, ...",
+            "The consecutive triangular numbers 1, 3, 6, 10, ..."
+          ]
+        },
+        {
+          "b": "Understand",
+          "d": "Hard",
+          "t": "mcq",
+          "m": 1,
+          "q": "If the sum of the first n odd numbers is n squared, what is the sum of the first 6 odd numbers?",
+          "a": "36",
+          "o": [
+            "36",
+            "30",
+            "21",
+            "42"
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Easy",
+          "t": "fill_blank",
+          "m": 1,
+          "q": "The sum of the first 10 odd numbers (1+3+5+...+19) is ____.",
+          "a": "100"
+        },
+        {
+          "b": "Apply",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "1 + 3 + 5 + 7 + 9 + 11 =",
+          "a": "36",
+          "o": [
+            "36",
+            "35",
+            "30",
+            "42"
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Hard",
+          "t": "mcq",
+          "m": 1,
+          "q": "The sum of the first 100 odd numbers, starting from 1, is",
+          "a": "10000",
+          "o": [
+            "10000",
+            "100",
+            "1000",
+            "5000"
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Hard",
+          "t": "mcq",
+          "m": 1,
+          "q": "Which sum of consecutive odd numbers (starting at 1) gives 49?",
+          "a": "1+3+5+7+9+11+13",
+          "o": [
+            "1+3+5+7+9+11+13",
+            "1+3+5+7+9+11",
+            "1+3+5+7+9",
+            "1+3+5+7+9+11+13+15"
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Hard",
+          "t": "short_answer",
+          "m": 2,
+          "q": "Without adding term by term, find 1+3+5+7+...+25 (the sum of all odd numbers from 1 to 25), and show your method.",
+          "a": "There are 13 odd numbers from 1 to 25, so the sum is 13 squared = 169.",
+          "s": [
+            [
+              "Counts 13 odd numbers from 1 to 25",
+              1
+            ],
+            [
+              "Computes the sum as 13 squared = 169",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Hardest",
+          "t": "long_answer",
+          "m": 3,
+          "q": "Find the sum of all odd numbers from 1 to 39, explaining how you used the odd-numbers-to-squares rule instead of adding every term.",
+          "a": "There are 20 odd numbers from 1 to 39 (since 39 = 2x20-1). By the rule, their sum is 20 squared = 400.",
+          "s": [
+            [
+              "Correctly counts 20 odd numbers up to 39",
+              1
+            ],
+            [
+              "States/uses the rule sum = n squared",
+              1
+            ],
+            [
+              "Computes the final answer 400",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Analyse",
+          "d": "Hard",
+          "t": "assertion_reason",
+          "m": 1,
+          "q": "Assertion (A): 1 + 3 + 5 + 7 + 9 = 25. Reason (R): The sum of the first n odd numbers, starting at 1, always equals n cubed. Choose the correct option.",
+          "a": "A is true, R is false",
+          "o": [
+            "A is true, R is false",
+            "A is false, R is true",
+            "Both A and R are true, and R is the correct explanation of A",
+            "Both A and R are true, but R is not the correct explanation of A"
+          ]
+        },
+        {
+          "b": "Analyse",
+          "d": "Hard",
+          "t": "multi_statement",
+          "m": 1,
+          "q": "Consider: (I) 1+3+5+...+17 (the first 9 odd numbers) equals 81. (II) Adding one more odd number, 19, to this sum gives the 10th square number, 100. Which is or are correct?",
+          "a": "Both I and II",
+          "o": [
+            "Both I and II",
+            "Only I",
+            "Only II",
+            "Neither I nor II"
+          ]
+        },
+        {
+          "b": "Analyse",
+          "d": "Hardest",
+          "t": "long_answer",
+          "m": 3,
+          "q": "A student computes 1+3+5+...+21 and gets 100. Check whether this is correct by counting how many odd numbers are being added, and correct the error if there is one.",
+          "a": "There are 11 odd numbers from 1 to 21, so the correct sum is 11 squared = 121, not 100; the student's answer is wrong.",
+          "s": [
+            [
+              "Correctly counts 11 odd numbers up to 21",
+              1
+            ],
+            [
+              "States the correct sum should be 11 squared",
+              1
+            ],
+            [
+              "Identifies 121 as the correct value and that 100 was wrong",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Evaluate",
+          "d": "Hard",
+          "t": "short_answer",
+          "m": 2,
+          "q": "A classmate says: 'Since 1+3+5+7=16 and 16 is a perfect square, every sum of four numbers is a perfect square.' Explain what is wrong with this reasoning.",
+          "a": "The rule only applies to the sum of four consecutive odd numbers starting from 1; summing any other four numbers, e.g. 1+2+3+4=10, does not generally give a perfect square.",
+          "s": [
+            [
+              "Identifies that the rule needs consecutive odd numbers starting from 1, not any four numbers",
+              1
+            ],
+            [
+              "Gives a counter-example, e.g. 1+2+3+4=10, which is not a perfect square",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Create",
+          "d": "Hardest",
+          "t": "long_answer",
+          "m": 3,
+          "q": "Using the odd-numbers-to-squares idea, design a similar 'sum rule' for a different sequence from this chapter that also produces perfect squares, and check it works for at least the first three terms.",
+          "a": "Sample: adding the counting numbers 'up and down' also gives squares -- 1; 1+2+1=4; 1+2+3+2+1=9.",
+          "s": [
+            [
+              "Proposes a rule/sequence different from consecutive odd numbers",
+              1
+            ],
+            [
+              "Shows the sums for at least three terms",
+              1
+            ],
+            [
+              "Correctly verifies the results are perfect squares",
+              1
+            ]
+          ]
+        }
       ]
     },
     {
@@ -140,26 +1037,311 @@
       "example": "6 and 10 are consecutive triangular numbers, and 6+10=16=4 squared.",
       "difficulty_base": "Hard",
       "questions": [
-        { "b": "Remember", "d": "Easy", "t": "mcq", "m": 1, "q": "3 + 6 (two consecutive triangular numbers) equals", "a": "9, a perfect square", "o": ["9, a perfect square", "9, a perfect cube", "8, a perfect square", "10, a perfect square"] },
-        { "b": "Remember", "d": "Easy", "t": "mcq", "m": 1, "q": "1 + 2 + 1 equals", "a": "4", "o": ["4", "3", "5", "2"] },
-        { "b": "Remember", "d": "Easy", "t": "fill_blank", "m": 1, "q": "6 times the triangular number 3, plus 1, that is (6 x 3) + 1, equals ____.", "a": "19" },
-        { "b": "Remember", "d": "Hard", "t": "mcq", "m": 1, "q": "Which of these is NOT a hexagonal number formed by the rule 6 times a triangular number plus 1?", "a": "20", "o": ["20", "7", "19", "37"], "rev": true },
-        { "b": "Understand", "d": "Easy", "t": "mcq", "m": 1, "q": "Adding two consecutive triangular numbers, such as 6 and 10, always gives", "a": "a perfect square", "o": ["a perfect square", "a perfect cube", "an odd number", "a triangular number"] },
-        { "b": "Understand", "d": "Easy", "t": "mcq", "m": 1, "q": "Adding the counting numbers 'up and down', like 1+2+3+2+1, always gives", "a": "a perfect square", "o": ["a perfect square", "a perfect cube", "a triangular number", "a hexagonal number"] },
-        { "b": "Understand", "d": "Easy", "t": "short_answer", "m": 2, "q": "Explain in words how a hexagonal number is obtained from a triangular number.", "a": "A hexagonal number is obtained by multiplying a triangular number by 6 and adding 1.", "s": [["States multiply the triangular number by 6", 1], ["States add 1 to the result", 1]] },
-        { "b": "Understand", "d": "Hard", "t": "mcq", "m": 1, "q": "Starting to add up powers of 2 from 1 (1, 1+2, 1+2+4, ...) and then adding 1 to each running total produces", "a": "the next power of 2 each time", "o": ["the next power of 2 each time", "the previous power of 2 each time", "a sequence of odd numbers", "a sequence of triangular numbers"] },
-        { "b": "Understand", "d": "Hard", "t": "mcq", "m": 1, "q": "Adding up hexagonal numbers one by one, starting 1, 1+7, 1+7+19, ..., produces", "a": "the sequence of perfect cubes", "o": ["the sequence of perfect cubes", "the sequence of perfect squares", "the sequence of triangular numbers", "the sequence of powers of 2"] },
-        { "b": "Apply", "d": "Easy", "t": "fill_blank", "m": 1, "q": "1 + 2 + 3 + 4 + 3 + 2 + 1 (counting numbers up and down to 4 and back) equals ____.", "a": "16" },
-        { "b": "Apply", "d": "Easy", "t": "mcq", "m": 1, "q": "The next consecutive-triangular-number pair after (6, 10) is", "a": "(10, 15)", "o": ["(10, 15)", "(15, 21)", "(10, 21)", "(15, 15)"] },
-        { "b": "Apply", "d": "Hard", "t": "mcq", "m": 1, "q": "Using 6 times a triangular number plus 1, the hexagonal number that comes from the triangular number 15 is", "a": "91", "o": ["91", "90", "96", "85"] },
-        { "b": "Apply", "d": "Hard", "t": "mcq", "m": 1, "q": "1 + 2 + 4 + 8, then adding 1, gives", "a": "16", "o": ["16", "15", "14", "32"] },
-        { "b": "Apply", "d": "Hard", "t": "short_answer", "m": 2, "q": "Find the sum of the hexagonal numbers 1, 7 and 19, and name the type of number this sum belongs to.", "a": "1+7+19 = 27, which is a perfect cube (3 cubed).", "s": [["Computes the sum as 27", 1], ["Identifies 27 as a perfect cube", 1]] },
-        { "b": "Apply", "d": "Hardest", "t": "long_answer", "m": 3, "q": "Find the sum of the 6th and 7th triangular numbers, and state which square number it equals.", "a": "The 6th and 7th triangular numbers are 21 and 28; their sum is 21+28=49, which is 7 squared.", "s": [["Correctly identifies the 6th and 7th triangular numbers as 21 and 28", 1], ["Adds them to get 49", 1], ["States 49 is 7 squared", 1]] },
-        { "b": "Analyse", "d": "Hard", "t": "assertion_reason", "m": 1, "q": "Assertion (A): Adding the counting numbers up and down to 5 and back, 1+2+3+4+5+4+3+2+1, gives 25. Reason (R): This sum equals the square of the largest number used, which is 5.", "a": "Both A and R are true, and R is the correct explanation of A", "o": ["Both A and R are true, and R is the correct explanation of A", "Both A and R are true, but R is not the correct explanation of A", "A is true but R is false", "A is false but R is true"] },
-        { "b": "Analyse", "d": "Hard", "t": "multi_statement", "m": 1, "q": "Consider: (I) 6 times any triangular number, plus 1, always gives an odd number. (II) 6 times any triangular number, plus 1, always gives a hexagonal number. Which is or are correct?", "a": "Both I and II", "o": ["Both I and II", "Only I", "Only II", "Neither I nor II"] },
-        { "b": "Analyse", "d": "Hardest", "t": "long_answer", "m": 3, "q": "Two different relations in this chapter both produce square numbers: adding consecutive odd numbers, and adding consecutive triangular numbers. Show both relations for the square number 16, and explain how they connect the same result through different sequences.", "a": "1+3+5+7=16 (four consecutive odd numbers), and also 6+10=16 (the 3rd and 4th consecutive triangular numbers). Both are different additive routes to the same square number 16, showing several sequences are secretly linked through addition.", "s": [["Shows the odd-number sum 1+3+5+7=16", 1], ["Shows the triangular-number sum 6+10=16", 1], ["Explains both are different routes to the same square, connecting the sequences", 1]] },
-        { "b": "Evaluate", "d": "Hard", "t": "short_answer", "m": 2, "q": "A classmate claims 'hexagonal numbers must always be even, since they come from doubling something'. Evaluate this claim using the hexagonal numbers 7, 19, 37.", "a": "The claim is false -- 7, 19 and 37 are all odd, since a hexagonal number is 6 times a triangular number (always even) plus 1 (which makes it odd).", "s": [["States the claim is false, with hexagonal numbers 7, 19, 37 as evidence", 1], ["Explains why: 6 times a triangular number is even, and adding 1 makes it odd", 1]] },
-        { "b": "Create", "d": "Hardest", "t": "long_answer", "m": 3, "q": "Create your own additive relation between two sequences from this chapter (different from the ones already given) and verify it for the first three terms.", "a": "Sample relation: the sum of the first n cube numbers equals the square of the nth triangular number. Check: 1st term: 1 = 1 squared (T1=1). 2nd: 1+8=9=3 squared (T2=3). 3rd: 1+8+27=36=6 squared (T3=6).", "s": [["States a genuine new additive relation between two sequences from the chapter", 1], ["Shows correct verification for the first three terms", 1], ["The relation and verification are mathematically correct", 1]] }
+        {
+          "b": "Remember",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "3 + 6 (two consecutive triangular numbers) equals",
+          "a": "9, a perfect square",
+          "o": [
+            "9, a perfect square",
+            "9, a perfect cube",
+            "8, a perfect square",
+            "10, a perfect square"
+          ]
+        },
+        {
+          "b": "Remember",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "1 + 2 + 1 equals",
+          "a": "4",
+          "o": [
+            "4",
+            "3",
+            "5",
+            "2"
+          ]
+        },
+        {
+          "b": "Remember",
+          "d": "Easy",
+          "t": "fill_blank",
+          "m": 1,
+          "q": "6 times the triangular number 3, plus 1, that is (6 x 3) + 1, equals ____.",
+          "a": "19"
+        },
+        {
+          "b": "Remember",
+          "d": "Hard",
+          "t": "mcq",
+          "m": 1,
+          "q": "Which of these is NOT a hexagonal number formed by the rule 6 times a triangular number plus 1?",
+          "a": "20",
+          "o": [
+            "20",
+            "7",
+            "19",
+            "37"
+          ],
+          "rev": true
+        },
+        {
+          "b": "Understand",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "Adding two consecutive triangular numbers, such as 6 and 10, always gives",
+          "a": "a perfect square",
+          "o": [
+            "a perfect square",
+            "a perfect cube",
+            "an odd number",
+            "a triangular number"
+          ]
+        },
+        {
+          "b": "Understand",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "Adding the counting numbers 'up and down', like 1+2+3+2+1, always gives",
+          "a": "a perfect square",
+          "o": [
+            "a perfect square",
+            "a perfect cube",
+            "a triangular number",
+            "a hexagonal number"
+          ]
+        },
+        {
+          "b": "Understand",
+          "d": "Easy",
+          "t": "short_answer",
+          "m": 2,
+          "q": "Explain in words how a hexagonal number is obtained from a triangular number.",
+          "a": "A hexagonal number is obtained by multiplying a triangular number by 6 and adding 1.",
+          "s": [
+            [
+              "States multiply the triangular number by 6",
+              1
+            ],
+            [
+              "States add 1 to the result",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Understand",
+          "d": "Hard",
+          "t": "mcq",
+          "m": 1,
+          "q": "Starting to add up powers of 2 from 1 (1, 1+2, 1+2+4, ...) and then adding 1 to each running total produces",
+          "a": "the next power of 2 each time",
+          "o": [
+            "the next power of 2 each time",
+            "the previous power of 2 each time",
+            "a sequence of odd numbers",
+            "a sequence of triangular numbers"
+          ]
+        },
+        {
+          "b": "Understand",
+          "d": "Hard",
+          "t": "mcq",
+          "m": 1,
+          "q": "Adding up hexagonal numbers one by one, starting 1, 1+7, 1+7+19, ..., produces",
+          "a": "the sequence of perfect cubes",
+          "o": [
+            "the sequence of perfect cubes",
+            "the sequence of perfect squares",
+            "the sequence of triangular numbers",
+            "the sequence of powers of 2"
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Easy",
+          "t": "fill_blank",
+          "m": 1,
+          "q": "1 + 2 + 3 + 4 + 3 + 2 + 1 (counting numbers up and down to 4 and back) equals ____.",
+          "a": "16"
+        },
+        {
+          "b": "Apply",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "The next consecutive-triangular-number pair after (6, 10) is",
+          "a": "(10, 15)",
+          "o": [
+            "(10, 15)",
+            "(15, 21)",
+            "(10, 21)",
+            "(15, 15)"
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Hard",
+          "t": "mcq",
+          "m": 1,
+          "q": "Using 6 times a triangular number plus 1, the hexagonal number that comes from the triangular number 15 is",
+          "a": "91",
+          "o": [
+            "91",
+            "90",
+            "96",
+            "85"
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Hard",
+          "t": "mcq",
+          "m": 1,
+          "q": "1 + 2 + 4 + 8, then adding 1, gives",
+          "a": "16",
+          "o": [
+            "16",
+            "15",
+            "14",
+            "32"
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Hard",
+          "t": "short_answer",
+          "m": 2,
+          "q": "Find the sum of the hexagonal numbers 1, 7 and 19, and name the type of number this sum belongs to.",
+          "a": "1+7+19 = 27, which is a perfect cube (3 cubed).",
+          "s": [
+            [
+              "Computes the sum as 27",
+              1
+            ],
+            [
+              "Identifies 27 as a perfect cube",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Hardest",
+          "t": "long_answer",
+          "m": 3,
+          "q": "Find the sum of the 6th and 7th triangular numbers, and state which square number it equals.",
+          "a": "The 6th and 7th triangular numbers are 21 and 28; their sum is 21+28=49, which is 7 squared.",
+          "s": [
+            [
+              "Correctly identifies the 6th and 7th triangular numbers as 21 and 28",
+              1
+            ],
+            [
+              "Adds them to get 49",
+              1
+            ],
+            [
+              "States 49 is 7 squared",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Analyse",
+          "d": "Hard",
+          "t": "assertion_reason",
+          "m": 1,
+          "q": "Assertion (A): 10 and 15, two consecutive triangular numbers, add up to 36. Reason (R): Two consecutive triangular numbers always add up to a square number. Choose the correct option.",
+          "a": "A is false, R is true",
+          "o": [
+            "A is false, R is true",
+            "A is true, R is false",
+            "Both A and R are true, and R is the correct explanation of A",
+            "Both A and R are true, but R is not the correct explanation of A"
+          ]
+        },
+        {
+          "b": "Analyse",
+          "d": "Hard",
+          "t": "multi_statement",
+          "m": 1,
+          "q": "Consider: (I) 6 times any triangular number, plus 1, always gives an odd number. (II) 6 times any triangular number, plus 1, always gives a hexagonal number. Which is or are correct?",
+          "a": "Both I and II",
+          "o": [
+            "Both I and II",
+            "Only I",
+            "Only II",
+            "Neither I nor II"
+          ]
+        },
+        {
+          "b": "Analyse",
+          "d": "Hardest",
+          "t": "long_answer",
+          "m": 3,
+          "q": "Two different relations in this chapter both produce square numbers: adding consecutive odd numbers, and adding consecutive triangular numbers. Show both relations for the square number 16, and explain how they connect the same result through different sequences.",
+          "a": "1+3+5+7=16 (four consecutive odd numbers), and also 6+10=16 (the 3rd and 4th consecutive triangular numbers). Both are different additive routes to the same square number 16, showing several sequences are secretly linked through addition.",
+          "s": [
+            [
+              "Shows the odd-number sum 1+3+5+7=16",
+              1
+            ],
+            [
+              "Shows the triangular-number sum 6+10=16",
+              1
+            ],
+            [
+              "Explains both are different routes to the same square, connecting the sequences",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Evaluate",
+          "d": "Hard",
+          "t": "short_answer",
+          "m": 2,
+          "q": "A classmate claims 'hexagonal numbers must always be even, since they come from doubling something'. Evaluate this claim using the hexagonal numbers 7, 19, 37.",
+          "a": "The claim is false -- 7, 19 and 37 are all odd, since a hexagonal number is 6 times a triangular number (always even) plus 1 (which makes it odd).",
+          "s": [
+            [
+              "States the claim is false, with hexagonal numbers 7, 19, 37 as evidence",
+              1
+            ],
+            [
+              "Explains why: 6 times a triangular number is even, and adding 1 makes it odd",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Create",
+          "d": "Hardest",
+          "t": "long_answer",
+          "m": 3,
+          "q": "Create your own additive relation between two sequences from this chapter (different from the ones already given) and verify it for the first three terms.",
+          "a": "Sample relation: the sum of the first n cube numbers equals the square of the nth triangular number. Check: 1st term: 1 = 1 squared (T1=1). 2nd: 1+8=9=3 squared (T2=3). 3rd: 1+8+27=36=6 squared (T3=6).",
+          "s": [
+            [
+              "States a genuine new additive relation between two sequences from the chapter",
+              1
+            ],
+            [
+              "Shows correct verification for the first three terms",
+              1
+            ],
+            [
+              "The relation and verification are mathematically correct",
+              1
+            ]
+          ]
+        }
       ]
     },
     {
@@ -171,26 +1353,311 @@
       "example": "The regular-polygon sequence goes triangle, quadrilateral, pentagon, hexagon, ... -- one more side each time.",
       "difficulty_base": "Easy",
       "questions": [
-        { "b": "Remember", "d": "Easy", "t": "mcq", "m": 1, "q": "The shape sequence that starts with a triangle, then a quadrilateral, pentagon, hexagon, ... is called", "a": "Regular polygons", "o": ["Regular polygons", "Complete graphs", "Stacked triangles", "Koch Snowflake"] },
-        { "b": "Remember", "d": "Easy", "t": "mcq", "m": 1, "q": "In a 'complete graph', every dot is joined to", "a": "every other dot by a line", "o": ["every other dot by a line", "only its neighbouring dot", "the centre dot only", "no other dot"] },
-        { "b": "Remember", "d": "Easy", "t": "fill_blank", "m": 1, "q": "The regular polygon with 5 sides is called a ____.", "a": "pentagon" },
-        { "b": "Remember", "d": "Hard", "t": "mcq", "m": 1, "q": "Which of these is NOT one of the shape sequences studied in this chapter?", "a": "Symmetric flowers", "o": ["Symmetric flowers", "Stacked Squares", "Koch Snowflake", "Complete Graphs"], "rev": true },
-        { "b": "Understand", "d": "Easy", "t": "mcq", "m": 1, "q": "Why is the 3-sided shape in this sequence called a 'regular' triangle?", "a": "Because all its sides are equal length and all its angles are equal", "o": ["Because all its sides are equal length and all its angles are equal", "Because it is the first shape in the sequence", "Because it has an odd number of sides", "Because it cannot be divided into smaller shapes"] },
-        { "b": "Understand", "d": "Easy", "t": "mcq", "m": 1, "q": "What happens to the number of sides as you move along the regular-polygon sequence (triangle, quadrilateral, pentagon, ...)?", "a": "It increases by 1 at each step", "o": ["It increases by 1 at each step", "It doubles at each step", "It stays the same", "It decreases by 1 at each step"] },
-        { "b": "Understand", "d": "Easy", "t": "short_answer", "m": 2, "q": "Describe, in your own words, how the Koch Snowflake sequence is built from one step to the next.", "a": "At each step, every straight line segment in the shape is replaced by a bent 'speed bump' shape, making the outline more jagged and detailed.", "s": [["Describes that each straight segment is replaced", 1], ["Mentions the replacement makes a bend/'speed bump' shape", 1]] },
-        { "b": "Understand", "d": "Hard", "t": "mcq", "m": 1, "q": "How does the complete graph sequence K2, K3, K4, K5, ... grow from one term to the next?", "a": "One more dot is added, and it is joined by a new line to every dot already present", "o": ["One more dot is added, and it is joined by a new line to every dot already present", "One more dot is added but no new lines are drawn", "The number of dots stays the same but more lines are added", "One dot is removed each time"] },
-        { "b": "Understand", "d": "Hard", "t": "mcq", "m": 1, "q": "In the 'Stacked Squares' shape sequence, how does each shape relate to the one before it?", "a": "A new layer of small squares is added so the whole picture stays a bigger square", "o": ["A new layer of small squares is added so the whole picture stays a bigger square", "A new layer is added so the whole picture becomes a triangle", "One small square is removed each time", "The squares get smaller each time"] },
-        { "b": "Apply", "d": "Easy", "t": "fill_blank", "m": 1, "q": "The regular polygon after octagon (8 sides) and before decagon (10 sides) is the ____ (9 sides).", "a": "nonagon" },
-        { "b": "Apply", "d": "Easy", "t": "mcq", "m": 1, "q": "K4 (a complete graph on 4 dots) has how many connecting lines?", "a": "6", "o": ["6", "4", "8", "5"] },
-        { "b": "Apply", "d": "Hard", "t": "mcq", "m": 1, "q": "How many connecting lines does K6 (a complete graph on 6 dots) have?", "a": "15", "o": ["15", "12", "6", "30"] },
-        { "b": "Apply", "d": "Hard", "t": "mcq", "m": 1, "q": "What is the number of sides of the regular polygon that comes right after the decagon (10-sided polygon) in the sequence?", "a": "11", "o": ["11", "12", "9", "10"] },
-        { "b": "Apply", "d": "Hard", "t": "short_answer", "m": 2, "q": "The Koch Snowflake has 3, 12, 48, 192, ... total line segments for its 1st, 2nd, 3rd and 4th shapes. Find how many more segments the 4th shape has than the 3rd.", "a": "The 3rd shape has 48 segments and the 4th has 192 segments, so the 4th shape has 192-48=144 more straight-line segments than the 3rd.", "s": [["Correctly reads the counts 48 and 192 for the 3rd and 4th shapes", 1], ["Computes the difference correctly as 144", 1]] },
-        { "b": "Apply", "d": "Hardest", "t": "long_answer", "m": 3, "q": "The complete graph sequence has 1, 3, 6, 10, 15, ... lines for K2, K3, K4, K5, K6. Predict the number of lines in K7 without drawing it, and explain the pattern you used.", "a": "The number of lines follows the triangular number sequence; the next triangular number after 15 is 21, so K7 has 21 lines.", "s": [["Recognises the line-counts follow the triangular number sequence", 1], ["States the method: use the next triangular number after 15", 1], ["Gives the correct answer 21", 1]] },
-        { "b": "Analyse", "d": "Hard", "t": "assertion_reason", "m": 1, "q": "Assertion (A): In the regular-polygon shape sequence, the shape after the hexagon (6 sides) is the heptagon (7 sides). Reason (R): Each shape in this sequence has exactly one more side than the shape before it.", "a": "Both A and R are true, and R is the correct explanation of A", "o": ["Both A and R are true, and R is the correct explanation of A", "Both A and R are true, but R is not the correct explanation of A", "A is true but R is false", "A is false but R is true"] },
-        { "b": "Analyse", "d": "Hard", "t": "multi_statement", "m": 1, "q": "Consider: (I) The complete graph sequence K2, K3, K4, ... adds one dot at every step. (II) The complete graph sequence adds the same number of new lines at every step. Which is or are correct?", "a": "Only I", "o": ["Only I", "Only II", "Both I and II", "Neither I nor II"] },
-        { "b": "Analyse", "d": "Hardest", "t": "long_answer", "m": 3, "q": "Compare how quickly the number of sides grows in the regular-polygon sequence with how quickly the number of lines grows in the complete-graph sequence, as you move from the 3rd to the 6th term of each. Which grows faster, and why?", "a": "Regular polygons: from the 3rd term (pentagon, 5 sides) to the 6th term (octagon, 8 sides), sides go from 5 to 8, an increase of 3. Complete graphs: from the 3rd term (K4, 6 lines) to the 6th term (K7, 21 lines), lines go from 6 to 21, an increase of 15. The complete-graph line count grows much faster because it follows the triangular numbers, which grow faster than the simple add-1 pattern of polygon sides.", "s": [["Correctly compares the polygon side counts (5 to 8)", 1], ["Correctly compares the complete graph line counts (6 to 21)", 1], ["Explains the complete-graph count grows faster because it follows triangular numbers, not a simple add-1 pattern", 1]] },
-        { "b": "Evaluate", "d": "Hard", "t": "short_answer", "m": 2, "q": "A classmate says 'the Koch Snowflake sequence and the regular-polygon sequence both just get more sides, so they're basically the same kind of pattern'. Do you agree? Justify briefly.", "a": "Disagree -- regular polygons add exactly one more straight side each step (3, 4, 5, 6, ...), while the Koch Snowflake replaces every existing segment with a bent shape, so its segment count multiplies by 4 each step (3, 12, 48, 192, ...); the two patterns grow in fundamentally different ways.", "s": [["Takes a clear position with reasoning", 1], ["Correctly contrasts the additive growth of polygons with the multiplicative growth of the Koch Snowflake", 1]] },
-        { "b": "Create", "d": "Hardest", "t": "long_answer", "m": 3, "q": "Invent your own shape sequence, different from regular polygons, complete graphs, stacked triangles/squares or the Koch Snowflake, with a clear rule for going from one shape to the next. Describe the first three shapes.", "a": "Sample: Rule -- start with one dot; at each step, surround the current shape with a ring of dots one dot wider on every side, forming growing diamond shapes. First three shapes: 1 dot; a diamond of 5 dots; a diamond of 13 dots.", "s": [["States a clear shape-building rule different from the five named sequences", 1], ["Describes three shapes consistent with the stated rule", 1], ["The sequence is genuinely a new shape pattern, not a renamed existing one", 1]] }
+        {
+          "b": "Remember",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "The shape sequence that starts with a triangle, then a quadrilateral, pentagon, hexagon, ... is called",
+          "a": "Regular polygons",
+          "o": [
+            "Regular polygons",
+            "Complete graphs",
+            "Stacked triangles",
+            "Koch Snowflake"
+          ]
+        },
+        {
+          "b": "Remember",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "In a 'complete graph', every dot is joined to",
+          "a": "every other dot by a line",
+          "o": [
+            "every other dot by a line",
+            "only its neighbouring dot",
+            "the centre dot only",
+            "no other dot"
+          ]
+        },
+        {
+          "b": "Remember",
+          "d": "Easy",
+          "t": "fill_blank",
+          "m": 1,
+          "q": "The regular polygon with 5 sides is called a ____.",
+          "a": "pentagon"
+        },
+        {
+          "b": "Remember",
+          "d": "Hard",
+          "t": "mcq",
+          "m": 1,
+          "q": "Which of these is NOT one of the shape sequences studied in this chapter?",
+          "a": "Symmetric flowers",
+          "o": [
+            "Symmetric flowers",
+            "Stacked Squares",
+            "Koch Snowflake",
+            "Complete Graphs"
+          ],
+          "rev": true
+        },
+        {
+          "b": "Understand",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "Why is the 3-sided shape in this sequence called a 'regular' triangle?",
+          "a": "Because all its sides are equal length and all its angles are equal",
+          "o": [
+            "Because all its sides are equal length and all its angles are equal",
+            "Because it is the first shape in the sequence",
+            "Because it has an odd number of sides",
+            "Because it cannot be divided into smaller shapes"
+          ]
+        },
+        {
+          "b": "Understand",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "What happens to the number of sides as you move along the regular-polygon sequence (triangle, quadrilateral, pentagon, ...)?",
+          "a": "It increases by 1 at each step",
+          "o": [
+            "It increases by 1 at each step",
+            "It doubles at each step",
+            "It stays the same",
+            "It decreases by 1 at each step"
+          ]
+        },
+        {
+          "b": "Understand",
+          "d": "Easy",
+          "t": "short_answer",
+          "m": 2,
+          "q": "Describe, in your own words, how the Koch Snowflake sequence is built from one step to the next.",
+          "a": "At each step, every straight line segment in the shape is replaced by a bent 'speed bump' shape, making the outline more jagged and detailed.",
+          "s": [
+            [
+              "Describes that each straight segment is replaced",
+              1
+            ],
+            [
+              "Mentions the replacement makes a bend/'speed bump' shape",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Understand",
+          "d": "Hard",
+          "t": "mcq",
+          "m": 1,
+          "q": "How does the complete graph sequence K2, K3, K4, K5, ... grow from one term to the next?",
+          "a": "One more dot is added, and it is joined by a new line to every dot already present",
+          "o": [
+            "One more dot is added, and it is joined by a new line to every dot already present",
+            "One more dot is added but no new lines are drawn",
+            "The number of dots stays the same but more lines are added",
+            "One dot is removed each time"
+          ]
+        },
+        {
+          "b": "Understand",
+          "d": "Hard",
+          "t": "mcq",
+          "m": 1,
+          "q": "In the 'Stacked Squares' shape sequence, how does each shape relate to the one before it?",
+          "a": "A new layer of small squares is added so the whole picture stays a bigger square",
+          "o": [
+            "A new layer of small squares is added so the whole picture stays a bigger square",
+            "A new layer is added so the whole picture becomes a triangle",
+            "One small square is removed each time",
+            "The squares get smaller each time"
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Easy",
+          "t": "fill_blank",
+          "m": 1,
+          "q": "The regular polygon after octagon (8 sides) and before decagon (10 sides) is the ____ (9 sides).",
+          "a": "nonagon"
+        },
+        {
+          "b": "Apply",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "K4 (a complete graph on 4 dots) has how many connecting lines?",
+          "a": "6",
+          "o": [
+            "6",
+            "4",
+            "8",
+            "5"
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Hard",
+          "t": "mcq",
+          "m": 1,
+          "q": "How many connecting lines does K6 (a complete graph on 6 dots) have?",
+          "a": "15",
+          "o": [
+            "15",
+            "12",
+            "6",
+            "30"
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Hard",
+          "t": "mcq",
+          "m": 1,
+          "q": "What is the number of sides of the regular polygon that comes right after the decagon (10-sided polygon) in the sequence?",
+          "a": "11",
+          "o": [
+            "11",
+            "12",
+            "9",
+            "10"
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Hard",
+          "t": "short_answer",
+          "m": 2,
+          "q": "The Koch Snowflake has 3, 12, 48, 192, ... total line segments for its 1st, 2nd, 3rd and 4th shapes. Find how many more segments the 4th shape has than the 3rd.",
+          "a": "The 3rd shape has 48 segments and the 4th has 192 segments, so the 4th shape has 192-48=144 more straight-line segments than the 3rd.",
+          "s": [
+            [
+              "Correctly reads the counts 48 and 192 for the 3rd and 4th shapes",
+              1
+            ],
+            [
+              "Computes the difference correctly as 144",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Hardest",
+          "t": "long_answer",
+          "m": 3,
+          "q": "The complete graph sequence has 1, 3, 6, 10, 15, ... lines for K2, K3, K4, K5, K6. Predict the number of lines in K7 without drawing it, and explain the pattern you used.",
+          "a": "The number of lines follows the triangular number sequence; the next triangular number after 15 is 21, so K7 has 21 lines.",
+          "s": [
+            [
+              "Recognises the line-counts follow the triangular number sequence",
+              1
+            ],
+            [
+              "States the method: use the next triangular number after 15",
+              1
+            ],
+            [
+              "Gives the correct answer 21",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Analyse",
+          "d": "Hard",
+          "t": "assertion_reason",
+          "m": 1,
+          "q": "Assertion (A): In the regular-polygon shape sequence, the polygon that comes after the pentagon (5 sides) is the hexagon (6 sides). Reason (R): The sum of the first n odd numbers, starting at 1, equals n squared. Choose the correct option.",
+          "a": "Both A and R are true, but R is not the correct explanation of A",
+          "o": [
+            "Both A and R are true, but R is not the correct explanation of A",
+            "A is false, R is true",
+            "A is true, R is false",
+            "Both A and R are true, and R is the correct explanation of A"
+          ]
+        },
+        {
+          "b": "Analyse",
+          "d": "Hard",
+          "t": "multi_statement",
+          "m": 1,
+          "q": "Consider: (I) The complete graph sequence K2, K3, K4, ... adds one dot at every step. (II) The complete graph sequence adds the same number of new lines at every step. Which is or are correct?",
+          "a": "Only I",
+          "o": [
+            "Only I",
+            "Only II",
+            "Both I and II",
+            "Neither I nor II"
+          ]
+        },
+        {
+          "b": "Analyse",
+          "d": "Hardest",
+          "t": "long_answer",
+          "m": 3,
+          "q": "Compare how quickly the number of sides grows in the regular-polygon sequence with how quickly the number of lines grows in the complete-graph sequence, as you move from the 3rd to the 6th term of each. Which grows faster, and why?",
+          "a": "Regular polygons: from the 3rd term (pentagon, 5 sides) to the 6th term (octagon, 8 sides), sides go from 5 to 8, an increase of 3. Complete graphs: from the 3rd term (K4, 6 lines) to the 6th term (K7, 21 lines), lines go from 6 to 21, an increase of 15. The complete-graph line count grows much faster because it follows the triangular numbers, which grow faster than the simple add-1 pattern of polygon sides.",
+          "s": [
+            [
+              "Correctly compares the polygon side counts (5 to 8)",
+              1
+            ],
+            [
+              "Correctly compares the complete graph line counts (6 to 21)",
+              1
+            ],
+            [
+              "Explains the complete-graph count grows faster because it follows triangular numbers, not a simple add-1 pattern",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Evaluate",
+          "d": "Hard",
+          "t": "short_answer",
+          "m": 2,
+          "q": "A classmate says 'the Koch Snowflake sequence and the regular-polygon sequence both just get more sides, so they're basically the same kind of pattern'. Do you agree? Justify briefly.",
+          "a": "Disagree -- regular polygons add exactly one more straight side each step (3, 4, 5, 6, ...), while the Koch Snowflake replaces every existing segment with a bent shape, so its segment count multiplies by 4 each step (3, 12, 48, 192, ...); the two patterns grow in fundamentally different ways.",
+          "s": [
+            [
+              "Takes a clear position with reasoning",
+              1
+            ],
+            [
+              "Correctly contrasts the additive growth of polygons with the multiplicative growth of the Koch Snowflake",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Create",
+          "d": "Hardest",
+          "t": "long_answer",
+          "m": 3,
+          "q": "Invent your own shape sequence, different from regular polygons, complete graphs, stacked triangles/squares or the Koch Snowflake, with a clear rule for going from one shape to the next. Describe the first three shapes.",
+          "a": "Sample: Rule -- start with one dot; at each step, surround the current shape with a ring of dots one dot wider on every side, forming growing diamond shapes. First three shapes: 1 dot; a diamond of 5 dots; a diamond of 13 dots.",
+          "s": [
+            [
+              "States a clear shape-building rule different from the five named sequences",
+              1
+            ],
+            [
+              "Describes three shapes consistent with the stated rule",
+              1
+            ],
+            [
+              "The sequence is genuinely a new shape pattern, not a renamed existing one",
+              1
+            ]
+          ]
+        }
       ]
     },
     {
@@ -202,26 +1669,311 @@
       "example": "The complete graph K5 has 10 connecting lines, which is the 4th triangular number.",
       "difficulty_base": "Hard",
       "questions": [
-        { "b": "Remember", "d": "Easy", "t": "mcq", "m": 1, "q": "Counting the number of sides in the regular-polygon sequence (triangle, quadrilateral, pentagon, ...) gives which number sequence?", "a": "Counting numbers, starting from 3", "o": ["Counting numbers, starting from 3", "Odd numbers, starting from 3", "Triangular numbers", "Square numbers"] },
-        { "b": "Remember", "d": "Easy", "t": "mcq", "m": 1, "q": "Counting the number of connecting lines in the complete-graph sequence K2, K3, K4, ... gives which number sequence?", "a": "Triangular numbers", "o": ["Triangular numbers", "Square numbers", "Counting numbers", "Powers of 2"] },
-        { "b": "Remember", "d": "Easy", "t": "fill_blank", "m": 1, "q": "In any closed polygon, the number of sides always equals the number of ____.", "a": "corners (vertices)" },
-        { "b": "Remember", "d": "Hard", "t": "mcq", "m": 1, "q": "Which of these shape-to-number matches is INCORRECT?", "a": "Complete graphs -- counting numbers", "o": ["Complete graphs -- counting numbers", "Regular polygon sides -- counting numbers from 3", "Stacked squares -- square numbers", "Koch Snowflake segments -- 3 times powers of 4"], "rev": true },
-        { "b": "Understand", "d": "Easy", "t": "mcq", "m": 1, "q": "Why does the number of sides of a regular polygon always equal its number of corners?", "a": "Because in any closed shape made of straight sides, each side meets the next at exactly one corner, so the two counts must match", "o": ["Because in any closed shape made of straight sides, each side meets the next at exactly one corner, so the two counts must match", "Because all regular polygons happen to have an equal number by coincidence", "Because corners are always double the number of sides", "Because the number of sides is always one more than the number of corners"] },
-        { "b": "Understand", "d": "Easy", "t": "mcq", "m": 1, "q": "The number of small squares in the Stacked Squares sequence (1, 4, 9, 16, ...) matches which sequence, and why?", "a": "Square numbers, because each new stage adds a border of small squares that keeps the whole shape a bigger square", "o": ["Square numbers, because each new stage adds a border of small squares that keeps the whole shape a bigger square", "Triangular numbers, because the squares are stacked in a staircase", "Cube numbers, because the squares are stacked in 3 dimensions", "Powers of 2, because each stage doubles the previous count"] },
-        { "b": "Understand", "d": "Easy", "t": "short_answer", "m": 2, "q": "Explain why the number of small triangles in the Stacked Triangles sequence follows the square number sequence, using the 'adding counting numbers up and down' idea.", "a": "Counting the small triangles row by row gives sums like 1, 1+2+1, 1+2+3+2+1, ..., which is exactly the 'up and down' sum that always equals a perfect square.", "s": [["Connects the row-by-row triangle count to the up-and-down sum", 1], ["States this sum always equals a perfect square", 1]] },
-        { "b": "Understand", "d": "Hard", "t": "mcq", "m": 1, "q": "The Koch Snowflake has 3, 12, 48, 192, ... total line segments. What pattern connects consecutive terms?", "a": "Each term is 4 times the previous term", "o": ["Each term is 4 times the previous term", "Each term is 4 more than the previous term", "Each term is the previous term squared", "Each term is 3 more than the previous term"] },
-        { "b": "Understand", "d": "Hard", "t": "mcq", "m": 1, "q": "If the number of lines in a complete graph equals a triangular number, how many lines does K8 (8 dots) have, given K7 has 21 lines?", "a": "28, the next triangular number after 21", "o": ["28, the next triangular number after 21", "24", "32", "21"] },
-        { "b": "Apply", "d": "Easy", "t": "fill_blank", "m": 1, "q": "K3 (a complete graph on 3 dots) has ____ connecting lines.", "a": "3" },
-        { "b": "Apply", "d": "Easy", "t": "mcq", "m": 1, "q": "The Stacked Squares shape with 5 rows contains how many small squares in total?", "a": "25", "o": ["25", "20", "16", "30"] },
-        { "b": "Apply", "d": "Hard", "t": "mcq", "m": 1, "q": "Counting its 1st term as 3 segments, the Koch Snowflake's 5th term has how many line segments?", "a": "768", "o": ["768", "192", "3072", "576"] },
-        { "b": "Apply", "d": "Hard", "t": "mcq", "m": 1, "q": "A regular polygon in the sequence has 9 corners. How many sides does it have, and what is its name?", "a": "9 sides, a nonagon", "o": ["9 sides, a nonagon", "8 sides, an octagon", "10 sides, a decagon", "9 sides, an octagon"] },
-        { "b": "Apply", "d": "Hard", "t": "short_answer", "m": 2, "q": "K9 (a complete graph on 9 dots) has how many connecting lines? Use the fact that the line-counts for K2 to K9 are the triangular numbers 1, 3, 6, 10, 15, 21, 28, 36.", "a": "K9 has 36 connecting lines, since the line-counts for K2, K3, ..., K9 are the triangular numbers 1, 3, 6, 10, 15, 21, 28, 36, and 36 corresponds to K9.", "s": [["Reads off/derives that K9 corresponds to the last listed triangular number", 1], ["Gives the correct value 36", 1]] },
-        { "b": "Apply", "d": "Hardest", "t": "long_answer", "m": 3, "q": "The number of small squares in Stacked Squares follows the square numbers. Find how many small squares are in the 7th stage, and how many more small squares are added going from the 6th stage to the 7th stage.", "a": "The 7th stage has 7 squared = 49 small squares. The 6th stage has 6 squared = 36. So 49-36=13 more small squares are added.", "s": [["Computes the 7th stage as 49 small squares", 1], ["Computes the 6th stage as 36 small squares", 1], ["Finds the correct difference of 13", 1]] },
-        { "b": "Analyse", "d": "Hard", "t": "assertion_reason", "m": 1, "q": "Assertion (A): The number of connecting lines in K10 (10 dots) is 45. Reason (R): The line-counts of complete graphs follow the triangular numbers, and 45 is the 9th triangular number.", "a": "Both A and R are true, and R is the correct explanation of A", "o": ["Both A and R are true, and R is the correct explanation of A", "Both A and R are true, but R is not the correct explanation of A", "A is true but R is false", "A is false but R is true"] },
-        { "b": "Analyse", "d": "Hard", "t": "multi_statement", "m": 1, "q": "Consider: (I) The side-count sequence and the corner-count sequence of regular polygons are exactly the same sequence. (II) The line-count sequence of complete graphs and the side-count sequence of regular polygons are exactly the same sequence. Which is or are correct?", "a": "Only I", "o": ["Only I", "Only II", "Both I and II", "Neither I nor II"] },
-        { "b": "Analyse", "d": "Hardest", "t": "long_answer", "m": 3, "q": "Two different shape sequences in this chapter both match the square number sequence when you count a feature of their shapes. Name both shape sequences, state what feature is counted in each, and verify the match for the 4th term of each (i.e. show the count equals 16).", "a": "Stacked Squares: counting the total number of small squares in the 4th stage gives 16 (4 squared). Stacked Triangles: counting the total number of small triangles in the 4th stage also gives 16 (4 squared), matching the 'up and down' sum 1+2+3+4+3+2+1=16.", "s": [["Names Stacked Squares as one matching sequence with its feature (count of small squares)", 1], ["Names Stacked Triangles as the other matching sequence with its feature (count of small triangles)", 1], ["Verifies both give 16 for the 4th term", 1]] },
-        { "b": "Evaluate", "d": "Hard", "t": "short_answer", "m": 2, "q": "A classmate argues 'since both regular-polygon sides and complete-graph lines are shape features that grow in a sequence, they must match the same number sequence'. Evaluate this claim using the 4th term of each sequence (4th regular polygon = hexagon; 4th complete graph term = K5).", "a": "The claim is false. The 4th regular polygon (hexagon) has 6 sides. The 4th complete-graph term, K5, has 10 lines. Since 6 does not equal 10, the two sequences are different, disproving the claim.", "s": [["States the claim is false with correct reasoning", 1], ["Gives correct 4th-term values for both sequences (6 sides vs 10 lines) showing they differ", 1]] },
-        { "b": "Create", "d": "Hardest", "t": "long_answer", "m": 3, "q": "Pick any shape sequence from this chapter, count a feature of its first four shapes, and identify which number pattern it matches, with your reasoning.", "a": "Sample: counting the total number of straight edges needed to draw each of the first four Koch Snowflake shapes gives 3, 12, 48, 192. Each count is 4 times the one before it, so the feature count follows the pattern 3 times powers of 4.", "s": [["Selects a shape sequence and a feature to count", 1], ["Gives correct counts for at least the first four shapes", 1], ["Correctly identifies/derives the matching number pattern with valid reasoning", 1]] }
+        {
+          "b": "Remember",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "Counting the number of sides in the regular-polygon sequence (triangle, quadrilateral, pentagon, ...) gives which number sequence?",
+          "a": "Counting numbers, starting from 3",
+          "o": [
+            "Counting numbers, starting from 3",
+            "Odd numbers, starting from 3",
+            "Triangular numbers",
+            "Square numbers"
+          ]
+        },
+        {
+          "b": "Remember",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "Counting the number of connecting lines in the complete-graph sequence K2, K3, K4, ... gives which number sequence?",
+          "a": "Triangular numbers",
+          "o": [
+            "Triangular numbers",
+            "Square numbers",
+            "Counting numbers",
+            "Powers of 2"
+          ]
+        },
+        {
+          "b": "Remember",
+          "d": "Easy",
+          "t": "fill_blank",
+          "m": 1,
+          "q": "In any closed polygon, the number of sides always equals the number of ____.",
+          "a": "corners (vertices)"
+        },
+        {
+          "b": "Remember",
+          "d": "Hard",
+          "t": "mcq",
+          "m": 1,
+          "q": "Which of these shape-to-number matches is INCORRECT?",
+          "a": "Complete graphs -- counting numbers",
+          "o": [
+            "Complete graphs -- counting numbers",
+            "Regular polygon sides -- counting numbers from 3",
+            "Stacked squares -- square numbers",
+            "Koch Snowflake segments -- 3 times powers of 4"
+          ],
+          "rev": true
+        },
+        {
+          "b": "Understand",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "Why does the number of sides of a regular polygon always equal its number of corners?",
+          "a": "Because in any closed shape made of straight sides, each side meets the next at exactly one corner, so the two counts must match",
+          "o": [
+            "Because in any closed shape made of straight sides, each side meets the next at exactly one corner, so the two counts must match",
+            "Because all regular polygons happen to have an equal number by coincidence",
+            "Because corners are always double the number of sides",
+            "Because the number of sides is always one more than the number of corners"
+          ]
+        },
+        {
+          "b": "Understand",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "The number of small squares in the Stacked Squares sequence (1, 4, 9, 16, ...) matches which sequence, and why?",
+          "a": "Square numbers, because each new stage adds a border of small squares that keeps the whole shape a bigger square",
+          "o": [
+            "Square numbers, because each new stage adds a border of small squares that keeps the whole shape a bigger square",
+            "Triangular numbers, because the squares are stacked in a staircase",
+            "Cube numbers, because the squares are stacked in 3 dimensions",
+            "Powers of 2, because each stage doubles the previous count"
+          ]
+        },
+        {
+          "b": "Understand",
+          "d": "Easy",
+          "t": "short_answer",
+          "m": 2,
+          "q": "Explain why the number of small triangles in the Stacked Triangles sequence follows the square number sequence, using the 'adding counting numbers up and down' idea.",
+          "a": "Counting the small triangles row by row gives sums like 1, 1+2+1, 1+2+3+2+1, ..., which is exactly the 'up and down' sum that always equals a perfect square.",
+          "s": [
+            [
+              "Connects the row-by-row triangle count to the up-and-down sum",
+              1
+            ],
+            [
+              "States this sum always equals a perfect square",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Understand",
+          "d": "Hard",
+          "t": "mcq",
+          "m": 1,
+          "q": "The Koch Snowflake has 3, 12, 48, 192, ... total line segments. What pattern connects consecutive terms?",
+          "a": "Each term is 4 times the previous term",
+          "o": [
+            "Each term is 4 times the previous term",
+            "Each term is 4 more than the previous term",
+            "Each term is the previous term squared",
+            "Each term is 3 more than the previous term"
+          ]
+        },
+        {
+          "b": "Understand",
+          "d": "Hard",
+          "t": "mcq",
+          "m": 1,
+          "q": "If the number of lines in a complete graph equals a triangular number, how many lines does K8 (8 dots) have, given K7 has 21 lines?",
+          "a": "28, the next triangular number after 21",
+          "o": [
+            "28, the next triangular number after 21",
+            "24",
+            "32",
+            "21"
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Easy",
+          "t": "fill_blank",
+          "m": 1,
+          "q": "K3 (a complete graph on 3 dots) has ____ connecting lines.",
+          "a": "3"
+        },
+        {
+          "b": "Apply",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "The Stacked Squares shape with 5 rows contains how many small squares in total?",
+          "a": "25",
+          "o": [
+            "25",
+            "20",
+            "16",
+            "30"
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Hard",
+          "t": "mcq",
+          "m": 1,
+          "q": "Counting its 1st term as 3 segments, the Koch Snowflake's 5th term has how many line segments?",
+          "a": "768",
+          "o": [
+            "768",
+            "192",
+            "3072",
+            "576"
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Hard",
+          "t": "mcq",
+          "m": 1,
+          "q": "A regular polygon in the sequence has 9 corners. How many sides does it have, and what is its name?",
+          "a": "9 sides, a nonagon",
+          "o": [
+            "9 sides, a nonagon",
+            "8 sides, an octagon",
+            "10 sides, a decagon",
+            "9 sides, an octagon"
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Hard",
+          "t": "short_answer",
+          "m": 2,
+          "q": "K9 (a complete graph on 9 dots) has how many connecting lines? Use the fact that the line-counts for K2 to K9 are the triangular numbers 1, 3, 6, 10, 15, 21, 28, 36.",
+          "a": "K9 has 36 connecting lines, since the line-counts for K2, K3, ..., K9 are the triangular numbers 1, 3, 6, 10, 15, 21, 28, 36, and 36 corresponds to K9.",
+          "s": [
+            [
+              "Reads off/derives that K9 corresponds to the last listed triangular number",
+              1
+            ],
+            [
+              "Gives the correct value 36",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Hardest",
+          "t": "long_answer",
+          "m": 3,
+          "q": "The number of small squares in Stacked Squares follows the square numbers. Find how many small squares are in the 7th stage, and how many more small squares are added going from the 6th stage to the 7th stage.",
+          "a": "The 7th stage has 7 squared = 49 small squares. The 6th stage has 6 squared = 36. So 49-36=13 more small squares are added.",
+          "s": [
+            [
+              "Computes the 7th stage as 49 small squares",
+              1
+            ],
+            [
+              "Computes the 6th stage as 36 small squares",
+              1
+            ],
+            [
+              "Finds the correct difference of 13",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Analyse",
+          "d": "Hard",
+          "t": "assertion_reason",
+          "m": 1,
+          "q": "Assertion (A): The complete graph K5 (5 dots, every pair joined by a line) has 10 connecting lines. Reason (R): The number of connecting lines in a complete graph always equals a square number. Choose the correct option.",
+          "a": "A is true, R is false",
+          "o": [
+            "A is true, R is false",
+            "A is false, R is true",
+            "Both A and R are true, and R is the correct explanation of A",
+            "Both A and R are true, but R is not the correct explanation of A"
+          ]
+        },
+        {
+          "b": "Analyse",
+          "d": "Hard",
+          "t": "multi_statement",
+          "m": 1,
+          "q": "Consider: (I) The side-count sequence and the corner-count sequence of regular polygons are exactly the same sequence. (II) The line-count sequence of complete graphs and the side-count sequence of regular polygons are exactly the same sequence. Which is or are correct?",
+          "a": "Only I",
+          "o": [
+            "Only I",
+            "Only II",
+            "Both I and II",
+            "Neither I nor II"
+          ]
+        },
+        {
+          "b": "Analyse",
+          "d": "Hardest",
+          "t": "long_answer",
+          "m": 3,
+          "q": "Two different shape sequences in this chapter both match the square number sequence when you count a feature of their shapes. Name both shape sequences, state what feature is counted in each, and verify the match for the 4th term of each (i.e. show the count equals 16).",
+          "a": "Stacked Squares: counting the total number of small squares in the 4th stage gives 16 (4 squared). Stacked Triangles: counting the total number of small triangles in the 4th stage also gives 16 (4 squared), matching the 'up and down' sum 1+2+3+4+3+2+1=16.",
+          "s": [
+            [
+              "Names Stacked Squares as one matching sequence with its feature (count of small squares)",
+              1
+            ],
+            [
+              "Names Stacked Triangles as the other matching sequence with its feature (count of small triangles)",
+              1
+            ],
+            [
+              "Verifies both give 16 for the 4th term",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Evaluate",
+          "d": "Hard",
+          "t": "short_answer",
+          "m": 2,
+          "q": "A classmate argues 'since both regular-polygon sides and complete-graph lines are shape features that grow in a sequence, they must match the same number sequence'. Evaluate this claim using the 4th term of each sequence (4th regular polygon = hexagon; 4th complete graph term = K5).",
+          "a": "The claim is false. The 4th regular polygon (hexagon) has 6 sides. The 4th complete-graph term, K5, has 10 lines. Since 6 does not equal 10, the two sequences are different, disproving the claim.",
+          "s": [
+            [
+              "States the claim is false with correct reasoning",
+              1
+            ],
+            [
+              "Gives correct 4th-term values for both sequences (6 sides vs 10 lines) showing they differ",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Create",
+          "d": "Hardest",
+          "t": "long_answer",
+          "m": 3,
+          "q": "Pick any shape sequence from this chapter, count a feature of its first four shapes, and identify which number pattern it matches, with your reasoning.",
+          "a": "Sample: counting the total number of straight edges needed to draw each of the first four Koch Snowflake shapes gives 3, 12, 48, 192. Each count is 4 times the one before it, so the feature count follows the pattern 3 times powers of 4.",
+          "s": [
+            [
+              "Selects a shape sequence and a feature to count",
+              1
+            ],
+            [
+              "Gives correct counts for at least the first four shapes",
+              1
+            ],
+            [
+              "Correctly identifies/derives the matching number pattern with valid reasoning",
+              1
+            ]
+          ]
+        }
       ]
     }
   ]
