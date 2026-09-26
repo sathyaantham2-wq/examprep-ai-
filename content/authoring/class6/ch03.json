@@ -1,0 +1,3050 @@
+{
+  "subject": {
+    "code": "MATH6",
+    "name": "Mathematics",
+    "board": "CBSE",
+    "class": 6
+  },
+  "source": {
+    "publisher": "NCERT",
+    "title": "Ganita Prakash",
+    "edition": "Reprint 2026-27",
+    "year": 2026
+  },
+  "depth": 20,
+  "chapter": {
+    "part": "I",
+    "chapter_no": 3,
+    "name": "Number Play",
+    "blurb": "An exploratory chapter of number games and puzzles: rule-based number sequences, supercells in grids, number-line and digit-sum patterns, palindromes, Kaprekar's constant, clock and calendar digit patterns, mental math with a fixed set of numbers, the unsolved Collatz Conjecture, estimation, and turn-based counting games with winning strategies.",
+    "source_code": "fegp103",
+    "order_index": 3
+  },
+  "scope_in": [
+    {
+      "item": "Interpret a stated rule linking each position's number to a property of its immediate neighbours (e.g. 'number of taller neighbours'), and verify whether a given arrangement fits the rule",
+      "pages": "55-56"
+    },
+    {
+      "item": "Determine whether a described arrangement satisfying a given neighbour rule is possible for a small group, and explain why or why not",
+      "pages": "56-57"
+    },
+    {
+      "item": "Identify a supercell in a 1D row of numbers: a number strictly greater than each of the (up to two) numbers next to it",
+      "pages": "57"
+    },
+    {
+      "item": "Identify a supercell in a 2D grid: a number strictly greater than each of its up to four immediate (left/right/top/bottom) neighbours",
+      "pages": "58"
+    },
+    {
+      "item": "Fill a grid with a given set of numbers to create the maximum number of supercells, or to avoid supercells entirely, and explain the strategy",
+      "pages": "57-59"
+    },
+    {
+      "item": "Place given multi-digit numbers at their correct positions on a number line with a stated or inferable equal gap size",
+      "pages": "59"
+    },
+    {
+      "item": "Read the equal gap size implied by two labelled marks on a number line and use it to find unlabelled numbers on that line",
+      "pages": "59-60"
+    },
+    {
+      "item": "Identify the largest and smallest number in a set placed on a number line",
+      "pages": "59-60"
+    },
+    {
+      "item": "State how many whole numbers have exactly 1, 2, 3, 4 or 5 digits, and recognise that each digit-length group has ten times as many numbers as the group before it",
+      "pages": "60"
+    },
+    {
+      "item": "Compute the digit sum of a given number, and construct numbers with a given digit sum, including the largest/smallest with a stated number of digits",
+      "pages": "60"
+    },
+    {
+      "item": "Count how many times a given digit occurs while writing all whole numbers in a range (e.g. 1 to 100, 1 to 1000)",
+      "pages": "61"
+    },
+    {
+      "item": "Recognise a palindromic number: one that reads the same from left to right and right to left",
+      "pages": "61"
+    },
+    {
+      "item": "Construct all 3-digit (or other small) palindromes using a given set of digits",
+      "pages": "61"
+    },
+    {
+      "item": "Apply the reverse-and-add procedure to a 2-digit number, repeating it until a palindrome is reached",
+      "pages": "61-62"
+    },
+    {
+      "item": "State that repeated reverse-and-add starting from a 2-digit number always reaches a palindrome, while the outcome for some 3-digit starting numbers (e.g. 196) is an open question",
+      "pages": "62"
+    },
+    {
+      "item": "Form the largest and the smallest 4-digit number from a given set of at least two different digits",
+      "pages": "63"
+    },
+    {
+      "item": "Apply Kaprekar's routine -- subtract the smallest arrangement from the largest arrangement of a number's own digits, and repeat -- and state that it always reaches 6174 for 4-digit numbers with at least two different digits",
+      "pages": "63"
+    },
+    {
+      "item": "Count how many rounds Kaprekar's routine takes to reach 6174 from a given 4-digit number",
+      "pages": "63-64"
+    },
+    {
+      "item": "Apply the same largest-minus-smallest routine to 3-digit numbers and identify the repeating number 495",
+      "pages": "64 (solutions)"
+    },
+    {
+      "item": "Recognise patterned times on a 12-hour clock (repeated-digit or palindromic times such as 4:44 or 12:21) and list further examples of a stated pattern",
+      "pages": "64"
+    },
+    {
+      "item": "Recognise patterned calendar dates (digits repeating in order, or reading the same forwards/backwards in DD/MM/YYYY form) and find other such dates",
+      "pages": "64"
+    },
+    {
+      "item": "Use the largest/smallest digit arrangement of a 4-digit set to satisfy a stated sum or difference condition (greater than, less than, or equal to a target)",
+      "pages": "64-65"
+    },
+    {
+      "item": "Find the largest and smallest palindromes of a stated digit-length and compute their sum and difference",
+      "pages": "65"
+    },
+    {
+      "item": "Combine a fixed small set of numbers using addition only (each usable multiple times) to reach a stated target, and explain when a target cannot be reached",
+      "pages": "65-66"
+    },
+    {
+      "item": "Combine a fixed small set of numbers using addition and subtraction (each usable multiple times) to reach a stated target",
+      "pages": "66"
+    },
+    {
+      "item": "Construct an example of a stated digit-length addition or subtraction outcome (e.g. '5-digit + 3-digit giving a 6-digit sum') where possible, and explain why it is impossible when it is not",
+      "pages": "66-67"
+    },
+    {
+      "item": "Classify a statement about the digit-length of a sum or difference of two numbers as always, sometimes, or never true, supported by a justifying example",
+      "pages": "67"
+    },
+    {
+      "item": "Find the total of numbers arranged in a visual pattern (rows/shapes) by grouping equal values instead of adding one by one",
+      "pages": "67-68"
+    },
+    {
+      "item": "Apply the Collatz rule (halve an even number; triple an odd number and add 1) repeatedly starting from a given whole number, and list the resulting sequence",
+      "pages": "68-69"
+    },
+    {
+      "item": "State the Collatz Conjecture (every such sequence eventually reaches 1) and explain that it remains unproven despite holding for every number checked so far",
+      "pages": "69"
+    },
+    {
+      "item": "Make a reasoned estimate (not an exact count) of an everyday quantity such as steps, time, or objects, by scaling from a smaller known amount",
+      "pages": "69-71"
+    },
+    {
+      "item": "Judge whether a given estimate is reasonable by checking the reasoning behind the scaling used to make it",
+      "pages": "70-71"
+    },
+    {
+      "item": "State the rules of a turn-based counting game (add a number in a stated range each turn; first to reach the target wins) and play it",
+      "pages": "71-73"
+    },
+    {
+      "item": "Work out and justify which player has a guaranteed winning strategy in such a game, and describe the 'safe numbers' (spaced by one more than the maximum allowed add) that the winning player must always land on",
+      "pages": "71-73"
+    }
+  ],
+  "scope_out": [
+    {
+      "item": "Divisibility rules, HCF/LCM, and classifying numbers as prime or composite",
+      "reason": "This belongs to Chapter 5, 'Prime Time'; this chapter treats numbers only through digit patterns and puzzles, not divisibility theory"
+    },
+    {
+      "item": "Fractions, decimals, and operations on them",
+      "reason": "Introduced in Chapter 7, 'Fractions'; every example and exercise here uses only whole numbers"
+    },
+    {
+      "item": "Negative numbers and integers",
+      "reason": "Introduced in Chapter 10, 'The Other Side of Zero'; every 'smallest number' question in this chapter means the smallest whole number, never a negative one"
+    },
+    {
+      "item": "Perimeter, area, or any geometric measurement",
+      "reason": "Belongs to Chapter 6; the grids and patterns here (supercells, number patterns) are about arranging numbers, not shapes or measurement"
+    },
+    {
+      "item": "A formal proof of the Collatz Conjecture, or a proof that reverse-and-add or Kaprekar's routine must terminate",
+      "reason": "The chapter explicitly states these remain open or empirical observations, not proven results; a question must not claim a proof exists"
+    },
+    {
+      "item": "General divisibility-based shortcuts for digit sums (e.g. the digit-sum-divisible-by-3 test)",
+      "reason": "The chapter only asks students to notice the multiples-of-3 pattern for consecutive-digit 3-digit numbers, not to state or apply a general divisibility rule"
+    },
+    {
+      "item": "The Indian/international place-value system, periods and comma placement rules as a topic in themselves",
+      "reason": "The chapter assumes this from earlier grades and uses it only incidentally (placing commas after filling a table); it does not teach how the comma/period system works"
+    },
+    {
+      "item": "Formal game theory or algebraic proof of winning strategies using modular-arithmetic notation",
+      "reason": "Section 3.12 expects an experiential, described strategy ('land on these numbers'), not a symbolic proof using the mod operator"
+    },
+    {
+      "item": "Calculator or written-column methods for the large additions/subtractions in Sections 3.7-3.8",
+      "reason": "The chapter's intent is quick mental combination and estimation, not standard column arithmetic"
+    },
+    {
+      "item": "Reading numbers in words as an isolated, tested skill",
+      "reason": "It appears once as a puzzle flourish (p. 62) but is not developed or tested as a distinct skill in this chapter"
+    }
+  ],
+  "concepts": [
+    {
+      "code": "C6M-3.1",
+      "name": "Reading and Building Rule-Based Number Sequences",
+      "description": "Interpreting a stated rule that assigns a number to each position based on its neighbours (e.g., count of taller neighbours), and testing or constructing arrangements that satisfy given conditions.",
+      "idea": "A sequence of numbers can be a code: each number tells you something about its position based on a rule involving only its immediate neighbours, not its own value.",
+      "rule": "To check whether an arrangement fits a 'taller neighbour' rule, compare each item only with the item(s) immediately next to it, and count how many of those neighbours satisfy the stated condition.",
+      "example": "In a line of children by height, a child says '1' if exactly one of the (up to two) neighbours standing next to them is taller.",
+      "difficulty_base": "Easy",
+      "questions": [
+        {
+          "t": "mcq",
+          "m": 1,
+          "q": "In the number-code game, a child in a line says '1' if",
+          "a": "exactly one of the children standing next to them is taller",
+          "o": [
+            "exactly one of the children standing next to them is taller",
+            "exactly one child in the whole line is taller than them",
+            "they are exactly 1 metre shorter than the tallest child",
+            "there is exactly one child standing next to them"
+          ],
+          "b": "Remember",
+          "d": "Easy"
+        },
+        {
+          "t": "mcq",
+          "m": 1,
+          "q": "A child at one end of the line has only one neighbour. The largest number this child can ever say is",
+          "a": "1",
+          "o": [
+            "1",
+            "2",
+            "0",
+            "it depends on how many children are in the line"
+          ],
+          "b": "Remember",
+          "d": "Easy"
+        },
+        {
+          "t": "fill_blank",
+          "m": 1,
+          "q": "In this number game, each child says the number of ____ neighbours standing next to them.",
+          "a": "taller",
+          "b": "Remember",
+          "d": "Easy"
+        },
+        {
+          "t": "mcq",
+          "m": 1,
+          "q": "A child standing between two others says '0'. This means",
+          "a": "neither of the two neighbours is taller than this child",
+          "o": [
+            "neither of the two neighbours is taller than this child",
+            "both neighbours are taller than this child",
+            "this child is the shortest in the whole line",
+            "this child has no neighbours at all"
+          ],
+          "b": "Remember",
+          "d": "Hard"
+        },
+        {
+          "t": "mcq",
+          "m": 1,
+          "q": "Why can a child standing at either end of the line never say '2'?",
+          "a": "an end child has only one neighbour, so at most one neighbour can be taller",
+          "o": [
+            "an end child has only one neighbour, so at most one neighbour can be taller",
+            "end children are always the tallest in the line",
+            "the number 2 is not allowed in this game",
+            "end children must always say '0'"
+          ],
+          "b": "Understand",
+          "d": "Easy"
+        },
+        {
+          "t": "mcq",
+          "m": 1,
+          "q": "Two children standing next to each other say the same number. What does this tell us?",
+          "a": "it is possible; for example, both could have the same pattern of taller/shorter neighbours",
+          "o": [
+            "it is possible; for example, both could have the same pattern of taller/shorter neighbours",
+            "it is impossible because neighbours can never say equal numbers",
+            "it means the two children are exactly the same height",
+            "it means one of the two numbers must be wrong"
+          ],
+          "b": "Understand",
+          "d": "Easy"
+        },
+        {
+          "t": "short_answer",
+          "m": 2,
+          "q": "Can all five children in a line say only 0s? Explain your answer.",
+          "a": "Yes, if all five children are exactly the same height, no child has a taller neighbour, so every child says 0.",
+          "s": [
+            [
+              "Yes, if all five children are exactly the same height",
+              1
+            ],
+            [
+              "then no child has a taller neighbour, so every child says 0",
+              1
+            ]
+          ],
+          "b": "Understand",
+          "d": "Easy"
+        },
+        {
+          "t": "mcq",
+          "m": 1,
+          "q": "Five children of five different heights stand in a line. Which statement is correct?",
+          "a": "the tallest child can never say '1' or '2', since no neighbour can be taller",
+          "o": [
+            "the tallest child can never say '1' or '2', since no neighbour can be taller",
+            "the tallest child always says '2'",
+            "the shortest child always says '0'",
+            "every child in the line must say a different number"
+          ],
+          "b": "Understand",
+          "d": "Hard"
+        },
+        {
+          "t": "mcq",
+          "m": 1,
+          "q": "For five children of five different heights, why is the sequence 1,1,1,1,1 impossible while 0,1,2,1,0 is possible?",
+          "a": "the tallest child can never say 1, but 1,1,1,1,1 would require even the tallest child to say 1",
+          "o": [
+            "the tallest child can never say 1, but 1,1,1,1,1 would require even the tallest child to say 1",
+            "1,1,1,1,1 uses a number that is not allowed in this game",
+            "0,1,2,1,0 is impossible too because it repeats 0 and 1",
+            "both sequences are equally impossible because they are not in increasing order"
+          ],
+          "b": "Understand",
+          "d": "Hard"
+        },
+        {
+          "t": "mcq",
+          "m": 1,
+          "q": "In a line of children, a child says '2'. What must be true about their neighbours?",
+          "a": "the child has exactly two neighbours and both of them are taller",
+          "o": [
+            "the child has exactly two neighbours and both of them are taller",
+            "at least two other children anywhere in the line are taller than this child",
+            "two other children in the entire line are taller than this child",
+            "the child is standing exactly 2 positions from one end"
+          ],
+          "b": "Apply",
+          "d": "Easy"
+        },
+        {
+          "t": "fill_blank",
+          "m": 1,
+          "q": "A child standing in the middle of the line has ____ neighbours to compare with.",
+          "a": "two",
+          "b": "Apply",
+          "d": "Easy"
+        },
+        {
+          "t": "short_answer",
+          "m": 2,
+          "q": "Ravi, Sam and Tia stand in a line in that order, with heights 140 cm, 150 cm and 145 cm. What number does each of them say?",
+          "a": "Ravi says 1, Sam says 0, Tia says 1.",
+          "s": [
+            [
+              "Ravi (only neighbour Sam, 150>140) says 1",
+              1
+            ],
+            [
+              "Sam (neighbours Ravi 140 and Tia 145, neither taller) says 0; Tia (only neighbour Sam, 150>145) says 1",
+              1
+            ]
+          ],
+          "b": "Apply",
+          "d": "Hard"
+        },
+        {
+          "t": "mcq",
+          "m": 1,
+          "q": "Four children of different heights are arranged so the sequence of numbers said is 1, 1, 1, 0. Which position must hold the tallest child?",
+          "a": "the last position (the one saying 0), since only that child is guaranteed to have no taller neighbour",
+          "o": [
+            "the last position (the one saying 0), since only that child is guaranteed to have no taller neighbour",
+            "the first position, since it says 1 like the others",
+            "the tallest child could be in any position that says 1",
+            "the second position, because it is in the middle"
+          ],
+          "b": "Apply",
+          "d": "Hard"
+        },
+        {
+          "t": "mcq",
+          "m": 1,
+          "q": "Which arrangement of 4 children of distinct heights (in cm, left to right) makes BOTH end children say '1'?",
+          "a": "150, 160, 155, 165",
+          "o": [
+            "150, 160, 155, 165",
+            "140, 150, 160, 170",
+            "145, 170, 160, 150",
+            "140, 160, 150, 170"
+          ],
+          "b": "Apply",
+          "d": "Hard"
+        },
+        {
+          "t": "long_answer",
+          "m": 3,
+          "q": "A group of 6 children of six different heights stands in a line. Explain why the tallest child can never say 1 or 2, and describe an arrangement in which exactly one child says '2'.",
+          "a": "The tallest child has no neighbour taller than it, so it always says 0, never 1 or 2. An arrangement where one short child sits between two taller children, with no other child having two taller neighbours, gives exactly one child saying '2'.",
+          "s": [
+            [
+              "The tallest child has no neighbour taller than it, so it can only say 0",
+              1
+            ],
+            [
+              "Explanation using the height comparison rule: every neighbour of the tallest child is shorter than it",
+              1
+            ],
+            [
+              "A valid arrangement in which exactly one interior child has both neighbours taller than it, giving exactly one '2'",
+              1
+            ]
+          ],
+          "b": "Apply",
+          "d": "Hardest"
+        },
+        {
+          "t": "multi_statement",
+          "m": 1,
+          "q": "Consider these statements about the number-code game. (I) A middle child can say 0, 1 or 2. (II) An end child can say only 0 or 1. (III) The tallest child in the line can say 1. Which statements are correct?",
+          "a": "I and II only",
+          "o": [
+            "I and II only",
+            "I, II and III",
+            "II and III only",
+            "III only"
+          ],
+          "b": "Analyse",
+          "d": "Hard"
+        },
+        {
+          "t": "mcq",
+          "m": 1,
+          "q": "In a line where every child says a different number, what is the maximum number of children the line can have?",
+          "a": "3, since the only possible numbers a child can say are 0, 1 and 2",
+          "o": [
+            "3, since the only possible numbers a child can say are 0, 1 and 2",
+            "unlimited, since heights can always be chosen freely",
+            "4, because an end child can also say 2",
+            "2, because middle children must repeat numbers"
+          ],
+          "b": "Analyse",
+          "d": "Hard"
+        },
+        {
+          "t": "assertion_reason",
+          "m": 1,
+          "q": "Assertion (A): A child standing between two shorter children says '0'. Reason (R): A child says the number of neighbours taller than itself, and neither neighbour here is taller.",
+          "a": "Both A and R are true, and R correctly explains A",
+          "o": [
+            "Both A and R are true, and R correctly explains A",
+            "Both A and R are true, but R does not explain A",
+            "A is true but R is false",
+            "A is false but R is true"
+          ],
+          "b": "Analyse",
+          "d": "Hardest"
+        },
+        {
+          "t": "short_answer",
+          "m": 3,
+          "q": "A teacher claims: 'In any line of children with different heights, at least one child must say 0.' Judge whether this claim is true, and justify your judgement.",
+          "a": "The claim is true: the tallest child in the line has no taller neighbour on either side it actually has, so it always says 0, regardless of its position.",
+          "s": [
+            [
+              "States the claim is true",
+              1
+            ],
+            [
+              "Reasoning: the tallest child in the line has no taller neighbour, so it always says 0",
+              1
+            ],
+            [
+              "Notes this holds whether the tallest child is at an end (one neighbour) or in the middle (two neighbours), since 'taller' is judged only against actual neighbours",
+              1
+            ]
+          ],
+          "b": "Evaluate",
+          "d": "Hard"
+        },
+        {
+          "t": "long_answer",
+          "m": 4,
+          "q": "Design an arrangement of 5 children with five different heights (in cm) so that the sequence of numbers said, read from one end to the other, is 0, 1, 2, 1, 0. Show the heights you chose and check each child's number.",
+          "a": "Heights in order: 160, 150, 140, 155, 170. Checking each: child 1 (160) has only neighbour 150, not taller, says 0; child 2 (150) has neighbours 160 (taller) and 140 (not), says 1; child 3 (140) has neighbours 150 and 155, both taller, says 2; child 4 (155) has neighbours 140 (not taller) and 170 (taller), says 1; child 5 (170) has only neighbour 155, not taller, says 0.",
+          "s": [
+            [
+              "States 5 distinct heights in an order satisfying the pattern, e.g. 160, 150, 140, 155, 170 cm",
+              1
+            ],
+            [
+              "Correctly checks the two end children each have their one neighbour not taller, giving 0",
+              1
+            ],
+            [
+              "Correctly checks the second and fourth children each have exactly one taller neighbour, giving 1",
+              1
+            ],
+            [
+              "Correctly checks the middle child has both neighbours taller, giving 2",
+              1
+            ]
+          ],
+          "b": "Create",
+          "d": "Hardest"
+        }
+      ]
+    },
+    {
+      "code": "C6M-3.2",
+      "name": "Supercells in Number Grids",
+      "description": "Identifying a supercell -- a cell whose number is greater than every number in its immediately adjacent cells -- in a 1D row and a 2D grid, and constructing or filling grids to create or avoid supercells.",
+      "idea": "A supercell is decided purely by comparing a number with its immediate neighbours, not by its position or its size relative to the whole grid.",
+      "rule": "A cell is a supercell only if its number is strictly greater than the number in every one of its adjacent cells (left/right in a row; left/right/top/bottom in a 2D grid). Edge and corner cells have fewer neighbours to beat.",
+      "example": "In the row 200, 577, 626, 345, the cell 626 is a supercell because it is greater than both 577 and 345.",
+      "difficulty_base": "Easy",
+      "questions": [
+        {
+          "t": "mcq",
+          "m": 1,
+          "q": "A supercell is a cell whose number is",
+          "a": "greater than the number in every one of its adjacent cells",
+          "o": [
+            "greater than the number in every one of its adjacent cells",
+            "greater than every number in the whole table",
+            "the largest number among all cells",
+            "exactly double its neighbouring cell's number"
+          ],
+          "b": "Remember",
+          "d": "Easy"
+        },
+        {
+          "t": "mcq",
+          "m": 1,
+          "q": "In the row 43, 79, 75, 63, the cell containing 79 is a supercell because",
+          "a": "79 is greater than both of its neighbours, 43 and 75",
+          "o": [
+            "79 is greater than both of its neighbours, 43 and 75",
+            "79 is greater than every number in the row",
+            "79 is an odd number",
+            "79 is the second number in the row"
+          ],
+          "b": "Remember",
+          "d": "Easy"
+        },
+        {
+          "t": "fill_blank",
+          "m": 1,
+          "q": "In a 2D grid, an interior cell (not on an edge) can have up to ____ neighbours to compare with.",
+          "a": "four",
+          "b": "Remember",
+          "d": "Easy"
+        },
+        {
+          "t": "mcq",
+          "m": 1,
+          "q": "A cell in the corner of a 2D grid has how many neighbours?",
+          "a": "two",
+          "o": [
+            "two",
+            "four",
+            "one",
+            "three"
+          ],
+          "b": "Remember",
+          "d": "Hard"
+        },
+        {
+          "t": "mcq",
+          "m": 1,
+          "q": "Why must the cell with the largest number in a table always be a supercell?",
+          "a": "no neighbour can have a number greater than the largest number in the whole table",
+          "o": [
+            "no neighbour can have a number greater than the largest number in the whole table",
+            "the largest number is always placed in the centre of the table",
+            "every neighbour of the largest number must be even",
+            "the largest number always has exactly two neighbours"
+          ],
+          "b": "Understand",
+          "d": "Easy"
+        },
+        {
+          "t": "mcq",
+          "m": 1,
+          "q": "Why can the cell with the smallest number in a table never be a supercell?",
+          "a": "every one of its neighbours has a number greater than it, since it is the smallest in the table",
+          "o": [
+            "every one of its neighbours has a number greater than it, since it is the smallest in the table",
+            "the smallest number is always in a corner, which has too few neighbours",
+            "the smallest number is not allowed to be coloured",
+            "the smallest number's neighbours are always equal to it"
+          ],
+          "b": "Understand",
+          "d": "Easy"
+        },
+        {
+          "t": "short_answer",
+          "m": 2,
+          "q": "In a row of 9 different numbers, can the row have no supercells at all? Explain.",
+          "a": "No; the cell containing the largest number in the row will always be greater than both its neighbours, so it must always be a supercell, however the numbers are arranged.",
+          "s": [
+            [
+              "No; the cell containing the largest number in the row will always be greater than both its neighbours",
+              1
+            ],
+            [
+              "so it must always be a supercell, however the numbers are arranged",
+              1
+            ]
+          ],
+          "b": "Understand",
+          "d": "Easy"
+        },
+        {
+          "t": "mcq",
+          "m": 1,
+          "q": "A row has 9 cells filled with 9 different numbers. What is the largest possible number of supercells?",
+          "a": "5",
+          "o": [
+            "5",
+            "9",
+            "4",
+            "8"
+          ],
+          "b": "Understand",
+          "d": "Hard"
+        },
+        {
+          "t": "mcq",
+          "m": 1,
+          "q": "A row has 8 cells filled with 8 different numbers. What is the largest possible number of supercells?",
+          "a": "4",
+          "o": [
+            "4",
+            "8",
+            "3",
+            "5"
+          ],
+          "b": "Understand",
+          "d": "Hard"
+        },
+        {
+          "t": "mcq",
+          "m": 1,
+          "q": "Row: 670, 9435, 3780, 3708, 7308. Which cell(s) are supercells?",
+          "a": "9435 and 7308",
+          "o": [
+            "9435 and 7308",
+            "9435 only",
+            "3780 and 7308",
+            "670 and 3708"
+          ],
+          "b": "Apply",
+          "d": "Easy"
+        },
+        {
+          "t": "fill_blank",
+          "m": 1,
+          "q": "In the row 200, 577, 626, 345, the supercell is ____.",
+          "a": "626",
+          "b": "Apply",
+          "d": "Easy"
+        },
+        {
+          "t": "short_answer",
+          "m": 2,
+          "q": "Fill a 1x5 row using the numbers 12, 45, 30, 78, 9 (each used once) so that exactly 3 cells are supercells, and show your arrangement.",
+          "a": "78, 9, 45, 12, 30 -- the cells 78, 45 and 30 are supercells.",
+          "s": [
+            [
+              "States a valid arrangement achieving 3 supercells, e.g. 78, 9, 45, 12, 30",
+              1
+            ],
+            [
+              "Verifies each cell against its neighbour(s) to confirm exactly 3 supercells (78, 45 and 30)",
+              1
+            ]
+          ],
+          "b": "Apply",
+          "d": "Hard"
+        },
+        {
+          "t": "mcq",
+          "m": 1,
+          "q": "A 2x2 grid is filled with 4 different numbers, with neighbours being only the cells sharing an edge (not diagonals). What is the maximum possible number of supercells?",
+          "a": "2",
+          "o": [
+            "2",
+            "1",
+            "4",
+            "3"
+          ],
+          "b": "Apply",
+          "d": "Hard"
+        },
+        {
+          "t": "mcq",
+          "m": 1,
+          "q": "A row has 6 cells filled with 6 different numbers. What is the largest possible number of supercells?",
+          "a": "3",
+          "o": [
+            "3",
+            "6",
+            "2",
+            "4"
+          ],
+          "b": "Apply",
+          "d": "Hard"
+        },
+        {
+          "t": "long_answer",
+          "m": 3,
+          "q": "A 3x3 grid uses the 9 numbers 1 to 9 with no repeats. Explain why it is impossible for all 9 cells to be supercells, and state the maximum number of supercells such a grid can have.",
+          "a": "Not all 9 cells can be supercells because the cell holding the smallest number always has neighbours greater than it, so it can never be a supercell; more generally, two neighbouring cells cannot both be local maxima. The maximum possible is 5, achieved with a checkerboard pattern placing the 5 largest numbers on the corner-and-centre cells.",
+          "s": [
+            [
+              "Explains that the smallest number in the grid can never be a supercell since all its neighbours are greater",
+              1
+            ],
+            [
+              "Explains more generally that two neighbouring cells cannot both be local maxima, so not every cell can be a supercell",
+              1
+            ],
+            [
+              "States the correct maximum, 5, achieved by placing the largest numbers on the corners and centre (checkerboard pattern)",
+              1
+            ]
+          ],
+          "b": "Apply",
+          "d": "Hardest"
+        },
+        {
+          "t": "multi_statement",
+          "m": 1,
+          "q": "Consider a 2D grid where every number is different. (I) The cell with the largest number in the grid is always a supercell. (II) A corner cell can never be a supercell. (III) Two supercells can be neighbours of each other. Which statements are true?",
+          "a": "I only",
+          "o": [
+            "I only",
+            "I and II only",
+            "I and III only",
+            "II and III only"
+          ],
+          "b": "Analyse",
+          "d": "Hard"
+        },
+        {
+          "t": "mcq",
+          "m": 1,
+          "q": "Two supercells in the same row or grid are never adjacent to each other. Why?",
+          "a": "if two neighbouring cells were both supercells, each would have to be greater than the other, which is impossible",
+          "o": [
+            "if two neighbouring cells were both supercells, each would have to be greater than the other, which is impossible",
+            "because supercells must always be an odd number of cells apart",
+            "because a row can contain only one supercell at a time",
+            "because supercells are always separated by exactly one cell"
+          ],
+          "b": "Analyse",
+          "d": "Hard"
+        },
+        {
+          "t": "assertion_reason",
+          "m": 1,
+          "q": "Assertion (A): In a grid filled with distinct numbers, at least one supercell always exists. Reason (R): The cell containing the overall largest number in the grid is always greater than every one of its neighbours.",
+          "a": "Both A and R are true, and R correctly explains A",
+          "o": [
+            "Both A and R are true, and R correctly explains A",
+            "Both A and R are true, but R does not explain A",
+            "A is true but R is false",
+            "A is false but R is true"
+          ],
+          "b": "Analyse",
+          "d": "Hardest"
+        },
+        {
+          "t": "short_answer",
+          "m": 3,
+          "q": "A student says: 'If I want no supercells at all in a 9-cell row filled with 9 different numbers, I just need to place the numbers in increasing order from left to right.' Judge this claim and justify.",
+          "a": "The claim is false. In increasing order, the last (rightmost) cell has only one neighbour, which is smaller than it, so it is always a supercell. In fact a supercell-free row is impossible: the cell holding the overall largest number is always greater than all its neighbours.",
+          "s": [
+            [
+              "States the claim is false",
+              1
+            ],
+            [
+              "In increasing order, the last cell's only neighbour is smaller, so it is always a supercell",
+              1
+            ],
+            [
+              "Correct reasoning: a supercell-free arrangement is impossible altogether, since the overall largest number's cell is always a supercell",
+              1
+            ]
+          ],
+          "b": "Evaluate",
+          "d": "Hard"
+        },
+        {
+          "t": "long_answer",
+          "m": 4,
+          "q": "Using the seven different numbers 5, 60, 15, 100, 25, 80, 40, arrange them in a 1x7 row so that exactly 4 cells are supercells. Show your arrangement and verify it.",
+          "a": "100, 5, 80, 15, 60, 25, 40 -- the supercells are 100, 80, 60 and 40.",
+          "s": [
+            [
+              "States a valid alternating high-low arrangement, e.g. 100, 5, 80, 15, 60, 25, 40",
+              1
+            ],
+            [
+              "Verifies end cells 100 and 40 are each greater than their one neighbour, so both are supercells",
+              1
+            ],
+            [
+              "Verifies the middle alternating cells 80 and 60 are each greater than both their neighbours, so both are supercells",
+              1
+            ],
+            [
+              "Confirms the low cells 5, 15, 25 are not supercells, giving exactly 4 supercells in total",
+              1
+            ]
+          ],
+          "b": "Create",
+          "d": "Hardest"
+        }
+      ]
+    },
+    {
+      "code": "C6M-3.3",
+      "name": "Number Line Placement, Digit-Length Counts and Digit Sums",
+      "description": "Placing multi-digit numbers correctly on a number line using equal gaps, comparing them, counting how many numbers have a given number of digits, and computing the digit sum of a number.",
+      "idea": "The position of a number on a number line, and its digit sum, are two different but useful ways to get a quick sense of a number's size and structure without doing full arithmetic.",
+      "rule": "On a number line with equal gaps, values increase steadily in one direction, so an unmarked number can be found by continuing the gap size; the count of numbers with a given number of digits follows the pattern 9, 90, 900, 9000, ..., each ten times the count before it; the digit sum of a number is the sum of its individual digits.",
+      "example": "On a number line marked every 1000, the number 2754 sits between the marks 2000 and 3000; the digit sum of 176 is 1+7+6=14.",
+      "difficulty_base": "Easy",
+      "questions": [
+        {
+          "t": "mcq",
+          "m": 1,
+          "q": "On a number line marked every 1000 from 1000 to 10,000, the number 2754 lies",
+          "a": "between the marks 2000 and 3000",
+          "o": [
+            "between the marks 2000 and 3000",
+            "between the marks 1000 and 2000",
+            "exactly on the mark 3000",
+            "between the marks 3000 and 4000"
+          ],
+          "b": "Remember",
+          "d": "Easy"
+        },
+        {
+          "t": "mcq",
+          "m": 1,
+          "q": "How many whole numbers have exactly 1 digit (from 1 to 9)?",
+          "a": "9",
+          "o": [
+            "9",
+            "10",
+            "8",
+            "1"
+          ],
+          "b": "Remember",
+          "d": "Easy"
+        },
+        {
+          "t": "fill_blank",
+          "m": 1,
+          "q": "The digit sum of 176 is ____.",
+          "a": "14",
+          "b": "Remember",
+          "d": "Easy"
+        },
+        {
+          "t": "mcq",
+          "m": 1,
+          "q": "How many whole numbers have exactly 3 digits?",
+          "a": "900",
+          "o": [
+            "900",
+            "999",
+            "100",
+            "90"
+          ],
+          "b": "Remember",
+          "d": "Hard"
+        },
+        {
+          "t": "mcq",
+          "m": 1,
+          "q": "Why are there 90 two-digit numbers but only 9 one-digit numbers?",
+          "a": "two-digit numbers range from 10 to 99 (90 numbers), while one-digit numbers range only from 1 to 9 (9 numbers)",
+          "o": [
+            "two-digit numbers range from 10 to 99 (90 numbers), while one-digit numbers range only from 1 to 9 (9 numbers)",
+            "two-digit numbers use two symbols, so there must be exactly twice as many as one-digit numbers",
+            "the extra 81 numbers come from including 0 nine times",
+            "two-digit numbers include all one-digit numbers written with a leading zero"
+          ],
+          "b": "Understand",
+          "d": "Easy"
+        },
+        {
+          "t": "mcq",
+          "m": 1,
+          "q": "68, 176 and 545 all have the same digit sum. What is it?",
+          "a": "14",
+          "o": [
+            "14",
+            "11",
+            "23",
+            "8"
+          ],
+          "b": "Understand",
+          "d": "Easy"
+        },
+        {
+          "t": "short_answer",
+          "m": 2,
+          "q": "Explain why the number of 4-digit numbers (9000) is exactly ten times the number of 3-digit numbers (900).",
+          "a": "4-digit numbers run from 1000 to 9999, a range of 9000 numbers, exactly ten times the 900 three-digit numbers from 100 to 999, because each extra digit position adds a factor of 10 more possibilities.",
+          "s": [
+            [
+              "States 4-digit numbers run from 1000 to 9999, giving 9000 numbers, and 3-digit numbers run from 100 to 999, giving 900 numbers",
+              1
+            ],
+            [
+              "Explains the extra leading digit position multiplies the count by 10, since it can independently take any of 10 values in the new place",
+              1
+            ]
+          ],
+          "b": "Understand",
+          "d": "Easy"
+        },
+        {
+          "t": "mcq",
+          "m": 1,
+          "q": "Which of these numbers has the largest digit sum: 4599, 6174, or 2345?",
+          "a": "4599 (digit sum 27)",
+          "o": [
+            "4599 (digit sum 27)",
+            "6174 (digit sum 18)",
+            "2345 (digit sum 14)",
+            "all three have the same digit sum"
+          ],
+          "b": "Understand",
+          "d": "Hard"
+        },
+        {
+          "t": "mcq",
+          "m": 1,
+          "q": "On the number line 9993, 9994, 9995, ... with equal gaps of 1, what number comes 5 marks after 9997?",
+          "a": "10,002",
+          "o": [
+            "10,002",
+            "10,001",
+            "9998",
+            "10,000"
+          ],
+          "b": "Understand",
+          "d": "Hard"
+        },
+        {
+          "t": "mcq",
+          "m": 1,
+          "q": "On the number line 83,705 -- 84,705 -- 85,705 ..., what is the gap between consecutive marks?",
+          "a": "1000",
+          "o": [
+            "1000",
+            "100",
+            "10,000",
+            "1"
+          ],
+          "b": "Apply",
+          "d": "Easy"
+        },
+        {
+          "t": "fill_blank",
+          "m": 1,
+          "q": "The smallest whole number (of any length) whose digit sum is 14 is ____.",
+          "a": "59",
+          "b": "Apply",
+          "d": "Easy"
+        },
+        {
+          "t": "mcq",
+          "m": 1,
+          "q": "What is the largest 5-digit number whose digits add up to 14?",
+          "a": "95,000",
+          "o": [
+            "95,000",
+            "99,500",
+            "41,000",
+            "50,900"
+          ],
+          "b": "Apply",
+          "d": "Hard"
+        },
+        {
+          "t": "mcq",
+          "m": 1,
+          "q": "How many times does the digit 7 occur when all whole numbers from 1 to 100 are written out?",
+          "a": "20 times",
+          "o": [
+            "20 times",
+            "19 times",
+            "10 times",
+            "100 times"
+          ],
+          "b": "Apply",
+          "d": "Hard"
+        },
+        {
+          "t": "short_answer",
+          "m": 2,
+          "q": "Find the digit sums of 234 and 567, and describe the pattern you notice among consecutive-digit 3-digit numbers.",
+          "a": "234: 2+3+4=9; 567: 5+6+7=18. Both digit sums are multiples of 3, and this pattern continues for every 3-digit number with consecutive digits.",
+          "s": [
+            [
+              "Correctly computes 234: 2+3+4=9 and 567: 5+6+7=18",
+              1
+            ],
+            [
+              "States the pattern: each such digit sum is always a multiple of 3",
+              1
+            ]
+          ],
+          "b": "Apply",
+          "d": "Hard"
+        },
+        {
+          "t": "long_answer",
+          "m": 3,
+          "q": "Between 1 and 1000, how many times does the digit 7 occur? Explain your method, not just the final count.",
+          "a": "The digit 7 occurs 300 times between 1 and 1000. Counting separately in the units, tens and hundreds positions across the full range and combining these counts gives the total, and the pattern scales up consistently from the smaller range 1-100 (20 times).",
+          "s": [
+            [
+              "States the correct count: 300 times",
+              1
+            ],
+            [
+              "Explains counting occurrences in each digit position (units, tens, hundreds) separately across the range",
+              1
+            ],
+            [
+              "Shows the reasoning scales up consistently from the 1-100 count (20 times) to the larger range",
+              1
+            ]
+          ],
+          "b": "Apply",
+          "d": "Hardest"
+        },
+        {
+          "t": "multi_statement",
+          "m": 1,
+          "q": "Consider these statements. (I) Every 4-digit number has a digit sum between 1 and 36. (II) The digit sum of a number can be larger than the number itself. (III) Two different numbers can never have the same digit sum. Which are true?",
+          "a": "I only",
+          "o": [
+            "I only",
+            "I and II only",
+            "II and III only",
+            "I, II and III"
+          ],
+          "b": "Analyse",
+          "d": "Hard"
+        },
+        {
+          "t": "mcq",
+          "m": 1,
+          "q": "Why does the pattern 9, 90, 900, 9000, 90,000 for digit-length counts always multiply by 10 at each step?",
+          "a": "each extra digit position can independently take any of 10 values (0-9), while the leading digit still has 9 choices (1-9), multiplying the previous count by 10",
+          "o": [
+            "each extra digit position can independently take any of 10 values (0-9), while the leading digit still has 9 choices (1-9), multiplying the previous count by 10",
+            "each digit-length group must contain exactly 10 times as many numbers to keep the number line balanced",
+            "the number 10 is the base of our counting system, so every count must literally be a multiple of 10",
+            "adding one more digit always adds exactly 9 new numbers to the smaller group"
+          ],
+          "b": "Analyse",
+          "d": "Hard"
+        },
+        {
+          "t": "assertion_reason",
+          "m": 1,
+          "q": "Assertion (A): There are exactly 90,000 five-digit numbers. Reason (R): Five-digit numbers range from 10,000 to 99,999, and 99,999 minus 10,000 plus 1 equals 90,000.",
+          "a": "Both A and R are true, and R correctly explains A",
+          "o": [
+            "Both A and R are true, and R correctly explains A",
+            "Both A and R are true, but R does not explain A",
+            "A is true but R is false",
+            "A is false but R is true"
+          ],
+          "b": "Analyse",
+          "d": "Hardest"
+        },
+        {
+          "t": "short_answer",
+          "m": 3,
+          "q": "A student says: 'Since 176 and 545 have the same digit sum, they must be equal in value.' Evaluate this claim.",
+          "a": "The claim is false. Digit sum only reflects the sum of the digits, not the number's actual place-value size. 176 and 545 are clearly different numbers despite sharing the digit sum 14.",
+          "s": [
+            [
+              "States the claim is false",
+              1
+            ],
+            [
+              "Explains digit sum reflects only the sum of digits, not place value or actual size",
+              1
+            ],
+            [
+              "Gives 176 and 545 as a counterexample sharing digit sum 14 but being different numbers",
+              1
+            ]
+          ],
+          "b": "Evaluate",
+          "d": "Hard"
+        },
+        {
+          "t": "long_answer",
+          "m": 4,
+          "q": "Design a 5-digit number with digit sum 20 that also lies strictly between the marks 40,000 and 41,000 on a number line marked every thousand. Show your number and verify both conditions.",
+          "a": "40,970. It lies strictly between 40,000 and 41,000, and its digit sum is 4+0+9+7+0=20.",
+          "s": [
+            [
+              "States a valid number, e.g. 40,970",
+              1
+            ],
+            [
+              "Verifies it lies strictly between 40,000 and 41,000",
+              1
+            ],
+            [
+              "Computes its digit sum: 4+0+9+7+0=20, matching the requirement",
+              1
+            ],
+            [
+              "Notes the leading digits 4 and 0 are fixed by the number-line condition, so only the last three digits could be chosen to hit the target digit sum",
+              1
+            ]
+          ],
+          "b": "Create",
+          "d": "Hardest"
+        }
+      ]
+    },
+    {
+      "code": "C6M-3.4",
+      "name": "Palindromic Numbers and the Reverse-and-Add Process",
+      "description": "Recognising palindromic numbers, constructing them from a given set of digits, and applying the reverse-and-add procedure to reach a palindrome.",
+      "idea": "A palindrome reads the same forwards and backwards; adding a number to its own digit-reversal, repeated as needed, produces a palindrome for every 2-digit starting number tried so far.",
+      "rule": "To test if a number is a palindrome, compare its digits from both ends inward. To reverse-and-add: write the digits in reverse order as a new number, add it to the original, and repeat the same reversal-and-addition on the sum until a palindrome appears.",
+      "example": "68 + 86 = 154 (not a palindrome); reverse again: 154 + 451 = 605; continue until a palindrome is reached.",
+      "difficulty_base": "Easy",
+      "questions": [
+        {
+          "t": "mcq",
+          "m": 1,
+          "q": "A palindromic number is one that",
+          "a": "reads the same from left to right and from right to left",
+          "o": [
+            "reads the same from left to right and from right to left",
+            "has all its digits the same",
+            "is always an odd number",
+            "can be divided evenly by 11"
+          ],
+          "b": "Remember",
+          "d": "Easy"
+        },
+        {
+          "t": "mcq",
+          "m": 1,
+          "q": "Which of these is a palindrome?",
+          "a": "7337",
+          "o": [
+            "7337",
+            "7373",
+            "1234",
+            "7733"
+          ],
+          "b": "Remember",
+          "d": "Easy"
+        },
+        {
+          "t": "fill_blank",
+          "m": 1,
+          "q": "The reverse of the number 154 is ____.",
+          "a": "451",
+          "b": "Remember",
+          "d": "Easy"
+        },
+        {
+          "t": "mcq",
+          "m": 1,
+          "q": "Which of these numbers is NOT a palindrome?",
+          "rev": true,
+          "a": "1213",
+          "o": [
+            "1213",
+            "1221",
+            "5445",
+            "898"
+          ],
+          "b": "Remember",
+          "d": "Hard"
+        },
+        {
+          "t": "mcq",
+          "m": 1,
+          "q": "68 + 86 = 154. What is the next step in the reverse-and-add process, since 154 is not a palindrome?",
+          "a": "reverse 154 to get 451, then add: 154 + 451",
+          "o": [
+            "reverse 154 to get 451, then add: 154 + 451",
+            "reverse 68 again and add it to 154",
+            "stop, because the process only works once",
+            "subtract 451 from 154"
+          ],
+          "b": "Understand",
+          "d": "Easy"
+        },
+        {
+          "t": "mcq",
+          "m": 1,
+          "q": "Using the digits 1, 2 and 3, which of these is a valid 3-digit palindrome?",
+          "a": "212",
+          "o": [
+            "212",
+            "123",
+            "132",
+            "231"
+          ],
+          "b": "Understand",
+          "d": "Easy"
+        },
+        {
+          "t": "short_answer",
+          "m": 2,
+          "q": "List all the 3-digit palindromes that can be made using only the digits 1 and 2, repeats allowed (e.g. 111).",
+          "a": "111, 121, 212, 222",
+          "s": [
+            [
+              "Identifies that a 3-digit palindrome has the form aba, so the outer digits must match and the middle digit is free, both chosen from {1,2}",
+              1
+            ],
+            [
+              "Lists all four correctly: 111, 121, 212, 222",
+              1
+            ]
+          ],
+          "b": "Understand",
+          "d": "Easy"
+        },
+        {
+          "t": "mcq",
+          "m": 1,
+          "q": "For 3-digit starting numbers, is it known whether reverse-and-add always reaches a palindrome?",
+          "a": "no -- it is suspected that starting with 196 never yields a palindrome, but this is unproven",
+          "o": [
+            "no -- it is suspected that starting with 196 never yields a palindrome, but this is unproven",
+            "yes, it is proven true for all 3-digit numbers, just like for 2-digit numbers",
+            "no, it has been proven false for all 3-digit numbers",
+            "yes, but only for even 3-digit numbers"
+          ],
+          "b": "Understand",
+          "d": "Hard"
+        },
+        {
+          "t": "mcq",
+          "m": 1,
+          "q": "Why is 47 + 74 = 121 already a palindrome after just one step, while other 2-digit numbers need several steps?",
+          "a": "reverse-and-add can reach a palindrome after different numbers of steps depending on the starting number; sometimes the very first sum is already symmetric",
+          "o": [
+            "reverse-and-add can reach a palindrome after different numbers of steps depending on the starting number; sometimes the very first sum is already symmetric",
+            "121 is a special number that every starting number eventually passes through",
+            "47 is the smallest 2-digit number, so it always finishes in one step",
+            "the process always takes exactly one step for numbers with an even tens digit"
+          ],
+          "b": "Understand",
+          "d": "Hard"
+        },
+        {
+          "t": "mcq",
+          "m": 1,
+          "q": "What is 12 + 21?",
+          "a": "33, which is already a palindrome",
+          "o": [
+            "33, which is already a palindrome",
+            "33, but it is not a palindrome",
+            "32, which is a palindrome",
+            "12, unchanged"
+          ],
+          "b": "Apply",
+          "d": "Easy"
+        },
+        {
+          "t": "fill_blank",
+          "m": 1,
+          "q": "Applying reverse-and-add once to 39 gives 39 + 93 = ____.",
+          "a": "132",
+          "b": "Apply",
+          "d": "Easy"
+        },
+        {
+          "t": "short_answer",
+          "m": 2,
+          "q": "Apply the reverse-and-add process to the number 39 until you reach a palindrome. Show each step.",
+          "a": "39+93=132 (not a palindrome); 132+231=363, which is a palindrome.",
+          "s": [
+            [
+              "39+93=132 (not a palindrome, since 132 reversed is 231)",
+              1
+            ],
+            [
+              "132+231=363, which is a palindrome",
+              1
+            ]
+          ],
+          "b": "Apply",
+          "d": "Hard"
+        },
+        {
+          "t": "mcq",
+          "m": 1,
+          "q": "What is the smallest 5-digit palindrome?",
+          "a": "10,001",
+          "o": [
+            "10,001",
+            "11,111",
+            "10,000",
+            "10,010"
+          ],
+          "b": "Apply",
+          "d": "Hard"
+        },
+        {
+          "t": "mcq",
+          "m": 1,
+          "q": "What is the largest 5-digit palindrome?",
+          "a": "99,999",
+          "o": [
+            "99,999",
+            "98,989",
+            "90,009",
+            "99,099"
+          ],
+          "b": "Apply",
+          "d": "Hard"
+        },
+        {
+          "t": "long_answer",
+          "m": 3,
+          "q": "Find the sum and the difference of the smallest and largest 5-digit palindromes.",
+          "a": "Smallest = 10,001, largest = 99,999. Sum = 110,000. Difference = 89,998.",
+          "s": [
+            [
+              "Identifies smallest = 10,001 and largest = 99,999",
+              1
+            ],
+            [
+              "Computes sum: 10,001 + 99,999 = 110,000",
+              1
+            ],
+            [
+              "Computes difference: 99,999 - 10,001 = 89,998",
+              1
+            ]
+          ],
+          "b": "Apply",
+          "d": "Hardest"
+        },
+        {
+          "t": "multi_statement",
+          "m": 1,
+          "q": "Consider these statements. (I) A single-digit number is always a palindrome. (II) If a number is a palindrome, its reverse is the same number. (III) The sum of a two-digit number and its reverse is always a 3-digit number. Which are true?",
+          "a": "I and II only",
+          "o": [
+            "I and II only",
+            "I, II and III",
+            "II and III only",
+            "I only"
+          ],
+          "b": "Analyse",
+          "d": "Hard"
+        },
+        {
+          "t": "mcq",
+          "m": 1,
+          "q": "A 2-digit number and its reverse reach a palindrome in one step for some numbers (like 47) but not others (like 39). What determines this?",
+          "a": "whether adding the digits causes a carry that disturbs the symmetry of the result",
+          "o": [
+            "whether adding the digits causes a carry that disturbs the symmetry of the result",
+            "whether the starting number is even or odd",
+            "whether the starting number is greater than 50",
+            "whether the starting number's digits are consecutive"
+          ],
+          "b": "Analyse",
+          "d": "Hard"
+        },
+        {
+          "t": "assertion_reason",
+          "m": 1,
+          "q": "Assertion (A): The number 121 is a palindrome. Reason (R): Reversing its digits gives 121 again, identical to the original number.",
+          "a": "Both A and R are true, and R correctly explains A",
+          "o": [
+            "Both A and R are true, and R correctly explains A",
+            "Both A and R are true, but R does not explain A",
+            "A is true but R is false",
+            "A is false but R is true"
+          ],
+          "b": "Analyse",
+          "d": "Hardest"
+        },
+        {
+          "t": "short_answer",
+          "m": 3,
+          "q": "A student claims: 'Reverse-and-add always reaches a palindrome within 2 steps, no matter the starting 2-digit number.' Evaluate this claim using an example.",
+          "a": "The claim is false. Some 2-digit numbers take more than 2 steps to reach a palindrome. The correct statement is that reverse-and-add is believed to always eventually reach a palindrome for 2-digit starting numbers, but not necessarily within a fixed small number of steps.",
+          "s": [
+            [
+              "States the claim is false",
+              1
+            ],
+            [
+              "Gives or references an example needing more than 2 steps to reach a palindrome",
+              1
+            ],
+            [
+              "States the correct fact: it always seems to reach a palindrome eventually, but not within a fixed number of steps",
+              1
+            ]
+          ],
+          "b": "Evaluate",
+          "d": "Hard"
+        },
+        {
+          "t": "long_answer",
+          "m": 4,
+          "q": "Choose a 2-digit number of your own, not close to a palindrome already, and carry out reverse-and-add until you reach a palindrome, showing every step.",
+          "a": "Starting with 59: 59+95=154; 154+451=605; 605+506=1111, which is a palindrome.",
+          "s": [
+            [
+              "States a chosen 2-digit number, e.g. 59",
+              1
+            ],
+            [
+              "Step 1: 59+95=154 (not a palindrome)",
+              1
+            ],
+            [
+              "Step 2: 154+451=605 (not a palindrome)",
+              1
+            ],
+            [
+              "Step 3: 605+506=1111, which is a palindrome",
+              1
+            ]
+          ],
+          "b": "Create",
+          "d": "Hardest"
+        }
+      ]
+    },
+    {
+      "code": "C6M-3.5",
+      "name": "Largest/Smallest Digit Arrangements: Kaprekar's Constant and Clock/Calendar Patterns",
+      "description": "Forming the largest and smallest number possible from a set of digits, using their difference (Kaprekar's routine, converging to 6174 for most 4-digit numbers) and their sum/difference to hit numeric targets, and recognising patterned clock times and palindromic calendar dates.",
+      "idea": "Arranging a fixed set of digits from largest-to-smallest or smallest-to-largest gives the extreme values that digit set can form, and repeatedly subtracting the smallest arrangement from the largest arrangement of a number's own digits eventually locks onto a fixed constant.",
+      "rule": "To make the largest number from a digit set, arrange the digits in descending order; for the smallest, arrange them in ascending order (moving a leading zero to the next position if needed). Kaprekar's routine: for a 4-digit number with at least two different digits, repeatedly compute (largest arrangement) minus (smallest arrangement) of its digits; this always reaches 6174 and then repeats.",
+      "example": "From the digits 6, 3, 8, 2: largest = 8632, smallest = 2368, difference = 6264; repeating this process eventually reaches 6174.",
+      "difficulty_base": "Hard",
+      "questions": [
+        {
+          "t": "mcq",
+          "m": 1,
+          "q": "To make the largest number from the digits 6, 3, 8, 2, you should arrange them",
+          "a": "in descending order: 8632",
+          "o": [
+            "in descending order: 8632",
+            "in ascending order: 2368",
+            "in the order given: 6382",
+            "alternating largest and smallest: 8236"
+          ],
+          "b": "Remember",
+          "d": "Easy"
+        },
+        {
+          "t": "mcq",
+          "m": 1,
+          "q": "The Kaprekar constant that a 4-digit Kaprekar routine always reaches is",
+          "a": "6174",
+          "o": [
+            "6174",
+            "1746",
+            "4617",
+            "7641"
+          ],
+          "b": "Remember",
+          "d": "Easy"
+        },
+        {
+          "t": "fill_blank",
+          "m": 1,
+          "q": "12:21 is an example of a ____ time on a 12-hour clock.",
+          "a": "palindromic",
+          "b": "Remember",
+          "d": "Easy"
+        },
+        {
+          "t": "mcq",
+          "m": 1,
+          "q": "Which of these clock times does NOT show a repeated-digit pattern like 4:44 or 10:10?",
+          "rev": true,
+          "a": "6:35",
+          "o": [
+            "6:35",
+            "2:22",
+            "11:11",
+            "9:09"
+          ],
+          "b": "Remember",
+          "d": "Hard"
+        },
+        {
+          "t": "mcq",
+          "m": 1,
+          "q": "Why does making the largest number from a digit set mean arranging digits in descending order?",
+          "a": "placing the biggest digit in the highest place value makes the greatest contribution to the number's size, and this continues for each place going right",
+          "o": [
+            "placing the biggest digit in the highest place value makes the greatest contribution to the number's size, and this continues for each place going right",
+            "larger digits are always written on the left by convention, regardless of value",
+            "descending order always gives an even number",
+            "the largest digit must always be placed in the units position"
+          ],
+          "b": "Understand",
+          "d": "Easy"
+        },
+        {
+          "t": "mcq",
+          "m": 1,
+          "q": "Manish's birthday 20/12/2012 has the digits repeating as 20-12-20-12. Which of these dates has the same kind of repeating pattern?",
+          "a": "15/06/1506",
+          "o": [
+            "15/06/1506",
+            "15/06/1516",
+            "06/15/1506",
+            "15/06/0615"
+          ],
+          "b": "Understand",
+          "d": "Easy"
+        },
+        {
+          "t": "short_answer",
+          "m": 2,
+          "q": "State the rule for making the smallest number from a set of at least two different digits (a leading zero is not allowed), and apply it to the digits 0, 4, 7, 1.",
+          "a": "Arrange digits in ascending order, but if the smallest digit is 0, swap it with the next smallest non-zero digit so the number does not start with 0. For 0,4,7,1 this gives 1047.",
+          "s": [
+            [
+              "States the rule: arrange in ascending order, swapping a leading 0 with the next smallest non-zero digit",
+              1
+            ],
+            [
+              "Applies it to 0,4,7,1 to correctly get 1047",
+              1
+            ]
+          ],
+          "b": "Understand",
+          "d": "Easy"
+        },
+        {
+          "t": "mcq",
+          "m": 1,
+          "q": "Kaprekar's routine requires the starting 4-digit number to have at least two different digits. Why?",
+          "a": "if all four digits are the same, the largest and smallest arrangements are identical, so the difference is always 0",
+          "o": [
+            "if all four digits are the same, the largest and smallest arrangements are identical, so the difference is always 0",
+            "numbers with repeated digits are not considered valid numbers",
+            "the routine only works for numbers greater than 6174",
+            "repeated digits always produce a 5-digit difference"
+          ],
+          "b": "Understand",
+          "d": "Hard"
+        },
+        {
+          "t": "mcq",
+          "m": 1,
+          "q": "Why does the calendar not repeat every single year?",
+          "a": "the number of days in a year (365, or 366 in a leap year) is not a multiple of 7, so the same dates fall on different weekdays each year",
+          "o": [
+            "the number of days in a year (365, or 366 in a leap year) is not a multiple of 7, so the same dates fall on different weekdays each year",
+            "leap years never follow any repeating pattern at all",
+            "months have a different number of days every single year",
+            "the calendar is redesigned by a committee every year"
+          ],
+          "b": "Understand",
+          "d": "Hard"
+        },
+        {
+          "t": "mcq",
+          "m": 1,
+          "q": "Digits 4, 7, 3, 2 form the largest number 7432 and smallest number 2347. What is 7432 - 2347?",
+          "a": "5085",
+          "o": [
+            "5085",
+            "5185",
+            "4085",
+            "9779"
+          ],
+          "b": "Apply",
+          "d": "Easy"
+        },
+        {
+          "t": "fill_blank",
+          "m": 1,
+          "q": "The largest and smallest numbers formed from the digits 4, 7, 3, 2 add up to ____.",
+          "a": "9779",
+          "b": "Apply",
+          "d": "Easy"
+        },
+        {
+          "t": "short_answer",
+          "m": 2,
+          "q": "Carry out one round of Kaprekar's routine on the number 6382: find A (largest arrangement), B (smallest arrangement), and C = A - B.",
+          "a": "A = 8632, B = 2368, C = 8632 - 2368 = 6264.",
+          "s": [
+            [
+              "A = 8632, B = 2368",
+              1
+            ],
+            [
+              "C = 8632 - 2368 = 6264",
+              1
+            ]
+          ],
+          "b": "Apply",
+          "d": "Hard"
+        },
+        {
+          "t": "mcq",
+          "m": 1,
+          "q": "Choose 4 digits so that the difference between their largest and smallest arrangements is greater than 5085 (the difference obtained from digits 4,7,3,2). Which choice works?",
+          "a": "digits 7, 4, 3, 1, giving 7431 - 1347 = 6084",
+          "o": [
+            "digits 7, 4, 3, 1, giving 7431 - 1347 = 6084",
+            "digits 5, 5, 5, 5, giving 5555 - 5555 = 0",
+            "digits 1, 2, 3, 4, giving 4321 - 1234 = 3087",
+            "digits 9, 8, 7, 6, giving 9876 - 6789 = 3087"
+          ],
+          "b": "Apply",
+          "d": "Hard"
+        },
+        {
+          "t": "mcq",
+          "m": 1,
+          "q": "The time now is 10:01, a palindromic time. How many minutes until the next palindromic time?",
+          "a": "70 minutes (next palindrome is 11:11)",
+          "o": [
+            "70 minutes (next palindrome is 11:11)",
+            "60 minutes (next palindrome is 11:01)",
+            "110 minutes (next palindrome is 11:51)",
+            "10 minutes (next palindrome is 10:11)"
+          ],
+          "b": "Apply",
+          "d": "Hard"
+        },
+        {
+          "t": "long_answer",
+          "m": 3,
+          "q": "Starting from 5683, carry out Kaprekar's routine step by step until you reach the constant 6174, and state how many rounds it takes.",
+          "a": "5683 -> 5085 -> 3492 -> 7083 -> 5652 -> 3996 -> 6264 -> 4176 -> 6174. It takes 8 rounds.",
+          "s": [
+            [
+              "States the correct number of rounds: 8",
+              1
+            ],
+            [
+              "Shows key intermediate values matching the routine: 5683 -> 5085 -> 3492 -> 7083 -> 5652 -> 3996 -> 6264 -> 4176 -> 6174",
+              1
+            ],
+            [
+              "Confirms applying the routine to 6174 again (7641-1467) gives 6174 once more",
+              1
+            ]
+          ],
+          "b": "Apply",
+          "d": "Hardest"
+        },
+        {
+          "t": "multi_statement",
+          "m": 1,
+          "q": "Consider these statements about Kaprekar's routine. (I) It works for any 4-digit number with at least two different digits. (II) It always reaches 6174 in exactly 7 rounds. (III) Once 6174 is reached, applying the routine again gives 6174 again. Which are true?",
+          "a": "I and III only",
+          "o": [
+            "I and III only",
+            "I, II and III",
+            "II and III only",
+            "I only"
+          ],
+          "b": "Analyse",
+          "d": "Hard"
+        },
+        {
+          "t": "mcq",
+          "m": 1,
+          "q": "Manish's birthday 20/12/2012 and Meghana's birthday 11/02/2011 both show digit patterns, but of different kinds. What is the difference?",
+          "a": "Manish's date repeats a 4-digit block (20-12 repeated), while Meghana's date reads the same forwards and backwards (a palindrome)",
+          "o": [
+            "Manish's date repeats a 4-digit block (20-12 repeated), while Meghana's date reads the same forwards and backwards (a palindrome)",
+            "Manish's date is a palindrome and Meghana's repeats a block",
+            "both dates show exactly the same kind of pattern",
+            "Manish's date has more digits than Meghana's"
+          ],
+          "b": "Analyse",
+          "d": "Hard"
+        },
+        {
+          "t": "assertion_reason",
+          "m": 1,
+          "q": "Assertion (A): Using the digits 7,4,3,1, the sum of the largest and smallest arrangements (7431+1347=8778) is less than the sum from 7,4,3,2 (7432+2347=9779). Reason (R): Replacing the digit 2 with the smaller digit 1 in both arrangements reduces both numbers, so their sum is also reduced.",
+          "a": "Both A and R are true, and R correctly explains A",
+          "o": [
+            "Both A and R are true, and R correctly explains A",
+            "Both A and R are true, but R does not explain A",
+            "A is true but R is false",
+            "A is false but R is true"
+          ],
+          "b": "Analyse",
+          "d": "Hardest"
+        },
+        {
+          "t": "short_answer",
+          "m": 3,
+          "q": "A student claims: 'Kaprekar's routine works the same way for 3-digit numbers, always reaching 6174.' Evaluate this claim.",
+          "a": "The claim is false. For 3-digit numbers the routine instead settles into a repeating cycle at 495, not 6174; 6174 is the constant specifically for 4-digit numbers with at least two different digits.",
+          "s": [
+            [
+              "States the claim is false",
+              1
+            ],
+            [
+              "States that 3-digit numbers instead settle into a repeating cycle at 495, as seen when the routine is tried on numbers like 321",
+              1
+            ],
+            [
+              "States that 6174 is specific to 4-digit numbers",
+              1
+            ]
+          ],
+          "b": "Evaluate",
+          "d": "Hard"
+        },
+        {
+          "t": "long_answer",
+          "m": 4,
+          "q": "Choose four digits of your own and carry out one full round of Kaprekar's process (form A, B and C = A - B). Then choose a second digit set for which C turns out to be a 3-digit number rather than 4-digit, and explain why that happens.",
+          "a": "First set 5,2,9,1: A=9521, B=1259, C=9521-1259=8262. Second set 1,1,1,2: A=2111, B=1112, C=2111-1112=999, a 3-digit result, because the largest and smallest arrangements are close in value when the digits are mostly the same.",
+          "s": [
+            [
+              "States a first digit set and correctly computes A, B and C, e.g. digits 5,2,9,1 giving A=9521, B=1259, C=8262",
+              1
+            ],
+            [
+              "States a second digit set with a repeated digit, e.g. 1,1,1,2, giving A=2111, B=1112",
+              1
+            ],
+            [
+              "Computes C = 2111 - 1112 = 999, a 3-digit result",
+              1
+            ],
+            [
+              "Explains this happens because the largest and smallest arrangements are close in value when most digits repeat, making the difference small enough to lose a digit place",
+              1
+            ]
+          ],
+          "b": "Create",
+          "d": "Hardest"
+        }
+      ]
+    },
+    {
+      "code": "C6M-3.6",
+      "name": "Mental Math: Combining Given Numbers and Number-Pattern Sums",
+      "description": "Mentally combining a fixed set of numbers with addition and subtraction (reusing numbers as needed) to hit a target value, reasoning about which sums/differences are possible or impossible, and finding quicker-than-one-by-one ways to sum numbers arranged in a visual pattern.",
+      "idea": "When several fixed numbers can be reused and combined by addition or subtraction, some targets are reachable and others are not; and numbers arranged in a repeating visual pattern can often be summed faster by counting groups instead of term by term.",
+      "rule": "To test whether a target is reachable from a fixed set of numbers, look for a combination of additions (and subtractions, if allowed) of those numbers, reused as needed, that equals the target exactly. To sum a repeating pattern quickly, multiply one value by how many times it repeats and add the partial totals.",
+      "example": "Using 400, 1500 and 13,000 (each any number of times), 3,400 = 1500 + 1500 + 400.",
+      "difficulty_base": "Hard",
+      "questions": [
+        {
+          "t": "mcq",
+          "m": 1,
+          "q": "Using the numbers 400, 1500 and 13,000 (each usable more than once), which addition gives 3400?",
+          "a": "1500 + 1500 + 400",
+          "o": [
+            "1500 + 1500 + 400",
+            "1500 + 1500 + 1500",
+            "13,000 - 400 - 400",
+            "400 + 400 + 400"
+          ],
+          "b": "Remember",
+          "d": "Easy"
+        },
+        {
+          "t": "mcq",
+          "m": 1,
+          "q": "To sum eight 32s and four 64s quickly instead of adding one by one, the best method is to",
+          "a": "multiply 32x8 and 64x4, then add the two results",
+          "o": [
+            "multiply 32x8 and 64x4, then add the two results",
+            "add all twelve numbers one by one for accuracy",
+            "only add the 64s, since 32 is too small to matter",
+            "guess the total based on the biggest number present"
+          ],
+          "b": "Remember",
+          "d": "Easy"
+        },
+        {
+          "t": "fill_blank",
+          "m": 1,
+          "q": "In the always/sometimes/never exercise, a statement that is true in some cases but false in others is classified as ____.",
+          "a": "sometimes true",
+          "b": "Remember",
+          "d": "Easy"
+        },
+        {
+          "t": "mcq",
+          "m": 1,
+          "q": "'4-digit number + 2-digit number gives a 6-digit number' is classified as",
+          "a": "never true",
+          "o": [
+            "never true",
+            "always true",
+            "only sometimes true",
+            "true only for even numbers"
+          ],
+          "b": "Remember",
+          "d": "Hard"
+        },
+        {
+          "t": "mcq",
+          "m": 1,
+          "q": "Why is '5-digit number - 5-digit number gives a 5-digit number' only sometimes true?",
+          "a": "the result depends on the numbers chosen, e.g. 12,000-10,000=2,000 (4-digit) but 80,000-10,000=70,000 (5-digit)",
+          "o": [
+            "the result depends on the numbers chosen, e.g. 12,000-10,000=2,000 (4-digit) but 80,000-10,000=70,000 (5-digit)",
+            "subtraction of equal-length numbers always gives a shorter result",
+            "the statement is grammatically ambiguous",
+            "5-digit numbers cannot be subtracted from each other"
+          ],
+          "b": "Understand",
+          "d": "Easy"
+        },
+        {
+          "t": "mcq",
+          "m": 1,
+          "q": "The values 25,000; 400; 13,000; 1,500 and 60,000 (each reusable) can be added to make many sums, but NOT exactly 1,000. Why?",
+          "rev": true,
+          "a": "the smallest available number is 400, and 1000 is not reachable by adding any combination of these numbers",
+          "o": [
+            "the smallest available number is 400, and 1000 is not reachable by adding any combination of these numbers",
+            "1,000 is too small a number to be built from thousands-sized numbers",
+            "the numbers can only be used in addition, never combined with each other",
+            "1,000 is not divisible by 5, and there are 5 numbers given"
+          ],
+          "b": "Understand",
+          "d": "Easy"
+        },
+        {
+          "t": "short_answer",
+          "m": 2,
+          "q": "In a pattern where the value 32 is repeated 32 times, explain a quicker way to find the total than adding all 32 values individually.",
+          "a": "Multiply the repeated value by the number of times it appears: 32x32=1024, which avoids adding the number to itself 32 separate times.",
+          "s": [
+            [
+              "Multiplies the repeated value by the number of times it appears: 32x32=1024",
+              1
+            ],
+            [
+              "Explains this avoids adding the value to itself 32 separate times while giving the same total",
+              1
+            ]
+          ],
+          "b": "Understand",
+          "d": "Easy"
+        },
+        {
+          "t": "mcq",
+          "m": 1,
+          "q": "Which of these CAN be made using a 5-digit + 3-digit addition, giving a 6-digit sum?",
+          "a": "99,999 + 999 = 100,998",
+          "o": [
+            "99,999 + 999 = 100,998",
+            "50,000 + 500 = 50,500",
+            "10,000 + 100 = 10,100",
+            "it is impossible for a 5-digit and a 3-digit number to sum to 6 digits"
+          ],
+          "b": "Understand",
+          "d": "Hard"
+        },
+        {
+          "t": "mcq",
+          "m": 1,
+          "q": "Why is '4-digit + 4-digit = 6-digit sum' never possible?",
+          "a": "the largest possible sum of two 4-digit numbers is 9999+9999=19,998, which is still only 5 digits",
+          "o": [
+            "the largest possible sum of two 4-digit numbers is 9999+9999=19,998, which is still only 5 digits",
+            "two 4-digit numbers always sum to exactly an 8-digit number",
+            "addition never increases the number of digits",
+            "4-digit numbers can only be added to numbers of the same length"
+          ],
+          "b": "Understand",
+          "d": "Hard"
+        },
+        {
+          "t": "mcq",
+          "m": 1,
+          "q": "Using 40,000; 7,000; 800; 1,500 and 300 (addition and subtraction, each once), which combination equals 45,000?",
+          "a": "40,000 + 7,000 - 800 - 1,500 + 300",
+          "o": [
+            "40,000 + 7,000 - 800 - 1,500 + 300",
+            "40,000 + 7,000 - 1,500 - 300",
+            "40,000 + 800 + 300 - 1,500",
+            "7,000 + 12,000 + 800 + 1,500"
+          ],
+          "b": "Apply",
+          "d": "Easy"
+        },
+        {
+          "t": "fill_blank",
+          "m": 1,
+          "q": "45,000 can be written as 40,000 + 7,000 - 800 - 1,500 + ____.",
+          "a": "300",
+          "b": "Apply",
+          "d": "Easy"
+        },
+        {
+          "t": "short_answer",
+          "m": 2,
+          "q": "Give an example of a 5-digit number minus a 4-digit number that gives a 4-digit difference.",
+          "a": "12,000 - 2,500 = 9,500, which has 4 digits.",
+          "s": [
+            [
+              "States a valid pair, e.g. 12,000 - 2,500",
+              1
+            ],
+            [
+              "Confirms the difference 9,500 has exactly 4 digits",
+              1
+            ]
+          ],
+          "b": "Apply",
+          "d": "Hard"
+        },
+        {
+          "t": "mcq",
+          "m": 1,
+          "q": "How should '5-digit - 5-digit gives a 3-digit difference' be classified?",
+          "a": "only sometimes true, e.g. 50,999-50,000=999 (3-digit), but 80,000-10,000=70,000 (5-digit)",
+          "o": [
+            "only sometimes true, e.g. 50,999-50,000=999 (3-digit), but 80,000-10,000=70,000 (5-digit)",
+            "always true, since subtracting two 5-digit numbers always shortens the result",
+            "never true, because two 5-digit numbers can never produce a 3-digit result",
+            "always true only when both numbers start with the same digit"
+          ],
+          "b": "Apply",
+          "d": "Hard"
+        },
+        {
+          "t": "short_answer",
+          "m": 2,
+          "q": "Find the total of a pattern where the value 25 appears 12 times and the value 35 appears 8 times, using multiplication rather than repeated addition.",
+          "a": "25x12=300 and 35x8=280, giving a combined total of 580.",
+          "s": [
+            [
+              "25x12=300",
+              1
+            ],
+            [
+              "35x8=280, giving a combined total of 300+280=580",
+              1
+            ]
+          ],
+          "b": "Apply",
+          "d": "Hard"
+        },
+        {
+          "t": "long_answer",
+          "m": 3,
+          "q": "A 5-digit number is subtracted from another 5-digit number to give 91,500. A student says this is impossible. Evaluate this using the range of 5-digit numbers.",
+          "a": "The student is correct: the maximum possible difference of two 5-digit numbers is 99,999-10,000=89,999, which is less than 91,500, so 91,500 cannot be reached.",
+          "s": [
+            [
+              "Determines the maximum possible difference of two 5-digit numbers: 99,999-10,000=89,999",
+              1
+            ],
+            [
+              "Since 91,500 is greater than 89,999, confirms it is impossible to reach exactly 91,500",
+              1
+            ],
+            [
+              "States the student's claim is correct, with the reasoning based on this maximum-difference bound",
+              1
+            ]
+          ],
+          "b": "Apply",
+          "d": "Hardest"
+        },
+        {
+          "t": "multi_statement",
+          "m": 1,
+          "q": "Consider these classifications. (I) '5-digit + 5-digit gives a 5-digit number' is only sometimes true. (II) '4-digit + 2-digit gives a 6-digit number' is never true. (III) '5-digit - 2-digit gives a 3-digit difference' is always true. Which are correct?",
+          "a": "I and II only",
+          "o": [
+            "I and II only",
+            "I, II and III",
+            "II and III only",
+            "I only"
+          ],
+          "b": "Analyse",
+          "d": "Hard"
+        },
+        {
+          "t": "mcq",
+          "m": 1,
+          "q": "Why can these always/sometimes/never questions be answered without checking every possible pair of numbers?",
+          "a": "comparing the extreme (largest and smallest) possible values in each digit-length range shows whether a target digit-length is always, sometimes, or never reachable",
+          "o": [
+            "comparing the extreme (largest and smallest) possible values in each digit-length range shows whether a target digit-length is always, sometimes, or never reachable",
+            "every possible pair must always be checked individually to be sure",
+            "digit-length reasoning only works for numbers below 10,000",
+            "addition and subtraction always preserve the number of digits"
+          ],
+          "b": "Analyse",
+          "d": "Hard"
+        },
+        {
+          "t": "assertion_reason",
+          "m": 1,
+          "q": "Assertion (A): '4-digit + 2-digit gives a 4-digit number' is only sometimes true. Reason (R): Adding a small 2-digit number to a 4-digit number not close to 9999 keeps the result at 4 digits, but adding to a 4-digit number close to 9999 can push it to 5 digits.",
+          "a": "Both A and R are true, and R correctly explains A",
+          "o": [
+            "Both A and R are true, and R correctly explains A",
+            "Both A and R are true, but R does not explain A",
+            "A is true but R is false",
+            "A is false but R is true"
+          ],
+          "b": "Analyse",
+          "d": "Hardest"
+        },
+        {
+          "t": "short_answer",
+          "m": 3,
+          "q": "A student says: 'Since 5-digit + 3-digit can give a 6-digit sum (e.g. 99,999+999=100,998), it must also be possible for 4-digit + 4-digit to give a 6-digit sum.' Evaluate this reasoning.",
+          "a": "The claim is false. The maximum sum of two 4-digit numbers is 9999+9999=19,998, only 5 digits, so a 6-digit sum is impossible for 4-digit+4-digit; the reasoning does not carry over because the maximum totals differ for each digit-length combination.",
+          "s": [
+            [
+              "States the claim is false",
+              1
+            ],
+            [
+              "Shows the maximum sum of two 4-digit numbers is 9999+9999=19,998, only 5 digits",
+              1
+            ],
+            [
+              "Explains the reasoning from 5-digit+3-digit does not carry over since maximum totals differ by digit-length combination",
+              1
+            ]
+          ],
+          "b": "Evaluate",
+          "d": "Hard"
+        },
+        {
+          "t": "long_answer",
+          "m": 4,
+          "q": "Using only 1500, 400 and 13,000 (each usable any number of times, addition only), find two different combinations that both total 15,000, and explain what this shows about which thousands values can and cannot be reached.",
+          "a": "1500 added 10 times = 15,000. Also, 13,000 + 400x5 = 15,000. Both are valid, showing 15,000 is reachable in more than one way, while a value like 1,000 is not reachable at all from these building blocks.",
+          "s": [
+            [
+              "First combination: 1500 added 10 times = 15,000",
+              1
+            ],
+            [
+              "Second combination: 13,000 + 400x5 (five 400s) = 15,000",
+              1
+            ],
+            [
+              "Confirms both combinations are valid, showing 15,000 is reachable in more than one way",
+              1
+            ],
+            [
+              "Explains more generally that a target must be reachable by some combination of 400, 1500 and 13,000 -- e.g. 1,000 is not reachable, since no combination lands exactly on it",
+              1
+            ]
+          ],
+          "b": "Create",
+          "d": "Hardest"
+        }
+      ]
+    },
+    {
+      "code": "C6M-3.7",
+      "name": "The Collatz Conjecture",
+      "description": "Applying the Collatz rule (halve an even number; triple an odd number and add 1) to generate a sequence, and explaining what an unsolved conjecture is and why this one remains unproven despite always seeming to reach 1.",
+      "idea": "A simple rule applied repeatedly to any whole number seems, in every case ever checked, to eventually reach 1 -- but nobody has proved it must always happen, which is what makes it a conjecture rather than a theorem.",
+      "rule": "Starting from any whole number greater than 0: if it is even, divide it by 2; if it is odd, multiply it by 3 and add 1. Repeat with the new number until you reach 1.",
+      "example": "Starting at 12: 12, 6, 3, 10, 5, 16, 8, 4, 2, 1.",
+      "difficulty_base": "Easy",
+      "questions": [
+        {
+          "t": "mcq",
+          "m": 1,
+          "q": "In the Collatz rule, what do you do to an even number?",
+          "a": "divide it by 2",
+          "o": [
+            "divide it by 2",
+            "multiply it by 3 and add 1",
+            "add 2 to it",
+            "multiply it by 2"
+          ],
+          "b": "Remember",
+          "d": "Easy"
+        },
+        {
+          "t": "mcq",
+          "m": 1,
+          "q": "In the Collatz rule, what do you do to an odd number?",
+          "a": "multiply it by 3 and add 1",
+          "o": [
+            "multiply it by 3 and add 1",
+            "divide it by 2",
+            "subtract 1 from it",
+            "multiply it by 2 and add 1"
+          ],
+          "b": "Remember",
+          "d": "Easy"
+        },
+        {
+          "t": "fill_blank",
+          "m": 1,
+          "q": "The Collatz Conjecture predicts that every sequence, whatever whole number it starts from, will eventually reach ____.",
+          "a": "1",
+          "b": "Remember",
+          "d": "Easy"
+        },
+        {
+          "t": "mcq",
+          "m": 1,
+          "q": "The Collatz Conjecture is called a 'conjecture' rather than a 'theorem' because",
+          "a": "it has not been proven true for every possible starting number, even though it holds in every case checked so far",
+          "o": [
+            "it has not been proven true for every possible starting number, even though it holds in every case checked so far",
+            "it has been proven false for some starting numbers",
+            "it only applies to even numbers",
+            "mathematicians have lost interest in studying it"
+          ],
+          "b": "Remember",
+          "d": "Hard"
+        },
+        {
+          "t": "mcq",
+          "m": 1,
+          "q": "Starting from 12, the Collatz sequence begins 12, 6, 3, 10, 5, .... What is the next number after 5?",
+          "a": "16",
+          "o": [
+            "16",
+            "15",
+            "10",
+            "2"
+          ],
+          "b": "Understand",
+          "d": "Easy"
+        },
+        {
+          "t": "mcq",
+          "m": 1,
+          "q": "Why can the sequences starting at 21 and 22 (differing by just 1) follow very different paths?",
+          "a": "whether a number is odd or even completely changes the next step (tripling-and-adding versus halving), so nearby starting numbers can diverge",
+          "o": [
+            "whether a number is odd or even completely changes the next step (tripling-and-adding versus halving), so nearby starting numbers can diverge",
+            "21 is a special unlucky number in the Collatz rule",
+            "only even starting numbers are allowed in the conjecture",
+            "22 always takes fewer steps than any odd starting number"
+          ],
+          "b": "Understand",
+          "d": "Easy"
+        },
+        {
+          "t": "short_answer",
+          "m": 2,
+          "q": "Explain in your own words what makes the Collatz Conjecture 'unsolved' even though nobody has ever found a starting number that fails to reach 1.",
+          "a": "Checking many numbers and finding they all work is not the same as a mathematical proof that it works for every whole number without exception; the conjecture stays open until someone proves it for all cases or finds a counterexample.",
+          "s": [
+            [
+              "Explains that checking many numbers is not the same as proving it holds for every whole number",
+              1
+            ],
+            [
+              "States that a conjecture remains open until proven for all cases or disproven by a counterexample",
+              1
+            ]
+          ],
+          "b": "Understand",
+          "d": "Easy"
+        },
+        {
+          "t": "mcq",
+          "m": 1,
+          "q": "Which statement correctly compares 'checking' and 'proving' as used with the Collatz Conjecture?",
+          "a": "checking confirms the rule works for the specific numbers tried, while proving would show it must work for every whole number with no exceptions possible",
+          "o": [
+            "checking confirms the rule works for the specific numbers tried, while proving would show it must work for every whole number with no exceptions possible",
+            "checking and proving mean exactly the same thing in mathematics",
+            "proving is easier than checking, which is why it has not been done",
+            "checking a few numbers is enough to call something a proven theorem"
+          ],
+          "b": "Understand",
+          "d": "Hard"
+        },
+        {
+          "t": "mcq",
+          "m": 1,
+          "q": "Lothar Collatz proposed this conjecture in which year?",
+          "a": "1937",
+          "o": [
+            "1937",
+            "1949",
+            "2014",
+            "1024"
+          ],
+          "b": "Understand",
+          "d": "Hard"
+        },
+        {
+          "t": "mcq",
+          "m": 1,
+          "q": "What is the Collatz sequence starting from 8?",
+          "a": "8, 4, 2, 1",
+          "o": [
+            "8, 4, 2, 1",
+            "8, 4, 2, 1, 0",
+            "8, 24, 12, 6, 3, 1",
+            "8, 4, 12, 6, 3, 1"
+          ],
+          "b": "Apply",
+          "d": "Easy"
+        },
+        {
+          "t": "fill_blank",
+          "m": 1,
+          "q": "Applying the Collatz rule to the odd number 5 gives 3x5+1 = ____.",
+          "a": "16",
+          "b": "Apply",
+          "d": "Easy"
+        },
+        {
+          "t": "short_answer",
+          "m": 2,
+          "q": "Write out the full Collatz sequence starting from 9.",
+          "a": "9, 28, 14, 7, 22, 11, 34, 17, 52, 26, 13, 40, 20, 10, 5, 16, 8, 4, 2, 1.",
+          "s": [
+            [
+              "Correctly applies the rule step by step: 9,28,14,7,22,11,34,17,52,26,13,40,20,10,5,16,8,4,2",
+              1
+            ],
+            [
+              "Reaches 1 at the end of the sequence",
+              1
+            ]
+          ],
+          "b": "Apply",
+          "d": "Hard"
+        },
+        {
+          "t": "mcq",
+          "m": 1,
+          "q": "Checking the Collatz Conjecture for the starting number 100, which of these is the correct next few terms?",
+          "a": "100, 50, 25, 76, 38, ...",
+          "o": [
+            "100, 50, 25, 76, 38, ...",
+            "100, 50, 25, 12, 6, ...",
+            "100, 300, 150, 75, ...",
+            "100, 99, 98, ..."
+          ],
+          "b": "Apply",
+          "d": "Hard"
+        },
+        {
+          "t": "mcq",
+          "m": 1,
+          "q": "Why must every Collatz sequence eventually reach the small loop 4, 2, 1 if it ever reaches 4?",
+          "a": "4 is even so it halves to 2, then 2 halves to 1, and applying the rule to 1 (odd) gives 3x1+1=4 again, forming a repeating loop",
+          "o": [
+            "4 is even so it halves to 2, then 2 halves to 1, and applying the rule to 1 (odd) gives 3x1+1=4 again, forming a repeating loop",
+            "4 is the largest number the rule can ever reach",
+            "the rule stops automatically once the number 4 appears",
+            "4 is a special starting number, unlike other numbers"
+          ],
+          "b": "Apply",
+          "d": "Hard"
+        },
+        {
+          "t": "long_answer",
+          "m": 3,
+          "q": "Explain, using powers of 2 (2, 4, 8, 16, 32, ...), why the Collatz Conjecture is easy to verify for any starting number that happens to be a power of 2.",
+          "a": "A power of 2 is always even, so the rule keeps halving it: 32->16->8->4->2->1, producing the next smaller power of 2 each time without ever needing the odd-number rule, so the conjecture holds immediately for every power of 2.",
+          "s": [
+            [
+              "A power of 2 is always even, so the rule keeps halving it: e.g. 32->16->8->4->2->1",
+              1
+            ],
+            [
+              "Each halving produces the next smaller power of 2, so the sequence never needs the odd-number rule until it reaches 1",
+              1
+            ],
+            [
+              "Concludes the conjecture holds directly for every power of 2 without further checking",
+              1
+            ]
+          ],
+          "b": "Apply",
+          "d": "Hardest"
+        },
+        {
+          "t": "multi_statement",
+          "m": 1,
+          "q": "Consider these statements. (I) The Collatz rule applies a different operation depending on whether the current number is odd or even. (II) The Collatz Conjecture has been proven true for all whole numbers. (III) A sequence that reaches 4 will always then go 4, 2, 1. Which are true?",
+          "a": "I and III only",
+          "o": [
+            "I and III only",
+            "I, II and III",
+            "II and III only",
+            "I only"
+          ],
+          "b": "Analyse",
+          "d": "Hard"
+        },
+        {
+          "t": "mcq",
+          "m": 1,
+          "q": "Two students each start a Collatz sequence from a different odd number and both eventually reach 1. Does this prove the conjecture for all odd numbers?",
+          "rev": true,
+          "a": "no -- checking two examples does not prove the rule holds for every one of the infinitely many odd numbers",
+          "o": [
+            "no -- checking two examples does not prove the rule holds for every one of the infinitely many odd numbers",
+            "yes, because odd numbers all behave identically under the Collatz rule",
+            "yes, since two independent checks is the standard requirement for a mathematical proof",
+            "no, because only even starting numbers count for this conjecture"
+          ],
+          "b": "Analyse",
+          "d": "Hard"
+        },
+        {
+          "t": "assertion_reason",
+          "m": 1,
+          "q": "Assertion (A): The Collatz sequence for 100 passes through 25, then 76. Reason (R): 25 is odd, so the rule requires multiplying it by 3 and adding 1, giving 76.",
+          "a": "Both A and R are true, and R correctly explains A",
+          "o": [
+            "Both A and R are true, and R correctly explains A",
+            "Both A and R are true, but R does not explain A",
+            "A is true but R is false",
+            "A is false but R is true"
+          ],
+          "b": "Analyse",
+          "d": "Hardest"
+        },
+        {
+          "t": "short_answer",
+          "m": 3,
+          "q": "A student claims: 'Since every number from 1 to a billion has been checked and reaches 1, the Collatz Conjecture is now a proven theorem.' Evaluate this claim.",
+          "a": "The claim is false. Checking even an enormous but finite range of numbers can never cover all infinitely many whole numbers, so it is not a complete proof; the conjecture remains open until a general proof or a counterexample is found.",
+          "s": [
+            [
+              "States the claim is false",
+              1
+            ],
+            [
+              "Explains a finite check, however large, cannot cover all infinitely many whole numbers",
+              1
+            ],
+            [
+              "States the conjecture remains open until a general proof or counterexample is found",
+              1
+            ]
+          ],
+          "b": "Evaluate",
+          "d": "Hard"
+        },
+        {
+          "t": "long_answer",
+          "m": 4,
+          "q": "Starting from 15, write out the full Collatz sequence down to 1, then state how many steps it took, and explain what this example shows about why checking one more number is still not a proof of the whole conjecture.",
+          "a": "15, 46, 23, 70, 35, 106, 53, 160, 80, 40, 20, 10, 5, 16, 8, 4, 2, 1 -- 17 steps to reach 1. Even a long, correctly-worked example like this only checks a single starting number, so it still cannot prove the conjecture holds for every whole number.",
+          "s": [
+            [
+              "Correctly applies the rule at each stage (odd -> x3+1, even -> divide by 2) without error",
+              1
+            ],
+            [
+              "Produces the full correct sequence from 15 down to 1",
+              1
+            ],
+            [
+              "Correctly counts 17 steps",
+              1
+            ],
+            [
+              "Explains that even a long correct example only checks a single starting number, so it cannot prove the conjecture for all numbers",
+              1
+            ]
+          ],
+          "b": "Create",
+          "d": "Hardest"
+        }
+      ]
+    },
+    {
+      "code": "C6M-3.8",
+      "name": "Simple Estimation of Everyday Quantities",
+      "description": "Making a reasonable estimate of a quantity (count, distance, time, cost) without finding an exact value, and judging whether someone else's estimate is reasonable by reasoning about scale.",
+      "idea": "An estimate is a quick, reasoned approximation built from a smaller known fact scaled up (or down), and it is judged by whether its reasoning is sound, not by exact accuracy.",
+      "rule": "To estimate, find a smaller quantity you can count or know exactly, then scale it up (or down) using a reasonable multiplying factor for the situation, and state the reasoning behind the scaling.",
+      "example": "If one class section has about 32 students and there are 3 sections in each of 5 classes, the school has roughly 5x3x32, about 480-500 students.",
+      "difficulty_base": "Easy",
+      "questions": [
+        {
+          "t": "mcq",
+          "m": 1,
+          "q": "An estimate is best described as",
+          "a": "a reasoned approximate value, found without counting or measuring exactly",
+          "o": [
+            "a reasoned approximate value, found without counting or measuring exactly",
+            "a random guess with no reasoning behind it",
+            "always the same as the exact value, just found faster",
+            "a value that must be checked with a calculator before it can be used"
+          ],
+          "b": "Remember",
+          "d": "Easy"
+        },
+        {
+          "t": "mcq",
+          "m": 1,
+          "q": "Paromita's class section has 32 children, and the other two sections have 29 and 35. She estimates her class year has about",
+          "a": "100 children",
+          "o": [
+            "100 children",
+            "64 children",
+            "150 children",
+            "32 children"
+          ],
+          "b": "Remember",
+          "d": "Easy"
+        },
+        {
+          "t": "fill_blank",
+          "m": 1,
+          "q": "Estimating means finding an approximate value that is close enough for the purpose, without finding the ____ value.",
+          "a": "exact",
+          "b": "Remember",
+          "d": "Easy"
+        },
+        {
+          "t": "mcq",
+          "m": 1,
+          "q": "Which of these is the least useful way to estimate the number of words in a textbook?",
+          "rev": true,
+          "a": "guessing a round number with no reference point at all",
+          "o": [
+            "guessing a round number with no reference point at all",
+            "counting the words on one full page and multiplying by the number of pages",
+            "counting the words in a few sample lines, finding a words-per-line average, and scaling up",
+            "comparing the book's thickness to a book whose word count you already know"
+          ],
+          "b": "Remember",
+          "d": "Hard"
+        },
+        {
+          "t": "mcq",
+          "m": 1,
+          "q": "Why does Paromita scale her single-class estimate (100) up to a whole-school estimate (500) using Classes 6 to 10?",
+          "a": "she assumes a similar number of children per class across the 5 classes (6 to 10), so she multiplies her one-class estimate of 100 by 5",
+          "o": [
+            "she assumes a similar number of children per class across the 5 classes (6 to 10), so she multiplies her one-class estimate of 100 by 5",
+            "she assumes every class in the school has exactly 32 children",
+            "she adds 100 five times without any reasoning about the number of classes",
+            "she assumes the school has exactly 5 sections in total, not 5 classes"
+          ],
+          "b": "Understand",
+          "d": "Easy"
+        },
+        {
+          "t": "mcq",
+          "m": 1,
+          "q": "Why is an estimate still useful even though it isn't exact?",
+          "a": "it gives a quick, reasonably accurate sense of scale when an exact count isn't necessary or possible to get quickly",
+          "o": [
+            "it gives a quick, reasonably accurate sense of scale when an exact count isn't necessary or possible to get quickly",
+            "it is always exactly as accurate as counting, just faster to state",
+            "it removes the need to ever find an exact value in any situation",
+            "estimates are only useful in mathematics classrooms, not in daily life"
+          ],
+          "b": "Understand",
+          "d": "Easy"
+        },
+        {
+          "t": "short_answer",
+          "m": 2,
+          "q": "A friend says he walked about 2 steps from his desk to the classroom door. Explain why this estimate seems unreasonable.",
+          "a": "A distance of just 2 steps is far too short for a typical classroom-sized gap; a more reasonable estimate would reflect the actual size of the classroom rather than the size of a doorway.",
+          "s": [
+            [
+              "Explains 2 steps is far too short for a typical classroom-sized distance",
+              1
+            ],
+            [
+              "States a more reasonable estimate should reflect the classroom's actual scale",
+              1
+            ]
+          ],
+          "b": "Understand",
+          "d": "Easy"
+        },
+        {
+          "t": "mcq",
+          "m": 1,
+          "q": "Sheetal claims to have spent about 13,000 hours in school so far. Roughly how many years does this represent, at 6 school hours a day for 200 days a year?",
+          "a": "about 10.8 years",
+          "o": [
+            "about 10.8 years",
+            "about 6 years",
+            "about 13 years",
+            "about 2 years"
+          ],
+          "b": "Understand",
+          "d": "Hard"
+        },
+        {
+          "t": "mcq",
+          "m": 1,
+          "q": "Why should Sheetal doubt her own 13,000-hour estimate if she is only in Grade 6?",
+          "a": "13,000 hours works out to nearly 11 years of schooling at typical rates, more years than she has actually been in school",
+          "o": [
+            "13,000 hours works out to nearly 11 years of schooling at typical rates, more years than she has actually been in school",
+            "13,000 is not a round number",
+            "hours cannot be used to measure time spent in school",
+            "her estimate would be reasonable only if she were in a higher grade like Grade 10"
+          ],
+          "b": "Understand",
+          "d": "Hard"
+        },
+        {
+          "t": "mcq",
+          "m": 1,
+          "q": "Which estimate is most reasonable for the cost of milk and 3 kinds of fruit to make fruit custard for 5 people?",
+          "a": "around Rs 100-150, for modest quantities of each item",
+          "o": [
+            "around Rs 100-150, for modest quantities of each item",
+            "around Rs 5, since fruit is usually very cheap",
+            "around Rs 5,000, since custard is a fancy dessert",
+            "exactly Rs 100.00, with no possible variation"
+          ],
+          "b": "Apply",
+          "d": "Easy"
+        },
+        {
+          "t": "fill_blank",
+          "m": 1,
+          "q": "If a mug holds about half a litre, a bucket holding about 20 times as much water holds roughly ____ litres.",
+          "a": "10",
+          "b": "Apply",
+          "d": "Easy"
+        },
+        {
+          "t": "short_answer",
+          "m": 2,
+          "q": "Estimate the distance between Gandhinagar (Gujarat) and Kohima (Nagaland), explaining your reasoning briefly.",
+          "a": "About 2500 km, estimated by comparing the map distance to the known east-west/diagonal span of India (roughly 2000-3000 km).",
+          "s": [
+            [
+              "Uses a reasonable reference, e.g. comparing to the known span of India",
+              1
+            ],
+            [
+              "States a reasonable estimate, e.g. about 2500 km, with brief justification",
+              1
+            ]
+          ],
+          "b": "Apply",
+          "d": "Hard"
+        },
+        {
+          "t": "mcq",
+          "m": 1,
+          "q": "Which reasoning best estimates how many times a person blinks in a day, starting from blinks per minute?",
+          "a": "estimate blinks per minute, multiply by 60 to get blinks per hour, then multiply by the number of waking hours in a day",
+          "o": [
+            "estimate blinks per minute, multiply by 60 to get blinks per hour, then multiply by the number of waking hours in a day",
+            "multiply blinks per minute directly by 24, ignoring sleep",
+            "count blinks for a whole day directly, since this is easy to track exactly",
+            "assume blinking is the same as breathing, so no separate estimate is needed"
+          ],
+          "b": "Apply",
+          "d": "Hard"
+        },
+        {
+          "t": "mcq",
+          "m": 1,
+          "q": "Which reasoning is most sound when judging whether '200 students travel to school by bus' is a good estimate?",
+          "a": "it depends on the school's total size and location, so a reasonable estimate must be checked against how many students the school has in total",
+          "o": [
+            "it depends on the school's total size and location, so a reasonable estimate must be checked against how many students the school has in total",
+            "200 is the standard number for every school, so it is always reasonable",
+            "0 is always the safest estimate, since most students walk to school",
+            "no estimate can be judged reasonable without an exact survey"
+          ],
+          "b": "Apply",
+          "d": "Hard"
+        },
+        {
+          "t": "long_answer",
+          "m": 3,
+          "q": "Estimate the number of holidays (weekends, festivals and vacations) a student gets in a typical year, showing your reasoning.",
+          "a": "About 52 weekends x 2 days = 104 days, plus roughly 15-20 festival/vacation days, giving a combined estimate of roughly 120-130 days.",
+          "s": [
+            [
+              "Builds a reasonable estimate from parts, e.g. 52 weekends x 2 days = 104",
+              1
+            ],
+            [
+              "Adds a reasonable allowance for festival/vacation days, e.g. 15-20 days",
+              1
+            ],
+            [
+              "States a combined final estimate, e.g. roughly 120-130 days",
+              1
+            ]
+          ],
+          "b": "Apply",
+          "d": "Hardest"
+        },
+        {
+          "t": "multi_statement",
+          "m": 1,
+          "q": "Consider these statements about estimation. (I) An estimate can be checked and improved by comparing it against a smaller, exactly known quantity. (II) Any two people estimating the same quantity must always arrive at the identical number. (III) An estimate is considered good if its reasoning is sound, even if it isn't exactly correct. Which are true?",
+          "a": "I and III only",
+          "o": [
+            "I and III only",
+            "I, II and III",
+            "II and III only",
+            "III only"
+          ],
+          "b": "Analyse",
+          "d": "Hard"
+        },
+        {
+          "t": "mcq",
+          "m": 1,
+          "q": "Two students estimate the number of students in their school differently: one gets 480, the other gets 500. What does this most likely show?",
+          "a": "both used reasonable but slightly different scaling assumptions, and both can be good estimates if their reasoning is sound",
+          "o": [
+            "both used reasonable but slightly different scaling assumptions, and both can be good estimates if their reasoning is sound",
+            "one of them must have made an arithmetic mistake, since estimates should always match exactly",
+            "estimation is not a valid method if two people can disagree",
+            "the smaller estimate is always the more correct one"
+          ],
+          "b": "Analyse",
+          "d": "Hard"
+        },
+        {
+          "t": "assertion_reason",
+          "m": 1,
+          "q": "Assertion (A): Sheetal's estimate of 13,000 school hours is unreasonable for a Grade 6 student. Reason (R): At 6 hours a day for 200 days a year, 13,000 hours corresponds to nearly 11 years of schooling, more than a Grade 6 student has completed.",
+          "a": "Both A and R are true, and R correctly explains A",
+          "o": [
+            "Both A and R are true, and R correctly explains A",
+            "Both A and R are true, but R does not explain A",
+            "A is true but R is false",
+            "A is false but R is true"
+          ],
+          "b": "Analyse",
+          "d": "Hardest"
+        },
+        {
+          "t": "short_answer",
+          "m": 3,
+          "q": "A student estimates that a household bucket holds 10,000 litres of water. Evaluate whether this estimate is reasonable, giving your reasoning.",
+          "a": "The estimate is unreasonable. A typical household bucket holds roughly 10-20 litres, not thousands, so this estimate is off by a factor of roughly a thousand.",
+          "s": [
+            [
+              "Judges the estimate as unreasonable",
+              1
+            ],
+            [
+              "Compares to a known reference, e.g. a typical bucket holds around 10-20 litres",
+              1
+            ],
+            [
+              "Concludes the estimate is off by a factor of roughly a thousand",
+              1
+            ]
+          ],
+          "b": "Evaluate",
+          "d": "Hard"
+        },
+        {
+          "t": "long_answer",
+          "m": 4,
+          "q": "Make up your own estimation question in the style of this chapter (like the ones about words in a textbook or students travelling by bus), then answer it yourself showing your estimation reasoning.",
+          "a": "Example: 'Estimate the number of pages you turn in a school day.' Reference: about 5 subjects, roughly 10 pages read/written per subject, so about 50 pages a day.",
+          "s": [
+            [
+              "States a clear, sensible estimation question of their own",
+              1
+            ],
+            [
+              "Identifies a smaller reference quantity to scale from",
+              1
+            ],
+            [
+              "Carries out a reasonable scaling calculation",
+              1
+            ],
+            [
+              "States a final estimate with justification for why it is reasonable",
+              1
+            ]
+          ],
+          "b": "Create",
+          "d": "Hardest"
+        }
+      ]
+    },
+    {
+      "code": "C6M-3.9",
+      "name": "Games and Winning Strategies",
+      "description": "Playing turn-based counting games (adding 1-3 to reach 21; adding 1-10 to reach 99) and working out which player has a guaranteed winning strategy and how.",
+      "idea": "In a turn-based race-to-a-target game where players add within a fixed range, the winning strategy is to force your opponent to leave you on one of a special sequence of 'safe' numbers, spaced by (1 + the maximum add) apart, counting back from the target.",
+      "rule": "If players may add 1 to k on each turn and the target is T, the safe numbers are T, T-(k+1), T-2(k+1), and so on down to a number reachable as a first move; whichever player can always land on a safe number wins.",
+      "example": "In the game to 21 where each turn adds 1, 2 or 3, the safe numbers are 21, 17, 13, 9, 5, 1 (steps of 4); the first player wins by starting on 1 and always returning to the next safe number.",
+      "difficulty_base": "Hard",
+      "questions": [
+        {
+          "t": "mcq",
+          "m": 1,
+          "q": "In Game #1 (add 1, 2 or 3 each turn, first to reach 21 wins), what numbers may a player add on their turn?",
+          "a": "1, 2 or 3",
+          "o": [
+            "1, 2 or 3",
+            "1 to 10",
+            "only 1",
+            "any number up to 21"
+          ],
+          "b": "Remember",
+          "d": "Easy"
+        },
+        {
+          "t": "mcq",
+          "m": 1,
+          "q": "In Game #2, what is the target number to reach?",
+          "a": "99",
+          "o": [
+            "99",
+            "21",
+            "100",
+            "10"
+          ],
+          "b": "Remember",
+          "d": "Easy"
+        },
+        {
+          "t": "fill_blank",
+          "m": 1,
+          "q": "In Game #1, the 'safe' numbers that the winning player should always land on are spaced ____ apart.",
+          "a": "4",
+          "b": "Remember",
+          "d": "Easy"
+        },
+        {
+          "t": "mcq",
+          "m": 1,
+          "q": "In Game #1, which of these is NOT one of the safe numbers (21, 17, 13, 9, 5, 1)?",
+          "rev": true,
+          "a": "18",
+          "o": [
+            "18",
+            "17",
+            "9",
+            "1"
+          ],
+          "b": "Remember",
+          "d": "Hard"
+        },
+        {
+          "t": "mcq",
+          "m": 1,
+          "q": "Why are the safe numbers in Game #1 spaced 4 apart?",
+          "a": "the maximum a player can add is 3, so whatever the opponent adds (1, 2 or 3), the other player can always add enough to complete the gap to exactly 4",
+          "o": [
+            "the maximum a player can add is 3, so whatever the opponent adds (1, 2 or 3), the other player can always add enough to complete the gap to exactly 4",
+            "the target number 21 is divisible by 3, not 4",
+            "there are 4 players taking turns in this game",
+            "each player is allowed exactly 4 turns in the game"
+          ],
+          "b": "Understand",
+          "d": "Easy"
+        },
+        {
+          "t": "mcq",
+          "m": 1,
+          "q": "Why is landing exactly on 17 a winning position in Game #1?",
+          "a": "whatever the opponent adds next (1, 2 or 3), the player can always add enough to bring the total to the next safe number, 21",
+          "o": [
+            "whatever the opponent adds next (1, 2 or 3), the player can always add enough to bring the total to the next safe number, 21",
+            "17 is an odd number",
+            "17 is one less than the round number 18",
+            "17 is the largest two-digit safe number"
+          ],
+          "b": "Understand",
+          "d": "Easy"
+        },
+        {
+          "t": "short_answer",
+          "m": 2,
+          "q": "In Game #1, if the running total is 13 and it is your opponent's turn, explain why you (having just landed on 13) are in a winning position.",
+          "a": "Whatever your opponent adds (1, 2 or 3), the total becomes 14, 15 or 16; from any of these you can add 3, 2 or 1 respectively to bring the total to exactly 17, the next safe number.",
+          "s": [
+            [
+              "States whatever the opponent adds (1, 2 or 3), the total becomes 14, 15 or 16",
+              1
+            ],
+            [
+              "Explains you can always add the matching amount to reach 17, the next safe number",
+              1
+            ]
+          ],
+          "b": "Understand",
+          "d": "Easy"
+        },
+        {
+          "t": "mcq",
+          "m": 1,
+          "q": "In Game #1, which player has the guaranteed winning strategy?",
+          "a": "the first player, by starting with 1 and then always returning the total to the next safe number (5, 9, 13, 17, 21)",
+          "o": [
+            "the first player, by starting with 1 and then always returning the total to the next safe number (5, 9, 13, 17, 21)",
+            "the second player, by always adding 3 no matter what",
+            "neither player, since the outcome depends only on luck",
+            "both players equally, since the game always ends in a draw"
+          ],
+          "b": "Understand",
+          "d": "Hard"
+        },
+        {
+          "t": "mcq",
+          "m": 1,
+          "q": "In Game #2 (add 1 to 10, target 99), what is the spacing between safe numbers?",
+          "a": "11",
+          "o": [
+            "11",
+            "10",
+            "99",
+            "9"
+          ],
+          "b": "Understand",
+          "d": "Hard"
+        },
+        {
+          "t": "mcq",
+          "m": 1,
+          "q": "In Game #2, what are the first three safe numbers counting down from 99?",
+          "a": "99, 88, 77",
+          "o": [
+            "99, 88, 77",
+            "99, 89, 79",
+            "99, 90, 81",
+            "99, 87, 75"
+          ],
+          "b": "Apply",
+          "d": "Easy"
+        },
+        {
+          "t": "fill_blank",
+          "m": 1,
+          "q": "In Game #1, if the running total is 9 and it is your turn to move, to stay on the winning path you should add enough to reach ____.",
+          "a": "13",
+          "b": "Apply",
+          "d": "Easy"
+        },
+        {
+          "t": "short_answer",
+          "m": 2,
+          "q": "In Game #2, explain why the player who moves FIRST is actually at a disadvantage, unlike in Game #1.",
+          "a": "The safe numbers in Game #2 (99,88,...,11,0) include 0, so the position before any move is already safe for whoever is not about to move; since the first player must move from 0 and cannot land on a positive multiple of 11 with one move of 1-10, the second player can always then return the total to the next multiple of 11.",
+          "s": [
+            [
+              "Notes the safe numbers in Game #2 include 0, which is already safe for the player not about to move",
+              1
+            ],
+            [
+              "Explains the first player cannot land on a multiple of 11 from 0 with one move of 1-10, so the second player wins with correct play",
+              1
+            ]
+          ],
+          "b": "Apply",
+          "d": "Hard"
+        },
+        {
+          "t": "mcq",
+          "m": 1,
+          "q": "In Game #1, what is the very first number the winning player should say?",
+          "a": "1",
+          "o": [
+            "1",
+            "3",
+            "4",
+            "21"
+          ],
+          "b": "Apply",
+          "d": "Hard"
+        },
+        {
+          "t": "mcq",
+          "m": 1,
+          "q": "Suppose Game #1 were changed so players add 1 to 4 each turn, target still 21. What would the new safe-number spacing be?",
+          "a": "5, since 4+1=5",
+          "o": [
+            "5, since 4+1=5",
+            "4, unchanged from the original game",
+            "21, matching the target",
+            "3, one less than the maximum add"
+          ],
+          "b": "Apply",
+          "d": "Hard"
+        },
+        {
+          "t": "long_answer",
+          "m": 3,
+          "q": "For a new game where players add 1 to 5 each turn and the target is 40, find the safe numbers and state which player wins with correct play.",
+          "a": "Spacing = 5+1 = 6. Safe numbers counting back from 40: 40, 34, 28, 22, 16, 10, 4. Since 4 is a valid first move, the first player wins by starting with 4 and always returning to the next safe number.",
+          "s": [
+            [
+              "Correctly computes the spacing as 6 (5+1)",
+              1
+            ],
+            [
+              "Lists the safe numbers by counting back from 40 in steps of 6: 40, 34, 28, 22, 16, 10, 4",
+              1
+            ],
+            [
+              "States the first player wins by starting with 4 (a valid first move) and always returning to the next safe number",
+              1
+            ]
+          ],
+          "b": "Apply",
+          "d": "Hardest"
+        },
+        {
+          "t": "multi_statement",
+          "m": 1,
+          "q": "Consider these statements about Game #1 and Game #2. (I) In Game #1, the first player wins with correct play. (II) In Game #2, the first player also wins with correct play. (III) The spacing of safe numbers depends on the maximum number a player is allowed to add each turn. Which are true?",
+          "a": "I and III only",
+          "o": [
+            "I and III only",
+            "I, II and III",
+            "II and III only",
+            "I only"
+          ],
+          "b": "Analyse",
+          "d": "Hard"
+        },
+        {
+          "t": "mcq",
+          "m": 1,
+          "q": "Why can the same 'safe number' method decide different winners in Game #1 and Game #2, even though both games share the same basic idea?",
+          "a": "whether the target is itself an exact multiple of (max-add+1) counting from 0 decides which player is forced off the safe path first; 21 is not such a multiple of 4, but 99 is exactly a multiple of 11",
+          "o": [
+            "whether the target is itself an exact multiple of (max-add+1) counting from 0 decides which player is forced off the safe path first; 21 is not such a multiple of 4, but 99 is exactly a multiple of 11",
+            "Game #2 has a larger target number, which always favours the second player",
+            "Game #1 allows odd numbers to be added and Game #2 does not",
+            "the two games use entirely different mathematical ideas with no real connection"
+          ],
+          "b": "Analyse",
+          "d": "Hard"
+        },
+        {
+          "t": "assertion_reason",
+          "m": 1,
+          "q": "Assertion (A): In Game #2, the second player wins with correct play. Reason (R): 99 is an exact multiple of 11 (the safe-number spacing), so the position before the first move (0) is already safe for the second player, forcing the first player off the safe path.",
+          "a": "Both A and R are true, and R correctly explains A",
+          "o": [
+            "Both A and R are true, and R correctly explains A",
+            "Both A and R are true, but R does not explain A",
+            "A is true but R is false",
+            "A is false but R is true"
+          ],
+          "b": "Analyse",
+          "d": "Hardest"
+        },
+        {
+          "t": "short_answer",
+          "m": 3,
+          "q": "A student claims: 'Whoever moves first always has the advantage in these adding-to-a-target games.' Evaluate this claim using both Game #1 and Game #2 as evidence.",
+          "a": "The claim is false as a general rule. Game #1 supports it (first player wins by starting on a safe number), but Game #2 contradicts it, since 99 is an exact multiple of the safe-number spacing 11, so the second player wins with correct play instead.",
+          "s": [
+            [
+              "States the claim is false as a general rule",
+              1
+            ],
+            [
+              "Notes Game #1 supports it: the first player wins by starting on a safe number",
+              1
+            ],
+            [
+              "Notes Game #2 contradicts it: the second player wins, since 99 is an exact multiple of the spacing 11",
+              1
+            ]
+          ],
+          "b": "Evaluate",
+          "d": "Hard"
+        },
+        {
+          "t": "long_answer",
+          "m": 4,
+          "q": "Design your own version of this game -- choose your own maximum add-per-turn and your own target number -- and determine which player has the winning strategy, showing the safe numbers.",
+          "a": "Example: max add 6, target 50. Spacing = 7. Safe numbers: 50,43,36,29,22,15,8,1. Since 1 is a valid first move, the first player wins by starting with 1 and always returning to the next safe number.",
+          "s": [
+            [
+              "States a clearly defined new game (chosen max add and target)",
+              1
+            ],
+            [
+              "Computes the correct safe-number spacing (max add + 1)",
+              1
+            ],
+            [
+              "Lists the correct sequence of safe numbers counting back from the target to a number reachable as a first move",
+              1
+            ],
+            [
+              "Correctly determines and justifies which player wins based on whether a valid first move can land on a safe number",
+              1
+            ]
+          ],
+          "b": "Create",
+          "d": "Hardest"
+        }
+      ]
+    }
+  ]
+}
