@@ -1,0 +1,2684 @@
+{
+ "subject": {
+  "code": "MATH10",
+  "name": "Mathematics",
+  "board": "CBSE",
+  "class": 10
+ },
+ "source": {
+  "publisher": "NCERT",
+  "title": "Mathematics",
+  "edition": "Textbook for Class X, Reprint 2026-27",
+  "year": 2026
+ },
+ "chapter": {
+  "part": "I",
+  "chapter_no": 5,
+  "name": "Arithmetic Progressions",
+  "blurb": "Reena's rising salary, a ladder's shortening rungs and Shakila's growing money box motivate the arithmetic progression: a list where a fixed number, the common difference, is added to each term to get the next. The chapter builds the formula for the nth term, learns to run it backwards to find a term's position or test whether a number belongs to a list, solves for an unknown term or common difference from two given terms, and (following Gauss's schoolboy trick of pairing a list with its reverse) derives and applies the formula for the sum of the first n terms, including the case where solving for the number of terms gives a quadratic with two valid answers.",
+  "source_code": "jemh105",
+  "order_index": 5
+ },
+ "scope_in": [
+  {
+   "item": "Recognise an arithmetic progression (AP) as a list where each term after the first is obtained by adding one fixed number, the common difference d, to the term before it; know that d may be positive, negative or zero",
+   "pages": "51-53"
+  },
+  {
+   "item": "Write the general form of an AP, a, a+d, a+2d, a+3d, ..., and list an AP given its first term a and common difference d",
+   "pages": "52-53"
+  },
+  {
+   "item": "Distinguish a finite AP (has a last term) from an infinite AP (has no last term)",
+   "pages": "52"
+  },
+  {
+   "item": "Test whether a given list of numbers is an AP by checking that a_(k+1) - a_k is the same for every consecutive pair, and find a and d for a list that is an AP",
+   "pages": "53-55"
+  },
+  {
+   "item": "Given three consecutive terms a, b, c of an AP, use b = (a + c)/2 (the arithmetic mean of a and c)",
+   "pages": "72"
+  },
+  {
+   "item": "Find the nth term (general term) of an AP using a_n = a + (n - 1)d, including the last term l of a finite AP",
+   "pages": "56-58"
+  },
+  {
+   "item": "Use the nth term formula in reverse: find n given a_n, decide whether a given number is a term of an AP (n must come out a positive integer), and find which term (if any) equals zero",
+   "pages": "58-59"
+  },
+  {
+   "item": "Determine an AP (find a and d) from two given terms by forming and solving a pair of linear equations",
+   "pages": "58"
+  },
+  {
+   "item": "Find the nth term of a finite AP counted from the last term, either by locating the total number of terms first or by reversing the AP (new first term l, new common difference -d)",
+   "pages": "59-60"
+  },
+  {
+   "item": "Apply the nth term formula to word problems: counting terms of a described list, yearly simple interest as an AP (using Simple Interest = (P x R x T)/100), and similar real-life step-by-step growth or decline situations",
+   "pages": "59-61"
+  },
+  {
+   "item": "Find the sum S_n of the first n terms of an AP using S_n = (n/2)[2a + (n - 1)d], and using S_n = (n/2)(a + l) when the last term is known instead of d",
+   "pages": "63-65"
+  },
+  {
+   "item": "Use the relation a_n = S_n - S_(n-1) to get a term from two sums",
+   "pages": "65"
+  },
+  {
+   "item": "Find the sum of the first n positive integers, S_n = n(n + 1)/2, as a special case",
+   "pages": "66-67"
+  },
+  {
+   "item": "Given the nth term of a list as an explicit linear formula in n (e.g. a_n = 3 + 2n), decide it is an AP and read off a and d",
+   "pages": "67"
+  },
+  {
+   "item": "Solve the sum formula for a missing quantity (a, d, or n) when the other three of S, a, d, n are known, including the quadratic-in-n case, recognising that two positive values of n can both be valid",
+   "pages": "65-66"
+  },
+  {
+   "item": "Solve multi-part AP word problems combining the nth term and the sum of n terms (e.g. production or savings problems)",
+   "pages": "67-68"
+  }
+ ],
+ "scope_out": [
+  {
+   "item": "Geometric progressions (multiplying by a fixed number each time, e.g. the 5/4-every-3-years savings scheme on p. 49) and any GP formulas",
+   "reason": "The chapter explicitly sets this pattern apart from AP in the introduction and never develops it; only the additive pattern is studied here (p. 51)."
+  },
+  {
+   "item": "Compound interest",
+   "reason": "Used only as an implicit contrast; Example 9 (p. 60) deliberately uses SIMPLE interest because it grows by a fixed amount each year and so forms an AP, while compound interest grows multiplicatively and does not."
+  },
+  {
+   "item": "Sum of squares (1^2 + 2^2 + ...) or any progression built from squares or cubes",
+   "reason": "Squares (1^2, 2^2, 3^2, p. 50) and the Fibonacci-type rabbit sequence (p. 50) are given only as examples of patterns that are NOT arithmetic progressions; no formula for summing them is developed in this chapter."
+  },
+  {
+   "item": "Inserting a given number of arithmetic means between two numbers, or general arithmetic-mean theory beyond three consecutive terms",
+   "reason": "The chapter's only arithmetic-mean statement is the single closing note b = (a+c)/2 for three consecutive terms a, b, c (p. 72); a fuller treatment is not given here."
+  },
+  {
+   "item": "Summing an infinite AP",
+   "reason": "Infinite APs are defined (p. 52) as APs with no last term, but the chapter only ever sums a finite number of terms; no infinite sum is discussed."
+  },
+  {
+   "item": "Exercise 5.4 problem types (e.g. the terrace-volume-of-concrete problem, the house-numbering 'value of x' problem)",
+   "reason": "The book itself marks Exercise 5.4 'Optional' and footnotes it 'These exercises are not from the examination point of view' (p. 71)."
+  },
+  {
+   "item": "General theory of solving quadratic equations (nature of roots, discriminant, factorisation methods)",
+   "reason": "Example 13 (pp. 65-66) solves one quadratic that arises from the sum formula as a tool, but this chapter does not teach quadratic-equation methods themselves."
+  },
+  {
+   "item": "Sequences that are not arithmetic, given only by a non-linear or recursive rule (e.g. a_n = n^2)",
+   "reason": "Only lists with a constant additive difference are APs; the chapter uses non-linear or multiplicative rules solely as non-examples (pp. 49-51, 54-55)."
+  }
+ ],
+ "concepts": [
+  {
+   "code": "C10M-5.1",
+   "name": "Meaning of an AP: term, common difference, general form",
+   "description": "A sequence in which each term after the first is obtained by adding one fixed number, the common difference d, to the term before it; the general form a, a+d, a+2d, ...; finite APs (with a last term) versus infinite APs (without one).",
+   "idea": "An AP is a list built by repeatedly adding the same fixed number to get from one term to the next.",
+   "rule": "If a_1, a_2, a_3, ... is an AP with first term a and common difference d, then a_2 - a_1 = a_3 - a_2 = ... = d, and the general form is a, a+d, a+2d, a+3d, .... d can be positive, negative or zero. A finite AP has a last term; an infinite AP does not.",
+   "example": "Reena's salary 8000, 8500, 9000, ... (p. 49) is an AP with a = 8000, d = 500. The ladder rungs 45, 43, 41, ..., 31 (p. 49) form an AP with a = 45, d = -2. With a = 2, d = 0 the AP is 2, 2, 2, 2, ... (p. 53).",
+   "difficulty_base": "Easy",
+   "questions": [
+    {
+     "b": "Remember",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "In an arithmetic progression, the fixed number added to each term to get the next term is called the",
+     "a": "common difference",
+     "o": [
+      "common difference",
+      "common ratio",
+      "common term",
+      "common factor"
+     ]
+    },
+    {
+     "b": "Remember",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "For the AP 6, 9, 12, 15, ..., the common difference d equals",
+     "a": "3",
+     "o": [
+      "3",
+      "6",
+      "9",
+      "-3"
+     ]
+    },
+    {
+     "b": "Remember",
+     "d": "Easy",
+     "t": "fill_blank",
+     "m": 1,
+     "q": "The general form of an AP with first term a and common difference d is a, a + d, a + 2d, ____.",
+     "a": "a + 3d"
+    },
+    {
+     "b": "Remember",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "rev": true,
+     "q": "Which of the following is NOT necessarily true about an arithmetic progression (AP) with first term a and common difference d?",
+     "a": "Its nth term is always found from S_n = (n/2)[2a + (n - 1)d]",
+     "o": [
+      "Its nth term is always found from S_n = (n/2)[2a + (n - 1)d]",
+      "Its general form can be written as a, a + d, a + 2d, a + 3d, ...",
+      "The common difference d can be zero, giving a constant list such as 2, 2, 2, 2, ...",
+      "The common difference d can be negative, such as in 6, 3, 0, -3, ..."
+     ]
+    },
+    {
+     "b": "Understand",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "Why is the list 45, 43, 41, 39, ... (the rung lengths of a ladder, shortening by 2 cm each time) an arithmetic progression?",
+     "a": "Each term is obtained by subtracting the same fixed number, 2, from the term before it",
+     "o": [
+      "Each term is obtained by subtracting the same fixed number, 2, from the term before it",
+      "Each term is half of the term before it",
+      "The terms are the lengths of consecutive rungs, which makes any list an AP",
+      "Each term is obtained by adding a different number each time"
+     ]
+    },
+    {
+     "b": "Understand",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "Which of these best explains why d is called the 'common' difference?",
+     "a": "The same value of a_(k+1) - a_k applies to every consecutive pair of terms in the list",
+     "o": [
+      "The same value of a_(k+1) - a_k applies to every consecutive pair of terms in the list",
+      "It is common to all arithmetic progressions, whatever their first term",
+      "It is the difference between the first and the last term only",
+      "Every AP must share the same value of d"
+     ]
+    },
+    {
+     "b": "Understand",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "A list of numbers has only 12 terms, ending at the 12th term. What kind of AP is it, if it is one?",
+     "a": "A finite AP, because it has a last term",
+     "o": [
+      "A finite AP, because it has a last term",
+      "An infinite AP, because it has more than one term",
+      "Not an AP, because it does not go on forever",
+      "A finite AP only if d is positive"
+     ]
+    },
+    {
+     "b": "Understand",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "q": "The list 1, 2, 3, 4, ... goes on forever with no last term. Which distinguishes it from the list of heights 147, 148, ..., 157 of students in a queue (p. 52)?",
+     "a": "The first is an infinite AP and the second is a finite AP, though both have the same common difference 1",
+     "o": [
+      "The first is an infinite AP and the second is a finite AP, though both have the same common difference 1",
+      "The first is an AP and the second is not, since a queue cannot form an AP",
+      "The second is an infinite AP because heights can keep increasing",
+      "There is no difference; both are the same kind of AP"
+     ]
+    },
+    {
+     "b": "Understand",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "q": "Explain, using the definition on page 53, why the common difference d of an AP a_1, a_2, a_3, ... can be taken as a_2 - a_1 alone, rather than needing to compute every a_(k+1) - a_k.",
+     "a": "Once we already know the list is an AP, every consecutive difference equals the same fixed d by definition, so finding any one of them, such as a_2 - a_1, is enough; we do not need to repeat the subtraction for every pair.",
+     "s": [
+      [
+       "States that in an AP every a_(k+1) - a_k is the same value d",
+       1
+      ],
+      [
+       "Concludes that computing one such difference (e.g. a_2 - a_1) is therefore sufficient",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "If a = -7 and d = -2, the first four terms of the AP are",
+     "a": "-7, -9, -11, -13",
+     "o": [
+      "-7, -9, -11, -13",
+      "-7, -5, -3, -1",
+      "-7, -14, -21, -28",
+      "-7, -9, -12, -16"
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Easy",
+     "t": "fill_blank",
+     "m": 1,
+     "q": "If a = 1.0 and d = 0.1, the fourth term of the AP is ____.",
+     "a": "1.3"
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "q": "For the AP with a = 2 and d = 0, the 50th term is",
+     "a": "2",
+     "o": [
+      "2",
+      "0",
+      "50",
+      "100"
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "q": "Write the first five terms of the AP with a = 0 and d = 3/2, expressing each term as a fraction.",
+     "a": "0, 3/2, 3, 9/2, 6",
+     "s": [
+      [
+       "Correct method: each term is the previous term plus 3/2",
+       1
+      ],
+      [
+       "All five terms correct: 0, 3/2, 3, 9/2, 6",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "q": "A list begins at a = 21 with common difference d = -3. Write its first six terms and state whether the list is increasing or decreasing.",
+     "a": "21, 18, 15, 12, 9, 6; the list is decreasing since d is negative.",
+     "s": [
+      [
+       "Terms 21, 18, 15, 12, 9, 6 correct",
+       1
+      ],
+      [
+       "Correctly identifies the list as decreasing because d < 0",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hardest",
+     "t": "long_answer",
+     "m": 3,
+     "q": "A school choir stands in rows for a photo. The front row has 30 students, and each row behind has 2 fewer students than the row in front, continuing for 6 rows. Write this as an AP giving a and d, list the number of students in all 6 rows, and state whether this AP is finite or infinite.",
+     "a": "a = 30, d = -2. Rows: 30, 28, 26, 24, 22, 20. It is a finite AP because it has a last term (the 6th row, 20 students).",
+     "s": [
+      [
+       "a = 30 and d = -2 identified correctly",
+       1
+      ],
+      [
+       "All six terms 30, 28, 26, 24, 22, 20 listed correctly",
+       1
+      ],
+      [
+       "States it is finite because it has a last term",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "assertion_reason",
+     "m": 1,
+     "q": "Assertion (A): The list 2, 4, 8, 16, ... is an arithmetic progression. Reason (R): In an arithmetic progression, the difference between every pair of consecutive terms must be the same fixed number.",
+     "a": "A is false, R is true",
+     "o": [
+      "A is false, R is true",
+      "A is true, R is false",
+      "Both A and R are true, and R is the correct explanation of A",
+      "Both A and R are true, but R is not the correct explanation of A"
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "multi_statement",
+     "m": 1,
+     "q": "Consider these statements about an AP with first term a and common difference d. (I) The general form a, a+d, a+2d, a+3d, ... covers every possible AP, whether d is positive, negative or zero. (II) An AP can only be classified as finite or infinite if its common difference d is positive. Which is or are correct?",
+     "a": "Only I",
+     "o": [
+      "Only I",
+      "Only II",
+      "Both I and II",
+      "Neither I nor II"
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hardest",
+     "t": "long_answer",
+     "m": 3,
+     "q": "Three lists are given: (I) 5, 5, 5, 5, ...; (II) 3, 3.5, 4, 4.5, ...; (III) 10, 7, 4, 1, -2, .... For each, state the common difference and say whether the list is increasing, decreasing or constant.",
+     "a": "(I) d = 0, constant. (II) d = 0.5, increasing. (III) d = -3, decreasing.",
+     "s": [
+      [
+       "List I: d = 0, constant",
+       1
+      ],
+      [
+       "List II: d = 0.5, increasing",
+       1
+      ],
+      [
+       "List III: d = -3, decreasing",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Evaluate",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "q": "Kiran claims: 'Every list of numbers that keeps increasing is an arithmetic progression.' Evaluate this claim using the list 1, 2, 4, 7, 11, ... as a check.",
+     "a": "The claim is false. The list 1, 2, 4, 7, 11, ... keeps increasing, but the differences are 1, 2, 3, 4, which are not all the same, so it is not an AP; increasing is not enough, the increase must be by the same fixed amount every time.",
+     "s": [
+      [
+       "States the claim is false",
+       1
+      ],
+      [
+       "Uses the given list to show the differences 1, 2, 3, 4 are not constant, so it fails the AP test",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Create",
+     "d": "Hardest",
+     "t": "long_answer",
+     "m": 3,
+     "q": "Construct an infinite arithmetic progression whose first term is -5 and which decreases by 2.5 at every step. Write its first five terms, and then construct a finite AP with the same first term and common difference that has exactly 5 terms, naming its last term.",
+     "a": "Infinite AP: -5, -7.5, -10, -12.5, -15, ... (continues without end). Finite AP with the same a and d and 5 terms: -5, -7.5, -10, -12.5, -15, with last term -15.",
+     "s": [
+      [
+       "First five terms -5, -7.5, -10, -12.5, -15 correct",
+       1
+      ],
+      [
+       "States the infinite AP continues without a last term",
+       1
+      ],
+      [
+       "Constructs the finite version with 5 terms and correctly names -15 as the last term",
+       1
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "code": "C10M-5.2",
+   "name": "Testing whether a list is an AP; finding a and d",
+   "description": "Deciding whether a given list of numbers is an AP by checking that consecutive differences are equal, finding a and d when it is one, recognising non-AP patterns, and the three-consecutive-term arithmetic-mean fact b = (a+c)/2.",
+   "idea": "A list is an AP exactly when the difference between every pair of consecutive terms is the same fixed value.",
+   "rule": "Compute a_2 - a_1, a_3 - a_2, a_4 - a_3, .... If all are equal, the list is an AP with that value as d; if even one pair differs, it is not. Always subtract the earlier term from the later one, a_(k+1) - a_k, even when the later term is smaller. If a, b, c are three consecutive terms of an AP, b = (a + c)/2.",
+   "example": "For 4, 10, 16, 22, ...: a_2 - a_1 = 6, a_3 - a_2 = 6, a_4 - a_3 = 6, so it is an AP, d = 6 (p. 54). For 1, 1, 2, 3, 5, ...: the differences 0, 1, 1, 2 are not equal, so it is not an AP (p. 53).",
+   "difficulty_base": "Easy",
+   "questions": [
+    {
+     "b": "Remember",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "To test whether a list of numbers is an AP, we check whether the differences between",
+     "a": "every pair of consecutive terms are equal",
+     "o": [
+      "every pair of consecutive terms are equal",
+      "the first and last terms are equal",
+      "every term and zero are equal",
+      "alternate terms are equal"
+     ]
+    },
+    {
+     "b": "Remember",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "For the list 6, 9, 12, 15, ..., the difference a_2 - a_1 equals",
+     "a": "3",
+     "o": [
+      "3",
+      "6",
+      "9",
+      "15"
+     ]
+    },
+    {
+     "b": "Remember",
+     "d": "Easy",
+     "t": "fill_blank",
+     "m": 1,
+     "q": "In general, for an AP a_1, a_2, a_3, ..., the common difference is given by d = a_(k+1) - ____.",
+     "a": "a_k"
+    },
+    {
+     "b": "Remember",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "rev": true,
+     "q": "Which of the following is NOT a valid way to test whether a list of numbers a_1, a_2, a_3, ... is an arithmetic progression?",
+     "a": "Compute S_n = (n/2)[2a_1 + (n - 1)d] for the list and check whether it gives a whole number",
+     "o": [
+      "Compute S_n = (n/2)[2a_1 + (n - 1)d] for the list and check whether it gives a whole number",
+      "Check whether a_2 - a_1, a_3 - a_2 and a_4 - a_3 are all equal to the same number",
+      "Always subtract the earlier term from the later one, a_(k+1) - a_k, even if a_(k+1) is smaller than a_k",
+      "Conclude the list is not an AP as soon as one pair of consecutive terms gives a different difference from another pair"
+     ]
+    },
+    {
+     "b": "Understand",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "Why is 1, 1, 2, 3, 5, ... (page 53) not an arithmetic progression?",
+     "a": "The difference between consecutive terms is not the same throughout the list",
+     "o": [
+      "The difference between consecutive terms is not the same throughout the list",
+      "The terms do not increase",
+      "The first two terms are equal, which is never allowed in an AP",
+      "It has more than four terms"
+     ]
+    },
+    {
+     "b": "Understand",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "When checking whether -2, 2, -2, 2, -2, ... is an AP, we find a_2 - a_1 = 4 and a_3 - a_2 = -4. What do we conclude?",
+     "a": "The list is not an AP, since the two differences are not equal",
+     "o": [
+      "The list is not an AP, since the two differences are not equal",
+      "The list is an AP with d = 4",
+      "The list is an AP with d = -4",
+      "The list is an AP because it repeats in a pattern"
+     ]
+    },
+    {
+     "b": "Understand",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "For the list 6, 3, 0, -3, ..., which subtraction correctly gives the common difference?",
+     "a": "3 - 6 = -3",
+     "o": [
+      "3 - 6 = -3",
+      "6 - 3 = 3",
+      "0 - 6 = -6",
+      "3 - 0 = 3"
+     ]
+    },
+    {
+     "b": "Understand",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "q": "A student subtracts the later term from the earlier term throughout a list and finds the value keeps changing sign but not size. What is the most likely explanation?",
+     "a": "The student is computing a_k - a_(k+1) instead of a_(k+1) - a_k, so every difference comes out as -d instead of d",
+     "o": [
+      "The student is computing a_k - a_(k+1) instead of a_(k+1) - a_k, so every difference comes out as -d instead of d",
+      "The list cannot possibly be an AP",
+      "The common difference of the list must be zero",
+      "The list must have a negative first term"
+     ]
+    },
+    {
+     "b": "Understand",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "q": "For the list -1.0, -1.5, -2.0, -2.5, ..., verify that it is an AP and state its common difference.",
+     "a": "a_2 - a_1 = -1.5 - (-1.0) = -0.5, a_3 - a_2 = -2.0 - (-1.5) = -0.5, a_4 - a_3 = -2.5 - (-2.0) = -0.5. All equal, so it is an AP with d = -0.5.",
+     "s": [
+      [
+       "Computes at least two consecutive differences correctly",
+       1
+      ],
+      [
+       "States the list is an AP with d = -0.5 since all differences are equal",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "For the AP 4, 10, 16, 22, ..., the next two terms after 22 are",
+     "a": "28, 34",
+     "o": [
+      "28, 34",
+      "26, 30",
+      "22, 28",
+      "30, 38"
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Easy",
+     "t": "fill_blank",
+     "m": 1,
+     "q": "For the list 1, -1, -3, -5, ..., the common difference is ____.",
+     "a": "-2"
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "q": "Which of these is the correct pair of next two terms for the AP 1, -1, -3, -5, ...?",
+     "a": "-7, -9",
+     "o": [
+      "-7, -9",
+      "-6, -7",
+      "-7, -8",
+      "-9, -11"
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "q": "Test whether 1, 1, 1, 2, 2, 2, 3, 3, 3, ... is an arithmetic progression, showing your working.",
+     "a": "a_2 - a_1 = 1 - 1 = 0, a_3 - a_2 = 1 - 1 = 0, a_4 - a_3 = 2 - 1 = 1. Since 0 is not equal to 1, the list is not an AP.",
+     "s": [
+      [
+       "Computes a_2 - a_1 = 0 and a_3 - a_2 = 0",
+       1
+      ],
+      [
+       "Computes a_4 - a_3 = 1 and correctly concludes it is not an AP since the differences are not all equal",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "q": "In an AP, three consecutive terms are a, b, c in that order. Using the fact that b - a = c - b, show that b = (a + c)/2.",
+     "a": "b - a = c - b gives 2b = a + c, so b = (a + c)/2.",
+     "s": [
+      [
+       "Sets up 2b = a + c from b - a = c - b",
+       1
+      ],
+      [
+       "Correctly divides to get b = (a + c)/2",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hardest",
+     "t": "long_answer",
+     "m": 3,
+     "q": "Three numbers 7, x, 19 are three consecutive terms of an AP. Find x, and then verify your answer by checking that the two consecutive differences are equal.",
+     "a": "x = (7 + 19)/2 = 13. Check: 13 - 7 = 6 and 19 - 13 = 6, which are equal, confirming x = 13.",
+     "s": [
+      [
+       "Uses b = (a + c)/2 to get x = 13",
+       1
+      ],
+      [
+       "Computes both differences 13 - 7 = 6 and 19 - 13 = 6",
+       1
+      ],
+      [
+       "States the differences are equal, confirming the answer",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "multi_statement",
+     "m": 1,
+     "q": "Consider these statements about the list 3, 3, 3, 3, .... (I) It is an arithmetic progression with common difference 0. (II) It is not an arithmetic progression because the terms do not change. Which is or are correct?",
+     "a": "Only I",
+     "o": [
+      "Only I",
+      "Only II",
+      "Both I and II",
+      "Neither I nor II"
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "assertion_reason",
+     "m": 1,
+     "q": "Assertion (A): For the list 6, 3, 0, -3, ..., the common difference is found as 6 - 3 = 3. Reason (R): The common difference of an AP must always be obtained by subtracting the earlier term from the later term, a_(k+1) - a_k.",
+     "a": "A is false, R is true",
+     "o": [
+      "A is false, R is true",
+      "A is true, R is false",
+      "Both A and R are true, and R is the correct explanation of A",
+      "Both A and R are true, but R is not the correct explanation of A"
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hardest",
+     "t": "long_answer",
+     "m": 3,
+     "q": "A list is built by the rule: start at 12, and each new term is obtained by subtracting 5 from the term before it. A second list is built by starting at 12 and multiplying each term by 1/2 to get the next one. Decide whether each list is an AP, and if so, give its common difference.",
+     "a": "The first list (12, 7, 2, -3, ...) is an AP with common difference -5, since a fixed number is subtracted each time. The second list (12, 6, 3, 1.5, ...) is not an AP, since it is built by a fixed multiplying factor, not a fixed added difference; its consecutive differences (-6, -3, -1.5, ...) are not equal.",
+     "s": [
+      [
+       "Identifies the first list as an AP with d = -5",
+       1
+      ],
+      [
+       "Identifies the second list as not an AP",
+       1
+      ],
+      [
+       "Gives a correct reason: the second list is formed by multiplying, so its differences are not constant",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Evaluate",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "q": "Arjun says: 'To find the common difference, I can subtract any term from any later term in the list, not just the very next one, and I should always get the same answer.' Evaluate this claim using the AP 6, 9, 12, 15.",
+     "a": "The claim is not correct as stated: subtracting a term from the very next term always gives d (e.g. 9 - 6 = 3), but subtracting from a term further away gives a multiple of d, not d itself (e.g. 12 - 6 = 6, which is 2d, not d).",
+     "s": [
+      [
+       "States that the claim is false / needs correcting",
+       1
+      ],
+      [
+       "Supports this using the AP 6, 9, 12, 15, showing a non-adjacent subtraction like 12 - 6 = 6 does not equal d = 3",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Create",
+     "d": "Hardest",
+     "t": "long_answer",
+     "m": 3,
+     "q": "Construct two different lists of five numbers each, both starting at 20: one that IS an arithmetic progression with a common difference of your choice, and one that is NOT an arithmetic progression. For the second list, show one pair of unequal consecutive differences to justify your claim.",
+     "a": "Sample AP (d = -4): 20, 16, 12, 8, 4. Sample non-AP: 20, 16, 10, 8, 4 -- here a_2 - a_1 = -4 but a_3 - a_2 = -6, which are unequal, so it is not an AP.",
+     "s": [
+      [
+       "Gives a valid 5-term AP starting at 20 with a stated common difference",
+       1
+      ],
+      [
+       "Gives a 5-term non-AP list starting at 20",
+       1
+      ],
+      [
+       "Shows one genuine pair of unequal consecutive differences in the second list",
+       1
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "code": "C10M-5.3",
+   "name": "The nth term (general term) of an AP",
+   "description": "The formula a_n = a + (n - 1)d for the nth (general) term of an AP, the vocabulary 'general term', and the notation l for the last term of a finite AP; using the formula to find a specific term.",
+   "idea": "Each step from the first term adds one more d, so the nth term is the first term plus (n - 1) common differences.",
+   "rule": "a_n = a + (n - 1)d, where a is the first term, d the common difference and n the position of the term counting from 1. a_n is also called the general term. For a finite AP of m terms, a_m is the last term, often written l.",
+   "example": "Salary AP a = 8000, d = 500: 15th year salary = 8000 + (15 - 1) x 500 = 15000 (p. 57). For the AP 2, 7, 12, ...: a_10 = 2 + 9 x 5 = 47 (Example 3, p. 58).",
+   "difficulty_base": "Easy",
+   "questions": [
+    {
+     "b": "Remember",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "The formula for the nth term of an AP with first term a and common difference d is",
+     "a": "a_n = a + (n - 1)d",
+     "o": [
+      "a_n = a + (n - 1)d",
+      "a_n = a + nd",
+      "a_n = a x (n - 1)d",
+      "a_n = a + (n + 1)d"
+     ]
+    },
+    {
+     "b": "Remember",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "The nth term of an AP is also known as its",
+     "a": "general term",
+     "o": [
+      "general term",
+      "common term",
+      "first term",
+      "sum term"
+     ]
+    },
+    {
+     "b": "Remember",
+     "d": "Easy",
+     "t": "fill_blank",
+     "m": 1,
+     "q": "If an AP has m terms, the last term a_m is also denoted by the letter ____.",
+     "a": "l"
+    },
+    {
+     "b": "Remember",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "rev": true,
+     "q": "Which of the following is NOT correct about the nth term of an AP with first term a and common difference d?",
+     "a": "The nth term can be found by checking whether a_(k+1) - a_k stays the same for every k up to n",
+     "o": [
+      "The nth term can be found by checking whether a_(k+1) - a_k stays the same for every k up to n",
+      "The nth term is a_n = a + (n - 1)d",
+      "a_n is also called the general term of the AP",
+      "If an AP has m terms, the last term a_m is sometimes written as l"
+     ]
+    },
+    {
+     "b": "Understand",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "In the formula a_n = a + (n - 1)d, what does the factor (n - 1) represent?",
+     "a": "The number of times the common difference has been added to the first term to reach the nth term",
+     "o": [
+      "The number of times the common difference has been added to the first term to reach the nth term",
+      "The total number of terms in the AP",
+      "The value of the nth term itself",
+      "The position of the term counted from the last term"
+     ]
+    },
+    {
+     "b": "Understand",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "Reena's monthly salary starts at Rs 8000 with an annual increment of Rs 500 (p. 49). Which expression gives her salary in the 15th year?",
+     "a": "8000 + (15 - 1) x 500",
+     "o": [
+      "8000 + (15 - 1) x 500",
+      "8000 + 15 x 500",
+      "8000 x (15 - 1) x 500",
+      "8000 + (15 + 1) x 500"
+     ]
+    },
+    {
+     "b": "Understand",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "Why is the second term of an AP equal to a + d rather than a + 2d?",
+     "a": "Because the common difference has been added only once when moving from the first term to the second",
+     "o": [
+      "Because the common difference has been added only once when moving from the first term to the second",
+      "Because the second term is always double the first term",
+      "Because d must always be added twice to reach any term",
+      "Because a_2 = a_1 + a_2"
+     ]
+    },
+    {
+     "b": "Understand",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "q": "For an AP with first term a and common difference d, which term is represented by a + 6d?",
+     "a": "The 7th term",
+     "o": [
+      "The 7th term",
+      "The 6th term",
+      "The 5th term",
+      "The 8th term"
+     ]
+    },
+    {
+     "b": "Understand",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "q": "Explain why the nth term formula uses (n - 1) and not n as the multiplier of d.",
+     "a": "The first term a already has zero d's added to it (it is a + 0 x d), the second term has one d added, and in general the nth term has had d added exactly (n - 1) times, one fewer than the term's position n.",
+     "s": [
+      [
+       "States the first term has 0 d's added, i.e. corresponds to (n - 1) = 0",
+       1
+      ],
+      [
+       "Explains that the nth term has d added exactly (n - 1) times, one less than n",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "Find the 10th term of the AP 2, 7, 12, ....",
+     "a": "47",
+     "o": [
+      "47",
+      "42",
+      "52",
+      "45"
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Easy",
+     "t": "fill_blank",
+     "m": 1,
+     "q": "For the AP 2, 7, 12, ..., the 6th term is ____.",
+     "a": "27"
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "q": "The AP 24, 21, 18, ... has a = 24 and d = -3. Its 9th term is",
+     "a": "0",
+     "o": [
+      "0",
+      "3",
+      "-3",
+      "21"
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "q": "Find the 20th term of the AP -3, -1, 1, 3, ....",
+     "a": "a = -3, d = 2. a_20 = -3 + 19 x 2 = -3 + 38 = 35.",
+     "s": [
+      [
+       "Identifies a = -3 and d = 2",
+       1
+      ],
+      [
+       "Computes a_20 = 35 correctly",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "q": "An AP has first term 5 and common difference -4. Find its 12th term and state whether the term is positive or negative.",
+     "a": "a_12 = 5 + 11 x (-4) = 5 - 44 = -39. The term is negative.",
+     "s": [
+      [
+       "Computes a_12 = -39 correctly",
+       1
+      ],
+      [
+       "States the term is negative",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hardest",
+     "t": "long_answer",
+     "m": 3,
+     "q": "A theatre has 20 rows. Row 1 has 18 seats, and each row behind has 3 more seats than the row in front. Find the number of seats in row 20, and the number of seats in row 10.",
+     "a": "a = 18, d = 3. Row 20: a_20 = 18 + 19 x 3 = 18 + 57 = 75 seats. Row 10: a_10 = 18 + 9 x 3 = 18 + 27 = 45 seats.",
+     "s": [
+      [
+       "Identifies a = 18 and d = 3",
+       1
+      ],
+      [
+       "Computes row 20 = 75 seats correctly",
+       1
+      ],
+      [
+       "Computes row 10 = 45 seats correctly",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "assertion_reason",
+     "m": 1,
+     "q": "Assertion (A): The 10th term of the AP 2, 7, 12, ... is 47. Reason (R): The nth term of an AP is found using the formula a_n = a x (n - 1) x d.",
+     "a": "A is true, R is false",
+     "o": [
+      "A is true, R is false",
+      "A is false, R is true",
+      "Both A and R are true, and R is the correct explanation of A",
+      "Both A and R are true, but R is not the correct explanation of A"
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "multi_statement",
+     "m": 1,
+     "q": "Consider these statements about the nth term formula a_n = a + (n - 1)d. (I) It gives the 1st term when n = 1, since a + (1 - 1)d = a. (II) For a fixed a and d, a larger value of n can never give a smaller term than a smaller value of n does, if d is positive. Which is or are correct?",
+     "a": "Both I and II",
+     "o": [
+      "Both I and II",
+      "Only I",
+      "Only II",
+      "Neither I nor II"
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hardest",
+     "t": "long_answer",
+     "m": 3,
+     "q": "Two APs are given: AP-P is 5, 8, 11, ... and AP-Q is 4, 9, 14, .... Find the 10th term of each, and state which AP's 10th term is larger, and by how much.",
+     "a": "AP-P: a_10 = 5 + 9 x 3 = 32. AP-Q: a_10 = 4 + 9 x 5 = 49. AP-Q's 10th term is larger, by 49 - 32 = 17.",
+     "s": [
+      [
+       "AP-P's 10th term = 32",
+       1
+      ],
+      [
+       "AP-Q's 10th term = 49",
+       1
+      ],
+      [
+       "Correctly states AP-Q is larger, by 17",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Evaluate",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "q": "A classmate says: 'Since a_n = a + (n - 1)d, doubling n will always double the value of the nth term.' Evaluate this claim using the AP 10, 13, 16, .... (check a_2 versus a_4, where n doubles from 2 to 4).",
+     "a": "The claim is false. a_2 = 13, and a_4 = 10 + 3 x 3 = 19, which is not double 13 (26). Doubling n does not double a_n because of the constant a term added in the formula.",
+     "s": [
+      [
+       "States the claim is false",
+       1
+      ],
+      [
+       "Verifies using a_2 = 13 and a_4 = 19, showing 19 is not double 13",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Create",
+     "d": "Hardest",
+     "t": "long_answer",
+     "m": 3,
+     "q": "Construct an AP whose first term is 6 and whose 6th term is exactly 26. State the common difference you found, and write out all 6 terms.",
+     "a": "a_6 = a + 5d, so 26 = 6 + 5d, giving d = 4. Terms: 6, 10, 14, 18, 22, 26.",
+     "s": [
+      [
+       "Sets up 26 = 6 + 5d correctly",
+       1
+      ],
+      [
+       "Solves to get d = 4",
+       1
+      ],
+      [
+       "Lists all six terms 6, 10, 14, 18, 22, 26 correctly",
+       1
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "code": "C10M-5.4",
+   "name": "Using the nth term formula in reverse: finding n, checking membership",
+   "description": "Solving a_n = a + (n - 1)d for n to find which term of an AP equals a given value, deciding a number is not a term when n fails to be a positive integer, and finding which term (if any) equals zero.",
+   "idea": "The same formula a_n = a + (n - 1)d can be solved for n when the term's value is known, which tells us which position a given number occupies -- or shows it never occurs.",
+   "rule": "Set a + (n - 1)d equal to the given value and solve for n; n must be a positive integer for the value to actually be a term of the AP. Setting a_n = 0 and solving for n (if it gives a positive integer) finds which term, if any, is zero.",
+   "example": "AP 21, 18, 15, ...: solving -81 = 21 + (n - 1)(-3) gives n = 35, so -81 is the 35th term (Example 4, p. 58); the same AP has its 8th term equal to 0. AP 5, 11, 17, 23, ...: solving 301 = 5 + (n - 1) x 6 gives n = 302/6, not a whole number, so 301 is never a term (Example 6, p. 59).",
+   "difficulty_base": "Hard",
+   "questions": [
+    {
+     "b": "Remember",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "To find which term of an AP has a given value v, we solve the equation",
+     "a": "a + (n - 1)d = v for n",
+     "o": [
+      "a + (n - 1)d = v for n",
+      "a + nd = v for a",
+      "n = a + (n - 1)d",
+      "v = a x d x n"
+     ]
+    },
+    {
+     "b": "Remember",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "For a solved value of n to confirm that a number is indeed a term of the AP, n must be",
+     "a": "a positive integer",
+     "o": [
+      "a positive integer",
+      "any real number",
+      "a negative integer",
+      "exactly equal to d"
+     ]
+    },
+    {
+     "b": "Remember",
+     "d": "Easy",
+     "t": "fill_blank",
+     "m": 1,
+     "q": "If solving a + (n - 1)d = v gives n = 6.5, then v is ____ a term of this AP.",
+     "a": "not"
+    },
+    {
+     "b": "Remember",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "rev": true,
+     "q": "Which of the following is NOT a correct step when finding which term of an AP equals a given value v?",
+     "a": "Substitute v into S_n = (n/2)[2a + (n - 1)d] instead of into a_n = a + (n - 1)d, since v is a term of the list",
+     "o": [
+      "Substitute v into S_n = (n/2)[2a + (n - 1)d] instead of into a_n = a + (n - 1)d, since v is a term of the list",
+      "Set a + (n - 1)d equal to v and solve the resulting equation for n",
+      "Accept the answer only if the value of n obtained is a positive integer",
+      "Conclude that v is not a term of the AP if solving for n gives a fraction or a negative number"
+     ]
+    },
+    {
+     "b": "Understand",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "Why must n come out as a positive integer for a number to be a term of an AP?",
+     "a": "Because the position of a term in the list, first, second, third and so on, is always counted using positive whole numbers",
+     "o": [
+      "Because the position of a term in the list, first, second, third and so on, is always counted using positive whole numbers",
+      "Because a and d are always positive integers",
+      "Because otherwise the common difference would change",
+      "Because the sum of the AP would not exist"
+     ]
+    },
+    {
+     "b": "Understand",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "For the AP 21, 18, 15, ..., solving -81 = 21 + (n - 1)(-3) is a step used to",
+     "a": "find which term of the AP equals -81",
+     "o": [
+      "find which term of the AP equals -81",
+      "find the common difference of the AP",
+      "find the sum of the first 81 terms",
+      "check whether -81 is the first term"
+     ]
+    },
+    {
+     "b": "Understand",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "In Example 4 (p. 58) for the AP 21, 18, 15, ..., which term is found to equal 0?",
+     "a": "The 8th term",
+     "o": [
+      "The 8th term",
+      "The 21st term",
+      "The 3rd term",
+      "There is no term equal to 0"
+     ]
+    },
+    {
+     "b": "Understand",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "q": "For the AP 5, 11, 17, 23, ..., solving 301 = 5 + (n - 1) x 6 gives n = 302/6, which is not a whole number. What is the correct conclusion?",
+     "a": "301 is not a term of this AP",
+     "o": [
+      "301 is not a term of this AP",
+      "301 is the 50th term of this AP",
+      "The AP does not have a common difference",
+      "301 is the 51st term, rounding n up"
+     ]
+    },
+    {
+     "b": "Understand",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "q": "For the AP 3, 7, 11, 15, ..., is 50 a term of this list? Show the equation you solve and your conclusion.",
+     "a": "a = 3, d = 4. Solve 50 = 3 + (n - 1) x 4, giving 47 = 4(n - 1), so n - 1 = 11.75, n = 12.75. Since n is not a positive integer, 50 is not a term of this AP.",
+     "s": [
+      [
+       "Sets up and solves 50 = 3 + (n - 1) x 4 to get n = 12.75",
+       1
+      ],
+      [
+       "Concludes 50 is not a term since n is not a whole number",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "Which term of the AP 3, 8, 13, 18, ... equals 63?",
+     "a": "The 13th term",
+     "o": [
+      "The 13th term",
+      "The 12th term",
+      "The 14th term",
+      "The 63rd term"
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Easy",
+     "t": "fill_blank",
+     "m": 1,
+     "q": "For the AP 100, 90, 80, ..., the term equal to 0 is the ____th term.",
+     "a": "11"
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "q": "Is -50 a term of the AP 2, 5, 8, 11, ...?",
+     "a": "No, because solving gives a negative value of n",
+     "o": [
+      "No, because solving gives a negative value of n",
+      "Yes, it is the 17th term",
+      "Yes, it is the -17th term",
+      "No, because the AP has no common difference"
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "q": "How many two-digit numbers are divisible by 4? Model this as an AP and use the nth term formula.",
+     "a": "The two-digit multiples of 4 are 12, 16, 20, ..., 96, an AP with a = 12, d = 4, a_n = 96. Solve 96 = 12 + (n - 1) x 4: 84 = 4(n - 1), n - 1 = 21, n = 22. There are 22 such numbers.",
+     "s": [
+      [
+       "Identifies the AP as 12, 16, ..., 96 with a = 12, d = 4",
+       1
+      ],
+      [
+       "Solves correctly to get n = 22",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "q": "The AP 50, 47, 44, ... -- find whether any term of this AP equals 2, and if so which term.",
+     "a": "a = 50, d = -3. Solve 2 = 50 + (n - 1)(-3): -48 = -3(n - 1), n - 1 = 16, n = 17. Yes, the 17th term equals 2.",
+     "s": [
+      [
+       "Sets up 2 = 50 + (n - 1)(-3) correctly",
+       1
+      ],
+      [
+       "Solves to get n = 17 and confirms it is a valid positive integer",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hardest",
+     "t": "long_answer",
+     "m": 3,
+     "q": "For the AP 8, 5, 2, -1, ..., find (i) which term equals -55, and (ii) whether any term of this AP equals 0, explaining your reasoning either way.",
+     "a": "a = 8, d = -3. (i) Solve -55 = 8 + (n - 1)(-3): -63 = -3(n - 1), n - 1 = 21, n = 22, so -55 is the 22nd term. (ii) Solve 0 = 8 + (n - 1)(-3): -8 = -3(n - 1), n - 1 = 8/3 = 2.67, n = 3.67, which is not a positive integer, so no term of this AP equals 0.",
+     "s": [
+      [
+       "Correctly finds -55 is the 22nd term",
+       1
+      ],
+      [
+       "Sets up 0 = 8 + (n - 1)(-3) for the second part",
+       1
+      ],
+      [
+       "Correctly concludes no term equals 0 since n is not a whole number",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "multi_statement",
+     "m": 1,
+     "q": "Consider these statements about the AP 9, 13, 17, .... (I) Solving 101 = 9 + (n - 1) x 4 gives a whole number, so 101 is a term of this AP. (II) The term 100 is not part of this AP, since solving for n does not give a whole number. Which is or are correct?",
+     "a": "Both I and II",
+     "o": [
+      "Both I and II",
+      "Only I",
+      "Only II",
+      "Neither I nor II"
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "assertion_reason",
+     "m": 1,
+     "q": "Assertion (A): 105 is not a term of the AP 4, 9, 14, 19, .... Reason (R): Solving 105 = 4 + (n - 1) x 5 gives n = 21.2, which is a positive integer.",
+     "a": "A is true, R is false",
+     "o": [
+      "A is true, R is false",
+      "A is false, R is true",
+      "Both A and R are true, and R is the correct explanation of A",
+      "Both A and R are true, but R is not the correct explanation of A"
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hardest",
+     "t": "long_answer",
+     "m": 3,
+     "q": "Two APs are given: AP-X is 6, 11, 16, ... and AP-Y is 6, 10, 14, .... Determine, for each AP, whether 96 is one of its terms.",
+     "a": "AP-X: a = 6, d = 5. Solve 96 = 6 + (n - 1) x 5: 90 = 5(n - 1), n - 1 = 18, n = 19, a whole number, so 96 IS a term of AP-X (the 19th term). AP-Y: a = 6, d = 4. Solve 96 = 6 + (n - 1) x 4: 90 = 4(n - 1), n - 1 = 22.5, n = 23.5, not a whole number, so 96 is NOT a term of AP-Y.",
+     "s": [
+      [
+       "Correctly finds 96 is the 19th term of AP-X",
+       1
+      ],
+      [
+       "Sets up the equation correctly for AP-Y",
+       1
+      ],
+      [
+       "Correctly concludes 96 is not a term of AP-Y since n is not a whole number",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Evaluate",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "q": "A classmate argues: 'If solving for n gives a decimal like 12.5, we should just round to the nearest whole number, 12 or 13, and say that is the term we want.' Evaluate this reasoning.",
+     "a": "This reasoning is incorrect. A decimal value of n means the number is simply not a term of the AP at all; rounding to n = 12 or n = 13 would give a DIFFERENT number from the one we started with, not the term we were looking for.",
+     "s": [
+      [
+       "States the reasoning is incorrect / should not round",
+       1
+      ],
+      [
+       "Explains that a decimal n means the number is not a term, and rounding would give a different value instead",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Create",
+     "d": "Hardest",
+     "t": "long_answer",
+     "m": 3,
+     "q": "Construct an AP with first term 7 and common difference 5 such that 92 is one of its terms. Confirm your AP is correct by stating which term 92 is, and give one number between 7 and 92 that is NOT a term of your AP.",
+     "a": "AP: 7, 12, 17, .... Check: 92 = 7 + (n - 1) x 5 gives 85 = 5(n - 1), n = 18, a whole number, so 92 is the 18th term. A number such as 90 is not a term, since 90 = 7 + (n - 1) x 5 gives n - 1 = 16.6, not a whole number.",
+     "s": [
+      [
+       "States the AP 7, 12, 17, ... with a = 7, d = 5",
+       1
+      ],
+      [
+       "Confirms 92 is the 18th term with correct working",
+       1
+      ],
+      [
+       "Gives a valid non-term number (e.g. 90) with correct justification",
+       1
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "code": "C10M-5.5",
+   "name": "Finding an AP from two given terms; the nth term from the end",
+   "description": "Setting up and solving two simultaneous linear equations in a and d from two given terms of an AP, and finding the nth term of a finite AP counted from its last term by either counting total terms or reversing the AP.",
+   "idea": "Knowing any two terms of an AP is enough to pin down both a and d, because each given term supplies one linear equation in a and d; counting from the far end of a finite AP is the same as counting from the near end of its mirror image.",
+   "rule": "a_m = a + (m - 1)d and a_k = a + (k - 1)d give two simultaneous linear equations in a and d; solve them together. For the pth term from the end of a finite AP of N terms, either find N first and use the (N - p + 1)th term from the start, or reverse the AP (new first term = old last term l, new common difference = -d) and find its pth term.",
+   "example": "3rd term = 5, 7th term = 9 gives a + 2d = 5 and a + 6d = 9, solving to a = 3, d = 1 (Example 5, p. 58). AP 10, 7, 4, ..., -62 has 25 terms; its 11th term from the end is the 15th term from the start, a_15 = 10 + 14 x (-3) = -32 (Example 8, pp. 59-60).",
+   "difficulty_base": "Hard",
+   "questions": [
+    {
+     "b": "Remember",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "To determine an AP completely, knowing two of its terms (at two different positions) is",
+     "a": "enough, since two equations in a and d can be solved together",
+     "o": [
+      "enough, since two equations in a and d can be solved together",
+      "not enough; at least three terms are always needed",
+      "only enough if the two terms are consecutive",
+      "never enough, since infinitely many APs share any two terms"
+     ]
+    },
+    {
+     "b": "Remember",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "If a_m is the mth term and a_k is the kth term of an AP, the two equations used to find a and d are",
+     "a": "a_m = a + (m - 1)d and a_k = a + (k - 1)d",
+     "o": [
+      "a_m = a + (m - 1)d and a_k = a + (k - 1)d",
+      "a_m = a x m x d and a_k = a x k x d",
+      "a_m + a_k = a + d",
+      "a_m = a_k + (m - k)"
+     ]
+    },
+    {
+     "b": "Remember",
+     "d": "Easy",
+     "t": "fill_blank",
+     "m": 1,
+     "q": "In a finite AP with 30 terms, the 5th term from the end is the ____th term from the start.",
+     "a": "26"
+    },
+    {
+     "b": "Remember",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "rev": true,
+     "q": "Which of the following is NOT a correct step when finding the pth term of a finite AP counting from its LAST term?",
+     "a": "The pth term from the end is always simply a + (p - 1)d, using the SAME a and d as counting from the start",
+     "o": [
+      "The pth term from the end is always simply a + (p - 1)d, using the SAME a and d as counting from the start",
+      "Find the total number of terms N in the AP, then use position N - p + 1 counted from the first term",
+      "Reverse the AP so that the new first term is the old last term l and the new common difference is -d, then find its pth term in the usual way",
+      "The pth term from the end is not generally the same as the pth term from the start, unless the AP happens to be symmetric"
+     ]
+    },
+    {
+     "b": "Understand",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "In Example 8 of the textbook (AP 10, 7, 4, ..., -62), why is the 11th term from the last term NOT simply the 11th term from the first term (a_11)?",
+     "a": "Because 'from the last term' counts backward from the end of a finite list, which is a different position from counting forward from the start",
+     "o": [
+      "Because 'from the last term' counts backward from the end of a finite list, which is a different position from counting forward from the start",
+      "Because the AP is infinite, so there is no 11th term from the start",
+      "Because a_11 does not exist for this AP",
+      "There is actually no difference; both give the same term"
+     ]
+    },
+    {
+     "b": "Understand",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "Reversing the AP 10, 7, 4, ..., -62 (so it reads -62, ..., 4, 7, 10) changes the common difference from -3 to",
+     "a": "3",
+     "o": [
+      "3",
+      "-3",
+      "6",
+      "-6"
+     ]
+    },
+    {
+     "b": "Understand",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "Given a_3 = 5 and a_7 = 9 for an AP, which pair of equations should be solved together?",
+     "a": "a + 2d = 5 and a + 6d = 9",
+     "o": [
+      "a + 2d = 5 and a + 6d = 9",
+      "a + 3d = 5 and a + 7d = 9",
+      "3a + d = 5 and 7a + d = 9",
+      "a - 2d = 5 and a - 6d = 9"
+     ]
+    },
+    {
+     "b": "Understand",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "q": "Subtracting the equation a + 2d = 5 from a + 6d = 9 gives",
+     "a": "4d = 4",
+     "o": [
+      "4d = 4",
+      "4d = 14",
+      "8d = 4",
+      "4a = 4"
+     ]
+    },
+    {
+     "b": "Understand",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "q": "Explain in one or two lines why subtracting one equation from another is a useful first step when solving a + 2d = 5 and a + 6d = 9 together.",
+     "a": "Subtracting eliminates a (since both equations contain +a), leaving an equation in d alone, 4d = 4, which can be solved directly.",
+     "s": [
+      [
+       "States that subtracting eliminates the variable a",
+       1
+      ],
+      [
+       "Notes this leaves a single equation in d that can be solved directly",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "Solving 4d = 4 gives d =",
+     "a": "1",
+     "o": [
+      "1",
+      "4",
+      "0.25",
+      "-1"
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Easy",
+     "t": "fill_blank",
+     "m": 1,
+     "q": "For the AP with a_3 = 5 and a_7 = 9, once d = 1 is found, substituting into a + 2d = 5 gives a = ____.",
+     "a": "3"
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "q": "An AP has a_4 = 12 and a_8 = 24. Its common difference d is",
+     "a": "3",
+     "o": [
+      "3",
+      "2",
+      "4",
+      "12"
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "q": "An AP has a_4 = 12 and a_8 = 24 (from the previous question, d = 3). Find the first term a.",
+     "a": "From a + 3d = 12 and d = 3: a + 9 = 12, so a = 3.",
+     "s": [
+      [
+       "Substitutes d = 3 into a + 3d = 12",
+       1
+      ],
+      [
+       "Solves correctly to get a = 3",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "q": "Find the 6th term from the end of the finite AP 5, 8, 11, ..., 101, given that it has 33 terms.",
+     "a": "The 6th term from the end is the (33 - 6 + 1) = 28th term from the start. a_28 = 5 + 27 x 3 = 5 + 81 = 86.",
+     "s": [
+      [
+       "Correctly identifies the required term as the 28th from the start",
+       1
+      ],
+      [
+       "Computes a_28 = 86 correctly",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hardest",
+     "t": "long_answer",
+     "m": 3,
+     "q": "An AP has a_5 = 19 and a_9 = 35. Find a and d, and then find the 15th term.",
+     "a": "a + 4d = 19 and a + 8d = 35. Subtracting: 4d = 16, so d = 4. Then a + 16 = 19, so a = 3. The 15th term is a_15 = 3 + 14 x 4 = 3 + 56 = 59.",
+     "s": [
+      [
+       "Sets up the two equations correctly",
+       1
+      ],
+      [
+       "Solves to get d = 4 and a = 3",
+       1
+      ],
+      [
+       "Computes a_15 = 59 correctly",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "assertion_reason",
+     "m": 1,
+     "q": "Assertion (A): Knowing any two terms of an AP, at two different positions, is enough to find both a and d. Reason (R): Each given term of an AP supplies one linear equation in the two unknowns a and d, and two independent linear equations in two unknowns can be solved together.",
+     "a": "Both A and R are true, and R is the correct explanation of A",
+     "o": [
+      "Both A and R are true, and R is the correct explanation of A",
+      "A is false, R is true",
+      "A is true, R is false",
+      "Both A and R are true, but R is not the correct explanation of A"
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "multi_statement",
+     "m": 1,
+     "q": "Consider these statements. (I) If two terms of an AP are given, at least one of them must be the first term for a and d to be found. (II) The nth term of a finite AP counted from its last term can be found either by reversing the AP or by using the position (N - p + 1) from the start, where N is the total number of terms. Which is or are correct?",
+     "a": "Only II",
+     "o": [
+      "Only II",
+      "Only I",
+      "Both I and II",
+      "Neither I nor II"
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hardest",
+     "t": "long_answer",
+     "m": 3,
+     "q": "A finite AP has 40 terms, first term 6 and common difference 5. Find (i) the last term, and (ii) the 9th term from the end, using whichever method you prefer.",
+     "a": "(i) Last term a_40 = 6 + 39 x 5 = 6 + 195 = 201. (ii) The 9th term from the end is the (40 - 9 + 1) = 32nd term from the start: a_32 = 6 + 31 x 5 = 6 + 155 = 161.",
+     "s": [
+      [
+       "Computes the last term a_40 = 201 correctly",
+       1
+      ],
+      [
+       "Correctly identifies the 9th-from-end position as the 32nd term from the start",
+       1
+      ],
+      [
+       "Computes a_32 = 161 correctly",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Evaluate",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "q": "A classmate says: 'To find the 11th term from the end, I can reverse the AP and find its 11th term -- OR count total terms and use N - 11 + 1 -- and I should always get the same answer either way.' Evaluate this claim.",
+     "a": "The claim is correct: Example 8 in the textbook shows both methods give the identical answer (-32) for the same problem, since reversing the AP and counting from the new start is mathematically equivalent to counting N - p + 1 from the original start.",
+     "s": [
+      [
+       "States the claim is correct / true",
+       1
+      ],
+      [
+       "Supports it by referencing that both methods give the same answer (as shown in the textbook's Example 8)",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Create",
+     "d": "Hardest",
+     "t": "long_answer",
+     "m": 3,
+     "q": "Construct an AP for which the 2nd term is 7 and the 5th term is 19. State a and d, write out the first 7 terms, and give the 3rd term from the end of this 7-term AP.",
+     "a": "a + d = 7 and a + 4d = 19. Subtracting: 3d = 12, d = 4, so a = 3. Terms: 3, 7, 11, 15, 19, 23, 27. The 3rd term from the end (of 7 terms) is the (7 - 3 + 1) = 5th term from the start, which is 19.",
+     "s": [
+      [
+       "Solves the two equations to get a = 3 and d = 4",
+       1
+      ],
+      [
+       "Lists all seven terms correctly: 3, 7, 11, 15, 19, 23, 27",
+       1
+      ],
+      [
+       "Correctly identifies the 3rd term from the end as 19 (the 5th term from the start)",
+       1
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "code": "C10M-5.6",
+   "name": "Word problems using the nth term formula",
+   "description": "Translating an everyday situation that changes by a fixed amount at every step into an AP (identifying a and d), and applying a_n = a + (n - 1)d to answer 'how many' or 'what value at step n' questions, including simple interest.",
+   "idea": "Many everyday situations that increase or decrease by a fixed amount each step are APs in disguise, and the nth term formula answers 'how many' or 'what value at step n' questions about them.",
+   "rule": "Translate the situation into a, d (and sometimes a_n or n), then apply a_n = a + (n - 1)d. Simple interest on a fixed sum forms an AP because SI = (P x R x T)/100 increases by the fixed amount (P x R)/100 for every extra year.",
+   "example": "Two-digit numbers divisible by 3 form the AP 12, 15, ..., 99 with a = 12, d = 3; solving 99 = 12 + (n - 1) x 3 gives n = 30 (Example 7, p. 59). Simple interest of Rs 1000 at 8% p.a. gives yearly interest 80, 160, 240, ... an AP with a = 80, d = 80; the 30th year's interest is a_30 = 80 + 29 x 80 = Rs 2400 (Example 9, pp. 60-61). Flower-bed rows 23, 21, 19, ..., 5: a = 23, d = -2, a_n = 5 gives n = 10 rows (Example 10, p. 61).",
+   "difficulty_base": "Hard",
+   "questions": [
+    {
+     "b": "Remember",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "Many everyday situations that increase or decrease by the same fixed amount at every step can be modelled as",
+     "a": "an arithmetic progression",
+     "o": [
+      "an arithmetic progression",
+      "a geometric progression",
+      "a quadratic equation",
+      "a probability distribution"
+     ]
+    },
+    {
+     "b": "Remember",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "The formula used to answer 'how many' or 'what value at step n' questions about such situations is",
+     "a": "a_n = a + (n - 1)d",
+     "o": [
+      "a_n = a + (n - 1)d",
+      "S_n = (n/2)(a + l)",
+      "a_n = a x d x n",
+      "a_n = a^n"
+     ]
+    },
+    {
+     "b": "Remember",
+     "d": "Easy",
+     "t": "fill_blank",
+     "m": 1,
+     "q": "The formula for simple interest is SI = (P x R x T)/____, where P is the principal, R the rate per cent, and T the time in years.",
+     "a": "100"
+    },
+    {
+     "b": "Remember",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "rev": true,
+     "q": "Which of the following is NOT a correct step when solving an AP word problem?",
+     "a": "Always compute S_n = (n/2)[2a + (n - 1)d] first, even if the question only asks for the value at one particular step",
+     "o": [
+      "Always compute S_n = (n/2)[2a + (n - 1)d] first, even if the question only asks for the value at one particular step",
+      "Identify the first value (a) and the fixed amount added or removed at each step (d) from the situation described",
+      "Translate the question being asked (a value at a given step, or how many steps) into either a_n = a + (n - 1)d or a search for a matching value of n",
+      "Check that the situation actually changes by a fixed amount at every step before modelling it as an AP"
+     ]
+    },
+    {
+     "b": "Understand",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "Why does the yearly simple interest on a fixed sum form an AP?",
+     "a": "Because simple interest for T years is (P x R x T)/100, which increases by the same fixed amount, (P x R)/100, for every extra year",
+     "o": [
+      "Because simple interest for T years is (P x R x T)/100, which increases by the same fixed amount, (P x R)/100, for every extra year",
+      "Because interest rates always increase by a fixed percentage each year",
+      "Because simple interest is calculated using a squared formula",
+      "Because the principal itself increases every year in simple interest"
+     ]
+    },
+    {
+     "b": "Understand",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "In Example 9 (pp. 60-61), the yearly simple interest on Rs 1000 at 8% per annum forms an AP with a = 80 and d =",
+     "a": "80",
+     "o": [
+      "80",
+      "8",
+      "1000",
+      "800"
+     ]
+    },
+    {
+     "b": "Understand",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "Why is the list of two-digit numbers divisible by 3 (12, 15, 18, ..., 99) an AP?",
+     "a": "Because each term is 3 more than the one before it, a fixed common difference",
+     "o": [
+      "Because each term is 3 more than the one before it, a fixed common difference",
+      "Because all two-digit numbers form an AP",
+      "Because 3 is a prime number",
+      "Because the list has exactly 30 terms"
+     ]
+    },
+    {
+     "b": "Understand",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "q": "In the flower bed problem (p. 61), why is d negative (d = -2)?",
+     "a": "Because the number of rose plants decreases by 2 from each row to the next",
+     "o": [
+      "Because the number of rose plants decreases by 2 from each row to the next",
+      "Because rows are counted from the back instead of the front",
+      "Because the flower bed has a negative number of rows",
+      "Because 23, the first term, is itself negative"
+     ]
+    },
+    {
+     "b": "Understand",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "q": "A car's price falls by a fixed Rs 8,000 every year due to depreciation. Explain why this situation forms an AP, and identify d.",
+     "a": "Each year the price is reduced by the same fixed amount, Rs 8,000, so consecutive yearly prices differ by a constant amount. This means the list of prices forms an AP with common difference d = -8000 (negative, since the price is decreasing).",
+     "s": [
+      [
+       "States that a constant amount is subtracted each year, giving a constant difference",
+       1
+      ],
+      [
+       "Correctly identifies d = -8000",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "How many two-digit numbers are divisible by 5?",
+     "a": "18",
+     "o": [
+      "18",
+      "19",
+      "17",
+      "20"
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Easy",
+     "t": "fill_blank",
+     "m": 1,
+     "q": "The two-digit numbers divisible by 5 form the AP 10, 15, 20, ..., with common difference ____.",
+     "a": "5"
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "q": "A sum of Rs 2000 is invested at 6% simple interest per year. The interest earned at the end of the 1st year is",
+     "a": "Rs 120",
+     "o": [
+      "Rs 120",
+      "Rs 12",
+      "Rs 200",
+      "Rs 1200"
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "q": "A sum of Rs 2000 is invested at 6% simple interest per year (interest at the end of year 1 is Rs 120, from the previous question). Using the AP formed by the yearly interest, find the interest at the end of the 12th year.",
+     "a": "This is an AP with a = 120, d = 120 (since simple interest increases by (P x R)/100 = 120 each year). a_12 = 120 + 11 x 120 = 120 + 1320 = 1440. The interest at the end of the 12th year is Rs 1440.",
+     "s": [
+      [
+       "Identifies a = 120 and d = 120",
+       1
+      ],
+      [
+       "Computes a_12 = Rs 1440 correctly",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "q": "How many three-digit numbers are divisible by 5?",
+     "a": "Three-digit multiples of 5 are 100, 105, ..., 995, an AP with a = 100, d = 5, l = 995. n = (995 - 100)/5 + 1 = 179 + 1 = 180. There are 180 such numbers.",
+     "s": [
+      [
+       "Identifies the AP 100, 105, ..., 995 with a = 100, d = 5",
+       1
+      ],
+      [
+       "Computes n = 180 correctly",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hardest",
+     "t": "long_answer",
+     "m": 3,
+     "q": "A stack of bricks has 40 bricks in the bottom row, and each row above has 2 fewer bricks than the row below, continuing until the top row has 10 bricks. Find (i) how many rows there are, and (ii) the number of bricks in the 5th row from the bottom.",
+     "a": "a = 40, d = -2, last term l = 10. (i) 10 = 40 + (n - 1)(-2) gives -30 = -2(n - 1), n - 1 = 15, n = 16 rows. (ii) 5th row from the bottom: a_5 = 40 + 4 x (-2) = 40 - 8 = 32 bricks.",
+     "s": [
+      [
+       "Sets up a = 40, d = -2, l = 10 correctly",
+       1
+      ],
+      [
+       "Computes 16 rows correctly",
+       1
+      ],
+      [
+       "Computes the 5th row as 32 bricks correctly",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "multi_statement",
+     "m": 1,
+     "q": "Consider these statements. (I) A savings scheme where the amount becomes 5/4 times itself every 3 years (page 49) forms an arithmetic progression. (II) The yearly simple interest on a fixed sum at a fixed rate forms an arithmetic progression. Which is or are correct?",
+     "a": "Only II",
+     "o": [
+      "Only II",
+      "Only I",
+      "Both I and II",
+      "Neither I nor II"
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "assertion_reason",
+     "m": 1,
+     "q": "Assertion (A): The yearly simple interest on a fixed principal at a fixed rate forms an AP. Reason (R): Simple interest for T years is (P x R x T)/100, which increases by the same fixed amount, (P x R)/100, for every additional year.",
+     "a": "Both A and R are true, and R is the correct explanation of A",
+     "o": [
+      "Both A and R are true, and R is the correct explanation of A",
+      "A is false, R is true",
+      "A is true, R is false",
+      "Both A and R are true, but R is not the correct explanation of A"
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hardest",
+     "t": "long_answer",
+     "m": 3,
+     "q": "Two workers dig a trench. Worker A digs 8 metres on day 1 and 1.5 more metres each following day. Worker B digs 15 metres on day 1 and 0.5 fewer metres each following day. Find how much each worker digs on day 6, and state who digs more on that day.",
+     "a": "Worker A: a = 8, d = 1.5. Day 6: a_6 = 8 + 5 x 1.5 = 8 + 7.5 = 15.5 metres. Worker B: a = 15, d = -0.5. Day 6: a_6 = 15 + 5 x (-0.5) = 15 - 2.5 = 12.5 metres. Worker A digs more on day 6.",
+     "s": [
+      [
+       "Worker A's day-6 amount = 15.5 metres correctly",
+       1
+      ],
+      [
+       "Worker B's day-6 amount = 12.5 metres correctly",
+       1
+      ],
+      [
+       "Correctly states Worker A digs more",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Evaluate",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "q": "A classmate says: 'Since compound interest also grows every year, the yearly compound interest on a fixed sum must also form an AP, just like simple interest.' Evaluate this claim.",
+     "a": "The claim is false. Compound interest grows by a fixed PERCENTAGE of a growing amount each year, not by a fixed rupee amount, so consecutive yearly compound interest values do not differ by a constant d; only simple interest, where each year adds the same fixed rupee amount, forms an AP.",
+     "s": [
+      [
+       "States the claim is false",
+       1
+      ],
+      [
+       "Explains that compound interest grows multiplicatively (by a fixed percentage of a changing base), unlike simple interest's fixed rupee increase, so it does not form an AP",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Create",
+     "d": "Hardest",
+     "t": "long_answer",
+     "m": 3,
+     "q": "Design a word problem about a library that adds the same fixed number of new books every month, starting with 200 books in month 1. Choose your own common difference, state the number of books in month 8, and find in which month the library will first have exactly 340 books.",
+     "a": "Sample: starting books a = 200, common difference d = 20 per month. Month 8: a_8 = 200 + 7 x 20 = 200 + 140 = 340 books. Solving 340 = 200 + (n - 1) x 20 gives n = 8, so the library first reaches 340 books in month 8.",
+     "s": [
+      [
+       "States a valid a and d for the scenario",
+       1
+      ],
+      [
+       "Computes month 8's book count correctly using the chosen a and d",
+       1
+      ],
+      [
+       "Correctly finds the month in which the count first reaches the stated target",
+       1
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "code": "C10M-5.7",
+   "name": "Sum of the first n terms of an AP",
+   "description": "The two formulas S_n = (n/2)[2a + (n - 1)d] and S_n = (n/2)(a + l) for the sum of the first n terms of an AP, the Gauss pairing idea behind the derivation, the relation a_n = S_n - S_(n-1), and the sum of the first n positive integers as a special case.",
+   "idea": "Pairing the list with itself reversed turns the sum into n copies of the same pair-total, which is how both handy formulas for S_n are built.",
+   "rule": "S_n = (n/2)[2a + (n - 1)d] = (n/2)(a + a_n); when the last term l of a finite AP is known, S_n = (n/2)(a + l). Also a_n = S_n - S_(n-1).",
+   "example": "Gauss's 1 + 2 + ... + 100 = 5050 by pairing (pp. 63-64). Shakila's money-box AP a = 100, d = 50, n = 21: S_21 = (21/2)[200 + 20 x 50] = 12600 (p. 65). Sum of first 1000 positive integers = (1000/2)(1 + 1000) = 500500 (Example 14(i), p. 66).",
+   "difficulty_base": "Easy",
+   "questions": [
+    {
+     "b": "Remember",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "The sum of the first n terms of an AP with first term a and common difference d is given by",
+     "a": "S_n = (n/2)[2a + (n - 1)d]",
+     "o": [
+      "S_n = (n/2)[2a + (n - 1)d]",
+      "S_n = n[2a + (n - 1)d]",
+      "S_n = (n/2)[a + (n - 1)d]",
+      "S_n = (n/2)[2a + nd]"
+     ]
+    },
+    {
+     "b": "Remember",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "When the last term l of a finite AP is known, the sum of its n terms can also be written as",
+     "a": "S_n = (n/2)(a + l)",
+     "o": [
+      "S_n = (n/2)(a + l)",
+      "S_n = n(a + l)",
+      "S_n = (n/2)(a - l)",
+      "S_n = (n/2) x a x l"
+     ]
+    },
+    {
+     "b": "Remember",
+     "d": "Easy",
+     "t": "fill_blank",
+     "m": 1,
+     "q": "The relationship connecting the nth term to two consecutive sums is a_n = S_n - ____.",
+     "a": "S_(n - 1)"
+    },
+    {
+     "b": "Remember",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "rev": true,
+     "q": "Which of the following is NOT a correct formula or fact about the sum of the first n terms of an AP?",
+     "a": "The sum of the first n terms is always given by S_n = a + (n - 1)d",
+     "o": [
+      "The sum of the first n terms is always given by S_n = a + (n - 1)d",
+      "S_n = (n/2)[2a + (n - 1)d]",
+      "S_n = (n/2)(a + l), where l is the last term, is useful when the last term is known but d is not",
+      "a_n = S_n - S_(n - 1)"
+     ]
+    },
+    {
+     "b": "Understand",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "Gauss found the sum 1 + 2 + ... + 100 quickly by",
+     "a": "writing the sum forwards and backwards and adding the two, so every pair totals the same amount",
+     "o": [
+      "writing the sum forwards and backwards and adding the two, so every pair totals the same amount",
+      "adding all 100 numbers one at a time in his head very fast",
+      "multiplying 100 by 100 and taking half",
+      "guessing the answer and checking it later"
+     ]
+    },
+    {
+     "b": "Understand",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "Using Gauss's method, 1 + 2 + ... + 100 written forwards and backwards and added gives 100 pairs that each total",
+     "a": "101",
+     "o": [
+      "101",
+      "100",
+      "200",
+      "99"
+     ]
+    },
+    {
+     "b": "Understand",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "Why is the sum formula divided by 2, as in S_n = (n/2)[2a + (n - 1)d]?",
+     "a": "Because adding the forward and reversed lists together counts every term's contribution twice, so the total must be halved",
+     "o": [
+      "Because adding the forward and reversed lists together counts every term's contribution twice, so the total must be halved",
+      "Because every AP automatically has an even number of terms",
+      "Because d must always be divided by 2 first",
+      "Because dividing by 2 converts the sum into an average"
+     ]
+    },
+    {
+     "b": "Understand",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "q": "The formula S_n = (n/2)(a + l) is most useful when",
+     "a": "the first term and the last term are known, but the common difference is not given directly",
+     "o": [
+      "the first term and the last term are known, but the common difference is not given directly",
+      "the common difference is known but the first term is not",
+      "the AP is infinite",
+      "n is an odd number"
+     ]
+    },
+    {
+     "b": "Understand",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "q": "Show that S_n = (n/2)[2a + (n - 1)d] and S_n = (n/2)(a + l) are the same formula, given that l = a + (n - 1)d.",
+     "a": "Substituting l = a + (n - 1)d into (n/2)(a + l) gives (n/2)(a + a + (n - 1)d) = (n/2)[2a + (n - 1)d], which is exactly the first formula.",
+     "s": [
+      [
+       "Substitutes l = a + (n - 1)d into the second formula",
+       1
+      ],
+      [
+       "Simplifies to show it matches the first formula, (n/2)[2a + (n - 1)d]",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "Find the sum of the first 10 terms of the AP 2, 7, 12, ....",
+     "a": "245",
+     "o": [
+      "245",
+      "240",
+      "250",
+      "47"
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Easy",
+     "t": "fill_blank",
+     "m": 1,
+     "q": "The sum of the first 21 terms of the AP 100, 150, 200, ... (Shakila's money box, p. 65) is Rs ____.",
+     "a": "12600"
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "q": "Find the sum of the first 22 terms of the AP 8, 3, -2, ....",
+     "a": "-979",
+     "o": [
+      "-979",
+      "979",
+      "-890",
+      "-1089"
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "q": "Find the sum of the first 15 terms of the AP 5, 9, 13, 17, ....",
+     "a": "a = 5, d = 4, n = 15. S_15 = (15/2)[2 x 5 + 14 x 4] = (15/2)[10 + 56] = (15/2) x 66 = 495.",
+     "s": [
+      [
+       "Identifies a = 5, d = 4 and substitutes correctly into the formula",
+       1
+      ],
+      [
+       "Computes S_15 = 495 correctly",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "q": "Find the sum of the first 1000 positive integers using S_n = (n/2)(a + l).",
+     "a": "a = 1, l = 1000, n = 1000. S_1000 = (1000/2)(1 + 1000) = 500 x 1001 = 500500.",
+     "s": [
+      [
+       "Identifies a = 1, l = 1000, n = 1000",
+       1
+      ],
+      [
+       "Computes S_1000 = 500500 correctly",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hardest",
+     "t": "long_answer",
+     "m": 3,
+     "q": "Find the sum of the first 24 terms of the list of numbers whose nth term is given by a_n = 3 + 2n.",
+     "a": "a_1 = 3 + 2 = 5, a_2 = 7, a_3 = 9, so the list is an AP with a = 5, d = 2. S_24 = (24/2)[2 x 5 + 23 x 2] = 12[10 + 46] = 12 x 56 = 672.",
+     "s": [
+      [
+       "Identifies a = 5 and d = 2 from the explicit formula",
+       1
+      ],
+      [
+       "Substitutes correctly into the sum formula",
+       1
+      ],
+      [
+       "Computes S_24 = 672 correctly",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "assertion_reason",
+     "m": 1,
+     "q": "Assertion (A): S_n = (n/2)(a + l) can be used instead of S_n = (n/2)[2a + (n - 1)d] when the last term l of a finite AP is already known. Reason (R): The sum of the first n positive integers is given by S_n = n(n + 1)/2.",
+     "a": "Both A and R are true, but R is not the correct explanation of A",
+     "o": [
+      "Both A and R are true, but R is not the correct explanation of A",
+      "A is false, R is true",
+      "A is true, R is false",
+      "Both A and R are true, and R is the correct explanation of A"
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "multi_statement",
+     "m": 1,
+     "q": "Consider these statements. (I) The formula S_n = (n/2)(a + l) can be used only when the AP is infinite. (II) Gauss found 1 + 2 + ... + 100 by multiplying 100 by 101 and stopping there, without needing to divide by 2. Which is or are correct?",
+     "a": "Neither I nor II",
+     "o": [
+      "Neither I nor II",
+      "Only I",
+      "Only II",
+      "Both I and II"
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hardest",
+     "t": "long_answer",
+     "m": 3,
+     "q": "For an AP, S_10 = 325 and S_9 = 270. Use the relation a_n = S_n - S_(n-1) to find the 10th term. Then, given that a = 10, find the common difference d.",
+     "a": "a_10 = S_10 - S_9 = 325 - 270 = 55. Since a_10 = a + 9d and a = 10: 55 = 10 + 9d, so 9d = 45, d = 5.",
+     "s": [
+      [
+       "Computes a_10 = 55 using a_n = S_n - S_(n-1)",
+       1
+      ],
+      [
+       "Sets up 55 = 10 + 9d correctly",
+       1
+      ],
+      [
+       "Solves to get d = 5",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Evaluate",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "q": "A classmate says: 'Since S_n = (n/2)[2a + (n-1)d], doubling the number of terms n will always double the sum S_n.' Evaluate this using the AP 1, 2, 3, 4, ... (check S_4 versus S_8).",
+     "a": "The claim is false. S_4 = (4/2)(2 x 1 + 3 x 1) = 2 x 5 = 10, and S_8 = (8/2)(2 x 1 + 7 x 1) = 4 x 9 = 36, which is not double 10 (20). Doubling n does not double S_n, because of the (n-1)d term and the extra factor of n inside the formula.",
+     "s": [
+      [
+       "States the claim is false",
+       1
+      ],
+      [
+       "Verifies using S_4 = 10 and S_8 = 36, showing 36 is not double 10",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Create",
+     "d": "Hardest",
+     "t": "long_answer",
+     "m": 3,
+     "q": "Construct an AP with first term 4 and common difference 6, and find the least number of terms n for which the sum S_n first exceeds 200.",
+     "a": "S_n = (n/2)[8 + (n - 1) x 6] = n(3n + 1) = 3n^2 + n. Testing: n = 8 gives S_8 = 3 x 64 + 8 = 192 + 8 = 200 (not yet exceeding 200, exactly 200). n = 9 gives S_9 = 3 x 81 + 9 = 243 + 9 = 252, which exceeds 200. So the least n is 9.",
+     "s": [
+      [
+       "Derives or computes S_n for this AP",
+       1
+      ],
+      [
+       "Tests n = 8, finding S_8 = 200, not yet exceeding 200",
+       1
+      ],
+      [
+       "Tests n = 9, finding S_9 = 252, which exceeds 200, and correctly concludes n = 9",
+       1
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "code": "C10M-5.8",
+   "name": "Solving the sum formula for an unknown; combined nth-term and sum problems",
+   "description": "Solving S_n = (n/2)[2a + (n - 1)d] for a missing quantity among S, a, d, n, including the quadratic-in-n case with two admissible roots; reading a and d off an explicit linear nth-term formula; multi-part word problems combining the nth term and the sum.",
+   "idea": "The sum formula has four linked quantities (S, a, d, n) -- given any three, it can be solved for the fourth, sometimes via a quadratic in n with two valid answers.",
+   "rule": "Substitute the three known quantities into S_n = (n/2)[2a + (n - 1)d] (or use an explicit formula for a_n in terms of n to read off a and d) and solve for the missing one; a quadratic in n can have two positive-integer roots, both admissible, when some of the terms being summed are negative and cancel earlier positive ones.",
+   "example": "AP 24, 21, 18, ...: solving 78 = (n/2)[48 + (n-1)(-3)] gives n = 4 or n = 13, both valid because terms 5 to 13 sum to zero (Example 13, pp. 65-66). Given a_n = 3 + 2n, a = 5 (value at n = 1) and d = 2 (coefficient of n). TV production a_3 = 600, a_7 = 700 gives d = 25, a = 550, a_10 = 775, S_7 = 4375 (Example 16, pp. 67-68).",
+   "difficulty_base": "Hard",
+   "questions": [
+    {
+     "b": "Remember",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "In the sum formula S_n = (n/2)[2a + (n - 1)d], the four related quantities are",
+     "a": "S, a, d and n",
+     "o": [
+      "S, a, d and n",
+      "S, a, l and n only",
+      "a, d, n and the number of even terms",
+      "S and n only"
+     ]
+    },
+    {
+     "b": "Remember",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "If any three of S, a, d, n are known, the sum formula can be solved for",
+     "a": "the fourth, unknown quantity",
+     "o": [
+      "the fourth, unknown quantity",
+      "only d, never for a",
+      "only n, never for S",
+      "none of them; a fifth equation is always required"
+     ]
+    },
+    {
+     "b": "Remember",
+     "d": "Easy",
+     "t": "fill_blank",
+     "m": 1,
+     "q": "If an AP's nth term is given directly as an explicit formula such as a_n = 3 + 2n, then the first term a equals the value of this formula at n = ____.",
+     "a": "1"
+    },
+    {
+     "b": "Remember",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "rev": true,
+     "q": "Which of the following is NOT correct about solving for an unknown quantity in the sum formula S_n = (n/2)[2a + (n - 1)d]?",
+     "a": "Any value of n found this way is automatically the position of a new term equal to zero, the same way a zero value of a_n is found by solving a + (n - 1)d = 0",
+     "o": [
+      "Any value of n found this way is automatically the position of a new term equal to zero, the same way a zero value of a_n is found by solving a + (n - 1)d = 0",
+      "Given any three of S, a, d, n, the formula can be solved for the fourth",
+      "Solving for n can lead to a quadratic equation, which may have two positive integer roots, both valid",
+      "A root of the quadratic that is negative or not a whole number must be rejected, since n counts a number of terms"
+     ]
+    },
+    {
+     "b": "Understand",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "If a_n = 9 - 5n gives the nth term of a list, what is its common difference?",
+     "a": "-5",
+     "o": [
+      "-5",
+      "9",
+      "5",
+      "4"
+     ]
+    },
+    {
+     "b": "Understand",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "For a_n = 9 - 5n, the first term (value at n = 1) is",
+     "a": "4",
+     "o": [
+      "4",
+      "9",
+      "-5",
+      "14"
+     ]
+    },
+    {
+     "b": "Understand",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "When a quadratic equation in n arises from the sum formula, why must any root be checked for being a positive integer before accepting it?",
+     "a": "Because n represents a count of terms, and a count of terms must be a positive whole number",
+     "o": [
+      "Because n represents a count of terms, and a count of terms must be a positive whole number",
+      "Because quadratic equations always have exactly one valid root",
+      "Because d must always be a whole number",
+      "Because the sum S must always be positive"
+     ]
+    },
+    {
+     "b": "Understand",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "q": "In Example 13 (AP 24, 21, 18, ..., sum 78), solving gives n = 4 or n = 13. Why are BOTH accepted, rather than just the smaller one?",
+     "a": "Both are positive integers, and the terms from the 5th to the 13th happen to add up to exactly zero, so the sum stays at 78 for both term-counts",
+     "o": [
+      "Both are positive integers, and the terms from the 5th to the 13th happen to add up to exactly zero, so the sum stays at 78 for both term-counts",
+      "Only n = 4 is actually correct; n = 13 is a printing error in the method",
+      "Because the AP has exactly 13 terms in total",
+      "Because the common difference is negative"
+     ]
+    },
+    {
+     "b": "Understand",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "q": "Show that a_n = 9 - 5n represents an AP, and state its first term and common difference.",
+     "a": "a_1 = 4, a_2 = -1, a_3 = -6. The difference between consecutive terms is always -5 (a constant), so it is an AP with a = 4 and d = -5.",
+     "s": [
+      [
+       "Computes at least two terms and shows a constant difference of -5",
+       1
+      ],
+      [
+       "States a = 4 and d = -5",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "How many terms of the AP 9, 17, 25, ... must be added to reach a sum of 636?",
+     "a": "12",
+     "o": [
+      "12",
+      "11",
+      "13",
+      "10"
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Easy",
+     "t": "fill_blank",
+     "m": 1,
+     "q": "For a_n = 3 + 2n, the common difference d is ____.",
+     "a": "2"
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "q": "How many terms of the AP 4, 6, 8, ... make a sum of 270?",
+     "a": "15",
+     "o": [
+      "15",
+      "14",
+      "16",
+      "13"
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "q": "For an AP, a = 3, d = 4 and the sum of the first n terms is 210. Find n.",
+     "a": "S_n = (n/2)[6 + (n-1) x 4] = n(2n + 1) = 210. So 2n^2 + n - 210 = 0. Solving, n = 10 (taking the positive root).",
+     "s": [
+      [
+       "Sets up n(2n + 1) = 210 or the equivalent quadratic correctly",
+       1
+      ],
+      [
+       "Solves to find n = 10",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "q": "Given a_n = 7 - 3n for a list of numbers, show it is an AP by stating a and d, then find the sum of its first 10 terms.",
+     "a": "a_1 = 7 - 3 = 4, and comparing with the linear form, d = -3. So it is an AP with a = 4, d = -3. S_10 = (10/2)[8 + 9 x (-3)] = 5[8 - 27] = 5 x (-19) = -95.",
+     "s": [
+      [
+       "States a = 4 and d = -3",
+       1
+      ],
+      [
+       "Computes S_10 = -95 correctly",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hardest",
+     "t": "long_answer",
+     "m": 3,
+     "q": "A company's profit (in thousands of rupees) increases by a fixed amount each year, forming an AP. The profit in year 3 is 40 and in year 7 is 64. Find (i) the profit in year 1 and the common difference, and (ii) the total profit over the first 7 years.",
+     "a": "a + 2d = 40 and a + 6d = 64. Subtracting: 4d = 24, so d = 6, and a = 40 - 12 = 28. (i) Year 1 profit is 28 (thousand rupees), d = 6. (ii) S_7 = (7/2)[2 x 28 + 6 x 6] = (7/2)[56 + 36] = (7/2) x 92 = 322 (thousand rupees).",
+     "s": [
+      [
+       "Sets up and solves the two equations to get d = 6 and a = 28",
+       1
+      ],
+      [
+       "States year 1 profit = 28 and d = 6",
+       1
+      ],
+      [
+       "Computes S_7 = 322 correctly",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "multi_statement",
+     "m": 1,
+     "q": "Consider these statements about solving S_n = (n/2)[2a + (n-1)d] = 78 for the AP 24, 21, 18, .... (I) The equation simplifies to a linear equation in n with exactly one solution. (II) Both solutions found, n = 4 and n = 13, must be rejected since an AP cannot give the same sum for two different numbers of terms. Which is or are correct?",
+     "a": "Neither I nor II",
+     "o": [
+      "Neither I nor II",
+      "Only I",
+      "Only II",
+      "Both I and II"
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "assertion_reason",
+     "m": 1,
+     "q": "Assertion (A): When solving S_n = (n/2)[2a + (n - 1)d] for n, the resulting equation is generally a quadratic in n. Reason (R): The formula for the sum of the first n positive integers is S_n = n(n + 1)/2.",
+     "a": "Both A and R are true, but R is not the correct explanation of A",
+     "o": [
+      "Both A and R are true, but R is not the correct explanation of A",
+      "A is false, R is true",
+      "A is true, R is false",
+      "Both A and R are true, and R is the correct explanation of A"
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hardest",
+     "t": "long_answer",
+     "m": 3,
+     "q": "For an AP, the sum of the first n terms is given by S_n = 2n^2 + 3n (for all n). Find the first term, the common difference, and the 5th term.",
+     "a": "a = S_1 = 2(1)^2 + 3(1) = 5. S_2 = 2(4) + 6 = 14, so a_2 = S_2 - S_1 = 14 - 5 = 9, giving d = a_2 - a_1 = 9 - 5 = 4. The 5th term: a_5 = a + 4d = 5 + 16 = 21.",
+     "s": [
+      [
+       "Computes a = S_1 = 5 correctly",
+       1
+      ],
+      [
+       "Finds d = 4 using S_2 and the relation a_n = S_n - S_(n-1)",
+       1
+      ],
+      [
+       "Computes a_5 = 21 correctly",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Evaluate",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "q": "A classmate says: 'If a quadratic equation from a sum problem gives two positive integer roots, I should always report both as final answers, no matter what the question asks.' Evaluate this statement using Example 13's result (n = 4 or n = 13 for the AP 24, 21, 18, ... summing to 78).",
+     "a": "The statement is broadly reasonable but needs care: in Example 13 both n = 4 and n = 13 are indeed valid and reported, because the question asked for the number of terms giving that sum and both genuinely work. However, in other problems (such as finding a term's position), a fractional or negative root is rejected outright, so it is the specific meaning of n in each problem, not a blanket rule, that decides whether to keep or reject a root.",
+     "s": [
+      [
+       "Confirms that reporting both n = 4 and n = 13 is correct for this specific example",
+       1
+      ],
+      [
+       "Adds the important qualification that acceptance depends on checking each root's validity in context, not a blanket rule",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Create",
+     "d": "Hardest",
+     "t": "long_answer",
+     "m": 3,
+     "q": "Construct a sum problem: choose an AP with first term 6 and common difference 5, and find how many terms are needed for the sum to first exceed 150. Show your working and state the least such number of terms.",
+     "a": "S_n = (n/2)[12 + (n-1) x 5] = (n/2)(5n + 7). Testing n = 7: S_7 = (7/2)[12 + 30] = (7/2) x 42 = 147 (not yet exceeding 150). Testing n = 8: S_8 = (8/2)[12 + 35] = 4 x 47 = 188, which exceeds 150. So the least number of terms is 8.",
+     "s": [
+      [
+       "States the AP and sets up the sum formula correctly",
+       1
+      ],
+      [
+       "Tests n = 7, finding S_7 = 147, not yet exceeding 150",
+       1
+      ],
+      [
+       "Tests n = 8, finding S_8 = 188, which exceeds 150, and correctly concludes n = 8",
+       1
+      ]
+     ]
+    }
+   ]
+  }
+ ]
+}
