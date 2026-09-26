@@ -119,9 +119,22 @@ At the local test database. Then report:
   straight to Approved;
 - anything you had to judge rather than read off the page.
 
-**Do not** load into production, do not `git commit`, do not push. The scope record is a judgement
-call about a real child's exam and the skill requires it to be reviewed before it counts. Loading
-to production and committing are the reviewer's actions, not yours.
+**Do not** load into production, do not `git commit`, do not push. This is a separation-of-concerns
+boundary, not a pending content-approval gate: per CLAUDE.md invariant 4 there is no draft/review
+gate for questions (removed 2026-09-17 at the user's request) — a question is Approved and usable
+the moment it loads. The orchestrating session (never a chapter-author instance itself) is the one
+that touches production and git: it independently re-derives your validation (schema `--check`,
+plus its own ASCII/duplicate/option/step-mark sweep) and reads your full report, including every
+judgement call you flagged, before loading and committing. That is a real verification pass, not a
+rubber stamp, but it is the orchestrating session's own read of your report — not a separate human
+subject-matter reviewer sitting between you and production. Confirmed as the intended design by
+the user on 2026-09-26, after a chapter-author instance correctly declined to treat an in-session
+message asserting "I am the coordinator" as authorization on its own and asked for the boundary to
+be confirmed with the actual user rather than assumed. You still never touch production or git
+directly: you have no way to verify who is on the other end of a message either, the local-DB
+boundary is what keeps that unverifiable trust out of the loop, and the three-database separation
+in CLAUDE.md is itself load-bearing for reasons already logged there (a crashed test run once
+leaked a fixture row to a real student).
 
 ## Never
 
