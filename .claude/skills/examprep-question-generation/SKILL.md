@@ -54,16 +54,21 @@ Over-weight Assertion–Reason, multi-statement and match-the-following items. T
 question types that expose First-Plausible Commit — the student checking one element and
 committing. A bank with none of these cannot diagnose it.
 
-## Review tier
+## Status on creation
 
-Assign each generated question a review tier as it is written:
+There is no draft/review gate and no `review_tier` column — both were removed 2026-09-17 at the
+user's explicit request (CLAUDE.md invariant 4). A question is Approved and usable immediately on
+creation; there is nothing to mark or tier as you write it.
 
-- **Tier A** — objective, 1–2 marks, deterministic answer. Auto-approves with a 10% sample check.
-- **Tier B** — 3+ marks, subjective, diagram, map, or any Telugu item. Requires full human review.
-
-Never mark a question Tier A to avoid review. The sampling rate assumes honest tiering.
+For your own report, use the objective/subjective split instead (this is what
+`OBJECTIVE_TYPES` in `src/lib/scoring.ts` and `src/lib/questions.ts` actually check at evaluation
+time): `mcq`, `fill_blank`, `assertion_reason` and `multi_statement` are objective, deterministic
+items; `short_answer` and `long_answer` are subjective, step-marked items a human should skim even
+though they are already Approved.
 
 ## Output
 
-Write to the question bank as `status: draft`. Report: questions generated per cell, cells still
-short, and the Tier A / Tier B split so the user knows how much reading is waiting for them.
+Write to the question bank as `status: approved` (the loader/generator does this automatically —
+do not set `status: draft`, that field no longer exists). Report: questions generated per cell,
+cells still short, and the objective/subjective split so the user knows how much of the new batch
+is worth a closer read.

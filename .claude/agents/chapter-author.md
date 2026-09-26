@@ -111,8 +111,12 @@ At the local test database. Then report:
 
 - chapter code, title, printed page range, page count, any OCR gaps;
 - the concept list with codes;
-- question totals per concept and the Tier A / Tier B split, so the reader knows how much review
-  is waiting;
+- question totals per concept and the objective/subjective type split (mcq, fill_blank,
+  assertion_reason and multi_statement are objective; short_answer and long_answer are
+  subjective — this is `OBJECTIVE_TYPES` in `src/lib/scoring.ts`), so the reader knows how much
+  written-answer review is waiting. There is no Tier A/Tier B or `review_tier` in this codebase —
+  that draft/review gate was removed 2026-09-17 per CLAUDE.md invariant 4; every question loads
+  straight to Approved;
 - anything you had to judge rather than read off the page.
 
 **Do not** load into production, do not `git commit`, do not push. The scope record is a judgement

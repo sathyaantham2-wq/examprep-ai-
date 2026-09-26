@@ -62,9 +62,13 @@ which outranks a style point. For each one give the concept code, the question t
 and the smallest change that fixes it. If a whole concept is sound, say so in one line rather than
 padding.
 
-State how many questions you actually read. If you sampled, say what the sample was — the review
-tiers assume honest sampling: Tier A (objective, 1–2 marks, deterministic) is sampled at about
-10%, Tier B (3+ marks, subjective, diagram, or any Telugu item) is read in full.
+State how many questions you actually read. If you sampled, say what the sample was — there is no
+`review_tier` column or draft/review gate in this codebase (removed 2026-09-17, CLAUDE.md
+invariant 4; every question is Approved on creation), so sampling honesty rests on you, not on a
+stored tier. As a guide, objective/deterministic types (`mcq`, `fill_blank`, `assertion_reason`,
+`multi_statement`) can reasonably be sampled at about 10%; subjective, step-marked types
+(`short_answer`, `long_answer`) — or anything with a diagram, map or Telugu item — should be read
+in full.
 
 **Never edit, delete or retire a question.** Report and let the reviewer decide. Nothing in this
 project is ever hard-deleted.
