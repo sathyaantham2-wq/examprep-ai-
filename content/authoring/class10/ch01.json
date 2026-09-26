@@ -1,1956 +1,1956 @@
 {
- "subject": {
-  "code": "MATH10",
-  "name": "Mathematics",
-  "board": "CBSE",
-  "class": 10
- },
- "source": {
-  "publisher": "NCERT",
-  "title": "Mathematics",
-  "edition": "Textbook for Class X, Reprint 2026-27",
-  "year": 2026
- },
- "chapter": {
-  "part": "I",
-  "chapter_no": 1,
-  "name": "Real Numbers",
-  "blurb": "The Fundamental Theorem of Arithmetic, HCF and LCM by prime factorisation, and using Theorem 1.2 to prove that square roots of primes (and expressions built from them) are irrational.",
-  "source_code": "jemh101",
-  "order_index": 1
- },
- "scope_in": [
-  {
-   "item": "State the Fundamental Theorem of Arithmetic and express a composite number as a product of primes (powers of primes, factors in ascending order) using a factor tree or direct factorisation",
-   "pages": "1-4"
+  "subject": {
+    "code": "MATH10",
+    "name": "Mathematics",
+    "board": "CBSE",
+    "class": 10
   },
-  {
-   "item": "Find the HCF and LCM of two or three positive integers by the prime factorisation method, using the smallest/greatest powers of the common and involved prime factors",
-   "pages": "4-6"
+  "source": {
+    "publisher": "NCERT",
+    "title": "Mathematics",
+    "edition": "Textbook for Class X, Reprint 2026-27",
+    "year": 2026
   },
-  {
-   "item": "Use HCF(a,b) x LCM(a,b) = a x b to find the LCM (or HCF) of two positive integers when the other is known, and recognise that this simple product relation does not hold for three positive integers",
-   "pages": "4-6, 9"
+  "chapter": {
+    "part": "I",
+    "chapter_no": 1,
+    "name": "Real Numbers",
+    "blurb": "The Fundamental Theorem of Arithmetic, HCF and LCM by prime factorisation, and using Theorem 1.2 to prove that square roots of primes (and expressions built from them) are irrational.",
+    "source_code": "jemh101",
+    "order_index": 1
   },
-  {
-   "item": "Apply the Fundamental Theorem of Arithmetic to decide whether a number of a given form can end in a particular digit, and to explain why a given expression is composite",
-   "pages": "4-5"
-  },
-  {
-   "item": "State Theorem 1.2 (if a prime p divides a squared, then p divides a, for a a positive integer) and use it as a step in an irrationality proof",
-   "pages": "6"
-  },
-  {
-   "item": "Prove that square root of 2, square root of 3, square root of 5 and simple expressions built from them (such as 5 minus square root of 3, or 3 times square root of 2) are irrational, using proof by contradiction together with Theorem 1.2",
-   "pages": "6-9"
-  }
- ],
- "scope_out": [
-  {
-   "item": "Euclid's division lemma / division algorithm",
-   "reason": "The chapter's own introduction (p.1) names this as part of 'Section 1.2', but Section 1.2 as printed (pp.2-6) covers only the Fundamental Theorem of Arithmetic; Euclid's division algorithm does not appear anywhere in this chapter's 9 pages -- a leftover reference from the pre-rationalisation edition, confirmed by reading every page."
-  },
-  {
-   "item": "Decimal expansion of a rational number p/q (terminating vs non-terminating repeating), decided from the prime factorisation of q",
-   "reason": "Also promised in the introduction (p.1: 'we apply this theorem to explore when exactly the decimal expansion ... is terminating') but never developed; the chapter ends at section 1.4 Summary (p.9) right after section 1.3 (irrational numbers), with no decimal-expansion section. Another rationalisation-era leftover in the intro text."
-  },
-  {
-   "item": "HCF/LCM by the long-division method or by listing multiples",
-   "reason": "Only the prime factorisation method is shown in this chapter (pp.4-6); no other method for finding HCF/LCM is taught here."
-  },
-  {
-   "item": "The general proof of Theorem 1.2 (that a prime p dividing a squared implies p divides a), reproduced in full",
-   "reason": "The book itself marks this proof '* Not from the examination point of view' (footnote, p.6, tied to the asterisk before 'Proof :'). The statement of Theorem 1.2 and its use in later proofs remain in scope; deriving it from scratch does not."
-  },
-  {
-   "item": "Proof by contradiction as a general logical technique",
-   "reason": "The chapter uses this technique repeatedly (pp.6-9) but explicitly defers its general explanation to 'Appendix 1' (p.6), which is not part of this chapter."
-  },
-  {
-   "item": "Classifying real numbers as rational/irrational from first principles, locating irrationals on the number line, non-terminating non-recurring decimal representations of irrationals",
-   "reason": "The chapter explicitly recalls this as done 'In Class IX' (pp.1, 6) and only restates the p/q definition of an irrational number (p.6) in passing; it is not retaught here."
-  },
-  {
-   "item": "Computing a three-number HCF or LCM directly from the general formulas in 'A Note to the Reader' (p.9)",
-   "reason": "Given only as enrichment with no worked example in this chapter -- the note's own cross-reference '(see Example 8)' points to an example that does not exist among this chapter's 9 pages (the chapter's examples stop at Example 7), a dangling reference from rationalisation. Tested here only as the qualitative fact that the simple two-number product rule fails for three numbers, verified directly via Example 4 (p.5)."
-  }
- ],
- "concepts": [
-  {
-   "code": "C10M-1.1",
-   "name": "The Fundamental Theorem of Arithmetic",
-   "description": "Every composite number can be written as a product of primes, and this prime factorisation is unique except for the order of the factors.",
-   "idea": "Multiplying primes together in different combinations builds every composite number, and a factor tree lets you take a number apart to see exactly which primes, and how many of each, were used.",
-   "rule": "Every composite number x can be written x = p1 x p2 x ... x pn with p1, p2, ..., pn prime and p1 <= p2 <= ... <= pn; combining repeated primes gives powers, and this factorisation is unique once the primes are written in ascending order.",
-   "example": "32760 = 2 x 2 x 2 x 3 x 3 x 5 x 7 x 13 = 2 cubed x 3 squared x 5 x 7 x 13.",
-   "difficulty_base": "Easy",
-   "questions": [
+  "scope_in": [
     {
-     "b": "Remember",
-     "d": "Easy",
-     "t": "mcq",
-     "m": 1,
-     "q": "According to the Fundamental Theorem of Arithmetic, every composite number can be expressed as a product of",
-     "a": "primes",
-     "o": [
-      "primes",
-      "even numbers",
-      "consecutive integers",
-      "square numbers"
-     ]
+      "item": "State the Fundamental Theorem of Arithmetic and express a composite number as a product of primes (powers of primes, factors in ascending order) using a factor tree or direct factorisation",
+      "pages": "1-4"
     },
     {
-     "b": "Remember",
-     "d": "Easy",
-     "t": "mcq",
-     "m": 1,
-     "q": "The diagram used in this chapter to break a number down into its prime factors step by step is called a",
-     "a": "factor tree",
-     "o": [
-      "factor tree",
-      "division algorithm",
-      "long division method",
-      "number line method"
-     ]
+      "item": "Find the HCF and LCM of two or three positive integers by the prime factorisation method, using the smallest/greatest powers of the common and involved prime factors",
+      "pages": "4-6"
     },
     {
-     "b": "Remember",
-     "d": "Easy",
-     "t": "fill_blank",
-     "m": 1,
-     "q": "Written as a product of primes, 253 = 11 x ____.",
-     "a": "23"
+      "item": "Use HCF(a,b) x LCM(a,b) = a x b to find the LCM (or HCF) of two positive integers when the other is known, and recognise that this simple product relation does not hold for three positive integers",
+      "pages": "4-6, 9"
     },
     {
-     "b": "Remember",
-     "d": "Hard",
-     "t": "mcq",
-     "m": 1,
-     "q": "Which of the following is NOT a correct statement of the Fundamental Theorem of Arithmetic (Theorem 1.1)?",
-     "a": "For any two positive integers a and b, HCF(a,b) multiplied by LCM(a,b) equals a multiplied by b",
-     "o": [
-      "For any two positive integers a and b, HCF(a,b) multiplied by LCM(a,b) equals a multiplied by b",
-      "Every composite number can be expressed as a product of primes",
-      "The prime factorisation of a composite number is unique, apart from the order in which the prime factors occur",
-      "As stated in this chapter, the theorem is about composite numbers, not about primes themselves"
-     ],
-     "rev": true
+      "item": "Apply the Fundamental Theorem of Arithmetic to decide whether a number of a given form can end in a particular digit, and to explain why a given expression is composite",
+      "pages": "4-5"
     },
     {
-     "b": "Understand",
-     "d": "Easy",
-     "t": "mcq",
-     "m": 1,
-     "q": "Why are the prime factors in a factorisation such as 32760 = 2 cubed x 3 squared x 5 x 7 x 13 always listed in ascending order in this chapter?",
-     "a": "So that, once the order is fixed, the way a number is factorised becomes unique",
-     "o": [
-      "So that, once the order is fixed, the way a number is factorised becomes unique",
-      "Because multiplication only gives the correct product when primes are ascending",
-      "Because the factor tree method cannot produce a descending order",
-      "Because listing primes in ascending order makes the product larger"
-     ]
+      "item": "State Theorem 1.2 (if a prime p divides a squared, then p divides a, for a a positive integer) and use it as a step in an irrationality proof",
+      "pages": "6"
     },
     {
-     "b": "Understand",
-     "d": "Easy",
-     "t": "mcq",
-     "m": 1,
-     "q": "What does the Fundamental Theorem of Arithmetic say about the number 1?",
-     "a": "Nothing directly -- the theorem applies only to composite numbers, and 1 is neither prime nor composite",
-     "o": [
-      "Nothing directly -- the theorem applies only to composite numbers, and 1 is neither prime nor composite",
-      "1 is treated as the smallest prime number in this chapter",
-      "1 must appear as a factor in every prime factorisation",
-      "1 is itself considered a product of infinitely many primes"
-     ]
-    },
-    {
-     "b": "Understand",
-     "d": "Easy",
-     "t": "mcq",
-     "m": 1,
-     "q": "Two students factorise 60 differently: one gets 2 x 2 x 3 x 5 and the other gets 2 x 3 x 2 x 5. What does the Fundamental Theorem of Arithmetic say about these two factorisations?",
-     "a": "They are the same factorisation, just written in a different order of the same prime factors",
-     "o": [
-      "They are the same factorisation, just written in a different order of the same prime factors",
-      "They are genuinely different factorisations of 60",
-      "Exactly one of the two students has made an error in the factors used",
-      "60 has more than one valid set of prime factors"
-     ]
-    },
-    {
-     "b": "Understand",
-     "d": "Hard",
-     "t": "mcq",
-     "m": 1,
-     "q": "123456789 = 3 squared x 3803 x 3607 is given in this chapter. What still needs to be true for this to count as the complete prime factorisation, under the Fundamental Theorem of Arithmetic?",
-     "a": "3803 and 3607 must themselves be prime numbers",
-     "o": [
-      "3803 and 3607 must themselves be prime numbers",
-      "3803 and 3607 must both be even numbers",
-      "The three factors must instead be written in descending order",
-      "123456789 must first be shown to be a prime number"
-     ]
-    },
-    {
-     "b": "Understand",
-     "d": "Hard",
-     "t": "mcq",
-     "m": 1,
-     "q": "A student claims: '10626 = 2 x 3 x 7 x 11 x 23, and also 10626 = 3 x 2 x 7 x 11 x 23 -- so 10626 has two different prime factorisations.' What is the best response, based on the Fundamental Theorem of Arithmetic?",
-     "a": "The claim is wrong -- both expressions use exactly the same prime factors the same number of times, just written in a different order, so they are the same factorisation",
-     "o": [
-      "The claim is wrong -- both expressions use exactly the same prime factors the same number of times, just written in a different order, so they are the same factorisation",
-      "The claim is correct -- order matters, so these count as different factorisations",
-      "The claim is correct, because 10626 is not actually composite",
-      "The claim is wrong, because 10626 only has one prime factor in total"
-     ]
-    },
-    {
-     "b": "Apply",
-     "d": "Easy",
-     "t": "fill_blank",
-     "m": 1,
-     "q": "The prime factorisation of 140, written with powers, is 2 squared x 5 x ____.",
-     "a": "7"
-    },
-    {
-     "b": "Apply",
-     "d": "Easy",
-     "t": "mcq",
-     "m": 1,
-     "q": "Which of these is the correct prime factorisation of 156?",
-     "a": "2 squared x 3 x 13",
-     "o": [
-      "2 squared x 3 x 13",
-      "2 x 3 squared x 13",
-      "2 squared x 3 x 11",
-      "2 x 3 x 13 squared"
-     ]
-    },
-    {
-     "b": "Apply",
-     "d": "Hard",
-     "t": "mcq",
-     "m": 1,
-     "q": "The prime factorisation of 3825 is",
-     "a": "3 squared x 5 squared x 17",
-     "o": [
-      "3 squared x 5 squared x 17",
-      "3 x 5 squared x 17 squared",
-      "3 squared x 5 x 17 squared",
-      "3 x 5 x 17 squared"
-     ]
-    },
-    {
-     "b": "Apply",
-     "d": "Hard",
-     "t": "mcq",
-     "m": 1,
-     "q": "The prime factorisation of 5005 is",
-     "a": "5 x 7 x 11 x 13",
-     "o": [
-      "5 x 7 x 11 x 13",
-      "5 x 7 x 11 squared",
-      "5 squared x 7 x 13",
-      "7 x 11 x 13 x 5 squared"
-     ]
-    },
-    {
-     "b": "Apply",
-     "d": "Hard",
-     "t": "short_answer",
-     "m": 2,
-     "q": "Express 7429 as a product of its prime factors.",
-     "a": "7429 = 17 x 19 x 23.",
-     "s": [
-      [
-       "Correctly identifies 17 as a prime factor of 7429 (by trial division)",
-       1
-      ],
-      [
-       "Completes the factorisation as 17 x 19 x 23",
-       1
-      ]
-     ]
-    },
-    {
-     "b": "Apply",
-     "d": "Hardest",
-     "t": "long_answer",
-     "m": 3,
-     "q": "The factor tree for 32760 in this chapter ends with the prime factorisation 2 cubed x 3 squared x 5 x 7 x 13. Using the same idea, build the prime factorisation of 21252 by repeatedly dividing out small primes, and write your final answer as a product of powers of primes.",
-     "a": "21252 = 2 squared x 3 x 7 x 11 x 23.",
-     "s": [
-      [
-       "Divides out 2 twice to reach 21252 / 4 = 5313",
-       1
-      ],
-      [
-       "Divides out 3, then 7, then 11 to reach 5313 / 3 = 1771, 1771 / 7 = 253, 253 / 11 = 23",
-       1
-      ],
-      [
-       "Writes the final answer as 2 squared x 3 x 7 x 11 x 23",
-       1
-      ]
-     ]
-    },
-    {
-     "b": "Analyse",
-     "d": "Hard",
-     "t": "assertion_reason",
-     "m": 1,
-     "q": "Assertion (A): 32760 can be factorised as 2 cubed x 3 squared x 5 x 7 x 13. Reason (R): The Fundamental Theorem of Arithmetic guarantees that, once the primes are written in ascending order, this factorisation is unique.",
-     "a": "Both A and R are true, and R is the correct explanation of A",
-     "o": [
-      "Both A and R are true, and R is the correct explanation of A",
-      "A is false, R is true",
-      "A is true, R is false",
-      "Both A and R are true, but R is not the correct explanation of A"
-     ]
-    },
-    {
-     "b": "Analyse",
-     "d": "Hard",
-     "t": "mcq",
-     "m": 1,
-     "q": "A number is factorised as 2 x 2 x 3 x 3 x 3 x 5. Written using powers of primes in the style this chapter uses, this is",
-     "a": "2 squared x 3 cubed x 5",
-     "o": [
-      "2 squared x 3 cubed x 5",
-      "2 cubed x 3 squared x 5",
-      "2 squared x 3 squared x 5 squared",
-      "2 x 3 cubed x 5 squared"
-     ]
-    },
-    {
-     "b": "Analyse",
-     "d": "Hardest",
-     "t": "long_answer",
-     "m": 3,
-     "q": "123456789 = 3 squared x 3803 x 3607, as stated in this chapter. Without fully factorising 3803 or 3607 yourself, explain what would still have to be checked before this could be accepted as the complete prime factorisation of 123456789, and state what the Fundamental Theorem of Arithmetic then guarantees about it.",
-     "a": "It would have to be checked that 3803 and 3607 are themselves prime numbers (not further factorisable); once that is confirmed, the Fundamental Theorem of Arithmetic guarantees this is the one and only prime factorisation of 123456789, apart from the order of the factors.",
-     "s": [
-      [
-       "States that 3803 and 3607 must be checked to be prime numbers",
-       1
-      ],
-      [
-       "States the factorisation is only complete once both are confirmed prime",
-       1
-      ],
-      [
-       "States the Fundamental Theorem of Arithmetic then guarantees this factorisation is unique",
-       1
-      ]
-     ]
-    },
-    {
-     "b": "Evaluate",
-     "d": "Hard",
-     "t": "mcq",
-     "m": 1,
-     "q": "This chapter's side note states that an equivalent version of the Fundamental Theorem of Arithmetic was probably first recorded by Euclid, while its first correct proof was given by Carl Friedrich Gauss. Which of these best captures what the note is claiming?",
-     "a": "Euclid's result and Gauss's rigorous proof of it are not the same achievement -- being recorded first is different from being correctly proved first",
-     "o": [
-      "Euclid's result and Gauss's rigorous proof of it are not the same achievement -- being recorded first is different from being correctly proved first",
-      "Euclid and Gauss independently discovered two completely unrelated theorems",
-      "The note is claiming Gauss recorded the result before Euclid did",
-      "The note is claiming Euclid's version already counted as a correct proof"
-     ]
-    },
-    {
-     "b": "Create",
-     "d": "Hardest",
-     "t": "long_answer",
-     "m": 3,
-     "q": "Choose five DIFFERENT prime numbers of your own (not 2, 3, 5, 7, 11, 13, 17, 19 or 23, which are all used elsewhere in this chapter), and use at least two of them to build a composite number that has at least one prime factor repeated (an exponent of 2 or more). State your composite number and its prime factorisation using powers.",
-     "a": "Answers will vary. For example, choosing the primes 29, 31, 37, 41 and 43, and using just 29 and 31: 29 squared x 31 = 26071 is a valid composite number, with prime factorisation 29 squared x 31.",
-     "s": [
-      [
-       "Chooses five primes not already used elsewhere in the chapter (not 2,3,5,7,11,13,17,19,23)",
-       1
-      ],
-      [
-       "Builds a composite number using at least one repeated prime factor from among them",
-       1
-      ],
-      [
-       "States the number and its correct prime factorisation using powers, matching what was actually multiplied",
-       1
-      ]
-     ]
+      "item": "Prove that square root of 2, square root of 3, square root of 5 and simple expressions built from them (such as 5 minus square root of 3, or 3 times square root of 2) are irrational, using proof by contradiction together with Theorem 1.2",
+      "pages": "6-9"
     }
-   ]
-  },
-  {
-   "code": "C10M-1.2",
-   "name": "HCF and LCM by the prime factorisation method",
-   "description": "Finding the HCF and LCM of two or three positive integers from their prime factorisations, using the smallest and greatest powers of the common and involved prime factors.",
-   "idea": "Once every number is broken into prime powers, the HCF only keeps what all the numbers share (the smallest power of each common prime), while the LCM keeps everything any of the numbers has (the greatest power of every prime that appears).",
-   "rule": "HCF = product of the smallest power of each common prime factor. LCM = product of the greatest power of each prime factor that occurs in any of the numbers.",
-   "example": "6 = 2 x 3 and 20 = 2 squared x 5, so HCF(6, 20) = 2 and LCM(6, 20) = 2 squared x 3 x 5 = 60.",
-   "difficulty_base": "Easy",
-   "questions": [
+  ],
+  "scope_out": [
     {
-     "b": "Remember",
-     "d": "Easy",
-     "t": "mcq",
-     "m": 1,
-     "q": "By the prime factorisation method, the HCF of two or more numbers is the product of the",
-     "a": "smallest power of each common prime factor",
-     "o": [
-      "smallest power of each common prime factor",
-      "greatest power of each common prime factor",
-      "smallest power of every prime factor in any of the numbers",
-      "sum of all the prime factors they share"
-     ]
+      "item": "Euclid's division lemma / division algorithm",
+      "reason": "The chapter's own introduction (p.1) names this as part of 'Section 1.2', but Section 1.2 as printed (pp.2-6) covers only the Fundamental Theorem of Arithmetic; Euclid's division algorithm does not appear anywhere in this chapter's 9 pages -- a leftover reference from the pre-rationalisation edition, confirmed by reading every page."
     },
     {
-     "b": "Remember",
-     "d": "Easy",
-     "t": "mcq",
-     "m": 1,
-     "q": "By the prime factorisation method, the LCM of two or more numbers is the product of the",
-     "a": "greatest power of each prime factor involved in the numbers",
-     "o": [
-      "greatest power of each prime factor involved in the numbers",
-      "smallest power of each prime factor involved in the numbers",
-      "greatest power of only the prime factors they share",
-      "two numbers divided by their HCF, added together"
-     ]
+      "item": "Decimal expansion of a rational number p/q (terminating vs non-terminating repeating), decided from the prime factorisation of q",
+      "reason": "Also promised in the introduction (p.1: 'we apply this theorem to explore when exactly the decimal expansion ... is terminating') but never developed; the chapter ends at section 1.4 Summary (p.9) right after section 1.3 (irrational numbers), with no decimal-expansion section. Another rationalisation-era leftover in the intro text."
     },
     {
-     "b": "Remember",
-     "d": "Easy",
-     "t": "fill_blank",
-     "m": 1,
-     "q": "Since 6 = 2 x 3 and 20 = 2 squared x 5, HCF(6, 20) = ____.",
-     "a": "2"
+      "item": "HCF/LCM by the long-division method or by listing multiples",
+      "reason": "Only the prime factorisation method is shown in this chapter (pp.4-6); no other method for finding HCF/LCM is taught here."
     },
     {
-     "b": "Remember",
-     "d": "Hard",
-     "t": "mcq",
-     "m": 1,
-     "q": "Which of the following is NOT correct about the relation between the HCF, the LCM and the product of positive integers?",
-     "a": "The relation HCF(a,b) x LCM(a,b) = a x b, true for two positive integers, also holds for any three positive integers p, q and r",
-     "o": [
-      "The relation HCF(a,b) x LCM(a,b) = a x b, true for two positive integers, also holds for any three positive integers p, q and r",
-      "For two positive integers a and b, HCF(a,b) x LCM(a,b) = a x b",
-      "Given HCF(306, 657) = 9, LCM(306, 657) works out to 22338",
-      "For 6, 72 and 120, the product 6 x 72 x 120 is not equal to HCF(6,72,120) x LCM(6,72,120)"
-     ],
-     "rev": true
+      "item": "The general proof of Theorem 1.2 (that a prime p dividing a squared implies p divides a), reproduced in full",
+      "reason": "The book itself marks this proof '* Not from the examination point of view' (footnote, p.6, tied to the asterisk before 'Proof :'). The statement of Theorem 1.2 and its use in later proofs remain in scope; deriving it from scratch does not."
     },
     {
-     "b": "Understand",
-     "d": "Easy",
-     "t": "mcq",
-     "m": 1,
-     "q": "Why does the LCM of 6 and 20 use 2 squared (from 20) rather than 2 to the power 1 (from 6)?",
-     "a": "The LCM takes the greatest power of each prime that appears in either number, and 2 squared is greater than 2 to the power 1",
-     "o": [
-      "The LCM takes the greatest power of each prime that appears in either number, and 2 squared is greater than 2 to the power 1",
-      "The LCM always copies the powers of 2 from whichever number is larger overall",
-      "The LCM adds the powers of 2 from both numbers together",
-      "The LCM only ever uses powers of primes that appear in both numbers"
-     ]
+      "item": "Proof by contradiction as a general logical technique",
+      "reason": "The chapter uses this technique repeatedly (pp.6-9) but explicitly defers its general explanation to 'Appendix 1' (p.6), which is not part of this chapter."
     },
     {
-     "b": "Understand",
-     "d": "Easy",
-     "t": "mcq",
-     "m": 1,
-     "q": "17, 23 and 29 are all prime numbers. What does this tell you about HCF(17, 23, 29)?",
-     "a": "It must be 1, since the three numbers share no common prime factor",
-     "o": [
-      "It must be 1, since the three numbers share no common prime factor",
-      "It must be 17, the smallest of the three primes",
-      "It cannot be found using the prime factorisation method",
-      "It must equal LCM(17, 23, 29)"
-     ]
+      "item": "Classifying real numbers as rational/irrational from first principles, locating irrationals on the number line, non-terminating non-recurring decimal representations of irrationals",
+      "reason": "The chapter explicitly recalls this as done 'In Class IX' (pp.1, 6) and only restates the p/q definition of an irrational number (p.6) in passing; it is not retaught here."
     },
     {
-     "b": "Understand",
-     "d": "Easy",
-     "t": "mcq",
-     "m": 1,
-     "q": "For 8 = 2 cubed, 9 = 3 squared and 25 = 5 squared, why is HCF(8, 9, 25) = 1 even though none of the three numbers is itself prime?",
-     "a": "Because the three numbers use entirely different prime factors (2, 3 and 5), so no prime factor is common to all three",
-     "o": [
-      "Because the three numbers use entirely different prime factors (2, 3 and 5), so no prime factor is common to all three",
-      "Because the prime factorisation method breaks down whenever there are three numbers",
-      "Because at least one of 8, 9 or 25 would need to be prime for any common factor to exist",
-      "Because 1 is always the HCF whenever the numbers involved are large"
-     ]
-    },
-    {
-     "b": "Understand",
-     "d": "Hard",
-     "t": "mcq",
-     "m": 1,
-     "q": "A student finds LCM(510, 92) by multiplying 510 x 92 directly. When does this shortcut (LCM = simple product) actually give the correct LCM?",
-     "a": "Only when the two numbers share no common prime factor, i.e. their HCF is 1",
-     "o": [
-      "Only when the two numbers share no common prime factor, i.e. their HCF is 1",
-      "Always, for any two positive integers",
-      "Only when both numbers are even",
-      "Only when both numbers are themselves prime"
-     ]
-    },
-    {
-     "b": "Understand",
-     "d": "Hard",
-     "t": "mcq",
-     "m": 1,
-     "q": "336 = 2 to the power 4 x 3 x 7 and 54 = 2 x 3 cubed. Without computing the full HCF or LCM, is the power of 2 the same in HCF(336,54) as it is in LCM(336,54)?",
-     "a": "No -- the power of 2 is 2 to the power 1 in the HCF (the smaller of the two powers) but 2 to the power 4 in the LCM (the greater of the two powers)",
-     "o": [
-      "No -- the power of 2 is 2 to the power 1 in the HCF (the smaller of the two powers) but 2 to the power 4 in the LCM (the greater of the two powers)",
-      "Yes -- the power of 2 is always the same in both the HCF and the LCM",
-      "No -- the power of 2 does not appear in the HCF at all",
-      "Yes, because 336 and 54 have the same power of 2 to begin with"
-     ]
-    },
-    {
-     "b": "Apply",
-     "d": "Easy",
-     "t": "short_answer",
-     "m": 2,
-     "q": "Find the HCF and LCM of 26 and 91 by the prime factorisation method.",
-     "a": "26 = 2 x 13 and 91 = 7 x 13, so HCF = 13 and LCM = 2 x 7 x 13 = 182.",
-     "s": [
-      [
-       "Factorises 26 = 2 x 13 and 91 = 7 x 13",
-       1
-      ],
-      [
-       "States HCF = 13 and LCM = 182",
-       1
-      ]
-     ]
-    },
-    {
-     "b": "Apply",
-     "d": "Easy",
-     "t": "fill_blank",
-     "m": 1,
-     "q": "Since 12 = 2 squared x 3, 15 = 3 x 5 and 21 = 3 x 7, HCF(12, 15, 21) = ____.",
-     "a": "3"
-    },
-    {
-     "b": "Apply",
-     "d": "Hard",
-     "t": "mcq",
-     "m": 1,
-     "q": "The HCF and LCM of 510 and 92 (510 = 2 x 3 x 5 x 17, 92 = 2 squared x 23) are",
-     "a": "HCF = 2, LCM = 23460",
-     "o": [
-      "HCF = 2, LCM = 23460",
-      "HCF = 2, LCM = 46920",
-      "HCF = 4, LCM = 23460",
-      "HCF = 2, LCM = 11730"
-     ]
-    },
-    {
-     "b": "Apply",
-     "d": "Hard",
-     "t": "mcq",
-     "m": 1,
-     "q": "The HCF and LCM of 336 and 54 (336 = 2 to the power 4 x 3 x 7, 54 = 2 x 3 cubed) are",
-     "a": "HCF = 6, LCM = 3024",
-     "o": [
-      "HCF = 6, LCM = 3024",
-      "HCF = 6, LCM = 18144",
-      "HCF = 2, LCM = 3024",
-      "HCF = 18, LCM = 1008"
-     ]
-    },
-    {
-     "b": "Apply",
-     "d": "Hard",
-     "t": "long_answer",
-     "m": 3,
-     "q": "Using the given HCF, find the LCM: HCF(306, 657) = 9. Show your method.",
-     "a": "LCM(306, 657) = (306 x 657) / 9 = 201042 / 9 = 22338.",
-     "s": [
-      [
-       "States the rule LCM = (product of the numbers) / HCF",
-       1
-      ],
-      [
-       "Computes 306 x 657 = 201042",
-       1
-      ],
-      [
-       "Divides by 9 to get LCM = 22338",
-       1
-      ]
-     ]
-    },
-    {
-     "b": "Apply",
-     "d": "Hardest",
-     "t": "long_answer",
-     "m": 3,
-     "q": "There is a circular path around a sports field. Sonia takes 18 minutes to drive one round, Ravi takes 12 minutes for the same round. If they both start together at the same point and go in the same direction, after how many minutes will they next meet at the starting point? Use the LCM to justify your answer.",
-     "a": "They meet again after LCM(18, 12) = 36 minutes: 18 = 2 x 3 squared and 12 = 2 squared x 3, so LCM = 2 squared x 3 squared = 36.",
-     "s": [
-      [
-       "States that the answer is the LCM of 18 and 12",
-       1
-      ],
-      [
-       "Factorises 18 = 2 x 3 squared and 12 = 2 squared x 3",
-       1
-      ],
-      [
-       "Computes LCM = 36 minutes",
-       1
-      ]
-     ]
-    },
-    {
-     "b": "Analyse",
-     "d": "Hard",
-     "t": "multi_statement",
-     "m": 1,
-     "q": "Consider: (I) HCF(12, 15, 21) = 3. (II) LCM(17, 23, 29) is smaller than the product 17 x 23 x 29, because two of the three numbers share a common factor. Which is or are correct?",
-     "a": "Only I",
-     "o": [
-      "Only I",
-      "Only II",
-      "Both I and II",
-      "Neither I nor II"
-     ]
-    },
-    {
-     "b": "Analyse",
-     "d": "Hard",
-     "t": "mcq",
-     "m": 1,
-     "q": "336 = 2 to the power 4 x 3 x 7 and 54 = 2 x 3 cubed share the prime factors 2 and 3, giving HCF(336, 54) = 6. If a THIRD number, 21 = 3 x 7, is now included, what happens to HCF(336, 54, 21)?",
-     "a": "It drops to 3, because 2 is not a factor of 21, so 2 can no longer be part of a factor common to all three numbers",
-     "o": [
-      "It drops to 3, because 2 is not a factor of 21, so 2 can no longer be part of a factor common to all three numbers",
-      "It stays at 6, because 21 still shares some factors with the other two numbers",
-      "It rises to 42, because 21 contributes an extra factor of 7",
-      "It becomes 1, because three numbers can never share a common factor"
-     ]
-    },
-    {
-     "b": "Analyse",
-     "d": "Hardest",
-     "t": "long_answer",
-     "m": 3,
-     "q": "8, 9 and 25 have HCF 1 (Exercise 1.1, Q3(iii)). Explain why the LCM of three numbers with HCF 1 is not always just their simple product, and then check whether it is for 8, 9 and 25 specifically.",
-     "a": "HCF 1 only means the numbers share no factor common to ALL three; two of them could still share a factor with each other, which would make the LCM smaller than the plain product. For 8 = 2 cubed, 9 = 3 squared and 25 = 5 squared specifically, no prime is shared even pairwise, so here LCM(8,9,25) does equal the simple product 8 x 9 x 25 = 1800.",
-     "s": [
-      [
-       "Explains that HCF 1 for three numbers does not rule out a factor shared by just two of them",
-       1
-      ],
-      [
-       "States that such a pairwise shared factor would make the LCM smaller than the plain product",
-       1
-      ],
-      [
-       "Checks 8, 9, 25 specifically and confirms LCM = 1800, equal to the plain product since no pair shares a factor either",
-       1
-      ]
-     ]
-    },
-    {
-     "b": "Evaluate",
-     "d": "Hard",
-     "t": "mcq",
-     "m": 1,
-     "q": "A student says: 'To find the LCM of any two numbers, I can always just multiply them together.' Using HCF(6,20) = 2 and LCM(6,20) = 60 from this chapter, evaluate this claim.",
-     "a": "The claim is false in general -- 6 x 20 = 120, not 60, because 6 and 20 share the common factor 2; simple multiplication only gives the LCM when the HCF is 1",
-     "o": [
-      "The claim is false in general -- 6 x 20 = 120, not 60, because 6 and 20 share the common factor 2; simple multiplication only gives the LCM when the HCF is 1",
-      "The claim is true, and 6 x 20 = 60 confirms it",
-      "The claim is true only for numbers larger than 20",
-      "The claim is false, because the LCM can never be found by multiplication"
-     ]
-    },
-    {
-     "b": "Create",
-     "d": "Hardest",
-     "t": "long_answer",
-     "m": 3,
-     "q": "Choose two positive integers of your own, both greater than 20, that share a common factor greater than 1. Find their HCF and LCM by the prime factorisation method, and verify that HCF x LCM equals the product of your two numbers.",
-     "a": "Answers will vary. For example, 24 and 36: 24 = 2 cubed x 3, 36 = 2 squared x 3 squared. HCF = 2 squared x 3 = 12, LCM = 2 cubed x 3 squared = 72. Check: 12 x 72 = 864, and 24 x 36 = 864, so they match.",
-     "s": [
-      [
-       "Chooses two numbers greater than 20 that share a common factor greater than 1",
-       1
-      ],
-      [
-       "Correctly finds their HCF and LCM by the prime factorisation method",
-       1
-      ],
-      [
-       "Verifies that HCF x LCM equals the product of the chosen numbers",
-       1
-      ]
-     ]
+      "item": "Computing a three-number HCF or LCM directly from the general formulas in 'A Note to the Reader' (p.9)",
+      "reason": "Given only as enrichment with no worked example in this chapter -- the note's own cross-reference '(see Example 8)' points to an example that does not exist among this chapter's 9 pages (the chapter's examples stop at Example 7), a dangling reference from rationalisation. Tested here only as the qualitative fact that the simple two-number product rule fails for three numbers, verified directly via Example 4 (p.5)."
     }
-   ]
-  },
-  {
-   "code": "C10M-1.3",
-   "name": "The HCF x LCM = product relation (and why three numbers differ)",
-   "description": "For two positive integers a and b, HCF(a,b) times LCM(a,b) equals a times b; this exact relation does not carry over to three positive integers.",
-   "idea": "Multiplying the two numbers together and multiplying HCF by LCM both end up combining the smallest and greatest powers of every prime involved -- for two numbers these always turn out to match, but with three numbers, factors can be shared between just two of them and the simple match breaks down.",
-   "rule": "For any two positive integers a and b: HCF(a,b) x LCM(a,b) = a x b. This lets you find LCM from a known HCF (or HCF from a known LCM). For three positive integers p, q, r in general, HCF(p,q,r) x LCM(p,q,r) is NOT equal to p x q x r.",
-   "example": "Given HCF(306, 657) = 9, LCM(306, 657) = (306 x 657) / 9 = 22338. But for 6, 72 and 120: HCF = 6, LCM = 360, so HCF x LCM = 2160, while 6 x 72 x 120 = 51840 -- the two are not equal.",
-   "difficulty_base": "Hard",
-   "questions": [
+  ],
+  "concepts": [
     {
-     "b": "Remember",
-     "d": "Easy",
-     "t": "mcq",
-     "m": 1,
-     "q": "For any two positive integers a and b, HCF(a,b) multiplied by LCM(a,b) equals",
-     "a": "a multiplied by b",
-     "o": [
-      "a multiplied by b",
-      "a plus b",
-      "a minus b",
-      "a divided by b"
-     ]
-    },
-    {
-     "b": "Remember",
-     "d": "Easy",
-     "t": "mcq",
-     "m": 1,
-     "q": "For 6 and 20, this chapter shows HCF(6,20) x LCM(6,20) equals",
-     "a": "6 x 20",
-     "o": [
-      "6 x 20",
-      "6 + 20",
-      "20 x 20",
-      "6 x 6"
-     ]
-    },
-    {
-     "b": "Remember",
-     "d": "Easy",
-     "t": "fill_blank",
-     "m": 1,
-     "q": "Given HCF(306, 657) = 9, the rule HCF x LCM = product lets us find LCM(306, 657) = (306 x 657) / ____.",
-     "a": "9"
-    },
-    {
-     "b": "Remember",
-     "d": "Hard",
-     "t": "mcq",
-     "m": 1,
-     "q": "Which of the following is NOT correct about the relation between HCF, LCM and the product of positive integers?",
-     "a": "The relation HCF(a,b) x LCM(a,b) = a x b, true for two positive integers, also holds for any three positive integers p, q and r",
-     "o": [
-      "The relation HCF(a,b) x LCM(a,b) = a x b, true for two positive integers, also holds for any three positive integers p, q and r",
-      "For two positive integers a and b, HCF(a,b) x LCM(a,b) = a x b",
-      "Given HCF(306, 657) = 9, LCM(306, 657) works out to 22338",
-      "For 6, 72 and 120, the product 6 x 72 x 120 is not equal to HCF(6,72,120) x LCM(6,72,120)"
-     ],
-     "rev": true
-    },
-    {
-     "b": "Understand",
-     "d": "Easy",
-     "t": "mcq",
-     "m": 1,
-     "q": "Why is the rule HCF(a,b) x LCM(a,b) = a x b useful when you already know one of HCF or LCM?",
-     "a": "It lets you find the other one directly by division, without factorising the numbers again",
-     "o": [
-      "It lets you find the other one directly by division, without factorising the numbers again",
-      "It lets you avoid ever computing an HCF or LCM at all",
-      "It only works after you have already found both HCF and LCM separately by other means",
-      "It replaces the need to know the prime factorisation method"
-     ]
-    },
-    {
-     "b": "Understand",
-     "d": "Easy",
-     "t": "mcq",
-     "m": 1,
-     "q": "Example 4 in this chapter finds HCF(6,72,120) = 6 and LCM(6,72,120) = 360, and then notes that 6 x 72 x 120 is NOT equal to 6 x 360. What does this show?",
-     "a": "The simple product rule HCF x LCM = product, which holds for two numbers, does not carry over to three numbers",
-     "o": [
-      "The simple product rule HCF x LCM = product, which holds for two numbers, does not carry over to three numbers",
-      "The prime factorisation method gives the wrong answer whenever there are three numbers",
-      "6, 72 and 120 must have been factorised incorrectly",
-      "HCF and LCM cannot both be found for three numbers at the same time"
-     ]
-    },
-    {
-     "b": "Understand",
-     "d": "Easy",
-     "t": "mcq",
-     "m": 1,
-     "q": "A NOTE TO THE READER at the end of this chapter gives more complicated formulas connecting HCF(p,q,r) and LCM(p,q,r) for three numbers. Why are these formulas more complicated than the simple two-number rule?",
-     "a": "Because for three numbers the simple product rule does not hold, so a correct relationship also needs the pairwise HCFs (or LCMs) of the numbers taken two at a time",
-     "o": [
-      "Because for three numbers the simple product rule does not hold, so a correct relationship also needs the pairwise HCFs (or LCMs) of the numbers taken two at a time",
-      "Because three-number problems cannot actually be solved using HCF and LCM at all",
-      "Because the formulas are just an optional, equivalent way of writing the two-number rule",
-      "Because prime factorisation itself stops working once there are three or more numbers"
-     ]
-    },
-    {
-     "b": "Understand",
-     "d": "Hard",
-     "t": "mcq",
-     "m": 1,
-     "q": "For two positive integers a and b that are coprime (HCF(a,b) = 1), what does the rule HCF(a,b) x LCM(a,b) = a x b tell you about LCM(a,b)?",
-     "a": "LCM(a,b) = a x b, i.e. the LCM is just the simple product, since the HCF is 1",
-     "o": [
-      "LCM(a,b) = a x b, i.e. the LCM is just the simple product, since the HCF is 1",
-      "LCM(a,b) = 1, the same as the HCF",
-      "LCM(a,b) cannot be found unless the numbers share a factor",
-      "LCM(a,b) = a + b"
-     ]
-    },
-    {
-     "b": "Understand",
-     "d": "Hard",
-     "t": "mcq",
-     "m": 1,
-     "q": "17, 23 and 29 are pairwise coprime, and Exercise 1.1 gives LCM(17,23,29) as the simple product 17 x 23 x 29. Does this mean the two-number rule HCF x LCM = product from Example 2 now also holds for these three numbers?",
-     "a": "Not for the reason given in Example 2 -- it works here only because being pairwise coprime is a special case, not because the general two-number rule extends to three numbers",
-     "o": [
-      "Not for the reason given in Example 2 -- it works here only because being pairwise coprime is a special case, not because the general two-number rule extends to three numbers",
-      "Yes, this proves the two-number rule extends to any three numbers",
-      "No, because 17, 23 and 29 are not actually coprime",
-      "Yes, but only because all three numbers happen to be prime"
-     ]
-    },
-    {
-     "b": "Apply",
-     "d": "Easy",
-     "t": "fill_blank",
-     "m": 1,
-     "q": "Since HCF(6,20) = 2 and 6 x 20 = 120, LCM(6,20) must equal 120 / ____.",
-     "a": "2"
-    },
-    {
-     "b": "Apply",
-     "d": "Easy",
-     "t": "mcq",
-     "m": 1,
-     "q": "If HCF(a, b) = 5 and a x b = 150, then LCM(a, b) =",
-     "a": "30",
-     "o": [
-      "30",
-      "5",
-      "150",
-      "750"
-     ]
-    },
-    {
-     "b": "Apply",
-     "d": "Hard",
-     "t": "long_answer",
-     "m": 3,
-     "q": "Given HCF(96, 404) = 4 (found by prime factorisation in this chapter), find LCM(96, 404) using the product rule, showing your working.",
-     "a": "LCM(96,404) = (96 x 404) / 4 = 38784 / 4 = 9696.",
-     "s": [
-      [
-       "States the rule LCM = product / HCF",
-       1
-      ],
-      [
-       "Computes 96 x 404 = 38784",
-       1
-      ],
-      [
-       "Divides by 4 to get 9696",
-       1
+      "code": "C10M-1.1",
+      "name": "The Fundamental Theorem of Arithmetic",
+      "description": "Every composite number can be written as a product of primes, and this prime factorisation is unique except for the order of the factors.",
+      "idea": "Multiplying primes together in different combinations builds every composite number, and a factor tree lets you take a number apart to see exactly which primes, and how many of each, were used.",
+      "rule": "Every composite number x can be written x = p1 x p2 x ... x pn with p1, p2, ..., pn prime and p1 <= p2 <= ... <= pn; combining repeated primes gives powers, and this factorisation is unique once the primes are written in ascending order.",
+      "example": "32760 = 2 x 2 x 2 x 3 x 3 x 5 x 7 x 13 = 2 cubed x 3 squared x 5 x 7 x 13.",
+      "difficulty_base": "Easy",
+      "questions": [
+        {
+          "b": "Remember",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "According to the Fundamental Theorem of Arithmetic, every composite number can be expressed as a product of",
+          "a": "primes",
+          "o": [
+            "primes",
+            "even numbers",
+            "consecutive integers",
+            "square numbers"
+          ]
+        },
+        {
+          "b": "Remember",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "The diagram used in this chapter to break a number down into its prime factors step by step is called a",
+          "a": "factor tree",
+          "o": [
+            "factor tree",
+            "division algorithm",
+            "long division method",
+            "number line method"
+          ]
+        },
+        {
+          "b": "Remember",
+          "d": "Easy",
+          "t": "fill_blank",
+          "m": 1,
+          "q": "Written as a product of primes, 253 = 11 x ____.",
+          "a": "23"
+        },
+        {
+          "b": "Remember",
+          "d": "Hard",
+          "t": "mcq",
+          "m": 1,
+          "q": "Which of the following is NOT a correct statement of the Fundamental Theorem of Arithmetic (Theorem 1.1)?",
+          "a": "For any two positive integers a and b, HCF(a,b) multiplied by LCM(a,b) equals a multiplied by b",
+          "o": [
+            "For any two positive integers a and b, HCF(a,b) multiplied by LCM(a,b) equals a multiplied by b",
+            "Every composite number can be expressed as a product of primes",
+            "The prime factorisation of a composite number is unique, apart from the order in which the prime factors occur",
+            "As stated in this chapter, the theorem is about composite numbers, not about primes themselves"
+          ],
+          "rev": true
+        },
+        {
+          "b": "Understand",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "Why are the prime factors in a factorisation such as 32760 = 2 cubed x 3 squared x 5 x 7 x 13 always listed in ascending order in this chapter?",
+          "a": "So that, once the order is fixed, the way a number is factorised becomes unique",
+          "o": [
+            "So that, once the order is fixed, the way a number is factorised becomes unique",
+            "Because multiplication only gives the correct product when primes are ascending",
+            "Because the factor tree method cannot produce a descending order",
+            "Because listing primes in ascending order makes the product larger"
+          ]
+        },
+        {
+          "b": "Understand",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "What does the Fundamental Theorem of Arithmetic say about the number 1?",
+          "a": "Nothing directly -- the theorem applies only to composite numbers, and 1 is neither prime nor composite",
+          "o": [
+            "Nothing directly -- the theorem applies only to composite numbers, and 1 is neither prime nor composite",
+            "1 is treated as the smallest prime number in this chapter",
+            "1 must appear as a factor in every prime factorisation",
+            "1 is itself considered a product of infinitely many primes"
+          ]
+        },
+        {
+          "b": "Understand",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "Two students factorise 60 differently: one gets 2 x 2 x 3 x 5 and the other gets 2 x 3 x 2 x 5. What does the Fundamental Theorem of Arithmetic say about these two factorisations?",
+          "a": "They are the same factorisation, just written in a different order of the same prime factors",
+          "o": [
+            "They are the same factorisation, just written in a different order of the same prime factors",
+            "They are genuinely different factorisations of 60",
+            "Exactly one of the two students has made an error in the factors used",
+            "60 has more than one valid set of prime factors"
+          ]
+        },
+        {
+          "b": "Understand",
+          "d": "Hard",
+          "t": "mcq",
+          "m": 1,
+          "q": "123456789 = 3 squared x 3803 x 3607 is given in this chapter. What still needs to be true for this to count as the complete prime factorisation, under the Fundamental Theorem of Arithmetic?",
+          "a": "3803 and 3607 must themselves be prime numbers",
+          "o": [
+            "3803 and 3607 must themselves be prime numbers",
+            "3803 and 3607 must both be even numbers",
+            "The three factors must instead be written in descending order",
+            "123456789 must first be shown to be a prime number"
+          ]
+        },
+        {
+          "b": "Understand",
+          "d": "Hard",
+          "t": "mcq",
+          "m": 1,
+          "q": "A student claims: '10626 = 2 x 3 x 7 x 11 x 23, and also 10626 = 3 x 2 x 7 x 11 x 23 -- so 10626 has two different prime factorisations.' What is the best response, based on the Fundamental Theorem of Arithmetic?",
+          "a": "The claim is wrong -- both expressions use exactly the same prime factors the same number of times, just written in a different order, so they are the same factorisation",
+          "o": [
+            "The claim is wrong -- both expressions use exactly the same prime factors the same number of times, just written in a different order, so they are the same factorisation",
+            "The claim is correct -- order matters, so these count as different factorisations",
+            "The claim is correct, because 10626 is not actually composite",
+            "The claim is wrong, because 10626 only has one prime factor in total"
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Easy",
+          "t": "fill_blank",
+          "m": 1,
+          "q": "The prime factorisation of 140, written with powers, is 2 squared x 5 x ____.",
+          "a": "7"
+        },
+        {
+          "b": "Apply",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "Which of these is the correct prime factorisation of 156?",
+          "a": "2 squared x 3 x 13",
+          "o": [
+            "2 squared x 3 x 13",
+            "2 x 3 squared x 13",
+            "2 squared x 3 x 11",
+            "2 x 3 x 13 squared"
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Hard",
+          "t": "mcq",
+          "m": 1,
+          "q": "The prime factorisation of 3825 is",
+          "a": "3 squared x 5 squared x 17",
+          "o": [
+            "3 squared x 5 squared x 17",
+            "3 x 5 squared x 17 squared",
+            "3 squared x 5 x 17 squared",
+            "3 x 5 x 17 squared"
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Hard",
+          "t": "mcq",
+          "m": 1,
+          "q": "The prime factorisation of 5005 is",
+          "a": "5 x 7 x 11 x 13",
+          "o": [
+            "5 x 7 x 11 x 13",
+            "5 x 7 x 11 squared",
+            "5 squared x 7 x 13",
+            "7 x 11 x 13 x 5 squared"
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Hard",
+          "t": "short_answer",
+          "m": 2,
+          "q": "Express 7429 as a product of its prime factors.",
+          "a": "7429 = 17 x 19 x 23.",
+          "s": [
+            [
+              "Correctly identifies 17 as a prime factor of 7429 (by trial division)",
+              1
+            ],
+            [
+              "Completes the factorisation as 17 x 19 x 23",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Hardest",
+          "t": "long_answer",
+          "m": 3,
+          "q": "The factor tree for 32760 in this chapter ends with the prime factorisation 2 cubed x 3 squared x 5 x 7 x 13. Using the same idea, build the prime factorisation of 21252 by repeatedly dividing out small primes, and write your final answer as a product of powers of primes.",
+          "a": "21252 = 2 squared x 3 x 7 x 11 x 23.",
+          "s": [
+            [
+              "Divides out 2 twice to reach 21252 / 4 = 5313",
+              1
+            ],
+            [
+              "Divides out 3, then 7, then 11 to reach 5313 / 3 = 1771, 1771 / 7 = 253, 253 / 11 = 23",
+              1
+            ],
+            [
+              "Writes the final answer as 2 squared x 3 x 7 x 11 x 23",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Analyse",
+          "d": "Hard",
+          "t": "assertion_reason",
+          "m": 1,
+          "q": "Assertion (A): 32760 can be factorised as 2 cubed x 3 squared x 5 x 7 x 13. Reason (R): The Fundamental Theorem of Arithmetic guarantees that, once the primes are written in ascending order, this factorisation is unique.",
+          "a": "Both A and R are true, and R is the correct explanation of A",
+          "o": [
+            "Both A and R are true, and R is the correct explanation of A",
+            "A is false, R is true",
+            "A is true, R is false",
+            "Both A and R are true, but R is not the correct explanation of A"
+          ]
+        },
+        {
+          "b": "Analyse",
+          "d": "Hard",
+          "t": "multi_statement",
+          "m": 1,
+          "q": "Consider these statements about the Fundamental Theorem of Arithmetic. (I) 123456789 can be written as 3 squared x 3803 x 3607. (II) The unique factorisation guaranteed by the theorem is unique once the prime factors are written in ascending order. (III) For any three positive integers p, q and r, HCF(p, q, r) times LCM(p, q, r) always equals p times q times r. Which is or are correct?",
+          "a": "Only I and II",
+          "o": [
+            "Only I and II",
+            "Only I and III",
+            "Only II and III",
+            "All of these"
+          ]
+        },
+        {
+          "b": "Analyse",
+          "d": "Hardest",
+          "t": "long_answer",
+          "m": 3,
+          "q": "123456789 = 3 squared x 3803 x 3607, as stated in this chapter. Without fully factorising 3803 or 3607 yourself, explain what would still have to be checked before this could be accepted as the complete prime factorisation of 123456789, and state what the Fundamental Theorem of Arithmetic then guarantees about it.",
+          "a": "It would have to be checked that 3803 and 3607 are themselves prime numbers (not further factorisable); once that is confirmed, the Fundamental Theorem of Arithmetic guarantees this is the one and only prime factorisation of 123456789, apart from the order of the factors.",
+          "s": [
+            [
+              "States that 3803 and 3607 must be checked to be prime numbers",
+              1
+            ],
+            [
+              "States the factorisation is only complete once both are confirmed prime",
+              1
+            ],
+            [
+              "States the Fundamental Theorem of Arithmetic then guarantees this factorisation is unique",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Evaluate",
+          "d": "Hard",
+          "t": "mcq",
+          "m": 1,
+          "q": "This chapter's side note states that an equivalent version of the Fundamental Theorem of Arithmetic was probably first recorded by Euclid, while its first correct proof was given by Carl Friedrich Gauss. Which of these best captures what the note is claiming?",
+          "a": "Euclid's result and Gauss's rigorous proof of it are not the same achievement -- being recorded first is different from being correctly proved first",
+          "o": [
+            "Euclid's result and Gauss's rigorous proof of it are not the same achievement -- being recorded first is different from being correctly proved first",
+            "Euclid and Gauss independently discovered two completely unrelated theorems",
+            "The note is claiming Gauss recorded the result before Euclid did",
+            "The note is claiming Euclid's version already counted as a correct proof"
+          ]
+        },
+        {
+          "b": "Create",
+          "d": "Hardest",
+          "t": "long_answer",
+          "m": 3,
+          "q": "Choose five DIFFERENT prime numbers of your own (not 2, 3, 5, 7, 11, 13, 17, 19 or 23, which are all used elsewhere in this chapter), and use at least two of them to build a composite number that has at least one prime factor repeated (an exponent of 2 or more). State your composite number and its prime factorisation using powers.",
+          "a": "Answers will vary. For example, choosing the primes 29, 31, 37, 41 and 43, and using just 29 and 31: 29 squared x 31 = 26071 is a valid composite number, with prime factorisation 29 squared x 31.",
+          "s": [
+            [
+              "Chooses five primes not already used elsewhere in the chapter (not 2,3,5,7,11,13,17,19,23)",
+              1
+            ],
+            [
+              "Builds a composite number using at least one repeated prime factor from among them",
+              1
+            ],
+            [
+              "States the number and its correct prime factorisation using powers, matching what was actually multiplied",
+              1
+            ]
+          ]
+        }
       ]
-     ]
     },
     {
-     "b": "Apply",
-     "d": "Hard",
-     "t": "mcq",
-     "m": 1,
-     "q": "Two positive integers have HCF 8 and LCM 96. Their product must be",
-     "a": "768",
-     "o": [
-      "768",
-      "104",
-      "12",
-      "776"
-     ]
-    },
-    {
-     "b": "Apply",
-     "d": "Hard",
-     "t": "mcq",
-     "m": 1,
-     "q": "Two positive integers have product 480 and LCM 60. Their HCF must be",
-     "a": "8",
-     "o": [
-      "8",
-      "60",
-      "420",
-      "28800"
-     ]
-    },
-    {
-     "b": "Apply",
-     "d": "Hardest",
-     "t": "long_answer",
-     "m": 3,
-     "q": "For 6, 72 and 120 this chapter shows HCF x LCM (= 2160) is not equal to the product of the three numbers (= 51840). Compute how many times bigger the actual product is than HCF x LCM, and explain in one sentence why this gap exists for three numbers but never for two.",
-     "a": "51840 / 2160 = 24. The gap exists because with three numbers a prime factor can be shared between just two of them rather than all three, and the simple HCF x LCM rule does not correctly account for this in-between sharing, whereas with only two numbers there is no such in-between case.",
-     "s": [
-      [
-       "Computes 51840 / 2160 = 24",
-       1
-      ],
-      [
-       "Identifies that a prime factor can be shared by just two of the three numbers, not all three",
-       1
-      ],
-      [
-       "States this in-between sharing cannot arise when there are only two numbers",
-       1
+      "code": "C10M-1.2",
+      "name": "HCF and LCM by the prime factorisation method",
+      "description": "Finding the HCF and LCM of two or three positive integers from their prime factorisations, using the smallest and greatest powers of the common and involved prime factors.",
+      "idea": "Once every number is broken into prime powers, the HCF only keeps what all the numbers share (the smallest power of each common prime), while the LCM keeps everything any of the numbers has (the greatest power of every prime that appears).",
+      "rule": "HCF = product of the smallest power of each common prime factor. LCM = product of the greatest power of each prime factor that occurs in any of the numbers.",
+      "example": "6 = 2 x 3 and 20 = 2 squared x 5, so HCF(6, 20) = 2 and LCM(6, 20) = 2 squared x 3 x 5 = 60.",
+      "difficulty_base": "Easy",
+      "questions": [
+        {
+          "b": "Remember",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "By the prime factorisation method, the HCF of two or more numbers is the product of the",
+          "a": "smallest power of each common prime factor",
+          "o": [
+            "smallest power of each common prime factor",
+            "greatest power of each common prime factor",
+            "smallest power of every prime factor in any of the numbers",
+            "sum of all the prime factors they share"
+          ]
+        },
+        {
+          "b": "Remember",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "By the prime factorisation method, the LCM of two or more numbers is the product of the",
+          "a": "greatest power of each prime factor involved in the numbers",
+          "o": [
+            "greatest power of each prime factor involved in the numbers",
+            "smallest power of each prime factor involved in the numbers",
+            "greatest power of only the prime factors they share",
+            "two numbers divided by their HCF, added together"
+          ]
+        },
+        {
+          "b": "Remember",
+          "d": "Easy",
+          "t": "fill_blank",
+          "m": 1,
+          "q": "Since 6 = 2 x 3 and 20 = 2 squared x 5, HCF(6, 20) = ____.",
+          "a": "2"
+        },
+        {
+          "b": "Remember",
+          "d": "Hard",
+          "t": "mcq",
+          "m": 1,
+          "q": "Which of the following is NOT correct about the relation between the HCF, the LCM and the product of positive integers?",
+          "a": "The relation HCF(a,b) x LCM(a,b) = a x b, true for two positive integers, also holds for any three positive integers p, q and r",
+          "o": [
+            "The relation HCF(a,b) x LCM(a,b) = a x b, true for two positive integers, also holds for any three positive integers p, q and r",
+            "For two positive integers a and b, HCF(a,b) x LCM(a,b) = a x b",
+            "Given HCF(306, 657) = 9, LCM(306, 657) works out to 22338",
+            "For 6, 72 and 120, the product 6 x 72 x 120 is not equal to HCF(6,72,120) x LCM(6,72,120)"
+          ],
+          "rev": true
+        },
+        {
+          "b": "Understand",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "Why does the LCM of 6 and 20 use 2 squared (from 20) rather than 2 to the power 1 (from 6)?",
+          "a": "The LCM takes the greatest power of each prime that appears in either number, and 2 squared is greater than 2 to the power 1",
+          "o": [
+            "The LCM takes the greatest power of each prime that appears in either number, and 2 squared is greater than 2 to the power 1",
+            "The LCM always copies the powers of 2 from whichever number is larger overall",
+            "The LCM adds the powers of 2 from both numbers together",
+            "The LCM only ever uses powers of primes that appear in both numbers"
+          ]
+        },
+        {
+          "b": "Understand",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "17, 23 and 29 are all prime numbers. What does this tell you about HCF(17, 23, 29)?",
+          "a": "It must be 1, since the three numbers share no common prime factor",
+          "o": [
+            "It must be 1, since the three numbers share no common prime factor",
+            "It must be 17, the smallest of the three primes",
+            "It cannot be found using the prime factorisation method",
+            "It must equal LCM(17, 23, 29)"
+          ]
+        },
+        {
+          "b": "Understand",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "For 8 = 2 cubed, 9 = 3 squared and 25 = 5 squared, why is HCF(8, 9, 25) = 1 even though none of the three numbers is itself prime?",
+          "a": "Because the three numbers use entirely different prime factors (2, 3 and 5), so no prime factor is common to all three",
+          "o": [
+            "Because the three numbers use entirely different prime factors (2, 3 and 5), so no prime factor is common to all three",
+            "Because the prime factorisation method breaks down whenever there are three numbers",
+            "Because at least one of 8, 9 or 25 would need to be prime for any common factor to exist",
+            "Because 1 is always the HCF whenever the numbers involved are large"
+          ]
+        },
+        {
+          "b": "Understand",
+          "d": "Hard",
+          "t": "mcq",
+          "m": 1,
+          "q": "A student finds LCM(510, 92) by multiplying 510 x 92 directly. When does this shortcut (LCM = simple product) actually give the correct LCM?",
+          "a": "Only when the two numbers share no common prime factor, i.e. their HCF is 1",
+          "o": [
+            "Only when the two numbers share no common prime factor, i.e. their HCF is 1",
+            "Always, for any two positive integers",
+            "Only when both numbers are even",
+            "Only when both numbers are themselves prime"
+          ]
+        },
+        {
+          "b": "Understand",
+          "d": "Hard",
+          "t": "mcq",
+          "m": 1,
+          "q": "336 = 2 to the power 4 x 3 x 7 and 54 = 2 x 3 cubed. Without computing the full HCF or LCM, is the power of 2 the same in HCF(336,54) as it is in LCM(336,54)?",
+          "a": "No -- the power of 2 is 2 to the power 1 in the HCF (the smaller of the two powers) but 2 to the power 4 in the LCM (the greater of the two powers)",
+          "o": [
+            "No -- the power of 2 is 2 to the power 1 in the HCF (the smaller of the two powers) but 2 to the power 4 in the LCM (the greater of the two powers)",
+            "Yes -- the power of 2 is always the same in both the HCF and the LCM",
+            "No -- the power of 2 does not appear in the HCF at all",
+            "Yes, because 336 and 54 have the same power of 2 to begin with"
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Easy",
+          "t": "short_answer",
+          "m": 2,
+          "q": "Find the HCF and LCM of 26 and 91 by the prime factorisation method.",
+          "a": "26 = 2 x 13 and 91 = 7 x 13, so HCF = 13 and LCM = 2 x 7 x 13 = 182.",
+          "s": [
+            [
+              "Factorises 26 = 2 x 13 and 91 = 7 x 13",
+              1
+            ],
+            [
+              "States HCF = 13 and LCM = 182",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Easy",
+          "t": "fill_blank",
+          "m": 1,
+          "q": "Since 12 = 2 squared x 3, 15 = 3 x 5 and 21 = 3 x 7, HCF(12, 15, 21) = ____.",
+          "a": "3"
+        },
+        {
+          "b": "Apply",
+          "d": "Hard",
+          "t": "mcq",
+          "m": 1,
+          "q": "The HCF and LCM of 510 and 92 (510 = 2 x 3 x 5 x 17, 92 = 2 squared x 23) are",
+          "a": "HCF = 2, LCM = 23460",
+          "o": [
+            "HCF = 2, LCM = 23460",
+            "HCF = 2, LCM = 46920",
+            "HCF = 4, LCM = 23460",
+            "HCF = 2, LCM = 11730"
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Hard",
+          "t": "mcq",
+          "m": 1,
+          "q": "The HCF and LCM of 336 and 54 (336 = 2 to the power 4 x 3 x 7, 54 = 2 x 3 cubed) are",
+          "a": "HCF = 6, LCM = 3024",
+          "o": [
+            "HCF = 6, LCM = 3024",
+            "HCF = 6, LCM = 18144",
+            "HCF = 2, LCM = 3024",
+            "HCF = 18, LCM = 1008"
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Hard",
+          "t": "long_answer",
+          "m": 3,
+          "q": "Using the given HCF, find the LCM: HCF(306, 657) = 9. Show your method.",
+          "a": "LCM(306, 657) = (306 x 657) / 9 = 201042 / 9 = 22338.",
+          "s": [
+            [
+              "States the rule LCM = (product of the numbers) / HCF",
+              1
+            ],
+            [
+              "Computes 306 x 657 = 201042",
+              1
+            ],
+            [
+              "Divides by 9 to get LCM = 22338",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Hardest",
+          "t": "long_answer",
+          "m": 3,
+          "q": "There is a circular path around a sports field. Sonia takes 18 minutes to drive one round, Ravi takes 12 minutes for the same round. If they both start together at the same point and go in the same direction, after how many minutes will they next meet at the starting point? Use the LCM to justify your answer.",
+          "a": "They meet again after LCM(18, 12) = 36 minutes: 18 = 2 x 3 squared and 12 = 2 squared x 3, so LCM = 2 squared x 3 squared = 36.",
+          "s": [
+            [
+              "States that the answer is the LCM of 18 and 12",
+              1
+            ],
+            [
+              "Factorises 18 = 2 x 3 squared and 12 = 2 squared x 3",
+              1
+            ],
+            [
+              "Computes LCM = 36 minutes",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Analyse",
+          "d": "Hard",
+          "t": "multi_statement",
+          "m": 1,
+          "q": "Consider: (I) HCF(12, 15, 21) = 3. (II) LCM(17, 23, 29) is smaller than the product 17 x 23 x 29, because two of the three numbers share a common factor. Which is or are correct?",
+          "a": "Only I",
+          "o": [
+            "Only I",
+            "Only II",
+            "Both I and II",
+            "Neither I nor II"
+          ]
+        },
+        {
+          "b": "Analyse",
+          "d": "Hard",
+          "t": "assertion_reason",
+          "m": 1,
+          "q": "Assertion (A): LCM(96, 404) = 9696. Reason (R): This is because the least common multiple of any two positive integers is always found by simply multiplying the two numbers together. Choose the correct option.",
+          "a": "A is true, R is false",
+          "o": [
+            "A is true, R is false",
+            "A is false, R is true",
+            "Both A and R are true, and R is the correct explanation of A",
+            "Both A and R are true, but R is not the correct explanation of A"
+          ]
+        },
+        {
+          "b": "Analyse",
+          "d": "Hardest",
+          "t": "long_answer",
+          "m": 3,
+          "q": "8, 9 and 25 have HCF 1 (Exercise 1.1, Q3(iii)). Explain why the LCM of three numbers with HCF 1 is not always just their simple product, and then check whether it is for 8, 9 and 25 specifically.",
+          "a": "HCF 1 only means the numbers share no factor common to ALL three; two of them could still share a factor with each other, which would make the LCM smaller than the plain product. For 8 = 2 cubed, 9 = 3 squared and 25 = 5 squared specifically, no prime is shared even pairwise, so here LCM(8,9,25) does equal the simple product 8 x 9 x 25 = 1800.",
+          "s": [
+            [
+              "Explains that HCF 1 for three numbers does not rule out a factor shared by just two of them",
+              1
+            ],
+            [
+              "States that such a pairwise shared factor would make the LCM smaller than the plain product",
+              1
+            ],
+            [
+              "Checks 8, 9, 25 specifically and confirms LCM = 1800, equal to the plain product since no pair shares a factor either",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Evaluate",
+          "d": "Hard",
+          "t": "mcq",
+          "m": 1,
+          "q": "A student says: 'To find the LCM of any two numbers, I can always just multiply them together.' Using HCF(6,20) = 2 and LCM(6,20) = 60 from this chapter, evaluate this claim.",
+          "a": "The claim is false in general -- 6 x 20 = 120, not 60, because 6 and 20 share the common factor 2; simple multiplication only gives the LCM when the HCF is 1",
+          "o": [
+            "The claim is false in general -- 6 x 20 = 120, not 60, because 6 and 20 share the common factor 2; simple multiplication only gives the LCM when the HCF is 1",
+            "The claim is true, and 6 x 20 = 60 confirms it",
+            "The claim is true only for numbers larger than 20",
+            "The claim is false, because the LCM can never be found by multiplication"
+          ]
+        },
+        {
+          "b": "Create",
+          "d": "Hardest",
+          "t": "long_answer",
+          "m": 3,
+          "q": "Choose two positive integers of your own, both greater than 20, that share a common factor greater than 1. Find their HCF and LCM by the prime factorisation method, and verify that HCF x LCM equals the product of your two numbers.",
+          "a": "Answers will vary. For example, 24 and 36: 24 = 2 cubed x 3, 36 = 2 squared x 3 squared. HCF = 2 squared x 3 = 12, LCM = 2 cubed x 3 squared = 72. Check: 12 x 72 = 864, and 24 x 36 = 864, so they match.",
+          "s": [
+            [
+              "Chooses two numbers greater than 20 that share a common factor greater than 1",
+              1
+            ],
+            [
+              "Correctly finds their HCF and LCM by the prime factorisation method",
+              1
+            ],
+            [
+              "Verifies that HCF x LCM equals the product of the chosen numbers",
+              1
+            ]
+          ]
+        }
       ]
-     ]
     },
     {
-     "b": "Analyse",
-     "d": "Hard",
-     "t": "mcq",
-     "m": 1,
-     "q": "A pair of numbers has HCF 15 and product 900. A second pair has HCF 20 and the same product, 900. Which pair has the larger LCM?",
-     "a": "The pair with HCF 15, since LCM = product / HCF, and dividing 900 by the smaller HCF gives the larger result",
-     "o": [
-      "The pair with HCF 15, since LCM = product / HCF, and dividing 900 by the smaller HCF gives the larger result",
-      "The pair with HCF 20, since a larger HCF should give a larger LCM",
-      "Both pairs must have the same LCM, since they have the same product",
-      "It cannot be determined without knowing the individual numbers"
-     ]
-    },
-    {
-     "b": "Analyse",
-     "d": "Hard",
-     "t": "mcq",
-     "m": 1,
-     "q": "A pair of positive integers is claimed to have HCF 4 and LCM 90. Is this possible?",
-     "a": "No -- since the HCF must always exactly divide the LCM, and 90 is not a multiple of 4, no such pair exists",
-     "o": [
-      "No -- since the HCF must always exactly divide the LCM, and 90 is not a multiple of 4, no such pair exists",
-      "Yes -- for example 8 and 45 have HCF 4 and LCM 90",
-      "Yes -- any HCF and any LCM can be paired together, regardless of divisibility",
-      "No -- an HCF and an LCM can never both be even numbers at once"
-     ]
-    },
-    {
-     "b": "Analyse",
-     "d": "Hardest",
-     "t": "long_answer",
-     "m": 3,
-     "q": "A pair of positive integers has LCM 72. List every value their HCF could possibly take, given that the HCF must always exactly divide the LCM. (There is more than one possible value.)",
-     "a": "The HCF must be a divisor of 72, so it could be any of 1, 2, 3, 4, 6, 8, 9, 12, 18, 24, 36 or 72.",
-     "s": [
-      [
-       "States that the HCF must be one of the divisors of 72",
-       1
-      ],
-      [
-       "Lists the divisors of 72 correctly (1, 2, 3, 4, 6, 8, 9, 12, 18, 24, 36, 72)",
-       1
-      ],
-      [
-       "Recognises there is more than one possible value, not a single fixed answer",
-       1
+      "code": "C10M-1.3",
+      "name": "The HCF x LCM = product relation (and why three numbers differ)",
+      "description": "For two positive integers a and b, HCF(a,b) times LCM(a,b) equals a times b; this exact relation does not carry over to three positive integers.",
+      "idea": "Multiplying the two numbers together and multiplying HCF by LCM both end up combining the smallest and greatest powers of every prime involved -- for two numbers these always turn out to match, but with three numbers, factors can be shared between just two of them and the simple match breaks down.",
+      "rule": "For any two positive integers a and b: HCF(a,b) x LCM(a,b) = a x b. This lets you find LCM from a known HCF (or HCF from a known LCM). For three positive integers p, q, r in general, HCF(p,q,r) x LCM(p,q,r) is NOT equal to p x q x r.",
+      "example": "Given HCF(306, 657) = 9, LCM(306, 657) = (306 x 657) / 9 = 22338. But for 6, 72 and 120: HCF = 6, LCM = 360, so HCF x LCM = 2160, while 6 x 72 x 120 = 51840 -- the two are not equal.",
+      "difficulty_base": "Hard",
+      "questions": [
+        {
+          "b": "Remember",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "For any two positive integers a and b, HCF(a,b) multiplied by LCM(a,b) equals",
+          "a": "a multiplied by b",
+          "o": [
+            "a multiplied by b",
+            "a plus b",
+            "a minus b",
+            "a divided by b"
+          ]
+        },
+        {
+          "b": "Remember",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "For 6 and 20, this chapter shows HCF(6,20) x LCM(6,20) equals",
+          "a": "6 x 20",
+          "o": [
+            "6 x 20",
+            "6 + 20",
+            "20 x 20",
+            "6 x 6"
+          ]
+        },
+        {
+          "b": "Remember",
+          "d": "Easy",
+          "t": "fill_blank",
+          "m": 1,
+          "q": "Given HCF(306, 657) = 9, the rule HCF x LCM = product lets us find LCM(306, 657) = (306 x 657) / ____.",
+          "a": "9"
+        },
+        {
+          "b": "Remember",
+          "d": "Hard",
+          "t": "mcq",
+          "m": 1,
+          "q": "Which of the following is NOT correct about the relation between HCF, LCM and the product of positive integers?",
+          "a": "The relation HCF(a,b) x LCM(a,b) = a x b, true for two positive integers, also holds for any three positive integers p, q and r",
+          "o": [
+            "The relation HCF(a,b) x LCM(a,b) = a x b, true for two positive integers, also holds for any three positive integers p, q and r",
+            "For two positive integers a and b, HCF(a,b) x LCM(a,b) = a x b",
+            "Given HCF(306, 657) = 9, LCM(306, 657) works out to 22338",
+            "For 6, 72 and 120, the product 6 x 72 x 120 is not equal to HCF(6,72,120) x LCM(6,72,120)"
+          ],
+          "rev": true
+        },
+        {
+          "b": "Understand",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "Why is the rule HCF(a,b) x LCM(a,b) = a x b useful when you already know one of HCF or LCM?",
+          "a": "It lets you find the other one directly by division, without factorising the numbers again",
+          "o": [
+            "It lets you find the other one directly by division, without factorising the numbers again",
+            "It lets you avoid ever computing an HCF or LCM at all",
+            "It only works after you have already found both HCF and LCM separately by other means",
+            "It replaces the need to know the prime factorisation method"
+          ]
+        },
+        {
+          "b": "Understand",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "Example 4 in this chapter finds HCF(6,72,120) = 6 and LCM(6,72,120) = 360, and then notes that 6 x 72 x 120 is NOT equal to 6 x 360. What does this show?",
+          "a": "The simple product rule HCF x LCM = product, which holds for two numbers, does not carry over to three numbers",
+          "o": [
+            "The simple product rule HCF x LCM = product, which holds for two numbers, does not carry over to three numbers",
+            "The prime factorisation method gives the wrong answer whenever there are three numbers",
+            "6, 72 and 120 must have been factorised incorrectly",
+            "HCF and LCM cannot both be found for three numbers at the same time"
+          ]
+        },
+        {
+          "b": "Understand",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "A NOTE TO THE READER at the end of this chapter gives more complicated formulas connecting HCF(p,q,r) and LCM(p,q,r) for three numbers. Why are these formulas more complicated than the simple two-number rule?",
+          "a": "Because for three numbers the simple product rule does not hold, so a correct relationship also needs the pairwise HCFs (or LCMs) of the numbers taken two at a time",
+          "o": [
+            "Because for three numbers the simple product rule does not hold, so a correct relationship also needs the pairwise HCFs (or LCMs) of the numbers taken two at a time",
+            "Because three-number problems cannot actually be solved using HCF and LCM at all",
+            "Because the formulas are just an optional, equivalent way of writing the two-number rule",
+            "Because prime factorisation itself stops working once there are three or more numbers"
+          ]
+        },
+        {
+          "b": "Understand",
+          "d": "Hard",
+          "t": "mcq",
+          "m": 1,
+          "q": "For two positive integers a and b that are coprime (HCF(a,b) = 1), what does the rule HCF(a,b) x LCM(a,b) = a x b tell you about LCM(a,b)?",
+          "a": "LCM(a,b) = a x b, i.e. the LCM is just the simple product, since the HCF is 1",
+          "o": [
+            "LCM(a,b) = a x b, i.e. the LCM is just the simple product, since the HCF is 1",
+            "LCM(a,b) = 1, the same as the HCF",
+            "LCM(a,b) cannot be found unless the numbers share a factor",
+            "LCM(a,b) = a + b"
+          ]
+        },
+        {
+          "b": "Understand",
+          "d": "Hard",
+          "t": "mcq",
+          "m": 1,
+          "q": "17, 23 and 29 are pairwise coprime, and Exercise 1.1 gives LCM(17,23,29) as the simple product 17 x 23 x 29. Does this mean the two-number rule HCF x LCM = product from Example 2 now also holds for these three numbers?",
+          "a": "Not for the reason given in Example 2 -- it works here only because being pairwise coprime is a special case, not because the general two-number rule extends to three numbers",
+          "o": [
+            "Not for the reason given in Example 2 -- it works here only because being pairwise coprime is a special case, not because the general two-number rule extends to three numbers",
+            "Yes, this proves the two-number rule extends to any three numbers",
+            "No, because 17, 23 and 29 are not actually coprime",
+            "Yes, but only because all three numbers happen to be prime"
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Easy",
+          "t": "fill_blank",
+          "m": 1,
+          "q": "Since HCF(6,20) = 2 and 6 x 20 = 120, LCM(6,20) must equal 120 / ____.",
+          "a": "2"
+        },
+        {
+          "b": "Apply",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "If HCF(a, b) = 5 and a x b = 150, then LCM(a, b) =",
+          "a": "30",
+          "o": [
+            "30",
+            "5",
+            "150",
+            "750"
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Hard",
+          "t": "long_answer",
+          "m": 3,
+          "q": "Given HCF(96, 404) = 4 (found by prime factorisation in this chapter), find LCM(96, 404) using the product rule, showing your working.",
+          "a": "LCM(96,404) = (96 x 404) / 4 = 38784 / 4 = 9696.",
+          "s": [
+            [
+              "States the rule LCM = product / HCF",
+              1
+            ],
+            [
+              "Computes 96 x 404 = 38784",
+              1
+            ],
+            [
+              "Divides by 4 to get 9696",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Hard",
+          "t": "mcq",
+          "m": 1,
+          "q": "Two positive integers have HCF 8 and LCM 96. Their product must be",
+          "a": "768",
+          "o": [
+            "768",
+            "104",
+            "12",
+            "776"
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Hard",
+          "t": "mcq",
+          "m": 1,
+          "q": "Two positive integers have product 480 and LCM 60. Their HCF must be",
+          "a": "8",
+          "o": [
+            "8",
+            "60",
+            "420",
+            "28800"
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Hardest",
+          "t": "long_answer",
+          "m": 3,
+          "q": "For 6, 72 and 120 this chapter shows HCF x LCM (= 2160) is not equal to the product of the three numbers (= 51840). Compute how many times bigger the actual product is than HCF x LCM, and explain in one sentence why this gap exists for three numbers but never for two.",
+          "a": "51840 / 2160 = 24. The gap exists because with three numbers a prime factor can be shared between just two of them rather than all three, and the simple HCF x LCM rule does not correctly account for this in-between sharing, whereas with only two numbers there is no such in-between case.",
+          "s": [
+            [
+              "Computes 51840 / 2160 = 24",
+              1
+            ],
+            [
+              "Identifies that a prime factor can be shared by just two of the three numbers, not all three",
+              1
+            ],
+            [
+              "States this in-between sharing cannot arise when there are only two numbers",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Analyse",
+          "d": "Hard",
+          "t": "assertion_reason",
+          "m": 1,
+          "q": "Assertion (A): HCF(6, 72, 120) times LCM(6, 72, 120) equals 6 times 72 times 120. Reason (R): For any two positive integers a and b, HCF(a, b) times LCM(a, b) equals a times b. Choose the correct option.",
+          "a": "A is false, R is true",
+          "o": [
+            "A is false, R is true",
+            "A is true, R is false",
+            "Both A and R are true, and R is the correct explanation of A",
+            "Both A and R are true, but R is not the correct explanation of A"
+          ]
+        },
+        {
+          "b": "Analyse",
+          "d": "Hard",
+          "t": "multi_statement",
+          "m": 1,
+          "q": "Consider these statements. (I) HCF(96, 404) times LCM(96, 404) equals 96 times 404. (II) For the three numbers 6, 72 and 120, HCF times LCM equals their product 6 times 72 times 120. (III) square root of 2 can be expressed as a ratio of two coprime integers. Which is or are correct?",
+          "a": "Only I",
+          "o": [
+            "Only I",
+            "Only II",
+            "Only I and III",
+            "None of these"
+          ]
+        },
+        {
+          "b": "Analyse",
+          "d": "Hardest",
+          "t": "long_answer",
+          "m": 3,
+          "q": "A pair of positive integers has LCM 72. List every value their HCF could possibly take, given that the HCF must always exactly divide the LCM. (There is more than one possible value.)",
+          "a": "The HCF must be a divisor of 72, so it could be any of 1, 2, 3, 4, 6, 8, 9, 12, 18, 24, 36 or 72.",
+          "s": [
+            [
+              "States that the HCF must be one of the divisors of 72",
+              1
+            ],
+            [
+              "Lists the divisors of 72 correctly (1, 2, 3, 4, 6, 8, 9, 12, 18, 24, 36, 72)",
+              1
+            ],
+            [
+              "Recognises there is more than one possible value, not a single fixed answer",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Evaluate",
+          "d": "Hard",
+          "t": "assertion_reason",
+          "m": 1,
+          "q": "Assertion (A): HCF(6, 72, 120) x LCM(6, 72, 120) is equal to 6 x 72 x 120. Reason (R): For any two positive integers a and b, HCF(a,b) x LCM(a,b) = a x b.",
+          "a": "A is false, R is true",
+          "o": [
+            "A is false, R is true",
+            "A is true, R is false",
+            "Both A and R are true, and R is the correct explanation of A",
+            "Both A and R are true, but R is not the correct explanation of A"
+          ]
+        },
+        {
+          "b": "Create",
+          "d": "Hardest",
+          "t": "long_answer",
+          "m": 3,
+          "q": "Construct your own example of three positive integers, all different from 6, 72 and 120, for which the product of the three numbers is NOT equal to HCF x LCM of the three numbers. Show the factorisations, the HCF, the LCM and both products to prove your example works.",
+          "a": "Answers will vary. For example, 4, 6 and 10: 4 = 2 squared, 6 = 2 x 3, 10 = 2 x 5. HCF = 2, LCM = 2 squared x 3 x 5 = 60. HCF x LCM = 120. Product 4 x 6 x 10 = 240. Since 120 is not equal to 240, this example works.",
+          "s": [
+            [
+              "Chooses three numbers other than 6, 72, 120 that share at least one common factor",
+              1
+            ],
+            [
+              "Correctly finds the HCF and LCM of the chosen numbers",
+              1
+            ],
+            [
+              "Shows HCF x LCM and the plain product and confirms they differ",
+              1
+            ]
+          ]
+        }
       ]
-     ]
     },
     {
-     "b": "Evaluate",
-     "d": "Hard",
-     "t": "assertion_reason",
-     "m": 1,
-     "q": "Assertion (A): HCF(6, 72, 120) x LCM(6, 72, 120) is equal to 6 x 72 x 120. Reason (R): For any two positive integers a and b, HCF(a,b) x LCM(a,b) = a x b.",
-     "a": "A is false, R is true",
-     "o": [
-      "A is false, R is true",
-      "A is true, R is false",
-      "Both A and R are true, and R is the correct explanation of A",
-      "Both A and R are true, but R is not the correct explanation of A"
-     ]
-    },
-    {
-     "b": "Create",
-     "d": "Hardest",
-     "t": "long_answer",
-     "m": 3,
-     "q": "Construct your own example of three positive integers, all different from 6, 72 and 120, for which the product of the three numbers is NOT equal to HCF x LCM of the three numbers. Show the factorisations, the HCF, the LCM and both products to prove your example works.",
-     "a": "Answers will vary. For example, 4, 6 and 10: 4 = 2 squared, 6 = 2 x 3, 10 = 2 x 5. HCF = 2, LCM = 2 squared x 3 x 5 = 60. HCF x LCM = 120. Product 4 x 6 x 10 = 240. Since 120 is not equal to 240, this example works.",
-     "s": [
-      [
-       "Chooses three numbers other than 6, 72, 120 that share at least one common factor",
-       1
-      ],
-      [
-       "Correctly finds the HCF and LCM of the chosen numbers",
-       1
-      ],
-      [
-       "Shows HCF x LCM and the plain product and confirms they differ",
-       1
+      "code": "C10M-1.4",
+      "name": "Using the Fundamental Theorem of Arithmetic to reason about numbers",
+      "description": "Deciding whether a power of a given number can end in a particular digit, and explaining why certain expressions are composite, by examining their prime factors.",
+      "idea": "A number's last digit being 0 is controlled by whether both 2 and 5 are among its prime factors, and a sum is composite whenever every term in it already shares a common factor greater than 1, because that shared factor can be pulled out to expose a proper factor of the whole sum.",
+      "rule": "A positive integer ends in the digit 0 exactly when its prime factorisation contains both 2 and 5. If every term of a sum has a common factor k greater than 1, the sum itself is divisible by k and so is composite (as long as the sum is bigger than k).",
+      "example": "4 to the power n = 2 to the power (2n) has only 2 as a prime factor, never 5, so 4 to the power n can never end in 0. Likewise 7 x 11 x 13 + 13 = 13 x (7 x 11 + 1) = 13 x 78, which is composite because 13 is a common factor of both terms.",
+      "difficulty_base": "Hard",
+      "questions": [
+        {
+          "b": "Remember",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "A positive integer's decimal representation ends in the digit 0 exactly when its prime factorisation contains",
+          "a": "both 2 and 5",
+          "o": [
+            "both 2 and 5",
+            "only 2",
+            "only 5",
+            "either 2 or 5, but not necessarily both"
+          ]
+        },
+        {
+          "b": "Remember",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "In Example 1, why can 4 to the power n never end in the digit 0?",
+          "a": "Because 4 to the power n = 2 to the power (2n), so its only prime factor is 2, and it never contains 5",
+          "o": [
+            "Because 4 to the power n = 2 to the power (2n), so its only prime factor is 2, and it never contains 5",
+            "Because 4 is an even number",
+            "Because n is always a small number",
+            "Because 4 to the power n is always an odd number"
+          ]
+        },
+        {
+          "b": "Remember",
+          "d": "Easy",
+          "t": "fill_blank",
+          "m": 1,
+          "q": "7 x 11 x 13 + 13 = 13 x (7 x 11 + 1) = 13 x ____.",
+          "a": "78"
+        },
+        {
+          "b": "Remember",
+          "d": "Hard",
+          "t": "mcq",
+          "m": 1,
+          "q": "Which of the following is NOT correct?",
+          "a": "10 to the power n can never end in the digit 0, by the same reasoning as 4 to the power n and 6 to the power n, because its only prime factor is 2",
+          "o": [
+            "10 to the power n can never end in the digit 0, by the same reasoning as 4 to the power n and 6 to the power n, because its only prime factor is 2",
+            "4 to the power n can never end in the digit 0, for any natural number n",
+            "6 to the power n can never end in the digit 0, for any natural number n",
+            "7 x 11 x 13 + 13 is composite because 13 divides both 7 x 11 x 13 and 13"
+          ],
+          "rev": true
+        },
+        {
+          "b": "Understand",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "Why does 6 to the power n never end in the digit 0, even though 2 is one of its prime factors?",
+          "a": "Because 6 to the power n = 2 to the power n x 3 to the power n, which never has 5 as a prime factor",
+          "o": [
+            "Because 6 to the power n = 2 to the power n x 3 to the power n, which never has 5 as a prime factor",
+            "Because 6 is not actually divisible by 2",
+            "Because only odd numbers can ever end in the digit 0",
+            "Because 6 to the power n always ends in the digit 6"
+          ]
+        },
+        {
+          "b": "Understand",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "In the proof that 7 x 11 x 13 + 13 is composite, why is it useful that 13 is a common factor of both 7 x 11 x 13 and 13?",
+          "a": "It lets the whole sum be rewritten as 13 times another whole number, which directly shows 13 is a factor of the sum",
+          "o": [
+            "It lets the whole sum be rewritten as 13 times another whole number, which directly shows 13 is a factor of the sum",
+            "It shows that 13 itself must be a composite number",
+            "It proves that 7, 11 and 13 are not actually prime numbers",
+            "It is not actually useful; the compositeness is shown a different way"
+          ]
+        },
+        {
+          "b": "Understand",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "A number is said to be composite because it can be written as k times (some other whole number), where k is greater than 1. What extra check is needed before this actually proves the number is composite?",
+          "a": "That the 'other whole number' is also bigger than 1, so the number has a factor other than 1 and itself",
+          "o": [
+            "That the 'other whole number' is also bigger than 1, so the number has a factor other than 1 and itself",
+            "That k itself is a prime number",
+            "That the number being tested is even",
+            "No extra check is needed -- any such expression already proves compositeness"
+          ]
+        },
+        {
+          "b": "Understand",
+          "d": "Hard",
+          "t": "mcq",
+          "m": 1,
+          "q": "7 x 6 x 5 x 4 x 3 x 2 x 1 + 5 is shown to be composite using the common factor 5. What is the correct reason 5 divides 7 x 6 x 5 x 4 x 3 x 2 x 1?",
+          "a": "Because 5 itself is one of the numbers being multiplied together in that product",
+          "o": [
+            "Because 5 itself is one of the numbers being multiplied together in that product",
+            "Because 7 x 6 x 5 x 4 x 3 x 2 x 1 happens to be an even number",
+            "Because the product of any six consecutive numbers is always divisible by 5",
+            "Because 5 is added afterwards, which is unrelated to the multiplication"
+          ]
+        },
+        {
+          "b": "Understand",
+          "d": "Hard",
+          "t": "mcq",
+          "m": 1,
+          "q": "20 to the power n = 2 to the power (2n) x 5 to the power n. Based on the reasoning used for 4 to the power n and 6 to the power n in this chapter, what can you say about 20 to the power n ending in the digit 0?",
+          "a": "Unlike 4 to the power n and 6 to the power n, 20 to the power n DOES end in the digit 0 for every natural number n, since its prime factorisation contains both 2 and 5",
+          "o": [
+            "Unlike 4 to the power n and 6 to the power n, 20 to the power n DOES end in the digit 0 for every natural number n, since its prime factorisation contains both 2 and 5",
+            "It behaves exactly like 4 to the power n and can never end in the digit 0",
+            "It cannot be determined without checking every value of n separately",
+            "It ends in the digit 0 only when n is an even number"
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "Which of these numbers can be ruled out from ever ending in the digit 0, by the reasoning of this chapter?",
+          "a": "9 to the power n, since 9 to the power n = 3 to the power (2n) has no factor of 2 or 5",
+          "o": [
+            "9 to the power n, since 9 to the power n = 3 to the power (2n) has no factor of 2 or 5",
+            "20 to the power n, since it has factors of both 2 and 5",
+            "10 to the power n, since it has factors of both 2 and 5",
+            "2 to the power n x 5 to the power n, since it has factors of both 2 and 5"
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Easy",
+          "t": "fill_blank",
+          "m": 1,
+          "q": "3 x 5 x 7 + 7 = 7 x (3 x 5 + 1) = 7 x ____, which is composite.",
+          "a": "16"
+        },
+        {
+          "b": "Apply",
+          "d": "Hard",
+          "t": "mcq",
+          "m": 1,
+          "q": "25 to the power n = 5 to the power (2n). By the reasoning used in this chapter, 25 to the power n",
+          "a": "can never end in the digit 0, since it has no factor of 2",
+          "o": [
+            "can never end in the digit 0, since it has no factor of 2",
+            "always ends in the digit 0, since it has a factor of 5",
+            "always ends in the digit 5, and can also end in 0 for large n",
+            "cannot be analysed this way since 25 is not a prime number"
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Hard",
+          "t": "short_answer",
+          "m": 2,
+          "q": "Explain why 15 to the power n can never end in the digit 0, even though 15 = 3 x 5 already contains the prime factor 5.",
+          "a": "15 to the power n = 3 to the power n x 5 to the power n has no factor of 2 at all, and a number needs BOTH 2 and 5 in its prime factorisation to end in 0, so 15 to the power n never ends in 0 (it always ends in 5).",
+          "s": [
+            [
+              "States that 15 to the power n has no factor of 2",
+              1
+            ],
+            [
+              "Concludes it cannot end in 0 because both 2 and 5 are needed",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Hard",
+          "t": "short_answer",
+          "m": 2,
+          "q": "Show that 5 x 6 x 7 + 5 is composite, following the method used in this chapter for 7 x 11 x 13 + 13.",
+          "a": "5 x 6 x 7 + 5 = 5 x (6 x 7 + 1) = 5 x 43 = 215, which is composite since it is 5 times a whole number bigger than 1.",
+          "s": [
+            [
+              "Rewrites the sum as 5 x (6 x 7 + 1)",
+              1
+            ],
+            [
+              "Simplifies to 5 x 43 = 215 and concludes it is composite",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Hardest",
+          "t": "long_answer",
+          "m": 3,
+          "q": "Show that 2 x 3 x 5 x 7 + 3 is composite, using a common factor -- first identify the common factor of both terms, since it is not as obvious here as in the worked examples in this chapter.",
+          "a": "2 x 3 x 5 x 7 = 210, and the second term is 3. The common factor of 210 and 3 is 3, since 3 divides 210 as well. So 2 x 3 x 5 x 7 + 3 = 3 x (2 x 5 x 7 + 1) = 3 x 71 = 213, which is composite.",
+          "s": [
+            [
+              "Identifies 3 as the common factor of both 2 x 3 x 5 x 7 and 3",
+              1
+            ],
+            [
+              "Rewrites the sum as 3 x (2 x 5 x 7 + 1) = 3 x 71",
+              1
+            ],
+            [
+              "States the result, 213, is composite, being 3 times a whole number bigger than 1",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Analyse",
+          "d": "Hard",
+          "t": "multi_statement",
+          "m": 1,
+          "q": "Consider: (I) 6 to the power n can end in the digit 0, for some natural number n. (II) 7 x 6 x 5 x 4 x 3 x 2 x 1 + 5 is composite because 5 divides both 7 x 6 x 5 x 4 x 3 x 2 x 1 and 5. Which is or are correct?",
+          "a": "Only II",
+          "o": [
+            "Only II",
+            "Only I",
+            "Both I and II",
+            "Neither I nor II"
+          ]
+        },
+        {
+          "b": "Analyse",
+          "d": "Hard",
+          "t": "assertion_reason",
+          "m": 1,
+          "q": "Assertion (A): 4 to the power n can never end in the digit 0, for any natural number n. Reason (R): The prime factorisation of 4 to the power n contains only the prime 2, and never the prime 5. Choose the correct option.",
+          "a": "Both A and R are true, and R is the correct explanation of A",
+          "o": [
+            "Both A and R are true, and R is the correct explanation of A",
+            "Both A and R are true, but R is not the correct explanation of A",
+            "A is true, R is false",
+            "A is false, R is true"
+          ]
+        },
+        {
+          "b": "Analyse",
+          "d": "Hardest",
+          "t": "long_answer",
+          "m": 3,
+          "q": "40 to the power n = 2 to the power (3n) x 5 to the power n. Determine whether 40 to the power n can end in the digit 0, and contrast this with why 4 to the power n (from Example 1) cannot.",
+          "a": "40 to the power n has BOTH 2 and 5 as prime factors (unlike 4 to the power n, whose only prime factor is 2), so 40 to the power n DOES end in the digit 0 for every natural number n; this is the key difference from 4 to the power n, which lacks the factor of 5 entirely.",
+          "s": [
+            [
+              "States that 40 to the power n has both 2 and 5 as prime factors",
+              1
+            ],
+            [
+              "Concludes 40 to the power n does end in the digit 0 for every n",
+              1
+            ],
+            [
+              "Contrasts this correctly with 4 to the power n, which lacks a factor of 5",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Evaluate",
+          "d": "Hard",
+          "t": "mcq",
+          "m": 1,
+          "q": "A student argues: 'Since 6 to the power n = 2 to the power n x 3 to the power n has 2 as a factor, and any number with 2 as a factor is even, 6 to the power n must be able to end in 0, just like other even numbers sometimes do.' Evaluate this argument.",
+          "a": "The argument is flawed -- being even only allows a number to end in 0, 2, 4, 6 or 8; ending specifically in 0 additionally requires a factor of 5, which 6 to the power n never has",
+          "o": [
+            "The argument is flawed -- being even only allows a number to end in 0, 2, 4, 6 or 8; ending specifically in 0 additionally requires a factor of 5, which 6 to the power n never has",
+            "The argument is correct, since every even number can end in 0 for some power",
+            "The argument is correct, because 6 itself ends in the digit 6, which is close to 0",
+            "The argument is flawed because 6 to the power n is not actually an even number"
+          ]
+        },
+        {
+          "b": "Create",
+          "d": "Hardest",
+          "t": "long_answer",
+          "m": 3,
+          "q": "Invent your own product-plus-term expression, similar in style to 7 x 11 x 13 + 13 from this chapter, that is guaranteed to be composite. Use at least three different prime numbers in your product, and explain why your expression must be composite.",
+          "a": "Answers will vary. For example, 3 x 5 x 11 + 5 = 165 + 5 = 170. The common factor of both terms is 5, so 170 = 5 x (3 x 11 + 1) = 5 x 34, which is composite since 34 is a whole number bigger than 1.",
+          "s": [
+            [
+              "Builds a product-plus-term expression using at least three different primes",
+              1
+            ],
+            [
+              "Chooses the added term to share a common factor with the product",
+              1
+            ],
+            [
+              "Correctly shows the expression factors as (common factor) times (a whole number bigger than 1), proving it composite",
+              1
+            ]
+          ]
+        }
       ]
-     ]
+    },
+    {
+      "code": "C10M-1.5",
+      "name": "If a prime divides a squared, it divides a (Theorem 1.2)",
+      "description": "For a prime p and a positive integer a, if p divides a squared then p must divide a; this is the key step used to prove that square roots of primes are irrational.",
+      "idea": "Squaring a number only doubles up the prime factors it already has -- it cannot create a brand new prime factor -- so if a prime shows up in a squared, that same prime had to already be sitting inside a.",
+      "rule": "If p is prime and p divides a squared, where a is a positive integer, then p divides a.",
+      "example": "Since 2 divides b squared in the square-root-of-2 proof, Theorem 1.2 lets us conclude 2 divides b itself, which is exactly the step that produces the contradiction.",
+      "difficulty_base": "Hard",
+      "questions": [
+        {
+          "b": "Remember",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "Theorem 1.2 states: if p is a prime number and p divides a squared, then",
+          "a": "p divides a",
+          "o": [
+            "p divides a",
+            "a divides p",
+            "p equals a",
+            "a must also be prime"
+          ]
+        },
+        {
+          "b": "Remember",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "Theorem 1.2 requires which condition on the number p?",
+          "a": "p must be a prime number",
+          "o": [
+            "p must be a prime number",
+            "p must be an even number",
+            "p must be greater than a",
+            "p must be a perfect square"
+          ]
+        },
+        {
+          "b": "Remember",
+          "d": "Easy",
+          "t": "fill_blank",
+          "m": 1,
+          "q": "Theorem 1.2 is used with p = 2 to show that if 2 divides b squared, then 2 divides ____.",
+          "a": "b"
+        },
+        {
+          "b": "Remember",
+          "d": "Hard",
+          "t": "mcq",
+          "m": 1,
+          "q": "Which of the following is NOT correct about Theorem 1.2 (if a prime p divides a squared, then p divides a)?",
+          "a": "Since 4 divides 36 (which is 6 squared), Theorem 1.2 lets us conclude that 4 divides 6",
+          "o": [
+            "Since 4 divides 36 (which is 6 squared), Theorem 1.2 lets us conclude that 4 divides 6",
+            "Theorem 1.2 requires p to be a prime number",
+            "The theorem is used to conclude that 2 divides b, given that 2 divides b squared, in the proof that square root of 2 is irrational",
+            "By the theorem, since 3 is prime and 3 divides a squared in the proof for square root of 3, it follows that 3 divides a"
+          ],
+          "rev": true
+        },
+        {
+          "b": "Understand",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "Why does Theorem 1.2 specifically require p to be prime, rather than allowing any positive integer?",
+          "a": "Because for a non-prime p, a number can divide p's square without dividing p itself, so the result would not always hold",
+          "o": [
+            "Because for a non-prime p, a number can divide p's square without dividing p itself, so the result would not always hold",
+            "Because only prime numbers can ever be squared",
+            "Because the theorem is only ever used in this chapter with p = 2 or p = 3",
+            "Because non-prime numbers cannot divide anything at all"
+          ]
+        },
+        {
+          "b": "Understand",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "In the proof that square root of 2 is irrational, Theorem 1.2 is used twice. What is being shown each time?",
+          "a": "First that 2 divides a (from 2 dividing a squared), and then that 2 divides b (from 2 dividing b squared)",
+          "o": [
+            "First that 2 divides a (from 2 dividing a squared), and then that 2 divides b (from 2 dividing b squared)",
+            "That a and b are both prime numbers",
+            "That square root of 2 divides both a and b",
+            "That a squared and b squared are both prime numbers"
+          ]
+        },
+        {
+          "b": "Understand",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "Theorem 1.2 concludes 'p divides a'. What kind of statement is this?",
+          "a": "A statement about divisibility -- that a is a multiple of p -- not about the actual numerical value of a",
+          "o": [
+            "A statement about divisibility -- that a is a multiple of p -- not about the actual numerical value of a",
+            "A statement that a must equal p exactly",
+            "A statement that a is always bigger than p squared",
+            "A statement that a and p must be coprime"
+          ]
+        },
+        {
+          "b": "Understand",
+          "d": "Hard",
+          "t": "mcq",
+          "m": 1,
+          "q": "How does Theorem 1.2 rely on the Fundamental Theorem of Arithmetic?",
+          "a": "It uses the fact that the prime factorisation of a squared is unique, so if p is a prime factor of a squared, p must already have been a prime factor of a",
+          "o": [
+            "It uses the fact that the prime factorisation of a squared is unique, so if p is a prime factor of a squared, p must already have been a prime factor of a",
+            "It uses the fact that a squared is always bigger than a",
+            "It uses the HCF x LCM = product rule",
+            "It relies on a being an even number"
+          ]
+        },
+        {
+          "b": "Understand",
+          "d": "Hard",
+          "t": "mcq",
+          "m": 1,
+          "q": "Why can Theorem 1.2 be applied with p = 3 in the proof that square root of 3 is irrational, but the same style of proof could not directly use p = 4 in the same way?",
+          "a": "Because 3 is prime, satisfying Theorem 1.2's condition, while 4 is not prime, so Theorem 1.2 simply does not apply when p = 4",
+          "o": [
+            "Because 3 is prime, satisfying Theorem 1.2's condition, while 4 is not prime, so Theorem 1.2 simply does not apply when p = 4",
+            "Because 4 is larger than 3",
+            "Because square root of 4 is already known to be a whole number, so no proof is needed",
+            "Because Theorem 1.2 only ever works for odd values of p"
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "By Theorem 1.2, if 5 divides k squared for a positive integer k, then",
+          "a": "5 divides k",
+          "o": [
+            "5 divides k",
+            "k divides 5",
+            "k squared divides 5",
+            "5 equals k"
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Easy",
+          "t": "fill_blank",
+          "m": 1,
+          "q": "By Theorem 1.2 with p = 7, if 7 divides m squared, then 7 divides ____.",
+          "a": "m"
+        },
+        {
+          "b": "Apply",
+          "d": "Hard",
+          "t": "mcq",
+          "m": 1,
+          "q": "Given that 7 is prime and 7 divides 4900, and that 4900 = 70 squared, what does Theorem 1.2 let you conclude?",
+          "a": "7 divides 70",
+          "o": [
+            "7 divides 70",
+            "7 divides 4900 only, not 70",
+            "70 must be a prime number",
+            "4900 divides 7"
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Hard",
+          "t": "mcq",
+          "m": 1,
+          "q": "5 is prime, and 5 divides 900 (= 30 squared). By Theorem 1.2, it follows that",
+          "a": "5 divides 30",
+          "o": [
+            "5 divides 30",
+            "5 divides 900 but not 30",
+            "30 must itself be a prime number",
+            "900 cannot actually be a perfect square"
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Hard",
+          "t": "short_answer",
+          "m": 2,
+          "q": "13 is prime, and 676 = 26 squared. Given that 13 divides 676, use Theorem 1.2 to state what this tells you about 26, and verify your conclusion directly.",
+          "a": "By Theorem 1.2, since 13 is prime and divides 26 squared (676), 13 must divide 26. Checking directly: 26 / 13 = 2, confirming 13 does divide 26.",
+          "s": [
+            [
+              "States that Theorem 1.2 gives 13 divides 26",
+              1
+            ],
+            [
+              "Verifies directly that 26 / 13 = 2",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Hardest",
+          "t": "long_answer",
+          "m": 3,
+          "q": "17 is prime. Without computing 51 squared first, explain how you know in advance -- just from knowing that 51 = 3 x 17 -- that 17 will divide 51 squared, and connect this to what Theorem 1.2 then confirms.",
+          "a": "Since 51 = 3 x 17, 51 squared = 3 squared x 17 squared, which clearly contains 17 as a factor, so 17 divides 51 squared even before computing the full value. Theorem 1.2 then confirms (unsurprisingly, since it was already known) that 17 divides 51, which checks out directly since 51 / 17 = 3.",
+          "s": [
+            [
+              "Explains that 51 squared = 3 squared x 17 squared contains 17 as a factor",
+              1
+            ],
+            [
+              "Concludes 17 divides 51 squared without needing the full computation",
+              1
+            ],
+            [
+              "Connects this to Theorem 1.2 confirming 17 divides 51, and checks it directly (51 / 17 = 3)",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Analyse",
+          "d": "Hard",
+          "t": "assertion_reason",
+          "m": 1,
+          "q": "Assertion (A): If 3 divides c squared, then 3 divides c. Reason (R): Theorem 1.2 also holds when p is replaced by 4, since 4 divides a squared whenever 4 divides a. Choose the correct option.",
+          "a": "A is true, R is false",
+          "o": [
+            "A is true, R is false",
+            "A is false, R is true",
+            "Both A and R are true, and R is the correct explanation of A",
+            "Both A and R are true, but R is not the correct explanation of A"
+          ]
+        },
+        {
+          "b": "Analyse",
+          "d": "Hard",
+          "t": "multi_statement",
+          "m": 1,
+          "q": "Consider these statements about Theorem 1.2. (I) If 7 divides k squared, then 7 divides k, since 7 is prime. (II) Every composite number can be factorised as a product of primes in more than one way. (III) Theorem 1.2's own proof is based on the Fundamental Theorem of Arithmetic. Which is or are correct?",
+          "a": "Only I and III",
+          "o": [
+            "Only I and III",
+            "Only I and II",
+            "Only II and III",
+            "All of these"
+          ]
+        },
+        {
+          "b": "Analyse",
+          "d": "Hardest",
+          "t": "long_answer",
+          "m": 3,
+          "q": "In the proof that square root of 2 is irrational, Theorem 1.2 is applied first to conclude 2 divides a, and later to conclude 2 divides b. Explain why the SAME theorem, with the SAME value of p = 2, can be legitimately applied twice in one proof to two different numbers.",
+          "a": "Theorem 1.2 is a general statement about any prime p and any positive integer whose square that prime divides -- it does not restrict how many times or to which numbers it is applied. The proof first shows 2 divides a squared (so 2 divides a, by the theorem), and later, after substitution, shows 2 divides b squared (so 2 divides b, by the same theorem applied to a different positive integer).",
+          "s": [
+            [
+              "Explains Theorem 1.2 is a general statement, not limited to one use per proof",
+              1
+            ],
+            [
+              "Identifies it is applied once to a (from a squared) and once to b (from b squared)",
+              1
+            ],
+            [
+              "States both applications are valid since each starts from p dividing that number's square",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Evaluate",
+          "d": "Hard",
+          "t": "assertion_reason",
+          "m": 1,
+          "q": "Assertion (A): If 5 divides k squared for a positive integer k, then 5 divides k. Reason (R): The Fundamental Theorem of Arithmetic says every composite number has a unique prime factorisation.",
+          "a": "Both A and R are true, but R is not the correct explanation of A",
+          "o": [
+            "Both A and R are true, but R is not the correct explanation of A",
+            "A is false, R is true",
+            "A is true, R is false",
+            "Both A and R are true, and R is the correct explanation of A"
+          ]
+        },
+        {
+          "b": "Create",
+          "d": "Hardest",
+          "t": "long_answer",
+          "m": 3,
+          "q": "State Theorem 1.2 for a prime of your own choice (not 2, 3, 5, 7, 11, 13 or 17, which are all used elsewhere in this chapter), and illustrate it with a specific positive integer example -- that is, give a concrete a such that your chosen prime divides a squared, and confirm the prime divides a.",
+          "a": "Answers will vary. For example, choosing p = 19: 19 is prime, and 19 divides 1444 (= 38 squared, since 38 = 2 x 19); by Theorem 1.2, 19 must divide 38, which checks out since 38 / 19 = 2.",
+          "s": [
+            [
+              "Chooses a prime not already used elsewhere in the chapter (not 2,3,5,7,11,13,17)",
+              1
+            ],
+            [
+              "Gives a specific positive integer a where the chosen prime divides a squared",
+              1
+            ],
+            [
+              "Confirms the prime divides a, matching Theorem 1.2's conclusion",
+              1
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "code": "C10M-1.6",
+      "name": "Proving irrationality by contradiction",
+      "description": "Proving that square root of 2, square root of 3, square root of 5 and expressions built from them are irrational, by assuming the opposite and reaching a contradiction using Theorem 1.2.",
+      "idea": "Assuming a square root were a fraction in lowest terms and squaring it forces the prime under the root to divide both the numerator and denominator, contradicting that they had no common factor -- so the assumption must be false.",
+      "rule": "To prove square root of p (p prime) is irrational: assume square root of p = a/b in lowest terms (a, b coprime); square and rearrange to get p dividing a squared, so p divides a (Theorem 1.2); write a = pc, substitute, and show p also divides b -- contradicting that a and b are coprime.",
+      "example": "5 minus square root of 3 is irrational: if it equalled a/b, then square root of 3 = 5 minus a/b would be a ratio of integers, i.e. rational, contradicting that square root of 3 is irrational.",
+      "difficulty_base": "Hardest",
+      "questions": [
+        {
+          "b": "Remember",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "A number 's' is called irrational if it cannot be written in the form",
+          "a": "p/q, where p and q are integers and q is not 0",
+          "o": [
+            "p/q, where p and q are integers and q is not 0",
+            "p + q, where p and q are integers",
+            "p times q, where p and q are whole numbers",
+            "the square of an integer"
+          ]
+        },
+        {
+          "b": "Remember",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "The proof technique used in this chapter to show square root of 2 is irrational, where you assume the opposite and reach a contradiction, is called",
+          "a": "proof by contradiction",
+          "o": [
+            "proof by contradiction",
+            "proof by construction",
+            "the factor tree method",
+            "the prime factorisation method"
+          ]
+        },
+        {
+          "b": "Remember",
+          "d": "Easy",
+          "t": "fill_blank",
+          "m": 1,
+          "q": "In the proof that square root of 2 is irrational, we assume square root of 2 = a/b where a and b are ____.",
+          "a": "coprime"
+        },
+        {
+          "b": "Remember",
+          "d": "Hard",
+          "t": "mcq",
+          "m": 1,
+          "q": "Which of the following is NOT proved to be irrational in this chapter?",
+          "a": "square root of 9, since the chapter proves that the square root of any prime number is irrational",
+          "o": [
+            "square root of 9, since the chapter proves that the square root of any prime number is irrational",
+            "square root of 2",
+            "5 minus square root of 3",
+            "3 times square root of 2"
+          ],
+          "rev": true
+        },
+        {
+          "b": "Understand",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "Why does the proof that square root of 2 is irrational begin by assuming a and b are coprime (share no common factor other than 1)?",
+          "a": "So that if a contradiction later shows 2 divides both a and b, this directly contradicts the starting assumption and completes the proof",
+          "o": [
+            "So that if a contradiction later shows 2 divides both a and b, this directly contradicts the starting assumption and completes the proof",
+            "Because coprime numbers are easier to square",
+            "Because square root of 2 can only ever be written using coprime numbers if it happens to be rational",
+            "Because the Fundamental Theorem of Arithmetic requires every fraction to be coprime"
+          ]
+        },
+        {
+          "b": "Understand",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "In the proof for '5 minus square root of 3', why does assuming this quantity is rational lead to concluding square root of 3 is rational too?",
+          "a": "Because rearranging 5 minus square root of 3 = a/b gives square root of 3 = 5 minus a/b, and 5 minus a/b is a ratio of integers, i.e. rational",
+          "o": [
+            "Because rearranging 5 minus square root of 3 = a/b gives square root of 3 = 5 minus a/b, and 5 minus a/b is a ratio of integers, i.e. rational",
+            "Because 5 is itself an irrational number",
+            "Because subtracting any rational number always produces an irrational result",
+            "Because a/b and square root of 3 must always be exactly equal"
+          ]
+        },
+        {
+          "b": "Understand",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "The proof that 3 times square root of 2 is irrational rearranges 3 times square root of 2 = a/b to get square root of 2 = a/(3b). Why does this show square root of 2 is rational, giving the needed contradiction?",
+          "a": "Because a and 3b are both integers, so a/(3b) is a ratio of integers, which is exactly what 'rational' means",
+          "o": [
+            "Because a and 3b are both integers, so a/(3b) is a ratio of integers, which is exactly what 'rational' means",
+            "Because 3b is always an even number",
+            "Because a/(3b) always simplifies to a whole number",
+            "Because square root of 2 always equals exactly one third of a/b"
+          ]
+        },
+        {
+          "b": "Understand",
+          "d": "Hard",
+          "t": "mcq",
+          "m": 1,
+          "q": "This chapter states that the sum or difference of a rational number and an irrational number is irrational. How does the proof for '5 minus square root of 3' relate to this general statement?",
+          "a": "It proves one particular case of the general statement directly, using proof by contradiction, rather than simply assuming the general statement",
+          "o": [
+            "It proves one particular case of the general statement directly, using proof by contradiction, rather than simply assuming the general statement",
+            "It disproves the general statement using a counterexample",
+            "It is unrelated to the general statement mentioned earlier in the chapter",
+            "It assumes the general statement as already given, without proving anything new"
+          ]
+        },
+        {
+          "b": "Understand",
+          "d": "Hard",
+          "t": "mcq",
+          "m": 1,
+          "q": "Why does this chapter prove square root of 2 and square root of 3 individually (leaving square root of 5 as an exercise) rather than only proving 'square root of p is irrational for every prime p' once and stopping there?",
+          "a": "The chapter does state the general pattern (square root of p for any prime p) but walks through the specific p = 2 and p = 3 cases first so the method is clear before it is used more freely",
+          "o": [
+            "The chapter does state the general pattern (square root of p for any prime p) but walks through the specific p = 2 and p = 3 cases first so the method is clear before it is used more freely",
+            "Because the proof method for square root of 2 does not actually work for any other prime",
+            "Because square root of 3 is not actually an irrational number",
+            "Because only square root of 2 is examinable, and the other cases are optional"
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "By the method of this chapter, square root of 5 is",
+          "a": "irrational",
+          "o": [
+            "irrational",
+            "rational",
+            "an integer",
+            "not a real number"
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Easy",
+          "t": "fill_blank",
+          "m": 1,
+          "q": "In the proof for square root of 3, squaring b times square root of 3 = a gives 3 b squared = a ____.",
+          "a": "squared"
+        },
+        {
+          "b": "Apply",
+          "d": "Hard",
+          "t": "short_answer",
+          "m": 2,
+          "q": "Following the pattern used for square root of 2 and square root of 3 in this chapter, state the first two steps of a proof that square root of 5 is irrational: the assumption, and the equation obtained after squaring.",
+          "a": "Assume, to the contrary, that square root of 5 is rational, so square root of 5 = a/b for coprime integers a and b. Squaring both sides and rearranging gives 5 b squared = a squared.",
+          "s": [
+            [
+              "States the assumption that square root of 5 = a/b for coprime integers a and b",
+              1
+            ],
+            [
+              "States the squared equation 5 b squared = a squared",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Hard",
+          "t": "short_answer",
+          "m": 2,
+          "q": "Using the general fact stated in this chapter about a nonzero rational number and an irrational number, explain in one or two lines why 1 divided by square root of 2 is irrational.",
+          "a": "1/(square root of 2) is the quotient of the rational number 1 and the irrational number square root of 2 (which is nonzero); this chapter states that the quotient of a nonzero rational and an irrational number is irrational, so 1/(square root of 2) is irrational.",
+          "s": [
+            [
+              "Identifies 1/(square root of 2) as the quotient of the rational number 1 and the irrational square root of 2",
+              1
+            ],
+            [
+              "Correctly applies the stated general fact to conclude it is irrational",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Hard",
+          "t": "long_answer",
+          "m": 3,
+          "q": "Prove that 6 plus square root of 2 is irrational, following the same style of proof used in this chapter for 5 minus square root of 3.",
+          "a": "Assume, to the contrary, that 6 plus square root of 2 is rational, so 6 plus square root of 2 = a/b for coprime integers a, b (b not 0). Rearranging, square root of 2 = a/b minus 6 = (a minus 6b)/b. Since a and b are integers, (a minus 6b)/b is rational, so square root of 2 would be rational. This contradicts the fact that square root of 2 is irrational. So 6 plus square root of 2 is irrational.",
+          "s": [
+            [
+              "Assumes 6 plus square root of 2 = a/b for coprime integers a, b",
+              1
+            ],
+            [
+              "Rearranges to get square root of 2 = (a minus 6b)/b, a ratio of integers",
+              1
+            ],
+            [
+              "States the contradiction with square root of 2 being irrational and concludes",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Hardest",
+          "t": "long_answer",
+          "m": 3,
+          "q": "Prove that 7 times square root of 5 is irrational, following the same style of proof used in this chapter for 3 times square root of 2.",
+          "a": "Assume, to the contrary, that 7 times square root of 5 is rational, so 7 times square root of 5 = a/b for coprime integers a, b (b not 0). Rearranging, square root of 5 = a/(7b). Since 7, a and b are integers, a/(7b) is rational, so square root of 5 would be rational. This contradicts square root of 5 being irrational (proved earlier in this chapter). So 7 times square root of 5 is irrational.",
+          "s": [
+            [
+              "Assumes 7 times square root of 5 = a/b for coprime integers a, b",
+              1
+            ],
+            [
+              "Rearranges to get square root of 5 = a/(7b), a ratio of integers",
+              1
+            ],
+            [
+              "States the contradiction with square root of 5 being irrational and concludes",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Analyse",
+          "d": "Hard",
+          "t": "multi_statement",
+          "m": 1,
+          "q": "Consider: (I) square root of 5 is irrational. (II) 1 times square root of 4 is irrational. Which is or are correct?",
+          "a": "Only I",
+          "o": [
+            "Only I",
+            "Only II",
+            "Both I and II",
+            "Neither I nor II"
+          ]
+        },
+        {
+          "b": "Analyse",
+          "d": "Hard",
+          "t": "assertion_reason",
+          "m": 1,
+          "q": "Assertion (A): 5 minus square root of 3 is irrational. Reason (R): 3 times square root of 2 is irrational. Choose the correct option.",
+          "a": "Both A and R are true, but R is not the correct explanation of A",
+          "o": [
+            "Both A and R are true, but R is not the correct explanation of A",
+            "Both A and R are true, and R is the correct explanation of A",
+            "A is true, R is false",
+            "A is false, R is true"
+          ]
+        },
+        {
+          "b": "Analyse",
+          "d": "Hardest",
+          "t": "long_answer",
+          "m": 3,
+          "q": "In the proof that square root of 2 is irrational, explain what would go wrong with the proof if the initial assumption had NOT included that a and b are coprime (i.e. if square root of 2 = a/b were assumed with no restriction on common factors).",
+          "a": "Without the coprime assumption, showing that 2 divides both a and b would not by itself be a problem -- a and b could simply already share the factor 2 (or more), so there would be nothing to contradict. The coprime assumption is exactly what turns 'a and b share a factor of 2' into an impossible conclusion, which is what makes the contradiction work.",
+          "s": [
+            [
+              "States that without coprimality, 2 dividing both a and b would not by itself be a problem",
+              1
+            ],
+            [
+              "Explains the coprime assumption is what turns this into a genuine contradiction",
+              1
+            ],
+            [
+              "Concludes the proof's logic depends critically on that initial coprime assumption",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Evaluate",
+          "d": "Hard",
+          "t": "mcq",
+          "m": 1,
+          "q": "A student's proof that square root of 2 is irrational stops after reaching '2 divides a and 2 divides b' and immediately concludes 'therefore square root of 2 is irrational', without mentioning the coprime assumption again. Evaluate whether this is a complete proof.",
+          "a": "It is incomplete -- the proof must explicitly state that a and b sharing the factor 2 contradicts the earlier assumption that they were coprime, otherwise the actual contradiction is never stated",
+          "o": [
+            "It is incomplete -- the proof must explicitly state that a and b sharing the factor 2 contradicts the earlier assumption that they were coprime, otherwise the actual contradiction is never stated",
+            "It is complete, since showing 2 divides a and b is already the final goal of the proof",
+            "It is complete, because coprimality is not actually needed anywhere in this proof",
+            "It is incomplete, because the student also needed to prove square root of 3 is irrational first"
+          ]
+        },
+        {
+          "b": "Create",
+          "d": "Hardest",
+          "t": "long_answer",
+          "m": 3,
+          "q": "Construct your own expression of the form (an integer) plus or minus (an integer) times square root of (a prime number), different from every example already used in this chapter for this style of proof (not involving 2, 3 or 5 combined with square root of 2 or square root of 3), and prove it is irrational using the same style of proof.",
+          "a": "Answers will vary. For example, 4 plus 3 times square root of 7 (using the prime 7): assume it is rational, equal to a/b for coprime integers a, b. Rearranging, square root of 7 = (a minus 4b) / (3b), a ratio of integers, so square root of 7 would be rational -- a contradiction, since square root of 7 is irrational by the same method used for square root of 2, square root of 3 and square root of 5. So 4 plus 3 times square root of 7 is irrational.",
+          "s": [
+            [
+              "Constructs a valid new expression using a prime not already used in this style elsewhere in the chapter",
+              1
+            ],
+            [
+              "Correctly sets up the assumption and rearranges to isolate the square root as a ratio of integers",
+              1
+            ],
+            [
+              "States the resulting contradiction and concludes the expression is irrational",
+              1
+            ]
+          ]
+        }
+      ]
     }
-   ]
-  },
-  {
-   "code": "C10M-1.4",
-   "name": "Using the Fundamental Theorem of Arithmetic to reason about numbers",
-   "description": "Deciding whether a power of a given number can end in a particular digit, and explaining why certain expressions are composite, by examining their prime factors.",
-   "idea": "A number's last digit being 0 is controlled by whether both 2 and 5 are among its prime factors, and a sum is composite whenever every term in it already shares a common factor greater than 1, because that shared factor can be pulled out to expose a proper factor of the whole sum.",
-   "rule": "A positive integer ends in the digit 0 exactly when its prime factorisation contains both 2 and 5. If every term of a sum has a common factor k greater than 1, the sum itself is divisible by k and so is composite (as long as the sum is bigger than k).",
-   "example": "4 to the power n = 2 to the power (2n) has only 2 as a prime factor, never 5, so 4 to the power n can never end in 0. Likewise 7 x 11 x 13 + 13 = 13 x (7 x 11 + 1) = 13 x 78, which is composite because 13 is a common factor of both terms.",
-   "difficulty_base": "Hard",
-   "questions": [
-    {
-     "b": "Remember",
-     "d": "Easy",
-     "t": "mcq",
-     "m": 1,
-     "q": "A positive integer's decimal representation ends in the digit 0 exactly when its prime factorisation contains",
-     "a": "both 2 and 5",
-     "o": [
-      "both 2 and 5",
-      "only 2",
-      "only 5",
-      "either 2 or 5, but not necessarily both"
-     ]
-    },
-    {
-     "b": "Remember",
-     "d": "Easy",
-     "t": "mcq",
-     "m": 1,
-     "q": "In Example 1, why can 4 to the power n never end in the digit 0?",
-     "a": "Because 4 to the power n = 2 to the power (2n), so its only prime factor is 2, and it never contains 5",
-     "o": [
-      "Because 4 to the power n = 2 to the power (2n), so its only prime factor is 2, and it never contains 5",
-      "Because 4 is an even number",
-      "Because n is always a small number",
-      "Because 4 to the power n is always an odd number"
-     ]
-    },
-    {
-     "b": "Remember",
-     "d": "Easy",
-     "t": "fill_blank",
-     "m": 1,
-     "q": "7 x 11 x 13 + 13 = 13 x (7 x 11 + 1) = 13 x ____.",
-     "a": "78"
-    },
-    {
-     "b": "Remember",
-     "d": "Hard",
-     "t": "mcq",
-     "m": 1,
-     "q": "Which of the following is NOT correct?",
-     "a": "10 to the power n can never end in the digit 0, by the same reasoning as 4 to the power n and 6 to the power n, because its only prime factor is 2",
-     "o": [
-      "10 to the power n can never end in the digit 0, by the same reasoning as 4 to the power n and 6 to the power n, because its only prime factor is 2",
-      "4 to the power n can never end in the digit 0, for any natural number n",
-      "6 to the power n can never end in the digit 0, for any natural number n",
-      "7 x 11 x 13 + 13 is composite because 13 divides both 7 x 11 x 13 and 13"
-     ],
-     "rev": true
-    },
-    {
-     "b": "Understand",
-     "d": "Easy",
-     "t": "mcq",
-     "m": 1,
-     "q": "Why does 6 to the power n never end in the digit 0, even though 2 is one of its prime factors?",
-     "a": "Because 6 to the power n = 2 to the power n x 3 to the power n, which never has 5 as a prime factor",
-     "o": [
-      "Because 6 to the power n = 2 to the power n x 3 to the power n, which never has 5 as a prime factor",
-      "Because 6 is not actually divisible by 2",
-      "Because only odd numbers can ever end in the digit 0",
-      "Because 6 to the power n always ends in the digit 6"
-     ]
-    },
-    {
-     "b": "Understand",
-     "d": "Easy",
-     "t": "mcq",
-     "m": 1,
-     "q": "In the proof that 7 x 11 x 13 + 13 is composite, why is it useful that 13 is a common factor of both 7 x 11 x 13 and 13?",
-     "a": "It lets the whole sum be rewritten as 13 times another whole number, which directly shows 13 is a factor of the sum",
-     "o": [
-      "It lets the whole sum be rewritten as 13 times another whole number, which directly shows 13 is a factor of the sum",
-      "It shows that 13 itself must be a composite number",
-      "It proves that 7, 11 and 13 are not actually prime numbers",
-      "It is not actually useful; the compositeness is shown a different way"
-     ]
-    },
-    {
-     "b": "Understand",
-     "d": "Easy",
-     "t": "mcq",
-     "m": 1,
-     "q": "A number is said to be composite because it can be written as k times (some other whole number), where k is greater than 1. What extra check is needed before this actually proves the number is composite?",
-     "a": "That the 'other whole number' is also bigger than 1, so the number has a factor other than 1 and itself",
-     "o": [
-      "That the 'other whole number' is also bigger than 1, so the number has a factor other than 1 and itself",
-      "That k itself is a prime number",
-      "That the number being tested is even",
-      "No extra check is needed -- any such expression already proves compositeness"
-     ]
-    },
-    {
-     "b": "Understand",
-     "d": "Hard",
-     "t": "mcq",
-     "m": 1,
-     "q": "7 x 6 x 5 x 4 x 3 x 2 x 1 + 5 is shown to be composite using the common factor 5. What is the correct reason 5 divides 7 x 6 x 5 x 4 x 3 x 2 x 1?",
-     "a": "Because 5 itself is one of the numbers being multiplied together in that product",
-     "o": [
-      "Because 5 itself is one of the numbers being multiplied together in that product",
-      "Because 7 x 6 x 5 x 4 x 3 x 2 x 1 happens to be an even number",
-      "Because the product of any six consecutive numbers is always divisible by 5",
-      "Because 5 is added afterwards, which is unrelated to the multiplication"
-     ]
-    },
-    {
-     "b": "Understand",
-     "d": "Hard",
-     "t": "mcq",
-     "m": 1,
-     "q": "20 to the power n = 2 to the power (2n) x 5 to the power n. Based on the reasoning used for 4 to the power n and 6 to the power n in this chapter, what can you say about 20 to the power n ending in the digit 0?",
-     "a": "Unlike 4 to the power n and 6 to the power n, 20 to the power n DOES end in the digit 0 for every natural number n, since its prime factorisation contains both 2 and 5",
-     "o": [
-      "Unlike 4 to the power n and 6 to the power n, 20 to the power n DOES end in the digit 0 for every natural number n, since its prime factorisation contains both 2 and 5",
-      "It behaves exactly like 4 to the power n and can never end in the digit 0",
-      "It cannot be determined without checking every value of n separately",
-      "It ends in the digit 0 only when n is an even number"
-     ]
-    },
-    {
-     "b": "Apply",
-     "d": "Easy",
-     "t": "mcq",
-     "m": 1,
-     "q": "Which of these numbers can be ruled out from ever ending in the digit 0, by the reasoning of this chapter?",
-     "a": "9 to the power n, since 9 to the power n = 3 to the power (2n) has no factor of 2 or 5",
-     "o": [
-      "9 to the power n, since 9 to the power n = 3 to the power (2n) has no factor of 2 or 5",
-      "20 to the power n, since it has factors of both 2 and 5",
-      "10 to the power n, since it has factors of both 2 and 5",
-      "2 to the power n x 5 to the power n, since it has factors of both 2 and 5"
-     ]
-    },
-    {
-     "b": "Apply",
-     "d": "Easy",
-     "t": "fill_blank",
-     "m": 1,
-     "q": "3 x 5 x 7 + 7 = 7 x (3 x 5 + 1) = 7 x ____, which is composite.",
-     "a": "16"
-    },
-    {
-     "b": "Apply",
-     "d": "Hard",
-     "t": "mcq",
-     "m": 1,
-     "q": "25 to the power n = 5 to the power (2n). By the reasoning used in this chapter, 25 to the power n",
-     "a": "can never end in the digit 0, since it has no factor of 2",
-     "o": [
-      "can never end in the digit 0, since it has no factor of 2",
-      "always ends in the digit 0, since it has a factor of 5",
-      "always ends in the digit 5, and can also end in 0 for large n",
-      "cannot be analysed this way since 25 is not a prime number"
-     ]
-    },
-    {
-     "b": "Apply",
-     "d": "Hard",
-     "t": "short_answer",
-     "m": 2,
-     "q": "Explain why 15 to the power n can never end in the digit 0, even though 15 = 3 x 5 already contains the prime factor 5.",
-     "a": "15 to the power n = 3 to the power n x 5 to the power n has no factor of 2 at all, and a number needs BOTH 2 and 5 in its prime factorisation to end in 0, so 15 to the power n never ends in 0 (it always ends in 5).",
-     "s": [
-      [
-       "States that 15 to the power n has no factor of 2",
-       1
-      ],
-      [
-       "Concludes it cannot end in 0 because both 2 and 5 are needed",
-       1
-      ]
-     ]
-    },
-    {
-     "b": "Apply",
-     "d": "Hard",
-     "t": "short_answer",
-     "m": 2,
-     "q": "Show that 5 x 6 x 7 + 5 is composite, following the method used in this chapter for 7 x 11 x 13 + 13.",
-     "a": "5 x 6 x 7 + 5 = 5 x (6 x 7 + 1) = 5 x 43 = 215, which is composite since it is 5 times a whole number bigger than 1.",
-     "s": [
-      [
-       "Rewrites the sum as 5 x (6 x 7 + 1)",
-       1
-      ],
-      [
-       "Simplifies to 5 x 43 = 215 and concludes it is composite",
-       1
-      ]
-     ]
-    },
-    {
-     "b": "Apply",
-     "d": "Hardest",
-     "t": "long_answer",
-     "m": 3,
-     "q": "Show that 2 x 3 x 5 x 7 + 3 is composite, using a common factor -- first identify the common factor of both terms, since it is not as obvious here as in the worked examples in this chapter.",
-     "a": "2 x 3 x 5 x 7 = 210, and the second term is 3. The common factor of 210 and 3 is 3, since 3 divides 210 as well. So 2 x 3 x 5 x 7 + 3 = 3 x (2 x 5 x 7 + 1) = 3 x 71 = 213, which is composite.",
-     "s": [
-      [
-       "Identifies 3 as the common factor of both 2 x 3 x 5 x 7 and 3",
-       1
-      ],
-      [
-       "Rewrites the sum as 3 x (2 x 5 x 7 + 1) = 3 x 71",
-       1
-      ],
-      [
-       "States the result, 213, is composite, being 3 times a whole number bigger than 1",
-       1
-      ]
-     ]
-    },
-    {
-     "b": "Analyse",
-     "d": "Hard",
-     "t": "multi_statement",
-     "m": 1,
-     "q": "Consider: (I) 6 to the power n can end in the digit 0, for some natural number n. (II) 7 x 6 x 5 x 4 x 3 x 2 x 1 + 5 is composite because 5 divides both 7 x 6 x 5 x 4 x 3 x 2 x 1 and 5. Which is or are correct?",
-     "a": "Only II",
-     "o": [
-      "Only II",
-      "Only I",
-      "Both I and II",
-      "Neither I nor II"
-     ]
-    },
-    {
-     "b": "Analyse",
-     "d": "Hard",
-     "t": "mcq",
-     "m": 1,
-     "q": "A number N is known to have 2 as a prime factor but NOT 5. What can you conclude about N's last digit?",
-     "a": "N cannot end in the digit 0, but its last digit could be 2, 4, 6 or 8",
-     "o": [
-      "N cannot end in the digit 0, but its last digit could be 2, 4, 6 or 8",
-      "N must end in the digit 5",
-      "N must end in the digit 0",
-      "N could end in any digit at all, including an odd one"
-     ]
-    },
-    {
-     "b": "Analyse",
-     "d": "Hardest",
-     "t": "long_answer",
-     "m": 3,
-     "q": "40 to the power n = 2 to the power (3n) x 5 to the power n. Determine whether 40 to the power n can end in the digit 0, and contrast this with why 4 to the power n (from Example 1) cannot.",
-     "a": "40 to the power n has BOTH 2 and 5 as prime factors (unlike 4 to the power n, whose only prime factor is 2), so 40 to the power n DOES end in the digit 0 for every natural number n; this is the key difference from 4 to the power n, which lacks the factor of 5 entirely.",
-     "s": [
-      [
-       "States that 40 to the power n has both 2 and 5 as prime factors",
-       1
-      ],
-      [
-       "Concludes 40 to the power n does end in the digit 0 for every n",
-       1
-      ],
-      [
-       "Contrasts this correctly with 4 to the power n, which lacks a factor of 5",
-       1
-      ]
-     ]
-    },
-    {
-     "b": "Evaluate",
-     "d": "Hard",
-     "t": "mcq",
-     "m": 1,
-     "q": "A student argues: 'Since 6 to the power n = 2 to the power n x 3 to the power n has 2 as a factor, and any number with 2 as a factor is even, 6 to the power n must be able to end in 0, just like other even numbers sometimes do.' Evaluate this argument.",
-     "a": "The argument is flawed -- being even only allows a number to end in 0, 2, 4, 6 or 8; ending specifically in 0 additionally requires a factor of 5, which 6 to the power n never has",
-     "o": [
-      "The argument is flawed -- being even only allows a number to end in 0, 2, 4, 6 or 8; ending specifically in 0 additionally requires a factor of 5, which 6 to the power n never has",
-      "The argument is correct, since every even number can end in 0 for some power",
-      "The argument is correct, because 6 itself ends in the digit 6, which is close to 0",
-      "The argument is flawed because 6 to the power n is not actually an even number"
-     ]
-    },
-    {
-     "b": "Create",
-     "d": "Hardest",
-     "t": "long_answer",
-     "m": 3,
-     "q": "Invent your own product-plus-term expression, similar in style to 7 x 11 x 13 + 13 from this chapter, that is guaranteed to be composite. Use at least three different prime numbers in your product, and explain why your expression must be composite.",
-     "a": "Answers will vary. For example, 3 x 5 x 11 + 5 = 165 + 5 = 170. The common factor of both terms is 5, so 170 = 5 x (3 x 11 + 1) = 5 x 34, which is composite since 34 is a whole number bigger than 1.",
-     "s": [
-      [
-       "Builds a product-plus-term expression using at least three different primes",
-       1
-      ],
-      [
-       "Chooses the added term to share a common factor with the product",
-       1
-      ],
-      [
-       "Correctly shows the expression factors as (common factor) times (a whole number bigger than 1), proving it composite",
-       1
-      ]
-     ]
-    }
-   ]
-  },
-  {
-   "code": "C10M-1.5",
-   "name": "If a prime divides a squared, it divides a (Theorem 1.2)",
-   "description": "For a prime p and a positive integer a, if p divides a squared then p must divide a; this is the key step used to prove that square roots of primes are irrational.",
-   "idea": "Squaring a number only doubles up the prime factors it already has -- it cannot create a brand new prime factor -- so if a prime shows up in a squared, that same prime had to already be sitting inside a.",
-   "rule": "If p is prime and p divides a squared, where a is a positive integer, then p divides a.",
-   "example": "Since 2 divides b squared in the square-root-of-2 proof, Theorem 1.2 lets us conclude 2 divides b itself, which is exactly the step that produces the contradiction.",
-   "difficulty_base": "Hard",
-   "questions": [
-    {
-     "b": "Remember",
-     "d": "Easy",
-     "t": "mcq",
-     "m": 1,
-     "q": "Theorem 1.2 states: if p is a prime number and p divides a squared, then",
-     "a": "p divides a",
-     "o": [
-      "p divides a",
-      "a divides p",
-      "p equals a",
-      "a must also be prime"
-     ]
-    },
-    {
-     "b": "Remember",
-     "d": "Easy",
-     "t": "mcq",
-     "m": 1,
-     "q": "Theorem 1.2 requires which condition on the number p?",
-     "a": "p must be a prime number",
-     "o": [
-      "p must be a prime number",
-      "p must be an even number",
-      "p must be greater than a",
-      "p must be a perfect square"
-     ]
-    },
-    {
-     "b": "Remember",
-     "d": "Easy",
-     "t": "fill_blank",
-     "m": 1,
-     "q": "Theorem 1.2 is used with p = 2 to show that if 2 divides b squared, then 2 divides ____.",
-     "a": "b"
-    },
-    {
-     "b": "Remember",
-     "d": "Hard",
-     "t": "mcq",
-     "m": 1,
-     "q": "Which of the following is NOT correct about Theorem 1.2 (if a prime p divides a squared, then p divides a)?",
-     "a": "Since 4 divides 36 (which is 6 squared), Theorem 1.2 lets us conclude that 4 divides 6",
-     "o": [
-      "Since 4 divides 36 (which is 6 squared), Theorem 1.2 lets us conclude that 4 divides 6",
-      "Theorem 1.2 requires p to be a prime number",
-      "The theorem is used to conclude that 2 divides b, given that 2 divides b squared, in the proof that square root of 2 is irrational",
-      "By the theorem, since 3 is prime and 3 divides a squared in the proof for square root of 3, it follows that 3 divides a"
-     ],
-     "rev": true
-    },
-    {
-     "b": "Understand",
-     "d": "Easy",
-     "t": "mcq",
-     "m": 1,
-     "q": "Why does Theorem 1.2 specifically require p to be prime, rather than allowing any positive integer?",
-     "a": "Because for a non-prime p, a number can divide p's square without dividing p itself, so the result would not always hold",
-     "o": [
-      "Because for a non-prime p, a number can divide p's square without dividing p itself, so the result would not always hold",
-      "Because only prime numbers can ever be squared",
-      "Because the theorem is only ever used in this chapter with p = 2 or p = 3",
-      "Because non-prime numbers cannot divide anything at all"
-     ]
-    },
-    {
-     "b": "Understand",
-     "d": "Easy",
-     "t": "mcq",
-     "m": 1,
-     "q": "In the proof that square root of 2 is irrational, Theorem 1.2 is used twice. What is being shown each time?",
-     "a": "First that 2 divides a (from 2 dividing a squared), and then that 2 divides b (from 2 dividing b squared)",
-     "o": [
-      "First that 2 divides a (from 2 dividing a squared), and then that 2 divides b (from 2 dividing b squared)",
-      "That a and b are both prime numbers",
-      "That square root of 2 divides both a and b",
-      "That a squared and b squared are both prime numbers"
-     ]
-    },
-    {
-     "b": "Understand",
-     "d": "Easy",
-     "t": "mcq",
-     "m": 1,
-     "q": "Theorem 1.2 concludes 'p divides a'. What kind of statement is this?",
-     "a": "A statement about divisibility -- that a is a multiple of p -- not about the actual numerical value of a",
-     "o": [
-      "A statement about divisibility -- that a is a multiple of p -- not about the actual numerical value of a",
-      "A statement that a must equal p exactly",
-      "A statement that a is always bigger than p squared",
-      "A statement that a and p must be coprime"
-     ]
-    },
-    {
-     "b": "Understand",
-     "d": "Hard",
-     "t": "mcq",
-     "m": 1,
-     "q": "How does Theorem 1.2 rely on the Fundamental Theorem of Arithmetic?",
-     "a": "It uses the fact that the prime factorisation of a squared is unique, so if p is a prime factor of a squared, p must already have been a prime factor of a",
-     "o": [
-      "It uses the fact that the prime factorisation of a squared is unique, so if p is a prime factor of a squared, p must already have been a prime factor of a",
-      "It uses the fact that a squared is always bigger than a",
-      "It uses the HCF x LCM = product rule",
-      "It relies on a being an even number"
-     ]
-    },
-    {
-     "b": "Understand",
-     "d": "Hard",
-     "t": "mcq",
-     "m": 1,
-     "q": "Why can Theorem 1.2 be applied with p = 3 in the proof that square root of 3 is irrational, but the same style of proof could not directly use p = 4 in the same way?",
-     "a": "Because 3 is prime, satisfying Theorem 1.2's condition, while 4 is not prime, so Theorem 1.2 simply does not apply when p = 4",
-     "o": [
-      "Because 3 is prime, satisfying Theorem 1.2's condition, while 4 is not prime, so Theorem 1.2 simply does not apply when p = 4",
-      "Because 4 is larger than 3",
-      "Because square root of 4 is already known to be a whole number, so no proof is needed",
-      "Because Theorem 1.2 only ever works for odd values of p"
-     ]
-    },
-    {
-     "b": "Apply",
-     "d": "Easy",
-     "t": "mcq",
-     "m": 1,
-     "q": "By Theorem 1.2, if 5 divides k squared for a positive integer k, then",
-     "a": "5 divides k",
-     "o": [
-      "5 divides k",
-      "k divides 5",
-      "k squared divides 5",
-      "5 equals k"
-     ]
-    },
-    {
-     "b": "Apply",
-     "d": "Easy",
-     "t": "fill_blank",
-     "m": 1,
-     "q": "By Theorem 1.2 with p = 7, if 7 divides m squared, then 7 divides ____.",
-     "a": "m"
-    },
-    {
-     "b": "Apply",
-     "d": "Hard",
-     "t": "mcq",
-     "m": 1,
-     "q": "Given that 7 is prime and 7 divides 4900, and that 4900 = 70 squared, what does Theorem 1.2 let you conclude?",
-     "a": "7 divides 70",
-     "o": [
-      "7 divides 70",
-      "7 divides 4900 only, not 70",
-      "70 must be a prime number",
-      "4900 divides 7"
-     ]
-    },
-    {
-     "b": "Apply",
-     "d": "Hard",
-     "t": "mcq",
-     "m": 1,
-     "q": "5 is prime, and 5 divides 900 (= 30 squared). By Theorem 1.2, it follows that",
-     "a": "5 divides 30",
-     "o": [
-      "5 divides 30",
-      "5 divides 900 but not 30",
-      "30 must itself be a prime number",
-      "900 cannot actually be a perfect square"
-     ]
-    },
-    {
-     "b": "Apply",
-     "d": "Hard",
-     "t": "short_answer",
-     "m": 2,
-     "q": "13 is prime, and 676 = 26 squared. Given that 13 divides 676, use Theorem 1.2 to state what this tells you about 26, and verify your conclusion directly.",
-     "a": "By Theorem 1.2, since 13 is prime and divides 26 squared (676), 13 must divide 26. Checking directly: 26 / 13 = 2, confirming 13 does divide 26.",
-     "s": [
-      [
-       "States that Theorem 1.2 gives 13 divides 26",
-       1
-      ],
-      [
-       "Verifies directly that 26 / 13 = 2",
-       1
-      ]
-     ]
-    },
-    {
-     "b": "Apply",
-     "d": "Hardest",
-     "t": "long_answer",
-     "m": 3,
-     "q": "17 is prime. Without computing 51 squared first, explain how you know in advance -- just from knowing that 51 = 3 x 17 -- that 17 will divide 51 squared, and connect this to what Theorem 1.2 then confirms.",
-     "a": "Since 51 = 3 x 17, 51 squared = 3 squared x 17 squared, which clearly contains 17 as a factor, so 17 divides 51 squared even before computing the full value. Theorem 1.2 then confirms (unsurprisingly, since it was already known) that 17 divides 51, which checks out directly since 51 / 17 = 3.",
-     "s": [
-      [
-       "Explains that 51 squared = 3 squared x 17 squared contains 17 as a factor",
-       1
-      ],
-      [
-       "Concludes 17 divides 51 squared without needing the full computation",
-       1
-      ],
-      [
-       "Connects this to Theorem 1.2 confirming 17 divides 51, and checks it directly (51 / 17 = 3)",
-       1
-      ]
-     ]
-    },
-    {
-     "b": "Analyse",
-     "d": "Hard",
-     "t": "mcq",
-     "m": 1,
-     "q": "Theorem 1.2 is stated for p dividing a SQUARED, implying p divides a. Based on how it is used in this chapter's proofs, why is the squared form specifically important here?",
-     "a": "Because the irrationality proofs arrive at equations like a squared = 2 times b squared (from squaring both sides of square root of 2 = a/b), so it is exactly this squared form that needs the theorem",
-     "o": [
-      "Because the irrationality proofs arrive at equations like a squared = 2 times b squared (from squaring both sides of square root of 2 = a/b), so it is exactly this squared form that needs the theorem",
-      "Because cubes are always prime numbers",
-      "Because Theorem 1.2 would give a false conclusion if a were cubed instead of squared",
-      "Because squaring is the only arithmetic operation used anywhere in this chapter"
-     ]
-    },
-    {
-     "b": "Analyse",
-     "d": "Hard",
-     "t": "mcq",
-     "m": 1,
-     "q": "A proof step needs to show that 2 divides c, given that 2 divides c squared. Which single fact justifies this step?",
-     "a": "Theorem 1.2, since 2 is prime",
-     "o": [
-      "Theorem 1.2, since 2 is prime",
-      "The Fundamental Theorem of Arithmetic on its own, without needing Theorem 1.2",
-      "The fact that c must be an even number by definition, regardless of c squared",
-      "The HCF x LCM = product rule"
-     ]
-    },
-    {
-     "b": "Analyse",
-     "d": "Hardest",
-     "t": "long_answer",
-     "m": 3,
-     "q": "In the proof that square root of 2 is irrational, Theorem 1.2 is applied first to conclude 2 divides a, and later to conclude 2 divides b. Explain why the SAME theorem, with the SAME value of p = 2, can be legitimately applied twice in one proof to two different numbers.",
-     "a": "Theorem 1.2 is a general statement about any prime p and any positive integer whose square that prime divides -- it does not restrict how many times or to which numbers it is applied. The proof first shows 2 divides a squared (so 2 divides a, by the theorem), and later, after substitution, shows 2 divides b squared (so 2 divides b, by the same theorem applied to a different positive integer).",
-     "s": [
-      [
-       "Explains Theorem 1.2 is a general statement, not limited to one use per proof",
-       1
-      ],
-      [
-       "Identifies it is applied once to a (from a squared) and once to b (from b squared)",
-       1
-      ],
-      [
-       "States both applications are valid since each starts from p dividing that number's square",
-       1
-      ]
-     ]
-    },
-    {
-     "b": "Evaluate",
-     "d": "Hard",
-     "t": "assertion_reason",
-     "m": 1,
-     "q": "Assertion (A): If 5 divides k squared for a positive integer k, then 5 divides k. Reason (R): The Fundamental Theorem of Arithmetic says every composite number has a unique prime factorisation.",
-     "a": "Both A and R are true, but R is not the correct explanation of A",
-     "o": [
-      "Both A and R are true, but R is not the correct explanation of A",
-      "A is false, R is true",
-      "A is true, R is false",
-      "Both A and R are true, and R is the correct explanation of A"
-     ]
-    },
-    {
-     "b": "Create",
-     "d": "Hardest",
-     "t": "long_answer",
-     "m": 3,
-     "q": "State Theorem 1.2 for a prime of your own choice (not 2, 3, 5, 7, 11, 13 or 17, which are all used elsewhere in this chapter), and illustrate it with a specific positive integer example -- that is, give a concrete a such that your chosen prime divides a squared, and confirm the prime divides a.",
-     "a": "Answers will vary. For example, choosing p = 19: 19 is prime, and 19 divides 1444 (= 38 squared, since 38 = 2 x 19); by Theorem 1.2, 19 must divide 38, which checks out since 38 / 19 = 2.",
-     "s": [
-      [
-       "Chooses a prime not already used elsewhere in the chapter (not 2,3,5,7,11,13,17)",
-       1
-      ],
-      [
-       "Gives a specific positive integer a where the chosen prime divides a squared",
-       1
-      ],
-      [
-       "Confirms the prime divides a, matching Theorem 1.2's conclusion",
-       1
-      ]
-     ]
-    }
-   ]
-  },
-  {
-   "code": "C10M-1.6",
-   "name": "Proving irrationality by contradiction",
-   "description": "Proving that square root of 2, square root of 3, square root of 5 and expressions built from them are irrational, by assuming the opposite and reaching a contradiction using Theorem 1.2.",
-   "idea": "Assuming a square root were a fraction in lowest terms and squaring it forces the prime under the root to divide both the numerator and denominator, contradicting that they had no common factor -- so the assumption must be false.",
-   "rule": "To prove square root of p (p prime) is irrational: assume square root of p = a/b in lowest terms (a, b coprime); square and rearrange to get p dividing a squared, so p divides a (Theorem 1.2); write a = pc, substitute, and show p also divides b -- contradicting that a and b are coprime.",
-   "example": "5 minus square root of 3 is irrational: if it equalled a/b, then square root of 3 = 5 minus a/b would be a ratio of integers, i.e. rational, contradicting that square root of 3 is irrational.",
-   "difficulty_base": "Hardest",
-   "questions": [
-    {
-     "b": "Remember",
-     "d": "Easy",
-     "t": "mcq",
-     "m": 1,
-     "q": "A number 's' is called irrational if it cannot be written in the form",
-     "a": "p/q, where p and q are integers and q is not 0",
-     "o": [
-      "p/q, where p and q are integers and q is not 0",
-      "p + q, where p and q are integers",
-      "p times q, where p and q are whole numbers",
-      "the square of an integer"
-     ]
-    },
-    {
-     "b": "Remember",
-     "d": "Easy",
-     "t": "mcq",
-     "m": 1,
-     "q": "The proof technique used in this chapter to show square root of 2 is irrational, where you assume the opposite and reach a contradiction, is called",
-     "a": "proof by contradiction",
-     "o": [
-      "proof by contradiction",
-      "proof by construction",
-      "the factor tree method",
-      "the prime factorisation method"
-     ]
-    },
-    {
-     "b": "Remember",
-     "d": "Easy",
-     "t": "fill_blank",
-     "m": 1,
-     "q": "In the proof that square root of 2 is irrational, we assume square root of 2 = a/b where a and b are ____.",
-     "a": "coprime"
-    },
-    {
-     "b": "Remember",
-     "d": "Hard",
-     "t": "mcq",
-     "m": 1,
-     "q": "Which of the following is NOT proved to be irrational in this chapter?",
-     "a": "square root of 9, since the chapter proves that the square root of any prime number is irrational",
-     "o": [
-      "square root of 9, since the chapter proves that the square root of any prime number is irrational",
-      "square root of 2",
-      "5 minus square root of 3",
-      "3 times square root of 2"
-     ],
-     "rev": true
-    },
-    {
-     "b": "Understand",
-     "d": "Easy",
-     "t": "mcq",
-     "m": 1,
-     "q": "Why does the proof that square root of 2 is irrational begin by assuming a and b are coprime (share no common factor other than 1)?",
-     "a": "So that if a contradiction later shows 2 divides both a and b, this directly contradicts the starting assumption and completes the proof",
-     "o": [
-      "So that if a contradiction later shows 2 divides both a and b, this directly contradicts the starting assumption and completes the proof",
-      "Because coprime numbers are easier to square",
-      "Because square root of 2 can only ever be written using coprime numbers if it happens to be rational",
-      "Because the Fundamental Theorem of Arithmetic requires every fraction to be coprime"
-     ]
-    },
-    {
-     "b": "Understand",
-     "d": "Easy",
-     "t": "mcq",
-     "m": 1,
-     "q": "In the proof for '5 minus square root of 3', why does assuming this quantity is rational lead to concluding square root of 3 is rational too?",
-     "a": "Because rearranging 5 minus square root of 3 = a/b gives square root of 3 = 5 minus a/b, and 5 minus a/b is a ratio of integers, i.e. rational",
-     "o": [
-      "Because rearranging 5 minus square root of 3 = a/b gives square root of 3 = 5 minus a/b, and 5 minus a/b is a ratio of integers, i.e. rational",
-      "Because 5 is itself an irrational number",
-      "Because subtracting any rational number always produces an irrational result",
-      "Because a/b and square root of 3 must always be exactly equal"
-     ]
-    },
-    {
-     "b": "Understand",
-     "d": "Easy",
-     "t": "mcq",
-     "m": 1,
-     "q": "The proof that 3 times square root of 2 is irrational rearranges 3 times square root of 2 = a/b to get square root of 2 = a/(3b). Why does this show square root of 2 is rational, giving the needed contradiction?",
-     "a": "Because a and 3b are both integers, so a/(3b) is a ratio of integers, which is exactly what 'rational' means",
-     "o": [
-      "Because a and 3b are both integers, so a/(3b) is a ratio of integers, which is exactly what 'rational' means",
-      "Because 3b is always an even number",
-      "Because a/(3b) always simplifies to a whole number",
-      "Because square root of 2 always equals exactly one third of a/b"
-     ]
-    },
-    {
-     "b": "Understand",
-     "d": "Hard",
-     "t": "mcq",
-     "m": 1,
-     "q": "This chapter states that the sum or difference of a rational number and an irrational number is irrational. How does the proof for '5 minus square root of 3' relate to this general statement?",
-     "a": "It proves one particular case of the general statement directly, using proof by contradiction, rather than simply assuming the general statement",
-     "o": [
-      "It proves one particular case of the general statement directly, using proof by contradiction, rather than simply assuming the general statement",
-      "It disproves the general statement using a counterexample",
-      "It is unrelated to the general statement mentioned earlier in the chapter",
-      "It assumes the general statement as already given, without proving anything new"
-     ]
-    },
-    {
-     "b": "Understand",
-     "d": "Hard",
-     "t": "mcq",
-     "m": 1,
-     "q": "Why does this chapter prove square root of 2 and square root of 3 individually (leaving square root of 5 as an exercise) rather than only proving 'square root of p is irrational for every prime p' once and stopping there?",
-     "a": "The chapter does state the general pattern (square root of p for any prime p) but walks through the specific p = 2 and p = 3 cases first so the method is clear before it is used more freely",
-     "o": [
-      "The chapter does state the general pattern (square root of p for any prime p) but walks through the specific p = 2 and p = 3 cases first so the method is clear before it is used more freely",
-      "Because the proof method for square root of 2 does not actually work for any other prime",
-      "Because square root of 3 is not actually an irrational number",
-      "Because only square root of 2 is examinable, and the other cases are optional"
-     ]
-    },
-    {
-     "b": "Apply",
-     "d": "Easy",
-     "t": "mcq",
-     "m": 1,
-     "q": "By the method of this chapter, square root of 5 is",
-     "a": "irrational",
-     "o": [
-      "irrational",
-      "rational",
-      "an integer",
-      "not a real number"
-     ]
-    },
-    {
-     "b": "Apply",
-     "d": "Easy",
-     "t": "fill_blank",
-     "m": 1,
-     "q": "In the proof for square root of 3, squaring b times square root of 3 = a gives 3 b squared = a ____.",
-     "a": "squared"
-    },
-    {
-     "b": "Apply",
-     "d": "Hard",
-     "t": "short_answer",
-     "m": 2,
-     "q": "Following the pattern used for square root of 2 and square root of 3 in this chapter, state the first two steps of a proof that square root of 5 is irrational: the assumption, and the equation obtained after squaring.",
-     "a": "Assume, to the contrary, that square root of 5 is rational, so square root of 5 = a/b for coprime integers a and b. Squaring both sides and rearranging gives 5 b squared = a squared.",
-     "s": [
-      [
-       "States the assumption that square root of 5 = a/b for coprime integers a and b",
-       1
-      ],
-      [
-       "States the squared equation 5 b squared = a squared",
-       1
-      ]
-     ]
-    },
-    {
-     "b": "Apply",
-     "d": "Hard",
-     "t": "short_answer",
-     "m": 2,
-     "q": "Using the general fact stated in this chapter about a nonzero rational number and an irrational number, explain in one or two lines why 1 divided by square root of 2 is irrational.",
-     "a": "1/(square root of 2) is the quotient of the rational number 1 and the irrational number square root of 2 (which is nonzero); this chapter states that the quotient of a nonzero rational and an irrational number is irrational, so 1/(square root of 2) is irrational.",
-     "s": [
-      [
-       "Identifies 1/(square root of 2) as the quotient of the rational number 1 and the irrational square root of 2",
-       1
-      ],
-      [
-       "Correctly applies the stated general fact to conclude it is irrational",
-       1
-      ]
-     ]
-    },
-    {
-     "b": "Apply",
-     "d": "Hard",
-     "t": "long_answer",
-     "m": 3,
-     "q": "Prove that 6 plus square root of 2 is irrational, following the same style of proof used in this chapter for 5 minus square root of 3.",
-     "a": "Assume, to the contrary, that 6 plus square root of 2 is rational, so 6 plus square root of 2 = a/b for coprime integers a, b (b not 0). Rearranging, square root of 2 = a/b minus 6 = (a minus 6b)/b. Since a and b are integers, (a minus 6b)/b is rational, so square root of 2 would be rational. This contradicts the fact that square root of 2 is irrational. So 6 plus square root of 2 is irrational.",
-     "s": [
-      [
-       "Assumes 6 plus square root of 2 = a/b for coprime integers a, b",
-       1
-      ],
-      [
-       "Rearranges to get square root of 2 = (a minus 6b)/b, a ratio of integers",
-       1
-      ],
-      [
-       "States the contradiction with square root of 2 being irrational and concludes",
-       1
-      ]
-     ]
-    },
-    {
-     "b": "Apply",
-     "d": "Hardest",
-     "t": "long_answer",
-     "m": 3,
-     "q": "Prove that 7 times square root of 5 is irrational, following the same style of proof used in this chapter for 3 times square root of 2.",
-     "a": "Assume, to the contrary, that 7 times square root of 5 is rational, so 7 times square root of 5 = a/b for coprime integers a, b (b not 0). Rearranging, square root of 5 = a/(7b). Since 7, a and b are integers, a/(7b) is rational, so square root of 5 would be rational. This contradicts square root of 5 being irrational (proved earlier in this chapter). So 7 times square root of 5 is irrational.",
-     "s": [
-      [
-       "Assumes 7 times square root of 5 = a/b for coprime integers a, b",
-       1
-      ],
-      [
-       "Rearranges to get square root of 5 = a/(7b), a ratio of integers",
-       1
-      ],
-      [
-       "States the contradiction with square root of 5 being irrational and concludes",
-       1
-      ]
-     ]
-    },
-    {
-     "b": "Analyse",
-     "d": "Hard",
-     "t": "multi_statement",
-     "m": 1,
-     "q": "Consider: (I) square root of 5 is irrational. (II) 1 times square root of 4 is irrational. Which is or are correct?",
-     "a": "Only I",
-     "o": [
-      "Only I",
-      "Only II",
-      "Both I and II",
-      "Neither I nor II"
-     ]
-    },
-    {
-     "b": "Analyse",
-     "d": "Hard",
-     "t": "mcq",
-     "m": 1,
-     "q": "The proof that square root of 2 is irrational reaches a contradiction because a and b turn out to share the common factor 2. Which assumption does this contradict?",
-     "a": "The assumption that a and b were coprime (chosen to share no common factor other than 1)",
-     "o": [
-      "The assumption that a and b were coprime (chosen to share no common factor other than 1)",
-      "The assumption that square root of 2 is a real number",
-      "The assumption that a and b are both even numbers",
-      "The assumption that b is not equal to 0"
-     ]
-    },
-    {
-     "b": "Analyse",
-     "d": "Hardest",
-     "t": "long_answer",
-     "m": 3,
-     "q": "In the proof that square root of 2 is irrational, explain what would go wrong with the proof if the initial assumption had NOT included that a and b are coprime (i.e. if square root of 2 = a/b were assumed with no restriction on common factors).",
-     "a": "Without the coprime assumption, showing that 2 divides both a and b would not by itself be a problem -- a and b could simply already share the factor 2 (or more), so there would be nothing to contradict. The coprime assumption is exactly what turns 'a and b share a factor of 2' into an impossible conclusion, which is what makes the contradiction work.",
-     "s": [
-      [
-       "States that without coprimality, 2 dividing both a and b would not by itself be a problem",
-       1
-      ],
-      [
-       "Explains the coprime assumption is what turns this into a genuine contradiction",
-       1
-      ],
-      [
-       "Concludes the proof's logic depends critically on that initial coprime assumption",
-       1
-      ]
-     ]
-    },
-    {
-     "b": "Evaluate",
-     "d": "Hard",
-     "t": "mcq",
-     "m": 1,
-     "q": "A student's proof that square root of 2 is irrational stops after reaching '2 divides a and 2 divides b' and immediately concludes 'therefore square root of 2 is irrational', without mentioning the coprime assumption again. Evaluate whether this is a complete proof.",
-     "a": "It is incomplete -- the proof must explicitly state that a and b sharing the factor 2 contradicts the earlier assumption that they were coprime, otherwise the actual contradiction is never stated",
-     "o": [
-      "It is incomplete -- the proof must explicitly state that a and b sharing the factor 2 contradicts the earlier assumption that they were coprime, otherwise the actual contradiction is never stated",
-      "It is complete, since showing 2 divides a and b is already the final goal of the proof",
-      "It is complete, because coprimality is not actually needed anywhere in this proof",
-      "It is incomplete, because the student also needed to prove square root of 3 is irrational first"
-     ]
-    },
-    {
-     "b": "Create",
-     "d": "Hardest",
-     "t": "long_answer",
-     "m": 3,
-     "q": "Construct your own expression of the form (an integer) plus or minus (an integer) times square root of (a prime number), different from every example already used in this chapter for this style of proof (not involving 2, 3 or 5 combined with square root of 2 or square root of 3), and prove it is irrational using the same style of proof.",
-     "a": "Answers will vary. For example, 4 plus 3 times square root of 7 (using the prime 7): assume it is rational, equal to a/b for coprime integers a, b. Rearranging, square root of 7 = (a minus 4b) / (3b), a ratio of integers, so square root of 7 would be rational -- a contradiction, since square root of 7 is irrational by the same method used for square root of 2, square root of 3 and square root of 5. So 4 plus 3 times square root of 7 is irrational.",
-     "s": [
-      [
-       "Constructs a valid new expression using a prime not already used in this style elsewhere in the chapter",
-       1
-      ],
-      [
-       "Correctly sets up the assumption and rearranges to isolate the square root as a ratio of integers",
-       1
-      ],
-      [
-       "States the resulting contradiction and concludes the expression is irrational",
-       1
-      ]
-     ]
-    }
-   ]
-  }
- ]
+  ]
 }
