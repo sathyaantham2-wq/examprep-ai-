@@ -199,7 +199,7 @@ async function main() {
         options,
         step_marks: swap.add.s?.map(([description, marks], i) => ({ step_no: i + 1, description, marks })),
         is_reversal_word: swap.add.rev,
-        created_by: `claude-remediation-${file.subject_code}-ch${file.chapter.chapter_no}`,
+        created_by: `claude-remediation-${file.subject_code}-${file.chapter.part}${file.chapter.chapter_no}`,
         origin: 'ai_generated',
         source_ref: `${chapter.source_id}`,
       })
