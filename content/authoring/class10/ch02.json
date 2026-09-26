@@ -1,0 +1,2020 @@
+{
+  "subject": {
+    "code": "MATH10",
+    "name": "Mathematics",
+    "board": "CBSE",
+    "class": 10
+  },
+  "source": {
+    "publisher": "NCERT",
+    "title": "Mathematics",
+    "edition": "Textbook for Class X, Reprint 2026-27",
+    "year": 2026
+  },
+  "chapter": {
+    "part": "I",
+    "chapter_no": 2,
+    "name": "Polynomials",
+    "blurb": "Polynomials in one variable, their degree and standard names (linear, quadratic, cubic); the value and zeroes of a polynomial; the geometrical meaning of zeroes as x-intercepts of the graph of y = p(x), including the three cases for a quadratic and the degree-n-has-at-most-n-zeroes rule; and the relationship between the zeroes and coefficients of quadratic and cubic polynomials.",
+    "source_code": "jemh102",
+    "order_index": 2
+  },
+  "scope_in": [
+    {
+      "item": "Recognise whether an algebraic expression in one variable is a polynomial (only non-negative whole-number powers of the variable) and identify non-polynomial expressions such as 1/x + 1 or sqrt(x) + 2",
+      "pages": "10"
+    },
+    {
+      "item": "Find the degree of a polynomial in one variable and classify it as linear (degree 1), quadratic (degree 2, ax^2 + bx + c) or cubic (degree 3, ax^3 + bx^2 + cx + d), with a not 0 in each general form",
+      "pages": "10-11"
+    },
+    {
+      "item": "Evaluate p(k), the value of a polynomial p(x) at x = k, by direct substitution",
+      "pages": "11"
+    },
+    {
+      "item": "Define and test whether a given real number k is a zero of p(x), i.e. whether p(k) = 0",
+      "pages": "11"
+    },
+    {
+      "item": "Find the zero of a linear polynomial ax + b algebraically as k = -b/a",
+      "pages": "11"
+    },
+    {
+      "item": "Read the graph of a linear polynomial y = ax + b as a straight line meeting the x-axis at exactly one point, that point being the zero",
+      "pages": "12"
+    },
+    {
+      "item": "Read the graph of a quadratic polynomial y = ax^2 + bx + c as a parabola (opening up if a > 0, down if a < 0) and identify its zeroes as the x-intercepts, using a table of values if needed",
+      "pages": "12-13"
+    },
+    {
+      "item": "Distinguish the three cases for a quadratic graph -- two distinct x-intercepts, one repeated x-intercept (the graph touches the axis), or no x-intercept -- and state the corresponding zero count (2, 1 or 0)",
+      "pages": "14-15"
+    },
+    {
+      "item": "State that a quadratic polynomial has at most 2 zeroes",
+      "pages": "15"
+    },
+    {
+      "item": "Read the graph of a cubic polynomial to find its zeroes as x-intercepts, and state that a cubic polynomial has at most 3 zeroes",
+      "pages": "15-17"
+    },
+    {
+      "item": "Apply the general rule that a polynomial of degree n has at most n zeroes, and count the zeroes of p(x) from a given graph of y = p(x) by counting x-axis intersections",
+      "pages": "17-18"
+    },
+    {
+      "item": "Find the zeroes of a quadratic polynomial by splitting the middle term (factorisation)",
+      "pages": "18-19"
+    },
+    {
+      "item": "State and use the relationship between the zeroes and coefficients of a quadratic ax^2 + bx + c: sum of zeroes = -b/a, product of zeroes = c/a",
+      "pages": "19-20"
+    },
+    {
+      "item": "Verify the sum/product relationship for a quadratic given its zeroes, including cases needing the identity a^2 - b^2 = (a-b)(a+b)",
+      "pages": "20"
+    },
+    {
+      "item": "Construct a quadratic polynomial ax^2 + bx + c when the sum and product of its zeroes are given, using alpha+beta = -b/a and alpha*beta = c/a, and recognise that k times that polynomial (k real, k not 0) also fits",
+      "pages": "21"
+    },
+    {
+      "item": "State and use the relationship between the zeroes alpha, beta, gamma and coefficients of a cubic ax^3 + bx^2 + cx + d: alpha+beta+gamma = -b/a, alpha*beta+beta*gamma+gamma*alpha = c/a, alpha*beta*gamma = -d/a",
+      "pages": "21-22"
+    },
+    {
+      "item": "Verify the sum / pairwise-product-sum / product relationships for a cubic given its zeroes",
+      "pages": "22"
+    }
+  ],
+  "scope_out": [
+    {
+      "item": "The quadratic formula x = (-b +/- sqrt(b^2 - 4ac)) / 2a for finding zeroes directly",
+      "reason": "Not introduced anywhere in this chapter; zeroes of quadratics are found here only by splitting the middle term (factorisation), pp. 18-19"
+    },
+    {
+      "item": "The discriminant b^2 - 4ac as a named test for the number of real zeroes",
+      "reason": "The three graph cases (pp. 14-15) are justified purely pictorially; the discriminant is never named or used in this chapter"
+    },
+    {
+      "item": "Division algorithm for polynomials (dividing one polynomial by another to get a quotient and remainder)",
+      "reason": "Not present in this edition of the chapter -- this Reprint 2026-27 chapter ends at Section 2.3 (zero-coefficient relationship) and goes straight to the Summary (2.4); there is no Division Algorithm section, unlike what older NCERT editions or general syllabus memory might lead one to expect"
+    },
+    {
+      "item": "Algebraically finding the individual zeroes of a cubic (or higher-degree) polynomial from its coefficients",
+      "reason": "Cubic zeroes are only ever verified by substitution (Example 5, p. 22) or given outright (p. 21); no factorisation or solving method for cubics is taught"
+    },
+    {
+      "item": "Polynomials in more than one variable, and formal degree rules for multivariable expressions",
+      "reason": "The chapter defines degree and polynomial only for one variable throughout"
+    },
+    {
+      "item": "Plotting/drawing the graph of a quadratic or cubic polynomial by hand",
+      "reason": "Explicitly marked not required of students and not to be evaluated (footnote, p. 12); only reading a given graph is in scope"
+    },
+    {
+      "item": "General form or relationships for quartic (degree 4) or higher-degree polynomials",
+      "reason": "The chapter only names and treats linear, quadratic and cubic polynomials (degrees 1-3)"
+    }
+  ],
+  "concepts": [
+    {
+      "code": "C10M-2.1",
+      "name": "Polynomials, degree and naming",
+      "description": "Recognising an algebraic expression as a polynomial in one variable, finding its degree, and naming it linear, quadratic or cubic by that degree.",
+      "idea": "A polynomial in one variable is built only from whole-number (non-negative) powers of that variable, added or subtracted with real-number coefficients; the highest power present is called its degree.",
+      "rule": "Degree 1 is called linear (general form ax + b, a not 0); degree 2 is called quadratic (general form ax^2 + bx + c, a not 0); degree 3 is called cubic (general form ax^3 + bx^2 + cx + d, a not 0).",
+      "example": "4x + 2 is linear (degree 1); 2y^2 - 3y + 4 is quadratic (degree 2); 5x^3 - 4x^2 + x - 2 is cubic (degree 3); but 1/x + 1 and sqrt(x) + 2 are not polynomials at all, since x appears with a negative or fractional power.",
+      "difficulty_base": "Easy",
+      "questions": [
+        {
+          "b": "Remember",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "What is the degree of the polynomial 5x^3 - 4x^2 + x - 2?",
+          "a": "3",
+          "o": [
+            "3",
+            "2",
+            "4",
+            "1"
+          ]
+        },
+        {
+          "b": "Remember",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "A polynomial of degree 2 is called a",
+          "a": "quadratic polynomial",
+          "o": [
+            "quadratic polynomial",
+            "linear polynomial",
+            "cubic polynomial",
+            "biquadratic polynomial"
+          ]
+        },
+        {
+          "b": "Remember",
+          "d": "Easy",
+          "t": "fill_blank",
+          "m": 1,
+          "q": "A polynomial of degree 3 is called a ____ polynomial.",
+          "a": "cubic"
+        },
+        {
+          "b": "Remember",
+          "d": "Hard",
+          "t": "mcq",
+          "m": 1,
+          "rev": true,
+          "q": "Which of these is NOT a polynomial in the variable x?",
+          "a": "2/x + 3",
+          "o": [
+            "2/x + 3",
+            "5x^3 - 4x^2 + x - 2",
+            "2x - 3",
+            "2y^2 - 3y + 4"
+          ]
+        },
+        {
+          "b": "Understand",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "Which of the following is a linear polynomial in x?",
+          "a": "3x - 7",
+          "o": [
+            "3x - 7",
+            "3x^2 - 7",
+            "1/x + 5",
+            "7"
+          ]
+        },
+        {
+          "b": "Understand",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "The polynomial p(y) = 2y^2 - 3y + 4 is",
+          "a": "quadratic",
+          "o": [
+            "quadratic",
+            "linear",
+            "cubic",
+            "not a polynomial"
+          ]
+        },
+        {
+          "b": "Understand",
+          "d": "Easy",
+          "t": "short_answer",
+          "m": 2,
+          "q": "State the degree of x^3 + 1 and name the type of polynomial it is.",
+          "a": "Degree 3; a cubic polynomial.",
+          "s": [
+            [
+              "States the degree is 3",
+              1
+            ],
+            [
+              "Names it a cubic polynomial",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Understand",
+          "d": "Hard",
+          "t": "mcq",
+          "m": 1,
+          "q": "Which of these is the general form of a cubic polynomial in x (a, b, c, d real, a not 0)?",
+          "a": "ax^3 + bx^2 + cx + d",
+          "o": [
+            "ax^3 + bx^2 + cx + d",
+            "ax^3 + bx + c",
+            "ax^2 + bx^3 + c",
+            "bx^3 + ax^2 + cx + d"
+          ]
+        },
+        {
+          "b": "Understand",
+          "d": "Hard",
+          "t": "mcq",
+          "m": 1,
+          "q": "A student says: 'Since 2x + 5 - x^2 has an x term with coefficient 2, it is a linear polynomial.' What is wrong with this reasoning?",
+          "a": "The polynomial also has an x^2 term, so its degree is 2 (quadratic), not 1; degree is decided by the highest power present, not by any one term's coefficient.",
+          "o": [
+            "The polynomial also has an x^2 term, so its degree is 2 (quadratic), not 1; degree is decided by the highest power present, not by any one term's coefficient.",
+            "Nothing is wrong; it is linear",
+            "It is wrong because the constant term is 5, not 0",
+            "It is wrong because linear polynomials cannot have a positive coefficient of x"
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Easy",
+          "t": "fill_blank",
+          "m": 1,
+          "q": "The degree of the polynomial 4x^5 - 2x^3 + x is ____.",
+          "a": "5"
+        },
+        {
+          "b": "Apply",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "Which type of polynomial is 9 - 4x + x^2 (rearranged by descending powers, it is x^2 - 4x + 9)?",
+          "a": "Quadratic",
+          "o": [
+            "Quadratic",
+            "Linear",
+            "Cubic",
+            "Not a polynomial"
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Hard",
+          "t": "mcq",
+          "m": 1,
+          "q": "A polynomial has terms with powers 0, 1 and 3 of x, and no other powers. What degree and name does it have?",
+          "a": "Degree 3, cubic",
+          "o": [
+            "Degree 3, cubic",
+            "Degree 1, linear",
+            "Degree 4, quartic",
+            "Degree 3, quadratic"
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Hard",
+          "t": "mcq",
+          "m": 1,
+          "q": "Which of these expressions is a polynomial in x?",
+          "a": "x^3 - 2x + 7",
+          "o": [
+            "x^3 - 2x + 7",
+            "3/x + 2",
+            "sqrt(x) - 1",
+            "2^x + 5"
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Hard",
+          "t": "short_answer",
+          "m": 2,
+          "q": "State the degree and name of the polynomial 6 - x^3 (write it in standard descending-power form first).",
+          "a": "Standard form: -x^3 + 6. Degree 3, a cubic polynomial.",
+          "s": [
+            [
+              "Rewrites in descending-power form as -x^3 + 6 (or notes the highest power present is 3)",
+              1
+            ],
+            [
+              "States degree 3 and names it cubic",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Hardest",
+          "t": "long_answer",
+          "m": 3,
+          "q": "Three expressions are given: (i) 5x^4 - 3, (ii) 1/x^2 + 3x, (iii) 2x - 9. For each, state whether it is a polynomial in x, and if so, give its degree and name.",
+          "a": "(i) 5x^4 - 3 is a polynomial, degree 4 (this chapter does not give degree-4 polynomials a name beyond linear/quadratic/cubic). (ii) 1/x^2 + 3x is not a polynomial, since x appears with a negative power. (iii) 2x - 9 is a polynomial, degree 1, linear.",
+          "s": [
+            [
+              "Correctly classifies (i) as a polynomial of degree 4",
+              1
+            ],
+            [
+              "Correctly classifies (ii) as not a polynomial, explaining the negative power",
+              1
+            ],
+            [
+              "Correctly classifies (iii) as a linear polynomial of degree 1",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Analyse",
+          "d": "Hard",
+          "t": "assertion_reason",
+          "m": 1,
+          "q": "Assertion (A): 2x^2 - x^2 + 5 is a quadratic polynomial. Reason (R): Any algebraic expression that contains an x^2 term is a quadratic polynomial.",
+          "a": "A is true, R is false",
+          "o": [
+            "A is true, R is false",
+            "A is false, R is true",
+            "Both A and R are true, and R is the correct explanation of A",
+            "Both A and R are true, but R is not the correct explanation of A"
+          ]
+        },
+        {
+          "b": "Analyse",
+          "d": "Hard",
+          "t": "multi_statement",
+          "m": 1,
+          "q": "Consider: (I) The degree of a polynomial is the highest power of the variable that appears in it. (II) 5 is a polynomial of degree 1. Which is or are correct?",
+          "a": "Only I",
+          "o": [
+            "Only I",
+            "Only II",
+            "Both I and II",
+            "Neither I nor II"
+          ]
+        },
+        {
+          "b": "Analyse",
+          "d": "Hardest",
+          "t": "long_answer",
+          "m": 3,
+          "q": "A student claims: 'x^2 + 2x^3 - 5 is a quadratic polynomial because the first term has power 2.' (a) Is the student's classification correct? (b) What is the actual degree and name of this polynomial? (c) State the general rule the student is missing.",
+          "a": "No, the student is wrong. The highest power present is 3 (from 2x^3), so it is a cubic polynomial, degree 3, not quadratic. The degree of a polynomial is decided by its highest power of x, not by whichever term happens to be written first.",
+          "s": [
+            [
+              "States the classification is incorrect",
+              1
+            ],
+            [
+              "Gives the correct degree (3) and name (cubic)",
+              1
+            ],
+            [
+              "States the general rule: degree = highest power present, not the first term written",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Evaluate",
+          "d": "Hard",
+          "t": "short_answer",
+          "m": 2,
+          "q": "A classmate says every expression with 'x' in it is a polynomial. Give ONE example that shows this is false, and explain why your example is not a polynomial.",
+          "a": "For example, 1/x + 1 (or sqrt(x) + 2) is not a polynomial, because x appears with a negative power (or a fractional power), and a polynomial allows only non-negative whole-number powers of x.",
+          "s": [
+            [
+              "Gives a valid counterexample such as 1/x + 1 or sqrt(x) + 2",
+              1
+            ],
+            [
+              "Explains it fails because of a negative or fractional power of x",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Create",
+          "d": "Hardest",
+          "t": "long_answer",
+          "m": 3,
+          "q": "Construct your own example of a cubic polynomial in the variable z that has exactly four terms, and state its degree.",
+          "a": "For example, 2z^3 - z^2 + 5z - 1. Degree 3 (cubic), since the highest power present is 3.",
+          "s": [
+            [
+              "Gives an expression with a nonzero z^3 term and four terms in total",
+              1
+            ],
+            [
+              "All powers of z are non-negative whole numbers (so it is a genuine polynomial)",
+              1
+            ],
+            [
+              "Correctly states the degree is 3",
+              1
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "code": "C10M-2.2",
+      "name": "Value and zero of a polynomial; zero of a linear polynomial",
+      "description": "Evaluating p(k) by substitution, defining a zero of p(x) as a real number k with p(k) = 0, and finding the zero of a linear polynomial algebraically.",
+      "idea": "Putting a number in place of x in p(x) gives a single number, the value of p(x) at that point; when that value comes out to be exactly 0, the number substituted is called a zero of the polynomial.",
+      "rule": "For p(x) = x^2 - 3x - 4, p(k) is found by replacing every x with k. A zero of p(x) is any real k with p(k) = 0. For a linear polynomial ax + b (a not 0), setting ak + b = 0 gives its one and only zero, k = -b/a.",
+      "example": "For p(x) = x^2 - 3x - 4: p(2) = 4 - 6 - 4 = -6, so 2 is not a zero; p(-1) = 1 + 3 - 4 = 0 and p(4) = 16 - 12 - 4 = 0, so -1 and 4 are both zeroes. The zero of p(x) = 2x + 3 is -3/2.",
+      "difficulty_base": "Easy",
+      "questions": [
+        {
+          "b": "Remember",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "If p(x) is a polynomial and k is a real number, then p(k) is called the",
+          "a": "value of p(x) at x = k",
+          "o": [
+            "value of p(x) at x = k",
+            "zero of p(x)",
+            "degree of p(x)",
+            "coefficient of p(x)"
+          ]
+        },
+        {
+          "b": "Remember",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "A real number k is called a zero of the polynomial p(x) if",
+          "a": "p(k) = 0",
+          "o": [
+            "p(k) = 0",
+            "k = 0",
+            "p(0) = k",
+            "p(k) = k"
+          ]
+        },
+        {
+          "b": "Remember",
+          "d": "Easy",
+          "t": "fill_blank",
+          "m": 1,
+          "q": "The zero of the linear polynomial ax + b (a not 0) is x = ____.",
+          "a": "-b/a"
+        },
+        {
+          "b": "Remember",
+          "d": "Hard",
+          "t": "mcq",
+          "m": 1,
+          "rev": true,
+          "q": "Which of these is NOT true about a zero of a polynomial p(x)?",
+          "a": "A quadratic polynomial always has exactly one zero",
+          "o": [
+            "A quadratic polynomial always has exactly one zero",
+            "A zero of p(x) is a real number k such that p(k) = 0",
+            "A linear polynomial ax + b (a not 0) has exactly one zero",
+            "The zero of 2x + 3 is -3/2"
+          ]
+        },
+        {
+          "b": "Understand",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "For p(x) = x^2 - 3x - 4, what is p(4)?",
+          "a": "0",
+          "o": [
+            "0",
+            "-6",
+            "4",
+            "-4"
+          ]
+        },
+        {
+          "b": "Understand",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "Which value of x makes 2x + 3 equal to zero?",
+          "a": "-3/2",
+          "o": [
+            "-3/2",
+            "3/2",
+            "-2/3",
+            "2/3"
+          ]
+        },
+        {
+          "b": "Understand",
+          "d": "Easy",
+          "t": "short_answer",
+          "m": 2,
+          "q": "Explain the difference between 'the value of p(x) at x = k' and 'a zero of p(x)'.",
+          "a": "The value of p(x) at x = k is p(k), whatever number that works out to be; a zero is the special case where that value comes out to be exactly 0.",
+          "s": [
+            [
+              "Explains p(k) is just the value obtained by substitution",
+              1
+            ],
+            [
+              "States a zero is the special case where this value is 0",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Understand",
+          "d": "Hard",
+          "t": "mcq",
+          "m": 1,
+          "q": "p(x) = x^2 - 3x - 4. A student substitutes x = 2 and gets p(2) = -6, then claims 2 is a zero of p(x). What is wrong?",
+          "a": "p(2) = -6, not 0, so by definition 2 is not a zero; only inputs that make p(x) exactly 0 are zeroes.",
+          "o": [
+            "p(2) = -6, not 0, so by definition 2 is not a zero; only inputs that make p(x) exactly 0 are zeroes.",
+            "Nothing is wrong; -6 counts as a zero too",
+            "p(2) should have been computed as 0, so the student made an arithmetic mistake",
+            "2 is a zero only if it is positive"
+          ]
+        },
+        {
+          "b": "Understand",
+          "d": "Hard",
+          "t": "mcq",
+          "m": 1,
+          "q": "Why does a linear polynomial ax + b (a not 0) always have exactly one zero, given by x = -b/a?",
+          "a": "Because for a not 0, the equation ak + b = 0 can always be solved uniquely for k by dividing by a, giving exactly one value.",
+          "o": [
+            "Because for a not 0, the equation ak + b = 0 can always be solved uniquely for k by dividing by a, giving exactly one value.",
+            "Because b is always negative",
+            "Because a linear equation can have up to two solutions and only one is chosen",
+            "Because x itself is always positive"
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Easy",
+          "t": "fill_blank",
+          "m": 1,
+          "q": "The zero of the polynomial p(x) = 4x - 20 is x = ____.",
+          "a": "5"
+        },
+        {
+          "b": "Apply",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "If p(x) = x^2 - 3x - 4, what is p(-2)?",
+          "a": "6",
+          "o": [
+            "6",
+            "-6",
+            "-2",
+            "10"
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Hard",
+          "t": "mcq",
+          "m": 1,
+          "q": "The zero of the linear polynomial (1/2)x - 3 is",
+          "a": "6",
+          "o": [
+            "6",
+            "-6",
+            "3/2",
+            "1/6"
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Hard",
+          "t": "mcq",
+          "m": 1,
+          "q": "For p(x) = 5 - 2x, which value of x gives p(x) = 0?",
+          "a": "5/2",
+          "o": [
+            "5/2",
+            "-5/2",
+            "2/5",
+            "5"
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Hard",
+          "t": "short_answer",
+          "m": 2,
+          "q": "Find the zero of p(x) = 7 - 3x, and verify it by substitution.",
+          "a": "Zero is x = 7/3, since -3x + 7 = 0 gives x = 7/3. Check: p(7/3) = 7 - 3(7/3) = 7 - 7 = 0.",
+          "s": [
+            [
+              "Finds x = 7/3",
+              1
+            ],
+            [
+              "Verifies by substituting back to get 0",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Hardest",
+          "t": "long_answer",
+          "m": 3,
+          "q": "Let p(x) = x^2 - 3x - 4 (the polynomial used throughout this section). (a) Find p(1). (b) Find p(-4). (c) State, with reason, whether -4 is a zero of p(x).",
+          "a": "p(1) = 1 - 3 - 4 = -6. p(-4) = 16 + 12 - 4 = 24. Since p(-4) = 24, not 0, -4 is not a zero of p(x) (the zeroes of this polynomial are -1 and 4).",
+          "s": [
+            [
+              "Computes p(1) = -6",
+              1
+            ],
+            [
+              "Computes p(-4) = 24",
+              1
+            ],
+            [
+              "Correctly concludes -4 is not a zero, since p(-4) is not 0",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Analyse",
+          "d": "Hard",
+          "t": "assertion_reason",
+          "m": 1,
+          "q": "Assertion (A): The zero of the linear polynomial 4x + 8 is x = 2. Reason (R): The zero of a linear polynomial ax + b is given by x = -b/a.",
+          "a": "A is false, R is true",
+          "o": [
+            "A is false, R is true",
+            "A is true, R is false",
+            "Both A and R are true, and R is the correct explanation of A",
+            "Both A and R are true, but R is not the correct explanation of A"
+          ]
+        },
+        {
+          "b": "Analyse",
+          "d": "Hard",
+          "t": "multi_statement",
+          "m": 1,
+          "q": "Consider: (I) If p(5) = 0 for a polynomial p(x), then 5 is a zero of p(x). (II) The zero of the linear polynomial 3x - 9 is x = 3. Which is or are correct?",
+          "a": "Both I and II",
+          "o": [
+            "Both I and II",
+            "Only I",
+            "Only II",
+            "Neither I nor II"
+          ]
+        },
+        {
+          "b": "Analyse",
+          "d": "Hardest",
+          "t": "long_answer",
+          "m": 3,
+          "q": "A polynomial p(x) = 2x - 7 is given. (a) Find its zero algebraically. (b) Verify your answer by substitution. (c) Explain in one sentence why a linear polynomial has only one zero, not two.",
+          "a": "Zero is x = 7/2. Check: p(7/2) = 2(7/2) - 7 = 7 - 7 = 0, confirmed. A linear equation ax + b = 0 (a not 0) has only one solution because dividing both sides by a gives a single value of x; there is no second solution to an equation of this form.",
+          "s": [
+            [
+              "Finds x = 7/2",
+              1
+            ],
+            [
+              "Verifies by substitution",
+              1
+            ],
+            [
+              "Explains why only one zero is possible for a linear polynomial",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Evaluate",
+          "d": "Hard",
+          "t": "short_answer",
+          "m": 2,
+          "q": "A student says: 'p(0) always equals a zero of the polynomial p(x).' Evaluate this claim using p(x) = x^2 - 3x - 4 as a check.",
+          "a": "The claim is wrong. p(0) is just the value of the polynomial at x = 0 (here p(0) = -4), not a zero. The actual zeroes of x^2 - 3x - 4 are -1 and 4, and 0 is not one of them since p(0) = -4, not 0.",
+          "s": [
+            [
+              "Says the claim is wrong / evaluates it as false",
+              1
+            ],
+            [
+              "Supports with the check: p(0) = -4 here, while the real zeroes are -1 and 4",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Create",
+          "d": "Hardest",
+          "t": "long_answer",
+          "m": 3,
+          "q": "Create your own linear polynomial (different from any used in this chapter) whose zero is a negative fraction. Write the polynomial, find its zero, and verify by substitution.",
+          "a": "For example, p(x) = 4x + 6. Zero: 4x + 6 = 0 gives x = -3/2 (a negative fraction). Check: p(-3/2) = 4(-3/2) + 6 = -6 + 6 = 0, confirmed.",
+          "s": [
+            [
+              "Writes a linear polynomial ax + b with a not 0",
+              1
+            ],
+            [
+              "Correctly finds its zero and confirms it is a negative fraction",
+              1
+            ],
+            [
+              "Verifies by substitution that the value is indeed 0",
+              1
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "code": "C10M-2.3",
+      "name": "Geometrical meaning of zeroes: lines and parabolas",
+      "description": "Reading the zero(es) of a linear or quadratic polynomial off the graph of y = p(x) as its x-intercept(s), and the three possible cases for a quadratic's graph.",
+      "idea": "The zeroes of p(x) are exactly the x-coordinates of the points where the graph of y = p(x) crosses or touches the x-axis, so counting crossing points tells you how many real zeroes the polynomial has.",
+      "rule": "The graph of a linear polynomial y = ax + b (a not 0) is a straight line that meets the x-axis at exactly one point, so it has exactly one zero. The graph of a quadratic y = ax^2 + bx + c (a not 0) is a parabola (opening upward if a > 0, downward if a < 0) and it either (i) cuts the x-axis at two distinct points (2 distinct zeroes), (ii) touches the x-axis at one point / two coincident points (1 repeated zero), or (iii) does not meet the x-axis at all (no real zero). So a quadratic has at most 2 zeroes.",
+      "example": "y = 2x + 3 crosses the x-axis only at (-3/2, 0). The graph of y = x^2 - 3x - 4 crosses the x-axis at x = -1 and x = 4, matching Table 2.1.",
+      "difficulty_base": "Easy",
+      "questions": [
+        {
+          "b": "Remember",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "The graph of a linear polynomial y = ax + b (a not 0) is a",
+          "a": "straight line",
+          "o": [
+            "straight line",
+            "parabola",
+            "circle",
+            "curve with no fixed shape"
+          ]
+        },
+        {
+          "b": "Remember",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "The graph of a quadratic polynomial y = ax^2 + bx + c (a not 0) is called a",
+          "a": "parabola",
+          "o": [
+            "parabola",
+            "straight line",
+            "hyperbola",
+            "circle"
+          ]
+        },
+        {
+          "b": "Remember",
+          "d": "Easy",
+          "t": "fill_blank",
+          "m": 1,
+          "q": "A straight-line graph y = ax + b (a not 0) meets the x-axis at ____ point(s).",
+          "a": "exactly one"
+        },
+        {
+          "b": "Remember",
+          "d": "Hard",
+          "t": "mcq",
+          "m": 1,
+          "rev": true,
+          "q": "Which of these is NOT one of the three possible cases for how the graph of a quadratic ax^2 + bx + c can meet the x-axis?",
+          "a": "It cuts the x-axis at three distinct points",
+          "o": [
+            "It cuts the x-axis at three distinct points",
+            "It cuts the x-axis at two distinct points",
+            "It touches the x-axis at exactly one point (two coincident points)",
+            "It does not meet the x-axis at all"
+          ]
+        },
+        {
+          "b": "Understand",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "The graph of y = 2x + 3 crosses the x-axis at",
+          "a": "(-3/2, 0)",
+          "o": [
+            "(-3/2, 0)",
+            "(3/2, 0)",
+            "(0, 3)",
+            "(0, -3/2)"
+          ]
+        },
+        {
+          "b": "Understand",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "If the graph of y = ax^2 + bx + c opens downward, then",
+          "a": "a < 0",
+          "o": [
+            "a < 0",
+            "a > 0",
+            "a = 0",
+            "c < 0"
+          ]
+        },
+        {
+          "b": "Understand",
+          "d": "Easy",
+          "t": "short_answer",
+          "m": 2,
+          "q": "State what the zero of a linear polynomial ax + b represents on the graph of y = ax + b.",
+          "a": "It is the x-coordinate of the single point where the line crosses the x-axis.",
+          "s": [
+            [
+              "States it is an x-coordinate",
+              1
+            ],
+            [
+              "States it is where the graph meets/crosses the x-axis",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Understand",
+          "d": "Hard",
+          "t": "mcq",
+          "m": 1,
+          "q": "From Table 2.1 (values of y = x^2 - 3x - 4), the graph crosses the x-axis at x = -1 and x = 4. What does this tell you about the polynomial x^2 - 3x - 4?",
+          "a": "Its two zeroes are -1 and 4",
+          "o": [
+            "Its two zeroes are -1 and 4",
+            "It has no zeroes",
+            "Its only zero is -1",
+            "It has three zeroes: -1, 0 and 4"
+          ]
+        },
+        {
+          "b": "Understand",
+          "d": "Hard",
+          "t": "mcq",
+          "m": 1,
+          "q": "A quadratic graph touches the x-axis at exactly one point (it does not cross through). What can you conclude?",
+          "a": "The quadratic has one zero, a repeated (coincident) zero",
+          "o": [
+            "The quadratic has one zero, a repeated (coincident) zero",
+            "The quadratic has no real zero",
+            "The quadratic has two different zeroes very close together",
+            "The polynomial is not quadratic"
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Easy",
+          "t": "fill_blank",
+          "m": 1,
+          "q": "The graph of y = 3x - 12 crosses the x-axis at x = ____.",
+          "a": "4"
+        },
+        {
+          "b": "Apply",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "How many points does the graph of a linear polynomial y = ax + b (a not 0) have in common with the x-axis?",
+          "a": "1",
+          "o": [
+            "1",
+            "0",
+            "2",
+            "infinitely many"
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Hard",
+          "t": "mcq",
+          "m": 1,
+          "q": "The graph of y = ax^2 + bx + c meets the x-axis at exactly one point. What can we say about this point?",
+          "a": "It is a repeated (double) zero of the quadratic",
+          "o": [
+            "It is a repeated (double) zero of the quadratic",
+            "The quadratic has no zero there",
+            "There must be a second, different meeting point elsewhere",
+            "a must be negative"
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Hard",
+          "t": "mcq",
+          "m": 1,
+          "q": "For the quadratic x^2 - 3x - 4, at how many points does its parabola cross the x-axis?",
+          "a": "2 (at x = -1 and x = 4)",
+          "o": [
+            "2 (at x = -1 and x = 4)",
+            "1",
+            "0",
+            "3"
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Hard",
+          "t": "short_answer",
+          "m": 2,
+          "q": "A parabola y = ax^2 + bx + c lies entirely above the x-axis (never touching it). What does this tell you about the number of real zeroes of the quadratic, and why?",
+          "a": "It has no real zero, because the zeroes are exactly the x-coordinates of points where the graph meets the x-axis, and this graph never meets the x-axis at all.",
+          "s": [
+            [
+              "States there are no real zeroes",
+              1
+            ],
+            [
+              "Explains using the meets-the-x-axis definition of a zero",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Hardest",
+          "t": "long_answer",
+          "m": 3,
+          "q": "A quadratic polynomial's graph is known to open upward (a > 0) and to lie completely above the x-axis. (a) How many times does it meet the x-axis? (b) How many real zeroes does it have? (c) Could this quadratic be x^2 - 3x - 4? Justify using the fact that x^2 - 3x - 4 has zeroes -1 and 4.",
+          "a": "(a) Zero times -- it never meets the x-axis. (b) Zero real zeroes. (c) No, it cannot be x^2 - 3x - 4, because that quadratic does meet the x-axis, at x = -1 and x = 4 (two points), so it has 2 real zeroes, not 0.",
+          "s": [
+            [
+              "States it meets the x-axis 0 times",
+              1
+            ],
+            [
+              "States it has 0 real zeroes",
+              1
+            ],
+            [
+              "Correctly rules out x^2 - 3x - 4 using its known zeroes -1 and 4",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Analyse",
+          "d": "Hard",
+          "t": "assertion_reason",
+          "m": 1,
+          "q": "Assertion (A): The graph of y = x^2 - 3x - 4 crosses the x-axis at exactly two points. Reason (R): The quadratic x^2 - 3x - 4 has two distinct zeroes, -1 and 4.",
+          "a": "Both A and R are true, and R is the correct explanation of A",
+          "o": [
+            "Both A and R are true, and R is the correct explanation of A",
+            "Both A and R are true, but R is not the correct explanation of A",
+            "A is true, R is false",
+            "A is false, R is true"
+          ]
+        },
+        {
+          "b": "Analyse",
+          "d": "Hard",
+          "t": "multi_statement",
+          "m": 1,
+          "q": "Consider: (I) A quadratic polynomial's graph can cross the x-axis at three distinct points. (II) A quadratic polynomial can have zero real zeroes. Which is or are correct?",
+          "a": "Only II",
+          "o": [
+            "Only II",
+            "Only I",
+            "Both I and II",
+            "Neither I nor II"
+          ]
+        },
+        {
+          "b": "Analyse",
+          "d": "Hardest",
+          "t": "long_answer",
+          "m": 3,
+          "q": "The graph of y = p(x) for a certain quadratic polynomial touches the x-axis at x = 5 and nowhere else. (a) How many zeroes does p(x) have, counting the repeated one? (b) Is 5 the only zero, or could there be another, different zero elsewhere? (c) Which of the three graph cases (i), (ii) or (iii) does this match?",
+          "a": "(a) One zero (a repeated/coincident zero) at x = 5. (b) 5 is the only zero; a quadratic that touches the x-axis at one point has no other, different zero, since both coincident zeroes equal 5. (c) This matches Case (ii).",
+          "s": [
+            [
+              "States one (repeated) zero at x = 5",
+              1
+            ],
+            [
+              "States 5 is the only zero, no other different zero exists",
+              1
+            ],
+            [
+              "Correctly identifies Case (ii)",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Evaluate",
+          "d": "Hard",
+          "t": "short_answer",
+          "m": 2,
+          "q": "A student argues: 'Since the graph of a linear polynomial is a straight line, and a straight line goes on forever in both directions, it must cross the x-axis more than once.' Evaluate this claim.",
+          "a": "The claim is wrong. A straight (non-horizontal) line extends forever but is not curved, so it meets any other straight line (including the x-axis) at exactly one point, not more; ax + b (a not 0) meets the x-axis at exactly one point, (-b/a, 0).",
+          "s": [
+            [
+              "States the claim is wrong",
+              1
+            ],
+            [
+              "Explains a straight, non-horizontal line meets the x-axis at exactly one point regardless of extending forever",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Create",
+          "d": "Hardest",
+          "t": "long_answer",
+          "m": 3,
+          "q": "Describe (in words, no need to draw) a quadratic polynomial's graph that would have no real zero, and explain how you know just from your description.",
+          "a": "For example, a parabola that opens upward (a > 0) and whose lowest point (vertex) lies above the x-axis, so the whole curve stays above the x-axis. Since it never meets the x-axis, it has no real zero (Case (iii)).",
+          "s": [
+            [
+              "Describes a parabola that stays entirely above (or entirely below) the x-axis",
+              1
+            ],
+            [
+              "Correctly links this to it never meeting the x-axis",
+              1
+            ],
+            [
+              "Concludes it has no real zero, i.e. Case (iii)",
+              1
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "code": "C10M-2.4",
+      "name": "Geometrical meaning of zeroes: cubic graphs and the degree rule",
+      "description": "Reading the zeroes of a cubic polynomial off its graph, and the general rule that a degree-n polynomial has at most n real zeroes.",
+      "idea": "The x-intercept idea extends to any degree: a cubic's graph meets the x-axis in at most 3 points, and in general a degree-n polynomial's graph meets the x-axis in at most n points.",
+      "rule": "A cubic polynomial has at most 3 zeroes. In general, a polynomial p(x) of degree n has at most n zeroes, and the graph of y = p(x) meets the x-axis in at most n points.",
+      "example": "y = x^3 - 4x meets the x-axis at x = -2, 0, 2 (3 zeroes). y = x^3 meets it only at x = 0 (1 zero). y = x^3 - x^2 = x^2(x - 1) meets it at x = 0 and x = 1 (2 zeroes).",
+      "difficulty_base": "Hard",
+      "questions": [
+        {
+          "b": "Remember",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "A cubic polynomial can have at most how many zeroes?",
+          "a": "3",
+          "o": [
+            "3",
+            "1",
+            "2",
+            "4"
+          ]
+        },
+        {
+          "b": "Remember",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "In general, a polynomial p(x) of degree n has at most how many zeroes?",
+          "a": "n",
+          "o": [
+            "n",
+            "n + 1",
+            "n - 1",
+            "2n"
+          ]
+        },
+        {
+          "b": "Remember",
+          "d": "Easy",
+          "t": "fill_blank",
+          "m": 1,
+          "q": "The polynomial y = x^3 has exactly ____ zero (write the number).",
+          "a": "1"
+        },
+        {
+          "b": "Remember",
+          "d": "Hard",
+          "t": "mcq",
+          "m": 1,
+          "rev": true,
+          "q": "Which of these is NOT correct about zeroes and degree?",
+          "a": "A cubic polynomial can have at most 2 zeroes",
+          "o": [
+            "A cubic polynomial can have at most 2 zeroes",
+            "A polynomial of degree n has at most n zeroes",
+            "A cubic polynomial can have at most 3 zeroes",
+            "x^3 - 4x has three zeroes: -2, 0 and 2"
+          ]
+        },
+        {
+          "b": "Understand",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "The zeroes of x^3 - 4x are",
+          "a": "-2, 0 and 2",
+          "o": [
+            "-2, 0 and 2",
+            "-2 and 2 only",
+            "0 only",
+            "-4, 0 and 4"
+          ]
+        },
+        {
+          "b": "Understand",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "Since x^3 - x^2 = x^2(x - 1), its zeroes are",
+          "a": "0 and 1",
+          "o": [
+            "0 and 1",
+            "0 only",
+            "1 only",
+            "0, 1 and -1"
+          ]
+        },
+        {
+          "b": "Understand",
+          "d": "Easy",
+          "t": "short_answer",
+          "m": 2,
+          "q": "Why does x^3 - x^2 have 0 as one of its zeroes?",
+          "a": "Because x^3 - x^2 factors as x^2(x - 1), and putting x = 0 makes the factor x^2 equal to 0, so the whole product is 0.",
+          "s": [
+            [
+              "States the factorisation x^2(x - 1)",
+              1
+            ],
+            [
+              "Explains x = 0 makes x^2 (hence the product) equal to 0",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Understand",
+          "d": "Hard",
+          "t": "mcq",
+          "m": 1,
+          "q": "A polynomial of degree 5 is given. What is the maximum number of times its graph can cross the x-axis?",
+          "a": "5",
+          "o": [
+            "5",
+            "3",
+            "10",
+            "unlimited"
+          ]
+        },
+        {
+          "b": "Understand",
+          "d": "Hard",
+          "t": "mcq",
+          "m": 1,
+          "q": "In Example 1 of this chapter, a graph of y = p(x) intersects the x-axis at exactly 3 points. How many zeroes does p(x) have?",
+          "a": "3",
+          "o": [
+            "3",
+            "1",
+            "2",
+            "more information is needed"
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Easy",
+          "t": "fill_blank",
+          "m": 1,
+          "q": "If the graph of y = p(x) meets the x-axis at exactly 4 points, then p(x) has ____ zero(es).",
+          "a": "4"
+        },
+        {
+          "b": "Apply",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "A cubic polynomial's graph meets the x-axis at exactly 2 points. How many zeroes does it have?",
+          "a": "2",
+          "o": [
+            "2",
+            "3",
+            "1",
+            "0"
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Hard",
+          "t": "mcq",
+          "m": 1,
+          "q": "A polynomial p(x) has degree 3, and its graph meets the x-axis at 3 distinct points. What can you conclude?",
+          "a": "p(x) has exactly 3 distinct real zeroes -- the maximum possible for a cubic",
+          "o": [
+            "p(x) has exactly 3 distinct real zeroes -- the maximum possible for a cubic",
+            "p(x) has only 1 zero, since a cubic really has one main zero",
+            "p(x) has 3 zeroes but at least one must be repeated",
+            "p(x) has 3 zeroes only if it also touches the x-axis somewhere else"
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Hard",
+          "t": "mcq",
+          "m": 1,
+          "q": "The graph of y = x^3 meets the x-axis at how many points?",
+          "a": "1 (only at x = 0)",
+          "o": [
+            "1 (only at x = 0)",
+            "0",
+            "3",
+            "2"
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Hard",
+          "t": "short_answer",
+          "m": 2,
+          "q": "A degree-4 polynomial's graph meets the x-axis at exactly 4 distinct points. How many real zeroes does it have, and which rule tells you this is also the maximum possible?",
+          "a": "It has exactly 4 real zeroes; the rule that a degree-n polynomial has at most n zeroes tells us 4 is also the maximum possible for a degree-4 polynomial.",
+          "s": [
+            [
+              "States 4 real zeroes",
+              1
+            ],
+            [
+              "Names/uses the degree-n-has-at-most-n-zeroes rule",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Hardest",
+          "t": "long_answer",
+          "m": 3,
+          "q": "Consider the three cubic polynomials from this chapter: x^3 - 4x, x^3, and x^3 - x^2. (a) List the zeroes of each. (b) Which of the three has the fewest zeroes, and how many? (c) Do any of the three reach the maximum of 3 zeroes possible for a cubic?",
+          "a": "(a) x^3 - 4x: -2, 0, 2. x^3: 0 only. x^3 - x^2: 0 and 1. (b) x^3 has the fewest, just 1 zero. (c) Yes, x^3 - 4x reaches the maximum of 3 zeroes.",
+          "s": [
+            [
+              "Correctly lists all three zero-sets",
+              1
+            ],
+            [
+              "Identifies x^3 as having the fewest (1 zero)",
+              1
+            ],
+            [
+              "Identifies x^3 - 4x as reaching the maximum of 3",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Analyse",
+          "d": "Hard",
+          "t": "assertion_reason",
+          "m": 1,
+          "q": "Assertion (A): The cubic polynomial x^3 - x^2 has exactly two zeroes, 0 and 1. Reason (R): A cubic polynomial can have at most three zeroes.",
+          "a": "Both A and R are true, but R is not the correct explanation of A",
+          "o": [
+            "Both A and R are true, but R is not the correct explanation of A",
+            "Both A and R are true, and R is the correct explanation of A",
+            "A is true, R is false",
+            "A is false, R is true"
+          ]
+        },
+        {
+          "b": "Analyse",
+          "d": "Hard",
+          "t": "multi_statement",
+          "m": 1,
+          "q": "Consider: (I) The polynomial x^3 - 4x has exactly two distinct zeroes. (II) Every cubic polynomial has exactly three distinct zeroes. Which is or are correct?",
+          "a": "Neither I nor II",
+          "o": [
+            "Neither I nor II",
+            "Only I",
+            "Only II",
+            "Both I and II"
+          ]
+        },
+        {
+          "b": "Analyse",
+          "d": "Hardest",
+          "t": "long_answer",
+          "m": 3,
+          "q": "A teacher says a degree-6 polynomial's graph 'must' cross the x-axis exactly 6 times. (a) Is the teacher's use of 'must' correct? (b) What is the correct general rule? (c) Give an example, from this chapter, of a polynomial crossing the x-axis fewer times than its degree.",
+          "a": "(a) No, 'must ... exactly 6' is too strong. (b) The correct rule is a degree-n polynomial has at most n zeroes -- it can have fewer. (c) For example, y = x^3 has degree 3 but crosses the x-axis only once (at x = 0), fewer than 3 times.",
+          "s": [
+            [
+              "States the teacher's 'exactly' claim is incorrect",
+              1
+            ],
+            [
+              "Gives the correct at-most rule",
+              1
+            ],
+            [
+              "Gives a valid example of a polynomial crossing fewer times than its degree, e.g. x^3",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Evaluate",
+          "d": "Hard",
+          "t": "short_answer",
+          "m": 2,
+          "q": "A student claims: 'x^3 - x^2 must have 3 zeroes because it is a cubic.' Evaluate this claim using the factorisation x^3 - x^2 = x^2(x - 1).",
+          "a": "The claim is wrong. 'Cubic' only sets the maximum possible zeroes at 3; the actual count can be less. Here x^2(x - 1) = 0 only when x = 0 or x = 1, so this cubic has just 2 zeroes, not 3.",
+          "s": [
+            [
+              "States the claim is wrong / evaluates it as false",
+              1
+            ],
+            [
+              "Uses the factorisation to show only 2 zeroes (0 and 1) actually occur",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Create",
+          "d": "Hardest",
+          "t": "long_answer",
+          "m": 3,
+          "q": "Without using any polynomial already given in this chapter, describe (in words) a cubic polynomial you would expect to have only one real zero, and explain your reasoning.",
+          "a": "For example, a cubic polynomial like x^3 + x + 1, whose graph rises steadily from bottom-left to top-right and crosses the x-axis only once, would have just one real zero -- similar in behaviour to y = x^3, which also has only one zero (at 0).",
+          "s": [
+            [
+              "Proposes a plausible cubic distinct from the chapter's own examples",
+              1
+            ],
+            [
+              "Gives reasoning connected to the graph crossing the x-axis only once",
+              1
+            ],
+            [
+              "Draws a valid comparison to a one-zero example already established (such as x^3)",
+              1
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "code": "C10M-2.5",
+      "name": "Relationship between zeroes and coefficients of a quadratic polynomial",
+      "description": "Finding a quadratic's zeroes by splitting the middle term, and relating their sum and product to its coefficients.",
+      "idea": "Once a quadratic is written as a product of two factors, k(x - alpha)(x - beta), comparing coefficients shows the sum and product of its zeroes are fixed, simple functions of a, b and c.",
+      "rule": "For ax^2 + bx + c (a not 0) with zeroes alpha and beta: alpha + beta = -b/a (sum), and alpha * beta = c/a (product).",
+      "example": "2x^2 - 8x + 6 = 2(x-1)(x-3), zeroes 1 and 3: sum = 4 = -(-8)/2, product = 3 = 6/2. Given sum -3 and product 2, the polynomial x^2 + 3x + 2 fits, since -3 = -3/1 and 2 = 2/1.",
+      "difficulty_base": "Hard",
+      "questions": [
+        {
+          "b": "Remember",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "For a quadratic polynomial ax^2 + bx + c (a not 0) with zeroes alpha and beta, the sum alpha + beta equals",
+          "a": "-b/a",
+          "o": [
+            "-b/a",
+            "b/a",
+            "-c/a",
+            "c/a"
+          ]
+        },
+        {
+          "b": "Remember",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "For ax^2 + bx + c (a not 0) with zeroes alpha and beta, the product alpha * beta equals",
+          "a": "c/a",
+          "o": [
+            "c/a",
+            "-c/a",
+            "b/a",
+            "-b/a"
+          ]
+        },
+        {
+          "b": "Remember",
+          "d": "Easy",
+          "t": "fill_blank",
+          "m": 1,
+          "q": "The method used in this chapter to find the zeroes of a quadratic polynomial is called splitting the ____ term.",
+          "a": "middle"
+        },
+        {
+          "b": "Remember",
+          "d": "Hard",
+          "t": "mcq",
+          "m": 1,
+          "rev": true,
+          "q": "Which of these is NOT correct about the zeroes of the quadratic 2x^2 - 8x + 6?",
+          "a": "This quadratic has a repeated (double) zero",
+          "o": [
+            "This quadratic has a repeated (double) zero",
+            "Its zeroes are 1 and 3",
+            "The sum of its zeroes is 4",
+            "The product of its zeroes is 3"
+          ]
+        },
+        {
+          "b": "Understand",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "The zeroes of 2x^2 - 8x + 6 are found in this chapter by",
+          "a": "splitting the middle term (factorisation)",
+          "o": [
+            "splitting the middle term (factorisation)",
+            "the quadratic formula",
+            "the division algorithm",
+            "drawing and reading its graph"
+          ]
+        },
+        {
+          "b": "Understand",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "For x^2 + 7x + 10 = (x + 2)(x + 5), the zeroes are",
+          "a": "-2 and -5",
+          "o": [
+            "-2 and -5",
+            "2 and 5",
+            "-2 and 5",
+            "2 and -5"
+          ]
+        },
+        {
+          "b": "Understand",
+          "d": "Easy",
+          "t": "short_answer",
+          "m": 2,
+          "q": "Without fully solving, state the sum and product of the zeroes of 3x^2 + 5x - 2 using the coefficient formulas.",
+          "a": "Sum = -b/a = -5/3; product = c/a = -2/3.",
+          "s": [
+            [
+              "Gives sum = -5/3",
+              1
+            ],
+            [
+              "Gives product = -2/3",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Understand",
+          "d": "Hard",
+          "t": "mcq",
+          "m": 1,
+          "q": "A student computes the zeroes of x^2 - 3 by writing x^2 - 3 = (x - 3)(x + 1). What is wrong?",
+          "a": "The factorisation is wrong; x^2 - 3 should use the identity a^2 - b^2 = (a-b)(a+b), giving x^2 - 3 = (x - sqrt(3))(x + sqrt(3)), zeroes sqrt(3) and -sqrt(3), not 3 and -1.",
+          "o": [
+            "The factorisation is wrong; x^2 - 3 should use the identity a^2 - b^2 = (a-b)(a+b), giving x^2 - 3 = (x - sqrt(3))(x + sqrt(3)), zeroes sqrt(3) and -sqrt(3), not 3 and -1.",
+            "Nothing is wrong; the zeroes are indeed 3 and -1",
+            "The zeroes should be 3 and 1, not 3 and -1",
+            "x^2 - 3 has no real zeroes at all"
+          ]
+        },
+        {
+          "b": "Understand",
+          "d": "Hard",
+          "t": "mcq",
+          "m": 1,
+          "q": "For 2x^2 - 8x + 6, which correctly shows the splitting-the-middle-term step?",
+          "a": "2x^2 - 6x - 2x + 6 = 2x(x - 3) - 2(x - 3)",
+          "o": [
+            "2x^2 - 6x - 2x + 6 = 2x(x - 3) - 2(x - 3)",
+            "2x^2 - 4x - 4x + 6 (splits using two equal parts without checking their product equals 12)",
+            "2x^2 - 8x + 3 + 3 (splits the constant term instead of the middle term)",
+            "2x^2 - x - 7x + 6 (the two parts add to -8 but multiply to 7, not the required 12)"
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Easy",
+          "t": "fill_blank",
+          "m": 1,
+          "q": "For the quadratic x^2 - 2x - 8, the sum of its zeroes is ____.",
+          "a": "2"
+        },
+        {
+          "b": "Apply",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "For the quadratic x^2 - 2x - 8, the product of its zeroes is",
+          "a": "-8",
+          "o": [
+            "-8",
+            "8",
+            "-2",
+            "2"
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Hard",
+          "t": "mcq",
+          "m": 1,
+          "q": "Find the zeroes of x^2 - 2x - 8 by factorisation.",
+          "a": "4 and -2",
+          "o": [
+            "4 and -2",
+            "2 and -4",
+            "8 and -1",
+            "4 and 2"
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Hard",
+          "t": "mcq",
+          "m": 1,
+          "q": "Find the zeroes of 6x^2 - 7x - 3 (which is the same as 6x^2 - 3 - 7x).",
+          "a": "-1/3 and 3/2",
+          "o": [
+            "-1/3 and 3/2",
+            "1/3 and -3/2",
+            "-1/3 and -3/2",
+            "1/3 and 3/2"
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Hard",
+          "t": "short_answer",
+          "m": 2,
+          "q": "Verify the sum and product relationship for the quadratic 4u^2 + 8u (whose zeroes are 0 and -2).",
+          "a": "Sum = 0 + (-2) = -2, and -b/a = -8/4 = -2, which matches. Product = 0 * (-2) = 0, and c/a = 0/4 = 0, which matches.",
+          "s": [
+            [
+              "Verifies the sum: -2 = -8/4",
+              1
+            ],
+            [
+              "Verifies the product: 0 = 0/4",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Hardest",
+          "t": "long_answer",
+          "m": 3,
+          "q": "Find a quadratic polynomial whose zeroes have sum 5 and product 6, using a = 1. Then verify by factorising your polynomial and checking its zeroes directly.",
+          "a": "Polynomial: x^2 - 5x + 6 (since b = -(sum) = -5 and c = product = 6). Factorising: x^2 - 5x + 6 = (x-2)(x-3), so zeroes are 2 and 3. Check: sum = 2 + 3 = 5 and product = 2 * 3 = 6, matching the given values.",
+          "s": [
+            [
+              "Writes x^2 - 5x + 6 using b = -5, c = 6",
+              1
+            ],
+            [
+              "Factorises correctly to get zeroes 2 and 3",
+              1
+            ],
+            [
+              "Verifies sum = 5 and product = 6 match the original requirement",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Analyse",
+          "d": "Hard",
+          "t": "assertion_reason",
+          "m": 1,
+          "q": "Assertion (A): The zeroes of the quadratic x^2 + 3x + 2 are 1 and 2. Reason (R): For a quadratic ax^2 + bx + c, the sum of its zeroes equals -b/a.",
+          "a": "A is false, R is true",
+          "o": [
+            "A is false, R is true",
+            "A is true, R is false",
+            "Both A and R are true, and R is the correct explanation of A",
+            "Both A and R are true, but R is not the correct explanation of A"
+          ]
+        },
+        {
+          "b": "Analyse",
+          "d": "Hard",
+          "t": "multi_statement",
+          "m": 1,
+          "q": "Consider: (I) For x^2 - 2x - 8, the product of the zeroes is 2. (II) For x^2 - 2x - 8, the sum of the zeroes is 2. Which is or are correct?",
+          "a": "Only II",
+          "o": [
+            "Only II",
+            "Only I",
+            "Both I and II",
+            "Neither I nor II"
+          ]
+        },
+        {
+          "b": "Analyse",
+          "d": "Hardest",
+          "t": "long_answer",
+          "m": 3,
+          "q": "A polynomial's zeroes have product -1 and sum 0. (a) Find a quadratic polynomial fitting this (using a = 1). (b) Factorise it to find the zeroes explicitly. (c) Confirm both values are real numbers.",
+          "a": "(a) x^2 - 1 (b = 0, c = -1). (b) x^2 - 1 = (x-1)(x+1), so zeroes are 1 and -1. (c) Both 1 and -1 are real numbers.",
+          "s": [
+            [
+              "Writes x^2 - 1 using b = 0, c = -1",
+              1
+            ],
+            [
+              "Factorises to get zeroes 1 and -1",
+              1
+            ],
+            [
+              "Confirms both zeroes are real",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Evaluate",
+          "d": "Hard",
+          "t": "short_answer",
+          "m": 2,
+          "q": "A student concludes that x^2 + 3x + 2 and 2x^2 + 6x + 4 must have different zeroes, since more terms means a 'different' polynomial. Evaluate this reasoning using the sum/product formulas.",
+          "a": "The reasoning is wrong. 2x^2 + 6x + 4 = 2(x^2 + 3x + 2), so both give sum = -3 and product = 2 (check: -6/2 = -3 and 4/2 = 2, same as -3/1 and 2/1), so they have exactly the same zeroes, -1 and -2. Multiplying a whole quadratic by a nonzero constant never changes its zeroes.",
+          "s": [
+            [
+              "Recognises 2x^2 + 6x + 4 = 2(x^2 + 3x + 2)",
+              1
+            ],
+            [
+              "Shows both give the same sum (-3) and product (2), so the same zeroes",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Create",
+          "d": "Hardest",
+          "t": "long_answer",
+          "m": 3,
+          "q": "Create a quadratic polynomial (not already used in this chapter) whose zeroes are both negative integers. State your polynomial, its zeroes, and verify the sum/product relationship.",
+          "a": "For example, x^2 + 7x + 12, with zeroes -3 and -4 (since (x+3)(x+4) = x^2 + 7x + 12). Sum = -3 + (-4) = -7 = -b/a = -7/1. Product = (-3)(-4) = 12 = c/a = 12/1. Both match.",
+          "s": [
+            [
+              "Gives a quadratic with two negative integer zeroes and shows the factorisation",
+              1
+            ],
+            [
+              "Correctly verifies the sum matches -b/a",
+              1
+            ],
+            [
+              "Correctly verifies the product matches c/a",
+              1
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "code": "C10M-2.6",
+      "name": "Relationship between zeroes and coefficients of a cubic polynomial",
+      "description": "Relating the sum, the sum of pairwise products, and the product of a cubic's three zeroes to its coefficients.",
+      "idea": "The same coefficient-comparison idea used for quadratics extends to cubics, but a cubic's three zeroes give three separate relationships instead of two.",
+      "rule": "For ax^3 + bx^2 + cx + d (a not 0) with zeroes alpha, beta, gamma: alpha + beta + gamma = -b/a, alpha*beta + beta*gamma + gamma*alpha = c/a, and alpha * beta * gamma = -d/a.",
+      "example": "2x^3 - 5x^2 - 14x + 8 has zeroes 4, -2 and 1/2: sum = 5/2 = -(-5)/2, pairwise sum = -7 = -14/2, product = -4 = -8/2.",
+      "difficulty_base": "Hard",
+      "questions": [
+        {
+          "b": "Remember",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "For a cubic ax^3 + bx^2 + cx + d (a not 0) with zeroes alpha, beta, gamma, the sum alpha + beta + gamma equals",
+          "a": "-b/a",
+          "o": [
+            "-b/a",
+            "b/a",
+            "-c/a",
+            "-d/a"
+          ]
+        },
+        {
+          "b": "Remember",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "For ax^3 + bx^2 + cx + d with zeroes alpha, beta, gamma, the product alpha * beta * gamma equals",
+          "a": "-d/a",
+          "o": [
+            "-d/a",
+            "d/a",
+            "-c/a",
+            "c/a"
+          ]
+        },
+        {
+          "b": "Remember",
+          "d": "Easy",
+          "t": "fill_blank",
+          "m": 1,
+          "q": "For a cubic polynomial with zeroes alpha, beta, gamma, the sum of the products taken two at a time, alpha*beta + beta*gamma + gamma*alpha, equals ____ (in terms of a and c).",
+          "a": "c/a"
+        },
+        {
+          "b": "Remember",
+          "d": "Hard",
+          "t": "mcq",
+          "m": 1,
+          "rev": true,
+          "q": "Which of these is NOT one of the three zero-coefficient relationships for a cubic ax^3 + bx^2 + cx + d?",
+          "a": "alpha * beta * gamma = c/a",
+          "o": [
+            "alpha * beta * gamma = c/a",
+            "alpha + beta + gamma = -b/a",
+            "alpha*beta + beta*gamma + gamma*alpha = c/a",
+            "alpha * beta * gamma = -d/a"
+          ]
+        },
+        {
+          "b": "Understand",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "For p(x) = 2x^3 - 5x^2 - 14x + 8 with zeroes 4, -2 and 1/2, the sum of the zeroes is",
+          "a": "5/2",
+          "o": [
+            "5/2",
+            "-5/2",
+            "7/2",
+            "2/5"
+          ]
+        },
+        {
+          "b": "Understand",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "For the same polynomial 2x^3 - 5x^2 - 14x + 8 (zeroes 4, -2, 1/2), the product of the zeroes is",
+          "a": "-4",
+          "o": [
+            "-4",
+            "4",
+            "-8",
+            "8"
+          ]
+        },
+        {
+          "b": "Understand",
+          "d": "Easy",
+          "t": "short_answer",
+          "m": 2,
+          "q": "State the three coefficient-relationship formulas for a cubic ax^3 + bx^2 + cx + d with zeroes alpha, beta, gamma.",
+          "a": "Sum: alpha + beta + gamma = -b/a. Sum of products two at a time: alpha*beta + beta*gamma + gamma*alpha = c/a. Product: alpha * beta * gamma = -d/a.",
+          "s": [
+            [
+              "Gives the sum formula -b/a",
+              1
+            ],
+            [
+              "Gives both the pairwise-sum (c/a) and product (-d/a) formulas",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Understand",
+          "d": "Hard",
+          "t": "mcq",
+          "m": 1,
+          "q": "For 2x^3 - 5x^2 - 14x + 8, the sum of the products of its zeroes taken two at a time is",
+          "a": "-7",
+          "o": [
+            "-7",
+            "7",
+            "-14",
+            "3.5"
+          ]
+        },
+        {
+          "b": "Understand",
+          "d": "Hard",
+          "t": "mcq",
+          "m": 1,
+          "q": "Comparing the quadratic and cubic relationships, which statement is correct?",
+          "a": "A quadratic has 2 relationships (sum and product); a cubic has 3 (sum, pairwise-sum, and product), since a cubic has one more zero to relate.",
+          "o": [
+            "A quadratic has 2 relationships (sum and product); a cubic has 3 (sum, pairwise-sum, and product), since a cubic has one more zero to relate.",
+            "Both have exactly 2 relationships",
+            "A cubic has only 1 relationship, since it is 'one polynomial'",
+            "A quadratic has 3 relationships, same as a cubic"
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Easy",
+          "t": "fill_blank",
+          "m": 1,
+          "q": "For a cubic x^3 + bx^2 + cx + d with a = 1 and zeroes summing to 5, the value of b must be ____.",
+          "a": "-5"
+        },
+        {
+          "b": "Apply",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "For the cubic 3x^3 - 5x^2 - 11x - 3 (with a = 3, b = -5, c = -11, d = -3), the sum of its zeroes is",
+          "a": "5/3",
+          "o": [
+            "5/3",
+            "-5/3",
+            "3/5",
+            "-11/3"
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Hard",
+          "t": "mcq",
+          "m": 1,
+          "q": "For the same cubic 3x^3 - 5x^2 - 11x - 3, the product of its three zeroes is",
+          "a": "1",
+          "o": [
+            "1",
+            "-1",
+            "3",
+            "-3"
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Hard",
+          "t": "mcq",
+          "m": 1,
+          "q": "For 3x^3 - 5x^2 - 11x - 3, the sum of the products of its zeroes taken two at a time is",
+          "a": "-11/3",
+          "o": [
+            "-11/3",
+            "11/3",
+            "-5/3",
+            "3/11"
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Hard",
+          "t": "short_answer",
+          "m": 2,
+          "q": "For the cubic x^3 - 6x^2 + 11x - 6 (with a = 1, b = -6, c = 11, d = -6), state the sum and the product of its three zeroes using the coefficient formulas (no need to find the zeroes individually).",
+          "a": "Sum = -b/a = 6. Product = -d/a = 6.",
+          "s": [
+            [
+              "Gives sum = 6",
+              1
+            ],
+            [
+              "Gives product = 6",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Hardest",
+          "t": "long_answer",
+          "m": 3,
+          "q": "A cubic polynomial x^3 + px^2 + qx + r has zeroes 1, 2 and -3. (a) Find the sum, pairwise sum and product of these zeroes directly. (b) Using a = 1, find p, q and r. (c) Write out the polynomial.",
+          "a": "(a) Sum = 1 + 2 + (-3) = 0. Pairwise sum = (1)(2) + (2)(-3) + (-3)(1) = 2 - 6 - 3 = -7. Product = 1 * 2 * (-3) = -6. (b) p = -(sum) = 0, q = pairwise sum = -7, r = -(product) = 6. (c) The polynomial is x^3 - 7x + 6.",
+          "s": [
+            [
+              "Correctly computes sum = 0, pairwise sum = -7, product = -6",
+              1
+            ],
+            [
+              "Correctly finds p = 0, q = -7, r = 6 using the formulas",
+              1
+            ],
+            [
+              "Writes the polynomial x^3 - 7x + 6",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Analyse",
+          "d": "Hard",
+          "t": "assertion_reason",
+          "m": 1,
+          "q": "Assertion (A): For 2x^3 - 5x^2 - 14x + 8 with zeroes 4, -2, 1/2, the product of the zeroes is -4. Reason (R): For a cubic ax^3 + bx^2 + cx + d, the product of the zeroes equals -d/a, and here -d/a = -8/2 = -4.",
+          "a": "Both A and R are true, and R is the correct explanation of A",
+          "o": [
+            "Both A and R are true, and R is the correct explanation of A",
+            "Both A and R are true, but R is not the correct explanation of A",
+            "A is true, R is false",
+            "A is false, R is true"
+          ]
+        },
+        {
+          "b": "Analyse",
+          "d": "Hard",
+          "t": "multi_statement",
+          "m": 1,
+          "q": "Consider: (I) For 3x^3 - 5x^2 - 11x - 3, the sum of its zeroes is 5/3. (II) For 3x^3 - 5x^2 - 11x - 3, the product of its zeroes is 1. Which is or are correct?",
+          "a": "Both I and II",
+          "o": [
+            "Both I and II",
+            "Only I",
+            "Only II",
+            "Neither I nor II"
+          ]
+        },
+        {
+          "b": "Analyse",
+          "d": "Hardest",
+          "t": "long_answer",
+          "m": 3,
+          "q": "For the cubic 3x^3 - 5x^2 - 11x - 3, it is given that 3 and -1 are two of its three zeroes. (a) Using the product relationship alpha*beta*gamma = -d/a, find the third zero gamma. (b) State whether gamma is 1/3 or -1/3. (c) Verify using the sum relationship alpha + beta + gamma = -b/a.",
+          "a": "(a) -d/a = -(-3)/3 = 1, and alpha*beta = 3 * (-1) = -3, so gamma = 1/(-3) = -1/3. (b) gamma is -1/3, not 1/3. (c) Sum check: 3 + (-1) + (-1/3) = 5/3, and -b/a = -(-5)/3 = 5/3, which matches.",
+          "s": [
+            [
+              "Correctly computes the product -d/a = 1 and sets up alpha*beta*gamma = 1",
+              1
+            ],
+            [
+              "Correctly solves for gamma = -1/3 (not 1/3)",
+              1
+            ],
+            [
+              "Verifies using the sum relationship, getting 5/3 both ways",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Evaluate",
+          "d": "Hard",
+          "t": "short_answer",
+          "m": 2,
+          "q": "A student computes, for 2x^3 - 5x^2 - 14x + 8, that the product of the zeroes is d/a = 8/2 = 4 (without a minus sign). Evaluate this computation.",
+          "a": "The student is wrong. The correct formula is alpha*beta*gamma = -d/a (with a minus sign), so the product is -8/2 = -4, not 4. Checking directly: 4 * (-2) * (1/2) = -4, confirming the negative sign is needed.",
+          "s": [
+            [
+              "States the student is wrong / missed the minus sign",
+              1
+            ],
+            [
+              "Gives the corrected value -4, supported by the direct product check",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Create",
+          "d": "Hardest",
+          "t": "long_answer",
+          "m": 3,
+          "q": "Create your own cubic polynomial (not already used in this chapter) with a = 1 and three zeroes of your choice. State the polynomial, and verify all three coefficient relationships (sum, pairwise-sum, product).",
+          "a": "For example, zeroes 2, -1 and -2. Sum = 2 + (-1) + (-2) = -1, so b = -(-1) = 1. Pairwise sum = (2)(-1) + (-1)(-2) + (-2)(2) = -2 + 2 - 4 = -4, so c = -4. Product = 2 * (-1) * (-2) = 4, so d = -(4) = -4. Polynomial: x^3 + x^2 - 4x - 4. Check: sum = -1 = -b/a = -1/1; pairwise sum = -4 = c/a = -4/1; product = 4 = -d/a = 4/1 -- all three match.",
+          "s": [
+            [
+              "Chooses three zeroes and correctly computes their sum, pairwise sum and product",
+              1
+            ],
+            [
+              "Correctly derives b, c, d and writes the cubic polynomial",
+              1
+            ],
+            [
+              "Verifies all three coefficient relationships match",
+              1
+            ]
+          ]
+        }
+      ]
+    }
+  ]
+}
