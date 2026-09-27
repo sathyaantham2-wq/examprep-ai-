@@ -10,6 +10,7 @@
 
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as ChooseBoardRouteImport } from './routes/choose-board'
 import { Route as GenerateRouteImport } from './routes/generate'
 import { Route as HomeRouteImport } from './routes/home'
 import { Route as LeaderboardRouteImport } from './routes/leaderboard'
@@ -134,6 +135,11 @@ import { Route as ApiAttemptsIdItemsItemIdRemoveRouteImport } from './routes/api
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ChooseBoardRoute = ChooseBoardRouteImport.update({
+  id: '/choose-board',
+  path: '/choose-board',
   getParentRoute: () => rootRouteImport,
 } as any)
 const GenerateRoute = GenerateRouteImport.update({
@@ -762,6 +768,7 @@ const ApiAttemptsIdItemsItemIdRemoveRoute =
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/choose-board': typeof ChooseBoardRoute
   '/generate': typeof GenerateRoute
   '/home': typeof HomeRoute
   '/leaderboard': typeof LeaderboardRoute
@@ -885,6 +892,7 @@ export interface FileRoutesByFullPath {
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/choose-board': typeof ChooseBoardRoute
   '/generate': typeof GenerateRoute
   '/home': typeof HomeRoute
   '/leaderboard': typeof LeaderboardRoute
@@ -1009,6 +1017,7 @@ export interface FileRoutesByTo {
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/choose-board': typeof ChooseBoardRoute
   '/generate': typeof GenerateRoute
   '/home': typeof HomeRoute
   '/leaderboard': typeof LeaderboardRoute
@@ -1134,6 +1143,7 @@ export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
   fullPaths:
     | '/'
+    | '/choose-board'
     | '/generate'
     | '/home'
     | '/leaderboard'
@@ -1257,6 +1267,7 @@ export interface FileRouteTypes {
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/'
+    | '/choose-board'
     | '/generate'
     | '/home'
     | '/leaderboard'
@@ -1380,6 +1391,7 @@ export interface FileRouteTypes {
   id:
     | '__root__'
     | '/'
+    | '/choose-board'
     | '/generate'
     | '/home'
     | '/leaderboard'
@@ -1504,6 +1516,7 @@ export interface FileRouteTypes {
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  ChooseBoardRoute: typeof ChooseBoardRoute
   GenerateRoute: typeof GenerateRoute
   HomeRoute: typeof HomeRoute
   LeaderboardRoute: typeof LeaderboardRoute
@@ -1580,6 +1593,13 @@ declare module '@tanstack/react-router' {
       path: '/'
       fullPath: '/'
       preLoaderRoute: typeof IndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/choose-board': {
+      id: '/choose-board'
+      path: '/choose-board'
+      fullPath: '/choose-board'
+      preLoaderRoute: typeof ChooseBoardRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/generate': {
@@ -2773,6 +2793,7 @@ const ApiSyllabusConceptsRouteWithChildren =
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  ChooseBoardRoute: ChooseBoardRoute,
   GenerateRoute: GenerateRoute,
   HomeRoute: HomeRoute,
   LeaderboardRoute: LeaderboardRoute,
@@ -2845,3 +2866,12 @@ const rootRouteChildren: RootRouteChildren = {
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
   ._addFileTypes<FileRouteTypes>()
+
+import type { getRouter } from './router.tsx'
+import type { createStart } from '@tanstack/react-start'
+declare module '@tanstack/react-start' {
+  interface Register {
+    ssr: true
+    router: Awaited<ReturnType<typeof getRouter>>
+  }
+}

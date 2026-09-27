@@ -293,11 +293,16 @@ test('happy path: sign in, generate paper, download PDF, attempt, evaluate, trac
   // response), and signInUi returns as soon as the button is clicked -- without waiting for the
   // student's post-login redirect, the very next page.request call can fire before the cookie
   // exists, hitting requireRole's 401 (null body, hence "Unexpected end of JSON input" on .json()).
-  // First sign-in: a student finishes her profile before anything else. There is no subject
-  // choice any more (2026-09-24, user decision): every subject offered for her class/board is
-  // enabled automatically, so choosing the class alone is enough to make Save ready.
+  // First sign-in: a student finishes her profile before anything else. Name is step 1
+  // (/profile-setup, already pre-filled from account creation); board and class are step 2
+  // (/choose-board, tile pickers, split out 2026-09-27). There is no subject choice any more
+  // (2026-09-24, user decision): every subject offered for her class/board is enabled
+  // automatically, so choosing board (CBSE defaults selected) and class is enough to make Save
+  // ready.
   await page.waitForURL('**/profile-setup')
-  await page.selectOption('#student-class', '7')
+  await page.getByRole('button', { name: 'Continue' }).click()
+  await page.waitForURL('**/choose-board**')
+  await page.getByRole('button', { name: 'Class 7' }).click()
   await page.getByRole('button', { name: 'Save and continue' }).click()
   // Owner decision 2026-09-23: /my-paper is her default landing page now, not /student.
   await page.waitForURL('**/my-paper**')

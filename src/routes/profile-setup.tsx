@@ -1,4 +1,4 @@
-import { useEffect, useMemo, useState } from 'react'
+import { useEffect, useState } from 'react'
 import { createFileRoute, useNavigate } from '@tanstack/react-router'
 import { Button } from '../components/ui/button'
 import { Card, CardContent, CardHeader, CardTitle } from '../components/ui/card'
@@ -7,31 +7,12 @@ import { Label } from '../components/ui/label'
 import { ThemeToggle } from '../components/theme-toggle'
 import { signOut, useSession } from '../lib/auth-client'
 
-// Classes shown in the class list even before their content is loaded.
-const PLANNED_CLASSES = [6, 7, 8, 9, 10, 11, 12]
-// Competitive-exam syllabuses offered next to the school boards. They are not school classes, so the
-// class list does not apply to them, and they are never saved: there is nothing to save until their
-// subjects exist.
-const PLANNED_SYLLABUSES = [{ value: 'planned:groups', label: 'Groups (State PSC)' }]
-// The competitive-exam track is stored as board CIVILS with class 0 (no school class).
-const COMPETITIVE_BOARD = 'CIVILS'
-const boardLabel = (board: string) => (board === COMPETITIVE_BOARD ? 'Civil Services / UPSC' : board)
-const isPlannedSyllabus = (value: string) => value.startsWith('planned:')
-
-export const Route = createFileRoute('/profile-setup')({ component: ProfileSetup })
-
-interface ProfileSubject {
-  id: string
-  name: string
-  code: string
-  has_content: boolean
-}
-
-interface ProfileOption {
-  board: string
-  class: number
-  subjects: Array<ProfileSubject>
-}
+export const Route = createFileRoute('/profile-setup')({
+  component: ProfileSetup,
+  validateSearch: (search: Record<string, unknown>): { name?: string } => ({
+    name: typeof search.name === 'string' ? search.name : undefined,
+  }),
+})
 
 interface Profile {
   name: string
@@ -41,21 +22,20 @@ interface Profile {
   subject_ids: Array<string>
 }
 
-// A student's first screen. Name, class, syllabus and at least one subject are required before
-// she can reach her home page; everything the adaptive engine does starts from this profile.
+// A student's first screen: just her name. Board, class and (indirectly) subjects are the next
+// step, on /choose-board -- split out 2026-09-27 so that step can use a tile picker instead of a
+// dropdown, with the class row disappearing entirely for a class-less syllabus like Civil
+// Services, and so this screen stays a single, quick question.
 function ProfileSetup() {
   const { data: session, isPending } = useSession()
   const navigate = useNavigate()
+  const search = Route.useSearch()
   const role = (session?.user as { role?: string } | undefined)?.role
 
-  const [options, setOptions] = useState<Array<ProfileOption> | null>(null)
-  const [name, setName] = useState('')
-  const [board, setBoard] = useState('')
-  const [classNo, setClassNo] = useState<number | null>(null)
-  const [selected, setSelected] = useState<Array<string>>([])
+  const [name, setName] = useState(search.name ?? '')
   const [isEdit, setIsEdit] = useState(false)
   const [error, setError] = useState<string | null>(null)
-  const [saving, setSaving] = useState(false)
+  const [loaded, setLoaded] = useState(false)
 
   useEffect(() => {
     if (isPending) return
@@ -65,94 +45,23 @@ function ProfileSetup() {
     }
     fetch('/api/students/me/profile')
       .then((r) => r.json())
-      .then((data: { profile: Profile; options: Array<ProfileOption> }) => {
-        setOptions(data.options)
+      .then((data: { profile: Profile }) => {
         setIsEdit(data.profile.profile_complete)
-        setName(data.profile.name)
-        const match = data.options.find(
-          (o) => o.board === data.profile.board && o.class === data.profile.class,
-        )
-        // A new student picks her own class; classNo stays null until she does. Either way,
-        // `selected` itself is filled in by the subjects-effect below once the class/board (and
-        // so the subject list) are known -- not read from data.profile.subject_ids here, since
-        // every offered subject is enabled now, not just whichever subset an old profile saved.
-        const boardsOffered = [...new Set(data.options.map((o) => o.board))]
-        if (data.profile.profile_complete && match) {
-          setBoard(match.board)
-          setClassNo(match.class)
-        } else {
-          setBoard(boardsOffered.includes('CBSE') ? 'CBSE' : boardsOffered.length === 1 ? boardsOffered[0] : '')
-          setClassNo(null)
-        }
+        // A name already typed on this screen (e.g. coming back via choose-board's Back button)
+        // wins over the saved one -- don't clobber what she just typed with a stale fetch.
+        if (!search.name) setName(data.profile.name)
+        setLoaded(true)
       })
-  }, [isPending, session, role, navigate])
+  }, [isPending, session, role, navigate, search.name])
 
-  const boards = useMemo(() => [...new Set((options ?? []).map((o) => o.board))], [options])
-  // Every class from 6 to 12 is listed, and classes the admin has switched on are added, so a
-  // student can see what is planned. Classes with no subjects yet say so and cannot be saved.
-  const plannedBoard = isPlannedSyllabus(board)
-  const competitive = board === COMPETITIVE_BOARD
-  const classes = useMemo(
-    () =>
-      competitive
-        ? [0]
-        : [
-        ...new Set([
-          ...PLANNED_CLASSES,
-          ...(options ?? []).filter((o) => o.board === board).map((o) => o.class),
-        ]),
-      ].sort((a, b) => a - b),
-    [options, board, competitive],
-  )
-  const subjects = useMemo(
-    () => (options ?? []).find((o) => o.board === board && o.class === classNo)?.subjects ?? [],
-    [options, board, classNo],
-  )
-
-  // 2026-09-24, user decision: she no longer ticks subjects here -- every subject offered for her
-  // class/board is enabled automatically, and which ONE to build a paper from is chosen later, on
-  // /my-paper's own Subject dropdown at generation time. This keeps subject_ids populated (the
-  // server still requires at least one) without asking her to choose anything on this screen.
-  useEffect(() => {
-    setSelected(subjects.map((s) => s.id))
-  }, [subjects])
-
-  function changeBoard(next: string) {
-    setBoard(next)
-    setClassNo(next === COMPETITIVE_BOARD ? 0 : null)
-  }
-
-  function changeClass(next: number) {
-    setClassNo(next)
-  }
-
-  async function save(e: React.FormEvent) {
+  function next(e: React.FormEvent) {
     e.preventDefault()
     setError(null)
     if (!name.trim()) return setError('Enter your name.')
-    if (plannedBoard) return setError('This syllabus is coming soon. Choose CBSE to continue.')
-    if (classNo === null || !board) return setError('Choose your class and syllabus.')
-    if (selected.length === 0) return setError('Choose at least one subject.')
-    setSaving(true)
-    try {
-      const response = await fetch('/api/students/me/profile', {
-        method: 'PUT',
-        headers: { 'content-type': 'application/json' },
-        body: JSON.stringify({ name, class: classNo, board, subject_ids: selected }),
-      })
-      if (!response.ok) {
-        const body = await response.json().catch(() => null)
-        setError(typeof body?.error === 'string' ? body.error : 'Could not save. Check the form and try again.')
-        return
-      }
-      // Owner decision 2026-09-23: /my-paper is her default landing page now, not /student.
-      navigate({ to: '/my-paper' })
-    } finally {
-      setSaving(false)
-    }
+    navigate({ to: '/choose-board', search: { name: name.trim() } })
   }
 
-  if (isPending || !session || role !== 'student' || options === null) {
+  if (isPending || !session || role !== 'student' || !loaded) {
     return <div className="p-8 text-body text-muted-foreground">Loading…</div>
   }
 
@@ -162,24 +71,20 @@ function ProfileSetup() {
         <div>
           <h1 className="text-h1">{isEdit ? 'Your profile' : 'Set up your profile'}</h1>
           <p className="text-body text-muted-foreground">
-            Tell us your class and syllabus. Your practice papers are built around this.
+            {isEdit ? 'Update your name, then your board and class.' : "What's your name? Your board and class come next."}
           </p>
         </div>
         <div className="no-print flex items-center gap-2">
           <ThemeToggle />
           {!isEdit && (
-            <Button
-              variant="ghost"
-              size="sm"
-              onClick={() => signOut().then(() => navigate({ to: '/' }))}
-            >
+            <Button variant="ghost" size="sm" onClick={() => signOut().then(() => navigate({ to: '/' }))}>
               Sign out
             </Button>
           )}
         </div>
       </div>
 
-      <form onSubmit={save} className="space-y-6">
+      <form onSubmit={next} className="space-y-6">
         <Card>
           <CardHeader>
             <CardTitle className="text-h3">About you</CardTitle>
@@ -191,74 +96,20 @@ function ProfileSetup() {
                 id="student-name"
                 value={name}
                 onChange={(e) => setName(e.target.value)}
+                autoFocus
                 required
               />
             </div>
-            <div className="grid gap-4 sm:grid-cols-2">
-              <div className="space-y-1.5">
-                <Label htmlFor="student-class">Class</Label>
-                <select
-                  id="student-class"
-                  className="border-input flex h-9 w-full rounded-md border bg-transparent px-3 text-sm shadow-xs"
-                  value={plannedBoard ? '' : (classNo ?? '')}
-                  disabled={plannedBoard || competitive}
-                  onChange={(e) => changeClass(Number(e.target.value))}
-                >
-                  <option value="" disabled>
-                    {plannedBoard ? 'Not applicable' : 'Choose your class'}
-                  </option>
-                  {classes.map((c) => (
-                    <option key={c} value={c}>
-                      {c === 0 ? 'Not applicable (competitive exam)' : `Class ${c}`}
-                    </option>
-                  ))}
-                </select>
-              </div>
-              <div className="space-y-1.5">
-                <Label htmlFor="student-board">Syllabus</Label>
-                <select
-                  id="student-board"
-                  className="border-input flex h-9 w-full rounded-md border bg-transparent px-3 text-sm shadow-xs"
-                  value={board}
-                  onChange={(e) => changeBoard(e.target.value)}
-                >
-                  <option value="" disabled>
-                    Choose your syllabus
-                  </option>
-                  {boards.map((b) => (
-                    <option key={b} value={b}>
-                      {boardLabel(b)}
-                    </option>
-                  ))}
-                  {PLANNED_SYLLABUSES.map((b) => (
-                    <option key={b.value} value={b.value}>
-                      {b.label}
-                    </option>
-                  ))}
-                </select>
-              </div>
-            </div>
           </CardContent>
         </Card>
-
-        {/* No subject picker here any more (2026-09-24, user decision): every subject offered for
-            her class/board is enabled automatically -- which one to build a paper from is chosen
-            later, on /my-paper's own Subject dropdown. This note only covers the one case that
-            used to be explained inside that removed card: a class/board with nothing to enable
-            yet, which is also why Save stays disabled. */}
-        {classNo !== null && !plannedBoard && subjects.length === 0 && (
-          <p className="text-small text-muted-foreground" role="status">
-            No subjects are available for this class yet. Content is coming soon.
-          </p>
-        )}
 
         {error && (
           <p className="text-small text-destructive" role="alert">
             {error}
           </p>
         )}
-        <Button type="submit" className="w-full" disabled={saving || selected.length === 0}>
-          {saving ? 'Saving…' : isEdit ? 'Save changes' : 'Save and continue'}
+        <Button type="submit" className="w-full">
+          Continue
         </Button>
       </form>
     </div>

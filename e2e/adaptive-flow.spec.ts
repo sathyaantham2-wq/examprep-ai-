@@ -132,14 +132,18 @@ async function signInUi(page: Page, email: string, password: string) {
 test('first-time student: profile, personalised home, Easy assessment, marked at once', async ({ page }) => {
   await signInUi(page, student.email, student.password)
 
-  // A new student is sent to profile setup first.
+  // A new student is sent to profile setup first: name is step 1 (/profile-setup), board and
+  // class are step 2 (/choose-board, tile pickers, split out 2026-09-27).
   await page.waitForURL('**/profile-setup')
   await expect(page.getByRole('heading', { name: 'Set up your profile' })).toBeVisible()
   await page.waitForTimeout(800)
+  await page.getByRole('button', { name: 'Continue' }).click()
+
+  await page.waitForURL('**/choose-board**')
   // No class is pre-selected: she chooses her own. There is no subject picker any more
   // (2026-09-24, user decision): every subject offered for her class/board is enabled
-  // automatically, so Save is ready as soon as a class is chosen.
-  await page.selectOption('#student-class', '7')
+  // automatically, so Save is ready as soon as a class is chosen (board defaults to CBSE).
+  await page.getByRole('button', { name: 'Class 7' }).click()
 
   const saveButton = page.getByRole('button', { name: 'Save and continue' })
   await expect(saveButton).toBeEnabled()
