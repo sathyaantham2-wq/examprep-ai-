@@ -1,0 +1,2016 @@
+{
+ "subject": {
+  "code": "MATH10",
+  "name": "Mathematics",
+  "board": "CBSE",
+  "class": 10
+ },
+ "source": {
+  "publisher": "NCERT",
+  "title": "Mathematics",
+  "edition": "Textbook for Class X, Reprint 2026-27",
+  "year": 2026
+ },
+ "chapter": {
+  "part": "I",
+  "chapter_no": 9,
+  "name": "Some Applications of Trigonometry",
+  "blurb": "A student measuring a minar's height without a ladder, an electrician's ladder reaching a point below a pole's top, and a bridge's-eye view of a river's two banks all turn on the same idea: once the angle a line of sight makes with the horizontal is known, together with one length in the right triangle it forms, every other length in that triangle follows from a trigonometric ratio. The chapter names the angle of elevation (looking up) and the angle of depression (looking down), then works through heights and distances of increasing structural complexity: a single triangle, a triangle adjusted for the observer's own height or a broken pole, two triangles stacked on a shared base (a flagstaff on a building), two triangles from one elevated point to two ground points (a river's banks), and the same fixed height viewed from two positions or two moments, whose difference gives a distance travelled or a time taken.",
+  "source_code": "jemh109",
+  "order_index": 9
+ },
+ "scope_in": [
+  {
+   "item": "Define the line of sight, the angle of elevation and the angle of depression, and identify them correctly in a diagram or word problem",
+   "pages": "133-134"
+  },
+  {
+   "item": "Understand that, because the horizontals at two different heights are parallel lines, the angle of elevation of a higher point measured from a lower point equals the angle of depression of that lower point measured from the higher point (alternate angles)",
+   "pages": "133-134, 139-141"
+  },
+  {
+   "item": "Identify the right triangle in a heights-and-distances word problem (the vertical height, the horizontal distance, and the hypotenuse formed by the line of sight or a taut rope/wire/ladder/string), and choose the trigonometric ratio (or its reciprocal) connecting the two known/unknown quantities",
+   "pages": "134-137"
+  },
+  {
+   "item": "Solve for an unknown height or distance in a single right triangle using tan or cot, when the height and the horizontal distance are the two lengths involved",
+   "pages": "135"
+  },
+  {
+   "item": "Solve for an unknown length (the hypotenuse, or a height/distance given the hypotenuse) in a single right triangle using sin or cos, for a taut rope, ladder or string",
+   "pages": "136"
+  },
+  {
+   "item": "Account for the observer's own height (eye level) when the observer is not a point on the ground, by adding or subtracting it as appropriate",
+   "pages": "137"
+  },
+  {
+   "item": "Solve problems involving a pole or tree that breaks and bends, where the standing stump and the fallen part form two sides of a right triangle, and the original height is their sum",
+   "pages": "141"
+  },
+  {
+   "item": "Solve two-right-triangle problems where one object stands on top of another at the same horizontal distance (a flagstaff on a building, a statue on a pedestal, a tower on a building), finding the height of the upper part by subtracting",
+   "pages": "137-138, 141-142"
+  },
+  {
+   "item": "Solve two-right-triangle problems using two angles of depression from one elevated point to two ground-level points, adding the two horizontal distances when the points are on opposite sides and subtracting them when the points are on the same side",
+   "pages": "139-141"
+  },
+  {
+   "item": "Solve problems where the same fixed-height object is observed from two different points or at two different times, subtracting the two horizontal distances to find the distance travelled or (given a time interval) the object's speed or the time for a further stage of the journey",
+   "pages": "141-143"
+  },
+  {
+   "item": "Use the shadow-length-difference method: relate the height of an object to the difference between its shadow lengths at two different angles of elevation of the sun",
+   "pages": "138-139"
+  }
+ ],
+ "scope_out": [
+  {
+   "item": "Proving trigonometric identities, or deriving/manipulating the trigonometric ratios themselves (such as sin^2 + cos^2 = 1)",
+   "reason": "The chapter opens by saying the student has already studied trigonometric ratios in the previous chapter and only applies the already-known ratios of 30, 45 and 60 degrees to real-life heights and distances; it develops no new ratio identities of its own (p. 133)."
+  },
+  {
+   "item": "Trigonometric ratios of angles other than 30, 45 and 60 degrees, or the use of trigonometric tables or a calculator for a non-standard angle",
+   "reason": "Every worked example and every exercise question in this chapter uses only the standard angles 30, 45 and 60 degrees; no other angle value appears anywhere in the chapter."
+  },
+  {
+   "item": "Finding an unknown angle (using an inverse trigonometric ratio) from two known side lengths",
+   "reason": "In every example and exercise, the angle (30, 45 or 60 degrees) is always one of the given quantities and the problem always solves for a missing length; the chapter never asks the student to work out an unknown angle from given lengths."
+  },
+  {
+   "item": "Bearings, compass directions, or any problem where the object and the observer(s) are not in one vertical plane",
+   "reason": "Every example and exercise problem in this chapter is confined to a single vertical plane containing the object and the observer(s) -- towers, buildings, rivers and roads viewed face-on; no three-dimensional or compass-direction setup appears."
+  },
+  {
+   "item": "The sine rule, the cosine rule, or any method for a triangle that is not right-angled",
+   "reason": "Every triangle formed in this chapter is a right triangle, created because the objects (towers, poles, buildings) are assumed exactly vertical and the ground exactly horizontal (p. 133); no oblique-triangle method is used or needed."
+  },
+  {
+   "item": "Finding the area or perimeter of the right triangle formed in a heights-and-distances problem",
+   "reason": "Every example and exercise asks only for a height, a distance, a length (such as a ladder or rope) or a time; none asks for the area or perimeter of the triangle formed."
+  }
+ ],
+ "concepts": [
+  {
+   "code": "C10M-9.1",
+   "name": "Line of sight, angle of elevation and angle of depression",
+   "description": "The line of sight from an observer's eye to the point being viewed; the angle of elevation (line of sight above the horizontal, looking up) and the angle of depression (line of sight below the horizontal, looking down); and the fact that, because the horizontals at two different heights are parallel, the angle of elevation of a higher point from a lower point equals the angle of depression of that lower point from the higher point.",
+   "idea": "The angle of elevation or depression is always measured from the horizontal at the observer's own eye, never from the vertical or from the line joining the two objects themselves.",
+   "rule": "Line of sight: the line from the observer's eye to the point on the object viewed. Angle of elevation: the angle between the line of sight and the horizontal, when the viewed point is above the horizontal level (raising the head to look). Angle of depression: the angle between the line of sight and the horizontal, when the viewed point is below the horizontal level (lowering the head to look). Since the horizontals at any two heights are parallel lines, and the line of sight is a transversal cutting them, the angle of elevation of a higher point measured from a lower point equals the angle of depression of that lower point measured from the higher point (alternate angles).",
+   "example": "A student looking up at the top of a minar: the angle her line of sight makes with the horizontal is the angle of elevation (Fig. 9.1, p. 133). A girl sitting on a balcony looking down at a flower pot on a step below: the angle formed is the angle of depression (Fig. 9.3, p. 134).",
+   "difficulty_base": "Easy",
+   "questions": [
+    {
+     "b": "Remember",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "The line drawn from the eye of an observer to the point on the object being viewed is called the",
+     "a": "line of sight",
+     "o": [
+      "line of sight",
+      "angle of elevation",
+      "angle of depression",
+      "horizontal line"
+     ]
+    },
+    {
+     "b": "Remember",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "When the point being viewed is above the horizontal level, the angle formed by the line of sight with the horizontal is called the",
+     "a": "angle of elevation",
+     "o": [
+      "angle of elevation",
+      "angle of depression",
+      "line of sight",
+      "right angle"
+     ]
+    },
+    {
+     "b": "Remember",
+     "d": "Easy",
+     "t": "fill_blank",
+     "m": 1,
+     "q": "When the point being viewed is below the horizontal level, the angle formed by the line of sight with the horizontal is called the angle of ____.",
+     "a": "depression"
+    },
+    {
+     "b": "Remember",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "rev": true,
+     "q": "Which of the following is NOT correct about the angle of elevation and the angle of depression?",
+     "a": "The angle of elevation of a point equals the ratio height/distance itself, rather than being the angle whose tangent gives that ratio",
+     "o": [
+      "The angle of elevation of a point equals the ratio height/distance itself, rather than being the angle whose tangent gives that ratio",
+      "Both angles are measured from the horizontal, never from the vertical",
+      "The angle of elevation is used when we raise our head to look at a point above the horizontal level",
+      "The angle of depression is used when we lower our head to look at a point below the horizontal level"
+     ]
+    },
+    {
+     "b": "Understand",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "In Fig. 9.1 of the chapter, a student looks up at the top of a minar. Which angle does the line from her eye to the top of the minar make with the horizontal?",
+     "a": "angle of elevation",
+     "o": [
+      "angle of elevation",
+      "angle of depression",
+      "a right angle",
+      "the angle of the minar"
+     ]
+    },
+    {
+     "b": "Understand",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "A girl sitting on a balcony looks down at a flower pot on a step below. The angle formed with the horizontal by her line of sight to the flower pot is called the",
+     "a": "angle of depression",
+     "o": [
+      "angle of depression",
+      "angle of elevation",
+      "line of sight",
+      "vertical angle"
+     ]
+    },
+    {
+     "b": "Understand",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "Why could the very same angle be called an angle of elevation for one observer and an angle of depression for another?",
+     "a": "Because it depends on whether the horizontal at the observer's own eye is below the object (elevation) or above the object (depression)",
+     "o": [
+      "Because it depends on whether the horizontal at the observer's own eye is below the object (elevation) or above the object (depression)",
+      "Because elevation and depression are always different angles for the same two points",
+      "Because the object physically moves between the two viewings",
+      "Because one observer is always taller than the other"
+     ]
+    },
+    {
+     "b": "Understand",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "q": "A man standing at the top of a tower looks down at a car on the road below, and the angle of depression is 40 degrees. What is the angle of elevation of the man, as seen from the car?",
+     "a": "40 degrees",
+     "o": [
+      "40 degrees",
+      "50 degrees",
+      "90 degrees",
+      "cannot be determined"
+     ]
+    },
+    {
+     "b": "Understand",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "q": "Explain, using the fact that the horizontal at a low point and the horizontal at a high point are parallel lines, why the angle of elevation of the top of a tower observed from a point on the ground equals the angle of depression of that ground point observed from the top of the tower.",
+     "a": "The two horizontal lines (one at the ground point, one at the top of the tower) are parallel, and the line of sight joining the two points is a transversal cutting both; the angle of elevation at the ground point and the angle of depression at the top are alternate angles formed by this transversal, so they are equal.",
+     "s": [
+      [
+       "States that the two horizontals are parallel and the line of sight is a transversal",
+       1
+      ],
+      [
+       "Concludes the two angles are equal because they are alternate angles",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "A student stands on level ground and looks up at a bird sitting on a wall higher than her eyes. The angle her line of sight makes with the horizontal is",
+     "a": "an angle of elevation, since the bird is above the horizontal level of her eyes",
+     "o": [
+      "an angle of elevation, since the bird is above the horizontal level of her eyes",
+      "an angle of depression, since the bird is far away",
+      "a right angle, since the wall is vertical",
+      "undefined, since a bird is not a fixed point"
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Easy",
+     "t": "fill_blank",
+     "m": 1,
+     "q": "A pilot flying at a height looks down at an airport on the ground. The angle her line of sight makes with the horizontal at her eye is called the angle of ____.",
+     "a": "depression"
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "q": "From the top of a cliff, the angle of depression of a boat is 25 degrees. As the boat moves further away from the foot of the cliff, staying on the same straight line, what happens to this angle of depression?",
+     "a": "It decreases",
+     "o": [
+      "It decreases",
+      "It increases",
+      "It stays the same",
+      "It becomes an angle of elevation"
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "q": "A girl of height 1.4 m stands so that her eye level is 1.3 m above the ground, and looks up at a balloon. State whether the vertical distance she should use in her trigonometric ratio is measured from her feet or from her eye level, and why.",
+     "a": "From her eye level, because the angle of elevation is defined using the horizontal at the observer's eye, so the relevant vertical distance is from her eye to the balloon, not from the ground to the balloon.",
+     "s": [
+      [
+       "States the vertical distance must be measured from eye level, not the ground",
+       1
+      ],
+      [
+       "Gives the reason: the angle of elevation/depression is always defined at the observer's eye",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "q": "Two horizontal lines are drawn, one through a point A at ground level and one through a point P at the top of a tower directly above a point on the ground. A line of sight joins A and P. Name the two angles formed at A and at P by this line of sight with the respective horizontals, and state the relationship between them.",
+     "a": "At A, the angle formed is the angle of elevation of P from A; at P, the angle formed is the angle of depression of A from P. Since the two horizontals are parallel, these two angles are equal (alternate angles).",
+     "s": [
+      [
+       "Correctly names both angles (elevation at A, depression at P)",
+       1
+      ],
+      [
+       "States they are equal, since alternate angles on parallel horizontals",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hardest",
+     "t": "long_answer",
+     "m": 3,
+     "q": "A boy stands at point A on the ground and looks up at a flag at the top of a pole at an angle of elevation of 35 degrees. His friend stands right at the top of the same pole and looks down at the boy. (i) Name the angle her line of sight makes with the horizontal. (ii) State its measure, giving a reason. (iii) Explain in one line why this equality would fail if the two horizontals were not parallel.",
+     "a": "(i) Angle of depression. (ii) 35 degrees, because the two horizontals (at A and at the top of the pole) are parallel, and the line of sight is a transversal, making the angle of elevation at A and the angle of depression at the top alternate angles, hence equal. (iii) If the two horizontals were not parallel, the transversal would not create equal alternate angles, so the two angles could differ.",
+     "s": [
+      [
+       "Names the angle correctly as angle of depression",
+       1
+      ],
+      [
+       "States it equals 35 degrees with the alternate-angles reason",
+       1
+      ],
+      [
+       "Explains that non-parallel horizontals would break the equality",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "assertion_reason",
+     "m": 1,
+     "q": "Assertion (A): The angle of elevation of the top of a tower from a point on the ground equals the angle of depression of that point from the top of the tower. Reason (R): The horizontal line at the ground point and the horizontal line at the top of the tower are parallel, and the line of sight is a transversal, making the two angles alternate angles.",
+     "a": "Both A and R are true, and R is the correct explanation of A",
+     "o": [
+      "Both A and R are true, and R is the correct explanation of A",
+      "Both A and R are true, but R is not the correct explanation of A",
+      "A is true, R is false",
+      "A is false, R is true"
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "multi_statement",
+     "m": 1,
+     "q": "Consider these statements about angles of elevation and depression. (I) The angle of elevation is always measured from the horizontal at the observer's eye, not from the ground directly beneath the observer. (II) An angle of depression can only occur when the observer is standing on level ground. Which is or are correct?",
+     "a": "Only I",
+     "o": [
+      "Only I",
+      "Only II",
+      "Both I and II",
+      "Neither I nor II"
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hardest",
+     "t": "long_answer",
+     "m": 3,
+     "q": "Point B is on the ground at the foot of a tower, and point C is also on the ground, further away from the tower than B, both on the same straight line as the tower's foot. From the top of the tower, the angle of depression of B is 60 degrees and the angle of depression of C is 30 degrees. (i) Which of B or C is closer to the foot of the tower? Give a one-line reason using the general behaviour of the angle of depression with distance. (ii) Which angle, the one to B or the one to C, is larger? (iii) If the height of the tower were doubled while B and C stayed in the same places, would the angle of depression of B increase, decrease, or stay the same?",
+     "a": "(i) B is closer, because for a fixed tower height, a nearer point makes a larger angle of depression than a farther point. (ii) The angle to B (60 degrees) is larger. (iii) It would increase, since increasing the height while keeping the horizontal distance fixed increases the ratio height/distance, and hence the angle whose tangent is that ratio.",
+     "s": [
+      [
+       "Identifies B as closer with a correct one-line reason",
+       1
+      ],
+      [
+       "Correctly states the angle to B (60 degrees) is larger",
+       1
+      ],
+      [
+       "Correctly states the angle of depression to B would increase if height doubles",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Evaluate",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "q": "A classmate claims: 'The angle of elevation and the angle of depression between the same two points are always different, because one is called elevation and the other is called depression.' Evaluate this claim.",
+     "a": "The claim is false. The two angles are equal in size (by alternate angles on the parallel horizontals); only the name differs, depending on which of the two points is doing the observing -- elevation when looking up, depression when looking down at the other point -- not the numerical measure of the angle.",
+     "s": [
+      [
+       "States the claim is false",
+       1
+      ],
+      [
+       "Explains the two angles have equal measure, only the name differs by which point is observing",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Create",
+     "d": "Hardest",
+     "t": "long_answer",
+     "m": 3,
+     "q": "Describe a real-life situation, different from any example in this chapter, in which you would measure an angle of depression, and a second real-life situation in which you would measure an angle of elevation. For each, name the observer, the object viewed, and state whether the observer's line of sight goes up or down from the horizontal.",
+     "a": "Sample: (1) Angle of depression -- a lifeguard sitting on a raised chair looks down at a swimmer in the water; the line of sight goes down from the horizontal at the lifeguard's eyes. (2) Angle of elevation -- a person standing at the base of a hill looks up at a paraglider in the sky; the line of sight goes up from the horizontal at the person's eyes. (Any two genuine, distinct, correctly labelled real-life situations are acceptable.)",
+     "s": [
+      [
+       "Gives a valid angle-of-depression scenario with observer, object and downward line of sight correctly identified",
+       1
+      ],
+      [
+       "Gives a valid angle-of-elevation scenario with observer, object and upward line of sight correctly identified",
+       1
+      ],
+      [
+       "Both scenarios are original (not copied from the chapter's own examples/exercises) and internally consistent",
+       1
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "code": "C10M-9.2",
+   "name": "Finding a height or distance using one trig ratio in a single right triangle",
+   "description": "Setting up the single right triangle formed by a vertical object, the horizontal ground, and the line of sight (or a taut rope, wire, ladder or string running from the top of the object to a point on the ground), and choosing tan (or cot) when height and horizontal distance are the two lengths involved, or sin/cos when the hypotenuse (the slant length) is one of the two lengths involved.",
+   "idea": "In a right triangle formed by a vertical height, a horizontal distance and a slant line of sight (or rope/ladder/string), the given angle tells you directly which trigonometric ratio connects the two lengths you know and want.",
+   "rule": "If height and horizontal distance are the two lengths involved, use tan(angle) = height / distance (or cot(angle) = distance / height). If the hypotenuse (a rope, ladder or string) and the height are involved, use sin(angle) = height / hypotenuse. If the hypotenuse and the horizontal distance are involved, use cos(angle) = distance / hypotenuse.",
+   "example": "A tower stands on ground level; from a point 15 m from its foot, the angle of elevation of its top is 60 degrees. tan 60 degrees = height / 15, giving height = 15 root 3 m (Example 1, p. 135).",
+   "difficulty_base": "Easy",
+   "questions": [
+    {
+     "b": "Remember",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "In a right triangle formed to find the height of a tower, if the angle of elevation and the horizontal distance from the tower are known, which trigonometric ratio directly relates height and distance?",
+     "a": "tan (or cot)",
+     "o": [
+      "tan (or cot)",
+      "sin (or cosec)",
+      "cos (or sec)",
+      "none of these"
+     ]
+    },
+    {
+     "b": "Remember",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "In a right triangle, tan(angle) is defined as",
+     "a": "opposite side / adjacent side",
+     "o": [
+      "opposite side / adjacent side",
+      "opposite side / hypotenuse",
+      "adjacent side / hypotenuse",
+      "hypotenuse / adjacent side"
+     ]
+    },
+    {
+     "b": "Remember",
+     "d": "Easy",
+     "t": "fill_blank",
+     "m": 1,
+     "q": "If a rope of fixed length is stretched from the top of a pole to a point on the ground, and the angle it makes with the ground is known, the ratio connecting the height of the pole and the length of the rope (its hypotenuse) is the ____ of the angle.",
+     "a": "sine"
+    },
+    {
+     "b": "Remember",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "rev": true,
+     "q": "In a single right triangle used to find a height or distance, which of the following is NOT a correct way to choose the trigonometric ratio?",
+     "a": "Always subtract the angle of depression from the angle of elevation before choosing a ratio, since the two angles are alternate angles of the same triangle",
+     "o": [
+      "Always subtract the angle of depression from the angle of elevation before choosing a ratio, since the two angles are alternate angles of the same triangle",
+      "Use tan(angle) = height / horizontal distance when both the height and the horizontal distance are involved",
+      "Use sin(angle) = height / hypotenuse when the height and a slant length are involved",
+      "Use cos(angle) = horizontal distance / hypotenuse when the horizontal distance and a slant length are involved"
+     ]
+    },
+    {
+     "b": "Understand",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "A tower stands on level ground. From a point 20 m from its foot, the angle of elevation of its top is measured. Which two lengths does tan(angle) directly relate here?",
+     "a": "the height of the tower and the 20 m distance",
+     "o": [
+      "the height of the tower and the 20 m distance",
+      "the height of the tower and the line of sight length",
+      "the 20 m distance and the line of sight length",
+      "none of these, since tan cannot be used here"
+     ]
+    },
+    {
+     "b": "Understand",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "A kite string is tied to a point on the ground and makes an angle with the ground. Why is sin (not tan) the natural first choice if the height of the kite and the length of the string are the two quantities of interest?",
+     "a": "Because sin(angle) = opposite/hypotenuse directly connects the height (opposite side) and the string length (hypotenuse)",
+     "o": [
+      "Because sin(angle) = opposite/hypotenuse directly connects the height (opposite side) and the string length (hypotenuse)",
+      "Because tan is only defined for angles less than 45 degrees",
+      "Because sin always gives a whole number answer",
+      "Because the string is horizontal, not slanted"
+     ]
+    },
+    {
+     "b": "Understand",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "In a right triangle with the right angle at the foot of a vertical tower, the side opposite the angle of elevation measured at the ground point is",
+     "a": "the height of the tower",
+     "o": [
+      "the height of the tower",
+      "the horizontal distance from the tower",
+      "the line of sight (hypotenuse)",
+      "the angle of elevation itself"
+     ]
+    },
+    {
+     "b": "Understand",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "q": "A vertical pole and the horizontal ground it stands on meet at a right angle. From a ground point, the angle of elevation to the top of the pole is given, together with the horizontal distance. Which equation correctly finds the height h of the pole?",
+     "a": "h = distance x tan(angle)",
+     "o": [
+      "h = distance x tan(angle)",
+      "h = distance / tan(angle)",
+      "h = distance x sin(angle)",
+      "h = distance + tan(angle)"
+     ]
+    },
+    {
+     "b": "Understand",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "q": "A tower stands on level ground. From a point 25 m away from its foot, the angle of elevation of its top is 45 degrees. Find the height of the tower, showing the trigonometric equation you use.",
+     "a": "tan 45 degrees = h/25, so 1 = h/25, giving h = 25 m.",
+     "s": [
+      [
+       "Sets up tan 45 degrees = h/25 correctly",
+       1
+      ],
+      [
+       "Solves to get h = 25 m",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "From a point on the ground 10 root 3 m away from the foot of a tower, the angle of elevation of the top is 30 degrees. The height of the tower is",
+     "a": "10 m",
+     "o": [
+      "10 m",
+      "10 root 3 m",
+      "30 m",
+      "5 m"
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Easy",
+     "t": "fill_blank",
+     "m": 1,
+     "q": "A tower is 10 m high. From a point on the ground, the angle of elevation of its top is 45 degrees. The distance of the point from the foot of the tower is ____ m.",
+     "a": "10"
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "q": "A ladder rests against a wall so that the foot of the ladder is 6 m from the wall and the ladder makes an angle of 60 degrees with the ground. How high up the wall does the ladder reach?",
+     "a": "6 root 3 m",
+     "o": [
+      "6 root 3 m",
+      "6 m",
+      "3 root 3 m",
+      "12 m"
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "q": "A circus artist climbs a rope tightly stretched from the top of a vertical pole to a point on the ground 15 m from the foot of the pole. If the rope makes an angle of 30 degrees with the ground, find the length of the rope.",
+     "a": "cos 30 degrees = 15/L, so root 3/2 = 15/L, giving L = 30/root 3 = 10 root 3 m (approximately 17.32 m).",
+     "s": [
+      [
+       "Sets up cos 30 degrees = 15/L correctly",
+       1
+      ],
+      [
+       "Solves to get L = 10 root 3 m",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "q": "A string of a kite is 40 root 3 m long and makes an angle of 60 degrees with the level ground. Find the height of the kite above the ground, assuming the string is taut and straight.",
+     "a": "sin 60 degrees = h/(40 root 3), so root 3/2 = h/(40 root 3), giving h = 40 root 3 x root 3/2 = 60 m.",
+     "s": [
+      [
+       "Sets up sin 60 degrees = h/(40 root 3) correctly",
+       1
+      ],
+      [
+       "Solves to get h = 60 m",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hardest",
+     "t": "long_answer",
+     "m": 3,
+     "q": "A tower stands vertically on level ground. From a point on the ground 20 m from the foot of the tower, the angle of elevation of the top of the tower is 60 degrees. (i) Name the angle, the opposite side and the adjacent side of the right triangle you would use. (ii) Write the trigonometric equation connecting the height and the distance. (iii) Solve for the height of the tower, giving your answer as a surd and rounded to two decimal places (using root 3 = 1.732).",
+     "a": "(i) The right angle is at the foot of the tower; the angle of elevation 60 degrees is at the ground point; the opposite side is the height of the tower, the adjacent side is the 20 m distance. (ii) tan 60 degrees = height / 20. (iii) root 3 = height/20, so height = 20 root 3 m = 34.64 m (using root 3 = 1.732).",
+     "s": [
+      [
+       "Correctly names the right angle, opposite side (height) and adjacent side (20 m distance)",
+       1
+      ],
+      [
+       "Writes tan 60 degrees = height/20 correctly",
+       1
+      ],
+      [
+       "Solves to get height = 20 root 3 m = 34.64 m",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "assertion_reason",
+     "m": 1,
+     "q": "Assertion (A): From a point 12 m from the foot of a tower, if the angle of elevation of the top is 45 degrees, the height of the tower is 6 m. Reason (R): tan 45 degrees = 1, so the height of the tower equals the horizontal distance from the point to the foot of the tower.",
+     "a": "A is false, R is true",
+     "o": [
+      "A is false, R is true",
+      "A is true, R is false",
+      "Both A and R are true, and R is the correct explanation of A",
+      "Both A and R are true, but R is not the correct explanation of A"
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "multi_statement",
+     "m": 1,
+     "q": "Consider these statements about using trigonometric ratios for heights and distances. (I) If the angle of elevation and the horizontal distance are known, the height can be found using tan(angle) = height / distance. (II) If the angle of elevation and the length of the line of sight (hypotenuse) are known, the height can be found using sin(angle) = height / hypotenuse. Which is or are correct?",
+     "a": "Both I and II",
+     "o": [
+      "Both I and II",
+      "Only I",
+      "Only II",
+      "Neither I nor II"
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hardest",
+     "t": "long_answer",
+     "m": 3,
+     "q": "Two right triangles are used to find the height of two different flagpoles, both using the tangent ratio. Flagpole P: distance 9 m, angle of elevation 60 degrees. Flagpole Q: distance 9 root 3 m, angle of elevation 30 degrees. (i) Find the height of flagpole P. (ii) Find the height of flagpole Q. (iii) State how the two heights compare.",
+     "a": "(i) Height of P: tan 60 degrees = h/9, so h = 9 root 3 m (about 15.59 m). (ii) Height of Q: tan 30 degrees = h/(9 root 3), so h = 9 root 3 / root 3 = 9 m. (iii) Flagpole P (9 root 3 m) is taller than flagpole Q (9 m).",
+     "s": [
+      [
+       "Correctly finds height of P = 9 root 3 m",
+       1
+      ],
+      [
+       "Correctly finds height of Q = 9 m",
+       1
+      ],
+      [
+       "Correctly compares, stating P is taller",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Evaluate",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "q": "A classmate says: 'To find the height of any tower, I can always use the tangent ratio, no matter what information is given.' Evaluate this claim using a situation where a taut wire's length (the hypotenuse) and the angle it makes with the ground are given, instead of the horizontal distance.",
+     "a": "The claim is false. If the length of a slanting wire (the hypotenuse) and the angle it makes with the ground are given, rather than the horizontal distance, the tangent ratio (which needs the adjacent side) is not directly usable; the sine ratio (opposite/hypotenuse) is the correct choice instead to find the height.",
+     "s": [
+      [
+       "States the claim is false",
+       1
+      ],
+      [
+       "Explains that with the hypotenuse (wire length) given instead of the distance, sine (not tangent) is the correct ratio for height",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Create",
+     "d": "Hardest",
+     "t": "long_answer",
+     "m": 3,
+     "q": "Construct your own height-and-distance problem: choose a horizontal distance and an angle of elevation (using only 30, 45 or 60 degrees) so that the height comes out to be a whole number of metres. State your chosen distance and angle, write the trigonometric equation, and solve for the height.",
+     "a": "Sample: distance = 8 root 3 m, angle of elevation = 30 degrees. tan 30 degrees = h / (8 root 3), so h = 8 root 3 x (1/root 3) = 8 m. (Any distance-angle pair from 30, 45 or 60 degrees that gives a whole-number height, correctly solved, is acceptable.)",
+     "s": [
+      [
+       "Chooses a valid distance and an angle from 30, 45 or 60 degrees",
+       1
+      ],
+      [
+       "Writes the correct trigonometric equation for the chosen values",
+       1
+      ],
+      [
+       "Solves correctly to obtain a whole-number height matching the chosen values",
+       1
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "code": "C10M-9.3",
+   "name": "Accounting for the observer's eye-level height or a broken/partial vertical length",
+   "description": "Word problems where the observer's eyes are above ground level (so the triangle's vertical leg is the object's height above eye level, not its full height, and the object's total height must be found by adding the observer's height back), or where only part of a vertical length is directly involved, such as a pole climbed part-way by a ladder, or a tree that breaks and whose upper part bends over to touch the ground, becoming the hypotenuse of a new right triangle with the remaining stump.",
+   "idea": "When the observer's eyes are above the ground, or an object is only partly standing (with the rest bent over or climbed to), solve the triangle for the offset part first, then add or combine it with the known fixed part to answer the question actually asked.",
+   "rule": "If the observer's height (eye level) is e and the total object height is H, the triangle gives (H - e) using tan(angle) = (H - e) / distance; then H = (H - e) + e. If a pole or tree of total height H breaks at a height h1 above the ground, and the broken upper part (length L, the hypotenuse) bends over to touch the ground at distance d from the foot, making angle theta with the ground: tan(theta) = h1 / d gives the stump height h1, and cos(theta) = d / L gives the broken length L; the original height = h1 + L.",
+   "example": "An observer 1.5 m tall is 28.5 m from a chimney; the angle of elevation of its top from her eyes is 45 degrees, giving 28.5 m above her eye level, so the chimney's total height is 28.5 + 1.5 = 30 m (Example 3, p. 137). A tree breaks and its top touches the ground 8 m from its foot at 30 degrees, giving a stump of 8 root 3 / 3 m and a broken part of 16 root 3 / 3 m, so the tree's original height was 8 root 3 m (Exercise 9.1, Q2, p. 141).",
+   "difficulty_base": "Hard",
+   "questions": [
+    {
+     "b": "Remember",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "When an observer's eyes are above the ground, the height of an object above the observer's eye level is found first, and then the observer's own height is",
+     "a": "added to it, to get the object's total height above the ground",
+     "o": [
+      "added to it, to get the object's total height above the ground",
+      "subtracted from it",
+      "multiplied by it",
+      "ignored, since it never matters"
+     ]
+    },
+    {
+     "b": "Remember",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "A tree breaks and the broken upper part bends over to touch the ground, still attached at the break point. In the right triangle this forms, the broken part (from the break point to where it touches the ground) is the",
+     "a": "hypotenuse",
+     "o": [
+      "hypotenuse",
+      "side opposite the angle at the ground",
+      "side adjacent to the angle at the ground",
+      "horizontal base"
+     ]
+    },
+    {
+     "b": "Remember",
+     "d": "Easy",
+     "t": "fill_blank",
+     "m": 1,
+     "q": "If an observer of height e stands at a horizontal distance d from a tower of total height H, the vertical leg of the right triangle used with the angle of elevation is H minus ____.",
+     "a": "e"
+    },
+    {
+     "b": "Remember",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "rev": true,
+     "q": "Which of the following is NOT a correct step when a tree of unknown original height breaks and its top touches the ground at a known distance, making a known angle with the ground?",
+     "a": "Find the tree's original height directly as the angle of depression of the break point from the point where the top touches the ground",
+     "o": [
+      "Find the tree's original height directly as the angle of depression of the break point from the point where the top touches the ground",
+      "Use tan(angle) with the horizontal distance to find the height of the remaining standing stump",
+      "Use cos(angle) with the horizontal distance to find the length of the broken (fallen-over) part",
+      "Add the stump height and the length of the broken part to get the tree's original total height"
+     ]
+    },
+    {
+     "b": "Understand",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "An observer 1.5 m tall stands 28.5 m from a chimney and finds the angle of elevation of its top, from her eyes, to be 45 degrees. Which length does solving the triangle directly give?",
+     "a": "the height of the chimney above the observer's eye level, not its full height above the ground",
+     "o": [
+      "the height of the chimney above the observer's eye level, not its full height above the ground",
+      "the full height of the chimney above the ground directly",
+      "the observer's own height",
+      "the distance from the chimney's foot to the observer's feet"
+     ]
+    },
+    {
+     "b": "Understand",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "In the tree-breaking situation, why does the stump height plus the length of the fallen part give the tree's original height, rather than its height after breaking?",
+     "a": "Because before it broke, the tree was one straight vertical length equal to the stump plus the part that is now bent over",
+     "o": [
+      "Because before it broke, the tree was one straight vertical length equal to the stump plus the part that is now bent over",
+      "Because trees always regrow to their original height",
+      "Because the stump and the fallen part are always equal in length",
+      "Because breaking a tree does not change its total length"
+     ]
+    },
+    {
+     "b": "Understand",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "A 1.6 m tall girl looks up at a kite. To use the angle of elevation correctly in her right triangle, the vertical leg of the triangle should be measured from",
+     "a": "her eye level (approximately 1.6 m above the ground), not from the ground itself",
+     "o": [
+      "her eye level (approximately 1.6 m above the ground), not from the ground itself",
+      "the ground directly below her feet",
+      "the midpoint between her feet and her eyes",
+      "the top of the kite only"
+     ]
+    },
+    {
+     "b": "Understand",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "q": "An electrician needs to reach a point 1.2 m below the top of a 6 m pole. What length should be used as the relevant vertical leg of her ladder's right triangle?",
+     "a": "4.8 m (that is, 6 m minus 1.2 m)",
+     "o": [
+      "4.8 m (that is, 6 m minus 1.2 m)",
+      "6 m, the full height of the pole",
+      "1.2 m, the distance below the top",
+      "7.2 m (that is, 6 m plus 1.2 m)"
+     ]
+    },
+    {
+     "b": "Understand",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "q": "An observer 1.5 m tall stands at some distance from a tower and finds that solving her right triangle gives 22.5 m for the part of the tower above her eye level. Find the total height of the tower, and explain in one line why you add rather than subtract the observer's height here.",
+     "a": "Total height = 22.5 + 1.5 = 24 m. We add the observer's height because the triangle only measured the part of the tower above her eye level; her own height accounts for the remaining part from the ground up to her eyes.",
+     "s": [
+      [
+       "Correctly computes total height = 24 m",
+       1
+      ],
+      [
+       "Explains that adding is needed because the triangle only covers the part above eye level",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "An observer 1.5 m tall is 20 root 3 m away from a pillar. The angle of elevation of the top of the pillar from her eyes is 30 degrees. What is the height of the pillar above her eye level?",
+     "a": "20 m",
+     "o": [
+      "20 m",
+      "20 root 3 m",
+      "21.5 m",
+      "18.5 m"
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Easy",
+     "t": "fill_blank",
+     "m": 1,
+     "q": "Continuing the previous situation (observer 1.5 m tall, height above eye level found to be 20 m), the total height of the pillar is ____ m.",
+     "a": "21.5"
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "q": "A pole is 8 m tall. An electrician must reach a point 2 m below the top of the pole using a ladder inclined at 60 degrees to the horizontal. How far up the pole, from the ground, does she need to reach?",
+     "a": "6 m",
+     "o": [
+      "6 m",
+      "8 m",
+      "2 m",
+      "10 m"
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "q": "Continuing the ladder situation (she needs to reach 6 m up the pole, ladder inclined at 60 degrees to the horizontal), find the length of the ladder, using root 3 = 1.73.",
+     "a": "sin 60 degrees = 6/L, so root 3/2 = 6/L, giving L = 12/root 3 = 4 root 3 = 6.92 m (using root 3 = 1.73).",
+     "s": [
+      [
+       "Sets up sin 60 degrees = 6/L correctly",
+       1
+      ],
+      [
+       "Solves to get L = 4 root 3 = 6.92 m",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "q": "A tree breaks in a storm and its top touches the ground 6 m from its foot, making an angle of 45 degrees with the ground. Find the height of the standing stump.",
+     "a": "tan 45 degrees = h/6, so 1 = h/6, giving h = 6 m (the height of the stump).",
+     "s": [
+      [
+       "Sets up tan 45 degrees = h/6 correctly",
+       1
+      ],
+      [
+       "Solves to get the stump height = 6 m",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hardest",
+     "t": "long_answer",
+     "m": 3,
+     "q": "A tree breaks due to a storm, and the broken upper part bends over so that its top touches the ground 8 m from the foot of the tree, making an angle of 30 degrees with the ground. (i) Find the height of the part of the tree still standing (the stump). (ii) Find the length of the broken part. (iii) Find the tree's original height.",
+     "a": "(i) tan 30 degrees = h1/8, so h1 = 8/root 3 = 8 root 3/3 m (about 4.62 m). (ii) cos 30 degrees = 8/L, so L = 8/cos 30 degrees = 16/root 3 = 16 root 3/3 m (about 9.24 m). (iii) Original height = h1 + L = 8 root 3/3 + 16 root 3/3 = 24 root 3/3 = 8 root 3 m (about 13.86 m).",
+     "s": [
+      [
+       "Correctly finds stump height = 8 root 3/3 m (about 4.62 m)",
+       1
+      ],
+      [
+       "Correctly finds broken length = 16 root 3/3 m (about 9.24 m)",
+       1
+      ],
+      [
+       "Correctly adds to get original height = 8 root 3 m (about 13.86 m)",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "assertion_reason",
+     "m": 1,
+     "q": "Assertion (A): An observer 1.2 m tall, standing 20 m from a pole, finds the angle of elevation of the top of the pole to be 45 degrees; the height of the pole is 21.2 m. Reason (R): tan 45 degrees = 1, so the horizontal distance always equals the pole's full height directly, without needing to consider the observer's own height.",
+     "a": "A is true, R is false",
+     "o": [
+      "A is true, R is false",
+      "A is false, R is true",
+      "Both A and R are true, and R is the correct explanation of A",
+      "Both A and R are true, but R is not the correct explanation of A"
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "multi_statement",
+     "m": 1,
+     "q": "Consider these statements about a tree that breaks and bends over so its top touches the ground. (I) The tree's original height equals only the length of the broken part, since the stump is not part of the original tree. (II) The length of the broken part can be found using the cosine ratio, with the horizontal distance to the touching point as the adjacent side. Which is or are correct?",
+     "a": "Only II",
+     "o": [
+      "Only II",
+      "Only I",
+      "Both I and II",
+      "Neither I nor II"
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hardest",
+     "t": "long_answer",
+     "m": 3,
+     "q": "An observer of height 1.5 m stands 15 root 3 m from a flagpole and measures the angle of elevation of its top (from her eyes) as 30 degrees. A second observer, only 1.2 m tall, stands at the very same spot and measures the angle of elevation of the same flagpole's top. (i) Find the total height of the flagpole using the first observer's measurement. (ii) Without recomputing the triangle, state what angle of elevation the second, shorter observer would measure, and explain why it must be larger. (iii) Would the second observer's calculation for the flagpole's total height, done correctly, give the same total height as the first?",
+     "a": "(i) tan 30 degrees = h/(15 root 3), so h = 15 root 3/root 3 = 15 m above her eye level; total height = 15 + 1.5 = 16.5 m. (ii) The second observer's angle of elevation would be LARGER than 30 degrees, because her eyes are lower, so more of the flagpole (16.5 - 1.2 = 15.3 m instead of 15 m) lies above her eye level over the same horizontal distance, giving a larger tangent value and hence a larger angle. (iii) Yes -- both observers, if each correctly adds back their own height, must get the same total height of 16.5 m, since the flagpole's actual height does not depend on who is looking at it.",
+     "s": [
+      [
+       "Correctly finds the flagpole's total height = 16.5 m from the first observer's data",
+       1
+      ],
+      [
+       "Correctly explains the second observer's angle would be larger, with a valid reason",
+       1
+      ],
+      [
+       "Correctly states both observers must arrive at the same total height (16.5 m)",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Evaluate",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "q": "A classmate says: 'Since the observer's height is usually small compared to a tall building, it is safe to just ignore it and use the ground as the base of the triangle.' Evaluate this claim using Example 3's chimney problem (observer 1.5 m tall, distance 28.5 m, angle of elevation 45 degrees, correct chimney height 30 m).",
+     "a": "The claim is false. Ignoring the observer's height in Example 3 would give a chimney height of 28.5 m directly from the triangle, but the correct height is 30 m -- an error of exactly 1.5 m, the observer's own height. This 1.5 m error does not become smaller just because the object is tall; it is always exactly the observer's height, so it should never simply be dropped.",
+     "s": [
+      [
+       "States the claim is false",
+       1
+      ],
+      [
+       "Uses Example 3's numbers to show the resulting error (28.5 m vs the correct 30 m) equals exactly the observer's height",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Create",
+     "d": "Hardest",
+     "t": "long_answer",
+     "m": 3,
+     "q": "Construct your own 'broken tree' problem: choose a horizontal distance and an angle from 30, 45 or 60 degrees, then find the stump height, the length of the broken part, and the tree's original height.",
+     "a": "Sample: distance = 5 m, angle = 45 degrees. Stump height: tan 45 degrees = h1/5, so h1 = 5 m. Broken part: cos 45 degrees = 5/L, so L = 5/cos 45 degrees = 5 root 2 m (about 7.07 m). Original height = 5 + 5 root 2 m (about 12.07 m). (Any correctly worked distance-angle choice from 30, 45 or 60 degrees is acceptable.)",
+     "s": [
+      [
+       "Chooses a valid distance and an angle from 30, 45 or 60 degrees",
+       1
+      ],
+      [
+       "Correctly computes the stump height and the length of the broken part for the chosen values",
+       1
+      ],
+      [
+       "Correctly adds them to give the tree's original height",
+       1
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "code": "C10M-9.4",
+   "name": "Two heights from one point sharing a common horizontal distance (stacked objects)",
+   "description": "Problems with two objects stacked vertically at the same horizontal position, such as a flagstaff on a building, a statue on a pedestal, or a transmission tower on a building, observed from a single ground point with two different angles of elevation to the two different tops; finding the length of the upper part, the height of the lower part, or the shared horizontal distance by solving two right triangles that share the same horizontal base.",
+   "idea": "Both triangles share the same horizontal distance from the observation point to the foot of the combined structure; use a known height and its angle to find that shared distance, then use the second angle in the second triangle to find the remaining unknown, and add or subtract the two heights as the question requires.",
+   "rule": "If the total height to the upper point is H2 and to the lower point is H1 (both measured from the ground, both directly above the same foot point, viewed from a ground point at distance d): tan(angle to upper) = H2 / d and tan(angle to lower) = H1 / d. If H1 (or d) is already known, solve one triangle for d (or H1) first, then use the other angle in the second triangle to find H2. The length of the object standing on top = H2 - H1.",
+   "example": "A 10 m building has angle of elevation 30 degrees to its top from point P, giving distance AP = 10 root 3 m; a flagstaff on top makes the angle of elevation of its own top 45 degrees from the same point P, giving a flagstaff length of 10(root 3 - 1) m, about 7.32 m (Example 4, pp. 137-138).",
+   "difficulty_base": "Hard",
+   "questions": [
+    {
+     "b": "Remember",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "A flagstaff stands on top of a building. Observed from one ground point, the two right triangles used to find the flagstaff's length share which measurement?",
+     "a": "the horizontal distance from the observation point to the foot of the building",
+     "o": [
+      "the horizontal distance from the observation point to the foot of the building",
+      "the angle of elevation of the building's top",
+      "the height of the building",
+      "the length of the flagstaff itself"
+     ]
+    },
+    {
+     "b": "Remember",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "If H2 is the height to the top of a flagstaff and H1 is the height to the top of the building it stands on (both from the ground), the length of the flagstaff itself is",
+     "a": "H2 - H1",
+     "o": [
+      "H2 - H1",
+      "H2 + H1",
+      "H1 - H2",
+      "H2 x H1"
+     ]
+    },
+    {
+     "b": "Remember",
+     "d": "Easy",
+     "t": "fill_blank",
+     "m": 1,
+     "q": "For a statue standing on a pedestal, if the angle of elevation of the top of the statue and the angle of elevation of the top of the pedestal are both measured from the same ground point, the two right triangles formed share the same ____.",
+     "a": "horizontal distance"
+    },
+    {
+     "b": "Remember",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "rev": true,
+     "q": "Which of the following is NOT a correct step when finding the length of a flagstaff mounted on top of a building of known height, using two angles of elevation from one ground point?",
+     "a": "Add the observer's eye height to the building's known height before using it in the first triangle, since every height-and-distance problem requires this correction",
+     "o": [
+      "Add the observer's eye height to the building's known height before using it in the first triangle, since every height-and-distance problem requires this correction",
+      "Use the building's known height and its angle of elevation to find the horizontal distance from the observation point to the foot of the building",
+      "Use that same horizontal distance with the angle of elevation of the flagstaff's top to find the total height to the top of the flagstaff",
+      "Subtract the building's height from the total height found in the previous step to get the flagstaff's length"
+     ]
+    },
+    {
+     "b": "Understand",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "A statue stands on a pedestal. From a ground point, the angle of elevation to the top of the statue is larger than the angle of elevation to the top of the pedestal. Why?",
+     "a": "Because the top of the statue is higher above the ground than the top of the pedestal, over the same horizontal distance",
+     "o": [
+      "Because the top of the statue is higher above the ground than the top of the pedestal, over the same horizontal distance",
+      "Because the statue is heavier than the pedestal",
+      "Because the pedestal's angle is always measured differently",
+      "Because the horizontal distance changes between the two measurements"
+     ]
+    },
+    {
+     "b": "Understand",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "In a two-triangle stacked-height problem, why must the same horizontal distance be used in both right triangles?",
+     "a": "Because both the building and whatever stands on top of it share the same foot point on the ground, so the observation point is the same distance from both",
+     "o": [
+      "Because both the building and whatever stands on top of it share the same foot point on the ground, so the observation point is the same distance from both",
+      "Because the two angles of elevation are always equal",
+      "Because trigonometric ratios only work with one distance value",
+      "Because the taller object is always closer to the observer"
+     ]
+    },
+    {
+     "b": "Understand",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "A transmission tower sits on top of a building. To find the tower's own length (not the building's height), which calculation is needed after finding the total height to the tower's top and the building's height separately?",
+     "a": "Subtract the building's height from the total height",
+     "o": [
+      "Subtract the building's height from the total height",
+      "Add the building's height to the total height",
+      "Multiply the two heights together",
+      "Divide the total height by the building's height"
+     ]
+    },
+    {
+     "b": "Understand",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "q": "From a ground point, the angle of elevation of the top of a 12 m building is 45 degrees, and the angle of elevation of the top of a flagstaff mounted on the building is 60 degrees. Which of these is the correct first step?",
+     "a": "Use tan 45 degrees = 12/d to find the horizontal distance d from the known building height",
+     "o": [
+      "Use tan 45 degrees = 12/d to find the horizontal distance d from the known building height",
+      "Use tan 60 degrees = 12/d to find the horizontal distance d",
+      "Subtract 45 degrees from 60 degrees to get the flagstaff's angle",
+      "Add 12 m to the flagstaff's angle of elevation"
+     ]
+    },
+    {
+     "b": "Understand",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "q": "From a ground point, the angle of elevation of the top of a 15 m building is 45 degrees. Find the horizontal distance from the point to the foot of the building, and explain why this distance will also be used for the flagstaff mounted on top of it.",
+     "a": "tan 45 degrees = 15/d, so d = 15 m. This same distance is used for the flagstaff because the flagstaff stands directly above the same foot point as the building, so the horizontal distance from the ground point to that foot does not change.",
+     "s": [
+      [
+       "Correctly computes d = 15 m",
+       1
+      ],
+      [
+       "Explains the same distance applies to the flagstaff since it shares the same foot point",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "A pedestal is 4 m tall. From a ground point 4 m from its foot, the angle of elevation of the top of the pedestal is",
+     "a": "45 degrees",
+     "o": [
+      "45 degrees",
+      "30 degrees",
+      "60 degrees",
+      "90 degrees"
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Easy",
+     "t": "fill_blank",
+     "m": 1,
+     "q": "Continuing the same situation (pedestal 4 m tall, ground point 4 m from its foot), if a statue on top makes the angle of elevation of the statue's top 60 degrees from the same point, the total height to the top of the statue is ____ m (as a surd).",
+     "a": "4 root 3"
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "q": "Continuing (pedestal 4 m, distance 4 m, total height to statue's top = 4 root 3 m), the height of the statue alone is",
+     "a": "4(root 3 - 1) m",
+     "o": [
+      "4(root 3 - 1) m",
+      "4 root 3 m",
+      "4(root 3 + 1) m",
+      "4 m"
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "q": "From a point on the ground, the angle of elevation of the top of a 20 m tall tower is 30 degrees. Find the horizontal distance of the point from the foot of the tower.",
+     "a": "tan 30 degrees = 20/d, so 1/root 3 = 20/d, giving d = 20 root 3 m (about 34.64 m).",
+     "s": [
+      [
+       "Sets up tan 30 degrees = 20/d correctly",
+       1
+      ],
+      [
+       "Solves to get d = 20 root 3 m",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "q": "Using the same point (distance 20 root 3 m from the previous question), a flagstaff on top of the 20 m tower makes the angle of elevation of its own top 45 degrees from this point. Find the length of the flagstaff.",
+     "a": "tan 45 degrees = (20 + x)/(20 root 3), so 20 + x = 20 root 3, giving x = 20(root 3 - 1) m (about 14.64 m).",
+     "s": [
+      [
+       "Sets up tan 45 degrees = (20 + x)/(20 root 3) correctly",
+       1
+      ],
+      [
+       "Solves to get the flagstaff length x = 20(root 3 - 1) m",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hardest",
+     "t": "long_answer",
+     "m": 3,
+     "q": "A building is 9 m tall. From a point on the ground, the angle of elevation of the top of the building is 30 degrees. A cable tower stands on top of the building, and the angle of elevation of the top of the cable tower from the same point is 60 degrees. (i) Find the horizontal distance from the point to the foot of the building. (ii) Find the total height to the top of the cable tower. (iii) Find the height of the cable tower alone.",
+     "a": "(i) tan 30 degrees = 9/d, so d = 9 root 3 m (about 15.59 m). (ii) tan 60 degrees = H/(9 root 3), so H = root 3 x 9 root 3 = 27 m. (iii) Height of the cable tower alone = 27 - 9 = 18 m.",
+     "s": [
+      [
+       "Correctly finds d = 9 root 3 m",
+       1
+      ],
+      [
+       "Correctly finds total height to top of cable tower = 27 m",
+       1
+      ],
+      [
+       "Correctly finds the cable tower's own height = 18 m",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "assertion_reason",
+     "m": 1,
+     "q": "Assertion (A): A building is 6 m tall. From a ground point 6 root 3 m from its foot, the angle of elevation of the building's top is 30 degrees. A cable tower mounted on top of the building makes the angle of elevation of its own top, from the same point, exactly 60 degrees -- that is, exactly 30 degrees more than the angle to the building's top. Reason (R): For two right triangles sharing the same horizontal distance, a taller vertical height always gives a larger angle of elevation.",
+     "a": "Both A and R are true, but R is not the correct explanation of A",
+     "o": [
+      "Both A and R are true, but R is not the correct explanation of A",
+      "Both A and R are true, and R is the correct explanation of A",
+      "A is true, R is false",
+      "A is false, R is true"
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "multi_statement",
+     "m": 1,
+     "q": "Consider these statements about a flagstaff mounted on top of a building, both observed from one ground point. (I) The horizontal distance from the observation point to the foot of the building is the same whether we are looking at the building's top or the flagstaff's top. (II) The angle of elevation of the flagstaff's top is always exactly double the angle of elevation of the building's top. Which is or are correct?",
+     "a": "Only I",
+     "o": [
+      "Only I",
+      "Only II",
+      "Both I and II",
+      "Neither I nor II"
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hardest",
+     "t": "long_answer",
+     "m": 3,
+     "q": "A TV tower stands on top of a building. From a ground point, the angle of elevation of the building's top (14 m high) is 45 degrees. From the same point, the angle of elevation of the tower's top is 60 degrees. (i) Find the horizontal distance from the point to the foot of the building. (ii) Find the total height to the top of the TV tower. (iii) Find the length of the TV tower alone, giving your answer both as a surd and rounded to two decimal places (root 3 = 1.732).",
+     "a": "(i) tan 45 degrees = 14/d, so d = 14 m. (ii) tan 60 degrees = H/14, so H = 14 root 3 m (about 24.25 m). (iii) Tower length = 14 root 3 - 14 = 14(root 3 - 1) m, which is about 10.25 m (using root 3 = 1.732).",
+     "s": [
+      [
+       "Correctly finds d = 14 m",
+       1
+      ],
+      [
+       "Correctly finds total height to tower top = 14 root 3 m (about 24.25 m)",
+       1
+      ],
+      [
+       "Correctly finds tower length = 14(root 3 - 1) m (about 10.25 m)",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Evaluate",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "q": "A classmate says: 'Once I know the angle of elevation of the flagstaff's top, I don't need the building's height at all -- one angle and one distance are always enough to find the flagstaff's length.' Evaluate this claim.",
+     "a": "The claim is false. One angle and the distance only give the total height to the top of the flagstaff (building plus flagstaff together); to isolate the flagstaff's length alone, the building's height must also be known (or found from a second angle), so that it can be subtracted from the total.",
+     "s": [
+      [
+       "States the claim is false",
+       1
+      ],
+      [
+       "Explains that the building's height is still needed (directly or via a second angle) to subtract and isolate the flagstaff's own length",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Create",
+     "d": "Hardest",
+     "t": "long_answer",
+     "m": 3,
+     "q": "Construct your own 'statue on a pedestal' problem: choose a pedestal height and a horizontal distance so that the angle of elevation of the pedestal's top is 45 degrees, and choose a second angle (30 or 60 degrees) for the statue's top. Solve for the height of the statue alone.",
+     "a": "Sample: pedestal height = 10 m, distance = 10 m (since tan 45 degrees = 10/10 = 1). Choosing 60 degrees for the statue's top: tan 60 degrees = H/10, so H = 10 root 3 m. Statue height alone = 10 root 3 - 10 = 10(root 3 - 1) m (about 7.32 m). (Any correctly worked pedestal height, matching distance, and second angle of 30 or 60 degrees is acceptable.)",
+     "s": [
+      [
+       "Chooses a pedestal height and equal distance consistent with a 45-degree angle",
+       1
+      ],
+      [
+       "Correctly finds the total height using the chosen second angle (30 or 60 degrees)",
+       1
+      ],
+      [
+       "Correctly subtracts to find the statue's height alone",
+       1
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "code": "C10M-9.5",
+   "name": "Angles of depression from one height to two points on the ground",
+   "description": "Problems where a single observation point at a known height looks down at two different points at ground level, on the same side or on opposite sides, such as a bridge over a river (opposite banks), or a lighthouse observing two ships (same side, one behind the other); solving two right triangles that share the same known vertical height for two separate horizontal distances, then adding them (opposite sides) or subtracting them (same side) to answer for the distance between the two ground points.",
+   "idea": "Both triangles share the same known vertical height; use each angle of depression separately, converting it (by alternate angles) to the angle at the corresponding ground point, to get two horizontal distances, then add or subtract them depending on whether the two ground points lie on opposite sides or the same side of the point directly below the observer.",
+   "rule": "With height h fixed: angle of depression theta1 to point 1 gives horizontal distance d1 = h / tan(theta1); angle of depression theta2 to point 2 gives d2 = h / tan(theta2). If the two points are on OPPOSITE sides of the foot of the height, the distance between them = d1 + d2. If they are on the SAME side (one further than the other), the distance between them = the larger distance minus the smaller distance.",
+   "example": "From a bridge 3 m above the banks of a river, the angles of depression of the two opposite banks are 30 degrees and 45 degrees, giving distances of 3 root 3 m and 3 m, so the river's width = 3 root 3 + 3 = 3(root 3 + 1) m, about 8.2 m (Example 7, pp. 140-141).",
+   "difficulty_base": "Hard",
+   "questions": [
+    {
+     "b": "Remember",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "From a point at a known height, the angle of depression is measured to two different points on the ground. What do the two right triangles formed share?",
+     "a": "the same vertical height",
+     "o": [
+      "the same vertical height",
+      "the same horizontal distance",
+      "the same angle",
+      "the same hypotenuse"
+     ]
+    },
+    {
+     "b": "Remember",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "If two ground points being observed from one elevated point lie on OPPOSITE sides of the point directly below the observer, the distance between them is found by",
+     "a": "adding the two horizontal distances found separately",
+     "o": [
+      "adding the two horizontal distances found separately",
+      "subtracting the smaller horizontal distance from the larger",
+      "multiplying the two horizontal distances",
+      "dividing the larger horizontal distance by the smaller"
+     ]
+    },
+    {
+     "b": "Remember",
+     "d": "Easy",
+     "t": "fill_blank",
+     "m": 1,
+     "q": "If two ground points lie on the SAME side of the point directly below the observer, with one further away than the other, the distance between them is found by ____ the two horizontal distances.",
+     "a": "subtracting"
+    },
+    {
+     "b": "Remember",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "rev": true,
+     "q": "A person stands at the top of a lighthouse of known height and observes two ships in the sea, one behind the other on the same side. Which of the following is NOT a correct step in finding the distance between the two ships?",
+     "a": "Add the two ships' horizontal distances together, exactly as you would add a building's height and a flagstaff's length standing on top of it",
+     "o": [
+      "Add the two ships' horizontal distances together, exactly as you would add a building's height and a flagstaff's length standing on top of it",
+      "Find the horizontal distance to each ship separately, using the lighthouse height with each ship's angle of depression",
+      "Recognise that a smaller angle of depression corresponds to a ship that is farther away",
+      "Subtract the nearer ship's horizontal distance from the farther ship's horizontal distance to get the distance between them"
+     ]
+    },
+    {
+     "b": "Understand",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "From the top of a bridge, the angles of depression of the two banks of a river (on opposite sides) are measured. Why are the two horizontal distances added to get the river's width?",
+     "a": "Because the two banks lie on opposite sides of the point directly below the bridge, so the width spans across both distances",
+     "o": [
+      "Because the two banks lie on opposite sides of the point directly below the bridge, so the width spans across both distances",
+      "Because addition always gives a bigger, safer answer",
+      "Because the two angles of depression are always equal",
+      "Because the bridge's height must be added to the width"
+     ]
+    },
+    {
+     "b": "Understand",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "A lighthouse keeper looks down at two ships that are in a line, one directly behind the other, on the same side of the lighthouse. The farther ship will show",
+     "a": "a smaller angle of depression than the nearer ship",
+     "o": [
+      "a smaller angle of depression than the nearer ship",
+      "a larger angle of depression than the nearer ship",
+      "the same angle of depression as the nearer ship",
+      "no angle of depression at all"
+     ]
+    },
+    {
+     "b": "Understand",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "Two poles of equal height stand on opposite sides of a road. From a point between them, the angles of elevation to their tops are measured. To find the width of the road, the two horizontal distances found from the two triangles should be",
+     "a": "added together",
+     "o": [
+      "added together",
+      "subtracted from each other",
+      "averaged",
+      "ignored, since the poles are equal height"
+     ]
+    },
+    {
+     "b": "Understand",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "q": "From the top of a tower 20 m high, the angle of depression of a car on a straight road is 30 degrees. A little later, the same car (now closer) shows an angle of depression of 60 degrees. Which horizontal distance is now smaller?",
+     "a": "The distance to the car at the 60-degree observation, since a larger angle of depression means the car is nearer",
+     "o": [
+      "The distance to the car at the 60-degree observation, since a larger angle of depression means the car is nearer",
+      "The distance to the car at the 30-degree observation",
+      "Both distances are always equal",
+      "It cannot be determined without more information"
+     ]
+    },
+    {
+     "b": "Understand",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "q": "From the top of a cliff 50 m high, the angle of depression of a boat is 45 degrees. Find the horizontal distance of the boat from the base of the cliff.",
+     "a": "tan 45 degrees = 50/d, so 1 = 50/d, giving d = 50 m.",
+     "s": [
+      [
+       "Sets up tan 45 degrees = 50/d correctly",
+       1
+      ],
+      [
+       "Solves to get d = 50 m",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "From the top of a tower 30 m high, the angle of depression of a point on the ground is 30 degrees. The horizontal distance of the point from the foot of the tower is",
+     "a": "30 root 3 m",
+     "o": [
+      "30 root 3 m",
+      "30 m",
+      "10 root 3 m",
+      "15 root 3 m"
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Easy",
+     "t": "fill_blank",
+     "m": 1,
+     "q": "From the top of the same 30 m tower, a second point on the ground, on the OTHER side of the tower, has an angle of depression of 60 degrees. Its distance from the foot of the tower is ____ m (as a surd).",
+     "a": "10 root 3"
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "q": "Continuing (tower 30 m, two points on opposite sides at 30 root 3 m and 10 root 3 m from the foot), the distance between the two points is",
+     "a": "40 root 3 m",
+     "o": [
+      "40 root 3 m",
+      "20 root 3 m",
+      "30 root 3 m",
+      "300 m"
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "q": "From the top of a tower 25 m high, the angle of depression of a car is 45 degrees. Find the horizontal distance of the car from the foot of the tower.",
+     "a": "tan 45 degrees = 25/d, so d = 25 m.",
+     "s": [
+      [
+       "Sets up tan 45 degrees = 25/d correctly",
+       1
+      ],
+      [
+       "Solves to get d = 25 m",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "q": "The same car (tower 25 m high) is observed a little later at a new angle of depression of 60 degrees, having moved closer to the tower along the same straight road. Find its new horizontal distance from the foot of the tower.",
+     "a": "tan 60 degrees = 25/d, so root 3 = 25/d, giving d = 25/root 3 = 25 root 3/3 m (about 14.43 m).",
+     "s": [
+      [
+       "Sets up tan 60 degrees = 25/d correctly",
+       1
+      ],
+      [
+       "Solves to get d = 25 root 3/3 m (about 14.43 m)",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hardest",
+     "t": "long_answer",
+     "m": 3,
+     "q": "From the top of a lighthouse 60 m high, the angles of depression of two boats, both due east of the lighthouse and in a straight line with its foot, are 45 degrees and 30 degrees. (i) Find the horizontal distance of each boat from the foot of the lighthouse. (ii) Find the distance between the two boats, giving your answer as a surd and also rounded to two decimal places (root 3 = 1.732).",
+     "a": "(i) For 45 degrees: tan 45 degrees = 60/d1, so d1 = 60 m. For 30 degrees: tan 30 degrees = 60/d2, so d2 = 60 root 3 m (about 103.92 m). (ii) Since both boats are on the same side, in a straight line with the foot of the lighthouse, the distance between them = d2 - d1 = 60 root 3 - 60 = 60(root 3 - 1) m, which is about 43.92 m (using root 3 = 1.732).",
+     "s": [
+      [
+       "Correctly finds d1 = 60 m",
+       1
+      ],
+      [
+       "Correctly finds d2 = 60 root 3 m (about 103.92 m)",
+       1
+      ],
+      [
+       "Correctly subtracts to get the distance between the boats = 60(root 3 - 1) m (about 43.92 m)",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "assertion_reason",
+     "m": 1,
+     "q": "Assertion (A): From the top of a tower 40 m high, if the angles of depression of two cars on opposite sides of the tower (in a straight line through its foot) are 45 degrees and 30 degrees, the distance between the cars is 40 root 3 minus 40 m. Reason (R): When the two points being observed lie on opposite sides of the foot of the height, the distance between them is the SUM of the two horizontal distances found separately.",
+     "a": "A is false, R is true",
+     "o": [
+      "A is false, R is true",
+      "A is true, R is false",
+      "Both A and R are true, and R is the correct explanation of A",
+      "Both A and R are true, but R is not the correct explanation of A"
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "multi_statement",
+     "m": 1,
+     "q": "Consider these statements about a lighthouse of known height observing two ships. (I) If the two ships are on opposite sides of the lighthouse, the distance between them can be found without knowing the lighthouse's height, using only the two angles of depression. (II) If both ships are on the same side of the lighthouse, one directly behind the other, the ship with the smaller angle of depression is farther away. Which is or are correct?",
+     "a": "Only II",
+     "o": [
+      "Only II",
+      "Only I",
+      "Both I and II",
+      "Neither I nor II"
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hardest",
+     "t": "long_answer",
+     "m": 3,
+     "q": "From the top of a tower 30 root 3 m high, the angles of depression of two objects on the ground are observed. Object A is on one side of the tower's foot with angle of depression 60 degrees, and object B is on the OTHER side with angle of depression 45 degrees. (i) Find the horizontal distance to A. (ii) Find the horizontal distance to B. (iii) Find the distance AB.",
+     "a": "(i) tan 60 degrees = 30 root 3/d_A, so root 3 = 30 root 3/d_A, giving d_A = 30 m. (ii) tan 45 degrees = 30 root 3/d_B, so 1 = 30 root 3/d_B, giving d_B = 30 root 3 m (about 51.96 m). (iii) Since A and B are on opposite sides of the tower's foot, AB = d_A + d_B = 30 + 30 root 3 = 30(1 + root 3) m, which is about 81.96 m.",
+     "s": [
+      [
+       "Correctly finds d_A = 30 m",
+       1
+      ],
+      [
+       "Correctly finds d_B = 30 root 3 m (about 51.96 m)",
+       1
+      ],
+      [
+       "Correctly adds (opposite sides) to get AB = 30(1 + root 3) m (about 81.96 m)",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Evaluate",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "q": "A classmate says: 'Whenever I find the angle of depression to two different points from the same height, I should always ADD the two horizontal distances to get the distance between the points.' Evaluate this claim using the idea of two ships in a line, one behind the other, on the SAME side of a lighthouse.",
+     "a": "The claim is false. Adding is correct only when the two points are on OPPOSITE sides of the foot of the height (like the two banks of a river). When both points are on the SAME side, one behind the other (like two ships in a line), the distance between them is the DIFFERENCE of the two horizontal distances, not their sum.",
+     "s": [
+      [
+       "States the claim is false",
+       1
+      ],
+      [
+       "Explains that same-side points require subtraction, using the two-ships-in-a-line idea as the contrast",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Create",
+     "d": "Hardest",
+     "t": "long_answer",
+     "m": 3,
+     "q": "Construct your own 'bridge over a river' problem: choose a bridge height and two angles of depression (30, 45 or 60 degrees) to the two opposite banks, so that the river's width comes out as a whole number of metres or a simple surd. State your chosen values and solve for the width.",
+     "a": "Sample: bridge height = 6 m, angle of depression to one bank = 45 degrees, to the other bank = 30 degrees. Distance to first bank: tan 45 degrees = 6/d1, so d1 = 6 m. Distance to second bank: tan 30 degrees = 6/d2, so d2 = 6 root 3 m. Since the banks are on opposite sides, width = d1 + d2 = 6 + 6 root 3 = 6(1 + root 3) m (about 16.39 m). (Any correctly worked height and pair of angles from 30, 45 or 60 degrees is acceptable.)",
+     "s": [
+      [
+       "Chooses a valid height and two angles from 30, 45 or 60 degrees",
+       1
+      ],
+      [
+       "Correctly finds both horizontal distances for the chosen values",
+       1
+      ],
+      [
+       "Correctly adds them (opposite sides) to get the river's width",
+       1
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "code": "C10M-9.6",
+   "name": "Same object, two positions or two times: distance travelled or time taken",
+   "description": "Problems where a single fixed-height object (a building, a balloon, a car) is viewed from two different ground positions, or at two different times as the observer or the object moves, giving two different angles of elevation or depression to the same fixed height; finding the distance between the two positions, or (given a time interval and uniform speed) the time for a further stage of the journey, by solving two right triangles that share the same height and subtracting the two horizontal distances.",
+   "idea": "The object's height stays fixed throughout; only the angle changes as the horizontal distance changes, so solve two separate right triangles sharing that one height for the two horizontal distances, and subtract them to get the distance covered between the two observations.",
+   "rule": "With height h fixed, angle theta1 at observation 1 gives distance d1 = h / tan(theta1), and angle theta2 (different from theta1, since the distance has changed) at observation 2 gives d2 = h / tan(theta2). The distance travelled between the two observations = the larger of d1, d2 minus the smaller. If the two observations are separated by a known time interval at a uniform speed, speed = distance travelled / time interval, which can then be used to find the time for any further remaining distance.",
+   "example": "A 1.5 m tall boy walks towards a 30 m building; the angle of elevation of its top (28.5 m above his eyes) increases from 30 degrees to 60 degrees, giving horizontal distances of 28.5 root 3 m and 9.5 root 3 m, so he walked 19 root 3 m (Exercise 9.1, Q6, p. 141). A car's angle of depression from a tower changes from 30 degrees to 60 degrees six seconds later; the tower's height cancels out of the final calculation, giving 3 seconds for the car to reach the foot of the tower (Exercise 9.1, Q15, pp. 142-143).",
+   "difficulty_base": "Hard",
+   "questions": [
+    {
+     "b": "Remember",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "A fixed-height object is viewed from two different positions at two different angles of elevation. What stays the same in both right triangles?",
+     "a": "the height of the object",
+     "o": [
+      "the height of the object",
+      "the horizontal distance",
+      "the angle of elevation",
+      "the length of the line of sight"
+     ]
+    },
+    {
+     "b": "Remember",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "If the angle of elevation to a fixed-height object INCREASES as an observer walks towards it, the horizontal distance to the object",
+     "a": "decreases",
+     "o": [
+      "decreases",
+      "increases",
+      "stays the same",
+      "cannot be determined"
+     ]
+    },
+    {
+     "b": "Remember",
+     "d": "Easy",
+     "t": "fill_blank",
+     "m": 1,
+     "q": "If d1 is the horizontal distance at the first observation and d2 is the horizontal distance at the second (with d1 greater than d2), the distance travelled between the two observations is d1 minus ____.",
+     "a": "d2"
+    },
+    {
+     "b": "Remember",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "rev": true,
+     "q": "A car is observed from the top of a tower at two different times as it approaches the tower's foot along a straight road. Which of the following is NOT a correct step in finding the time taken to travel between the two observation points?",
+     "a": "Add the two horizontal distances together, since the car's two positions are like two objects on opposite sides of the tower's foot",
+     "o": [
+      "Add the two horizontal distances together, since the car's two positions are like two objects on opposite sides of the tower's foot",
+      "Find the two horizontal distances separately, using the tower's height with each angle of depression",
+      "Subtract the smaller (later) distance from the larger (earlier) distance to get the distance covered between the two observations",
+      "Divide the distance covered by the time interval between the two observations to get the car's uniform speed"
+     ]
+    },
+    {
+     "b": "Understand",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "A balloon stays at a fixed height as the wind carries it horizontally away from an observer. As it moves farther away, the angle of elevation from the observer's eyes",
+     "a": "decreases",
+     "o": [
+      "decreases",
+      "increases",
+      "stays exactly the same",
+      "becomes an angle of depression"
+     ]
+    },
+    {
+     "b": "Understand",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "A boy walks towards a tall building, keeping his eyes on its top. As he gets closer, the angle of elevation of the building's top",
+     "a": "increases",
+     "o": [
+      "increases",
+      "decreases",
+      "stays the same",
+      "becomes negative"
+     ]
+    },
+    {
+     "b": "Understand",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "In a two-position problem, why is the SAME height used in both right triangles, one for each observation?",
+     "a": "Because the object being viewed (the building, balloon or tower) does not change height between the two observations, only the observer's or the object's horizontal position changes",
+     "o": [
+      "Because the object being viewed (the building, balloon or tower) does not change height between the two observations, only the observer's or the object's horizontal position changes",
+      "Because the two angles of elevation are always equal",
+      "Because trigonometric ratios cannot use two different heights",
+      "Because the horizontal distance never changes in these problems"
+     ]
+    },
+    {
+     "b": "Understand",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "q": "A car travels towards the foot of a tower along a straight road. Its angle of depression, seen from the top of the tower, is first 30 degrees, then later 60 degrees. Which observation corresponds to the car being closer to the tower?",
+     "a": "The 60-degree observation, since a larger angle of depression means a smaller horizontal distance",
+     "o": [
+      "The 60-degree observation, since a larger angle of depression means a smaller horizontal distance",
+      "The 30-degree observation, since a smaller angle means the car has less distance left",
+      "Both observations are at the same distance",
+      "It cannot be determined from the angles alone"
+     ]
+    },
+    {
+     "b": "Understand",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "q": "A kite stays at a fixed height of 20 root 3 m. At one moment its angle of elevation from an observer is 30 degrees; a little later, having drifted further away, its angle of elevation is measured again. State, without calculating, whether this new angle is more or less than 30 degrees, and find the horizontal distance at the FIRST moment.",
+     "a": "Since the kite has drifted farther away, the horizontal distance has increased, so the new angle of elevation must be LESS than 30 degrees. At the first moment: tan 30 degrees = 20 root 3/d1, so 1/root 3 = 20 root 3/d1, giving d1 = 20 root 3 x root 3 = 60 m.",
+     "s": [
+      [
+       "States correctly that the new angle is less than 30 degrees, with a valid reason",
+       1
+      ],
+      [
+       "Correctly computes d1 = 60 m",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "A tower is 30 m high. From a point on the ground, the angle of elevation of its top is 45 degrees. The horizontal distance from this point to the foot of the tower is",
+     "a": "30 m",
+     "o": [
+      "30 m",
+      "30 root 3 m",
+      "15 m",
+      "60 m"
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Easy",
+     "t": "fill_blank",
+     "m": 1,
+     "q": "The same 30 m tower is observed from a second, closer point, where the angle of elevation is 60 degrees. The horizontal distance from this second point is ____ m (as a surd in simplest form).",
+     "a": "10 root 3"
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "q": "Continuing (30 m tower, distances 30 m at 45 degrees and 10 root 3 m at 60 degrees), the distance between the two observation points is",
+     "a": "30 - 10 root 3 m (about 12.68 m)",
+     "o": [
+      "30 - 10 root 3 m (about 12.68 m)",
+      "30 + 10 root 3 m (about 47.32 m)",
+      "20 m",
+      "10 root 3 m"
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "q": "A building is 24 root 3 m high. From a point on the ground, the angle of elevation of its top is 30 degrees. Find the horizontal distance of this point from the foot of the building.",
+     "a": "tan 30 degrees = 24 root 3/d, so 1/root 3 = 24 root 3/d, giving d = 24 root 3 x root 3 = 72 m.",
+     "s": [
+      [
+       "Sets up tan 30 degrees = 24 root 3/d correctly",
+       1
+      ],
+      [
+       "Solves to get d = 72 m",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "q": "A building is 24 root 3 m high. An observer standing at a horizontal distance of 72 m (where the angle of elevation of its top is 30 degrees) walks towards the building until the angle of elevation becomes 60 degrees. Find the new horizontal distance, and hence the distance she walked.",
+     "a": "tan 60 degrees = 24 root 3/d2, so root 3 = 24 root 3/d2, giving d2 = 24 root 3/root 3 = 24 m. Distance walked = 72 - 24 = 48 m.",
+     "s": [
+      [
+       "Correctly finds the new distance d2 = 24 m",
+       1
+      ],
+      [
+       "Correctly finds the distance walked = 48 m",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hardest",
+     "t": "long_answer",
+     "m": 3,
+     "q": "A balloon stays at a fixed height of 40 root 3 m above the ground. At one moment, an observer on the ground measures its angle of elevation as 60 degrees. A little later, the wind has carried the balloon further away (still at the same height), and its angle of elevation is now 30 degrees. (i) Find the horizontal distance to the balloon at the first moment. (ii) Find the horizontal distance at the second moment. (iii) Find the distance travelled by the balloon.",
+     "a": "(i) tan 60 degrees = 40 root 3/d1, so d1 = 40 root 3/root 3 = 40 m. (ii) tan 30 degrees = 40 root 3/d2, so d2 = 40 root 3 x root 3 = 120 m. (iii) Distance travelled = d2 - d1 = 120 - 40 = 80 m.",
+     "s": [
+      [
+       "Correctly finds d1 = 40 m at 60 degrees",
+       1
+      ],
+      [
+       "Correctly finds d2 = 120 m at 30 degrees",
+       1
+      ],
+      [
+       "Correctly subtracts to get the distance travelled = 80 m",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "assertion_reason",
+     "m": 1,
+     "q": "Assertion (A): A car approaches the foot of a tower along a straight road; the angle of depression from the top of the tower increases from 30 degrees to 60 degrees between two observations. The horizontal distance to the car is smaller at the second (60-degree) observation than at the first. Reason (R): For a fixed height, a larger angle of depression (or elevation) corresponds to a smaller horizontal distance, since the tangent of the angle increases as the horizontal distance decreases.",
+     "a": "Both A and R are true, and R is the correct explanation of A",
+     "o": [
+      "Both A and R are true, and R is the correct explanation of A",
+      "Both A and R are true, but R is not the correct explanation of A",
+      "A is true, R is false",
+      "A is false, R is true"
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "multi_statement",
+     "m": 1,
+     "q": "Consider these statements about a car observed from the top of a tower at two different times as it approaches along a straight road. (I) If the time interval between the two observations is known, along with the two horizontal distances, the car's average speed over that interval can be found. (II) The tower's own height must be known numerically before the time taken for the remaining distance to the foot of the tower can be found, since the height cannot be eliminated from the calculation. Which is or are correct?",
+     "a": "Only I",
+     "o": [
+      "Only I",
+      "Only II",
+      "Both I and II",
+      "Neither I nor II"
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hardest",
+     "t": "long_answer",
+     "m": 3,
+     "q": "A man standing at the top of a tower observes a car on a straight road leading to the foot of the tower, at an angle of depression of 30 degrees. Six seconds later, at the same uniform speed, the car's angle of depression is found to be 60 degrees. (i) Letting the tower's height be h, express the horizontal distance to the car at each observation in terms of h. (ii) Find, in terms of h, the distance the car covered in those 6 seconds, and hence its speed. (iii) Find the time the car will take to travel from the second observation point to the foot of the tower, and show that your answer does not actually depend on h.",
+     "a": "(i) At 30 degrees: tan 30 degrees = h/d1, so d1 = h root 3. At 60 degrees: tan 60 degrees = h/d2, so d2 = h/root 3. (ii) Distance covered in 6 seconds = d1 - d2 = h root 3 - h/root 3 = h(3 - 1)/root 3 = 2h/root 3. Speed = distance/time = (2h/root 3)/6 = h/(3 root 3). (iii) Time for the remaining distance d2 = h/root 3 at this speed = d2 / speed = (h/root 3) divided by (h/(3 root 3)) = 3 seconds. The h cancels out completely in this last division, so the answer (3 seconds) does not depend on the actual height of the tower.",
+     "s": [
+      [
+       "Correctly expresses d1 = h root 3 and d2 = h/root 3",
+       1
+      ],
+      [
+       "Correctly finds the distance covered in 6 seconds and the speed in terms of h",
+       1
+      ],
+      [
+       "Correctly finds the remaining time = 3 seconds and explicitly notes that h cancels out",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Evaluate",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "q": "A classmate says: 'To find the time a car takes to reach the foot of a tower after the second observation, I must first find the actual height of the tower in metres.' Evaluate this claim, referring to what happens to the height h when the final time is calculated.",
+     "a": "The claim is false. Although the height h appears in both the distance-covered and the remaining-distance expressions, it cancels out completely when the remaining time is calculated as (remaining distance)/(speed), because both quantities are proportional to h. So the actual numerical height of the tower is never needed to answer this particular question.",
+     "s": [
+      [
+       "States the claim is false",
+       1
+      ],
+      [
+       "Explains that h cancels out because both the remaining distance and the speed are proportional to h",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Create",
+     "d": "Hardest",
+     "t": "long_answer",
+     "m": 3,
+     "q": "Construct your own 'two observation' problem: choose a fixed height for an object (as a surd involving root 3, so that both distances come out as whole numbers) and two angles from 30, 45 and 60 degrees, so that the angle increases between the first and second observation. State your chosen values, and find the distance between the two observation points.",
+     "a": "Sample: height = 18 root 3 m. First angle of elevation = 30 degrees: tan 30 degrees = 18 root 3/d1, so d1 = 18 root 3 x root 3 = 54 m. Second angle of elevation = 60 degrees: tan 60 degrees = 18 root 3/d2, so d2 = 18 root 3/root 3 = 18 m. Distance between the two observation points = 54 - 18 = 36 m. (Any correctly worked height and pair of increasing angles from 30, 45 or 60 degrees is acceptable.)",
+     "s": [
+      [
+       "Chooses a valid height (as a multiple of root 3) and two angles from 30, 45 or 60 degrees, with the angle increasing",
+       1
+      ],
+      [
+       "Correctly finds both horizontal distances for the chosen values",
+       1
+      ],
+      [
+       "Correctly subtracts to get the distance between the two observation points",
+       1
+      ]
+      ]
+    }
+   ]
+  }
+ ]
+}
