@@ -1,0 +1,1660 @@
+{
+  "subject": {
+    "code": "MATH10",
+    "name": "Mathematics",
+    "board": "CBSE",
+    "class": 10
+  },
+  "source": {
+    "publisher": "NCERT",
+    "title": "Mathematics",
+    "edition": "Textbook for Class X, Reprint 2026-27",
+    "year": 2026
+  },
+  "chapter": {
+    "part": "I",
+    "chapter_no": 12,
+    "name": "Surface Areas and Volumes",
+    "blurb": "A truck's oil tank, a test tube, a birthday top and Mayank's garden bird-bath share one feature: none of them is a single cuboid, cone, cylinder or sphere, but each is built by combining two or more of these. This chapter develops the bookkeeping needed for such composite solids -- for total surface area, working out exactly which flat circular faces vanish at a join, survive untouched, or are only partly covered (leaving an exposed ring when the two radii differ), so that curved surfaces are added but no vanished face is double-counted; and for volume, where this bookkeeping problem never arises and the parts' volumes simply add. It then applies this to practical questions -- a glass's true capacity once a raised base is allowed for, the wood left after drilling pen-holder depressions, the number of lead shots a vessel's water can absorb, and a solid's mass from its density. This rationalized edition restricts itself to the five basic solids named in its own opening section (cuboid, cone, cylinder, sphere, hemisphere) and to combinations of exactly two at a time; it closes with a two-point Summary and does not go on to the frustum of a cone or to converting one solid into another of equal volume, both part of the pre-2023 edition's longer version of this chapter.",
+    "source_code": "jemh112",
+    "order_index": 12
+  },
+  "scope_in": [
+    {
+      "item": "Recognise that many real objects are combinations of two or more basic solids (cuboid, cone, cylinder, sphere, hemisphere) rather than a single basic solid",
+      "pages": "161-162"
+    },
+    {
+      "item": "Find the total surface area of a solid formed by joining curved solids of the SAME radius (e.g. a cylinder capped with hemispheres, a cone mounted on a hemisphere, a cylinder with a hemispherical depression), as the sum of the curved surface areas only",
+      "pages": "162-164, 166"
+    },
+    {
+      "item": "Find the total surface area of a solid formed by attaching a curved piece (hemisphere or cone) to, or removing one from, a flat-faced solid such as a cube or a cylinder's flat end, correctly adjusting the flat area at the join",
+      "pages": "164, 166-167"
+    },
+    {
+      "item": "Find the total surface area of a solid formed by joining two curved solids of DIFFERENT radii, including the exposed ring (annulus) left at the join",
+      "pages": "165"
+    },
+    {
+      "item": "Find the volume of a solid formed by combining two or more basic solids by adding the volumes of the individual parts",
+      "pages": "167, 169"
+    },
+    {
+      "item": "Use the volume of a combination solid to find a practical derived quantity: actual capacity after removing a hollow part, quantity of material used or remaining, volume of a liquid displaced or left over, mass from density, or checking whether a stated capacity is correct",
+      "pages": "168-170"
+    }
+  ],
+  "scope_out": [
+    {
+      "item": "Frustum of a cone (its slant height, curved/total surface area and volume)",
+      "reason": "This section existed in the pre-2023 edition of this chapter but has been removed from this rationalized Reprint 2026-27 edition; the chapter ends at 12.4 Summary with only two content sections (12.2 and 12.3), confirmed against the extracted text and the book's own page numbering."
+    },
+    {
+      "item": "Conversion of a solid from one shape to another (melting and recasting a solid to find an unknown dimension of the new shape, e.g. a sphere recast into a cylinder or cone of equal volume)",
+      "reason": "Also part of the pre-2023 edition's longer chapter 12 but dropped from this rationalized edition; no worked example or exercise problem here asks for a \"melt and recast\" calculation of that kind."
+    },
+    {
+      "item": "Surface area and volume formulas for a SINGLE basic solid (cuboid, cone, cylinder, sphere or hemisphere) considered on its own",
+      "reason": "Section 12.1 explicitly says these were already learnt in Class IX and are assumed prior knowledge; this chapter only teaches how to combine them."
+    },
+    {
+      "item": "Any solid other than a cuboid, cone, cylinder, sphere or hemisphere (e.g. a prism, a pyramid, or a frustum)",
+      "reason": "Section 12.1 explicitly restricts \"the basic solids\" used in this chapter to exactly these five; no other solid type appears in any example or exercise."
+    },
+    {
+      "item": "Converting the volume or capacity of a combination solid into litres or any unit other than cm^3 or m^3",
+      "reason": "Every volume and capacity problem in this chapter stays in cubic centimetres or cubic metres; no litre conversion appears anywhere in the worked examples or exercises."
+    }
+  ],
+  "concepts": [
+    {
+      "code": "C10M-12.1",
+      "name": "Surface area of solids joined by matching curved surfaces (CSA addition)",
+      "description": "Finding the total surface area (TSA) of a solid formed by joining two or more basic solids (cone, cylinder, sphere, hemisphere) at matching circular faces of the SAME radius, so that neither joining face stays exposed and only curved surfaces remain visible.",
+      "idea": "When two curved solids of the same radius are joined so that neither flat circular face is left exposed in the final shape, that flat area is not part of the outer surface at all -- the total surface area is just the sum of the curved surface areas of the visible parts.",
+      "rule": "TSA(combination) = sum of the CSAs of the curved parts only, when every flat circular face involved is at a join (and vanishes) or is otherwise not exposed. CSA(hemisphere) = 2 pi r^2, CSA(cone) = pi r l where l = sqrt(r^2 + h^2), CSA(cylinder) = 2 pi r h. Never add either joining face's own flat circular area. This applies whether the curved piece is stuck ON (a bump) or scooped OUT (a depression), since either way the same flat area vanishes and the same curved area appears.",
+      "example": "Rasheed's playing top (Example 1) is a cone (radius 1.75 cm) mounted on a hemisphere of the same radius: TSA = CSA(cone) + CSA(hemisphere) = pi r l + 2 pi r^2, about 39.6 cm^2 (using pi = 22/7).",
+      "difficulty_base": "Easy",
+      "questions": [
+        {
+          "b": "Remember",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "A solid is formed by fixing a hemisphere on top of a cylinder of the SAME radius, with neither flat circular face left exposed in the final shape. To find its total surface area, which surfaces should be added?",
+          "a": "The curved surface area of the cylinder and the curved surface area of the hemisphere only",
+          "o": [
+            "The curved surface area of the cylinder and the curved surface area of the hemisphere only",
+            "The total surface area of the cylinder and the total surface area of the hemisphere",
+            "The curved surface area of the cylinder and the flat circular top of the hemisphere",
+            "The total surface area of the cylinder only"
+          ]
+        },
+        {
+          "b": "Remember",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "The curved surface area of a hemisphere of radius r is",
+          "a": "2 pi r^2",
+          "o": [
+            "2 pi r^2",
+            "4 pi r^2",
+            "pi r^2",
+            "3 pi r^2"
+          ]
+        },
+        {
+          "b": "Remember",
+          "d": "Easy",
+          "t": "fill_blank",
+          "m": 1,
+          "q": "The curved surface area of a right circular cone of base radius r and slant height l is ____.",
+          "a": "pi r l"
+        },
+        {
+          "b": "Remember",
+          "d": "Hard",
+          "t": "mcq",
+          "m": 1,
+          "q": "Which of the following is NOT true when finding the total surface area of a solid formed by joining a cone and a hemisphere of the SAME radius, base to base?",
+          "a": "An extra ring-shaped area must be added at the join because the cone's circular base is wider than the hemisphere's",
+          "o": [
+            "An extra ring-shaped area must be added at the join because the cone's circular base is wider than the hemisphere's",
+            "The flat circular face of the hemisphere and the flat circular base of the cone coincide exactly and are not part of the outer surface",
+            "The total surface area equals the curved surface area of the hemisphere plus the curved surface area of the cone",
+            "The formula used for the cone's curved surface needs its slant height, not its vertical height"
+          ],
+          "rev": true
+        },
+        {
+          "b": "Understand",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "A medicine capsule (a cylinder with a hemisphere stuck on each flat end, all of the same radius) has its surface area calculated. Why is this NOT the sum of the total surface areas of the cylinder and the two hemispheres considered separately?",
+          "a": "Because the two flat circular ends of the cylinder, where the hemispheres are joined, are not part of the outer surface of the capsule",
+          "o": [
+            "Because the two flat circular ends of the cylinder, where the hemispheres are joined, are not part of the outer surface of the capsule",
+            "Because a capsule is not really a combination of solids at all",
+            "Because the two hemispheres together are actually a full sphere, which has less surface area",
+            "Because the cylinder's curved surface area is not needed once hemispheres are attached"
+          ]
+        },
+        {
+          "b": "Understand",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "Mayank's bird-bath (Example 4) is a cylinder with a hemispherical DEPRESSION cut into one flat end, rather than a hemisphere stuck on top. Why does its total surface area still equal CSA(cylinder) + CSA(hemisphere), the same form as when a hemisphere is stuck ON the outside?",
+          "a": "Scooping the hemisphere out removes the same flat circular area that sticking one on would cover, and exposes the same curved area either way",
+          "o": [
+            "Scooping the hemisphere out removes the same flat circular area that sticking one on would cover, and exposes the same curved area either way",
+            "A hemispherical depression has a smaller curved surface area than a hemisphere stuck on top",
+            "Only depressions, never protrusions, contribute a curved surface area at all",
+            "The bird-bath's formula is actually different, and just happens to look the same"
+          ]
+        },
+        {
+          "b": "Understand",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "A vessel is a hollow hemisphere mounted by a hollow cylinder of the same radius (Exercise 12.1 Q2). Which surfaces make up its INNER surface area?",
+          "a": "The inner curved surface of the cylinder and the inner curved surface of the hemisphere",
+          "o": [
+            "The inner curved surface of the cylinder and the inner curved surface of the hemisphere",
+            "The inner curved surface of the cylinder, the inner curved surface of the hemisphere, and the flat circular rim at the top",
+            "Only the inner curved surface of the hemisphere",
+            "The inner and outer curved surfaces of the cylinder together"
+          ]
+        },
+        {
+          "b": "Understand",
+          "d": "Hard",
+          "t": "mcq",
+          "m": 1,
+          "q": "Toy P is a cone mounted on a hemisphere (Example 1 style); Toy Q is built by fixing an identical hemisphere and cone together in the same way. Both use the same radius and the same cone height. Explain why Toy P and Toy Q have exactly the same total surface area.",
+          "a": "Total surface area depends only on which curved surfaces are exposed (the CSA of the cone and the CSA of the hemisphere), which are identical for both toys",
+          "o": [
+            "Total surface area depends only on which curved surfaces are exposed (the CSA of the cone and the CSA of the hemisphere), which are identical for both toys",
+            "They do not actually have the same total surface area unless their volumes also match",
+            "Total surface area depends on which piece was attached first during construction",
+            "Total surface area depends on the toy's overall height, which is not stated to be the same for both"
+          ]
+        },
+        {
+          "b": "Understand",
+          "d": "Hard",
+          "t": "short_answer",
+          "m": 2,
+          "q": "A cylinder has a hemisphere of the same radius fixed on EACH of its two flat ends (a capsule shape, Exercise 12.1 Q6). Explain why the cylinder contributes only its curved surface area, and none of its own flat area, to the total.",
+          "a": "Both flat circular ends of the cylinder are exactly covered by the two hemispheres and become internal to the solid, so the cylinder contributes only its curved surface area, 2 pi r h, to the total.",
+          "s": [
+            [
+              "States that both flat circular ends of the cylinder are exactly covered by the hemispheres and so are not part of the outer surface",
+              1
+            ],
+            [
+              "Concludes the cylinder therefore contributes only its curved surface area, 2 pi r h, to the total",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "In Exercise 12.1 Q3, a cone of radius 3.5 cm is mounted on a hemisphere of the same radius, and the toy's total height is 15.5 cm. The height of the conical part alone is",
+          "a": "12 cm",
+          "o": [
+            "12 cm",
+            "15.5 cm",
+            "8 cm",
+            "19 cm"
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Easy",
+          "t": "fill_blank",
+          "m": 1,
+          "q": "For the toy of Exercise 12.1 Q3 (cone of radius 3.5 cm and height 12 cm mounted on a hemisphere of the same radius), the slant height of the cone is ____ cm.",
+          "a": "12.5"
+        },
+        {
+          "b": "Apply",
+          "d": "Hard",
+          "t": "short_answer",
+          "m": 2,
+          "q": "Find the total surface area of the toy in Exercise 12.1 Q3: a cone of radius 3.5 cm and height 12 cm (slant height 12.5 cm) mounted on a hemisphere of radius 3.5 cm. Use pi = 22/7.",
+          "a": "214.5 cm^2 (137.5 cm^2 from the cone's curved surface plus 77 cm^2 from the hemisphere's curved surface).",
+          "s": [
+            [
+              "Curved surface area of the cone = pi r l = (22/7)(3.5)(12.5) = 137.5 cm^2",
+              1
+            ],
+            [
+              "Curved surface area of the hemisphere = 2 pi r^2 = 77 cm^2; total = 137.5 + 77 = 214.5 cm^2",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Hard",
+          "t": "mcq",
+          "m": 1,
+          "q": "A cylindrical vessel of radius 21 cm and height 30 cm has a hemispherical depression of the same radius cut into one flat end. Using pi = 22/7, its total surface area (curved surface of the cylinder plus curved surface of the hemisphere) is",
+          "a": "6732 cm^2",
+          "o": [
+            "6732 cm^2",
+            "5346 cm^2",
+            "8118 cm^2",
+            "3960 cm^2"
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Hard",
+          "t": "mcq",
+          "m": 1,
+          "q": "A capsule (Exercise 12.1 Q6) is 14 mm long and 5 mm in diameter, made of a cylinder with a hemisphere of the same radius fixed on each end. Using pi = 22/7, its surface area is",
+          "a": "220 mm^2",
+          "o": [
+            "220 mm^2",
+            "298.6 mm^2 (approx)",
+            "180.7 mm^2 (approx)",
+            "110 mm^2"
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Hardest",
+          "t": "long_answer",
+          "m": 3,
+          "q": "A tent (Exercise 12.1 Q7) is a cylinder of height 2.1 m and diameter 4 m, surmounted by a cone of slant height 2.8 m and the same base radius; the base of the tent is not covered by canvas. Using pi = 22/7, find the area of canvas used, and its cost at Rs 500 per square metre.",
+          "a": "Area of canvas = 44 square metres; cost = Rs 22000.",
+          "s": [
+            [
+              "Curved surface area of the cylindrical part = 2 pi r h = 2(22/7)(2)(2.1) = 26.4 sq m",
+              1
+            ],
+            [
+              "Curved surface area of the conical part = pi r l = (22/7)(2)(2.8) = 17.6 sq m; total canvas = 26.4 + 17.6 = 44 sq m",
+              1
+            ],
+            [
+              "Cost = 44 x Rs 500 = Rs 22000",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Analyse",
+          "d": "Hard",
+          "t": "assertion_reason",
+          "m": 1,
+          "q": "Assertion (A): The total surface area of a toy formed by mounting a cone on a hemisphere of the same radius equals the curved surface area of the cone plus the curved surface area of the hemisphere. Reason (R): When two solids are joined, the total surface area of the combination is always found by adding the total surface areas of the two solids.",
+          "a": "A is true, R is false",
+          "o": [
+            "A is true, R is false",
+            "A is false, R is true",
+            "Both A and R are true, and R is the correct explanation of A",
+            "Both A and R are true, but R is not the correct explanation of A"
+          ]
+        },
+        {
+          "b": "Analyse",
+          "d": "Hard",
+          "t": "multi_statement",
+          "m": 1,
+          "q": "Consider these statements about a solid formed by fixing a hemisphere of radius r on top of a cylinder of the same radius r and height h, with the cylinder's other flat end not exposed. (I) The total surface area is 2 pi r h + 2 pi r^2, the curved surface area of the cylinder plus the curved surface area of the hemisphere. (II) The circular face where the cylinder and hemisphere meet is not part of the outer surface, since it lies inside the solid. (III) If the hemisphere were replaced by a cone of the same radius and exactly the same curved surface area, the total surface area of the new combination would come out different from the original. Which is or are correct?",
+          "a": "Only I and II",
+          "o": [
+            "Only I and II",
+            "Only I",
+            "Only II and III",
+            "All of these"
+          ]
+        },
+        {
+          "b": "Analyse",
+          "d": "Hardest",
+          "t": "long_answer",
+          "m": 3,
+          "q": "A wooden toy is a cone (height 4 cm) mounted on a hemisphere of radius 3 cm, base to base. A second, larger toy of the same shape has its radius and its cone height both exactly doubled (radius 6 cm, cone height 8 cm). By what factor is the total surface area of the second toy larger than the first? Justify your answer without necessarily computing either area in cm^2.",
+          "a": "The total surface area is exactly 4 times as large.",
+          "s": [
+            [
+              "Recognises the hemisphere's curved surface area 2 pi r^2 depends on r^2, which becomes 4 times as large when r doubles",
+              1
+            ],
+            [
+              "Recognises the cone's curved surface area pi r l depends on r and on l = sqrt(r^2+h^2); since both r and h double, l also doubles, so pi r l also becomes 4 times as large",
+              1
+            ],
+            [
+              "Concludes both terms scale by the same factor 4, so the whole toy's total surface area scales by 4",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Evaluate",
+          "d": "Hard",
+          "t": "short_answer",
+          "m": 2,
+          "q": "Meena says: \"To find the total surface area of any solid made by joining two basic solids, I can always just add the total surface areas of the two separate solids -- it will only be wrong by a little.\" Using the toy of Example 1 (a cone mounted on a hemisphere of radius 1.75 cm, correct total surface area about 39.6 cm^2) as a check, evaluate whether Meena's claim is reasonable.",
+          "a": "Meena's claim is not reasonable. Adding the two full total surface areas gives about 58.85 cm^2 (each shape's own flat circular face of area 9.625 cm^2 gets wrongly counted), against the correct value of about 39.6 cm^2 -- an error of about 19.25 cm^2, roughly half the correct answer, which is far more than \"a little\".",
+          "s": [
+            [
+              "States or shows that adding the two full total surface areas gives about 58.85 cm^2, noticeably more than the correct 39.6 cm^2",
+              1
+            ],
+            [
+              "Concludes the error (about 19.25 cm^2, roughly half the correct value) is far too large to call \"a little\", so Meena's claim is false",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Create",
+          "d": "Hardest",
+          "t": "long_answer",
+          "m": 3,
+          "q": "Design a toy in the shape of a cone mounted on a hemisphere, both of radius 3.5 cm, so that its total surface area (using pi = 22/7) is exactly 158.4 cm^2. Find a suitable slant height for the cone, and verify your answer.",
+          "a": "Slant height = 7.4 cm.",
+          "s": [
+            [
+              "Sets up total surface area = pi r l + 2 pi r^2 = pi r(l + 2r); with r = 3.5 and pi = 22/7, pi r = 11, giving 11(l + 7) = 158.4",
+              1
+            ],
+            [
+              "Solves l + 7 = 14.4, so l = 7.4 cm",
+              1
+            ],
+            [
+              "Verifies: curved surface area of cone = 11 x 7.4 = 81.4 cm^2, curved surface area of hemisphere = 11 x 7 = 77 cm^2, total = 158.4 cm^2, matching the target",
+              1
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "code": "C10M-12.2",
+      "name": "Surface area with a flat face added or removed at the join",
+      "description": "Finding the total surface area of a solid formed by attaching a curved piece (a hemisphere or a cone) to, or removing one from, a solid that has genuine flat faces of its own (a cube, a cuboid, or a cylinder's flat end), where exactly one circular patch of that flat face is replaced by the curved piece's own curved surface.",
+      "idea": "A flat-faced solid keeps all its OTHER faces when a curved piece is attached to or scooped from just one face -- only that one face loses a circular patch, which is replaced by the curved surface of the attached or removed piece.",
+      "rule": "TSA(combination) = TSA(original flat-faced solid) - (circular patch removed, pi r^2) + (curved surface area of the attached/removed piece, e.g. 2 pi r^2 for a hemisphere or pi r l for a cone). Every other face of the original solid is unaffected and still counts in full. This is the same whether the curved piece sticks out or is scooped in.",
+      "example": "The decorative block (Example 2) is a cube of edge 5 cm with a hemisphere of radius 2.1 cm fixed on top: TSA = 6(5)^2 - pi(2.1)^2 + 2 pi(2.1)^2 = 163.86 cm^2 (using pi = 22/7).",
+      "difficulty_base": "Hard",
+      "questions": [
+        {
+          "b": "Remember",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "A cube has a hemisphere fixed on top of one of its faces. Compared to the cube's own total surface area, the combined solid's total surface area is found by",
+          "a": "subtracting the circular base area covered by the hemisphere and adding the hemisphere's curved surface area",
+          "o": [
+            "subtracting the circular base area covered by the hemisphere and adding the hemisphere's curved surface area",
+            "adding the hemisphere's total surface area without any subtraction",
+            "subtracting the hemisphere's curved surface area",
+            "adding only the hemisphere's flat circular base area"
+          ]
+        },
+        {
+          "b": "Remember",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "The total surface area of a cube of edge a is",
+          "a": "6 a^2",
+          "o": [
+            "6 a^2",
+            "4 a^2",
+            "a^3",
+            "6 a"
+          ]
+        },
+        {
+          "b": "Remember",
+          "d": "Easy",
+          "t": "fill_blank",
+          "m": 1,
+          "q": "The area of the flat circular patch of radius r that disappears where a hemisphere is joined to a flat face is ____.",
+          "a": "pi r^2"
+        },
+        {
+          "b": "Remember",
+          "d": "Hard",
+          "t": "mcq",
+          "m": 1,
+          "q": "Which of the following is NOT true when a hemisphere is fixed on top of a cubical block, matching in size at the join?",
+          "a": "Since the hemisphere is a curved solid, none of the cube's flat faces need any adjustment at all, just as when two curved solids of the same radius are joined",
+          "o": [
+            "Since the hemisphere is a curved solid, none of the cube's flat faces need any adjustment at all, just as when two curved solids of the same radius are joined",
+            "The five faces of the cube away from the hemisphere are completely unaffected and count in full",
+            "The curved surface area of the hemisphere must be added to the total",
+            "The flat top of the cube loses exactly the circular area covered by the hemisphere's base"
+          ],
+          "rev": true
+        },
+        {
+          "b": "Understand",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "A hemispherical depression is scooped out of one face of a cubical wooden block, with the hemisphere's diameter equal to the cube's edge (Exercise 12.1 Q5). Why does the total surface area calculation still subtract only ONE circular area, even though a chunk of the cube has been physically removed?",
+          "a": "Only one flat face, the one where the depression is cut, loses a circular patch; the removed material does not create or remove any other face",
+          "o": [
+            "Only one flat face, the one where the depression is cut, loses a circular patch; the removed material does not create or remove any other face",
+            "Because removing material can never change a solid's total surface area",
+            "Because both the top and bottom faces of the cube lose a circular patch whenever material is scooped out",
+            "Because the scooped-out material must be added back as a separate face"
+          ]
+        },
+        {
+          "b": "Understand",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "For a cube of a given edge, does fixing a hemisphere of radius r ON one face, versus scooping an identical hemispherical depression OUT of that face, change the formula used for the resulting total surface area?",
+          "a": "No -- the formula TSA = TSA(cube) - pi r^2 + CSA(hemisphere) applies to both, since either way one flat circle vanishes and the same curved area appears",
+          "o": [
+            "No -- the formula TSA = TSA(cube) - pi r^2 + CSA(hemisphere) applies to both, since either way one flat circle vanishes and the same curved area appears",
+            "Yes -- scooping a depression always gives a smaller total surface area than fixing a bump of the same size",
+            "Yes -- only a bump fixed on top contributes any curved surface area at all",
+            "No -- but only because the cube itself has no total surface area of its own to begin with"
+          ]
+        },
+        {
+          "b": "Understand",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "A cylinder has a conical cavity of the SAME radius hollowed out from one of its flat ends (Exercise 12.1 Q8). Which of the cylinder's two flat circular ends is completely removed from the total surface area, and what replaces it?",
+          "a": "The end where the cavity is cut loses its entire flat circle, which is replaced by the curved surface of the cone; the other end's flat circle is unaffected",
+          "o": [
+            "The end where the cavity is cut loses its entire flat circle, which is replaced by the curved surface of the cone; the other end's flat circle is unaffected",
+            "Both ends lose their flat circles, and both are replaced by the cone's curved surface",
+            "Neither end is affected, since a cavity does not change the surface area",
+            "The end where the cavity is cut keeps its flat circle in addition to gaining the cone's curved surface"
+          ]
+        },
+        {
+          "b": "Understand",
+          "d": "Hard",
+          "t": "mcq",
+          "m": 1,
+          "q": "A cubical block of edge 7 cm is surmounted by the LARGEST hemisphere that can fit on one face (Exercise 12.1 Q4). Explain why the hemisphere's radius must be exactly half the cube's edge.",
+          "a": "The hemisphere's circular base cannot extend beyond the square face it sits on, so its diameter is at most the edge length, giving radius 3.5 cm",
+          "o": [
+            "The hemisphere's circular base cannot extend beyond the square face it sits on, so its diameter is at most the edge length, giving radius 3.5 cm",
+            "The radius of a hemisphere fixed on a cube must always equal the cube's full edge length",
+            "The largest possible hemisphere is decided by the cube's volume, not by the face it sits on",
+            "Any radius smaller than the cube's edge would leave the hemisphere unable to touch the face at all"
+          ]
+        },
+        {
+          "b": "Understand",
+          "d": "Hard",
+          "t": "short_answer",
+          "m": 2,
+          "q": "A hemisphere is scooped out from one face of a cube so that the hemisphere's diameter equals the cube's edge a. Explain why the formula for the remaining solid's total surface area is TSA = 6a^2 - pi(a/2)^2 + 2 pi(a/2)^2, and simplify the last two terms into one term.",
+          "a": "One flat circle of radius a/2 is removed from the cube's own total surface area, and the hemisphere's curved surface of the same radius is exposed in its place; -pi(a/2)^2 + 2 pi(a/2)^2 simplifies to pi(a/2)^2, i.e. pi a^2/4.",
+          "s": [
+            [
+              "Explains that one flat circle of radius a/2 is removed and the hemisphere's curved surface of the same radius is exposed instead",
+              1
+            ],
+            [
+              "Simplifies -pi(a/2)^2 + 2 pi(a/2)^2 = pi(a/2)^2 = pi a^2/4",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "For the cube of Exercise 12.1 Q4 (edge 7 cm), the greatest diameter the hemisphere fixed on top can have is",
+          "a": "7 cm",
+          "o": [
+            "7 cm",
+            "3.5 cm",
+            "14 cm",
+            "10.5 cm"
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Easy",
+          "t": "fill_blank",
+          "m": 1,
+          "q": "For a cube of edge 14 cm with a hemisphere of radius 7 cm fixed on top, the flat top loses an area of ____ cm^2 (use pi = 22/7).",
+          "a": "154"
+        },
+        {
+          "b": "Apply",
+          "d": "Hard",
+          "t": "short_answer",
+          "m": 2,
+          "q": "A cubical block of edge 7 cm is surmounted by a hemisphere of radius 3.5 cm (Exercise 12.1 Q4). Using pi = 22/7, find the total surface area of the solid.",
+          "a": "332.5 cm^2 (294 cm^2 from the cube plus 38.5 cm^2 net addition from the hemisphere).",
+          "s": [
+            [
+              "Total surface area of the cube = 6(7)^2 = 294 cm^2",
+              1
+            ],
+            [
+              "Net addition from the hemisphere = pi r^2 = (22/7)(3.5)^2 = 38.5 cm^2; total = 294 + 38.5 = 332.5 cm^2",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Hard",
+          "t": "mcq",
+          "m": 1,
+          "q": "A hemispherical depression is cut from one face of a cubical block of edge 14 cm, with the hemisphere's diameter equal to the cube's edge. Using pi = 22/7, the total surface area of the remaining solid is",
+          "a": "1330 cm^2",
+          "o": [
+            "1330 cm^2",
+            "1176 cm^2",
+            "1022 cm^2",
+            "868 cm^2"
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Hard",
+          "t": "mcq",
+          "m": 1,
+          "q": "From a solid cylinder of height 2.4 cm and diameter 1.4 cm, a conical cavity of the same height and diameter is hollowed out (Exercise 12.1 Q8). Using pi = 22/7, the total surface area of the remaining solid, to the nearest cm^2, is",
+          "a": "18 cm^2",
+          "o": [
+            "18 cm^2",
+            "16 cm^2",
+            "19 cm^2",
+            "12 cm^2"
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Hardest",
+          "t": "long_answer",
+          "m": 3,
+          "q": "A wooden block is a cuboid 20 cm by 14 cm by 10 cm. A hemisphere of radius 7 cm is carved out from the centre of one of its 20 cm by 14 cm faces. Using pi = 22/7, find the total surface area of the remaining solid.",
+          "a": "1394 cm^2 (1240 cm^2 from the cuboid, plus a net addition of 154 cm^2 from the hemispherical cavity).",
+          "s": [
+            [
+              "Total surface area of the cuboid = 2(20x14 + 14x10 + 10x20) = 2(280+140+200) = 1240 cm^2",
+              1
+            ],
+            [
+              "The circular patch removed (pi r^2 = 154 cm^2) is replaced by the hemisphere's curved surface (2 pi r^2 = 308 cm^2), a net addition of pi r^2 = 154 cm^2",
+              1
+            ],
+            [
+              "Total surface area = 1240 + 154 = 1394 cm^2",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Analyse",
+          "d": "Hard",
+          "t": "assertion_reason",
+          "m": 1,
+          "q": "Assertion (A): The total surface area of the decorative block in Example 2 (a cube of edge 5 cm with a hemisphere of diameter 4.2 cm fixed on top) is found as the cube's total surface area, minus the base area of the hemisphere, plus the curved surface area of the hemisphere. Reason (R): When a hemisphere is fixed on a flat face of a solid, the circular area of the face it covers is no longer part of the outer surface, but the hemisphere's own curved surface becomes newly exposed instead.",
+          "a": "Both A and R are true, and R is the correct explanation of A",
+          "o": [
+            "Both A and R are true, and R is the correct explanation of A",
+            "A is true, R is false",
+            "A is false, R is true",
+            "Both A and R are true, but R is not the correct explanation of A"
+          ]
+        },
+        {
+          "b": "Analyse",
+          "d": "Hard",
+          "t": "multi_statement",
+          "m": 1,
+          "q": "Consider these statements about a cube with a hemisphere fixed on top of one face. (I) The cube's other five faces are unaffected and still contribute their full area to the total. (II) The total surface area of a cube with a hemisphere fixed on top is always LESS than the cube's own total surface area, because part of the cube's surface is now covered. (III) The exact area added or removed at the join depends only on the radius of the hemisphere, not on the size of the cube. Which is or are correct?",
+          "a": "Only I and III",
+          "o": [
+            "Only I and III",
+            "Only I",
+            "Only II",
+            "All of these"
+          ]
+        },
+        {
+          "b": "Analyse",
+          "d": "Hardest",
+          "t": "long_answer",
+          "m": 3,
+          "q": "For a cube of edge a with a hemisphere of radius r fixed on top of one face (where 2r is at most a), show that the total surface area can be written as 6a^2 + pi r^2, and use this to explain what happens to the total surface area as r increases towards a/2 while a stays fixed.",
+          "a": "TSA = 6a^2 + pi r^2; this increases as r grows, reaching its largest value when r = a/2 (the biggest hemisphere that fits), giving TSA = 6a^2 + pi a^2/4.",
+          "s": [
+            [
+              "Derives TSA = 6a^2 - pi r^2 + 2 pi r^2 = 6a^2 + pi r^2",
+              1
+            ],
+            [
+              "Notes this is an increasing function of r, so the total surface area increases as r grows",
+              1
+            ],
+            [
+              "States the maximum occurs at r = a/2, giving TSA = 6a^2 + pi a^2/4",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Evaluate",
+          "d": "Hard",
+          "t": "short_answer",
+          "m": 2,
+          "q": "Rohit claims: \"Scooping a hemispherical dent out of a cube's face always makes its total surface area smaller, since material has been removed.\" Using a cube of edge 14 cm with a hemispherical depression of radius 7 cm as a check (cube's own total surface area 1176 cm^2, scooped solid's total surface area 1330 cm^2), evaluate Rohit's claim.",
+          "a": "Rohit's claim is false. The scooped solid's total surface area (1330 cm^2) is larger than the plain cube's (1176 cm^2), because the exposed curved surface of the hemisphere is larger than the flat circular area that was removed.",
+          "s": [
+            [
+              "States that the scooped solid's total surface area (1330 cm^2) is larger than the plain cube's (1176 cm^2)",
+              1
+            ],
+            [
+              "Concludes Rohit's claim is false: removing this material increases surface area, since the newly exposed curved area exceeds the flat area taken away",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Create",
+          "d": "Hardest",
+          "t": "long_answer",
+          "m": 3,
+          "q": "A cubical gift box has edge 10 cm. A hemispherical bump of radius r is to be fixed on its lid so that the finished box's total surface area is exactly 638.5 cm^2 (use pi = 22/7). Find a suitable value of r, and check that it can actually fit on the lid.",
+          "a": "r = 3.5 cm, which fits comfortably since its diameter (7 cm) is less than the lid's edge (10 cm).",
+          "s": [
+            [
+              "Sets up 6(10)^2 + pi r^2 = 638.5, i.e. 600 + pi r^2 = 638.5, so pi r^2 = 38.5",
+              1
+            ],
+            [
+              "Solves r^2 = 38.5 x 7/22 = 12.25, so r = 3.5 cm",
+              1
+            ],
+            [
+              "Checks that 2r = 7 cm is no more than the lid's edge of 10 cm, so this hemisphere is a valid design",
+              1
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "code": "C10M-12.3",
+      "name": "Surface area when joined radii differ: the exposed ring correction",
+      "description": "Finding the total surface area of a solid formed by joining two curved solids of DIFFERENT radii (such as a cone and a cylinder), where the wider solid's flat face is only partly covered by the narrower one, leaving a flat ring (annulus) exposed that must be added to both curved surfaces.",
+      "idea": "When the two joined solids do not share the same radius, their join can no longer hide both flat faces completely -- part of the wider face stays exposed as a ring, and this ring's area is real, visible area that has to be counted alongside both curved surfaces.",
+      "rule": "If the two radii are R (wider) and r (narrower), the exposed ring has area pi(R^2 - r^2) = pi(R - r)(R + r). The total surface area adds this ring to both curved surfaces (and to any other genuinely exposed flat face, such as an open end). If R = r, the ring vanishes and this reduces to the same-radius case.",
+      "example": "Rasheed's rocket (Example 3) is a cone of radius 2.5 cm on a cylinder of radius 1.5 cm: the area to be painted orange is the cone's curved surface plus the exposed ring on the cone's own base, pi(2.5^2 - 1.5^2), giving about 63.585 cm^2 (using pi = 3.14).",
+      "difficulty_base": "Hardest",
+      "questions": [
+        {
+          "b": "Remember",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "A cone of radius r is fixed centrally on top of a cylinder of a LARGER radius R, sharing the same axis. Besides both curved surfaces, what extra flat area must be included in the total surface area?",
+          "a": "The exposed ring on top of the cylinder, of area pi(R^2 - r^2)",
+          "o": [
+            "The exposed ring on top of the cylinder, of area pi(R^2 - r^2)",
+            "No extra flat area -- curved surfaces are always enough",
+            "A full circle of area pi R^2",
+            "A full circle of area pi r^2"
+          ]
+        },
+        {
+          "b": "Remember",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "The area of a ring (annulus) with outer radius R and inner radius r is",
+          "a": "pi R^2 - pi r^2",
+          "o": [
+            "pi R^2 - pi r^2",
+            "pi (R - r)^2",
+            "pi (R + r)^2",
+            "pi R r"
+          ]
+        },
+        {
+          "b": "Remember",
+          "d": "Easy",
+          "t": "fill_blank",
+          "m": 1,
+          "q": "In Rasheed's rocket (Example 3), the cone's base radius is 2.5 cm and the cylinder's base radius is 1.5 cm. Since the cone is the wider of the two, the exposed ring on the cone's own base has area pi x ____ cm^2 (state the value before multiplying by pi).",
+          "a": "4"
+        },
+        {
+          "b": "Remember",
+          "d": "Hard",
+          "t": "mcq",
+          "m": 1,
+          "q": "Which of the following is NOT true about the rocket in Example 3, where the cone's base radius (2.5 cm) is larger than the cylinder's base radius (1.5 cm)?",
+          "a": "Because the cone and the cylinder are joined along the same axis, the area to be painted is simply the curved surface area of the cone plus the curved surface area of the cylinder, the same shortcut used when two curved solids share the same radius",
+          "o": [
+            "Because the cone and the cylinder are joined along the same axis, the area to be painted is simply the curved surface area of the cone plus the curved surface area of the cylinder, the same shortcut used when two curved solids share the same radius",
+            "Part of the cone's own flat circular base remains exposed, in the shape of a ring, because the cone is wider than the cylinder",
+            "The cylinder's own bottom circular base is included in the area to be painted yellow",
+            "The entire flat top of the cylinder is covered by the cone and contributes no exposed area of its own"
+          ],
+          "rev": true
+        },
+        {
+          "b": "Understand",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "In Example 3, why is the cylinder's flat top NOT included at all as a separate flat area in the surface-area calculation?",
+          "a": "The wider cone sitting on it completely covers the cylinder's flat top, so none of it is exposed",
+          "o": [
+            "The wider cone sitting on it completely covers the cylinder's flat top, so none of it is exposed",
+            "A cylinder never has a flat top to begin with",
+            "The cylinder's flat top is painted the same colour as its curved surface, so it is included automatically",
+            "The cylinder's flat top is exposed, but its area happens to be zero in this example"
+          ]
+        },
+        {
+          "b": "Understand",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "Why does joining a cone and a cylinder of DIFFERENT radii create an extra area to paint that joining two same-radius solids does not?",
+          "a": "The join can no longer completely hide both flat circular faces -- the wider solid's face is only partly covered, leaving a ring exposed",
+          "o": [
+            "The join can no longer completely hide both flat circular faces -- the wider solid's face is only partly covered, leaving a ring exposed",
+            "Different radii always make one of the two curved surface areas equal to zero",
+            "A ring only appears when the taller of the two solids is also the wider one",
+            "Different radii mean the two solids cannot really be joined into one solid at all"
+          ]
+        },
+        {
+          "b": "Understand",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "If the cone's radius in Example 3 were reduced until it exactly equalled the cylinder's radius (1.5 cm), what would happen to the ring area on the cone's base that needs to be painted?",
+          "a": "It would shrink to zero, since the cone's base would then exactly match the cylinder's base, leaving nothing exposed",
+          "o": [
+            "It would shrink to zero, since the cone's base would then exactly match the cylinder's base, leaving nothing exposed",
+            "It would double, since matching radii always maximise the ring area",
+            "It would stay exactly the same, since the ring area does not depend on the radii at all",
+            "It would become negative, showing that this case is impossible"
+          ]
+        },
+        {
+          "b": "Understand",
+          "d": "Hard",
+          "t": "mcq",
+          "m": 1,
+          "q": "A cone of radius 4 cm sits on a cylinder of radius 6 cm, and separately, a cone of radius 6 cm sits on a cylinder of radius 4 cm. In both cases, what is the area of the exposed ring, and why is it the same?",
+          "a": "pi(6^2 - 4^2) in both cases, because the ring's area depends only on the two radii involved, not on which of the two solids happens to be wider",
+          "o": [
+            "pi(6^2 - 4^2) in both cases, because the ring's area depends only on the two radii involved, not on which of the two solids happens to be wider",
+            "The two rings are different, since the ring always belongs to whichever solid is on top",
+            "Both rings have area zero, since the two radii are just swapped versions of each other",
+            "The ring is larger in the second case, since the cone is now the wider solid"
+          ]
+        },
+        {
+          "b": "Understand",
+          "d": "Hard",
+          "t": "short_answer",
+          "m": 2,
+          "q": "Explain why, in Example 3, we cannot simply add the total surface areas of the cone and the cylinder to find the area to be painted, and also explain why adding just their two curved surface areas (with no other term) would also be wrong.",
+          "a": "Adding both full total surface areas would wrongly include flat circular faces that are not both genuinely exposed as full circles; adding only the two curved surface areas would miss the ring left exposed on the cone's own base, which is real, paintable area.",
+          "s": [
+            [
+              "Explains that adding the two full total surface areas would wrongly count flat circular faces that are not both fully exposed",
+              1
+            ],
+            [
+              "Explains that adding only the two curved surface areas would miss the exposed ring on the cone's base, which must also be painted",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "A cone of radius 5 cm is mounted centrally on a cylinder of radius 3 cm (the cone being the wider of the two). The ring exposed on the cone's own base, in cm^2, before multiplying by pi, is",
+          "a": "16",
+          "o": [
+            "16",
+            "2",
+            "64",
+            "25"
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Easy",
+          "t": "fill_blank",
+          "m": 1,
+          "q": "If a cone of radius 7 cm is mounted centrally on a cylinder of radius 14 cm, the exposed ring on the cylinder's top has area ____ cm^2 (use pi = 22/7).",
+          "a": "462"
+        },
+        {
+          "b": "Apply",
+          "d": "Hard",
+          "t": "short_answer",
+          "m": 2,
+          "q": "Recompute the area to be painted orange in Example 3: a cone of radius 2.5 cm, slant height 6.5 cm, whose base is wider than the cylinder of radius 1.5 cm it stands on. Use pi = 3.14.",
+          "a": "63.585 cm^2 (51.025 cm^2 from the cone's curved surface plus 12.56 cm^2 from the exposed ring).",
+          "s": [
+            [
+              "Curved surface area of the cone = pi r l = 3.14 x 2.5 x 6.5 = 51.025 cm^2",
+              1
+            ],
+            [
+              "Exposed ring on the cone's base = pi(2.5^2 - 1.5^2) = 3.14 x 4 = 12.56 cm^2; total painted orange = 51.025 + 12.56 = 63.585 cm^2",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Hard",
+          "t": "mcq",
+          "m": 1,
+          "q": "In Example 3, the area to be painted yellow is the curved surface area of the cylinder (radius 1.5 cm, height 20 cm) plus its own circular base. Using pi = 3.14, this area is",
+          "a": "195.465 cm^2",
+          "o": [
+            "195.465 cm^2",
+            "188.4 cm^2",
+            "202.53 cm^2",
+            "251.985 cm^2"
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Hard",
+          "t": "mcq",
+          "m": 1,
+          "q": "A decorative pillar is a cone of radius 7 cm and height 24 cm (slant height 25 cm) mounted centrally on a cylindrical base of radius 14 cm and height 10 cm. Using pi = 22/7 and including the exposed ring, the cylinder's curved surface, and the cylinder's own bottom circle, the total surface area of the pillar is",
+          "a": "2508 cm^2",
+          "o": [
+            "2508 cm^2",
+            "2046 cm^2",
+            "1892 cm^2",
+            "1628 cm^2"
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Hardest",
+          "t": "long_answer",
+          "m": 3,
+          "q": "A decorative lamp stand is a cone of radius 9 cm mounted centrally on a cylindrical base of radius 12 cm and height 16 cm; the total height of the stand is 28 cm. Using pi = 22/7, find (a) the height and slant height of the conical part, and (b) the total surface area of the stand, including the exposed ring, the cylinder's curved surface, and the cylinder's own bottom circle. Give your answer correct to two decimal places.",
+          "a": "Height of the cone = 12 cm, slant height = 15 cm. Total surface area is about 2281.71 cm^2.",
+          "s": [
+            [
+              "Height of the cone = 28 - 16 = 12 cm; slant height = sqrt(9^2 + 12^2) = 15 cm",
+              1
+            ],
+            [
+              "Curved surface area of the cone = pi(9)(15) = about 424.29 cm^2; exposed ring = pi(12^2 - 9^2) = 198 cm^2",
+              1
+            ],
+            [
+              "Curved surface area of the cylinder = about 1206.86 cm^2, plus its own base = about 452.57 cm^2; total = about 2281.71 cm^2",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Analyse",
+          "d": "Hard",
+          "t": "assertion_reason",
+          "m": 1,
+          "q": "Assertion (A): In Example 3, the total area to be painted orange equals the curved surface area of the cone alone. Reason (R): Since the cone's base radius (2.5 cm) is larger than the cylinder's base radius (1.5 cm), part of the cone's own flat circular base remains exposed as a ring, and this area must also be painted orange.",
+          "a": "A is false, R is true",
+          "o": [
+            "A is false, R is true",
+            "A is true, R is false",
+            "Both A and R are true, and R is the correct explanation of A",
+            "Both A and R are true, but R is not the correct explanation of A"
+          ]
+        },
+        {
+          "b": "Analyse",
+          "d": "Hard",
+          "t": "multi_statement",
+          "m": 1,
+          "q": "Consider these statements about joining a cone and a cylinder of different radii. (I) In every such case, the wider solid's flat face is entirely covered by the narrower solid, leaving no exposed ring. (II) The area of the exposed ring depends on the difference between the SQUARES of the two radii, not on the difference between the radii themselves. (III) If the two radii were equal, the ring area would reduce to zero. Which is or are correct?",
+          "a": "Only II and III",
+          "o": [
+            "Only II and III",
+            "Only I",
+            "Only II",
+            "All of these"
+          ]
+        },
+        {
+          "b": "Analyse",
+          "d": "Hardest",
+          "t": "long_answer",
+          "m": 3,
+          "q": "A cone of radius r sits centrally on a cylinder of radius R (R > r), both part of one decorative pillar. Show algebraically that the exposed ring's area, pi(R^2 - r^2), can also be written as pi(R - r)(R + r), and use this factored form to explain what happens to the ring's area if both R and r are scaled up by the same factor k.",
+          "a": "The ring's area scales by k^2, i.e. quadratically with the scale factor.",
+          "s": [
+            [
+              "Factorises pi(R^2 - r^2) = pi(R - r)(R + r)",
+              1
+            ],
+            [
+              "Substitutes kR and kr: pi(kR - kr)(kR + kr) = k^2 x pi(R - r)(R + r)",
+              1
+            ],
+            [
+              "Concludes the ring's area scales by k^2, growing quadratically with the scale factor",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Evaluate",
+          "d": "Hard",
+          "t": "short_answer",
+          "m": 2,
+          "q": "Priya says: \"In Example 3, since the cylinder is completely hidden under the wider cone at the top, its top does not need to be considered at all when finding the surface area.\" Evaluate whether Priya's statement is accurate.",
+          "a": "Priya's statement is misleading. It is true that the cylinder's own flat top contributes no extra area of its own, since it is fully covered -- but the region directly above it is not simply ignored: the cone's own base still has an exposed ring there, and that ring must be painted, so the join region is not irrelevant altogether.",
+          "s": [
+            [
+              "Notes that the cylinder's own flat top does indeed contribute zero extra area, since it is fully covered by the wider cone",
+              1
+            ],
+            [
+              "Points out this does not make the join region irrelevant: the cone's own base still has an exposed ring there that must be counted, so Priya's statement is misleading",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Create",
+          "d": "Hardest",
+          "t": "long_answer",
+          "m": 3,
+          "q": "Design a cylindrical stand of radius 21 cm topped by a narrower cone, so that the ring exposed on the stand's own base (around the cone) has area exactly 770 cm^2 (use pi = 22/7). Find a suitable radius for the cone.",
+          "a": "r = 14 cm.",
+          "s": [
+            [
+              "Sets up pi(21^2 - r^2) = 770, i.e. (22/7)(441 - r^2) = 770, so 441 - r^2 = 245",
+              1
+            ],
+            [
+              "Solves r^2 = 441 - 245 = 196, so r = 14 cm",
+              1
+            ],
+            [
+              "Checks 0 < r < 21, so r = 14 cm gives a valid design",
+              1
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "code": "C10M-12.4",
+      "name": "Volume of a combination of solids: adding the parts' volumes",
+      "description": "Finding the volume of a solid made by joining two or more basic solids (cuboid, cone, cylinder, sphere, hemisphere) by adding the volumes of the individual parts; unlike surface area, no part of the volume is ever subtracted merely because the solids are joined.",
+      "idea": "Volume measures the space a solid encloses, not its outer skin, so joining two solids together never makes any of that enclosed space disappear -- the combination's volume is simply the sum of the parts' volumes.",
+      "rule": "Volume(combination) = Volume(part 1) + Volume(part 2) + ..., using Volume(cuboid) = lbh, Volume(cylinder) = pi r^2 h, Volume(cone) = (1/3) pi r^2 h, Volume(sphere) = (4/3) pi r^3, Volume(hemisphere) = (2/3) pi r^3. This holds whatever the radii of the parts are, and never needs a subtraction for the join itself, since a flat face has no volume.",
+      "example": "A solid toy is a cone (height 2 cm, radius 2 cm) mounted on a hemisphere of the same radius (Example 7): volume = (1/3) pi (2)^2(2) + (2/3) pi (2)^3 = 25.12 cm^3 (using pi = 3.14).",
+      "difficulty_base": "Easy",
+      "questions": [
+        {
+          "b": "Remember",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "The volume of a right circular cone of base radius r and height h is",
+          "a": "(1/3) pi r^2 h",
+          "o": [
+            "(1/3) pi r^2 h",
+            "pi r^2 h",
+            "(1/3) pi r h^2",
+            "(2/3) pi r^3"
+          ]
+        },
+        {
+          "b": "Remember",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "The volume of a hemisphere of radius r is",
+          "a": "(2/3) pi r^3",
+          "o": [
+            "(2/3) pi r^3",
+            "(4/3) pi r^3",
+            "(1/3) pi r^3",
+            "(2/3) pi r^2"
+          ]
+        },
+        {
+          "b": "Remember",
+          "d": "Easy",
+          "t": "fill_blank",
+          "m": 1,
+          "q": "When two basic solids are joined to form a composite solid, the volume of the composite is found by ____ the volumes of the two parts.",
+          "a": "adding"
+        },
+        {
+          "b": "Remember",
+          "d": "Hard",
+          "t": "mcq",
+          "m": 1,
+          "q": "Which of the following is NOT true when finding the volume of a solid formed by mounting a cone on a hemisphere of the same radius?",
+          "a": "The volume of the flat circular face where the cone and hemisphere meet must be subtracted from the sum of the two volumes, just as the shared area is excluded when finding the total surface area",
+          "o": [
+            "The volume of the flat circular face where the cone and hemisphere meet must be subtracted from the sum of the two volumes, just as the shared area is excluded when finding the total surface area",
+            "The total volume equals the volume of the cone plus the volume of the hemisphere",
+            "Unlike total surface area, no part of either solid's volume disappears when they are joined",
+            "The radius used in both the cone's and the hemisphere's volume formula is the same"
+          ],
+          "rev": true
+        },
+        {
+          "b": "Understand",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "Why, unlike total surface area, does finding the volume of a combination solid never require subtracting anything for the join itself?",
+          "a": "Volume measures the space enclosed by the whole solid, and joining two solids at a flat face does not remove any enclosed space, only surface",
+          "o": [
+            "Volume measures the space enclosed by the whole solid, and joining two solids at a flat face does not remove any enclosed space, only surface",
+            "Because volume formulas never involve pi, so there is nothing to subtract",
+            "Because two solids joined together always enclose less space than either solid alone",
+            "Because subtraction is only needed when the two solids have different radii"
+          ]
+        },
+        {
+          "b": "Understand",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "Rachel's model (a thin cylinder with a cone fixed at each end, made from a sheet of aluminium) is described as having its outer and inner dimensions \"nearly the same\". Why does this assumption matter for finding the volume of air inside it?",
+          "a": "It lets us use the same radius and lengths for the air space as for the outer shape, without separately accounting for the sheet's thickness",
+          "o": [
+            "It lets us use the same radius and lengths for the air space as for the outer shape, without separately accounting for the sheet's thickness",
+            "It means the model actually has no volume of air inside it at all",
+            "It means the cones at the two ends can be ignored completely",
+            "It changes the formula used from volume to surface area"
+          ]
+        },
+        {
+          "b": "Understand",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "In Example 5, finding the total volume of air a shed (a cuboid with a half-cylinder roof) can hold, and then finding how much air remains once machinery and workers are inside, are treated as two separate steps. Which step uses the \"volumes simply add\" rule of this concept?",
+          "a": "Only the first step, finding the shed's own total volume by adding the cuboid's and half-cylinder's volumes; the second step subtracts occupied space, a separate calculation",
+          "o": [
+            "Only the first step, finding the shed's own total volume by adding the cuboid's and half-cylinder's volumes; the second step subtracts occupied space, a separate calculation",
+            "Only the second step, since subtraction is the rule this concept is about",
+            "Both steps equally, since both involve the word \"volume\"",
+            "Neither step, since the shed is a single basic solid, not a combination"
+          ]
+        },
+        {
+          "b": "Understand",
+          "d": "Hard",
+          "t": "mcq",
+          "m": 1,
+          "q": "A solid toy is a hemisphere of radius r topped by a cone of the same radius r and height h. A right circular cylinder of radius r exactly encloses this toy. Explain why the cylinder's height must be h + r, not just h.",
+          "a": "The cylinder must reach from the flat base of the hemisphere to the tip of the cone, and the hemisphere itself already contributes a height of r before the cone even begins",
+          "o": [
+            "The cylinder must reach from the flat base of the hemisphere to the tip of the cone, and the hemisphere itself already contributes a height of r before the cone even begins",
+            "Because a cylinder must always be taller than any solid it encloses, regardless of shape",
+            "Because the cone's own height already includes the hemisphere's radius",
+            "Because the radius r has no effect on the toy's total height"
+          ]
+        },
+        {
+          "b": "Understand",
+          "d": "Hard",
+          "t": "short_answer",
+          "m": 2,
+          "q": "Explain why the volume of a solid formed by joining a cone (radius r, height h) and a hemisphere of the same radius r is always the sum (1/3) pi r^2 h + (2/3) pi r^3, and state which term belongs to which solid.",
+          "a": "(1/3) pi r^2 h is the cone's own volume and (2/3) pi r^3 is the hemisphere's own volume; the total is their sum because volume simply adds for a combination solid, with nothing to subtract at the join.",
+          "s": [
+            [
+              "Identifies (1/3) pi r^2 h as the cone's volume and (2/3) pi r^3 as the hemisphere's volume",
+              1
+            ],
+            [
+              "Explains the total is their sum because volume simply adds for a combination solid, with nothing subtracted at the join",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "A solid is formed by mounting a cone of radius 2 cm and height 2 cm on a hemisphere of radius 2 cm. The volume of the solid, in terms of pi, is",
+          "a": "8 pi cm^3",
+          "o": [
+            "8 pi cm^3",
+            "(16/3) pi cm^3",
+            "(8/3) pi cm^3",
+            "(40/3) pi cm^3"
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Easy",
+          "t": "fill_blank",
+          "m": 1,
+          "q": "The volume of a cylinder of radius 3 cm and height 5 cm, in terms of pi, is ____ cm^3.",
+          "a": "45 pi"
+        },
+        {
+          "b": "Apply",
+          "d": "Hard",
+          "t": "short_answer",
+          "m": 2,
+          "q": "A solid toy is a cone whose height equals its radius, mounted on a hemisphere of the same radius; the radius is 1 cm. Find its volume in terms of pi.",
+          "a": "pi cm^3 (the cone contributes pi/3 cm^3 and the hemisphere 2 pi/3 cm^3).",
+          "s": [
+            [
+              "Cone volume = (1/3) pi (1)^2 (1) = pi/3 cm^3; hemisphere volume = (2/3) pi (1)^3 = 2 pi/3 cm^3",
+              1
+            ],
+            [
+              "Total volume = pi/3 + 2 pi/3 = pi cm^3",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Hard",
+          "t": "mcq",
+          "m": 1,
+          "q": "A hollow toy is made by fixing a cone of height 3 cm at each end of a cylinder, all of radius 3.5 cm; the whole toy is 12 cm long. Using pi = 22/7, the volume of air inside the toy is",
+          "a": "308 cm^3",
+          "o": [
+            "308 cm^3",
+            "539 cm^3",
+            "269.5 cm^3",
+            "231 cm^3"
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Hard",
+          "t": "short_answer",
+          "m": 2,
+          "q": "A shed is a cuboid 8 m long, 7 m wide and 3 m high, with a half-cylindrical roof of the same length and a diameter equal to the shed's width. Using pi = 22/7, find the total volume of air the shed can hold.",
+          "a": "322 cubic metres (168 cubic metres in the cuboidal part and 154 cubic metres in the half-cylindrical part).",
+          "s": [
+            [
+              "Volume of the cuboidal part = 8 x 7 x 3 = 168 cubic metres",
+              1
+            ],
+            [
+              "Volume of the half-cylindrical part = (1/2)(22/7)(3.5)^2(8) = 154 cubic metres; total = 168 + 154 = 322 cubic metres",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Hardest",
+          "t": "long_answer",
+          "m": 3,
+          "q": "A workshop shed is a cuboid 20 m long, 14 m wide and 6 m high, with a half-cylindrical roof of the same length and a diameter equal to the shed's width. Using pi = 22/7, find the volume of air in the shed. If machinery occupying 250 cubic metres and 15 workers each occupying 0.1 cubic metres are inside, find the remaining volume of air.",
+          "a": "Total volume = 3220 cubic metres (1680 cuboidal + 1540 half-cylindrical); remaining air = 2968.5 cubic metres.",
+          "s": [
+            [
+              "Volume of the cuboidal part = 20 x 14 x 6 = 1680 cubic metres",
+              1
+            ],
+            [
+              "Volume of the half-cylindrical part = (1/2)(22/7)(7)^2(20) = 1540 cubic metres; total = 3220 cubic metres",
+              1
+            ],
+            [
+              "Remaining air = 3220 - 250 - (15 x 0.1) = 3220 - 250 - 1.5 = 2968.5 cubic metres",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Analyse",
+          "d": "Hard",
+          "t": "assertion_reason",
+          "m": 1,
+          "q": "Assertion (A): The volume of a solid formed by mounting a cone (radius r, height h) on a hemisphere of the same radius r equals (1/3) pi r^2 h + (2/3) pi r^3. Reason (R): The radius r is common to both the cone and the hemisphere in this solid.",
+          "a": "Both A and R are true, but R is not the correct explanation of A",
+          "o": [
+            "Both A and R are true, but R is not the correct explanation of A",
+            "A is true, R is false",
+            "A is false, R is true",
+            "Both A and R are true, and R is the correct explanation of A"
+          ]
+        },
+        {
+          "b": "Analyse",
+          "d": "Hard",
+          "t": "multi_statement",
+          "m": 1,
+          "q": "Consider these statements about the volume of a solid formed by joining two basic solids. (I) The volume of the combination equals the sum of the individual volumes of the two solids. (II) No part of either solid's volume is lost or needs to be subtracted merely because the two solids are joined. (III) Just as with total surface area, whether the two volumes can simply be added depends on the two solids having matching radii. Which is or are correct?",
+          "a": "Only I and II",
+          "o": [
+            "Only I and II",
+            "Only I",
+            "Only II and III",
+            "All of these"
+          ]
+        },
+        {
+          "b": "Analyse",
+          "d": "Hardest",
+          "t": "long_answer",
+          "m": 3,
+          "q": "A toy is a cone of height h mounted on a hemisphere of the same radius r. A second, larger toy of the same shape has both its radius and its cone height exactly doubled (2r and 2h). By what factor does the volume of the second toy exceed the volume of the first? Justify your answer without necessarily computing either volume in cm^3.",
+          "a": "The volume is exactly 8 times as large.",
+          "s": [
+            [
+              "Recognises the cone's volume (1/3) pi r^2 h depends on r^2 and on h, both of which double, so this term scales by 2^2 x 2 = 8",
+              1
+            ],
+            [
+              "Recognises the hemisphere's volume (2/3) pi r^3 depends on r^3, which also scales by 2^3 = 8 when r doubles",
+              1
+            ],
+            [
+              "Concludes both terms scale by the same factor 8, so the whole toy's volume scales by 8",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Evaluate",
+          "d": "Hard",
+          "t": "short_answer",
+          "m": 2,
+          "q": "Sanjay claims: \"When two solids are joined into one, the combined solid's volume is sometimes a little less than the sum of the two separate volumes, because some material gets used up exactly at the join.\" Using a cone of radius 3 cm and height 6 cm mounted on a hemisphere of radius 3 cm as a check (each of these two volumes works out to exactly 18 pi cm^3 here), evaluate Sanjay's claim.",
+          "a": "Sanjay's claim is false. The combined volume is exactly the sum of the two separate volumes (18 pi + 18 pi = 36 pi cm^3, about 113.14 cm^3 using pi = 22/7); no material or space is lost at a join, since a join is just a flat surface with no volume of its own.",
+          "s": [
+            [
+              "States or shows that the cone's volume and the hemisphere's volume are each 18 pi cm^3 here, and their sum is 36 pi cm^3",
+              1
+            ],
+            [
+              "Explains that nothing is subtracted at the join because a flat face has zero volume, so Sanjay's claim is false",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Create",
+          "d": "Hardest",
+          "t": "long_answer",
+          "m": 3,
+          "q": "Design a toy in the shape of a cone (with height exactly 3 times its radius) mounted on a hemisphere of the same radius, so that its total volume is exactly 45 pi cm^3. Find a suitable radius, and verify your answer.",
+          "a": "Radius = 3 cm (cone height = 9 cm): cone volume = 27 pi cm^3, hemisphere volume = 18 pi cm^3, total = 45 pi cm^3.",
+          "s": [
+            [
+              "Sets up (1/3) pi r^2 (3r) + (2/3) pi r^3 = pi r^3 + (2/3) pi r^3 = (5/3) pi r^3, and equates (5/3) r^3 = 45",
+              1
+            ],
+            [
+              "Solves r^3 = 27, so r = 3 cm (and cone height = 9 cm)",
+              1
+            ],
+            [
+              "Verifies: cone volume = (1/3) pi (9)(9) = 27 pi, hemisphere volume = (2/3) pi (27) = 18 pi, total = 45 pi cm^3, matching the target",
+              1
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "code": "C10M-12.5",
+      "name": "Volume in practice: capacity, material used, displacement and mass",
+      "description": "Using the volume of a combination solid to answer a practical question: the actual capacity of a container once a hollow or raised part is allowed for, the quantity of material used or left after removing a part, the volume of liquid displaced or remaining, the mass of a solid via its density, or checking whether a stated capacity is correct.",
+      "idea": "Once you can find a combination solid's volume, many real questions ask you to go one step further: subtract a hollowed-out or occupied part to get the volume that is actually usable, or convert that volume into a different practical quantity such as mass or a count of identical pieces.",
+      "rule": "Actual/usable volume = (bulk or apparent volume) - (volume of any hollow, raised or occupied part). Mass = density x volume. Number of identical pieces from a displaced volume = (displaced volume) / (volume of one piece). To check a stated capacity, independently compute the geometric volume from the given dimensions and compare it with the claim.",
+      "example": "A glass is a cylinder (radius 2.5 cm, height 10 cm) with a hemispherical bump of the same radius raised at its base (Example 6): actual capacity = pi r^2 h - (2/3) pi r^3 = 196.25 - 32.71 = 163.54 cm^3 (approx, using pi = 3.14).",
+      "difficulty_base": "Hard",
+      "questions": [
+        {
+          "b": "Remember",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "A cylindrical glass has a hemispherical bump raised at its base, reducing how much it can hold. Its actual capacity is found as",
+          "a": "the cylinder's own volume minus the hemisphere's volume",
+          "o": [
+            "the cylinder's own volume minus the hemisphere's volume",
+            "the cylinder's own volume plus the hemisphere's volume",
+            "the hemisphere's volume minus the cylinder's volume",
+            "the cylinder's own volume alone, ignoring the hemisphere"
+          ]
+        },
+        {
+          "b": "Remember",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "To find the mass of a solid from its volume, you also need to know its",
+          "a": "density",
+          "o": [
+            "density",
+            "surface area",
+            "perimeter",
+            "height alone"
+          ]
+        },
+        {
+          "b": "Remember",
+          "d": "Easy",
+          "t": "fill_blank",
+          "m": 1,
+          "q": "If a solid displaces a certain volume of water, and each identical small piece dropped in has a known volume, the number of pieces dropped in equals the displaced volume ____ the volume of one piece.",
+          "a": "divided by"
+        },
+        {
+          "b": "Remember",
+          "d": "Hard",
+          "t": "mcq",
+          "m": 1,
+          "q": "Which of the following is NOT true about finding the actual capacity of a cylindrical glass with a hemispherical bump raised at its base (Example 6)?",
+          "a": "Since the volumes of a combination solid always simply add together, the actual capacity of the glass is found by adding the hemisphere's volume to the cylinder's volume",
+          "o": [
+            "Since the volumes of a combination solid always simply add together, the actual capacity of the glass is found by adding the hemisphere's volume to the cylinder's volume",
+            "The cylinder's own volume, calculated as if the glass had a flat base, is called the apparent capacity",
+            "The actual capacity is always less than the apparent capacity",
+            "The hemisphere's radius is the same as the cylinder's inner radius"
+          ],
+          "rev": true
+        },
+        {
+          "b": "Understand",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "Why is the volume of syrup in a gulab jamun (shaped like a cylinder with two hemispherical ends) worked out as a percentage of the sweet's OWN total volume, rather than of some container's volume?",
+          "a": "The syrup soaks into the sweet itself, so the relevant whole is the volume of the gulab jamun, not any separate container",
+          "o": [
+            "The syrup soaks into the sweet itself, so the relevant whole is the volume of the gulab jamun, not any separate container",
+            "Percentages can only ever be taken of a container's volume, never of a solid's",
+            "The gulab jamun and the container it sits in always have the same volume",
+            "The syrup's volume does not actually depend on the gulab jamun's size"
+          ]
+        },
+        {
+          "b": "Understand",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "In Example 6, why is the apparent capacity of the glass (found as if it were a plain cylinder) always MORE than its actual capacity?",
+          "a": "The hemispherical bump at the base takes up space that would otherwise hold liquid, so the true capacity is reduced by exactly the hemisphere's volume",
+          "o": [
+            "The hemispherical bump at the base takes up space that would otherwise hold liquid, so the true capacity is reduced by exactly the hemisphere's volume",
+            "Because apparent capacity always includes an extra, imaginary hemisphere of liquid on top",
+            "Because \"apparent\" quantities are always measured using a larger unit than \"actual\" quantities",
+            "They are not actually different; the two names simply refer to the same volume"
+          ]
+        },
+        {
+          "b": "Understand",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "When lead shots are dropped into a water-filled conical vessel and some water flows out, why does the volume of water that flows out equal the total volume of the lead shots dropped in?",
+          "a": "Each lead shot takes up space that the water previously occupied, pushing out exactly that much water",
+          "o": [
+            "Each lead shot takes up space that the water previously occupied, pushing out exactly that much water",
+            "Water only flows out once the vessel is completely full of lead shots",
+            "The volume of water that flows out is always half the volume of the lead shots",
+            "Lead shots dissolve a matching volume of water as they sink"
+          ]
+        },
+        {
+          "b": "Understand",
+          "d": "Hard",
+          "t": "mcq",
+          "m": 1,
+          "q": "A solid (a cone standing on a hemisphere) is lowered into a cylinder full of water until it touches the bottom, and some water overflows. Explain why the volume of water LEFT in the cylinder equals the cylinder's own volume minus the solid's volume.",
+          "a": "The solid physically occupies space inside the cylinder equal to its own volume, so that much space can no longer hold water, regardless of how the overflow itself is measured",
+          "o": [
+            "The solid physically occupies space inside the cylinder equal to its own volume, so that much space can no longer hold water, regardless of how the overflow itself is measured",
+            "Because the volume of water left always equals the volume of water that overflowed",
+            "Because the solid dissolves into the water, reducing the water's own volume",
+            "Because the cylinder's volume is not relevant once a solid is placed inside it"
+          ]
+        },
+        {
+          "b": "Understand",
+          "d": "Hard",
+          "t": "short_answer",
+          "m": 2,
+          "q": "A cuboidal pen stand has several identical conical depressions drilled into it to hold pens. Explain why the volume of wood actually used is the cuboid's own volume minus the TOTAL volume of ALL the depressions, not just one.",
+          "a": "Every depression removes wood from the block, so each one's volume must be subtracted, not just a single representative one; the wood used equals the cuboid's volume minus (the number of depressions times the volume of one depression).",
+          "s": [
+            [
+              "Explains that every depression removes wood, so each one's volume must be subtracted, not just one",
+              1
+            ],
+            [
+              "States that wood used = volume of cuboid - (number of depressions x volume of one depression)",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Easy",
+          "t": "fill_blank",
+          "m": 1,
+          "q": "The volume of a hemisphere of radius 3 cm, in terms of pi, is ____ cm^3.",
+          "a": "18 pi"
+        },
+        {
+          "b": "Apply",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "A metal solid of volume 500 cm^3 has density 7.5 grams per cm^3. Its mass is",
+          "a": "3750 g",
+          "o": [
+            "3750 g",
+            "66.67 g",
+            "507.5 g",
+            "3750 kg"
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Hard",
+          "t": "short_answer",
+          "m": 2,
+          "q": "A glass is a cylinder of radius 3 cm and height 12 cm, with a hemispherical bump of the same radius raised at its base. Using pi = 3.14, find its actual capacity.",
+          "a": "282.6 cm^3 (apparent capacity 339.12 cm^3 minus the hemisphere's volume 56.52 cm^3).",
+          "s": [
+            [
+              "Apparent capacity = pi r^2 h = 3.14 x 9 x 12 = 339.12 cm^3",
+              1
+            ],
+            [
+              "Hemisphere volume = (2/3) pi r^3 = 56.52 cm^3; actual capacity = 339.12 - 56.52 = 282.6 cm^3",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Hard",
+          "t": "short_answer",
+          "m": 2,
+          "q": "A cuboidal pen stand 12 cm by 8 cm by 4 cm has three identical conical depressions drilled into it, each of radius 0.7 cm and depth 1.2 cm. Using pi = 22/7, find the volume of wood in the stand.",
+          "a": "382.152 cm^3 (384 cm^3 of cuboid minus 1.848 cm^3 for the three depressions).",
+          "s": [
+            [
+              "Volume of the cuboid = 12 x 8 x 4 = 384 cm^3",
+              1
+            ],
+            [
+              "Volume of one depression = (1/3)(22/7)(0.7)^2(1.2) = 0.616 cm^3, so three depressions = 1.848 cm^3; wood = 384 - 1.848 = 382.152 cm^3",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Hard",
+          "t": "mcq",
+          "m": 1,
+          "q": "A solid iron pole is made of a cylinder of radius 7 cm and height 100 cm, topped by a narrower cylinder of radius 3.5 cm and height 40 cm. Using pi = 22/7 and density 7.8 grams per cm^3, the mass of the pole is",
+          "a": "132132 g (about 132.13 kg)",
+          "o": [
+            "132132 g (about 132.13 kg)",
+            "120120 g (about 120.12 kg)",
+            "132.132 g",
+            "168168 g (about 168.17 kg)"
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Hardest",
+          "t": "long_answer",
+          "m": 3,
+          "q": "A vessel is an inverted cone of top radius 6 cm and height 8 cm, filled to the brim with water. Spherical lead shots of radius 1 cm are dropped in until one-fourth of the water flows out. Using pi = 22/7, find the number of lead shots dropped in.",
+          "a": "18 lead shots.",
+          "s": [
+            [
+              "Volume of the cone = (1/3)(22/7)(36)(8) = about 301.71 cm^3; one-fourth of this, the volume displaced, is about 75.43 cm^3",
+              1
+            ],
+            [
+              "Volume of one lead shot = (4/3)(22/7)(1)^3 = about 4.19 cm^3",
+              1
+            ],
+            [
+              "Number of shots = displaced volume / one shot's volume = 75.43 / 4.19 = 18 (exactly 18 using unrounded values)",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Analyse",
+          "d": "Hard",
+          "t": "assertion_reason",
+          "m": 1,
+          "q": "Assertion (A): The actual capacity of the glass in Example 6 is found by ADDING the hemisphere's volume to the cylinder's volume. Reason (R): The hemispherical bump at the base of the glass occupies space that would otherwise be filled with liquid, so it reduces how much the glass can actually hold.",
+          "a": "A is false, R is true",
+          "o": [
+            "A is false, R is true",
+            "A is true, R is false",
+            "Both A and R are true, and R is the correct explanation of A",
+            "Both A and R are true, but R is not the correct explanation of A"
+          ]
+        },
+        {
+          "b": "Analyse",
+          "d": "Hard",
+          "t": "multi_statement",
+          "m": 1,
+          "q": "Consider these statements. (I) The actual capacity of the glass in Example 6 is less than its apparent capacity. (II) The number of lead shots that can be dropped into a water-filled vessel before it overflows does not depend on the size of each lead shot. (III) Checking whether a stated capacity is correct requires independently computing the geometric volume from the given dimensions and comparing the two values. Which is or are correct?",
+          "a": "Only I and III",
+          "o": [
+            "Only I and III",
+            "Only I",
+            "Only II",
+            "All of these"
+          ]
+        },
+        {
+          "b": "Analyse",
+          "d": "Hardest",
+          "t": "long_answer",
+          "m": 3,
+          "q": "A spherical vessel has a cylindrical neck. A child claims its capacity is 345 cm^3 after measuring how much water it holds. Given the neck is 8 cm long with diameter 2 cm, and the spherical part has diameter 8.5 cm, independently compute the vessel's geometric volume (use pi = 3.14) and analyse how close the child's claimed capacity is, as a percentage of the computed volume.",
+          "a": "The computed volume is about 346.51 cm^3 (25.12 cm^3 for the neck plus about 321.39 cm^3 for the sphere). The child's claimed 345 cm^3 is about 99.6% of this, so her measurement is correct to a good approximation, off by well under one percent.",
+          "s": [
+            [
+              "Volume of the cylindrical neck = pi r^2 h = 3.14 x 1 x 1 x 8 = 25.12 cm^3",
+              1
+            ],
+            [
+              "Volume of the spherical part = (4/3) pi r^3 = (4/3)(3.14)(4.25)^3 = about 321.39 cm^3; total = about 346.51 cm^3",
+              1
+            ],
+            [
+              "Claimed 345 cm^3 is (345/346.51) x 100 = about 99.6% of the computed volume, so the claim is correct to a good approximation",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Evaluate",
+          "d": "Hard",
+          "t": "short_answer",
+          "m": 2,
+          "q": "A cylindrical glass of radius 2 cm and height 9 cm has a hemispherical bump of the same radius raised at its base. A shopkeeper claims the glass holds 100 cm^3 of liquid. Using pi = 22/7, evaluate whether this claim is accurate.",
+          "a": "The claim is not accurate. The actual capacity works out to about 96.38 cm^3 (apparent capacity about 113.14 cm^3 minus the hemisphere's volume about 16.76 cm^3), so the shopkeeper has overstated the capacity by about 3.6 cm^3.",
+          "s": [
+            [
+              "Computes apparent capacity = pi r^2 h = (22/7)(4)(9) = about 113.14 cm^3, and hemisphere volume = (2/3) pi r^3 = about 16.76 cm^3",
+              1
+            ],
+            [
+              "Finds actual capacity = about 96.38 cm^3 and concludes the shopkeeper's claim of 100 cm^3 overstates this, so the claim is not accurate",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Create",
+          "d": "Hardest",
+          "t": "long_answer",
+          "m": 3,
+          "q": "Design a glass in the shape of a cylinder of radius 3 cm with a hemispherical bump of the same radius raised at its base, so that its actual capacity is exactly 36 pi cm^3. Find a suitable height for the cylinder, and verify your answer.",
+          "a": "Height = 6 cm. Apparent capacity = 54 pi cm^3, hemisphere volume = 18 pi cm^3, actual capacity = 36 pi cm^3.",
+          "s": [
+            [
+              "Sets up apparent capacity = pi(3)^2 h = 9 pi h, hemisphere volume = (2/3) pi (27) = 18 pi, and equates 9 pi h - 18 pi = 36 pi",
+              1
+            ],
+            [
+              "Cancels pi and solves 9h - 18 = 36, giving h = 6 cm",
+              1
+            ],
+            [
+              "Verifies: apparent = 9 pi(6) = 54 pi, actual = 54 pi - 18 pi = 36 pi cm^3, matching the target",
+              1
+            ]
+          ]
+        }
+      ]
+    }
+  ]
+}
