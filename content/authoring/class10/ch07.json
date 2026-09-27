@@ -1,0 +1,2416 @@
+{
+  "subject": {
+    "code": "MATH10",
+    "name": "Mathematics",
+    "board": "CBSE",
+    "class": 10
+  },
+  "source": {
+    "publisher": "NCERT",
+    "title": "Mathematics",
+    "edition": "Textbook for Class X, Reprint 2026-27",
+    "year": 2026
+  },
+  "chapter": {
+    "part": "I",
+    "chapter_no": 7,
+    "name": "Coordinate Geometry",
+    "blurb": "Building on the Class IX idea of locating a point by its coordinates, this chapter derives the distance formula from the Pythagoras theorem and uses it to test collinearity, classify triangles, and identify quadrilaterals (including a rhombus's area from its diagonals); it then derives the section formula from similar triangles to divide a segment in a given ratio, finds that ratio in reverse (including where a coordinate axis divides a segment), and uses the mid-point formula -- the ratio 1 : 1 special case -- for trisection, equal division, parallelogram vertices and circle diameters. This Reprint 2026-27 edition ends at Section 7.3 plus a Summary; it has no coordinate area-of-a-triangle section.",
+    "source_code": "jemh107",
+    "order_index": 7
+  },
+  "scope_in": [
+    {
+      "item": "Recall that the distance of a point from the y-axis is its x-coordinate (abscissa) and from the x-axis is its y-coordinate (ordinate), and that points on the axes have the forms (x, 0) and (0, y)",
+      "pages": "99"
+    },
+    {
+      "item": "Derive and state the distance formula PQ = sqrt((x_2 - x_1)^2 + (y_2 - y_1)^2) for two points P(x_1, y_1) and Q(x_2, y_2), using the Pythagoras theorem, and find the distance of a point from the origin, OP = sqrt(x^2 + y^2)",
+      "pages": "100-102"
+    },
+    {
+      "item": "Apply the distance formula to find the distance between two given points, including points on the same axis (found by simple subtraction) and points given in terms of a and b",
+      "pages": "100, 102, 105"
+    },
+    {
+      "item": "Use the distance formula, together with the triangle inequality and the converse of the Pythagoras theorem, to decide whether three given points are collinear, and if not, to classify the triangle they form as scalene, isosceles, equilateral or right-angled",
+      "pages": "102-104, 105"
+    },
+    {
+      "item": "Use the distance formula (equal sides and/or equal diagonals) to identify whether four given points, taken in order, form a square, a rhombus, a parallelogram or no special quadrilateral, and find the area of a rhombus from its diagonals using Area = half the product of the diagonals",
+      "pages": "103-104, 105-106, 111"
+    },
+    {
+      "item": "Find a point, or a relation between x and y, such that a given point is equidistant from two given points, including a point restricted to the x-axis or y-axis, using the fact that such a point lies on the perpendicular bisector of the segment joining the two given points",
+      "pages": "104-106"
+    },
+    {
+      "item": "Derive and state the section formula: the point P(x, y) dividing the segment joining A(x_1, y_1) and B(x_2, y_2) internally in the ratio m_1 : m_2 has coordinates ((m_1 * x_2 + m_2 * x_1)/(m_1 + m_2), (m_1 * y_2 + m_2 * y_1)/(m_1 + m_2)), including the k : 1 form, and apply it directly to find a point dividing a segment in a given ratio",
+      "pages": "106-108, 111"
+    },
+    {
+      "item": "Use the section formula in reverse to find the ratio in which a given point divides a segment (in the m_1 : m_2 or k : 1 form), including the ratio in which a coordinate axis divides a segment, and the point of intersection",
+      "pages": "108-110, 111"
+    },
+    {
+      "item": "State the mid-point formula as the special case m_1 : m_2 = 1 : 1 of the section formula, and use it to find the mid-point of a segment, the trisection points or other equally-spaced division points of a segment, an unknown vertex of a parallelogram from the fact that its diagonals bisect each other, and the missing endpoint of a diameter from the centre of a circle",
+      "pages": "107-111"
+    }
+  ],
+  "scope_out": [
+    {
+      "item": "The general formula for the area of a triangle from three given vertices' coordinates (e.g. Area = half the absolute value of x_1(y_2 - y_3) + x_2(y_3 - y_1) + x_3(y_1 - y_2)), and using it to test collinearity by a zero area",
+      "reason": "This Reprint 2026-27 edition has no 'Area of a Triangle' section: the chapter goes straight from Exercise 7.2 (p.111) to '7.4 Summary' (p.112), which recaps only the distance formula, the origin case, the section formula and the mid-point formula. Collinearity and triangle type are tested here purely via the distance formula (Examples 1, 3), confirmed by reading every page of the chapter."
+    },
+    {
+      "item": "External division of a line segment, where P lies outside the segment AB with PA : PB = m_1 : m_2",
+      "reason": "Named explicitly out of reach by the chapter's own closing 'A Note to the Reader' (p.112): 'You will study Section Formula for such case in higher classes.' Only internal division is taught or tested here."
+    },
+    {
+      "item": "The picture-plotting 'play' activity in the introduction (join A(4,8) to B(3,9) to ... to L(5,8) to A, then several small triangles)",
+      "reason": "An engagement/art activity (p.99) with no rule, formula or worked answer attached to test."
+    },
+    {
+      "item": "General recap of how a pair of coordinate axes locates a point in the plane, and the aside that a linear equation's graph is a straight line or that y = ax^2 + bx + c is a parabola",
+      "reason": "The chapter explicitly marks the axes recap as done 'In Class IX' and the graph aside as a one-line cross-reference to Chapter 2 (p.99), without developing either further here. Only the two specific facts it re-states and later reuses -- abscissa/ordinate naming and the (x,0)/(0,y) axis forms -- are kept in scope, because Examples 5 and 9 and several exercises depend on them directly."
+    },
+    {
+      "item": "Slope (gradient) of a line, the angle between two lines, or the equation of a line through two points",
+      "reason": "Not mentioned anywhere in this chapter's 14 pages; this chapter's coordinate geometry is restricted to the distance formula and the section formula."
+    },
+    {
+      "item": "Cross-multiplication, vectors, matrices or determinants as a method for the section formula or any other result in this chapter",
+      "reason": "Only the similar-triangles derivation (pp.106-107) is given for the section formula, and only the Pythagoras theorem for the distance formula; no other derivation method appears."
+    },
+    {
+      "item": "The general theory of similar triangles (the AA similarity criterion) used to derive the section formula",
+      "reason": "The chapter cites 'the AA similarity criterion, studied in Chapter 6' (p.106) as a ready-made tool but does not re-derive or re-teach similarity itself here; only its application to reach the section formula is in scope."
+    }
+  ],
+  "concepts": [
+    {
+      "code": "C10M-7.1",
+      "name": "The distance formula",
+      "description": "Recalling how a point's coordinates locate it relative to the axes, then deriving and applying the distance formula PQ = sqrt((x_2 - x_1)^2 + (y_2 - y_1)^2) for the distance between two points, including the special case of a point's distance from the origin.",
+      "idea": "Two points' coordinates tell you exactly how far apart they are once you square and add the horizontal and vertical gaps between them and take the square root -- the same Pythagoras theorem you already know, just written in coordinates.",
+      "rule": "PQ = sqrt((x_2 - x_1)^2 + (y_2 - y_1)^2) for any two points P(x_1, y_1) and Q(x_2, y_2); the distance of P(x, y) from the origin O(0, 0) is OP = sqrt(x^2 + y^2).",
+      "example": "The distance between P(6, 4) and Q(-5, -3) is sqrt((6-(-5))^2 + (4-(-3))^2) = sqrt(11^2 + 7^2) = sqrt(170) units (p.101).",
+      "difficulty_base": "Easy",
+      "questions": [
+        {
+          "b": "Remember",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "The distance of a point from the y-axis is called its x-coordinate, or",
+          "a": "abscissa",
+          "o": [
+            "abscissa",
+            "ordinate",
+            "origin",
+            "ratio"
+          ]
+        },
+        {
+          "b": "Remember",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "A point of the form (x, 0) lies on the",
+          "a": "x-axis",
+          "o": [
+            "x-axis",
+            "y-axis",
+            "origin",
+            "neither axis"
+          ]
+        },
+        {
+          "b": "Remember",
+          "d": "Easy",
+          "t": "fill_blank",
+          "m": 1,
+          "q": "The distance formula for two points P(x_1, y_1) and Q(x_2, y_2) is PQ = sqrt((x_2 - x_1)^2 + (____)^2).",
+          "a": "y_2 - y_1"
+        },
+        {
+          "b": "Remember",
+          "d": "Hard",
+          "t": "mcq",
+          "m": 1,
+          "q": "Which of the following is NOT a correct fact about coordinates or the distance formula, as used in this chapter?",
+          "a": "The distance of a point P(x, y) from the origin is half the product of x and y",
+          "o": [
+            "The distance of a point P(x, y) from the origin is half the product of x and y",
+            "PQ = sqrt((x_2 - x_1)^2 + (y_2 - y_1)^2) is the distance between P(x_1, y_1) and Q(x_2, y_2)",
+            "The distance of a point P(x, y) from the origin O(0, 0) is sqrt(x^2 + y^2)",
+            "A point of the form (0, y) lies on the y-axis"
+          ],
+          "rev": true
+        },
+        {
+          "b": "Understand",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "In deriving the distance formula, PQ^2 = PT^2 + QT^2 is obtained by applying",
+          "a": "the Pythagoras theorem to the right triangle PTQ",
+          "o": [
+            "the Pythagoras theorem to the right triangle PTQ",
+            "the AA similarity criterion",
+            "the section formula",
+            "the mid-point formula"
+          ]
+        },
+        {
+          "b": "Understand",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "The distance of the point (5, -12) from the origin is",
+          "a": "13 units",
+          "o": [
+            "13 units",
+            "17 units",
+            "7 units",
+            "169 units"
+          ]
+        },
+        {
+          "b": "Understand",
+          "d": "Easy",
+          "t": "fill_blank",
+          "m": 1,
+          "q": "If two points lie on the x-axis, the distance between them equals the ____ of their x-coordinates.",
+          "a": "difference"
+        },
+        {
+          "b": "Understand",
+          "d": "Hard",
+          "t": "mcq",
+          "m": 1,
+          "q": "Why can the distance between two points that lie on the same coordinate axis be found by simple subtraction rather than the full distance formula?",
+          "a": "Because one of the two coordinates is 0 for both points, so the formula's other squared term vanishes",
+          "o": [
+            "Because one of the two coordinates is 0 for both points, so the formula's other squared term vanishes",
+            "Because the distance formula only works for the origin",
+            "Because subtraction is always more accurate than the formula",
+            "Because such points can never be more than one unit apart"
+          ]
+        },
+        {
+          "b": "Understand",
+          "d": "Hard",
+          "t": "short_answer",
+          "m": 2,
+          "q": "Using the remark that PQ can also be written as sqrt((x_1 - x_2)^2 + (y_1 - y_2)^2), explain why this always gives the same value as PQ = sqrt((x_2 - x_1)^2 + (y_2 - y_1)^2).",
+          "a": "Because (x_1 - x_2) = -(x_2 - x_1) and squaring removes the sign, so (x_1 - x_2)^2 = (x_2 - x_1)^2 (and similarly for y); the two expressions are therefore always equal.",
+          "s": [
+            [
+              "States (x_1 - x_2) = -(x_2 - x_1), and similarly for y",
+              1
+            ],
+            [
+              "States squaring removes the sign, so the squared terms are equal either way",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Easy",
+          "t": "short_answer",
+          "m": 2,
+          "q": "Find the distance between the points (2, 3) and (4, 1).",
+          "a": "2 * sqrt(2) units (approximately 2.83 units).",
+          "s": [
+            [
+              "Sets up sqrt((4-2)^2 + (1-3)^2)",
+              1
+            ],
+            [
+              "Simplifies to sqrt(8) = 2 * sqrt(2) units",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Easy",
+          "t": "short_answer",
+          "m": 2,
+          "q": "Find the distance between the points (-5, 7) and (-1, 3).",
+          "a": "4 * sqrt(2) units (approximately 5.66 units).",
+          "s": [
+            [
+              "Sets up sqrt((-1-(-5))^2 + (3-7)^2)",
+              1
+            ],
+            [
+              "Simplifies to sqrt(32) = 4 * sqrt(2) units",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Hard",
+          "t": "short_answer",
+          "m": 2,
+          "q": "Find the distance between the points (0, 0) and (36, 15), and state what real-world distance this represents in Section 7.2's town example.",
+          "a": "39 units; this equals the distance between town A and town B (36 km east, 15 km north of A).",
+          "s": [
+            [
+              "Computes sqrt(36^2 + 15^2) = sqrt(1521) = 39",
+              1
+            ],
+            [
+              "States this equals the distance between towns A and B (39 km)",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Hard",
+          "t": "short_answer",
+          "m": 2,
+          "q": "Find the distance between the points (a, b) and (-a, -b).",
+          "a": "2 * sqrt(a^2 + b^2) units.",
+          "s": [
+            [
+              "Sets up sqrt((-a-a)^2 + (-b-b)^2)",
+              1
+            ],
+            [
+              "Simplifies (-2a)^2 + (-2b)^2 = 4a^2 + 4b^2 to get 2 * sqrt(a^2 + b^2)",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Hard",
+          "t": "short_answer",
+          "m": 2,
+          "q": "If the distance between P(2, -3) and Q(10, y) is 10 units, find the value(s) of y.",
+          "a": "y = 3 or y = -9.",
+          "s": [
+            [
+              "Sets up (10-2)^2 + (y+3)^2 = 100, i.e. 64 + (y+3)^2 = 100",
+              1
+            ],
+            [
+              "Solves (y+3)^2 = 36 to get y = 3 or y = -9",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Hardest",
+          "t": "long_answer",
+          "m": 3,
+          "q": "A town B is 36 km east and 15 km north of town A. A town C is 20 km east and 21 km north of town A. Taking A as the origin, find the distance from town B to town C.",
+          "a": "sqrt(292) = 2 * sqrt(73) units, approximately 17.09 units.",
+          "s": [
+            [
+              "Identifies coordinates B(36, 15) and C(20, 21) using A as the origin",
+              1
+            ],
+            [
+              "Sets up sqrt((36-20)^2 + (15-21)^2) = sqrt(256 + 36)",
+              1
+            ],
+            [
+              "Simplifies to sqrt(292) = 2 * sqrt(73) units (approximately 17.09 units)",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Analyse",
+          "d": "Hard",
+          "t": "assertion_reason",
+          "m": 1,
+          "q": "Assertion (A): The distance between (3, 0) and (0, 4) is 5 units. Reason (R): For any two points, the distance formula PQ = sqrt((x_2 - x_1)^2 + (y_2 - y_1)^2) gives the length of the straight segment joining them. Choose the correct option.",
+          "a": "Both A and R are true, and R is the correct explanation of A",
+          "o": [
+            "Both A and R are true, and R is the correct explanation of A",
+            "A is false, R is true",
+            "A is true, R is false",
+            "Both A and R are true, but R is not the correct explanation of A"
+          ]
+        },
+        {
+          "b": "Analyse",
+          "d": "Hard",
+          "t": "multi_statement",
+          "m": 1,
+          "q": "Consider these statements. (I) The distance between (2, 3) and (4, 1) is 2 * sqrt(2) units. (II) The distance of the point (5, -12) from the origin is 13 units. (III) The distance between any two points on the y-axis equals the difference of their x-coordinates. Which is or are correct?",
+          "a": "Only I and II",
+          "o": [
+            "Only I and II",
+            "Only I",
+            "Only II and III",
+            "All of these"
+          ]
+        },
+        {
+          "b": "Analyse",
+          "d": "Hardest",
+          "t": "long_answer",
+          "m": 3,
+          "q": "A point P has the form (0, y), lying on the y-axis. Without computing any specific distance, explain why the distance OP from the origin to any such point simplifies to just the absolute value of y, and then verify this for P(0, 9) (the point found in Example 5).",
+          "a": "For P(0, y), the distance formula OP = sqrt(x^2 + y^2) becomes sqrt(0^2 + y^2) = sqrt(y^2) = |y|, since the x-coordinate is 0; for P(0, 9), OP = sqrt(0 + 81) = 9, confirming |y| = |9| = 9.",
+          "s": [
+            [
+              "Substitutes x = 0 into OP = sqrt(x^2 + y^2) to get sqrt(y^2)",
+              1
+            ],
+            [
+              "States sqrt(y^2) = |y|",
+              1
+            ],
+            [
+              "Verifies for P(0, 9): OP = sqrt(81) = 9",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Evaluate",
+          "d": "Hard",
+          "t": "short_answer",
+          "m": 2,
+          "q": "A student claims that the distance between (7, 2) and (7, -3) can only be found using the full distance formula, not by simple subtraction. Evaluate this claim, giving the actual distance.",
+          "a": "The claim is incorrect: since both points share the same x-coordinate (7), they lie on a vertical line, so the distance is just the difference of their y-coordinates, 2 - (-3) = 5 units (the distance formula gives the same answer: sqrt(0^2 + 5^2) = 5).",
+          "s": [
+            [
+              "States the claim is incorrect since both points share x = 7 (a vertical line)",
+              1
+            ],
+            [
+              "Gives the distance as 5 units, matching the distance formula",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Create",
+          "d": "Hardest",
+          "t": "long_answer",
+          "m": 3,
+          "q": "Construct two points of your own, neither lying on an axis and different from every point already used in this chapter, whose distance apart is exactly 13 units. Show your points and the calculation that confirms the distance is 13.",
+          "a": "Answers will vary. For example, P(1, 2) and Q(6, 14): PQ = sqrt((6-1)^2 + (14-2)^2) = sqrt(25 + 144) = sqrt(169) = 13 units.",
+          "s": [
+            [
+              "Chooses two off-axis points not used elsewhere in the chapter",
+              1
+            ],
+            [
+              "Sets up the distance formula for the chosen points",
+              1
+            ],
+            [
+              "Confirms the computed distance equals 13 units",
+              1
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "code": "C10M-7.2",
+      "name": "Using the distance formula to classify triangles",
+      "description": "Using the distance formula, the triangle inequality and the converse of the Pythagoras theorem to decide whether three given points are collinear, and if not, to classify the triangle they form as scalene, isosceles, equilateral or right-angled.",
+      "idea": "Once you know the three distances between three points, you know everything about the triangle they form -- whether it is even a genuine triangle, and if so, what kind.",
+      "rule": "Three points are collinear if one of the three pairwise distances equals the sum of the other two; otherwise they form a triangle, which is isosceles if two distances are equal, equilateral if all three are equal, and right-angled at the vertex opposite the longest side if the square of that side equals the sum of the squares of the other two (converse of the Pythagoras theorem).",
+      "example": "For P(3, 2), Q(-2, -3), R(2, 3): PQ = sqrt(50), QR = sqrt(52), PR = sqrt(2), and since PQ^2 + PR^2 = QR^2, triangle PQR is right-angled at P (p.102-103).",
+      "difficulty_base": "Easy",
+      "questions": [
+        {
+          "b": "Remember",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "To decide whether three given points form a triangle, this chapter finds",
+          "a": "the three distances between each pair of points",
+          "o": [
+            "the three distances between each pair of points",
+            "the mid-point of each pair of points",
+            "the ratio in which one point divides the others",
+            "the slopes of the lines joining them"
+          ]
+        },
+        {
+          "b": "Remember",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "Three points are said to be collinear when they",
+          "a": "lie on the same straight line",
+          "o": [
+            "lie on the same straight line",
+            "form a right triangle",
+            "form an isosceles triangle",
+            "lie on the same coordinate axis"
+          ]
+        },
+        {
+          "b": "Remember",
+          "d": "Easy",
+          "t": "fill_blank",
+          "m": 1,
+          "q": "In Example 1, since PQ^2 + PR^2 = QR^2, triangle PQR is a ____ triangle (with the right angle at P).",
+          "a": "right"
+        },
+        {
+          "b": "Remember",
+          "d": "Hard",
+          "t": "mcq",
+          "m": 1,
+          "q": "Which of the following is NOT a correct way this chapter classifies triangles using the distance formula?",
+          "a": "Three points A, B, C are collinear only if B divides AC internally in the ratio 1 : 1",
+          "o": [
+            "Three points A, B, C are collinear only if B divides AC internally in the ratio 1 : 1",
+            "Three points are collinear if the sum of two of the three pairwise distances equals the third",
+            "The converse of the Pythagoras theorem can be used to identify a right angle from three computed distances",
+            "A triangle in which exactly two of the three sides are equal is called isosceles"
+          ],
+          "rev": true
+        },
+        {
+          "b": "Understand",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "In Example 3, Ashima, Bharti and Camella are seated at A(3, 1), B(6, 4) and C(8, 6). They are seated in a line because",
+          "a": "AB + BC = AC",
+          "o": [
+            "AB + BC = AC",
+            "AB = BC = AC",
+            "AB * BC = AC",
+            "AB^2 + BC^2 = AC^2"
+          ]
+        },
+        {
+          "b": "Understand",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "A triangle in which all three sides come out equal by the distance formula is called",
+          "a": "equilateral",
+          "o": [
+            "equilateral",
+            "isosceles",
+            "scalene",
+            "right-angled"
+          ]
+        },
+        {
+          "b": "Understand",
+          "d": "Easy",
+          "t": "fill_blank",
+          "m": 1,
+          "q": "If two of the three distances between three given points are equal, and the sum of any two of the three distances exceeds the third, the triangle formed is ____.",
+          "a": "isosceles"
+        },
+        {
+          "b": "Understand",
+          "d": "Hard",
+          "t": "mcq",
+          "m": 1,
+          "q": "Why does verifying PQ^2 + PR^2 = QR^2 (rather than just PQ + PR = QR) tell you that triangle PQR has a right angle?",
+          "a": "Because this is exactly the relation used in the converse of the Pythagoras theorem, which identifies a right angle",
+          "o": [
+            "Because this is exactly the relation used in the converse of the Pythagoras theorem, which identifies a right angle",
+            "Because it shows the three points are collinear",
+            "Because it shows all three sides are equal",
+            "Because squaring always doubles the accuracy of a length"
+          ]
+        },
+        {
+          "b": "Understand",
+          "d": "Hard",
+          "t": "short_answer",
+          "m": 2,
+          "q": "In Example 1, the distances found are PQ = sqrt(50), QR = sqrt(52) and PR = sqrt(2). Explain how these three values alone are enough to first confirm P, Q, R form a triangle, and then to identify it as right-angled at P.",
+          "a": "Since the sum of any two of the three distances exceeds the third (e.g. PR + PQ is greater than QR), the three points form a triangle; and since PQ^2 + PR^2 = 50 + 2 = 52 = QR^2, by the converse of the Pythagoras theorem the angle at P (opposite QR) is 90 degrees.",
+          "s": [
+            [
+              "States the triangle inequality (sum of any two distances exceeds the third) confirms a triangle",
+              1
+            ],
+            [
+              "States PQ^2 + PR^2 = 52 = QR^2 identifies the right angle at P by the converse Pythagoras theorem",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Easy",
+          "t": "short_answer",
+          "m": 2,
+          "q": "Determine if the points (1, 5), (2, 3) and (-2, -11) are collinear.",
+          "a": "They are not collinear: AB = sqrt(5), BC = sqrt(212) and AC = sqrt(265), and AB + BC (about 16.80) is not equal to AC (about 16.28).",
+          "s": [
+            [
+              "Computes AB = sqrt(5), BC = sqrt(212), AC = sqrt(265)",
+              1
+            ],
+            [
+              "Shows AB + BC is not equal to AC, so the points are not collinear",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Easy",
+          "t": "short_answer",
+          "m": 2,
+          "q": "Check whether (5, -2), (6, 4) and (7, -2) are the vertices of an isosceles triangle.",
+          "a": "Yes: AB = sqrt(37) and BC = sqrt(37), with AC = 2, so two sides are equal and the triangle is isosceles.",
+          "s": [
+            [
+              "Computes AB = sqrt(37) and BC = sqrt(37)",
+              1
+            ],
+            [
+              "States two sides are equal (AB = BC), so the triangle is isosceles",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Hard",
+          "t": "short_answer",
+          "m": 2,
+          "q": "Do the points (3, 2), (-2, -3) and (2, 3) form a triangle? If so, name its type.",
+          "a": "Yes; PQ = sqrt(50), QR = sqrt(52), PR = sqrt(2), and since PQ^2 + PR^2 = QR^2, it is a right triangle (right angle at P).",
+          "s": [
+            [
+              "Computes the three distances sqrt(50), sqrt(52), sqrt(2)",
+              1
+            ],
+            [
+              "Shows PQ^2 + PR^2 = QR^2 and names it a right triangle",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Hard",
+          "t": "short_answer",
+          "m": 2,
+          "q": "Show that the points A(3, 1), B(6, 4) and C(8, 6) are collinear.",
+          "a": "AB = 3 * sqrt(2), BC = 2 * sqrt(2) and AC = 5 * sqrt(2); since AB + BC = AC, the points are collinear.",
+          "s": [
+            [
+              "Computes AB = 3 * sqrt(2), BC = 2 * sqrt(2), AC = 5 * sqrt(2)",
+              1
+            ],
+            [
+              "Shows AB + BC = AC, confirming collinearity",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Hard",
+          "t": "short_answer",
+          "m": 2,
+          "q": "This chapter uses P(4, 6) and Q(6, 8) with the origin O to derive the distance formula, finding OP = sqrt(52), OQ = 10 and PQ = sqrt(8). Using these three values, determine whether triangle OPQ itself is right-angled.",
+          "a": "No: checking all three combinations, OP^2 + PQ^2 = 60, OP^2 + OQ^2 = 152 and PQ^2 + OQ^2 = 108, none of which equals the remaining squared distance (100, 8 and 52 respectively), so triangle OPQ is not right-angled at any vertex.",
+          "s": [
+            [
+              "States the three squared distances: OP^2 = 52, OQ^2 = 100, PQ^2 = 8",
+              1
+            ],
+            [
+              "Checks all three combinations and finds none satisfies the Pythagoras converse, concluding OPQ is not right-angled",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Hardest",
+          "t": "long_answer",
+          "m": 3,
+          "q": "Show that the points (7, 10), (-2, 5) and (3, -4) are the vertices of an isosceles right triangle.",
+          "a": "AB = sqrt(106), BC = sqrt(106) and AC = sqrt(212); since AB = BC the triangle is isosceles, and since AB^2 + BC^2 = 106 + 106 = 212 = AC^2, by the converse Pythagoras theorem the angle at B is 90 degrees, so it is an isosceles right triangle.",
+          "s": [
+            [
+              "Computes AB = sqrt(106) and BC = sqrt(106), showing the triangle is isosceles",
+              1
+            ],
+            [
+              "Computes AC = sqrt(212)",
+              1
+            ],
+            [
+              "Shows AB^2 + BC^2 = AC^2, confirming a right angle at B, so the triangle is isosceles right-angled",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Analyse",
+          "d": "Hard",
+          "t": "assertion_reason",
+          "m": 1,
+          "q": "Assertion (A): The points (5, -2), (6, 4) and (7, -2) form an isosceles triangle. Reason (R): The distance formula PQ = sqrt((x_2 - x_1)^2 + (y_2 - y_1)^2) is derived using the Pythagoras theorem. Choose the correct option.",
+          "a": "Both A and R are true, but R is not the correct explanation of A",
+          "o": [
+            "Both A and R are true, but R is not the correct explanation of A",
+            "Both A and R are true, and R is the correct explanation of A",
+            "A is true, R is false",
+            "A is false, R is true"
+          ]
+        },
+        {
+          "b": "Analyse",
+          "d": "Hard",
+          "t": "multi_statement",
+          "m": 1,
+          "q": "Consider these statements. (I) The points (1, 5), (2, 3) and (-2, -11) are collinear. (II) The points A(3, 1), B(6, 4), C(8, 6) are collinear because AB + BC = AC. (III) Every triangle whose three sides satisfy the triangle inequality is automatically right-angled. Which is or are correct?",
+          "a": "Only II",
+          "o": [
+            "Only II",
+            "Only I",
+            "Only I and III",
+            "All of these"
+          ]
+        },
+        {
+          "b": "Analyse",
+          "d": "Hardest",
+          "t": "long_answer",
+          "m": 3,
+          "q": "A student computes three distances for points X, Y, Z and finds XY = 5, YZ = 12 and XZ = 13. Without using coordinates, explain what both the triangle inequality and the converse Pythagoras theorem together tell you about triangle XYZ.",
+          "a": "Since 5 + 12 is greater than 13, 5 + 13 is greater than 12, and 12 + 13 is greater than 5, the triangle inequality is satisfied so X, Y, Z do form a genuine triangle; and since XY^2 + YZ^2 = 25 + 144 = 169 = XZ^2, the converse Pythagoras theorem shows the angle at Y (opposite XZ) is a right angle -- so XYZ is a right triangle.",
+          "s": [
+            [
+              "Checks the triangle inequality holds for all three pairs, confirming a valid triangle",
+              1
+            ],
+            [
+              "Computes XY^2 + YZ^2 = 169 = XZ^2",
+              1
+            ],
+            [
+              "Concludes by the converse Pythagoras theorem that the angle at Y (opposite XZ) is 90 degrees",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Evaluate",
+          "d": "Hard",
+          "t": "short_answer",
+          "m": 2,
+          "q": "A student says: 'Since (1, 5), (2, 3) and (-2, -11) satisfy the triangle inequality using their three pairwise distances, they must be collinear.' Evaluate this statement.",
+          "a": "The statement is incorrect and self-contradictory: satisfying the triangle inequality (each pair-sum exceeding the third distance) is exactly what shows three points are NOT collinear and DO form a genuine triangle; collinearity is shown by the opposite condition, where one distance equals the sum of the other two.",
+          "s": [
+            [
+              "States the claim is incorrect",
+              1
+            ],
+            [
+              "Explains satisfying the triangle inequality shows the points form a triangle, which is the opposite of being collinear",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Create",
+          "d": "Hardest",
+          "t": "long_answer",
+          "m": 3,
+          "q": "Construct three points of your own, different from every set of points already used in this chapter, that form a right-angled isosceles triangle. Show the three distances and the check that confirms both properties.",
+          "a": "Answers will vary. For example, (0, 0), (4, 0) and (4, 4): the distances are 4, 4 and 4 * sqrt(2); the two legs of length 4 are equal (isosceles) and 4^2 + 4^2 = 32 = (4 * sqrt(2))^2, confirming a right angle where the two equal sides meet.",
+          "s": [
+            [
+              "Chooses three points not used elsewhere in the chapter",
+              1
+            ],
+            [
+              "Computes the three pairwise distances",
+              1
+            ],
+            [
+              "Shows two distances are equal and that their squares sum to the third squared, confirming an isosceles right triangle",
+              1
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "code": "C10M-7.3",
+      "name": "Using the distance formula to identify quadrilaterals",
+      "description": "Using the distance formula to decide, from four given points taken in order, whether they form a square, a rhombus, a parallelogram or no special quadrilateral, by comparing all four sides and both diagonals; and finding the area of a rhombus from its diagonals.",
+      "idea": "A quadrilateral's identity is written in its side and diagonal lengths -- four equal sides plus equal diagonals make a square, four equal sides with unequal diagonals make a rhombus, and equal opposite sides with unequal diagonals make a plain parallelogram.",
+      "rule": "For points A, B, C, D taken in order: if AB = BC = CD = DA and AC = BD, ABCD is a square. If AB = BC = CD = DA but AC is not equal to BD, ABCD is a rhombus. If AB = CD and BC = DA (opposite sides equal) but not all four sides are equal, ABCD is a parallelogram. A rhombus's area is half the product of its diagonals.",
+      "example": "For A(1, 7), B(4, 2), C(-1, -1), D(-4, 4): AB = BC = CD = DA = sqrt(34) and AC = BD = sqrt(68), so ABCD is a square (p.103).",
+      "difficulty_base": "Easy",
+      "questions": [
+        {
+          "b": "Remember",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "To show that a quadrilateral ABCD (points taken in order) is a square using the distance formula, this chapter checks that",
+          "a": "all four sides are equal and both diagonals are also equal",
+          "o": [
+            "all four sides are equal and both diagonals are also equal",
+            "only the two diagonals are equal",
+            "only one pair of opposite sides is equal",
+            "all four angles are right angles, measured directly"
+          ]
+        },
+        {
+          "b": "Remember",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "A quadrilateral with all four sides equal but UNEQUAL diagonals is a",
+          "a": "rhombus",
+          "o": [
+            "rhombus",
+            "square",
+            "rectangle",
+            "trapezium"
+          ]
+        },
+        {
+          "b": "Remember",
+          "d": "Easy",
+          "t": "fill_blank",
+          "m": 1,
+          "q": "The area of a rhombus, given its diagonals, is ____ the product of its diagonals.",
+          "a": "half"
+        },
+        {
+          "b": "Remember",
+          "d": "Hard",
+          "t": "mcq",
+          "m": 1,
+          "q": "Which of the following is NOT a correct way this chapter identifies quadrilaterals using the distance formula?",
+          "a": "A quadrilateral whose diagonals bisect each other must be a rhombus, even if its four sides are not all equal",
+          "o": [
+            "A quadrilateral whose diagonals bisect each other must be a rhombus, even if its four sides are not all equal",
+            "A quadrilateral ABCD (points taken in order) with AB = BC = CD = DA and AC = BD is a square",
+            "A rhombus's area equals half the product of the lengths of its two diagonals",
+            "A quadrilateral with AB = CD and BC = DA (opposite sides equal) but not all four sides equal is a parallelogram that is not a rhombus"
+          ],
+          "rev": true
+        },
+        {
+          "b": "Understand",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "In Example 2, ABCD is shown to be a square because",
+          "a": "all four sides come out equal and both diagonals also come out equal",
+          "o": [
+            "all four sides come out equal and both diagonals also come out equal",
+            "only three of the four sides are equal",
+            "the diagonals are unequal but the sides are equal",
+            "one angle is given as 90 degrees in the question itself"
+          ]
+        },
+        {
+          "b": "Understand",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "If four points taken in order give AB = CD and BC = DA, but not all four sides equal, the quadrilateral is at least a",
+          "a": "parallelogram",
+          "o": [
+            "parallelogram",
+            "square",
+            "rhombus",
+            "trapezium"
+          ]
+        },
+        {
+          "b": "Understand",
+          "d": "Easy",
+          "t": "fill_blank",
+          "m": 1,
+          "q": "A rhombus is a special case of a parallelogram in which all ____ sides are equal.",
+          "a": "four"
+        },
+        {
+          "b": "Understand",
+          "d": "Hard",
+          "t": "mcq",
+          "m": 1,
+          "q": "Example 2's 'Alternative Solution' shows ABCD is a square using AD^2 + DC^2 = AC^2 together with all sides equal. This alternative check works because",
+          "a": "a quadrilateral with all sides equal and one right angle is a square",
+          "o": [
+            "a quadrilateral with all sides equal and one right angle is a square",
+            "any quadrilateral with one right angle is automatically a square",
+            "AD and DC being equal is enough on its own",
+            "the converse Pythagoras theorem proves all quadrilaterals are squares"
+          ]
+        },
+        {
+          "b": "Understand",
+          "d": "Hard",
+          "t": "short_answer",
+          "m": 2,
+          "q": "Explain, using side and diagonal lengths, the difference between how this chapter confirms a square and how it confirms a plain rhombus that is not a square.",
+          "a": "Both need all four sides equal; a square additionally needs the two diagonals to also be equal, while a rhombus that is not a square has all sides equal but its two diagonals come out unequal.",
+          "s": [
+            [
+              "States both a square and a rhombus need all four sides equal",
+              1
+            ],
+            [
+              "States a square additionally needs equal diagonals, unlike a non-square rhombus",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Easy",
+          "t": "short_answer",
+          "m": 2,
+          "q": "Name the type of quadrilateral formed by (4, 5), (7, 6), (4, 3) and (1, 2), taken in order, giving reasons.",
+          "a": "A parallelogram (not a rhombus or rectangle): AB = CD = sqrt(10) and BC = DA = 3 * sqrt(2) (opposite sides equal), but the diagonals AC = 2 and BD = 2 * sqrt(13) are unequal, and adjacent sides are unequal.",
+          "s": [
+            [
+              "Computes AB = CD = sqrt(10) and BC = DA = 3 * sqrt(2), showing opposite sides equal",
+              1
+            ],
+            [
+              "Notes the diagonals (2 and 2 * sqrt(13)) are unequal, so it is a parallelogram, not a rhombus or rectangle",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Easy",
+          "t": "short_answer",
+          "m": 2,
+          "q": "Find the area of a rhombus whose vertices are (3, 0), (4, 5), (-1, 4) and (-2, -1), taken in order.",
+          "a": "24 square units.",
+          "s": [
+            [
+              "Finds the diagonals: sqrt((3-(-1))^2 + (0-4)^2) = 4 * sqrt(2) and sqrt((4-(-2))^2 + (5-(-1))^2) = 6 * sqrt(2)",
+              1
+            ],
+            [
+              "Computes area = half * 4 * sqrt(2) * 6 * sqrt(2) = 24 square units",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Hard",
+          "t": "short_answer",
+          "m": 2,
+          "q": "Champa and Chameli find four friends seated at A(3, 4), B(6, 7), C(9, 4) and D(6, 1) in Fig. 7.8. Champa says ABCD is a square; Chameli disagrees. Using the distance formula, find which of them is correct.",
+          "a": "Champa is correct: all four sides AB = BC = CD = DA = 3 * sqrt(2), and both diagonals AC = BD = 6, so ABCD is a square.",
+          "s": [
+            [
+              "Computes all four sides equal to 3 * sqrt(2)",
+              1
+            ],
+            [
+              "Computes both diagonals equal to 6, confirming a square (Champa is correct)",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Hard",
+          "t": "short_answer",
+          "m": 2,
+          "q": "Name the type of quadrilateral formed by (-1, -2), (1, 0), (-1, 2) and (-3, 0), taken in order, giving reasons.",
+          "a": "A square: all four sides equal 2 * sqrt(2), and both diagonals AC and BD equal 4.",
+          "s": [
+            [
+              "Computes all four sides equal to 2 * sqrt(2)",
+              1
+            ],
+            [
+              "Computes both diagonals equal to 4, confirming a square",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Hard",
+          "t": "short_answer",
+          "m": 2,
+          "q": "Name the type of quadrilateral formed, if any, by (-3, 5), (3, 1), (0, 3) and (-1, -4), taken in order, giving reasons.",
+          "a": "No special quadrilateral is formed: the four side lengths (2 * sqrt(13), sqrt(13), 5 * sqrt(2) and sqrt(85)) are all different, so opposite sides are not equal and it is not even a parallelogram.",
+          "s": [
+            [
+              "Computes the four side lengths and finds them all different",
+              1
+            ],
+            [
+              "Concludes no two opposite sides are equal, so it is not a parallelogram or any special quadrilateral",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Hardest",
+          "t": "long_answer",
+          "m": 3,
+          "q": "A quadrilateral has vertices A(0, 0), B(5, 0), C(5, 5) and D(0, 5), taken in order. Using the distance formula on all four sides and both diagonals, identify the most specific type of quadrilateral this is.",
+          "a": "It is a square: all four sides AB = BC = CD = DA = 5 units, and both diagonals AC = BD = 5 * sqrt(2) units.",
+          "s": [
+            [
+              "Computes all four sides equal to 5 units",
+              1
+            ],
+            [
+              "Computes both diagonals equal to 5 * sqrt(2) units",
+              1
+            ],
+            [
+              "Concludes ABCD is a square since all sides are equal and both diagonals are equal",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Analyse",
+          "d": "Hard",
+          "t": "assertion_reason",
+          "m": 1,
+          "q": "Assertion (A): The points (-1, -2), (1, 0), (-1, 2) and (-3, 0), taken in order, form a rhombus that is not a square. Reason (R): All four sides of this quadrilateral equal 2 * sqrt(2). Choose the correct option.",
+          "a": "A is false, R is true",
+          "o": [
+            "A is false, R is true",
+            "A is true, R is false",
+            "Both A and R are true, and R is the correct explanation of A",
+            "Both A and R are true, but R is not the correct explanation of A"
+          ]
+        },
+        {
+          "b": "Analyse",
+          "d": "Hard",
+          "t": "multi_statement",
+          "m": 1,
+          "q": "Consider these statements. (I) The points (4, 5), (7, 6), (4, 3) and (1, 2), taken in order, form a parallelogram. (II) The rhombus with vertices (3, 0), (4, 5), (-1, 4) and (-2, -1) has area 24 square units. (III) Every quadrilateral with all four sides equal is automatically a square. Which is or are correct?",
+          "a": "Only I and II",
+          "o": [
+            "Only I and II",
+            "Only I",
+            "Only II and III",
+            "All of these"
+          ]
+        },
+        {
+          "b": "Analyse",
+          "d": "Hardest",
+          "t": "long_answer",
+          "m": 3,
+          "q": "A quadrilateral PQRS (points taken in order) is found to have all four sides equal by the distance formula, but its two diagonals come out unequal. A student concludes 'PQRS cannot be a square, so it must be a rectangle instead.' Explain what is wrong with this conclusion, and state what PQRS actually is.",
+          "a": "The student's conclusion is wrong: a rectangle also needs equal diagonals (which PQRS does not have), so PQRS cannot be a rectangle either -- ruling out 'square' does not automatically mean 'rectangle'. Since all four sides are equal, PQRS is actually a rhombus (that is not a square).",
+          "s": [
+            [
+              "States a rectangle also requires equal diagonals, which PQRS lacks, so it cannot be a rectangle either",
+              1
+            ],
+            [
+              "States ruling out a square does not automatically imply a rectangle",
+              1
+            ],
+            [
+              "Concludes PQRS is a rhombus (not a square), since all four sides are equal",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Evaluate",
+          "d": "Hard",
+          "t": "short_answer",
+          "m": 2,
+          "q": "A student argues: 'Since the rhombus (3,0), (4,5), (-1,4), (-2,-1) has all four sides equal, its area must be found the same way as a square's, by squaring one side.' Evaluate this claim.",
+          "a": "The claim is incorrect: a rhombus's area (unless it happens to be a square) is not side-squared, because unlike a square its diagonals are unequal; the chapter's own hint gives area as half the product of the diagonals, which here is half * 4 * sqrt(2) * 6 * sqrt(2) = 24 square units, not (side)^2 = 26.",
+          "s": [
+            [
+              "States the claim is incorrect since a general rhombus is not a square",
+              1
+            ],
+            [
+              "Gives the correct method (half the product of the diagonals) and the resulting area 24 square units",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Create",
+          "d": "Hardest",
+          "t": "long_answer",
+          "m": 3,
+          "q": "Construct your own four points, different from every quadrilateral already used in this chapter, that form a rhombus which is NOT a square. Show that all four sides are equal and that the diagonals are unequal.",
+          "a": "Answers will vary. For example, (0, 0), (2, 1), (4, 0), (2, -1) taken in order: all four side lengths equal sqrt(5), while the diagonals are 4 (horizontal) and 2 (vertical) -- unequal, so it is a rhombus that is not a square.",
+          "s": [
+            [
+              "Chooses four points not used elsewhere in the chapter",
+              1
+            ],
+            [
+              "Shows all four sides are equal using the distance formula",
+              1
+            ],
+            [
+              "Shows the two diagonals are unequal, confirming a rhombus that is not a square",
+              1
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "code": "C10M-7.4",
+      "name": "Finding a point equidistant from two given points",
+      "description": "Finding a specific point, or a general relation between x and y, such that a point is equidistant from two given points, including when the point is restricted to lie on the x-axis or y-axis, using the idea that such a point lies on the perpendicular bisector of the segment joining the two given points.",
+      "idea": "If a point is the same distance from two fixed points, setting the two squared distances equal and simplifying always gives a straight-line equation -- the perpendicular bisector of the segment joining the two fixed points.",
+      "rule": "For P(x, y) equidistant from A(x_1, y_1) and B(x_2, y_2): set AP^2 = BP^2, i.e. (x-x_1)^2 + (y-y_1)^2 = (x-x_2)^2 + (y-y_2)^2, and simplify; the result is always a linear relation in x and y, the equation of the perpendicular bisector of AB. Restricting P to the x-axis or y-axis fixes y = 0 or x = 0 in this relation to get a single point.",
+      "example": "P(x, y) equidistant from A(7, 1) and B(3, 5) satisfies x - y = 2, the perpendicular bisector of AB (p.104).",
+      "difficulty_base": "Easy",
+      "questions": [
+        {
+          "b": "Remember",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "A point equidistant from two given points A and B always lies on the",
+          "a": "perpendicular bisector of AB",
+          "o": [
+            "perpendicular bisector of AB",
+            "mid-point of AB only",
+            "x-axis",
+            "line joining A and B"
+          ]
+        },
+        {
+          "b": "Remember",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "To find a point P(x, y) equidistant from A and B, this chapter sets",
+          "a": "AP^2 equal to BP^2",
+          "o": [
+            "AP^2 equal to BP^2",
+            "AP equal to twice BP",
+            "the x-coordinates of A and B equal",
+            "the mid-point of AB equal to the origin"
+          ]
+        },
+        {
+          "b": "Remember",
+          "d": "Easy",
+          "t": "fill_blank",
+          "m": 1,
+          "q": "A point on the y-axis has coordinates of the form (0, ____).",
+          "a": "y"
+        },
+        {
+          "b": "Remember",
+          "d": "Hard",
+          "t": "mcq",
+          "m": 1,
+          "q": "Which of the following is NOT correct about finding a point equidistant from two given points?",
+          "a": "The point equidistant from A(x_1, y_1) and B(x_2, y_2) is always given by ((x_1+x_2)/2, (y_1+y_2)/2) alone, with no other point ever equidistant from A and B",
+          "o": [
+            "The point equidistant from A(x_1, y_1) and B(x_2, y_2) is always given by ((x_1+x_2)/2, (y_1+y_2)/2) alone, with no other point ever equidistant from A and B",
+            "A point P(x, y) equidistant from two given points A and B lies on the perpendicular bisector of AB",
+            "Setting AP^2 = BP^2 and simplifying always gives a linear relation between x and y",
+            "To find the point on the y-axis equidistant from two given points, this chapter substitutes x = 0 into the equidistance condition"
+          ],
+          "rev": true
+        },
+        {
+          "b": "Understand",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "In Example 4, the relation x - y = 2 found for points equidistant from (7,1) and (3,5) represents",
+          "a": "a straight line (the perpendicular bisector of the segment joining the two points)",
+          "o": [
+            "a straight line (the perpendicular bisector of the segment joining the two points)",
+            "a single point",
+            "a parabola",
+            "the y-axis itself"
+          ]
+        },
+        {
+          "b": "Understand",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "To find a point on the x-axis equidistant from two given points, this chapter looks for a point of the form",
+          "a": "(x, 0)",
+          "o": [
+            "(x, 0)",
+            "(0, y)",
+            "(x, x)",
+            "(0, 0)"
+          ]
+        },
+        {
+          "b": "Understand",
+          "d": "Easy",
+          "t": "fill_blank",
+          "m": 1,
+          "q": "Setting AP^2 = BP^2 rather than AP = BP avoids having to work with ____ directly.",
+          "a": "square roots"
+        },
+        {
+          "b": "Understand",
+          "d": "Hard",
+          "t": "mcq",
+          "m": 1,
+          "q": "Why does the equation obtained by setting AP^2 = BP^2 always simplify to a LINEAR relation in x and y, even though it starts with squared terms?",
+          "a": "Because the x^2 and y^2 terms are identical on both sides and cancel, leaving only first-degree terms",
+          "o": [
+            "Because the x^2 and y^2 terms are identical on both sides and cancel, leaving only first-degree terms",
+            "Because square roots are taken at the very end",
+            "Because A and B are always chosen to be on the same axis",
+            "Because the distance formula itself is linear"
+          ]
+        },
+        {
+          "b": "Understand",
+          "d": "Hard",
+          "t": "short_answer",
+          "m": 2,
+          "q": "Example 5 finds the point (0, 9) on the y-axis equidistant from A(6,5) and B(-4,3), then checks AP = BP = sqrt(52). Explain what this check confirms, and why it works algebraically.",
+          "a": "It confirms the point (0,9) genuinely is equidistant, since both AP and BP evaluate to the same distance sqrt(52); it works because (0,9) was found by solving the equation AP^2 = BP^2, so substituting it back must make the two sides equal.",
+          "s": [
+            [
+              "States the check confirms AP = BP = sqrt(52) for the found point",
+              1
+            ],
+            [
+              "Explains this follows because (0,9) was obtained by solving AP^2 = BP^2",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Easy",
+          "t": "short_answer",
+          "m": 2,
+          "q": "Find the point on the x-axis which is equidistant from (2, -5) and (-2, 9).",
+          "a": "(-7, 0).",
+          "s": [
+            [
+              "Sets up (x-2)^2 + 25 = (x+2)^2 + 81 for a point (x, 0)",
+              1
+            ],
+            [
+              "Solves to get x = -7, so the point is (-7, 0)",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Easy",
+          "t": "short_answer",
+          "m": 2,
+          "q": "Find a relation between x and y such that the point (x, y) is equidistant from the points (3, 6) and (-3, 4).",
+          "a": "3x + y = 5 (i.e. 3x + y - 5 = 0).",
+          "s": [
+            [
+              "Sets up (x-3)^2 + (y-6)^2 = (x+3)^2 + (y-4)^2",
+              1
+            ],
+            [
+              "Simplifies to the relation 3x + y = 5",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Hard",
+          "t": "short_answer",
+          "m": 2,
+          "q": "Q(0, 1) is equidistant from P(5, -3) and R(x, 6). Find the values of x.",
+          "a": "x = 4 or x = -4.",
+          "s": [
+            [
+              "Sets up QP^2 = QR^2, i.e. 25 + 16 = x^2 + 25",
+              1
+            ],
+            [
+              "Solves x^2 = 16 to get x = 4 or x = -4",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Hard",
+          "t": "short_answer",
+          "m": 2,
+          "q": "For Q(0,1) equidistant from P(5,-3) and R(x,6) (previous question), find the distance QR, and find PR when x = 4.",
+          "a": "QR = sqrt(41) (the same for x = 4 or x = -4); when x = 4, PR = sqrt(82).",
+          "s": [
+            [
+              "Computes QR = sqrt(x^2 + 25) = sqrt(41)",
+              1
+            ],
+            [
+              "Computes PR for x = 4: sqrt((4-5)^2 + (6-(-3))^2) = sqrt(82)",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Hard",
+          "t": "short_answer",
+          "m": 2,
+          "q": "Find a point on the y-axis which is equidistant from A(2, 3) and B(-2, 7).",
+          "a": "(0, 5).",
+          "s": [
+            [
+              "Sets up 4 + (y-3)^2 = 4 + (y-7)^2 for a point (0, y)",
+              1
+            ],
+            [
+              "Solves to get y = 5, so the point is (0, 5)",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Hardest",
+          "t": "long_answer",
+          "m": 3,
+          "q": "Find a relation between x and y such that (x, y) is equidistant from the origin O(0, 0) and the point (6, 8).",
+          "a": "3x + 4y = 25 (i.e. 3x + 4y - 25 = 0).",
+          "s": [
+            [
+              "Sets up x^2 + y^2 = (x-6)^2 + (y-8)^2",
+              1
+            ],
+            [
+              "Expands and cancels the x^2 and y^2 terms on both sides",
+              1
+            ],
+            [
+              "Simplifies to the relation 3x + 4y = 25",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Analyse",
+          "d": "Hard",
+          "t": "assertion_reason",
+          "m": 1,
+          "q": "Assertion (A): The point (-7, 0) is equidistant from (2, -5) and (-2, 9). Reason (R): Every point on the x-axis is automatically equidistant from any two given points. Choose the correct option.",
+          "a": "A is true, R is false",
+          "o": [
+            "A is true, R is false",
+            "A is false, R is true",
+            "Both A and R are true, and R is the correct explanation of A",
+            "Both A and R are true, but R is not the correct explanation of A"
+          ]
+        },
+        {
+          "b": "Analyse",
+          "d": "Hard",
+          "t": "multi_statement",
+          "m": 1,
+          "q": "Consider these statements. (I) The relation x - y = 2 (Example 4) is the perpendicular bisector of the segment joining (7,1) and (3,5). (II) The point (0,9) is the only point in the entire plane equidistant from (6,5) and (-4,3). (III) Setting AP^2 = BP^2 instead of AP = BP still gives the correct equidistant relation, because squaring both already non-negative distances preserves the equation. Which is or are correct?",
+          "a": "Only I and III",
+          "o": [
+            "Only I and III",
+            "Only I",
+            "Only II",
+            "All of these"
+          ]
+        },
+        {
+          "b": "Analyse",
+          "d": "Hardest",
+          "t": "long_answer",
+          "m": 3,
+          "q": "Two points that a moving point stays equidistant from are (1, 2) and (5, 6). A student finds the relation and gets 2x + 2y = 7. Check this student's working by testing whether the mid-point of the two given points satisfies it, and correct the relation if it does not.",
+          "a": "The mid-point (3, 4) does NOT satisfy 2x + 2y = 7 (giving 14, not 7), so the student's relation is wrong. The correct relation is x + y = 7 (equivalently 2x + 2y = 14); the mid-point (3, 4) does satisfy this: 3 + 4 = 7.",
+          "s": [
+            [
+              "Computes the mid-point (3, 4) of the two given points",
+              1
+            ],
+            [
+              "Shows (3, 4) fails 2x + 2y = 7 (giving 14), so the student's relation is incorrect",
+              1
+            ],
+            [
+              "Derives and states the correct relation x + y = 7, verified by the mid-point",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Evaluate",
+          "d": "Hard",
+          "t": "short_answer",
+          "m": 2,
+          "q": "A student claims: 'Since Example 5 restricts the equidistant point to the y-axis and gets a single answer (0,9), the original relation x - y = 2 from Example 4 must also have just one solution.' Evaluate this claim.",
+          "a": "The claim is incorrect: x - y = 2 is a full line (the perpendicular bisector), which by itself has infinitely many points satisfying it; Example 5 gets a single point only because it additionally restricts the point to lie on the y-axis, which intersects that line just once.",
+          "s": [
+            [
+              "States the claim is incorrect",
+              1
+            ],
+            [
+              "Explains x - y = 2 has infinitely many solutions on its own; a single point only results from the extra restriction to an axis",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Create",
+          "d": "Hardest",
+          "t": "long_answer",
+          "m": 3,
+          "q": "Construct two points of your own, different from every pair already used in this chapter, and find the relation between x and y such that (x, y) is equidistant from them. Verify your relation using the mid-point of your two points.",
+          "a": "Answers will vary. For example, for (0, 4) and (8, 0): the relation is x^2 + (y-4)^2 = (x-8)^2 + y^2, simplifying to 2x - y = 6. Checking the mid-point (4, 2): 2(4) - 2 = 6, which matches.",
+          "s": [
+            [
+              "Chooses two points not used elsewhere in the chapter",
+              1
+            ],
+            [
+              "Sets up and simplifies the equidistance relation",
+              1
+            ],
+            [
+              "Verifies the relation using the mid-point of the two chosen points",
+              1
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "code": "C10M-7.5",
+      "name": "The section formula: derivation and direct application",
+      "description": "Deriving the section formula from similar triangles for a point dividing a line segment internally in a given ratio m_1 : m_2, and applying it directly to find the coordinates of the dividing point.",
+      "idea": "A point that splits a segment in a certain ratio has coordinates that are a weighted average of the two endpoints, weighted by how far along the split the point sits.",
+      "rule": "The point P(x, y) dividing the segment joining A(x_1, y_1) and B(x_2, y_2) internally in the ratio m_1 : m_2 is P = ((m_1 * x_2 + m_2 * x_1)/(m_1 + m_2), (m_1 * y_2 + m_2 * y_1)/(m_1 + m_2)); with ratio k : 1, P = ((k * x_2 + x_1)/(k+1), (k * y_2 + y_1)/(k+1)).",
+      "example": "P dividing the segment from (4,-3) to (8,5) in the ratio 3 : 1 is P = ((3*8 + 1*4)/4, (3*5 + 1*(-3))/4) = (7, 3) (p.108).",
+      "difficulty_base": "Easy",
+      "questions": [
+        {
+          "b": "Remember",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "The point dividing A(x_1, y_1) and B(x_2, y_2) internally in the ratio m_1 : m_2 has x-coordinate",
+          "a": "(m_1 * x_2 + m_2 * x_1) / (m_1 + m_2)",
+          "o": [
+            "(m_1 * x_2 + m_2 * x_1) / (m_1 + m_2)",
+            "(m_1 * x_1 + m_2 * x_2) / (m_1 + m_2)",
+            "(x_1 + x_2) / (m_1 + m_2)",
+            "(m_1 + m_2) / (x_1 + x_2)"
+          ]
+        },
+        {
+          "b": "Remember",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "The section formula was derived in this chapter using",
+          "a": "the AA similarity criterion applied to two triangles",
+          "o": [
+            "the AA similarity criterion applied to two triangles",
+            "the Pythagoras theorem directly",
+            "the distance formula alone",
+            "trial and error"
+          ]
+        },
+        {
+          "b": "Remember",
+          "d": "Easy",
+          "t": "fill_blank",
+          "m": 1,
+          "q": "If P divides AB in the ratio k : 1, then P = ((k * x_2 + x_1)/(k+1), (____)/(k+1)).",
+          "a": "k * y_2 + y_1"
+        },
+        {
+          "b": "Remember",
+          "d": "Hard",
+          "t": "mcq",
+          "m": 1,
+          "q": "Which of the following is NOT a correct fact about the section formula, as derived in this chapter?",
+          "a": "The point dividing A(x_1, y_1) and B(x_2, y_2) in the ratio m_1 : m_2 is found using sqrt((x_2-x_1)^2 + (y_2-y_1)^2)",
+          "o": [
+            "The point dividing A(x_1, y_1) and B(x_2, y_2) in the ratio m_1 : m_2 is found using sqrt((x_2-x_1)^2 + (y_2-y_1)^2)",
+            "The section formula was derived using the AA similarity criterion, as the ratio 1 : 2 relay-tower example motivates",
+            "The point dividing A(x_1, y_1) and B(x_2, y_2) in ratio m_1 : m_2 is ((m_1 x_2 + m_2 x_1)/(m_1+m_2), (m_1 y_2 + m_2 y_1)/(m_1+m_2))",
+            "In the k : 1 form of the section formula, k is the ratio of the point's distance from A to its distance from B"
+          ],
+          "rev": true
+        },
+        {
+          "b": "Understand",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "In the relay-tower motivating example, P divides AB in the ratio 1 : 2 because the tower's distance from B is",
+          "a": "twice its distance from A",
+          "o": [
+            "twice its distance from A",
+            "half its distance from A",
+            "equal to its distance from A",
+            "three times its distance from A"
+          ]
+        },
+        {
+          "b": "Understand",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "Using ratio m_1 : m_2 = 3 : 1 to divide a segment means the dividing point is",
+          "a": "closer to the second point B than to the first point A",
+          "o": [
+            "closer to the second point B than to the first point A",
+            "closer to A than to B",
+            "exactly midway between A and B",
+            "outside the segment AB"
+          ]
+        },
+        {
+          "b": "Understand",
+          "d": "Easy",
+          "t": "fill_blank",
+          "m": 1,
+          "q": "The section formula's ratio k : 1 form is obtained by dividing both m_1 and m_2 by ____.",
+          "a": "m_2"
+        },
+        {
+          "b": "Understand",
+          "d": "Hard",
+          "t": "mcq",
+          "m": 1,
+          "q": "Why does the section formula's numerator use m_1 multiplied by x_2 (not x_1) when the ratio is PA : PB = m_1 : m_2?",
+          "a": "Because the point closer to B (a larger m_1 relative to m_2) should be weighted more heavily toward B's coordinate x_2",
+          "o": [
+            "Because the point closer to B (a larger m_1 relative to m_2) should be weighted more heavily toward B's coordinate x_2",
+            "Because x_2 is always the larger coordinate",
+            "Because the formula is simply written that way with no reason",
+            "Because m_1 always refers to point A's own ratio share"
+          ]
+        },
+        {
+          "b": "Understand",
+          "d": "Hard",
+          "t": "short_answer",
+          "m": 2,
+          "q": "Explain why setting m_1 = m_2 = 1 in the section formula gives the ordinary mid-point formula.",
+          "a": "With m_1 = m_2 = 1, the formula ((m_1 x_2 + m_2 x_1)/(m_1+m_2), ...) becomes ((x_2+x_1)/2, (y_2+y_1)/2), which is exactly the average of the two endpoints' coordinates -- the mid-point formula.",
+          "s": [
+            [
+              "Substitutes m_1 = m_2 = 1 into the section formula",
+              1
+            ],
+            [
+              "Shows this simplifies to ((x_1+x_2)/2, (y_1+y_2)/2), the mid-point formula",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Easy",
+          "t": "short_answer",
+          "m": 2,
+          "q": "Find the coordinates of the point which divides the join of (-1, 7) and (4, -3) in the ratio 2 : 3.",
+          "a": "(1, 3).",
+          "s": [
+            [
+              "Sets up x = (2*4 + 3*(-1))/5, y = (2*(-3) + 3*7)/5",
+              1
+            ],
+            [
+              "Simplifies to (1, 3)",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Easy",
+          "t": "short_answer",
+          "m": 2,
+          "q": "Find the coordinates of the point which divides the line segment joining (4, -3) and (8, 5) in the ratio 3 : 1 internally.",
+          "a": "(7, 3).",
+          "s": [
+            [
+              "Sets up x = (3*8 + 1*4)/4, y = (3*5 + 1*(-3))/4",
+              1
+            ],
+            [
+              "Simplifies to (7, 3)",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Hard",
+          "t": "short_answer",
+          "m": 2,
+          "q": "If A and B are (-2, -2) and (2, -4) respectively, find the coordinates of P such that AP = (3/7) AB and P lies on the line segment AB.",
+          "a": "(-2/7, -20/7).",
+          "s": [
+            [
+              "Recognises AP = (3/7) AB means P divides AB in the ratio 3 : 4",
+              1
+            ],
+            [
+              "Applies the section formula to get P = (-2/7, -20/7)",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Hard",
+          "t": "short_answer",
+          "m": 2,
+          "q": "To conduct Sports Day activities in a rectangular school ground ABCD (A at the origin, AB horizontal with numbered lines 1-10, AD vertical with 100 flower pots 1m apart), Niharika posts a green flag 1/4 of the distance AD along the 2nd line, and Preet posts a red flag 1/5 of the distance AD along the 8th line. Find the coordinates of both flags and the distance between them.",
+          "a": "Green flag (2, 25), red flag (8, 20); distance = sqrt(61) units (approximately 7.81 units).",
+          "s": [
+            [
+              "Finds the green flag at (2, 25) and the red flag at (8, 20), using 1/4 and 1/5 of AD = 100 on lines 2 and 8",
+              1
+            ],
+            [
+              "Computes the distance sqrt((8-2)^2 + (20-25)^2) = sqrt(61) units",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Hard",
+          "t": "short_answer",
+          "m": 2,
+          "q": "For the Sports Day flags at (2, 25) and (8, 20) (previous question), Rashmi must post a blue flag exactly halfway between them. Find where she should post it.",
+          "a": "(5, 22.5), i.e. on the 5th line, 22.5 m along AD.",
+          "s": [
+            [
+              "Recognises 'exactly halfway' means the mid-point of the two flags",
+              1
+            ],
+            [
+              "Computes the mid-point ((2+8)/2, (25+20)/2) = (5, 22.5)",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Hardest",
+          "t": "long_answer",
+          "m": 3,
+          "q": "A relay tower P is to be placed between town A (taken as the origin) and town B(36, 15) so that its distance from town B is three times its distance from town A. Find the coordinates of P.",
+          "a": "P = (9, 3.75).",
+          "s": [
+            [
+              "Recognises PB = 3 * PA means P divides AB in the ratio 1 : 3",
+              1
+            ],
+            [
+              "Applies the section formula with A(0,0), B(36,15): x = (1*36 + 3*0)/4 = 9, y = (1*15 + 3*0)/4 = 3.75",
+              1
+            ],
+            [
+              "States P = (9, 3.75)",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Analyse",
+          "d": "Hard",
+          "t": "assertion_reason",
+          "m": 1,
+          "q": "Assertion (A): The point dividing (-1,7) and (4,-3) in the ratio 2 : 3 is (1,3). Reason (R): The section formula was proved in this chapter using the AA similarity criterion applied to two triangles. Choose the correct option.",
+          "a": "Both A and R are true, but R is not the correct explanation of A",
+          "o": [
+            "Both A and R are true, but R is not the correct explanation of A",
+            "Both A and R are true, and R is the correct explanation of A",
+            "A is true, R is false",
+            "A is false, R is true"
+          ]
+        },
+        {
+          "b": "Analyse",
+          "d": "Hard",
+          "t": "multi_statement",
+          "m": 1,
+          "q": "Consider these statements. (I) The section formula's k : 1 form comes from dividing both m_1 and m_2 in the m_1 : m_2 form by m_2. (II) A point dividing a segment in the ratio 3 : 1 lies closer to the second endpoint than to the first. (III) Setting m_1 : m_2 = 1 : 1 in the section formula gives the same result as the distance formula. Which is or are correct?",
+          "a": "Only I and II",
+          "o": [
+            "Only I and II",
+            "Only I",
+            "Only III",
+            "All of these"
+          ]
+        },
+        {
+          "b": "Analyse",
+          "d": "Hardest",
+          "t": "long_answer",
+          "m": 3,
+          "q": "A student wants to place a point P on segment AB, where A = (0,0) and B = (36,15) (Section 7.3's town example), so that P is three times as far from A as it is from B. Set up the correct ratio m_1 : m_2 for the section formula, and explain how this differs from the relay-tower example in the chapter (where the tower is twice as far from B as from A).",
+          "a": "Here PA = 3 * PB, so PA : PB = 3 : 1, giving ratio m_1 : m_2 = 3 : 1 -- the opposite emphasis from the book's own example, where PB = 2 * PA gives ratio 1 : 2. In the book's example the point sits closer to A; here it would sit closer to B.",
+          "s": [
+            [
+              "States PA = 3 * PB gives the ratio m_1 : m_2 = PA : PB = 3 : 1",
+              1
+            ],
+            [
+              "Explains this places P closer to B (since PA is the larger share)",
+              1
+            ],
+            [
+              "Contrasts with the book's own example (ratio 1 : 2, point closer to A)",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Evaluate",
+          "d": "Hard",
+          "t": "short_answer",
+          "m": 2,
+          "q": "A student computes the point dividing (-1,7) and (4,-3) in the ratio 2 : 3 as x = (3*4 + 2*(-1))/5 (swapping which ratio number multiplies which coordinate). Evaluate whether this is correct.",
+          "a": "It is incorrect: the section formula requires m_1 (the first ratio number, 2) to multiply x_2 (the second point's coordinate, 4), and m_2 (3) to multiply x_1 (-1); the student has these swapped, giving the wrong point.",
+          "s": [
+            [
+              "States the student's setup is incorrect",
+              1
+            ],
+            [
+              "Explains m_1 must multiply x_2 and m_2 must multiply x_1, which the student has swapped",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Create",
+          "d": "Hardest",
+          "t": "long_answer",
+          "m": 3,
+          "q": "Construct your own two points and your own ratio (different from every example already used in this chapter), and find the coordinates of the point dividing the segment between them in that ratio.",
+          "a": "Answers will vary. For example, dividing the segment from (2,2) to (10,10) in the ratio 1 : 3: P = ((1*10 + 3*2)/4, (1*10 + 3*2)/4) = (4, 4).",
+          "s": [
+            [
+              "Chooses two points and a ratio not used elsewhere in the chapter",
+              1
+            ],
+            [
+              "Sets up the section formula with the chosen values",
+              1
+            ],
+            [
+              "Computes and states the correct dividing point",
+              1
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "code": "C10M-7.6",
+      "name": "Finding a ratio or an axis intersection using the section formula",
+      "description": "Working the section formula in reverse: finding the ratio m_1 : m_2 (or k : 1) in which a known point divides a segment, including the special case where a coordinate axis is the dividing line and its intersection with the segment is required.",
+      "idea": "If you already know where the dividing point is, you can set up the section formula with the ratio as the unknown and solve for it instead of solving for the point's coordinates.",
+      "rule": "For P(x, y) known to divide A(x_1, y_1)-B(x_2, y_2), set x = (m_1*x_2 + m_2*x_1)/(m_1+m_2) (or the k : 1 form) and solve for m_1 : m_2 (or k). To find where an axis divides AB, use the k : 1 form and set the OTHER coordinate to 0 (y = 0 for the x-axis, x = 0 for the y-axis).",
+      "example": "The point (-4,6) divides A(-6,10) and B(3,-8) in the ratio 2 : 7, found by solving -4 = (3*m_1 - 6*m_2)/(m_1+m_2) (p.108-109).",
+      "difficulty_base": "Easy",
+      "questions": [
+        {
+          "b": "Remember",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "To find the ratio in which a known point divides a segment, this chapter treats the ratio itself as the",
+          "a": "unknown to be solved for",
+          "o": [
+            "unknown to be solved for",
+            "given, fixed quantity",
+            "same as the mid-point",
+            "irrelevant quantity"
+          ]
+        },
+        {
+          "b": "Remember",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "To find the point where the y-axis divides a segment, this chapter sets",
+          "a": "the x-coordinate of the section formula equal to 0",
+          "o": [
+            "the x-coordinate of the section formula equal to 0",
+            "the y-coordinate of the section formula equal to 0",
+            "both coordinates equal to 0",
+            "the ratio equal to 0"
+          ]
+        },
+        {
+          "b": "Remember",
+          "d": "Easy",
+          "t": "fill_blank",
+          "m": 1,
+          "q": "The ratio m_1 : m_2 can also be written in the form k : ____.",
+          "a": "1"
+        },
+        {
+          "b": "Remember",
+          "d": "Hard",
+          "t": "mcq",
+          "m": 1,
+          "q": "Which of the following is NOT correct about finding a ratio or an axis intersection using the section formula?",
+          "a": "Any point found to divide a segment in a whole-number ratio such as k : 1 must be that segment's mid-point",
+          "o": [
+            "Any point found to divide a segment in a whole-number ratio such as k : 1 must be that segment's mid-point",
+            "The ratio in which a known point divides a segment can be found by treating m_1 : m_2 (or k) as unknown in the section formula",
+            "To find where the x-axis divides a segment, the y-coordinate in the section formula is set to 0",
+            "A ratio found from the x-coordinate equation can be checked by substituting it into the y-coordinate equation"
+          ],
+          "rev": true
+        },
+        {
+          "b": "Understand",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "In Example 7, the ratio in which (-4,6) divides the segment joining (-6,10) and (3,-8) is found to be",
+          "a": "2 : 7",
+          "o": [
+            "2 : 7",
+            "7 : 2",
+            "1 : 2",
+            "3 : 8"
+          ]
+        },
+        {
+          "b": "Understand",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "In Example 9, the y-axis divides the segment joining (5,-6) and (-1,-4) because the abscissa of any point on the y-axis is",
+          "a": "0",
+          "o": [
+            "0",
+            "1",
+            "undefined",
+            "equal to its ordinate"
+          ]
+        },
+        {
+          "b": "Understand",
+          "d": "Easy",
+          "t": "fill_blank",
+          "m": 1,
+          "q": "In the k : 1 form, once k is found from the x-coordinate equation, it should also be checked against the ____ equation.",
+          "a": "y-coordinate"
+        },
+        {
+          "b": "Understand",
+          "d": "Hard",
+          "t": "mcq",
+          "m": 1,
+          "q": "In Example 9, after finding k = 5 for the ratio in which the y-axis divides the segment, why is this ratio then written as 5 : 1?",
+          "a": "Because the k : 1 form directly names the ratio as k to 1, and k was found to equal 5",
+          "o": [
+            "Because the k : 1 form directly names the ratio as k to 1, and k was found to equal 5",
+            "Because 5 : 1 is simply a rounder-looking number",
+            "Because the y-coordinate must always be 5",
+            "Because k must always be divided by the number of points"
+          ]
+        },
+        {
+          "b": "Understand",
+          "d": "Hard",
+          "t": "short_answer",
+          "m": 2,
+          "q": "Example 7 finds the ratio 2 : 7 using the x-coordinate equation, then notes 'you should verify that the ratio satisfies the y-coordinate also.' Explain why this verification step matters.",
+          "a": "Because the ratio was solved for using only the x-coordinate equation; checking the y-coordinate equation confirms the same ratio also correctly places the y-value, ruling out an arithmetic slip and confirming the point genuinely lies on the segment as claimed.",
+          "s": [
+            [
+              "States the ratio was found using only the x-coordinate equation",
+              1
+            ],
+            [
+              "Explains checking the y-coordinate equation confirms no arithmetic slip and that the point truly lies on the segment",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Easy",
+          "t": "short_answer",
+          "m": 2,
+          "q": "Find the ratio in which the line segment joining the points (-3, 10) and (6, -8) is divided by (-1, 6).",
+          "a": "2 : 7.",
+          "s": [
+            [
+              "Sets up -1 = (6k - 3)/(k+1) for the ratio k : 1",
+              1
+            ],
+            [
+              "Solves to get k = 2/7, i.e. the ratio 2 : 7",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Easy",
+          "t": "short_answer",
+          "m": 2,
+          "q": "Find the ratio in which the line segment joining A(1, -5) and B(-4, 5) is divided by the x-axis. Also find the coordinates of the point of division.",
+          "a": "Ratio 1 : 1 (the x-axis bisects it); point of division (-3/2, 0).",
+          "s": [
+            [
+              "Sets up 0 = (5k - 5)/(k+1) using the y-coordinates, giving k = 1",
+              1
+            ],
+            [
+              "States the ratio is 1 : 1 and the point is the mid-point (-3/2, 0)",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Hard",
+          "t": "short_answer",
+          "m": 2,
+          "q": "Find the ratio in which the y-axis divides the line segment joining the points (5, -6) and (-1, -4). Also find the point of intersection.",
+          "a": "Ratio 5 : 1; point of intersection (0, -13/3).",
+          "s": [
+            [
+              "Sets up 0 = (-k + 5)/(k+1) using the x-coordinates, giving k = 5",
+              1
+            ],
+            [
+              "States the ratio 5 : 1 and computes the point (0, -13/3)",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Hard",
+          "t": "short_answer",
+          "m": 2,
+          "q": "Find the ratio in which the line segment joining the points (-2, -2) and (2, -4) is divided by the point (-2/7, -20/7).",
+          "a": "3 : 4.",
+          "s": [
+            [
+              "Sets up the section formula with the known point and solves for the ratio",
+              1
+            ],
+            [
+              "States the ratio is 3 : 4, matching AP : PB = 3 : 4 since AP = 3/7 of AB",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Hard",
+          "t": "short_answer",
+          "m": 2,
+          "q": "Find the ratio in which the x-axis divides the segment joining (2, 7) and (6, -5).",
+          "a": "7 : 5.",
+          "s": [
+            [
+              "Sets up 0 = (-5k + 7)/(k+1) using the y-coordinates",
+              1
+            ],
+            [
+              "Solves to get k = 7/5, i.e. the ratio 7 : 5",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Hardest",
+          "t": "long_answer",
+          "m": 3,
+          "q": "A point (4, k) divides the segment joining (2, -2) and (8, 4) in some ratio. Find the ratio and the value of k.",
+          "a": "The ratio is 1 : 2, and k = 0.",
+          "s": [
+            [
+              "Sets up the x-coordinate equation for the ratio t : 1 and solves t = 1/2, i.e. ratio 1 : 2",
+              1
+            ],
+            [
+              "Applies the same ratio 1 : 2 to the y-coordinate formula",
+              1
+            ],
+            [
+              "Solves to get k = 0",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Analyse",
+          "d": "Hard",
+          "t": "assertion_reason",
+          "m": 1,
+          "q": "Assertion (A): The point (-4,6) divides the segment joining (-6,10) and (3,-8) in the ratio 2 : 7. Reason (R): Solving the x-coordinate equation of the section formula for this point gives the same ratio as solving the y-coordinate equation. Choose the correct option.",
+          "a": "Both A and R are true, and R is the correct explanation of A",
+          "o": [
+            "Both A and R are true, and R is the correct explanation of A",
+            "A is true, R is false",
+            "A is false, R is true",
+            "Both A and R are true, but R is not the correct explanation of A"
+          ]
+        },
+        {
+          "b": "Analyse",
+          "d": "Hard",
+          "t": "multi_statement",
+          "m": 1,
+          "q": "Consider these statements. (I) The x-axis divides the segment joining A(1,-5) and B(-4,5) in the ratio 1 : 1. (II) The y-axis divides the segment joining (5,-6) and (-1,-4) in the ratio 5 : 1. (III) A ratio found using only the x-coordinate equation never needs to be checked against the y-coordinate equation. Which is or are correct?",
+          "a": "Only I and II",
+          "o": [
+            "Only I and II",
+            "Only I",
+            "Only II and III",
+            "All of these"
+          ]
+        },
+        {
+          "b": "Analyse",
+          "d": "Hardest",
+          "t": "long_answer",
+          "m": 3,
+          "q": "A student finds that a point divides a segment in the ratio 3 : 5 using the x-coordinate equation, but gets the ratio 5 : 3 when checking with the y-coordinate equation. Explain what this mismatch means, and what the student should do.",
+          "a": "A genuine point that truly lies on the segment must give the same ratio from both the x- and y-coordinate equations; a mismatch means the given point does not actually lie on the segment joining the two given points (or an arithmetic error was made), so the student should recheck the point and the two equations rather than accept either ratio.",
+          "s": [
+            [
+              "States a genuine dividing point must give the same ratio from both equations",
+              1
+            ],
+            [
+              "States the mismatch means the point does not actually lie on the segment, or there is an arithmetic error",
+              1
+            ],
+            [
+              "States the student should recheck the working rather than accept either ratio",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Evaluate",
+          "d": "Hard",
+          "t": "short_answer",
+          "m": 2,
+          "q": "A student finds the ratio in which the y-axis divides the segment joining (5,-6) and (-1,-4) by setting the y-coordinate expression (rather than the x-coordinate expression) equal to 0. Evaluate this approach.",
+          "a": "This approach is incorrect: a point on the y-axis has x-coordinate 0, so it is the x-coordinate expression of the section formula that must be set to 0, not the y-coordinate expression.",
+          "s": [
+            [
+              "States the approach is incorrect",
+              1
+            ],
+            [
+              "Explains a y-axis point has x = 0, so the x-coordinate expression (not the y-coordinate expression) must be set to 0",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Create",
+          "d": "Hardest",
+          "t": "long_answer",
+          "m": 3,
+          "q": "Construct your own two points and your own third point that genuinely lies on the segment between them (different from every example already used in this chapter), and find the ratio in which your third point divides the segment.",
+          "a": "Answers will vary. For example, A(0,0), B(10,10), and the point (6,6) lying on segment AB: using the x-coordinate equation, 6 = 10t/(t+1) gives 6t + 6 = 10t, so t = 1.5, i.e. the ratio is 3 : 2.",
+          "s": [
+            [
+              "Chooses two points and a third point genuinely on the segment, not used elsewhere in the chapter",
+              1
+            ],
+            [
+              "Sets up the section formula's x-coordinate equation for the ratio",
+              1
+            ],
+            [
+              "Solves for the ratio and states it correctly (3 : 2)",
+              1
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "code": "C10M-7.7",
+      "name": "The mid-point formula and its applications",
+      "description": "Using the mid-point formula (the section formula's ratio 1 : 1 special case) to find the mid-point of a segment, to locate trisection points or other equally-spaced division points, to find an unknown vertex of a parallelogram from the fact that its diagonals bisect each other, and to find the missing endpoint of a circle's diameter from its centre.",
+      "idea": "Splitting a segment exactly in half is just the section formula with equal weight on both ends, and that same halving idea -- the mid-point of one diagonal equals the mid-point of the other -- is what pins down a missing parallelogram vertex or a missing circle-diameter endpoint.",
+      "rule": "The mid-point of A(x_1, y_1) and B(x_2, y_2) is ((x_1+x_2)/2, (y_1+y_2)/2). A parallelogram's diagonals bisect each other, so the mid-point of one diagonal equals the mid-point of the other. A circle's centre is the mid-point of any diameter.",
+      "example": "For a parallelogram A(6,1), B(8,2), C(9,4), D(p,3), the mid-point of AC equals the mid-point of BD, giving p = 7 (p.110).",
+      "difficulty_base": "Easy",
+      "questions": [
+        {
+          "b": "Remember",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "The mid-point of the segment joining A(x_1, y_1) and B(x_2, y_2) is",
+          "a": "((x_1+x_2)/2, (y_1+y_2)/2)",
+          "o": [
+            "((x_1+x_2)/2, (y_1+y_2)/2)",
+            "(x_1+x_2, y_1+y_2)",
+            "((x_2-x_1)/2, (y_2-y_1)/2)",
+            "(x_1 * x_2, y_1 * y_2)"
+          ]
+        },
+        {
+          "b": "Remember",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "A key property of a parallelogram used in this chapter is that its diagonals",
+          "a": "bisect each other",
+          "o": [
+            "bisect each other",
+            "are always equal",
+            "are always perpendicular",
+            "never intersect"
+          ]
+        },
+        {
+          "b": "Remember",
+          "d": "Easy",
+          "t": "fill_blank",
+          "m": 1,
+          "q": "The centre of a circle is the ____ of any diameter of that circle.",
+          "a": "mid-point"
+        },
+        {
+          "b": "Remember",
+          "d": "Hard",
+          "t": "mcq",
+          "m": 1,
+          "q": "Which of the following is NOT a correct fact about the mid-point formula or its applications in this chapter?",
+          "a": "The mid-point of a segment can only be found after first solving the section formula's x-coordinate equation for an unknown ratio k",
+          "o": [
+            "The mid-point of a segment can only be found after first solving the section formula's x-coordinate equation for an unknown ratio k",
+            "The mid-point formula is the section formula's special case with ratio 1 : 1",
+            "In a parallelogram, the mid-point of one diagonal equals the mid-point of the other diagonal",
+            "The centre of a circle is the mid-point of any diameter of that circle"
+          ],
+          "rev": true
+        },
+        {
+          "b": "Understand",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "In Example 8, the trisection points of A and B are found by applying the section formula with the ratios",
+          "a": "1 : 2 and 2 : 1",
+          "o": [
+            "1 : 2 and 2 : 1",
+            "1 : 1 and 1 : 1",
+            "1 : 3 and 3 : 1",
+            "2 : 3 and 3 : 2"
+          ]
+        },
+        {
+          "b": "Understand",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "In Example 10, the unknown vertex D(p, 3) of parallelogram ABCD is found using the fact that",
+          "a": "the mid-point of diagonal AC equals the mid-point of diagonal BD",
+          "o": [
+            "the mid-point of diagonal AC equals the mid-point of diagonal BD",
+            "all four sides of ABCD are equal",
+            "the diagonals of ABCD are equal",
+            "D must lie on the x-axis"
+          ]
+        },
+        {
+          "b": "Understand",
+          "d": "Easy",
+          "t": "fill_blank",
+          "m": 1,
+          "q": "Finding the trisection points of a segment requires applying the section formula ____ times, once for each point.",
+          "a": "twice"
+        },
+        {
+          "b": "Understand",
+          "d": "Hard",
+          "t": "mcq",
+          "m": 1,
+          "q": "Example 8's note observes that Q could also have been found as the mid-point of PB instead of by a fresh section-formula calculation. Why does this shortcut work?",
+          "a": "Because P, Q and B are equally spaced (AP = PQ = QB), so Q is exactly halfway between the already-found point P and the endpoint B",
+          "o": [
+            "Because P, Q and B are equally spaced (AP = PQ = QB), so Q is exactly halfway between the already-found point P and the endpoint B",
+            "Because Q and P must always be the same point",
+            "Because the mid-point formula only works for the point Q specifically",
+            "Because B is always the mid-point of AQ"
+          ]
+        },
+        {
+          "b": "Understand",
+          "d": "Hard",
+          "t": "short_answer",
+          "m": 2,
+          "q": "Explain why finding a parallelogram's unknown vertex from 'mid-point of AC = mid-point of BD' does not require the distance formula at all.",
+          "a": "Because this method only uses the fact that a parallelogram's diagonals bisect each other, which is an equality of mid-points (averages of coordinates); no lengths or distances are involved anywhere in setting up or solving the equations.",
+          "s": [
+            [
+              "States the method relies only on diagonals bisecting each other (mid-point equality)",
+              1
+            ],
+            [
+              "States no lengths or distances need to be computed, unlike distance-formula methods",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Easy",
+          "t": "short_answer",
+          "m": 2,
+          "q": "Find the coordinates of the points of trisection of the line segment joining (4, -1) and (-2, -3).",
+          "a": "(2, -5/3) and (0, -7/3).",
+          "s": [
+            [
+              "Applies the section formula with ratio 1 : 2 to get the first point (2, -5/3)",
+              1
+            ],
+            [
+              "Applies the section formula with ratio 2 : 1 to get the second point (0, -7/3)",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Easy",
+          "t": "short_answer",
+          "m": 2,
+          "q": "If (1, 2), (4, y), (x, 6) and (3, 5) are the vertices of a parallelogram taken in order, find x and y.",
+          "a": "x = 6, y = 3.",
+          "s": [
+            [
+              "Sets the mid-point of the first and third points equal to the mid-point of the second and fourth",
+              1
+            ],
+            [
+              "Solves to get x = 6 and y = 3",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Hard",
+          "t": "short_answer",
+          "m": 2,
+          "q": "Find the coordinates of a point A, where AB is the diameter of a circle whose centre is (2, -3) and B is (1, 4).",
+          "a": "A = (3, -10).",
+          "s": [
+            [
+              "Sets the mid-point of A and B equal to the centre (2, -3)",
+              1
+            ],
+            [
+              "Solves to get A = (3, -10)",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Hard",
+          "t": "short_answer",
+          "m": 2,
+          "q": "Find the coordinates of the points which divide the line segment joining A(-2, 2) and B(2, 8) into four equal parts.",
+          "a": "(-1, 3.5), (0, 5) and (1, 6.5).",
+          "s": [
+            [
+              "Finds the mid-point (0, 5) as the middle of the three dividing points",
+              1
+            ],
+            [
+              "Finds the other two points using ratios 1 : 3 and 3 : 1, giving (-1, 3.5) and (1, 6.5)",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Hard",
+          "t": "short_answer",
+          "m": 2,
+          "q": "If A(6, 1), B(8, 2), C(9, 4) and D(p, 3) are the vertices of a parallelogram taken in order, find the value of p.",
+          "a": "p = 7.",
+          "s": [
+            [
+              "Sets the mid-point of AC equal to the mid-point of BD",
+              1
+            ],
+            [
+              "Solves (15/2, 5/2) = ((8+p)/2, 5/2) to get p = 7",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Hardest",
+          "t": "long_answer",
+          "m": 3,
+          "q": "A circle has centre (0, 0) and one end of a diameter is (7, -24). Find the other end of the diameter, and also find the circle's radius.",
+          "a": "The other end is (-7, 24), and the radius is 25 units.",
+          "s": [
+            [
+              "Sets the mid-point of the diameter's two ends equal to the centre (0, 0)",
+              1
+            ],
+            [
+              "Solves to get the other end (-7, 24)",
+              1
+            ],
+            [
+              "Computes the radius as the distance from the centre to (7,-24): sqrt(49+576) = 25",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Analyse",
+          "d": "Hard",
+          "t": "assertion_reason",
+          "m": 1,
+          "q": "Assertion (A): For parallelogram A(6,1), B(8,2), C(9,4), D(p,3), the value of p is 7. Reason (R): In any quadrilateral (not just a parallelogram), the mid-point of one diagonal always equals the mid-point of the other diagonal. Choose the correct option.",
+          "a": "A is true, R is false",
+          "o": [
+            "A is true, R is false",
+            "A is false, R is true",
+            "Both A and R are true, and R is the correct explanation of A",
+            "Both A and R are true, but R is not the correct explanation of A"
+          ]
+        },
+        {
+          "b": "Analyse",
+          "d": "Hard",
+          "t": "multi_statement",
+          "m": 1,
+          "q": "Consider these statements. (I) The trisection points of (4,-1) and (-2,-3) are (2,-5/3) and (0,-7/3). (II) The four points dividing A(-2,2) and B(2,8) into four equal parts include the segment's own mid-point (0,5). (III) The mid-point formula can be used to find an unknown parallelogram vertex only if all four sides are also equal. Which is or are correct?",
+          "a": "Only I and II",
+          "o": [
+            "Only I and II",
+            "Only I",
+            "Only III",
+            "All of these"
+          ]
+        },
+        {
+          "b": "Analyse",
+          "d": "Hardest",
+          "t": "long_answer",
+          "m": 3,
+          "q": "A student is given three vertices of a parallelogram, A(1,1), B(5,1) and C(5,4), taken in order (so the fourth vertex is D), and is asked to find D. Explain which diagonals' mid-points should be set equal, and find D.",
+          "a": "The mid-point of diagonal AC must equal the mid-point of diagonal BD (the two diagonals of parallelogram ABCD). Mid-point of AC = (3, 2.5); setting this equal to the mid-point of BD gives D = (1, 4).",
+          "s": [
+            [
+              "States that AC and BD are the two diagonals whose mid-points must be equal",
+              1
+            ],
+            [
+              "Computes the mid-point of AC as (3, 2.5)",
+              1
+            ],
+            [
+              "Solves for D using B(5,1) and the mid-point equation to get D = (1, 4)",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Evaluate",
+          "d": "Hard",
+          "t": "short_answer",
+          "m": 2,
+          "q": "A student, asked to find the fourth vertex of parallelogram ABCD given A, B and C, sets the mid-point of diagonal AB equal to the mid-point of diagonal CD. Evaluate this approach.",
+          "a": "This approach is incorrect: in parallelogram ABCD (vertices taken in order), AB and CD are sides, not diagonals -- the diagonals are AC and BD (joining opposite vertices), and it is their mid-points that must be set equal.",
+          "s": [
+            [
+              "States the approach is incorrect",
+              1
+            ],
+            [
+              "Explains AB and CD are sides, not diagonals; the true diagonals are AC and BD",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Create",
+          "d": "Hardest",
+          "t": "long_answer",
+          "m": 3,
+          "q": "Construct your own three points, different from every example already used in this chapter, to serve as three vertices A, B, C (taken in order) of a parallelogram ABCD, and find the fourth vertex D.",
+          "a": "Answers will vary. For example, A(0,0), B(4,0), C(6,3): mid-point of AC = (3, 1.5); setting this equal to the mid-point of BD gives D = (2, 3).",
+          "s": [
+            [
+              "Chooses three points not used elsewhere in the chapter",
+              1
+            ],
+            [
+              "Computes the mid-point of diagonal AC",
+              1
+            ],
+            [
+              "Solves for the fourth vertex D using the mid-point-equality condition",
+              1
+            ]
+          ]
+        }
+      ]
+    }
+  ]
+}
