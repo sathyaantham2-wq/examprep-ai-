@@ -194,12 +194,20 @@ test('first-time student: profile, personalised home, Easy assessment, marked at
   const attempts = await db.selectFrom('attempts').select('id').where('student_id', '=', studentId).execute()
   attemptIds.push(...attempts.map((a) => a.id))
 
-  // Back on the home page the concept now has a level.
+  // Back on the home page the concept now has a level. Scoped to this fixture's own subject card
+  // (found via its unique subjectName), not the page's overall "Concepts started" total: this
+  // student is auto-enrolled in every subject offered for her board/class (2026-09-24 decision),
+  // so that total also includes however much real Science/Social-Science content this shared local
+  // test DB has accumulated from unrelated content-authoring runs -- currently real, but not a
+  // fixed number this test should hardcode. The fixture subject itself always has exactly 1
+  // concept, so "1 of 1" stays true there regardless of what else exists in the database.
   await page.getByRole('link', { name: 'Back to my progress' }).click()
   await page.waitForURL('**/student')
   await expect(page.getByText('Adaptive E2E concept').first()).toBeVisible()
-  await expect(page.getByText('Concepts started').first()).toBeVisible()
-  await expect(page.getByText('1 of 1', { exact: true })).toBeVisible()
+  const subjectHeading = page.getByText(subjectName, { exact: true })
+  await expect(subjectHeading.locator('xpath=following-sibling::*[1]')).toContainText(
+    '1 of 1 concepts started',
+  )
 
   // F123 follow-up (2026-09-24, user feedback): a finished paper no longer sits, unclickable,
   // in "Papers to attempt" under a "Completed" label -- it has its own page now, reachable from
