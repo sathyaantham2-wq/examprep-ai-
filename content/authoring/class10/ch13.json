@@ -1,0 +1,2024 @@
+{
+ "subject": {
+  "code": "MATH10",
+  "name": "Mathematics",
+  "board": "CBSE",
+  "class": 10
+ },
+ "source": {
+  "publisher": "NCERT",
+  "title": "Mathematics",
+  "edition": "Textbook for Class X, Reprint 2026-27",
+  "year": 2026
+ },
+ "chapter": {
+  "part": "I",
+  "chapter_no": 13,
+  "name": "Statistics",
+  "blurb": "A school's own marks, a hospital's patient ages, a city's household expenditures -- once real data is grouped into class intervals for convenience, the exact value of any single observation is lost, yet a single representative number can still be recovered for the whole distribution. This chapter extends the three measures of central tendency already met for ungrouped data -- mean, median and mode -- to grouped data: the mean by three equivalent routes (direct, assumed-mean and step-deviation), the mode by locating the modal class and adjusting for its neighbours' frequencies, and the median by building a cumulative frequency table and finding the one class where the running total crosses halfway. A closing section compares the three measures for different practical questions and gives an approximate empirical relationship linking them.",
+  "source_code": "jemh113",
+  "order_index": 13
+ },
+ "scope_in": [
+  {
+   "item": "Find the class mark of a class interval as the average of its upper and lower limits, and know that a value falling exactly on a shared class boundary is counted in the higher class",
+   "pages": "171-172"
+  },
+  {
+   "item": "Find the mean of grouped data using the direct method: mean = (sum of f_i * x_i) / (sum of f_i)",
+   "pages": "173-175"
+  },
+  {
+   "item": "Find the mean of grouped data using the assumed-mean method, choosing a convenient assumed mean a and computing d_i = x_i - a",
+   "pages": "175-177"
+  },
+  {
+   "item": "Find the mean of grouped data using the step-deviation method, computing u_i = (x_i - a)/h, and recognise when it is most convenient (the d_i's share a common factor) and that all three methods give the same mean",
+   "pages": "176-180"
+  },
+  {
+   "item": "Apply the mean formulas to data with unequal class widths using a suitable h, and solve for a missing frequency when the mean is already given",
+   "pages": "180-183"
+  },
+  {
+   "item": "Identify the modal class of a grouped distribution as the class with the highest frequency, and find the mode using Mode = l + ((f_1-f_0)/(2f_1-f_0-f_2)) * h",
+   "pages": "183-187"
+  },
+  {
+   "item": "Recall the median of ungrouped data (the middle observation, or the average of the two middle observations) as the basis for extending the idea to grouped data",
+   "pages": "188-190"
+  },
+  {
+   "item": "Build a less-than-type and a more-than-type cumulative frequency table from a grouped frequency distribution, and recover ordinary class frequencies from a less-than-type table by subtraction",
+   "pages": "190-194"
+  },
+  {
+   "item": "Identify the median class by comparing cumulative frequency against n/2, and find the median using Median = l + ((n/2-cf)/f) * h",
+   "pages": "192-196"
+  },
+  {
+   "item": "Solve for one or two unknown frequencies in a grouped distribution when the median (or the mean) is already given",
+   "pages": "195-196, 180-183"
+  },
+  {
+   "item": "Compare the mean, median and mode of the same data and judge which is the more appropriate representative measure for a given real-world question, including the effect of extreme values",
+   "pages": "197"
+  },
+  {
+   "item": "Apply the empirical relationship 3 * Median = Mode + 2 * Mean to estimate one measure from the other two for a moderately skewed distribution, and recognise it as an approximation rather than an exact formula",
+   "pages": "197"
+  }
+ ],
+ "scope_out": [
+  {
+   "item": "Graphical representation of cumulative frequency distributions (ogives) and finding the median as the point of intersection of the less-than and more-than ogive curves",
+   "reason": "The chapter's introduction (p.171) and its closing Note to the Reader (p.201) both mention ogives, but the body of the chapter contains no worked example, no figure, no graph-plotting instructions and no exercise on this -- and the book's own Contents page lists only sections 13.1-13.5 with no 'Graphical Representation' section, unlike the pre-rationalisation edition of this book. These two mentions are vestigial. No question in this bank requires reading or plotting a graph."
+  },
+  {
+   "item": "Measures of dispersion: range, mean deviation, variance, standard deviation",
+   "reason": "Not introduced anywhere in this chapter, which covers central tendency only."
+  },
+  {
+   "item": "Mode or median of grouped data with unequal class sizes",
+   "reason": "The chapter explicitly states 'we shall not be discussing it' for the median with unequal class sizes (Remark, p.197), and gives no worked example or exercise for the mode with unequal widths (the one unequal-width dataset in the chapter, the cricket-wickets example, is used only to illustrate the mean)."
+  },
+  {
+   "item": "Multimodal data, or finding more than one mode for a grouped distribution",
+   "reason": "The chapter explicitly restricts itself to 'problems having a single mode only' (p.183), even though it notes grouped data can in principle be multimodal."
+  },
+  {
+   "item": "Probability, or any topic from the chapter that follows this one",
+   "reason": "Chapter 14 (Probability) is a separate chapter starting at printed page 202, outside this scope record."
+  },
+  {
+   "item": "Mean, median or mode of ungrouped data as a topic examined in its own right",
+   "reason": "The chapter opens by stating that ungrouped central tendency was already studied in Class IX (p.171, p.188) and only briefly recaps it before extending to grouped data; no exercise in this chapter is purely about ungrouped data."
+  },
+  {
+   "item": "Weighted mean, or measures of central tendency for continuous probability distributions",
+   "reason": "Not mentioned anywhere in this chapter."
+  }
+ ],
+ "concepts": [
+  {
+   "code": "C10M-13.1",
+   "name": "Mean of Grouped Data: the Direct Method",
+   "description": "Finding the mean of grouped data by treating every observation in a class as if located at that class's mid-point (class mark), then applying mean = (sum of f_i * x_i) / (sum of f_i).",
+   "idea": "The mean of grouped data is found by treating every observation in a class as if it were located at that class's mid-point (class mark), then applying the same sum-of-values-over-count idea used for ungrouped data.",
+   "rule": "Class mark x_i = (upper class limit + lower class limit) / 2 for each class. Then mean = (sum of f_i * x_i) / (sum of f_i), summed over all classes. This is the Direct Method.",
+   "example": "Class intervals 10-25, 25-40, 40-55, 55-70, 70-85, 85-100 with frequencies 2, 3, 7, 6, 6, 6 have class marks 17.5, 32.5, 47.5, 62.5, 77.5, 92.5; sum of f_i * x_i = 1860, sum of f_i = 30, so mean = 1860 / 30 = 62 (p. 174).",
+   "difficulty_base": "Easy",
+   "questions": [
+    {
+     "b": "Remember",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "The class mark of a class interval is calculated as",
+     "a": "(upper class limit + lower class limit) / 2",
+     "o": [
+      "(upper class limit + lower class limit) / 2",
+      "upper class limit + lower class limit",
+      "upper class limit - lower class limit",
+      "the lower class limit only"
+     ]
+    },
+    {
+     "b": "Remember",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "In the direct method for the mean of grouped data, each observation lying in a class is assumed to be located at that class's",
+     "a": "class mark (mid-point)",
+     "o": [
+      "class mark (mid-point)",
+      "upper class limit",
+      "lower class limit",
+      "class size (width)"
+     ]
+    },
+    {
+     "b": "Remember",
+     "d": "Easy",
+     "t": "fill_blank",
+     "m": 1,
+     "q": "In the direct method, the mean of grouped data is calculated as (sum of f_i * x_i) divided by (sum of ____).",
+     "a": "f_i (the frequencies)"
+    },
+    {
+     "b": "Remember",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "q": "Which of the following is NOT correct about finding the mean of grouped data by the direct method?",
+     "a": "The mean can be found by using only the class mark of the class with the highest frequency, since that class matters most for the average",
+     "o": [
+      "The mean can be found by using only the class mark of the class with the highest frequency, since that class matters most for the average",
+      "Each class is assumed to be represented by its class mark (mid-point) for the calculation",
+      "The mean is the sum of f_i * x_i divided by the sum of f_i, using every class in the distribution",
+      "Converting ungrouped data into grouped data before applying this method can change the computed mean slightly, since individual values are replaced by class marks"
+     ],
+     "rev": true
+    },
+    {
+     "b": "Understand",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "When forming class intervals from ungrouped marks, a student who has scored exactly the shared boundary value between two classes (for example, 40 marks, shared by 25-40 and 40-55) is counted in",
+     "a": "the next (higher) class, i.e., 40-55",
+     "o": [
+      "the next (higher) class, i.e., 40-55",
+      "the lower class, i.e., 25-40",
+      "either class, split equally between the two",
+      "neither class; such students are excluded"
+     ]
+    },
+    {
+     "b": "Understand",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "For the class interval 55-70, the class mark is",
+     "a": "62.5",
+     "o": [
+      "62.5",
+      "62",
+      "65",
+      "15"
+     ]
+    },
+    {
+     "b": "Understand",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "For 30 students' marks, the exact (ungrouped) mean is 59.3, but grouping the same data into class intervals of width 15 and applying the direct method gives a mean of 62. Why do the two values differ?",
+     "a": "Because grouping replaces each individual mark with its class's mid-point, which only approximates where the marks in that class actually lie",
+     "o": [
+      "Because grouping replaces each individual mark with its class's mid-point, which only approximates where the marks in that class actually lie",
+      "Because the direct method is not a mathematically valid way to find the mean of grouped data",
+      "Because the grouped table has a different total number of students than the ungrouped table",
+      "Because grouping data always increases the computed mean compared to the exact ungrouped mean"
+     ]
+    },
+    {
+     "b": "Understand",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "q": "A teacher groups an ungrouped set of marks into class intervals before finding the mean by the direct method. Compared to the exact mean of the original ungrouped marks, the mean computed from the grouped data is",
+     "a": "usually only an approximation, and may differ slightly from the exact ungrouped mean",
+     "o": [
+      "usually only an approximation, and may differ slightly from the exact ungrouped mean",
+      "always exactly equal to the ungrouped mean, whatever the class width chosen",
+      "always higher than the ungrouped mean",
+      "undefined, since grouping loses the information needed to find any mean"
+     ]
+    },
+    {
+     "b": "Understand",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "q": "Explain why the class mark, rather than any other value in the class, is used to represent every observation in that class when finding the mean of grouped data by the direct method.",
+     "a": "It is assumed that the frequency of a class is centred around its mid-point, so the class mark (the average of the upper and lower class limits) is taken as a fair single representative value for every observation that actually falls anywhere in that class.",
+     "s": [
+      [
+       "States the assumption that a class's frequency is centred at its mid-point",
+       1
+      ],
+      [
+       "Identifies the class mark as (upper limit + lower limit) / 2, used as the representative value",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "For the class interval 40-55 with frequency 7, the value of f_i * x_i (using the class mark) is",
+     "a": "332.5",
+     "o": [
+      "332.5",
+      "385",
+      "280",
+      "47.5"
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Easy",
+     "t": "fill_blank",
+     "m": 1,
+     "q": "For the class interval 25-40 with frequency 3, f_i * x_i = 3 * ____ = 97.5.",
+     "a": "32.5 (the class mark of 25-40)"
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "q": "Using the direct method on a distribution with class intervals 10-25, 25-40, 40-55, 55-70, 70-85, 85-100 and respective frequencies 2, 3, 7, 6, 6, 6, the mean is",
+     "a": "62",
+     "o": [
+      "62",
+      "59.3",
+      "60",
+      "65"
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "q": "Find the mean daily wages of 50 workers of a factory, using the direct method, given class intervals 500-520, 520-540, 540-560, 560-580, 580-600 (in Rs) with respective frequencies 12, 14, 8, 6, 10.",
+     "a": "Class marks are 510, 530, 550, 570, 590. Sum of f_i * x_i = 12(510) + 14(530) + 8(550) + 6(570) + 10(590) = 27260. Sum of f_i = 50. Mean = 27260 / 50 = Rs 545.20.",
+     "s": [
+      [
+       "Correctly finds the class marks and computes the sum of f_i * x_i = 27260",
+       1
+      ],
+      [
+       "Correctly divides by the sum of f_i = 50 to get mean = Rs 545.20",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "q": "Using the direct method, find the mean concentration of SO2 (in ppm) for 30 localities, given class intervals 0.00-0.04, 0.04-0.08, 0.08-0.12, 0.12-0.16, 0.16-0.20, 0.20-0.24 with respective frequencies 4, 9, 9, 2, 4, 2.",
+     "a": "Class marks are 0.02, 0.06, 0.10, 0.14, 0.18, 0.22. Sum of f_i * x_i = 4(0.02) + 9(0.06) + 9(0.10) + 2(0.14) + 4(0.18) + 2(0.22) = 2.96. Sum of f_i = 30. Mean = 2.96 / 30 = 0.0987 ppm (approximately).",
+     "s": [
+      [
+       "Correctly finds the class marks and computes the sum of f_i * x_i = 2.96",
+       1
+      ],
+      [
+       "Correctly divides by 30 to get mean = 0.0987 ppm (approximately)",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hardest",
+     "t": "long_answer",
+     "m": 3,
+     "q": "The daily food expenditure (in Rs) of 25 households is given by class intervals 100-150, 150-200, 200-250, 250-300, 300-350 with respective frequencies 4, 5, 12, 2, 2. (i) Find the class mark of each class. (ii) Find the sum of f_i * x_i. (iii) Find the mean daily expenditure using the direct method.",
+     "a": "(i) Class marks: 125, 175, 225, 275, 325. (ii) Sum of f_i * x_i = 4(125) + 5(175) + 12(225) + 2(275) + 2(325) = 500 + 875 + 2700 + 550 + 650 = 5275. (iii) Mean = 5275 / 25 = Rs 211.",
+     "s": [
+      [
+       "Correctly finds all five class marks",
+       1
+      ],
+      [
+       "Correctly computes the sum of f_i * x_i = 5275",
+       1
+      ],
+      [
+       "Correctly divides by 25 to get mean = Rs 211",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "assertion_reason",
+     "m": 1,
+     "q": "Assertion (A): For the grouped distribution with class intervals 10-25, 25-40, 40-55, 55-70, 70-85, 85-100 and frequencies 2, 3, 7, 6, 6, 6, the mean by the direct method is 62. Reason (R): The direct method requires every class in the distribution to have exactly the same frequency.",
+     "a": "A is true, R is false",
+     "o": [
+      "A is true, R is false",
+      "A is false, R is true",
+      "Both A and R are true, and R is the correct explanation of A",
+      "Both A and R are true, but R is not the correct explanation of A"
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "multi_statement",
+     "m": 1,
+     "q": "Consider these statements about the direct method for the mean of grouped data. (I) The class mark of a class is the average of its upper and lower limits. (II) The direct method can only be used when all the classes in the distribution have exactly the same frequency as one another. Which is or are correct?",
+     "a": "Only I",
+     "o": [
+      "Only I",
+      "Only II",
+      "Both I and II",
+      "Neither I nor II"
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hardest",
+     "t": "long_answer",
+     "m": 3,
+     "q": "For 30 students' marks (Example: raw marks give an exact mean of 59.3), grouping into class intervals of width 15 (10-25, 25-40, 40-55, 55-70, 70-85, 85-100 with frequencies 2, 3, 7, 6, 6, 6) and applying the direct method gives a mean of 62. (i) State which of the two values, 62 or 59.3, is the more accurate mean of the original 30 marks, and why. (ii) Identify what specifically causes the grouped-data mean to differ from the exact mean. (iii) Would the two means necessarily move closer together if narrower class intervals (say, width 5 instead of width 15) were used instead? Give a one-line reason.",
+     "a": "(i) 59.3 is the more accurate (exact) mean, since it is computed directly from the actual 30 marks, not from class marks. (ii) The difference arises because the direct method on grouped data replaces every individual mark with its class's mid-point (class mark), which is only an assumed representative value, not the actual mark(s). (iii) Yes, generally: narrower class intervals place the mid-point assumption closer to the true values within each class, so the grouped mean would typically move closer to the exact mean.",
+     "s": [
+      [
+       "Correctly identifies 59.3 as the more accurate/exact mean with a valid reason",
+       1
+      ],
+      [
+       "Correctly explains the class-mark substitution as the cause of the difference",
+       1
+      ],
+      [
+       "Correctly reasons that narrower class intervals would generally bring the grouped mean closer to the exact mean",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Evaluate",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "q": "A classmate says: 'Since the direct method formula is mean = (sum of f_i * x_i) / (sum of f_i), I can skip finding the class marks and just use the lower class limits instead, to save time.' Evaluate this shortcut.",
+     "a": "The shortcut is not valid. The formula specifically requires x_i to be the class mark (the mid-point), which fairly represents the whole class; using the lower class limit instead would make every x_i too small, so the computed mean would come out systematically too low, not just be a faster route to the same correct answer.",
+     "s": [
+      [
+       "States that the shortcut is invalid/incorrect",
+       1
+      ],
+      [
+       "Explains that using the lower limit instead of the class mark biases every x_i downward, giving an incorrect (too low) mean",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Create",
+     "d": "Hardest",
+     "t": "long_answer",
+     "m": 3,
+     "q": "Construct your own frequency distribution table for the marks (out of 40) of 20 students, using exactly four class intervals of equal width 10 starting at 0-10, such that the mean you compute by the direct method comes out to exactly 30. Show your class intervals, your chosen frequencies, and the direct-method computation that confirms the mean is 30.",
+     "a": "Sample: class intervals 0-10, 10-20, 20-30, 30-40 (class marks 5, 15, 25, 35) with frequencies 1, 1, 5, 13 (sum = 20). Sum of f_i * x_i = 1(5) + 1(15) + 5(25) + 13(35) = 5 + 15 + 125 + 455 = 600. Mean = 600 / 20 = 30, as required.",
+     "s": [
+      [
+       "Gives a valid frequency table with four equal-width classes and frequencies totalling 20",
+       1
+      ],
+      [
+       "Correctly computes the sum of f_i * x_i for the chosen frequencies",
+       1
+      ],
+      [
+       "The computation correctly confirms a mean of exactly 30",
+       1
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "code": "C10M-13.2",
+   "name": "Mean of Grouped Data: Assumed-Mean and Step-Deviation Methods",
+   "description": "Finding the mean of grouped data by subtracting a fixed assumed mean 'a' from every class mark (and, in the step-deviation method, dividing by the class size h) to simplify the arithmetic, then correcting back to give the same mean as the direct method.",
+   "idea": "Subtracting a fixed assumed mean 'a' from every class mark turns large numbers into small deviations, making the arithmetic easier while giving exactly the same mean as the direct method.",
+   "rule": "Assumed-mean method: d_i = x_i - a; mean = a + (sum of f_i * d_i) / (sum of f_i). Step-deviation method: u_i = (x_i - a) / h, where h is the class size; mean = a + h * (sum of f_i * u_i) / (sum of f_i). All three methods (direct, assumed-mean, step-deviation) always give the same mean; step-deviation is most convenient when the d_i's share a common factor.",
+   "example": "For class marks 17.5, 32.5, 47.5, 62.5, 77.5, 92.5 (frequencies 2, 3, 7, 6, 6, 6), taking a = 47.5 and h = 15: sum of f_i * d_i = 435 gives mean = 47.5 + 435/30 = 62; sum of f_i * u_i = 29 gives mean = 47.5 + 15 * (29/30) = 62 -- matching the direct method's mean of 62 exactly (p. 175-177).",
+   "difficulty_base": "Hard",
+   "questions": [
+    {
+     "b": "Remember",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "In the assumed-mean method, the deviation d_i of each class mark x_i from the assumed mean a is defined as",
+     "a": "d_i = x_i - a",
+     "o": [
+      "d_i = x_i - a",
+      "d_i = a - x_i",
+      "d_i = x_i + a",
+      "d_i = x_i * a"
+     ]
+    },
+    {
+     "b": "Remember",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "In the step-deviation method, u_i is defined as",
+     "a": "u_i = (x_i - a) / h",
+     "o": [
+      "u_i = (x_i - a) / h",
+      "u_i = (x_i - a) * h",
+      "u_i = (a - x_i) / h",
+      "u_i = x_i / h"
+     ]
+    },
+    {
+     "b": "Remember",
+     "d": "Easy",
+     "t": "fill_blank",
+     "m": 1,
+     "q": "In the step-deviation method, after finding u_i and the sum of f_i * u_i, the mean is obtained as mean = a + h * (sum of f_i * u_i) / (sum of ____).",
+     "a": "f_i (the frequencies)"
+    },
+    {
+     "b": "Remember",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "q": "Which of the following is NOT correct about choosing the assumed mean 'a' in the assumed-mean method?",
+     "a": "The value chosen as 'a' must be the class mark of the median class, found by comparing cumulative frequency with n/2",
+     "o": [
+      "The value chosen as 'a' must be the class mark of the median class, found by comparing cumulative frequency with n/2",
+      "'a' is usually chosen to be a class mark lying centrally among all the class marks, purely to keep the arithmetic simple",
+      "The final mean obtained does not depend on which class mark is chosen as 'a'",
+      "'a' can, in principle, be any convenient number, not necessarily one of the x_i values themselves"
+     ],
+     "rev": true
+    },
+    {
+     "b": "Understand",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "For class marks 17.5, 32.5, 47.5, 62.5, 77.5, 92.5 with a chosen as 47.5, the deviation d_i for the class mark 77.5 is",
+     "a": "30",
+     "o": [
+      "30",
+      "-30",
+      "125",
+      "1.6"
+     ]
+    },
+    {
+     "b": "Understand",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "Using h = 15 and a = 47.5, the value of u_i for the class mark 92.5 is",
+     "a": "3",
+     "o": [
+      "3",
+      "45",
+      "-3",
+      "1/3"
+     ]
+    },
+    {
+     "b": "Understand",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "The step-deviation method is most convenient to apply when",
+     "a": "all the d_i values share a common factor",
+     "o": [
+      "all the d_i values share a common factor",
+      "the class intervals have unequal width",
+      "the frequencies are all equal to one another",
+      "the assumed mean 'a' is chosen as zero"
+     ]
+    },
+    {
+     "b": "Understand",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "q": "For female-teachers data with class marks 20, 30, 40, 50, 60, 70, 80 and a = 50, the deviation d_i for the class mark 20 is",
+     "a": "-30",
+     "o": [
+      "-30",
+      "30",
+      "-3",
+      "70"
+     ]
+    },
+    {
+     "b": "Understand",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "q": "Explain why the assumed-mean method and the step-deviation method always give the same mean as the direct method, even though the intermediate numbers used are smaller.",
+     "a": "Algebraically, d_i = x_i - a and u_i = d_i / h are just linear rescalings of x_i; when substituted back into the mean formula (a + (sum of f_i * d_i)/(sum of f_i), or a + h times the u_i version), the a's and h's cancel out exactly, giving the same result as (sum of f_i * x_i)/(sum of f_i). The methods only change the size of the numbers used, not the underlying arithmetic relationship.",
+     "s": [
+      [
+       "States that d_i and u_i are linear transformations of x_i (subtracting/scaling by a fixed a and h)",
+       1
+      ],
+      [
+       "Explains that these transformations algebraically cancel out in the mean formula, giving the same result as the direct method",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "For literacy-rate data with class marks 50, 60, 70, 80, 90, taking a = 70 and h = 10, the value of u_i for the class mark 50 is",
+     "a": "-2",
+     "o": [
+      "-2",
+      "2",
+      "-20",
+      "7"
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Easy",
+     "t": "fill_blank",
+     "m": 1,
+     "q": "Taking a = 57 and h = 3 for mango-packing data with class marks 51, 54, 57, 60, 63, the value of u_i for the class mark 63 is ____.",
+     "a": "2"
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "q": "For heartbeats-per-minute data with class marks 66.5 to 84.5 in steps of 3 and frequencies 2, 4, 3, 8, 7, 4, 2, taking a = 75.5 and h = 3, the sum of f_i * u_i works out to 4. The mean by the step-deviation method is",
+     "a": "75.9",
+     "o": [
+      "75.9",
+      "75.1",
+      "78.5",
+      "79.5"
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "q": "Using the step-deviation method with a = 57 and h = 3, find the mean number of mangoes per box, given class intervals 50-52, 53-55, 56-58, 59-61, 62-64 with respective frequencies 15, 110, 135, 115, 25 (class marks 51, 54, 57, 60, 63).",
+     "a": "u_i values are -2, -1, 0, 1, 2. Sum of f_i * u_i = 15(-2) + 110(-1) + 135(0) + 115(1) + 25(2) = -30 - 110 + 0 + 115 + 50 = 25. Mean = 57 + 3 * (25/400) = 57 + 0.1875 = 57.1875.",
+     "s": [
+      [
+       "Correctly computes the sum of f_i * u_i = 25",
+       1
+      ],
+      [
+       "Correctly computes the mean = 57 + 3(25/400) = 57.1875",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "q": "Using the step-deviation method with a = 70 and h = 10, find the mean literacy rate, given class intervals 45-55, 55-65, 65-75, 75-85, 85-95 with respective frequencies 3, 10, 11, 8, 3 (class marks 50, 60, 70, 80, 90).",
+     "a": "u_i values are -2, -1, 0, 1, 2. Sum of f_i * u_i = 3(-2) + 10(-1) + 11(0) + 8(1) + 3(2) = -6 - 10 + 0 + 8 + 6 = -2. Mean = 70 + 10 * (-2/35) = 70 - 4/7 = 69.43 (approximately).",
+     "s": [
+      [
+       "Correctly computes the sum of f_i * u_i = -2",
+       1
+      ],
+      [
+       "Correctly computes the mean = 69.43 (approximately)",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hardest",
+     "t": "long_answer",
+     "m": 3,
+     "q": "The mean daily pocket allowance of some children is Rs 18, from class intervals 11-13, 13-15, 15-17, 17-19, 19-21, 21-23, 23-25 with frequencies 7, 6, 9, 13, f, 5, 4 (f unknown). Using the step-deviation method with a = 18 and h = 2: (i) Find u_i for each class. (ii) Form an equation for the sum of f_i * u_i in terms of f and solve for f. (iii) State the total number of children.",
+     "a": "(i) u_i values: -3, -2, -1, 0, 1, 2, 3 for the seven classes respectively. (ii) Sum of f_i * u_i = 7(-3) + 6(-2) + 9(-1) + 13(0) + f(1) + 5(2) + 4(3) = -21 - 12 - 9 + 0 + f + 10 + 12 = f - 20. Since the mean already equals a (= 18), the correction term h * (sum of f_i * u_i)/(sum of f_i) must be 0, so f - 20 = 0, giving f = 20. (iii) Total children = 7 + 6 + 9 + 13 + 20 + 5 + 4 = 64.",
+     "s": [
+      [
+       "Correctly finds all seven u_i values",
+       1
+      ],
+      [
+       "Correctly forms the equation and solves f = 20",
+       1
+      ],
+      [
+       "Correctly finds the total number of children = 64",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "assertion_reason",
+     "m": 1,
+     "q": "Assertion (A): The step-deviation method cannot be applied to a wickets-per-match distribution whose class intervals (20-60, 60-100, 100-150, 150-250, 250-350, 350-450) do not all have the same width. Reason (R): The formula u_i = (x_i - a)/h is derived assuming a single common class size h, so when class sizes are unequal there is no single class size that applies to all of them in the usual way.",
+     "a": "A is false, R is true",
+     "o": [
+      "A is false, R is true",
+      "A is true, R is false",
+      "Both A and R are true, and R is the correct explanation of A",
+      "Both A and R are true, but R is not the correct explanation of A"
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "multi_statement",
+     "m": 1,
+     "q": "Consider these statements about the step-deviation method. (I) It can only be used when every class interval has exactly the same width as every other class interval, with no exceptions. (II) It is especially convenient when the deviations d_i share a common factor, since dividing by that factor (h) produces smaller numbers u_i to work with. Which is or are correct?",
+     "a": "Only II",
+     "o": [
+      "Only II",
+      "Only I",
+      "Both I and II",
+      "Neither I nor II"
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hardest",
+     "t": "long_answer",
+     "m": 3,
+     "q": "For female-teachers data with class marks 20, 30, 40, 50, 60, 70, 80 and frequencies 6, 11, 7, 4, 4, 2, 1: the direct method gives sum of f_i * x_i = 1390 and sum of f_i = 35. Using a = 50 and h = 10, the assumed-mean method gives sum of f_i * d_i = -360, and the step-deviation method gives sum of f_i * u_i = -36. (i) Compute the mean by all three methods. (ii) Confirm that all three means are equal. (iii) If a different (but still centrally located) value of a had been chosen instead of 50, would the final mean change? Justify briefly.",
+     "a": "(i) Direct: 1390/35 = 39.71 (approximately). Assumed-mean: 50 + (-360/35) = 50 - 10.29 = 39.71 (approximately). Step-deviation: 50 + 10 * (-36/35) = 50 - 10.29 = 39.71 (approximately). (ii) All three give the same mean, 39.71 (approximately), confirming the methods are equivalent. (iii) No, the final mean would not change; the choice of a always cancels out algebraically in the formula, so any valid choice of a gives the same final mean -- only the size of the intermediate numbers changes.",
+     "s": [
+      [
+       "Correctly computes all three means as 39.71 (approximately) using the given sums",
+       1
+      ],
+      [
+       "Explicitly confirms the three values agree",
+       1
+      ],
+      [
+       "Correctly reasons that changing 'a' would not change the final mean, since the choice of a cancels out algebraically",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Evaluate",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "q": "A student computes the mean of a female-teachers dataset three times, using a = 20, then a = 50, then a = 80, each time with the assumed-mean method, and gets three different final answers of 39.71, 41.2 and 38.9. Evaluate what most likely went wrong, given that the correct mean must be 39.71 for every valid choice of a.",
+     "a": "Since the true mean must come out the same (39.71) whatever valid a is chosen in the assumed-mean method, the two differing answers (41.2 and 38.9) point to arithmetic errors in computing d_i, f_i * d_i or the final substitution -- most likely a sign error in d_i = x_i - a, or a mistake in summing f_i * d_i -- not that the method itself gives different means for different a.",
+     "s": [
+      [
+       "States that the method must give the same mean (39.71) regardless of a, so the differing answers indicate a calculation error rather than a real difference",
+       1
+      ],
+      [
+       "Identifies a plausible specific source of error, such as a sign mistake in d_i = x_i - a or an arithmetic slip in summing f_i * d_i",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Create",
+     "d": "Hardest",
+     "t": "long_answer",
+     "m": 3,
+     "q": "Using the class marks 10, 20, 30, 40, 50 (class intervals of width 10 starting at 5-15), choose your own frequencies (using whole numbers, total 20 students) and your own assumed mean a from among these class marks, then compute the mean by the assumed-mean method. Show that using a different class mark as your assumed mean gives the same final answer.",
+     "a": "Sample: frequencies 2, 4, 8, 4, 2 (sum = 20). With a = 10: d_i values are 0, 10, 20, 30, 40; sum of f_i * d_i = 0 + 40 + 160 + 120 + 80 = 400; mean = 10 + 400/20 = 30. With a = 40: d_i values are -30, -20, -10, 0, 10; sum of f_i * d_i = -60 - 80 - 80 + 0 + 20 = -200; mean = 40 + (-200/20) = 40 - 10 = 30. Both choices of a give the same mean, 30.",
+     "s": [
+      [
+       "Gives a valid frequency table (five classes, whole-number frequencies summing to 20)",
+       1
+      ],
+      [
+       "Correctly computes the mean using the first chosen value of a",
+       1
+      ],
+      [
+       "Correctly computes the mean using a second, different value of a and shows it matches",
+       1
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "code": "C10M-13.3",
+   "name": "Mode of Grouped Data",
+   "description": "Locating the modal class (the class of highest frequency) in a grouped distribution, then applying the mode formula using the modal class's lower limit, class size, and the frequencies of the modal class and its two neighbours.",
+   "idea": "The mode of grouped data is not read directly from frequencies as in ungrouped data; instead, you first locate the modal class (the class with the highest frequency), then use a formula that adjusts the modal class's lower limit toward whichever neighbouring class has more competing frequency.",
+   "rule": "Mode = l + ((f_1 - f_0) / (2*f_1 - f_0 - f_2)) * h, where l = lower limit of the modal class, h = class size, f_1 = frequency of the modal class, f_0 = frequency of the class preceding the modal class, f_2 = frequency of the class succeeding the modal class.",
+   "example": "For family-size data with classes 1-3, 3-5, 5-7, 7-9, 9-11 and frequencies 7, 8, 2, 2, 1, the modal class is 3-5 (highest frequency, 8); l=3, h=2, f_1=8, f_0=7, f_2=2, giving mode = 3 + ((8-7)/(16-7-2)) * 2 = 3 + 2/7 = 3.286 (p. 184-185).",
+   "difficulty_base": "Easy",
+   "questions": [
+    {
+     "b": "Remember",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "In a grouped frequency distribution, the class with the maximum frequency is called the",
+     "a": "modal class",
+     "o": [
+      "modal class",
+      "median class",
+      "mean class",
+      "cumulative class"
+     ]
+    },
+    {
+     "b": "Remember",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "In the mode formula, f_0 stands for the frequency of the",
+     "a": "class preceding the modal class",
+     "o": [
+      "class preceding the modal class",
+      "modal class itself",
+      "class succeeding the modal class",
+      "first class in the whole distribution"
+     ]
+    },
+    {
+     "b": "Remember",
+     "d": "Easy",
+     "t": "fill_blank",
+     "m": 1,
+     "q": "In the mode formula Mode = l + ((f_1 - f_0) / (2*f_1 - f_0 - f_2)) * h, the symbol h stands for the ____.",
+     "a": "class size (width of the class interval)"
+    },
+    {
+     "b": "Remember",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "q": "Which of the following is NOT correct about finding the mode of grouped data?",
+     "a": "The mode can be found simply by computing the class mark (mid-point) of the modal class, the same way the mean uses class marks",
+     "o": [
+      "The mode can be found simply by computing the class mark (mid-point) of the modal class, the same way the mean uses class marks",
+      "The mode is located inside the modal class, the class with the highest frequency",
+      "The mode formula uses the frequencies of the classes immediately before and after the modal class, not just the modal class's own frequency",
+      "More than one class can share the same maximum frequency, in which case the data is called multimodal"
+     ],
+     "rev": true
+    },
+    {
+     "b": "Understand",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "For family-size data with class intervals 1-3, 3-5, 5-7, 7-9, 9-11 and frequencies 7, 8, 2, 2, 1, the modal class is",
+     "a": "3-5",
+     "o": [
+      "3-5",
+      "1-3",
+      "5-7",
+      "7-9"
+     ]
+    },
+    {
+     "b": "Understand",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "For the same family-size data (class intervals 1-3, 3-5, 5-7, 7-9, 9-11; frequencies 7, 8, 2, 2, 1), the value of f_0 (frequency of the class preceding the modal class) is",
+     "a": "7",
+     "o": [
+      "7",
+      "8",
+      "2",
+      "1"
+     ]
+    },
+    {
+     "b": "Understand",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "For 30 students' marks with class intervals 10-25, 25-40, 40-55, 55-70, 70-85, 85-100 and frequencies 2, 3, 7, 6, 6, 6, the modal class is",
+     "a": "40-55",
+     "o": [
+      "40-55",
+      "55-70",
+      "25-40",
+      "85-100"
+     ]
+    },
+    {
+     "b": "Understand",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "q": "For 30 students' marks, the modal class is 40-55, with f_1 = 7, f_0 = 3, f_2 = 6, l = 40, h = 15. Which value is used as f_2 in the mode formula?",
+     "a": "6, the frequency of the class 55-70 (succeeding the modal class)",
+     "o": [
+      "6, the frequency of the class 55-70 (succeeding the modal class)",
+      "3, the frequency of the class 25-40 (this is actually f_0, the preceding class)",
+      "7, the frequency of the modal class itself",
+      "15, the class size, which is not a frequency at all"
+     ]
+    },
+    {
+     "b": "Understand",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "q": "Explain why the mode of grouped data cannot simply be read off as 'the class with the highest frequency', the way the mode of ungrouped data is read off as 'the value that occurs most often'.",
+     "a": "For grouped data, an entire class of values (not a single value) has the highest frequency, so we only know that the mode lies somewhere inside that class (the modal class); the mode formula is needed to locate one specific value inside that class, using the neighbouring classes' frequencies, since naming the class alone is not a single number.",
+     "s": [
+      [
+       "States that only a class (a range), not a single value, has the highest frequency in grouped data",
+       1
+      ],
+      [
+       "Explains that the formula is needed to pin down one specific value inside the modal class, using the neighbouring frequencies",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "For teacher-student ratio data with class intervals 15-20 through 50-55 (step 5) and frequencies 3, 8, 9, 10, 3, 0, 0, 2, the modal class is",
+     "a": "30-35",
+     "o": [
+      "30-35",
+      "25-30",
+      "20-25",
+      "50-55"
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Easy",
+     "t": "fill_blank",
+     "m": 1,
+     "q": "For batsmen-runs data with class intervals 3000-4000 through 10000-11000 (step 1000) and frequencies 4, 18, 9, 7, 6, 3, 1, 1, the modal class is ____.",
+     "a": "4000-5000"
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "q": "For hospital patients' ages with class intervals 5-15 through 55-65 (step 10) and frequencies 6, 11, 21, 23, 14, 5, the mode is",
+     "a": "36.82 (approximately)",
+     "o": [
+      "36.82 (approximately)",
+      "35",
+      "40",
+      "43.18 (approximately)"
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "q": "Find the modal lifetime of 225 electrical components, given class intervals 0-20, 20-40, 40-60, 60-80, 80-100, 100-120 with respective frequencies 10, 35, 52, 61, 38, 29.",
+     "a": "Modal class = 60-80 (highest frequency, 61). l = 60, h = 20, f_1 = 61, f_0 = 52, f_2 = 38. Mode = 60 + ((61-52)/(122-52-38)) * 20 = 60 + (9/32) * 20 = 60 + 5.625 = 65.625 hours.",
+     "s": [
+      [
+       "Correctly identifies the modal class as 60-80 with l=60, f_1=61, f_0=52, f_2=38",
+       1
+      ],
+      [
+       "Correctly computes the mode = 65.625 (approximately)",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "q": "Find the mode of the number of cars passing a spot on a road, given class intervals 0-10 through 70-80 (step 10) with respective frequencies 7, 14, 13, 12, 20, 11, 15, 8.",
+     "a": "Modal class = 40-50 (highest frequency, 20). l = 40, h = 10, f_1 = 20, f_0 = 12, f_2 = 11. Mode = 40 + ((20-12)/(40-12-11)) * 10 = 40 + (8/17) * 10 = 40 + 4.71 = 44.71 (approximately).",
+     "s": [
+      [
+       "Correctly identifies the modal class as 40-50 with l=40, f_1=20, f_0=12, f_2=11",
+       1
+      ],
+      [
+       "Correctly computes the mode = 44.71 (approximately)",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hardest",
+     "t": "long_answer",
+     "m": 3,
+     "q": "For the monthly household expenditure of 200 families, class intervals 1000-1500 through 4500-5000 (step 500) have respective frequencies 24, 40, 33, 28, 30, 22, 16, 7. (i) Identify the modal class. (ii) Find the modal monthly expenditure. (iii) Find the mean monthly expenditure using the direct method, and state which of the two (mode or mean) is larger.",
+     "a": "(i) Modal class = 1500-2000 (highest frequency, 40). (ii) l=1500, h=500, f_1=40, f_0=24, f_2=33. Mode = 1500 + ((40-24)/(80-24-33)) * 500 = 1500 + (16/23) * 500 = 1500 + 347.83 = 1847.83 (approximately). (iii) Class marks 1250, 1750, 2250, 2750, 3250, 3750, 4250, 4750; sum of f_i * x_i = 532500; mean = 532500/200 = 2662.5. The mean (2662.5) is larger than the mode (1847.83).",
+     "s": [
+      [
+       "Correctly identifies the modal class as 1500-2000",
+       1
+      ],
+      [
+       "Correctly computes the mode = 1847.83 (approximately)",
+       1
+      ],
+      [
+       "Correctly computes the mean = 2662.5 and correctly compares (mean is larger)",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "assertion_reason",
+     "m": 1,
+     "q": "Assertion (A): For batsmen-runs data with modal class 4000-5000 (f_1=18, f_0=4, f_2=9, l=4000, h=1000), the mode is approximately 4608.7 runs. Reason (R): The mode formula pulls the estimate away from the modal class's lower limit toward the side with the larger neighbouring frequency, and here the succeeding class's frequency (9) is larger than the preceding class's frequency (4), consistent with the mode landing well above the modal class's midpoint of 4500.",
+     "a": "Both A and R are true, and R is the correct explanation of A",
+     "o": [
+      "Both A and R are true, and R is the correct explanation of A",
+      "Both A and R are true, but R is not the correct explanation of A",
+      "A is true, R is false",
+      "A is false, R is true"
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "multi_statement",
+     "m": 1,
+     "q": "Consider these statements about the mode of grouped data. (I) The mode always lies within the modal class, between its lower and upper limits. (II) If two different classes happen to share the same highest frequency, the formula can still be applied separately to each, and grouped data is then always reported as bimodal with both resulting values. Which is or are correct?",
+     "a": "Only I",
+     "o": [
+      "Only I",
+      "Only II",
+      "Both I and II",
+      "Neither I nor II"
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hardest",
+     "t": "long_answer",
+     "m": 3,
+     "q": "For 30 students' marks, the mean is 62 and the mode is 52. (i) State which measure (mean or mode) answers the question 'what mark did most students get close to?' (ii) State which measure answers the question 'what is the overall average performance of the class?' (iii) A teacher wants to know the single mark that the largest number of students are clustered around, to plan revision for that group. Which of the two measures should she use, and why?",
+     "a": "(i) The mode (52) answers what mark most students clustered near. (ii) The mean (62) answers the overall average performance. (iii) She should use the mode (52), because the mode specifically identifies the value around which the highest concentration (frequency) of students lies, which is exactly the group she wants to target; the mean would be pulled toward all students, including high and low scorers, and would not point to the most crowded mark.",
+     "s": [
+      [
+       "Correctly assigns mode to 'what mark did most students get' in part (i)",
+       1
+      ],
+      [
+       "Correctly assigns mean to 'overall average performance' in part (ii)",
+       1
+      ],
+      [
+       "Correctly recommends the mode for part (iii) with a valid reason tied to concentration/frequency",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Evaluate",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "q": "A classmate computes the mode of batsmen-runs data (modal class 4000-5000; f_1=18, f_0=4, f_2=9; l=4000, h=1000) as Mode = 4000 + ((18-4)/(18-4-9)) * 1000, using (18-4-9) as the denominator instead of (2*18-4-9). Evaluate the impact of this mistake and state the correct denominator.",
+     "a": "The mistake changes the denominator from 23 (= 36-4-9) to 5 (= 18-4-9), which is wrong because the formula requires 2*f_1, not f_1, in the denominator. Using 5 instead of 23 makes the computed mode far too large (14/5 = 2.8, giving mode = 4000+2800 = 6800), whereas the correct denominator (23) gives a mode of about 4608.7, a sensible value close to the modal class.",
+     "s": [
+      [
+       "Identifies that the denominator should use 2*f_1 (giving 23), not just f_1 (giving 5)",
+       1
+      ],
+      [
+       "Explains the consequence: the wrong denominator produces an implausibly large mode, unlike the correct value of about 4608.7",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Create",
+     "d": "Hardest",
+     "t": "long_answer",
+     "m": 3,
+     "q": "Construct a grouped frequency distribution with exactly four class intervals of equal width 10 (starting at 0-10), choosing your own whole-number frequencies totalling 25, such that the modal class is 20-30 and the mode works out to a value strictly between 24 and 25. Show your frequencies and the full mode computation.",
+     "a": "Sample: frequencies 1, 4, 18, 2 for classes 0-10, 10-20, 20-30, 30-40 (sum = 25). Modal class = 20-30 (highest frequency, 18). l=20, h=10, f_1=18, f_0=4, f_2=2. Mode = 20 + ((18-4)/(36-4-2)) * 10 = 20 + (14/30) * 10 = 20 + 4.67 = 24.67, which is strictly between 24 and 25, as required.",
+     "s": [
+      [
+       "Gives a valid frequency table (four equal-width classes, whole-number frequencies summing to 25)",
+       1
+      ],
+      [
+       "Correctly identifies the modal class as 20-30 with the right f_1, f_0, f_2",
+       1
+      ],
+      [
+       "Correctly computes a mode strictly between 24 and 25 (24.67, approximately)",
+       1
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "code": "C10M-13.4",
+   "name": "Cumulative Frequency Distributions and the Median Class",
+   "description": "Building a running (cumulative) total of class frequencies, either upward from the lowest class (less than type) or downward from the highest class (more than type), and comparing it against half the total number of observations to locate the median class.",
+   "idea": "Before the median of grouped data can be computed, the raw class frequencies must be converted into a running total -- accumulating from the lowest class upward (less than type) or from the highest class downward (more than type) -- and then compared against half the total number of observations to find the one class (the median class) that contains the middle value.",
+   "rule": "The cumulative frequency of a class is the sum of the frequencies of that class and all classes before it (less than type), or that class and all classes after it (more than type). To locate the median class, compute n/2 and find the first class (reading from the top) whose less-than-type cumulative frequency is greater than or equal to n/2.",
+   "example": "For 53 students' marks (classes 0-10 through 90-100, frequencies 5, 3, 4, 3, 3, 4, 7, 9, 7, 8), the less-than-type cumulative frequencies are 5, 8, 12, 15, 18, 22, 29, 38, 45, 53; with n=53, n/2=26.5, and the first cumulative frequency reaching or passing 26.5 is 29 (class 60-70), so 60-70 is the median class (p. 190-193).",
+   "difficulty_base": "Easy",
+   "questions": [
+    {
+     "b": "Remember",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "The cumulative frequency of a class is defined as",
+     "a": "the sum of the frequencies of that class and all classes before it (or after it, for the more-than type)",
+     "o": [
+      "the sum of the frequencies of that class and all classes before it (or after it, for the more-than type)",
+      "the frequency of that class alone",
+      "the average of the frequencies of all the classes",
+      "the frequency of that class divided by the total number of observations"
+     ]
+    },
+    {
+     "b": "Remember",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "A cumulative frequency distribution built by adding up frequencies from the lowest class upward is called the",
+     "a": "less than type",
+     "o": [
+      "less than type",
+      "more than type",
+      "modal type",
+      "direct type"
+     ]
+    },
+    {
+     "b": "Remember",
+     "d": "Easy",
+     "t": "fill_blank",
+     "m": 1,
+     "q": "To locate the median class of grouped data with n total observations, we first compute ____ and then find the class whose cumulative frequency first reaches or exceeds it.",
+     "a": "n/2 (half the total number of observations)"
+    },
+    {
+     "b": "Remember",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "q": "Which of the following is NOT correct about cumulative frequency distributions?",
+     "a": "The cumulative frequency of a class is found by dividing that class's deviation d_i by the class size h, similar to computing u_i in the step-deviation method",
+     "o": [
+      "The cumulative frequency of a class is found by dividing that class's deviation d_i by the class size h, similar to computing u_i in the step-deviation method",
+      "In a less-than-type table, the cumulative frequency never decreases as you move to a higher class",
+      "In a more-than-type table, the cumulative frequency never increases as you move to a higher class",
+      "The last cumulative frequency value in a less-than-type table equals the total number of observations, n"
+     ],
+     "rev": true
+    },
+    {
+     "b": "Understand",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "For a distribution of 53 students' marks with frequencies 5, 3, 4, 3, 3, 4, 7, 9, 7, 8 for classes 0-10 through 90-100, the less-than-type cumulative frequency of the class 20-30 (that is, 'less than 30') is",
+     "a": "12",
+     "o": [
+      "12",
+      "8",
+      "15",
+      "4"
+     ]
+    },
+    {
+     "b": "Understand",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "For the same 53-student data, the more-than-type cumulative frequency for 'more than or equal to 30' is",
+     "a": "45",
+     "o": [
+      "45",
+      "41",
+      "48",
+      "12"
+     ]
+    },
+    {
+     "b": "Understand",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "For a distribution with n = 51 observations, the value to compare against cumulative frequencies when locating the median class is",
+     "a": "25.5",
+     "o": [
+      "25.5",
+      "26",
+      "51",
+      "25"
+     ]
+    },
+    {
+     "b": "Understand",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "q": "For the 53-student marks data (classes 0-10 through 90-100, frequencies 5, 3, 4, 3, 3, 4, 7, 9, 7, 8), the median class is",
+     "a": "60-70",
+     "o": [
+      "60-70",
+      "50-60",
+      "70-80",
+      "40-50"
+     ]
+    },
+    {
+     "b": "Understand",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "q": "For a 'less than' cumulative table of 51 girls' heights (less than 140 -> 4, less than 145 -> 11, less than 150 -> 29, less than 155 -> 40, less than 160 -> 46, less than 165 -> 51), explain how to find the ordinary (non-cumulative) frequency of the class 145-150, and state its value.",
+     "a": "The ordinary frequency of a class in a less-than-type table is found by subtracting the cumulative frequency of the previous class from the cumulative frequency of the class itself: frequency of 145-150 = (less than 150) - (less than 145) = 29 - 11 = 18.",
+     "s": [
+      [
+       "States the method: subtract the previous class's cumulative frequency from the current one",
+       1
+      ],
+      [
+       "Correctly computes the frequency of 145-150 as 29 - 11 = 18",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "Given less-than-type cumulative frequencies less than 10 -> 5, less than 20 -> 8, less than 30 -> 12 for the 53-student data, the ordinary frequency of the class 10-20 is",
+     "a": "3",
+     "o": [
+      "3",
+      "8",
+      "5",
+      "13"
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Easy",
+     "t": "fill_blank",
+     "m": 1,
+     "q": "For the 51 girls' heights data, the ordinary frequency of the class 155-160 (given less than 155 -> 40 and less than 160 -> 46) is ____.",
+     "a": "6"
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "q": "For 100 students' marks (20, 25, 28, 29, 33, 38, 42, 43, with frequencies 6, 20, 24, 28, 15, 4, 2, 1 and n=100, even), the median is the average of the",
+     "a": "50th and 51st observations",
+     "o": [
+      "50th and 51st observations",
+      "49th and 50th observations",
+      "50th observation alone",
+      "100th observation alone"
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "q": "For 100 students' marks, the cumulative frequencies are 6, 26, 50, 78, 93, 97, 99, 100 for marks 20, 25, 28, 29, 33, 38, 42, 43 respectively. Identify the 50th and 51st observations from this table, and state the median.",
+     "a": "The cumulative frequency reaches exactly 50 at the mark 28, so the 50th observation is 28; the very next observation (the 51st) falls in the next group, at mark 29. Median = (28+29)/2 = 28.5.",
+     "s": [
+      [
+       "Correctly identifies the 50th observation as 28 and the 51st as 29 from the cumulative frequencies",
+       1
+      ],
+      [
+       "Correctly computes the median as 28.5",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "q": "A grouped distribution of 90 observations has less-than-type cumulative frequencies 8, 20, 35, 58, 74, 90 for six classes of equal width 10 starting at 0-10. Find n/2 and identify the median class.",
+     "a": "n/2 = 90/2 = 45. The cumulative frequencies are 8, 20, 35, 58, 74, 90; the first one that reaches or exceeds 45 is 58, which belongs to the fourth class. Since the classes are 0-10, 10-20, 20-30, 30-40, 40-50, 50-60, the fourth class is 30-40, so the median class is 30-40.",
+     "s": [
+      [
+       "Correctly computes n/2 = 45",
+       1
+      ],
+      [
+       "Correctly identifies the median class as 30-40 using the cumulative frequencies",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hardest",
+     "t": "long_answer",
+     "m": 3,
+     "q": "For 53 students' marks with class intervals 0-10, 10-20, 20-30, 30-40, 40-50, 50-60, 60-70, 70-80, 80-90, 90-100 and respective frequencies 5, 3, 4, 3, 3, 4, 7, 9, 7, 8: (i) Build the less-than-type cumulative frequency table. (ii) Build the more-than-type cumulative frequency table. (iii) Using n/2, identify the median class.",
+     "a": "(i) Less than type: less than 10 -> 5, less than 20 -> 8, less than 30 -> 12, less than 40 -> 15, less than 50 -> 18, less than 60 -> 22, less than 70 -> 29, less than 80 -> 38, less than 90 -> 45, less than 100 -> 53. (ii) More than type: more than or equal to 0 -> 53, more than or equal to 10 -> 48, more than or equal to 20 -> 45, more than or equal to 30 -> 41, more than or equal to 40 -> 38, more than or equal to 50 -> 35, more than or equal to 60 -> 31, more than or equal to 70 -> 24, more than or equal to 80 -> 15, more than or equal to 90 -> 8. (iii) n/2 = 26.5; the first less-than-type cumulative frequency reaching or exceeding 26.5 is 29, so the median class is 60-70.",
+     "s": [
+      [
+       "Correctly builds the less-than-type cumulative table",
+       1
+      ],
+      [
+       "Correctly builds the more-than-type cumulative table",
+       1
+      ],
+      [
+       "Correctly finds n/2 = 26.5 and identifies the median class as 60-70",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "assertion_reason",
+     "m": 1,
+     "q": "Assertion (A): For the 53-student marks data, the median class is 60-70. Reason (R): 60-70 is one of the ten class intervals into which the 53 students' marks have been grouped.",
+     "a": "Both A and R are true, but R is not the correct explanation of A",
+     "o": [
+      "Both A and R are true, but R is not the correct explanation of A",
+      "Both A and R are true, and R is the correct explanation of A",
+      "A is true, R is false",
+      "A is false, R is true"
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "multi_statement",
+     "m": 1,
+     "q": "Consider these statements about cumulative frequency. (I) The more-than-type cumulative frequency for 'more than or equal to X' always equals n minus the less-than-type cumulative frequency for 'less than X', since together they account for every observation exactly once. (II) The median class can be identified just as accurately by picking the class with the single highest ordinary (non-cumulative) frequency, without needing any cumulative frequencies at all. Which is or are correct?",
+     "a": "Only I",
+     "o": [
+      "Only I",
+      "Only II",
+      "Both I and II",
+      "Neither I nor II"
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hardest",
+     "t": "long_answer",
+     "m": 3,
+     "q": "A survey of 90 shoppers' spending (in Rs) is grouped into six classes of width 200 starting at 0-200, with less-than-type cumulative frequencies 10, 28, 52, 71, 84, 90. (i) Find the ordinary frequency of each of the six classes. (ii) Verify that these ordinary frequencies add up to 90. (iii) Using n/2, identify the median class.",
+     "a": "(i) Ordinary frequencies: 10 (0-200); 28-10=18 (200-400); 52-28=24 (400-600); 71-52=19 (600-800); 84-71=13 (800-1000); 90-84=6 (1000-1200). (ii) Sum = 10+18+24+19+13+6 = 90, matching the total. (iii) n/2 = 45; the first cumulative frequency reaching or exceeding 45 is 52, so the median class is 400-600.",
+     "s": [
+      [
+       "Correctly recovers all six ordinary frequencies (10, 18, 24, 19, 13, 6)",
+       1
+      ],
+      [
+       "Correctly verifies they sum to 90",
+       1
+      ],
+      [
+       "Correctly finds n/2 = 45 and identifies the median class as 400-600",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Evaluate",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "q": "A student argues: 'Since the modal class is the class with the highest frequency, and finding the median class also involves comparing frequencies, the median class and the modal class must always be the same class.' Evaluate this claim using the 53-student marks data (frequencies 5, 3, 4, 3, 3, 4, 7, 9, 7, 8 for classes 0-10 through 90-100), where the modal class is 70-80 but the median class is 60-70.",
+     "a": "The claim is false. The modal class depends only on which single class has the highest ordinary frequency (here, 70-80, frequency 9), while the median class depends on where the cumulative frequency crosses half the total (here, 60-70, since the running total first reaches 26.5 there). The 53-student data is itself a direct counterexample: the two classes are different (70-80 versus 60-70), so the two need not coincide in general.",
+     "s": [
+      [
+       "States the claim is false and correctly distinguishes what the modal class versus the median class each depend on",
+       1
+      ],
+      [
+       "Uses the chapter's own 53-student data as a valid counterexample (modal class 70-80, median class 60-70)",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Create",
+     "d": "Hardest",
+     "t": "long_answer",
+     "m": 3,
+     "q": "Construct your own less-than-type cumulative frequency table for a distribution of exactly 60 observations across five class intervals of equal width 10 (starting at 0-10), such that the median class is the third class (20-30). Show your cumulative frequencies and confirm your median class using n/2.",
+     "a": "Sample: less-than-type cumulative frequencies 8, 22, 35, 50, 60 for classes 0-10, 10-20, 20-30, 30-40, 40-50 (ordinary frequencies 8, 14, 13, 15, 10, summing to 60). n/2 = 30; the cumulative frequency after 10-20 is 22 (below 30), and after 20-30 it is 35 (at or above 30 for the first time), so the median class is 20-30, as required.",
+     "s": [
+      [
+       "Gives a valid cumulative frequency table for 60 observations across five classes of width 10",
+       1
+      ],
+      [
+       "Correctly derives ordinary frequencies that sum to 60",
+       1
+      ],
+      [
+       "Correctly confirms the median class is 20-30 using n/2 = 30 against the cumulative frequencies",
+       1
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "code": "C10M-13.5",
+   "name": "Median of Grouped Data: Formula and Applications",
+   "description": "Computing the median of grouped data from the median class using the formula Median = l + ((n/2 - cf)/f) * h, including solving for an unknown frequency when the median is given.",
+   "idea": "Once the median class is known, the median itself is pinned down by a formula that starts at the median class's lower limit and adds a fraction of the class width proportional to how far short the preceding cumulative frequency falls of half the total.",
+   "rule": "Median = l + ((n/2 - cf)/f) * h, where l = lower limit of the median class, n = total number of observations, cf = cumulative frequency of the class preceding the median class, f = frequency of the median class, h = class size.",
+   "example": "For 53 students' marks with median class 60-70 (l=60, cf=22, f=7, h=10, n=53): Median = 60 + ((26.5-22)/7)*10 = 60 + 45/7 = 66.4 (p. 193).",
+   "difficulty_base": "Hard",
+   "questions": [
+    {
+     "b": "Remember",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "In the median formula Median = l + ((n/2 - cf)/f) * h, the symbol cf stands for",
+     "a": "the cumulative frequency of the class preceding the median class",
+     "o": [
+      "the cumulative frequency of the class preceding the median class",
+      "the cumulative frequency of the median class itself",
+      "the total number of observations",
+      "the frequency of the median class"
+     ]
+    },
+    {
+     "b": "Remember",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "In the median formula, f stands for",
+     "a": "the frequency of the median class",
+     "o": [
+      "the frequency of the median class",
+      "the cumulative frequency of the median class",
+      "the frequency of the class preceding the median class",
+      "the total number of observations"
+     ]
+    },
+    {
+     "b": "Remember",
+     "d": "Easy",
+     "t": "fill_blank",
+     "m": 1,
+     "q": "In the median formula Median = l + ((n/2 - cf)/f) * h, the symbol h stands for the ____.",
+     "a": "class size (width of the median class)"
+    },
+    {
+     "b": "Remember",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "q": "Which of the following is NOT correct about the median formula for grouped data?",
+     "a": "The median is calculated using the mode's formula structure, l + ((f_1 - f_0)/(2*f_1 - f_0 - f_2)) * h, where f_1 is the frequency of the class containing the median",
+     "o": [
+      "The median is calculated using the mode's formula structure, l + ((f_1 - f_0)/(2*f_1 - f_0 - f_2)) * h, where f_1 is the frequency of the class containing the median",
+      "The median formula uses n/2 (half the total number of observations), not the raw frequencies of neighbouring classes",
+      "cf in the median formula is the cumulative frequency of the class immediately before the median class, not the median class's own cumulative frequency",
+      "The median class must first be identified (using cumulative frequency against n/2) before the formula can be applied"
+     ],
+     "rev": true
+    },
+    {
+     "b": "Understand",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "For 53 students' marks with median class 60-70 (l=60, cf=22, f=7, h=10, n=53), the value of n/2 to use in the formula is",
+     "a": "26.5",
+     "o": [
+      "26.5",
+      "53",
+      "27",
+      "22"
+     ]
+    },
+    {
+     "b": "Understand",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "For the same 53-student data (n/2=26.5, cf=22), the value of (n/2 - cf) is",
+     "a": "4.5",
+     "o": [
+      "4.5",
+      "4",
+      "48.5",
+      "-4.5"
+     ]
+    },
+    {
+     "b": "Understand",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "For 51 girls' heights with median class 145-150 (l=145, cf=11, f=18, h=5, n=51), the value of n/2 is",
+     "a": "25.5",
+     "o": [
+      "25.5",
+      "51",
+      "26",
+      "25"
+     ]
+    },
+    {
+     "b": "Understand",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "q": "For 53 students' marks, applying the median formula gives Median = 60 + ((26.5-22)/7) * 10, which equals",
+     "a": "66.4 (approximately)",
+     "o": [
+      "66.4 (approximately)",
+      "56.4 (approximately)",
+      "60.6 (approximately)",
+      "70"
+     ]
+    },
+    {
+     "b": "Understand",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "q": "State the formula for the median of grouped data, naming what each symbol represents.",
+     "a": "Median = l + ((n/2 - cf)/f) * h, where l is the lower limit of the median class, n is the total number of observations, cf is the cumulative frequency of the class preceding the median class, f is the frequency of the median class, and h is the class size.",
+     "s": [
+      [
+       "States the formula correctly",
+       1
+      ],
+      [
+       "Correctly names all five symbols (l, n, cf, f, h)",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "For 51 girls' heights (l=145, cf=11, f=18, h=5, n=51), the value of (n/2 - cf) is",
+     "a": "14.5",
+     "o": [
+      "14.5",
+      "14",
+      "36.5",
+      "7.25"
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Easy",
+     "t": "fill_blank",
+     "m": 1,
+     "q": "For 51 girls' heights, Median = 145 + (14.5/18) * 5 = 145 + ____ = 149.03 (approximately).",
+     "a": "4.03 (approximately)"
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "q": "For weights of 30 students with median class 55-60 (l=55, cf=13, f=6, h=5, n=30), the median weight is",
+     "a": "56.67 (approximately) kg",
+     "o": [
+      "56.67 (approximately) kg",
+      "51.67 (approximately) kg",
+      "56 kg",
+      "60 kg"
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "q": "For life-insurance policy-holders' ages with median class 35-40 (l=35, cf=45, f=33, h=5, n=100), find the median age.",
+     "a": "Median = 35 + ((50-45)/33) * 5 = 35 + 25/33 = 35 + 0.76 = 35.76 years (approximately).",
+     "s": [
+      [
+       "Correctly substitutes l=35, cf=45, f=33, h=5, n=100 into the formula",
+       1
+      ],
+      [
+       "Correctly computes the median as 35.76 years (approximately)",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "q": "For neon-lamp lifetimes with median class 3000-3500 (l=3000, cf=130, f=86, h=500, n=400), find the median lifetime.",
+     "a": "Median = 3000 + ((200-130)/86) * 500 = 3000 + (70/86) * 500 = 3000 + 406.98 = 3406.98 hours (approximately).",
+     "s": [
+      [
+       "Correctly substitutes l=3000, cf=130, f=86, h=500, n=400 into the formula",
+       1
+      ],
+      [
+       "Correctly computes the median as 3406.98 hours (approximately)",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hardest",
+     "t": "long_answer",
+     "m": 3,
+     "q": "For the monthly electricity consumption of 68 consumers, class intervals 65-85 through 185-205 (step 20) have respective frequencies 4, 5, 13, 20, 14, 8, 4. (i) Find the median class and the median. (ii) Find the mean using the direct method. (iii) Find the mode, and state which of the three measures is smallest.",
+     "a": "(i) Cumulative frequencies: 4, 9, 22, 42, 56, 64, 68; n/2=34, first to reach/exceed 34 is 42, so median class = 125-145; l=125, cf=22, f=20, h=20; Median = 125 + ((34-22)/20)*20 = 125+12 = 137. (ii) Class marks 75, 95, 115, 135, 155, 175, 195; sum of f_i*x_i = 9320; mean = 9320/68 = 137.06 (approximately). (iii) Modal class = 125-145 (highest frequency, 20); l=125, h=20, f_1=20, f_0=13, f_2=14; Mode = 125 + ((20-13)/(40-13-14))*20 = 125 + 140/13 = 125+10.77 = 135.77 (approximately). The mode (135.77) is the smallest of the three.",
+     "s": [
+      [
+       "Correctly finds the median class 125-145 and median = 137",
+       1
+      ],
+      [
+       "Correctly finds the mean = 137.06 (approximately)",
+       1
+      ],
+      [
+       "Correctly finds the mode = 135.77 (approximately) and identifies it as the smallest",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "assertion_reason",
+     "m": 1,
+     "q": "Assertion (A): For surnames data with median class 7-10 (l=7, cf=36, f=40, h=3, n=100), the median number of letters is 7.4. Reason (R): The median formula requires adding a correction term ((n/2-cf)/f)*h to the median class's lower limit, and this correction term is always non-negative whenever the median class has been identified correctly, since n/2 is never less than cf by the definition of the median class.",
+     "a": "A is false, R is true",
+     "o": [
+      "A is false, R is true",
+      "A is true, R is false",
+      "Both A and R are true, and R is the correct explanation of A",
+      "Both A and R are true, but R is not the correct explanation of A"
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "multi_statement",
+     "m": 1,
+     "q": "Consider these statements about the median formula. (I) The median formula can be applied directly to a 'less than' type cumulative frequency table without first recovering any ordinary class frequency. (II) Once the median class is identified, l, cf, f and h must all be read off correctly before substituting into the formula, or the computed median will be wrong. Which is or are correct?",
+     "a": "Only II",
+     "o": [
+      "Only II",
+      "Only I",
+      "Both I and II",
+      "Neither I nor II"
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hardest",
+     "t": "long_answer",
+     "m": 3,
+     "q": "For a distribution with class intervals 0-10, 10-20, 20-30, 30-40, 40-50, 50-60 and frequencies 5, x, 20, 15, y, 5 (total 60), the median is given as 28.5. (i) Identify the median class. (ii) Form and solve the median-formula equation to find x. (iii) Hence find y.",
+     "a": "(i) Since 28.5 falls between 20 and 30, the median class is 20-30, with l=20, h=10, f=20. (ii) cf before the median class = 5+x. n=60, n/2=30. Median formula: 28.5 = 20 + ((30-(5+x))/20)*10, so 8.5 = (25-x)/2, giving 17 = 25-x, so x = 8. (iii) Since 5+x+20+15+y+5=60, we get x+y=15, so y = 15-8 = 7.",
+     "s": [
+      [
+       "Correctly identifies the median class as 20-30",
+       1
+      ],
+      [
+       "Correctly sets up and solves the equation to find x = 8",
+       1
+      ],
+      [
+       "Correctly finds y = 7 using the total-frequency equation",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Evaluate",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "q": "A student computes the median of surnames data (median class 7-10, l=7, cf=36, f=40, h=3, n=100) as Median = 7 + ((50-36)/3) * 40, obtaining a value far larger than any surname length in the data. Evaluate what went wrong.",
+     "a": "The student swapped the positions of f and h in the formula: the correct formula is l + ((n/2-cf)/f)*h = 7 + (14/40)*3 = 8.05, dividing by f (=40, the median class's frequency) and multiplying by h (=3, the class size); the student instead divided by h and multiplied by f, which is why the answer came out implausibly large.",
+     "s": [
+      [
+       "Identifies that f and h have been swapped in the substitution",
+       1
+      ],
+      [
+       "States or implies the correct computation, median = 8.05 (approximately)",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Create",
+     "d": "Hardest",
+     "t": "long_answer",
+     "m": 3,
+     "q": "Construct your own grouped frequency distribution with five class intervals of equal width 20 (starting at 0-20), using whole-number frequencies totalling 50, such that the median falls exactly at 40 (the boundary between the second and third classes). Show your frequencies and the computation confirming the median is 40.",
+     "a": "Sample: frequencies 10, 15, 12, 8, 5 for classes 0-20, 20-40, 40-60, 60-80, 80-100 (sum = 50). Cumulative frequencies: 10, 25, 37, 45, 50. n/2 = 25; the class 40-60 is the first whose cumulative frequency (37) is greater than 25, with the preceding cumulative frequency exactly 25. Median = 40 + ((25-25)/12)*20 = 40 + 0 = 40, as required.",
+     "s": [
+      [
+       "Gives a valid frequency table of 50 observations across five classes of width 20",
+       1
+      ],
+      [
+       "Correctly identifies the median class as 40-60 with a preceding cumulative frequency of exactly 25",
+       1
+      ],
+      [
+       "Correctly shows the median computes to exactly 40",
+       1
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "code": "C10M-13.6",
+   "name": "Comparing Mean, Median and Mode; the Empirical Relationship",
+   "description": "Choosing the measure of central tendency (mean, median or mode) best suited to a given question or dataset, and using the approximate empirical relationship 3*Median = Mode + 2*Mean linking the three for a moderately skewed distribution.",
+   "idea": "The three measures of central tendency answer different questions -- the mean uses every value and suits overall comparison, the median names a typical middle value that resists extreme scores, and the mode names the single most frequent value -- and for a moderately skewed distribution they are linked by an approximate empirical relationship, not three independent, unrelated numbers.",
+   "rule": "The empirical relationship states 3 * Median = Mode + 2 * Mean (equivalently Mode = 3*Median - 2*Mean, or Mean = (3*Median - Mode)/2). This is an approximation for a moderately skewed distribution, not an exact identity, so a value estimated from it may differ from the value obtained by direct computation.",
+   "example": "For 30 students' marks data, mean=62 and mode=52 give an empirical estimate for the median of (52 + 2*62)/3 = 58.67, while the true median computed directly from the cumulative frequency table is 62.5 -- a visible gap that shows the relationship is only approximate (p. 183, p. 197).",
+   "difficulty_base": "Hard",
+   "questions": [
+    {
+     "b": "Remember",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "The empirical relationship between the three measures of central tendency for a moderately skewed distribution is",
+     "a": "3 * Median = Mode + 2 * Mean",
+     "o": [
+      "3 * Median = Mode + 2 * Mean",
+      "3 * Mean = Mode + 2 * Median",
+      "Median = Mode + 2 * Mean",
+      "3 * Median = Mode - 2 * Mean"
+     ]
+    },
+    {
+     "b": "Remember",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "Which measure of central tendency is most affected by a few extremely large or small values in the data?",
+     "a": "the mean",
+     "o": [
+      "the mean",
+      "the median",
+      "the mode",
+      "none of them are affected by extreme values"
+     ]
+    },
+    {
+     "b": "Remember",
+     "d": "Easy",
+     "t": "fill_blank",
+     "m": 1,
+     "q": "The measure of central tendency that identifies the single most frequently occurring value (or class) in the data is the ____.",
+     "a": "mode"
+    },
+    {
+     "b": "Remember",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "q": "Which of the following is NOT correct about the empirical relationship between mean, median and mode?",
+     "a": "The empirical relationship replaces the need for the median formula l + ((n/2-cf)/f) * h entirely, since 3 * Median = Mode + 2 * Mean always gives the exact true median once mean and mode are known",
+     "o": [
+      "The empirical relationship replaces the need for the median formula l + ((n/2-cf)/f) * h entirely, since 3 * Median = Mode + 2 * Mean always gives the exact true median once mean and mode are known",
+      "The relationship 3 * Median = Mode + 2 * Mean is approximate, and holds well mainly for moderately skewed distributions",
+      "The same relationship can be rearranged to estimate the mode from the mean and median, or the mean from the median and mode",
+      "For some datasets, the value estimated from this relationship can differ noticeably from the value obtained by direct computation"
+     ],
+     "rev": true
+    },
+    {
+     "b": "Understand",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "For comparing the average (mean) examination results of several different schools to judge overall performance, the most suitable measure of central tendency is",
+     "a": "the mean",
+     "o": [
+      "the mean",
+      "the median",
+      "the mode",
+      "the range"
+     ]
+    },
+    {
+     "b": "Understand",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "To find the most popular television programme being watched (the single most common choice among viewers), the most suitable measure of central tendency is",
+     "a": "the mode",
+     "o": [
+      "the mode",
+      "the mean",
+      "the median",
+      "the cumulative frequency"
+     ]
+    },
+    {
+     "b": "Understand",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "To find a 'typical' value such as the average wage in a country, where a few extremely high incomes could distort the mean, the most suitable measure of central tendency is",
+     "a": "the median",
+     "o": [
+      "the median",
+      "the mean",
+      "the mode",
+      "none of these; only a graph can show this"
+     ]
+    },
+    {
+     "b": "Understand",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "q": "If five classes have frequencies 20, 25, 20, 21, 18 and a sixth, very different class has frequency 2, which measure of central tendency would be least reliable as a representative of the data, according to this chapter's own discussion?",
+     "a": "the mean, since it would be pulled away from the way most of the data behaves",
+     "o": [
+      "the mean, since it would be pulled away from the way most of the data behaves",
+      "the median, since it always ignores extreme classes",
+      "the mode, since it only depends on the highest frequency",
+      "the cumulative frequency, since it is not a measure of central tendency at all"
+     ]
+    },
+    {
+     "b": "Understand",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "q": "State one situation (different from any given in the chapter) where the mode would be the most appropriate measure of central tendency, and explain why.",
+     "a": "Sample: finding the most common shoe size sold in a shop in a month. The mode is appropriate because the shop owner cares about the single most frequently occurring size, to decide what to stock more of -- not the average size (which may not even be a size that is sold) or the middle size (which does not indicate popularity).",
+     "s": [
+      [
+       "Gives a genuine, sensible real-life situation needing the 'most frequent' value",
+       1
+      ],
+      [
+       "Correctly explains why the mode (not mean or median) fits that situation",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "If the mean of a moderately skewed distribution is 42 and the mode is 36, the empirical relationship estimates the median as",
+     "a": "40",
+     "o": [
+      "40",
+      "39",
+      "42",
+      "36"
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Easy",
+     "t": "fill_blank",
+     "m": 1,
+     "q": "If the median of a moderately skewed distribution is 30 and the mean is 32, the empirical relationship 3 * Median = Mode + 2 * Mean estimates the mode as 3(30) - 2(32) = 90 - 64 = ____.",
+     "a": "26"
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "q": "For hospital patients' ages data with mean 35.375 and mode 36.82 (approximately), the empirical relationship estimates the median as",
+     "a": "35.86 (approximately)",
+     "o": [
+      "35.86 (approximately)",
+      "36.10 (approximately)",
+      "35.38 (approximately)",
+      "36.82 (approximately)"
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "q": "For 30 students' marks, the mean is 62 and the mode is 52. Use the empirical relationship to estimate the median.",
+     "a": "Using 3 * Median = Mode + 2 * Mean: 3 * Median = 52 + 2(62) = 52 + 124 = 176, so Median = 176/3 = 58.67 (approximately).",
+     "s": [
+      [
+       "Correctly substitutes mode=52 and mean=62 into the empirical relationship",
+       1
+      ],
+      [
+       "Correctly computes the estimated median as 58.67 (approximately)",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "q": "The true median of 30 students' marks data, computed directly from the cumulative frequency table (class intervals 10-25 through 85-100 with frequencies 2, 3, 7, 6, 6, 6), is 62.5. Compare this to the empirical estimate of 58.67 found from the mean (62) and mode (52), and state the size of the gap between them.",
+     "a": "The gap is 62.5 - 58.67 = 3.83 (approximately). The empirical estimate (58.67) is noticeably lower than the true median (62.5), confirming that the empirical relationship is only an approximation and can differ from the value obtained by direct computation.",
+     "s": [
+      [
+       "Correctly computes the gap as approximately 3.83",
+       1
+      ],
+      [
+       "Correctly concludes that the relationship is approximate and can genuinely differ from the true value",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hardest",
+     "t": "long_answer",
+     "m": 3,
+     "q": "For hospital patients' ages data (class intervals 5-15 through 55-65, step 10; frequencies 6, 11, 21, 23, 14, 5): the mean is 35.375 and the mode is 36.82 (approximately). (i) Use the empirical relationship to estimate the median. (ii) Separately, the true median computed directly from the cumulative frequency table works out to 35.87 (approximately). Compare the two values. (iii) Based on both this example and the 30-students'-marks example of this chapter (where the empirical estimate was 58.67 against a true median of 62.5), what general conclusion can you draw about how reliable the empirical relationship is?",
+     "a": "(i) 3 * Median = 36.82 + 2(35.375) = 36.82 + 70.75 = 107.57, Median = 107.57/3 = 35.86 (approximately). (ii) The empirical estimate (35.86) is extremely close to the true median (35.87) here, differing by only about 0.01. (iii) The empirical relationship can be very accurate for some distributions (as in this data) but noticeably off for others (as in the marks example, off by about 3.83); it is a useful quick approximation but not a reliable substitute for computing the median directly from the cumulative frequency table when precision matters.",
+     "s": [
+      [
+       "Correctly computes the empirical estimate as 35.86 (approximately)",
+       1
+      ],
+      [
+       "Correctly compares it to the true median 35.87 and notes they are very close",
+       1
+      ],
+      [
+       "Draws a correct general conclusion that the relationship's accuracy varies and is not a reliable substitute for direct computation",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "assertion_reason",
+     "m": 1,
+     "q": "Assertion (A): The empirical relationship 3 * Median = Mode + 2 * Mean generally gives only an approximate value for whichever quantity is being estimated. Reason (R): The relationship is derived as a general approximation for moderately skewed distributions, not as an algebraic identity that follows automatically from the definitions of the mean, median and mode.",
+     "a": "Both A and R are true, and R is the correct explanation of A",
+     "o": [
+      "Both A and R are true, and R is the correct explanation of A",
+      "Both A and R are true, but R is not the correct explanation of A",
+      "A is true, R is false",
+      "A is false, R is true"
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "multi_statement",
+     "m": 1,
+     "q": "Consider these statements about comparing measures of central tendency. (I) The mean should always be preferred over the median and mode, because it is the most commonly used measure of central tendency. (II) The choice between mean, median and mode should depend on the specific question being asked and the nature of the data, such as whether extreme values are present. Which is or are correct?",
+     "a": "Only II",
+     "o": [
+      "Only II",
+      "Only I",
+      "Both I and II",
+      "Neither I nor II"
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hardest",
+     "t": "long_answer",
+     "m": 3,
+     "q": "A company records the monthly salaries (in Rs) of its 20 employees. Nineteen earn between Rs 20,000 and Rs 30,000, while the owner earns Rs 500,000. (i) Explain what would happen to the mean salary if the owner's salary is included, compared to excluding it. (ii) State whether the median salary would be similarly affected by including the owner's salary. (iii) Recommend, with a reason, which measure (mean or median) better represents 'what a typical employee earns' here.",
+     "a": "(i) Including the owner's very high salary would pull the mean salary up sharply, far above what most employees actually earn. (ii) The median would be barely affected, since it depends only on the middle value(s) of the ordered data, and the owner's salary would simply become the single largest value at one end without shifting the middle. (iii) The median better represents a typical employee's earnings here, because it is not distorted by the one extreme value (the owner's salary), unlike the mean.",
+     "s": [
+      [
+       "Correctly explains the mean would be pulled up sharply by the one extreme salary",
+       1
+      ],
+      [
+       "Correctly explains the median would be barely affected",
+       1
+      ],
+      [
+       "Correctly recommends the median with a valid reason tied to resistance to extreme values",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Evaluate",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "q": "A student claims: 'Since 3 * Median = Mode + 2 * Mean is a proven formula, I can always use it to find the exact median instead of using the cumulative frequency formula, and save time.' Evaluate this claim, referring to the size of the gap seen in the 30-students'-marks example of this chapter (empirical estimate 58.67 versus true median 62.5).",
+     "a": "The claim is false. The relationship is an approximate empirical pattern observed for moderately skewed distributions, not a proven exact formula; the marks example itself shows a gap of about 3.83 between the empirical estimate (58.67) and the true median (62.5), which is large enough to matter in many practical situations. The cumulative-frequency-based median formula remains the reliable, exact method.",
+     "s": [
+      [
+       "States the claim is false and correctly characterises the relationship as approximate, not an exact formula",
+       1
+      ],
+      [
+       "Supports this using the actual gap from the marks example (about 3.83) as evidence",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Create",
+     "d": "Hardest",
+     "t": "long_answer",
+     "m": 3,
+     "q": "Describe a real-life data collection scenario (different from any in this chapter) where you would expect the mean, median and mode to be noticeably different from one another, and explain in one line each why each of the three measures would behave the way you describe.",
+     "a": "Sample: the amount of money carried by 100 people walking through a train station. Most people carry small amounts (say Rs 100-500), while a few business travellers carry very large amounts (Rs 20,000 or more). Mean: pulled up well above what most people carry, because it is sensitive to the few very large amounts. Median: stays close to the typical small amount most people carry, since it depends only on the middle value. Mode: reflects the single most common amount carried (likely a small, round figure), which may be lower than or close to the median but well below the mean.",
+     "s": [
+      [
+       "Gives a genuine, sensible real-life scenario likely to produce differing mean/median/mode",
+       1
+      ],
+      [
+       "Correctly explains why the mean would differ (sensitivity to extreme/skewed values)",
+       1
+      ],
+      [
+       "Correctly explains how the median and/or mode would behave differently from the mean, with valid reasoning",
+       1
+      ]
+     ]
+    }
+   ]
+  }
+ ]
+}
