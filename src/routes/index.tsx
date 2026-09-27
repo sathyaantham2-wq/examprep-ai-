@@ -11,6 +11,7 @@ import {
 import { Input } from '../components/ui/input'
 import { Label } from '../components/ui/label'
 import { ThemeToggle } from '../components/theme-toggle'
+import { InstallAppBanner } from '../components/install-app-banner'
 import { signIn, signOut, signUp, useSession } from '../lib/auth-client'
 
 export const Route = createFileRoute('/')({ component: Home })
@@ -161,10 +162,12 @@ function Home() {
       </div>
       <div className="w-full max-w-sm">
         <h1 className="text-display mb-2 text-center">ExamPrep AI</h1>
-        <p className="text-body text-muted-foreground mb-8 text-center">
+        <p className="text-body text-muted-foreground mb-6 text-center">
           Find out which marks she lost because she didn't know it — and which
           because she stopped writing too early.
         </p>
+
+        <InstallAppBanner className="mb-6" />
 
         <Card>
           <CardHeader>

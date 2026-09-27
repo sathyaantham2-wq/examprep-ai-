@@ -47,11 +47,44 @@ export const Route = createRootRoute({
       {
         title: 'ExamPrep AI',
       },
+      // Installable as a PWA (F009-adjacent, no dedicated F-number -- see chat/commit for the
+      // 2026-09-27 request): theme-color and the apple-* tags are what let a browser's install UI
+      // and iOS's "Add to Home Screen" pick up the right colour and app name, on top of the
+      // manifest link below.
+      {
+        name: 'theme-color',
+        content: '#4338ca',
+      },
+      {
+        name: 'apple-mobile-web-app-capable',
+        content: 'yes',
+      },
+      {
+        name: 'apple-mobile-web-app-title',
+        content: 'ExamPrep AI',
+      },
+      {
+        name: 'apple-mobile-web-app-status-bar-style',
+        content: 'default',
+      },
     ],
     links: [
       {
         rel: 'stylesheet',
         href: appCss,
+      },
+      {
+        rel: 'manifest',
+        href: '/manifest.webmanifest',
+      },
+      {
+        rel: 'icon',
+        href: '/favicon-32.png',
+        type: 'image/png',
+      },
+      {
+        rel: 'apple-touch-icon',
+        href: '/apple-touch-icon.png',
       },
     ],
   }),
