@@ -1,0 +1,2046 @@
+{
+ "subject": {
+  "code": "MATH10",
+  "name": "Mathematics",
+  "board": "CBSE",
+  "class": 10
+ },
+ "source": {
+  "publisher": "NCERT",
+  "title": "Mathematics",
+  "edition": "Textbook for Class X, Reprint 2026-27",
+  "year": 2026
+ },
+ "chapter": {
+  "part": "I",
+  "chapter_no": 11,
+  "name": "Areas Related to Circles",
+  "blurb": "A circle's own area, pi r^2, is old news by Class 10 -- this chapter asks a sharper question: what is the area of just a wedge of that circle, or just the sliver cut off by a straight chord? The chapter opens by naming the two regions precisely -- a sector (bounded by two radii and an arc) and a segment (bounded by a chord and an arc) -- each with a smaller 'minor' and a larger 'major' version, then derives both the sector's area and its arc's length by the unitary method: whatever fraction the sector's angle is of a full 360-degree turn, that same fraction of the full circle's area or circumference belongs to the sector. A segment's area follows as a sector's area minus a triangle's, worked out either directly (when the central angle is 60 or 90 degrees) or, in general, by dropping a perpendicular from the centre and reaching for sine and cosine. The chapter closes with an unusually dense run of real-world sectors and segments packed into a single exercise: a grazing horse, a car's wipers, a lighthouse's warning beam, a brooch's spokes, an umbrella's ribs, and a table cover's inscribed hexagon of 'designs'.",
+  "source_code": "jemh111",
+  "order_index": 11
+ },
+ "scope_in": [
+  {
+   "item": "Define the sector of a circle (the region enclosed by two radii and the corresponding arc) and the segment of a circle (the region enclosed by a chord and the corresponding arc), and distinguish the minor and major sector, and the minor and major segment, including the convention that 'sector' and 'segment' alone mean the minor one unless stated otherwise",
+   "pages": "154"
+  },
+  {
+   "item": "Identify the angle of a sector (the angle at the centre between its two radii), and use the fact that the major sector's angle is 360 degrees minus the minor sector's angle",
+   "pages": "154"
+  },
+  {
+   "item": "Derive, by the unitary method from the full circle's area (pi r^2) and circumference (2 pi r) at 360 degrees, and apply the formulas for the area of a sector of angle theta -- (theta/360) x pi x r^2 -- and the length of the arc of that sector -- (theta/360) x 2 x pi x r",
+   "pages": "155"
+  },
+  {
+   "item": "Use the complementary relation that the major sector's area equals pi x r^2 minus the minor sector's area, including via the alternative direct formula that uses the major sector's own angle, 360 minus theta",
+   "pages": "155-156"
+  },
+  {
+   "item": "Find the area of a segment of a circle as (area of the sector) minus (area of the triangle formed by the chord and the two radii), and use the complementary relation that the major segment's area equals pi x r^2 minus the minor segment's area",
+   "pages": "156"
+  },
+  {
+   "item": "Find the area of the triangle inside a segment for a general central angle by drawing the perpendicular from the centre to the chord, using RHS congruence to show it bisects both the chord and the central angle, and applying trigonometric ratios of the half-angle",
+   "pages": "157-158"
+  },
+  {
+   "item": "Find the area of the triangle inside a segment directly, without trigonometry, when the central angle is 90 degrees (a right triangle formed by the two radii) or 60 degrees (an equilateral triangle, since the chord then equals the radius)",
+   "pages": "158-159"
+  },
+  {
+   "item": "Recognise 'quadrant' (a sector of angle 90 degrees) as a term used without re-definition, assumed known from earlier classes",
+   "pages": "158"
+  },
+  {
+   "item": "Solve real-world word problems that combine sector or segment areas by addition (identical non-overlapping sectors), subtraction (a change in radius at a fixed angle), or direct application at an unusual scale",
+   "pages": "158-159"
+  },
+  {
+   "item": "Recognise that several equally spaced radii, diameters or ribs divide a circle into that many congruent sectors, and find the area of one sector, the total wire/edge length of such a figure, or the combined area of several congruent segment-shaped 'designs' formed by a regular polygon inscribed in the circle, together with a cost found from a given rate per unit area",
+   "pages": "159"
+  }
+ ],
+ "scope_out": [
+  {
+   "item": "Areas of combinations of plane figures (finding the area of a shape formed by combining two or more standard plane figures such as squares, rectangles, triangles and circles or semicircles, e.g. a flower-bed design, a running track, or a shape with a circular cap)",
+   "reason": "This chapter, as rationalised in the current edition, contains only section 11.1 ('Areas of Sector and Segment of a Circle') before going straight to the Summary, itself renumbered 11.2; the book's own Contents page (p. xii) lists no further section between 11.1 and the Summary at p. 160, and the chapter runs exactly 7 printed pages (154-160). The older 'Areas of Combination of Plane Figures' section, present in earlier editions of this book, has been removed entirely from this edition -- confirmed against the Contents page and by the chapter's own extracted text, which moves directly from Exercise 11.1's Q14 to the Summary."
+  },
+  {
+   "item": "Surface areas or volumes of any three-dimensional solid (cylinder, cone, sphere, hemisphere, or a combination of solids)",
+   "reason": "That is chapter 12, 'Surface Areas and Volumes', beginning at printed page 161 per the book's own Contents page; this chapter is confined throughout to plane (2-D) regions -- sectors, segments and the triangles inside them."
+  },
+  {
+   "item": "Tangents to a circle, the number of tangents from a point, or any circle theorem involving a tangent",
+   "reason": "That is chapter 10, 'Circles' (printed pages 144-153); every sector and segment computation in this chapter depends only on the radius and the central angle, and no example or exercise question anywhere in this chapter's 7 pages mentions a tangent."
+  },
+  {
+   "item": "Deriving the area of a circle (pi r^2) or its circumference (2 pi r) from first principles",
+   "reason": "The chapter opens by stating 'You know that area of a circle... is pi r^2' (p. 155) as already-established prior knowledge, and builds the sector and arc formulas on top of it by the unitary method; it never re-derives the circle's own area or circumference formula."
+  },
+  {
+   "item": "Finding the area of a segment or sector for a central angle other than 30, 45, 60, 90 or 120 degrees, or any angle requiring a trigonometric ratio beyond those of 0, 30, 45, 60 and 90 degrees",
+   "reason": "Every worked example and every exercise question in this chapter uses only central angles solvable with the standard-angle trigonometric ratios taught in chapter 8 (0, 30, 45, 60, 90 degrees); no other angle value is used anywhere in the chapter to compute a segment's triangle area."
+  },
+  {
+   "item": "Radian measure of an angle",
+   "reason": "Every angle in this chapter's running text and every exercise question is given and used in degrees; the chapter never introduces or uses radians."
+  },
+  {
+   "item": "The compact trigonometric formula Area of triangle = (1/2) x r^2 x sin(theta) for the triangle inside a segment",
+   "reason": "The chapter's own method (Example 2) always proceeds by explicitly drawing the perpendicular from the centre, applying RHS congruence, and using the sine/cosine of the half-angle rather than citing this combined formula directly; the compact form itself never appears anywhere in the chapter's text."
+  },
+  {
+   "item": "Constructing a sector or segment with compass and ruler (as opposed to calculating its area or arc length)",
+   "reason": "This chapter is entirely about calculating areas and arc lengths from a given radius and angle; it contains no construction exercise, and the separate, construction-focused chapter present in earlier editions of this book was itself removed in the same rationalisation that removed the combination-of-plane-figures section."
+  }
+ ],
+ "concepts": [
+  {
+   "code": "C10M-11.1",
+   "name": "Sector and segment of a circle: definitions and terms",
+   "description": "The sector of a circle -- the region enclosed by two radii and the corresponding arc -- and the segment of a circle -- the region enclosed by a chord and the corresponding arc; the minor and major versions of each (the smaller and larger of the two regions the two radii, or the chord, divide the circle into); and the angle of a sector (the angle at the centre between its two bounding radii), including the fact that the major sector's angle is 360 degrees minus the minor sector's angle.",
+   "idea": "A sector always has the centre as one of its bounding points (via the two radii), while a segment never does -- a segment is cut off entirely by a straight chord that need not pass through the centre. Unless a question says otherwise, 'sector' and 'segment' by themselves mean the minor one.",
+   "rule": "Sector: the region bounded by two radii OA, OB and the arc between them; its angle is angle AOB. Segment: the region bounded by a chord AB and the arc between A and B. Both come in a minor (smaller) and major (larger) version; angle of major sector = 360 degrees - angle of minor sector.",
+   "example": "In Fig. 11.1, shaded region OAPB (bounded by radii OA, OB and the minor arc APB) is the minor sector, and OAQB is the major sector. In Fig. 11.2, shaded region APB (bounded by chord AB and the minor arc) is the minor segment, and AQB is the major segment (p. 154).",
+   "difficulty_base": "Easy",
+   "questions": [
+    {
+     "b": "Remember",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "The portion of a circular region enclosed by two radii and the corresponding arc is called a",
+     "a": "sector of the circle",
+     "o": [
+      "sector of the circle",
+      "segment of the circle",
+      "a chord of the circle",
+      "an arc of the circle"
+     ]
+    },
+    {
+     "b": "Remember",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "The portion of a circular region enclosed by a chord and its corresponding arc is called a",
+     "a": "segment of the circle",
+     "o": [
+      "segment of the circle",
+      "sector of the circle",
+      "a diameter of the circle",
+      "the circumference of the circle"
+     ]
+    },
+    {
+     "b": "Remember",
+     "d": "Easy",
+     "t": "fill_blank",
+     "m": 1,
+     "q": "In a sector OAPB of a circle with centre O, the angle AOB is called the ____ of the sector.",
+     "a": "angle"
+    },
+    {
+     "b": "Remember",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "rev": true,
+     "q": "Which of the following is NOT correct about sectors and segments of a circle?",
+     "a": "The angle of a sector is found using the formula (theta/360) x 2 x pi x r",
+     "o": [
+      "The angle of a sector is found using the formula (theta/360) x 2 x pi x r",
+      "A sector is the region enclosed by two radii and the corresponding arc",
+      "A segment is the region enclosed by a chord and the corresponding arc",
+      "Unless stated otherwise, 'sector' and 'segment' refer to the minor sector and minor segment"
+     ]
+    },
+    {
+     "b": "Understand",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "In Fig. 11.1 of the chapter, shaded region OAPB (bounded by two radii and the minor arc) is called the",
+     "a": "minor sector",
+     "o": [
+      "minor sector",
+      "major sector",
+      "minor segment",
+      "major segment"
+     ]
+    },
+    {
+     "b": "Understand",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "In Fig. 11.2 of the chapter, the unshaded region AQB, bounded by the chord AB and the major arc, is called the",
+     "a": "major segment",
+     "o": [
+      "major segment",
+      "minor segment",
+      "major sector",
+      "minor sector"
+     ]
+    },
+    {
+     "b": "Understand",
+     "d": "Easy",
+     "t": "fill_blank",
+     "m": 1,
+     "q": "If angle AOB (the angle of the minor sector) measures 70 degrees, the angle of the corresponding major sector measures ____ degrees.",
+     "a": "290"
+    },
+    {
+     "b": "Understand",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "q": "A pizza is cut by two straight cuts from the centre to the edge, and you are given the smaller of the two resulting pieces. Which part of the circular pizza does your piece correspond to?",
+     "a": "the minor sector",
+     "o": [
+      "the minor sector",
+      "the minor segment",
+      "the major sector",
+      "the major segment"
+     ]
+    },
+    {
+     "b": "Understand",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "q": "A circular cake is cut once, straight across (not through the centre), and you are given the smaller of the two pieces. Name the region this piece represents, and explain in one line why it is not a sector.",
+     "a": "It is the minor segment; it is not a sector because a straight cut across the cake (a chord) is not through the centre, so the piece is bounded by a chord and an arc, not by two radii and an arc.",
+     "s": [
+      [
+       "States the piece is the minor segment",
+       1
+      ],
+      [
+       "Explains it is not a sector because it is bounded by a chord (not two radii) and an arc",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "In a circle with centre O, angle AOB = 145 degrees is the angle of the minor sector OAPB. What is the angle of the major sector OAQB?",
+     "a": "215 degrees",
+     "o": [
+      "215 degrees",
+      "145 degrees",
+      "180 degrees",
+      "325 degrees"
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Easy",
+     "t": "fill_blank",
+     "m": 1,
+     "q": "A chord divides the interior of a circle into the minor segment and the ____.",
+     "a": "major segment"
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "q": "In a circle of radius 9 cm, the minor sector's angle is 80 degrees. What is the degree measure of the angle of the major sector?",
+     "a": "280 degrees",
+     "o": [
+      "280 degrees",
+      "180 degrees",
+      "80 degrees",
+      "260 degrees"
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "q": "The major sector of a circle has an angle of 250 degrees. Find the angle of the corresponding minor sector, and state which of the two sectors -- major or minor -- has the smaller area.",
+     "a": "The minor sector's angle is 110 degrees (360 - 250). The minor sector also has the smaller area, since for a fixed radius a sector's area increases as its angle increases, and 110 is less than 250.",
+     "s": [
+      [
+       "Computes the minor sector's angle as 110 degrees",
+       1
+      ],
+      [
+       "States the minor sector has the smaller area, with reasoning tied to the angle",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "q": "A circular table top is divided by two radii into two sectors, one of angle 132 degrees and the other of angle 228 degrees. Since 132 + 228 = 360, these two sectors together make up",
+     "a": "the whole circle, with the 228-degree piece being the major sector",
+     "o": [
+      "the whole circle, with the 228-degree piece being the major sector",
+      "the whole circle, with the 132-degree piece being the major sector",
+      "only the major sector, not the whole circle",
+      "two separate circles"
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hardest",
+     "t": "long_answer",
+     "m": 3,
+     "q": "A circular brooch has two straight pins from its centre to its rim, splitting it into two sectors whose angles are in the ratio 2:7. (i) Find the angle of each sector. (ii) State which one is the minor sector. (iii) If a chord is now drawn joining the two ends of the pins on the rim (not through the centre), name the two NEW regions this chord creates, using the correct sector/segment terms.",
+     "a": "(i) The two angles are (2/9) x 360 = 80 degrees and (7/9) x 360 = 280 degrees. (ii) The 80-degree sector is the minor sector, since it is smaller than the other one (and smaller than 180 degrees). (iii) The chord creates a minor segment and a major segment, not sectors, since the new regions are bounded by the chord and an arc, not by two radii and an arc.",
+     "s": [
+      [
+       "Correctly finds the two angles as 80 and 280 degrees",
+       1
+      ],
+      [
+       "Correctly names the 80-degree sector as the minor sector",
+       1
+      ],
+      [
+       "Correctly names the new regions as the minor segment and major segment, with reasoning",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "assertion_reason",
+     "m": 1,
+     "q": "Assertion (A): A circle can itself be regarded as a sector of angle 360 degrees. Reason (R): The sector's defining angle, angle AOB, may take any value up to and including 360 degrees, and at exactly 360 degrees the two radii OA and OB coincide, so the 'sector' becomes the whole circular disc.",
+     "a": "Both A and R are true, and R is the correct explanation of A",
+     "o": [
+      "Both A and R are true, and R is the correct explanation of A",
+      "Both A and R are true, but R is not the correct explanation of A",
+      "A is true, R is false",
+      "A is false, R is true"
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "multi_statement",
+     "m": 1,
+     "q": "Consider these statements about sectors and segments. (I) The minor sector and the major sector of a circle together make up the whole circular region, without overlapping in area. (II) A sector can be formed by a chord and an arc, just like a segment. (III) Unless the question says otherwise, the word 'segment' by itself means the minor segment. Which is or are correct?",
+     "a": "Only I and III",
+     "o": [
+      "Only I and III",
+      "Only II",
+      "Only I",
+      "All of these"
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hardest",
+     "t": "long_answer",
+     "m": 3,
+     "q": "Two sectors of the same circle (centre O, radius r) have angles 55 degrees and 125 degrees; they are not adjacent to each other and do not overlap. (i) What angle would the region covering the rest of the circle (everything not in either of these two sectors) have? (ii) Is this remaining region necessarily a single sector? Explain in one line. (iii) If instead only a single chord (no second cut) were drawn, into how many segment-type regions would the circle be divided?",
+     "a": "(i) 360 - 55 - 125 = 180 degrees. (ii) Not necessarily a single sector -- it is one single sector only if the two given sectors are adjacent to each other around the centre with no gap between them; if they sit in separate parts of the circle, the remaining 180 degrees of angle is split into two separate wedge-shaped sectors, not one. (iii) Exactly two: the minor segment and the major segment.",
+     "s": [
+      [
+       "Computes the remaining angle as 180 degrees",
+       1
+      ],
+      [
+       "Explains it need not be a single sector, with adjacency reasoning",
+       1
+      ],
+      [
+       "States a single chord gives exactly two segments",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Evaluate",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "q": "A student says: 'Since a chord AB divides a circle into a minor segment and a major segment, and two radii OA, OB divide it into a minor sector and a major sector, a circle can only ever be divided into exactly two regions.' Evaluate this claim.",
+     "a": "The claim is false. A circle can be divided into more than two regions -- for example, several radii drawn from the centre divide it into as many sectors as radii used, and combinations of chords can create even more regions; the two-region split only holds for the single specific case of one chord, or one pair of radii.",
+     "s": [
+      [
+       "States the claim is false",
+       1
+      ],
+      [
+       "Gives a correct counter-example showing more than two regions are possible",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Create",
+     "d": "Hardest",
+     "t": "long_answer",
+     "m": 3,
+     "q": "Design your own real-life example (different from any in this chapter) of an object naturally divided into a minor sector and a major sector by two straight cuts from a central point, and a second, different real-life example of an object naturally divided into a minor segment and a major segment by a single straight cut. For each, briefly say what plays the role of the two radii (or the chord).",
+     "a": "Sample: (1) Sector example -- a round wall clock's face with its two hands stopped at, say, the 12 and the 4, splits its circular face into two sectors; the two hands play the role of the two radii OA and OB. (2) Segment example -- a circular mirror mounted so that a straight shelf edge crosses in front of part of it, not through its centre, splits the visible mirror into two segments; the straight shelf edge plays the role of the chord AB. (Any two genuine, distinct, correctly reasoned real-life examples are acceptable.)",
+     "s": [
+      [
+       "Gives a valid original sector example with the radii role identified",
+       1
+      ],
+      [
+       "Gives a valid original segment example with the chord role identified",
+       1
+      ],
+      [
+       "Both examples are original, not copied from the chapter, and internally consistent",
+       1
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "code": "C10M-11.2",
+   "name": "Area of a sector and length of an arc of a circle",
+   "description": "The formulas, derived by the unitary method from the full circle's own area (pi x r^2) and circumference (2 x pi x r) at 360 degrees, for the area of a sector of angle theta -- (theta/360) x pi x r^2 -- and for the length of the arc of that same sector -- (theta/360) x 2 x pi x r; and the complementary relation that the major sector's area equals pi x r^2 minus the minor sector's area.",
+   "idea": "Both the sector's area and its arc's length are simply the full circle's corresponding quantity (pi x r^2, or 2 x pi x r) scaled down by the same fraction, theta/360, that the sector's angle is of a full 360-degree turn.",
+   "rule": "Area of the sector of angle theta = (theta/360) x pi x r^2. Length of the arc of a sector of angle theta = (theta/360) x 2 x pi x r, where r is the radius and theta is the sector's angle in degrees. Area of major sector = pi x r^2 - area of the minor sector.",
+   "example": "A sector of angle 30 degrees in a circle of radius 4 cm (pi = 3.14) has area (30/360) x 3.14 x 16 = 4.19 cm^2 (approx), and the corresponding major sector has area 3.14 x 16 - 4.19 = 46.1 cm^2 (approx) (Example 1, p. 156).",
+   "difficulty_base": "Easy",
+   "questions": [
+    {
+     "b": "Remember",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "The formula for the area of a sector of a circle with radius r and angle theta (in degrees) is",
+     "a": "(theta/360) x pi x r^2",
+     "o": [
+      "(theta/360) x pi x r^2",
+      "(theta/360) x 2 x pi x r",
+      "(theta/180) x pi x r^2",
+      "theta x pi x r^2"
+     ]
+    },
+    {
+     "b": "Remember",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "The formula for the length of an arc of a sector with radius r and angle theta (in degrees) is",
+     "a": "(theta/360) x 2 x pi x r",
+     "o": [
+      "(theta/360) x 2 x pi x r",
+      "(theta/360) x pi x r^2",
+      "(theta/360) x pi x r",
+      "(theta/180) x 2 x pi x r"
+     ]
+    },
+    {
+     "b": "Remember",
+     "d": "Easy",
+     "t": "fill_blank",
+     "m": 1,
+     "q": "The area of a full circle of radius r, regarded as a sector of angle ____ degrees, is pi x r^2.",
+     "a": "360"
+    },
+    {
+     "b": "Remember",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "rev": true,
+     "q": "Which of the following is NOT a correct fact about the area of a sector or the length of an arc?",
+     "a": "The area of a segment of a circle, like the area of a sector, is found directly from (theta/360) x pi x r^2 alone, with no further subtraction needed",
+     "o": [
+      "The area of a segment of a circle, like the area of a sector, is found directly from (theta/360) x pi x r^2 alone, with no further subtraction needed",
+      "The area of the major sector equals pi x r^2 minus the area of the minor sector",
+      "The length of an arc and the area of its sector are both directly proportional to the sector's angle theta, for a fixed radius",
+      "A quadrant of a circle is a sector whose angle is 90 degrees"
+     ]
+    },
+    {
+     "b": "Understand",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "For a fixed radius, if the angle of a sector is doubled, its area",
+     "a": "doubles",
+     "o": [
+      "doubles",
+      "stays the same",
+      "is halved",
+      "is squared"
+     ]
+    },
+    {
+     "b": "Understand",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "A quadrant of a circle is a sector whose angle is",
+     "a": "90 degrees",
+     "o": [
+      "90 degrees",
+      "60 degrees",
+      "180 degrees",
+      "45 degrees"
+     ]
+    },
+    {
+     "b": "Understand",
+     "d": "Easy",
+     "t": "short_answer",
+     "m": 2,
+     "q": "Using the formula, explain why the area of a sector with angle 180 degrees is exactly half the area of the full circle.",
+     "a": "Area = (180/360) x pi x r^2 = (1/2) x pi x r^2, which is exactly half of the full circle's area pi x r^2, because 180/360 simplifies to 1/2.",
+     "s": [
+      [
+       "Substitutes theta = 180 into the sector-area formula",
+       1
+      ],
+      [
+       "Simplifies 180/360 to 1/2 and concludes it is half the circle",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Understand",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "q": "In Example 1 of the chapter (r = 4 cm, angle 30 degrees, pi = 3.14), the area of the sector was found to be approximately 4.19 cm^2. Which single number in the formula (theta/360) x pi x r^2 is responsible for turning the full circle's area (50.24 cm^2) into this much smaller sector area?",
+     "a": "the fraction theta/360, i.e. 30/360",
+     "o": [
+      "the fraction theta/360, i.e. 30/360",
+      "pi, i.e. 3.14",
+      "r^2, i.e. 16",
+      "the unit cm^2"
+     ]
+    },
+    {
+     "b": "Understand",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "q": "A circle of radius r is cut into a sector of angle theta and a second, adjacent sector making up the rest of the circle. If theta = 40 degrees, what is the angle of the second sector, and which of the two is the major sector?",
+     "a": "320 degrees; the second sector is the major sector",
+     "o": [
+      "320 degrees; the second sector is the major sector",
+      "320 degrees; the first (40-degree) sector is the major sector",
+      "40 degrees; the second sector is the major sector",
+      "400 degrees; the second sector is the major sector"
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Easy",
+     "t": "short_answer",
+     "m": 2,
+     "q": "Find the area of a sector of a circle with radius 7 cm if the angle of the sector is 90 degrees. (Use pi = 22/7)",
+     "a": "38.5 cm^2.",
+     "s": [
+      [
+       "Sets up (90/360) x (22/7) x 49",
+       1
+      ],
+      [
+       "Simplifies to 38.5 cm^2",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Easy",
+     "t": "fill_blank",
+     "m": 1,
+     "q": "The length of an arc of a sector with radius 21 cm and angle 60 degrees (using pi = 22/7) is ____ cm.",
+     "a": "22"
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "q": "Find the area of a sector of a circle with radius 21 cm if the angle of the sector is 60 degrees. (Use pi = 22/7)",
+     "a": "231 cm^2.",
+     "s": [
+      [
+       "Sets up (60/360) x (22/7) x 441",
+       1
+      ],
+      [
+       "Simplifies to 231 cm^2",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "q": "The circumference of a circle is 22 cm. Find the radius, and hence the area of a quadrant of this circle. (Use pi = 22/7)",
+     "a": "Radius = 3.5 cm; area of the quadrant = 9.625 cm^2.",
+     "s": [
+      [
+       "Finds r = 3.5 cm from 2 x pi x r = 22",
+       1
+      ],
+      [
+       "Finds the quadrant's area as (1/4) x (22/7) x 3.5^2 = 9.625 cm^2",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "q": "The minute hand of a clock is 14 cm long. Find the area swept by the minute hand in 5 minutes. (Use pi = 22/7)",
+     "a": "154/3 cm^2, approximately 51.33 cm^2.",
+     "s": [
+      [
+       "Finds the angle swept in 5 minutes is 30 degrees (5/60 of 360)",
+       1
+      ],
+      [
+       "Computes (30/360) x (22/7) x 196 = 154/3, approximately 51.33 cm^2",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hardest",
+     "t": "long_answer",
+     "m": 3,
+     "q": "A circle has radius 4 cm. Find the area of a sector of angle 30 degrees (use pi = 3.14), and hence find the area of the corresponding major sector two different ways: (i) by subtracting the minor sector's area from the full circle's area, and (ii) by using the major sector's own angle directly in the sector-area formula. Confirm both methods agree.",
+     "a": "(i) Minor sector area = (30/360) x 3.14 x 16 = 4.19 cm^2 (approx); circle area = 3.14 x 16 = 50.24 cm^2; major sector = 50.24 - 4.19 = 46.05, about 46.1 cm^2. (ii) Major sector's angle = 360 - 30 = 330 degrees; area = (330/360) x 3.14 x 16 = 46.05 cm^2, about 46.1 cm^2. Both methods agree.",
+     "s": [
+      [
+       "Correctly finds the minor sector (4.19 cm^2) and subtracts to get 46.1 cm^2",
+       1
+      ],
+      [
+       "Correctly recomputes using 330 degrees directly to also get 46.1 cm^2",
+       1
+      ],
+      [
+       "Explicitly confirms the two methods agree",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "assertion_reason",
+     "m": 1,
+     "q": "Assertion (A): Doubling the radius of a circle, while keeping a sector's angle theta fixed, doubles the sector's area. Reason (R): In the sector-area formula (theta/360) x pi x r^2, the area depends on r^2, so scaling the radius by a factor k scales the area by a factor of k^2.",
+     "a": "A is false, R is true",
+     "o": [
+      "A is false, R is true",
+      "A is true, R is false",
+      "Both A and R are true, and R is the correct explanation of A",
+      "Both A and R are true, but R is not the correct explanation of A"
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "multi_statement",
+     "m": 1,
+     "q": "Consider these statements. (I) For a fixed radius, a sector's area is directly proportional to its angle theta. (II) A quadrant of a circle of radius r has area (pi x r^2)/4. (III) The length of an arc of a sector depends only on the sector's angle theta, not on the circle's radius. Which is or are correct?",
+     "a": "Only I and II",
+     "o": [
+      "Only I and II",
+      "Only I",
+      "Only III",
+      "All of these"
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hardest",
+     "t": "long_answer",
+     "m": 3,
+     "q": "A circle of radius 14 cm is divided by three radii, drawn from the centre, into three sectors with angles in the ratio 2:3:4. (i) Find the angle of each of the three sectors. (ii) Find the area of the smallest of the three sectors. (Use pi = 22/7) (iii) Without computing the other two areas individually, explain how you know the largest sector's area is exactly double the smallest sector's area.",
+     "a": "(i) The three angles are (2/9) x 360 = 80, (3/9) x 360 = 120, and (4/9) x 360 = 160 degrees. (ii) The smallest sector has angle 80 degrees; its area = (80/360) x (22/7) x 196 = 1232/9, approximately 136.89 cm^2. (iii) Since area is directly proportional to the angle theta for a fixed radius, and the largest angle (160 degrees) is exactly double the smallest angle (80 degrees), the largest sector's area must also be exactly double the smallest sector's area, without needing to compute it separately.",
+     "s": [
+      [
+       "Correctly finds the three angles as 80, 120 and 160 degrees",
+       1
+      ],
+      [
+       "Correctly computes the smallest sector's area as approximately 136.89 cm^2",
+       1
+      ],
+      [
+       "Correctly explains the doubling relationship via direct proportionality",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Evaluate",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "q": "A student computes the area of a sector with radius 10 cm and angle 45 degrees as follows: Area = (45/360) x pi x 10 = 1.25 x pi. Evaluate this working.",
+     "a": "The working is incorrect. The formula needs r^2 (radius squared), not r; the student used r = 10 instead of r^2 = 100. The correct area is (45/360) x pi x 100 = 12.5 x pi cm^2 (about 39.27 cm^2, using pi = 22/7).",
+     "s": [
+      [
+       "Identifies the error as using r instead of r^2",
+       1
+      ],
+      [
+       "Gives the corrected area, 12.5 x pi cm^2 (about 39.27 cm^2)",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Create",
+     "d": "Hardest",
+     "t": "long_answer",
+     "m": 3,
+     "q": "Make up your own sector problem: choose a radius and an angle (not copied from any example or exercise in this chapter), state the value of pi you will use, then solve for both the sector's area and its arc length, showing your working for each.",
+     "a": "Sample: radius 28 cm, angle 45 degrees, pi = 22/7. Sector area = (45/360) x (22/7) x 784 = (1/8) x 2464 = 308 cm^2. Arc length = (45/360) x 2 x (22/7) x 28 = (1/8) x 176 = 22 cm. (Any self-consistent original radius, angle and pi choice, correctly worked through both formulas, is acceptable.)",
+     "s": [
+      [
+       "Chooses an original radius, angle and pi, and correctly computes the sector's area",
+       1
+      ],
+      [
+       "Correctly computes the arc length for the same values",
+       1
+      ],
+      [
+       "Both original, not copied from the chapter, and internally consistent",
+       1
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "code": "C10M-11.3",
+   "name": "Area of a segment of a circle: the general method",
+   "description": "The area of a segment as (area of the sector) minus (area of the triangle formed by the two radii and the chord); the complementary relation that the major segment's area equals pi x r^2 minus the minor segment's area; and the general method for finding that triangle's area when the central angle is not a special shortcut case -- drawing the perpendicular OM from the centre to the chord, using RHS congruence to show triangle AMO is congruent to triangle BMO (so M bisects both the chord and the angle at the centre), and then using trigonometric ratios of the half-angle to find OM and AM.",
+   "idea": "Dropping a perpendicular from the centre to a chord always creates two congruent right triangles, because the two radii to the chord's ends are equal (RHS); this is what turns an awkward isosceles triangle into two easy right triangles that ordinary trigonometric ratios can handle.",
+   "rule": "Area of the segment = Area of the sector - Area of the triangle formed by the chord and the two radii. Area of major segment = pi x r^2 - area of the minor segment. To find the triangle's area in general: draw OM perpendicular to chord AB; by RHS congruence, triangle AMO is congruent to triangle BMO, so angle AOM = angle BOM = half of angle AOB; then OM = r x cos(half-angle) and AM = r x sin(half-angle), giving AB = 2 x AM and triangle area = (1/2) x AB x OM.",
+   "example": "For a chord subtending 120 degrees in a circle of radius 21 cm (pi = 22/7): sector area = 462 cm^2; OM = 21 x cos 60 degrees = 10.5 cm, AM = 21 x sin 60 degrees = 10.5 x square root of 3 cm, so the triangle's area is 441 x square root of 3 / 4 cm^2, and the segment's area is (462 - 441 x square root of 3 / 4) cm^2, approximately 271.05 cm^2 (Example 2, p. 157-158).",
+   "difficulty_base": "Hard",
+   "questions": [
+    {
+     "b": "Remember",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "The area of a segment of a circle is found by",
+     "a": "subtracting the area of the triangle formed by the two radii and the chord from the area of the sector",
+     "o": [
+      "subtracting the area of the triangle formed by the two radii and the chord from the area of the sector",
+      "adding the area of the triangle to the area of the sector",
+      "subtracting the area of the sector from the area of the triangle",
+      "multiplying the area of the sector by the area of the triangle"
+     ]
+    },
+    {
+     "b": "Remember",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "In the chapter's method for finding the area of a segment when the central angle is not a special case like 60 or 90 degrees, a perpendicular is drawn from",
+     "a": "the centre of the circle to the chord",
+     "o": [
+      "the centre of the circle to the chord",
+      "one end of the chord to the other end",
+      "the centre of the circle to the midpoint of the arc",
+      "one radius to the other radius"
+     ]
+    },
+    {
+     "b": "Remember",
+     "d": "Easy",
+     "t": "fill_blank",
+     "m": 1,
+     "q": "Area of major segment = pi x r^2 minus the area of the ____ segment.",
+     "a": "minor"
+    },
+    {
+     "b": "Remember",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "rev": true,
+     "q": "Which of the following is NOT correct about finding the area of a segment of a circle?",
+     "a": "The area of a segment can be found directly from (theta/360) x pi x r^2, the same formula used for a sector, with no triangle involved",
+     "o": [
+      "The area of a segment can be found directly from (theta/360) x pi x r^2, the same formula used for a sector, with no triangle involved",
+      "The perpendicular from the centre to the chord bisects both the chord and the angle at the centre",
+      "The area of the major segment equals pi x r^2 minus the area of the minor segment",
+      "Finding the triangle's area is a necessary step when computing a segment's area by this method"
+     ]
+    },
+    {
+     "b": "Understand",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "In the chapter's Example 2, after drawing OM perpendicular to chord AB, triangle AMO is shown congruent to triangle BMO. Which congruence rule is used?",
+     "a": "RHS (Right angle - Hypotenuse - Side)",
+     "o": [
+      "RHS (Right angle - Hypotenuse - Side)",
+      "SSS",
+      "ASA",
+      "SAS"
+     ]
+    },
+    {
+     "b": "Understand",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "Because triangle AMO is congruent to triangle BMO (by RHS) in the segment-area method, point M must be the",
+     "a": "midpoint of the chord AB",
+     "o": [
+      "midpoint of the chord AB",
+      "midpoint of the arc AB",
+      "centre of the circle",
+      "midpoint of the radius OA"
+     ]
+    },
+    {
+     "b": "Understand",
+     "d": "Easy",
+     "t": "short_answer",
+     "m": 2,
+     "q": "In the segment-area method, once triangle AMO is shown congruent to triangle BMO, explain why angle AOM equals half of angle AOB.",
+     "a": "Since the two triangles are congruent, their corresponding angles AOM and BOM are equal; and since together AOM and BOM make up the whole angle AOB, each of them must be exactly half of angle AOB.",
+     "s": [
+      [
+       "States AOM = BOM follows from the congruence",
+       1
+      ],
+      [
+       "Explains they together equal AOB so each is half",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Understand",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "q": "For a chord subtending 120 degrees at the centre, after drawing the perpendicular OM, what is the measure of angle AOM?",
+     "a": "60 degrees",
+     "o": [
+      "60 degrees",
+      "120 degrees",
+      "30 degrees",
+      "90 degrees"
+     ]
+    },
+    {
+     "b": "Understand",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "q": "Once OM and AM are both found using trigonometric ratios in the segment-area method, the area of triangle OAB is computed as",
+     "a": "(1/2) x AB x OM, i.e. half the base AB times the height OM",
+     "o": [
+      "(1/2) x AB x OM, i.e. half the base AB times the height OM",
+      "(1/2) x OA x OB, using the two radii as base and height directly",
+      "OM x AM, without the factor of one-half",
+      "(1/2) x OM x OM, using OM twice"
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Easy",
+     "t": "fill_blank",
+     "m": 1,
+     "q": "In Example 2 (radius 21 cm, angle AOB = 120 degrees), the perpendicular distance OM from the centre to the chord AB works out to ____ cm.",
+     "a": "10.5"
+    },
+    {
+     "b": "Apply",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "In Example 2, AM (half of chord AB) is found using the ratio",
+     "a": "sin 60 degrees = AM / OA",
+     "o": [
+      "sin 60 degrees = AM / OA",
+      "cos 60 degrees = AM / OA",
+      "sin 60 degrees = OM / OA",
+      "tan 60 degrees = AM / OM"
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "q": "A chord of a circle of radius 12 cm subtends an angle of 120 degrees at the centre. Using the perpendicular-from-centre method, find OM (the distance from the centre to the chord).",
+     "a": "OM = 6 cm (since OM = 12 x cos 60 degrees = 12 x 0.5 = 6).",
+     "s": [
+      [
+       "Correctly identifies the half-angle as 60 degrees and sets up OM = 12 x cos 60 degrees",
+       1
+      ],
+      [
+       "Correctly computes OM = 6 cm",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "q": "For the same circle as above (radius 12 cm, chord subtending 120 degrees), find the length of the chord AB.",
+     "a": "AB = 12 x square root of 3 cm (since AM = 12 x sin 60 degrees = 6 x square root of 3, and AB = 2 x AM).",
+     "s": [
+      [
+       "Correctly finds AM = 12 x sin 60 degrees = 6 x square root of 3",
+       1
+      ],
+      [
+       "Correctly doubles to get AB = 12 x square root of 3 cm",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "q": "A chord of a circle of radius 14 cm subtends an angle of 120 degrees at the centre. Find the area of the triangle formed by the chord and the two radii. (Use square root of 3 = 1.73)",
+     "a": "Area = 49 x square root of 3 cm^2 = 84.77 cm^2 (approx).",
+     "s": [
+      [
+       "Correctly sets up OM = 7, AM = 7 x square root of 3, AB = 14 x square root of 3",
+       1
+      ],
+      [
+       "Correctly computes area = (1/2) x 14 x square root of 3 x 7 = 49 x square root of 3 = 84.77 cm^2",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hardest",
+     "t": "long_answer",
+     "m": 3,
+     "q": "A chord of a circle of radius 21 cm subtends an angle of 120 degrees at the centre (as in the chapter's Example 2, but now using pi = 3.14 and square root of 3 = 1.73 instead of pi = 22/7). Find (i) the area of the sector, (ii) the area of the triangle OAB, and (iii) the area of the minor segment.",
+     "a": "(i) Sector area = (120/360) x 3.14 x 441 = 461.58 cm^2 (approx). (ii) Triangle area = 441 x square root of 3 / 4 = 441 x 1.73 / 4 = 190.73 cm^2 (approx). (iii) Segment area = 461.58 - 190.73 = 270.85 cm^2 (approx).",
+     "s": [
+      [
+       "Correctly computes the sector area as approximately 461.58 cm^2 using pi = 3.14",
+       1
+      ],
+      [
+       "Correctly computes the triangle area as approximately 190.73 cm^2 using square root of 3 = 1.73",
+       1
+      ],
+      [
+       "Correctly subtracts to get the segment area, approximately 270.85 cm^2",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "assertion_reason",
+     "m": 1,
+     "q": "Assertion (A): In Example 2, the length AM is found using sin 60 degrees rather than cos 60 degrees. Reason (R): In the same example, the radius of the circle is given as 21 cm and the angle AOB is given as 120 degrees.",
+     "a": "Both A and R are true, but R is not the correct explanation of A",
+     "o": [
+      "Both A and R are true, but R is not the correct explanation of A",
+      "Both A and R are true, and R is the correct explanation of A",
+      "A is true, R is false",
+      "A is false, R is true"
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "multi_statement",
+     "m": 1,
+     "q": "Consider these statements. (I) The perpendicular from the centre to a chord always passes through a point outside the circle. (II) By RHS congruence, the perpendicular from the centre to a chord bisects the chord. (III) The area of the triangle formed by two radii and a chord can be computed as (1/2) x base x height, using the chord as the base and the perpendicular distance from the centre as the height. Which is or are correct?",
+     "a": "Only II and III",
+     "o": [
+      "Only II and III",
+      "Only I and II",
+      "Only III",
+      "All of these"
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hardest",
+     "t": "long_answer",
+     "m": 3,
+     "q": "A chord of a circle of radius 10 cm subtends an angle of 120 degrees at the centre. (i) Find OM, the perpendicular distance from the centre to the chord, using cos 60 degrees = 0.5. (ii) Find the length of the chord AB, using sin 60 degrees = square root of 3 / 2. (iii) A classmate says: 'Since the angle at the centre is 120 degrees, and the perpendicular splits it into two 60-degree halves, the chord AB must be exactly twice as long as OM.' Is this reasoning valid? Justify using your answers to (i) and (ii).",
+     "a": "(i) OM = 10 x cos 60 degrees = 10 x 0.5 = 5 cm. (ii) AM = 10 x sin 60 degrees = 5 x square root of 3 cm, so AB = 2 x AM = 10 x square root of 3 cm, approximately 17.32 cm. (iii) The reasoning is not valid: AB (about 17.32 cm) is not twice OM (which would be 10 cm) -- AB and OM come from two different trigonometric ratios of the same half-angle (sine and cosine), not from a simple factor of two.",
+     "s": [
+      [
+       "Correctly computes OM = 5 cm",
+       1
+      ],
+      [
+       "Correctly computes AB = 10 x square root of 3 cm, approximately 17.32 cm",
+       1
+      ],
+      [
+       "Correctly rejects the classmate's claim with numeric justification",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Evaluate",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "q": "To find the area of the segment cut off by a chord subtending 120 degrees at the centre of a circle of radius 9 cm, a student writes: 'Area of segment = Area of triangle OAB - Area of sector OAB.' Evaluate this working.",
+     "a": "The order is incorrect. The segment's area is the sector's area minus the triangle's area (the sector is the larger region, containing the segment plus the extra triangular sliver), not the other way around; the student has the subtraction backwards.",
+     "s": [
+      [
+       "Identifies that the subtraction is backwards",
+       1
+      ],
+      [
+       "Correctly states segment = sector - triangle, not triangle - sector",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Create",
+     "d": "Hardest",
+     "t": "long_answer",
+     "m": 3,
+     "q": "Make up your own segment problem where the chord subtends 120 degrees at the centre: choose a radius (not copied from the chapter), state whether you will use pi = 22/7 or pi = 3.14 (and the matching square-root-of-3 value if needed), and solve fully for the segment's area, showing the sector area, the triangle area, and the final subtraction.",
+     "a": "Sample: radius 7 cm, pi = 22/7, square root of 3 = 1.73. Sector area = (120/360) x (22/7) x 49 = 154/3, approximately 51.33 cm^2. For the triangle: OM = 7 x cos 60 degrees = 3.5 cm, AM = 7 x sin 60 degrees = 3.5 x square root of 3 cm, AB = 7 x square root of 3 cm, triangle area = (1/2) x 7 x square root of 3 x 3.5 = 12.25 x square root of 3, approximately 21.19 cm^2. Segment area = 51.33 - 21.19 = 30.14 cm^2 (approx). (Any self-consistent original radius and pi/square-root-of-3 choice, correctly worked through all three parts, is acceptable.)",
+     "s": [
+      [
+       "Chooses an original radius and pi convention and correctly computes the sector area",
+       1
+      ],
+      [
+       "Correctly computes the triangle area using the perpendicular method",
+       1
+      ],
+      [
+       "Correctly subtracts for the segment area, original and internally consistent",
+       1
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "code": "C10M-11.4",
+   "name": "Area of a segment at standard angles (60, 90 degrees): shortcut triangle formulas",
+   "description": "Two special cases where the triangle inside a segment can be found directly, without drawing a perpendicular or using trigonometry: when the chord subtends 90 degrees at the centre, the two radii themselves are perpendicular, giving a simple right triangle of area (1/2) x r^2; and when the chord subtends 60 degrees, the isosceles triangle of two radii and equal base angles becomes fully equilateral (all sides equal r), giving area (square root of 3 / 4) x r^2.",
+   "idea": "These are not new formulas so much as the same 'sector minus triangle' idea applied at a shortcut angle, where the triangle's shape is already familiar (right-angled, or equilateral) so its area can be written down directly.",
+   "rule": "For a chord subtending 90 degrees at the centre: triangle area = (1/2) x r x r = r^2/2 (the two radii are the base and height). For a chord subtending 60 degrees at the centre: the triangle is equilateral with side r, so triangle area = (square root of 3 / 4) x r^2. In both cases, segment area = sector area - triangle area, exactly as in the general method.",
+   "example": "A chord of a circle of radius 10 cm subtending a right angle at the centre (pi = 3.14) has minor segment area = 78.5 - 50 = 28.5 cm^2 (Exercise 11.1, Q4). A chord of a circle of radius 15 cm subtending 60 degrees (pi = 3.14, square root of 3 = 1.73) has minor segment area = 117.75 - 97.3125 = 20.4375 cm^2 (Exercise 11.1, Q6).",
+   "difficulty_base": "Hard",
+   "questions": [
+    {
+     "b": "Remember",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "When a chord subtends an angle of 60 degrees at the centre of a circle, the triangle formed by the chord and the two radii is",
+     "a": "equilateral (all three sides equal)",
+     "o": [
+      "equilateral (all three sides equal)",
+      "right-angled",
+      "isosceles but not equilateral",
+      "scalene"
+     ]
+    },
+    {
+     "b": "Remember",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "When a chord subtends a right angle (90 degrees) at the centre of a circle, the triangle formed by the chord and the two radii is",
+     "a": "right-angled, with the right angle at the centre",
+     "o": [
+      "right-angled, with the right angle at the centre",
+      "equilateral",
+      "right-angled, with the right angle on the chord",
+      "isosceles but not right-angled"
+     ]
+    },
+    {
+     "b": "Remember",
+     "d": "Easy",
+     "t": "fill_blank",
+     "m": 1,
+     "q": "The area of an equilateral triangle with side length r is (square root of 3 / 4) x ____.",
+     "a": "r^2"
+    },
+    {
+     "b": "Remember",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "rev": true,
+     "q": "Which of the following is NOT correct about finding a segment's area at these two special angles?",
+     "a": "For a chord subtending 90 degrees, you must still draw the perpendicular from the centre and use trigonometric ratios of a half-angle to find the triangle's area, just as for 120 degrees",
+     "o": [
+      "For a chord subtending 90 degrees, you must still draw the perpendicular from the centre and use trigonometric ratios of a half-angle to find the triangle's area, just as for 120 degrees",
+      "For a chord subtending 60 degrees, the triangle formed is equilateral, with area (square root of 3 / 4) x r^2",
+      "For a chord subtending 90 degrees, the triangle's area is (1/2) x r^2, using the two radii as base and height",
+      "In both the 60-degree and 90-degree cases, the segment's area is still the sector's area minus the triangle's area"
+     ]
+    },
+    {
+     "b": "Understand",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "For a chord subtending 90 degrees at the centre of a circle of radius r, the two radii OA and OB serve as the triangle's",
+     "a": "base and height (since they are perpendicular to each other at O)",
+     "o": [
+      "base and height (since they are perpendicular to each other at O)",
+      "two equal sides of an equilateral triangle",
+      "hypotenuse and one leg",
+      "the chord itself"
+     ]
+    },
+    {
+     "b": "Understand",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "For a chord subtending 60 degrees at the centre of a circle of radius r, the length of the chord AB itself equals",
+     "a": "r, the same as the radius",
+     "o": [
+      "r, the same as the radius",
+      "2r, twice the radius",
+      "r x square root of 3",
+      "r/2"
+     ]
+    },
+    {
+     "b": "Understand",
+     "d": "Easy",
+     "t": "short_answer",
+     "m": 2,
+     "q": "Explain why the triangle formed by a chord subtending 60 degrees at the centre and the two radii is equilateral, rather than just isosceles.",
+     "a": "The two radii OA and OB are equal (both equal r), making the triangle isosceles, so its two base angles are equal; since the three angles of a triangle sum to 180 degrees and the apex angle is 60 degrees, each base angle is (180-60)/2 = 60 degrees too -- so all three angles are 60 degrees, which makes the triangle equilateral (and hence the chord AB also equals r).",
+     "s": [
+      [
+       "Explains the triangle is isosceles from OA = OB, and computes the base angles as 60 degrees each",
+       1
+      ],
+      [
+       "Concludes all three angles equal 60 degrees, so the triangle is equilateral",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Understand",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "q": "Which of these is the fastest correct way to find the area of the triangle formed by a chord subtending 90 degrees at the centre, of a circle with radius 9 cm?",
+     "a": "(1/2) x 9 x 9 = 40.5 cm^2, directly, with no trigonometry needed",
+     "o": [
+      "(1/2) x 9 x 9 = 40.5 cm^2, directly, with no trigonometry needed",
+      "Drop a perpendicular from the centre and use sin 45 degrees and cos 45 degrees, since 90 divided by 2 is 45",
+      "(square root of 3 / 4) x 9^2, since it is a special angle",
+      "9 x 9 = 81 cm^2, using the two radii multiplied together"
+     ]
+    },
+    {
+     "b": "Understand",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "q": "A chord subtends 60 degrees at the centre of a circle of radius 8 cm. What is the length of this chord?",
+     "a": "8 cm",
+     "o": [
+      "8 cm",
+      "4 cm",
+      "8 x square root of 3 cm",
+      "16 cm"
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Easy",
+     "t": "short_answer",
+     "m": 2,
+     "q": "A chord of a circle of radius 6 cm subtends an angle of 90 degrees at the centre. Find the area of the triangle formed by the chord and the two radii.",
+     "a": "18 cm^2 (since area = (1/2) x 6 x 6 = 18).",
+     "s": [
+      [
+       "Sets up (1/2) x 6 x 6",
+       1
+      ],
+      [
+       "Computes 18 cm^2",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Easy",
+     "t": "fill_blank",
+     "m": 1,
+     "q": "A chord of a circle of radius 4 cm subtends an angle of 60 degrees at the centre. Using square root of 3 = 1.73, the area of the triangle formed is (square root of 3 / 4) x 16 = ____ cm^2 (to 2 decimal places).",
+     "a": "6.92"
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "q": "A chord of a circle of radius 10 cm subtends a right angle at the centre. Find the area of the minor segment. (Use pi = 3.14)",
+     "a": "28.5 cm^2 (sector area 78.5 cm^2 minus triangle area 50 cm^2).",
+     "s": [
+      [
+       "Correctly computes the sector area as (90/360) x 3.14 x 100 = 78.5 cm^2",
+       1
+      ],
+      [
+       "Correctly computes the triangle area as (1/2) x 10 x 10 = 50 cm^2, giving segment 28.5 cm^2",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "q": "For the same circle as above (radius 10 cm, right angle at the centre), find the area of the major sector.",
+     "a": "235.5 cm^2 (full circle 314 cm^2 minus minor sector 78.5 cm^2).",
+     "s": [
+      [
+       "Correctly computes the full circle's area as 3.14 x 100 = 314 cm^2",
+       1
+      ],
+      [
+       "Correctly subtracts to get the major sector, 235.5 cm^2",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "q": "A chord of a circle of radius 15 cm subtends an angle of 60 degrees at the centre. Find the area of the minor segment. (Use pi = 3.14 and square root of 3 = 1.73)",
+     "a": "20.4375 cm^2, about 20.44 cm^2 (sector area 117.75 cm^2 minus triangle area 97.3125 cm^2).",
+     "s": [
+      [
+       "Correctly computes the sector area as (60/360) x 3.14 x 225 = 117.75 cm^2",
+       1
+      ],
+      [
+       "Correctly computes the equilateral triangle's area as (1.73/4) x 225 = 97.3125 cm^2, giving segment approximately 20.44 cm^2",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hardest",
+     "t": "long_answer",
+     "m": 3,
+     "q": "A chord of a circle of radius 15 cm subtends an angle of 60 degrees at the centre (Use pi = 3.14 and square root of 3 = 1.73). Find (i) the area of the minor segment, (ii) the area of the major segment, and (iii) verify that your two answers add up to the full circle's area.",
+     "a": "(i) Minor segment = 117.75 - 97.3125 = 20.4375, about 20.44 cm^2. (ii) Major segment = pi x r^2 - minor segment = 706.5 - 20.4375 = 686.0625, about 686.06 cm^2. (iii) 20.4375 + 686.0625 = 706.5 cm^2, which equals pi x r^2 = 3.14 x 225 = 706.5 cm^2, confirming the two segments together make up the full circle.",
+     "s": [
+      [
+       "Correctly computes the minor segment, approximately 20.44 cm^2",
+       1
+      ],
+      [
+       "Correctly computes the major segment, approximately 686.06 cm^2",
+       1
+      ],
+      [
+       "Correctly verifies the sum equals the full circle's area, 706.5 cm^2",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "assertion_reason",
+     "m": 1,
+     "q": "Assertion (A): For a chord subtending 60 degrees at the centre, the triangle formed has the same area formula as an equilateral triangle. Reason (R): Any triangle with one angle equal to 60 degrees is automatically equilateral.",
+     "a": "A is true, R is false",
+     "o": [
+      "A is true, R is false",
+      "A is false, R is true",
+      "Both A and R are true, and R is the correct explanation of A",
+      "Both A and R are true, but R is not the correct explanation of A"
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "multi_statement",
+     "m": 1,
+     "q": "Consider these statements. (I) For a chord subtending 90 degrees at the centre, the triangle's area can be found without using trigonometric ratios. (II) For a chord subtending 60 degrees at the centre, the chord is always longer than the radius. (III) The formula (square root of 3 / 4) x (side)^2 gives the area of any equilateral triangle, regardless of context. Which is or are correct?",
+     "a": "Only I and III",
+     "o": [
+      "Only I and III",
+      "Only II",
+      "Only I",
+      "All of these"
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hardest",
+     "t": "long_answer",
+     "m": 3,
+     "q": "A chord of a circle of radius 10 cm subtends 60 degrees at the centre, and a second, different chord of the same circle subtends 90 degrees at the centre. (i) Which of the two chords is longer? (Use square root of 2 = 1.414 to compare numerically.) (ii) Which of the two triangles (formed by each chord with the two radii) has the larger area? (Use square root of 3 = 1.73.) Justify using your numbers.",
+     "a": "(i) The chord subtending 90 degrees is longer: it equals 10 x square root of 2 = 14.14 cm, while the chord subtending 60 degrees equals the radius, 10 cm exactly. (ii) The 90-degree triangle has the larger area: its area is (1/2) x 10 x 10 = 50 cm^2, while the 60-degree (equilateral) triangle's area is (square root of 3 / 4) x 100 = 25 x 1.73 = 43.25 cm^2; 50 is greater than 43.25.",
+     "s": [
+      [
+       "Correctly finds both chord lengths and identifies the 90-degree chord as longer",
+       1
+      ],
+      [
+       "Correctly finds both triangle areas",
+       1
+      ],
+      [
+       "Correctly identifies the 90-degree triangle as larger, with numeric justification",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Evaluate",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "q": "A student argues: 'A chord subtending 60 degrees always cuts off a smaller segment than a chord subtending 90 degrees, in the same circle, simply because 60 is a smaller angle than 90.' Evaluate this claim for a circle of radius 10 cm, using pi = 3.14 and square root of 3 = 1.73.",
+     "a": "The claim's conclusion happens to be correct here, but not simply 'because 60 is smaller than 90' -- both the sector area and the triangle area change with the angle, so the two effects must actually be compared. 60-degree minor segment = 52.33 - 43.25 = 9.08 cm^2 (approx); 90-degree minor segment = 78.5 - 50 = 28.5 cm^2. Since 9.08 is less than 28.5, the 60-degree segment is indeed smaller here, but this needs the actual computation, not the angle comparison alone.",
+     "s": [
+      [
+       "Correctly computes both segment areas numerically",
+       1
+      ],
+      [
+       "Evaluates the claim as numerically true here but critiques the incomplete reasoning behind it",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Create",
+     "d": "Hardest",
+     "t": "long_answer",
+     "m": 3,
+     "q": "Make up your own segment problem using one of the two special angles (60 degrees or 90 degrees), with a radius not copied from this chapter, and solve it fully using the appropriate shortcut (no perpendicular-drop or trigonometry needed) -- show the sector area, the triangle area, and the segment area.",
+     "a": "Sample: radius 20 cm, angle 90 degrees, pi = 3.14. Sector area = (90/360) x 3.14 x 400 = 314 cm^2. Triangle area = (1/2) x 20 x 20 = 200 cm^2. Segment area = 314 - 200 = 114 cm^2. (Any self-consistent original radius and angle choice from 60 or 90 degrees, correctly worked through all three parts using the direct shortcut, is acceptable.)",
+     "s": [
+      [
+       "Chooses an original radius and one of the two special angles, correctly computes the sector area",
+       1
+      ],
+      [
+       "Correctly computes the triangle area via the direct shortcut",
+       1
+      ],
+      [
+       "Correctly subtracts for the segment area, original and consistent",
+       1
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "code": "C10M-11.5",
+   "name": "Combining and comparing sector areas in real-world problems",
+   "description": "Using addition, subtraction, or direct application of the sector-area formula to solve real-world problems: adding the areas of two or more identical, non-overlapping sector-shaped regions (such as two car wipers); finding the increase or decrease in a sector-shaped area when only the radius changes and the angle stays fixed (such as an animal's grazing area when its rope is lengthened); and applying the same formula directly at an unusual real-world scale (such as a lighthouse's beam over the sea, measured in kilometres).",
+   "idea": "The sector-area formula itself never changes; what changes in these problems is recognising, from the real-world description, what plays the role of the radius and the angle, and whether the situation calls for adding two areas, subtracting one from another, or just reading off a single area.",
+   "rule": "Total area of several identical, non-overlapping sectors = (one sector's area) x (the number of sectors). Increase in area from a radius change (angle fixed) = (area with the new radius) - (area with the old radius). Otherwise, apply (theta/360) x pi x r^2 directly with the radius and angle the real-world situation describes.",
+   "example": "A horse tied by a 5 m rope at a corner of a square field (a 90-degree sector, since a square's corner is a right angle) can graze 19.625 m^2 (pi = 3.14); with a 10 m rope instead, it can graze 78.5 m^2, an increase of 58.875 m^2 (Exercise 11.1, Q8).",
+   "difficulty_base": "Hard",
+   "questions": [
+    {
+     "b": "Remember",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "If two identical sectors of a circle do NOT overlap with each other, the total area they cover together is found by",
+     "a": "adding the two sectors' areas",
+     "o": [
+      "adding the two sectors' areas",
+      "subtracting one sector's area from the other",
+      "finding the average of the two areas",
+      "multiplying the two areas together"
+     ]
+    },
+    {
+     "b": "Remember",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "If a real-world region is shaped like a sector, its area is found using the same formula as",
+     "a": "the area of a sector of a circle, (theta/360) x pi x r^2",
+     "o": [
+      "the area of a sector of a circle, (theta/360) x pi x r^2",
+      "the area of a full circle only, pi x r^2, regardless of the angle involved",
+      "the circumference formula, 2 x pi x r",
+      "the area of a segment"
+     ]
+    },
+    {
+     "b": "Remember",
+     "d": "Easy",
+     "t": "fill_blank",
+     "m": 1,
+     "q": "If the radius of a sector-shaped region increases while its angle stays the same, its area ____ (increases/decreases/stays the same).",
+     "a": "increases"
+    },
+    {
+     "b": "Remember",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "rev": true,
+     "q": "Which of the following is NOT a correct way to combine or compare sector areas in a real-world problem?",
+     "a": "To find the total area covered by two identical, non-overlapping sectors, divide one sector's area by the number of sectors, the same way you would find the area of one piece when a circle is divided into several equal sectors",
+     "o": [
+      "To find the total area covered by two identical, non-overlapping sectors, divide one sector's area by the number of sectors, the same way you would find the area of one piece when a circle is divided into several equal sectors",
+      "The increase in a sector-shaped area when only the radius changes (angle fixed) is found by subtracting the smaller sector's area from the larger one",
+      "Two identical non-overlapping sectors together cover exactly twice the area of one of them",
+      "A sector-area formula can be applied at any real-world scale, from a few centimetres to several kilometres, as long as the radius and angle are known"
+     ]
+    },
+    {
+     "b": "Understand",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "A car has two identical wipers that sweep the same angle and do not overlap. If one wiper cleans an area of 600 cm^2, the two wipers together clean",
+     "a": "1200 cm^2",
+     "o": [
+      "1200 cm^2",
+      "600 cm^2",
+      "300 cm^2",
+      "1800 cm^2"
+     ]
+    },
+    {
+     "b": "Understand",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "An animal is tied by a rope to a fixed point and can graze over a sector-shaped area. If the rope is lengthened while staying tied to the same point, the grazing area",
+     "a": "increases, since area depends on the square of the radius (rope length)",
+     "o": [
+      "increases, since area depends on the square of the radius (rope length)",
+      "stays the same, since the angle available to the animal does not change",
+      "decreases, since a longer rope is harder to pull taut",
+      "only the arc length increases, not the area"
+     ]
+    },
+    {
+     "b": "Understand",
+     "d": "Easy",
+     "t": "short_answer",
+     "m": 2,
+     "q": "A lighthouse shines a warning light over a sector-shaped region of the sea. Explain what plays the role of the sector's 'radius' and what plays the role of its 'angle' in this real-world situation.",
+     "a": "The 'radius' is the distance out to sea that the light reaches, and the 'angle' is the angular spread of the beam, the sector's angle at the lighthouse over which the light is visible.",
+     "s": [
+      [
+       "Correctly identifies the radius as the distance the light reaches",
+       1
+      ],
+      [
+       "Correctly identifies the angle as the beam's angular spread",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Understand",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "q": "A horse is tied by a rope at a corner of a square field, so it can graze a quarter-circle (90-degree sector) region. If the rope length is doubled, by what factor does the grazing area increase, assuming the longer rope still fits within the field?",
+     "a": "4 times, since area is proportional to the square of the radius",
+     "o": [
+      "4 times, since area is proportional to the square of the radius",
+      "2 times, since the rope length doubled",
+      "the same, since the angle (90 degrees) has not changed",
+      "8 times, since both the radius and the diameter double"
+     ]
+    },
+    {
+     "b": "Understand",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "q": "Two wipers on a car, of different blade lengths but the same sweep angle, clean areas that do not overlap. To find the total area cleaned, you should",
+     "a": "compute each sector's area separately (using its own radius) and add the two areas",
+     "o": [
+      "compute each sector's area separately (using its own radius) and add the two areas",
+      "compute one sector's area and double it, since the angle is the same for both",
+      "compute the average of the two radii and use it for a single combined sector",
+      "subtract the smaller wiper's area from the larger one's"
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Easy",
+     "t": "short_answer",
+     "m": 2,
+     "q": "A minute hand of length 7 cm sweeps out a sector-shaped area as it moves. Find the area it sweeps in 15 minutes. (Use pi = 22/7)",
+     "a": "38.5 cm^2 (15 minutes is a quarter of an hour, i.e. 90 degrees; area = (90/360) x (22/7) x 49 = 38.5 cm^2).",
+     "s": [
+      [
+       "Correctly finds the angle swept in 15 minutes as 90 degrees",
+       1
+      ],
+      [
+       "Correctly computes the area as 38.5 cm^2",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Easy",
+     "t": "fill_blank",
+     "m": 1,
+     "q": "A horse tied by a 5 m rope at a corner of a square field can graze a sector-shaped area of 19.625 m^2 (using pi = 3.14). If the rope is replaced by a 10 m rope, the new grazing area is 78.5 m^2, so the increase in grazing area is ____ m^2.",
+     "a": "58.875"
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "q": "A horse is tied to a peg at one corner of a square-shaped field of side 20 m, using a 7 m long rope. Find the area of the field the horse can graze. (Use pi = 22/7)",
+     "a": "38.5 m^2 (a quarter-circle of radius 7 m, since a square's corner is a right angle: (90/360) x (22/7) x 49 = 38.5).",
+     "s": [
+      [
+       "Correctly identifies the grazing region as a 90-degree sector of radius 7 m",
+       1
+      ],
+      [
+       "Correctly computes the area as 38.5 m^2",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "q": "For the same peg and field as above, if the rope were extended to 14 m instead of 7 m (still shorter than the field's 20 m side), find the increase in the grazing area. (Use pi = 22/7)",
+     "a": "115.5 m^2 increase (new area = (90/360) x (22/7) x 196 = 154 m^2; increase = 154 - 38.5 = 115.5 m^2).",
+     "s": [
+      [
+       "Correctly computes the new grazing area as 154 m^2 with radius 14 m",
+       1
+      ],
+      [
+       "Correctly subtracts to find the increase as 115.5 m^2",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "q": "A car has two identical wipers, each with a blade of length 21 cm, sweeping through an angle of 120 degrees, and the two wipers do not overlap. Find the total area cleaned by both wipers in one sweep. (Use pi = 22/7)",
+     "a": "924 cm^2 (one wiper cleans (120/360) x (22/7) x 441 = 462 cm^2; two wipers clean 2 x 462 = 924 cm^2).",
+     "s": [
+      [
+       "Correctly computes one wiper's swept area as 462 cm^2",
+       1
+      ],
+      [
+       "Correctly doubles for two wipers to get 924 cm^2",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hardest",
+     "t": "long_answer",
+     "m": 3,
+     "q": "A car has two wipers which do not overlap. Each wiper has a blade of length 25 cm, sweeping through an angle of 115 degrees. Find (i) the area cleaned by one wiper, (ii) the total area cleaned by both wipers in one sweep, and (iii) by how much this total would change if each blade were shortened to 20 cm instead (same angle, same method). (Use pi = 22/7)",
+     "a": "(i) One wiper cleans (115/360) x (22/7) x 625 = 627.48 cm^2 (approx). (ii) Both wipers together clean 2 x 627.48 = 1254.96 cm^2 (approx) -- this matches the chapter's own Exercise 11.1 Q11 answer. (iii) With 20 cm blades, one wiper cleans (115/360) x (22/7) x 400 = 401.59 cm^2 (approx), so both together clean 803.17 cm^2 (approx); the total area cleaned would decrease by about 1254.96 - 803.17 = 451.79 cm^2.",
+     "s": [
+      [
+       "Correctly computes one wiper's area (approx 627.48 cm^2) and doubles it (approx 1254.96 cm^2)",
+       1
+      ],
+      [
+       "Correctly recomputes for 20 cm blades, approximately 803.17 cm^2 total",
+       1
+      ],
+      [
+       "Correctly finds the decrease, approximately 451.79 cm^2",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "assertion_reason",
+     "m": 1,
+     "q": "Assertion (A): Two identical wipers sweeping the same angle, with blades of the same length, and not overlapping, clean exactly twice the area that one wiper alone would clean. Reason (R): The two wipers' swept regions are congruent, non-overlapping sectors, so their combined area is simply the sum of two equal areas, i.e. twice one of them.",
+     "a": "Both A and R are true, and R is the correct explanation of A",
+     "o": [
+      "Both A and R are true, and R is the correct explanation of A",
+      "Both A and R are true, but R is not the correct explanation of A",
+      "A is true, R is false",
+      "A is false, R is true"
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "multi_statement",
+     "m": 1,
+     "q": "Consider these statements. (I) When an animal's rope is lengthened but stays tied to the same point, the shape of the grazing region (a sector) stays similar, only larger. (II) The increase in grazing area when a rope is lengthened is NOT simply the difference in rope lengths; it must be computed from the difference in the two sector areas. (III) A lighthouse's warning sector and a car's wiper-blade sector cannot be compared using the same formula, because one is measured in kilometres and the other in centimetres. Which is or are correct?",
+     "a": "Only I and II",
+     "o": [
+      "Only I and II",
+      "Only III",
+      "Only I",
+      "All of these"
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hardest",
+     "t": "long_answer",
+     "m": 3,
+     "q": "A lighthouse spreads light over a sector of angle 80 degrees to a distance of 16.5 km (Use pi = 3.14). (i) Find the area of sea over which ships are warned. (ii) If the lighthouse were upgraded so that its beam reached twice as far (33 km) but kept the same 80-degree angle, find the new warning area. (iii) Is the new area exactly twice the old area, or a different multiple? State the multiple.",
+     "a": "(i) Area = (80/360) x 3.14 x 16.5^2 = 189.97 km^2 (approx) -- this matches the chapter's own Exercise 11.1 Q12 answer. (ii) With radius 33 km, area = (80/360) x 3.14 x 33^2 = 759.88 km^2 (approx). (iii) It is 4 times the old area (759.88 is about 4 x 189.97), not simply twice, because the area formula depends on r^2: doubling the radius always quadruples a sector's area for a fixed angle.",
+     "s": [
+      [
+       "Correctly computes the original area, approximately 189.97 km^2",
+       1
+      ],
+      [
+       "Correctly computes the doubled-radius area, approximately 759.88 km^2",
+       1
+      ],
+      [
+       "Correctly identifies the multiple as 4 times, not 2, with the r^2 reasoning",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Evaluate",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "q": "A student says: 'Since the two car wipers in Exercise 11.1 Q11 do not overlap, and each cleans (115/360) x (22/7) x 25 x 25 cm^2, the total area they clean is (115/360) x (22/7) x 50 x 50 cm^2, by just doubling the radius.' Evaluate this reasoning.",
+     "a": "The reasoning is incorrect. Doubling the radius inside the formula quadruples a single sector's area (since area depends on r^2), not doubles it -- so (115/360) x (22/7) x 50 x 50 gives four times one wiper's area, not twice. The correct way to combine two separate, non-overlapping, identical sectors is to compute one sector's area and then multiply the RESULT by 2, not to double the radius inside the formula.",
+     "s": [
+      [
+       "Identifies the error: doubling r inside the formula quadruples the area rather than doubling it",
+       1
+      ],
+      [
+       "States the correct method is to double the computed area, not the radius",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Create",
+     "d": "Hardest",
+     "t": "long_answer",
+     "m": 3,
+     "q": "Make up your own real-world problem (not copied from this chapter) that requires subtracting one sector's area from another to find a change in area, similar in spirit to the horse-and-rope problem. State your radius values, the fixed angle, your choice of pi, and solve for the difference.",
+     "a": "Sample: a rotating sprinkler fixed at the corner of a rectangular lawn sprays water over a 90-degree sector; at low pressure it reaches 6 m, at high pressure 9 m (Use pi = 3.14). Low-pressure area = (90/360) x 3.14 x 36 = 28.26 m^2. High-pressure area = (90/360) x 3.14 x 81 = 63.585 m^2. Increase = 63.585 - 28.26 = 35.325 m^2. (Any self-consistent original real-world scenario with a fixed angle and two different radii, correctly solved for the area difference, is acceptable.)",
+     "s": [
+      [
+       "Gives an original real-world scenario with a fixed angle and two radii, computes the first area correctly",
+       1
+      ],
+      [
+       "Correctly computes the second area",
+       1
+      ],
+      [
+       "Correctly subtracts for the increase/difference, original and consistent",
+       1
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "code": "C10M-11.6",
+   "name": "Equal division of a circle: sectors and segment 'designs' in real objects",
+   "description": "Recognising that several equally spaced radii, diameters or ribs divide a circle into that many congruent sectors, each of angle 360/n degrees and area (whole circle's area)/n; finding the total wire or edge length of such a figure, made of the circle's own circumference plus any internal straight radii or diameters; and finding the combined area of several congruent segment-shaped 'design' regions formed between a circle and a regular polygon inscribed in it, as (circle's area) minus (polygon's area), then applying a cost rate to that area.",
+   "idea": "Equally spaced radii, diameters or ribs cut sectors, which divide the circle's area by simple counting (area of one = total/n); but points on the rim joined to each other by straight chords, not to the centre, cut segments instead, whose combined area is the circle's area minus the polygon those chords trace out -- these two situations look similar but use different arithmetic.",
+   "rule": "n equally spaced radii divide a circle into n congruent sectors, each of angle 360/n degrees and area (pi x r^2)/n. Total wire for a circle plus m diameters = circumference (pi x d) + m x (length of one diameter). Combined area of k congruent segment 'designs' cut off by a regular k-sided polygon inscribed in a circle = (circle's area) - (polygon's area); cost = that area x the given rate per unit area.",
+   "example": "A brooch of diameter 35 mm with 5 diameters (10 sectors of 36 degrees each) needs 285 mm of wire and has 96.25 mm^2 per sector (Exercise 11.1, Q9). A round table cover of radius 28 cm with six equal designs (an inscribed regular hexagon; pi = 22/7, square root of 3 = 1.7) has combined design area 464.8 cm^2, costing Rs 162.68 at Rs 0.35 per cm^2 (Exercise 11.1, Q13).",
+   "difficulty_base": "Hard",
+   "questions": [
+    {
+     "b": "Remember",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "If a circle is divided by several equally spaced radii into n congruent sectors, the angle of each sector is",
+     "a": "360/n degrees",
+     "o": [
+      "360/n degrees",
+      "360 x n degrees",
+      "n/360 degrees",
+      "180/n degrees"
+     ]
+    },
+    {
+     "b": "Remember",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "If a circle of total area A is divided into n congruent sectors, the area of one sector is",
+     "a": "A/n",
+     "o": [
+      "A/n",
+      "A x n",
+      "A - n",
+      "n/A"
+     ]
+    },
+    {
+     "b": "Remember",
+     "d": "Easy",
+     "t": "fill_blank",
+     "m": 1,
+     "q": "A circle divided by 8 equally spaced ribs (like an umbrella) is split into ____ congruent sectors.",
+     "a": "8"
+    },
+    {
+     "b": "Remember",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "rev": true,
+     "q": "Which of the following is NOT correct about dividing a circle into congruent parts for a real design?",
+     "a": "To find the area of one sector when a circle is divided into n equal sectors, you find the area of the whole circle and then add it to the number of sectors, n",
+     "o": [
+      "To find the area of one sector when a circle is divided into n equal sectors, you find the area of the whole circle and then add it to the number of sectors, n",
+      "5 diameters drawn through the centre of a circle divide it into 10 equal sectors",
+      "The total wire needed for a circular brooch with internal diameters includes both the circle's circumference and the length of the diameters",
+      "6 equally spaced points on a circle, joined by chords to their neighbours, form a regular hexagon inscribed in the circle"
+     ]
+    },
+    {
+     "b": "Understand",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "An umbrella has 8 equally spaced ribs. Treating it as a flat circle, the angle between two consecutive ribs is",
+     "a": "45 degrees",
+     "o": [
+      "45 degrees",
+      "36 degrees",
+      "90 degrees",
+      "30 degrees"
+     ]
+    },
+    {
+     "b": "Understand",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "A circular brooch has 5 diameters drawn through its centre, dividing it into equal sectors. How many sectors does this create, and what is each sector's angle?",
+     "a": "10 sectors, each of 36 degrees",
+     "o": [
+      "10 sectors, each of 36 degrees",
+      "5 sectors, each of 72 degrees",
+      "10 sectors, each of 45 degrees",
+      "5 sectors, each of 36 degrees"
+     ]
+    },
+    {
+     "b": "Understand",
+     "d": "Easy",
+     "t": "short_answer",
+     "m": 2,
+     "q": "Explain why 5 diameters drawn through the centre of a circle create 10 sectors, not 5.",
+     "a": "Each diameter is really two radii extending in opposite directions from the centre, so 5 diameters give 5 x 2 = 10 radii altogether; since it takes 10 radii to mark off 10 equal sectors around the centre, 5 diameters create 10 sectors, not 5.",
+     "s": [
+      [
+       "Explains each diameter equals two radii, giving 10 radii in total",
+       1
+      ],
+      [
+       "Concludes 10 radii create 10 sectors",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Understand",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "q": "A round table cover has six equal 'designs' formed by joining six equally spaced points on its rim with straight chords, so that a regular hexagon is traced out inside the circle. Each of the six 'design' regions (outside the hexagon but inside the circle) is a",
+     "a": "segment",
+     "o": [
+      "segment",
+      "sector",
+      "triangle",
+      "quadrant"
+     ]
+    },
+    {
+     "b": "Understand",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "q": "For the round table cover above, the combined area of all six 'design' regions equals",
+     "a": "the area of the whole circle minus the area of the inscribed regular hexagon",
+     "o": [
+      "the area of the whole circle minus the area of the inscribed regular hexagon",
+      "the area of the inscribed regular hexagon minus the area of the circle",
+      "six times the area of the circle",
+      "the area of the circle divided by the area of the hexagon"
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Easy",
+     "t": "short_answer",
+     "m": 2,
+     "q": "A circular badge of radius 7 cm is divided by equally spaced radii into 6 congruent sectors. Find the area of one sector. (Use pi = 22/7)",
+     "a": "154/6 cm^2, approximately 25.67 cm^2 (whole circle area = 154 cm^2; one sector = 154/6).",
+     "s": [
+      [
+       "Correctly computes the whole circle's area as 154 cm^2",
+       1
+      ],
+      [
+       "Correctly divides by 6 to get one sector's area, approximately 25.67 cm^2",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Easy",
+     "t": "fill_blank",
+     "m": 1,
+     "q": "An umbrella, treated as a flat circle of radius 45 cm, has 8 equally spaced ribs. Using pi = 22/7, the area between two consecutive ribs is 44550/56 cm^2, which is approximately ____ cm^2 (to 1 decimal place).",
+     "a": "795.5"
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "q": "A brooch is made with silver wire in the form of a circle of diameter 42 mm, together with 3 diameters that divide the circle into 6 equal sectors. Find the total length of silver wire required. (Use pi = 22/7)",
+     "a": "258 mm (circumference = pi x 42 = 132 mm; 3 diameters = 3 x 42 = 126 mm; total = 132 + 126 = 258 mm).",
+     "s": [
+      [
+       "Correctly computes the circumference as 132 mm",
+       1
+      ],
+      [
+       "Correctly adds 3 diameters (126 mm) for a total of 258 mm",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "q": "For the same brooch (diameter 42 mm, divided into 6 equal sectors), find the area of each sector. (Use pi = 22/7)",
+     "a": "231 mm^2 (whole circle area = (22/7) x 21 x 21 = 1386 mm^2; one sector = 1386/6 = 231 mm^2).",
+     "s": [
+      [
+       "Correctly computes the whole circle's area as 1386 mm^2 using radius 21 mm",
+       1
+      ],
+      [
+       "Correctly divides by 6 to get 231 mm^2",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "q": "An umbrella, treated as a flat circle of radius 21 cm, has 6 equally spaced ribs. Find the area between two consecutive ribs. (Use pi = 22/7)",
+     "a": "231 cm^2 (whole circle area = (22/7) x 441 = 1386 cm^2; one sector, out of 6, = 1386/6 = 231 cm^2).",
+     "s": [
+      [
+       "Correctly computes the whole circle's area as 1386 cm^2",
+       1
+      ],
+      [
+       "Correctly divides by 6 for 231 cm^2",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hardest",
+     "t": "long_answer",
+     "m": 3,
+     "q": "A brooch is made with silver wire in the form of a circle with diameter 35 mm, together with 5 diameters that divide the circle into 10 equal sectors (as in the chapter's own Exercise 11.1 Q9). Find (i) the total length of silver wire required, (ii) the area of each sector, and (iii) the angle of each sector. (Use pi = 22/7)",
+     "a": "(i) Circumference = pi x 35 = 110 mm; 5 diameters = 5 x 35 = 175 mm; total wire = 110 + 175 = 285 mm. (ii) Whole circle area = (22/7) x 17.5 x 17.5 = 962.5 mm^2; one sector = 962.5/10 = 96.25 mm^2. (iii) Each sector's angle = 360/10 = 36 degrees.",
+     "s": [
+      [
+       "Correctly computes the total wire length as 285 mm",
+       1
+      ],
+      [
+       "Correctly computes one sector's area as 96.25 mm^2",
+       1
+      ],
+      [
+       "Correctly states each sector's angle as 36 degrees",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "assertion_reason",
+     "m": 1,
+     "q": "Assertion (A): The area of each of the six 'design' segments on the round table cover (Exercise 11.1 Q13) can be found by dividing the circle's total area by 6, the same way as finding one sector's area in an equally-divided circle. Reason (R): A sector of a circle and a segment cut off by a chord are different regions -- a sector is bounded by two radii and an arc, while a segment is bounded by a chord and an arc.",
+     "a": "A is false, R is true",
+     "o": [
+      "A is false, R is true",
+      "A is true, R is false",
+      "Both A and R are true, and R is the correct explanation of A",
+      "Both A and R are true, but R is not the correct explanation of A"
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "multi_statement",
+     "m": 1,
+     "q": "Consider these statements. (I) The 'total length of wire' needed for a brooch made of a circle plus internal diameters is the same as just the circle's circumference, since the diameters lie inside the circle and use no extra wire. (II) When n equally spaced ribs divide an umbrella (treated as a flat circle) into n congruent sectors, each sector's angle is 360/n degrees. (III) The six 'design' regions on a round table cover, formed outside an inscribed regular hexagon, together have LESS total area than the six sectors you would get by simply dividing the same circle into 6 equal pie-slices. Which is or are correct?",
+     "a": "Only II and III",
+     "o": [
+      "Only II and III",
+      "Only I and II",
+      "Only III",
+      "All of these"
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hardest",
+     "t": "long_answer",
+     "m": 3,
+     "q": "A round table cover has six equal designs formed by an inscribed regular hexagon, exactly as in the chapter's Exercise 11.1 Q13, but now with radius 14 cm instead of 28 cm (Use pi = 22/7 and square root of 3 = 1.73). (i) Find the area of the circle. (ii) Find the area of the inscribed regular hexagon (as 6 equilateral triangles of side 14 cm). (iii) Find the combined area of the six designs.",
+     "a": "(i) Circle area = (22/7) x 14 x 14 = 616 cm^2. (ii) Hexagon area = 6 x (square root of 3 / 4) x 14^2 = 294 x square root of 3 = 294 x 1.73 = 508.62 cm^2 (approx). (iii) Combined design area = 616 - 508.62 = 107.38 cm^2 (approx).",
+     "s": [
+      [
+       "Correctly computes the circle's area as 616 cm^2",
+       1
+      ],
+      [
+       "Correctly computes the hexagon's area, approximately 508.62 cm^2, using six equilateral triangles",
+       1
+      ],
+      [
+       "Correctly subtracts for the combined design area, approximately 107.38 cm^2",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Evaluate",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "q": "A student solving the round table cover problem (Exercise 11.1 Q13) writes: 'The six designs are six 60-degree sectors, so their combined area is just the whole circle's area, (22/7) x 28 x 28.' Evaluate this reasoning.",
+     "a": "The reasoning is incorrect. The six designs are segments, not full sectors -- each design is a sector minus the triangle cut off by the hexagon's side, so the six designs' combined area is the circle's area minus the hexagon's area, which is strictly less than the whole circle's area, not equal to it.",
+     "s": [
+      [
+       "Identifies the error: treating the segments (designs) as if they were full sectors",
+       1
+      ],
+      [
+       "Correctly states the combined design area is circle minus hexagon, less than the full circle",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Create",
+     "d": "Hardest",
+     "t": "long_answer",
+     "m": 3,
+     "q": "Make up your own real-world object (not copied from this chapter) that is divided into n equally spaced congruent sectors by radii, diameters or ribs, for a value of n of your choice. State n, a radius, and your choice of pi, then find the angle of one sector, its area, and (if your object also has straight internal pieces like the brooch's diameters) the total wire/edge length.",
+     "a": "Sample: a circular pizza of radius 14 cm is cut by 3 full diameters (n = 6 slices) (Use pi = 22/7). Each slice's angle = 360/6 = 60 degrees. Whole pizza area = (22/7) x 196 = 616 cm^2, so each slice's area = 616/6, approximately 102.67 cm^2. If the cuts are marked with a line matching the crust's circumference plus the 3 diameters, the total marked length = circumference (2 x (22/7) x 14 = 88 cm) plus 3 diameters (3 x 28 = 84 cm) = 172 cm. (Any self-consistent original object, value of n, radius and pi choice, correctly worked through the angle and area -- and the wire/edge length if applicable -- is acceptable.)",
+     "s": [
+      [
+       "Chooses an original object with n, radius and pi, and correctly computes one sector's angle",
+       1
+      ],
+      [
+       "Correctly computes one sector's area",
+       1
+      ],
+      [
+       "Correctly computes the total wire/edge length if applicable, original and consistent",
+       1
+      ]
+     ]
+    }
+   ]
+  }
+ ]
+}
