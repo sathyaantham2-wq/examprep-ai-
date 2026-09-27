@@ -1,0 +1,2332 @@
+{
+  "subject": {
+    "code": "MATH10",
+    "name": "Mathematics",
+    "board": "CBSE",
+    "class": 10
+  },
+  "source": {
+    "publisher": "NCERT",
+    "title": "Mathematics",
+    "edition": "Textbook for Class X, Reprint 2026-27",
+    "year": 2026
+  },
+  "chapter": {
+    "part": "I",
+    "chapter_no": 14,
+    "name": "Probability",
+    "blurb": "The classical (theoretical) definition of probability, P(E) = favourable outcomes over total outcomes for equally likely outcomes, replacing the experimental probability of Class IX; the complementary-events rule P(E) + P(not E) = 1; the boundary cases of an impossible event (P=0) and a sure event (P=1) within 0 <= P(E) <= 1; probability with single draws from coins, dice, cards and everyday collections of objects; and compound experiments -- two or three coins tossed together, and two dice thrown together -- solved by listing every equally likely outcome rather than guessing. The chapter's own text also raises geometric (continuous-sample-space) probability through a musical-chair timing example and a helicopter-crash area, but explicitly marks both 'Not from the examination point of view', so this book's examinable content stops at finite, equally-likely sample spaces.",
+    "source_code": "jemh114",
+    "order_index": 14
+  },
+  "scope_in": [
+    {
+      "item": "Recall that experimental (empirical) probability, studied in Class IX, is based on the results of an experiment actually repeated many times, and contrast it with the theoretical (classical) probability P(E) = number of outcomes favourable to E / number of all possible outcomes of the experiment, valid when the outcomes are equally likely",
+      "pages": "202-204"
+    },
+    {
+      "item": "Judge, with reasoning rather than by simply counting the named outcomes, whether a given experiment's outcomes are equally likely (for example, a car starting or not starting is not automatically equally likely, unlike a coin toss)",
+      "pages": "202, 204, 214"
+    },
+    {
+      "item": "Define an elementary event (an event with exactly one outcome) and use the fact that the probabilities of all the elementary events of an experiment sum to 1",
+      "pages": "205"
+    },
+    {
+      "item": "Find P(E) for a single draw or single trial in everyday chance situations -- one coin toss, one die throw, or one item drawn at random from a bag, box, tank or lot of distinguishable objects (balls, marbles, candies, coins, fish, discs, pens, bulbs, name cards, shirts)",
+      "pages": "204-206, 208-209, 214-216"
+    },
+    {
+      "item": "State and use 0 <= P(E) <= 1; identify an impossible event (no favourable outcome, P(E) = 0) and a sure/certain event (every outcome favourable, P(E) = 1)",
+      "pages": "206-207, 214"
+    },
+    {
+      "item": "State and apply the complementary-events rule: for any event E, P(E) + P(not E) = 1, i.e. P(not E) = 1 - P(E)",
+      "pages": "206, 208-209, 215"
+    },
+    {
+      "item": "State the composition of a standard 52-card deck (4 suits of 13 cards; spades and clubs black, hearts and diamonds red; jack, queen and king of each suit are face cards, 12 in all) and find P(E) for a card drawn from a full or a reduced (cards already removed, not replaced) deck",
+      "pages": "207-208, 215"
+    },
+    {
+      "item": "Enumerate the sample space of two (or three) coins tossed simultaneously -- HH, HT, TH, TT for two coins; 8 outcomes for three coins -- treating the coins as distinguishable, and find P(E) for an event described in words, including 'at least'/'all the same' wording",
+      "pages": "210, 216-217"
+    },
+    {
+      "item": "Enumerate the 36-outcome sample space of two dice thrown together (equivalently, one die thrown twice), using an ordered-pair table, and find P(E) for an event on the sum of the two numbers or on a value appearing (or not appearing) on either throw",
+      "pages": "212-214, 216"
+    }
+  ],
+  "scope_out": [
+    {
+      "item": "Geometric (continuous-sample-space) probability, such as the musical-chair stopping-time example, the helicopter-crash rectangular-area example, or the exercise about a die dropped onto a rectangle containing a circle",
+      "reason": "The book itself marks each of these with an explicit footnote asterisk reading 'Not from the examination point of view' (Examples 10 and 11, pp. 210-211, and Exercise 14.1 Q20, p. 216); despite appearing in the chapter's own printed text, the book itself excludes them, so this authored file does too."
+    },
+    {
+      "item": "Set-theoretic treatment of probability -- sample space written as a set, events as subsets, union/intersection notation, or the term 'mutually exclusive events'",
+      "reason": "This chapter never uses set notation for outcomes or events, and never uses the words 'mutually exclusive', 'union' or 'intersection'; every event is described in plain words and every probability is found by directly counting favourable outcomes."
+    },
+    {
+      "item": "The addition theorem P(A or B) = P(A) + P(B) - P(A and B), conditional probability, or independent/dependent events named as such",
+      "reason": "None of these terms or formulas appears anywhere in this chapter's 16 printed pages (202-217); the chapter stops at the classical single-event definition, complementary events, and two small compound experiments (coins and dice) solved by direct listing."
+    },
+    {
+      "item": "Probability distributions, expected value, or counting a compound sample space using combinatorial formulas (nCr, nPr)",
+      "reason": "Every compound-experiment answer in this chapter (two coins, three coins, two dice) is reached by writing out the full list of equally likely outcomes -- 4, 8 or 36 of them -- and counting directly; no combinatorial formula is used or needed anywhere in the chapter."
+    },
+    {
+      "item": "Permutations or combinations as a method of counting outcomes, e.g. choosing 2 cards from a deck at once",
+      "reason": "Every experiment in this chapter draws exactly one item (one card, one ball, one disc, one bulb, one name) per trial, or tosses a small fixed number of coins/dice together; no question asks for a multi-item simultaneous selection that would need nCr."
+    },
+    {
+      "item": "A formal derivation or proof of why the sum of the probabilities of all elementary events of an experiment equals 1",
+      "reason": "The book states this as an observed general fact ('This is true in general also', p. 205) without proof; only using the fact is expected here, not deriving it."
+    },
+    {
+      "item": "Non-standard card decks, dice with a number of faces other than 6 (other than the lettered die A,B,C,D,E,A that the book itself sets in Exercise 14.1 Q19), or a spinner/wheel with unequal sectors",
+      "reason": "Every card question in the chapter uses the standard 52-card deck exactly as described on p. 207; every die is the standard 6-faced cube (numbered, or in one exercise lettered exactly as Q19 states); the one spinner in the chapter (Fig. 14.5, Exercise Q12) is explicitly stated in the text to have 8 equally likely outcomes, confirmed by rendering the figure -- an ordinary 8-equal-sector dial, nothing irregular."
+    }
+  ],
+  "concepts": [
+    {
+      "code": "C10M-14.1",
+      "name": "Theoretical (classical) probability: definition and equally likely outcomes",
+      "description": "The theoretical (classical) probability of an event E, written P(E), is defined as P(E) = number of outcomes favourable to E / number of all possible outcomes of the experiment, valid only when the outcomes are equally likely; contrasted with the experimental/empirical probability (studied in Class IX) based on the results of actually repeating a trial.",
+      "idea": "Instead of repeating an experiment many times and counting what actually happened (empirical probability), if every outcome is equally likely you can predict the probability in advance just by counting how many outcomes are favourable out of all possible outcomes.",
+      "rule": "P(E) = Number of outcomes favourable to E / Number of all possible outcomes of the experiment, where the outcomes of the experiment are assumed equally likely. This is also called classical probability, given by Pierre Simon Laplace in 1795.",
+      "example": "Tossing a fair coin once: the two outcomes head and tail are equally likely, so P(head) = 1/2 and P(tail) = 1/2 (pp. 202-204).",
+      "difficulty_base": "Easy",
+      "questions": [
+        {
+          "b": "Remember",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "The theoretical probability of an event E, written P(E), is defined as the number of outcomes favourable to E divided by",
+          "a": "the number of all possible outcomes of the experiment",
+          "o": [
+            "the number of all possible outcomes of the experiment",
+            "the number of times the experiment is repeated",
+            "the number of unfavourable outcomes",
+            "100"
+          ]
+        },
+        {
+          "b": "Remember",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "The probability of an event based on actually repeating a trial many times and recording what happens is called",
+          "a": "experimental (or empirical) probability",
+          "o": [
+            "experimental (or empirical) probability",
+            "theoretical (or classical) probability",
+            "elementary probability",
+            "complementary probability"
+          ]
+        },
+        {
+          "b": "Remember",
+          "d": "Easy",
+          "t": "fill_blank",
+          "m": 1,
+          "q": "The definition P(E) = favourable outcomes / total outcomes assumes that all the outcomes of the experiment are ____ likely.",
+          "a": "equally"
+        },
+        {
+          "b": "Remember",
+          "d": "Hard",
+          "t": "mcq",
+          "m": 1,
+          "rev": true,
+          "q": "Which of the following is NOT correct about theoretical probability?",
+          "a": "Theoretical probability requires the number of outcomes favourable to E to always be strictly less than the total number of possible outcomes",
+          "o": [
+            "Theoretical probability requires the number of outcomes favourable to E to always be strictly less than the total number of possible outcomes",
+            "It requires the outcomes of the experiment to be equally likely",
+            "It can be calculated in advance, without needing to repeat the experiment",
+            "It was the definition given by Pierre Simon Laplace"
+          ]
+        },
+        {
+          "b": "Understand",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "A fair coin is tossed once. Since it is symmetrical with no reason to land more often on one side, the coin is said to be",
+          "a": "unbiased",
+          "o": [
+            "unbiased",
+            "biased",
+            "weighted",
+            "defective"
+          ]
+        },
+        {
+          "b": "Understand",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "When we assume that a die is 'fair', the six outcomes 1, 2, 3, 4, 5, 6 of throwing it once are",
+          "a": "equally likely",
+          "o": [
+            "equally likely",
+            "not all equally likely",
+            "impossible",
+            "certain"
+          ]
+        },
+        {
+          "b": "Understand",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "A baby is born; it is a boy or a girl. Are these two outcomes equally likely in the sense used by this chapter?",
+          "a": "Yes, they are treated as equally likely, since there is no reason recorded here to favour one over the other",
+          "o": [
+            "Yes, they are treated as equally likely, since there is no reason recorded here to favour one over the other",
+            "No, because a girl is always more likely",
+            "No, because the outcomes are not exhaustive",
+            "Cannot be answered, since a baby is not a random experiment"
+          ]
+        },
+        {
+          "b": "Understand",
+          "d": "Hard",
+          "t": "mcq",
+          "m": 1,
+          "q": "A driver attempts to start a car: it starts or does not start. Are these two outcomes equally likely?",
+          "a": "Not necessarily -- whether it starts depends on the car's condition, so there is reason to expect one outcome more than the other",
+          "o": [
+            "Not necessarily -- whether it starts depends on the car's condition, so there is reason to expect one outcome more than the other",
+            "Yes, since there are exactly two outcomes",
+            "Yes, since starting and not starting are complementary",
+            "No, because a car can only start"
+          ]
+        },
+        {
+          "b": "Understand",
+          "d": "Hard",
+          "t": "short_answer",
+          "m": 2,
+          "q": "State, with a reason, whether the following experiment has equally likely outcomes: a trial is made to answer a true-false question, and the answer is right or wrong.",
+          "a": "Not necessarily equally likely; whether the answer comes out right or wrong depends on whether the person actually knows the correct answer, so there is not automatically 'no reason to favour one over the other', unlike a coin toss, this is not guaranteed to be symmetric.",
+          "s": [
+            [
+              "Correctly states the outcomes are not necessarily equally likely",
+              1
+            ],
+            [
+              "Gives a valid reason grounded in the lack of symmetry (depends on the person's knowledge)",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "A single fair die is thrown once. Using the theoretical definition, what is the probability of getting a 4?",
+          "a": "1/6",
+          "o": [
+            "1/6",
+            "1/4",
+            "4/6",
+            "0"
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Easy",
+          "t": "fill_blank",
+          "m": 1,
+          "q": "A fair coin is tossed once. By the theoretical definition, P(head) = ____.",
+          "a": "1/2"
+        },
+        {
+          "b": "Apply",
+          "d": "Hard",
+          "t": "mcq",
+          "m": 1,
+          "q": "Which of the following experiments does NOT have equally likely outcomes, by the reasoning used in this chapter?",
+          "a": "A player attempts to shoot a basketball: she shoots or misses the shot",
+          "o": [
+            "A player attempts to shoot a basketball: she shoots or misses the shot",
+            "Tossing a single fair coin once: head or tail",
+            "Throwing a single fair die once: getting 1, 2, 3, 4, 5, or 6",
+            "Drawing one ball from a bag containing balls that are identical except for colour"
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Hard",
+          "t": "short_answer",
+          "m": 2,
+          "q": "Why is tossing a coin considered to be a fair way of deciding which team gets the ball at the start of a football game?",
+          "a": "Because a fair coin has exactly two equally likely outcomes, head and tail, with no reason for it to land on one side more often than the other, so neither team is favoured.",
+          "s": [
+            [
+              "States that the coin's two outcomes are equally likely",
+              1
+            ],
+            [
+              "Connects this to neither team being favoured, making it a fair method",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Hard",
+          "t": "short_answer",
+          "m": 2,
+          "q": "A single fair die is thrown once. Using the definition of theoretical probability, find the probability of getting a number less than 3.",
+          "a": "Favourable outcomes are 1 and 2, so the number of outcomes favourable is 2. Total possible outcomes = 6. P(number less than 3) = 2/6 = 1/3.",
+          "s": [
+            [
+              "Correctly identifies 2 favourable outcomes (1 and 2) out of 6",
+              1
+            ],
+            [
+              "Correctly simplifies to 1/3",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Hardest",
+          "t": "long_answer",
+          "m": 3,
+          "q": "A game of chance consists of spinning an arrow which comes to rest pointing at one of the numbers 1 to 8, all equally likely (as in Fig. 14.5 of the chapter). (i) State the total number of possible outcomes. (ii) Using the theoretical definition, find the probability that the arrow points at a number greater than 6. (iii) Explain in one line why the theoretical definition can be used directly here, rather than needing to actually spin the arrow many times first.",
+          "a": "(i) 8 possible outcomes (the numbers 1 to 8). (ii) Numbers greater than 6 are 7 and 8, so 2 favourable outcomes; P(number greater than 6) = 2/8 = 1/4. (iii) The theoretical definition can be used directly because the outcomes are stated to be equally likely, so simply counting favourable outcomes out of all possible outcomes gives the probability without needing to repeat the experiment.",
+          "s": [
+            [
+              "States 8 possible outcomes",
+              1
+            ],
+            [
+              "Correctly computes P(number greater than 6) = 1/4",
+              1
+            ],
+            [
+              "Explains that equally likely outcomes let the theoretical definition apply directly",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Analyse",
+          "d": "Hard",
+          "t": "assertion_reason",
+          "m": 1,
+          "q": "Assertion (A): Since a fair coin has two possible outcomes, head and tail, the theoretical probability of getting a head is 1/2. Reason (R): The theoretical probability formula P(E) = favourable outcomes / total outcomes can be applied to any experiment with a finite number of outcomes, whether or not they are equally likely.",
+          "a": "A is true, R is false",
+          "o": [
+            "A is true, R is false",
+            "A is false, R is true",
+            "Both A and R are true, and R is the correct explanation of A",
+            "Both A and R are true, but R is not the correct explanation of A"
+          ]
+        },
+        {
+          "b": "Analyse",
+          "d": "Hard",
+          "t": "multi_statement",
+          "m": 1,
+          "q": "Consider these statements about theoretical probability. (I) The theoretical probability of an event can be calculated without actually performing the experiment, provided the outcomes are equally likely. (II) Experimental probability and theoretical probability always give exactly the same numerical value for any experiment, no matter how many times it is repeated. Which is or are correct?",
+          "a": "Only I",
+          "o": [
+            "Only I",
+            "Only II",
+            "Both I and II",
+            "Neither I nor II"
+          ]
+        },
+        {
+          "b": "Analyse",
+          "d": "Hardest",
+          "t": "long_answer",
+          "m": 3,
+          "q": "A student claims that because a die has 6 faces, the probability of getting an even number must be different from the probability of getting an odd number, since 'even' and 'odd' are different categories. (i) List the favourable outcomes for 'getting an even number' and for 'getting an odd number' when a fair die is thrown once. (ii) Find P(even) and P(odd) using the theoretical definition. (iii) State whether the student's claim is correct, with a reason.",
+          "a": "(i) Even: 2, 4, 6 (3 outcomes). Odd: 1, 3, 5 (3 outcomes). (ii) P(even) = 3/6 = 1/2. P(odd) = 3/6 = 1/2. (iii) The student's claim is incorrect: both probabilities are equal (1/2 each), because both categories happen to contain the same number (3) of equally likely outcomes; being 'different categories' by name does not by itself make their probabilities different.",
+          "s": [
+            [
+              "Correctly lists 3 even and 3 odd outcomes",
+              1
+            ],
+            [
+              "Correctly computes both probabilities as 1/2",
+              1
+            ],
+            [
+              "Correctly judges the claim false with a valid reason",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Evaluate",
+          "d": "Hard",
+          "t": "short_answer",
+          "m": 2,
+          "q": "A classmate says: 'The probability of any event can always be found just by counting the favourable outcomes and dividing by the total outcomes, no matter what the experiment is.' Evaluate this claim, referring to the bag of 4 red balls and 1 blue ball discussed at the start of this chapter.",
+          "a": "The claim is false in general. The chapter's own bag example (4 red, 1 blue) shows that the two colour-outcomes 'red' and 'blue' are NOT equally likely (red is more likely), so naively applying favourable/total to the two colour-outcomes (giving 1/2 each) would be wrong; the correct approach equally weights the 5 individual balls, giving P(red) = 4/5, P(blue) = 1/5. The formula only gives the right answer when applied to genuinely equally likely outcomes.",
+          "s": [
+            [
+              "States the claim is false (or needs qualification)",
+              1
+            ],
+            [
+              "Uses the chapter's 4-red/1-blue bag example to show why counting colour-outcomes directly would be wrong",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Create",
+          "d": "Hardest",
+          "t": "long_answer",
+          "m": 3,
+          "q": "Describe your own random experiment, different from any example in this chapter, that has exactly 3 equally likely outcomes. Name the 3 outcomes, and state the theoretical probability of each.",
+          "a": "Sample: spinning a fair spinner divided into 3 equal sectors coloured red, green and blue. The 3 outcomes are 'red', 'green' and 'blue', each equally likely, so P(red) = P(green) = P(blue) = 1/3. (Any genuine experiment with exactly 3 equally likely outcomes, correctly named and correctly assigned probability 1/3 each, is acceptable.)",
+          "s": [
+            [
+              "Describes a valid experiment with exactly 3 outcomes",
+              1
+            ],
+            [
+              "Gives a valid reason the 3 outcomes are equally likely",
+              1
+            ],
+            [
+              "Correctly assigns probability 1/3 to each",
+              1
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "code": "C10M-14.2",
+      "name": "Elementary events and finding P(E) for simple single-trial experiments",
+      "description": "An elementary event is an event with exactly one outcome of the experiment; the sum of the probabilities of all the elementary events of an experiment is 1. Applying the theoretical probability definition to single draws from coins, dice, and collections of distinguishable objects (balls, marbles, candies, coins, fish, discs, pens, bulbs, people).",
+      "idea": "Break an experiment into its individual elementary outcomes; each one's probability is 1 over the total count, and grouping several elementary outcomes into one named event just adds their probabilities.",
+      "rule": "An event with only one outcome is an elementary event. If an experiment has n equally likely elementary outcomes, each has probability 1/n, and the sum of the probabilities of all n elementary events is n x (1/n) = 1. For an event E with k favourable outcomes among n, P(E) = k/n.",
+      "example": "A box has 3 blue, 2 white and 4 red marbles (9 total); P(white) = 2/9, P(blue) = 3/9 = 1/3, P(red) = 4/9, and 2/9 + 3/9 + 4/9 = 1 (Example 8, p. 209).",
+      "difficulty_base": "Easy",
+      "questions": [
+        {
+          "b": "Remember",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "An event that has only one outcome of an experiment is called",
+          "a": "an elementary event",
+          "o": [
+            "an elementary event",
+            "a compound event",
+            "a sure event",
+            "an impossible event"
+          ]
+        },
+        {
+          "b": "Remember",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "The sum of the probabilities of all the elementary events of an experiment is",
+          "a": "1",
+          "o": [
+            "1",
+            "0",
+            "0.5",
+            "equal to the number of outcomes"
+          ]
+        },
+        {
+          "b": "Remember",
+          "d": "Easy",
+          "t": "fill_blank",
+          "m": 1,
+          "q": "A box contains 5 red marbles, 8 white marbles and 4 green marbles. The total number of possible outcomes when one marble is drawn at random is ____.",
+          "a": "17"
+        },
+        {
+          "b": "Remember",
+          "d": "Hard",
+          "t": "mcq",
+          "m": 1,
+          "rev": true,
+          "q": "A box contains 5 red, 8 white and 4 green marbles (17 in all). Which of the following is NOT a correct way to find P(red)?",
+          "a": "P(red) = 1 - P(white), since red and white are the only two colours that matter",
+          "o": [
+            "P(red) = 1 - P(white), since red and white are the only two colours that matter",
+            "P(red) = number of red marbles / total number of marbles = 5/17",
+            "P(red) can be found by counting the 5 favourable (red) outcomes out of all 17 equally likely outcomes",
+            "P(red) = 1 - P(not red), where P(not red) is found using the white and green marbles together"
+          ]
+        },
+        {
+          "b": "Understand",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "A bag contains a red ball, a blue ball and a yellow ball, all the same size. One ball is drawn without looking. What is P(red)?",
+          "a": "1/3",
+          "o": [
+            "1/3",
+            "1/2",
+            "1",
+            "0"
+          ]
+        },
+        {
+          "b": "Understand",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "In the situation above (1 red, 1 blue, 1 yellow ball), which fact confirms that the three separate probabilities have been found correctly?",
+          "a": "P(red) + P(blue) + P(yellow) = 1/3 + 1/3 + 1/3 = 1",
+          "o": [
+            "P(red) + P(blue) + P(yellow) = 1/3 + 1/3 + 1/3 = 1",
+            "P(red) + P(blue) + P(yellow) = 3",
+            "Each probability must equal exactly 1",
+            "The three probabilities need not add to anything in particular"
+          ]
+        },
+        {
+          "b": "Understand",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "There are 40 students in a class, 25 girls and 15 boys. One name card is drawn at random. What is P(the card names a girl)?",
+          "a": "5/8",
+          "o": [
+            "5/8",
+            "3/8",
+            "8/5",
+            "25/15"
+          ]
+        },
+        {
+          "b": "Understand",
+          "d": "Hard",
+          "t": "mcq",
+          "m": 1,
+          "q": "A box contains 3 blue, 2 white and 4 red marbles. A marble is drawn at random. Which statement correctly explains why 'a marble is drawn at random' matters here?",
+          "a": "It means every one of the 9 marbles is equally likely to be drawn, even though there are more red marbles than white ones",
+          "o": [
+            "It means every one of the 9 marbles is equally likely to be drawn, even though there are more red marbles than white ones",
+            "It means only the colours matter, not how many marbles of each colour there are",
+            "It means blue, white and red are each drawn with probability 1/3, regardless of counts",
+            "It means the marbles are not equally likely to be drawn"
+          ]
+        },
+        {
+          "b": "Understand",
+          "d": "Hard",
+          "t": "short_answer",
+          "m": 2,
+          "q": "A carton has 100 shirts: 88 good, 8 with minor defects, 4 with major defects. One shirt is drawn at random. Find the probability that it is good, and state which of the theoretical-probability conditions is being assumed.",
+          "a": "P(good) = 88/100 = 0.88. This assumes each of the 100 shirts is equally likely to be the one drawn at random.",
+          "s": [
+            [
+              "Correctly computes P(good) = 0.88 (or 88/100)",
+              1
+            ],
+            [
+              "States the equally-likely-outcomes assumption over the 100 shirts",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "A box contains 90 discs numbered 1 to 90. One disc is drawn at random. What is the probability that it bears a perfect square number?",
+          "a": "9/90 = 1/10",
+          "o": [
+            "9/90 = 1/10",
+            "10/90 = 1/9",
+            "81/90 = 9/10",
+            "1/90"
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Easy",
+          "t": "fill_blank",
+          "m": 1,
+          "q": "A lot of 144 ball pens has 20 defective ones and the rest good. One pen is drawn at random. P(good pen) = ____ (in lowest terms).",
+          "a": "31/36"
+        },
+        {
+          "b": "Apply",
+          "d": "Hard",
+          "t": "mcq",
+          "m": 1,
+          "q": "A piggy bank has 100 fifty-paisa coins, 50 one-rupee coins, 20 two-rupee coins and 10 five-rupee coins (180 coins in all). One coin falls out at random. What is P(it is a fifty-paisa coin)?",
+          "a": "5/9",
+          "o": [
+            "5/9",
+            "1/2",
+            "10/18",
+            "100/80"
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Hard",
+          "t": "short_answer",
+          "m": 2,
+          "q": "A lot of 20 bulbs contains 4 defective ones. A bulb is drawn at random, found to be not defective, and is NOT replaced. Now a second bulb is drawn at random from the rest. Find the probability that this second bulb is not defective.",
+          "a": "After removing one non-defective bulb, 19 bulbs remain, of which 4 are still defective and 15 are not defective. P(second bulb not defective) = 15/19.",
+          "s": [
+            [
+              "Correctly identifies 19 bulbs remain with 15 non-defective",
+              1
+            ],
+            [
+              "Correctly gives the probability as 15/19",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Hard",
+          "t": "short_answer",
+          "m": 2,
+          "q": "A die has its six faces showing the letters A, B, C, D, E, A. The die is thrown once. Find P(getting an A) and P(getting a D).",
+          "a": "The letter A appears on 2 of the 6 faces, so P(A) = 2/6 = 1/3. The letter D appears on exactly 1 face, so P(D) = 1/6.",
+          "s": [
+            [
+              "Correctly finds P(A) = 1/3, recognising A appears twice",
+              1
+            ],
+            [
+              "Correctly finds P(D) = 1/6",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Hardest",
+          "t": "long_answer",
+          "m": 3,
+          "q": "A box contains 90 discs numbered 1 to 90. One disc is drawn at random. (i) Find the probability that it bears a two-digit number. (ii) Find the probability that it bears a number divisible by 5. (iii) Without recomputing from scratch, explain whether these two events can happen for the same disc, and if so, roughly how this would affect adding the two probabilities directly.",
+          "a": "(i) Two-digit numbers from 1 to 90 are 10 to 90, giving 81 numbers; P = 81/90 = 9/10. (ii) Numbers divisible by 5 from 1 to 90: 5, 10, ..., 90, giving 18 numbers; P = 18/90 = 1/5. (iii) Yes, they can happen together -- for example, the discs numbered 10, 20, ..., 90 are two-digit AND divisible by 5, so the two events overlap; simply adding 9/10 + 1/5 would double-count these shared discs and give a value bigger than 1, which cannot be a valid probability, so they should not just be added directly.",
+          "s": [
+            [
+              "Correctly finds P(two-digit) = 9/10",
+              1
+            ],
+            [
+              "Correctly finds P(divisible by 5) = 1/5",
+              1
+            ],
+            [
+              "Correctly explains the events overlap, so direct addition over-counts/is invalid",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Analyse",
+          "d": "Hard",
+          "t": "assertion_reason",
+          "m": 1,
+          "q": "Assertion (A): A box contains 5 red, 8 white and 4 green marbles. The probability of drawing a white marble is 1/3. Reason (R): Each individual marble in the box is equally likely to be drawn.",
+          "a": "A is false, R is true",
+          "o": [
+            "A is false, R is true",
+            "A is true, R is false",
+            "Both A and R are true, and R is the correct explanation of A",
+            "Both A and R are true, but R is not the correct explanation of A"
+          ]
+        },
+        {
+          "b": "Analyse",
+          "d": "Hard",
+          "t": "multi_statement",
+          "m": 1,
+          "q": "Consider these statements about elementary events. (I) If an experiment has 5 equally likely elementary outcomes, each one individually has probability 1/4. (II) The sum of the probabilities of all the elementary events of any experiment is always 1. Which is or are correct?",
+          "a": "Only II",
+          "o": [
+            "Only II",
+            "Only I",
+            "Both I and II",
+            "Neither I nor II"
+          ]
+        },
+        {
+          "b": "Analyse",
+          "d": "Hardest",
+          "t": "long_answer",
+          "m": 3,
+          "q": "A bag contains 3 red balls and 5 black balls. (i) Find P(red) and P(black). (ii) Verify that these two probabilities sum to 1. (iii) If 2 more black balls are added to the bag (so the bag now has 3 red and 7 black), find the new P(red), and state whether it increased, decreased, or stayed the same compared to part (i).",
+          "a": "(i) P(red) = 3/8, P(black) = 5/8. (ii) 3/8 + 5/8 = 8/8 = 1, confirming the two probabilities correctly account for the whole bag. (iii) New total = 10 balls; new P(red) = 3/10. Since 3/10 = 0.3 is less than 3/8 = 0.375, the probability of red DECREASED after adding more black balls.",
+          "s": [
+            [
+              "Correctly finds P(red) = 3/8 and P(black) = 5/8",
+              1
+            ],
+            [
+              "Correctly verifies they sum to 1",
+              1
+            ],
+            [
+              "Correctly finds new P(red) = 3/10 and states it decreased",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Evaluate",
+          "d": "Hard",
+          "t": "short_answer",
+          "m": 2,
+          "q": "A classmate says: 'In the 40-student class with 25 girls and 15 boys, since there are only 2 categories -- girl and boy -- the probability of drawing a girl's name card must be 1/2.' Evaluate this claim.",
+          "a": "The claim is false. Having only 2 categories does not make them equally likely; the theoretical probability must be based on the actual equally likely elementary outcomes, which here are the 40 individual name cards, not the 2 category labels. Correctly, P(girl) = 25/40 = 5/8, not 1/2.",
+          "s": [
+            [
+              "States the claim is false",
+              1
+            ],
+            [
+              "Explains that the 40 individual cards, not the 2 category labels, are the equally likely outcomes, giving 5/8",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Create",
+          "d": "Hardest",
+          "t": "long_answer",
+          "m": 3,
+          "q": "Construct your own 'box of objects' probability problem with three different categories (like colours), choosing your own counts for each category so that the total is a number of your choice. State the three counts, find each category's probability, and verify that the three probabilities sum to 1.",
+          "a": "Sample: a box has 6 pens, 3 pencils and 1 eraser (10 items total). P(pen) = 6/10 = 3/5, P(pencil) = 3/10, P(eraser) = 1/10. Sum = 6/10 + 3/10 + 1/10 = 10/10 = 1, confirming the probabilities are correct. (Any three chosen counts, correctly turned into probabilities that sum to 1, are acceptable.)",
+          "s": [
+            [
+              "Chooses three valid category counts with a stated total",
+              1
+            ],
+            [
+              "Correctly computes each category's probability",
+              1
+            ],
+            [
+              "Correctly verifies the three probabilities sum to 1",
+              1
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "code": "C10M-14.3",
+      "name": "The range of probability: impossible events, sure events, and 0 <= P(E) <= 1",
+      "description": "For any event E, 0 <= P(E) <= 1. An event that has no favourable outcome (P(E) = 0) is an impossible event; an event where every outcome is favourable (P(E) = 1) is a sure or certain event.",
+      "idea": "The favourable-outcome count can never be negative and never exceeds the total, so probability is pinned between 0 (can't happen) and 1 (must happen), with everything else in between.",
+      "rule": "For any event E, 0 <= P(E) <= 1. P(E) = 0 exactly when E is impossible (no outcome favours it). P(E) = 1 exactly when E is sure/certain (every outcome favours it).",
+      "example": "For a single die thrown once, P(getting 8) = 0/6 = 0 (impossible, no face shows 8); P(getting a number less than 7) = 6/6 = 1 (sure, every face qualifies) (pp. 206-207).",
+      "difficulty_base": "Easy",
+      "questions": [
+        {
+          "b": "Remember",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "The probability of an event that is impossible to occur is",
+          "a": "0",
+          "o": [
+            "0",
+            "1",
+            "0.5",
+            "cannot be determined"
+          ]
+        },
+        {
+          "b": "Remember",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "The probability of an event that is certain (or sure) to occur is",
+          "a": "1",
+          "o": [
+            "1",
+            "0",
+            "0.5",
+            "100"
+          ]
+        },
+        {
+          "b": "Remember",
+          "d": "Easy",
+          "t": "fill_blank",
+          "m": 1,
+          "q": "For any event E, the probability P(E) satisfies ____ <= P(E) <= 1.",
+          "a": "0"
+        },
+        {
+          "b": "Remember",
+          "d": "Hard",
+          "t": "mcq",
+          "m": 1,
+          "rev": true,
+          "q": "Which of the following is NOT correct about the probability of an event?",
+          "a": "Since there are only 4 queens in a standard 52-card deck, and 4 is less than half of 52, the probability of drawing the queen of diamonds specifically must be MORE than half, because fewer favourable outcomes make an event more likely, not less",
+          "o": [
+            "Since there are only 4 queens in a standard 52-card deck, and 4 is less than half of 52, the probability of drawing the queen of diamonds specifically must be MORE than half, because fewer favourable outcomes make an event more likely, not less",
+            "0 <= P(E) <= 1 for every event E",
+            "P(E) = 0 means the event cannot happen (an impossible event)",
+            "P(E) = 1 means the event is certain to happen (a sure event)"
+          ]
+        },
+        {
+          "b": "Understand",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "A bag contains lemon-flavoured candies only. One candy is drawn at random. What is P(an orange-flavoured candy is drawn)?",
+          "a": "0, since there are no orange candies in the bag -- it is an impossible event",
+          "o": [
+            "0, since there are no orange candies in the bag -- it is an impossible event",
+            "1, since some candy will definitely be drawn",
+            "0.5",
+            "Cannot be determined without more information"
+          ]
+        },
+        {
+          "b": "Understand",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "In the same bag (lemon candies only), what is P(a lemon-flavoured candy is drawn)?",
+          "a": "1, since every candy in the bag is lemon-flavoured -- it is a sure event",
+          "o": [
+            "1, since every candy in the bag is lemon-flavoured -- it is a sure event",
+            "0",
+            "0.5",
+            "Cannot be determined"
+          ]
+        },
+        {
+          "b": "Understand",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "Which of the following CANNOT be the probability of an event?",
+          "a": "-1.5",
+          "o": [
+            "-1.5",
+            "2/3",
+            "15%",
+            "0.7"
+          ]
+        },
+        {
+          "b": "Understand",
+          "d": "Hard",
+          "t": "mcq",
+          "m": 1,
+          "q": "If P(E) = 0.05 for an event E, what can be said about E?",
+          "a": "E is possible but unlikely -- it is neither impossible nor sure, since 0 < 0.05 < 1",
+          "o": [
+            "E is possible but unlikely -- it is neither impossible nor sure, since 0 < 0.05 < 1",
+            "E is impossible, since 0.05 is close to 0",
+            "E is a sure event",
+            "E cannot be a valid probability, since it is not 0 or 1"
+          ]
+        },
+        {
+          "b": "Understand",
+          "d": "Hard",
+          "t": "short_answer",
+          "m": 2,
+          "q": "When two dice are thrown together (36 equally likely outcomes), the probability of getting a sum of 13 is 0, while the probability of getting a sum of 12 or less is 1. Explain why, in terms of favourable outcomes.",
+          "a": "A sum of 13 is impossible with two ordinary dice (the maximum possible sum is 6+6=12), so there are 0 favourable outcomes out of 36, giving P=0. Every one of the 36 outcomes gives a sum of 12 or less, so all 36 are favourable, giving P=36/36=1.",
+          "s": [
+            [
+              "Explains P(sum=13)=0 because no outcome among the 36 gives sum 13 (max is 12)",
+              1
+            ],
+            [
+              "Explains P(sum<=12)=1 because all 36 outcomes qualify",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "A single fair die is thrown once. What is P(getting a number less than 7)?",
+          "a": "1 (a sure event)",
+          "o": [
+            "1 (a sure event)",
+            "6/7",
+            "0",
+            "1/6"
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Easy",
+          "t": "fill_blank",
+          "m": 1,
+          "q": "A single fair die is thrown once. P(getting an 8) = ____ (this is an impossible event).",
+          "a": "0"
+        },
+        {
+          "b": "Apply",
+          "d": "Hard",
+          "t": "mcq",
+          "m": 1,
+          "q": "Five cards -- the ten, jack, queen, king and ace of diamonds -- are shuffled face down. The queen is drawn first and put aside. A second card is then drawn from the remaining four. What is P(the second card is the queen)?",
+          "a": "0, since the queen has already been removed -- it is now an impossible event for this draw",
+          "o": [
+            "0, since the queen has already been removed -- it is now an impossible event for this draw",
+            "1/5",
+            "1/4",
+            "0.25"
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Hard",
+          "t": "short_answer",
+          "m": 2,
+          "q": "Which of these probabilities is impossible for an actual event, and why: 2/3, -1.5, 15%, 0.7? (Refer to the inequality that every valid probability must satisfy.)",
+          "a": "-1.5 is impossible, because every probability must satisfy 0 <= P(E) <= 1, and -1.5 is negative, which falls outside this range. The other three (2/3, 15% = 0.15, 0.7) all lie between 0 and 1 and are valid.",
+          "s": [
+            [
+              "Correctly identifies -1.5 as the impossible value",
+              1
+            ],
+            [
+              "Gives the correct reason: it violates 0 <= P(E) <= 1 (negative)",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Hard",
+          "t": "short_answer",
+          "m": 2,
+          "q": "A box contains only red and blue marbles, and it is known that P(red) = 1. What must be true about the number of blue marbles in the box, and why?",
+          "a": "There must be 0 blue marbles. Since P(red) = 1 is a sure event, every marble in the box must be red, leaving no blue marbles at all.",
+          "s": [
+            [
+              "States there must be 0 blue marbles",
+              1
+            ],
+            [
+              "Explains this follows because P(red)=1 means every marble is red (a sure event)",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Hardest",
+          "t": "long_answer",
+          "m": 3,
+          "q": "A box contains 90 discs numbered 1 to 90, and one disc is drawn at random. (i) Is 'the disc shows a number from 1 to 90' a sure event, an impossible event, or neither? Justify briefly. (ii) Is 'the disc shows the number 200' a sure event, an impossible event, or neither? Justify briefly. (iii) State the probability for each of the two events in (i) and (ii).",
+          "a": "(i) It is a sure event, because every one of the 90 discs (all possible outcomes) satisfies 'shows a number from 1 to 90'; P = 90/90 = 1. (ii) It is an impossible event, because no disc in the box is numbered 200 (the discs only go up to 90); P = 0/90 = 0. (iii) P(number from 1 to 90) = 1; P(number 200) = 0.",
+          "s": [
+            [
+              "Correctly identifies (i) as a sure event with valid justification",
+              1
+            ],
+            [
+              "Correctly identifies (ii) as an impossible event with valid justification",
+              1
+            ],
+            [
+              "Correctly states both probabilities as 1 and 0 respectively",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Analyse",
+          "d": "Hard",
+          "t": "assertion_reason",
+          "m": 1,
+          "q": "Assertion (A): A single fair die is thrown once. P(getting a number less than 7) = 1. Reason (R): Every one of the six faces of the die (1, 2, 3, 4, 5, 6) is a number less than 7, so all six outcomes are favourable to this event.",
+          "a": "Both A and R are true, and R is the correct explanation of A",
+          "o": [
+            "Both A and R are true, and R is the correct explanation of A",
+            "Both A and R are true, but R is not the correct explanation of A",
+            "A is true, R is false",
+            "A is false, R is true"
+          ]
+        },
+        {
+          "b": "Analyse",
+          "d": "Hard",
+          "t": "multi_statement",
+          "m": 1,
+          "q": "Consider these statements about the probability of an event. (I) If P(E) = 0 for an event E, then E cannot occur. (II) If P(E) = 1 for an event E, then E is certain to occur. Which is or are correct?",
+          "a": "Both I and II",
+          "o": [
+            "Both I and II",
+            "Only I",
+            "Only II",
+            "Neither I nor II"
+          ]
+        },
+        {
+          "b": "Analyse",
+          "d": "Hardest",
+          "t": "long_answer",
+          "m": 3,
+          "q": "A game of chance has an arrow that points to one of the numbers 1 to 8, all equally likely (Fig. 14.5). (i) Is 'the arrow points to a number less than 9' a sure event? Find its probability. (ii) Is 'the arrow points to the number 0' an impossible event? Find its probability. (iii) A friend claims that, since (i) and (ii) are 'opposite extremes', their probabilities must add to exactly 1. Check whether this is true here and explain.",
+          "a": "(i) Yes, it is a sure event, since every one of the 8 numbers (1 to 8) is less than 9; P = 8/8 = 1. (ii) Yes, it is an impossible event, since 0 is not one of the 8 numbers on the spinner; P = 0/8 = 0. (iii) The friend's claim happens to be true here: 1 + 0 = 1. But this is because a sure event and an impossible event ALWAYS have probabilities 1 and 0 respectively, for any experiment -- not because these two particular events are complementary events of each other (they are not each other's 'not E'); the sum being 1 is really just 1 + 0 = 1 in general, true for any sure and any impossible event, not evidence of a complementary relationship.",
+          "s": [
+            [
+              "Correctly finds (i) sure event, P=1",
+              1
+            ],
+            [
+              "Correctly finds (ii) impossible event, P=0",
+              1
+            ],
+            [
+              "Correctly evaluates the friend's claim, distinguishing 'always 1 and 0' from an actual complementary relationship",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Evaluate",
+          "d": "Hard",
+          "t": "short_answer",
+          "m": 2,
+          "q": "A classmate says: 'A probability of 0.05 is basically the same as a probability of 0, so an event with P(E) = 0.05 might as well be called impossible.' Evaluate this claim.",
+          "a": "The claim is false. P(E) = 0 has a precise meaning -- the event has NO favourable outcomes at all and truly cannot happen. P(E) = 0.05 means the event has some (small but nonzero) chance of happening; it is unlikely but not impossible. Treating a small positive probability as if it were exactly 0 is a mistake.",
+          "s": [
+            [
+              "States the claim is false",
+              1
+            ],
+            [
+              "Explains the precise distinction between 'no favourable outcomes' (0) and 'a small nonzero chance' (0.05)",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Create",
+          "d": "Hardest",
+          "t": "long_answer",
+          "m": 3,
+          "q": "Describe one event of your own that is a sure event and one event of your own (using a different experiment) that is an impossible event. For each, name the experiment, the event, and state its probability with a one-line reason.",
+          "a": "Sample: Sure event -- experiment: rolling a standard six-faced die once; event: 'getting a number from 1 to 6'; P = 1, because every face shows a number from 1 to 6, so all 6 outcomes are favourable. Impossible event -- experiment: drawing one card from a standard deck of 52 playing cards; event: 'drawing a card numbered 15'; P = 0, because no card in a standard deck is numbered 15. (Any two genuine, correctly justified sure/impossible events from different experiments are acceptable.)",
+          "s": [
+            [
+              "Gives a valid sure event with correct probability 1 and a valid reason",
+              1
+            ],
+            [
+              "Gives a valid impossible event (different experiment) with correct probability 0 and a valid reason",
+              1
+            ],
+            [
+              "Both examples are original, not copied directly from the chapter's own examples/exercises",
+              1
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "code": "C10M-14.4",
+      "name": "Complementary events: P(E) + P(not E) = 1",
+      "description": "For any event E, the event 'not E' consists of all the outcomes not favourable to E. P(E) + P(not E) = 1, so P(not E) = 1 - P(E).",
+      "idea": "Every outcome either favours E or it doesn't, with nothing left over and nothing double-counted, so the two probabilities must add up to exactly the whole, which is 1.",
+      "rule": "For any event E, P(not E) = 1 - P(E), and equivalently P(E) + P(not E) = 1. This holds for any event, and becomes a genuine shortcut whenever P(not E) is easier to count directly than P(E), or vice versa.",
+      "example": "P(Sangeeta wins a tennis match) = 0.62, so P(Reshma wins, the complementary event) = 1 - 0.62 = 0.38 (Example 5, p. 208).",
+      "difficulty_base": "Hard",
+      "questions": [
+        {
+          "b": "Remember",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "For any event E, P(E) + P(not E) equals",
+          "a": "1",
+          "o": [
+            "1",
+            "0",
+            "2",
+            "P(E) x P(not E)"
+          ]
+        },
+        {
+          "b": "Remember",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "If P(E) = 0.3, then P(not E) equals",
+          "a": "0.7",
+          "o": [
+            "0.7",
+            "0.3",
+            "1.3",
+            "0"
+          ]
+        },
+        {
+          "b": "Remember",
+          "d": "Easy",
+          "t": "fill_blank",
+          "m": 1,
+          "q": "The event 'not E', consisting of all outcomes not favourable to E, is called the ____ of E.",
+          "a": "complement"
+        },
+        {
+          "b": "Remember",
+          "d": "Hard",
+          "t": "mcq",
+          "m": 1,
+          "rev": true,
+          "q": "Which of the following is NOT a correct use of complementary events?",
+          "a": "In a box containing red, white and green marbles, P(white) must always equal P(green), since both are simply 'not red'",
+          "o": [
+            "In a box containing red, white and green marbles, P(white) must always equal P(green), since both are simply 'not red'",
+            "P(not E) = 1 - P(E) for any event E",
+            "If P(E) = 0.62, then P(not E) = 0.38",
+            "The complement of drawing an ace from a deck of cards is drawing any of the other 48 cards"
+          ]
+        },
+        {
+          "b": "Understand",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "If P(E) = 0.05, what is P(not E)?",
+          "a": "0.95",
+          "o": [
+            "0.95",
+            "0.05",
+            "1.05",
+            "0.5"
+          ]
+        },
+        {
+          "b": "Understand",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "One card is drawn from a well-shuffled deck of 52 cards. If E is the event 'the card is an ace', what is the event 'not E'?",
+          "a": "the card is not an ace",
+          "o": [
+            "the card is not an ace",
+            "the card is a king",
+            "the card is a face card",
+            "the card is red"
+          ]
+        },
+        {
+          "b": "Understand",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "A bag has 3 red balls and 5 black balls. If E is 'the ball drawn is red', P(E) = 3/8. What is P(not E)?",
+          "a": "5/8",
+          "o": [
+            "5/8",
+            "3/8",
+            "1/8",
+            "5/3"
+          ]
+        },
+        {
+          "b": "Understand",
+          "d": "Hard",
+          "t": "mcq",
+          "m": 1,
+          "q": "It is given that in a group of 3 students, the probability that 2 of them do NOT share a birthday is 0.992. What is the probability that 2 of them DO share a birthday?",
+          "a": "0.008",
+          "o": [
+            "0.008",
+            "0.992",
+            "0.5",
+            "0.108"
+          ]
+        },
+        {
+          "b": "Understand",
+          "d": "Hard",
+          "t": "short_answer",
+          "m": 2,
+          "q": "A carton has 100 shirts: 88 good, 8 with minor defects, 4 with major defects. Sujatha will accept any shirt except one with a major defect. Using the complement rule, find P(a randomly drawn shirt is acceptable to Sujatha), given that P(major defect) = 4/100.",
+          "a": "P(acceptable to Sujatha) = P(not a major defect) = 1 - P(major defect) = 1 - 4/100 = 96/100 = 0.96.",
+          "s": [
+            [
+              "Correctly identifies 'acceptable to Sujatha' as the complement of 'major defect'",
+              1
+            ],
+            [
+              "Correctly computes 1 - 4/100 = 0.96",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "Two players, Sangeeta and Reshma, play a match; P(Sangeeta wins) = 0.62. What is P(Reshma wins), assuming exactly one of them wins?",
+          "a": "0.38",
+          "o": [
+            "0.38",
+            "0.62",
+            "0.5",
+            "1.62"
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Easy",
+          "t": "fill_blank",
+          "m": 1,
+          "q": "One card is drawn from a deck of 52 cards. P(the card is an ace) = 1/13, so P(the card is not an ace) = ____.",
+          "a": "12/13"
+        },
+        {
+          "b": "Apply",
+          "d": "Hard",
+          "t": "mcq",
+          "m": 1,
+          "q": "Savita and Hamida are friends (ignore leap years). P(they have different birthdays) = 364/365. What is P(they have the same birthday)?",
+          "a": "1/365",
+          "o": [
+            "1/365",
+            "364/365",
+            "1/2",
+            "0"
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Hard",
+          "t": "short_answer",
+          "m": 2,
+          "q": "A lot of 144 ball pens has 20 defective ones. Nuri buys the pen only if it is good. Using P(defective) = 20/144, find P(Nuri buys the pen), using the complement rule.",
+          "a": "P(good, i.e. Nuri buys it) = 1 - P(defective) = 1 - 20/144 = 124/144 = 31/36.",
+          "s": [
+            [
+              "Correctly sets up 1 - 20/144",
+              1
+            ],
+            [
+              "Correctly simplifies to 31/36",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Hard",
+          "t": "short_answer",
+          "m": 2,
+          "q": "A box contains 5 red marbles, 8 white marbles and 4 green marbles (17 total). Using the complement rule, find P(the marble drawn is not green).",
+          "a": "P(green) = 4/17, so P(not green) = 1 - 4/17 = 13/17.",
+          "s": [
+            [
+              "Correctly finds P(green) = 4/17",
+              1
+            ],
+            [
+              "Correctly computes P(not green) = 13/17",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Hardest",
+          "t": "long_answer",
+          "m": 3,
+          "q": "A piggy bank has 100 fifty-paisa coins, 50 one-rupee coins, 20 two-rupee coins and 10 five-rupee coins (180 coins). One coin falls out at random. (i) Find P(the coin is a five-rupee coin). (ii) Using the complement rule, find P(the coin is NOT a five-rupee coin). (iii) Verify your answer to (ii) by instead directly counting the coins that are not five-rupee coins.",
+          "a": "(i) P(5-rupee) = 10/180 = 1/18. (ii) P(not 5-rupee) = 1 - 1/18 = 17/18. (iii) Coins that are not five-rupee: 100 + 50 + 20 = 170 out of 180, giving 170/180 = 17/18, which matches part (ii).",
+          "s": [
+            [
+              "Correctly finds P(5-rupee) = 1/18",
+              1
+            ],
+            [
+              "Correctly applies the complement rule to get 17/18",
+              1
+            ],
+            [
+              "Correctly verifies by direct counting (170/180 = 17/18)",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Analyse",
+          "d": "Hard",
+          "t": "assertion_reason",
+          "m": 1,
+          "q": "Assertion (A): One card is drawn from a well-shuffled deck of 52 cards. P(the card is not an ace) = 12/13. Reason (R): Every probability value must lie between 0 and 1.",
+          "a": "Both A and R are true, but R is not the correct explanation of A",
+          "o": [
+            "Both A and R are true, but R is not the correct explanation of A",
+            "Both A and R are true, and R is the correct explanation of A",
+            "A is true, R is false",
+            "A is false, R is true"
+          ]
+        },
+        {
+          "b": "Analyse",
+          "d": "Hard",
+          "t": "multi_statement",
+          "m": 1,
+          "q": "Consider these statements about complementary events. (I) The complement of 'drawing a red card' from a standard deck is 'drawing a face card'. (II) For any two events E and F that are complements of each other, P(E) + P(F) = 1. Which is or are correct?",
+          "a": "Only II",
+          "o": [
+            "Only II",
+            "Only I",
+            "Both I and II",
+            "Neither I nor II"
+          ]
+        },
+        {
+          "b": "Analyse",
+          "d": "Hardest",
+          "t": "long_answer",
+          "m": 3,
+          "q": "A box contains 90 discs numbered 1 to 90. One disc is drawn at random. (i) Find P(the disc shows a number divisible by 5). (ii) Using the complement rule, find P(the disc does NOT show a number divisible by 5). (iii) A second box has discs numbered 1 to 45 only. Without fully recomputing, state whether P(divisible by 5) in this second box would be the same, larger, or smaller than in the first box, and justify in one line.",
+          "a": "(i) Numbers divisible by 5 from 1 to 90: 5, 10, ..., 90, giving 18 numbers; P = 18/90 = 1/5. (ii) P(not divisible by 5) = 1 - 1/5 = 4/5. (iii) It would be the SAME (1/5), because from 1 to 45 the multiples of 5 are 5, 10, ..., 45, which is 9 numbers out of 45, and 9/45 = 1/5 as well -- the proportion of multiples of 5 stays one in every five numbers regardless of how far the range extends, as long as it starts at 1.",
+          "s": [
+            [
+              "Correctly finds P(divisible by 5) = 1/5 for the first box",
+              1
+            ],
+            [
+              "Correctly applies the complement rule to get 4/5",
+              1
+            ],
+            [
+              "Correctly judges the second box gives the same proportion (1/5) with valid reasoning",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Evaluate",
+          "d": "Hard",
+          "t": "short_answer",
+          "m": 2,
+          "q": "A classmate says: 'P(not E) = 1 - P(E) only works when E and not-E are the only two things that can happen, like heads and tails. For an event like drawing an ace from a deck, where there are lots of other cards, this rule doesn't apply.' Evaluate this claim.",
+          "a": "The claim is false. 'Not E' is defined as every outcome that does not favour E, however many kinds of outcomes that covers -- for drawing an ace, 'not E' means any one of the other 48 cards, not just one alternative. The rule P(not E) = 1 - P(E) holds for any event E, whether the complement is a single alternative (like tail vs head) or a wide range of other outcomes (like the 48 non-ace cards).",
+          "s": [
+            [
+              "States the claim is false",
+              1
+            ],
+            [
+              "Explains that 'not E' covers however many outcomes don't favour E, so the rule still applies (using the ace/48-other-cards example)",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Create",
+          "d": "Hardest",
+          "t": "long_answer",
+          "m": 3,
+          "q": "Construct your own complementary-events problem: choose an event E from any experiment used in this chapter (coins, dice, cards, or a bag of objects), state P(E), and use the complement rule to find P(not E). Then describe in words what outcomes make up 'not E' in your example.",
+          "a": "Sample: experiment -- drawing one card from a standard 52-card deck; event E = 'the card is a king'; P(E) = 4/52 = 1/13. By the complement rule, P(not E) = 1 - 1/13 = 12/13. 'Not E' consists of all 48 cards that are not kings. (Any valid event with a correctly computed P(E), correctly applied complement rule, and a correct description of 'not E' is acceptable.)",
+          "s": [
+            [
+              "States a valid event E with correct P(E)",
+              1
+            ],
+            [
+              "Correctly applies the complement rule to find P(not E)",
+              1
+            ],
+            [
+              "Correctly describes in words what outcomes make up 'not E'",
+              1
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "code": "C10M-14.5",
+      "name": "Probability with a standard deck of playing cards",
+      "description": "A standard deck has 52 cards in 4 suits of 13 cards each: spades and clubs (black), hearts and diamonds (red); each suit has ace, 2-10, jack, queen, king; jacks, queens and kings are face cards (12 in the deck). Computing P(E) for drawing a specified card or type of card, including from a reduced deck after a card is removed and not replaced.",
+      "idea": "Once you know how the 52 cards split by suit, colour and rank, any card question becomes ordinary counting of favourable cards out of 52 (or fewer, if some have already been removed).",
+      "rule": "52 cards = 4 suits x 13 cards. Black suits: spades, clubs (26 cards). Red suits: hearts, diamonds (26 cards). Face cards: jack, queen, king in each suit = 3 x 4 = 12. If cards are removed and not replaced, both the favourable count and the total count must be adjusted to the remaining cards.",
+      "example": "One card drawn from 52: P(ace) = 4/52 = 1/13 (Example 4, pp. 207-208). From 5 diamond cards (10, J, Q, K, A) with the queen removed and not replaced: P(second card is the queen) = 0/4 = 0 (Exercise 14.1, Q15).",
+      "difficulty_base": "Hard",
+      "questions": [
+        {
+          "b": "Remember",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "A standard deck of playing cards has how many cards in total?",
+          "a": "52",
+          "o": [
+            "52",
+            "48",
+            "54",
+            "13"
+          ]
+        },
+        {
+          "b": "Remember",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "A standard deck is divided into 4 suits. How many cards are in each suit?",
+          "a": "13",
+          "o": [
+            "13",
+            "12",
+            "10",
+            "4"
+          ]
+        },
+        {
+          "b": "Remember",
+          "d": "Easy",
+          "t": "fill_blank",
+          "m": 1,
+          "q": "The jack, queen and king of each suit are together called ____ cards.",
+          "a": "face"
+        },
+        {
+          "b": "Remember",
+          "d": "Hard",
+          "t": "mcq",
+          "m": 1,
+          "rev": true,
+          "q": "Which of the following is NOT a correct fact about a standard 52-card deck?",
+          "a": "Since there are 4 suits, drawing one card is exactly like throwing a single four-faced die -- each suit is equally likely, so P(a spade) = 1/4, and no finer counting within a suit is ever needed",
+          "o": [
+            "Since there are 4 suits, drawing one card is exactly like throwing a single four-faced die -- each suit is equally likely, so P(a spade) = 1/4, and no finer counting within a suit is ever needed",
+            "Spades and clubs are the two black suits; hearts and diamonds are the two red suits",
+            "There are 12 face cards in total (the jack, queen and king of each of the 4 suits)",
+            "Each suit has 13 cards: ace, 2 to 10, jack, queen and king"
+          ]
+        },
+        {
+          "b": "Understand",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "One card is drawn from a well-shuffled deck of 52 cards. What is P(the card is a spade)?",
+          "a": "13/52 = 1/4",
+          "o": [
+            "13/52 = 1/4",
+            "4/52 = 1/13",
+            "12/52 = 3/13",
+            "26/52 = 1/2"
+          ]
+        },
+        {
+          "b": "Understand",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "One card is drawn from a well-shuffled deck. What is P(the card is the queen of diamonds)?",
+          "a": "1/52",
+          "o": [
+            "1/52",
+            "1/13",
+            "1/4",
+            "4/52"
+          ]
+        },
+        {
+          "b": "Understand",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "One card is drawn from a well-shuffled deck. What is P(the card is a face card)?",
+          "a": "12/52 = 3/13",
+          "o": [
+            "12/52 = 3/13",
+            "13/52 = 1/4",
+            "4/52 = 1/13",
+            "16/52 = 4/13"
+          ]
+        },
+        {
+          "b": "Understand",
+          "d": "Hard",
+          "t": "mcq",
+          "m": 1,
+          "q": "One card is drawn from a well-shuffled deck. Why is P(a red face card) equal to 6/52 rather than 12/52?",
+          "a": "Because only half of the 12 face cards (the ones in the 2 red suits, hearts and diamonds) are red; the other 6 face cards are black",
+          "o": [
+            "Because only half of the 12 face cards (the ones in the 2 red suits, hearts and diamonds) are red; the other 6 face cards are black",
+            "Because 'red' and 'face card' are actually the same event",
+            "Because only 6 cards in the deck are red",
+            "Because a red face card must be counted twice"
+          ]
+        },
+        {
+          "b": "Understand",
+          "d": "Hard",
+          "t": "short_answer",
+          "m": 2,
+          "q": "One card is drawn from a well-shuffled deck of 52 cards. Find P(the card is a king of red colour), showing how you counted the favourable outcomes.",
+          "a": "There are 4 kings in total, one per suit; of these, 2 are in the red suits (hearts and diamonds). So the number of outcomes favourable to 'king of red colour' is 2, and P = 2/52 = 1/26.",
+          "s": [
+            [
+              "Correctly identifies 2 favourable outcomes (the 2 red kings)",
+              1
+            ],
+            [
+              "Correctly computes P = 1/26",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "One card is drawn from a deck of 52 cards. What is P(the card is the jack of hearts)?",
+          "a": "1/52",
+          "o": [
+            "1/52",
+            "1/13",
+            "1/4",
+            "4/13"
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Easy",
+          "t": "fill_blank",
+          "m": 1,
+          "q": "One card is drawn from a deck of 52 cards. P(a face card) = ____ (in lowest terms).",
+          "a": "3/13"
+        },
+        {
+          "b": "Apply",
+          "d": "Hard",
+          "t": "mcq",
+          "m": 1,
+          "q": "Five cards -- the ten, jack, queen, king and ace of diamonds -- are shuffled face down and one is picked at random. What is P(the card is the queen)?",
+          "a": "1/5",
+          "o": [
+            "1/5",
+            "1/4",
+            "1/52",
+            "1/13"
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Hard",
+          "t": "short_answer",
+          "m": 2,
+          "q": "Continuing the same 5 diamond cards (ten, jack, queen, king, ace): the queen is drawn first and put aside. Find P(the second card picked is an ace).",
+          "a": "After removing the queen, 4 cards remain: ten, jack, king, ace. Exactly 1 of these 4 is the ace, so P(second card is an ace) = 1/4.",
+          "s": [
+            [
+              "Correctly identifies 4 cards remain after the queen is removed",
+              1
+            ],
+            [
+              "Correctly computes P(ace) = 1/4",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Hard",
+          "t": "short_answer",
+          "m": 2,
+          "q": "One card is drawn from a well-shuffled deck of 52 cards. Find P(the card is neither a face card nor an ace).",
+          "a": "There are 12 face cards and 4 aces, and none of the aces is also a face card, so 16 cards are 'a face card or an ace'. The remaining cards are 52 - 16 = 36. So P(neither a face card nor an ace) = 36/52 = 9/13.",
+          "s": [
+            [
+              "Correctly finds 16 cards are face cards or aces (12+4, no overlap)",
+              1
+            ],
+            [
+              "Correctly computes P = 36/52 = 9/13",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Hardest",
+          "t": "long_answer",
+          "m": 3,
+          "q": "One card is drawn from a well-shuffled deck of 52 cards. (i) Find P(the card is a heart). (ii) Find P(the card is a 10) (there are 4 tens in the deck, one per suit). (iii) Find P(the card is the 10 of hearts specifically), and explain how this answer relates to your answers in (i) and (ii).",
+          "a": "(i) P(heart) = 13/52 = 1/4. (ii) P(a 10) = 4/52 = 1/13. (iii) P(10 of hearts) = 1/52, since there is exactly one such card. This is smaller than both (i) and (ii), because 'the 10 of hearts' is the single specific card that is BOTH a heart and a 10 -- the most narrowly favourable event of the three, with only 1 outcome out of 52, while (i) and (ii) each allow 13 or 4 different cards respectively.",
+          "s": [
+            [
+              "Correctly finds P(heart) = 1/4",
+              1
+            ],
+            [
+              "Correctly finds P(a 10) = 1/13",
+              1
+            ],
+            [
+              "Correctly finds P(10 of hearts) = 1/52 with a valid comparison/explanation",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Analyse",
+          "d": "Hard",
+          "t": "assertion_reason",
+          "m": 1,
+          "q": "Assertion (A): One card is drawn from a well-shuffled deck of 52 cards. P(the card is a face card) = 3/13. Reason (R): There are 13 face cards in a standard deck of 52 playing cards.",
+          "a": "A is true, R is false",
+          "o": [
+            "A is true, R is false",
+            "A is false, R is true",
+            "Both A and R are true, and R is the correct explanation of A",
+            "Both A and R are true, but R is not the correct explanation of A"
+          ]
+        },
+        {
+          "b": "Analyse",
+          "d": "Hard",
+          "t": "multi_statement",
+          "m": 1,
+          "q": "Consider these statements about a standard deck of 52 cards. (I) The number of black face cards in the deck is 8. (II) There are 13 face cards in the deck, one for each rank from ace to king. Which is or are correct?",
+          "a": "Neither I nor II",
+          "o": [
+            "Neither I nor II",
+            "Only I",
+            "Only II",
+            "Both I and II"
+          ]
+        },
+        {
+          "b": "Analyse",
+          "d": "Hardest",
+          "t": "long_answer",
+          "m": 3,
+          "q": "One card is drawn from a well-shuffled deck of 52 cards. (i) Find P(the card is a king). (ii) Find P(the card is NOT a king), using the complement rule. (iii) A second, smaller deck is made using only the 4 suits' aces, kings, queens and jacks (16 cards in all). Find P(the card is a king) when drawn from this smaller deck, and state whether it is larger or smaller than your answer to (i).",
+          "a": "(i) P(king) = 4/52 = 1/13. (ii) P(not a king) = 1 - 1/13 = 12/13. (iii) In the 16-card deck, there are still 4 kings, so P(king) = 4/16 = 1/4. This is LARGER than 1/13, because the same number of favourable cards (4 kings) is now being drawn from a much smaller total (16 instead of 52).",
+          "s": [
+            [
+              "Correctly finds P(king)=1/13 from the full deck",
+              1
+            ],
+            [
+              "Correctly applies the complement rule to get 12/13",
+              1
+            ],
+            [
+              "Correctly finds P(king)=1/4 from the 16-card deck and correctly compares (larger)",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Evaluate",
+          "d": "Hard",
+          "t": "short_answer",
+          "m": 2,
+          "q": "A classmate says: 'A red face card and a face card of hearts are the same thing, so P(red face card) and P(face card of hearts) must be equal.' Evaluate this claim.",
+          "a": "The claim is false. 'Red face card' includes face cards from BOTH red suits, hearts AND diamonds (3 + 3 = 6 cards), while 'face card of hearts' includes only the 3 face cards from hearts alone. So P(red face card) = 6/52 = 3/26, while P(face card of hearts) = 3/52, which are not equal.",
+          "s": [
+            [
+              "States the claim is false",
+              1
+            ],
+            [
+              "Explains the correct counts (6 for red face cards vs 3 for hearts face cards specifically) showing they are not equal",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Create",
+          "d": "Hardest",
+          "t": "long_answer",
+          "m": 3,
+          "q": "Construct your own playing-card probability question of your choice (using the standard 52-card deck), different from any question already used in this chapter. State the event clearly, count the favourable outcomes, and give the probability.",
+          "a": "Sample: event -- 'the card drawn is a black ace'. There are 2 black suits (spades, clubs), each with exactly 1 ace, giving 2 favourable outcomes out of 52. P(black ace) = 2/52 = 1/26. (Any genuine, correctly counted card event, not copied directly from the chapter's own examples/exercises, is acceptable.)",
+          "s": [
+            [
+              "States a clear, valid card event",
+              1
+            ],
+            [
+              "Correctly counts the favourable outcomes for the chosen event",
+              1
+            ],
+            [
+              "Correctly computes the resulting probability",
+              1
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "code": "C10M-14.6",
+      "name": "Compound experiments: two or three coins tossed together",
+      "description": "When two coins (or three coins) are tossed simultaneously, the possible outcomes are listed by pairing (or tripling) H/T for each coin: two coins give 4 equally likely outcomes (HH, HT, TH, TT); three coins give 8 equally likely outcomes. An outcome like 'one head and one tail' is not a single elementary outcome -- it corresponds to 2 of the 4 (HT and TH), so it is not equally likely to 'two heads' or 'two tails' alone.",
+      "idea": "List every coin's result in order (first coin, second coin, ...) rather than just describing the result in words, because two differently-ordered outcomes (like HT and TH) are genuinely different and equally likely elementary outcomes, even though they might sound like 'the same result' in casual language.",
+      "rule": "For two coins tossed together: 4 equally likely outcomes {HH, HT, TH, TT}. For three coins: 8 equally likely outcomes {HHH, HHT, HTH, HTT, THH, THT, TTH, TTT}. For an event described in words, count exactly which of these listed outcomes qualify, then divide by 4 (or 8).",
+      "example": "Two coins (a Rs 1 coin and a Rs 2 coin) tossed together: P(at least one head) = 3/4, using the 3 outcomes HH, HT, TH out of 4 (Example 9, p. 210). Three coins tossed: Hanif wins only if all three match (HHH or TTT), so P(Hanif loses) = 6/8 = 3/4 (Exercise 14.1, Q23, p. 216).",
+      "difficulty_base": "Hard",
+      "questions": [
+        {
+          "b": "Remember",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "When two coins are tossed simultaneously, the total number of possible outcomes is",
+          "a": "4",
+          "o": [
+            "4",
+            "2",
+            "3",
+            "8"
+          ]
+        },
+        {
+          "b": "Remember",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "When three coins are tossed simultaneously, the total number of possible outcomes is",
+          "a": "8",
+          "o": [
+            "8",
+            "4",
+            "6",
+            "3"
+          ]
+        },
+        {
+          "b": "Remember",
+          "d": "Easy",
+          "t": "fill_blank",
+          "m": 1,
+          "q": "When two coins are tossed together, the four equally likely outcomes are HH, HT, TH and ____.",
+          "a": "TT"
+        },
+        {
+          "b": "Remember",
+          "d": "Hard",
+          "t": "mcq",
+          "m": 1,
+          "rev": true,
+          "q": "Which of the following is NOT a correct way to list the outcomes of tossing two coins simultaneously?",
+          "a": "List the outcomes as an ordered pair on a 6-by-6 table, one axis for each coin, the same way the two-dice sample space is organised",
+          "o": [
+            "List the outcomes as an ordered pair on a 6-by-6 table, one axis for each coin, the same way the two-dice sample space is organised",
+            "List all 4 outcomes HH, HT, TH, TT, treating the two coins as distinguishable (first coin, second coin)",
+            "Recognise that HT and TH are different outcomes, even though both describe 'one head and one tail'",
+            "Treat all 4 listed outcomes, HH, HT, TH and TT, as equally likely"
+          ]
+        },
+        {
+          "b": "Understand",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "Harpreet tosses a Rs 1 coin and a Rs 2 coin together. Which of these is a correctly listed outcome?",
+          "a": "(H, T) -- head on the Rs 1 coin, tail on the Rs 2 coin",
+          "o": [
+            "(H, T) -- head on the Rs 1 coin, tail on the Rs 2 coin",
+            "(H) -- one head only",
+            "Head or tail, whichever is more likely",
+            "Two heads and two tails together"
+          ]
+        },
+        {
+          "b": "Understand",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "For two coins tossed together, how many of the 4 outcomes show exactly one head and one tail?",
+          "a": "2 (namely HT and TH)",
+          "o": [
+            "2 (namely HT and TH)",
+            "1",
+            "3",
+            "4"
+          ]
+        },
+        {
+          "b": "Understand",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "For three coins tossed together, how many of the 8 outcomes show all three coins the same (all heads or all tails)?",
+          "a": "2 (namely HHH and TTT)",
+          "o": [
+            "2 (namely HHH and TTT)",
+            "1",
+            "3",
+            "6"
+          ]
+        },
+        {
+          "b": "Understand",
+          "d": "Hard",
+          "t": "mcq",
+          "m": 1,
+          "q": "Why are HT and TH counted as two separate outcomes when two coins are tossed together, rather than being combined into one 'one head, one tail' outcome?",
+          "a": "Because the two coins are distinguishable (e.g. a Rs 1 coin and a Rs 2 coin), so which coin shows the head matters for listing equally likely elementary outcomes",
+          "o": [
+            "Because the two coins are distinguishable (e.g. a Rs 1 coin and a Rs 2 coin), so which coin shows the head matters for listing equally likely elementary outcomes",
+            "Because HT and TH always have different probabilities",
+            "Because only H matters, not T",
+            "Because there are only 2 coins, so only 2 outcomes are possible"
+          ]
+        },
+        {
+          "b": "Understand",
+          "d": "Hard",
+          "t": "short_answer",
+          "m": 2,
+          "q": "Harpreet tosses two different coins simultaneously. Find P(she gets at least one head), listing the favourable outcomes.",
+          "a": "The 4 equally likely outcomes are HH, HT, TH, TT. Favourable to 'at least one head' are HH, HT, TH (3 outcomes). So P(at least one head) = 3/4.",
+          "s": [
+            [
+              "Correctly lists the 3 favourable outcomes (HH, HT, TH)",
+              1
+            ],
+            [
+              "Correctly computes P = 3/4",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "Two coins are tossed together. What is P(getting exactly two heads)?",
+          "a": "1/4",
+          "o": [
+            "1/4",
+            "1/2",
+            "3/4",
+            "0"
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Easy",
+          "t": "fill_blank",
+          "m": 1,
+          "q": "Two coins are tossed together. P(getting no head at all, i.e. TT) = ____.",
+          "a": "1/4"
+        },
+        {
+          "b": "Apply",
+          "d": "Hard",
+          "t": "mcq",
+          "m": 1,
+          "q": "Two coins are tossed together. Using the complement rule and P(at least one head) = 3/4, what is P(no head at all)?",
+          "a": "1/4",
+          "o": [
+            "1/4",
+            "3/4",
+            "1/2",
+            "0"
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Hard",
+          "t": "short_answer",
+          "m": 2,
+          "q": "A game consists of tossing a coin 3 times. Hanif wins if all three tosses give the same result (three heads or three tails), and loses otherwise. Find P(Hanif wins).",
+          "a": "There are 8 equally likely outcomes. Hanif wins only with HHH or TTT, which is 2 outcomes. P(Hanif wins) = 2/8 = 1/4.",
+          "s": [
+            [
+              "Correctly identifies 2 favourable outcomes (HHH, TTT) out of 8",
+              1
+            ],
+            [
+              "Correctly computes P(win) = 1/4",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Hard",
+          "t": "short_answer",
+          "m": 2,
+          "q": "Continuing the same game (3 coin tosses, Hanif wins only on HHH or TTT), find P(Hanif loses), using the complement rule.",
+          "a": "P(Hanif loses) = 1 - P(Hanif wins) = 1 - 1/4 = 3/4 (equivalently 6/8, counting the other 6 outcomes directly).",
+          "s": [
+            [
+              "Correctly applies the complement rule (1 - 1/4)",
+              1
+            ],
+            [
+              "Correctly states P(lose) = 3/4",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Hardest",
+          "t": "long_answer",
+          "m": 3,
+          "q": "Three coins are tossed together. (i) List all 8 equally likely outcomes. (ii) Find P(exactly two heads). (iii) Find P(at least two heads).",
+          "a": "(i) HHH, HHT, HTH, HTT, THH, THT, TTH, TTT. (ii) Exactly two heads: HHT, HTH, THH -- 3 outcomes, so P = 3/8. (iii) At least two heads means exactly two heads or exactly three heads: HHT, HTH, THH, HHH -- 4 outcomes, so P = 4/8 = 1/2.",
+          "s": [
+            [
+              "Correctly lists all 8 outcomes",
+              1
+            ],
+            [
+              "Correctly finds P(exactly two heads) = 3/8",
+              1
+            ],
+            [
+              "Correctly finds P(at least two heads) = 1/2",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Analyse",
+          "d": "Hard",
+          "t": "assertion_reason",
+          "m": 1,
+          "q": "Assertion (A): Two coins are tossed together. P(getting one head and one tail) = 1/3. Reason (R): There are 4 equally likely outcomes when two coins are tossed together: HH, HT, TH, TT.",
+          "a": "A is false, R is true",
+          "o": [
+            "A is false, R is true",
+            "A is true, R is false",
+            "Both A and R are true, and R is the correct explanation of A",
+            "Both A and R are true, but R is not the correct explanation of A"
+          ]
+        },
+        {
+          "b": "Analyse",
+          "d": "Hard",
+          "t": "multi_statement",
+          "m": 1,
+          "q": "Consider these statements about tossing three coins together. (I) There are 8 equally likely outcomes in total. (II) The event 'all three coins show the same face' consists of exactly 2 of these 8 outcomes. Which is or are correct?",
+          "a": "Both I and II",
+          "o": [
+            "Both I and II",
+            "Only I",
+            "Only II",
+            "Neither I nor II"
+          ]
+        },
+        {
+          "b": "Analyse",
+          "d": "Hardest",
+          "t": "long_answer",
+          "m": 3,
+          "q": "Three coins are tossed together, so there are 8 equally likely outcomes. (i) List the outcomes favourable to 'at least two tails'. (ii) Find P(at least two tails). (iii) A two-coin toss (4 outcomes) and a three-coin toss (8 outcomes) are performed separately. Explain in one line why you cannot simply compare the raw 'number of favourable outcomes' between the two experiments without also comparing their totals.",
+          "a": "(i) At least two tails means exactly two tails or exactly three tails: HTT, THT, TTH, TTT -- 4 outcomes. (ii) P(at least two tails) = 4/8 = 1/2. (iii) The two experiments have different totals (4 for two coins, 8 for three coins), so the same NUMBER of favourable outcomes would mean different probabilities in each; only the ratio (favourable/total), not the raw count, can be validly compared between the two experiments.",
+          "s": [
+            [
+              "Correctly lists the 4 favourable outcomes for 'at least two tails'",
+              1
+            ],
+            [
+              "Correctly computes P = 1/2",
+              1
+            ],
+            [
+              "Correctly explains why raw favourable counts cannot be compared without their totals",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Evaluate",
+          "d": "Hard",
+          "t": "short_answer",
+          "m": 2,
+          "q": "A classmate says: 'Tossing 2 coins together is basically the same as tossing 1 coin twice, so there should still be only 2 possible outcomes -- either both tosses match, or they don't.' Evaluate this claim.",
+          "a": "The claim is false, or at least badly incomplete. Tossing 2 coins together (or 1 coin twice) actually has 4 distinguishable outcomes -- HH, HT, TH, TT -- not 2; grouping them into just 'match' (HH or TT) or 'don't match' (HT or TH) hides that specific questions (such as 'at least one head') need the full list of 4 outcomes, not just a match/no-match summary.",
+          "s": [
+            [
+              "States the claim is false or incomplete",
+              1
+            ],
+            [
+              "Explains that the full 4-outcome list is needed, not just a 2-way match/no-match summary",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Create",
+          "d": "Hardest",
+          "t": "long_answer",
+          "m": 3,
+          "q": "Construct your own probability question about tossing two coins together, different from any used in this chapter (for example, involving a specific named coin or a different described event). List the 4 outcomes, identify the favourable ones for your event, and give the probability.",
+          "a": "Sample: event -- 'the Rs 2 coin shows a head'. Outcomes: HH, HT, TH, TT (first letter = Rs 1 coin, second letter = Rs 2 coin). Favourable (Rs 2 coin shows H): HH, TH -- 2 outcomes. P = 2/4 = 1/2. (Any genuine two-coin event, correctly listed against the 4 outcomes and correctly computed, is acceptable.)",
+          "s": [
+            [
+              "States a clear, valid two-coin event",
+              1
+            ],
+            [
+              "Correctly identifies the favourable outcomes among the 4",
+              1
+            ],
+            [
+              "Correctly computes the resulting probability",
+              1
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "code": "C10M-14.7",
+      "name": "Compound experiments: two dice, the 36-outcome sample space, and sums",
+      "description": "When two dice are thrown together (or one die is thrown twice), the possible outcomes are the 36 ordered pairs (first die, second die), each equally likely; events are often described in terms of the sum of the two numbers, or in terms of a value appearing (or not appearing) on either die.",
+      "idea": "Lay the 36 outcomes out as a 6-by-6 table, first die's number down the side and second die's number across the top, so that counting favourable outcomes for any 'sum' or 'appears on either die' event becomes a matter of reading cells off the table rather than guessing.",
+      "rule": "Two dice give 36 equally likely ordered-pair outcomes (i,j), i,j from 1 to 6, since (1,4) and (4,1) are different outcomes. For a sum s, count the ordered pairs adding to s directly from the table. For 'a value v does not appear on either die', count pairs using only the other 5 numbers on each die: 5x5 = 25 outcomes.",
+      "example": "Two dice thrown together: P(sum = 8) = 5/36, using the 5 pairs (2,6),(3,5),(4,4),(5,3),(6,2) (Example 13, pp. 212-213). A die thrown twice: P(5 does not come up either time) = 25/36, so P(5 comes up at least once) = 1 - 25/36 = 11/36 (Exercise 14.1, Q24, p. 216).",
+      "difficulty_base": "Hard",
+      "questions": [
+        {
+          "b": "Remember",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "When two dice are thrown together, the total number of possible outcomes is",
+          "a": "36",
+          "o": [
+            "36",
+            "12",
+            "6",
+            "18"
+          ]
+        },
+        {
+          "b": "Remember",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "Why are the outcomes (1,4) and (4,1) counted as two different outcomes when two dice are thrown together?",
+          "a": "Because the first number is on one die and the second number is on the other, so which die shows which number matters",
+          "o": [
+            "Because the first number is on one die and the second number is on the other, so which die shows which number matters",
+            "Because 1+4 is different from 4+1",
+            "Because they are never actually different",
+            "Because only even totals are counted twice"
+          ]
+        },
+        {
+          "b": "Remember",
+          "d": "Easy",
+          "t": "fill_blank",
+          "m": 1,
+          "q": "When two dice are thrown together, the largest possible sum of the two numbers is ____.",
+          "a": "12"
+        },
+        {
+          "b": "Remember",
+          "d": "Hard",
+          "t": "mcq",
+          "m": 1,
+          "rev": true,
+          "q": "Which of the following is NOT a correct way to find the sample space when two dice are thrown together?",
+          "a": "Since each die has 6 faces, just as two coins (each with 2 faces) give 2+2=4 outcomes, two dice should give 6+6=12 outcomes",
+          "o": [
+            "Since each die has 6 faces, just as two coins (each with 2 faces) give 2+2=4 outcomes, two dice should give 6+6=12 outcomes",
+            "List all 36 ordered pairs (i,j) with i,j each from 1 to 6, using a 6-by-6 table",
+            "Treat all 36 ordered pairs as equally likely outcomes",
+            "Count (i,j) and (j,i) as two different outcomes whenever i is not equal to j"
+          ]
+        },
+        {
+          "b": "Understand",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "Two dice, one blue and one grey, are thrown together. What is P(the sum of the two numbers is 13)?",
+          "a": "0, since no pair of numbers from 1-6 and 1-6 adds to 13 -- it is impossible",
+          "o": [
+            "0, since no pair of numbers from 1-6 and 1-6 adds to 13 -- it is impossible",
+            "1/36",
+            "2/36",
+            "13/36"
+          ]
+        },
+        {
+          "b": "Understand",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "Two dice are thrown together. What is P(the sum of the two numbers is 12 or less)?",
+          "a": "1, since every possible sum of two dice is 12 or less -- it is a sure event",
+          "o": [
+            "1, since every possible sum of two dice is 12 or less -- it is a sure event",
+            "35/36",
+            "6/36",
+            "0"
+          ]
+        },
+        {
+          "b": "Understand",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "Two dice are thrown together. How many of the 36 outcomes give a sum of exactly 7?",
+          "a": "6 -- namely (1,6),(2,5),(3,4),(4,3),(5,2),(6,1)",
+          "o": [
+            "6 -- namely (1,6),(2,5),(3,4),(4,3),(5,2),(6,1)",
+            "7",
+            "1",
+            "36"
+          ]
+        },
+        {
+          "b": "Understand",
+          "d": "Hard",
+          "t": "mcq",
+          "m": 1,
+          "q": "Two dice are thrown together. Why does the sum 7 have more favourable outcomes (6 of them) than the sum 2 (only 1 outcome, namely (1,1))?",
+          "a": "Because more different ordered pairs of numbers from 1-6 add up to 7 than add up to 2, which can only be made from the smallest possible pair",
+          "o": [
+            "Because more different ordered pairs of numbers from 1-6 add up to 7 than add up to 2, which can only be made from the smallest possible pair",
+            "Because 7 is always the most common number rolled on a single die",
+            "Because the sum 2 is an impossible event",
+            "Because the two dice are not really independent of each other"
+          ]
+        },
+        {
+          "b": "Understand",
+          "d": "Hard",
+          "t": "short_answer",
+          "m": 2,
+          "q": "Two dice are thrown together. Find P(the sum of the two numbers is 9), listing the favourable outcomes.",
+          "a": "Pairs summing to 9: (3,6), (4,5), (5,4), (6,3) -- 4 outcomes. P(sum = 9) = 4/36 = 1/9.",
+          "s": [
+            [
+              "Correctly lists the 4 favourable outcomes",
+              1
+            ],
+            [
+              "Correctly computes P = 1/9 (or 4/36)",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "A die is thrown twice (the same as throwing two dice together). What is P(getting a 5 on both throws)?",
+          "a": "1/36",
+          "o": [
+            "1/36",
+            "2/36",
+            "1/6",
+            "1/12"
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Easy",
+          "t": "fill_blank",
+          "m": 1,
+          "q": "Two dice are thrown together. The number of outcomes favourable to 'the sum is 8' is ____.",
+          "a": "5"
+        },
+        {
+          "b": "Apply",
+          "d": "Hard",
+          "t": "mcq",
+          "m": 1,
+          "q": "A die is thrown twice. What is P(5 does NOT come up on either throw)?",
+          "a": "25/36",
+          "o": [
+            "25/36",
+            "11/36",
+            "30/36",
+            "5/36"
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Hard",
+          "t": "short_answer",
+          "m": 2,
+          "q": "A die is thrown twice. Using the complement rule and P(5 does not come up either time) = 25/36, find P(5 comes up at least once).",
+          "a": "P(5 at least once) = 1 - 25/36 = 11/36.",
+          "s": [
+            [
+              "Correctly applies the complement rule (1 - 25/36)",
+              1
+            ],
+            [
+              "Correctly states the result as 11/36",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Hard",
+          "t": "short_answer",
+          "m": 2,
+          "q": "Two dice are thrown together. Find P(the sum is an even number), given that the even sums 2, 4, 6, 8, 10, 12 have 1, 3, 5, 5, 3, 1 favourable outcomes respectively.",
+          "a": "Adding the favourable outcomes for each even sum: 1 + 3 + 5 + 5 + 3 + 1 = 18. P(sum is even) = 18/36 = 1/2.",
+          "s": [
+            [
+              "Correctly adds the favourable counts to get 18",
+              1
+            ],
+            [
+              "Correctly computes P = 1/2",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Hardest",
+          "t": "long_answer",
+          "m": 3,
+          "q": "Two dice are thrown together. (i) Find P(the sum is exactly 10). (ii) Find P(the sum is at least 10), i.e. 10, 11 or 12. (iii) Using your answer to (ii) and the complement rule, find P(the sum is at most 9).",
+          "a": "(i) Pairs summing to 10: (4,6),(5,5),(6,4) -- 3 outcomes; P = 3/36 = 1/12. (ii) Sums of 10, 11, 12 have 3, 2, 1 outcomes respectively, totalling 6; P(at least 10) = 6/36 = 1/6. (iii) P(at most 9) = 1 - P(at least 10) = 1 - 1/6 = 5/6.",
+          "s": [
+            [
+              "Correctly finds P(sum=10) = 1/12",
+              1
+            ],
+            [
+              "Correctly finds P(sum at least 10) = 1/6",
+              1
+            ],
+            [
+              "Correctly applies the complement rule to get P(at most 9) = 5/6",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Analyse",
+          "d": "Hard",
+          "t": "assertion_reason",
+          "m": 1,
+          "q": "Assertion (A): Two dice are thrown together. P(the sum is 8) = 5/36. Reason (R): Every outcome's probability, when two dice are thrown together, lies between 0 and 1.",
+          "a": "Both A and R are true, but R is not the correct explanation of A",
+          "o": [
+            "Both A and R are true, but R is not the correct explanation of A",
+            "Both A and R are true, and R is the correct explanation of A",
+            "A is true, R is false",
+            "A is false, R is true"
+          ]
+        },
+        {
+          "b": "Analyse",
+          "d": "Hard",
+          "t": "multi_statement",
+          "m": 1,
+          "q": "Consider these statements about two dice thrown together. (I) The sum 7 has exactly 6 favourable outcomes out of the 36. (II) Every sum from 2 to 12 has at least 2 favourable outcomes out of the 36. Which is or are correct?",
+          "a": "Only I",
+          "o": [
+            "Only I",
+            "Only II",
+            "Both I and II",
+            "Neither I nor II"
+          ]
+        },
+        {
+          "b": "Analyse",
+          "d": "Hardest",
+          "t": "long_answer",
+          "m": 3,
+          "q": "A student argues: 'When two dice are thrown, the possible sums are 2, 3, 4, ..., 12 -- that is 11 different sums. So each sum has probability 1/11.' (i) State how many of the 36 equally likely outcomes give a sum of 2, and how many give a sum of 7. (ii) Using your answer to (i), find P(sum = 2) and P(sum = 7). (iii) Explain clearly why the student's reasoning is incorrect.",
+          "a": "(i) Sum of 2: only (1,1), so 1 outcome. Sum of 7: (1,6),(2,5),(3,4),(4,3),(5,2),(6,1), so 6 outcomes. (ii) P(sum=2) = 1/36. P(sum=7) = 6/36 = 1/6. (iii) The student's reasoning is incorrect because the 11 possible sums are not equally likely outcomes of the experiment -- the actual 36 equally likely outcomes are the ordered pairs (i,j), and different sums are made up of different numbers of these pairs (only 1 pair gives a sum of 2, but 6 pairs give a sum of 7), so the 11 sums cannot each have the same probability 1/11.",
+          "s": [
+            [
+              "Correctly finds 1 outcome for sum=2 and 6 outcomes for sum=7",
+              1
+            ],
+            [
+              "Correctly computes P(sum=2)=1/36 and P(sum=7)=1/6",
+              1
+            ],
+            [
+              "Correctly explains why treating the 11 sums as equally likely is wrong",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Evaluate",
+          "d": "Hard",
+          "t": "short_answer",
+          "m": 2,
+          "q": "A classmate says: 'Since a single die thrown once has 6 equally likely outcomes, throwing it twice should have 6+6=12 equally likely outcomes.' Evaluate this claim.",
+          "a": "The claim is false. Throwing a die twice (or throwing two dice together) has 6 x 6 = 36 equally likely outcomes, not 6 + 6 = 12 -- each of the 6 outcomes of the first throw can be paired with each of the 6 outcomes of the second throw, which is multiplication, not addition, of the two counts.",
+          "s": [
+            [
+              "States the claim is false",
+              1
+            ],
+            [
+              "Explains the correct reasoning: outcomes multiply (6x6=36), not add",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Create",
+          "d": "Hardest",
+          "t": "long_answer",
+          "m": 3,
+          "q": "Construct your own two-dice probability question, different from any used in this chapter, based on the sum of the two numbers. State your chosen sum (or sum condition, such as 'less than 5'), count the favourable outcomes out of the 36, and give the probability.",
+          "a": "Sample: event -- 'the sum of the two numbers is less than 5', i.e. sum is 2, 3 or 4. Favourable outcomes: sum 2 has 1, sum 3 has 2, sum 4 has 3, totalling 1+2+3=6 outcomes out of 36. P(sum less than 5) = 6/36 = 1/6. (Any genuine sum-based event, correctly counted against the 36 outcomes and correctly computed, is acceptable.)",
+          "s": [
+            [
+              "States a clear, valid sum-based event",
+              1
+            ],
+            [
+              "Correctly counts the favourable outcomes out of 36",
+              1
+            ],
+            [
+              "Correctly computes the resulting probability",
+              1
+            ]
+          ]
+        }
+      ]
+    }
+  ]
+}
