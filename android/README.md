@@ -51,6 +51,20 @@ is the tell-tale sign that the fingerprint or package name doesn't match.
 Bump `versionCode` (by 1) and `versionName` in `gradle.properties`, merge to `main`, then upload
 the new `.aab`. Remember that a web-only change needs none of this.
 
+## Building locally (optional)
+
+CI is the source of release builds, but a local build catches manifest mistakes faster. The
+owner's machine has a portable toolchain (no admin install) in
+`%LOCALAPPDATA%\Programs\android-toolchain` (JDK 21, Gradle 9.8.0, Android SDK platform 36):
+
+```
+T="$LOCALAPPDATA/Programs/android-toolchain"
+export JAVA_HOME=$(ls -d "$T"/jdk-21*) ANDROID_HOME="$T/sdk"
+cd android && "$T/gradle-9.8.0/bin/gradle.bat" assembleDebug
+```
+
+Note that XML comments may not contain `--` (the manifest won't parse).
+
 ## Testing on a phone
 
 Download `examprep-ai-debug-apk` from any Android workflow run and install it (allow "install
