@@ -5,6 +5,7 @@ import { Button } from '../components/ui/button'
 import { ThemeToggle } from '../components/theme-toggle'
 import { cn } from '../lib/utils'
 import { signOut, useSession } from '../lib/auth-client'
+import { PageLoading } from '../components/page-loading'
 
 // Classes shown in the class list even before their content is loaded.
 const PLANNED_CLASSES = [6, 7, 8, 9, 10, 11, 12]
@@ -215,7 +216,7 @@ function ChooseBoard() {
   }
 
   if (isPending || !session || role !== 'student' || options === null) {
-    return <div className="p-8 text-body text-muted-foreground">Loading…</div>
+    return <PageLoading />
   }
 
   const canSave = !plannedBoard && classNo !== null && !!board && selected.length > 0

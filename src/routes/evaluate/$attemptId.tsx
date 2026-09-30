@@ -11,6 +11,7 @@ import {
 import { Label } from '../../components/ui/label'
 import { ThemeToggle } from '../../components/theme-toggle'
 import { useSession } from '../../lib/auth-client'
+import { PageLoading } from '../../components/page-loading'
 
 export const Route = createFileRoute('/evaluate/$attemptId')({
   component: Evaluate,
@@ -302,13 +303,13 @@ function Evaluate() {
   }
 
   if (isPending || !session || (role !== 'parent' && role !== 'admin')) {
-    return <div className="p-8 text-body text-muted-foreground">Loading…</div>
+    return <PageLoading />
   }
   if (loadError) {
     return <div className="p-8 text-body text-destructive">{loadError}</div>
   }
   if (!evaluation) {
-    return <div className="p-8 text-body text-muted-foreground">Loading…</div>
+    return <PageLoading />
   }
 
   const isConfirmed = Boolean(evaluation.confirmed_at)

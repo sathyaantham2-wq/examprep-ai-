@@ -10,6 +10,7 @@ import {
 } from '../../../components/ui/card'
 import { ThemeToggle } from '../../../components/theme-toggle'
 import { useSession } from '../../../lib/auth-client'
+import { PageLoading } from '../../../components/page-loading'
 
 export const Route = createFileRoute('/evaluation/$id/report')({
   component: Report,
@@ -94,13 +95,13 @@ function Report() {
   }, [isPending, session, role, navigate, id])
 
   if (isPending || !session || (role !== 'parent' && role !== 'teacher' && role !== 'admin')) {
-    return <div className="p-8 text-body text-muted-foreground">Loading…</div>
+    return <PageLoading />
   }
   if (error) {
     return <div className="p-8 text-body text-destructive">{error}</div>
   }
   if (!report) {
-    return <div className="p-8 text-body text-muted-foreground">Loading…</div>
+    return <PageLoading />
   }
 
   return (

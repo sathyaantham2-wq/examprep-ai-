@@ -12,6 +12,7 @@ import { Label } from '../components/ui/label'
 import { AppShell } from '../components/app-shell'
 import { useSession } from '../lib/auth-client'
 import { DEFAULT_THEME } from '../lib/pdf/themes'
+import { PageLoading } from '../components/page-loading'
 
 export const Route = createFileRoute('/my-paper')({
   component: MyPaper,
@@ -521,7 +522,7 @@ function MyPaper() {
   }, [allChapters, chapterSearch])
 
   if (isPending || !session || role !== 'student') {
-    return <div className="p-8 text-body text-muted-foreground">Loading…</div>
+    return <PageLoading />
   }
 
   const withContent = subjects.filter((s) => s.has_content)
@@ -763,24 +764,6 @@ function MyPaper() {
                 </p>
               )}
 
-              {error && (
-                <p className="text-small text-destructive mt-3" role="alert">
-                  {error}
-                </p>
-              )}
-
-              <div className="mt-3 flex flex-col-reverse gap-2 sm:flex-row sm:justify-end">
-                <Button type="button" variant="outline" onClick={resetPreferences}>
-                  <ResetIcon />
-                  Reset
-                </Button>
-                <Button
-                  disabled={starting || loadingPlan || !readyToGenerate}
-                  onClick={() => void startTest()}
-                >
-                  {starting ? 'Getting your test ready…' : 'Generate Assessment'}
-                </Button>
-              </div>
             </CardContent>
           </Card>
         )}
@@ -951,8 +934,46 @@ function MyPaper() {
             {/* "What this paper covers" (plan.concepts breakdown) is intentionally hidden
                 here at the user's request -- the data is still fetched and used elsewhere
                 on this screen (summary fields above), just not rendered as its own table.
-                "Generate Assessment" and its error display now live in the Assessment Details
-                card above, next to the preferences that drive it. */}
+                "Generate Assessment" and its error display live in the sticky action bar at
+                the bottom of this page. */}
+          </div>
+        )}
+
+        {/* Sticky action bar (2026-09-30 UX rework): "Generate Assessment" used to sit inside the
+          Assessment Details card, above the chapter list -- so after picking chapters she had to
+          scroll back up to find it. It now stays in view at the bottom of the screen the whole
+          time, above the phone tab bar, with the same Reset and error display it had before. */}
+        {withContent.length > 0 && (
+          <div className="no-print bg-card/95 border-border sticky bottom-[calc(60px+env(safe-area-inset-bottom))] z-10 mt-4 rounded-xl border p-3 shadow-lg backdrop-blur lg:bottom-4">
+            {error && (
+              <p className="text-small text-destructive mb-2" role="alert">
+                {error}
+              </p>
+            )}
+            <div className="flex flex-wrap items-center justify-between gap-2">
+              <p className="text-small text-muted-foreground">
+                {(chapterIds ?? []).length} chapter
+                {(chapterIds ?? []).length === 1 ? '' : 's'} · {questionCount}{' '}
+                questions
+                {plan ? ` · about ${plan.estimated_minutes} min` : ''}
+              </p>
+              <div className="flex gap-2">
+                <Button
+                  type="button"
+                  variant="outline"
+                  onClick={resetPreferences}
+                >
+                  <ResetIcon />
+                  Reset
+                </Button>
+                <Button
+                  disabled={starting || loadingPlan || !readyToGenerate}
+                  onClick={() => void startTest()}
+                >
+                  {starting ? 'Getting your test ready…' : 'Generate Assessment'}
+                </Button>
+              </div>
+            </div>
           </div>
         )}
       </div>

@@ -12,6 +12,7 @@ import type {
   ChapterView,
 } from '../components/adaptive-overview'
 import { useSession } from '../lib/auth-client'
+import { PageLoading } from '../components/page-loading'
 
 export const Route = createFileRoute('/needs-improvement')({
   component: NeedsImprovement,
@@ -72,7 +73,7 @@ function NeedsImprovement() {
   }, [isPending, session, role, navigate])
 
   if (isPending || !session || role !== 'student') {
-    return <div className="p-8 text-body text-muted-foreground">Loading…</div>
+    return <PageLoading />
   }
 
   // One card per chapter that has at least one flagged concept, deduplicated -- two flagged

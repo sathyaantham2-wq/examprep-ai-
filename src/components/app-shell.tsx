@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import type { ReactNode } from 'react'
 import { ThemeToggle } from './theme-toggle'
+import { signOut, useSession } from '../lib/auth-client'
 
 // A persistent sidebar shell, in two variants -- 'parent' (the original: Home/Generate
 // Paper/Progress/Settings) and 'student' (Home/Generate Paper/Papers Attempted/Leaderboard, added
@@ -164,6 +165,23 @@ function LeaderboardIcon() {
     </svg>
   )
 }
+function SignOutIcon() {
+  return (
+    <svg
+      width="16"
+      height="16"
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="2"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+    >
+      <path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4" />
+      <path d="m16 17 5-5-5-5M21 12H9" />
+    </svg>
+  )
+}
 function MenuIcon() {
   return (
     <svg
@@ -203,9 +221,12 @@ export function AppShell({
   studentId,
   children,
 }: AppShellProps) {
+  // shortLabel is what the phone-width bottom tab bar shows -- five full labels never fit a
+  // 360px row side by side.
   const items: Array<{
     key: AppShellActive
     label: string
+    shortLabel: string
     href: string
     icon: ReactNode
   }> =
@@ -216,34 +237,51 @@ export function AppShell({
           {
             key: 'generate',
             label: 'Generate Paper',
+            shortLabel: 'Generate',
             href: '/my-paper',
             icon: <GenerateIcon />,
           },
-          { key: 'home', label: 'Home', href: '/student', icon: <HomeIcon /> },
+          {
+            key: 'home',
+            label: 'Home',
+            shortLabel: 'Home',
+            href: '/student',
+            icon: <HomeIcon />,
+          },
           {
             key: 'papers',
             label: 'Papers Attempted',
+            shortLabel: 'Papers',
             href: '/papers-attempted',
             icon: <PapersIcon />,
           },
           {
             key: 'drills',
             label: 'Practice Drills',
+            shortLabel: 'Drills',
             href: '/remediation',
             icon: <DrillsIcon />,
           },
           {
             key: 'leaderboard',
             label: 'Leaderboard',
+            shortLabel: 'Ranks',
             href: '/leaderboard',
             icon: <LeaderboardIcon />,
           },
         ]
       : [
-          { key: 'home', label: 'Home', href: '/home', icon: <HomeIcon /> },
+          {
+            key: 'home',
+            label: 'Home',
+            shortLabel: 'Home',
+            href: '/home',
+            icon: <HomeIcon />,
+          },
           {
             key: 'generate',
             label: 'Generate Paper',
+            shortLabel: 'Generate',
             href: '/generate',
             icon: <GenerateIcon />,
           },
@@ -254,6 +292,7 @@ export function AppShell({
                 {
                   key: 'progress' as const,
                   label: 'Progress',
+                  shortLabel: 'Progress',
                   href: `/tracker/${studentId}`,
                   icon: <ProgressIcon />,
                 },
@@ -262,12 +301,49 @@ export function AppShell({
           {
             key: 'settings',
             label: 'Settings',
+            shortLabel: 'Settings',
             href: '/settings',
             icon: <SettingsIcon />,
           },
         ]
 
   const [mobileOpen, setMobileOpen] = useState(false)
+  const [signingOut, setSigningOut] = useState(false)
+  const { data: session } = useSession()
+  const user = session?.user as { name?: string; email?: string } | undefined
+  const displayName = user?.name || user?.email || ''
+
+  // Sign out used to live only in /student's page header, so from every other screen there was
+  // no way out at all. It belongs to the shell, reachable from any page.
+  async function handleSignOut() {
+    setSigningOut(true)
+    try {
+      await signOut()
+    } finally {
+      window.location.href = '/'
+    }
+  }
+
+  const account = (
+    <div className="border-border flex items-center gap-2 border-t pt-4">
+      <div className="bg-primary/10 text-primary flex size-9 shrink-0 items-center justify-center rounded-full text-sm font-semibold">
+        {displayName ? displayName.trim().charAt(0).toUpperCase() : '?'}
+      </div>
+      <div className="min-w-0 flex-1">
+        <p className="truncate text-sm font-medium">{displayName}</p>
+        <button
+          type="button"
+          onClick={() => void handleSignOut()}
+          disabled={signingOut}
+          className="text-muted-foreground hover:text-foreground inline-flex items-center gap-1.5 text-xs"
+        >
+          <SignOutIcon />
+          {signingOut ? 'Signing out…' : 'Sign out'}
+        </button>
+      </div>
+      <ThemeToggle />
+    </div>
+  )
 
   const logo = (
     <div className="flex items-center gap-2.5 px-2">
@@ -358,12 +434,42 @@ export function AppShell({
 
         {nav}
 
-        <div className="mt-auto hidden pt-4 lg:block">
-          <ThemeToggle />
-        </div>
+        <div className="mt-auto pt-4">{account}</div>
       </div>
 
-      <div className="min-w-0 flex-1">{children}</div>
+      {/* Bottom padding on phones so the fixed tab bar never covers the last card. */}
+      <div className="min-w-0 flex-1 pb-20 lg:pb-0">{children}</div>
+
+      {/* Phone/tablet bottom tab bar: the main sections one thumb-tap away, instead of hidden
+          behind the menu button. The drawer stays for account/sign out and the theme toggle.
+          lg:hidden (display:none) also keeps it out of the accessibility tree on desktop, so each
+          nav link still has exactly one accessible match there. */}
+      <nav
+        aria-label="Main"
+        className="no-print bg-card border-border fixed inset-x-0 bottom-0 z-20 flex border-t pb-[env(safe-area-inset-bottom)] lg:hidden"
+      >
+        {items.map((item) => (
+          <a
+            key={item.key}
+            href={item.href}
+            aria-current={item.key === active ? 'page' : undefined}
+            className={`flex min-w-0 flex-1 flex-col items-center gap-1 px-1 py-2 text-[11px] leading-none ${
+              item.key === active
+                ? 'text-primary font-semibold'
+                : 'text-muted-foreground'
+            }`}
+          >
+            <span
+              className={`flex h-7 w-12 items-center justify-center rounded-full ${
+                item.key === active ? 'bg-primary/10' : ''
+              }`}
+            >
+              {item.icon}
+            </span>
+            <span className="max-w-full truncate">{item.shortLabel}</span>
+          </a>
+        ))}
+      </nav>
     </div>
   )
 }

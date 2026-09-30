@@ -13,6 +13,7 @@ import { AnswerReview } from '../../components/answer-review'
 import { WrittenAnswerInput } from '../../components/written-answer-input'
 import { useSession } from '../../lib/auth-client'
 import { playCoinSound } from '../../lib/reward-sound'
+import { PageLoading } from '../../components/page-loading'
 
 export const Route = createFileRoute('/attempt/$id')({ component: Attempt })
 
@@ -281,13 +282,13 @@ function Attempt() {
   }
 
   if (isPending || !session || role !== 'student') {
-    return <div className="p-8 text-body text-muted-foreground">Loading…</div>
+    return <PageLoading />
   }
   if (loadError) {
     return <div className="p-8 text-body text-destructive">{loadError}</div>
   }
   if (!data) {
-    return <div className="p-8 text-body text-muted-foreground">Loading…</div>
+    return <PageLoading />
   }
   if (data.attempt.status !== 'in_progress' || submitted) {
     if (result?.evaluated) {

@@ -7,6 +7,7 @@ import { AppShell } from '../components/app-shell'
 import { useSession } from '../lib/auth-client'
 import { PAPER_THEMES, DEFAULT_THEME, THEME_BLURB } from '../lib/pdf/themes'
 import type { PaperTheme } from '../lib/pdf/themes'
+import { PageLoading } from '../components/page-loading'
 
 const FORM_ID = 'generate-paper-form'
 // Real tiers, not the reference mockup's "Medium" -- src/routes/api/papers/generate.ts's own
@@ -235,7 +236,7 @@ function GeneratePaper() {
     !session ||
     (role !== 'parent' && role !== 'admin' && role !== 'student')
   ) {
-    return <div className="p-8 text-body text-muted-foreground">Loading…</div>
+    return <PageLoading />
   }
 
   const resultPanel = result && (

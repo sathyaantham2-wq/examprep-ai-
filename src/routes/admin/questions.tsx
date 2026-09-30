@@ -11,6 +11,7 @@ import { Button } from '../../components/ui/button'
 import { Label } from '../../components/ui/label'
 import { ThemeToggle } from '../../components/theme-toggle'
 import { useSession } from '../../lib/auth-client'
+import { PageLoading } from '../../components/page-loading'
 
 export const Route = createFileRoute('/admin/questions')({
   component: AdminQuestions,
@@ -227,7 +228,7 @@ function AdminQuestions() {
   }
 
   if (isPending || !session || role !== 'admin') {
-    return <div className="p-8 text-body text-muted-foreground">Loading…</div>
+    return <PageLoading />
   }
 
   return (

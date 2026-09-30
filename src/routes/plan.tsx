@@ -10,6 +10,7 @@ import {
 import { Button } from '../components/ui/button'
 import { ThemeToggle } from '../components/theme-toggle'
 import { useSession } from '../lib/auth-client'
+import { PageLoading } from '../components/page-loading'
 
 export const Route = createFileRoute('/plan')({ component: StudyPlanScreen })
 
@@ -123,11 +124,11 @@ function StudyPlanScreen() {
   }
 
   if (isPending || !session || role !== 'student') {
-    return <div className="p-8 text-body text-muted-foreground">Loading…</div>
+    return <PageLoading />
   }
 
   return (
-    <div className="mx-auto max-w-2xl p-8">
+    <div className="mx-auto max-w-2xl p-4 sm:p-8">
       <div className="mb-6 flex items-center justify-between">
         <div>
           <h1 className="text-h1">This week's plan</h1>

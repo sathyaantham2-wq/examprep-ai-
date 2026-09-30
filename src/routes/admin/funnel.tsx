@@ -3,6 +3,7 @@ import { createFileRoute, useNavigate } from '@tanstack/react-router'
 import { Card, CardContent } from '../../components/ui/card'
 import { ThemeToggle } from '../../components/theme-toggle'
 import { useSession } from '../../lib/auth-client'
+import { PageLoading } from '../../components/page-loading'
 
 export const Route = createFileRoute('/admin/funnel')({ component: AdminFunnel })
 
@@ -59,7 +60,7 @@ function AdminFunnel() {
   }, [isPending, session, role, navigate])
 
   if (isPending || !session || role !== 'admin') {
-    return <div className="p-8 text-body text-muted-foreground">Loading…</div>
+    return <PageLoading />
   }
 
   return (

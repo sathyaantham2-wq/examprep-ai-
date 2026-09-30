@@ -6,6 +6,7 @@ import { Input } from '../components/ui/input'
 import { Label } from '../components/ui/label'
 import { ThemeToggle } from '../components/theme-toggle'
 import { signOut, useSession } from '../lib/auth-client'
+import { PageLoading } from '../components/page-loading'
 
 export const Route = createFileRoute('/profile-setup')({
   component: ProfileSetup,
@@ -62,7 +63,7 @@ function ProfileSetup() {
   }
 
   if (isPending || !session || role !== 'student' || !loaded) {
-    return <div className="p-8 text-body text-muted-foreground">Loading…</div>
+    return <PageLoading />
   }
 
   return (

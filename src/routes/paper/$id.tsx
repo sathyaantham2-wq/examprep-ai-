@@ -9,6 +9,7 @@ import {
   CardTitle,
 } from '../../components/ui/card'
 import { useSession } from '../../lib/auth-client'
+import { PageLoading } from '../../components/page-loading'
 
 export const Route = createFileRoute('/paper/$id')({ component: PaperWorkflow })
 
@@ -111,7 +112,7 @@ function PaperWorkflow() {
   }, [isPending, session, role, navigate, load])
 
   if (isPending || !session || (role !== 'parent' && role !== 'teacher' && role !== 'admin')) {
-    return <div className="p-8 text-body text-muted-foreground">Loading…</div>
+    return <PageLoading />
   }
   if (error) {
     return (
@@ -126,7 +127,7 @@ function PaperWorkflow() {
     )
   }
   if (!data) {
-    return <div className="p-8 text-body text-muted-foreground">Loading…</div>
+    return <PageLoading />
   }
 
   const name = data.student?.name ?? 'The student'

@@ -11,6 +11,7 @@ import { Button } from '../components/ui/button'
 import { Textarea } from '../components/ui/textarea'
 import { AppShell } from '../components/app-shell'
 import { useSession } from '../lib/auth-client'
+import { PageLoading } from '../components/page-loading'
 
 export const Route = createFileRoute('/remediation')({
   component: RemediationHub,
@@ -236,7 +237,7 @@ function RemediationHub() {
   }
 
   if (isPending || !session || role !== 'student') {
-    return <div className="p-8 text-body text-muted-foreground">Loading…</div>
+    return <PageLoading />
   }
 
   return (

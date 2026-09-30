@@ -203,11 +203,13 @@ test('first-time student: profile, personalised home, Easy assessment, marked at
   // concept, so "1 of 1" stays true there regardless of what else exists in the database.
   await page.getByRole('link', { name: 'Back to my progress' }).click()
   await page.waitForURL('**/student')
-  await expect(page.getByText('Adaptive E2E concept').first()).toBeVisible()
   const subjectHeading = page.getByText(subjectName, { exact: true })
   await expect(subjectHeading.locator('xpath=following-sibling::*[1]')).toContainText(
     '1 of 1 concepts started',
   )
+  // Subjects are collapsed by default (2026-09-30 UX rework) -- open this one to see its concepts.
+  await subjectHeading.click()
+  await expect(page.getByText('Adaptive E2E concept').first()).toBeVisible()
 
   // F123 follow-up (2026-09-24, user feedback): a finished paper no longer sits, unclickable,
   // in "Papers to attempt" under a "Completed" label -- it has its own page now, reachable from

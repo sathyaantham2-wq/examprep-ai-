@@ -11,6 +11,7 @@ import { Button } from '../components/ui/button'
 import { Label } from '../components/ui/label'
 import { AppShell } from '../components/app-shell'
 import { useSession, signOut } from '../lib/auth-client'
+import { PageLoading } from '../components/page-loading'
 
 export const Route = createFileRoute('/settings')({ component: Settings })
 
@@ -92,12 +93,12 @@ function Settings() {
   }
 
   if (isPending || !session || (role !== 'parent' && role !== 'admin')) {
-    return <div className="p-8 text-body text-muted-foreground">Loading…</div>
+    return <PageLoading />
   }
 
   return (
     <AppShell active="settings">
-      <div className="mx-auto max-w-2xl p-8">
+      <div className="mx-auto max-w-2xl p-4 sm:p-8">
         <div className="mb-6">
           <h1 className="text-h1">Settings</h1>
           <p className="text-body text-muted-foreground">{household?.name}</p>

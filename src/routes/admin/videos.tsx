@@ -5,6 +5,7 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '../..
 import { Input } from '../../components/ui/input'
 import { ThemeToggle } from '../../components/theme-toggle'
 import { useSession } from '../../lib/auth-client'
+import { PageLoading } from '../../components/page-loading'
 
 export const Route = createFileRoute('/admin/videos')({ component: AdminVideos })
 
@@ -99,7 +100,7 @@ function AdminVideos() {
   }
 
   if (isPending || !session || role !== 'admin') {
-    return <div className="p-8 text-body text-muted-foreground">Loading…</div>
+    return <PageLoading />
   }
 
   return (

@@ -5,6 +5,7 @@ import { Label } from '../../components/ui/label'
 import { ThemeToggle } from '../../components/theme-toggle'
 import { useSession } from '../../lib/auth-client'
 import { STATUS } from '../../components/charts/palette'
+import { PageLoading } from '../../components/page-loading'
 
 export const Route = createFileRoute('/admin/coverage')({
   component: AdminCoverage,
@@ -98,7 +99,7 @@ function AdminCoverage() {
   }, [subjectId])
 
   if (isPending || !session || role !== 'admin') {
-    return <div className="p-8 text-body text-muted-foreground">Loading…</div>
+    return <PageLoading />
   }
 
   const totalShortfallCells =

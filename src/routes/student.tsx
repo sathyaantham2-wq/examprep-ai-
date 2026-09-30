@@ -12,7 +12,8 @@ import { MasteryRing } from '../components/mastery-ring'
 import { AdaptiveOverview } from '../components/adaptive-overview'
 import type { AdaptiveOverviewData } from '../components/adaptive-overview'
 import { AppShell } from '../components/app-shell'
-import { signOut, useSession } from '../lib/auth-client'
+import { useSession } from '../lib/auth-client'
+import { PageLoading, PageSkeleton } from '../components/page-loading'
 
 export const Route = createFileRoute('/student')({ component: StudentHome })
 
@@ -96,13 +97,17 @@ function StudentHome() {
     fetch('/api/adaptive/overview')
       .then((r) => (r.ok ? r.json() : null))
       .then(setOverview)
+    // An error response is a JSON object too, so each fetch checks .ok before treating the body
+    // as data -- an error body stored as `papers` would crash the .filter() below.
     fetch('/api/student-dashboard')
-      .then((r) => r.json())
+      .then((r) => (r.ok ? r.json() : null))
       .then(setDashboard)
+      .catch(() => setDashboard(null))
       .finally(() => setLoading(false))
     fetch('/api/papers')
-      .then((r) => r.json())
+      .then((r) => (r.ok ? r.json() : []))
       .then(setPapers)
+      .catch(() => setPapers([]))
     void loadSharing()
   }, [isPending, session, role, navigate])
 
@@ -163,15 +168,19 @@ function StudentHome() {
   }
 
   if (isPending || !session || role !== 'student') {
-    return <div className="p-8 text-body text-muted-foreground">Loading…</div>
+    return <PageLoading />
   }
 
   // 2026-09-24, user feedback: this card was showing completed papers too, under a label that
   // says "to attempt" -- confusing, and a completed row here did nothing when clicked. Completed
   // papers now live on their own page (/papers-attempted), linked from the sidebar and from here
   // when there's at least one; this card goes back to only what its name says.
-  const toAttempt = (papers ?? []).filter((p) => p.attempt?.status !== 'evaluated')
-  const hasCompleted = (papers ?? []).some((p) => p.attempt?.status === 'evaluated')
+  const toAttempt = (papers ?? []).filter(
+    (p) => p.attempt?.status !== 'evaluated',
+  )
+  const hasCompleted = (papers ?? []).some(
+    (p) => p.attempt?.status === 'evaluated',
+  )
   const papersCard =
     toAttempt.length > 0 ? (
       <Card>
@@ -234,39 +243,41 @@ function StudentHome() {
       </Card>
     ) : null
 
+  const firstName =
+    overview?.student.name.split(' ')[0] ??
+    (session.user as { name?: string }).name?.split(' ')[0] ??
+    ''
+  const pendingInvites = sharing?.invites ?? []
+
   return (
     <AppShell variant="student" active="home">
-      <div className="mx-auto max-w-3xl p-8">
-        <div className="mb-6 flex items-center justify-between">
+      <div className="mx-auto max-w-3xl p-4 sm:p-8">
+        <div className="mb-6 flex flex-wrap items-end justify-between gap-3">
           <div>
-            <h1 className="text-h1">Your progress</h1>
+            <h1 className="text-h1">
+              {firstName ? `Hi, ${firstName}` : 'Your progress'}
+            </h1>
             <p className="text-body text-muted-foreground">
+              {overview &&
+                `${overview.student.class === 0 ? 'Competitive exam' : `Class ${overview.student.class}`} · ${overview.student.board === 'CIVILS' ? 'Civil Services / UPSC' : overview.student.board} · `}
               {dashboard && dashboard.streak_days > 0
-                ? `${dashboard.streak_days} day streak — keep it going!`
+                ? `🔥 ${dashboard.streak_days} day streak — keep it going!`
                 : 'Practice today to start a streak.'}
             </p>
           </div>
-          <div className="no-print flex items-center gap-2">
-            {/* Leaderboard is now the sidebar's own link -- kept here would be a duplicate. Make a
-              paper stays as the page's primary call to action even though Generate Paper is also
-              in the sidebar now. */}
-            <a href="/my-paper">
-              <Button size="sm">Make a paper</Button>
-            </a>
-            <Button
-              variant="ghost"
-              size="sm"
-              onClick={() => signOut().then(() => navigate({ to: '/' }))}
-            >
-              Sign out
-            </Button>
-          </div>
+          {/* Sign out moved to the sidebar (reachable from every page now). Make a paper stays
+            as the page's primary call to action even though Generate Paper is also in the nav. */}
+          <a href="/my-paper" className="no-print">
+            <Button>Make a paper</Button>
+          </a>
         </div>
 
-        {sharing && (sharing.invites.length > 0 || sharing.linkedTo) && (
-          <Card className="mb-4">
+        {/* A pending request needs her answer, so it goes first; the "already sharing with"
+          status is informational and sits at the bottom of the page instead. */}
+        {pendingInvites.length > 0 && (
+          <Card className="border-primary/40 mb-4">
             <CardHeader>
-              <CardTitle className="text-h3">Sharing your progress</CardTitle>
+              <CardTitle className="text-h3">Sharing request</CardTitle>
               <CardDescription>
                 Only people you approve can see your progress. You can stop at
                 any time.
@@ -278,25 +289,10 @@ function StudentHome() {
                   {sharingError}
                 </p>
               )}
-              {sharing.linkedTo && (
-                <div className="flex items-center justify-between rounded-md border p-3">
-                  <p className="text-body">
-                    {sharing.linkedTo.guardian_name} (
-                    {sharing.linkedTo.guardian_role}) can see your progress.
-                  </p>
-                  <Button
-                    size="sm"
-                    variant="outline"
-                    onClick={() => void stopSharing()}
-                  >
-                    Stop sharing
-                  </Button>
-                </div>
-              )}
-              {sharing.invites.map((inv) => (
+              {pendingInvites.map((inv) => (
                 <div
                   key={inv.id}
-                  className="flex items-center justify-between gap-3 rounded-md border p-3"
+                  className="flex flex-wrap items-center justify-between gap-3 rounded-md border p-3"
                 >
                   <p className="text-body">
                     {inv.guardian_name} ({inv.guardian_role}) wants to follow
@@ -331,7 +327,7 @@ function StudentHome() {
           papersCard && <div className="mb-4">{papersCard}</div>
         )}
 
-        {loading && <p className="text-body text-muted-foreground">Loading…</p>}
+        {loading && !overview && <PageSkeleton />}
 
         {dashboard && (
           <div className="space-y-4">
@@ -390,6 +386,29 @@ function StudentHome() {
               </Card>
             )}
           </div>
+        )}
+
+        {sharing?.linkedTo && (
+          <Card className="mt-4">
+            <CardContent className="flex flex-wrap items-center justify-between gap-3 pt-6">
+              <p className="text-body">
+                {sharing.linkedTo.guardian_name} (
+                {sharing.linkedTo.guardian_role}) can see your progress.
+              </p>
+              <Button
+                size="sm"
+                variant="outline"
+                onClick={() => void stopSharing()}
+              >
+                Stop sharing
+              </Button>
+            </CardContent>
+            {sharingError && pendingInvites.length === 0 && (
+              <p className="text-small text-destructive px-6 pb-4" role="alert">
+                {sharingError}
+              </p>
+            )}
+          </Card>
         )}
       </div>
     </AppShell>

@@ -4,6 +4,7 @@ import { Card, CardContent } from '../../components/ui/card'
 import { Label } from '../../components/ui/label'
 import { ThemeToggle } from '../../components/theme-toggle'
 import { useSession } from '../../lib/auth-client'
+import { PageLoading } from '../../components/page-loading'
 
 export const Route = createFileRoute('/admin/usage')({ component: AdminUsage })
 
@@ -69,7 +70,7 @@ function AdminUsage() {
   }, [isPending, session, role, groupBy])
 
   if (isPending || !session || role !== 'admin') {
-    return <div className="p-8 text-body text-muted-foreground">Loading…</div>
+    return <PageLoading />
   }
 
   return (

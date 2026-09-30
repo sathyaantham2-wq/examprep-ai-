@@ -9,6 +9,7 @@ import {
 } from '../../components/ui/card'
 import { ThemeToggle } from '../../components/theme-toggle'
 import { useSession } from '../../lib/auth-client'
+import { PageLoading } from '../../components/page-loading'
 
 export const Route = createFileRoute('/summary/weekly')({
   component: WeeklySummaryScreen,
@@ -84,7 +85,7 @@ function WeeklySummaryScreen() {
   }, [studentId])
 
   if (isPending || !session || (role !== 'parent' && role !== 'teacher' && role !== 'admin')) {
-    return <div className="p-8 text-body text-muted-foreground">Loading…</div>
+    return <PageLoading />
   }
 
   const delta =

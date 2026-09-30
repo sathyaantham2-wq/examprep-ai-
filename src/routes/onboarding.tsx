@@ -12,6 +12,7 @@ import { Input } from '../components/ui/input'
 import { Label } from '../components/ui/label'
 import { AppShell } from '../components/app-shell'
 import { signOut, useSession } from '../lib/auth-client'
+import { PageLoading } from '../components/page-loading'
 
 export const Route = createFileRoute('/onboarding')({ component: Onboarding })
 
@@ -116,12 +117,12 @@ function Onboarding() {
     !session ||
     (role !== 'parent' && role !== 'teacher' && role !== 'admin')
   ) {
-    return <div className="p-8 text-body text-muted-foreground">Loading…</div>
+    return <PageLoading />
   }
 
   return (
     <AppShell active={null}>
-      <div className="mx-auto max-w-2xl p-8">
+      <div className="mx-auto max-w-2xl p-4 sm:p-8">
         <div className="mb-6 flex items-center justify-between">
           <div>
             <h1 className="text-h1">Your students</h1>
