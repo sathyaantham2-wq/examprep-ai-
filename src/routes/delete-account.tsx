@@ -5,7 +5,7 @@ import { POLICY_LAST_UPDATED, SUPPORT_EMAIL } from '../lib/legal'
 // F131: Google Play requires a web page, reachable without the app, that explains how to delete
 // an account and its data. Deletion itself is F098 (/settings, POST /api/privacy/delete).
 export const Route = createFileRoute('/delete-account')({
-  head: () => ({ meta: [{ title: 'Delete your account · ExamPrep AI' }] }),
+  head: () => ({ meta: [{ title: 'Delete your account · PrepPlan' }] }),
   component: DeleteAccount,
 })
 
@@ -13,7 +13,7 @@ function DeleteAccount() {
   return (
     <PublicPage title="Delete your account" updated={POLICY_LAST_UPDATED}>
       <p>
-        You can delete an ExamPrep AI account and all of its data at any time, from the website
+        You can delete a PrepPlan account and all of its data at any time, from the website
         or the Android app.
       </p>
 

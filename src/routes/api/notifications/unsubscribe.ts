@@ -28,7 +28,7 @@ export const Route = createFileRoute('/api/notifications/unsubscribe')({
         if (!updated) return new Response(null, { status: 404 })
 
         return new Response(
-          "You've been unsubscribed from ExamPrep AI email notifications.",
+          "You've been unsubscribed from PrepPlan email notifications.",
           { headers: { 'content-type': 'text/plain' } },
         )
       },

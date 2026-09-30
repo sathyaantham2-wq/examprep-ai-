@@ -1,4 +1,4 @@
-# Google Play Console: answers for ExamPrep AI (F131)
+# Google Play Console: answers for PrepPlan (F131)
 
 Drafted 2026-09-30 from the code, not from memory. Every "Yes" below has a source in the repo.
 If what the app collects changes, update this file, `src/lib/legal.ts` and the Play form together.
@@ -11,7 +11,7 @@ If what the app collects changes, update this file, `src/lib/legal.ts` and the P
 
 | Section | Answer |
 |---|---|
-| Privacy policy URL | `https://<domain>/privacy` |
+| Privacy policy URL | `https://www.prepplan.in/privacy` |
 | Ads | **No**, the app contains no ads |
 | App access | Some features need sign-in. Give reviewers a test **parent** and a test **student** login (create both on production, with a linked student who has one marked paper) |
 | Content rating (IARC) | Category *Education*. No violence, sexual content, profanity, drugs, gambling or user-to-user chat. Users can't talk to each other; the leaderboard shows random nicknames only. Expect **Everyone / 3+** |
@@ -19,7 +19,7 @@ If what the app collects changes, update this file, `src/lib/legal.ts` and the P
 | Appeals to children? | Yes |
 | News app / Government app / Financial features / Health | No / No / No / No |
 | Data safety | See below |
-| Account deletion URL | `https://<domain>/delete-account` |
+| Account deletion URL | `https://www.prepplan.in/delete-account` |
 
 ### Families Policy checks
 
@@ -61,15 +61,15 @@ web browsing history, installed apps.
 
 ## Store listing
 
-**App name** (30 chars max): `ExamPrep AI: Practice Papers`
+**App name** (30 chars max): `PrepPlan: Practice Papers`
 
 **Short description** (80 max):
 > Syllabus-exact practice papers, marked question by question, with what to fix.
 
 **Full description:**
-> ExamPrep AI makes practice question papers that match your child's NCERT textbook exactly, chapter by chapter, for CBSE Classes 6 to 10.
+> PrepPlan makes practice question papers that match your child's NCERT textbook exactly, chapter by chapter, for CBSE Classes 6 to 10.
 >
-> After each paper, every answer is marked question by question, and ExamPrep AI tells you something a score alone never shows: which marks were lost because a topic wasn't understood, and which were lost because of how the answer was written (a missing step, a missing unit, stopping too early).
+> After each paper, every answer is marked question by question, and PrepPlan tells you something a score alone never shows: which marks were lost because a topic wasn't understood, and which were lost because of how the answer was written (a missing step, a missing unit, stopping too early).
 >
 > • Papers for Maths, Science and Social Science, built only from the chapters you choose
 > • Answer on the phone, or print the paper and photograph handwritten answers
@@ -81,9 +81,9 @@ web browsing history, installed apps.
 > Made for students and their parents. No ads. Leaderboards are optional and use random nicknames, never real names.
 
 **Telugu full description (optional localized listing, te-IN):**
-> ExamPrep AI మీ పిల్లల NCERT పాఠ్యపుస్తకానికి సరిగ్గా సరిపోయే ప్రాక్టీస్ ప్రశ్నాపత్రాలను అధ్యాయం వారీగా తయారుచేస్తుంది. ఇది CBSE 6 నుండి 10వ తరగతి వరకు.
+> PrepPlan మీ పిల్లల NCERT పాఠ్యపుస్తకానికి సరిగ్గా సరిపోయే ప్రాక్టీస్ ప్రశ్నాపత్రాలను అధ్యాయం వారీగా తయారుచేస్తుంది. ఇది CBSE 6 నుండి 10వ తరగతి వరకు.
 >
-> ప్రతి పేపర్ తర్వాత ప్రతి జవాబు ప్రశ్న వారీగా మార్క్ చేయబడుతుంది. ఏ మార్కులు విషయం అర్థం కాక పోయాయి, ఏవి జవాబు రాసే విధానం వల్ల (ఒక స్టెప్ వదిలేయడం, యూనిట్ మర్చిపోవడం, ముందే ఆపేయడం) పోయాయి అనేది ExamPrep AI స్పష్టంగా చెబుతుంది.
+> ప్రతి పేపర్ తర్వాత ప్రతి జవాబు ప్రశ్న వారీగా మార్క్ చేయబడుతుంది. ఏ మార్కులు విషయం అర్థం కాక పోయాయి, ఏవి జవాబు రాసే విధానం వల్ల (ఒక స్టెప్ వదిలేయడం, యూనిట్ మర్చిపోవడం, ముందే ఆపేయడం) పోయాయి అనేది PrepPlan స్పష్టంగా చెబుతుంది.
 >
 > • గణితం, సైన్స్, సోషల్ సైన్స్. మీరు ఎంచుకున్న అధ్యాయాల నుంచే పేపర్లు
 > • ఫోన్‌లోనే జవాబు రాయవచ్చు, లేదా ప్రింట్ తీసి చేతిరాత జవాబుల ఫోటో పంపవచ్చు
@@ -110,8 +110,10 @@ don't use test fixtures with fake names).
    contact us, which Play accepts only if requests are actually honoured. The better fix is in-app
    deletion for a student who is alone in her own household (no linked guardian); a linked student
    still goes through her parent. This needs the owner's go-ahead, because deletion is irreversible.
-2. **Blocker: support email.** Play needs a contact address, and `/privacy` and `/delete-account`
-   need one too. Set `SUPPORT_EMAIL` in `src/lib/legal.ts`.
+2. **Support email: `support@prepplan.in`** (owner decision 2026-09-30). It is set in
+   `src/lib/legal.ts` and shown on `/privacy` and `/delete-account`. **The mailbox must exist and
+   actually receive mail before those pages go live**, for example through GoDaddy email forwarding
+   to the owner's inbox (needs MX records). Send it a test mail first.
 3. **Risk: AI data use.** Production uses Google Gemini (24 calls in `ai_jobs`, all Gemini). If
    that is Gemini's **free** tier, Google's terms allow it to use submitted content to improve its
    products. That content is children's answers and handwriting photos. A paid Gemini API tier

@@ -16,7 +16,7 @@ export function PublicPage({
     <div className="mx-auto min-h-screen w-full max-w-2xl px-4 py-8 sm:py-12">
       <div className="mb-8 flex items-center justify-between gap-4">
         <Link to="/" className="text-h3 font-semibold no-underline">
-          ExamPrep AI
+          PrepPlan
         </Link>
         <ThemeToggle />
       </div>

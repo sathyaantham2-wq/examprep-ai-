@@ -14,7 +14,7 @@ export const POLICY_LAST_UPDATED = '30 September 2026'
  * then say contact details are coming, rather than printing a guessed or personal address.
  * Must be set before the Play listing goes live.
  */
-export const SUPPORT_EMAIL = '' as string
+export const SUPPORT_EMAIL = 'support@prepplan.in' as string
 
 /** Services that receive personal data, and why. Keep in step with src/lib/env.ts. */
 export const PROCESSORS: Array<{ name: string; purpose: string; where: string }> = [

@@ -49,7 +49,7 @@ export const Route = createRootRoute({
         content: 'width=device-width, initial-scale=1',
       },
       {
-        title: 'ExamPrep AI',
+        title: 'PrepPlan',
       },
       // Installable as a PWA (F009-adjacent, no dedicated F-number -- see chat/commit for the
       // 2026-09-27 request): theme-color and the apple-* tags are what let a browser's install UI
@@ -65,7 +65,7 @@ export const Route = createRootRoute({
       },
       {
         name: 'apple-mobile-web-app-title',
-        content: 'ExamPrep AI',
+        content: 'PrepPlan',
       },
       {
         name: 'apple-mobile-web-app-status-bar-style',

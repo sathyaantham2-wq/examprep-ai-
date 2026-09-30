@@ -5,7 +5,7 @@ import { POLICY_LAST_UPDATED, PROCESSORS, SUPPORT_EMAIL } from '../lib/legal'
 // F131: the public privacy policy Google Play requires (Families Policy). Readable signed out.
 // Facts live in src/lib/legal.ts; see its header before changing anything here.
 export const Route = createFileRoute('/privacy')({
-  head: () => ({ meta: [{ title: 'Privacy policy · ExamPrep AI' }] }),
+  head: () => ({ meta: [{ title: 'Privacy policy · PrepPlan' }] }),
   component: PrivacyPolicy,
 })
 
@@ -13,7 +13,7 @@ function PrivacyPolicy() {
   return (
     <PublicPage title="Privacy policy" updated={POLICY_LAST_UPDATED}>
       <p>
-        ExamPrep AI makes practice question papers for school students, marks their answers,
+        PrepPlan makes practice question papers for school students, marks their answers,
         and shows a parent which marks were lost for not knowing a topic and which for how the
         answer was written. This policy explains what we collect, why, who else sees it, and how
         to get it back or delete it. It covers the website and the Android app, which is the same
@@ -22,7 +22,7 @@ function PrivacyPolicy() {
 
       <h2>Children</h2>
       <p>
-        ExamPrep AI is used by school students, most of them under 18. A student can only sign
+        PrepPlan is used by school students, most of them under 18. A student can only sign
         up after confirming that a parent or guardian agrees, and we record that confirmation.
         A parent can link to a student's account and see her papers and results. We never show
         ads, never sell data, and never use it for anything except running and improving this
@@ -76,7 +76,7 @@ function PrivacyPolicy() {
       </p>
 
       <h2>Who else processes data</h2>
-      <p>These services handle data for us, only to provide ExamPrep AI:</p>
+      <p>These services handle data for us, only to provide PrepPlan:</p>
       <ul>
         {PROCESSORS.map((p) => (
           <li key={p.name}>

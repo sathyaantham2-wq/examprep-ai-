@@ -2,6 +2,14 @@
 
 Read this before doing anything in this repo.
 
+**Public brand is PrepPlan** (owner decision 2026-09-30). Everything a user sees says
+"PrepPlan": web UI, page titles, PWA manifest, emails, the Android app and the Play listing. The
+domain is `www.prepplan.in` (the bare `prepplan.in` redirects there), the Android package is
+`in.prepplan.app` (permanent), and support mail goes to `support@prepplan.in`. "ExamPrep AI"
+survives only as the internal project name: this repo, the database, the spreadsheet, code
+comments and `examprep-*` identifiers. Don't put it back into anything user-facing. Android app =
+F131, a Trusted Web Activity; see `android/README.md`.
+
 ## What this product is
 
 A web app that generates syllabus-exact question papers for one school student, evaluates her

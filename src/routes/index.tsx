@@ -161,7 +161,7 @@ function Home() {
         <ThemeToggle />
       </div>
       <div className="w-full max-w-sm">
-        <h1 className="text-display mb-2 text-center">ExamPrep AI</h1>
+        <h1 className="text-display mb-2 text-center">PrepPlan</h1>
         <p className="text-body text-muted-foreground mb-6 text-center">
           Find out which marks she lost because she didn't know it — and which
           because she stopped writing too early.
@@ -265,7 +265,7 @@ function Home() {
                           onChange={(e) => setGuardianOk(e.target.checked)}
                         />
                         <span className="text-small font-normal">
-                          My parent or guardian agrees to my using ExamPrep AI.
+                          My parent or guardian agrees to my using PrepPlan.
                         </span>
                       </Label>
                     )}

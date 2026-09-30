@@ -6,7 +6,7 @@ val appId = providers.gradleProperty("appId").get()
 val hostName = providers.gradleProperty("hostName").get()
 
 android {
-    namespace = "com.examprepai.twa"
+    namespace = "in.prepplan.twa"
     compileSdk = 36
 
     defaultConfig {
