@@ -45,9 +45,12 @@ function PrivacyPolicy() {
           question she reports or marks she disputes.
         </li>
         <li>
-          <strong>Photos of handwritten answers:</strong> if she photographs an answer, the photo
-          is sent to our AI provider to read the handwriting. We save the text it reads, not the
-          photo.
+          <strong>Photos of handwritten answers:</strong> a single answer photographed on the
+          answer screen is sent to our AI provider to read, and only the text is kept. Photos of a
+          whole written paper are kept, encrypted, so the answers read from them can be checked
+          side by side with the handwriting. They can only be viewed by the student and her
+          household, and are deleted automatically 30 days after upload. The text read from them
+          stays as her answers.
         </li>
         <li>
           <strong>Technical records:</strong> the IP address and browser of each signed-in

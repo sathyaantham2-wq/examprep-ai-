@@ -8,9 +8,7 @@ import {
   paperQuestionsRepository,
   attemptAnswersRepository,
 } from '../../../../db/repositories'
-import { logProductEvent } from '../../../../lib/product-events'
-import { autoConfirmAttempt } from '../../../../lib/adaptive/auto-confirm'
-import { getPointsEarnedForEvaluation } from '../../../../lib/points'
+import { submitAttempt } from '../../../../lib/attempt-submit'
 import { wrapRouteHandlers } from '../../../../lib/error-log'
 
 const submitSchema = z.object({
@@ -84,43 +82,7 @@ export const Route = createFileRoute('/api/attempts/$id/submit')({
           )
         }
 
-        const durationUsedSec = Math.floor(
-          (Date.now() - new Date(attempt.started_at).getTime()) / 1000,
-        )
-        const updated = await attemptsRepository.update(
-          db,
-          student.id,
-          attempt.id,
-          {
-            status: 'submitted',
-            submitted_at: new Date(),
-            duration_used_sec: durationUsedSec,
-          },
-        )
-
-        await logProductEvent(db, {
-          eventType: 'attempt_submitted',
-          householdId: student.household_id,
-          studentId: student.id,
-        })
-
-        // Adaptive practice is marked with no parent: multiple-choice papers are confirmed at once,
-        // and written answers are marked by the AI for the student to review. Every other paper
-        // waits for a parent.
-        const outcome = await autoConfirmAttempt(db, attempt)
-        // F125: only ever set for the all-MCQ adaptive-paper path (the only case that
-        // auto-confirms, hence pays out, at submit time) -- null for a review-pending or a
-        // parent-gated paper, where nothing has actually earned anything YET.
-        const pointsEarned = outcome.evaluationId
-          ? await getPointsEarnedForEvaluation(db, outcome.evaluationId)
-          : null
-
-        return Response.json({
-          ...updated,
-          evaluation_id: outcome.evaluationId,
-          review_pending: outcome.reviewPending,
-          points_earned: pointsEarned,
-        })
+        return Response.json(await submitAttempt(db, attempt, student))
       },
     },
   },

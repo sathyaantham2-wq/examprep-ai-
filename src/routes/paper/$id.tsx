@@ -85,6 +85,19 @@ function PaperWorkflow() {
   const [data, setData] = useState<WorkflowData | null>(null)
   const [error, setError] = useState<string | null>(null)
   const [showKey, setShowKey] = useState(false)
+  const [startingScan, setStartingScan] = useState(false)
+
+  async function startScan() {
+    setStartingScan(true)
+    const response = await fetch(`/api/papers/${id}/scan-attempt`, { method: 'POST' })
+    if (!response.ok) {
+      setStartingScan(false)
+      setError('Could not open the photo upload. Please try again.')
+      return
+    }
+    const { attempt_id } = (await response.json()) as { attempt_id: string }
+    void navigate({ to: '/scan/$attemptId', params: { attemptId: attempt_id } })
+  }
 
   const load = useCallback(async () => {
     const response = await fetch(`/api/papers/${id}/workflow`)
@@ -215,6 +228,17 @@ function PaperWorkflow() {
                       Open student home
                     </Button>
                   </a>
+                  {/* F050: she wrote it on the printed paper -- photograph the pages. */}
+                  {role !== 'teacher' && !submitted && (
+                    <Button
+                      type="button"
+                      size="sm"
+                      disabled={startingScan}
+                      onClick={() => void startScan()}
+                    >
+                      {startingScan ? 'Opening…' : 'Upload photos of her answers'}
+                    </Button>
+                  )}
                 </div>
               </div>
             </li>

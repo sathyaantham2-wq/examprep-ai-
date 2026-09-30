@@ -47,7 +47,7 @@ Make.com act for us as service providers, so under Google's definitions **nothin
 | Personal info › **Name** | Yes | No | Required | App functionality, Account management | `users.name`, `students.name` |
 | Personal info › **Email address** | Yes | No | Required | Account management, Developer communications | `users.email`, weekly summary email |
 | Personal info › **User IDs** | Yes | No | Required | App functionality, Account management | account uuid |
-| Photos and videos › **Photos** | Yes, **processed ephemerally** | No | Optional | App functionality | `api/attempts/$id/answer-image.ts`: sent to AI, text kept, photo not stored |
+| Photos and videos › **Photos** | Yes (**not** ephemeral: whole-paper scans are stored encrypted for up to 30 days) | No | Optional | App functionality | `answer-image.ts` (single answer, not stored); `lib/scans.ts` (F050/F097: AES-256-GCM, purged after 30 days) |
 | App activity › **App interactions** | Yes | No | Required | Analytics, App functionality | `product_events`, audit log |
 | App activity › **Other user-generated content** (answers, reports, disputes) | Yes | No | Required | App functionality | `attempt_answers`, `question_reports` |
 | App info and performance › **Crash logs** | Yes | No | Required | App functionality | `error_log` (self-hosted) |

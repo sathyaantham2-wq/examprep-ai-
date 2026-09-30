@@ -4,6 +4,7 @@ import { generateOrGetTodayNudge } from '../../../lib/daily-nudge'
 import { buildDailyNudgeEmail, notifyHouseholdParents } from '../../../lib/email'
 import { env } from '../../../lib/env'
 import { wrapRouteHandlers } from '../../../lib/error-log'
+import { purgeExpiredScans } from '../../../lib/scans'
 
 /**
  * F082: "delivered once daily." Scheduled (vercel.json) for 01:30 UTC = ~7:00am IST -- this
@@ -28,6 +29,10 @@ export const Route = createFileRoute('/api/cron/daily-nudge')({
         }
 
         const db = getSharedDb()
+        // F097 retention rides on this once-a-day job rather than a cron of its own: photographed
+        // answer pages older than SCAN_RETENTION_DAYS lose their image (the text read from them
+        // stays). Runs first, so a failing email further down can't skip it.
+        const purged = await purgeExpiredScans(db)
         const students = await db
           .selectFrom('students')
           .select(['id', 'name', 'household_id'])
@@ -46,7 +51,7 @@ export const Route = createFileRoute('/api/cron/daily-nudge')({
           })
         }
 
-        return Response.json({ students_processed: students.length })
+        return Response.json({ students_processed: students.length, scan_pages_purged: purged })
       },
     },
   },
