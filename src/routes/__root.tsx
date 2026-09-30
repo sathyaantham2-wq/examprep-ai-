@@ -57,7 +57,7 @@ export const Route = createRootRoute({
       // manifest link below.
       {
         name: 'theme-color',
-        content: '#7c3aed',
+        content: '#f8f4ec',
       },
       {
         name: 'apple-mobile-web-app-capable',

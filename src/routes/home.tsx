@@ -403,7 +403,7 @@ function ParentDashboard() {
                 <div
                   data-slot="card"
                   className="tile bg-card border-border rounded-2xl border p-4"
-                  style={{ '--tile-color': 'var(--g-violet)' } as CSSProperties}
+                  style={{ '--tile-color': 'var(--p-blue)' } as CSSProperties}
                 >
                   <dt className="text-caption text-muted-foreground">
                     Last session
@@ -415,7 +415,7 @@ function ParentDashboard() {
                 <div
                   data-slot="card"
                   className="tile bg-card border-border rounded-2xl border p-4"
-                  style={{ '--tile-color': 'var(--g-pink)' } as CSSProperties}
+                  style={{ '--tile-color': 'var(--p-pink)' } as CSSProperties}
                 >
                   <dt className="text-caption text-muted-foreground">
                     Last paper evaluated
@@ -434,7 +434,7 @@ function ParentDashboard() {
                 <div
                   data-slot="card"
                   className="tile bg-card border-border rounded-2xl border p-4"
-                  style={{ '--tile-color': 'var(--g-cyan)' } as CSSProperties}
+                  style={{ '--tile-color': 'var(--p-yellow)' } as CSSProperties}
                 >
                   <dt className="text-caption text-muted-foreground">
                     Open drills

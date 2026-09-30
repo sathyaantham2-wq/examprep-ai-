@@ -25,7 +25,7 @@ Other classes and subjects follow later — see `docs/` tab 17.
 | Tab | Use it for |
 |---|---|
 | 02 Module Master | The 22 modules, effort, % complete |
-| 03 Feature Backlog | **128 features (F001–F128)** with user story + acceptance criteria. Work is picked from here. |
+| 03 Feature Backlog | **130 features (F001–F130)** with user story + acceptance criteria. Work is picked from here. |
 | 04 Data Model | 26 tables — build before UI |
 | 05 API Endpoints | 38 routes with auth level |
 | 06 Screens & Routes | 24 screens |

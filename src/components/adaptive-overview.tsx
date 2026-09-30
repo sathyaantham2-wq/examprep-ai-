@@ -107,19 +107,15 @@ export interface AdaptiveOverviewData {
   } | null
 }
 
-// One shade family for every level (violet into the brand gradient), so no level reads as a
-// warning colour.
+// One calm blue family for every level, so no level reads as a warning colour.
 const LEVEL_STYLE: Record<string, string> = {
   'Not started': 'bg-muted text-muted-foreground',
-  Beginner:
-    'bg-violet-100 text-violet-900 dark:bg-violet-950 dark:text-violet-100',
-  Developing:
-    'bg-violet-200 text-violet-950 dark:bg-violet-900 dark:text-violet-50',
-  Proficient:
-    'bg-fuchsia-200 text-fuchsia-950 dark:bg-fuchsia-900 dark:text-fuchsia-50',
-  Advanced: 'bg-gradient-to-r from-violet-500 to-fuchsia-500 text-white',
+  Beginner: 'bg-sky-50 text-sky-900 dark:bg-sky-950 dark:text-sky-100',
+  Developing: 'bg-sky-100 text-sky-950 dark:bg-sky-900 dark:text-sky-50',
+  Proficient: 'bg-blue-100 text-blue-950 dark:bg-blue-900 dark:text-blue-50',
+  Advanced: 'bg-blue-600 text-white dark:bg-blue-500',
   Mastered:
-    'bg-gradient-to-r from-violet-600 via-pink-500 to-orange-400 text-white shadow-sm',
+    'bg-blue-800 text-white shadow-sm dark:bg-blue-400 dark:text-blue-950',
 }
 
 export function LevelBadge({ level }: { level: string }) {
@@ -226,9 +222,7 @@ export function AdaptiveOverview({
     <div className="stagger space-y-4">
       {next && (
         <div className="grad-surface rounded-3xl p-6">
-          <p className="text-caption font-bold tracking-widest text-white/85 uppercase">
-            Recommended next
-          </p>
+          <p className="field-label">Recommended next</p>
           <h2 className="display-title mt-1 text-[1.9rem] leading-tight">
             {next.concept_name}
           </h2>
@@ -260,7 +254,7 @@ export function AdaptiveOverview({
       <dl className="grid grid-cols-2 gap-3 sm:grid-cols-4">
         <StatTile
           label="Average mastery"
-          color="var(--g-violet)"
+          color="var(--p-blue)"
           value={
             data.overall.average_mastery === null
               ? '–'
@@ -269,7 +263,7 @@ export function AdaptiveOverview({
         />
         <StatTile
           label="Concepts started"
-          color="var(--g-pink)"
+          color="var(--p-pink)"
           value={
             <>
               {data.overall.concepts_assessed}
@@ -283,12 +277,12 @@ export function AdaptiveOverview({
         <StatTile
           label="Mastered"
           value={data.overall.mastered_count}
-          color="var(--g-cyan)"
+          color="var(--p-yellow)"
         />
         <StatTile
           label="Current difficulty"
           value={data.current_difficulty}
-          color="var(--g-orange)"
+          color="var(--p-mint)"
         />
       </dl>
 
