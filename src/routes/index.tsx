@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react'
-import { createFileRoute, useNavigate } from '@tanstack/react-router'
+import { Link, createFileRoute, useNavigate } from '@tanstack/react-router'
 import { Button } from '../components/ui/button'
 import {
   Card,
@@ -333,6 +333,16 @@ function Home() {
             }
           </CardContent>
         </Card>
+        {/* F131: Google Play wants the privacy policy reachable from inside the app. */}
+        <p className="text-small text-muted-foreground mt-6 text-center">
+          <Link to="/privacy" className="hover:underline">
+            Privacy policy
+          </Link>
+          {' · '}
+          <Link to="/delete-account" className="hover:underline">
+            Delete an account
+          </Link>
+        </p>
       </div>
     </div>
   )

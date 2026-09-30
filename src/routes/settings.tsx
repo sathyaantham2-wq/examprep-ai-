@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react'
-import { createFileRoute, useNavigate } from '@tanstack/react-router'
+import { Link, createFileRoute, useNavigate } from '@tanstack/react-router'
 import {
   Card,
   CardContent,
@@ -159,6 +159,14 @@ function Settings() {
             </Button>
           </CardContent>
         </Card>
+        {/* F131: Google Play wants the privacy policy reachable from inside the app. */}
+        <p className="text-small text-muted-foreground">
+          Read our{' '}
+          <Link to="/privacy" className="text-primary hover:underline">
+            privacy policy
+          </Link>
+          .
+        </p>
       </div>
     </AppShell>
   )

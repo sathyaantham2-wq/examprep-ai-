@@ -11,6 +11,7 @@
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
 import { Route as ChooseBoardRouteImport } from './routes/choose-board'
+import { Route as DeleteAccountRouteImport } from './routes/delete-account'
 import { Route as GenerateRouteImport } from './routes/generate'
 import { Route as HomeRouteImport } from './routes/home'
 import { Route as LeaderboardRouteImport } from './routes/leaderboard'
@@ -19,6 +20,7 @@ import { Route as NeedsImprovementRouteImport } from './routes/needs-improvement
 import { Route as OnboardingRouteImport } from './routes/onboarding'
 import { Route as PapersAttemptedRouteImport } from './routes/papers-attempted'
 import { Route as PlanRouteImport } from './routes/plan'
+import { Route as PrivacyRouteImport } from './routes/privacy'
 import { Route as ProfileSetupRouteImport } from './routes/profile-setup'
 import { Route as RemediationRouteImport } from './routes/remediation'
 import { Route as SettingsRouteImport } from './routes/settings'
@@ -146,6 +148,11 @@ const ChooseBoardRoute = ChooseBoardRouteImport.update({
   path: '/choose-board',
   getParentRoute: () => rootRouteImport,
 } as any)
+const DeleteAccountRoute = DeleteAccountRouteImport.update({
+  id: '/delete-account',
+  path: '/delete-account',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const GenerateRoute = GenerateRouteImport.update({
   id: '/generate',
   path: '/generate',
@@ -184,6 +191,11 @@ const PapersAttemptedRoute = PapersAttemptedRouteImport.update({
 const PlanRoute = PlanRouteImport.update({
   id: '/plan',
   path: '/plan',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const PrivacyRoute = PrivacyRouteImport.update({
+  id: '/privacy',
+  path: '/privacy',
   getParentRoute: () => rootRouteImport,
 } as any)
 const ProfileSetupRoute = ProfileSetupRouteImport.update({
@@ -794,6 +806,7 @@ const ApiAttemptsIdItemsItemIdRemoveRoute =
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/choose-board': typeof ChooseBoardRoute
+  '/delete-account': typeof DeleteAccountRoute
   '/generate': typeof GenerateRoute
   '/home': typeof HomeRoute
   '/leaderboard': typeof LeaderboardRoute
@@ -802,6 +815,7 @@ export interface FileRoutesByFullPath {
   '/onboarding': typeof OnboardingRoute
   '/papers-attempted': typeof PapersAttemptedRoute
   '/plan': typeof PlanRoute
+  '/privacy': typeof PrivacyRoute
   '/profile-setup': typeof ProfileSetupRoute
   '/remediation': typeof RemediationRoute
   '/settings': typeof SettingsRoute
@@ -922,6 +936,7 @@ export interface FileRoutesByFullPath {
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/choose-board': typeof ChooseBoardRoute
+  '/delete-account': typeof DeleteAccountRoute
   '/generate': typeof GenerateRoute
   '/home': typeof HomeRoute
   '/leaderboard': typeof LeaderboardRoute
@@ -930,6 +945,7 @@ export interface FileRoutesByTo {
   '/onboarding': typeof OnboardingRoute
   '/papers-attempted': typeof PapersAttemptedRoute
   '/plan': typeof PlanRoute
+  '/privacy': typeof PrivacyRoute
   '/profile-setup': typeof ProfileSetupRoute
   '/remediation': typeof RemediationRoute
   '/settings': typeof SettingsRoute
@@ -1051,6 +1067,7 @@ export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
   '/choose-board': typeof ChooseBoardRoute
+  '/delete-account': typeof DeleteAccountRoute
   '/generate': typeof GenerateRoute
   '/home': typeof HomeRoute
   '/leaderboard': typeof LeaderboardRoute
@@ -1059,6 +1076,7 @@ export interface FileRoutesById {
   '/onboarding': typeof OnboardingRoute
   '/papers-attempted': typeof PapersAttemptedRoute
   '/plan': typeof PlanRoute
+  '/privacy': typeof PrivacyRoute
   '/profile-setup': typeof ProfileSetupRoute
   '/remediation': typeof RemediationRoute
   '/settings': typeof SettingsRoute
@@ -1181,6 +1199,7 @@ export interface FileRouteTypes {
   fullPaths:
     | '/'
     | '/choose-board'
+    | '/delete-account'
     | '/generate'
     | '/home'
     | '/leaderboard'
@@ -1189,6 +1208,7 @@ export interface FileRouteTypes {
     | '/onboarding'
     | '/papers-attempted'
     | '/plan'
+    | '/privacy'
     | '/profile-setup'
     | '/remediation'
     | '/settings'
@@ -1309,6 +1329,7 @@ export interface FileRouteTypes {
   to:
     | '/'
     | '/choose-board'
+    | '/delete-account'
     | '/generate'
     | '/home'
     | '/leaderboard'
@@ -1317,6 +1338,7 @@ export interface FileRouteTypes {
     | '/onboarding'
     | '/papers-attempted'
     | '/plan'
+    | '/privacy'
     | '/profile-setup'
     | '/remediation'
     | '/settings'
@@ -1437,6 +1459,7 @@ export interface FileRouteTypes {
     | '__root__'
     | '/'
     | '/choose-board'
+    | '/delete-account'
     | '/generate'
     | '/home'
     | '/leaderboard'
@@ -1445,6 +1468,7 @@ export interface FileRouteTypes {
     | '/onboarding'
     | '/papers-attempted'
     | '/plan'
+    | '/privacy'
     | '/profile-setup'
     | '/remediation'
     | '/settings'
@@ -1566,6 +1590,7 @@ export interface FileRouteTypes {
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   ChooseBoardRoute: typeof ChooseBoardRoute
+  DeleteAccountRoute: typeof DeleteAccountRoute
   GenerateRoute: typeof GenerateRoute
   HomeRoute: typeof HomeRoute
   LeaderboardRoute: typeof LeaderboardRoute
@@ -1574,6 +1599,7 @@ export interface RootRouteChildren {
   OnboardingRoute: typeof OnboardingRoute
   PapersAttemptedRoute: typeof PapersAttemptedRoute
   PlanRoute: typeof PlanRoute
+  PrivacyRoute: typeof PrivacyRoute
   ProfileSetupRoute: typeof ProfileSetupRoute
   RemediationRoute: typeof RemediationRoute
   SettingsRoute: typeof SettingsRoute
@@ -1654,6 +1680,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ChooseBoardRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/delete-account': {
+      id: '/delete-account'
+      path: '/delete-account'
+      fullPath: '/delete-account'
+      preLoaderRoute: typeof DeleteAccountRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/generate': {
       id: '/generate'
       path: '/generate'
@@ -1708,6 +1741,13 @@ declare module '@tanstack/react-router' {
       path: '/plan'
       fullPath: '/plan'
       preLoaderRoute: typeof PlanRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/privacy': {
+      id: '/privacy'
+      path: '/privacy'
+      fullPath: '/privacy'
+      preLoaderRoute: typeof PrivacyRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/profile-setup': {
@@ -2876,6 +2916,7 @@ const ApiSyllabusConceptsRouteWithChildren =
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   ChooseBoardRoute: ChooseBoardRoute,
+  DeleteAccountRoute: DeleteAccountRoute,
   GenerateRoute: GenerateRoute,
   HomeRoute: HomeRoute,
   LeaderboardRoute: LeaderboardRoute,
@@ -2884,6 +2925,7 @@ const rootRouteChildren: RootRouteChildren = {
   OnboardingRoute: OnboardingRoute,
   PapersAttemptedRoute: PapersAttemptedRoute,
   PlanRoute: PlanRoute,
+  PrivacyRoute: PrivacyRoute,
   ProfileSetupRoute: ProfileSetupRoute,
   RemediationRoute: RemediationRoute,
   SettingsRoute: SettingsRoute,
