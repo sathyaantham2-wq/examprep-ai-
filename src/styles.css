@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,700&family=Manrope:wght@400;500;600;700;800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@500;600;700;800&family=Manrope:wght@400;500;600;700;800&display=swap');
 @import 'tailwindcss';
 @plugin '@tailwindcss/typography';
 
@@ -6,79 +6,109 @@
 
 @custom-variant dark (&:is(.dark *));
 
+/* "Aurora" theme (F128, 2026-09-30): electric violet -> hot pink -> sunset orange gradients with
+   cyan and lime highlights, glass cards over a slowly drifting colour field, chunky 3D buttons.
+   Every colour is an original token here -- no franchise palette is being imitated. Cards are
+   translucent on purpose (the aurora shows through); surfaces that must stay readable over
+   content (sidebar drawer, tab bar, sticky bars) add their own backdrop blur. */
 :root {
-  --background: oklch(1 0 0);
-  --foreground: oklch(0.141 0.005 285.823);
-  --card: oklch(1 0 0);
-  --card-foreground: oklch(0.141 0.005 285.823);
+  --g-violet: oklch(0.58 0.25 293);
+  --g-pink: oklch(0.66 0.26 352);
+  --g-orange: oklch(0.76 0.18 50);
+  --g-cyan: oklch(0.78 0.14 215);
+  --g-lime: oklch(0.87 0.2 128);
+  --grad-main: linear-gradient(
+    135deg,
+    var(--g-violet) 0%,
+    var(--g-pink) 60%,
+    var(--g-orange) 100%
+  );
+  --edge: oklch(0.42 0.2 293);
+  --glow: oklch(0.58 0.25 293 / 0.35);
+  --highlight: rgb(255 255 255 / 0.7);
+
+  --background: oklch(0.975 0.014 300);
+  --foreground: oklch(0.21 0.05 285);
+  --card: oklch(1 0 0 / 0.72);
+  --card-foreground: oklch(0.21 0.05 285);
   --popover: oklch(1 0 0);
-  --popover-foreground: oklch(0.141 0.005 285.823);
-  --primary: oklch(0.21 0.006 285.885);
-  --primary-foreground: oklch(0.985 0 0);
-  --secondary: oklch(0.967 0.001 286.375);
-  --secondary-foreground: oklch(0.21 0.006 285.885);
-  --muted: oklch(0.967 0.001 286.375);
-  --muted-foreground: oklch(0.552 0.016 285.938);
-  --accent: oklch(0.967 0.001 286.375);
-  --accent-foreground: oklch(0.21 0.006 285.885);
-  --destructive: oklch(0.577 0.245 27.325);
-  --destructive-foreground: oklch(0.577 0.245 27.325);
-  --border: oklch(0.92 0.004 286.32);
-  --input: oklch(0.92 0.004 286.32);
-  --ring: oklch(0.871 0.006 286.286);
-  --chart-1: oklch(0.646 0.222 41.116);
-  --chart-2: oklch(0.6 0.118 184.704);
-  --chart-3: oklch(0.398 0.07 227.392);
-  --chart-4: oklch(0.828 0.189 84.429);
-  --chart-5: oklch(0.769 0.188 70.08);
-  --radius: 0.625rem;
-  --sidebar: oklch(0.985 0 0);
-  --sidebar-foreground: oklch(0.141 0.005 285.823);
-  --sidebar-primary: oklch(0.21 0.006 285.885);
-  --sidebar-primary-foreground: oklch(0.985 0 0);
-  --sidebar-accent: oklch(0.967 0.001 286.375);
-  --sidebar-accent-foreground: oklch(0.21 0.006 285.885);
-  --sidebar-border: oklch(0.92 0.004 286.32);
-  --sidebar-ring: oklch(0.871 0.006 286.286);
+  --popover-foreground: oklch(0.21 0.05 285);
+  --primary: oklch(0.55 0.25 293);
+  --primary-foreground: oklch(0.99 0 0);
+  --secondary: oklch(0.95 0.03 300);
+  --secondary-foreground: oklch(0.3 0.12 293);
+  --muted: oklch(0.94 0.025 300);
+  --muted-foreground: oklch(0.49 0.04 285);
+  --accent: oklch(0.93 0.045 300);
+  --accent-foreground: oklch(0.32 0.15 293);
+  --destructive: oklch(0.6 0.23 20);
+  --destructive-foreground: oklch(0.6 0.23 20);
+  --border: oklch(0.88 0.035 298 / 0.85);
+  --input: oklch(0.86 0.04 298);
+  --ring: oklch(0.58 0.25 293);
+  --chart-1: oklch(0.58 0.25 293);
+  --chart-2: oklch(0.66 0.26 352);
+  --chart-3: oklch(0.78 0.14 215);
+  --chart-4: oklch(0.76 0.18 50);
+  --chart-5: oklch(0.87 0.2 128);
+  --radius: 0.875rem;
+  --sidebar: oklch(1 0 0 / 0.7);
+  --sidebar-foreground: oklch(0.21 0.05 285);
+  --sidebar-primary: oklch(0.55 0.25 293);
+  --sidebar-primary-foreground: oklch(0.99 0 0);
+  --sidebar-accent: oklch(0.93 0.045 300);
+  --sidebar-accent-foreground: oklch(0.32 0.15 293);
+  --sidebar-border: oklch(0.88 0.035 298);
+  --sidebar-ring: oklch(0.58 0.25 293);
 }
 
 .dark {
-  --background: oklch(0.141 0.005 285.823);
-  --foreground: oklch(0.985 0 0);
-  --card: oklch(0.141 0.005 285.823);
-  --card-foreground: oklch(0.985 0 0);
-  --popover: oklch(0.141 0.005 285.823);
-  --popover-foreground: oklch(0.985 0 0);
-  --primary: oklch(0.985 0 0);
-  --primary-foreground: oklch(0.21 0.006 285.885);
-  --secondary: oklch(0.274 0.006 286.033);
-  --secondary-foreground: oklch(0.985 0 0);
-  --muted: oklch(0.274 0.006 286.033);
-  --muted-foreground: oklch(0.705 0.015 286.067);
-  --accent: oklch(0.274 0.006 286.033);
-  --accent-foreground: oklch(0.985 0 0);
-  --destructive: oklch(0.396 0.141 25.723);
-  --destructive-foreground: oklch(0.637 0.237 25.331);
-  --border: oklch(0.274 0.006 286.033);
-  --input: oklch(0.274 0.006 286.033);
-  --ring: oklch(0.442 0.017 285.786);
-  --chart-1: oklch(0.488 0.243 264.376);
-  --chart-2: oklch(0.696 0.17 162.48);
-  --chart-3: oklch(0.769 0.188 70.08);
-  --chart-4: oklch(0.627 0.265 303.9);
-  --chart-5: oklch(0.645 0.246 16.439);
-  --sidebar: oklch(0.21 0.006 285.885);
-  --sidebar-foreground: oklch(0.985 0 0);
-  --sidebar-primary: oklch(0.488 0.243 264.376);
-  --sidebar-primary-foreground: oklch(0.985 0 0);
-  --sidebar-accent: oklch(0.274 0.006 286.033);
-  --sidebar-accent-foreground: oklch(0.985 0 0);
-  --sidebar-border: oklch(0.274 0.006 286.033);
-  --sidebar-ring: oklch(0.442 0.017 285.786);
+  --g-violet: oklch(0.66 0.24 293);
+  --g-pink: oklch(0.7 0.25 352);
+  --g-orange: oklch(0.78 0.17 55);
+  --g-cyan: oklch(0.8 0.14 210);
+  --g-lime: oklch(0.88 0.21 130);
+  --edge: oklch(0.36 0.18 293);
+  --glow: oklch(0.66 0.24 293 / 0.45);
+  --highlight: rgb(255 255 255 / 0.1);
+
+  --background: oklch(0.14 0.035 285);
+  --foreground: oklch(0.97 0.01 300);
+  --card: oklch(0.23 0.05 288 / 0.62);
+  --card-foreground: oklch(0.97 0.01 300);
+  --popover: oklch(0.2 0.045 288);
+  --popover-foreground: oklch(0.97 0.01 300);
+  --primary: oklch(0.74 0.19 295);
+  --primary-foreground: oklch(0.16 0.04 285);
+  --secondary: oklch(0.27 0.05 288);
+  --secondary-foreground: oklch(0.97 0.01 300);
+  --muted: oklch(0.27 0.045 288);
+  --muted-foreground: oklch(0.76 0.03 295);
+  --accent: oklch(0.3 0.07 290);
+  --accent-foreground: oklch(0.97 0.01 300);
+  --destructive: oklch(0.62 0.22 22);
+  --destructive-foreground: oklch(0.72 0.19 22);
+  --border: oklch(1 0 0 / 0.11);
+  --input: oklch(1 0 0 / 0.16);
+  --ring: oklch(0.74 0.19 295);
+  --chart-1: oklch(0.74 0.19 295);
+  --chart-2: oklch(0.7 0.25 352);
+  --chart-3: oklch(0.8 0.14 210);
+  --chart-4: oklch(0.78 0.17 55);
+  --chart-5: oklch(0.88 0.21 130);
+  --sidebar: oklch(0.19 0.045 288 / 0.7);
+  --sidebar-foreground: oklch(0.97 0.01 300);
+  --sidebar-primary: oklch(0.74 0.19 295);
+  --sidebar-primary-foreground: oklch(0.16 0.04 285);
+  --sidebar-accent: oklch(0.3 0.07 290);
+  --sidebar-accent-foreground: oklch(0.97 0.01 300);
+  --sidebar-border: oklch(1 0 0 / 0.11);
+  --sidebar-ring: oklch(0.74 0.19 295);
 }
 
 @theme inline {
   --font-sans: 'Manrope', ui-sans-serif, system-ui, sans-serif;
+  --font-display: 'Outfit', 'Manrope', ui-sans-serif, system-ui, sans-serif;
   --color-background: var(--background);
   --color-foreground: var(--foreground);
   --color-card: var(--card);
@@ -153,35 +183,43 @@ pre code {
 }
 
 .display-title {
-  font-family: 'Fraunces', Georgia, serif;
+  font-family: var(--font-display);
+  font-weight: 800;
+  letter-spacing: -0.02em;
 }
 
 /* Type scale (F005): every screen should reach for these instead of ad-hoc text-* sizes, so
    headings stay consistent without a shared <Heading> component to force it. */
 .text-display {
-  font-family: 'Fraunces', Georgia, serif;
+  font-family: var(--font-display);
   font-size: 2.5rem;
-  line-height: 1.15;
-  font-weight: 700;
-  letter-spacing: -0.01em;
+  line-height: 1.1;
+  font-weight: 800;
+  letter-spacing: -0.03em;
 }
 
 .text-h1 {
+  font-family: var(--font-display);
   font-size: 1.875rem;
-  line-height: 1.25;
-  font-weight: 700;
+  line-height: 1.2;
+  font-weight: 800;
+  letter-spacing: -0.025em;
 }
 
 .text-h2 {
+  font-family: var(--font-display);
   font-size: 1.5rem;
   line-height: 1.3;
-  font-weight: 600;
+  font-weight: 700;
+  letter-spacing: -0.015em;
 }
 
 .text-h3 {
+  font-family: var(--font-display);
   font-size: 1.25rem;
   line-height: 1.4;
-  font-weight: 600;
+  font-weight: 700;
+  letter-spacing: -0.01em;
 }
 
 .text-body {
@@ -200,6 +238,20 @@ pre code {
   letter-spacing: 0.02em;
 }
 
+/* Page titles and the big display line get the signature gradient. */
+h1.text-h1,
+.text-display {
+  background: linear-gradient(
+    100deg,
+    var(--foreground) 10%,
+    var(--g-violet) 55%,
+    var(--g-pink) 100%
+  );
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
 @layer base {
   * {
     @apply border-border outline-ring/50;
@@ -207,6 +259,357 @@ pre code {
   body {
     background-color: var(--background);
     color: var(--foreground);
+  }
+}
+
+/* ---------- Aurora backdrop: soft colour blobs drifting behind every screen ---------- */
+.aurora {
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  overflow: hidden;
+  pointer-events: none;
+}
+
+.aurora > span {
+  position: absolute;
+  width: 55vmax;
+  height: 55vmax;
+  border-radius: 9999px;
+  filter: blur(70px);
+  opacity: 0.32;
+  animation: aurora-drift 26s ease-in-out infinite alternate;
+}
+
+.dark .aurora > span {
+  opacity: 0.28;
+}
+
+.aurora > span:nth-child(1) {
+  background: var(--g-violet);
+  top: -20vmax;
+  left: -15vmax;
+}
+.aurora > span:nth-child(2) {
+  background: var(--g-pink);
+  top: -10vmax;
+  right: -20vmax;
+  animation-delay: -8s;
+  animation-duration: 32s;
+}
+.aurora > span:nth-child(3) {
+  background: var(--g-cyan);
+  bottom: -25vmax;
+  left: 10vmax;
+  animation-delay: -16s;
+  animation-duration: 30s;
+}
+.aurora > span:nth-child(4) {
+  background: var(--g-orange);
+  bottom: -20vmax;
+  right: -10vmax;
+  opacity: 0.2;
+  animation-delay: -4s;
+}
+
+/* A faint dot grid over the colour field -- adds texture without adding noise. */
+.aurora::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image: radial-gradient(
+    color-mix(in oklab, var(--foreground) 10%, transparent) 1px,
+    transparent 1px
+  );
+  background-size: 22px 22px;
+  mask-image: linear-gradient(to bottom, black, transparent 85%);
+}
+
+@keyframes aurora-drift {
+  0% {
+    transform: translate3d(0, 0, 0) scale(1);
+  }
+  50% {
+    transform: translate3d(6vmax, 4vmax, 0) scale(1.08);
+  }
+  100% {
+    transform: translate3d(-4vmax, 7vmax, 0) scale(0.95);
+  }
+}
+
+/* ---------- 3D glass cards ---------- */
+[data-slot='card'] {
+  backdrop-filter: blur(16px) saturate(1.5);
+  -webkit-backdrop-filter: blur(16px) saturate(1.5);
+  box-shadow:
+    inset 0 1px 0 var(--highlight),
+    0 1px 2px rgb(20 10 60 / 0.06),
+    0 14px 34px -14px var(--glow);
+}
+
+/* Glass for fixed chrome (sidebar, top bar, tab bar, sticky action bars). */
+.glass {
+  background: var(--card);
+  backdrop-filter: blur(20px) saturate(1.6);
+  -webkit-backdrop-filter: blur(20px) saturate(1.6);
+}
+
+/* ---------- Chunky 3D buttons: a coloured "edge" underneath that the button presses into ---------- */
+.btn-3d {
+  position: relative;
+  color: white;
+  background: var(--grad-main);
+  background-size: 140% 140%;
+  box-shadow:
+    inset 0 1px 0 rgb(255 255 255 / 0.35),
+    0 4px 0 0 var(--edge),
+    0 10px 22px -8px var(--glow);
+  transform: translateY(0);
+  transition:
+    transform 0.12s ease,
+    box-shadow 0.12s ease,
+    background-position 0.4s ease,
+    filter 0.2s ease;
+}
+.btn-3d:hover {
+  background-position: 100% 50%;
+  filter: brightness(1.06) saturate(1.1);
+  transform: translateY(-1px);
+  box-shadow:
+    inset 0 1px 0 rgb(255 255 255 / 0.35),
+    0 5px 0 0 var(--edge),
+    0 14px 28px -8px var(--glow);
+}
+.btn-3d:active {
+  transform: translateY(3px);
+  box-shadow:
+    inset 0 1px 0 rgb(255 255 255 / 0.25),
+    0 1px 0 0 var(--edge),
+    0 4px 10px -6px var(--glow);
+}
+
+.btn-3d-soft {
+  background: var(--card);
+  backdrop-filter: blur(10px);
+  box-shadow:
+    inset 0 1px 0 var(--highlight),
+    0 3px 0 0 color-mix(in oklab, var(--primary) 22%, var(--border));
+  transform: translateY(0);
+  transition:
+    transform 0.12s ease,
+    box-shadow 0.12s ease,
+    background-color 0.2s ease;
+}
+.btn-3d-soft:active {
+  transform: translateY(2px);
+  box-shadow:
+    inset 0 1px 0 var(--highlight),
+    0 1px 0 0 color-mix(in oklab, var(--primary) 22%, var(--border));
+}
+
+.btn-3d-danger {
+  color: white;
+  background: linear-gradient(
+    135deg,
+    oklch(0.64 0.23 20),
+    oklch(0.66 0.25 355)
+  );
+  box-shadow:
+    inset 0 1px 0 rgb(255 255 255 / 0.3),
+    0 4px 0 0 oklch(0.42 0.17 20);
+  transition:
+    transform 0.12s ease,
+    box-shadow 0.12s ease;
+}
+.btn-3d-danger:active {
+  transform: translateY(3px);
+  box-shadow: 0 1px 0 0 oklch(0.42 0.17 20);
+}
+
+/* White "pop" button, for use on top of a gradient surface. */
+.btn-3d-pop {
+  color: var(--g-violet);
+  background: white;
+  box-shadow:
+    0 4px 0 0 rgb(0 0 0 / 0.18),
+    0 10px 20px -8px rgb(0 0 0 / 0.35);
+  transition:
+    transform 0.12s ease,
+    box-shadow 0.12s ease;
+}
+.btn-3d-pop:hover {
+  transform: translateY(-1px);
+}
+.btn-3d-pop:active {
+  transform: translateY(3px);
+  box-shadow: 0 1px 0 0 rgb(0 0 0 / 0.18);
+}
+
+/* ---------- Gradient surfaces ---------- */
+.grad-surface {
+  position: relative;
+  overflow: hidden;
+  color: white;
+  background: var(--grad-main);
+  box-shadow:
+    inset 0 1px 0 rgb(255 255 255 / 0.35),
+    0 6px 0 0 var(--edge),
+    0 24px 48px -18px var(--glow);
+}
+/* A slow light sweep across the hero card. */
+.grad-surface::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    105deg,
+    transparent 35%,
+    rgb(255 255 255 / 0.22) 50%,
+    transparent 65%
+  );
+  transform: translateX(-100%);
+  animation: shine 5.5s ease-in-out infinite;
+  pointer-events: none;
+}
+.grad-surface::after {
+  content: '';
+  position: absolute;
+  width: 220px;
+  height: 220px;
+  right: -60px;
+  top: -80px;
+  border-radius: 9999px;
+  background: radial-gradient(rgb(255 255 255 / 0.28), transparent 70%);
+  pointer-events: none;
+}
+.grad-surface > * {
+  position: relative;
+  z-index: 1;
+}
+.grad-surface a {
+  color: white;
+}
+.grad-surface .text-muted-foreground {
+  color: rgb(255 255 255 / 0.85);
+}
+
+@keyframes shine {
+  0%,
+  55% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(100%);
+  }
+}
+
+.grad-text {
+  background: var(--grad-main);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.bar-grad {
+  background: linear-gradient(90deg, var(--g-violet), var(--g-pink));
+  box-shadow: 0 0 12px -2px var(--glow);
+}
+
+/* Active nav item: a glowing gradient pill. */
+.nav-active {
+  color: white !important;
+  background: var(--grad-main);
+  box-shadow:
+    inset 0 1px 0 rgb(255 255 255 / 0.3),
+    0 3px 0 0 var(--edge),
+    0 10px 20px -10px var(--glow);
+}
+
+/* ---------- Motion ---------- */
+@keyframes rise-in {
+  from {
+    opacity: 0;
+    transform: translateY(14px) scale(0.99);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+.rise-in {
+  animation: rise-in 0.5s cubic-bezier(0.2, 0.8, 0.2, 1) both;
+}
+.stagger > * {
+  animation: rise-in 0.5s cubic-bezier(0.2, 0.8, 0.2, 1) both;
+}
+.stagger > *:nth-child(2) {
+  animation-delay: 0.05s;
+}
+.stagger > *:nth-child(3) {
+  animation-delay: 0.1s;
+}
+.stagger > *:nth-child(4) {
+  animation-delay: 0.15s;
+}
+.stagger > *:nth-child(5) {
+  animation-delay: 0.2s;
+}
+.stagger > *:nth-child(n + 6) {
+  animation-delay: 0.25s;
+}
+
+/* Hover lift for tappable rows and tiles. */
+.lift {
+  transition:
+    transform 0.18s ease,
+    box-shadow 0.18s ease;
+}
+.lift:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 12px 26px -12px var(--glow);
+}
+
+/* Colour-coded stat tiles: a glowing accent stripe + tinted number. */
+.tile {
+  position: relative;
+  overflow: hidden;
+}
+.tile::before {
+  content: '';
+  position: absolute;
+  inset: 0 0 auto 0;
+  height: 4px;
+  background: var(--tile-color, var(--g-violet));
+}
+.tile::after {
+  content: '';
+  position: absolute;
+  width: 120px;
+  height: 120px;
+  right: -40px;
+  bottom: -60px;
+  border-radius: 9999px;
+  background: var(--tile-color, var(--g-violet));
+  opacity: 0.16;
+  filter: blur(18px);
+}
+.tile dd {
+  color: var(--tile-color, var(--g-violet));
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .aurora > span,
+  .grad-surface::before,
+  .rise-in,
+  .stagger > * {
+    animation: none !important;
+  }
+  .btn-3d,
+  .btn-3d-soft,
+  .btn-3d-pop,
+  .btn-3d-danger,
+  .lift {
+    transition: none !important;
   }
 }
 
@@ -221,7 +624,8 @@ pre code {
     color: black !important;
   }
 
-  .no-print {
+  .no-print,
+  .aurora {
     display: none !important;
   }
 
@@ -230,10 +634,25 @@ pre code {
     text-decoration: none !important;
   }
 
+  h1.text-h1,
+  .text-display,
+  .grad-text {
+    background: none !important;
+    -webkit-text-fill-color: black !important;
+  }
+
+  .grad-surface {
+    background: white !important;
+    color: black !important;
+    box-shadow: none !important;
+    border: 1px solid #ccc !important;
+  }
+
   [data-slot='card'] {
     box-shadow: none !important;
     border: 1px solid #ccc !important;
     background: white !important;
+    backdrop-filter: none !important;
   }
 }
 

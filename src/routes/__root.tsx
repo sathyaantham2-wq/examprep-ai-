@@ -6,7 +6,11 @@ import { TanStackDevtools } from '@tanstack/react-devtools'
 
 import appCss from '../styles.css?url'
 import { ThemeProvider } from '../components/theme-provider'
-import { installClientErrorReporting, reportReactError } from '../lib/client-error-reporting'
+import {
+  installClientErrorReporting,
+  reportReactError,
+} from '../lib/client-error-reporting'
+import { installUiSounds } from '../lib/sfx'
 
 // F004: a route-render error still gets reported (see client-error-reporting.ts's own comment
 // for why this needs a separate path from window.onerror), and the visitor gets a plain
@@ -53,7 +57,7 @@ export const Route = createRootRoute({
       // manifest link below.
       {
         name: 'theme-color',
-        content: '#4338ca',
+        content: '#7c3aed',
       },
       {
         name: 'apple-mobile-web-app-capable',
@@ -95,6 +99,8 @@ function RootDocument({ children }: { children: React.ReactNode }) {
   useEffect(() => {
     installClientErrorReporting()
   }, [])
+  // F128: tap/select/nav sounds for every button and link (switchable in the sidebar).
+  useEffect(() => installUiSounds(), [])
 
   return (
     <html lang="en" suppressHydrationWarning>
@@ -102,6 +108,13 @@ function RootDocument({ children }: { children: React.ReactNode }) {
         <HeadContent />
       </head>
       <body>
+        {/* F128: the drifting colour field behind every screen. Decorative only. */}
+        <div className="aurora" aria-hidden="true">
+          <span />
+          <span />
+          <span />
+          <span />
+        </div>
         <ThemeProvider>
           {children}
           <TanStackDevtools

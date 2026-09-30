@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import type { ReactNode } from 'react'
+import type { CSSProperties, ReactNode } from 'react'
 import { Button } from './ui/button'
 import {
   Card,
@@ -107,14 +107,19 @@ export interface AdaptiveOverviewData {
   } | null
 }
 
-// One shade family for every level, so no level reads as a warning colour.
+// One shade family for every level (violet into the brand gradient), so no level reads as a
+// warning colour.
 const LEVEL_STYLE: Record<string, string> = {
   'Not started': 'bg-muted text-muted-foreground',
-  Beginner: 'bg-blue-50 text-blue-900 dark:bg-blue-950 dark:text-blue-100',
-  Developing: 'bg-blue-100 text-blue-900 dark:bg-blue-900 dark:text-blue-50',
-  Proficient: 'bg-blue-200 text-blue-950 dark:bg-blue-800 dark:text-blue-50',
-  Advanced: 'bg-blue-500 text-white',
-  Mastered: 'bg-blue-700 text-white',
+  Beginner:
+    'bg-violet-100 text-violet-900 dark:bg-violet-950 dark:text-violet-100',
+  Developing:
+    'bg-violet-200 text-violet-950 dark:bg-violet-900 dark:text-violet-50',
+  Proficient:
+    'bg-fuchsia-200 text-fuchsia-950 dark:bg-fuchsia-900 dark:text-fuchsia-50',
+  Advanced: 'bg-gradient-to-r from-violet-500 to-fuchsia-500 text-white',
+  Mastered:
+    'bg-gradient-to-r from-violet-600 via-pink-500 to-orange-400 text-white shadow-sm',
 }
 
 export function LevelBadge({ level }: { level: string }) {
@@ -140,7 +145,7 @@ export function ScoreBar({ score }: { score: number | null }) {
       }
     >
       <div
-        className="h-full rounded-full bg-blue-600"
+        className="bar-grad h-full rounded-full"
         style={{ width: `${pct}%` }}
       />
     </div>
@@ -166,11 +171,23 @@ function ChevronIcon({ open }: { open: boolean }) {
   )
 }
 
-function StatTile({ label, value }: { label: string; value: ReactNode }) {
+function StatTile({
+  label,
+  value,
+  color,
+}: {
+  label: string
+  value: ReactNode
+  color: string
+}) {
   return (
-    <div className="bg-card border-border rounded-xl border p-4">
+    <div
+      data-slot="card"
+      className="tile lift bg-card border-border rounded-2xl border p-4"
+      style={{ '--tile-color': color } as CSSProperties}
+    >
       <dt className="text-caption text-muted-foreground">{label}</dt>
-      <dd className="text-h2 mt-1 font-semibold">{value}</dd>
+      <dd className="text-h2 mt-1 font-extrabold">{value}</dd>
     </div>
   )
 }
@@ -206,13 +223,15 @@ export function AdaptiveOverview({
   }
 
   return (
-    <div className="space-y-4">
+    <div className="stagger space-y-4">
       {next && (
-        <div className="from-primary/15 via-card to-card border-primary/40 rounded-2xl border bg-gradient-to-br p-5">
-          <p className="text-caption text-primary font-semibold tracking-wide uppercase">
+        <div className="grad-surface rounded-3xl p-6">
+          <p className="text-caption font-bold tracking-widest text-white/85 uppercase">
             Recommended next
           </p>
-          <h2 className="text-h2 mt-1">{next.concept_name}</h2>
+          <h2 className="display-title mt-1 text-[1.9rem] leading-tight">
+            {next.concept_name}
+          </h2>
           <p className="text-small text-muted-foreground mt-1">
             {next.subject_name} · {next.chapter_name}
           </p>
@@ -223,7 +242,7 @@ export function AdaptiveOverview({
           </p>
           <div className="mt-4 flex flex-wrap items-center gap-4">
             <a href={`/my-paper?subject=${next.subject_id}`}>
-              <Button>
+              <Button variant="pop" size="lg">
                 {next.is_initial_assessment
                   ? 'Take my first assessment'
                   : 'Generate my question paper'}
@@ -241,6 +260,7 @@ export function AdaptiveOverview({
       <dl className="grid grid-cols-2 gap-3 sm:grid-cols-4">
         <StatTile
           label="Average mastery"
+          color="var(--g-violet)"
           value={
             data.overall.average_mastery === null
               ? '–'
@@ -249,6 +269,7 @@ export function AdaptiveOverview({
         />
         <StatTile
           label="Concepts started"
+          color="var(--g-pink)"
           value={
             <>
               {data.overall.concepts_assessed}
@@ -259,8 +280,16 @@ export function AdaptiveOverview({
             </>
           }
         />
-        <StatTile label="Mastered" value={data.overall.mastered_count} />
-        <StatTile label="Current difficulty" value={data.current_difficulty} />
+        <StatTile
+          label="Mastered"
+          value={data.overall.mastered_count}
+          color="var(--g-cyan)"
+        />
+        <StatTile
+          label="Current difficulty"
+          value={data.current_difficulty}
+          color="var(--g-orange)"
+        />
       </dl>
 
       {(data.needs_improvement.length > 0 ||
@@ -334,7 +363,7 @@ export function AdaptiveOverview({
                   )
                 : 0
             return (
-              <Card key={subject.subject_id} className="gap-0 py-0">
+              <Card key={subject.subject_id} className="lift gap-0 py-0">
                 <button
                   type="button"
                   onClick={() => toggleSubject(subject.subject_id)}
@@ -360,7 +389,7 @@ export function AdaptiveOverview({
                         aria-hidden="true"
                       >
                         <div
-                          className="bg-primary h-full rounded-full"
+                          className="bar-grad h-full rounded-full"
                           style={{ width: `${startedPct}%` }}
                         />
                       </div>

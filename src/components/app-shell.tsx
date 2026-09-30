@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import type { ReactNode } from 'react'
 import { ThemeToggle } from './theme-toggle'
+import { SoundToggle } from './sound-toggle'
 import { signOut, useSession } from '../lib/auth-client'
 
 // A persistent sidebar shell, in two variants -- 'parent' (the original: Home/Generate
@@ -325,35 +326,45 @@ export function AppShell({
   }
 
   const account = (
-    <div className="border-border flex items-center gap-2 border-t pt-4">
-      <div className="bg-primary/10 text-primary flex size-9 shrink-0 items-center justify-center rounded-full text-sm font-semibold">
-        {displayName ? displayName.trim().charAt(0).toUpperCase() : '?'}
+    <div className="border-border space-y-3 border-t pt-4">
+      <div className="flex items-center justify-between px-1">
+        <span className="text-caption text-muted-foreground">
+          Sound &amp; theme
+        </span>
+        <div className="flex items-center">
+          <SoundToggle />
+          <ThemeToggle />
+        </div>
       </div>
-      <div className="min-w-0 flex-1">
-        <p className="truncate text-sm font-medium">{displayName}</p>
-        <button
-          type="button"
-          onClick={() => void handleSignOut()}
-          disabled={signingOut}
-          className="text-muted-foreground hover:text-foreground inline-flex items-center gap-1.5 text-xs"
-        >
-          <SignOutIcon />
-          {signingOut ? 'Signing out…' : 'Sign out'}
-        </button>
+      <div className="flex items-center gap-2.5">
+        <div className="grad-surface flex size-9 shrink-0 items-center justify-center rounded-full text-sm font-bold">
+          {displayName ? displayName.trim().charAt(0).toUpperCase() : '?'}
+        </div>
+        <div className="min-w-0 flex-1">
+          <p className="truncate text-sm font-semibold">{displayName}</p>
+          <button
+            type="button"
+            onClick={() => void handleSignOut()}
+            disabled={signingOut}
+            className="text-muted-foreground hover:text-foreground inline-flex items-center gap-1.5 text-xs whitespace-nowrap"
+          >
+            <SignOutIcon />
+            {signingOut ? 'Signing out…' : 'Sign out'}
+          </button>
+        </div>
       </div>
-      <ThemeToggle />
     </div>
   )
 
   const logo = (
     <div className="flex items-center gap-2.5 px-2">
-      <div className="bg-primary flex size-[34px] shrink-0 items-center justify-center rounded-[9px]">
+      <div className="grad-surface flex size-[36px] shrink-0 items-center justify-center rounded-[11px]">
         <svg
           width="18"
           height="18"
           viewBox="0 0 24 24"
           fill="none"
-          stroke="var(--primary-foreground)"
+          stroke="white"
           strokeWidth="2"
           strokeLinecap="round"
           strokeLinejoin="round"
@@ -362,7 +373,9 @@ export function AppShell({
           <path d="M6 12v5c0 1.5 2.7 3 6 3s6-1.5 6-3v-5" />
         </svg>
       </div>
-      <div className="display-title text-h3 leading-tight">ExamPrep AI</div>
+      <div className="display-title text-h3 leading-tight">
+        ExamPrep <span className="grad-text">AI</span>
+      </div>
     </div>
   )
 
@@ -376,8 +389,8 @@ export function AppShell({
           onClick={() => setMobileOpen(false)}
           className={
             item.key === active
-              ? 'bg-primary/10 text-primary flex items-center gap-3 rounded-md px-3 py-2.5 text-sm font-semibold'
-              : 'text-muted-foreground hover:bg-accent hover:text-accent-foreground flex items-center gap-3 rounded-md px-3 py-2.5 text-sm'
+              ? 'nav-active flex items-center gap-3 rounded-xl px-3 py-2.5 text-sm font-bold'
+              : 'text-muted-foreground hover:bg-accent hover:text-accent-foreground flex items-center gap-3 rounded-xl px-3 py-2.5 text-sm font-medium transition-colors'
           }
         >
           {item.icon}
@@ -392,7 +405,7 @@ export function AppShell({
       {/* Mobile/tablet top bar -- the sidebar itself becomes an off-canvas drawer below `lg`,
           since a permanently fixed 232px column has no way to fit a phone or a portrait tablet.
           "Dynamic sidebar" per the user's 2026-09-23 request. */}
-      <div className="no-print bg-card border-border sticky top-0 z-30 flex items-center justify-between border-b p-3 lg:hidden">
+      <div className="no-print glass border-border sticky top-0 z-30 flex items-center justify-between border-b p-3 lg:hidden">
         <div className="flex items-center gap-2">
           <button
             type="button"
@@ -404,7 +417,10 @@ export function AppShell({
           </button>
           {logo}
         </div>
-        <ThemeToggle />
+        <div className="flex items-center">
+          <SoundToggle />
+          <ThemeToggle />
+        </div>
       </div>
 
       {mobileOpen && (
@@ -416,7 +432,7 @@ export function AppShell({
       )}
 
       <div
-        className={`no-print bg-card border-border fixed inset-y-0 left-0 z-40 flex w-[260px] max-w-[80vw] shrink-0 flex-col border-r p-[18px] pt-7 transition-transform duration-200 lg:sticky lg:top-0 lg:h-screen lg:w-[232px] lg:max-w-none lg:translate-x-0 ${
+        className={`no-print glass border-border fixed inset-y-0 left-0 z-40 flex w-[260px] max-w-[80vw] shrink-0 flex-col border-r p-[18px] pt-7 transition-transform duration-200 lg:sticky lg:top-0 lg:h-screen lg:w-[232px] lg:max-w-none lg:translate-x-0 ${
           mobileOpen ? 'translate-x-0' : '-translate-x-full'
         }`}
       >
@@ -438,7 +454,7 @@ export function AppShell({
       </div>
 
       {/* Bottom padding on phones so the fixed tab bar never covers the last card. */}
-      <div className="min-w-0 flex-1 pb-20 lg:pb-0">{children}</div>
+      <div className="rise-in min-w-0 flex-1 pb-20 lg:pb-0">{children}</div>
 
       {/* Phone/tablet bottom tab bar: the main sections one thumb-tap away, instead of hidden
           behind the menu button. The drawer stays for account/sign out and the theme toggle.
@@ -446,7 +462,7 @@ export function AppShell({
           nav link still has exactly one accessible match there. */}
       <nav
         aria-label="Main"
-        className="no-print bg-card border-border fixed inset-x-0 bottom-0 z-20 flex border-t pb-[env(safe-area-inset-bottom)] lg:hidden"
+        className="no-print glass border-border fixed inset-x-0 bottom-0 z-20 flex border-t pb-[env(safe-area-inset-bottom)] lg:hidden"
       >
         {items.map((item) => (
           <a
@@ -461,7 +477,7 @@ export function AppShell({
           >
             <span
               className={`flex h-7 w-12 items-center justify-center rounded-full ${
-                item.key === active ? 'bg-primary/10' : ''
+                item.key === active ? 'nav-active' : ''
               }`}
             >
               {item.icon}

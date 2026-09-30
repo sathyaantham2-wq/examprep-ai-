@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react'
+import type { CSSProperties } from 'react'
 import { createFileRoute, useNavigate } from '@tanstack/react-router'
 import { Button } from '../components/ui/button'
 import {
@@ -399,7 +400,11 @@ function ParentDashboard() {
             <section>
               <h2 className="text-h3 mb-2">Since you last checked in</h2>
               <dl className="grid grid-cols-1 gap-3 sm:grid-cols-3">
-                <div className="bg-card border-border rounded-xl border p-4">
+                <div
+                  data-slot="card"
+                  className="tile bg-card border-border rounded-2xl border p-4"
+                  style={{ '--tile-color': 'var(--g-violet)' } as CSSProperties}
+                >
                   <dt className="text-caption text-muted-foreground">
                     Last session
                   </dt>
@@ -407,7 +412,11 @@ function ParentDashboard() {
                     {recap.last_session_date ?? 'No sessions yet'}
                   </dd>
                 </div>
-                <div className="bg-card border-border rounded-xl border p-4">
+                <div
+                  data-slot="card"
+                  className="tile bg-card border-border rounded-2xl border p-4"
+                  style={{ '--tile-color': 'var(--g-pink)' } as CSSProperties}
+                >
                   <dt className="text-caption text-muted-foreground">
                     Last paper evaluated
                   </dt>
@@ -422,7 +431,11 @@ function ParentDashboard() {
                     </dd>
                   )}
                 </div>
-                <div className="bg-card border-border rounded-xl border p-4">
+                <div
+                  data-slot="card"
+                  className="tile bg-card border-border rounded-2xl border p-4"
+                  style={{ '--tile-color': 'var(--g-cyan)' } as CSSProperties}
+                >
                   <dt className="text-caption text-muted-foreground">
                     Open drills
                   </dt>

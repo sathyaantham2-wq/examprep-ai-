@@ -1,3 +1,5 @@
+import { isSfxMuted } from './sfx'
+
 // F125: a short, original "coin" chime, synthesized with the Web Audio API rather than an
 // uploaded/licensed audio file -- three quick ascending notes, no external asset, nothing to
 // attribute. Best-effort only: browser autoplay policy can refuse to start an AudioContext
@@ -5,6 +7,8 @@
 // failure here is silently swallowed -- a missing sound must never block or delay showing the
 // student her result (the same rule the backlog entry's AC states for the reward generally).
 export function playCoinSound(): void {
+  // F128: the sidebar's sound switch silences this too.
+  if (isSfxMuted()) return
   try {
     const ctx = new AudioContext()
     const notes = [660, 880, 1320] // E5, A5, E6 -- a bright, quick major-ish arpeggio
