@@ -23,6 +23,7 @@ import { Route as ProfileSetupRouteImport } from './routes/profile-setup'
 import { Route as RemediationRouteImport } from './routes/remediation'
 import { Route as SettingsRouteImport } from './routes/settings'
 import { Route as StudentRouteImport } from './routes/student'
+import { Route as DotwellKnownAssetlinksDotjsonRouteImport } from './routes/[.]well-known/assetlinks[.]json'
 import { Route as AdminAdaptiveRouteImport } from './routes/admin/adaptive'
 import { Route as AdminBlueprintsRouteImport } from './routes/admin/blueprints'
 import { Route as AdminCoverageRouteImport } from './routes/admin/coverage'
@@ -205,6 +206,12 @@ const StudentRoute = StudentRouteImport.update({
   path: '/student',
   getParentRoute: () => rootRouteImport,
 } as any)
+const DotwellKnownAssetlinksDotjsonRoute =
+  DotwellKnownAssetlinksDotjsonRouteImport.update({
+    id: '/.well-known/assetlinks.json',
+    path: '/.well-known/assetlinks.json',
+    getParentRoute: () => rootRouteImport,
+  } as any)
 const AdminAdaptiveRoute = AdminAdaptiveRouteImport.update({
   id: '/admin/adaptive',
   path: '/admin/adaptive',
@@ -799,6 +806,7 @@ export interface FileRoutesByFullPath {
   '/remediation': typeof RemediationRoute
   '/settings': typeof SettingsRoute
   '/student': typeof StudentRoute
+  '/.well-known/assetlinks.json': typeof DotwellKnownAssetlinksDotjsonRoute
   '/admin/adaptive': typeof AdminAdaptiveRoute
   '/admin/blueprints': typeof AdminBlueprintsRoute
   '/admin/coverage': typeof AdminCoverageRoute
@@ -926,6 +934,7 @@ export interface FileRoutesByTo {
   '/remediation': typeof RemediationRoute
   '/settings': typeof SettingsRoute
   '/student': typeof StudentRoute
+  '/.well-known/assetlinks.json': typeof DotwellKnownAssetlinksDotjsonRoute
   '/admin/adaptive': typeof AdminAdaptiveRoute
   '/admin/blueprints': typeof AdminBlueprintsRoute
   '/admin/coverage': typeof AdminCoverageRoute
@@ -1054,6 +1063,7 @@ export interface FileRoutesById {
   '/remediation': typeof RemediationRoute
   '/settings': typeof SettingsRoute
   '/student': typeof StudentRoute
+  '/.well-known/assetlinks.json': typeof DotwellKnownAssetlinksDotjsonRoute
   '/admin/adaptive': typeof AdminAdaptiveRoute
   '/admin/blueprints': typeof AdminBlueprintsRoute
   '/admin/coverage': typeof AdminCoverageRoute
@@ -1183,6 +1193,7 @@ export interface FileRouteTypes {
     | '/remediation'
     | '/settings'
     | '/student'
+    | '/.well-known/assetlinks.json'
     | '/admin/adaptive'
     | '/admin/blueprints'
     | '/admin/coverage'
@@ -1310,6 +1321,7 @@ export interface FileRouteTypes {
     | '/remediation'
     | '/settings'
     | '/student'
+    | '/.well-known/assetlinks.json'
     | '/admin/adaptive'
     | '/admin/blueprints'
     | '/admin/coverage'
@@ -1437,6 +1449,7 @@ export interface FileRouteTypes {
     | '/remediation'
     | '/settings'
     | '/student'
+    | '/.well-known/assetlinks.json'
     | '/admin/adaptive'
     | '/admin/blueprints'
     | '/admin/coverage'
@@ -1565,6 +1578,7 @@ export interface RootRouteChildren {
   RemediationRoute: typeof RemediationRoute
   SettingsRoute: typeof SettingsRoute
   StudentRoute: typeof StudentRoute
+  DotwellKnownAssetlinksDotjsonRoute: typeof DotwellKnownAssetlinksDotjsonRoute
   AdminAdaptiveRoute: typeof AdminAdaptiveRoute
   AdminBlueprintsRoute: typeof AdminBlueprintsRoute
   AdminCoverageRoute: typeof AdminCoverageRoute
@@ -1722,6 +1736,13 @@ declare module '@tanstack/react-router' {
       path: '/student'
       fullPath: '/student'
       preLoaderRoute: typeof StudentRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/.well-known/assetlinks.json': {
+      id: '/.well-known/assetlinks.json'
+      path: '/.well-known/assetlinks.json'
+      fullPath: '/.well-known/assetlinks.json'
+      preLoaderRoute: typeof DotwellKnownAssetlinksDotjsonRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/admin/adaptive': {
@@ -2867,6 +2888,7 @@ const rootRouteChildren: RootRouteChildren = {
   RemediationRoute: RemediationRoute,
   SettingsRoute: SettingsRoute,
   StudentRoute: StudentRoute,
+  DotwellKnownAssetlinksDotjsonRoute: DotwellKnownAssetlinksDotjsonRoute,
   AdminAdaptiveRoute: AdminAdaptiveRoute,
   AdminBlueprintsRoute: AdminBlueprintsRoute,
   AdminCoverageRoute: AdminCoverageRoute,
