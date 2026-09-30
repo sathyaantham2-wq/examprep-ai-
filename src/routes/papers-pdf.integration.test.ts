@@ -3,7 +3,7 @@ import { createDb } from '../db/connection'
 import type { Db } from '../db/connection'
 import { conceptsRepository, blueprintsRepository } from '../db/repositories'
 import { createQuestion } from '../lib/questions'
-import { createParentSession } from '../db/test-helpers'
+import { createParentSession, createStudentSession } from '../db/test-helpers'
 import type { TestSession } from '../db/test-helpers'
 import { Route as StudentsRoute } from './api/students'
 import { Route as GenerateRoute } from './api/papers/generate'
@@ -346,5 +346,78 @@ describe('paper PDF and coverage routes (F033/F035/F036/F037)', () => {
       params: { id: paperId },
     })
     expect(coverageResponse.status).toBe(404)
+  })
+
+  // Student download (2026-09-30): her own question paper only, never the key, never a sibling's.
+  it('a student can download her own paper as a PDF, under a readable file name', async () => {
+    const student = await createStudentSession(
+      'pdf-own',
+      parentA.householdId,
+      studentAId,
+    )
+    const response = await handlerFor(
+      PdfRoute,
+      'GET',
+    )({
+      request: new Request('http://localhost/test?download=1', {
+        headers: { cookie: student.cookie },
+      }),
+      params: { id: paperId },
+    })
+    expect(response.status).toBe(200)
+    expect(response.headers.get('content-type')).toBe('application/pdf')
+    expect(response.headers.get('content-disposition')).toMatch(
+      /^attachment; filename="[A-Za-z0-9-]+\.pdf"$/,
+    )
+    const bytes = new Uint8Array(await response.arrayBuffer())
+    expect(Buffer.from(bytes.slice(0, 5)).toString('ascii')).toBe('%PDF-')
+    // Same single page as the parent's key-less PDF -- no key section appended.
+    expect(countPdfPages(bytes)).toBe(1)
+  })
+
+  it('a student asking for the answer key is refused (403)', async () => {
+    const student = await createStudentSession(
+      'pdf-key',
+      parentA.householdId,
+      studentAId,
+    )
+    const response = await handlerFor(
+      PdfRoute,
+      'GET',
+    )({
+      request: new Request('http://localhost/test?include_key=true', {
+        headers: { cookie: student.cookie },
+      }),
+      params: { id: paperId },
+    })
+    expect(response.status).toBe(403)
+  })
+
+  it("a sibling in the same household cannot download another student's paper (404)", async () => {
+    const siblingResponse = await handlerFor(
+      StudentsRoute,
+      'POST',
+    )({
+      request: request(parentA.cookie, {
+        name: 'PDF Sibling',
+        class: 7,
+        board: 'CBSE',
+        consent_accepted: true,
+      }),
+    })
+    const siblingId = (await siblingResponse.json()).id
+    const sibling = await createStudentSession(
+      'pdf-sib',
+      parentA.householdId,
+      siblingId,
+    )
+    const response = await handlerFor(
+      PdfRoute,
+      'GET',
+    )({
+      request: request(sibling.cookie),
+      params: { id: paperId },
+    })
+    expect(response.status).toBe(404)
   })
 })

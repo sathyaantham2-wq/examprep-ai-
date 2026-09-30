@@ -1,5 +1,6 @@
 import { createFileRoute } from '@tanstack/react-router'
 import { requireRole } from '../../../../lib/session'
+import { resolveEnabledStudent } from '../../../../lib/access'
 import { getSharedDb } from '../../../../db/connection'
 import {
   papersRepository,
@@ -17,20 +18,34 @@ import { extractStyleAndBody } from '../../../../lib/pdf/html-utils'
 import { DEFAULT_THEME, isKnownTheme } from '../../../../lib/pdf/themes'
 import { logProductEvent } from '../../../../lib/product-events'
 import { wrapRouteHandlers } from '../../../../lib/error-log'
+import { pdfFileName } from '../../../../lib/pdf/file-name'
 
 // tab05: GET /api/papers/:id/pdf, Parent, query (theme, include_key) -> application/pdf stream.
-// Parent-only (same as GET /api/papers/:id) is what actually enforces "a student can never see or
-// download an answer key" here -- include_key=true is only ever reachable by a parent/admin
-// session, never a student one, so there is no path from this route to a student-visible key.
+//
+// F130 student access (2026-09-30, owner request): a student may download the question paper itself
+// as a PDF -- only a paper generated for *her* (another student's paper in the same household is
+// a 404, same as a paper that doesn't exist), and never with the key: include_key from a student
+// session is refused with 403 rather than silently ignored. The paper template only ever receives
+// question text and option labels/text (never `answer` or `is_correct`), so the plain paper
+// carries nothing the "a student can never download an answer key" rule forbids.
 export const Route = createFileRoute('/api/papers/$id/pdf')({
   server: {
     handlers: {
       GET: async ({ request, params }) => {
-        const auth = await requireRole(request, 'parent', 'teacher', 'admin')
+        const auth = await requireRole(
+          request,
+          'parent',
+          'teacher',
+          'admin',
+          'student',
+        )
         if (auth instanceof Response) return auth
 
         const url = new URL(request.url)
         const includeKey = url.searchParams.get('include_key') === 'true'
+        if (auth.role === 'student' && includeKey) {
+          return new Response(null, { status: 403 })
+        }
 
         const db = getSharedDb()
         const paper = await papersRepository.findByIdForHousehold(
@@ -39,6 +54,13 @@ export const Route = createFileRoute('/api/papers/$id/pdf')({
           params.id,
         )
         if (!paper) return new Response(null, { status: 404 })
+        if (auth.role === 'student') {
+          const self = await resolveEnabledStudent(db, auth.id)
+          if (self instanceof Response) return self
+          if (paper.student_id !== self.id) {
+            return new Response(null, { status: 404 })
+          }
+        }
 
         // F034/F120: the ?theme= query param can re-print the same paper in a different visual
         // style (a pure rendering choice, so it's safe to override after generation); an
@@ -198,10 +220,16 @@ ${keyParts.body}
           studentId: paper.student_id,
         })
 
+        // ?download=1 saves the file under a readable name (the student's "Download this paper
+        // as PDF" button); without it the PDF still opens inline, as the parent's link expects.
+        const download = url.searchParams.get('download') === '1'
+        const fileName = pdfFileName(paper.title)
         return new Response(new Uint8Array(pdf), {
           headers: {
             'content-type': 'application/pdf',
-            'content-disposition': `inline; filename="${paper.id}.pdf"`,
+            'content-disposition': download
+              ? `attachment; filename="${fileName}.pdf"`
+              : `inline; filename="${paper.id}.pdf"`,
           },
         })
       },
