@@ -4,6 +4,7 @@ import {
   scoreObjectiveAnswer,
   templateFeedback,
 } from './scoring'
+import { fillBlankMatches } from './scoring'
 import type { ErrorType } from '../db/enums'
 
 describe('normalizeAnswer (F044)', () => {
@@ -105,5 +106,32 @@ describe('templateFeedback (F049, AI-08 fallback)', () => {
 
   it('returns an empty string when there is no error (full marks)', () => {
     expect(templateFeedback(null, 'Adding fractions')).toBe('')
+  })
+})
+
+describe('fillBlankMatches (F129 spelling tolerance)', () => {
+  it('accepts exact and normalised matches', () => {
+    expect(fillBlankMatches('Photosynthesis', 'photosynthesis')).toBe(true)
+    expect(fillBlankMatches('photo-synthesis', 'photosynthesis')).toBe(true)
+  })
+  it('accepts a small spelling slip', () => {
+    expect(fillBlankMatches('photosynthsis', 'photosynthesis')).toBe(true)
+    expect(fillBlankMatches('chlorophyl', 'chlorophyll')).toBe(true)
+    expect(fillBlankMatches('recieve', 'receive')).toBe(true) // swapped letters
+    expect(fillBlankMatches('parliment', 'parliament')).toBe(true)
+  })
+  it('still rejects a genuinely different word', () => {
+    expect(fillBlankMatches('meiosis', 'mitosis')).toBe(false)
+    expect(fillBlankMatches('cathode', 'anode')).toBe(false)
+    expect(fillBlankMatches('delta', 'Delhi')).toBe(false)
+  })
+  it('never lets numbers be "close enough"', () => {
+    expect(fillBlankMatches('125', '152')).toBe(false)
+    expect(fillBlankMatches('3.15', '3.14')).toBe(false)
+    expect(fillBlankMatches('1,00,000', '100000')).toBe(true)
+  })
+  it('allows no slips on very short words', () => {
+    expect(fillBlankMatches('cat', 'car')).toBe(false)
+    expect(fillBlankMatches('iron', 'icon')).toBe(false)
   })
 })

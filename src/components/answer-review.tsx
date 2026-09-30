@@ -1,6 +1,7 @@
 import { useCallback, useEffect, useState } from 'react'
 import { Button } from './ui/button'
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from './ui/card'
+import { PageSkeleton } from './page-loading'
 
 export interface ReviewItem {
   item_id: string
@@ -121,7 +122,7 @@ export function AnswerReview({
     }
   }
 
-  if (!data) return <div className="text-body p-8 text-muted-foreground">Loading…</div>
+  if (!data) return <PageSkeleton />
 
   if (data.state !== 'review') {
     return (
@@ -167,16 +168,20 @@ export function AnswerReview({
       {data.written.map((item) => (
         <Card key={item.item_id} className={item.excluded ? 'opacity-60' : undefined}>
           <CardHeader>
-            <CardTitle className="text-h3">
-              Question {item.position}
-              {item.concept_name ? <span className="text-small text-muted-foreground"> · {item.concept_name}</span> : null}
-            </CardTitle>
-            <CardDescription>{item.question_text}</CardDescription>
+            <div className="flex items-start gap-3">
+              <span className="q-badge">Q{item.position}</span>
+              <div className="space-y-1">
+                <CardTitle className="question-text">{item.question_text}</CardTitle>
+                {item.concept_name ? (
+                  <CardDescription className="text-caption">{item.concept_name}</CardDescription>
+                ) : null}
+              </div>
+            </div>
           </CardHeader>
           <CardContent className="space-y-3">
-            <div>
-              <p className="text-small text-muted-foreground">Your answer</p>
-              <p className="text-body whitespace-pre-wrap">{item.student_answer || '(blank)'}</p>
+            <div className="answer-box answer-box-mine">
+              <p className="field-label">Your answer</p>
+              <p className="answer-text whitespace-pre-wrap">{item.student_answer || '(blank)'}</p>
             </div>
             <div className="text-body flex flex-wrap items-baseline justify-between gap-2">
               <span className="font-medium">

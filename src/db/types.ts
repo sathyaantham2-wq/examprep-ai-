@@ -702,6 +702,20 @@ export interface Verifications {
   value: string;
 }
 
+export interface QuestionReports {
+  attempt_id: string;
+  comment: string;
+  created_at: Generated<Timestamp>;
+  household_id: string;
+  id: Generated<string>;
+  paper_question_id: string;
+  question_id: string;
+  reason: string;
+  resolved_at: Timestamp | null;
+  status: Generated<string>;
+  student_id: string;
+}
+
 export interface DB {
   accounts: Accounts;
   ai_jobs: AiJobs;
@@ -741,6 +755,7 @@ export interface DB {
   patterns: Patterns;
   product_events: ProductEvents;
   question_explanations: QuestionExplanations;
+  question_reports: QuestionReports;
   question_options: QuestionOptions;
   question_step_marks: QuestionStepMarks;
   question_usage: QuestionUsage;

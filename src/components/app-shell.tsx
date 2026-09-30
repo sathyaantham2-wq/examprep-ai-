@@ -26,6 +26,7 @@ export type AppShellActive =
   | 'progress'
   | 'settings'
   | 'leaderboard'
+  | 'reports'
 export type AppShellVariant = 'parent' | 'student'
 
 interface AppShellProps {
@@ -166,6 +167,22 @@ function LeaderboardIcon() {
     </svg>
   )
 }
+function ReportsIcon() {
+  return (
+    <svg
+      width="17"
+      height="17"
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="2"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+    >
+      <path d="M4 22V4a1 1 0 0 1 1-1h11l-2 4 2 4H5" />
+    </svg>
+  )
+}
 function SignOutIcon() {
   return (
     <svg
@@ -224,6 +241,10 @@ export function AppShell({
 }: AppShellProps) {
   // shortLabel is what the phone-width bottom tab bar shows -- five full labels never fit a
   // 360px row side by side.
+  const { data: session } = useSession()
+  const isAdmin =
+    (session?.user as { role?: string } | undefined)?.role === 'admin'
+
   const items: Array<{
     key: AppShellActive
     label: string
@@ -306,11 +327,22 @@ export function AppShell({
             href: '/settings',
             icon: <SettingsIcon />,
           },
+          // F129: the student "Report a problem" queue -- admins only.
+          ...(isAdmin
+            ? [
+                {
+                  key: 'reports' as const,
+                  label: 'Question reports',
+                  shortLabel: 'Reports',
+                  href: '/admin/reports',
+                  icon: <ReportsIcon />,
+                },
+              ]
+            : []),
         ]
 
   const [mobileOpen, setMobileOpen] = useState(false)
   const [signingOut, setSigningOut] = useState(false)
-  const { data: session } = useSession()
   const user = session?.user as { name?: string; email?: string } | undefined
   const displayName = user?.name || user?.email || ''
 
@@ -364,7 +396,7 @@ export function AppShell({
           height="18"
           viewBox="0 0 24 24"
           fill="none"
-          stroke="white"
+          stroke="currentColor"
           strokeWidth="2"
           strokeLinecap="round"
           strokeLinejoin="round"

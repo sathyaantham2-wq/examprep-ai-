@@ -13,6 +13,8 @@ import { AnswerReview } from '../../components/answer-review'
 import { WrittenAnswerInput } from '../../components/written-answer-input'
 import { useSession } from '../../lib/auth-client'
 import { playCoinSound } from '../../lib/reward-sound'
+import { DownloadPaperButton } from '../../components/download-paper-button'
+import { ReportProblem } from '../../components/report-problem'
 import { PageLoading } from '../../components/page-loading'
 
 export const Route = createFileRoute('/attempt/$id')({ component: Attempt })
@@ -101,12 +103,17 @@ function Attempt() {
     {},
   )
   const [flagged, setFlagged] = useState<Set<string>>(new Set())
+  // F129: questions she has already sent a "Report a problem" for on this attempt.
+  const [reported, setReported] = useState<Set<string>>(new Set())
   const [mode, setMode] = useState<'answering' | 'reviewing'>('answering')
   const [submitting, setSubmitting] = useState(false)
   const [submitError, setSubmitError] = useState<string | null>(null)
   const [submitted, setSubmitted] = useState(false)
   const [result, setResult] = useState<AttemptResult | null>(null)
-  const [pointsEarned, setPointsEarned] = useState<{ points: number; coins: number } | null>(null)
+  const [pointsEarned, setPointsEarned] = useState<{
+    points: number
+    coins: number
+  } | null>(null)
   // F126: explanations fetched after the result loaded, keyed by paper_question_id. Kept apart
   // from `result` so asking for one never re-renders the whole marked paper.
   // Partial<Record<...>>, same as `answers` above: indexing a key that isn't there yet is the
@@ -157,6 +164,12 @@ function Attempt() {
         setAnswers(initial)
       })
       .catch(() => setLoadError('Could not load this attempt.'))
+    fetch(`/api/attempts/${id}/report`)
+      .then((r) => (r.ok ? r.json() : null))
+      .then((body: { reported: Array<string> } | null) => {
+        if (body) setReported(new Set(body.reported))
+      })
+      .catch(() => {})
   }, [isPending, session, role, navigate, id])
 
   useEffect(() => {
@@ -174,9 +187,13 @@ function Attempt() {
 
   function saveAnswer(paperQuestionId: string, next: AnswerState) {
     const stamp = Date.now()
-    const elapsed = Math.min(600, Math.max(0, Math.round((stamp - lastEventAt.current) / 1000)))
+    const elapsed = Math.min(
+      600,
+      Math.max(0, Math.round((stamp - lastEventAt.current) / 1000)),
+    )
     lastEventAt.current = stamp
-    secondsSpent.current[paperQuestionId] = (secondsSpent.current[paperQuestionId] ?? 0) + elapsed
+    secondsSpent.current[paperQuestionId] =
+      (secondsSpent.current[paperQuestionId] ?? 0) + elapsed
     setAnswers((prev) => ({ ...prev, [paperQuestionId]: next }))
     if (saveTimers.current[paperQuestionId]) {
       clearTimeout(saveTimers.current[paperQuestionId])
@@ -195,6 +212,10 @@ function Attempt() {
         // submit will carry the latest value again. No offline queue exists yet.
       })
     }, 600)
+  }
+
+  function markReported(paperQuestionId: string) {
+    setReported((prev) => new Set(prev).add(paperQuestionId))
   }
 
   function toggleFlag(paperQuestionId: string) {
@@ -294,9 +315,14 @@ function Attempt() {
     if (result?.evaluated) {
       return (
         <div className="mx-auto max-w-2xl space-y-4 p-4 sm:p-8">
+          <DownloadPaperButton
+            paperId={data.paper.id}
+            title={data.paper.title}
+          />
           <h1 className="text-h1">Well done, {data.student.name}</h1>
           <p className="text-body">
-            You scored {result.score} out of {result.total_marks} ({Math.round(result.percentage)}%).
+            You scored {result.score} out of {result.total_marks} (
+            {Math.round(result.percentage)}%).
           </p>
           {pointsEarned && pointsEarned.points > 0 && (
             <div
@@ -322,7 +348,10 @@ function Attempt() {
                 </span>{' '}
                 <span className="text-muted-foreground">
                   See where you stand on the{' '}
-                  <a href="/leaderboard" className="text-primary underline-offset-4 hover:underline">
+                  <a
+                    href="/leaderboard"
+                    className="text-primary underline-offset-4 hover:underline"
+                  >
                     leaderboard
                   </a>
                   .
@@ -373,15 +402,18 @@ function Attempt() {
                 <Card key={q.paper_question_id}>
                   <CardHeader>
                     <div className="flex items-start justify-between gap-4">
-                      <CardTitle className="text-body font-medium">
-                        {q.position}. {q.text}
-                      </CardTitle>
+                      <div className="flex items-start gap-3">
+                        <span className="q-badge">Q{q.position}</span>
+                        <CardTitle className="question-text">
+                          {q.text}
+                        </CardTitle>
+                      </div>
                       {scored && (
                         <span
                           className={
                             correct
-                              ? 'text-small shrink-0 font-medium text-emerald-600 dark:text-emerald-400'
-                              : 'text-small text-destructive shrink-0 font-medium'
+                              ? 'mark-pill mark-pill-right'
+                              : 'mark-pill mark-pill-wrong'
                           }
                         >
                           {correct ? '✓' : '✗'} {scored.marks_awarded}/
@@ -391,31 +423,33 @@ function Attempt() {
                     </div>
                   </CardHeader>
                   <CardContent className="space-y-3">
-                    <div>
-                      <p className="text-small text-muted-foreground">
-                        Your answer
-                      </p>
-                      <p className="text-body whitespace-pre-wrap">
+                    <div
+                      className={
+                        correct === false
+                          ? 'answer-box answer-box-wrong'
+                          : 'answer-box answer-box-mine'
+                      }
+                    >
+                      <p className="field-label">Your answer</p>
+                      <p className="answer-text whitespace-pre-wrap">
                         {yourAnswer}
                       </p>
                     </div>
                     {scored?.correct_answer && (
-                      <div>
-                        <p className="text-small text-muted-foreground">
-                          Correct answer
-                        </p>
-                        <p className="text-body whitespace-pre-wrap">
+                      <div className="answer-box answer-box-right">
+                        <p className="field-label">Correct answer</p>
+                        <p className="answer-text whitespace-pre-wrap">
                           {scored.correct_answer}
                         </p>
                       </div>
                     )}
                     {scored?.feedback && (
-                      <div className="bg-muted rounded-md p-3">
-                        <p className="text-small text-muted-foreground">
+                      <div className="answer-box">
+                        <p className="field-label">
                           What to fix
                           {scored.error_type ? ` · ${scored.error_type}` : ''}
                         </p>
-                        <p className="text-body">{scored.feedback}</p>
+                        <p className="answer-text">{scored.feedback}</p>
                       </div>
                     )}
 
@@ -461,6 +495,28 @@ function Attempt() {
                         </div>
                       )
                     })()}
+                    <ReportProblem
+                      attemptId={id}
+                      paperQuestionId={q.paper_question_id}
+                      reported={reported.has(q.paper_question_id)}
+                      onReported={markReported}
+                      reasons={
+                        correct === false
+                          ? [
+                              'marked_wrong',
+                              'answer_error',
+                              'question_error',
+                              'unclear',
+                              'other',
+                            ]
+                          : [
+                              'question_error',
+                              'answer_error',
+                              'unclear',
+                              'other',
+                            ]
+                      }
+                    />
                   </CardContent>
                 </Card>
               )
@@ -485,13 +541,19 @@ function Attempt() {
   const sections = [...new Set(data.questions.map((q) => q.section))]
 
   return (
-    <div className="mx-auto max-w-3xl p-8">
-      <div className="mb-6 flex items-center justify-between">
+    <div className="mx-auto max-w-3xl p-4 sm:p-8">
+      <div className="mb-4">
+        <DownloadPaperButton paperId={data.paper.id} title={data.paper.title} />
+      </div>
+      <div className="mb-6 flex flex-wrap items-center justify-between gap-3">
         <div>
           <h1 className="text-h1">{data.paper.title}</h1>
           <p className="text-small text-muted-foreground">
-            {data.student.name} · {data.student.class === 0 ? 'Competitive exam' : `Class ${data.student.class}`} ·{' '}
-            {data.paper.total_marks} marks
+            {data.student.name} ·{' '}
+            {data.student.class === 0
+              ? 'Competitive exam'
+              : `Class ${data.student.class}`}{' '}
+            · {data.paper.total_marks} marks
           </p>
           {data.chapters.length > 0 && (
             <p className="text-small text-muted-foreground">
@@ -544,12 +606,15 @@ function Attempt() {
                       <Card key={q.paper_question_id}>
                         <CardHeader>
                           <div className="flex items-start justify-between gap-4">
-                            <CardTitle className="text-body font-medium">
-                              {q.position}. {q.text}
-                            </CardTitle>
+                            <div className="flex items-start gap-3">
+                              <span className="q-badge">Q{q.position}</span>
+                              <CardTitle className="question-text">
+                                {q.text}
+                              </CardTitle>
+                            </div>
                             <div className="flex items-center gap-2 shrink-0">
-                              <span className="text-small text-muted-foreground">
-                                {q.marks} mk
+                              <span className="text-caption text-muted-foreground font-semibold">
+                                {q.marks} {q.marks === 1 ? 'mark' : 'marks'}
                               </span>
                               <Button
                                 type="button"
@@ -562,8 +627,8 @@ function Attempt() {
                                 onClick={() => toggleFlag(q.paper_question_id)}
                               >
                                 {flagged.has(q.paper_question_id)
-                                  ? 'Flagged'
-                                  : 'Flag'}
+                                  ? 'Marked'
+                                  : 'Mark to review'}
                               </Button>
                             </div>
                           </div>
@@ -581,10 +646,7 @@ function Attempt() {
                           {q.options.length > 0 ? (
                             <div className="space-y-2">
                               {q.options.map((opt) => (
-                                <label
-                                  key={opt.label}
-                                  className="text-body flex items-center gap-2"
-                                >
+                                <label key={opt.label} className="option-tile">
                                   <input
                                     type="radio"
                                     name={q.paper_question_id}
@@ -598,7 +660,18 @@ function Attempt() {
                                       })
                                     }
                                   />
-                                  {opt.label}. {opt.text}
+                                  <span
+                                    className="option-letter"
+                                    aria-hidden="true"
+                                  >
+                                    {opt.label}
+                                  </span>
+                                  <span className="answer-text">
+                                    <span className="sr-only">
+                                      {opt.label}.{' '}
+                                    </span>
+                                    {opt.text}
+                                  </span>
                                 </label>
                               ))}
                             </div>
@@ -617,11 +690,22 @@ function Attempt() {
                               }
                             />
                           )}
-                          {q.concept_name && (
-                            <p className="text-small text-muted-foreground mt-3">
-                              Concept: {q.concept_name}
-                            </p>
-                          )}
+                          <div className="mt-3 flex flex-wrap items-center justify-between gap-2">
+                            {q.concept_name ? (
+                              <p className="text-caption text-muted-foreground">
+                                Concept: {q.concept_name}
+                              </p>
+                            ) : (
+                              <span />
+                            )}
+                            <ReportProblem
+                              attemptId={id}
+                              paperQuestionId={q.paper_question_id}
+                              reported={reported.has(q.paper_question_id)}
+                              onReported={markReported}
+                              reasons={['question_error', 'unclear', 'other']}
+                            />
+                          </div>
                         </CardContent>
                       </Card>
                     ))}
@@ -663,7 +747,7 @@ function Attempt() {
                     isBlank(q)
                       ? 'Blank'
                       : flagged.has(q.paper_question_id)
-                        ? 'Flagged'
+                        ? 'Marked to review'
                         : 'Answered'
                   }
                 >

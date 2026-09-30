@@ -80,7 +80,7 @@ export async function gradeSubjectiveAnswer(
     studentId: input.studentId,
   })
 
-  const prompt = `You are grading one student's exam answer against a marking scheme. Be GENEROUS: this is practice for a school student, so give the benefit of the doubt. Award full marks for any correct method or valid alternative reasoning even if it differs from the expected answer, give partial marks for every step that is partly right, and do not deduct for spelling, grammar, neatness, or missing units unless the question is specifically about them. Do not award marks for something the response does not show at all. If the response is blank or genuinely illegible/unparseable, set "unreadable": true instead of guessing marks.
+  const prompt = `You are grading one student's exam answer against a marking scheme. Be GENEROUS: this is practice for a school student, so give the benefit of the doubt. Award full marks for any correct method or valid alternative reasoning even if it differs from the expected answer, give partial marks for every step that is partly right, and do not deduct for spelling, grammar, neatness, or missing units unless the question is specifically about them. A misspelled word or technical term counts as fully correct whenever it is recognisably the right word (for example "photosynthsis" for "photosynthesis", "parliment" for "parliament"); never call a right answer wrong because of how it is spelled. Do not award marks for something the response does not show at all. If the response is blank or genuinely illegible/unparseable, set "unreadable": true instead of guessing marks.
 
 Question: ${input.questionText}
 Expected answer: ${input.expectedAnswer}
@@ -262,7 +262,7 @@ export async function reviewDisputedAnswer(
         `  Step ${s.step_no} (${s.marks} mark${s.marks === 1 ? '' : 's'}): ${s.description}`,
     )
     .join('\n')
-  const prompt = `A school student disagrees with the mark you gave for one exam answer. Re-read the answer with the student's point in mind and mark it again. Be GENEROUS and fair: if the student is right, or their answer is reasonable, raise the mark; if the mark was already right, keep it and explain kindly. You may only keep or raise the mark, never lower it. NEVER reveal the correct answer, a model solution or the marking scheme: say only what the answer showed and what was missing, in general words.
+  const prompt = `A school student disagrees with the mark you gave for one exam answer. Re-read the answer with the student's point in mind and mark it again. Be GENEROUS and fair: if the student is right, or their answer is reasonable, raise the mark; a spelling mistake is never a reason to withhold marks if the word is recognisably right; if the mark was already right, keep it and explain kindly. You may only keep or raise the mark, never lower it. NEVER reveal the correct answer, a model solution or the marking scheme: say only what the answer showed and what was missing, in general words.
 
 Question: ${input.questionText}
 Expected answer (private, do not reveal): ${input.expectedAnswer}
