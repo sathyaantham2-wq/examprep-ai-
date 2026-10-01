@@ -1,0 +1,2016 @@
+{
+  "subject": {
+    "code": "MATH11",
+    "name": "Mathematics",
+    "board": "CBSE",
+    "class": 11
+  },
+  "source": {
+    "publisher": "NCERT",
+    "title": "Mathematics",
+    "edition": "Textbook for Class XI, Reprint 2026-27",
+    "year": 2026
+  },
+  "chapter": {
+    "part": "I",
+    "chapter_no": 2,
+    "name": "Relations and Functions",
+    "blurb": "This chapter links pairs of objects from two sets through ordered pairs and the Cartesian product, and defines a relation as a subset of that product with a domain, range and codomain. It then singles out functions -- relations in which every element has one and only one image -- and studies the standard real functions (identity, constant, polynomial, rational, modulus, signum, greatest integer) with their graphs. It closes with the algebra of real functions: sum, difference, scalar multiple, product and quotient.",
+    "source_code": "kemh102",
+    "order_index": 2
+  },
+  "scope_in": [
+    {
+      "item": "Use equality of ordered pairs -- (a, b) = (x, y) only if a = x and b = y -- to find unknowns",
+      "pages": "25-27"
+    },
+    {
+      "item": "Form the Cartesian product A x B (and A x A x A as ordered triplets), including products with intersections and unions of sets, and recognise that A x B is generally not equal to B x A and that a product with the empty set is empty",
+      "pages": "24-27, 41"
+    },
+    {
+      "item": "Use n(A x B) = n(A) n(B), recover A and B from a given A x B or from some of its pairs, and interpret R x R and R x R x R as the points of two- and three-dimensional space",
+      "pages": "26-28"
+    },
+    {
+      "item": "Treat a relation from A to B as a subset of A x B, write it in roster or set-builder form, and read it from an arrow diagram described by its joins",
+      "pages": "28-30"
+    },
+    {
+      "item": "Write down the domain, range and codomain of a relation and know that the range is a subset of the codomain",
+      "pages": "28-30"
+    },
+    {
+      "item": "Count the relations from A to B as 2^(pq) when n(A) = p and n(B) = q",
+      "pages": "29-30"
+    },
+    {
+      "item": "Test whether pairs built from a given rule belong to a relation, as in the miscellaneous items on a = b^2 and on a - b being an integer",
+      "pages": "30, 39-40"
+    },
+    {
+      "item": "Decide whether a relation is a function (every element of A has one and only one image), using the terms image, preimage, f : A -> B and f(x), including rules given in pieces or as sets of ordered pairs",
+      "pages": "30-31, 38, 40-41"
+    },
+    {
+      "item": "Recognise real valued and real functions and evaluate f(x) from a formula, including the Celsius-Fahrenheit map and finding a linear rule f(x) = ax + b from given pairs",
+      "pages": "31, 38-40"
+    },
+    {
+      "item": "Identify the identity, constant, linear, polynomial and rational functions, state their domains and ranges, and describe their graphs in words",
+      "pages": "32-35, 38"
+    },
+    {
+      "item": "Find the domain and range of real functions given by simple formulas: rational functions with a factorisable quadratic denominator, sqrt(x - 1), sqrt(9 - x^2), x^2 + 2, 2 - 3x on x > 0, x^2/(1 + x^2)",
+      "pages": "33-35, 38-40"
+    },
+    {
+      "item": "Evaluate and describe the modulus function |x|, the signum function and the greatest integer function [x], with their domains, ranges and graphs in words, and evaluate functions defined by different rules on different parts of the domain",
+      "pages": "35-36, 38-40"
+    },
+    {
+      "item": "Form f + g, f - g, alpha f, fg and f/g for real functions on a common domain, stating where f/g is not defined",
+      "pages": "36-37, 40, 42"
+    }
+  ],
+  "scope_out": [
+    {
+      "item": "Reflexive, symmetric, transitive and equivalence relations, and equivalence classes, as named types of relation",
+      "reason": "These are taught in Class 12 Chapter 1. This chapter only checks such conditions on a specific relation without naming them (Example 19 on p. 39 and Miscellaneous Exercise 9 on p. 40)"
+    },
+    {
+      "item": "One-one (injective), onto (surjective) and bijective functions",
+      "reason": "Not defined anywhere in this chapter; taught in Class 12 Chapter 1"
+    },
+    {
+      "item": "Composition of functions (fog, gof) and invertible or inverse functions",
+      "reason": "Not in this chapter; Section 2.4.2 covers only pointwise sum, difference, scalar multiple, product and quotient (pp. 36-37)"
+    },
+    {
+      "item": "Empty, universal and identity relations as named relations in a set",
+      "reason": "Class 12 terminology; this chapter does not use these names"
+    },
+    {
+      "item": "Counting the number of functions from A to B",
+      "reason": "The chapter counts only relations, as 2^(pq) (p. 29)"
+    },
+    {
+      "item": "Trigonometric, exponential and logarithmic functions and their graphs",
+      "reason": "Trigonometric functions are Chapter 3; exponential and logarithmic functions are not in Section 2.4.1, which lists exactly seven function types (pp. 32-36)"
+    },
+    {
+      "item": "Even and odd functions, periodic functions, increasing and decreasing functions, and shifting or reflecting graphs",
+      "reason": "None of these is defined or used in the chapter"
+    },
+    {
+      "item": "Fractional part function, least integer (ceiling) function and equations or inequalities involving [x] or |x|",
+      "reason": "The chapter only defines |x|, signum and [x] and reads off their values, domain, range and graph (pp. 35-36)"
+    },
+    {
+      "item": "Limits, continuity and differentiability of functions (for example, of |x| or [x])",
+      "reason": "Not in this chapter; Miscellaneous Exercise 2 (p. 40) asks only for the arithmetic value of (f(1.1) - f(1))/(1.1 - 1)"
+    },
+    {
+      "item": "Domains that need solving quadratic or rational inequalities beyond a single simple condition such as 9 - x^2 >= 0 or x - 1 >= 0",
+      "reason": "The chapter's domain problems only exclude zeros of a denominator or use one simple square-root condition (pp. 38-40)"
+    }
+  ],
+  "concepts": [
+    {
+      "code": "C11M-2.1",
+      "name": "Ordered pairs and the Cartesian product of sets",
+      "description": "Equality of ordered pairs, the Cartesian product A x B (and A x A x A), the count n(A x B) = n(A) n(B), and recovering A and B from A x B.",
+      "idea": "An ordered pair (p, q) keeps its elements in a fixed order. The Cartesian product P x Q is the set of all ordered pairs (p, q) with p in P and q in Q.",
+      "rule": "(a, b) = (x, y) only if a = x and b = y. If n(A) = p and n(B) = q then n(A x B) = pq. A x (empty set) is empty, and in general A x B is not equal to B x A.",
+      "example": "If P = {a, b, c} and Q = {r}, then P x Q = {(a, r), (b, r), (c, r)} but Q x P = {(r, a), (r, b), (r, c)}.",
+      "difficulty_base": "Easy",
+      "questions": [
+        {
+          "b": "Remember",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "The Cartesian product P x Q of two non-empty sets P and Q is the set of all",
+          "a": "ordered pairs (p, q) with p in P and q in Q",
+          "o": [
+            "ordered pairs (p, q) with p in P and q in Q",
+            "ordered pairs (q, p) with q in Q and p in P",
+            "elements that belong to both P and Q",
+            "elements that belong to P or to Q"
+          ]
+        },
+        {
+          "b": "Remember",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "If n(A) = p and n(B) = q, then n(A x B) is equal to",
+          "a": "pq",
+          "o": [
+            "pq",
+            "p + q",
+            "p^q",
+            "2^(pq)"
+          ]
+        },
+        {
+          "b": "Remember",
+          "d": "Easy",
+          "t": "fill_blank",
+          "m": 1,
+          "q": "An element (a, b, c) of the set A x A x A is called an ordered ____.",
+          "a": "triplet"
+        },
+        {
+          "b": "Remember",
+          "d": "Hard",
+          "t": "mcq",
+          "m": 1,
+          "q": "Which of the following statements about the Cartesian product of two sets is NOT true?",
+          "a": "A x B = B x A for every pair of non-empty sets A and B",
+          "o": [
+            "A x B = B x A for every pair of non-empty sets A and B",
+            "If either A or B is the null set, then A x B is the empty set",
+            "If n(A) = p and n(B) = q, then n(A x B) = pq",
+            "If A and B are non-empty and either of them is infinite, then A x B is infinite"
+          ],
+          "rev": true
+        },
+        {
+          "b": "Understand",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "Let P = {a, b, c} and Q = {r}. Why is P x Q not equal to Q x P?",
+          "a": "Because the ordered pair (a, r) is not equal to the ordered pair (r, a)",
+          "o": [
+            "Because the ordered pair (a, r) is not equal to the ordered pair (r, a)",
+            "Because P x Q and Q x P have different numbers of elements",
+            "Because Q has only one element, so Q x P is the empty set",
+            "Because P and Q have no common element, so both products are empty"
+          ]
+        },
+        {
+          "b": "Understand",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "If R is the set of all real numbers, the Cartesian product R x R represents",
+          "a": "the coordinates of all the points in two-dimensional space",
+          "o": [
+            "the coordinates of all the points in two-dimensional space",
+            "the coordinates of all the points in three-dimensional space",
+            "all the points on a single number line",
+            "only the points of the plane whose coordinates are integers"
+          ]
+        },
+        {
+          "b": "Understand",
+          "d": "Easy",
+          "t": "short_answer",
+          "m": 2,
+          "q": "If (x + 1, y - 2) = (3, 1), find the values of x and y, stating the property of ordered pairs that you use.",
+          "a": "Two ordered pairs are equal only if their first elements are equal and their second elements are equal. So x + 1 = 3 and y - 2 = 1, giving x = 2 and y = 3.",
+          "s": [
+            [
+              "States that equal ordered pairs have equal corresponding elements, so x + 1 = 3 and y - 2 = 1",
+              1
+            ],
+            [
+              "Obtains x = 2 and y = 3",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Understand",
+          "d": "Hard",
+          "t": "mcq",
+          "m": 1,
+          "q": "If A x B = {(p, q), (p, r), (m, q), (m, r)}, then",
+          "a": "A = {p, m} and B = {q, r}",
+          "o": [
+            "A = {p, m} and B = {q, r}",
+            "A = {q, r} and B = {p, m}",
+            "A = {p, q} and B = {m, r}",
+            "A = {p, m, q, r} and B = {p, m, q, r}"
+          ]
+        },
+        {
+          "b": "Understand",
+          "d": "Hard",
+          "t": "mcq",
+          "m": 1,
+          "q": "Let A = {1, 2} and B = {3, 4}. How many subsets does the set A x B have?",
+          "a": "16",
+          "o": [
+            "16",
+            "4",
+            "8",
+            "15"
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Easy",
+          "t": "fill_blank",
+          "m": 1,
+          "q": "If G = {7, 8} and H = {5, 4, 2}, the number of elements in G x H is ____.",
+          "a": "6"
+        },
+        {
+          "b": "Apply",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "If (x/3 + 1, y - 2/3) = (5/3, 1/3), then",
+          "a": "x = 2 and y = 1",
+          "o": [
+            "x = 2 and y = 1",
+            "x = 2/3 and y = 1",
+            "x = 2 and y = -1/3",
+            "x = 8 and y = 1"
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Hard",
+          "t": "mcq",
+          "m": 1,
+          "q": "Let A = {1, 2, 3}, B = {3, 4} and C = {4, 5, 6}. Then A x (B intersection C) is",
+          "a": "{(1, 4), (2, 4), (3, 4)}",
+          "o": [
+            "{(1, 4), (2, 4), (3, 4)}",
+            "{(4, 1), (4, 2), (4, 3)}",
+            "{(1, 3), (1, 4), (2, 3), (2, 4), (3, 3), (3, 4)}",
+            "{(1, 4), (1, 5), (1, 6), (2, 4), (2, 5), (2, 6), (3, 4), (3, 5), (3, 6)}"
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Hard",
+          "t": "mcq",
+          "m": 1,
+          "q": "The Cartesian product A x A has 9 elements, among which are (-1, 0) and (0, 1). The set A is",
+          "a": "{-1, 0, 1}",
+          "o": [
+            "{-1, 0, 1}",
+            "{-1, 0}",
+            "{0, 1}",
+            "{(-1, 0), (0, 1)}"
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Hard",
+          "t": "short_answer",
+          "m": 2,
+          "q": "Let A and B be two sets with n(A) = 3 and n(B) = 2. If (x, 1), (y, 2) and (z, 1) are in A x B, where x, y and z are distinct elements, find A and B.",
+          "a": "The first elements of pairs in A x B come from A and the second elements from B. x, y, z are three distinct elements of A and n(A) = 3, so A = {x, y, z}. 1 and 2 are elements of B and n(B) = 2, so B = {1, 2}.",
+          "s": [
+            [
+              "Uses first elements for A and n(A) = 3 to get A = {x, y, z}",
+              1
+            ],
+            [
+              "Uses second elements for B and n(B) = 2 to get B = {1, 2}",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Hardest",
+          "t": "long_answer",
+          "m": 3,
+          "q": "Let A = {1, 2}, B = {1, 2, 3, 4}, C = {5, 6} and D = {5, 6, 7, 8}. Verify that (i) A x (B intersection C) = (A x B) intersection (A x C), and (ii) A x C is a subset of B x D.",
+          "a": "(i) B intersection C is the empty set, so A x (B intersection C) is the empty set. Every pair of A x B has second element from {1, 2, 3, 4} and every pair of A x C has second element 5 or 6, so the two products share no pair and (A x B) intersection (A x C) is also the empty set. Both sides are equal. (ii) A x C = {(1, 5), (1, 6), (2, 5), (2, 6)}. In each pair the first element (1 or 2) is in B and the second (5 or 6) is in D, so every pair is in B x D. Hence A x C is a subset of B x D.",
+          "s": [
+            [
+              "Finds B intersection C empty, so the left side is the empty set",
+              1
+            ],
+            [
+              "Shows A x B and A x C have no common pair, so the right side is also empty",
+              1
+            ],
+            [
+              "Lists A x C = {(1, 5), (1, 6), (2, 5), (2, 6)} and shows each pair lies in B x D",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Analyse",
+          "d": "Hard",
+          "t": "assertion_reason",
+          "m": 1,
+          "q": "Assertion (A): If P = {m, n} and Q = {n, m}, then P x Q has exactly 4 elements. Reason (R): If n(P) = p and n(Q) = q, then n(P x Q) = pq.",
+          "a": "Both A and R are true, and R is the correct explanation of A",
+          "o": [
+            "Both A and R are true, and R is the correct explanation of A",
+            "Both A and R are true, but R is not the correct explanation of A",
+            "A is true, R is false",
+            "A is false, R is true"
+          ]
+        },
+        {
+          "b": "Analyse",
+          "d": "Hard",
+          "t": "multi_statement",
+          "m": 1,
+          "q": "Consider these statements. (I) If A = {1, 2} and B = {3, 4}, then A x (B intersection the empty set) is the empty set. (II) If P = {m, n} and Q = {n, m}, then P x Q = {(m, n), (n, m)}. Which is or are correct?",
+          "a": "Only I",
+          "o": [
+            "Only I",
+            "Only II",
+            "Both I and II",
+            "Neither I nor II"
+          ]
+        },
+        {
+          "b": "Analyse",
+          "d": "Hardest",
+          "t": "long_answer",
+          "m": 3,
+          "q": "A student claims: 'A x B and B x A always have the same number of elements, so A x B = B x A.' Examine this claim using A = {1, 2} and B = {3}.",
+          "a": "A x B = {(1, 3), (2, 3)} and B x A = {(3, 1), (3, 2)}. Both have 2 elements, so the first part of the claim is right: n(A x B) = n(B x A) = n(A) n(B). But (1, 3) is not equal to (3, 1), because ordered pairs are equal only when corresponding elements are equal, so the two sets contain different pairs and A x B is not equal to B x A. Having the same number of elements does not make two sets equal.",
+          "s": [
+            [
+              "Writes A x B = {(1, 3), (2, 3)} and B x A = {(3, 1), (3, 2)}",
+              1
+            ],
+            [
+              "Notes both have 2 elements but (1, 3) is not equal to (3, 1)",
+              1
+            ],
+            [
+              "Concludes A x B is not equal to B x A; equal counts do not give equal sets",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Evaluate",
+          "d": "Hard",
+          "t": "short_answer",
+          "m": 2,
+          "q": "Riya says that for A = {-1, 1}, the set A x A x A has 6 elements 'because 2 x 3 = 6'. Evaluate her answer.",
+          "a": "She is wrong. Each of the three positions in an ordered triplet can be filled in 2 ways, so A x A x A has 2 x 2 x 2 = 8 elements: (-1, -1, -1), (-1, -1, 1), (-1, 1, -1), (-1, 1, 1), (1, -1, -1), (1, -1, 1), (1, 1, -1), (1, 1, 1). She multiplied the number of elements by the number of sets instead of multiplying 2 three times.",
+          "s": [
+            [
+              "States the correct count 2 x 2 x 2 = 8 (or lists the 8 triplets)",
+              1
+            ],
+            [
+              "Identifies the error: multiplying 2 by 3 instead of 2 x 2 x 2",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Create",
+          "d": "Hardest",
+          "t": "long_answer",
+          "m": 3,
+          "q": "Construct two sets A and B such that A x B has exactly 6 elements and contains the ordered pairs (2, a) and (5, c). Write A x B in full and justify that your sets meet both conditions.",
+          "a": "For example, A = {2, 5} and B = {a, b, c}. Then A x B = {(2, a), (2, b), (2, c), (5, a), (5, b), (5, c)}. n(A x B) = 2 x 3 = 6, and (2, a) and (5, c) are both present. (Any correct choice, such as A = {2, 5, 7} and B = {a, c}, earns full marks: 2 and 5 must be in A, a and c in B, and n(A) n(B) = 6.)",
+          "s": [
+            [
+              "Chooses A containing 2 and 5 and B containing a and c with n(A) n(B) = 6",
+              1
+            ],
+            [
+              "Writes all 6 ordered pairs of A x B correctly, first element from A",
+              1
+            ],
+            [
+              "Justifies the count using n(A x B) = n(A) n(B) and points out the two required pairs",
+              1
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "code": "C11M-2.2",
+      "name": "Relations: domain, codomain, range and number of relations",
+      "description": "A relation from A to B as a subset of A x B, written in roster or set-builder form or shown by an arrow diagram; its domain, range and codomain; and the count 2^(pq) of relations.",
+      "idea": "A relation R from A to B is a subset of A x B obtained by describing a relationship between the first and second elements of the ordered pairs. The second element is the image of the first.",
+      "rule": "Domain = set of all first elements; range = set of all second elements; codomain = the whole set B, so range is a subset of codomain. If n(A) = p and n(B) = q, there are 2^(pq) relations from A to B.",
+      "example": "For A = {1, 2, 3, 4, 5, 6} and R = {(x, y) : y = x + 1} from A to A: R = {(1, 2), (2, 3), (3, 4), (4, 5), (5, 6)}, domain {1, 2, 3, 4, 5}, range {2, 3, 4, 5, 6}, codomain A.",
+      "difficulty_base": "Easy",
+      "questions": [
+        {
+          "b": "Remember",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "A relation R from a non-empty set A to a non-empty set B is",
+          "a": "a subset of the Cartesian product A x B",
+          "o": [
+            "a subset of the Cartesian product A x B",
+            "a subset of the Cartesian product B x A",
+            "always the whole of A x B",
+            "a subset of A union B"
+          ]
+        },
+        {
+          "b": "Remember",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "The set of all first elements of the ordered pairs in a relation R from a set A to a set B is called the",
+          "a": "domain of R",
+          "o": [
+            "domain of R",
+            "range of R",
+            "codomain of R",
+            "image of R"
+          ]
+        },
+        {
+          "b": "Remember",
+          "d": "Easy",
+          "t": "fill_blank",
+          "m": 1,
+          "q": "A visual representation of a relation, in which arrows join each element to its images, is called an ____ diagram.",
+          "a": "arrow"
+        },
+        {
+          "b": "Remember",
+          "d": "Hard",
+          "t": "mcq",
+          "m": 1,
+          "q": "Which of the following statements about a relation R from a set A to a set B is NOT correct?",
+          "a": "The range of R is always equal to the codomain B",
+          "o": [
+            "The range of R is always equal to the codomain B",
+            "The range of R is a subset of the codomain B",
+            "R is a subset of A x B",
+            "R may be written in roster form or in set-builder form"
+          ],
+          "rev": true
+        },
+        {
+          "b": "Understand",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "Let A = {1, 2, 3, 4, 5, 6} and let R = {(x, y) : y = x + 1} be a relation from A to A. The range of R is",
+          "a": "{2, 3, 4, 5, 6}",
+          "o": [
+            "{2, 3, 4, 5, 6}",
+            "{1, 2, 3, 4, 5}",
+            "{1, 2, 3, 4, 5, 6}",
+            "{2, 3, 4, 5, 6, 7}"
+          ]
+        },
+        {
+          "b": "Understand",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "If n(A) = p and n(B) = q, the total number of relations that can be defined from A to B is",
+          "a": "2^(pq)",
+          "o": [
+            "2^(pq)",
+            "pq",
+            "2^(p + q)",
+            "p^q"
+          ]
+        },
+        {
+          "b": "Understand",
+          "d": "Easy",
+          "t": "short_answer",
+          "m": 2,
+          "q": "A relation R on the set N of natural numbers is defined by R = {(x, y) : y = x + 5, x is a natural number less than 4; x, y in N}. Write R in roster form and write down its domain and range.",
+          "a": "x can be 1, 2 or 3, so R = {(1, 6), (2, 7), (3, 8)}. Domain = {1, 2, 3}; range = {6, 7, 8}.",
+          "s": [
+            [
+              "Writes R = {(1, 6), (2, 7), (3, 8)}",
+              1
+            ],
+            [
+              "States domain {1, 2, 3} and range {6, 7, 8}",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Understand",
+          "d": "Hard",
+          "t": "mcq",
+          "m": 1,
+          "q": "An arrow diagram shows a relation from P = {9, 4, 25} to Q = {5, 3, 2, 1, -2, -3, -5}: 9 is joined to 3 and -3, 4 to 2 and -2, and 25 to 5 and -5. In set-builder form this relation is",
+          "a": "R = {(x, y) : x is the square of y, x in P, y in Q}",
+          "o": [
+            "R = {(x, y) : x is the square of y, x in P, y in Q}",
+            "R = {(x, y) : y is the square of x, x in P, y in Q}",
+            "R = {(x, y) : y is the positive square root of x, x in P, y in Q}",
+            "R = {(x, y) : x is twice y, x in P, y in Q}"
+          ]
+        },
+        {
+          "b": "Understand",
+          "d": "Hard",
+          "t": "mcq",
+          "m": 1,
+          "q": "The range of the relation R = {(x, x + 5) : x in {0, 1, 2, 3, 4, 5}} is",
+          "a": "{5, 6, 7, 8, 9, 10}",
+          "o": [
+            "{5, 6, 7, 8, 9, 10}",
+            "{0, 1, 2, 3, 4, 5}",
+            "{0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10}",
+            "{6, 7, 8, 9, 10}"
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Easy",
+          "t": "fill_blank",
+          "m": 1,
+          "q": "Let A = {x, y, z} and B = {1, 2}. The number of relations from A to B is ____.",
+          "a": "64"
+        },
+        {
+          "b": "Apply",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "In roster form, the relation R = {(x, x^3) : x is a prime number less than 10} is",
+          "a": "{(2, 8), (3, 27), (5, 125), (7, 343)}",
+          "o": [
+            "{(2, 8), (3, 27), (5, 125), (7, 343)}",
+            "{(1, 1), (2, 8), (3, 27), (5, 125), (7, 343)}",
+            "{(3, 27), (5, 125), (7, 343), (9, 729)}",
+            "{(2, 6), (3, 9), (5, 15), (7, 21)}"
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Hard",
+          "t": "mcq",
+          "m": 1,
+          "q": "Let A = {1, 2, 3, ..., 14} and R = {(x, y) : 3x - y = 0, where x, y in A}. The range of R is",
+          "a": "{3, 6, 9, 12}",
+          "o": [
+            "{3, 6, 9, 12}",
+            "{1, 2, 3, 4}",
+            "{3, 6, 9, 12, 15}",
+            "{1, 2, 3, ..., 14}"
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Hard",
+          "t": "mcq",
+          "m": 1,
+          "q": "Let A = {1, 2, 3, 5} and B = {4, 6, 9}. In roster form, the relation R = {(x, y) : the difference between x and y is odd; x in A, y in B} is",
+          "a": "{(1, 4), (1, 6), (2, 9), (3, 4), (3, 6), (5, 4), (5, 6)}",
+          "o": [
+            "{(1, 4), (1, 6), (2, 9), (3, 4), (3, 6), (5, 4), (5, 6)}",
+            "{(1, 9), (2, 4), (2, 6), (3, 9), (5, 9)}",
+            "{(4, 1), (6, 1), (9, 2), (4, 3), (6, 3), (4, 5), (6, 5)}",
+            "{(1, 4), (1, 6), (2, 9), (3, 4), (3, 6)}"
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Hard",
+          "t": "short_answer",
+          "m": 2,
+          "q": "Let A = {1, 2, 3, 4, 6} and let R be the relation on A defined by R = {(a, b) : a, b in A, b is exactly divisible by a}. Write R in roster form and find its domain and range.",
+          "a": "R = {(1, 1), (1, 2), (1, 3), (1, 4), (1, 6), (2, 2), (2, 4), (2, 6), (3, 3), (3, 6), (4, 4), (6, 6)}. Domain = {1, 2, 3, 4, 6} and range = {1, 2, 3, 4, 6}.",
+          "s": [
+            [
+              "Lists all 12 ordered pairs of R correctly",
+              1
+            ],
+            [
+              "States domain = range = {1, 2, 3, 4, 6}",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Hardest",
+          "t": "long_answer",
+          "m": 3,
+          "q": "Let A = {1, 2, 3, 4, 5} and B = {1, 4, 9, 16, 20}. A relation R from A to B is defined by R = {(x, y) : y = x^2, x in A, y in B}. (i) Write R in roster form. (ii) Write its domain, range and codomain. (iii) How many relations in all can be defined from A to B?",
+          "a": "(i) R = {(1, 1), (2, 4), (3, 9), (4, 16)}; 5 is left out because 25 is not in B. (ii) Domain = {1, 2, 3, 4}, range = {1, 4, 9, 16}, codomain = B = {1, 4, 9, 16, 20}. (iii) n(A x B) = 5 x 5 = 25, so the number of relations is 2^25.",
+          "s": [
+            [
+              "Writes R = {(1, 1), (2, 4), (3, 9), (4, 16)}",
+              1
+            ],
+            [
+              "States domain {1, 2, 3, 4}, range {1, 4, 9, 16} and codomain B",
+              1
+            ],
+            [
+              "Uses n(A x B) = 25 to get 2^25 relations",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Analyse",
+          "d": "Hard",
+          "t": "assertion_reason",
+          "m": 1,
+          "q": "Assertion (A): The number of relations from A = {1, 2} to B = {3, 4} is 16. Reason (R): For every relation from A to B, the range is a subset of the codomain B.",
+          "a": "Both A and R are true, but R is not the correct explanation of A",
+          "o": [
+            "Both A and R are true, but R is not the correct explanation of A",
+            "Both A and R are true, and R is the correct explanation of A",
+            "A is true, R is false",
+            "A is false, R is true"
+          ]
+        },
+        {
+          "b": "Analyse",
+          "d": "Hard",
+          "t": "multi_statement",
+          "m": 1,
+          "q": "Consider these statements. (I) For the relation R = {(x, y) : y = x + 1} from A = {1, 2, 3, 4, 5, 6} to A, the domain of R is the whole set A. (II) For the relation R = {(a, b) : a, b in Z, a - b is an integer} on the set Z of integers, the domain and the range are both Z. Which is or are correct?",
+          "a": "Only II",
+          "o": [
+            "Only II",
+            "Only I",
+            "Both I and II",
+            "Neither I nor II"
+          ]
+        },
+        {
+          "b": "Analyse",
+          "d": "Hardest",
+          "t": "long_answer",
+          "m": 3,
+          "q": "Let R be the relation from N to N defined by R = {(a, b) : a, b in N and a = b^2}. Decide, with a justification in each case, whether the following are true: (i) (a, a) is in R for all a in N; (ii) (a, b) in R implies (b, a) in R; (iii) (a, b) in R and (b, c) in R implies (a, c) in R.",
+          "a": "(i) Not true: for a = 2, 2 is not equal to 2^2 = 4, so (2, 2) is not in R. (ii) Not true: (4, 2) is in R since 4 = 2^2, but (2, 4) is not in R since 2 is not 4^2 = 16. (iii) Not true: (16, 4) and (4, 2) are in R since 16 = 4^2 and 4 = 2^2, but (16, 2) is not in R since 16 is not 2^2 = 4.",
+          "s": [
+            [
+              "(i) Not true, with a counterexample such as (2, 2)",
+              1
+            ],
+            [
+              "(ii) Not true, with a counterexample such as (4, 2) in R but (2, 4) not in R",
+              1
+            ],
+            [
+              "(iii) Not true, with a counterexample such as (16, 4), (4, 2) in R but (16, 2) not in R",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Evaluate",
+          "d": "Hard",
+          "t": "short_answer",
+          "m": 2,
+          "q": "A student says: 'If n(A) = 3 and n(B) = 2, then exactly 6 relations can be defined from A to B, because A x B has 6 ordered pairs.' Evaluate this statement.",
+          "a": "The count of pairs is right, n(A x B) = 6, but the conclusion is wrong. A relation is any subset of A x B, so the number of relations is the number of subsets of a 6-element set, which is 2^6 = 64, not 6.",
+          "s": [
+            [
+              "Recognises that a relation is any subset of A x B, not a single ordered pair",
+              1
+            ],
+            [
+              "Gives the correct number 2^6 = 64",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Create",
+          "d": "Hardest",
+          "t": "long_answer",
+          "m": 3,
+          "q": "Construct a relation R from A = {1, 2, 3, 4} to B = {2, 4, 6, 8, 10}, described in set-builder form, whose domain is the whole of A and whose range is not the whole of B. Write R in roster form and state its domain, range and codomain.",
+          "a": "For example, R = {(x, y) : y = 2x, x in A, y in B}. In roster form R = {(1, 2), (2, 4), (3, 6), (4, 8)}. Domain = {1, 2, 3, 4} = A; range = {2, 4, 6, 8}, which leaves out 10, so it is not the whole of B; codomain = B = {2, 4, 6, 8, 10}. (Any correct relation meeting both conditions earns full marks.)",
+          "s": [
+            [
+              "Gives a valid set-builder rule defining a subset of A x B",
+              1
+            ],
+            [
+              "Writes the roster form correctly with every element of A appearing as a first element",
+              1
+            ],
+            [
+              "States domain, range and codomain, with the range leaving out at least one element of B",
+              1
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "code": "C11M-2.3",
+      "name": "Functions: definition, image and preimage, testing a relation",
+      "description": "A function as a relation in which every element of A has one and only one image in B; image, preimage, the notation f : A -> B and f(x); deciding whether a relation is a function; real valued and real functions; evaluating f(x).",
+      "idea": "A function f from A to B is a special relation: its domain is the whole of A and no two distinct ordered pairs have the same first element. If (a, b) is in f we write f(a) = b; b is the image of a and a is a preimage of b.",
+      "rule": "A relation fails to be a function if some element of A has no image or has more than one image. Two elements sharing one image is allowed. The range of a function is the set of its images, a subset of the codomain B.",
+      "example": "{(2, 1), (3, 1), (4, 2)} is a function, but {(2, 2), (2, 4), (3, 3), (4, 4)} is not, because 2 has the two images 2 and 4.",
+      "difficulty_base": "Hard",
+      "questions": [
+        {
+          "b": "Remember",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "A relation f from a set A to a set B is said to be a function if",
+          "a": "every element of A has one and only one image in B",
+          "o": [
+            "every element of A has one and only one image in B",
+            "every element of B has one and only one preimage in A",
+            "every element of A has at least one image in B, possibly more",
+            "some element of A has exactly one image in B"
+          ]
+        },
+        {
+          "b": "Remember",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "If f is a function from A to B and (a, b) is in f, then a is called the",
+          "a": "preimage of b under f",
+          "o": [
+            "preimage of b under f",
+            "image of b under f",
+            "codomain of f",
+            "range of f"
+          ]
+        },
+        {
+          "b": "Remember",
+          "d": "Easy",
+          "t": "fill_blank",
+          "m": 1,
+          "q": "A function which has either R or one of its subsets as its range is called a real ____ function.",
+          "a": "valued"
+        },
+        {
+          "b": "Remember",
+          "d": "Hard",
+          "t": "mcq",
+          "m": 1,
+          "q": "Which of the following relations is NOT a function?",
+          "a": "{(2, 2), (2, 4), (3, 3), (4, 4)}",
+          "o": [
+            "{(2, 2), (2, 4), (3, 3), (4, 4)}",
+            "{(2, 1), (3, 1), (4, 2)}",
+            "{(1, 2), (2, 3), (3, 4), (4, 5), (5, 6), (6, 7)}",
+            "{(2, 1), (5, 1), (8, 1), (11, 1)}"
+          ],
+          "rev": true
+        },
+        {
+          "b": "Understand",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "Let A = {1, 2, 3, 4, 5, 6}. The relation R = {(x, y) : y = x + 1} from A to A is not a function from A to A because",
+          "a": "the element 6 has no image",
+          "o": [
+            "the element 6 has no image",
+            "the element 6 has two images",
+            "two different elements have the same image",
+            "the element 1 has no image"
+          ]
+        },
+        {
+          "b": "Understand",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "The relation R = {(x, y) : y = 2x, x, y in N} on the set N of natural numbers is a function. Its range is",
+          "a": "the set of even natural numbers",
+          "o": [
+            "the set of even natural numbers",
+            "the set N of all natural numbers",
+            "the set of odd natural numbers",
+            "the set of all even integers"
+          ]
+        },
+        {
+          "b": "Understand",
+          "d": "Easy",
+          "t": "short_answer",
+          "m": 2,
+          "q": "State, with a reason in each case, whether the relation is a function: (i) {(1, 3), (1, 5), (2, 5)}, (ii) {(2, 1), (5, 1), (8, 1)}.",
+          "a": "(i) Not a function: the first element 1 has two different images, 3 and 5. (ii) A function: each of 2, 5 and 8 has one and only one image (the image 1 being shared does not matter).",
+          "s": [
+            [
+              "(i) Not a function, because 1 has two images 3 and 5",
+              1
+            ],
+            [
+              "(ii) A function, because every first element has exactly one image",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Understand",
+          "d": "Hard",
+          "t": "mcq",
+          "m": 1,
+          "q": "A function f is defined by f(x) = 2x - 5. The value of f(-3) is",
+          "a": "-11",
+          "o": [
+            "-11",
+            "1",
+            "-1",
+            "11"
+          ]
+        },
+        {
+          "b": "Understand",
+          "d": "Hard",
+          "t": "mcq",
+          "m": 1,
+          "q": "Let A = {1, 2, 3, 4}, B = {1, 5, 9, 11, 15, 16} and f = {(1, 5), (2, 9), (3, 1), (4, 5), (2, 11)}. Which statement is correct?",
+          "a": "f is a relation from A to B but not a function, because 2 has two images",
+          "o": [
+            "f is a relation from A to B but not a function, because 2 has two images",
+            "f is a function from A to B, because every element of A has an image",
+            "f is not a function from A to B only because 1 and 4 have the same image 5",
+            "f is not a relation from A to B, because 15 and 16 are not used"
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Easy",
+          "t": "fill_blank",
+          "m": 1,
+          "q": "A function f : N -> N is defined by f(x) = 2x + 1. The value of f(7) is ____.",
+          "a": "15"
+        },
+        {
+          "b": "Apply",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "The function t which maps temperature in degree Celsius into temperature in degree Fahrenheit is defined by t(C) = 9C/5 + 32. The value of t(28) is",
+          "a": "82.4",
+          "o": [
+            "82.4",
+            "50.4",
+            "108",
+            "60"
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Hard",
+          "t": "mcq",
+          "m": 1,
+          "q": "For the function t(C) = 9C/5 + 32, the value of C for which t(C) = 212 is",
+          "a": "100",
+          "o": [
+            "100",
+            "413.6",
+            "180",
+            "324"
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Hard",
+          "t": "mcq",
+          "m": 1,
+          "q": "If f(x) = x^2, the value of (f(1.1) - f(1)) / (1.1 - 1) is",
+          "a": "2.1",
+          "o": [
+            "2.1",
+            "0.21",
+            "1",
+            "0.1"
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Hard",
+          "t": "short_answer",
+          "m": 2,
+          "q": "Let f = {(1, 1), (2, 3), (0, -1), (-1, -3)} be a function from Z to Z defined by f(x) = ax + b for some integers a and b. Determine a and b.",
+          "a": "(0, -1) is in f, so f(0) = b = -1. (1, 1) is in f, so f(1) = a + b = 1, giving a = 2. Check: f(2) = 3 and f(-1) = -3, as required. So a = 2, b = -1 and f(x) = 2x - 1.",
+          "s": [
+            [
+              "Uses f(0) = -1 to get b = -1",
+              1
+            ],
+            [
+              "Uses f(1) = 1 to get a = 2 (f(x) = 2x - 1)",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Hardest",
+          "t": "long_answer",
+          "m": 3,
+          "q": "The relation f is defined by f(x) = x^2 for 0 <= x <= 3 and f(x) = 3x for 3 <= x <= 10. The relation g is defined by g(x) = x^2 for 0 <= x <= 2 and g(x) = 3x for 2 <= x <= 10. Show that f is a function and g is not a function.",
+          "a": "The only value of x covered by both rules of f is x = 3. There x^2 = 9 and 3x = 9, so f(3) = 9 has one value; every x in [0, 10] has one and only one image, so f is a function. For g the common value is x = 2. There x^2 = 4 but 3x = 6, so 2 has two different images, 4 and 6. Hence g is not a function.",
+          "s": [
+            [
+              "Checks f at x = 3: both rules give 9, so every x has a unique image and f is a function",
+              1
+            ],
+            [
+              "Checks g at x = 2: the rules give 4 and 6",
+              1
+            ],
+            [
+              "Concludes g is not a function because 2 has two images",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Analyse",
+          "d": "Hard",
+          "t": "assertion_reason",
+          "m": 1,
+          "q": "Assertion (A): The relation {(2, 1), (5, 1), (8, 1), (11, 1), (14, 1), (17, 1)} is a function. Reason (R): A relation is a function only if no two distinct ordered pairs in it have the same second element.",
+          "a": "A is true, R is false",
+          "o": [
+            "A is true, R is false",
+            "Both A and R are true, and R is the correct explanation of A",
+            "Both A and R are true, but R is not the correct explanation of A",
+            "A is false, R is true"
+          ]
+        },
+        {
+          "b": "Analyse",
+          "d": "Hard",
+          "t": "multi_statement",
+          "m": 1,
+          "q": "Consider these statements. (I) Every function from a set A to a set B is also a relation from A to B. (II) In a function, two different elements of the domain may have the same image. Which is or are correct?",
+          "a": "Both I and II",
+          "o": [
+            "Both I and II",
+            "Only I",
+            "Only II",
+            "Neither I nor II"
+          ]
+        },
+        {
+          "b": "Analyse",
+          "d": "Hardest",
+          "t": "long_answer",
+          "m": 3,
+          "q": "Let f be the subset of Z x Z defined by f = {(ab, a + b) : a, b in Z}. Is f a function from Z to Z? Justify your answer.",
+          "a": "No. Taking a = 2, b = 3 gives the pair (6, 5), and taking a = 1, b = 6 gives the pair (6, 7). So the same first element 6 has two different images, 5 and 7. A function must give every element one and only one image, so f is not a function from Z to Z.",
+          "s": [
+            [
+              "Produces a pair from chosen integers, e.g. (6, 5) from a = 2, b = 3",
+              1
+            ],
+            [
+              "Produces a second pair with the same first element but a different second element, e.g. (6, 7) from a = 1, b = 6",
+              1
+            ],
+            [
+              "Concludes f is not a function because one element has two images",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Evaluate",
+          "d": "Hard",
+          "t": "short_answer",
+          "m": 2,
+          "q": "A student says that R = {(1, 2), (2, 3), (3, 4), (4, 5), (5, 6), (6, 7)} is a function 'because all its images are different'. Evaluate the conclusion and the reason.",
+          "a": "The conclusion is right but the reason is wrong. R is a function because every first element 1, 2, ..., 6 has one and only one image, i.e. no first element is repeated. Whether the images are all different is irrelevant: {(2, 1), (3, 1), (4, 2)} is a function even though two elements share the image 1.",
+          "s": [
+            [
+              "States R is a function because each first element has exactly one image",
+              1
+            ],
+            [
+              "Explains that images being different is not the test (e.g. gives a function with a repeated image)",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Create",
+          "d": "Hardest",
+          "t": "long_answer",
+          "m": 3,
+          "q": "Let A = {9, 10, 11, 12, 13}. Construct a function f : A -> N by a rule of your own choice (for example, f(n) = the highest prime factor of n). Write f as a set of ordered pairs, state its range, and explain why it is a function.",
+          "a": "With f(n) = the highest prime factor of n: f = {(9, 3), (10, 5), (11, 11), (12, 3), (13, 13)}. Range = {3, 5, 11, 13}. It is a function because each of the five elements of A has one and only one image in N (9 and 12 share the image 3, which is allowed). (Any correctly stated rule with correct pairs and range earns full marks.)",
+          "s": [
+            [
+              "States a rule giving each element of A exactly one image in N and lists the five ordered pairs correctly",
+              1
+            ],
+            [
+              "States the range correctly as the set of images",
+              1
+            ],
+            [
+              "Explains that it is a function because every element of A has one and only one image",
+              1
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "code": "C11M-2.4",
+      "name": "Identity, constant, linear, polynomial and rational functions; domain and range",
+      "description": "The identity, constant, linear, polynomial and rational functions with their graphs described in words, and finding the domain and range of a real function given by a formula.",
+      "idea": "A real function is described by a formula y = f(x); its domain is the set of real x for which the formula gives a real value and its range is the set of values it takes.",
+      "rule": "Identity f(x) = x: domain and range R, line through the origin. Constant f(x) = c: domain R, range {c}, line parallel to the x-axis. Polynomial: a0 + a1 x + ... + an x^n with n a non-negative integer. Rational f(x)/g(x): exclude the points where g(x) = 0.",
+      "example": "f(x) = (x^2 + 3x + 5)/(x^2 - 5x + 4) has denominator (x - 4)(x - 1), so its domain is R - {1, 4}.",
+      "difficulty_base": "Hard",
+      "questions": [
+        {
+          "b": "Remember",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "The real valued function f : R -> R defined by f(x) = x for each x in R is called the",
+          "a": "identity function",
+          "o": [
+            "identity function",
+            "constant function",
+            "modulus function",
+            "signum function"
+          ]
+        },
+        {
+          "b": "Remember",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "The graph of the constant function f : R -> R, f(x) = c, is",
+          "a": "a line parallel to the x-axis",
+          "o": [
+            "a line parallel to the x-axis",
+            "a line parallel to the y-axis",
+            "a line through the origin equally inclined to both axes",
+            "the single point (0, c)"
+          ]
+        },
+        {
+          "b": "Remember",
+          "d": "Easy",
+          "t": "fill_blank",
+          "m": 1,
+          "q": "The function f defined by f(x) = mx + c, x in R, where m and c are constants, is called a ____ function.",
+          "a": "linear"
+        },
+        {
+          "b": "Remember",
+          "d": "Hard",
+          "t": "mcq",
+          "m": 1,
+          "q": "Which of the following is NOT a polynomial function?",
+          "a": "h(x) = x^(2/3) + 2x",
+          "o": [
+            "h(x) = x^(2/3) + 2x",
+            "f(x) = x^3 - x^2 + 2",
+            "g(x) = x^4 + 2x",
+            "p(x) = x + 10"
+          ],
+          "rev": true
+        },
+        {
+          "b": "Understand",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "For the function f : R -> R defined by f(x) = x^2, the range of f is",
+          "a": "the set of all non-negative real numbers",
+          "o": [
+            "the set of all non-negative real numbers",
+            "the set of all real numbers",
+            "the set of all positive real numbers, excluding 0",
+            "the set {0, 1, 4, 9, 16}"
+          ]
+        },
+        {
+          "b": "Understand",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "The domain of the real valued function f(x) = 1/x is",
+          "a": "all real numbers except 0",
+          "o": [
+            "all real numbers except 0",
+            "all real numbers",
+            "only the positive real numbers",
+            "the set {0}"
+          ]
+        },
+        {
+          "b": "Understand",
+          "d": "Easy",
+          "t": "short_answer",
+          "m": 2,
+          "q": "For the real function f : R -> R defined by f(x) = x + 10, find f(0) and f(-10), and describe its graph in words.",
+          "a": "f(0) = 10 and f(-10) = 0. The graph is a straight line that cuts the y-axis at (0, 10) and the x-axis at (-10, 0); f is a linear function f(x) = mx + c with m = 1 and c = 10.",
+          "s": [
+            [
+              "Finds f(0) = 10 and f(-10) = 0",
+              1
+            ],
+            [
+              "Describes the graph as a straight line through (0, 10) and (-10, 0)",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Understand",
+          "d": "Hard",
+          "t": "mcq",
+          "m": 1,
+          "q": "The graph of the identity function f(x) = x, x in R, is a straight line that",
+          "a": "passes through the origin",
+          "o": [
+            "passes through the origin",
+            "is parallel to the x-axis",
+            "is parallel to the y-axis",
+            "cuts the y-axis at (0, 1)"
+          ]
+        },
+        {
+          "b": "Understand",
+          "d": "Hard",
+          "t": "mcq",
+          "m": 1,
+          "q": "A rational function is a function of the type f(x)/g(x), where f(x) and g(x) are",
+          "a": "polynomial functions of x, defined in a domain where g(x) is not 0",
+          "o": [
+            "polynomial functions of x, defined in a domain where g(x) is not 0",
+            "polynomial functions of x, defined in a domain where f(x) is not 0",
+            "constant functions only, with g(x) not 0",
+            "polynomial functions of x, defined only at the points where g(x) = 0"
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Easy",
+          "t": "fill_blank",
+          "m": 1,
+          "q": "For the function f(x) = 1/x defined on R - {0}, the value of f(0.25) is ____.",
+          "a": "4"
+        },
+        {
+          "b": "Apply",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "For the function f : R -> R defined by f(x) = x^3, the value of f(-2) is",
+          "a": "-8",
+          "o": [
+            "-8",
+            "8",
+            "-6",
+            "6"
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Hard",
+          "t": "mcq",
+          "m": 1,
+          "q": "The domain of the function f(x) = (x^2 + 3x + 5)/(x^2 - 5x + 4) is",
+          "a": "R - {1, 4}",
+          "o": [
+            "R - {1, 4}",
+            "R - {-1, -4}",
+            "R - {4}",
+            "R"
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Hard",
+          "t": "mcq",
+          "m": 1,
+          "q": "The range of the function f(x) = 2 - 3x, where x is a real number and x > 0, is",
+          "a": "the set of all real numbers less than 2",
+          "o": [
+            "the set of all real numbers less than 2",
+            "the set of all real numbers greater than 2",
+            "the set of all real numbers less than or equal to 2",
+            "the set of all real numbers"
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Hard",
+          "t": "short_answer",
+          "m": 2,
+          "q": "Find the domain of the function f(x) = (x^2 + 2x + 1)/(x^2 - 8x + 12).",
+          "a": "x^2 - 8x + 12 = (x - 2)(x - 6), which is zero at x = 2 and x = 6. f is defined for all other real numbers, so the domain is R - {2, 6}.",
+          "s": [
+            [
+              "Factorises the denominator as (x - 2)(x - 6) and finds its zeros 2 and 6",
+              1
+            ],
+            [
+              "States the domain R - {2, 6}",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Hardest",
+          "t": "long_answer",
+          "m": 3,
+          "q": "Find the domain and the range of the real function f(x) = sqrt(9 - x^2).",
+          "a": "f(x) is real only when 9 - x^2 >= 0, i.e. x^2 <= 9, i.e. -3 <= x <= 3. Domain = [-3, 3]. For x in [-3, 3], 9 - x^2 takes every value from 0 (at x = 3 or -3) to 9 (at x = 0), so sqrt(9 - x^2) takes every value from 0 to 3. Range = [0, 3].",
+          "s": [
+            [
+              "Sets 9 - x^2 >= 0 and obtains the domain [-3, 3]",
+              1
+            ],
+            [
+              "Notes 9 - x^2 runs from 0 to 9 on the domain",
+              1
+            ],
+            [
+              "States the range [0, 3]",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Analyse",
+          "d": "Hard",
+          "t": "assertion_reason",
+          "m": 1,
+          "q": "Assertion (A): The range of the function f(x) = x^2 + 2, where x is a real number, is the set of all real numbers. Reason (R): For every real number x, x^2 >= 0.",
+          "a": "A is false, R is true",
+          "o": [
+            "A is false, R is true",
+            "Both A and R are true, and R is the correct explanation of A",
+            "Both A and R are true, but R is not the correct explanation of A",
+            "A is true, R is false"
+          ]
+        },
+        {
+          "b": "Analyse",
+          "d": "Hard",
+          "t": "multi_statement",
+          "m": 1,
+          "q": "Consider these statements. (I) The domain of the real function f(x) = sqrt(x - 1) is the set of all real numbers. (II) The range of the function f(x) = 1/x, x in R - {0}, is the set of all real numbers. Which is or are correct?",
+          "a": "Neither I nor II",
+          "o": [
+            "Neither I nor II",
+            "Only I",
+            "Only II",
+            "Both I and II"
+          ]
+        },
+        {
+          "b": "Analyse",
+          "d": "Hardest",
+          "t": "long_answer",
+          "m": 3,
+          "q": "Let f = {(x, x^2/(1 + x^2)) : x in R} be a function from R into R. Determine the range of f, with reasoning.",
+          "a": "Let y = x^2/(1 + x^2). Since x^2 >= 0 and 1 + x^2 > 0, y >= 0, with y = 0 at x = 0. Since x^2 < 1 + x^2, y < 1 for every x. Conversely, from y(1 + x^2) = x^2 we get x^2 = y/(1 - y), which has a real solution x for every y with 0 <= y < 1. So the range is [0, 1), i.e. all real y with 0 <= y < 1.",
+          "s": [
+            [
+              "Shows y >= 0, attained at x = 0",
+              1
+            ],
+            [
+              "Shows y < 1 because the numerator is less than the denominator (or solves x^2 = y/(1 - y))",
+              1
+            ],
+            [
+              "States the range as 0 <= y < 1, i.e. [0, 1)",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Evaluate",
+          "d": "Hard",
+          "t": "short_answer",
+          "m": 2,
+          "q": "A student says the domain of f(x) = (x^2 + 3x + 5)/(x^2 - 5x + 4) is R - {4}, 'because the denominator has the factor x - 4'. Evaluate this answer.",
+          "a": "It is incomplete. x^2 - 5x + 4 = (x - 4)(x - 1), so the denominator is zero at x = 1 as well as at x = 4. The function is undefined at both, so the domain is R - {1, 4}.",
+          "s": [
+            [
+              "Factorises the denominator fully as (x - 4)(x - 1)",
+              1
+            ],
+            [
+              "States that x = 1 must also be excluded, giving R - {1, 4}",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Create",
+          "d": "Hardest",
+          "t": "long_answer",
+          "m": 3,
+          "q": "Construct a rational function whose domain is exactly R - {2, 5}. Show why its domain is this set and find its value at x = 0.",
+          "a": "For example, f(x) = 1/((x - 2)(x - 5)) = 1/(x^2 - 7x + 10). The numerator and denominator are polynomials, and the denominator is zero only at x = 2 and x = 5, so f is defined for all other real numbers: domain R - {2, 5}. f(0) = 1/10. (Any rational function whose denominator vanishes exactly at 2 and 5 earns full marks.)",
+          "s": [
+            [
+              "Writes a quotient of polynomials whose denominator is zero exactly at x = 2 and x = 5",
+              1
+            ],
+            [
+              "Justifies the domain by showing the denominator is non-zero elsewhere",
+              1
+            ],
+            [
+              "Evaluates the function correctly at x = 0",
+              1
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "code": "C11M-2.5",
+      "name": "Modulus, signum and greatest integer functions; functions defined in pieces",
+      "description": "The modulus function |x|, the signum function and the greatest integer function [x], their values, domains, ranges and graphs described in words, and evaluating a function given by different rules on different parts of its domain.",
+      "idea": "Some functions use different rules on different parts of the domain: |x| is x for x >= 0 and -x for x < 0; signum is 1, 0 or -1 according as x > 0, x = 0 or x < 0; [x] is the greatest integer less than or equal to x.",
+      "rule": "To evaluate such a function, first decide which part of the domain x lies in, then use that rule. [x] = n for n <= x < n + 1, so [x] = -1 for -1 <= x < 0. Range of |x| is [0, infinity); range of signum is {-1, 0, 1}.",
+      "example": "[2.7] = 2 but [-0.5] = -1; |-7| = 7; signum of -1.5 is -1.",
+      "difficulty_base": "Hard",
+      "questions": [
+        {
+          "b": "Remember",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "For the modulus function f(x) = |x|, the value of f(x) for a negative value of x is",
+          "a": "-x",
+          "o": [
+            "-x",
+            "x",
+            "0",
+            "-1"
+          ]
+        },
+        {
+          "b": "Remember",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "The range of the signum function is the set",
+          "a": "{-1, 0, 1}",
+          "o": [
+            "{-1, 0, 1}",
+            "R, the set of all real numbers",
+            "{-1, 1}",
+            "of all real numbers from -1 to 1"
+          ]
+        },
+        {
+          "b": "Remember",
+          "d": "Easy",
+          "t": "fill_blank",
+          "m": 1,
+          "q": "The function f : R -> R defined by f(x) = [x], which takes the value of the greatest integer less than or equal to x, is called the greatest ____ function.",
+          "a": "integer"
+        },
+        {
+          "b": "Remember",
+          "d": "Hard",
+          "t": "mcq",
+          "m": 1,
+          "q": "Which of the following statements about the signum function is NOT correct?",
+          "a": "Its value at x = 0 is 1",
+          "o": [
+            "Its value at x = 0 is 1",
+            "Its domain is R",
+            "Its value is 1 for every x > 0",
+            "Its value is -1 for every x < 0"
+          ],
+          "rev": true
+        },
+        {
+          "b": "Understand",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "The greatest integer function satisfies [x] = 1 for",
+          "a": "1 <= x < 2",
+          "o": [
+            "1 <= x < 2",
+            "1 < x <= 2",
+            "0 <= x < 1",
+            "0.5 <= x < 1.5"
+          ]
+        },
+        {
+          "b": "Understand",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "For x not equal to 0, the value of the signum function at x can be written as",
+          "a": "|x| / x",
+          "o": [
+            "|x| / x",
+            "x |x|",
+            "-|x| / x",
+            "|x|"
+          ]
+        },
+        {
+          "b": "Understand",
+          "d": "Easy",
+          "t": "short_answer",
+          "m": 2,
+          "q": "Using the definition of the greatest integer function, find [2.7], [3] and [-0.5].",
+          "a": "[2.7] = 2, since 2 <= 2.7 < 3. [3] = 3, since 3 is itself an integer. [-0.5] = -1, since -1 <= -0.5 < 0.",
+          "s": [
+            [
+              "Finds [2.7] = 2 and [3] = 3",
+              1
+            ],
+            [
+              "Finds [-0.5] = -1",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Understand",
+          "d": "Hard",
+          "t": "mcq",
+          "m": 1,
+          "q": "The value of [-2.3], where [x] denotes the greatest integer function, is",
+          "a": "-3",
+          "o": [
+            "-3",
+            "-2",
+            "2",
+            "3"
+          ]
+        },
+        {
+          "b": "Understand",
+          "d": "Hard",
+          "t": "mcq",
+          "m": 1,
+          "q": "The graph of the modulus function f(x) = |x| consists of",
+          "a": "the ray y = x for x >= 0 and the ray y = -x for x < 0, meeting at the origin",
+          "o": [
+            "the ray y = x for x >= 0 and the ray y = -x for x < 0, meeting at the origin",
+            "a single straight line y = x through the origin",
+            "horizontal steps of unit length at integer heights",
+            "the horizontal ray y = 1 for x > 0 and the horizontal ray y = -1 for x < 0"
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Easy",
+          "t": "fill_blank",
+          "m": 1,
+          "q": "If f(x) = |x|, then the value of f(-7) + f(3) is ____.",
+          "a": "10"
+        },
+        {
+          "b": "Apply",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "The function f is defined by f(x) = 1 - x for x < 0, f(x) = 1 for x = 0 and f(x) = x + 1 for x > 0. The value of f(-3) is",
+          "a": "4",
+          "o": [
+            "4",
+            "-2",
+            "1",
+            "-4"
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Hard",
+          "t": "mcq",
+          "m": 1,
+          "q": "The range of the real function f(x) = -|x| is",
+          "a": "the set of all non-positive real numbers, (-infinity, 0]",
+          "o": [
+            "the set of all non-positive real numbers, (-infinity, 0]",
+            "the set of all non-negative real numbers, [0, infinity)",
+            "the set of all real numbers",
+            "the set of all negative real numbers, excluding 0"
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Hard",
+          "t": "mcq",
+          "m": 1,
+          "q": "The range of the real function f(x) = |x - 1| is",
+          "a": "[0, infinity)",
+          "o": [
+            "[0, infinity)",
+            "[1, infinity)",
+            "the set of all real numbers",
+            "[-1, infinity)"
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Hard",
+          "t": "short_answer",
+          "m": 2,
+          "q": "Let s denote the signum function. Find the value of [x] + |x| + s(x) at x = -1.5.",
+          "a": "[-1.5] = -2, since -2 <= -1.5 < -1. |-1.5| = 1.5. s(-1.5) = -1, since -1.5 < 0. Sum = -2 + 1.5 - 1 = -1.5.",
+          "s": [
+            [
+              "Finds [-1.5] = -2, |-1.5| = 1.5 and s(-1.5) = -1",
+              1
+            ],
+            [
+              "Adds to get -1.5",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Hardest",
+          "t": "long_answer",
+          "m": 3,
+          "q": "The function f is defined by f(x) = 1 - x for x < 0, f(x) = 1 for x = 0 and f(x) = x + 1 for x > 0. Find f(-4), f(-1), f(0), f(2) and f(4), describe the graph of f in words, and state the range of f.",
+          "a": "f(-4) = 1 - (-4) = 5, f(-1) = 2, f(0) = 1, f(2) = 3, f(4) = 5. The graph is V-shaped with its lowest point at (0, 1): for x > 0 it is the ray y = x + 1 rising to the right, and for x < 0 it is the ray y = 1 - x rising to the left. The values are 1 at x = 0 and greater than 1 elsewhere, so the range is [1, infinity).",
+          "s": [
+            [
+              "Finds the five values 5, 2, 1, 3, 5 using the correct rule for each x",
+              1
+            ],
+            [
+              "Describes two rays meeting at the lowest point (0, 1), one rising on each side",
+              1
+            ],
+            [
+              "States the range [1, infinity)",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Analyse",
+          "d": "Hard",
+          "t": "assertion_reason",
+          "m": 1,
+          "q": "Assertion (A): For the greatest integer function, [x] = -1 for -1 <= x < 0. Reason (R): The domain of the greatest integer function f(x) = [x] is R.",
+          "a": "Both A and R are true, but R is not the correct explanation of A",
+          "o": [
+            "Both A and R are true, but R is not the correct explanation of A",
+            "Both A and R are true, and R is the correct explanation of A",
+            "A is true, R is false",
+            "A is false, R is true"
+          ]
+        },
+        {
+          "b": "Analyse",
+          "d": "Hard",
+          "t": "multi_statement",
+          "m": 1,
+          "q": "Consider these statements. (I) The range of the modulus function f(x) = |x|, x in R, is R. (II) The graph of the signum function lies on the line y = 1 for x > 0, on the line y = -1 for x < 0, and is the single point (0, 0) at x = 0. Which is or are correct?",
+          "a": "Only II",
+          "o": [
+            "Only II",
+            "Only I",
+            "Both I and II",
+            "Neither I nor II"
+          ]
+        },
+        {
+          "b": "Analyse",
+          "d": "Hardest",
+          "t": "long_answer",
+          "m": 3,
+          "q": "Compare the modulus function f(x) = |x| and the greatest integer function g(x) = [x] at x = 2.5 and at x = -2.5. Explain why f(x) is never negative while g(x) can be negative, and say which of the two takes only integer values.",
+          "a": "f(2.5) = 2.5 and f(-2.5) = 2.5; g(2.5) = 2 and g(-2.5) = -3 (the greatest integer less than or equal to -2.5). f(x) equals x when x >= 0 and -x when x < 0, so it is never negative. g(x) is the greatest integer not exceeding x, so for negative x it is a negative integer. g takes only integer values; f takes every non-negative real value.",
+          "s": [
+            [
+              "Finds |2.5| = |-2.5| = 2.5 and [2.5] = 2, [-2.5] = -3",
+              1
+            ],
+            [
+              "Explains |x| is x or -x, whichever is non-negative, while [x] <= x is negative for negative x",
+              1
+            ],
+            [
+              "States that [x] takes only integer values while |x| takes all non-negative real values",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Evaluate",
+          "d": "Hard",
+          "t": "short_answer",
+          "m": 2,
+          "q": "A student writes [-0.5] = 0, explaining 'for the greatest integer function you just drop the decimal part'. Evaluate this.",
+          "a": "It is wrong. [x] is the greatest integer less than or equal to x. 0 is greater than -0.5, so it cannot be [-0.5]; the greatest integer not exceeding -0.5 is -1, in line with [x] = -1 for -1 <= x < 0. Dropping the decimal part works only for non-negative x.",
+          "s": [
+            [
+              "States the correct value [-0.5] = -1 using 'greatest integer less than or equal to x'",
+              1
+            ],
+            [
+              "Explains that dropping the decimal part fails for negative non-integers because it gives a larger number",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Create",
+          "d": "Hardest",
+          "t": "long_answer",
+          "m": 3,
+          "q": "Write the function f(x) = |x - 2|, x in R, as a function defined in two pieces without using the modulus sign. Use your pieces to find f(0), f(2) and f(5), and state the range of f.",
+          "a": "f(x) = x - 2 for x >= 2 and f(x) = 2 - x for x < 2. Then f(0) = 2 - 0 = 2, f(2) = 2 - 2 = 0 and f(5) = 5 - 2 = 3. The values are never negative and every non-negative value is taken, so the range is [0, infinity).",
+          "s": [
+            [
+              "Writes the two pieces x - 2 for x >= 2 and 2 - x for x < 2",
+              1
+            ],
+            [
+              "Finds f(0) = 2, f(2) = 0 and f(5) = 3 from the correct piece",
+              1
+            ],
+            [
+              "States the range [0, infinity)",
+              1
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "code": "C11M-2.6",
+      "name": "Algebra of real functions",
+      "description": "Adding, subtracting and multiplying two real functions defined on the same set X, multiplying a real function by a scalar, and dividing one real function by another where the divisor is non-zero.",
+      "idea": "Real functions on the same domain X can be combined point by point: at each x, operate on the two numbers f(x) and g(x).",
+      "rule": "(f + g)(x) = f(x) + g(x); (f - g)(x) = f(x) - g(x); (alpha f)(x) = alpha f(x); (fg)(x) = f(x) g(x); (f/g)(x) = f(x)/g(x) provided g(x) is not 0.",
+      "example": "For f(x) = x^2 and g(x) = 2x + 1: (f + g)(x) = x^2 + 2x + 1, (fg)(x) = 2x^3 + x^2, (f/g)(x) = x^2/(2x + 1) with x not equal to -1/2.",
+      "difficulty_base": "Hard",
+      "questions": [
+        {
+          "b": "Remember",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "For two real functions f : X -> R and g : X -> R, the function f + g is defined by (f + g)(x) =",
+          "a": "f(x) + g(x)",
+          "o": [
+            "f(x) + g(x)",
+            "f(x) g(x)",
+            "f(g(x))",
+            "f(x + g(x))"
+          ]
+        },
+        {
+          "b": "Remember",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "The product of two real functions defined by (fg)(x) = f(x) g(x), for all x in X, is also called",
+          "a": "pointwise multiplication",
+          "o": [
+            "pointwise multiplication",
+            "multiplication by a scalar",
+            "the quotient of two functions",
+            "the Cartesian product"
+          ]
+        },
+        {
+          "b": "Remember",
+          "d": "Easy",
+          "t": "fill_blank",
+          "m": 1,
+          "q": "In the definition (alpha f)(x) = alpha f(x), x in X, the real number alpha is called a ____.",
+          "a": "scalar"
+        },
+        {
+          "b": "Remember",
+          "d": "Hard",
+          "t": "mcq",
+          "m": 1,
+          "q": "For two real functions f and g defined on X, the quotient (f/g)(x) = f(x)/g(x) is NOT defined at those points x of X where",
+          "a": "g(x) = 0",
+          "o": [
+            "g(x) = 0",
+            "f(x) = 0",
+            "f(x) = g(x)",
+            "g(x) = 1"
+          ],
+          "rev": true
+        },
+        {
+          "b": "Understand",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "Let f(x) = x^2 and g(x) = 2x + 1 be two real functions. Then (f + g)(x) is",
+          "a": "x^2 + 2x + 1",
+          "o": [
+            "x^2 + 2x + 1",
+            "x^2 - 2x - 1",
+            "2x^3 + x^2",
+            "(2x + 1)^2"
+          ]
+        },
+        {
+          "b": "Understand",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "Let f(x) = x^2 and g(x) = 2x + 1 be two real functions. Then (f - g)(x) is",
+          "a": "x^2 - 2x - 1",
+          "o": [
+            "x^2 - 2x - 1",
+            "x^2 - 2x + 1",
+            "2x + 1 - x^2",
+            "x^2 + 2x + 1"
+          ]
+        },
+        {
+          "b": "Understand",
+          "d": "Easy",
+          "t": "short_answer",
+          "m": 2,
+          "q": "Let f(x) = x^2 and g(x) = 2x + 1 be two real functions. Find (fg)(x) and (f/g)(x), stating any value of x that must be excluded.",
+          "a": "(fg)(x) = x^2 (2x + 1) = 2x^3 + x^2. (f/g)(x) = x^2/(2x + 1), where x is not equal to -1/2, because g(-1/2) = 0.",
+          "s": [
+            [
+              "Finds (fg)(x) = 2x^3 + x^2",
+              1
+            ],
+            [
+              "Finds (f/g)(x) = x^2/(2x + 1) with x not equal to -1/2",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Understand",
+          "d": "Hard",
+          "t": "mcq",
+          "m": 1,
+          "q": "Let f(x) = sqrt(x) and g(x) = x be two functions defined over the set of non-negative real numbers. Then (fg)(x) is",
+          "a": "x^(3/2)",
+          "o": [
+            "x^(3/2)",
+            "x^(1/2)",
+            "x^2",
+            "x^(-1/2)"
+          ]
+        },
+        {
+          "b": "Understand",
+          "d": "Hard",
+          "t": "mcq",
+          "m": 1,
+          "q": "Let f(x) = sqrt(x) and g(x) = x be defined over the set of non-negative real numbers. The quotient (f/g)(x) = x^(-1/2) is defined for",
+          "a": "all positive real numbers only, since x = 0 must be left out",
+          "o": [
+            "all positive real numbers only, since x = 0 must be left out",
+            "all non-negative real numbers, including 0",
+            "all real numbers except 0, including the negative ones",
+            "all real numbers"
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Easy",
+          "t": "fill_blank",
+          "m": 1,
+          "q": "Let f(x) = x + 1 and g(x) = 2x - 3, x in R. The value of (f + g)(2) is ____.",
+          "a": "4"
+        },
+        {
+          "b": "Apply",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "Let f, g : R -> R be defined by f(x) = x + 1 and g(x) = 2x - 3. Then (f - g)(x) is",
+          "a": "-x + 4",
+          "o": [
+            "-x + 4",
+            "-x - 2",
+            "x - 4",
+            "3x - 2"
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Hard",
+          "t": "mcq",
+          "m": 1,
+          "q": "Let f, g : R -> R be defined by f(x) = x + 1 and g(x) = 2x - 3. Then (f/g)(x) is",
+          "a": "(x + 1)/(2x - 3), x not equal to 3/2",
+          "o": [
+            "(x + 1)/(2x - 3), x not equal to 3/2",
+            "(x + 1)/(2x - 3), x not equal to -1",
+            "(2x - 3)/(x + 1), x not equal to -1",
+            "(x + 1)/(2x - 3), x not equal to -3/2"
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Hard",
+          "t": "mcq",
+          "m": 1,
+          "q": "Let f(x) = x^2, x in R. The value of the scalar multiple (3f)(x) at x = -2 is",
+          "a": "12",
+          "o": [
+            "12",
+            "36",
+            "-12",
+            "6"
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Hard",
+          "t": "short_answer",
+          "m": 2,
+          "q": "Let f(x) = x^2 and g(x) = 2x + 1 be two real functions. Find the values of (fg)(-1) and (f/g)(1).",
+          "a": "(fg)(-1) = f(-1) g(-1) = (1)(-1) = -1. (f/g)(1) = f(1)/g(1) = 1/3.",
+          "s": [
+            [
+              "Finds (fg)(-1) = (1)(-1) = -1",
+              1
+            ],
+            [
+              "Finds (f/g)(1) = 1/3",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Hardest",
+          "t": "long_answer",
+          "m": 3,
+          "q": "Let f, g : R -> R be defined by f(x) = x + 1 and g(x) = 2x - 3. Find f + g, f - g, fg and f/g, stating where f/g is defined.",
+          "a": "(f + g)(x) = 3x - 2. (f - g)(x) = (x + 1) - (2x - 3) = -x + 4. (fg)(x) = (x + 1)(2x - 3) = 2x^2 - x - 3. (f/g)(x) = (x + 1)/(2x - 3), defined for all real x except x = 3/2, where g(x) = 0.",
+          "s": [
+            [
+              "Finds (f + g)(x) = 3x - 2 and (f - g)(x) = -x + 4",
+              1
+            ],
+            [
+              "Finds (fg)(x) = 2x^2 - x - 3",
+              1
+            ],
+            [
+              "Finds (f/g)(x) = (x + 1)/(2x - 3) with x not equal to 3/2",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Analyse",
+          "d": "Hard",
+          "t": "assertion_reason",
+          "m": 1,
+          "q": "Assertion (A): For the real functions f(x) = x^2 and g(x) = 2x + 1, the quotient (f/g)(x) is not defined at x = -1/2. Reason (R): The quotient f/g is defined only at those points where g(x) is not 0, and g(-1/2) = 0.",
+          "a": "Both A and R are true, and R is the correct explanation of A",
+          "o": [
+            "Both A and R are true, and R is the correct explanation of A",
+            "Both A and R are true, but R is not the correct explanation of A",
+            "A is true, R is false",
+            "A is false, R is true"
+          ]
+        },
+        {
+          "b": "Analyse",
+          "d": "Hard",
+          "t": "multi_statement",
+          "m": 1,
+          "q": "Consider these statements. (I) For f(x) = x^2 and g(x) = 2x + 1, (fg)(x) = 2x^3 + x^2. (II) For f(x) = x^2 and g(x) = 2x + 1, (f + g)(1) = 3. Which is or are correct?",
+          "a": "Only I",
+          "o": [
+            "Only I",
+            "Only II",
+            "Both I and II",
+            "Neither I nor II"
+          ]
+        },
+        {
+          "b": "Analyse",
+          "d": "Hardest",
+          "t": "long_answer",
+          "m": 3,
+          "q": "Let f(x) = sqrt(x) and g(x) = x be two functions defined over the set of non-negative real numbers. Find (f + g)(x), (f - g)(x), (fg)(x) and (f/g)(x), and explain why f/g is not defined at every point where the other three are.",
+          "a": "(f + g)(x) = sqrt(x) + x, (f - g)(x) = sqrt(x) - x, (fg)(x) = x sqrt(x) = x^(3/2), and (f/g)(x) = sqrt(x)/x = x^(-1/2), x not equal to 0. The sum, difference and product are defined for every non-negative x, but the quotient needs g(x) not equal to 0, and g(0) = 0, so f/g is defined only for x > 0.",
+          "s": [
+            [
+              "Finds the sum sqrt(x) + x and the difference sqrt(x) - x",
+              1
+            ],
+            [
+              "Finds the product x^(3/2) and the quotient x^(-1/2)",
+              1
+            ],
+            [
+              "Explains that g(0) = 0, so f/g leaves out x = 0 while the others do not",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Evaluate",
+          "d": "Hard",
+          "t": "short_answer",
+          "m": 2,
+          "q": "For f(x) = x + 1 and g(x) = 2x - 3, a student writes (fg)(x) = 2x^2 - 3, 'multiplying x by 2x and 1 by -3'. Evaluate this answer.",
+          "a": "It is wrong. (fg)(x) = (x + 1)(2x - 3) = 2x^2 - 3x + 2x - 3 = 2x^2 - x - 3; the student left out the two cross terms -3x and 2x. Check at x = 1: f(1) g(1) = (2)(-1) = -2, which the correct formula gives, while the student's formula gives -1.",
+          "s": [
+            [
+              "Gives the correct product 2x^2 - x - 3",
+              1
+            ],
+            [
+              "Identifies the missing cross terms (or checks a value of x to show the student's formula fails)",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Create",
+          "d": "Hardest",
+          "t": "long_answer",
+          "m": 3,
+          "q": "Construct two real functions f and g on R such that (f + g)(x) = 3x + 2 and (f - g)(x) = x + 4. Verify both conditions and find (fg)(0).",
+          "a": "Adding the two conditions gives 2 f(x) = 4x + 6, so f(x) = 2x + 3; subtracting gives 2 g(x) = 2x - 2, so g(x) = x - 1. Check: (2x + 3) + (x - 1) = 3x + 2 and (2x + 3) - (x - 1) = x + 4. (fg)(0) = f(0) g(0) = (3)(-1) = -3.",
+          "s": [
+            [
+              "Obtains f(x) = 2x + 3 and g(x) = x - 1",
+              1
+            ],
+            [
+              "Verifies that the sum is 3x + 2 and the difference is x + 4",
+              1
+            ],
+            [
+              "Finds (fg)(0) = -3",
+              1
+            ]
+          ]
+        }
+      ]
+    }
+  ]
+}

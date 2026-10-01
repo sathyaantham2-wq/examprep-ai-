@@ -1,0 +1,2260 @@
+{
+ "subject": {
+  "code": "MATH11",
+  "name": "Mathematics",
+  "board": "CBSE",
+  "class": 11
+ },
+ "source": {
+  "publisher": "NCERT",
+  "title": "Mathematics",
+  "edition": "Textbook for Class XI, Reprint 2026-27",
+  "year": 2026
+ },
+ "chapter": {
+  "part": "I",
+  "chapter_no": 1,
+  "name": "Sets",
+  "blurb": "This chapter introduces a set as a well-defined collection of objects and the roster and set-builder ways of writing one. It then studies the empty set, finite, infinite and equal sets, subsets (including intervals as subsets of R) and the universal set, and closes with the operations of union, intersection, difference and complement, illustrated with Venn diagrams and summed up in De Morgan's laws.",
+  "source_code": "kemh101",
+  "order_index": 1
+ },
+ "scope_in": [
+  {
+   "item": "Decide whether a described collection is well-defined (a set), and use x in A / x not in A for membership, including the standard sets N, Z, Q, R, Z+, Q+, R+",
+   "pages": "1-2, 4-5"
+  },
+  {
+   "item": "Write a set in roster form (distinct elements, order immaterial, dots for an infinite pattern) and in set-builder form {x : property}, convert between the two, and find solution sets of simple equations",
+   "pages": "2-5"
+  },
+  {
+   "item": "Recognise the empty (null, void) set phi = { }, and show a set-builder description is empty by giving the reason no element qualifies",
+   "pages": "5-6, 8"
+  },
+  {
+   "item": "Classify sets as finite or infinite (an empty set is finite), use n(S) for the number of distinct elements of a finite set, and know that some infinite sets such as R cannot be written in roster form",
+   "pages": "6-9"
+  },
+  {
+   "item": "Decide whether two sets are equal (exactly the same elements; repetition and order do not matter) and pick out equal pairs from a list",
+   "pages": "7-9, 20-21"
+  },
+  {
+   "item": "Test whether A subset of B, use proper subset, superset and singleton set, the facts that phi subset of every set and A subset of A, A subset of B and B subset of A iff A = B, and distinguish 'is an element of' from 'is a subset of' for sets whose elements are themselves sets",
+   "pages": "9-10, 12, 21"
+  },
+  {
+   "item": "List all subsets of a set with at most three elements by direct enumeration",
+   "pages": "12, 21"
+  },
+  {
+   "item": "Use the subsets N, Z, Q, T (irrationals) of R and the relations N subset of Z subset of Q, Q subset of R, T subset of R, N not a subset of T",
+   "pages": "10-11"
+  },
+  {
+   "item": "Use open, closed and one-end-closed intervals (a, b), [a, b], [a, b), (a, b] and rays such as [0, infinity), (-infinity, 0), convert between interval and set-builder form, compare intervals as subsets, and find the length b - a",
+   "pages": "11-13"
+  },
+  {
+   "item": "Propose a suitable universal set for given sets and represent U by a rectangle and its subsets by circles in a Venn diagram (regions described in words)",
+   "pages": "12-13"
+  },
+  {
+   "item": "Find the union and intersection of sets (roster or set-builder), identify disjoint sets, and use the union and intersection laws: commutative, associative, identity, idempotent, laws of phi and U, and the distributive law A intersection (B union C) = (A intersection B) union (A intersection C)",
+   "pages": "13-18"
+  },
+  {
+   "item": "Find the difference A - B and B - A, use A - B = {x : x in A and x not in B}, and use that A - B, A intersection B, B - A are mutually disjoint",
+   "pages": "16-18"
+  },
+  {
+   "item": "Find the complement A' with respect to U (finite U, or U = N), use A' = U - A, the complement laws, double complementation, phi' = U and U' = phi, and verify De Morgan's laws",
+   "pages": "18-20"
+  },
+  {
+   "item": "Prove or disprove simple set statements by element arguments or counterexamples (e.g. A union B = A intersection B implies A = B; A intersection B = A intersection C need not imply B = C; the equivalence of A subset of B, A - B = phi, A union B = B, A intersection B = A)",
+   "pages": "21-22"
+  }
+ ],
+ "scope_out": [
+  {
+   "item": "Power set P(A) and the formula 2^n for the number of subsets",
+   "reason": "This rationalised edition lists subsets of small sets by enumeration (Exercise 1.3 Q4, Example 24) but never defines the power set or states the 2^n count; questions keep to sets of at most 3 elements, counted by listing"
+  },
+  {
+   "item": "Counting formulas n(A union B) = n(A) + n(B) - n(A intersection B) and practical word problems on union and intersection (e.g. survey problems)",
+   "reason": "Not in this edition; the old section 'Practical problems on union and intersection of two sets' has been removed"
+  },
+  {
+   "item": "Symmetric difference, Cartesian product and ordered pairs",
+   "reason": "Symmetric difference is not taught; Cartesian products belong to Chapter 2 (Relations and Functions)"
+  },
+  {
+   "item": "Equivalent sets / cardinality comparisons of infinite sets (one-to-one correspondence)",
+   "reason": "Only mentioned in the Historical Note about Cantor, not taught"
+  },
+  {
+   "item": "Venn diagrams with three sets beyond the distributive-law illustration, and any question that requires seeing a drawn diagram",
+   "reason": "Fig 1.7 only illustrates the distributive law; the app cannot display figures, so regions are described in words"
+  },
+  {
+   "item": "Union or intersection of intervals, and inequalities solved to produce intervals",
+   "reason": "The chapter uses intervals only as subsets of R with notation and length; interval algebra and linear inequalities are later chapters"
+  },
+  {
+   "item": "Russell's paradox and axiomatic set theory",
+   "reason": "Historical Note only (pp 22-23), not examinable content"
+  }
+ ],
+ "concepts": [
+  {
+   "code": "C11M-1.1",
+   "name": "Sets and their representations",
+   "description": "A set as a well-defined collection of objects, the notation x in A / x not in A, and the two ways of writing a set: roster (tabular) form and set-builder form.",
+   "idea": "A set is a well-defined collection of objects: for any object we can definitely decide whether it belongs to the collection or not.",
+   "rule": "Roster form lists the distinct elements, separated by commas, inside braces { }; order does not matter and elements are not repeated. Set-builder form {x : property} uses a property possessed by every element of the set and by no element outside it; the braces mean 'the set of all' and the colon means 'such that'.",
+   "example": "{x : x is a natural number and 3 < x < 10} = {4, 5, 6, 7, 8, 9}; the set of letters of SCHOOL is {S, C, H, O, L}.",
+   "difficulty_base": "Easy",
+   "questions": [
+    {
+     "b": "Remember",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "Which of the following collections is a set (a well-defined collection)?",
+     "a": "The collection of all months of a year beginning with the letter J",
+     "o": [
+      "The collection of all months of a year beginning with the letter J",
+      "The collection of ten most talented writers of India",
+      "A team of eleven best cricket batsmen of the world",
+      "A collection of most dangerous animals of the world"
+     ]
+    },
+    {
+     "b": "Remember",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "In the set-builder form {x : x is a vowel in the English alphabet}, the colon ':' is read as",
+     "a": "such that",
+     "o": [
+      "such that",
+      "the set of all",
+      "belongs to",
+      "implies"
+     ]
+    },
+    {
+     "b": "Remember",
+     "d": "Easy",
+     "t": "fill_blank",
+     "m": 1,
+     "q": "Among the special sets used throughout this chapter, the symbol Z denotes the set of all ____.",
+     "a": "integers"
+    },
+    {
+     "b": "Remember",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "rev": true,
+     "q": "About writing a set in roster form, which of the following statements is NOT correct?",
+     "a": "Changing the order in which the elements are listed gives a different set",
+     "o": [
+      "Changing the order in which the elements are listed gives a different set",
+      "The elements are separated by commas and enclosed within braces { }",
+      "An element is generally not repeated, since all elements are taken as distinct",
+      "Three dots can be used to show that the list of elements continues indefinitely"
+     ]
+    },
+    {
+     "b": "Understand",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "Why is 'the collection of five most renowned mathematicians of the world' not a set?",
+     "a": "The criterion for 'most renowned' varies from person to person, so membership cannot be decided definitely",
+     "o": [
+      "The criterion for 'most renowned' varies from person to person, so membership cannot be decided definitely",
+      "It has only five members, and a set must have more members than that",
+      "Its members are people, and a set can contain only numbers",
+      "Its members cannot be listed in any particular order"
+     ]
+    },
+    {
+     "b": "Understand",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "Let A = {1, 2, 3, 4, 5, 6}. Which of the following is correct?",
+     "a": "5 in A and 8 not in A",
+     "o": [
+      "5 in A and 8 not in A",
+      "8 in A and 5 not in A",
+      "0 in A and 10 not in A",
+      "5 in A and 4 not in A"
+     ]
+    },
+    {
+     "b": "Understand",
+     "d": "Easy",
+     "t": "fill_blank",
+     "m": 1,
+     "q": "The set of letters forming the word SCHOOL, written in roster form, has ____ elements.",
+     "a": "5"
+    },
+    {
+     "b": "Understand",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "q": "The set {x : x is an integer and -2 < x <= 3} in roster form is",
+     "a": "{-1, 0, 1, 2, 3}",
+     "o": [
+      "{-1, 0, 1, 2, 3}",
+      "{-2, -1, 0, 1, 2, 3}",
+      "{-1, 0, 1, 2}",
+      "{1, 2, 3}"
+     ]
+    },
+    {
+     "b": "Understand",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "q": "Which set-builder description gives exactly the set {1, 4, 9, 16, 25, ...}?",
+     "a": "{x : x = n^2, where n in N}",
+     "o": [
+      "{x : x = n^2, where n in N}",
+      "{x : x = 2n, where n in N}",
+      "{x : x = n^2, where n in Z}",
+      "{x : x is a natural number less than 26}"
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "The solution set of the equation x^2 - 5x + 6 = 0 in roster form is",
+     "a": "{2, 3}",
+     "o": [
+      "{2, 3}",
+      "{-2, -3}",
+      "{1, 6}",
+      "{5, 6}"
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Easy",
+     "t": "fill_blank",
+     "m": 1,
+     "q": "When the set {x : x is a positive integer and x^2 < 30} is written in roster form, its largest element is ____.",
+     "a": "5"
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "q": "Which is the roster form of D = {x : x is a prime number which is a divisor of 60}?",
+     "a": "{2, 3, 5}",
+     "o": [
+      "{2, 3, 5}",
+      "{1, 2, 3, 5}",
+      "{2, 3, 4, 5}",
+      "{2, 3, 5, 7}"
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "q": "Which is the set-builder form of {2/3, 3/4, 4/5, 5/6}?",
+     "a": "{x : x = n/(n + 1), where n is a natural number and 2 <= n <= 5}",
+     "o": [
+      "{x : x = n/(n + 1), where n is a natural number and 2 <= n <= 5}",
+      "{x : x = n/(n + 1), where n is a natural number and 1 <= n <= 5}",
+      "{x : x = (n + 1)/n, where n is a natural number and 2 <= n <= 5}",
+      "{x : x = n/(n + 1), where n is a natural number and 2 <= n <= 6}"
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "q": "Write the set {x : x is a two-digit natural number such that the sum of its digits is 5} in roster form.",
+     "a": "The tens digit cannot be 0, so the digit pairs are (1, 4), (2, 3), (3, 2), (4, 1), (5, 0). The set is {14, 23, 32, 41, 50}.",
+     "s": [
+      [
+       "Finds the digit pairs with sum 5, excluding a leading 0",
+       1
+      ],
+      [
+       "Writes the set {14, 23, 32, 41, 50}",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hardest",
+     "t": "long_answer",
+     "m": 3,
+     "q": "Write each set in roster form: (i) {x : x is an integer and x^2 <= 9}, (ii) {x : x is a letter in the word ASSASSINATION}, (iii) {x : x is a natural number which divides 18}.",
+     "a": "(i) {-3, -2, -1, 0, 1, 2, 3}. (ii) Repeated letters are written once: {A, S, I, N, T, O}. (iii) {1, 2, 3, 6, 9, 18}.",
+     "s": [
+      [
+       "(i) {-3, -2, -1, 0, 1, 2, 3}, including the negative integers and 0",
+       1
+      ],
+      [
+       "(ii) {A, S, I, N, T, O}, each letter written once",
+       1
+      ],
+      [
+       "(iii) {1, 2, 3, 6, 9, 18}",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "assertion_reason",
+     "m": 1,
+     "q": "Assertion (A): The set of letters of the word BETTER, in roster form, is {B, E, T, R}. Reason (R): In roster form, every letter of the word must be written as many times as it occurs in the word.",
+     "a": "A is true, R is false",
+     "o": [
+      "A is true, R is false",
+      "Both A and R are true, and R is the correct explanation of A",
+      "Both A and R are true, but R is not the correct explanation of A",
+      "A is false, R is true"
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "multi_statement",
+     "m": 1,
+     "q": "Consider these statements. (I) {x : x is an integer and x + 1 = 1} = {1}. (II) {x : x is an integer and x^2 - 9 = 0} = {3, -3}. Which is or are correct?",
+     "a": "Only II",
+     "o": [
+      "Only II",
+      "Only I",
+      "Both I and II",
+      "Neither I nor II"
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hardest",
+     "t": "long_answer",
+     "m": 3,
+     "q": "A student writes the set {x : x is a natural number and 3 < x < 10} as {3, 4, 5, 6, 7, 8, 9, 10}. She also claims that {1, 3, 5, 7, 9} and {9, 7, 5, 3, 1} are different sets. Find both errors and correct them.",
+     "a": "First error: 3 < x < 10 excludes 3 and 10, so the set is {4, 5, 6, 7, 8, 9}. Second error: in roster form the order of listing is immaterial, so {1, 3, 5, 7, 9} and {9, 7, 5, 3, 1} are the same set.",
+     "s": [
+      [
+       "Points out that the strict inequalities exclude 3 and 10",
+       1
+      ],
+      [
+       "Corrects the set to {4, 5, 6, 7, 8, 9}",
+       1
+      ],
+      [
+       "Explains that order does not matter, so the two sets are the same",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Evaluate",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "q": "Riya says: 'The collection of all natural numbers less than 100 is not a set, because it is too large to list.' Evaluate her claim.",
+     "a": "Riya is wrong. A collection is a set when it is well-defined, i.e. we can decide whether any object belongs to it; its size does not matter. Every natural number is clearly either less than 100 or not, so it is a set, {1, 2, 3, ..., 99}.",
+     "s": [
+      [
+       "States that being a set depends on being well-defined, not on size",
+       1
+      ],
+      [
+       "Concludes it is a set, e.g. {1, 2, 3, ..., 99}",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Create",
+     "d": "Hardest",
+     "t": "long_answer",
+     "m": 3,
+     "q": "Create a set with exactly four elements. Describe it in roster form and in set-builder form, choosing a property that no element outside the set has. Justify your choice.",
+     "a": "For example, {2, 3, 5, 7} = {x : x is a prime number less than 10}. The primes less than 10 are exactly 2, 3, 5 and 7, so every element has the property and no other number has it. (Any correct, justified set earns full marks.)",
+     "s": [
+      [
+       "Gives a correct roster form with exactly four elements",
+       1
+      ],
+      [
+       "Gives a matching set-builder form",
+       1
+      ],
+      [
+       "Justifies that no element outside the set has the property",
+       1
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "code": "C11M-1.2",
+   "name": "Empty, finite, infinite and equal sets",
+   "description": "The empty (null, void) set, finite and infinite sets with n(S) as the number of distinct elements, and equal sets as sets having exactly the same elements.",
+   "idea": "The empty set phi = { } has no elements. A set is finite if it is empty or has a definite number of elements; otherwise it is infinite.",
+   "rule": "A = B exactly when A and B have the same elements; repeating elements or changing their order does not change a set. The empty set counts as a finite set.",
+   "example": "{x : x is a natural number and 1 < x < 2} = phi (finite); the set of letters of ALLOY equals the set of letters of LOYAL, both {A, L, O, Y}.",
+   "difficulty_base": "Easy",
+   "questions": [
+    {
+     "b": "Remember",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "A set which does not contain any element is called",
+     "a": "the empty set",
+     "o": [
+      "the empty set",
+      "a singleton set",
+      "the universal set",
+      "an infinite set"
+     ]
+    },
+    {
+     "b": "Remember",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "In this chapter the empty set is denoted by",
+     "a": "phi or { }",
+     "o": [
+      "phi or { }",
+      "{0}",
+      "{phi}",
+      "the number 0"
+     ]
+    },
+    {
+     "b": "Remember",
+     "d": "Easy",
+     "t": "fill_blank",
+     "m": 1,
+     "q": "By the definition used in this chapter, the empty set is classed as a ____ set (finite or infinite).",
+     "a": "finite"
+    },
+    {
+     "b": "Remember",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "rev": true,
+     "q": "About the empty set, which of the following sets is NOT the empty set?",
+     "a": "{x : x is an even prime number}",
+     "o": [
+      "{x : x is an even prime number}",
+      "{x : x is a natural number and 1 < x < 2}",
+      "{x : x is an even prime number greater than 2}",
+      "{x : x^2 = 4 and x is odd}"
+     ]
+    },
+    {
+     "b": "Understand",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "Why is the set {x : x^2 - 2 = 0 and x is a rational number} the empty set?",
+     "a": "The equation x^2 = 2 is not satisfied by any rational value of x",
+     "o": [
+      "The equation x^2 = 2 is not satisfied by any rational value of x",
+      "sqrt(2) satisfies the equation, and sqrt(2) is rational",
+      "The equation x^2 - 2 = 0 has no real solutions at all",
+      "Any set described by an equation is always empty"
+     ]
+    },
+    {
+     "b": "Understand",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "Which of the following sets is infinite?",
+     "a": "The set of points on a line",
+     "o": [
+      "The set of points on a line",
+      "The set of days of the week",
+      "The set of solutions of the equation x^2 - 16 = 0",
+      "The set of letters in the English alphabet"
+     ]
+    },
+    {
+     "b": "Understand",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "Why are the sets A = {1, 2, 3} and B = {2, 2, 1, 3, 3} equal?",
+     "a": "Every element of A is in B and every element of B is in A; repeating elements does not change a set",
+     "o": [
+      "Every element of A is in B and every element of B is in A; repeating elements does not change a set",
+      "Both lists have the same number of entries",
+      "B has more elements than A, so A is a part of B",
+      "Two sets are equal whenever their smallest elements match"
+     ]
+    },
+    {
+     "b": "Understand",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "q": "Which of the following sets is finite?",
+     "a": "{x : x in N and 2x - 1 = 0}",
+     "o": [
+      "{x : x in N and 2x - 1 = 0}",
+      "{x : x in N and x is prime}",
+      "{x : x in N and x is odd}",
+      "The set of circles passing through the origin (0, 0)"
+     ]
+    },
+    {
+     "b": "Understand",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "q": "According to the chapter, what prevents the set of real numbers from being written in roster form, even using three dots?",
+     "a": "Its elements do not follow any particular pattern",
+     "o": [
+      "Its elements do not follow any particular pattern",
+      "It is a finite set, so dots are not needed",
+      "It contains negative numbers",
+      "It is the empty set"
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Easy",
+     "t": "fill_blank",
+     "m": 1,
+     "q": "If S = {x : x is a letter in the word FOLLOW}, then n(S) = ____.",
+     "a": "4"
+    },
+    {
+     "b": "Apply",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "Which of the following pairs of sets are equal?",
+     "a": "{2, 3, 5} and the set of prime factors of 30",
+     "o": [
+      "{2, 3, 5} and the set of prime factors of 30",
+      "{0} and phi",
+      "{5} and {x : x^2 = 25}",
+      "{1, 2} and {x : x is an integer and x^2 <= 4}"
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "q": "Let P = {x : x - 3 = 0}, Q = {x : x^2 = 9}, R = {x : x is a positive integral root of x^2 - 2x - 3 = 0} and S = {0}. Which pair of sets is equal?",
+     "a": "P and R",
+     "o": [
+      "P and R",
+      "P and Q",
+      "Q and R",
+      "P and S"
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "q": "Are A = {x : x in Z and x^2 <= 1} and B = {x : x in R and x^3 = x} equal sets?",
+     "a": "Yes, both are {-1, 0, 1}",
+     "o": [
+      "Yes, both are {-1, 0, 1}",
+      "No, A = {0, 1} but B = {-1, 0, 1}",
+      "No, A = {-1, 0, 1} but B = {-1, 1}",
+      "No, B is infinite because x is a real number"
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "q": "State whether each set is finite or infinite, with a reason: (i) {x : x in N and (x - 1)(x - 2)(x - 3) = 0}, (ii) the set of numbers which are multiples of 5.",
+     "a": "(i) The set is {1, 2, 3}, so it is finite. (ii) There are infinitely many multiples of 5 (5, 10, 15, ...), so it is infinite.",
+     "s": [
+      [
+       "(i) Finite, since the set is {1, 2, 3}",
+       1
+      ],
+      [
+       "(ii) Infinite, since the multiples of 5 never end",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hardest",
+     "t": "long_answer",
+     "m": 3,
+     "q": "Which of the following are the empty set? Give a reason for each. (i) {x : x is a natural number, x < 3 and x > 6}, (ii) {x : x is a point common to two distinct parallel lines}, (iii) {x : x is an even natural number which is also prime}.",
+     "a": "(i) Empty: no natural number is both less than 3 and greater than 6. (ii) Empty: two distinct parallel lines have no common point. (iii) Not empty: 2 is even and prime, so the set is {2}.",
+     "s": [
+      [
+       "(i) Empty, no number is both < 3 and > 6",
+       1
+      ],
+      [
+       "(ii) Empty, parallel lines do not meet",
+       1
+      ],
+      [
+       "(iii) Not empty, the set is {2}",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "assertion_reason",
+     "m": 1,
+     "q": "Assertion (A): The set {x : x in N and 2x - 1 = 0} is a finite set. Reason (R): The equation 2x - 1 = 0 has no solution in N, so the set is empty, and an empty set is finite by definition.",
+     "a": "Both A and R are true, and R is the correct explanation of A",
+     "o": [
+      "Both A and R are true, and R is the correct explanation of A",
+      "Both A and R are true, but R is not the correct explanation of A",
+      "A is true, R is false",
+      "A is false, R is true"
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "multi_statement",
+     "m": 1,
+     "q": "Consider these statements. (I) The set of letters needed to spell CATARACT and the set of letters needed to spell TRACT are equal. (II) n({x : x is a letter in the word LOYAL}) = 4. Which is or are correct?",
+     "a": "Both I and II",
+     "o": [
+      "Both I and II",
+      "Only I",
+      "Only II",
+      "Neither I nor II"
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hardest",
+     "t": "long_answer",
+     "m": 3,
+     "q": "From the sets A = {2, 4, 8, 12}, B = {1, 2, 3, 4}, C = {4, 8, 12, 2}, D = {3, 1, 4, 2, 2}, E = {-1, 1} and F = {1, -1, 1}, select all pairs of equal sets, giving reasons.",
+     "a": "A = C, since both have exactly the elements 2, 4, 8, 12 (order does not matter). B = D, since D = {1, 2, 3, 4} once the repeated 2 is written once. E = F, since F = {-1, 1}. No other pair is equal.",
+     "s": [
+      [
+       "A = C, same elements in a different order",
+       1
+      ],
+      [
+       "B = D, repetition does not change a set",
+       1
+      ],
+      [
+       "E = F, and no other pair is equal",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Evaluate",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "q": "Arjun says: '{0} is the empty set, because 0 means nothing.' Evaluate his claim.",
+     "a": "Arjun is wrong. {0} has one element, the number 0, so n({0}) = 1. The empty set phi has no elements at all, so {0} is not equal to phi.",
+     "s": [
+      [
+       "States that {0} has one element, 0",
+       1
+      ],
+      [
+       "Concludes {0} is not the empty set phi",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Create",
+     "d": "Hardest",
+     "t": "long_answer",
+     "m": 3,
+     "q": "Using natural numbers, write in set-builder form (i) an empty set, (ii) a non-empty finite set, and (iii) an infinite set. Justify each.",
+     "a": "For example: (i) {x : x in N and x < 1} is empty, since no natural number is less than 1. (ii) {x : x in N and x < 4} = {1, 2, 3} is finite and non-empty. (iii) {x : x in N and x is even} is infinite, since the even numbers never end. (Any correct, justified examples earn full marks.)",
+     "s": [
+      [
+       "(i) A correct empty set with reason",
+       1
+      ],
+      [
+       "(ii) A correct non-empty finite set with reason",
+       1
+      ],
+      [
+       "(iii) A correct infinite set with reason",
+       1
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "code": "C11M-1.3",
+   "name": "Subsets, proper subsets and subsets of R",
+   "description": "A subset of B as a set all of whose elements lie in B, proper subsets and supersets, singleton sets, the difference between 'is an element of' and 'is a subset of', listing all subsets of a small set, and the subsets N, Z, Q, T of R.",
+   "idea": "A is a subset of B when every element of A is also an element of B. Every set is a subset of itself and phi is a subset of every set.",
+   "rule": "A subset of B and B subset of A if and only if A = B. If A subset of B and A is not equal to B, A is a proper subset of B and B is a superset of A. An element of a set (x in A) is not the same as a subset ({x} subset of A).",
+   "example": "{1, 3} subset of {1, 3, 5, 7, 9}; {a} subset of {a, b, c} but {a} is not an element of {a, b, c}; N subset of Z subset of Q subset of R.",
+   "difficulty_base": "Easy",
+   "questions": [
+    {
+     "b": "Remember",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "A set A is a subset of a set B if",
+     "a": "every element of A is also an element of B",
+     "o": [
+      "every element of A is also an element of B",
+      "every element of B is also an element of A",
+      "A and B have at least one element in common",
+      "A has fewer elements than B"
+     ]
+    },
+    {
+     "b": "Remember",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "A set having only one element is called",
+     "a": "a singleton set",
+     "o": [
+      "a singleton set",
+      "the empty set",
+      "a proper subset",
+      "a universal set"
+     ]
+    },
+    {
+     "b": "Remember",
+     "d": "Easy",
+     "t": "fill_blank",
+     "m": 1,
+     "q": "In this chapter, the set of irrational numbers is denoted by the letter ____.",
+     "a": "T"
+    },
+    {
+     "b": "Remember",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "rev": true,
+     "q": "About the subsets of the set of real numbers named in this chapter, which relation is FALSE?",
+     "a": "N subset of T",
+     "o": [
+      "N subset of T",
+      "N subset of Z",
+      "Q subset of R",
+      "T subset of R"
+     ]
+    },
+    {
+     "b": "Understand",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "Why is the empty set phi a subset of every set?",
+     "a": "phi has no elements, so no element of phi can fail to be in the other set",
+     "o": [
+      "phi has no elements, so no element of phi can fail to be in the other set",
+      "phi is an element of every set",
+      "every set contains the number 0",
+      "phi is equal to every set"
+     ]
+    },
+    {
+     "b": "Understand",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "Let A = {1, 2, 3} and B = {1, 2, 3, 4}. Which statement is correct?",
+     "a": "A is a proper subset of B, and B is a superset of A",
+     "o": [
+      "A is a proper subset of B, and B is a superset of A",
+      "B is a proper subset of A, and A is a superset of B",
+      "A = B, since all elements of A are in B",
+      "A is a subset of B but not a proper subset of B"
+     ]
+    },
+    {
+     "b": "Understand",
+     "d": "Easy",
+     "t": "fill_blank",
+     "m": 1,
+     "q": "If A subset of B and B subset of A, then A and B are ____ sets.",
+     "a": "equal"
+    },
+    {
+     "b": "Understand",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "q": "Let A = {a, e, i, o, u} and B = {a, b, c, d}. Which statement is correct?",
+     "a": "A is not a subset of B, and B is not a subset of A",
+     "o": [
+      "A is not a subset of B, and B is not a subset of A",
+      "A is a subset of B, since a is in both sets",
+      "B is a subset of A, since a is in both sets",
+      "A = B, since they have a common element"
+     ]
+    },
+    {
+     "b": "Understand",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "q": "Let A = {1, 2, {3, 4}, 5}. Which statement is correct?",
+     "a": "{3, 4} in A",
+     "o": [
+      "{3, 4} in A",
+      "{3, 4} subset of A",
+      "1 subset of A",
+      "{1, 2, 3} subset of A"
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "Let B = {1, 5, 9} and C = {1, 3, 5, 7, 9}. Which statement is correct?",
+     "a": "B subset of C",
+     "o": [
+      "B subset of C",
+      "C subset of B",
+      "B is not a subset of C, since 3 is not in B",
+      "B in C"
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Easy",
+     "t": "fill_blank",
+     "m": 1,
+     "q": "The number of subsets of the set {a, b}, including phi and the set itself, is ____.",
+     "a": "4"
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "q": "Which of the following lists ALL the subsets of {-1, 0, 1}?",
+     "a": "phi, {-1}, {0}, {1}, {-1, 0}, {-1, 1}, {0, 1}, {-1, 0, 1}",
+     "o": [
+      "phi, {-1}, {0}, {1}, {-1, 0}, {-1, 1}, {0, 1}, {-1, 0, 1}",
+      "{-1}, {0}, {1}, {-1, 0}, {-1, 1}, {0, 1}, {-1, 0, 1}",
+      "phi, {-1}, {0}, {1}, {-1, 0}, {-1, 1}, {0, 1}",
+      "phi, {-1}, {0}, {1}, {-1, 0}, {0, 1}, {-1, 0, 1}"
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "q": "Let A = {x : x in R and x^2 - 8x + 12 = 0}, B = {2, 4, 6}, C = {2, 4, 6, 8, ...} and D = {6}. Which set of statements is correct?",
+     "a": "D subset of A, A subset of B and B subset of C",
+     "o": [
+      "D subset of A, A subset of B and B subset of C",
+      "A subset of D, D subset of B and B subset of C",
+      "D subset of A, B subset of A and A subset of C",
+      "D subset of B, B subset of A and C subset of B"
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "q": "Let A = {1, 2, {3, 4}, 5}. State, with a reason, whether each statement is correct: (i) {{3, 4}} subset of A, (ii) {1, 2, 3} subset of A.",
+     "a": "(i) Correct: the only element of {{3, 4}} is {3, 4}, which is an element of A. (ii) Incorrect: 3 is not an element of A (only the set {3, 4} is), so {1, 2, 3} is not a subset of A.",
+     "s": [
+      [
+       "(i) Correct, because {3, 4} in A",
+       1
+      ],
+      [
+       "(ii) Incorrect, because 3 is not in A",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hardest",
+     "t": "long_answer",
+     "m": 3,
+     "q": "Write down all the subsets of {1, 2, 3} and state which of them are proper subsets.",
+     "a": "The subsets are phi, {1}, {2}, {3}, {1, 2}, {1, 3}, {2, 3} and {1, 2, 3} (eight in all). All of them except {1, 2, 3} itself are proper subsets, i.e. seven proper subsets.",
+     "s": [
+      [
+       "Lists phi and the three one-element subsets",
+       1
+      ],
+      [
+       "Lists the three two-element subsets and {1, 2, 3}",
+       1
+      ],
+      [
+       "Identifies the seven proper subsets (all except {1, 2, 3})",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "assertion_reason",
+     "m": 1,
+     "q": "Assertion (A): For any sets A, B and C, if A in B and B subset of C, then A subset of C. Reason (R): For A = {1}, B = {{1}, 2} and C = {{1}, 2, 3}, we have A in B and B subset of C.",
+     "a": "A is false, R is true",
+     "o": [
+      "A is false, R is true",
+      "Both A and R are true, and R is the correct explanation of A",
+      "Both A and R are true, but R is not the correct explanation of A",
+      "A is true, R is false"
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "multi_statement",
+     "m": 1,
+     "q": "Consider these statements. (I) {a} in {a, b, c}. (II) phi in {1, 2, 3}. Which is or are correct?",
+     "a": "Neither I nor II",
+     "o": [
+      "Neither I nor II",
+      "Only I",
+      "Only II",
+      "Both I and II"
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hardest",
+     "t": "long_answer",
+     "m": 3,
+     "q": "Determine whether each statement is true or false. If false, give an example; if true, give a reason. (i) If x in A and A in B, then x in B. (ii) If A subset of B and x not in B, then x not in A.",
+     "a": "(i) False. Take A = {1} and B = {{1}, 2}: 1 in A and A in B, but 1 is not an element of B. (ii) True. If x were in A, then since A subset of B, x would be in B, which contradicts x not in B; so x not in A.",
+     "s": [
+      [
+       "(i) States false",
+       1
+      ],
+      [
+       "(i) Gives a valid counterexample such as A = {1}, B = {{1}, 2}",
+       1
+      ],
+      [
+       "(ii) States true with a correct reason",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Evaluate",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "q": "Kavya says: '{1, 2, 3} subset of {1, 3, 5}, because 1 and 3 are in both sets.' Evaluate her claim.",
+     "a": "Kavya is wrong. For a subset, every element of {1, 2, 3} must be in {1, 3, 5}. The element 2 is not in {1, 3, 5}, so {1, 2, 3} is not a subset of {1, 3, 5}.",
+     "s": [
+      [
+       "Recalls that every element must belong to the second set",
+       1
+      ],
+      [
+       "Points out 2 is not in {1, 3, 5}, so the claim is false",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Create",
+     "d": "Hardest",
+     "t": "long_answer",
+     "m": 3,
+     "q": "Give an example of two sets A and B such that A is a subset of B and A is also an element of B. Verify both facts.",
+     "a": "For example, A = {1} and B = {1, {1}}. A subset of B, because the only element of A, namely 1, is an element of B. A in B, because {1} is itself listed as an element of B. (Any correct, verified example earns full marks.)",
+     "s": [
+      [
+       "Gives valid sets A and B",
+       1
+      ],
+      [
+       "Verifies A subset of B",
+       1
+      ],
+      [
+       "Verifies A in B",
+       1
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "code": "C11M-1.4",
+   "name": "Intervals as subsets of R",
+   "description": "Open, closed and one-end-closed intervals (a, b), [a, b], [a, b), (a, b] as subsets of R, converting between interval and set-builder notation, rays such as [0, infinity), and the length b - a of an interval.",
+   "idea": "For real numbers a < b, an interval is the set of all real numbers between a and b; a round bracket excludes the end point and a square bracket includes it.",
+   "rule": "(a, b) = {x : a < x < b}, [a, b] = {x : a <= x <= b}, [a, b) = {x : a <= x < b}, (a, b] = {x : a < x <= b}. Each has length b - a and contains infinitely many points.",
+   "example": "{x : x in R, -5 < x <= 7} = (-5, 7], of length 12; [0, infinity) is the set of non-negative real numbers.",
+   "difficulty_base": "Easy",
+   "questions": [
+    {
+     "b": "Remember",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "For real numbers a < b, the open interval (a, b) is the set",
+     "a": "{x : a < x < b}",
+     "o": [
+      "{x : a < x < b}",
+      "{x : a <= x <= b}",
+      "{x : a <= x < b}",
+      "{a, b}"
+     ]
+    },
+    {
+     "b": "Remember",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "The length of the interval [a, b) is",
+     "a": "b - a",
+     "o": [
+      "b - a",
+      "b - a + 1",
+      "a - b",
+      "b - a - 1"
+     ]
+    },
+    {
+     "b": "Remember",
+     "d": "Easy",
+     "t": "fill_blank",
+     "m": 1,
+     "q": "In interval notation, the set of non-negative real numbers is [0, ____).",
+     "a": "infinity"
+    },
+    {
+     "b": "Remember",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "rev": true,
+     "q": "About the intervals described in this chapter, which statement is FALSE?",
+     "a": "The interval (a, b) contains its end points a and b",
+     "o": [
+      "The interval (a, b) contains its end points a and b",
+      "The interval [a, b] contains both end points a and b",
+      "Every interval (a, b) with a < b contains infinitely many points",
+      "(-infinity, 0) is the set of negative real numbers"
+     ]
+    },
+    {
+     "b": "Understand",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "On the number line, [a, b) is drawn with a filled dot at a and a hollow dot at b. What does this show?",
+     "a": "a is included in the interval and b is excluded",
+     "o": [
+      "a is included in the interval and b is excluded",
+      "a is excluded from the interval and b is included",
+      "both a and b are included",
+      "both a and b are excluded"
+     ]
+    },
+    {
+     "b": "Understand",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "Which of the following numbers belongs to the interval (-5, 7]?",
+     "a": "7",
+     "o": [
+      "7",
+      "-5",
+      "8",
+      "-6"
+     ]
+    },
+    {
+     "b": "Understand",
+     "d": "Easy",
+     "t": "fill_blank",
+     "m": 1,
+     "q": "The set {x : x in R, -5 < x <= 7} is the interval (-5, 7]; the one end point that this interval does not contain is ____.",
+     "a": "-5"
+    },
+    {
+     "b": "Understand",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "q": "If A = (-2, 4) and B = [-4, 6], which statement is correct?",
+     "a": "A subset of B",
+     "o": [
+      "A subset of B",
+      "B subset of A",
+      "A = B",
+      "Neither set is a subset of the other"
+     ]
+    },
+    {
+     "b": "Understand",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "q": "How many real numbers belong to the open interval (2, 3)?",
+     "a": "Infinitely many",
+     "o": [
+      "Infinitely many",
+      "None, since 2 and 3 are excluded",
+      "Exactly one",
+      "Exactly two"
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "The set {x : x in R, -12 < x < -10}, written as an interval, is",
+     "a": "(-12, -10)",
+     "o": [
+      "(-12, -10)",
+      "[-12, -10]",
+      "(-10, -12)",
+      "{-11}"
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Easy",
+     "t": "fill_blank",
+     "m": 1,
+     "q": "The length of the interval (-3, 5] is ____.",
+     "a": "8"
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "q": "The interval [-23, 5) in set-builder form is",
+     "a": "{x : x in R, -23 <= x < 5}",
+     "o": [
+      "{x : x in R, -23 <= x < 5}",
+      "{x : x in R, -23 < x <= 5}",
+      "{x : x in R, -23 <= x <= 5}",
+      "{x : x in Z, -23 <= x < 5}"
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "q": "How many integers belong to the interval [-2, 3)?",
+     "a": "5",
+     "o": [
+      "5",
+      "6",
+      "4",
+      "Infinitely many"
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "q": "Write as intervals: (i) {x : x in R, 0 <= x < 7}, (ii) {x : x in R, 3 <= x <= 4}.",
+     "a": "(i) [0, 7), closed at 0 and open at 7. (ii) [3, 4], closed at both ends.",
+     "s": [
+      [
+       "(i) [0, 7)",
+       1
+      ],
+      [
+       "(ii) [3, 4]",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hardest",
+     "t": "long_answer",
+     "m": 3,
+     "q": "Write each interval in set-builder form and state its length: (i) (-4, 1), (ii) [2, 9], (iii) (2, 9].",
+     "a": "(i) {x : x in R, -4 < x < 1}, length 5. (ii) {x : x in R, 2 <= x <= 9}, length 7. (iii) {x : x in R, 2 < x <= 9}, length 7.",
+     "s": [
+      [
+       "(i) {x : x in R, -4 < x < 1}, length 5",
+       1
+      ],
+      [
+       "(ii) {x : x in R, 2 <= x <= 9}, length 7",
+       1
+      ],
+      [
+       "(iii) {x : x in R, 2 < x <= 9}, length 7",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "assertion_reason",
+     "m": 1,
+     "q": "Assertion (A): The interval [2, 5] is a subset of the interval (1, 6). Reason (R): The length of [2, 5] is less than the length of (1, 6).",
+     "a": "Both A and R are true, but R is not the correct explanation of A",
+     "o": [
+      "Both A and R are true, but R is not the correct explanation of A",
+      "Both A and R are true, and R is the correct explanation of A",
+      "A is true, R is false",
+      "A is false, R is true"
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "multi_statement",
+     "m": 1,
+     "q": "Consider these statements. (I) The intervals [a, b] and (a, b) have the same length. (II) The number 4 belongs to the interval (4, 9]. Which is or are correct?",
+     "a": "Only I",
+     "o": [
+      "Only I",
+      "Only II",
+      "Both I and II",
+      "Neither I nor II"
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hardest",
+     "t": "long_answer",
+     "m": 3,
+     "q": "A student writes the set {x : x in R, 1 < x <= 4} as the interval [1, 4) and says its length is 4 - 1 + 1 = 4. Find and correct both errors.",
+     "a": "First error: 1 is excluded and 4 is included, so the interval is (1, 4], not [1, 4). Second error: the length of an interval is b - a, not b - a + 1 (that counts integers, not length), so the length is 4 - 1 = 3.",
+     "s": [
+      [
+       "Identifies that the brackets are reversed",
+       1
+      ],
+      [
+       "Corrects the interval to (1, 4]",
+       1
+      ],
+      [
+       "Corrects the length to b - a = 3",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Evaluate",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "q": "Meena says: '[0, infinity) and (0, infinity) are the same set, since 0 is neither positive nor negative.' Evaluate her claim.",
+     "a": "Meena is wrong. The square bracket means 0 is included, so 0 in [0, infinity) but 0 is not in (0, infinity). [0, infinity) is the set of non-negative real numbers and (0, infinity) is the set of positive real numbers, so the sets differ by the element 0.",
+     "s": [
+      [
+       "Notes that 0 belongs to [0, infinity) but not to (0, infinity)",
+       1
+      ],
+      [
+       "Concludes the two sets are not equal",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Create",
+     "d": "Hardest",
+     "t": "long_answer",
+     "m": 3,
+     "q": "Give two different intervals, both with end points 1 and 3, such that one is a subset of the other. Write both in set-builder form and state their lengths.",
+     "a": "For example, (1, 3) = {x : x in R, 1 < x < 3} and [1, 3] = {x : x in R, 1 <= x <= 3}. Every element of (1, 3) is in [1, 3], so (1, 3) subset of [1, 3]. Both have length 3 - 1 = 2. (Any correct pair, e.g. [1, 3) and [1, 3], earns full marks.)",
+     "s": [
+      [
+       "Gives two different intervals with end points 1 and 3, one inside the other",
+       1
+      ],
+      [
+       "Writes both correctly in set-builder form",
+       1
+      ],
+      [
+       "States both lengths as 2",
+       1
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "code": "C11M-1.5",
+   "name": "Union and intersection of sets",
+   "description": "The union and intersection of two sets, their Venn diagram regions, disjoint sets, and the laws for union and intersection (commutative, associative, identity, idempotent, laws of phi and U, and the distributive law).",
+   "idea": "A union B collects every element of A and of B, with common elements taken only once; A intersection B keeps only the elements common to both.",
+   "rule": "A union B = {x : x in A or x in B}; A intersection B = {x : x in A and x in B}. A and B are disjoint if A intersection B = phi. If B subset of A then A union B = A and A intersection B = B. A intersection (B union C) = (A intersection B) union (A intersection C).",
+   "example": "For A = {2, 4, 6, 8} and B = {6, 8, 10, 12}: A union B = {2, 4, 6, 8, 10, 12} and A intersection B = {6, 8}.",
+   "difficulty_base": "Easy",
+   "questions": [
+    {
+     "b": "Remember",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "The union of two sets A and B is",
+     "a": "{x : x in A or x in B}",
+     "o": [
+      "{x : x in A or x in B}",
+      "{x : x in A and x in B}",
+      "{x : x in A and x not in B}",
+      "{x : x in U and x not in A}"
+     ]
+    },
+    {
+     "b": "Remember",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "Two sets A and B are called disjoint if",
+     "a": "A intersection B = phi",
+     "o": [
+      "A intersection B = phi",
+      "A union B = phi",
+      "A is not a subset of B",
+      "A - B = phi"
+     ]
+    },
+    {
+     "b": "Remember",
+     "d": "Easy",
+     "t": "fill_blank",
+     "m": 1,
+     "q": "The property A intersection (B union C) = (A intersection B) union (A intersection C) is called the ____ law.",
+     "a": "distributive"
+    },
+    {
+     "b": "Remember",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "rev": true,
+     "q": "About the properties of union and intersection, which statement is NOT true for every subset A of a universal set U?",
+     "a": "A union phi = phi",
+     "o": [
+      "A union phi = phi",
+      "A union phi = A",
+      "U union A = U",
+      "A intersection A = A"
+     ]
+    },
+    {
+     "b": "Understand",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "In a Venn diagram with two overlapping circles A and B inside a rectangle U, which region represents A intersection B?",
+     "a": "Only the overlapping part common to both circles",
+     "o": [
+      "Only the overlapping part common to both circles",
+      "Both circles together, including the overlapping part",
+      "The part of circle A that lies outside circle B",
+      "The part of the rectangle outside both circles"
+     ]
+    },
+    {
+     "b": "Understand",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "Let X = {Ram, Geeta, Akbar} be the Class XI students in the hockey team and Y = {Geeta, David, Ashok} those in the football team. X union Y is the set of Class XI students who are in",
+     "a": "the hockey team or the football team or both",
+     "o": [
+      "the hockey team or the football team or both",
+      "both the hockey team and the football team",
+      "the hockey team but not the football team",
+      "neither the hockey team nor the football team"
+     ]
+    },
+    {
+     "b": "Understand",
+     "d": "Easy",
+     "t": "fill_blank",
+     "m": 1,
+     "q": "If B subset of A, then A union B = ____.",
+     "a": "A"
+    },
+    {
+     "b": "Understand",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "q": "If B subset of A, then A intersection B equals",
+     "a": "B",
+     "o": [
+      "B",
+      "A",
+      "phi",
+      "A - B"
+     ]
+    },
+    {
+     "b": "Understand",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "q": "For A = {2, 4, 6, 8} and B = {6, 8, 10, 12}, why does A union B have 6 elements and not 8?",
+     "a": "The common elements 6 and 8 are taken only once",
+     "o": [
+      "The common elements 6 and 8 are taken only once",
+      "The union keeps only the common elements",
+      "The union removes the common elements from both sets",
+      "Only the elements of B are counted in the union"
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "If X = {1, 3, 5} and Y = {1, 2, 3}, then X union Y is",
+     "a": "{1, 2, 3, 5}",
+     "o": [
+      "{1, 2, 3, 5}",
+      "{1, 3}",
+      "{5}",
+      "{2, 5}"
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Easy",
+     "t": "fill_blank",
+     "m": 1,
+     "q": "If A = {3, 5, 7, 9, 11} and B = {7, 9, 11, 13}, then the number of elements in A intersection B is ____.",
+     "a": "3"
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "q": "If A = {2, 4, 6, 8, 10}, B = {4, 8, 12} and C = {6, 12, 18}, then A intersection (B union C) is",
+     "a": "{4, 6, 8}",
+     "o": [
+      "{4, 6, 8}",
+      "{4, 8}",
+      "{4, 6, 8, 12, 18}",
+      "{2, 4, 6, 8, 10, 12, 18}"
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "q": "Which of the following pairs of sets is disjoint?",
+     "a": "{x : x is an even integer} and {x : x is an odd integer}",
+     "o": [
+      "{x : x is an even integer} and {x : x is an odd integer}",
+      "{1, 2, 3, 4} and {x : x is a natural number and 4 <= x <= 6}",
+      "{a, e, i, o, u} and {c, d, e, f}",
+      "{2, 6, 10} and {x : x is a natural number less than 3}"
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "q": "Let A = {x : x is a natural number and a multiple of 3} and B = {x : x is a natural number less than 6}. Find A intersection B and A union B.",
+     "a": "A intersection B = {3}, since 3 is the only multiple of 3 less than 6. A union B = {1, 2, 3, 4, 5, 6, 9, 12, 15, ...}, i.e. {x : x = 1, 2, 4, 5 or x is a natural number that is a multiple of 3}.",
+     "s": [
+      [
+       "A intersection B = {3}",
+       1
+      ],
+      [
+       "A union B = {1, 2, 3, 4, 5, 6, 9, 12, ...}",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hardest",
+     "t": "long_answer",
+     "m": 3,
+     "q": "Let A = {1, 2, 3, 4}, B = {3, 4, 5, 6} and C = {5, 6, 7, 8}. Verify that A intersection (B union C) = (A intersection B) union (A intersection C).",
+     "a": "B union C = {3, 4, 5, 6, 7, 8}, so A intersection (B union C) = {3, 4}. A intersection B = {3, 4} and A intersection C = phi, so (A intersection B) union (A intersection C) = {3, 4}. Both sides equal {3, 4}.",
+     "s": [
+      [
+       "Finds B union C and the left side {3, 4}",
+       1
+      ],
+      [
+       "Finds A intersection B = {3, 4} and A intersection C = phi",
+       1
+      ],
+      [
+       "Concludes both sides equal {3, 4}",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "assertion_reason",
+     "m": 1,
+     "q": "Assertion (A): The sets A = {2, 4, 6, 8} and B = {1, 3, 5, 7} are disjoint. Reason (R): Two sets are called disjoint if their union is the empty set.",
+     "a": "A is true, R is false",
+     "o": [
+      "A is true, R is false",
+      "Both A and R are true, and R is the correct explanation of A",
+      "Both A and R are true, but R is not the correct explanation of A",
+      "A is false, R is true"
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "multi_statement",
+     "m": 1,
+     "q": "Consider these statements. (I) For any two sets A and B, A intersection B is a subset of A union B. (II) If A union B = A intersection B, then A = B. Which is or are correct?",
+     "a": "Both I and II",
+     "o": [
+      "Both I and II",
+      "Only I",
+      "Only II",
+      "Neither I nor II"
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hardest",
+     "t": "long_answer",
+     "m": 3,
+     "q": "Show, by giving an example, that A intersection B = A intersection C need not imply B = C.",
+     "a": "For example, take A = {1}, B = {1, 2} and C = {1, 3}. Then A intersection B = {1} and A intersection C = {1}, so A intersection B = A intersection C, but B is not equal to C since 2 in B and 2 not in C. (Any correct example earns full marks.)",
+     "s": [
+      [
+       "Chooses suitable sets A, B, C",
+       1
+      ],
+      [
+       "Shows A intersection B = A intersection C",
+       1
+      ],
+      [
+       "Shows B is not equal to C",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Evaluate",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "q": "Sohan says: 'A union B always has as many elements as A and B together.' Test his claim with A = {2, 4, 6, 8} and B = {6, 8, 10, 12} and evaluate it.",
+     "a": "A has 4 elements and B has 4, but A union B = {2, 4, 6, 8, 10, 12} has only 6 elements, because the common elements 6 and 8 are taken only once. So the claim is false (it holds only when A and B are disjoint).",
+     "s": [
+      [
+       "Finds A union B = {2, 4, 6, 8, 10, 12} with 6 elements",
+       1
+      ],
+      [
+       "Concludes the claim is false because common elements are taken once",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Create",
+     "d": "Hardest",
+     "t": "long_answer",
+     "m": 3,
+     "q": "Find sets A, B and C such that A intersection B, B intersection C and A intersection C are all non-empty, but A intersection B intersection C = phi. Verify your answer.",
+     "a": "For example, A = {1, 2}, B = {2, 3}, C = {1, 3}. Then A intersection B = {2}, B intersection C = {3}, A intersection C = {1}, all non-empty, but no element is in all three sets, so A intersection B intersection C = phi. (Any correct, verified example earns full marks.)",
+     "s": [
+      [
+       "Gives suitable sets A, B, C",
+       1
+      ],
+      [
+       "Shows the three pairwise intersections are non-empty",
+       1
+      ],
+      [
+       "Shows A intersection B intersection C = phi",
+       1
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "code": "C11M-1.6",
+   "name": "Difference of sets",
+   "description": "The difference A - B (A minus B) of two sets in that order, its Venn diagram region, the fact that A - B and B - A are generally different, and that A - B, A intersection B and B - A are mutually disjoint.",
+   "idea": "A - B is the set of elements that belong to A but not to B; the order matters.",
+   "rule": "A - B = {x : x in A and x not in B}. In general A - B is not equal to B - A. The sets A - B, A intersection B and B - A are mutually disjoint, and A = (A intersection B) union (A - B).",
+   "example": "For A = {1, 2, 3, 4, 5, 6} and B = {2, 4, 6, 8}: A - B = {1, 3, 5} and B - A = {8}.",
+   "difficulty_base": "Easy",
+   "questions": [
+    {
+     "b": "Remember",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "The difference A - B of two sets A and B is the set of elements that",
+     "a": "belong to A but not to B",
+     "o": [
+      "belong to A but not to B",
+      "belong to B but not to A",
+      "belong to both A and B",
+      "belong to neither A nor B"
+     ]
+    },
+    {
+     "b": "Remember",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "In set-builder form, A - B is",
+     "a": "{x : x in A and x not in B}",
+     "o": [
+      "{x : x in A and x not in B}",
+      "{x : x in B and x not in A}",
+      "{x : x in A or x not in B}",
+      "{x : x in A and x in B}"
+     ]
+    },
+    {
+     "b": "Remember",
+     "d": "Easy",
+     "t": "fill_blank",
+     "m": 1,
+     "q": "The sets A - B, A intersection B and B - A are mutually ____ sets.",
+     "a": "disjoint"
+    },
+    {
+     "b": "Remember",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "rev": true,
+     "q": "About the difference of two sets, which statement is NOT correct in general?",
+     "a": "A - B = B - A",
+     "o": [
+      "A - B = B - A",
+      "A - B is a subset of A",
+      "(A - B) intersection B = phi",
+      "A - B, A intersection B and B - A are mutually disjoint"
+     ]
+    },
+    {
+     "b": "Understand",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "In a Venn diagram with two overlapping circles A and B, which region represents A - B?",
+     "a": "The part of circle A that lies outside circle B",
+     "o": [
+      "The part of circle A that lies outside circle B",
+      "The part of circle B that lies outside circle A",
+      "The overlapping part of the two circles",
+      "The part of the rectangle outside both circles"
+     ]
+    },
+    {
+     "b": "Understand",
+     "d": "Easy",
+     "t": "fill_blank",
+     "m": 1,
+     "q": "The symbol A - B is read as 'A ____ B'.",
+     "a": "minus"
+    },
+    {
+     "b": "Understand",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "If R is the set of real numbers and Q is the set of rational numbers, then R - Q is",
+     "a": "the set of irrational numbers",
+     "o": [
+      "the set of irrational numbers",
+      "phi",
+      "Q",
+      "the set of integers"
+     ]
+    },
+    {
+     "b": "Understand",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "q": "If A subset of B, then A - B equals",
+     "a": "phi",
+     "o": [
+      "phi",
+      "A",
+      "B",
+      "B - A"
+     ]
+    },
+    {
+     "b": "Understand",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "q": "Let V = {a, e, i, o, u} and B = {a, i, k, u}. Which statement is correct?",
+     "a": "V - B = {e, o} and B - V = {k}",
+     "o": [
+      "V - B = {e, o} and B - V = {k}",
+      "V - B = {k} and B - V = {e, o}",
+      "V - B = {a, i, u} and B - V = {a, i, u}",
+      "V - B = {e, k, o} and B - V = phi"
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "If A = {1, 3, 5, 7, 9} and B = {3, 6, 9, 12}, then B - A is",
+     "a": "{6, 12}",
+     "o": [
+      "{6, 12}",
+      "{1, 5, 7}",
+      "{3, 9}",
+      "{1, 5, 6, 7, 12}"
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Easy",
+     "t": "fill_blank",
+     "m": 1,
+     "q": "If X = {a, b, c, d} and Y = {b, e, d, h}, then the number of elements in X - Y is ____.",
+     "a": "2"
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "q": "If A = {3, 6, 9, 12, 15} and C = {2, 4, 6, 8, 10, 12}, then C - A is",
+     "a": "{2, 4, 8, 10}",
+     "o": [
+      "{2, 4, 8, 10}",
+      "{3, 9, 15}",
+      "{6, 12}",
+      "{2, 3, 4, 8, 9, 10, 15}"
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "q": "Let A = {x : x is a natural number less than 10} and B = {x : x is an even natural number}. Then A - B is",
+     "a": "{1, 3, 5, 7, 9}",
+     "o": [
+      "{1, 3, 5, 7, 9}",
+      "{2, 4, 6, 8}",
+      "{10, 12, 14, ...}",
+      "phi"
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "q": "For A = {1, 2, 3, 4, 5} and B = {4, 5, 6, 7}, show that A = (A intersection B) union (A - B).",
+     "a": "A intersection B = {4, 5} and A - B = {1, 2, 3}. Their union is {1, 2, 3, 4, 5} = A.",
+     "s": [
+      [
+       "Finds A intersection B = {4, 5} and A - B = {1, 2, 3}",
+       1
+      ],
+      [
+       "Shows their union is {1, 2, 3, 4, 5} = A",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hardest",
+     "t": "long_answer",
+     "m": 3,
+     "q": "For A = {1, 2, 3, 4, 5, 6} and B = {4, 5, 6, 7, 8}, find A - B, A intersection B and B - A. Verify that these three sets are mutually disjoint and that together they make up A union B.",
+     "a": "A - B = {1, 2, 3}, A intersection B = {4, 5, 6}, B - A = {7, 8}. No element appears in two of these sets, so they are mutually disjoint. Their union is {1, 2, 3, 4, 5, 6, 7, 8} = A union B.",
+     "s": [
+      [
+       "Finds A - B = {1, 2, 3} and B - A = {7, 8}",
+       1
+      ],
+      [
+       "Finds A intersection B = {4, 5, 6} and notes no common elements among the three",
+       1
+      ],
+      [
+       "Shows their union equals A union B = {1, 2, ..., 8}",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "assertion_reason",
+     "m": 1,
+     "q": "Assertion (A): For A = {1, 2, 3} and B = {3, 4}, A - B = B - A. Reason (R): A - B is the set of those elements of A which are not in B.",
+     "a": "A is false, R is true",
+     "o": [
+      "A is false, R is true",
+      "Both A and R are true, and R is the correct explanation of A",
+      "Both A and R are true, but R is not the correct explanation of A",
+      "A is true, R is false"
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "multi_statement",
+     "m": 1,
+     "q": "Consider these statements. (I) If A subset of B, then C - B subset of C - A for any set C. (II) For any sets A and B, A union (B - A) = B. Which is or are correct?",
+     "a": "Only I",
+     "o": [
+      "Only I",
+      "Only II",
+      "Both I and II",
+      "Neither I nor II"
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hardest",
+     "t": "long_answer",
+     "m": 3,
+     "q": "Let A = {2, 4} and B = {1, 2, 3, 4}. Show that A subset of B, A - B = phi, A union B = B and A intersection B = A all hold. Then explain why, for any sets, A - B = phi forces A subset of B.",
+     "a": "Every element of A is in B, so A subset of B. A - B = phi, since 2 and 4 are both in B. A union B = {1, 2, 3, 4} = B and A intersection B = {2, 4} = A. In general, if A - B = phi then no element of A lies outside B, i.e. every element of A is in B, so A subset of B.",
+     "s": [
+      [
+       "Verifies A subset of B and A - B = phi",
+       1
+      ],
+      [
+       "Verifies A union B = B and A intersection B = A",
+       1
+      ],
+      [
+       "Explains that A - B = phi means no element of A is outside B",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Evaluate",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "q": "For A = {1, 2, 3, 4} and B = {3, 4, 5}, Nisha writes A - B = {1, 2, 5}. Evaluate her answer.",
+     "a": "Nisha is wrong. 5 is not an element of A, so it cannot be in A - B. She has included B - A as well. The correct answer is A - B = {1, 2}.",
+     "s": [
+      [
+       "Points out 5 is not in A, so it cannot be in A - B",
+       1
+      ],
+      [
+       "Gives the correct answer A - B = {1, 2}",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Create",
+     "d": "Hardest",
+     "t": "long_answer",
+     "m": 3,
+     "q": "Construct two non-empty sets A and B, with A not equal to B, such that A - B = phi. Explain why your example works and find B - A for your sets.",
+     "a": "For example, A = {1, 2} and B = {1, 2, 3}. Every element of A is in B, so A - B = phi; A is not equal to B since 3 is in B only. B - A = {3}. (Any example with A a proper subset of B earns full marks.)",
+     "s": [
+      [
+       "Gives non-empty sets with A a proper subset of B",
+       1
+      ],
+      [
+       "Explains why A - B = phi",
+       1
+      ],
+      [
+       "Finds B - A correctly for the chosen sets",
+       1
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "code": "C11M-1.7",
+   "name": "Universal set, complement and De Morgan's laws",
+   "description": "The universal set U of a context (drawn as a rectangle in a Venn diagram), the complement A' of a subset A with respect to U, the complement laws, double complementation, the laws for phi and U, and De Morgan's laws.",
+   "idea": "The universal set U is the basic set containing all sets under discussion; the complement A' is everything in U that is not in A.",
+   "rule": "A' = {x : x in U and x not in A} = U - A. A union A' = U, A intersection A' = phi, (A')' = A, phi' = U, U' = phi. De Morgan's laws: (A union B)' = A' intersection B' and (A intersection B)' = A' union B'.",
+   "example": "For U = {1, 2, 3, 4, 5, 6}, A = {2, 3}, B = {3, 4, 5}: A' = {1, 4, 5, 6}, B' = {1, 2, 6}, and (A union B)' = {1, 6} = A' intersection B'.",
+   "difficulty_base": "Easy",
+   "questions": [
+    {
+     "b": "Remember",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "In a Venn diagram, the universal set is usually represented by",
+     "a": "a rectangle",
+     "o": [
+      "a rectangle",
+      "a circle",
+      "the overlap of two circles",
+      "a single point"
+     ]
+    },
+    {
+     "b": "Remember",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "The complement A' of a subset A of the universal set U is",
+     "a": "{x : x in U and x not in A}",
+     "o": [
+      "{x : x in U and x not in A}",
+      "{x : x in A and x not in U}",
+      "{x : x in U and x in A}",
+      "A - U"
+     ]
+    },
+    {
+     "b": "Remember",
+     "d": "Easy",
+     "t": "fill_blank",
+     "m": 1,
+     "q": "By the law of double complementation, (A')' = ____.",
+     "a": "A"
+    },
+    {
+     "b": "Remember",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "rev": true,
+     "q": "Among the properties of complement sets, which statement is FALSE?",
+     "a": "A intersection A' = U",
+     "o": [
+      "A intersection A' = U",
+      "A union A' = U",
+      "phi' = U",
+      "U' = phi"
+     ]
+    },
+    {
+     "b": "Understand",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "Let U be the set of all students of Class XI of a coeducational school and A the set of all girls in Class XI. Then A' is",
+     "a": "the set of all boys in Class XI",
+     "o": [
+      "the set of all boys in Class XI",
+      "the set of all girls in Class XI",
+      "the set of all boys in the school",
+      "phi"
+     ]
+    },
+    {
+     "b": "Understand",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "Given A = {1, 3, 5}, B = {2, 4, 6} and C = {0, 2, 4, 6, 8}, which of the following can be a universal set for all three sets?",
+     "a": "{0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10}",
+     "o": [
+      "{0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10}",
+      "{0, 1, 2, 3, 4, 5, 6}",
+      "phi",
+      "{1, 2, 3, 4, 5, 6, 7, 8}"
+     ]
+    },
+    {
+     "b": "Understand",
+     "d": "Easy",
+     "t": "fill_blank",
+     "m": 1,
+     "q": "The complement of A can be written as a difference of sets: A' = ____ - A.",
+     "a": "U"
+    },
+    {
+     "b": "Understand",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "q": "By De Morgan's law, (A union B)' equals",
+     "a": "A' intersection B'",
+     "o": [
+      "A' intersection B'",
+      "A' union B'",
+      "A intersection B",
+      "(A intersection B)'"
+     ]
+    },
+    {
+     "b": "Understand",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "q": "Let U be the set of all triangles in a plane and A the set of all triangles with at least one angle different from 60 degrees. Then A' is",
+     "a": "the set of all equilateral triangles",
+     "o": [
+      "the set of all equilateral triangles",
+      "the set of all right triangles",
+      "phi",
+      "the set of all isosceles triangles"
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "If U = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10} and A = {2, 3, 5, 7}, then A' is",
+     "a": "{1, 4, 6, 8, 9, 10}",
+     "o": [
+      "{1, 4, 6, 8, 9, 10}",
+      "{2, 3, 5, 7}",
+      "{4, 6, 8, 9, 10}",
+      "{1, 2, 3, 4, 5, 6, 7, 8, 9, 10}"
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Easy",
+     "t": "fill_blank",
+     "m": 1,
+     "q": "If U = {a, b, c, d, e, f, g, h} and A = {a, b, c}, then the number of elements in A' is ____.",
+     "a": "5"
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "q": "If U = {1, 2, 3, 4, 5, 6, 7, 8, 9}, A = {1, 2, 3, 4} and C = {3, 4, 5, 6}, then (A union C)' is",
+     "a": "{7, 8, 9}",
+     "o": [
+      "{7, 8, 9}",
+      "{1, 2, 5, 6, 7, 8, 9}",
+      "{3, 4}",
+      "{5, 6, 7, 8, 9}"
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "q": "Taking the set of natural numbers as the universal set, the complement of {x : x is a positive multiple of 3} is",
+     "a": "{x : x is a natural number not divisible by 3}",
+     "o": [
+      "{x : x is a natural number not divisible by 3}",
+      "{x : x is a negative multiple of 3}",
+      "{x : x is an even natural number}",
+      "phi"
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "q": "Let U = {1, 2, 3, 4, 5, 6, 7, 8, 9}, A = {2, 4, 6, 8} and B = {2, 3, 5, 7}. Verify that (A intersection B)' = A' union B'.",
+     "a": "A intersection B = {2}, so (A intersection B)' = {1, 3, 4, 5, 6, 7, 8, 9}. A' = {1, 3, 5, 7, 9} and B' = {1, 4, 6, 8, 9}, so A' union B' = {1, 3, 4, 5, 6, 7, 8, 9}. The two sets are equal.",
+     "s": [
+      [
+       "Finds (A intersection B)' = {1, 3, 4, 5, 6, 7, 8, 9}",
+       1
+      ],
+      [
+       "Finds A', B' and A' union B' = {1, 3, 4, 5, 6, 7, 8, 9}, so they are equal",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hardest",
+     "t": "long_answer",
+     "m": 3,
+     "q": "Let U = {1, 2, 3, 4, 5, 6}, A = {1, 2} and B = {2, 3, 4}. Find A', B', A' intersection B' and A union B, and hence show that (A union B)' = A' intersection B'.",
+     "a": "A' = {3, 4, 5, 6}, B' = {1, 5, 6}, so A' intersection B' = {5, 6}. A union B = {1, 2, 3, 4}, so (A union B)' = {5, 6}. Hence (A union B)' = A' intersection B' = {5, 6}.",
+     "s": [
+      [
+       "Finds A' = {3, 4, 5, 6} and B' = {1, 5, 6}",
+       1
+      ],
+      [
+       "Finds A' intersection B' = {5, 6} and A union B = {1, 2, 3, 4}",
+       1
+      ],
+      [
+       "Shows (A union B)' = {5, 6} = A' intersection B'",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "assertion_reason",
+     "m": 1,
+     "q": "Assertion (A): For every subset A of a universal set U, A union A' = U. Reason (R): The complement of the empty set is the universal set, that is, phi' = U.",
+     "a": "Both A and R are true, but R is not the correct explanation of A",
+     "o": [
+      "Both A and R are true, but R is not the correct explanation of A",
+      "Both A and R are true, and R is the correct explanation of A",
+      "A is true, R is false",
+      "A is false, R is true"
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "multi_statement",
+     "m": 1,
+     "q": "Consider these statements. (I) For all subsets A and B of U, (A intersection B)' = A' intersection B'. (II) For every subset A of U, U' intersection A = phi. Which is or are correct?",
+     "a": "Only II",
+     "o": [
+      "Only II",
+      "Only I",
+      "Both I and II",
+      "Neither I nor II"
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hardest",
+     "t": "long_answer",
+     "m": 3,
+     "q": "Two overlapping circles A and B are drawn inside a rectangle U. Describe in words the region for (A union B)' and the region for A' intersection B', and explain why they are the same region.",
+     "a": "A union B is everything inside at least one circle, so (A union B)' is the part of the rectangle outside both circles. A' is everything outside circle A and B' is everything outside circle B; their intersection is the part outside circle A and also outside circle B, which is again the part of the rectangle outside both circles. So the regions coincide, as De Morgan's law (A union B)' = A' intersection B' states.",
+     "s": [
+      [
+       "Describes (A union B)' as the region outside both circles",
+       1
+      ],
+      [
+       "Describes A' intersection B' as outside A and also outside B",
+       1
+      ],
+      [
+       "Concludes the regions are the same, matching De Morgan's law",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Evaluate",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "q": "Ravi writes (A intersection B)' = A' intersection B'. Test his statement with U = {1, 2, 3, 4}, A = {1, 2} and B = {2, 3}, and evaluate it.",
+     "a": "A intersection B = {2}, so (A intersection B)' = {1, 3, 4}. A' = {3, 4}, B' = {1, 4}, so A' intersection B' = {4}. These differ, so Ravi is wrong. The correct law is (A intersection B)' = A' union B' = {1, 3, 4}.",
+     "s": [
+      [
+       "Computes (A intersection B)' = {1, 3, 4} and A' intersection B' = {4}",
+       1
+      ],
+      [
+       "Concludes the statement is false and gives the correct law (A intersection B)' = A' union B'",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Create",
+     "d": "Hardest",
+     "t": "long_answer",
+     "m": 3,
+     "q": "Choose a universal set U with 6 elements and two subsets A and B of U that overlap but are not equal. Use them to verify De Morgan's law (A union B)' = A' intersection B', showing every set you find.",
+     "a": "For example, U = {1, 2, 3, 4, 5, 6}, A = {1, 2, 3}, B = {3, 4}. A union B = {1, 2, 3, 4}, so (A union B)' = {5, 6}. A' = {4, 5, 6}, B' = {1, 2, 5, 6}, so A' intersection B' = {5, 6}. Both sides equal {5, 6}. (Any correct choice, fully worked, earns full marks.)",
+     "s": [
+      [
+       "Chooses a valid U with 6 elements and overlapping, unequal subsets A and B",
+       1
+      ],
+      [
+       "Finds A union B and (A union B)' correctly",
+       1
+      ],
+      [
+       "Finds A', B' and A' intersection B', and shows the two sides are equal",
+       1
+      ]
+     ]
+    }
+   ]
+  }
+ ]
+}
