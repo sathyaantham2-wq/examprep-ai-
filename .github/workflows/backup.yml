@@ -1,0 +1,85 @@
+name: Backup
+
+# F014: daily encrypted backup of the production database, restored and verified every time.
+#
+# Supabase's Free plan keeps no restorable backups of its own, so this IS the backup. Every run:
+#   1. dumps the public schema (scripts/db-backup.sh), encrypted with BACKUP_PASSPHRASE;
+#   2. restores that same file into a throwaway Postgres 17 and checks every table's row count
+#      (scripts/db-restore.sh), so a backup that can't be restored fails the run;
+#   3. keeps the encrypted file as a workflow artifact for 30 days.
+# A failed scheduled run emails the repository owner (GitHub's default). See
+# docs/runbooks/backup-restore.md for restoring.
+#
+# Secrets (Settings > Secrets and variables > Actions):
+#   PROD_DATABASE_URL   production connection string (Supabase session pooler, port 5432)
+#   BACKUP_PASSPHRASE   20+ characters; keep a copy OUTSIDE GitHub, or backups can't be opened
+
+on:
+  schedule:
+    - cron: '30 20 * * *' # 02:00 IST
+  workflow_dispatch:
+
+concurrency:
+  group: backup
+  cancel-in-progress: false
+
+jobs:
+  backup:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    services:
+      postgres:
+        image: postgres:17
+        env:
+          POSTGRES_PASSWORD: postgres
+        ports:
+          - 5432:5432
+        options: >-
+          --health-cmd pg_isready
+          --health-interval 5s
+          --health-timeout 5s
+          --health-retries 10
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Check secrets
+        env:
+          PROD_DATABASE_URL: ${{ secrets.PROD_DATABASE_URL }}
+          BACKUP_PASSPHRASE: ${{ secrets.BACKUP_PASSPHRASE }}
+        run: |
+          if [ -z "$PROD_DATABASE_URL" ] || [ -z "$BACKUP_PASSPHRASE" ]; then
+            echo "::error::PROD_DATABASE_URL and BACKUP_PASSPHRASE secrets must be set. NO BACKUP WAS TAKEN."
+            exit 1
+          fi
+
+      # pg_dump must be at least the server's major version (Supabase runs Postgres 17).
+      - name: Install Postgres 17 client
+        run: |
+          sudo apt-get update -qq
+          sudo apt-get install -y -qq postgresql-common
+          sudo /usr/share/postgresql-common/pgdg/apt.postgresql.org.sh -y
+          sudo apt-get install -y -qq postgresql-client-17
+          echo "/usr/lib/postgresql/17/bin" >> "$GITHUB_PATH"
+
+      - name: Back up production
+        env:
+          SOURCE_DATABASE_URL: ${{ secrets.PROD_DATABASE_URL }}
+          BACKUP_PASSPHRASE: ${{ secrets.BACKUP_PASSPHRASE }}
+        run: bash scripts/db-backup.sh backup
+
+      - name: Restore into a scratch database and verify every table
+        env:
+          TARGET_DATABASE_URL: postgresql://postgres:postgres@localhost:5432/restore_check
+          BACKUP_PASSPHRASE: ${{ secrets.BACKUP_PASSPHRASE }}
+        run: |
+          psql postgresql://postgres:postgres@localhost:5432/postgres -c "create database restore_check"
+          bash scripts/db-restore.sh backup/*.dump.enc
+
+      - uses: actions/upload-artifact@v4
+        with:
+          name: prepplan-backup-${{ github.run_number }}
+          path: |
+            backup/*.dump.enc
+            backup/*.counts
+          retention-days: 30
+          if-no-files-found: error
