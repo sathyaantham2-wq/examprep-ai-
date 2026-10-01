@@ -1,0 +1,2932 @@
+{
+  "subject": {
+    "code": "MATH12",
+    "name": "Mathematics",
+    "board": "CBSE",
+    "class": 12
+  },
+  "source": {
+    "publisher": "NCERT",
+    "title": "Mathematics Part II",
+    "edition": "Textbook for Class XII Part II, Reprint 2026-27",
+    "year": 2026
+  },
+  "chapter": {
+    "part": "II",
+    "chapter_no": 7,
+    "name": "Integrals",
+    "blurb": "Integral calculus is motivated by the problem of finding a function whose derivative is given and by the problem of finding the area bounded by the graph of a function, which lead to the indefinite and the definite integral. The chapter studies indefinite and definite integrals and their elementary properties, including the techniques of integration by substitution, partial fractions and parts, and connects the two through the Fundamental Theorem of Calculus.",
+    "source_code": "lemh201",
+    "order_index": 7
+  },
+  "scope_in": [
+    {
+      "item": "Explain integration as the inverse process of differentiation: anti derivatives (primitives), the family F(x) + C, the constant of integration and the notation integral of f(x) dx",
+      "pages": "225-228"
+    },
+    {
+      "item": "Use the table of standard integrals (x^n with n != -1, 1/x, e^x, a^x, sin, cos, sec^2, cosec^2, sec tan, cosec cot, and the inverse trigonometric forms)",
+      "pages": "228-229, 287-288"
+    },
+    {
+      "item": "Apply the properties of indefinite integrals (sum, constant multiple, linear combination; d/dx of an integral) and find anti derivatives by inspection, including a particular anti derivative from a condition such as F(0) = 3",
+      "pages": "229-235"
+    },
+    {
+      "item": "Integrate by substitution x = g(t), including the standard results for tan x, cot x, sec x and cosec x",
+      "pages": "235-241"
+    },
+    {
+      "item": "Integrate squares, cubes and products of sines and cosines using double angle, triple angle and product to sum identities",
+      "pages": "241-243"
+    },
+    {
+      "item": "Use the six standard integrals with x^2 - a^2, a^2 - x^2, x^2 + a^2 and their square roots, and extend them to 1/(ax^2 + bx + c), 1/sqrt(ax^2 + bx + c) and (px + q) over these by completing the square and splitting the numerator",
+      "pages": "243-252"
+    },
+    {
+      "item": "Integrate proper and improper rational functions by long division and the partial fraction forms of Table 7.2, including substitution followed by partial fractions",
+      "pages": "252-259"
+    },
+    {
+      "item": "Integrate products by parts, choosing the first and second function, including log x, inverse trigonometric functions, e^x sin x and integrals of the form e^x [f(x) + f'(x)]",
+      "pages": "259-264"
+    },
+    {
+      "item": "Use the special integrals of sqrt(x^2 - a^2), sqrt(x^2 + a^2) and sqrt(a^2 - x^2), and of sqrt(ax^2 + bx + c) after completing the square",
+      "pages": "264-266"
+    },
+    {
+      "item": "Interpret the definite integral with lower and upper limits, the area function A(x), and state the first and second fundamental theorems of integral calculus",
+      "pages": "267-268"
+    },
+    {
+      "item": "Evaluate definite integrals as F(b) - F(a) and by substitution with changed limits",
+      "pages": "268-273"
+    },
+    {
+      "item": "Use properties P0 to P7 of definite integrals, including modulus integrands, even and odd functions and the add-the-two-forms technique",
+      "pages": "273-280"
+    },
+    {
+      "item": "Solve miscellaneous integrals combining the above methods",
+      "pages": "281-287"
+    }
+  ],
+  "scope_out": [
+    {
+      "item": "Evaluating a definite integral as the limit of a sum (Riemann sums, h -> 0 sums)",
+      "reason": "Not present in this rationalised Reprint 2026-27 edition: Section 7.7 only mentions in one line (p. 267) that the definite integral can be introduced as the limit of a sum, and goes straight to 7.8 Fundamental Theorem; there is no limit-of-sum subsection, example or exercise"
+    },
+    {
+      "item": "Proofs of the first and second fundamental theorems of integral calculus",
+      "reason": "The book states the theorems only, saying their proofs are beyond the scope of the text (p. 267)"
+    },
+    {
+      "item": "Geometrical interpretation of the indefinite integral and the comparison table between differentiation and integration",
+      "reason": "Not in this edition: Section 7.2.1 is followed directly by 7.3 Methods of Integration (pp. 229-235)"
+    },
+    {
+      "item": "Area between curves and other applications of integrals",
+      "reason": "Belongs to the next chapter, Application of Integrals; this chapter only uses the area function to state the fundamental theorems"
+    },
+    {
+      "item": "Differential equations and their solution by separating variables",
+      "reason": "A later chapter; not treated here"
+    },
+    {
+      "item": "Integrals of 1/(a + b sin x), 1/(a + b cos x) and the t = tan(x/2) substitution",
+      "reason": "Not taught or exercised anywhere in this chapter"
+    },
+    {
+      "item": "Integrals of the form 1/((px + q) sqrt(ax^2 + bx + c)) and other irrational forms beyond the listed types",
+      "reason": "Section 7.4 lists only types (1)-(10) (pp. 243-247)"
+    },
+    {
+      "item": "Partial fractions with repeated quadratic factors or forms outside Table 7.2",
+      "reason": "Table 7.2 (p. 253) lists only five forms"
+    },
+    {
+      "item": "Reduction formulae, improper integrals, Wallis formula and numerical integration",
+      "reason": "Not in this chapter"
+    },
+    {
+      "item": "Definite integrals with the greatest integer function",
+      "reason": "Only modulus integrands appear (Example 28, Exercise 7.10, Example 41); the greatest integer function is never used"
+    },
+    {
+      "item": "Differentiation of an integral with variable lower and upper limits (general Leibniz rule)",
+      "reason": "Only the first fundamental theorem A'(x) = f(x) for integral from a to x is stated (pp. 267, 273)"
+    }
+  ],
+  "concepts": [
+    {
+      "code": "C12M-7.1",
+      "name": "Integration as anti differentiation: indefinite integrals, standard formulae and properties",
+      "description": "Integration as the inverse process of differentiation: anti derivatives, the constant of integration, the indefinite integral notation, the table of standard integrals, the properties of indefinite integrals, the method of inspection and finding a particular anti derivative from a given condition.",
+      "idea": "If F'(x) = f(x), then every function F(x) + C has derivative f(x), so the indefinite integral of f is a whole family of anti derivatives differing by a constant.",
+      "rule": "integral of f(x) dx = F(x) + C where F'(x) = f(x); integral of x^n dx = x^(n+1)/(n+1) + C (n != -1); integral of (1/x) dx = log|x| + C; integral of [k1 f + k2 g] dx = k1 integral of f dx + k2 integral of g dx.",
+      "example": "integral of (x^3 - 1)/x^2 dx = integral of (x - x^(-2)) dx = x^2/2 + 1/x + C.",
+      "difficulty_base": "Easy",
+      "questions": [
+        {
+          "b": "Remember",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "An anti derivative (primitive) of cos x is",
+          "a": "sin x",
+          "o": [
+            "sin x",
+            "-sin x",
+            "-cos x",
+            "tan x"
+          ]
+        },
+        {
+          "b": "Remember",
+          "d": "Easy",
+          "t": "fill_blank",
+          "m": 1,
+          "q": "In integral of f(x) dx = F(x) + C, the arbitrary real number C is called the constant of ____.",
+          "a": "integration"
+        },
+        {
+          "b": "Remember",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "For n != -1, the standard integral of x^n dx is",
+          "a": "x^(n+1)/(n+1) + C",
+          "o": [
+            "x^(n+1)/(n+1) + C",
+            "n x^(n-1) + C",
+            "x^(n+1) + C",
+            "x^n/n + C"
+          ]
+        },
+        {
+          "b": "Remember",
+          "d": "Hard",
+          "t": "mcq",
+          "m": 1,
+          "rev": true,
+          "q": "Which of these standard indefinite integral formulas is NOT correct?",
+          "a": "integral of sin x dx = cos x + C",
+          "o": [
+            "integral of sin x dx = cos x + C",
+            "integral of sec^2 x dx = tan x + C",
+            "integral of e^x dx = e^x + C",
+            "integral of (1/x) dx = log|x| + C"
+          ]
+        },
+        {
+          "b": "Understand",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "Why is an arbitrary constant C added when we write integral of f(x) dx = F(x) + C?",
+          "a": "Because F(x) + C has the same derivative f(x) for every real C, so anti derivatives are not unique",
+          "o": [
+            "Because F(x) + C has the same derivative f(x) for every real C, so anti derivatives are not unique",
+            "Because C makes the value of the integral zero at x = 0",
+            "Because C equals the value of f at x = 0",
+            "Because every indefinite integral must be a polynomial"
+          ]
+        },
+        {
+          "b": "Understand",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "Two functions g and h have the same derivative at every point of an interval I. Then on I, g - h is",
+          "a": "a constant",
+          "o": [
+            "a constant",
+            "always equal to 0",
+            "equal to the derivative g'(x)",
+            "a linear function of x"
+          ]
+        },
+        {
+          "b": "Understand",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "By the first property of indefinite integrals, d/dx [integral of f(x) dx] equals",
+          "a": "f(x)",
+          "o": [
+            "f(x)",
+            "f(x) + C",
+            "f'(x)",
+            "integral of f'(x) dx"
+          ]
+        },
+        {
+          "b": "Understand",
+          "d": "Hard",
+          "t": "mcq",
+          "m": 1,
+          "q": "Using the properties of indefinite integrals, integral of (2x - 3 cos x + e^x) dx equals",
+          "a": "x^2 - 3 sin x + e^x + C",
+          "o": [
+            "x^2 - 3 sin x + e^x + C",
+            "x^2 + 3 sin x + e^x + C",
+            "2 + 3 sin x + e^x + C",
+            "x^2 - 3 sin x + x e^x + C"
+          ]
+        },
+        {
+          "b": "Understand",
+          "d": "Hard",
+          "t": "mcq",
+          "m": 1,
+          "q": "integral of sec x (sec x + tan x) dx equals",
+          "a": "tan x + sec x + C",
+          "o": [
+            "tan x + sec x + C",
+            "tan x - sec x + C",
+            "sec x tan x + C",
+            "sec^2 x + sec x tan x + C"
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Easy",
+          "t": "fill_blank",
+          "m": 1,
+          "q": "By the method of inspection, an anti derivative of e^(2x) is ____.",
+          "a": "(1/2) e^(2x)"
+        },
+        {
+          "b": "Apply",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "integral of (x^3 - 1)/x^2 dx equals",
+          "a": "x^2/2 + 1/x + C",
+          "o": [
+            "x^2/2 + 1/x + C",
+            "x^2/2 - 1/x + C",
+            "(x^4/4 - x)/(x^3/3) + C",
+            "x^2/2 + log|x| + C"
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Hard",
+          "t": "mcq",
+          "m": 1,
+          "q": "The anti derivative F of f(x) = 3x^2 + 2x that satisfies F(1) = 5 is",
+          "a": "x^3 + x^2 + 3",
+          "o": [
+            "x^3 + x^2 + 3",
+            "x^3 + x^2 + 5",
+            "x^3 + x^2 - 3",
+            "x^3 + x^2"
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Hard",
+          "t": "mcq",
+          "m": 1,
+          "q": "integral of (2 - 3 sin x)/cos^2 x dx equals",
+          "a": "2 tan x - 3 sec x + C",
+          "o": [
+            "2 tan x - 3 sec x + C",
+            "2 tan x + 3 sec x + C",
+            "2 sec x - 3 tan x + C",
+            "2 tan x + 3 cos x + C"
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Hard",
+          "t": "short_answer",
+          "m": 2,
+          "q": "Find integral of (x^3 + 5x^2 - 4)/x^2 dx.",
+          "a": "Split the integrand: (x^3 + 5x^2 - 4)/x^2 = x + 5 - 4x^(-2). Integrating term by term, the integral is x^2/2 + 5x + 4/x + C.",
+          "s": [
+            [
+              "Splits the integrand into x + 5 - 4x^(-2)",
+              1
+            ],
+            [
+              "Integrates to x^2/2 + 5x + 4/x + C",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Hardest",
+          "t": "long_answer",
+          "m": 3,
+          "q": "If d/dx f(x) = 4x^3 - 3/x^4 and f(2) = 0, find f(x).",
+          "a": "f(x) = integral of (4x^3 - 3x^(-4)) dx = x^4 + x^(-3) + C = x^4 + 1/x^3 + C. Using f(2) = 0: 16 + 1/8 + C = 0, so C = -129/8. Hence f(x) = x^4 + 1/x^3 - 129/8.",
+          "s": [
+            [
+              "Integrates to get f(x) = x^4 + 1/x^3 + C",
+              1
+            ],
+            [
+              "Uses f(2) = 0 to get C = -129/8",
+              1
+            ],
+            [
+              "Writes f(x) = x^4 + 1/x^3 - 129/8",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Analyse",
+          "d": "Hard",
+          "t": "assertion_reason",
+          "m": 1,
+          "q": "Assertion (A): integral of (1/x) dx = log|x| + C for x != 0. Reason (R): The formula integral of x^n dx = x^(n+1)/(n+1) + C holds for every real number n.",
+          "a": "A is true, R is false",
+          "o": [
+            "A is true, R is false",
+            "Both A and R are true, and R is the correct explanation of A",
+            "Both A and R are true, but R is not the correct explanation of A",
+            "A is false, R is true"
+          ]
+        },
+        {
+          "b": "Analyse",
+          "d": "Hard",
+          "t": "multi_statement",
+          "m": 1,
+          "q": "Consider these statements. (I) For any real number k, integral of k f(x) dx = k integral of f(x) dx. (II) For any two functions f and g, integral of f(x) g(x) dx = (integral of f(x) dx)(integral of g(x) dx). Which is or are correct?",
+          "a": "Only I",
+          "o": [
+            "Only I",
+            "Only II",
+            "Both I and II",
+            "Neither I nor II"
+          ]
+        },
+        {
+          "b": "Analyse",
+          "d": "Hardest",
+          "t": "long_answer",
+          "m": 3,
+          "q": "Find integral of (x^2 + 1)(x + 1)/x dx by first expanding and splitting the integrand.",
+          "a": "(x^2 + 1)(x + 1)/x = (x^3 + x^2 + x + 1)/x = x^2 + x + 1 + 1/x. Integrating term by term: x^3/3 + x^2/2 + x + log|x| + C.",
+          "s": [
+            [
+              "Expands the numerator to x^3 + x^2 + x + 1",
+              1
+            ],
+            [
+              "Splits into x^2 + x + 1 + 1/x",
+              1
+            ],
+            [
+              "Integrates to x^3/3 + x^2/2 + x + log|x| + C",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Evaluate",
+          "d": "Hard",
+          "t": "short_answer",
+          "m": 2,
+          "q": "One student writes integral of (x^2 + 1) dx = x^3/3 + x + 2, and another writes x^3/3 + x - 7. They argue that at most one of them can be right. Evaluate the argument.",
+          "a": "Both functions have derivative x^2 + 1, so both are anti derivatives of x^2 + 1; they differ only by a constant, as all anti derivatives do. The argument is wrong. The indefinite integral is the whole family x^3/3 + x + C.",
+          "s": [
+            [
+              "Checks that both functions have derivative x^2 + 1",
+              1
+            ],
+            [
+              "Concludes both are anti derivatives differing by a constant, so the general answer is x^3/3 + x + C",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Create",
+          "d": "Hardest",
+          "t": "long_answer",
+          "m": 3,
+          "q": "Construct a function f whose indefinite integral is e^x + x^2 + C, and then find the particular anti derivative F of f with F(0) = 3.",
+          "a": "Differentiate: f(x) = d/dx (e^x + x^2) = e^x + 2x. Check: integral of (e^x + 2x) dx = e^x + x^2 + C. For F(0) = 3: e^0 + 0 + C = 3, so C = 2 and F(x) = e^x + x^2 + 2.",
+          "s": [
+            [
+              "Obtains f(x) = e^x + 2x by differentiating",
+              1
+            ],
+            [
+              "Verifies that integrating f gives e^x + x^2 + C",
+              1
+            ],
+            [
+              "Uses F(0) = 3 to get C = 2, so F(x) = e^x + x^2 + 2",
+              1
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "code": "C12M-7.2",
+      "name": "Integration by substitution",
+      "description": "Changing the variable of integration (x = g(t)) to reduce an integral to a standard form, including the standard results for integrals of tan x, cot x, sec x and cosec x obtained by substitution.",
+      "idea": "If the integrand contains a function together with its derivative, putting that function equal to t turns the integral into a simpler one in t.",
+      "rule": "Putting x = g(t), dx = g'(t) dt, so integral of f(x) dx = integral of f(g(t)) g'(t) dt. Standard results: integral of tan x dx = log|sec x| + C, cot x -> log|sin x| + C, sec x -> log|sec x + tan x| + C, cosec x -> log|cosec x - cot x| + C.",
+      "example": "integral of 2x sin(x^2 + 1) dx: put t = x^2 + 1, dt = 2x dx, giving integral of sin t dt = -cos(x^2 + 1) + C.",
+      "difficulty_base": "Hard",
+      "questions": [
+        {
+          "b": "Remember",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "In integration by substitution, putting x = g(t) changes integral of f(x) dx into",
+          "a": "integral of f(g(t)) g'(t) dt",
+          "o": [
+            "integral of f(g(t)) g'(t) dt",
+            "integral of f(g(t)) dt",
+            "integral of f(t) g'(t) dt",
+            "integral of f(g(t))/g'(t) dt"
+          ]
+        },
+        {
+          "b": "Remember",
+          "d": "Easy",
+          "t": "fill_blank",
+          "m": 1,
+          "q": "Using substitution, integral of tan x dx = log|____| + C.",
+          "a": "sec x"
+        },
+        {
+          "b": "Remember",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "The standard result for integral of cot x dx is",
+          "a": "log|sin x| + C",
+          "o": [
+            "log|sin x| + C",
+            "log|cos x| + C",
+            "-cosec^2 x + C",
+            "log|sec x| + C"
+          ]
+        },
+        {
+          "b": "Remember",
+          "d": "Hard",
+          "t": "mcq",
+          "m": 1,
+          "rev": true,
+          "q": "Which of these standard integrals obtained by substitution is NOT correct?",
+          "a": "integral of sec x dx = log|sec x - tan x| + C",
+          "o": [
+            "integral of sec x dx = log|sec x - tan x| + C",
+            "integral of cosec x dx = log|cosec x - cot x| + C",
+            "integral of tan x dx = -log|cos x| + C",
+            "integral of cot x dx = log|sin x| + C"
+          ]
+        },
+        {
+          "b": "Understand",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "For integral of 2x sin(x^2 + 1) dx, the most useful substitution is",
+          "a": "t = x^2 + 1",
+          "o": [
+            "t = x^2 + 1",
+            "t = sin(x^2 + 1)",
+            "t = 2x",
+            "t = sin x"
+          ]
+        },
+        {
+          "b": "Understand",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "A substitution usually works well when the integrand contains a function together with",
+          "a": "its derivative (up to a constant factor)",
+          "o": [
+            "its derivative (up to a constant factor)",
+            "its square",
+            "its reciprocal",
+            "its inverse function"
+          ]
+        },
+        {
+          "b": "Understand",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "Using the substitution mx = t, integral of sin(mx) dx (m != 0) equals",
+          "a": "-(1/m) cos(mx) + C",
+          "o": [
+            "-(1/m) cos(mx) + C",
+            "-m cos(mx) + C",
+            "(1/m) cos(mx) + C",
+            "-cos(mx) + C"
+          ]
+        },
+        {
+          "b": "Understand",
+          "d": "Hard",
+          "t": "mcq",
+          "m": 1,
+          "q": "Which single substitution turns integral of tan^4(sqrt x) sec^2(sqrt x)/sqrt x dx directly into 2 times integral of t^4 dt?",
+          "a": "t = tan(sqrt x)",
+          "o": [
+            "t = tan(sqrt x)",
+            "t = sec(sqrt x)",
+            "t = tan^4 x",
+            "t = x^2"
+          ]
+        },
+        {
+          "b": "Understand",
+          "d": "Hard",
+          "t": "mcq",
+          "m": 1,
+          "q": "Using the substitution t = tan^(-1) x, integral of e^(tan^(-1) x)/(1 + x^2) dx equals",
+          "a": "e^(tan^(-1) x) + C",
+          "o": [
+            "e^(tan^(-1) x) + C",
+            "e^(tan^(-1) x)/(1 + x^2) + C",
+            "tan^(-1)(e^x) + C",
+            "(1 + x^2) e^(tan^(-1) x) + C"
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Easy",
+          "t": "fill_blank",
+          "m": 1,
+          "q": "Putting t = 1 + x^2, integral of 2x/(1 + x^2) dx = ____ + C.",
+          "a": "log(1 + x^2)"
+        },
+        {
+          "b": "Apply",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "Using t = log x, integral of (log x)^2/x dx equals",
+          "a": "(1/3)(log x)^3 + C",
+          "o": [
+            "(1/3)(log x)^3 + C",
+            "(log x)^3 + C",
+            "2 (log x)/x + C",
+            "x (log x)^2 + C"
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Hard",
+          "t": "mcq",
+          "m": 1,
+          "q": "Writing sin^3 x = (1 - cos^2 x) sin x and putting t = cos x, integral of sin^3 x cos^2 x dx equals",
+          "a": "-(1/3) cos^3 x + (1/5) cos^5 x + C",
+          "o": [
+            "-(1/3) cos^3 x + (1/5) cos^5 x + C",
+            "(1/3) cos^3 x - (1/5) cos^5 x + C",
+            "-(1/3) cos^3 x - (1/5) cos^5 x + C",
+            "(1/4) sin^4 x (1/3) cos^3 x + C"
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Hard",
+          "t": "mcq",
+          "m": 1,
+          "q": "integral of 1/(x + x log x) dx (x > 0) equals",
+          "a": "log|1 + log x| + C",
+          "o": [
+            "log|1 + log x| + C",
+            "log|x + x log x| + C",
+            "log|log x| + C",
+            "1/(1 + log x) + C"
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Hard",
+          "t": "short_answer",
+          "m": 2,
+          "q": "Find integral of x/(9 - 4x^2) dx.",
+          "a": "Put t = 9 - 4x^2, so dt = -8x dx and x dx = -(1/8) dt. The integral becomes -(1/8) integral of dt/t = -(1/8) log|t| + C = -(1/8) log|9 - 4x^2| + C.",
+          "s": [
+            [
+              "Chooses t = 9 - 4x^2 and writes x dx = -(1/8) dt",
+              1
+            ],
+            [
+              "Obtains -(1/8) log|9 - 4x^2| + C",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Hardest",
+          "t": "long_answer",
+          "m": 3,
+          "q": "Find integral of sin x/sin(x + a) dx.",
+          "a": "Put x + a = t, dx = dt. sin x = sin(t - a) = sin t cos a - cos t sin a. The integral is integral of (cos a - sin a cot t) dt = t cos a - sin a log|sin t| + C1 = (x + a) cos a - sin a log|sin(x + a)| + C1 = x cos a - sin a log|sin(x + a)| + C, where C = C1 + a cos a.",
+          "s": [
+            [
+              "Puts x + a = t and expands sin(t - a) = sin t cos a - cos t sin a",
+              1
+            ],
+            [
+              "Integrates to t cos a - sin a log|sin t|",
+              1
+            ],
+            [
+              "Writes the answer x cos a - sin a log|sin(x + a)| + C",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Analyse",
+          "d": "Hard",
+          "t": "assertion_reason",
+          "m": 1,
+          "q": "Assertion (A): integral of cos x/(1 + sin x) dx = log|1 + sin x| + C. Reason (R): If t = f(x), then dt = f'(x) dx, so integral of f'(x)/f(x) dx = integral of dt/t = log|f(x)| + C.",
+          "a": "Both A and R are true, and R is the correct explanation of A",
+          "o": [
+            "Both A and R are true, and R is the correct explanation of A",
+            "Both A and R are true, but R is not the correct explanation of A",
+            "A is true, R is false",
+            "A is false, R is true"
+          ]
+        },
+        {
+          "b": "Analyse",
+          "d": "Hard",
+          "t": "multi_statement",
+          "m": 1,
+          "q": "Consider these statements. (I) integral of cosec x dx = log|cosec x + cot x| + C. (II) integral of sec x dx = log|sec x + tan x| + C. Which is or are correct?",
+          "a": "Only II",
+          "o": [
+            "Only II",
+            "Only I",
+            "Both I and II",
+            "Neither I nor II"
+          ]
+        },
+        {
+          "b": "Analyse",
+          "d": "Hardest",
+          "t": "long_answer",
+          "m": 3,
+          "q": "Find integral of 1/(1 + tan x) dx.",
+          "a": "integral of cos x/(cos x + sin x) dx = (1/2) integral of [(cos x + sin x) + (cos x - sin x)]/(cos x + sin x) dx = x/2 + (1/2) integral of (cos x - sin x)/(cos x + sin x) dx. Put t = cos x + sin x, dt = (cos x - sin x) dx, giving (1/2) log|t|. Answer: x/2 + (1/2) log|cos x + sin x| + C.",
+          "s": [
+            [
+              "Writes the integrand as cos x/(cos x + sin x) and splits the numerator as (1/2)[(cos x + sin x) + (cos x - sin x)]",
+              1
+            ],
+            [
+              "Uses t = cos x + sin x for the second part",
+              1
+            ],
+            [
+              "Obtains x/2 + (1/2) log|cos x + sin x| + C",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Evaluate",
+          "d": "Hard",
+          "t": "short_answer",
+          "m": 2,
+          "q": "A student evaluates integral of e^(3x) dx by putting t = 3x and writes the answer e^(3x) + C. Evaluate the work.",
+          "a": "The answer is wrong. With t = 3x, dt = 3 dx, so dx = dt/3 and the integral is (1/3) integral of e^t dt = (1/3) e^(3x) + C. The student replaced dx by dt without the factor 1/3; differentiating e^(3x) gives 3 e^(3x), not e^(3x).",
+          "s": [
+            [
+              "Identifies that dx = dt/3 was ignored",
+              1
+            ],
+            [
+              "Gives the correct answer (1/3) e^(3x) + C",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Create",
+          "d": "Hardest",
+          "t": "long_answer",
+          "m": 3,
+          "q": "Construct an integrand of the form f'(x)/f(x) in which f is a sum of trigonometric functions (not just tan x or cot x), and find its integral by substitution.",
+          "a": "Example: take f(x) = sin x + cos x, so f'(x) = cos x - sin x. Integrand (cos x - sin x)/(sin x + cos x). Put t = sin x + cos x, dt = (cos x - sin x) dx: integral of dt/t = log|t| + C = log|sin x + cos x| + C.",
+          "s": [
+            [
+              "Chooses a suitable trigonometric f(x) and writes the integrand f'(x)/f(x)",
+              1
+            ],
+            [
+              "Substitutes t = f(x) with dt = f'(x) dx",
+              1
+            ],
+            [
+              "Obtains log|f(x)| + C correctly for the chosen f",
+              1
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "code": "C12M-7.3",
+      "name": "Integration using trigonometric identities",
+      "description": "Rewriting squares, cubes and products of trigonometric functions with identities (double angle, triple angle, product to sum) so that each term has a standard integral.",
+      "idea": "Powers and products of sines and cosines have no direct formula, but identities turn them into sums of single sines and cosines that are easy to integrate.",
+      "rule": "cos^2 x = (1 + cos 2x)/2, sin^2 x = (1 - cos 2x)/2, sin^3 x = (3 sin x - sin 3x)/4, sin x cos y = (1/2)[sin(x + y) + sin(x - y)], and similar product to sum identities.",
+      "example": "integral of cos^2 x dx = (1/2) integral of (1 + cos 2x) dx = x/2 + (1/4) sin 2x + C.",
+      "difficulty_base": "Hard",
+      "questions": [
+        {
+          "b": "Remember",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "To integrate cos^2 x, the book uses the identity",
+          "a": "cos^2 x = (1 + cos 2x)/2",
+          "o": [
+            "cos^2 x = (1 + cos 2x)/2",
+            "cos^2 x = (1 - cos 2x)/2",
+            "cos^2 x = 1 + sin^2 x",
+            "cos^2 x = 2 cos 2x - 1"
+          ]
+        },
+        {
+          "b": "Remember",
+          "d": "Easy",
+          "t": "fill_blank",
+          "m": 1,
+          "q": "From sin 3x = 3 sin x - 4 sin^3 x, we get sin^3 x = (3 sin x - sin ____)/4.",
+          "a": "3x"
+        },
+        {
+          "b": "Remember",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "The product to sum identity for sin x cos y is",
+          "a": "(1/2)[sin(x + y) + sin(x - y)]",
+          "o": [
+            "(1/2)[sin(x + y) + sin(x - y)]",
+            "(1/2)[cos(x + y) + cos(x - y)]",
+            "(1/2)[sin(x + y) - sin(x - y)]",
+            "sin(x + y) + sin(x - y)"
+          ]
+        },
+        {
+          "b": "Remember",
+          "d": "Hard",
+          "t": "mcq",
+          "m": 1,
+          "rev": true,
+          "q": "Which identity used for integrating trigonometric products is NOT correct?",
+          "a": "2 sin x sin y = cos(x + y) - cos(x - y)",
+          "o": [
+            "2 sin x sin y = cos(x + y) - cos(x - y)",
+            "2 cos x cos y = cos(x + y) + cos(x - y)",
+            "2 sin x cos y = sin(x + y) + sin(x - y)",
+            "sin^2 x = (1 - cos 2x)/2"
+          ]
+        },
+        {
+          "b": "Understand",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "Why is cos^2 x rewritten as (1 + cos 2x)/2 before integrating?",
+          "a": "Because 1 and cos 2x both have standard integrals",
+          "o": [
+            "Because 1 and cos 2x both have standard integrals",
+            "Because cos^2 x has no anti derivative at all",
+            "Because integral of cos^2 x equals (integral of cos x dx)^2",
+            "Because it removes the need for a constant of integration"
+          ]
+        },
+        {
+          "b": "Understand",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "Using sin^2 x = (1 - cos 2x)/2, integral of sin^2 x dx equals",
+          "a": "x/2 - (1/4) sin 2x + C",
+          "o": [
+            "x/2 - (1/4) sin 2x + C",
+            "x/2 + (1/4) sin 2x + C",
+            "(1/3) sin^3 x + C",
+            "x/2 - (1/2) sin 2x + C"
+          ]
+        },
+        {
+          "b": "Understand",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "Using tan^2 x = sec^2 x - 1, integral of tan^2 x dx equals",
+          "a": "tan x - x + C",
+          "o": [
+            "tan x - x + C",
+            "tan x + x + C",
+            "(1/3) tan^3 x + C",
+            "sec^2 x - x + C"
+          ]
+        },
+        {
+          "b": "Understand",
+          "d": "Hard",
+          "t": "mcq",
+          "m": 1,
+          "q": "Using a product to sum identity, integral of sin 2x cos 3x dx equals",
+          "a": "-(1/10) cos 5x + (1/2) cos x + C",
+          "o": [
+            "-(1/10) cos 5x + (1/2) cos x + C",
+            "-(1/10) cos 5x - (1/2) cos x + C",
+            "(1/10) cos 5x - (1/2) cos x + C",
+            "-(1/5) cos 5x + cos x + C"
+          ]
+        },
+        {
+          "b": "Understand",
+          "d": "Hard",
+          "t": "mcq",
+          "m": 1,
+          "q": "Which of the following is a correct way, used in the book, to find integral of sin^3 x dx?",
+          "a": "Use sin^3 x = (3 sin x - sin 3x)/4, or write sin^3 x = (1 - cos^2 x) sin x and put t = cos x",
+          "o": [
+            "Use sin^3 x = (3 sin x - sin 3x)/4, or write sin^3 x = (1 - cos^2 x) sin x and put t = cos x",
+            "Apply the power rule directly to get (1/4) sin^4 x + C",
+            "Write sin^3 x = sin x sin 2x and integrate each factor separately",
+            "Use sin^3 x = (1 - cos 2x)/2 and integrate"
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Easy",
+          "t": "fill_blank",
+          "m": 1,
+          "q": "integral of cos^2 x dx = x/2 + ____ + C.",
+          "a": "(1/4) sin 2x"
+        },
+        {
+          "b": "Apply",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "integral of sin^2(2x + 5) dx equals",
+          "a": "x/2 - (1/8) sin(4x + 10) + C",
+          "o": [
+            "x/2 - (1/8) sin(4x + 10) + C",
+            "x/2 - (1/4) sin(4x + 10) + C",
+            "x/2 + (1/8) sin(4x + 10) + C",
+            "(1/3) sin^3(2x + 5) + C"
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Hard",
+          "t": "mcq",
+          "m": 1,
+          "q": "integral of sin 4x sin 8x dx equals",
+          "a": "(1/8) sin 4x - (1/24) sin 12x + C",
+          "o": [
+            "(1/8) sin 4x - (1/24) sin 12x + C",
+            "-(1/8) sin 4x + (1/24) sin 12x + C",
+            "(1/8) sin 4x + (1/24) sin 12x + C",
+            "(1/2) sin 4x - (1/2) sin 12x + C"
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Hard",
+          "t": "mcq",
+          "m": 1,
+          "q": "Using 1 - cos x = 2 sin^2(x/2) and 1 + cos x = 2 cos^2(x/2), integral of (1 - cos x)/(1 + cos x) dx equals",
+          "a": "2 tan(x/2) - x + C",
+          "o": [
+            "2 tan(x/2) - x + C",
+            "tan(x/2) - x + C",
+            "2 tan(x/2) + x + C",
+            "2 sec(x/2) - x + C"
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Hard",
+          "t": "short_answer",
+          "m": 2,
+          "q": "Find integral of sin 3x cos 4x dx.",
+          "a": "sin 3x cos 4x = (1/2)[sin 7x + sin(-x)] = (1/2)[sin 7x - sin x]. Integrating: (1/2)[-(1/7) cos 7x + cos x] + C = -(1/14) cos 7x + (1/2) cos x + C.",
+          "s": [
+            [
+              "Writes sin 3x cos 4x = (1/2)(sin 7x - sin x)",
+              1
+            ],
+            [
+              "Integrates to -(1/14) cos 7x + (1/2) cos x + C",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Hardest",
+          "t": "long_answer",
+          "m": 3,
+          "q": "Find integral of sin^4 x dx.",
+          "a": "sin^4 x = [(1 - cos 2x)/2]^2 = (1/4)(1 - 2 cos 2x + cos^2 2x), and cos^2 2x = (1 + cos 4x)/2. So sin^4 x = 3/8 - (1/2) cos 2x + (1/8) cos 4x. Integrating: 3x/8 - (1/4) sin 2x + (1/32) sin 4x + C.",
+          "s": [
+            [
+              "Writes sin^4 x = (1/4)(1 - 2 cos 2x + cos^2 2x)",
+              1
+            ],
+            [
+              "Replaces cos^2 2x by (1 + cos 4x)/2",
+              1
+            ],
+            [
+              "Integrates to 3x/8 - (1/4) sin 2x + (1/32) sin 4x + C",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Analyse",
+          "d": "Hard",
+          "t": "assertion_reason",
+          "m": 1,
+          "q": "Assertion (A): integral of sin^2 x dx = x/2 - (1/4) sin 2x + C. Reason (R): sin^2 x + cos^2 x = 1 for every real x.",
+          "a": "Both A and R are true, but R is not the correct explanation of A",
+          "o": [
+            "Both A and R are true, but R is not the correct explanation of A",
+            "Both A and R are true, and R is the correct explanation of A",
+            "A is true, R is false",
+            "A is false, R is true"
+          ]
+        },
+        {
+          "b": "Analyse",
+          "d": "Hard",
+          "t": "multi_statement",
+          "m": 1,
+          "q": "Consider these statements. (I) Both -(3/4) cos x + (1/12) cos 3x + C and -cos x + (1/3) cos^3 x + C are correct answers for integral of sin^3 x dx. (II) integral of sin x cos x dx = (1/2) sin^2 x + C. Which is or are correct?",
+          "a": "Both I and II",
+          "o": [
+            "Both I and II",
+            "Only I",
+            "Only II",
+            "Neither I nor II"
+          ]
+        },
+        {
+          "b": "Analyse",
+          "d": "Hardest",
+          "t": "long_answer",
+          "m": 3,
+          "q": "Find integral of sin x sin 2x sin 3x dx.",
+          "a": "sin x sin 3x = (1/2)(cos 2x - cos 4x). So the integrand is (1/2)(sin 2x cos 2x - sin 2x cos 4x) = (1/2)[(1/2) sin 4x - (1/2)(sin 6x - sin 2x)] = (1/4)(sin 4x - sin 6x + sin 2x). Integrating: -(1/16) cos 4x + (1/24) cos 6x - (1/8) cos 2x + C.",
+          "s": [
+            [
+              "Uses 2 sin x sin 3x = cos 2x - cos 4x",
+              1
+            ],
+            [
+              "Reduces the product to (1/4)(sin 2x + sin 4x - sin 6x)",
+              1
+            ],
+            [
+              "Integrates to -(1/8) cos 2x - (1/16) cos 4x + (1/24) cos 6x + C",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Evaluate",
+          "d": "Hard",
+          "t": "short_answer",
+          "m": 2,
+          "q": "A student writes integral of cos^2 x dx = (1/3) cos^3 x + C, treating it like the power rule. Evaluate the work.",
+          "a": "Wrong. Differentiating (1/3) cos^3 x gives -cos^2 x sin x, not cos^2 x; the power rule applies to x^n, not to (cos x)^n. Using cos^2 x = (1 + cos 2x)/2, the correct result is x/2 + (1/4) sin 2x + C.",
+          "s": [
+            [
+              "Shows by differentiation (or reasoning) that the power rule does not apply to cos^2 x",
+              1
+            ],
+            [
+              "Gives x/2 + (1/4) sin 2x + C",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Create",
+          "d": "Hardest",
+          "t": "long_answer",
+          "m": 3,
+          "q": "Choose positive integers m and n with m != n, form the product sin(mx) cos(nx), and find its integral using a product to sum identity.",
+          "a": "Example: m = 5, n = 1. sin 5x cos x = (1/2)[sin 6x + sin 4x]. Integral = (1/2)[-(1/6) cos 6x - (1/4) cos 4x] + C = -(1/12) cos 6x - (1/8) cos 4x + C.",
+          "s": [
+            [
+              "Chooses m != n and applies sin A cos B = (1/2)[sin(A + B) + sin(A - B)] correctly",
+              1
+            ],
+            [
+              "Integrates each sine term with the correct 1/k factor",
+              1
+            ],
+            [
+              "States the final answer with + C",
+              1
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "code": "C12M-7.4",
+      "name": "Integrals of some particular functions and quadratic denominators",
+      "description": "The six standard integrals with x^2 - a^2, a^2 - x^2, x^2 + a^2 and their square roots in the denominator, and their use for 1/(ax^2 + bx + c), 1/sqrt(ax^2 + bx + c) and (px + q) over these by completing the square and splitting the numerator.",
+      "idea": "Any quadratic ax^2 + bx + c can be turned into a(t^2 +- k^2) by completing the square, after which one of six standard formulas applies.",
+      "rule": "integral of dx/(x^2 - a^2) = (1/(2a)) log|(x - a)/(x + a)| + C; dx/(a^2 - x^2) -> (1/(2a)) log|(a + x)/(a - x)| + C; dx/(x^2 + a^2) -> (1/a) tan^(-1)(x/a) + C; dx/sqrt(x^2 - a^2) -> log|x + sqrt(x^2 - a^2)| + C; dx/sqrt(a^2 - x^2) -> sin^(-1)(x/a) + C; dx/sqrt(x^2 + a^2) -> log|x + sqrt(x^2 + a^2)| + C. For px + q, write px + q = A d/dx(ax^2 + bx + c) + B.",
+      "example": "x^2 - 6x + 13 = (x - 3)^2 + 2^2, so integral of dx/(x^2 - 6x + 13) = (1/2) tan^(-1)((x - 3)/2) + C.",
+      "difficulty_base": "Hard",
+      "questions": [
+        {
+          "b": "Remember",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "The standard integral of dx/(x^2 + a^2) is",
+          "a": "(1/a) tan^(-1)(x/a) + C",
+          "o": [
+            "(1/a) tan^(-1)(x/a) + C",
+            "tan^(-1)(x/a) + C",
+            "(1/(2a)) log|(x - a)/(x + a)| + C",
+            "a tan^(-1)(x/a) + C"
+          ]
+        },
+        {
+          "b": "Remember",
+          "d": "Easy",
+          "t": "fill_blank",
+          "m": 1,
+          "q": "integral of dx/sqrt(a^2 - x^2) = sin^(-1)(____) + C.",
+          "a": "x/a"
+        },
+        {
+          "b": "Remember",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "The standard integral of dx/(x^2 - a^2) is",
+          "a": "(1/(2a)) log|(x - a)/(x + a)| + C",
+          "o": [
+            "(1/(2a)) log|(x - a)/(x + a)| + C",
+            "(1/(2a)) log|(x + a)/(x - a)| + C",
+            "(1/a) log|(x - a)/(x + a)| + C",
+            "(1/a) tan^(-1)(x/a) + C"
+          ]
+        },
+        {
+          "b": "Remember",
+          "d": "Hard",
+          "t": "mcq",
+          "m": 1,
+          "rev": true,
+          "q": "Which of these standard integrals of particular functions is NOT correct?",
+          "a": "integral of dx/sqrt(x^2 + a^2) = sin^(-1)(x/a) + C",
+          "o": [
+            "integral of dx/sqrt(x^2 + a^2) = sin^(-1)(x/a) + C",
+            "integral of dx/sqrt(x^2 - a^2) = log|x + sqrt(x^2 - a^2)| + C",
+            "integral of dx/(a^2 - x^2) = (1/(2a)) log|(a + x)/(a - x)| + C",
+            "integral of dx/sqrt(a^2 - x^2) = sin^(-1)(x/a) + C"
+          ]
+        },
+        {
+          "b": "Understand",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "Completing the square, x^2 - 6x + 13 is written as",
+          "a": "(x - 3)^2 + 4",
+          "o": [
+            "(x - 3)^2 + 4",
+            "(x - 3)^2 + 13",
+            "(x + 3)^2 + 4",
+            "(x - 6)^2 - 23"
+          ]
+        },
+        {
+          "b": "Understand",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "For integral of (px + q)/(ax^2 + bx + c) dx, the numerator px + q is written as",
+          "a": "A(2ax + b) + B, that is A times the derivative of the denominator plus B",
+          "o": [
+            "A(2ax + b) + B, that is A times the derivative of the denominator plus B",
+            "A(ax^2 + bx + c) + B",
+            "A/(x - p) + B/(x - q)",
+            "A x^2 + B"
+          ]
+        },
+        {
+          "b": "Understand",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "integral of dx/(x^2 - 16) equals",
+          "a": "(1/8) log|(x - 4)/(x + 4)| + C",
+          "o": [
+            "(1/8) log|(x - 4)/(x + 4)| + C",
+            "(1/4) log|(x - 4)/(x + 4)| + C",
+            "(1/8) log|(x + 4)/(x - 4)| + C",
+            "(1/4) tan^(-1)(x/4) + C"
+          ]
+        },
+        {
+          "b": "Understand",
+          "d": "Hard",
+          "t": "mcq",
+          "m": 1,
+          "q": "Since 2x - x^2 = 1 - (x - 1)^2, integral of dx/sqrt(2x - x^2) equals",
+          "a": "sin^(-1)(x - 1) + C",
+          "o": [
+            "sin^(-1)(x - 1) + C",
+            "sin^(-1)(x + 1) + C",
+            "log|(x - 1) + sqrt(2x - x^2)| + C",
+            "(1/2) sin^(-1)(x - 1) + C"
+          ]
+        },
+        {
+          "b": "Understand",
+          "d": "Hard",
+          "t": "mcq",
+          "m": 1,
+          "q": "integral of dx/(x^2 + 2x + 2) equals",
+          "a": "tan^(-1)(x + 1) + C",
+          "o": [
+            "tan^(-1)(x + 1) + C",
+            "x tan^(-1)(x + 1) + C",
+            "(x + 1) tan^(-1) x + C",
+            "tan^(-1) x + C"
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Easy",
+          "t": "fill_blank",
+          "m": 1,
+          "q": "integral of dx/(x^2 + 9) = (1/3) tan^(-1)(____) + C.",
+          "a": "x/3"
+        },
+        {
+          "b": "Apply",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "integral of dx/sqrt(x^2 + 4) equals",
+          "a": "log|x + sqrt(x^2 + 4)| + C",
+          "o": [
+            "log|x + sqrt(x^2 + 4)| + C",
+            "(1/2) log|x + sqrt(x^2 + 4)| + C",
+            "sin^(-1)(x/2) + C",
+            "(1/2) tan^(-1)(x/2) + C"
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Hard",
+          "t": "mcq",
+          "m": 1,
+          "q": "Using t = 2x, integral of dx/(1 + 4x^2) equals",
+          "a": "(1/2) tan^(-1)(2x) + C",
+          "o": [
+            "(1/2) tan^(-1)(2x) + C",
+            "tan^(-1)(2x) + C",
+            "(1/4) tan^(-1)(2x) + C",
+            "2 tan^(-1)(2x) + C"
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Hard",
+          "t": "mcq",
+          "m": 1,
+          "q": "Using t = x^3, integral of 3x^2/(x^6 + 1) dx equals",
+          "a": "tan^(-1)(x^3) + C",
+          "o": [
+            "tan^(-1)(x^3) + C",
+            "3 tan^(-1)(x^3) + C",
+            "(1/3) tan^(-1)(x^3) + C",
+            "log|x^6 + 1| + C"
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Hard",
+          "t": "short_answer",
+          "m": 2,
+          "q": "Find integral of dx/(x^2 - 6x + 13).",
+          "a": "x^2 - 6x + 13 = (x - 3)^2 + 2^2. Put t = x - 3, dt = dx: integral of dt/(t^2 + 2^2) = (1/2) tan^(-1)(t/2) + C = (1/2) tan^(-1)((x - 3)/2) + C.",
+          "s": [
+            [
+              "Completes the square as (x - 3)^2 + 2^2",
+              1
+            ],
+            [
+              "Obtains (1/2) tan^(-1)((x - 3)/2) + C",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Hardest",
+          "t": "long_answer",
+          "m": 3,
+          "q": "Find integral of (x + 2)/(2x^2 + 6x + 5) dx.",
+          "a": "Write x + 2 = A(4x + 6) + B: 4A = 1, 6A + B = 2, so A = 1/4, B = 1/2. Then the integral is (1/4) integral of (4x + 6)/(2x^2 + 6x + 5) dx + (1/2) integral of dx/(2x^2 + 6x + 5). The first is (1/4) log|2x^2 + 6x + 5|. For the second, 2x^2 + 6x + 5 = 2[(x + 3/2)^2 + (1/2)^2], giving (1/2)(1/2)(2) tan^(-1)(2x + 3) = (1/2) tan^(-1)(2x + 3). Answer: (1/4) log|2x^2 + 6x + 5| + (1/2) tan^(-1)(2x + 3) + C.",
+          "s": [
+            [
+              "Finds A = 1/4 and B = 1/2 from x + 2 = A(4x + 6) + B",
+              1
+            ],
+            [
+              "Integrates the first part to (1/4) log|2x^2 + 6x + 5|",
+              1
+            ],
+            [
+              "Integrates the second part to (1/2) tan^(-1)(2x + 3) and writes the full answer with + C",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Analyse",
+          "d": "Hard",
+          "t": "assertion_reason",
+          "m": 1,
+          "q": "Assertion (A): integral of dx/sqrt(9 - x^2) = (1/3) sin^(-1)(x/3) + C. Reason (R): integral of dx/(x^2 + a^2) = (1/a) tan^(-1)(x/a) + C.",
+          "a": "A is false, R is true",
+          "o": [
+            "A is false, R is true",
+            "Both A and R are true, and R is the correct explanation of A",
+            "Both A and R are true, but R is not the correct explanation of A",
+            "A is true, R is false"
+          ]
+        },
+        {
+          "b": "Analyse",
+          "d": "Hard",
+          "t": "multi_statement",
+          "m": 1,
+          "q": "Consider these statements. (I) x^2 + 4x + 8 can be written as (x + 2)^2 + 8. (II) integral of dx/(x^2 + 4x + 8) = tan^(-1)((x + 2)/2) + C. Which is or are correct?",
+          "a": "Neither I nor II",
+          "o": [
+            "Neither I nor II",
+            "Only I",
+            "Only II",
+            "Both I and II"
+          ]
+        },
+        {
+          "b": "Analyse",
+          "d": "Hardest",
+          "t": "long_answer",
+          "m": 3,
+          "q": "Find integral of (x + 3)/sqrt(5 - 4x - x^2) dx.",
+          "a": "Write x + 3 = A(-4 - 2x) + B: -2A = 1, -4A + B = 3, so A = -1/2, B = 1. The first part is -(1/2) integral of (-4 - 2x)/sqrt(5 - 4x - x^2) dx = -(1/2)(2 sqrt(5 - 4x - x^2)) = -sqrt(5 - 4x - x^2). For the second, 5 - 4x - x^2 = 9 - (x + 2)^2, so integral of dx/sqrt(9 - (x + 2)^2) = sin^(-1)((x + 2)/3). Answer: -sqrt(5 - 4x - x^2) + sin^(-1)((x + 2)/3) + C.",
+          "s": [
+            [
+              "Finds A = -1/2 and B = 1",
+              1
+            ],
+            [
+              "Integrates the first part to -sqrt(5 - 4x - x^2)",
+              1
+            ],
+            [
+              "Writes 9 - (x + 2)^2 and obtains sin^(-1)((x + 2)/3), giving the full answer with + C",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Evaluate",
+          "d": "Hard",
+          "t": "short_answer",
+          "m": 2,
+          "q": "A student writes integral of dx/(x^2 + 4) = tan^(-1)(x/2) + C. Evaluate the answer.",
+          "a": "Wrong: the factor 1/a is missing. d/dx tan^(-1)(x/2) = (1/2)/(1 + x^2/4) = 2/(x^2 + 4), which is twice the integrand. With a = 2 the correct answer is (1/2) tan^(-1)(x/2) + C.",
+          "s": [
+            [
+              "Shows by differentiation or by the formula that the factor 1/a = 1/2 is missing",
+              1
+            ],
+            [
+              "Gives (1/2) tan^(-1)(x/2) + C",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Create",
+          "d": "Hardest",
+          "t": "long_answer",
+          "m": 3,
+          "q": "Construct a quadratic x^2 + bx + c such that integral of dx/(x^2 + bx + c) = (1/3) tan^(-1)((x - 2)/3) + C. Justify your answer.",
+          "a": "The answer has the form (1/a) tan^(-1)(t/a) with t = x - 2 and a = 3, so the denominator must be (x - 2)^2 + 3^2 = x^2 - 4x + 13. Check: with t = x - 2, integral of dt/(t^2 + 9) = (1/3) tan^(-1)(t/3) + C.",
+          "s": [
+            [
+              "Recognises the form (1/a) tan^(-1)(t/a) with t = x - 2 and a = 3",
+              1
+            ],
+            [
+              "Writes the denominator (x - 2)^2 + 9 = x^2 - 4x + 13",
+              1
+            ],
+            [
+              "Verifies using the substitution t = x - 2",
+              1
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "code": "C12M-7.5",
+      "name": "Integration by partial fractions",
+      "description": "Integrating rational functions by first reducing an improper fraction by long division and then splitting a proper fraction into the partial fraction forms of Table 7.2 (distinct linear, repeated linear, and linear with an irreducible quadratic factor).",
+      "idea": "A complicated proper rational function can be written as a sum of simple fractions, each of which integrates to a log or a tan^(-1) term.",
+      "rule": "(px + q)/((x - a)(x - b)) = A/(x - a) + B/(x - b); (px + q)/(x - a)^2 = A/(x - a) + B/(x - a)^2; (px^2 + qx + r)/((x - a)^2 (x - b)) = A/(x - a) + B/(x - a)^2 + C/(x - b); (px^2 + qx + r)/((x - a)(x^2 + bx + c)) = A/(x - a) + (Bx + C)/(x^2 + bx + c). If the fraction is improper, divide first.",
+      "example": "1/((x + 1)(x + 2)) = 1/(x + 1) - 1/(x + 2), so its integral is log|(x + 1)/(x + 2)| + C.",
+      "difficulty_base": "Hard",
+      "questions": [
+        {
+          "b": "Remember",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "A rational function P(x)/Q(x) is called proper when",
+          "a": "the degree of P(x) is less than the degree of Q(x)",
+          "o": [
+            "the degree of P(x) is less than the degree of Q(x)",
+            "the degree of P(x) is greater than or equal to the degree of Q(x)",
+            "Q(x) has no real roots",
+            "P(x) and Q(x) have the same leading coefficient"
+          ]
+        },
+        {
+          "b": "Remember",
+          "d": "Easy",
+          "t": "fill_blank",
+          "m": 1,
+          "q": "An improper rational function is reduced to a polynomial plus a proper rational function by the long ____ process.",
+          "a": "division"
+        },
+        {
+          "b": "Remember",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "According to Table 7.2, the partial fraction form of (px + q)/(x - a)^2 is",
+          "a": "A/(x - a) + B/(x - a)^2",
+          "o": [
+            "A/(x - a) + B/(x - a)^2",
+            "A/(x - a)^2",
+            "A/(x - a) + B/(x + a)",
+            "A/(x - a) + B/(x - a)"
+          ]
+        },
+        {
+          "b": "Remember",
+          "d": "Hard",
+          "t": "mcq",
+          "m": 1,
+          "rev": true,
+          "q": "In Table 7.2 of partial fraction forms, which pairing is NOT correct?",
+          "a": "(px^2 + qx + r)/((x - a)(x^2 + bx + c)) -> A/(x - a) + B/(x^2 + bx + c)",
+          "o": [
+            "(px^2 + qx + r)/((x - a)(x^2 + bx + c)) -> A/(x - a) + B/(x^2 + bx + c)",
+            "(px + q)/((x - a)(x - b)) -> A/(x - a) + B/(x - b)",
+            "(px^2 + qx + r)/((x - a)^2 (x - b)) -> A/(x - a) + B/(x - a)^2 + C/(x - b)",
+            "(px^2 + qx + r)/((x - a)(x - b)(x - c)) -> A/(x - a) + B/(x - b) + C/(x - c)"
+          ]
+        },
+        {
+          "b": "Understand",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "Why must (x^2 + 1)/(x^2 - 5x + 6) be divided out before using partial fractions?",
+          "a": "It is improper: the degree of the numerator is not less than the degree of the denominator",
+          "o": [
+            "It is improper: the degree of the numerator is not less than the degree of the denominator",
+            "Its denominator cannot be factorised",
+            "Its numerator has no real roots",
+            "Partial fractions work only when the numerator is a constant"
+          ]
+        },
+        {
+          "b": "Understand",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "The equation 1/((x + 1)(x + 2)) = A/(x + 1) + B/(x + 2), used to find A and B, is true",
+          "a": "for all permissible values of x, that is, it is an identity",
+          "o": [
+            "for all permissible values of x, that is, it is an identity",
+            "only for x = -1 and x = -2",
+            "only for x = 0",
+            "only for positive values of x"
+          ]
+        },
+        {
+          "b": "Understand",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "In 1/((x + 1)(x + 2)) = A/(x + 1) + B/(x + 2), the values of A and B are",
+          "a": "A = 1, B = -1",
+          "o": [
+            "A = 1, B = -1",
+            "A = -1, B = 1",
+            "A = 1, B = 1",
+            "A = 1/2, B = -1/2"
+          ]
+        },
+        {
+          "b": "Understand",
+          "d": "Hard",
+          "t": "mcq",
+          "m": 1,
+          "q": "To integrate x^2/((x^2 + 1)(x^2 + 4)), which approach does the book use?",
+          "a": "Put x^2 = y only to find the partial fractions, then integrate the resulting terms in x",
+          "o": [
+            "Put x^2 = y only to find the partial fractions, then integrate the resulting terms in x",
+            "Put x^2 = y and integrate in y, replacing dx by dy",
+            "Divide x^2 by (x^2 + 1)(x^2 + 4) by long division first",
+            "Use the form A/(x^2 + 1) + B/(x^2 + 1)^2"
+          ]
+        },
+        {
+          "b": "Understand",
+          "d": "Hard",
+          "t": "mcq",
+          "m": 1,
+          "q": "The correct partial fraction form for (x^2 + x + 1)/((x + 2)(x^2 + 1)) is",
+          "a": "A/(x + 2) + (Bx + C)/(x^2 + 1)",
+          "o": [
+            "A/(x + 2) + (Bx + C)/(x^2 + 1)",
+            "A/(x + 2) + B/(x^2 + 1)",
+            "A/(x + 2) + B/(x + 1) + C/(x - 1)",
+            "A/(x + 2) + B/(x^2 + 1) + C/(x^2 + 1)^2"
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Easy",
+          "t": "fill_blank",
+          "m": 1,
+          "q": "integral of dx/((x + 1)(x + 2)) = log|(x + 1)/(x + ____)| + C.",
+          "a": "2"
+        },
+        {
+          "b": "Apply",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "Using 1/(x^2 - 9) = (1/6)[1/(x - 3) - 1/(x + 3)], integral of dx/(x^2 - 9) equals",
+          "a": "(1/6) log|(x - 3)/(x + 3)| + C",
+          "o": [
+            "(1/6) log|(x - 3)/(x + 3)| + C",
+            "(1/3) log|(x - 3)/(x + 3)| + C",
+            "(1/6) log|(x + 3)/(x - 3)| + C",
+            "log|x^2 - 9| + C"
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Hard",
+          "t": "mcq",
+          "m": 1,
+          "q": "integral of x/((x + 1)(x + 2)) dx equals",
+          "a": "log|(x + 2)^2/(x + 1)| + C",
+          "o": [
+            "log|(x + 2)^2/(x + 1)| + C",
+            "log|(x + 1)/(x + 2)^2| + C",
+            "log|(x + 2)/(x + 1)| + C",
+            "log|(x + 1)(x + 2)| + C"
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Hard",
+          "t": "mcq",
+          "m": 1,
+          "q": "Using 1/(x(x^2 + 1)) = 1/x - x/(x^2 + 1), integral of dx/(x(x^2 + 1)) equals",
+          "a": "log|x| - (1/2) log(x^2 + 1) + C",
+          "o": [
+            "log|x| - (1/2) log(x^2 + 1) + C",
+            "log|x| + (1/2) log(x^2 + 1) + C",
+            "-log|x| + (1/2) log(x^2 + 1) + C",
+            "log|x| - log(x^2 + 1) + C"
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Hard",
+          "t": "short_answer",
+          "m": 2,
+          "q": "Find integral of 2x/(x^2 + 3x + 2) dx.",
+          "a": "x^2 + 3x + 2 = (x + 1)(x + 2). Write 2x/((x + 1)(x + 2)) = A/(x + 1) + B/(x + 2): 2x = A(x + 2) + B(x + 1), giving A = -2, B = 4. Integral = -2 log|x + 1| + 4 log|x + 2| + C.",
+          "s": [
+            [
+              "Finds A = -2 and B = 4",
+              1
+            ],
+            [
+              "Integrates to 4 log|x + 2| - 2 log|x + 1| + C",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Hardest",
+          "t": "long_answer",
+          "m": 3,
+          "q": "Find integral of (x^2 + 1)/(x^2 - 5x + 6) dx.",
+          "a": "The fraction is improper; dividing, (x^2 + 1)/(x^2 - 5x + 6) = 1 + (5x - 5)/((x - 2)(x - 3)). Write (5x - 5)/((x - 2)(x - 3)) = A/(x - 2) + B/(x - 3): 5x - 5 = A(x - 3) + B(x - 2), giving A = -5, B = 10. Integral = x - 5 log|x - 2| + 10 log|x - 3| + C.",
+          "s": [
+            [
+              "Divides to get 1 + (5x - 5)/((x - 2)(x - 3))",
+              1
+            ],
+            [
+              "Finds A = -5 and B = 10",
+              1
+            ],
+            [
+              "Integrates to x - 5 log|x - 2| + 10 log|x - 3| + C",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Analyse",
+          "d": "Hard",
+          "t": "assertion_reason",
+          "m": 1,
+          "q": "Assertion (A): To integrate (x^3 + x + 1)/(x^2 - 1), we first divide the numerator by the denominator. Reason (R): The integrand is an improper rational function, since the degree of the numerator is not less than the degree of the denominator.",
+          "a": "Both A and R are true, and R is the correct explanation of A",
+          "o": [
+            "Both A and R are true, and R is the correct explanation of A",
+            "Both A and R are true, but R is not the correct explanation of A",
+            "A is true, R is false",
+            "A is false, R is true"
+          ]
+        },
+        {
+          "b": "Analyse",
+          "d": "Hard",
+          "t": "multi_statement",
+          "m": 1,
+          "q": "Consider these statements. (I) For 1/((x - 1)(x^2 + 1)), the form A/(x - 1) + B/(x^2 + 1) is enough. (II) For (3x - 2)/((x + 1)^2 (x + 3)), the form A/(x + 1) + B/(x + 1)^2 + C/(x + 3) is used. Which is or are correct?",
+          "a": "Only II",
+          "o": [
+            "Only II",
+            "Only I",
+            "Both I and II",
+            "Neither I nor II"
+          ]
+        },
+        {
+          "b": "Analyse",
+          "d": "Hardest",
+          "t": "long_answer",
+          "m": 3,
+          "q": "Find integral of (3x - 2)/((x + 1)^2 (x + 3)) dx.",
+          "a": "Write (3x - 2)/((x + 1)^2 (x + 3)) = A/(x + 1) + B/(x + 1)^2 + C/(x + 3). Then 3x - 2 = A(x + 1)(x + 3) + B(x + 3) + C(x + 1)^2. Comparing coefficients: A + C = 0, 4A + B + 2C = 3, 3A + 3B + C = -2, so A = 11/4, B = -5/2, C = -11/4. Integral = (11/4) log|x + 1| + 5/(2(x + 1)) - (11/4) log|x + 3| + C = (11/4) log|(x + 1)/(x + 3)| + 5/(2(x + 1)) + C.",
+          "s": [
+            [
+              "Uses the form A/(x + 1) + B/(x + 1)^2 + C/(x + 3)",
+              1
+            ],
+            [
+              "Finds A = 11/4, B = -5/2, C = -11/4",
+              1
+            ],
+            [
+              "Integrates to (11/4) log|(x + 1)/(x + 3)| + 5/(2(x + 1)) + C",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Evaluate",
+          "d": "Hard",
+          "t": "short_answer",
+          "m": 2,
+          "q": "A student writes 1/((x - 1)(x + 2)) = 1/(x - 1) - 1/(x + 2) and so gets integral of dx/((x - 1)(x + 2)) = log|(x - 1)/(x + 2)| + C. Evaluate the work.",
+          "a": "The decomposition is wrong: 1/(x - 1) - 1/(x + 2) = 3/((x - 1)(x + 2)), three times the integrand. Correctly, 1/((x - 1)(x + 2)) = (1/3)[1/(x - 1) - 1/(x + 2)], so the integral is (1/3) log|(x - 1)/(x + 2)| + C.",
+          "s": [
+            [
+              "Recombines the fractions to show the factor 3 error",
+              1
+            ],
+            [
+              "Gives (1/3) log|(x - 1)/(x + 2)| + C",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Create",
+          "d": "Hardest",
+          "t": "long_answer",
+          "m": 3,
+          "q": "Construct a proper rational function with denominator (x - 1)(x + 1) whose integral is log|x - 1| + 2 log|x + 1| + C. Verify by partial fractions.",
+          "a": "The integrand must be 1/(x - 1) + 2/(x + 1) = [(x + 1) + 2(x - 1)]/((x - 1)(x + 1)) = (3x - 1)/(x^2 - 1). It is proper (degree 1 < 2). Verify: (3x - 1)/((x - 1)(x + 1)) = A/(x - 1) + B/(x + 1) gives 3x - 1 = A(x + 1) + B(x - 1); x = 1 gives A = 1, x = -1 gives B = 2. Integral = log|x - 1| + 2 log|x + 1| + C.",
+          "s": [
+            [
+              "Writes the integrand as 1/(x - 1) + 2/(x + 1)",
+              1
+            ],
+            [
+              "Combines to the proper fraction (3x - 1)/(x^2 - 1)",
+              1
+            ],
+            [
+              "Verifies A = 1, B = 2 and the integral",
+              1
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "code": "C12M-7.6",
+      "name": "Integration by parts and integrals of the type e^x [f(x) + f'(x)]",
+      "description": "The integration by parts formula for a product of two functions, the choice of first and second function, its use for log x, inverse trigonometric functions and e^x sin x, and the result integral of e^x [f(x) + f'(x)] dx = e^x f(x) + C.",
+      "idea": "The product rule run backwards: the integral of a product equals first times integral of second minus the integral of (derivative of first times integral of second).",
+      "rule": "integral of f(x) g(x) dx = f(x) integral of g(x) dx - integral of [f'(x) integral of g(x) dx] dx. Take as second function one whose integral is known; usually a power of x is first, but log and inverse trigonometric functions are taken first. integral of e^x [f(x) + f'(x)] dx = e^x f(x) + C.",
+      "example": "integral of x cos x dx = x sin x - integral of sin x dx = x sin x + cos x + C.",
+      "difficulty_base": "Hard",
+      "questions": [
+        {
+          "b": "Remember",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "The integration by parts formula, with f as the first function and g as the second, is integral of f(x) g(x) dx =",
+          "a": "f(x) integral of g(x) dx - integral of [f'(x) integral of g(x) dx] dx",
+          "o": [
+            "f(x) integral of g(x) dx - integral of [f'(x) integral of g(x) dx] dx",
+            "f(x) integral of g(x) dx + integral of [f'(x) integral of g(x) dx] dx",
+            "(integral of f(x) dx)(integral of g(x) dx)",
+            "f(x) g(x) - integral of f'(x) g'(x) dx"
+          ]
+        },
+        {
+          "b": "Remember",
+          "d": "Easy",
+          "t": "fill_blank",
+          "m": 1,
+          "q": "integral of e^x [f(x) + f'(x)] dx = ____ + C.",
+          "a": "e^x f(x)"
+        },
+        {
+          "b": "Remember",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "Integrating by parts, integral of x e^x dx equals",
+          "a": "x e^x - e^x + C",
+          "o": [
+            "x e^x - e^x + C",
+            "x e^x + e^x + C",
+            "(x^2/2) e^x + C",
+            "x e^x + C"
+          ]
+        },
+        {
+          "b": "Remember",
+          "d": "Hard",
+          "t": "mcq",
+          "m": 1,
+          "rev": true,
+          "q": "In integration by parts, which choice of first function is NOT what the book recommends?",
+          "a": "In integral of x cos x dx, take cos x as the first function",
+          "o": [
+            "In integral of x cos x dx, take cos x as the first function",
+            "In integral of log x dx, take log x as the first function and 1 as the second",
+            "In integral of x e^x dx, take x as the first function",
+            "In integral of x tan^(-1) x dx, take tan^(-1) x as the first function"
+          ]
+        },
+        {
+          "b": "Understand",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "Why is no constant added when the second function is integrated in the middle of integration by parts?",
+          "a": "Any such constant cancels out in the final result, so adding it is superfluous",
+          "o": [
+            "Any such constant cancels out in the final result, so adding it is superfluous",
+            "Because that constant is always equal to zero",
+            "Because the second function is always a polynomial",
+            "Because integration by parts gives a definite value, not a family"
+          ]
+        },
+        {
+          "b": "Understand",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "Taking log x as first function and 1 as second, integral of log x dx equals",
+          "a": "x log x - x + C",
+          "o": [
+            "x log x - x + C",
+            "x log x + x + C",
+            "1/x + C",
+            "(1/2)(log x)^2 + C"
+          ]
+        },
+        {
+          "b": "Understand",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "If cos x is taken as the first function and x as the second in integral of x cos x dx, the result is",
+          "a": "a new integral with a higher power of x, which is more complicated",
+          "o": [
+            "a new integral with a higher power of x, which is more complicated",
+            "the answer x sin x + cos x + C in one step",
+            "an integral equal to zero",
+            "the same integral with the opposite sign"
+          ]
+        },
+        {
+          "b": "Understand",
+          "d": "Hard",
+          "t": "mcq",
+          "m": 1,
+          "q": "Recognising the form e^x [f(x) + f'(x)], integral of e^x (sin x + cos x) dx equals",
+          "a": "e^x sin x + C",
+          "o": [
+            "e^x sin x + C",
+            "e^x cos x + C",
+            "e^x (sin x - cos x) + C",
+            "e^x (sin x + cos x) + C"
+          ]
+        },
+        {
+          "b": "Understand",
+          "d": "Hard",
+          "t": "mcq",
+          "m": 1,
+          "q": "integral of e^x (1/x - 1/x^2) dx equals",
+          "a": "e^x/x + C",
+          "o": [
+            "e^x/x + C",
+            "-e^x/x^2 + C",
+            "e^x log|x| + C",
+            "e^x/x^2 + C"
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Easy",
+          "t": "fill_blank",
+          "m": 1,
+          "q": "By parts, integral of x sin x dx = -x cos x + ____ + C.",
+          "a": "sin x"
+        },
+        {
+          "b": "Apply",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "integral of x log x dx equals",
+          "a": "(x^2/2) log x - x^2/4 + C",
+          "o": [
+            "(x^2/2) log x - x^2/4 + C",
+            "(x^2/2) log x + x^2/4 + C",
+            "(x^2/2) log x - x^2/2 + C",
+            "x log x - x + C"
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Hard",
+          "t": "mcq",
+          "m": 1,
+          "q": "integral of x sec^2 x dx equals",
+          "a": "x tan x + log|cos x| + C",
+          "o": [
+            "x tan x + log|cos x| + C",
+            "x tan x - log|cos x| + C",
+            "x tan x + C",
+            "(x^2/2) tan x + C"
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Hard",
+          "t": "mcq",
+          "m": 1,
+          "q": "integral of e^x sec x (1 + tan x) dx equals",
+          "a": "e^x sec x + C",
+          "o": [
+            "e^x sec x + C",
+            "e^x tan x + C",
+            "e^x cos x + C",
+            "e^x sin x + C"
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Hard",
+          "t": "short_answer",
+          "m": 2,
+          "q": "Find integral of x^2 e^x dx.",
+          "a": "By parts with x^2 first: x^2 e^x - integral of 2x e^x dx. Again by parts: integral of x e^x dx = x e^x - e^x. So the integral is x^2 e^x - 2(x e^x - e^x) + C = e^x (x^2 - 2x + 2) + C.",
+          "s": [
+            [
+              "Applies parts once to get x^2 e^x - 2 integral of x e^x dx",
+              1
+            ],
+            [
+              "Applies parts again and obtains e^x (x^2 - 2x + 2) + C",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Hardest",
+          "t": "long_answer",
+          "m": 3,
+          "q": "Find integral of e^x sin x dx.",
+          "a": "Let I = integral of e^x sin x dx. Taking e^x as first function: I = -e^x cos x + integral of e^x cos x dx. Again by parts: integral of e^x cos x dx = e^x sin x - I. So I = -e^x cos x + e^x sin x - I, giving 2I = e^x (sin x - cos x) and I = (e^x/2)(sin x - cos x) + C.",
+          "s": [
+            [
+              "First application: I = -e^x cos x + integral of e^x cos x dx",
+              1
+            ],
+            [
+              "Second application gives integral of e^x cos x dx = e^x sin x - I",
+              1
+            ],
+            [
+              "Solves 2I = e^x (sin x - cos x) to get I = (e^x/2)(sin x - cos x) + C",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Analyse",
+          "d": "Hard",
+          "t": "assertion_reason",
+          "m": 1,
+          "q": "Assertion (A): integral of x cos x dx = x sin x + cos x + C. Reason (R): In integration by parts, the function whose integral is not easily known should be chosen as the second function.",
+          "a": "A is true, R is false",
+          "o": [
+            "A is true, R is false",
+            "Both A and R are true, and R is the correct explanation of A",
+            "Both A and R are true, but R is not the correct explanation of A",
+            "A is false, R is true"
+          ]
+        },
+        {
+          "b": "Analyse",
+          "d": "Hard",
+          "t": "multi_statement",
+          "m": 1,
+          "q": "Consider these statements. (I) integral of x e^x dx = x e^x - e^x + C. (II) integral of e^x (x + 1) dx = x e^x + C. Which is or are correct?",
+          "a": "Both I and II",
+          "o": [
+            "Both I and II",
+            "Only I",
+            "Only II",
+            "Neither I nor II"
+          ]
+        },
+        {
+          "b": "Analyse",
+          "d": "Hardest",
+          "t": "long_answer",
+          "m": 3,
+          "q": "Find integral of e^x (x^2 + 1)/(x + 1)^2 dx.",
+          "a": "(x^2 + 1)/(x + 1)^2 = (x^2 - 1 + 2)/(x + 1)^2 = (x - 1)/(x + 1) + 2/(x + 1)^2. Let f(x) = (x - 1)/(x + 1); then f'(x) = 2/(x + 1)^2. So the integrand is e^x [f(x) + f'(x)] and the integral is e^x (x - 1)/(x + 1) + C.",
+          "s": [
+            [
+              "Rewrites (x^2 + 1)/(x + 1)^2 = (x - 1)/(x + 1) + 2/(x + 1)^2",
+              1
+            ],
+            [
+              "Identifies f(x) = (x - 1)/(x + 1) with f'(x) = 2/(x + 1)^2",
+              1
+            ],
+            [
+              "Obtains e^x (x - 1)/(x + 1) + C",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Evaluate",
+          "d": "Hard",
+          "t": "short_answer",
+          "m": 2,
+          "q": "To find integral of x e^x dx, a student takes e^x as the first function and x as the second, and obtains (x^2/2) e^x - integral of (x^2/2) e^x dx. Evaluate this choice.",
+          "a": "The step is correct but the choice is poor: the new integral has a higher power of x, so it is more complicated than the original. Taking x as first function (its derivative is 1) gives x e^x - integral of e^x dx = x e^x - e^x + C.",
+          "s": [
+            [
+              "States that the new integral is harder because the power of x increases",
+              1
+            ],
+            [
+              "Redoes it with x as first function to get x e^x - e^x + C",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Create",
+          "d": "Hardest",
+          "t": "long_answer",
+          "m": 3,
+          "q": "Choose a non-constant function f(x) (not a polynomial of degree 1), form an integrand of the type e^x [f(x) + f'(x)], state its integral and verify by differentiation.",
+          "a": "Example: f(x) = tan^(-1) x, f'(x) = 1/(1 + x^2). Integrand e^x [tan^(-1) x + 1/(1 + x^2)]; integral e^x tan^(-1) x + C. Check: d/dx [e^x tan^(-1) x] = e^x tan^(-1) x + e^x/(1 + x^2), the integrand.",
+          "s": [
+            [
+              "Chooses a suitable f and computes f'(x) correctly",
+              1
+            ],
+            [
+              "Writes the integrand e^x [f(x) + f'(x)] and the integral e^x f(x) + C",
+              1
+            ],
+            [
+              "Verifies by the product rule",
+              1
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "code": "C12M-7.7",
+      "name": "Integrals of sqrt(x^2 - a^2), sqrt(x^2 + a^2) and sqrt(a^2 - x^2)",
+      "description": "The three special integrals of square roots of quadratics obtained by integration by parts (taking 1 as the second function), and their use for sqrt(ax^2 + bx + c) after completing the square.",
+      "idea": "Integrating sqrt(x^2 - a^2) by parts brings the same integral back on the right, so it can be solved for, like an equation.",
+      "rule": "integral of sqrt(x^2 - a^2) dx = (x/2) sqrt(x^2 - a^2) - (a^2/2) log|x + sqrt(x^2 - a^2)| + C; integral of sqrt(x^2 + a^2) dx = (x/2) sqrt(x^2 + a^2) + (a^2/2) log|x + sqrt(x^2 + a^2)| + C; integral of sqrt(a^2 - x^2) dx = (x/2) sqrt(a^2 - x^2) + (a^2/2) sin^(-1)(x/a) + C.",
+      "example": "x^2 + 2x + 5 = (x + 1)^2 + 2^2, so integral of sqrt(x^2 + 2x + 5) dx = ((x + 1)/2) sqrt(x^2 + 2x + 5) + 2 log|x + 1 + sqrt(x^2 + 2x + 5)| + C.",
+      "difficulty_base": "Hard",
+      "questions": [
+        {
+          "b": "Remember",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "The standard result for integral of sqrt(a^2 - x^2) dx is",
+          "a": "(x/2) sqrt(a^2 - x^2) + (a^2/2) sin^(-1)(x/a) + C",
+          "o": [
+            "(x/2) sqrt(a^2 - x^2) + (a^2/2) sin^(-1)(x/a) + C",
+            "(x/2) sqrt(a^2 - x^2) - (a^2/2) sin^(-1)(x/a) + C",
+            "(x/2) sqrt(a^2 - x^2) + (a^2/2) log|x + sqrt(a^2 - x^2)| + C",
+            "sin^(-1)(x/a) + C"
+          ]
+        },
+        {
+          "b": "Remember",
+          "d": "Easy",
+          "t": "fill_blank",
+          "m": 1,
+          "q": "In deriving integral of sqrt(x^2 - a^2) dx by parts, the constant function ____ is taken as the second function.",
+          "a": "1"
+        },
+        {
+          "b": "Remember",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "The standard result for integral of sqrt(x^2 + a^2) dx is",
+          "a": "(x/2) sqrt(x^2 + a^2) + (a^2/2) log|x + sqrt(x^2 + a^2)| + C",
+          "o": [
+            "(x/2) sqrt(x^2 + a^2) + (a^2/2) log|x + sqrt(x^2 + a^2)| + C",
+            "(x/2) sqrt(x^2 + a^2) - (a^2/2) log|x + sqrt(x^2 + a^2)| + C",
+            "(x/2) sqrt(x^2 + a^2) + (a^2/2) sin^(-1)(x/a) + C",
+            "(2/3)(x^2 + a^2)^(3/2) + C"
+          ]
+        },
+        {
+          "b": "Remember",
+          "d": "Hard",
+          "t": "mcq",
+          "m": 1,
+          "rev": true,
+          "q": "The book notes these three integrals can also be found by trigonometric substitution. Which pairing of integral and substitution is NOT the one given?",
+          "a": "x = a sin(theta) for integral of sqrt(x^2 + a^2) dx",
+          "o": [
+            "x = a sin(theta) for integral of sqrt(x^2 + a^2) dx",
+            "x = a sec(theta) for integral of sqrt(x^2 - a^2) dx",
+            "x = a tan(theta) for integral of sqrt(x^2 + a^2) dx",
+            "x = a sin(theta) for integral of sqrt(a^2 - x^2) dx"
+          ]
+        },
+        {
+          "b": "Understand",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "In finding I = integral of sqrt(x^2 - a^2) dx by parts, the integral I appears again on the right hand side. This is used to",
+          "a": "bring I to the left side and solve 2I = ... for I",
+          "o": [
+            "bring I to the left side and solve 2I = ... for I",
+            "conclude that I = 0",
+            "differentiate both sides once more",
+            "show that the integral cannot be found"
+          ]
+        },
+        {
+          "b": "Understand",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "To use these special integrals for integral of sqrt(x^2 + 2x + 5) dx, the book first writes x^2 + 2x + 5 as",
+          "a": "(x + 1)^2 + 4",
+          "o": [
+            "(x + 1)^2 + 4",
+            "(x + 1)^2 + 5",
+            "(x + 2)^2 + 1",
+            "(x - 1)^2 + 4"
+          ]
+        },
+        {
+          "b": "Understand",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "integral of sqrt(4 - x^2) dx equals",
+          "a": "(x/2) sqrt(4 - x^2) + 2 sin^(-1)(x/2) + C",
+          "o": [
+            "(x/2) sqrt(4 - x^2) + 2 sin^(-1)(x/2) + C",
+            "(x/2) sqrt(4 - x^2) + 4 sin^(-1)(x/2) + C",
+            "(x/2) sqrt(4 - x^2) + 2 sin^(-1) x + C",
+            "(x/2) sqrt(4 - x^2) - 2 sin^(-1)(x/2) + C"
+          ]
+        },
+        {
+          "b": "Understand",
+          "d": "Hard",
+          "t": "mcq",
+          "m": 1,
+          "q": "integral of sqrt(1 + x^2) dx equals",
+          "a": "(x/2) sqrt(1 + x^2) + (1/2) log|x + sqrt(1 + x^2)| + C",
+          "o": [
+            "(x/2) sqrt(1 + x^2) + (1/2) log|x + sqrt(1 + x^2)| + C",
+            "(2/3)(1 + x^2)^(3/2) + C",
+            "(2/3) x (1 + x^2)^(3/2) + C",
+            "(x/2) sqrt(1 + x^2) + (1/2) sin^(-1) x + C"
+          ]
+        },
+        {
+          "b": "Understand",
+          "d": "Hard",
+          "t": "mcq",
+          "m": 1,
+          "q": "For integral of sqrt(3 - 2x - x^2) dx, completing the square gives 3 - 2x - x^2 =",
+          "a": "4 - (x + 1)^2",
+          "o": [
+            "4 - (x + 1)^2",
+            "3 - (x + 1)^2",
+            "4 - (x - 1)^2",
+            "2 - (x + 1)^2"
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Easy",
+          "t": "fill_blank",
+          "m": 1,
+          "q": "integral of sqrt(9 - x^2) dx = (x/2) sqrt(9 - x^2) + (9/2) sin^(-1)(____) + C.",
+          "a": "x/3"
+        },
+        {
+          "b": "Apply",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "integral of sqrt(x^2 - 16) dx equals",
+          "a": "(x/2) sqrt(x^2 - 16) - 8 log|x + sqrt(x^2 - 16)| + C",
+          "o": [
+            "(x/2) sqrt(x^2 - 16) - 8 log|x + sqrt(x^2 - 16)| + C",
+            "(x/2) sqrt(x^2 - 16) + 8 log|x + sqrt(x^2 - 16)| + C",
+            "(x/2) sqrt(x^2 - 16) - 16 log|x + sqrt(x^2 - 16)| + C",
+            "(x/2) sqrt(x^2 - 16) - 8 sin^(-1)(x/4) + C"
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Hard",
+          "t": "mcq",
+          "m": 1,
+          "q": "Using t = 2x, integral of sqrt(1 - 4x^2) dx equals",
+          "a": "(x/2) sqrt(1 - 4x^2) + (1/4) sin^(-1)(2x) + C",
+          "o": [
+            "(x/2) sqrt(1 - 4x^2) + (1/4) sin^(-1)(2x) + C",
+            "x sqrt(1 - 4x^2) + (1/2) sin^(-1)(2x) + C",
+            "(x/2) sqrt(1 - 4x^2) + (1/2) sin^(-1)(2x) + C",
+            "(x/2) sqrt(1 - 4x^2) + (1/4) sin^(-1) x + C"
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Hard",
+          "t": "mcq",
+          "m": 1,
+          "q": "Since x^2 + 4x + 6 = (x + 2)^2 + 2, integral of sqrt(x^2 + 4x + 6) dx equals",
+          "a": "((x + 2)/2) sqrt(x^2 + 4x + 6) + log|x + 2 + sqrt(x^2 + 4x + 6)| + C",
+          "o": [
+            "((x + 2)/2) sqrt(x^2 + 4x + 6) + log|x + 2 + sqrt(x^2 + 4x + 6)| + C",
+            "((x + 2)/2) sqrt(x^2 + 4x + 6) + 2 log|x + 2 + sqrt(x^2 + 4x + 6)| + C",
+            "((x + 2)/2) sqrt(x^2 + 4x + 6) - log|x + 2 + sqrt(x^2 + 4x + 6)| + C",
+            "((x + 2)/2) sqrt(x^2 + 4x + 6) + sin^(-1)((x + 2)/sqrt(2)) + C"
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Hard",
+          "t": "short_answer",
+          "m": 2,
+          "q": "Find integral of sqrt(x^2 + 3x) dx.",
+          "a": "x^2 + 3x = (x + 3/2)^2 - (3/2)^2. Using the result for sqrt(t^2 - a^2) with t = x + 3/2, a = 3/2: integral = ((2x + 3)/4) sqrt(x^2 + 3x) - (9/8) log|x + 3/2 + sqrt(x^2 + 3x)| + C.",
+          "s": [
+            [
+              "Completes the square as (x + 3/2)^2 - (3/2)^2",
+              1
+            ],
+            [
+              "Applies the sqrt(x^2 - a^2) result to get ((2x + 3)/4) sqrt(x^2 + 3x) - (9/8) log|x + 3/2 + sqrt(x^2 + 3x)| + C",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Hardest",
+          "t": "long_answer",
+          "m": 3,
+          "q": "Find integral of sqrt(3 - 2x - x^2) dx.",
+          "a": "3 - 2x - x^2 = 4 - (x + 1)^2. Put y = x + 1, dy = dx: integral of sqrt(4 - y^2) dy = (y/2) sqrt(4 - y^2) + (4/2) sin^(-1)(y/2) + C. Hence the integral is ((x + 1)/2) sqrt(3 - 2x - x^2) + 2 sin^(-1)((x + 1)/2) + C.",
+          "s": [
+            [
+              "Completes the square as 4 - (x + 1)^2",
+              1
+            ],
+            [
+              "Applies the sqrt(a^2 - y^2) result with a = 2",
+              1
+            ],
+            [
+              "Writes ((x + 1)/2) sqrt(3 - 2x - x^2) + 2 sin^(-1)((x + 1)/2) + C",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Analyse",
+          "d": "Hard",
+          "t": "assertion_reason",
+          "m": 1,
+          "q": "Assertion (A): integral of sqrt(x^2 + 1) dx = (x/2) sqrt(x^2 + 1) + (1/2) log|x + sqrt(x^2 + 1)| + C. Reason (R): integral of sqrt(a^2 - x^2) dx = (x/2) sqrt(a^2 - x^2) + (a^2/2) sin^(-1)(x/a) + C.",
+          "a": "Both A and R are true, but R is not the correct explanation of A",
+          "o": [
+            "Both A and R are true, but R is not the correct explanation of A",
+            "Both A and R are true, and R is the correct explanation of A",
+            "A is true, R is false",
+            "A is false, R is true"
+          ]
+        },
+        {
+          "b": "Analyse",
+          "d": "Hard",
+          "t": "multi_statement",
+          "m": 1,
+          "q": "Consider these statements. (I) The result for integral of sqrt(x^2 - a^2) dx contains a sin^(-1)(x/a) term. (II) integral of sqrt(a^2 - x^2) dx = (x/2) sqrt(a^2 - x^2) + (a^2/2) log|x + sqrt(a^2 - x^2)| + C. Which is or are correct?",
+          "a": "Neither I nor II",
+          "o": [
+            "Neither I nor II",
+            "Only I",
+            "Only II",
+            "Both I and II"
+          ]
+        },
+        {
+          "b": "Analyse",
+          "d": "Hardest",
+          "t": "long_answer",
+          "m": 3,
+          "q": "Find integral of sqrt(x^2 + 2x + 5) dx.",
+          "a": "x^2 + 2x + 5 = (x + 1)^2 + 2^2. Put y = x + 1, dy = dx: integral of sqrt(y^2 + 4) dy = (y/2) sqrt(y^2 + 4) + (4/2) log|y + sqrt(y^2 + 4)| + C. So the integral is ((x + 1)/2) sqrt(x^2 + 2x + 5) + 2 log|x + 1 + sqrt(x^2 + 2x + 5)| + C.",
+          "s": [
+            [
+              "Completes the square as (x + 1)^2 + 2^2",
+              1
+            ],
+            [
+              "Applies the sqrt(y^2 + a^2) result with a = 2",
+              1
+            ],
+            [
+              "Writes ((x + 1)/2) sqrt(x^2 + 2x + 5) + 2 log|x + 1 + sqrt(x^2 + 2x + 5)| + C",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Evaluate",
+          "d": "Hard",
+          "t": "short_answer",
+          "m": 2,
+          "q": "A student writes integral of sqrt(x^2 + 4) dx = (2/3)(x^2 + 4)^(3/2) + C by treating it like the power rule. Evaluate the work.",
+          "a": "Wrong. Differentiating (2/3)(x^2 + 4)^(3/2) gives 2x sqrt(x^2 + 4), not sqrt(x^2 + 4); the power rule needs the factor 2x (the derivative of x^2 + 4) to be present. The correct result is (x/2) sqrt(x^2 + 4) + 2 log|x + sqrt(x^2 + 4)| + C.",
+          "s": [
+            [
+              "Shows by differentiation that the answer gives 2x sqrt(x^2 + 4)",
+              1
+            ],
+            [
+              "Gives (x/2) sqrt(x^2 + 4) + 2 log|x + sqrt(x^2 + 4)| + C",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Create",
+          "d": "Hardest",
+          "t": "long_answer",
+          "m": 3,
+          "q": "Construct a quadratic q(x) = c + bx - x^2 such that integral of sqrt(q(x)) dx contains the term (25/2) sin^(-1)((x - 1)/5). Write q(x) and the full answer.",
+          "a": "The term (a^2/2) sin^(-1)(t/a) with a = 5 and t = x - 1 comes from sqrt(25 - (x - 1)^2). Expanding, q(x) = 25 - (x^2 - 2x + 1) = 24 + 2x - x^2. Full answer: ((x - 1)/2) sqrt(24 + 2x - x^2) + (25/2) sin^(-1)((x - 1)/5) + C.",
+          "s": [
+            [
+              "Identifies a = 5 and t = x - 1, so q(x) = 25 - (x - 1)^2",
+              1
+            ],
+            [
+              "Expands to q(x) = 24 + 2x - x^2",
+              1
+            ],
+            [
+              "Writes the full answer ((x - 1)/2) sqrt(24 + 2x - x^2) + (25/2) sin^(-1)((x - 1)/5) + C",
+              1
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "code": "C12M-7.8",
+      "name": "Definite integrals, the fundamental theorems and evaluation by substitution",
+      "description": "The definite integral from a to b, the area function, the first fundamental theorem (A'(x) = f(x)), the second fundamental theorem (integral from a to b of f(x) dx = F(b) - F(a)), and evaluating definite integrals by substitution with changed limits.",
+      "idea": "A definite integral has a single value: find any anti derivative and subtract its value at the lower limit from its value at the upper limit.",
+      "rule": "If F'(x) = f(x) and f is continuous on [a, b], then integral from a to b of f(x) dx = F(b) - F(a); the constant C cancels. In a substitution t = g(x), either return to x or change the limits to g(a) and g(b).",
+      "example": "integral from 2 to 3 of x^2 dx = [x^3/3] from 2 to 3 = 27/3 - 8/3 = 19/3.",
+      "difficulty_base": "Hard",
+      "questions": [
+        {
+          "b": "Remember",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "In the definite integral from a to b of f(x) dx, the number a is called",
+          "a": "the lower limit of the integral",
+          "o": [
+            "the lower limit of the integral",
+            "the upper limit of the integral",
+            "the integrand",
+            "the constant of integration"
+          ]
+        },
+        {
+          "b": "Remember",
+          "d": "Easy",
+          "t": "fill_blank",
+          "m": 1,
+          "q": "By the second fundamental theorem, if F is an anti derivative of a continuous f on [a, b], then integral from a to b of f(x) dx = ____.",
+          "a": "F(b) - F(a)"
+        },
+        {
+          "b": "Remember",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "For the area function A(x) = integral from a to x of f(x) dx with f continuous on [a, b], the first fundamental theorem states that",
+          "a": "A'(x) = f(x) for all x in [a, b]",
+          "o": [
+            "A'(x) = f(x) for all x in [a, b]",
+            "A(x) = f'(x) for all x in [a, b]",
+            "A'(x) = f'(x) for all x in [a, b]",
+            "A(b) = f(b) - f(a)"
+          ]
+        },
+        {
+          "b": "Remember",
+          "d": "Hard",
+          "t": "mcq",
+          "m": 1,
+          "rev": true,
+          "q": "Which statement about evaluating definite integrals is NOT correct?",
+          "a": "The constant of integration must be kept, because it changes the value of the definite integral",
+          "o": [
+            "The constant of integration must be kept, because it changes the value of the definite integral",
+            "A definite integral has a unique value",
+            "F(b) - F(a) can be computed with any anti derivative F of f",
+            "The function f should be defined and continuous on [a, b]"
+          ]
+        },
+        {
+          "b": "Understand",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "Why does the constant of integration C drop out when a definite integral is evaluated?",
+          "a": "Because [F(b) + C] - [F(a) + C] = F(b) - F(a)",
+          "o": [
+            "Because [F(b) + C] - [F(a) + C] = F(b) - F(a)",
+            "Because C is defined to be 0 for definite integrals",
+            "Because the limits are always 0 and 1",
+            "Because C is absorbed into the integrand"
+          ]
+        },
+        {
+          "b": "Understand",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "integral from 2 to 3 of x^2 dx equals",
+          "a": "19/3",
+          "o": [
+            "19/3",
+            "35/3",
+            "9",
+            "5"
+          ]
+        },
+        {
+          "b": "Understand",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "When integral from 0 to 1 of 2x/(1 + x^2) dx is evaluated with t = 1 + x^2 and the integral is kept in t, the new limits are",
+          "a": "t = 1 to t = 2",
+          "o": [
+            "t = 1 to t = 2",
+            "t = 0 to t = 1",
+            "t = 0 to t = 2",
+            "t = 1 to t = 4"
+          ]
+        },
+        {
+          "b": "Understand",
+          "d": "Hard",
+          "t": "mcq",
+          "m": 1,
+          "q": "Why is it wrong to evaluate the definite integral from -1 to 1 of 1/x^2 dx directly as F(1) - F(-1)?",
+          "a": "1/x^2 is not defined at x = 0, which lies in [-1, 1], so it is not continuous on the interval",
+          "o": [
+            "1/x^2 is not defined at x = 0, which lies in [-1, 1], so it is not continuous on the interval",
+            "1/x^2 has no anti derivative",
+            "the lower limit is negative",
+            "the value would come out negative"
+          ]
+        },
+        {
+          "b": "Understand",
+          "d": "Hard",
+          "t": "mcq",
+          "m": 1,
+          "q": "If f(x) = integral from 0 to x of t sin t dt, then f'(x) equals",
+          "a": "x sin x",
+          "o": [
+            "x sin x",
+            "sin x + x cos x",
+            "x cos x",
+            "cos x + x sin x"
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Easy",
+          "t": "fill_blank",
+          "m": 1,
+          "q": "integral from 0 to pi/2 of cos x dx = ____.",
+          "a": "1"
+        },
+        {
+          "b": "Apply",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "integral from 4 to 5 of e^x dx equals",
+          "a": "e^4 (e - 1)",
+          "o": [
+            "e^4 (e - 1)",
+            "e",
+            "e^5 + e^4",
+            "e^9"
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Hard",
+          "t": "mcq",
+          "m": 1,
+          "q": "integral from 0 to pi/4 of tan x dx equals",
+          "a": "(1/2) log 2",
+          "o": [
+            "(1/2) log 2",
+            "log 2",
+            "1",
+            "-(1/2) log 2"
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Hard",
+          "t": "mcq",
+          "m": 1,
+          "q": "integral from 1 to sqrt(3) of dx/(1 + x^2) equals",
+          "a": "pi/12",
+          "o": [
+            "pi/12",
+            "pi/3",
+            "pi/6",
+            "2 pi/3"
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Hard",
+          "t": "short_answer",
+          "m": 2,
+          "q": "Evaluate integral from 0 to 1 of x/(x^2 + 1) dx by substitution, changing the limits.",
+          "a": "Put t = x^2 + 1, dt = 2x dx. When x = 0, t = 1; when x = 1, t = 2. Integral = (1/2) integral from 1 to 2 of dt/t = (1/2)[log t] from 1 to 2 = (1/2) log 2.",
+          "s": [
+            [
+              "Substitutes t = x^2 + 1 and changes the limits to 1 and 2",
+              1
+            ],
+            [
+              "Obtains (1/2) log 2",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Hardest",
+          "t": "long_answer",
+          "m": 3,
+          "q": "Evaluate integral from -1 to 1 of 5x^4 sqrt(x^5 + 1) dx.",
+          "a": "Put t = x^5 + 1, dt = 5x^4 dx. When x = -1, t = 0; when x = 1, t = 2. Integral = integral from 0 to 2 of sqrt(t) dt = (2/3)[t^(3/2)] from 0 to 2 = (2/3)(2 sqrt(2)) = 4 sqrt(2)/3.",
+          "s": [
+            [
+              "Substitutes t = x^5 + 1 with dt = 5x^4 dx",
+              1
+            ],
+            [
+              "Changes the limits to t = 0 and t = 2",
+              1
+            ],
+            [
+              "Evaluates (2/3) t^(3/2) to get 4 sqrt(2)/3",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Analyse",
+          "d": "Hard",
+          "t": "assertion_reason",
+          "m": 1,
+          "q": "Assertion (A): integral from 0 to pi of sin x dx = 0. Reason (R): integral from a to b of f(x) dx = F(b) - F(a), where F is an anti derivative of f.",
+          "a": "A is false, R is true",
+          "o": [
+            "A is false, R is true",
+            "Both A and R are true, and R is the correct explanation of A",
+            "Both A and R are true, but R is not the correct explanation of A",
+            "A is true, R is false"
+          ]
+        },
+        {
+          "b": "Analyse",
+          "d": "Hard",
+          "t": "multi_statement",
+          "m": 1,
+          "q": "Consider these statements. (I) When the substitution t = g(x) is made in a definite integral and the integral is kept in t, the original limits a and b are used unchanged. (II) integral from 0 to 2 of x dx = 2. Which is or are correct?",
+          "a": "Only II",
+          "o": [
+            "Only II",
+            "Only I",
+            "Both I and II",
+            "Neither I nor II"
+          ]
+        },
+        {
+          "b": "Analyse",
+          "d": "Hardest",
+          "t": "long_answer",
+          "m": 3,
+          "q": "Evaluate integral from 1 to 2 of x/((x + 1)(x + 2)) dx.",
+          "a": "Partial fractions: x/((x + 1)(x + 2)) = -1/(x + 1) + 2/(x + 2). An anti derivative is F(x) = -log|x + 1| + 2 log|x + 2|. Value = F(2) - F(1) = (-log 3 + 2 log 4) - (-log 2 + 2 log 3) = -3 log 3 + log 2 + 2 log 4 = log(32/27).",
+          "s": [
+            [
+              "Writes the partial fractions -1/(x + 1) + 2/(x + 2)",
+              1
+            ],
+            [
+              "Finds F(x) = -log|x + 1| + 2 log|x + 2| and evaluates F(2) - F(1)",
+              1
+            ],
+            [
+              "Simplifies to log(32/27)",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Evaluate",
+          "d": "Hard",
+          "t": "short_answer",
+          "m": 2,
+          "q": "A student evaluates integral from 0 to 1 of 2x (x^2 + 1)^3 dx by putting t = x^2 + 1, writes integral of t^3 dt = t^4/4, and then uses the old limits 0 and 1 for t, answering 1/4. Evaluate the work.",
+          "a": "Wrong: when the integral is kept in t the limits must change too. x = 0 gives t = 1 and x = 1 gives t = 2, so the value is [t^4/4] from 1 to 2 = 16/4 - 1/4 = 15/4.",
+          "s": [
+            [
+              "Identifies that the limits were not changed to t = 1 and t = 2",
+              1
+            ],
+            [
+              "Gives the correct value 15/4",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Create",
+          "d": "Hardest",
+          "t": "long_answer",
+          "m": 3,
+          "q": "Construct a definite integral integral from 0 to b of f(x) dx, where f is a polynomial of degree 2 and b > 0, whose value is 9. Verify it using the second fundamental theorem.",
+          "a": "Example: f(x) = x^2, b = 3. An anti derivative is F(x) = x^3/3, so the integral = F(3) - F(0) = 27/3 - 0 = 9.",
+          "s": [
+            [
+              "Gives a degree 2 polynomial f and a limit b",
+              1
+            ],
+            [
+              "Finds an anti derivative F",
+              1
+            ],
+            [
+              "Shows F(b) - F(0) = 9",
+              1
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "code": "C12M-7.9",
+      "name": "Properties of definite integrals",
+      "description": "Properties P0 to P7 of definite integrals (change of variable name, reversing limits, splitting the interval, the a + b - x and a - x replacements, the 2a properties, and even and odd functions on [-a, a]) and their use to evaluate integrals, including modulus integrands.",
+      "idea": "Many definite integrals that are hard to integrate directly can be found by rewriting them with a property and adding the new form to the old one.",
+      "rule": "P1: integral from a to b = -integral from b to a. P2: split at c. P3: integral from a to b of f(x) dx = integral from a to b of f(a + b - x) dx. P4: integral from 0 to a of f(x) dx = integral from 0 to a of f(a - x) dx. P6: integral from 0 to 2a of f = 2 integral from 0 to a of f if f(2a - x) = f(x), and 0 if f(2a - x) = -f(x). P7: integral from -a to a of f = 2 integral from 0 to a of f if f is even, and 0 if f is odd.",
+      "example": "integral from -1 to 1 of sin^5 x cos^4 x dx = 0, since sin^5 x cos^4 x is an odd function.",
+      "difficulty_base": "Hard",
+      "questions": [
+        {
+          "b": "Remember",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "Property P1 of definite integrals states that integral from a to b of f(x) dx equals",
+          "a": "-integral from b to a of f(x) dx",
+          "o": [
+            "-integral from b to a of f(x) dx",
+            "integral from b to a of f(x) dx",
+            "integral from a to b of f(-x) dx",
+            "integral from 0 to b - a of f(x) dx"
+          ]
+        },
+        {
+          "b": "Remember",
+          "d": "Easy",
+          "t": "fill_blank",
+          "m": 1,
+          "q": "For any f, integral from a to a of f(x) dx = ____.",
+          "a": "0"
+        },
+        {
+          "b": "Remember",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "Property P4 states that integral from 0 to a of f(x) dx equals",
+          "a": "integral from 0 to a of f(a - x) dx",
+          "o": [
+            "integral from 0 to a of f(a - x) dx",
+            "integral from 0 to a of f(x - a) dx",
+            "-integral from 0 to a of f(a - x) dx",
+            "2 integral from 0 to a/2 of f(x) dx"
+          ]
+        },
+        {
+          "b": "Remember",
+          "d": "Hard",
+          "t": "mcq",
+          "m": 1,
+          "rev": true,
+          "q": "Which property of definite integrals is NOT correctly stated?",
+          "a": "integral from -a to a of f(x) dx = 2 integral from 0 to a of f(x) dx, if f is odd",
+          "o": [
+            "integral from -a to a of f(x) dx = 2 integral from 0 to a of f(x) dx, if f is odd",
+            "integral from -a to a of f(x) dx = 0, if f is odd",
+            "integral from a to b of f(x) dx = integral from a to b of f(a + b - x) dx",
+            "integral from a to b of f(x) dx = integral from a to c of f(x) dx + integral from c to b of f(x) dx"
+          ]
+        },
+        {
+          "b": "Understand",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "integral from -1 to 1 of sin^5 x cos^4 x dx = 0 because",
+          "a": "sin^5 x cos^4 x is an odd function",
+          "o": [
+            "sin^5 x cos^4 x is an odd function",
+            "sin^5 x cos^4 x is an even function",
+            "sin x = 0 at x = 0",
+            "cos^4 x is never negative"
+          ]
+        },
+        {
+          "b": "Understand",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "Property P0, integral from a to b of f(x) dx = integral from a to b of f(t) dt, means that",
+          "a": "the value does not depend on the letter used for the variable of integration",
+          "o": [
+            "the value does not depend on the letter used for the variable of integration",
+            "f(x) = f(t) for all x and t",
+            "every definite integral is zero",
+            "the limits a and b can be interchanged freely"
+          ]
+        },
+        {
+          "b": "Understand",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "Which of these functions is even, so that P7 (i) applies to it on [-a, a]?",
+          "a": "x^2 + cos x",
+          "o": [
+            "x^2 + cos x",
+            "x^3",
+            "sin x",
+            "x^3 + x"
+          ]
+        },
+        {
+          "b": "Understand",
+          "d": "Hard",
+          "t": "mcq",
+          "m": 1,
+          "q": "To evaluate I = integral from 0 to pi/2 of sin^4 x/(sin^4 x + cos^4 x) dx, the book applies P4 and then",
+          "a": "adds the new form to the original to get 2I = integral from 0 to pi/2 of 1 dx",
+          "o": [
+            "adds the new form to the original to get 2I = integral from 0 to pi/2 of 1 dx",
+            "subtracts the new form from the original to get 2I = 0",
+            "differentiates both forms with respect to x",
+            "integrates by parts taking sin^4 x as the first function"
+          ]
+        },
+        {
+          "b": "Understand",
+          "d": "Hard",
+          "t": "mcq",
+          "m": 1,
+          "q": "To evaluate integral from -1 to 2 of |x^3 - x| dx, property P2 is used to split the interval at",
+          "a": "x = 0 and x = 1",
+          "o": [
+            "x = 0 and x = 1",
+            "x = 0 only",
+            "x = -1 and x = 1",
+            "x = 1/2 only"
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Easy",
+          "t": "fill_blank",
+          "m": 1,
+          "q": "integral from -pi/2 to pi/2 of sin^7 x dx = ____.",
+          "a": "0"
+        },
+        {
+          "b": "Apply",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "Using P4, integral from 0 to pi/2 of cos^2 x dx equals",
+          "a": "pi/4",
+          "o": [
+            "pi/4",
+            "pi/2",
+            "1/2",
+            "0"
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Hard",
+          "t": "mcq",
+          "m": 1,
+          "q": "integral from -5 to 5 of |x + 2| dx equals",
+          "a": "29",
+          "o": [
+            "29",
+            "20",
+            "0",
+            "49/2"
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Hard",
+          "t": "mcq",
+          "m": 1,
+          "q": "Using P7, integral from -pi/4 to pi/4 of sin^2 x dx equals",
+          "a": "pi/4 - 1/2",
+          "o": [
+            "pi/4 - 1/2",
+            "0",
+            "pi/2 - 1",
+            "pi/4"
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Hard",
+          "t": "short_answer",
+          "m": 2,
+          "q": "Using P4, evaluate integral from 0 to 1 of x (1 - x)^n dx, where n is a positive integer.",
+          "a": "By P4, the integral equals integral from 0 to 1 of (1 - x) x^n dx = integral from 0 to 1 of (x^n - x^(n+1)) dx = 1/(n + 1) - 1/(n + 2) = 1/((n + 1)(n + 2)).",
+          "s": [
+            [
+              "Applies P4 to get integral from 0 to 1 of (1 - x) x^n dx",
+              1
+            ],
+            [
+              "Evaluates to 1/(n + 1) - 1/(n + 2) = 1/((n + 1)(n + 2))",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Hardest",
+          "t": "long_answer",
+          "m": 3,
+          "q": "Evaluate integral from pi/6 to pi/3 of dx/(1 + sqrt(tan x)).",
+          "a": "I = integral from pi/6 to pi/3 of sqrt(cos x)/(sqrt(cos x) + sqrt(sin x)) dx. By P3, replacing x by pi/6 + pi/3 - x = pi/2 - x: I = integral from pi/6 to pi/3 of sqrt(sin x)/(sqrt(sin x) + sqrt(cos x)) dx. Adding, 2I = integral from pi/6 to pi/3 of 1 dx = pi/3 - pi/6 = pi/6, so I = pi/12.",
+          "s": [
+            [
+              "Rewrites the integrand as sqrt(cos x)/(sqrt(cos x) + sqrt(sin x))",
+              1
+            ],
+            [
+              "Applies P3 with a + b - x = pi/2 - x",
+              1
+            ],
+            [
+              "Adds the two forms to get 2I = pi/6, so I = pi/12",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Analyse",
+          "d": "Hard",
+          "t": "assertion_reason",
+          "m": 1,
+          "q": "Assertion (A): integral from -pi/2 to pi/2 of (x^3 + x cos x + tan^5 x + 1) dx = pi. Reason (R): integral from -a to a of f(x) dx = 0 when f is odd, and x^3 + x cos x + tan^5 x is an odd function.",
+          "a": "Both A and R are true, and R is the correct explanation of A",
+          "o": [
+            "Both A and R are true, and R is the correct explanation of A",
+            "Both A and R are true, but R is not the correct explanation of A",
+            "A is true, R is false",
+            "A is false, R is true"
+          ]
+        },
+        {
+          "b": "Analyse",
+          "d": "Hard",
+          "t": "multi_statement",
+          "m": 1,
+          "q": "Consider these statements. (I) integral from 0 to 2a of f(x) dx = 2 integral from 0 to a of f(x) dx when f(2a - x) = f(x). (II) integral from 0 to 2 of |x - 1| dx = 0, because |x - 1| changes its form at x = 1. Which is or are correct?",
+          "a": "Only I",
+          "o": [
+            "Only I",
+            "Only II",
+            "Both I and II",
+            "Neither I nor II"
+          ]
+        },
+        {
+          "b": "Analyse",
+          "d": "Hardest",
+          "t": "long_answer",
+          "m": 3,
+          "q": "Evaluate integral from 0 to pi of x sin x/(1 + cos^2 x) dx.",
+          "a": "Let I be the integral. By P4, I = integral from 0 to pi of (pi - x) sin x/(1 + cos^2 x) dx = pi integral from 0 to pi of sin x/(1 + cos^2 x) dx - I. So 2I = pi integral from 0 to pi of sin x/(1 + cos^2 x) dx. Put t = cos x, dt = -sin x dx; x = 0 gives t = 1, x = pi gives t = -1: 2I = pi integral from -1 to 1 of dt/(1 + t^2) = pi [tan^(-1) t] from -1 to 1 = pi (pi/4 + pi/4) = pi^2/2. So I = pi^2/4.",
+          "s": [
+            [
+              "Applies P4 and obtains 2I = pi integral from 0 to pi of sin x/(1 + cos^2 x) dx",
+              1
+            ],
+            [
+              "Substitutes t = cos x with limits 1 and -1",
+              1
+            ],
+            [
+              "Evaluates to I = pi^2/4",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Evaluate",
+          "d": "Hard",
+          "t": "short_answer",
+          "m": 2,
+          "q": "A student says integral from -1 to 1 of x^2 dx = 0 because the limits are symmetric about 0. Evaluate the claim.",
+          "a": "Wrong. P7 gives 0 only for an odd function; x^2 is even, so integral from -1 to 1 of x^2 dx = 2 integral from 0 to 1 of x^2 dx = 2(1/3) = 2/3.",
+          "s": [
+            [
+              "States that symmetric limits give 0 only for odd functions and x^2 is even",
+              1
+            ],
+            [
+              "Computes the value 2/3",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Create",
+          "d": "Hardest",
+          "t": "long_answer",
+          "m": 3,
+          "q": "Construct a function f, different from sin x, x and x^3, for which integral from -a to a of f(x) dx = 0 for every a > 0. Justify using P7 and verify for a = 1.",
+          "a": "Example: f(x) = x cos x. f(-x) = (-x) cos(-x) = -x cos x = -f(x), so f is odd and P7 (ii) gives 0 for every a. Check for a = 1: an anti derivative is x sin x + cos x, and [x sin x + cos x] from -1 to 1 = (sin 1 + cos 1) - (sin 1 + cos 1) = 0.",
+          "s": [
+            [
+              "Gives a suitable odd function",
+              1
+            ],
+            [
+              "Shows f(-x) = -f(x) and cites P7 (ii)",
+              1
+            ],
+            [
+              "Verifies the value 0 for a = 1 by direct integration",
+              1
+            ]
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,1368 @@
+{
+ "subject": {
+  "code": "MATH12",
+  "name": "Mathematics",
+  "board": "CBSE",
+  "class": 12
+ },
+ "source": {
+  "publisher": "NCERT",
+  "title": "Mathematics Part II",
+  "edition": "Textbook for Class XII Part II, Reprint 2026-27",
+  "year": 2026
+ },
+ "chapter": {
+  "part": "II",
+  "chapter_no": 8,
+  "name": "Application of Integrals",
+  "blurb": "The formulae of elementary geometry allow us to calculate areas of many simple figures, but they are inadequate for calculating the areas enclosed by curves. This chapter applies integrals to find the area under simple curves, using vertical strips (y dx) or horizontal strips (x dy), including regions below or crossing the x-axis. It then finds the areas enclosed by circles and ellipses in standard form.",
+  "source_code": "lemh202",
+  "order_index": 8
+ },
+ "scope_in": [
+  {
+   "item": "Find the area bounded by y = f(x) (f(x) >= 0), the x-axis and the ordinates x = a and x = b as integral from a to b of y dx, explaining it as a sum of thin vertical strips of area y dx",
+   "pages": "292-293, 298"
+  },
+  {
+   "item": "Find the area bounded by x = g(y), the y-axis and the lines y = c and y = d as integral from c to d of x dy using horizontal strips, including parabola regions such as y^2 = 4x with the y-axis and a line y = k",
+   "pages": "293, 296, 298"
+  },
+  {
+   "item": "Take the absolute value of the integral when the curve lies below the x-axis, and split the integral at the x-axis crossings and add |A1| + A2 when the curve is partly below and partly above (lines, y = x^3, y = x|x|, y = sin x, y = cos x, |x + 3|)",
+   "pages": "293, 296-298"
+  },
+  {
+   "item": "Find the area enclosed by the circle x^2 + y^2 = a^2 (pi a^2) and the ellipse x^2/a^2 + y^2/b^2 = 1 (pi ab) as 4 times the first-quadrant area by symmetry, with vertical or horizontal strips and the standard integral of sqrt(a^2 - x^2)",
+   "pages": "294-296"
+  },
+  {
+   "item": "Find quarter-circle and quarter-ellipse areas and the area under an arc of a standard circle between given ordinates",
+   "pages": "294-296"
+  }
+ ],
+ "scope_out": [
+  {
+   "item": "Area between two curves (e.g. a parabola and a line, two parabolas, a circle and a line) and area of a region bounded by two or more lines that is not bounded by an axis",
+   "reason": "Not present in this rationalised Reprint 2026-27 edition: the chapter has only 8.1 Introduction and 8.2 Area under Simple Curves, Exercise 8.1, Miscellaneous Examples and Exercise and the Summary (pp. 292-299). The Introduction (p. 292) still mentions 'area between lines and arcs' but no section teaches it"
+  },
+  {
+   "item": "Areas of regions bounded by a non-standard ellipse, a shifted circle or a shifted parabola",
+   "reason": "The Introduction (p. 292) restricts the chapter to circles, parabolas and ellipses in standard forms only"
+  },
+  {
+   "item": "Definite integral as the limit of a sum and the Fundamental Theorem of Calculus",
+   "reason": "Taught in the previous chapter (Integrals); used here only as a tool (p. 292)"
+  },
+  {
+   "item": "Volumes of solids of revolution, surface areas and lengths of arcs",
+   "reason": "Not in this chapter; the only mention of volumes is in the Historical Note (p. 298), which is not examinable content"
+  },
+  {
+   "item": "Integration by substitution or by parts to derive the antiderivative of sqrt(a^2 - x^2)",
+   "reason": "The standard integral is taken from the previous chapter; this chapter only applies it (pp. 294-295)"
+  },
+  {
+   "item": "History of the calculus (Eudoxus, Archimedes, Newton, Leibnitz, Cauchy)",
+   "reason": "Historical Note (pp. 298-299) is background reading, not a teaching section"
+  }
+ ],
+ "concepts": [
+  {
+   "code": "C12M-8.1",
+   "name": "Area under a curve using vertical strips",
+   "description": "Finding the area bounded by a curve y = f(x) lying above the x-axis, the x-axis and the ordinates x = a and x = b as the definite integral of y dx, built from thin vertical strips.",
+   "idea": "The region under a curve is made of a very large number of thin vertical strips; each has area y dx, and the definite integral adds them up.",
+   "rule": "If f(x) >= 0 on [a, b], the area bounded by y = f(x), the x-axis and the ordinates x = a and x = b is integral from a to b of y dx = integral from a to b of f(x) dx.",
+   "example": "Area bounded by y = x^2, the x-axis and x = 1, x = 2 = [x^3/3] from 1 to 2 = 8/3 - 1/3 = 7/3 square units.",
+   "difficulty_base": "Easy",
+   "questions": [
+    {
+     "b": "Remember",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "The area of the region bounded by the curve y = f(x), the x-axis and the ordinates x = a and x = b (b > a), where f(x) >= 0 on [a, b], is given by",
+     "a": "integral from a to b of f(x) dx",
+     "o": [
+      "integral from a to b of f(x) dx",
+      "integral from a to b of x dy",
+      "f(b) - f(a)",
+      "integral from 0 to b of f(x) dx"
+     ]
+    },
+    {
+     "b": "Remember",
+     "d": "Easy",
+     "t": "fill_blank",
+     "m": 1,
+     "q": "In the vertical-strip method, a thin strip of height y and width dx under the curve y = f(x) has elementary area dA = ____.",
+     "a": "y dx"
+    },
+    {
+     "b": "Remember",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "When finding the area under y = f(x) between x = a and x = b, the book calls the boundary lines x = a and x = b the",
+     "a": "ordinates",
+     "o": [
+      "ordinates",
+      "asymptotes",
+      "tangents",
+      "normals"
+     ]
+    },
+    {
+     "b": "Remember",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "rev": true,
+     "q": "Which of the following is NOT a correct description of the thin vertical strip used to find the area under y = f(x) from x = a to x = b?",
+     "a": "Its width is dy and its length is x",
+     "o": [
+      "Its width is dy and its length is x",
+      "Its width is dx",
+      "Its height is y = f(x)",
+      "Its area is y dx"
+     ]
+    },
+    {
+     "b": "Understand",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "Why is the area under y = f(x) (above the x-axis) from x = a to x = b written as a definite integral?",
+     "a": "The region is made of a very large number of thin vertical strips of area y dx, and the definite integral adds them all up",
+     "o": [
+      "The region is made of a very large number of thin vertical strips of area y dx, and the definite integral adds them all up",
+      "Because the curve is a straight line between x = a and x = b",
+      "Because the area always equals f(b) - f(a)",
+      "Because only the strip at x = b contributes to the area"
+     ]
+    },
+    {
+     "b": "Understand",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "The region under y = x^2, above the x-axis, from x = 1 to x = 2 has area A. Which integral gives A?",
+     "a": "integral from 1 to 2 of x^2 dx",
+     "o": [
+      "integral from 1 to 2 of x^2 dx",
+      "integral from 1 to 4 of x^2 dx",
+      "integral from 1 to 2 of 2x dx",
+      "integral from 0 to 2 of x^2 dx"
+     ]
+    },
+    {
+     "b": "Understand",
+     "d": "Easy",
+     "t": "short_answer",
+     "m": 2,
+     "q": "Write the integral for the area of the region bounded by the line y = 2x + 1, the x-axis and the ordinates x = 0 and x = 2, and evaluate it.",
+     "a": "Area = integral from 0 to 2 of (2x + 1) dx = [x^2 + x] from 0 to 2 = (4 + 2) - 0 = 6 square units.",
+     "s": [
+      [
+       "Writes Area = integral from 0 to 2 of (2x + 1) dx",
+       1
+      ],
+      [
+       "Evaluates [x^2 + x] from 0 to 2 to get 6 square units",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Understand",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "q": "A curve y = f(x) lies strictly above the x-axis. If the ordinate x = b is moved further to the right, the area bounded by the curve, the x-axis and the ordinates x = a and x = b",
+     "a": "increases, because more strips of positive area y dx are added",
+     "o": [
+      "increases, because more strips of positive area y dx are added",
+      "decreases, because a larger upper limit makes the integral smaller",
+      "stays the same, because the curve itself has not changed",
+      "becomes negative, because the extra strips are subtracted"
+     ]
+    },
+    {
+     "b": "Understand",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "q": "In the vertical-strip method for the area under y = f(x) between the ordinates x = a and x = b, the arbitrary strip is placed at some value of x lying between",
+     "a": "a and b",
+     "o": [
+      "a and b",
+      "f(a) and f(b)",
+      "0 and b",
+      "0 and f(b)"
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Easy",
+     "t": "fill_blank",
+     "m": 1,
+     "q": "The area of the region bounded by y = x^2, the x-axis and the lines x = 1 and x = 2 is ____ square units.",
+     "a": "7/3"
+    },
+    {
+     "b": "Apply",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "The area of the region bounded by y = x^3, the x-axis and the ordinates x = 0 and x = 2 is",
+     "a": "4",
+     "o": [
+      "4",
+      "16",
+      "8",
+      "12"
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "q": "The area of the region bounded by y = x^4, the x-axis and the lines x = 1 and x = 5 is",
+     "a": "3124/5",
+     "o": [
+      "3124/5",
+      "625",
+      "3126/5",
+      "624"
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "q": "Find the area of the region bounded by the curve y = sqrt(x), the x-axis and the line x = 4.",
+     "a": "Area = integral from 0 to 4 of x^(1/2) dx = [(2/3) x^(3/2)] from 0 to 4 = (2/3)(8) = 16/3 square units.",
+     "s": [
+      [
+       "Writes Area = integral from 0 to 4 of sqrt(x) dx",
+       1
+      ],
+      [
+       "Integrates to (2/3) x^(3/2) and gets 16/3 square units",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 3,
+     "q": "Find the area of the region bounded by y = x^2 + 1, the x-axis and the ordinates x = 0 and x = 3.",
+     "a": "The curve lies above the x-axis. Area = integral from 0 to 3 of (x^2 + 1) dx = [x^3/3 + x] from 0 to 3 = 9 + 3 = 12 square units.",
+     "s": [
+      [
+       "Sets up Area = integral from 0 to 3 of (x^2 + 1) dx",
+       1
+      ],
+      [
+       "Finds the antiderivative x^3/3 + x",
+       1
+      ],
+      [
+       "Evaluates to 12 square units",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hardest",
+     "t": "long_answer",
+     "m": 3,
+     "q": "Find the area of the region bounded by y = 3x^2, the x-axis and the ordinates x = 1 and x = 2. Then find the area of the trapezium with vertices (1, 0), (2, 0), (2, 12) and (1, 3), and say which is larger.",
+     "a": "Area under the curve = integral from 1 to 2 of 3x^2 dx = [x^3] from 1 to 2 = 8 - 1 = 7 square units. Trapezium area = (1/2)(3 + 12)(1) = 15/2 = 7.5 square units. The trapezium is larger, because the straight top edge from (1, 3) to (2, 12) lies above the curve y = 3x^2 between x = 1 and x = 2.",
+     "s": [
+      [
+       "Evaluates integral from 1 to 2 of 3x^2 dx = 7",
+       1
+      ],
+      [
+       "Finds the trapezium area 15/2",
+       1
+      ],
+      [
+       "Concludes the trapezium is larger because its top edge lies above the curve",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "assertion_reason",
+     "m": 1,
+     "q": "Assertion (A): The area of the region bounded by y = x^2, the x-axis and the ordinates x = 0 and x = 3 is 9 square units. Reason (R): The area of the region bounded by a curve y = f(x) lying above the x-axis and the ordinates x = a and x = b is the integral from a to b of f(x) dx.",
+     "a": "Both A and R are true, and R is the correct explanation of A",
+     "o": [
+      "Both A and R are true, and R is the correct explanation of A",
+      "Both A and R are true, but R is not the correct explanation of A",
+      "A is true, R is false",
+      "A is false, R is true"
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "multi_statement",
+     "m": 1,
+     "q": "Consider these statements about areas under curves. (I) The area bounded by y = 2x, the x-axis and the ordinates x = 0 and x = 3 is 9 square units. (II) The area bounded by y = x^2, the x-axis and the ordinates x = 0 and x = 3 is 27 square units. Which is or are correct?",
+     "a": "Only I",
+     "o": [
+      "Only I",
+      "Only II",
+      "Both I and II",
+      "Neither I nor II"
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hardest",
+     "t": "long_answer",
+     "m": 3,
+     "q": "Let A1 be the area bounded by y = x^2, the x-axis and the ordinates x = 0 and x = 1, and A2 the area bounded by y = x^3, the x-axis and the same ordinates. Find A1 and A2, and explain using the heights of the vertical strips why A2 < A1.",
+     "a": "A1 = integral from 0 to 1 of x^2 dx = 1/3. A2 = integral from 0 to 1 of x^3 dx = 1/4. For 0 < x < 1, x^3 < x^2, so every vertical strip under y = x^3 is shorter than the strip under y = x^2 at the same x; adding the strips gives A2 < A1, and indeed 1/4 < 1/3.",
+     "s": [
+      [
+       "Finds A1 = 1/3",
+       1
+      ],
+      [
+       "Finds A2 = 1/4",
+       1
+      ],
+      [
+       "Explains that x^3 < x^2 on (0, 1), so each strip of the second region is shorter",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Evaluate",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "q": "A student finds the area bounded by y = x^2, the x-axis and the lines x = 1 and x = 2 as: 'Area = x^3/3 at x = 2, which is 8/3.' Is the student correct? Justify.",
+     "a": "No. The student has used only the upper limit. Area = [x^3/3] from 1 to 2 = 8/3 - 1/3 = 7/3 square units; the value at the lower limit x = 1 must be subtracted.",
+     "s": [
+      [
+       "States the student is wrong because the value at the lower limit was not subtracted",
+       1
+      ],
+      [
+       "Gives the correct area 7/3 square units",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Create",
+     "d": "Hardest",
+     "t": "long_answer",
+     "m": 3,
+     "q": "Write the equation of a line y = mx + c, with m > 0 and c > 0, such that the area bounded by the line, the x-axis and the ordinates x = 0 and x = 2 is 6 square units. Verify your answer with an integral.",
+     "a": "Area = integral from 0 to 2 of (mx + c) dx = 2m + 2c, so we need m + c = 3. For example y = x + 2: integral from 0 to 2 of (x + 2) dx = [x^2/2 + 2x] from 0 to 2 = 2 + 4 = 6 square units. (Any m, c > 0 with m + c = 3 works.)",
+     "s": [
+      [
+       "Writes the area as integral from 0 to 2 of (mx + c) dx = 2m + 2c",
+       1
+      ],
+      [
+       "Chooses m, c > 0 with m + c = 3, e.g. y = x + 2",
+       1
+      ],
+      [
+       "Verifies the integral equals 6",
+       1
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "code": "C12M-8.2",
+   "name": "Area between a curve and the y-axis using horizontal strips",
+   "description": "Finding the area bounded by a curve x = g(y), the y-axis and the lines y = c and y = d as the integral of x dy, built from thin horizontal strips.",
+   "idea": "When a region lies between a curve and the y-axis, slice it into horizontal strips of length x and width dy and add them up.",
+   "rule": "The area bounded by x = g(y) (g(y) >= 0), the y-axis and the lines y = c and y = d is integral from c to d of x dy = integral from c to d of g(y) dy.",
+   "example": "Area bounded by y^2 = 4x, the y-axis and the line y = 3: x = y^2/4, so Area = integral from 0 to 3 of (y^2/4) dy = 9/4 square units.",
+   "difficulty_base": "Easy",
+   "questions": [
+    {
+     "b": "Remember",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "The area of the region bounded by the curve x = g(y), the y-axis and the lines y = c and y = d, where g(y) >= 0, is given by",
+     "a": "integral from c to d of g(y) dy",
+     "o": [
+      "integral from c to d of g(y) dy",
+      "integral from c to d of g(x) dx",
+      "integral from c to d of y dx",
+      "g(d) - g(c)"
+     ]
+    },
+    {
+     "b": "Remember",
+     "d": "Easy",
+     "t": "fill_blank",
+     "m": 1,
+     "q": "When horizontal strips are used for the region between x = g(y) and the y-axis, each strip has length x and width ____.",
+     "a": "dy"
+    },
+    {
+     "b": "Remember",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "The book's Summary gives the area bounded by x = phi(y), the y-axis and the lines y = c and y = d as integral from c to d of x dy. In this formula the region is bounded on one side by",
+     "a": "the y-axis",
+     "o": [
+      "the y-axis",
+      "the x-axis",
+      "the line y = x",
+      "the line x = c"
+     ]
+    },
+    {
+     "b": "Remember",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "rev": true,
+     "q": "Which of the following is NOT true of a horizontal strip used for the area bounded by x = g(y), the y-axis and the lines y = c and y = d?",
+     "a": "Its width is dx",
+     "o": [
+      "Its width is dx",
+      "Its length is x = g(y)",
+      "Its area is x dy",
+      "It lies at some value of y between c and d"
+     ]
+    },
+    {
+     "b": "Understand",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "For the region bounded by the parabola y^2 = 4x, the y-axis and the line y = 3, why are horizontal strips the natural choice?",
+     "a": "The region lies between the y-axis and the curve, so each horizontal strip runs from the y-axis to the curve, with length x = y^2/4",
+     "o": [
+      "The region lies between the y-axis and the curve, so each horizontal strip runs from the y-axis to the curve, with length x = y^2/4",
+      "Vertical strips can never be used for any parabola",
+      "Horizontal strips always give a smaller area than vertical strips",
+      "The parabola y^2 = 4x does not meet the x-axis"
+     ]
+    },
+    {
+     "b": "Understand",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "To find an area with horizontal strips for the curve y^2 = 4x, the equation is first written as",
+     "a": "x = y^2/4",
+     "o": [
+      "x = y^2/4",
+      "x = 4y^2",
+      "y = 2 sqrt(x)",
+      "x = 2 sqrt(y)"
+     ]
+    },
+    {
+     "b": "Understand",
+     "d": "Easy",
+     "t": "short_answer",
+     "m": 2,
+     "q": "Write the integral for the area of the region bounded by the line x = 2y, the y-axis and the lines y = 0 and y = 3, and evaluate it.",
+     "a": "Area = integral from 0 to 3 of 2y dy = [y^2] from 0 to 3 = 9 square units.",
+     "s": [
+      [
+       "Writes Area = integral from 0 to 3 of 2y dy",
+       1
+      ],
+      [
+       "Evaluates to 9 square units",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Understand",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "q": "The region in the first quadrant bounded by y = x^2, the y-axis and the lines y = 1 and y = 4 is found with horizontal strips. The correct integral is",
+     "a": "integral from 1 to 4 of sqrt(y) dy",
+     "o": [
+      "integral from 1 to 4 of sqrt(y) dy",
+      "integral from 1 to 4 of x^2 dx",
+      "integral from 1 to 2 of sqrt(y) dy",
+      "integral from 1 to 4 of y^2 dy"
+     ]
+    },
+    {
+     "b": "Understand",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "q": "When the area bounded by x = g(y), the y-axis and the lines y = c and y = d is found with horizontal strips, the limits of integration are",
+     "a": "the values c and d of y on the bounding lines",
+     "o": [
+      "the values c and d of y on the bounding lines",
+      "the values of x where the curve meets the x-axis",
+      "always 0 and the largest value of x on the curve",
+      "the values g(c) and g(d)"
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Easy",
+     "t": "fill_blank",
+     "m": 1,
+     "q": "The area of the region bounded by x = y^2, the y-axis and the lines y = 0 and y = 3 is ____ square units.",
+     "a": "9"
+    },
+    {
+     "b": "Apply",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "The area of the region in the first quadrant bounded by y^2 = 4x, the y-axis and the line y = 2 is",
+     "a": "2/3",
+     "o": [
+      "2/3",
+      "8/3",
+      "1",
+      "4/3"
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "q": "The area of the region in the first quadrant bounded by x^2 = 4y, the y-axis and the lines y = 1 and y = 4 is",
+     "a": "28/3",
+     "o": [
+      "28/3",
+      "14/3",
+      "32/3",
+      "21/4"
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "q": "Find the area of the region bounded by the curve y^2 = 4x, the y-axis and the line y = 3 (with y from 0 to 3).",
+     "a": "Using horizontal strips, x = y^2/4. Area = integral from 0 to 3 of (y^2/4) dy = [y^3/12] from 0 to 3 = 27/12 = 9/4 square units.",
+     "s": [
+      [
+       "Writes x = y^2/4 and Area = integral from 0 to 3 of (y^2/4) dy",
+       1
+      ],
+      [
+       "Evaluates to 9/4 square units",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 3,
+     "q": "Find the area of the region bounded by the curve x = y^3, the y-axis and the lines y = 0 and y = 2.",
+     "a": "For 0 <= y <= 2, x = y^3 >= 0. Area = integral from 0 to 2 of y^3 dy = [y^4/4] from 0 to 2 = 16/4 = 4 square units.",
+     "s": [
+      [
+       "Sets up Area = integral from 0 to 2 of y^3 dy",
+       1
+      ],
+      [
+       "Finds the antiderivative y^4/4",
+       1
+      ],
+      [
+       "Evaluates to 4 square units",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hardest",
+     "t": "long_answer",
+     "m": 3,
+     "q": "Find, using horizontal strips, the area of the region in the first quadrant bounded by y = x^2, the y-axis and the line y = 4. Check your answer by taking the 2 by 4 rectangle with vertices (0, 0), (2, 0), (2, 4), (0, 4) and subtracting the area under y = x^2 from x = 0 to x = 2.",
+     "a": "In the first quadrant x = sqrt(y). Area = integral from 0 to 4 of sqrt(y) dy = [(2/3) y^(3/2)] from 0 to 4 = 16/3. Check: area under y = x^2 from 0 to 2 = 8/3, and 8 - 8/3 = 16/3. Both give 16/3 square units.",
+     "s": [
+      [
+       "Writes x = sqrt(y) and Area = integral from 0 to 4 of sqrt(y) dy",
+       1
+      ],
+      [
+       "Evaluates to 16/3",
+       1
+      ],
+      [
+       "Checks with 8 - 8/3 = 16/3",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "assertion_reason",
+     "m": 1,
+     "q": "Assertion (A): The area of the region bounded by x = y^2, the y-axis and the lines y = 0 and y = 3 is 9 square units. Reason (R): The curve x = y^2 is symmetrical about the x-axis.",
+     "a": "Both A and R are true, but R is not the correct explanation of A",
+     "o": [
+      "Both A and R are true, but R is not the correct explanation of A",
+      "Both A and R are true, and R is the correct explanation of A",
+      "A is true, R is false",
+      "A is false, R is true"
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "multi_statement",
+     "m": 1,
+     "q": "Consider the region in the first quadrant bounded by y^2 = 4x, the y-axis and the line y = 2. (I) Its area equals integral from 0 to 1 of 2 sqrt(x) dx. (II) Its area equals 2 - (integral from 0 to 1 of 2 sqrt(x) dx), which is 2/3 square unit. Which is or are correct?",
+     "a": "Only II",
+     "o": [
+      "Only II",
+      "Only I",
+      "Both I and II",
+      "Neither I nor II"
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hardest",
+     "t": "long_answer",
+     "m": 3,
+     "q": "For the region bounded by y^2 = 4x, the y-axis and the line y = 3, a student uses vertical strips and writes Area = integral from 0 to 9/4 of 2 sqrt(x) dx. Explain why this does not give the required area, and find the correct area.",
+     "a": "Vertical strips from the x-axis up to y = 2 sqrt(x) cover the region between the curve and the x-axis, not the region between the curve and the y-axis. That integral is [(4/3) x^(3/2)] from 0 to 9/4 = (4/3)(27/8) = 9/2. The required region uses horizontal strips: Area = integral from 0 to 3 of (y^2/4) dy = 9/4 square units. (Check: the 9/4 by 3 rectangle has area 27/4, and 27/4 - 9/2 = 9/4.)",
+     "s": [
+      [
+       "Explains that the vertical-strip integral measures the region between the curve and the x-axis",
+       1
+      ],
+      [
+       "Sets up integral from 0 to 3 of (y^2/4) dy",
+       1
+      ],
+      [
+       "Gets the correct area 9/4 square units",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Evaluate",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "q": "A student claims: 'The area bounded by x = y^2, the y-axis and the lines y = 0 and y = 2 equals the area bounded by y = x^2, the x-axis and the ordinates x = 0 and x = 2.' Is the claim correct? Justify with both integrals.",
+     "a": "Yes. The first area is integral from 0 to 2 of y^2 dy = 8/3 and the second is integral from 0 to 2 of x^2 dx = 8/3. They are equal (the two regions are mirror images of each other in the line y = x).",
+     "s": [
+      [
+       "Computes integral from 0 to 2 of y^2 dy = 8/3",
+       1
+      ],
+      [
+       "Computes integral from 0 to 2 of x^2 dx = 8/3 and concludes the claim is correct",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Create",
+     "d": "Hardest",
+     "t": "long_answer",
+     "m": 3,
+     "q": "Design a region bounded by a curve x = g(y), the y-axis and two lines y = c and y = d whose area is exactly 8 square units. State g, c and d and show the integral that verifies the area.",
+     "a": "For example x = 3y^2 with y = 0 and y = 2: x >= 0 there, and Area = integral from 0 to 2 of 3y^2 dy = [y^3] from 0 to 2 = 8 square units. (Other answers are possible, e.g. x = y with y = 0 and y = 4.)",
+     "s": [
+      [
+       "Chooses a curve x = g(y) with g(y) >= 0 between y = c and y = d",
+       1
+      ],
+      [
+       "Writes Area = integral from c to d of g(y) dy",
+       1
+      ],
+      [
+       "Evaluates the integral to 8 square units",
+       1
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "code": "C12M-8.3",
+   "name": "Regions below or crossing the x-axis",
+   "description": "Handling a curve that lies below the x-axis (negative integral, take its absolute value) or crosses it (split at the crossing points and add the absolute values of the parts).",
+   "idea": "Area is never negative. A part of the curve below the x-axis gives a negative integral, so its numerical value is what counts.",
+   "rule": "If A1 < 0 is the integral over the part below the x-axis and A2 > 0 over the part above, the area is |A1| + A2. Split the integral at the points where the curve meets the x-axis.",
+   "example": "y = 3x + 2 on [-1, 1] meets the x-axis at x = -2/3: Area = |integral from -1 to -2/3| + integral from -2/3 to 1 = 1/6 + 25/6 = 13/3.",
+   "difficulty_base": "Hard",
+   "questions": [
+    {
+     "b": "Remember",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "If the curve y = f(x) lies below the x-axis from x = a to x = b, the area bounded by the curve, the x-axis and the ordinates x = a and x = b is",
+     "a": "the absolute value of integral from a to b of f(x) dx",
+     "o": [
+      "the absolute value of integral from a to b of f(x) dx",
+      "integral from a to b of f(x) dx, which is negative",
+      "zero, because the region is below the x-axis",
+      "integral from a to b of |x| dx"
+     ]
+    },
+    {
+     "b": "Remember",
+     "d": "Easy",
+     "t": "fill_blank",
+     "m": 1,
+     "q": "When a region lies below the x-axis, its definite integral comes out negative, so for the area we take the ____ value of that integral.",
+     "a": "absolute"
+    },
+    {
+     "b": "Remember",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "Part of a curve lies below the x-axis, giving integral A1 < 0, and part lies above, giving integral A2 > 0. The total area bounded by the curve, the x-axis and the ordinates is",
+     "a": "|A1| + A2",
+     "o": [
+      "|A1| + A2",
+      "A1 + A2",
+      "|A1 + A2|",
+      "A2 only"
+     ]
+    },
+    {
+     "b": "Remember",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "rev": true,
+     "q": "To find the area bounded by y = cos x, the x-axis and the ordinates x = 0 and x = 2 pi, the integral is split into parts. Which interval is NOT one of those parts?",
+     "a": "[0, pi]",
+     "o": [
+      "[0, pi]",
+      "[0, pi/2]",
+      "[pi/2, 3 pi/2]",
+      "[3 pi/2, 2 pi]"
+     ]
+    },
+    {
+     "b": "Understand",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "Why is integral from 0 to 2 pi of sin x dx = 0 not the area bounded by y = sin x, the x-axis and the ordinates x = 0 and x = 2 pi?",
+     "a": "The part from pi to 2 pi lies below the x-axis, so its negative integral cancels the positive part; the area needs the absolute value of each part",
+     "o": [
+      "The part from pi to 2 pi lies below the x-axis, so its negative integral cancels the positive part; the area needs the absolute value of each part",
+      "Because sin x has no antiderivative on [0, 2 pi]",
+      "Because the area of any region bounded by a periodic curve is zero",
+      "Because the limits must be in degrees, not radians"
+     ]
+    },
+    {
+     "b": "Understand",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "The line y = 3x + 2 meets the x-axis at",
+     "a": "x = -2/3",
+     "o": [
+      "x = -2/3",
+      "x = 2/3",
+      "x = -3/2",
+      "x = 2"
+     ]
+    },
+    {
+     "b": "Understand",
+     "d": "Easy",
+     "t": "short_answer",
+     "m": 2,
+     "q": "Find the area bounded by y = sin x, the x-axis and the ordinates x = pi and x = 2 pi.",
+     "a": "integral from pi to 2 pi of sin x dx = [-cos x] from pi to 2 pi = -1 - 1 = -2. The curve is below the x-axis here, so the area is |-2| = 2 square units.",
+     "s": [
+      [
+       "Evaluates the integral to -2",
+       1
+      ],
+      [
+       "Takes the absolute value: area = 2 square units",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Understand",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "q": "For y = x - 2, integral from 0 to 4 of (x - 2) dx = 0. The area bounded by this line, the x-axis and the ordinates x = 0 and x = 4 is",
+     "a": "4",
+     "o": [
+      "4",
+      "0",
+      "2",
+      "-2"
+     ]
+    },
+    {
+     "b": "Understand",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "q": "Taking x from -1 to 1, the line y = 3x + 2 lies below the x-axis for",
+     "a": "-1 <= x < -2/3",
+     "o": [
+      "-1 <= x < -2/3",
+      "-2/3 < x <= 1",
+      "-1 <= x < 0",
+      "0 < x <= 1"
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Easy",
+     "t": "fill_blank",
+     "m": 1,
+     "q": "The area bounded by y = cos x, the x-axis and the ordinates x = 0 and x = pi is ____ square units.",
+     "a": "2"
+    },
+    {
+     "b": "Apply",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "The value of integral from -6 to 0 of |x + 3| dx is",
+     "a": "9",
+     "o": [
+      "9",
+      "0",
+      "18",
+      "9/2"
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "q": "The area bounded by the curve y = x^3, the x-axis and the ordinates x = -2 and x = 1 is",
+     "a": "17/4",
+     "o": [
+      "17/4",
+      "-15/4",
+      "15/4",
+      "4"
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "q": "Find the area bounded by the curve y = x|x|, the x-axis and the ordinates x = -1 and x = 1.",
+     "a": "y = -x^2 for x < 0 and y = x^2 for x > 0. Area = |integral from -1 to 0 of (-x^2) dx| + integral from 0 to 1 of x^2 dx = 1/3 + 1/3 = 2/3 square unit.",
+     "s": [
+      [
+       "Splits at x = 0 using y = -x^2 for x < 0 and y = x^2 for x > 0",
+       1
+      ],
+      [
+       "Adds |-1/3| + 1/3 to get 2/3 square unit",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 3,
+     "q": "Find the area of the region bounded by the line y = 2x - 4, the x-axis and the ordinates x = 0 and x = 3.",
+     "a": "The line meets the x-axis at x = 2; it is below the axis for 0 <= x < 2 and above for 2 < x <= 3. integral from 0 to 2 of (2x - 4) dx = [x^2 - 4x] from 0 to 2 = -4, and integral from 2 to 3 of (2x - 4) dx = (9 - 12) - (4 - 8) = 1. Area = |-4| + 1 = 5 square units.",
+     "s": [
+      [
+       "Finds the crossing point x = 2",
+       1
+      ],
+      [
+       "Evaluates the two parts as -4 and 1",
+       1
+      ],
+      [
+       "Combines as |-4| + 1 = 5 square units",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hardest",
+     "t": "long_answer",
+     "m": 3,
+     "q": "Find the area bounded by the curve y = sin x, the x-axis and the ordinates x = 0 and x = 3 pi/2. Also find integral from 0 to 3 pi/2 of sin x dx and explain why the two answers differ.",
+     "a": "sin x >= 0 on [0, pi] and sin x <= 0 on [pi, 3 pi/2]. integral from 0 to pi of sin x dx = [-cos x] from 0 to pi = 2; integral from pi to 3 pi/2 of sin x dx = [-cos x] from pi to 3 pi/2 = 0 - 1 = -1. Area = 2 + |-1| = 3 square units. The single integral from 0 to 3 pi/2 is 2 + (-1) = 1, smaller because the part below the x-axis is counted as negative.",
+     "s": [
+      [
+       "Splits at x = pi and evaluates the parts as 2 and -1",
+       1
+      ],
+      [
+       "Gets the area 3 square units",
+       1
+      ],
+      [
+       "States the integral is 1 and explains the negative part cancels some area",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "assertion_reason",
+     "m": 1,
+     "q": "Assertion (A): The area bounded by y = x^3, the x-axis and the ordinates x = -1 and x = 1 is 1/2 square unit. Reason (R): integral from -1 to 1 of x^3 dx = 1/2.",
+     "a": "A is true, R is false",
+     "o": [
+      "A is true, R is false",
+      "Both A and R are true, and R is the correct explanation of A",
+      "Both A and R are true, but R is not the correct explanation of A",
+      "A is false, R is true"
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "multi_statement",
+     "m": 1,
+     "q": "Consider y = cos x on [0, pi]. (I) The area bounded by y = cos x, the x-axis and the ordinates x = 0 and x = pi is 2 square units. (II) integral from 0 to pi of cos x dx = 0. Which is or are correct?",
+     "a": "Both I and II",
+     "o": [
+      "Both I and II",
+      "Only I",
+      "Only II",
+      "Neither I nor II"
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hardest",
+     "t": "long_answer",
+     "m": 3,
+     "q": "For the line y = 3x + 2 on [-1, 1], find integral from -1 to 1 of (3x + 2) dx and the area bounded by the line, the x-axis and the ordinates x = -1 and x = 1. Explain the difference between the two values.",
+     "a": "integral from -1 to 1 of (3x + 2) dx = [3x^2/2 + 2x] from -1 to 1 = 7/2 - (-1/2) = 4. The line crosses the x-axis at x = -2/3. integral from -1 to -2/3 = -1/6 and integral from -2/3 to 1 = 25/6, so Area = 1/6 + 25/6 = 13/3. The difference 13/3 - 4 = 1/3 = 2 x (1/6): the integral counts the small triangle below the axis as -1/6 instead of +1/6.",
+     "s": [
+      [
+       "Finds the integral over [-1, 1] equals 4",
+       1
+      ],
+      [
+       "Splits at x = -2/3 and finds the area 13/3",
+       1
+      ],
+      [
+       "Explains the difference 1/3 as twice the part below the axis",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Evaluate",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "q": "A student writes: 'Area bounded by y = sin x, the x-axis and the ordinates x = 0 and x = 2 pi = |integral from 0 to 2 pi of sin x dx| = 0.' Is the student correct? Justify.",
+     "a": "No. Taking the absolute value of the whole integral lets the negative part cancel the positive part first. sin x is above the axis on [0, pi] (integral 2) and below on [pi, 2 pi] (integral -2), so Area = 2 + |-2| = 4 square units.",
+     "s": [
+      [
+       "States the student is wrong because the absolute value must be taken part by part, not of the whole integral",
+       1
+      ],
+      [
+       "Splits at x = pi and gives the area 4 square units",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Create",
+     "d": "Hardest",
+     "t": "long_answer",
+     "m": 3,
+     "q": "Give a linear function f and limits a and b such that integral from a to b of f(x) dx = 0 but the area bounded by y = f(x), the x-axis and the ordinates x = a and x = b is 2 square units. Verify both values.",
+     "a": "For example f(x) = 2x - 2 on [0, 2]. integral from 0 to 2 of (2x - 2) dx = [x^2 - 2x] from 0 to 2 = 0. The line crosses the x-axis at x = 1: integral from 0 to 1 = -1 and integral from 1 to 2 = 1, so Area = |-1| + 1 = 2 square units. (Other answers are possible.)",
+     "s": [
+      [
+       "Chooses a line that crosses the x-axis inside [a, b] with equal parts above and below",
+       1
+      ],
+      [
+       "Shows the integral over [a, b] is 0",
+       1
+      ],
+      [
+       "Shows the area, part by part, is 2 square units",
+       1
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "code": "C12M-8.4",
+   "name": "Area enclosed by a circle or an ellipse (standard forms)",
+   "description": "Finding the area enclosed by the circle x^2 + y^2 = a^2 and the ellipse x^2/a^2 + y^2/b^2 = 1 as 4 times the first-quadrant area, using vertical or horizontal strips and the standard integral of sqrt(a^2 - x^2).",
+   "idea": "Both curves are symmetrical about both axes, so find the area of the quarter in the first quadrant, where y is taken positive, and multiply by 4.",
+   "rule": "Circle: area = 4 x integral from 0 to a of sqrt(a^2 - x^2) dx = pi a^2. Ellipse: area = 4 (b/a) x integral from 0 to a of sqrt(a^2 - x^2) dx = pi ab.",
+   "example": "The ellipse x^2/16 + y^2/9 = 1 has a = 4, b = 3, so its area is pi x 4 x 3 = 12 pi square units.",
+   "difficulty_base": "Hard",
+   "questions": [
+    {
+     "b": "Remember",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "The area enclosed by the circle x^2 + y^2 = a^2 is",
+     "a": "pi a^2",
+     "o": [
+      "pi a^2",
+      "2 pi a",
+      "pi a^2/4",
+      "4 a^2"
+     ]
+    },
+    {
+     "b": "Remember",
+     "d": "Easy",
+     "t": "fill_blank",
+     "m": 1,
+     "q": "The area enclosed by the ellipse x^2/a^2 + y^2/b^2 = 1 is ____.",
+     "a": "pi ab"
+    },
+    {
+     "b": "Remember",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "The book finds the area of the circle x^2 + y^2 = a^2 as 4 times the area of the region in the first quadrant because",
+     "a": "the circle is symmetrical about both the x-axis and the y-axis",
+     "o": [
+      "the circle is symmetrical about both the x-axis and the y-axis",
+      "sqrt(a^2 - x^2) cannot be integrated over [-a, a]",
+      "only the first quadrant has positive area",
+      "a circle has four equal radii"
+     ]
+    },
+    {
+     "b": "Remember",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "rev": true,
+     "q": "Which of the following is NOT equal to the area enclosed by the circle x^2 + y^2 = a^2?",
+     "a": "2 x (integral from 0 to a of sqrt(a^2 - x^2) dx)",
+     "o": [
+      "2 x (integral from 0 to a of sqrt(a^2 - x^2) dx)",
+      "4 x (integral from 0 to a of sqrt(a^2 - x^2) dx)",
+      "4 x (integral from 0 to a of sqrt(a^2 - y^2) dy)",
+      "pi a^2"
+     ]
+    },
+    {
+     "b": "Understand",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "For the ellipse x^2/a^2 + y^2/b^2 = 1, solving for y in the first quadrant gives",
+     "a": "y = (b/a) sqrt(a^2 - x^2)",
+     "o": [
+      "y = (b/a) sqrt(a^2 - x^2)",
+      "y = (a/b) sqrt(a^2 - x^2)",
+      "y = (b/a) sqrt(b^2 - x^2)",
+      "y = b sqrt(a^2 - x^2)"
+     ]
+    },
+    {
+     "b": "Understand",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "The area lying in the first quadrant and bounded by the circle x^2 + y^2 = 4 and the lines x = 0 and x = 2 is",
+     "a": "pi",
+     "o": [
+      "pi",
+      "4 pi",
+      "2 pi",
+      "pi/2"
+     ]
+    },
+    {
+     "b": "Understand",
+     "d": "Easy",
+     "t": "short_answer",
+     "m": 2,
+     "q": "Write the integral, using vertical strips and symmetry, for the area enclosed by the ellipse x^2/16 + y^2/9 = 1, and state its value.",
+     "a": "In the first quadrant y = (3/4) sqrt(16 - x^2). Area = 4 x (3/4) x (integral from 0 to 4 of sqrt(16 - x^2) dx) = 3 x (16 pi/4) = 12 pi square units (= pi ab with a = 4, b = 3).",
+     "s": [
+      [
+       "Writes Area = 4 x (3/4) x integral from 0 to 4 of sqrt(16 - x^2) dx",
+       1
+      ],
+      [
+       "States the value 12 pi square units",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Understand",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "q": "Using horizontal strips, the area enclosed by the ellipse x^2/a^2 + y^2/b^2 = 1 is written as",
+     "a": "4 (a/b) x (integral from 0 to b of sqrt(b^2 - y^2) dy)",
+     "o": [
+      "4 (a/b) x (integral from 0 to b of sqrt(b^2 - y^2) dy)",
+      "4 (b/a) x (integral from 0 to b of sqrt(b^2 - y^2) dy)",
+      "4 (a/b) x (integral from 0 to a of sqrt(b^2 - y^2) dy)",
+      "2 (a/b) x (integral from 0 to b of sqrt(b^2 - y^2) dy)"
+     ]
+    },
+    {
+     "b": "Understand",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "q": "The ellipses x^2/16 + y^2/9 = 1 and x^2/9 + y^2/16 = 1 have areas that are",
+     "a": "equal, both 12 pi",
+     "o": [
+      "equal, both 12 pi",
+      "different, because their longer axes lie along different coordinate axes",
+      "equal, both 25 pi",
+      "equal, both 7 pi"
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Easy",
+     "t": "fill_blank",
+     "m": 1,
+     "q": "The area enclosed by the circle x^2 + y^2 = 9 is ____ square units.",
+     "a": "9 pi"
+    },
+    {
+     "b": "Apply",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "The area of the region bounded by the ellipse x^2/4 + y^2/9 = 1 is",
+     "a": "6 pi",
+     "o": [
+      "6 pi",
+      "36 pi",
+      "13 pi",
+      "3 pi/2"
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "q": "The area of the region in the first quadrant enclosed by the ellipse x^2/25 + y^2/16 = 1 and the coordinate axes is",
+     "a": "5 pi",
+     "o": [
+      "5 pi",
+      "20 pi",
+      "10 pi",
+      "100 pi"
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "q": "Find the area enclosed by the ellipse 9x^2 + 4y^2 = 36.",
+     "a": "Dividing by 36: x^2/4 + y^2/9 = 1, so a = 2 and b = 3. Area = pi ab = 6 pi square units.",
+     "s": [
+      [
+       "Rewrites the equation as x^2/4 + y^2/9 = 1 and reads a = 2, b = 3",
+       1
+      ],
+      [
+       "Gets the area 6 pi square units",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 3,
+     "q": "Using integral from 0 to a of sqrt(a^2 - x^2) dx = [(x/2) sqrt(a^2 - x^2) + (a^2/2) sin^(-1)(x/a)] from 0 to a, find the area enclosed by the circle x^2 + y^2 = 16.",
+     "a": "Area = 4 x (integral from 0 to 4 of sqrt(16 - x^2) dx) = 4 x [(x/2) sqrt(16 - x^2) + 8 sin^(-1)(x/4)] from 0 to 4 = 4 x (0 + 8 x pi/2 - 0) = 16 pi square units.",
+     "s": [
+      [
+       "Writes Area = 4 x integral from 0 to 4 of sqrt(16 - x^2) dx using symmetry",
+       1
+      ],
+      [
+       "Substitutes the limits: value of the integral is 4 pi",
+       1
+      ],
+      [
+       "Gets the area 16 pi square units",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hardest",
+     "t": "long_answer",
+     "m": 3,
+     "q": "Find the area of the region in the first quadrant bounded by the circle x^2 + y^2 = 4, the x-axis and the ordinates x = 0 and x = 1.",
+     "a": "In the first quadrant y = sqrt(4 - x^2). Area = integral from 0 to 1 of sqrt(4 - x^2) dx = [(x/2) sqrt(4 - x^2) + 2 sin^(-1)(x/2)] from 0 to 1 = (1/2) sqrt(3) + 2 x (pi/6) = sqrt(3)/2 + pi/3 square units.",
+     "s": [
+      [
+       "Takes y = sqrt(4 - x^2) and sets up integral from 0 to 1 of sqrt(4 - x^2) dx",
+       1
+      ],
+      [
+       "Uses the standard antiderivative (x/2) sqrt(4 - x^2) + 2 sin^(-1)(x/2)",
+       1
+      ],
+      [
+       "Evaluates to sqrt(3)/2 + pi/3 square units",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "assertion_reason",
+     "m": 1,
+     "q": "Assertion (A): The area enclosed by the circle x^2 + y^2 = 9 equals 2 x (integral from 0 to 3 of sqrt(9 - x^2) dx). Reason (R): The circle x^2 + y^2 = 9 is symmetrical about both the x-axis and the y-axis.",
+     "a": "A is false, R is true",
+     "o": [
+      "A is false, R is true",
+      "Both A and R are true, and R is the correct explanation of A",
+      "Both A and R are true, but R is not the correct explanation of A",
+      "A is true, R is false"
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "multi_statement",
+     "m": 1,
+     "q": "Consider these statements. (I) The area enclosed by the ellipse x^2/9 + y^2/4 = 1 is 36 pi. (II) The area enclosed by the circle x^2 + y^2 = 25 is 10 pi. Which is or are correct?",
+     "a": "Neither I nor II",
+     "o": [
+      "Neither I nor II",
+      "Only I",
+      "Only II",
+      "Both I and II"
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hardest",
+     "t": "long_answer",
+     "m": 3,
+     "q": "Let b < a. Using first-quadrant integrals with vertical strips, show that the area enclosed by the ellipse x^2/a^2 + y^2/b^2 = 1 is b/a times the area enclosed by the circle x^2 + y^2 = a^2.",
+     "a": "Circle: area = 4 x (integral from 0 to a of sqrt(a^2 - x^2) dx) = pi a^2. Ellipse: in the first quadrant y = (b/a) sqrt(a^2 - x^2), so area = 4 (b/a) x (integral from 0 to a of sqrt(a^2 - x^2) dx) = (b/a) x pi a^2 = pi ab. Each vertical strip of the ellipse is b/a times the strip of the circle at the same x, so the ellipse's area is b/a times the circle's area.",
+     "s": [
+      [
+       "Writes the circle's area as 4 x integral from 0 to a of sqrt(a^2 - x^2) dx = pi a^2",
+       1
+      ],
+      [
+       "Writes the ellipse's area as 4 (b/a) x the same integral",
+       1
+      ],
+      [
+       "Concludes the ellipse's area pi ab is b/a times pi a^2",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Evaluate",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "q": "A student computes the area enclosed by the circle x^2 + y^2 = 4 as 4 x (integral from 0 to 2 of (4 - x^2) dx) = 64/3. Is the student correct? Justify.",
+     "a": "No. In the first quadrant y = sqrt(4 - x^2), not 4 - x^2; the student dropped the square root. Correct area = 4 x (integral from 0 to 2 of sqrt(4 - x^2) dx) = 4 x pi = 4 pi square units.",
+     "s": [
+      [
+       "Identifies the missing square root: y = sqrt(4 - x^2)",
+       1
+      ],
+      [
+       "Gives the correct area 4 pi square units",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Create",
+     "d": "Hardest",
+     "t": "long_answer",
+     "m": 3,
+     "q": "Write the equation of an ellipse in the standard form x^2/a^2 + y^2/b^2 = 1, with a not equal to b, whose area is 6 pi. Verify the area using the integral for the first-quadrant region.",
+     "a": "Need ab = 6 with a != b, e.g. a = 3, b = 2: x^2/9 + y^2/4 = 1. In the first quadrant y = (2/3) sqrt(9 - x^2), so Area = 4 x (2/3) x (integral from 0 to 3 of sqrt(9 - x^2) dx) = (8/3)(9 pi/4) = 6 pi. (Other answers with ab = 6, a != b are possible.)",
+     "s": [
+      [
+       "Chooses a, b with ab = 6 and a != b, e.g. x^2/9 + y^2/4 = 1",
+       1
+      ],
+      [
+       "Writes Area = 4 (b/a) x integral from 0 to a of sqrt(a^2 - x^2) dx",
+       1
+      ],
+      [
+       "Evaluates to 6 pi",
+       1
+      ]
+     ]
+    }
+   ]
+  }
+ ]
+}
