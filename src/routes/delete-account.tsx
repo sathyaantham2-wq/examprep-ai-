@@ -37,17 +37,10 @@ function DeleteAccount() {
 
       <h2>Students</h2>
       <p>
-        If a parent is linked to your account, ask them to delete it from their Settings. If you
-        signed up on your own,{' '}
-        {SUPPORT_EMAIL ? (
-          <>
-            email <a href={`mailto:${SUPPORT_EMAIL}`}>{SUPPORT_EMAIL}</a> from your account's
-            email address and we will delete it
-          </>
-        ) : (
-          <>contact us (details below) from your account's email address and we will delete it</>
-        )}
-        .
+        If you signed up on your own, <Link to="/">sign in</Link>, open <strong>Settings</strong>{' '}
+        (next to Sign out), type DELETE and press{' '}
+        <strong>Permanently delete my account</strong>. If a parent looks after your account, only
+        they can delete it, from their own Settings.
       </p>
 
       <h2>What gets deleted</h2>

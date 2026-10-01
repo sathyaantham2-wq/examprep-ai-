@@ -3,7 +3,7 @@
 Drafted 2026-09-30 from the code, not from memory. Every "Yes" below has a source in the repo.
 If what the app collects changes, update this file, `src/lib/legal.ts` and the Play form together.
 
-**Before submitting, resolve the open items at the bottom.** Two of them block approval.
+**Before submitting, resolve the open items at the bottom.**
 
 ---
 
@@ -104,12 +104,10 @@ don't use test fixtures with fake names).
 
 ## Open items: owner decisions
 
-1. **Blocker: student self-deletion.** Play requires that anyone who can create an account can
-   delete it. A student who signs up alone gets her own household with role `student`, and
-   `POST /api/privacy/delete` only allows `parent`/`admin`. `/delete-account` currently tells her to
-   contact us, which Play accepts only if requests are actually honoured. The better fix is in-app
-   deletion for a student who is alone in her own household (no linked guardian); a linked student
-   still goes through her parent. This needs the owner's go-ahead, because deletion is irreversible.
+1. **Done 2026-10-01: student self-deletion.** A student who signed up on her own and isn't linked
+   to a parent can delete her account in the app: Settings (next to Sign out), type DELETE.
+   `/delete-account` says so. A student a parent added or follows is directed to the parent, which
+   is acceptable to Play because the account holder (the parent) can delete it.
 2. **Support email: `support@prepplan.in`** (owner decision 2026-09-30). It is set in
    `src/lib/legal.ts` and shown on `/privacy` and `/delete-account`. **The mailbox must exist and
    actually receive mail before those pages go live**, for example through GoDaddy email forwarding

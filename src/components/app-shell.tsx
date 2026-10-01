@@ -383,6 +383,16 @@ export function AppShell({
             <SignOutIcon />
             {signingOut ? 'Signing out…' : 'Sign out'}
           </button>
+          {/* F098: students have no Settings tab (five is the most the phone bar fits), but
+              account deletion must be reachable in the app. */}
+          {variant === 'student' && (
+            <a
+              href="/settings"
+              className="text-muted-foreground hover:text-foreground ml-3 inline-flex items-center align-middle text-xs whitespace-nowrap"
+            >
+              Settings
+            </a>
+          )}
         </div>
       </div>
     </div>
