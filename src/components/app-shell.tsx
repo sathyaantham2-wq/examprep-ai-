@@ -406,7 +406,7 @@ export function AppShell({
         </svg>
       </div>
       <div className="display-title text-h3 leading-tight">
-        ExamPrep <span className="grad-text">AI</span>
+        Prep<span className="grad-text">Plan</span>
       </div>
     </div>
   )

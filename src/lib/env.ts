@@ -58,6 +58,14 @@ const envSchema = z.object({
   // this automatically on every deployment, so it needs no configuration of its own; null in
   // local dev, where "which deploy" doesn't apply anyway.
   VERCEL_GIT_COMMIT_SHA: z.string().min(1).optional(),
+  // F131: the Android app (a Trusted Web Activity) and the SHA-256 fingerprints of the keys it is
+  // signed with, published at /.well-known/assetlinks.json (src/lib/android.ts). Optional: until
+  // both are set that file 404s and the app still opens, just with a browser URL bar.
+  ANDROID_PACKAGE_NAME: z
+    .string()
+    .regex(/^[a-z][a-z0-9_]*(\.[a-z][a-z0-9_]*)+$/)
+    .optional(),
+  ANDROID_CERT_SHA256: z.string().min(1).optional(),
 })
 
 export type Env = z.infer<typeof envSchema>

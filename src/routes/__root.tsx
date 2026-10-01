@@ -49,7 +49,7 @@ export const Route = createRootRoute({
         content: 'width=device-width, initial-scale=1',
       },
       {
-        title: 'ExamPrep AI',
+        title: 'PrepPlan',
       },
       // Installable as a PWA (F009-adjacent, no dedicated F-number -- see chat/commit for the
       // 2026-09-27 request): theme-color and the apple-* tags are what let a browser's install UI
@@ -65,7 +65,7 @@ export const Route = createRootRoute({
       },
       {
         name: 'apple-mobile-web-app-title',
-        content: 'ExamPrep AI',
+        content: 'PrepPlan',
       },
       {
         name: 'apple-mobile-web-app-status-bar-style',
@@ -101,6 +101,15 @@ function RootDocument({ children }: { children: React.ReactNode }) {
   }, [])
   // F128: tap/select/nav sounds for every button and link (switchable in the sidebar).
   useEffect(() => installUiSounds(), [])
+  // F131: offline fallback page for the installed app (see public/sw.js). Production only, so
+  // local dev never serves a stale worker.
+  useEffect(() => {
+    if (import.meta.env.PROD && 'serviceWorker' in navigator) {
+      navigator.serviceWorker.register('/sw.js').catch(() => {
+        // No worker just means the browser's own offline page -- nothing to report.
+      })
+    }
+  }, [])
 
   return (
     <html lang="en" suppressHydrationWarning>

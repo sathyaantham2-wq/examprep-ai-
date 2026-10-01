@@ -55,8 +55,8 @@ export function buildGuardianInviteEmail(input: {
 }): EmailContent {
   return {
     subject: `${input.guardianName} wants to follow your progress`,
-    html: `<p>${input.guardianName} (${input.guardianRole}) has asked to see your progress on ExamPrep AI.</p><p><a href="${input.appUrl}">Sign in</a> and choose Approve or Decline. Nothing is shared until you approve, and you can stop sharing at any time.</p>`,
-    text: `${input.guardianName} (${input.guardianRole}) has asked to see your progress on ExamPrep AI.\nSign in to approve or decline: ${input.appUrl}\nNothing is shared until you approve.`,
+    html: `<p>${input.guardianName} (${input.guardianRole}) has asked to see your progress on PrepPlan.</p><p><a href="${input.appUrl}">Sign in</a> and choose Approve or Decline. Nothing is shared until you approve, and you can stop sharing at any time.</p>`,
+    text: `${input.guardianName} (${input.guardianRole}) has asked to see your progress on PrepPlan.\nSign in to approve or decline: ${input.appUrl}\nNothing is shared until you approve.`,
   }
 }
 

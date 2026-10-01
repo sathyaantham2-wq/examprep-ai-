@@ -1,5 +1,6 @@
 import { useCallback, useEffect, useMemo, useRef, useState } from 'react'
 import { createFileRoute, useNavigate } from '@tanstack/react-router'
+import { Camera } from 'lucide-react'
 import { Button } from '../../components/ui/button'
 import {
   Card,
@@ -542,8 +543,15 @@ function Attempt() {
 
   return (
     <div className="mx-auto max-w-3xl p-4 sm:p-8">
-      <div className="mb-4">
+      <div className="mb-4 flex flex-wrap items-center gap-2">
         <DownloadPaperButton paperId={data.paper.id} title={data.paper.title} />
+        {/* F050: wrote it on the printed paper instead? Photograph the pages. */}
+        <a href={`/scan/${id}`} className="no-print">
+          <Button type="button" variant="outline" size="sm">
+            <Camera />
+            Wrote it on paper? Upload photos
+          </Button>
+        </a>
       </div>
       <div className="mb-6 flex flex-wrap items-center justify-between gap-3">
         <div>

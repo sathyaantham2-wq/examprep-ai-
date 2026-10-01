@@ -111,12 +111,12 @@ export function InstallAppBanner({ className }: { className?: string }) {
       </div>
       {showIosHelp ? (
         <p className="text-small flex-1 text-foreground">
-          Install ExamPrep AI: tap <Share className="inline size-3.5 align-text-bottom" /> Share,
+          Install PrepPlan: tap <Share className="inline size-3.5 align-text-bottom" /> Share,
           then <SquarePlus className="inline size-3.5 align-text-bottom" /> "Add to Home Screen".
         </p>
       ) : (
         <div className="flex-1">
-          <p className="text-small font-medium text-foreground">Install ExamPrep AI</p>
+          <p className="text-small font-medium text-foreground">Install PrepPlan</p>
           <p className="text-small text-muted-foreground">
             Add it to your home screen for one-tap access, no browser bar.
           </p>

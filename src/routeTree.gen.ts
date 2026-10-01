@@ -11,6 +11,7 @@
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
 import { Route as ChooseBoardRouteImport } from './routes/choose-board'
+import { Route as DeleteAccountRouteImport } from './routes/delete-account'
 import { Route as GenerateRouteImport } from './routes/generate'
 import { Route as HomeRouteImport } from './routes/home'
 import { Route as LeaderboardRouteImport } from './routes/leaderboard'
@@ -19,10 +20,12 @@ import { Route as NeedsImprovementRouteImport } from './routes/needs-improvement
 import { Route as OnboardingRouteImport } from './routes/onboarding'
 import { Route as PapersAttemptedRouteImport } from './routes/papers-attempted'
 import { Route as PlanRouteImport } from './routes/plan'
+import { Route as PrivacyRouteImport } from './routes/privacy'
 import { Route as ProfileSetupRouteImport } from './routes/profile-setup'
 import { Route as RemediationRouteImport } from './routes/remediation'
 import { Route as SettingsRouteImport } from './routes/settings'
 import { Route as StudentRouteImport } from './routes/student'
+import { Route as DotwellKnownAssetlinksDotjsonRouteImport } from './routes/[.]well-known/assetlinks[.]json'
 import { Route as AdminAdaptiveRouteImport } from './routes/admin/adaptive'
 import { Route as AdminBlueprintsRouteImport } from './routes/admin/blueprints'
 import { Route as AdminCoverageRouteImport } from './routes/admin/coverage'
@@ -51,6 +54,7 @@ import { Route as ApiStudyPlanRouteImport } from './routes/api/study-plan'
 import { Route as AttemptIdRouteImport } from './routes/attempt/$id'
 import { Route as EvaluateAttemptIdRouteImport } from './routes/evaluate/$attemptId'
 import { Route as PaperIdRouteImport } from './routes/paper/$id'
+import { Route as ScanAttemptIdRouteImport } from './routes/scan/$attemptId'
 import { Route as SummaryWeeklyRouteImport } from './routes/summary/weekly'
 import { Route as TrackerStudentIdRouteImport } from './routes/tracker/$studentId'
 import { Route as ApiAdaptiveOverviewRouteImport } from './routes/api/adaptive/overview'
@@ -88,6 +92,7 @@ import { Route as ApiQuestionsGenerateRouteImport } from './routes/api/questions
 import { Route as ApiQuestionsGenerateBatchRouteImport } from './routes/api/questions/generate-batch'
 import { Route as ApiRemediationIdRouteImport } from './routes/api/remediation/$id'
 import { Route as ApiRemediationGenerateRouteImport } from './routes/api/remediation/generate'
+import { Route as ApiScanPagesPageIdRouteImport } from './routes/api/scan-pages/$pageId'
 import { Route as ApiStudentsIdRouteImport } from './routes/api/students/$id'
 import { Route as ApiStudentsMeRouteImport } from './routes/api/students/me'
 import { Route as ApiStudyPlanGenerateRouteImport } from './routes/api/study-plan/generate'
@@ -104,6 +109,7 @@ import { Route as ApiAttemptsIdFinalizeRouteImport } from './routes/api/attempts
 import { Route as ApiAttemptsIdReportRouteImport } from './routes/api/attempts/$id/report'
 import { Route as ApiAttemptsIdResultRouteImport } from './routes/api/attempts/$id/result'
 import { Route as ApiAttemptsIdReviewRouteImport } from './routes/api/attempts/$id/review'
+import { Route as ApiAttemptsIdScanRouteImport } from './routes/api/attempts/$id/scan'
 import { Route as ApiAttemptsIdSubmitRouteImport } from './routes/api/attempts/$id/submit'
 import { Route as ApiEvaluationsIdConfirmRouteImport } from './routes/api/evaluations/$id/confirm'
 import { Route as ApiEvaluationsIdHabitsRouteImport } from './routes/api/evaluations/$id/habits'
@@ -115,6 +121,7 @@ import { Route as ApiHouseholdsUsersIdRouteImport } from './routes/api/household
 import { Route as ApiPapersIdCoverageRouteImport } from './routes/api/papers/$id/coverage'
 import { Route as ApiPapersIdPdfRouteImport } from './routes/api/papers/$id/pdf'
 import { Route as ApiPapersIdRegenerateSlotRouteImport } from './routes/api/papers/$id/regenerate-slot'
+import { Route as ApiPapersIdScanAttemptRouteImport } from './routes/api/papers/$id/scan-attempt'
 import { Route as ApiPapersIdWorkflowRouteImport } from './routes/api/papers/$id/workflow'
 import { Route as ApiQuestionsIdStatsRouteImport } from './routes/api/questions/$id/stats'
 import { Route as ApiQuestionsGenerateBatchIdRouteImport } from './routes/api/questions/generate-batch/$id'
@@ -125,6 +132,8 @@ import { Route as ApiStudentsMeProfileRouteImport } from './routes/api/students/
 import { Route as ApiSummaryWeeklyStudentIdRouteImport } from './routes/api/summary/weekly/$studentId'
 import { Route as ApiSyllabusConceptsIdRouteImport } from './routes/api/syllabus/concepts/$id'
 import { Route as ApiAdaptiveConceptsConceptIdWrongQuestionsRouteImport } from './routes/api/adaptive/concepts/$conceptId/wrong-questions'
+import { Route as ApiAttemptsIdScanApplyRouteImport } from './routes/api/attempts/$id/scan/apply'
+import { Route as ApiAttemptsIdScanPagesRouteImport } from './routes/api/attempts/$id/scan/pages'
 import { Route as ApiEvaluationsIdItemsItemIdRouteImport } from './routes/api/evaluations/$id/items/$itemId'
 import { Route as ApiEvaluationsIdReportPdfRouteImport } from './routes/api/evaluations/$id/report/pdf'
 import { Route as ApiQuestionsGenerateBatchIdResumeRouteImport } from './routes/api/questions/generate-batch/$id/resume'
@@ -134,6 +143,9 @@ import { Route as ApiStudyPlanIdDaysDayNumberRouteImport } from './routes/api/st
 import { Route as ApiSyllabusChaptersIdScopeRouteImport } from './routes/api/syllabus/chapters/$id/scope'
 import { Route as ApiAttemptsIdItemsItemIdDisputeRouteImport } from './routes/api/attempts/$id/items/$itemId/dispute'
 import { Route as ApiAttemptsIdItemsItemIdRemoveRouteImport } from './routes/api/attempts/$id/items/$itemId/remove'
+import { Route as ApiAttemptsIdScanDetectionsDetectionIdRouteImport } from './routes/api/attempts/$id/scan/detections/$detectionId'
+import { Route as ApiAttemptsIdScanPagesPageIdRouteImport } from './routes/api/attempts/$id/scan/pages/$pageId'
+import { Route as ApiAttemptsIdScanPagesPageIdExtractRouteImport } from './routes/api/attempts/$id/scan/pages/$pageId/extract'
 
 const IndexRoute = IndexRouteImport.update({
   id: '/',
@@ -143,6 +155,11 @@ const IndexRoute = IndexRouteImport.update({
 const ChooseBoardRoute = ChooseBoardRouteImport.update({
   id: '/choose-board',
   path: '/choose-board',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const DeleteAccountRoute = DeleteAccountRouteImport.update({
+  id: '/delete-account',
+  path: '/delete-account',
   getParentRoute: () => rootRouteImport,
 } as any)
 const GenerateRoute = GenerateRouteImport.update({
@@ -185,6 +202,11 @@ const PlanRoute = PlanRouteImport.update({
   path: '/plan',
   getParentRoute: () => rootRouteImport,
 } as any)
+const PrivacyRoute = PrivacyRouteImport.update({
+  id: '/privacy',
+  path: '/privacy',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const ProfileSetupRoute = ProfileSetupRouteImport.update({
   id: '/profile-setup',
   path: '/profile-setup',
@@ -205,6 +227,12 @@ const StudentRoute = StudentRouteImport.update({
   path: '/student',
   getParentRoute: () => rootRouteImport,
 } as any)
+const DotwellKnownAssetlinksDotjsonRoute =
+  DotwellKnownAssetlinksDotjsonRouteImport.update({
+    id: '/.well-known/assetlinks.json',
+    path: '/.well-known/assetlinks.json',
+    getParentRoute: () => rootRouteImport,
+  } as any)
 const AdminAdaptiveRoute = AdminAdaptiveRouteImport.update({
   id: '/admin/adaptive',
   path: '/admin/adaptive',
@@ -343,6 +371,11 @@ const EvaluateAttemptIdRoute = EvaluateAttemptIdRouteImport.update({
 const PaperIdRoute = PaperIdRouteImport.update({
   id: '/paper/$id',
   path: '/paper/$id',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ScanAttemptIdRoute = ScanAttemptIdRouteImport.update({
+  id: '/scan/$attemptId',
+  path: '/scan/$attemptId',
   getParentRoute: () => rootRouteImport,
 } as any)
 const SummaryWeeklyRoute = SummaryWeeklyRouteImport.update({
@@ -535,6 +568,11 @@ const ApiRemediationGenerateRoute = ApiRemediationGenerateRouteImport.update({
   path: '/generate',
   getParentRoute: () => ApiRemediationRoute,
 } as any)
+const ApiScanPagesPageIdRoute = ApiScanPagesPageIdRouteImport.update({
+  id: '/api/scan-pages/$pageId',
+  path: '/api/scan-pages/$pageId',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const ApiStudentsIdRoute = ApiStudentsIdRouteImport.update({
   id: '/$id',
   path: '/$id',
@@ -617,6 +655,11 @@ const ApiAttemptsIdReviewRoute = ApiAttemptsIdReviewRouteImport.update({
   path: '/review',
   getParentRoute: () => ApiAttemptsIdRoute,
 } as any)
+const ApiAttemptsIdScanRoute = ApiAttemptsIdScanRouteImport.update({
+  id: '/scan',
+  path: '/scan',
+  getParentRoute: () => ApiAttemptsIdRoute,
+} as any)
 const ApiAttemptsIdSubmitRoute = ApiAttemptsIdSubmitRouteImport.update({
   id: '/submit',
   path: '/submit',
@@ -675,6 +718,11 @@ const ApiPapersIdRegenerateSlotRoute =
     path: '/regenerate-slot',
     getParentRoute: () => ApiPapersIdRoute,
   } as any)
+const ApiPapersIdScanAttemptRoute = ApiPapersIdScanAttemptRouteImport.update({
+  id: '/scan-attempt',
+  path: '/scan-attempt',
+  getParentRoute: () => ApiPapersIdRoute,
+} as any)
 const ApiPapersIdWorkflowRoute = ApiPapersIdWorkflowRouteImport.update({
   id: '/workflow',
   path: '/workflow',
@@ -729,6 +777,16 @@ const ApiAdaptiveConceptsConceptIdWrongQuestionsRoute =
     path: '/api/adaptive/concepts/$conceptId/wrong-questions',
     getParentRoute: () => rootRouteImport,
   } as any)
+const ApiAttemptsIdScanApplyRoute = ApiAttemptsIdScanApplyRouteImport.update({
+  id: '/apply',
+  path: '/apply',
+  getParentRoute: () => ApiAttemptsIdScanRoute,
+} as any)
+const ApiAttemptsIdScanPagesRoute = ApiAttemptsIdScanPagesRouteImport.update({
+  id: '/pages',
+  path: '/pages',
+  getParentRoute: () => ApiAttemptsIdScanRoute,
+} as any)
 const ApiEvaluationsIdItemsItemIdRoute =
   ApiEvaluationsIdItemsItemIdRouteImport.update({
     id: '/items/$itemId',
@@ -783,10 +841,29 @@ const ApiAttemptsIdItemsItemIdRemoveRoute =
     path: '/items/$itemId/remove',
     getParentRoute: () => ApiAttemptsIdRoute,
   } as any)
+const ApiAttemptsIdScanDetectionsDetectionIdRoute =
+  ApiAttemptsIdScanDetectionsDetectionIdRouteImport.update({
+    id: '/detections/$detectionId',
+    path: '/detections/$detectionId',
+    getParentRoute: () => ApiAttemptsIdScanRoute,
+  } as any)
+const ApiAttemptsIdScanPagesPageIdRoute =
+  ApiAttemptsIdScanPagesPageIdRouteImport.update({
+    id: '/$pageId',
+    path: '/$pageId',
+    getParentRoute: () => ApiAttemptsIdScanPagesRoute,
+  } as any)
+const ApiAttemptsIdScanPagesPageIdExtractRoute =
+  ApiAttemptsIdScanPagesPageIdExtractRouteImport.update({
+    id: '/extract',
+    path: '/extract',
+    getParentRoute: () => ApiAttemptsIdScanPagesPageIdRoute,
+  } as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/choose-board': typeof ChooseBoardRoute
+  '/delete-account': typeof DeleteAccountRoute
   '/generate': typeof GenerateRoute
   '/home': typeof HomeRoute
   '/leaderboard': typeof LeaderboardRoute
@@ -795,10 +872,12 @@ export interface FileRoutesByFullPath {
   '/onboarding': typeof OnboardingRoute
   '/papers-attempted': typeof PapersAttemptedRoute
   '/plan': typeof PlanRoute
+  '/privacy': typeof PrivacyRoute
   '/profile-setup': typeof ProfileSetupRoute
   '/remediation': typeof RemediationRoute
   '/settings': typeof SettingsRoute
   '/student': typeof StudentRoute
+  '/.well-known/assetlinks.json': typeof DotwellKnownAssetlinksDotjsonRoute
   '/admin/adaptive': typeof AdminAdaptiveRoute
   '/admin/blueprints': typeof AdminBlueprintsRoute
   '/admin/coverage': typeof AdminCoverageRoute
@@ -827,6 +906,7 @@ export interface FileRoutesByFullPath {
   '/attempt/$id': typeof AttemptIdRoute
   '/evaluate/$attemptId': typeof EvaluateAttemptIdRoute
   '/paper/$id': typeof PaperIdRoute
+  '/scan/$attemptId': typeof ScanAttemptIdRoute
   '/summary/weekly': typeof SummaryWeeklyRoute
   '/tracker/$studentId': typeof TrackerStudentIdRoute
   '/api/adaptive/overview': typeof ApiAdaptiveOverviewRoute
@@ -864,6 +944,7 @@ export interface FileRoutesByFullPath {
   '/api/questions/generate-batch': typeof ApiQuestionsGenerateBatchRouteWithChildren
   '/api/remediation/$id': typeof ApiRemediationIdRouteWithChildren
   '/api/remediation/generate': typeof ApiRemediationGenerateRoute
+  '/api/scan-pages/$pageId': typeof ApiScanPagesPageIdRoute
   '/api/students/$id': typeof ApiStudentsIdRouteWithChildren
   '/api/students/me': typeof ApiStudentsMeRouteWithChildren
   '/api/study-plan/generate': typeof ApiStudyPlanGenerateRoute
@@ -880,6 +961,7 @@ export interface FileRoutesByFullPath {
   '/api/attempts/$id/report': typeof ApiAttemptsIdReportRoute
   '/api/attempts/$id/result': typeof ApiAttemptsIdResultRoute
   '/api/attempts/$id/review': typeof ApiAttemptsIdReviewRoute
+  '/api/attempts/$id/scan': typeof ApiAttemptsIdScanRouteWithChildren
   '/api/attempts/$id/submit': typeof ApiAttemptsIdSubmitRoute
   '/api/evaluations/$id/confirm': typeof ApiEvaluationsIdConfirmRoute
   '/api/evaluations/$id/habits': typeof ApiEvaluationsIdHabitsRoute
@@ -891,6 +973,7 @@ export interface FileRoutesByFullPath {
   '/api/papers/$id/coverage': typeof ApiPapersIdCoverageRoute
   '/api/papers/$id/pdf': typeof ApiPapersIdPdfRoute
   '/api/papers/$id/regenerate-slot': typeof ApiPapersIdRegenerateSlotRoute
+  '/api/papers/$id/scan-attempt': typeof ApiPapersIdScanAttemptRoute
   '/api/papers/$id/workflow': typeof ApiPapersIdWorkflowRoute
   '/api/questions/$id/stats': typeof ApiQuestionsIdStatsRoute
   '/api/questions/generate-batch/$id': typeof ApiQuestionsGenerateBatchIdRouteWithChildren
@@ -901,6 +984,8 @@ export interface FileRoutesByFullPath {
   '/api/summary/weekly/$studentId': typeof ApiSummaryWeeklyStudentIdRoute
   '/api/syllabus/concepts/$id': typeof ApiSyllabusConceptsIdRoute
   '/api/adaptive/concepts/$conceptId/wrong-questions': typeof ApiAdaptiveConceptsConceptIdWrongQuestionsRoute
+  '/api/attempts/$id/scan/apply': typeof ApiAttemptsIdScanApplyRoute
+  '/api/attempts/$id/scan/pages': typeof ApiAttemptsIdScanPagesRouteWithChildren
   '/api/evaluations/$id/items/$itemId': typeof ApiEvaluationsIdItemsItemIdRoute
   '/api/evaluations/$id/report/pdf': typeof ApiEvaluationsIdReportPdfRoute
   '/api/questions/generate-batch/$id/resume': typeof ApiQuestionsGenerateBatchIdResumeRoute
@@ -910,10 +995,14 @@ export interface FileRoutesByFullPath {
   '/api/syllabus/chapters/$id/scope': typeof ApiSyllabusChaptersIdScopeRoute
   '/api/attempts/$id/items/$itemId/dispute': typeof ApiAttemptsIdItemsItemIdDisputeRoute
   '/api/attempts/$id/items/$itemId/remove': typeof ApiAttemptsIdItemsItemIdRemoveRoute
+  '/api/attempts/$id/scan/detections/$detectionId': typeof ApiAttemptsIdScanDetectionsDetectionIdRoute
+  '/api/attempts/$id/scan/pages/$pageId': typeof ApiAttemptsIdScanPagesPageIdRouteWithChildren
+  '/api/attempts/$id/scan/pages/$pageId/extract': typeof ApiAttemptsIdScanPagesPageIdExtractRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/choose-board': typeof ChooseBoardRoute
+  '/delete-account': typeof DeleteAccountRoute
   '/generate': typeof GenerateRoute
   '/home': typeof HomeRoute
   '/leaderboard': typeof LeaderboardRoute
@@ -922,10 +1011,12 @@ export interface FileRoutesByTo {
   '/onboarding': typeof OnboardingRoute
   '/papers-attempted': typeof PapersAttemptedRoute
   '/plan': typeof PlanRoute
+  '/privacy': typeof PrivacyRoute
   '/profile-setup': typeof ProfileSetupRoute
   '/remediation': typeof RemediationRoute
   '/settings': typeof SettingsRoute
   '/student': typeof StudentRoute
+  '/.well-known/assetlinks.json': typeof DotwellKnownAssetlinksDotjsonRoute
   '/admin/adaptive': typeof AdminAdaptiveRoute
   '/admin/blueprints': typeof AdminBlueprintsRoute
   '/admin/coverage': typeof AdminCoverageRoute
@@ -954,6 +1045,7 @@ export interface FileRoutesByTo {
   '/attempt/$id': typeof AttemptIdRoute
   '/evaluate/$attemptId': typeof EvaluateAttemptIdRoute
   '/paper/$id': typeof PaperIdRoute
+  '/scan/$attemptId': typeof ScanAttemptIdRoute
   '/summary/weekly': typeof SummaryWeeklyRoute
   '/tracker/$studentId': typeof TrackerStudentIdRoute
   '/api/adaptive/overview': typeof ApiAdaptiveOverviewRoute
@@ -991,6 +1083,7 @@ export interface FileRoutesByTo {
   '/api/questions/generate-batch': typeof ApiQuestionsGenerateBatchRouteWithChildren
   '/api/remediation/$id': typeof ApiRemediationIdRouteWithChildren
   '/api/remediation/generate': typeof ApiRemediationGenerateRoute
+  '/api/scan-pages/$pageId': typeof ApiScanPagesPageIdRoute
   '/api/students/$id': typeof ApiStudentsIdRouteWithChildren
   '/api/students/me': typeof ApiStudentsMeRouteWithChildren
   '/api/study-plan/generate': typeof ApiStudyPlanGenerateRoute
@@ -1007,6 +1100,7 @@ export interface FileRoutesByTo {
   '/api/attempts/$id/report': typeof ApiAttemptsIdReportRoute
   '/api/attempts/$id/result': typeof ApiAttemptsIdResultRoute
   '/api/attempts/$id/review': typeof ApiAttemptsIdReviewRoute
+  '/api/attempts/$id/scan': typeof ApiAttemptsIdScanRouteWithChildren
   '/api/attempts/$id/submit': typeof ApiAttemptsIdSubmitRoute
   '/api/evaluations/$id/confirm': typeof ApiEvaluationsIdConfirmRoute
   '/api/evaluations/$id/habits': typeof ApiEvaluationsIdHabitsRoute
@@ -1018,6 +1112,7 @@ export interface FileRoutesByTo {
   '/api/papers/$id/coverage': typeof ApiPapersIdCoverageRoute
   '/api/papers/$id/pdf': typeof ApiPapersIdPdfRoute
   '/api/papers/$id/regenerate-slot': typeof ApiPapersIdRegenerateSlotRoute
+  '/api/papers/$id/scan-attempt': typeof ApiPapersIdScanAttemptRoute
   '/api/papers/$id/workflow': typeof ApiPapersIdWorkflowRoute
   '/api/questions/$id/stats': typeof ApiQuestionsIdStatsRoute
   '/api/questions/generate-batch/$id': typeof ApiQuestionsGenerateBatchIdRouteWithChildren
@@ -1028,6 +1123,8 @@ export interface FileRoutesByTo {
   '/api/summary/weekly/$studentId': typeof ApiSummaryWeeklyStudentIdRoute
   '/api/syllabus/concepts/$id': typeof ApiSyllabusConceptsIdRoute
   '/api/adaptive/concepts/$conceptId/wrong-questions': typeof ApiAdaptiveConceptsConceptIdWrongQuestionsRoute
+  '/api/attempts/$id/scan/apply': typeof ApiAttemptsIdScanApplyRoute
+  '/api/attempts/$id/scan/pages': typeof ApiAttemptsIdScanPagesRouteWithChildren
   '/api/evaluations/$id/items/$itemId': typeof ApiEvaluationsIdItemsItemIdRoute
   '/api/evaluations/$id/report/pdf': typeof ApiEvaluationsIdReportPdfRoute
   '/api/questions/generate-batch/$id/resume': typeof ApiQuestionsGenerateBatchIdResumeRoute
@@ -1037,11 +1134,15 @@ export interface FileRoutesByTo {
   '/api/syllabus/chapters/$id/scope': typeof ApiSyllabusChaptersIdScopeRoute
   '/api/attempts/$id/items/$itemId/dispute': typeof ApiAttemptsIdItemsItemIdDisputeRoute
   '/api/attempts/$id/items/$itemId/remove': typeof ApiAttemptsIdItemsItemIdRemoveRoute
+  '/api/attempts/$id/scan/detections/$detectionId': typeof ApiAttemptsIdScanDetectionsDetectionIdRoute
+  '/api/attempts/$id/scan/pages/$pageId': typeof ApiAttemptsIdScanPagesPageIdRouteWithChildren
+  '/api/attempts/$id/scan/pages/$pageId/extract': typeof ApiAttemptsIdScanPagesPageIdExtractRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
   '/choose-board': typeof ChooseBoardRoute
+  '/delete-account': typeof DeleteAccountRoute
   '/generate': typeof GenerateRoute
   '/home': typeof HomeRoute
   '/leaderboard': typeof LeaderboardRoute
@@ -1050,10 +1151,12 @@ export interface FileRoutesById {
   '/onboarding': typeof OnboardingRoute
   '/papers-attempted': typeof PapersAttemptedRoute
   '/plan': typeof PlanRoute
+  '/privacy': typeof PrivacyRoute
   '/profile-setup': typeof ProfileSetupRoute
   '/remediation': typeof RemediationRoute
   '/settings': typeof SettingsRoute
   '/student': typeof StudentRoute
+  '/.well-known/assetlinks.json': typeof DotwellKnownAssetlinksDotjsonRoute
   '/admin/adaptive': typeof AdminAdaptiveRoute
   '/admin/blueprints': typeof AdminBlueprintsRoute
   '/admin/coverage': typeof AdminCoverageRoute
@@ -1082,6 +1185,7 @@ export interface FileRoutesById {
   '/attempt/$id': typeof AttemptIdRoute
   '/evaluate/$attemptId': typeof EvaluateAttemptIdRoute
   '/paper/$id': typeof PaperIdRoute
+  '/scan/$attemptId': typeof ScanAttemptIdRoute
   '/summary/weekly': typeof SummaryWeeklyRoute
   '/tracker/$studentId': typeof TrackerStudentIdRoute
   '/api/adaptive/overview': typeof ApiAdaptiveOverviewRoute
@@ -1119,6 +1223,7 @@ export interface FileRoutesById {
   '/api/questions/generate-batch': typeof ApiQuestionsGenerateBatchRouteWithChildren
   '/api/remediation/$id': typeof ApiRemediationIdRouteWithChildren
   '/api/remediation/generate': typeof ApiRemediationGenerateRoute
+  '/api/scan-pages/$pageId': typeof ApiScanPagesPageIdRoute
   '/api/students/$id': typeof ApiStudentsIdRouteWithChildren
   '/api/students/me': typeof ApiStudentsMeRouteWithChildren
   '/api/study-plan/generate': typeof ApiStudyPlanGenerateRoute
@@ -1135,6 +1240,7 @@ export interface FileRoutesById {
   '/api/attempts/$id/report': typeof ApiAttemptsIdReportRoute
   '/api/attempts/$id/result': typeof ApiAttemptsIdResultRoute
   '/api/attempts/$id/review': typeof ApiAttemptsIdReviewRoute
+  '/api/attempts/$id/scan': typeof ApiAttemptsIdScanRouteWithChildren
   '/api/attempts/$id/submit': typeof ApiAttemptsIdSubmitRoute
   '/api/evaluations/$id/confirm': typeof ApiEvaluationsIdConfirmRoute
   '/api/evaluations/$id/habits': typeof ApiEvaluationsIdHabitsRoute
@@ -1146,6 +1252,7 @@ export interface FileRoutesById {
   '/api/papers/$id/coverage': typeof ApiPapersIdCoverageRoute
   '/api/papers/$id/pdf': typeof ApiPapersIdPdfRoute
   '/api/papers/$id/regenerate-slot': typeof ApiPapersIdRegenerateSlotRoute
+  '/api/papers/$id/scan-attempt': typeof ApiPapersIdScanAttemptRoute
   '/api/papers/$id/workflow': typeof ApiPapersIdWorkflowRoute
   '/api/questions/$id/stats': typeof ApiQuestionsIdStatsRoute
   '/api/questions/generate-batch/$id': typeof ApiQuestionsGenerateBatchIdRouteWithChildren
@@ -1156,6 +1263,8 @@ export interface FileRoutesById {
   '/api/summary/weekly/$studentId': typeof ApiSummaryWeeklyStudentIdRoute
   '/api/syllabus/concepts/$id': typeof ApiSyllabusConceptsIdRoute
   '/api/adaptive/concepts/$conceptId/wrong-questions': typeof ApiAdaptiveConceptsConceptIdWrongQuestionsRoute
+  '/api/attempts/$id/scan/apply': typeof ApiAttemptsIdScanApplyRoute
+  '/api/attempts/$id/scan/pages': typeof ApiAttemptsIdScanPagesRouteWithChildren
   '/api/evaluations/$id/items/$itemId': typeof ApiEvaluationsIdItemsItemIdRoute
   '/api/evaluations/$id/report/pdf': typeof ApiEvaluationsIdReportPdfRoute
   '/api/questions/generate-batch/$id/resume': typeof ApiQuestionsGenerateBatchIdResumeRoute
@@ -1165,12 +1274,16 @@ export interface FileRoutesById {
   '/api/syllabus/chapters/$id/scope': typeof ApiSyllabusChaptersIdScopeRoute
   '/api/attempts/$id/items/$itemId/dispute': typeof ApiAttemptsIdItemsItemIdDisputeRoute
   '/api/attempts/$id/items/$itemId/remove': typeof ApiAttemptsIdItemsItemIdRemoveRoute
+  '/api/attempts/$id/scan/detections/$detectionId': typeof ApiAttemptsIdScanDetectionsDetectionIdRoute
+  '/api/attempts/$id/scan/pages/$pageId': typeof ApiAttemptsIdScanPagesPageIdRouteWithChildren
+  '/api/attempts/$id/scan/pages/$pageId/extract': typeof ApiAttemptsIdScanPagesPageIdExtractRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
   fullPaths:
     | '/'
     | '/choose-board'
+    | '/delete-account'
     | '/generate'
     | '/home'
     | '/leaderboard'
@@ -1179,10 +1292,12 @@ export interface FileRouteTypes {
     | '/onboarding'
     | '/papers-attempted'
     | '/plan'
+    | '/privacy'
     | '/profile-setup'
     | '/remediation'
     | '/settings'
     | '/student'
+    | '/.well-known/assetlinks.json'
     | '/admin/adaptive'
     | '/admin/blueprints'
     | '/admin/coverage'
@@ -1211,6 +1326,7 @@ export interface FileRouteTypes {
     | '/attempt/$id'
     | '/evaluate/$attemptId'
     | '/paper/$id'
+    | '/scan/$attemptId'
     | '/summary/weekly'
     | '/tracker/$studentId'
     | '/api/adaptive/overview'
@@ -1248,6 +1364,7 @@ export interface FileRouteTypes {
     | '/api/questions/generate-batch'
     | '/api/remediation/$id'
     | '/api/remediation/generate'
+    | '/api/scan-pages/$pageId'
     | '/api/students/$id'
     | '/api/students/me'
     | '/api/study-plan/generate'
@@ -1264,6 +1381,7 @@ export interface FileRouteTypes {
     | '/api/attempts/$id/report'
     | '/api/attempts/$id/result'
     | '/api/attempts/$id/review'
+    | '/api/attempts/$id/scan'
     | '/api/attempts/$id/submit'
     | '/api/evaluations/$id/confirm'
     | '/api/evaluations/$id/habits'
@@ -1275,6 +1393,7 @@ export interface FileRouteTypes {
     | '/api/papers/$id/coverage'
     | '/api/papers/$id/pdf'
     | '/api/papers/$id/regenerate-slot'
+    | '/api/papers/$id/scan-attempt'
     | '/api/papers/$id/workflow'
     | '/api/questions/$id/stats'
     | '/api/questions/generate-batch/$id'
@@ -1285,6 +1404,8 @@ export interface FileRouteTypes {
     | '/api/summary/weekly/$studentId'
     | '/api/syllabus/concepts/$id'
     | '/api/adaptive/concepts/$conceptId/wrong-questions'
+    | '/api/attempts/$id/scan/apply'
+    | '/api/attempts/$id/scan/pages'
     | '/api/evaluations/$id/items/$itemId'
     | '/api/evaluations/$id/report/pdf'
     | '/api/questions/generate-batch/$id/resume'
@@ -1294,10 +1415,14 @@ export interface FileRouteTypes {
     | '/api/syllabus/chapters/$id/scope'
     | '/api/attempts/$id/items/$itemId/dispute'
     | '/api/attempts/$id/items/$itemId/remove'
+    | '/api/attempts/$id/scan/detections/$detectionId'
+    | '/api/attempts/$id/scan/pages/$pageId'
+    | '/api/attempts/$id/scan/pages/$pageId/extract'
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/'
     | '/choose-board'
+    | '/delete-account'
     | '/generate'
     | '/home'
     | '/leaderboard'
@@ -1306,10 +1431,12 @@ export interface FileRouteTypes {
     | '/onboarding'
     | '/papers-attempted'
     | '/plan'
+    | '/privacy'
     | '/profile-setup'
     | '/remediation'
     | '/settings'
     | '/student'
+    | '/.well-known/assetlinks.json'
     | '/admin/adaptive'
     | '/admin/blueprints'
     | '/admin/coverage'
@@ -1338,6 +1465,7 @@ export interface FileRouteTypes {
     | '/attempt/$id'
     | '/evaluate/$attemptId'
     | '/paper/$id'
+    | '/scan/$attemptId'
     | '/summary/weekly'
     | '/tracker/$studentId'
     | '/api/adaptive/overview'
@@ -1375,6 +1503,7 @@ export interface FileRouteTypes {
     | '/api/questions/generate-batch'
     | '/api/remediation/$id'
     | '/api/remediation/generate'
+    | '/api/scan-pages/$pageId'
     | '/api/students/$id'
     | '/api/students/me'
     | '/api/study-plan/generate'
@@ -1391,6 +1520,7 @@ export interface FileRouteTypes {
     | '/api/attempts/$id/report'
     | '/api/attempts/$id/result'
     | '/api/attempts/$id/review'
+    | '/api/attempts/$id/scan'
     | '/api/attempts/$id/submit'
     | '/api/evaluations/$id/confirm'
     | '/api/evaluations/$id/habits'
@@ -1402,6 +1532,7 @@ export interface FileRouteTypes {
     | '/api/papers/$id/coverage'
     | '/api/papers/$id/pdf'
     | '/api/papers/$id/regenerate-slot'
+    | '/api/papers/$id/scan-attempt'
     | '/api/papers/$id/workflow'
     | '/api/questions/$id/stats'
     | '/api/questions/generate-batch/$id'
@@ -1412,6 +1543,8 @@ export interface FileRouteTypes {
     | '/api/summary/weekly/$studentId'
     | '/api/syllabus/concepts/$id'
     | '/api/adaptive/concepts/$conceptId/wrong-questions'
+    | '/api/attempts/$id/scan/apply'
+    | '/api/attempts/$id/scan/pages'
     | '/api/evaluations/$id/items/$itemId'
     | '/api/evaluations/$id/report/pdf'
     | '/api/questions/generate-batch/$id/resume'
@@ -1421,10 +1554,14 @@ export interface FileRouteTypes {
     | '/api/syllabus/chapters/$id/scope'
     | '/api/attempts/$id/items/$itemId/dispute'
     | '/api/attempts/$id/items/$itemId/remove'
+    | '/api/attempts/$id/scan/detections/$detectionId'
+    | '/api/attempts/$id/scan/pages/$pageId'
+    | '/api/attempts/$id/scan/pages/$pageId/extract'
   id:
     | '__root__'
     | '/'
     | '/choose-board'
+    | '/delete-account'
     | '/generate'
     | '/home'
     | '/leaderboard'
@@ -1433,10 +1570,12 @@ export interface FileRouteTypes {
     | '/onboarding'
     | '/papers-attempted'
     | '/plan'
+    | '/privacy'
     | '/profile-setup'
     | '/remediation'
     | '/settings'
     | '/student'
+    | '/.well-known/assetlinks.json'
     | '/admin/adaptive'
     | '/admin/blueprints'
     | '/admin/coverage'
@@ -1465,6 +1604,7 @@ export interface FileRouteTypes {
     | '/attempt/$id'
     | '/evaluate/$attemptId'
     | '/paper/$id'
+    | '/scan/$attemptId'
     | '/summary/weekly'
     | '/tracker/$studentId'
     | '/api/adaptive/overview'
@@ -1502,6 +1642,7 @@ export interface FileRouteTypes {
     | '/api/questions/generate-batch'
     | '/api/remediation/$id'
     | '/api/remediation/generate'
+    | '/api/scan-pages/$pageId'
     | '/api/students/$id'
     | '/api/students/me'
     | '/api/study-plan/generate'
@@ -1518,6 +1659,7 @@ export interface FileRouteTypes {
     | '/api/attempts/$id/report'
     | '/api/attempts/$id/result'
     | '/api/attempts/$id/review'
+    | '/api/attempts/$id/scan'
     | '/api/attempts/$id/submit'
     | '/api/evaluations/$id/confirm'
     | '/api/evaluations/$id/habits'
@@ -1529,6 +1671,7 @@ export interface FileRouteTypes {
     | '/api/papers/$id/coverage'
     | '/api/papers/$id/pdf'
     | '/api/papers/$id/regenerate-slot'
+    | '/api/papers/$id/scan-attempt'
     | '/api/papers/$id/workflow'
     | '/api/questions/$id/stats'
     | '/api/questions/generate-batch/$id'
@@ -1539,6 +1682,8 @@ export interface FileRouteTypes {
     | '/api/summary/weekly/$studentId'
     | '/api/syllabus/concepts/$id'
     | '/api/adaptive/concepts/$conceptId/wrong-questions'
+    | '/api/attempts/$id/scan/apply'
+    | '/api/attempts/$id/scan/pages'
     | '/api/evaluations/$id/items/$itemId'
     | '/api/evaluations/$id/report/pdf'
     | '/api/questions/generate-batch/$id/resume'
@@ -1548,11 +1693,15 @@ export interface FileRouteTypes {
     | '/api/syllabus/chapters/$id/scope'
     | '/api/attempts/$id/items/$itemId/dispute'
     | '/api/attempts/$id/items/$itemId/remove'
+    | '/api/attempts/$id/scan/detections/$detectionId'
+    | '/api/attempts/$id/scan/pages/$pageId'
+    | '/api/attempts/$id/scan/pages/$pageId/extract'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   ChooseBoardRoute: typeof ChooseBoardRoute
+  DeleteAccountRoute: typeof DeleteAccountRoute
   GenerateRoute: typeof GenerateRoute
   HomeRoute: typeof HomeRoute
   LeaderboardRoute: typeof LeaderboardRoute
@@ -1561,10 +1710,12 @@ export interface RootRouteChildren {
   OnboardingRoute: typeof OnboardingRoute
   PapersAttemptedRoute: typeof PapersAttemptedRoute
   PlanRoute: typeof PlanRoute
+  PrivacyRoute: typeof PrivacyRoute
   ProfileSetupRoute: typeof ProfileSetupRoute
   RemediationRoute: typeof RemediationRoute
   SettingsRoute: typeof SettingsRoute
   StudentRoute: typeof StudentRoute
+  DotwellKnownAssetlinksDotjsonRoute: typeof DotwellKnownAssetlinksDotjsonRoute
   AdminAdaptiveRoute: typeof AdminAdaptiveRoute
   AdminBlueprintsRoute: typeof AdminBlueprintsRoute
   AdminCoverageRoute: typeof AdminCoverageRoute
@@ -1593,6 +1744,7 @@ export interface RootRouteChildren {
   AttemptIdRoute: typeof AttemptIdRoute
   EvaluateAttemptIdRoute: typeof EvaluateAttemptIdRoute
   PaperIdRoute: typeof PaperIdRoute
+  ScanAttemptIdRoute: typeof ScanAttemptIdRoute
   SummaryWeeklyRoute: typeof SummaryWeeklyRoute
   TrackerStudentIdRoute: typeof TrackerStudentIdRoute
   ApiAdaptiveOverviewRoute: typeof ApiAdaptiveOverviewRoute
@@ -1615,6 +1767,7 @@ export interface RootRouteChildren {
   ApiNudgesTodayRoute: typeof ApiNudgesTodayRoute
   ApiPrivacyDeleteRoute: typeof ApiPrivacyDeleteRoute
   ApiPrivacyExportRoute: typeof ApiPrivacyExportRoute
+  ApiScanPagesPageIdRoute: typeof ApiScanPagesPageIdRoute
   ApiSyllabusChaptersRoute: typeof ApiSyllabusChaptersRouteWithChildren
   ApiSyllabusConceptsRoute: typeof ApiSyllabusConceptsRouteWithChildren
   ApiSyllabusSubjectsRoute: typeof ApiSyllabusSubjectsRoute
@@ -1638,6 +1791,13 @@ declare module '@tanstack/react-router' {
       path: '/choose-board'
       fullPath: '/choose-board'
       preLoaderRoute: typeof ChooseBoardRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/delete-account': {
+      id: '/delete-account'
+      path: '/delete-account'
+      fullPath: '/delete-account'
+      preLoaderRoute: typeof DeleteAccountRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/generate': {
@@ -1696,6 +1856,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof PlanRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/privacy': {
+      id: '/privacy'
+      path: '/privacy'
+      fullPath: '/privacy'
+      preLoaderRoute: typeof PrivacyRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/profile-setup': {
       id: '/profile-setup'
       path: '/profile-setup'
@@ -1722,6 +1889,13 @@ declare module '@tanstack/react-router' {
       path: '/student'
       fullPath: '/student'
       preLoaderRoute: typeof StudentRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/.well-known/assetlinks.json': {
+      id: '/.well-known/assetlinks.json'
+      path: '/.well-known/assetlinks.json'
+      fullPath: '/.well-known/assetlinks.json'
+      preLoaderRoute: typeof DotwellKnownAssetlinksDotjsonRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/admin/adaptive': {
@@ -1918,6 +2092,13 @@ declare module '@tanstack/react-router' {
       path: '/paper/$id'
       fullPath: '/paper/$id'
       preLoaderRoute: typeof PaperIdRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/scan/$attemptId': {
+      id: '/scan/$attemptId'
+      path: '/scan/$attemptId'
+      fullPath: '/scan/$attemptId'
+      preLoaderRoute: typeof ScanAttemptIdRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/summary/weekly': {
@@ -2179,6 +2360,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ApiRemediationGenerateRouteImport
       parentRoute: typeof ApiRemediationRoute
     }
+    '/api/scan-pages/$pageId': {
+      id: '/api/scan-pages/$pageId'
+      path: '/api/scan-pages/$pageId'
+      fullPath: '/api/scan-pages/$pageId'
+      preLoaderRoute: typeof ApiScanPagesPageIdRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/api/students/$id': {
       id: '/api/students/$id'
       path: '/$id'
@@ -2291,6 +2479,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ApiAttemptsIdReviewRouteImport
       parentRoute: typeof ApiAttemptsIdRoute
     }
+    '/api/attempts/$id/scan': {
+      id: '/api/attempts/$id/scan'
+      path: '/scan'
+      fullPath: '/api/attempts/$id/scan'
+      preLoaderRoute: typeof ApiAttemptsIdScanRouteImport
+      parentRoute: typeof ApiAttemptsIdRoute
+    }
     '/api/attempts/$id/submit': {
       id: '/api/attempts/$id/submit'
       path: '/submit'
@@ -2368,6 +2563,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ApiPapersIdRegenerateSlotRouteImport
       parentRoute: typeof ApiPapersIdRoute
     }
+    '/api/papers/$id/scan-attempt': {
+      id: '/api/papers/$id/scan-attempt'
+      path: '/scan-attempt'
+      fullPath: '/api/papers/$id/scan-attempt'
+      preLoaderRoute: typeof ApiPapersIdScanAttemptRouteImport
+      parentRoute: typeof ApiPapersIdRoute
+    }
     '/api/papers/$id/workflow': {
       id: '/api/papers/$id/workflow'
       path: '/workflow'
@@ -2438,6 +2640,20 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ApiAdaptiveConceptsConceptIdWrongQuestionsRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/api/attempts/$id/scan/apply': {
+      id: '/api/attempts/$id/scan/apply'
+      path: '/apply'
+      fullPath: '/api/attempts/$id/scan/apply'
+      preLoaderRoute: typeof ApiAttemptsIdScanApplyRouteImport
+      parentRoute: typeof ApiAttemptsIdScanRoute
+    }
+    '/api/attempts/$id/scan/pages': {
+      id: '/api/attempts/$id/scan/pages'
+      path: '/pages'
+      fullPath: '/api/attempts/$id/scan/pages'
+      preLoaderRoute: typeof ApiAttemptsIdScanPagesRouteImport
+      parentRoute: typeof ApiAttemptsIdScanRoute
+    }
     '/api/evaluations/$id/items/$itemId': {
       id: '/api/evaluations/$id/items/$itemId'
       path: '/items/$itemId'
@@ -2501,8 +2717,75 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ApiAttemptsIdItemsItemIdRemoveRouteImport
       parentRoute: typeof ApiAttemptsIdRoute
     }
+    '/api/attempts/$id/scan/detections/$detectionId': {
+      id: '/api/attempts/$id/scan/detections/$detectionId'
+      path: '/detections/$detectionId'
+      fullPath: '/api/attempts/$id/scan/detections/$detectionId'
+      preLoaderRoute: typeof ApiAttemptsIdScanDetectionsDetectionIdRouteImport
+      parentRoute: typeof ApiAttemptsIdScanRoute
+    }
+    '/api/attempts/$id/scan/pages/$pageId': {
+      id: '/api/attempts/$id/scan/pages/$pageId'
+      path: '/$pageId'
+      fullPath: '/api/attempts/$id/scan/pages/$pageId'
+      preLoaderRoute: typeof ApiAttemptsIdScanPagesPageIdRouteImport
+      parentRoute: typeof ApiAttemptsIdScanPagesRoute
+    }
+    '/api/attempts/$id/scan/pages/$pageId/extract': {
+      id: '/api/attempts/$id/scan/pages/$pageId/extract'
+      path: '/extract'
+      fullPath: '/api/attempts/$id/scan/pages/$pageId/extract'
+      preLoaderRoute: typeof ApiAttemptsIdScanPagesPageIdExtractRouteImport
+      parentRoute: typeof ApiAttemptsIdScanPagesPageIdRoute
+    }
   }
 }
+
+interface ApiAttemptsIdScanPagesPageIdRouteChildren {
+  ApiAttemptsIdScanPagesPageIdExtractRoute: typeof ApiAttemptsIdScanPagesPageIdExtractRoute
+}
+
+const ApiAttemptsIdScanPagesPageIdRouteChildren: ApiAttemptsIdScanPagesPageIdRouteChildren =
+  {
+    ApiAttemptsIdScanPagesPageIdExtractRoute:
+      ApiAttemptsIdScanPagesPageIdExtractRoute,
+  }
+
+const ApiAttemptsIdScanPagesPageIdRouteWithChildren =
+  ApiAttemptsIdScanPagesPageIdRoute._addFileChildren(
+    ApiAttemptsIdScanPagesPageIdRouteChildren,
+  )
+
+interface ApiAttemptsIdScanPagesRouteChildren {
+  ApiAttemptsIdScanPagesPageIdRoute: typeof ApiAttemptsIdScanPagesPageIdRouteWithChildren
+}
+
+const ApiAttemptsIdScanPagesRouteChildren: ApiAttemptsIdScanPagesRouteChildren =
+  {
+    ApiAttemptsIdScanPagesPageIdRoute:
+      ApiAttemptsIdScanPagesPageIdRouteWithChildren,
+  }
+
+const ApiAttemptsIdScanPagesRouteWithChildren =
+  ApiAttemptsIdScanPagesRoute._addFileChildren(
+    ApiAttemptsIdScanPagesRouteChildren,
+  )
+
+interface ApiAttemptsIdScanRouteChildren {
+  ApiAttemptsIdScanApplyRoute: typeof ApiAttemptsIdScanApplyRoute
+  ApiAttemptsIdScanPagesRoute: typeof ApiAttemptsIdScanPagesRouteWithChildren
+  ApiAttemptsIdScanDetectionsDetectionIdRoute: typeof ApiAttemptsIdScanDetectionsDetectionIdRoute
+}
+
+const ApiAttemptsIdScanRouteChildren: ApiAttemptsIdScanRouteChildren = {
+  ApiAttemptsIdScanApplyRoute: ApiAttemptsIdScanApplyRoute,
+  ApiAttemptsIdScanPagesRoute: ApiAttemptsIdScanPagesRouteWithChildren,
+  ApiAttemptsIdScanDetectionsDetectionIdRoute:
+    ApiAttemptsIdScanDetectionsDetectionIdRoute,
+}
+
+const ApiAttemptsIdScanRouteWithChildren =
+  ApiAttemptsIdScanRoute._addFileChildren(ApiAttemptsIdScanRouteChildren)
 
 interface ApiAttemptsIdRouteChildren {
   ApiAttemptsIdAnswerRoute: typeof ApiAttemptsIdAnswerRoute
@@ -2512,6 +2795,7 @@ interface ApiAttemptsIdRouteChildren {
   ApiAttemptsIdReportRoute: typeof ApiAttemptsIdReportRoute
   ApiAttemptsIdResultRoute: typeof ApiAttemptsIdResultRoute
   ApiAttemptsIdReviewRoute: typeof ApiAttemptsIdReviewRoute
+  ApiAttemptsIdScanRoute: typeof ApiAttemptsIdScanRouteWithChildren
   ApiAttemptsIdSubmitRoute: typeof ApiAttemptsIdSubmitRoute
   ApiAttemptsIdItemsItemIdDisputeRoute: typeof ApiAttemptsIdItemsItemIdDisputeRoute
   ApiAttemptsIdItemsItemIdRemoveRoute: typeof ApiAttemptsIdItemsItemIdRemoveRoute
@@ -2525,6 +2809,7 @@ const ApiAttemptsIdRouteChildren: ApiAttemptsIdRouteChildren = {
   ApiAttemptsIdReportRoute: ApiAttemptsIdReportRoute,
   ApiAttemptsIdResultRoute: ApiAttemptsIdResultRoute,
   ApiAttemptsIdReviewRoute: ApiAttemptsIdReviewRoute,
+  ApiAttemptsIdScanRoute: ApiAttemptsIdScanRouteWithChildren,
   ApiAttemptsIdSubmitRoute: ApiAttemptsIdSubmitRoute,
   ApiAttemptsIdItemsItemIdDisputeRoute: ApiAttemptsIdItemsItemIdDisputeRoute,
   ApiAttemptsIdItemsItemIdRemoveRoute: ApiAttemptsIdItemsItemIdRemoveRoute,
@@ -2635,6 +2920,7 @@ interface ApiPapersIdRouteChildren {
   ApiPapersIdCoverageRoute: typeof ApiPapersIdCoverageRoute
   ApiPapersIdPdfRoute: typeof ApiPapersIdPdfRoute
   ApiPapersIdRegenerateSlotRoute: typeof ApiPapersIdRegenerateSlotRoute
+  ApiPapersIdScanAttemptRoute: typeof ApiPapersIdScanAttemptRoute
   ApiPapersIdWorkflowRoute: typeof ApiPapersIdWorkflowRoute
 }
 
@@ -2642,6 +2928,7 @@ const ApiPapersIdRouteChildren: ApiPapersIdRouteChildren = {
   ApiPapersIdCoverageRoute: ApiPapersIdCoverageRoute,
   ApiPapersIdPdfRoute: ApiPapersIdPdfRoute,
   ApiPapersIdRegenerateSlotRoute: ApiPapersIdRegenerateSlotRoute,
+  ApiPapersIdScanAttemptRoute: ApiPapersIdScanAttemptRoute,
   ApiPapersIdWorkflowRoute: ApiPapersIdWorkflowRoute,
 }
 
@@ -2855,6 +3142,7 @@ const ApiSyllabusConceptsRouteWithChildren =
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   ChooseBoardRoute: ChooseBoardRoute,
+  DeleteAccountRoute: DeleteAccountRoute,
   GenerateRoute: GenerateRoute,
   HomeRoute: HomeRoute,
   LeaderboardRoute: LeaderboardRoute,
@@ -2863,10 +3151,12 @@ const rootRouteChildren: RootRouteChildren = {
   OnboardingRoute: OnboardingRoute,
   PapersAttemptedRoute: PapersAttemptedRoute,
   PlanRoute: PlanRoute,
+  PrivacyRoute: PrivacyRoute,
   ProfileSetupRoute: ProfileSetupRoute,
   RemediationRoute: RemediationRoute,
   SettingsRoute: SettingsRoute,
   StudentRoute: StudentRoute,
+  DotwellKnownAssetlinksDotjsonRoute: DotwellKnownAssetlinksDotjsonRoute,
   AdminAdaptiveRoute: AdminAdaptiveRoute,
   AdminBlueprintsRoute: AdminBlueprintsRoute,
   AdminCoverageRoute: AdminCoverageRoute,
@@ -2895,6 +3185,7 @@ const rootRouteChildren: RootRouteChildren = {
   AttemptIdRoute: AttemptIdRoute,
   EvaluateAttemptIdRoute: EvaluateAttemptIdRoute,
   PaperIdRoute: PaperIdRoute,
+  ScanAttemptIdRoute: ScanAttemptIdRoute,
   SummaryWeeklyRoute: SummaryWeeklyRoute,
   TrackerStudentIdRoute: TrackerStudentIdRoute,
   ApiAdaptiveOverviewRoute: ApiAdaptiveOverviewRoute,
@@ -2917,6 +3208,7 @@ const rootRouteChildren: RootRouteChildren = {
   ApiNudgesTodayRoute: ApiNudgesTodayRoute,
   ApiPrivacyDeleteRoute: ApiPrivacyDeleteRoute,
   ApiPrivacyExportRoute: ApiPrivacyExportRoute,
+  ApiScanPagesPageIdRoute: ApiScanPagesPageIdRoute,
   ApiSyllabusChaptersRoute: ApiSyllabusChaptersRouteWithChildren,
   ApiSyllabusConceptsRoute: ApiSyllabusConceptsRouteWithChildren,
   ApiSyllabusSubjectsRoute: ApiSyllabusSubjectsRoute,

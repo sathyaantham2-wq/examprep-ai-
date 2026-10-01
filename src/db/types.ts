@@ -491,6 +491,20 @@ export interface QuestionOptions {
   text: string;
 }
 
+export interface QuestionReports {
+  attempt_id: string;
+  comment: string;
+  created_at: Generated<Timestamp>;
+  household_id: string;
+  id: Generated<string>;
+  paper_question_id: string;
+  question_id: string;
+  reason: string;
+  resolved_at: Timestamp | null;
+  status: Generated<string>;
+  student_id: string;
+}
+
 export interface Questions {
   answer: string;
   bloom: BloomLevel;
@@ -546,6 +560,39 @@ export interface RemediationTasks {
   status: RemediationStatus;
   student_id: string;
   trigger_reason: string;
+}
+
+export interface ScanDetections {
+  attempt_id: string;
+  bbox: Json | null;
+  confidence: Numeric;
+  confirmed_at: Timestamp | null;
+  confirmed_by_user_id: string | null;
+  created_at: Generated<Timestamp>;
+  detected_label: string;
+  id: Generated<string>;
+  paper_question_id: string | null;
+  response_text: string | null;
+  scan_page_id: string;
+  selected_option: string | null;
+  status: string;
+  student_id: string;
+}
+
+export interface ScanPages {
+  attempt_id: string;
+  created_at: Generated<Timestamp>;
+  extracted_at: Timestamp | null;
+  extraction_error: string | null;
+  id: Generated<string>;
+  image: Buffer | null;
+  mime: string;
+  page_number: number;
+  purged_at: Timestamp | null;
+  size_bytes: number;
+  student_id: string;
+  upload_id: string;
+  uploaded_by_user_id: string;
 }
 
 export interface Sessions {
@@ -702,20 +749,6 @@ export interface Verifications {
   value: string;
 }
 
-export interface QuestionReports {
-  attempt_id: string;
-  comment: string;
-  created_at: Generated<Timestamp>;
-  household_id: string;
-  id: Generated<string>;
-  paper_question_id: string;
-  question_id: string;
-  reason: string;
-  resolved_at: Timestamp | null;
-  status: Generated<string>;
-  student_id: string;
-}
-
 export interface DB {
   accounts: Accounts;
   ai_jobs: AiJobs;
@@ -755,12 +788,14 @@ export interface DB {
   patterns: Patterns;
   product_events: ProductEvents;
   question_explanations: QuestionExplanations;
-  question_reports: QuestionReports;
   question_options: QuestionOptions;
+  question_reports: QuestionReports;
   question_step_marks: QuestionStepMarks;
   question_usage: QuestionUsage;
   questions: Questions;
   remediation_tasks: RemediationTasks;
+  scan_detections: ScanDetections;
+  scan_pages: ScanPages;
   sessions: Sessions;
   sources: Sources;
   student_concept_performance: StudentConceptPerformance;

@@ -91,8 +91,7 @@ export interface CompletionInput {
   // Photos the model should look at (handwriting). Every vendor here accepts them at the API
   // level; whether the specific MODEL configured for a vendor is actually vision-capable is not
   // checked here -- a text-only model asked to read a photo just answers about the prompt text
-  // alone. No AI-06 (handwriting transcription) caller exists yet to have hit this; if one is
-  // built, it should pin a known-multimodal provider/model rather than trust the general chain.
+  // alone. Callers that send images restrict the chain to ai-models.ts's VISION_PROVIDERS.
   images?: Array<CompletionImage>
 }
 

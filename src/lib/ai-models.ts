@@ -147,6 +147,17 @@ export function modelLabel(provider: AiProvider, model: string): string {
   return `${provider}/${model}`
 }
 
+/**
+ * F051 / AI-06: vendors whose configured models can actually see an image. Groq's and Cerebras's
+ * default models are text-only, and OpenRouter's depend on which model is set, so a handwriting
+ * photo sent there would be silently ignored. Anything that reads a photo passes this as
+ * callWithProviderChain's `only`, so the chain skips vendors that would answer blind.
+ */
+export const VISION_PROVIDERS: ReadonlySet<AiProvider> = new Set<AiProvider>([
+  'anthropic',
+  'gemini',
+])
+
 export interface ProviderChainResult<T> {
   result: T
   provider: AiProvider
@@ -200,11 +211,16 @@ export async function callWithProviderChain<T>(
   feature: string,
   fn: (provider: AiProvider, model: string) => Promise<T>,
   config: Parameters<typeof resolveProviderChain>[0] = undefined,
+  options: { only?: ReadonlySet<AiProvider> } = {},
 ): Promise<ProviderChainResult<T>> {
-  const chain = resolveProviderChain(config)
+  const chain = resolveProviderChain(config).filter(
+    (p) => !options.only || options.only.has(p),
+  )
   if (chain.length === 0) {
     throw new Error(
-      `callWithProviderChain: no AI provider is configured (feature "${feature}")`,
+      options.only
+        ? `callWithProviderChain: none of the providers able to do feature "${feature}" (${[...options.only].join(', ')}) is configured`
+        : `callWithProviderChain: no AI provider is configured (feature "${feature}")`,
     )
   }
   const attempts: Array<ChainAttempt> = []

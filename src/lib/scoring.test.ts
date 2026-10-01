@@ -1,10 +1,10 @@
 import { describe, expect, it } from 'vitest'
 import {
+  fillBlankMatches,
   normalizeAnswer,
   scoreObjectiveAnswer,
   templateFeedback,
 } from './scoring'
-import { fillBlankMatches } from './scoring'
 import type { ErrorType } from '../db/enums'
 
 describe('normalizeAnswer (F044)', () => {

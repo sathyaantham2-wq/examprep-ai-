@@ -99,20 +99,22 @@ function shuffled<T>(items: Array<T>, seed: string): Array<T> {
 async function main() {
   const path = process.argv[2]
   const check = process.argv.includes('--check')
-  const file = JSON.parse(readFileSync(path, 'utf8')) as DeltaFile
+  // Untrusted until validated below: any field may be missing.
+  const raw = JSON.parse(readFileSync(path, 'utf8')) as Partial<DeltaFile>
 
   const problems: Array<string> = []
-  if (!file.subject_code) problems.push('subject_code is missing')
-  if (!file.chapter?.part || !file.chapter?.chapter_no) problems.push('chapter.part/chapter_no is missing')
-  if (!file.swaps || file.swaps.length === 0) problems.push('swaps is empty')
-  file.swaps?.forEach((s, i) => problems.push(...validateAdd(s, i)))
-  const texts = (file.swaps ?? []).map((s) => s.add.q)
+  if (!raw.subject_code) problems.push('subject_code is missing')
+  if (!raw.chapter?.part || !raw.chapter.chapter_no) problems.push('chapter.part/chapter_no is missing')
+  if (!raw.swaps || raw.swaps.length === 0) problems.push('swaps is empty')
+  raw.swaps?.forEach((s, i) => problems.push(...validateAdd(s, i)))
+  const texts = (raw.swaps ?? []).map((s) => s.add.q)
   if (new Set(texts).size !== texts.length) problems.push('duplicate add.q text within this delta file')
 
   if (problems.length > 0) {
     console.error(problems.join('\n'))
     process.exit(1)
   }
+  const file = raw as DeltaFile
   console.log(`${path}: ${file.swaps.length} swaps, valid`)
   if (check) return
 

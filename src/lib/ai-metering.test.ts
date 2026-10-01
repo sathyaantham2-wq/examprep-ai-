@@ -1,4 +1,4 @@
-import { afterAll, beforeAll, describe, expect, it } from 'vitest'
+import { afterAll, beforeAll, describe, expect, it, vi } from 'vitest'
 import { createDb } from '../db/connection'
 import type { Db } from '../db/connection'
 import {
@@ -368,8 +368,13 @@ describe('enforceStudentSpendBudget (F121)', () => {
 
   it('throws a monthly StudentSpendCapReachedError when spend earlier this month already reached it, even with nothing spent today', async () => {
     // Backdated to the 1st of this month (not today), so today's own daily-cap check sees zero
-    // spend and only the monthly check -- which sums the whole month -- can trip.
-    const firstOfMonth = new Date(`${new Date().toISOString().slice(0, 7)}-01T00:00:00.000Z`)
+    // spend and only the monthly check -- which sums the whole month -- can trip. "Today" is pinned
+    // to the 15th: run for real on the 1st, the backdated row WAS today and the daily cap tripped
+    // first (this failed CI on 2026-10-01). Only Date is faked; timers and the DB are real.
+    const month = new Date().toISOString().slice(0, 7)
+    const firstOfMonth = new Date(`${month}-01T00:00:00.000Z`)
+    vi.useFakeTimers({ toFake: ['Date'] })
+    vi.setSystemTime(new Date(`${month}-15T12:00:00.000Z`))
     await db
       .insertInto('ai_jobs')
       .values({
@@ -384,9 +389,9 @@ describe('enforceStudentSpendBudget (F121)', () => {
       })
       .execute()
 
-    const error = await enforceStudentSpendBudget(db, { studentId: student.id }).catch(
-      (e: unknown) => e,
-    )
+    const error = await enforceStudentSpendBudget(db, { studentId: student.id })
+      .catch((e: unknown) => e)
+      .finally(() => vi.useRealTimers())
     expect(error).toBeInstanceOf(StudentSpendCapReachedError)
     expect((error as InstanceType<typeof StudentSpendCapReachedError>).period).toBe('monthly')
   })
