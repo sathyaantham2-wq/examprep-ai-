@@ -1,0 +1,1368 @@
+{
+ "subject": {
+  "code": "MATH11",
+  "name": "Mathematics",
+  "board": "CBSE",
+  "class": 11
+ },
+ "source": {
+  "publisher": "NCERT",
+  "title": "Mathematics",
+  "edition": "Textbook for Class XI, Reprint 2026-27",
+  "year": 2026
+ },
+ "chapter": {
+  "part": "I",
+  "chapter_no": 7,
+  "name": "Binomial Theorem",
+  "blurb": "This chapter builds the expansion of (a + b)^n for a positive integer n, first from the pattern of coefficients in Pascal's triangle and then from the binomial theorem, whose coefficients are the combinations C(n, r). It then looks at the special cases (x - y)^n, (1 + x)^n and (1 - x)^n, and uses the theorem to evaluate powers of numbers, compare large powers and prove simple divisibility results.",
+  "source_code": "kemh107",
+  "order_index": 7
+ },
+ "scope_in": [
+  {
+   "item": "Recall the expansions of (a + b)^0 to (a + b)^4 and use the three observations: the number of terms is one more than the index, powers of a fall by 1 while powers of b rise by 1, and the indices in each term add up to the index",
+   "pages": "126, 130"
+  },
+  {
+   "item": "Build rows of Pascal's triangle (Meru Prastara) by adding the two entries above, with 1 at both ends, and use a row to expand a binomial with a small index, such as (2x + 3y)^5",
+   "pages": "127"
+  },
+  {
+   "item": "Rewrite the rows of Pascal's triangle as C(n, 0), C(n, 1), ..., C(n, n) with C(n, 0) = 1 = C(n, n), and say why this avoids writing the earlier rows",
+   "pages": "128"
+  },
+  {
+   "item": "State the binomial theorem for a positive integer n, (a + b)^n = C(n, 0) a^n + C(n, 1) a^(n-1) b + ... + C(n, n) b^n, its sigma form, the name binomial coefficients, and follow its proof by mathematical induction using C(k, r) + C(k, r - 1) = C(k + 1, r)",
+   "pages": "129-130"
+  },
+  {
+   "item": "Expand binomials with a small index in full by the theorem, including ones with numerical coefficients and terms like 3/x, e.g. (x + 2)^6 and (x^2 + 3/x)^4, and read a coefficient off the full expansion",
+   "pages": "129, 131-133"
+  },
+  {
+   "item": "Use the special cases (x - y)^n with alternating signs, (1 + x)^n and (1 - x)^n, and the results C(n, 0) + C(n, 1) + ... + C(n, n) = 2^n and C(n, 0) - C(n, 1) + ... + (-1)^n C(n, n) = 0, including substituting a number for x (e.g. the sum of 3^r C(n, r) is 4^n)",
+   "pages": "130-131, 133"
+  },
+  {
+   "item": "Evaluate powers such as (98)^5, (96)^3, (101)^4 by writing the base as a sum or difference, and approximate (0.99)^5 from the first three terms",
+   "pages": "131, 133"
+  },
+  {
+   "item": "Compare a large power with a number using the first terms of an expansion, e.g. (1.01)^1000000 > 10000",
+   "pages": "131-133"
+  },
+  {
+   "item": "Prove remainder and divisibility results by expanding (1 + a)^n, e.g. 6^n - 5n leaves remainder 1 on division by 25 and 9^(n+1) - 8n - 9 is divisible by 64",
+   "pages": "132-133"
+  },
+  {
+   "item": "Simplify (a + b)^n +/- (a - b)^n for small n and use the result with surds, e.g. (a + b)^4 - (a - b)^4 and (x + 1)^6 + (x - 1)^6",
+   "pages": "133"
+  }
+ ],
+ "scope_out": [
+  {
+   "item": "General term T(r+1) = C(n, r) a^(n-r) b^r, 'find the r-th term', middle term(s), the term independent of x, and finding the coefficient of a given power in a large-index expansion",
+   "reason": "The section 'General and Middle Terms' is not in this rationalised edition: the chapter has only 7.1, 7.2, 7.2.1 and 7.2.2, one exercise (7.1) and a Miscellaneous Exercise. Questions refer only to full expansions of small index (at most 6) and to the first and last terms described in the Observations (p 130)"
+  },
+  {
+   "item": "Binomial theorem for negative or fractional (rational) indices and infinite binomial series",
+   "reason": "Section 7.1 says the theorem extends to rational n but that this chapter studies positive integral indices only (p 126)"
+  },
+  {
+   "item": "Greatest coefficient, numerically greatest term, ratio of consecutive terms or coefficients, and problems finding n from three consecutive coefficients",
+   "reason": "Not taught anywhere in this edition; they belonged with the removed general-term material"
+  },
+  {
+   "item": "Stated identities such as C(n, r) = C(n, n - r) as a symmetry rule, the sum of even-placed coefficients = 2^(n-1) as a formula, or sums involving r C(n, r)",
+   "reason": "The chapter states only the two results 2^n and 0 (p 131); anything further must be worked out from those two in the question itself"
+  },
+  {
+   "item": "Multinomial theorem and a formula for expanding trinomials",
+   "reason": "Miscellaneous Exercise 5 and 6 handle a trinomial only by grouping it as a binomial; no multinomial formula is given, and such expansions are too long for a phone-sized answer"
+  },
+  {
+   "item": "Writing an induction proof from scratch for a new statement",
+   "reason": "Induction is used once, in the book's own proof of the theorem (p 129); the principle of mathematical induction is not a chapter of this edition"
+  },
+  {
+   "item": "Evaluating C(n, r) for large n, or counting problems with combinations",
+   "reason": "Belongs to Chapter 6 (Permutations and Combinations); here C(n, r) is used only as a coefficient with small n"
+  },
+  {
+   "item": "Questions that require seeing Fig 7.1 to 7.3",
+   "reason": "The app cannot display figures; rows of Pascal's triangle are written out in the question text"
+  },
+  {
+   "item": "History of the binomial coefficients (Chu-shi-kie, Stifel, Bombelli, Oughtred, dates)",
+   "reason": "Historical Note only (p 134); only the names Pascal's triangle and Meru Prastara by Pingla, which are in the main text (p 127), are used"
+  }
+ ],
+ "concepts": [
+  {
+   "code": "C11M-7.1",
+   "name": "Pascal's triangle and the pattern of a binomial expansion",
+   "description": "The observations on the expansions of (a + b)^n for small n (number of terms, rise and fall of indices), building rows of Pascal's triangle, and expanding a binomial with a small index from a row.",
+   "idea": "The coefficients of (a + b)^0, (a + b)^1, (a + b)^2, ... form a triangle of numbers in which each row is built from the one above it.",
+   "rule": "Each row starts and ends with 1 and every other entry is the sum of the two entries above it. (a + b)^n has n + 1 terms; powers of a fall by 1, powers of b rise by 1, and the indices in each term add up to n.",
+   "example": "Row for index 5: 1 5 10 10 5 1, so (2x + 3y)^5 = 32x^5 + 240x^4 y + 720x^3 y^2 + 1080x^2 y^3 + 810x y^4 + 243y^5.",
+   "difficulty_base": "Easy",
+   "questions": [
+    {
+     "b": "Remember",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "If n is a positive integer, the total number of terms in the expansion of (a + b)^n is",
+     "a": "n + 1",
+     "o": [
+      "n + 1",
+      "n",
+      "2n",
+      "n - 1"
+     ]
+    },
+    {
+     "b": "Remember",
+     "d": "Easy",
+     "t": "fill_blank",
+     "m": 1,
+     "q": "The row of Pascal's triangle for index 4 is 1, 4, ____, 4, 1.",
+     "a": "6"
+    },
+    {
+     "b": "Remember",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "The array of numbers called Pascal's triangle is also known, after Pingla, as",
+     "a": "Meru Prastara",
+     "o": [
+      "Meru Prastara",
+      "Chhanda Shastra",
+      "Lilavati",
+      "Trate du triangle arithmetic"
+     ]
+    },
+    {
+     "b": "Remember",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "q": "Which of the following statements about the expansion of (a + b)^n, where n is a positive integer, is NOT true?",
+     "a": "The power of b decreases by 1 in successive terms",
+     "o": [
+      "The power of b decreases by 1 in successive terms",
+      "The total number of terms is one more than the index n",
+      "In every term the sum of the indices of a and b is n",
+      "The power of a decreases by 1 in successive terms"
+     ],
+     "rev": true
+    },
+    {
+     "b": "Understand",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "The row of Pascal's triangle for index 5 is",
+     "a": "1 5 10 10 5 1",
+     "o": [
+      "1 5 10 10 5 1",
+      "1 5 10 5 1",
+      "1 4 6 4 1",
+      "1 6 15 20 15 6 1"
+     ]
+    },
+    {
+     "b": "Understand",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "In each term of the expansion of (a + b)^6, the sum of the indices of a and b is",
+     "a": "6",
+     "o": [
+      "6",
+      "7",
+      "12",
+      "5"
+     ]
+    },
+    {
+     "b": "Understand",
+     "d": "Easy",
+     "t": "short_answer",
+     "m": 2,
+     "q": "The row of Pascal's triangle for index 3 is 1 3 3 1. Explain how the row for index 4 is obtained from it, and write that row.",
+     "a": "Each row begins and ends with 1. Every other entry is the sum of the two entries just above it in the previous row: 1 + 3 = 4, 3 + 3 = 6, 3 + 1 = 4. So the row for index 4 is 1 4 6 4 1.",
+     "s": [
+      [
+       "States that the row starts and ends with 1 and each other entry is the sum of the two entries above it",
+       1
+      ],
+      [
+       "Obtains 4, 6, 4 and writes the row 1 4 6 4 1",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Understand",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "q": "In Pascal's triangle, each entry other than the 1 at either end of a row is obtained by",
+     "a": "adding the two entries just above it in the previous row",
+     "o": [
+      "adding the two entries just above it in the previous row",
+      "multiplying the two entries just above it in the previous row",
+      "adding all the entries of the previous row",
+      "adding 1 to the entry just above it in the previous row"
+     ]
+    },
+    {
+     "b": "Understand",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "q": "When (a + b)^5 is expanded using the row 1 5 10 10 5 1 of Pascal's triangle, the coefficient of a^2 b^3 is",
+     "a": "10",
+     "o": [
+      "10",
+      "5",
+      "6",
+      "20"
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Easy",
+     "t": "fill_blank",
+     "m": 1,
+     "q": "The number of terms in the expansion of (2x + 3y)^12 is ____.",
+     "a": "13"
+    },
+    {
+     "b": "Apply",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "Using the row 1 3 3 1 of Pascal's triangle, (x + 2)^3 equals",
+     "a": "x^3 + 6x^2 + 12x + 8",
+     "o": [
+      "x^3 + 6x^2 + 12x + 8",
+      "x^3 + 8",
+      "x^3 + 6x^2 + 6x + 8",
+      "x^3 + 2x^2 + 4x + 8"
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "q": "Using the row 1 3 3 1 of Pascal's triangle, (2x + 3y)^3 equals",
+     "a": "8x^3 + 36x^2 y + 54x y^2 + 27y^3",
+     "o": [
+      "8x^3 + 36x^2 y + 54x y^2 + 27y^3",
+      "8x^3 + 27y^3",
+      "2x^3 + 18x^2 y + 18x y^2 + 3y^3",
+      "8x^3 + 12x^2 y + 18x y^2 + 27y^3"
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "q": "The row of Pascal's triangle for index 5 is 1 5 10 10 5 1. The row for index 6 is",
+     "a": "1 6 15 20 15 6 1",
+     "o": [
+      "1 6 15 20 15 6 1",
+      "1 6 15 15 6 1",
+      "2 10 20 20 10 2",
+      "1 6 11 11 6 1"
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "q": "Use the row of Pascal's triangle for index 4 to expand (a + 2b)^4.",
+     "a": "The row for index 4 is 1 4 6 4 1. So (a + 2b)^4 = a^4 + 4 a^3 (2b) + 6 a^2 (2b)^2 + 4 a (2b)^3 + (2b)^4 = a^4 + 8a^3 b + 24a^2 b^2 + 32a b^3 + 16b^4.",
+     "s": [
+      [
+       "Uses the row 1 4 6 4 1 with powers of a falling and powers of 2b rising",
+       1
+      ],
+      [
+       "Simplifies to a^4 + 8a^3 b + 24a^2 b^2 + 32a b^3 + 16b^4",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hardest",
+     "t": "long_answer",
+     "m": 3,
+     "q": "Write the row of Pascal's triangle for index 4 and use it to expand (3x + 2y)^4, simplifying every term.",
+     "a": "The row for index 4 is 1 4 6 4 1. So (3x + 2y)^4 = (3x)^4 + 4 (3x)^3 (2y) + 6 (3x)^2 (2y)^2 + 4 (3x) (2y)^3 + (2y)^4 = 81x^4 + 216x^3 y + 216x^2 y^2 + 96x y^3 + 16y^4.",
+     "s": [
+      [
+       "Writes the row 1 4 6 4 1",
+       1
+      ],
+      [
+       "Sets up the five terms with powers of 3x falling from 4 to 0 and powers of 2y rising from 0 to 4",
+       1
+      ],
+      [
+       "Simplifies to 81x^4 + 216x^3 y + 216x^2 y^2 + 96x y^3 + 16y^4",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "assertion_reason",
+     "m": 1,
+     "q": "Assertion (A): The expansion of (x + y)^9 has 10 terms. Reason (R): The total number of terms in the expansion of (a + b)^n is one more than the index n.",
+     "a": "Both A and R are true, and R is the correct explanation of A",
+     "o": [
+      "Both A and R are true, and R is the correct explanation of A",
+      "Both A and R are true, but R is not the correct explanation of A",
+      "A is true, R is false",
+      "A is false, R is true"
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "multi_statement",
+     "m": 1,
+     "q": "Consider these statements about Pascal's triangle and binomial expansions. (I) In every term of the expansion of (a + b)^7, the sum of the indices of a and b is 7. (II) The row of Pascal's triangle for index 6 has exactly 6 entries. Which is or are correct?",
+     "a": "Only I",
+     "o": [
+      "Only I",
+      "Only II",
+      "Both I and II",
+      "Neither I nor II"
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hardest",
+     "t": "long_answer",
+     "m": 3,
+     "q": "A student writes the row of Pascal's triangle for index 6 as 1 6 15 18 15 6 1, starting from the row 1 5 10 10 5 1 for index 5. Find the error, correct the row, and use it to write the expansion of (a + b)^6.",
+     "a": "Each inner entry is the sum of the two entries above it: 1 + 5 = 6, 5 + 10 = 15, 10 + 10 = 20, 10 + 5 = 15, 5 + 1 = 6. The student wrote 18 in the middle where 10 + 10 = 20 is needed. The correct row is 1 6 15 20 15 6 1. Hence (a + b)^6 = a^6 + 6a^5 b + 15a^4 b^2 + 20a^3 b^3 + 15a^2 b^4 + 6a b^5 + b^6.",
+     "s": [
+      [
+       "Identifies the middle entry as wrong, since 10 + 10 = 20 and not 18",
+       1
+      ],
+      [
+       "Writes the correct row 1 6 15 20 15 6 1",
+       1
+      ],
+      [
+       "Writes (a + b)^6 = a^6 + 6a^5 b + 15a^4 b^2 + 20a^3 b^3 + 15a^2 b^4 + 6a b^5 + b^6",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Evaluate",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "q": "Meera writes (a + b)^4 = a^4 + b^4, saying 'the power goes to each term'. Evaluate her claim.",
+     "a": "She is wrong. The expansion of (a + b)^4 has 4 + 1 = 5 terms, with coefficients from the row 1 4 6 4 1: (a + b)^4 = a^4 + 4a^3 b + 6a^2 b^2 + 4a b^3 + b^4. She has left out the three middle terms. A check with a = b = 1 shows it: (1 + 1)^4 = 16, but 1 + 1 = 2.",
+     "s": [
+      [
+       "States that the claim is wrong and gives the correct expansion a^4 + 4a^3 b + 6a^2 b^2 + 4a b^3 + b^4",
+       1
+      ],
+      [
+       "Names the error: the middle terms are missing (5 terms are needed), or shows it fails by a numerical check",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Create",
+     "d": "Hardest",
+     "t": "long_answer",
+     "m": 3,
+     "q": "Build the rows of Pascal's triangle from index 0 to index 5, and use the last row to construct the expansion of (p + q)^5. State how many terms your expansion has.",
+     "a": "Rows: index 0: 1; index 1: 1 1; index 2: 1 2 1; index 3: 1 3 3 1; index 4: 1 4 6 4 1; index 5: 1 5 10 10 5 1. Each row starts and ends with 1 and each other entry is the sum of the two above it. Then (p + q)^5 = p^5 + 5p^4 q + 10p^3 q^2 + 10p^2 q^3 + 5p q^4 + q^5, which has 5 + 1 = 6 terms.",
+     "s": [
+      [
+       "Writes the rows for index 0 to 4 correctly",
+       1
+      ],
+      [
+       "Obtains the row 1 5 10 10 5 1 for index 5",
+       1
+      ],
+      [
+       "Writes p^5 + 5p^4 q + 10p^3 q^2 + 10p^2 q^3 + 5p q^4 + q^5 and states that it has 6 terms",
+       1
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "code": "C11M-7.2",
+   "name": "Binomial theorem for a positive integral index",
+   "description": "The statement (a + b)^n = C(n, 0) a^n + C(n, 1) a^(n-1) b + ... + C(n, n) b^n, binomial coefficients, the sigma form, the idea of the induction proof, and full expansions by the theorem.",
+   "idea": "The entries of the row of Pascal's triangle for index n are the combinations C(n, 0), C(n, 1), ..., C(n, n), so any row can be written without the earlier rows.",
+   "rule": "(a + b)^n = C(n, 0) a^n + C(n, 1) a^(n-1) b + C(n, 2) a^(n-2) b^2 + ... + C(n, n) b^n, with C(n, 0) = 1 = C(n, n). Raise each whole quantity, coefficient included, to its power.",
+   "example": "(x + 2)^6 = x^6 + 12x^5 + 60x^4 + 160x^3 + 240x^2 + 192x + 64.",
+   "difficulty_base": "Hard",
+   "questions": [
+    {
+     "b": "Remember",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "For a positive integer n, the binomial theorem states that (a + b)^n equals",
+     "a": "C(n, 0) a^n + C(n, 1) a^(n-1) b + C(n, 2) a^(n-2) b^2 + ... + C(n, n) b^n",
+     "o": [
+      "C(n, 0) a^n + C(n, 1) a^(n-1) b + C(n, 2) a^(n-2) b^2 + ... + C(n, n) b^n",
+      "a^n + b^n",
+      "a^n + a^(n-1) b + a^(n-2) b^2 + ... + b^n",
+      "C(n, 0) a^n + C(n, 1) a^n b + C(n, 2) a^n b^2 + ... + C(n, n) a^n b^n"
+     ]
+    },
+    {
+     "b": "Remember",
+     "d": "Easy",
+     "t": "fill_blank",
+     "m": 1,
+     "q": "The coefficients C(n, r) occurring in the expansion of (a + b)^n are known as ____ coefficients.",
+     "a": "binomial"
+    },
+    {
+     "b": "Remember",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "In the binomial theorem, the coefficients C(n, 0) and C(n, n) of the first and last terms are both equal to",
+     "a": "1",
+     "o": [
+      "1",
+      "0",
+      "n",
+      "n!"
+     ]
+    },
+    {
+     "b": "Remember",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "q": "Which of the following statements about the binomial coefficients C(n, r) in the expansion of (a + b)^n is FALSE?",
+     "a": "C(n, 1) = 1 for every positive integer n",
+     "o": [
+      "C(n, 1) = 1 for every positive integer n",
+      "C(n, 0) = 1 = C(n, n)",
+      "They are the entries of the row of Pascal's triangle for index n",
+      "C(k, r) + C(k, r - 1) = C(k + 1, r)"
+     ],
+     "rev": true
+    },
+    {
+     "b": "Understand",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "When the row of Pascal's triangle for index 7 is written using combinations, its third entry is",
+     "a": "C(7, 2)",
+     "o": [
+      "C(7, 2)",
+      "C(7, 3)",
+      "C(2, 7)",
+      "C(6, 2)"
+     ]
+    },
+    {
+     "b": "Understand",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "In (x + 2)^6 = C(6, 0) x^6 + C(6, 1) x^5 . 2 + C(6, 2) x^4 . 2^2 + ..., the term C(6, 2) x^4 . 2^2 simplifies to",
+     "a": "60x^4",
+     "o": [
+      "60x^4",
+      "15x^4",
+      "30x^4",
+      "24x^4"
+     ]
+    },
+    {
+     "b": "Understand",
+     "d": "Easy",
+     "t": "short_answer",
+     "m": 2,
+     "q": "Explain why the binomial theorem is more convenient than Pascal's triangle for expanding (2x + 3y)^12.",
+     "a": "With Pascal's triangle, the row for index 12 can be reached only by writing all the rows before it, up to index 12, which is lengthy. The binomial theorem gives the coefficients of that row directly as C(12, 0), C(12, 1), ..., C(12, 12), without writing the earlier rows.",
+     "s": [
+      [
+       "States that Pascal's triangle needs all the earlier rows up to index 12 to be written first",
+       1
+      ],
+      [
+       "States that the theorem gives the coefficients directly as C(12, r) without the earlier rows",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Understand",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "q": "The sum of the terms C(n, k) a^(n-k) b^k taken from k = 0 to k = n is the expansion of",
+     "a": "(a + b)^n",
+     "o": [
+      "(a + b)^n",
+      "(a + b)^k",
+      "(a - b)^n",
+      "a^n + b^n"
+     ]
+    },
+    {
+     "b": "Understand",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "q": "In the proof of the binomial theorem by mathematical induction, like terms are grouped using which identity?",
+     "a": "C(k, r) + C(k, r - 1) = C(k + 1, r)",
+     "o": [
+      "C(k, r) + C(k, r - 1) = C(k + 1, r)",
+      "C(k, r) + C(k, r - 1) = C(k, r + 1)",
+      "C(k, r) x C(k, r - 1) = C(k + 1, r)",
+      "C(k, r) + C(k, r) = C(k + 1, r)"
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Easy",
+     "t": "fill_blank",
+     "m": 1,
+     "q": "The last term in the expansion of (x + 2)^6 is C(6, 6) . 2^6, which equals ____.",
+     "a": "64"
+    },
+    {
+     "b": "Apply",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "By the binomial theorem, (x + 3)^4 equals",
+     "a": "x^4 + 12x^3 + 54x^2 + 108x + 81",
+     "o": [
+      "x^4 + 12x^3 + 54x^2 + 108x + 81",
+      "x^4 + 81",
+      "x^4 + 12x^3 + 18x^2 + 12x + 81",
+      "x^4 + 3x^3 + 9x^2 + 27x + 81"
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "q": "For x not equal to 0, (x + 1/x)^4 equals",
+     "a": "x^4 + 4x^2 + 6 + 4/x^2 + 1/x^4",
+     "o": [
+      "x^4 + 4x^2 + 6 + 4/x^2 + 1/x^4",
+      "x^4 + 1/x^4",
+      "x^4 + 4x^2 + 4/x^2 + 1/x^4",
+      "x^4 + 4x^3 + 6x^2 + 4x + 1"
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "q": "When (2x + 1)^5 is written out in full by the binomial theorem, the coefficient of x^3 is",
+     "a": "80",
+     "o": [
+      "80",
+      "10",
+      "20",
+      "40"
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "q": "Expand (x^2 + 2/x)^3, x not equal to 0, using the binomial theorem.",
+     "a": "(x^2 + 2/x)^3 = C(3, 0) (x^2)^3 + C(3, 1) (x^2)^2 (2/x) + C(3, 2) (x^2) (2/x)^2 + C(3, 3) (2/x)^3 = x^6 + 3 . x^4 . 2/x + 3 . x^2 . 4/x^2 + 8/x^3 = x^6 + 6x^3 + 12 + 8/x^3.",
+     "s": [
+      [
+       "Writes the four terms with C(3, 0), C(3, 1), C(3, 2), C(3, 3) and the correct powers of x^2 and 2/x",
+       1
+      ],
+      [
+       "Simplifies to x^6 + 6x^3 + 12 + 8/x^3",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hardest",
+     "t": "long_answer",
+     "m": 3,
+     "q": "Expand (x^2 + 2/x)^4, x not equal to 0, using the binomial theorem, simplifying every term.",
+     "a": "(x^2 + 2/x)^4 = C(4, 0) (x^2)^4 + C(4, 1) (x^2)^3 (2/x) + C(4, 2) (x^2)^2 (2/x)^2 + C(4, 3) (x^2) (2/x)^3 + C(4, 4) (2/x)^4 = x^8 + 4 . x^6 . 2/x + 6 . x^4 . 4/x^2 + 4 . x^2 . 8/x^3 + 16/x^4 = x^8 + 8x^5 + 24x^2 + 32/x + 16/x^4.",
+     "s": [
+      [
+       "Writes the five terms with coefficients C(4, 0) to C(4, 4), powers of x^2 falling and powers of 2/x rising",
+       1
+      ],
+      [
+       "Evaluates the coefficients 1, 4, 6, 4, 1 and the powers (2/x)^2 = 4/x^2, (2/x)^3 = 8/x^3, (2/x)^4 = 16/x^4",
+       1
+      ],
+      [
+       "Simplifies to x^8 + 8x^5 + 24x^2 + 32/x + 16/x^4",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "assertion_reason",
+     "m": 1,
+     "q": "Assertion (A): In the expansion of (a + b)^6, the coefficient of a^4 b^2 is 15. Reason (R): The expansion of (a + b)^6 has 7 terms.",
+     "a": "Both A and R are true, but R is not the correct explanation of A",
+     "o": [
+      "Both A and R are true, but R is not the correct explanation of A",
+      "Both A and R are true, and R is the correct explanation of A",
+      "A is true, R is false",
+      "A is false, R is true"
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "multi_statement",
+     "m": 1,
+     "q": "Consider these statements about the binomial theorem. (I) In the full expansion of (x + 2)^6, the coefficient of x^3 is 160. (II) In the expansion of (a + b)^n, the coefficients of the first term and the last term are both 1. Which is or are correct?",
+     "a": "Both I and II",
+     "o": [
+      "Both I and II",
+      "Only I",
+      "Only II",
+      "Neither I nor II"
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hardest",
+     "t": "long_answer",
+     "m": 3,
+     "q": "A student expands (2x + 5)^3 as C(3, 0) 2x^3 + C(3, 1) 2x^2 . 5 + C(3, 2) 2x . 5^2 + C(3, 3) 5^3 = 2x^3 + 30x^2 + 150x + 125. Identify the error, say which terms are affected, and give the correct expansion.",
+     "a": "The first quantity is 2x, so the whole of 2x must be raised to each power: (2x)^3 = 8x^3 and (2x)^2 = 4x^2. The student raised only x and left the 2 unpowered. This makes the first two terms wrong (2x^3 and 30x^2); the last two terms are unaffected because (2x)^1 = 2x and (2x)^0 = 1. Correct expansion: (2x)^3 + 3 (2x)^2 (5) + 3 (2x) (5)^2 + 5^3 = 8x^3 + 60x^2 + 150x + 125.",
+     "s": [
+      [
+       "Identifies the error: 2x as a whole must be raised to the power, not x alone",
+       1
+      ],
+      [
+       "States that the x^3 and x^2 terms are wrong while 150x and 125 are correct",
+       1
+      ],
+      [
+       "Gives the correct expansion 8x^3 + 60x^2 + 150x + 125",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Evaluate",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "q": "Kiran verifies that (a + b)^1 = C(1, 0) a + C(1, 1) b = a + b and concludes that the binomial theorem is now proved for every positive integer n. Evaluate his conclusion.",
+     "a": "His conclusion is not justified. Checking n = 1 only shows that P(1) is true. The proof by mathematical induction also needs the second step: assuming P(k) is true for some positive integer k, show that P(k + 1) is true, which is done by multiplying the expansion of (a + b)^k by (a + b) and using C(k, r) + C(k, r - 1) = C(k + 1, r). Only both steps together prove the theorem for every positive integer n.",
+     "s": [
+      [
+       "States that verifying P(1) alone does not prove the theorem for all n",
+       1
+      ],
+      [
+       "States the missing step: showing P(k + 1) is true whenever P(k) is true",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Create",
+     "d": "Hardest",
+     "t": "long_answer",
+     "m": 3,
+     "q": "Construct a binomial of the form (x + k)^4, where k is a positive integer, whose expansion contains the term 8x^3. Find k and write the full expansion.",
+     "a": "The x^3 term of (x + k)^4 is C(4, 1) x^3 k = 4k x^3. For this to be 8x^3 we need 4k = 8, so k = 2. Then (x + 2)^4 = x^4 + 4 . x^3 . 2 + 6 . x^2 . 4 + 4 . x . 8 + 16 = x^4 + 8x^3 + 24x^2 + 32x + 16.",
+     "s": [
+      [
+       "Writes the x^3 term of (x + k)^4 as C(4, 1) x^3 k = 4k x^3",
+       1
+      ],
+      [
+       "Solves 4k = 8 to get k = 2",
+       1
+      ],
+      [
+       "Writes (x + 2)^4 = x^4 + 8x^3 + 24x^2 + 32x + 16",
+       1
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "code": "C11M-7.3",
+   "name": "Special cases of the binomial theorem",
+   "description": "The expansions of (x - y)^n, (1 + x)^n and (1 - x)^n, and the two results on sums of binomial coefficients obtained by putting x = 1.",
+   "idea": "Choosing particular values of a and b in (a + b)^n gives ready-made expansions and facts about the binomial coefficients.",
+   "rule": "(x - y)^n has alternating signs ending in (-1)^n C(n, n) y^n. (1 + x)^n = C(n, 0) + C(n, 1) x + ... + C(n, n) x^n. C(n, 0) + C(n, 1) + ... + C(n, n) = 2^n and C(n, 0) - C(n, 1) + ... + (-1)^n C(n, n) = 0.",
+   "example": "(x - 2y)^5 = x^5 - 10x^4 y + 40x^3 y^2 - 80x^2 y^3 + 80x y^4 - 32y^5.",
+   "difficulty_base": "Hard",
+   "questions": [
+    {
+     "b": "Remember",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "In the expansion of (x - y)^n by the binomial theorem, the signs of the successive terms",
+     "a": "alternate, beginning with a positive first term",
+     "o": [
+      "alternate, beginning with a positive first term",
+      "are all positive",
+      "are all negative",
+      "alternate, beginning with a negative first term"
+     ]
+    },
+    {
+     "b": "Remember",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "For a positive integer n, the sum C(n, 0) + C(n, 1) + C(n, 2) + ... + C(n, n) equals",
+     "a": "2^n",
+     "o": [
+      "2^n",
+      "2n",
+      "0",
+      "n + 1"
+     ]
+    },
+    {
+     "b": "Remember",
+     "d": "Easy",
+     "t": "fill_blank",
+     "m": 1,
+     "q": "For every positive integer n, C(n, 0) - C(n, 1) + C(n, 2) - ... + (-1)^n C(n, n) = ____.",
+     "a": "0"
+    },
+    {
+     "b": "Remember",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "q": "Which of the following special cases of the binomial theorem is NOT correctly stated?",
+     "a": "(1 - x)^n = C(n, 0) + C(n, 1) x + C(n, 2) x^2 + ... + C(n, n) x^n",
+     "o": [
+      "(1 - x)^n = C(n, 0) + C(n, 1) x + C(n, 2) x^2 + ... + C(n, n) x^n",
+      "(1 + x)^n = C(n, 0) + C(n, 1) x + C(n, 2) x^2 + ... + C(n, n) x^n",
+      "C(n, 0) + C(n, 1) + C(n, 2) + ... + C(n, n) = 2^n",
+      "The last term of the expansion of (x - y)^n is (-1)^n C(n, n) y^n"
+     ],
+     "rev": true
+    },
+    {
+     "b": "Understand",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "The result C(n, 0) + C(n, 1) + ... + C(n, n) = 2^n is obtained from the expansion of (1 + x)^n by putting",
+     "a": "x = 1",
+     "o": [
+      "x = 1",
+      "x = 0",
+      "x = -1",
+      "x = 2"
+     ]
+    },
+    {
+     "b": "Understand",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "The last term in the expansion of (x - y)^5 is",
+     "a": "-y^5",
+     "o": [
+      "-y^5",
+      "y^5",
+      "-5y^5",
+      "5y^5"
+     ]
+    },
+    {
+     "b": "Understand",
+     "d": "Easy",
+     "t": "short_answer",
+     "m": 2,
+     "q": "Explain why the terms in the expansion of (x - y)^n are alternately positive and negative.",
+     "a": "Write (x - y)^n = [x + (-y)]^n and apply the binomial theorem with a = x and b = -y. The term containing C(n, r) has the factor (-y)^r, which equals y^r when r is even and -y^r when r is odd. So the signs alternate: + for r = 0, - for r = 1, + for r = 2, and so on.",
+     "s": [
+      [
+       "Writes (x - y)^n as [x + (-y)]^n and applies the theorem with b = -y",
+       1
+      ],
+      [
+       "Explains that (-y)^r is positive for even r and negative for odd r, so the signs alternate",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Understand",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "q": "In the expansion of (x - y)^n, the last term is + y^n exactly when",
+     "a": "n is even",
+     "o": [
+      "n is even",
+      "n is odd",
+      "n is any positive integer",
+      "n is a multiple of 3"
+     ]
+    },
+    {
+     "b": "Understand",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "q": "The sum C(6, 1) + C(6, 2) + C(6, 3) + C(6, 4) + C(6, 5) + C(6, 6) equals",
+     "a": "63",
+     "o": [
+      "63",
+      "64",
+      "62",
+      "32"
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Easy",
+     "t": "fill_blank",
+     "m": 1,
+     "q": "C(5, 0) + C(5, 1) + C(5, 2) + C(5, 3) + C(5, 4) + C(5, 5) = ____.",
+     "a": "32"
+    },
+    {
+     "b": "Apply",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "By the binomial theorem, (1 - x)^4 equals",
+     "a": "1 - 4x + 6x^2 - 4x^3 + x^4",
+     "o": [
+      "1 - 4x + 6x^2 - 4x^3 + x^4",
+      "1 + 4x + 6x^2 + 4x^3 + x^4",
+      "1 - 4x - 6x^2 - 4x^3 - x^4",
+      "1 - x^4"
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "q": "By the binomial theorem, (1 - 2x)^4 equals",
+     "a": "1 - 8x + 24x^2 - 32x^3 + 16x^4",
+     "o": [
+      "1 - 8x + 24x^2 - 32x^3 + 16x^4",
+      "1 + 8x + 24x^2 + 32x^3 + 16x^4",
+      "1 - 8x + 12x^2 - 8x^3 + 2x^4",
+      "1 - 16x^4"
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "q": "By the binomial theorem, (x - 2y)^3 equals",
+     "a": "x^3 - 6x^2 y + 12x y^2 - 8y^3",
+     "o": [
+      "x^3 - 6x^2 y + 12x y^2 - 8y^3",
+      "x^3 + 6x^2 y + 12x y^2 + 8y^3",
+      "x^3 - 6x^2 y + 6x y^2 - 2y^3",
+      "x^3 - 8y^3"
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "q": "Using C(4, 0) + C(4, 1) + C(4, 2) + C(4, 3) + C(4, 4) = 2^4 and C(4, 0) - C(4, 1) + C(4, 2) - C(4, 3) + C(4, 4) = 0, find the value of C(4, 0) + C(4, 2) + C(4, 4).",
+     "a": "Adding the two results, the terms C(4, 1) and C(4, 3) cancel, giving 2 [C(4, 0) + C(4, 2) + C(4, 4)] = 16 + 0 = 16. So C(4, 0) + C(4, 2) + C(4, 4) = 8. (Check: 1 + 6 + 1 = 8.)",
+     "s": [
+      [
+       "Adds the two results so that C(4, 1) and C(4, 3) cancel, getting 2 [C(4, 0) + C(4, 2) + C(4, 4)] = 16",
+       1
+      ],
+      [
+       "Obtains the value 8",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hardest",
+     "t": "long_answer",
+     "m": 3,
+     "q": "Expand (2x - 3)^4 using the binomial theorem, simplifying every term.",
+     "a": "(2x - 3)^4 = C(4, 0) (2x)^4 - C(4, 1) (2x)^3 (3) + C(4, 2) (2x)^2 (3)^2 - C(4, 3) (2x) (3)^3 + C(4, 4) (3)^4 = 16x^4 - 4 . 8x^3 . 3 + 6 . 4x^2 . 9 - 4 . 2x . 27 + 81 = 16x^4 - 96x^3 + 216x^2 - 216x + 81.",
+     "s": [
+      [
+       "Writes the five terms with coefficients C(4, 0) to C(4, 4) and powers of 2x falling, powers of 3 rising",
+       1
+      ],
+      [
+       "Uses alternating signs + - + - +",
+       1
+      ],
+      [
+       "Simplifies to 16x^4 - 96x^3 + 216x^2 - 216x + 81",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "assertion_reason",
+     "m": 1,
+     "q": "Assertion (A): The expansion of (1 - x)^5 contains the term -10x^3. Reason (R): In the expansion of (1 - x)^n, every term after the first is negative.",
+     "a": "A is true, R is false",
+     "o": [
+      "A is true, R is false",
+      "Both A and R are true, and R is the correct explanation of A",
+      "Both A and R are true, but R is not the correct explanation of A",
+      "A is false, R is true"
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "multi_statement",
+     "m": 1,
+     "q": "Consider these statements about special cases of the binomial theorem. (I) C(4, 0) + C(4, 1) + C(4, 2) + C(4, 3) + C(4, 4) = 8. (II) (x - y)^3 = x^3 - 3x^2 y + 3x y^2 - y^3. Which is or are correct?",
+     "a": "Only II",
+     "o": [
+      "Only II",
+      "Only I",
+      "Both I and II",
+      "Neither I nor II"
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hardest",
+     "t": "long_answer",
+     "m": 3,
+     "q": "Prove that C(n, 0) + 3 C(n, 1) + 3^2 C(n, 2) + ... + 3^n C(n, n) = 4^n for every positive integer n, and verify the result for n = 2.",
+     "a": "By the special case of the binomial theorem, (1 + x)^n = C(n, 0) + C(n, 1) x + C(n, 2) x^2 + ... + C(n, n) x^n. Putting x = 3 gives (1 + 3)^n = C(n, 0) + 3 C(n, 1) + 3^2 C(n, 2) + ... + 3^n C(n, n), and the left side is 4^n. Check for n = 2: C(2, 0) + 3 C(2, 1) + 9 C(2, 2) = 1 + 6 + 9 = 16 = 4^2.",
+     "s": [
+      [
+       "Writes the expansion of (1 + x)^n in terms of C(n, r) x^r",
+       1
+      ],
+      [
+       "Puts x = 3 and identifies the left side as 4^n",
+       1
+      ],
+      [
+       "Verifies for n = 2: 1 + 6 + 9 = 16 = 4^2",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Evaluate",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "q": "Sana expands (x - 2)^3 as x^3 - 6x^2 - 12x - 8. Evaluate her answer.",
+     "a": "Her answer is wrong. In (x - 2)^3 = [x + (-2)]^3 the signs alternate, because (-2)^2 = +4: (x - 2)^3 = x^3 - 3 . x^2 . 2 + 3 . x . 4 - 8 = x^3 - 6x^2 + 12x - 8. She made every term after the first negative; the third term should be +12x.",
+     "s": [
+      [
+       "Gives the correct expansion x^3 - 6x^2 + 12x - 8",
+       1
+      ],
+      [
+       "Identifies the error: signs must alternate, so the third term is +12x and not -12x",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Create",
+     "d": "Hardest",
+     "t": "long_answer",
+     "m": 3,
+     "q": "Using the binomial coefficients for index 6, construct your own numerical check of both results C(n, 0) + C(n, 1) + ... + C(n, n) = 2^n and C(n, 0) - C(n, 1) + C(n, 2) - ... + (-1)^n C(n, n) = 0.",
+     "a": "For n = 6 the coefficients C(6, 0), ..., C(6, 6) are 1, 6, 15, 20, 15, 6, 1. Their sum is 1 + 6 + 15 + 20 + 15 + 6 + 1 = 64 = 2^6. With alternating signs: 1 - 6 + 15 - 20 + 15 - 6 + 1 = (1 + 15 + 15 + 1) - (6 + 20 + 6) = 32 - 32 = 0. Both results hold for n = 6.",
+     "s": [
+      [
+       "Writes the coefficients 1, 6, 15, 20, 15, 6, 1",
+       1
+      ],
+      [
+       "Shows the sum is 64 = 2^6",
+       1
+      ],
+      [
+       "Shows the alternating sum 1 - 6 + 15 - 20 + 15 - 6 + 1 is 0",
+       1
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "code": "C11M-7.4",
+   "name": "Using the binomial theorem with numbers",
+   "description": "Evaluating powers of numbers, approximating, comparing large powers, proving remainder and divisibility results, and simplifying (a + b)^n +/- (a - b)^n.",
+   "idea": "A number close to a round number can be written as a sum or difference of two numbers whose powers are easy, and then expanded.",
+   "rule": "Write the base as (round number +/- small number) or as (1 + a), expand, and keep or group the terms that the question needs.",
+   "example": "(98)^5 = (100 - 2)^5 = 9039207968; 6^n - 5n = 25k + 1, so it leaves remainder 1 when divided by 25.",
+   "difficulty_base": "Hard",
+   "questions": [
+    {
+     "b": "Remember",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "To compute (98)^5 by the binomial theorem, 98 is written as",
+     "a": "100 - 2",
+     "o": [
+      "100 - 2",
+      "100 + 2",
+      "49 x 2",
+      "10^2 - 2^2"
+     ]
+    },
+    {
+     "b": "Remember",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "To show that 6^n - 5n leaves remainder 1 when divided by 25, it is enough to show that 6^n - 5n equals",
+     "a": "25k + 1 for some natural number k",
+     "o": [
+      "25k + 1 for some natural number k",
+      "25k for some natural number k",
+      "25k - 1 for some natural number k",
+      "k + 25 for some natural number k"
+     ]
+    },
+    {
+     "b": "Remember",
+     "d": "Easy",
+     "t": "fill_blank",
+     "m": 1,
+     "q": "To evaluate (101)^4 by the binomial theorem, 101 is written as 100 + ____.",
+     "a": "1"
+    },
+    {
+     "b": "Remember",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "q": "Which of the following is NOT a correct way to rewrite a number before evaluating its power by the binomial theorem?",
+     "a": "(99)^5 = (100 + 1)^5",
+     "o": [
+      "(99)^5 = (100 + 1)^5",
+      "(96)^3 = (100 - 4)^3",
+      "(102)^5 = (100 + 2)^5",
+      "(101)^4 = (100 + 1)^4"
+     ],
+     "rev": true
+    },
+    {
+     "b": "Understand",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "When (a - b)^4 is subtracted from (a + b)^4, the terms that cancel are those in which the power of b is",
+     "a": "even",
+     "o": [
+      "even",
+      "odd",
+      "exactly 1",
+      "exactly 3"
+     ]
+    },
+    {
+     "b": "Understand",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "By the binomial theorem, (1.01)^1000000 is greater than 10000 because",
+     "a": "(1 + 0.01)^1000000 = 1 + 10000 + other positive terms",
+     "o": [
+      "(1 + 0.01)^1000000 = 1 + 10000 + other positive terms",
+      "1.01 x 1000000 = 1010000, which is more than 10000",
+      "its expansion has only the two terms 1 and 10000",
+      "every power of a number greater than 1 is greater than 10000"
+     ]
+    },
+    {
+     "b": "Understand",
+     "d": "Easy",
+     "t": "short_answer",
+     "m": 2,
+     "q": "Explain, using the expansion of (1 + 5)^n, why 6^n - 5n - 1 is a multiple of 25 for a positive integer n.",
+     "a": "(1 + 5)^n = C(n, 0) + C(n, 1) 5 + C(n, 2) 5^2 + ... + C(n, n) 5^n = 1 + 5n + 5^2 C(n, 2) + 5^3 C(n, 3) + ... + 5^n. So 6^n - 5n - 1 = 25 [C(n, 2) + 5 C(n, 3) + ... + 5^(n-2)]. Every remaining term contains the factor 5^2 = 25, so 6^n - 5n - 1 is a multiple of 25 (it is 0 when n = 1).",
+     "s": [
+      [
+       "Expands (1 + 5)^n as 1 + 5n + 5^2 C(n, 2) + ... + 5^n",
+       1
+      ],
+      [
+       "Explains that after removing 1 + 5n every remaining term has the factor 25",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Understand",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "q": "After simplifying, (x + 1)^6 + (x - 1)^6 contains",
+     "a": "only even powers of x, with a constant term",
+     "o": [
+      "only even powers of x, with a constant term",
+      "only odd powers of x",
+      "only the term 2x^6",
+      "every power of x from x^6 down to x"
+     ]
+    },
+    {
+     "b": "Understand",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "q": "Using the binomial theorem, which is larger: (1.1)^10000 or 1000?",
+     "a": "(1.1)^10000, because (1 + 0.1)^10000 = 1 + 1000 + other positive terms",
+     "o": [
+      "(1.1)^10000, because (1 + 0.1)^10000 = 1 + 1000 + other positive terms",
+      "1000, because 1.1 is only slightly more than 1",
+      "They are equal, because 10000 x 0.1 = 1000",
+      "It cannot be decided without adding all 10001 terms"
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Easy",
+     "t": "fill_blank",
+     "m": 1,
+     "q": "Using (10 + 1)^3 = 10^3 + 3 . 10^2 + 3 . 10 + 1, the value of (11)^3 is ____.",
+     "a": "1331"
+    },
+    {
+     "b": "Apply",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "Using (100 - 1)^3, the value of (99)^3 is",
+     "a": "970299",
+     "o": [
+      "970299",
+      "1030301",
+      "999999",
+      "970301"
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "q": "Using (100 + 1)^4, the value of (101)^4 is",
+     "a": "104060401",
+     "o": [
+      "104060401",
+      "100000001",
+      "104060400",
+      "96059601"
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "q": "Using (100 - 4)^3, the value of (96)^3 is",
+     "a": "884736",
+     "o": [
+      "884736",
+      "1124864",
+      "999936",
+      "884864"
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "q": "Find an approximation of (0.99)^5 using the first three terms of its binomial expansion.",
+     "a": "(0.99)^5 = (1 - 0.01)^5 = C(5, 0) - C(5, 1) (0.01) + C(5, 2) (0.01)^2 - ... Taking the first three terms: 1 - 5 (0.01) + 10 (0.0001) = 1 - 0.05 + 0.001 = 0.951.",
+     "s": [
+      [
+       "Writes (0.99)^5 = (1 - 0.01)^5 and the first three terms 1 - 5 (0.01) + 10 (0.01)^2",
+       1
+      ],
+      [
+       "Obtains 0.951",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hardest",
+     "t": "long_answer",
+     "m": 3,
+     "q": "Find (a + b)^4 - (a - b)^4. Hence evaluate (sqrt(2) + 1)^4 - (sqrt(2) - 1)^4.",
+     "a": "(a + b)^4 = a^4 + 4a^3 b + 6a^2 b^2 + 4a b^3 + b^4 and (a - b)^4 = a^4 - 4a^3 b + 6a^2 b^2 - 4a b^3 + b^4. Subtracting, (a + b)^4 - (a - b)^4 = 8a^3 b + 8a b^3 = 8ab (a^2 + b^2). With a = sqrt(2) and b = 1: 8 . sqrt(2) . 1 . (2 + 1) = 24 sqrt(2).",
+     "s": [
+      [
+       "Writes both expansions with the correct signs",
+       1
+      ],
+      [
+       "Subtracts to get 8a^3 b + 8a b^3 = 8ab (a^2 + b^2)",
+       1
+      ],
+      [
+       "Substitutes a = sqrt(2), b = 1 to get 24 sqrt(2)",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "assertion_reason",
+     "m": 1,
+     "q": "Assertion (A): (1.01)^1000000 is less than 10000. Reason (R): (1 + 0.01)^1000000 = 1 + 1000000 x 0.01 + other positive terms.",
+     "a": "A is false, R is true",
+     "o": [
+      "A is false, R is true",
+      "Both A and R are true, and R is the correct explanation of A",
+      "Both A and R are true, but R is not the correct explanation of A",
+      "A is true, R is false"
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "multi_statement",
+     "m": 1,
+     "q": "Consider these statements about using the binomial theorem with numbers. (I) (99)^3 = 100^3 - 1. (II) For every positive integer n, 6^n - 5n leaves remainder 5 when divided by 25. Which is or are correct?",
+     "a": "Neither I nor II",
+     "o": [
+      "Neither I nor II",
+      "Only I",
+      "Only II",
+      "Both I and II"
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hardest",
+     "t": "long_answer",
+     "m": 3,
+     "q": "Using the binomial theorem, show that 9^(n+1) - 8n - 9 is divisible by 64 whenever n is a positive integer.",
+     "a": "Write 9^(n+1) = (1 + 8)^(n+1) = C(n+1, 0) + C(n+1, 1) 8 + C(n+1, 2) 8^2 + ... + C(n+1, n+1) 8^(n+1) = 1 + 8(n + 1) + 8^2 [C(n+1, 2) + 8 C(n+1, 3) + ... + 8^(n-1)]. So 9^(n+1) = 8n + 9 + 64k, where k = C(n+1, 2) + 8 C(n+1, 3) + ... + 8^(n-1) is a natural number. Hence 9^(n+1) - 8n - 9 = 64k, which is divisible by 64.",
+     "s": [
+      [
+       "Writes 9^(n+1) as (1 + 8)^(n+1) and expands by the binomial theorem",
+       1
+      ],
+      [
+       "Separates the first two terms 1 + 8(n + 1) = 8n + 9 and takes 8^2 = 64 common from the rest",
+       1
+      ],
+      [
+       "Concludes 9^(n+1) - 8n - 9 = 64k, so it is divisible by 64",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Evaluate",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "q": "Tara evaluates (102)^3 as 100^3 + 2^3 = 1000008. Evaluate her method and give the correct value.",
+     "a": "Her method is wrong: (100 + 2)^3 is not 100^3 + 2^3, because the two middle terms of the expansion are missing. (100 + 2)^3 = 100^3 + 3 . 100^2 . 2 + 3 . 100 . 2^2 + 2^3 = 1000000 + 60000 + 1200 + 8 = 1061208.",
+     "s": [
+      [
+       "States that the method is wrong because the middle terms 3 . 100^2 . 2 and 3 . 100 . 2^2 are left out",
+       1
+      ],
+      [
+       "Obtains the correct value 1061208",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Create",
+     "d": "Hardest",
+     "t": "long_answer",
+     "m": 3,
+     "q": "Design a calculation of (51)^3 that uses the binomial theorem: choose how to split 51, write the expansion, and compute the value.",
+     "a": "Split 51 = 50 + 1. Then (51)^3 = (50 + 1)^3 = C(3, 0) 50^3 + C(3, 1) 50^2 . 1 + C(3, 2) 50 . 1^2 + C(3, 3) 1^3 = 125000 + 7500 + 150 + 1 = 132651. (Another valid split, such as 51 = 100 - 49, is acceptable if carried through correctly, but 50 + 1 gives the easiest powers.)",
+     "s": [
+      [
+       "Chooses a suitable split such as 51 = 50 + 1",
+       1
+      ],
+      [
+       "Writes the four terms 50^3 + 3 . 50^2 + 3 . 50 + 1",
+       1
+      ],
+      [
+       "Computes 125000 + 7500 + 150 + 1 = 132651",
+       1
+      ]
+     ]
+    }
+   ]
+  }
+ ]
+}
