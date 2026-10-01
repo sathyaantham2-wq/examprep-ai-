@@ -24,6 +24,8 @@ export default [
       '.vinxi/**',
       'dist/**',
       'dist-ssr/**',
+      // Plain browser files served as-is (service worker, offline page): not part of the TS project.
+      'public/**',
     ],
   },
   {

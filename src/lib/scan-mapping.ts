@@ -57,7 +57,7 @@ export function normalizeLabel(label: string): string {
   return label
     .toUpperCase()
     .replace(/^\s*Q(UESTION)?\s*[.:-]?\s*/, '')
-    .replace(/[\s.():\-]/g, '')
+    .replace(/[\s.():-]/g, '')
 }
 
 /** The slot a label names, or null if it names none or is ambiguous (a bare OR-pair number). */

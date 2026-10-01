@@ -74,7 +74,10 @@ export const auth = betterAuth({
           const db = getSharedDb()
           // Signing in with Google (the OAuth callback) carries no sign-up form, and only students
           // can sign up for now, so that account is a student.
-          const viaSocial = context?.path?.startsWith('/callback/') ?? false
+          // `path` is typed as always present, but this runs on every sign-up, so a missing one
+          // must mean "not the OAuth callback", never a crash.
+          const path = context?.path
+          const viaSocial = path?.startsWith('/callback/') ?? false
           const signupType = viaSocial
             ? 'student'
             : (user as { signup_type?: string }).signup_type
