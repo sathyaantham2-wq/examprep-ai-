@@ -1,0 +1,119 @@
+LIMITS AND DERIVATIVES 229
+( )
+2 2
+lim lim . lim .lim .
+x a x a x a x a
+x x x x x a a a
+→ → → →
+= = = =
+An easy exercise in induction on n tells us that
+lim n n
+x a
+x a
+→
+=
+Now, let ( )
+2
+0 1 2 ...
+n
+n
+f x a a x a x a x = + + + + be a polynomial function. Thinking
+of each of 2
+0 1 2 , , ,...,
+n
+n
+a a x a x a x as a function, we have
+lim ( )
+x a
+f x
+→
+=
+2
+0 1 2 lim ...
+n
+n
+x a
+a a x a x a x
+→
+ + + + + 
+ 
+= 
+2
+0 1 2 lim lim lim ... lim n
+n
+x a x a x a x a
+a a x a x a x
+→ → → →
++ + + +
+= 
+2
+0 1 2 lim lim ... lim n
+n
+x a x a x a
+a a x a x a x
+→ → →
++ + + +
+= 2
+0 1 2 ...
+n
+n
+a a a a a a a + + + +
+= f a( )
+(Make sure that you understand the justification for each step in the above!)
+A function f is said to be a rational function, if f(x) = 
+( )
+( )
+g x
+h x , where g(x) and h(x)
+are polynomials such that h(x) ≠ 0. Then
+( ) ( )
+( )
+( )
+( )
+( )
+( )
+lim
+lim lim
+lim
+x a
+x a x a
+x a
+g x g x g a
+f x
+h x h x h a
+→
+→ →
+→
+= = =
+However, if h(a) = 0, there are two scenarios – (i) when g(a) ≠ 0 and (ii) when
+g(a) = 0. In the former case we say that the limit does not exist. In the latter case we
+can write g(x) = (x – a)
+k g1 (x), where k is the maximum of powers of (x – a) in g(x)
+Similarly, h(x) = (x – a)
+l h1
+(x) as h (a) = 0. Now, if k > l, we have
+( )
+( )
+( )
+( ) ( )
+( ) ( )
+1
+1
+lim lim
+lim
+lim lim
+k
+x a x a
+l
+x a
+x a x a
+g x x a g x
+f x
+h x x a h x
+→ →
+→
+→ →
+−
+= =
+−
+Reprint 2026-27

@@ -1,0 +1,87 @@
+MATRICES 53
+Remark If AB is defined, then BA need not be defined. In the above example, AB is
+defined but BA is not defined because B has 3 column while A has only 2 (and not 3)
+rows. If A, B are, respectively m × n, k × l matrices, then both AB and BA are defined
+if and only if n = k and l = m. In particular, if both A and B are square matrices of the
+same order, then both AB and BA are defined.
+Non-commutativity of multiplication of matrices
+Now, we shall see by an example that even if AB and BA are both defined, it is not
+necessary that AB = BA.
+Example 13 If 
+2 3
+1 2 3
+A and B 4 5
+4 2 5
+2 1
+    −  
+= =       −
+   
+, then find AB, BA. Show that
+AB ≠ BA.
+Solution Since A is a 2 × 3 matrix and B is 3 × 2 matrix. Hence AB and BA are both
+defined and are matrices of order 2 × 2 and 3 × 3, respectively. Note that
+2 3
+1 2 3
+AB 4 5
+4 2 5
+2 1
+    −  
+=       −
+   
+ = 
+2 8 6 3 10 3 0 4
+8 8 10 12 10 5 10 3
+ − + − + −   
+=     − + + − + +   
+and
+2 3 2 12 4 6 6 15
+1 2 3
+BA 4 5 4 20 8 10 12 25
+4 2 5
+2 1 2 4 4 2 6 5
+   − − + + 
+    −  
+= = − − + +      
+  −
+   − − + + 
+   
+10 2 21
+16 2 37
+2 2 11
+− 
+ 
+= − 
+ − − 
+ 
+Clearly AB ≠ BA
+In the above example both AB and BA are of different order and so AB ≠ BA. But
+one may think that perhaps AB and BA could be the same if they were of the same
+order. But it is not so, here we give an example to show that even if AB and BA are of
+same order they may not be same.
+Example 14 If 
+1 0
+A
+0 1
+ 
+=     −
+ and 
+0 1
+B
+1 0
+ 
+=    
+, then 0 1
+AB
+1 0
+ 
+=     −
+.
+and
+0 1
+BA
+1 0
+  −
+=    
+. Clearly AB ≠ BA.
+Thus matrix multiplication is not commutative.
+Reprint 2026-27

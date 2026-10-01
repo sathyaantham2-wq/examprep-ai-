@@ -1,0 +1,44 @@
+PERMUTATIONS AND COMBINATIONS 121
+Example 22 Find the number of words with or without meaning which can be made
+using all the letters of the word AGAIN. If these words are written as in a dictionary,
+what will be the 50th word?
+Solution There are 5 letters in the word AGAIN, in which A appears 2 times. Therefore,
+the required number of words = 
+5! 60
+2!
+= .
+To get the number of words starting with A, we fix the letter A at the extreme left
+position, we then rearrange the remaining 4 letters taken all at a time. There will be as
+many arrangements of these 4 letters taken 4 at a time as there are permutations of 4
+different things taken 4 at a time. Hence, the number of words starting with
+A = 4! = 24. Then, starting with G, the number of words 
+4!
+2!
+= = 12 as after placing G
+at the extreme left position, we are left with the letters A, A, I and N. Similarly, there
+are 12 words starting with the next letter I. Total number of words so far obtained
+= 24 + 12 + 12 =48.
+The 49th word is NAAGI. The 50th word is NAAIG.
+Example 23 How many numbers greater than 1000000 can be formed by using the
+digits 1, 2, 0, 2, 4, 2, 4?
+Solution Since, 1000000 is a 7-digit number and the number of digits to be used is also
+7. Therefore, the numbers to be counted will be 7-digit only. Also, the numbers have to
+be greater than 1000000, so they can begin either with 1, 2 or 4.
+The number of numbers beginning with 1 = 
+6! 4 5 6
+3! 2! 2
+× ×
+= = 60, as when 1 is
+fixed at the extreme left position, the remaining digits to be rearranged will be 0, 2, 2, 2,
+4, 4, in which there are 3, 2s and 2, 4s.
+Total numbers begining with 2
+= 
+6! 3 4 5 6
+2! 2! 2
+× × ×
+= = 180
+and total numbers begining with 4 
+6! 4 5 6
+3!
+= = × × = 120
+Reprint 2026-27

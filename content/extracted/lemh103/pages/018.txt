@@ -1,0 +1,103 @@
+MATRICES 51
+Again, the above information can be represented as follows:
+Requirements Prices per piece (in Rupees) Money needed (in Rupees)
+2 5
+8 10
+ 
+   
+4
+40
+ 
+   
+4 2 40 5 208
+8 4 10 4 0 432
+ × + ×   
+=      × + ×   
+Now, the information in both the cases can be combined and expressed in terms of
+matrices as follows:
+Requirements Prices per piece (in Rupees) Money needed (in Rupees)
+2 5
+8 10
+ 
+   
+5 4
+50 40
+ 
+   
+5 2 5 50 4 2 40 5
+8 5 10 5 0 8 4 10 4 0
+ × + × × + × 
+ 
+ × + × × + × 
+= 
+260 208
+540 432
+ 
+   
+The above is an example of multiplication of matrices. We observe that, for
+multiplication of two matrices A and B, the number of columns in A should be equal to
+the number of rows in B. Furthermore for getting the elements of the product matrix,
+we take rows of A and columns of B, multiply them element-wise and take the sum.
+Formally, we define multiplication of matrices as follows:
+The product of two matrices A and B is defined if the number of columns of A is
+equal to the number of rows of B. Let A = [aij] be an m × n matrix and B = [bjk] be an
+n × p matrix. Then the product of the matrices A and B is the matrix C of order m × p.
+To get the (i, k)
+th element cik of the matrix C, we take the i
+th row of A and k
+th column
+of B, multiply them elementwise and take the sum of all these products. In other words,
+if A = [aij]
+m × n
+, B = [bjk]
+n × p
+, then the i
+th row of A is [ai1
+ai2
+ ... ain] and the k
+th column of
+B is 
+1
+2
+.
+.
+.
+k
+k
+nk
+b
+b
+b
+ 
+ 
+ 
+ 
+ 
+   
+ , then cik = ai1
+b1k + ai2 b2k + ai3 b3k + ... + ain bnk = 
+1
+n
+ij jk
+j
+a b
+=
+∑ .
+The matrix C = [cik]
+m × p
+ is the product of A and B.
+For example, if 1 1 2
+C
+0 3 4
+  −
+=    
+ and 
+2 7
+D 1 1
+5 4
+ 
+ 
+= − 
+    −
+ , then the product CD is defined
+Reprint 2026-27

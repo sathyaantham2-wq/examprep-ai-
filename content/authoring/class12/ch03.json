@@ -1,0 +1,2588 @@
+{
+  "subject": {
+    "code": "MATH12",
+    "name": "Mathematics",
+    "board": "CBSE",
+    "class": 12
+  },
+  "source": {
+    "publisher": "NCERT",
+    "title": "Mathematics Part I",
+    "edition": "Textbook for Class XII Part I, Reprint 2026-27",
+    "year": 2026
+  },
+  "chapter": {
+    "part": "I",
+    "chapter_no": 3,
+    "name": "Matrices",
+    "blurb": "Matrices as ordered rectangular arrays of numbers or functions: their order and elements, the types of matrices (row, column, square, diagonal, scalar, identity, zero) and equality of matrices. The chapter then develops addition, scalar multiplication and multiplication of matrices with their properties, including the non-commutativity of multiplication, and introduces the transpose, symmetric and skew symmetric matrices, and the definition and uniqueness of the inverse of a square matrix.",
+    "source_code": "lemh103",
+    "order_index": 3
+  },
+  "scope_in": [
+    {
+      "item": "Define a matrix as an ordered rectangular array of numbers or functions and identify its rows, columns and elements; use a matrix to record tabular data (notebooks and pens, factory workers) or the vertices of a figure",
+      "pages": "34-37"
+    },
+    {
+      "item": "State the order m x n of a matrix, locate the element a_ij in row i and column j, count elements as mn, and list all possible orders for a given number of elements",
+      "pages": "36-38"
+    },
+    {
+      "item": "Construct a matrix of a given order from a rule for a_ij such as a_ij = (1/2)|i - 3j|",
+      "pages": "38, 42"
+    },
+    {
+      "item": "Recognise column, row and square matrices, the diagonal of a square matrix, and diagonal, scalar, identity (I_n) and zero (O) matrices",
+      "pages": "39-41"
+    },
+    {
+      "item": "Decide whether two matrices are equal (same order and equal corresponding elements) and equate corresponding elements to find unknowns",
+      "pages": "41-43"
+    },
+    {
+      "item": "Add and subtract matrices of the same order, multiply a matrix by a scalar, form -A, and recognise when A + B is not defined",
+      "pages": "43-46"
+    },
+    {
+      "item": "Use the properties of matrix addition (commutative, associative, additive identity O, additive inverse -A) and of scalar multiplication (k(A + B) = kA + kB, (k + l)A = kA + lA) to solve equations such as 2A + 3X = 5B or X + Y, X - Y given",
+      "pages": "46-50"
+    },
+    {
+      "item": "Decide when AB is defined, find its order, and compute products of matrices (including row times column), including real-life cost and revenue problems",
+      "pages": "50-53, 57-58"
+    },
+    {
+      "item": "Recognise that matrix multiplication is not commutative, that AB may be defined when BA is not, and that a product of two non-zero matrices can be the zero matrix; diagonal matrices of the same order commute",
+      "pages": "53-54"
+    },
+    {
+      "item": "Use the associative and distributive laws and the identity IA = AI = A; compute powers A^2, A^3 and polynomial expressions such as A^2 - 5A + 7I",
+      "pages": "54-57, 60, 72"
+    },
+    {
+      "item": "Find the transpose A^T (A') of a matrix and use (A^T)^T = A, (kA)^T = kA^T, (A + B)^T = A^T + B^T and (AB)^T = B^T A^T",
+      "pages": "61-63"
+    },
+    {
+      "item": "Identify symmetric (A^T = A) and skew symmetric (A^T = -A) matrices, show a skew symmetric matrix has zero diagonal, show A + A^T is symmetric and A - A^T is skew symmetric, and express a square matrix as the sum of a symmetric and a skew symmetric matrix",
+      "pages": "63-68"
+    },
+    {
+      "item": "Define the inverse of a square matrix through AB = BA = I, verify that two given matrices are inverses, explain why a rectangular matrix has no inverse, and use uniqueness of the inverse and (AB)^(-1) = B^(-1) A^(-1)",
+      "pages": "68-69"
+    }
+  ],
+  "scope_out": [
+    {
+      "item": "Determinants, minors, cofactors and the adjoint of a matrix",
+      "reason": "Not in this chapter; they belong to the next chapter (Determinants)."
+    },
+    {
+      "item": "Finding the inverse of a matrix by a formula, e.g. A^(-1) = (1/|A|) adj A or the 2 x 2 (ad - bc) rule",
+      "reason": "Section 3.7 (pp. 68-69) only defines the inverse, proves uniqueness and (AB)^(-1) = B^(-1) A^(-1); it gives no method for computing an inverse. Questions only verify a given inverse by multiplication."
+    },
+    {
+      "item": "Elementary row or column operations (transformations) and finding the inverse by elementary operations",
+      "reason": "Absent from this rationalised edition: section 3.7 ends at Theorem 4 and Exercise 3.4 has a single MCQ (p. 69); no elementary-operations section exists."
+    },
+    {
+      "item": "Solving a system of linear equations by the matrix method (X = A^(-1)B), consistency of systems",
+      "reason": "Mentioned only as motivation in 3.1 (p. 34); the method needs determinants and adjoints from the next chapter."
+    },
+    {
+      "item": "Proving results such as A^n formulas by mathematical induction",
+      "reason": "Miscellaneous Example 23 (p. 70) uses induction, but induction is not taught in this chapter; it is excluded from questions here."
+    },
+    {
+      "item": "Trace, rank, eigenvalues, triangular matrices, and named types such as orthogonal, idempotent, nilpotent or involutory matrices",
+      "reason": "None of these are defined anywhere in the chapter (types are only those in 3.3, pp. 39-41); A^2 = A appears once as a condition (p. 73) without a name."
+    },
+    {
+      "item": "Matrices with complex-number entries",
+      "reason": "The book restricts itself to matrices whose elements are real numbers or real-valued functions (Note, p. 37)."
+    }
+  ],
+  "concepts": [
+    {
+      "code": "C12M-3.1",
+      "name": "Matrix, order and elements",
+      "description": "A matrix as an ordered rectangular array; its rows, columns and order m x n; the element a_ij; the number of elements mn and the possible orders for a given number of elements; constructing a matrix from a rule for a_ij.",
+      "idea": "A matrix is an ordered rectangular array of numbers or functions; the horizontal lines of elements are its rows and the vertical lines are its columns.",
+      "rule": "A matrix with m rows and n columns has order m x n and contains mn elements; a_ij is the element in the i-th row and j-th column, with 1 <= i <= m and 1 <= j <= n.",
+      "example": "A = [[30, 25], [25, 31], [27, 26]] (rows listed) records men and women workers in factories I, II, III; it is a 3 x 2 matrix with 6 elements, and a_32 = 26 is the number of women workers in factory III.",
+      "difficulty_base": "Easy",
+      "questions": [
+        {
+          "b": "Remember",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "A matrix has 3 rows and 2 columns. What is its order?",
+          "a": "3 x 2",
+          "o": [
+            "3 x 2",
+            "2 x 3",
+            "6",
+            "5"
+          ]
+        },
+        {
+          "b": "Remember",
+          "d": "Easy",
+          "t": "fill_blank",
+          "m": 1,
+          "q": "In the element a_ij of a matrix, the first subscript i tells the ____ in which the element lies.",
+          "a": "row"
+        },
+        {
+          "b": "Remember",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "How many elements does a matrix of order m x n have?",
+          "a": "mn",
+          "o": [
+            "mn",
+            "m + n",
+            "m^n",
+            "n^m"
+          ]
+        },
+        {
+          "b": "Remember",
+          "d": "Hard",
+          "t": "mcq",
+          "m": 1,
+          "rev": true,
+          "q": "Which of the following is NOT a possible order of a matrix that has 8 elements?",
+          "a": "4 x 4",
+          "o": [
+            "4 x 4",
+            "1 x 8",
+            "8 x 1",
+            "2 x 4"
+          ]
+        },
+        {
+          "b": "Understand",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "In A = [[2, 5, 19], [35, -2, 12]] (each inner bracket lists one row), what is a_21?",
+          "a": "35",
+          "o": [
+            "35",
+            "5",
+            "-2",
+            "12"
+          ]
+        },
+        {
+          "b": "Understand",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "A = [[30, 25], [25, 31], [27, 26]] (each inner bracket lists one row) records workers in factories I, II and III (rows), with men workers in column 1 and women workers in column 2. What does the entry in the third row and second column represent?",
+          "a": "The number of women workers in factory III",
+          "o": [
+            "The number of women workers in factory III",
+            "The number of men workers in factory III",
+            "The number of women workers in factory II",
+            "The total number of workers in factory III"
+          ]
+        },
+        {
+          "b": "Understand",
+          "d": "Easy",
+          "t": "fill_blank",
+          "m": 1,
+          "q": "A matrix has 2 rows and 4 columns. The number of elements in it is ____.",
+          "a": "8"
+        },
+        {
+          "b": "Understand",
+          "d": "Hard",
+          "t": "mcq",
+          "m": 1,
+          "q": "A matrix has 13 elements. Which option lists ALL of its possible orders?",
+          "a": "1 x 13 and 13 x 1",
+          "o": [
+            "1 x 13 and 13 x 1",
+            "1 x 13 only",
+            "13 x 1 only",
+            "None, since 13 is a prime number"
+          ]
+        },
+        {
+          "b": "Understand",
+          "d": "Hard",
+          "t": "short_answer",
+          "m": 2,
+          "q": "The quadrilateral ABCD has vertices A(1, 0), B(3, 2), C(1, 3) and D(-1, 2). Explain how it can be written as a 2 x 4 matrix, and write that matrix with its rows listed.",
+          "a": "Write each vertex as a column [x, y]: the 4 vertices give 4 columns and the 2 coordinates give 2 rows. X = [[1, 3, 1, -1], [0, 2, 3, 2]], a 2 x 4 matrix.",
+          "s": [
+            [
+              "Explains that each vertex becomes a column, so x-coordinates form row 1 and y-coordinates form row 2",
+              1
+            ],
+            [
+              "Writes the correct matrix [[1, 3, 1, -1], [0, 2, 3, 2]]",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Easy",
+          "t": "fill_blank",
+          "m": 1,
+          "q": "A 2 x 2 matrix A has elements a_ij = i + j. Then a_12 = ____.",
+          "a": "3"
+        },
+        {
+          "b": "Apply",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "A 2 x 2 matrix A has elements a_ij = ij (the product of i and j). Which is A (each inner bracket lists one row)?",
+          "a": "[[1, 2], [2, 4]]",
+          "o": [
+            "[[1, 2], [2, 4]]",
+            "[[2, 3], [3, 4]]",
+            "[[1, 2], [3, 4]]",
+            "[[1, 1], [2, 2]]"
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Hard",
+          "t": "mcq",
+          "m": 1,
+          "q": "A matrix has 18 elements. How many different orders can it have?",
+          "a": "6",
+          "o": [
+            "6",
+            "3",
+            "4",
+            "2"
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Hard",
+          "t": "mcq",
+          "m": 1,
+          "q": "A 2 x 2 matrix A has elements a_ij = (i + j)^2 / 2. Which is A (each inner bracket lists one row)?",
+          "a": "[[2, 9/2], [9/2, 8]]",
+          "o": [
+            "[[2, 9/2], [9/2, 8]]",
+            "[[1, 5/2], [5/2, 4]]",
+            "[[4, 9], [9, 16]]",
+            "[[1, 3/2], [3/2, 2]]"
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Hard",
+          "t": "short_answer",
+          "m": 2,
+          "q": "Construct a 3 x 2 matrix A whose elements are given by a_ij = |2i - j|.",
+          "a": "a_11 = 1, a_12 = 0, a_21 = 3, a_22 = 2, a_31 = 5, a_32 = 4, so A = [[1, 0], [3, 2], [5, 4]].",
+          "s": [
+            [
+              "Computes the six elements correctly from a_ij = |2i - j|",
+              1
+            ],
+            [
+              "Arranges them as a 3 x 2 matrix [[1, 0], [3, 2], [5, 4]]",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Hardest",
+          "t": "long_answer",
+          "m": 3,
+          "q": "Each entry of a 3 x 3 matrix is either 0 or 1. How many such matrices are possible? Explain your count.",
+          "a": "A 3 x 3 matrix has 3 x 3 = 9 elements. Each element can be chosen in 2 ways (0 or 1), independently, so the number of matrices is 2^9 = 512.",
+          "s": [
+            [
+              "States that a 3 x 3 matrix has 9 elements",
+              1
+            ],
+            [
+              "Uses 2 independent choices per element, giving 2 x 2 x ... x 2 (9 times)",
+              1
+            ],
+            [
+              "Gets 2^9 = 512",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Analyse",
+          "d": "Hard",
+          "t": "assertion_reason",
+          "m": 1,
+          "q": "Assertion (A): A matrix with exactly 5 elements can only have order 1 x 5 or 5 x 1. Reason (R): An m x n matrix has mn elements, and the only ordered pairs of natural numbers with product 5 are (1, 5) and (5, 1).",
+          "a": "Both A and R are true, and R is the correct explanation of A",
+          "o": [
+            "Both A and R are true, and R is the correct explanation of A",
+            "Both A and R are true, but R is not the correct explanation of A",
+            "A is true, R is false",
+            "A is false, R is true"
+          ]
+        },
+        {
+          "b": "Analyse",
+          "d": "Hard",
+          "t": "multi_statement",
+          "m": 1,
+          "q": "Consider these statements. (I) In an m x n matrix, the j-th column consists of the elements a_1j, a_2j, ..., a_mj. (II) A 2 x 3 matrix and a 3 x 2 matrix have the same order, because both have 6 elements. Which is or are correct?",
+          "a": "Only I",
+          "o": [
+            "Only I",
+            "Only II",
+            "Both I and II",
+            "Neither I nor II"
+          ]
+        },
+        {
+          "b": "Analyse",
+          "d": "Hardest",
+          "t": "long_answer",
+          "m": 3,
+          "q": "A student says that a 4 x 3 matrix A has an element a_34. (a) Is she right? Explain. (b) List the elements of A that lie in its 4th row. (c) State the general rule for which subscripts i and j are allowed in an m x n matrix.",
+          "a": "(a) No. a_34 would lie in column 4, but a 4 x 3 matrix has only 3 columns. (b) The 4th row is a_41, a_42, a_43. (c) In an m x n matrix, a_ij exists only for 1 <= i <= m and 1 <= j <= n.",
+          "s": [
+            [
+              "Says a_34 does not exist because there is no 4th column",
+              1
+            ],
+            [
+              "Lists the 4th row as a_41, a_42, a_43",
+              1
+            ],
+            [
+              "States 1 <= i <= m (rows) and 1 <= j <= n (columns)",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Evaluate",
+          "d": "Hard",
+          "t": "short_answer",
+          "m": 2,
+          "q": "Riya says: 'The row matrix [15, 6] and the column matrix [[15], [6]] carry the same numbers, so they are the same matrix.' Is she right? Justify using the order of each matrix.",
+          "a": "No. [15, 6] has order 1 x 2 while [[15], [6]] has order 2 x 1. Matrices of different orders are different matrices, even if they contain the same numbers.",
+          "s": [
+            [
+              "Gives the orders 1 x 2 and 2 x 1",
+              1
+            ],
+            [
+              "Concludes they are not the same matrix because the orders differ",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Create",
+          "d": "Hardest",
+          "t": "long_answer",
+          "m": 3,
+          "q": "Radha has 15 notebooks and 6 pens, Fauzia has 10 notebooks and 2 pens, and Simran has 13 notebooks and 5 pens. Construct a matrix with the three friends as rows (in this order) and notebooks, pens as columns. State its order and say what a_21 represents.",
+          "a": "A = [[15, 6], [10, 2], [13, 5]], of order 3 x 2. a_21 = 10 is the number of notebooks Fauzia has.",
+          "s": [
+            [
+              "Writes the matrix [[15, 6], [10, 2], [13, 5]] with friends as rows",
+              1
+            ],
+            [
+              "States the order 3 x 2",
+              1
+            ],
+            [
+              "Interprets a_21 = 10 as Fauzia's notebooks",
+              1
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "code": "C12M-3.2",
+      "name": "Types of matrices",
+      "description": "Column, row and square matrices; the diagonal of a square matrix; diagonal, scalar, identity and zero matrices.",
+      "idea": "Matrices are named by their shape (one column, one row, as many rows as columns) and by the pattern of their entries (zeros off the diagonal, equal diagonal entries, all ones on the diagonal, all zeros).",
+      "rule": "Column matrix: m x 1. Row matrix: 1 x n. Square matrix: m = n, with diagonal a_11, a_22, ..., a_nn. Diagonal matrix: square with b_ij = 0 when i is not equal to j. Scalar matrix: diagonal with every diagonal element equal to the same k. Identity matrix I_n: diagonal elements 1, all others 0. Zero matrix O: every element 0.",
+      "example": "[[3, 0, 0], [0, 3, 0], [0, 0, 3]] is a scalar matrix (so also diagonal and square); [[1, 0], [0, 1]] is I_2; [[0, 0, 0], [0, 0, 0]] is a 2 x 3 zero matrix, which is not square.",
+      "difficulty_base": "Easy",
+      "questions": [
+        {
+          "b": "Remember",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "A matrix that has only one column is called a",
+          "a": "column matrix",
+          "o": [
+            "column matrix",
+            "row matrix",
+            "square matrix",
+            "diagonal matrix"
+          ]
+        },
+        {
+          "b": "Remember",
+          "d": "Easy",
+          "t": "fill_blank",
+          "m": 1,
+          "q": "A square matrix in which every diagonal element is 1 and every other element is 0 is called an ____ matrix.",
+          "a": "identity"
+        },
+        {
+          "b": "Remember",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "A square matrix B = [b_ij] is a diagonal matrix if",
+          "a": "b_ij = 0 whenever i is not equal to j",
+          "o": [
+            "b_ij = 0 whenever i is not equal to j",
+            "b_ij = 0 whenever i = j",
+            "b_ij = 1 whenever i = j",
+            "all the b_ij are equal"
+          ]
+        },
+        {
+          "b": "Remember",
+          "d": "Hard",
+          "t": "mcq",
+          "m": 1,
+          "rev": true,
+          "q": "Which of the following statements about types of matrices is FALSE?",
+          "a": "Every scalar matrix is an identity matrix",
+          "o": [
+            "Every scalar matrix is an identity matrix",
+            "Every identity matrix is a scalar matrix",
+            "Every scalar matrix is a diagonal matrix",
+            "Every identity matrix is a square matrix"
+          ]
+        },
+        {
+          "b": "Understand",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "What are the diagonal elements of A = [[1, -3, 1], [2, 4, -1], [3, 5, 6]] (each inner bracket lists one row)?",
+          "a": "1, 4, 6",
+          "o": [
+            "1, 4, 6",
+            "1, 2, 3",
+            "1, 4, 3",
+            "1, -3, 1"
+          ]
+        },
+        {
+          "b": "Understand",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "What is the order of the column matrix [[0], [3], [-1], [1/2]] (each inner bracket lists one row)?",
+          "a": "4 x 1",
+          "o": [
+            "4 x 1",
+            "1 x 4",
+            "4 x 4",
+            "1 x 1"
+          ]
+        },
+        {
+          "b": "Understand",
+          "d": "Easy",
+          "t": "fill_blank",
+          "m": 1,
+          "q": "A square matrix with 5 rows has ____ columns.",
+          "a": "5"
+        },
+        {
+          "b": "Understand",
+          "d": "Hard",
+          "t": "mcq",
+          "m": 1,
+          "q": "B = [[-1, 0], [0, -1]] (each inner bracket lists one row). Which description of B is correct?",
+          "a": "It is a scalar matrix, but not an identity matrix",
+          "o": [
+            "It is a scalar matrix, but not an identity matrix",
+            "It is an identity matrix",
+            "It is a diagonal matrix that is not a scalar matrix",
+            "It is a zero matrix"
+          ]
+        },
+        {
+          "b": "Understand",
+          "d": "Hard",
+          "t": "short_answer",
+          "m": 2,
+          "q": "(a) Is the 2 x 3 zero matrix a square matrix? (b) Is the 2 x 2 zero matrix [[0, 0], [0, 0]] a diagonal matrix? Justify each answer from the definitions.",
+          "a": "(a) No: it has 2 rows and 3 columns, and a square matrix needs equal numbers of rows and columns. (b) Yes: it is square and every non-diagonal element is 0, which is exactly the condition for a diagonal matrix.",
+          "s": [
+            [
+              "(a) Not square, because 2 is not equal to 3",
+              1
+            ],
+            [
+              "(b) Diagonal, because it is square and all non-diagonal elements are 0",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "Which of these is a row matrix?",
+          "a": "[1/2, 5, 2, 3]",
+          "o": [
+            "[1/2, 5, 2, 3]",
+            "[[1], [2], [3]]",
+            "[[1, 0], [0, 1]]",
+            "[[1, 2, 3], [4, 5, 6]]"
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Easy",
+          "t": "fill_blank",
+          "m": 1,
+          "q": "If [[k, 0], [0, 7]] is a scalar matrix, then k = ____.",
+          "a": "7"
+        },
+        {
+          "b": "Apply",
+          "d": "Hard",
+          "t": "mcq",
+          "m": 1,
+          "q": "For which value of x is [[x - 2, 0], [0, 1]] an identity matrix?",
+          "a": "3",
+          "o": [
+            "3",
+            "2",
+            "1",
+            "-1"
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Hard",
+          "t": "mcq",
+          "m": 1,
+          "q": "A = [a_ij] is a 3 x 3 matrix with a_ij = 0 when i is not equal to j, and a_ii = i. Which best describes A?",
+          "a": "A diagonal matrix that is not a scalar matrix",
+          "o": [
+            "A diagonal matrix that is not a scalar matrix",
+            "A scalar matrix",
+            "An identity matrix",
+            "A zero matrix"
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Hard",
+          "t": "short_answer",
+          "m": 2,
+          "q": "Write the 3 x 3 matrix with a_ij = 1 when i = j and a_ij = 0 when i is not equal to j, and name it.",
+          "a": "[[1, 0, 0], [0, 1, 0], [0, 0, 1]], the identity matrix of order 3, written I_3.",
+          "s": [
+            [
+              "Writes [[1, 0, 0], [0, 1, 0], [0, 0, 1]]",
+              1
+            ],
+            [
+              "Names it the identity matrix I_3",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Hardest",
+          "t": "long_answer",
+          "m": 3,
+          "q": "The matrix A = [[a, b - 1, 0], [c, 4, 0], [0, d + 2, e]] (each inner bracket lists one row) is a scalar matrix. Find a, b, c, d and e.",
+          "a": "Non-diagonal elements must be 0: b - 1 = 0, c = 0, d + 2 = 0, so b = 1, c = 0, d = -2. Diagonal elements must all equal the same constant, and a_22 = 4, so a = 4 and e = 4.",
+          "s": [
+            [
+              "Sets the non-diagonal elements to 0",
+              1
+            ],
+            [
+              "Sets every diagonal element equal to 4",
+              1
+            ],
+            [
+              "Gets a = 4, b = 1, c = 0, d = -2, e = 4",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Analyse",
+          "d": "Hard",
+          "t": "assertion_reason",
+          "m": 1,
+          "q": "Assertion (A): [[4, 0], [0, 4]] is a scalar matrix. Reason (R): Every diagonal matrix is a scalar matrix.",
+          "a": "A is true, R is false",
+          "o": [
+            "A is true, R is false",
+            "Both A and R are true, and R is the correct explanation of A",
+            "Both A and R are true, but R is not the correct explanation of A",
+            "A is false, R is true"
+          ]
+        },
+        {
+          "b": "Analyse",
+          "d": "Hard",
+          "t": "multi_statement",
+          "m": 1,
+          "q": "Consider these statements. (I) Every identity matrix is a diagonal matrix. (II) A diagonal matrix must be a square matrix. Which is or are correct?",
+          "a": "Both I and II",
+          "o": [
+            "Both I and II",
+            "Only I",
+            "Only II",
+            "Neither I nor II"
+          ]
+        },
+        {
+          "b": "Analyse",
+          "d": "Hardest",
+          "t": "long_answer",
+          "m": 3,
+          "q": "Classify each matrix as precisely as you can, and say whether it is square: (i) [[3, 0, 0], [0, 3, 0], [0, 0, 3]] (ii) [[2, 0], [0, 5]] (iii) [[0, 0, 0], [0, 0, 0]] (each inner bracket lists one row).",
+          "a": "(i) Scalar matrix of order 3 (so also diagonal), square. (ii) Diagonal matrix that is not scalar, because its diagonal elements 2 and 5 differ; square. (iii) Zero matrix of order 2 x 3; not square.",
+          "s": [
+            [
+              "(i) Scalar (diagonal entries all 3), square",
+              1
+            ],
+            [
+              "(ii) Diagonal but not scalar, square",
+              1
+            ],
+            [
+              "(iii) Zero matrix, 2 x 3, not square",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Evaluate",
+          "d": "Hard",
+          "t": "short_answer",
+          "m": 2,
+          "q": "A student says: '[[1, 0, 0], [0, 1, 0]] is an identity matrix, because its 1s lie on the diagonal and every other entry is 0.' Evaluate this claim.",
+          "a": "The claim is wrong. An identity matrix must be square, but this matrix is 2 x 3. Only square matrices have identity matrices such as I_2 = [[1, 0], [0, 1]].",
+          "s": [
+            [
+              "States the claim is wrong",
+              1
+            ],
+            [
+              "Explains that an identity matrix must be square and this one is 2 x 3",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Create",
+          "d": "Hardest",
+          "t": "long_answer",
+          "m": 3,
+          "q": "Write (a) a 3 x 3 matrix that is diagonal but not scalar, and (b) a 2 x 2 matrix that is scalar but not the identity matrix. Justify each choice.",
+          "a": "For example (a) [[1, 0, 0], [0, 2, 0], [0, 0, 3]]: all non-diagonal elements are 0, but the diagonal elements are not all equal. (b) [[5, 0], [0, 5]]: diagonal with both diagonal elements equal to 5, and 5 is not 1, so it is not I_2.",
+          "s": [
+            [
+              "(a) Gives a valid 3 x 3 diagonal matrix with unequal diagonal elements",
+              1
+            ],
+            [
+              "(b) Gives a valid 2 x 2 scalar matrix with k not equal to 1",
+              1
+            ],
+            [
+              "Justifies both choices from the definitions",
+              1
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "code": "C12M-3.3",
+      "name": "Equality of matrices",
+      "description": "Two matrices are equal exactly when they have the same order and all corresponding elements are equal; using this to find unknowns.",
+      "idea": "Equal matrices must match in shape first and then match entry by entry; the same numbers in a different arrangement do not make two matrices equal.",
+      "rule": "A = [a_ij] and B = [b_ij] are equal if (i) they are of the same order and (ii) a_ij = b_ij for all i and j. Equating corresponding elements gives equations for any unknowns.",
+      "example": "If [[x, y], [z, a]] = [[-1.5, 0], [2, 6]], then x = -1.5, y = 0, z = 2, a = 6; but [[2, 3], [0, 1]] and [[3, 2], [0, 1]] are not equal.",
+      "difficulty_base": "Easy",
+      "questions": [
+        {
+          "b": "Remember",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "Two matrices A and B are equal when",
+          "a": "they have the same order and each element of A equals the corresponding element of B",
+          "o": [
+            "they have the same order and each element of A equals the corresponding element of B",
+            "they have the same number of elements",
+            "they contain the same numbers in any arrangement",
+            "they have the same order"
+          ]
+        },
+        {
+          "b": "Remember",
+          "d": "Easy",
+          "t": "fill_blank",
+          "m": 1,
+          "q": "If [[x, 3], [4, y]] = [[2, 3], [4, 9]], then x = ____.",
+          "a": "2"
+        },
+        {
+          "b": "Remember",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "Are [[2, 3], [0, 1]] and [[3, 2], [0, 1]] equal matrices?",
+          "a": "No, because the corresponding elements in the first row differ",
+          "o": [
+            "No, because the corresponding elements in the first row differ",
+            "Yes, because they contain the same numbers",
+            "Yes, because they are of the same order",
+            "No, because they are of different orders"
+          ]
+        },
+        {
+          "b": "Remember",
+          "d": "Hard",
+          "t": "mcq",
+          "m": 1,
+          "rev": true,
+          "q": "Which pair of matrices can NEVER be equal, whatever values x and y take?",
+          "a": "[x, y] and [[x], [y]]",
+          "o": [
+            "[x, y] and [[x], [y]]",
+            "[x, 1] and [2, y]",
+            "[[x], [y]] and [[3], [4]]",
+            "[[x, y], [1, 2]] and [[0, 0], [1, 2]]"
+          ]
+        },
+        {
+          "b": "Understand",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "If [[x + 3, 5], [2, y]] = [[0, 5], [2, 7]], then",
+          "a": "x = -3, y = 7",
+          "o": [
+            "x = -3, y = 7",
+            "x = 3, y = 7",
+            "x = 0, y = 7",
+            "x = -3, y = 5"
+          ]
+        },
+        {
+          "b": "Understand",
+          "d": "Easy",
+          "t": "fill_blank",
+          "m": 1,
+          "q": "If [[4, 3], [x, 5]] = [[y, z], [1, 5]], then y + z = ____.",
+          "a": "7"
+        },
+        {
+          "b": "Understand",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "Why is [[1, 2], [3, 4]] not equal to [[1, 2, 0], [3, 4, 0]]?",
+          "a": "They are of different orders, 2 x 2 and 2 x 3",
+          "o": [
+            "They are of different orders, 2 x 2 and 2 x 3",
+            "Their elements in the first column differ",
+            "Any matrix with a column of zeros is a zero matrix",
+            "They are equal, because the extra zeros add nothing"
+          ]
+        },
+        {
+          "b": "Understand",
+          "d": "Hard",
+          "t": "mcq",
+          "m": 1,
+          "q": "If [[2y - 7, 0], [a - 1, 5]] = [[3y - 2, 0], [-3, 5]], then",
+          "a": "y = -5, a = -2",
+          "o": [
+            "y = -5, a = -2",
+            "y = 5, a = -2",
+            "y = -5, a = -4",
+            "y = -9/5, a = -2"
+          ]
+        },
+        {
+          "b": "Understand",
+          "d": "Hard",
+          "t": "short_answer",
+          "m": 2,
+          "q": "Explain why the equation [x, 2] = [[3, 2], [1, 2]] (the right side has rows [3, 2] and [1, 2]) has no solution for x.",
+          "a": "The left side is a 1 x 2 matrix and the right side is a 2 x 2 matrix. Equal matrices must have the same order, so no value of x can make them equal.",
+          "s": [
+            [
+              "Identifies the orders 1 x 2 and 2 x 2",
+              1
+            ],
+            [
+              "Concludes no x works because equality needs the same order",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Easy",
+          "t": "fill_blank",
+          "m": 1,
+          "q": "If [[x, y], [z, 4]] = [[1, 5], [-2, 4]], then x + y + z = ____.",
+          "a": "4"
+        },
+        {
+          "b": "Apply",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "If [[2a, 6], [9, b + 1]] = [[8, 6], [9, 4]], then",
+          "a": "a = 4, b = 3",
+          "o": [
+            "a = 4, b = 3",
+            "a = 16, b = 3",
+            "a = 4, b = 5",
+            "a = 8, b = 4"
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Hard",
+          "t": "mcq",
+          "m": 1,
+          "q": "If [[a + b, 2], [5, a - b]] = [[6, 2], [5, 2]], then",
+          "a": "a = 4, b = 2",
+          "o": [
+            "a = 4, b = 2",
+            "a = 2, b = 4",
+            "a = 3, b = 3",
+            "a = 2, b = 0"
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Hard",
+          "t": "mcq",
+          "m": 1,
+          "q": "If [[a - b, 2a + c], [2a - b, 3c + d]] = [[-1, 5], [0, 13]], then",
+          "a": "a = 1, b = 2, c = 3, d = 4",
+          "o": [
+            "a = 1, b = 2, c = 3, d = 4",
+            "a = 2, b = 1, c = 1, d = 10",
+            "a = 1, b = 2, c = 3, d = 22",
+            "a = -1, b = -2, c = 7, d = -8"
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Hard",
+          "t": "short_answer",
+          "m": 2,
+          "q": "Find x, y and z if [[x + y + z], [x + z], [y + z]] = [[9], [5], [7]].",
+          "a": "Equating elements: x + y + z = 9, x + z = 5, y + z = 7. Then y = 9 - 5 = 4, x = 9 - 7 = 2, and z = 5 - 2 = 3.",
+          "s": [
+            [
+              "Writes the three equations by equating corresponding elements",
+              1
+            ],
+            [
+              "Solves to get x = 2, y = 4, z = 3",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Hardest",
+          "t": "long_answer",
+          "m": 3,
+          "q": "Find all possible values of x, y and z if [[x + y, 2], [5 + z, xy]] = [[6, 2], [5, 8]].",
+          "a": "Equating elements: x + y = 6, 5 + z = 5, xy = 8. So z = 0. Two numbers with sum 6 and product 8 are 2 and 4, so (x, y) = (2, 4) or (4, 2), with z = 0 in both cases.",
+          "s": [
+            [
+              "Equates corresponding elements: x + y = 6, z + 5 = 5, xy = 8",
+              1
+            ],
+            [
+              "Finds z = 0",
+              1
+            ],
+            [
+              "Finds both solutions x = 2, y = 4 and x = 4, y = 2",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Analyse",
+          "d": "Hard",
+          "t": "assertion_reason",
+          "m": 1,
+          "q": "Assertion (A): If [[x, 0], [0, 4]] = [[2, 0], [0, 4]], then x = 2. Reason (R): Equal matrices have the same number of elements.",
+          "a": "Both A and R are true, but R is not the correct explanation of A",
+          "o": [
+            "Both A and R are true, but R is not the correct explanation of A",
+            "Both A and R are true, and R is the correct explanation of A",
+            "A is true, R is false",
+            "A is false, R is true"
+          ]
+        },
+        {
+          "b": "Analyse",
+          "d": "Hard",
+          "t": "multi_statement",
+          "m": 1,
+          "q": "Consider these statements. (I) If two matrices are of the same order, they are equal. (II) If A = B, then a_ij = b_ij for every i and j. Which is or are correct?",
+          "a": "Only II",
+          "o": [
+            "Only II",
+            "Only I",
+            "Both I and II",
+            "Neither I nor II"
+          ]
+        },
+        {
+          "b": "Analyse",
+          "d": "Hardest",
+          "t": "long_answer",
+          "m": 3,
+          "q": "Show that no value of x makes [[x, 2], [3, x]] = [[4, 2], [3, 5]] true.",
+          "a": "Equating the (1, 1) elements gives x = 4. Equating the (2, 2) elements gives x = 5. A single x cannot equal both 4 and 5, so the matrices can never be equal.",
+          "s": [
+            [
+              "From the (1, 1) elements, x = 4",
+              1
+            ],
+            [
+              "From the (2, 2) elements, x = 5",
+              1
+            ],
+            [
+              "Concludes the two conditions contradict, so no x exists",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Evaluate",
+          "d": "Hard",
+          "t": "short_answer",
+          "m": 2,
+          "q": "A student solves [[2x + 1, 5], [3, y]] = [[7, 5], [3, 2]] and writes x = 4, y = 2. Check her work.",
+          "a": "y = 2 is correct. But 2x + 1 = 7 gives 2x = 6, so x = 3, not 4. Her value of x is wrong (substituting x = 4 gives 9, not 7).",
+          "s": [
+            [
+              "Confirms y = 2 is correct",
+              1
+            ],
+            [
+              "Shows x = 3, so her x = 4 is wrong",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Create",
+          "d": "Hardest",
+          "t": "long_answer",
+          "m": 3,
+          "q": "Create your own 2 x 2 matrix equation in two unknowns p and q whose only solution is p = 3, q = -1, using at least one entry that involves both p and q. Show that your solution satisfies it.",
+          "a": "For example [[p + q, 4], [p, 2q]] = [[2, 4], [3, -2]]. Equating: p = 3, 2q = -2 so q = -1, and then p + q = 2 matches. Any equation where the entries force p = 3 and q = -1 and are consistent is acceptable.",
+          "s": [
+            [
+              "Gives a valid 2 x 2 matrix equation with an entry involving both p and q",
+              1
+            ],
+            [
+              "Equates corresponding elements correctly",
+              1
+            ],
+            [
+              "Shows p = 3, q = -1 satisfies every entry and is the only solution",
+              1
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "code": "C12M-3.4",
+      "name": "Addition, scalar multiplication and difference of matrices",
+      "description": "Adding and subtracting matrices of the same order, multiplying a matrix by a scalar, the negative of a matrix, and the properties of these operations, including solving matrix equations such as 2A + 3X = 5B.",
+      "idea": "Matrices of the same order combine entry by entry, and a scalar multiplies every entry; these operations behave like ordinary addition and multiplication of numbers.",
+      "rule": "For A = [a_ij], B = [b_ij] of the same order: A + B = [a_ij + b_ij], kA = [k a_ij], -A = (-1)A, A - B = A + (-1)B. A + B is not defined for different orders. A + B = B + A; (A + B) + C = A + (B + C); A + O = A; A + (-A) = O; k(A + B) = kA + kB; (k + l)A = kA + lA.",
+      "example": "A = [[1, 2, 3], [2, 3, 1]], B = [[3, -1, 3], [-1, 0, 2]] give 2A - B = [[2 - 3, 4 + 1, 6 - 3], [4 + 1, 6 - 0, 2 - 2]] = [[-1, 5, 3], [5, 6, 0]].",
+      "difficulty_base": "Easy",
+      "questions": [
+        {
+          "b": "Remember",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "The sum A + B of two matrices is defined only when",
+          "a": "A and B have the same order",
+          "o": [
+            "A and B have the same order",
+            "A and B are square matrices",
+            "the number of columns of A equals the number of rows of B",
+            "A and B have the same number of elements"
+          ]
+        },
+        {
+          "b": "Remember",
+          "d": "Easy",
+          "t": "fill_blank",
+          "m": 1,
+          "q": "The additive identity for matrix addition is the ____ matrix.",
+          "a": "zero"
+        },
+        {
+          "b": "Remember",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "If k is a scalar, the matrix kA is obtained by",
+          "a": "multiplying every element of A by k",
+          "o": [
+            "multiplying every element of A by k",
+            "multiplying only the first row of A by k",
+            "multiplying only the diagonal elements of A by k",
+            "adding k to every element of A"
+          ]
+        },
+        {
+          "b": "Remember",
+          "d": "Hard",
+          "t": "mcq",
+          "m": 1,
+          "rev": true,
+          "q": "For matrices A, B, C of the same order, which of the following is NOT a property of matrix addition and subtraction?",
+          "a": "A - B = B - A",
+          "o": [
+            "A - B = B - A",
+            "A + B = B + A",
+            "(A + B) + C = A + (B + C)",
+            "A + O = A"
+          ]
+        },
+        {
+          "b": "Understand",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "If A = [[1, 2], [3, 4]] and B = [[5, 0], [-1, 2]], then A + B =",
+          "a": "[[6, 2], [2, 6]]",
+          "o": [
+            "[[6, 2], [2, 6]]",
+            "[[-4, 2], [4, 2]]",
+            "[[5, 0], [-3, 8]]",
+            "[[6, 2], [4, 6]]"
+          ]
+        },
+        {
+          "b": "Understand",
+          "d": "Easy",
+          "t": "fill_blank",
+          "m": 1,
+          "q": "If A = [[3, 1], [-5, x]], then the (2, 1) element of -A is ____.",
+          "a": "5"
+        },
+        {
+          "b": "Understand",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "If A is a 2 x 3 matrix and B is a 3 x 2 matrix, then A + B is",
+          "a": "not defined",
+          "o": [
+            "not defined",
+            "a 2 x 2 matrix",
+            "a 3 x 3 matrix",
+            "a 2 x 3 matrix"
+          ]
+        },
+        {
+          "b": "Understand",
+          "d": "Hard",
+          "t": "mcq",
+          "m": 1,
+          "q": "Which equation correctly expresses A - B using addition?",
+          "a": "A - B = A + (-1)B",
+          "o": [
+            "A - B = A + (-1)B",
+            "A - B = (-1)A + B",
+            "A - B = -(A + B)",
+            "A - B = B + (-1)A"
+          ]
+        },
+        {
+          "b": "Understand",
+          "d": "Hard",
+          "t": "short_answer",
+          "m": 2,
+          "q": "Starting from 2A + 3X = 5B (A, B, X of the same order), show the steps that give X = (1/3)(5B - 2A), naming the property of matrix addition used at the key step.",
+          "a": "Add -2A to both sides: 2A + 3X - 2A = 5B - 2A. By commutativity, -2A + 2A + 3X; since -2A is the additive inverse of 2A this is O + 3X, and O is the additive identity, so 3X = 5B - 2A. Multiplying by the scalar 1/3 gives X = (1/3)(5B - 2A).",
+          "s": [
+            [
+              "Adds -2A and uses commutativity, additive inverse and additive identity to reach 3X = 5B - 2A",
+              1
+            ],
+            [
+              "Multiplies by 1/3 to get X = (1/3)(5B - 2A)",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "If A = [[3, 1, -1], [2, 3, 0]], then 3A =",
+          "a": "[[9, 3, -3], [6, 9, 0]]",
+          "o": [
+            "[[9, 3, -3], [6, 9, 0]]",
+            "[[9, 1, -1], [2, 3, 0]]",
+            "[[6, 4, 2], [5, 6, 3]]",
+            "[[9, 3, 3], [6, 9, 0]]"
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Easy",
+          "t": "fill_blank",
+          "m": 1,
+          "q": "If A = [[1, 2], [3, 4]] and B = [[0, 1], [1, 0]], then the (1, 2) element of 2A - B is ____.",
+          "a": "3"
+        },
+        {
+          "b": "Apply",
+          "d": "Hard",
+          "t": "mcq",
+          "m": 1,
+          "q": "If A = [[1, 2, 3], [2, 3, 1]] and B = [[3, -1, 3], [-1, 0, 2]], then 2A - B =",
+          "a": "[[-1, 5, 3], [5, 6, 0]]",
+          "o": [
+            "[[-1, 5, 3], [5, 6, 0]]",
+            "[[5, 3, 9], [3, 6, 4]]",
+            "[[-2, 3, 0], [3, 3, -1]]",
+            "[[-1, 3, 3], [3, 6, 0]]"
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Hard",
+          "t": "mcq",
+          "m": 1,
+          "q": "If X + Y = [[5, 2], [0, 9]] and X - Y = [[3, 6], [0, -1]], then",
+          "a": "X = [[4, 4], [0, 4]], Y = [[1, -2], [0, 5]]",
+          "o": [
+            "X = [[4, 4], [0, 4]], Y = [[1, -2], [0, 5]]",
+            "X = [[1, -2], [0, 5]], Y = [[4, 4], [0, 4]]",
+            "X = [[8, 8], [0, 8]], Y = [[2, -4], [0, 10]]",
+            "X = [[4, 4], [0, 4]], Y = [[-1, 2], [0, -5]]"
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Hard",
+          "t": "short_answer",
+          "m": 2,
+          "q": "Find x and y if 2[[1, 3], [0, x]] + [[y, 0], [1, 2]] = [[5, 6], [1, 8]].",
+          "a": "LHS = [[2 + y, 6], [1, 2x + 2]]. Equating: 2 + y = 5 so y = 3; 2x + 2 = 8 so x = 3.",
+          "s": [
+            [
+              "Computes the left side as [[2 + y, 6], [1, 2x + 2]]",
+              1
+            ],
+            [
+              "Equates elements to get x = 3, y = 3",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Hardest",
+          "t": "long_answer",
+          "m": 3,
+          "q": "A = [[8, 0], [4, -2], [3, 6]] and B = [[2, -2], [4, 2], [-5, 1]] (each inner bracket lists one row). Find the matrix X such that 2A + 3X = 5B.",
+          "a": "X = (1/3)(5B - 2A). 5B = [[10, -10], [20, 10], [-25, 5]], 2A = [[16, 0], [8, -4], [6, 12]], so 5B - 2A = [[-6, -10], [12, 14], [-31, -7]] and X = [[-2, -10/3], [4, 14/3], [-31/3, -7/3]].",
+          "s": [
+            [
+              "Rearranges to X = (1/3)(5B - 2A)",
+              1
+            ],
+            [
+              "Computes 5B - 2A = [[-6, -10], [12, 14], [-31, -7]]",
+              1
+            ],
+            [
+              "Gets X = [[-2, -10/3], [4, 14/3], [-31/3, -7/3]]",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Analyse",
+          "d": "Hard",
+          "t": "assertion_reason",
+          "m": 1,
+          "q": "Assertion (A): For A = [[1, 2], [3, 4]], A + A = 2A. Reason (R): Matrix addition is commutative, that is A + B = B + A.",
+          "a": "Both A and R are true, but R is not the correct explanation of A",
+          "o": [
+            "Both A and R are true, but R is not the correct explanation of A",
+            "Both A and R are true, and R is the correct explanation of A",
+            "A is true, R is false",
+            "A is false, R is true"
+          ]
+        },
+        {
+          "b": "Analyse",
+          "d": "Hard",
+          "t": "multi_statement",
+          "m": 1,
+          "q": "Consider these statements. (I) A + B is defined whenever A and B have the same number of elements. (II) -A is obtained by changing the sign of only the diagonal elements of A. Which is or are correct?",
+          "a": "Neither I nor II",
+          "o": [
+            "Neither I nor II",
+            "Only I",
+            "Only II",
+            "Both I and II"
+          ]
+        },
+        {
+          "b": "Analyse",
+          "d": "Hardest",
+          "t": "long_answer",
+          "m": 3,
+          "q": "Rice sales (in Rupees) of two farmers for the varieties Basmati, Permal, Naura are: September A = [[10000, 20000, 30000], [50000, 30000, 10000]] and October B = [[5000, 10000, 6000], [20000, 10000, 10000]], with row 1 for Ramkishan and row 2 for Gurcharan Singh. (a) Find A - B, the decrease from September to October. (b) Find each farmer's 2% profit on October sales for each variety. (c) Which farmer and variety had the largest decrease?",
+          "a": "(a) A - B = [[5000, 10000, 24000], [30000, 20000, 0]]. (b) 0.02B = [[100, 200, 120], [400, 200, 200]], i.e. Ramkishan Rs 100, 200, 120 and Gurcharan Singh Rs 400, 200, 200. (c) Gurcharan Singh's Basmati sales fell the most, by Rs 30000.",
+          "s": [
+            [
+              "Computes A - B = [[5000, 10000, 24000], [30000, 20000, 0]]",
+              1
+            ],
+            [
+              "Computes 0.02B = [[100, 200, 120], [400, 200, 200]]",
+              1
+            ],
+            [
+              "Identifies Gurcharan Singh, Basmati (Rs 30000) as the largest decrease",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Evaluate",
+          "d": "Hard",
+          "t": "short_answer",
+          "m": 2,
+          "q": "A student writes: 'For A = [[2, 3], [1, 0]] and B = [[1, 2, 3], [1, 0, 1]], A + B = [[3, 5, 3], [2, 0, 1]], filling the missing column of A with zeros.' Evaluate this.",
+          "a": "It is wrong. A is 2 x 2 and B is 2 x 3; matrices of different orders cannot be added, so A + B is not defined. Padding A with zeros changes A into a different matrix.",
+          "s": [
+            [
+              "States the orders 2 x 2 and 2 x 3",
+              1
+            ],
+            [
+              "Concludes A + B is not defined and padding with zeros is not allowed",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Create",
+          "d": "Hardest",
+          "t": "long_answer",
+          "m": 3,
+          "q": "Create two non-zero 2 x 2 matrices A and B with A + B = O. Show that B = -A, and use the property k(A + B) = kA + kB to find 3A + 3B without adding entry by entry.",
+          "a": "For example A = [[1, -2], [0, 3]] and B = [[-1, 2], [0, -3]]. Then A + B = O and B = (-1)A = -A. By k(A + B) = kA + kB, 3A + 3B = 3(A + B) = 3O = O.",
+          "s": [
+            [
+              "Gives non-zero A and B whose sum is the zero matrix",
+              1
+            ],
+            [
+              "Shows B = -A",
+              1
+            ],
+            [
+              "Uses k(A + B) = kA + kB to get 3A + 3B = O",
+              1
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "code": "C12M-3.5",
+      "name": "Multiplication of matrices",
+      "description": "When the product AB is defined and its order; computing products by rows times columns; non-commutativity; a zero product of non-zero matrices; associative and distributive laws and the identity; powers such as A^2 and expressions like A^2 - 5A + 7I; real-life products.",
+      "idea": "Each entry of AB is a row of A multiplied element by element with a column of B and summed, so the order of the factors matters.",
+      "rule": "AB is defined only if the number of columns of A equals the number of rows of B. If A is m x n and B is n x p, AB is m x p with c_ik = a_i1 b_1k + a_i2 b_2k + ... + a_in b_nk. In general AB is not equal to BA; AB = O is possible with A and B non-zero; (AB)C = A(BC); A(B + C) = AB + AC; (A + B)C = AC + BC; IA = AI = A.",
+      "example": "Requirements [[2, 5], [8, 10]] times prices [[5], [50]] gives [[2 x 5 + 5 x 50], [8 x 5 + 10 x 50]] = [[260], [540]], the money Meera and Nadeem need.",
+      "difficulty_base": "Hard",
+      "questions": [
+        {
+          "b": "Remember",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "The product AB of two matrices is defined when",
+          "a": "the number of columns of A equals the number of rows of B",
+          "o": [
+            "the number of columns of A equals the number of rows of B",
+            "the number of rows of A equals the number of columns of B",
+            "A and B have the same order",
+            "A and B are both square matrices"
+          ]
+        },
+        {
+          "b": "Remember",
+          "d": "Easy",
+          "t": "fill_blank",
+          "m": 1,
+          "q": "If A is a 2 x 3 matrix and B is a 3 x 4 matrix, then AB is of order ____.",
+          "a": "2 x 4"
+        },
+        {
+          "b": "Remember",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "If A is a square matrix and I is the identity matrix of the same order, then IA = AI =",
+          "a": "A",
+          "o": [
+            "A",
+            "I",
+            "O",
+            "A^2"
+          ]
+        },
+        {
+          "b": "Remember",
+          "d": "Hard",
+          "t": "mcq",
+          "m": 1,
+          "rev": true,
+          "q": "Which statement about matrix multiplication is NOT true in general?",
+          "a": "AB = BA whenever both products are defined",
+          "o": [
+            "AB = BA whenever both products are defined",
+            "(AB)C = A(BC) whenever both sides are defined",
+            "A(B + C) = AB + AC whenever both sides are defined",
+            "IA = AI = A for a square matrix A and I of the same order"
+          ]
+        },
+        {
+          "b": "Understand",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "A is a 2 x 3 matrix and B is a 3 x 2 matrix. What are the orders of AB and BA?",
+          "a": "AB is 2 x 2 and BA is 3 x 3",
+          "o": [
+            "AB is 2 x 2 and BA is 3 x 3",
+            "AB is 3 x 3 and BA is 2 x 2",
+            "Both are 2 x 3",
+            "AB is defined but BA is not"
+          ]
+        },
+        {
+          "b": "Understand",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "A is a 2 x 2 matrix and B is a 2 x 3 matrix. Which is true?",
+          "a": "AB is defined (order 2 x 3) but BA is not defined",
+          "o": [
+            "AB is defined (order 2 x 3) but BA is not defined",
+            "BA is defined but AB is not defined",
+            "Both AB and BA are defined",
+            "Neither AB nor BA is defined"
+          ]
+        },
+        {
+          "b": "Understand",
+          "d": "Easy",
+          "t": "fill_blank",
+          "m": 1,
+          "q": "If AB = C = [c_ik], then c_21 is obtained from row ____ of A and column 1 of B.",
+          "a": "2"
+        },
+        {
+          "b": "Understand",
+          "d": "Hard",
+          "t": "mcq",
+          "m": 1,
+          "q": "For A = [[0, -1], [0, 2]] and B = [[3, 5], [0, 0]], AB = [[0, 0], [0, 0]]. What does this example show?",
+          "a": "The product of two non-zero matrices can be the zero matrix",
+          "o": [
+            "The product of two non-zero matrices can be the zero matrix",
+            "If AB = O, then one of A or B must be the zero matrix",
+            "Matrix multiplication is commutative",
+            "BA must also be the zero matrix"
+          ]
+        },
+        {
+          "b": "Understand",
+          "d": "Hard",
+          "t": "short_answer",
+          "m": 2,
+          "q": "Meera needs 2 pens and 5 story books; Nadeem needs 8 pens and 10 story books. A pen costs Rs 5 and a story book Rs 50. Write the requirement matrix and the price matrix, explain which must come first in the product, and find the amount each needs.",
+          "a": "Requirements R = [[2, 5], [8, 10]] (2 x 2), prices P = [[5], [50]] (2 x 1). RP is defined (2 columns of R = 2 rows of P) and gives a 2 x 1 matrix; PR is not defined (1 column of P, 2 rows of R). RP = [[260], [540]]: Meera needs Rs 260 and Nadeem Rs 540.",
+          "s": [
+            [
+              "Writes R and P and explains RP is defined but PR is not",
+              1
+            ],
+            [
+              "Computes RP = [[260], [540]]",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "[[1, 2], [3, 4]] multiplied by [[2, 0], [1, 3]] (first matrix on the left) equals",
+          "a": "[[4, 6], [10, 12]]",
+          "o": [
+            "[[4, 6], [10, 12]]",
+            "[[2, 0], [3, 12]]",
+            "[[2, 4], [10, 14]]",
+            "[[3, 2], [4, 7]]"
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Easy",
+          "t": "fill_blank",
+          "m": 1,
+          "q": "If A = [1, 2] (a row matrix) and B = [[3], [4]] (a column matrix), then AB = [k], where k = ____.",
+          "a": "11"
+        },
+        {
+          "b": "Apply",
+          "d": "Hard",
+          "t": "mcq",
+          "m": 1,
+          "q": "For A = [[1, 0], [0, -1]] and B = [[0, 1], [1, 0]], which is correct?",
+          "a": "AB = [[0, 1], [-1, 0]] and BA = [[0, -1], [1, 0]]",
+          "o": [
+            "AB = [[0, 1], [-1, 0]] and BA = [[0, -1], [1, 0]]",
+            "AB = [[0, -1], [1, 0]] and BA = [[0, 1], [-1, 0]]",
+            "AB = BA = [[0, 1], [-1, 0]]",
+            "AB = BA = [[0, 0], [0, 0]]"
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Hard",
+          "t": "mcq",
+          "m": 1,
+          "q": "If A = [[3, -2], [4, -2]], then A^2 =",
+          "a": "[[1, -2], [4, -4]]",
+          "o": [
+            "[[1, -2], [4, -4]]",
+            "[[9, 4], [16, 4]]",
+            "[[13, 16], [16, 20]]",
+            "[[6, -4], [8, -4]]"
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Hard",
+          "t": "short_answer",
+          "m": 2,
+          "q": "For A = [[3, -2], [4, -2]] and I the identity matrix of order 2, find k so that A^2 = kA - 2I.",
+          "a": "A^2 = [[1, -2], [4, -4]]. kA - 2I = [[3k - 2, -2k], [4k, -2k - 2]]. Equating: 3k - 2 = 1, so k = 1 (and -2k = -2, 4k = 4, -2k - 2 = -4 all agree).",
+          "s": [
+            [
+              "Computes A^2 = [[1, -2], [4, -4]]",
+              1
+            ],
+            [
+              "Equates with kA - 2I to get k = 1",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Hardest",
+          "t": "long_answer",
+          "m": 3,
+          "q": "A campaign's cost per contact (in paise) is A = [[40], [100], [50]] for telephone, house call and letter. The contacts made in cities X and Y are B = [[1000, 500, 5000], [3000, 1000, 10000]] (row 1 city X, row 2 city Y; columns telephone, house call, letter). Find the total amount spent in each city, in rupees.",
+          "a": "B is 2 x 3 and A is 3 x 1, so BA is defined and 2 x 1. BA = [[40000 + 50000 + 250000], [120000 + 100000 + 500000]] = [[340000], [720000]] paise, i.e. Rs 3400 in X and Rs 7200 in Y.",
+          "s": [
+            [
+              "Chooses the product BA (2 x 3 times 3 x 1)",
+              1
+            ],
+            [
+              "Computes BA = [[340000], [720000]] paise",
+              1
+            ],
+            [
+              "Converts to Rs 3400 and Rs 7200",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Analyse",
+          "d": "Hard",
+          "t": "assertion_reason",
+          "m": 1,
+          "q": "Assertion (A): If A and B are square matrices of the same order and AB = O, then A = O or B = O. Reason (R): Matrix multiplication is not commutative in general.",
+          "a": "A is false, R is true",
+          "o": [
+            "A is false, R is true",
+            "Both A and R are true, and R is the correct explanation of A",
+            "Both A and R are true, but R is not the correct explanation of A",
+            "A is true, R is false"
+          ]
+        },
+        {
+          "b": "Analyse",
+          "d": "Hard",
+          "t": "multi_statement",
+          "m": 1,
+          "q": "Consider these statements. (I) If the product AB is defined, then the product BA is also defined. (II) The product of two diagonal matrices of the same order is commutative. Which is or are correct?",
+          "a": "Only II",
+          "o": [
+            "Only II",
+            "Only I",
+            "Both I and II",
+            "Neither I nor II"
+          ]
+        },
+        {
+          "b": "Analyse",
+          "d": "Hardest",
+          "t": "long_answer",
+          "m": 3,
+          "q": "A is an m x n matrix and B is a k x l matrix. (a) State the condition for AB to be defined and the condition for BA to be defined. (b) Hence state when both are defined and give the orders of AB and BA. (c) Deduce when AB and BA can both be defined and of the same order.",
+          "a": "(a) AB needs n = k; BA needs l = m. (b) Both are defined exactly when n = k and l = m; then AB is m x m and BA is n x n. (c) They have the same order only if also m = n, i.e. A and B are square matrices of the same order.",
+          "s": [
+            [
+              "AB defined iff n = k; BA defined iff l = m",
+              1
+            ],
+            [
+              "Both defined iff n = k and l = m, with AB of order m x m and BA of order n x n",
+              1
+            ],
+            [
+              "Same order needs m = n, so A and B are square of the same order",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Evaluate",
+          "d": "Hard",
+          "t": "short_answer",
+          "m": 2,
+          "q": "A student claims (A + B)^2 = A^2 + 2AB + B^2 for all square matrices A and B of the same order. Evaluate this claim.",
+          "a": "It is not true in general. By the distributive law, (A + B)^2 = (A + B)(A + B) = A^2 + AB + BA + B^2. This equals A^2 + 2AB + B^2 only when AB = BA, which need not hold for matrices.",
+          "s": [
+            [
+              "Expands (A + B)^2 = A^2 + AB + BA + B^2 using the distributive law",
+              1
+            ],
+            [
+              "Concludes the claim holds only when AB = BA, so it is false in general",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Create",
+          "d": "Hardest",
+          "t": "long_answer",
+          "m": 3,
+          "q": "Construct two non-zero 2 x 2 matrices A and B such that AB = O. Compute AB to show it, and also compute BA.",
+          "a": "For example A = [[0, -1], [0, 2]], B = [[3, 5], [0, 0]]. AB = [[0 x 3 + (-1) x 0, 0 x 5 + (-1) x 0], [0 x 3 + 2 x 0, 0 x 5 + 2 x 0]] = [[0, 0], [0, 0]]. BA = [[0, 7], [0, 0]], which is not O. Any valid pair with full working is acceptable.",
+          "s": [
+            [
+              "Gives two non-zero 2 x 2 matrices",
+              1
+            ],
+            [
+              "Shows by row-by-column working that AB = O",
+              1
+            ],
+            [
+              "Computes BA correctly for the chosen pair",
+              1
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "code": "C12M-3.6",
+      "name": "Transpose of a matrix",
+      "description": "The transpose A^T (also written A') obtained by interchanging rows and columns, its order, and the properties (A^T)^T = A, (kA)^T = kA^T, (A + B)^T = A^T + B^T and (AB)^T = B^T A^T.",
+      "idea": "Transposing turns each row of a matrix into the corresponding column, so an m x n matrix becomes n x m.",
+      "rule": "If A = [a_ij] is m x n, then A^T = [a_ji] is n x m. (A^T)^T = A; (kA)^T = kA^T; (A + B)^T = A^T + B^T; (AB)^T = B^T A^T (the order is reversed).",
+      "example": "A = [[3, 5], [1, 1], [0, -1/5]] is 3 x 2, so A^T = [[3, 1, 0], [5, 1, -1/5]] is 2 x 3.",
+      "difficulty_base": "Easy",
+      "questions": [
+        {
+          "b": "Remember",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "If A is a matrix of order 3 x 2, the order of its transpose A^T is",
+          "a": "2 x 3",
+          "o": [
+            "2 x 3",
+            "3 x 2",
+            "3 x 3",
+            "2 x 2"
+          ]
+        },
+        {
+          "b": "Remember",
+          "d": "Easy",
+          "t": "fill_blank",
+          "m": 1,
+          "q": "For any matrix A, (A^T)^T = ____.",
+          "a": "A"
+        },
+        {
+          "b": "Remember",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "The transpose of a matrix is obtained by",
+          "a": "interchanging its rows and columns",
+          "o": [
+            "interchanging its rows and columns",
+            "changing the sign of every element",
+            "reversing the order of the elements in each row",
+            "replacing each element by its reciprocal"
+          ]
+        },
+        {
+          "b": "Remember",
+          "d": "Hard",
+          "t": "mcq",
+          "m": 1,
+          "rev": true,
+          "q": "For matrices A, B of suitable orders and a constant k, which of these is NOT a correct property of the transpose?",
+          "a": "(AB)^T = A^T B^T",
+          "o": [
+            "(AB)^T = A^T B^T",
+            "(A + B)^T = A^T + B^T",
+            "(kA)^T = kA^T",
+            "(A^T)^T = A"
+          ]
+        },
+        {
+          "b": "Understand",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "If A = [[1, -1], [2, 3]], then A^T =",
+          "a": "[[1, 2], [-1, 3]]",
+          "o": [
+            "[[1, 2], [-1, 3]]",
+            "[[-1, 1], [3, 2]]",
+            "[[-1, 1], [-2, -3]]",
+            "[[3, -1], [2, 1]]"
+          ]
+        },
+        {
+          "b": "Understand",
+          "d": "Easy",
+          "t": "fill_blank",
+          "m": 1,
+          "q": "If A = [a_ij] and A^T = [b_ij], then b_ij = ____.",
+          "a": "a_ji"
+        },
+        {
+          "b": "Understand",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "The transpose of a column matrix of order 4 x 1 is",
+          "a": "a row matrix of order 1 x 4",
+          "o": [
+            "a row matrix of order 1 x 4",
+            "a column matrix of order 4 x 1",
+            "a square matrix of order 4",
+            "a zero matrix of order 1 x 4"
+          ]
+        },
+        {
+          "b": "Understand",
+          "d": "Hard",
+          "t": "mcq",
+          "m": 1,
+          "q": "A is 2 x 3 and B is 3 x 2. Which product equals (AB)^T, and what is its order?",
+          "a": "B^T A^T, of order 2 x 2",
+          "o": [
+            "B^T A^T, of order 2 x 2",
+            "A^T B^T, of order 3 x 3",
+            "B^T A^T, of order 3 x 3",
+            "A^T B^T, of order 2 x 2"
+          ]
+        },
+        {
+          "b": "Understand",
+          "d": "Hard",
+          "t": "short_answer",
+          "m": 2,
+          "q": "Explain why the product A^T A is defined for every matrix A, and give its order when A is 3 x 2.",
+          "a": "If A is m x n, then A^T is n x m, so A^T has m columns and A has m rows; the product A^T A is therefore always defined and is n x n. For A of order 3 x 2, A^T A is 2 x 2.",
+          "s": [
+            [
+              "Explains the columns of A^T equal the rows of A",
+              1
+            ],
+            [
+              "Gives the order 2 x 2 for A of order 3 x 2",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "If A = [[3, 3, 2], [4, 2, 0]], then A^T =",
+          "a": "[[3, 4], [3, 2], [2, 0]]",
+          "o": [
+            "[[3, 4], [3, 2], [2, 0]]",
+            "[[3, 3, 2], [4, 2, 0]]",
+            "[[2, 3, 3], [0, 2, 4]]",
+            "[[4, 2, 0], [3, 3, 2]]"
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Easy",
+          "t": "fill_blank",
+          "m": 1,
+          "q": "If A = [[2, 7], [-1, 5]], then the (1, 2) element of A^T is ____.",
+          "a": "-1"
+        },
+        {
+          "b": "Apply",
+          "d": "Hard",
+          "t": "mcq",
+          "m": 1,
+          "q": "If A^T = [[3, 4], [-1, 2], [0, 1]] and B = [[-1, 2, 1], [1, 2, 3]], then A + B =",
+          "a": "[[2, 1, 1], [5, 4, 4]]",
+          "o": [
+            "[[2, 1, 1], [5, 4, 4]]",
+            "[[2, 5], [1, 4], [1, 4]]",
+            "[[-4, 3, 1], [-3, 0, 2]]",
+            "not defined, because A^T and B are of different orders"
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Hard",
+          "t": "mcq",
+          "m": 1,
+          "q": "If A = [[-2], [4], [5]] and B = [1, 3, -6], then (AB)^T =",
+          "a": "[[-2, 4, 5], [-6, 12, 15], [12, -24, -30]]",
+          "o": [
+            "[[-2, 4, 5], [-6, 12, 15], [12, -24, -30]]",
+            "[[-2, -6, 12], [4, 12, -24], [5, 15, -30]]",
+            "[[2, -4, -5], [6, -12, -15], [-12, 24, 30]]",
+            "[-20], a 1 x 1 matrix"
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Hard",
+          "t": "short_answer",
+          "m": 2,
+          "q": "If A^T = [[-2, 3], [1, 2]] and B = [[-1, 0], [1, 2]], find (A + 2B)^T.",
+          "a": "(A + 2B)^T = A^T + 2B^T. B^T = [[-1, 1], [0, 2]], so 2B^T = [[-2, 2], [0, 4]] and (A + 2B)^T = [[-2, 3], [1, 2]] + [[-2, 2], [0, 4]] = [[-4, 5], [1, 6]].",
+          "s": [
+            [
+              "Uses (A + 2B)^T = A^T + 2B^T (or finds A first)",
+              1
+            ],
+            [
+              "Gets [[-4, 5], [1, 6]]",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Hardest",
+          "t": "long_answer",
+          "m": 3,
+          "q": "For A = [[1, 2], [0, 1]] and B = [[3, 1], [2, 0]], verify that (AB)^T = B^T A^T.",
+          "a": "AB = [[3 + 4, 1 + 0], [0 + 2, 0 + 0]] = [[7, 1], [2, 0]], so (AB)^T = [[7, 2], [1, 0]]. B^T = [[3, 2], [1, 0]], A^T = [[1, 0], [2, 1]], B^T A^T = [[3 + 4, 0 + 2], [1 + 0, 0 + 0]] = [[7, 2], [1, 0]]. The two are equal.",
+          "s": [
+            [
+              "Computes AB = [[7, 1], [2, 0]] and (AB)^T = [[7, 2], [1, 0]]",
+              1
+            ],
+            [
+              "Computes B^T A^T = [[7, 2], [1, 0]]",
+              1
+            ],
+            [
+              "Concludes (AB)^T = B^T A^T",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Analyse",
+          "d": "Hard",
+          "t": "assertion_reason",
+          "m": 1,
+          "q": "Assertion (A): If A is a 2 x 3 matrix and B is a 3 x 4 matrix, then (AB)^T is a 4 x 2 matrix. Reason (R): (AB)^T = B^T A^T, where B^T is 4 x 3 and A^T is 3 x 2.",
+          "a": "Both A and R are true, and R is the correct explanation of A",
+          "o": [
+            "Both A and R are true, and R is the correct explanation of A",
+            "Both A and R are true, but R is not the correct explanation of A",
+            "A is true, R is false",
+            "A is false, R is true"
+          ]
+        },
+        {
+          "b": "Analyse",
+          "d": "Hard",
+          "t": "multi_statement",
+          "m": 1,
+          "q": "Consider these statements. (I) (kA)^T = (1/k)A^T for every non-zero constant k. (II) The transpose of a 2 x 3 matrix is also a 2 x 3 matrix. Which is or are correct?",
+          "a": "Neither I nor II",
+          "o": [
+            "Neither I nor II",
+            "Only I",
+            "Only II",
+            "Both I and II"
+          ]
+        },
+        {
+          "b": "Analyse",
+          "d": "Hardest",
+          "t": "long_answer",
+          "m": 3,
+          "q": "Using only the property (XY)^T = Y^T X^T and the associative law, show that (ABC)^T = C^T B^T A^T for matrices A, B, C for which ABC is defined.",
+          "a": "Write ABC = (AB)C. Then (ABC)^T = ((AB)C)^T = C^T (AB)^T, using the property with X = AB, Y = C. Using it again, (AB)^T = B^T A^T, so (ABC)^T = C^T B^T A^T.",
+          "s": [
+            [
+              "Groups ABC as (AB)C",
+              1
+            ],
+            [
+              "Applies the property once: ((AB)C)^T = C^T (AB)^T",
+              1
+            ],
+            [
+              "Applies it again to get C^T B^T A^T",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Evaluate",
+          "d": "Hard",
+          "t": "short_answer",
+          "m": 2,
+          "q": "For A = [[1], [2]] (2 x 1) and B = [3, 4] (1 x 2), a student writes (AB)^T = A^T B^T. Use the orders of the matrices to show that this cannot be right.",
+          "a": "AB is 2 x 2, so (AB)^T is 2 x 2. But A^T is 1 x 2 and B^T is 2 x 1, so A^T B^T is 1 x 1. The orders differ, so they cannot be equal; the correct rule is (AB)^T = B^T A^T, which is 2 x 2.",
+          "s": [
+            [
+              "Finds (AB)^T is 2 x 2 while A^T B^T is 1 x 1",
+              1
+            ],
+            [
+              "Concludes the claim is wrong and states (AB)^T = B^T A^T",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Create",
+          "d": "Hardest",
+          "t": "long_answer",
+          "m": 3,
+          "q": "Construct your own 2 x 3 matrix A with no two elements equal. Write A^T, and verify for your matrix that (A^T)^T = A and (2A)^T = 2A^T.",
+          "a": "For example A = [[1, 2, 3], [4, 5, 6]]. A^T = [[1, 4], [2, 5], [3, 6]], and transposing again gives [[1, 2, 3], [4, 5, 6]] = A. 2A = [[2, 4, 6], [8, 10, 12]], so (2A)^T = [[2, 8], [4, 10], [6, 12]] = 2A^T.",
+          "s": [
+            [
+              "Gives a valid 2 x 3 matrix and its correct 3 x 2 transpose",
+              1
+            ],
+            [
+              "Verifies (A^T)^T = A",
+              1
+            ],
+            [
+              "Verifies (2A)^T = 2A^T",
+              1
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "code": "C12M-3.7",
+      "name": "Symmetric and skew symmetric matrices",
+      "description": "Symmetric (A^T = A) and skew symmetric (A^T = -A) matrices, zero diagonal of a skew symmetric matrix, A + A^T symmetric and A - A^T skew symmetric, and expressing any square matrix as the sum of a symmetric and a skew symmetric matrix.",
+      "idea": "In a symmetric matrix the entries mirror each other across the diagonal; in a skew symmetric matrix the mirrored entries are negatives of each other and the diagonal is all zero.",
+      "rule": "A square matrix A is symmetric if A^T = A (a_ij = a_ji) and skew symmetric if A^T = -A (a_ji = -a_ij), which forces every a_ii = 0. For any square A, A + A^T is symmetric, A - A^T is skew symmetric, and A = (1/2)(A + A^T) + (1/2)(A - A^T).",
+      "example": "[[1, -1, 5], [-1, 2, 1], [5, 1, 3]] is symmetric; [[0, 1, -1], [-1, 0, 1], [1, -1, 0]] is skew symmetric.",
+      "difficulty_base": "Hard",
+      "questions": [
+        {
+          "b": "Remember",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "A square matrix A is called symmetric if",
+          "a": "A^T = A",
+          "o": [
+            "A^T = A",
+            "A^T = -A",
+            "A^T = I",
+            "A^2 = A"
+          ]
+        },
+        {
+          "b": "Remember",
+          "d": "Easy",
+          "t": "fill_blank",
+          "m": 1,
+          "q": "All the diagonal elements of a skew symmetric matrix are equal to ____.",
+          "a": "zero"
+        },
+        {
+          "b": "Remember",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "A square matrix A is called skew symmetric if",
+          "a": "A^T = -A",
+          "o": [
+            "A^T = -A",
+            "A^T = A",
+            "all its elements are negative",
+            "all its diagonal elements are 1"
+          ]
+        },
+        {
+          "b": "Remember",
+          "d": "Hard",
+          "t": "mcq",
+          "m": 1,
+          "rev": true,
+          "q": "Which of these matrices is NOT skew symmetric?",
+          "a": "[[1, 2], [-2, 1]]",
+          "o": [
+            "[[1, 2], [-2, 1]]",
+            "[[0, 2], [-2, 0]]",
+            "[[0, 0], [0, 0]]",
+            "[[0, -5], [5, 0]]"
+          ]
+        },
+        {
+          "b": "Understand",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "Which of these matrices is symmetric?",
+          "a": "[[1, -1, 5], [-1, 2, 1], [5, 1, 3]]",
+          "o": [
+            "[[1, -1, 5], [-1, 2, 1], [5, 1, 3]]",
+            "[[0, 1, -1], [-1, 0, 1], [1, -1, 0]]",
+            "[[1, 5], [6, 7]]",
+            "[[1, 2, 3], [1, 2, 3], [1, 2, 3]]"
+          ]
+        },
+        {
+          "b": "Understand",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "If A = [a_ij] is skew symmetric, then a_ji equals",
+          "a": "-a_ij",
+          "o": [
+            "-a_ij",
+            "a_ij",
+            "1/a_ij",
+            "0 for every i and j"
+          ]
+        },
+        {
+          "b": "Understand",
+          "d": "Easy",
+          "t": "fill_blank",
+          "m": 1,
+          "q": "For any square matrix A, the matrix A + A^T is always ____ (write symmetric or skew symmetric).",
+          "a": "symmetric"
+        },
+        {
+          "b": "Understand",
+          "d": "Hard",
+          "t": "mcq",
+          "m": 1,
+          "q": "For a square matrix A, which of these matrices is always skew symmetric?",
+          "a": "A - A^T",
+          "o": [
+            "A - A^T",
+            "A + A^T",
+            "(1/2)(A + A^T)",
+            "2A"
+          ]
+        },
+        {
+          "b": "Understand",
+          "d": "Hard",
+          "t": "short_answer",
+          "m": 2,
+          "q": "Explain, from the definition, why every diagonal element of a skew symmetric matrix must be zero.",
+          "a": "Skew symmetric means a_ji = -a_ij for all i, j. Putting j = i gives a_ii = -a_ii, so 2a_ii = 0 and a_ii = 0 for every i.",
+          "s": [
+            [
+              "Uses a_ji = -a_ij with j = i to get a_ii = -a_ii",
+              1
+            ],
+            [
+              "Concludes 2a_ii = 0, so a_ii = 0",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Easy",
+          "t": "fill_blank",
+          "m": 1,
+          "q": "If [[2, x], [5, 3]] is a symmetric matrix, then x = ____.",
+          "a": "5"
+        },
+        {
+          "b": "Apply",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "If [[0, 4], [k, 0]] is a skew symmetric matrix, then k =",
+          "a": "-4",
+          "o": [
+            "-4",
+            "4",
+            "0",
+            "-1/4"
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Hard",
+          "t": "mcq",
+          "m": 1,
+          "q": "For A = [[1, 5], [6, 7]], A + A^T =",
+          "a": "[[2, 11], [11, 14]]",
+          "o": [
+            "[[2, 11], [11, 14]]",
+            "[[0, -1], [1, 0]]",
+            "[[2, 10], [12, 14]]",
+            "[[1, 11], [11, 7]]"
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Hard",
+          "t": "mcq",
+          "m": 1,
+          "q": "Which values make [[0, a, 3], [2, b, -1], [c, 1, 0]] a skew symmetric matrix?",
+          "a": "a = -2, b = 0, c = -3",
+          "o": [
+            "a = -2, b = 0, c = -3",
+            "a = 2, b = 0, c = 3",
+            "a = -2, b = 1, c = -3",
+            "a = -2, b = 0, c = 3"
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Hard",
+          "t": "short_answer",
+          "m": 2,
+          "q": "For A = [[3, 5], [1, -1]], find A + A^T and A - A^T, and name the type of each.",
+          "a": "A^T = [[3, 1], [5, -1]]. A + A^T = [[6, 6], [6, -2]], which is symmetric. A - A^T = [[0, 4], [-4, 0]], which is skew symmetric.",
+          "s": [
+            [
+              "Finds A + A^T = [[6, 6], [6, -2]] and calls it symmetric",
+              1
+            ],
+            [
+              "Finds A - A^T = [[0, 4], [-4, 0]] and calls it skew symmetric",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Hardest",
+          "t": "long_answer",
+          "m": 3,
+          "q": "Express A = [[1, 5], [-1, 2]] as the sum of a symmetric matrix and a skew symmetric matrix.",
+          "a": "A^T = [[1, -1], [5, 2]]. P = (1/2)(A + A^T) = (1/2)[[2, 4], [4, 4]] = [[1, 2], [2, 2]], symmetric. Q = (1/2)(A - A^T) = (1/2)[[0, 6], [-6, 0]] = [[0, 3], [-3, 0]], skew symmetric. P + Q = [[1, 5], [-1, 2]] = A.",
+          "s": [
+            [
+              "Finds P = (1/2)(A + A^T) = [[1, 2], [2, 2]]",
+              1
+            ],
+            [
+              "Finds Q = (1/2)(A - A^T) = [[0, 3], [-3, 0]]",
+              1
+            ],
+            [
+              "Checks P is symmetric, Q is skew symmetric and P + Q = A",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Analyse",
+          "d": "Hard",
+          "t": "assertion_reason",
+          "m": 1,
+          "q": "Assertion (A): If A is a skew symmetric matrix, then A must be the zero matrix. Reason (R): Every diagonal element of a skew symmetric matrix is zero.",
+          "a": "A is false, R is true",
+          "o": [
+            "A is false, R is true",
+            "Both A and R are true, and R is the correct explanation of A",
+            "Both A and R are true, but R is not the correct explanation of A",
+            "A is true, R is false"
+          ]
+        },
+        {
+          "b": "Analyse",
+          "d": "Hard",
+          "t": "multi_statement",
+          "m": 1,
+          "q": "Consider these statements. (I) If A and B are symmetric matrices of the same order, then AB - BA is skew symmetric. (II) If A and B are symmetric matrices of the same order, then AB is always symmetric. Which is or are correct?",
+          "a": "Only I",
+          "o": [
+            "Only I",
+            "Only II",
+            "Both I and II",
+            "Neither I nor II"
+          ]
+        },
+        {
+          "b": "Analyse",
+          "d": "Hardest",
+          "t": "long_answer",
+          "m": 3,
+          "q": "Prove that if a square matrix A is both symmetric and skew symmetric, then A is the zero matrix.",
+          "a": "Symmetric gives A^T = A; skew symmetric gives A^T = -A. So A = -A, i.e. A + A = O, so 2A = O and A = O.",
+          "s": [
+            [
+              "Writes A^T = A and A^T = -A",
+              1
+            ],
+            [
+              "Deduces A = -A, so 2A = O",
+              1
+            ],
+            [
+              "Concludes A = O",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Evaluate",
+          "d": "Hard",
+          "t": "short_answer",
+          "m": 2,
+          "q": "A student says: '[[0, 3], [3, 0]] is skew symmetric, because its diagonal elements are zero.' Evaluate this claim.",
+          "a": "The claim is wrong. A zero diagonal is necessary but not enough: skew symmetric also needs a_21 = -a_12 = -3, but here a_21 = 3. In fact A^T = A, so the matrix is symmetric, not skew symmetric.",
+          "s": [
+            [
+              "States the claim is wrong because a_21 should be -3",
+              1
+            ],
+            [
+              "Notes A^T = A, so it is symmetric (zero diagonal alone is not sufficient)",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Create",
+          "d": "Hardest",
+          "t": "long_answer",
+          "m": 3,
+          "q": "Construct a 3 x 3 skew symmetric matrix in which every non-diagonal element is non-zero, and verify that A^T = -A.",
+          "a": "For example A = [[0, 2, -3], [-2, 0, 4], [3, -4, 0]]. A^T = [[0, -2, 3], [2, 0, -4], [-3, 4, 0]] = -A, so A is skew symmetric.",
+          "s": [
+            [
+              "Gives a 3 x 3 matrix with zero diagonal and non-zero off-diagonal entries",
+              1
+            ],
+            [
+              "Has a_ji = -a_ij for every pair",
+              1
+            ],
+            [
+              "Writes A^T and shows it equals -A",
+              1
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "code": "C12M-3.8",
+      "name": "Invertible matrices",
+      "description": "The inverse of a square matrix defined by AB = BA = I; verifying that two matrices are inverses; rectangular matrices have no inverse; uniqueness of the inverse; (AB)^(-1) = B^(-1) A^(-1).",
+      "idea": "B undoes A when multiplying them in either order gives the identity matrix; only square matrices can have such a partner.",
+      "rule": "If A is square of order m and a square matrix B of order m satisfies AB = BA = I, then B = A^(-1) and A is invertible; then A is also the inverse of B. A rectangular matrix has no inverse. The inverse, if it exists, is unique. If A and B are invertible of the same order, (AB)^(-1) = B^(-1) A^(-1).",
+      "example": "A = [[2, 3], [1, 2]] and B = [[2, -3], [-1, 2]] give AB = [[4 - 3, -6 + 6], [2 - 2, -3 + 4]] = I and BA = I, so B = A^(-1).",
+      "difficulty_base": "Hard",
+      "questions": [
+        {
+          "b": "Remember",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "If A is a square matrix and B is a square matrix of the same order with AB = BA = I, then B is called",
+          "a": "the inverse of A",
+          "o": [
+            "the inverse of A",
+            "the transpose of A",
+            "the identity matrix",
+            "the negative of A"
+          ]
+        },
+        {
+          "b": "Remember",
+          "d": "Easy",
+          "t": "fill_blank",
+          "m": 1,
+          "q": "The inverse of a square matrix, if it exists, is ____ (write unique or not unique).",
+          "a": "unique"
+        },
+        {
+          "b": "Remember",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "Matrices A and B will be inverses of each other only if",
+          "a": "AB = BA = I",
+          "o": [
+            "AB = BA = I",
+            "AB = BA",
+            "AB = BA = O",
+            "AB = O, BA = I"
+          ]
+        },
+        {
+          "b": "Remember",
+          "d": "Hard",
+          "t": "mcq",
+          "m": 1,
+          "rev": true,
+          "q": "Which of the following matrices can NOT have an inverse?",
+          "a": "[[1, 2, 3], [4, 5, 6]]",
+          "o": [
+            "[[1, 2, 3], [4, 5, 6]]",
+            "[[2, 3], [1, 2]]",
+            "[[3, 1], [5, 2]]",
+            "[[1, 0], [0, 1]]"
+          ]
+        },
+        {
+          "b": "Understand",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "Why does a rectangular (non-square) matrix have no inverse?",
+          "a": "For AB and BA to both be defined and equal to I, A and B must be square matrices of the same order",
+          "o": [
+            "For AB and BA to both be defined and equal to I, A and B must be square matrices of the same order",
+            "Because its elements cannot all be non-zero",
+            "Because its transpose is not defined",
+            "Because a rectangular matrix is always a zero matrix"
+          ]
+        },
+        {
+          "b": "Understand",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "If B is the inverse of A, then",
+          "a": "A is the inverse of B",
+          "o": [
+            "A is the inverse of B",
+            "B must be equal to A",
+            "A must be the identity matrix",
+            "AB must be the zero matrix"
+          ]
+        },
+        {
+          "b": "Understand",
+          "d": "Easy",
+          "t": "fill_blank",
+          "m": 1,
+          "q": "If AB = BA = I for square matrices A and B, then A^(-1) = ____.",
+          "a": "B"
+        },
+        {
+          "b": "Understand",
+          "d": "Hard",
+          "t": "mcq",
+          "m": 1,
+          "q": "If A and B are invertible matrices of the same order, then (AB)^(-1) =",
+          "a": "B^(-1) A^(-1)",
+          "o": [
+            "B^(-1) A^(-1)",
+            "A^(-1) B^(-1)",
+            "A^(-1) + B^(-1)",
+            "BA"
+          ]
+        },
+        {
+          "b": "Understand",
+          "d": "Hard",
+          "t": "short_answer",
+          "m": 2,
+          "q": "Suppose B and C are both inverses of the square matrix A. Show that B = C.",
+          "a": "Since AB = BA = I and AC = CA = I: B = BI = B(AC) = (BA)C = IC = C, using the associative law. So the inverse is unique.",
+          "s": [
+            [
+              "Writes B = BI = B(AC)",
+              1
+            ],
+            [
+              "Uses associativity: (BA)C = IC = C, so B = C",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "Is B = [[2, -3], [-1, 2]] the inverse of A = [[2, 3], [1, 2]]?",
+          "a": "Yes, because AB = BA = I",
+          "o": [
+            "Yes, because AB = BA = I",
+            "No, because AB is not equal to I",
+            "Yes, because B = A^T",
+            "No, because only diagonal matrices have inverses"
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Easy",
+          "t": "fill_blank",
+          "m": 1,
+          "q": "For A = [[3, 1], [5, 2]] and B = [[2, -1], [-5, 3]], the (1, 1) element of AB is ____.",
+          "a": "1"
+        },
+        {
+          "b": "Apply",
+          "d": "Hard",
+          "t": "mcq",
+          "m": 1,
+          "q": "For A = [[3, 1], [5, 2]], which matrix is A^(-1)? (Check by multiplying.)",
+          "a": "[[2, -1], [-5, 3]]",
+          "o": [
+            "[[2, -1], [-5, 3]]",
+            "[[3, 5], [1, 2]]",
+            "[[-3, -1], [-5, -2]]",
+            "[[1/3, 1], [1/5, 1/2]]"
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Hard",
+          "t": "mcq",
+          "m": 1,
+          "q": "A^(-1) = [[2, -3], [-1, 2]] and B^(-1) = [[2, -1], [-5, 3]], where A and B are of the same order. Then (AB)^(-1) =",
+          "a": "[[5, -8], [-13, 21]]",
+          "o": [
+            "[[5, -8], [-13, 21]]",
+            "[[19, -11], [-12, 7]]",
+            "[[4, 3], [5, 6]]",
+            "[[4, -4], [-6, 5]]"
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Hard",
+          "t": "short_answer",
+          "m": 2,
+          "q": "Verify that A = [[1, 1], [0, 1]] and B = [[1, -1], [0, 1]] are inverses of each other.",
+          "a": "AB = [[1 + 0, -1 + 1], [0 + 0, 0 + 1]] = [[1, 0], [0, 1]] = I and BA = [[1 + 0, 1 - 1], [0 + 0, 0 + 1]] = [[1, 0], [0, 1]] = I. Since AB = BA = I, they are inverses of each other.",
+          "s": [
+            [
+              "Computes AB = I",
+              1
+            ],
+            [
+              "Computes BA = I and concludes",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Hardest",
+          "t": "long_answer",
+          "m": 3,
+          "q": "A = [[2, 3], [1, 2]] and B = [[3, 1], [5, 2]], with A^(-1) = [[2, -3], [-1, 2]] and B^(-1) = [[2, -1], [-5, 3]]. Compute AB and B^(-1) A^(-1), and verify by multiplication that B^(-1) A^(-1) is the inverse of AB.",
+          "a": "AB = [[6 + 15, 2 + 6], [3 + 10, 1 + 4]] = [[21, 8], [13, 5]]. B^(-1) A^(-1) = [[4 + 1, -6 - 2], [-10 - 3, 15 + 6]] = [[5, -8], [-13, 21]]. (AB)(B^(-1) A^(-1)) = [[105 - 104, -168 + 168], [65 - 65, -104 + 105]] = I, and [[5, -8], [-13, 21]][[21, 8], [13, 5]] = [[105 - 104, 40 - 40], [-273 + 273, -104 + 105]] = I.",
+          "s": [
+            [
+              "Computes AB = [[21, 8], [13, 5]]",
+              1
+            ],
+            [
+              "Computes B^(-1) A^(-1) = [[5, -8], [-13, 21]]",
+              1
+            ],
+            [
+              "Shows both products with AB equal I",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Analyse",
+          "d": "Hard",
+          "t": "assertion_reason",
+          "m": 1,
+          "q": "Assertion (A): If A is an invertible matrix, then A^(-1) is also invertible. Reason (R): (AB)^(-1) = A^(-1) B^(-1) for invertible matrices A and B of the same order.",
+          "a": "A is true, R is false",
+          "o": [
+            "A is true, R is false",
+            "Both A and R are true, and R is the correct explanation of A",
+            "Both A and R are true, but R is not the correct explanation of A",
+            "A is false, R is true"
+          ]
+        },
+        {
+          "b": "Analyse",
+          "d": "Hard",
+          "t": "multi_statement",
+          "m": 1,
+          "q": "Consider these statements. (I) If B is the inverse of A, then A is the inverse of B. (II) Only a square matrix can have an inverse. Which is or are correct?",
+          "a": "Both I and II",
+          "o": [
+            "Both I and II",
+            "Only I",
+            "Only II",
+            "Neither I nor II"
+          ]
+        },
+        {
+          "b": "Analyse",
+          "d": "Hardest",
+          "t": "long_answer",
+          "m": 3,
+          "q": "A and B are invertible matrices of the same order. Prove that (AB)^(-1) = B^(-1) A^(-1) by multiplying AB by B^(-1) A^(-1) in both orders.",
+          "a": "(AB)(B^(-1) A^(-1)) = A(B B^(-1))A^(-1) = A I A^(-1) = A A^(-1) = I. (B^(-1) A^(-1))(AB) = B^(-1)(A^(-1) A)B = B^(-1) I B = B^(-1) B = I. Both products are I, so by definition (and uniqueness of the inverse) (AB)^(-1) = B^(-1) A^(-1).",
+          "s": [
+            [
+              "Shows (AB)(B^(-1) A^(-1)) = I using associativity",
+              1
+            ],
+            [
+              "Shows (B^(-1) A^(-1))(AB) = I",
+              1
+            ],
+            [
+              "Concludes from the definition that (AB)^(-1) = B^(-1) A^(-1)",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Evaluate",
+          "d": "Hard",
+          "t": "short_answer",
+          "m": 2,
+          "q": "A student says: 'For A = [[1, 2], [3, 4]] and B = [[1, 2], [3, 4]], we have AB = BA, so B is the inverse of A.' Evaluate this.",
+          "a": "Wrong. AB = BA is not enough; the definition needs AB = BA = I. Here AB = [[7, 10], [15, 22]], which is not I, so B is not the inverse of A.",
+          "s": [
+            [
+              "States that the inverse needs AB = BA = I, not just AB = BA",
+              1
+            ],
+            [
+              "Computes AB = [[7, 10], [15, 22]] and concludes it is not I",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Create",
+          "d": "Hardest",
+          "t": "long_answer",
+          "m": 3,
+          "q": "Construct a 2 x 2 diagonal matrix A, other than I, with non-zero diagonal elements. Find a matrix B such that AB = BA = I, and verify it.",
+          "a": "For example A = [[2, 0], [0, 5]] and B = [[1/2, 0], [0, 1/5]]. AB = [[1, 0], [0, 1]] = I and BA = [[1, 0], [0, 1]] = I, so B = A^(-1).",
+          "s": [
+            [
+              "Chooses a valid diagonal A (not I) with non-zero diagonal elements",
+              1
+            ],
+            [
+              "Gives B with the reciprocal diagonal elements",
+              1
+            ],
+            [
+              "Verifies AB = BA = I",
+              1
+            ]
+          ]
+        }
+      ]
+    }
+  ]
+}

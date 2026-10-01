@@ -1,0 +1,101 @@
+246 MATHEMATICS
+Binomial theorem tells that (x + h)
+n = ( ) ( ) ( )
+1 C C ... C 0 1
+n n n n n n
+n
+x x h h
+−
++ + + and
+hence (x + h)
+n – x
+n = h(nxn – 1 +... + h
+n – 1). Thus
+df x( )
+dx = 
+( )
+0
+lim
+n n
+h
+x h x
+→ h
++ −
+= 
+( )
+1 1
+0
+....
+lim
+n n
+h
+h nx h
+h
+− −
+→
++ +
+= ( )
+1 1
+0
+lim ... n n
+h
+nx h − −
+→
++ + = n 1
+nx
+− .
+Alternatively, we may also prove this by induction on n and the product rule as
+follows. The result is true for n = 1, which has been proved earlier. We have
+( ) d n
+x
+dx = ( ) 1
+.
+d n
+x x
+dx
+−
+= ( ) ( ) ( ) 1 1
+. .
+d n d n
+x x x x
+dx dx
+− −
++ (by product rule)
+= (( ) )
+1 2
+1. . 1 n n
+x x n x
+− − + − (by induction hypothesis)
+= ( )
+1 1 1 1
+n n n
+x n x nx
+− − − + − = .
+Remark The above theorem is true for all powers of x, i.e., n can be any real number
+(but we will not prove it here).
+12.5.2 Derivative of polynomials and trigonometric functions We start with the
+following theorem which tells us the derivative of a polynomial function.
+Theorem 7 Let f(x) = 1
+1 1 0 ....
+n n
+n n a x a x a x a −
++ + + + −
+be a polynomial function, where
+ai s are all real numbers and an ≠ 0. Then, the derivative function is given by
+( ) 1 2
+1
+( ) 1 ... n x
+n n
+df x
+na x n a x
+dx
+− −
+= + − + + − 2 1 2a x a + .
+Proof of this theorem is just putting together part (i) of Theorem 5 and Theorem 6.
+Example 13 Compute the derivative of 6x
+100
+ – x
+55 + x.
+Solution A direct application of the above theorem tells that the derivative of the
+above function is 99 54 600 55 1 x x − + .
+Reprint 2026-27

@@ -1,0 +1,71 @@
+114 MATHEMATICS
+Remarks
+(i) As a special case of (3) above, if f is a constant function, i.e., f(x) = λ for some
+real number λ, then the function (λ . g) defined by (λ . g) (x) = λ . g(x) is also
+continuous. In particular if λ = – 1, the continuity of f implies continuity of – f.
+(ii) As a special case of (4) above, if f is the constant function f(x) = λ, then the
+function 
+g
+λ
+ defined by ( ) ( ) x
+g g x
+λ λ
+= is also continuous wherever g(x) ≠ 0. In
+particular, the continuity of g implies continuity of 1
+g
+.
+The above theorem can be exploited to generate many continuous functions. They
+also aid in deciding if certain functions are continuous or not. The following examples
+illustrate this:
+Example 16 Prove that every rational function is continuous.
+Solution Recall that every rational function f is given by
+( ) ( ) , ( ) 0
+( )
+p x f x q x
+q x
+= ≠
+where p and q are polynomial functions. The domain of f is all real numbers except
+points at which q is zero. Since polynomial functions are continuous (Example 14), f is
+continuous by (4) of Theorem 1.
+Example 17 Discuss the continuity of sine function.
+Solution To see this we use the following facts
+0
+lim sin 0
+x
+x
+→
+=
+We have not proved it, but is intuitively clear from the graph of sin x near 0.
+Now, observe that f(x) = sin x is defined for every real number. Let c be a real
+number. Put x = c + h. If x → c we know that h → 0. Therefore
+lim ( )
+x c
+f x
+→
+ = lim sin
+x c
+x
+→
+= 0
+lim sin( )
+h
+c h
+→
++
+= 0
+lim [sin cos cos sin ]
+h
+c h c h
+→
++
+= 0 0
+lim [sin cos ] lim [cos sin ]
+h h
+c h c h
+→ →
++
+= sin c + 0 = sin c = f(c)
+Thus lim
+x c →
+f(x) = f(c) and hence f is a continuous function.
+Reprint 2026-27

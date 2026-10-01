@@ -1,0 +1,2344 @@
+{
+  "subject": {
+    "code": "MATH12",
+    "name": "Mathematics",
+    "board": "CBSE",
+    "class": 12
+  },
+  "source": {
+    "publisher": "NCERT",
+    "title": "Mathematics Part I",
+    "edition": "Textbook for Class XII Part I, Reprint 2026-27",
+    "year": 2026
+  },
+  "chapter": {
+    "part": "I",
+    "chapter_no": 4,
+    "name": "Determinants",
+    "blurb": "Determinants of square matrices up to order three with real entries: evaluating them by expansion along a row or column, using them to find the area of a triangle, minors and cofactors, the adjoint and inverse of a square matrix, and applying matrices and determinants to check the consistency of a system of linear equations and solve it by the matrix method.",
+    "source_code": "lemh104",
+    "order_index": 4
+  },
+  "scope_in": [
+    {
+      "item": "Know that a determinant is a number associated with every square matrix, written |A|, det A or Delta, read as 'determinant of A' (not modulus), and that only square matrices have determinants",
+      "pages": "76-77"
+    },
+    {
+      "item": "Evaluate determinants of order 1 (|[a]| = a) and order 2 (a11 a22 - a21 a12), including entries with variables or trigonometric functions",
+      "pages": "77"
+    },
+    {
+      "item": "Expand a 3 x 3 determinant along any row or column with signs (-1)^(i+j), knowing all six expansions give the same value, and choose the row or column with the most zeros",
+      "pages": "77-80"
+    },
+    {
+      "item": "Use |A| = k^n |B| when A = kB for square matrices of order n",
+      "pages": "80"
+    },
+    {
+      "item": "Find unknowns from determinant equations such as |[[3, x], [x, 1]]| = |[[3, 2], [4, 1]]|",
+      "pages": "81-82"
+    },
+    {
+      "item": "Find the area of a triangle as (1/2)|det [[x1, y1, 1], [x2, y2, 1], [x3, y3, 1]]|, taking the absolute value",
+      "pages": "82-83"
+    },
+    {
+      "item": "Use a zero area determinant for collinearity and for the equation of the line through two points; find an unknown coordinate from a given area using both signs",
+      "pages": "82-83"
+    },
+    {
+      "item": "Find minors M_ij and cofactors A_ij = (-1)^(i+j) M_ij of elements of 2 x 2 and 3 x 3 determinants",
+      "pages": "84-86"
+    },
+    {
+      "item": "Evaluate a determinant as the sum of products of the elements of a row or column with their cofactors, and know that elements of one row times cofactors of another row sum to zero",
+      "pages": "85-87"
+    },
+    {
+      "item": "Find adj A as the transpose of the cofactor matrix, including the 2 x 2 shortcut (interchange a11 and a22, change the signs of a12 and a21)",
+      "pages": "87-88"
+    },
+    {
+      "item": "Use A(adj A) = (adj A)A = |A| I (stated without proof) and verify it for given matrices",
+      "pages": "88-89"
+    },
+    {
+      "item": "Classify a matrix as singular (|A| = 0) or non-singular (|A| != 0); use |AB| = |A||B|, |adj A| = |A|^(n-1), and that AB, BA are non-singular when A, B are",
+      "pages": "89-90"
+    },
+    {
+      "item": "Know A is invertible if and only if it is non-singular, and find A^(-1) = (1/|A|) adj A for 2 x 2 and 3 x 3 matrices",
+      "pages": "90-93"
+    },
+    {
+      "item": "Use (AB)^(-1) = B^(-1) A^(-1), (A^(-1))^(-1) = A and det(A^(-1)) = 1/det(A)",
+      "pages": "91, 93, 102"
+    },
+    {
+      "item": "Find A^(-1) from a given matrix polynomial equation such as A^2 - 4A + I = O by multiplying by A^(-1)",
+      "pages": "92-93"
+    },
+    {
+      "item": "Define consistent and inconsistent systems; decide consistency using |A| and (adj A)B",
+      "pages": "93-95"
+    },
+    {
+      "item": "Write a system of linear equations in two or three variables as AX = B and solve it by the matrix method X = A^(-1)B, including simple word problems",
+      "pages": "94-99"
+    }
+  ],
+  "scope_out": [
+    {
+      "item": "Properties of determinants (interchanging rows changes the sign, identical rows give zero, taking a common factor out of a row, adding a multiple of one row to another, |A^T| = |A|) and proofs by row/column operations",
+      "reason": "This rationalised edition has no Properties of Determinants section: the section list runs 4.1 Introduction, 4.2 Determinant, 4.3 Area of a Triangle (p. 82), so the old properties section is gone. Only vestigial references survive (the introduction on p. 76, a stray 'Using properties of determinants in Exercises 11 to 15' line on p. 100 with no such exercises, and an empty 'satisfy following properties' line in the Summary on p. 101). The only scaling fact taught is |kB| = k^n |B| (p. 80)."
+    },
+    {
+      "item": "Cramer's rule for solving linear systems",
+      "reason": "Not taught anywhere in the chapter; the only solution method is the matrix method X = A^(-1)B (pp. 94-99)."
+    },
+    {
+      "item": "Determinants of order 4 or higher, or with complex entries",
+      "reason": "The book states it studies determinants 'up to order three only with real entries' (p. 76)."
+    },
+    {
+      "item": "Finding the general solution of a system with infinitely many solutions",
+      "reason": "The book restricts itself to systems with unique solutions (Note, p. 94); for |A| = 0 and (adj A)B = O it only says the system may be consistent or inconsistent (p. 95)."
+    },
+    {
+      "item": "Inverse of a matrix by elementary row or column operations, and rank of a matrix",
+      "reason": "Not in this chapter; the inverse is found only through the adjoint (pp. 90-93) or a given matrix equation."
+    },
+    {
+      "item": "Proofs of A(adj A) = |A| I, |AB| = |A||B| or the non-singularity of AB in general; the Cayley-Hamilton theorem by name",
+      "reason": "Theorems 1-3 are stated without proof (pp. 88-89); matrix equations like A^2 - 4A + I = O are given and verified, never derived from a named theorem (pp. 92-93)."
+    },
+    {
+      "item": "Area of a quadrilateral or polygon using determinants",
+      "reason": "Section 4.3 covers triangles only (pp. 82-83)."
+    }
+  ],
+  "concepts": [
+    {
+      "code": "C12M-4.1",
+      "name": "Determinant of a matrix of order one and two",
+      "description": "The determinant as a number associated with every square matrix, the notation |A| or det A, and evaluating determinants of order 1 and order 2, including finding an unknown entry from a determinant equation.",
+      "idea": "Every square matrix has a single number attached to it called its determinant, written |A| or det A; |A| is read as 'determinant of A', not 'modulus of A', and only square matrices have determinants.",
+      "rule": "For A = [a], |A| = a. For A = [[a11, a12], [a21, a22]], |A| = a11 a22 - a21 a12 (product of the leading diagonal minus product of the other diagonal).",
+      "example": "|[[2, 4], [-1, 2]]| = 2(2) - 4(-1) = 4 + 4 = 8; and |[[x, x + 1], [x - 1, x]]| = x^2 - (x^2 - 1) = 1.",
+      "difficulty_base": "Easy",
+      "questions": [
+        {
+          "b": "Remember",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "For the matrix A = [[a, b], [c, d]], the determinant |A| is equal to",
+          "a": "ad - bc",
+          "o": [
+            "ad - bc",
+            "ad + bc",
+            "ab - cd",
+            "ac - bd"
+          ]
+        },
+        {
+          "b": "Remember",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "If A = [-3] is a matrix of order 1, then |A| is",
+          "a": "-3",
+          "o": [
+            "-3",
+            "3",
+            "0",
+            "9"
+          ]
+        },
+        {
+          "b": "Remember",
+          "d": "Easy",
+          "t": "fill_blank",
+          "m": 1,
+          "q": "Only ____ matrices have determinants.",
+          "a": "square"
+        },
+        {
+          "b": "Remember",
+          "d": "Hard",
+          "t": "mcq",
+          "m": 1,
+          "q": "Which of the following matrices does NOT have a determinant?",
+          "a": "[[1, 2, 3], [4, 5, 6]]",
+          "o": [
+            "[[1, 2, 3], [4, 5, 6]]",
+            "[[1, 2], [3, 4]]",
+            "[7]",
+            "[[0, 0], [0, 0]]"
+          ],
+          "rev": true
+        },
+        {
+          "b": "Understand",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "For a square matrix A, the symbol |A| is read as",
+          "a": "the determinant of A",
+          "o": [
+            "the determinant of A",
+            "the modulus of A",
+            "the order of A",
+            "the transpose of A"
+          ]
+        },
+        {
+          "b": "Understand",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "The determinant of a square matrix with real entries is",
+          "a": "a single real number",
+          "o": [
+            "a single real number",
+            "a square matrix of the same order",
+            "a matrix of order 1 x 2",
+            "always a positive number"
+          ]
+        },
+        {
+          "b": "Understand",
+          "d": "Easy",
+          "t": "short_answer",
+          "m": 2,
+          "q": "Evaluate |[[2, 4], [-5, -1]]|.",
+          "a": "|A| = 2(-1) - 4(-5) = -2 + 20 = 18.",
+          "s": [
+            [
+              "Writes a11 a22 - a21 a12 = 2(-1) - (-5)(4)",
+              1
+            ],
+            [
+              "Simplifies correctly to 18",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Understand",
+          "d": "Hard",
+          "t": "mcq",
+          "m": 1,
+          "q": "A student evaluates |[[3, 2], [4, 5]]| as 3(5) + 2(4) = 23. What is the correct value, and what went wrong?",
+          "a": "7; the product 2 x 4 of the other diagonal must be subtracted, not added",
+          "o": [
+            "7; the product 2 x 4 of the other diagonal must be subtracted, not added",
+            "23; the working is correct",
+            "-7; the two products were subtracted in the wrong order",
+            "2; the entries should be subtracted, not multiplied"
+          ]
+        },
+        {
+          "b": "Understand",
+          "d": "Hard",
+          "t": "mcq",
+          "m": 1,
+          "q": "The value of |[[x, x + 1], [x - 1, x]]| is",
+          "a": "1",
+          "o": [
+            "1",
+            "-1",
+            "2x^2 - 1",
+            "0"
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Easy",
+          "t": "fill_blank",
+          "m": 1,
+          "q": "The value of |[[cos t, -sin t], [sin t, cos t]]| is ____.",
+          "a": "1"
+        },
+        {
+          "b": "Apply",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "The value of |[[2, -3], [4, 1]]| is",
+          "a": "14",
+          "o": [
+            "14",
+            "-10",
+            "11",
+            "-14"
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Hard",
+          "t": "short_answer",
+          "m": 2,
+          "q": "Find the values of x if |[[2, 4], [5, 1]]| = |[[2x, 4], [6, x]]|.",
+          "a": "LHS = 2 - 20 = -18. RHS = 2x^2 - 24. So 2x^2 - 24 = -18, giving x^2 = 3, so x = sqrt(3) or x = -sqrt(3).",
+          "s": [
+            [
+              "Evaluates LHS = -18 and RHS = 2x^2 - 24",
+              1
+            ],
+            [
+              "Solves to x^2 = 3 and gives both x = sqrt(3) and x = -sqrt(3)",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Hard",
+          "t": "mcq",
+          "m": 1,
+          "q": "If |[[x, 2], [18, x]]| = |[[6, 2], [18, 6]]|, then x is equal to",
+          "a": "6 or -6",
+          "o": [
+            "6 or -6",
+            "6 only",
+            "-6 only",
+            "0"
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Hard",
+          "t": "fill_blank",
+          "m": 1,
+          "q": "If |[[k, 3], [4, 2]]| = 0, then k = ____.",
+          "a": "6"
+        },
+        {
+          "b": "Apply",
+          "d": "Hardest",
+          "t": "long_answer",
+          "m": 3,
+          "q": "Find the values of x for which |[[3, x], [x, 1]]| = |[[3, 2], [4, 1]]|.",
+          "a": "LHS = 3 - x^2 and RHS = 3 - 8 = -5. So 3 - x^2 = -5, x^2 = 8, x = 2 sqrt(2) or x = -2 sqrt(2).",
+          "s": [
+            [
+              "Evaluates LHS as 3 - x^2",
+              1
+            ],
+            [
+              "Evaluates RHS as 3 - 8 = -5",
+              1
+            ],
+            [
+              "Solves x^2 = 8 to get x = +2 sqrt(2) and x = -2 sqrt(2)",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Analyse",
+          "d": "Hard",
+          "t": "assertion_reason",
+          "m": 1,
+          "q": "Assertion (A): |[[2, 4], [-1, 2]]| = 8. Reason (R): For A = [[a, b], [c, d]], |A| = ad - bc.",
+          "a": "Both A and R are true, and R is the correct explanation of A",
+          "o": [
+            "Both A and R are true, and R is the correct explanation of A",
+            "Both A and R are true, but R is not the correct explanation of A",
+            "A is true, R is false",
+            "A is false, R is true"
+          ]
+        },
+        {
+          "b": "Analyse",
+          "d": "Hard",
+          "t": "multi_statement",
+          "m": 1,
+          "q": "Consider these statements. (I) If A = [[a, b], [c, d]], then |A| = ad - bc. (II) |A| can never be negative, because |A| means the modulus of A. Which is or are correct?",
+          "a": "Only I",
+          "o": [
+            "Only I",
+            "Only II",
+            "Both I and II",
+            "Neither I nor II"
+          ]
+        },
+        {
+          "b": "Analyse",
+          "d": "Hardest",
+          "t": "long_answer",
+          "m": 3,
+          "q": "A student says that |[[x, x + 1], [x - 1, x]]| must change as x changes, because x appears in every entry. Evaluate the determinant and decide whether the student is right.",
+          "a": "|A| = x(x) - (x + 1)(x - 1) = x^2 - (x^2 - 1) = 1. The value is 1 for every x, so the student is wrong: x appearing in the entries does not force the determinant to depend on x.",
+          "s": [
+            [
+              "Writes x(x) - (x + 1)(x - 1)",
+              1
+            ],
+            [
+              "Simplifies to 1 using (x + 1)(x - 1) = x^2 - 1",
+              1
+            ],
+            [
+              "Concludes the value is independent of x, so the student is wrong",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Evaluate",
+          "d": "Hard",
+          "t": "short_answer",
+          "m": 2,
+          "q": "Riya claims: 'A 2 x 2 matrix whose entries are all non-zero always has a non-zero determinant.' Is she right? Justify with an example.",
+          "a": "No. For example |[[1, 2], [2, 4]]| = 1(4) - 2(2) = 0, although no entry is zero.",
+          "s": [
+            [
+              "States the claim is false",
+              1
+            ],
+            [
+              "Gives a valid example with all entries non-zero and determinant 0, with working",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Create",
+          "d": "Hardest",
+          "t": "long_answer",
+          "m": 3,
+          "q": "Construct a 2 x 2 matrix with no zero entries whose determinant is 5, and show the working that verifies it.",
+          "a": "For example A = [[3, 1], [1, 2]]: |A| = 3(2) - 1(1) = 6 - 1 = 5. (Any matrix with no zero entries and ad - bc = 5 is acceptable.)",
+          "s": [
+            [
+              "Gives a 2 x 2 matrix with no zero entries",
+              1
+            ],
+            [
+              "Shows ad - bc working",
+              1
+            ],
+            [
+              "The value is exactly 5",
+              1
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "code": "C12M-4.2",
+      "name": "Determinant of order three by expansion; |kA| = k^n |A|",
+      "description": "Evaluating a 3 x 3 determinant by expanding along any row or column with the sign (-1)^(i+j), choosing the row or column with most zeros, and the scaling rule |kB| = k^n |B| for a matrix of order n.",
+      "idea": "A 3 x 3 determinant is broken into three 2 x 2 determinants: each element of the chosen row or column is multiplied by its sign (-1)^(i+j) and by the 2 x 2 determinant left after deleting its row and column. All six expansions give the same value.",
+      "rule": "Along R1: |A| = a11(a22 a33 - a23 a32) - a12(a21 a33 - a23 a31) + a13(a21 a32 - a22 a31). Signs follow the pattern + - + / - + - / + - +. If A = kB for square matrices of order n, then |A| = k^n |B|.",
+      "example": "|[[1, 2, 4], [-1, 3, 0], [4, 1, 0]]|: expand along C3 (two zeros) to get 4 x |[[-1, 3], [4, 1]]| = 4(-1 - 12) = -52.",
+      "difficulty_base": "Hard",
+      "questions": [
+        {
+          "b": "Remember",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "While expanding a 3 x 3 determinant, the element a_ij is multiplied by the sign",
+          "a": "(-1)^(i+j)",
+          "o": [
+            "(-1)^(i+j)",
+            "(-1)^(i*j)",
+            "(-1)^(i+j+1)",
+            "(-1)^j"
+          ]
+        },
+        {
+          "b": "Remember",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "In how many ways can a determinant of order 3 be expanded along a single row or a single column?",
+          "a": "6",
+          "o": [
+            "6",
+            "3",
+            "9",
+            "2"
+          ]
+        },
+        {
+          "b": "Remember",
+          "d": "Easy",
+          "t": "fill_blank",
+          "m": 1,
+          "q": "If A = kB, where A and B are square matrices of order n, then |A| = ____ |B|.",
+          "a": "k^n"
+        },
+        {
+          "b": "Remember",
+          "d": "Hard",
+          "t": "mcq",
+          "m": 1,
+          "q": "Which statement about expanding a 3 x 3 determinant is NOT true?",
+          "a": "Expanding along a column can give a different value from expanding along a row",
+          "o": [
+            "Expanding along a column can give a different value from expanding along a row",
+            "Any one of the three rows or three columns may be used",
+            "It is easiest to expand along the row or column with the most zeros",
+            "The element in position (2, 1) is given a negative sign"
+          ],
+          "rev": true
+        },
+        {
+          "b": "Understand",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "When a 3 x 3 determinant is expanded, what sign does the element a_23 carry?",
+          "a": "Negative, since 2 + 3 = 5 is odd",
+          "o": [
+            "Negative, since 2 + 3 = 5 is odd",
+            "Positive, since 2 x 3 = 6 is even",
+            "Positive, since it lies in the second row",
+            "Negative, since it lies in the third column"
+          ]
+        },
+        {
+          "b": "Understand",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "To evaluate |[[1, 2, 4], [-1, 3, 0], [4, 1, 0]]| with the least work, it is best to expand along",
+          "a": "the third column",
+          "o": [
+            "the third column",
+            "the first row",
+            "the second row",
+            "the first column"
+          ]
+        },
+        {
+          "b": "Understand",
+          "d": "Easy",
+          "t": "fill_blank",
+          "m": 1,
+          "q": "If A is a 3 x 3 matrix with |A| = 2, then |3A| = ____.",
+          "a": "54"
+        },
+        {
+          "b": "Understand",
+          "d": "Hard",
+          "t": "mcq",
+          "m": 1,
+          "q": "If A is a square matrix of order 2 with |A| = 5, then |4A| is",
+          "a": "80",
+          "o": [
+            "80",
+            "20",
+            "320",
+            "40"
+          ]
+        },
+        {
+          "b": "Understand",
+          "d": "Hard",
+          "t": "mcq",
+          "m": 1,
+          "q": "Expanding |[[a11, a12, a13], [a21, a22, a23], [a31, a32, a33]]| along the second row R2, the first term is",
+          "a": "-a21 (a12 a33 - a13 a32)",
+          "o": [
+            "-a21 (a12 a33 - a13 a32)",
+            "a21 (a12 a33 - a13 a32)",
+            "-a21 (a22 a33 - a23 a32)",
+            "-a21 (a11 a33 - a13 a31)"
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "The value of |[[1, 2, 4], [-1, 3, 0], [4, 1, 0]]| is",
+          "a": "-52",
+          "o": [
+            "-52",
+            "52",
+            "-13",
+            "44"
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Easy",
+          "t": "fill_blank",
+          "m": 1,
+          "q": "The value of |[[2, 0, 0], [0, 3, 0], [0, 0, 4]]| is ____.",
+          "a": "24"
+        },
+        {
+          "b": "Apply",
+          "d": "Hard",
+          "t": "short_answer",
+          "m": 3,
+          "q": "Evaluate |[[3, -1, -2], [0, 0, -1], [3, -5, 0]]|.",
+          "a": "Expand along R2 (two zeros). Only a23 = -1 contributes, with sign (-1)^(2+3) = -1: |A| = -(-1) x |[[3, -1], [3, -5]]| = 1 x (-15 + 3) = -12.",
+          "s": [
+            [
+              "Chooses a row/column with zeros and sets up the expansion with the correct sign for a23",
+              1
+            ],
+            [
+              "Evaluates the 2 x 2 determinant as -12",
+              1
+            ],
+            [
+              "Final answer -12",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Hard",
+          "t": "mcq",
+          "m": 1,
+          "q": "The value of |[[0, 1, 2], [-1, 0, -3], [-2, 3, 0]]| is",
+          "a": "0",
+          "o": [
+            "0",
+            "-12",
+            "6",
+            "-6"
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Hard",
+          "t": "mcq",
+          "m": 1,
+          "q": "If A = [[1, 0, 1], [0, 1, 2], [0, 0, 4]], then |3A| is",
+          "a": "108",
+          "o": [
+            "108",
+            "12",
+            "36",
+            "324"
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Hardest",
+          "t": "long_answer",
+          "m": 3,
+          "q": "Evaluate |[[3, -4, 5], [1, 1, -2], [2, 3, 1]]| by expanding along the first row.",
+          "a": "|A| = 3(1 x 1 - (-2)(3)) - (-4)(1 x 1 - (-2)(2)) + 5(1 x 3 - 1 x 2) = 3(7) + 4(5) + 5(1) = 21 + 20 + 5 = 46.",
+          "s": [
+            [
+              "Sets up the three terms with signs +, -, +",
+              1
+            ],
+            [
+              "Evaluates the 2 x 2 determinants as 7, 5 and 1",
+              1
+            ],
+            [
+              "Final answer 46",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Analyse",
+          "d": "Hard",
+          "t": "assertion_reason",
+          "m": 1,
+          "q": "Assertion (A): If A is a 3 x 3 matrix with |A| = 2, then |2A| = 16. Reason (R): Only square matrices have determinants.",
+          "a": "Both A and R are true, but R is not the correct explanation of A",
+          "o": [
+            "Both A and R are true, but R is not the correct explanation of A",
+            "Both A and R are true, and R is the correct explanation of A",
+            "A is true, R is false",
+            "A is false, R is true"
+          ]
+        },
+        {
+          "b": "Analyse",
+          "d": "Hard",
+          "t": "multi_statement",
+          "m": 1,
+          "q": "Consider these statements. (I) In the expansion of a 3 x 3 determinant, the element a32 carries a positive sign. (II) If A = kB, where A and B are square matrices of order 3, then |A| = k^3 |B|. Which is or are correct?",
+          "a": "Only II",
+          "o": [
+            "Only II",
+            "Only I",
+            "Both I and II",
+            "Neither I nor II"
+          ]
+        },
+        {
+          "b": "Analyse",
+          "d": "Hardest",
+          "t": "long_answer",
+          "m": 3,
+          "q": "Two students evaluate |[[2, 1, 3], [0, 4, 0], [1, 5, 2]]|. Asha expands along R1 and Ben expands along R2. Ben says his working is much shorter. Explain why, find the value both ways, and confirm they agree.",
+          "a": "R2 has two zeros, so Ben needs only one 2 x 2 determinant: +4 x |[[2, 3], [1, 2]]| = 4(4 - 3) = 4 (sign of a22 is +). Asha: 2(4 x 2 - 0 x 5) - 1(0 x 2 - 0 x 1) + 3(0 x 5 - 4 x 1) = 16 - 0 - 12 = 4. Both give 4, as expansion along any row or column gives the same value.",
+          "s": [
+            [
+              "Explains R2 has two zeros so only one term survives",
+              1
+            ],
+            [
+              "Ben's expansion gives 4 with the correct + sign for a22",
+              1
+            ],
+            [
+              "Asha's expansion along R1 also gives 4, and notes they agree",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Evaluate",
+          "d": "Hard",
+          "t": "short_answer",
+          "m": 2,
+          "q": "A student says: 'If A is a 3 x 3 matrix with |A| = 3, then |2A| = 6.' Evaluate this claim.",
+          "a": "The claim is wrong. Multiplying a matrix of order 3 by 2 multiplies every one of its 3 rows by 2, so |2A| = 2^3 |A| = 8 x 3 = 24, not 6.",
+          "s": [
+            [
+              "States the claim is wrong and uses |kA| = k^n |A|",
+              1
+            ],
+            [
+              "Gives the correct value 24",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Create",
+          "d": "Hardest",
+          "t": "long_answer",
+          "m": 3,
+          "q": "Construct a 3 x 3 matrix A that has two zeros in one row and |A| = 10. Show your expansion.",
+          "a": "For example A = [[2, 0, 0], [1, 1, 0], [3, 4, 5]]. Expanding along R1: |A| = 2 x |[[1, 0], [4, 5]]| = 2(5 - 0) = 10. (Any valid matrix with the required zeros and value 10 is acceptable.)",
+          "s": [
+            [
+              "Matrix is 3 x 3 with two zeros in one row (or column)",
+              1
+            ],
+            [
+              "Expansion along that row/column with correct sign",
+              1
+            ],
+            [
+              "Value is exactly 10",
+              1
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "code": "C12M-4.3",
+      "name": "Area of a triangle using determinants",
+      "description": "Writing the area of a triangle with given vertices as half the absolute value of a 3 x 3 determinant, using a zero value to test collinearity and find the equation of a line, and finding an unknown coordinate when the area is given.",
+      "idea": "The coordinate formula for the area of a triangle is exactly half of a 3 x 3 determinant whose rows are (x, y, 1) for each vertex. Area is positive, so take the absolute value; collinear points give zero.",
+      "rule": "Area = (1/2) |det [[x1, y1, 1], [x2, y2, 1], [x3, y3, 1]]|. If the area is given, use both the positive and negative values of the determinant. Three points are collinear exactly when this determinant is 0.",
+      "example": "Vertices (3, 8), (-4, 2), (5, 1): det = 3(2 - 1) - 8(-4 - 5) + 1(-4 - 10) = 3 + 72 - 14 = 61, so area = 61/2 sq units.",
+      "difficulty_base": "Hard",
+      "questions": [
+        {
+          "b": "Remember",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "The area of a triangle with vertices (x1, y1), (x2, y2), (x3, y3) is",
+          "a": "(1/2) times the absolute value of det [[x1, y1, 1], [x2, y2, 1], [x3, y3, 1]]",
+          "o": [
+            "(1/2) times the absolute value of det [[x1, y1, 1], [x2, y2, 1], [x3, y3, 1]]",
+            "the absolute value of det [[x1, y1, 1], [x2, y2, 1], [x3, y3, 1]], with no factor 1/2",
+            "(1/2) times det [[x1, y1, 0], [x2, y2, 0], [x3, y3, 0]]",
+            "2 times det [[x1, y1, 1], [x2, y2, 1], [x3, y3, 1]]"
+          ]
+        },
+        {
+          "b": "Remember",
+          "d": "Easy",
+          "t": "fill_blank",
+          "m": 1,
+          "q": "The area of the triangle formed by three collinear points is ____.",
+          "a": "0"
+        },
+        {
+          "b": "Remember",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "Since area is a positive quantity, in the determinant formula for the area of a triangle we always take",
+          "a": "the absolute value of the determinant",
+          "o": [
+            "the absolute value of the determinant",
+            "the square of the determinant",
+            "the negative of the determinant",
+            "the determinant with its rows in reverse order"
+          ]
+        },
+        {
+          "b": "Remember",
+          "d": "Hard",
+          "t": "mcq",
+          "m": 1,
+          "q": "Which of the following is NOT correct about finding the area of a triangle using determinants?",
+          "a": "If the area is given, only the positive value of the determinant should be used to find an unknown coordinate",
+          "o": [
+            "If the area is given, only the positive value of the determinant should be used to find an unknown coordinate",
+            "The value of the determinant is multiplied by 1/2",
+            "Three collinear points make the determinant zero",
+            "The third column of the determinant consists of 1s"
+          ],
+          "rev": true
+        },
+        {
+          "b": "Understand",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "If det [[x1, y1, 1], [x2, y2, 1], [x3, y3, 1]] = 0, then the points (x1, y1), (x2, y2), (x3, y3) are",
+          "a": "collinear",
+          "o": [
+            "collinear",
+            "the vertices of a right-angled triangle",
+            "the vertices of an equilateral triangle",
+            "all at the origin"
+          ]
+        },
+        {
+          "b": "Understand",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "When the area of a triangle is given and a vertex has an unknown coordinate, why do we use both the positive and the negative value of the determinant?",
+          "a": "The determinant can come out positive or negative for the same triangle depending on the order of the vertices, and the area is its absolute value",
+          "o": [
+            "The determinant can come out positive or negative for the same triangle depending on the order of the vertices, and the area is its absolute value",
+            "Because the area of a triangle can be negative",
+            "Because the factor 1/2 can be taken as -1/2",
+            "Because every set of three vertices forms two different triangles"
+          ]
+        },
+        {
+          "b": "Understand",
+          "d": "Easy",
+          "t": "short_answer",
+          "m": 2,
+          "q": "Write (do not evaluate) the determinant expression for the area of the triangle with vertices (1, 0), (6, 0) and (4, 3).",
+          "a": "Area = (1/2) |det [[1, 0, 1], [6, 0, 1], [4, 3, 1]]|.",
+          "s": [
+            [
+              "Rows (1, 0, 1), (6, 0, 1), (4, 3, 1) with a column of 1s",
+              1
+            ],
+            [
+              "Includes the factor 1/2 and the absolute value",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Understand",
+          "d": "Hard",
+          "t": "mcq",
+          "m": 1,
+          "q": "To find the equation of the line through A(1, 3) and B(0, 0) using determinants, we take any point P(x, y) on AB and use the fact that",
+          "a": "the area of triangle ABP is zero",
+          "o": [
+            "the area of triangle ABP is zero",
+            "the area of triangle ABP is 1 sq unit",
+            "|[[1, 3], [0, 0]]| = 0",
+            "AP = BP"
+          ]
+        },
+        {
+          "b": "Understand",
+          "d": "Hard",
+          "t": "mcq",
+          "m": 1,
+          "q": "The area of the triangle with vertices (1, 0), (6, 0) and (4, 3) is",
+          "a": "15/2 sq units",
+          "o": [
+            "15/2 sq units",
+            "15 sq units",
+            "-15/2 sq units",
+            "15/4 sq units"
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Easy",
+          "t": "fill_blank",
+          "m": 1,
+          "q": "The area of the triangle with vertices (0, 0), (4, 0) and (0, 2) is ____ sq units.",
+          "a": "4"
+        },
+        {
+          "b": "Apply",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "The area of the triangle with vertices (3, 8), (-4, 2) and (5, 1) is",
+          "a": "61/2 sq units",
+          "o": [
+            "61/2 sq units",
+            "61 sq units",
+            "-61/2 sq units",
+            "83/2 sq units"
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Hard",
+          "t": "mcq",
+          "m": 1,
+          "q": "If the area of the triangle with vertices (-2, 0), (0, 4) and (0, k) is 4 sq units, then k is",
+          "a": "0 or 8",
+          "o": [
+            "0 or 8",
+            "8 only",
+            "0 only",
+            "4 or -4"
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Hard",
+          "t": "short_answer",
+          "m": 2,
+          "q": "Find the equation of the line joining (1, 2) and (3, 6) using determinants.",
+          "a": "For P(x, y) on the line, det [[x, y, 1], [1, 2, 1], [3, 6, 1]] = 0: x(2 - 6) - y(1 - 3) + 1(6 - 6) = 0, i.e. -4x + 2y = 0, so y = 2x.",
+          "s": [
+            [
+              "Sets the area determinant with a general point (x, y) equal to 0",
+              1
+            ],
+            [
+              "Expands to -4x + 2y = 0 and simplifies to y = 2x",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Hard",
+          "t": "fill_blank",
+          "m": 1,
+          "q": "If the points (1, 2), (3, k) and (5, 6) are collinear, then k = ____.",
+          "a": "4"
+        },
+        {
+          "b": "Apply",
+          "d": "Hardest",
+          "t": "long_answer",
+          "m": 3,
+          "q": "If the area of the triangle with vertices (2, -6), (5, 4) and (k, 4) is 35 sq units, find k.",
+          "a": "det [[2, -6, 1], [5, 4, 1], [k, 4, 1]] = 2(4 - 4) + 6(5 - k) + 1(20 - 4k) = 50 - 10k. So (1/2)(50 - 10k) = 35 or -35, i.e. 50 - 10k = 70 or -70, giving k = -2 or k = 12.",
+          "s": [
+            [
+              "Sets up and expands the determinant to 50 - 10k",
+              1
+            ],
+            [
+              "Uses both +35 and -35 (i.e. 50 - 10k = +70 or -70)",
+              1
+            ],
+            [
+              "Gets k = -2 and k = 12",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Analyse",
+          "d": "Hard",
+          "t": "assertion_reason",
+          "m": 1,
+          "q": "Assertion (A): The area of the triangle with vertices (0, 0), (4, 0) and (0, 2) is 4 sq units. Reason (R): The area of a triangle equals det [[x1, y1, 1], [x2, y2, 1], [x3, y3, 1]] itself, with no factor in front.",
+          "a": "A is true, R is false",
+          "o": [
+            "A is true, R is false",
+            "Both A and R are true, and R is the correct explanation of A",
+            "Both A and R are true, but R is not the correct explanation of A",
+            "A is false, R is true"
+          ]
+        },
+        {
+          "b": "Analyse",
+          "d": "Hard",
+          "t": "multi_statement",
+          "m": 1,
+          "q": "Consider these statements. (I) If three points are collinear, the determinant used for the area of the triangle formed by them is zero. (II) The equation of the line joining (1, 3) and (0, 0), found using determinants, is y = 3x. Which is or are correct?",
+          "a": "Both I and II",
+          "o": [
+            "Both I and II",
+            "Only I",
+            "Only II",
+            "Neither I nor II"
+          ]
+        },
+        {
+          "b": "Analyse",
+          "d": "Hardest",
+          "t": "long_answer",
+          "m": 3,
+          "q": "Show that the points A(a, b + c), B(b, c + a) and C(c, a + b) are collinear.",
+          "a": "det [[a, b + c, 1], [b, c + a, 1], [c, a + b, 1]] = a((c + a) - (a + b)) - (b + c)(b - c) + (b(a + b) - c(c + a)) = a(c - b) - (b^2 - c^2) + (ab + b^2 - c^2 - ac) = ac - ab - b^2 + c^2 + ab + b^2 - c^2 - ac = 0. The area is zero, so A, B, C are collinear.",
+          "s": [
+            [
+              "Writes the area determinant with rows (a, b + c, 1), (b, c + a, 1), (c, a + b, 1)",
+              1
+            ],
+            [
+              "Expands and simplifies to 0",
+              1
+            ],
+            [
+              "Concludes zero area means the points are collinear",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Evaluate",
+          "d": "Hard",
+          "t": "short_answer",
+          "m": 2,
+          "q": "A student lists the vertices as (6, 0), (1, 0), (4, 3), gets the determinant value -15, and writes 'Area = -15/2 sq units'. Evaluate this answer.",
+          "a": "The determinant value -15 is correct for that order of vertices, but area cannot be negative. The absolute value must be taken: area = (1/2)|-15| = 15/2 sq units.",
+          "s": [
+            [
+              "Says the negative sign is wrong because area is positive (absolute value must be taken)",
+              1
+            ],
+            [
+              "Gives the correct area 15/2 sq units",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Create",
+          "d": "Hardest",
+          "t": "long_answer",
+          "m": 3,
+          "q": "Given A(0, 0) and B(4, 0), choose a point C so that triangle ABC has area 6 sq units, and verify your choice using a determinant.",
+          "a": "For example C(0, 3): det [[0, 0, 1], [4, 0, 1], [0, 3, 1]] = 1 x (4 x 3 - 0 x 0) = 12, so area = (1/2)(12) = 6 sq units. (Any C with y-coordinate 3 or -3 works.)",
+          "s": [
+            [
+              "Chooses a valid point C",
+              1
+            ],
+            [
+              "Sets up the area determinant correctly",
+              1
+            ],
+            [
+              "Shows the area comes out to 6 sq units",
+              1
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "code": "C12M-4.4",
+      "name": "Minors and cofactors",
+      "description": "Finding the minor M_ij and cofactor A_ij of an element, expanding a determinant as the sum of elements of a row or column times their cofactors, and the fact that elements of one row times cofactors of a different row sum to zero.",
+      "idea": "The minor of an element is the smaller determinant left after deleting that element's row and column; the cofactor is the minor with the sign (-1)^(i+j) attached.",
+      "rule": "A_ij = (-1)^(i+j) M_ij. |A| = a11 A11 + a12 A12 + a13 A13 (any row or column with its own cofactors). Elements of one row (or column) times the cofactors of a different row (or column) sum to 0.",
+      "example": "In |[[1, 2, 3], [4, 5, 6], [7, 8, 9]]|, the minor of 6 is M23 = |[[1, 2], [7, 8]]| = 8 - 14 = -6, and its cofactor is A23 = (-1)^5 (-6) = 6.",
+      "difficulty_base": "Hard",
+      "questions": [
+        {
+          "b": "Remember",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "The cofactor A_ij of the element a_ij is defined as",
+          "a": "(-1)^(i+j) M_ij",
+          "o": [
+            "(-1)^(i+j) M_ij",
+            "(-1)^(i*j) M_ij",
+            "M_ij",
+            "-M_ij"
+          ]
+        },
+        {
+          "b": "Remember",
+          "d": "Easy",
+          "t": "fill_blank",
+          "m": 1,
+          "q": "The minor of an element of a determinant of order 3 is a determinant of order ____.",
+          "a": "2"
+        },
+        {
+          "b": "Remember",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "The minor M_ij of the element a_ij is the determinant obtained by deleting",
+          "a": "the ith row and the jth column",
+          "o": [
+            "the ith row and the jth column",
+            "the ith column and the jth row",
+            "only the ith row",
+            "every entry except a_ij"
+          ]
+        },
+        {
+          "b": "Remember",
+          "d": "Hard",
+          "t": "mcq",
+          "m": 1,
+          "q": "For a 3 x 3 determinant |A| with cofactors A_ij, which statement is FALSE?",
+          "a": "a11 A21 + a12 A22 + a13 A23 = |A|",
+          "o": [
+            "a11 A21 + a12 A22 + a13 A23 = |A|",
+            "a11 A11 + a12 A12 + a13 A13 = |A|",
+            "a11 A11 + a21 A21 + a31 A31 = |A|",
+            "a31 A11 + a32 A12 + a33 A13 = 0"
+          ],
+          "rev": true
+        },
+        {
+          "b": "Understand",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "In the determinant |[[1, -2], [4, 3]]|, the minor M12 is",
+          "a": "4",
+          "o": [
+            "4",
+            "-4",
+            "-2",
+            "3"
+          ]
+        },
+        {
+          "b": "Understand",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "In the determinant |[[1, -2], [4, 3]]|, the cofactor A21 is",
+          "a": "2",
+          "o": [
+            "2",
+            "-2",
+            "4",
+            "-4"
+          ]
+        },
+        {
+          "b": "Understand",
+          "d": "Easy",
+          "t": "short_answer",
+          "m": 2,
+          "q": "Write the minor and the cofactor of the element 6 in |[[1, 2, 3], [4, 5, 6], [7, 8, 9]]|.",
+          "a": "6 is a23. M23 = |[[1, 2], [7, 8]]| = 8 - 14 = -6. A23 = (-1)^(2+3)(-6) = 6.",
+          "s": [
+            [
+              "Minor M23 = -6 (deleting R2 and C3)",
+              1
+            ],
+            [
+              "Cofactor A23 = 6",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Understand",
+          "d": "Hard",
+          "t": "mcq",
+          "m": 1,
+          "q": "A student says A23 = M23 because the element lies in the second row. What is the correct relation?",
+          "a": "A23 = -M23, since 2 + 3 = 5 is odd",
+          "o": [
+            "A23 = -M23, since 2 + 3 = 5 is odd",
+            "A23 = M23, since the row number 2 is even",
+            "A23 = M23, since 2 x 3 = 6 is even",
+            "A23 = -M23 only when M23 is negative"
+          ]
+        },
+        {
+          "b": "Understand",
+          "d": "Hard",
+          "t": "mcq",
+          "m": 1,
+          "q": "For the determinant |[[2, -3, 5], [6, 0, 4], [1, 5, -7]]|, the value of a11 A31 + a12 A32 + a13 A33 is",
+          "a": "0",
+          "o": [
+            "0",
+            "|A|",
+            "-|A|",
+            "1"
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Easy",
+          "t": "fill_blank",
+          "m": 1,
+          "q": "For the determinant |[[2, -4], [0, 3]]|, the cofactor A21 is ____.",
+          "a": "4"
+        },
+        {
+          "b": "Apply",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "In the determinant |[[1, 0, 4], [3, 5, -1], [0, 1, 2]]|, the minor M11 is",
+          "a": "11",
+          "o": [
+            "11",
+            "9",
+            "-11",
+            "10"
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Hard",
+          "t": "short_answer",
+          "m": 3,
+          "q": "Using cofactors of elements of the second row, evaluate |[[5, 3, 8], [2, 0, 1], [1, 2, 3]]|.",
+          "a": "A21 = -(3 x 3 - 8 x 2) = -(9 - 16) = 7; A22 = 5 x 3 - 8 x 1 = 7; A23 = -(5 x 2 - 3 x 1) = -7. |A| = 2(7) + 0(7) + 1(-7) = 7.",
+          "s": [
+            [
+              "Finds A21 = 7 and A22 = 7 with correct signs",
+              1
+            ],
+            [
+              "Finds A23 = -7",
+              1
+            ],
+            [
+              "Combines 2(7) + 0(7) + 1(-7) = 7",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Hard",
+          "t": "mcq",
+          "m": 1,
+          "q": "In the determinant |[[1, 0, 4], [3, 5, -1], [0, 1, 2]]|, the cofactor A32 is",
+          "a": "13",
+          "o": [
+            "13",
+            "-13",
+            "11",
+            "-11"
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Hard",
+          "t": "mcq",
+          "m": 1,
+          "q": "For the determinant |[[a, c], [b, d]]|, the cofactors A11, A12, A21, A22 are, in order,",
+          "a": "d, -b, -c, a",
+          "o": [
+            "d, -b, -c, a",
+            "d, b, c, a",
+            "d, -c, -b, a",
+            "a, -b, -c, d"
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Hardest",
+          "t": "long_answer",
+          "m": 3,
+          "q": "For |[[2, -3, 5], [6, 0, 4], [1, 5, -7]]|, find the minors and cofactors of the elements of the first row, and use them to evaluate the determinant.",
+          "a": "M11 = 0(-7) - 4(5) = -20, A11 = -20; M12 = 6(-7) - 4(1) = -46, A12 = 46; M13 = 6(5) - 0(1) = 30, A13 = 30. |A| = 2(-20) + (-3)(46) + 5(30) = -40 - 138 + 150 = -28.",
+          "s": [
+            [
+              "Minors -20, -46, 30",
+              1
+            ],
+            [
+              "Cofactors -20, 46, 30 with correct signs",
+              1
+            ],
+            [
+              "|A| = 2(-20) + (-3)(46) + 5(30) = -28",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Analyse",
+          "d": "Hard",
+          "t": "assertion_reason",
+          "m": 1,
+          "q": "Assertion (A): For every 3 x 3 determinant, a11 A21 + a12 A22 + a13 A23 = |A|. Reason (R): The value of a determinant equals the sum of the products of the elements of any row with their own corresponding cofactors.",
+          "a": "A is false, R is true",
+          "o": [
+            "A is false, R is true",
+            "Both A and R are true, and R is the correct explanation of A",
+            "Both A and R are true, but R is not the correct explanation of A",
+            "A is true, R is false"
+          ]
+        },
+        {
+          "b": "Analyse",
+          "d": "Hard",
+          "t": "multi_statement",
+          "m": 1,
+          "q": "Consider these statements. (I) The minor and the cofactor of an element are always equal. (II) The minor of an element of a 3 x 3 determinant is itself a 3 x 3 determinant. Which is or are correct?",
+          "a": "Neither I nor II",
+          "o": [
+            "Neither I nor II",
+            "Only I",
+            "Only II",
+            "Both I and II"
+          ]
+        },
+        {
+          "b": "Analyse",
+          "d": "Hardest",
+          "t": "long_answer",
+          "m": 3,
+          "q": "For A = [[1, 2, 1], [0, 1, 3], [2, 0, 1]], find the cofactors A21, A22, A23 of the second row. Then find a11 A21 + a12 A22 + a13 A23 and explain why this value is what it is.",
+          "a": "A21 = -(2 x 1 - 1 x 0) = -2; A22 = 1 x 1 - 1 x 2 = -1; A23 = -(1 x 0 - 2 x 2) = 4. a11 A21 + a12 A22 + a13 A23 = 1(-2) + 2(-1) + 1(4) = 0. This is the elements of R1 multiplied by the cofactors of R2, which equals a determinant with R2 replaced by R1 - two identical rows - so it is 0.",
+          "s": [
+            [
+              "Finds A21 = -2, A22 = -1, A23 = 4",
+              1
+            ],
+            [
+              "Computes the sum as 0",
+              1
+            ],
+            [
+              "Explains: elements of one row with cofactors of another row always sum to 0",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Evaluate",
+          "d": "Hard",
+          "t": "short_answer",
+          "m": 2,
+          "q": "To evaluate |[[5, 3, 8], [2, 0, 1], [1, 2, 3]]| along R2, a student computes 2 M21 + 0 M22 + 1 M23, using minors instead of cofactors. Will the answer be correct? Explain.",
+          "a": "No. M21 = -7 and M23 = 7, so the student gets 2(-7) + 0 + 1(7) = -7. The correct value uses cofactors with signs -, +, - along R2: 2(7) + 0 + 1(-7) = 7. Ignoring (-1)^(i+j) flips the result here.",
+          "s": [
+            [
+              "States the method is wrong because the signs (-1)^(i+j) are ignored",
+              1
+            ],
+            [
+              "Shows the student's -7 against the correct 7",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Create",
+          "d": "Hardest",
+          "t": "long_answer",
+          "m": 3,
+          "q": "Write a 3 x 3 determinant whose second row is (0, 0, 2) and whose value is -6. Verify the value using cofactors of the second row.",
+          "a": "For example |[[1, 2, 0], [0, 0, 2], [0, 3, 1]]|. Along R2 only a23 = 2 contributes: A23 = (-1)^5 |[[1, 2], [0, 3]]| = -(3 - 0) = -3, so the value is 2(-3) = -6. (Any valid example is acceptable.)",
+          "s": [
+            [
+              "Determinant has second row (0, 0, 2)",
+              1
+            ],
+            [
+              "Finds A23 with the correct negative sign",
+              1
+            ],
+            [
+              "Value comes out to exactly -6",
+              1
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "code": "C12M-4.5",
+      "name": "Adjoint of a matrix, singular matrices and determinant results",
+      "description": "Forming adj A as the transpose of the cofactor matrix (including the 2 x 2 shortcut), the result A(adj A) = (adj A)A = |A| I, singular and non-singular matrices, |AB| = |A||B| and |adj A| = |A|^(n-1).",
+      "idea": "The adjoint collects all the cofactors of A, transposed, so that multiplying it with A gives |A| on the diagonal and 0 elsewhere; whether |A| is zero splits matrices into singular and non-singular.",
+      "rule": "adj A = transpose of [A_ij]. A(adj A) = (adj A)A = |A| I. A is singular if |A| = 0 and non-singular if |A| != 0. |AB| = |A||B|. For order n, |adj A| = |A|^(n-1). For [[a, b], [c, d]], adj A = [[d, -b], [-c, a]].",
+      "example": "A = [[2, 3], [1, 4]]: A11 = 4, A12 = -1, A21 = -3, A22 = 2, so adj A = [[4, -3], [-1, 2]] (swap the diagonal, change the signs of the other two).",
+      "difficulty_base": "Hard",
+      "questions": [
+        {
+          "b": "Remember",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "The adjoint of a square matrix A is defined as",
+          "a": "the transpose of the matrix of cofactors of A",
+          "o": [
+            "the transpose of the matrix of cofactors of A",
+            "the matrix of cofactors of A, not transposed",
+            "the transpose of A",
+            "the matrix of minors of A"
+          ]
+        },
+        {
+          "b": "Remember",
+          "d": "Easy",
+          "t": "fill_blank",
+          "m": 1,
+          "q": "A square matrix A is called singular if |A| = ____.",
+          "a": "0"
+        },
+        {
+          "b": "Remember",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "For any square matrix A of order n, A(adj A) is equal to",
+          "a": "|A| I",
+          "o": [
+            "|A| I",
+            "I",
+            "|A|^n I",
+            "O"
+          ]
+        },
+        {
+          "b": "Remember",
+          "d": "Hard",
+          "t": "mcq",
+          "m": 1,
+          "q": "Which of the following is NOT true for square matrices A and B of the same order n?",
+          "a": "|adj A| = |A|^n",
+          "o": [
+            "|adj A| = |A|^n",
+            "|AB| = |A||B|",
+            "A(adj A) = (adj A)A",
+            "If A and B are non-singular, then AB is non-singular"
+          ],
+          "rev": true
+        },
+        {
+          "b": "Understand",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "The adjoint of A = [[2, 3], [1, 4]] is",
+          "a": "[[4, -3], [-1, 2]]",
+          "o": [
+            "[[4, -3], [-1, 2]]",
+            "[[4, -1], [-3, 2]]",
+            "[[4, 3], [1, 2]]",
+            "[[2, -3], [-1, 4]]"
+          ]
+        },
+        {
+          "b": "Understand",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "Which of the following matrices is singular?",
+          "a": "[[1, 2], [4, 8]]",
+          "o": [
+            "[[1, 2], [4, 8]]",
+            "[[1, 2], [3, 4]]",
+            "[[2, 3], [1, 4]]",
+            "[[1, 0], [0, 1]]"
+          ]
+        },
+        {
+          "b": "Understand",
+          "d": "Easy",
+          "t": "short_answer",
+          "m": 2,
+          "q": "A and B are square matrices of order 3 with |A| = 2 and |B| = -3. Find |AB|.",
+          "a": "|AB| = |A||B| = 2 x (-3) = -6.",
+          "s": [
+            [
+              "Uses |AB| = |A||B|",
+              1
+            ],
+            [
+              "Gets -6",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Understand",
+          "d": "Hard",
+          "t": "mcq",
+          "m": 1,
+          "q": "If A is a non-singular matrix of order 3 and |A| = 4, then |adj A| is",
+          "a": "16",
+          "o": [
+            "16",
+            "4",
+            "64",
+            "12"
+          ]
+        },
+        {
+          "b": "Understand",
+          "d": "Hard",
+          "t": "mcq",
+          "m": 1,
+          "q": "For A = [[1, 2], [3, 4]], the product (adj A)A is",
+          "a": "[[-2, 0], [0, -2]]",
+          "o": [
+            "[[-2, 0], [0, -2]]",
+            "[[1, 0], [0, 1]]",
+            "[[2, 0], [0, 2]]",
+            "[[4, -2], [-3, 1]]"
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Easy",
+          "t": "fill_blank",
+          "m": 1,
+          "q": "The adjoint of [[1, 2], [3, 4]] is ____.",
+          "a": "[[4, -2], [-3, 1]]"
+        },
+        {
+          "b": "Apply",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "For which value of x is the matrix [[x, 2], [3, 6]] singular?",
+          "a": "1",
+          "o": [
+            "1",
+            "-1",
+            "2",
+            "0"
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Hard",
+          "t": "long_answer",
+          "m": 4,
+          "q": "Find adj A for A = [[1, -1, 2], [2, 3, 5], [-2, 0, 1]].",
+          "a": "Cofactors: A11 = 3, A12 = -12, A13 = 6; A21 = 1, A22 = 5, A23 = 2; A31 = -11, A32 = -1, A33 = 5. adj A = transpose of the cofactor matrix = [[3, 1, -11], [-12, 5, -1], [6, 2, 5]].",
+          "s": [
+            [
+              "Cofactors of row 1 correct (3, -12, 6)",
+              1
+            ],
+            [
+              "Cofactors of row 2 correct (1, 5, 2)",
+              1
+            ],
+            [
+              "Cofactors of row 3 correct (-11, -1, 5)",
+              1
+            ],
+            [
+              "Transposes to give adj A = [[3, 1, -11], [-12, 5, -1], [6, 2, 5]]",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Hard",
+          "t": "mcq",
+          "m": 1,
+          "q": "If A and B are square matrices of order 2 with |A| = 3 and |B| = 2, then |2AB| is",
+          "a": "24",
+          "o": [
+            "24",
+            "12",
+            "48",
+            "6"
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Hard",
+          "t": "mcq",
+          "m": 1,
+          "q": "For A = [[2, 3], [1, 4]], the value of |adj A| is",
+          "a": "5",
+          "o": [
+            "5",
+            "25",
+            "1/5",
+            "-5"
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Hardest",
+          "t": "long_answer",
+          "m": 3,
+          "q": "Verify that A(adj A) = (adj A)A = |A| I for A = [[2, 3], [-4, -6]].",
+          "a": "|A| = 2(-6) - 3(-4) = -12 + 12 = 0. adj A = [[-6, -3], [4, 2]]. A(adj A) = [[2(-6) + 3(4), 2(-3) + 3(2)], [-4(-6) + (-6)(4), -4(-3) + (-6)(2)]] = [[0, 0], [0, 0]]. (adj A)A = [[-6(2) + (-3)(-4), -6(3) + (-3)(-6)], [4(2) + 2(-4), 4(3) + 2(-6)]] = [[0, 0], [0, 0]]. |A| I = 0 I = O. Hence verified.",
+          "s": [
+            [
+              "|A| = 0 and adj A = [[-6, -3], [4, 2]]",
+              1
+            ],
+            [
+              "A(adj A) = O",
+              1
+            ],
+            [
+              "(adj A)A = O and both equal |A| I = O",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Analyse",
+          "d": "Hard",
+          "t": "assertion_reason",
+          "m": 1,
+          "q": "Assertion (A): The matrix [[1, 2], [4, 8]] is singular. Reason (R): A square matrix is singular if its determinant is zero.",
+          "a": "Both A and R are true, and R is the correct explanation of A",
+          "o": [
+            "Both A and R are true, and R is the correct explanation of A",
+            "Both A and R are true, but R is not the correct explanation of A",
+            "A is true, R is false",
+            "A is false, R is true"
+          ]
+        },
+        {
+          "b": "Analyse",
+          "d": "Hard",
+          "t": "multi_statement",
+          "m": 1,
+          "q": "Consider these statements. (I) For a 2 x 2 matrix A, adj A is obtained by interchanging a12 and a21 and changing the signs of a11 and a22. (II) A(adj A) = (adj A)A for every square matrix A. Which is or are correct?",
+          "a": "Only II",
+          "o": [
+            "Only II",
+            "Only I",
+            "Both I and II",
+            "Neither I nor II"
+          ]
+        },
+        {
+          "b": "Analyse",
+          "d": "Hardest",
+          "t": "long_answer",
+          "m": 3,
+          "q": "For A = [[1, 3, 3], [1, 4, 3], [1, 3, 4]], use a result about |adj A| to find |adj A| without first finding adj A. Then check your answer using adj A = [[7, -3, -3], [-1, 1, 0], [-1, 0, 1]].",
+          "a": "|A| = 1(16 - 9) - 3(4 - 3) + 3(3 - 4) = 7 - 3 - 3 = 1. For order 3, |adj A| = |A|^(3-1) = 1^2 = 1. Check: |adj A| = 7(1 - 0) - (-3)(-1 - 0) + (-3)(0 + 1) = 7 - 3 - 3 = 1. Both agree.",
+          "s": [
+            [
+              "Finds |A| = 1",
+              1
+            ],
+            [
+              "Uses |adj A| = |A|^(n-1) with n = 3 to get 1",
+              1
+            ],
+            [
+              "Evaluates the given adj A directly as 1 and confirms agreement",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Evaluate",
+          "d": "Hard",
+          "t": "short_answer",
+          "m": 2,
+          "q": "A student says: 'Since |AB| = |A||B|, if |AB| = 0 then A and B must both be singular.' Evaluate this claim.",
+          "a": "Wrong. |A||B| = 0 only needs one factor to be zero. For example A = I (|A| = 1) and B = [[1, 2], [2, 4]] (|B| = 0) give |AB| = 0 with A non-singular. At least one of A, B is singular, not necessarily both.",
+          "s": [
+            [
+              "States the claim is wrong: only at least one must be singular",
+              1
+            ],
+            [
+              "Gives a valid counterexample or clear reasoning from |A||B| = 0",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Create",
+          "d": "Hardest",
+          "t": "long_answer",
+          "m": 3,
+          "q": "Construct (a) a 2 x 2 singular matrix with no zero entries, and (b) a 2 x 2 matrix with determinant 1. For (b), write its adjoint.",
+          "a": "(a) For example [[1, 2], [2, 4]]: 4 - 4 = 0. (b) For example A = [[2, 3], [1, 2]]: |A| = 4 - 3 = 1, adj A = [[2, -3], [-1, 2]]. (Any valid examples are acceptable.)",
+          "s": [
+            [
+              "Valid singular matrix with no zero entries, with working",
+              1
+            ],
+            [
+              "Valid matrix with determinant 1, with working",
+              1
+            ],
+            [
+              "Correct adjoint of the matrix in (b)",
+              1
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "code": "C12M-4.6",
+      "name": "Inverse of a matrix using the adjoint",
+      "description": "The condition for a square matrix to be invertible, finding A^(-1) = (1/|A|) adj A for 2 x 2 and 3 x 3 matrices, results such as (AB)^(-1) = B^(-1) A^(-1) and det(A^(-1)) = 1/det A, and finding A^(-1) from a matrix equation such as A^2 - 4A + I = O.",
+      "idea": "A square matrix has an inverse exactly when it is non-singular; then dividing the adjoint by the determinant gives the inverse, because A(adj A) = |A| I.",
+      "rule": "A is invertible if and only if |A| != 0, and then A^(-1) = (1/|A|) adj A. (AB)^(-1) = B^(-1) A^(-1), (A^(-1))^(-1) = A, det(A^(-1)) = 1/det(A). If A^2 + aA + bI = O with |A| != 0, multiply by A^(-1) to express A^(-1) in terms of A and I.",
+      "example": "A = [[2, 3], [1, 2]] satisfies A^2 - 4A + I = O. Multiplying by A^(-1): A - 4I = -A^(-1), so A^(-1) = 4I - A = [[2, -3], [-1, 2]].",
+      "difficulty_base": "Hard",
+      "questions": [
+        {
+          "b": "Remember",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "If A is a square matrix with |A| != 0, then A^(-1) is equal to",
+          "a": "(1/|A|) adj A",
+          "o": [
+            "(1/|A|) adj A",
+            "|A| adj A",
+            "(1/|A|) A^T",
+            "adj A"
+          ]
+        },
+        {
+          "b": "Remember",
+          "d": "Easy",
+          "t": "fill_blank",
+          "m": 1,
+          "q": "A square matrix A is invertible if and only if A is ____.",
+          "a": "non-singular"
+        },
+        {
+          "b": "Remember",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "If A and B are invertible matrices of the same order, then (AB)^(-1) is equal to",
+          "a": "B^(-1) A^(-1)",
+          "o": [
+            "B^(-1) A^(-1)",
+            "A^(-1) B^(-1)",
+            "AB",
+            "BA"
+          ]
+        },
+        {
+          "b": "Remember",
+          "d": "Hard",
+          "t": "mcq",
+          "m": 1,
+          "q": "For which of these matrices does an inverse NOT exist?",
+          "a": "[[2, 4], [1, 2]]",
+          "o": [
+            "[[2, 4], [1, 2]]",
+            "[[2, 5], [3, 2]]",
+            "[[1, 0], [0, 2]]",
+            "[[3, 1], [-1, 2]]"
+          ],
+          "rev": true
+        },
+        {
+          "b": "Understand",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "If A is an invertible matrix of order 2, then det(A^(-1)) is equal to",
+          "a": "1/det(A)",
+          "o": [
+            "1/det(A)",
+            "det(A)",
+            "1",
+            "0"
+          ]
+        },
+        {
+          "b": "Understand",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "Why can a singular matrix A not have an inverse?",
+          "a": "If AB = I then |A||B| = |I| = 1, which is impossible when |A| = 0",
+          "o": [
+            "If AB = I then |A||B| = |I| = 1, which is impossible when |A| = 0",
+            "Because the adjoint of a singular matrix is always the zero matrix",
+            "Because a singular matrix is not a square matrix",
+            "Because a singular matrix always has a zero entry"
+          ]
+        },
+        {
+          "b": "Understand",
+          "d": "Easy",
+          "t": "fill_blank",
+          "m": 1,
+          "q": "For an invertible matrix A, (A^(-1))^(-1) = ____.",
+          "a": "A"
+        },
+        {
+          "b": "Understand",
+          "d": "Hard",
+          "t": "mcq",
+          "m": 1,
+          "q": "The inverse of A = [[2, -2], [4, 3]] is",
+          "a": "(1/14) [[3, 2], [-4, 2]]",
+          "o": [
+            "(1/14) [[3, 2], [-4, 2]]",
+            "(1/14) [[3, -2], [4, 2]]",
+            "(-1/2) [[3, 2], [-4, 2]]",
+            "14 [[3, 2], [-4, 2]]"
+          ]
+        },
+        {
+          "b": "Understand",
+          "d": "Hard",
+          "t": "mcq",
+          "m": 1,
+          "q": "A = [[2, 3], [1, 2]] satisfies A^2 - 4A + I = O. Using this equation, A^(-1) is equal to",
+          "a": "4I - A",
+          "o": [
+            "4I - A",
+            "A - 4I",
+            "4A - I",
+            "A^2 - 4A"
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Easy",
+          "t": "fill_blank",
+          "m": 1,
+          "q": "If A = [[3, 0], [0, 2]], then A^(-1) = ____.",
+          "a": "[[1/3, 0], [0, 1/2]]"
+        },
+        {
+          "b": "Apply",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "The inverse of A = [[-1, 5], [-3, 2]] is",
+          "a": "(1/13) [[2, -5], [3, -1]]",
+          "o": [
+            "(1/13) [[2, -5], [3, -1]]",
+            "(1/13) [[2, 5], [-3, -1]]",
+            "(-1/17) [[2, -5], [3, -1]]",
+            "(1/13) [[2, 3], [-5, -1]]"
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Hard",
+          "t": "long_answer",
+          "m": 4,
+          "q": "Find the inverse of A = [[1, 2, 3], [0, 2, 4], [0, 0, 5]].",
+          "a": "|A| = 1(10 - 0) - 2(0 - 0) + 3(0 - 0) = 10. Cofactors: A11 = 10, A12 = 0, A13 = 0; A21 = -10, A22 = 5, A23 = 0; A31 = 2, A32 = -4, A33 = 2. adj A = [[10, -10, 2], [0, 5, -4], [0, 0, 2]]. A^(-1) = (1/10) [[10, -10, 2], [0, 5, -4], [0, 0, 2]].",
+          "s": [
+            [
+              "|A| = 10",
+              1
+            ],
+            [
+              "All nine cofactors correct",
+              1
+            ],
+            [
+              "adj A as the transpose of the cofactor matrix",
+              1
+            ],
+            [
+              "A^(-1) = (1/10) adj A stated correctly",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Hard",
+          "t": "mcq",
+          "m": 1,
+          "q": "A = [[3, 1], [-1, 2]] satisfies A^2 - 5A + 7I = O. Hence A^(-1) is",
+          "a": "(1/7) [[2, -1], [1, 3]]",
+          "o": [
+            "(1/7) [[2, -1], [1, 3]]",
+            "(1/7) [[-2, 1], [-1, -3]]",
+            "[[2, -1], [1, 3]]",
+            "(1/7) [[2, 1], [-1, 3]]"
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Hard",
+          "t": "short_answer",
+          "m": 2,
+          "q": "If A^(-1) = [[2, -1], [-1, 1]] and B^(-1) = [[1, 0], [1, 1]], find (AB)^(-1).",
+          "a": "(AB)^(-1) = B^(-1) A^(-1) = [[1, 0], [1, 1]] [[2, -1], [-1, 1]] = [[2, -1], [1, 0]].",
+          "s": [
+            [
+              "Uses (AB)^(-1) = B^(-1) A^(-1) in that order",
+              1
+            ],
+            [
+              "Multiplies correctly to get [[2, -1], [1, 0]]",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Hardest",
+          "t": "long_answer",
+          "m": 4,
+          "q": "For A = [[3, 2], [1, 1]], find numbers a and b such that A^2 + aA + bI = O. Hence find A^(-1).",
+          "a": "A^2 = [[11, 8], [4, 3]]. A^2 + aA + bI = [[11 + 3a + b, 8 + 2a], [4 + a, 3 + a + b]] = O gives a = -4 and then b = 1. So A^2 - 4A + I = O. Multiplying by A^(-1) (|A| = 1 != 0): A - 4I + A^(-1) = O, so A^(-1) = 4I - A = [[1, -2], [-1, 3]].",
+          "s": [
+            [
+              "Finds A^2 = [[11, 8], [4, 3]]",
+              1
+            ],
+            [
+              "Solves to a = -4, b = 1",
+              1
+            ],
+            [
+              "Multiplies by A^(-1), justified by |A| != 0",
+              1
+            ],
+            [
+              "A^(-1) = 4I - A = [[1, -2], [-1, 3]]",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Analyse",
+          "d": "Hard",
+          "t": "assertion_reason",
+          "m": 1,
+          "q": "Assertion (A): The matrix [[1, 2], [3, 4]] has an inverse. Reason (R): If A and B are invertible matrices of the same order, then (AB)^(-1) = B^(-1) A^(-1).",
+          "a": "Both A and R are true, but R is not the correct explanation of A",
+          "o": [
+            "Both A and R are true, but R is not the correct explanation of A",
+            "Both A and R are true, and R is the correct explanation of A",
+            "A is true, R is false",
+            "A is false, R is true"
+          ]
+        },
+        {
+          "b": "Analyse",
+          "d": "Hard",
+          "t": "multi_statement",
+          "m": 1,
+          "q": "Consider these statements. (I) If A is an invertible matrix of order 2, then det(A^(-1)) = 1/det(A). (II) If a square matrix A satisfies A^2 - 4A + I = O, then A^(-1) = 4I - A. Which is or are correct?",
+          "a": "Both I and II",
+          "o": [
+            "Both I and II",
+            "Only I",
+            "Only II",
+            "Neither I nor II"
+          ]
+        },
+        {
+          "b": "Analyse",
+          "d": "Hardest",
+          "t": "long_answer",
+          "m": 3,
+          "q": "A student finds the inverse of A = [[2, 3], [1, 4]] as (1/5) [[4, -1], [-3, 2]]. Identify the error, give the correct inverse, and verify it by multiplication.",
+          "a": "|A| = 8 - 3 = 5 is correct, and the cofactor matrix is [[4, -1], [-3, 2]], but the student forgot to transpose it. adj A = [[4, -3], [-1, 2]], so A^(-1) = (1/5) [[4, -3], [-1, 2]]. Check: A A^(-1) = (1/5) [[8 - 3, -6 + 6], [4 - 4, -3 + 8]] = (1/5) [[5, 0], [0, 5]] = I.",
+          "s": [
+            [
+              "Identifies the missing transpose (cofactor matrix used instead of adj A)",
+              1
+            ],
+            [
+              "Gives A^(-1) = (1/5) [[4, -3], [-1, 2]]",
+              1
+            ],
+            [
+              "Verifies A A^(-1) = I",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Evaluate",
+          "d": "Hard",
+          "t": "short_answer",
+          "m": 2,
+          "q": "A student claims: 'Every 2 x 2 matrix with all entries non-zero has an inverse.' Evaluate the claim.",
+          "a": "False. A has an inverse only if |A| != 0. For example [[1, 2], [2, 4]] has no zero entry but |A| = 4 - 4 = 0, so it is singular and has no inverse.",
+          "s": [
+            [
+              "States the claim is false, citing the condition |A| != 0",
+              1
+            ],
+            [
+              "Gives a valid singular counterexample with no zero entries",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Create",
+          "d": "Hardest",
+          "t": "long_answer",
+          "m": 3,
+          "q": "Construct a 2 x 2 non-singular matrix A with integer entries, no entry zero, whose inverse also has only integer entries. Find A^(-1) and verify that A A^(-1) = I.",
+          "a": "Choose |A| = 1 (or -1), e.g. A = [[2, 1], [1, 1]]: |A| = 1, adj A = [[1, -1], [-1, 2]], A^(-1) = [[1, -1], [-1, 2]]. A A^(-1) = [[2 - 1, -2 + 2], [1 - 1, -1 + 2]] = [[1, 0], [0, 1]] = I. (Any valid example is acceptable.)",
+          "s": [
+            [
+              "Gives a valid matrix with |A| = 1 or -1 and no zero entry",
+              1
+            ],
+            [
+              "Finds A^(-1) correctly",
+              1
+            ],
+            [
+              "Verifies A A^(-1) = I",
+              1
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "code": "C12M-4.7",
+      "name": "Consistency of linear systems and the matrix method",
+      "description": "Writing a system of linear equations in two or three variables as AX = B, deciding consistency from |A| and (adj A)B, and solving a system with a unique solution by X = A^(-1)B, including simple word problems.",
+      "idea": "A system of linear equations is one matrix equation AX = B; when the coefficient matrix A is non-singular, premultiplying by A^(-1) gives the unique solution.",
+      "rule": "If |A| != 0: unique solution X = A^(-1)B (consistent). If |A| = 0 and (adj A)B != O: no solution (inconsistent). If |A| = 0 and (adj A)B = O: the system may be consistent or inconsistent.",
+      "example": "2x + 5y = 1, 3x + 2y = 7: A = [[2, 5], [3, 2]], |A| = -11, A^(-1) = (-1/11) [[2, -5], [-3, 2]], so X = A^(-1)B gives x = 3, y = -1.",
+      "difficulty_base": "Hard",
+      "questions": [
+        {
+          "b": "Remember",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "A system of linear equations is said to be consistent if",
+          "a": "its solution (one or more) exists",
+          "o": [
+            "its solution (one or more) exists",
+            "it has no solution",
+            "its coefficient matrix is singular",
+            "it has exactly two equations"
+          ]
+        },
+        {
+          "b": "Remember",
+          "d": "Easy",
+          "t": "fill_blank",
+          "m": 1,
+          "q": "If |A| != 0, the unique solution of the matrix equation AX = B is X = ____.",
+          "a": "A^(-1) B"
+        },
+        {
+          "b": "Remember",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "Solving AX = B in the form X = A^(-1)B is called",
+          "a": "the matrix method",
+          "o": [
+            "the matrix method",
+            "the elimination method",
+            "the substitution method",
+            "the cross-multiplication method"
+          ]
+        },
+        {
+          "b": "Remember",
+          "d": "Hard",
+          "t": "mcq",
+          "m": 1,
+          "q": "For the matrix equation AX = B of a square system, which statement is NOT correct?",
+          "a": "If |A| = 0, the system always has infinitely many solutions",
+          "o": [
+            "If |A| = 0, the system always has infinitely many solutions",
+            "If |A| != 0, the system has a unique solution",
+            "If |A| = 0 and (adj A)B != O, the system has no solution",
+            "If |A| = 0 and (adj A)B = O, the system may be consistent or inconsistent"
+          ],
+          "rev": true
+        },
+        {
+          "b": "Understand",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "When the system 2x + 5y = 1, 3x + 2y = 7 is written as AX = B, the matrix A is",
+          "a": "[[2, 5], [3, 2]]",
+          "o": [
+            "[[2, 5], [3, 2]]",
+            "[[2, 3], [5, 2]]",
+            "[[1], [7]]",
+            "[[2, 5, 1], [3, 2, 7]]"
+          ]
+        },
+        {
+          "b": "Understand",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "In solving AX = B, why do we premultiply both sides by A^(-1) rather than postmultiply?",
+          "a": "Matrix multiplication is not commutative, and A^(-1)(AX) = (A^(-1)A)X = IX = X needs A^(-1) on the left",
+          "o": [
+            "Matrix multiplication is not commutative, and A^(-1)(AX) = (A^(-1)A)X = IX = X needs A^(-1) on the left",
+            "Because A^(-1) exists only on the left of A",
+            "Because B is a square matrix",
+            "It makes no difference; X A^(-1) gives the same result"
+          ]
+        },
+        {
+          "b": "Understand",
+          "d": "Easy",
+          "t": "short_answer",
+          "m": 2,
+          "q": "Examine the consistency of the system x + 2y = 2, 2x + 3y = 3.",
+          "a": "A = [[1, 2], [2, 3]], |A| = 3 - 4 = -1 != 0. So A is non-singular, the system has a unique solution and is consistent.",
+          "s": [
+            [
+              "Finds |A| = -1",
+              1
+            ],
+            [
+              "Concludes non-zero determinant means a unique solution, so consistent",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Understand",
+          "d": "Hard",
+          "t": "mcq",
+          "m": 1,
+          "q": "For the system x + 3y = 5, 2x + 6y = 8, which conclusion is correct?",
+          "a": "Inconsistent, since |A| = 0 and (adj A)B != O",
+          "o": [
+            "Inconsistent, since |A| = 0 and (adj A)B != O",
+            "Consistent with a unique solution, since |A| != 0",
+            "Consistent with infinitely many solutions, since |A| = 0",
+            "Inconsistent, since |A| != 0"
+          ]
+        },
+        {
+          "b": "Understand",
+          "d": "Hard",
+          "t": "mcq",
+          "m": 1,
+          "q": "For a system AX = B with |A| = 0, what must be computed next to decide whether the system is inconsistent?",
+          "a": "(adj A)B",
+          "o": [
+            "(adj A)B",
+            "A^(-1)B",
+            "|B|",
+            "AB"
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "Solving 2x - y = 5, x + y = 4 by the matrix method gives",
+          "a": "x = 3, y = 1",
+          "o": [
+            "x = 3, y = 1",
+            "x = 1, y = 3",
+            "x = -3, y = -1",
+            "x = 3, y = -1"
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Easy",
+          "t": "fill_blank",
+          "m": 1,
+          "q": "For the system 5x + 2y = 4, 7x + 3y = 5 written as AX = B, |A| = ____.",
+          "a": "1"
+        },
+        {
+          "b": "Apply",
+          "d": "Hard",
+          "t": "short_answer",
+          "m": 3,
+          "q": "Solve 5x + 2y = 4, 7x + 3y = 5 by the matrix method.",
+          "a": "A = [[5, 2], [7, 3]], |A| = 15 - 14 = 1, A^(-1) = [[3, -2], [-7, 5]]. X = A^(-1)B = [[3(4) - 2(5)], [-7(4) + 5(5)]] = [[2], [-3]]. So x = 2, y = -3.",
+          "s": [
+            [
+              "|A| = 1, so A^(-1) exists",
+              1
+            ],
+            [
+              "A^(-1) = [[3, -2], [-7, 5]]",
+              1
+            ],
+            [
+              "X = A^(-1)B gives x = 2, y = -3",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Hard",
+          "t": "mcq",
+          "m": 1,
+          "q": "For the system 3x - y - 2z = 2, 2y - z = -1, 3x - 5y = 3, |A| = 0 and (adj A)B = [[-5], [-3], [-6]]. The system is",
+          "a": "inconsistent, since (adj A)B != O",
+          "o": [
+            "inconsistent, since (adj A)B != O",
+            "consistent with a unique solution",
+            "consistent, since |A| = 0",
+            "consistent with infinitely many solutions, since (adj A)B != O"
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Hard",
+          "t": "mcq",
+          "m": 1,
+          "q": "For x + y + z = 6, y + 3z = 11, x - 2y + z = 0, A^(-1) = (1/9) [[7, -3, 2], [3, 0, -3], [-1, 3, 1]]. Using X = A^(-1)B, the value of z is",
+          "a": "3",
+          "o": [
+            "3",
+            "1",
+            "2",
+            "27"
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Hardest",
+          "t": "long_answer",
+          "m": 4,
+          "q": "Solve by the matrix method: x - y + z = 4, 2x + y - 3z = 0, x + y + z = 2.",
+          "a": "A = [[1, -1, 1], [2, 1, -3], [1, 1, 1]], |A| = 1(1 + 3) + 1(2 + 3) + 1(2 - 1) = 10. adj A = [[4, 2, 2], [-5, 0, 5], [1, -2, 3]]. X = (1/10) adj A B with B = [[4], [0], [2]] = (1/10) [[16 + 0 + 4], [-20 + 0 + 10], [4 + 0 + 6]] = [[2], [-1], [1]]. So x = 2, y = -1, z = 1.",
+          "s": [
+            [
+              "|A| = 10, non-zero so unique solution",
+              1
+            ],
+            [
+              "adj A correct",
+              1
+            ],
+            [
+              "Forms X = (1/|A|)(adj A)B",
+              1
+            ],
+            [
+              "x = 2, y = -1, z = 1",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Analyse",
+          "d": "Hard",
+          "t": "assertion_reason",
+          "m": 1,
+          "q": "Assertion (A): The system 2x - y = 5, x + y = 4 is consistent. Reason (R): A system AX = B whose coefficient matrix has |A| = 0 is always inconsistent.",
+          "a": "A is true, R is false",
+          "o": [
+            "A is true, R is false",
+            "Both A and R are true, and R is the correct explanation of A",
+            "Both A and R are true, but R is not the correct explanation of A",
+            "A is false, R is true"
+          ]
+        },
+        {
+          "b": "Analyse",
+          "d": "Hard",
+          "t": "multi_statement",
+          "m": 1,
+          "q": "Consider these statements. (I) If |A| = 0 and (adj A)B != O, then the system AX = B has no solution. (II) If |A| = 0, the solution of AX = B can still be found as X = A^(-1)B. Which is or are correct?",
+          "a": "Only I",
+          "o": [
+            "Only I",
+            "Only II",
+            "Both I and II",
+            "Neither I nor II"
+          ]
+        },
+        {
+          "b": "Analyse",
+          "d": "Hardest",
+          "t": "long_answer",
+          "m": 3,
+          "q": "Show that the system x + 3y = 5, 2x + 6y = 8 has no solution using |A| and (adj A)B, and explain what this means for the two equations.",
+          "a": "A = [[1, 3], [2, 6]], |A| = 6 - 6 = 0. adj A = [[6, -3], [-2, 1]], (adj A)B = [[6(5) - 3(8)], [-2(5) + 1(8)]] = [[6], [-2]] != O, so the system is inconsistent. The left side of the second equation is twice the first, but 8 is not twice 5, so the two equations contradict each other.",
+          "s": [
+            [
+              "|A| = 0",
+              1
+            ],
+            [
+              "(adj A)B = [[6], [-2]] != O, so inconsistent",
+              1
+            ],
+            [
+              "Interprets: LHS doubled but RHS not, so no common solution",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Evaluate",
+          "d": "Hard",
+          "t": "short_answer",
+          "m": 2,
+          "q": "Solving AX = B with |A| = 0, a student writes: 'A^(-1) does not exist, so the system has no solution.' Evaluate this reasoning.",
+          "a": "Incomplete. When |A| = 0 the next step is to compute (adj A)B: if (adj A)B != O there is no solution, but if (adj A)B = O the system may still be consistent (for example x + y = 2, 2x + 2y = 4 has many solutions). The absence of A^(-1) alone does not decide it.",
+          "s": [
+            [
+              "States that |A| = 0 alone does not decide consistency; (adj A)B must be checked",
+              1
+            ],
+            [
+              "Notes that with (adj A)B = O the system may be consistent, ideally with an example",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Create",
+          "d": "Hardest",
+          "t": "long_answer",
+          "m": 3,
+          "q": "Make up a system of two linear equations in x and y whose solution is x = 2, y = 1 and whose coefficient matrix A has |A| != 0. Solve it by the matrix method to check.",
+          "a": "For example x + y = 3, x - y = 1. A = [[1, 1], [1, -1]], |A| = -2 != 0, adj A = [[-1, -1], [-1, 1]], A^(-1) = (-1/2) [[-1, -1], [-1, 1]]. X = (-1/2) [[-3 - 1], [-3 + 1]] = (-1/2) [[-4], [-2]] = [[2], [1]]. (Any valid system is acceptable.)",
+          "s": [
+            [
+              "System is satisfied by x = 2, y = 1",
+              1
+            ],
+            [
+              "|A| != 0 shown",
+              1
+            ],
+            [
+              "Matrix-method solution recovers x = 2, y = 1",
+              1
+            ]
+          ]
+        }
+      ]
+    }
+  ]
+}

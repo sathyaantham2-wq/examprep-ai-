@@ -1,0 +1,1996 @@
+{
+ "subject": {
+  "code": "MATH12",
+  "name": "Mathematics",
+  "board": "CBSE",
+  "class": 12
+ },
+ "source": {
+  "publisher": "NCERT",
+  "title": "Mathematics Part I",
+  "edition": "Textbook for Class XII Part I, Reprint 2026-27",
+  "year": 2026
+ },
+ "chapter": {
+  "part": "I",
+  "chapter_no": 2,
+  "name": "Inverse Trigonometric Functions",
+  "blurb": "Since an inverse exists only for a one-one and onto function, and the trigonometric functions are neither over their natural domains, the chapter restricts each of the six trigonometric functions to an interval on which it is bijective, defining sin^(-1), cos^(-1), cosec^(-1), sec^(-1), tan^(-1) and cot^(-1) with their branches, principal value branches and graphs (as reflections in the line y = x). It then finds principal values, uses results such as sin(sin^(-1) x) = x and sin^(-1)(sin x) = x within the principal branch, and simplifies, proves and solves inverse trigonometric expressions by substitutions such as x = sin theta, x = tan theta and x = sec theta.",
+  "source_code": "lemh102",
+  "order_index": 2
+ },
+ "scope_in": [
+  {
+   "item": "Recall that a function has an inverse only if it is one-one and onto, that the inverse g of f : X -> Y has domain Y and range X, and that (f^(-1) o f)(x) = x and (f o f^(-1))(y) = y",
+   "pages": "18-19"
+  },
+  {
+   "item": "Explain why the trigonometric functions have no inverse over their natural domains, and how restricting the domain to an interval on which the function is one-one and onto gives an inverse",
+   "pages": "18-19"
+  },
+  {
+   "item": "Identify intervals that give branches of an inverse trigonometric function (e.g. [-3pi/2, -pi/2], [-pi/2, pi/2], [pi/2, 3pi/2] for sin^(-1); [-pi, 0], [0, pi], [pi, 2pi] for cos^(-1)) and pick out the principal value branch",
+   "pages": "19-25"
+  },
+  {
+   "item": "State the domain and principal value range of sin^(-1) ([-1, 1] -> [-pi/2, pi/2]) and cos^(-1) ([-1, 1] -> [0, pi]), and use y = sin^(-1) x <=> sin y = x",
+   "pages": "19-21, 25, 32"
+  },
+  {
+   "item": "State the domain and principal value range of cosec^(-1) (R - (-1, 1) -> [-pi/2, pi/2] - {0}), sec^(-1) (R - (-1, 1) -> [0, pi] - {pi/2}), tan^(-1) (R -> (-pi/2, pi/2)) and cot^(-1) (R -> (0, pi)), and explain each excluded point from where the original function is undefined",
+   "pages": "21-25, 32"
+  },
+  {
+   "item": "Describe the graph of an inverse trigonometric function as obtained from the original graph by interchanging the axes, i.e. as its reflection in the line y = x, with (a, b) on the original giving (b, a) on the inverse",
+   "pages": "19-20"
+  },
+  {
+   "item": "Distinguish sin^(-1) x from (sin x)^(-1) = 1/sin x (and similarly for the other functions), and know that with no branch mentioned the principal value branch is meant",
+   "pages": "26, 32"
+  },
+  {
+   "item": "Find the principal value of each inverse trigonometric function at standard values, including negative arguments, and evaluate sums and differences of such principal values (Examples 1-2, Exercise 2.1)",
+   "pages": "26-27"
+  },
+  {
+   "item": "Use sin(sin^(-1) x) = x for x in [-1, 1] and sin^(-1)(sin x) = x for x in [-pi/2, pi/2] (and similar results for the other functions) to evaluate expressions such as sin^(-1)(sin 3pi/5), cos^(-1)(cos 7pi/6), tan^(-1)(tan 3pi/4), by first rewriting the angle inside the principal range",
+   "pages": "27, 30-31"
+  },
+  {
+   "item": "Evaluate expressions that mix trigonometric and inverse trigonometric functions, e.g. tan^(-1)[2 cos(2 sin^(-1)(1/2))], tan(sin^(-1)(3/5) + cot^(-1)(3/2)), sin(tan^(-1) x)",
+   "pages": "29-31"
+  },
+  {
+   "item": "Write inverse trigonometric expressions in the simplest form, prove results and solve simple equations by substituting x = sin theta, cos theta, tan theta, sec theta (or a sin theta, a tan theta) and using Class XI trigonometric identities, checking that the resulting angle lies in the principal range (Examples 3-5, Exercise 2.2, Miscellaneous Exercise)",
+   "pages": "28-31"
+  }
+ ],
+ "scope_out": [
+  {
+   "item": "The standard list of properties quoted as ready-made formulas, e.g. sin^(-1)(-x) = -sin^(-1) x, cos^(-1)(-x) = pi - cos^(-1) x, sin^(-1) x + cos^(-1) x = pi/2, tan^(-1) x + cot^(-1) x = pi/2, sin^(-1)(1/x) = cosec^(-1) x, and the tan^(-1) x + tan^(-1) y and 2 tan^(-1) x formulas",
+   "reason": "This reprint's Section 2.3 (p. 27) states only sin(sin^(-1) x) = x and sin^(-1)(sin x) = x 'for suitable values of domain'; the summary (p. 32) lists nothing more. Older editions had these properties, so a model may wrongly assume them. Questions must be solvable from principal values or by substitution."
+  },
+  {
+   "item": "Determining exactly for which values of x a property or simplification is valid",
+   "reason": "The book says explicitly (p. 27): 'We will not go into the details of these values of x in the domain as this discussion goes beyond the scope of this textbook.' The interval is always given in the question."
+  },
+  {
+   "item": "Sketching or plotting graphs of inverse trigonometric functions, or reading their increasing/decreasing behaviour off a graph",
+   "reason": "Figures 2.1-2.6 are shown for observation only (pp. 20-25); no example or exercise asks for a graph. Only the reflection-in-y = x idea is in scope."
+  },
+  {
+   "item": "Derivatives and integrals of inverse trigonometric functions",
+   "reason": "The introduction (p. 18) only mentions that they 'serve to define many integrals'; calculus with these functions belongs to later chapters."
+  },
+  {
+   "item": "General solutions of trigonometric equations, or values of inverse functions on non-principal branches used in evaluation",
+   "reason": "All evaluations in the chapter use the principal value branch (Note 2, p. 26); equations in the Miscellaneous Exercise (p. 31) are solved for a single value within principal ranges."
+  },
+  {
+   "item": "Answers in degrees",
+   "reason": "Every range and answer in the chapter is in radian measure (pi/6, 2pi/3, ...)."
+  },
+  {
+   "item": "The historical note (Aryabhata, Bhaskara, Herschel's notation, Thales)",
+   "reason": "It is background reading on p. 33, not taught mathematics, and is not examined."
+  }
+ ],
+ "concepts": [
+  {
+   "code": "C12M-2.1",
+   "name": "Why inverses need restricted domains: branches and notation",
+   "description": "An inverse exists only for a one-one and onto function; the trigonometric functions are not one-one and onto over their natural domains, so their domains are restricted to intervals on which they are bijective. Each such interval gives a branch of the inverse function; the one used by default is the principal value branch. sin^(-1) x is not (sin x)^(-1) = 1/sin x.",
+   "idea": "Restrict a trigonometric function to an interval where it is one-one and onto, and it gets an inverse; different intervals give different branches.",
+   "rule": "If f : X -> Y is one-one and onto, its inverse g : Y -> X has domain Y and range X. Sine restricted to [-pi/2, pi/2] (or [pi/2, 3pi/2], ...) is one-one onto [-1, 1]; each interval gives a branch of sin^(-1). With no branch mentioned, the principal value branch is meant. (sin x)^(-1) = 1/sin x, which is different from sin^(-1) x.",
+   "example": "sin^(-1) : [-1, 1] -> [-pi/2, pi/2] is the principal value branch; the range [pi/2, 3pi/2] gives another branch (pp. 18-19, 26).",
+   "difficulty_base": "Easy",
+   "questions": [
+    {
+     "b": "Remember",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "According to Chapter 1, as recalled on p. 18, the inverse of a function f exists if f is",
+     "a": "one-one and onto",
+     "o": [
+      "one-one and onto",
+      "one-one only",
+      "onto only",
+      "defined for every real number"
+     ]
+    },
+    {
+     "b": "Remember",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "The book warns that sin^(-1) x should not be confused with (sin x)^(-1). What is (sin x)^(-1) equal to?",
+     "a": "1/sin x",
+     "o": [
+      "1/sin x",
+      "sin^(-1) x",
+      "sin(1/x)",
+      "cos x"
+     ]
+    },
+    {
+     "b": "Remember",
+     "d": "Easy",
+     "t": "fill_blank",
+     "m": 1,
+     "q": "Whenever no branch of an inverse trigonometric function is mentioned, we mean the ____ value branch of that function.",
+     "a": "principal"
+    },
+    {
+     "b": "Remember",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "rev": true,
+     "q": "On which of the following intervals is the sine function NOT one-one (so it can NOT serve as a branch for sin^(-1))?",
+     "a": "[0, pi]",
+     "o": [
+      "[0, pi]",
+      "[-pi/2, pi/2]",
+      "[pi/2, 3pi/2]",
+      "[-3pi/2, -pi/2]"
+     ]
+    },
+    {
+     "b": "Understand",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "Why do the trigonometric functions have no inverse over their natural domains?",
+     "a": "Their values repeat, so they are not one-one (and not onto R) over their natural domains",
+     "o": [
+      "Their values repeat, so they are not one-one (and not onto R) over their natural domains",
+      "They are not defined for negative real numbers",
+      "Their ranges contain only whole numbers",
+      "They are defined only for angles between 0 and pi/2"
+     ]
+    },
+    {
+     "b": "Understand",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "If g is the inverse of a one-one and onto function f : X -> Y, then the domain of g is",
+     "a": "Y, the range of f",
+     "o": [
+      "Y, the range of f",
+      "X, the domain of f",
+      "the set of all real numbers",
+      "the set of elements common to X and Y"
+     ]
+    },
+    {
+     "b": "Understand",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "When the domain of the sine function is restricted to [-pi/2, pi/2], it becomes one-one and onto with range",
+     "a": "[-1, 1]",
+     "o": [
+      "[-1, 1]",
+      "[0, 1]",
+      "R",
+      "[-pi/2, pi/2]"
+     ]
+    },
+    {
+     "b": "Understand",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "q": "Sine restricted to [pi/2, 3pi/2] is also one-one and onto [-1, 1]. When sin^(-1)(1/2) is written with no branch mentioned, which value is meant?",
+     "a": "pi/6, because the principal value branch with range [-pi/2, pi/2] is understood",
+     "o": [
+      "pi/6, because the principal value branch with range [-pi/2, pi/2] is understood",
+      "5pi/6, because 5pi/6 lies in [pi/2, 3pi/2] and sin(5pi/6) = 1/2",
+      "Either pi/6 or 5pi/6, whichever the student prefers",
+      "2, because sin^(-1)(1/2) means 1 divided by (1/2)"
+     ]
+    },
+    {
+     "b": "Understand",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "q": "Explain, in terms of one-one and onto, why cosine restricted to [0, pi] has an inverse, but cosine restricted to [-pi/2, pi/2] does not.",
+     "a": "On [0, pi], cosine is one-one and takes every value in [-1, 1] exactly once, so it is a bijection onto [-1, 1] and has an inverse. On [-pi/2, pi/2], cos(-a) = cos a, e.g. cos(-pi/3) = cos(pi/3) = 1/2, so it is not one-one; also it only takes values in [0, 1], so it is not onto [-1, 1]. Hence no inverse exists there.",
+     "s": [
+      [
+       "Shows cosine is one-one and onto [-1, 1] on [0, pi]",
+       1
+      ],
+      [
+       "Shows cosine fails on [-pi/2, pi/2], e.g. cos(-pi/3) = cos(pi/3), or that it misses negative values",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "If f : X -> Y is one-one and onto and f(2) = 5, then f^(-1)(5) equals",
+     "a": "2",
+     "o": [
+      "2",
+      "5",
+      "1/5",
+      "1/2"
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Easy",
+     "t": "fill_blank",
+     "m": 1,
+     "q": "Using the meaning (sin x)^(-1) = 1/sin x, the value of (sin(pi/6))^(-1) is ____.",
+     "a": "2"
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "q": "What is the value of (cos 0)^(-1) + cos^(-1)(1)?",
+     "a": "1",
+     "o": [
+      "1",
+      "0",
+      "2",
+      "pi/2"
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "q": "Which of the following intervals gives a branch of cos^(-1) other than the principal value branch?",
+     "a": "[pi, 2pi]",
+     "o": [
+      "[pi, 2pi]",
+      "[-pi/2, pi/2]",
+      "[0, 2pi]",
+      "(0, pi)"
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "q": "Find (tan(pi/4))^(-1) and tan^(-1)(1), and state why the two answers differ.",
+     "a": "(tan(pi/4))^(-1) = 1/tan(pi/4) = 1/1 = 1. tan^(-1)(1) is the angle in (-pi/2, pi/2) whose tangent is 1, i.e. pi/4. They differ because (tan x)^(-1) is a reciprocal, while tan^(-1) is the inverse function.",
+     "s": [
+      [
+       "Finds (tan(pi/4))^(-1) = 1 as a reciprocal",
+       1
+      ],
+      [
+       "Finds tan^(-1)(1) = pi/4 and states reciprocal vs inverse function",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hardest",
+     "t": "long_answer",
+     "m": 3,
+     "q": "sin x = sqrt(3)/2 at both x = pi/3 and x = 2pi/3. (a) Use this to explain why sine has no inverse on [0, pi]. (b) Which of the two angles is the principal value of sin^(-1)(sqrt(3)/2), and why? (c) Name one interval, other than [-pi/2, pi/2], on which sine is one-one and onto [-1, 1].",
+     "a": "(a) Two different angles in [0, pi] give the same sine, so sine is not one-one on [0, pi] and has no inverse there. (b) pi/3, because it lies in the principal range [-pi/2, pi/2] of sin^(-1), whereas 2pi/3 does not. (c) For example [pi/2, 3pi/2] (or [-3pi/2, -pi/2]).",
+     "s": [
+      [
+       "Explains failure of one-one on [0, pi] using the two angles",
+       1
+      ],
+      [
+       "Chooses pi/3 with the principal-range reason",
+       1
+      ],
+      [
+       "Names a valid other interval such as [pi/2, 3pi/2]",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "assertion_reason",
+     "m": 1,
+     "q": "Assertion (A): sin^(-1) x and (sin x)^(-1) mean the same thing. Reason (R): (sin x)^(-1) = 1/sin x.",
+     "a": "A is false, R is true",
+     "o": [
+      "A is false, R is true",
+      "Both A and R are true, and R is the correct explanation of A",
+      "Both A and R are true, but R is not the correct explanation of A",
+      "A is true, R is false"
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "multi_statement",
+     "m": 1,
+     "q": "Consider these statements about branches of sin^(-1). (I) Corresponding to each interval on which sine is one-one and onto [-1, 1], we get a different branch of sin^(-1). (II) When no branch is mentioned, sin^(-1) x may take any value in [-pi, pi]. Which is or are correct?",
+     "a": "Only I",
+     "o": [
+      "Only I",
+      "Only II",
+      "Both I and II",
+      "Neither I nor II"
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hardest",
+     "t": "long_answer",
+     "m": 3,
+     "q": "A student restricts the tangent function to (pi/2, 3pi/2) and claims this gives a valid inverse of tangent. (a) Is tangent one-one and onto R on this interval? (b) Is this the principal value branch? (c) Compare the value of tan^(-1)(1) on this branch with its principal value.",
+     "a": "(a) Yes. The book lists (pi/2, 3pi/2) among the intervals on which tangent is bijective with range R, so it does give a branch of tan^(-1). (b) No; the principal value branch of tan^(-1) has range (-pi/2, pi/2). (c) On this branch tan^(-1)(1) = 5pi/4, since tan(5pi/4) = 1 and 5pi/4 lies in (pi/2, 3pi/2); the principal value is pi/4.",
+     "s": [
+      [
+       "States tangent is one-one onto R on (pi/2, 3pi/2), so it is a branch",
+       1
+      ],
+      [
+       "States it is not the principal branch, which is (-pi/2, pi/2)",
+       1
+      ],
+      [
+       "Gives 5pi/4 on this branch and pi/4 as principal value",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Evaluate",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "q": "Ravi says: 'Because the sine function repeats its values, sin^(-1) can never be defined as a function.' Evaluate Ravi's claim.",
+     "a": "Ravi is wrong. Sine is not one-one on R, but if its domain is restricted to an interval such as [-pi/2, pi/2], it becomes one-one and onto [-1, 1]. Then sin^(-1) : [-1, 1] -> [-pi/2, pi/2] is a well-defined function (the principal value branch).",
+     "s": [
+      [
+       "States the claim is incorrect",
+       1
+      ],
+      [
+       "Justifies by restricting the domain to [-pi/2, pi/2] so sine becomes one-one and onto [-1, 1]",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Create",
+     "d": "Hardest",
+     "t": "long_answer",
+     "m": 3,
+     "q": "Choose an interval, different from [0, pi], on which cosine is one-one and onto [-1, 1]. For the branch of cos^(-1) that it gives, state the domain and range, and find the value this branch gives for cos^(-1)(1/2).",
+     "a": "Example: [pi, 2pi]. Cosine rises from -1 at pi to 1 at 2pi, taking each value once, so it is one-one and onto [-1, 1]. The branch is cos^(-1) : [-1, 1] -> [pi, 2pi]. On it, cos^(-1)(1/2) = 5pi/3, since cos(5pi/3) = 1/2 and 5pi/3 lies in [pi, 2pi]. (Using [-pi, 0] instead gives -pi/3.)",
+     "s": [
+      [
+       "Chooses a valid interval such as [pi, 2pi] or [-pi, 0]",
+       1
+      ],
+      [
+       "States domain [-1, 1] and the chosen interval as range",
+       1
+      ],
+      [
+       "Finds the correct value in that branch, e.g. 5pi/3 or -pi/3",
+       1
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "code": "C12M-2.2",
+   "name": "sin^(-1) and cos^(-1): domain, principal range and graph",
+   "description": "sin^(-1) : [-1, 1] -> [-pi/2, pi/2] and cos^(-1) : [-1, 1] -> [0, pi]; y = sin^(-1) x means sin y = x; the graph of the inverse is obtained by interchanging the axes, i.e. as the reflection of the original graph in the line y = x.",
+   "idea": "Both functions take inputs from [-1, 1]; sin^(-1) returns angles in [-pi/2, pi/2], cos^(-1) returns angles in [0, pi].",
+   "rule": "y = sin^(-1) x means sin y = x with y in [-pi/2, pi/2]; y = cos^(-1) x means cos y = x with y in [0, pi]. If (a, b) is on the graph of the original function, (b, a) is on the graph of the inverse.",
+   "example": "sin^(-1)(-1) = -pi/2 and cos^(-1)(-1) = pi; (pi/6, 1/2) on y = sin x gives (1/2, pi/6) on y = sin^(-1) x (pp. 19-21).",
+   "difficulty_base": "Easy",
+   "questions": [
+    {
+     "b": "Remember",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "The domain of the function sin^(-1) is",
+     "a": "[-1, 1]",
+     "o": [
+      "[-1, 1]",
+      "[-pi/2, pi/2]",
+      "R",
+      "(-1, 1)"
+     ]
+    },
+    {
+     "b": "Remember",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "The range of the principal value branch of cos^(-1) is",
+     "a": "[0, pi]",
+     "o": [
+      "[0, pi]",
+      "[-pi/2, pi/2]",
+      "(0, pi)",
+      "[-1, 1]"
+     ]
+    },
+    {
+     "b": "Remember",
+     "d": "Easy",
+     "t": "fill_blank",
+     "m": 1,
+     "q": "The graph of y = sin^(-1) x can be obtained as the mirror image (reflection) of the corresponding graph of y = sin x along the line ____.",
+     "a": "y = x"
+    },
+    {
+     "b": "Remember",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "rev": true,
+     "q": "Which of the following can NOT be a principal value of sin^(-1) x for any x in [-1, 1]?",
+     "a": "2pi/3",
+     "o": [
+      "2pi/3",
+      "-pi/2",
+      "pi/2",
+      "0"
+     ]
+    },
+    {
+     "b": "Understand",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "If y = sin^(-1) x, then",
+     "a": "sin y = x",
+     "o": [
+      "sin y = x",
+      "sin x = y",
+      "y = 1/sin x",
+      "x = sin^(-1) y"
+     ]
+    },
+    {
+     "b": "Understand",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "Why is sin^(-1)(2) not defined?",
+     "a": "Because 2 lies outside the domain [-1, 1] of sin^(-1); no angle has sine equal to 2",
+     "o": [
+      "Because 2 lies outside the domain [-1, 1] of sin^(-1); no angle has sine equal to 2",
+      "Because 2 lies outside the range [-pi/2, pi/2] of sin^(-1)",
+      "Because sin^(-1) is defined only for positive numbers less than 1",
+      "Because 2 radians is not one of the standard angles"
+     ]
+    },
+    {
+     "b": "Understand",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "If (pi/6, 1/2) lies on the graph of y = sin x, which point lies on the graph of y = sin^(-1) x?",
+     "a": "(1/2, pi/6)",
+     "o": [
+      "(1/2, pi/6)",
+      "(pi/6, 1/2)",
+      "(1/2, 5pi/6)",
+      "(2, pi/6)"
+     ]
+    },
+    {
+     "b": "Understand",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "q": "For x in [-1, 1], the principal value sin^(-1) x is negative exactly when",
+     "a": "x is negative",
+     "o": [
+      "x is negative",
+      "x is positive",
+      "never, because an angle cannot be negative",
+      "x is less than -pi/2"
+     ]
+    },
+    {
+     "b": "Understand",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "q": "Explain why cos^(-1) x is never negative, whereas sin^(-1) x can be negative.",
+     "a": "The principal value branch of cos^(-1) has range [0, pi], which contains no negative numbers, so cos^(-1) x >= 0 for every x in [-1, 1]. The principal value branch of sin^(-1) has range [-pi/2, pi/2], which includes negative angles; for negative x, sin^(-1) x lies in [-pi/2, 0).",
+     "s": [
+      [
+       "States range of cos^(-1) is [0, pi], so its values are never negative",
+       1
+      ],
+      [
+       "States range of sin^(-1) is [-pi/2, pi/2], which includes negative values",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "The principal value of sin^(-1)(1) is",
+     "a": "pi/2",
+     "o": [
+      "pi/2",
+      "0",
+      "pi",
+      "-pi/2"
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Easy",
+     "t": "fill_blank",
+     "m": 1,
+     "q": "The principal value of cos^(-1)(-1) is ____.",
+     "a": "pi"
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "q": "The value of cos^(-1)(0) + sin^(-1)(0) is",
+     "a": "pi/2",
+     "o": [
+      "pi/2",
+      "0",
+      "pi",
+      "3pi/2"
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "q": "For which value of x is sin^(-1) x = -pi/2?",
+     "a": "-1",
+     "o": [
+      "-1",
+      "1",
+      "0",
+      "-pi/2"
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "q": "If sin^(-1) x = pi/6, find x and hence find cos^(-1) x.",
+     "a": "sin^(-1) x = pi/6 gives x = sin(pi/6) = 1/2. Then cos^(-1)(1/2) is the angle in [0, pi] whose cosine is 1/2, which is pi/3.",
+     "s": [
+      [
+       "Finds x = 1/2",
+       1
+      ],
+      [
+       "Finds cos^(-1)(1/2) = pi/3",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hardest",
+     "t": "long_answer",
+     "m": 3,
+     "q": "If cos^(-1) x = 2pi/3, find x. Then find sin^(-1) x and check that it lies in the principal range of sin^(-1).",
+     "a": "x = cos(2pi/3) = -1/2. sin^(-1)(-1/2) is the angle y in [-pi/2, pi/2] with sin y = -1/2, so y = -pi/6. Indeed -pi/6 lies in [-pi/2, pi/2].",
+     "s": [
+      [
+       "Finds x = cos(2pi/3) = -1/2",
+       1
+      ],
+      [
+       "Finds sin^(-1)(-1/2) = -pi/6",
+       1
+      ],
+      [
+       "Checks -pi/6 is in [-pi/2, pi/2]",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "assertion_reason",
+     "m": 1,
+     "q": "Assertion (A): The principal value of cos^(-1)(-1/2) is 2pi/3, not -pi/3. Reason (R): The principal value branch of cos^(-1) has range [0, pi].",
+     "a": "Both A and R are true, and R is the correct explanation of A",
+     "o": [
+      "Both A and R are true, and R is the correct explanation of A",
+      "Both A and R are true, but R is not the correct explanation of A",
+      "A is true, R is false",
+      "A is false, R is true"
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "multi_statement",
+     "m": 1,
+     "q": "Consider these statements. (I) The domain of cos^(-1) is [0, pi]. (II) The graph of y = cos^(-1) x can be obtained from the graph of y = cos x by interchanging the x and y axes. Which is or are correct?",
+     "a": "Only II",
+     "o": [
+      "Only II",
+      "Only I",
+      "Both I and II",
+      "Neither I nor II"
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hardest",
+     "t": "long_answer",
+     "m": 3,
+     "q": "sin^(-1) and cos^(-1) have the same domain but different principal ranges. Find sin^(-1)(-sqrt(3)/2) and cos^(-1)(-sqrt(3)/2), and explain using the ranges why one answer is negative and the other is not.",
+     "a": "sin^(-1)(-sqrt(3)/2): the angle in [-pi/2, pi/2] with sine -sqrt(3)/2 is -pi/3. cos^(-1)(-sqrt(3)/2): the angle in [0, pi] with cosine -sqrt(3)/2 is pi - pi/6 = 5pi/6. The sine branch [-pi/2, pi/2] reaches negative angles for negative inputs, but the cosine branch [0, pi] has no negative angles, so a negative input gives an obtuse angle instead.",
+     "s": [
+      [
+       "Finds sin^(-1)(-sqrt(3)/2) = -pi/3",
+       1
+      ],
+      [
+       "Finds cos^(-1)(-sqrt(3)/2) = 5pi/6",
+       1
+      ],
+      [
+       "Explains the difference using the ranges [-pi/2, pi/2] and [0, pi]",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Evaluate",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "q": "Priya writes sin^(-1)(-1) = 3pi/2 'because sin(3pi/2) = -1'. Evaluate her answer.",
+     "a": "Her reasoning is incomplete. Although sin(3pi/2) = -1, 3pi/2 is not in the principal range [-pi/2, pi/2] of sin^(-1). The correct principal value is -pi/2, since sin(-pi/2) = -1 and -pi/2 lies in [-pi/2, pi/2].",
+     "s": [
+      [
+       "States 3pi/2 is wrong because it is outside [-pi/2, pi/2]",
+       1
+      ],
+      [
+       "Gives the correct value -pi/2",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Create",
+     "d": "Hardest",
+     "t": "long_answer",
+     "m": 3,
+     "q": "Find a number x in [-1, 1] for which sin^(-1) x and cos^(-1) x have the same principal value. Justify by computing both.",
+     "a": "Take x = 1/sqrt(2). sin^(-1)(1/sqrt(2)) = pi/4 since sin(pi/4) = 1/sqrt(2) and pi/4 is in [-pi/2, pi/2]. cos^(-1)(1/sqrt(2)) = pi/4 since cos(pi/4) = 1/sqrt(2) and pi/4 is in [0, pi]. Both equal pi/4.",
+     "s": [
+      [
+       "Chooses x = 1/sqrt(2)",
+       1
+      ],
+      [
+       "Shows sin^(-1)(1/sqrt(2)) = pi/4 within its range",
+       1
+      ],
+      [
+       "Shows cos^(-1)(1/sqrt(2)) = pi/4 within its range",
+       1
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "code": "C12M-2.3",
+   "name": "cosec^(-1), sec^(-1), tan^(-1), cot^(-1): domains and principal ranges",
+   "description": "The principal value branches cosec^(-1) : R - (-1, 1) -> [-pi/2, pi/2] - {0}, sec^(-1) : R - (-1, 1) -> [0, pi] - {pi/2}, tan^(-1) : R -> (-pi/2, pi/2) and cot^(-1) : R -> (0, pi), and why each excluded point or open end is excluded.",
+   "idea": "The excluded points in each range are exactly where the original function is undefined.",
+   "rule": "cosec^(-1): domain R - (-1, 1), range [-pi/2, pi/2] - {0}. sec^(-1): domain R - (-1, 1), range [0, pi] - {pi/2}. tan^(-1): domain R, range (-pi/2, pi/2). cot^(-1): domain R, range (0, pi).",
+   "example": "sec^(-1)(1/2) is undefined because 1/2 lies in (-1, 1); tan^(-1) x can never equal pi/2 because tan(pi/2) is not defined (pp. 21-25, 32).",
+   "difficulty_base": "Easy",
+   "questions": [
+    {
+     "b": "Remember",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "The domain of tan^(-1) is",
+     "a": "R",
+     "o": [
+      "R",
+      "[-1, 1]",
+      "(-pi/2, pi/2)",
+      "R - (-1, 1)"
+     ]
+    },
+    {
+     "b": "Remember",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "The range of the principal value branch of cot^(-1) is",
+     "a": "(0, pi)",
+     "o": [
+      "(0, pi)",
+      "(-pi/2, pi/2)",
+      "[0, pi]",
+      "[-pi/2, pi/2] - {0}"
+     ]
+    },
+    {
+     "b": "Remember",
+     "d": "Easy",
+     "t": "fill_blank",
+     "m": 1,
+     "q": "The principal value branch of sec^(-1) has range [0, pi] - {____}.",
+     "a": "pi/2"
+    },
+    {
+     "b": "Remember",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "rev": true,
+     "q": "Which of the following numbers is NOT in the domain of sec^(-1)?",
+     "a": "1/2",
+     "o": [
+      "1/2",
+      "1",
+      "-1",
+      "2"
+     ]
+    },
+    {
+     "b": "Understand",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "Why is pi/2 removed from the principal range of sec^(-1)?",
+     "a": "Because sec x = 1/cos x is not defined at x = pi/2, as cos(pi/2) = 0",
+     "o": [
+      "Because sec x = 1/cos x is not defined at x = pi/2, as cos(pi/2) = 0",
+      "Because sec(pi/2) = 1",
+      "Because pi/2 does not lie in [0, pi]",
+      "Because sec^(-1) can only take negative values"
+     ]
+    },
+    {
+     "b": "Understand",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "The principal range of tan^(-1) is the open interval (-pi/2, pi/2), not the closed interval [-pi/2, pi/2]. Why?",
+     "a": "tan x is not defined at x = -pi/2 and x = pi/2",
+     "o": [
+      "tan x is not defined at x = -pi/2 and x = pi/2",
+      "tan(pi/2) = 1, which is already given by pi/4",
+      "tan^(-1) can never take the value 0",
+      "The domain of tan^(-1) is [-1, 1]"
+     ]
+    },
+    {
+     "b": "Understand",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "The domain of cosec^(-1) is R - (-1, 1). This means cosec^(-1) x is defined",
+     "a": "only when x <= -1 or x >= 1",
+     "o": [
+      "only when x <= -1 or x >= 1",
+      "only when -1 < x < 1",
+      "for every real x except 0",
+      "only when x >= 1"
+     ]
+    },
+    {
+     "b": "Understand",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "q": "Which two inverse trigonometric functions are defined for every real number x?",
+     "a": "tan^(-1) and cot^(-1)",
+     "o": [
+      "tan^(-1) and cot^(-1)",
+      "sin^(-1) and cos^(-1)",
+      "sec^(-1) and cosec^(-1)",
+      "tan^(-1) and sec^(-1)"
+     ]
+    },
+    {
+     "b": "Understand",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "q": "Explain why the principal value branches of tan^(-1) and cot^(-1) use different intervals, (-pi/2, pi/2) and (0, pi).",
+     "a": "cot x is not defined at integral multiples of pi, so it is not defined at 0, which lies inside (-pi/2, pi/2); hence cot cannot use that interval, and (0, pi) is used, on which cot is bijective onto R. tan x is not defined at odd multiples of pi/2, so it is not defined at pi/2, which lies inside (0, pi); hence tan uses (-pi/2, pi/2), on which it is bijective onto R.",
+     "s": [
+      [
+       "Explains cot is undefined at 0, so (-pi/2, pi/2) is unsuitable for cot",
+       1
+      ],
+      [
+       "Explains tan is undefined at pi/2, so (0, pi) is unsuitable for tan",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "Which of these could be the principal value of cot^(-1) x for some real x?",
+     "a": "3pi/4",
+     "o": [
+      "3pi/4",
+      "-pi/4",
+      "0",
+      "pi"
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Easy",
+     "t": "fill_blank",
+     "m": 1,
+     "q": "If the principal value sec^(-1) x = 0, then x = ____.",
+     "a": "1"
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "q": "Which of the following is a value that the principal branch of cosec^(-1) can take?",
+     "a": "-pi/2",
+     "o": [
+      "-pi/2",
+      "0",
+      "pi",
+      "3pi/4"
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "q": "Which of the following expressions is undefined?",
+     "a": "sec^(-1)(0)",
+     "o": [
+      "sec^(-1)(0)",
+      "tan^(-1)(100)",
+      "cot^(-1)(-5)",
+      "cosec^(-1)(1)"
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "q": "State, with a reason, which of the following are defined: sin^(-1)(3/2), cosec^(-1)(3/2), tan^(-1)(3/2).",
+     "a": "sin^(-1)(3/2) is not defined, since 3/2 is outside [-1, 1]. cosec^(-1)(3/2) is defined, since 3/2 >= 1 lies in R - (-1, 1). tan^(-1)(3/2) is defined, since the domain of tan^(-1) is R.",
+     "s": [
+      [
+       "States sin^(-1)(3/2) is undefined because 3/2 is outside [-1, 1]",
+       1
+      ],
+      [
+       "States cosec^(-1)(3/2) and tan^(-1)(3/2) are defined, with domain reasons",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hardest",
+     "t": "long_answer",
+     "m": 3,
+     "q": "Write down the domain and the principal value range of each of sec^(-1), cosec^(-1) and cot^(-1).",
+     "a": "sec^(-1): domain R - (-1, 1), range [0, pi] - {pi/2}. cosec^(-1): domain R - (-1, 1), range [-pi/2, pi/2] - {0}. cot^(-1): domain R, range (0, pi).",
+     "s": [
+      [
+       "sec^(-1): domain R - (-1, 1), range [0, pi] - {pi/2}",
+       1
+      ],
+      [
+       "cosec^(-1): domain R - (-1, 1), range [-pi/2, pi/2] - {0}",
+       1
+      ],
+      [
+       "cot^(-1): domain R, range (0, pi)",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "assertion_reason",
+     "m": 1,
+     "q": "Assertion (A): The principal value branch of cot^(-1) has range (0, pi). Reason (R): The cotangent function is defined at every point of the closed interval [0, pi].",
+     "a": "A is true, R is false",
+     "o": [
+      "A is true, R is false",
+      "Both A and R are true, and R is the correct explanation of A",
+      "Both A and R are true, but R is not the correct explanation of A",
+      "A is false, R is true"
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "multi_statement",
+     "m": 1,
+     "q": "Consider these statements. (I) tan^(-1) x is defined for every real number x. (II) The principal range (0, pi) of cot^(-1) contains the value pi/2. Which is or are correct?",
+     "a": "Both I and II",
+     "o": [
+      "Both I and II",
+      "Only I",
+      "Only II",
+      "Neither I nor II"
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hardest",
+     "t": "long_answer",
+     "m": 3,
+     "q": "cos^(-1)(1/2) is defined, but sec^(-1)(1/2) is not, even though sec x = 1/cos x. Explain why, and then find the principal value of sec^(-1)(2).",
+     "a": "cos^(-1)(1/2) is defined because 1/2 lies in [-1, 1], the domain of cos^(-1); its value is pi/3. sec^(-1)(1/2) would need an angle y with sec y = 1/2, i.e. cos y = 2, which is impossible; equivalently 1/2 is not in the domain R - (-1, 1) of sec^(-1). For sec^(-1)(2): sec y = 2 means cos y = 1/2, and the angle in [0, pi] - {pi/2} is pi/3.",
+     "s": [
+      [
+       "Explains cos^(-1)(1/2) is defined since 1/2 is in [-1, 1]",
+       1
+      ],
+      [
+       "Explains sec^(-1)(1/2) is undefined since 1/2 is not in R - (-1, 1) (cos y = 2 impossible)",
+       1
+      ],
+      [
+       "Finds sec^(-1)(2) = pi/3",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Evaluate",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "q": "Arjun says: 'Since the principal range of tan^(-1) is (-pi/2, pi/2), tan^(-1) x equals pi/2 when x is very large.' Evaluate Arjun's claim.",
+     "a": "Arjun is wrong. The interval (-pi/2, pi/2) is open, so pi/2 itself is not in the range. If tan^(-1) x = pi/2, then x = tan(pi/2), which is not defined, so no real x gives tan^(-1) x = pi/2.",
+     "s": [
+      [
+       "States the claim is false",
+       1
+      ],
+      [
+       "Explains pi/2 is excluded because tan(pi/2) is not defined (open interval)",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Create",
+     "d": "Hardest",
+     "t": "long_answer",
+     "m": 3,
+     "q": "Give one real number x, other than 1 and -1, for which sec^(-1) x, cosec^(-1) x, tan^(-1) x and cot^(-1) x are all defined, and one real number for which tan^(-1) x and cot^(-1) x are defined but sec^(-1) x and cosec^(-1) x are not. Justify both.",
+     "a": "Example: x = 2. It lies in R - (-1, 1), the domain of sec^(-1) and cosec^(-1), and in R, the domain of tan^(-1) and cot^(-1), so all four are defined. Example: x = 1/2. It is real, so tan^(-1) and cot^(-1) are defined, but -1 < 1/2 < 1, so it is not in R - (-1, 1) and sec^(-1), cosec^(-1) are undefined.",
+     "s": [
+      [
+       "Gives a valid first number such as 2 (|x| >= 1, not 1 or -1)",
+       1
+      ],
+      [
+       "Gives a valid second number such as 1/2 (-1 < x < 1)",
+       1
+      ],
+      [
+       "Justifies both using the domains R and R - (-1, 1)",
+       1
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "code": "C12M-2.4",
+   "name": "Finding principal values",
+   "description": "Finding the principal value of an inverse trigonometric function at a standard value, including negative arguments, by choosing the angle that lies in the principal range; evaluating sums and differences of such principal values.",
+   "idea": "Of all angles with the given trigonometric value, the principal value is the one inside the principal range.",
+   "rule": "Let y = f^(-1)(a), so f(y) = a; find the standard angle, then adjust (e.g. pi - angle for cos^(-1) and cot^(-1) of negative values, minus the angle for sin^(-1) and tan^(-1)) so that y lies in the principal range.",
+   "example": "cot^(-1)(-1/sqrt(3)) = 2pi/3, since cot(2pi/3) = -1/sqrt(3) and 2pi/3 lies in (0, pi) (Example 2, p. 26).",
+   "difficulty_base": "Easy",
+   "questions": [
+    {
+     "b": "Remember",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "The value of an inverse trigonometric function which lies in the range of its principal branch is called its",
+     "a": "principal value",
+     "o": [
+      "principal value",
+      "general solution",
+      "reciprocal value",
+      "branch interval"
+     ]
+    },
+    {
+     "b": "Remember",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "The principal value of sin^(-1)(1/sqrt(2)) is",
+     "a": "pi/4",
+     "o": [
+      "pi/4",
+      "3pi/4",
+      "pi/3",
+      "-pi/4"
+     ]
+    },
+    {
+     "b": "Remember",
+     "d": "Easy",
+     "t": "fill_blank",
+     "m": 1,
+     "q": "The principal value of tan^(-1)(1) is ____.",
+     "a": "pi/4"
+    },
+    {
+     "b": "Remember",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "rev": true,
+     "q": "Which of the following statements is false?",
+     "a": "The principal value of cos^(-1)(-1/2) is -pi/3",
+     "o": [
+      "The principal value of cos^(-1)(-1/2) is -pi/3",
+      "The principal value of sin^(-1)(-1/2) is -pi/6",
+      "The principal value of tan^(-1)(-1) is -pi/4",
+      "The principal value of cot^(-1)(-1/sqrt(3)) is 2pi/3"
+     ]
+    },
+    {
+     "b": "Understand",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "In finding cot^(-1)(-1/sqrt(3)), the answer is 2pi/3 rather than -pi/3. Why?",
+     "a": "-pi/3 is not in the principal range (0, pi) of cot^(-1), while 2pi/3 is",
+     "o": [
+      "-pi/3 is not in the principal range (0, pi) of cot^(-1), while 2pi/3 is",
+      "cot(-pi/3) is not equal to -1/sqrt(3)",
+      "The larger of two possible angles is always chosen",
+      "cot^(-1) always gives an obtuse angle"
+     ]
+    },
+    {
+     "b": "Understand",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "To find the principal value of cos^(-1)(-1/2), a student first notes that cos(pi/3) = 1/2. Which step comes next?",
+     "a": "Use cos(pi - pi/3) = -1/2; since 2pi/3 lies in [0, pi], the answer is 2pi/3",
+     "o": [
+      "Use cos(pi - pi/3) = -1/2; since 2pi/3 lies in [0, pi], the answer is 2pi/3",
+      "Put a minus sign in front, giving -pi/3",
+      "Use cos(pi + pi/3) = -1/2, giving 4pi/3",
+      "Take the reciprocal of pi/3, giving 3/pi"
+     ]
+    },
+    {
+     "b": "Understand",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "The principal value of tan^(-1)(-sqrt(3)) is",
+     "a": "-pi/3",
+     "o": [
+      "-pi/3",
+      "2pi/3",
+      "pi/3",
+      "-pi/6"
+     ]
+    },
+    {
+     "b": "Understand",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "q": "The principal value of cosec^(-1)(-sqrt(2)) is",
+     "a": "-pi/4",
+     "o": [
+      "-pi/4",
+      "3pi/4",
+      "5pi/4",
+      "pi/4"
+     ]
+    },
+    {
+     "b": "Understand",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "q": "Explain why the principal value of sec^(-1)(-2) is 2pi/3 and not -pi/3.",
+     "a": "sec y = -2 means cos y = -1/2. The principal range of sec^(-1) is [0, pi] - {pi/2}; 2pi/3 lies in it and cos(2pi/3) = -1/2, so sec(2pi/3) = -2 and the principal value is 2pi/3. -pi/3 is negative, so it is outside [0, pi]; besides, cos(-pi/3) = 1/2, so sec(-pi/3) = 2, not -2.",
+     "s": [
+      [
+       "Converts to cos y = -1/2 and finds 2pi/3 in [0, pi] - {pi/2}",
+       1
+      ],
+      [
+       "Rejects -pi/3: outside the principal range (and sec(-pi/3) = 2)",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "The principal value of cos^(-1)(sqrt(3)/2) is",
+     "a": "pi/6",
+     "o": [
+      "pi/6",
+      "pi/3",
+      "5pi/6",
+      "-pi/6"
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Easy",
+     "t": "fill_blank",
+     "m": 1,
+     "q": "The principal value of cot^(-1)(sqrt(3)) is ____.",
+     "a": "pi/6"
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "q": "The value of tan^(-1)(1) + cos^(-1)(-1/2) + sin^(-1)(-1/2) is",
+     "a": "3pi/4",
+     "o": [
+      "3pi/4",
+      "-pi/4",
+      "13pi/12",
+      "5pi/12"
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "q": "tan^(-1)(sqrt(3)) - sec^(-1)(-2) is equal to",
+     "a": "-pi/3",
+     "o": [
+      "-pi/3",
+      "pi",
+      "2pi/3",
+      "0"
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "q": "Find the value of cos^(-1)(1/2) + 2 sin^(-1)(1/2).",
+     "a": "cos^(-1)(1/2) = pi/3 and sin^(-1)(1/2) = pi/6. So the value is pi/3 + 2(pi/6) = pi/3 + pi/3 = 2pi/3.",
+     "s": [
+      [
+       "Finds cos^(-1)(1/2) = pi/3 and sin^(-1)(1/2) = pi/6",
+       1
+      ],
+      [
+       "Combines to 2pi/3",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hardest",
+     "t": "long_answer",
+     "m": 3,
+     "q": "Find the value of cot^(-1)(-1) + cosec^(-1)(-2) + sec^(-1)(-sqrt(2)).",
+     "a": "cot^(-1)(-1) = 3pi/4 (in (0, pi), cot(3pi/4) = -1). cosec^(-1)(-2) = -pi/6 (sin y = -1/2, y in [-pi/2, pi/2] - {0}). sec^(-1)(-sqrt(2)) = 3pi/4 (cos y = -1/sqrt(2), y in [0, pi]). Sum = 3pi/4 - pi/6 + 3pi/4 = 9pi/12 - 2pi/12 + 9pi/12 = 16pi/12 = 4pi/3.",
+     "s": [
+      [
+       "Finds cot^(-1)(-1) = 3pi/4",
+       1
+      ],
+      [
+       "Finds cosec^(-1)(-2) = -pi/6 and sec^(-1)(-sqrt(2)) = 3pi/4",
+       1
+      ],
+      [
+       "Adds correctly to get 4pi/3",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "assertion_reason",
+     "m": 1,
+     "q": "Assertion (A): The principal value of tan^(-1)(-1) is -pi/4. Reason (R): The principal value of cot^(-1)(-1) is 3pi/4.",
+     "a": "Both A and R are true, but R is not the correct explanation of A",
+     "o": [
+      "Both A and R are true, but R is not the correct explanation of A",
+      "Both A and R are true, and R is the correct explanation of A",
+      "A is true, R is false",
+      "A is false, R is true"
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "multi_statement",
+     "m": 1,
+     "q": "Consider these statements. (I) The principal value of cos^(-1)(-1/sqrt(2)) is -pi/4. (II) The principal value of sin^(-1)(-sqrt(3)/2) is 4pi/3. Which is or are correct?",
+     "a": "Neither I nor II",
+     "o": [
+      "Neither I nor II",
+      "Only I",
+      "Only II",
+      "Both I and II"
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hardest",
+     "t": "long_answer",
+     "m": 3,
+     "q": "Two students find the principal value of cot^(-1)(-sqrt(3)). Student A gets -pi/6 and Student B gets 5pi/6. Analyse both answers and decide which is correct.",
+     "a": "cot(-pi/6) = -sqrt(3), so A's angle has the right cotangent, but -pi/6 is not in the principal range (0, pi) of cot^(-1), so it is not the principal value. cot(5pi/6) = cot(pi - pi/6) = -cot(pi/6) = -sqrt(3), and 5pi/6 lies in (0, pi). So Student B is correct: the principal value is 5pi/6.",
+     "s": [
+      [
+       "Checks that A's -pi/6 is outside (0, pi)",
+       1
+      ],
+      [
+       "Verifies cot(5pi/6) = -sqrt(3) with 5pi/6 in (0, pi)",
+       1
+      ],
+      [
+       "Concludes B is correct, 5pi/6",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Evaluate",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "q": "Kiran claims tan^(-1)(sqrt(3)) - cot^(-1)(-sqrt(3)) = 0 'because tan^(-1) and cot^(-1) of the same number cancel'. Evaluate the claim by finding the actual value.",
+     "a": "The claim is wrong (and the two arguments are not even the same number). tan^(-1)(sqrt(3)) = pi/3. cot^(-1)(-sqrt(3)) = 5pi/6, the angle in (0, pi) with cotangent -sqrt(3). So the value is pi/3 - 5pi/6 = -pi/2, not 0.",
+     "s": [
+      [
+       "Finds tan^(-1)(sqrt(3)) = pi/3 and cot^(-1)(-sqrt(3)) = 5pi/6",
+       1
+      ],
+      [
+       "Concludes the value is -pi/2, so the claim is false",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Create",
+     "d": "Hardest",
+     "t": "long_answer",
+     "m": 3,
+     "q": "Construct a sum of the principal values of two different inverse trigonometric functions, at least one with a negative argument, whose value is exactly pi. Verify your example.",
+     "a": "Example: cos^(-1)(-1/2) + tan^(-1)(sqrt(3)). cos^(-1)(-1/2) = 2pi/3 (in [0, pi]) and tan^(-1)(sqrt(3)) = pi/3 (in (-pi/2, pi/2)). Sum = 2pi/3 + pi/3 = pi. Any correct example is acceptable.",
+     "s": [
+      [
+       "Writes a sum of two different inverse functions with a negative argument",
+       1
+      ],
+      [
+       "Finds each principal value correctly",
+       1
+      ],
+      [
+       "Verifies the total is pi",
+       1
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "code": "C12M-2.5",
+   "name": "Composing a function with its inverse",
+   "description": "sin(sin^(-1) x) = x for x in [-1, 1] and sin^(-1)(sin x) = x for x in [-pi/2, pi/2], with similar results for the other functions; evaluating expressions such as sin^(-1)(sin 3pi/5) or cos^(-1)(cos 7pi/6) by first rewriting the angle inside the principal range; values of expressions mixing trigonometric and inverse trigonometric functions.",
+   "idea": "f(f^(-1) x) = x needs only x in the domain; f^(-1)(f(x)) = x needs x in the principal range.",
+   "rule": "sin(sin^(-1) x) = x, x in [-1, 1]; sin^(-1)(sin x) = x, x in [-pi/2, pi/2]. If x is outside the principal range, replace it by an angle in the range with the same trigonometric value (e.g. sin(pi - x) = sin x).",
+   "example": "sin^(-1)(sin(3pi/5)) = sin^(-1)(sin(2pi/5)) = 2pi/5 (Example 6, p. 30).",
+   "difficulty_base": "Hard",
+   "questions": [
+    {
+     "b": "Remember",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "For x in [-1, 1], sin(sin^(-1) x) equals",
+     "a": "x",
+     "o": [
+      "x",
+      "1/x",
+      "sin x",
+      "sin^(-1) x"
+     ]
+    },
+    {
+     "b": "Remember",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "The book states sin^(-1)(sin x) = x when x lies in",
+     "a": "[-pi/2, pi/2]",
+     "o": [
+      "[-pi/2, pi/2]",
+      "[-1, 1]",
+      "[0, pi]",
+      "the set of all real numbers"
+     ]
+    },
+    {
+     "b": "Remember",
+     "d": "Easy",
+     "t": "fill_blank",
+     "m": 1,
+     "q": "cos(cos^(-1)(0.3)) = ____.",
+     "a": "0.3"
+    },
+    {
+     "b": "Remember",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "rev": true,
+     "q": "For which of the following values of x is sin^(-1)(sin x) = x NOT true?",
+     "a": "x = 3pi/5",
+     "o": [
+      "x = 3pi/5",
+      "x = pi/5",
+      "x = -pi/3",
+      "x = pi/2"
+     ]
+    },
+    {
+     "b": "Understand",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "The value of sin^(-1)(sin(pi/7)) is",
+     "a": "pi/7",
+     "o": [
+      "pi/7",
+      "6pi/7",
+      "-pi/7",
+      "sin(pi/7)"
+     ]
+    },
+    {
+     "b": "Understand",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "sin^(-1)(sin(3pi/5)) is not equal to 3pi/5 because",
+     "a": "3pi/5 lies outside [-pi/2, pi/2], the principal range of sin^(-1)",
+     "o": [
+      "3pi/5 lies outside [-pi/2, pi/2], the principal range of sin^(-1)",
+      "sin(3pi/5) is negative",
+      "3pi/5 lies outside [-1, 1], the domain of sin^(-1)",
+      "sin^(-1) and sin never cancel for any angle"
+     ]
+    },
+    {
+     "b": "Understand",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "Why is cos(cos^(-1)(2)) undefined?",
+     "a": "Because cos^(-1)(2) does not exist, as 2 is outside the domain [-1, 1]",
+     "o": [
+      "Because cos^(-1)(2) does not exist, as 2 is outside the domain [-1, 1]",
+      "Because cos(cos^(-1) x) = x only when x is negative",
+      "Because 2 is outside the range [0, pi]",
+      "Because cos^(-1)(2) = 1/cos 2, which is undefined"
+     ]
+    },
+    {
+     "b": "Understand",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "q": "cos^(-1)(cos(7pi/6)) is equal to",
+     "a": "5pi/6",
+     "o": [
+      "5pi/6",
+      "7pi/6",
+      "pi/6",
+      "-pi/6"
+     ]
+    },
+    {
+     "b": "Understand",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "q": "Explain why tan^(-1)(tan(3pi/4)) = -pi/4 and not 3pi/4.",
+     "a": "3pi/4 is not in the principal range (-pi/2, pi/2) of tan^(-1), so the result cannot be 3pi/4. Since tan(3pi/4) = -1 = tan(-pi/4) and -pi/4 lies in (-pi/2, pi/2), tan^(-1)(tan(3pi/4)) = tan^(-1)(-1) = -pi/4.",
+     "s": [
+      [
+       "States 3pi/4 is outside (-pi/2, pi/2)",
+       1
+      ],
+      [
+       "Shows tan(3pi/4) = tan(-pi/4) = -1 and gives -pi/4",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "The value of sin^(-1)(sin(2pi/3)) is",
+     "a": "pi/3",
+     "o": [
+      "pi/3",
+      "2pi/3",
+      "-pi/3",
+      "pi/6"
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Easy",
+     "t": "fill_blank",
+     "m": 1,
+     "q": "tan^(-1)(tan(pi/5)) = ____.",
+     "a": "pi/5"
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "q": "The value of cos^(-1)(cos(13pi/6)) is",
+     "a": "pi/6",
+     "o": [
+      "pi/6",
+      "13pi/6",
+      "-pi/6",
+      "11pi/6"
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "q": "sin(pi/3 - sin^(-1)(-1/2)) is equal to",
+     "a": "1",
+     "o": [
+      "1",
+      "1/2",
+      "-1/2",
+      "sqrt(3)/2"
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "q": "Find the value of tan^(-1)[2 cos(2 sin^(-1)(1/2))].",
+     "a": "sin^(-1)(1/2) = pi/6, so 2 sin^(-1)(1/2) = pi/3 and cos(pi/3) = 1/2. Then 2 cos(pi/3) = 1, and tan^(-1)(1) = pi/4.",
+     "s": [
+      [
+       "Finds 2 sin^(-1)(1/2) = pi/3 and 2 cos(pi/3) = 1",
+       1
+      ],
+      [
+       "Gives tan^(-1)(1) = pi/4",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hardest",
+     "t": "long_answer",
+     "m": 3,
+     "q": "Find the value of tan(sin^(-1)(3/5) + cot^(-1)(3/2)).",
+     "a": "Let a = sin^(-1)(3/5), so sin a = 3/5, cos a = 4/5, tan a = 3/4. Let b = cot^(-1)(3/2), so cot b = 3/2 and tan b = 2/3. tan(a + b) = (tan a + tan b)/(1 - tan a tan b) = (3/4 + 2/3)/(1 - 1/2) = (17/12)/(1/2) = 17/6.",
+     "s": [
+      [
+       "Finds tan a = 3/4 from sin a = 3/5",
+       1
+      ],
+      [
+       "Finds tan b = 2/3 from cot b = 3/2",
+       1
+      ],
+      [
+       "Uses tan(a + b) formula to get 17/6",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "assertion_reason",
+     "m": 1,
+     "q": "Assertion (A): tan^(-1)(tan(7pi/6)) = pi/6. Reason (R): tan(7pi/6) = tan(pi/6), and pi/6 lies in (-pi/2, pi/2).",
+     "a": "Both A and R are true, and R is the correct explanation of A",
+     "o": [
+      "Both A and R are true, and R is the correct explanation of A",
+      "Both A and R are true, but R is not the correct explanation of A",
+      "A is true, R is false",
+      "A is false, R is true"
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "multi_statement",
+     "m": 1,
+     "q": "Consider these statements. (I) sin(sin^(-1) x) = x for every x in [-1, 1]. (II) sin^(-1)(sin x) = x for every real number x. Which is or are correct?",
+     "a": "Only I",
+     "o": [
+      "Only I",
+      "Only II",
+      "Both I and II",
+      "Neither I nor II"
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hardest",
+     "t": "long_answer",
+     "m": 3,
+     "q": "Compare sin^(-1)(sin(3pi/5)) with sin(sin^(-1)(3/5)). Find each value and explain why the second simply returns its input but the first does not.",
+     "a": "sin(sin^(-1)(3/5)) = 3/5, because 3/5 lies in [-1, 1] and sin(sin^(-1) x) = x for every such x. For the first, 3pi/5 is not in [-pi/2, pi/2]; sin(3pi/5) = sin(pi - 3pi/5) = sin(2pi/5), and 2pi/5 lies in [-pi/2, pi/2], so sin^(-1)(sin(3pi/5)) = 2pi/5. sin^(-1)(sin x) = x needs x in the principal range, whereas sin(sin^(-1) x) = x needs only x in the domain [-1, 1].",
+     "s": [
+      [
+       "Finds sin(sin^(-1)(3/5)) = 3/5",
+       1
+      ],
+      [
+       "Finds sin^(-1)(sin(3pi/5)) = 2pi/5",
+       1
+      ],
+      [
+       "Explains the domain condition vs principal-range condition",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Evaluate",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "q": "Sana says: 'cos^(-1)(cos x) = x for every x, because cos^(-1) and cos are inverses.' Test her claim with x = -pi/3.",
+     "a": "cos(-pi/3) = 1/2, and cos^(-1)(1/2) = pi/3 (the angle in [0, pi]). So cos^(-1)(cos(-pi/3)) = pi/3, not -pi/3. Her claim is false; it holds only for x in [0, pi].",
+     "s": [
+      [
+       "Computes cos^(-1)(cos(-pi/3)) = pi/3",
+       1
+      ],
+      [
+       "Concludes the claim is false; it holds only for x in [0, pi]",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Create",
+     "d": "Hardest",
+     "t": "long_answer",
+     "m": 3,
+     "q": "Find two different angles x, both outside [-pi/2, pi/2], such that sin^(-1)(sin x) = pi/6. Justify each.",
+     "a": "x = 5pi/6: sin(5pi/6) = sin(pi - pi/6) = 1/2, so sin^(-1)(sin(5pi/6)) = sin^(-1)(1/2) = pi/6. x = 13pi/6: sin(13pi/6) = sin(2pi + pi/6) = 1/2, so the value is again pi/6. Both 5pi/6 and 13pi/6 are outside [-pi/2, pi/2]. Any valid pair is acceptable.",
+     "s": [
+      [
+       "Gives a first valid angle such as 5pi/6 with justification",
+       1
+      ],
+      [
+       "Gives a second valid angle such as 13pi/6 with justification",
+       1
+      ],
+      [
+       "Confirms both are outside [-pi/2, pi/2] and the result pi/6 lies in the principal range",
+       1
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "code": "C12M-2.6",
+   "name": "Simplifying and proving by trigonometric substitution",
+   "description": "Writing an inverse trigonometric expression in the simplest form, or proving an identity or solving an equation, by substituting x = sin theta, cos theta, tan theta or sec theta (or a sin theta, a tan theta), using Class XI trigonometric identities, and checking that the resulting angle lies in the principal range.",
+   "idea": "A clever substitution turns the algebraic expression inside into sin, cos or tan of a single angle, so the inverse function undoes it.",
+   "rule": "Put x = sin theta (etc.), simplify using identities such as sin 2theta = 2 sin theta cos theta, sec^2 theta - 1 = tan^2 theta, (1 - tan theta)/(1 + tan theta) = tan(pi/4 - theta), then use f^(-1)(f(angle)) = angle only after checking the angle lies in the principal range for the given interval of x.",
+   "example": "With x = sin theta, sin^(-1)(2x sqrt(1 - x^2)) = sin^(-1)(sin 2theta) = 2 sin^(-1) x for -1/sqrt(2) <= x <= 1/sqrt(2) (Example 3, p. 28).",
+   "difficulty_base": "Hard",
+   "questions": [
+    {
+     "b": "Remember",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "To simplify sin^(-1)(2x sqrt(1 - x^2)), the first step in the book's solution is to put",
+     "a": "x = sin theta",
+     "o": [
+      "x = sin theta",
+      "x = tan theta",
+      "x = sec theta",
+      "x = 2 theta"
+     ]
+    },
+    {
+     "b": "Remember",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "To write cot^(-1)(1/sqrt(x^2 - 1)), x > 1, in the simplest form, the book substitutes",
+     "a": "x = sec theta",
+     "o": [
+      "x = sec theta",
+      "x = sin theta",
+      "x = cos theta",
+      "x = tan theta"
+     ]
+    },
+    {
+     "b": "Remember",
+     "d": "Easy",
+     "t": "fill_blank",
+     "m": 1,
+     "q": "If x = sin theta with theta in [-pi/2, pi/2], then sqrt(1 - x^2) = ____.",
+     "a": "cos theta"
+    },
+    {
+     "b": "Remember",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "rev": true,
+     "q": "For x in [-1/sqrt(2), 1/sqrt(2)], which of the following is NOT equal to 2 sin^(-1) x?",
+     "a": "sin^(-1)(2x)",
+     "o": [
+      "sin^(-1)(2x)",
+      "sin^(-1)(2x sqrt(1 - x^2))",
+      "sin^(-1) x + sin^(-1) x",
+      "twice the angle theta in [-pi/2, pi/2] with sin theta = x"
+     ]
+    },
+    {
+     "b": "Understand",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "With x = sin theta, why does sin^(-1)(sin 2theta) = 2theta hold when -1/sqrt(2) <= x <= 1/sqrt(2)?",
+     "a": "Because then theta lies in [-pi/4, pi/4], so 2theta lies in [-pi/2, pi/2]",
+     "o": [
+      "Because then theta lies in [-pi/4, pi/4], so 2theta lies in [-pi/2, pi/2]",
+      "Because sin 2theta = 2 sin theta for every theta",
+      "Because x is always less than 1",
+      "Because theta lies in [0, pi]"
+     ]
+    },
+    {
+     "b": "Understand",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "After putting x = sec theta in cot^(-1)(1/sqrt(x^2 - 1)), the expression becomes",
+     "a": "cot^(-1)(cot theta)",
+     "o": [
+      "cot^(-1)(cot theta)",
+      "cot^(-1)(tan theta)",
+      "cot^(-1)(sin theta)",
+      "cot^(-1)(sec theta)"
+     ]
+    },
+    {
+     "b": "Understand",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "Dividing numerator and denominator by cos x, the expression (cos x - sin x)/(cos x + sin x) becomes",
+     "a": "(1 - tan x)/(1 + tan x), which equals tan(pi/4 - x)",
+     "o": [
+      "(1 - tan x)/(1 + tan x), which equals tan(pi/4 - x)",
+      "(1 + tan x)/(1 - tan x), which equals tan(pi/4 - x)",
+      "(1 - tan x)/(1 + tan x), which equals tan(pi/4 + x)",
+      "cot x - 1"
+     ]
+    },
+    {
+     "b": "Understand",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "q": "tan^(-1)((cos x - sin x)/(cos x + sin x)), -pi/4 < x < 3pi/4, in the simplest form is",
+     "a": "pi/4 - x",
+     "o": [
+      "pi/4 - x",
+      "pi/4 + x",
+      "x - pi/4",
+      "pi/2 - x"
+     ]
+    },
+    {
+     "b": "Understand",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "q": "Show that cot^(-1)(1/sqrt(x^2 - 1)) = sec^(-1) x for x > 1.",
+     "a": "Put x = sec theta, so theta = sec^(-1) x lies in (0, pi/2) for x > 1. Then sqrt(x^2 - 1) = sqrt(sec^2 theta - 1) = tan theta, so 1/sqrt(x^2 - 1) = cot theta. Hence cot^(-1)(cot theta) = theta = sec^(-1) x.",
+     "s": [
+      [
+       "Substitutes x = sec theta and gets sqrt(x^2 - 1) = tan theta",
+       1
+      ],
+      [
+       "Concludes cot^(-1)(cot theta) = theta = sec^(-1) x",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "Using x = tan theta, tan^(-1)((sqrt(1 + x^2) - 1)/x), x != 0, simplifies to",
+     "a": "(1/2) tan^(-1) x",
+     "o": [
+      "(1/2) tan^(-1) x",
+      "2 tan^(-1) x",
+      "tan^(-1) x",
+      "pi/4 - tan^(-1) x"
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Easy",
+     "t": "fill_blank",
+     "m": 1,
+     "q": "In the simplest form, tan^(-1)(sqrt((1 - cos x)/(1 + cos x))), 0 < x < pi, equals ____.",
+     "a": "x/2"
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "q": "tan^(-1)(x / sqrt(a^2 - x^2)), |x| < a, in the simplest form is",
+     "a": "sin^(-1)(x/a)",
+     "o": [
+      "sin^(-1)(x/a)",
+      "cos^(-1)(x/a)",
+      "tan^(-1)(x/a)",
+      "sec^(-1)(x/a)"
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "q": "If |x| < 1, y > 0 and xy < 1, the value of tan((1/2)[sin^(-1)(2x/(1 + x^2)) + cos^(-1)((1 - y^2)/(1 + y^2))]) is",
+     "a": "(x + y)/(1 - xy)",
+     "o": [
+      "(x + y)/(1 - xy)",
+      "(x - y)/(1 + xy)",
+      "x + y",
+      "(x + y)/(1 + xy)"
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "q": "Solve tan^(-1)((1 - x)/(1 + x)) = (1/2) tan^(-1) x, x > 0.",
+     "a": "Put x = tan theta, theta in (0, pi/2). Then (1 - tan theta)/(1 + tan theta) = tan(pi/4 - theta), and pi/4 - theta lies in (-pi/4, pi/4), so the left side is pi/4 - theta. The equation becomes pi/4 - theta = theta/2, so theta = pi/6 and x = tan(pi/6) = 1/sqrt(3).",
+     "s": [
+      [
+       "Substitutes x = tan theta and reduces the left side to pi/4 - theta",
+       1
+      ],
+      [
+       "Solves pi/4 - theta = theta/2 to get x = 1/sqrt(3)",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hardest",
+     "t": "long_answer",
+     "m": 3,
+     "q": "Prove that 3 sin^(-1) x = sin^(-1)(3x - 4x^3), x in [-1/2, 1/2].",
+     "a": "Put x = sin theta, so theta = sin^(-1) x lies in [-pi/6, pi/6]. Then 3x - 4x^3 = 3 sin theta - 4 sin^3 theta = sin 3theta. Since 3theta lies in [-pi/2, pi/2], sin^(-1)(sin 3theta) = 3theta = 3 sin^(-1) x.",
+     "s": [
+      [
+       "Substitutes x = sin theta and notes theta in [-pi/6, pi/6]",
+       1
+      ],
+      [
+       "Uses 3 sin theta - 4 sin^3 theta = sin 3theta",
+       1
+      ],
+      [
+       "Uses 3theta in [-pi/2, pi/2] to conclude 3 sin^(-1) x",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "assertion_reason",
+     "m": 1,
+     "q": "Assertion (A): For every x in [-1, 1], sin^(-1)(2x sqrt(1 - x^2)) = 2 sin^(-1) x. Reason (R): If x = sin theta with theta in [-pi/2, pi/2], then 2x sqrt(1 - x^2) = sin 2theta.",
+     "a": "A is false, R is true",
+     "o": [
+      "A is false, R is true",
+      "Both A and R are true, and R is the correct explanation of A",
+      "Both A and R are true, but R is not the correct explanation of A",
+      "A is true, R is false"
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "multi_statement",
+     "m": 1,
+     "q": "Consider these statements. (I) tan^(-1)(cos x/(1 - sin x)) = pi/4 - x/2 for -3pi/2 < x < pi/2. (II) For 1/sqrt(2) <= x <= 1, sin^(-1)(2x sqrt(1 - x^2)) = 2 cos^(-1) x. Which is or are correct?",
+     "a": "Only II",
+     "o": [
+      "Only II",
+      "Only I",
+      "Both I and II",
+      "Neither I nor II"
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hardest",
+     "t": "long_answer",
+     "m": 3,
+     "q": "Prove that 2 sin^(-1)(3/5) = tan^(-1)(24/7), checking that the angles stay within the principal range.",
+     "a": "Let theta = sin^(-1)(3/5), so sin theta = 3/5, cos theta = 4/5, tan theta = 3/4. Then tan 2theta = 2 tan theta/(1 - tan^2 theta) = (3/2)/(1 - 9/16) = (3/2)/(7/16) = 24/7. Since 3/5 < 1/sqrt(2), theta < pi/4, so 2theta lies in (0, pi/2), inside the principal range of tan^(-1). Hence 2theta = tan^(-1)(24/7).",
+     "s": [
+      [
+       "Finds tan theta = 3/4 from sin theta = 3/5",
+       1
+      ],
+      [
+       "Computes tan 2theta = 24/7",
+       1
+      ],
+      [
+       "Checks 2theta lies in (0, pi/2) and concludes",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Evaluate",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "q": "A student simplifies tan^(-1)(cos x/(1 - sin x)), -3pi/2 < x < pi/2, and gets pi/4 - x/2. Evaluate the answer by testing x = -pi/2.",
+     "a": "At x = -pi/2: cos x = 0 and 1 - sin x = 2, so the expression is tan^(-1)(0) = 0. The student's form gives pi/4 - (-pi/4) = pi/2, which does not match. The correct form pi/4 + x/2 gives pi/4 - pi/4 = 0. So the student's answer is wrong; it should be pi/4 + x/2.",
+     "s": [
+      [
+       "Evaluates the expression at x = -pi/2 as 0 and the student's form as pi/2",
+       1
+      ],
+      [
+       "Concludes the answer is wrong and gives pi/4 + x/2",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Create",
+     "d": "Hardest",
+     "t": "long_answer",
+     "m": 3,
+     "q": "Starting from x = tan theta with theta in (-pi/4, pi/4), construct an algebraic expression E in x such that sin^(-1)(E) = 2 tan^(-1) x for |x| < 1, and prove it.",
+     "a": "sin 2theta = 2 sin theta cos theta = 2 tan theta/(1 + tan^2 theta) = 2x/(1 + x^2). So take E = 2x/(1 + x^2). Since theta lies in (-pi/4, pi/4), 2theta lies in (-pi/2, pi/2), so sin^(-1)(2x/(1 + x^2)) = sin^(-1)(sin 2theta) = 2theta = 2 tan^(-1) x.",
+     "s": [
+      [
+       "Expresses sin 2theta in terms of tan theta",
+       1
+      ],
+      [
+       "Obtains E = 2x/(1 + x^2)",
+       1
+      ],
+      [
+       "Uses 2theta in (-pi/2, pi/2) to complete the proof",
+       1
+      ]
+     ]
+    }
+   ]
+  }
+ ]
+}

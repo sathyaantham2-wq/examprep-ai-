@@ -1,0 +1,2972 @@
+{
+  "subject": {
+    "code": "MATH12",
+    "name": "Mathematics",
+    "board": "CBSE",
+    "class": 12
+  },
+  "source": {
+    "publisher": "NCERT",
+    "title": "Mathematics Part I",
+    "edition": "Textbook for Class XII Part I, Reprint 2026-27",
+    "year": 2026
+  },
+  "chapter": {
+    "part": "I",
+    "chapter_no": 5,
+    "name": "Continuity and Differentiability",
+    "blurb": "Continuity of a real function at a point and on its domain, the algebra and composition of continuous functions, and differentiability with its link to continuity (every differentiable function is continuous, but not conversely). The chapter then builds differentiation techniques: the chain rule, implicit differentiation, derivatives of inverse trigonometric, exponential and logarithmic functions, logarithmic differentiation, parametric forms and second order derivatives.",
+    "source_code": "lemh105",
+    "order_index": 5
+  },
+  "scope_in": [
+    {
+      "item": "State the definition of continuity at x = c (lim (x -> c) f(x) = f(c)) and test it by comparing left hand limit, right hand limit and f(c)",
+      "pages": "104-105"
+    },
+    {
+      "item": "Check continuity at a point for polynomial, modulus and piecewise-defined functions, and find every point of discontinuity of a piecewise function",
+      "pages": "106-110, 116-117"
+    },
+    {
+      "item": "Find the value of a constant (k, lambda, a, b) that makes a piecewise function continuous at a given point",
+      "pages": "117-118"
+    },
+    {
+      "item": "Recognise a continuous function as one continuous at every point of its own domain, including end points of [a, b] via one-sided limits, and explain why 1/x is continuous though its graph breaks at 0",
+      "pages": "107-108, 111"
+    },
+    {
+      "item": "Interpret lim (x -> 0+) 1/x = +infinity and lim (x -> 0-) 1/x = -infinity, recognising infinity is not a real number so these limits do not exist",
+      "pages": "109"
+    },
+    {
+      "item": "Show that constant, identity, polynomial, rational, modulus, sine, cosine and tangent functions are continuous on their domains, and that the greatest integer function is discontinuous at every integer",
+      "pages": "107-115"
+    },
+    {
+      "item": "Use the algebra of continuous functions (f + g, f - g, f . g, f/g with g(c) != 0, lambda f, 1/g) and the composite-function theorem to decide continuity",
+      "pages": "113-115, 118"
+    },
+    {
+      "item": "Use the definition f'(c) = lim (h -> 0) [f(c + h) - f(c)]/h, with left and right hand derivatives, to decide differentiability at a point, and on [a, b] or (a, b)",
+      "pages": "118-119"
+    },
+    {
+      "item": "State and use Theorem 3 (differentiable implies continuous) and show the converse fails using |x| at 0, |x - 1| at 1 and [x] at integers",
+      "pages": "120, 122"
+    },
+    {
+      "item": "Recall standard derivatives of x^n, sin x, cos x, tan x and the sum, product and quotient rules",
+      "pages": "119"
+    },
+    {
+      "item": "Differentiate composite functions with the chain rule, including its extension to three functions",
+      "pages": "120-122"
+    },
+    {
+      "item": "Differentiate implicit relations between x and y term by term, applying the chain rule to y-terms",
+      "pages": "122-123, 125"
+    },
+    {
+      "item": "Derive and use d/dx sin^(-1) x = 1/sqrt(1 - x^2), d/dx cos^(-1) x = -1/sqrt(1 - x^2) (on (-1, 1)) and d/dx tan^(-1) x = 1/(1 + x^2), including substitutions such as x = tan t to simplify before differentiating",
+      "pages": "124-125"
+    },
+    {
+      "item": "State properties of the exponential function b^x (b > 1) and the logarithm log_b x (domain, range, points (0, 1) and (1, 0), increasing, mirror images in y = x), define e^x and natural log, and use log laws and change of base",
+      "pages": "125-129"
+    },
+    {
+      "item": "Use d/dx (e^x) = e^x and d/dx (log x) = 1/x with the chain rule",
+      "pages": "129-130, 140-141"
+    },
+    {
+      "item": "Differentiate [u(x)]^(v(x)), products, quotients and roots by logarithmic differentiation, including d/dx (a^x) = a^x log a and sums of such terms",
+      "pages": "130-134, 143"
+    },
+    {
+      "item": "Find dy/dx for parametric forms x = f(t), y = g(t) as (dy/dt)/(dx/dt), dx/dt != 0, and differentiate one function with respect to another",
+      "pages": "134-137, 143-144"
+    },
+    {
+      "item": "Find second order derivatives d^2y/dx^2 (notations f''(x), D^2 y, y'', y_2) and use them to verify given relations such as d^2y/dx^2 + y = 0",
+      "pages": "137-140"
+    }
+  ],
+  "scope_out": [
+    {
+      "item": "Rolle's Theorem and the Mean Value Theorem",
+      "reason": "Not present in this rationalised Reprint 2026-27 edition: the chapter ends at 5.7 Second Order Derivative, the Miscellaneous section and the Summary (pp. 137-146), with no Mean Value Theorem section"
+    },
+    {
+      "item": "Derivatives of sec^(-1) x, cosec^(-1) x and cot^(-1) x as standard results",
+      "reason": "The book's table (p. 124) and Summary (p. 146) give only sin^(-1) x, cos^(-1) x and tan^(-1) x"
+    },
+    {
+      "item": "Proofs of d/dx (e^x) = e^x and d/dx (log x) = 1/x",
+      "reason": "Theorem 5 is stated with its proof skipped (p. 129), referred to supplementary material outside this chapter"
+    },
+    {
+      "item": "Epsilon-delta definitions of limit or continuity",
+      "reason": "Continuity is defined only through left and right hand limits and the pen-lifting idea (pp. 104-105)"
+    },
+    {
+      "item": "Named types of discontinuity (removable, jump, infinite) and the Intermediate Value Theorem or other properties of continuous functions on closed intervals",
+      "reason": "The chapter never names or uses these; it only locates points of discontinuity"
+    },
+    {
+      "item": "Proofs that inverse trigonometric functions are continuous",
+      "reason": "Stated without proof (p. 124)"
+    },
+    {
+      "item": "Applications of derivatives: rate of change, increasing and decreasing functions, maxima and minima, tangents and normals",
+      "reason": "Belong to the next chapter (Application of Derivatives), not to this one"
+    },
+    {
+      "item": "L'Hospital's rule and evaluation of indeterminate limits",
+      "reason": "Not in this chapter or the CBSE Class XII book"
+    },
+    {
+      "item": "Third and higher order derivatives computed in questions",
+      "reason": "Only remarked that they may be defined similarly (p. 137); every exercise stops at the second order"
+    },
+    {
+      "item": "Logarithms to a base b <= 1 or of non-positive numbers",
+      "reason": "The chapter defines log_b only for b > 1 and positive arguments (pp. 127-128)"
+    },
+    {
+      "item": "Proof that b^x grows faster than every polynomial",
+      "reason": "Discussed only motivationally; the book says it will not attempt a proof (p. 126)"
+    }
+  ],
+  "concepts": [
+    {
+      "code": "C12M-5.1",
+      "name": "Continuity at a point and points of discontinuity",
+      "description": "Testing whether f is continuous at x = c by comparing the left hand limit, right hand limit and value f(c), including piecewise functions, finding a constant that makes f continuous, and locating points of discontinuity.",
+      "idea": "A function is continuous at a point if its graph can be drawn through that point without lifting the pen; precisely, the limit of f at c must equal the value f(c).",
+      "rule": "f is continuous at x = c when f(c) is defined and lim (x -> c-) f(x) = lim (x -> c+) f(x) = f(c). If any of these fails, c is a point of discontinuity.",
+      "example": "f(x) = x + 2 for x <= 1 and x - 2 for x > 1: the left hand limit at 1 is 3 and the right hand limit is -1, so x = 1 is the only point of discontinuity.",
+      "difficulty_base": "Easy",
+      "questions": [
+        {
+          "b": "Remember",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "A function f is continuous at a point c in its domain if",
+          "a": "lim (x -> c) f(x) = f(c)",
+          "o": [
+            "lim (x -> c) f(x) = f(c)",
+            "f(c) is defined",
+            "lim (x -> c) f(x) exists",
+            "the left hand limit of f at c equals f(c)"
+          ]
+        },
+        {
+          "b": "Remember",
+          "d": "Easy",
+          "t": "fill_blank",
+          "m": 1,
+          "q": "If f is not continuous at a point c of its domain, then c is called a point of ____ of f.",
+          "a": "discontinuity"
+        },
+        {
+          "b": "Remember",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "For f(x) = 1 if x <= 0 and f(x) = 2 if x > 0, the left hand limit of f at x = 0 is",
+          "a": "1",
+          "o": [
+            "1",
+            "2",
+            "3/2",
+            "does not exist"
+          ]
+        },
+        {
+          "b": "Remember",
+          "d": "Hard",
+          "t": "mcq",
+          "m": 1,
+          "rev": true,
+          "q": "Which of the following is NOT one of the conditions checked when testing whether f is continuous at x = c?",
+          "a": "f is differentiable at x = c",
+          "o": [
+            "f is differentiable at x = c",
+            "f(c) is defined",
+            "the left hand and right hand limits of f at c are equal",
+            "the limit of f at c equals f(c)"
+          ]
+        },
+        {
+          "b": "Understand",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "f(x) = 1 for x != 0 and f(0) = 2. Why is f not continuous at x = 0?",
+          "a": "The limit of f at 0 is 1, which is not equal to f(0) = 2",
+          "o": [
+            "The limit of f at 0 is 1, which is not equal to f(0) = 2",
+            "The left hand and right hand limits of f at 0 are unequal",
+            "f is not defined at x = 0",
+            "The limit of f at 0 does not exist"
+          ]
+        },
+        {
+          "b": "Understand",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "Informally, a function is continuous at a point if its graph near that point can be drawn",
+          "a": "without lifting the pen from the paper",
+          "o": [
+            "without lifting the pen from the paper",
+            "as a straight line",
+            "without any sharp corner",
+            "entirely above the x-axis"
+          ]
+        },
+        {
+          "b": "Understand",
+          "d": "Easy",
+          "t": "short_answer",
+          "m": 2,
+          "q": "Check the continuity of f(x) = 2x + 3 at x = 1.",
+          "a": "f(1) = 2(1) + 3 = 5 and lim (x -> 1) (2x + 3) = 5. Since the limit equals f(1), f is continuous at x = 1.",
+          "s": [
+            [
+              "Finds f(1) = 5",
+              1
+            ],
+            [
+              "Finds lim (x -> 1) f(x) = 5 and concludes f is continuous at x = 1",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Understand",
+          "d": "Hard",
+          "t": "mcq",
+          "m": 1,
+          "q": "For f(x) = x + 2 if x <= 1 and f(x) = x - 2 if x > 1, which statement about x = 1 is correct?",
+          "a": "Left hand limit = 3, right hand limit = -1, so f is discontinuous at x = 1",
+          "o": [
+            "Left hand limit = 3, right hand limit = -1, so f is discontinuous at x = 1",
+            "Left hand limit = right hand limit = 3, so f is continuous at x = 1",
+            "Left hand limit = 3, right hand limit = -1, but f(1) = 3, so f is continuous at x = 1",
+            "Left hand limit = -1, right hand limit = 3, so f is discontinuous at x = 1"
+          ]
+        },
+        {
+          "b": "Understand",
+          "d": "Hard",
+          "t": "mcq",
+          "m": 1,
+          "q": "At which points is the greatest integer function f(x) = [x] discontinuous?",
+          "a": "At every integer",
+          "o": [
+            "At every integer",
+            "Only at x = 0",
+            "At every real number that is not an integer",
+            "Nowhere; it is continuous at every real number"
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Easy",
+          "t": "fill_blank",
+          "m": 1,
+          "q": "For f(x) = x^3 + 3 when x != 0 and f(0) = 1, the value of lim (x -> 0) f(x) is ____.",
+          "a": "3"
+        },
+        {
+          "b": "Apply",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "Is f(x) = 2x^2 - 1 continuous at x = 3?",
+          "a": "Yes, since lim (x -> 3) f(x) = 17 = f(3)",
+          "o": [
+            "Yes, since lim (x -> 3) f(x) = 17 = f(3)",
+            "Yes, since lim (x -> 3) f(x) = 35 = f(3)",
+            "No, since lim (x -> 3) f(x) = 17 but f(3) = 35",
+            "No, since a polynomial has no limit at x = 3"
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Hard",
+          "t": "mcq",
+          "m": 1,
+          "q": "For what value of k is f(x) = kx + 1 (x <= 5), f(x) = 3x - 5 (x > 5) continuous at x = 5?",
+          "a": "9/5",
+          "o": [
+            "9/5",
+            "11/5",
+            "2",
+            "9"
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Hard",
+          "t": "mcq",
+          "m": 1,
+          "q": "For what value of k is f(x) = kx^2 (x <= 2), f(x) = 3 (x > 2) continuous at x = 2?",
+          "a": "3/4",
+          "o": [
+            "3/4",
+            "3/2",
+            "4/3",
+            "12"
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Hard",
+          "t": "short_answer",
+          "m": 2,
+          "q": "Find the relationship between a and b so that f(x) = ax + 1 (x <= 3), f(x) = bx + 3 (x > 3) is continuous at x = 3.",
+          "a": "Left hand limit = f(3) = 3a + 1; right hand limit = 3b + 3. Continuity needs 3a + 1 = 3b + 3, i.e. 3a - 3b = 2, or a = b + 2/3.",
+          "s": [
+            [
+              "Writes the left hand value 3a + 1 and the right hand limit 3b + 3 and equates them",
+              1
+            ],
+            [
+              "Simplifies to 3a - 3b = 2 (equivalently a = b + 2/3)",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Hardest",
+          "t": "long_answer",
+          "m": 3,
+          "q": "Find all points of discontinuity of f, where f(x) = 2x + 3 if x <= 2 and f(x) = 2x - 3 if x > 2.",
+          "a": "For x < 2 and x > 2, f is given by a polynomial, so it is continuous there. At x = 2: left hand limit = f(2) = 2(2) + 3 = 7; right hand limit = 2(2) - 3 = 1. These are unequal, so x = 2 is the only point of discontinuity.",
+          "s": [
+            [
+              "States f is continuous at every x != 2 because each piece is a polynomial",
+              1
+            ],
+            [
+              "Finds left hand limit 7 and right hand limit 1 at x = 2",
+              1
+            ],
+            [
+              "Concludes x = 2 is the only point of discontinuity",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Analyse",
+          "d": "Hard",
+          "t": "assertion_reason",
+          "m": 1,
+          "q": "Assertion (A): The function f(x) = |x| is continuous at x = 0. Reason (R): The left hand limit of |x| at x = 0 is -1 and its right hand limit is 1.",
+          "a": "A is true, R is false",
+          "o": [
+            "A is true, R is false",
+            "Both A and R are true, and R is the correct explanation of A",
+            "Both A and R are true, but R is not the correct explanation of A",
+            "A is false, R is true"
+          ]
+        },
+        {
+          "b": "Analyse",
+          "d": "Hard",
+          "t": "multi_statement",
+          "m": 1,
+          "q": "Consider these statements. (I) If the left and right hand limits of f at c are equal to each other but differ from f(c), then f is discontinuous at c. (II) If f is defined at c and the left and right hand limits of f at c are unequal, then f is discontinuous at c. Which is or are correct?",
+          "a": "Both I and II",
+          "o": [
+            "Both I and II",
+            "Only I",
+            "Only II",
+            "Neither I nor II"
+          ]
+        },
+        {
+          "b": "Analyse",
+          "d": "Hardest",
+          "t": "long_answer",
+          "m": 3,
+          "q": "For what value of lambda is f(x) = lambda(x^2 - 2x) for x <= 0 and f(x) = 4x + 1 for x > 0 continuous at x = 0? What about continuity at x = 1?",
+          "a": "At x = 0: f(0) = lambda(0) = 0 and the left hand limit is 0, but the right hand limit is 4(0) + 1 = 1. Since 1 != 0 whatever lambda is, there is no value of lambda for which f is continuous at x = 0. At x = 1, f(x) = 4x + 1 near 1, a polynomial, so f is continuous at x = 1 for every value of lambda.",
+          "s": [
+            [
+              "Finds f(0) and the left hand limit both equal 0",
+              1
+            ],
+            [
+              "Finds the right hand limit 1 and concludes no value of lambda makes f continuous at 0",
+              1
+            ],
+            [
+              "States f is continuous at x = 1 for every lambda since f = 4x + 1 near 1",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Evaluate",
+          "d": "Hard",
+          "t": "short_answer",
+          "m": 2,
+          "q": "f(x) = x + 2 for x < 1, f(1) = 0, and f(x) = x - 2 for x > 1. A student says: 'f can be made continuous at x = 1 just by changing f(1) to 3.' Is the student right? Justify.",
+          "a": "No. The left hand limit at 1 is 3 but the right hand limit is -1. Since the one-sided limits are unequal, the limit at 1 does not exist, so no choice of the value f(1) can make f continuous at x = 1.",
+          "s": [
+            [
+              "Computes left hand limit 3 and right hand limit -1",
+              1
+            ],
+            [
+              "Concludes that no value of f(1) can make f continuous because the limit does not exist",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Create",
+          "d": "Hardest",
+          "t": "long_answer",
+          "m": 3,
+          "q": "Construct a function, defined at every real number, that is discontinuous at x = 2 only because its value at 2 differs from its limit there (the left and right hand limits at 2 are equal). Justify your example.",
+          "a": "For example f(x) = x + 1 for x != 2 and f(2) = 5. Both one-sided limits at 2 equal 3, but f(2) = 5 != 3, so f is discontinuous at 2; at every other point f equals the polynomial x + 1 near that point, so it is continuous there.",
+          "s": [
+            [
+              "Gives a function defined at every real number with a single altered value at x = 2",
+              1
+            ],
+            [
+              "Shows the left and right hand limits at 2 are equal",
+              1
+            ],
+            [
+              "Shows f(2) differs from that limit, so x = 2 is the only point of discontinuity",
+              1
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "code": "C12M-5.2",
+      "name": "Continuous functions, algebra and composition of continuous functions",
+      "description": "Recognising continuous functions (constant, identity, polynomial, rational, modulus, sine, cosine, tangent), using the sum, difference, product and quotient theorem and the composite-function theorem to decide continuity.",
+      "idea": "A function is continuous if it is continuous at every point of its own domain, and continuity is preserved when continuous functions are added, subtracted, multiplied, divided (where the denominator is non-zero) or composed.",
+      "rule": "If f and g are continuous at c, then f + g, f - g, f . g and f/g (g(c) != 0) are continuous at c. If g is continuous at c and f is continuous at g(c), then f o g is continuous at c.",
+      "example": "sin (x^2) is continuous because it is g o h with g(x) = sin x and h(x) = x^2, both continuous; 1/x is continuous because 0 is not in its domain.",
+      "difficulty_base": "Easy",
+      "questions": [
+        {
+          "b": "Remember",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "A real function f is said to be a continuous function if it is",
+          "a": "continuous at every point in its domain",
+          "o": [
+            "continuous at every point in its domain",
+            "defined at every real number",
+            "continuous at at least one point",
+            "equal to a polynomial"
+          ]
+        },
+        {
+          "b": "Remember",
+          "d": "Easy",
+          "t": "fill_blank",
+          "m": 1,
+          "q": "If f and g are continuous at x = c, then f/g is continuous at x = c provided g(c) is not equal to ____.",
+          "a": "0"
+        },
+        {
+          "b": "Remember",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "Suppose g is continuous at c and f is continuous at g(c). By Theorem 2, which function is then continuous at c?",
+          "a": "f o g",
+          "o": [
+            "f o g",
+            "g o f",
+            "f + g only",
+            "f/g"
+          ]
+        },
+        {
+          "b": "Remember",
+          "d": "Hard",
+          "t": "mcq",
+          "m": 1,
+          "rev": true,
+          "q": "Which of these functions is NOT continuous at every point of its domain?",
+          "a": "f(x) = [x], the greatest integer function, on all real numbers",
+          "o": [
+            "f(x) = [x], the greatest integer function, on all real numbers",
+            "f(x) = 1/x, x != 0",
+            "f(x) = |x|",
+            "f(x) = tan x"
+          ]
+        },
+        {
+          "b": "Understand",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "Why is f(x) = 1/x, x != 0, called a continuous function even though its graph is broken at x = 0?",
+          "a": "Because 0 is not in its domain, and f is continuous at every point of its domain",
+          "o": [
+            "Because 0 is not in its domain, and f is continuous at every point of its domain",
+            "Because lim (x -> 0) 1/x = 0",
+            "Because its left and right hand limits at 0 are both infinity",
+            "Because every rational function is continuous at every real number"
+          ]
+        },
+        {
+          "b": "Understand",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "Why is f(x) = x^3 + x^2 - 1 continuous at every real number?",
+          "a": "It is a polynomial function, and lim (x -> c) p(x) = p(c) for every real c",
+          "o": [
+            "It is a polynomial function, and lim (x -> c) p(x) = p(c) for every real c",
+            "Every function with no x in a denominator is continuous",
+            "Its value at x = 0 is -1, which is a real number",
+            "Its graph is a straight line"
+          ]
+        },
+        {
+          "b": "Understand",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "We write lim (x -> 0+) 1/x = +infinity. This means",
+          "a": "the values of 1/x exceed any given number as x approaches 0 from the right, so the limit does not exist as a real number",
+          "o": [
+            "the values of 1/x exceed any given number as x approaches 0 from the right, so the limit does not exist as a real number",
+            "the limit exists and equals a very large real number",
+            "the value of 1/x at x = 0 is infinity",
+            "1/x is continuous at 0 from the right"
+          ]
+        },
+        {
+          "b": "Understand",
+          "d": "Hard",
+          "t": "mcq",
+          "m": 1,
+          "q": "f is defined on the closed interval [a, b]. For f to be continuous at the end point a, we need",
+          "a": "lim (x -> a+) f(x) = f(a)",
+          "o": [
+            "lim (x -> a+) f(x) = f(a)",
+            "lim (x -> a-) f(x) = f(a)",
+            "both one-sided limits at a to equal f(a)",
+            "f(a) = 0"
+          ]
+        },
+        {
+          "b": "Understand",
+          "d": "Hard",
+          "t": "mcq",
+          "m": 1,
+          "q": "Why is tan x a continuous function?",
+          "a": "It is the quotient sin x / cos x of two continuous functions, taken only where cos x is not 0",
+          "o": [
+            "It is the quotient sin x / cos x of two continuous functions, taken only where cos x is not 0",
+            "It is defined at every real number",
+            "It is the product of sin x and cos x",
+            "Its graph has no breaks anywhere on the real line"
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "Which of these functions is continuous at every real number?",
+          "a": "f(x) = sin x + cos x",
+          "o": [
+            "f(x) = sin x + cos x",
+            "f(x) = 1/(x - 5)",
+            "f(x) = [x]",
+            "f(x) = tan x"
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Easy",
+          "t": "fill_blank",
+          "m": 1,
+          "q": "f(x) = (x^2 - 25)/(x + 5) is a rational function, so it is continuous on its domain. Its domain is all real numbers except x = ____.",
+          "a": "-5"
+        },
+        {
+          "b": "Apply",
+          "d": "Hard",
+          "t": "mcq",
+          "m": 1,
+          "q": "f(x) = sin (x^2) is continuous because it is the composite g o h where",
+          "a": "g(x) = sin x and h(x) = x^2, both continuous",
+          "o": [
+            "g(x) = sin x and h(x) = x^2, both continuous",
+            "g(x) = x^2 and h(x) = sin x, both continuous",
+            "g(x) = sin x and h(x) = x, multiplied together",
+            "g(x) = sin x and h(x) = 2x, both continuous"
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Hard",
+          "t": "mcq",
+          "m": 1,
+          "q": "Which argument correctly shows that f(x) = |cos x| is a continuous function?",
+          "a": "f = h o g with g(x) = cos x and h(x) = |x|, both continuous, so the composite is continuous",
+          "o": [
+            "f = h o g with g(x) = cos x and h(x) = |x|, both continuous, so the composite is continuous",
+            "f is the product of |x| and cos x, both continuous",
+            "|cos x| is never negative, so it is continuous",
+            "cos x is periodic, so |cos x| is continuous"
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Hard",
+          "t": "short_answer",
+          "m": 2,
+          "q": "Using the algebra of continuous functions, explain why f(x) = x^2 - sin x + 5 is continuous at x = pi.",
+          "a": "x^2 is a polynomial, sin x is continuous and 5 is a constant function, so each is continuous at pi. A sum and difference of functions continuous at pi is continuous at pi, so f is continuous at x = pi.",
+          "s": [
+            [
+              "States that x^2, sin x and the constant 5 are each continuous",
+              1
+            ],
+            [
+              "Uses the sum/difference result to conclude f is continuous at x = pi",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Hardest",
+          "t": "long_answer",
+          "m": 3,
+          "q": "Find all the points of discontinuity of f(x) = |x| - |x + 1|.",
+          "a": "|x| is continuous. |x + 1| is the composite h o g with g(x) = x + 1 (polynomial) and h(x) = |x|, so it is continuous. The difference of two continuous functions is continuous, so f is continuous everywhere: it has no point of discontinuity.",
+          "s": [
+            [
+              "States |x| is continuous",
+              1
+            ],
+            [
+              "Shows |x + 1| is continuous as a composite of continuous functions",
+              1
+            ],
+            [
+              "Uses the difference result to conclude there is no point of discontinuity",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Analyse",
+          "d": "Hard",
+          "t": "assertion_reason",
+          "m": 1,
+          "q": "Assertion (A): Every rational function p(x)/q(x) is continuous at every point of its domain. Reason (R): Polynomial functions are continuous, and the quotient of two continuous functions is continuous wherever the denominator is non-zero.",
+          "a": "Both A and R are true, and R is the correct explanation of A",
+          "o": [
+            "Both A and R are true, and R is the correct explanation of A",
+            "Both A and R are true, but R is not the correct explanation of A",
+            "A is true, R is false",
+            "A is false, R is true"
+          ]
+        },
+        {
+          "b": "Analyse",
+          "d": "Hard",
+          "t": "multi_statement",
+          "m": 1,
+          "q": "Consider these statements. (I) If f is continuous at c, then -f is continuous at c. (II) If f + g is continuous at c, then f and g must both be continuous at c. Which is or are correct?",
+          "a": "Only I",
+          "o": [
+            "Only I",
+            "Only II",
+            "Both I and II",
+            "Neither I nor II"
+          ]
+        },
+        {
+          "b": "Analyse",
+          "d": "Hardest",
+          "t": "long_answer",
+          "m": 3,
+          "q": "Show that f(x) = sin |x| is a continuous function.",
+          "a": "Write f = g o h with h(x) = |x| and g(x) = sin x. The modulus function h is continuous at every real number, and sin is continuous at every real number, in particular at h(c) for every c. By the composite-function theorem, f = g o h is continuous at every real c, so f is a continuous function.",
+          "s": [
+            [
+              "Expresses f as the composite sin o |x| (names both pieces)",
+              1
+            ],
+            [
+              "States both pieces are continuous",
+              1
+            ],
+            [
+              "Applies the composite theorem to conclude f is continuous everywhere",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Evaluate",
+          "d": "Hard",
+          "t": "short_answer",
+          "m": 2,
+          "q": "A student argues: 'g(x) = x - [x] is the difference of the functions x and [x], so it is continuous everywhere.' Evaluate this argument.",
+          "a": "The argument fails: the difference theorem needs both functions to be continuous, but [x] is discontinuous at every integer. In fact g is discontinuous at every integer n: the left hand limit at n is n - (n - 1) = 1 while g(n) = 0.",
+          "s": [
+            [
+              "Points out that [x] is not continuous at integers, so the theorem cannot be applied",
+              1
+            ],
+            [
+              "Shows g is discontinuous at integers (left hand limit 1, value 0)",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Create",
+          "d": "Hardest",
+          "t": "long_answer",
+          "m": 3,
+          "q": "Using only functions shown continuous in this chapter and the algebra and composite theorems, construct your own function that is a composite of at least two functions and is continuous at every real number. Name the pieces and justify.",
+          "a": "For example f(x) = cos (x^2) + |x|. Here cos (x^2) = g o h with h(x) = x^2 and g(x) = cos x, both continuous, so it is continuous by the composite theorem; |x| is continuous; their sum is continuous by the algebra of continuous functions. Hence f is continuous at every real number.",
+          "s": [
+            [
+              "Gives a function defined at every real number that includes a genuine composite",
+              1
+            ],
+            [
+              "Names the inner and outer functions and states each is continuous",
+              1
+            ],
+            [
+              "Cites the composite theorem (and sum/product theorem if used) to conclude continuity",
+              1
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "code": "C12M-5.3",
+      "name": "Differentiability and its relation to continuity",
+      "description": "The derivative as lim (h -> 0) [f(c + h) - f(c)]/h, differentiability at a point via equal finite left and right hand derivatives, and the theorem that differentiability implies continuity but not conversely.",
+      "idea": "A function is differentiable at c when the slope limit [f(c + h) - f(c)]/h settles to one finite value from both sides; a corner or a break stops this.",
+      "rule": "f is differentiable at c if lim (h -> 0-) [f(c + h) - f(c)]/h and lim (h -> 0+) [f(c + h) - f(c)]/h are finite and equal. Every differentiable function is continuous; the converse is false.",
+      "example": "f(x) = |x| is continuous at 0, but its left hand derivative there is -1 and its right hand derivative is 1, so it is not differentiable at 0.",
+      "difficulty_base": "Hard",
+      "questions": [
+        {
+          "b": "Remember",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "The derivative of f at a point c is defined as",
+          "a": "lim (h -> 0) [f(c + h) - f(c)]/h, provided the limit exists",
+          "o": [
+            "lim (h -> 0) [f(c + h) - f(c)]/h, provided the limit exists",
+            "lim (h -> 0) [f(c + h) + f(c)]/h",
+            "lim (h -> 0) [f(c + h) - f(c)]",
+            "[f(c + h) - f(c)]/h with h = 1"
+          ]
+        },
+        {
+          "b": "Remember",
+          "d": "Easy",
+          "t": "fill_blank",
+          "m": 1,
+          "q": "Theorem 3 says: every differentiable function is ____.",
+          "a": "continuous"
+        },
+        {
+          "b": "Remember",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "f is differentiable at c if the left hand and right hand limits of [f(c + h) - f(c)]/h as h -> 0 are",
+          "a": "finite and equal",
+          "o": [
+            "finite and equal",
+            "both equal to f(c)",
+            "both equal to 0",
+            "finite but unequal"
+          ]
+        },
+        {
+          "b": "Remember",
+          "d": "Hard",
+          "t": "mcq",
+          "m": 1,
+          "rev": true,
+          "q": "Which of the following statements about continuity and differentiability is FALSE?",
+          "a": "Every continuous function is differentiable",
+          "o": [
+            "Every continuous function is differentiable",
+            "Every differentiable function is continuous",
+            "f(x) = |x| is continuous at x = 0",
+            "If f is differentiable at c, then lim (x -> c) f(x) = f(c)"
+          ]
+        },
+        {
+          "b": "Understand",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "For f(x) = |x|, the left hand limit of [f(0 + h) - f(0)]/h as h -> 0 is",
+          "a": "-1",
+          "o": [
+            "-1",
+            "1",
+            "0",
+            "does not exist, because |x| is discontinuous at 0"
+          ]
+        },
+        {
+          "b": "Understand",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "f(x) = |x| is not differentiable at x = 0 because",
+          "a": "its left hand derivative (-1) and right hand derivative (1) at 0 are not equal",
+          "o": [
+            "its left hand derivative (-1) and right hand derivative (1) at 0 are not equal",
+            "it is not continuous at 0",
+            "f(0) = 0",
+            "it is not defined for negative x"
+          ]
+        },
+        {
+          "b": "Understand",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "If a function is not continuous at x = c, then at x = c the function",
+          "a": "cannot be differentiable",
+          "o": [
+            "cannot be differentiable",
+            "must be differentiable",
+            "may or may not be differentiable",
+            "has derivative equal to 0"
+          ]
+        },
+        {
+          "b": "Understand",
+          "d": "Hard",
+          "t": "mcq",
+          "m": 1,
+          "q": "Why is the greatest integer function f(x) = [x], 0 < x < 3, not differentiable at x = 1?",
+          "a": "It is not continuous at x = 1, and a function differentiable at a point must be continuous there",
+          "o": [
+            "It is not continuous at x = 1, and a function differentiable at a point must be continuous there",
+            "It is constant near x = 1, so its derivative there is 0",
+            "Its left and right hand limits at x = 1 are both equal to 1",
+            "x = 1 is not in its domain"
+          ]
+        },
+        {
+          "b": "Understand",
+          "d": "Hard",
+          "t": "mcq",
+          "m": 1,
+          "q": "A function f is said to be differentiable in the closed interval [a, b] if",
+          "a": "it is differentiable at every point of [a, b], using the right hand derivative at a and the left hand derivative at b",
+          "o": [
+            "it is differentiable at every point of [a, b], using the right hand derivative at a and the left hand derivative at b",
+            "it is differentiable at every point of the open interval (a, b) only",
+            "it is continuous at every point of [a, b]",
+            "it is differentiable at the end points a and b only"
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Easy",
+          "t": "fill_blank",
+          "m": 1,
+          "q": "For f(x) = |x - 1|, the right hand derivative at x = 1, lim (h -> 0+) [f(1 + h) - f(1)]/h, is ____.",
+          "a": "1"
+        },
+        {
+          "b": "Apply",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "For f(x) = |x - 1|, the left hand derivative at x = 1 is",
+          "a": "-1",
+          "o": [
+            "-1",
+            "1",
+            "0",
+            "2"
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Hard",
+          "t": "mcq",
+          "m": 1,
+          "q": "Using the definition, the derivative of f(x) = x^2 at x = 3, lim (h -> 0) [(3 + h)^2 - 9]/h, equals",
+          "a": "6",
+          "o": [
+            "6",
+            "9",
+            "18",
+            "3"
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Hard",
+          "t": "mcq",
+          "m": 1,
+          "q": "f(x) = x^2 for x <= 0 and f(x) = x for x > 0 is continuous at 0. Its left hand and right hand derivatives at x = 0 are",
+          "a": "0 and 1, so f is continuous but not differentiable at 0",
+          "o": [
+            "0 and 1, so f is continuous but not differentiable at 0",
+            "0 and 0, so f is differentiable at 0",
+            "1 and 1, so f is differentiable at 0",
+            "0 and 1, so f is not continuous at 0"
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Hard",
+          "t": "short_answer",
+          "m": 2,
+          "q": "Prove that f(x) = |x - 1| is not differentiable at x = 1.",
+          "a": "Right hand derivative: lim (h -> 0+) (|h| - 0)/h = lim h/h = 1. Left hand derivative: lim (h -> 0-) |h|/h = lim (-h)/h = -1. Since 1 != -1, f is not differentiable at x = 1.",
+          "s": [
+            [
+              "Computes the right hand derivative 1 from the definition",
+              1
+            ],
+            [
+              "Computes the left hand derivative -1 and concludes they differ, so f is not differentiable at 1",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Hardest",
+          "t": "long_answer",
+          "m": 3,
+          "q": "Prove that the greatest integer function f(x) = [x], 0 < x < 3, is not differentiable at x = 1 and at x = 2.",
+          "a": "At x = 1: lim (x -> 1-) [x] = 0 but lim (x -> 1+) [x] = 1, so f is not continuous at 1. At x = 2: lim (x -> 2-) [x] = 1 but lim (x -> 2+) [x] = 2, so f is not continuous at 2. Since a function differentiable at a point must be continuous there, f is not differentiable at x = 1 or x = 2.",
+          "s": [
+            [
+              "Shows f is discontinuous at x = 1 (one-sided limits 0 and 1)",
+              1
+            ],
+            [
+              "Shows f is discontinuous at x = 2 (one-sided limits 1 and 2)",
+              1
+            ],
+            [
+              "Uses differentiable implies continuous to conclude f is not differentiable at either point",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Analyse",
+          "d": "Hard",
+          "t": "assertion_reason",
+          "m": 1,
+          "q": "Assertion (A): Since f(x) = |x| is continuous at x = 0, it is differentiable at x = 0. Reason (R): If a function is differentiable at a point, then it is continuous at that point.",
+          "a": "A is false, R is true",
+          "o": [
+            "A is false, R is true",
+            "Both A and R are true, and R is the correct explanation of A",
+            "Both A and R are true, but R is not the correct explanation of A",
+            "A is true, R is false"
+          ]
+        },
+        {
+          "b": "Analyse",
+          "d": "Hard",
+          "t": "multi_statement",
+          "m": 1,
+          "q": "Consider these statements. (I) If f is continuous at c, then f is differentiable at c. (II) If f is not continuous at c, then f is not differentiable at c. Which is or are correct?",
+          "a": "Only II",
+          "o": [
+            "Only II",
+            "Only I",
+            "Both I and II",
+            "Neither I nor II"
+          ]
+        },
+        {
+          "b": "Analyse",
+          "d": "Hardest",
+          "t": "long_answer",
+          "m": 3,
+          "q": "Does there exist a function which is continuous everywhere but not differentiable at exactly two points? Justify using f(x) = |x| + |x - 1|.",
+          "a": "Yes. f = |x| + |x - 1| is a sum of continuous functions, so it is continuous everywhere. Written piecewise: f = 1 - 2x for x < 0, f = 1 for 0 <= x <= 1, f = 2x - 1 for x > 1. At x = 0 the left hand derivative is -2 and the right hand derivative is 0; at x = 1 the left hand derivative is 0 and the right hand derivative is 2. So f is not differentiable at exactly x = 0 and x = 1, and is differentiable everywhere else.",
+          "s": [
+            [
+              "Answers yes and states f is continuous everywhere as a sum of continuous functions",
+              1
+            ],
+            [
+              "Shows the left and right hand derivatives differ at x = 0 (-2 and 0)",
+              1
+            ],
+            [
+              "Shows they differ at x = 1 (0 and 2), and that these are the only two such points",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Evaluate",
+          "d": "Hard",
+          "t": "short_answer",
+          "m": 2,
+          "q": "A student claims: 'The graph of f(x) = |x| can be drawn without lifting the pen, so f is differentiable everywhere.' Evaluate the claim.",
+          "a": "The claim is wrong. Drawing without lifting the pen shows continuity, not differentiability. At x = 0 the left hand derivative of |x| is -1 and the right hand derivative is 1, so |x| is continuous but not differentiable at 0.",
+          "s": [
+            [
+              "Explains that the pen test shows only continuity, and continuity does not imply differentiability",
+              1
+            ],
+            [
+              "Shows the unequal one-sided derivatives (-1 and 1) at x = 0",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Create",
+          "d": "Hardest",
+          "t": "long_answer",
+          "m": 3,
+          "q": "Construct a function that is continuous at x = 2 but not differentiable at x = 2, and prove both properties.",
+          "a": "For example f(x) = |x - 2|. Continuity: f(2) = 0 and both one-sided limits of |x - 2| at 2 are 0. Differentiability: right hand derivative lim (h -> 0+) |h|/h = 1, left hand derivative lim (h -> 0-) |h|/h = -1; these differ, so f is not differentiable at 2.",
+          "s": [
+            [
+              "Gives a suitable function such as |x - 2|",
+              1
+            ],
+            [
+              "Proves continuity at 2 (limits and value all equal)",
+              1
+            ],
+            [
+              "Proves non-differentiability at 2 (unequal one-sided derivatives)",
+              1
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "code": "C12M-5.4",
+      "name": "Chain rule for composite functions",
+      "description": "Differentiating composite functions with the chain rule df/dx = (dv/dt)(dt/dx), extended to three or more layers, together with the standard derivatives and product and quotient rules recalled from Class XI.",
+      "idea": "When one function is fed into another, the overall rate of change is the outer rate multiplied by the inner rate.",
+      "rule": "If f = v o u and t = u(x), then df/dx = (dv/dt) . (dt/dx); for three layers df/dx = (dw/ds) . (ds/dt) . (dt/dx).",
+      "example": "d/dx [sin (x^2)]: put t = x^2, v = sin t, so df/dx = cos t . 2x = 2x cos (x^2).",
+      "difficulty_base": "Easy",
+      "questions": [
+        {
+          "b": "Remember",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "Chain rule: if f = v o u and t = u(x), and both dt/dx and dv/dt exist, then df/dx =",
+          "a": "(dv/dt) . (dt/dx)",
+          "o": [
+            "(dv/dt) . (dt/dx)",
+            "(dv/dt) + (dt/dx)",
+            "(dv/dt) / (dt/dx)",
+            "dv/dt only"
+          ]
+        },
+        {
+          "b": "Remember",
+          "d": "Easy",
+          "t": "fill_blank",
+          "m": 1,
+          "q": "From the table of standard derivatives, d/dx (tan x) = ____.",
+          "a": "sec^2 x"
+        },
+        {
+          "b": "Remember",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "From the table of standard derivatives, d/dx (cos x) =",
+          "a": "-sin x",
+          "o": [
+            "-sin x",
+            "sin x",
+            "-cos x",
+            "sec^2 x"
+          ]
+        },
+        {
+          "b": "Remember",
+          "d": "Hard",
+          "t": "mcq",
+          "m": 1,
+          "rev": true,
+          "q": "Which of the following is NOT a correct derivative?",
+          "a": "d/dx [sin (x^2)] = cos (x^2)",
+          "o": [
+            "d/dx [sin (x^2)] = cos (x^2)",
+            "d/dx [sin (x^2)] = 2x cos (x^2)",
+            "d/dx (2x + 1)^3 = 6(2x + 1)^2",
+            "d/dx (cos x) = -sin x"
+          ]
+        },
+        {
+          "b": "Understand",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "To differentiate f(x) = sin (x^2) by the chain rule, the natural choice of inner and outer functions is",
+          "a": "t = x^2 and v(t) = sin t",
+          "o": [
+            "t = x^2 and v(t) = sin t",
+            "t = sin x and v(t) = t^2",
+            "t = x and v(t) = sin^2 t",
+            "t = 2x and v(t) = sin t"
+          ]
+        },
+        {
+          "b": "Understand",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "The book finds d/dx (2x + 1)^3 both by expanding and by the chain rule. Both methods give",
+          "a": "6(2x + 1)^2",
+          "o": [
+            "6(2x + 1)^2",
+            "3(2x + 1)^2",
+            "24x^2",
+            "6(2x + 1)^3"
+          ]
+        },
+        {
+          "b": "Understand",
+          "d": "Easy",
+          "t": "short_answer",
+          "m": 2,
+          "q": "Using the chain rule, differentiate sin (x^2 + 5) with respect to x.",
+          "a": "Put t = x^2 + 5. Then d/dx sin t = cos t . dt/dx = cos (x^2 + 5) . 2x = 2x cos (x^2 + 5).",
+          "s": [
+            [
+              "Differentiates the outer function to get cos (x^2 + 5)",
+              1
+            ],
+            [
+              "Multiplies by the inner derivative 2x to get 2x cos (x^2 + 5)",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Understand",
+          "d": "Hard",
+          "t": "mcq",
+          "m": 1,
+          "q": "For f = (w o u) o v with t = v(x) and s = u(t), the extended chain rule gives df/dx =",
+          "a": "(dw/ds) . (ds/dt) . (dt/dx)",
+          "o": [
+            "(dw/ds) . (ds/dt) . (dt/dx)",
+            "(dw/ds) . (dt/dx)",
+            "(dw/ds) + (ds/dt) + (dt/dx)",
+            "(dw/dt) . (ds/dx)"
+          ]
+        },
+        {
+          "b": "Understand",
+          "d": "Hard",
+          "t": "mcq",
+          "m": 1,
+          "q": "Why is d/dx (2x + 1)^100 found much more easily with the chain rule than by expanding?",
+          "a": "The chain rule gives 100(2x + 1)^99 . 2 directly, with no need to expand a 100th power",
+          "o": [
+            "The chain rule gives 100(2x + 1)^99 . 2 directly, with no need to expand a 100th power",
+            "Expanding by the binomial theorem gives a different, wrong answer",
+            "The chain rule removes the need to multiply by the derivative of 2x + 1",
+            "Binomial expansion is not allowed for powers above 3"
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Easy",
+          "t": "fill_blank",
+          "m": 1,
+          "q": "d/dx [sin (ax + b)] = ____.",
+          "a": "a cos (ax + b)"
+        },
+        {
+          "b": "Apply",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "d/dx [cos (sin x)] =",
+          "a": "-sin (sin x) . cos x",
+          "o": [
+            "-sin (sin x) . cos x",
+            "-sin (sin x)",
+            "sin (sin x) . cos x",
+            "-sin (cos x)"
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Hard",
+          "t": "mcq",
+          "m": 1,
+          "q": "d/dx [cos (sqrt(x))] =",
+          "a": "-sin (sqrt(x)) / (2 sqrt(x))",
+          "o": [
+            "-sin (sqrt(x)) / (2 sqrt(x))",
+            "-sin (sqrt(x))",
+            "sin (sqrt(x)) / (2 sqrt(x))",
+            "-2 sqrt(x) sin (sqrt(x))"
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Hard",
+          "t": "mcq",
+          "m": 1,
+          "q": "d/dx (3x^2 - 9x + 5)^9 =",
+          "a": "9(3x^2 - 9x + 5)^8 (6x - 9)",
+          "o": [
+            "9(3x^2 - 9x + 5)^8 (6x - 9)",
+            "9(3x^2 - 9x + 5)^8",
+            "9(6x - 9)^8",
+            "8(3x^2 - 9x + 5)^9 (6x - 9)"
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Hard",
+          "t": "short_answer",
+          "m": 2,
+          "q": "Differentiate sin^3 x + cos^6 x with respect to x.",
+          "a": "d/dx (sin x)^3 = 3 sin^2 x cos x; d/dx (cos x)^6 = 6 cos^5 x . (-sin x). So the derivative is 3 sin^2 x cos x - 6 cos^5 x sin x.",
+          "s": [
+            [
+              "Differentiates sin^3 x as 3 sin^2 x cos x",
+              1
+            ],
+            [
+              "Differentiates cos^6 x as -6 cos^5 x sin x and combines",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Hardest",
+          "t": "long_answer",
+          "m": 3,
+          "q": "Differentiate sin (ax + b) / cos (cx + d) with respect to x.",
+          "a": "By the quotient rule with u = sin (ax + b), v = cos (cx + d): u' = a cos (ax + b), v' = -c sin (cx + d). Derivative = [a cos (ax + b) cos (cx + d) + c sin (ax + b) sin (cx + d)] / cos^2 (cx + d), equivalently a cos (ax + b) sec (cx + d) + c sin (ax + b) tan (cx + d) sec (cx + d).",
+          "s": [
+            [
+              "Sets up the quotient rule (u'v - uv')/v^2",
+              1
+            ],
+            [
+              "Finds u' = a cos (ax + b) and v' = -c sin (cx + d) using the chain rule",
+              1
+            ],
+            [
+              "Simplifies to [a cos (ax + b) cos (cx + d) + c sin (ax + b) sin (cx + d)] / cos^2 (cx + d)",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Analyse",
+          "d": "Hard",
+          "t": "assertion_reason",
+          "m": 1,
+          "q": "Assertion (A): d/dx [sin (x^2)] = 2x cos (x^2). Reason (R): If f = v o u with t = u(x), then df/dx = (dv/dt) . (dt/dx).",
+          "a": "Both A and R are true, and R is the correct explanation of A",
+          "o": [
+            "Both A and R are true, and R is the correct explanation of A",
+            "Both A and R are true, but R is not the correct explanation of A",
+            "A is true, R is false",
+            "A is false, R is true"
+          ]
+        },
+        {
+          "b": "Analyse",
+          "d": "Hard",
+          "t": "multi_statement",
+          "m": 1,
+          "q": "Consider these statements. (I) d/dx (2x + 1)^3 = 3(2x + 1)^2. (II) d/dx [cos (x^3)] = -sin (x^3). Which is or are correct?",
+          "a": "Neither I nor II",
+          "o": [
+            "Neither I nor II",
+            "Only I",
+            "Only II",
+            "Both I and II"
+          ]
+        },
+        {
+          "b": "Analyse",
+          "d": "Hardest",
+          "t": "long_answer",
+          "m": 3,
+          "q": "A student writes d/dx [sin (cos (x^2))] = cos (cos (x^2)) . (-sin (x^2)). Identify the error and give the correct derivative.",
+          "a": "The function has three layers: x^2 inside cos inside sin. The student differentiated the outer two layers but dropped the derivative 2x of the innermost layer x^2. Correct: d/dx = cos (cos (x^2)) . (-sin (x^2)) . 2x = -2x sin (x^2) cos (cos (x^2)).",
+          "s": [
+            [
+              "Identifies the three layers (x^2, cos, sin)",
+              1
+            ],
+            [
+              "Identifies the missing factor 2x from the innermost layer",
+              1
+            ],
+            [
+              "Gives the correct derivative -2x sin (x^2) cos (cos (x^2))",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Evaluate",
+          "d": "Hard",
+          "t": "short_answer",
+          "m": 2,
+          "q": "Ravi says that to differentiate cos (x^3) . sin^2 (x^5) he needs only the chain rule. Is he right? Explain what is needed.",
+          "a": "He is not fully right. The function is a product of two functions, so the product rule (uv)' = u'v + uv' is needed; each factor, cos (x^3) and sin^2 (x^5), is a composite and is differentiated with the chain rule.",
+          "s": [
+            [
+              "States the product rule is needed because the function is a product of two factors",
+              1
+            ],
+            [
+              "States the chain rule is used to differentiate each composite factor",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Create",
+          "d": "Hardest",
+          "t": "long_answer",
+          "m": 3,
+          "q": "Create a composite of three functions, written as w(u(v(x))), name each layer, and differentiate it using the extended chain rule.",
+          "a": "For example f(x) = sin ((2x + 1)^3): v(x) = 2x + 1, u(t) = t^3, w(s) = sin s. Then df/dx = cos ((2x + 1)^3) . 3(2x + 1)^2 . 2 = 6(2x + 1)^2 cos ((2x + 1)^3).",
+          "s": [
+            [
+              "Writes a genuine three-layer composite",
+              1
+            ],
+            [
+              "Names the inner, middle and outer functions correctly",
+              1
+            ],
+            [
+              "Differentiates correctly with one factor for each layer",
+              1
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "code": "C12M-5.5",
+      "name": "Implicit differentiation and derivatives of inverse trigonometric functions",
+      "description": "Differentiating a relation between x and y term by term, treating y as a function of x, and using this to obtain and apply the derivatives of sin^(-1) x, cos^(-1) x and tan^(-1) x.",
+      "idea": "Even when y cannot easily be written as f(x), we can differentiate both sides of the relation with respect to x, remembering that every y-term brings a factor dy/dx by the chain rule.",
+      "rule": "d/dx (sin^(-1) x) = 1/sqrt(1 - x^2) and d/dx (cos^(-1) x) = -1/sqrt(1 - x^2) for x in (-1, 1); d/dx (tan^(-1) x) = 1/(1 + x^2) for all real x.",
+      "example": "y + sin y = cos x gives dy/dx + cos y . dy/dx = -sin x, so dy/dx = -sin x / (1 + cos y).",
+      "difficulty_base": "Hard",
+      "questions": [
+        {
+          "b": "Remember",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "For x in (-1, 1), d/dx (sin^(-1) x) =",
+          "a": "1/sqrt(1 - x^2)",
+          "o": [
+            "1/sqrt(1 - x^2)",
+            "-1/sqrt(1 - x^2)",
+            "1/(1 + x^2)",
+            "1/sqrt(1 + x^2)"
+          ]
+        },
+        {
+          "b": "Remember",
+          "d": "Easy",
+          "t": "fill_blank",
+          "m": 1,
+          "q": "d/dx (tan^(-1) x) = ____.",
+          "a": "1/(1 + x^2)"
+        },
+        {
+          "b": "Remember",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "A relation such as x + sin xy - y = 0, which cannot easily be solved for y, is said to give y as",
+          "a": "an implicit function of x",
+          "o": [
+            "an implicit function of x",
+            "an explicit function of x",
+            "a parametric function of x",
+            "a constant function"
+          ]
+        },
+        {
+          "b": "Remember",
+          "d": "Hard",
+          "t": "mcq",
+          "m": 1,
+          "rev": true,
+          "q": "For which of these values of x does d/dx (sin^(-1) x) NOT exist?",
+          "a": "x = 1",
+          "o": [
+            "x = 1",
+            "x = 0",
+            "x = 1/2",
+            "x = -1/2"
+          ]
+        },
+        {
+          "b": "Understand",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "When y + sin y = cos x is differentiated with respect to x, the term sin y gives",
+          "a": "cos y . dy/dx",
+          "o": [
+            "cos y . dy/dx",
+            "cos y",
+            "-cos y . dy/dx",
+            "cos x"
+          ]
+        },
+        {
+          "b": "Understand",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "If x - y = pi, then dy/dx =",
+          "a": "1",
+          "o": [
+            "1",
+            "-1",
+            "0",
+            "pi"
+          ]
+        },
+        {
+          "b": "Understand",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "The book obtains d/dx (sin^(-1) x) by",
+          "a": "writing x = sin y and differentiating both sides with respect to x",
+          "o": [
+            "writing x = sin y and differentiating both sides with respect to x",
+            "writing sin^(-1) x = 1/sin x and using the quotient rule",
+            "writing y = cos x and differentiating",
+            "writing x = tan y and differentiating"
+          ]
+        },
+        {
+          "b": "Understand",
+          "d": "Hard",
+          "t": "mcq",
+          "m": 1,
+          "q": "In deriving d/dx (sin^(-1) x) = 1/sqrt(1 - x^2), why is cos y taken as +sqrt(1 - x^2) and not -sqrt(1 - x^2)?",
+          "a": "Because y = sin^(-1) x lies in (-pi/2, pi/2), where cos y is positive",
+          "o": [
+            "Because y = sin^(-1) x lies in (-pi/2, pi/2), where cos y is positive",
+            "Because a square root is always taken to be negative",
+            "Because sin y is positive for every y",
+            "Because x lies only in (0, 1)"
+          ]
+        },
+        {
+          "b": "Understand",
+          "d": "Hard",
+          "t": "mcq",
+          "m": 1,
+          "q": "From y + sin y = cos x, the value of dy/dx is",
+          "a": "-sin x / (1 + cos y)",
+          "o": [
+            "-sin x / (1 + cos y)",
+            "sin x / (1 + cos y)",
+            "-sin x / cos y",
+            "-sin x / (1 - cos y)"
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Easy",
+          "t": "fill_blank",
+          "m": 1,
+          "q": "If 2x + 3y = sin x, then dy/dx = ____.",
+          "a": "(cos x - 2)/3"
+        },
+        {
+          "b": "Apply",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "If x^2 + xy + y^2 = 100, then dy/dx =",
+          "a": "-(2x + y)/(x + 2y)",
+          "o": [
+            "-(2x + y)/(x + 2y)",
+            "(2x + y)/(x + 2y)",
+            "-x/y",
+            "-(2x + 1)/(1 + 2y)"
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Hard",
+          "t": "mcq",
+          "m": 1,
+          "q": "If 2x + 3y = sin y, then dy/dx =",
+          "a": "2/(cos y - 3)",
+          "o": [
+            "2/(cos y - 3)",
+            "2/(3 - cos y)",
+            "(cos y - 2)/3",
+            "2/cos y"
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Hard",
+          "t": "mcq",
+          "m": 1,
+          "q": "d/dx [tan^(-1) (2x)] =",
+          "a": "2/(1 + 4x^2)",
+          "o": [
+            "2/(1 + 4x^2)",
+            "1/(1 + 4x^2)",
+            "2/(1 + 2x^2)",
+            "2/(1 + x^2)"
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Hard",
+          "t": "short_answer",
+          "m": 2,
+          "q": "Find dy/dx if xy + y^2 = tan x + y.",
+          "a": "Differentiating: y + x dy/dx + 2y dy/dx = sec^2 x + dy/dx. So (x + 2y - 1) dy/dx = sec^2 x - y, giving dy/dx = (sec^2 x - y)/(x + 2y - 1).",
+          "s": [
+            [
+              "Differentiates term by term correctly, using the product rule on xy",
+              1
+            ],
+            [
+              "Collects dy/dx terms to get (sec^2 x - y)/(x + 2y - 1)",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Hardest",
+          "t": "long_answer",
+          "m": 3,
+          "q": "Find dy/dx if y = cos^(-1) (2x/(1 + x^2)), -1 < x < 1.",
+          "a": "Put x = tan t with t in (-pi/4, pi/4). Then 2x/(1 + x^2) = sin 2t, so y = cos^(-1) (sin 2t) = cos^(-1) (cos (pi/2 - 2t)) = pi/2 - 2t, since pi/2 - 2t lies in (0, pi). So y = pi/2 - 2 tan^(-1) x and dy/dx = -2/(1 + x^2).",
+          "s": [
+            [
+              "Substitutes x = tan t and simplifies 2x/(1 + x^2) to sin 2t",
+              1
+            ],
+            [
+              "Rewrites y as pi/2 - 2 tan^(-1) x",
+              1
+            ],
+            [
+              "Differentiates to get dy/dx = -2/(1 + x^2)",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Analyse",
+          "d": "Hard",
+          "t": "assertion_reason",
+          "m": 1,
+          "q": "Assertion (A): d/dx (cos^(-1) x) = -1/sqrt(1 - x^2) for x in (-1, 1). Reason (R): Inverse trigonometric functions are continuous functions.",
+          "a": "Both A and R are true, but R is not the correct explanation of A",
+          "o": [
+            "Both A and R are true, but R is not the correct explanation of A",
+            "Both A and R are true, and R is the correct explanation of A",
+            "A is true, R is false",
+            "A is false, R is true"
+          ]
+        },
+        {
+          "b": "Analyse",
+          "d": "Hard",
+          "t": "multi_statement",
+          "m": 1,
+          "q": "Consider these statements. (I) The derivative of sin^(-1) x exists only for x in (-1, 1), even though sin^(-1) x is defined on [-1, 1]. (II) d/dx (tan^(-1) x) = 1/(1 + x^2) holds for every real number x. Which is or are correct?",
+          "a": "Both I and II",
+          "o": [
+            "Both I and II",
+            "Only I",
+            "Only II",
+            "Neither I nor II"
+          ]
+        },
+        {
+          "b": "Analyse",
+          "d": "Hardest",
+          "t": "long_answer",
+          "m": 3,
+          "q": "Find dy/dx if y = tan^(-1) ((3x - x^3)/(1 - 3x^2)), -1/sqrt(3) < x < 1/sqrt(3).",
+          "a": "Put x = tan t with t in (-pi/6, pi/6). Then (3x - x^3)/(1 - 3x^2) = (3 tan t - tan^3 t)/(1 - 3 tan^2 t) = tan 3t, and 3t lies in (-pi/2, pi/2), so y = tan^(-1) (tan 3t) = 3t = 3 tan^(-1) x. Hence dy/dx = 3/(1 + x^2).",
+          "s": [
+            [
+              "Substitutes x = tan t and recognises the expression as tan 3t",
+              1
+            ],
+            [
+              "Uses the range of 3t to simplify y to 3 tan^(-1) x",
+              1
+            ],
+            [
+              "Differentiates to get 3/(1 + x^2)",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Evaluate",
+          "d": "Hard",
+          "t": "short_answer",
+          "m": 2,
+          "q": "Differentiating x^3 + y^3 = 81, a student writes '3x^2 + 3y^2 = 0'. Evaluate this step and give the correct dy/dx.",
+          "a": "The step is wrong: y is a function of x, so by the chain rule d/dx (y^3) = 3y^2 dy/dx, not 3y^2. Correct: 3x^2 + 3y^2 dy/dx = 0, so dy/dx = -x^2/y^2.",
+          "s": [
+            [
+              "Explains that the y-term needs the factor dy/dx by the chain rule",
+              1
+            ],
+            [
+              "Gives dy/dx = -x^2/y^2",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Create",
+          "d": "Hardest",
+          "t": "long_answer",
+          "m": 3,
+          "q": "Write your own implicit relation between x and y that contains a product term xy and a trigonometric function of y, and that cannot easily be solved for y. Then find dy/dx.",
+          "a": "For example x^2 + xy + sin y = 5. Differentiating: 2x + y + x dy/dx + cos y dy/dx = 0, so dy/dx = -(2x + y)/(x + cos y).",
+          "s": [
+            [
+              "Gives a relation with an xy term and a trigonometric function of y",
+              1
+            ],
+            [
+              "Differentiates correctly, using the product rule on xy and the chain rule on the y-terms",
+              1
+            ],
+            [
+              "Solves correctly for dy/dx",
+              1
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "code": "C12M-5.6",
+      "name": "Exponential and logarithmic functions and their derivatives",
+      "description": "Properties of the exponential function b^x and the logarithm log_b x (b > 1), the natural base e, the laws of logarithms and change of base, and the derivatives d/dx (e^x) = e^x and d/dx (log x) = 1/x used with the chain rule.",
+      "idea": "The logarithm undoes the exponential: log_b a = x exactly when b^x = a. The natural exponential e^x is unchanged by differentiation.",
+      "rule": "d/dx (e^x) = e^x; d/dx (log x) = 1/x for x > 0 (log means base e); log_b pq = log_b p + log_b q; log_a p = log_b p / log_b a.",
+      "example": "d/dx (e^(cos x)) = e^(cos x) . (-sin x) = -sin x e^(cos x).",
+      "difficulty_base": "Easy",
+      "questions": [
+        {
+          "b": "Remember",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "d/dx (e^x) =",
+          "a": "e^x",
+          "o": [
+            "e^x",
+            "x e^(x - 1)",
+            "e^x log x",
+            "1/x"
+          ]
+        },
+        {
+          "b": "Remember",
+          "d": "Easy",
+          "t": "fill_blank",
+          "m": 1,
+          "q": "In this chapter, log x denotes the logarithm of x to the base ____.",
+          "a": "e"
+        },
+        {
+          "b": "Remember",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "The domain of the logarithm function log_b x (b > 1) is",
+          "a": "the set of all positive real numbers",
+          "o": [
+            "the set of all positive real numbers",
+            "the set of all real numbers",
+            "the set of all non-negative real numbers",
+            "the set of positive integers"
+          ]
+        },
+        {
+          "b": "Remember",
+          "d": "Hard",
+          "t": "mcq",
+          "m": 1,
+          "rev": true,
+          "q": "Which of these is NOT a property of the exponential function y = b^x, b > 1?",
+          "a": "Its range is the set of all real numbers",
+          "o": [
+            "Its range is the set of all real numbers",
+            "Its domain is the set of all real numbers",
+            "The point (0, 1) lies on its graph",
+            "It is ever increasing"
+          ]
+        },
+        {
+          "b": "Understand",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "Since 625 = 5^4, log_5 625 equals",
+          "a": "4",
+          "o": [
+            "4",
+            "2",
+            "125",
+            "3"
+          ]
+        },
+        {
+          "b": "Understand",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "The graphs of y = e^x and y = log x are",
+          "a": "mirror images of each other in the line y = x",
+          "o": [
+            "mirror images of each other in the line y = x",
+            "mirror images of each other in the x-axis",
+            "mirror images of each other in the y-axis",
+            "the same curve"
+          ]
+        },
+        {
+          "b": "Understand",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "Is x = e^(log x) true for all real x?",
+          "a": "No, only for positive x, since log x is defined only for x > 0",
+          "o": [
+            "No, only for positive x, since log x is defined only for x > 0",
+            "Yes, for every real x",
+            "Only for x >= 0",
+            "Only for x > 1"
+          ]
+        },
+        {
+          "b": "Understand",
+          "d": "Hard",
+          "t": "mcq",
+          "m": 1,
+          "q": "By the change of base rule, log_a p equals",
+          "a": "log_b p / log_b a",
+          "o": [
+            "log_b p / log_b a",
+            "log_b a / log_b p",
+            "log_b p - log_b a",
+            "log_b p . log_b a"
+          ]
+        },
+        {
+          "b": "Understand",
+          "d": "Hard",
+          "t": "mcq",
+          "m": 1,
+          "q": "Which statement about y = log x for x close to 0 (x > 0) is correct?",
+          "a": "log x can be made smaller than any given real number, and the graph approaches the y-axis without meeting it",
+          "o": [
+            "log x can be made smaller than any given real number, and the graph approaches the y-axis without meeting it",
+            "log x gets close to 0",
+            "log x gets close to 1",
+            "the graph crosses the y-axis at (0, 1)"
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Easy",
+          "t": "fill_blank",
+          "m": 1,
+          "q": "d/dx (e^(-x)) = ____.",
+          "a": "-e^(-x)"
+        },
+        {
+          "b": "Apply",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "For x > 0, d/dx [sin (log x)] =",
+          "a": "cos (log x) / x",
+          "o": [
+            "cos (log x) / x",
+            "cos (log x)",
+            "-cos (log x) / x",
+            "cos (1/x)"
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Hard",
+          "t": "mcq",
+          "m": 1,
+          "q": "d/dx (e^(cos x)) =",
+          "a": "-sin x e^(cos x)",
+          "o": [
+            "-sin x e^(cos x)",
+            "e^(cos x)",
+            "sin x e^(cos x)",
+            "cos x e^(cos x - 1)"
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Hard",
+          "t": "mcq",
+          "m": 1,
+          "q": "For x > 1, d/dx [log (log x)] =",
+          "a": "1/(x log x)",
+          "o": [
+            "1/(x log x)",
+            "1/log x",
+            "1/x^2",
+            "(log x)/x"
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Hard",
+          "t": "short_answer",
+          "m": 2,
+          "q": "Differentiate e^x / sin x with respect to x.",
+          "a": "By the quotient rule: (e^x sin x - e^x cos x)/sin^2 x = e^x (sin x - cos x)/sin^2 x.",
+          "s": [
+            [
+              "Sets up the quotient rule with d/dx (e^x) = e^x and d/dx (sin x) = cos x",
+              1
+            ],
+            [
+              "Simplifies to e^x (sin x - cos x)/sin^2 x",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Hardest",
+          "t": "long_answer",
+          "m": 3,
+          "q": "Differentiate y = cos^(-1) (e^x) with respect to x.",
+          "a": "Put t = e^x. Then dy/dt = -1/sqrt(1 - t^2) and dt/dx = e^x. So dy/dx = -e^x / sqrt(1 - e^(2x)).",
+          "s": [
+            [
+              "Identifies the composite with inner function e^x",
+              1
+            ],
+            [
+              "Uses d/dt (cos^(-1) t) = -1/sqrt(1 - t^2)",
+              1
+            ],
+            [
+              "Multiplies by e^x to get -e^x / sqrt(1 - e^(2x))",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Analyse",
+          "d": "Hard",
+          "t": "assertion_reason",
+          "m": 1,
+          "q": "Assertion (A): log (x + y) = log x + log y for all positive x and y. Reason (R): log pq = log p + log q for all positive p and q.",
+          "a": "A is false, R is true",
+          "o": [
+            "A is false, R is true",
+            "Both A and R are true, and R is the correct explanation of A",
+            "Both A and R are true, but R is not the correct explanation of A",
+            "A is true, R is false"
+          ]
+        },
+        {
+          "b": "Analyse",
+          "d": "Hard",
+          "t": "multi_statement",
+          "m": 1,
+          "q": "Consider these statements. (I) d/dx (log x) = 1/x holds for every real x != 0. (II) The point (1, 0) lies on the graph of y = log_b x for every base b > 1. Which is or are correct?",
+          "a": "Only II",
+          "o": [
+            "Only II",
+            "Only I",
+            "Both I and II",
+            "Neither I nor II"
+          ]
+        },
+        {
+          "b": "Analyse",
+          "d": "Hardest",
+          "t": "long_answer",
+          "m": 3,
+          "q": "Differentiate y = log_7 (log x), x > 1, with respect to x.",
+          "a": "By change of base, y = log (log x) / log 7. Since log 7 is a constant, dy/dx = (1/log 7) . (1/log x) . d/dx (log x) = (1/log 7) . (1/log x) . (1/x) = 1/(x log 7 log x).",
+          "s": [
+            [
+              "Uses change of base to write y = log (log x)/log 7",
+              1
+            ],
+            [
+              "Applies the chain rule to log (log x)",
+              1
+            ],
+            [
+              "Gets dy/dx = 1/(x log 7 log x)",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Evaluate",
+          "d": "Hard",
+          "t": "short_answer",
+          "m": 2,
+          "q": "A student writes d/dx (e^(x^3)) = e^(x^3), saying 'e^x does not change when differentiated'. Evaluate this.",
+          "a": "Wrong. d/dx (e^x) = e^x only when the exponent is x itself. Here the exponent is x^3, so by the chain rule d/dx (e^(x^3)) = e^(x^3) . 3x^2 = 3x^2 e^(x^3).",
+          "s": [
+            [
+              "Explains the chain rule is needed because the exponent is x^3, not x",
+              1
+            ],
+            [
+              "Gives the correct derivative 3x^2 e^(x^3)",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Create",
+          "d": "Hardest",
+          "t": "long_answer",
+          "m": 3,
+          "q": "Create a function that is a composite involving both e^x and log, state its domain, and differentiate it.",
+          "a": "For example f(x) = log (1 + e^x). Since 1 + e^x > 0 for every real x, its domain is all real numbers. By the chain rule f'(x) = (1/(1 + e^x)) . e^x = e^x/(1 + e^x).",
+          "s": [
+            [
+              "Gives a valid composite involving both e^x and log",
+              1
+            ],
+            [
+              "States a correct domain, checking the log is taken of a positive quantity",
+              1
+            ],
+            [
+              "Differentiates correctly using the chain rule",
+              1
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "code": "C12M-5.7",
+      "name": "Logarithmic differentiation",
+      "description": "Differentiating functions of the form [u(x)]^(v(x)), and products, quotients and roots, by taking logarithms first; includes d/dx (a^x) = a^x log a and sums of such terms.",
+      "idea": "Taking the logarithm turns powers into products and products into sums, which are easy to differentiate.",
+      "rule": "If y = [u(x)]^(v(x)) with y and u positive, then log y = v(x) log u(x) and dy/dx = y [v(x) u'(x)/u(x) + v'(x) log u(x)].",
+      "example": "y = x^x: log y = x log x, so (1/y) dy/dx = log x + 1 and dy/dx = x^x (1 + log x).",
+      "difficulty_base": "Hard",
+      "questions": [
+        {
+          "b": "Remember",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "For a positive constant a, d/dx (a^x) =",
+          "a": "a^x log a",
+          "o": [
+            "a^x log a",
+            "x a^(x - 1)",
+            "a^x",
+            "a^x / log a"
+          ]
+        },
+        {
+          "b": "Remember",
+          "d": "Easy",
+          "t": "fill_blank",
+          "m": 1,
+          "q": "For logarithmic differentiation of f(x) = [u(x)]^(v(x)) to make sense, both f(x) and u(x) must be ____.",
+          "a": "positive"
+        },
+        {
+          "b": "Remember",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "Taking logarithms of y = [u(x)]^(v(x)) gives",
+          "a": "log y = v(x) log u(x)",
+          "o": [
+            "log y = v(x) log u(x)",
+            "log y = u(x) log v(x)",
+            "log y = log u(x) + log v(x)",
+            "log y = v(x) + log u(x)"
+          ]
+        },
+        {
+          "b": "Remember",
+          "d": "Hard",
+          "t": "mcq",
+          "m": 1,
+          "rev": true,
+          "q": "Which of these is NOT a correct derivative (x > 0)?",
+          "a": "d/dx (x^x) = x . x^(x - 1)",
+          "o": [
+            "d/dx (x^x) = x . x^(x - 1)",
+            "d/dx (x^x) = x^x (1 + log x)",
+            "d/dx (2^x) = 2^x log 2",
+            "d/dx (e^x) = e^x"
+          ]
+        },
+        {
+          "b": "Understand",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "Why can x^x not be differentiated by the power rule d/dx (x^n) = n x^(n - 1)?",
+          "a": "The exponent is not a constant; it varies with x",
+          "o": [
+            "The exponent is not a constant; it varies with x",
+            "x^x is not defined for x > 0",
+            "The power rule works only for negative n",
+            "x^x is a constant"
+          ]
+        },
+        {
+          "b": "Understand",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "Logarithmic differentiation is convenient for y = sqrt((x - 3)(x^2 + 4)/(3x^2 + 4x + 5)) because",
+          "a": "taking log turns the product, quotient and square root into a sum and difference of simple log terms",
+          "o": [
+            "taking log turns the product, quotient and square root into a sum and difference of simple log terms",
+            "the log of a product is the product of the logs",
+            "it avoids the chain rule entirely",
+            "it makes y a constant"
+          ]
+        },
+        {
+          "b": "Understand",
+          "d": "Easy",
+          "t": "short_answer",
+          "m": 2,
+          "q": "Differentiate y = x^x, x > 0, using logarithmic differentiation.",
+          "a": "log y = x log x. Differentiating: (1/y) dy/dx = x . (1/x) + log x = 1 + log x. So dy/dx = x^x (1 + log x).",
+          "s": [
+            [
+              "Takes logs to get log y = x log x and differentiates using the product rule",
+              1
+            ],
+            [
+              "Multiplies by y to get dy/dx = x^x (1 + log x)",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Understand",
+          "d": "Hard",
+          "t": "mcq",
+          "m": 1,
+          "q": "Differentiating log y = v(x) log u(x) with respect to x gives (1/y) dy/dx =",
+          "a": "v(x) . u'(x)/u(x) + v'(x) . log u(x)",
+          "o": [
+            "v(x) . u'(x)/u(x) + v'(x) . log u(x)",
+            "v'(x) . u'(x)/u(x)",
+            "v(x)/u(x) + log u(x)",
+            "v(x) . u'(x)/u(x) - v'(x) . log u(x)"
+          ]
+        },
+        {
+          "b": "Understand",
+          "d": "Hard",
+          "t": "mcq",
+          "m": 1,
+          "q": "To find d/dx [x^(sin x) + (sin x)^(cos x)], the correct approach is to",
+          "a": "write it as u + v, use logarithmic differentiation on u and on v separately, then add",
+          "o": [
+            "write it as u + v, use logarithmic differentiation on u and on v separately, then add",
+            "take log of the whole sum and use log (u + v) = log u + log v",
+            "use the power rule on each term",
+            "differentiate only the exponents"
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Easy",
+          "t": "fill_blank",
+          "m": 1,
+          "q": "d/dx (2^x) = ____.",
+          "a": "2^x log 2"
+        },
+        {
+          "b": "Apply",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "If y = x^(sin x), x > 0, then log y =",
+          "a": "sin x log x",
+          "o": [
+            "sin x log x",
+            "x log (sin x)",
+            "log x + log (sin x)",
+            "sin x + log x"
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Hard",
+          "t": "mcq",
+          "m": 1,
+          "q": "For x > 0, d/dx [x^(sin x)] =",
+          "a": "x^(sin x) (cos x log x + sin x / x)",
+          "o": [
+            "x^(sin x) (cos x log x + sin x / x)",
+            "sin x . x^(sin x - 1)",
+            "x^(sin x) cos x log x",
+            "x^(sin x) (cos x log x - sin x / x)"
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Hard",
+          "t": "mcq",
+          "m": 1,
+          "q": "For 0 < x < pi, d/dx [(sin x)^(sin x)] =",
+          "a": "(1 + log (sin x)) (sin x)^(sin x) cos x",
+          "o": [
+            "(1 + log (sin x)) (sin x)^(sin x) cos x",
+            "sin x (sin x)^(sin x - 1) cos x",
+            "(sin x)^(sin x) log (sin x)",
+            "(1 + log (sin x)) (sin x)^(sin x)"
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Hard",
+          "t": "short_answer",
+          "m": 2,
+          "q": "Differentiate x^x - 2^(sin x) with respect to x (x > 0).",
+          "a": "d/dx (x^x) = x^x (1 + log x). d/dx (2^(sin x)) = 2^(sin x) log 2 . cos x. So the derivative is x^x (1 + log x) - 2^(sin x) cos x log 2.",
+          "s": [
+            [
+              "Differentiates x^x as x^x (1 + log x)",
+              1
+            ],
+            [
+              "Differentiates 2^(sin x) as 2^(sin x) cos x log 2 and subtracts",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Hardest",
+          "t": "long_answer",
+          "m": 3,
+          "q": "Find dy/dx if y^x = x^y (x, y > 0).",
+          "a": "Taking logs: x log y = y log x. Differentiating: log y + (x/y) dy/dx = (dy/dx) log x + y/x. So (x/y - log x) dy/dx = y/x - log y, giving dy/dx = (y/x - log y)/(x/y - log x) = y(y - x log y) / (x(x - y log x)).",
+          "s": [
+            [
+              "Takes logs to get x log y = y log x",
+              1
+            ],
+            [
+              "Differentiates both sides correctly with the product and chain rules",
+              1
+            ],
+            [
+              "Solves for dy/dx = (y/x - log y)/(x/y - log x) or an equivalent form",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Analyse",
+          "d": "Hard",
+          "t": "assertion_reason",
+          "m": 1,
+          "q": "Assertion (A): d/dx (x^x) = x^x (1 + log x) for x > 0. Reason (R): The range of the logarithm function is the set of all real numbers.",
+          "a": "Both A and R are true, but R is not the correct explanation of A",
+          "o": [
+            "Both A and R are true, but R is not the correct explanation of A",
+            "Both A and R are true, and R is the correct explanation of A",
+            "A is true, R is false",
+            "A is false, R is true"
+          ]
+        },
+        {
+          "b": "Analyse",
+          "d": "Hard",
+          "t": "multi_statement",
+          "m": 1,
+          "q": "Consider these statements. (I) If y = (x - 3)(x^2 + 4), then log y = log (x - 3) + log (x^2 + 4) wherever both factors are positive. (II) If y = u + v with u, v positive, then log y = log u + log v. Which is or are correct?",
+          "a": "Only I",
+          "o": [
+            "Only I",
+            "Only II",
+            "Both I and II",
+            "Neither I nor II"
+          ]
+        },
+        {
+          "b": "Analyse",
+          "d": "Hardest",
+          "t": "long_answer",
+          "m": 3,
+          "q": "Find f'(1) for f(x) = (1 + x)(1 + x^2)(1 + x^4)(1 + x^8).",
+          "a": "log f = log (1 + x) + log (1 + x^2) + log (1 + x^4) + log (1 + x^8) for x > -1. So f'(x)/f(x) = 1/(1 + x) + 2x/(1 + x^2) + 4x^3/(1 + x^4) + 8x^7/(1 + x^8). At x = 1: f(1) = 2 . 2 . 2 . 2 = 16 and the bracket is 1/2 + 1 + 2 + 4 = 15/2. So f'(1) = 16 . 15/2 = 120.",
+          "s": [
+            [
+              "Takes logs and differentiates to get f'/f as a sum of four terms",
+              1
+            ],
+            [
+              "Evaluates f(1) = 16 and the sum 15/2 at x = 1",
+              1
+            ],
+            [
+              "Gets f'(1) = 120",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Evaluate",
+          "d": "Hard",
+          "t": "short_answer",
+          "m": 2,
+          "q": "A student finds d/dx (x^x) = x . x^(x - 1) = x^x. Evaluate the method and give the correct derivative.",
+          "a": "The method is wrong: the power rule needs a constant exponent, but here the exponent x varies. Using logarithmic differentiation, log y = x log x, so dy/dx = x^x (1 + log x).",
+          "s": [
+            [
+              "Explains the power rule does not apply because the exponent is variable",
+              1
+            ],
+            [
+              "Gives the correct derivative x^x (1 + log x)",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Create",
+          "d": "Hardest",
+          "t": "long_answer",
+          "m": 3,
+          "q": "Create a function of the form [u(x)]^(v(x)) in which both u and v are non-constant, state the condition needed for logarithmic differentiation, and differentiate it.",
+          "a": "For example y = (x^2 + 1)^x. Condition: u(x) = x^2 + 1 > 0, true for all real x. log y = x log (x^2 + 1), so (1/y) dy/dx = log (x^2 + 1) + 2x^2/(x^2 + 1), and dy/dx = (x^2 + 1)^x [log (x^2 + 1) + 2x^2/(x^2 + 1)].",
+          "s": [
+            [
+              "Gives a function with both base and exponent non-constant",
+              1
+            ],
+            [
+              "States the positivity condition on u(x) (and y) and checks it",
+              1
+            ],
+            [
+              "Differentiates correctly by taking logs",
+              1
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "code": "C12M-5.8",
+      "name": "Derivatives of functions in parametric form",
+      "description": "Finding dy/dx when x = f(t) and y = g(t) are both given in terms of a parameter, as (dy/dt)/(dx/dt) with dx/dt != 0, and differentiating one function with respect to another.",
+      "idea": "When x and y are each linked to a third variable t, the rate of y with respect to x is the ratio of their rates with respect to t.",
+      "rule": "If x = f(t), y = g(t), then dy/dx = (dy/dt)/(dx/dt) = g'(t)/f'(t), provided f'(t) != 0. Similarly du/dv = (du/dx)/(dv/dx).",
+      "example": "x = at^2, y = 2at: dx/dt = 2at, dy/dt = 2a, so dy/dx = 2a/(2at) = 1/t.",
+      "difficulty_base": "Easy",
+      "questions": [
+        {
+          "b": "Remember",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "If x = f(t) and y = g(t), then dy/dx =",
+          "a": "g'(t)/f'(t), provided f'(t) != 0",
+          "o": [
+            "g'(t)/f'(t), provided f'(t) != 0",
+            "f'(t)/g'(t)",
+            "g'(t) . f'(t)",
+            "g'(t) - f'(t)"
+          ]
+        },
+        {
+          "b": "Remember",
+          "d": "Easy",
+          "t": "fill_blank",
+          "m": 1,
+          "q": "When x = f(t) and y = g(t), the third variable t is called the ____.",
+          "a": "parameter"
+        },
+        {
+          "b": "Remember",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "If x = a cos t and y = a sin t, then dy/dx =",
+          "a": "-cot t",
+          "o": [
+            "-cot t",
+            "cot t",
+            "-tan t",
+            "tan t"
+          ]
+        },
+        {
+          "b": "Remember",
+          "d": "Hard",
+          "t": "mcq",
+          "m": 1,
+          "rev": true,
+          "q": "For x = at^2, y = 2at (a != 0), at which value of t can dy/dx NOT be found by the formula (dy/dt)/(dx/dt)?",
+          "a": "t = 0",
+          "o": [
+            "t = 0",
+            "t = 1",
+            "t = -1",
+            "t = 2"
+          ]
+        },
+        {
+          "b": "Understand",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "For x = at^2, y = 2at, dy/dx =",
+          "a": "1/t",
+          "o": [
+            "1/t",
+            "t",
+            "2a",
+            "2at"
+          ]
+        },
+        {
+          "b": "Understand",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "A notable feature of dy/dx found from parametric equations is that it",
+          "a": "is expressed in terms of the parameter, without directly involving x and y",
+          "o": [
+            "is expressed in terms of the parameter, without directly involving x and y",
+            "is always a constant",
+            "is always expressed in terms of x only",
+            "does not use the chain rule"
+          ]
+        },
+        {
+          "b": "Understand",
+          "d": "Easy",
+          "t": "short_answer",
+          "m": 2,
+          "q": "Find dy/dx if x = t^2 and y = t^3 (t != 0).",
+          "a": "dx/dt = 2t and dy/dt = 3t^2, so dy/dx = 3t^2/(2t) = 3t/2.",
+          "s": [
+            [
+              "Finds dx/dt = 2t and dy/dt = 3t^2",
+              1
+            ],
+            [
+              "Divides to get dy/dx = 3t/2",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Understand",
+          "d": "Hard",
+          "t": "mcq",
+          "m": 1,
+          "q": "To find the derivative of sin^2 x with respect to e^(cos x), the book uses",
+          "a": "(du/dx)/(dv/dx) with u = sin^2 x and v = e^(cos x)",
+          "o": [
+            "(du/dx)/(dv/dx) with u = sin^2 x and v = e^(cos x)",
+            "(dv/dx)/(du/dx) with u = sin^2 x and v = e^(cos x)",
+            "(du/dx) . (dv/dx)",
+            "the derivative of sin^2 x / e^(cos x) with respect to x"
+          ]
+        },
+        {
+          "b": "Understand",
+          "d": "Hard",
+          "t": "mcq",
+          "m": 1,
+          "q": "For x = a(t + sin t), y = a(1 - cos t), dy/dx simplifies to tan (t/2). Which identities are used?",
+          "a": "sin t = 2 sin (t/2) cos (t/2) and 1 + cos t = 2 cos^2 (t/2)",
+          "o": [
+            "sin t = 2 sin (t/2) cos (t/2) and 1 + cos t = 2 cos^2 (t/2)",
+            "sin^2 t + cos^2 t = 1 only",
+            "tan t = sin t / cos t only",
+            "sin t = 2 sin (t/2) cos (t/2) and 1 + cos t = 2 sin^2 (t/2)"
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Easy",
+          "t": "fill_blank",
+          "m": 1,
+          "q": "If x = sin t and y = cos 2t, then dy/dx = ____ (in terms of t).",
+          "a": "-4 sin t"
+        },
+        {
+          "b": "Apply",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "If x = 2at^2 and y = at^4, then dy/dx =",
+          "a": "t^2",
+          "o": [
+            "t^2",
+            "1/t^2",
+            "4at^3",
+            "t^3"
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Hard",
+          "t": "mcq",
+          "m": 1,
+          "q": "If x = a sec t and y = b tan t, then dy/dx =",
+          "a": "(b/a) cosec t",
+          "o": [
+            "(b/a) cosec t",
+            "(a/b) cosec t",
+            "(b/a) sin t",
+            "(b/a) sec t"
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Hard",
+          "t": "mcq",
+          "m": 1,
+          "q": "If x = a cos t and y = b cos t, then dy/dx =",
+          "a": "b/a",
+          "o": [
+            "b/a",
+            "a/b",
+            "-b/a",
+            "-cot t"
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Hard",
+          "t": "short_answer",
+          "m": 2,
+          "q": "Find dy/dx if x = a(t - sin t) and y = a(1 + cos t).",
+          "a": "dx/dt = a(1 - cos t) and dy/dt = -a sin t. So dy/dx = -sin t/(1 - cos t) = -2 sin (t/2) cos (t/2) / (2 sin^2 (t/2)) = -cot (t/2).",
+          "s": [
+            [
+              "Finds dx/dt = a(1 - cos t) and dy/dt = -a sin t",
+              1
+            ],
+            [
+              "Gets dy/dx = -sin t/(1 - cos t) = -cot (t/2)",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Hardest",
+          "t": "long_answer",
+          "m": 3,
+          "q": "Find dy/dx if x^(2/3) + y^(2/3) = a^(2/3), using the parametric form x = a cos^3 t, y = a sin^3 t.",
+          "a": "dx/dt = -3a cos^2 t sin t and dy/dt = 3a sin^2 t cos t. So dy/dx = (3a sin^2 t cos t)/(-3a cos^2 t sin t) = -tan t. Since y/x = tan^3 t, this equals -(y/x)^(1/3).",
+          "s": [
+            [
+              "Finds dx/dt = -3a cos^2 t sin t",
+              1
+            ],
+            [
+              "Finds dy/dt = 3a sin^2 t cos t",
+              1
+            ],
+            [
+              "Gets dy/dx = -tan t = -(y/x)^(1/3)",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Analyse",
+          "d": "Hard",
+          "t": "assertion_reason",
+          "m": 1,
+          "q": "Assertion (A): For x = at^2, y = 2at, dy/dx = 1/t (t != 0). Reason (R): For parametric equations, dy/dx = (dx/dt)/(dy/dt).",
+          "a": "A is true, R is false",
+          "o": [
+            "A is true, R is false",
+            "Both A and R are true, and R is the correct explanation of A",
+            "Both A and R are true, but R is not the correct explanation of A",
+            "A is false, R is true"
+          ]
+        },
+        {
+          "b": "Analyse",
+          "d": "Hard",
+          "t": "multi_statement",
+          "m": 1,
+          "q": "Consider these statements. (I) For x = a cos t, y = a sin t, dy/dx = cot t. (II) For parametric equations, dy/dx = (dy/dt)/(dx/dt) can be used even at points where dx/dt = 0. Which is or are correct?",
+          "a": "Neither I nor II",
+          "o": [
+            "Neither I nor II",
+            "Only I",
+            "Only II",
+            "Both I and II"
+          ]
+        },
+        {
+          "b": "Analyse",
+          "d": "Hardest",
+          "t": "long_answer",
+          "m": 3,
+          "q": "If x = a(cos t + t sin t) and y = a(sin t - t cos t), find dy/dx.",
+          "a": "dx/dt = a(-sin t + sin t + t cos t) = at cos t. dy/dt = a(cos t - cos t + t sin t) = at sin t. So dy/dx = (at sin t)/(at cos t) = tan t.",
+          "s": [
+            [
+              "Differentiates x using the product rule to get at cos t",
+              1
+            ],
+            [
+              "Differentiates y using the product rule to get at sin t",
+              1
+            ],
+            [
+              "Divides to get dy/dx = tan t",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Evaluate",
+          "d": "Hard",
+          "t": "short_answer",
+          "m": 2,
+          "q": "For x = 4t and y = 4/t, one student eliminates t to get xy = 16 and differentiates y = 16/x; another uses dy/dx = (dy/dt)/(dx/dt). Do the two methods agree? Check.",
+          "a": "Method 1: y = 16/x, dy/dx = -16/x^2 = -16/(16t^2) = -1/t^2. Method 2: dy/dt = -4/t^2, dx/dt = 4, so dy/dx = -1/t^2. They agree.",
+          "s": [
+            [
+              "Finds dy/dx by elimination and converts to -1/t^2",
+              1
+            ],
+            [
+              "Finds -1/t^2 by the parametric method and concludes they agree",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Create",
+          "d": "Hardest",
+          "t": "long_answer",
+          "m": 3,
+          "q": "Choose your own parametric equations x = f(t), y = g(t), with neither of them linear in t. Find dy/dx and state a value of t at which your formula cannot be used.",
+          "a": "For example x = t^2 + 1, y = t^3 - t. dx/dt = 2t, dy/dt = 3t^2 - 1, so dy/dx = (3t^2 - 1)/(2t). The formula cannot be used at t = 0, where dx/dt = 0.",
+          "s": [
+            [
+              "Gives parametric equations that are not linear in t",
+              1
+            ],
+            [
+              "Finds dy/dx correctly as (dy/dt)/(dx/dt)",
+              1
+            ],
+            [
+              "Identifies a value of t where dx/dt = 0",
+              1
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "code": "C12M-5.9",
+      "name": "Second order derivatives",
+      "description": "Finding d^2y/dx^2 by differentiating dy/dx again, its notations (f''(x), D^2 y, y'', y_2), and using it to verify relations such as d^2y/dx^2 + y = 0.",
+      "idea": "The second order derivative is the derivative of the derivative: it measures how dy/dx itself changes with x.",
+      "rule": "d^2y/dx^2 = d/dx (dy/dx), written f''(x), D^2 y, y'' or y_2; it exists where f'(x) is differentiable.",
+      "example": "y = x^3 + tan x: dy/dx = 3x^2 + sec^2 x, so d^2y/dx^2 = 6x + 2 sec^2 x tan x.",
+      "difficulty_base": "Easy",
+      "questions": [
+        {
+          "b": "Remember",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "The second order derivative of y = f(x) with respect to x is",
+          "a": "d/dx (dy/dx)",
+          "o": [
+            "d/dx (dy/dx)",
+            "(dy/dx)^2",
+            "d/dx (y^2)",
+            "(dy/dx)/x"
+          ]
+        },
+        {
+          "b": "Remember",
+          "d": "Easy",
+          "t": "fill_blank",
+          "m": 1,
+          "q": "The second order derivative of y = x^3 with respect to x is ____.",
+          "a": "6x"
+        },
+        {
+          "b": "Remember",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "d^2/dx^2 (x^2 + 3x + 2) =",
+          "a": "2",
+          "o": [
+            "2",
+            "2x + 3",
+            "0",
+            "3"
+          ]
+        },
+        {
+          "b": "Remember",
+          "d": "Hard",
+          "t": "mcq",
+          "m": 1,
+          "rev": true,
+          "q": "Which of the following is NOT a notation for the second order derivative of y = f(x)?",
+          "a": "(dy/dx)^2",
+          "o": [
+            "(dy/dx)^2",
+            "D^2 y",
+            "y''",
+            "f''(x)"
+          ]
+        },
+        {
+          "b": "Understand",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "If y = A sin x + B cos x, then d^2y/dx^2 equals",
+          "a": "-y",
+          "o": [
+            "-y",
+            "y",
+            "A cos x - B sin x",
+            "0"
+          ]
+        },
+        {
+          "b": "Understand",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "For the second order derivative of f to exist at x, it is needed that",
+          "a": "f'(x) is itself differentiable at x",
+          "o": [
+            "f'(x) is itself differentiable at x",
+            "f(x) is positive",
+            "f'(x) = 0",
+            "f is a polynomial"
+          ]
+        },
+        {
+          "b": "Understand",
+          "d": "Easy",
+          "t": "short_answer",
+          "m": 2,
+          "q": "Find the second order derivative of y = x^20.",
+          "a": "dy/dx = 20x^19, so d^2y/dx^2 = 20 . 19 x^18 = 380x^18.",
+          "s": [
+            [
+              "Finds dy/dx = 20x^19",
+              1
+            ],
+            [
+              "Differentiates again to get 380x^18",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Understand",
+          "d": "Hard",
+          "t": "mcq",
+          "m": 1,
+          "q": "If y = 500e^(7x) + 600e^(-7x), then d^2y/dx^2 =",
+          "a": "49y",
+          "o": [
+            "49y",
+            "-49y",
+            "7y",
+            "14y"
+          ]
+        },
+        {
+          "b": "Understand",
+          "d": "Hard",
+          "t": "mcq",
+          "m": 1,
+          "q": "Why is d^2/dx^2 (log x) = -1/x^2 for x > 0?",
+          "a": "Because d/dx (log x) = 1/x = x^(-1), and differentiating again gives -x^(-2)",
+          "o": [
+            "Because d/dx (log x) = 1/x = x^(-1), and differentiating again gives -x^(-2)",
+            "Because log x is negative for x < 1",
+            "Because d/dx (1/x) = log x",
+            "Because a second derivative is always the negative square of the first derivative"
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Easy",
+          "t": "fill_blank",
+          "m": 1,
+          "q": "If y = e^(3x), then d^2y/dx^2 = ____.",
+          "a": "9e^(3x)"
+        },
+        {
+          "b": "Apply",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "If y = 5 cos x - 3 sin x, then d^2y/dx^2 + y =",
+          "a": "0",
+          "o": [
+            "0",
+            "2y",
+            "10 cos x",
+            "-6 sin x"
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Hard",
+          "t": "mcq",
+          "m": 1,
+          "q": "If y = x^3 + tan x, then d^2y/dx^2 =",
+          "a": "6x + 2 sec^2 x tan x",
+          "o": [
+            "6x + 2 sec^2 x tan x",
+            "6x + sec^2 x tan x",
+            "6x + 2 sec x tan x",
+            "3x^2 + sec^2 x"
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Hard",
+          "t": "mcq",
+          "m": 1,
+          "q": "d^2/dx^2 (tan^(-1) x) =",
+          "a": "-2x/(1 + x^2)^2",
+          "o": [
+            "-2x/(1 + x^2)^2",
+            "2x/(1 + x^2)^2",
+            "-1/(1 + x^2)^2",
+            "1/(1 + x^2)"
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Hard",
+          "t": "short_answer",
+          "m": 2,
+          "q": "Find d^2y/dx^2 for y = x cos x.",
+          "a": "dy/dx = cos x - x sin x. d^2y/dx^2 = -sin x - (sin x + x cos x) = -2 sin x - x cos x.",
+          "s": [
+            [
+              "Finds dy/dx = cos x - x sin x using the product rule",
+              1
+            ],
+            [
+              "Differentiates again to get -2 sin x - x cos x",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Hardest",
+          "t": "long_answer",
+          "m": 3,
+          "q": "If y = 3e^(2x) + 2e^(3x), prove that d^2y/dx^2 - 5 dy/dx + 6y = 0.",
+          "a": "dy/dx = 6e^(2x) + 6e^(3x). d^2y/dx^2 = 12e^(2x) + 18e^(3x). Then d^2y/dx^2 - 5 dy/dx + 6y = (12 - 30 + 18)e^(2x) + (18 - 30 + 12)e^(3x) = 0.",
+          "s": [
+            [
+              "Finds dy/dx = 6e^(2x) + 6e^(3x)",
+              1
+            ],
+            [
+              "Finds d^2y/dx^2 = 12e^(2x) + 18e^(3x)",
+              1
+            ],
+            [
+              "Substitutes and shows the expression equals 0",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Analyse",
+          "d": "Hard",
+          "t": "assertion_reason",
+          "m": 1,
+          "q": "Assertion (A): If y = Ae^(mx) + Be^(nx), then d^2y/dx^2 - (m + n) dy/dx + mny = 0. Reason (R): For this y, dy/dx = mAe^(mx) + nBe^(nx) and d^2y/dx^2 = m^2 Ae^(mx) + n^2 Be^(nx).",
+          "a": "Both A and R are true, and R is the correct explanation of A",
+          "o": [
+            "Both A and R are true, and R is the correct explanation of A",
+            "Both A and R are true, but R is not the correct explanation of A",
+            "A is true, R is false",
+            "A is false, R is true"
+          ]
+        },
+        {
+          "b": "Analyse",
+          "d": "Hard",
+          "t": "multi_statement",
+          "m": 1,
+          "q": "Consider these statements. (I) If y = sin^(-1) x, then (1 - x^2) d^2y/dx^2 - x dy/dx = 0 for x in (-1, 1). (II) If y = A sin x + B cos x, then d^2y/dx^2 + y = 0. Which is or are correct?",
+          "a": "Both I and II",
+          "o": [
+            "Both I and II",
+            "Only I",
+            "Only II",
+            "Neither I nor II"
+          ]
+        },
+        {
+          "b": "Analyse",
+          "d": "Hardest",
+          "t": "long_answer",
+          "m": 3,
+          "q": "If y = 3 cos (log x) + 4 sin (log x), x > 0, show that x^2 y_2 + x y_1 + y = 0, where y_1 = dy/dx and y_2 = d^2y/dx^2.",
+          "a": "y_1 = [-3 sin (log x) + 4 cos (log x)]/x, so x y_1 = -3 sin (log x) + 4 cos (log x). Differentiating both sides: y_1 + x y_2 = [-3 cos (log x) - 4 sin (log x)]/x = -y/x. Multiplying by x: x^2 y_2 + x y_1 = -y, i.e. x^2 y_2 + x y_1 + y = 0.",
+          "s": [
+            [
+              "Finds x y_1 = -3 sin (log x) + 4 cos (log x)",
+              1
+            ],
+            [
+              "Differentiates again to get y_1 + x y_2 = -y/x",
+              1
+            ],
+            [
+              "Rearranges to x^2 y_2 + x y_1 + y = 0",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Evaluate",
+          "d": "Hard",
+          "t": "short_answer",
+          "m": 2,
+          "q": "A student claims that for y = x^3, d^2y/dx^2 = (dy/dx)^2 = 9x^4. Evaluate the claim.",
+          "a": "Wrong. The second order derivative means differentiating dy/dx again, not squaring it. dy/dx = 3x^2, so d^2y/dx^2 = 6x.",
+          "s": [
+            [
+              "Explains that d^2y/dx^2 is d/dx (dy/dx), not (dy/dx)^2",
+              1
+            ],
+            [
+              "Gives the correct value 6x",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Create",
+          "d": "Hardest",
+          "t": "long_answer",
+          "m": 3,
+          "q": "Construct a non-zero function y = f(x) that satisfies d^2y/dx^2 = 4y, and verify it.",
+          "a": "For example y = e^(2x) + e^(-2x). dy/dx = 2e^(2x) - 2e^(-2x) and d^2y/dx^2 = 4e^(2x) + 4e^(-2x) = 4y.",
+          "s": [
+            [
+              "Gives a suitable non-zero function",
+              1
+            ],
+            [
+              "Finds the first derivative correctly",
+              1
+            ],
+            [
+              "Finds the second derivative and shows it equals 4y",
+              1
+            ]
+          ]
+        }
+      ]
+    }
+  ]
+}

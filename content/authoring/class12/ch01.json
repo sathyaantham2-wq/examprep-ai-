@@ -1,0 +1,2008 @@
+{
+  "subject": {
+    "code": "MATH12",
+    "name": "Mathematics",
+    "board": "CBSE",
+    "class": 12
+  },
+  "source": {
+    "publisher": "NCERT",
+    "title": "Mathematics Part I",
+    "edition": "Textbook for Class XII Part I, Reprint 2026-27",
+    "year": 2026
+  },
+  "chapter": {
+    "part": "I",
+    "chapter_no": 1,
+    "name": "Relations and Functions",
+    "blurb": "This chapter studies types of relations in a set -- empty, universal, reflexive, symmetric, transitive and equivalence relations, together with the equivalence classes an equivalence relation creates. It then studies types of functions -- one-one, onto and bijective -- and closes with the composition of functions and invertible functions, where a function is invertible exactly when it is one-one and onto.",
+    "source_code": "lemh101",
+    "order_index": 1
+  },
+  "scope_in": [
+    {
+      "item": "Treat a relation from A to B as any subset of A x B (a relation in A as a subset of A x A), write (a, b) in R as a R b, and test whether a given ordered pair belongs to a relation given in set-builder form",
+      "pages": "1-2, 7"
+    },
+    {
+      "item": "Identify the empty relation (R = empty set) and the universal relation (R = A x A), both called trivial relations, including deciding which a set-builder condition gives",
+      "pages": "2"
+    },
+    {
+      "item": "State the definitions of reflexive, symmetric and transitive relations and test a given relation (roster form, set-builder form on finite sets, N, Z, R, or a real-world set such as lines, triangles or people) for each property, giving a counterexample when a property fails",
+      "pages": "2-3, 5-7"
+    },
+    {
+      "item": "Prove that a relation is an equivalence relation (reflexive, symmetric and transitive), e.g. congruence of triangles, 2 divides a - b in Z, same parity, same number of pages, similarity of triangles, parallel lines",
+      "pages": "3-6"
+    },
+    {
+      "item": "Find equivalence classes [a] of an equivalence relation, and use the facts that classes are mutually disjoint, all elements of one class are related, and their union is the whole set (e.g. [0], [1], [2] for 3 divides a - b in Z)",
+      "pages": "4-6"
+    },
+    {
+      "item": "Use the miscellaneous results: the intersection of two equivalence relations is an equivalence relation; R = {(a, b) : f(a) = f(b)} is an equivalence relation; the subset relation on P(X) is not an equivalence relation; count equivalence relations (or reflexive-transitive relations) on {1, 2, 3} containing given pairs",
+      "pages": "13-16"
+    },
+    {
+      "item": "State and apply the definitions of one-one (injective) and many-one functions, proving one-one via f(x1) = f(x2) implies x1 = x2 and showing many-one with two distinct elements having the same image",
+      "pages": "7-10"
+    },
+    {
+      "item": "State and apply the definitions of onto (surjective) functions (range = co-domain) and bijective functions, proving onto by finding a pre-image for an arbitrary element of the co-domain",
+      "pages": "7-11"
+    },
+    {
+      "item": "Test standard functions recalled from Class XI for injectivity and surjectivity: x^2 and x^3 on N, Z, R, x^4, the greatest integer function, the modulus function, the signum function, 1/x on non-zero reals, piecewise odd/even functions on N, (x - 2)/(x - 3)",
+      "pages": "8-11, 15"
+    },
+    {
+      "item": "Use the finite-set property: for a finite set X, f : X -> X is one-one if and only if it is onto; this fails for infinite sets (f(x) = 2x on N)",
+      "pages": "10, 16"
+    },
+    {
+      "item": "Count one-one functions from {1, 2, 3} to itself (3! = 6) and onto functions from {1, 2, ..., n} to itself",
+      "pages": "14-15"
+    },
+    {
+      "item": "Check whether a sum of functions (I_N + I_N, sin x + cos x on [0, pi/2]) keeps the one-one or onto property",
+      "pages": "14-15"
+    },
+    {
+      "item": "Form the composition g o f, (g o f)(x) = g(f(x)), for functions on finite sets or on R, and show that g o f and f o g can differ",
+      "pages": "12"
+    },
+    {
+      "item": "Define an invertible function (g o f = I_X and f o g = I_Y, inverse written f^(-1)), use the fact that f is invertible if and only if it is one-one and onto, and find the inverse of a simple function such as f(x) = 4x + 3 onto its range",
+      "pages": "12-13"
+    }
+  ],
+  "scope_out": [
+    {
+      "item": "Binary operations (definition, commutativity, associativity, identity and inverse elements, operation tables)",
+      "reason": "The introduction (p. 1) and Summary (p. 16) still mention binary operations, but this rationalised Reprint 2026-27 has no binary-operations section, examples or exercise; the chapter ends at Section 1.4 and the miscellaneous material"
+    },
+    {
+      "item": "Properties of composition such as associativity, and the rule (g o f)^(-1) = f^(-1) o g^(-1)",
+      "reason": "Section 1.4 (pp. 12-13) only defines g o f and invertibility and works Examples 15-17; there is no exercise on composition or inverses in this edition and these properties are never stated"
+    },
+    {
+      "item": "Inverse trigonometric functions and their principal value branches",
+      "reason": "Deferred to Chapter 2 of this book; this chapter only uses sin x and cos x as given functions in Examples 16 and 26"
+    },
+    {
+      "item": "Counting the total number of relations from A to B (2^(mn)) or the total number of functions from A to B",
+      "reason": "Not taught in this chapter; the only counts here are one-one/onto functions on a set to itself (pp. 14-15) and relations on {1, 2, 3} containing given pairs (pp. 14, 16)"
+    },
+    {
+      "item": "Antisymmetric relations, partial order relations, and the inverse of a relation",
+      "reason": "Only empty, universal, reflexive, symmetric, transitive and equivalence relations are defined (pp. 2-3)"
+    },
+    {
+      "item": "Graphical tests such as the horizontal line test, or drawing graphs of functions",
+      "reason": "The chapter proves one-one/onto algebraically; graphs of standard functions were Class XI work and are only recalled (p. 7)"
+    },
+    {
+      "item": "Finding the domain and range of real functions, and the algebra of functions as a topic in itself",
+      "reason": "Introduced in Class XI and only recalled here (p. 7); sums of functions appear only inside Examples 25-26 to test one-one/onto"
+    }
+  ],
+  "concepts": [
+    {
+      "code": "C12M-1.1",
+      "name": "Relations in a set; empty and universal relations",
+      "description": "A relation from A to B as a subset of A x B, the notation a R b, and the two extreme (trivial) relations in a set: the empty relation and the universal relation.",
+      "idea": "A relation R from a set A to a set B is any subset of A x B; a relation in a set A is a subset of A x A. If (a, b) is in R we write a R b.",
+      "rule": "R is the empty relation if no element of A is related to any element of A (R = empty set); R is the universal relation if every element of A is related to every element of A (R = A x A). Both are called trivial relations.",
+      "example": "In A = {1, 2, 3, 4}, R = {(a, b) : a - b = 10} is the empty relation, while R' = {(a, b) : |a - b| >= 0} is the universal relation A x A.",
+      "difficulty_base": "Easy",
+      "questions": [
+        {
+          "b": "Remember",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "In this chapter, a relation R from a set A to a set B is defined as",
+          "a": "any subset of A x B",
+          "o": [
+            "any subset of A x B",
+            "any subset of A",
+            "the whole set A x B only",
+            "a rule that pairs each element of A with exactly one element of B"
+          ]
+        },
+        {
+          "b": "Remember",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "A relation R in a set A with R = A x A is called",
+          "a": "the universal relation",
+          "o": [
+            "the universal relation",
+            "the empty relation",
+            "the identity relation",
+            "a one-one relation"
+          ]
+        },
+        {
+          "b": "Remember",
+          "d": "Easy",
+          "t": "fill_blank",
+          "m": 1,
+          "q": "The empty relation and the universal relation are both sometimes called ____ relations.",
+          "a": "trivial"
+        },
+        {
+          "b": "Remember",
+          "d": "Hard",
+          "t": "mcq",
+          "m": 1,
+          "rev": true,
+          "q": "Let A = {1, 2, 3, 4}. Which of the following relations in A is NOT the empty relation?",
+          "a": "R = {(a, b) : b = a + 1}",
+          "o": [
+            "R = {(a, b) : b = a + 1}",
+            "R = {(a, b) : a - b = 10}",
+            "R = {(a, b) : a + b = 9}",
+            "R = {(a, b) : a = b + 5}"
+          ]
+        },
+        {
+          "b": "Understand",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "A is the set of all students of a boys school and R = {(a, b) : a is sister of b}. Why is R the empty relation?",
+          "a": "No student of a boys school can be the sister of any student of the school",
+          "o": [
+            "No student of a boys school can be the sister of any student of the school",
+            "Every student of the school is related to every other student",
+            "Each student is the sister of exactly one other student",
+            "R contains only pairs of the form (a, a)"
+          ]
+        },
+        {
+          "b": "Understand",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "If the ordered pair (a, b) belongs to a relation R, this is written as",
+          "a": "a R b",
+          "o": [
+            "a R b",
+            "b R a",
+            "R(b) = a",
+            "(b, a) belongs to R"
+          ]
+        },
+        {
+          "b": "Understand",
+          "d": "Easy",
+          "t": "short_answer",
+          "m": 2,
+          "q": "Let A = {1, 2, 3, 4}. Write the relation R = {(a, b) : b = a + 1} in A in roster form and state whether it is the empty relation.",
+          "a": "R = {(1, 2), (2, 3), (3, 4)}. Since R has elements, it is not the empty relation (it is not universal either).",
+          "s": [
+            [
+              "Writes R = {(1, 2), (2, 3), (3, 4)} correctly",
+              1
+            ],
+            [
+              "States that R is not the empty relation because it has elements",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Understand",
+          "d": "Hard",
+          "t": "mcq",
+          "m": 1,
+          "q": "Let A = {1, 2, 3, 4} and R' = {(a, b) : |a - b| >= 0} be a relation in A. How many ordered pairs does R' contain?",
+          "a": "16",
+          "o": [
+            "16",
+            "4",
+            "12",
+            "6"
+          ]
+        },
+        {
+          "b": "Understand",
+          "d": "Hard",
+          "t": "mcq",
+          "m": 1,
+          "q": "A is the set of all students of a boys school and R' = {(a, b) : the difference between heights of a and b is less than 3 meters}. Then R' is",
+          "a": "the universal relation, since every pair of students satisfies the condition",
+          "o": [
+            "the universal relation, since every pair of students satisfies the condition",
+            "the empty relation, since no two students have exactly equal height",
+            "neither empty nor universal, since it depends on which students are chosen",
+            "the universal relation, since every student is related only to himself"
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Easy",
+          "t": "fill_blank",
+          "m": 1,
+          "q": "Let A = {1, 2, 3, 4, 5, 6} and R = {(a, b) : b = a + 1} be a relation in A. The number of ordered pairs in R is ____.",
+          "a": "5"
+        },
+        {
+          "b": "Apply",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "Let R be the relation in the set N given by R = {(a, b) : a = b - 2, b > 6}. Which of the following belongs to R?",
+          "a": "(6, 8)",
+          "o": [
+            "(6, 8)",
+            "(2, 4)",
+            "(3, 8)",
+            "(8, 7)"
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Hard",
+          "t": "mcq",
+          "m": 1,
+          "q": "Let A = {1, 2, 3} and R = {(a, b) : a + b is even} be a relation in A. Which of the following is R in roster form?",
+          "a": "{(1, 1), (1, 3), (3, 1), (3, 3), (2, 2)}",
+          "o": [
+            "{(1, 1), (1, 3), (3, 1), (3, 3), (2, 2)}",
+            "{(1, 3), (3, 1)}",
+            "{(1, 1), (2, 2), (3, 3)}",
+            "{(1, 1), (1, 3), (3, 3), (2, 2)}"
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Hard",
+          "t": "mcq",
+          "m": 1,
+          "q": "Let A = {1, 2, 3} and B = {4, 5}. Which of the following is a relation from A to B?",
+          "a": "{(1, 4), (3, 5)}",
+          "o": [
+            "{(1, 4), (3, 5)}",
+            "{(4, 1), (5, 3)}",
+            "{(1, 2), (2, 5)}",
+            "{(1, 4), (6, 5)}"
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Hard",
+          "t": "short_answer",
+          "m": 2,
+          "q": "Let A = {1, 2, 3, 4}. Decide whether each relation in A is empty, universal or neither, giving a reason: R = {(a, b) : a + b > 10} and S = {(a, b) : a + b >= 2}.",
+          "a": "The largest possible value of a + b is 4 + 4 = 8, so no pair satisfies a + b > 10 and R is the empty relation. The smallest possible value of a + b is 1 + 1 = 2, so every pair satisfies a + b >= 2 and S = A x A is the universal relation.",
+          "s": [
+            [
+              "R is empty, since a + b is at most 8",
+              1
+            ],
+            [
+              "S is universal, since a + b is at least 2 for every pair",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Hardest",
+          "t": "long_answer",
+          "m": 3,
+          "q": "Let A = {1, 2, 3, 4, 5, 6}. For each relation in A, state whether it is empty, universal or neither, with a reason: (i) R1 = {(a, b) : a + b = 13}, (ii) R2 = {(a, b) : |a - b| < 6}, (iii) R3 = {(a, b) : b = 2a}.",
+          "a": "(i) The largest value of a + b is 12, so no pair gives 13: R1 is empty. (ii) The largest value of |a - b| is 5, which is less than 6, so every pair is in R2: R2 = A x A is universal. (iii) R3 = {(1, 2), (2, 4), (3, 6)}, which has some but not all pairs: neither.",
+          "s": [
+            [
+              "(i) Empty, since a + b is at most 12",
+              1
+            ],
+            [
+              "(ii) Universal, since |a - b| is at most 5",
+              1
+            ],
+            [
+              "(iii) Neither, R3 = {(1, 2), (2, 4), (3, 6)}",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Analyse",
+          "d": "Hard",
+          "t": "assertion_reason",
+          "m": 1,
+          "q": "Assertion (A): In the set A = {1, 2, 3, 4}, the relation R = {(a, b) : a - b = 10} is the empty relation. Reason (R): No pair (a, b) in A x A satisfies a - b = 10, because the largest possible value of a - b in A is 3.",
+          "a": "Both A and R are true, and R is the correct explanation of A",
+          "o": [
+            "Both A and R are true, and R is the correct explanation of A",
+            "Both A and R are true, but R is not the correct explanation of A",
+            "A is true, R is false",
+            "A is false, R is true"
+          ]
+        },
+        {
+          "b": "Analyse",
+          "d": "Hard",
+          "t": "multi_statement",
+          "m": 1,
+          "q": "Consider these statements. (I) Every relation in a set A is a subset of A x A. (II) The universal relation in the set A = {1, 2, 3} has exactly 3 ordered pairs. Which is or are correct?",
+          "a": "Only I",
+          "o": [
+            "Only I",
+            "Only II",
+            "Both I and II",
+            "Neither I nor II"
+          ]
+        },
+        {
+          "b": "Analyse",
+          "d": "Hardest",
+          "t": "long_answer",
+          "m": 3,
+          "q": "A student says: 'In the set A of all students of a boys school, R = {(a, b) : a is brother of b} must be the empty relation, just like R = {(a, b) : a is sister of b}.' Is the student right? Explain.",
+          "a": "No. The sister relation is empty because no student of a boys school can be anyone's sister. But two students of a boys school can be brothers, so the brother relation need not be empty; it is empty only if no two students happen to be brothers, which the school being a boys school does not force.",
+          "s": [
+            [
+              "Explains why the sister relation is empty",
+              1
+            ],
+            [
+              "Explains that two students can be brothers, so the brother relation need not be empty",
+              1
+            ],
+            [
+              "Concludes the student's claim is not justified",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Evaluate",
+          "d": "Hard",
+          "t": "short_answer",
+          "m": 2,
+          "q": "Ravi says: 'In A = {1, 2, 3, 4}, the relation R = {(a, b) : |a - b| >= 0} is empty, because |a - b| = 0 when a = b.' Evaluate his claim.",
+          "a": "Ravi is wrong. |a - b| >= 0 is true for every pair, including the pairs with a = b (where |a - b| = 0 still satisfies >= 0). So R = A x A, the universal relation with 16 pairs.",
+          "s": [
+            [
+              "States the claim is wrong because |a - b| >= 0 holds for every pair, including a = b",
+              1
+            ],
+            [
+              "Concludes R = A x A is the universal relation",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Create",
+          "d": "Hardest",
+          "t": "long_answer",
+          "m": 3,
+          "q": "For the set A = {1, 2, 3, 4, 5}, write one condition in set-builder form that gives the empty relation in A and another that gives the universal relation in A. Justify each.",
+          "a": "For example, R = {(a, b) : a + b = 20} is empty, since a + b is at most 10 in A. S = {(a, b) : a + b <= 10} is universal, since every pair in A has a + b at most 10. (Any correctly justified pair of conditions earns full marks.)",
+          "s": [
+            [
+              "Gives a condition that no pair in A x A satisfies",
+              1
+            ],
+            [
+              "Gives a condition that every pair in A x A satisfies",
+              1
+            ],
+            [
+              "Justifies both using the smallest/largest values possible in A",
+              1
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "code": "C12M-1.2",
+      "name": "Reflexive, symmetric and transitive relations",
+      "description": "Testing whether a relation in a set is reflexive, symmetric or transitive, and producing a counterexample when a property fails.",
+      "idea": "Each of the three properties is a separate test on the pairs in R; a relation can have any combination of them.",
+      "rule": "Reflexive: (a, a) is in R for every a in A. Symmetric: (a1, a2) in R implies (a2, a1) in R. Transitive: (a1, a2) in R and (a2, a3) in R imply (a1, a3) in R. One missing pair is enough to show a property fails.",
+      "example": "In {1, 2, 3}, R = {(1, 1), (2, 2), (3, 3), (1, 2), (2, 3)} is reflexive; it is not symmetric since (1, 2) is in R but (2, 1) is not; it is not transitive since (1, 2) and (2, 3) are in R but (1, 3) is not.",
+      "difficulty_base": "Hard",
+      "questions": [
+        {
+          "b": "Remember",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "A relation R in a set A is called reflexive if",
+          "a": "(a, a) is in R for every a in A",
+          "o": [
+            "(a, a) is in R for every a in A",
+            "(a, a) is in R for at least one a in A",
+            "(a, b) in R implies (b, a) in R",
+            "(a, b) in R and (b, c) in R imply (a, c) in R"
+          ]
+        },
+        {
+          "b": "Remember",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "A relation R in a set A is called symmetric if, for all a1, a2 in A,",
+          "a": "(a1, a2) in R implies (a2, a1) in R",
+          "o": [
+            "(a1, a2) in R implies (a2, a1) in R",
+            "(a1, a1) is in R",
+            "(a1, a2) in R implies that (a2, a1) does not belong to R",
+            "(a1, a2) in R and (a2, a3) in R imply (a1, a3) in R"
+          ]
+        },
+        {
+          "b": "Remember",
+          "d": "Easy",
+          "t": "fill_blank",
+          "m": 1,
+          "q": "A relation R in a set A is called ____ if (a1, a2) in R and (a2, a3) in R together imply (a1, a3) in R.",
+          "a": "transitive"
+        },
+        {
+          "b": "Remember",
+          "d": "Hard",
+          "t": "mcq",
+          "m": 1,
+          "rev": true,
+          "q": "Let R = {(1, 1), (2, 2), (3, 3), (1, 2), (2, 3)} be a relation in A = {1, 2, 3}. Which statement about R is NOT true?",
+          "a": "R is symmetric",
+          "o": [
+            "R is symmetric",
+            "R is reflexive",
+            "(1, 2) belongs to R",
+            "(1, 3) does not belong to R"
+          ]
+        },
+        {
+          "b": "Understand",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "Let L be the set of all lines in a plane and R = {(L1, L2) : L1 is perpendicular to L2}. Why is R symmetric?",
+          "a": "If L1 is perpendicular to L2, then L2 is perpendicular to L1",
+          "o": [
+            "If L1 is perpendicular to L2, then L2 is perpendicular to L1",
+            "Every line is perpendicular to itself",
+            "If L1 is perpendicular to L2 and L2 is perpendicular to L3, then L1 is perpendicular to L3",
+            "Any two lines in a plane meet at exactly one point"
+          ]
+        },
+        {
+          "b": "Understand",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "The relation R = {(1, 2), (2, 1)} in the set {1, 2, 3} is",
+          "a": "symmetric but neither reflexive nor transitive",
+          "o": [
+            "symmetric but neither reflexive nor transitive",
+            "reflexive and symmetric but not transitive",
+            "symmetric and transitive but not reflexive",
+            "an equivalence relation"
+          ]
+        },
+        {
+          "b": "Understand",
+          "d": "Easy",
+          "t": "short_answer",
+          "m": 2,
+          "q": "Explain why the relation R = {(1, 1), (2, 2), (3, 3), (1, 2), (2, 3)} in A = {1, 2, 3} is not transitive.",
+          "a": "(1, 2) is in R and (2, 3) is in R, but (1, 3) is not in R. So the transitive condition fails.",
+          "s": [
+            [
+              "Identifies (1, 2) and (2, 3) in R",
+              1
+            ],
+            [
+              "States (1, 3) is not in R, so R is not transitive",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Understand",
+          "d": "Hard",
+          "t": "mcq",
+          "m": 1,
+          "q": "The relation R = {(a, b) : a <= b} in the set R of real numbers is",
+          "a": "reflexive and transitive but not symmetric",
+          "o": [
+            "reflexive and transitive but not symmetric",
+            "reflexive, symmetric and transitive",
+            "symmetric and transitive but not reflexive",
+            "transitive but neither reflexive nor symmetric"
+          ]
+        },
+        {
+          "b": "Understand",
+          "d": "Hard",
+          "t": "mcq",
+          "m": 1,
+          "q": "Let L be the set of all lines in a plane and R = {(L1, L2) : L1 is perpendicular to L2}. Why is R not transitive?",
+          "a": "If L1 is perpendicular to L2 and L2 is perpendicular to L3, then L1 is parallel to L3, not perpendicular to it",
+          "o": [
+            "If L1 is perpendicular to L2 and L2 is perpendicular to L3, then L1 is parallel to L3, not perpendicular to it",
+            "A line cannot be perpendicular to itself",
+            "If L1 is perpendicular to L2, then L2 need not be perpendicular to L1",
+            "Two lines in a plane always intersect"
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Easy",
+          "t": "fill_blank",
+          "m": 1,
+          "q": "Let A = {1, 2, 3, 4} and R = {(1, 1), (2, 2), (3, 3), (1, 2)}. The one ordered pair that must be added to make R reflexive is ____.",
+          "a": "(4, 4)"
+        },
+        {
+          "b": "Apply",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "Let A = {1, 2, 3, 4, 5, 6} and R = {(a, b) : b = a + 1} be a relation in A. Then R is",
+          "a": "neither reflexive, nor symmetric, nor transitive",
+          "o": [
+            "neither reflexive, nor symmetric, nor transitive",
+            "reflexive but neither symmetric nor transitive",
+            "symmetric but neither reflexive nor transitive",
+            "transitive but neither reflexive nor symmetric"
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Hard",
+          "t": "mcq",
+          "m": 1,
+          "q": "Let R be the relation in the set {1, 2, 3, 4} given by R = {(1, 2), (2, 2), (1, 1), (4, 4), (1, 3), (3, 3), (3, 2)}. Then",
+          "a": "R is reflexive and transitive but not symmetric",
+          "o": [
+            "R is reflexive and transitive but not symmetric",
+            "R is reflexive and symmetric but not transitive",
+            "R is symmetric and transitive but not reflexive",
+            "R is an equivalence relation"
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Hard",
+          "t": "mcq",
+          "m": 1,
+          "q": "Let A = {1, 2, 3, 4, 5, 6} and R = {(a, b) : b is divisible by a}. Then R is",
+          "a": "reflexive and transitive but not symmetric",
+          "o": [
+            "reflexive and transitive but not symmetric",
+            "reflexive, symmetric and transitive",
+            "reflexive and symmetric but not transitive",
+            "symmetric and transitive but not reflexive"
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Hard",
+          "t": "short_answer",
+          "m": 2,
+          "q": "Check whether the relation R = {(x, y) : y = x + 5 and x < 4} in the set N of natural numbers is reflexive, symmetric or transitive.",
+          "a": "R = {(1, 6), (2, 7), (3, 8)}. It is not reflexive, since (1, 1) is not in R, and not symmetric, since (1, 6) is in R but (6, 1) is not. It is transitive: there are no pairs (x, y) and (y, z) both in R (every second entry is at least 6, but every first entry is less than 4), so the condition is never violated.",
+          "s": [
+            [
+              "Lists R = {(1, 6), (2, 7), (3, 8)} and shows it is neither reflexive nor symmetric",
+              1
+            ],
+            [
+              "Concludes R is transitive because no (x, y), (y, z) pair exists in R",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Hardest",
+          "t": "long_answer",
+          "m": 3,
+          "q": "Show that the relation R = {(a, b) : a <= b^2} in the set R of real numbers is neither reflexive nor symmetric nor transitive.",
+          "a": "Not reflexive: (1/2, 1/2) is not in R, since 1/2 > 1/4. Not symmetric: (1, 4) is in R since 1 <= 16, but (4, 1) is not since 4 > 1. Not transitive: (3, 2) is in R since 3 <= 4, and (2, 1.5) is in R since 2 <= 2.25, but (3, 1.5) is not in R since 3 > 2.25.",
+          "s": [
+            [
+              "Valid counterexample for reflexivity, e.g. a = 1/2",
+              1
+            ],
+            [
+              "Valid counterexample for symmetry, e.g. (1, 4)",
+              1
+            ],
+            [
+              "Valid counterexample for transitivity, e.g. (3, 2), (2, 1.5)",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Analyse",
+          "d": "Hard",
+          "t": "assertion_reason",
+          "m": 1,
+          "q": "Assertion (A): The relation R = {(1, 2), (2, 1)} in the set {1, 2, 3} is transitive. Reason (R): For R to be transitive, (1, 2) in R and (2, 1) in R would require (1, 1) to be in R.",
+          "a": "A is false, R is true",
+          "o": [
+            "A is false, R is true",
+            "Both A and R are true, and R is the correct explanation of A",
+            "Both A and R are true, but R is not the correct explanation of A",
+            "A is true, R is false"
+          ]
+        },
+        {
+          "b": "Analyse",
+          "d": "Hard",
+          "t": "multi_statement",
+          "m": 1,
+          "q": "Consider these statements. (I) In a set of people, the relation R = {(x, y) : x is exactly 7 cm taller than y} is symmetric. (II) In the set of all lines in a plane, the relation R = {(L1, L2) : L1 is perpendicular to L2} is symmetric. Which is or are correct?",
+          "a": "Only II",
+          "o": [
+            "Only II",
+            "Only I",
+            "Both I and II",
+            "Neither I nor II"
+          ]
+        },
+        {
+          "b": "Analyse",
+          "d": "Hardest",
+          "t": "long_answer",
+          "m": 3,
+          "q": "Let A = {1, 2, 3, ..., 14} and R = {(x, y) : 3x - y = 0}. List R and determine whether it is reflexive, symmetric and transitive.",
+          "a": "R = {(1, 3), (2, 6), (3, 9), (4, 12)}. Not reflexive: (1, 1) is not in R. Not symmetric: (1, 3) is in R but (3, 1) is not. Not transitive: (1, 3) and (3, 9) are in R but (1, 9) is not.",
+          "s": [
+            [
+              "Lists R correctly and shows it is not reflexive",
+              1
+            ],
+            [
+              "Shows it is not symmetric with a counterexample",
+              1
+            ],
+            [
+              "Shows it is not transitive with a counterexample",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Evaluate",
+          "d": "Hard",
+          "t": "short_answer",
+          "m": 2,
+          "q": "Meena says: 'A relation that is symmetric and transitive must also be reflexive, because (a, b) and (b, a) in R give (a, a) in R by transitivity.' Evaluate her claim using A = {1, 2} and R = {(1, 1)}.",
+          "a": "She is wrong. R = {(1, 1)} in A = {1, 2} is symmetric and transitive, but not reflexive, since (2, 2) is not in R. Her argument only works for an element a that is related to some b; the element 2 is related to nothing, so nothing forces (2, 2) into R.",
+          "s": [
+            [
+              "Shows R = {(1, 1)} is symmetric and transitive but not reflexive",
+              1
+            ],
+            [
+              "Identifies the flaw: the argument needs a to be related to some b",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Create",
+          "d": "Hardest",
+          "t": "long_answer",
+          "m": 3,
+          "q": "In the set A = {1, 2, 3}, construct a relation that is reflexive and symmetric but not transitive, and verify all three properties.",
+          "a": "For example, R = {(1, 1), (2, 2), (3, 3), (1, 2), (2, 1), (2, 3), (3, 2)}. Reflexive: (1, 1), (2, 2), (3, 3) are in R. Symmetric: every pair (a, b) has its reverse (b, a) in R. Not transitive: (1, 2) and (2, 3) are in R but (1, 3) is not.",
+          "s": [
+            [
+              "Relation contains (1, 1), (2, 2), (3, 3) and is shown reflexive",
+              1
+            ],
+            [
+              "Relation is shown symmetric",
+              1
+            ],
+            [
+              "A specific failing triple shows it is not transitive",
+              1
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "code": "C12M-1.3",
+      "name": "Equivalence relations and equivalence classes",
+      "description": "Proving a relation is an equivalence relation, and finding the equivalence classes into which it divides the set.",
+      "idea": "An equivalence relation sorts the elements of a set into mutually disjoint groups (equivalence classes) whose elements are all related to each other.",
+      "rule": "R is an equivalence relation if it is reflexive, symmetric and transitive. The equivalence class [a] is the set of all elements related to a. Different classes have no common element and together make up the whole set.",
+      "example": "R = {(a, b) : 2 divides a - b} in Z is an equivalence relation with two classes: [0], the even integers, and [1], the odd integers.",
+      "difficulty_base": "Hard",
+      "questions": [
+        {
+          "b": "Remember",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "A relation R in a set A is called an equivalence relation if R is",
+          "a": "reflexive, symmetric and transitive",
+          "o": [
+            "reflexive, symmetric and transitive",
+            "reflexive and symmetric only",
+            "symmetric and transitive only",
+            "reflexive and transitive only"
+          ]
+        },
+        {
+          "b": "Remember",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "For an equivalence relation R in a set X, the equivalence class [a] containing a is",
+          "a": "the subset of X containing all elements related to a",
+          "o": [
+            "the subset of X containing all elements related to a",
+            "the set containing a alone",
+            "the set of all elements of X not related to a",
+            "always the whole set X"
+          ]
+        },
+        {
+          "b": "Remember",
+          "d": "Easy",
+          "t": "fill_blank",
+          "m": 1,
+          "q": "For the equivalence relation R = {(a, b) : 2 divides a - b} in Z, the equivalence class [0] is the set of all ____ integers.",
+          "a": "even"
+        },
+        {
+          "b": "Remember",
+          "d": "Hard",
+          "t": "mcq",
+          "m": 1,
+          "rev": true,
+          "q": "An equivalence relation R in a set X divides X into equivalence classes. For two different classes Ai and Aj, which statement is false?",
+          "a": "Some element of Ai is related to some element of Aj",
+          "o": [
+            "Some element of Ai is related to some element of Aj",
+            "All elements of Ai are related to each other",
+            "Ai and Aj have no element in common",
+            "The union of all the equivalence classes is X"
+          ]
+        },
+        {
+          "b": "Understand",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "Let T be the set of all triangles in a plane and R = {(T1, T2) : T1 is congruent to T2}. Why is R reflexive?",
+          "a": "Every triangle is congruent to itself",
+          "o": [
+            "Every triangle is congruent to itself",
+            "If T1 is congruent to T2, then T2 is congruent to T1",
+            "Congruent triangles have equal areas",
+            "Any two triangles in a plane are congruent"
+          ]
+        },
+        {
+          "b": "Understand",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "For the equivalence relation R = {(a, b) : 3 divides a - b} in Z, the integer 7 belongs to the class",
+          "a": "[1]",
+          "o": [
+            "[1]",
+            "[0]",
+            "[2]",
+            "[7], which is different from [1]"
+          ]
+        },
+        {
+          "b": "Understand",
+          "d": "Easy",
+          "t": "short_answer",
+          "m": 2,
+          "q": "In A = {1, 2, 3, 4, 5, 6, 7}, R = {(a, b) : both a and b are either odd or even}. Explain why no element of {1, 3, 5, 7} is related to any element of {2, 4, 6}.",
+          "a": "For (a, b) to be in R, a and b must both be odd or both be even. Every element of {1, 3, 5, 7} is odd and every element of {2, 4, 6} is even, so a pair with one from each set never satisfies the condition.",
+          "s": [
+            [
+              "States the condition: both odd or both even",
+              1
+            ],
+            [
+              "Notes one set is all odd and the other all even, so no such pair is in R",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Understand",
+          "d": "Hard",
+          "t": "mcq",
+          "m": 1,
+          "q": "For the equivalence relation R = {(a, b) : 2 divides a - b} in Z, which statement is correct?",
+          "a": "[0] = [2r] and [1] = [2r + 1] for every integer r",
+          "o": [
+            "[0] = [2r] and [1] = [2r + 1] for every integer r",
+            "[0] = [1]",
+            "[0] = [2r + 1] for every integer r",
+            "Every integer forms an equivalence class on its own"
+          ]
+        },
+        {
+          "b": "Understand",
+          "d": "Hard",
+          "t": "mcq",
+          "m": 1,
+          "q": "If R1 and R2 are equivalence relations in a set A, then the intersection of R1 and R2 is",
+          "a": "always an equivalence relation in A",
+          "o": [
+            "always an equivalence relation in A",
+            "reflexive but never symmetric",
+            "an equivalence relation only when R1 = R2",
+            "never transitive"
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Easy",
+          "t": "fill_blank",
+          "m": 1,
+          "q": "Let A = {x in Z : 0 <= x <= 12} and R = {(a, b) : |a - b| is a multiple of 4}. The set of all elements of A related to 1 is ____.",
+          "a": "{1, 5, 9}"
+        },
+        {
+          "b": "Apply",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "Let A = {x in Z : 0 <= x <= 12} and R = {(a, b) : a = b}. The set of all elements of A related to 1 is",
+          "a": "{1}",
+          "o": [
+            "{1}",
+            "{1, 5, 9}",
+            "{0, 1, 2, ..., 12}",
+            "the empty set"
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Hard",
+          "t": "mcq",
+          "m": 1,
+          "q": "R = {(a, b) : |a - b| is even} is an equivalence relation in A = {1, 2, 3, 4, 5}. Its equivalence classes are",
+          "a": "{1, 3, 5} and {2, 4}",
+          "o": [
+            "{1, 3, 5} and {2, 4}",
+            "{1, 2, 3, 4, 5} only",
+            "{1}, {2}, {3}, {4} and {5}",
+            "{1, 3}, {2, 4} and {5}"
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Hard",
+          "t": "mcq",
+          "m": 1,
+          "q": "R = {(T1, T2) : T1 is similar to T2} in the set of all triangles. T1 has sides 3, 4, 5, T2 has sides 5, 12, 13 and T3 has sides 6, 8, 10. Which triangles are related?",
+          "a": "T1 and T3 only",
+          "o": [
+            "T1 and T3 only",
+            "T1, T2 and T3, since all are right triangles",
+            "T1 and T2 only",
+            "None of them"
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Hard",
+          "t": "short_answer",
+          "m": 2,
+          "q": "Write the equivalence classes of the relation R = {(a, b) : 3 divides a - b} in Z, listing a few elements of each.",
+          "a": "[0] = {..., -6, -3, 0, 3, 6, ...}, [1] = {..., -5, -2, 1, 4, 7, ...}, [2] = {..., -4, -1, 2, 5, 8, ...}. These three classes are mutually disjoint and their union is Z.",
+          "s": [
+            [
+              "Writes all three classes [0], [1], [2] correctly",
+              1
+            ],
+            [
+              "States that they are disjoint and together make up Z",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Hardest",
+          "t": "long_answer",
+          "m": 3,
+          "q": "Show that the relation R in the set A of all the books in a library of a college, given by R = {(x, y) : x and y have the same number of pages}, is an equivalence relation.",
+          "a": "Reflexive: every book has the same number of pages as itself, so (x, x) is in R. Symmetric: if x and y have the same number of pages, so do y and x. Transitive: if x and y have the same number of pages and y and z have the same number of pages, then x and z have the same number of pages. Hence R is an equivalence relation.",
+          "s": [
+            [
+              "Reflexive, with reason",
+              1
+            ],
+            [
+              "Symmetric, with reason",
+              1
+            ],
+            [
+              "Transitive, with reason, and conclusion",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Analyse",
+          "d": "Hard",
+          "t": "assertion_reason",
+          "m": 1,
+          "q": "Assertion (A): The relation R = {(P1, P2) : P1 and P2 have the same number of sides} in the set of all polygons is an equivalence relation. Reason (R): Every polygon has at least three sides.",
+          "a": "Both A and R are true, but R is not the correct explanation of A",
+          "o": [
+            "Both A and R are true, but R is not the correct explanation of A",
+            "Both A and R are true, and R is the correct explanation of A",
+            "A is true, R is false",
+            "A is false, R is true"
+          ]
+        },
+        {
+          "b": "Analyse",
+          "d": "Hard",
+          "t": "multi_statement",
+          "m": 1,
+          "q": "Consider these statements about the equivalence relation R = {(a, b) : 2 divides a - b} in Z. (I) R has exactly two equivalence classes. (II) [3] = [1]. Which is or are correct?",
+          "a": "Both I and II",
+          "o": [
+            "Both I and II",
+            "Only I",
+            "Only II",
+            "Neither I nor II"
+          ]
+        },
+        {
+          "b": "Analyse",
+          "d": "Hardest",
+          "t": "long_answer",
+          "m": 3,
+          "q": "Let A = {1, 2, 3}. Find the number of equivalence relations in A that contain the pair (1, 2), and list them.",
+          "a": "The smallest such relation must contain (1, 1), (2, 2), (3, 3) for reflexivity and (2, 1) for symmetry: R1 = {(1, 1), (2, 2), (3, 3), (1, 2), (2, 1)}. Adding any further pair, say (2, 3), forces (3, 2) by symmetry and then (1, 3), (3, 1) by transitivity, giving the universal relation A x A. So there are exactly 2: R1 and A x A.",
+          "s": [
+            [
+              "Finds the smallest relation R1 correctly",
+              1
+            ],
+            [
+              "Shows adding any other pair forces the universal relation",
+              1
+            ],
+            [
+              "Concludes the number is 2",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Evaluate",
+          "d": "Hard",
+          "t": "short_answer",
+          "m": 2,
+          "q": "Given a non-empty set X, let P(X) be the set of all subsets of X, and define R in P(X) by A R B if and only if A is a subset of B. Is R an equivalence relation? Justify.",
+          "a": "No. R is reflexive (every set is a subset of itself) and transitive (if A is a subset of B and B of C, then A is a subset of C), but not symmetric: the empty set is a subset of X, but X is not a subset of the empty set because X is non-empty.",
+          "s": [
+            [
+              "Notes R is reflexive and transitive",
+              1
+            ],
+            [
+              "Gives a counterexample to symmetry and concludes R is not an equivalence relation",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Create",
+          "d": "Hardest",
+          "t": "long_answer",
+          "m": 3,
+          "q": "Divide the set A = {1, 2, 3, 4, 5, 6} into three mutually disjoint subsets whose union is A, then define a relation R in A whose equivalence classes are exactly these subsets, and verify one of them.",
+          "a": "For example, {1, 4}, {2, 5}, {3, 6}. Define R = {(a, b) : 3 divides a - b}. It is an equivalence relation (as for 2 divides a - b), and the elements related to 1 are 1 and 4, so [1] = {1, 4}; similarly [2] = {2, 5} and [3] = {3, 6}.",
+          "s": [
+            [
+              "Gives three disjoint subsets whose union is A",
+              1
+            ],
+            [
+              "Defines a suitable relation R",
+              1
+            ],
+            [
+              "Verifies that a class of R equals one of the subsets",
+              1
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "code": "C12M-1.4",
+      "name": "One-one (injective) and many-one functions",
+      "description": "Deciding whether a function is one-one by testing f(x1) = f(x2) implies x1 = x2, or showing it is many-one with two distinct elements having the same image.",
+      "idea": "A function is one-one when distinct elements of the domain always have distinct images.",
+      "rule": "f : X -> Y is one-one (injective) if f(x1) = f(x2) implies x1 = x2 for all x1, x2 in X. Otherwise f is many-one; to show this, find x1 != x2 with f(x1) = f(x2).",
+      "example": "f : N -> N, f(x) = 2x is one-one, since 2x1 = 2x2 gives x1 = x2. f : R -> R, f(x) = x^2 is many-one, since f(-1) = f(1) = 1.",
+      "difficulty_base": "Hard",
+      "questions": [
+        {
+          "b": "Remember",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "A function f : X -> Y is called one-one (injective) if",
+          "a": "f(x1) = f(x2) implies x1 = x2, for all x1, x2 in X",
+          "o": [
+            "f(x1) = f(x2) implies x1 = x2, for all x1, x2 in X",
+            "every element of Y is the image of some element of X",
+            "x1 = x2 implies f(x1) = f(x2), for all x1, x2 in X",
+            "f(x) = x for every x in X"
+          ]
+        },
+        {
+          "b": "Remember",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "A function f : X -> Y that is not one-one is called",
+          "a": "many-one",
+          "o": [
+            "many-one",
+            "onto",
+            "bijective",
+            "invertible"
+          ]
+        },
+        {
+          "b": "Remember",
+          "d": "Easy",
+          "t": "fill_blank",
+          "m": 1,
+          "q": "Another name for a one-one function is an ____ function.",
+          "a": "injective"
+        },
+        {
+          "b": "Remember",
+          "d": "Hard",
+          "t": "mcq",
+          "m": 1,
+          "rev": true,
+          "q": "Which of the following functions is NOT one-one?",
+          "a": "f : R -> R, f(x) = x^2",
+          "o": [
+            "f : R -> R, f(x) = x^2",
+            "f : N -> N, f(x) = 2x",
+            "f : R -> R, f(x) = 3 - 4x",
+            "f : R -> R, f(x) = x^3"
+          ]
+        },
+        {
+          "b": "Understand",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "Let A be the set of all 50 students of a class and f : A -> N, f(x) = roll number of the student x. Why is f one-one?",
+          "a": "No two different students of the class have the same roll number",
+          "o": [
+            "No two different students of the class have the same roll number",
+            "Every natural number is the roll number of some student",
+            "The class has exactly 50 students",
+            "The roll numbers start from 1"
+          ]
+        },
+        {
+          "b": "Understand",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "Why is f : R -> R, f(x) = x^2 not one-one?",
+          "a": "f(-1) = f(1) = 1, although -1 and 1 are different",
+          "o": [
+            "f(-1) = f(1) = 1, although -1 and 1 are different",
+            "-2 is not the image of any real number",
+            "f(0) = 0",
+            "x^2 is never negative"
+          ]
+        },
+        {
+          "b": "Understand",
+          "d": "Easy",
+          "t": "short_answer",
+          "m": 2,
+          "q": "Show that the function f : N -> N, f(x) = 2x is one-one.",
+          "a": "Suppose f(x1) = f(x2). Then 2x1 = 2x2, so x1 = x2. Hence f is one-one.",
+          "s": [
+            [
+              "Starts from f(x1) = f(x2) and writes 2x1 = 2x2",
+              1
+            ],
+            [
+              "Deduces x1 = x2 and concludes f is one-one",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Understand",
+          "d": "Hard",
+          "t": "mcq",
+          "m": 1,
+          "q": "f : N -> N is given by f(1) = f(2) = 1 and f(x) = x - 1 for every x > 2. Which statement is correct?",
+          "a": "f is not one-one, because f(1) = f(2)",
+          "o": [
+            "f is not one-one, because f(1) = f(2)",
+            "f is one-one, because x - 1 takes different values for different x > 2",
+            "f is one-one, because f is onto",
+            "f is not one-one, because 1 has no pre-image"
+          ]
+        },
+        {
+          "b": "Understand",
+          "d": "Hard",
+          "t": "mcq",
+          "m": 1,
+          "q": "Let A = {1, 2, 3}, B = {4, 5, 6, 7} and f = {(1, 4), (2, 5), (3, 6)} be a function from A to B. Why is f one-one?",
+          "a": "The distinct elements 1, 2, 3 have the distinct images 4, 5, 6",
+          "o": [
+            "The distinct elements 1, 2, 3 have the distinct images 4, 5, 6",
+            "Every element of B is the image of some element of A",
+            "A has fewer elements than B",
+            "f is made up of three ordered pairs"
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Easy",
+          "t": "fill_blank",
+          "m": 1,
+          "q": "The number of all one-one functions from the set {1, 2, 3} to itself is ____.",
+          "a": "6"
+        },
+        {
+          "b": "Apply",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "Which of the following functions f : Z -> Z is one-one?",
+          "a": "f(x) = x^3",
+          "o": [
+            "f(x) = x^3",
+            "f(x) = x^2",
+            "f(x) = |x|",
+            "f(x) = 5"
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Hard",
+          "t": "mcq",
+          "m": 1,
+          "q": "The greatest integer function f : R -> R, f(x) = [x], is not one-one. Which observation shows this?",
+          "a": "f(1.2) = f(1.9) = 1",
+          "o": [
+            "f(1.2) = f(1.9) = 1",
+            "f(1.2) = 1.2",
+            "[x] is defined only for integers x",
+            "f(-1) = 1"
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Hard",
+          "t": "mcq",
+          "m": 1,
+          "q": "For the signum function f : R -> R (f(x) = 1 if x > 0, f(x) = 0 if x = 0, f(x) = -1 if x < 0), which pair shows that f is not one-one?",
+          "a": "f(2) = f(5) = 1",
+          "o": [
+            "f(2) = f(5) = 1",
+            "f(0) = 0 and f(1) = 1",
+            "f(-3) = -1 and f(3) = 1",
+            "f(2) = 2 and f(5) = 5"
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Hard",
+          "t": "short_answer",
+          "m": 2,
+          "q": "Check whether f : R -> R, f(x) = 3 - 4x is one-one.",
+          "a": "Suppose f(x1) = f(x2). Then 3 - 4x1 = 3 - 4x2, so -4x1 = -4x2 and x1 = x2. Hence f is one-one.",
+          "s": [
+            [
+              "Writes 3 - 4x1 = 3 - 4x2 from f(x1) = f(x2)",
+              1
+            ],
+            [
+              "Deduces x1 = x2, so f is one-one",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Hardest",
+          "t": "long_answer",
+          "m": 3,
+          "q": "Show that f : N -> N, given by f(x) = x + 1 if x is odd and f(x) = x - 1 if x is even, is one-one.",
+          "a": "Suppose f(x1) = f(x2). If x1 is odd and x2 even, then x1 + 1 = x2 - 1, so x2 - x1 = 2, but an even number minus an odd number is odd, so this is impossible; similarly x1 even and x2 odd is ruled out. So both are odd or both even. If both are odd, x1 + 1 = x2 + 1 gives x1 = x2; if both are even, x1 - 1 = x2 - 1 gives x1 = x2. Hence f is one-one.",
+          "s": [
+            [
+              "Rules out x1 and x2 having different parity",
+              1
+            ],
+            [
+              "Shows x1 = x2 when both are odd and when both are even",
+              1
+            ],
+            [
+              "Concludes f is one-one",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Analyse",
+          "d": "Hard",
+          "t": "assertion_reason",
+          "m": 1,
+          "q": "Assertion (A): The function f : N -> N, f(x) = x^2 is one-one. Reason (R): The function f : Z -> Z, f(x) = x^2 is one-one.",
+          "a": "A is true, R is false",
+          "o": [
+            "A is true, R is false",
+            "Both A and R are true, and R is the correct explanation of A",
+            "Both A and R are true, but R is not the correct explanation of A",
+            "A is false, R is true"
+          ]
+        },
+        {
+          "b": "Analyse",
+          "d": "Hard",
+          "t": "multi_statement",
+          "m": 1,
+          "q": "Consider these statements. (I) f : R -> R, f(x) = |x| is one-one. (II) f : R -> R, f(x) = x^4 is one-one. Which is or are correct?",
+          "a": "Neither I nor II",
+          "o": [
+            "Neither I nor II",
+            "Only I",
+            "Only II",
+            "Both I and II"
+          ]
+        },
+        {
+          "b": "Analyse",
+          "d": "Hardest",
+          "t": "long_answer",
+          "m": 3,
+          "q": "Let f : [0, pi/2] -> R, f(x) = sin x and g : [0, pi/2] -> R, g(x) = cos x. Both f and g are one-one. Show that f + g is not one-one.",
+          "a": "(f + g)(0) = sin 0 + cos 0 = 0 + 1 = 1 and (f + g)(pi/2) = sin(pi/2) + cos(pi/2) = 1 + 0 = 1. So the distinct elements 0 and pi/2 have the same image 1 under f + g, and f + g is not one-one.",
+          "s": [
+            [
+              "Computes (f + g)(0) = 1",
+              1
+            ],
+            [
+              "Computes (f + g)(pi/2) = 1",
+              1
+            ],
+            [
+              "Concludes f + g is not one-one since 0 != pi/2 share an image",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Evaluate",
+          "d": "Hard",
+          "t": "short_answer",
+          "m": 2,
+          "q": "A student claims: 'If f : X -> Y is one-one, then X and Y must have the same number of elements.' Evaluate this claim using f = {(1, 4), (2, 5), (3, 6)} from A = {1, 2, 3} to B = {4, 5, 6, 7}.",
+          "a": "The claim is wrong. This f is one-one, since distinct elements have distinct images, yet A has 3 elements and B has 4. One-one only requires distinct images; it does not require every element of the co-domain to be used.",
+          "s": [
+            [
+              "Shows the given f is one-one although A and B have different sizes",
+              1
+            ],
+            [
+              "States that one-one only requires distinct images, so the claim is false",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Create",
+          "d": "Hardest",
+          "t": "long_answer",
+          "m": 3,
+          "q": "Give an example of a function f : Z -> Z that is many-one and an example of a function g : Z -> Z that is one-one. Prove each claim.",
+          "a": "For example, f(x) = x^2 is many-one, since f(-2) = f(2) = 4. g(x) = x + 3 is one-one, since g(x1) = g(x2) gives x1 + 3 = x2 + 3, so x1 = x2. (Any correctly proved pair earns full marks.)",
+          "s": [
+            [
+              "A valid many-one function with a specific pair having the same image",
+              1
+            ],
+            [
+              "A valid one-one function",
+              1
+            ],
+            [
+              "A correct proof that g is one-one",
+              1
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "code": "C12M-1.5",
+      "name": "Onto (surjective) and bijective functions",
+      "description": "Deciding whether a function is onto by finding a pre-image for every element of the co-domain, combining this with one-one to decide bijectivity, and using the special behaviour of functions from a finite set to itself.",
+      "idea": "A function is onto when nothing in the co-domain is left out: every element of Y is the image of something.",
+      "rule": "f : X -> Y is onto (surjective) if for every y in Y there is x in X with f(x) = y; equivalently, range of f = Y. f is bijective if it is both one-one and onto. For a finite set X, f : X -> X is one-one if and only if it is onto; this fails for infinite sets.",
+      "example": "f : R -> R, f(x) = 2x is onto, since x = y/2 gives f(x) = y; but f : N -> N, f(x) = 2x is not onto, since no natural number x gives 2x = 1.",
+      "difficulty_base": "Hard",
+      "questions": [
+        {
+          "b": "Remember",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "A function f : X -> Y is called onto (surjective) if",
+          "a": "every element of Y is the image of some element of X",
+          "o": [
+            "every element of Y is the image of some element of X",
+            "distinct elements of X have distinct images in Y",
+            "every element of X has an image in Y",
+            "Y has more elements than X"
+          ]
+        },
+        {
+          "b": "Remember",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "A function that is both one-one and onto is called",
+          "a": "bijective",
+          "o": [
+            "bijective",
+            "surjective",
+            "injective",
+            "many-one"
+          ]
+        },
+        {
+          "b": "Remember",
+          "d": "Easy",
+          "t": "fill_blank",
+          "m": 1,
+          "q": "A function f : X -> Y is onto if and only if the range of f is equal to the ____ of f.",
+          "a": "co-domain"
+        },
+        {
+          "b": "Remember",
+          "d": "Hard",
+          "t": "mcq",
+          "m": 1,
+          "rev": true,
+          "q": "Which of the following functions is NOT onto?",
+          "a": "f : N -> N, f(x) = 2x",
+          "o": [
+            "f : N -> N, f(x) = 2x",
+            "f : R -> R, f(x) = 2x",
+            "f : R -> R, f(x) = 3 - 4x",
+            "f : N -> N, f(1) = f(2) = 1 and f(x) = x - 1 for x > 2"
+          ]
+        },
+        {
+          "b": "Understand",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "Why is f : N -> N, f(x) = 2x not onto?",
+          "a": "There is no natural number x with 2x = 1",
+          "o": [
+            "There is no natural number x with 2x = 1",
+            "f(1) = f(2)",
+            "2x is not a natural number for some natural numbers x",
+            "f is one-one, so it cannot be onto"
+          ]
+        },
+        {
+          "b": "Understand",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "Why is f : R -> R, f(x) = 2x onto?",
+          "a": "For any real y, x = y/2 is real and f(y/2) = y",
+          "o": [
+            "For any real y, x = y/2 is real and f(y/2) = y",
+            "f(x1) = f(x2) gives x1 = x2",
+            "Doubling a real number always gives a real number",
+            "f(0) = 0"
+          ]
+        },
+        {
+          "b": "Understand",
+          "d": "Easy",
+          "t": "short_answer",
+          "m": 2,
+          "q": "Explain why the function f : R -> R, f(x) = x^2 is not onto.",
+          "a": "For any real x, x^2 >= 0. So a negative element of the co-domain, such as -2, is not the image of any real x. Hence f is not onto.",
+          "s": [
+            [
+              "Notes x^2 >= 0 for every real x",
+              1
+            ],
+            [
+              "Names a negative element such as -2 with no pre-image and concludes f is not onto",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Understand",
+          "d": "Hard",
+          "t": "mcq",
+          "m": 1,
+          "q": "The identity function I_N : N -> N, I_N(x) = x, is onto. What can be said about I_N + I_N : N -> N, (I_N + I_N)(x) = 2x?",
+          "a": "It is not onto, since 3 is not the image of any natural number",
+          "o": [
+            "It is not onto, since 3 is not the image of any natural number",
+            "It is onto, since a sum of onto functions is onto",
+            "It is not one-one",
+            "It is onto, since 2x is a natural number for every natural number x"
+          ]
+        },
+        {
+          "b": "Understand",
+          "d": "Hard",
+          "t": "mcq",
+          "m": 1,
+          "q": "Let X be a finite set and f : X -> X a function. Which statement is correct?",
+          "a": "f is one-one if and only if f is onto",
+          "o": [
+            "f is one-one if and only if f is onto",
+            "f can be one-one without being onto",
+            "f is always bijective",
+            "f can never be onto"
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Easy",
+          "t": "fill_blank",
+          "m": 1,
+          "q": "The number of all onto functions from the set {1, 2, 3} to itself is ____.",
+          "a": "6"
+        },
+        {
+          "b": "Apply",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "Let f : R -> R be defined as f(x) = 3x. Then",
+          "a": "f is one-one and onto",
+          "o": [
+            "f is one-one and onto",
+            "f is many-one and onto",
+            "f is one-one but not onto",
+            "f is neither one-one nor onto"
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Hard",
+          "t": "mcq",
+          "m": 1,
+          "q": "Let f : R -> R be defined as f(x) = x^4. Then",
+          "a": "f is neither one-one nor onto",
+          "o": [
+            "f is neither one-one nor onto",
+            "f is one-one and onto",
+            "f is many-one and onto",
+            "f is one-one but not onto"
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Hard",
+          "t": "mcq",
+          "m": 1,
+          "q": "Let f : N -> N be defined by f(n) = (n + 1)/2 if n is odd and f(n) = n/2 if n is even. Then f is",
+          "a": "onto but not one-one",
+          "o": [
+            "onto but not one-one",
+            "one-one and onto",
+            "one-one but not onto",
+            "neither one-one nor onto"
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Hard",
+          "t": "short_answer",
+          "m": 2,
+          "q": "Show that the function f : R -> R, f(x) = 3 - 4x is onto.",
+          "a": "Take any real y. Let x = (3 - y)/4, which is a real number. Then f(x) = 3 - 4(3 - y)/4 = 3 - (3 - y) = y. So every real y has a pre-image and f is onto.",
+          "s": [
+            [
+              "Finds x = (3 - y)/4 for an arbitrary real y",
+              1
+            ],
+            [
+              "Verifies f(x) = y and concludes f is onto",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Hardest",
+          "t": "long_answer",
+          "m": 3,
+          "q": "Let A = R - {3} and B = R - {1}. Show that f : A -> B, f(x) = (x - 2)/(x - 3) is one-one and onto.",
+          "a": "One-one: (x1 - 2)/(x1 - 3) = (x2 - 2)/(x2 - 3) gives (x1 - 2)(x2 - 3) = (x2 - 2)(x1 - 3), i.e. -3x1 - 2x2 = -3x2 - 2x1, so x1 = x2. Onto: for y in B, solve y = (x - 2)/(x - 3) to get x = (2 - 3y)/(1 - y), defined since y != 1. This x is not 3 (else 2 - 3y = 3 - 3y, i.e. 2 = 3), so x is in A, and f(x) = y. Hence f is one-one and onto.",
+          "s": [
+            [
+              "Proves one-one by cross-multiplying to x1 = x2",
+              1
+            ],
+            [
+              "Solves for x = (2 - 3y)/(1 - y), using y != 1",
+              1
+            ],
+            [
+              "Checks x != 3 so x is in A, and concludes f is onto",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Analyse",
+          "d": "Hard",
+          "t": "assertion_reason",
+          "m": 1,
+          "q": "Assertion (A): Every one-one function f : {1, 2, 3} -> {1, 2, 3} is onto. Reason (R): For a finite set X, a function f : X -> X is one-one if and only if it is onto.",
+          "a": "Both A and R are true, and R is the correct explanation of A",
+          "o": [
+            "Both A and R are true, and R is the correct explanation of A",
+            "Both A and R are true, but R is not the correct explanation of A",
+            "A is true, R is false",
+            "A is false, R is true"
+          ]
+        },
+        {
+          "b": "Analyse",
+          "d": "Hard",
+          "t": "multi_statement",
+          "m": 1,
+          "q": "Consider these statements. (I) f : R -> R, f(x) = 2x is bijective. (II) f : N -> N, f(x) = 2x is bijective. Which is or are correct?",
+          "a": "Only I",
+          "o": [
+            "Only I",
+            "Only II",
+            "Both I and II",
+            "Neither I nor II"
+          ]
+        },
+        {
+          "b": "Analyse",
+          "d": "Hardest",
+          "t": "long_answer",
+          "m": 3,
+          "q": "Let R* be the set of all non-zero real numbers. Show that f : R* -> R*, f(x) = 1/x is one-one and onto. Is the result still true if the domain is replaced by N, with co-domain R*?",
+          "a": "One-one: 1/x1 = 1/x2 gives x1 = x2. Onto: for any y in R*, x = 1/y is in R* and f(1/y) = y. With domain N: f is still one-one by the same argument, but it is not onto; for example y = 2 would need x = 1/2, which is not in N. So the result is not true for domain N.",
+          "s": [
+            [
+              "Proves f is one-one on R*",
+              1
+            ],
+            [
+              "Proves f is onto R* using x = 1/y",
+              1
+            ],
+            [
+              "For domain N: one-one but not onto, with a specific y such as 2",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Evaluate",
+          "d": "Hard",
+          "t": "short_answer",
+          "m": 2,
+          "q": "Priya argues: 'f : N -> N, f(x) = 2x is one-one, so by the result for finite sets it must also be onto.' Evaluate her argument.",
+          "a": "Her argument is wrong. The result that one-one and onto go together holds only for a function from a finite set to itself; N is infinite. Indeed f is not onto, since no natural number x gives 2x = 1.",
+          "s": [
+            [
+              "States the result applies only to finite sets and N is infinite",
+              1
+            ],
+            [
+              "Shows f is not onto, e.g. 1 has no pre-image",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Create",
+          "d": "Hardest",
+          "t": "long_answer",
+          "m": 3,
+          "q": "Construct a function f : N -> N that is onto but not one-one, and prove both properties.",
+          "a": "For example, f(1) = f(2) = 1 and f(x) = x - 1 for x > 2. Not one-one: f(1) = f(2). Onto: 1 = f(1), and any y > 1 equals f(y + 1). (Any correctly proved example earns full marks.)",
+          "s": [
+            [
+              "Defines a valid function from N to N",
+              1
+            ],
+            [
+              "Proves it is not one-one with two elements having the same image",
+              1
+            ],
+            [
+              "Proves it is onto by giving a pre-image for every y",
+              1
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "code": "C12M-1.6",
+      "name": "Composition of functions and invertible functions",
+      "description": "Forming the composition g o f of two functions, and deciding whether a function is invertible and finding its inverse.",
+      "idea": "In g o f, f acts first and g then acts on the result; a function can be undone by an inverse exactly when it is one-one and onto.",
+      "rule": "If f : A -> B and g : B -> C, then g o f : A -> C is (g o f)(x) = g(f(x)). f : X -> Y is invertible if there is g : Y -> X with g o f = I_X and f o g = I_Y; then g = f^(-1). f is invertible if and only if f is one-one and onto.",
+      "example": "For f(x) = cos x and g(x) = 3x^2 on R, (g o f)(x) = 3 cos^2 x but (f o g)(x) = cos(3x^2), so g o f != f o g. For f(x) = 4x + 3 from N to its range Y, f^(-1)(y) = (y - 3)/4.",
+      "difficulty_base": "Hard",
+      "questions": [
+        {
+          "b": "Remember",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "If f : A -> B and g : B -> C are functions, the composition g o f : A -> C is defined by",
+          "a": "(g o f)(x) = g(f(x)) for all x in A",
+          "o": [
+            "(g o f)(x) = g(f(x)) for all x in A",
+            "(g o f)(x) = f(g(x)) for all x in A",
+            "(g o f)(x) = g(x) times f(x) for all x in A",
+            "(g o f)(x) = g(x) + f(x) for all x in A"
+          ]
+        },
+        {
+          "b": "Remember",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "A function f : X -> Y is invertible if there exists a function g : Y -> X such that",
+          "a": "g o f = I_X and f o g = I_Y",
+          "o": [
+            "g o f = I_X and f o g = I_Y",
+            "g o f = I_Y and f o g = I_X",
+            "g(x) = 1/f(x) for every x",
+            "g o f = f o g"
+          ]
+        },
+        {
+          "b": "Remember",
+          "d": "Easy",
+          "t": "fill_blank",
+          "m": 1,
+          "q": "The inverse of an invertible function f is denoted by ____.",
+          "a": "f^(-1)"
+        },
+        {
+          "b": "Remember",
+          "d": "Hard",
+          "t": "mcq",
+          "m": 1,
+          "rev": true,
+          "q": "Which of the following functions is NOT invertible?",
+          "a": "f : R -> R, f(x) = x^2",
+          "o": [
+            "f : R -> R, f(x) = x^2",
+            "f : R -> R, f(x) = 2x",
+            "f : R -> R, f(x) = 3 - 4x",
+            "f : R -> R, f(x) = 3x"
+          ]
+        },
+        {
+          "b": "Understand",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "For f : A -> B and g : B -> C, how is (g o f)(x) worked out for x in A?",
+          "a": "f is applied to x first, then g is applied to f(x)",
+          "o": [
+            "f is applied to x first, then g is applied to f(x)",
+            "g is applied to x first, then f is applied to g(x)",
+            "f(x) and g(x) are worked out separately and multiplied",
+            "f(x) and g(x) are worked out separately and added"
+          ]
+        },
+        {
+          "b": "Understand",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "According to this chapter, a function f is invertible if and only if f is",
+          "a": "one-one and onto",
+          "o": [
+            "one-one and onto",
+            "one-one, whether or not it is onto",
+            "onto, whether or not it is one-one",
+            "many-one"
+          ]
+        },
+        {
+          "b": "Understand",
+          "d": "Easy",
+          "t": "short_answer",
+          "m": 2,
+          "q": "Let f : R -> R and g : R -> R be given by f(x) = cos x and g(x) = 3x^2. Find g o f and f o g.",
+          "a": "(g o f)(x) = g(cos x) = 3 (cos x)^2 = 3 cos^2 x. (f o g)(x) = f(3x^2) = cos(3x^2).",
+          "s": [
+            [
+              "(g o f)(x) = 3 cos^2 x",
+              1
+            ],
+            [
+              "(f o g)(x) = cos(3x^2)",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Understand",
+          "d": "Hard",
+          "t": "mcq",
+          "m": 1,
+          "q": "Let f(x) = cos x and g(x) = 3x^2 on R. Which observation shows that g o f != f o g?",
+          "a": "At x = 0, (g o f)(0) = 3 but (f o g)(0) = 1",
+          "o": [
+            "At x = 0, (g o f)(0) = 3 but (f o g)(0) = 1",
+            "At x = 0, (g o f)(0) and (f o g)(0) are both 3",
+            "g o f and f o g have different domains",
+            "cos x is not one-one on R"
+          ]
+        },
+        {
+          "b": "Understand",
+          "d": "Hard",
+          "t": "mcq",
+          "m": 1,
+          "q": "Let f : {2, 3, 4, 5} -> {3, 4, 5, 9} with f(2) = 3, f(3) = 4, f(4) = f(5) = 5, and g : {3, 4, 5, 9} -> {7, 11, 15} with g(3) = g(4) = 7, g(5) = g(9) = 11. Is g o f : {2, 3, 4, 5} -> {7, 11, 15} onto?",
+          "a": "No, because 15 is not the image of any element under g o f",
+          "o": [
+            "No, because 15 is not the image of any element under g o f",
+            "Yes, because g is defined on every element of {3, 4, 5, 9}",
+            "No, because (g o f)(2) = (g o f)(3)",
+            "Yes, because both 7 and 11 are images under g o f"
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Easy",
+          "t": "fill_blank",
+          "m": 1,
+          "q": "Let f(2) = 3, f(3) = 4, f(4) = f(5) = 5 and g(3) = g(4) = 7, g(5) = g(9) = 11. The value of (g o f)(3) is ____.",
+          "a": "7"
+        },
+        {
+          "b": "Apply",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "Let f(x) = x + 2 and g(x) = 3x on R. The value of (g o f)(1) is",
+          "a": "9",
+          "o": [
+            "9",
+            "5",
+            "6",
+            "3"
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Hard",
+          "t": "mcq",
+          "m": 1,
+          "q": "Let f : N -> Y, f(x) = 4x + 3, where Y = {y in N : y = 4x + 3 for some x in N}. The inverse g : Y -> N of f is given by",
+          "a": "g(y) = (y - 3)/4",
+          "o": [
+            "g(y) = (y - 3)/4",
+            "g(y) = (y + 3)/4",
+            "g(y) = 4y + 3",
+            "g(y) = 1/(4y + 3)"
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Hard",
+          "t": "mcq",
+          "m": 1,
+          "q": "The function f : R -> R, f(x) = 3 - 4x is one-one and onto. Its inverse is given by",
+          "a": "f^(-1)(y) = (3 - y)/4",
+          "o": [
+            "f^(-1)(y) = (3 - y)/4",
+            "f^(-1)(y) = (y - 3)/4",
+            "f^(-1)(y) = 3 + 4y",
+            "f^(-1)(y) = 1/(3 - 4y)"
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Hard",
+          "t": "short_answer",
+          "m": 2,
+          "q": "Show that f : R -> R, f(x) = 2x is invertible and find its inverse.",
+          "a": "Define g : R -> R by g(y) = y/2. Then (g o f)(x) = g(2x) = x and (f o g)(y) = f(y/2) = y, so g o f = I_R and f o g = I_R. Hence f is invertible and f^(-1)(y) = y/2.",
+          "s": [
+            [
+              "Proposes g(y) = y/2",
+              1
+            ],
+            [
+              "Verifies g o f = I_R and f o g = I_R",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Hardest",
+          "t": "long_answer",
+          "m": 3,
+          "q": "Let f : N -> Y be defined by f(x) = 5x + 2, where Y = {y in N : y = 5x + 2 for some x in N}. Show that f is invertible and find its inverse.",
+          "a": "For y in Y, y = 5x + 2 for some x in N, so x = (y - 2)/5. Define g : Y -> N by g(y) = (y - 2)/5. Then (g o f)(x) = g(5x + 2) = (5x + 2 - 2)/5 = x, and (f o g)(y) = f((y - 2)/5) = 5(y - 2)/5 + 2 = y. So g o f = I_N and f o g = I_Y, f is invertible and f^(-1)(y) = (y - 2)/5.",
+          "s": [
+            [
+              "Defines g(y) = (y - 2)/5",
+              1
+            ],
+            [
+              "Shows (g o f)(x) = x",
+              1
+            ],
+            [
+              "Shows (f o g)(y) = y and concludes f^(-1) = g",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Analyse",
+          "d": "Hard",
+          "t": "assertion_reason",
+          "m": 1,
+          "q": "Assertion (A): The function f : R -> R, f(x) = 2x is invertible. Reason (R): The function f : N -> N, f(x) = 2x is one-one.",
+          "a": "Both A and R are true, but R is not the correct explanation of A",
+          "o": [
+            "Both A and R are true, but R is not the correct explanation of A",
+            "Both A and R are true, and R is the correct explanation of A",
+            "A is true, R is false",
+            "A is false, R is true"
+          ]
+        },
+        {
+          "b": "Analyse",
+          "d": "Hard",
+          "t": "multi_statement",
+          "m": 1,
+          "q": "Let f(x) = x + 2 and g(x) = 3x on R. Consider these statements. (I) (f o g)(x) = 3x + 6. (II) (g o f)(x) = 3x + 6. Which is or are correct?",
+          "a": "Only II",
+          "o": [
+            "Only II",
+            "Only I",
+            "Both I and II",
+            "Neither I nor II"
+          ]
+        },
+        {
+          "b": "Analyse",
+          "d": "Hardest",
+          "t": "long_answer",
+          "m": 3,
+          "q": "Let A = {1, 2, 3}, B = {4, 5, 6, 7} and f = {(1, 4), (2, 5), (3, 6)}. (a) Is f : A -> B invertible? (b) If the same pairs define f : A -> {4, 5, 6}, is f invertible? If so, find its inverse.",
+          "a": "(a) No. f is one-one, but 7 in B is not the image of any element, so f is not onto and hence not invertible. (b) Yes. Now f is one-one and onto {4, 5, 6}, so it is invertible, and f^(-1) = {(4, 1), (5, 2), (6, 3)}, i.e. f^(-1)(4) = 1, f^(-1)(5) = 2, f^(-1)(6) = 3.",
+          "s": [
+            [
+              "(a) Not invertible, because 7 has no pre-image (not onto)",
+              1
+            ],
+            [
+              "(b) Invertible, because f is now one-one and onto",
+              1
+            ],
+            [
+              "Gives f^(-1) = {(4, 1), (5, 2), (6, 3)}",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Evaluate",
+          "d": "Hard",
+          "t": "short_answer",
+          "m": 2,
+          "q": "For f(x) = cos x and g(x) = 3x^2 on R, a student writes: '(g o f)(x) = cos(3x^2).' Evaluate this answer.",
+          "a": "It is wrong. cos(3x^2) is f(g(x)) = (f o g)(x). In g o f, f acts first, so (g o f)(x) = g(cos x) = 3 cos^2 x.",
+          "s": [
+            [
+              "Identifies cos(3x^2) as (f o g)(x), i.e. the order is reversed",
+              1
+            ],
+            [
+              "Gives the correct (g o f)(x) = 3 cos^2 x",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Create",
+          "d": "Hardest",
+          "t": "long_answer",
+          "m": 3,
+          "q": "Construct two functions f and g from R to R for which g o f != f o g. Give their formulas, find g o f and f o g, and show they differ at a particular point.",
+          "a": "For example, f(x) = x + 1 and g(x) = x^2. Then (g o f)(x) = (x + 1)^2 and (f o g)(x) = x^2 + 1. At x = 1, (g o f)(1) = 4 but (f o g)(1) = 2, so g o f != f o g. (Any correctly worked pair earns full marks.)",
+          "s": [
+            [
+              "Gives two valid functions from R to R",
+              1
+            ],
+            [
+              "Finds g o f and f o g correctly",
+              1
+            ],
+            [
+              "Shows they differ at a specific point",
+              1
+            ]
+          ]
+        }
+      ]
+    }
+  ]
+}
