@@ -33,6 +33,11 @@ export async function renderHtmlToPdf(html: string): Promise<Buffer> {
     // 'load' (not 'networkidle') -- the templates embed everything (styles, no remote images or
     // fonts), so there is no network activity to wait out.
     await page.setContent(html, { waitUntil: 'load' })
+    // F087: web fonts (the inlined Telugu one) decode asynchronously after 'load'. Printing before
+    // they are ready would silently use a fallback, or nothing, for those characters.
+    await page.evaluate(async () => {
+      await document.fonts.ready
+    })
     const pdf = await page.pdf({
       format: 'A4',
       printBackground: true,

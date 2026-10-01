@@ -1,4 +1,5 @@
 import type { QuestionType } from '../../db/enums'
+import { PDF_FONT_FACES, withTelugu } from './fonts'
 import { escapeHtml } from './html-utils'
 import type { CoverageRow } from './coverage'
 import { renderDiagramSvg } from './diagrams'
@@ -142,9 +143,9 @@ export function buildAnswerKeyHtml(input: KeyTemplateInput): string {
 <html>
 <head>
 <meta charset="utf-8" />
-<style>
+<style>${PDF_FONT_FACES}
   * { box-sizing: border-box; }
-  body { font-family: Georgia, 'Times New Roman', serif; font-size: 11pt; color: #111; margin: 0; }
+  body { font-family: ${withTelugu("Georgia, 'Times New Roman', serif")}; font-size: 11pt; color: #111; margin: 0; }
   h1 { font-size: 15pt; margin: 0 0 4px; }
   .warning { font-size: 9pt; color: #a00; margin-bottom: 12px; }
   .item { page-break-inside: avoid; margin-bottom: 10px; border-bottom: 1px solid #ddd; padding-bottom: 8px; }

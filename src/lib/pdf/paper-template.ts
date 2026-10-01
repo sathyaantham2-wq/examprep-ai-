@@ -1,4 +1,5 @@
 import type { BloomLevel, DifficultyTier, QuestionType } from '../../db/enums'
+import { PDF_FONT_FACES, withTelugu } from './fonts'
 import { escapeHtml } from './html-utils'
 import { renderDiagramSvg } from './diagrams'
 import { DEFAULT_THEME, THEME_PACKS, THEME_STYLES } from './themes'
@@ -196,9 +197,9 @@ export function buildPaperHtml(input: PaperTemplateInput): string {
 <html>
 <head>
 <meta charset="utf-8" />
-<style>
+<style>${PDF_FONT_FACES}
   * { box-sizing: border-box; }
-  body { font-family: Georgia, 'Times New Roman', serif; font-size: 11.5pt; color: #111; margin: 0; }
+  body { font-family: ${withTelugu("Georgia, 'Times New Roman', serif")}; font-size: 11.5pt; color: #111; margin: 0; }
   .rough-column {
     position: fixed;
     top: 0; right: 0; bottom: 0;
