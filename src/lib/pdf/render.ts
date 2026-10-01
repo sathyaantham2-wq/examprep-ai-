@@ -26,6 +26,16 @@ async function getBrowser(): Promise<Browser> {
   return browser
 }
 
+/**
+ * A4 with print margins every real printer can reach (most can't print within ~5 mm of the edge).
+ * Exported so F107's print checks lay pages out exactly as production does.
+ */
+export const PDF_PAGE_OPTIONS = {
+  format: 'A4',
+  printBackground: true,
+  margin: { top: '14mm', bottom: '14mm', left: '12mm', right: '12mm' },
+} as const
+
 export async function renderHtmlToPdf(html: string): Promise<Buffer> {
   const browser = await getBrowser()
   const page = await browser.newPage()
@@ -38,11 +48,7 @@ export async function renderHtmlToPdf(html: string): Promise<Buffer> {
     await page.evaluate(async () => {
       await document.fonts.ready
     })
-    const pdf = await page.pdf({
-      format: 'A4',
-      printBackground: true,
-      margin: { top: '14mm', bottom: '14mm', left: '12mm', right: '12mm' },
-    })
+    const pdf = await page.pdf(PDF_PAGE_OPTIONS)
     return pdf
   } finally {
     await page.close()

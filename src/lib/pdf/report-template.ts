@@ -58,7 +58,9 @@ export function buildReportHtml(input: ReportTemplateInput): string {
   .score-card { border: 1px solid #999; border-radius: 4px; padding: 8px 12px; }
   .score-card .label { font-size: 8pt; color: #666; text-transform: uppercase; }
   .score-card .value { font-size: 15pt; font-weight: bold; }
-  h2 { font-size: 13pt; margin: 20px 0 8px; border-bottom: 1px solid #999; padding-bottom: 2px; }
+  /* F107: headings stay with what follows; table rows never split across pages. */
+  h2 { font-size: 13pt; margin: 20px 0 8px; border-bottom: 1px solid #999; padding-bottom: 2px; break-after: avoid; page-break-after: avoid; }
+  tr { break-inside: avoid; page-break-inside: avoid; }
   table { border-collapse: collapse; width: 100%; font-size: 9.5pt; }
   th, td { border: 1px solid #999; padding: 4px 6px; text-align: left; }
   .error-row { page-break-inside: avoid; }
