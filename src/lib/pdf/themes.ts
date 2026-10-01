@@ -10,6 +10,7 @@
 // "Manga" is a genre and fine to evoke (CLAUDE.md); the ornament below is an original geometric
 // burst, not any franchise's character, logo or typeface. "Doodle Journal" never references the
 // franchise its name might evoke -- its ornament is an original hand-drawn-style squiggle.
+import { withTelugu } from './fonts'
 
 export const PAPER_THEMES = ['Clean School', 'Doodle Journal', 'Manga'] as const
 export type PaperTheme = (typeof PAPER_THEMES)[number]
@@ -108,7 +109,7 @@ export const THEME_PACKS: Record<PaperTheme, ThemePack> = {
 export function buildThemeCss(pack: ThemePack): string {
   const rotation = pack.questionRotationDeg
   return `
-    body { font-family: ${pack.fontFamily}; }
+    body { font-family: ${withTelugu(pack.fontFamily)}; }
     header.paper-header { border-bottom: ${pack.headerBorder}; }
     .section-title { text-decoration: ${pack.sectionTitleDecoration}; }
     ${

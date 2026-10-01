@@ -1,4 +1,5 @@
 import { escapeHtml } from './html-utils'
+import { PDF_FONT_FACES, withTelugu } from './fonts'
 
 interface ReportTemplateInput {
   meta: {
@@ -48,9 +49,9 @@ export function buildReportHtml(input: ReportTemplateInput): string {
 <html>
 <head>
 <meta charset="utf-8" />
-<style>
+<style>${PDF_FONT_FACES}
   * { box-sizing: border-box; }
-  body { font-family: Georgia, 'Times New Roman', serif; font-size: 11pt; color: #111; margin: 0; }
+  body { font-family: ${withTelugu("Georgia, 'Times New Roman', serif")}; font-size: 11pt; color: #111; margin: 0; }
   h1 { font-size: 16pt; margin: 0 0 4px; }
   .meta { font-size: 9.5pt; color: #444; margin-bottom: 14px; }
   .score-row { display: flex; gap: 24px; margin-bottom: 16px; }
