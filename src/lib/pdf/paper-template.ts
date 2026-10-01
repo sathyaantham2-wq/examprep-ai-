@@ -220,7 +220,8 @@ export function buildPaperHtml(input: PaperTemplateInput): string {
   .theme-ornament { position: absolute; top: 0; right: 0; }
   .meta-row { display: flex; justify-content: space-between; font-size: 9.5pt; }
   .chapters { font-size: 8.5pt; color: #444; margin-top: 4px; }
-  .section-title { font-weight: bold; text-decoration: underline; margin: 14px 0 8px; }
+  /* F107: never leave a section title alone at the bottom of a page; it moves with its first question. */
+  .section-title { font-weight: bold; text-decoration: underline; margin: 14px 0 8px; break-after: avoid; page-break-after: avoid; }
   .q-concept { font-size: 0.8em; color: #666; margin-top: 4px; }
   .question { display: flex; page-break-inside: avoid; margin-bottom: 12px; }
   .or-divider { text-align: center; font-weight: bold; font-size: 9pt; color: #555; margin: 8px 0; }

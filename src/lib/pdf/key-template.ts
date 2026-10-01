@@ -167,7 +167,9 @@ export function buildAnswerKeyHtml(input: KeyTemplateInput): string {
     padding: 3px 6px;
     text-align: left;
   }
-  h2.coverage-title { margin-top: 24px; font-size: 13pt; }
+  /* F107: headings stay with what follows; table rows never split across pages. */
+  h2.coverage-title { margin-top: 24px; font-size: 13pt; break-after: avoid; page-break-after: avoid; }
+  tr { break-inside: avoid; page-break-inside: avoid; }
   ${THEME_STYLES[input.theme ?? DEFAULT_THEME]}
 </style>
 </head>
