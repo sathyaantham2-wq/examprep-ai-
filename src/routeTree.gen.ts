@@ -84,6 +84,7 @@ import { Route as ApiNudgesTodayRouteImport } from './routes/api/nudges/today'
 import { Route as ApiPapersIdRouteImport } from './routes/api/papers/$id'
 import { Route as ApiPapersGenerateRouteImport } from './routes/api/papers/generate'
 import { Route as ApiPrivacyDeleteRouteImport } from './routes/api/privacy/delete'
+import { Route as ApiPrivacyDeleteSelfRouteImport } from './routes/api/privacy/delete-self'
 import { Route as ApiPrivacyExportRouteImport } from './routes/api/privacy/export'
 import { Route as ApiQuestionsIdRouteImport } from './routes/api/questions/$id'
 import { Route as ApiQuestionsBulkImportRouteImport } from './routes/api/questions/bulk-import'
@@ -526,6 +527,11 @@ const ApiPrivacyDeleteRoute = ApiPrivacyDeleteRouteImport.update({
   path: '/api/privacy/delete',
   getParentRoute: () => rootRouteImport,
 } as any)
+const ApiPrivacyDeleteSelfRoute = ApiPrivacyDeleteSelfRouteImport.update({
+  id: '/api/privacy/delete-self',
+  path: '/api/privacy/delete-self',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const ApiPrivacyExportRoute = ApiPrivacyExportRouteImport.update({
   id: '/api/privacy/export',
   path: '/api/privacy/export',
@@ -936,6 +942,7 @@ export interface FileRoutesByFullPath {
   '/api/papers/$id': typeof ApiPapersIdRouteWithChildren
   '/api/papers/generate': typeof ApiPapersGenerateRoute
   '/api/privacy/delete': typeof ApiPrivacyDeleteRoute
+  '/api/privacy/delete-self': typeof ApiPrivacyDeleteSelfRoute
   '/api/privacy/export': typeof ApiPrivacyExportRoute
   '/api/questions/$id': typeof ApiQuestionsIdRouteWithChildren
   '/api/questions/bulk-import': typeof ApiQuestionsBulkImportRoute
@@ -1075,6 +1082,7 @@ export interface FileRoutesByTo {
   '/api/papers/$id': typeof ApiPapersIdRouteWithChildren
   '/api/papers/generate': typeof ApiPapersGenerateRoute
   '/api/privacy/delete': typeof ApiPrivacyDeleteRoute
+  '/api/privacy/delete-self': typeof ApiPrivacyDeleteSelfRoute
   '/api/privacy/export': typeof ApiPrivacyExportRoute
   '/api/questions/$id': typeof ApiQuestionsIdRouteWithChildren
   '/api/questions/bulk-import': typeof ApiQuestionsBulkImportRoute
@@ -1215,6 +1223,7 @@ export interface FileRoutesById {
   '/api/papers/$id': typeof ApiPapersIdRouteWithChildren
   '/api/papers/generate': typeof ApiPapersGenerateRoute
   '/api/privacy/delete': typeof ApiPrivacyDeleteRoute
+  '/api/privacy/delete-self': typeof ApiPrivacyDeleteSelfRoute
   '/api/privacy/export': typeof ApiPrivacyExportRoute
   '/api/questions/$id': typeof ApiQuestionsIdRouteWithChildren
   '/api/questions/bulk-import': typeof ApiQuestionsBulkImportRoute
@@ -1356,6 +1365,7 @@ export interface FileRouteTypes {
     | '/api/papers/$id'
     | '/api/papers/generate'
     | '/api/privacy/delete'
+    | '/api/privacy/delete-self'
     | '/api/privacy/export'
     | '/api/questions/$id'
     | '/api/questions/bulk-import'
@@ -1495,6 +1505,7 @@ export interface FileRouteTypes {
     | '/api/papers/$id'
     | '/api/papers/generate'
     | '/api/privacy/delete'
+    | '/api/privacy/delete-self'
     | '/api/privacy/export'
     | '/api/questions/$id'
     | '/api/questions/bulk-import'
@@ -1634,6 +1645,7 @@ export interface FileRouteTypes {
     | '/api/papers/$id'
     | '/api/papers/generate'
     | '/api/privacy/delete'
+    | '/api/privacy/delete-self'
     | '/api/privacy/export'
     | '/api/questions/$id'
     | '/api/questions/bulk-import'
@@ -1766,6 +1778,7 @@ export interface RootRouteChildren {
   ApiNudgesIdRoute: typeof ApiNudgesIdRoute
   ApiNudgesTodayRoute: typeof ApiNudgesTodayRoute
   ApiPrivacyDeleteRoute: typeof ApiPrivacyDeleteRoute
+  ApiPrivacyDeleteSelfRoute: typeof ApiPrivacyDeleteSelfRoute
   ApiPrivacyExportRoute: typeof ApiPrivacyExportRoute
   ApiScanPagesPageIdRoute: typeof ApiScanPagesPageIdRoute
   ApiSyllabusChaptersRoute: typeof ApiSyllabusChaptersRouteWithChildren
@@ -2302,6 +2315,13 @@ declare module '@tanstack/react-router' {
       path: '/api/privacy/delete'
       fullPath: '/api/privacy/delete'
       preLoaderRoute: typeof ApiPrivacyDeleteRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/api/privacy/delete-self': {
+      id: '/api/privacy/delete-self'
+      path: '/api/privacy/delete-self'
+      fullPath: '/api/privacy/delete-self'
+      preLoaderRoute: typeof ApiPrivacyDeleteSelfRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/api/privacy/export': {
@@ -3207,6 +3227,7 @@ const rootRouteChildren: RootRouteChildren = {
   ApiNudgesIdRoute: ApiNudgesIdRoute,
   ApiNudgesTodayRoute: ApiNudgesTodayRoute,
   ApiPrivacyDeleteRoute: ApiPrivacyDeleteRoute,
+  ApiPrivacyDeleteSelfRoute: ApiPrivacyDeleteSelfRoute,
   ApiPrivacyExportRoute: ApiPrivacyExportRoute,
   ApiScanPagesPageIdRoute: ApiScanPagesPageIdRoute,
   ApiSyllabusChaptersRoute: ApiSyllabusChaptersRouteWithChildren,

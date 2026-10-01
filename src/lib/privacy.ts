@@ -184,15 +184,90 @@ export async function deleteHouseholdData(
   input: { householdId: string; householdName: string; requestedByUserId: string },
 ) {
   await db.transaction().execute(async (trx) => {
-    await trx
-      .insertInto('deletion_log')
-      .values({
-        household_id: input.householdId,
-        household_name: input.householdName,
-        requested_by_user_id: input.requestedByUserId,
-      })
+    // A student who signed up herself and was then linked to this household still has her own
+    // original household, now empty but holding the consent she gave there. Two RESTRICT keys
+    // interlock: that consent blocks deleting her user, and her students row (own_household_id)
+    // blocks deleting the original household. Without this ordering the whole delete failed with
+    // a 500 (found 2026-10-01). Her data is being deleted, so her original household goes too:
+    // its consents first, then this household (her user and students row with it), then it.
+    const linkedOrigins = await trx
+      .selectFrom('students')
+      .innerJoin('households', 'households.id', 'students.own_household_id')
+      .select(['households.id', 'households.name'])
+      .where('students.household_id', '=', input.householdId)
+      .where('students.own_household_id', '!=', input.householdId)
       .execute()
 
+    for (const origin of [...linkedOrigins, { id: input.householdId, name: input.householdName }]) {
+      await trx
+        .insertInto('deletion_log')
+        .values({
+          household_id: origin.id,
+          household_name: origin.name,
+          requested_by_user_id: input.requestedByUserId,
+        })
+        .execute()
+    }
+    const originIds = linkedOrigins.map((o) => o.id)
+    if (originIds.length > 0) {
+      await trx.deleteFrom('consents').where('household_id', 'in', originIds).execute()
+    }
     await trx.deleteFrom('households').where('id', '=', input.householdId).execute()
+    if (originIds.length > 0) {
+      await trx.deleteFrom('households').where('id', 'in', originIds).execute()
+    }
   })
+}
+
+export type SelfDeleteBlock = 'no_student_profile' | 'parent_managed' | 'parent_linked' | 'shared_household'
+
+/**
+ * F098 for a student on her own: Google Play requires that anyone who can create an account can
+ * delete it. A student who signed up herself (own_household_id is set only by self sign-up) and
+ * whom no parent currently follows (household_id still equals own_household_id -- linking moves
+ * her into the guardian's household) owns a household with nobody else in it, so deleting that
+ * household deletes exactly her and her data. Any other student's data is a parent's to delete
+ * (owner decision 2026-10-01).
+ */
+export async function studentSelfDeleteCheck(
+  db: Db,
+  userId: string,
+): Promise<
+  | { allowed: true; householdId: string; householdName: string }
+  | { allowed: false; reason: SelfDeleteBlock }
+> {
+  const student = await db
+    .selectFrom('students')
+    .select(['id', 'household_id', 'own_household_id'])
+    .where('user_id', '=', userId)
+    .executeTakeFirst()
+  if (!student) return { allowed: false, reason: 'no_student_profile' }
+  if (!student.own_household_id) return { allowed: false, reason: 'parent_managed' }
+  if (student.household_id !== student.own_household_id) {
+    return { allowed: false, reason: 'parent_linked' }
+  }
+  // Belt and braces: nobody but her may share the household that is about to be deleted.
+  const [otherUsers, otherStudents] = await Promise.all([
+    db
+      .selectFrom('users')
+      .select('id')
+      .where('household_id', '=', student.household_id)
+      .where('id', '!=', userId)
+      .execute(),
+    db
+      .selectFrom('students')
+      .select('id')
+      .where('household_id', '=', student.household_id)
+      .where('id', '!=', student.id)
+      .execute(),
+  ])
+  if (otherUsers.length > 0 || otherStudents.length > 0) {
+    return { allowed: false, reason: 'shared_household' }
+  }
+  const household = await db
+    .selectFrom('households')
+    .select('name')
+    .where('id', '=', student.household_id)
+    .executeTakeFirstOrThrow()
+  return { allowed: true, householdId: student.household_id, householdName: household.name }
 }
