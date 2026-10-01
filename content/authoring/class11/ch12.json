@@ -1,0 +1,2657 @@
+{
+ "subject": {
+  "code": "MATH11",
+  "name": "Mathematics",
+  "board": "CBSE",
+  "class": 11
+ },
+ "source": {
+  "publisher": "NCERT",
+  "title": "Mathematics",
+  "edition": "Textbook for Class XI, Reprint 2026-27",
+  "year": 2026
+ },
+ "chapter": {
+  "part": "I",
+  "chapter_no": 12,
+  "name": "Limits and Derivatives",
+  "blurb": "This chapter is the first introduction to calculus. Starting from the average velocity of a falling body, it builds the idea of a limit (with left and right hand limits), the algebra of limits, limits of polynomial, rational and trigonometric functions, and the standard limits of (x^n - a^n)/(x - a) and (sin x)/x. It then defines the derivative as a limit, finds derivatives from first principle, and develops the sum, product and quotient rules with the derivatives of polynomials and trigonometric functions.",
+  "source_code": "kemh112",
+  "order_index": 12
+ },
+ "depth": 20,
+ "scope_in": [
+  {
+   "item": "Compute average velocity over a time interval for s = 4.9t^2 and similar distance functions, and estimate the instantaneous velocity from average velocities over shrinking intervals on either side",
+   "pages": "217-219"
+  },
+  {
+   "item": "Interpret instantaneous velocity (the derivative of the distance function) as the slope of the tangent to the distance-time curve, the limit of slopes of chords",
+   "pages": "219-220"
+  },
+  {
+   "item": "Explain the limit of f at a as the value f(x) approaches as x tends to a, read it from a table of values or a described graph, and recognise that it need not equal f(a)",
+   "pages": "220-227"
+  },
+  {
+   "item": "Find left hand and right hand limits of piecewise-defined and modulus functions and decide whether the limit exists (it exists only when the two coincide)",
+   "pages": "221, 226-228, 238-239"
+  },
+  {
+   "item": "State and use the algebra of limits: limit of a sum, difference, product, constant multiple and quotient (denominator limit non-zero)",
+   "pages": "228"
+  },
+  {
+   "item": "Evaluate limits of polynomial functions by substitution, and of rational functions by substitution or, in the 0/0 case, by cancelling the common factor; recognise when the limit does not exist",
+   "pages": "228-232, 237"
+  },
+  {
+   "item": "State, prove and apply lim (x -> a) (x^n - a^n)/(x - a) = n a^(n-1) for positive integer n, and use the remark that it holds for rational n when a is positive",
+   "pages": "232-233, 237"
+  },
+  {
+   "item": "State the sandwich theorem and the inequality cos x < (sin x)/x < 1, and explain how they give lim (x -> 0) (sin x)/x = 1",
+   "pages": "234-236"
+  },
+  {
+   "item": "Use lim (x -> 0) (sin x)/x = 1 and lim (x -> 0) (1 - cos x)/x = 0 to evaluate trigonometric limits, including by a substitution that makes the variable tend to 0",
+   "pages": "235-238"
+  },
+  {
+   "item": "State the definition f'(a) = lim (h -> 0) [f(a + h) - f(a)]/h, compute a derivative at a point from it, and interpret it as the slope of the tangent (limit of chord slopes)",
+   "pages": "239-242"
+  },
+  {
+   "item": "Find the derivative function from the first principle for polynomial and simple rational functions, and use the notations f'(x), dy/dx, d/dx f(x), D(f(x))",
+   "pages": "242-243, 248-250"
+  },
+  {
+   "item": "State and apply the sum, difference, product (Leibnitz) and quotient rules for derivatives",
+   "pages": "244-245"
+  },
+  {
+   "item": "Use d/dx (x^n) = n x^(n-1) (integer n, as used in the exercises) to differentiate polynomials term by term and products and quotients of polynomials",
+   "pages": "245-247, 248-249, 253"
+  },
+  {
+   "item": "Recall and derive the derivatives of sin x, cos x and tan x (first principle) and of cot x, sec x, cosec x (quotient rule), and differentiate sums, products and quotients involving them, rewriting sin 2x or sin(x + a) by an identity first",
+   "pages": "247-248, 249-254"
+  }
+ ],
+ "scope_out": [
+  {
+   "item": "Limits of exponential and logarithmic functions, such as lim (x -> 0) (e^x - 1)/x and lim (x -> 0) log(1 + x)/x",
+   "reason": "Not in this rationalised edition: section 12.4 (trigonometric limits, pp. 234-237) is followed directly by Exercise 12.1 and section 12.5 Derivatives; e^x and log x do not occur anywhere in the chapter"
+  },
+  {
+   "item": "Derivatives of e^x, log x, a^x and of inverse trigonometric functions",
+   "reason": "Not taught here; the Summary (p. 255) lists only x^n, sin x and cos x as standard derivatives. These belong to Class 12 Continuity and Differentiability"
+  },
+  {
+   "item": "The chain rule (derivative of a composite function)",
+   "reason": "Never stated in the chapter. sin 2x and sin^2 x are done by an identity plus the product rule (Examples 18 and 21, pp. 248, 251); questions must not need the chain rule or cite it in an answer"
+  },
+  {
+   "item": "Implicit, logarithmic and parametric differentiation, and second order derivatives",
+   "reason": "Class 12 topics; absent from this chapter"
+  },
+  {
+   "item": "Continuity and differentiability as formal topics (continuity at a point, differentiability implies continuity, points of non-differentiability)",
+   "reason": "The word 'continuous' is not used; the chapter only compares the limit with f(a) informally (p. 228 and Summary p. 254). Formal treatment is Class 12 chapter 5"
+  },
+  {
+   "item": "Infinite limits and limits as x tends to infinity",
+   "reason": "Illustration 8 (p. 226) mentions lim 1/x^2 = +infinity once and says 'we will not come across such limits in this course'"
+  },
+  {
+   "item": "L'Hopital's rule",
+   "reason": "Not in the NCERT course at all; 0/0 forms are handled only by cancelling common factors or by the standard limits (pp. 230-233, 237)"
+  },
+  {
+   "item": "The epsilon-delta definition of a limit and proofs of the algebra-of-limits and algebra-of-derivatives theorems",
+   "reason": "The chapter gives a 'naive definition' of limit (p. 217) and states Theorems 1 and 5 without proof (pp. 228, 244)"
+  },
+  {
+   "item": "Applications of derivatives: equations of tangents and normals, increasing and decreasing functions, maxima and minima, rate-of-change word problems beyond the velocity illustration",
+   "reason": "Class 12 chapter 6; here the derivative is only interpreted as the slope of the tangent and as instantaneous velocity (pp. 219-220, 241-242)"
+  },
+  {
+   "item": "Derivative of x^n for a non-integer exponent (for example the derivative of sqrt(x))",
+   "reason": "The Remark on p. 246 says the result holds for all real n but is not proved, and no example or exercise uses a fractional power in a derivative; only integer powers (positive and negative) are used"
+  },
+  {
+   "item": "Integration or anti-derivatives",
+   "reason": "Class 12; not mentioned in this chapter"
+  }
+ ],
+ "concepts": [
+  {
+   "code": "C11M-12.1",
+   "name": "Intuitive idea of the derivative: average and instantaneous velocity",
+   "description": "Average velocity over shrinking time intervals for the falling body s = 4.9t^2, the instantaneous velocity as the value these approach, and its meaning as the slope of the tangent to the distance-time curve.",
+   "idea": "The velocity at one instant cannot be found from a single distance and time; it is the value approached by average velocities over smaller and smaller intervals around that instant.",
+   "rule": "Average velocity between t1 and t2 = (s(t2) - s(t1))/(t2 - t1). The instantaneous velocity is the limit of these as the interval shrinks, and equals the slope of the tangent to the distance-time curve.",
+   "example": "For s = 4.9t^2 the average velocity over [1.99, 2] is 19.551 m/s and over [2, 2.01] is 19.649 m/s, so the velocity at t = 2 lies between them.",
+   "difficulty_base": "Easy",
+   "questions": [
+    {
+     "b": "Remember",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "A body dropped from a tall cliff covers s = 4.9t^2 metres in t seconds. Its average velocity between t = t1 and t = t2 is defined as",
+     "a": "the distance travelled between t = t1 and t = t2 divided by (t2 - t1)",
+     "o": [
+      "the distance travelled between t = t1 and t = t2 divided by (t2 - t1)",
+      "the distance travelled in the first t2 seconds divided by (t2 - t1)",
+      "the mean of the two distances s(t1) and s(t2)",
+      "(t2 - t1) divided by the distance travelled between the two instants"
+     ]
+    },
+    {
+     "b": "Remember",
+     "d": "Easy",
+     "t": "fill_blank",
+     "m": 1,
+     "q": "A body dropped from a cliff covers s = 4.9t^2 metres in t seconds. The distance it covers in the first 4 seconds, as a decimal, is ____ metres.",
+     "a": "78.4"
+    },
+    {
+     "b": "Remember",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "On the graph of distance s against time t for a moving body, the instantaneous velocity at time t = 2 is equal to",
+     "a": "the slope of the tangent to the curve at the point where t = 2",
+     "o": [
+      "the slope of the tangent to the curve at the point where t = 2",
+      "the slope of the chord joining the origin to the point where t = 2",
+      "the height of the curve at t = 2",
+      "the area under the curve from t = 0 to t = 2"
+     ]
+    },
+    {
+     "b": "Remember",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "q": "Which of the following statements about the average and instantaneous velocity of a body falling with s = 4.9t^2 is NOT correct?",
+     "a": "The average velocity over the first 2 seconds is the instantaneous velocity at t = 2",
+     "o": [
+      "The average velocity over the first 2 seconds is the instantaneous velocity at t = 2",
+      "Velocity is the rate of change of displacement",
+      "Average velocities over shorter and shorter intervals ending at t = 2 give better and better estimates of the velocity at t = 2",
+      "The instantaneous velocity at t = 2 is the slope of the tangent to the distance-time curve at t = 2"
+     ],
+     "rev": true
+    },
+    {
+     "b": "Understand",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "For s = 4.9t^2, the average velocities over the intervals from t = 1, 1.5, 1.9 and 1.99 up to t = 2 are 14.7, 17.15, 19.11 and 19.551 m/s. Assuming nothing dramatic happens just before t = 2, this suggests that the velocity at t = 2 is",
+     "a": "just above 19.551 m/s",
+     "o": [
+      "just above 19.551 m/s",
+      "exactly 19.551 m/s",
+      "below 14.7 m/s",
+      "the mean of the four listed values"
+     ]
+    },
+    {
+     "b": "Understand",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "For a falling body, average velocities over intervals ending at t = 2 increase as the intervals shrink, and average velocities over intervals starting at t = 2 decrease as the intervals shrink. On physical grounds these two sequences",
+     "a": "approach a common limit, which is the instantaneous velocity at t = 2",
+     "o": [
+      "approach a common limit, which is the instantaneous velocity at t = 2",
+      "approach two different values, a 'before' velocity and an 'after' velocity",
+      "have no connection with each other",
+      "both approach zero, because the time intervals approach zero"
+     ]
+    },
+    {
+     "b": "Understand",
+     "d": "Easy",
+     "t": "short_answer",
+     "m": 2,
+     "q": "Explain why the velocity of a falling body at the instant t = 2 cannot be found by applying 'distance divided by time' to the interval from t = 2 to t = 2, and say what is done instead.",
+     "a": "Over the interval from t = 2 to t = 2 the distance travelled is 0 and the time taken is 0, so the ratio is 0/0, which has no meaning. Instead we compute the average velocity over small intervals ending (or starting) at t = 2 and take the value that these average velocities approach as the interval is made smaller and smaller; that limiting value is the instantaneous velocity.",
+     "s": [
+      [
+       "States that the interval has zero length and zero distance, so the ratio 0/0 is meaningless",
+       1
+      ],
+      [
+       "Says average velocities over shrinking intervals are computed and the value they approach is taken",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Understand",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "q": "On a distance-time curve, A is the point at time t = 2 and B1, B2, B3, ... are the points at times 2 + h1, 2 + h2, 2 + h3, ..., where h1 > h2 > h3 > ... approach zero. The slopes of the chords AB1, AB2, AB3, ... are",
+     "a": "average velocities over the intervals from 2 to 2 + h, and they approach the slope of the tangent at A",
+     "o": [
+      "average velocities over the intervals from 2 to 2 + h, and they approach the slope of the tangent at A",
+      "instantaneous velocities at the points B1, B2, B3, ...",
+      "the distances travelled in the times h1, h2, h3, ...",
+      "average velocities that approach zero, because the intervals shrink to zero"
+     ]
+    },
+    {
+     "b": "Understand",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "q": "For s = 4.9t^2 the average velocity over the interval [1.99, 2] is 19.551 m/s and over the interval [2, 2.01] is 19.649 m/s. What can safely be concluded about the velocity at t = 2?",
+     "a": "It lies between 19.551 m/s and 19.649 m/s",
+     "o": [
+      "It lies between 19.551 m/s and 19.649 m/s",
+      "It is exactly 19.551 m/s",
+      "It is exactly 19.649 m/s",
+      "The body has two different velocities at t = 2"
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Easy",
+     "t": "fill_blank",
+     "m": 1,
+     "q": "A particle moves so that its distance is s = 5t^2 metres after t seconds. Its average velocity between t = 1 and t = 3 is ____ m/s. (Write a whole number.)",
+     "a": "20"
+    },
+    {
+     "b": "Apply",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "A body falls so that s = 4.9t^2 metres in t seconds. Its average velocity between t = 2 and t = 4 is",
+     "a": "29.4 m/s",
+     "o": [
+      "29.4 m/s",
+      "19.6 m/s",
+      "58.8 m/s",
+      "39.2 m/s"
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "q": "A particle moves so that s = t^2 + 3t (s in metres, t in seconds). For h not equal to 0, its average velocity between t = 2 and t = 2 + h is",
+     "a": "7 + h",
+     "o": [
+      "7 + h",
+      "7",
+      "7h + h^2",
+      "4 + h"
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "q": "A particle moves so that s = 2t^2 metres after t seconds. Its average velocities over the intervals [3, 3 + h] for h = 0.1, 0.01 and 0.001 are 12.2, 12.02 and 12.002 m/s. Its instantaneous velocity at t = 3 is",
+     "a": "12 m/s",
+     "o": [
+      "12 m/s",
+      "12.002 m/s",
+      "18 m/s",
+      "6 m/s"
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "q": "A stone falls so that s = 4.9t^2 metres in t seconds. Find its average velocity between t = 3 and t = 3.1 seconds.",
+     "a": "s(3) = 4.9 x 9 = 44.1 m and s(3.1) = 4.9 x 9.61 = 47.089 m. Average velocity = (47.089 - 44.1)/(3.1 - 3) = 2.989/0.1 = 29.89 m/s.",
+     "s": [
+      [
+       "Finds s(3) = 44.1 and s(3.1) = 47.089",
+       1
+      ],
+      [
+       "Divides the difference 2.989 by 0.1 to get 29.89 m/s",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hardest",
+     "t": "long_answer",
+     "m": 3,
+     "q": "A particle moves so that s = 3t^2 + 2 (s in metres, t in seconds). (a) Find its average velocity over the interval [1, 1 + h], h not 0, in simplest form. (b) Evaluate it for h = 0.1 and h = 0.01. (c) State the instantaneous velocity at t = 1.",
+     "a": "(a) s(1 + h) - s(1) = 3(1 + 2h + h^2) + 2 - 5 = 6h + 3h^2, so the average velocity is (6h + 3h^2)/h = 6 + 3h. (b) For h = 0.1 it is 6.3 m/s; for h = 0.01 it is 6.03 m/s. (c) As h approaches 0 the average velocity 6 + 3h approaches 6, so the instantaneous velocity at t = 1 is 6 m/s.",
+     "s": [
+      [
+       "Obtains the average velocity 6 + 3h",
+       1
+      ],
+      [
+       "Evaluates 6.3 and 6.03",
+       1
+      ],
+      [
+       "States the instantaneous velocity 6 m/s as the value approached when h tends to 0",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "assertion_reason",
+     "m": 1,
+     "q": "Assertion (A): For the falling body with s = 4.9t^2, the average velocity over the interval [1.9, 2] is less than the average velocity over the interval [2, 2.1]. Reason (R): The instantaneous velocity at t = 2 is the slope of the tangent to the curve s = 4.9t^2 at t = 2.",
+     "a": "Both A and R are true, but R is not the correct explanation of A",
+     "o": [
+      "Both A and R are true, but R is not the correct explanation of A",
+      "Both A and R are true, and R is the correct explanation of A",
+      "A is true, R is false",
+      "A is false, R is true"
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "multi_statement",
+     "m": 1,
+     "q": "Consider these statements. (I) For a body with s = 4.9t^2, as the time intervals ending at t = 2 are made smaller, the average velocities over them decrease towards the velocity at t = 2. (II) The instantaneous velocity at t = 2 equals the slope of the tangent to the distance-time curve at t = 2. Which is or are correct?",
+     "a": "Only II",
+     "o": [
+      "Only II",
+      "Only I",
+      "Both I and II",
+      "Neither I nor II"
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hardest",
+     "t": "long_answer",
+     "m": 3,
+     "q": "For s = 4.9t^2 and h > 0, show that the average velocity over [2 - h, 2] is 19.6 - 4.9h and over [2, 2 + h] is 19.6 + 4.9h. Hence explain why the instantaneous velocity at t = 2 is exactly 19.6 m/s.",
+     "a": "Over [2 - h, 2]: (4.9 x 4 - 4.9(2 - h)^2)/h = 4.9(4h - h^2)/h = 19.6 - 4.9h. Over [2, 2 + h]: (4.9(2 + h)^2 - 4.9 x 4)/h = 4.9(4h + h^2)/h = 19.6 + 4.9h. The first is always a little below 19.6 and increases towards it as h shrinks; the second is always a little above 19.6 and decreases towards it. Both approach the common limit 19.6 as h tends to 0, so the instantaneous velocity at t = 2 is 19.6 m/s.",
+     "s": [
+      [
+       "Derives 19.6 - 4.9h for the interval ending at 2",
+       1
+      ],
+      [
+       "Derives 19.6 + 4.9h for the interval starting at 2",
+       1
+      ],
+      [
+       "Explains that both approach the common limit 19.6 as h tends to 0",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Evaluate",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "q": "Meera says: 'A body with s = 3t^2 metres travels 12 m in the first 2 seconds, so its velocity at t = 2 is 12/2 = 6 m/s.' Evaluate her claim.",
+     "a": "She is wrong: 12/2 = 6 m/s is the average velocity over the whole interval [0, 2], not the velocity at the instant t = 2. The average velocity over [2, 2 + h] is (3(2 + h)^2 - 12)/h = 12 + 3h, which approaches 12 as h tends to 0, so the velocity at t = 2 is 12 m/s.",
+     "s": [
+      [
+       "Identifies 6 m/s as the average velocity over [0, 2], not the instantaneous velocity",
+       1
+      ],
+      [
+       "Finds the instantaneous velocity 12 m/s from average velocities over shrinking intervals",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Create",
+     "d": "Hardest",
+     "t": "long_answer",
+     "m": 3,
+     "q": "Make up a distance function of the form s = kt^2 with your own positive value of k (not 4.9). Compute the average velocities over [1, 1.1] and [1, 1.01], state the instantaneous velocity at t = 1 that they suggest, and say what this number means on the graph of s against t.",
+     "a": "For example s = 2t^2. Over [1, 1.1]: (2 x 1.21 - 2)/0.1 = 4.2 m/s. Over [1, 1.01]: (2 x 1.0201 - 2)/0.01 = 4.02 m/s. These approach 4, so the instantaneous velocity at t = 1 is 4 m/s (in general 2k). On the graph it is the slope of the tangent to the curve s = 2t^2 at the point where t = 1. (Any k with correct working earns full marks.)",
+     "s": [
+      [
+       "Chooses a valid function and computes both average velocities correctly",
+       1
+      ],
+      [
+       "States the instantaneous velocity (2k) suggested by the values",
+       1
+      ],
+      [
+       "Interprets it as the slope of the tangent to the distance-time curve at t = 1",
+       1
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "code": "C11M-12.2",
+   "name": "Limit of a function: left hand and right hand limits",
+   "description": "The limit as the value a function should assume near a point, left and right hand limits read from tables, graphs and piecewise definitions, and when a limit exists.",
+   "idea": "The limit of f at a is the value f(x) approaches as x approaches a; it depends on values near a, not on f(a) itself.",
+   "rule": "lim (x -> a) f(x) exists only if the left hand limit and the right hand limit at a coincide; the common value is the limit. The limit and f(a) may differ, and one may exist without the other.",
+   "example": "For f(x) = 1 (x <= 0), 2 (x > 0): the left hand limit at 0 is 1, the right hand limit is 2, so the limit at 0 does not exist although f(0) = 1.",
+   "difficulty_base": "Easy",
+   "questions": [
+    {
+     "b": "Remember",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "The limit of a function f at x = a exists when",
+     "a": "the left hand limit and the right hand limit of f at a coincide",
+     "o": [
+      "the left hand limit and the right hand limit of f at a coincide",
+      "f(a) is defined",
+      "f(a) is equal to the left hand limit of f at a",
+      "at least one of the left hand and right hand limits of f at a exists"
+     ]
+    },
+    {
+     "b": "Remember",
+     "d": "Easy",
+     "t": "fill_blank",
+     "m": 1,
+     "q": "lim (x -> 5) (x + 10) = ____. (Write a whole number.)",
+     "a": "15"
+    },
+    {
+     "b": "Remember",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "The right hand limit of f at a is the expected value of f at x = a given the values of f",
+     "a": "at points near a and to the right of a",
+     "o": [
+      "at points near a and to the right of a",
+      "at points near a and to the left of a",
+      "at the point a itself",
+      "at all points of the domain greater than a, however far from a"
+     ]
+    },
+    {
+     "b": "Remember",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "q": "Which of the following statements about the limit of a function f at x = a is FALSE?",
+     "a": "If f(a) is defined, then lim (x -> a) f(x) must exist and be equal to f(a)",
+     "o": [
+      "If f(a) is defined, then lim (x -> a) f(x) must exist and be equal to f(a)",
+      "lim (x -> a) f(x) may exist even when f(a) is not defined",
+      "If the left hand and right hand limits at a are different, the limit at a does not exist",
+      "When the limit at a exists, it is the common value of the left hand and right hand limits"
+     ],
+     "rev": true
+    },
+    {
+     "b": "Understand",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "Let f(x) = 1 for x <= 0 and f(x) = 2 for x > 0. Which statement about f at x = 0 is correct?",
+     "a": "The left hand limit is 1, the right hand limit is 2, and the limit does not exist",
+     "o": [
+      "The left hand limit is 1, the right hand limit is 2, and the limit does not exist",
+      "The left hand limit is 2, the right hand limit is 1, and the limit does not exist",
+      "The limit is 1, because f(0) = 1",
+      "The limit is 1.5, the average of the two one-sided limits"
+     ]
+    },
+    {
+     "b": "Understand",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "Let g(x) = |x| for x not equal to 0, with g(0) not defined. Then lim (x -> 0) g(x)",
+     "a": "exists and equals 0",
+     "o": [
+      "exists and equals 0",
+      "does not exist, because g(0) is not defined",
+      "does not exist, because |x| is given by different formulas on the two sides of 0",
+      "exists and equals 1"
+     ]
+    },
+    {
+     "b": "Understand",
+     "d": "Easy",
+     "t": "short_answer",
+     "m": 2,
+     "q": "Let f(x) = x + 2 for x not equal to 1, and f(1) = 0. State lim (x -> 1) f(x) and explain why it is different from f(1).",
+     "a": "For x near 1 (on either side, but not equal to 1) f(x) = x + 2 is near 3, so the left and right hand limits are both 3 and lim (x -> 1) f(x) = 3. The limit is decided by the values of f near 1, not by the value at 1, so it need not equal f(1) = 0.",
+     "s": [
+      [
+       "States that the limit is 3 (both one-sided limits are 3)",
+       1
+      ],
+      [
+       "Explains that the limit depends on values near x = 1 and not on f(1)",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Understand",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "q": "Let f(x) = x - 2 for x < 0, f(0) = 0, and f(x) = x + 2 for x > 0. Which statement is correct?",
+     "a": "f(0) is defined, but lim (x -> 0) f(x) does not exist",
+     "o": [
+      "f(0) is defined, but lim (x -> 0) f(x) does not exist",
+      "lim (x -> 0) f(x) = 0, because f(0) = 0",
+      "lim (x -> 0) f(x) = 2, the value approached from the right",
+      "Neither f(0) nor lim (x -> 0) f(x) is defined"
+     ]
+    },
+    {
+     "b": "Understand",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "q": "A table gives f(x) = 5.7, 5.97, 5.997 at x = 1.9, 1.99, 1.999 and f(x) = 6.003, 6.03, 6.3 at x = 2.001, 2.01, 2.1. The table suggests that",
+     "a": "lim (x -> 2) f(x) = 6, whatever the value of f(2) may be",
+     "o": [
+      "lim (x -> 2) f(x) = 6, whatever the value of f(2) may be",
+      "f(2) must be equal to 6",
+      "the left hand limit is 5.997 and the right hand limit is 6.003, so the limit does not exist",
+      "lim (x -> 2) f(x) = 2, because x approaches 2"
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Easy",
+     "t": "fill_blank",
+     "m": 1,
+     "q": "Let f(x) = 2x + 3 for x <= 0 and f(x) = 3(x + 1) for x > 0. Then lim (x -> 1) f(x) = ____. (Write a whole number.)",
+     "a": "6"
+    },
+    {
+     "b": "Apply",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "Let f(x) = x^2 - 1 for x <= 1 and f(x) = -x^2 - 1 for x > 1. The left hand limit of f at x = 1 is",
+     "a": "0",
+     "o": [
+      "0",
+      "-2",
+      "1",
+      "-1"
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "q": "Let f(x) = x + 1 for x < 0, f(0) = 0, and f(x) = x - 1 for x > 0. Then lim (x -> 0) f(x)",
+     "a": "does not exist, since the left hand limit is 1 and the right hand limit is -1",
+     "o": [
+      "does not exist, since the left hand limit is 1 and the right hand limit is -1",
+      "equals 0, since f(0) = 0",
+      "does not exist, since the left hand limit is -1 and the right hand limit is 1",
+      "equals 1"
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "q": "For f(x) = |x| - 5, the value of lim (x -> 5) f(x) is",
+     "a": "0",
+     "o": [
+      "0",
+      "-5",
+      "10",
+      "not defined, because |x| has a corner"
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "q": "Let f(x) = 3x + 4 for x <= 0 and f(x) = 4(x + 1) for x > 0. Find the left hand and right hand limits of f at x = 0 and state whether lim (x -> 0) f(x) exists.",
+     "a": "Left hand limit: for x < 0, f(x) = 3x + 4, which approaches 4 as x -> 0-. Right hand limit: for x > 0, f(x) = 4(x + 1), which approaches 4 as x -> 0+. The two coincide, so lim (x -> 0) f(x) exists and equals 4.",
+     "s": [
+      [
+       "Finds the left hand limit 4 and the right hand limit 4 using the correct branches",
+       1
+      ],
+      [
+       "Concludes that the limit exists and equals 4 because they coincide",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hardest",
+     "t": "long_answer",
+     "m": 3,
+     "q": "Let f(x) = a + bx for x < 1, f(1) = 6, and f(x) = 2b - ax for x > 1. If lim (x -> 1) f(x) = f(1), find a and b.",
+     "a": "Left hand limit at 1: a + b. Right hand limit at 1: 2b - a. For the limit to exist and equal f(1) = 6 we need a + b = 6 and 2b - a = 6. Adding gives 3b = 12, so b = 4 and a = 2. Check: a + b = 6 and 2b - a = 8 - 2 = 6.",
+     "s": [
+      [
+       "Writes the left hand limit a + b and the right hand limit 2b - a",
+       1
+      ],
+      [
+       "Sets both equal to 6",
+       1
+      ],
+      [
+       "Solves to get a = 2 and b = 4",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "assertion_reason",
+     "m": 1,
+     "q": "Assertion (A): For f(x) = x/|x|, x not equal to 0, lim (x -> 0) f(x) = 1. Reason (R): x/|x| = 1 for every x > 0 and x/|x| = -1 for every x < 0.",
+     "a": "A is false, R is true",
+     "o": [
+      "A is false, R is true",
+      "Both A and R are true, and R is the correct explanation of A",
+      "Both A and R are true, but R is not the correct explanation of A",
+      "A is true, R is false"
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "multi_statement",
+     "m": 1,
+     "q": "Consider these statements. (I) For the constant function f(x) = 3, lim (x -> a) f(x) = 3 for every real number a. (II) For f(x) = x^3, the left hand limit and the right hand limit at x = 1 are both equal to 1. Which is or are correct?",
+     "a": "Both I and II",
+     "o": [
+      "Both I and II",
+      "Only I",
+      "Only II",
+      "Neither I nor II"
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hardest",
+     "t": "long_answer",
+     "m": 3,
+     "q": "Let f(x) = 2x + m for x < 0, f(x) = nx + 3 for 0 <= x <= 1, and f(x) = mx^2 + 1 for x > 1. Find the values of m and n for which both lim (x -> 0) f(x) and lim (x -> 1) f(x) exist, and state the two limits.",
+     "a": "At x = 0: left hand limit = m, right hand limit = n(0) + 3 = 3, so the limit exists only if m = 3. At x = 1: left hand limit = n + 3, right hand limit = m + 1 = 4, so the limit exists only if n + 3 = 4, i.e. n = 1. Hence m = 3, n = 1; then lim (x -> 0) f(x) = 3 and lim (x -> 1) f(x) = 4.",
+     "s": [
+      [
+       "Equates the one-sided limits at 0 to get m = 3",
+       1
+      ],
+      [
+       "Equates the one-sided limits at 1 to get n = 1",
+       1
+      ],
+      [
+       "States the limits 3 (at 0) and 4 (at 1)",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Evaluate",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "q": "Ravi says: 'The function f(x) = (x^2 - 4)/(x - 2) is not defined at x = 2, so lim (x -> 2) f(x) does not exist.' Evaluate his statement.",
+     "a": "He is wrong. A limit at 2 depends only on the values of f near 2, not on whether f(2) is defined. For x not equal to 2, f(x) = (x - 2)(x + 2)/(x - 2) = x + 2, whose values are near 4 on both sides of 2. So the limit exists and equals 4.",
+     "s": [
+      [
+       "States that the limit does not depend on f being defined at 2",
+       1
+      ],
+      [
+       "Shows that f(x) = x + 2 near 2, so the limit is 4",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Create",
+     "d": "Hardest",
+     "t": "long_answer",
+     "m": 3,
+     "q": "Construct a function defined for all real x, using one formula for x < 2 and another for x >= 2, whose left hand limit at x = 2 is 5 and whose right hand limit at x = 2 is 1. Verify both limits and state whether lim (x -> 2) f(x) exists.",
+     "a": "For example f(x) = x + 3 for x < 2 and f(x) = x - 1 for x >= 2. As x -> 2-, f(x) = x + 3 approaches 5. As x -> 2+, f(x) = x - 1 approaches 1. Since 5 is not equal to 1, lim (x -> 2) f(x) does not exist (although f(2) = 1 is defined). (Any correct construction earns full marks.)",
+     "s": [
+      [
+       "Gives a valid two-formula function",
+       1
+      ],
+      [
+       "Verifies the left hand limit 5 and the right hand limit 1",
+       1
+      ],
+      [
+       "Concludes that the limit at 2 does not exist because the two differ",
+       1
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "code": "C11M-12.3",
+   "name": "Algebra of limits; limits of polynomial and rational functions",
+   "description": "The sum, difference, product and quotient rules for limits, direct substitution for polynomials and for rational functions with non-zero denominator, and cancelling the common factor in the 0/0 case.",
+   "idea": "Limits respect addition, subtraction, multiplication and division (with non-zero denominator limit), so a polynomial's limit at a is just its value at a.",
+   "rule": "For a rational function g(x)/h(x): if h(a) is not 0 the limit is g(a)/h(a); if h(a) = 0 and g(a) is not 0 the limit does not exist; if both are 0, cancel the common factor (x - a) and try again.",
+   "example": "lim (x -> 2) (x^3 - 2x^2)/(x^2 - 5x + 6) = lim x^2 (x - 2)/((x - 2)(x - 3)) = 4/(2 - 3) = -4.",
+   "difficulty_base": "Hard",
+   "questions": [
+    {
+     "b": "Remember",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "If lim (x -> a) f(x) and lim (x -> a) g(x) both exist, then lim (x -> a) [f(x) . g(x)] equals",
+     "a": "lim (x -> a) f(x) . lim (x -> a) g(x)",
+     "o": [
+      "lim (x -> a) f(x) . lim (x -> a) g(x)",
+      "lim (x -> a) f(x) + lim (x -> a) g(x)",
+      "lim (x -> a) f(x) / lim (x -> a) g(x)",
+      "lim (x -> a) f(x) - lim (x -> a) g(x)"
+     ]
+    },
+    {
+     "b": "Remember",
+     "d": "Easy",
+     "t": "fill_blank",
+     "m": 1,
+     "q": "lim (x -> 2) x(x + 3) = ____. (Write a whole number.)",
+     "a": "10"
+    },
+    {
+     "b": "Remember",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "For a polynomial function f and a real number a, lim (x -> a) f(x) is equal to",
+     "a": "f(a)",
+     "o": [
+      "f(a)",
+      "0",
+      "a",
+      "the leading coefficient of f"
+     ]
+    },
+    {
+     "b": "Remember",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "q": "Suppose lim (x -> a) f(x) and lim (x -> a) g(x) both exist. Which of the following is NOT a valid rule of the algebra of limits?",
+     "a": "lim [f(x)/g(x)] = lim f(x) / lim g(x), even when lim g(x) = 0",
+     "o": [
+      "lim [f(x)/g(x)] = lim f(x) / lim g(x), even when lim g(x) = 0",
+      "lim [f(x) + g(x)] = lim f(x) + lim g(x)",
+      "lim [f(x) . g(x)] = lim f(x) . lim g(x)",
+      "lim [k . f(x)] = k . lim f(x) for a real constant k"
+     ],
+     "rev": true
+    },
+    {
+     "b": "Understand",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "For a rational function f(x) = g(x)/h(x), where g and h are polynomials and h(a) is not 0, lim (x -> a) f(x) is",
+     "a": "g(a)/h(a)",
+     "o": [
+      "g(a)/h(a)",
+      "h(a)/g(a)",
+      "g(a) - h(a)",
+      "not defined"
+     ]
+    },
+    {
+     "b": "Understand",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "Why can lim (x -> 3) (3x + 1)/(x - 1) be found by simply substituting x = 3?",
+     "a": "Because it is a rational function whose denominator is not zero at x = 3",
+     "o": [
+      "Because it is a rational function whose denominator is not zero at x = 3",
+      "Because every limit can be found by direct substitution",
+      "Because the numerator is not zero at x = 3",
+      "Because the function is a polynomial"
+     ]
+    },
+    {
+     "b": "Understand",
+     "d": "Easy",
+     "t": "short_answer",
+     "m": 2,
+     "q": "In finding lim (x -> 3) (x^2 - 9)/(x - 3), the expression is replaced by x + 3. Explain why this cancellation is allowed although (x^2 - 9)/(x - 3) is not defined at x = 3, and state the limit.",
+     "a": "x^2 - 9 = (x - 3)(x + 3). In a limit as x -> 3, x takes values near 3 but not equal to 3, so x - 3 is not 0 and may be cancelled; for all such x the expression equals x + 3. Hence the limit is 3 + 3 = 6.",
+     "s": [
+      [
+       "Explains that x is not equal to 3 in the limiting process, so (x - 3) may be cancelled",
+       1
+      ],
+      [
+       "States the limit 6",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Understand",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "q": "For a rational function g(x)/h(x), suppose h(a) = 0 but g(a) is not 0. Then lim (x -> a) g(x)/h(x)",
+     "a": "does not exist",
+     "o": [
+      "does not exist",
+      "equals 0",
+      "equals g(a)",
+      "is found by cancelling a common factor (x - a)"
+     ]
+    },
+    {
+     "b": "Understand",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "q": "Evaluating (x^3 - 4x^2 + 4x)/(x^2 - 4) at x = 2 gives the form 0/0. What does this tell us?",
+     "a": "(x - 2) is a common factor of the numerator and the denominator, to be cancelled before substituting",
+     "o": [
+      "(x - 2) is a common factor of the numerator and the denominator, to be cancelled before substituting",
+      "The limit as x -> 2 is 0",
+      "The limit as x -> 2 does not exist",
+      "The limit as x -> 2 is 1, because 0/0 = 1"
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Easy",
+     "t": "fill_blank",
+     "m": 1,
+     "q": "lim (x -> -1) (x^3 - x^2 + 5) = ____. (Write a whole number.)",
+     "a": "3"
+    },
+    {
+     "b": "Apply",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "The value of lim (x -> 4) (4x + 3)/(x - 2) is",
+     "a": "19/2",
+     "o": [
+      "19/2",
+      "19",
+      "2/19",
+      "7/2"
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "q": "The value of lim (x -> 2) (3x^2 - x - 10)/(x^2 - 4) is",
+     "a": "11/4",
+     "o": [
+      "11/4",
+      "0",
+      "3",
+      "not defined"
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "q": "The value of lim (x -> 3) (x^2 - 9)/(x^2 - 4x + 3) is",
+     "a": "3",
+     "o": [
+      "3",
+      "0",
+      "6",
+      "not defined"
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "q": "Evaluate lim (x -> 3) (x^4 - 81)/(2x^2 - 5x - 3).",
+     "a": "At x = 3 the expression is of the form 0/0. x^4 - 81 = (x - 3)(x + 3)(x^2 + 9) and 2x^2 - 5x - 3 = (2x + 1)(x - 3). Cancelling (x - 3), the limit is (x + 3)(x^2 + 9)/(2x + 1) at x = 3, i.e. (6)(18)/7 = 108/7.",
+     "s": [
+      [
+       "Factorises numerator and denominator and cancels (x - 3)",
+       1
+      ],
+      [
+       "Substitutes x = 3 to get 108/7",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hardest",
+     "t": "long_answer",
+     "m": 3,
+     "q": "Evaluate lim (x -> 2) [1/(x - 2) - 4/(x^2 - 4)].",
+     "a": "Neither term has a limit at 2 by itself, so first combine them: 1/(x - 2) - 4/((x - 2)(x + 2)) = (x + 2 - 4)/((x - 2)(x + 2)) = (x - 2)/((x - 2)(x + 2)). This is of the form 0/0 at x = 2; cancelling (x - 2), valid since x is not 2, gives 1/(x + 2). Hence the limit is 1/(2 + 2) = 1/4.",
+     "s": [
+      [
+       "Combines into the single rational function (x - 2)/((x - 2)(x + 2))",
+       1
+      ],
+      [
+       "Cancels the factor (x - 2), noting x is not 2",
+       1
+      ],
+      [
+       "Substitutes to get 1/4",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "assertion_reason",
+     "m": 1,
+     "q": "Assertion (A): lim (x -> 2) (x^2 - 4)/(x^3 - 4x^2 + 4x) does not exist. Reason (R): After the common factor (x - 2) is cancelled, the expression becomes (x + 2)/(x(x - 2)), whose denominator is 0 at x = 2 while its numerator is not.",
+     "a": "Both A and R are true, and R is the correct explanation of A",
+     "o": [
+      "Both A and R are true, and R is the correct explanation of A",
+      "Both A and R are true, but R is not the correct explanation of A",
+      "A is true, R is false",
+      "A is false, R is true"
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "multi_statement",
+     "m": 1,
+     "q": "Consider these statements. (I) lim (x -> -1) (1 + x + x^2 + ... + x^10) = 1. (II) lim (x -> 0) (ax + b)/(cx + 1) = a/c for all non-zero constants a, b and c. Which is or are correct?",
+     "a": "Only I",
+     "o": [
+      "Only I",
+      "Only II",
+      "Both I and II",
+      "Neither I nor II"
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hardest",
+     "t": "long_answer",
+     "m": 3,
+     "q": "A function f satisfies lim (x -> 2) (f(x) - 5)/(x - 2) = 3. Use the algebra of limits to find lim (x -> 2) f(x), justifying each step.",
+     "a": "For x not equal to 2, f(x) - 5 = [(f(x) - 5)/(x - 2)] . (x - 2). Both factors have limits as x -> 2: the first has limit 3 (given) and the second has limit 0. By the product rule for limits, lim (f(x) - 5) = 3 . 0 = 0. By the sum rule, lim f(x) = lim (f(x) - 5) + lim 5 = 0 + 5 = 5.",
+     "s": [
+      [
+       "Writes f(x) - 5 as the given quotient times (x - 2)",
+       1
+      ],
+      [
+       "Applies the product rule to get lim (f(x) - 5) = 3 . 0 = 0",
+       1
+      ],
+      [
+       "Concludes lim f(x) = 5 using the sum rule",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Evaluate",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "q": "Kiran evaluates lim (x -> 2) (x^2 - 3x + 2)/(x - 2) and writes: 'Substituting x = 2 gives 0/0, so the limit is 0.' Evaluate his working.",
+     "a": "He is wrong: 0/0 is not a value, it only signals a common factor. x^2 - 3x + 2 = (x - 1)(x - 2), so for x not equal to 2 the expression equals x - 1, and the limit is 2 - 1 = 1.",
+     "s": [
+      [
+       "States that the form 0/0 is not the value 0 and signals a common factor to cancel",
+       1
+      ],
+      [
+       "Factorises, cancels (x - 2) and obtains the limit 1",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Create",
+     "d": "Hardest",
+     "t": "long_answer",
+     "m": 3,
+     "q": "Construct a rational function, written as one polynomial over another, that takes the form 0/0 at x = 1 and whose limit as x -> 1 is 5. Show the evaluation of the limit.",
+     "a": "For example f(x) = (x^2 + 3x - 4)/(x - 1). At x = 1 the numerator is 1 + 3 - 4 = 0 and the denominator is 0. Since x^2 + 3x - 4 = (x - 1)(x + 4), for x not equal to 1 we have f(x) = x + 4, so the limit is 1 + 4 = 5. (Any correct construction earns full marks.)",
+     "s": [
+      [
+       "Gives a rational function with numerator and denominator both 0 at x = 1",
+       1
+      ],
+      [
+       "Factorises and cancels (x - 1)",
+       1
+      ],
+      [
+       "Shows that the limit equals 5",
+       1
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "code": "C11M-12.4",
+   "name": "The standard limit lim (x -> a) (x^n - a^n)/(x - a) = n a^(n-1)",
+   "description": "Statement and proof of the limit for positive integers n, the remark extending it to rational n with a positive, and its use to evaluate quotient and substitution limits.",
+   "idea": "x^n - a^n always has the factor (x - a); after cancelling it, n terms remain and each tends to a^(n-1).",
+   "rule": "lim (x -> a) (x^n - a^n)/(x - a) = n a^(n-1) for any positive integer n; it remains true for any rational n when a is positive.",
+   "example": "lim (x -> 1) (x^15 - 1)/(x^10 - 1) = [lim (x^15 - 1)/(x - 1)] / [lim (x^10 - 1)/(x - 1)] = 15/10 = 3/2.",
+   "difficulty_base": "Hard",
+   "questions": [
+    {
+     "b": "Remember",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "For any positive integer n, lim (x -> a) (x^n - a^n)/(x - a) is equal to",
+     "a": "n a^(n-1)",
+     "o": [
+      "n a^(n-1)",
+      "n a^n",
+      "a^(n-1)",
+      "(n - 1) a^n"
+     ]
+    },
+    {
+     "b": "Remember",
+     "d": "Easy",
+     "t": "fill_blank",
+     "m": 1,
+     "q": "lim (x -> 1) (x^15 - 1)/(x - 1) = ____. (Write a whole number.)",
+     "a": "15"
+    },
+    {
+     "b": "Remember",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "According to the textbook's remark, the result lim (x -> a) (x^n - a^n)/(x - a) = n a^(n-1) is also true when",
+     "a": "n is any rational number and a is positive",
+     "o": [
+      "n is any rational number and a is positive",
+      "n is any rational number and a is any real number, including negative values",
+      "n is a positive integer only, and for no other n",
+      "n is any rational number and a = 0"
+     ]
+    },
+    {
+     "b": "Remember",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "q": "Which of the following uses of the result lim (x -> a) (x^n - a^n)/(x - a) = n a^(n-1) is NOT correct?",
+     "a": "lim (x -> 2) (x^5 - 32)/(x - 2) = 5 . 2^5 = 160",
+     "o": [
+      "lim (x -> 2) (x^5 - 32)/(x - 2) = 5 . 2^5 = 160",
+      "lim (x -> 1) (x^4 - 1)/(x - 1) = 4 . 1^3 = 4",
+      "lim (x -> 7) (x^2 - 49)/(x - 7) = 2 . 7 = 14",
+      "lim (x -> 5) (x^2 - 25)/(x - 5) = 2 . 5 = 10"
+     ],
+     "rev": true
+    },
+    {
+     "b": "Understand",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "The proof of lim (x -> a) (x^n - a^n)/(x - a) = n a^(n-1) rests on the factorisation x^n - a^n =",
+     "a": "(x - a)(x^(n-1) + x^(n-2) a + ... + x a^(n-2) + a^(n-1))",
+     "o": [
+      "(x - a)(x^(n-1) + x^(n-2) a + ... + x a^(n-2) + a^(n-1))",
+      "(x - a)^n",
+      "(x - a)(x^(n-1) - x^(n-2) a + ... - x a^(n-2) + a^(n-1))",
+      "(x + a)(x^(n-1) + x^(n-2) a + ... + x a^(n-2) + a^(n-1))"
+     ]
+    },
+    {
+     "b": "Understand",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "In the proof of the standard limit, after (x - a) is cancelled the sum x^(n-1) + x^(n-2) a + ... + a^(n-1) is left. Each of its terms tends to a^(n-1) as x -> a. How many terms does the sum have?",
+     "a": "n",
+     "o": [
+      "n",
+      "n - 1",
+      "n + 1",
+      "2n"
+     ]
+    },
+    {
+     "b": "Understand",
+     "d": "Easy",
+     "t": "short_answer",
+     "m": 2,
+     "q": "Explain why lim (x -> a) (x^n - a^n)/(x - a) cannot be found by substituting x = a, and how the factorisation of x^n - a^n removes the difficulty.",
+     "a": "Substituting x = a gives (a^n - a^n)/(a - a) = 0/0, which is not defined. But x^n - a^n = (x - a)(x^(n-1) + x^(n-2) a + ... + a^(n-1)), and since x is not equal to a in the limiting process the factor (x - a) cancels. The remaining sum is a polynomial in x, so its limit is its value at x = a, namely n terms each equal to a^(n-1), i.e. n a^(n-1).",
+     "s": [
+      [
+       "States that substitution gives the undefined form 0/0",
+       1
+      ],
+      [
+       "Explains that the factor (x - a) cancels, leaving a polynomial whose value at a is n a^(n-1)",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Understand",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "q": "To evaluate lim (x -> 1) (x^15 - 1)/(x^10 - 1) with the standard limit, the expression is first rewritten as",
+     "a": "[(x^15 - 1)/(x - 1)] divided by [(x^10 - 1)/(x - 1)]",
+     "o": [
+      "[(x^15 - 1)/(x - 1)] divided by [(x^10 - 1)/(x - 1)]",
+      "[(x^15 - 1)/(x - 1)] multiplied by [(x^10 - 1)/(x - 1)]",
+      "x^5 - 1, because 15 - 10 = 5",
+      "[(x^15 - 1)/(x - 1)] minus [(x^10 - 1)/(x - 1)]"
+     ]
+    },
+    {
+     "b": "Understand",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "q": "To evaluate lim (x -> 0) (sqrt(1 + x) - 1)/x with the standard limit, the substitution y = 1 + x turns it into",
+     "a": "lim (y -> 1) (y^(1/2) - 1)/(y - 1)",
+     "o": [
+      "lim (y -> 1) (y^(1/2) - 1)/(y - 1)",
+      "lim (y -> 0) (y^(1/2) - 1)/(y - 1)",
+      "lim (y -> 1) (y^2 - 1)/(y - 1)",
+      "lim (y -> 1) (y^(1/2) - 1)/y"
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Easy",
+     "t": "fill_blank",
+     "m": 1,
+     "q": "lim (x -> 2) (x^4 - 16)/(x - 2) = ____. (Write a whole number.)",
+     "a": "32"
+    },
+    {
+     "b": "Apply",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "The value of lim (x -> 3) (x^3 - 27)/(x - 3) is",
+     "a": "27",
+     "o": [
+      "27",
+      "9",
+      "81",
+      "0"
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "q": "The value of lim (x -> 0) ((x + 1)^5 - 1)/x is",
+     "a": "5",
+     "o": [
+      "5",
+      "0",
+      "1",
+      "4"
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "q": "The value of lim (z -> 1) (z^(1/3) - 1)/(z^(1/6) - 1) is",
+     "a": "2",
+     "o": [
+      "2",
+      "1/2",
+      "1/18",
+      "1/6"
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "q": "Using the standard limit lim (x -> a) (x^n - a^n)/(x - a) = n a^(n-1), evaluate lim (x -> 1) (x^7 - 1)/(x^4 - 1).",
+     "a": "Divide numerator and denominator by (x - 1): the expression is [(x^7 - 1)/(x - 1)] / [(x^4 - 1)/(x - 1)]. As x -> 1 the numerator tends to 7 . 1^6 = 7 and the denominator to 4 . 1^3 = 4 (not zero), so the limit is 7/4.",
+     "s": [
+      [
+       "Rewrites the expression as a quotient of two standard-limit forms",
+       1
+      ],
+      [
+       "Applies the result to get 7/4",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hardest",
+     "t": "long_answer",
+     "m": 3,
+     "q": "Find the positive integer n for which lim (x -> 3) (x^n - 3^n)/(x - 3) = 108.",
+     "a": "By the standard limit, lim (x -> 3) (x^n - 3^n)/(x - 3) = n . 3^(n-1). So n . 3^(n-1) = 108 = 4 . 27 = 4 . 3^3, which is satisfied by n = 4. Check of nearby values: n = 3 gives 3 . 9 = 27 and n = 5 gives 5 . 81 = 405; since n . 3^(n-1) increases with n, n = 4 is the only solution.",
+     "s": [
+      [
+       "Applies the standard limit to get n . 3^(n-1) = 108",
+       1
+      ],
+      [
+       "Writes 108 = 4 . 3^3 and identifies n = 4",
+       1
+      ],
+      [
+       "Verifies the value and notes that no other positive integer works",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "assertion_reason",
+     "m": 1,
+     "q": "Assertion (A): lim (x -> 0) (sqrt(1 + x) - 1)/x = 1/2. Reason (R): The result lim (x -> a) (x^n - a^n)/(x - a) = n a^(n-1) holds only when n is a positive integer.",
+     "a": "A is true, R is false",
+     "o": [
+      "A is true, R is false",
+      "Both A and R are true, and R is the correct explanation of A",
+      "Both A and R are true, but R is not the correct explanation of A",
+      "A is false, R is true"
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "multi_statement",
+     "m": 1,
+     "q": "Consider these statements. (I) lim (x -> 2) (x^6 - 64)/(x - 2) = 6 . 2^6 = 384. (II) lim (x -> 1) (x^8 - 1)/(x^2 - 1) = 8 - 2 = 6. Which is or are correct?",
+     "a": "Neither I nor II",
+     "o": [
+      "Neither I nor II",
+      "Only I",
+      "Only II",
+      "Both I and II"
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hardest",
+     "t": "long_answer",
+     "m": 3,
+     "q": "Evaluate lim (x -> 2) (x^7 - 128)/(x^4 - 16) using the standard limit, and explain why the answer is not simply 7/4.",
+     "a": "Write the expression as [(x^7 - 2^7)/(x - 2)] / [(x^4 - 2^4)/(x - 2)]. As x -> 2 the numerator tends to 7 . 2^6 = 448 and the denominator tends to 4 . 2^3 = 32, which is not zero, so by the quotient rule the limit is 448/32 = 14. The answer is not 7/4 because the standard limit is n a^(n-1), not n: the powers a^(n-1) are 2^6 and 2^3, which do not cancel. The ratio of the exponents alone, 7/4, is the answer only when a = 1.",
+     "s": [
+      [
+       "Rewrites as a quotient of two standard-limit forms with a = 2",
+       1
+      ],
+      [
+       "Obtains 448/32 = 14",
+       1
+      ],
+      [
+       "Explains that the factors a^(n-1) (2^6 and 2^3) differ, so the ratio n/m is right only for a = 1",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Evaluate",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "q": "Sana writes: 'lim (x -> 2) (x^3 - 8)/(x - 2) = 3 . 2^3 = 24.' Evaluate her working.",
+     "a": "She has used n a^n instead of n a^(n-1). With n = 3 and a = 2 the limit is 3 . 2^2 = 12. (Check: (x^3 - 8)/(x - 2) = x^2 + 2x + 4, which is 12 at x = 2.)",
+     "s": [
+      [
+       "Identifies the error: the power of a should be n - 1, not n",
+       1
+      ],
+      [
+       "Gives the correct limit 12",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Create",
+     "d": "Hardest",
+     "t": "long_answer",
+     "m": 3,
+     "q": "Write down a limit of the form lim (x -> a) (x^n - a^n)/(x - a), with n at least 3 and a not equal to 1, whose value is 48. Verify your answer with the standard limit and also by factorising.",
+     "a": "For example n = 3 and a = 4: lim (x -> 4) (x^3 - 64)/(x - 4). By the standard limit its value is 3 . 4^2 = 48. By factorising, x^3 - 64 = (x - 4)(x^2 + 4x + 16), so the limit is 16 + 16 + 16 = 48. (a = -4 with n = 3 also works; any correct example earns full marks.)",
+     "s": [
+      [
+       "Gives a valid limit (for example n = 3, a = 4)",
+       1
+      ],
+      [
+       "Verifies the value 48 by the standard limit",
+       1
+      ],
+      [
+       "Verifies it again by factorising and substituting",
+       1
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "code": "C11M-12.5",
+   "name": "Limits of trigonometric functions: sandwich theorem, (sin x)/x and (1 - cos x)/x",
+   "description": "The sandwich theorem, the inequality cos x < (sin x)/x < 1, the two standard limits lim (x -> 0) (sin x)/x = 1 and lim (x -> 0) (1 - cos x)/x = 0, and limits evaluated from them.",
+   "idea": "(sin x)/x is trapped between cos x and 1, and both of these tend to 1 as x tends to 0, so (sin x)/x is forced to tend to 1 as well.",
+   "rule": "lim (x -> 0) (sin x)/x = 1 and lim (x -> 0) (1 - cos x)/x = 0, with x in radians. To use them, build the same quantity kx under sin kx and in the denominator.",
+   "example": "lim (x -> 0) (sin 4x)/(sin 2x) = 2 . [lim (sin 4x)/(4x)] / [lim (sin 2x)/(2x)] = 2 . 1/1 = 2.",
+   "difficulty_base": "Hard",
+   "questions": [
+    {
+     "b": "Remember",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "With x measured in radians, the value of lim (x -> 0) (sin x)/x is",
+     "a": "1",
+     "o": [
+      "1",
+      "0",
+      "pi",
+      "not defined, because the form is 0/0"
+     ]
+    },
+    {
+     "b": "Remember",
+     "d": "Easy",
+     "t": "fill_blank",
+     "m": 1,
+     "q": "lim (x -> 0) (1 - cos x)/x = ____. (Write a whole number.)",
+     "a": "0"
+    },
+    {
+     "b": "Remember",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "The Sandwich Theorem says: if f(x) <= g(x) <= h(x) for all x in the common domain and lim (x -> a) f(x) = l = lim (x -> a) h(x), then",
+     "a": "lim (x -> a) g(x) = l",
+     "o": [
+      "lim (x -> a) g(x) = l",
+      "lim (x -> a) g(x) may or may not exist",
+      "lim (x -> a) g(x) = 2l",
+      "g(x) = l for every x near a"
+     ]
+    },
+    {
+     "b": "Remember",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "q": "Which of the following statements about trigonometric functions and their limits is FALSE?",
+     "a": "lim (x -> 0) cos x = 0",
+     "o": [
+      "lim (x -> 0) cos x = 0",
+      "For 0 < |x| < pi/2, cos x < (sin x)/x < 1",
+      "lim (x -> pi/2) sin x = 1",
+      "For 0 < x < pi/2, sin x < x < tan x"
+     ],
+     "rev": true
+    },
+    {
+     "b": "Understand",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "In the proof that lim (x -> 0) (sin x)/x = 1, the function (sin x)/x is sandwiched between",
+     "a": "cos x and the constant function 1",
+     "o": [
+      "cos x and the constant function 1",
+      "sin x and tan x",
+      "the constant functions 0 and 1",
+      "cos x and tan x"
+     ]
+    },
+    {
+     "b": "Understand",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "The inequality sin x < x < tan x for 0 < x < pi/2 is obtained in the textbook by comparing the areas of",
+     "a": "a triangle inside a sector of a unit circle, the sector itself, and a larger triangle containing the sector",
+     "o": [
+      "a triangle inside a sector of a unit circle, the sector itself, and a larger triangle containing the sector",
+      "two similar right-angled triangles drawn on the same base",
+      "a square and the circle inscribed in it",
+      "the regions under the graphs of sin x and tan x"
+     ]
+    },
+    {
+     "b": "Understand",
+     "d": "Easy",
+     "t": "short_answer",
+     "m": 2,
+     "q": "Explain how lim (x -> 0) (tan x)/x = 1 follows from lim (x -> 0) (sin x)/x = 1.",
+     "a": "(tan x)/x = (sin x)/(x cos x) = [(sin x)/x] . [1/cos x]. As x -> 0, (sin x)/x -> 1 and cos x -> 1, so 1/cos x -> 1. By the product rule for limits, the limit is 1 . 1 = 1.",
+     "s": [
+      [
+       "Writes (tan x)/x as [(sin x)/x] . [1/cos x]",
+       1
+      ],
+      [
+       "Uses lim (sin x)/x = 1 and lim cos x = 1 with the product rule to get 1",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Understand",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "q": "To evaluate lim (x -> 0) (sin 4x)/(sin 2x) using lim (sin x)/x = 1, the expression is rewritten as",
+     "a": "2 . [(sin 4x)/(4x)] / [(sin 2x)/(2x)]",
+     "o": [
+      "2 . [(sin 4x)/(4x)] / [(sin 2x)/(2x)]",
+      "(sin 4)/(sin 2), by cancelling x",
+      "2 . [(sin 4x)/(2x)] / [(sin 2x)/(4x)]",
+      "[(sin 4x)/(4x)] / [(sin 2x)/(2x)]"
+     ]
+    },
+    {
+     "b": "Understand",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "q": "The proof that lim (x -> 0) (1 - cos x)/x = 0 begins by replacing 1 - cos x using the identity",
+     "a": "1 - cos x = 2 sin^2 (x/2)",
+     "o": [
+      "1 - cos x = 2 sin^2 (x/2)",
+      "1 - cos x = 2 cos^2 (x/2)",
+      "1 - cos x = sin^2 x",
+      "1 - cos x = 2 sin (x/2)"
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Easy",
+     "t": "fill_blank",
+     "m": 1,
+     "q": "lim (x -> 0) (sin 3x)/x = ____. (Write a whole number.)",
+     "a": "3"
+    },
+    {
+     "b": "Apply",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "The value of lim (x -> 0) (sin 2x)/(5x) is",
+     "a": "2/5",
+     "o": [
+      "2/5",
+      "5/2",
+      "1",
+      "0"
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "q": "The value of lim (x -> pi) sin(pi - x)/(pi(pi - x)) is",
+     "a": "1/pi",
+     "o": [
+      "1/pi",
+      "1",
+      "0",
+      "pi"
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "q": "The value of lim (x -> 0) (cos 2x - 1)/(cos x - 1) is",
+     "a": "4",
+     "o": [
+      "4",
+      "2",
+      "1",
+      "0"
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "q": "Evaluate lim (x -> 0) (3x + x cos x)/(2 sin x).",
+     "a": "Divide numerator and denominator by x (x is not 0): the expression is (3 + cos x)/(2 . (sin x)/x). As x -> 0, 3 + cos x -> 4 and (sin x)/x -> 1, so the limit is 4/(2 . 1) = 2.",
+     "s": [
+      [
+       "Divides through by x to get (3 + cos x)/(2 (sin x)/x)",
+       1
+      ],
+      [
+       "Uses lim (sin x)/x = 1 and lim cos x = 1 to get 2",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hardest",
+     "t": "long_answer",
+     "m": 3,
+     "q": "Evaluate lim (x -> 0) (cosec x - cot x), showing how the two standard trigonometric limits are used.",
+     "a": "cosec x - cot x = 1/sin x - cos x/sin x = (1 - cos x)/sin x. Dividing numerator and denominator by x: [(1 - cos x)/x] / [(sin x)/x]. As x -> 0 the numerator tends to 0 and the denominator tends to 1 (not zero), so by the quotient rule the limit is 0/1 = 0.",
+     "s": [
+      [
+       "Rewrites the expression as (1 - cos x)/sin x",
+       1
+      ],
+      [
+       "Divides numerator and denominator by x to produce the two standard forms",
+       1
+      ],
+      [
+       "Applies lim (1 - cos x)/x = 0 and lim (sin x)/x = 1 to get 0",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "assertion_reason",
+     "m": 1,
+     "q": "Assertion (A): lim (x -> 0) (sin 7x)/(sin 3x) = 7/3. Reason (R): For any non-zero constant k, kx -> 0 as x -> 0, so lim (x -> 0) (sin kx)/(kx) = 1.",
+     "a": "Both A and R are true, and R is the correct explanation of A",
+     "o": [
+      "Both A and R are true, and R is the correct explanation of A",
+      "Both A and R are true, but R is not the correct explanation of A",
+      "A is true, R is false",
+      "A is false, R is true"
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "multi_statement",
+     "m": 1,
+     "q": "Consider these statements. (I) lim (x -> 0) x sec x = 1. (II) lim (x -> 0) (cos x)/(pi - x) = 1/pi. Which is or are correct?",
+     "a": "Only II",
+     "o": [
+      "Only II",
+      "Only I",
+      "Both I and II",
+      "Neither I nor II"
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hardest",
+     "t": "long_answer",
+     "m": 3,
+     "q": "Evaluate lim (x -> pi/2) (tan 2x)/(x - pi/2). Explain the substitution you use and why it is needed.",
+     "a": "Direct substitution gives tan(pi)/0 = 0/0, and the standard limits are for a variable tending to 0, so put y = x - pi/2; then y -> 0 as x -> pi/2 and 2x = 2y + pi. Since tan(pi + 2y) = tan 2y, the limit becomes lim (y -> 0) (tan 2y)/y = lim [(sin 2y)/(2y)] . [2/cos 2y] = 1 . 2/1 = 2.",
+     "s": [
+      [
+       "Substitutes y = x - pi/2 so that y -> 0, explaining that the standard limit needs a variable tending to 0",
+       1
+      ],
+      [
+       "Uses tan(pi + 2y) = tan 2y to get lim (tan 2y)/y",
+       1
+      ],
+      [
+       "Evaluates it as [(sin 2y)/(2y)] . [2/cos 2y] -> 2",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Evaluate",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "q": "Dev says: 'lim (x -> 0) (sin 2x)/x = 1, because lim (x -> 0) (sin x)/x = 1.' Evaluate his reasoning.",
+     "a": "He is wrong. The standard limit needs the same quantity under the sine and in the denominator. (sin 2x)/x = 2 . (sin 2x)/(2x), and as x -> 0, 2x -> 0, so (sin 2x)/(2x) -> 1. The limit is therefore 2 . 1 = 2, not 1.",
+     "s": [
+      [
+       "States that the denominator must match the angle 2x for the standard limit to apply",
+       1
+      ],
+      [
+       "Rewrites as 2 (sin 2x)/(2x) and obtains 2",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Create",
+     "d": "Hardest",
+     "t": "long_answer",
+     "m": 3,
+     "q": "Construct a limit of the form lim (x -> 0) (sin ax)/(sin bx), where a and b are positive integers both greater than 1, whose value is 3/2. Prove that your limit has this value.",
+     "a": "For example a = 3 and b = 2: lim (x -> 0) (sin 3x)/(sin 2x). Write (sin 3x)/(sin 2x) = (3/2) . [(sin 3x)/(3x)] / [(sin 2x)/(2x)]. As x -> 0, 3x -> 0 and 2x -> 0, so both brackets tend to 1 and the limit is (3/2) . 1/1 = 3/2. (a = 6, b = 4 and other pairs with a/b = 3/2 also earn full marks.)",
+     "s": [
+      [
+       "Chooses integers a, b > 1 with a/b = 3/2",
+       1
+      ],
+      [
+       "Rewrites the quotient with (sin ax)/(ax) and (sin bx)/(bx)",
+       1
+      ],
+      [
+       "Uses the standard limit to show the value is 3/2",
+       1
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "code": "C11M-12.6",
+   "name": "Derivative at a point and derivative from first principle",
+   "description": "The definition f'(a) = lim (h -> 0) [f(a + h) - f(a)]/h, its meaning as the slope of the tangent, the derivative function f'(x) by first principle, and the notations f'(x), dy/dx and D(f(x)).",
+   "idea": "[f(a + h) - f(a)]/h is the slope of the chord through (a, f(a)) and (a + h, f(a + h)); as h tends to 0 the chord turns into the tangent, and the limit of the slope is the derivative.",
+   "rule": "f'(x) = lim (h -> 0) [f(x + h) - f(x)]/h, wherever this limit exists. Simplify the quotient until h cancels, then let h tend to 0.",
+   "example": "For f(x) = 1/x: [1/(x + h) - 1/x]/h = -1/(x(x + h)), which tends to -1/x^2 as h -> 0.",
+   "difficulty_base": "Hard",
+   "questions": [
+    {
+     "b": "Remember",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "The derivative of a function f at a point a of its domain is defined as",
+     "a": "lim (h -> 0) [f(a + h) - f(a)]/h, provided this limit exists",
+     "o": [
+      "lim (h -> 0) [f(a + h) - f(a)]/h, provided this limit exists",
+      "lim (h -> 0) [f(a + h) + f(a)]/h, provided this limit exists",
+      "the value of [f(a + h) - f(a)]/h when h = 1",
+      "lim (h -> 0) [f(a + h) - f(a)], provided this limit exists"
+     ]
+    },
+    {
+     "b": "Remember",
+     "d": "Easy",
+     "t": "fill_blank",
+     "m": 1,
+     "q": "The derivative of the constant function f(x) = 3 at x = 0 is ____. (Write a whole number.)",
+     "a": "0"
+    },
+    {
+     "b": "Remember",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "Finding f'(x) directly from the definition lim (h -> 0) [f(x + h) - f(x)]/h is called finding the derivative",
+     "a": "from the first principle",
+     "o": [
+      "from the first principle",
+      "by the product rule",
+      "by the sandwich theorem",
+      "by the quotient rule"
+     ]
+    },
+    {
+     "b": "Remember",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "q": "Which of the following is NOT a notation for the derivative of y = f(x) with respect to x?",
+     "a": "f(x)/x",
+     "o": [
+      "f(x)/x",
+      "f'(x)",
+      "dy/dx",
+      "D(f(x))"
+     ],
+     "rev": true
+    },
+    {
+     "b": "Understand",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "Geometrically, the derivative f'(a) is",
+     "a": "the slope of the tangent to the curve y = f(x) at the point (a, f(a))",
+     "o": [
+      "the slope of the tangent to the curve y = f(x) at the point (a, f(a))",
+      "the slope of the chord joining (a, f(a)) to (a + 1, f(a + 1))",
+      "the y-coordinate of the point of the curve where x = a",
+      "the angle, in radians, that the tangent at (a, f(a)) makes with the x-axis"
+     ]
+    },
+    {
+     "b": "Understand",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "For h not equal to 0, with P = (a, f(a)) and Q = (a + h, f(a + h)) on the curve y = f(x), the ratio [f(a + h) - f(a)]/h is",
+     "a": "the slope of the chord PQ",
+     "o": [
+      "the slope of the chord PQ",
+      "the slope of the tangent at P",
+      "the length of the chord PQ",
+      "the slope of the tangent at Q"
+     ]
+    },
+    {
+     "b": "Understand",
+     "d": "Easy",
+     "t": "short_answer",
+     "m": 2,
+     "q": "Explain, both intuitively and from the definition, why the derivative of a constant function f(x) = c is zero at every point.",
+     "a": "Intuitively, the derivative measures the change in the function, and a constant function does not change at all. From the definition, f'(x) = lim (h -> 0) [f(x + h) - f(x)]/h = lim (h -> 0) (c - c)/h = lim (h -> 0) 0/h = 0, since h is not 0.",
+     "s": [
+      [
+       "Gives the intuitive reason: the derivative measures change and a constant does not change",
+       1
+      ],
+      [
+       "Shows from the definition that the quotient is (c - c)/h = 0, so the limit is 0",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Understand",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "q": "For a function f, the domain of definition of the derivative function f' consists of",
+     "a": "the points x at which lim (h -> 0) [f(x + h) - f(x)]/h exists",
+     "o": [
+      "the points x at which lim (h -> 0) [f(x + h) - f(x)]/h exists",
+      "all real numbers, whatever f is",
+      "the points x at which f(x) is not 0",
+      "the points x at which f(x) is positive"
+     ]
+    },
+    {
+     "b": "Understand",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "q": "When the first principle is applied to f(x) = x^2, the quotient [f(x + h) - f(x)]/h simplifies, for h not equal to 0, to",
+     "a": "2x + h",
+     "o": [
+      "2x + h",
+      "2x",
+      "h",
+      "2xh + h^2"
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Easy",
+     "t": "fill_blank",
+     "m": 1,
+     "q": "The derivative of f(x) = 99x at x = 100 is ____. (Write a whole number.)",
+     "a": "99"
+    },
+    {
+     "b": "Apply",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "The derivative of f(x) = x^2 - 2 at x = 10 is",
+     "a": "20",
+     "o": [
+      "20",
+      "98",
+      "18",
+      "100"
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "q": "For f(x) = 3x^2 - 4x + 1, the value of f'(2), found from the definition of the derivative at a point, is",
+     "a": "8",
+     "o": [
+      "8",
+      "5",
+      "12",
+      "2"
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "q": "The derivative of f(x) = 1/x^2 (x not 0), found from the first principle, is",
+     "a": "-2/x^3",
+     "o": [
+      "-2/x^3",
+      "-1/x^3",
+      "2/x^3",
+      "-2/x"
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "q": "Find the derivative of f(x) = (x - 1)(x - 2) from the first principle.",
+     "a": "f(x) = x^2 - 3x + 2. f(x + h) - f(x) = (x + h)^2 - 3(x + h) + 2 - x^2 + 3x - 2 = 2xh + h^2 - 3h. Dividing by h (h not 0) gives 2x + h - 3, and as h -> 0 this tends to 2x - 3. So f'(x) = 2x - 3.",
+     "s": [
+      [
+       "Forms and simplifies the quotient [f(x + h) - f(x)]/h to 2x + h - 3",
+       1
+      ],
+      [
+       "Takes the limit as h -> 0 to get 2x - 3",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hardest",
+     "t": "long_answer",
+     "m": 3,
+     "q": "Find the derivative of f(x) = (x + 1)/(x - 1), x not equal to 1, from the first principle.",
+     "a": "f(x + h) - f(x) = (x + h + 1)/(x + h - 1) - (x + 1)/(x - 1) = [(x + h + 1)(x - 1) - (x + 1)(x + h - 1)]/[(x + h - 1)(x - 1)]. The numerator is (x^2 + hx - h - 1) - (x^2 + hx + h - 1) = -2h. So [f(x + h) - f(x)]/h = -2/[(x + h - 1)(x - 1)], and as h -> 0 this tends to -2/(x - 1)^2. Hence f'(x) = -2/(x - 1)^2.",
+     "s": [
+      [
+       "Writes f(x + h) - f(x) over the common denominator (x + h - 1)(x - 1)",
+       1
+      ],
+      [
+       "Simplifies the numerator to -2h and cancels h",
+       1
+      ],
+      [
+       "Takes the limit to get -2/(x - 1)^2",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "assertion_reason",
+     "m": 1,
+     "q": "Assertion (A): The derivative of f(x) = sin x at x = 0 is 0. Reason (R): For f(x) = sin x, f'(0) = lim (h -> 0) [sin(0 + h) - sin 0]/h = lim (h -> 0) (sin h)/h.",
+     "a": "A is false, R is true",
+     "o": [
+      "A is false, R is true",
+      "Both A and R are true, and R is the correct explanation of A",
+      "Both A and R are true, but R is not the correct explanation of A",
+      "A is true, R is false"
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "multi_statement",
+     "m": 1,
+     "q": "Consider these statements. (I) For f(x) = 2x^2 + 3x - 5, f'(0) + 3 f'(-1) = 0. (II) The derivative of f(x) = 10x at x = 7 is 70. Which is or are correct?",
+     "a": "Only I",
+     "o": [
+      "Only I",
+      "Only II",
+      "Both I and II",
+      "Neither I nor II"
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hardest",
+     "t": "long_answer",
+     "m": 3,
+     "q": "Find the derivative of f(x) = x + 1/x from the first principle. State the point at which f' is not defined and find all x for which f'(x) = 0.",
+     "a": "[f(x + h) - f(x)]/h = [h + 1/(x + h) - 1/x]/h = [h - h/(x(x + h))]/h = 1 - 1/(x(x + h)). As h -> 0 this tends to 1 - 1/x^2, so f'(x) = 1 - 1/x^2. Like f itself, f' is not defined at x = 0. f'(x) = 0 when 1/x^2 = 1, i.e. x^2 = 1, so x = 1 or x = -1.",
+     "s": [
+      [
+       "Simplifies the quotient to 1 - 1/(x(x + h))",
+       1
+      ],
+      [
+       "Takes the limit to get f'(x) = 1 - 1/x^2 and states it is not defined at x = 0",
+       1
+      ],
+      [
+       "Solves f'(x) = 0 to get x = 1 and x = -1",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Evaluate",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "q": "Anu says: 'By the first principle, the derivative of f(x) = x^3 - 27 is 3x^2 - 27, because the constant stays as it is.' Evaluate her claim.",
+     "a": "She is wrong. In f(x + h) - f(x) = [(x + h)^3 - 27] - [x^3 - 27] the constants cancel, leaving 3x^2 h + 3x h^2 + h^3. Dividing by h gives 3x^2 + 3xh + h^2, which tends to 3x^2 as h -> 0. So f'(x) = 3x^2; the constant -27 contributes nothing.",
+     "s": [
+      [
+       "Shows that the constant -27 cancels in f(x + h) - f(x)",
+       1
+      ],
+      [
+       "Obtains the correct derivative 3x^2 from the quotient 3x^2 + 3xh + h^2",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Create",
+     "d": "Hardest",
+     "t": "long_answer",
+     "m": 3,
+     "q": "Construct a quadratic function f(x) = ax^2 + bx + c for which f'(0) = -1 and f'(1) = 5. Explain how you chose a and b, and verify f'(1) = 5 from the definition of the derivative at a point.",
+     "a": "By the first principle, [f(x + h) - f(x)]/h = 2ax + ah + b, so f'(x) = 2ax + b. f'(0) = b = -1 and f'(1) = 2a + b = 5 give a = 3. So f(x) = 3x^2 - x + c for any constant c, for example f(x) = 3x^2 - x. Check: [f(1 + h) - f(1)]/h = [3(1 + h)^2 - (1 + h) - 2]/h = (5h + 3h^2)/h = 5 + 3h, which tends to 5 as h -> 0.",
+     "s": [
+      [
+       "Obtains f'(x) = 2ax + b and the conditions b = -1, 2a + b = 5",
+       1
+      ],
+      [
+       "Gives a valid quadratic with a = 3, b = -1",
+       1
+      ],
+      [
+       "Verifies f'(1) = 5 from the definition",
+       1
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "code": "C11M-12.7",
+   "name": "Algebra of derivatives; derivative of x^n and of polynomials",
+   "description": "The sum, difference, product (Leibnitz) and quotient rules, the result d/dx (x^n) = n x^(n-1), term-by-term differentiation of polynomials, and derivatives of products and quotients of polynomials.",
+   "idea": "Because a derivative is a limit, the rules for derivatives follow those for limits - except that the product and quotient rules are not simply 'product of derivatives' and 'quotient of derivatives'.",
+   "rule": "(u + v)' = u' + v', (u - v)' = u' - v', (uv)' = u'v + uv', (u/v)' = (u'v - uv')/v^2, and d/dx (x^n) = n x^(n-1).",
+   "example": "d/dx [(x + 1)/x] = [1 . x - (x + 1) . 1]/x^2 = -1/x^2.",
+   "difficulty_base": "Hard",
+   "questions": [
+    {
+     "b": "Remember",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "For functions u and v, the product rule states that (uv)' is equal to",
+     "a": "u'v + uv'",
+     "o": [
+      "u'v + uv'",
+      "u'v'",
+      "u'v - uv'",
+      "uv' only"
+     ]
+    },
+    {
+     "b": "Remember",
+     "d": "Easy",
+     "t": "fill_blank",
+     "m": 1,
+     "q": "The derivative of f(x) = x with respect to x is the constant function with value ____. (Write a whole number.)",
+     "a": "1"
+    },
+    {
+     "b": "Remember",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "For a positive integer n, the derivative of f(x) = x^n is",
+     "a": "n x^(n-1)",
+     "o": [
+      "n x^(n-1)",
+      "x^(n-1)",
+      "n x^n",
+      "(n - 1) x^n"
+     ]
+    },
+    {
+     "b": "Remember",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "q": "Which of the following rules of the algebra of derivatives is NOT correct?",
+     "a": "(u/v)' = (u'v + uv')/v^2",
+     "o": [
+      "(u/v)' = (u'v + uv')/v^2",
+      "(u + v)' = u' + v'",
+      "(uv)' = u'v + uv'",
+      "(u - v)' = u' - v'"
+     ],
+     "rev": true
+    },
+    {
+     "b": "Understand",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "Writing 10x = uv with u the constant function 10 and v(x) = x, the product rule gives the derivative of 10x as",
+     "a": "0 . x + 10 . 1 = 10",
+     "o": [
+      "0 . x + 10 . 1 = 10",
+      "10 . 1 . x = 10x",
+      "0 . 1 = 0",
+      "10 + x"
+     ]
+    },
+    {
+     "b": "Understand",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "The derivative of a polynomial a_n x^n + ... + a_1 x + a_0 is obtained by",
+     "a": "differentiating term by term, using the sum rule and d/dx (x^n) = n x^(n-1)",
+     "o": [
+      "differentiating term by term, using the sum rule and d/dx (x^n) = n x^(n-1)",
+      "lowering every exponent by 1 without changing any coefficient",
+      "multiplying every term by its exponent without changing the exponent",
+      "differentiating only the term of highest degree"
+     ]
+    },
+    {
+     "b": "Understand",
+     "d": "Easy",
+     "t": "short_answer",
+     "m": 2,
+     "q": "Using the product rule on x^2 = x . x, show that the derivative of x^2 is 2x.",
+     "a": "Take u = x and v = x, so u' = 1 and v' = 1. By the product rule, d/dx (x . x) = u'v + uv' = 1 . x + x . 1 = 2x.",
+     "s": [
+      [
+       "Sets u = v = x with u' = v' = 1",
+       1
+      ],
+      [
+       "Applies (uv)' = u'v + uv' to get x + x = 2x",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Understand",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "q": "By the quotient rule with u = x + 1 and v = x, the derivative of f(x) = (x + 1)/x (x not 0) is",
+     "a": "-1/x^2",
+     "o": [
+      "-1/x^2",
+      "1/x^2",
+      "1",
+      "(2x + 1)/x^2"
+     ]
+    },
+    {
+     "b": "Understand",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "q": "Raju differentiates x^3 . x^2 as 3x^2 . 2x = 6x^3. Which option gives the correct derivative together with his error?",
+     "a": "5x^4; he multiplied the derivatives instead of using (uv)' = u'v + uv'",
+     "o": [
+      "5x^4; he multiplied the derivatives instead of using (uv)' = u'v + uv'",
+      "6x^3; there is no error in his working",
+      "5x^4; he should have added the two derivatives to get 3x^2 + 2x",
+      "6x^5; he forgot to add the exponents after differentiating"
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Easy",
+     "t": "fill_blank",
+     "m": 1,
+     "q": "If f(x) = x^3 + 2x, then f'(1) = ____. (Write a whole number.)",
+     "a": "5"
+    },
+    {
+     "b": "Apply",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "The derivative of 6x^100 - x^55 + x is",
+     "a": "600x^99 - 55x^54 + 1",
+     "o": [
+      "600x^99 - 55x^54 + 1",
+      "600x^99 - 55x^54",
+      "6x^99 - x^54 + 1",
+      "600x^100 - 55x^55 + x"
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "q": "The derivative of (5x^3 + 3x - 1)(x - 1) is",
+     "a": "20x^3 - 15x^2 + 6x - 4",
+     "o": [
+      "20x^3 - 15x^2 + 6x - 4",
+      "15x^2 + 3",
+      "10x^3 - 15x^2 - 2",
+      "20x^3 - 15x^2 + 6x"
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "q": "The derivative of x^(-3) (5 + 3x) is",
+     "a": "-15x^(-4) - 6x^(-3)",
+     "o": [
+      "-15x^(-4) - 6x^(-3)",
+      "-9x^(-4)",
+      "-15x^(-2) - 6x^(-1)",
+      "15x^(-4) + 6x^(-3)"
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "q": "Using the quotient rule, find the derivative of f(x) = (3x + 1)/(x - 4), x not equal to 4.",
+     "a": "u = 3x + 1, v = x - 4, so u' = 3 and v' = 1. f'(x) = (u'v - uv')/v^2 = [3(x - 4) - (3x + 1)]/(x - 4)^2 = (3x - 12 - 3x - 1)/(x - 4)^2 = -13/(x - 4)^2.",
+     "s": [
+      [
+       "Identifies u, v, u', v' and substitutes in (u'v - uv')/v^2",
+       1
+      ],
+      [
+       "Simplifies to -13/(x - 4)^2",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hardest",
+     "t": "long_answer",
+     "m": 3,
+     "q": "For f(x) = x^100/100 + x^99/99 + ... + x^2/2 + x + 1, prove that f'(1) = 100 f'(0).",
+     "a": "Differentiating term by term, d/dx (x^k/k) = k x^(k-1)/k = x^(k-1), and the derivative of the constant 1 is 0. So f'(x) = x^99 + x^98 + ... + x + 1, which has 100 terms. Then f'(1) = 1 + 1 + ... + 1 = 100 and f'(0) = 0 + ... + 0 + 1 = 1. Hence f'(1) = 100 = 100 f'(0).",
+     "s": [
+      [
+       "Differentiates term by term to get f'(x) = x^99 + x^98 + ... + x + 1",
+       1
+      ],
+      [
+       "Finds f'(1) = 100 by counting 100 terms",
+       1
+      ],
+      [
+       "Finds f'(0) = 1 and concludes f'(1) = 100 f'(0)",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "assertion_reason",
+     "m": 1,
+     "q": "Assertion (A): The derivative of f(x) = 1 + x + x^2 + ... + x^50 at x = 1 is 1275. Reason (R): The derivative of a sum of functions is the product of the derivatives of the functions.",
+     "a": "A is true, R is false",
+     "o": [
+      "A is true, R is false",
+      "Both A and R are true, and R is the correct explanation of A",
+      "Both A and R are true, but R is not the correct explanation of A",
+      "A is false, R is true"
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "multi_statement",
+     "m": 1,
+     "q": "Consider these statements. (I) d/dx (x^(-4)) = -4x^(-5). (II) For constants a and b, d/dx [(x - a)(x - b)] = 2x - a - b. Which is or are correct?",
+     "a": "Both I and II",
+     "o": [
+      "Both I and II",
+      "Only I",
+      "Only II",
+      "Neither I nor II"
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hardest",
+     "t": "long_answer",
+     "m": 3,
+     "q": "Find the derivative of f(x) = (x^2 + 1)/(x - 1), x not equal to 1, by the quotient rule, and find all values of x at which f'(x) = 0.",
+     "a": "u = x^2 + 1, v = x - 1, u' = 2x, v' = 1. f'(x) = [2x(x - 1) - (x^2 + 1)]/(x - 1)^2 = (x^2 - 2x - 1)/(x - 1)^2. f'(x) = 0 when the numerator is 0 (the denominator is not 0 for x not 1): x^2 - 2x - 1 = 0, so x = [2 +/- sqrt(8)]/2 = 1 + sqrt(2) or 1 - sqrt(2).",
+     "s": [
+      [
+       "Applies the quotient rule with u' = 2x and v' = 1",
+       1
+      ],
+      [
+       "Simplifies to (x^2 - 2x - 1)/(x - 1)^2",
+       1
+      ],
+      [
+       "Solves x^2 - 2x - 1 = 0 to get x = 1 + sqrt(2) and x = 1 - sqrt(2)",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Evaluate",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "q": "Tara differentiates f(x) = (2x + 1)/(x + 3) by writing f'(x) = u'/v' = 2/1 = 2. Evaluate her method and give the correct derivative.",
+     "a": "Her method is wrong: the derivative of a quotient is not the quotient of the derivatives. The quotient rule gives f'(x) = (u'v - uv')/v^2 = [2(x + 3) - (2x + 1)]/(x + 3)^2 = 5/(x + 3)^2.",
+     "s": [
+      [
+       "States that (u/v)' is not u'/v' and that the quotient rule must be used",
+       1
+      ],
+      [
+       "Obtains the correct derivative 5/(x + 3)^2",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Create",
+     "d": "Hardest",
+     "t": "long_answer",
+     "m": 3,
+     "q": "Choose two different non-constant polynomials u(x) and v(x) of your own. Find the derivative of their product by the product rule, and verify your answer by first multiplying out uv and differentiating term by term.",
+     "a": "For example u = x^2 + 1 and v = 3x - 2, so u' = 2x and v' = 3. Product rule: (uv)' = 2x(3x - 2) + (x^2 + 1)(3) = 6x^2 - 4x + 3x^2 + 3 = 9x^2 - 4x + 3. Expanding: uv = 3x^3 - 2x^2 + 3x - 2, whose term-by-term derivative is 9x^2 - 4x + 3. The two agree. (Any correct pair earns full marks.)",
+     "s": [
+      [
+       "Chooses two non-constant polynomials and applies (uv)' = u'v + uv' correctly",
+       1
+      ],
+      [
+       "Expands uv and differentiates term by term",
+       1
+      ],
+      [
+       "Shows that the two results agree",
+       1
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "code": "C11M-12.8",
+   "name": "Derivatives of trigonometric functions",
+   "description": "The derivatives of sin x, cos x and tan x from first principle, those of cot x, sec x and cosec x by the quotient rule, and derivatives of sums, products and quotients involving trigonometric functions.",
+   "idea": "The first principle applied to sin x uses the formula for sin A - sin B and the limit of (sin h)/h; every other trigonometric derivative then follows from the product and quotient rules.",
+   "rule": "d/dx (sin x) = cos x, d/dx (cos x) = -sin x, d/dx (tan x) = sec^2 x. Functions such as sin 2x are differentiated by first rewriting them with a trigonometric identity.",
+   "example": "d/dx (sin^2 x) = d/dx (sin x . sin x) = cos x sin x + sin x cos x = 2 sin x cos x = sin 2x.",
+   "difficulty_base": "Hard",
+   "questions": [
+    {
+     "b": "Remember",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "The derivative of sin x with respect to x is",
+     "a": "cos x",
+     "o": [
+      "cos x",
+      "-cos x",
+      "-sin x",
+      "sec^2 x"
+     ]
+    },
+    {
+     "b": "Remember",
+     "d": "Easy",
+     "t": "fill_blank",
+     "m": 1,
+     "q": "The derivative of cos x at x = 0 is ____. (Write a whole number.)",
+     "a": "0"
+    },
+    {
+     "b": "Remember",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "The derivative of tan x with respect to x is",
+     "a": "sec^2 x",
+     "o": [
+      "sec^2 x",
+      "-cosec^2 x",
+      "sec x tan x",
+      "cot x"
+     ]
+    },
+    {
+     "b": "Remember",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "q": "Which of the following derivatives of trigonometric functions is NOT correct?",
+     "a": "d/dx (cos x) = sin x",
+     "o": [
+      "d/dx (cos x) = sin x",
+      "d/dx (cot x) = -cosec^2 x",
+      "d/dx (sin^2 x) = sin 2x",
+      "d/dx (cosec x) = -cosec x cot x"
+     ],
+     "rev": true
+    },
+    {
+     "b": "Understand",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "In finding the derivative of sin x from the first principle, sin(x + h) - sin x is rewritten as",
+     "a": "2 cos((2x + h)/2) sin(h/2)",
+     "o": [
+      "2 cos((2x + h)/2) sin(h/2)",
+      "2 sin((2x + h)/2) cos(h/2)",
+      "sin h",
+      "2 cos((2x + h)/2) cos(h/2)"
+     ]
+    },
+    {
+     "b": "Understand",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "The textbook finds the derivative of f(x) = sin^2 x by",
+     "a": "writing sin^2 x = sin x . sin x and using the product rule",
+     "o": [
+      "writing sin^2 x = sin x . sin x and using the product rule",
+      "squaring the derivative of sin x",
+      "replacing sin^2 x by 2 sin x before differentiating",
+      "treating sin^2 x as a constant"
+     ]
+    },
+    {
+     "b": "Understand",
+     "d": "Easy",
+     "t": "short_answer",
+     "m": 2,
+     "q": "Using the quotient rule on cosec x = 1/sin x, show that d/dx (cosec x) = -cosec x cot x.",
+     "a": "u = 1, v = sin x, so u' = 0 and v' = cos x. d/dx (1/sin x) = (u'v - uv')/v^2 = (0 . sin x - 1 . cos x)/sin^2 x = -cos x/sin^2 x = -(1/sin x)(cos x/sin x) = -cosec x cot x.",
+     "s": [
+      [
+       "Applies the quotient rule with u = 1, v = sin x to get -cos x/sin^2 x",
+       1
+      ],
+      [
+       "Rewrites this as -cosec x cot x",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Understand",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "q": "By the product rule, the derivative of sin x cos x is",
+     "a": "cos^2 x - sin^2 x",
+     "o": [
+      "cos^2 x - sin^2 x",
+      "-sin x cos x",
+      "1",
+      "2 sin x cos x"
+     ]
+    },
+    {
+     "b": "Understand",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "q": "In finding the derivative of cos x from the first principle, cos(x + h) - cos x is rewritten as -2 sin((2x + h)/2) sin(h/2). Dividing by h and letting h -> 0 then gives",
+     "a": "-sin x, because sin(h/2)/(h/2) -> 1 and sin((2x + h)/2) -> sin x",
+     "o": [
+      "-sin x, because sin(h/2)/(h/2) -> 1 and sin((2x + h)/2) -> sin x",
+      "sin x, because the factor -2 is cancelled by the 2 in h/2",
+      "-cos x, because sin((2x + h)/2) -> cos x",
+      "0, because sin(h/2) -> 0"
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Easy",
+     "t": "fill_blank",
+     "m": 1,
+     "q": "The derivative of f(x) = 5 sin x at x = 0 is ____. (Write a whole number.)",
+     "a": "5"
+    },
+    {
+     "b": "Apply",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "The derivative of 5 sin x - 6 cos x + 7 is",
+     "a": "5 cos x + 6 sin x",
+     "o": [
+      "5 cos x + 6 sin x",
+      "5 cos x - 6 sin x",
+      "5 cos x + 6 sin x + 7",
+      "-5 cos x + 6 sin x"
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "q": "The derivative of x sin x is",
+     "a": "x cos x + sin x",
+     "o": [
+      "x cos x + sin x",
+      "cos x",
+      "x cos x - sin x",
+      "sin x - x cos x"
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "q": "The derivative of 2 tan x - 7 sec x is",
+     "a": "2 sec^2 x - 7 sec x tan x",
+     "o": [
+      "2 sec^2 x - 7 sec x tan x",
+      "2 sec^2 x + 7 sec x tan x",
+      "2 sec x tan x - 7 sec^2 x",
+      "-2 cosec^2 x - 7 sec x tan x"
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "q": "Find the derivative of f(x) = cos x/(1 + sin x) and write it in simplest form.",
+     "a": "u = cos x, v = 1 + sin x, so u' = -sin x and v' = cos x. f'(x) = [-sin x (1 + sin x) - cos x . cos x]/(1 + sin x)^2 = (-sin x - sin^2 x - cos^2 x)/(1 + sin x)^2 = -(1 + sin x)/(1 + sin x)^2 = -1/(1 + sin x).",
+     "s": [
+      [
+       "Applies the quotient rule with u' = -sin x and v' = cos x",
+       1
+      ],
+      [
+       "Uses sin^2 x + cos^2 x = 1 to simplify to -1/(1 + sin x)",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hardest",
+     "t": "long_answer",
+     "m": 3,
+     "q": "Find the derivative of f(x) = (sin x + cos x)/(sin x - cos x) and simplify it.",
+     "a": "u = sin x + cos x, v = sin x - cos x, so u' = cos x - sin x and v' = cos x + sin x. u'v - uv' = (cos x - sin x)(sin x - cos x) - (sin x + cos x)(cos x + sin x) = -(sin x - cos x)^2 - (sin x + cos x)^2 = -(1 - 2 sin x cos x) - (1 + 2 sin x cos x) = -2. Hence f'(x) = -2/(sin x - cos x)^2.",
+     "s": [
+      [
+       "Finds u' = cos x - sin x and v' = cos x + sin x and sets up (u'v - uv')/v^2",
+       1
+      ],
+      [
+       "Simplifies the numerator to -2 using sin^2 x + cos^2 x = 1",
+       1
+      ],
+      [
+       "States f'(x) = -2/(sin x - cos x)^2",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "assertion_reason",
+     "m": 1,
+     "q": "Assertion (A): d/dx (sin x + cos x) = cos x - sin x. Reason (R): sin^2 x + cos^2 x = 1 for every real number x.",
+     "a": "Both A and R are true, but R is not the correct explanation of A",
+     "o": [
+      "Both A and R are true, but R is not the correct explanation of A",
+      "Both A and R are true, and R is the correct explanation of A",
+      "A is true, R is false",
+      "A is false, R is true"
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "multi_statement",
+     "m": 1,
+     "q": "Consider these statements. (I) d/dx [x^4 (5 sin x - 3 cos x)] = 4x^3 (5 cos x + 3 sin x). (II) d/dx (sec x) = sec^2 x. Which is or are correct?",
+     "a": "Neither I nor II",
+     "o": [
+      "Neither I nor II",
+      "Only I",
+      "Only II",
+      "Both I and II"
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hardest",
+     "t": "long_answer",
+     "m": 3,
+     "q": "For a constant a, find the derivative of sin(x + a) by first expanding it with the addition formula. Then put a = pi/2 and explain how your result agrees with the derivative of cos x.",
+     "a": "sin(x + a) = sin x cos a + cos x sin a, where cos a and sin a are constants. So its derivative is cos x cos a - sin x sin a = cos(x + a). With a = pi/2: sin(x + pi/2) = cos x, and the formula gives its derivative as cos(x + pi/2) = -sin x. This agrees with d/dx (cos x) = -sin x.",
+     "s": [
+      [
+       "Expands sin(x + a) = sin x cos a + cos x sin a and treats cos a, sin a as constants",
+       1
+      ],
+      [
+       "Differentiates to get cos x cos a - sin x sin a = cos(x + a)",
+       1
+      ],
+      [
+       "Puts a = pi/2 and matches -sin x with the derivative of cos x",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Evaluate",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "q": "Neel claims: 'd/dx (sin 2x) = cos 2x, because the derivative of sin is cos.' Evaluate his claim using sin 2x = 2 sin x cos x.",
+     "a": "He is wrong. sin 2x = 2 sin x cos x, so by the product rule its derivative is 2[cos x . cos x + sin x . (-sin x)] = 2(cos^2 x - sin^2 x) = 2 cos 2x. His answer is missing the factor 2: the result d/dx (sin x) = cos x applies to sin x, not directly to sin 2x.",
+     "s": [
+      [
+       "Differentiates 2 sin x cos x by the product rule to get 2(cos^2 x - sin^2 x)",
+       1
+      ],
+      [
+       "Concludes the derivative is 2 cos 2x, so the claim cos 2x is wrong",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Create",
+     "d": "Hardest",
+     "t": "long_answer",
+     "m": 3,
+     "q": "Construct a function that is the product of a non-constant polynomial and one of sin x or cos x. Find its derivative by the product rule and evaluate the derivative at x = 0.",
+     "a": "For example f(x) = (x^2 + 1) cos x. With u = x^2 + 1 and v = cos x, u' = 2x and v' = -sin x, so f'(x) = 2x cos x - (x^2 + 1) sin x. At x = 0: f'(0) = 0 . 1 - 1 . 0 = 0. (Any correct example earns full marks.)",
+     "s": [
+      [
+       "Gives a valid product of a non-constant polynomial and sin x or cos x",
+       1
+      ],
+      [
+       "Applies (uv)' = u'v + uv' with the correct trigonometric derivative",
+       1
+      ],
+      [
+       "Evaluates the derivative correctly at x = 0",
+       1
+      ]
+     ]
+    }
+   ]
+  }
+ ]
+}
