@@ -239,7 +239,7 @@ export function AdaptiveOverview({
               <Button variant="pop" size="lg">
                 {next.is_initial_assessment
                   ? 'Take my first assessment'
-                  : 'Generate my question paper'}
+                  : 'Generate my paper'}
               </Button>
             </a>
             {!next.is_initial_assessment && (
