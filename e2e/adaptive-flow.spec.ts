@@ -152,20 +152,19 @@ test('first-time student: profile, personalised home, Easy assessment, marked at
   // Owner decision 2026-09-23: /my-paper is her default landing page now, straight after
   // finishing her profile -- not /student ("Your progress"), which is still reachable from the
   // sidebar (checked later, via "Back to my progress" after this attempt is marked).
-  // "Generate my question paper": a short Easy assessment made from her profile -- Subject,
+  // "New paper": a short Easy assessment made from her profile -- Subject,
   // Questions, Difficulty and Question type are real controls now, defaulting to the same 10
   // Easy MCQ-only shape a first assessment always used to be.
   await page.waitForURL('**/my-paper**')
-  await expect(page.getByText('Assessment Details')).toBeVisible()
+  await expect(page.getByRole('heading', { name: 'New paper' })).toBeVisible()
   // exact: true matters here -- getByLabel is case-insensitive substring matching by default,
   // and the TanStack devtools overlay the dev server renders carries aria-labels like
   // "Open match details for /admin/questions", which a bare 'Questions' also matches.
   await expect(page.getByLabel('Questions', { exact: true })).toHaveValue('10')
-  // The plan-summary sentence ("This paper will have 10 questions...") and the Time field were
-  // both removed (2026-09-24, user decision) -- the header badge is what's left that reflects
-  // the plan (question count and estimated minutes, derived from the count, not chosen directly).
-  await expect(page.getByText('10 Qs', { exact: false })).toBeVisible()
-  await page.getByRole('button', { name: 'Generate Assessment' }).click()
+  // The plan summary lives in the sticky bar only (the header badge went 2026-10-01): question
+  // count and estimated minutes, derived from the count, not chosen directly.
+  await expect(page.getByText(/10\s+questions\s+·\s+about \d+ min/)).toBeVisible()
+  await page.getByRole('button', { name: 'Generate paper' }).click()
 
   // Answer every question (all the right option), then submit.
   await page.waitForURL('**/attempt/**')
