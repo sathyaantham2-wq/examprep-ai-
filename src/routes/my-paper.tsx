@@ -39,7 +39,7 @@ const QUESTION_TYPES = [
 ] as const
 type QuestionType = (typeof QUESTION_TYPES)[number]['value']
 
-// Small field icons for the Assessment Details card -- same inline-SVG convention as the rest of
+// Small field icons for the paper settings card -- same inline-SVG convention as the rest of
 // the app (no icon library), one per field so each reads at a glance rather than by label text
 // alone, matching the reference design.
 function BookIcon() {
@@ -536,61 +536,17 @@ function MyPaper() {
   return (
     <AppShell variant="student" active="generate">
       <div className="mx-auto max-w-5xl p-4 sm:p-8">
-        {/* Hero: same treatment as the parent's /generate -- the app's own --primary token at low
-          opacity, one original line-art icon, never a stock illustration.
-          Sized down ~33% from the shared .text-display scale at the user's request (2026-09-24)
-          -- overridden locally rather than in that shared token, since text-display is F005's
-          common type scale used by other screens' heroes too. */}
-        <div className="from-primary/10 via-card to-card border-border relative mb-4 overflow-hidden rounded-2xl border bg-gradient-to-br p-4 sm:p-5">
-          <div className="max-w-lg">
-            <h1 className="display-title text-[1.7rem] leading-[1.15] font-bold tracking-tight">
-              Generate my question paper
-            </h1>
-            <p className="text-small text-muted-foreground mt-1.5">
-              Built from what you already know and what needs more practice.
-            </p>
-            <div className="mt-2.5 flex flex-wrap gap-1.5">
-              {['Personalised for you', 'Graded instantly', 'No pressure'].map(
-                (label) => (
-                  <span
-                    key={label}
-                    className="text-caption bg-card border-border inline-flex items-center gap-1 rounded-full border px-2 py-0.5 font-medium"
-                  >
-                    <svg
-                      width="9"
-                      height="9"
-                      viewBox="0 0 24 24"
-                      fill="none"
-                      stroke="currentColor"
-                      strokeWidth="3"
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      className="text-primary"
-                    >
-                      <path d="M20 6 9 17l-5-5" />
-                    </svg>
-                    {label}
-                  </span>
-                ),
-              )}
-            </div>
-          </div>
-          <svg
-            width="54"
-            height="54"
-            viewBox="0 0 24 24"
-            fill="none"
-            stroke="currentColor"
-            strokeWidth="1.5"
-            strokeLinecap="round"
-            strokeLinejoin="round"
-            className="text-primary/25 pointer-events-none absolute right-3 bottom-0 hidden sm:block md:right-6"
-            aria-hidden="true"
-          >
-            <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20" />
-            <path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2Z" />
-            <path d="M9 7h7M9 11h7" />
-          </svg>
+        {/* 2026-10-01 (owner request): one short heading and one line. The old hero card (three
+          marketing chips, an icon) plus a second "Assessment Details" heading pushed the form
+          below the fold on a phone; now Subject is on the first screen. Same word, "paper",
+          everywhere: heading, button and progress text. */}
+        <div className="mb-4">
+          <h1 className="display-title text-[1.6rem] leading-tight font-bold tracking-tight">
+            New paper
+          </h1>
+          <p className="text-small text-muted-foreground mt-1">
+            Mixes what you already know with what needs more practice.
+          </p>
         </div>
 
         {subjects.length > 0 && withContent.length === 0 && (
@@ -608,45 +564,10 @@ function MyPaper() {
         )}
 
         {withContent.length > 0 && (
-          // Sized down proportionally to the hero above (2026-09-24 user feedback): smaller
-          // header icon/title/description, tighter padding and gaps, and the Time field removed
-          // (it was never an independent input -- it's derived from the question count, and
-          // already shown in the "Qs ~ min" badge here, so a separate field just repeated it).
+          // No card heading: the page heading says what this is, and the question count and time
+          // are in the sticky bar below (2026-10-01). The Time field stays removed -- it was only
+          // ever derived from the question count.
           <Card className="mb-4 py-4">
-            <CardHeader className="px-4">
-              <div className="flex flex-wrap items-start justify-between gap-2">
-                <div className="flex items-start gap-2">
-                  <div className="bg-primary/10 text-primary mt-0.5 flex size-7 shrink-0 items-center justify-center rounded-lg">
-                    <svg
-                      width="14"
-                      height="14"
-                      viewBox="0 0 24 24"
-                      fill="none"
-                      stroke="currentColor"
-                      strokeWidth="2"
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                    >
-                      <path d="M15 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7Z" />
-                      <path d="M14 2v4a2 2 0 0 0 2 2h4M9 13h6M9 17h6" />
-                    </svg>
-                  </div>
-                  <div>
-                    <CardTitle className="text-[0.85rem]">
-                      Assessment Details
-                    </CardTitle>
-                    <CardDescription className="text-caption">
-                      Set your preferences and generate your assessment
-                    </CardDescription>
-                  </div>
-                </div>
-                <span className="text-caption bg-primary/10 text-primary inline-flex shrink-0 items-center gap-1 rounded-full px-2 py-1 font-medium">
-                  <BulbIcon />
-                  {questionCount} Qs
-                  {plan ? ` ≈ ${plan.estimated_minutes} min` : ''}
-                </span>
-              </div>
-            </CardHeader>
             <CardContent className="px-4">
               {/* Single row from `lg` up (matches the reference design), stacking to 2 then 1
                   column below that -- 4 items never fit one line on a phone or portrait tablet
@@ -934,13 +855,13 @@ function MyPaper() {
             {/* "What this paper covers" (plan.concepts breakdown) is intentionally hidden
                 here at the user's request -- the data is still fetched and used elsewhere
                 on this screen (summary fields above), just not rendered as its own table.
-                "Generate Assessment" and its error display live in the sticky action bar at
+                "Generate paper" and its error display live in the sticky action bar at
                 the bottom of this page. */}
           </div>
         )}
 
-        {/* Sticky action bar (2026-09-30 UX rework): "Generate Assessment" used to sit inside the
-          Assessment Details card, above the chapter list -- so after picking chapters she had to
+        {/* Sticky action bar (2026-09-30 UX rework): the generate button used to sit inside the
+          settings card, above the chapter list -- so after picking chapters she had to
           scroll back up to find it. It now stays in view at the bottom of the screen the whole
           time, above the phone tab bar, with the same Reset and error display it had before. */}
         {withContent.length > 0 && (
@@ -970,7 +891,7 @@ function MyPaper() {
                   disabled={starting || loadingPlan || !readyToGenerate}
                   onClick={() => void startTest()}
                 >
-                  {starting ? 'Getting your test ready…' : 'Generate Assessment'}
+                  {starting ? 'Getting your paper ready…' : 'Generate paper'}
                 </Button>
               </div>
             </div>
