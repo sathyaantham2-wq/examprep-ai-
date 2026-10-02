@@ -30,9 +30,10 @@ export function normalizeAnswer(raw: string): string {
       // the letter for \b to match on, so split them apart before stripping unit words below.
       .replace(/(\d)([a-z])/g, '$1 $2')
       .replace(/\b(rs\.?|rupees?|cm|mm|km|kg|gm?|litres?|ml)\b/g, '')
-      // Any full stop that isn't a decimal point (digit on both sides) is leftover abbreviation
-      // punctuation ("rs." with the unit word now gone, or a trailing "cm.") — drop it.
-      .replace(/(?<!\d)\.|\.(?!\d)/g, '')
+      // Any full stop that isn't a decimal point is leftover abbreviation punctuation ("rs." with
+      // the unit word now gone, or a trailing "cm.") — drop it. A decimal point has a digit after
+      // it and no letter before it, so ".5" (no leading zero) keeps its point.
+      .replace(/\.(?!\d)|(?<=[a-z])\./g, '')
       .replace(/\s+/g, ' ')
       .trim()
   )
@@ -45,7 +46,8 @@ export function normalizeAnswer(raw: string): string {
  * exactly the confusion this product exists to prevent.
  *
  * Deliberately conservative so a genuinely different word is not waved through:
- *  - anything containing a digit must match exactly (numbers are never "close enough");
+ *  - anything containing a digit must match exactly (numbers are never "close enough"), except
+ *    that the same number written another way is the same answer -- see sameNumber below;
  *  - spaces/hyphens are ignored ("photo-synthesis" = "photosynthesis");
  *  - the first letter must match (real misspellings almost never change it);
  *  - allowed edits scale with length: none up to 4 letters, 1 up to 8, 2 beyond, counting a
@@ -56,6 +58,7 @@ export function fillBlankMatches(response: string, expected: string): boolean {
   const given = normalizeAnswer(response)
   const key = normalizeAnswer(expected)
   if (given === key) return true
+  if (sameNumber(given, key)) return true
   if (/\d/.test(given) || /\d/.test(key)) return false
 
   const compactGiven = given.replace(/[\s-]+/g, '')
@@ -67,6 +70,54 @@ export function fillBlankMatches(response: string, expected: string): boolean {
   if (allowed === 0) return false
   if (Math.abs(compactGiven.length - compactKey.length) > allowed) return false
   return editDistance(compactGiven, compactKey) <= allowed
+}
+
+interface ParsedNumber {
+  numerator: bigint
+  denominator: bigint
+  isFraction: boolean
+}
+
+// A plain number and nothing else: "12", "-0.5", ".2", "+3", "3/8", "1 / 2". Exact (BigInt), so
+// 0.1 + 0.2 style float error can never make two different answers look equal.
+function parseNumber(text: string): ParsedNumber | null {
+  const t = text.replace(/−/g, '-').replace(/\s+/g, '')
+  const fraction = /^([+-]?)(\d+)\/(\d+)$/.exec(t)
+  if (fraction) {
+    const denominator = BigInt(fraction[3])
+    if (denominator === 0n) return null
+    const numerator = BigInt(fraction[2]) * (fraction[1] === '-' ? -1n : 1n)
+    return { numerator, denominator, isFraction: true }
+  }
+  const decimal = /^([+-]?)(\d*)(?:\.(\d+))?$/.exec(t)
+  if (!decimal || (!decimal[2] && !decimal[3])) return null
+  const places = decimal[3] || ''
+  const numerator =
+    BigInt((decimal[2] || '0') + places) * (decimal[1] === '-' ? -1n : 1n)
+  return {
+    numerator,
+    denominator: 10n ** BigInt(places.length),
+    isFraction: false,
+  }
+}
+
+/**
+ * The same number written another way: "0.5" for a key of "1/2", ".2" or "0.20" for "0.2", "+5"
+ * for "5". Marking those wrong reads a formatting choice as a knowledge gap, the misdiagnosis
+ * this product exists to prevent.
+ *
+ * One deliberate limit: two *fractions* still have to match as written, so "2/4" is not accepted
+ * for a key of "1/2". Leaving a fraction unreduced is a delivery habit a marker would flag, not
+ * a different way of writing the same final answer.
+ */
+function sameNumber(given: string, key: string): boolean {
+  const a = parseNumber(given)
+  const b = parseNumber(key)
+  if (!a || !b) return false
+  if (a.isFraction && b.isFraction) {
+    return a.numerator === b.numerator && a.denominator === b.denominator
+  }
+  return a.numerator * b.denominator === b.numerator * a.denominator
 }
 
 // Optimal-string-alignment distance: insertions, deletions, substitutions and adjacent swaps.
