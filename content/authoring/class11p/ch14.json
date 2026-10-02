@@ -1,0 +1,2656 @@
+{
+  "subject": {
+    "code": "PHY11",
+    "name": "Physics",
+    "board": "CBSE",
+    "class": 11
+  },
+  "source": {
+    "publisher": "NCERT",
+    "title": "Physics Part II",
+    "edition": "Textbook for Class XI Part II, Reprint 2026-27",
+    "year": 2026
+  },
+  "chapter": {
+    "part": "II",
+    "chapter_no": 14,
+    "name": "Waves",
+    "blurb": "The chapter introduces mechanical waves, transverse and longitudinal, and describes a sinusoidal travelling wave by y = a sin(kx - omega t + phi) with its amplitude, phase, wavelength, period and frequency. It obtains the wave speed v = lambda nu, the speed sqrt(T/mu) on a stretched string and the speed of sound in solids, liquids and gases including Newton's formula and Laplace's correction. It then treats superposition and interference, reflection, stationary waves and the normal modes of strings and pipes, and ends with beats.",
+    "source_code": "keph207",
+    "order_index": 14
+  },
+  "scope_in": [
+    {
+      "item": "Explain that a wave is a pattern of disturbance that moves through a medium without the medium as a whole moving, that it transports energy and carries information, and distinguish mechanical waves (need a medium, depend on its elastic properties) from electromagnetic waves (no medium, all with speed c in vacuum)",
+      "pages": "278-279"
+    },
+    {
+      "item": "Explain how elastic coupling (a chain of springs, bogies of a train, compressions and rarefactions in air, atoms in a lattice) lets a disturbance travel while each part only oscillates about its place; distinguish a wind from a sound wave",
+      "pages": "279-281"
+    },
+    {
+      "item": "Define transverse and longitudinal waves, and say which media support each (shear modulus for transverse waves, so not fluids; longitudinal waves in solids, liquids and gases); water waves (capillary and gravity) as a combination of both (Example 14.1)",
+      "pages": "280-281"
+    },
+    {
+      "item": "Use the progressive-wave displacement y = a sin(kx - omega t + phi): amplitude, phase and initial phase angle, direction of travel (+x or -x), a sin + b cos combined into one sine with a = sqrt(A^2 + B^2) and phi = tan^-1(B/A), the longitudinal form s(x, t) (Example 14.2)",
+      "pages": "281-284"
+    },
+    {
+      "item": "Use wavelength lambda = 2 pi/k, angular wave number k (rad/m), period T = 2 pi/omega, frequency nu = 1/T = omega/2 pi, angular frequency omega",
+      "pages": "282-284"
+    },
+    {
+      "item": "Use the wave speed v = omega/k = lambda nu = lambda/T for any progressive wave, and the fact that the medium fixes the speed while the source fixes the frequency",
+      "pages": "284-285"
+    },
+    {
+      "item": "Use the speed of a transverse wave on a stretched string v = sqrt(T/mu), mu = m/L, including its dimensional-analysis origin (Example 14.3)",
+      "pages": "285"
+    },
+    {
+      "item": "Use the speed of longitudinal waves: v = sqrt(B/rho) in a fluid, v = sqrt(Y/rho) in a solid bar, Table 14.1, why solids and liquids carry sound faster than gases",
+      "pages": "285-286"
+    },
+    {
+      "item": "Apply Newton's formula v = sqrt(P/rho) (isothermal, B = P) and Laplace's correction v = sqrt(gamma P/rho) (adiabatic, B = gamma P, gamma = 7/5 for air) to the speed of sound in an ideal gas (Example 14.4)",
+      "pages": "286-287"
+    },
+    {
+      "item": "State and use the principle of superposition for pulses and harmonic waves, y = sum of f_i(x - vt); pulses retain their identities after crossing",
+      "pages": "287-288"
+    },
+    {
+      "item": "Interference of two equal-amplitude harmonic waves differing in phase by phi: resultant amplitude 2a cos(phi/2), constructive (phi = 0 or a multiple of 2 pi) and destructive (phi = pi) interference",
+      "pages": "288"
+    },
+    {
+      "item": "Reflection of pulses and waves: phase change of pi at a rigid boundary, none at a non-rigid (open or free) boundary, echo; partial reflection and transmission at an interface of two media",
+      "pages": "288-289"
+    },
+    {
+      "item": "Stationary waves from two identical waves in opposite directions: y = 2a sin kx cos omega t, nodes at x = n lambda/2, antinodes at x = (n + 1/2) lambda/2, spacing lambda/2, same frequency for every element",
+      "pages": "289-290"
+    },
+    {
+      "item": "Normal modes: a string fixed at both ends (nu_n = n v/2L), an air column closed at one end (odd harmonics (n + 1/2) v/2L, fundamental v/4L), and a pipe open at both ends (all harmonics); fundamental and harmonics; resonance (Example 14.5)",
+      "pages": "290-293"
+    },
+    {
+      "item": "Beats: the resultant s = [2a cos(omega_b t)] cos(omega_a t) of two close frequencies, waxing and waning of intensity, nu_beat = nu1 - nu2, tuning by beats (Example 14.6)",
+      "pages": "293-294"
+    }
+  ],
+  "scope_out": [
+    {
+      "item": "Doppler effect, intensity and loudness of sound, energy or power carried by a wave",
+      "reason": "Not in this rationalised edition: the section list on p. 278 runs from 14.1 Introduction to 14.7 Beats, with no section on any of them"
+    },
+    {
+      "item": "The exact derivation of v = sqrt(T/mu) from Newton's laws, and of v = sqrt(B/rho)",
+      "reason": "The book says the derivation is outside its scope (p. 285) and uses dimensional analysis, stating that the exact derivation gives C = 1"
+    },
+    {
+      "item": "Temperature and humidity dependence of the speed of sound as a calculation (Exercise 14.4 b, c)",
+      "reason": "The text gives only the Laplace formula and the values 331 m/s (0 degrees C) and 343 m/s (20 degrees C) in Table 14.1; no formula for the temperature or humidity dependence is developed"
+    },
+    {
+      "item": "Electromagnetic waves and matter waves beyond the definitions",
+      "reason": "Mentioned on p. 279 only to contrast with mechanical waves; the chapter studies mechanical waves"
+    },
+    {
+      "item": "Refraction and Snell's law at an interface, and the amplitudes of reflected and transmitted waves",
+      "reason": "Only mentioned in one sentence on p. 288 ('the incident and refracted waves obey Snell's law'); nothing is taught or calculated"
+    },
+    {
+      "item": "Damped and forced oscillations, resonance curves, end correction of pipes",
+      "reason": "Resonance appears only as the one statement on p. 292 and in Summary item 16; Exercise 14.15 tells the reader to neglect edge effects"
+    },
+    {
+      "item": "Normal modes of two-dimensional systems such as a clamped circular membrane (tabla)",
+      "reason": "Mentioned on p. 292 as more complex and not worked out"
+    },
+    {
+      "item": "Dispersion and the distortion of a pulse in a dispersive medium",
+      "reason": "Appears only in the remark on p. 285 about higher studies and in Exercise 14.19(e); not taught in the chapter"
+    },
+    {
+      "item": "Musical Pillars box (p. 294), Points to Ponder (p. 297), the historical remarks on Huygens, Hooke and Newton (p. 279) and the Exercises as a source of new content",
+      "reason": "Boxed and historical material is not examinable; the Points to Ponder repeat results already in the main text"
+    },
+    {
+      "item": "Wave-equation partial differential equation, energy density and wave intensity relations",
+      "reason": "No such treatment appears in the chapter or its Summary (pp. 295-296)"
+    }
+  ],
+  "concepts": [
+    {
+      "code": "C11P-14.1",
+      "name": "Mechanical waves: transverse and longitudinal waves",
+      "description": "What a wave is, how mechanical waves differ from electromagnetic waves, why a medium with elastic coupling can carry a disturbance, and the difference between transverse and longitudinal waves including which media support each.",
+      "idea": "A wave is a pattern of disturbance that moves through a medium without the medium as a whole moving; it transports energy and information. Mechanical waves need a material medium whose elastic properties let each part act on its neighbour.",
+      "rule": "In a transverse wave the particles oscillate perpendicular to the direction of propagation; in a longitudinal wave they oscillate along it. A transverse wave puts each element under shearing strain, so it needs a medium that can sustain shearing stress (solids, not fluids); a longitudinal wave needs only compressive strain, so it travels in solids, liquids and gases. Steel carries both, air only longitudinal waves. Transverse and longitudinal waves generally travel at different speeds in the same medium. Electromagnetic waves need no medium; in vacuum all have the same speed c = 299 792 458 m/s. Wind (air moving as a whole) is not a sound wave (a disturbance of pressure and density).",
+      "example": "Sound from a tuning fork reaches a listener: layers of air are alternately compressed and rarefied along the direction in which the sound travels, so it is a longitudinal wave, yet no air flows from the fork to the listener.",
+      "difficulty_base": "Easy",
+      "questions": [
+        {
+          "b": "Remember",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "Patterns that move through a medium without the actual transfer or flow of matter as a whole are called",
+          "a": "waves",
+          "o": [
+            "waves",
+            "currents",
+            "streams",
+            "jets"
+          ]
+        },
+        {
+          "b": "Remember",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "A wave travelling in a medium transports",
+          "a": "energy, and a pattern of disturbance that can carry information, without moving the medium as a whole",
+          "o": [
+            "energy, and a pattern of disturbance that can carry information, without moving the medium as a whole",
+            "matter from one end of the medium to the other, but no energy",
+            "both the matter of the medium and its energy",
+            "neither energy nor information"
+          ]
+        },
+        {
+          "b": "Remember",
+          "d": "Easy",
+          "t": "fill_blank",
+          "m": 1,
+          "q": "A wave in which the particles of the medium oscillate along the direction of wave propagation is called a ____ wave (write one word, the term used in this chapter).",
+          "a": "longitudinal"
+        },
+        {
+          "b": "Remember",
+          "d": "Hard",
+          "t": "mcq",
+          "m": 1,
+          "q": "Which of the following is NOT a mechanical wave?",
+          "a": "Light reaching the Earth from a distant star through inter-stellar space",
+          "o": [
+            "Light reaching the Earth from a distant star through inter-stellar space",
+            "Sound travelling through air",
+            "A pulse travelling along a stretched string",
+            "A seismic wave travelling through the Earth"
+          ],
+          "rev": true
+        },
+        {
+          "b": "Understand",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "Cork pieces floating on a pond move up and down, but do not move away from the centre, when ripples spread outward from a pebble dropped in the water. This shows that",
+          "a": "the water mass does not flow outward with the circles; a moving disturbance is created",
+          "o": [
+            "the water mass does not flow outward with the circles; a moving disturbance is created",
+            "the cork pieces are too heavy to be carried along by the water",
+            "the water flows outward but the cork pieces resist the flow",
+            "the ripples carry no energy away from the centre"
+          ]
+        },
+        {
+          "b": "Understand",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "In a sound wave in air, the quantity that plays the role of the extension or compression of a spring is",
+          "a": "the change in density of a small region of air",
+          "o": [
+            "the change in density of a small region of air",
+            "the change in temperature of the whole room",
+            "the change in mass of the air in the region",
+            "the speed of the wind blowing through the region"
+          ]
+        },
+        {
+          "b": "Understand",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "Waves are produced in a cylinder of liquid by moving a piston back and forth. These waves are",
+          "a": "longitudinal",
+          "o": [
+            "longitudinal",
+            "transverse",
+            "a combination of transverse and longitudinal",
+            "electromagnetic"
+          ]
+        },
+        {
+          "b": "Understand",
+          "d": "Hard",
+          "t": "mcq",
+          "m": 1,
+          "q": "In the same elastic medium, such as steel, a transverse wave and a longitudinal wave",
+          "a": "generally travel with different speeds",
+          "o": [
+            "generally travel with different speeds",
+            "always travel with exactly the same speed",
+            "travel with the same speed because the same particles oscillate in both",
+            "can both exist, but only one of them can carry energy"
+          ]
+        },
+        {
+          "b": "Understand",
+          "d": "Hard",
+          "t": "mcq",
+          "m": 1,
+          "q": "Longitudinal waves can be propagated in all elastic media, whether solids, liquids or gases, because",
+          "a": "all of them can sustain compressive strain",
+          "o": [
+            "all of them can sustain compressive strain",
+            "all of them can sustain shearing stress",
+            "all of them have the same mass density",
+            "all of them have the same Young's modulus"
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "Ultrasonic waves in air produced by a vibrating quartz crystal are",
+          "a": "longitudinal",
+          "o": [
+            "longitudinal",
+            "transverse",
+            "a combination of transverse and longitudinal",
+            "electromagnetic"
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Easy",
+          "t": "fill_blank",
+          "m": 1,
+          "q": "All electromagnetic waves have the same speed in vacuum. Take c = 3 x 10^8 m/s. A radio signal in vacuum covers a distance of 6 x 10^8 m in ____ s (write a whole number).",
+          "a": "2"
+        },
+        {
+          "b": "Apply",
+          "d": "Hard",
+          "t": "mcq",
+          "m": 1,
+          "q": "Which of the following can carry both a transverse wave and a longitudinal wave through its bulk?",
+          "a": "A steel rod",
+          "o": [
+            "A steel rod",
+            "Air in a room",
+            "A sample of helium gas",
+            "Water in a tank (ignore waves on its surface)"
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Hard",
+          "t": "mcq",
+          "m": 1,
+          "q": "A stationary train has its bogies joined by spring couplings. An engine is attached at one end and gives the first bogie a push. Taken as a model of wave propagation, which statement is correct?",
+          "a": "The push passes from bogie to bogie, but each bogie only oscillates a little about its own position and the train is not bodily displaced",
+          "o": [
+            "The push passes from bogie to bogie, but each bogie only oscillates a little about its own position and the train is not bodily displaced",
+            "Every bogie is carried the whole length of the train by the push",
+            "The push stops at the first bogie because springs cannot transmit it",
+            "The push passes along the train only if the whole train moves forward together"
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Hard",
+          "t": "short_answer",
+          "m": 2,
+          "q": "A transverse wave travels along a long stretched string in the +x direction. A small element of the string at x = 2 m moves up and down between y = +3 mm and y = -3 mm. State (a) the direction in which this element oscillates and (b) the angle between that direction and the direction of propagation of the wave.",
+          "a": "(a) The element oscillates along the y direction, up and down, across the length of the string. (b) The direction of oscillation is perpendicular to the +x direction of propagation, so the angle is 90 degrees.",
+          "s": [
+            [
+              "Direction of oscillation is along y (up and down)",
+              1
+            ],
+            [
+              "Perpendicular to the direction of propagation, i.e. 90 degrees",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Hardest",
+          "t": "long_answer",
+          "m": 3,
+          "q": "State whether each wave is transverse, longitudinal or a combination of both, and give a one-line reason: (a) a pulse sent along a long rope by one up-and-down jerk of its end, (b) sound from a loudspeaker travelling through air, (c) waves produced by a motorboat sailing on water.",
+          "a": "(a) Transverse: the rope elements move up and down, perpendicular to the direction the pulse travels. (b) Longitudinal: air is alternately compressed and rarefied along the direction of travel of the sound. (c) A combination of both: the water particles move up and down and also back and forth.",
+          "s": [
+            [
+              "(a) Transverse, with the correct reason",
+              1
+            ],
+            [
+              "(b) Longitudinal, with the correct reason",
+              1
+            ],
+            [
+              "(c) Both transverse and longitudinal, with the correct reason",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Analyse",
+          "d": "Hard",
+          "t": "assertion_reason",
+          "m": 1,
+          "q": "Assertion (A): Transverse waves cannot travel through air, although sound can. Reason (R): Air, like any fluid, cannot sustain a shearing stress, but each element of the medium in a transverse wave undergoes a shearing strain. Choose the correct option.",
+          "a": "Both A and R are true, and R is the correct explanation of A",
+          "o": [
+            "Both A and R are true, and R is the correct explanation of A",
+            "Both A and R are true, but R is not the correct explanation of A",
+            "A is true, R is false",
+            "A is false, R is true"
+          ]
+        },
+        {
+          "b": "Analyse",
+          "d": "Hard",
+          "t": "short_answer",
+          "m": 2,
+          "q": "A collection of springs is joined end to end and the spring at one end is pulled suddenly and released. Explain how a disturbance then reaches the far end although no spring moves far from its equilibrium position.",
+          "a": "The first spring is stretched or compressed from its equilibrium length. The second spring is joined to it, so it is stretched or compressed too, and so on along the chain. Each spring only makes small oscillations about its own equilibrium position, but the disturbance is handed on from spring to spring until it reaches the other end.",
+          "s": [
+            [
+              "Each spring disturbs the next because they are joined (elastic coupling)",
+              1
+            ],
+            [
+              "Each spring only oscillates about its own equilibrium position; it is the disturbance that travels to the far end",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Analyse",
+          "d": "Hardest",
+          "t": "long_answer",
+          "m": 3,
+          "q": "Waves on the surface of water are of two kinds. For each kind state the typical range of wavelength and the restoring force that produces it, and explain why the particle motion in such waves makes them neither purely transverse nor purely longitudinal.",
+          "a": "Capillary waves are ripples of short wavelength, not more than a few centimetres, and their restoring force is the surface tension of water. Gravity waves have wavelengths from several metres to several hundred metres, and their restoring force is the pull of gravity, which tends to keep the water surface at its lowest level. In both, the particles do not just move up and down: they also move back and forth, so the motion combines transverse and longitudinal parts.",
+          "s": [
+            [
+              "Capillary waves: wavelength at most a few centimetres, restoring force surface tension",
+              1
+            ],
+            [
+              "Gravity waves: wavelength several metres to several hundred metres, restoring force gravity",
+              1
+            ],
+            [
+              "Particles move both up and down and back and forth, so the wave is a combination of both types",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Evaluate",
+          "d": "Hard",
+          "t": "short_answer",
+          "m": 2,
+          "q": "A student says: 'When a person speaks, the air near the mouth travels all the way to the listener's ear, exactly as it does in a wind.' Evaluate this statement.",
+          "a": "The statement is incorrect. A wind is the motion of air as a whole from one place to another. A sound wave is the propagation of a disturbance in pressure and density (compressions and rarefactions) through air: each layer of air only oscillates about its place and no air flows from the speaker to the listener.",
+          "s": [
+            [
+              "Judgement: incorrect, because a sound wave does not carry the air along as a wind does",
+              1
+            ],
+            [
+              "Explains that the disturbance of pressure/density (compressions and rarefactions) travels while each layer of air only oscillates",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Create",
+          "d": "Hardest",
+          "t": "long_answer",
+          "m": 3,
+          "q": "Describe a situation of your own, from home or school, in which a disturbance travels through a medium without the medium moving as a whole. Name the medium, say what each part of the medium does, and say what is carried from one place to another.",
+          "a": "Sample answer. A line of people standing close together: when the first person is pushed, each person sways slightly and pushes the next, so a push travels from one end of the line to the other. The medium is the line of people. Each person only moves a little about his or her own place; nobody walks along the line. What is carried along the line is energy (and the information that a push was given), not the people.",
+          "s": [
+            [
+              "A valid situation with the medium named",
+              1
+            ],
+            [
+              "Each part of the medium only oscillates about its own position (it is not carried along)",
+              1
+            ],
+            [
+              "States that energy (and the pattern of disturbance, i.e. information) is transported",
+              1
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "code": "C11P-14.2",
+      "name": "Displacement relation of a progressive wave: amplitude, phase, wavelength, period and frequency",
+      "description": "The sinusoidal travelling wave y = a sin(kx - omega t + phi): meaning of amplitude, phase and initial phase angle, angular wave number and wavelength, angular frequency, period and frequency, and the direction of travel.",
+      "idea": "A sinusoidal travelling wave is described by a displacement function of both position and time, fixed by an amplitude, an angular wave number, an angular frequency and an initial phase.",
+      "rule": "y(x, t) = a sin(kx - omega t + phi) travels in +x; y = a sin(kx + omega t + phi) travels in -x. a is the (positive) amplitude; (kx - omega t + phi) is the phase and phi the initial phase angle, which can be made zero by choosing origin and initial time. lambda = 2 pi/k (k in rad/m), T = 2 pi/omega, nu = 1/T = omega/2 pi. At a fixed instant y is a sine function of x; at a fixed location the element executes SHM. A sin(kx - omega t) + B cos(kx - omega t) = a sin(kx - omega t + phi) with a = sqrt(A^2 + B^2) and phi = tan^-1(B/A). For a longitudinal wave s(x, t) = a sin(kx - omega t + phi), s being displacement along the direction of propagation.",
+      "example": "For y = 0.08 sin(6 pi x - 30 pi t) in SI units: amplitude 0.08 m, wavelength 2 pi/(6 pi) = 1/3 m, period 2 pi/(30 pi) = 1/15 s and frequency 15 Hz.",
+      "difficulty_base": "Hard",
+      "questions": [
+        {
+          "b": "Remember",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "In the travelling wave y(x, t) = a sin(kx - omega t + phi), the quantity k is called the",
+          "a": "angular wave number (propagation constant)",
+          "o": [
+            "angular wave number (propagation constant)",
+            "angular frequency",
+            "wavelength",
+            "phase constant"
+          ]
+        },
+        {
+          "b": "Remember",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "The SI unit of the angular wave number k is",
+          "a": "radian per metre (rad m^-1)",
+          "o": [
+            "radian per metre (rad m^-1)",
+            "radian per second (rad s^-1)",
+            "metre (m)",
+            "hertz (Hz)"
+          ]
+        },
+        {
+          "b": "Remember",
+          "d": "Easy",
+          "t": "fill_blank",
+          "m": 1,
+          "q": "The whole argument (kx - omega t + phi) of the sine in y = a sin(kx - omega t + phi) is called the ____ of the wave (write one word: the quantity that, given the amplitude, fixes the displacement at any position and instant).",
+          "a": "phase"
+        },
+        {
+          "b": "Remember",
+          "d": "Hard",
+          "t": "mcq",
+          "m": 1,
+          "q": "Which statement about the travelling wave y(x, t) = a sin(kx - omega t + phi), with a, k and omega positive, is NOT correct?",
+          "a": "The wave travels in the negative direction of the x-axis",
+          "o": [
+            "The wave travels in the negative direction of the x-axis",
+            "The constant a is the maximum displacement of the constituents of the medium from their equilibrium positions",
+            "The constant phi is the phase of the wave at x = 0 and t = 0",
+            "The displacement y is a function of both the position x and the time t"
+          ],
+          "rev": true
+        },
+        {
+          "b": "Understand",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "As a harmonic wave y = a sin(kx - omega t) passes a fixed location, the displacement of the medium at that location",
+          "a": "varies sinusoidally with time, so the constituent executes simple harmonic motion",
+          "o": [
+            "varies sinusoidally with time, so the constituent executes simple harmonic motion",
+            "stays constant with time",
+            "varies linearly with time",
+            "decays exponentially with time"
+          ]
+        },
+        {
+          "b": "Understand",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "Which function represents a harmonic wave travelling in the negative direction of the x-axis?",
+          "a": "y = a sin(kx + omega t)",
+          "o": [
+            "y = a sin(kx + omega t)",
+            "y = a sin(kx - omega t)",
+            "y = a sin(omega t - kx)",
+            "y = a sin(omega t)"
+          ]
+        },
+        {
+          "b": "Understand",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "The wavelength of a harmonic wave is best described as",
+          "a": "the distance between two consecutive crests (or two consecutive troughs) at a given instant",
+          "o": [
+            "the distance between two consecutive crests (or two consecutive troughs) at a given instant",
+            "the distance the wave travels in one second",
+            "the distance between a crest and the next trough",
+            "twice the amplitude of the wave"
+          ]
+        },
+        {
+          "b": "Understand",
+          "d": "Hard",
+          "t": "mcq",
+          "m": 1,
+          "q": "The period T of a harmonic wave is",
+          "a": "the time any element of the medium takes to complete one full oscillation",
+          "o": [
+            "the time any element of the medium takes to complete one full oscillation",
+            "the time the wave takes to travel a distance equal to its amplitude",
+            "the time a crest takes to move to the next trough",
+            "the number of oscillations of an element in one second"
+          ]
+        },
+        {
+          "b": "Understand",
+          "d": "Hard",
+          "t": "mcq",
+          "m": 1,
+          "q": "In the displacement function s(x, t) = a sin(kx - omega t + phi) of a longitudinal wave, s represents",
+          "a": "the displacement of an element of the medium along the direction of propagation of the wave",
+          "o": [
+            "the displacement of an element of the medium along the direction of propagation of the wave",
+            "the displacement of an element of the medium perpendicular to the direction of propagation",
+            "the speed of the wave",
+            "the wavelength of the wave"
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "A travelling wave is y = 0.03 sin(5 pi x - 50 pi t), with x and y in metres and t in seconds. Its wavelength is",
+          "a": "0.4 m",
+          "o": [
+            "0.4 m",
+            "15.7 m (5 pi m)",
+            "2.5 m",
+            "0.2 m"
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Easy",
+          "t": "fill_blank",
+          "m": 1,
+          "q": "A travelling wave is y = 0.5 sin(3x - 12 pi t) in SI units. Its frequency is ____ Hz (write a whole number).",
+          "a": "6"
+        },
+        {
+          "b": "Apply",
+          "d": "Hard",
+          "t": "mcq",
+          "m": 1,
+          "q": "For the wave y = 0.02 sin(4 pi x - 10 pi t + pi/4) in SI units, the phase at x = 0.25 m and t = 0.05 s is",
+          "a": "3 pi/4 rad",
+          "o": [
+            "3 pi/4 rad",
+            "7 pi/4 rad",
+            "pi/2 rad",
+            "pi/4 rad"
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Hard",
+          "t": "mcq",
+          "m": 1,
+          "q": "A transverse wave is y = 6 sin(kx - omega t) + 8 cos(kx - omega t), with y in mm. It can be written as a single sine wave of amplitude",
+          "a": "10 mm",
+          "o": [
+            "10 mm",
+            "14 mm",
+            "2 mm",
+            "7 mm"
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Hard",
+          "t": "short_answer",
+          "m": 2,
+          "q": "A wave on a string is y(x, t) = 0.04 sin(10 pi x - 4 pi t), with x and y in metres and t in seconds. Find its wavelength and its period.",
+          "a": "Comparing with y = a sin(kx - omega t): k = 10 pi rad/m and omega = 4 pi rad/s. Wavelength = 2 pi/k = 2 pi/(10 pi) = 0.2 m. Period T = 2 pi/omega = 2 pi/(4 pi) = 0.5 s.",
+          "s": [
+            [
+              "Wavelength = 2 pi/k = 0.2 m",
+              1
+            ],
+            [
+              "Period = 2 pi/omega = 0.5 s",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Hardest",
+          "t": "long_answer",
+          "m": 3,
+          "q": "A transverse wave on a string is y = 5 sin(kx - omega t) + 12 cos(kx - omega t), with y in cm. Write it in the form a sin(kx - omega t + phi), using a cos phi = 5 and a sin phi = 12. Find a, find tan phi, and state the largest displacement any element of the string reaches.",
+          "a": "Here A = 5 and B = 12. a = sqrt(A^2 + B^2) = sqrt(25 + 144) = 13 cm. tan phi = B/A = 12/5 = 2.4, so phi = tan^-1(2.4). Thus y = 13 sin(kx - omega t + phi) cm, and the largest displacement of any element equals the amplitude, 13 cm.",
+          "s": [
+            [
+              "a = sqrt(5^2 + 12^2) = 13 cm",
+              1
+            ],
+            [
+              "tan phi = 12/5 = 2.4",
+              1
+            ],
+            [
+              "Largest displacement = amplitude = 13 cm",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Analyse",
+          "d": "Hard",
+          "t": "multi_statement",
+          "m": 1,
+          "q": "(I) The phase constant phi in y = a sin(kx - omega t + phi) can always be made zero, without loss of generality, by a suitable choice of the origin on the x-axis and of the initial time. (II) At a fixed position, the constituent of the medium executes simple harmonic motion as the wave passes. Which is or are correct?",
+          "a": "Both I and II",
+          "o": [
+            "Both I and II",
+            "Only I",
+            "Only II",
+            "Neither I nor II"
+          ]
+        },
+        {
+          "b": "Analyse",
+          "d": "Hard",
+          "t": "short_answer",
+          "m": 2,
+          "q": "Explain how the single equation y = a sin(kx - omega t) describes both the shape of the wave at one instant and the motion of one element of the medium over time.",
+          "a": "At a fixed instant t0 the argument is kx + constant, so y is a sine function of x: this is the shape of the wave in space. At a fixed location x0 the argument is a constant minus omega t, so y varies sinusoidally with time: this is the simple harmonic motion of the element at that location.",
+          "s": [
+            [
+              "Fixed instant: y is a sine function of x, giving the shape of the wave in space",
+              1
+            ],
+            [
+              "Fixed location: y varies sinusoidally with time, i.e. the element executes SHM",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Analyse",
+          "d": "Hardest",
+          "t": "long_answer",
+          "m": 3,
+          "q": "Explain, by following a point of constant phase, why y = a sin(kx - omega t + phi) represents a wave travelling in the +x direction while y = a sin(kx + omega t + phi) represents one travelling in the -x direction.",
+          "a": "A point of fixed phase on the wave pattern satisfies kx - omega t + phi = constant. As t increases, omega t increases, so x must increase to keep kx - omega t constant: the pattern moves toward +x. For y = a sin(kx + omega t + phi) the condition is kx + omega t + phi = constant; as t increases, x must decrease to keep it constant, so the pattern moves toward -x.",
+          "s": [
+            [
+              "Follows a point of constant phase: kx - omega t + phi = constant",
+              1
+            ],
+            [
+              "As t increases x must increase, so the wave moves in +x",
+              1
+            ],
+            [
+              "For kx + omega t the constant-phase point has x decreasing, so the wave moves in -x",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Evaluate",
+          "d": "Hard",
+          "t": "short_answer",
+          "m": 2,
+          "q": "A student says: 'In y = a sin(kx - omega t) the amplitude a is taken positive, so the displacement y of the medium is always positive.' Evaluate this statement.",
+          "a": "The statement is incorrect. The amplitude a is the positive maximum displacement, but the sine function varies between +1 and -1, so y varies between +a and -a and is negative for part of every cycle.",
+          "s": [
+            [
+              "Judgement: incorrect; a is positive but y is not",
+              1
+            ],
+            [
+              "Because the sine takes values from -1 to +1, y varies between -a and +a",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Create",
+          "d": "Hardest",
+          "t": "long_answer",
+          "m": 3,
+          "q": "Write down, in SI units, the displacement equation of a transverse wave of your own with amplitude 2 mm, wavelength 0.5 m and period 0.02 s, travelling in the -x direction with phi = 0. Give the values of k and omega that you use.",
+          "a": "k = 2 pi/lambda = 2 pi/0.5 = 4 pi rad/m. omega = 2 pi/T = 2 pi/0.02 = 100 pi rad/s. Because the wave travels in the -x direction the signs of kx and omega t are the same: y(x, t) = 0.002 sin(4 pi x + 100 pi t), with y and x in metres and t in seconds.",
+          "s": [
+            [
+              "k = 4 pi rad/m",
+              1
+            ],
+            [
+              "omega = 100 pi rad/s",
+              1
+            ],
+            [
+              "y = 0.002 sin(4 pi x + 100 pi t), with the plus sign for travel in -x",
+              1
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "code": "C11P-14.3",
+      "name": "Speed of a travelling wave and the speed of a transverse wave on a stretched string",
+      "description": "The relation v = omega/k = lambda nu for any progressive wave, why the medium fixes the speed while the source fixes the frequency, and the speed sqrt(T/mu) of transverse waves on a stretched string.",
+      "idea": "The speed of a mechanical wave is fixed by the elastic and inertial properties of the medium; the source fixes the frequency, and the wavelength then follows.",
+      "rule": "A point of fixed phase (kx - omega t = constant) moves with speed v = omega/k = lambda nu = lambda/T: in one period the pattern advances one wavelength. lambda = v/nu. For transverse waves on a stretched string, v = sqrt(T/mu), where T is the tension (restoring force) and mu = m/L the linear mass density (inertia); this was got by dimensional analysis, v = C sqrt(T/mu), with the exact derivation giving C = 1. The speed does not depend on the wavelength or frequency of the wave.",
+      "example": "A rope of mass 2.0 kg and length 5.0 m is held under a tension of 250 N: mu = 0.4 kg/m and v = sqrt(250/0.4) = sqrt(625) = 25 m/s.",
+      "difficulty_base": "Hard",
+      "questions": [
+        {
+          "b": "Remember",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "A progressive wave has angular frequency omega and angular wave number k. Its speed is",
+          "a": "omega/k",
+          "o": [
+            "omega/k",
+            "k/omega",
+            "omega k",
+            "2 pi omega/k"
+          ]
+        },
+        {
+          "b": "Remember",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "The speed of a transverse wave on a stretched string of tension T and linear mass density mu is",
+          "a": "sqrt(T/mu)",
+          "o": [
+            "sqrt(T/mu)",
+            "sqrt(mu/T)",
+            "T/mu",
+            "T mu"
+          ]
+        },
+        {
+          "b": "Remember",
+          "d": "Easy",
+          "t": "fill_blank",
+          "m": 1,
+          "q": "A stretched string has a mass of 0.5 kg and a length of 10 m. Its linear mass density is ____ kg/m (write as a decimal).",
+          "a": "0.05"
+        },
+        {
+          "b": "Remember",
+          "d": "Hard",
+          "t": "mcq",
+          "m": 1,
+          "q": "Which of the following does NOT determine the speed of a transverse wave on a stretched string?",
+          "a": "The frequency chosen by the source that generates the wave",
+          "o": [
+            "The frequency chosen by the source that generates the wave",
+            "The tension in the string",
+            "The linear mass density of the string",
+            "The restoring force and the inertial property of the string taken together"
+          ],
+          "rev": true
+        },
+        {
+          "b": "Understand",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "A progressive wave of speed v has period T. Its wavelength is",
+          "a": "vT",
+          "o": [
+            "vT",
+            "v/T",
+            "T/v",
+            "v T^2"
+          ]
+        },
+        {
+          "b": "Understand",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "The tension in a stretched string is made four times as large, with the string otherwise unchanged. The speed of transverse waves on it becomes",
+          "a": "2 times the original",
+          "o": [
+            "2 times the original",
+            "4 times the original",
+            "16 times the original",
+            "1/2 of the original"
+          ]
+        },
+        {
+          "b": "Understand",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "In the time in which any constituent of the medium completes one full oscillation, the wave pattern travels a distance equal to",
+          "a": "one wavelength",
+          "o": [
+            "one wavelength",
+            "one amplitude",
+            "two wavelengths",
+            "half a wavelength"
+          ]
+        },
+        {
+          "b": "Understand",
+          "d": "Hard",
+          "t": "mcq",
+          "m": 1,
+          "q": "Two harmonic waves of frequencies 100 Hz and 300 Hz travel along the same stretched string under the same tension. Compared with the 100 Hz wave, the 300 Hz wave has",
+          "a": "the same speed and one-third the wavelength",
+          "o": [
+            "the same speed and one-third the wavelength",
+            "three times the speed and the same wavelength",
+            "three times the speed and one-third the wavelength",
+            "one-third the speed and the same wavelength"
+          ]
+        },
+        {
+          "b": "Understand",
+          "d": "Hard",
+          "t": "mcq",
+          "m": 1,
+          "q": "Two wires A and B are stretched under the same tension. The linear mass density of B is four times that of A. The ratio of the speed of transverse waves on A to that on B is",
+          "a": "2",
+          "o": [
+            "2",
+            "4",
+            "1/2",
+            "1/4"
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "A harmonic wave has a frequency of 50 Hz and a wavelength of 0.8 m. Its speed is",
+          "a": "40 m/s",
+          "o": [
+            "40 m/s",
+            "62.5 m/s",
+            "0.016 m/s",
+            "50.8 m/s"
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Easy",
+          "t": "fill_blank",
+          "m": 1,
+          "q": "A stretched string is under a tension of 36 N and has a linear mass density of 0.04 kg/m. The speed of transverse waves on it is ____ m/s (write a whole number).",
+          "a": "30"
+        },
+        {
+          "b": "Apply",
+          "d": "Hard",
+          "t": "mcq",
+          "m": 1,
+          "q": "A wave on a string is y(x, t) = 0.02 sin(5x - 1500 t), with x and y in metres and t in seconds. Its speed is",
+          "a": "300 m/s",
+          "o": [
+            "300 m/s",
+            "7500 m/s",
+            "0.0033 m/s",
+            "47.7 m/s"
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Hard",
+          "t": "mcq",
+          "m": 1,
+          "q": "A stretched string has a mass of 1.2 kg and a length of 6.0 m, and is under a tension of 80 N. A transverse pulse takes how long to travel the whole length of the string?",
+          "a": "0.3 s",
+          "o": [
+            "0.3 s",
+            "0.015 s",
+            "3.3 s",
+            "0.075 s"
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Hard",
+          "t": "short_answer",
+          "m": 2,
+          "q": "A wire of mass 0.5 kg and length 2.0 m is stretched under a tension of 121 N. A harmonic transverse wave of frequency 55 Hz is sent along it. Find the speed of the wave and its wavelength.",
+          "a": "Linear mass density mu = m/L = 0.5 kg/2.0 m = 0.25 kg/m. Speed v = sqrt(T/mu) = sqrt(121/0.25) = sqrt(484) = 22 m/s. Wavelength = v/nu = 22/55 = 0.4 m.",
+          "s": [
+            [
+              "v = sqrt(T/mu) = sqrt(121/0.25) = 22 m/s",
+              1
+            ],
+            [
+              "Wavelength = v/nu = 22/55 = 0.4 m",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Hardest",
+          "t": "long_answer",
+          "m": 3,
+          "q": "A harmonic wave of frequency 120 Hz travels at 60 m/s along a string of linear mass density 0.05 kg/m. Find (a) the tension in the string, (b) the wavelength of the wave, and (c) the tension needed to make the speed 90 m/s, the linear mass density remaining the same.",
+          "a": "(a) From v = sqrt(T/mu), T = mu v^2 = 0.05 x 60^2 = 180 N. (b) Wavelength = v/nu = 60/120 = 0.5 m. (c) T' = mu v'^2 = 0.05 x 90^2 = 405 N.",
+          "s": [
+            [
+              "Tension T = mu v^2 = 180 N",
+              1
+            ],
+            [
+              "Wavelength = v/nu = 0.5 m",
+              1
+            ],
+            [
+              "New tension = 0.05 x 90^2 = 405 N",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Analyse",
+          "d": "Hard",
+          "t": "assertion_reason",
+          "m": 1,
+          "q": "Assertion (A): Increasing the tension in a stretched string increases the speed of transverse waves on it. Reason (R): The speed v of a wave in a medium is related to its wavelength and frequency by v = lambda nu. Choose the correct option.",
+          "a": "Both A and R are true, but R is not the correct explanation of A",
+          "o": [
+            "Both A and R are true, but R is not the correct explanation of A",
+            "Both A and R are true, and R is the correct explanation of A",
+            "A is true, R is false",
+            "A is false, R is true"
+          ]
+        },
+        {
+          "b": "Analyse",
+          "d": "Hard",
+          "t": "short_answer",
+          "m": 2,
+          "q": "Using the idea that the speed of a mechanical wave is set by the restoring force and the inertia of the medium, explain how the speed of a transverse wave on a string should change (a) when the tension is increased and (b) when the string is replaced by a thicker one of the same material under the same tension.",
+          "a": "On a string the restoring force is provided by the tension, so a larger tension makes the wave faster (v = sqrt(T/mu) increases with T). The inertial property is the linear mass density mu; a thicker string of the same material has a larger mu, which makes the wave slower, since v decreases as mu increases.",
+          "s": [
+            [
+              "(a) Larger tension (restoring force) gives a larger speed",
+              1
+            ],
+            [
+              "(b) Thicker string has larger mass per unit length (inertia), which gives a smaller speed",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Analyse",
+          "d": "Hardest",
+          "t": "long_answer",
+          "m": 3,
+          "q": "The speed of transverse waves on a string was obtained from dimensional analysis. Show that T/mu has the dimensions of the square of a speed, and explain what the dimensional analysis can and cannot tell us about the formula.",
+          "a": "The dimension of mu is [M L^-1] and that of T is that of a force, [M L T^-2]. Then T/mu = [M L T^-2]/[M L^-1] = [L^2 T^-2], the dimension of speed squared, so v is proportional to sqrt(T/mu): v = C sqrt(T/mu). Dimensional analysis cannot fix the dimensionless constant C; it has to be obtained from the exact derivation, which gives C = 1.",
+          "s": [
+            [
+              "[mu] = M L^-1 and [T] = M L T^-2",
+              1
+            ],
+            [
+              "T/mu = L^2 T^-2, so v is proportional to sqrt(T/mu)",
+              1
+            ],
+            [
+              "The dimensionless constant C is left undetermined by the analysis (the exact derivation gives C = 1)",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Evaluate",
+          "d": "Hard",
+          "t": "short_answer",
+          "m": 2,
+          "q": "A student says: 'If the frequency of a wave on a string is doubled, the speed of the wave doubles too, because v = lambda nu.' Evaluate this statement.",
+          "a": "The statement is incorrect. The speed on a given string under a given tension is fixed by the tension and the linear mass density, not by the frequency. When the frequency is doubled the speed stays the same and the wavelength v/nu is halved.",
+          "s": [
+            [
+              "Judgement: incorrect; the speed is set by the properties of the string (T and mu), not by the frequency",
+              1
+            ],
+            [
+              "With the speed unchanged, doubling nu halves the wavelength (lambda = v/nu)",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Create",
+          "d": "Hardest",
+          "t": "long_answer",
+          "m": 3,
+          "q": "Make up a problem of your own about a transverse wave on a stretched string: choose a mass, a length, a tension and a frequency that give a whole-number speed, and work out the speed and the wavelength.",
+          "a": "Sample answer. A string of mass 0.4 kg and length 2.0 m is under a tension of 80 N, and a wave of frequency 50 Hz is sent along it. mu = 0.4/2.0 = 0.2 kg/m. v = sqrt(T/mu) = sqrt(80/0.2) = sqrt(400) = 20 m/s. Wavelength = v/nu = 20/50 = 0.4 m.",
+          "s": [
+            [
+              "Gives consistent values and computes mu = m/L correctly",
+              1
+            ],
+            [
+              "v = sqrt(T/mu) evaluated correctly with the chosen values",
+              1
+            ],
+            [
+              "Wavelength = v/nu evaluated correctly, with units",
+              1
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "code": "C11P-14.4",
+      "name": "Speed of a longitudinal wave: speed of sound in solids, liquids and gases",
+      "description": "The speed sqrt(B/rho) of longitudinal waves in a fluid and sqrt(Y/rho) in a solid bar, why sound is faster in solids and liquids, and Newton's formula and its Laplace correction for gases.",
+      "idea": "The speed of a longitudinal wave is set by an elastic modulus divided by the density; for sound in a gas the pressure changes are adiabatic, not isothermal.",
+      "rule": "v = sqrt(B/rho) in a fluid, B = -dP/(dV/V); v = sqrt(Y/rho) in a solid bar. Solids and liquids are faster than gases because their B is much larger, by more than their larger density offsets. For an ideal gas an isothermal change gives B = P and Newton's formula v = sqrt(P/rho), which gives 280 m/s for air at STP, about 15% below the measured 331 m/s. Laplace showed the changes are adiabatic, P V^gamma = constant, so B = gamma P and v = sqrt(gamma P/rho); with gamma = 7/5 for air this gives 331.3 m/s. At constant temperature P/rho is unchanged by a change of pressure.",
+      "example": "A gas with gamma = 1.4 at pressure 1.25 x 10^5 Pa and density 0.175 kg/m^3 gives v = sqrt(1.4 x 1.25 x 10^5/0.175) = sqrt(1.0 x 10^6) = 1000 m/s.",
+      "difficulty_base": "Hard",
+      "questions": [
+        {
+          "b": "Remember",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "The speed of a longitudinal wave in a fluid of bulk modulus B and mass density rho is",
+          "a": "sqrt(B/rho)",
+          "o": [
+            "sqrt(B/rho)",
+            "sqrt(rho/B)",
+            "B/rho",
+            "sqrt(B rho)"
+          ]
+        },
+        {
+          "b": "Remember",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "The formula for the speed of sound in an ideal gas obtained by assuming the pressure variations to be isothermal is known as",
+          "a": "Newton's formula",
+          "o": [
+            "Newton's formula",
+            "Laplace's formula",
+            "Hooke's law",
+            "Boyle's law"
+          ]
+        },
+        {
+          "b": "Remember",
+          "d": "Easy",
+          "t": "fill_blank",
+          "m": 1,
+          "q": "For air, the ratio of the two specific heats is gamma = Cp/Cv = 7/5. Written as a decimal, gamma = ____ .",
+          "a": "1.4"
+        },
+        {
+          "b": "Remember",
+          "d": "Hard",
+          "t": "mcq",
+          "m": 1,
+          "q": "Take these speeds of sound in m/s: air at 0 degrees C 331, air at 20 degrees C 343, helium 965, water at 20 degrees C 1482, steel 5941. Which statement about the speed of sound in different media is FALSE?",
+          "a": "Sound travels faster in air at 0 degrees C than in air at 20 degrees C",
+          "o": [
+            "Sound travels faster in air at 0 degrees C than in air at 20 degrees C",
+            "Sound travels faster in steel than in water at 20 degrees C",
+            "Sound travels faster in water at 20 degrees C than in air at 20 degrees C",
+            "Sound travels faster in helium than in air at 20 degrees C"
+          ],
+          "rev": true
+        },
+        {
+          "b": "Understand",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "The speed of sound given in a table for a solid such as steel refers to",
+          "a": "longitudinal waves in the solid",
+          "o": [
+            "longitudinal waves in the solid",
+            "transverse waves in the solid",
+            "electromagnetic waves in the solid",
+            "the average of the transverse and longitudinal speeds"
+          ]
+        },
+        {
+          "b": "Understand",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "Laplace pointed out that the pressure variations in a sound wave in air are",
+          "a": "adiabatic, because they are so fast that there is little time for heat to flow",
+          "o": [
+            "adiabatic, because they are so fast that there is little time for heat to flow",
+            "isothermal, because the temperature of air never changes",
+            "isobaric, because the pressure of air stays constant",
+            "isochoric, because the volume of air stays constant"
+          ]
+        },
+        {
+          "b": "Understand",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "For an ideal gas undergoing an isothermal change at pressure P, the bulk modulus B is equal to",
+          "a": "P",
+          "o": [
+            "P",
+            "gamma P",
+            "P/gamma",
+            "P^2"
+          ]
+        },
+        {
+          "b": "Understand",
+          "d": "Hard",
+          "t": "mcq",
+          "m": 1,
+          "q": "Laplace's formula for the speed of sound in an ideal gas gives a value larger than Newton's formula by the factor",
+          "a": "sqrt(gamma)",
+          "o": [
+            "sqrt(gamma)",
+            "gamma",
+            "1/sqrt(gamma)",
+            "gamma^2"
+          ]
+        },
+        {
+          "b": "Understand",
+          "d": "Hard",
+          "t": "mcq",
+          "m": 1,
+          "q": "A solid bar is replaced by another bar of the same mass density but with four times the Young's modulus. The speed of longitudinal waves in the new bar is",
+          "a": "2 times that in the old bar",
+          "o": [
+            "2 times that in the old bar",
+            "4 times that in the old bar",
+            "1/2 of that in the old bar",
+            "16 times that in the old bar"
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "A fluid has a bulk modulus of 2.25 x 10^9 Pa and a density of 1000 kg/m^3. The speed of longitudinal waves in it is",
+          "a": "1500 m/s",
+          "o": [
+            "1500 m/s",
+            "2.25 x 10^6 m/s",
+            "6.7 x 10^-4 m/s",
+            "1.5 x 10^6 m/s"
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Easy",
+          "t": "fill_blank",
+          "m": 1,
+          "q": "A metal bar has Young's modulus 2.0 x 10^11 N/m^2 and density 8.0 x 10^3 kg/m^3. The speed of longitudinal waves along the bar is ____ m/s (write a whole number).",
+          "a": "5000"
+        },
+        {
+          "b": "Apply",
+          "d": "Hard",
+          "t": "mcq",
+          "m": 1,
+          "q": "A gas with gamma = 1.4 is at a pressure of 1.0 x 10^5 Pa and has a density of 0.56 kg/m^3. The speed of sound in it, from the Laplace-corrected formula, is",
+          "a": "500 m/s",
+          "o": [
+            "500 m/s",
+            "423 m/s",
+            "250000 m/s",
+            "357 m/s"
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Hard",
+          "t": "mcq",
+          "m": 1,
+          "q": "The bulk modulus of a fluid is made four times as large while its density is made twice as large. The speed of longitudinal waves in the fluid is multiplied by",
+          "a": "sqrt(2)",
+          "o": [
+            "sqrt(2)",
+            "2",
+            "8",
+            "1/sqrt(2)"
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Hard",
+          "t": "short_answer",
+          "m": 2,
+          "q": "A liquid has a bulk modulus of 1.96 x 10^9 Pa and a density of 1000 kg/m^3. Find the speed of sound in it and the time a sound pulse takes to travel 4.2 km through it.",
+          "a": "Speed v = sqrt(B/rho) = sqrt(1.96 x 10^9/1000) = sqrt(1.96 x 10^6) = 1400 m/s. Time t = distance/speed = 4200 m/(1400 m/s) = 3.0 s.",
+          "s": [
+            [
+              "v = sqrt(B/rho) = 1400 m/s",
+              1
+            ],
+            [
+              "t = 4200/1400 = 3.0 s",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Hardest",
+          "t": "long_answer",
+          "m": 3,
+          "q": "Air has a pressure of 1.0 x 10^5 Pa and a density of 1.25 kg/m^3, and gamma = 1.4. Find the speed of sound in it (to the nearest m/s) (a) from Newton's formula and (b) from Laplace's formula, and (c) say why the second is the appropriate one for sound in air.",
+          "a": "(a) Newton: v = sqrt(P/rho) = sqrt(1.0 x 10^5/1.25) = sqrt(80000) = 283 m/s. (b) Laplace: v = sqrt(gamma P/rho) = sqrt(1.4 x 80000) = sqrt(112000) = 335 m/s. (c) The pressure variations in a sound wave are so fast that there is no time for heat flow to keep the temperature constant; they are adiabatic, with bulk modulus gamma P instead of P, so Laplace's formula applies.",
+          "s": [
+            [
+              "Newton's formula gives 283 m/s",
+              1
+            ],
+            [
+              "Laplace's formula gives 335 m/s",
+              1
+            ],
+            [
+              "Reason: the variations are adiabatic (B = gamma P), not isothermal (B = P)",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Analyse",
+          "d": "Hard",
+          "t": "multi_statement",
+          "m": 1,
+          "q": "(I) Sound travels faster in solids than in gases only because solids have a lower mass density than gases. (II) The speed of longitudinal waves in a solid bar of Young's modulus Y and mass density rho is sqrt(Y/rho). Which is or are correct?",
+          "a": "Only II",
+          "o": [
+            "Only II",
+            "Only I",
+            "Both I and II",
+            "Neither I nor II"
+          ]
+        },
+        {
+          "b": "Analyse",
+          "d": "Hard",
+          "t": "short_answer",
+          "m": 2,
+          "q": "Solids and liquids have higher mass densities than gases, yet sound travels faster in them. Explain this using v = sqrt(B/rho).",
+          "a": "In v = sqrt(B/rho) a larger density rho tends to lower the speed. But solids and liquids are much more difficult to compress than gases, so their bulk modulus B is much higher, and the increase in B is much greater than the increase in rho. Hence B/rho, and so the speed, is larger for solids and liquids.",
+          "s": [
+            [
+              "Larger density alone would lower the speed, but solids and liquids have much larger B (they are hard to compress)",
+              1
+            ],
+            [
+              "The increase in B is far greater than the increase in rho, so B/rho and hence the speed are larger",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Analyse",
+          "d": "Hardest",
+          "t": "long_answer",
+          "m": 3,
+          "q": "For an ideal gas at constant temperature the pressure P and volume V obey V dP + P dV = 0 for a small change. Use this to show that the bulk modulus is B = P, write Newton's formula for the speed of sound, and evaluate it for a gas at pressure 9.0 x 10^4 Pa and density 1.0 kg/m^3.",
+          "a": "B = -dP/(dV/V). From V dP + P dV = 0, dP = -P dV/V, so -dP/(dV/V) = P and B = P. The speed v = sqrt(B/rho) then gives Newton's formula v = sqrt(P/rho). For P = 9.0 x 10^4 Pa and rho = 1.0 kg/m^3: v = sqrt(9.0 x 10^4) = 300 m/s.",
+          "s": [
+            [
+              "Uses V dP + P dV = 0 in the definition of B to get B = P",
+              1
+            ],
+            [
+              "Newton's formula v = sqrt(P/rho)",
+              1
+            ],
+            [
+              "v = sqrt(9.0 x 10^4/1.0) = 300 m/s",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Evaluate",
+          "d": "Hard",
+          "t": "short_answer",
+          "m": 2,
+          "q": "A student says: 'If the pressure of air is doubled at the same temperature, sound travels faster, because the pressure P is in the numerator of v = sqrt(gamma P/rho).' Evaluate this statement.",
+          "a": "The statement is incorrect. For an ideal gas at constant temperature, P V = N kB T shows that doubling the pressure doubles the density rho as well, so P/rho is unchanged and the speed of sound does not change: it is independent of pressure.",
+          "s": [
+            [
+              "Judgement: incorrect; the speed does not depend on pressure at constant temperature",
+              1
+            ],
+            [
+              "At constant temperature the density is proportional to P, so P/rho is unchanged",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Create",
+          "d": "Hardest",
+          "t": "long_answer",
+          "m": 3,
+          "q": "Choose a Young's modulus and a density for a hypothetical solid bar so that the speed of longitudinal waves in it comes out as a whole number, calculate that speed, and say whether sound travels faster or slower in it than in air at 20 degrees C, where the speed is 343 m/s.",
+          "a": "Sample answer. Take Y = 9.0 x 10^10 N/m^2 and rho = 1.0 x 10^4 kg/m^3. v = sqrt(Y/rho) = sqrt(9.0 x 10^6) = 3000 m/s. This is much greater than 343 m/s, so sound travels faster in the solid bar than in air.",
+          "s": [
+            [
+              "Chooses values of Y and rho that give a whole-number speed",
+              1
+            ],
+            [
+              "v = sqrt(Y/rho) evaluated correctly with units",
+              1
+            ],
+            [
+              "Compares correctly with 343 m/s",
+              1
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "code": "C11P-14.5",
+      "name": "Principle of superposition and interference of waves",
+      "description": "The principle of superposition for pulses and harmonic waves, and interference of two equal harmonic waves of a given phase difference: constructive (in phase, amplitude 2a) and destructive (phase difference pi, amplitude zero).",
+      "idea": "When waves overlap in a medium the net displacement is the algebraic sum of the individual displacements, and each wave moves on as though the others were absent.",
+      "rule": "y(x, t) = y1 + y2 + ...; for waves y = f_i(x - vt), y = sum of the f_i. Pulses keep their identities after crossing. Two waves y1 = a sin(kx - omega t) and y2 = a sin(kx - omega t + phi) give y = 2a cos(phi/2) sin(kx - omega t + phi/2): a wave of the same omega and k, initial phase phi/2 and amplitude A(phi) = 2a cos(phi/2). phi = 0 or an integral multiple of 2 pi gives constructive interference, amplitude 2a; phi = pi gives destructive interference, zero everywhere.",
+      "example": "Two waves of amplitude 1.5 cm each, in the same direction, in phase: resultant amplitude 3.0 cm. If they are made exactly out of phase (phi = pi) the resultant displacement is zero everywhere at all times.",
+      "difficulty_base": "Hard",
+      "questions": [
+        {
+          "b": "Remember",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "According to the principle of superposition, when two waves overlap in a medium the net displacement at a point is",
+          "a": "the algebraic sum of the displacements due to each wave",
+          "o": [
+            "the algebraic sum of the displacements due to each wave",
+            "the larger of the two displacements",
+            "the product of the two displacements",
+            "the average of the two displacements"
+          ]
+        },
+        {
+          "b": "Remember",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "Two harmonic waves of the same amplitude a, the same frequency and the same wavelength travel in the same direction and are exactly in phase. The amplitude of the resultant wave is",
+          "a": "2a",
+          "o": [
+            "2a",
+            "a",
+            "0",
+            "sqrt(2) a"
+          ]
+        },
+        {
+          "b": "Remember",
+          "d": "Easy",
+          "t": "fill_blank",
+          "m": 1,
+          "q": "Two harmonic waves of the same amplitude, 3 mm, the same frequency and the same direction of travel are exactly out of phase (phase difference pi). The amplitude of the resultant wave is ____ mm (write a whole number).",
+          "a": "0"
+        },
+        {
+          "b": "Remember",
+          "d": "Hard",
+          "t": "mcq",
+          "m": 1,
+          "q": "Which statement about two wave pulses that overlap on a stretched string is NOT correct?",
+          "a": "After they have crossed, each pulse is permanently changed in shape by the overlap",
+          "o": [
+            "After they have crossed, each pulse is permanently changed in shape by the overlap",
+            "While they overlap, the net displacement is the algebraic sum of the displacements due to each pulse",
+            "Each pulse moves as if the other were not present",
+            "The principle of superposition applies to pulses as well as to harmonic waves"
+          ],
+          "rev": true
+        },
+        {
+          "b": "Understand",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "The principle of superposition of waves is basic to the phenomenon of",
+          "a": "interference",
+          "o": [
+            "interference",
+            "dispersion",
+            "absorption",
+            "emission"
+          ]
+        },
+        {
+          "b": "Understand",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "Two harmonic waves of equal amplitude and identical frequency and wavelength travel in the same direction and are superposed. Compared with each of them, the resultant wave has",
+          "a": "the same frequency and the same wavelength",
+          "o": [
+            "the same frequency and the same wavelength",
+            "twice the frequency",
+            "half the wavelength",
+            "twice the wavelength"
+          ]
+        },
+        {
+          "b": "Understand",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "Which description of constructive interference of two harmonic waves of equal amplitude travelling in the same direction is correct?",
+          "a": "The waves are exactly in phase and their amplitudes add up in the resultant wave",
+          "o": [
+            "The waves are exactly in phase and their amplitudes add up in the resultant wave",
+            "The waves are exactly out of phase and their amplitudes add up in the resultant wave",
+            "The waves are exactly in phase and their amplitudes subtract out in the resultant wave",
+            "The waves have different frequencies and their amplitudes add up in the resultant wave"
+          ]
+        },
+        {
+          "b": "Understand",
+          "d": "Hard",
+          "t": "mcq",
+          "m": 1,
+          "q": "If n waves y_i = f_i(x - vt) travel simultaneously through a medium, the resultant disturbance y(x, t) is",
+          "a": "the sum f_1(x - vt) + f_2(x - vt) + ... + f_n(x - vt) of the individual wave functions",
+          "o": [
+            "the sum f_1(x - vt) + f_2(x - vt) + ... + f_n(x - vt) of the individual wave functions",
+            "the product of the individual wave functions",
+            "the largest of the individual wave functions at each point",
+            "the average of the individual wave functions"
+          ]
+        },
+        {
+          "b": "Understand",
+          "d": "Hard",
+          "t": "mcq",
+          "m": 1,
+          "q": "Two harmonic waves of equal amplitude a, equal frequency and equal wavelength travel in the same direction and differ in phase by 2 pi. Their interference is",
+          "a": "constructive, with a resultant amplitude of 2a",
+          "o": [
+            "constructive, with a resultant amplitude of 2a",
+            "destructive, with a resultant amplitude of 0",
+            "neither, with a resultant amplitude of a",
+            "constructive, with a resultant amplitude of a"
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "At an instant, the displacement of a point of a string due to wave 1 alone is +5.0 mm and due to wave 2 alone is -2.0 mm. The net displacement of the point is",
+          "a": "+3.0 mm",
+          "o": [
+            "+3.0 mm",
+            "+7.0 mm",
+            "-3.0 mm",
+            "+2.5 mm"
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Easy",
+          "t": "fill_blank",
+          "m": 1,
+          "q": "At a point on a string the displacement due to pulse 1 is +6 cm and the net displacement is +2 cm. The displacement due to pulse 2 at that point is ____ cm (write a whole number including its sign).",
+          "a": "-4"
+        },
+        {
+          "b": "Apply",
+          "d": "Hard",
+          "t": "mcq",
+          "m": 1,
+          "q": "Two harmonic waves of amplitude 3 mm each, with the same frequency and wavelength, travel in the same direction with a phase difference of pi/2. The amplitude of the resultant wave is",
+          "a": "3 sqrt(2) mm",
+          "o": [
+            "3 sqrt(2) mm",
+            "6 mm",
+            "3 mm",
+            "0"
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Hard",
+          "t": "mcq",
+          "m": 1,
+          "q": "Two waves of the same direction, frequency and wavelength, each of amplitude 2 mm, differ in phase by phi. The resultant amplitude is also 2 mm when phi is",
+          "a": "2 pi/3 rad",
+          "o": [
+            "2 pi/3 rad",
+            "pi/3 rad",
+            "pi/2 rad",
+            "pi rad"
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Hard",
+          "t": "short_answer",
+          "m": 2,
+          "q": "At a certain instant, at a point P of a stretched string, wave 1 alone would give a displacement of +3.0 mm and wave 2 alone a displacement of -5.0 mm. (a) Find the net displacement of P. (b) A third wave, which alone would give +4.0 mm at P, then arrives. Find the new net displacement.",
+          "a": "By superposition the net displacement is the algebraic sum. (a) +3.0 + (-5.0) = -2.0 mm. (b) -2.0 + 4.0 = +2.0 mm.",
+          "s": [
+            [
+              "(a) Algebraic sum: -2.0 mm",
+              1
+            ],
+            [
+              "(b) Sum of all three displacements: +2.0 mm",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Hardest",
+          "t": "long_answer",
+          "m": 3,
+          "q": "Two waves y1 = a sin(kx - omega t) and y2 = a sin(kx - omega t + phi) with a = 3.0 mm and phi = pi/3 travel along a string. Using sin A + sin B = 2 sin((A + B)/2) cos((A - B)/2), find the resultant wave, its amplitude (exact value and to 2 significant figures), and its initial phase angle.",
+          "a": "y = a sin(kx - omega t) + a sin(kx - omega t + phi) = 2a cos(phi/2) sin(kx - omega t + phi/2). With a = 3.0 mm and phi = pi/3, the amplitude is 2a cos(pi/6) = 6.0 x (sqrt(3)/2) = 3 sqrt(3) mm = 5.2 mm. The initial phase angle is phi/2 = pi/6, and the frequency and wavelength are those of each component.",
+          "s": [
+            [
+              "Applies the identity to get y = 2a cos(phi/2) sin(kx - omega t + phi/2)",
+              1
+            ],
+            [
+              "Amplitude = 2a cos(pi/6) = 3 sqrt(3) mm = 5.2 mm",
+              1
+            ],
+            [
+              "Initial phase angle pi/6, with the same omega and k as each wave",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Analyse",
+          "d": "Hard",
+          "t": "assertion_reason",
+          "m": 1,
+          "q": "Assertion (A): Two harmonic waves of equal amplitude and frequency travelling in the same direction can cancel each other completely, at all points and at all times. Reason (R): This happens when their phase difference is 2 pi, so that they are exactly out of phase. Choose the correct option.",
+          "a": "A is true, R is false",
+          "o": [
+            "A is true, R is false",
+            "Both A and R are true, and R is the correct explanation of A",
+            "Both A and R are true, but R is not the correct explanation of A",
+            "A is false, R is true"
+          ]
+        },
+        {
+          "b": "Analyse",
+          "d": "Hard",
+          "t": "short_answer",
+          "m": 2,
+          "q": "Show, using the principle of superposition, that the sum of y1 = a sin(kx - omega t) and y2 = a sin(kx - omega t + phi) is again a travelling wave of the same frequency, and state how its amplitude depends on phi.",
+          "a": "By superposition y = y1 + y2 = a sin(kx - omega t) + a sin(kx - omega t + phi). The identity for sin A + sin B gives y = 2a cos(phi/2) sin(kx - omega t + phi/2). This is a harmonic wave moving in +x with the same omega and k as the components. Its amplitude is 2a cos(phi/2), a function of the phase difference phi.",
+          "s": [
+            [
+              "Adds the two waves and shows the result is a wave in +x with the same omega and k (initial phase phi/2)",
+              1
+            ],
+            [
+              "Amplitude = 2a cos(phi/2), depending on phi",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Analyse",
+          "d": "Hardest",
+          "t": "long_answer",
+          "m": 3,
+          "q": "Two pulses of equal and opposite shape travel toward each other along a stretched string. Using the principle of superposition, describe what the string looks like (a) before the pulses meet, (b) at the instant they overlap exactly, and (c) after they have crossed.",
+          "a": "(a) Before they meet, the displacement of any element is just that due to the one pulse reaching it. (b) When they overlap exactly the displacements, being equal and opposite, add algebraically to zero everywhere, so the string is straight. (c) The pulses then emerge with their original shapes and keep moving, since each pulse moves as if the other were not present.",
+          "s": [
+            [
+              "(a) Each pulse acts alone before the overlap",
+              1
+            ],
+            [
+              "(b) Equal and opposite displacements add to zero, so the string is momentarily straight",
+              1
+            ],
+            [
+              "(c) Each pulse reappears unchanged and moves on (each moves as if the other were absent)",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Evaluate",
+          "d": "Hard",
+          "t": "short_answer",
+          "m": 2,
+          "q": "A student says: 'Two harmonic waves of equal amplitude a always produce a resultant of amplitude 2a, because the amplitudes add.' Evaluate this statement.",
+          "a": "The statement is incorrect. The resultant amplitude is 2a cos(phi/2), where phi is the phase difference. It equals 2a only when the waves are exactly in phase (phi = 0 or a multiple of 2 pi). It falls to zero when phi = pi, and takes values between 0 and 2a otherwise.",
+          "s": [
+            [
+              "Judgement: incorrect; the amplitude is 2a cos(phi/2) and depends on the phase difference",
+              1
+            ],
+            [
+              "2a only when exactly in phase; 0 when phi = pi, intermediate otherwise",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Create",
+          "d": "Hardest",
+          "t": "long_answer",
+          "m": 3,
+          "q": "Choose an amplitude and a phase difference (not zero and not a multiple of pi) for two waves of the same direction, frequency and wavelength, calculate the amplitude and the initial phase angle of the resultant, and check that your amplitude lies within the possible range.",
+          "a": "Sample answer. Take a = 1.0 mm and phi = pi/3. The resultant amplitude is 2a cos(phi/2) = 2 x 1.0 x cos(pi/6) = sqrt(3) mm = 1.7 mm. The initial phase angle is phi/2 = pi/6. The possible amplitudes range from 0 (phi = pi) to 2a = 2.0 mm (phi = 0), and 1.7 mm lies between these limits.",
+          "s": [
+            [
+              "Chooses valid values and uses A = 2a cos(phi/2) correctly",
+              1
+            ],
+            [
+              "Initial phase angle phi/2 stated correctly",
+              1
+            ],
+            [
+              "Checks that the amplitude lies between 0 and 2a",
+              1
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "code": "C11P-14.6",
+      "name": "Reflection of waves and stationary waves: nodes and antinodes",
+      "description": "Reflection of pulses and waves at rigid and non-rigid boundaries, and the stationary wave formed by two identical waves travelling in opposite directions, with its nodes and antinodes.",
+      "idea": "A wave reflected at a boundary can combine with the incident wave to give a stationary wave in which the amplitude depends on position but the pattern does not move.",
+      "rule": "At a rigid boundary the reflected wave suffers a phase change of pi (displacement zero at the boundary at all times); at a non-rigid (free) boundary there is no phase change and the net maximum displacement there is twice the amplitude. At an interface of two media part is reflected and part transmitted. Two equal waves y1 = a sin(kx - omega t), y2 = a sin(kx + omega t) give y = 2a sin kx cos omega t: each element oscillates with the same omega, the amplitude 2a sin kx varies with x. Nodes (zero amplitude) at x = n lambda/2, antinodes at x = (n + 1/2) lambda/2; consecutive nodes or antinodes are lambda/2 apart, so lambda is twice that distance.",
+      "example": "A stationary wave y = 0.8 sin(6 pi x) cos(40 pi t) (SI units) has nodes where 6 pi x = n pi, i.e. at x = 0, 1/6 m, 1/3 m, ...; the first antinode is at x = 1/12 m.",
+      "difficulty_base": "Hard",
+      "questions": [
+        {
+          "b": "Remember",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "A pulse is reflected at a rigid boundary. Assuming no loss of energy, the reflected pulse has the same shape as the incident pulse but suffers a phase change of",
+          "a": "pi (180 degrees)",
+          "o": [
+            "pi (180 degrees)",
+            "0",
+            "pi/2 (90 degrees)",
+            "2 pi (360 degrees)"
+          ]
+        },
+        {
+          "b": "Remember",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "The points of a stationary wave at which the amplitude is zero are called",
+          "a": "nodes",
+          "o": [
+            "nodes",
+            "antinodes",
+            "crests",
+            "harmonics"
+          ]
+        },
+        {
+          "b": "Remember",
+          "d": "Easy",
+          "t": "fill_blank",
+          "m": 1,
+          "q": "In a stationary wave, a point at which the amplitude is the largest is called an ____ (write one word).",
+          "a": "antinode"
+        },
+        {
+          "b": "Remember",
+          "d": "Hard",
+          "t": "mcq",
+          "m": 1,
+          "q": "Which statement about stationary (standing) waves on a string is NOT correct?",
+          "a": "The nodes travel along the string with the speed of the component waves",
+          "o": [
+            "The nodes travel along the string with the speed of the component waves",
+            "The amplitude of the stationary wave varies from point to point",
+            "A stationary wave on a string is produced by two identical waves travelling in opposite directions",
+            "All elements of the string oscillate with the same angular frequency"
+          ],
+          "rev": true
+        },
+        {
+          "b": "Understand",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "When a wave meets the interface between two different elastic media, in general",
+          "a": "a part of the incident wave is reflected and a part is transmitted into the second medium",
+          "o": [
+            "a part of the incident wave is reflected and a part is transmitted into the second medium",
+            "the whole of the wave is reflected",
+            "the whole of the wave is transmitted and none is reflected",
+            "the wave is absorbed completely at the interface"
+          ]
+        },
+        {
+          "b": "Understand",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "At a rigid boundary the reflected pulse is inverted relative to the incident pulse because",
+          "a": "the displacement at a rigid boundary must be zero at all times, which by superposition requires the two pulses to be exactly out of phase",
+          "o": [
+            "the displacement at a rigid boundary must be zero at all times, which by superposition requires the two pulses to be exactly out of phase",
+            "the boundary absorbs half of the energy of the pulse",
+            "the rigid boundary exerts no force on the string",
+            "the speed of the pulse becomes zero at the boundary"
+          ]
+        },
+        {
+          "b": "Understand",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "The phenomenon of echo is an example of reflection of a wave by",
+          "a": "a rigid boundary",
+          "o": [
+            "a rigid boundary",
+            "a freely moving boundary",
+            "the interface of two elastic media only",
+            "the open end of an organ pipe"
+          ]
+        },
+        {
+          "b": "Understand",
+          "d": "Hard",
+          "t": "mcq",
+          "m": 1,
+          "q": "In the stationary wave y(x, t) = 2a sin(kx) cos(omega t), the factor 2a sin(kx) represents",
+          "a": "the amplitude at position x",
+          "o": [
+            "the amplitude at position x",
+            "the speed of the wave",
+            "the phase of the wave",
+            "the displacement of every point at time t"
+          ]
+        },
+        {
+          "b": "Understand",
+          "d": "Hard",
+          "t": "mcq",
+          "m": 1,
+          "q": "Two elements of a string lie between the same pair of successive nodes of a stationary wave. They",
+          "a": "oscillate in phase, but in general with different amplitudes",
+          "o": [
+            "oscillate in phase, but in general with different amplitudes",
+            "oscillate with the same amplitude but with different phases, as in a progressive wave",
+            "oscillate with the same amplitude and the same phase at all times",
+            "oscillate with different amplitudes and different phases"
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "The distance between two consecutive nodes of a stationary wave on a string is 15 cm. The wavelength of the component waves is",
+          "a": "30 cm",
+          "o": [
+            "30 cm",
+            "15 cm",
+            "60 cm",
+            "7.5 cm"
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Easy",
+          "t": "fill_blank",
+          "m": 1,
+          "q": "A stationary wave is set up by two waves of wavelength 1.2 m. The distance between two consecutive antinodes is ____ m (write as a decimal).",
+          "a": "0.6"
+        },
+        {
+          "b": "Apply",
+          "d": "Hard",
+          "t": "mcq",
+          "m": 1,
+          "q": "A stationary wave on a string is y = 2a sin(kx) cos(omega t) with k = 5 pi rad/m. How many nodes (counting x = 0) lie in the range 0 <= x <= 0.5 m?",
+          "a": "3",
+          "o": [
+            "3",
+            "2",
+            "6",
+            "5"
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Hard",
+          "t": "mcq",
+          "m": 1,
+          "q": "In a stationary wave on a string the nodes are at x = 0, 0.30 m, 0.60 m, and so on. The distance from a node to the nearest antinode is",
+          "a": "0.15 m",
+          "o": [
+            "0.15 m",
+            "0.30 m",
+            "0.075 m",
+            "0.60 m"
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Hard",
+          "t": "short_answer",
+          "m": 2,
+          "q": "A pulse of height 3 cm travels along a string toward a ring that is free to move on a rod, so that the end of the string is not rigid. Assuming no energy is lost, state (a) the height and orientation of the reflected pulse compared with the incident one, and (b) the maximum displacement at the boundary.",
+          "a": "At a non-rigid (free) boundary the reflected pulse has the same phase and amplitude as the incident pulse. (a) It has height 3 cm and is on the same side (not inverted). (b) At the boundary the two pulses add, so the net maximum displacement is twice the amplitude of each: 2 x 3 cm = 6 cm.",
+          "s": [
+            [
+              "Reflected pulse is 3 cm high and upright, with no phase change",
+              1
+            ],
+            [
+              "Maximum displacement at the boundary is 2 x 3 = 6 cm",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Hardest",
+          "t": "long_answer",
+          "m": 3,
+          "q": "A stationary wave on a string is y(x, t) = 3.0 sin(4 pi x) cos(200 pi t), with y in mm, x in m and t in s. Find (a) the amplitude of each of the two travelling waves that make it up, (b) their wavelength and the distance between successive nodes, and (c) the amplitude of the oscillation at x = 0.125 m.",
+          "a": "Comparing with y = 2a sin kx cos omega t: (a) 2a = 3.0 mm, so a = 1.5 mm. (b) k = 4 pi rad/m, so lambda = 2 pi/k = 0.5 m, and successive nodes are lambda/2 = 0.25 m apart. (c) At x = 0.125 m, 4 pi x = pi/2, sin(pi/2) = 1, so the amplitude is 3.0 mm (an antinode).",
+          "s": [
+            [
+              "Component amplitude a = 1.5 mm",
+              1
+            ],
+            [
+              "lambda = 2 pi/k = 0.5 m and node spacing 0.25 m",
+              1
+            ],
+            [
+              "Amplitude at x = 0.125 m is 3.0 mm (sin(pi/2) = 1, an antinode)",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Analyse",
+          "d": "Hard",
+          "t": "multi_statement",
+          "m": 1,
+          "q": "(I) At a rigid boundary a reflected pulse suffers a phase change of pi, so that the net displacement at the boundary is zero at all times. (II) At the open end of an organ pipe, treated as a non-rigid boundary, the reflected wave suffers a phase change of pi. Which is or are correct?",
+          "a": "Only I",
+          "o": [
+            "Only I",
+            "Only II",
+            "Both I and II",
+            "Neither I nor II"
+          ]
+        },
+        {
+          "b": "Analyse",
+          "d": "Hard",
+          "t": "short_answer",
+          "m": 2,
+          "q": "Two equal waves travelling in opposite directions on a string produce a stationary wave. Explain why it is called 'stationary' by referring to the positions of the nodes and to the amplitude at a given location.",
+          "a": "The wave pattern is neither moving to the right nor to the left. The nodes, where sin kx = 0, are at fixed positions that do not change with time, and at each location the amplitude 2a sin kx is fixed (though different at different locations), so the pattern stays in place instead of travelling.",
+          "s": [
+            [
+              "The pattern does not move left or right; the nodes stay at fixed positions",
+              1
+            ],
+            [
+              "The amplitude at a given location is fixed, though it differs from one location to another",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Analyse",
+          "d": "Hardest",
+          "t": "long_answer",
+          "m": 3,
+          "q": "A wave y1 = a sin(kx - omega t) travelling in +x and a wave y2 = a sin(kx + omega t) travelling in -x are superposed on a string. Using sin(A + B) + sin(A - B) = 2 sin A cos B, find the resultant displacement, find the positions of the nodes, and state the distance between two successive nodes.",
+          "a": "y = y1 + y2 = a[sin(kx - omega t) + sin(kx + omega t)] = 2a sin kx cos omega t. Nodes are where the amplitude 2a sin kx is zero, i.e. sin kx = 0, so kx = n pi. With k = 2 pi/lambda this gives x = n lambda/2, for n = 0, 1, 2, ... Successive nodes are therefore lambda/2 apart.",
+          "s": [
+            [
+              "y = 2a sin kx cos omega t",
+              1
+            ],
+            [
+              "Nodes at sin kx = 0, so x = n lambda/2",
+              1
+            ],
+            [
+              "Distance between successive nodes = lambda/2",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Evaluate",
+          "d": "Hard",
+          "t": "short_answer",
+          "m": 2,
+          "q": "A student says: 'In a stationary wave the nodes are just points that happen to be at rest for an instant, like every other point of the string at certain moments.' Evaluate this statement.",
+          "a": "The statement is incorrect. A node is a position of zero amplitude: sin kx = 0 there, so the element at a node does not move at any time. Other points pass through zero displacement together only at the instants when cos omega t = 0 and move at other times.",
+          "s": [
+            [
+              "Judgement: incorrect; at a node the amplitude is zero (sin kx = 0), so it is at rest at all times",
+              1
+            ],
+            [
+              "Other points are at zero displacement only at particular instants (cos omega t = 0)",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Create",
+          "d": "Hardest",
+          "t": "long_answer",
+          "m": 3,
+          "q": "Write the equation of a stationary wave of your own on a string by choosing a value of a (the amplitude of each travelling wave) and a wavelength. Give k, write y(x, t) with a chosen angular frequency, and give the positions of the first three nodes and the first two antinodes.",
+          "a": "Sample answer. Take a = 2 mm, lambda = 0.8 m and omega = 100 pi rad/s. k = 2 pi/lambda = 2.5 pi rad/m. y(x, t) = 2a sin kx cos omega t = 4 sin(2.5 pi x) cos(100 pi t), with y in mm. Nodes at x = n lambda/2: 0, 0.4 m and 0.8 m. Antinodes at x = (n + 1/2) lambda/2: 0.2 m and 0.6 m.",
+          "s": [
+            [
+              "k = 2 pi/lambda and the form y = 2a sin kx cos omega t written correctly",
+              1
+            ],
+            [
+              "First three nodes at 0, lambda/2 and lambda",
+              1
+            ],
+            [
+              "First two antinodes at lambda/4 and 3 lambda/4",
+              1
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "code": "C11P-14.7",
+      "name": "Normal modes of vibration: stretched strings and air columns",
+      "description": "Why boundary conditions allow only certain natural frequencies, and the normal modes (harmonics) of a string fixed at both ends, an air column closed at one end and an air column open at both ends; resonance.",
+      "idea": "A system with boundaries can oscillate as a stationary wave only at certain natural frequencies, the normal modes, fixed by the boundary conditions and the wave speed.",
+      "rule": "String fixed at both ends (nodes at both ends): L = n lambda/2, lambda = 2L/n, nu_n = n v/(2L), n = 1, 2, 3, ...; n = 1 is the fundamental or first harmonic. Air column closed at one end (node at the closed end, antinode at the open end): L = (n + 1/2) lambda/2, nu = (n + 1/2) v/(2L), n = 0, 1, 2, ...; the fundamental is v/(4L) and only the odd harmonics 3v/(4L), 5v/(4L), ... occur. Pipe open at both ends (antinodes at both ends): nu_n = n v/(2L), all harmonics. Each normal-mode frequency is a resonant frequency: the system resonates when the external frequency is close to one of them. A vibrating string is generally a superposition of several modes.",
+      "example": "A string of length 0.90 m fixed at both ends, with wave speed 180 m/s, has nu1 = 180/(2 x 0.90) = 100 Hz, and its third harmonic has frequency 300 Hz and wavelength 0.60 m.",
+      "difficulty_base": "Hard",
+      "questions": [
+        {
+          "b": "Remember",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "A string of length L is fixed at both ends, and the speed of waves on it is v. Its fundamental frequency is",
+          "a": "v/(2L)",
+          "o": [
+            "v/(2L)",
+            "v/L",
+            "v/(4L)",
+            "2v/L"
+          ]
+        },
+        {
+          "b": "Remember",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "Which harmonics are present in an air column closed at one end and open at the other?",
+          "a": "Only the odd harmonics",
+          "o": [
+            "Only the odd harmonics",
+            "All the harmonics",
+            "Only the even harmonics",
+            "Only the fundamental"
+          ]
+        },
+        {
+          "b": "Remember",
+          "d": "Easy",
+          "t": "fill_blank",
+          "m": 1,
+          "q": "A glass tube is partly filled with water, so that the air column in it is closed at the water surface and open at the top. At the water surface the air column has a displacement ____ (write one word, node or antinode).",
+          "a": "node"
+        },
+        {
+          "b": "Remember",
+          "d": "Hard",
+          "t": "mcq",
+          "m": 1,
+          "q": "A pipe closed at one end and open at the other has fundamental frequency nu1. Which of the following is NOT one of its natural frequencies?",
+          "a": "2 nu1",
+          "o": [
+            "2 nu1",
+            "3 nu1",
+            "5 nu1",
+            "7 nu1"
+          ],
+          "rev": true
+        },
+        {
+          "b": "Understand",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "A stretched string fixed at both ends cannot vibrate with any arbitrary frequency because",
+          "a": "the boundary conditions (a node at each end) allow only certain wavelengths, and hence only certain natural frequencies",
+          "o": [
+            "the boundary conditions (a node at each end) allow only certain wavelengths, and hence only certain natural frequencies",
+            "the tension in the string changes continuously with frequency",
+            "the speed of waves on the string depends on the frequency",
+            "the string absorbs all waves of other frequencies"
+          ]
+        },
+        {
+          "b": "Understand",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "Two pipes have the same length L. One is open at both ends and the other is closed at one end. The fundamental frequency of the open pipe is",
+          "a": "twice that of the closed pipe",
+          "o": [
+            "twice that of the closed pipe",
+            "half that of the closed pipe",
+            "equal to that of the closed pipe",
+            "four times that of the closed pipe"
+          ]
+        },
+        {
+          "b": "Understand",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "A source is held near an air column and the column resonates with it. This happens when",
+          "a": "the frequency of the source is close to one of the natural frequencies of the air column",
+          "o": [
+            "the frequency of the source is close to one of the natural frequencies of the air column",
+            "the frequency of the source is far from every natural frequency of the air column",
+            "the source has a large amplitude, whatever its frequency",
+            "the air column has no nodes at all"
+          ]
+        },
+        {
+          "b": "Understand",
+          "d": "Hard",
+          "t": "mcq",
+          "m": 1,
+          "q": "In the second harmonic of a string of length L fixed at both ends, the wavelength of the stationary wave is",
+          "a": "L",
+          "o": [
+            "L",
+            "2L",
+            "L/2",
+            "4L"
+          ]
+        },
+        {
+          "b": "Understand",
+          "d": "Hard",
+          "t": "mcq",
+          "m": 1,
+          "q": "In the fundamental mode of a pipe of length L closed at one end and open at the other, the wavelength of the stationary wave in the air column is",
+          "a": "4L",
+          "o": [
+            "4L",
+            "2L",
+            "L",
+            "L/4"
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "A string of length 0.50 m is fixed at both ends and waves travel on it at 200 m/s. Its fundamental frequency is",
+          "a": "200 Hz",
+          "o": [
+            "200 Hz",
+            "400 Hz",
+            "100 Hz",
+            "800 Hz"
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Easy",
+          "t": "fill_blank",
+          "m": 1,
+          "q": "A pipe 0.50 m long is closed at one end and open at the other. Take the speed of sound in air as 340 m/s. The fundamental frequency of the pipe is ____ Hz (write a whole number).",
+          "a": "170"
+        },
+        {
+          "b": "Apply",
+          "d": "Hard",
+          "t": "mcq",
+          "m": 1,
+          "q": "A pipe 0.85 m long is excited by a source of frequency 600 Hz. Take the speed of sound as 340 m/s. Resonance with the source is observed",
+          "a": "only if the pipe is open at both ends",
+          "o": [
+            "only if the pipe is open at both ends",
+            "only if the pipe is closed at one end",
+            "in both cases",
+            "in neither case"
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Hard",
+          "t": "mcq",
+          "m": 1,
+          "q": "Two successive harmonics of a string fixed at both ends have frequencies 300 Hz and 400 Hz. The fundamental frequency of the string is",
+          "a": "100 Hz",
+          "o": [
+            "100 Hz",
+            "50 Hz",
+            "350 Hz",
+            "700 Hz"
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Hard",
+          "t": "short_answer",
+          "m": 2,
+          "q": "A pipe of length 0.40 m is closed at one end and open at the other. Take the speed of sound in the air as 320 m/s. Find the fundamental frequency and the frequency of the third harmonic.",
+          "a": "For a pipe closed at one end, nu1 = v/(4L) = 320/(4 x 0.40) = 200 Hz. Only odd harmonics are present, and the third harmonic is nu3 = 3 v/(4L) = 3 x 200 = 600 Hz.",
+          "s": [
+            [
+              "Fundamental = v/(4L) = 200 Hz",
+              1
+            ],
+            [
+              "Third harmonic = 3 v/(4L) = 600 Hz",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Hardest",
+          "t": "long_answer",
+          "m": 3,
+          "q": "A string of linear mass density 0.04 kg/m and length 1.5 m is fixed at both ends and stretched under a tension of 81 N. Find (a) the speed of waves on the string, (b) its fundamental frequency, and (c) the frequency and the wavelength of its third harmonic.",
+          "a": "(a) v = sqrt(T/mu) = sqrt(81/0.04) = sqrt(2025) = 45 m/s. (b) nu1 = v/(2L) = 45/(2 x 1.5) = 15 Hz. (c) nu3 = 3 nu1 = 45 Hz, and the wavelength is lambda = 2L/3 = 3.0/3 = 1.0 m.",
+          "s": [
+            [
+              "v = sqrt(T/mu) = 45 m/s",
+              1
+            ],
+            [
+              "Fundamental frequency v/(2L) = 15 Hz",
+              1
+            ],
+            [
+              "Third harmonic: 45 Hz and wavelength 1.0 m",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Analyse",
+          "d": "Hard",
+          "t": "assertion_reason",
+          "m": 1,
+          "q": "Assertion (A): A pipe of length L that is closed at one end has a fundamental frequency v/(2L), where v is the speed of sound in air. Reason (R): At the closed end of such a pipe the displacement of the air has a node, and at the open end it has an antinode. Choose the correct option.",
+          "a": "A is false, R is true",
+          "o": [
+            "A is false, R is true",
+            "Both A and R are true, and R is the correct explanation of A",
+            "Both A and R are true, but R is not the correct explanation of A",
+            "A is true, R is false"
+          ]
+        },
+        {
+          "b": "Analyse",
+          "d": "Hard",
+          "t": "short_answer",
+          "m": 2,
+          "q": "Explain, using the boundary conditions at the ends, why a pipe closed at one end has only odd harmonics while a pipe open at both ends has all harmonics.",
+          "a": "In a pipe closed at one end there is a node at the closed end and an antinode at the open end, so the length L = (n + 1/2) lambda/2, giving frequencies (n + 1/2) v/(2L), which are odd multiples of v/(4L): only odd harmonics. In a pipe open at both ends both ends are antinodes, so L = n lambda/2, giving frequencies n v/(2L) for n = 1, 2, 3, ..., so all harmonics are present.",
+          "s": [
+            [
+              "Closed at one end: node at one end, antinode at the other, so L = (n + 1/2) lambda/2 and only odd multiples of v/(4L)",
+              1
+            ],
+            [
+              "Open at both ends: antinodes at both ends, so L = n lambda/2 and all harmonics n v/(2L)",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Analyse",
+          "d": "Hardest",
+          "t": "long_answer",
+          "m": 3,
+          "q": "Pipe A is open at both ends and pipe B is closed at one end; each is 0.34 m long. Take the speed of sound as 340 m/s. Find the first three natural frequencies of each pipe, and say whether any frequency is natural to both.",
+          "a": "Pipe A: nu_n = n v/(2L) = n x 340/0.68 = 500 n Hz, so 500, 1000 and 1500 Hz. Pipe B: nu = (2n + 1) v/(4L) = (2n + 1) x 340/1.36 = 250 (2n + 1) Hz, so 250, 750 and 1250 Hz. No frequency is common to both: every natural frequency of A is an even multiple of 250 Hz and every natural frequency of B is an odd multiple of 250 Hz.",
+          "s": [
+            [
+              "Pipe A: 500, 1000, 1500 Hz",
+              1
+            ],
+            [
+              "Pipe B: 250, 750, 1250 Hz",
+              1
+            ],
+            [
+              "No common frequency: A gives even multiples of 250 Hz, B odd multiples",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Evaluate",
+          "d": "Hard",
+          "t": "short_answer",
+          "m": 2,
+          "q": "A student says: 'A string fixed at both ends can vibrate only at its fundamental frequency, because the string has only one length.' Evaluate this statement.",
+          "a": "The statement is incorrect. A string of length L fixed at both ends has normal modes nu_n = n v/(2L) for n = 1, 2, 3, ..., so it can vibrate at its fundamental and at each of its higher harmonics. In practice the vibration is a superposition of different modes, and where the string is plucked or bowed decides which are more prominent.",
+          "s": [
+            [
+              "Judgement: incorrect; the string has natural frequencies nu_n = n v/(2L) for n = 1, 2, 3, ...",
+              1
+            ],
+            [
+              "The actual vibration is generally a superposition of modes, some more strongly excited than others",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Create",
+          "d": "Hardest",
+          "t": "long_answer",
+          "m": 3,
+          "q": "Design a stretched string fixed at both ends, giving its wave speed and its length, so that its fundamental frequency is 100 Hz. State its next two natural frequencies and the wavelength of the second harmonic.",
+          "a": "Sample answer. Take a wave speed v = 200 m/s. For a fundamental of 100 Hz, v/(2L) = 100 Hz, so L = 200/(2 x 100) = 1.0 m. The next natural frequencies are nu2 = 2 x 100 = 200 Hz and nu3 = 3 x 100 = 300 Hz. The wavelength of the second harmonic is 2L/2 = 1.0 m.",
+          "s": [
+            [
+              "Chooses v and finds L = v/(2 x 100 Hz) consistently, giving a 100 Hz fundamental",
+              1
+            ],
+            [
+              "Next two frequencies 200 Hz and 300 Hz",
+              1
+            ],
+            [
+              "Wavelength of the second harmonic equals L (1.0 m for the sample)",
+              1
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "code": "C11P-14.8",
+      "name": "Beats",
+      "description": "The beating of two harmonic sound waves of close, unequal frequencies: the resultant s = [2a cos(omega_b t)] cos(omega_a t), the waxing and waning of intensity, and the beat frequency nu1 - nu2.",
+      "idea": "Two waves of nearly equal frequency superpose to give a tone of the average frequency whose intensity waxes and wanes at the frequency difference.",
+      "rule": "For s1 = a cos(omega1 t) and s2 = a cos(omega2 t), s = [2a cos(omega_b t)] cos(omega_a t) with omega_b = (omega1 - omega2)/2 and omega_a = (omega1 + omega2)/2. If |omega1 - omega2| is much smaller than omega1 and omega2, omega_a is much greater than omega_b: the tone has the average frequency and a slowly varying amplitude. Intensity is largest when cos(omega_b t) = +1 or -1, so it waxes and wanes at 2 omega_b = omega1 - omega2, and nu_beat = nu1 - nu2 (the difference). Increasing the tension of a string raises its frequency. Musicians tune until no beats are heard.",
+      "example": "Forks of 128 Hz and 130 Hz sounded together give a tone of about 129 Hz whose intensity waxes and wanes 2 times per second (beat frequency 2 Hz).",
+      "difficulty_base": "Hard",
+      "questions": [
+        {
+          "b": "Remember",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "Two harmonic sound waves of frequencies nu1 and nu2 (close to each other) are heard together. The beat frequency is",
+          "a": "the difference of the two frequencies, |nu1 - nu2|",
+          "o": [
+            "the difference of the two frequencies, |nu1 - nu2|",
+            "the sum of the two frequencies, nu1 + nu2",
+            "the average of the two frequencies, (nu1 + nu2)/2",
+            "the product of the two frequencies, nu1 nu2"
+          ]
+        },
+        {
+          "b": "Remember",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "Beats arise from",
+          "a": "the superposition of two waves of slightly different frequencies and comparable amplitudes",
+          "o": [
+            "the superposition of two waves of slightly different frequencies and comparable amplitudes",
+            "the reflection of a single wave from a rigid boundary",
+            "the superposition of two waves of exactly equal frequency",
+            "the refraction of a wave at the interface of two media"
+          ]
+        },
+        {
+          "b": "Remember",
+          "d": "Easy",
+          "t": "fill_blank",
+          "m": 1,
+          "q": "The audibly distinct waxing and waning of the intensity of sound, heard when two sound waves of nearly equal frequency are superposed, is called the phenomenon of ____ (write one word, plural).",
+          "a": "beats"
+        },
+        {
+          "b": "Remember",
+          "d": "Hard",
+          "t": "mcq",
+          "m": 1,
+          "q": "Which statement about beats is NOT correct?",
+          "a": "Beats are heard when two harmonic sound waves of exactly the same frequency are heard together",
+          "o": [
+            "Beats are heard when two harmonic sound waves of exactly the same frequency are heard together",
+            "When two harmonic sound waves of close but unequal frequencies are heard together, the intensity waxes and wanes",
+            "The beat frequency equals the difference of the two frequencies",
+            "The amplitude of the resultant of two close frequencies is not constant in time"
+          ],
+          "rev": true
+        },
+        {
+          "b": "Understand",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "The waxing and waning that is heard when beats are produced is a variation in the",
+          "a": "intensity (loudness) of the sound",
+          "o": [
+            "intensity (loudness) of the sound",
+            "frequency (pitch) of the sound",
+            "speed of the sound in air",
+            "wavelength of the sound in air"
+          ]
+        },
+        {
+          "b": "Understand",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "Two harmonic sound waves of frequencies 200 Hz and 204 Hz and equal amplitudes are heard together. The tone that is heard has a frequency of about",
+          "a": "202 Hz",
+          "o": [
+            "202 Hz",
+            "4 Hz",
+            "404 Hz",
+            "2 Hz"
+          ]
+        },
+        {
+          "b": "Understand",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "For two waves s1 = a cos(omega1 t) and s2 = a cos(omega2 t) the resultant is s = [2a cos(omega_b t)] cos(omega_a t). The factor 2a cos(omega_b t) represents",
+          "a": "the slowly varying amplitude of the resultant wave",
+          "o": [
+            "the slowly varying amplitude of the resultant wave",
+            "a constant amplitude equal to 2a",
+            "the phase constant of the resultant wave",
+            "the speed of the resultant wave"
+          ]
+        },
+        {
+          "b": "Understand",
+          "d": "Hard",
+          "t": "mcq",
+          "m": 1,
+          "q": "In the analysis of beats it is assumed that |omega1 - omega2| is much smaller than omega1 and omega2. This is needed so that",
+          "a": "omega_a is much greater than omega_b, i.e. the amplitude changes slowly compared with the oscillation, giving audible waxing and waning",
+          "o": [
+            "omega_a is much greater than omega_b, i.e. the amplitude changes slowly compared with the oscillation, giving audible waxing and waning",
+            "the two waves have equal amplitudes",
+            "the resultant has no oscillation at the average angular frequency",
+            "the two waves have the same phase everywhere"
+          ]
+        },
+        {
+          "b": "Understand",
+          "d": "Hard",
+          "t": "mcq",
+          "m": 1,
+          "q": "Two sound waves of equal amplitude a and close frequencies are superposed. At the instants when the sound is loudest, the amplitude of the resultant is",
+          "a": "2a",
+          "o": [
+            "2a",
+            "a",
+            "a/2",
+            "4a"
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "Two tuning forks of frequencies 384 Hz and 390 Hz are sounded together. The beat frequency is",
+          "a": "6 Hz",
+          "o": [
+            "6 Hz",
+            "387 Hz",
+            "774 Hz",
+            "3 Hz"
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Easy",
+          "t": "fill_blank",
+          "m": 1,
+          "q": "Two sound waves of frequencies 437 Hz and 443 Hz are heard together. The number of times the intensity reaches a maximum in 10 s is ____ (write a whole number).",
+          "a": "60"
+        },
+        {
+          "b": "Apply",
+          "d": "Hard",
+          "t": "mcq",
+          "m": 1,
+          "q": "Two sitar strings A and B give beats. The frequency of A is 300 Hz and the beat frequency is 4 Hz. When the tension in B is slightly increased the beat frequency rises to 6 Hz. The original frequency of B was",
+          "a": "304 Hz",
+          "o": [
+            "304 Hz",
+            "296 Hz",
+            "306 Hz",
+            "294 Hz"
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Hard",
+          "t": "mcq",
+          "m": 1,
+          "q": "An unknown tuning fork gives 3 beats per second with a 256 Hz fork and 5 beats per second with a 258 Hz fork. The frequency of the unknown fork is",
+          "a": "253 Hz",
+          "o": [
+            "253 Hz",
+            "259 Hz",
+            "263 Hz",
+            "251 Hz"
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Hard",
+          "t": "short_answer",
+          "m": 2,
+          "q": "Two tuning forks of frequencies 656 Hz and 648 Hz, with equal amplitudes, are sounded together. Find the frequency of the tone that is heard and the beat frequency.",
+          "a": "The tone heard has the average frequency (656 + 648)/2 = 652 Hz. The beat frequency is the difference, 656 - 648 = 8 Hz (8 beats per second).",
+          "s": [
+            [
+              "Frequency of the tone heard = average = 652 Hz",
+              1
+            ],
+            [
+              "Beat frequency = 656 - 648 = 8 Hz",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Hardest",
+          "t": "long_answer",
+          "m": 3,
+          "q": "Two tuning forks of frequencies 320 Hz and 324 Hz are sounded together. Find (a) the beat frequency, (b) the time between two successive maxima of intensity, and (c) the number of intensity maxima heard in 2.5 s.",
+          "a": "(a) Beat frequency = 324 - 320 = 4 Hz. (b) The time between successive maxima is 1/4 Hz = 0.25 s. (c) Number of maxima in 2.5 s = 4 x 2.5 = 10.",
+          "s": [
+            [
+              "Beat frequency 4 Hz",
+              1
+            ],
+            [
+              "Time between successive maxima 0.25 s",
+              1
+            ],
+            [
+              "10 maxima in 2.5 s",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Analyse",
+          "d": "Hard",
+          "t": "multi_statement",
+          "m": 1,
+          "q": "(I) Two harmonic sound waves of frequencies 500 Hz and 504 Hz, superposed, give an intensity that waxes and wanes 502 times per second, the average of the two frequencies. (II) When beats are heard, the average frequency of the two waves is not present at all in the resultant sound. Which is or are correct?",
+          "a": "Neither I nor II",
+          "o": [
+            "Neither I nor II",
+            "Only I",
+            "Only II",
+            "Both I and II"
+          ]
+        },
+        {
+          "b": "Analyse",
+          "d": "Hard",
+          "t": "short_answer",
+          "m": 2,
+          "q": "Explain how two musicians can use beats to tune their instruments to the same note.",
+          "a": "While both instruments sound the same note they listen for beats, whose frequency equals the difference between the two frequencies. They adjust one instrument so that the beats become slower, until the intensity no longer waxes and wanes and no beats are detected; then the two frequencies are equal.",
+          "s": [
+            [
+              "Beats are heard at a frequency equal to the difference of the two frequencies",
+              1
+            ],
+            [
+              "One instrument is adjusted until the beats disappear, which means the frequencies are equal",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Analyse",
+          "d": "Hardest",
+          "t": "long_answer",
+          "m": 3,
+          "q": "Two sound waves s1 = a cos(omega1 t) and s2 = a cos(omega2 t) are superposed, with omega1 slightly greater than omega2. Using cos A + cos B = 2 cos((A + B)/2) cos((A - B)/2), find the resultant, say what it looks like when |omega1 - omega2| is much smaller than omega1 and omega2, and deduce the beat frequency.",
+          "a": "s = s1 + s2 = 2a cos((omega1 - omega2)t/2) cos((omega1 + omega2)t/2) = [2a cos(omega_b t)] cos(omega_a t), with omega_b = (omega1 - omega2)/2 and omega_a = (omega1 + omega2)/2. When the difference is small, omega_a is much greater than omega_b: the resultant oscillates at the average angular frequency omega_a with a slowly varying amplitude 2a cos(omega_b t). The intensity is largest when cos(omega_b t) is +1 or -1, so it waxes and wanes at 2 omega_b = omega1 - omega2, i.e. nu_beat = nu1 - nu2.",
+          "s": [
+            [
+              "s = [2a cos(omega_b t)] cos(omega_a t) with omega_b = (omega1 - omega2)/2 and omega_a = (omega1 + omega2)/2",
+              1
+            ],
+            [
+              "For a small difference the wave oscillates at omega_a with a slowly varying amplitude",
+              1
+            ],
+            [
+              "Intensity waxes and wanes at 2 omega_b = omega1 - omega2, so nu_beat = nu1 - nu2",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Evaluate",
+          "d": "Hard",
+          "t": "short_answer",
+          "m": 2,
+          "q": "A student says: 'Sounding a 500 Hz source and a 1000 Hz source together gives beats at 500 Hz, since beats occur at the difference of the frequencies.' Evaluate this statement.",
+          "a": "The statement is incorrect. Beats, as distinct waxing and waning of the intensity, occur only when the two frequencies are close, so that |omega1 - omega2| is much smaller than omega1 and omega2 and the amplitude varies slowly. Here the difference of 500 Hz is comparable with the frequencies themselves, so no slow waxing and waning is heard.",
+          "s": [
+            [
+              "Judgement: incorrect; beats require close frequencies, with |omega1 - omega2| much smaller than omega1 and omega2",
+              1
+            ],
+            [
+              "Here the difference is comparable to the frequencies, so the amplitude does not vary slowly and no distinct waxing and waning is heard",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Create",
+          "d": "Hardest",
+          "t": "long_answer",
+          "m": 3,
+          "q": "A tuning fork of frequency 600 Hz is sounded with a second fork that produces 3 beats per second with it. State the two possible frequencies of the second fork, and for each give the frequency of the tone that is heard.",
+          "a": "The beat frequency is the difference of the frequencies, so the second fork has frequency 600 + 3 = 603 Hz or 600 - 3 = 597 Hz. The tone heard has the average frequency: (600 + 603)/2 = 601.5 Hz in the first case and (600 + 597)/2 = 598.5 Hz in the second.",
+          "s": [
+            [
+              "Both possible frequencies, 603 Hz and 597 Hz",
+              1
+            ],
+            [
+              "Uses beat frequency = difference of the frequencies",
+              1
+            ],
+            [
+              "Tone heard has the average frequency: 601.5 Hz and 598.5 Hz",
+              1
+            ]
+          ]
+        }
+      ]
+    }
+  ]
+}

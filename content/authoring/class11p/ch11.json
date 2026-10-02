@@ -1,0 +1,2996 @@
+{
+  "subject": {
+    "code": "PHY11",
+    "name": "Physics",
+    "board": "CBSE",
+    "class": 11
+  },
+  "source": {
+    "publisher": "NCERT",
+    "title": "Physics Part II",
+    "edition": "Textbook for Class XI Part II, Reprint 2026-27",
+    "year": 2026
+  },
+  "chapter": {
+    "part": "II",
+    "chapter_no": 11,
+    "name": "Thermodynamics",
+    "blurb": "The chapter develops the laws governing the interconversion of heat, work and internal energy for bulk systems. It introduces thermal equilibrium and the Zeroth Law, the First Law with specific heat capacities and the special thermodynamic processes, and the work done in each. It ends with the Second Law, reversible and irreversible processes, and the Carnot engine, whose efficiency depends only on the temperatures of its two reservoirs.",
+    "source_code": "keph204",
+    "order_index": 11
+  },
+  "scope_in": [
+    {
+      "item": "Describe thermodynamics as a macroscopic science that specifies the state of a system by measurable macroscopic variables (pressure, volume, temperature, mass, composition), and distinguish it from mechanics, which deals with the motion of a body as a whole",
+      "pages": "227"
+    },
+    {
+      "item": "State what an equilibrium state is in thermodynamics, distinguish adiabatic and diathermic walls, and describe how two systems reach thermal equilibrium",
+      "pages": "227-228"
+    },
+    {
+      "item": "State the Zeroth Law of Thermodynamics and use it to arrive at temperature as the quantity that is equal for systems in thermal equilibrium",
+      "pages": "228"
+    },
+    {
+      "item": "Define internal energy as the sum of molecular kinetic and potential energies (excluding the kinetic energy of the system as a whole) and explain that it is a state variable",
+      "pages": "229"
+    },
+    {
+      "item": "Distinguish heat and work as two modes of energy transfer that are not state variables, and identify which mode operates in a given situation",
+      "pages": "229-230"
+    },
+    {
+      "item": "State the First Law, Delta Q = Delta U + Delta W, with Delta Q the heat supplied to the system and Delta W the work done by the system, apply it with correct signs, and explain the path dependence of Delta Q and Delta W",
+      "pages": "230, 240-241"
+    },
+    {
+      "item": "Use Delta W = P Delta V for work against a constant pressure, including the worked example of the vaporisation of water",
+      "pages": "231"
+    },
+    {
+      "item": "Define heat capacity, specific heat capacity and molar specific heat capacity with their units, and calculate heat from them",
+      "pages": "231, 240"
+    },
+    {
+      "item": "Recall that the molar specific heat capacity of solids is about 3R (Table 11.1, carbon an exception), the definition of the calorie, 1 cal = 4.186 J and the specific heat capacity of water",
+      "pages": "231-232"
+    },
+    {
+      "item": "Explain why a gas has two specific heats and state, use and derive C_p - C_v = R for an ideal gas",
+      "pages": "232"
+    },
+    {
+      "item": "Explain state variables and equilibrium states, use the ideal gas equation of state PV = mu R T, and classify variables as extensive or intensive",
+      "pages": "232-233"
+    },
+    {
+      "item": "Describe a quasi-static process and why it is an idealisation",
+      "pages": "233-234"
+    },
+    {
+      "item": "Define isothermal, isobaric, isochoric and adiabatic processes (Table 11.2) and calculate the work done in an isothermal process, W = mu R T ln(V2/V1), and in an isobaric process, W = P(V2 - V1) = mu R (T2 - T1)",
+      "pages": "234-235"
+    },
+    {
+      "item": "Apply the First Law to isochoric and cyclic processes, and find the work done from a pressure-volume description of a process (Exercise 11.8)",
+      "pages": "235-236, 243"
+    },
+    {
+      "item": "Use P V^gamma = constant, gamma = C_p/C_v and T V^(gamma - 1) = constant for an adiabatic process of an ideal gas, and calculate the adiabatic work W = mu R (T1 - T2)/(gamma - 1)",
+      "pages": "235, 238, 240, 242"
+    },
+    {
+      "item": "State the Kelvin-Planck and Clausius statements of the Second Law and recognise processes that the First Law allows but the Second Law forbids",
+      "pages": "236, 241"
+    },
+    {
+      "item": "Define reversible and irreversible processes, give examples, and state the two causes of irreversibility and the conditions for reversibility",
+      "pages": "236-237, 241"
+    },
+    {
+      "item": "Describe the four steps of the Carnot cycle, and use eta = 1 - Q2/Q1 = 1 - T2/T1 and Q1/Q2 = T1/T2 with temperatures in kelvin",
+      "pages": "237-239, 241"
+    },
+    {
+      "item": "State Carnot's theorem and outline the argument for it; describe the reversed Carnot cycle as a reversible refrigerator",
+      "pages": "238-239"
+    }
+  ],
+  "scope_out": [
+    {
+      "item": "Heat engines as a separate topic: schematic of a general heat engine, external and internal combustion engines, steam engine working",
+      "reason": "The separate 'Heat engines' section is absent from this rationalised edition; efficiency eta = W/Q1 appears only inside the Carnot engine section"
+    },
+    {
+      "item": "Refrigerators and heat pumps: working, and the coefficient of performance alpha = Q2/W with any calculation",
+      "reason": "The separate section is absent from this edition; the coefficient of performance is only named (pp. 236, 241: it can never be infinite) and is never defined by a formula"
+    },
+    {
+      "item": "Entropy and enthalpy",
+      "reason": "Mentioned only in a footnote on p. 227; not taught"
+    },
+    {
+      "item": "Values of C_v, C_p and gamma for monatomic, diatomic and polyatomic gases from the law of equipartition of energy",
+      "reason": "Chapter 12 (Kinetic Theory); here such values must be given in the question"
+    },
+    {
+      "item": "Derivation of P V^gamma = constant, and comparison of the slopes of adiabatic and isothermal curves",
+      "reason": "The relation is quoted without proof (p. 235) and the slopes are not discussed"
+    },
+    {
+      "item": "Construction of temperature scales and thermometry",
+      "reason": "Chapter 10; p. 228 refers to it only in passing"
+    },
+    {
+      "item": "Latent heat, calorimetry, thermal expansion and heat transfer (conduction, convection, radiation), including Exercise 11.3 parts that depend on them",
+      "reason": "Chapter 10 material; only the latent heat of vaporisation is used as given data in the First Law example"
+    },
+    {
+      "item": "The caloric theory, Count Rumford's experiment, and the historical remarks about Fowler and Sadi Carnot",
+      "reason": "Historical narrative in the introduction and running text; not examinable"
+    },
+    {
+      "item": "Proof that the Kelvin-Planck and Clausius statements are equivalent",
+      "reason": "Stated without proof on p. 236"
+    },
+    {
+      "item": "Low-temperature breakdown of C = 3R and the theory behind it",
+      "reason": "Only mentioned in one sentence on p. 232"
+    },
+    {
+      "item": "Definition of the thermodynamic (absolute) temperature scale from the Carnot cycle beyond the relation Q1/Q2 = T1/T2",
+      "reason": "Only remarked upon on p. 239"
+    },
+    {
+      "item": "Points to Ponder and the table of dimensions on p. 241",
+      "reason": "Not examinable in themselves; the dimension table also lists Chapter 10 quantities"
+    }
+  ],
+  "concepts": [
+    {
+      "code": "C11P-11.1",
+      "name": "Thermodynamic description, thermal equilibrium and the Zeroth Law",
+      "description": "Thermodynamics as a macroscopic science, the meaning of an equilibrium state, adiabatic and diathermic walls, thermal equilibrium, and the Zeroth Law, which leads to the concept of temperature.",
+      "idea": "Thermodynamics describes a bulk system by a few measurable macroscopic variables, and two systems that stop exchanging heat through a conducting wall share one common property, their temperature.",
+      "rule": "Thermodynamics is a macroscopic science: the state of a gas is specified by variables such as pressure, volume, temperature, mass and composition, not by the motion of individual molecules, and it is concerned with the internal macroscopic state of a body, not its motion as a whole. A system is in an equilibrium state if the macroscopic variables that characterise it do not change in time. An adiabatic wall is an insulating wall that does not allow heat to flow; a diathermic wall is a conducting wall that allows it. Two systems separated by a diathermic wall change until there is no more energy flow between them: they are then in thermal equilibrium and their temperatures are equal. Zeroth Law: two systems in thermal equilibrium with a third system separately are in thermal equilibrium with each other, so if T_A = T_C and T_B = T_C then T_A = T_B.",
+      "example": "A cup of milk and a steel spoon have each been left in the same refrigerator until neither changes any more. Each is in thermal equilibrium with the air of the refrigerator, so by the Zeroth Law the milk and the spoon are in thermal equilibrium with each other: they are at the same temperature.",
+      "difficulty_base": "Easy",
+      "questions": [
+        {
+          "b": "Remember",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "In thermodynamics, an insulating wall that does not allow heat to flow from one system to another is called",
+          "a": "an adiabatic wall",
+          "o": [
+            "an adiabatic wall",
+            "a diathermic wall",
+            "an isothermal wall",
+            "a conducting wall"
+          ]
+        },
+        {
+          "b": "Remember",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "The Zeroth Law of Thermodynamics leads to the concept of",
+          "a": "temperature",
+          "o": [
+            "temperature",
+            "internal energy",
+            "work",
+            "specific heat capacity"
+          ]
+        },
+        {
+          "b": "Remember",
+          "d": "Easy",
+          "t": "fill_blank",
+          "m": 1,
+          "q": "A conducting wall that allows energy (heat) to flow from one system to another is called a ____ wall (one word).",
+          "a": "diathermic"
+        },
+        {
+          "b": "Remember",
+          "d": "Hard",
+          "t": "mcq",
+          "m": 1,
+          "q": "Which of the following is NOT one of the macroscopic variables by which thermodynamics specifies the state of a gas?",
+          "a": "The velocity of each individual molecule",
+          "o": [
+            "The velocity of each individual molecule",
+            "The pressure of the gas",
+            "The volume of the gas",
+            "The temperature of the gas"
+          ],
+          "rev": true
+        },
+        {
+          "b": "Understand",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "A gas is sealed in a closed rigid container that is completely insulated from its surroundings. Its pressure, volume, temperature, mass and composition have fixed values that do not change with time. The gas is said to be in",
+          "a": "a state of thermodynamic equilibrium",
+          "o": [
+            "a state of thermodynamic equilibrium",
+            "a quasi-static process",
+            "a non-equilibrium state",
+            "a cyclic process"
+          ]
+        },
+        {
+          "b": "Understand",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "Two gases A and B are separated by a fixed diathermic wall and left for a long time. Which property of the two gases is then certainly the same?",
+          "a": "Their temperature",
+          "o": [
+            "Their temperature",
+            "Their pressure",
+            "Their volume",
+            "Their mass"
+          ]
+        },
+        {
+          "b": "Understand",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "Thermodynamics is described as a macroscopic science because it",
+          "a": "deals with bulk systems and does not go into the molecular constitution of matter",
+          "o": [
+            "deals with bulk systems and does not go into the molecular constitution of matter",
+            "specifies the co-ordinates and velocities of all the molecules of a system",
+            "applies only to objects large enough to be seen without a microscope",
+            "deals only with the motion of a system as a whole under forces and torques"
+          ]
+        },
+        {
+          "b": "Understand",
+          "d": "Hard",
+          "t": "mcq",
+          "m": 1,
+          "q": "A bullet is fired from a gun. According to the chapter, what changes for the bullet as it leaves the gun at high speed?",
+          "a": "Its mechanical state (its kinetic energy as a whole), not its temperature",
+          "o": [
+            "Its mechanical state (its kinetic energy as a whole), not its temperature",
+            "Its temperature, which rises in proportion to its speed",
+            "Its temperature, which rises in proportion to the square of its speed",
+            "Both its temperature and its mechanical state, by equal amounts of energy"
+          ]
+        },
+        {
+          "b": "Understand",
+          "d": "Hard",
+          "t": "mcq",
+          "m": 1,
+          "q": "Which statement best gives the distinction the chapter draws between mechanics and thermodynamics?",
+          "a": "Mechanics studies the motion of bodies under forces and torques; thermodynamics studies the internal macroscopic state of a body, not its motion as a whole",
+          "o": [
+            "Mechanics studies the motion of bodies under forces and torques; thermodynamics studies the internal macroscopic state of a body, not its motion as a whole",
+            "Mechanics deals with solids, while thermodynamics deals only with gases",
+            "Mechanics uses energy, while thermodynamics does not use the idea of energy at all",
+            "Mechanics is a macroscopic science, while thermodynamics follows each molecule separately"
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "A beaker of water A and a block of metal B have each been left in a large closed room C for so long that neither changes any more. Without bringing A and B into contact, what can be said about them?",
+          "a": "A and B are at the same temperature",
+          "o": [
+            "A and B are at the same temperature",
+            "A and B have the same internal energy",
+            "A and B have the same pressure and the same volume",
+            "Nothing can be said until A and B actually touch"
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Easy",
+          "t": "fill_blank",
+          "m": 1,
+          "q": "A gas in a closed rigid container, completely insulated from its surroundings, is in thermodynamic equilibrium at a pressure of 2 atm. If nothing is done to it, its pressure ten minutes later is ____ atm (write a whole number).",
+          "a": "2"
+        },
+        {
+          "b": "Apply",
+          "d": "Hard",
+          "t": "mcq",
+          "m": 1,
+          "q": "Gas A in state (P_A, V_A) is put in contact with gas B through a diathermic wall. After a long time the gases are in new states that no longer change. Saying that 'A is in thermal equilibrium with B' means that",
+          "a": "there is no more energy flow between A and B",
+          "o": [
+            "there is no more energy flow between A and B",
+            "A and B now have equal pressures and equal volumes",
+            "A and B now contain equal numbers of molecules",
+            "the wall between A and B has stopped conducting heat"
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Hard",
+          "t": "short_answer",
+          "m": 2,
+          "q": "Contrast what a microscopic description of a gas would have to specify with what the thermodynamic description of the same gas specifies.",
+          "a": "A microscopic description would specify the co-ordinates and velocities of the huge number of molecules that make up the gas. The thermodynamic description avoids the molecular description altogether: it specifies the state of the gas by a few macroscopic variables that can be measured directly, such as pressure, volume, temperature, mass and composition.",
+          "s": [
+            [
+              "Microscopic: co-ordinates and velocities of the very large number of molecules",
+              1
+            ],
+            [
+              "Thermodynamic: a few measurable macroscopic variables (pressure, volume, temperature, mass, composition), with no molecular detail",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Hard",
+          "t": "mcq",
+          "m": 1,
+          "q": "A mercury thermometer dipped in a liquid shows a steady reading after some time. The steady reading can be taken as the temperature of the liquid because",
+          "a": "the thermometer has come to thermal equilibrium with the liquid, and systems in thermal equilibrium have the same temperature",
+          "o": [
+            "the thermometer has come to thermal equilibrium with the liquid, and systems in thermal equilibrium have the same temperature",
+            "the mercury has by then absorbed all the heat that the liquid contained",
+            "the glass of the thermometer acts as an adiabatic wall around the mercury",
+            "the mercury and the liquid then have the same internal energy"
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Hardest",
+          "t": "long_answer",
+          "m": 3,
+          "q": "Two gases A and B are held in separate rigid containers of fixed volume, and the pair is insulated from everything else by adiabatic walls. At first the wall between them is adiabatic, and the pressures stay at P_A = 2.0 atm and P_B = 1.0 atm. The wall between them is then replaced by a fixed diathermic wall; the pressures drift to 1.8 atm and 1.1 atm and then stay steady. Explain (a) why nothing changed at first, (b) why the pressures changed after the wall was replaced although the volumes did not, and (c) what is equal for A and B at the end, and whether their pressures need to be equal.",
+          "a": "(a) An adiabatic wall does not allow heat to flow, so any state of A is in equilibrium with any state of B and nothing changes. (b) A diathermic wall lets energy (heat) flow from one gas to the other, so their macroscopic variables change until equilibrium is reached; the containers are rigid, so the volumes are fixed and only the pressures can change. (c) At the end A and B are in thermal equilibrium, so their temperatures are equal. Their pressures need not be equal (here they are 1.8 atm and 1.1 atm): thermal equilibrium means equal temperature only.",
+          "s": [
+            [
+              "(a) Adiabatic wall allows no heat flow, so any pair of states can coexist",
+              1
+            ],
+            [
+              "(b) Diathermic wall allows heat flow, so the states change; volumes are fixed by the rigid containers, so only the pressures change",
+              1
+            ],
+            [
+              "(c) Temperatures are equal at the end; the pressures need not be equal",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Analyse",
+          "d": "Hard",
+          "t": "assertion_reason",
+          "m": 1,
+          "q": "Assertion (A): If a thermometer comes to thermal equilibrium first with body X and then with body Y and shows the same steady reading both times, no net heat will flow between X and Y when they are placed in thermal contact. Reason (R): Two systems in thermal equilibrium with a third system separately are in thermal equilibrium with each other. Choose the correct option.",
+          "a": "Both A and R are true, and R is the correct explanation of A",
+          "o": [
+            "Both A and R are true, and R is the correct explanation of A",
+            "Both A and R are true, but R is not the correct explanation of A",
+            "A is true, R is false",
+            "A is false, R is true"
+          ]
+        },
+        {
+          "b": "Analyse",
+          "d": "Hard",
+          "t": "short_answer",
+          "m": 2,
+          "q": "The word 'equilibrium' is used in both mechanics and thermodynamics. Compare what it means in the two subjects.",
+          "a": "In mechanics, equilibrium means that the net external force and the net external torque on a system are zero. In thermodynamics, a system is in an equilibrium state if the macroscopic variables that characterise it (such as pressure, volume, temperature, mass and composition) do not change in time.",
+          "s": [
+            [
+              "Mechanics: net external force and torque on the system are zero",
+              1
+            ],
+            [
+              "Thermodynamics: the macroscopic variables characterising the system do not change with time",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Analyse",
+          "d": "Hardest",
+          "t": "long_answer",
+          "m": 3,
+          "q": "Four systems P, Q, R and S are studied. P is in thermal equilibrium with Q, and Q is in thermal equilibrium with R. When R and S are joined through a diathermic wall, heat flows from S to R. (a) Deduce how the temperatures of P, Q, R and S compare. (b) State, with a reason, what happens if P and S are joined through a diathermic wall. (c) State what happens if P and S are instead separated by an adiabatic wall.",
+          "a": "(a) By the Zeroth Law, T_P = T_Q and T_Q = T_R give T_P = T_Q = T_R. Heat flows from the body at higher temperature to the one at lower temperature, so T_S > T_R; hence S is hotter than P, Q and R. (b) Since T_S > T_P, heat flows from S to P through the diathermic wall and their states change until the two temperatures become equal (thermal equilibrium). (c) An adiabatic wall allows no heat flow, so the states of P and S stay as they are, although their temperatures differ.",
+          "s": [
+            [
+              "T_P = T_Q = T_R by the Zeroth Law, and T_S is higher because heat flows from S to R",
+              1
+            ],
+            [
+              "Diathermic wall: heat flows from S to P until their temperatures are equal",
+              1
+            ],
+            [
+              "Adiabatic wall: no heat flows and the states of P and S remain unchanged",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Evaluate",
+          "d": "Hard",
+          "t": "short_answer",
+          "m": 2,
+          "q": "A student claims: 'If two gases are in thermal equilibrium with each other, they must have the same pressure and the same volume.' Evaluate this claim.",
+          "a": "The claim is wrong. Thermal equilibrium requires only that there is no net flow of heat between the systems, which means that their temperatures are equal. Two gases in different containers can be at the same temperature while having quite different pressures and volumes; pressure and volume are separate variables of each gas.",
+          "s": [
+            [
+              "Judgement: the claim is wrong; thermal equilibrium requires equal temperature only",
+              1
+            ],
+            [
+              "Reason: pressures and volumes of the two gases can differ while the temperatures are equal (no heat flow)",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Create",
+          "d": "Hardest",
+          "t": "long_answer",
+          "m": 3,
+          "q": "Devise a thought experiment, using three gas systems and the two kinds of wall, that could test the Zeroth Law of Thermodynamics. Describe the arrangement in two stages and state the observation that would confirm the law.",
+          "a": "Stage 1: keep systems A and B separated from each other by an adiabatic wall, and put each of them in contact with a third system C through a conducting (diathermic) wall. Wait until the states stop changing, so that A and B are each in thermal equilibrium with C. Stage 2: now insulate C from A and B with an adiabatic wall, and replace the adiabatic wall between A and B by a conducting wall. Observation: if the states of A and B do not change any further, A and B were already in thermal equilibrium with each other, which is what the Zeroth Law states: two systems in thermal equilibrium with a third system separately are in thermal equilibrium with each other.",
+          "s": [
+            [
+              "Stage 1: A and B kept apart by an adiabatic wall while each is brought to thermal equilibrium with C through a conducting wall",
+              1
+            ],
+            [
+              "Stage 2: C is insulated from A and B, and A and B are connected through a conducting wall",
+              1
+            ],
+            [
+              "Confirming observation: the states of A and B do not change further, so they are in thermal equilibrium with each other",
+              1
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "code": "C11P-11.2",
+      "name": "Heat, internal energy and work",
+      "description": "Internal energy as the energy of the random motion of the molecules and a state variable, and heat and work as two distinct modes of energy transfer that are not state variables.",
+      "idea": "A system possesses internal energy; heat and work are not possessed but are two ways in which energy passes into or out of the system.",
+      "rule": "Internal energy U is the sum of the kinetic and potential energies of the molecules of a system in the frame in which its centre of mass is at rest; the kinetic energy of the system as a whole is not included. If intermolecular forces are neglected, U of a gas is the sum of the kinetic energies of the random translational, rotational and vibrational motion of its molecules. U is a state variable: it depends only on the state of the system, not on how that state was reached. Heat is energy transfer due to a temperature difference between the system and the surroundings; work is energy transfer brought about by other means, such as moving a piston. Heat and work are modes of energy transfer, not state variables: 'a gas in a given state has a certain amount of heat' is meaningless, while 'a certain amount of heat is supplied to the system' is meaningful. Heat flows from the body at higher temperature to the one at lower temperature.",
+      "example": "The air in a balloon can be warmed by leaving the balloon in sunlight (heat, because of a temperature difference) or by squeezing the balloon (work). Either way the internal energy of the air rises, and afterwards the state of the air does not show which of the two was used.",
+      "difficulty_base": "Easy",
+      "questions": [
+        {
+          "b": "Remember",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "The internal energy of a system is the sum of",
+          "a": "the kinetic and potential energies of its molecules, in the frame in which the centre of mass of the system is at rest",
+          "o": [
+            "the kinetic and potential energies of its molecules, in the frame in which the centre of mass of the system is at rest",
+            "the heat and the work that the system contains",
+            "the kinetic energy of the system as a whole and its gravitational potential energy",
+            "the pressure and the volume of the system"
+          ]
+        },
+        {
+          "b": "Remember",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "Energy transfer that takes place because of a temperature difference between a system and its surroundings is called",
+          "a": "heat",
+          "o": [
+            "heat",
+            "work",
+            "internal energy",
+            "temperature"
+          ]
+        },
+        {
+          "b": "Remember",
+          "d": "Easy",
+          "t": "fill_blank",
+          "m": 1,
+          "q": "Energy transfer brought about by means that do not involve a temperature difference, such as moving the piston of a cylinder by raising or lowering a weight connected to it, is called ____ (one word).",
+          "a": "work"
+        },
+        {
+          "b": "Remember",
+          "d": "Hard",
+          "t": "mcq",
+          "m": 1,
+          "q": "Which of the following statements about a gas is NOT meaningful, according to the chapter?",
+          "a": "A gas in a given state has a certain amount of heat",
+          "o": [
+            "A gas in a given state has a certain amount of heat",
+            "A gas in a given state has a certain amount of internal energy",
+            "A certain amount of heat is supplied to the gas",
+            "A certain amount of work was done by the gas"
+          ],
+          "rev": true
+        },
+        {
+          "b": "Understand",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "A closed box of gas is moving as a whole with some velocity. The kinetic energy of the box as a whole is",
+          "a": "not included in the internal energy of the gas",
+          "o": [
+            "not included in the internal energy of the gas",
+            "the whole of the internal energy of the gas",
+            "added to the internal energy of the gas",
+            "subtracted from the internal energy of the gas"
+          ]
+        },
+        {
+          "b": "Understand",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "When two bodies are placed in thermal contact, the direction in which heat flows is determined by their",
+          "a": "temperatures",
+          "o": [
+            "temperatures",
+            "internal energies",
+            "masses",
+            "volumes"
+          ]
+        },
+        {
+          "b": "Understand",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "Internal energy is called a thermodynamic state variable because its value",
+          "a": "depends only on the given state of the system, not on the path taken to arrive at that state",
+          "o": [
+            "depends only on the given state of the system, not on the path taken to arrive at that state",
+            "is the same for all states of a system",
+            "can be measured directly with a thermometer",
+            "depends on how much heat was supplied in reaching the state"
+          ]
+        },
+        {
+          "b": "Understand",
+          "d": "Hard",
+          "t": "mcq",
+          "m": 1,
+          "q": "A gas is held in a cylinder with a movable piston. Its internal energy can be increased without any heat flowing into it by",
+          "a": "pushing the piston down, so that work is done on the gas",
+          "o": [
+            "pushing the piston down, so that work is done on the gas",
+            "putting the cylinder in contact with a body at a higher temperature",
+            "letting the gas push the piston up",
+            "putting the cylinder in contact with a body at a lower temperature"
+          ]
+        },
+        {
+          "b": "Understand",
+          "d": "Hard",
+          "t": "mcq",
+          "m": 1,
+          "q": "If the small intermolecular forces in a gas are neglected, the internal energy of the gas is",
+          "a": "the sum of the kinetic energies of the random translational, rotational and vibrational motions of its molecules",
+          "o": [
+            "the sum of the kinetic energies of the random translational, rotational and vibrational motions of its molecules",
+            "the kinetic energy of translational motion only, since rotation and vibration do not count",
+            "the kinetic energy with which the container of the gas moves",
+            "zero, because the molecules then have no potential energy"
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "A gas is taken from state 1 to state 2 along path X, and its internal energy increases by 150 J. If it is taken between the same two states along a different path Y, the change in its internal energy is",
+          "a": "150 J",
+          "o": [
+            "150 J",
+            "0 J",
+            "more than 150 J if path Y is longer",
+            "impossible to state without knowing the heat supplied along Y"
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Easy",
+          "t": "fill_blank",
+          "m": 1,
+          "q": "A gas goes from state A to state B and its internal energy increases by 80 J. It then returns from B to A by a different path. The change in its internal energy on the return journey is ____ J (write a signed whole number, for example -25).",
+          "a": "-80"
+        },
+        {
+          "b": "Apply",
+          "d": "Hard",
+          "t": "mcq",
+          "m": 1,
+          "q": "A hot iron block is dropped into cold water. Separately, a gas is compressed by pushing a piston. The energy transfers to the water and to the gas are, respectively,",
+          "a": "heat and work",
+          "o": [
+            "heat and work",
+            "work and heat",
+            "heat in both cases",
+            "work in both cases"
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Hard",
+          "t": "short_answer",
+          "m": 2,
+          "q": "Body X at 350 K and body Y at 300 K are placed in thermal contact and left alone. State the direction in which heat flows, when the flow stops, and what the two bodies are then said to be in.",
+          "a": "Heat flows from the body at the higher temperature to the one at the lower temperature, so it flows from X to Y. The flow stops when the temperatures of X and Y become equal; the two bodies are then in thermal equilibrium.",
+          "s": [
+            [
+              "Heat flows from X (higher temperature) to Y (lower temperature)",
+              1
+            ],
+            [
+              "The flow stops when the temperatures are equal; the bodies are then in thermal equilibrium",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Hard",
+          "t": "mcq",
+          "m": 1,
+          "q": "A cup of tea at 80 degrees C is placed in a large bucket of water at 30 degrees C. The water in the bucket has far more internal energy in total than the tea. Heat flows",
+          "a": "from the tea to the water, because the direction is set by temperature and not by total internal energy",
+          "o": [
+            "from the tea to the water, because the direction is set by temperature and not by total internal energy",
+            "from the water to the tea, because the water has more internal energy",
+            "in neither direction, because the two internal energies are fixed",
+            "from the water to the tea until the two internal energies are equal"
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Hardest",
+          "t": "long_answer",
+          "m": 3,
+          "q": "A gas is in a cylinder with a movable piston. Stage 1: the piston is held fixed and the cylinder is put in contact with a hotter body. Stage 2: the cylinder is insulated and the piston is pushed down. Stage 3: the insulation is removed, the piston is held fixed and the surroundings are colder than the gas. For each stage, state whether the internal energy of the gas increases or decreases and name the mode of energy transfer.",
+          "a": "Stage 1: the hotter body causes a flow of energy to the gas because of the temperature difference; the internal energy increases and the mode is heat. Stage 2: pushing the piston down does work on the gas; the internal energy increases and the mode is work (no heat flows because the cylinder is insulated). Stage 3: energy flows from the gas to the colder surroundings; the internal energy decreases and the mode is heat.",
+          "s": [
+            [
+              "Stage 1: internal energy increases, by heat",
+              1
+            ],
+            [
+              "Stage 2: internal energy increases, by work done on the gas",
+              1
+            ],
+            [
+              "Stage 3: internal energy decreases, by heat flowing out to the colder surroundings",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Analyse",
+          "d": "Hard",
+          "t": "multi_statement",
+          "m": 1,
+          "q": "Consider these statements. (I) Internal energy is a state variable: its value depends only on the state of the system and not on how that state was reached. (II) The work done by a gas in going from one state to another is the same by every path between the two states. Which is or are correct?",
+          "a": "Only I",
+          "o": [
+            "Only I",
+            "Only II",
+            "Both I and II",
+            "Neither I nor II"
+          ]
+        },
+        {
+          "b": "Analyse",
+          "d": "Hard",
+          "t": "short_answer",
+          "m": 2,
+          "q": "Distinguish between the heat supplied to a system and the internal energy of the system.",
+          "a": "Internal energy is energy that the system has: the sum of the kinetic and potential energies of its molecules, with a definite value for each state (a state variable). Heat is energy in transit: the energy transferred between the system and the surroundings because of a temperature difference. It is a mode of energy transfer, not something the system contains, and it is not a state variable.",
+          "s": [
+            [
+              "Internal energy: energy of the molecules of the system, a state variable with a definite value in each state",
+              1
+            ],
+            [
+              "Heat: energy in transit due to a temperature difference, a mode of transfer and not a state variable",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Analyse",
+          "d": "Hardest",
+          "t": "long_answer",
+          "m": 3,
+          "q": "Two samples of the same gas have the same mass. Sample 1 was first heated and then compressed; sample 2 was first compressed and then heated. Both end at the same pressure, volume and temperature. (a) Compare the internal energies of the two samples. (b) Can one tell, from the final state alone, which sample was supplied with more heat? (c) What does this show about heat and work compared with internal energy?",
+          "a": "(a) The internal energies are equal: the internal energy of a given mass of gas depends only on its state (pressure, volume, temperature), and the two final states are the same. (b) No. The final state does not record how it came about, so the amounts of heat supplied and work done cannot be read from it; they can be different for the two samples. (c) Internal energy is a state variable, while heat and work are not: they are modes of energy transfer that depend on the process, and only their effect, the change in internal energy, belongs to the state.",
+          "s": [
+            [
+              "(a) Equal internal energies, because U depends only on the state",
+              1
+            ],
+            [
+              "(b) No: the final state does not show how much heat or work was involved",
+              1
+            ],
+            [
+              "(c) U is a state variable; heat and work are modes of energy transfer and are not state variables",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Evaluate",
+          "d": "Hard",
+          "t": "short_answer",
+          "m": 2,
+          "q": "A student says: 'A cylinder of gas carried in a fast train has more internal energy than an identical cylinder in the same state at rest in the laboratory, because it has extra kinetic energy.' Evaluate this statement.",
+          "a": "The statement is wrong. Internal energy includes only the energy associated with the random motion of the molecules, reckoned in the frame in which the centre of mass of the system is at rest. The kinetic energy of the cylinder as a whole is not part of the internal energy, so the two cylinders, being in the same state, have the same internal energy.",
+          "s": [
+            [
+              "Judgement: wrong; the two cylinders have the same internal energy",
+              1
+            ],
+            [
+              "Reason: the kinetic energy of the system as a whole is not included in U, which counts only the random molecular motion",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Create",
+          "d": "Hardest",
+          "t": "long_answer",
+          "m": 3,
+          "q": "Devise two different procedures for raising the temperature of water in a beaker from 20 degrees C to 30 degrees C, one that uses only heat and one that uses only work. Then explain what the two procedures together show about heat, work and internal energy.",
+          "a": "Heat only: place the beaker in contact with a hotter body (for example a hot plate or a flame); energy flows into the water because of the temperature difference. Work only: insulate the beaker and stir the water vigorously with a paddle (or rub or shake it); the work done on the water raises its internal energy with no temperature difference involved. The final state of the water, at 30 degrees C, is the same in both cases, so the increase in internal energy is the same. This shows that heat and work are two different modes of transferring energy to a system, while internal energy is a property of the state that does not depend on which mode was used.",
+          "s": [
+            [
+              "A valid heat-only procedure: contact with a hotter body",
+              1
+            ],
+            [
+              "A valid work-only procedure: mechanical work such as stirring, with the water insulated",
+              1
+            ],
+            [
+              "Conclusion: same final state and same change in U, so heat and work are modes of transfer while U is a state variable",
+              1
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "code": "C11P-11.3",
+      "name": "The First Law of Thermodynamics",
+      "description": "The first law as energy conservation, Delta Q = Delta U + Delta W, with the book's sign convention, the path dependence of heat and work, and the work P Delta V done against a constant pressure.",
+      "idea": "The heat supplied to a system is shared between raising its internal energy and doing work on the surroundings; nothing is lost.",
+      "rule": "Delta Q = Delta U + Delta W, where Delta Q is the heat supplied TO the system by the surroundings, Delta W is the work done BY the system ON the surroundings and Delta U is the change in internal energy of the system. Q > 0 means heat is added to the system and Q < 0 that heat is removed; W > 0 means work is done by the system and W < 0 that work is done on it. Delta U depends only on the initial and final states, while Delta Q and Delta W depend on the path; the combination Delta Q - Delta W = Delta U is path independent. If Delta U = 0 then Delta Q = Delta W. For a gas in a cylinder with a movable piston, the work done by the gas against a constant pressure P is Delta W = P Delta V, so Delta Q = Delta U + P Delta V.",
+      "example": "A gas is supplied with 250 J of heat and does 90 J of work on the surroundings: Delta U = Delta Q - Delta W = 250 J - 90 J = 160 J, so its internal energy rises by 160 J.",
+      "difficulty_base": "Hard",
+      "questions": [
+        {
+          "b": "Remember",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "In the First Law of Thermodynamics as this chapter writes it, Delta Q = Delta U + Delta W, the symbol Delta W stands for",
+          "a": "the work done by the system on the surroundings",
+          "o": [
+            "the work done by the system on the surroundings",
+            "the work done on the system by the surroundings",
+            "the heat lost by the system to the surroundings",
+            "the change in the potential energy of the system"
+          ]
+        },
+        {
+          "b": "Remember",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "The First Law of Thermodynamics is",
+          "a": "the general law of conservation of energy applied to any system in which energy transfer from or to the surroundings is taken into account",
+          "o": [
+            "the general law of conservation of energy applied to any system in which energy transfer from or to the surroundings is taken into account",
+            "the statement that heat cannot flow by itself from a colder body to a hotter body",
+            "the statement that two systems in thermal equilibrium with a third are in thermal equilibrium with each other",
+            "the statement that no heat engine can have an efficiency equal to 1"
+          ]
+        },
+        {
+          "b": "Remember",
+          "d": "Easy",
+          "t": "fill_blank",
+          "m": 1,
+          "q": "In the First Law of Thermodynamics, Delta Q - Delta W is equal to the change in the ____ energy of the system (one word).",
+          "a": "internal"
+        },
+        {
+          "b": "Remember",
+          "d": "Hard",
+          "t": "mcq",
+          "m": 1,
+          "q": "A system is taken from a given initial state to a given final state. Which of the following does NOT depend on the path taken?",
+          "a": "The combination Delta Q - Delta W",
+          "o": [
+            "The combination Delta Q - Delta W",
+            "The heat supplied to the system, Delta Q",
+            "The work done by the system, Delta W",
+            "The sum Delta Q + Delta W"
+          ],
+          "rev": true
+        },
+        {
+          "b": "Understand",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "In the sign convention of this chapter, a negative value of W means that",
+          "a": "work is done on the system",
+          "o": [
+            "work is done on the system",
+            "work is done by the system",
+            "heat is removed from the system",
+            "the internal energy of the system decreases"
+          ]
+        },
+        {
+          "b": "Understand",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "According to the First Law of Thermodynamics, the heat supplied to a system",
+          "a": "goes partly to increase the internal energy of the system and the rest into work on the environment",
+          "o": [
+            "goes partly to increase the internal energy of the system and the rest into work on the environment",
+            "is always converted completely into work on the environment",
+            "always goes entirely into increasing the internal energy of the system",
+            "is equal to the product of the internal energy change and the work done"
+          ]
+        },
+        {
+          "b": "Understand",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "A gas in a cylinder pushes a piston outwards against a constant pressure P. The work done by the gas can be written as P Delta V because",
+          "a": "force is pressure times area, and area times displacement is the change in volume",
+          "o": [
+            "force is pressure times area, and area times displacement is the change in volume",
+            "pressure and volume are both state variables",
+            "the temperature of the gas stays constant while the piston moves",
+            "the internal energy of the gas is proportional to its volume"
+          ]
+        },
+        {
+          "b": "Understand",
+          "d": "Hard",
+          "t": "mcq",
+          "m": 1,
+          "q": "When 1 g of water changes from liquid to vapour at atmospheric pressure, most of the latent heat supplied goes into",
+          "a": "increasing the internal energy of the water",
+          "o": [
+            "increasing the internal energy of the water",
+            "work done by the vapour in pushing back the atmosphere",
+            "raising the temperature of the vapour above the boiling point",
+            "kinetic energy of the container as a whole"
+          ]
+        },
+        {
+          "b": "Understand",
+          "d": "Hard",
+          "t": "mcq",
+          "m": 1,
+          "q": "A gas is compressed by pushing a piston while no heat is exchanged with the surroundings. With Delta Q the heat supplied to the gas and Delta W the work done by the gas, the First Law shows that",
+          "a": "Delta W is negative, so Delta U = -Delta W is positive and the internal energy increases",
+          "o": [
+            "Delta W is negative, so Delta U = -Delta W is positive and the internal energy increases",
+            "Delta W is positive, so Delta U = -Delta W is negative and the internal energy decreases",
+            "Delta U is zero, because no heat has been supplied",
+            "Delta U equals Delta W, so the internal energy decreases"
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "500 J of heat is supplied to a gas, and the gas does 200 J of work on the surroundings. The change in the internal energy of the gas is",
+          "a": "+300 J",
+          "o": [
+            "+300 J",
+            "+700 J",
+            "-300 J",
+            "+200 J"
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Easy",
+          "t": "fill_blank",
+          "m": 1,
+          "q": "An electric heater supplies heat to a system at a rate of 120 W, while the system does work on the surroundings at a rate of 45 J/s. The internal energy of the system is increasing at a rate of ____ W (write a whole number).",
+          "a": "75"
+        },
+        {
+          "b": "Apply",
+          "d": "Hard",
+          "t": "mcq",
+          "m": 1,
+          "q": "400 J of work is done ON a gas by the surroundings, and during the same process the gas gives out 150 J of heat to the surroundings. Taking Delta Q as the heat supplied to the gas and Delta W as the work done by the gas, the change in internal energy of the gas is",
+          "a": "+250 J",
+          "o": [
+            "+250 J",
+            "-250 J",
+            "+550 J",
+            "-550 J"
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Hard",
+          "t": "short_answer",
+          "m": 2,
+          "q": "A gas expands against a constant pressure of 2.0 x 10^5 Pa from a volume of 3.0 x 10^-3 m^3 to 5.0 x 10^-3 m^3 while 1000 J of heat is supplied to it. Find the work done by the gas on the surroundings and the change in its internal energy.",
+          "a": "Work done by the gas: Delta W = P Delta V = 2.0 x 10^5 Pa x (5.0 x 10^-3 - 3.0 x 10^-3) m^3 = 2.0 x 10^5 x 2.0 x 10^-3 = 400 J. First law: Delta U = Delta Q - Delta W = 1000 J - 400 J = 600 J. The internal energy increases by 600 J.",
+          "s": [
+            [
+              "Delta W = P Delta V = 400 J",
+              1
+            ],
+            [
+              "Delta U = Delta Q - Delta W = 600 J (increase)",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Hard",
+          "t": "mcq",
+          "m": 1,
+          "q": "A system is taken from state A to state B adiabatically (no heat exchanged), and 30 J of work is done ON the system. The system is then taken from the same state A to the same state B by another process in which the net heat absorbed by the system is 50 J. The net work done BY the system in the second process is",
+          "a": "20 J",
+          "o": [
+            "20 J",
+            "80 J",
+            "30 J",
+            "-20 J"
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Hardest",
+          "t": "long_answer",
+          "m": 3,
+          "q": "2 g of water at its boiling point is converted to vapour at an atmospheric pressure of 1.013 x 10^5 Pa. The latent heat of vaporisation of water is 2256 J/g. The 2 g of water has a volume of 2 cm^3 as liquid and 3342 cm^3 as vapour (1 cm^3 = 10^-6 m^3). Find, to the nearest joule, (a) the heat supplied to the water, (b) the work done by the water on the surroundings and (c) the change in its internal energy.",
+          "a": "(a) Delta Q = 2 g x 2256 J/g = 4512 J. (b) Delta W = P (V_vapour - V_liquid) = 1.013 x 10^5 Pa x (3342 - 2) x 10^-6 m^3 = 1.013 x 10^5 x 3.340 x 10^-3 = 338.3 J, about 338 J. (c) Delta U = Delta Q - Delta W = 4512 - 338 = 4174 J. Most of the heat goes into the internal energy of the water.",
+          "s": [
+            [
+              "Delta Q = 4512 J",
+              1
+            ],
+            [
+              "Delta W = P Delta V = 338 J (338.3 J)",
+              1
+            ],
+            [
+              "Delta U = Delta Q - Delta W = 4174 J",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Analyse",
+          "d": "Hard",
+          "t": "assertion_reason",
+          "m": 1,
+          "q": "Assertion (A): In a process in which the internal energy of a system does not change, the heat supplied to the system equals the work done by the system on the surroundings. Reason (R): The heat supplied to a system and the work done by it in general depend on the path taken between the initial and final states. Choose the correct option.",
+          "a": "Both A and R are true, but R is not the correct explanation of A",
+          "o": [
+            "Both A and R are true, but R is not the correct explanation of A",
+            "Both A and R are true, and R is the correct explanation of A",
+            "A is true, R is false",
+            "A is false, R is true"
+          ]
+        },
+        {
+          "b": "Analyse",
+          "d": "Hard",
+          "t": "short_answer",
+          "m": 2,
+          "q": "A gas is taken from state i to state f along path 1, absorbing 90 J of heat and doing 30 J of work on the surroundings. Along path 2 between the same two states it does 50 J of work on the surroundings. How much heat does it absorb along path 2? Give the reasoning.",
+          "a": "Along path 1, Delta U = Delta Q - Delta W = 90 J - 30 J = 60 J. Internal energy is a state variable, so Delta U is also 60 J along path 2. Therefore Delta Q = Delta U + Delta W = 60 J + 50 J = 110 J of heat is absorbed along path 2.",
+          "s": [
+            [
+              "Delta U = 60 J from path 1, and the same for path 2 because U is a state variable",
+              1
+            ],
+            [
+              "Heat absorbed along path 2 = 60 J + 50 J = 110 J",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Analyse",
+          "d": "Hardest",
+          "t": "long_answer",
+          "m": 3,
+          "q": "A system goes from state A to state B along path 1, with 80 J of heat supplied to it and 30 J of work done by it on the surroundings. It returns from B to A along path 2, during which 40 J of work is done ON the system. (a) Find the change in internal energy from A to B. (b) Find the heat exchanged on the return path and say whether it is absorbed or released by the system. (c) Find the net heat supplied and the net work done by the system over the round trip and comment.",
+          "a": "(a) Delta U (A to B) = Delta Q - Delta W = 80 - 30 = +50 J. (b) On the return, Delta U = -50 J and Delta W = -40 J (work is done on the system), so Delta Q = Delta U + Delta W = -50 + (-40) = -90 J: the system releases 90 J of heat. (c) Net heat supplied = 80 - 90 = -10 J; net work done by the system = 30 - 40 = -10 J. They are equal, as they must be, because over the round trip the system returns to its initial state and the net change in internal energy is zero.",
+          "s": [
+            [
+              "(a) Delta U from A to B = +50 J",
+              1
+            ],
+            [
+              "(b) On the return Delta Q = -90 J, i.e. 90 J of heat is released",
+              1
+            ],
+            [
+              "(c) Net heat = net work = -10 J, since the net change in U over the round trip is zero",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Evaluate",
+          "d": "Hard",
+          "t": "short_answer",
+          "m": 2,
+          "q": "A student writes: 'The gas absorbs 300 J of heat and 100 J of work is done on the gas, so Delta U = 300 - 100 = 200 J.' Evaluate this calculation, using the convention that Delta W is the work done by the gas.",
+          "a": "The calculation is wrong. In Delta U = Delta Q - Delta W, Delta W is the work done BY the gas. Here work is done ON the gas, so Delta W = -100 J. Then Delta U = 300 - (-100) = 400 J. Both the heat supplied and the work done on the gas add to its internal energy.",
+          "s": [
+            [
+              "Identifies the error: work done on the gas means Delta W = -100 J",
+              1
+            ],
+            [
+              "Correct result: Delta U = 300 + 100 = 400 J",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Create",
+          "d": "Hardest",
+          "t": "long_answer",
+          "m": 3,
+          "q": "Construct a numerical example of a process in which the internal energy of a gas decreases even though heat is supplied to it. Give your values of Delta Q, Delta W and Delta U with signs (Delta Q = heat supplied to the gas, Delta W = work done by the gas), check them with the First Law, and describe physically what the gas is doing.",
+          "a": "One example: Delta Q = +200 J and Delta W = +500 J. Then Delta U = Delta Q - Delta W = 200 - 500 = -300 J, so the internal energy decreases by 300 J although 200 J of heat is supplied. Physically, the gas is expanding and pushing the piston out, doing more work on the surroundings than the heat it receives; the extra 300 J of work is paid for by its internal energy. Any values with Delta Q positive and Delta W greater than Delta Q are acceptable.",
+          "s": [
+            [
+              "Chooses Delta Q positive and Delta W positive and larger than Delta Q",
+              1
+            ],
+            [
+              "Applies Delta U = Delta Q - Delta W correctly to the chosen values, giving a negative Delta U",
+              1
+            ],
+            [
+              "Physical description: the gas expands, doing more work than the heat supplied, at the expense of its internal energy",
+              1
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "code": "C11P-11.4",
+      "name": "Specific heat capacity and the relation C_p - C_v = R",
+      "description": "Heat capacity, specific and molar specific heat capacity, the value 3R for solids, the calorie and the specific heat of water, and the two specific heats of an ideal gas with C_p - C_v = R.",
+      "idea": "The heat needed for a given temperature rise depends on the substance, on its amount and on the conditions under which the heat is supplied.",
+      "rule": "Heat capacity S = Delta Q / Delta T. Specific heat capacity s = (1/m) Delta Q / Delta T, unit J kg^-1 K^-1; molar specific heat capacity C = (1/mu) Delta Q / Delta T, unit J mol^-1 K^-1, where mu is the number of moles. C depends on the nature of the substance, its temperature and the conditions under which heat is supplied, not on its amount. For a solid, energy considerations give C = 3R, which agrees with measured values at ordinary temperatures for most solids (carbon is an exception). One calorie is the heat needed to raise the temperature of 1 g of water from 14.5 degrees C to 15.5 degrees C; 1 cal = 4.186 J, and the specific heat capacity of water is 4186 J kg^-1 K^-1. For an ideal gas the molar specific heats at constant pressure and at constant volume satisfy C_p - C_v = R.",
+      "example": "A 0.50 kg block of a metal with specific heat capacity 380 J kg^-1 K^-1 is warmed by 20 K: Delta Q = m s Delta T = 0.50 x 380 x 20 = 3800 J.",
+      "difficulty_base": "Hard",
+      "questions": [
+        {
+          "b": "Remember",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "The SI unit of molar specific heat capacity is",
+          "a": "J mol^-1 K^-1",
+          "o": [
+            "J mol^-1 K^-1",
+            "J kg^-1 K^-1",
+            "J K^-1",
+            "J mol^-1"
+          ]
+        },
+        {
+          "b": "Remember",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "For an ideal gas, the difference C_p - C_v between the molar specific heat capacities at constant pressure and at constant volume is equal to",
+          "a": "R, the universal gas constant",
+          "o": [
+            "R, the universal gas constant",
+            "3R",
+            "zero",
+            "the ratio C_p / C_v"
+          ]
+        },
+        {
+          "b": "Remember",
+          "d": "Easy",
+          "t": "fill_blank",
+          "m": 1,
+          "q": "One calorie is defined as the amount of heat required to raise the temperature of 1 g of water from 14.5 degrees C to ____ degrees C (write the number as a decimal).",
+          "a": "15.5"
+        },
+        {
+          "b": "Remember",
+          "d": "Hard",
+          "t": "mcq",
+          "m": 1,
+          "q": "On which of the following does the molar specific heat capacity C of a substance NOT depend?",
+          "a": "The amount of the substance",
+          "o": [
+            "The amount of the substance",
+            "The nature of the substance",
+            "The temperature of the substance",
+            "The conditions under which the heat is supplied"
+          ],
+          "rev": true
+        },
+        {
+          "b": "Understand",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "The heat capacity S of a body is divided by its mass m to define the specific heat capacity s in order to",
+          "a": "obtain a quantity that is characteristic of the substance and independent of its amount",
+          "o": [
+            "obtain a quantity that is characteristic of the substance and independent of its amount",
+            "obtain a quantity that does not depend on the temperature of the body",
+            "convert the heat from calories into joules",
+            "make the quantity depend on the shape of the body"
+          ]
+        },
+        {
+          "b": "Understand",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "According to the chapter, the 'mechanical equivalent of heat' is",
+          "a": "just a conversion factor between two units of energy, the calorie and the joule, and is not needed when the joule is used throughout",
+          "o": [
+            "just a conversion factor between two units of energy, the calorie and the joule, and is not needed when the joule is used throughout",
+            "the work that a body can do because of the heat it contains",
+            "the heat needed to raise the temperature of 1 kg of water by 1 K",
+            "a fundamental constant relating temperature to pressure"
+          ]
+        },
+        {
+          "b": "Understand",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "The definition of the calorie specifies a particular one-degree interval of temperature because",
+          "a": "the specific heat of water varies slightly with temperature",
+          "o": [
+            "the specific heat of water varies slightly with temperature",
+            "water cannot be heated at any other temperature",
+            "the calorie is defined only for ice",
+            "a thermometer is accurate only near that temperature"
+          ]
+        },
+        {
+          "b": "Understand",
+          "d": "Hard",
+          "t": "mcq",
+          "m": 1,
+          "q": "For a gas, two specific heat capacities are defined, one at constant volume and one at constant pressure, because",
+          "a": "the specific heat capacity depends on the process or conditions under which the heat is transferred",
+          "o": [
+            "the specific heat capacity depends on the process or conditions under which the heat is transferred",
+            "a gas has two different kinds of molecules",
+            "the mass of a gas changes when it is heated",
+            "the universal gas constant has two different values"
+          ]
+        },
+        {
+          "b": "Understand",
+          "d": "Hard",
+          "t": "mcq",
+          "m": 1,
+          "q": "For an ideal gas C_p is greater than C_v because, when the gas is heated at constant pressure,",
+          "a": "the heat supplied must also provide the work P Delta V done by the expanding gas, in addition to raising its internal energy",
+          "o": [
+            "the heat supplied must also provide the work P Delta V done by the expanding gas, in addition to raising its internal energy",
+            "the internal energy of the gas rises more for the same rise in temperature than it does at constant volume",
+            "no work is done by the gas, so all the heat raises its temperature",
+            "the number of moles of the gas increases"
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "The molar specific heat capacity of an ideal gas at constant volume is 12.5 J mol^-1 K^-1. Taking R = 8.3 J mol^-1 K^-1, its molar specific heat capacity at constant pressure is",
+          "a": "20.8 J mol^-1 K^-1",
+          "o": [
+            "20.8 J mol^-1 K^-1",
+            "4.2 J mol^-1 K^-1",
+            "12.5 J mol^-1 K^-1",
+            "103.75 J mol^-1 K^-1"
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Easy",
+          "t": "fill_blank",
+          "m": 1,
+          "q": "A solid has a molar specific heat capacity of 25 J mol^-1 K^-1. The heat needed to raise the temperature of 2 mol of it by 10 K is ____ J (write a whole number).",
+          "a": "500"
+        },
+        {
+          "b": "Apply",
+          "d": "Hard",
+          "t": "mcq",
+          "m": 1,
+          "q": "For a solid at ordinary temperature the predicted molar specific heat capacity is C = 3R. Taking R = 8.3 J mol^-1 K^-1, the heat needed to raise the temperature of 0.5 mol of such a solid by 20 K is",
+          "a": "249 J",
+          "o": [
+            "249 J",
+            "83 J",
+            "498 J",
+            "166 J"
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Hard",
+          "t": "short_answer",
+          "m": 2,
+          "q": "What amount of heat must be supplied to 5.6 x 10^-2 kg of nitrogen to raise its temperature by 30 K at constant pressure? The molar mass of nitrogen is 28 g/mol, its molar specific heat capacity at constant pressure is C_p = 7R/2, and R = 8.3 J mol^-1 K^-1.",
+          "a": "Number of moles mu = 56 g / 28 g/mol = 2 mol. C_p = 7R/2 = 3.5 x 8.3 = 29.05 J mol^-1 K^-1. Heat supplied Delta Q = mu C_p Delta T = 2 x 29.05 x 30 = 1743 J.",
+          "s": [
+            [
+              "mu = 2 mol and C_p = 29.05 J mol^-1 K^-1",
+              1
+            ],
+            [
+              "Delta Q = mu C_p Delta T = 1743 J",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Hard",
+          "t": "mcq",
+          "m": 1,
+          "q": "A metal has a specific heat capacity of 400 J kg^-1 K^-1 and a molar mass of 60 g/mol. Its molar specific heat capacity is",
+          "a": "24 J mol^-1 K^-1",
+          "o": [
+            "24 J mol^-1 K^-1",
+            "24000 J mol^-1 K^-1",
+            "6.67 J mol^-1 K^-1",
+            "6667 J mol^-1 K^-1"
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Hardest",
+          "t": "long_answer",
+          "m": 3,
+          "q": "A geyser heats water flowing at the rate of 2.0 litres per minute from 25 degrees C to 75 degrees C. The geyser runs on a gas burner whose fuel has a heat of combustion of 4.2 x 10^4 J/g. Take the specific heat capacity of water as 4.2 x 10^3 J kg^-1 K^-1 and the mass of 1 litre of water as 1 kg. Find the rate of consumption of the fuel in g/min.",
+          "a": "Mass of water heated per minute = 2.0 kg. Rise in temperature = 75 - 25 = 50 K. Heat needed per minute = m s Delta T = 2.0 x 4.2 x 10^3 x 50 = 4.2 x 10^5 J/min. Rate of fuel consumption = (4.2 x 10^5 J/min) / (4.2 x 10^4 J/g) = 10 g/min.",
+          "s": [
+            [
+              "Mass per minute 2.0 kg and temperature rise 50 K",
+              1
+            ],
+            [
+              "Heat needed per minute = 4.2 x 10^5 J",
+              1
+            ],
+            [
+              "Fuel rate = 10 g/min",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Analyse",
+          "d": "Hard",
+          "t": "multi_statement",
+          "m": 1,
+          "q": "Consider these statements. (I) The predicted molar specific heat capacity 3R of a solid agrees with the measured values of most solids at ordinary temperatures, carbon being an exception. (II) In SI units the specific heat capacity of water is about 4186 J kg^-1 K^-1, which is the same as 4.186 J g^-1 K^-1. Which is or are correct?",
+          "a": "Both I and II",
+          "o": [
+            "Both I and II",
+            "Only I",
+            "Only II",
+            "Neither I nor II"
+          ]
+        },
+        {
+          "b": "Analyse",
+          "d": "Hard",
+          "t": "short_answer",
+          "m": 2,
+          "q": "At room temperature aluminium has a specific heat capacity of 900.0 J kg^-1 K^-1 and lead only 127.7 J kg^-1 K^-1, yet their molar specific heat capacities are close (24.4 and 26.5 J mol^-1 K^-1). Account for this.",
+          "a": "A mole of any solid contains the same number of atoms, and each atom, vibrating about its mean position, has on average the same energy at a given temperature, so the energy per mole is the same (U = 3RT, giving C = 3R, about 25 J mol^-1 K^-1) whatever the solid. One kilogram of lead, however, contains far fewer atoms (moles) than one kilogram of aluminium because lead atoms are much heavier, so the heat needed per kilogram is much smaller for lead.",
+          "s": [
+            [
+              "Per mole: same number of atoms with the same average energy each, so C is about 3R for both",
+              1
+            ],
+            [
+              "Per kilogram: the number of atoms (moles) differs because the atomic masses differ, so s differs",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Analyse",
+          "d": "Hardest",
+          "t": "long_answer",
+          "m": 3,
+          "q": "Starting from Delta Q = Delta U + P Delta V for one mole of an ideal gas, obtain the relation between its molar specific heat capacities C_p and C_v.",
+          "a": "At constant volume Delta V = 0, so C_v = (Delta Q / Delta T) at constant volume = Delta U / Delta T. At constant pressure, C_p = (Delta Q / Delta T) at constant pressure = Delta U / Delta T + P (Delta V / Delta T) at constant pressure. Because U of an ideal gas depends only on temperature, Delta U / Delta T is the same in both cases and equals C_v. For one mole of an ideal gas PV = RT, so at constant pressure P Delta V = R Delta T, i.e. P (Delta V / Delta T) = R. Hence C_p = C_v + R, or C_p - C_v = R.",
+          "s": [
+            [
+              "C_v = Delta U / Delta T, since Delta V = 0 at constant volume",
+              1
+            ],
+            [
+              "C_p = Delta U / Delta T + P (Delta V / Delta T) at constant pressure, with the same Delta U / Delta T because U depends only on T",
+              1
+            ],
+            [
+              "From PV = RT, P (Delta V / Delta T) = R at constant pressure, so C_p - C_v = R",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Evaluate",
+          "d": "Hard",
+          "t": "short_answer",
+          "m": 2,
+          "q": "A student says: 'The heat needed to raise the temperature of 1 mol of an ideal gas by 10 K is the same whether the gas is in a rigid closed vessel or in a cylinder with a freely moving piston at constant pressure.' Evaluate this, taking R = 8.3 J mol^-1 K^-1.",
+          "a": "The statement is wrong. In the rigid vessel the heat needed is C_v x 10 K; at constant pressure it is C_p x 10 K. Since C_p - C_v = R, the heat needed at constant pressure is greater by R Delta T = 8.3 x 10 = 83 J, which is the work done by the gas as it expands.",
+          "s": [
+            [
+              "Judgement: wrong; more heat is needed at constant pressure because C_p is greater than C_v",
+              1
+            ],
+            [
+              "The extra heat is mu R Delta T = 83 J, the work done in expansion",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Create",
+          "d": "Hardest",
+          "t": "long_answer",
+          "m": 3,
+          "q": "Design a calculation by which you could test whether a metallic element follows the prediction C = 3R, given the mass m of a sample, its molar mass M, the heat Delta Q supplied and the temperature rise Delta T. Then apply your method to this data: m = 0.20 kg, M = 0.10 kg/mol, Delta Q = 2500 J, Delta T = 50 K, with R = 8.3 J mol^-1 K^-1.",
+          "a": "Method: find the number of moles mu = m / M; find the molar specific heat capacity C = Delta Q / (mu Delta T); compare it with 3R. Application: mu = 0.20 / 0.10 = 2.0 mol. C = 2500 / (2.0 x 50) = 25 J mol^-1 K^-1. 3R = 3 x 8.3 = 24.9 J mol^-1 K^-1. The measured value is very close to 3R, so the metal follows the prediction.",
+          "s": [
+            [
+              "Method: mu = m/M and C = Delta Q / (mu Delta T), to be compared with 3R (or an equivalent route through s and M)",
+              1
+            ],
+            [
+              "C = 25 J mol^-1 K^-1 for the data",
+              1
+            ],
+            [
+              "3R = 24.9 J mol^-1 K^-1, so the metal agrees with the prediction",
+              1
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "code": "C11P-11.5",
+      "name": "State variables, equation of state and quasi-static processes",
+      "description": "Equilibrium states and state variables, the ideal gas equation of state, extensive and intensive variables, and the idealised quasi-static process.",
+      "idea": "Only equilibrium states can be described by state variables, so thermodynamics imagines processes slow enough for the system to pass through equilibrium states all the way.",
+      "rule": "Every equilibrium state of a system is completely described by the values of its state variables (for a gas: pressure, volume, temperature, mass, and composition for a mixture). A gas expanding freely into vacuum or an exploding mixture is not in an equilibrium state. The relation between the state variables is the equation of state; for an ideal gas PV = mu R T, so for a fixed amount of gas only two variables are independent. The P-V curve for a fixed temperature is an isotherm. Extensive variables indicate the size of the system (internal energy U, volume V, mass M) and are halved when an equilibrium system is divided into two equal parts; intensive variables (pressure P, temperature T, density rho) are unchanged. A quasi-static process is an infinitely slow process in which the system stays in thermal and mechanical equilibrium with its surroundings throughout, the pressure and temperature of the surroundings differing only infinitesimally from those of the system.",
+      "example": "3 mol of an ideal gas at 500 K in a vessel of volume 0.0415 m^3, with R = 8.3 J mol^-1 K^-1: P = mu R T / V = 3 x 8.3 x 500 / 0.0415 = 3.0 x 10^5 Pa.",
+      "difficulty_base": "Hard",
+      "questions": [
+        {
+          "b": "Remember",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "The relation that connects the state variables of a system, such as PV = mu R T for an ideal gas, is called",
+          "a": "the equation of state",
+          "o": [
+            "the equation of state",
+            "the First Law of Thermodynamics",
+            "an isotherm",
+            "the Zeroth Law of Thermodynamics"
+          ]
+        },
+        {
+          "b": "Remember",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "The pressure-volume curve of a gas for a fixed temperature is called",
+          "a": "an isotherm",
+          "o": [
+            "an isotherm",
+            "an adiabatic curve",
+            "an equation of state",
+            "a cyclic process"
+          ]
+        },
+        {
+          "b": "Remember",
+          "d": "Easy",
+          "t": "fill_blank",
+          "m": 1,
+          "q": "Thermodynamic state variables that indicate the 'size' of a system, and whose values are halved when the system in equilibrium is divided into two equal parts, are called ____ variables (one word).",
+          "a": "extensive"
+        },
+        {
+          "b": "Remember",
+          "d": "Hard",
+          "t": "mcq",
+          "m": 1,
+          "q": "Which of the following is NOT an intensive variable?",
+          "a": "Internal energy",
+          "o": [
+            "Internal energy",
+            "Pressure",
+            "Temperature",
+            "Density"
+          ],
+          "rev": true
+        },
+        {
+          "b": "Understand",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "For a fixed amount of an ideal gas, how many of the variables P, V and T can be chosen independently?",
+          "a": "Two",
+          "o": [
+            "Two",
+            "One",
+            "Three",
+            "None"
+          ]
+        },
+        {
+          "b": "Understand",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "A mixture of petrol vapour and air is ignited by a spark. During the explosion the mixture",
+          "a": "is not in an equilibrium state, since its temperature and pressure are not uniform",
+          "o": [
+            "is not in an equilibrium state, since its temperature and pressure are not uniform",
+            "is in an equilibrium state, since its mass does not change",
+            "is in an equilibrium state described by a single pressure and temperature",
+            "follows the ideal gas equation at every instant"
+          ]
+        },
+        {
+          "b": "Understand",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "A quasi-static process is one that is",
+          "a": "infinitely slow, so that the system remains in thermal and mechanical equilibrium with its surroundings throughout",
+          "o": [
+            "infinitely slow, so that the system remains in thermal and mechanical equilibrium with its surroundings throughout",
+            "so fast that no heat can be exchanged with the surroundings",
+            "carried out at constant temperature",
+            "one in which the system finally returns to its initial state"
+          ]
+        },
+        {
+          "b": "Understand",
+          "d": "Hard",
+          "t": "mcq",
+          "m": 1,
+          "q": "A system in equilibrium is imagined to be divided into two equal parts. Compared with the whole system, each part has",
+          "a": "the same pressure and temperature, but half the volume and half the internal energy",
+          "o": [
+            "the same pressure and temperature, but half the volume and half the internal energy",
+            "half the pressure and temperature, but the same volume and internal energy",
+            "half of every one of these four quantities",
+            "the same value of every one of these four quantities"
+          ]
+        },
+        {
+          "b": "Understand",
+          "d": "Hard",
+          "t": "mcq",
+          "m": 1,
+          "q": "In practice, a real process is a reasonably good approximation to a quasi-static process when it",
+          "a": "is sufficiently slow and does not involve accelerated motion of the piston or a large temperature gradient",
+          "o": [
+            "is sufficiently slow and does not involve accelerated motion of the piston or a large temperature gradient",
+            "is completed in the shortest possible time",
+            "is carried out with a large temperature difference between the system and the surroundings",
+            "involves an explosive chemical reaction"
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "2 mol of an ideal gas is at 300 K in a vessel of volume 0.0249 m^3. Taking R = 8.3 J mol^-1 K^-1, the pressure of the gas is",
+          "a": "2.0 x 10^5 Pa",
+          "o": [
+            "2.0 x 10^5 Pa",
+            "1.0 x 10^5 Pa",
+            "124 Pa",
+            "2.0 x 10^2 Pa"
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Easy",
+          "t": "fill_blank",
+          "m": 1,
+          "q": "A gas in equilibrium has an internal energy of 600 J. It is imagined to be divided into two equal parts. The internal energy of each part is ____ J (write a whole number).",
+          "a": "300"
+        },
+        {
+          "b": "Apply",
+          "d": "Hard",
+          "t": "mcq",
+          "m": 1,
+          "q": "A fixed amount of an ideal gas is in equilibrium at 300 K with pressure P and volume V. In a new equilibrium state its pressure is 2P and its volume is 3V. Its temperature in the new state is",
+          "a": "1800 K",
+          "o": [
+            "1800 K",
+            "450 K",
+            "200 K",
+            "1500 K"
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Hard",
+          "t": "short_answer",
+          "m": 2,
+          "q": "Use the classification of variables as extensive or intensive to check the consistency of the equation Delta Q = Delta U + P Delta V.",
+          "a": "Delta Q is proportional to the total mass of the system, so it is extensive. Delta U is extensive, since internal energy is an extensive variable. P is intensive and Delta V is extensive, and the product of an intensive variable and an extensive quantity is extensive. So every term on both sides is extensive, and the equation is consistent.",
+          "s": [
+            [
+              "Delta Q and Delta U are both extensive",
+              1
+            ],
+            [
+              "P (intensive) times Delta V (extensive) is extensive, so both sides are extensive and the equation is consistent",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Hard",
+          "t": "mcq",
+          "m": 1,
+          "q": "An ideal gas in a vessel of volume 0.020 m^3 is at a pressure of 2.49 x 10^5 Pa and a temperature of 400 K. Taking R = 8.3 J mol^-1 K^-1, the number of moles of gas is",
+          "a": "1.5 mol",
+          "o": [
+            "1.5 mol",
+            "0.67 mol",
+            "600 mol",
+            "2.0 mol"
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Hardest",
+          "t": "long_answer",
+          "m": 3,
+          "q": "0.5 mol of an ideal gas is in equilibrium at a pressure of 1.0 x 10^5 Pa and a temperature of 300 K. Take R = 8.3 J mol^-1 K^-1. (a) Find its volume V1. (b) The gas is then brought to a new equilibrium state with the same volume V1 but a temperature of 450 K. Find its new pressure.",
+          "a": "(a) PV = mu R T, so V1 = mu R T / P = 0.5 x 8.3 x 300 / (1.0 x 10^5) = 1245 / 10^5 = 1.245 x 10^-2 m^3. (b) With mu and V fixed, P is proportional to T: P2 = P1 x (T2/T1) = 1.0 x 10^5 x 450/300 = 1.5 x 10^5 Pa (equivalently, P2 = mu R T2 / V1 = 0.5 x 8.3 x 450 / 0.01245).",
+          "s": [
+            [
+              "Uses the equation of state PV = mu R T",
+              1
+            ],
+            [
+              "V1 = 1.245 x 10^-2 m^3",
+              1
+            ],
+            [
+              "P2 = 1.5 x 10^5 Pa, by the ratio of temperatures or by direct substitution",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Analyse",
+          "d": "Hard",
+          "t": "assertion_reason",
+          "m": 1,
+          "q": "Assertion (A): A gas that is expanding freely into vacuum, just after a partition in its box has been suddenly removed, cannot be assigned a single value of pressure during the rapid expansion. Reason (R): State variables describe the non-equilibrium states of a system just as well as they describe its equilibrium states. Choose the correct option.",
+          "a": "A is true, R is false",
+          "o": [
+            "A is true, R is false",
+            "Both A and R are true, and R is the correct explanation of A",
+            "Both A and R are true, but R is not the correct explanation of A",
+            "A is false, R is true"
+          ]
+        },
+        {
+          "b": "Analyse",
+          "d": "Hard",
+          "t": "short_answer",
+          "m": 2,
+          "q": "A gas in a cylinder is in thermal and mechanical equilibrium with its surroundings. The external pressure is suddenly reduced by lifting the weight off the movable piston. Explain why the states the gas passes through are not equilibrium states, and what happens eventually.",
+          "a": "The piston accelerates outward, and during the rapid change the gas does not have a well-defined (uniform) pressure and temperature, so the states it passes through are non-equilibrium states and cannot be described by state variables. In due course the gas settles to an equilibrium state with a well-defined temperature and pressure equal to those of the surroundings.",
+          "s": [
+            [
+              "During the sudden change the piston accelerates and the gas has no well-defined pressure and temperature (non-equilibrium states)",
+              1
+            ],
+            [
+              "Eventually the gas settles to an equilibrium state with pressure and temperature equal to those of the surroundings",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Analyse",
+          "d": "Hardest",
+          "t": "long_answer",
+          "m": 3,
+          "q": "(a) Classify volume V, mass M, pressure P and temperature T of a system in equilibrium as extensive or intensive, stating the test you use. (b) Decide whether the product P V is extensive or intensive. (c) Decide whether the ratio M / V is extensive or intensive, and name the quantity it represents.",
+          "a": "(a) Test: imagine the system divided into two equal parts; variables that are halved are extensive, those that stay unchanged are intensive. V and M are halved, so they are extensive; P and T are unchanged, so they are intensive. (b) P is unchanged and V is halved for each part, so PV is halved: the product of an intensive and an extensive variable is extensive. (c) M and V are both halved, so M/V is unchanged: it is intensive. It is the density rho.",
+          "s": [
+            [
+              "(a) Halving test stated; V and M extensive, P and T intensive",
+              1
+            ],
+            [
+              "(b) P V is extensive (intensive times extensive)",
+              1
+            ],
+            [
+              "(c) M / V is intensive; it is the density",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Evaluate",
+          "d": "Hard",
+          "t": "short_answer",
+          "m": 2,
+          "q": "An engineer pushes the piston of a gas cylinder in sharply, completing the compression in about 0.01 s, and then treats the process as quasi-static in his calculation. Evaluate this.",
+          "a": "It is not justified. A quasi-static process must be so slow that the system stays in thermal and mechanical equilibrium with the surroundings at every stage, with only an infinitesimal difference of pressure and temperature. A sharp push involves accelerated motion of the piston and a finite pressure difference, so the gas passes through non-equilibrium states in which its pressure and temperature are not well defined.",
+          "s": [
+            [
+              "Judgement: not justified; a quasi-static process must be very slow, with the system in equilibrium at every stage",
+              1
+            ],
+            [
+              "Reason: a sudden push means accelerated piston motion and finite pressure differences, so the gas passes through non-equilibrium states",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Create",
+          "d": "Hardest",
+          "t": "long_answer",
+          "m": 3,
+          "q": "Devise a procedure for taking a gas in a cylinder with a movable piston from the state (P, T) to another state (P', T') by a quasi-static process. Explain how you would change the pressure, how you would change the temperature, and what condition your procedure satisfies at every stage.",
+          "a": "Pressure: change the external pressure on the piston by a very small amount (for example by adding or removing a tiny weight), allow the gas to equalise its pressure with the surroundings, and repeat infinitely slowly until the pressure is P'. Temperature: put the gas in contact with a reservoir whose temperature differs only infinitesimally from that of the gas, and then with a succession of reservoirs of progressively different temperatures from T to T', until the gas reaches T'. Condition: at every stage the pressure and temperature of the surroundings differ only infinitesimally from those of the gas, so the gas is always in thermal and mechanical equilibrium with its surroundings.",
+          "s": [
+            [
+              "Pressure changed in very small steps, letting the gas equalise its pressure each time, until P' is reached",
+              1
+            ],
+            [
+              "Temperature changed by an infinitesimal temperature difference, using reservoirs of progressively different temperatures from T to T'",
+              1
+            ],
+            [
+              "At every stage the differences are infinitesimal, so the system stays in thermal and mechanical equilibrium with the surroundings",
+              1
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "code": "C11P-11.6",
+      "name": "Isothermal, isochoric, isobaric and cyclic processes",
+      "description": "The special processes of Table 11.2 other than the adiabatic one: what is held fixed in each, the work done, and how the First Law shares the heat between internal energy and work.",
+      "idea": "Naming what is held fixed in a process tells us at once which term of the First Law vanishes or takes a simple form.",
+      "rule": "Isothermal: temperature constant; for an ideal gas PV = constant (Boyle's law), Delta U = 0, and the heat absorbed equals the work done by the gas, Q = W = mu R T ln(V2/V1), positive for expansion (heat absorbed) and negative for compression (heat released). Isochoric: volume constant; no work is done, and the heat absorbed goes entirely to change the internal energy and temperature. Isobaric: pressure constant; W = P (V2 - V1) = mu R (T2 - T1), and the heat absorbed goes partly to increase the internal energy and partly to do work. Cyclic: the system returns to its initial state, so Delta U = 0 and the total heat absorbed equals the work done by the system. For any quasi-static process the work done by the gas is the sum of P Delta V over the process.",
+      "example": "A gas expands at a constant pressure of 1.5 x 10^5 Pa from 2.0 x 10^-3 m^3 to 5.0 x 10^-3 m^3: W = P (V2 - V1) = 1.5 x 10^5 x 3.0 x 10^-3 = 450 J of work done by the gas.",
+      "difficulty_base": "Hard",
+      "questions": [
+        {
+          "b": "Remember",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "A process in which the temperature of the system is kept fixed throughout is called",
+          "a": "an isothermal process",
+          "o": [
+            "an isothermal process",
+            "an isobaric process",
+            "an isochoric process",
+            "an adiabatic process"
+          ]
+        },
+        {
+          "b": "Remember",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "In an isochoric process, the quantity that stays constant is the",
+          "a": "volume of the system",
+          "o": [
+            "volume of the system",
+            "pressure of the system",
+            "temperature of the system",
+            "internal energy of the system"
+          ]
+        },
+        {
+          "b": "Remember",
+          "d": "Easy",
+          "t": "fill_blank",
+          "m": 1,
+          "q": "A thermodynamic process in which the pressure of the system stays constant is called an ____ process (one word).",
+          "a": "isobaric"
+        },
+        {
+          "b": "Remember",
+          "d": "Hard",
+          "t": "mcq",
+          "m": 1,
+          "q": "Which of the following is NOT true of an isothermal expansion of an ideal gas?",
+          "a": "The internal energy of the gas increases",
+          "o": [
+            "The internal energy of the gas increases",
+            "The gas absorbs heat",
+            "The gas does work on the surroundings",
+            "The product PV stays constant"
+          ],
+          "rev": true
+        },
+        {
+          "b": "Understand",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "For an isothermal process of a given mass of an ideal gas, the pressure varies inversely as the volume. This is the statement of",
+          "a": "Boyle's law",
+          "o": [
+            "Boyle's law",
+            "the Zeroth Law of Thermodynamics",
+            "the Kelvin-Planck statement",
+            "Carnot's theorem"
+          ]
+        },
+        {
+          "b": "Understand",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "In an isochoric process, the heat absorbed by a gas",
+          "a": "goes entirely to change its internal energy and its temperature",
+          "o": [
+            "goes entirely to change its internal energy and its temperature",
+            "is entirely converted into work done by the gas",
+            "goes partly into internal energy and partly into work done by the gas",
+            "is zero"
+          ]
+        },
+        {
+          "b": "Understand",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "A gas expands in a metallic cylinder placed in a large reservoir of fixed temperature. The heat that passes to the gas does not materially change the temperature of the reservoir because the reservoir",
+          "a": "has a very large heat capacity",
+          "o": [
+            "has a very large heat capacity",
+            "is surrounded by adiabatic walls",
+            "does no work on the gas",
+            "is at a lower pressure than the gas"
+          ]
+        },
+        {
+          "b": "Understand",
+          "d": "Hard",
+          "t": "mcq",
+          "m": 1,
+          "q": "When an ideal gas is compressed isothermally,",
+          "a": "work is done on the gas by the environment and heat is released by the gas",
+          "o": [
+            "work is done on the gas by the environment and heat is released by the gas",
+            "work is done on the gas and the gas absorbs an equal amount of heat",
+            "no heat is exchanged, since the temperature does not change",
+            "the internal energy of the gas rises by the work done on it"
+          ]
+        },
+        {
+          "b": "Understand",
+          "d": "Hard",
+          "t": "mcq",
+          "m": 1,
+          "q": "In an isobaric expansion of an ideal gas, the heat absorbed by the gas",
+          "a": "goes partly to increase its internal energy and partly to do work",
+          "o": [
+            "goes partly to increase its internal energy and partly to do work",
+            "goes entirely into work, because the pressure is fixed",
+            "goes entirely into internal energy, because the pressure is fixed",
+            "is zero, because the pressure does not change"
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "A gas expands at a constant pressure of 2.0 x 10^5 Pa from a volume of 1.0 x 10^-3 m^3 to 4.0 x 10^-3 m^3. The work done by the gas on the surroundings is",
+          "a": "600 J",
+          "o": [
+            "600 J",
+            "800 J",
+            "200 J",
+            "-600 J"
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Easy",
+          "t": "fill_blank",
+          "m": 1,
+          "q": "300 J of heat is supplied to a gas kept at constant volume. The increase in the internal energy of the gas is ____ J (write a whole number).",
+          "a": "300"
+        },
+        {
+          "b": "Apply",
+          "d": "Hard",
+          "t": "mcq",
+          "m": 1,
+          "q": "An ideal gas at a pressure of 2.0 x 10^5 Pa and volume 1.0 x 10^-3 m^3 expands isothermally to twice its volume. Taking ln 2 = 0.693, the work done by the gas on the surroundings is",
+          "a": "138.6 J",
+          "o": [
+            "138.6 J",
+            "200 J",
+            "100 J",
+            "288.6 J"
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Hard",
+          "t": "short_answer",
+          "m": 2,
+          "q": "2 mol of an ideal gas is compressed isothermally at 400 K from a volume 6V to a volume 2V. Take R = 8.3 J mol^-1 K^-1 and ln 3 = 1.1. Find the work done by the gas, and state how much heat is exchanged and in which direction.",
+          "a": "W = mu R T ln(V2/V1) = 2 x 8.3 x 400 x ln(2V/6V) = 6640 x ln(1/3) = 6640 x (-1.1) = -7304 J. The work done by the gas is -7304 J, i.e. 7304 J of work is done on the gas. Since the internal energy of an ideal gas does not change in an isothermal process, Q = W = -7304 J: the gas releases 7304 J of heat to the surroundings.",
+          "s": [
+            [
+              "W = mu R T ln(V2/V1) = -7304 J (7304 J of work done on the gas)",
+              1
+            ],
+            [
+              "Delta U = 0, so 7304 J of heat is released by the gas",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Hard",
+          "t": "mcq",
+          "m": 1,
+          "q": "2 mol of an ideal gas is heated at constant pressure from 300 K to 350 K. Taking R = 8.3 J mol^-1 K^-1, the work done by the gas on the surroundings is",
+          "a": "830 J",
+          "o": [
+            "830 J",
+            "415 J",
+            "5810 J",
+            "4980 J"
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Hardest",
+          "t": "long_answer",
+          "m": 3,
+          "q": "A gas is in state D with pressure 800 N/m^2 and volume 1.0 m^3. It is taken to state E, with pressure 400 N/m^2 and volume 4.0 m^3, by a process that is a straight line on a pressure-volume graph. Its volume is then reduced to the original value by an isobaric process from E to state F (pressure 400 N/m^2, volume 1.0 m^3). Calculate the total work done by the gas from D to E to F.",
+          "a": "The work done by the gas is the sum of P Delta V, i.e. the area under the process on the P-V graph. D to E: the pressure falls linearly, so W_DE = average pressure x change in volume = (1/2)(800 + 400) x (4.0 - 1.0) = 600 x 3.0 = 1800 J. E to F (isobaric): W_EF = P (V_F - V_E) = 400 x (1.0 - 4.0) = -1200 J. Total work done by the gas = 1800 - 1200 = 600 J.",
+          "s": [
+            [
+              "W from D to E = 1800 J, by the area under the straight line or by average pressure times change in volume",
+              1
+            ],
+            [
+              "W from E to F = 400 x (1.0 - 4.0) = -1200 J",
+              1
+            ],
+            [
+              "Total work done by the gas = 600 J",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Analyse",
+          "d": "Hard",
+          "t": "multi_statement",
+          "m": 1,
+          "q": "Consider these statements. (I) In an isobaric expansion of an ideal gas no work is done by the gas, because its pressure does not change. (II) In a cyclic process the total heat absorbed by the system equals the work done by the system. Which is or are correct?",
+          "a": "Only II",
+          "o": [
+            "Only II",
+            "Only I",
+            "Both I and II",
+            "Neither I nor II"
+          ]
+        },
+        {
+          "b": "Analyse",
+          "d": "Hard",
+          "t": "short_answer",
+          "m": 2,
+          "q": "In one complete cycle a gas absorbs 500 J of heat in one part of the cycle and releases 320 J of heat in another part. Find the net work done by the gas in the cycle, giving the reason.",
+          "a": "Net heat absorbed in the cycle = 500 J - 320 J = 180 J. In a cyclic process the system returns to its initial state, so Delta U = 0 and, by the First Law, the net heat absorbed equals the work done by the system. Net work done by the gas = 180 J.",
+          "s": [
+            [
+              "Delta U = 0 over a cycle, so net work done equals net heat absorbed",
+              1
+            ],
+            [
+              "Net work = 500 - 320 = 180 J",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Analyse",
+          "d": "Hardest",
+          "t": "long_answer",
+          "m": 3,
+          "q": "One mole of an ideal gas is at 300 K with volume V0 and pressure P0. In process X it expands isobarically to volume 2V0. In process Y it expands isothermally, from the same initial state, to volume 2V0. Take R = 8.3 J mol^-1 K^-1 and ln 2 = 0.693. Find the work done by the gas in each process to the nearest joule, and explain why one is larger.",
+          "a": "Process X (isobaric): W = P0 (2V0 - V0) = P0 V0 = mu R T = 1 x 8.3 x 300 = 2490 J. Process Y (isothermal): W = mu R T ln(V2/V1) = 8.3 x 300 x 0.693 = 1725.6 J, about 1726 J. The isobaric work is larger because in X the pressure stays at P0 throughout the expansion, whereas in Y the pressure falls as the volume increases (PV = constant), so less work is done for the same change in volume.",
+          "s": [
+            [
+              "Isobaric: W = P0 V0 = R T = 2490 J",
+              1
+            ],
+            [
+              "Isothermal: W = R T ln 2 = 1726 J",
+              1
+            ],
+            [
+              "Reason: the pressure stays constant in X but falls during the expansion in Y",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Evaluate",
+          "d": "Hard",
+          "t": "short_answer",
+          "m": 2,
+          "q": "A student says: 'In an isothermal process the temperature of the gas does not change, so no heat is exchanged with the surroundings.' Evaluate this statement for an ideal gas.",
+          "a": "The statement is wrong. In an isothermal process of an ideal gas the internal energy does not change, so by the First Law the heat supplied equals the work done by the gas, Q = W, which is not zero when the volume changes. In an isothermal expansion the gas absorbs heat and does work; in an isothermal compression heat is released. A process with no heat exchange is adiabatic, not isothermal.",
+          "s": [
+            [
+              "Judgement: wrong; constant temperature means Delta U = 0, not Q = 0",
+              1
+            ],
+            [
+              "Q = W, so heat is absorbed in expansion and released in compression",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Create",
+          "d": "Hardest",
+          "t": "long_answer",
+          "m": 3,
+          "q": "Design a cyclic process for a gas made of four steps: an isobaric expansion, an isochoric fall of pressure, an isobaric compression back to the original volume and an isochoric rise of pressure back to the original state. Choose your own two pressures and two volumes, calculate the work done by the gas in each step and over the whole cycle, and state the net heat absorbed in the cycle.",
+          "a": "One design: pressures 3.0 x 10^5 Pa and 1.0 x 10^5 Pa, volumes 1.0 x 10^-3 m^3 and 3.0 x 10^-3 m^3. Isobaric expansion at 3.0 x 10^5 Pa: W = 3.0 x 10^5 x (3.0 - 1.0) x 10^-3 = 600 J. Isochoric fall of pressure: W = 0. Isobaric compression at 1.0 x 10^5 Pa: W = 1.0 x 10^5 x (1.0 - 3.0) x 10^-3 = -200 J. Isochoric rise of pressure: W = 0. Net work done by the gas = 600 - 200 = 400 J. Since Delta U = 0 over a cycle, the net heat absorbed is also 400 J.",
+          "s": [
+            [
+              "Work in each isobaric step = P Delta V with the correct sign for the chosen values, and zero in each isochoric step",
+              1
+            ],
+            [
+              "Net work = (higher pressure - lower pressure) x (larger volume - smaller volume) for the chosen values",
+              1
+            ],
+            [
+              "Net heat absorbed equals the net work, because Delta U = 0 over the cycle",
+              1
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "code": "C11P-11.7",
+      "name": "The adiabatic process",
+      "description": "A process with no heat exchange: the relation P V^gamma = constant for an ideal gas, the ratio gamma of the specific heats, the work done, and the accompanying change of temperature.",
+      "idea": "With no heat entering or leaving, any work a gas does must come out of its own internal energy, so an adiabatic expansion cools the gas and an adiabatic compression warms it.",
+      "rule": "In an adiabatic process the system is insulated from the surroundings and the heat absorbed or released is zero, so by the First Law the work done by the gas equals the decrease in its internal energy. For an ideal gas P V^gamma = constant (quoted without proof), where gamma = C_p / C_v is the ratio of the specific heats (ordinary or molar) at constant pressure and at constant volume; so P1 V1^gamma = P2 V2^gamma. Combined with the ideal gas equation this gives T V^(gamma - 1) = constant. The work done by the gas in going from (P1, V1, T1) to (P2, V2, T2) is W = (P2 V2 - P1 V1) / (1 - gamma) = mu R (T1 - T2) / (gamma - 1). If W > 0 (work done by the gas) then T2 < T1; if W < 0 (work done on the gas) then T2 > T1.",
+      "example": "An ideal gas with gamma = 1.5 is compressed adiabatically to one-ninth of its volume. Pressure: P2 = P1 x 9^1.5 = 27 P1. Temperature: T2 = T1 x 9^0.5 = 3 T1.",
+      "difficulty_base": "Hardest",
+      "questions": [
+        {
+          "b": "Remember",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "For an adiabatic process of an ideal gas, P V^gamma = constant. The symbol gamma stands for",
+          "a": "C_p / C_v, the ratio of the specific heats at constant pressure and at constant volume",
+          "o": [
+            "C_p / C_v, the ratio of the specific heats at constant pressure and at constant volume",
+            "C_v / C_p, the ratio of the specific heats at constant volume and at constant pressure",
+            "C_p - C_v, the difference of the two specific heats",
+            "C_p x C_v, the product of the two specific heats"
+          ]
+        },
+        {
+          "b": "Remember",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "The work done by mu moles of an ideal gas in an adiabatic change of state from temperature T1 to temperature T2 is",
+          "a": "mu R (T1 - T2) / (gamma - 1)",
+          "o": [
+            "mu R (T1 - T2) / (gamma - 1)",
+            "mu R (T2 - T1) / (gamma - 1)",
+            "mu R (T1 - T2) / gamma",
+            "mu R (T1 - T2) (gamma - 1)"
+          ]
+        },
+        {
+          "b": "Remember",
+          "d": "Easy",
+          "t": "fill_blank",
+          "m": 1,
+          "q": "A process in which the system is insulated from the surroundings, so that the heat absorbed or released is zero, is called an ____ process (one word).",
+          "a": "adiabatic"
+        },
+        {
+          "b": "Remember",
+          "d": "Hard",
+          "t": "mcq",
+          "m": 1,
+          "q": "An ideal gas expands adiabatically, doing work on the surroundings. Which of the following is NOT true of this process?",
+          "a": "The gas absorbs an amount of heat equal to the work it does",
+          "o": [
+            "The gas absorbs an amount of heat equal to the work it does",
+            "No heat flows between the gas and the surroundings",
+            "The work done by the gas is positive",
+            "The value of P V^gamma stays the same"
+          ],
+          "rev": true
+        },
+        {
+          "b": "Understand",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "When an ideal gas is compressed adiabatically, so that work is done on the gas, its temperature",
+          "a": "rises",
+          "o": [
+            "rises",
+            "falls",
+            "stays the same",
+            "falls first and then rises to its original value"
+          ]
+        },
+        {
+          "b": "Understand",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "For an adiabatic process the First Law, with zero heat exchanged, shows that the work done by the gas is equal to",
+          "a": "the decrease in its internal energy",
+          "o": [
+            "the decrease in its internal energy",
+            "the increase in its internal energy",
+            "the heat absorbed by the gas",
+            "zero"
+          ]
+        },
+        {
+          "b": "Understand",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "Which arrangement makes the expansion of a gas in a cylinder an adiabatic process?",
+          "a": "Insulating the cylinder and piston so that no heat flows between the gas and the surroundings",
+          "o": [
+            "Insulating the cylinder and piston so that no heat flows between the gas and the surroundings",
+            "Placing a metallic cylinder in a large reservoir of fixed temperature",
+            "Fixing the piston so that the volume cannot change",
+            "Letting the piston move freely against a fixed external pressure while the gas is heated"
+          ]
+        },
+        {
+          "b": "Understand",
+          "d": "Hard",
+          "t": "mcq",
+          "m": 1,
+          "q": "An ideal gas is compressed from the same initial state to half its volume, once isothermally and once adiabatically. Compared with the isothermal case, the final pressure in the adiabatic case is",
+          "a": "greater, because the pressure is multiplied by 2^gamma, and gamma is greater than 1",
+          "o": [
+            "greater, because the pressure is multiplied by 2^gamma, and gamma is greater than 1",
+            "the same, because the final volume is the same",
+            "smaller, because no heat enters the gas",
+            "smaller, because the pressure is multiplied by 2^(1/gamma)"
+          ]
+        },
+        {
+          "b": "Understand",
+          "d": "Hard",
+          "t": "mcq",
+          "m": 1,
+          "q": "The ratio gamma has the same value whether ordinary specific heats (per kg) or molar specific heats are used, because",
+          "a": "C_p and C_v are both changed by the same factor in going from one to the other, and the factor cancels in the ratio",
+          "o": [
+            "C_p and C_v are both changed by the same factor in going from one to the other, and the factor cancels in the ratio",
+            "the ordinary and molar specific heats of a gas are numerically equal",
+            "gamma is defined only for one mole of gas",
+            "the difference C_p - C_v is the same in both cases"
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "An ideal gas with gamma = 1.5 is compressed adiabatically to one-fourth of its original volume. Its pressure becomes",
+          "a": "8 times the original pressure",
+          "o": [
+            "8 times the original pressure",
+            "4 times the original pressure",
+            "6 times the original pressure",
+            "2 times the original pressure"
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Easy",
+          "t": "fill_blank",
+          "m": 1,
+          "q": "1 mol of an ideal gas with gamma = 1.5 expands adiabatically and cools from 400 K to 300 K. Taking R = 8.3 J mol^-1 K^-1, the work done by the gas is ____ J (write a whole number).",
+          "a": "1660"
+        },
+        {
+          "b": "Apply",
+          "d": "Hard",
+          "t": "mcq",
+          "m": 1,
+          "q": "For an adiabatic process of an ideal gas, T V^(gamma - 1) = constant. A gas with gamma = 1.5 at 300 K is compressed adiabatically to one-fourth of its volume. Its final temperature is",
+          "a": "600 K",
+          "o": [
+            "600 K",
+            "1200 K",
+            "2400 K",
+            "150 K"
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Hard",
+          "t": "short_answer",
+          "m": 2,
+          "q": "An ideal gas with gamma = 1.5 expands adiabatically from a pressure of 8.0 x 10^5 Pa and volume 1.0 x 10^-3 m^3 to a pressure of 1.0 x 10^5 Pa and volume 4.0 x 10^-3 m^3. Calculate the work done by the gas.",
+          "a": "For an adiabatic change W = (P2 V2 - P1 V1) / (1 - gamma) = (P1 V1 - P2 V2) / (gamma - 1). P1 V1 = 8.0 x 10^5 x 1.0 x 10^-3 = 800 J and P2 V2 = 1.0 x 10^5 x 4.0 x 10^-3 = 400 J. W = (800 - 400) / (1.5 - 1) = 400 / 0.5 = 800 J of work done by the gas.",
+          "s": [
+            [
+              "P1 V1 = 800 J and P2 V2 = 400 J, used in W = (P1 V1 - P2 V2)/(gamma - 1)",
+              1
+            ],
+            [
+              "W = 800 J",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Hard",
+          "t": "mcq",
+          "m": 1,
+          "q": "Helium (gamma = 5/3) in a cylinder with insulating walls and an insulated piston is compressed to one-eighth of its original volume. The pressure of the gas increases by a factor of",
+          "a": "32",
+          "o": [
+            "32",
+            "8",
+            "13.3",
+            "4"
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Hardest",
+          "t": "long_answer",
+          "m": 3,
+          "q": "2 mol of an ideal gas with gamma = 1.4, initially at 300 K, is compressed adiabatically to 1/32 of its original volume. Use T V^(gamma - 1) = constant, 32^0.4 = 4 and R = 8.3 J mol^-1 K^-1. Find (a) the final temperature, (b) the work done on the gas and (c) the change in its internal energy.",
+          "a": "(a) T2 = T1 (V1/V2)^(gamma - 1) = 300 x 32^0.4 = 300 x 4 = 1200 K. (b) Work done by the gas W = mu R (T1 - T2)/(gamma - 1) = 2 x 8.3 x (300 - 1200)/0.4 = 16.6 x (-900)/0.4 = -37350 J, so the work done on the gas is 37350 J. (c) No heat is exchanged, so Delta U = -W = +37350 J: the internal energy increases by 37350 J.",
+          "s": [
+            [
+              "(a) T2 = 1200 K",
+              1
+            ],
+            [
+              "(b) W by the gas = -37350 J, i.e. 37350 J of work done on the gas",
+              1
+            ],
+            [
+              "(c) Delta U = +37350 J, since Delta Q = 0",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Analyse",
+          "d": "Hard",
+          "t": "assertion_reason",
+          "m": 1,
+          "q": "Assertion (A): When an ideal gas expands adiabatically its temperature remains constant, because no heat enters or leaves the gas. Reason (R): In an adiabatic process the work done by the gas results in a decrease in its internal energy. Choose the correct option.",
+          "a": "A is false, R is true",
+          "o": [
+            "A is false, R is true",
+            "Both A and R are true, and R is the correct explanation of A",
+            "Both A and R are true, but R is not the correct explanation of A",
+            "A is true, R is false"
+          ]
+        },
+        {
+          "b": "Analyse",
+          "d": "Hard",
+          "t": "short_answer",
+          "m": 2,
+          "q": "The work done by an ideal gas in an adiabatic change can be written either in terms of its initial and final pressures and volumes or in terms of its initial and final temperatures. Write both forms and show that they are equivalent.",
+          "a": "In terms of pressures and volumes: W = (P2 V2 - P1 V1) / (1 - gamma), which is the same as (P1 V1 - P2 V2) / (gamma - 1). In terms of temperatures: W = mu R (T1 - T2) / (gamma - 1). They are equivalent because the ideal gas equation gives P1 V1 = mu R T1 and P2 V2 = mu R T2, so P1 V1 - P2 V2 = mu R (T1 - T2).",
+          "s": [
+            [
+              "Both forms written correctly",
+              1
+            ],
+            [
+              "Uses P1 V1 = mu R T1 and P2 V2 = mu R T2 to pass from one form to the other",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Analyse",
+          "d": "Hardest",
+          "t": "long_answer",
+          "m": 3,
+          "q": "An ideal gas with gamma = 1.5, at pressure 1.0 x 10^5 Pa and volume V0, expands to volume 4 V0 (a) isothermally and (b) adiabatically. Find the final pressure in each case, and explain in terms of temperature why one of them is lower.",
+          "a": "(a) Isothermal: PV = constant, so P2 = P1 x (V0 / 4V0) = 1.0 x 10^5 / 4 = 2.5 x 10^4 Pa. (b) Adiabatic: P V^gamma = constant, so P2 = P1 x (V0 / 4V0)^1.5 = 1.0 x 10^5 / 4^1.5 = 1.0 x 10^5 / 8 = 1.25 x 10^4 Pa. The adiabatic pressure is lower: in the adiabatic expansion no heat is supplied, so the work done by the gas comes from its internal energy and the gas cools, whereas in the isothermal expansion heat is absorbed and the temperature is maintained. At the same final volume the cooler gas has the lower pressure.",
+          "s": [
+            [
+              "Isothermal final pressure 2.5 x 10^4 Pa",
+              1
+            ],
+            [
+              "Adiabatic final pressure 1.25 x 10^4 Pa",
+              1
+            ],
+            [
+              "Reason: the gas cools in the adiabatic expansion (work done at the cost of internal energy), so its pressure at the same volume is lower",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Evaluate",
+          "d": "Hard",
+          "t": "short_answer",
+          "m": 2,
+          "q": "A gas with gamma = 1.4 in a cylinder with heat-insulating walls and an insulated piston is compressed to half its original volume. A student uses P1 V1 = P2 V2 and concludes that the pressure doubles. Evaluate this, given 2^1.4 = 2.64.",
+          "a": "The conclusion is wrong. P1 V1 = P2 V2 holds for an isothermal process; here the gas is insulated, so the compression is adiabatic and P V^gamma = constant applies. P2 = P1 (V1/V2)^gamma = P1 x 2^1.4 = 2.64 P1. The pressure rises by a factor of 2.64, more than double, because the temperature of the gas also rises.",
+          "s": [
+            [
+              "Judgement: wrong law used; the process is adiabatic, so P V^gamma = constant applies",
+              1
+            ],
+            [
+              "P2 = 2^1.4 P1 = 2.64 P1",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Create",
+          "d": "Hardest",
+          "t": "long_answer",
+          "m": 3,
+          "q": "Compose a numerical problem, with its solution, on the adiabatic expansion of 1 mol of an ideal gas in which the absolute temperature of the gas falls to half its initial value. Choose a value of gamma, a volume ratio consistent with T V^(gamma - 1) = constant and an initial temperature, and find the ratio of final to initial pressure and the work done by the gas. Take R = 8.3 J mol^-1 K^-1.",
+          "a": "One example: gamma = 1.5, initial temperature 400 K, and the volume increases 4 times. Check: T2 = T1 (V1/V2)^(gamma - 1) = 400 x (1/4)^0.5 = 200 K, half of 400 K. Pressure: P2 / P1 = (V1/V2)^gamma = (1/4)^1.5 = 1/8. Work done by the gas: W = mu R (T1 - T2)/(gamma - 1) = 1 x 8.3 x (400 - 200)/0.5 = 3320 J.",
+          "s": [
+            [
+              "Chosen gamma and volume ratio satisfy (V2/V1)^(gamma - 1) = 2, so that the temperature halves",
+              1
+            ],
+            [
+              "Pressure ratio P2/P1 = (V1/V2)^gamma evaluated correctly for the chosen values (or found from PV/T = constant)",
+              1
+            ],
+            [
+              "Work W = mu R (T1 - T2)/(gamma - 1) evaluated correctly for the chosen values",
+              1
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "code": "C11P-11.8",
+      "name": "The Second Law of Thermodynamics; reversible and irreversible processes",
+      "description": "Why a second law is needed, its Kelvin-Planck and Clausius statements, the definition of a reversible process, and the causes of irreversibility in natural processes.",
+      "idea": "Conservation of energy does not decide which way a process runs; the Second Law does, and it makes the spontaneous processes of nature irreversible.",
+      "rule": "The Second Law disallows many processes that are consistent with the First Law. Kelvin-Planck statement: no process is possible whose sole result is the absorption of heat from a reservoir and the complete conversion of the heat into work. Clausius statement: no process is possible whose sole result is the transfer of heat from a colder object to a hotter object. The two statements are equivalent. The law implies that the efficiency of a heat engine can never be unity. A process is reversible if it can be turned back so that both the system and the surroundings return to their original states with no other change anywhere in the universe. A process is reversible only if it is quasi-static and there are no dissipative effects. Spontaneous processes of nature are irreversible, for two main causes: many processes take the system through non-equilibrium states (free expansion, explosive chemical reaction), and most processes involve friction, viscosity and other dissipative effects.",
+      "example": "A hot cup of coffee left on a table cools to room temperature. The reverse, the coffee warming up again by taking heat from the cooler room with nothing else changing, would conserve energy but is never observed: it would violate the Clausius statement, so the cooling is irreversible.",
+      "difficulty_base": "Hard",
+      "questions": [
+        {
+          "b": "Remember",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "The Kelvin-Planck statement of the Second Law says that no process is possible whose sole result is",
+          "a": "the absorption of heat from a reservoir and the complete conversion of the heat into work",
+          "o": [
+            "the absorption of heat from a reservoir and the complete conversion of the heat into work",
+            "the transfer of heat from a hotter object to a colder object",
+            "the conversion of work completely into heat",
+            "a change in the internal energy of a system"
+          ]
+        },
+        {
+          "b": "Remember",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "The Clausius statement of the Second Law says that no process is possible whose sole result is",
+          "a": "the transfer of heat from a colder object to a hotter object",
+          "o": [
+            "the transfer of heat from a colder object to a hotter object",
+            "the transfer of heat from a hotter object to a colder object",
+            "the complete conversion of work into heat",
+            "the expansion of a gas into a vacuum"
+          ]
+        },
+        {
+          "b": "Remember",
+          "d": "Easy",
+          "t": "fill_blank",
+          "m": 1,
+          "q": "According to the Second Law of Thermodynamics, the efficiency of a heat engine, expressed as a fraction and not as a percentage, can never be equal to ____ (write the number).",
+          "a": "1"
+        },
+        {
+          "b": "Remember",
+          "d": "Hard",
+          "t": "mcq",
+          "m": 1,
+          "q": "Which of the following is NOT a correct statement about the Second Law of Thermodynamics?",
+          "a": "It is the principle of conservation of energy",
+          "o": [
+            "It is the principle of conservation of energy",
+            "It disallows many phenomena that are consistent with the First Law",
+            "It puts a fundamental limit on the efficiency of a heat engine",
+            "Its Kelvin-Planck and Clausius statements are equivalent"
+          ],
+          "rev": true
+        },
+        {
+          "b": "Understand",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "A second law is needed in addition to the First Law of Thermodynamics because",
+          "a": "many conceivable processes that conserve energy are never observed to happen",
+          "o": [
+            "many conceivable processes that conserve energy are never observed to happen",
+            "the First Law does not hold for gases",
+            "the First Law applies only to reversible processes",
+            "energy is not conserved in processes involving heat"
+          ]
+        },
+        {
+          "b": "Understand",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "A thermodynamic process is reversible if",
+          "a": "it can be turned back so that both the system and the surroundings return to their original states, with no other change anywhere in the universe",
+          "o": [
+            "it can be turned back so that both the system and the surroundings return to their original states, with no other change anywhere in the universe",
+            "the system alone can be brought back to its original state by any means",
+            "it takes place very quickly",
+            "it takes place without any exchange of heat"
+          ]
+        },
+        {
+          "b": "Understand",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "The Kelvin-Planck statement denies the possibility of a perfect heat engine. The Clausius statement denies the possibility of",
+          "a": "a perfect refrigerator or heat pump",
+          "o": [
+            "a perfect refrigerator or heat pump",
+            "a reversible process",
+            "an isothermal process",
+            "a quasi-static process"
+          ]
+        },
+        {
+          "b": "Understand",
+          "d": "Hard",
+          "t": "mcq",
+          "m": 1,
+          "q": "Stirring a liquid that is in thermal contact with a reservoir converts the work done into heat, increasing the internal energy of the reservoir. This process cannot be reversed exactly because the reverse would amount to",
+          "a": "conversion of heat entirely into work, which violates the Second Law",
+          "o": [
+            "conversion of heat entirely into work, which violates the Second Law",
+            "creation of energy, which violates the First Law",
+            "a flow of heat from a hot body to a cold body",
+            "a quasi-static process"
+          ]
+        },
+        {
+          "b": "Understand",
+          "d": "Hard",
+          "t": "mcq",
+          "m": 1,
+          "q": "A process is reversible only if it is",
+          "a": "quasi-static and free of dissipative effects",
+          "o": [
+            "quasi-static and free of dissipative effects",
+            "quasi-static, whether or not friction is present",
+            "free of friction, however fast it is carried out",
+            "cyclic"
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "Cooking gas leaking from a cylinder spreads through the whole kitchen, and it never collects back into the cylinder by itself. This is an example of the fact that",
+          "a": "the spontaneous processes of nature are irreversible",
+          "o": [
+            "the spontaneous processes of nature are irreversible",
+            "energy is not conserved in diffusion",
+            "a gas has no internal energy once it has spread out",
+            "diffusion is a quasi-static process"
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Easy",
+          "t": "fill_blank",
+          "m": 1,
+          "q": "A heat engine absorbs 800 J of heat from a hot reservoir in each cycle and does 300 J of work. The heat it releases to the cold reservoir in each cycle is ____ J (write a whole number).",
+          "a": "500"
+        },
+        {
+          "b": "Apply",
+          "d": "Hard",
+          "t": "mcq",
+          "m": 1,
+          "q": "A device is claimed to move 200 J of heat in each cycle from the inside of a box at 5 degrees C to a room at 30 degrees C, with no work input and no other effect. The claim",
+          "a": "violates the Clausius statement of the Second Law",
+          "o": [
+            "violates the Clausius statement of the Second Law",
+            "is acceptable, because energy is conserved",
+            "violates the First Law of Thermodynamics",
+            "violates the Zeroth Law of Thermodynamics"
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Hard",
+          "t": "short_answer",
+          "m": 2,
+          "q": "Identify the main cause of irreversibility in each of these processes: (i) the free expansion of a gas when a partition in its container is suddenly removed; (ii) a rotating blade in a liquid coming to a stop.",
+          "a": "(i) The free expansion takes the gas through non-equilibrium states, in which it has no well-defined pressure and temperature; this makes the process irreversible. (ii) The blade stops because of viscosity, a dissipative effect: its mechanical energy is lost, with a corresponding gain in the internal energy of the liquid, and this cannot be undone completely.",
+          "s": [
+            [
+              "(i) The system passes through non-equilibrium states",
+              1
+            ],
+            [
+              "(ii) A dissipative effect (viscosity) turns mechanical energy into internal energy of the liquid",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Hard",
+          "t": "mcq",
+          "m": 1,
+          "q": "An engine working in a cycle absorbs 1000 J of heat from a hot reservoir in each cycle. Which of these values of the work done per cycle would satisfy the First Law but is forbidden by the Second Law?",
+          "a": "1000 J",
+          "o": [
+            "1000 J",
+            "1200 J",
+            "400 J",
+            "700 J"
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Hardest",
+          "t": "long_answer",
+          "m": 3,
+          "q": "Classify each of the following as reversible or irreversible, giving the reason in each case: (a) the combustion of a mixture of petrol vapour and air ignited by a spark; (b) a quasi-static isothermal expansion of an ideal gas in a cylinder fitted with a frictionless movable piston; (c) a block sliding along a rough floor and coming to rest.",
+          "a": "(a) Irreversible: the explosive chemical reaction takes the mixture through non-equilibrium states, and the burnt gases will not turn back into petrol vapour and air by themselves. (b) Reversible: the process is quasi-static (the system is in equilibrium with the surroundings at every stage) and there are no dissipative effects, since the piston is frictionless. (c) Irreversible: friction is a dissipative effect; the mechanical energy of the block is lost as heat to the floor and the block, and this cannot be turned back completely into mechanical energy.",
+          "s": [
+            [
+              "(a) Irreversible: the reaction takes the system through non-equilibrium states and does not reverse by itself",
+              1
+            ],
+            [
+              "(b) Reversible: quasi-static with no dissipative effects",
+              1
+            ],
+            [
+              "(c) Irreversible: friction is a dissipative effect",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Analyse",
+          "d": "Hard",
+          "t": "multi_statement",
+          "m": 1,
+          "q": "Consider these statements. (I) Any process that satisfies the First Law of Thermodynamics can actually occur in nature. (II) A process is reversible as long as it is carried out slowly, even if friction is present. Which is or are correct?",
+          "a": "Neither I nor II",
+          "o": [
+            "Neither I nor II",
+            "Only I",
+            "Only II",
+            "Both I and II"
+          ]
+        },
+        {
+          "b": "Analyse",
+          "d": "Hard",
+          "t": "short_answer",
+          "m": 2,
+          "q": "Imagine that a table cooled slightly by itself and the book lying on it jumped up to some height. Analyse this imagined event in terms of the First Law, and state which principle forbids it.",
+          "a": "The First Law would be satisfied: the table could convert some of its internal energy into an equal amount of mechanical energy of the book, which would rise to a height at which its potential energy equals that energy, so energy would be conserved. Yet this is never observed. It is forbidden by the Second Law of Thermodynamics, which disallows many processes that are consistent with the First Law.",
+          "s": [
+            [
+              "Energy is conserved: internal energy of the table becomes an equal amount of mechanical energy of the book, so the First Law allows it",
+              1
+            ],
+            [
+              "It never happens: the Second Law of Thermodynamics forbids it",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Analyse",
+          "d": "Hardest",
+          "t": "long_answer",
+          "m": 3,
+          "q": "A hot metal block at 400 K is joined by a conducting rod to a cold block at 300 K, and heat flows from the hot block to the cold one. Analyse why this process is irreversible by considering (a) whether it is quasi-static, (b) what its exact reversal would require, and (c) what a reversible transfer of heat would need instead.",
+          "a": "(a) It is not quasi-static: there is a finite temperature difference (100 K) between the bodies exchanging heat, whereas a quasi-static process allows only an infinitesimal temperature difference between the system and what it exchanges heat with. (b) Exact reversal would require the same heat to pass from the cold block back to the hot block with no other change anywhere, which is the transfer of heat from a colder to a hotter object as the sole result and is forbidden by the Clausius statement. (c) A reversible transfer must be quasi-static and free of dissipative effects: heat must pass between bodies whose temperatures differ only infinitesimally.",
+          "s": [
+            [
+              "(a) Finite temperature difference, so the process is not quasi-static",
+              1
+            ],
+            [
+              "(b) Reversal means heat passing from colder to hotter with no other effect, violating the Clausius statement",
+              1
+            ],
+            [
+              "(c) A reversible transfer needs an infinitesimal temperature difference (quasi-static) and no dissipative effects",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Evaluate",
+          "d": "Hard",
+          "t": "short_answer",
+          "m": 2,
+          "q": "A student argues: 'The free expansion of a gas into an evacuated space is reversible, because we can always push the gas back into its original volume with a piston.' Evaluate this argument.",
+          "a": "The argument is wrong. A process is reversible only if both the system and the surroundings can be returned to their original states with no other change anywhere in the universe. Pushing the gas back restores the volume of the gas, but it requires work from the surroundings (and the heat produced has to be removed), so the surroundings are left changed. The free expansion is therefore irreversible.",
+          "s": [
+            [
+              "Judgement: wrong; reversibility requires the system AND the surroundings to be restored with no other change anywhere",
+              1
+            ],
+            [
+              "Compressing the gas back needs work from the surroundings, which are therefore not restored; so the free expansion is irreversible",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Create",
+          "d": "Hardest",
+          "t": "long_answer",
+          "m": 3,
+          "q": "Design a way of expanding a gas from volume V to volume 2V at a fixed temperature that is as nearly reversible as possible. Then describe two changes to your design that would make the expansion irreversible, one for each of the two main causes of irreversibility.",
+          "a": "Nearly reversible design: hold the gas in a cylinder with a frictionless movable piston, in thermal contact with a large reservoir at the fixed temperature, and reduce the load on the piston in extremely small steps (for example by removing grains of sand one at a time), so that the expansion is quasi-static and the gas stays in equilibrium with the surroundings at every stage. Irreversible change 1 (non-equilibrium states): remove the load suddenly, or let the gas expand freely into an evacuated space; the gas then passes through non-equilibrium states. Irreversible change 2 (dissipative effects): use a piston that rubs against the cylinder wall, so that work is dissipated by friction.",
+          "s": [
+            [
+              "Reversible design: quasi-static (very slow, small steps, in contact with a reservoir at the fixed temperature) with a frictionless piston",
+              1
+            ],
+            [
+              "A change that takes the gas through non-equilibrium states, such as a sudden or free expansion",
+              1
+            ],
+            [
+              "A change that introduces a dissipative effect, such as friction at the piston",
+              1
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "code": "C11P-11.9",
+      "name": "The Carnot engine and its efficiency",
+      "description": "The reversible engine working between two temperatures, the four steps of the Carnot cycle, its efficiency 1 - T2/T1, the relation Q1/Q2 = T1/T2 and Carnot's theorem.",
+      "idea": "The best possible engine between two reservoirs is a reversible one, and its efficiency is fixed by the two temperatures alone.",
+      "rule": "A Carnot engine is a reversible engine operating between a hot reservoir (source) at temperature T1 and a cold reservoir (sink) at temperature T2. The Carnot cycle consists of two isothermal processes connected by two adiabatic processes: (1 to 2) isothermal expansion at T1 absorbing heat Q1; (2 to 3) adiabatic expansion in which the temperature falls from T1 to T2; (3 to 4) isothermal compression at T2 releasing heat Q2; (4 to 1) adiabatic compression back to T1. Efficiency eta = W/Q1 = 1 - Q2/Q1 = 1 - T2/T1, with the temperatures in kelvin; also Q1/Q2 = T1/T2. Carnot's theorem: working between two given temperatures, no engine can have an efficiency greater than that of the Carnot engine, and the efficiency of the Carnot engine is independent of the nature of the working substance. Run in reverse, the cycle is a reversible refrigerator, taking heat Q2 from the cold reservoir, having work W done on it and delivering heat Q1 to the hot reservoir.",
+      "example": "A Carnot engine works between reservoirs at 750 K and 300 K: eta = 1 - T2/T1 = 1 - 300/750 = 0.6.",
+      "difficulty_base": "Hardest",
+      "questions": [
+        {
+          "b": "Remember",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "A Carnot engine is",
+          "a": "a reversible heat engine operating between two temperatures",
+          "o": [
+            "a reversible heat engine operating between two temperatures",
+            "any heat engine that uses an ideal gas as its working substance",
+            "an engine that converts all the heat it absorbs into work",
+            "an irreversible engine operating between two temperatures"
+          ]
+        },
+        {
+          "b": "Remember",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "The Carnot cycle consists of",
+          "a": "two isothermal processes connected by two adiabatic processes",
+          "o": [
+            "two isothermal processes connected by two adiabatic processes",
+            "two isobaric processes connected by two isochoric processes",
+            "two isothermal processes connected by two isochoric processes",
+            "four adiabatic processes"
+          ]
+        },
+        {
+          "b": "Remember",
+          "d": "Easy",
+          "t": "fill_blank",
+          "m": 1,
+          "q": "In a Carnot engine the working substance absorbs heat Q1 from the hot reservoir during the ____ expansion step of the cycle (one word).",
+          "a": "isothermal"
+        },
+        {
+          "b": "Remember",
+          "d": "Hard",
+          "t": "mcq",
+          "m": 1,
+          "q": "On which of the following does the efficiency of a Carnot engine NOT depend?",
+          "a": "The nature of the working substance",
+          "o": [
+            "The nature of the working substance",
+            "The temperature of the hot reservoir",
+            "The temperature of the cold reservoir",
+            "The ratio of the temperatures of the two reservoirs"
+          ],
+          "rev": true
+        },
+        {
+          "b": "Understand",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "In a Carnot engine, the temperature of the working substance is changed between T1 and T2 by adiabatic processes because these",
+          "a": "involve no heat flow from any reservoir, so the engine can stay reversible while using only two reservoirs",
+          "o": [
+            "involve no heat flow from any reservoir, so the engine can stay reversible while using only two reservoirs",
+            "are the fastest way of changing the temperature",
+            "do not involve any work",
+            "keep the pressure of the working substance constant"
+          ]
+        },
+        {
+          "b": "Understand",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "In the Carnot cycle, the step that follows the isothermal expansion at the temperature T1 of the hot reservoir is",
+          "a": "an adiabatic expansion in which the temperature falls from T1 to T2",
+          "o": [
+            "an adiabatic expansion in which the temperature falls from T1 to T2",
+            "an adiabatic compression in which the temperature rises above T1",
+            "an isothermal compression at the temperature T1",
+            "an isochoric cooling from T1 to T2"
+          ]
+        },
+        {
+          "b": "Understand",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "If every step of a Carnot cycle is reversed, the device acts as",
+          "a": "a reversible refrigerator, taking heat from the cold reservoir, having work done on it and delivering heat to the hot reservoir",
+          "o": [
+            "a reversible refrigerator, taking heat from the cold reservoir, having work done on it and delivering heat to the hot reservoir",
+            "a heat engine of greater efficiency",
+            "a device that converts heat from the cold reservoir completely into work",
+            "a device that transfers heat from the cold to the hot reservoir without any work"
+          ]
+        },
+        {
+          "b": "Understand",
+          "d": "Hard",
+          "t": "mcq",
+          "m": 1,
+          "q": "In the step of the Carnot cycle that is an isothermal compression at the temperature T2 of the cold reservoir, the gas",
+          "a": "releases heat Q2 to the cold reservoir while work is done on it by the environment",
+          "o": [
+            "releases heat Q2 to the cold reservoir while work is done on it by the environment",
+            "absorbs heat Q2 from the cold reservoir while doing work on the environment",
+            "exchanges no heat while its temperature rises",
+            "releases heat Q2 to the hot reservoir while doing work on the environment"
+          ]
+        },
+        {
+          "b": "Understand",
+          "d": "Hard",
+          "t": "mcq",
+          "m": 1,
+          "q": "A reversible engine working between two reservoirs must absorb heat and release heat isothermally, at the temperatures of the reservoirs, because",
+          "a": "heat exchange across a finite temperature difference between the system and a reservoir is not quasi-static, and so not reversible",
+          "o": [
+            "heat exchange across a finite temperature difference between the system and a reservoir is not quasi-static, and so not reversible",
+            "an isothermal process involves no heat exchange",
+            "the internal energy of every working substance is constant in every process",
+            "isothermal processes are faster than all other processes"
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "A Carnot engine operates between a hot reservoir at 500 K and a cold reservoir at 400 K. Its efficiency is",
+          "a": "0.20",
+          "o": [
+            "0.20",
+            "0.80",
+            "0.25",
+            "1.25"
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Easy",
+          "t": "fill_blank",
+          "m": 1,
+          "q": "A Carnot engine of efficiency 0.3 absorbs 2000 J of heat from the hot reservoir in each cycle. The work it does in each cycle is ____ J (write a whole number).",
+          "a": "600"
+        },
+        {
+          "b": "Apply",
+          "d": "Hard",
+          "t": "mcq",
+          "m": 1,
+          "q": "A Carnot engine works between a source at 327 degrees C and a sink at 27 degrees C. The Celsius values must be converted to kelvin by adding 273. Its efficiency is",
+          "a": "50 per cent",
+          "o": [
+            "50 per cent",
+            "about 92 per cent",
+            "about 8 per cent",
+            "33 per cent"
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Hard",
+          "t": "short_answer",
+          "m": 2,
+          "q": "A Carnot engine works between a hot reservoir at 450 K and a cold reservoir at 300 K. In each cycle it absorbs 1500 J of heat from the hot reservoir. Find the heat released to the cold reservoir and the work done in each cycle.",
+          "a": "For a Carnot cycle Q1/Q2 = T1/T2, so Q2 = Q1 x T2/T1 = 1500 x 300/450 = 1000 J. Work done per cycle W = Q1 - Q2 = 1500 - 1000 = 500 J. (Equivalently, eta = 1 - 300/450 = 1/3, so W = 1500/3 = 500 J and Q2 = 1000 J.)",
+          "s": [
+            [
+              "Q2 = 1000 J, from Q1/Q2 = T1/T2 or from the efficiency",
+              1
+            ],
+            [
+              "W = Q1 - Q2 = 500 J",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Hard",
+          "t": "mcq",
+          "m": 1,
+          "q": "A Carnot engine has an efficiency of 0.6 when its cold reservoir is at 280 K. The temperature of its hot reservoir is",
+          "a": "700 K",
+          "o": [
+            "700 K",
+            "467 K",
+            "448 K",
+            "168 K"
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Hardest",
+          "t": "long_answer",
+          "m": 3,
+          "q": "A Carnot engine uses 1 mol of an ideal gas and works between reservoirs at 500 K and 300 K. In the isothermal expansion at 500 K the volume of the gas doubles, and in the isothermal compression at 300 K the volume is halved. Take R = 8.3 J mol^-1 K^-1 and ln 2 = 0.70. Find (a) the heat absorbed from the hot reservoir, (b) the heat released to the cold reservoir and (c) the work done by the engine in one cycle.",
+          "a": "(a) In the isothermal expansion, Q1 = mu R T1 ln(V2/V1) = 1 x 8.3 x 500 x 0.70 = 2905 J. (b) In the isothermal compression, Q2 = mu R T2 ln(V3/V4) = 1 x 8.3 x 300 x 0.70 = 1743 J (equivalently Q2 = Q1 x T2/T1 = 2905 x 300/500). (c) W = Q1 - Q2 = 2905 - 1743 = 1162 J, which agrees with eta = 1 - 300/500 = 0.4 and W = 0.4 x 2905 J.",
+          "s": [
+            [
+              "Q1 = mu R T1 ln 2 = 2905 J",
+              1
+            ],
+            [
+              "Q2 = 1743 J, from mu R T2 ln 2 or from Q1 T2/T1",
+              1
+            ],
+            [
+              "W = Q1 - Q2 = 1162 J",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Analyse",
+          "d": "Hard",
+          "t": "assertion_reason",
+          "m": 1,
+          "q": "Assertion (A): No engine working between a hot reservoir at temperature T1 and a cold reservoir at temperature T2 can have an efficiency greater than 1 - T2/T1. Reason (R): If an engine were more efficient than a Carnot engine working between the same two reservoirs, coupling it to the Carnot engine run in reverse as a refrigerator would extract heat from the cold reservoir and convert it wholly into work, contradicting the Kelvin-Planck statement. Choose the correct option.",
+          "a": "Both A and R are true, and R is the correct explanation of A",
+          "o": [
+            "Both A and R are true, and R is the correct explanation of A",
+            "Both A and R are true, but R is not the correct explanation of A",
+            "A is true, R is false",
+            "A is false, R is true"
+          ]
+        },
+        {
+          "b": "Analyse",
+          "d": "Hard",
+          "t": "short_answer",
+          "m": 2,
+          "q": "A Carnot engine works between 600 K and 400 K. An engineer can either raise the temperature of the hot reservoir by 100 K or lower the temperature of the cold reservoir by 100 K. Compare the two efficiencies obtained (to two decimal places) and say which change is better.",
+          "a": "Raising the hot reservoir to 700 K: eta = 1 - 400/700 = 0.43. Lowering the cold reservoir to 300 K: eta = 1 - 300/600 = 0.50. Lowering the temperature of the cold reservoir gives the higher efficiency, so it is the better change (the original efficiency is 1 - 400/600 = 0.33).",
+          "s": [
+            [
+              "eta = 0.43 with the hot reservoir at 700 K",
+              1
+            ],
+            [
+              "eta = 0.50 with the cold reservoir at 300 K, so lowering the cold reservoir temperature is better",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Analyse",
+          "d": "Hardest",
+          "t": "long_answer",
+          "m": 3,
+          "q": "In a Carnot cycle with mu moles of an ideal gas, the volume changes from V1 to V2 in the isothermal expansion at T1 and from V3 to V4 in the isothermal compression at T2, and V3/V4 = V2/V1. By adding the work done by the gas in the four steps, show that the two adiabatic steps contribute nothing in total, and hence obtain the efficiency of the engine.",
+          "a": "Isothermal expansion at T1: W(1 to 2) = Q1 = mu R T1 ln(V2/V1). Adiabatic expansion: W(2 to 3) = mu R (T1 - T2)/(gamma - 1). Isothermal compression at T2: work done on the gas = Q2 = mu R T2 ln(V3/V4). Adiabatic compression: work done on the gas = mu R (T1 - T2)/(gamma - 1). Total work by the gas W = W(1 to 2) + W(2 to 3) - W(3 to 4) - W(4 to 1); the two adiabatic terms are equal and opposite and cancel, leaving W = mu R T1 ln(V2/V1) - mu R T2 ln(V3/V4). With V3/V4 = V2/V1, W = mu R (T1 - T2) ln(V2/V1). Efficiency eta = W/Q1 = (T1 - T2)/T1 = 1 - T2/T1.",
+          "s": [
+            [
+              "Writes the work (heat) in the two isothermal steps: mu R T1 ln(V2/V1) and mu R T2 ln(V3/V4)",
+              1
+            ],
+            [
+              "Shows that the two adiabatic works, each mu R (T1 - T2)/(gamma - 1), are equal and opposite and cancel",
+              1
+            ],
+            [
+              "Uses V3/V4 = V2/V1 to get eta = W/Q1 = 1 - T2/T1",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Evaluate",
+          "d": "Hard",
+          "t": "short_answer",
+          "m": 2,
+          "q": "An inventor claims that his engine, working between reservoirs at 800 K and 400 K, absorbs 1000 J of heat from the hot reservoir in each cycle and delivers 600 J of work. Evaluate the claim.",
+          "a": "The claim cannot be true. The maximum possible efficiency between these reservoirs is that of a Carnot engine: eta = 1 - T2/T1 = 1 - 400/800 = 0.5, so at most 0.5 x 1000 = 500 J of work can be obtained per cycle. The claimed engine has efficiency 600/1000 = 0.6, which is greater than the Carnot efficiency, and no engine operating between two temperatures can be more efficient than the Carnot engine.",
+          "s": [
+            [
+              "Carnot efficiency = 0.5, i.e. at most 500 J of work from 1000 J",
+              1
+            ],
+            [
+              "Claimed efficiency 0.6 exceeds the Carnot value, so the claim is impossible",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Create",
+          "d": "Hardest",
+          "t": "long_answer",
+          "m": 3,
+          "q": "Design a Carnot engine that has an efficiency of 0.25 and delivers 500 J of work in each cycle. Choose suitable temperatures (in kelvin) for the two reservoirs, find the heat absorbed and the heat released per cycle, and verify that your values satisfy Q1/Q2 = T1/T2.",
+          "a": "Efficiency 0.25 requires 1 - T2/T1 = 0.25, i.e. T2/T1 = 0.75; for example T1 = 400 K and T2 = 300 K. Heat absorbed: Q1 = W/eta = 500/0.25 = 2000 J. Heat released: Q2 = Q1 - W = 2000 - 500 = 1500 J. Check: Q1/Q2 = 2000/1500 = 4/3 and T1/T2 = 400/300 = 4/3, so the values are consistent.",
+          "s": [
+            [
+              "Reservoir temperatures in kelvin chosen with T2/T1 = 0.75",
+              1
+            ],
+            [
+              "Q1 = 2000 J and Q2 = 1500 J",
+              1
+            ],
+            [
+              "Verifies Q1/Q2 = T1/T2 for the chosen temperatures",
+              1
+            ]
+          ]
+        }
+      ]
+    }
+  ]
+}

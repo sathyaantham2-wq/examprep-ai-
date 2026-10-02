@@ -1,0 +1,2316 @@
+{
+  "subject": {
+    "code": "PHY11",
+    "name": "Physics",
+    "board": "CBSE",
+    "class": 11
+  },
+  "source": {
+    "publisher": "NCERT",
+    "title": "Physics Part II",
+    "edition": "Textbook for Class XI Part II, Reprint 2026-27",
+    "year": 2026
+  },
+  "chapter": {
+    "part": "II",
+    "chapter_no": 13,
+    "name": "Oscillations",
+    "blurb": "The chapter introduces periodic and oscillatory motion and the ideas of period, frequency and displacement, and defines simple harmonic motion by x = A cos(omega t + phi). It connects SHM with uniform circular motion, obtains the velocity, acceleration, force law and energy of a simple harmonic oscillator, and applies them to a block on a spring. It ends by showing that a simple pendulum swinging through small angles is simple harmonic with period 2 pi sqrt(L/g).",
+    "source_code": "keph206",
+    "order_index": 13
+  },
+  "scope_in": [
+    {
+      "item": "Distinguish periodic motion from oscillatory motion, describe the equilibrium position and the force that brings a displaced body back, and give examples (every oscillatory motion is periodic, not every periodic motion is oscillatory)",
+      "pages": "259-260"
+    },
+    {
+      "item": "Define period and frequency, use nu = 1/T and the hertz, and calculate one from the other or from a count of oscillations in a given time (Example 13.1)",
+      "pages": "260-261"
+    },
+    {
+      "item": "Use 'displacement' in the general sense of any property that varies with time, and recognise periodic and non-periodic functions of time, with the period 2 pi/omega of sine and cosine functions and of their combinations (Eqs. 13.3a-d, Example 13.2)",
+      "pages": "261-262"
+    },
+    {
+      "item": "State the displacement equation x(t) = A cos(omega t + phi) of SHM and identify amplitude, phase, phase constant and angular frequency; use omega = 2 pi/T = 2 pi nu and read these quantities from a given equation (Example 13.3)",
+      "pages": "262-264"
+    },
+    {
+      "item": "Describe SHM as the projection of uniform circular motion on a diameter (reference particle and reference circle) and write the SHM of the x-projection from the radius, period, initial position and sense of revolution (Example 13.4, Exercises 13.11-13.12)",
+      "pages": "264-266, 276"
+    },
+    {
+      "item": "Use v(t) = -omega A sin(omega t + phi) and a(t) = -omega^2 A cos(omega t + phi) = -omega^2 x, the velocity and acceleration amplitudes omega A and omega^2 A, the signs of v and a at different points, and their phase differences pi/2 and pi with the displacement (Example 13.5, Exercises 13.5, 13.6, 13.14)",
+      "pages": "266-267, 272, 275, 277"
+    },
+    {
+      "item": "State the force law F = -kx with k = m omega^2, omega = sqrt(k/m) and T = 2 pi sqrt(m/k); explain restoring force and linear and non-linear oscillators; apply these to a block on a horizontal spring and to a block between two identical springs (Example 13.6, Exercise 13.9)",
+      "pages": "267-268, 272, 275"
+    },
+    {
+      "item": "Calculate the kinetic energy, the potential energy U = (1/2) k x^2 and the total energy E = (1/2) k A^2 of a simple harmonic oscillator, and explain their variation with time and displacement, their period T/2 and the conservation of the total (Example 13.7)",
+      "pages": "268-270"
+    },
+    {
+      "item": "Describe the forces and the restoring torque on a simple pendulum, use the small-angle approximation sin(theta) = theta (Table 13.1) to show the motion is SHM, and use T = 2 pi sqrt(L/g), including the pendulum that ticks seconds and a change of g (Example 13.8, Exercise 13.15)",
+      "pages": "270-272, 277"
+    }
+  ],
+  "scope_out": [
+    {
+      "item": "Damped simple harmonic motion (damping force -bv, damping constant, exponentially decaying amplitude and energy)",
+      "reason": "Section removed from this rationalised edition; only a vestigial sentence on p. 260 ('we discuss ... damped and forced oscillations later in the chapter') and a remark in Points to Ponder 9 (p. 273) remain, and no text teaches it"
+    },
+    {
+      "item": "Forced oscillations, driving frequency, natural frequency and resonance",
+      "reason": "Section removed from this edition; the section list on p. 259 ends at 13.8 The simple pendulum"
+    },
+    {
+      "item": "A separate section on 'some systems executing SHM' and oscillations of a mass hung from a vertical spring (equilibrium extension mg/k)",
+      "reason": "No such section in this edition: the spring appears only as the horizontal block-spring of the force-law section and Examples 13.6-13.7; a vertical spring occurs only in Exercise 13.8, with no supporting text"
+    },
+    {
+      "item": "Springs in series and in parallel in general, and two bodies joined by a spring (reduced mass)",
+      "reason": "Only the single case of a block between two identical springs (Example 13.6) is taught; the two-mass system is Exercise 13.13 only"
+    },
+    {
+      "item": "Oscillations of a floating cylinder, of a liquid column in a U-tube, and of a pendulum in a car moving on a circular track",
+      "reason": "Appear only as Exercises 13.16-13.18 with no worked text; they need buoyancy, pressure and effective-gravity arguments the chapter does not develop"
+    },
+    {
+      "item": "Compound (physical) pendulum, torsional pendulum, and the period of a simple pendulum at large amplitude",
+      "reason": "Not in the chapter; the pendulum treatment is limited to a point bob (I = m L^2) and to small angles"
+    },
+    {
+      "item": "Fourier analysis (finding the sine and cosine components of a periodic function)",
+      "reason": "The chapter only states Fourier's result in one sentence (p. 262) and does not teach how to use it"
+    },
+    {
+      "item": "Solving the differential equation d^2x/dt^2 = -omega^2 x, and superposition of two SHMs (in the same or in perpendicular directions)",
+      "reason": "The book only remarks that integrating the force law twice gives back the displacement; composition of SHMs is mentioned only in Points to Ponder 3 and 6"
+    },
+    {
+      "item": "Points to Ponder (p. 273), the footnote on radians and degrees (p. 265), and the historical remarks on Hertz, Fourier and Galileo",
+      "reason": "Not examinable content of the chapter; nothing in the Summary or the questions here relies on them beyond what the main text states"
+    },
+    {
+      "item": "Wave motion (coupled oscillators, travelling waves)",
+      "reason": "Only mentioned on p. 260 as the subject of the next chapter (Chapter 14, Waves)"
+    }
+  ],
+  "concepts": [
+    {
+      "code": "C11P-13.1",
+      "name": "Periodic and oscillatory motion: period, frequency, displacement and periodic functions",
+      "description": "What periodic and oscillatory motions are, the period and frequency of a periodic motion, displacement as a general variable, and sine and cosine functions of time as periodic functions.",
+      "idea": "A motion that repeats itself at regular intervals of time is periodic; if the body also moves to and fro about a mean (equilibrium) position the motion is oscillatory, and it is described by a displacement that is a periodic function of time.",
+      "rule": "The smallest interval of time after which a periodic motion repeats is its period T (SI unit second). The number of repetitions per unit time is the frequency nu = 1/T, measured in hertz (1 Hz = 1 oscillation per second = 1 s^-1); nu need not be an integer. Every oscillatory motion is periodic, but every periodic motion need not be oscillatory (uniform circular motion is periodic, not oscillatory). At the equilibrium position no net external force acts; a small displacement brings into play a force that tries to bring the body back. Displacement here means the change with time of any physical property (position, angle of a pendulum, voltage across a capacitor) and may be positive or negative. f(t) = A cos omega t and A sin omega t are periodic with period T = 2 pi/omega; A sin omega t + B cos omega t = D sin(omega t + phi) with D = sqrt(A^2 + B^2) and tan phi = B/A has the same period. A sum of such terms repeats after the least time that is a whole multiple of every term's period; e^(-omega t) and log(omega t) never repeat and are not periodic.",
+      "example": "A child on a swing completes 30 oscillations in 60 s: frequency nu = 30/60 = 0.5 Hz and period T = 1/nu = 2 s.",
+      "difficulty_base": "Easy",
+      "questions": [
+        {
+          "b": "Remember",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "A motion that repeats itself at regular intervals of time is called",
+          "a": "periodic motion",
+          "o": [
+            "periodic motion",
+            "rectilinear motion",
+            "projectile motion",
+            "uniform motion"
+          ]
+        },
+        {
+          "b": "Remember",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "The special name given to the SI unit of frequency, after the discoverer of radio waves, is the",
+          "a": "hertz",
+          "o": [
+            "hertz",
+            "second",
+            "radian",
+            "newton"
+          ]
+        },
+        {
+          "b": "Remember",
+          "d": "Easy",
+          "t": "fill_blank",
+          "m": 1,
+          "q": "The smallest interval of time after which a periodic motion is repeated is called its ____ (write one word).",
+          "a": "period"
+        },
+        {
+          "b": "Remember",
+          "d": "Hard",
+          "t": "mcq",
+          "m": 1,
+          "q": "Which of the following is NOT an example of oscillatory motion?",
+          "a": "The orbital motion of a planet around the Sun",
+          "o": [
+            "The orbital motion of a planet around the Sun",
+            "A boat tossing up and down in a river",
+            "The swinging pendulum of a wall clock",
+            "The piston of a steam engine going back and forth"
+          ],
+          "rev": true
+        },
+        {
+          "b": "Understand",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "Which statement about periodic and oscillatory motions is correct?",
+          "a": "Every oscillatory motion is periodic, but every periodic motion need not be oscillatory",
+          "o": [
+            "Every oscillatory motion is periodic, but every periodic motion need not be oscillatory",
+            "Every periodic motion is oscillatory, but every oscillatory motion need not be periodic",
+            "Periodic motion and oscillatory motion mean exactly the same thing",
+            "No oscillatory motion can be periodic"
+          ]
+        },
+        {
+          "b": "Understand",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "A body that can oscillate is placed at rest exactly at its equilibrium position. Which description is correct?",
+          "a": "No net external force acts on it there, so it remains there",
+          "o": [
+            "No net external force acts on it there, so it remains there",
+            "The net force on it is maximum there, so it starts to oscillate",
+            "A force directed away from that position acts on it",
+            "Its displacement from the mean position is maximum there"
+          ]
+        },
+        {
+          "b": "Understand",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "In this chapter 'displacement' is used in a general sense, for any physical property that changes with time. Which of the following can serve as a displacement variable?",
+          "a": "The voltage across a capacitor that changes with time in an AC circuit",
+          "o": [
+            "The voltage across a capacitor that changes with time in an AC circuit",
+            "The mass of an oscillating block",
+            "The length of the inextensible string of a pendulum",
+            "The spring constant of a spring"
+          ]
+        },
+        {
+          "b": "Understand",
+          "d": "Hard",
+          "t": "mcq",
+          "m": 1,
+          "q": "The book says there is no significant difference between oscillations and vibrations. In usual usage the motion is called a vibration when",
+          "a": "its frequency is high, as for the string of a musical instrument",
+          "o": [
+            "its frequency is high, as for the string of a musical instrument",
+            "its frequency is small, as for the branch of a tree",
+            "its amplitude is very large",
+            "it does not repeat itself"
+          ]
+        },
+        {
+          "b": "Understand",
+          "d": "Hard",
+          "t": "mcq",
+          "m": 1,
+          "q": "The function f(t) = e^(-omega t), where omega is a positive constant, cannot represent a periodic motion because",
+          "a": "it decreases steadily as t increases and never repeats its value",
+          "o": [
+            "it decreases steadily as t increases and never repeats its value",
+            "it repeats its value only after a time 2 pi/omega",
+            "it takes both positive and negative values",
+            "it increases without limit as t increases"
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "A pendulum completes 20 oscillations in 80 s. Its period is",
+          "a": "4 s",
+          "o": [
+            "4 s",
+            "0.25 s",
+            "1600 s",
+            "60 s"
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Easy",
+          "t": "fill_blank",
+          "m": 1,
+          "q": "The period of vibration of a string is 0.02 s. Its frequency is ____ Hz (write a whole number).",
+          "a": "50"
+        },
+        {
+          "b": "Apply",
+          "d": "Hard",
+          "t": "mcq",
+          "m": 1,
+          "q": "A quartz crystal vibrates with a period of 4 microseconds (1 microsecond = 10^-6 s). Its frequency is",
+          "a": "2.5 x 10^5 Hz",
+          "o": [
+            "2.5 x 10^5 Hz",
+            "0.25 Hz",
+            "4 x 10^-6 Hz",
+            "2.5 x 10^6 Hz"
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Hard",
+          "t": "mcq",
+          "m": 1,
+          "q": "A displacement is given by f(t) = 2 cos(5t), with t in s. The period of this function, in terms of pi, is",
+          "a": "2 pi/5 s",
+          "o": [
+            "2 pi/5 s",
+            "5/(2 pi) s",
+            "5 s",
+            "10 pi s"
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Hard",
+          "t": "short_answer",
+          "m": 2,
+          "q": "During a run, an athlete's heart beats 150 times in a minute. Find the frequency of the heartbeat in Hz and its period in s.",
+          "a": "Frequency nu = number of beats / time = 150/(60 s) = 2.5 s^-1 = 2.5 Hz. Period T = 1/nu = 1/(2.5 s^-1) = 0.4 s.",
+          "s": [
+            [
+              "Frequency = 150/60 = 2.5 Hz",
+              1
+            ],
+            [
+              "Period = 1/2.5 = 0.4 s",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Hardest",
+          "t": "long_answer",
+          "m": 3,
+          "q": "A displacement is f(t) = 3 sin omega t + 4 cos omega t, where omega is a positive constant. Writing A = D cos phi and B = D sin phi for f(t) = A sin omega t + B cos omega t, express f(t) in the form D sin(omega t + phi): find D, find tan phi, and state the period of f(t).",
+          "a": "Here A = 3 and B = 4. D = sqrt(A^2 + B^2) = sqrt(9 + 16) = 5. tan phi = B/A = 4/3, so phi = tan^-1(4/3). Hence f(t) = 5 sin(omega t + phi) with tan phi = 4/3. A sine function of omega t repeats when omega t increases by 2 pi, so the period is T = 2 pi/omega, the same as that of each term.",
+          "s": [
+            [
+              "D = sqrt(3^2 + 4^2) = 5",
+              1
+            ],
+            [
+              "tan phi = 4/3 (phi = tan^-1(4/3)), so f(t) = 5 sin(omega t + phi)",
+              1
+            ],
+            [
+              "Period T = 2 pi/omega",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Analyse",
+          "d": "Hard",
+          "t": "assertion_reason",
+          "m": 1,
+          "q": "Assertion (A): The function sin omega t + cos 2 omega t + sin 4 omega t, where omega is a positive constant, is periodic with period 2 pi/omega. Reason (R): The period 2 pi/omega of the first term is a whole multiple of the periods of the other two terms, so 2 pi/omega is the smallest time after which all three terms repeat together. Choose the correct option.",
+          "a": "Both A and R are true, and R is the correct explanation of A",
+          "o": [
+            "Both A and R are true, and R is the correct explanation of A",
+            "Both A and R are true, but R is not the correct explanation of A",
+            "A is true, R is false",
+            "A is false, R is true"
+          ]
+        },
+        {
+          "b": "Analyse",
+          "d": "Hard",
+          "t": "short_answer",
+          "m": 2,
+          "q": "A ball rests at the bottom of a smooth bowl. It is pushed a little way up the side and released. Explain, in terms of the force on the ball, why it oscillates instead of staying where it is released.",
+          "a": "The bottom of the bowl is the equilibrium position, where no net force acts on the ball. When the ball is displaced from it, a force comes into play that tries to bring the ball back towards the bottom. The ball therefore moves back, passes through the bottom because it is moving, climbs the other side, and is again pulled back, so it moves to and fro about the bottom, i.e. it oscillates.",
+          "s": [
+            [
+              "Identifies the bottom as the equilibrium position and a force acting back towards it when the ball is displaced",
+              1
+            ],
+            [
+              "Explains the to and fro motion about the bottom (overshoots and is brought back again), i.e. oscillation",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Analyse",
+          "d": "Hardest",
+          "t": "long_answer",
+          "m": 3,
+          "q": "A swing completes 12 oscillations in 30 s, and a guitar string completes 1200 vibrations in 3 s. (a) Find the frequency and period of each. (b) How many vibrations does the string complete during one oscillation of the swing?",
+          "a": "(a) Swing: nu = 12/30 = 0.4 Hz, T = 1/0.4 = 2.5 s. String: nu = 1200/3 = 400 Hz, T = 1/400 = 0.0025 s. (b) Number of string vibrations in one swing period = 2.5 s / 0.0025 s = 1000 (equivalently 400 Hz x 2.5 s).",
+          "s": [
+            [
+              "Swing: 0.4 Hz and 2.5 s",
+              1
+            ],
+            [
+              "String: 400 Hz and 0.0025 s",
+              1
+            ],
+            [
+              "1000 vibrations in one oscillation of the swing, by any correct method",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Evaluate",
+          "d": "Hard",
+          "t": "short_answer",
+          "m": 2,
+          "q": "A student says: 'The frequency of a periodic motion must be a whole number, because it counts how many times the motion repeats.' Evaluate this statement.",
+          "a": "The statement is wrong. Frequency is the number of repetitions per unit time, nu = 1/T, and this need not be an integer. For example, a heart that beats 75 times in a minute has frequency 75/60 = 1.25 Hz, and any motion with period 4 s has frequency 0.25 Hz.",
+          "s": [
+            [
+              "Judgement - incorrect: frequency is repetitions per unit time (1/T) and is not necessarily an integer",
+              1
+            ],
+            [
+              "Supports it with a valid non-integer example (e.g. 75 beats per minute = 1.25 Hz)",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Create",
+          "d": "Hardest",
+          "t": "long_answer",
+          "m": 3,
+          "q": "Make up two motions of your own: one that is periodic but not oscillatory, and one that is oscillatory. For the oscillatory one, choose a number of oscillations and a time in seconds so that its frequency is not a whole number, and work out its frequency and period.",
+          "a": "Sample answer. Periodic but not oscillatory: the tip of the seconds hand of a clock going round the dial; it repeats every 60 s but does not move to and fro about a mean position. Oscillatory: a ruler clamped at one end and plucked, which moves to and fro about its rest (mean) position. Suppose it completes 9 oscillations in 6 s: nu = 9/6 = 1.5 Hz and T = 1/nu = 6/9 = 0.67 s.",
+          "s": [
+            [
+              "A valid periodic but non-oscillatory motion, with the reason that there is no to and fro motion about a mean position",
+              1
+            ],
+            [
+              "A valid oscillatory motion with its mean position identified",
+              1
+            ],
+            [
+              "Chosen numbers give a non-integer frequency = oscillations/time, and period = 1/frequency, both computed correctly",
+              1
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "code": "C11P-13.2",
+      "name": "Simple harmonic motion: the displacement equation, amplitude, phase and angular frequency",
+      "description": "Simple harmonic motion defined by x(t) = A cos(omega t + phi); the meaning of amplitude, phase, phase constant and angular frequency, and how omega is related to the period and the frequency.",
+      "idea": "Simple harmonic motion is not just any periodic motion: it is the oscillation in which the displacement from the origin is a sinusoidal function of time, fixed by three constants A, omega and phi.",
+      "rule": "x(t) = A cos(omega t + phi). A is the amplitude, the magnitude of the maximum displacement, so x varies between +A and -A. The time-dependent quantity (omega t + phi) is the phase; its value at t = 0 is the phase constant (phase angle) phi, which, if the amplitude is known, can be found from the displacement at t = 0. omega is the angular frequency, SI unit radian per second, with omega = 2 pi/T = 2 pi nu. Two SHMs may differ only in amplitude, only in phase constant, or only in angular frequency. The period stays fixed whatever location is chosen as the initial one. A combination such as sin omega t - cos omega t = sqrt(2) sin(omega t - pi/4) is again an SHM of period 2 pi/omega; sin^2 omega t = 1/2 - (1/2) cos 2 omega t repeats with period pi/omega.",
+      "example": "x = 0.2 cos(10 pi t + pi/6), with x in m and t in s: amplitude 0.2 m, angular frequency 10 pi rad/s, period T = 2 pi/(10 pi) = 0.2 s, frequency 5 Hz, phase constant pi/6.",
+      "difficulty_base": "Hard",
+      "questions": [
+        {
+          "b": "Remember",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "In x(t) = A cos(omega t + phi), the time-dependent quantity (omega t + phi) is called the",
+          "a": "phase",
+          "o": [
+            "phase",
+            "phase constant",
+            "angular frequency",
+            "amplitude"
+          ]
+        },
+        {
+          "b": "Remember",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "The SI unit of the angular frequency omega of a simple harmonic motion is the",
+          "a": "radian per second",
+          "o": [
+            "radian per second",
+            "second",
+            "metre per second",
+            "radian"
+          ]
+        },
+        {
+          "b": "Remember",
+          "d": "Easy",
+          "t": "fill_blank",
+          "m": 1,
+          "q": "In x(t) = A cos(omega t + phi), the constant A, which is the magnitude of the maximum displacement of the particle, is called the ____ (write one word).",
+          "a": "amplitude"
+        },
+        {
+          "b": "Remember",
+          "d": "Hard",
+          "t": "mcq",
+          "m": 1,
+          "q": "For a simple harmonic motion x(t) = A cos(omega t + phi), which statement is NOT correct?",
+          "a": "The phase constant phi is the same thing as the displacement of the particle at t = 0",
+          "o": [
+            "The phase constant phi is the same thing as the displacement of the particle at t = 0",
+            "A, omega and phi are constants for a given motion",
+            "The displacement varies between the extremes +A and -A",
+            "omega is 2 pi times the frequency of oscillation"
+          ],
+          "rev": true
+        },
+        {
+          "b": "Understand",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "Two simple harmonic motions x = A cos(omega t + phi) have the same A and omega, one with phi = 0 and the other with phi = -pi/4. Their displacements at t = 0 are respectively (cos(pi/4) = 1/sqrt(2))",
+          "a": "A and A/sqrt(2)",
+          "o": [
+            "A and A/sqrt(2)",
+            "A and 0",
+            "0 and A/sqrt(2)",
+            "A and -A/sqrt(2)"
+          ]
+        },
+        {
+          "b": "Understand",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "Simple harmonic motion is best described as",
+          "a": "an oscillatory motion in which the displacement is a sinusoidal function of time",
+          "o": [
+            "an oscillatory motion in which the displacement is a sinusoidal function of time",
+            "any motion that repeats itself at regular intervals",
+            "a motion in which the displacement increases uniformly with time",
+            "a motion along a circle at constant speed"
+          ]
+        },
+        {
+          "b": "Understand",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "Two simple harmonic motions have the same amplitude and the same phase constant, but the second has twice the angular frequency of the first. Compared with the first, the second has",
+          "a": "half the period and twice the frequency",
+          "o": [
+            "half the period and twice the frequency",
+            "twice the period and half the frequency",
+            "half the period and half the frequency",
+            "the same period and twice the amplitude"
+          ]
+        },
+        {
+          "b": "Understand",
+          "d": "Hard",
+          "t": "mcq",
+          "m": 1,
+          "q": "For an SHM x(t) = A cos(omega t + phi) whose amplitude is already known, the book says the phase constant phi can be determined from",
+          "a": "the displacement of the particle at t = 0",
+          "o": [
+            "the displacement of the particle at t = 0",
+            "the period of the motion",
+            "the frequency of the motion",
+            "the maximum displacement of the particle"
+          ]
+        },
+        {
+          "b": "Understand",
+          "d": "Hard",
+          "t": "mcq",
+          "m": 1,
+          "q": "A particle is in SHM with period T. If a different location of the particle is chosen as the initial (t = 0) location, the period",
+          "a": "remains T; only the phase constant changes",
+          "o": [
+            "remains T; only the phase constant changes",
+            "becomes 2T",
+            "becomes T/2",
+            "changes because the amplitude changes"
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "A particle moves according to x = 5 cos(6 pi t + pi/3), with x in cm and t in s. Its angular frequency is",
+          "a": "6 pi rad/s",
+          "o": [
+            "6 pi rad/s",
+            "6 rad/s",
+            "pi/3 rad/s",
+            "5 rad/s"
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Easy",
+          "t": "fill_blank",
+          "m": 1,
+          "q": "A simple harmonic motion is x = 3 cos(pi t + pi/4), with x in cm and t in s. Its period is ____ s (write a whole number).",
+          "a": "2"
+        },
+        {
+          "b": "Apply",
+          "d": "Hard",
+          "t": "mcq",
+          "m": 1,
+          "q": "A particle moves according to x = 0.4 cos(60 pi t), with x in m and t in s. Its frequency nu (not its angular frequency) is",
+          "a": "30 Hz",
+          "o": [
+            "30 Hz",
+            "60 Hz",
+            "60 pi Hz",
+            "1/30 Hz"
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Hard",
+          "t": "mcq",
+          "m": 1,
+          "q": "A particle moves according to x = 10 cos(2 pi t + pi/3), with x in cm and t in s. Its displacement at t = 0 is (cos(pi/3) = 0.5, sin(pi/3) = 0.866)",
+          "a": "5 cm",
+          "o": [
+            "5 cm",
+            "10 cm",
+            "8.66 cm",
+            "-5 cm"
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Hard",
+          "t": "short_answer",
+          "m": 2,
+          "q": "A particle in SHM has amplitude 4 cm, period 0.25 s and phase constant pi/6. Write its displacement equation in the form x = A cos(omega t + phi), with x in cm and t in s, leaving pi in the answer, and state the phase of the motion at t = 1 s.",
+          "a": "omega = 2 pi/T = 2 pi/0.25 = 8 pi rad/s. So x = 4 cos(8 pi t + pi/6), x in cm, t in s. Phase at t = 1 s = omega t + phi = 8 pi + pi/6 = 49 pi/6 rad.",
+          "s": [
+            [
+              "omega = 2 pi/T = 8 pi rad/s and x = 4 cos(8 pi t + pi/6)",
+              1
+            ],
+            [
+              "Phase at t = 1 s = 8 pi + pi/6 = 49 pi/6 rad",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Hardest",
+          "t": "long_answer",
+          "m": 3,
+          "q": "A displacement is given by x(t) = sqrt(3) sin omega t + cos omega t, where omega is a positive constant. Show that it can be written as x = A cos(omega t + phi), find A and phi, and state the period. (cos(pi/3) = 1/2, sin(pi/3) = sqrt(3)/2.)",
+          "a": "Expand A cos(omega t + phi) = A cos phi cos omega t - A sin phi sin omega t. Comparing with cos omega t + sqrt(3) sin omega t: A cos phi = 1 and -A sin phi = sqrt(3). Squaring and adding, A^2 = 1 + 3 = 4, so A = 2. Then cos phi = 1/2 and sin phi = -sqrt(3)/2, so phi = -pi/3 (equivalently 5 pi/3). Hence x = 2 cos(omega t - pi/3), a simple harmonic motion of amplitude 2 and period T = 2 pi/omega.",
+          "s": [
+            [
+              "Matches coefficients (A cos phi = 1, A sin phi = -sqrt(3)) or an equivalent correct method",
+              1
+            ],
+            [
+              "A = 2",
+              1
+            ],
+            [
+              "phi = -pi/3 (or 5 pi/3), so x = 2 cos(omega t - pi/3), with period 2 pi/omega",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Analyse",
+          "d": "Hard",
+          "t": "multi_statement",
+          "m": 1,
+          "q": "Consider simple harmonic motions of the form x = A cos(omega t + phi). (I) Two such motions with the same omega and the same phi but different amplitudes pass through x = 0 at the same instants. (II) Replacing A by 2A, with omega and phi unchanged, doubles the period of the motion. Which is or are correct?",
+          "a": "Only I",
+          "o": [
+            "Only I",
+            "Only II",
+            "Both I and II",
+            "Neither I nor II"
+          ]
+        },
+        {
+          "b": "Analyse",
+          "d": "Hard",
+          "t": "short_answer",
+          "m": 2,
+          "q": "A particle moves according to x = 8 cos(pi t/3), with x in cm and t in s. Find the first time after t = 0 at which the particle is at x = 4 cm, and the first time at which it is at x = -8 cm. (cos(pi/3) = 1/2.)",
+          "a": "x = 4 cm needs cos(pi t/3) = 1/2, first when pi t/3 = pi/3, i.e. t = 1 s. x = -8 cm needs cos(pi t/3) = -1, first when pi t/3 = pi, i.e. t = 3 s (half of the period, which is 2 pi/(pi/3) = 6 s).",
+          "s": [
+            [
+              "x = 4 cm first at t = 1 s (phase pi/3)",
+              1
+            ],
+            [
+              "x = -8 cm first at t = 3 s (phase pi)",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Analyse",
+          "d": "Hardest",
+          "t": "long_answer",
+          "m": 3,
+          "q": "Two particles move according to x1 = 6 cos(pi t) and x2 = 6 cos(pi t - pi/3), with x in cm and t in s. (a) Find the period of each. (b) Find the displacement of each at t = 0. (c) Find the first time at which the second particle reaches x = +6 cm, and say which particle reaches the positive extreme later. (cos(pi/3) = 1/2.)",
+          "a": "(a) For both omega = pi rad/s, so T = 2 pi/pi = 2 s. (b) x1(0) = 6 cos 0 = 6 cm; x2(0) = 6 cos(-pi/3) = 6 x 1/2 = 3 cm. (c) x2 = +6 cm when pi t - pi/3 = 0, i.e. t = 1/3 s. The first particle is at +6 cm at t = 0, so the second reaches the positive extreme later, by 1/3 s (one-sixth of a period).",
+          "s": [
+            [
+              "T = 2 s for both",
+              1
+            ],
+            [
+              "x1(0) = 6 cm and x2(0) = 3 cm",
+              1
+            ],
+            [
+              "Second particle reaches +6 cm at t = 1/3 s, i.e. later than the first by 1/3 s",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Evaluate",
+          "d": "Hard",
+          "t": "short_answer",
+          "m": 2,
+          "q": "A student claims: 'sin^2 omega t has the same period, 2 pi/omega, as sin omega t.' Using sin^2 omega t = 1/2 - (1/2) cos 2 omega t, evaluate the claim.",
+          "a": "The claim is wrong. The only time-dependent part is cos 2 omega t, whose angular frequency is 2 omega, so it repeats after 2 pi/(2 omega) = pi/omega. The period is the least time of repetition, so the period of sin^2 omega t is pi/omega, half that of sin omega t (it does also repeat after 2 pi/omega, but that is not the least time).",
+          "s": [
+            [
+              "Identifies that cos 2 omega t has angular frequency 2 omega and repeats after pi/omega",
+              1
+            ],
+            [
+              "Judgement - claim wrong: the period (least repeat time) of sin^2 omega t is pi/omega, not 2 pi/omega",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Create",
+          "d": "Hardest",
+          "t": "long_answer",
+          "m": 3,
+          "q": "Construct the displacement equation, in the form x = A cos(omega t + phi) with x in cm and t in s, of a simple harmonic motion of frequency 2 Hz in which the particle is at the origin x = 0 at t = 0. Choose the amplitude yourself. State omega, the period and your phase constant, and check that x(0) = 0.",
+          "a": "Sample answer. omega = 2 pi nu = 2 pi x 2 = 4 pi rad/s and T = 1/nu = 0.5 s. x(0) = A cos phi must be zero, so cos phi = 0: take phi = pi/2 (phi = -pi/2 or 3 pi/2 is equally valid). Choosing A = 3 cm: x = 3 cos(4 pi t + pi/2). Check: x(0) = 3 cos(pi/2) = 0.",
+          "s": [
+            [
+              "omega = 4 pi rad/s and T = 0.5 s",
+              1
+            ],
+            [
+              "A phase constant with cos phi = 0 (pi/2, -pi/2 or an equivalent) and any positive amplitude",
+              1
+            ],
+            [
+              "Equation written consistently with these values and x(0) = 0 verified",
+              1
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "code": "C11P-13.3",
+      "name": "Simple harmonic motion and uniform circular motion",
+      "description": "The projection of uniform circular motion on a diameter of the circle as simple harmonic motion: the reference particle and reference circle, and writing the SHM of the x-projection from the radius, period, initial position and sense of revolution.",
+      "idea": "If a particle P moves uniformly on a circle, its projection P' on a diameter of the circle moves to and fro in simple harmonic motion.",
+      "rule": "Let P move anticlockwise on a circle of radius A with angular speed omega, its position vector OP making an angle phi with the positive x-axis at t = 0. After time t, OP makes an angle (omega t + phi), so the projection on the x-axis is x(t) = A cos(omega t + phi), the defining equation of SHM. P is the reference particle and its circle the reference circle. The radius is the amplitude, the angular speed is the angular frequency (omega = 2 pi/T, with T the period of revolution) and the initial angle is the phase constant. The projection on the y-axis, y = A sin(omega t + phi), is an SHM of the same amplitude differing in phase by pi/2. For clockwise revolution the angle decreases with time: starting from pi/2 it is (pi/2 - 2 pi t/T). In spite of this connection, the force on a particle in linear SHM is very different from the centripetal force needed for uniform circular motion.",
+      "example": "A particle goes anticlockwise round a circle of radius 3 cm once in 10 s, starting on the positive x-axis: omega = 2 pi/10 = pi/5 rad/s, so its x-projection is x = 3 cos(pi t/5), with x in cm and t in s.",
+      "difficulty_base": "Hard",
+      "questions": [
+        {
+          "b": "Remember",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "The projection of a uniform circular motion on a diameter of the circle executes",
+          "a": "simple harmonic motion",
+          "o": [
+            "simple harmonic motion",
+            "uniform circular motion",
+            "motion along the diameter with constant velocity",
+            "motion with constant acceleration"
+          ]
+        },
+        {
+          "b": "Remember",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "In connecting SHM with circular motion, the particle P that moves uniformly on the circle is called the",
+          "a": "reference particle",
+          "o": [
+            "reference particle",
+            "projection particle",
+            "harmonic particle",
+            "restoring particle"
+          ]
+        },
+        {
+          "b": "Remember",
+          "d": "Easy",
+          "t": "fill_blank",
+          "m": 1,
+          "q": "When SHM is viewed as the projection of a uniform circular motion, the circle on which the particle P moves is called the ____ circle (write one word).",
+          "a": "reference"
+        },
+        {
+          "b": "Remember",
+          "d": "Hard",
+          "t": "mcq",
+          "m": 1,
+          "q": "A particle P moves uniformly round a circle. Which of the following does NOT execute simple harmonic motion?",
+          "a": "The particle P itself as it goes round the circle",
+          "o": [
+            "The particle P itself as it goes round the circle",
+            "The projection of P on the x-axis through the centre",
+            "The projection of P on the y-axis through the centre",
+            "The shadow of P on a wall perpendicular to the plane of the circle"
+          ],
+          "rev": true
+        },
+        {
+          "b": "Understand",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "The amplitude of the SHM executed by the projection of a uniformly revolving particle on a diameter is equal to",
+          "a": "the radius of the circle",
+          "o": [
+            "the radius of the circle",
+            "the diameter of the circle",
+            "the circumference of the circle",
+            "the angular speed of the particle"
+          ]
+        },
+        {
+          "b": "Understand",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "A ball tied to a string moves in a horizontal circle with constant angular speed. An observer looks at it sideways, with the eye in the plane of the circle. The ball appears to",
+          "a": "move to and fro along a horizontal line with the centre of the circle as the midpoint",
+          "o": [
+            "move to and fro along a horizontal line with the centre of the circle as the midpoint",
+            "move round a smaller circle",
+            "stay at rest at the centre of the circle",
+            "move along a line in one direction at constant speed"
+          ]
+        },
+        {
+          "b": "Understand",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "A reference particle starts with its position vector at an angle phi to the positive x-axis and revolves anticlockwise with angular speed omega. After a time t its position vector makes with the positive x-axis an angle",
+          "a": "omega t + phi",
+          "o": [
+            "omega t + phi",
+            "omega t - phi",
+            "phi - omega t",
+            "omega t"
+          ]
+        },
+        {
+          "b": "Understand",
+          "d": "Hard",
+          "t": "mcq",
+          "m": 1,
+          "q": "The projections of one uniform circular motion on the x-axis and on the y-axis through the centre are two simple harmonic motions that have",
+          "a": "the same amplitude but differ in phase by pi/2",
+          "o": [
+            "the same amplitude but differ in phase by pi/2",
+            "the same amplitude and the same phase",
+            "different amplitudes and a phase difference of pi",
+            "the same phase but different periods"
+          ]
+        },
+        {
+          "b": "Understand",
+          "d": "Hard",
+          "t": "mcq",
+          "m": 1,
+          "q": "A reference particle revolves anticlockwise with period T, starting at t = 0 from the bottom of the circle, where its position vector makes an angle -pi/2 with the positive x-axis. After a time t the angle its position vector makes with the positive x-axis is",
+          "a": "2 pi t/T - pi/2",
+          "o": [
+            "2 pi t/T - pi/2",
+            "pi/2 - 2 pi t/T",
+            "2 pi t/T + pi/2",
+            "pi - 2 pi t/T"
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "A particle moves uniformly on a circle of radius 5 cm and completes one revolution in 4 s. The amplitude and period of the SHM of its projection on a diameter are",
+          "a": "5 cm and 4 s",
+          "o": [
+            "5 cm and 4 s",
+            "10 cm and 4 s",
+            "5 cm and 2 s",
+            "10 cm and 8 s"
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Easy",
+          "t": "fill_blank",
+          "m": 1,
+          "q": "A reference particle makes 120 revolutions per minute round its circle. The frequency of the SHM of its projection on a diameter is ____ Hz (write a whole number).",
+          "a": "2"
+        },
+        {
+          "b": "Apply",
+          "d": "Hard",
+          "t": "mcq",
+          "m": 1,
+          "q": "A particle P moves anticlockwise on a circle of radius 2 cm with period 8 s. At t = 0 its position vector OP makes an angle of 60 degrees (pi/3 rad) with the positive x-axis. With x in cm and t in s, the x-projection of OP is",
+          "a": "x = 2 cos(pi t/4 + pi/3)",
+          "o": [
+            "x = 2 cos(pi t/4 + pi/3)",
+            "x = 2 cos(pi t/4 - pi/3)",
+            "x = 2 cos(8t + pi/3)",
+            "x = 2 cos(pi t/8 + pi/3)"
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Hard",
+          "t": "mcq",
+          "m": 1,
+          "q": "The x-projection of a reference particle is x = 4 cos(pi t/3 + pi/6), with x in cm and t in s. The time the reference particle takes to go once round its circle is",
+          "a": "6 s",
+          "o": [
+            "6 s",
+            "3 s",
+            "pi/3 s",
+            "12 s"
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Hard",
+          "t": "short_answer",
+          "m": 2,
+          "q": "A particle moves clockwise on a circle of radius 6 cm with period 12 s. At t = 0 it is at the top of the circle, so its position vector makes 90 degrees (pi/2 rad) with the positive x-axis. Obtain the x-projection of its position vector as a function of time (x in cm, t in s), write it in the form x = A cos(omega t + phi), and state the initial phase.",
+          "a": "In time t the particle turns through 2 pi t/12 = pi t/6 clockwise, so the angle with the positive x-axis is pi/2 - pi t/6. The projection is x = 6 cos(pi/2 - pi t/6) = 6 sin(pi t/6). Since cos is an even function, x = 6 cos(pi t/6 - pi/2): an SHM of amplitude 6 cm, period 12 s and initial phase -pi/2.",
+          "s": [
+            [
+              "Angle = pi/2 - pi t/6, so x = 6 cos(pi/2 - pi t/6), equivalently 6 sin(pi t/6)",
+              1
+            ],
+            [
+              "Standard form x = 6 cos(pi t/6 - pi/2), initial phase -pi/2",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Hardest",
+          "t": "long_answer",
+          "m": 3,
+          "q": "A simple harmonic motion is x = -2 sin(3t + pi/3), with x in cm and t in s. Using -sin(theta) = cos(theta + pi/2), write it in the form x = A cos(omega t + phi) and describe its reference circle for anticlockwise rotation: the radius, the angular speed, and the initial (t = 0) position of the rotating particle. (cos(5 pi/6) = -0.866.)",
+          "a": "x = -2 sin(3t + pi/3) = 2 cos(3t + pi/3 + pi/2) = 2 cos(3t + 5 pi/6). The reference circle has radius 2 cm (the amplitude) and the particle revolves anticlockwise with angular speed 3 rad/s. At t = 0 its position vector makes an angle 5 pi/6 (150 degrees) with the positive x-axis, so its x-coordinate is 2 cos(5 pi/6) = -1.73 cm, which agrees with -2 sin(pi/3).",
+          "s": [
+            [
+              "Rewrites as x = 2 cos(3t + 5 pi/6)",
+              1
+            ],
+            [
+              "Radius 2 cm and angular speed 3 rad/s",
+              1
+            ],
+            [
+              "Initial position: OP at 5 pi/6 (150 degrees) to the positive x-axis (x = -1.73 cm)",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Analyse",
+          "d": "Hard",
+          "t": "assertion_reason",
+          "m": 1,
+          "q": "Assertion (A): When a particle moves uniformly on a circle, its projection on the y-axis through the centre is a simple harmonic motion of the same amplitude as its projection on the x-axis. Reason (R): A particle in uniform circular motion needs a centripetal force directed towards the centre of the circle. Choose the correct option.",
+          "a": "Both A and R are true, but R is not the correct explanation of A",
+          "o": [
+            "Both A and R are true, but R is not the correct explanation of A",
+            "Both A and R are true, and R is the correct explanation of A",
+            "A is true, R is false",
+            "A is false, R is true"
+          ]
+        },
+        {
+          "b": "Analyse",
+          "d": "Hard",
+          "t": "short_answer",
+          "m": 2,
+          "q": "A reference particle P starts at t = 0 on the positive x-axis (phi = 0) and revolves anticlockwise with period T on a circle of radius A. State where its projection P' on the x-axis is, and how P' is moving, at t = T/4 and at t = T/2.",
+          "a": "At t = T/4, P has turned through pi/2 and is at the top of the circle, so P' is at the origin x = 0 and is moving in the negative x-direction (P is moving towards the left). At t = T/2, P has turned through pi and is on the negative x-axis, so P' is at the extreme x = -A, where it is momentarily at rest before turning back.",
+          "s": [
+            [
+              "t = T/4: P' at x = 0, moving in the negative x-direction",
+              1
+            ],
+            [
+              "t = T/2: P' at x = -A, momentarily at rest (turning point)",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Analyse",
+          "d": "Hardest",
+          "t": "long_answer",
+          "m": 3,
+          "q": "Two particles P and Q move anticlockwise on the same circle of radius 10 cm with the same angular speed pi/6 rad/s. At t = 0, OP lies along the positive x-axis and OQ makes an angle pi/3 with it. (a) Write the x-projection of each (x in cm, t in s). (b) Find both x-projections at t = 2 s. (c) State the phase difference between the two projections and whether it changes with time. (cos(pi/3) = 1/2, cos(2 pi/3) = -1/2.)",
+          "a": "(a) xP = 10 cos(pi t/6); xQ = 10 cos(pi t/6 + pi/3). (b) At t = 2 s: xP = 10 cos(pi/3) = 5 cm; xQ = 10 cos(2 pi/3) = -5 cm. (c) The phases are pi t/6 and pi t/6 + pi/3, so the phase difference is pi/3 at all times; it does not change because both have the same angular frequency.",
+          "s": [
+            [
+              "xP = 10 cos(pi t/6) and xQ = 10 cos(pi t/6 + pi/3)",
+              1
+            ],
+            [
+              "At t = 2 s: xP = 5 cm and xQ = -5 cm",
+              1
+            ],
+            [
+              "Phase difference pi/3, constant because the angular frequencies are equal",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Evaluate",
+          "d": "Hard",
+          "t": "short_answer",
+          "m": 2,
+          "q": "A student says: 'SHM is the projection of uniform circular motion, so a particle in linear SHM must be acted on by the same centripetal force as the particle on the circle.' Evaluate this statement.",
+          "a": "The statement is wrong. The connection is only that the projection of the uniformly revolving particle on a diameter has the position x = A cos(omega t + phi). The particle in linear SHM moves along a straight line, not round a circle, and the book stresses that the force acting on it is very different from the centripetal force needed to keep a particle in uniform circular motion.",
+          "s": [
+            [
+              "Judgement - incorrect: the link is geometrical (the projection's position follows A cos(omega t + phi))",
+              1
+            ],
+            [
+              "Reason - the SHM particle moves along a line and the force on it is very different from the centripetal force of the circular motion",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Create",
+          "d": "Hardest",
+          "t": "long_answer",
+          "m": 3,
+          "q": "Design a uniform circular motion whose x-projection is an SHM of amplitude 4 cm and period 2 s that is at x = -4 cm at t = 0. Give the radius, the angular speed (in terms of pi) and the initial position of the revolving particle, write the x-projection in the form x = A cos(omega t + phi) with x in cm and t in s, and check it at t = 0.",
+          "a": "Radius = amplitude = 4 cm. Angular speed omega = 2 pi/T = 2 pi/2 = pi rad/s. For x = -4 cm at t = 0 the particle must start on the negative x-axis, i.e. OP at angle pi to the positive x-axis (either sense of revolution gives the same projection). So x = 4 cos(pi t + pi). Check: x(0) = 4 cos(pi) = -4 cm.",
+          "s": [
+            [
+              "Radius 4 cm and angular speed pi rad/s",
+              1
+            ],
+            [
+              "Initial position on the negative x-axis (angle pi), for either sense of revolution",
+              1
+            ],
+            [
+              "x = 4 cos(pi t + pi) (or an equivalent form such as -4 cos(pi t)) with x(0) = -4 cm verified",
+              1
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "code": "C11P-13.4",
+      "name": "Velocity and acceleration in simple harmonic motion",
+      "description": "The velocity and acceleration of a particle in SHM as functions of time, their maximum values, the relation a = -omega^2 x, and their phase relations with the displacement.",
+      "idea": "In SHM the velocity and the acceleration also vary sinusoidally with the same period as the displacement, but out of step with it: the acceleration is always proportional to the displacement and directed towards the mean position.",
+      "rule": "For x(t) = A cos(omega t + phi): v(t) = dx/dt = -omega A sin(omega t + phi) and a(t) = dv/dt = -omega^2 A cos(omega t + phi) = -omega^2 x(t). The velocity amplitude is v_m = omega A and the acceleration amplitude is a_m = omega^2 A, so v varies from -omega A to +omega A and a from -omega^2 A to +omega^2 A. For x > 0, a < 0 and for x < 0, a > 0: the acceleration is always directed towards the centre. The speed is maximum at x = 0 and zero at the extremes; the acceleration is zero at x = 0 and greatest in magnitude at the extremes. All three quantities have the same period T; relative to the displacement, the velocity has a phase difference of pi/2 (velocity leads displacement by pi/2) and the acceleration a phase difference of pi (opposite in phase). A relation between a and x describes SHM only if it has the form a = -(positive constant) x.",
+      "example": "x = 2 cos(5t), with x in cm and t in s: v_m = omega A = 5 x 2 = 10 cm/s and a_m = omega^2 A = 25 x 2 = 50 cm/s^2; when x = 1 cm, a = -omega^2 x = -25 cm/s^2.",
+      "difficulty_base": "Hard",
+      "questions": [
+        {
+          "b": "Remember",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "For a particle in SHM with displacement x(t) = A cos(omega t + phi), the velocity is",
+          "a": "v(t) = -omega A sin(omega t + phi)",
+          "o": [
+            "v(t) = -omega A sin(omega t + phi)",
+            "v(t) = omega A cos(omega t + phi)",
+            "v(t) = -omega^2 A sin(omega t + phi)",
+            "v(t) = -A sin(omega t + phi)"
+          ]
+        },
+        {
+          "b": "Remember",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "The acceleration amplitude (maximum magnitude of the acceleration) of an SHM of amplitude A and angular frequency omega is",
+          "a": "omega^2 A",
+          "o": [
+            "omega^2 A",
+            "omega A",
+            "omega A^2",
+            "omega^2 A^2"
+          ]
+        },
+        {
+          "b": "Remember",
+          "d": "Easy",
+          "t": "fill_blank",
+          "m": 1,
+          "q": "The speed of a particle in SHM is maximum when its displacement from the mean position is ____ (write a number).",
+          "a": "0"
+        },
+        {
+          "b": "Remember",
+          "d": "Hard",
+          "t": "mcq",
+          "m": 1,
+          "q": "For a particle in SHM along the x-axis about x = 0, which statement about its acceleration is NOT correct?",
+          "a": "Its magnitude is greatest when the particle passes through the mean position",
+          "o": [
+            "Its magnitude is greatest when the particle passes through the mean position",
+            "It is proportional to the displacement",
+            "It is always directed towards the mean position",
+            "It is negative whenever the displacement x is positive"
+          ],
+          "rev": true
+        },
+        {
+          "b": "Understand",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "At an extreme position x = +A or x = -A of a simple harmonic motion, the",
+          "a": "speed is zero and the magnitude of the acceleration is maximum",
+          "o": [
+            "speed is zero and the magnitude of the acceleration is maximum",
+            "speed is maximum and the acceleration is zero",
+            "speed and the acceleration are both zero",
+            "speed and the magnitude of the acceleration are both maximum"
+          ]
+        },
+        {
+          "b": "Understand",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "The negative sign in a(t) = -omega^2 x(t) shows that",
+          "a": "the acceleration is always opposite in direction to the displacement",
+          "o": [
+            "the acceleration is always opposite in direction to the displacement",
+            "the acceleration is always opposite in direction to the velocity",
+            "the acceleration decreases as time goes on",
+            "the particle is always slowing down"
+          ]
+        },
+        {
+          "b": "Understand",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "Regarded as functions of time, the displacement, velocity and acceleration of a particle in SHM have",
+          "a": "the same period but differ in phase",
+          "o": [
+            "the same period but differ in phase",
+            "the same phase but different periods",
+            "the same period and the same phase",
+            "periods T, T/2 and T/4 respectively"
+          ]
+        },
+        {
+          "b": "Understand",
+          "d": "Hard",
+          "t": "mcq",
+          "m": 1,
+          "q": "Which of the following relations between the acceleration a and the displacement x of a particle represents simple harmonic motion?",
+          "a": "a = -10x",
+          "o": [
+            "a = -10x",
+            "a = 0.7x",
+            "a = -200x^2",
+            "a = 100x^3"
+          ]
+        },
+        {
+          "b": "Understand",
+          "d": "Hard",
+          "t": "mcq",
+          "m": 1,
+          "q": "A particle is in linear SHM between two extreme points P and Q that are 10 cm apart, with the direction from P to Q taken as positive. When the particle is 2 cm away from Q and moving towards P, its velocity and acceleration are respectively",
+          "a": "negative and negative",
+          "o": [
+            "negative and negative",
+            "negative and positive",
+            "positive and negative",
+            "positive and positive"
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "A particle is in SHM with amplitude 0.1 m and angular frequency 20 rad/s. Its maximum speed is",
+          "a": "2 m/s",
+          "o": [
+            "2 m/s",
+            "40 m/s",
+            "200 m/s",
+            "0.005 m/s"
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Easy",
+          "t": "fill_blank",
+          "m": 1,
+          "q": "A particle in SHM has angular frequency 4 rad/s. At the instant its displacement is +3 cm, its acceleration is ____ cm/s^2 (write the number with its sign).",
+          "a": "-48"
+        },
+        {
+          "b": "Apply",
+          "d": "Hard",
+          "t": "mcq",
+          "m": 1,
+          "q": "A particle moves according to x = 0.2 cos(10t), with x in m and t in s. Its velocity at the instant when the phase 10t equals pi/6 is (sin(pi/6) = 0.5, cos(pi/6) = 0.866)",
+          "a": "-1 m/s",
+          "o": [
+            "-1 m/s",
+            "+1 m/s",
+            "-1.73 m/s",
+            "-2 m/s"
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Hard",
+          "t": "mcq",
+          "m": 1,
+          "q": "A piston moves in SHM with a stroke (twice the amplitude) of 0.6 m and an angular frequency of 20 rad/s. Its maximum speed is",
+          "a": "6 m/s",
+          "o": [
+            "6 m/s",
+            "12 m/s",
+            "120 m/s",
+            "0.015 m/s"
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Hard",
+          "t": "short_answer",
+          "m": 2,
+          "q": "A particle moves according to x = 6 cos(3t), with x in cm and t in s. Find its maximum speed and its maximum acceleration, with units.",
+          "a": "Here A = 6 cm and omega = 3 rad/s. Maximum speed v_m = omega A = 3 x 6 = 18 cm/s. Maximum acceleration a_m = omega^2 A = 9 x 6 = 54 cm/s^2.",
+          "s": [
+            [
+              "v_m = omega A = 18 cm/s",
+              1
+            ],
+            [
+              "a_m = omega^2 A = 54 cm/s^2",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Hardest",
+          "t": "long_answer",
+          "m": 3,
+          "q": "A body oscillates according to x = 4 cos(pi t + pi/4), with x in cm and t in s. At t = 1 s calculate (a) its displacement, (b) its velocity and (c) its acceleration. Take cos(5 pi/4) = sin(5 pi/4) = -0.707, pi = 3.14 and pi^2 = 10, and give each answer to 3 significant figures.",
+          "a": "At t = 1 s the phase is pi + pi/4 = 5 pi/4. (a) x = 4 cos(5 pi/4) = 4 x (-0.707) = -2.83 cm. (b) v = -omega A sin(omega t + phi) = -(3.14)(4)(-0.707) = +8.88 cm/s. (c) a = -omega^2 x = -(10)(-2.828) = +28.3 cm/s^2.",
+          "s": [
+            [
+              "x = -2.83 cm",
+              1
+            ],
+            [
+              "v = +8.88 cm/s (positive x-direction)",
+              1
+            ],
+            [
+              "a = +28.3 cm/s^2",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Analyse",
+          "d": "Hard",
+          "t": "multi_statement",
+          "m": 1,
+          "q": "A particle moves according to x = A cos(omega t), with period T. (I) At t = T/4 the particle is at the mean position and is moving in the negative x-direction. (II) At t = T/2 the particle is at x = -A and its acceleration is in the positive x-direction. Which is or are correct?",
+          "a": "Both I and II",
+          "o": [
+            "Both I and II",
+            "Only I",
+            "Only II",
+            "Neither I nor II"
+          ]
+        },
+        {
+          "b": "Analyse",
+          "d": "Hard",
+          "t": "short_answer",
+          "m": 2,
+          "q": "Using a = -omega^2 x, explain why a particle in SHM speeds up while it moves towards the mean position, from either side, and slows down while it moves away from it.",
+          "a": "Because a = -omega^2 x, the acceleration always points towards the mean position: it is negative when x is positive and positive when x is negative. When the particle is moving towards the mean position its velocity is in the same direction as the acceleration, so its speed increases. When it is moving away from the mean position its velocity is opposite to the acceleration, so its speed decreases, reaching zero at the extreme.",
+          "s": [
+            [
+              "States that the acceleration is always directed towards the mean position (opposite in sign to x)",
+              1
+            ],
+            [
+              "Velocity along the acceleration when approaching (speeds up) and opposite to it when receding (slows down)",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Analyse",
+          "d": "Hardest",
+          "t": "long_answer",
+          "m": 3,
+          "q": "A particle moves according to x = 10 cos(pi t/2), with x in cm and t in s. (a) Find the first time after t = 0 at which its speed is maximum. (b) Find that maximum speed in terms of pi. (c) Find the displacement and the acceleration at t = 2 s, taking pi^2 = 10.",
+          "a": "(a) The speed is maximum at x = 0, i.e. when cos(pi t/2) = 0, first at pi t/2 = pi/2, so t = 1 s. (b) v_m = omega A = (pi/2)(10) = 5 pi cm/s (about 15.7 cm/s). (c) At t = 2 s, x = 10 cos(pi) = -10 cm. a = -omega^2 x = -(pi^2/4)(-10) = +(10/4)(10) = +25 cm/s^2, directed towards the mean position.",
+          "s": [
+            [
+              "Speed maximum first at t = 1 s (when x = 0)",
+              1
+            ],
+            [
+              "v_m = 5 pi cm/s",
+              1
+            ],
+            [
+              "At t = 2 s: x = -10 cm and a = +25 cm/s^2",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Evaluate",
+          "d": "Hard",
+          "t": "short_answer",
+          "m": 2,
+          "q": "A student says: 'At the mean position the acceleration of a particle in SHM is zero, so the particle must be at rest there.' Evaluate this statement.",
+          "a": "The statement is wrong. From a = -omega^2 x the acceleration is indeed zero at x = 0, but zero acceleration only means that the velocity is not changing at that instant, not that the velocity is zero. In fact the speed has its maximum value omega A at the mean position; the particle is at rest only at the extremes, where the acceleration is greatest.",
+          "s": [
+            [
+              "Judgement - incorrect: zero acceleration does not mean zero velocity",
+              1
+            ],
+            [
+              "The speed is maximum (omega A) at the mean position; the particle is momentarily at rest only at the extremes",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Create",
+          "d": "Hardest",
+          "t": "long_answer",
+          "m": 3,
+          "q": "Construct a simple harmonic motion whose maximum speed is 40 cm/s and whose maximum acceleration is 160 cm/s^2. Find its angular frequency and amplitude, and write x(t), v(t) and a(t) with x in cm and t in s, choosing the phase constant yourself.",
+          "a": "v_m = omega A = 40 and a_m = omega^2 A = 160. Dividing, omega = 160/40 = 4 rad/s, and then A = 40/4 = 10 cm. Choosing phi = 0: x = 10 cos(4t), v = -40 sin(4t) and a = -160 cos(4t), with x in cm, v in cm/s and a in cm/s^2. (Any other phase constant phi may be chosen, added to 4t in all three.)",
+          "s": [
+            [
+              "omega = a_m/v_m = 4 rad/s",
+              1
+            ],
+            [
+              "A = v_m/omega = 10 cm",
+              1
+            ],
+            [
+              "x = 10 cos(4t + phi), v = -40 sin(4t + phi), a = -160 cos(4t + phi) for the chosen phi",
+              1
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "code": "C11P-13.5",
+      "name": "Force law for simple harmonic motion and the block-spring oscillator",
+      "description": "The restoring force F = -kx, the relations k = m omega^2 and omega = sqrt(k/m), the period of a block on a spring, the linear harmonic oscillator, and the block held between two identical springs.",
+      "idea": "A particle executes SHM whenever the force on it is proportional to its displacement and always directed towards the mean position; the constant of proportionality and the mass together fix how fast it oscillates.",
+      "rule": "From F = ma and a = -omega^2 x, the force on a particle of mass m in SHM is F(t) = -m omega^2 x(t) = -k x(t), with k = m omega^2, so omega = sqrt(k/m) and T = 2 pi sqrt(m/k). The force is always directed towards the mean position and is called the restoring force. SHM can be defined equivalently by x = A cos(omega t + phi) or by the force law F = -kx: differentiating the displacement twice gives the force law, and integrating the force law twice gives back the displacement. A particle oscillating under a force linearly proportional to x is a linear harmonic oscillator; if the force has small extra terms in x^2, x^3 it is a non-linear oscillator. A block on a frictionless horizontal surface attached to a spring of spring constant k obeys F = -kx, with x measured from the equilibrium position. For a block between two identical springs fixed to supports, a displacement x stretches one spring and compresses the other, each giving -kx, so F = -2kx and T = 2 pi sqrt(m/2k).",
+      "example": "A block of mass 0.2 kg on a frictionless horizontal surface is attached to a spring of spring constant 180 N/m: omega = sqrt(180/0.2) = 30 rad/s and T = 2 pi/30 = 0.209 s (pi = 3.14).",
+      "difficulty_base": "Hard",
+      "questions": [
+        {
+          "b": "Remember",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "The force law for a particle in simple harmonic motion, with x its displacement from the mean position and k a positive constant, is",
+          "a": "F = -kx",
+          "o": [
+            "F = -kx",
+            "F = +kx",
+            "F = -kx^2",
+            "F = -k/x"
+          ]
+        },
+        {
+          "b": "Remember",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "For a particle of mass m in SHM with angular frequency omega, the constant k in the force law is equal to",
+          "a": "m omega^2",
+          "o": [
+            "m omega^2",
+            "m omega",
+            "m/omega^2",
+            "omega^2/m"
+          ]
+        },
+        {
+          "b": "Remember",
+          "d": "Easy",
+          "t": "fill_blank",
+          "m": 1,
+          "q": "Because the force in SHM is always directed towards the mean position, it is sometimes called the ____ force (write one word).",
+          "a": "restoring"
+        },
+        {
+          "b": "Remember",
+          "d": "Hard",
+          "t": "mcq",
+          "m": 1,
+          "q": "A block on a frictionless horizontal surface is attached to a spring fixed to a wall and oscillates. Which of the following changes does NOT alter the period of the oscillation?",
+          "a": "Pulling the block out to twice the distance before releasing it",
+          "o": [
+            "Pulling the block out to twice the distance before releasing it",
+            "Replacing the block by one of twice the mass",
+            "Replacing the spring by a stiffer one",
+            "Attaching a second identical spring from the other side of the block to a second wall"
+          ],
+          "rev": true
+        },
+        {
+          "b": "Understand",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "A particle that oscillates under a force linearly proportional to its displacement is called a",
+          "a": "linear harmonic oscillator",
+          "o": [
+            "linear harmonic oscillator",
+            "non-linear oscillator",
+            "reference particle",
+            "uniform oscillator"
+          ]
+        },
+        {
+          "b": "Understand",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "In the force law F = -kx of a block-spring oscillator, the spring constant k is numerically equal to",
+          "a": "the magnitude of the restoring force per unit displacement from the equilibrium position",
+          "o": [
+            "the magnitude of the restoring force per unit displacement from the equilibrium position",
+            "the maximum displacement of the block from the equilibrium position",
+            "the mass of the block multiplied by its maximum speed",
+            "the period of the oscillation"
+          ]
+        },
+        {
+          "b": "Understand",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "A heavier block is attached to the same spring on the same frictionless horizontal surface. Compared with the lighter block, its oscillations are",
+          "a": "slower: the period is longer",
+          "o": [
+            "slower: the period is longer",
+            "faster: the period is shorter",
+            "of exactly the same period",
+            "of the same period but always of smaller amplitude"
+          ]
+        },
+        {
+          "b": "Understand",
+          "d": "Hard",
+          "t": "mcq",
+          "m": 1,
+          "q": "SHM can be defined either by the displacement x = A cos(omega t + phi) or by its force law. Going from the displacement equation to the force law requires",
+          "a": "differentiating twice with respect to time and using Newton's second law",
+          "o": [
+            "differentiating twice with respect to time and using Newton's second law",
+            "integrating twice with respect to time",
+            "differentiating once with respect to time",
+            "no calculus, since the two definitions are unrelated"
+          ]
+        },
+        {
+          "b": "Understand",
+          "d": "Hard",
+          "t": "mcq",
+          "m": 1,
+          "q": "A block on a spring (frictionless, horizontal) is replaced by a block of four times the mass, the spring being unchanged. The period of oscillation becomes",
+          "a": "twice as long",
+          "o": [
+            "twice as long",
+            "four times as long",
+            "half as long",
+            "one-quarter as long"
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "A block of mass 2 kg on a frictionless horizontal surface is attached to a spring of spring constant 50 N/m. The angular frequency of its oscillation is",
+          "a": "5 rad/s",
+          "o": [
+            "5 rad/s",
+            "25 rad/s",
+            "0.2 rad/s",
+            "10 rad/s"
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Easy",
+          "t": "fill_blank",
+          "m": 1,
+          "q": "A spring exerts a restoring force of magnitude 6 N on a block when the block is displaced 0.03 m from its equilibrium position. The spring constant is ____ N/m (write a whole number).",
+          "a": "200"
+        },
+        {
+          "b": "Apply",
+          "d": "Hard",
+          "t": "mcq",
+          "m": 1,
+          "q": "A block of mass 0.5 kg on a frictionless horizontal surface is attached to a spring of spring constant 200 N/m. The period of its oscillation, in terms of pi, is",
+          "a": "pi/10 s",
+          "o": [
+            "pi/10 s",
+            "40 pi s",
+            "pi/200 s",
+            "pi/5 s"
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Hard",
+          "t": "mcq",
+          "m": 1,
+          "q": "A particle of mass 0.5 kg is in SHM along the x-axis with angular frequency 4 rad/s. The force on it at the instant its displacement from the mean position is +0.05 m is",
+          "a": "-0.4 N",
+          "o": [
+            "-0.4 N",
+            "+0.4 N",
+            "-0.1 N",
+            "-8 N"
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Hard",
+          "t": "short_answer",
+          "m": 2,
+          "q": "A spring of spring constant 900 N/m lies on a frictionless horizontal table with one end fixed. A block of mass 4 kg attached to the free end is pulled 3 cm from its equilibrium position and released. Find the angular frequency of the oscillation and the maximum acceleration of the block.",
+          "a": "omega = sqrt(k/m) = sqrt(900/4) = sqrt(225) = 15 rad/s. The amplitude is A = 3 cm = 0.03 m, so the maximum acceleration = omega^2 A = 225 x 0.03 = 6.75 m/s^2 (equally, kA/m = 900 x 0.03/4).",
+          "s": [
+            [
+              "omega = sqrt(k/m) = 15 rad/s",
+              1
+            ],
+            [
+              "Maximum acceleration = 6.75 m/s^2, from omega^2 A or from kA/m",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Hardest",
+          "t": "long_answer",
+          "m": 3,
+          "q": "A block of mass 2 kg on a frictionless horizontal surface is held between two identical springs, each of spring constant 100 N/m, whose far ends are fixed to supports on the left and on the right. Both springs are unstretched at the equilibrium position. Show that the block executes SHM when displaced along the line of the springs, and find its period. Take pi = 3.14.",
+          "a": "Displace the block by x to the right. The left spring is stretched by x and pulls the block back with force -kx; the right spring is compressed by x and pushes it back with force -kx. Net force F = -2kx = -200x (N, with x in m). The force is proportional to the displacement and directed towards the mean position, so the motion is SHM with force constant 2k = 200 N/m. T = 2 pi sqrt(m/2k) = 2 x 3.14 x sqrt(2/200) = 6.28 x 0.1 = 0.628 s.",
+          "s": [
+            [
+              "Each spring gives a force -kx towards the mean position, so F = -2kx",
+              1
+            ],
+            [
+              "Force proportional to displacement and directed towards the mean position, hence SHM with force constant 200 N/m",
+              1
+            ],
+            [
+              "T = 2 pi sqrt(m/2k) = 0.628 s",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Analyse",
+          "d": "Hard",
+          "t": "assertion_reason",
+          "m": 1,
+          "q": "Assertion (A): For a block oscillating on a horizontal spring on a frictionless surface, the magnitude of the block's acceleration is greatest at the extreme positions. Reason (R): The restoring force exerted by the spring is greatest when the block passes through its equilibrium position. Choose the correct option.",
+          "a": "A is true, R is false",
+          "o": [
+            "A is true, R is false",
+            "Both A and R are true, and R is the correct explanation of A",
+            "Both A and R are true, but R is not the correct explanation of A",
+            "A is false, R is true"
+          ]
+        },
+        {
+          "b": "Analyse",
+          "d": "Hard",
+          "t": "short_answer",
+          "m": 2,
+          "q": "Oscillator 1 is a block of mass 1 kg on a spring of spring constant 400 N/m; oscillator 2 is a block of mass 4 kg on a spring of spring constant 100 N/m. Both are horizontal and frictionless. Find the angular frequency of each and decide which completes more oscillations in the same time, and by what factor.",
+          "a": "omega1 = sqrt(400/1) = 20 rad/s; omega2 = sqrt(100/4) = 5 rad/s. The number of oscillations in a given time is proportional to the frequency, hence to omega, so oscillator 1 completes 20/5 = 4 times as many oscillations as oscillator 2.",
+          "s": [
+            [
+              "omega1 = 20 rad/s and omega2 = 5 rad/s",
+              1
+            ],
+            [
+              "Oscillator 1 completes 4 times as many oscillations in the same time",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Analyse",
+          "d": "Hardest",
+          "t": "long_answer",
+          "m": 3,
+          "q": "A particle of mass 0.5 kg moves along the x-axis under the force F = -18x, with F in N and x in m measured from the mean position. (a) Explain why the motion is SHM and state k. (b) Find the angular frequency and the period in terms of pi. (c) If the amplitude is 0.1 m, find the maximum force and the maximum acceleration.",
+          "a": "(a) The force is proportional to the displacement and directed towards the mean position (form F = -kx), so the motion is SHM with k = 18 N/m. (b) omega = sqrt(k/m) = sqrt(18/0.5) = sqrt(36) = 6 rad/s; T = 2 pi/omega = pi/3 s. (c) Maximum force = kA = 18 x 0.1 = 1.8 N; maximum acceleration = F/m = 1.8/0.5 = 3.6 m/s^2 (= omega^2 A).",
+          "s": [
+            [
+              "F = -kx form, so SHM with k = 18 N/m",
+              1
+            ],
+            [
+              "omega = 6 rad/s and T = pi/3 s",
+              1
+            ],
+            [
+              "Maximum force 1.8 N and maximum acceleration 3.6 m/s^2",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Evaluate",
+          "d": "Hard",
+          "t": "short_answer",
+          "m": 2,
+          "q": "A student argues: 'A stiffer spring is harder to stretch, so the same block attached to a stiffer spring will oscillate more slowly.' Evaluate this argument.",
+          "a": "The argument is wrong. A stiffer spring has a larger spring constant k, so for the same displacement it exerts a larger restoring force and gives the block a larger acceleration back towards the mean position. Since T = 2 pi sqrt(m/k), a larger k gives a shorter period, so the block oscillates faster, not more slowly.",
+          "s": [
+            [
+              "Judgement - incorrect: a larger k means a larger restoring force (acceleration) for the same displacement",
+              1
+            ],
+            [
+              "Uses T = 2 pi sqrt(m/k) (or omega = sqrt(k/m)) to conclude the period is shorter, i.e. faster oscillation",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Create",
+          "d": "Hardest",
+          "t": "long_answer",
+          "m": 3,
+          "q": "Design a block-spring oscillator on a frictionless horizontal surface that has a period of pi/5 s. Choose the mass and the spring constant, verify the period, then choose an amplitude and find the maximum restoring force on the block.",
+          "a": "Sample answer. T = pi/5 s means omega = 2 pi/T = 10 rad/s, so k/m = omega^2 = 100 s^-2. Choose m = 1 kg and k = 100 N/m. Check: T = 2 pi sqrt(m/k) = 2 pi sqrt(1/100) = 2 pi/10 = pi/5 s. Choosing amplitude A = 0.05 m, the maximum restoring force = kA = 100 x 0.05 = 5 N.",
+          "s": [
+            [
+              "Chooses m and k with k/m = 100 s^-2 (e.g. 1 kg and 100 N/m)",
+              1
+            ],
+            [
+              "Verifies T = 2 pi sqrt(m/k) = pi/5 s for the chosen values",
+              1
+            ],
+            [
+              "Maximum restoring force = kA computed correctly, with unit, for the chosen amplitude",
+              1
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "code": "C11P-13.6",
+      "name": "Energy in simple harmonic motion",
+      "description": "The kinetic, potential and total mechanical energies of a particle in SHM as functions of time and of displacement, and the conservation of the total energy.",
+      "idea": "In SHM the energy keeps changing form between kinetic and potential, each varying between zero and a maximum, while their sum stays constant.",
+      "rule": "Kinetic energy K = (1/2) m v^2 = (1/2) k A^2 sin^2(omega t + phi): zero at the extremes and maximum at the mean position. Potential energy of the conservative force F = -kx is U = (1/2) k x^2 = (1/2) k A^2 cos^2(omega t + phi): zero at the mean position and maximum at the extremes. Total energy E = K + U = (1/2) k A^2, independent of time, as expected for a conservative force when no friction is present. Hence at displacement x, K = E - U = (1/2) k (A^2 - x^2). K and U are never negative, each repeats with period T/2 and each peaks twice in every period of the motion; between x = 0 (all kinetic) and x = +A or -A (all potential), one increases at the expense of the other.",
+      "example": "A spring-block oscillator with k = 200 N/m and amplitude 0.2 m has total energy E = (1/2)(200)(0.2)^2 = 4 J; at x = 0.16 m the potential energy is (1/2)(200)(0.16)^2 = 2.56 J and the kinetic energy is 4 - 2.56 = 1.44 J.",
+      "difficulty_base": "Hard",
+      "questions": [
+        {
+          "b": "Remember",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "The total mechanical energy of a harmonic oscillator of force constant k and amplitude A is",
+          "a": "(1/2) k A^2",
+          "o": [
+            "(1/2) k A^2",
+            "k A^2",
+            "(1/2) k A",
+            "(1/2) k^2 A"
+          ]
+        },
+        {
+          "b": "Remember",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "The potential energy of a particle in SHM (force constant k, amplitude A) when its displacement from the mean position is x is",
+          "a": "(1/2) k x^2",
+          "o": [
+            "(1/2) k x^2",
+            "(1/2) k x",
+            "k x",
+            "(1/2) k (A^2 - x^2)"
+          ]
+        },
+        {
+          "b": "Remember",
+          "d": "Easy",
+          "t": "fill_blank",
+          "m": 1,
+          "q": "During each period of a simple harmonic motion, the kinetic energy of the particle reaches its peak value ____ times (write a whole number).",
+          "a": "2"
+        },
+        {
+          "b": "Remember",
+          "d": "Hard",
+          "t": "mcq",
+          "m": 1,
+          "q": "Which statement about the energy of a particle in SHM, with no friction present, is NOT correct?",
+          "a": "The potential energy is maximum at the mean position",
+          "o": [
+            "The potential energy is maximum at the mean position",
+            "The kinetic energy is zero at the extreme positions",
+            "The total mechanical energy is the same at all times",
+            "The kinetic energy is never negative"
+          ],
+          "rev": true
+        },
+        {
+          "b": "Understand",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "As a particle in SHM moves from the mean position towards an extreme position,",
+          "a": "its kinetic energy decreases and its potential energy increases",
+          "o": [
+            "its kinetic energy decreases and its potential energy increases",
+            "its kinetic energy increases and its potential energy decreases",
+            "its kinetic and potential energies both increase",
+            "its kinetic and potential energies both stay constant"
+          ]
+        },
+        {
+          "b": "Understand",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "The velocity of a particle in SHM changes sign every half period, yet its kinetic energy is never negative. This is because",
+          "a": "the kinetic energy depends on the square of the velocity, so the sign of the velocity is immaterial",
+          "o": [
+            "the kinetic energy depends on the square of the velocity, so the sign of the velocity is immaterial",
+            "the potential energy compensates whenever the velocity is negative",
+            "the particle covers the whole path in half a period",
+            "the mass of the particle is effectively halved at the mean position"
+          ]
+        },
+        {
+          "b": "Understand",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "When a particle in SHM passes through the mean position x = 0, its mechanical energy is",
+          "a": "entirely kinetic",
+          "o": [
+            "entirely kinetic",
+            "entirely potential",
+            "half kinetic and half potential",
+            "zero"
+          ]
+        },
+        {
+          "b": "Understand",
+          "d": "Hard",
+          "t": "mcq",
+          "m": 1,
+          "q": "The amplitude of a spring-block oscillator is doubled, the spring and the block being unchanged. Its total mechanical energy becomes",
+          "a": "four times as large",
+          "o": [
+            "four times as large",
+            "twice as large",
+            "half as large",
+            "the same as before"
+          ]
+        },
+        {
+          "b": "Understand",
+          "d": "Hard",
+          "t": "mcq",
+          "m": 1,
+          "q": "The total mechanical energy of a harmonic oscillator does not change with time because",
+          "a": "the restoring force -kx is a conservative force and no friction is present",
+          "o": [
+            "the restoring force -kx is a conservative force and no friction is present",
+            "its kinetic energy stays constant throughout the motion",
+            "its potential energy is zero throughout the motion",
+            "its velocity stays constant throughout the motion"
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "A spring-block oscillator has spring constant 100 N/m and amplitude 0.2 m. Its total mechanical energy is",
+          "a": "2 J",
+          "o": [
+            "2 J",
+            "4 J",
+            "10 J",
+            "20 J"
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Easy",
+          "t": "fill_blank",
+          "m": 1,
+          "q": "A block attached to a spring of spring constant 400 N/m is 0.05 m from its mean position. The potential energy stored is ____ J (write a decimal).",
+          "a": "0.5"
+        },
+        {
+          "b": "Apply",
+          "d": "Hard",
+          "t": "mcq",
+          "m": 1,
+          "q": "A particle is in SHM with amplitude A. When its displacement from the mean position is A/3, its kinetic energy as a fraction of the total energy is",
+          "a": "8/9",
+          "o": [
+            "8/9",
+            "1/9",
+            "2/3",
+            "1/3"
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Hard",
+          "t": "mcq",
+          "m": 1,
+          "q": "A spring-block oscillator has spring constant 50 N/m and amplitude 0.2 m. The kinetic energy of the block when it is 0.12 m from the mean position is",
+          "a": "0.64 J",
+          "o": [
+            "0.64 J",
+            "0.36 J",
+            "1 J",
+            "0.4 J"
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Hard",
+          "t": "short_answer",
+          "m": 2,
+          "q": "A block of mass 2 kg on a frictionless horizontal surface oscillates on a spring of spring constant 200 N/m with amplitude 0.1 m. Find the total energy of the oscillator and the maximum speed of the block.",
+          "a": "E = (1/2) k A^2 = (1/2)(200)(0.1)^2 = 1 J. At the mean position all of this is kinetic: (1/2) m v_m^2 = 1 J, so v_m^2 = 2 x 1/2 = 1 and v_m = 1 m/s. (Equally, omega = sqrt(200/2) = 10 rad/s and v_m = omega A = 1 m/s.)",
+          "s": [
+            [
+              "Total energy E = (1/2) k A^2 = 1 J",
+              1
+            ],
+            [
+              "Maximum speed 1 m/s, from (1/2) m v_m^2 = E or from v_m = omega A",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Hardest",
+          "t": "long_answer",
+          "m": 3,
+          "q": "A block of mass 0.2 kg on a frictionless horizontal surface is attached to a spring of spring constant 80 N/m and oscillates with amplitude 0.05 m. For the instant when the block is 0.03 m from the mean position, calculate its potential energy, its kinetic energy and its speed. State the total energy as well.",
+          "a": "Total energy E = (1/2) k A^2 = (1/2)(80)(0.05)^2 = 0.1 J. Potential energy U = (1/2) k x^2 = (1/2)(80)(0.03)^2 = 0.036 J. Kinetic energy K = E - U = 0.1 - 0.036 = 0.064 J. Speed: (1/2) m v^2 = 0.064 J gives v^2 = 2 x 0.064/0.2 = 0.64, so v = 0.8 m/s.",
+          "s": [
+            [
+              "Total energy E = 0.1 J",
+              1
+            ],
+            [
+              "U = 0.036 J and K = 0.064 J",
+              1
+            ],
+            [
+              "Speed v = 0.8 m/s, by any correct method",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Analyse",
+          "d": "Hard",
+          "t": "multi_statement",
+          "m": 1,
+          "q": "A particle executes SHM of amplitude A with no friction. (I) Its kinetic energy and its potential energy reach their maximum values at the same instant. (II) Its kinetic energy equals its potential energy when the magnitude of its displacement is A/sqrt(2). Which is or are correct?",
+          "a": "Only II",
+          "o": [
+            "Only II",
+            "Only I",
+            "Both I and II",
+            "Neither I nor II"
+          ]
+        },
+        {
+          "b": "Analyse",
+          "d": "Hard",
+          "t": "short_answer",
+          "m": 2,
+          "q": "A particle is in SHM with amplitude A. At what displacement from the mean position, as a fraction of A, is its kinetic energy three times its potential energy?",
+          "a": "K = 3U and E = K + U give E = 4U. So (1/2) k A^2 = 4 x (1/2) k x^2, i.e. x^2 = A^2/4 and x = +A/2 or -A/2: the particle is at half the amplitude on either side of the mean position.",
+          "s": [
+            [
+              "Uses K = 3U with E = K + U to get U = E/4",
+              1
+            ],
+            [
+              "x = A/2 in magnitude (on either side of the mean position)",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Analyse",
+          "d": "Hardest",
+          "t": "long_answer",
+          "m": 3,
+          "q": "A block of mass 1 kg on a frictionless horizontal surface is attached to a spring of spring constant 400 N/m. It passes through its mean position with a speed of 2 m/s. Find (a) the total energy of the oscillator, (b) the amplitude, and (c) the potential and kinetic energies when the block is 0.06 m from the mean position.",
+          "a": "(a) At the mean position the energy is all kinetic: E = (1/2) m v^2 = (1/2)(1)(2)^2 = 2 J. (b) E = (1/2) k A^2 gives A^2 = 2E/k = 4/400 = 0.01, so A = 0.1 m. (c) U = (1/2) k x^2 = (1/2)(400)(0.06)^2 = 0.72 J; K = E - U = 2 - 0.72 = 1.28 J.",
+          "s": [
+            [
+              "E = 2 J (all kinetic at the mean position)",
+              1
+            ],
+            [
+              "Amplitude A = 0.1 m",
+              1
+            ],
+            [
+              "U = 0.72 J and K = 1.28 J at x = 0.06 m",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Evaluate",
+          "d": "Hard",
+          "t": "short_answer",
+          "m": 2,
+          "q": "A student says: 'At the extreme position the oscillating block is at rest, so at that instant the oscillator has no energy.' Evaluate this statement.",
+          "a": "The statement is wrong. At the extreme the speed is zero, so the kinetic energy is zero, but the displacement is greatest there, so the potential energy (1/2) k x^2 has its maximum value (1/2) k A^2. The energy is then entirely potential and equal to the total energy, which stays constant throughout the motion.",
+          "s": [
+            [
+              "Judgement - incorrect: only the kinetic energy is zero at the extreme",
+              1
+            ],
+            [
+              "The potential energy is maximum there, (1/2) k A^2, equal to the constant total energy",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Create",
+          "d": "Hardest",
+          "t": "long_answer",
+          "m": 3,
+          "q": "Design a spring-block oscillator (frictionless, horizontal) whose total energy is 0.5 J: choose a spring constant and an amplitude that give this energy. Then choose a displacement smaller than your amplitude, calculate the potential and kinetic energies there, and check that they add up to the total.",
+          "a": "Sample answer. Choose k = 100 N/m and A = 0.1 m: E = (1/2)(100)(0.1)^2 = 0.5 J. Choose x = 0.06 m: U = (1/2)(100)(0.06)^2 = 0.18 J and K = E - U = (1/2)(100)(0.1^2 - 0.06^2) = 0.32 J. Check: 0.18 + 0.32 = 0.5 J.",
+          "s": [
+            [
+              "k and A chosen with (1/2) k A^2 = 0.5 J",
+              1
+            ],
+            [
+              "U = (1/2) k x^2 computed correctly at a chosen displacement smaller than A",
+              1
+            ],
+            [
+              "K = E - U computed, with K + U = 0.5 J checked",
+              1
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "code": "C11P-13.7",
+      "name": "The simple pendulum",
+      "description": "The forces and restoring torque on the bob of a simple pendulum, the small-angle approximation that makes its motion simple harmonic, and the period T = 2 pi sqrt(L/g).",
+      "idea": "A small bob on a light inextensible string swings in very nearly simple harmonic motion when the angle of swing is small, with a period fixed only by the length of the string and the acceleration due to gravity.",
+      "rule": "A simple pendulum is a small bob of mass m tied to an inextensible massless string of length L fixed to a rigid support; theta is the angle of the string with the vertical (theta = 0 at the mean position). Only two forces act on the bob: the tension T along the string and gravity mg. mg resolves into mg cos(theta) along the string and mg sin(theta) perpendicular to it. The net radial force T - mg cos(theta) gives the radial acceleration and no torque about the support; the tangential component gives the restoring torque tau = -L mg sin(theta), the negative sign showing that it tends to reduce theta. With tau = I alpha, alpha = -(mgL/I) sin(theta). For small theta in radians sin(theta) is nearly theta (even at 20 degrees: 0.349 rad against sin = 0.342), so alpha = -(mgL/I) theta, which has the same form as a = -omega^2 x: the motion is SHM with omega = sqrt(mgL/I) and T = 2 pi sqrt(I/mgL). The string is massless, so I = m L^2 and T = 2 pi sqrt(L/g). A pendulum that ticks seconds has T = 2 s and, for g = 9.8 m/s^2, length about 1 m.",
+      "example": "A simple pendulum of length 2.5 m swinging through small angles where g = 10 m/s^2 has T = 2 pi sqrt(2.5/10) = 2 pi x 0.5 = pi s, about 3.14 s.",
+      "difficulty_base": "Hard",
+      "questions": [
+        {
+          "b": "Remember",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "For small oscillations, the period of a simple pendulum of length L at a place where the acceleration due to gravity is g is",
+          "a": "2 pi sqrt(L/g)",
+          "o": [
+            "2 pi sqrt(L/g)",
+            "2 pi sqrt(g/L)",
+            "2 pi L/g",
+            "(1/(2 pi)) sqrt(L/g)"
+          ]
+        },
+        {
+          "b": "Remember",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "The forces acting on the bob of a simple pendulum as it swings are",
+          "a": "the tension along the string and the force due to gravity",
+          "o": [
+            "the tension along the string and the force due to gravity",
+            "the force due to gravity only",
+            "the tension along the string only",
+            "the tension, the force due to gravity and a separate spring force -kx"
+          ]
+        },
+        {
+          "b": "Remember",
+          "d": "Easy",
+          "t": "fill_blank",
+          "m": 1,
+          "q": "A simple pendulum that 'ticks seconds' has a period of ____ s (write a whole number).",
+          "a": "2"
+        },
+        {
+          "b": "Remember",
+          "d": "Hard",
+          "t": "mcq",
+          "m": 1,
+          "q": "For small oscillations, the period of a simple pendulum does NOT depend on",
+          "a": "the mass of the bob",
+          "o": [
+            "the mass of the bob",
+            "the length of the string",
+            "the value of g at the place",
+            "whether it is set up on the Earth or on the Moon"
+          ],
+          "rev": true
+        },
+        {
+          "b": "Understand",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "The restoring torque on the bob of a simple pendulum about the point of support is provided by",
+          "a": "the component mg sin(theta) of the force of gravity, perpendicular to the string",
+          "o": [
+            "the component mg sin(theta) of the force of gravity, perpendicular to the string",
+            "the tension in the string",
+            "the component mg cos(theta) of the force of gravity, along the string",
+            "the net radial force T - mg cos(theta)"
+          ]
+        },
+        {
+          "b": "Understand",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "The tension in the string of a simple pendulum gives no torque about the point of support because",
+          "a": "it acts along the string, a line that passes through the support",
+          "o": [
+            "it acts along the string, a line that passes through the support",
+            "it is zero throughout the motion",
+            "it is always equal to mg",
+            "it acts perpendicular to the string"
+          ]
+        },
+        {
+          "b": "Understand",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "The net radial force T - mg cos(theta) on the bob of a simple pendulum (T the tension, theta the angle of the string with the vertical)",
+          "a": "provides the radial (centripetal) acceleration of the bob and gives no torque about the support",
+          "o": [
+            "provides the radial (centripetal) acceleration of the bob and gives no torque about the support",
+            "provides the restoring torque that brings the bob back",
+            "is zero at every point of the swing",
+            "is the only force that changes the angular displacement of the bob"
+          ]
+        },
+        {
+          "b": "Understand",
+          "d": "Hard",
+          "t": "mcq",
+          "m": 1,
+          "q": "The negative sign in the expression tau = -L (mg sin(theta)) for the torque on the bob about the support shows that",
+          "a": "the torque tends to reduce the angular displacement",
+          "o": [
+            "the torque tends to reduce the angular displacement",
+            "the force of gravity acts upwards",
+            "the tension in the string is negative",
+            "the bob slows down at every point of its swing"
+          ]
+        },
+        {
+          "b": "Understand",
+          "d": "Hard",
+          "t": "mcq",
+          "m": 1,
+          "q": "For theta = 15 degrees the book's table gives theta = 0.262 rad and sin(theta) = 0.259. This illustrates that",
+          "a": "for fairly small angles sin(theta) is nearly equal to theta expressed in radians",
+          "o": [
+            "for fairly small angles sin(theta) is nearly equal to theta expressed in radians",
+            "sin(theta) is nearly equal to theta expressed in degrees",
+            "sin(theta) is always greater than theta expressed in radians",
+            "the approximation sin(theta) = theta is useless beyond 5 degrees"
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "A simple pendulum of length 1.6 m makes small oscillations where g = 10 m/s^2. Its period, in terms of pi, is",
+          "a": "0.8 pi s",
+          "o": [
+            "0.8 pi s",
+            "5 pi s",
+            "0.32 pi s",
+            "0.4 pi s"
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Easy",
+          "t": "fill_blank",
+          "m": 1,
+          "q": "A simple pendulum of length 0.9 m makes small oscillations where g = 10 m/s^2. Its period is ____ x pi s (write a decimal).",
+          "a": "0.6"
+        },
+        {
+          "b": "Apply",
+          "d": "Hard",
+          "t": "mcq",
+          "m": 1,
+          "q": "The length of a simple pendulum is increased to four times its original value at the same place. Its period for small oscillations becomes",
+          "a": "twice the original period",
+          "o": [
+            "twice the original period",
+            "four times the original period",
+            "half the original period",
+            "sixteen times the original period"
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Hard",
+          "t": "mcq",
+          "m": 1,
+          "q": "A simple pendulum of length 0.4 m makes small oscillations where g = 10 m/s^2. The angular frequency of its oscillations is",
+          "a": "5 rad/s",
+          "o": [
+            "5 rad/s",
+            "25 rad/s",
+            "0.2 rad/s",
+            "2 rad/s"
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Hard",
+          "t": "short_answer",
+          "m": 2,
+          "q": "Find the length of a simple pendulum whose period for small oscillations is 1 s. Take g = 9.8 m/s^2 and pi^2 = 9.8.",
+          "a": "T = 2 pi sqrt(L/g) gives L = g T^2/(4 pi^2) = (9.8 x 1^2)/(4 x 9.8) = 0.25 m.",
+          "s": [
+            [
+              "Rearranges T = 2 pi sqrt(L/g) to L = g T^2/(4 pi^2)",
+              1
+            ],
+            [
+              "L = 0.25 m",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Hardest",
+          "t": "long_answer",
+          "m": 3,
+          "q": "A simple pendulum has a period of 2.0 s for small oscillations on the Earth, where g = 10.0 m/s^2. It is taken to the Moon, where g = 1.6 m/s^2. Find its period there.",
+          "a": "T = 2 pi sqrt(L/g), and L is unchanged, so T(Moon)/T(Earth) = sqrt(g(Earth)/g(Moon)) = sqrt(10.0/1.6) = sqrt(6.25) = 2.5. Hence T(Moon) = 2.5 x 2.0 = 5.0 s. (Equally, find L = g T^2/(4 pi^2) from the Earth data and substitute it with g = 1.6 m/s^2.)",
+          "s": [
+            [
+              "Uses the same L at both places, so T is proportional to 1/sqrt(g) (or finds L from the Earth data)",
+              1
+            ],
+            [
+              "sqrt(10.0/1.6) = 2.5",
+              1
+            ],
+            [
+              "Period on the Moon = 5.0 s",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Analyse",
+          "d": "Hard",
+          "t": "assertion_reason",
+          "m": 1,
+          "q": "Assertion (A): For theta = 20 degrees, which is 0.349 rad, sin(theta) = 0.342 differs from theta in radians by more than 10 per cent. Reason (R): When theta is small and measured in radians, sin(theta) can be approximated by theta. Choose the correct option.",
+          "a": "A is false, R is true",
+          "o": [
+            "A is false, R is true",
+            "Both A and R are true, and R is the correct explanation of A",
+            "Both A and R are true, but R is not the correct explanation of A",
+            "A is true, R is false"
+          ]
+        },
+        {
+          "b": "Analyse",
+          "d": "Hard",
+          "t": "short_answer",
+          "m": 2,
+          "q": "Two simple pendulums at the same place have lengths 0.9 m and 0.1 m and both make small oscillations. Compare their periods, and find how many oscillations the shorter one completes while the longer one completes 10.",
+          "a": "The period is proportional to sqrt(L), so T(long)/T(short) = sqrt(0.9/0.1) = sqrt(9) = 3: the longer pendulum has three times the period of the shorter. In the time of 10 oscillations of the longer pendulum the shorter one completes 10 x 3 = 30 oscillations.",
+          "s": [
+            [
+              "Ratio of periods = sqrt(0.9/0.1) = 3 (longer pendulum has three times the period)",
+              1
+            ],
+            [
+              "Shorter pendulum completes 30 oscillations",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Analyse",
+          "d": "Hardest",
+          "t": "long_answer",
+          "m": 3,
+          "q": "For a simple pendulum of length L and bob of mass m, the torque about the support is tau = -L (mg sin(theta)) and tau = I alpha, where I is the moment of inertia about the support. Starting from these, show that small oscillations are simple harmonic, and obtain the period in terms of L and g.",
+          "a": "I alpha = -m g L sin(theta), so alpha = -(m g L/I) sin(theta). For small theta in radians sin(theta) is nearly theta, so alpha = -(m g L/I) theta. This has the same form as a = -omega^2 x with the angular displacement as the variable, so the motion is SHM with omega = sqrt(m g L/I) and T = 2 pi sqrt(I/(m g L)). The string is massless, so I = m L^2, giving T = 2 pi sqrt(m L^2/(m g L)) = 2 pi sqrt(L/g).",
+          "s": [
+            [
+              "alpha = -(m g L/I) sin(theta), which becomes -(m g L/I) theta for small theta",
+              1
+            ],
+            [
+              "Compares with a = -omega^2 x: SHM with omega = sqrt(m g L/I), T = 2 pi sqrt(I/(m g L))",
+              1
+            ],
+            [
+              "Uses I = m L^2 to get T = 2 pi sqrt(L/g)",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Evaluate",
+          "d": "Hard",
+          "t": "short_answer",
+          "m": 2,
+          "q": "A student says: 'The motion of a simple pendulum is simple harmonic for any angle of swing, even 60 degrees, because the formula for its period does not contain the angle.' Evaluate this statement.",
+          "a": "The statement is wrong. The restoring torque is proportional to sin(theta), not to theta. The period formula is obtained only after replacing sin(theta) by theta, which is a good approximation only for small angles (the book's table shows it holding up to about 20 degrees). For a large angle such as 60 degrees sin(theta) differs appreciably from theta in radians, so the angular acceleration is not proportional to the angular displacement and the motion is not simple harmonic.",
+          "s": [
+            [
+              "Judgement - incorrect: the formula rests on the approximation sin(theta) = theta, valid only for small angles",
+              1
+            ],
+            [
+              "For large angles the restoring torque (proportional to sin(theta)) is not proportional to theta, so the motion is not SHM",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Create",
+          "d": "Hardest",
+          "t": "long_answer",
+          "m": 3,
+          "q": "Design a simple pendulum that has a period of 3 s for small oscillations at a place where g = 10 m/s^2 (take pi^2 = 10). State its length, say what you would choose for the bob's mass and the angle of swing and why, and predict the period of your pendulum at a place where g = 2.5 m/s^2.",
+          "a": "L = g T^2/(4 pi^2) = (10 x 9)/(4 x 10) = 2.25 m. Any small bob will do (for example 0.1 kg), since the period does not depend on the mass; the angle of swing should be kept small (well within about 20 degrees) so that sin(theta) is nearly theta and the motion is simple harmonic. Where g = 2.5 m/s^2, g is one-quarter as large, so T is sqrt(4) = 2 times as long: T = 6 s (check: 2 pi sqrt(2.25/2.5) = 2 pi x 0.949 = 6 s with pi^2 = 10).",
+          "s": [
+            [
+              "Length L = g T^2/(4 pi^2) = 2.25 m",
+              1
+            ],
+            [
+              "Any bob mass (period independent of mass) and a small angle of swing so that the motion is SHM",
+              1
+            ],
+            [
+              "Period where g = 2.5 m/s^2 is 6 s, by any correct method",
+              1
+            ]
+          ]
+        }
+      ]
+    }
+  ]
+}

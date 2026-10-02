@@ -1,0 +1,2992 @@
+{
+  "subject": {
+    "code": "PHY11",
+    "name": "Physics",
+    "board": "CBSE",
+    "class": 11
+  },
+  "source": {
+    "publisher": "NCERT",
+    "title": "Physics Part II",
+    "edition": "Textbook for Class XI Part II, Reprint 2026-27",
+    "year": 2026
+  },
+  "chapter": {
+    "part": "II",
+    "chapter_no": 9,
+    "name": "Mechanical Properties of Fluids",
+    "blurb": "The chapter studies liquids and gases as fluids: the pressure in a fluid at rest, Pascal's law, the increase of pressure with depth, and the barometer, manometer and hydraulic machines built on these ideas. It then treats fluids in motion through streamline flow, the equation of continuity and Bernoulli's principle with its applications to the speed of efflux and dynamic lift. Finally it introduces viscosity with Stokes' law and terminal velocity, and surface tension with the angle of contact, drops and bubbles, and capillary rise.",
+    "source_code": "keph202",
+    "order_index": 9
+  },
+  "scope_in": [
+    {
+      "item": "State what distinguishes fluids from solids (ability to flow, no definite shape, very small resistance to shear stress) and liquids from gases (fixed volume, compressibility)",
+      "pages": "180, 197"
+    },
+    {
+      "item": "Define pressure as normal force per unit area, explain why the force of a fluid at rest on a surface is normal and why pressure is a scalar, give its dimensions and SI unit (Pa) and use 1 atm = 1.01 x 10^5 Pa; calculate pressure from force and area",
+      "pages": "180-182, 197-198"
+    },
+    {
+      "item": "Define density and relative density, give their dimensions and units, and use them in calculations",
+      "pages": "181"
+    },
+    {
+      "item": "State Pascal's law (pressure the same at the same height and in all directions in a fluid at rest; applied pressure transmitted undiminished) and follow its proof with a prism-shaped and a bar-shaped fluid element",
+      "pages": "182, 185, 198"
+    },
+    {
+      "item": "Explain the hydraulic lift and hydraulic brakes and calculate forces, mechanical advantage A2/A1 and piston displacements (L1 A1 = L2 A2)",
+      "pages": "185-186"
+    },
+    {
+      "item": "Use P2 - P1 = rho g h and P = Pa + rho g h to find absolute and gauge pressure at a depth; explain the hydrostatic paradox",
+      "pages": "182-185, 198-199"
+    },
+    {
+      "item": "Describe atmospheric pressure, the mercury barometer (Pa = rho g h, about 76 cm of mercury), the units torr and bar, and the open-tube manometer; solve U-tube problems using equal pressure at equal level",
+      "pages": "183-184, 198, 200"
+    },
+    {
+      "item": "Define steady flow and streamline, explain why streamlines do not cross, distinguish laminar and turbulent flow, and note that flow becomes turbulent beyond a critical speed",
+      "pages": "186-187, 199"
+    },
+    {
+      "item": "State and apply the equation of continuity A v = constant for an incompressible fluid as conservation of mass, including volume flow rate",
+      "pages": "187, 198, 201"
+    },
+    {
+      "item": "State Bernoulli's equation P + (1/2) rho v^2 + rho g h = constant along a streamline, outline its derivation from the work-energy theorem, state its restrictions (steady, non-viscous, incompressible flow) and apply it between two named points",
+      "pages": "187-188, 198-200"
+    },
+    {
+      "item": "Derive and use the speed of efflux, v = sqrt(2 g h + 2(P - Pa)/rho), and Torricelli's law v = sqrt(2 g h) for an open tank",
+      "pages": "188-189"
+    },
+    {
+      "item": "Explain dynamic lift on a spinning ball (Magnus effect) and on an aerofoil, and estimate lift from the pressure difference (rho/2)(v2^2 - v1^2) times the wing area",
+      "pages": "189-190, 200"
+    },
+    {
+      "item": "Describe viscosity as internal friction between layers, define the coefficient of viscosity eta = (F/A)/(v/l), give its units and dimensions and its variation with temperature for liquids and gases, and calculate eta for a film between plates",
+      "pages": "190-192, 198-199"
+    },
+    {
+      "item": "State Stokes' law F = 6 pi eta a v and use the terminal velocity v_t = 2 a^2 (rho - sigma) g/(9 eta) of a sphere falling through a fluid",
+      "pages": "192, 198"
+    },
+    {
+      "item": "Explain surface energy and surface tension from molecular attraction; use S = F/(2 l) for a film on a slider, S = m g/(2 l) for the plate method and energy = S x area; state that surface tension falls with temperature",
+      "pages": "192-195, 198-201"
+    },
+    {
+      "item": "Define angle of contact, use S_la cos theta + S_sl = S_sa, and relate acute and obtuse angles of contact to wetting and non-wetting, including the action of wetting and water-proofing agents",
+      "pages": "195-196, 199-200"
+    },
+    {
+      "item": "Explain why drops and bubbles are spherical and calculate the excess pressure 2 S/r for a liquid drop or an air bubble inside a liquid and 4 S/r for a soap bubble in air",
+      "pages": "196-197, 201"
+    },
+    {
+      "item": "Explain capillary rise and use h = 2 S cos theta/(rho g a), including the fall of mercury in a glass capillary",
+      "pages": "196-197"
+    }
+  ],
+  "scope_out": [
+    {
+      "item": "Venturi-meter and the measurement of flow speed with it",
+      "reason": "Removed from this rationalised edition; Section 9.4 keeps only the speed of efflux (9.4.1) and dynamic lift (9.4.2) as applications of Bernoulli's principle"
+    },
+    {
+      "item": "Blood flow and heart attack, and the atomiser, sprayer, carburettor, filter pump and Bunsen burner as applications of Bernoulli's principle",
+      "reason": "Not present in this edition"
+    },
+    {
+      "item": "Reynolds number, the formula for critical velocity, and the criteria for laminar and turbulent flow",
+      "reason": "Section removed; only the bare term 'critical speed' appears once on p. 187 and Exercise 9.3(e) is a leftover that no text supports"
+    },
+    {
+      "item": "Poiseuille's formula for the flow of a viscous liquid through a tube",
+      "reason": "Not taught in this edition; Exercise 9.13 (p. 200) is a leftover from older editions"
+    },
+    {
+      "item": "Detergents and surface tension (how detergent molecules remove grease), and the variation of surface tension with impurities",
+      "reason": "Section removed; only one sentence on wetting agents and water-proofing agents remains (p. 196), and only that sentence is used"
+    },
+    {
+      "item": "Archimedes' principle, buoyant force calculations and the laws of floatation",
+      "reason": "Not taught in this chapter; the buoyant force is only named in the terminal-velocity balance on p. 192"
+    },
+    {
+      "item": "Appendix 9.1 (blood pressure) and the Additional Exercises",
+      "reason": "Listed in the chapter's opening contents on p. 180 but not printed in this edition; the chapter ends with Exercise 9.20 on p. 201"
+    },
+    {
+      "item": "Derivation of Stokes' law",
+      "reason": "The text states 'We shall not derive Stokes' law' (p. 192)"
+    },
+    {
+      "item": "Memorised numerical values from Tables 9.1, 9.2 and 9.3 (densities, viscosities, surface tensions, heats of vaporisation)",
+      "reason": "Reference tables; every question gives the value it needs in the stem"
+    },
+    {
+      "item": "The inequality between S_sl and S_la as the test for an obtuse or acute angle of contact",
+      "reason": "The condition printed on p. 195 (S_sl > S_la for an obtuse angle) does not follow from Eq. (9.22), which gives obtuse when S_sl > S_sa; questions use Eq. (9.22) directly and never the printed inequality"
+    },
+    {
+      "item": "Variation of atmospheric pressure with altitude as a formula, and the compressibility or bulk modulus of fluids as a calculation",
+      "reason": "Only qualitative remarks appear here (pp. 180, 184); bulk modulus belongs to Chapter 8"
+    },
+    {
+      "item": "Points to Ponder as separate examinable content",
+      "reason": "Not examinable on their own; used only where they repeat the main text or Summary"
+    }
+  ],
+  "concepts": [
+    {
+      "code": "C11P-9.1",
+      "name": "Fluids, pressure and density",
+      "description": "What distinguishes fluids from solids, the definition of pressure as normal force per unit area and why it is a scalar, its unit and dimensions, and density and relative density.",
+      "idea": "Liquids and gases can flow because they offer very little resistance to shear stress; what a fluid at rest does to any surface is described by its pressure, the normal force per unit area, and how much matter it packs into a volume is described by its density.",
+      "rule": "A fluid has no definite shape of its own; solids and liquids have a fixed volume while a gas fills its container, and solids and liquids are far less compressible than gases. A fluid at rest exerts a force that is always normal to any surface in contact with it. Average pressure P_av = F/A, where F is the magnitude of the normal force on area A. Pressure is a scalar; its dimensions are [M L^-1 T^-2] and its SI unit is N/m^2, named the pascal (Pa); 1 atm = 1.013 x 10^5 Pa (1.01 x 10^5 Pa in the Summary). Density rho = m/V, dimensions [M L^-3], SI unit kg/m^3; a liquid is largely incompressible so its density is nearly constant, while the density of a gas varies greatly with pressure. Relative density = density of the substance / density of water at 4 degrees C (1.0 x 10^3 kg/m^3); it is a dimensionless positive scalar.",
+      "example": "A normal force of 50 N spread uniformly over 0.25 m^2 gives P = F/A = 50/0.25 = 200 Pa. A liquid of relative density 0.9 has density 0.9 x 1.0 x 10^3 = 900 kg/m^3.",
+      "difficulty_base": "Easy",
+      "questions": [
+        {
+          "b": "Remember",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "Liquids and gases are together called fluids because they",
+          "a": "can flow",
+          "o": [
+            "can flow",
+            "have a fixed volume",
+            "have a definite shape of their own",
+            "cannot be compressed at all"
+          ]
+        },
+        {
+          "b": "Remember",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "The dimensions of pressure are",
+          "a": "[M L^-1 T^-2]",
+          "o": [
+            "[M L^-1 T^-2]",
+            "[M L T^-2]",
+            "[M L^-3]",
+            "[M L^2 T^-2]"
+          ]
+        },
+        {
+          "b": "Remember",
+          "d": "Easy",
+          "t": "fill_blank",
+          "m": 1,
+          "q": "The SI unit of pressure, 1 N/m^2, is named the ____ (write the name of the unit as one word).",
+          "a": "pascal"
+        },
+        {
+          "b": "Remember",
+          "d": "Hard",
+          "t": "mcq",
+          "m": 1,
+          "q": "Which of the following statements about fluids is NOT correct?",
+          "a": "A fluid at rest resists a shear stress as strongly as a solid does",
+          "o": [
+            "A fluid at rest resists a shear stress as strongly as a solid does",
+            "A fluid has no definite shape of its own",
+            "A gas fills the entire volume of its container",
+            "Solids and liquids have much lower compressibility than gases"
+          ],
+          "rev": true
+        },
+        {
+          "b": "Understand",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "The same force is applied to the skin first through a sharp needle and then through the back of a spoon. Only the needle pierces the skin because",
+          "a": "the force acts on a smaller area, so the pressure is greater",
+          "o": [
+            "the force acts on a smaller area, so the pressure is greater",
+            "the needle exerts a larger force than the spoon",
+            "the needle has a smaller mass than the spoon",
+            "pressure does not depend on the area of contact"
+          ]
+        },
+        {
+          "b": "Understand",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "The force exerted by a fluid at rest on a surface in contact with it is always",
+          "a": "normal (perpendicular) to the surface",
+          "o": [
+            "normal (perpendicular) to the surface",
+            "parallel to the surface",
+            "vertically downward, whatever the orientation of the surface",
+            "inclined at 45 degrees to the surface"
+          ]
+        },
+        {
+          "b": "Understand",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "Relative density has no unit because it is",
+          "a": "a ratio of two densities",
+          "o": [
+            "a ratio of two densities",
+            "a product of a density and a volume",
+            "defined only for liquids",
+            "always equal to 1"
+          ]
+        },
+        {
+          "b": "Understand",
+          "d": "Hard",
+          "t": "mcq",
+          "m": 1,
+          "q": "A fluid at rest exerts no force component parallel to a surface in contact with it. Which is the chapter's argument for this?",
+          "a": "By Newton's third law the surface would then push the fluid parallel to itself and the fluid would flow, which contradicts its being at rest",
+          "o": [
+            "By Newton's third law the surface would then push the fluid parallel to itself and the fluid would flow, which contradicts its being at rest",
+            "A fluid at rest has no weight",
+            "The density of a fluid at rest is the same everywhere",
+            "A fluid at rest exerts no force of any kind on a surface"
+          ]
+        },
+        {
+          "b": "Understand",
+          "d": "Hard",
+          "t": "mcq",
+          "m": 1,
+          "q": "The density of a liquid is taken to be nearly constant at all pressures, while that of a gas is not, because",
+          "a": "a liquid is largely incompressible, whereas the volume of a gas changes greatly with pressure",
+          "o": [
+            "a liquid is largely incompressible, whereas the volume of a gas changes greatly with pressure",
+            "a liquid has no fixed volume, whereas a gas has one",
+            "a gas always has more mass than a liquid",
+            "pressure acts only on gases and not on liquids"
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "A force of 600 N acts normally and uniformly on a surface of area 0.2 m^2. The average pressure on the surface is",
+          "a": "3000 Pa",
+          "o": [
+            "3000 Pa",
+            "120 Pa",
+            "300 Pa",
+            "3.3 x 10^-4 Pa"
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Easy",
+          "t": "fill_blank",
+          "m": 1,
+          "q": "A block of volume 0.002 m^3 has a mass of 5.4 kg. Its density is ____ kg/m^3 (write a whole number).",
+          "a": "2700"
+        },
+        {
+          "b": "Apply",
+          "d": "Hard",
+          "t": "mcq",
+          "m": 1,
+          "q": "The relative density of a metal is 7.8. Taking the density of water at 4 degrees C as 1.0 x 10^3 kg/m^3, the mass of 0.5 m^3 of the metal is",
+          "a": "3900 kg",
+          "o": [
+            "3900 kg",
+            "7800 kg",
+            "3.9 kg",
+            "15600 kg"
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Hard",
+          "t": "short_answer",
+          "m": 2,
+          "q": "A girl of mass 48 kg balances on one heel of her shoe. The heel touches the horizontal floor over an area of 1.2 cm^2. Taking g = 10 m/s^2, find the pressure exerted by the heel on the floor, in Pa.",
+          "a": "Normal force F = mg = 48 x 10 = 480 N. Area A = 1.2 cm^2 = 1.2 x 10^-4 m^2. Pressure P = F/A = 480/(1.2 x 10^-4) = 4.0 x 10^6 Pa.",
+          "s": [
+            [
+              "Finds F = 480 N and converts the area to 1.2 x 10^-4 m^2",
+              1
+            ],
+            [
+              "P = F/A = 4.0 x 10^6 Pa",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Hard",
+          "t": "mcq",
+          "m": 1,
+          "q": "A pressure of 2.02 x 10^5 Pa, expressed in atmospheres (use 1 atm = 1.01 x 10^5 Pa), is",
+          "a": "2 atm",
+          "o": [
+            "2 atm",
+            "0.5 atm",
+            "20 atm",
+            "2.04 x 10^10 atm"
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Hardest",
+          "t": "long_answer",
+          "m": 3,
+          "q": "A rectangular brick of mass 3.0 kg measures 20 cm x 10 cm x 5 cm. Taking g = 10 m/s^2, find (a) its density in kg/m^3, (b) the pressure it exerts on a horizontal table when it rests on its largest face, and (c) the pressure when it rests on its smallest face.",
+          "a": "(a) Volume = 0.20 x 0.10 x 0.05 = 1.0 x 10^-3 m^3, so density = m/V = 3.0/(1.0 x 10^-3) = 3000 kg/m^3. (b) Weight = 3.0 x 10 = 30 N. Largest face = 0.20 x 0.10 = 0.020 m^2, so P = 30/0.020 = 1500 Pa. (c) Smallest face = 0.10 x 0.05 = 0.0050 m^2, so P = 30/0.0050 = 6000 Pa.",
+          "s": [
+            [
+              "Density = 3.0/(1.0 x 10^-3) = 3000 kg/m^3",
+              1
+            ],
+            [
+              "Largest face 0.020 m^2: P = 30/0.020 = 1500 Pa",
+              1
+            ],
+            [
+              "Smallest face 0.0050 m^2: P = 30/0.0050 = 6000 Pa",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Analyse",
+          "d": "Hard",
+          "t": "assertion_reason",
+          "m": 1,
+          "q": "Assertion (A): A circus performer is unharmed when a heavy load rests on a large, strong wooden plank laid across his chest, although the same load resting on a small part of his chest could crack his ribs. Reason (R): For a given force, the pressure is smaller when the area over which the force acts is larger. Choose the correct option.",
+          "a": "Both A and R are true, and R is the correct explanation of A",
+          "o": [
+            "Both A and R are true, and R is the correct explanation of A",
+            "Both A and R are true, but R is not the correct explanation of A",
+            "A is true, R is false",
+            "A is false, R is true"
+          ]
+        },
+        {
+          "b": "Analyse",
+          "d": "Hard",
+          "t": "short_answer",
+          "m": 2,
+          "q": "Two solid cubes P and Q are made of the same metal. The edge of Q is twice as long as the edge of P. Each rests on one face on a horizontal table. Compare the pressures they exert on the table, giving your reasoning.",
+          "a": "Weight is proportional to volume, i.e. to (edge)^3, and the contact area is proportional to (edge)^2. So pressure = weight/area is proportional to the edge length. Q's weight is 8 times and its area 4 times that of P, so Q exerts twice the pressure that P exerts.",
+          "s": [
+            [
+              "Weight scales as edge^3 (8 times) and contact area as edge^2 (4 times)",
+              1
+            ],
+            [
+              "Pressure of Q = 2 x pressure of P",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Analyse",
+          "d": "Hardest",
+          "t": "long_answer",
+          "m": 3,
+          "q": "A filled water tank of total mass 2400 kg stands on four identical legs, each with a square foot of side 15 cm. Take g = 10 m/s^2. (a) Find the pressure the legs exert on the floor. (b) The floor can safely bear a pressure of at most 2.0 x 10^5 Pa. Find the minimum total contact area needed and decide whether the four legs are adequate.",
+          "a": "(a) Force = 2400 x 10 = 24000 N. Area of one foot = 0.15 x 0.15 = 0.0225 m^2, total = 4 x 0.0225 = 0.090 m^2. P = 24000/0.090 = 2.67 x 10^5 Pa (about 2.7 x 10^5 Pa). (b) Minimum area = F/P_max = 24000/(2.0 x 10^5) = 0.12 m^2. The legs give only 0.090 m^2, less than 0.12 m^2, so the pressure exceeds the safe limit and the legs are not adequate (wider feet or a base plate are needed).",
+          "s": [
+            [
+              "Total contact area 0.090 m^2 and P = 24000/0.090 = 2.67 x 10^5 Pa",
+              1
+            ],
+            [
+              "Minimum area = 24000/(2.0 x 10^5) = 0.12 m^2",
+              1
+            ],
+            [
+              "Conclusion: 0.090 m^2 < 0.12 m^2 (or 2.67 x 10^5 Pa > 2.0 x 10^5 Pa), so the legs are not adequate",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Evaluate",
+          "d": "Hard",
+          "t": "short_answer",
+          "m": 2,
+          "q": "A student argues: 'Pressure is force divided by area, and force is a vector, so pressure must be a vector.' Evaluate this argument using the chapter.",
+          "a": "The argument is wrong. What appears in the definition is not the vector force but the magnitude of the component of the force normal to the area. At a point in a fluid at rest the pressure is the same in all directions, so no direction can be assigned to it. Pressure is therefore a scalar quantity.",
+          "s": [
+            [
+              "Judgement: wrong, because only the normal component (a magnitude) of the force enters the definition",
+              1
+            ],
+            [
+              "Pressure at a point acts equally in all directions, so it has no direction and is a scalar",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Create",
+          "d": "Hardest",
+          "t": "long_answer",
+          "m": 3,
+          "q": "You are given a brick, a weighing balance, a ruler and a tray of soft, levelled sand. Devise an investigation to show that the effect of a force on a surface depends on the area over which it acts. State what you would do, what you would measure and calculate, and what result you expect.",
+          "a": "Weigh the brick to get its mass m, so the force on the sand is its weight mg in every trial. Measure the edges with the ruler and calculate the areas of its three different faces. Place the brick gently on the levelled sand on each face in turn and measure the depth of the dent each time. Calculate the pressure mg/A for each face. Expected result: the force is the same each time, but the dent is deepest when the brick stands on its smallest face (largest pressure) and shallowest on its largest face (smallest pressure), showing that the effect depends on force per unit area.",
+          "s": [
+            [
+              "Keeps the force the same (same brick, weight mg) while changing the contact area by using different faces",
+              1
+            ],
+            [
+              "Measures the face areas and the depth of the dent, and calculates P = mg/A for each face",
+              1
+            ],
+            [
+              "Expected result: smallest face gives the largest pressure and deepest dent, so the effect depends on force per unit area",
+              1
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "code": "C11P-9.2",
+      "name": "Pascal's law and hydraulic machines",
+      "description": "Pascal's law in both its forms (pressure the same at the same height and in all directions; applied pressure transmitted undiminished) and its use in the hydraulic lift and hydraulic brakes.",
+      "idea": "In a fluid at rest the pressure at a point does not depend on direction, and any extra pressure applied to an enclosed fluid shows up everywhere in it; a small force on a small piston can therefore hold a large force on a large piston.",
+      "rule": "Pascal's law: the pressure in a fluid at rest is the same at all points at the same height, and it is the same in all directions. Its other form: whenever external pressure is applied on any part of a fluid contained in a vessel, it is transmitted undiminished and equally in all directions. Hydraulic lift: a force F1 on a small piston of area A1 produces pressure P = F1/A1, which is transmitted to a larger piston of area A2, giving F2 = P A2 = F1 A2/A1. The factor A2/A1 is the mechanical advantage. For an incompressible liquid the volume pushed in equals the volume pushed out, L1 A1 = L2 A2. Hydraulic brakes work on the same principle, and the pressure is transmitted equally to all wheel cylinders. Atmospheric pressure is common to both pistons and is ignored.",
+      "example": "A force F1 = 20 N on a piston of area 2 cm^2 gives, on a piston of area 50 cm^2 at the same level, F2 = F1 A2/A1 = 20 x 50/2 = 500 N.",
+      "difficulty_base": "Hard",
+      "questions": [
+        {
+          "b": "Remember",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "Pascal's law states that an external pressure applied to any part of a fluid contained in a vessel is",
+          "a": "transmitted undiminished and equally in all directions",
+          "o": [
+            "transmitted undiminished and equally in all directions",
+            "transmitted only vertically downward",
+            "reduced in proportion to the distance from the point of application",
+            "transmitted only to the walls of the vessel"
+          ]
+        },
+        {
+          "b": "Remember",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "Which of these devices is based on Pascal's law?",
+          "a": "The hydraulic brakes of a car",
+          "o": [
+            "The hydraulic brakes of a car",
+            "A simple pendulum",
+            "A spring balance",
+            "An aerofoil"
+          ]
+        },
+        {
+          "b": "Remember",
+          "d": "Easy",
+          "t": "fill_blank",
+          "m": 1,
+          "q": "In a hydraulic lift the factor by which the force applied at the small piston is multiplied at the large piston is called the mechanical ____ of the device (one word).",
+          "a": "advantage"
+        },
+        {
+          "b": "Remember",
+          "d": "Hard",
+          "t": "mcq",
+          "m": 1,
+          "q": "Which of the following statements about a hydraulic lift, whose two pistons are at the same level, is NOT correct?",
+          "a": "The pressure under the larger piston is greater than the pressure under the smaller piston",
+          "o": [
+            "The pressure under the larger piston is greater than the pressure under the smaller piston",
+            "The liquid transmits the applied pressure to the larger piston",
+            "The force on the larger piston is greater than the force applied to the smaller piston",
+            "The larger piston moves through a smaller distance than the smaller piston"
+          ],
+          "rev": true
+        },
+        {
+          "b": "Understand",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "In the proof of Pascal's law a prism-shaped element of fluid at rest is considered. The element is taken to be very small so that",
+          "a": "all its parts are at practically the same depth, so the effect of gravity is the same at all its points",
+          "o": [
+            "all its parts are at practically the same depth, so the effect of gravity is the same at all its points",
+            "its mass is exactly zero",
+            "the fluid inside it is free to flow",
+            "the forces on its faces need not be normal to them"
+          ]
+        },
+        {
+          "b": "Understand",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "According to Pascal's law, the pressure at a point in a fluid at rest",
+          "a": "is the same in all directions",
+          "o": [
+            "is the same in all directions",
+            "is greatest in the downward direction",
+            "acts only on the walls of the container",
+            "is greatest in the horizontal direction"
+          ]
+        },
+        {
+          "b": "Understand",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "In hydraulic brakes the braking effort is equal on all four wheels because",
+          "a": "the pressure set up by pressing the pedal is transmitted equally to all the wheel cylinders",
+          "o": [
+            "the pressure set up by pressing the pedal is transmitted equally to all the wheel cylinders",
+            "each wheel has its own separate pedal",
+            "the brake oil is compressed more near the front wheels",
+            "the force on the pedal is split into four equal forces"
+          ]
+        },
+        {
+          "b": "Understand",
+          "d": "Hard",
+          "t": "mcq",
+          "m": 1,
+          "q": "A piston is pushed into a horizontal cylinder of liquid that carries three open vertical tubes at different points along its length. The liquid rises to the same new level in all three tubes. This shows that",
+          "a": "the increase in pressure is distributed uniformly throughout the liquid",
+          "o": [
+            "the increase in pressure is distributed uniformly throughout the liquid",
+            "the liquid is compressed most near the piston",
+            "the pressure rise is greatest in the tube nearest the piston",
+            "the pressure in a liquid depends on the shape of the tube above it"
+          ]
+        },
+        {
+          "b": "Understand",
+          "d": "Hard",
+          "t": "mcq",
+          "m": 1,
+          "q": "When the forces on the two pistons of a pair of connected, water-filled syringes are compared, atmospheric pressure is left out of the calculation because",
+          "a": "it acts on both pistons alike, so it is common to both sides",
+          "o": [
+            "it acts on both pistons alike, so it is common to both sides",
+            "atmospheric pressure does not act on liquids",
+            "it is too small to be measured",
+            "it acts only on the larger piston"
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "In a hydraulic lift the small piston has area 5 cm^2 and the large piston has area 100 cm^2; the pistons are at the same level and their weights are negligible. A force of 40 N is applied to the small piston. The force exerted on the large piston is",
+          "a": "800 N",
+          "o": [
+            "800 N",
+            "2 N",
+            "200 N",
+            "4000 N"
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Easy",
+          "t": "fill_blank",
+          "m": 1,
+          "q": "The two pistons of a hydraulic press have areas 4 cm^2 and 60 cm^2. The mechanical advantage of the press is ____ (write a whole number).",
+          "a": "15"
+        },
+        {
+          "b": "Apply",
+          "d": "Hard",
+          "t": "mcq",
+          "m": 1,
+          "q": "Two syringes filled with water are joined by a water-filled tube. The piston diameters are 2.0 cm and 8.0 cm. A force of 15 N is applied to the smaller piston. The force exerted on the larger piston is",
+          "a": "240 N",
+          "o": [
+            "240 N",
+            "60 N",
+            "3.75 N",
+            "0.94 N"
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Hard",
+          "t": "short_answer",
+          "m": 2,
+          "q": "In a hydraulic system filled with an incompressible liquid, the small piston has area 3.0 cm^2 and the large piston has area 18 cm^2. The small piston is pushed in through 12 cm. How far does the large piston move out?",
+          "a": "The liquid is incompressible, so the volume pushed in equals the volume pushed out: L1 A1 = L2 A2. L2 = L1 A1/A2 = 12 cm x 3.0/18 = 2.0 cm.",
+          "s": [
+            [
+              "Uses equality of volumes, L1 A1 = L2 A2",
+              1
+            ],
+            [
+              "L2 = 12 x 3.0/18 = 2.0 cm",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Hard",
+          "t": "mcq",
+          "m": 1,
+          "q": "A car of mass 1200 kg rests on the large piston of a hydraulic lift; the piston has area 0.15 m^2 and negligible weight. Taking g = 10 m/s^2, the gauge pressure in the liquid just under this piston needed to support the car is",
+          "a": "8.0 x 10^4 Pa",
+          "o": [
+            "8.0 x 10^4 Pa",
+            "1.8 x 10^3 Pa",
+            "8.0 x 10^3 Pa",
+            "1.25 x 10^-5 Pa"
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Hardest",
+          "t": "long_answer",
+          "m": 3,
+          "q": "In a car lift, compressed air exerts a force F1 on a small piston of radius 4.0 cm. The pressure is transmitted through a liquid to a second piston of radius 20 cm at the same level, which carries a car of mass 1500 kg. Take g = 10 m/s^2 and pi = 3.14; ignore the weights of the pistons. Find (a) F1 and (b) the pressure, over and above atmospheric pressure, that the compressed air must exert on the small piston, in Pa to 3 significant figures.",
+          "a": "(a) Load F2 = 1500 x 10 = 15000 N. Pressure is transmitted undiminished, so F1/A1 = F2/A2 and F1 = F2 (A1/A2) = 15000 x (4.0/20)^2 = 15000 x 0.04 = 600 N. (b) A1 = pi r^2 = 3.14 x (0.040)^2 = 5.024 x 10^-3 m^2. P = F1/A1 = 600/(5.024 x 10^-3) = 1.19 x 10^5 Pa.",
+          "s": [
+            [
+              "States F1/A1 = F2/A2 with F2 = 15000 N",
+              1
+            ],
+            [
+              "Area ratio (4.0/20)^2 = 0.04, so F1 = 600 N",
+              1
+            ],
+            [
+              "P = 600/(3.14 x 0.040^2) = 1.19 x 10^5 Pa",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Analyse",
+          "d": "Hard",
+          "t": "multi_statement",
+          "m": 1,
+          "q": "Consider the statements: (I) In a hydraulic lift with both pistons at the same level, the pressure applied at the small piston reaches the large piston undiminished. (II) In a hydraulic lift the force applied at the small piston reaches the large piston unchanged in magnitude. Which is or are correct?",
+          "a": "Only I",
+          "o": [
+            "Only I",
+            "Only II",
+            "Both I and II",
+            "Neither I nor II"
+          ]
+        },
+        {
+          "b": "Analyse",
+          "d": "Hard",
+          "t": "short_answer",
+          "m": 2,
+          "q": "Two points X and Y lie in the same horizontal plane inside a liquid at rest in a vessel of irregular shape. By considering a thin horizontal bar-shaped element of the liquid with its ends at X and Y, explain why the pressures at X and Y are equal.",
+          "a": "The bar of liquid is in equilibrium, so the horizontal forces on its two ends must balance. The ends have the same area of cross-section, so equal forces mean equal pressures: P_X = P_Y. If the pressures were unequal there would be a net horizontal force and the liquid would flow, which does not happen in a liquid at rest.",
+          "s": [
+            [
+              "The element is in equilibrium, so the horizontal forces on its two ends balance",
+              1
+            ],
+            [
+              "Equal end areas give equal pressures; otherwise a net force would make the liquid flow",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Analyse",
+          "d": "Hardest",
+          "t": "long_answer",
+          "m": 3,
+          "q": "A hydraulic press has a small piston of diameter 1.0 cm and a large piston of diameter 5.0 cm at the same level; the liquid is incompressible and the piston weights are negligible. An operator can push the small piston with at most 120 N, and each stroke moves it in through 10 cm. Find (a) the largest force the large piston can exert, (b) how far the large piston moves in one stroke, and (c) how many strokes are needed to move the large piston through 2.0 cm.",
+          "a": "Area ratio A2/A1 = (5.0/1.0)^2 = 25. (a) F2 = F1 A2/A1 = 120 x 25 = 3000 N. (b) Equal volumes: L2 = L1 A1/A2 = 10 cm/25 = 0.40 cm per stroke. (c) Number of strokes = 2.0 cm/0.40 cm = 5.",
+          "s": [
+            [
+              "Area ratio 25 and F2 = 120 x 25 = 3000 N",
+              1
+            ],
+            [
+              "L2 = 10/25 = 0.40 cm per stroke, from equal volumes",
+              1
+            ],
+            [
+              "Strokes = 2.0/0.40 = 5",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Evaluate",
+          "d": "Hard",
+          "t": "short_answer",
+          "m": 2,
+          "q": "A student says: 'A hydraulic lift turns a 10 N push into a 250 N force, so it creates energy out of nothing.' Evaluate this claim.",
+          "a": "The claim is wrong. The force is multiplied by A2/A1 = 25, but because the liquid is incompressible (L1 A1 = L2 A2) the large piston moves only 1/25 of the distance moved by the small piston. The work done on the small piston, F1 L1, therefore equals the work done by the large piston, F2 L2, so no energy is created; the lift only trades distance for force.",
+          "s": [
+            [
+              "Judgement: wrong; the large piston moves a proportionally smaller distance (L1 A1 = L2 A2)",
+              1
+            ],
+            [
+              "So F1 L1 = F2 L2: the work output equals the work input and no energy is created",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Create",
+          "d": "Hardest",
+          "t": "long_answer",
+          "m": 3,
+          "q": "Design a hydraulic lift that can raise a load of 9000 N with an effort of not more than 100 N. Choose an area for each piston and justify your choice with Pascal's law, and state how far the effort piston must move to raise the load through 1.0 cm with the areas you chose. Take the pistons to be at the same level and of negligible weight.",
+          "a": "By Pascal's law the pressure is the same under both pistons, so F1/A1 = F2/A2 and the effort is F1 = F2 A1/A2. For F1 to be at most 100 N the area ratio A2/A1 must be at least 9000/100 = 90. One suitable choice: A1 = 2.0 cm^2 and A2 = 180 cm^2 (ratio 90), giving F1 = 9000 x 2.0/180 = 100 N. Because the liquid is incompressible, L1 A1 = L2 A2, so the effort piston must move L1 = L2 A2/A1 = 1.0 cm x 90 = 90 cm (in practice, several shorter strokes).",
+          "s": [
+            [
+              "Uses F1/A1 = F2/A2 to obtain the condition A2/A1 >= 90",
+              1
+            ],
+            [
+              "Chooses any pair of areas satisfying the condition and shows the effort is 100 N or less",
+              1
+            ],
+            [
+              "Effort distance = (A2/A1) x 1.0 cm for the chosen areas (90 cm for ratio 90), from L1 A1 = L2 A2",
+              1
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "code": "C11P-9.3",
+      "name": "Variation of pressure with depth; atmospheric and gauge pressure",
+      "description": "The pressure difference rho g h between two levels of a fluid at rest, absolute and gauge pressure, the hydrostatic paradox, the mercury barometer, the units torr and bar, and the open-tube manometer.",
+      "idea": "A liquid at rest presses harder the deeper you go, by an amount that depends only on the depth, the density and g, not on the shape or width of the vessel; the atmosphere itself is such a column, and barometers and manometers measure pressure by the height of a liquid column.",
+      "rule": "For two points in a fluid at rest separated by a vertical distance h, the lower point 2 is at the higher pressure: P2 - P1 = rho g h. Below the surface of a liquid open to the atmosphere, the absolute pressure at depth h is P = Pa + rho g h; the excess P - Pa = rho g h is the gauge pressure. The pressure depends on the height of the column and not on the cross-sectional area or the shape of the container (hydrostatic paradox), and is the same at all points at the same horizontal level. The pressure of the atmosphere at a point equals the weight of a column of air of unit cross-sectional area extending from that point to the top of the atmosphere. Mercury barometer: Pa = rho g h, with h about 76 cm of mercury at sea level. 1 torr = pressure of 1 mm of mercury = 133 Pa; 1 bar = 10^5 Pa. An open-tube manometer (a U-tube with one end open to the atmosphere) measures gauge pressure, which is proportional to the difference h in the liquid levels.",
+      "example": "At a depth of 5 m in fresh water (rho = 1000 kg/m^3, g = 10 m/s^2, Pa = 1.01 x 10^5 Pa): gauge pressure = rho g h = 1000 x 10 x 5 = 5.0 x 10^4 Pa; absolute pressure = 1.01 x 10^5 + 0.50 x 10^5 = 1.51 x 10^5 Pa.",
+      "difficulty_base": "Hard",
+      "questions": [
+        {
+          "b": "Remember",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "The excess of pressure, P - Pa, at a depth h below the surface of a liquid open to the atmosphere is called the",
+          "a": "gauge pressure",
+          "o": [
+            "gauge pressure",
+            "absolute pressure",
+            "atmospheric pressure",
+            "critical pressure"
+          ]
+        },
+        {
+          "b": "Remember",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "A pressure equal to that exerted by a 1 mm column of mercury is called a",
+          "a": "torr",
+          "o": [
+            "torr",
+            "bar",
+            "pascal",
+            "atmosphere"
+          ]
+        },
+        {
+          "b": "Remember",
+          "d": "Easy",
+          "t": "fill_blank",
+          "m": 1,
+          "q": "A long glass tube, closed at one end and filled with mercury, is inverted into a trough of mercury. This device for measuring atmospheric pressure is called a mercury ____ (one word).",
+          "a": "barometer"
+        },
+        {
+          "b": "Remember",
+          "d": "Hard",
+          "t": "mcq",
+          "m": 1,
+          "q": "Which of the following does NOT affect the pressure difference between two points in a liquid at rest?",
+          "a": "The area of cross-section of the container",
+          "o": [
+            "The area of cross-section of the container",
+            "The vertical distance between the two points",
+            "The density of the liquid",
+            "The acceleration due to gravity"
+          ],
+          "rev": true
+        },
+        {
+          "b": "Understand",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "Three vessels of different shapes are connected at the bottom by a horizontal pipe and filled with water. The water stands at the same level in all three because",
+          "a": "the pressure at the bottom depends only on the height of the water column, and it must be the same below each vessel",
+          "o": [
+            "the pressure at the bottom depends only on the height of the water column, and it must be the same below each vessel",
+            "each vessel holds the same mass of water",
+            "the vessel with the widest top pushes its water down hardest",
+            "atmospheric pressure is different over each vessel"
+          ]
+        },
+        {
+          "b": "Understand",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "The pressure of the atmosphere at any point is equal to",
+          "a": "the weight of a column of air of unit cross-sectional area extending from that point to the top of the atmosphere",
+          "o": [
+            "the weight of a column of air of unit cross-sectional area extending from that point to the top of the atmosphere",
+            "the total weight of all the air in the atmosphere",
+            "the density of air multiplied by the volume of the atmosphere",
+            "the weight of a column of mercury of unit height"
+          ]
+        },
+        {
+          "b": "Understand",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "In an open-tube manometer one end of the U-tube is connected to the system whose pressure is to be measured. The other end is",
+          "a": "open to the atmosphere",
+          "o": [
+            "open to the atmosphere",
+            "sealed and evacuated",
+            "dipped into a trough of mercury",
+            "connected to a second identical system"
+          ]
+        },
+        {
+          "b": "Understand",
+          "d": "Hard",
+          "t": "mcq",
+          "m": 1,
+          "q": "In a mercury barometer the pressure at the top of the mercury column inside the tube is taken as zero because",
+          "a": "the space above the column contains only mercury vapour, whose pressure is small enough to be neglected",
+          "o": [
+            "the space above the column contains only mercury vapour, whose pressure is small enough to be neglected",
+            "mercury exerts no pressure of its own",
+            "the tube is open to the atmosphere at its upper end",
+            "atmospheric pressure cancels itself out at that point"
+          ]
+        },
+        {
+          "b": "Understand",
+          "d": "Hard",
+          "t": "mcq",
+          "m": 1,
+          "q": "When a person stands upright, the blood pressure is greater at the feet than at the brain because",
+          "a": "the feet are lower, so the taller column of blood above them adds a pressure rho g h",
+          "o": [
+            "the feet are lower, so the taller column of blood above them adds a pressure rho g h",
+            "the feet have a smaller area than the brain",
+            "blood is much denser in the feet",
+            "the value of g is much larger at the feet"
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "The gauge pressure at a depth of 20 m in a lake (density of water = 1000 kg/m^3, g = 10 m/s^2) is",
+          "a": "2.0 x 10^5 Pa",
+          "o": [
+            "2.0 x 10^5 Pa",
+            "3.01 x 10^5 Pa",
+            "2.0 x 10^4 Pa",
+            "2.0 x 10^2 Pa"
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Easy",
+          "t": "fill_blank",
+          "m": 1,
+          "q": "Using 1 bar = 10^5 Pa, a pressure of 250000 Pa is equal to ____ bar (write the number as a decimal).",
+          "a": "2.5"
+        },
+        {
+          "b": "Apply",
+          "d": "Hard",
+          "t": "mcq",
+          "m": 1,
+          "q": "The absolute pressure at a depth of 30 m in the sea (density of sea water = 1.03 x 10^3 kg/m^3, g = 10 m/s^2, atmospheric pressure = 1.01 x 10^5 Pa) is",
+          "a": "4.10 x 10^5 Pa",
+          "o": [
+            "4.10 x 10^5 Pa",
+            "3.09 x 10^5 Pa",
+            "2.08 x 10^5 Pa",
+            "1.32 x 10^5 Pa"
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Hard",
+          "t": "short_answer",
+          "m": 2,
+          "q": "A barometer is made with a liquid of density 1250 kg/m^3 instead of mercury. Taking atmospheric pressure = 1.0 x 10^5 Pa and g = 10 m/s^2, and neglecting the pressure of the vapour above the column, find the height of the liquid column.",
+          "a": "For a barometer Pa = rho g h, so h = Pa/(rho g) = (1.0 x 10^5)/(1250 x 10) = 8.0 m.",
+          "s": [
+            [
+              "Uses Pa = rho g h for the barometer column",
+              1
+            ],
+            [
+              "h = (1.0 x 10^5)/(1250 x 10) = 8.0 m",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Hard",
+          "t": "mcq",
+          "m": 1,
+          "q": "An open-tube manometer containing mercury (density 13.6 x 10^3 kg/m^3) is connected to a vessel of gas. The mercury in the open arm stands 25 cm higher than in the arm connected to the gas. Taking g = 10 m/s^2, the gauge pressure of the gas is",
+          "a": "3.4 x 10^4 Pa",
+          "o": [
+            "3.4 x 10^4 Pa",
+            "3.4 x 10^6 Pa",
+            "1.35 x 10^5 Pa",
+            "3.4 x 10^3 Pa"
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Hardest",
+          "t": "long_answer",
+          "m": 3,
+          "q": "A submarine is at a depth of 500 m in the ocean. Its interior is kept at sea-level atmospheric pressure. Take the density of sea water = 1.03 x 10^3 kg/m^3, g = 10 m/s^2 and atmospheric pressure = 1.01 x 10^5 Pa. Find (a) the gauge pressure at this depth, (b) the absolute pressure at this depth, and (c) the net force on a window of area 0.050 m^2.",
+          "a": "(a) Gauge pressure = rho g h = 1.03 x 10^3 x 10 x 500 = 5.15 x 10^6 Pa. (b) Absolute pressure P = Pa + rho g h = 1.01 x 10^5 + 51.5 x 10^5 = 52.51 x 10^5 Pa = 5.25 x 10^6 Pa. (c) The pressure outside is Pa + rho g h and inside is Pa, so the net pressure on the window is the gauge pressure. F = 5.15 x 10^6 x 0.050 = 2.575 x 10^5 N, about 2.6 x 10^5 N, directed inward.",
+          "s": [
+            [
+              "Gauge pressure = rho g h = 5.15 x 10^6 Pa",
+              1
+            ],
+            [
+              "Absolute pressure = Pa + rho g h = 5.25 x 10^6 Pa",
+              1
+            ],
+            [
+              "Net pressure on the window is the gauge pressure; F = 5.15 x 10^6 x 0.050 = 2.6 x 10^5 N",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Analyse",
+          "d": "Hard",
+          "t": "assertion_reason",
+          "m": 1,
+          "q": "Assertion (A): Water filled to a height of 50 cm in a narrow open jar and water filled to a height of 50 cm in a wide open tub exert the same pressure at the bottom. Reason (R): Atmospheric pressure at sea level supports a column of mercury about 76 cm high. Choose the correct option.",
+          "a": "Both A and R are true, but R is not the correct explanation of A",
+          "o": [
+            "Both A and R are true, but R is not the correct explanation of A",
+            "Both A and R are true, and R is the correct explanation of A",
+            "A is true, R is false",
+            "A is false, R is true"
+          ]
+        },
+        {
+          "b": "Analyse",
+          "d": "Hard",
+          "t": "short_answer",
+          "m": 2,
+          "q": "A U-tube open at both ends contains mercury. Water is poured into the left arm until the water column standing on the mercury there is 27.2 cm high. How much higher is the mercury surface in the right arm than the mercury-water interface in the left arm? (Density of water = 1.0 x 10^3 kg/m^3, density of mercury = 13.6 x 10^3 kg/m^3.)",
+          "a": "Pressure is the same at the same level in the connected mercury. At the level of the mercury-water interface: Pa + rho_w g (27.2 cm) = Pa + rho_m g h. So h = 27.2 x (1.0/13.6) = 2.0 cm. The mercury in the right arm stands 2.0 cm above the interface.",
+          "s": [
+            [
+              "Equates the pressures at the level of the interface: rho_w g h_w = rho_m g h",
+              1
+            ],
+            [
+              "h = 27.2/13.6 = 2.0 cm",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Analyse",
+          "d": "Hardest",
+          "t": "long_answer",
+          "m": 3,
+          "q": "A U-tube contains mercury at the bottom. The left arm holds a 16.0 cm column of water above the mercury and the right arm holds a 20.0 cm column of an oil above the mercury; the two mercury surfaces are then at the same level. (a) Find the relative density of the oil. (b) A further 10.0 cm of water is poured into the left arm and a further 10.0 cm of oil into the right arm. Find the difference between the mercury levels in the two arms, to 2 significant figures, and say in which arm the mercury is lower. (Relative density of mercury = 13.6.)",
+          "a": "(a) The mercury surfaces are level, so the pressures on them are equal: rho_w g (16.0) = rho_oil g (20.0), giving relative density of oil = 16.0/20.0 = 0.80. (b) Now the water column is 26.0 cm, equivalent to 26.0 cm of water, and the oil column is 30.0 cm, equivalent to 30.0 x 0.80 = 24.0 cm of water. The water arm presses harder by 2.0 cm of water, which is balanced by a mercury level difference d with 13.6 d = 2.0, so d = 0.147 cm, about 0.15 cm. The mercury is lower in the left (water) arm.",
+          "s": [
+            [
+              "Equal pressures on level mercury surfaces: relative density of oil = 16.0/20.0 = 0.80",
+              1
+            ],
+            [
+              "New columns: 26.0 cm of water against 30.0 x 0.80 = 24.0 cm water-equivalent; excess 2.0 cm of water on the water side",
+              1
+            ],
+            [
+              "d = 2.0/13.6 = 0.15 cm, with the mercury lower in the water arm",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Evaluate",
+          "d": "Hard",
+          "t": "short_answer",
+          "m": 2,
+          "q": "Using h = Pa/(rho g) with the sea-level density of air 1.29 kg/m^3, a student finds h is about 8 km and concludes that 'the atmosphere ends sharply 8 km above the ground'. Evaluate this conclusion.",
+          "a": "The arithmetic is right only under the assumption that the density of air stays constant with height. In reality the density of air decreases with height (and so does g), so the relation for a liquid-like column of constant density does not apply. The atmosphere extends, with steadily decreasing pressure, to more than 100 km, so the conclusion is wrong.",
+          "s": [
+            [
+              "Identifies the hidden assumption: air density (and g) taken as constant with height",
+              1
+            ],
+            [
+              "In reality density falls with height, so the atmosphere extends to over 100 km; conclusion rejected",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Create",
+          "d": "Hardest",
+          "t": "long_answer",
+          "m": 3,
+          "q": "Design an open-tube manometer to measure the gauge pressure of a gas supply that is expected to be about 2000 Pa. Two liquids are available: water (density 1000 kg/m^3) and mercury (density 13600 kg/m^3). Taking g = 10 m/s^2, calculate the difference in levels each liquid would show, choose the better liquid with a reason, and state how the reading is converted into gauge pressure.",
+          "a": "Gauge pressure = rho g h, so h = P/(rho g). Water: h = 2000/(1000 x 10) = 0.20 m = 20 cm. Mercury: h = 2000/(13600 x 10) = 0.0147 m, about 1.5 cm. Water is the better choice: for this small pressure the low-density liquid gives a large, easily read level difference, whereas the mercury difference is too small to read accurately. In use, one arm of the U-tube is joined to the gas supply and the other is left open to the atmosphere; the measured difference in levels h gives the gauge pressure as rho g h.",
+          "s": [
+            [
+              "Water: h = 2000/(1000 x 10) = 20 cm",
+              1
+            ],
+            [
+              "Mercury: h = 2000/(13600 x 10) = about 1.5 cm",
+              1
+            ],
+            [
+              "Chooses water (low density gives a larger, readable h for a small pressure) and states gauge pressure = rho g h from the level difference",
+              1
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "code": "C11P-9.4",
+      "name": "Streamline flow and the equation of continuity",
+      "description": "Steady flow, streamlines and why they never cross, the equation of continuity A v = constant for an incompressible fluid, and the change to turbulent flow beyond a critical speed.",
+      "idea": "In steady flow every particle passing a given point does exactly what the previous one did, so the flow can be mapped by fixed streamlines; since an incompressible fluid cannot pile up anywhere, it must move faster where the pipe is narrower.",
+      "rule": "The flow is steady if, at any given point, the velocity of each passing fluid particle remains constant in time (the velocity may differ from point to point). A streamline is a curve whose tangent at any point is in the direction of the fluid velocity at that point; it is the path of a particle in steady flow. No two streamlines can cross. Mass crossing each section in the same time is equal: rho_P A_P v_P = rho_R A_R v_R; for an incompressible fluid this becomes the equation of continuity A v = constant, a statement of conservation of mass. A v is the volume flux or flow rate (m^3/s). Where the pipe is narrower the streamlines are closer together and the speed is greater. Steady flow is achieved at low flow speeds; beyond a limiting value called the critical speed the flow becomes turbulent. In laminar flow the velocities at different points may differ in magnitude but their directions are parallel.",
+      "example": "Water enters a section of area 6 cm^2 at 2 m/s and leaves through a section of area 3 cm^2. From A1 v1 = A2 v2, v2 = 6 x 2/3 = 4 m/s.",
+      "difficulty_base": "Hard",
+      "questions": [
+        {
+          "b": "Remember",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "The path taken by a fluid particle in a steady flow is called a",
+          "a": "streamline",
+          "o": [
+            "streamline",
+            "flux line",
+            "critical line",
+            "shear line"
+          ]
+        },
+        {
+          "b": "Remember",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "The equation of continuity, A v = constant, for an incompressible fluid is a statement of the conservation of",
+          "a": "mass",
+          "o": [
+            "mass",
+            "energy",
+            "momentum",
+            "charge"
+          ]
+        },
+        {
+          "b": "Remember",
+          "d": "Easy",
+          "t": "fill_blank",
+          "m": 1,
+          "q": "Steady flow is achieved only at low flow speeds. Beyond a limiting value called the critical speed, the flow loses its steadiness and becomes ____ (one word).",
+          "a": "turbulent"
+        },
+        {
+          "b": "Remember",
+          "d": "Hard",
+          "t": "mcq",
+          "m": 1,
+          "q": "Which of the following statements about streamlines in a steady flow is NOT correct?",
+          "a": "Two streamlines can cross each other at a point where the pipe becomes narrow",
+          "o": [
+            "Two streamlines can cross each other at a point where the pipe becomes narrow",
+            "The tangent to a streamline at any point gives the direction of the fluid velocity at that point",
+            "The map of streamlines stays stationary in time",
+            "Streamlines are closer together where the fluid moves faster"
+          ],
+          "rev": true
+        },
+        {
+          "b": "Understand",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "For an incompressible fluid flowing in a pipe, the product A v of the area of cross-section and the speed represents",
+          "a": "the volume of fluid flowing past per unit time (the volume flux or flow rate)",
+          "o": [
+            "the volume of fluid flowing past per unit time (the volume flux or flow rate)",
+            "the mass of fluid contained in the pipe",
+            "the pressure of the fluid",
+            "the kinetic energy per unit volume of the fluid"
+          ]
+        },
+        {
+          "b": "Understand",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "Water flows steadily from a wide section of a pipe into a narrow section. In the narrow section",
+          "a": "its speed is greater",
+          "o": [
+            "its speed is greater",
+            "its speed is smaller",
+            "its speed is unchanged",
+            "the volume of water passing per second is greater"
+          ]
+        },
+        {
+          "b": "Understand",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "In a laminar flow, as the chapter describes it, the velocities at different points of the fluid",
+          "a": "may have different magnitudes, but their directions are parallel",
+          "o": [
+            "may have different magnitudes, but their directions are parallel",
+            "must be equal in both magnitude and direction",
+            "are random and fluctuate rapidly in time",
+            "are all zero"
+          ]
+        },
+        {
+          "b": "Understand",
+          "d": "Hard",
+          "t": "mcq",
+          "m": 1,
+          "q": "Why can two streamlines never cross in a steady flow?",
+          "a": "At the crossing point an oncoming particle could go either one way or the other, so the flow would not be steady",
+          "o": [
+            "At the crossing point an oncoming particle could go either one way or the other, so the flow would not be steady",
+            "The walls of the pipe keep the streamlines apart",
+            "Streamlines repel one another",
+            "A fluid in steady flow has no velocity at any point"
+          ]
+        },
+        {
+          "b": "Understand",
+          "d": "Hard",
+          "t": "mcq",
+          "m": 1,
+          "q": "When the mouth of a running water tap is partly closed with the fingers, fast jets of water gush out through the gaps. This happens because",
+          "a": "the area available for the flow is reduced, so by the equation of continuity the speed increases",
+          "o": [
+            "the area available for the flow is reduced, so by the equation of continuity the speed increases",
+            "the fingers supply extra energy to the water",
+            "the density of the water increases in the gaps",
+            "atmospheric pressure becomes zero near the fingers"
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "Water flows steadily at 3 m/s through a section of a pipe of area 8 cm^2 (point P) and then through a narrower section of area 2 cm^2 (point Q). The speed of the water at Q is",
+          "a": "12 m/s",
+          "o": [
+            "12 m/s",
+            "0.75 m/s",
+            "6 m/s",
+            "48 m/s"
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Easy",
+          "t": "fill_blank",
+          "m": 1,
+          "q": "Water flows at 2 m/s through a pipe of cross-sectional area 0.05 m^2. The volume flow rate is ____ m^3/s (write the number as a decimal).",
+          "a": "0.1"
+        },
+        {
+          "b": "Apply",
+          "d": "Hard",
+          "t": "mcq",
+          "m": 1,
+          "q": "An incompressible liquid flows steadily through a horizontal pipe whose diameter decreases from 6 cm at point A (the wider end) to 2 cm at point B (the narrower end). If the speed at A is 0.5 m/s, the speed at B is",
+          "a": "4.5 m/s",
+          "o": [
+            "4.5 m/s",
+            "1.5 m/s",
+            "0.056 m/s",
+            "0.17 m/s"
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Hard",
+          "t": "short_answer",
+          "m": 2,
+          "q": "Water flows through a hose of cross-sectional area 5.0 cm^2 at a speed of 1.2 m/s. How long does it take to fill a bucket of capacity 30 litres? (1 litre = 10^-3 m^3.)",
+          "a": "Volume flow rate = A v = 5.0 x 10^-4 m^2 x 1.2 m/s = 6.0 x 10^-4 m^3/s. Volume of the bucket = 30 x 10^-3 = 0.030 m^3. Time = 0.030/(6.0 x 10^-4) = 50 s.",
+          "s": [
+            [
+              "Flow rate = A v = 6.0 x 10^-4 m^3/s, with the area converted to m^2",
+              1
+            ],
+            [
+              "Time = 0.030/(6.0 x 10^-4) = 50 s",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Hard",
+          "t": "mcq",
+          "m": 1,
+          "q": "The cylindrical tube of a spray pump has a cross-section of 6.0 cm^2. One end has 30 fine holes, each of area 0.010 cm^2. If the liquid moves along the tube at 0.02 m/s, the speed at which it is ejected through the holes is",
+          "a": "0.4 m/s",
+          "o": [
+            "0.4 m/s",
+            "12 m/s",
+            "0.001 m/s",
+            "0.02 m/s"
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Hardest",
+          "t": "long_answer",
+          "m": 3,
+          "q": "Water flows steadily through a horizontal pipe. At point A the pipe has diameter 4.0 cm and the water speed is 1.5 m/s. The pipe narrows to a diameter of 2.0 cm at point B and then widens to a diameter of 6.0 cm at point C. Taking pi = 3.14, find (a) the speed at B, (b) the speed at C to 2 significant figures, and (c) the volume flow rate in m^3/s.",
+          "a": "Area is proportional to (diameter)^2, and A v is constant. (a) v_B = v_A (d_A/d_B)^2 = 1.5 x (4.0/2.0)^2 = 6.0 m/s. (b) v_C = 1.5 x (4.0/6.0)^2 = 0.67 m/s. (c) Flow rate = A_A v_A = 3.14 x (0.020)^2 x 1.5 = 1.88 x 10^-3 m^3/s.",
+          "s": [
+            [
+              "v_B = 1.5 x (4.0/2.0)^2 = 6.0 m/s",
+              1
+            ],
+            [
+              "v_C = 1.5 x (4.0/6.0)^2 = 0.67 m/s",
+              1
+            ],
+            [
+              "Flow rate = 3.14 x (0.020)^2 x 1.5 = 1.88 x 10^-3 m^3/s",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Analyse",
+          "d": "Hard",
+          "t": "multi_statement",
+          "m": 1,
+          "q": "Consider the statements: (I) The equation of continuity in the form A v = constant holds for a gas whose density changes appreciably along the pipe. (II) In the steady flow of an incompressible fluid, the volume of fluid crossing any cross-section of the pipe per second is the same. Which is or are correct?",
+          "a": "Only II",
+          "o": [
+            "Only II",
+            "Only I",
+            "Both I and II",
+            "Neither I nor II"
+          ]
+        },
+        {
+          "b": "Analyse",
+          "d": "Hard",
+          "t": "short_answer",
+          "m": 2,
+          "q": "A river is 40 m wide and 3.0 m deep at a place where the water flows at 0.50 m/s. Further downstream it is only 20 m wide and 2.0 m deep. Treating the flow as steady and the water as incompressible, and each cross-section as a rectangle, find the speed of the water at the narrower place and explain the principle used.",
+          "a": "The mass (and, for an incompressible fluid, the volume) of water crossing each cross-section per second is the same, so A1 v1 = A2 v2. A1 = 40 x 3.0 = 120 m^2 and A2 = 20 x 2.0 = 40 m^2. v2 = 120 x 0.50/40 = 1.5 m/s.",
+          "s": [
+            [
+              "States conservation of mass / equation of continuity A1 v1 = A2 v2 with A1 = 120 m^2, A2 = 40 m^2",
+              1
+            ],
+            [
+              "v2 = 120 x 0.50/40 = 1.5 m/s",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Analyse",
+          "d": "Hardest",
+          "t": "long_answer",
+          "m": 3,
+          "q": "A garden pipe of internal cross-sectional area 4.0 cm^2 carries water at 0.75 m/s. It is joined by a T-piece to two identical nozzles, each with an opening of area 0.50 cm^2. (a) Find the speed of the water leaving each nozzle. (b) One nozzle is now blocked while the speed in the pipe is kept at 0.75 m/s. Find the new speed from the open nozzle. (c) Explain the change in terms of what is conserved.",
+          "a": "(a) Flow rate in the pipe = 4.0 cm^2 x 0.75 m/s. It leaves through a total nozzle area of 2 x 0.50 = 1.0 cm^2, so v = 4.0 x 0.75/1.0 = 3.0 m/s from each nozzle. (b) With one nozzle the outlet area is 0.50 cm^2, so v = 4.0 x 0.75/0.50 = 6.0 m/s. (c) Water is incompressible and mass is conserved, so the same volume per second must leave as enters; halving the outlet area doubles the outlet speed.",
+          "s": [
+            [
+              "Total outlet area 1.0 cm^2 and v = 4.0 x 0.75/1.0 = 3.0 m/s",
+              1
+            ],
+            [
+              "One nozzle: v = 4.0 x 0.75/0.50 = 6.0 m/s",
+              1
+            ],
+            [
+              "Explanation: same volume per second in and out (conservation of mass), so halving the area doubles the speed",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Evaluate",
+          "d": "Hard",
+          "t": "short_answer",
+          "m": 2,
+          "q": "A student states: 'In a steady flow the velocity of a fluid particle never changes.' Evaluate this statement.",
+          "a": "The statement is wrong. Steady flow means that at any given point the velocity of each particle passing that point is the same at all times. It does not mean the velocity is the same at different points: a particle's velocity may change as it moves from one point to another, for example it speeds up on entering a narrower part of a pipe.",
+          "s": [
+            [
+              "Judgement: wrong; steady means the velocity at a given point is constant in time",
+              1
+            ],
+            [
+              "A particle's velocity can change from point to point (e.g. faster in a narrow section)",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Create",
+          "d": "Hardest",
+          "t": "long_answer",
+          "m": 3,
+          "q": "A pipe of internal diameter 2.0 cm carries water at 1.0 m/s. Design a nozzle for its end so that the water leaves at 16 m/s. Find the diameter of the nozzle opening, calculate the volume flow rate (take pi = 3.14) and state the assumptions on which your design rests.",
+          "a": "By the equation of continuity A1 v1 = A2 v2, and area is proportional to (diameter)^2, so d2 = d1 sqrt(v1/v2) = 2.0 x sqrt(1.0/16) = 2.0/4 = 0.50 cm. Flow rate = A1 v1 = 3.14 x (0.010)^2 x 1.0 = 3.14 x 10^-4 m^3/s, and it is the same at the nozzle. Assumptions: the flow is steady and the water is incompressible, so the volume passing per second is the same at every cross-section.",
+          "s": [
+            [
+              "Uses A1 v1 = A2 v2 with area proportional to diameter squared to get d2 = 0.50 cm",
+              1
+            ],
+            [
+              "Flow rate = 3.14 x (0.010)^2 x 1.0 = 3.14 x 10^-4 m^3/s",
+              1
+            ],
+            [
+              "States the assumptions: steady flow of an incompressible fluid",
+              1
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "code": "C11P-9.5",
+      "name": "Bernoulli's principle",
+      "description": "Bernoulli's equation P + (1/2) rho v^2 + rho g h = constant along a streamline, how it follows from the work-energy theorem, the conditions under which it holds, and its use between two named points of a flow.",
+      "idea": "Bernoulli's equation is energy conservation for a steadily flowing ideal fluid: the work done by pressure forces on a portion of fluid goes into changing its kinetic energy and its gravitational potential energy, so where the fluid speeds up or rises its pressure falls.",
+      "rule": "For steady flow of an incompressible, non-viscous fluid, between any two points 1 and 2 along a streamline: P1 + (1/2) rho v1^2 + rho g h1 = P2 + (1/2) rho v2^2 + rho g h2, i.e. P + (1/2) rho v^2 + rho g h = constant. (1/2) rho v^2 is the kinetic energy per unit volume and rho g h the potential energy per unit volume. It follows from the work-energy theorem: (P1 - P2) Delta V = (1/2) rho Delta V (v2^2 - v1^2) + rho g Delta V (h2 - h1). Restrictions: no energy lost to viscosity (real fluids lose some kinetic energy as heat, so the equation is only approximately true), the fluid must be incompressible, and the flow must be steady - it does not hold for non-steady or turbulent flow. For a fluid at rest it reduces to P1 - P2 = rho g (h2 - h1).",
+      "example": "Water (rho = 1000 kg/m^3) flows steadily in a horizontal pipe, at 1 m/s at a wide point and 3 m/s at a narrow point. P_wide - P_narrow = (1/2) rho (v2^2 - v1^2) = 0.5 x 1000 x (9 - 1) = 4000 Pa.",
+      "difficulty_base": "Hard",
+      "questions": [
+        {
+          "b": "Remember",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "In Bernoulli's equation the term (1/2) rho v^2 represents the",
+          "a": "kinetic energy per unit volume of the fluid",
+          "o": [
+            "kinetic energy per unit volume of the fluid",
+            "potential energy per unit volume of the fluid",
+            "kinetic energy per unit mass of the fluid",
+            "momentum per unit volume of the fluid"
+          ]
+        },
+        {
+          "b": "Remember",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "Bernoulli's equation is obtained by applying to a volume of the flowing fluid the",
+          "a": "work-energy theorem",
+          "o": [
+            "work-energy theorem",
+            "equation of continuity alone",
+            "law of conservation of charge",
+            "definition of relative density"
+          ]
+        },
+        {
+          "b": "Remember",
+          "d": "Easy",
+          "t": "fill_blank",
+          "m": 1,
+          "q": "In Bernoulli's equation the term rho g h is the gravitational ____ energy per unit volume of the fluid (one word).",
+          "a": "potential"
+        },
+        {
+          "b": "Remember",
+          "d": "Hard",
+          "t": "mcq",
+          "m": 1,
+          "q": "Bernoulli's equation can NOT be used to describe which of the following?",
+          "a": "The turbulent flow of water through a rapid in a river",
+          "o": [
+            "The turbulent flow of water through a rapid in a river",
+            "The steady flow of a liquid of negligible viscosity through a pipe of varying cross-section",
+            "The steady flow of an incompressible liquid of low viscosity through a pipe that rises",
+            "A liquid at rest in a tank, where the speed is zero everywhere"
+          ],
+          "rev": true
+        },
+        {
+          "b": "Understand",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "Bernoulli's equation requires the fluid to be incompressible because",
+          "a": "the elastic energy of the fluid is not taken into account in the equation",
+          "o": [
+            "the elastic energy of the fluid is not taken into account in the equation",
+            "a compressible fluid exerts no pressure",
+            "a compressible fluid can never flow steadily",
+            "the density of an incompressible fluid is zero"
+          ]
+        },
+        {
+          "b": "Understand",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "According to Bernoulli's principle, which quantity stays constant as we move along a streamline?",
+          "a": "The sum of the pressure, the kinetic energy per unit volume and the potential energy per unit volume",
+          "o": [
+            "The sum of the pressure, the kinetic energy per unit volume and the potential energy per unit volume",
+            "The pressure alone",
+            "The speed of the fluid alone",
+            "The product of the pressure and the speed"
+          ]
+        },
+        {
+          "b": "Understand",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "For a fluid at rest (speed zero everywhere), Bernoulli's equation between a point 1 at height h1 and a point 2 at height h2 reduces to",
+          "a": "P1 - P2 = rho g (h2 - h1)",
+          "o": [
+            "P1 - P2 = rho g (h2 - h1)",
+            "P1 = P2 whatever the heights",
+            "P1 - P2 = (1/2) rho (v2^2 - v1^2)",
+            "P1 + P2 = rho g (h1 + h2)"
+          ]
+        },
+        {
+          "b": "Understand",
+          "d": "Hard",
+          "t": "mcq",
+          "m": 1,
+          "q": "In the derivation of Bernoulli's equation, the total work done on a portion of fluid by the pressure forces, (P1 - P2) Delta V, goes into",
+          "a": "changing both its kinetic energy and its gravitational potential energy",
+          "o": [
+            "changing both its kinetic energy and its gravitational potential energy",
+            "changing its kinetic energy only",
+            "raising its temperature",
+            "compressing it into a smaller volume"
+          ]
+        },
+        {
+          "b": "Understand",
+          "d": "Hard",
+          "t": "mcq",
+          "m": 1,
+          "q": "Does it matter whether gauge pressures or absolute pressures are used in Bernoulli's equation?",
+          "a": "No, as long as the atmospheric pressure is the same at the two points, because the same amount is subtracted from both sides",
+          "o": [
+            "No, as long as the atmospheric pressure is the same at the two points, because the same amount is subtracted from both sides",
+            "Yes, only absolute pressures may ever be used",
+            "Yes, only gauge pressures may ever be used",
+            "No, because pressure does not appear in Bernoulli's equation"
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "Water (density 1000 kg/m^3) flows steadily through a horizontal pipe; treat it as non-viscous. Its speed is 2 m/s at point X and 4 m/s at point Y. The pressure at X exceeds the pressure at Y by",
+          "a": "6000 Pa",
+          "o": [
+            "6000 Pa",
+            "2000 Pa",
+            "12000 Pa",
+            "1000 Pa"
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Easy",
+          "t": "fill_blank",
+          "m": 1,
+          "q": "Water (density 1000 kg/m^3, treated as non-viscous) flows steadily through a horizontal pipe. Its speed is 3 m/s at one point and 5 m/s at a narrower point downstream. By Bernoulli's equation the pressure at the first point exceeds the pressure at the narrower point by ____ Pa (write a whole number).",
+          "a": "8000"
+        },
+        {
+          "b": "Apply",
+          "d": "Hard",
+          "t": "mcq",
+          "m": 1,
+          "q": "A non-viscous incompressible liquid of density 800 kg/m^3 flows steadily through a pipe of uniform cross-section. Point 2 is 5 m higher than point 1. Taking g = 10 m/s^2, the pressure at point 1 exceeds that at point 2 by",
+          "a": "4.0 x 10^4 Pa",
+          "o": [
+            "4.0 x 10^4 Pa",
+            "4.0 x 10^3 Pa",
+            "2.0 x 10^4 Pa",
+            "zero"
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Hard",
+          "t": "short_answer",
+          "m": 2,
+          "q": "Water (density 1000 kg/m^3, treated as non-viscous) flows steadily through a horizontal pipe. At the wider point A its speed is 1.0 m/s and the absolute pressure is 1.20 x 10^5 Pa. At the narrower point B its speed is 5.0 m/s. Find the absolute pressure at B.",
+          "a": "For a horizontal pipe, P_A + (1/2) rho v_A^2 = P_B + (1/2) rho v_B^2. P_B = P_A - (1/2) rho (v_B^2 - v_A^2) = 1.20 x 10^5 - 0.5 x 1000 x (25 - 1.0) = 1.20 x 10^5 - 1.2 x 10^4 = 1.08 x 10^5 Pa.",
+          "s": [
+            [
+              "Writes Bernoulli's equation for a horizontal pipe (equal heights)",
+              1
+            ],
+            [
+              "P_B = 1.20 x 10^5 - 1.2 x 10^4 = 1.08 x 10^5 Pa",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Hard",
+          "t": "mcq",
+          "m": 1,
+          "q": "Water (density 1000 kg/m^3, treated as non-viscous) flows steadily through a horizontal pipe. Between a point where its speed is 1 m/s and a narrower point downstream, the pressure falls by 1500 Pa. The speed at the narrower point is",
+          "a": "2 m/s",
+          "o": [
+            "2 m/s",
+            "4 m/s",
+            "1.7 m/s",
+            "2.5 m/s"
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Hardest",
+          "t": "long_answer",
+          "m": 3,
+          "q": "Water (density 1000 kg/m^3, treated as non-viscous) flows steadily up a pipe. At point 1, which is lower and wider, the cross-sectional area is 10 cm^2, the speed is 2.0 m/s and the absolute pressure is 1.80 x 10^5 Pa. Point 2 is 3.0 m higher than point 1 and narrower, with cross-sectional area 5.0 cm^2. Taking g = 10 m/s^2, find (a) the speed at point 2 and (b) the absolute pressure at point 2.",
+          "a": "(a) Continuity: A1 v1 = A2 v2, so v2 = 10 x 2.0/5.0 = 4.0 m/s. (b) Bernoulli: P2 = P1 - (1/2) rho (v2^2 - v1^2) - rho g (h2 - h1) = 1.80 x 10^5 - 0.5 x 1000 x (16 - 4.0) - 1000 x 10 x 3.0 = 1.80 x 10^5 - 6.0 x 10^3 - 3.0 x 10^4 = 1.44 x 10^5 Pa.",
+          "s": [
+            [
+              "v2 = A1 v1/A2 = 4.0 m/s from the equation of continuity",
+              1
+            ],
+            [
+              "Writes Bernoulli's equation with both the kinetic term (6.0 x 10^3 Pa) and the height term (3.0 x 10^4 Pa)",
+              1
+            ],
+            [
+              "P2 = 1.44 x 10^5 Pa",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Analyse",
+          "d": "Hard",
+          "t": "assertion_reason",
+          "m": 1,
+          "q": "Assertion (A): In the steady flow of a non-viscous incompressible liquid through a horizontal pipe, the pressure is lower in a narrow part of the pipe than in a wide part. Reason (R): In a narrow part of the pipe the liquid moves more slowly than in a wide part. Choose the correct option.",
+          "a": "A is true, R is false",
+          "o": [
+            "A is true, R is false",
+            "Both A and R are true, and R is the correct explanation of A",
+            "Both A and R are true, but R is not the correct explanation of A",
+            "A is false, R is true"
+          ]
+        },
+        {
+          "b": "Analyse",
+          "d": "Hard",
+          "t": "short_answer",
+          "m": 2,
+          "q": "To keep a light sheet of paper horizontal, one should blow over its upper surface, not under it. Explain this using Bernoulli's principle.",
+          "a": "Blowing over the paper makes the air above it move faster than the nearly still air below it. By Bernoulli's principle the pressure is lower where the speed is higher, so the pressure above the paper is less than the pressure below it. The pressure difference gives a net upward force on the paper, which supports it.",
+          "s": [
+            [
+              "Air above moves faster, so by Bernoulli's principle the pressure above is lower than below",
+              1
+            ],
+            [
+              "The pressure difference gives a net upward force that holds the paper up",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Analyse",
+          "d": "Hardest",
+          "t": "long_answer",
+          "m": 3,
+          "q": "Water (density 1000 kg/m^3, treated as non-viscous) flows steadily through a horizontal pipe at a volume rate of 2.4 x 10^-3 m^3/s. The cross-sectional area is 12 cm^2 at point A (wider) and 4.0 cm^2 at point B (narrower). Find the speed at each point and the pressure difference P_A - P_B.",
+          "a": "v = (flow rate)/A. v_A = (2.4 x 10^-3)/(12 x 10^-4) = 2.0 m/s; v_B = (2.4 x 10^-3)/(4.0 x 10^-4) = 6.0 m/s. For a horizontal pipe, P_A - P_B = (1/2) rho (v_B^2 - v_A^2) = 0.5 x 1000 x (36 - 4.0) = 1.6 x 10^4 Pa; the pressure is higher at the wider point A.",
+          "s": [
+            [
+              "v_A = 2.0 m/s",
+              1
+            ],
+            [
+              "v_B = 6.0 m/s",
+              1
+            ],
+            [
+              "P_A - P_B = 0.5 x 1000 x (36 - 4.0) = 1.6 x 10^4 Pa",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Evaluate",
+          "d": "Hard",
+          "t": "short_answer",
+          "m": 2,
+          "q": "A student applies Bernoulli's equation to thick honey flowing slowly down a long narrow tube and finds that the measured pressure at the far end is much lower than the equation predicts. She concludes that her pressure gauge is faulty. Evaluate her conclusion.",
+          "a": "The conclusion is not justified. Bernoulli's equation assumes that no energy is lost to friction, i.e. a non-viscous fluid. Honey is highly viscous: its layers exert frictional forces on each other and part of the energy is converted into heat. The work done by this dissipative viscous force makes the actual pressure at the far end lower than the value given by Bernoulli's equation, so the discrepancy is expected and the equation is not applicable here.",
+          "s": [
+            [
+              "Bernoulli's equation holds only for (nearly) non-viscous flow with no energy loss",
+              1
+            ],
+            [
+              "Honey is very viscous; energy lost as heat makes the far-end pressure lower than predicted, so the gauge need not be faulty",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Create",
+          "d": "Hardest",
+          "t": "long_answer",
+          "m": 3,
+          "q": "Water flows steadily, without viscosity, along a streamline through two points: point L, and point U which is 0.60 m higher than L. Construct a consistent set of speeds at L and U for which the pressure is the same at both points. Take g = 10 m/s^2. State the condition the speeds must satisfy, give one pair of values that satisfies it, and say at which point the pipe must be narrower.",
+          "a": "With P_L = P_U, Bernoulli's equation gives (1/2) rho v_L^2 + rho g h_L = (1/2) rho v_U^2 + rho g h_U, so v_L^2 - v_U^2 = 2 g (h_U - h_L) = 2 x 10 x 0.60 = 12 m^2/s^2. One suitable pair is v_L = 4.0 m/s and v_U = 2.0 m/s (16 - 4.0 = 12). The water must move faster at the lower point L, so by the equation of continuity the pipe must be narrower at L (for this pair, A_L = A_U/2).",
+          "s": [
+            [
+              "Sets P_L = P_U in Bernoulli's equation to obtain v_L^2 - v_U^2 = 2 g x 0.60 = 12 m^2/s^2",
+              1
+            ],
+            [
+              "Gives any pair of speeds satisfying this condition (e.g. 4.0 m/s at L and 2.0 m/s at U)",
+              1
+            ],
+            [
+              "Faster at the lower point L, so by continuity the pipe is narrower at L",
+              1
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "code": "C11P-9.6",
+      "name": "Speed of efflux (Torricelli's law) and dynamic lift",
+      "description": "The two applications of Bernoulli's principle kept in this edition: the speed of efflux from a tank (Torricelli's law) and dynamic lift on a spinning ball (Magnus effect) and on an aerofoil.",
+      "idea": "Applied to a tank with a small hole, Bernoulli's equation says the liquid leaves as fast as if it had fallen freely from the surface; applied to air streaming past a spinning ball or a wing, it says the faster air on one side has the lower pressure, producing a net force called dynamic lift.",
+      "rule": "Speed of efflux from a small hole at depth h below the liquid surface in a wide tank whose air space is at pressure P: v1 = sqrt(2 g h + 2 (P - Pa)/rho). The surface is taken to be at rest because the tank's area is much larger than the hole's. If the tank is open to the atmosphere (P = Pa), v1 = sqrt(2 g h), Torricelli's law, the same as the speed of a freely falling body. If P >> Pa, the speed is set by the container pressure (as in rocket propulsion). Dynamic lift is the force on a body (aeroplane wing, hydrofoil, spinning ball) by virtue of its motion through a fluid. A non-spinning ball has symmetrical streamlines and no lift. A spinning ball drags air round with it, so the air speed relative to the ball is larger on one side; the pressure is lower there and a net force acts (Magnus effect). For an aerofoil the streamlines crowd above the wing, the speed is higher and the pressure lower above, giving an upward lift = (pressure difference) x (wing area), with pressure difference = (rho/2)(v2^2 - v1^2) when the small height difference is ignored.",
+      "example": "A wide open tank has a small hole 0.45 m below the water surface. With g = 10 m/s^2, v = sqrt(2 g h) = sqrt(2 x 10 x 0.45) = sqrt(9) = 3 m/s.",
+      "difficulty_base": "Hard",
+      "questions": [
+        {
+          "b": "Remember",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "Dynamic lift is the force that acts on a body such as an aeroplane wing, a hydrofoil or a spinning ball by virtue of",
+          "a": "its motion through a fluid",
+          "o": [
+            "its motion through a fluid",
+            "its weight alone",
+            "its being at rest in a fluid",
+            "its temperature"
+          ]
+        },
+        {
+          "b": "Remember",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "The dynamic lift on a ball due to its spinning as it moves through air is called the",
+          "a": "Magnus effect",
+          "o": [
+            "Magnus effect",
+            "hydrostatic paradox",
+            "Pascal effect",
+            "Stokes effect"
+          ]
+        },
+        {
+          "b": "Remember",
+          "d": "Easy",
+          "t": "fill_blank",
+          "m": 1,
+          "q": "Torricelli's law for a wide tank open to the atmosphere can be written as v = sqrt(n g h), where h is the depth of the hole below the liquid surface. The number n is ____ (write a whole number).",
+          "a": "2"
+        },
+        {
+          "b": "Remember",
+          "d": "Hard",
+          "t": "mcq",
+          "m": 1,
+          "q": "Which of the following is NOT an example of dynamic lift as described in the chapter?",
+          "a": "Water standing at the same level in connected vessels of different shapes",
+          "o": [
+            "Water standing at the same level in connected vessels of different shapes",
+            "The upward force on the wing of an aeroplane in level flight",
+            "The deviation of a spinning cricket ball from its parabolic path",
+            "The upward force on a hydrofoil moving through water"
+          ],
+          "rev": true
+        },
+        {
+          "b": "Understand",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "The speed of efflux from a small hole in a wide tank open to the atmosphere is the same as the speed",
+          "a": "a body acquires in falling freely through the height from the liquid surface to the hole",
+          "o": [
+            "a body acquires in falling freely through the height from the liquid surface to the hole",
+            "of sound in the liquid",
+            "at which the liquid surface in the tank moves down",
+            "a body acquires in falling freely from the hole to the bottom of the tank"
+          ]
+        },
+        {
+          "b": "Understand",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "A ball moves through air without spinning. The air exerts no upward or downward force on it because",
+          "a": "the streamlines are symmetrical, so the air speeds above and below are equal and there is no pressure difference",
+          "o": [
+            "the streamlines are symmetrical, so the air speeds above and below are equal and there is no pressure difference",
+            "air has no viscosity at all",
+            "the weight of the ball cancels the lift",
+            "air does not flow round a ball that is not spinning"
+          ]
+        },
+        {
+          "b": "Understand",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "When an aerofoil moves horizontally through air, the streamlines crowd together above it more than below it. Compared with the air below the wing, the air above it has",
+          "a": "a higher speed and a lower pressure",
+          "o": [
+            "a higher speed and a lower pressure",
+            "a lower speed and a higher pressure",
+            "a higher speed and a higher pressure",
+            "the same speed and the same pressure"
+          ]
+        },
+        {
+          "b": "Understand",
+          "d": "Hard",
+          "t": "mcq",
+          "m": 1,
+          "q": "In applying Bernoulli's equation between the liquid surface and a small hole in the side of a tank to find the speed of efflux, the pressure at the hole is taken to be",
+          "a": "atmospheric pressure, because the liquid emerging there is open to the atmosphere",
+          "o": [
+            "atmospheric pressure, because the liquid emerging there is open to the atmosphere",
+            "zero, because the liquid at the hole is moving",
+            "the pressure P of the air above the liquid in the tank",
+            "Pa + rho g h, the pressure the liquid would have at that depth if the hole were closed"
+          ]
+        },
+        {
+          "b": "Understand",
+          "d": "Hard",
+          "t": "mcq",
+          "m": 1,
+          "q": "In a closed tank the pressure P of the air above the liquid is very much greater than atmospheric pressure. The speed of efflux from a small hole is then determined mainly by",
+          "a": "the container pressure P, the term 2 g h being negligible, as in rocket propulsion",
+          "o": [
+            "the container pressure P, the term 2 g h being negligible, as in rocket propulsion",
+            "the depth of the hole alone",
+            "the area of the hole alone",
+            "atmospheric pressure alone"
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "A wide tank open to the atmosphere has a small hole in its side 5 m below the water surface. Taking g = 10 m/s^2, the speed of efflux is",
+          "a": "10 m/s",
+          "o": [
+            "10 m/s",
+            "100 m/s",
+            "7.1 m/s",
+            "50 m/s"
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Easy",
+          "t": "fill_blank",
+          "m": 1,
+          "q": "Water emerges at 6 m/s from a small hole in the side of a wide tank open to the atmosphere. Taking g = 10 m/s^2, the depth of the hole below the water surface is ____ m (write the number as a decimal).",
+          "a": "1.8"
+        },
+        {
+          "b": "Apply",
+          "d": "Hard",
+          "t": "mcq",
+          "m": 1,
+          "q": "In level flight the pressure under the wings of an aircraft exceeds the pressure above them by 4.0 x 10^3 Pa. The total wing area is 60 m^2. The dynamic lift on the wings is",
+          "a": "2.4 x 10^5 N",
+          "o": [
+            "2.4 x 10^5 N",
+            "66.7 N",
+            "1.2 x 10^5 N",
+            "4.0 x 10^3 N"
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Hard",
+          "t": "short_answer",
+          "m": 2,
+          "q": "In a wind-tunnel test of a model wing, the air flows at 60 m/s over the upper surface and at 50 m/s under the lower surface. The wing area is 3.0 m^2 and the density of air is 1.2 kg/m^3. Ignoring the small height difference between the two surfaces, find the lift on the wing.",
+          "a": "Pressure difference = (rho/2)(v2^2 - v1^2) = 0.5 x 1.2 x (3600 - 2500) = 0.6 x 1100 = 660 Pa, with the lower pressure above the wing. Lift = pressure difference x area = 660 x 3.0 = 1980 N, upward (about 2.0 x 10^3 N).",
+          "s": [
+            [
+              "Pressure difference = 0.5 x 1.2 x (60^2 - 50^2) = 660 Pa",
+              1
+            ],
+            [
+              "Lift = 660 x 3.0 = 1980 N upward",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Hard",
+          "t": "mcq",
+          "m": 1,
+          "q": "A wide closed tank contains water (density 1000 kg/m^3). The air above the water is at an absolute pressure of 1.51 x 10^5 Pa and atmospheric pressure outside is 1.01 x 10^5 Pa. A small hole in the side is 5 m below the water surface. Taking g = 10 m/s^2, the speed of efflux, to 3 significant figures, is",
+          "a": "14.1 m/s",
+          "o": [
+            "14.1 m/s",
+            "10.0 m/s",
+            "200 m/s",
+            "20.0 m/s"
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Hardest",
+          "t": "long_answer",
+          "m": 3,
+          "q": "A fully loaded aircraft of mass 2.4 x 10^5 kg has a total wing area of 400 m^2 and is in level flight at 240 m/s; take this as the average of the air speeds over the upper and lower wing surfaces. The density of air is 1.2 kg/m^3 and g = 10 m/s^2. Estimate (a) the pressure difference between the lower and upper surfaces of the wings and (b) the fractional increase (v2 - v1)/v_av in the speed of the air over the upper surface relative to the lower surface, to 2 significant figures.",
+          "a": "(a) In level flight the lift balances the weight: Delta P x A = m g, so Delta P = (2.4 x 10^5 x 10)/400 = 6.0 x 10^3 Pa. (b) Ignoring the height difference, Delta P = (rho/2)(v2^2 - v1^2) = (rho/2)(v2 - v1)(v2 + v1) = rho v_av (v2 - v1). So (v2 - v1)/v_av = Delta P/(rho v_av^2) = 6000/(1.2 x 240^2) = 6000/69120 = 0.087, i.e. the air above needs to be only about 8.7% faster.",
+          "s": [
+            [
+              "Lift = weight: Delta P = (2.4 x 10^5 x 10)/400 = 6.0 x 10^3 Pa",
+              1
+            ],
+            [
+              "Writes Delta P = (rho/2)(v2^2 - v1^2) = rho v_av (v2 - v1)",
+              1
+            ],
+            [
+              "(v2 - v1)/v_av = 6000/(1.2 x 240^2) = 0.087",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Analyse",
+          "d": "Hard",
+          "t": "multi_statement",
+          "m": 1,
+          "q": "Consider the statements: (I) For a wide tank open to the atmosphere, the speed of efflux from a small hole increases when the hole is made at a greater depth below the liquid surface. (II) A spinning ball moving through air deviates from the parabolic path it would otherwise follow. Which is or are correct?",
+          "a": "Both I and II",
+          "o": [
+            "Both I and II",
+            "Only I",
+            "Only II",
+            "Neither I nor II"
+          ]
+        },
+        {
+          "b": "Analyse",
+          "d": "Hard",
+          "t": "short_answer",
+          "m": 2,
+          "q": "A ball moving through air spins in such a way that the air it drags round makes the speed of the air relative to the ball larger above the ball than below it. Explain the direction of the resulting force on the ball and why its path is no longer a parabola.",
+          "a": "The streamlines are crowded above the ball and spread out below it: the air moves faster above. By Bernoulli's principle the pressure is lower above the ball than below it, so there is a net upward force on the ball (the Magnus effect). Because this force acts in addition to gravity, the ball deviates from the parabolic path it would follow under gravity alone.",
+          "s": [
+            [
+              "Faster air above means lower pressure above than below (Bernoulli's principle)",
+              1
+            ],
+            [
+              "Net upward force (dynamic lift / Magnus effect) in addition to gravity makes the path deviate from a parabola",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Analyse",
+          "d": "Hardest",
+          "t": "long_answer",
+          "m": 3,
+          "q": "A wide tank open to the atmosphere stands on level ground and is filled with water to a height of 2.5 m. A small hole is made in its side 1.25 m below the water surface, so that the hole is 1.25 m above the ground. Taking g = 10 m/s^2 and ignoring air resistance, find (a) the speed with which the water leaves the hole horizontally, (b) the time the water takes to reach the ground and (c) the horizontal distance from the tank at which it lands.",
+          "a": "(a) Torricelli's law: v = sqrt(2 g h) = sqrt(2 x 10 x 1.25) = sqrt(25) = 5.0 m/s. (b) The water falls 1.25 m from rest vertically: 1.25 = (1/2) x 10 x t^2, so t = sqrt(0.25) = 0.50 s. (c) Horizontal distance = v t = 5.0 x 0.50 = 2.5 m.",
+          "s": [
+            [
+              "v = sqrt(2 x 10 x 1.25) = 5.0 m/s",
+              1
+            ],
+            [
+              "Time of fall t = sqrt(2 x 1.25/10) = 0.50 s",
+              1
+            ],
+            [
+              "Range = 5.0 x 0.50 = 2.5 m",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Evaluate",
+          "d": "Hard",
+          "t": "short_answer",
+          "m": 2,
+          "q": "A student claims: 'From a hole at the same depth in a wide open tank, a dense liquid such as mercury would come out faster than water, because the pressure at that depth is greater in the denser liquid.' Evaluate the claim.",
+          "a": "The claim is wrong. For an open tank Bernoulli's equation gives (1/2) rho v^2 = rho g h, and the density cancels, so v = sqrt(2 g h) for any liquid. The pressure at the hole is indeed greater in the denser liquid, but the mass of each unit volume to be set moving is greater in the same proportion, so the speed of efflux is the same at the same depth.",
+          "s": [
+            [
+              "Judgement: wrong; rho cancels in (1/2) rho v^2 = rho g h, so v = sqrt(2 g h) does not depend on density",
+              1
+            ],
+            [
+              "Greater pressure is offset by the greater mass per unit volume to be accelerated, so the speed is the same",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Create",
+          "d": "Hardest",
+          "t": "long_answer",
+          "m": 3,
+          "q": "Design a wide water tank, open to the atmosphere, with a small hole in its side so that the water leaves the hole at 4.0 m/s. Taking g = 10 m/s^2, find how far below the water surface the hole must be, state the condition on the sizes of the tank and the hole that your calculation assumes, and say how the depth must change if the speed is to be doubled.",
+          "a": "Torricelli's law v = sqrt(2 g h) gives h = v^2/(2 g) = 16/(2 x 10) = 0.80 m, so the hole must be 0.80 m below the water surface. The formula assumes that the cross-sectional area of the tank is much larger than that of the hole, so that the water surface is practically at rest. Since h is proportional to v^2, doubling the speed to 8.0 m/s needs four times the depth: h = 64/20 = 3.2 m.",
+          "s": [
+            [
+              "h = v^2/(2 g) = 16/20 = 0.80 m",
+              1
+            ],
+            [
+              "States the assumption: tank cross-section much larger than the hole, so the surface is nearly at rest",
+              1
+            ],
+            [
+              "Doubling the speed needs four times the depth, 3.2 m",
+              1
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "code": "C11P-9.7",
+      "name": "Viscosity, Stokes' law and terminal velocity",
+      "description": "Viscosity as internal friction between fluid layers, the coefficient of viscosity as shearing stress divided by strain rate, its units and temperature dependence, Stokes' law for the drag on a sphere and the terminal velocity of a falling sphere.",
+      "idea": "Layers of a real fluid moving at different speeds drag on one another; the coefficient of viscosity measures how large a shearing stress is needed for a given rate of shearing, and the same drag brings a small sphere falling through a fluid to a steady terminal velocity.",
+      "rule": "Viscosity is the resistance to fluid motion, an internal friction that exists when there is relative motion between layers. The fluid layer in contact with a surface has the velocity of that surface; between a fixed plate and a plate moving with velocity v a distance l away, the layer velocities increase uniformly from zero to v. In a pipe the velocity is greatest along the axis and zero at the walls. Coefficient of viscosity eta = shearing stress/strain rate = (F/A)/(v/l) = F l/(v A). SI unit: poiseuille (Pl) = N s m^-2 = Pa s; dimensions [M L^-1 T^-1]. The viscosity of liquids decreases with temperature while that of gases increases. Stokes' law: the viscous drag on a sphere of radius a moving with velocity v through a fluid of viscosity eta is F = 6 pi eta a v, opposite to the motion. A sphere of density rho falling through a fluid of density sigma reaches terminal velocity when viscous force plus buoyant force equals the force due to gravity: 6 pi eta a v_t = (4 pi/3) a^3 (rho - sigma) g, so v_t = 2 a^2 (rho - sigma) g/(9 eta).",
+      "example": "A force of 0.02 N keeps a plate of area 0.5 m^2 moving at 0.1 m/s over a liquid film 1 mm thick. eta = F l/(v A) = (0.02 x 0.001)/(0.1 x 0.5) = 4 x 10^-4 Pa s.",
+      "difficulty_base": "Hard",
+      "questions": [
+        {
+          "b": "Remember",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "The coefficient of viscosity of a fluid is defined as the ratio of",
+          "a": "shearing stress to strain rate",
+          "o": [
+            "shearing stress to strain rate",
+            "shearing stress to shear strain",
+            "strain rate to shearing stress",
+            "normal stress to volume strain"
+          ]
+        },
+        {
+          "b": "Remember",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "Stokes' law for the viscous drag force on a sphere of radius a moving with velocity v through a fluid of viscosity eta is",
+          "a": "F = 6 pi eta a v",
+          "o": [
+            "F = 6 pi eta a v",
+            "F = 6 pi eta a^2 v",
+            "F = 6 pi eta a v^2",
+            "F = 6 pi eta v/a"
+          ]
+        },
+        {
+          "b": "Remember",
+          "d": "Easy",
+          "t": "fill_blank",
+          "m": 1,
+          "q": "The resistance to fluid motion that acts like an internal friction between layers of a fluid in relative motion is called ____ (one word).",
+          "a": "viscosity"
+        },
+        {
+          "b": "Remember",
+          "d": "Hard",
+          "t": "mcq",
+          "m": 1,
+          "q": "Which of the following is NOT a unit of the coefficient of viscosity?",
+          "a": "N m^-2",
+          "o": [
+            "N m^-2",
+            "poiseuille (Pl)",
+            "N s m^-2",
+            "Pa s"
+          ],
+          "rev": true
+        },
+        {
+          "b": "Understand",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "A layer of oil lies between a fixed bottom plate and a top plate that is moved with a constant velocity v. Going from the bottom plate up to the top plate, the velocities of the layers of oil",
+          "a": "increase uniformly from zero to v",
+          "o": [
+            "increase uniformly from zero to v",
+            "are all equal to v",
+            "are all zero",
+            "decrease uniformly from v to zero"
+          ]
+        },
+        {
+          "b": "Understand",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "The viscous force between the layers of a fluid exists only when",
+          "a": "there is relative motion between the layers",
+          "o": [
+            "there is relative motion between the layers",
+            "the fluid is completely at rest",
+            "the fluid is a gas",
+            "the fluid is being heated"
+          ]
+        },
+        {
+          "b": "Understand",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "A raindrop falling through air reaches a constant (terminal) velocity when",
+          "a": "the viscous force plus the buoyant force equals the force due to gravity",
+          "o": [
+            "the viscous force plus the buoyant force equals the force due to gravity",
+            "the viscous force becomes zero",
+            "gravity stops acting on the drop",
+            "the buoyant force alone equals the viscous force"
+          ]
+        },
+        {
+          "b": "Understand",
+          "d": "Hard",
+          "t": "mcq",
+          "m": 1,
+          "q": "For a solid the shearing stress is proportional to the shear strain. For a fluid the shearing stress is found to depend instead on",
+          "a": "the rate of change of shear strain, since the strain in a flowing fluid keeps increasing with time",
+          "o": [
+            "the rate of change of shear strain, since the strain in a flowing fluid keeps increasing with time",
+            "the shear strain itself, exactly as in a solid",
+            "the square of the shear strain",
+            "the volume strain"
+          ]
+        },
+        {
+          "b": "Understand",
+          "d": "Hard",
+          "t": "mcq",
+          "m": 1,
+          "q": "A steel ball released in a tall jar of glycerine first speeds up and then moves with a constant velocity. Its acceleration falls to zero because",
+          "a": "the viscous force grows as the velocity grows, until the net force on the ball is zero",
+          "o": [
+            "the viscous force grows as the velocity grows, until the net force on the ball is zero",
+            "gravity becomes weaker as the ball goes deeper",
+            "the buoyant force grows as the velocity grows",
+            "the ball loses mass as it falls"
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "A shearing force of 0.6 N acts on a liquid layer over an area of 0.3 m^2. The shearing stress is",
+          "a": "2 N/m^2",
+          "o": [
+            "2 N/m^2",
+            "0.18 N/m^2",
+            "0.5 N/m^2",
+            "0.2 N/m^2"
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Easy",
+          "t": "fill_blank",
+          "m": 1,
+          "q": "The top plate over a liquid film of thickness 2 mm moves at 0.4 m/s relative to the fixed bottom plate. The strain rate v/l is ____ per second (write a whole number).",
+          "a": "200"
+        },
+        {
+          "b": "Apply",
+          "d": "Hard",
+          "t": "mcq",
+          "m": 1,
+          "q": "A flat plate of area 0.20 m^2 slides at a constant speed of 0.50 m/s on a liquid film 1.0 mm thick spread over a fixed table. The horizontal force needed is 0.80 N. The coefficient of viscosity of the liquid is",
+          "a": "8.0 x 10^-3 Pa s",
+          "o": [
+            "8.0 x 10^-3 Pa s",
+            "8.0 Pa s",
+            "1.25 x 10^2 Pa s",
+            "3.2 x 10^-4 Pa s"
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Hard",
+          "t": "short_answer",
+          "m": 2,
+          "q": "A small sphere of radius 1.0 mm moves at 0.20 m/s through a liquid of viscosity 0.50 Pa s. Taking pi = 3.14, find the viscous drag force on the sphere, to 2 significant figures.",
+          "a": "By Stokes' law F = 6 pi eta a v = 6 x 3.14 x 0.50 x (1.0 x 10^-3) x 0.20 = 1.884 x 10^-3 N, i.e. about 1.9 x 10^-3 N, opposite to the direction of motion.",
+          "s": [
+            [
+              "States Stokes' law F = 6 pi eta a v with a = 1.0 x 10^-3 m",
+              1
+            ],
+            [
+              "F = 1.9 x 10^-3 N",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Hard",
+          "t": "mcq",
+          "m": 1,
+          "q": "Two solid spheres P and Q of the same material fall through the same liquid. The radius of Q is twice the radius of P. The ratio of the terminal velocity of Q to that of P is",
+          "a": "4 : 1",
+          "o": [
+            "4 : 1",
+            "2 : 1",
+            "1 : 4",
+            "8 : 1"
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Hardest",
+          "t": "long_answer",
+          "m": 3,
+          "q": "A copper ball of radius 1.0 mm falls through a tank of oil with a terminal velocity of 9.0 cm/s. The density of copper is 8.9 x 10^3 kg/m^3 and the density of the oil is 0.80 x 10^3 kg/m^3. Taking g = 10 m/s^2, find the coefficient of viscosity of the oil.",
+          "a": "At terminal velocity v_t = 2 a^2 (rho - sigma) g/(9 eta), so eta = 2 a^2 (rho - sigma) g/(9 v_t). Here a = 1.0 x 10^-3 m, rho - sigma = 8.9 x 10^3 - 0.80 x 10^3 = 8.1 x 10^3 kg/m^3 and v_t = 9.0 x 10^-2 m/s. eta = 2 x (1.0 x 10^-3)^2 x 8.1 x 10^3 x 10/(9 x 9.0 x 10^-2) = 0.162/0.81 = 0.20 Pa s.",
+          "s": [
+            [
+              "Uses v_t = 2 a^2 (rho - sigma) g/(9 eta) rearranged for eta",
+              1
+            ],
+            [
+              "Substitutes a = 1.0 x 10^-3 m, rho - sigma = 8.1 x 10^3 kg/m^3, v_t = 9.0 x 10^-2 m/s",
+              1
+            ],
+            [
+              "eta = 0.20 Pa s",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Analyse",
+          "d": "Hard",
+          "t": "assertion_reason",
+          "m": 1,
+          "q": "Assertion (A): When a liquid flows steadily through a pipe, the liquid moves fastest in the layer touching the wall of the pipe. Reason (R): The layer of a fluid in contact with a solid surface has the same velocity as that surface. Choose the correct option.",
+          "a": "A is false, R is true",
+          "o": [
+            "A is false, R is true",
+            "Both A and R are true, and R is the correct explanation of A",
+            "Both A and R are true, but R is not the correct explanation of A",
+            "A is true, R is false"
+          ]
+        },
+        {
+          "b": "Analyse",
+          "d": "Hard",
+          "t": "short_answer",
+          "m": 2,
+          "q": "Two identical flat plates are pulled at the same constant speed over films of the same liquid on a fixed table. Film X is 0.50 mm thick and film Y is 1.0 mm thick. Compare the forces needed to pull the two plates, giving your reasoning.",
+          "a": "From eta = F l/(v A), the force is F = eta A v/l. With the same liquid (eta), the same plate area A and the same speed v, the force is inversely proportional to the film thickness l. Film X has half the thickness of film Y, so the strain rate v/l is twice as large and the plate on X needs twice the force.",
+          "s": [
+            [
+              "F = eta A v/l, so F is inversely proportional to the film thickness",
+              1
+            ],
+            [
+              "The plate on film X (0.50 mm) needs twice the force needed on film Y (1.0 mm)",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Analyse",
+          "d": "Hardest",
+          "t": "long_answer",
+          "m": 3,
+          "q": "A tiny water droplet of radius 9.0 x 10^-6 m falls through still air. The density of water is 1.0 x 10^3 kg/m^3, the viscosity of air is 1.8 x 10^-5 Pa s and g = 10 m/s^2; neglect the density of air. (a) Find the terminal velocity of the droplet. (b) Find the terminal velocity of a droplet of three times this radius. (c) Explain why very small droplets appear to float in the air.",
+          "a": "(a) v_t = 2 a^2 (rho - sigma) g/(9 eta) = 2 x (9.0 x 10^-6)^2 x 1.0 x 10^3 x 10/(9 x 1.8 x 10^-5) = (1.62 x 10^-6)/(1.62 x 10^-4) = 1.0 x 10^-2 m/s, i.e. 1.0 cm/s. (b) v_t is proportional to a^2, so for three times the radius it is 9 times as large: 9.0 x 10^-2 m/s. (c) Because v_t is proportional to the square of the radius, very small droplets have extremely small terminal velocities, so they fall so slowly that they seem to float.",
+          "s": [
+            [
+              "v_t = 2 a^2 rho g/(9 eta) = 1.0 x 10^-2 m/s for a = 9.0 x 10^-6 m",
+              1
+            ],
+            [
+              "v_t proportional to a^2, so 9 times as large: 9.0 x 10^-2 m/s",
+              1
+            ],
+            [
+              "Small radius gives a very small terminal velocity, so the droplets fall very slowly",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Evaluate",
+          "d": "Hard",
+          "t": "short_answer",
+          "m": 2,
+          "q": "A driver says: 'Engine oil is a liquid, so it should flow more easily on a cold winter morning than on a hot afternoon.' Evaluate this statement.",
+          "a": "The statement is wrong. The viscosity of a liquid decreases as its temperature rises, so the oil is more viscous (thicker) when cold and flows less easily on a cold morning; it flows more easily when hot. (It is for gases that viscosity increases with temperature.)",
+          "s": [
+            [
+              "Judgement: wrong; the viscosity of a liquid decreases with rise of temperature",
+              1
+            ],
+            [
+              "So cold oil is more viscous and flows less easily; it flows more easily when hot",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Create",
+          "d": "Hardest",
+          "t": "long_answer",
+          "m": 3,
+          "q": "You are given two oils of nearly equal density, several identical small steel balls, two tall glass jars, a ruler and a stopwatch. Devise an experiment to decide which oil is more viscous. State what you would measure, how you would use the result, and one precaution that makes the comparison fair.",
+          "a": "Fill one jar with each oil. Mark two levels on each jar well below the surface, a measured distance apart, so that the ball has reached its constant terminal velocity before the first mark. Drop a ball centrally into each jar and time its fall between the marks; terminal velocity = distance/time. Since v_t = 2 a^2 (rho - sigma) g/(9 eta), with the same ball and nearly the same oil density the terminal velocity is inversely proportional to eta, so the oil in which the ball falls more slowly is the more viscous. Precaution: keep both oils at the same temperature (viscosity changes with temperature), use identical balls, and repeat the timing.",
+          "s": [
+            [
+              "Measures the time for a ball to fall a marked distance after it has reached terminal (constant) velocity",
+              1
+            ],
+            [
+              "Uses v_t inversely proportional to eta: the oil with the smaller terminal velocity is the more viscous",
+              1
+            ],
+            [
+              "States a valid fairness precaution (same temperature, identical balls, timing only after constant speed is reached, or repeating readings)",
+              1
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "code": "C11P-9.8",
+      "name": "Surface energy, surface tension and angle of contact",
+      "description": "Why the surface of a liquid has extra energy, surface tension as force per unit length and as surface energy per unit area, the film-and-slider and plate methods of measuring it, and the angle of contact with wetting and non-wetting.",
+      "idea": "Molecules at a liquid surface have fewer neighbours and so more energy than those inside; making more surface costs energy, the surface behaves as if under tension, and the way a liquid meets a solid is settled by the balance of the three interfacial tensions.",
+      "rule": "A molecule at the surface has roughly half the negative potential energy of one in the bulk, so surface molecules have extra energy and a liquid tends to have the least surface area that conditions permit. For a film held by a sliding bar of length l, moving the bar a distance d increases the area by 2 d l (a film has two surfaces): S (2 d l) = F d, so S = F/(2 l). Surface tension S is the force per unit length acting in the plane of the interface, and equals the surface energy per unit area (N/m = J/m^2). It depends on the materials on both sides of the interface and usually falls with temperature; gases have no free surface and no surface tension. Plate method: S_la = W/(2 l) = m g/(2 l), where W is the extra weight needed to pull a plate of edge length l clear of the liquid. The angle of contact theta is the angle between the tangent to the liquid surface at the point of contact and the solid surface, measured inside the liquid; S_la cos theta + S_sl = S_sa. If theta is obtuse the liquid does not wet the solid (water on a lotus leaf or waxy surface, mercury on glass); if theta is acute it wets the solid (water on glass or plastic). Wetting agents such as soaps and detergents make the angle of contact small; water-proofing agents make it large.",
+      "example": "A soap film pulls a slider of length 10 cm with a force of 5.0 x 10^-3 N. S = F/(2 l) = (5.0 x 10^-3)/(2 x 0.10) = 0.025 N/m.",
+      "difficulty_base": "Hard",
+      "questions": [
+        {
+          "b": "Remember",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "The surface tension of a liquid is the",
+          "a": "force per unit length acting in the plane of the interface",
+          "o": [
+            "force per unit length acting in the plane of the interface",
+            "force per unit area acting normal to the surface",
+            "energy per unit volume of the liquid",
+            "force per unit volume of the liquid"
+          ]
+        },
+        {
+          "b": "Remember",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "The angle of contact is the angle between the tangent to the liquid surface at the point of contact and the solid surface,",
+          "a": "measured inside the liquid",
+          "o": [
+            "measured inside the liquid",
+            "measured outside the liquid, in the air",
+            "measured inside the solid",
+            "measured from the vertical"
+          ]
+        },
+        {
+          "b": "Remember",
+          "d": "Easy",
+          "t": "fill_blank",
+          "m": 1,
+          "q": "Surface tension is equal to the surface energy per unit ____ of the liquid interface (one word).",
+          "a": "area"
+        },
+        {
+          "b": "Remember",
+          "d": "Hard",
+          "t": "mcq",
+          "m": 1,
+          "q": "In which of the following cases does the liquid NOT wet the solid?",
+          "a": "Water on a lotus leaf",
+          "o": [
+            "Water on a lotus leaf",
+            "Water on clean glass",
+            "Kerosene oil on glass",
+            "Water on a clean plastic plate"
+          ],
+          "rev": true
+        },
+        {
+          "b": "Understand",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "A molecule at the surface of a liquid has extra energy compared with a molecule in the interior because",
+          "a": "only its lower half is surrounded by liquid molecules, so its negative potential energy is smaller in magnitude",
+          "o": [
+            "only its lower half is surrounded by liquid molecules, so its negative potential energy is smaller in magnitude",
+            "it moves much faster than a molecule in the interior",
+            "it is heavier than a molecule in the interior",
+            "it is attracted by more neighbours than a molecule in the interior"
+          ]
+        },
+        {
+          "b": "Understand",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "A liquid film on a frame is stretched by moving its sliding bar slowly through a distance d against the pull F of the film. The surface energy of the film increases by",
+          "a": "F d",
+          "o": [
+            "F d",
+            "2 F d",
+            "F d / 2",
+            "F l, where l is the length of the bar"
+          ]
+        },
+        {
+          "b": "Understand",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "Whether a given liquid spreads over a given solid surface or gathers into droplets on it is decided by the value of the",
+          "a": "angle of contact",
+          "o": [
+            "angle of contact",
+            "density of water",
+            "viscosity of water",
+            "atmospheric pressure"
+          ]
+        },
+        {
+          "b": "Understand",
+          "d": "Hard",
+          "t": "mcq",
+          "m": 1,
+          "q": "A liquid tends to take the least surface area that the external conditions permit because",
+          "a": "increasing the surface area requires energy, since molecules at the surface have extra energy",
+          "o": [
+            "increasing the surface area requires energy, since molecules at the surface have extra energy",
+            "gravity pulls the surface inward",
+            "molecules at the surface repel one another",
+            "the pressure inside every liquid is zero"
+          ]
+        },
+        {
+          "b": "Understand",
+          "d": "Hard",
+          "t": "mcq",
+          "m": 1,
+          "q": "The surface energy of the interface between a liquid and another material depends on",
+          "a": "the materials on both sides of the surface",
+          "o": [
+            "the materials on both sides of the surface",
+            "the liquid alone, whatever it touches",
+            "the area of the surface alone",
+            "the volume of the liquid"
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "A soap film is formed on a rectangular frame that has a sliding wire of length 20 cm. The film pulls the wire with a force of 0.016 N. The surface tension of the soap solution is",
+          "a": "0.04 N/m",
+          "o": [
+            "0.04 N/m",
+            "0.08 N/m",
+            "4 x 10^-4 N/m",
+            "0.0064 N/m"
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Easy",
+          "t": "fill_blank",
+          "m": 1,
+          "q": "The surface energy of a liquid is 0.05 J per m^2. The energy needed to create 3 m^2 of new surface is ____ J (write the number as a decimal).",
+          "a": "0.15"
+        },
+        {
+          "b": "Apply",
+          "d": "Hard",
+          "t": "mcq",
+          "m": 1,
+          "q": "A soap film of surface tension 0.025 N/m is formed on a frame with a slider of length 8.0 cm. The work done in slowly pulling the slider out through 5.0 cm, so stretching the film, is",
+          "a": "2.0 x 10^-4 J",
+          "o": [
+            "2.0 x 10^-4 J",
+            "1.0 x 10^-4 J",
+            "2.0 J",
+            "4.0 x 10^-4 J"
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Hard",
+          "t": "short_answer",
+          "m": 2,
+          "q": "A flat vertical glass plate with a horizontal lower edge of length 5.0 cm hangs from one arm of a balance, with the edge just touching the surface of water. An extra mass of 0.70 g has to be added to the other pan to pull the plate just clear of the water. Taking g = 10 m/s^2, find the surface tension of the water-air interface.",
+          "a": "The extra weight balances the surface tension pull on the plate: S = W/(2 l) = m g/(2 l). m g = 0.70 x 10^-3 x 10 = 7.0 x 10^-3 N and 2 l = 2 x 0.050 = 0.10 m. S = (7.0 x 10^-3)/0.10 = 0.070 N/m.",
+          "s": [
+            [
+              "Uses S = m g/(2 l) with m = 0.70 x 10^-3 kg and l = 0.050 m",
+              1
+            ],
+            [
+              "S = 0.070 N/m",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Hard",
+          "t": "mcq",
+          "m": 1,
+          "q": "For a certain liquid resting on a solid, the interfacial tensions are S_sa = 0.040 N/m (solid-air), S_sl = 0.020 N/m (solid-liquid) and S_la = 0.040 N/m (liquid-air). Using S_la cos theta + S_sl = S_sa, the angle of contact theta is",
+          "a": "60 degrees",
+          "o": [
+            "60 degrees",
+            "120 degrees",
+            "30 degrees",
+            "90 degrees"
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Hardest",
+          "t": "long_answer",
+          "m": 3,
+          "q": "A soap film of surface tension 0.030 N/m fills a rectangular frame 10 cm long, one of whose 10 cm sides is a light sliding wire; the film is 6.0 cm wide. (a) Find the surface energy of the film. (b) The wire is slowly pulled out until the film is 9.0 cm wide. Find the work done. (c) Find the force with which the film pulls the wire and check that it agrees with (b).",
+          "a": "(a) A film has two surfaces, so the surface area = 2 x 0.10 x 0.060 = 0.012 m^2 and the energy = S x area = 0.030 x 0.012 = 3.6 x 10^-4 J. (b) The new area = 2 x 0.10 x 0.090 = 0.018 m^2, energy 5.4 x 10^-4 J, so the work done = 5.4 x 10^-4 - 3.6 x 10^-4 = 1.8 x 10^-4 J. (c) F = 2 S l = 2 x 0.030 x 0.10 = 6.0 x 10^-3 N; work = F d = 6.0 x 10^-3 x 0.030 = 1.8 x 10^-4 J, in agreement.",
+          "s": [
+            [
+              "Counts both surfaces: energy = 0.030 x 2 x 0.10 x 0.060 = 3.6 x 10^-4 J",
+              1
+            ],
+            [
+              "Work done = increase in surface energy = 1.8 x 10^-4 J",
+              1
+            ],
+            [
+              "F = 2 S l = 6.0 x 10^-3 N and F d = 1.8 x 10^-4 J agrees",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Analyse",
+          "d": "Hard",
+          "t": "multi_statement",
+          "m": 1,
+          "q": "Consider the statements: (I) The surface tension of a liquid keeps the same value at all temperatures. (II) Gases show surface tension just as liquids do, because gases also have free surfaces. Which is or are correct?",
+          "a": "Neither I nor II",
+          "o": [
+            "Neither I nor II",
+            "Only I",
+            "Only II",
+            "Both I and II"
+          ]
+        },
+        {
+          "b": "Analyse",
+          "d": "Hard",
+          "t": "short_answer",
+          "m": 2,
+          "q": "The hairs of a paint brush do not cling together when the brush is dry, nor when it is held under water, but they form a fine tip when the brush is taken out of the water. Explain this using the idea of surface energy.",
+          "a": "When the wet brush is taken out, the water on the hairs has a free surface in contact with air. A liquid surface has extra energy, so the water tends to take the least possible surface area, and this draws the hairs together into a fine tip. When the brush is dry there is no liquid, and when it is fully under water there is no free water surface around the hairs, so nothing pulls them together.",
+          "s": [
+            [
+              "Out of water there is a free liquid surface, which tends to the least area and pulls the hairs together",
+              1
+            ],
+            [
+              "Dry or fully immersed, there is no free liquid surface around the hairs, so they do not cling",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Analyse",
+          "d": "Hardest",
+          "t": "long_answer",
+          "m": 3,
+          "q": "The interfacial tensions for a liquid resting on a solid are S_sa = 0.050 N/m (solid-air), S_sl = 0.085 N/m (solid-liquid) and S_la = 0.070 N/m (liquid-air). (a) Using S_la cos theta + S_sl = S_sa, find the angle of contact and say whether the liquid wets the solid. (b) An agent added to the liquid lowers S_sl to 0.015 N/m while the other two values stay the same. Find the new angle of contact and state what has changed.",
+          "a": "(a) cos theta = (S_sa - S_sl)/S_la = (0.050 - 0.085)/0.070 = -0.50, so theta = 120 degrees. The angle is obtuse, so the liquid does not wet the solid and forms droplets. (b) cos theta = (0.050 - 0.015)/0.070 = +0.50, so theta = 60 degrees. The angle is now acute, so the liquid wets the solid and spreads: the added agent acts as a wetting agent by reducing the solid-liquid interfacial tension.",
+          "s": [
+            [
+              "cos theta = -0.50, theta = 120 degrees: obtuse, liquid does not wet the solid",
+              1
+            ],
+            [
+              "New cos theta = +0.50, theta = 60 degrees",
+              1
+            ],
+            [
+              "Acute angle: the liquid now wets the solid; the agent lowered S_sl (wetting agent)",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Evaluate",
+          "d": "Hard",
+          "t": "short_answer",
+          "m": 2,
+          "q": "A film of a liquid on a U-shaped wire with a slider of length 30 cm supports a weight of 4.0 x 10^-2 N. A student claims that if a film of the same liquid at the same temperature is formed on a frame with the same slider length but twice the film area, it will support twice the weight. Evaluate the claim.",
+          "a": "The claim is wrong. The film pulls the slider with a force F = 2 S l, which depends only on the surface tension S and the slider length l. Surface tension is a property of the liquid interface at that temperature and does not depend on the area of the film. With the same liquid, temperature and slider length the weight supported is the same, 4.0 x 10^-2 N.",
+          "s": [
+            [
+              "Judgement: wrong; the force on the slider is 2 S l and S does not depend on the area of the film",
+              1
+            ],
+            [
+              "Same S and same l give the same supported weight, 4.0 x 10^-2 N",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Create",
+          "d": "Hardest",
+          "t": "long_answer",
+          "m": 3,
+          "q": "A manufacturer wants (i) a fabric for raincoats and (ii) a liquid for washing clothes. Using the idea of angle of contact, propose what kind of agent should be used in each case, describe how water should behave on the fibres in each case, and relate each behaviour to whether the angle of contact is acute or obtuse.",
+          "a": "(i) Raincoat fabric: treat it with a water-proofing agent, which creates a large (obtuse) angle of contact between water and the fibres. Water then does not wet the fibres; it stays as droplets and runs off. (ii) Washing liquid: add a wetting agent such as soap or detergent, which makes the angle of contact small (acute). The water then wets the fibres, spreads and penetrates well, so the washing is effective. In general an obtuse angle of contact means the liquid does not wet the solid, and an acute angle means it wets and spreads.",
+          "s": [
+            [
+              "Raincoat: water-proofing agent giving a large (obtuse) angle of contact, so water forms droplets and does not wet the fibres",
+              1
+            ],
+            [
+              "Washing liquid: wetting agent (soap/detergent) giving a small (acute) angle of contact, so water spreads and penetrates",
+              1
+            ],
+            [
+              "States the general link: obtuse angle - non-wetting; acute angle - wetting",
+              1
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "code": "C11P-9.9",
+      "name": "Drops, bubbles and capillary rise",
+      "description": "Why free drops and bubbles are spherical, the excess pressure inside a liquid drop, an air bubble inside a liquid and a soap bubble in air, and the rise or fall of a liquid in a capillary tube.",
+      "idea": "Because a curved liquid surface is under tension, the pressure on its concave side is higher than on its convex side; this excess pressure keeps drops and bubbles in equilibrium and is what pulls water up a narrow tube.",
+      "rule": "For a given volume a sphere has the least surface area, so free drops and bubbles are spherical when gravity and other forces are negligible. Excess pressure inside a spherical liquid drop of radius r, or inside an air bubble (cavity) of radius r in a liquid, which has one liquid surface: P_i - P_o = 2 S/r. A soap bubble in air has two liquid-air interfaces: P_i - P_o = 4 S/r. For any liquid-gas interface the concave side has the higher pressure. Capillary rise: water in a narrow glass tube of radius a has a concave meniscus (acute angle of contact theta); the pressure just under the meniscus is less than atmospheric by (2 S/a) cos theta, and h rho g = (2 S cos theta)/a, so h = 2 S cos theta/(rho g a). The rise is larger for a smaller a. If the meniscus is convex (cos theta negative, as for mercury in glass) the liquid stands lower in the capillary.",
+      "example": "A liquid drop of radius 0.20 mm with surface tension 0.060 N/m has excess pressure 2 S/r = (2 x 0.060)/(0.20 x 10^-3) = 600 Pa.",
+      "difficulty_base": "Hardest",
+      "questions": [
+        {
+          "b": "Remember",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "The rise of water in a narrow glass tube, in spite of gravity, is called",
+          "a": "capillary rise",
+          "o": [
+            "capillary rise",
+            "the Magnus effect",
+            "dynamic lift",
+            "the hydrostatic paradox"
+          ]
+        },
+        {
+          "b": "Remember",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "The surface (meniscus) of water in a narrow glass capillary tube is",
+          "a": "concave",
+          "o": [
+            "concave",
+            "convex",
+            "perfectly flat",
+            "flat at the centre and convex at the edge"
+          ]
+        },
+        {
+          "b": "Remember",
+          "d": "Easy",
+          "t": "fill_blank",
+          "m": 1,
+          "q": "When the effects of gravity and other forces can be neglected, a free liquid drop takes the shape of a ____ (one word, the name of the solid shape).",
+          "a": "sphere"
+        },
+        {
+          "b": "Remember",
+          "d": "Hard",
+          "t": "mcq",
+          "m": 1,
+          "q": "Which of the following changes would NOT increase the height to which a liquid rises in a glass capillary tube?",
+          "a": "Using a capillary tube of larger radius",
+          "o": [
+            "Using a capillary tube of larger radius",
+            "Using a capillary tube of smaller radius",
+            "Using a liquid of the same density and angle of contact but larger surface tension",
+            "Using a liquid of the same surface tension and angle of contact but smaller density"
+          ],
+          "rev": true
+        },
+        {
+          "b": "Understand",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "Free liquid drops are spherical because, for a given volume, a sphere has",
+          "a": "the least surface area and hence the least surface energy",
+          "o": [
+            "the least surface area and hence the least surface energy",
+            "the greatest surface area",
+            "the greatest surface energy",
+            "the least mass"
+          ]
+        },
+        {
+          "b": "Understand",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "Across a curved liquid-gas interface, the pressure is higher on",
+          "a": "the concave side",
+          "o": [
+            "the concave side",
+            "the convex side",
+            "neither side; the two pressures are equal",
+            "whichever side the liquid is on"
+          ]
+        },
+        {
+          "b": "Understand",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "The rise of water in a glass capillary is a consequence of",
+          "a": "the pressure difference across the curved water-air surface, which is due to surface tension",
+          "o": [
+            "the pressure difference across the curved water-air surface, which is due to surface tension",
+            "the viscosity of water",
+            "a higher atmospheric pressure inside the tube than outside",
+            "the weight of the glass tube"
+          ]
+        },
+        {
+          "b": "Understand",
+          "d": "Hard",
+          "t": "mcq",
+          "m": 1,
+          "q": "In a glass capillary dipped in mercury, the mercury stands lower inside the tube than outside because",
+          "a": "its meniscus is convex (cos theta is negative), so the capillary rise comes out negative",
+          "o": [
+            "its meniscus is convex (cos theta is negative), so the capillary rise comes out negative",
+            "mercury is denser than glass",
+            "mercury has no surface tension",
+            "atmospheric pressure is greater inside the tube than outside"
+          ]
+        },
+        {
+          "b": "Understand",
+          "d": "Hard",
+          "t": "mcq",
+          "m": 1,
+          "q": "Water has risen in a glass capillary tube open at the top. Just below the concave meniscus, the pressure in the water is",
+          "a": "less than atmospheric pressure",
+          "o": [
+            "less than atmospheric pressure",
+            "greater than atmospheric pressure",
+            "equal to atmospheric pressure",
+            "zero"
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "The excess pressure inside a liquid drop of mercury of radius 4.0 mm (surface tension of mercury = 0.46 N/m) is",
+          "a": "230 Pa",
+          "o": [
+            "230 Pa",
+            "460 Pa",
+            "115 Pa",
+            "0.23 Pa"
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Easy",
+          "t": "fill_blank",
+          "m": 1,
+          "q": "A soap bubble in air has radius 0.01 m and the surface tension of the soap solution is 0.025 N/m. The excess pressure inside the soap bubble is ____ Pa (write a whole number).",
+          "a": "10"
+        },
+        {
+          "b": "Apply",
+          "d": "Hard",
+          "t": "mcq",
+          "m": 1,
+          "q": "An air bubble inside the liquid, of radius 0.50 mm, is formed in water of surface tension 0.072 N/m. The excess pressure inside the air bubble is",
+          "a": "288 Pa",
+          "o": [
+            "288 Pa",
+            "576 Pa",
+            "144 Pa",
+            "0.288 Pa"
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Hard",
+          "t": "short_answer",
+          "m": 2,
+          "q": "A glass capillary tube of radius 0.25 mm is dipped vertically in water. Take the surface tension of water = 0.070 N/m, the angle of contact = 0 degrees (cos theta = 1), density of water = 1000 kg/m^3 and g = 10 m/s^2. Find the height to which the water rises in the tube, in cm.",
+          "a": "h = 2 S cos theta/(rho g a) = (2 x 0.070 x 1)/(1000 x 10 x 0.25 x 10^-3) = 0.14/2.5 = 0.056 m = 5.6 cm.",
+          "s": [
+            [
+              "Uses h = 2 S cos theta/(rho g a) with a = 0.25 x 10^-3 m",
+              1
+            ],
+            [
+              "h = 0.056 m = 5.6 cm",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Hard",
+          "t": "mcq",
+          "m": 1,
+          "q": "A liquid drop of radius 1.0 mm has surface tension 0.50 N/m and is surrounded by air at atmospheric pressure 1.01 x 10^5 Pa. The absolute pressure inside the liquid drop is",
+          "a": "1.02 x 10^5 Pa",
+          "o": [
+            "1.02 x 10^5 Pa",
+            "1.00 x 10^5 Pa",
+            "1.03 x 10^5 Pa",
+            "1.0 x 10^3 Pa"
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Hardest",
+          "t": "long_answer",
+          "m": 3,
+          "q": "The surface tension of a soap solution is 0.030 N/m. (a) Find the excess pressure inside a soap bubble in air of radius 4.0 mm. (b) An air bubble inside the liquid, also of radius 4.0 mm, is formed 50 cm below the surface of the soap solution in an open container. Find the excess pressure inside this air bubble and the absolute pressure inside it. (Density of the soap solution = 1.2 x 10^3 kg/m^3, g = 10 m/s^2, atmospheric pressure = 1.01 x 10^5 Pa.)",
+          "a": "(a) A soap bubble in air has two surfaces: excess pressure = 4 S/r = (4 x 0.030)/(4.0 x 10^-3) = 30 Pa. (b) An air bubble inside the liquid has one surface: excess pressure = 2 S/r = (2 x 0.030)/(4.0 x 10^-3) = 15 Pa. Pressure outside the bubble P_o = Pa + rho g h = 1.01 x 10^5 + 1.2 x 10^3 x 10 x 0.50 = 1.01 x 10^5 + 6.0 x 10^3 = 1.07 x 10^5 Pa. Absolute pressure inside = P_o + 15 Pa = 1.07015 x 10^5 Pa, about 1.07 x 10^5 Pa.",
+          "s": [
+            [
+              "Soap bubble in air: 4 S/r = 30 Pa",
+              1
+            ],
+            [
+              "Air bubble inside the liquid: 2 S/r = 15 Pa",
+              1
+            ],
+            [
+              "P_o = 1.01 x 10^5 + 6.0 x 10^3 = 1.07 x 10^5 Pa and P_i = P_o + 15 Pa = 1.07 x 10^5 Pa (to 3 significant figures)",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Analyse",
+          "d": "Hard",
+          "t": "assertion_reason",
+          "m": 1,
+          "q": "Assertion (A): The excess pressure inside a soap bubble in air is twice the excess pressure inside a liquid drop of the same radius and the same surface tension. Reason (R): A soap bubble in air has two liquid-air interfaces, whereas a liquid drop has only one. Choose the correct option.",
+          "a": "Both A and R are true, and R is the correct explanation of A",
+          "o": [
+            "Both A and R are true, and R is the correct explanation of A",
+            "Both A and R are true, but R is not the correct explanation of A",
+            "A is true, R is false",
+            "A is false, R is true"
+          ]
+        },
+        {
+          "b": "Analyse",
+          "d": "Hard",
+          "t": "short_answer",
+          "m": 2,
+          "q": "Two soap bubbles in air are blown from the same soap solution. Bubble X has radius 1.0 cm and bubble Y has radius 2.0 cm. Which bubble has the greater excess pressure inside it, and by what factor? Give your reasoning.",
+          "a": "For bubbles of the same solution the excess pressure is inversely proportional to the radius (it is proportional to S/r with the same S and the same numerical factor). The smaller bubble X therefore has the greater excess pressure, twice that of Y, since its radius is half as large.",
+          "s": [
+            [
+              "Excess pressure is inversely proportional to the radius for the same solution",
+              1
+            ],
+            [
+              "The smaller bubble X has twice the excess pressure of Y",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Analyse",
+          "d": "Hardest",
+          "t": "long_answer",
+          "m": 3,
+          "q": "The lower end of a capillary tube of diameter 1.0 mm is dipped 10 cm below the surface of water in a beaker open to the atmosphere. Air is blown gently down the tube until a hemispherical air bubble inside the liquid forms at its lower end. Take the surface tension of water = 0.070 N/m, density of water = 1000 kg/m^3, g = 10 m/s^2 and atmospheric pressure = 1.01 x 10^5 Pa. Find (a) the absolute pressure in the water just outside the bubble, (b) the excess pressure inside the bubble and (c) the absolute pressure of the air needed in the tube.",
+          "a": "(a) P_o = Pa + rho g h = 1.01 x 10^5 + 1000 x 10 x 0.10 = 1.01 x 10^5 + 1.0 x 10^3 = 1.02 x 10^5 Pa. (b) The bubble is hemispherical, so its radius equals the radius of the tube, r = 0.50 x 10^-3 m. It is a bubble of gas in a liquid with one liquid surface, so the excess pressure = 2 S/r = (2 x 0.070)/(0.50 x 10^-3) = 280 Pa. (c) P_i = P_o + 2 S/r = 1.02 x 10^5 + 280 = 1.0228 x 10^5 Pa.",
+          "s": [
+            [
+              "P_o = Pa + rho g h = 1.02 x 10^5 Pa",
+              1
+            ],
+            [
+              "Takes r = tube radius 0.50 x 10^-3 m (hemispherical bubble) and finds the excess pressure 2 S/r = 280 Pa",
+              1
+            ],
+            [
+              "P_i = 1.02 x 10^5 + 280 = 1.0228 x 10^5 Pa",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Evaluate",
+          "d": "Hard",
+          "t": "short_answer",
+          "m": 2,
+          "q": "In a glass capillary tube of radius 0.50 mm a student sees water rise about 3 cm. She predicts that in a glass tube of radius 5.0 mm the water will rise about 30 cm, 'because a wider tube can hold up more water'. Evaluate her prediction.",
+          "a": "The prediction is wrong. The capillary rise is caused by the pressure difference across the curved meniscus, and it is inversely proportional to the radius of the tube: it is larger for a smaller radius. A tube ten times wider gives one-tenth of the rise, about 0.3 cm, not 30 cm.",
+          "s": [
+            [
+              "Judgement: wrong; capillary rise is inversely proportional to the tube radius (larger for a narrower tube)",
+              1
+            ],
+            [
+              "Ten times the radius gives one-tenth of the rise, about 0.3 cm",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Create",
+          "d": "Hardest",
+          "t": "long_answer",
+          "m": 3,
+          "q": "You need water to rise at least 10 cm in a vertical glass capillary tube. Take the surface tension of water = 0.070 N/m, the angle of contact = 0 degrees (cos theta = 1), density of water = 1000 kg/m^3 and g = 10 m/s^2. Design the tube: find the largest radius that will do, in mm, and state what rise a tube of half that radius would give, with a reason.",
+          "a": "From h = 2 S cos theta/(rho g a), the radius needed is a = 2 S cos theta/(rho g h). For h = 0.10 m: a = (2 x 0.070 x 1)/(1000 x 10 x 0.10) = 1.4 x 10^-4 m = 0.14 mm. The rise is larger for a smaller radius, so any radius up to 0.14 mm will do. Since h is inversely proportional to a, a tube of half this radius (0.070 mm) gives twice the rise, 20 cm.",
+          "s": [
+            [
+              "Rearranges h = 2 S cos theta/(rho g a) for the radius",
+              1
+            ],
+            [
+              "Largest radius a = 1.4 x 10^-4 m = 0.14 mm",
+              1
+            ],
+            [
+              "Half the radius gives twice the rise (20 cm) because h is inversely proportional to a",
+              1
+            ]
+          ]
+        }
+      ]
+    }
+  ]
+}

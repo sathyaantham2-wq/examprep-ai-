@@ -1,0 +1,2976 @@
+{
+  "subject": {
+    "code": "PHY11",
+    "name": "Physics",
+    "board": "CBSE",
+    "class": 11
+  },
+  "source": {
+    "publisher": "NCERT",
+    "title": "Physics Part I",
+    "edition": "Textbook for Class XI Part I, Reprint 2026-27",
+    "year": 2026
+  },
+  "chapter": {
+    "part": "I",
+    "chapter_no": 5,
+    "name": "Work, Energy and Power",
+    "blurb": "The chapter introduces the scalar product of two vectors and uses it to define the work done by a force, then relates work to kinetic energy through the work-energy theorem for constant and variable forces. It develops potential energy for conservative forces such as gravity and the spring force, and the conservation of mechanical energy. It ends with power and with elastic and inelastic collisions in one and two dimensions.",
+    "source_code": "keph105",
+    "order_index": 5
+  },
+  "scope_in": [
+    {
+      "item": "Define the scalar product A.B = AB cos theta, interpret it as a projection, use its commutative and distributive properties and the unit-vector results, and evaluate it in components (AxBx + AyBy + AzBz) to find magnitudes, angles, projections and perpendicularity (Example 5.1)",
+      "pages": "71-72"
+    },
+    {
+      "item": "State the work-energy theorem Kf - Ki = W for the net force, obtained from v^2 - u^2 = 2as, and use it to find the work done by an unknown force (Example 5.2)",
+      "pages": "73"
+    },
+    {
+      "item": "Calculate the work done by a constant force as W = F d cos theta = F.d with its sign; state when no work is done; recognise positive and negative work; state the dimensions [M L^2 T^-2] and the unit joule; recognise that the works done by an action-reaction pair need not be equal and opposite (Example 5.3, Exercises 5.1, 5.2, 5.11)",
+      "pages": "73-74, 88, 90"
+    },
+    {
+      "item": "Define kinetic energy K = (1/2) m v^2 as a scalar measuring the work a body can do by virtue of its motion, and relate changes in speed to changes in kinetic energy (Example 5.4, Exercise 5.12)",
+      "pages": "74-75, 90"
+    },
+    {
+      "item": "Find the work done by a variable force in one dimension as the sum of F(x) delta x, the area under the force-displacement curve (with sign) and the definite integral of F(x) dx (Example 5.5)",
+      "pages": "75-76"
+    },
+    {
+      "item": "Follow the proof of the work-energy theorem for a variable force, apply it, and state that it is a scalar, integral form of Newton's second law carrying no explicit time or direction information (Example 5.6, Exercise 5.20)",
+      "pages": "76-77, 91"
+    },
+    {
+      "item": "Define gravitational potential energy V(h) = mgh for constant g, relate force and potential energy by F = -dV/dx, and state the three equivalent descriptions of a conservative force",
+      "pages": "77-78"
+    },
+    {
+      "item": "State and apply the conservation of total mechanical energy K + V when only conservative forces do work: falling bodies, smooth inclines and tracks, pendulum bobs, and the bob in a vertical circle (Example 5.7, Exercises 5.6, 5.18)",
+      "pages": "78-80, 89, 91"
+    },
+    {
+      "item": "State Hooke's law Fs = -kx, find the work done by the spring force and by the external force, use the spring potential energy V = (1/2) k x^2 and energy conservation for a block on a spring, including the maximum speed and maximum compression (Example 5.8, Exercise 5.4)",
+      "pages": "80-82, 89"
+    },
+    {
+      "item": "Recognise friction as a non-conservative force, use Ef - Ei = Wnc and the work-energy theorem when friction acts (Example 5.9), and state that the zero of potential energy is arbitrary but must be used consistently",
+      "pages": "82-83"
+    },
+    {
+      "item": "Define average and instantaneous power, use P = W/t and P = F.v, the watt, the horse-power (1 hp = 746 W) and the kilowatt hour as a unit of energy; use the alternative energy units of Table 5.1 (Example 5.10, Exercises 5.9, 5.15, 5.23)",
+      "pages": "74, 83, 90-91"
+    },
+    {
+      "item": "Explain why linear momentum is conserved in all collisions; distinguish elastic, inelastic and completely inelastic collisions; find the common velocity and the loss of kinetic energy in a completely inelastic collision in one dimension with one body at rest",
+      "pages": "83-84"
+    },
+    {
+      "item": "Derive and use v1f = (m1 - m2) v1i/(m1 + m2) and v2f = 2 m1 v1i/(m1 + m2) for a head-on elastic collision with the second body at rest, with the equal-mass and heavy-target cases and the energy transfer to a moderator (Example 5.11)",
+      "pages": "84-85"
+    },
+    {
+      "item": "Write the momentum and kinetic energy equations for a collision in two dimensions with one body at rest, count equations against unknowns, and use the result that equal masses in a glancing elastic collision move off at right angles (Example 5.12, Exercise 5.14)",
+      "pages": "85-86, 90"
+    }
+  ],
+  "scope_out": [
+    {
+      "item": "Various forms of energy and the general law of conservation of energy: heat, chemical energy, electrical energy, the equivalence of mass and energy (E = mc^2), nuclear energy (fission and fusion)",
+      "reason": "The section is absent from this rationalised edition: Section 5.10 is Power and Section 5.11 is Collisions, and the Summary has no item on it"
+    },
+    {
+      "item": "Coefficient of restitution",
+      "reason": "Not mentioned anywhere in the chapter; collisions are classified only as elastic, inelastic or completely inelastic"
+    },
+    {
+      "item": "Elastic collision formulae for two bodies that are both moving before the collision",
+      "reason": "The chapter treats only the case of m2 at rest (p. 83: 'We can consider m2 to be at rest')"
+    },
+    {
+      "item": "Full numerical solution of two-dimensional collisions with unequal masses",
+      "reason": "The chapter writes Eqs. (5.28)-(5.30) and solves only the equal-mass case of Example 5.12 (pp. 85-86)"
+    },
+    {
+      "item": "The vector (cross) product of two vectors",
+      "reason": "Deferred to Chapter 6 (p. 71)"
+    },
+    {
+      "item": "Conservative forces in three dimensions using a vector derivative (gradient)",
+      "reason": "Stated to be outside the scope of the book (p. 78)"
+    },
+    {
+      "item": "Variation of g with height and gravitational potential energy with its zero at infinity",
+      "reason": "Left to Chapter 7, Gravitation (pp. 77, 82); only V = mgh with constant g is used here"
+    },
+    {
+      "item": "Time period and equation of motion of a block on a spring (simple harmonic motion)",
+      "reason": "The chapter obtains only energies and the maximum speed; it notes that time information needs a solution of Newton's second law (p. 82)"
+    },
+    {
+      "item": "Reading potential energy curves to find allowed and forbidden regions (Exercise 5.3, Fig. 5.11), and other exercises that depend on a figure (5.5(d), 5.16, 5.17)",
+      "reason": "The graphs and figures cannot be reproduced in text; only the algebraic turning-point idea of Exercise 5.4 is used"
+    },
+    {
+      "item": "Work-energy theorem in non-inertial frames with pseudo-forces, and the other remarks in 'Points to ponder'",
+      "reason": "'Points to ponder' (p. 87) is not examinable text; no question depends on it alone"
+    },
+    {
+      "item": "Memorising the typical kinetic energies of Table 5.2 and the biographical notes on Joule and Watt",
+      "reason": "Illustrative data and historical remarks (pp. 74, 75, 83), not examinable"
+    },
+    {
+      "item": "Variable-mass systems such as the leaking sand trolley, rocket casing and satellite questions (Exercises 5.5, 5.19) and the windmill and dieter estimates (Exercises 5.21, 5.22)",
+      "reason": "Appear only as exercises needing ideas (drag heating, orbital motion, fluid flow, physiology) that the chapter text does not teach"
+    }
+  ],
+  "concepts": [
+    {
+      "code": "C11P-5.1",
+      "name": "The scalar product of two vectors",
+      "description": "Definition A.B = AB cos theta, its meaning as a projection, its commutative and distributive properties, the unit-vector results and the component form AxBx + AyBy + AzBz.",
+      "idea": "Two vectors can be multiplied to give a plain number: the magnitude of one times the component of the other along it.",
+      "rule": "A.B = A B cos theta, where theta is the angle between A and B; the result is a scalar. B cos theta is the projection of B onto A and A cos theta is the projection of A onto B. A.B = B.A (commutative), A.(B + C) = A.B + A.C (distributive) and A.(lambda B) = lambda (A.B). For the unit vectors i.i = j.j = k.k = 1 and i.j = j.k = k.i = 0, so in components A.B = AxBx + AyBy + AzBz. A.A = A^2 = Ax^2 + Ay^2 + Az^2, and A.B = 0 if A and B are perpendicular.",
+      "example": "For A = 2i + 3j + k and B = i - 2j + 4k, A.B = (2)(1) + (3)(-2) + (1)(4) = 0, so A and B are perpendicular.",
+      "difficulty_base": "Easy",
+      "questions": [
+        {
+          "b": "Remember",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "The scalar product of two vectors A and B, with theta the angle between them, is defined as",
+          "a": "A B cos theta",
+          "o": [
+            "A B cos theta",
+            "A B sin theta",
+            "A B tan theta",
+            "(A + B) cos theta"
+          ]
+        },
+        {
+          "b": "Remember",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "For the unit vectors i and j along the x-axis and the y-axis, the scalar product i.j is equal to",
+          "a": "0",
+          "o": [
+            "0",
+            "1",
+            "-1",
+            "the unit vector k"
+          ]
+        },
+        {
+          "b": "Remember",
+          "d": "Easy",
+          "t": "fill_blank",
+          "m": 1,
+          "q": "For the unit vector k along the z-axis, the scalar product k.k is equal to ____ (write a whole number).",
+          "a": "1"
+        },
+        {
+          "b": "Remember",
+          "d": "Hard",
+          "t": "mcq",
+          "m": 1,
+          "q": "Which of the following statements about the scalar product of two vectors is NOT correct?",
+          "a": "It is a vector directed perpendicular to both of the vectors",
+          "o": [
+            "It is a vector directed perpendicular to both of the vectors",
+            "It obeys the distributive law, A.(B + C) = A.B + A.C",
+            "It can be positive, negative or zero, depending on the angle between the vectors",
+            "It equals the magnitude of one vector multiplied by the component of the other along it"
+          ],
+          "rev": true
+        },
+        {
+          "b": "Understand",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "Vectors A and B make an angle theta with each other. Geometrically, the quantity B cos theta is",
+          "a": "the projection of B onto A",
+          "o": [
+            "the projection of B onto A",
+            "the projection of A onto B",
+            "the magnitude of the vector A + B",
+            "the component of B perpendicular to A"
+          ]
+        },
+        {
+          "b": "Understand",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "For A = Ax i + Ay j + Az k and B = Bx i + By j + Bz k, the scalar product A.B is",
+          "a": "AxBx + AyBy + AzBz",
+          "o": [
+            "AxBx + AyBy + AzBz",
+            "AxBy + AyBz + AzBx",
+            "(Ax + Ay + Az)(Bx + By + Bz)",
+            "AxBx i + AyBy j + AzBz k"
+          ]
+        },
+        {
+          "b": "Understand",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "The scalar product of a vector A with itself, A.A, is equal to",
+          "a": "A^2, the square of its magnitude",
+          "o": [
+            "A^2, the square of its magnitude",
+            "zero",
+            "A, its magnitude",
+            "2A, twice its magnitude"
+          ]
+        },
+        {
+          "b": "Understand",
+          "d": "Hard",
+          "t": "mcq",
+          "m": 1,
+          "q": "Two vectors have fixed magnitudes A and B. As the angle between them is increased from 0 degrees to 90 degrees, their scalar product",
+          "a": "decreases from AB to zero",
+          "o": [
+            "decreases from AB to zero",
+            "increases from zero to AB",
+            "stays equal to AB",
+            "changes from AB to -AB"
+          ]
+        },
+        {
+          "b": "Understand",
+          "d": "Hard",
+          "t": "mcq",
+          "m": 1,
+          "q": "Two vectors of magnitudes A and B point in exactly opposite directions (the angle between them is 180 degrees). Their scalar product is",
+          "a": "-AB",
+          "o": [
+            "-AB",
+            "+AB",
+            "zero",
+            "-(A + B)"
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "Vectors P and Q have magnitudes 6 units and 5 units and the angle between them is 60 degrees. Using cos 60 degrees = 0.5, P.Q is",
+          "a": "15 units",
+          "o": [
+            "15 units",
+            "30 units",
+            "11 units",
+            "5.5 units"
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Easy",
+          "t": "fill_blank",
+          "m": 1,
+          "q": "If A = 2i + 3j and B = 4i - j, then the scalar product A.B is equal to ____ (write a whole number).",
+          "a": "5"
+        },
+        {
+          "b": "Apply",
+          "d": "Hard",
+          "t": "mcq",
+          "m": 1,
+          "q": "The magnitude of the vector A = i + 2j + 2k is",
+          "a": "3 units",
+          "o": [
+            "3 units",
+            "9 units",
+            "5 units",
+            "4 units"
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Hard",
+          "t": "short_answer",
+          "m": 2,
+          "q": "Find the value of p for which the vectors A = 2i + pj + k and B = 4i - 2j - 2k are perpendicular to each other.",
+          "a": "For perpendicular vectors A.B = 0. A.B = (2)(4) + (p)(-2) + (1)(-2) = 8 - 2p - 2 = 6 - 2p. Setting 6 - 2p = 0 gives p = 3.",
+          "s": [
+            [
+              "Writes A.B = 8 - 2p - 2 and sets it equal to zero",
+              1
+            ],
+            [
+              "p = 3",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Hard",
+          "t": "mcq",
+          "m": 1,
+          "q": "A = 3i + 4j and B = 5i. The projection of A on B is",
+          "a": "3 units",
+          "o": [
+            "3 units",
+            "4 units",
+            "5 units",
+            "15 units"
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Hardest",
+          "t": "long_answer",
+          "m": 3,
+          "q": "Find the angle between the vectors A = i + j and B = i + k. Use cos 60 degrees = 0.5 and cos 45 degrees = 0.707.",
+          "a": "A.B = (1)(1) + (1)(0) + (0)(1) = 1. A^2 = 1 + 1 = 2 so A = sqrt(2); B^2 = 1 + 1 = 2 so B = sqrt(2). cos theta = A.B/(A B) = 1/(sqrt(2) x sqrt(2)) = 1/2 = 0.5, so theta = 60 degrees.",
+          "s": [
+            [
+              "A.B = 1 from the component form",
+              1
+            ],
+            [
+              "Magnitudes A = sqrt(2) and B = sqrt(2) from A.A and B.B",
+              1
+            ],
+            [
+              "cos theta = 1/2, so theta = 60 degrees",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Analyse",
+          "d": "Hard",
+          "t": "assertion_reason",
+          "m": 1,
+          "q": "Assertion (A): The vectors P = 2i + 3j - k and Q = i - j - k are perpendicular to each other. Reason (R): The scalar product of two vectors does not change when the order of the two vectors is interchanged. Choose the correct option.",
+          "a": "Both A and R are true, but R is not the correct explanation of A",
+          "o": [
+            "Both A and R are true, but R is not the correct explanation of A",
+            "Both A and R are true, and R is the correct explanation of A",
+            "A is true, R is false",
+            "A is false, R is true"
+          ]
+        },
+        {
+          "b": "Analyse",
+          "d": "Hard",
+          "t": "short_answer",
+          "m": 2,
+          "q": "Two vectors have magnitudes 4 units and 5 units and their scalar product is -10 units. Find the angle between them and say what the negative sign tells you. Use cos 120 degrees = -0.5.",
+          "a": "cos theta = A.B/(A B) = -10/(4 x 5) = -0.5, so theta = 120 degrees. The negative sign shows that the angle is greater than 90 degrees: the component of one vector along the other points opposite to it.",
+          "s": [
+            [
+              "cos theta = -10/20 = -0.5, so theta = 120 degrees",
+              1
+            ],
+            [
+              "Negative scalar product means the angle is obtuse (component of one along the other is in the opposite direction)",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Analyse",
+          "d": "Hardest",
+          "t": "long_answer",
+          "m": 3,
+          "q": "Given A = 2i - j + 2k and B = 3i + 4k (in the same units), find (a) A.B, (b) the magnitudes of A and B, and (c) the cosine of the angle between them and the projection of A on B.",
+          "a": "(a) A.B = (2)(3) + (-1)(0) + (2)(4) = 14 units. (b) A = sqrt(4 + 1 + 4) = 3 units; B = sqrt(9 + 0 + 16) = 5 units. (c) cos theta = A.B/(A B) = 14/15 (about 0.93). Projection of A on B = A cos theta = A.B/B = 14/5 = 2.8 units.",
+          "s": [
+            [
+              "A.B = 6 + 0 + 8 = 14",
+              1
+            ],
+            [
+              "A = 3 units and B = 5 units",
+              1
+            ],
+            [
+              "cos theta = 14/15 and projection of A on B = 14/5 = 2.8 units",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Evaluate",
+          "d": "Hard",
+          "t": "short_answer",
+          "m": 2,
+          "q": "A student claims: 'If A.B = A.C and A is not a zero vector, then B must be equal to C.' Evaluate this claim, giving a reason or a counter-example.",
+          "a": "The claim is wrong. A.B = A.C gives A.(B - C) = 0 by the distributive law, which only requires B - C to be perpendicular to A (or zero). For example, with A = i, B = i + j and C = i + 2j, A.B = 1 and A.C = 1 although B is not equal to C. Only the components of B and C along A must be equal.",
+          "s": [
+            [
+              "Judgement: the claim is wrong; A.(B - C) = 0 only means B - C is perpendicular to A (equal components along A)",
+              1
+            ],
+            [
+              "A valid counter-example or the equivalent argument that the components perpendicular to A may differ",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Create",
+          "d": "Hardest",
+          "t": "long_answer",
+          "m": 3,
+          "q": "Construct a vector B lying in the x-y plane that is perpendicular to A = 3i + 4j and has a magnitude of 10 units. Show the condition you used and verify your answer.",
+          "a": "Let B = x i + y j. Perpendicular to A means A.B = 3x + 4y = 0, so y = -3x/4; for example the vector 4i - 3j satisfies this and has magnitude sqrt(16 + 9) = 5 units. Doubling it gives B = 8i - 6j (or the opposite vector -8i + 6j). Check: A.B = (3)(8) + (4)(-6) = 0 and B = sqrt(64 + 36) = 10 units.",
+          "s": [
+            [
+              "States the condition A.B = 3x + 4y = 0",
+              1
+            ],
+            [
+              "Finds a direction satisfying it, such as 4i - 3j (or -4i + 3j)",
+              1
+            ],
+            [
+              "Scales to magnitude 10: B = 8i - 6j or -8i + 6j, with the check A.B = 0",
+              1
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "code": "C11P-5.2",
+      "name": "Work done by a constant force",
+      "description": "Work as W = F d cos theta = F.d, the conditions under which no work is done, positive and negative work, and the unit and dimensions of work.",
+      "idea": "Work is done by a force on a body over a displacement; only the component of the force along the displacement counts, so work can be positive, negative or zero.",
+      "rule": "W = (F cos theta) d = F.d, the product of the component of the force in the direction of the displacement and the magnitude of the displacement. No work is done if the displacement is zero, the force is zero, or the force and displacement are perpendicular. W is positive for theta between 0 and 90 degrees and negative for theta between 90 and 180 degrees; friction opposing the displacement (theta = 180 degrees) does negative work. Work is a scalar with dimensions [M L^2 T^-2] and SI unit joule (J). The work done on A by B is not necessarily equal and opposite to the work done on B by A.",
+      "example": "A 50 N force acting at 60 degrees to a 4 m displacement does W = 50 x 4 x cos 60 degrees = 100 J; a 50 N force directly opposing the same displacement does -200 J.",
+      "difficulty_base": "Easy",
+      "questions": [
+        {
+          "b": "Remember",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "A constant force F acts on a body that undergoes a displacement d, and theta is the angle between F and d. The work done by the force is",
+          "a": "F d cos theta",
+          "o": [
+            "F d cos theta",
+            "F d sin theta",
+            "F d / cos theta",
+            "F d tan theta"
+          ]
+        },
+        {
+          "b": "Remember",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "The dimensions of work are",
+          "a": "[M L^2 T^-2]",
+          "o": [
+            "[M L^2 T^-2]",
+            "[M L T^-2]",
+            "[M L^2 T^-3]",
+            "[M L T^-1]"
+          ]
+        },
+        {
+          "b": "Remember",
+          "d": "Easy",
+          "t": "fill_blank",
+          "m": 1,
+          "q": "The SI unit of work is the ____ (write the name of the unit as one word).",
+          "a": "joule"
+        },
+        {
+          "b": "Remember",
+          "d": "Hard",
+          "t": "mcq",
+          "m": 1,
+          "q": "In which of the following situations is the work done by the named force NOT zero?",
+          "a": "The frictional force on a box that slides 2 m across a rough floor",
+          "o": [
+            "The frictional force on a box that slides 2 m across a rough floor",
+            "The force of a weightlifter on a load that he holds steadily on his shoulder for 30 s",
+            "The tension in the string on a pendulum bob as the bob swings",
+            "The earth's gravitational force on the moon, taking the moon's orbit to be perfectly circular"
+          ],
+          "rev": true
+        },
+        {
+          "b": "Understand",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "You push hard against a rigid brick wall, which does not move. The work done on the wall by the force you exert is",
+          "a": "zero, because the wall undergoes no displacement",
+          "o": [
+            "zero, because the wall undergoes no displacement",
+            "positive, because the force is large",
+            "negative, because the wall pushes back on you",
+            "equal to the internal energy your muscles use up"
+          ]
+        },
+        {
+          "b": "Understand",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "A man lifts a bucket vertically upward out of a well. The work done on the bucket by the gravitational force is",
+          "a": "negative, because the force is opposite to the displacement",
+          "o": [
+            "negative, because the force is opposite to the displacement",
+            "positive, because the bucket gains height",
+            "zero, because the bucket moves at a steady speed",
+            "positive, because the gravitational force is large"
+          ]
+        },
+        {
+          "b": "Understand",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "A block slides along a smooth horizontal table. The gravitational force does no work on the block because",
+          "a": "the force is at right angles to the displacement",
+          "o": [
+            "the force is at right angles to the displacement",
+            "the gravitational force on the block is zero",
+            "the displacement of the block is zero",
+            "there is no friction on a smooth table"
+          ]
+        },
+        {
+          "b": "Understand",
+          "d": "Hard",
+          "t": "mcq",
+          "m": 1,
+          "q": "A cycle skids to a stop on a road. The road exerts a stopping force on the cycle and, by Newton's third law, the cycle exerts an equal and opposite force on the road. The work done by the cycle on the road is",
+          "a": "zero, because the road undergoes no displacement",
+          "o": [
+            "zero, because the road undergoes no displacement",
+            "equal and opposite to the work done by the road on the cycle",
+            "equal to the work done by the road on the cycle",
+            "negative, because the force on the road is a frictional force"
+          ]
+        },
+        {
+          "b": "Understand",
+          "d": "Hard",
+          "t": "mcq",
+          "m": 1,
+          "q": "A body is moved with uniform velocity on a rough horizontal plane by a horizontal applied force. The works done on the body by the applied force and by friction are respectively",
+          "a": "positive and negative",
+          "o": [
+            "positive and negative",
+            "negative and positive",
+            "both zero, because the velocity is uniform",
+            "both positive"
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "A force of 20 N acts on a box in the same direction as its displacement of 3 m. The work done by this force is",
+          "a": "60 J",
+          "o": [
+            "60 J",
+            "-60 J",
+            "0 J",
+            "6.7 J"
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Easy",
+          "t": "fill_blank",
+          "m": 1,
+          "q": "A frictional force of 8 N acts on a box in the direction opposite to its displacement of 5 m. The work done by the frictional force is ____ J (write a whole number with its sign).",
+          "a": "-40"
+        },
+        {
+          "b": "Apply",
+          "d": "Hard",
+          "t": "mcq",
+          "m": 1,
+          "q": "A trolley is pulled 10 m along a horizontal floor by a force of 40 N directed at 60 degrees above the horizontal. Using cos 60 degrees = 0.5 and sin 60 degrees = 0.866, the work done by this force is",
+          "a": "200 J",
+          "o": [
+            "200 J",
+            "400 J",
+            "346 J",
+            "800 J"
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Hard",
+          "t": "short_answer",
+          "m": 2,
+          "q": "A constant force F = (3i - 2j + 4k) N acts on a particle while it undergoes a displacement d = (4i + 5j + k) m. Find the work done by the force.",
+          "a": "W = F.d = FxDx + FyDy + FzDz = (3)(4) + (-2)(5) + (4)(1) = 12 - 10 + 4 = 6 J.",
+          "s": [
+            [
+              "Uses W = F.d = (3)(4) + (-2)(5) + (4)(1)",
+              1
+            ],
+            [
+              "W = 6 J",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Hard",
+          "t": "mcq",
+          "m": 1,
+          "q": "A block of mass 2 kg is lifted vertically upward through 3 m. Taking g = 10 m/s^2, the work done on the block by the gravitational force is",
+          "a": "-60 J",
+          "o": [
+            "-60 J",
+            "+60 J",
+            "0 J",
+            "-6 J"
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Hardest",
+          "t": "long_answer",
+          "m": 3,
+          "q": "A body of mass 4 kg, initially at rest on a horizontal table, is pulled by a horizontal applied force of 12 N. The coefficient of kinetic friction between the body and the table is 0.2 and g = 10 m/s^2. Find (a) the distance moved in 6 s, (b) the work done by the applied force in 6 s, and (c) the work done by friction and by the net force in 6 s.",
+          "a": "Friction = mu m g = 0.2 x 4 x 10 = 8 N, opposite to the motion. Net force = 12 - 8 = 4 N, so a = 4/4 = 1 m/s^2 and s = (1/2) a t^2 = (1/2)(1)(36) = 18 m. Work by the applied force = 12 x 18 = +216 J. Work by friction = -8 x 18 = -144 J. Work by the net force = 4 x 18 = +72 J (which is 216 - 144).",
+          "s": [
+            [
+              "Friction 8 N, net force 4 N, a = 1 m/s^2 and s = 18 m",
+              1
+            ],
+            [
+              "Work by applied force = +216 J",
+              1
+            ],
+            [
+              "Work by friction = -144 J and work by net force = +72 J",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Analyse",
+          "d": "Hard",
+          "t": "multi_statement",
+          "m": 1,
+          "q": "Consider two statements about work. (I) The work done by a force on a body is zero only if the body does not move. (II) For a given displacement, a force of fixed magnitude does the most work when it acts along the displacement. Which is or are correct?",
+          "a": "Only II",
+          "o": [
+            "Only II",
+            "Only I",
+            "Both I and II",
+            "Neither I nor II"
+          ]
+        },
+        {
+          "b": "Analyse",
+          "d": "Hard",
+          "t": "short_answer",
+          "m": 2,
+          "q": "A porter walks 15 m along a level platform at constant velocity with a 20 kg suitcase on his head. Taking g = 10 m/s^2, find the work done on the suitcase (a) by the upward force he exerts on it and (b) by the gravitational force. Explain.",
+          "a": "The upward force (200 N) and the gravitational force (200 N downward) are both vertical, while the displacement is horizontal, so the angle between each force and the displacement is 90 degrees and cos 90 degrees = 0. Hence (a) W = 200 x 15 x 0 = 0 and (b) W = 0. Neither force does work on the suitcase.",
+          "s": [
+            [
+              "Recognises that both forces are vertical and the displacement horizontal, so theta = 90 degrees",
+              1
+            ],
+            [
+              "Work done by each force = 0 J",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Analyse",
+          "d": "Hardest",
+          "t": "long_answer",
+          "m": 3,
+          "q": "A crate of mass 10 kg is pulled 5 m up a smooth plane inclined at 30 degrees to the horizontal by a force of 80 N acting parallel to the plane. Taking g = 10 m/s^2 and sin 30 degrees = 0.5, find the work done on the crate by (a) the applied force, (b) the gravitational force and (c) the normal force, and hence the total work done.",
+          "a": "(a) The applied force is along the displacement: W = 80 x 5 = +400 J. (b) The component of the weight along the plane is m g sin 30 degrees = 10 x 10 x 0.5 = 50 N, directed down the plane, opposite to the displacement: W = -50 x 5 = -250 J (equivalently -m g h with h = 2.5 m). (c) The normal force is perpendicular to the displacement: W = 0. Total work = 400 - 250 + 0 = +150 J.",
+          "s": [
+            [
+              "Work by applied force = +400 J",
+              1
+            ],
+            [
+              "Work by gravity = -250 J, with the reason for the negative sign",
+              1
+            ],
+            [
+              "Work by normal force = 0 and total work = +150 J",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Evaluate",
+          "d": "Hard",
+          "t": "short_answer",
+          "m": 2,
+          "q": "A gardener pushes a roller 20 m along level ground with a force of 100 N directed along the handle, which points at 37 degrees below the horizontal. A student calculates the work done by this force as 100 x 20 = 2000 J. Evaluate the calculation. (cos 37 degrees = 0.8)",
+          "a": "The calculation is wrong. Only the component of the force along the displacement does work: W = F d cos theta = 100 x 20 x 0.8 = 1600 J. The student treated the force as if it acted along the displacement; the vertical component of the push is perpendicular to the displacement and does no work.",
+          "s": [
+            [
+              "Judgement: wrong, because only the component of the force along the displacement (F cos theta) does work",
+              1
+            ],
+            [
+              "Correct value W = 100 x 20 x 0.8 = 1600 J",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Create",
+          "d": "Hardest",
+          "t": "long_answer",
+          "m": 3,
+          "q": "Design a situation in which three different forces act on one moving body so that one force does positive work, one does negative work and one does zero work. Choose numerical values, state the direction of each force and of the displacement, and calculate the three works.",
+          "a": "Example: a box of mass 5 kg is pulled 4 m along a rough horizontal floor (g = 10 m/s^2) by a horizontal force of 30 N in the direction of motion; friction of 10 N acts opposite to the motion; the normal force of 50 N acts vertically upward. Work by the pull = 30 x 4 x cos 0 = +120 J. Work by friction = 10 x 4 x cos 180 degrees = -40 J. Work by the normal force = 50 x 4 x cos 90 degrees = 0 J. (Any consistent situation with correct signs earns the marks.)",
+          "s": [
+            [
+              "A clear situation with the direction of each force and of the displacement stated",
+              1
+            ],
+            [
+              "Positive and negative works correctly calculated with their signs",
+              1
+            ],
+            [
+              "A force perpendicular to the displacement identified, with zero work",
+              1
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "code": "C11P-5.3",
+      "name": "Kinetic energy and the work-energy theorem",
+      "description": "Kinetic energy K = (1/2) m v^2 as a positive scalar, and the work-energy theorem Kf - Ki = W for the work done by the net force, with what the theorem does and does not tell us.",
+      "idea": "The work done on a body by the net force shows up as a change in the quantity (1/2) m v^2, which is called kinetic energy.",
+      "rule": "K = (1/2) m v.v = (1/2) m v^2; it is a scalar, never negative, and measures the work a body can do by virtue of its motion. Work-energy (WE) theorem: the change in kinetic energy of a particle equals the work done on it by the net force, Kf - Ki = W. Positive net work increases K; negative net work decreases it. The theorem holds for a variable force too. It is an integral form of Newton's second law: it is a scalar relation and contains no explicit information about time or direction.",
+      "example": "A body of mass 4 kg speeds up from 1 m/s to 3 m/s: Kf - Ki = (1/2)(4)(9) - (1/2)(4)(1) = 16 J, so the net force did 16 J of work on it.",
+      "difficulty_base": "Hard",
+      "questions": [
+        {
+          "b": "Remember",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "The kinetic energy of an object of mass m moving with speed v is",
+          "a": "(1/2) m v^2",
+          "o": [
+            "(1/2) m v^2",
+            "m v",
+            "m v^2",
+            "(1/2) m v"
+          ]
+        },
+        {
+          "b": "Remember",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "The work-energy theorem states that the change in kinetic energy of a particle is equal to",
+          "a": "the work done on it by the net force",
+          "o": [
+            "the work done on it by the net force",
+            "the work done on it by the gravitational force alone",
+            "the net force acting on it",
+            "the change in its momentum"
+          ]
+        },
+        {
+          "b": "Remember",
+          "d": "Easy",
+          "t": "fill_blank",
+          "m": 1,
+          "q": "Kinetic energy has a magnitude but no direction, so it is a ____ quantity (write one word).",
+          "a": "scalar"
+        },
+        {
+          "b": "Remember",
+          "d": "Hard",
+          "t": "mcq",
+          "m": 1,
+          "q": "Which of the following statements about the kinetic energy of a body is NOT correct?",
+          "a": "It is negative when the body moves in the negative x-direction",
+          "o": [
+            "It is negative when the body moves in the negative x-direction",
+            "It is a measure of the work the body can do by virtue of its motion",
+            "It has the same dimensions as work",
+            "It depends on the mass and the speed of the body, not on its direction of motion"
+          ],
+          "rev": true
+        },
+        {
+          "b": "Understand",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "The work done by the net force on a body during a certain displacement is negative. During this displacement the kinetic energy of the body",
+          "a": "decreases",
+          "o": [
+            "decreases",
+            "increases",
+            "stays the same",
+            "becomes negative"
+          ]
+        },
+        {
+          "b": "Understand",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "A body moves with uniform velocity while several forces act on it. Over any displacement, the work done on it by the net force is",
+          "a": "zero, because its kinetic energy does not change",
+          "o": [
+            "zero, because its kinetic energy does not change",
+            "positive, because the body is moving",
+            "negative, because friction must be present",
+            "equal to its kinetic energy"
+          ]
+        },
+        {
+          "b": "Understand",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "If the speed of a body is tripled, its kinetic energy becomes",
+          "a": "9 times as large",
+          "o": [
+            "9 times as large",
+            "3 times as large",
+            "6 times as large",
+            "one-ninth as large"
+          ]
+        },
+        {
+          "b": "Understand",
+          "d": "Hard",
+          "t": "mcq",
+          "m": 1,
+          "q": "Compared with Newton's second law, the work-energy theorem does not give explicit information about",
+          "a": "the time taken for the change, because it is an integral form of the second law",
+          "o": [
+            "the time taken for the change, because it is an integral form of the second law",
+            "the change in the speed of the body",
+            "the work done by the net force",
+            "the final kinetic energy of the body"
+          ]
+        },
+        {
+          "b": "Understand",
+          "d": "Hard",
+          "t": "mcq",
+          "m": 1,
+          "q": "A bullet passes through a plank and emerges with 25% of its initial kinetic energy. Its emergent speed, as a fraction of its initial speed, is",
+          "a": "one-half",
+          "o": [
+            "one-half",
+            "one-quarter",
+            "three-quarters",
+            "one-sixteenth"
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "The kinetic energy of a body of mass 4 kg moving with a speed of 5 m/s is",
+          "a": "50 J",
+          "o": [
+            "50 J",
+            "100 J",
+            "10 J",
+            "20 J"
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Easy",
+          "t": "fill_blank",
+          "m": 1,
+          "q": "A ball of mass 0.5 kg has a kinetic energy of 100 J. Its speed is ____ m/s (write a whole number).",
+          "a": "20"
+        },
+        {
+          "b": "Apply",
+          "d": "Hard",
+          "t": "mcq",
+          "m": 1,
+          "q": "A body of mass 3 kg is at rest on a smooth horizontal surface. A net force of 6 N then acts on it along its direction of motion through a distance of 4 m. Its final speed is",
+          "a": "4 m/s",
+          "o": [
+            "4 m/s",
+            "16 m/s",
+            "2.83 m/s",
+            "8 m/s"
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Hard",
+          "t": "short_answer",
+          "m": 2,
+          "q": "A car of mass 1000 kg moving at 20 m/s on a level road is brought to rest by its brakes over a distance of 50 m. Using the work-energy theorem, find the work done by the retarding force and its magnitude, taking it to be constant.",
+          "a": "Change in kinetic energy = 0 - (1/2)(1000)(20)^2 = -200000 J, so the work done by the retarding force is -2 x 10^5 J (negative, as the force opposes the motion). W = -F d gives F = 200000/50 = 4000 N.",
+          "s": [
+            [
+              "Work done = change in K = -(1/2)(1000)(20)^2 = -2 x 10^5 J",
+              1
+            ],
+            [
+              "Magnitude of force = 200000/50 = 4000 N, opposite to the motion",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Hard",
+          "t": "mcq",
+          "m": 1,
+          "q": "The speed of a body of mass 2 kg increases from 2 m/s to 6 m/s. The work done on it by the net force is",
+          "a": "32 J",
+          "o": [
+            "32 J",
+            "16 J",
+            "36 J",
+            "64 J"
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Hardest",
+          "t": "long_answer",
+          "m": 3,
+          "q": "A raindrop of mass 2 g falls from rest from a height of 500 m and hits the ground with a speed of 20 m/s. Taking g = 10 m/s^2 as constant, find (a) the work done by the gravitational force, (b) the change in kinetic energy of the drop, and (c) the work done by the resistive force of the air.",
+          "a": "m = 2 x 10^-3 kg. (a) The gravitational force is along the displacement: Wg = m g h = 2 x 10^-3 x 10 x 500 = +10 J. (b) Change in K = (1/2) m v^2 - 0 = (1/2)(2 x 10^-3)(20)^2 = 0.4 J. (c) By the work-energy theorem, change in K = Wg + Wr, so Wr = 0.4 - 10 = -9.6 J; it is negative because the resistive force opposes the motion.",
+          "s": [
+            [
+              "Wg = m g h = +10 J",
+              1
+            ],
+            [
+              "Change in K = 0.4 J",
+              1
+            ],
+            [
+              "Wr = change in K - Wg = -9.6 J",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Analyse",
+          "d": "Hard",
+          "t": "assertion_reason",
+          "m": 1,
+          "q": "Assertion (A): When a body moves in a circle at constant speed, the net force on it does no work. Reason (R): A net force acting on a body always changes the kinetic energy of the body. Choose the correct option.",
+          "a": "A is true, R is false",
+          "o": [
+            "A is true, R is false",
+            "Both A and R are true, and R is the correct explanation of A",
+            "Both A and R are true, but R is not the correct explanation of A",
+            "A is false, R is true"
+          ]
+        },
+        {
+          "b": "Analyse",
+          "d": "Hard",
+          "t": "short_answer",
+          "m": 2,
+          "q": "Two bodies of masses m and 4m have equal kinetic energies. Find the ratio of the speed of the lighter body to that of the heavier body, and say which is faster.",
+          "a": "(1/2) m v1^2 = (1/2)(4m) v2^2 gives v1^2/v2^2 = 4, so v1/v2 = 2. The lighter body moves twice as fast as the heavier one.",
+          "s": [
+            [
+              "Sets (1/2) m v1^2 = (1/2)(4m) v2^2",
+              1
+            ],
+            [
+              "v1 : v2 = 2 : 1, the lighter body is faster",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Analyse",
+          "d": "Hardest",
+          "t": "long_answer",
+          "m": 3,
+          "q": "A block of mass 2 kg starts from rest on a rough horizontal floor and is pulled by a horizontal force of 13 N through 4 m. The force of kinetic friction is 4 N. The pull is then removed. Using the work-energy theorem, find (a) the speed of the block at the end of the 4 m and (b) how much farther it slides before coming to rest.",
+          "a": "(a) Net force during the pull = 13 - 4 = 9 N along the motion, so net work = 9 x 4 = 36 J = (1/2)(2) v^2 - 0, giving v^2 = 36 and v = 6 m/s. (b) After the pull is removed only friction does work: -4 x d = 0 - 36 J, so d = 9 m.",
+          "s": [
+            [
+              "Net work during the pull = (13 - 4) x 4 = 36 J",
+              1
+            ],
+            [
+              "Speed v = 6 m/s from 36 = (1/2)(2) v^2",
+              1
+            ],
+            [
+              "Friction alone: -4 d = -36, so d = 9 m",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Evaluate",
+          "d": "Hard",
+          "t": "short_answer",
+          "m": 2,
+          "q": "A bullet emerges from a sheet of plywood with only 10% of its initial kinetic energy. A student concludes that the bullet's speed has fallen by 90%. Evaluate this conclusion. (Use sqrt(0.1) = 0.316.)",
+          "a": "The conclusion is wrong. Kinetic energy is proportional to the square of the speed, so vf/vi = sqrt(0.1) = 0.316. The emergent speed is about 32% of the initial speed, so the speed is reduced by about 68%, not 90%.",
+          "s": [
+            [
+              "Uses K proportional to v^2, so vf/vi = sqrt(0.1) = 0.316",
+              1
+            ],
+            [
+              "Judgement: the speed falls by about 68%, not 90%",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Create",
+          "d": "Hardest",
+          "t": "long_answer",
+          "m": 3,
+          "q": "Devise a numerical problem in which two forces act on a body that starts from rest, one doing positive work and the other negative work, and in which the work-energy theorem gives the final speed. State your data with the directions of the forces, and solve the problem.",
+          "a": "Example: a body of mass 2 kg at rest on a rough horizontal floor is pushed through 5 m by a horizontal force of 30 N, while a frictional force of 10 N opposes the motion. Work by the push = +30 x 5 = +150 J; work by friction = -10 x 5 = -50 J; net work = 100 J. By the work-energy theorem (1/2)(2) v^2 - 0 = 100, so v = 10 m/s. (Any consistent problem correctly solved earns the marks.)",
+          "s": [
+            [
+              "A complete problem: mass, two forces with directions, displacement, starting from rest",
+              1
+            ],
+            [
+              "The two works with correct signs and the net work",
+              1
+            ],
+            [
+              "Work-energy theorem applied to give the final speed with unit",
+              1
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "code": "C11P-5.4",
+      "name": "Work done by a variable force and the work-energy theorem for a variable force",
+      "description": "Work by a force that changes with position as the sum of F(x) delta x, the area under the force-displacement curve and the definite integral of F(x) dx; signed areas; and Kf - Ki = W for such a force.",
+      "idea": "When the force changes from point to point, split the displacement into tiny steps, treat the force as constant over each step and add up: the total is the area under the force-displacement graph.",
+      "rule": "For a small displacement delta x the work is delta W = F(x) delta x. Adding these and letting delta x tend to zero, W = integral of F(x) dx from xi to xf = area under the F-x curve between xi and xf. A force opposite to the displacement is plotted on the negative side of the force axis and its area counts as negative work. From dK/dt = m v dv/dt = F v = F dx/dt, dK = F dx, so Kf - Ki = integral of F dx = W: the work-energy theorem holds for a variable force.",
+      "example": "A force along the displacement that rises linearly from 0 to 20 N as x goes from 0 to 5 m does W = area of a triangle = (1/2) x 5 x 20 = 50 J.",
+      "difficulty_base": "Hard",
+      "questions": [
+        {
+          "b": "Remember",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "A force F(x) acts along the x-axis on a body that moves from xi to xf. The work done by the force is written as the definite integral, from xi to xf, of",
+          "a": "F(x) dx",
+          "o": [
+            "F(x) dx",
+            "x dF",
+            "F(x) dt",
+            "dF/dx"
+          ]
+        },
+        {
+          "b": "Remember",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "Over a small displacement delta x, during which a varying force F(x) may be taken as approximately constant, the work done is",
+          "a": "F(x) delta x",
+          "o": [
+            "F(x) delta x",
+            "F(x) / delta x",
+            "(1/2) F(x) (delta x)^2",
+            "x delta F"
+          ]
+        },
+        {
+          "b": "Remember",
+          "d": "Easy",
+          "t": "fill_blank",
+          "m": 1,
+          "q": "On a graph of force against displacement, the work done by a variable force equals the ____ under the curve between the initial and final positions (write one word).",
+          "a": "area"
+        },
+        {
+          "b": "Remember",
+          "d": "Hard",
+          "t": "mcq",
+          "m": 1,
+          "q": "Which of the following is NOT true of the work-energy theorem for a variable force in one dimension?",
+          "a": "It holds only if the force stays constant during the motion",
+          "o": [
+            "It holds only if the force stays constant during the motion",
+            "It states that Kf - Ki = W",
+            "It follows from Newton's second law",
+            "It is a scalar relation that carries no information about direction"
+          ],
+          "rev": true
+        },
+        {
+          "b": "Understand",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "The work done by a varying force is estimated by adding terms F(x) delta x for successive small displacements. The sum becomes exactly equal to the work done when",
+          "a": "the displacements delta x are allowed to approach zero",
+          "o": [
+            "the displacements delta x are allowed to approach zero",
+            "the displacements delta x are made as large as possible",
+            "the force is replaced by its final value",
+            "only the first and the last terms are kept"
+          ]
+        },
+        {
+          "b": "Understand",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "A frictional force of magnitude 50 N opposes the motion of a trunk that is pushed along the positive x-direction. On a force-displacement graph this frictional force is plotted as",
+          "a": "a horizontal line at -50 N",
+          "o": [
+            "a horizontal line at -50 N",
+            "a horizontal line at +50 N",
+            "a line rising steadily from zero to 50 N",
+            "a line lying along the x-axis"
+          ]
+        },
+        {
+          "b": "Understand",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "A force acting along the displacement increases linearly from zero at x = 0 to F0 at x = x0. The work it does over this displacement is",
+          "a": "(1/2) F0 x0",
+          "o": [
+            "(1/2) F0 x0",
+            "F0 x0",
+            "2 F0 x0",
+            "F0 / x0"
+          ]
+        },
+        {
+          "b": "Understand",
+          "d": "Hard",
+          "t": "mcq",
+          "m": 1,
+          "q": "For a force that varies appreciably over a displacement d, the single product W = F d cannot be used directly because",
+          "a": "the force is not constant, so the displacement must be divided into small steps over each of which the force is nearly constant",
+          "o": [
+            "the force is not constant, so the displacement must be divided into small steps over each of which the force is nearly constant",
+            "a varying force does no work",
+            "work is defined only for forces that are perpendicular to the displacement",
+            "the displacement d is not a well-defined quantity when the force varies"
+          ]
+        },
+        {
+          "b": "Understand",
+          "d": "Hard",
+          "t": "mcq",
+          "m": 1,
+          "q": "In proving the work-energy theorem for a variable force, dK/dt = m v (dv/dt) is rewritten as F (dx/dt). This step uses",
+          "a": "Newton's second law, m dv/dt = F, together with v = dx/dt",
+          "o": [
+            "Newton's second law, m dv/dt = F, together with v = dx/dt",
+            "Newton's third law",
+            "the conservation of linear momentum",
+            "Hooke's law for a spring"
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "A force acting along the displacement is constant at 10 N from x = 0 to x = 2 m and then falls linearly to zero at x = 4 m. The work done by the force from x = 0 to x = 4 m is",
+          "a": "30 J",
+          "o": [
+            "30 J",
+            "40 J",
+            "20 J",
+            "10 J"
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Easy",
+          "t": "fill_blank",
+          "m": 1,
+          "q": "A force of 8 N along the +x direction acts on a body from x = 0 to x = 2 m, and then a force of 3 N along the +x direction acts on it from x = 2 m to x = 6 m. The total work done on the body by these forces is ____ J (write a whole number).",
+          "a": "28"
+        },
+        {
+          "b": "Apply",
+          "d": "Hard",
+          "t": "mcq",
+          "m": 1,
+          "q": "A force acting along the +x direction falls linearly from 100 N at x = 0 to 60 N at x = 10 m. The work done by the force on a body that moves from x = 0 to x = 10 m is",
+          "a": "800 J",
+          "o": [
+            "800 J",
+            "1000 J",
+            "600 J",
+            "200 J"
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Hard",
+          "t": "short_answer",
+          "m": 2,
+          "q": "A force F = 6x newton (x in metre) acts along the +x direction on a body as it moves from x = 1 m to x = 3 m. Find the work done by the force.",
+          "a": "W = integral of 6x dx from 1 to 3 = [3x^2] from 1 to 3 = 27 - 3 = 24 J. (Equivalently, the area of the trapezium with parallel sides 6 N and 18 N and width 2 m: (1/2)(6 + 18)(2) = 24 J.)",
+          "s": [
+            [
+              "Sets up the integral of 6x dx from x = 1 m to x = 3 m, or the trapezium area with sides 6 N and 18 N",
+              1
+            ],
+            [
+              "W = 24 J",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Hard",
+          "t": "mcq",
+          "m": 1,
+          "q": "A body moving along the +x direction has a kinetic energy of 10 J. The only force acting on it is a retarding force, directed along -x, of magnitude 3 N over the first 1 m and 1 N over the next 1 m. Its kinetic energy after these 2 m is",
+          "a": "6 J",
+          "o": [
+            "6 J",
+            "14 J",
+            "2 J",
+            "10 J"
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Hardest",
+          "t": "long_answer",
+          "m": 3,
+          "q": "A man pushes a crate along a rough horizontal platform. He applies a force of 80 N over the first 5 m; his force then decreases linearly with distance to 40 N by the time the crate has moved a total of 15 m. A frictional force of 40 N opposes the motion throughout. Find the work done over the 15 m by (a) the man, (b) the frictional force, and (c) both forces together.",
+          "a": "(a) Work by the man = area of rectangle + area of trapezium = 80 x 5 + (1/2)(80 + 40)(10) = 400 + 600 = 1000 J. (b) Friction is opposite to the displacement, so its area lies on the negative side of the force axis: Wf = -40 x 15 = -600 J. (c) Total work = 1000 - 600 = +400 J.",
+          "s": [
+            [
+              "Work by the man = 400 + 600 = 1000 J (rectangle plus trapezium)",
+              1
+            ],
+            [
+              "Work by friction = -600 J with the negative sign",
+              1
+            ],
+            [
+              "Total work = +400 J",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Analyse",
+          "d": "Hard",
+          "t": "multi_statement",
+          "m": 1,
+          "q": "Consider two statements about a force acting along the x-axis on a body moving along +x. (I) A force whose direction is always opposite to the displacement does negative work, even if its magnitude changes from point to point. (II) The work done by a variable force can be read from its force-displacement graph only when the force is positive throughout the displacement. Which is or are correct?",
+          "a": "Only I",
+          "o": [
+            "Only I",
+            "Only II",
+            "Both I and II",
+            "Neither I nor II"
+          ]
+        },
+        {
+          "b": "Analyse",
+          "d": "Hard",
+          "t": "short_answer",
+          "m": 2,
+          "q": "The force acting on a body along the x-axis is +6 N from x = 0 to x = 3 m and -4 N from x = 3 m to x = 6 m (the negative sign means the force points along -x). The body moves from x = 0 to x = 6 m. Find the total work done by the force and explain how the two parts are combined.",
+          "a": "From 0 to 3 m the force is along the displacement: W1 = +6 x 3 = +18 J. From 3 m to 6 m the force is opposite to the displacement, so the area lies below the x-axis: W2 = -4 x 3 = -12 J. The areas are added with their signs: W = 18 - 12 = +6 J.",
+          "s": [
+            [
+              "W1 = +18 J and W2 = -12 J, the second being negative because the force opposes the displacement",
+              1
+            ],
+            [
+              "Total work = +6 J (signed areas added)",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Analyse",
+          "d": "Hardest",
+          "t": "long_answer",
+          "m": 3,
+          "q": "A body of mass 1 kg is at rest at x = 0 on a smooth horizontal surface. A force F = 3x^2 newton (x in metre) acts on it along the +x direction as it moves from x = 0 to x = 2 m. Using the fact that the integral of x^2 dx is x^3/3, find (a) the work done by the force and (b) the speed of the body at x = 2 m.",
+          "a": "(a) W = integral of 3x^2 dx from 0 to 2 = [x^3] from 0 to 2 = 8 J. (b) By the work-energy theorem for a variable force, Kf - Ki = W, so (1/2)(1) v^2 - 0 = 8, v^2 = 16 and v = 4 m/s.",
+          "s": [
+            [
+              "W = [x^3] from 0 to 2 = 8 J",
+              1
+            ],
+            [
+              "Applies Kf - Ki = W with Ki = 0",
+              1
+            ],
+            [
+              "v = 4 m/s",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Evaluate",
+          "d": "Hard",
+          "t": "short_answer",
+          "m": 2,
+          "q": "A force along the displacement rises linearly from zero to 30 N while a body moves 6 m. A student calculates the work done as W = 30 x 6 = 180 J. Evaluate this calculation.",
+          "a": "The calculation is wrong: it uses the final value of the force as if the force had been 30 N throughout. The work is the area under the force-displacement graph, here a triangle: W = (1/2) x 6 x 30 = 90 J, half the student's value.",
+          "s": [
+            [
+              "Judgement: wrong, because the force is not constant at 30 N; the area under the F-x graph must be used",
+              1
+            ],
+            [
+              "Correct value W = (1/2)(6)(30) = 90 J",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Create",
+          "d": "Hardest",
+          "t": "long_answer",
+          "m": 3,
+          "q": "A force-displacement graph cannot be drawn here, so describe one in words: construct a force, acting along the displacement, that varies with position in at least two stages (give the force values and the positions), such that the total work done is exactly 100 J. Verify the total by adding areas.",
+          "a": "Example: the force is constant at 20 N from x = 0 to x = 3 m, and then falls linearly from 20 N to zero between x = 3 m and x = 7 m. Work in stage 1 = area of rectangle = 20 x 3 = 60 J. Work in stage 2 = area of triangle = (1/2) x 4 x 20 = 40 J. Total = 60 + 40 = 100 J. (Any description with at least two stages whose areas add to 100 J earns the marks.)",
+          "s": [
+            [
+              "A description with at least two stages, giving force values and positions unambiguously",
+              1
+            ],
+            [
+              "Area (work) of each stage calculated correctly",
+              1
+            ],
+            [
+              "The areas add to exactly 100 J",
+              1
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "code": "C11P-5.5",
+      "name": "Potential energy, conservative forces and the conservation of mechanical energy",
+      "description": "Gravitational potential energy V = mgh, the relation F = -dV/dx, the three descriptions of a conservative force, and K + V = constant applied to falling bodies, smooth inclines and a bob moving in a vertical circle.",
+      "idea": "Work done against a conservative force such as gravity is stored as potential energy and can be recovered as kinetic energy, so the sum of the two stays constant.",
+      "rule": "Gravitational potential energy at height h (g constant, zero at the chosen reference level) is V(h) = mgh, the negative of the work done by the gravitational force in raising the body. For a conservative force in one dimension F(x) = -dV/dx, and the change in potential energy equals the negative of the work done by the force. A force is conservative if its work depends only on the end points, equivalently if its work round a closed path is zero. If only conservative forces do work, Ki + V(xi) = Kf + V(xf): the total mechanical energy K + V is conserved. For a ball dropped from height H, v^2 = 2g(H - h) at height h. The zero of potential energy is arbitrary but must be kept fixed.",
+      "example": "A stone of mass 2 kg is dropped from a height of 20 m (ground as zero, g = 10 m/s^2): V = 2 x 10 x 20 = 400 J at the top, so K = 400 J at the ground and v = sqrt(2 x 10 x 20) = 20 m/s.",
+      "difficulty_base": "Hard",
+      "questions": [
+        {
+          "b": "Remember",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "Taking the ground as the zero of potential energy and g as constant, the gravitational potential energy of an object of mass m at a height h above the ground is",
+          "a": "m g h",
+          "o": [
+            "m g h",
+            "m g / h",
+            "(1/2) m g h^2",
+            "m h / g"
+          ]
+        },
+        {
+          "b": "Remember",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "For a conservative force in one dimension, the force F(x) is related to the potential energy function V(x) by",
+          "a": "F(x) = -dV/dx",
+          "o": [
+            "F(x) = -dV/dx",
+            "F(x) = +dV/dx",
+            "F(x) = V/x",
+            "F(x) = -V x"
+          ]
+        },
+        {
+          "b": "Remember",
+          "d": "Easy",
+          "t": "fill_blank",
+          "m": 1,
+          "q": "The sum of the kinetic energy and the potential energy of a body is called its total ____ energy (write one word).",
+          "a": "mechanical"
+        },
+        {
+          "b": "Remember",
+          "d": "Hard",
+          "t": "mcq",
+          "m": 1,
+          "q": "Which of the following is NOT a property of a conservative force?",
+          "a": "The work it does depends on the velocity of the body and on the particular path taken",
+          "o": [
+            "The work it does depends on the velocity of the body and on the particular path taken",
+            "The work it does depends only on the initial and final positions",
+            "The work it does over a closed path is zero",
+            "It can be derived from a potential energy function"
+          ],
+          "rev": true
+        },
+        {
+          "b": "Understand",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "A ball is raised from the ground to a height h. The potential energy mgh stored is equal to",
+          "a": "the negative of the work done by the gravitational force during the raising",
+          "o": [
+            "the negative of the work done by the gravitational force during the raising",
+            "the work done by the gravitational force during the raising",
+            "the kinetic energy of the ball at the height h",
+            "the work done by the gravitational force when the ball is carried sideways at that height"
+          ]
+        },
+        {
+          "b": "Understand",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "A ball is dropped from the top of a cliff. Neglecting air resistance, as it falls",
+          "a": "its potential energy decreases, its kinetic energy increases and their sum stays constant",
+          "o": [
+            "its potential energy decreases, its kinetic energy increases and their sum stays constant",
+            "its potential energy and kinetic energy both decrease",
+            "its potential energy stays constant while its kinetic energy increases",
+            "the sum of its potential and kinetic energies increases"
+          ]
+        },
+        {
+          "b": "Understand",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "Identical blocks are released from rest at the tops of several smooth inclined planes that have the same height but different angles of inclination. Their speeds at the bottom are",
+          "a": "the same for every incline",
+          "o": [
+            "the same for every incline",
+            "greatest for the steepest incline",
+            "greatest for the gentlest incline",
+            "zero for every incline"
+          ]
+        },
+        {
+          "b": "Understand",
+          "d": "Hard",
+          "t": "mcq",
+          "m": 1,
+          "q": "When a conservative force does positive work on a body, the potential energy of the body",
+          "a": "decreases",
+          "o": [
+            "decreases",
+            "increases",
+            "remains unaltered",
+            "becomes zero"
+          ]
+        },
+        {
+          "b": "Understand",
+          "d": "Hard",
+          "t": "mcq",
+          "m": 1,
+          "q": "A bob tied to a light string moves in a vertical circle. The tension in the string does no work on the bob because",
+          "a": "the displacement of the bob is always normal to the string",
+          "o": [
+            "the displacement of the bob is always normal to the string",
+            "the tension is zero throughout the motion",
+            "the tension is a conservative force",
+            "the speed of the bob stays constant"
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "Taking the ground as the zero of potential energy and g = 10 m/s^2, the gravitational potential energy of a 3 kg body at a height of 4 m is",
+          "a": "120 J",
+          "o": [
+            "120 J",
+            "12 J",
+            "60 J",
+            "7.5 J"
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Easy",
+          "t": "fill_blank",
+          "m": 1,
+          "q": "A stone is dropped from rest from a height of 45 m. Taking g = 10 m/s^2 and neglecting air resistance, its speed just before it reaches the ground is ____ m/s (write a whole number).",
+          "a": "30"
+        },
+        {
+          "b": "Apply",
+          "d": "Hard",
+          "t": "mcq",
+          "m": 1,
+          "q": "A ball is thrown vertically upward from the ground with a speed of 12 m/s. Taking g = 10 m/s^2 and neglecting air resistance, the maximum height it reaches above the ground is",
+          "a": "7.2 m",
+          "o": [
+            "7.2 m",
+            "14.4 m",
+            "3.6 m",
+            "0.6 m"
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Hard",
+          "t": "short_answer",
+          "m": 2,
+          "q": "A ball of mass 0.2 kg is thrown vertically upward from the ground with a speed of 20 m/s. Taking the ground as the zero of potential energy, g = 10 m/s^2 and neglecting air resistance, find its kinetic energy when it is 15 m above the ground.",
+          "a": "Total mechanical energy at the ground = (1/2)(0.2)(20)^2 + 0 = 40 J. At 15 m, V = m g h = 0.2 x 10 x 15 = 30 J. By conservation of mechanical energy K = 40 - 30 = 10 J.",
+          "s": [
+            [
+              "Total energy = 40 J and V at 15 m = 30 J",
+              1
+            ],
+            [
+              "K = 40 - 30 = 10 J",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Hard",
+          "t": "mcq",
+          "m": 1,
+          "q": "A pendulum bob is released from rest at a point that is 0.8 m vertically above the lowest point of its swing. Taking g = 10 m/s^2 and neglecting air resistance, its speed at the lowest point is",
+          "a": "4 m/s",
+          "o": [
+            "4 m/s",
+            "16 m/s",
+            "8 m/s",
+            "2.83 m/s"
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Hardest",
+          "t": "long_answer",
+          "m": 3,
+          "q": "A block of mass 0.5 kg slides from rest from a point 5 m above the ground down a smooth curved track and then up the track to a point 1.8 m above the ground. Taking the ground as the zero of potential energy and g = 10 m/s^2, find (a) its total mechanical energy, (b) its kinetic energy at the 1.8 m point and (c) its speed there.",
+          "a": "(a) At the start K = 0 and V = m g h = 0.5 x 10 x 5 = 25 J, so E = 25 J. (b) The track is smooth, so E is conserved (the normal force does no work). At 1.8 m, V = 0.5 x 10 x 1.8 = 9 J, so K = 25 - 9 = 16 J. (c) (1/2)(0.5) v^2 = 16 gives v^2 = 64 and v = 8 m/s.",
+          "s": [
+            [
+              "E = m g h = 25 J at the start",
+              1
+            ],
+            [
+              "V = 9 J at 1.8 m, so K = 16 J",
+              1
+            ],
+            [
+              "v = 8 m/s",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Analyse",
+          "d": "Hard",
+          "t": "assertion_reason",
+          "m": 1,
+          "q": "Assertion (A): The work done by the gravitational force on a body carried from the foot of a hill to its top is greater along a long winding road than along a short steep path. Reason (R): The work done by a conservative force depends only on the initial and final positions. Choose the correct option.",
+          "a": "A is false, R is true",
+          "o": [
+            "A is false, R is true",
+            "Both A and R are true, and R is the correct explanation of A",
+            "Both A and R are true, but R is not the correct explanation of A",
+            "A is true, R is false"
+          ]
+        },
+        {
+          "b": "Analyse",
+          "d": "Hard",
+          "t": "short_answer",
+          "m": 2,
+          "q": "From the top of a cliff, three identical balls are thrown with the same speed: one vertically upward, one horizontally and one vertically downward. Neglecting air resistance, compare the speeds with which they reach the ground, giving a reason.",
+          "a": "All three reach the ground with the same speed. Each ball starts with the same kinetic energy and the same potential energy (same height), and only gravity, a conservative force, does work, so K + V is conserved. On reaching the ground each has lost the same potential energy mgH and therefore has the same kinetic energy and the same speed, whatever the direction of projection.",
+          "s": [
+            [
+              "Uses conservation of mechanical energy: same initial K and same loss of potential energy for all three",
+              1
+            ],
+            [
+              "Conclusion: the three speeds at the ground are equal",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Analyse",
+          "d": "Hardest",
+          "t": "long_answer",
+          "m": 3,
+          "q": "A bob of mass m hangs from a light string of length L. At the lowest point A it is given a horizontal velocity v0 with v0^2 = 5gL, so that it moves in a vertical circle. Taking the potential energy to be zero at A, find (a) the speed at the topmost point C, (b) the speed at the point B where the string is horizontal, and (c) the ratio of the kinetic energies KB/KC.",
+          "a": "The tension does no work, so mechanical energy is conserved, with E = (1/2) m v0^2 = (5/2) m g L. (a) C is at height 2L: (1/2) m vC^2 + 2 m g L = (5/2) m g L, so vC^2 = gL and vC = sqrt(gL). (b) B is at height L: (1/2) m vB^2 + m g L = (5/2) m g L, so vB^2 = 3gL and vB = sqrt(3gL). (c) KB/KC = vB^2/vC^2 = 3gL/gL = 3.",
+          "s": [
+            [
+              "Energy equation at C (height 2L) giving vC = sqrt(gL)",
+              1
+            ],
+            [
+              "Energy equation at B (height L) giving vB = sqrt(3gL)",
+              1
+            ],
+            [
+              "KB/KC = 3",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Evaluate",
+          "d": "Hard",
+          "t": "short_answer",
+          "m": 2,
+          "q": "A book lies on a table 1 m above the floor of a room. A student insists that its potential energy must be calculated with heights measured from the floor, and that any other value is wrong. Evaluate this view.",
+          "a": "The view is not correct. The zero of potential energy is arbitrary and is set according to convenience: the floor, the table top or the ground outside may be chosen. Only changes in potential energy matter physically, and these are the same for every choice. What is required is that, once the zero is fixed in a given discussion, it is adhered to consistently throughout.",
+          "s": [
+            [
+              "Judgement: not correct, because the zero of potential energy is arbitrary and may be chosen for convenience",
+              1
+            ],
+            [
+              "Condition: the chosen zero must be used consistently (only changes in potential energy matter)",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Create",
+          "d": "Hardest",
+          "t": "long_answer",
+          "m": 3,
+          "q": "Design a numerical problem in which a body slides from rest down a smooth slide or track and its speed at a lower point is found from the conservation of mechanical energy. State your data, including g and the reference level for potential energy, solve it, and name a force that acts on the body but does no work.",
+          "a": "Example: a child of mass 20 kg starts from rest at the top of a smooth slide 1.8 m above the ground; take the ground as the zero of potential energy and g = 10 m/s^2. Find the speed at the bottom. E at the top = m g h = 20 x 10 x 1.8 = 360 J. At the bottom V = 0, so (1/2)(20) v^2 = 360, v^2 = 36 and v = 6 m/s. The normal force of the slide acts on the child but does no work, because it is perpendicular to the displacement at every point. (Any consistent problem correctly solved earns the marks.)",
+          "s": [
+            [
+              "A complete problem with mass or height data, g and the reference level stated",
+              1
+            ],
+            [
+              "Conservation of mechanical energy applied correctly to give the speed",
+              1
+            ],
+            [
+              "Names the normal force as doing no work, being perpendicular to the displacement",
+              1
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "code": "C11P-5.6",
+      "name": "Potential energy of a spring and non-conservative forces",
+      "description": "Hooke's law Fs = -kx, the work done by the spring force, the elastic potential energy (1/2) k x^2, energy exchange for a block on a spring, and the change in mechanical energy when friction acts.",
+      "idea": "A stretched or compressed spring stores energy that depends only on how far it is from its natural length; friction, by contrast, takes mechanical energy away for good.",
+      "rule": "For an ideal light spring Fs = -kx, where x is the displacement from the equilibrium (natural-length) position and k (in N/m) is the spring constant. The work done by the spring force in an extension or compression of size xm from the natural length is -(1/2) k xm^2, and from xi to xf it is (1/2) k xi^2 - (1/2) k xf^2; in a cyclic process it is zero, so the spring force is conservative. With V = 0 at the natural length, V(x) = (1/2) k x^2. For a block released from rest at extension xm on a smooth surface, (1/2) k xm^2 = (1/2) k x^2 + (1/2) m v^2, and the maximum speed, at x = 0, is vm = sqrt(k/m) xm. Friction is non-conservative: Ef - Ei = Wnc, where Wnc is the work done by the non-conservative force and depends on the path.",
+      "example": "A spring of spring constant 300 N/m stretched by 0.1 m from its natural length stores V = (1/2)(300)(0.1)^2 = 1.5 J.",
+      "difficulty_base": "Hard",
+      "questions": [
+        {
+          "b": "Remember",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "For an ideal spring, with x the displacement of its free end from the equilibrium position, Hooke's law states that the spring force is",
+          "a": "Fs = -k x",
+          "o": [
+            "Fs = -k x",
+            "Fs = k x^2",
+            "Fs = -k / x",
+            "Fs = -(1/2) k x^2"
+          ]
+        },
+        {
+          "b": "Remember",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "Taking the potential energy to be zero at the natural length, the potential energy of a spring of spring constant k that is extended by x is",
+          "a": "(1/2) k x^2",
+          "o": [
+            "(1/2) k x^2",
+            "k x",
+            "(1/2) k x",
+            "k x^2"
+          ]
+        },
+        {
+          "b": "Remember",
+          "d": "Easy",
+          "t": "fill_blank",
+          "m": 1,
+          "q": "A block attached to a spring is pulled from a position xi and allowed to return to the same position xi. The work done by the spring force in this cyclic process is ____ J (write a whole number).",
+          "a": "0"
+        },
+        {
+          "b": "Remember",
+          "d": "Hard",
+          "t": "mcq",
+          "m": 1,
+          "q": "Which of the following is NOT true of the force exerted by an ideal spring?",
+          "a": "Its magnitude is the same at every extension",
+          "o": [
+            "Its magnitude is the same at every extension",
+            "It is zero when the spring is at its natural length",
+            "The constant k in its force law is measured in N/m",
+            "It is a conservative force"
+          ],
+          "rev": true
+        },
+        {
+          "b": "Understand",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "The negative sign in Fs = -k x shows that the spring force",
+          "a": "is directed opposite to the displacement from the equilibrium position",
+          "o": [
+            "is directed opposite to the displacement from the equilibrium position",
+            "always points along the negative x-direction",
+            "becomes weaker as the spring is stretched",
+            "does negative work only when the spring is compressed"
+          ]
+        },
+        {
+          "b": "Understand",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "A spring is stretched slowly by an external pulling force. During the stretching, the works done by the spring force and by the external force are respectively",
+          "a": "negative and positive",
+          "o": [
+            "negative and positive",
+            "positive and negative",
+            "both positive",
+            "both zero"
+          ]
+        },
+        {
+          "b": "Understand",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "A block attached to a spring rests on a smooth horizontal surface. It is pulled out to an extension xm and released from rest. Its speed is greatest",
+          "a": "at the equilibrium position, x = 0",
+          "o": [
+            "at the equilibrium position, x = 0",
+            "at the maximum extension, x = +xm",
+            "at the maximum compression, x = -xm",
+            "midway between x = 0 and x = +xm"
+          ]
+        },
+        {
+          "b": "Understand",
+          "d": "Hard",
+          "t": "mcq",
+          "m": 1,
+          "q": "A body is dragged along a rough floor from point P to point Q. The work done on it by the frictional force",
+          "a": "depends on the path taken from P to Q, so no potential energy can be associated with friction",
+          "o": [
+            "depends on the path taken from P to Q, so no potential energy can be associated with friction",
+            "depends only on the positions of P and Q",
+            "is zero if the body is finally brought back to P",
+            "equals the gain in potential energy of the body"
+          ]
+        },
+        {
+          "b": "Understand",
+          "d": "Hard",
+          "t": "mcq",
+          "m": 1,
+          "q": "If the compression of a spring from its natural length is doubled, the potential energy stored in it becomes",
+          "a": "four times as large",
+          "o": [
+            "four times as large",
+            "twice as large",
+            "half as large",
+            "eight times as large"
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "A spring of spring constant 400 N/m is compressed by 0.05 m from its natural length. The magnitude of the force exerted by the spring is",
+          "a": "20 N",
+          "o": [
+            "20 N",
+            "0.5 N",
+            "8000 N",
+            "1 N"
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Easy",
+          "t": "fill_blank",
+          "m": 1,
+          "q": "A spring of spring constant 100 N/m is stretched by 0.2 m from its natural length. The potential energy stored in it is ____ J (write a whole number).",
+          "a": "2"
+        },
+        {
+          "b": "Apply",
+          "d": "Hard",
+          "t": "mcq",
+          "m": 1,
+          "q": "A block of mass 2 kg moving at 3 m/s on a smooth horizontal surface runs into a light horizontal spring of spring constant 200 N/m fixed to a wall. The maximum compression of the spring from its natural length is",
+          "a": "0.3 m",
+          "o": [
+            "0.3 m",
+            "0.09 m",
+            "0.03 m",
+            "0.42 m"
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Hard",
+          "t": "short_answer",
+          "m": 2,
+          "q": "A block of mass 0.5 kg is attached to a light spring of spring constant 50 N/m and rests on a smooth horizontal surface. It is pulled so that the spring is extended by 0.2 m from its natural length and is released from rest. Find its maximum speed.",
+          "a": "Mechanical energy is conserved: (1/2) k xm^2 = (1/2) m vm^2 at the equilibrium position. vm = sqrt(k/m) xm = sqrt(50/0.5) x 0.2 = 10 x 0.2 = 2 m/s.",
+          "s": [
+            [
+              "Equates (1/2) k xm^2 to (1/2) m vm^2 (speed is maximum at x = 0)",
+              1
+            ],
+            [
+              "vm = 2 m/s",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Hard",
+          "t": "mcq",
+          "m": 1,
+          "q": "A spring of spring constant 500 N/m is stretched further, from an extension of 0.1 m to an extension of 0.2 m (both measured from its natural length). The work done by the spring force during this stretching is",
+          "a": "-7.5 J",
+          "o": [
+            "-7.5 J",
+            "+7.5 J",
+            "-2.5 J",
+            "-10 J"
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Hardest",
+          "t": "long_answer",
+          "m": 3,
+          "q": "A block of mass 1 kg moving at 2 m/s on a rough horizontal surface meets a light horizontal spring of spring constant 50 N/m fixed to a wall; the spring is at its natural length when the block first touches it. The coefficient of friction between the block and the surface is 0.5 and g = 10 m/s^2. Using the work-energy theorem, find the maximum compression of the spring.",
+          "a": "Friction = mu m g = 0.5 x 1 x 10 = 5 N. Both the spring force and friction oppose the compression x, so the work done by the net force is -(1/2) k x^2 - mu m g x, and the change in kinetic energy is 0 - (1/2) m v^2 = -2 J. Hence (1/2)(50) x^2 + 5x = 2, that is 25 x^2 + 5x - 2 = 0. x = [-5 + sqrt(25 + 200)]/50 = (-5 + 15)/50 = 0.2 m, taking the positive root.",
+          "s": [
+            [
+              "Work-energy equation (1/2) m v^2 = (1/2) k x^2 + mu m g x",
+              1
+            ],
+            [
+              "Quadratic 25 x^2 + 5x - 2 = 0 (friction force 5 N, initial K = 2 J)",
+              1
+            ],
+            [
+              "x = 0.2 m, the positive root",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Analyse",
+          "d": "Hard",
+          "t": "multi_statement",
+          "m": 1,
+          "q": "Consider two statements about an ideal spring, with its potential energy taken as zero at the natural length. (I) The potential energy of the spring is positive when it is stretched and negative when it is compressed. (II) The work done by the spring force when a block is moved from xi to xf depends on the route by which the block is taken between these positions. Which is or are correct?",
+          "a": "Neither I nor II",
+          "o": [
+            "Neither I nor II",
+            "Only I",
+            "Only II",
+            "Both I and II"
+          ]
+        },
+        {
+          "b": "Analyse",
+          "d": "Hard",
+          "t": "short_answer",
+          "m": 2,
+          "q": "A particle moves along the x-axis with potential energy V(x) = (1/2) k x^2, where k = 8 N/m, and its total mechanical energy is 4 J. Show that the particle must turn back when it reaches x = +1 m or x = -1 m.",
+          "a": "K = E - V(x) and kinetic energy cannot be negative, so the particle can only be where V(x) is not more than E. V = E gives (1/2)(8) x^2 = 4, x^2 = 1, x = +1 m or -1 m. At these points K = 0, the speed is zero, and beyond them K would be negative, which is impossible; so the particle turns back there.",
+          "s": [
+            [
+              "Uses K = E - V with K not negative (K = 0 at the turning points)",
+              1
+            ],
+            [
+              "(1/2)(8) x^2 = 4 gives x = +1 m and x = -1 m",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Analyse",
+          "d": "Hardest",
+          "t": "long_answer",
+          "m": 3,
+          "q": "A block of mass 0.4 kg is attached to a light spring of spring constant 40 N/m on a smooth horizontal surface. The spring is extended by 0.5 m from its natural length and the block is released from rest. Find (a) the total mechanical energy, (b) the potential energy when the extension is 0.3 m and (c) the speed of the block at that instant.",
+          "a": "(a) At release K = 0, so E = (1/2) k xm^2 = (1/2)(40)(0.5)^2 = 5 J. (b) At x = 0.3 m, V = (1/2)(40)(0.3)^2 = 1.8 J. (c) K = E - V = 5 - 1.8 = 3.2 J = (1/2)(0.4) v^2, so v^2 = 16 and v = 4 m/s.",
+          "s": [
+            [
+              "E = (1/2)(40)(0.5)^2 = 5 J",
+              1
+            ],
+            [
+              "V = 1.8 J at x = 0.3 m",
+              1
+            ],
+            [
+              "K = 3.2 J, so v = 4 m/s",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Evaluate",
+          "d": "Hard",
+          "t": "short_answer",
+          "m": 2,
+          "q": "A car runs along a rough road into a horizontally mounted spring. To find the maximum compression, a student equates the initial kinetic energy of the car to the potential energy (1/2) k x^2 of the spring. Evaluate this method.",
+          "a": "The method is not valid here. Friction is a non-conservative force, so mechanical energy is not conserved: Ef - Ei = Wnc, where the work done by friction is negative. The correct equation is (1/2) m v^2 = (1/2) k x^2 + mu m g x. The student's method ignores the friction term and therefore gives too large a compression.",
+          "s": [
+            [
+              "Judgement: not valid, because friction is non-conservative and mechanical energy is not conserved",
+              1
+            ],
+            [
+              "States the correct relation including the work done by friction, and that the true compression is smaller",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Create",
+          "d": "Hardest",
+          "t": "long_answer",
+          "m": 3,
+          "q": "Design a spring launcher for a toy: choose a spring constant k and a compression x (from the natural length) so that a ball of mass 0.05 kg, pushed along a smooth horizontal track, leaves the spring at 4 m/s. Show your calculation and state the idealisations you have made.",
+          "a": "Kinetic energy needed = (1/2)(0.05)(4)^2 = 0.4 J. This must equal the stored energy (1/2) k x^2, so k x^2 = 0.8 J. One choice: k = 80 N/m and x = 0.1 m, since 80 x (0.1)^2 = 0.8. Idealisations: the spring is massless, there is no friction, and all the stored energy goes to the ball. (Any k and x with k x^2 = 0.8 J earns the marks.)",
+          "s": [
+            [
+              "Kinetic energy required = 0.4 J",
+              1
+            ],
+            [
+              "A pair k, x satisfying (1/2) k x^2 = 0.4 J, for example k = 80 N/m and x = 0.1 m",
+              1
+            ],
+            [
+              "Idealisations stated: massless spring and no friction",
+              1
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "code": "C11P-5.7",
+      "name": "Power and the units of work and energy",
+      "description": "Average power W/t, instantaneous power dW/dt = F.v, the watt and the horse-power, the kilowatt hour as a unit of energy, and the alternative units of energy in Table 5.1.",
+      "idea": "Power tells how fast work is done or energy is transferred, not how much.",
+      "rule": "Average power Pav = W/t. Instantaneous power is the limiting value of the average power as the time interval approaches zero: P = dW/dt = F.v, where v is the instantaneous velocity. Power is a scalar with dimensions [M L^2 T^-3]; its SI unit is the watt (W), 1 W = 1 J/s, and 1 hp = 746 W. The kilowatt hour is a unit of energy: 1 kWh = 10^3 W x 3600 s = 3.6 x 10^6 J. Other units of energy: 1 erg = 10^-7 J, 1 eV = 1.6 x 10^-19 J, 1 cal = 4.186 J.",
+      "example": "A motor that does 6000 J of work in 20 s delivers an average power of 6000/20 = 300 W.",
+      "difficulty_base": "Easy",
+      "questions": [
+        {
+          "b": "Remember",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "The dimensions of power are",
+          "a": "[M L^2 T^-3]",
+          "o": [
+            "[M L^2 T^-3]",
+            "[M L^2 T^-2]",
+            "[M L T^-2]",
+            "[M L^2 T^-1]"
+          ]
+        },
+        {
+          "b": "Remember",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "One horse-power (hp) is equal to",
+          "a": "746 W",
+          "o": [
+            "746 W",
+            "1000 W",
+            "550 W",
+            "3600 W"
+          ]
+        },
+        {
+          "b": "Remember",
+          "d": "Easy",
+          "t": "fill_blank",
+          "m": 1,
+          "q": "The SI unit of power is the ____ (write the name of the unit as one word).",
+          "a": "watt"
+        },
+        {
+          "b": "Remember",
+          "d": "Hard",
+          "t": "mcq",
+          "m": 1,
+          "q": "Which of the following statements about power is NOT correct?",
+          "a": "It is a vector quantity directed along the velocity of the body",
+          "o": [
+            "It is a vector quantity directed along the velocity of the body",
+            "Average power is the work done divided by the total time taken",
+            "The instantaneous power of a force is the scalar product F.v",
+            "It can be expressed in horse-power as well as in the SI unit"
+          ],
+          "rev": true
+        },
+        {
+          "b": "Understand",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "In karate, a 'powerful' punch is one delivered at great speed. In the physics sense, a large power means",
+          "a": "a large amount of work done in a short time",
+          "o": [
+            "a large amount of work done in a short time",
+            "a large force, whatever the time taken",
+            "a large amount of work, whatever the time taken",
+            "a large amount of energy stored in the body"
+          ]
+        },
+        {
+          "b": "Understand",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "Two persons of equal mass climb the same four floors of a building. A takes half the time that B takes. Compared with B, A",
+          "a": "does the same work against gravity but delivers twice the power",
+          "o": [
+            "does the same work against gravity but delivers twice the power",
+            "does twice the work and delivers the same power",
+            "does half the work and delivers the same power",
+            "does the same work and delivers the same power"
+          ]
+        },
+        {
+          "b": "Understand",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "A 100 W bulb is kept on for 10 hours. The energy it uses is",
+          "a": "1 kWh",
+          "o": [
+            "1 kWh",
+            "10 kWh",
+            "0.1 kWh",
+            "1000 kWh"
+          ]
+        },
+        {
+          "b": "Understand",
+          "d": "Hard",
+          "t": "mcq",
+          "m": 1,
+          "q": "The instantaneous power of a force is defined as",
+          "a": "the limiting value of the average power as the time interval approaches zero",
+          "o": [
+            "the limiting value of the average power as the time interval approaches zero",
+            "the average power taken over the whole motion",
+            "the product of the work done and the time taken",
+            "the largest value that the average power reaches"
+          ]
+        },
+        {
+          "b": "Understand",
+          "d": "Hard",
+          "t": "mcq",
+          "m": 1,
+          "q": "At a certain instant a force acts on a moving body in a direction perpendicular to its velocity. The instantaneous power delivered by this force is",
+          "a": "zero",
+          "o": [
+            "zero",
+            "equal to the product of the force and the speed",
+            "negative",
+            "the largest it can be for that force and speed"
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "A machine does 1200 J of work in 60 s. Its average power is",
+          "a": "20 W",
+          "o": [
+            "20 W",
+            "72000 W",
+            "0.05 W",
+            "1140 W"
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Easy",
+          "t": "fill_blank",
+          "m": 1,
+          "q": "A force of 50 N acts on a body in the direction of its velocity, which is 4 m/s. The power delivered by the force is ____ W (write a whole number).",
+          "a": "200"
+        },
+        {
+          "b": "Apply",
+          "d": "Hard",
+          "t": "mcq",
+          "m": 1,
+          "q": "A heater rated 2 kW is used for 30 minutes. Using 1 kW = 1000 W and 1 minute = 60 s, the energy it uses is",
+          "a": "3.6 x 10^6 J",
+          "o": [
+            "3.6 x 10^6 J",
+            "6 x 10^4 J",
+            "3.6 x 10^3 J",
+            "1.2 x 10^5 J"
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Hard",
+          "t": "short_answer",
+          "m": 2,
+          "q": "An elevator with its passengers has a total mass of 1200 kg and moves up with a constant speed of 1.5 m/s. A frictional force of 3000 N opposes the motion. Taking g = 10 m/s^2, find the minimum power that the motor must deliver to the elevator.",
+          "a": "At constant speed the motor must balance the total downward force F = m g + friction = 1200 x 10 + 3000 = 15000 N. P = F v = 15000 x 1.5 = 22500 W (22.5 kW).",
+          "s": [
+            [
+              "Force to be balanced = 12000 + 3000 = 15000 N",
+              1
+            ],
+            [
+              "P = F v = 15000 x 1.5 = 22500 W",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Hard",
+          "t": "mcq",
+          "m": 1,
+          "q": "A crane lifts a load of 500 kg at constant speed through a height of 12 m in 20 s. Taking g = 10 m/s^2, the power delivered by the crane to the load is",
+          "a": "3000 W",
+          "o": [
+            "3000 W",
+            "300 W",
+            "1.2 x 10^6 W",
+            "250 W"
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Hardest",
+          "t": "long_answer",
+          "m": 3,
+          "q": "A pump raises 600 kg of water to a tank 20 m above it in 1 minute. The efficiency of the pump (useful output power divided by the electric power it consumes) is 40%. Taking g = 10 m/s^2, find (a) the work done on the water against gravity, (b) the useful output power and (c) the electric power consumed by the pump.",
+          "a": "(a) W = m g h = 600 x 10 x 20 = 1.2 x 10^5 J. (b) Useful power = W/t = 1.2 x 10^5 / 60 = 2000 W. (c) Efficiency = output/input, so input power = 2000/0.40 = 5000 W = 5 kW.",
+          "s": [
+            [
+              "W = m g h = 1.2 x 10^5 J",
+              1
+            ],
+            [
+              "Useful power = 1.2 x 10^5 / 60 = 2000 W",
+              1
+            ],
+            [
+              "Electric power consumed = 2000/0.4 = 5000 W",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Analyse",
+          "d": "Hard",
+          "t": "assertion_reason",
+          "m": 1,
+          "q": "Assertion (A): A 60 W bulb kept on for 10 hours uses more energy than a 100 W bulb kept on for 5 hours. Reason (R): The energy used by an appliance is the product of its power and the time for which it is used. Choose the correct option.",
+          "a": "Both A and R are true, and R is the correct explanation of A",
+          "o": [
+            "Both A and R are true, and R is the correct explanation of A",
+            "Both A and R are true, but R is not the correct explanation of A",
+            "A is true, R is false",
+            "A is false, R is true"
+          ]
+        },
+        {
+          "b": "Analyse",
+          "d": "Hard",
+          "t": "short_answer",
+          "m": 2,
+          "q": "A body, initially at rest, moves in one dimension with constant acceleration a under a constant force. Show how the power delivered to it at time t depends on t.",
+          "a": "With constant acceleration from rest, v = a t. The force is constant, F = m a, and acts along the velocity, so P = F v = (m a)(a t) = m a^2 t. Since m and a are constant, the power is directly proportional to t.",
+          "s": [
+            [
+              "Uses P = F v with F = m a and v = a t",
+              1
+            ],
+            [
+              "P = m a^2 t, so P is proportional to t",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Analyse",
+          "d": "Hardest",
+          "t": "long_answer",
+          "m": 3,
+          "q": "A car of mass 1000 kg starts from rest and accelerates uniformly along a level road, reaching 20 m/s in 10 s. Neglecting friction, find (a) the average power delivered to the car over the 10 s, (b) the instantaneous power at t = 10 s, and (c) explain why the two values differ.",
+          "a": "(a) Work done = gain in kinetic energy = (1/2)(1000)(20)^2 = 2 x 10^5 J, so average power = 2 x 10^5 / 10 = 20000 W. (b) a = 20/10 = 2 m/s^2, F = m a = 2000 N, and P = F v = 2000 x 20 = 40000 W. (c) With a constant force the instantaneous power F v rises in proportion to the speed, from zero at the start to 40000 W at 10 s; the average over the interval is half the final value.",
+          "s": [
+            [
+              "Average power = 2 x 10^5 J / 10 s = 20000 W",
+              1
+            ],
+            [
+              "Instantaneous power = F v = 2000 x 20 = 40000 W",
+              1
+            ],
+            [
+              "Explanation: P = F v grows with speed, so the final value is twice the average",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Evaluate",
+          "d": "Hard",
+          "t": "short_answer",
+          "m": 2,
+          "q": "An electricity bill shows a consumption of 250 kWh for a month. A student says this means that the family 'used 250 kW of power'. Evaluate the statement, and express the consumption in joule (1 kWh = 3.6 x 10^6 J).",
+          "a": "The statement is wrong: the kilowatt hour is a unit of energy, not of power. The bill gives the energy consumed, 250 x 3.6 x 10^6 J = 9 x 10^8 J. The power, which is the rate of using energy, cannot be read from this figure without knowing the time over which each appliance was used.",
+          "s": [
+            [
+              "Judgement: wrong, because the kWh is a unit of energy and not of power",
+              1
+            ],
+            [
+              "Energy = 250 x 3.6 x 10^6 = 9 x 10^8 J",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Create",
+          "d": "Hardest",
+          "t": "long_answer",
+          "m": 3,
+          "q": "Solar energy falls on a horizontal roof at an average rate of 200 W per square metre, and 20% of it can be converted to useful electrical power. Choose a household power requirement between 1 kW and 5 kW, work out the area of solar panel needed to supply it, and say whether it would fit on a roof of area 100 m^2.",
+          "a": "Example: take the requirement as 2 kW = 2000 W. Useful electrical power from each square metre = 20% of 200 W = 40 W. Area needed = 2000/40 = 50 m^2, which fits on a roof of 100 m^2 (it covers half of it). (Any requirement P in the stated range, with area = P/40 W per m^2 and a correct comparison with 100 m^2, earns the marks; 5 kW would need 125 m^2 and would not fit.)",
+          "s": [
+            [
+              "A power requirement chosen in the range and written in watt",
+              1
+            ],
+            [
+              "Useful power per square metre = 0.20 x 200 = 40 W",
+              1
+            ],
+            [
+              "Area = P/40 (for example 50 m^2 for 2 kW) with the comparison against 100 m^2",
+              1
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "code": "C11P-5.8",
+      "name": "Collisions: momentum conservation and the completely inelastic collision in one dimension",
+      "description": "Why total linear momentum is conserved in every collision, the difference between elastic, inelastic and completely inelastic collisions, and the common velocity and loss of kinetic energy when two bodies stick together in one dimension.",
+      "idea": "In any collision the total momentum of the two bodies is unchanged, but kinetic energy survives in full only if the collision is elastic; when the bodies stick together, the most is lost.",
+      "rule": "During a collision the mutual forces are equal and opposite at every instant (Newton's third law), so the changes in momentum cancel and the total linear momentum is conserved in all collisions. Total kinetic energy is not necessarily conserved. Elastic collision: the initial and final kinetic energies are equal. Completely inelastic collision: the two bodies move together afterwards. Inelastic collision: the deformation is partly relieved and some kinetic energy is lost. For m1 moving at v1i striking m2 at rest and sticking, in one dimension, m1 v1i = (m1 + m2) vf, so vf = m1 v1i/(m1 + m2), and the loss in kinetic energy is (1/2) [m1 m2/(m1 + m2)] v1i^2.",
+      "example": "A trolley of mass 4 kg moving at 3 m/s sticks to a stationary trolley of mass 2 kg: vf = 4 x 3/(4 + 2) = 2 m/s, and the kinetic energy falls from 18 J to 12 J.",
+      "difficulty_base": "Hard",
+      "questions": [
+        {
+          "b": "Remember",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "The quantity that is conserved in all collisions, elastic or inelastic, is the total",
+          "a": "linear momentum of the system",
+          "o": [
+            "linear momentum of the system",
+            "kinetic energy of the system",
+            "speed of the two bodies",
+            "kinetic energy of each body separately"
+          ]
+        },
+        {
+          "b": "Remember",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "A collision in which the deformation is only partly relieved and some of the initial kinetic energy is lost, without the bodies sticking together, is called",
+          "a": "an inelastic collision",
+          "o": [
+            "an inelastic collision",
+            "an elastic collision",
+            "a completely inelastic collision",
+            "a head-on collision"
+          ]
+        },
+        {
+          "b": "Remember",
+          "d": "Easy",
+          "t": "fill_blank",
+          "m": 1,
+          "q": "In an elastic collision the total kinetic energy after the collision is equal to the total kinetic energy ____ the collision (write one word).",
+          "a": "before"
+        },
+        {
+          "b": "Remember",
+          "d": "Hard",
+          "t": "mcq",
+          "m": 1,
+          "q": "A moving body collides in one dimension with a body at rest and the collision is completely inelastic. Which of the following is NOT true of this collision?",
+          "a": "The total kinetic energy of the system is the same before and after the collision",
+          "o": [
+            "The total kinetic energy of the system is the same before and after the collision",
+            "The total linear momentum of the system is the same before and after the collision",
+            "The two bodies move with a common velocity after the collision",
+            "The final speed is smaller than the initial speed of the moving body"
+          ],
+          "rev": true
+        },
+        {
+          "b": "Understand",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "The total linear momentum of two colliding bodies is conserved because, by Newton's third law,",
+          "a": "the mutual forces are equal and opposite at every instant, so the changes in the two momenta cancel",
+          "o": [
+            "the mutual forces are equal and opposite at every instant, so the changes in the two momenta cancel",
+            "the mutual forces are zero during the collision",
+            "the two bodies always have equal masses",
+            "the kinetic energy of the system does not change"
+          ]
+        },
+        {
+          "b": "Understand",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "In an inelastic collision, the part of the initial kinetic energy that is 'lost'",
+          "a": "is transformed into other forms of energy such as heat and sound",
+          "o": [
+            "is transformed into other forms of energy such as heat and sound",
+            "is carried away as extra linear momentum",
+            "disappears without being transformed into anything",
+            "is returned to the bodies as kinetic energy after the collision"
+          ]
+        },
+        {
+          "b": "Understand",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "The deformation during a collision can be pictured as a compressed spring between the two masses. The collision is elastic if this 'spring'",
+          "a": "regains its original shape without loss in energy",
+          "o": [
+            "regains its original shape without loss in energy",
+            "stays fully compressed, so that the bodies move together",
+            "regains only a part of its original shape",
+            "is never compressed at all"
+          ]
+        },
+        {
+          "b": "Understand",
+          "d": "Hard",
+          "t": "mcq",
+          "m": 1,
+          "q": "A moving body collides in one dimension with a body of equal mass at rest, and the collision is completely inelastic. The fraction of the initial kinetic energy that is lost is",
+          "a": "one-half",
+          "o": [
+            "one-half",
+            "one-quarter",
+            "the whole of it",
+            "zero"
+          ]
+        },
+        {
+          "b": "Understand",
+          "d": "Hard",
+          "t": "mcq",
+          "m": 1,
+          "q": "A body of mass m1 moving with velocity v1i collides in one dimension with a very much heavier body at rest (m2 much greater than m1) and sticks to it. The common velocity after the collision is",
+          "a": "nearly zero",
+          "o": [
+            "nearly zero",
+            "nearly v1i",
+            "nearly -v1i",
+            "nearly 2 v1i"
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "A body of mass 2 kg moving at 6 m/s collides in one dimension with a body of mass 1 kg at rest, and the two stick together. Their common velocity after the collision is",
+          "a": "4 m/s",
+          "o": [
+            "4 m/s",
+            "6 m/s",
+            "2 m/s",
+            "12 m/s"
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Easy",
+          "t": "fill_blank",
+          "m": 1,
+          "q": "A trolley of mass 1 kg moving at 8 m/s collides in one dimension with a trolley of mass 3 kg at rest, and they stick together. Their common speed after the collision is ____ m/s (write a whole number).",
+          "a": "2"
+        },
+        {
+          "b": "Apply",
+          "d": "Hard",
+          "t": "mcq",
+          "m": 1,
+          "q": "A body of mass 4 kg moving at 5 m/s makes a completely inelastic collision in one dimension with a body of mass 6 kg at rest. The loss in kinetic energy in the collision is",
+          "a": "30 J",
+          "o": [
+            "30 J",
+            "20 J",
+            "50 J",
+            "60 J"
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Hard",
+          "t": "short_answer",
+          "m": 2,
+          "q": "A body of mass 2 kg moving at 5 m/s collides in one dimension with a body of mass 3 kg at rest. After the collision the 2 kg body moves at 0.5 m/s in its original direction. Find the velocity of the 3 kg body, and state with a reason whether the collision is elastic.",
+          "a": "Momentum conservation: 2 x 5 = 2 x 0.5 + 3 v, so v = 9/3 = 3 m/s in the original direction of the 2 kg body. Initial kinetic energy = (1/2)(2)(25) = 25 J; final kinetic energy = (1/2)(2)(0.25) + (1/2)(3)(9) = 0.25 + 13.5 = 13.75 J. Kinetic energy is not conserved, so the collision is inelastic (not elastic).",
+          "s": [
+            [
+              "Momentum conservation gives v = 3 m/s in the original direction of motion",
+              1
+            ],
+            [
+              "Compares kinetic energies (25 J before, 13.75 J after): not elastic",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Hard",
+          "t": "mcq",
+          "m": 1,
+          "q": "A body of mass 3 kg makes a completely inelastic collision in one dimension with a body of mass 1 kg at rest. The fraction of the initial kinetic energy that remains as kinetic energy after the collision is",
+          "a": "3/4",
+          "o": [
+            "3/4",
+            "1/4",
+            "9/16",
+            "1/3"
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Hardest",
+          "t": "long_answer",
+          "m": 3,
+          "q": "A bullet of mass 0.01 kg moving horizontally at 400 m/s strikes a wooden block of mass 1.99 kg hanging at rest from a long light string, and remains embedded in it. Taking g = 10 m/s^2, find (a) the common velocity just after the collision, (b) the kinetic energy lost in the collision and (c) the vertical height through which the block with the bullet rises.",
+          "a": "(a) Momentum conservation: 0.01 x 400 = (0.01 + 1.99) v, so v = 4/2 = 2 m/s. (b) Initial K = (1/2)(0.01)(400)^2 = 800 J; final K = (1/2)(2)(2)^2 = 4 J; loss = 796 J. (c) After the collision mechanical energy is conserved: (1/2)(2)(2)^2 = 2 x 10 x h, so h = 4/20 = 0.2 m.",
+          "s": [
+            [
+              "Common velocity v = 2 m/s from momentum conservation",
+              1
+            ],
+            [
+              "Kinetic energy lost = 800 - 4 = 796 J",
+              1
+            ],
+            [
+              "Height h = v^2/(2g) = 0.2 m",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Analyse",
+          "d": "Hard",
+          "t": "multi_statement",
+          "m": 1,
+          "q": "Consider two statements about a collision between two bodies. (I) The total linear momentum of the two bodies is conserved at each instant of the collision. (II) If the collision is elastic, the total kinetic energy of the two bodies stays constant at each instant while they are in contact. Which is or are correct?",
+          "a": "Only I",
+          "o": [
+            "Only I",
+            "Only II",
+            "Both I and II",
+            "Neither I nor II"
+          ]
+        },
+        {
+          "b": "Analyse",
+          "d": "Hard",
+          "t": "short_answer",
+          "m": 2,
+          "q": "A skater of mass 60 kg gliding at 5 m/s on frictionless ice collides in one dimension with a skater of mass 40 kg at rest and holds on to her. Find their common velocity, and decide from the kinetic energies whether the collision is elastic.",
+          "a": "Momentum conservation: 60 x 5 = (60 + 40) v, so v = 3 m/s in the original direction of motion. Initial kinetic energy = (1/2)(60)(25) = 750 J; final kinetic energy = (1/2)(100)(9) = 450 J. 300 J of kinetic energy is lost, so the collision is not elastic; as the two move together it is completely inelastic.",
+          "s": [
+            [
+              "Common velocity v = 3 m/s from momentum conservation",
+              1
+            ],
+            [
+              "Kinetic energy falls from 750 J to 450 J, so the collision is not elastic (completely inelastic)",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Analyse",
+          "d": "Hardest",
+          "t": "long_answer",
+          "m": 3,
+          "q": "A body of mass m1 moving with speed v1i makes a completely inelastic collision in one dimension with a body of mass m2 at rest. Derive an expression for the loss in kinetic energy in terms of m1, m2 and v1i, and evaluate it for m1 = 2 kg, m2 = 3 kg and v1i = 5 m/s.",
+          "a": "Momentum conservation: m1 v1i = (m1 + m2) vf, so vf = m1 v1i/(m1 + m2). Loss = (1/2) m1 v1i^2 - (1/2)(m1 + m2) vf^2 = (1/2) m1 v1i^2 [1 - m1/(m1 + m2)] = (1/2) [m1 m2/(m1 + m2)] v1i^2. For the given values: (1/2)(2 x 3/5)(25) = 15 J (check: 25 J before, (1/2)(5)(2)^2 = 10 J after).",
+          "s": [
+            [
+              "vf = m1 v1i/(m1 + m2) from momentum conservation",
+              1
+            ],
+            [
+              "Loss = (1/2) [m1 m2/(m1 + m2)] v1i^2",
+              1
+            ],
+            [
+              "Numerical value 15 J",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Evaluate",
+          "d": "Hard",
+          "t": "short_answer",
+          "m": 2,
+          "q": "A student states: 'In an elastic collision of two bodies, the momentum and the kinetic energy of each body are conserved.' Evaluate this statement.",
+          "a": "The statement is false. What is conserved is the total linear momentum and the total kinetic energy of the system of the two bodies, not those of each body separately. Each body generally changes its momentum and kinetic energy: for example, when a moving ball strikes an identical ball at rest elastically and head-on, the first loses all its momentum and kinetic energy and the second gains them.",
+          "s": [
+            [
+              "Judgement: false; it is the totals for the two-body system that are conserved",
+              1
+            ],
+            [
+              "Shows that an individual body's momentum and kinetic energy change (an example or the mutual forces)",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Create",
+          "d": "Hardest",
+          "t": "long_answer",
+          "m": 3,
+          "q": "Devise a numerical problem on a completely inelastic collision in one dimension, with one body initially at rest, in which both the common velocity and the loss in kinetic energy come out as whole numbers. State the problem and solve it.",
+          "a": "Example: a body of mass 6 kg moving at 3 m/s collides in one dimension with a body of mass 3 kg at rest and sticks to it. Common velocity: 6 x 3 = (6 + 3) v, so v = 2 m/s. Initial kinetic energy = (1/2)(6)(9) = 27 J; final kinetic energy = (1/2)(9)(4) = 18 J; loss = 9 J. (Any consistent problem correctly solved earns the marks.)",
+          "s": [
+            [
+              "A complete problem: two masses, one at rest, the speed of the other, one dimension, bodies stick together",
+              1
+            ],
+            [
+              "Common velocity from momentum conservation",
+              1
+            ],
+            [
+              "Kinetic energies before and after, and the loss",
+              1
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "code": "C11P-5.9",
+      "name": "Elastic collisions in one and two dimensions",
+      "description": "The final velocities in a head-on elastic collision with a body at rest, the equal-mass and heavy-target special cases, the transfer of kinetic energy to a moderator nucleus, and the momentum and energy equations for a two-dimensional collision.",
+      "idea": "In an elastic collision both the total momentum and the total kinetic energy are the same before and after, and these two conditions fix the final velocities in a head-on collision.",
+      "rule": "Head-on (one-dimensional) elastic collision of m1 moving at v1i with m2 at rest: m1 v1i = m1 v1f + m2 v2f and m1 v1i^2 = m1 v1f^2 + m2 v2f^2 give v2f = v1i + v1f, v1f = (m1 - m2) v1i/(m1 + m2) and v2f = 2 m1 v1i/(m1 + m2). Equal masses: v1f = 0 and v2f = v1i. If m2 is much greater than m1: v1f is nearly -v1i and v2f nearly 0. Fraction of kinetic energy transferred to m2: 4 m1 m2/(m1 + m2)^2. In two dimensions: m1 v1i = m1 v1f cos theta1 + m2 v2f cos theta2 and 0 = m1 v1f sin theta1 - m2 v2f sin theta2, with (1/2) m1 v1i^2 = (1/2) m1 v1f^2 + (1/2) m2 v2f^2 if elastic; one of the four unknowns must be known. Equal masses in a glancing elastic collision with one at rest move off at right angles.",
+      "example": "A ball of mass 4 kg moving at 5 m/s collides elastically head-on with a ball of mass 1 kg at rest: v1f = (4 - 1) x 5/(4 + 1) = 3 m/s and v2f = 2 x 4 x 5/(4 + 1) = 8 m/s.",
+      "difficulty_base": "Hardest",
+      "questions": [
+        {
+          "b": "Remember",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "A body of mass m1 moving with velocity v1i makes a head-on elastic collision with a body of mass m2 at rest. The velocity of m2 after the collision is",
+          "a": "2 m1 v1i/(m1 + m2)",
+          "o": [
+            "2 m1 v1i/(m1 + m2)",
+            "(m1 - m2) v1i/(m1 + m2)",
+            "m1 v1i/(m1 + m2)",
+            "2 m2 v1i/(m1 + m2)"
+          ]
+        },
+        {
+          "b": "Remember",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "A collision in which the initial velocities and the final velocities of both bodies lie along the same straight line is called",
+          "a": "a head-on (one-dimensional) collision",
+          "o": [
+            "a head-on (one-dimensional) collision",
+            "a glancing collision",
+            "a two-dimensional collision",
+            "a completely inelastic collision"
+          ]
+        },
+        {
+          "b": "Remember",
+          "d": "Easy",
+          "t": "fill_blank",
+          "m": 1,
+          "q": "When two equal masses undergo a glancing elastic collision with one of them initially at rest, after the collision they move at an angle of ____ degrees to each other (write a whole number).",
+          "a": "90"
+        },
+        {
+          "b": "Remember",
+          "d": "Hard",
+          "t": "mcq",
+          "m": 1,
+          "q": "A moving body makes a head-on elastic collision with a body at rest. Which of the following statements is NOT true of this collision?",
+          "a": "The two bodies always move together with a common velocity after the collision",
+          "o": [
+            "The two bodies always move together with a common velocity after the collision",
+            "The total linear momentum after the collision equals that before it",
+            "The total kinetic energy after the collision equals that before it",
+            "The final velocities can be found from the two masses and the initial velocity"
+          ],
+          "rev": true
+        },
+        {
+          "b": "Understand",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "A moving ball makes a head-on elastic collision with an identical ball at rest. After the collision",
+          "a": "the first ball comes to rest and the second moves off with the initial velocity of the first",
+          "o": [
+            "the first ball comes to rest and the second moves off with the initial velocity of the first",
+            "both balls move forward with half the initial velocity",
+            "the first ball rebounds with its initial speed and the second stays at rest",
+            "both balls come to rest"
+          ]
+        },
+        {
+          "b": "Understand",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "A light body makes a head-on elastic collision with a very much heavier body at rest. After the collision",
+          "a": "the light body reverses its velocity with nearly the same speed and the heavy body is almost undisturbed",
+          "o": [
+            "the light body reverses its velocity with nearly the same speed and the heavy body is almost undisturbed",
+            "the light body comes to rest and the heavy body moves off with the same velocity",
+            "both bodies move forward together",
+            "the heavy body moves off with nearly twice the velocity of the light body"
+          ]
+        },
+        {
+          "b": "Understand",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "A mass m1 moving along the x-axis strikes a stationary mass m2, and after the collision the two move off in different directions in the x-y plane. The y-component of the total linear momentum after the collision is",
+          "a": "zero",
+          "o": [
+            "zero",
+            "m1 v1i",
+            "equal to the x-component of the total momentum",
+            "(m1 + m2) v1i"
+          ]
+        },
+        {
+          "b": "Understand",
+          "d": "Hard",
+          "t": "mcq",
+          "m": 1,
+          "q": "In a two-dimensional elastic collision of m1 with a stationary m2, the masses and v1i are known and there are four unknowns: v1f, v2f, theta1 and theta2. Momentum and kinetic energy conservation give three equations. Therefore",
+          "a": "at least one of the unknowns, such as theta1, must be measured before the others can be found",
+          "o": [
+            "at least one of the unknowns, such as theta1, must be measured before the others can be found",
+            "all four unknowns can be found from the three equations",
+            "the collision cannot take place",
+            "momentum cannot be conserved in such a collision"
+          ]
+        },
+        {
+          "b": "Understand",
+          "d": "Hard",
+          "t": "mcq",
+          "m": 1,
+          "q": "In a head-on elastic collision of a body of mass m1 with a body of mass m2 at rest, the first body rebounds (its velocity reverses) when",
+          "a": "m1 is less than m2",
+          "o": [
+            "m1 is less than m2",
+            "m1 is greater than m2",
+            "m1 is equal to m2",
+            "the collision is also completely inelastic"
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "A ball of mass 2 kg moving at 3 m/s makes a head-on elastic collision with an identical ball at rest. The velocity of the second ball after the collision is",
+          "a": "3 m/s",
+          "o": [
+            "3 m/s",
+            "1.5 m/s",
+            "6 m/s",
+            "0 m/s"
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Easy",
+          "t": "fill_blank",
+          "m": 1,
+          "q": "A body of mass 3 kg moving at 4 m/s makes a head-on elastic collision with a body of mass 1 kg at rest. The velocity of the 3 kg body after the collision, in its original direction, is ____ m/s (write a whole number).",
+          "a": "2"
+        },
+        {
+          "b": "Apply",
+          "d": "Hard",
+          "t": "mcq",
+          "m": 1,
+          "q": "A body of mass 1 kg moving at 9 m/s along the +x direction makes a head-on elastic collision with a body of mass 2 kg at rest. The velocity of the 1 kg body after the collision is",
+          "a": "-3 m/s",
+          "o": [
+            "-3 m/s",
+            "+3 m/s",
+            "+6 m/s",
+            "-9 m/s"
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Hard",
+          "t": "short_answer",
+          "m": 2,
+          "q": "A body of mass 5 kg moving at 4 m/s makes a head-on elastic collision with a body of mass 3 kg at rest. Find the velocities of both bodies after the collision.",
+          "a": "v1f = (m1 - m2) v1i/(m1 + m2) = (5 - 3) x 4/8 = 1 m/s, in the original direction. v2f = 2 m1 v1i/(m1 + m2) = 2 x 5 x 4/8 = 5 m/s, in the original direction. (Check: v2f = v1i + v1f = 4 + 1 = 5 m/s.)",
+          "s": [
+            [
+              "v1f = (5 - 3)(4)/8 = 1 m/s in the original direction",
+              1
+            ],
+            [
+              "v2f = 2(5)(4)/8 = 5 m/s in the original direction",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Hard",
+          "t": "mcq",
+          "m": 1,
+          "q": "A neutron of mass m makes a head-on elastic collision with a deuterium nucleus of mass 2m at rest. The fraction of the neutron's kinetic energy that is transferred to the deuterium nucleus is",
+          "a": "8/9",
+          "o": [
+            "8/9",
+            "1/9",
+            "2/3",
+            "4/9"
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Hardest",
+          "t": "long_answer",
+          "m": 3,
+          "q": "A ball of mass 1 kg moving at 10 m/s along the +x direction makes a head-on elastic collision with a ball of mass 4 kg at rest. Find the velocity of each ball after the collision, and verify that the total kinetic energy is conserved.",
+          "a": "v1f = (m1 - m2) v1i/(m1 + m2) = (1 - 4) x 10/5 = -6 m/s: the 1 kg ball rebounds along -x at 6 m/s. v2f = 2 m1 v1i/(m1 + m2) = 2 x 1 x 10/5 = +4 m/s. Kinetic energy before = (1/2)(1)(10)^2 = 50 J. After = (1/2)(1)(6)^2 + (1/2)(4)(4)^2 = 18 + 32 = 50 J, the same.",
+          "s": [
+            [
+              "v1f = -6 m/s (rebounds along -x)",
+              1
+            ],
+            [
+              "v2f = +4 m/s",
+              1
+            ],
+            [
+              "Kinetic energy 50 J before and 18 + 32 = 50 J after",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Analyse",
+          "d": "Hard",
+          "t": "assertion_reason",
+          "m": 1,
+          "q": "Assertion (A): A neutron loses a larger fraction of its kinetic energy in a head-on elastic collision with a deuterium nucleus at rest than with a very much heavier nucleus at rest. Reason (R): In a head-on elastic collision, the fraction of kinetic energy transferred to the struck body keeps increasing as the mass of the struck body is increased. Choose the correct option.",
+          "a": "A is true, R is false",
+          "o": [
+            "A is true, R is false",
+            "Both A and R are true, and R is the correct explanation of A",
+            "Both A and R are true, but R is not the correct explanation of A",
+            "A is false, R is true"
+          ]
+        },
+        {
+          "b": "Analyse",
+          "d": "Hard",
+          "t": "short_answer",
+          "m": 2,
+          "q": "On a billiard table the cue ball strikes an identical target ball at rest. The collision is elastic and glancing, and friction and rotation may be ignored. After the collision the target ball moves at 30 degrees to the initial direction of the cue ball. At what angle to its initial direction does the cue ball move? Give your reasoning.",
+          "a": "For equal masses, momentum conservation gives v1i = v1f + v2f (as vectors) and kinetic energy conservation gives v1i^2 = v1f^2 + v2f^2; together these require v1f.v2f = 0, so the two balls move at right angles to each other after the collision. Hence the cue ball moves at 90 - 30 = 60 degrees to its initial direction, on the other side of that direction from the target ball.",
+          "s": [
+            [
+              "Equal masses in a glancing elastic collision, one at rest: the final velocities are at right angles",
+              1
+            ],
+            [
+              "Cue ball moves at 60 degrees to its initial direction, on the opposite side from the target ball",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Analyse",
+          "d": "Hardest",
+          "t": "long_answer",
+          "m": 3,
+          "q": "A body of mass m1 moving with velocity v1i makes a head-on elastic collision with a body of mass m2 at rest. Starting from the conservation of momentum and of kinetic energy, derive expressions for the final velocities v1f and v2f in terms of m1, m2 and v1i.",
+          "a": "Momentum: m1 v1i = m1 v1f + m2 v2f, so m2 v2f = m1 (v1i - v1f). Kinetic energy: m1 v1i^2 = m1 v1f^2 + m2 v2f^2, so m2 v2f^2 = m1 (v1i - v1f)(v1i + v1f). Dividing the second by the first gives v2f = v1i + v1f. Substituting in the momentum equation: m1 v1i = m1 v1f + m2 (v1i + v1f), so v1f = (m1 - m2) v1i/(m1 + m2), and then v2f = v1i + v1f = 2 m1 v1i/(m1 + m2).",
+          "s": [
+            [
+              "Writes both conservation equations for the collision",
+              1
+            ],
+            [
+              "Obtains v2f = v1i + v1f by combining them",
+              1
+            ],
+            [
+              "v1f = (m1 - m2) v1i/(m1 + m2) and v2f = 2 m1 v1i/(m1 + m2)",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Evaluate",
+          "d": "Hard",
+          "t": "short_answer",
+          "m": 2,
+          "q": "A gas molecule strikes the wall of its container with a speed of 200 m/s at 30 degrees to the normal and rebounds with the same speed. A student says: 'The momentum of the molecule has changed, so the collision cannot be elastic.' Evaluate this argument.",
+          "a": "The argument is wrong. Whether a collision is elastic is decided by kinetic energy, not by the momentum of one body: the molecule rebounds with the same speed, so its kinetic energy is unchanged (the massive wall stays at rest), and the collision is elastic. The momentum of the molecule alone does change, but the wall receives an equal and opposite change, so the total momentum of molecule plus wall is conserved, as in every collision.",
+          "s": [
+            [
+              "Judgement: wrong; the collision is elastic because the kinetic energy is unchanged (same speed)",
+              1
+            ],
+            [
+              "Momentum of the molecule alone changes, but the total momentum of molecule and wall is conserved",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Create",
+          "d": "Hardest",
+          "t": "long_answer",
+          "m": 3,
+          "q": "Devise a numerical problem on a head-on elastic collision, with the second body at rest, in which the moving body rebounds. Choose the masses and the initial speed, find both final velocities with their directions, and verify that momentum is conserved.",
+          "a": "Example: a body of mass 2 kg moving at 5 m/s along +x collides elastically head-on with a body of mass 8 kg at rest (the moving body is the lighter one, so it rebounds). v1f = (2 - 8) x 5/10 = -3 m/s, that is 3 m/s along -x. v2f = 2 x 2 x 5/10 = +2 m/s. Momentum before = 2 x 5 = 10 kg m/s; after = 2 x (-3) + 8 x 2 = -6 + 16 = 10 kg m/s. (Any consistent problem with m1 less than m2, correctly solved, earns the marks.)",
+          "s": [
+            [
+              "A complete problem with m1 less than m2, the second body at rest and the initial speed given",
+              1
+            ],
+            [
+              "Both final velocities correct, with the moving body's velocity negative (rebound)",
+              1
+            ],
+            [
+              "Momentum before and after shown to be equal",
+              1
+            ]
+          ]
+        }
+      ]
+    }
+  ]
+}
