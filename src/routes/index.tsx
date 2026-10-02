@@ -12,7 +12,13 @@ import { Input } from '../components/ui/input'
 import { Label } from '../components/ui/label'
 import { ThemeToggle } from '../components/theme-toggle'
 import { InstallAppBanner } from '../components/install-app-banner'
+import {
+  InstallAppDialog,
+  useInstallOffer,
+} from '../components/install-app-dialog'
 import { signIn, signOut, signUp, useSession } from '../lib/auth-client'
+
+const SHARE_INSTALL_OFFER_KEY = 'prepplan-install-offer-share'
 
 export const Route = createFileRoute('/')({ component: Home })
 
@@ -23,6 +29,15 @@ function Home() {
   const { data: session, isPending } = useSession()
   const navigate = useNavigate()
   const [mode, setMode] = useState<Mode>('sign-in')
+  // A link sent with the Share button carries source=share: whoever opens it is offered the
+  // install as a popup, once (2026-10-02 request).
+  const shareInstallOffer = useInstallOffer(SHARE_INSTALL_OFFER_KEY)
+  const [fromShare, setFromShare] = useState(false)
+  useEffect(() => {
+    setFromShare(
+      new URLSearchParams(window.location.search).get('source') === 'share',
+    )
+  }, [])
   // Owner decision 2026-09-22: parent sign-up reopened (auth.ts's before-hook gates the actual
   // HTTP request; this is just the form's half). Student stays the default -- it was the only
   // option until now, and is still the more common case.
@@ -168,6 +183,12 @@ function Home() {
         </p>
 
         <InstallAppBanner className="mb-6" />
+        {fromShare && shareInstallOffer && (
+          <InstallAppDialog
+            storageKey={SHARE_INSTALL_OFFER_KEY}
+            onClose={() => setFromShare(false)}
+          />
+        )}
 
         <Card>
           <CardHeader>

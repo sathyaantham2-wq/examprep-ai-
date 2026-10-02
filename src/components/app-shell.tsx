@@ -2,6 +2,7 @@ import { useState } from 'react'
 import type { ReactNode } from 'react'
 import { ThemeToggle } from './theme-toggle'
 import { SoundToggle } from './sound-toggle'
+import { ShareAppButton } from './share-app-button'
 import { signOut, useSession } from '../lib/auth-client'
 
 // A persistent sidebar shell, in two variants -- 'parent' (the original: Home/Generate
@@ -361,9 +362,10 @@ export function AppShell({
     <div className="border-border space-y-3 border-t pt-4">
       <div className="flex items-center justify-between px-1">
         <span className="text-caption text-muted-foreground">
-          Sound &amp; theme
+          Share, sound &amp; theme
         </span>
         <div className="flex items-center">
+          <ShareAppButton />
           <SoundToggle />
           <ThemeToggle />
         </div>
@@ -460,6 +462,7 @@ export function AppShell({
           {logo}
         </div>
         <div className="flex items-center">
+          <ShareAppButton />
           <SoundToggle />
           <ThemeToggle />
         </div>

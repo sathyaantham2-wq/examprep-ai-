@@ -13,6 +13,12 @@ import { AppShell } from '../components/app-shell'
 import { useSession } from '../lib/auth-client'
 import { DEFAULT_THEME } from '../lib/pdf/themes'
 import { PageLoading } from '../components/page-loading'
+import {
+  InstallAppDialog,
+  useInstallOffer,
+} from '../components/install-app-dialog'
+
+const INSTALL_OFFER_KEY = 'prepplan-install-offer-generate'
 
 export const Route = createFileRoute('/my-paper')({
   component: MyPaper,
@@ -297,6 +303,9 @@ function MyPaper() {
   const [loadingPlan, setLoadingPlan] = useState(false)
   const [error, setError] = useState<string | null>(null)
   const [starting, setStarting] = useState(false)
+  const installOffer = useInstallOffer(INSTALL_OFFER_KEY)
+  const [showInstall, setShowInstall] = useState(false)
+  const [installAsked, setInstallAsked] = useState(false)
   // No F-number covers the adaptive layer itself yet (see memory examprep_adaptive_learning.md).
   // The theme picker was removed from this screen at the user's request -- every paper from here
   // still renders through the same already-Done F034/F120 theme pack pipeline, just fixed to the
@@ -442,6 +451,15 @@ function MyPaper() {
     setQuestionType('combined')
     setDifficultyCeiling('')
     if (subjectId) void loadPlan(subjectId, chapterIds, 10, 'combined')
+  }
+
+  // Generating a paper is the moment she has decided to use the app, so it is where the install
+  // is offered (2026-10-02 request). Asked once; the paper is generated whichever way she answers.
+  function handleGenerate() {
+    if (installOffer && !installAsked) {
+      setInstallAsked(true)
+      setShowInstall(true)
+    } else void startTest()
   }
 
   async function startTest() {
@@ -610,7 +628,9 @@ function MyPaper() {
                     value={questionCount}
                     onChange={(e) =>
                       updateQuestionCount(
-                        Number(e.target.value) as (typeof QUESTION_COUNT_OPTIONS)[number],
+                        Number(
+                          e.target.value,
+                        ) as (typeof QUESTION_COUNT_OPTIONS)[number],
                       )
                     }
                   >
@@ -635,7 +655,9 @@ function MyPaper() {
                     className="border-input flex h-8 w-full rounded-md border bg-transparent px-2 text-sm shadow-xs"
                     value={difficultyCeiling}
                     onChange={(e) =>
-                      setDifficultyCeiling(e.target.value as DifficultyTier | '')
+                      setDifficultyCeiling(
+                        e.target.value as DifficultyTier | '',
+                      )
                     }
                   >
                     <option value="">Any (auto)</option>
@@ -684,7 +706,6 @@ function MyPaper() {
                   Pick at least one chapter below to generate a paper.
                 </p>
               )}
-
             </CardContent>
           </Card>
         )}
@@ -889,7 +910,7 @@ function MyPaper() {
                 </Button>
                 <Button
                   disabled={starting || loadingPlan || !readyToGenerate}
-                  onClick={() => void startTest()}
+                  onClick={handleGenerate}
                 >
                   {starting ? 'Getting your paper ready…' : 'Generate paper'}
                 </Button>
@@ -898,6 +919,15 @@ function MyPaper() {
           </div>
         )}
       </div>
+      {showInstall && (
+        <InstallAppDialog
+          storageKey={INSTALL_OFFER_KEY}
+          onClose={() => {
+            setShowInstall(false)
+            void startTest()
+          }}
+        />
+      )}
     </AppShell>
   )
 }

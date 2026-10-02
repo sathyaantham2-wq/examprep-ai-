@@ -4,7 +4,10 @@ import { createDb } from '../src/db/connection'
 import type { Db } from '../src/db/connection'
 import { chaptersRepository, conceptsRepository } from '../src/db/repositories'
 import { createQuestion } from '../src/lib/questions'
-import { createParentSession, createStudentSession } from '../src/db/test-helpers'
+import {
+  createParentSession,
+  createStudentSession,
+} from '../src/db/test-helpers'
 import type { TestSession } from '../src/db/test-helpers'
 
 /**
@@ -32,7 +35,11 @@ test.beforeAll(async () => {
   db = createDb()
   parent = await createParentSession('e2e-adapt-parent')
 
-  const seed = await db.selectFrom('subjects').selectAll().where('code', '=', 'MATH-SEED').executeTakeFirstOrThrow()
+  const seed = await db
+    .selectFrom('subjects')
+    .selectAll()
+    .where('code', '=', 'MATH-SEED')
+    .executeTakeFirstOrThrow()
   const seedChapter = await db
     .selectFrom('chapters')
     .selectAll()
@@ -43,7 +50,14 @@ test.beforeAll(async () => {
   subjectName = `Adaptive E2E subject ${Date.now()}`
   const subject = await db
     .insertInto('subjects')
-    .values({ board: 'CBSE', class: 7, name: subjectName, code: `E2E-AD-${Date.now()}`, language: 'English', is_active: true })
+    .values({
+      board: 'CBSE',
+      class: 7,
+      name: subjectName,
+      code: `E2E-AD-${Date.now()}`,
+      language: 'English',
+      is_active: true,
+    })
     .returningAll()
     .executeTakeFirstOrThrow()
   subjectId = subject.id
@@ -88,35 +102,77 @@ test.beforeAll(async () => {
 
   const created = await fetch('http://localhost:3000/api/students', {
     method: 'POST',
-    headers: { 'content-type': 'application/json', cookie: parent.cookie, origin: 'http://localhost:3000' },
-    body: JSON.stringify({ name: 'Adaptive E2E Kid', class: 7, board: 'CBSE', consent_accepted: true }),
+    headers: {
+      'content-type': 'application/json',
+      cookie: parent.cookie,
+      origin: 'http://localhost:3000',
+    },
+    body: JSON.stringify({
+      name: 'Adaptive E2E Kid',
+      class: 7,
+      board: 'CBSE',
+      consent_accepted: true,
+    }),
   }).then((r) => r.json())
   studentId = created.id
-  student = await createStudentSession('e2e-adapt-student', parent.householdId, studentId)
+  student = await createStudentSession(
+    'e2e-adapt-student',
+    parent.householdId,
+    studentId,
+  )
 })
 
 test.afterAll(async () => {
   if (attemptIds.length > 0) {
-    const evaluations = await db.selectFrom('evaluations').select('id').where('attempt_id', 'in', attemptIds).execute()
+    const evaluations = await db
+      .selectFrom('evaluations')
+      .select('id')
+      .where('attempt_id', 'in', attemptIds)
+      .execute()
     const evaluationIds = evaluations.map((e) => e.id)
     if (evaluationIds.length > 0) {
-      await db.deleteFrom('evaluation_items').where('evaluation_id', 'in', evaluationIds).execute()
-      await db.deleteFrom('evaluations').where('id', 'in', evaluationIds).execute()
+      await db
+        .deleteFrom('evaluation_items')
+        .where('evaluation_id', 'in', evaluationIds)
+        .execute()
+      await db
+        .deleteFrom('evaluations')
+        .where('id', 'in', evaluationIds)
+        .execute()
     }
-    await db.deleteFrom('attempt_answers').where('attempt_id', 'in', attemptIds).execute()
+    await db
+      .deleteFrom('attempt_answers')
+      .where('attempt_id', 'in', attemptIds)
+      .execute()
     await db.deleteFrom('attempts').where('id', 'in', attemptIds).execute()
   }
   if (paperIds.length > 0) {
-    await db.deleteFrom('paper_questions').where('paper_id', 'in', paperIds).execute()
+    await db
+      .deleteFrom('paper_questions')
+      .where('paper_id', 'in', paperIds)
+      .execute()
     await db.deleteFrom('papers').where('id', 'in', paperIds).execute()
   }
-  await db.deleteFrom('concept_status').where('concept_id', '=', conceptId).execute()
-  await db.deleteFrom('concept_mastery').where('concept_id', '=', conceptId).execute()
-  await db.deleteFrom('households').where('id', '=', parent.householdId).execute()
+  await db
+    .deleteFrom('concept_status')
+    .where('concept_id', '=', conceptId)
+    .execute()
+  await db
+    .deleteFrom('concept_mastery')
+    .where('concept_id', '=', conceptId)
+    .execute()
+  await db
+    .deleteFrom('households')
+    .where('id', '=', parent.householdId)
+    .execute()
   await db.deleteFrom('questions').where('created_by', '=', tag).execute()
   await db.deleteFrom('concepts').where('id', '=', conceptId).execute()
   await db.deleteFrom('chapters').where('id', '=', chapterId).execute()
-  await db.updateTable('subjects').set({ is_active: false }).where('id', '=', subjectId).execute()
+  await db
+    .updateTable('subjects')
+    .set({ is_active: false })
+    .where('id', '=', subjectId)
+    .execute()
   await db.destroy()
 })
 
@@ -129,13 +185,17 @@ async function signInUi(page: Page, email: string, password: string) {
   await page.getByRole('button', { name: 'Sign in' }).click()
 }
 
-test('first-time student: profile, personalised home, Easy assessment, marked at once', async ({ page }) => {
+test('first-time student: profile, personalised home, Easy assessment, marked at once', async ({
+  page,
+}) => {
   await signInUi(page, student.email, student.password)
 
   // A new student is sent to profile setup first: name is step 1 (/profile-setup), board and
   // class are step 2 (/choose-board, tile pickers, split out 2026-09-27).
   await page.waitForURL('**/profile-setup')
-  await expect(page.getByRole('heading', { name: 'Set up your profile' })).toBeVisible()
+  await expect(
+    page.getByRole('heading', { name: 'Set up your profile' }),
+  ).toBeVisible()
   await page.waitForTimeout(800)
   await page.getByRole('button', { name: 'Continue' }).click()
 
@@ -163,12 +223,34 @@ test('first-time student: profile, personalised home, Easy assessment, marked at
   await expect(page.getByLabel('Questions', { exact: true })).toHaveValue('10')
   // The plan summary lives in the sticky bar only (the header badge went 2026-10-01): question
   // count and estimated minutes, derived from the count, not chosen directly.
-  await expect(page.getByText(/10\s+questions\s+·\s+about \d+ min/)).toBeVisible()
+  await expect(
+    page.getByText(/10\s+questions\s+·\s+about \d+ min/),
+  ).toBeVisible()
+  // Generating a paper is where the install is offered as a popup (2026-10-02). A test browser
+  // never offers a real install, so the browser's own event is fired by hand here; the paper is
+  // generated whichever way she answers.
+  await page.evaluate(() => {
+    const event = new Event('beforeinstallprompt') as Event & {
+      prompt: () => Promise<void>
+      userChoice: Promise<{ outcome: string; platform: string }>
+    }
+    event.prompt = () => Promise.resolve()
+    event.userChoice = Promise.resolve({
+      outcome: 'dismissed',
+      platform: 'web',
+    })
+    window.dispatchEvent(event)
+  })
   await page.getByRole('button', { name: 'Generate paper' }).click()
+  const installDialog = page.getByRole('dialog', { name: 'Install PrepPlan' })
+  await expect(installDialog).toBeVisible()
+  await installDialog.getByRole('button', { name: 'Not now' }).click()
 
   // Answer every question (all the right option), then submit.
   await page.waitForURL('**/attempt/**')
-  await expect(page.getByText(new RegExp(`${tag} question`)).first()).toBeVisible()
+  await expect(
+    page.getByText(new RegExp(`${tag} question`)).first(),
+  ).toBeVisible()
   const rights = page.getByLabel(/A\. right/)
   const count = await rights.count()
   expect(count).toBe(10)
@@ -185,12 +267,22 @@ test('first-time student: profile, personalised home, Easy assessment, marked at
   // Marked at once: score, and no answer key anywhere. The per-concept mastery breakdown that
   // used to appear here too was removed from this screen (2026-09-24, user decision) -- her
   // concept's new level is still checked below, on the home page, where it still shows.
-  await expect(page.getByRole('heading', { name: 'Well done, Adaptive E2E Kid' })).toBeVisible()
+  await expect(
+    page.getByRole('heading', { name: 'Well done, Adaptive E2E Kid' }),
+  ).toBeVisible()
   await expect(page.getByText('You scored 10 out of 10 (100%).')).toBeVisible()
 
-  const papers = await db.selectFrom('papers').select('id').where('student_id', '=', studentId).execute()
+  const papers = await db
+    .selectFrom('papers')
+    .select('id')
+    .where('student_id', '=', studentId)
+    .execute()
   paperIds.push(...papers.map((p) => p.id))
-  const attempts = await db.selectFrom('attempts').select('id').where('student_id', '=', studentId).execute()
+  const attempts = await db
+    .selectFrom('attempts')
+    .select('id')
+    .where('student_id', '=', studentId)
+    .execute()
   attemptIds.push(...attempts.map((a) => a.id))
 
   // Back on the home page the concept now has a level. Scoped to this fixture's own subject card
@@ -203,9 +295,9 @@ test('first-time student: profile, personalised home, Easy assessment, marked at
   await page.getByRole('link', { name: 'Back to my progress' }).click()
   await page.waitForURL('**/student')
   const subjectHeading = page.getByText(subjectName, { exact: true })
-  await expect(subjectHeading.locator('xpath=following-sibling::*[1]')).toContainText(
-    '1 of 1 concepts started',
-  )
+  await expect(
+    subjectHeading.locator('xpath=following-sibling::*[1]'),
+  ).toContainText('1 of 1 concepts started')
   // Subjects are collapsed by default (2026-09-30 UX rework) -- open this one to see its concepts.
   await subjectHeading.click()
   await expect(page.getByText('Adaptive E2E concept').first()).toBeVisible()
@@ -218,9 +310,13 @@ test('first-time student: profile, personalised home, Easy assessment, marked at
   await expect(page.getByText('Papers to attempt')).toHaveCount(0)
   await page.getByRole('link', { name: 'Papers Attempted' }).click()
   await page.waitForURL('**/papers-attempted')
-  await expect(page.getByRole('heading', { name: 'Papers attempted' })).toBeVisible()
+  await expect(
+    page.getByRole('heading', { name: 'Papers attempted' }),
+  ).toBeVisible()
   await expect(page.getByText('Completed', { exact: true })).toBeVisible()
   await page.locator('a').filter({ hasText: 'Completed' }).click()
   await page.waitForURL('**/attempt/**')
-  await expect(page.getByRole('heading', { name: 'Well done, Adaptive E2E Kid' })).toBeVisible()
+  await expect(
+    page.getByRole('heading', { name: 'Well done, Adaptive E2E Kid' }),
+  ).toBeVisible()
 })
