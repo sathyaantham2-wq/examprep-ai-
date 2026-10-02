@@ -9,6 +9,7 @@ import type { TestSession } from '../db/test-helpers'
 import { Route as StudentsRoute } from './api/students'
 import { Route as GenerateRoute } from './api/papers/generate'
 import { Route as AttemptSubmitRoute } from './api/attempts/$id/submit'
+import { undoAutoEvaluation } from '../test-support/undo-auto-evaluation'
 import { Route as EvaluationsRoute } from './api/evaluations'
 import { Route as UnsubscribeRoute } from './api/notifications/unsubscribe'
 import { Route as CronWeeklySummaryRoute } from './api/cron/weekly-summary'
@@ -197,6 +198,7 @@ describe('email notification triggers and unsubscribe (F080)', () => {
       params: { id: attempt.id },
     })
     expect(submitResponse.status).toBe(200)
+    await undoAutoEvaluation(db, attempt.id)
 
     const evalResponse = await handlerFor(
       EvaluationsRoute,

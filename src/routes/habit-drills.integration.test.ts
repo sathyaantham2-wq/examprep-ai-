@@ -9,6 +9,7 @@ import { Route as StudentsRoute } from './api/students'
 import { Route as GenerateRoute } from './api/papers/generate'
 import { Route as AttemptsRoute } from './api/attempts'
 import { Route as AttemptSubmitRoute } from './api/attempts/$id/submit'
+import { undoAutoEvaluation } from '../test-support/undo-auto-evaluation'
 import { Route as EvaluationsRoute } from './api/evaluations'
 import { Route as EvaluationConfirmRoute } from './api/evaluations/$id/confirm'
 import { Route as HabitsRoute } from './api/evaluations/$id/habits'
@@ -203,6 +204,7 @@ describe('habit micro-drills (F070)', () => {
         request: request(studentA.cookie, { confirm_blanks: true }),
         params: { id: attemptId },
       })
+      await undoAutoEvaluation(db, attemptId)
 
       const evalResponse = await handlerFor(
         EvaluationsRoute,

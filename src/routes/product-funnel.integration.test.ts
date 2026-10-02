@@ -9,6 +9,7 @@ import { Route as StudentsRoute } from './api/students'
 import { Route as GenerateRoute } from './api/papers/generate'
 import { Route as PdfRoute } from './api/papers/$id/pdf'
 import { Route as AttemptSubmitRoute } from './api/attempts/$id/submit'
+import { undoAutoEvaluation } from '../test-support/undo-auto-evaluation'
 import { Route as ProductFunnelRoute } from './api/admin/product-funnel'
 
 type RouteHandler = (opts: {
@@ -206,6 +207,9 @@ describe('paper lifecycle events feed the admin funnel (F093)', () => {
       params: { id: attempt.id },
     })
     expect(response.status).toBe(200)
+    // The paper is marked on submit now; this test only cares about the funnel event, and the
+    // cleanup below does not delete evaluations, so put the attempt back as unevaluated.
+    await undoAutoEvaluation(db, attempt.id)
 
     const rows = await db
       .selectFrom('product_events')

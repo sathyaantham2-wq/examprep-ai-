@@ -10,6 +10,7 @@ import { Route as GenerateRoute } from './api/papers/generate'
 import { Route as AttemptsRoute } from './api/attempts'
 import { Route as AttemptAnswerRoute } from './api/attempts/$id/answer'
 import { Route as AttemptSubmitRoute } from './api/attempts/$id/submit'
+import { undoAutoEvaluation } from '../test-support/undo-auto-evaluation'
 import { Route as EvaluationsRoute } from './api/evaluations'
 import { Route as EvaluationConfirmRoute } from './api/evaluations/$id/confirm'
 import { Route as DashboardRoute } from './api/dashboard/$studentId'
@@ -200,6 +201,7 @@ describe('parent dashboard (F071)', () => {
       request: request(student.cookie, {}),
       params: { id: attemptId1 },
     })
+    await undoAutoEvaluation(db, attemptId1)
     const eval1 = await handlerFor(
       EvaluationsRoute,
       'POST',
@@ -254,6 +256,7 @@ describe('parent dashboard (F071)', () => {
       request: request(student.cookie, {}),
       params: { id: attemptId2 },
     })
+    await undoAutoEvaluation(db, attemptId2)
     const eval2 = await handlerFor(
       EvaluationsRoute,
       'POST',
@@ -534,6 +537,7 @@ describe('cross-subject pattern roll-up on the dashboard (F065)', () => {
         AttemptSubmitRoute,
         'POST',
       )({ request: request(student.cookie, {}), params: { id: attemptId } })
+      await undoAutoEvaluation(db, attemptId)
 
       const evalResponse = await handlerFor(
         EvaluationsRoute,
@@ -793,6 +797,7 @@ describe('needs_evaluation on the parent dashboard (F123 follow-on)', () => {
       request: request(student.cookie, {}),
       params: { id: unevaluatedAttemptId },
     })
+    await undoAutoEvaluation(db, unevaluatedAttemptId)
 
     // Paper 2: submitted AND confirmed -- must NOT appear in needs_evaluation.
     const generate2 = await handlerFor(
@@ -835,6 +840,7 @@ describe('needs_evaluation on the parent dashboard (F123 follow-on)', () => {
       request: request(student.cookie, {}),
       params: { id: attemptId2 },
     })
+    await undoAutoEvaluation(db, attemptId2)
     const eval2 = await handlerFor(
       EvaluationsRoute,
       'POST',

@@ -85,12 +85,6 @@ async function loadItems(db: Db, evaluationId: string, attemptId: string) {
     .execute()
 }
 
-async function isAdaptivePaper(db: Db, paperId: string): Promise<boolean> {
-  const paper = await db.selectFrom('papers').select('weighting').where('id', '=', paperId).executeTakeFirst()
-  const weighting = paper?.weighting as { adaptive?: { enabled?: boolean } } | null
-  return Boolean(weighting?.adaptive?.enabled)
-}
-
 /**
  * What the student sees after submitting: the multiple-choice total, and each written answer with
  * its mark and the AI's feedback (never the answer key). If the paper has no evaluation yet it is
@@ -113,7 +107,7 @@ export async function loadReview(
   if (attempt.status === 'in_progress') return empty('none')
 
   let evaluation = await findEvaluation(db, attempt.id)
-  if (!evaluation && (await isAdaptivePaper(db, attempt.paper_id))) {
+  if (!evaluation) {
     await autoConfirmAttempt(db, attempt)
     evaluation = await findEvaluation(db, attempt.id)
   }
@@ -171,8 +165,7 @@ export async function loadReview(
   const aiMarkedAll = rows
     .filter((r) => !isObjectiveType(r.type))
     .every((r) => r.ai_marks !== null)
-  const canReview =
-    written.length > 0 && aiMarkedAll && (await isAdaptivePaper(db, attempt.paper_id))
+  const canReview = written.length > 0 && aiMarkedAll
   return {
     state: canReview ? 'review' : 'waiting_for_parent',
     evaluation_id: evaluation.id,

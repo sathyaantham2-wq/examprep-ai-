@@ -325,31 +325,14 @@ test('happy path: sign in, generate paper, download PDF, attempt, evaluate, trac
   await page.waitForTimeout(800) // autosave debounce (F040)
   await page.getByRole('button', { name: 'Review & submit' }).click()
   await page.getByRole('button', { name: 'Submit' }).click()
-  await expect(page.getByRole('heading', { name: 'Submitted' })).toBeVisible()
+  // Owner decision 2026-10-02: no parent has to confirm marks. A paper of multiple-choice
+  // questions is marked from the answer key the moment it is submitted, and she sees her score.
+  await expect(page.getByText('You scored 1 out of 1 (100%).')).toBeVisible()
 
-  // 5. Sign out, sign back in as parent, evaluate and confirm through the real workspace UI.
+  // 5. Sign out, sign back in as parent: the confirmed score is already on the parent's home.
   await signOutApi(page)
   await signInUi(page, parent.email, parent.password)
   await page.waitForURL('**/home')
-
-  await page.goto(`/evaluate/${attemptId}`, { waitUntil: 'networkidle' })
-  await page.waitForTimeout(500)
-
-  // F058: rate one presentation habit before confirming -- the whole point of "before
-  // confirming" is that PATCH .../habits 409s afterward, so this has to happen first.
-  // CardTitle renders a styled <div>, not a semantic heading, so this is a text match rather
-  // than getByRole('heading', ...) -- unlike the page's own <h1> elements.
-  await expect(page.getByText('Presentation habits')).toBeVisible()
-  await page
-    .locator('label', { hasText: 'present' })
-    .first()
-    .locator('input[type="radio"]')
-    .check()
-  await page.getByRole('button', { name: 'Save habits' }).click()
-  await expect(page.getByRole('button', { name: 'Saved' })).toBeVisible()
-
-  await page.getByRole('button', { name: 'Confirm all' }).click()
-  await expect(page.getByText(/Confirmed --/)).toBeVisible()
 
   // 6. See the tracker/dashboard update -- the real score this attempt earned, and the habit
   // rating just saved showing up in the trend.
@@ -357,6 +340,4 @@ test('happy path: sign in, generate paper, download PDF, attempt, evaluate, trac
   // "100%" also appears twice more as chart axis/point labels (F075) once real score history
   // exists, so a bare getByText('100%') is ambiguous -- anchor to the summary line itself.
   await expect(page.getByText(/Latest score 100%/)).toBeVisible()
-  await expect(page.getByText('Presentation habits')).toBeVisible()
-  await expect(page.getByText('latest: present')).toBeVisible()
 })

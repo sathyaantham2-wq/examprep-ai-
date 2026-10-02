@@ -16,7 +16,9 @@ export interface AutoConfirmOutcome {
 const NOTHING: AutoConfirmOutcome = { evaluationId: null, reviewPending: false }
 
 /**
- * Marks a submitted adaptive paper with no parent involved.
+ * Marks a submitted paper with no parent involved. Since 2026-10-02 (user decision: parents no
+ * longer have to confirm marks, and new accounts are students only) this covers EVERY paper a
+ * student submits, not just adaptive practice papers.
  *
  * Multiple-choice only: marks come from the answer key and are confirmed at once.
  * With written answers: the AI proposes marks (generously) and the paper is left for the student,
@@ -30,14 +32,6 @@ export async function autoConfirmAttempt(
   attempt: { id: string; paper_id: string; student_id: string },
 ): Promise<AutoConfirmOutcome> {
   try {
-    const paper = await db
-      .selectFrom('papers')
-      .select('weighting')
-      .where('id', '=', attempt.paper_id)
-      .executeTakeFirst()
-    const weighting = paper?.weighting as { adaptive?: { enabled?: boolean } } | null
-    if (!weighting?.adaptive?.enabled) return NOTHING
-
     const slots = await paperQuestionsRepository.listForPaperWithQuestions(db, attempt.paper_id)
     if (slots.length === 0) return NOTHING
 
