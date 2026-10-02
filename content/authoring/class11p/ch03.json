@@ -1,0 +1,2680 @@
+{
+ "subject": {
+  "code": "PHY11",
+  "name": "Physics",
+  "board": "CBSE",
+  "class": 11
+ },
+ "source": {
+  "publisher": "NCERT",
+  "title": "Physics Part I",
+  "edition": "Textbook for Class XI Part I, Reprint 2026-27",
+  "year": 2026
+ },
+ "chapter": {
+  "part": "I",
+  "chapter_no": 3,
+  "name": "Motion in a Plane",
+  "blurb": "The chapter introduces vectors as the language needed to describe motion in two dimensions: how they are added, subtracted, multiplied by numbers and resolved into components. It then defines position, displacement, velocity and acceleration in a plane and treats motion with constant acceleration as two independent straight-line motions. Projectile motion and uniform circular motion are worked out in detail as the two main applications.",
+  "source_code": "keph103",
+  "order_index": 3
+ },
+ "scope_in": [
+  {
+   "item": "Distinguish scalars from vectors with examples, state how scalars are combined, and use the notation |A| = A for the magnitude of a vector",
+   "pages": "27-28"
+  },
+  {
+   "item": "Describe position and displacement vectors, explain why displacement does not depend on the path and why its magnitude is less than or equal to the path length, and decide whether two vectors are equal",
+   "pages": "28-29"
+  },
+  {
+   "item": "Find the magnitude and direction of a vector multiplied by a positive or negative real number, including a multiplier that carries a dimension",
+   "pages": "29"
+  },
+  {
+   "item": "Add two vectors graphically by the head-to-tail (triangle) and parallelogram methods; use the commutative and associative laws; find the resultant of two perpendicular vectors (Example 3.1)",
+   "pages": "29-31"
+  },
+  {
+   "item": "Describe the null vector and its properties, and subtract vectors using A - B = A + (-B)",
+   "pages": "30"
+  },
+  {
+   "item": "Resolve a vector along two given directions and along the x- and y-axes using unit vectors i, j, k: Ax = A cos theta, Ay = A sin theta, A = sqrt(Ax^2 + Ay^2), tan theta = Ay/Ax; extend to three components",
+   "pages": "31-33"
+  },
+  {
+   "item": "Add and subtract vectors by components (analytical method), and find the magnitude and direction of the resultant of two vectors from the law of cosines and the law of sines (Examples 3.2, 3.3)",
+   "pages": "33-34"
+  },
+  {
+   "item": "Write position and displacement in component form; define average and instantaneous velocity and acceleration in a plane, find their components by differentiation, and state that velocity is tangential to the path (Example 3.4)",
+   "pages": "35-37"
+  },
+  {
+   "item": "Use v = v0 + a t and r = r0 + v0 t + (1/2) a t^2 and their component forms for constant acceleration in a plane, treating the x and y motions independently (Example 3.5)",
+   "pages": "37-38"
+  },
+  {
+   "item": "Analyse a projectile with air resistance neglected: components of velocity and position at time t, the parabolic equation of the path, and a body thrown horizontally from a height (Example 3.7)",
+   "pages": "38-40"
+  },
+  {
+   "item": "Calculate the time to maximum height, time of flight, maximum height and horizontal range of a projectile, the maximum range at 45 degrees, and the equality of ranges for angles 45 + alpha and 45 - alpha (Examples 3.6, 3.8)",
+   "pages": "39-40"
+  },
+  {
+   "item": "Explain why uniform circular motion is accelerated, state the direction and magnitude (v^2/R) of the centripetal acceleration, and relate angular speed, linear speed, time period and frequency (Example 3.9)",
+   "pages": "40-42"
+  },
+  {
+   "item": "Apply all of the above to the chapter's exercises on path length and displacement, vector inequalities, projectiles and circular motion (Exercises 3.1-3.22)",
+   "pages": "46-48"
+  }
+ ],
+ "scope_out": [
+  {
+   "item": "Relative velocity in two dimensions (rain-and-moving-observer, river-boat crossing and aircraft-wind problems solved by relative velocity)",
+   "reason": "This edition has no section on it; relative velocity appears only as a one-line caution in Points to Ponder (p. 46) and as a word in the list of Exercise 3.2"
+  },
+  {
+   "item": "Scalar (dot) product and vector (cross) product of two vectors",
+   "reason": "Not taught in this chapter; the only multiplication here is of a vector by a real number (the products come in later chapters of the book)"
+  },
+  {
+   "item": "Projectile launched at an angle from a height, landing at a different level, and projectile on an inclined plane",
+   "reason": "The chapter treats only a launch that returns to the launch level and a horizontal throw from a height (Example 3.7)"
+  },
+  {
+   "item": "Effect of air resistance on a projectile",
+   "reason": "The text explicitly assumes air resistance is negligible throughout"
+  },
+  {
+   "item": "Non-uniform circular motion, tangential acceleration and total acceleration of a particle speeding up on a circle",
+   "reason": "Only uniform circular motion is taught; the non-uniform case is a single remark in Points to Ponder (p. 46)"
+  },
+  {
+   "item": "Centripetal force, banking of roads, motion in a vertical circle and the conical pendulum",
+   "reason": "Dynamics of circular motion belongs to the next chapter (Laws of Motion); this chapter is kinematics only"
+  },
+  {
+   "item": "Angular velocity as a vector and angular acceleration",
+   "reason": "The chapter defines only the angular speed omega as a rate of change of angular distance"
+  },
+  {
+   "item": "Integration to obtain velocity or position from a time-varying acceleration in a plane",
+   "reason": "Only differentiation of given position functions and the constant-acceleration equations are used"
+  },
+  {
+   "item": "Historical remarks (Galileo's Dialogue of 1632, Huygens's 1673 analysis, Newton's coining of 'centripetal') as dates and names, and the Points to Ponder box",
+   "reason": "Not examinable matter; no question depends on the dates, names or the Points to Ponder alone"
+  },
+  {
+   "item": "Free versus localised vectors as a classification to be examined",
+   "reason": "Mentioned only in a footnote on p. 28"
+  }
+ ],
+ "concepts": [
+  {
+   "code": "C11P-3.1",
+   "name": "Scalars, vectors and multiplication of a vector by a real number",
+   "description": "What distinguishes a scalar from a vector, position and displacement vectors, equality of vectors, and the effect of multiplying a vector by a real number.",
+   "idea": "A scalar is fixed by a number and a unit; a vector also needs a direction and adds by the triangle law.",
+   "rule": "A scalar has magnitude only and is combined by ordinary algebra (scalars are added or subtracted only when they have the same units, but may be multiplied or divided with different units). A vector has magnitude and direction and obeys the triangle (or parallelogram) law of addition; its magnitude is written |A| = A. The position vector r of a point P is drawn from the origin O to P. The displacement vector from P to P' is the straight line from P to P' and does not depend on the path taken, so its magnitude is less than or equal to the path length. Two vectors are equal if and only if they have the same magnitude and the same direction; shifting a vector parallel to itself does not change it. Multiplying A by a positive number lambda gives a vector of magnitude lambda |A| in the direction of A; multiplying by a negative number -lambda gives a vector of magnitude lambda |A| in the opposite direction. If lambda has a dimension, lambda A has the product of the dimensions.",
+   "example": "A displacement of 4 m due north multiplied by -2 is a displacement of 8 m due south.",
+   "difficulty_base": "Easy",
+   "questions": [
+    {
+     "b": "Remember",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "A scalar quantity is completely specified by",
+     "a": "a single number together with the proper unit",
+     "o": [
+      "a single number together with the proper unit",
+      "a number, a unit and a direction",
+      "a direction alone",
+      "two numbers, one for each axis of the plane"
+     ]
+    },
+    {
+     "b": "Remember",
+     "d": "Easy",
+     "t": "fill_blank",
+     "m": 1,
+     "q": "A physical quantity that has both a magnitude and a direction and obeys the triangle law of addition is called a ____ quantity (write one word).",
+     "a": "vector"
+    },
+    {
+     "b": "Remember",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "Which of the following is a vector quantity?",
+     "a": "Displacement",
+     "o": [
+      "Displacement",
+      "Distance between two points",
+      "Mass",
+      "Temperature"
+     ]
+    },
+    {
+     "b": "Remember",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "q": "Which of the following statements about the equality of two vectors is NOT correct?",
+     "a": "Two vectors that have the same magnitude are equal even if their directions differ",
+     "o": [
+      "Two vectors that have the same magnitude are equal even if their directions differ",
+      "Two vectors are equal only if they have the same magnitude and the same direction",
+      "The magnitude of a vector A is written |A| or simply A",
+      "Two equal vectors need not be drawn from the same starting point"
+     ],
+     "rev": true
+    },
+    {
+     "b": "Understand",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "A particle travels from point P to point Q along three different routes of different lengths. Its displacement vector is",
+     "a": "the same for all three routes: the straight line drawn from P to Q",
+     "o": [
+      "the same for all three routes: the straight line drawn from P to Q",
+      "largest for the longest route",
+      "smallest for the longest route",
+      "zero for any route that is curved"
+     ]
+    },
+    {
+     "b": "Understand",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "A vector A is multiplied by the number -2. The resulting vector has",
+     "a": "magnitude 2|A| and direction opposite to that of A",
+     "o": [
+      "magnitude 2|A| and direction opposite to that of A",
+      "magnitude 2|A| and the same direction as A",
+      "magnitude |A|/2 and direction opposite to that of A",
+      "magnitude |A| - 2 and the same direction as A"
+     ]
+    },
+    {
+     "b": "Understand",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "An object is at point P at time t and at point P' at a later time t'. O is the origin. The displacement vector for this motion is",
+     "a": "the vector PP', with its tail at P and its tip at P'",
+     "o": [
+      "the vector PP', with its tail at P and its tip at P'",
+      "the vector OP', drawn from the origin to P'",
+      "the vector OP, drawn from the origin to P",
+      "the vector P'P, with its tail at P' and its tip at P"
+     ]
+    },
+    {
+     "b": "Understand",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "q": "A constant velocity vector is multiplied by a duration of time. The result is",
+     "a": "a displacement vector, because the product has the dimensions of velocity times time",
+     "o": [
+      "a displacement vector, because the product has the dimensions of velocity times time",
+      "a velocity vector of larger magnitude, because time is only a number",
+      "a scalar, because time is a scalar",
+      "an acceleration vector, because velocity is combined with time"
+     ]
+    },
+    {
+     "b": "Understand",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "q": "Which of the following lists contains ONLY vector quantities?",
+     "a": "Displacement, velocity, acceleration, force",
+     "o": [
+      "Displacement, velocity, acceleration, force",
+      "Displacement, speed, acceleration, force",
+      "Distance, velocity, mass, force",
+      "Velocity, temperature, acceleration, time"
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "Vector A has magnitude 6 m and points towards the east. The vector -1.5A has",
+     "a": "magnitude 9 m and points towards the west",
+     "o": [
+      "magnitude 9 m and points towards the west",
+      "magnitude 9 m and points towards the east",
+      "magnitude 4.5 m and points towards the west",
+      "magnitude 4 m and points towards the west"
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Easy",
+     "t": "fill_blank",
+     "m": 1,
+     "q": "A girl skates from a point P on the edge of a circular ice ground of radius 150 m to the diametrically opposite point Q, moving along the curved edge. The magnitude of her displacement is ____ m (write a whole number).",
+     "a": "300"
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "q": "A uniform solid cube of side 20 cm has a mass of 21.6 kg. Find its volume in m^3 and its density in kg/m^3, and state whether each of these two quantities is a scalar or a vector.",
+     "a": "Side = 20 cm = 0.2 m, so volume = (0.2 m)^3 = 0.008 m^3 (8 x 10^-3 m^3). Density = mass/volume = 21.6 kg/0.008 m^3 = 2700 kg/m^3. Both volume and density are scalars: each is specified completely by a number with its unit and has no direction.",
+     "s": [
+      [
+       "Volume = (0.2)^3 = 0.008 m^3",
+       1
+      ],
+      [
+       "Density = 21.6/0.008 = 2700 kg/m^3; both quantities are scalars",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "q": "A hotel is 12 km from a station along a straight road. A cabman takes a passenger from the station to the hotel along a roundabout route 21 km long in 30 minutes. Find (a) the average speed of the taxi and (b) the magnitude of its average velocity. Are the two equal?",
+     "a": "(a) Average speed = path length/time = 21 km/0.5 h = 42 km/h. (b) Magnitude of average velocity = magnitude of displacement/time = 12 km/0.5 h = 24 km/h. They are not equal: the average speed is larger because the path length is larger than the magnitude of the displacement.",
+     "s": [
+      [
+       "Average speed = 21/0.5 = 42 km/h",
+       1
+      ],
+      [
+       "Magnitude of average velocity = 12/0.5 = 24 km/h, not equal to the average speed",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "q": "Vector A has magnitude 2 units and points along the +x direction. B = -3A and C = -0.5B. The vector C has",
+     "a": "magnitude 3 units along the +x direction",
+     "o": [
+      "magnitude 3 units along the +x direction",
+      "magnitude 3 units along the -x direction",
+      "magnitude 6 units along the -x direction",
+      "magnitude 1 unit along the +x direction"
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hardest",
+     "t": "long_answer",
+     "m": 3,
+     "q": "On an open ground a motorist follows a track that turns to his left by 60 degrees after every 400 m. He starts from one of the turns. Describe the shape of the track, and find the magnitude of his displacement and the total path length (a) at the third turn and (b) at the sixth turn.",
+     "a": "Turning left by 60 degrees after every equal side traces a regular hexagon of side 400 m. (a) After three sides he is at the vertex diametrically opposite the start; the displacement is the long diagonal of the hexagon = 2 x 400 = 800 m, while the path length is 3 x 400 = 1200 m. (b) After six sides he is back at the starting point, so the displacement is zero (a null vector) while the path length is 6 x 400 = 2400 m.",
+     "s": [
+      [
+       "Track is a regular hexagon of side 400 m",
+       1
+      ],
+      [
+       "Third turn: displacement 800 m, path length 1200 m",
+       1
+      ],
+      [
+       "Sixth turn: displacement zero, path length 2400 m",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "assertion_reason",
+     "m": 1,
+     "q": "Assertion (A): The perimeter of a rectangular plot is found by simply adding the lengths of its four sides as ordinary numbers. Reason (R): Lengths are scalars, and scalars are combined by the rules of ordinary algebra. Choose the correct option.",
+     "a": "Both A and R are true, and R is the correct explanation of A",
+     "o": [
+      "Both A and R are true, and R is the correct explanation of A",
+      "Both A and R are true, but R is not the correct explanation of A",
+      "A is true, R is false",
+      "A is false, R is true"
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "q": "Vector A is a displacement of 12 m due east and B = -0.5A. A third vector C has the same magnitude as B but points due north. (i) Is C equal to B? (ii) Can C be obtained by multiplying A by some real number? Give a reason in each case.",
+     "a": "B has magnitude 0.5 x 12 = 6 m and points due west. (i) C is 6 m due north: it has the same magnitude as B but a different direction, so C is not equal to B, because equal vectors need the same magnitude and the same direction. (ii) No. Multiplying A by a positive number gives a vector due east and multiplying it by a negative number gives a vector due west; no real number can turn it towards the north.",
+     "s": [
+      [
+       "B is 6 m due west; C differs from B in direction, so they are not equal",
+       1
+      ],
+      [
+       "A real multiple of A lies only along east or west, so C cannot be obtained",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hardest",
+     "t": "long_answer",
+     "m": 3,
+     "q": "State, with a reason in each case, whether the following algebraic operations with physical quantities are meaningful: (a) adding any two scalars, (b) adding a scalar to a vector of the same dimensions, (c) multiplying any vector by any scalar.",
+     "a": "(a) Not always meaningful: two scalars can be added only if they represent quantities with the same units (a mass cannot be added to a temperature). (b) Not meaningful: a scalar has no direction and cannot be combined with a vector by the triangle law, even if the dimensions agree. (c) Meaningful: the product is a vector whose magnitude is scaled by the scalar and whose dimensions are the product of the two dimensions, for example a force multiplied by a time.",
+     "s": [
+      [
+       "(a) Only scalars of the same units can be added",
+       1
+      ],
+      [
+       "(b) A scalar cannot be added to a vector",
+       1
+      ],
+      [
+       "(c) Any vector may be multiplied by any scalar, giving a vector",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Evaluate",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "q": "Two displacement vectors are each 5 m long and point due east. One is drawn starting from the origin and the other starting from the point (2 m, 3 m). A student says they are different vectors because they are in different places. Evaluate this claim.",
+     "a": "The claim is wrong. Two vectors are equal if they have the same magnitude and the same direction, and these two do. Where a vector is drawn does not matter: a vector displaced parallel to itself is unchanged, so if one is slid parallel to itself until the tails coincide, the tips coincide as well.",
+     "s": [
+      [
+       "Judgement - the two vectors are equal (same magnitude and same direction)",
+       1
+      ],
+      [
+       "Reason - a vector shifted parallel to itself is unchanged, so its location does not enter the test of equality",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Create",
+     "d": "Hardest",
+     "t": "long_answer",
+     "m": 3,
+     "q": "Make up a journey in a plane, with numbers of your own, between two points that can be reached by two different routes. Use it to show the difference between path length and displacement.",
+     "a": "Sample: P and Q are opposite corners of a rectangular field 30 m by 40 m. Route 1 goes along two sides: path length 30 + 40 = 70 m. Route 2 goes straight along the diagonal: path length 50 m. For both routes the displacement is the same vector, the straight line from P to Q of magnitude 50 m directed along the diagonal. So the displacement depends only on the end points, the path length depends on the route, and the path length is never less than the magnitude of the displacement (70 m > 50 m, and 50 m = 50 m for the straight route).",
+     "s": [
+      [
+       "Two points and two different routes stated with their path lengths",
+       1
+      ],
+      [
+       "Same displacement for both routes, with magnitude and direction given",
+       1
+      ],
+      [
+       "Conclusion - path length depends on route and is greater than or equal to the magnitude of displacement",
+       1
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "code": "C11P-3.2",
+   "name": "Addition and subtraction of vectors by the graphical method",
+   "description": "Adding vectors by the head-to-tail (triangle) and parallelogram methods, the commutative and associative laws, the null vector and subtraction of vectors.",
+   "idea": "Vectors are added by placing them head to tail; the resultant runs from the first tail to the last head.",
+   "rule": "Head-to-tail (triangle) method: place the tail of B at the head of A; the resultant R = A + B is drawn from the tail of A to the head of B. Parallelogram method: bring the tails of A and B to a common origin O and complete the parallelogram; R is the diagonal drawn from O. The two methods are equivalent. Vector addition is commutative, A + B = B + A, and associative, (A + B) + C = A + (B + C). Two equal and opposite vectors add to the null vector 0, which has zero magnitude and no specifiable direction, with A + 0 = A, lambda 0 = 0 and 0 A = 0; the displacement of an object that returns to its starting point is a null vector. Subtraction is defined through addition: A - B = A + (-B). For two perpendicular vectors the magnitude of the resultant follows from the right-angled triangle they form. The magnitude of a resultant lies between the difference and the sum of the two magnitudes.",
+   "example": "A walk of 9 m east followed by 12 m north is a single displacement of 15 m from the start, because the three vectors form a right-angled triangle.",
+   "difficulty_base": "Easy",
+   "questions": [
+    {
+     "b": "Remember",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "In the head-to-tail method, vector B is placed with its tail at the head of vector A. The resultant A + B is then the vector drawn from",
+     "a": "the tail of A to the head of B",
+     "o": [
+      "the tail of A to the head of B",
+      "the head of B to the tail of A",
+      "the tail of A to the midpoint of B",
+      "the head of A to the tail of A"
+     ]
+    },
+    {
+     "b": "Remember",
+     "d": "Easy",
+     "t": "fill_blank",
+     "m": 1,
+     "q": "In the head-to-tail method the two vectors and their resultant form the three sides of a closed figure, so the method is also called the ____ method of vector addition (write one word).",
+     "a": "triangle"
+    },
+    {
+     "b": "Remember",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "The property A + B = B + A of vector addition is called the",
+     "a": "commutative law",
+     "o": [
+      "commutative law",
+      "associative law",
+      "distributive law",
+      "law of sines"
+     ]
+    },
+    {
+     "b": "Remember",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "q": "Which of the following statements about the null vector 0 is FALSE?",
+     "a": "When it is obtained as A - A, it has a definite direction, opposite to that of A",
+     "o": [
+      "When it is obtained as A - A, it has a definite direction, opposite to that of A",
+      "Adding it to any vector A gives A",
+      "Multiplying any vector by the number zero gives it",
+      "It is the displacement of an object that returns to its starting point"
+     ],
+     "rev": true
+    },
+    {
+     "b": "Understand",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "The difference A - B of two vectors is defined as",
+     "a": "the sum of A and -B",
+     "o": [
+      "the sum of A and -B",
+      "the sum of -A and B",
+      "a vector along A whose magnitude is |A| - |B|",
+      "the sum of A and B drawn in the reverse order"
+     ]
+    },
+    {
+     "b": "Understand",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "In the parallelogram method the tails of A and B are brought to a common origin O and the parallelogram is completed. The resultant A + B is",
+     "a": "the diagonal of the parallelogram drawn from O",
+     "o": [
+      "the diagonal of the parallelogram drawn from O",
+      "the diagonal joining the head of A to the head of B",
+      "the longer of the two adjacent sides",
+      "a line from O drawn perpendicular to A"
+     ]
+    },
+    {
+     "b": "Understand",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "The relation (A + B) + C = A + (B + C) tells us that",
+     "a": "the way vectors are grouped for addition does not change their sum",
+     "o": [
+      "the way vectors are grouped for addition does not change their sum",
+      "vectors can be added only in one fixed order",
+      "the sum of any three vectors is a null vector",
+      "the magnitude of a sum equals the sum of the magnitudes"
+     ]
+    },
+    {
+     "b": "Understand",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "q": "The triangle method and the parallelogram method of adding two vectors A and B give",
+     "a": "the same resultant, because the side of the parallelogram opposite to B is just B shifted parallel to itself to the head of A",
+     "o": [
+      "the same resultant, because the side of the parallelogram opposite to B is just B shifted parallel to itself to the head of A",
+      "different resultants, the one from the parallelogram method being larger",
+      "the same resultant only when A and B are perpendicular",
+      "resultants of equal magnitude but opposite direction"
+     ]
+    },
+    {
+     "b": "Understand",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "q": "Two non-zero vectors A and B add up to the null vector. Which of the following must be true?",
+     "a": "B has the same magnitude as A and points in the opposite direction",
+     "o": [
+      "B has the same magnitude as A and points in the opposite direction",
+      "A and B are perpendicular to each other",
+      "A and B are equal vectors",
+      "A and B have different magnitudes"
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "A person walks 3 m towards the east and then 4 m towards the north. The magnitude of the resultant displacement is",
+     "a": "5 m",
+     "o": [
+      "5 m",
+      "7 m",
+      "1 m",
+      "25 m"
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Easy",
+     "t": "fill_blank",
+     "m": 1,
+     "q": "Two vectors of magnitudes 7 units and 3 units point in exactly opposite directions. The magnitude of their resultant is ____ units (write a whole number).",
+     "a": "4"
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "q": "Rain is falling vertically with a speed of 24 m/s. A wind starts blowing with a speed of 7 m/s from west to east. Find the magnitude of the resultant velocity of the rain and the tangent of the angle it makes with the vertical (to 2 significant figures). Towards which side should a person tilt an umbrella (that is, from which side does the rain now arrive)?",
+     "a": "The two velocities are perpendicular, so R = sqrt(24^2 + 7^2) = sqrt(625) = 25 m/s. If theta is the angle with the vertical, tan theta = 7/24 = 0.29. The rain now moves downward and towards the east, so it arrives from the west side: the umbrella must be tilted towards the west, at this angle with the vertical.",
+     "s": [
+      [
+       "R = sqrt(24^2 + 7^2) = 25 m/s",
+       1
+      ],
+      [
+       "tan theta = 7/24 = 0.29 with the vertical; umbrella tilted towards the west",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "q": "Explain how the vector A - B is obtained graphically from the vectors A and B, and state how the vector B - A compares with it.",
+     "a": "Reverse B to get -B (same length, opposite direction). Place the tail of -B at the head of A; the vector from the tail of A to the head of -B is A + (-B) = A - B. The vector B - A = -(A - B): it has the same magnitude as A - B but the opposite direction.",
+     "s": [
+      [
+       "Draw -B and add it to A head to tail: A - B = A + (-B)",
+       1
+      ],
+      [
+       "B - A has the same magnitude as A - B and the opposite direction",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "q": "A boat makes three displacements in this order: 3 km due north, 4 km due east and 3 km due south. Its resultant displacement is",
+     "a": "4 km due east, because the two north-south displacements add to the null vector",
+     "o": [
+      "4 km due east, because the two north-south displacements add to the null vector",
+      "10 km, the total distance travelled",
+      "4 km due west",
+      "3 km due north"
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hardest",
+     "t": "long_answer",
+     "m": 3,
+     "q": "A boat is steered due north with a speed of 12 km/h through the water. The water current flows due east at 5 km/h. Find (a) the magnitude of the resultant velocity of the boat, (b) the tangent of the angle the resultant makes with the north direction, stating on which side of north it lies, and (c) the magnitude of the displacement of the boat in 30 minutes.",
+     "a": "(a) The two velocities are perpendicular, so R = sqrt(12^2 + 5^2) = sqrt(169) = 13 km/h. (b) If phi is the angle between R and north, tan phi = 5/12 (about 0.42); the resultant points to the east of north. (c) Displacement = resultant velocity x time = 13 km/h x 0.5 h = 6.5 km along the direction of R.",
+     "s": [
+      [
+       "R = sqrt(12^2 + 5^2) = 13 km/h",
+       1
+      ],
+      [
+       "tan phi = 5/12, to the east of north",
+       1
+      ],
+      [
+       "Displacement in 0.5 h = 6.5 km",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "multi_statement",
+     "m": 1,
+     "q": "Consider these statements about adding two vectors A and B. (I) The resultant of two vectors of magnitudes 3 units and 4 units can have a magnitude of 8 units. (II) If A and B are perpendicular to each other, then A + B and A - B have equal magnitudes. Which is or are correct?",
+     "a": "Only II",
+     "o": [
+      "Only II",
+      "Only I",
+      "Both I and II",
+      "Neither I nor II"
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "q": "Three non-zero vectors satisfy a + b + c = 0. Explain (i) what figure they form when drawn head to tail, and (ii) why the magnitude of a can never be greater than the sum of the magnitudes of b and c.",
+     "a": "(i) A zero sum means that the head of the last vector lands on the tail of the first, so the three vectors drawn head to tail form a closed triangle (or lie along one line). (ii) From the relation, a = -(b + c), so |a| = |b + c|. One side of a triangle cannot be longer than the other two sides together, so |b + c| is at most |b| + |c|; hence |a| cannot exceed |b| + |c|.",
+     "s": [
+      [
+       "Head to tail they form a closed triangle because the sum is zero",
+       1
+      ],
+      [
+       "a = -(b + c), and |b + c| cannot exceed |b| + |c|",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hardest",
+     "t": "long_answer",
+     "m": 3,
+     "q": "For any two vectors a and b, establish geometrically that (a) |a + b| is less than or equal to |a| + |b|, and (b) |a + b| is greater than or equal to the difference between |a| and |b|. State when the equality sign holds in each case.",
+     "a": "Draw a and b head to tail; a + b is the third side of the triangle they form. (a) Any side of a triangle is shorter than the sum of the other two sides, so |a + b| < |a| + |b|; equality holds when the triangle collapses with a and b pointing in the same direction. (b) Any side of a triangle is longer than the difference of the other two sides, so |a + b| > the difference of |a| and |b|; equality holds when a and b point in opposite directions.",
+     "s": [
+      [
+       "a, b and a + b form the sides of a triangle; a side is less than the sum of the other two",
+       1
+      ],
+      [
+       "A side is greater than the difference of the other two",
+       1
+      ],
+      [
+       "Equality: same direction for (a), opposite directions for (b)",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Evaluate",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "q": "A student states: 'The resultant of two vectors is always larger in magnitude than either of the two vectors.' Evaluate this statement, giving an example.",
+     "a": "The statement is false. The magnitude of the resultant depends on the directions of the two vectors as well as on their magnitudes. For example, vectors of 5 units and 3 units pointing in opposite directions give a resultant of only 2 units, smaller than either. In general the magnitude of the resultant can be anything from the difference to the sum of the two magnitudes.",
+     "s": [
+      [
+       "Judgement - false, with a valid counter-example",
+       1
+      ],
+      [
+       "Reason - the resultant depends on the angle and ranges from the difference to the sum of the magnitudes",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Create",
+     "d": "Hardest",
+     "t": "long_answer",
+     "m": 3,
+     "q": "Design a ruler-and-paper activity, using two displacement vectors of your own choice, to check that vector addition is commutative.",
+     "a": "Choose a scale, say 1 cm for 1 m, and two displacements, for example A = 5 m east and B = 3 m in a direction 60 degrees north of east. From a point O draw A, then draw B from the head of A; join O to the head of B to get A + B. Starting again from O, draw B first and then A from the head of B; join O to the final head to get B + A. Both constructions end at the same point, so the two resultants have the same length and direction (together the two constructions form a parallelogram with the resultant as the diagonal). Hence A + B = B + A.",
+     "s": [
+      [
+       "Scale chosen and A then B drawn head to tail, resultant from the first tail to the last head",
+       1
+      ],
+      [
+       "Second construction from the same point with B first and then A",
+       1
+      ],
+      [
+       "Both resultants coincide in length and direction, so addition is commutative",
+       1
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "code": "C11P-3.3",
+   "name": "Resolution of vectors: unit vectors and rectangular components",
+   "description": "Resolving a vector along two given directions, unit vectors i, j and k, and the components of a vector along the axes of a rectangular coordinate system.",
+   "idea": "Any vector in a plane can be written as the sum of two component vectors along chosen directions; along the x- and y-axes these are Ax i and Ay j.",
+   "rule": "A vector A in a plane can be resolved along two non-zero vectors a and b of different directions in that plane: A = lambda a + mu b, with lambda and mu real numbers. A unit vector has magnitude 1, has no dimension and no unit, and only specifies a direction; i, j and k are the unit vectors along the x-, y- and z-axes and are perpendicular to each other. Any vector is A = |A| n, where n is the unit vector along A. In the x-y plane A = Ax i + Ay j with Ax = A cos theta and Ay = A sin theta, theta being the angle A makes with the x-axis. Ax and Ay are numbers (they can be positive, negative or zero), while Ax i and Ay j are vectors. Conversely A = sqrt(Ax^2 + Ay^2) and tan theta = Ay/Ax. In three dimensions Ax = A cos alpha, Ay = A cos beta, Az = A cos gamma and A = sqrt(Ax^2 + Ay^2 + Az^2); a position vector is r = x i + y j + z k.",
+   "example": "A vector of magnitude 20 units at 30 degrees above the +x axis has Ax = 20 cos 30 = 17.3 units and Ay = 20 sin 30 = 10 units.",
+   "difficulty_base": "Hard",
+   "questions": [
+    {
+     "b": "Remember",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "A unit vector is a vector that has",
+     "a": "magnitude 1, no dimension and no unit, and serves only to specify a direction",
+     "o": [
+      "magnitude 1, no dimension and no unit, and serves only to specify a direction",
+      "magnitude 1 m and points along the x-axis only",
+      "the same magnitude and unit as the vector it lies along",
+      "zero magnitude but a definite direction"
+     ]
+    },
+    {
+     "b": "Remember",
+     "d": "Easy",
+     "t": "fill_blank",
+     "m": 1,
+     "q": "A vector A in the x-y plane makes an angle theta with the x-axis, and A = Ax i + Ay j. Its x-component is Ax = A ____ theta (write the name of the trigonometric function: sin, cos or tan).",
+     "a": "cos"
+    },
+    {
+     "b": "Remember",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "If Ax and Ay are the x- and y-components of a vector A in the x-y plane, the magnitude of A is",
+     "a": "sqrt(Ax^2 + Ay^2)",
+     "o": [
+      "sqrt(Ax^2 + Ay^2)",
+      "Ax + Ay",
+      "Ax^2 + Ay^2",
+      "sqrt(Ax + Ay)"
+     ]
+    },
+    {
+     "b": "Remember",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "q": "Which of the following statements about the rectangular components of a vector A = Ax i + Ay j is NOT correct?",
+     "a": "Ax is itself a vector directed along the x-axis",
+     "o": [
+      "Ax is itself a vector directed along the x-axis",
+      "Ax i is a vector",
+      "A component can be positive, negative or zero, depending on the angle theta",
+      "tan theta = Ay/Ax, where theta is the angle A makes with the x-axis"
+     ],
+     "rev": true
+    },
+    {
+     "b": "Understand",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "A vector points along the +y axis. Its x-component is",
+     "a": "zero",
+     "o": [
+      "zero",
+      "equal to its magnitude",
+      "equal to the negative of its magnitude",
+      "equal to half its magnitude"
+     ]
+    },
+    {
+     "b": "Understand",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "A vector in the x-y plane makes an angle of 120 degrees with the +x axis, measured anticlockwise. The signs of its components are",
+     "a": "Ax negative and Ay positive",
+     "o": [
+      "Ax negative and Ay positive",
+      "Ax positive and Ay positive",
+      "Ax positive and Ay negative",
+      "Ax negative and Ay negative"
+     ]
+    },
+    {
+     "b": "Understand",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "A vector in the x-y plane is completely specified by its components Ax and Ay. Which of the following specifies it equally completely?",
+     "a": "Its magnitude A and the angle theta it makes with the x-axis",
+     "o": [
+      "Its magnitude A and the angle theta it makes with the x-axis",
+      "Its magnitude A alone",
+      "The angle theta it makes with the x-axis alone",
+      "Its magnitude A and the magnitude of Ax, without any sign"
+     ]
+    },
+    {
+     "b": "Understand",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "q": "A vector A lying in a plane can be written as A = lambda a + mu b, where lambda and mu are real numbers and a and b are two non-zero vectors in the same plane, provided that",
+     "a": "a and b have different directions (they do not lie along the same line)",
+     "o": [
+      "a and b have different directions (they do not lie along the same line)",
+      "a and b are perpendicular to each other",
+      "a and b are both unit vectors",
+      "a and b have equal magnitudes"
+     ]
+    },
+    {
+     "b": "Understand",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "q": "The unit vector n along a given non-zero vector A is obtained by",
+     "a": "dividing A by its magnitude |A|",
+     "o": [
+      "dividing A by its magnitude |A|",
+      "multiplying A by its magnitude |A|",
+      "adding the unit vectors i and j",
+      "taking the x-component of A"
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "A vector A has magnitude 10 units and is directed at 37 degrees above the +x axis (x-axis horizontal, y-axis vertically upward). Take sin 37 = 0.6 and cos 37 = 0.8. Its components are",
+     "a": "Ax = 8 units, Ay = 6 units",
+     "o": [
+      "Ax = 8 units, Ay = 6 units",
+      "Ax = 6 units, Ay = 8 units",
+      "Ax = 8 units, Ay = -6 units",
+      "Ax = 12.5 units, Ay = 16.7 units"
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Easy",
+     "t": "fill_blank",
+     "m": 1,
+     "q": "A vector is given by A = 8i + 15j, where i and j are unit vectors along the x- and y-axes. Its magnitude is ____ units (write a whole number).",
+     "a": "17"
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "q": "A velocity of magnitude 20 m/s is directed at 53 degrees below the +x axis. Take the x-axis horizontal and the y-axis vertically upward, sin 53 = 0.8 and cos 53 = 0.6. Write the velocity in unit-vector form.",
+     "a": "vx = v cos 53 = 20 x 0.6 = 12 m/s. The vector points below the x-axis, so vy = -v sin 53 = -20 x 0.8 = -16 m/s. Hence v = 12i - 16j m/s.",
+     "s": [
+      [
+       "vx = 20 x 0.6 = 12 m/s",
+       1
+      ],
+      [
+       "vy = -20 x 0.8 = -16 m/s, so v = 12i - 16j m/s",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "q": "A vector is A = -3i + 3j (in units), with i and j along the x- and y-axes. Find its magnitude (leave it as a multiple of sqrt(2)) and state its direction.",
+     "a": "A = sqrt((-3)^2 + 3^2) = sqrt(18) = 3 sqrt(2) units (about 4.2 units). tan theta = Ay/Ax = 3/(-3) = -1 with Ax negative and Ay positive, so the vector lies in the second quadrant: it makes 45 degrees with the -x axis, above it, which is 135 degrees anticlockwise from the +x axis.",
+     "s": [
+      [
+       "Magnitude = sqrt(9 + 9) = 3 sqrt(2) units",
+       1
+      ],
+      [
+       "Direction: 135 degrees anticlockwise from the +x axis (45 degrees above the -x axis)",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "q": "A vector in three dimensions is A = 2i + 3j + 6k (in units). Its magnitude is",
+     "a": "7 units",
+     "o": [
+      "7 units",
+      "11 units",
+      "49 units",
+      "sqrt(11) units"
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hardest",
+     "t": "long_answer",
+     "m": 3,
+     "q": "Resolve the vector A = 5i + j into two component vectors, one along the direction of (i + j) and the other along the direction of (i - j). That is, find the real numbers lambda and mu for which A = lambda (i + j) + mu (i - j), and state the magnitude of each component vector.",
+     "a": "lambda (i + j) + mu (i - j) = (lambda + mu) i + (lambda - mu) j. Comparing with 5i + j: lambda + mu = 5 and lambda - mu = 1. Adding, 2 lambda = 6, so lambda = 3 and mu = 2. Thus A = 3(i + j) + 2(i - j). Since |i + j| = |i - j| = sqrt(2), the component vectors have magnitudes 3 sqrt(2) units and 2 sqrt(2) units.",
+     "s": [
+      [
+       "Equating components: lambda + mu = 5 and lambda - mu = 1",
+       1
+      ],
+      [
+       "lambda = 3 and mu = 2",
+       1
+      ],
+      [
+       "Magnitudes 3 sqrt(2) units and 2 sqrt(2) units",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "assertion_reason",
+     "m": 1,
+     "q": "Assertion (A): A vector of magnitude 5 units lying in the x-y plane can have an x-component of -4 units. Reason (R): The unit vectors i and j have no dimension and no unit. Choose the correct option.",
+     "a": "Both A and R are true, but R is not the correct explanation of A",
+     "o": [
+      "Both A and R are true, but R is not the correct explanation of A",
+      "Both A and R are true, and R is the correct explanation of A",
+      "A is true, R is false",
+      "A is false, R is true"
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "q": "A vector in the x-y plane has magnitude 13 units and x-component Ax = 5 units. Find the possible values of Ay and explain what this shows about specifying a vector by its magnitude and one component.",
+     "a": "Ay^2 = A^2 - Ax^2 = 169 - 25 = 144, so Ay = +12 units or -12 units. There are therefore two possible vectors, 5i + 12j (above the x-axis) and 5i - 12j (below the x-axis). The magnitude and one component do not fix a vector uniquely; the sign of the other component, or the direction, must also be given.",
+     "s": [
+      [
+       "Ay = +12 units or -12 units",
+       1
+      ],
+      [
+       "Two different vectors fit, so magnitude and one component alone do not specify the vector",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hardest",
+     "t": "long_answer",
+     "m": 3,
+     "q": "A vector A in three dimensions makes angles alpha, beta and gamma with the x-, y- and z-axes respectively. (a) Show that cos^2 alpha + cos^2 beta + cos^2 gamma = 1. (b) If alpha = 60 degrees and beta = 60 degrees, find gamma. Take cos 60 = 0.5.",
+     "a": "(a) The components are Ax = A cos alpha, Ay = A cos beta and Az = A cos gamma. Since A^2 = Ax^2 + Ay^2 + Az^2, we get A^2 = A^2 (cos^2 alpha + cos^2 beta + cos^2 gamma), so the sum of the three squared cosines is 1. (b) cos^2 gamma = 1 - 0.25 - 0.25 = 0.5, so cos gamma = +1/sqrt(2) or -1/sqrt(2), giving gamma = 45 degrees (or 135 degrees).",
+     "s": [
+      [
+       "Components A cos alpha, A cos beta and A cos gamma written",
+       1
+      ],
+      [
+       "Squaring and adding with A^2 = Ax^2 + Ay^2 + Az^2 gives the sum of squared cosines = 1",
+       1
+      ],
+      [
+       "cos^2 gamma = 0.5, so gamma = 45 degrees (or 135 degrees)",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Evaluate",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "q": "A student claims that a vector of magnitude 6 units can have a rectangular component of 9 units along the x-axis. Evaluate the claim.",
+     "a": "The claim is wrong. The rectangular x-component is Ax = A cos theta, and cos theta always lies between -1 and +1, so the size of Ax can never exceed A. Equivalently, A^2 = Ax^2 + Ay^2 would require Ay^2 = 36 - 81, which is negative and impossible.",
+     "s": [
+      [
+       "Judgement - not possible",
+       1
+      ],
+      [
+       "Reason - Ax = A cos theta cannot exceed A in size (or Ay^2 would be negative)",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Create",
+     "d": "Hardest",
+     "t": "long_answer",
+     "m": 3,
+     "q": "Construct a vector in the x-y plane, written in unit-vector form with whole-number components, that has magnitude 25 units, a negative x-component and a positive y-component. Verify its magnitude and describe its direction.",
+     "a": "Sample: A = -7i + 24j (another valid choice is -15i + 20j). Check: sqrt((-7)^2 + 24^2) = sqrt(49 + 576) = sqrt(625) = 25 units. Since Ax is negative and Ay is positive, the vector lies in the second quadrant; it makes with the -x axis an angle whose tangent is 24/7, measured above that axis.",
+     "s": [
+      [
+       "Whole-number components chosen with Ax negative and Ay positive",
+       1
+      ],
+      [
+       "Magnitude verified as sqrt(Ax^2 + Ay^2) = 25 units",
+       1
+      ],
+      [
+       "Direction stated: second quadrant, with the tangent of the angle from the -x axis equal to the size of Ay/Ax",
+       1
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "code": "C11P-3.4",
+   "name": "Vector addition by the analytical method: components, law of cosines and law of sines",
+   "description": "Adding and subtracting vectors by combining their components, and finding the magnitude and direction of the resultant of two vectors from their magnitudes and the angle between them.",
+   "idea": "Each component of a resultant is the sum of the corresponding components; for two vectors at angle theta the resultant follows from the law of cosines and the law of sines.",
+   "rule": "If A = Ax i + Ay j and B = Bx i + By j, then R = A + B has Rx = Ax + Bx and Ry = Ay + By (and Rz = Az + Bz in three dimensions). The method extends to any number of vectors and to subtraction: for T = a + b - c, Tx = ax + bx - cx and so on. For two vectors of magnitudes A and B with angle theta between them, the resultant has magnitude R = sqrt(A^2 + B^2 + 2AB cos theta) (the law of cosines). If R makes angle alpha with A and beta with B, then R/sin theta = A/sin beta = B/sin alpha (the law of sines), so sin alpha = (B/R) sin theta, and also tan alpha = B sin theta/(A + B cos theta).",
+   "example": "A = i + 2j and B = 3i + 5j give A + B = 4i + 7j; two vectors of 20 units and 21 units at 90 degrees give R = sqrt(400 + 441 + 0) = 29 units.",
+   "difficulty_base": "Hard",
+   "questions": [
+    {
+     "b": "Remember",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "A and B are vectors in the x-y plane and R = A + B. The x-component of R is",
+     "a": "Ax + Bx",
+     "o": [
+      "Ax + Bx",
+      "Ax + By",
+      "Ax Bx",
+      "sqrt(Ax^2 + Bx^2)"
+     ]
+    },
+    {
+     "b": "Remember",
+     "d": "Easy",
+     "t": "fill_blank",
+     "m": 1,
+     "q": "Given A = 2i + 3j and B = 4i - j, the x-component of A + B is ____ (write a whole number).",
+     "a": "6"
+    },
+    {
+     "b": "Remember",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "In this chapter, which result gives the MAGNITUDE of the resultant of two vectors in terms of their magnitudes and the angle between them?",
+     "a": "The law of cosines",
+     "o": [
+      "The law of cosines",
+      "The law of sines",
+      "The commutative law",
+      "The associative law"
+     ]
+    },
+    {
+     "b": "Remember",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "q": "Which of the following is NOT a correct statement about adding vectors by the analytical (component) method?",
+     "a": "The magnitude of the resultant is the sum of the magnitudes of the vectors being added",
+     "o": [
+      "The magnitude of the resultant is the sum of the magnitudes of the vectors being added",
+      "Each component of the resultant is the sum of the corresponding components of the vectors",
+      "The method can be extended to any number of vectors, and to three dimensions",
+      "Regrouping the i terms and the j terms relies on the commutative and associative laws"
+     ],
+     "rev": true
+    },
+    {
+     "b": "Understand",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "Why is the analytical method of adding vectors often preferred to the graphical method?",
+     "a": "The graphical method is tedious and has limited accuracy, while components can simply be added",
+     "o": [
+      "The graphical method is tedious and has limited accuracy, while components can simply be added",
+      "The graphical method gives a different resultant from the true one",
+      "The graphical method works only for perpendicular vectors",
+      "The analytical method does not need the directions of the vectors"
+     ]
+    },
+    {
+     "b": "Understand",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "According to the law of cosines for the resultant of two vectors of magnitudes A and B, when the two vectors point in the same direction (theta = 0) the magnitude of the resultant is",
+     "a": "A + B",
+     "o": [
+      "A + B",
+      "sqrt(A^2 + B^2)",
+      "the difference of A and B",
+      "2AB"
+     ]
+    },
+    {
+     "b": "Understand",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "Vectors a, b and c are given in component form and T = a + b - c. The y-component of T is",
+     "a": "ay + by - cy",
+     "o": [
+      "ay + by - cy",
+      "ay + by + cy",
+      "ay - by - cy",
+      "ax + bx - cx"
+     ]
+    },
+    {
+     "b": "Understand",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "q": "Two vectors of magnitudes A and B have a resultant of magnitude sqrt(A^2 + B^2). The angle between the two vectors is",
+     "a": "90 degrees, because the term 2AB cos theta then vanishes",
+     "o": [
+      "90 degrees, because the term 2AB cos theta then vanishes",
+      "0 degrees, because the vectors then point the same way",
+      "180 degrees, because the vectors then point opposite ways",
+      "60 degrees, because cos 60 = 0.5"
+     ]
+    },
+    {
+     "b": "Understand",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "q": "In the relation tan alpha = B sin theta/(A + B cos theta) for the resultant R of two vectors A and B with angle theta between them, alpha is the angle between",
+     "a": "R and A",
+     "o": [
+      "R and A",
+      "R and B",
+      "A and B",
+      "R and the y-axis"
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "Given A = 3i + 4j and B = i - j, the vector A + B is",
+     "a": "4i + 3j",
+     "o": [
+      "4i + 3j",
+      "2i + 5j",
+      "4i + 5j",
+      "3i - 4j"
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Easy",
+     "t": "fill_blank",
+     "m": 1,
+     "q": "Given A = 6i + 2j and B = 2i + 5j, the y-component of A - B is ____ (write an integer, with a minus sign if it is negative).",
+     "a": "-3"
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "q": "Two forces of magnitudes 5 N and 3 N act at a point with an angle of 60 degrees between them. Take cos 60 = 0.5. Find the magnitude of their resultant.",
+     "a": "R = sqrt(A^2 + B^2 + 2AB cos theta) = sqrt(25 + 9 + 2 x 5 x 3 x 0.5) = sqrt(49) = 7 N.",
+     "s": [
+      [
+       "Sets up R correctly, by the law of cosines R^2 = 25 + 9 + 2 x 5 x 3 x 0.5 or by components (6.5 along the 5 N force, 2.6 across it)",
+       1
+      ],
+      [
+       "R = sqrt(49) = 7 N",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "q": "Two displacements are A = 2i + j and B = -5i + 3j, in metres, with i along the x-axis and j along the y-axis. Find their resultant R, its magnitude and its direction. Take tan 53 = 4/3.",
+     "a": "R = (2 - 5)i + (1 + 3)j = -3i + 4j m. Magnitude R = sqrt(9 + 16) = 5 m. Rx is negative and Ry is positive, so R lies in the second quadrant; the angle with the -x axis has tangent 4/3, so R points 53 degrees above the -x axis (127 degrees anticlockwise from the +x axis).",
+     "s": [
+      [
+       "R = -3i + 4j m",
+       1
+      ],
+      [
+       "Magnitude 5 m, directed 53 degrees above the -x axis",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "q": "Two vectors each of magnitude 10 units have an angle of 120 degrees between them. Take cos 120 = -0.5. The magnitude of their resultant is",
+     "a": "10 units",
+     "o": [
+      "10 units",
+      "20 units",
+      "10 sqrt(3) units",
+      "0 units"
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hardest",
+     "t": "long_answer",
+     "m": 3,
+     "q": "A boat is pointed due north and moves at 7 km/h through the water. The water current has a speed of 8 km/h in a direction 60 degrees east of north. Take cos 60 = 0.5 and sin 60 = 0.866. Find the magnitude of the resultant velocity of the boat and the sine of the angle it makes with north (to 2 significant figures), stating on which side of north it lies.",
+     "a": "The angle between the two velocities is theta = 60 degrees. By the law of cosines, R = sqrt(7^2 + 8^2 + 2 x 7 x 8 x 0.5) = sqrt(49 + 64 + 56) = sqrt(169) = 13 km/h. If alpha is the angle between R and the north direction, the law of sines gives R/sin theta = 8/sin alpha, so sin alpha = (8 x 0.866)/13 = 0.53. The resultant points to the east of north.",
+     "s": [
+      [
+       "R^2 = 49 + 64 + 56 by the law of cosines with theta = 60 degrees, or components north 11 km/h and east 6.93 km/h",
+       1
+      ],
+      [
+       "R = 13 km/h",
+       1
+      ],
+      [
+       "sin alpha = 0.53, east of north (law of sines 8 x 0.866/13, or east component/R)",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "multi_statement",
+     "m": 1,
+     "q": "Consider these statements about the resultant of two vectors. (I) Two vectors of magnitudes 6 units and 8 units that are at right angles to each other have a resultant of magnitude 10 units. (II) If the angle between two vectors of fixed magnitudes is increased from 60 degrees to 90 degrees, the magnitude of their resultant increases. Which is or are correct?",
+     "a": "Only I",
+     "o": [
+      "Only I",
+      "Only II",
+      "Both I and II",
+      "Neither I nor II"
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "q": "Two vectors A and B have equal magnitudes and the angle between them is theta. Use the law of sines to show that their resultant bisects the angle between them.",
+     "a": "Let R make angle alpha with A and beta with B, so that alpha + beta = theta. The law of sines gives A/sin beta = B/sin alpha. With A = B this gives sin alpha = sin beta, and since both angles are parts of theta, alpha = beta = theta/2. So the resultant lies along the bisector of the angle between the two vectors.",
+     "s": [
+      [
+       "Law of sines A/sin beta = B/sin alpha with A = B gives sin alpha = sin beta",
+       1
+      ],
+      [
+       "Hence alpha = beta = theta/2, so R bisects the angle",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hardest",
+     "t": "long_answer",
+     "m": 3,
+     "q": "The resultant R of two vectors A and B is perpendicular to A, and its magnitude is half the magnitude of B. Find the angle between A and B.",
+     "a": "Take A along the x-axis and let theta be the angle between A and B. Then Rx = A + B cos theta and Ry = B sin theta. R is perpendicular to A, so Rx = 0, which gives cos theta = -A/B (negative, so theta is obtuse). Then R = Ry = B sin theta, and R = B/2 gives sin theta = 1/2. The obtuse angle with sin theta = 1/2 is theta = 150 degrees.",
+     "s": [
+      [
+       "Components of R with A along x: Rx = A + B cos theta, Ry = B sin theta",
+       1
+      ],
+      [
+       "Rx = 0 and R = B sin theta = B/2, so sin theta = 1/2",
+       1
+      ],
+      [
+       "cos theta is negative, so theta = 150 degrees",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Evaluate",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "q": "To add two vectors of magnitudes 3 units and 4 units that have an angle of 60 degrees between them, a student writes R^2 = 3^2 + 4^2 - 2 x 3 x 4 x cos 60 and obtains R = sqrt(13) units. Evaluate the working. Take cos 60 = 0.5.",
+     "a": "The working is wrong: when theta is the angle between the two vectors, the law of cosines for the resultant has a plus sign, R^2 = A^2 + B^2 + 2AB cos theta. Correctly, R^2 = 9 + 16 + 12 = 37, so R = sqrt(37), about 6.1 units. A check: for an angle smaller than 90 degrees the resultant must be larger than the value 5 units obtained at 90 degrees, and sqrt(13) is smaller.",
+     "s": [
+      [
+       "Error identified - the sign of the 2AB cos theta term should be plus",
+       1
+      ],
+      [
+       "Correct result R = sqrt(37), about 6.1 units",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Create",
+     "d": "Hardest",
+     "t": "long_answer",
+     "m": 3,
+     "q": "Construct three non-zero vectors in the x-y plane, written in unit-vector form, no two of which are parallel, whose sum is the null vector. Verify your answer by components and state what figure the three vectors form when drawn head to tail.",
+     "a": "Sample: choose a = 2i + j and b = i + 3j, then take c = -(a + b) = -3i - 4j. Check: x-components 2 + 1 - 3 = 0 and y-components 1 + 3 - 4 = 0, so a + b + c = 0. No two of the three are parallel. Drawn head to tail, the head of c returns to the tail of a, so the three vectors form a closed triangle.",
+     "s": [
+      [
+       "Two non-parallel vectors chosen and the third taken as the negative of their sum",
+       1
+      ],
+      [
+       "Both component sums verified to be zero",
+       1
+      ],
+      [
+       "Head to tail the three vectors form a closed triangle",
+       1
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "code": "C11P-3.5",
+   "name": "Position, displacement, velocity and acceleration in a plane",
+   "description": "Describing motion in two dimensions with the position vector, displacement, average and instantaneous velocity, and average and instantaneous acceleration in component form.",
+   "idea": "In a plane, position, velocity and acceleration are vectors; velocity is tangent to the path and acceleration follows the change in velocity.",
+   "rule": "Position vector r = x i + y j, where x and y are the coordinates of the object. Displacement from r to r' is delta r = r' - r = delta x i + delta y j. Average velocity = delta r/delta t, in the direction of delta r. The velocity v = dr/dt is the limit of the average velocity as delta t tends to zero; its direction is tangential to the path, in the direction of motion. In components vx = dx/dt, vy = dy/dt, v = sqrt(vx^2 + vy^2) and tan theta = vy/vx, theta being the angle with the x-axis. Average acceleration = delta v/delta t, in the direction of delta v; acceleration a = dv/dt with ax = dvx/dt and ay = dvy/dt. In one dimension the velocity and acceleration are always along the same line, but in two or three dimensions the angle between them may be anything from 0 to 180 degrees.",
+   "example": "If r = 2t i + t^2 j (in metres, t in seconds), then v = 2i + 2t j m/s and a = 2j m/s^2.",
+   "difficulty_base": "Hard",
+   "questions": [
+    {
+     "b": "Remember",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "The direction of the instantaneous velocity of a particle at a point on its path is",
+     "a": "along the tangent to the path at that point, in the direction of motion",
+     "o": [
+      "along the tangent to the path at that point, in the direction of motion",
+      "along the position vector of that point",
+      "perpendicular to the path at that point",
+      "along the line joining that point to the starting point of the motion"
+     ]
+    },
+    {
+     "b": "Remember",
+     "d": "Easy",
+     "t": "fill_blank",
+     "m": 1,
+     "q": "The average velocity of an object is the ratio of its ____ to the corresponding time interval (write one word).",
+     "a": "displacement"
+    },
+    {
+     "b": "Remember",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "For motion in the x-y plane the components of the acceleration are",
+     "a": "ax = dvx/dt and ay = dvy/dt",
+     "o": [
+      "ax = dvx/dt and ay = dvy/dt",
+      "ax = dx/dt and ay = dy/dt",
+      "ax = dvy/dt and ay = dvx/dt",
+      "ax = vx^2 and ay = vy^2"
+     ]
+    },
+    {
+     "b": "Remember",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "q": "Which of the following statements about velocity and acceleration for motion in a plane is NOT correct?",
+     "a": "The velocity and the acceleration of the object must always lie along the same straight line",
+     "o": [
+      "The velocity and the acceleration of the object must always lie along the same straight line",
+      "The average velocity has the same direction as the displacement in that time interval",
+      "The average acceleration has the same direction as the change in velocity in that time interval",
+      "The acceleration is the limiting value of the average acceleration as the time interval approaches zero"
+     ],
+     "rev": true
+    },
+    {
+     "b": "Understand",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "In the position vector r = x i + y j of a particle moving in the x-y plane, x and y are",
+     "a": "the coordinates of the particle, that is, the components of r along the x- and y-axes",
+     "o": [
+      "the coordinates of the particle, that is, the components of r along the x- and y-axes",
+      "the magnitude of r and the angle it makes with the x-axis",
+      "the components of the velocity of the particle",
+      "the distances the particle covers in two successive seconds"
+     ]
+    },
+    {
+     "b": "Understand",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "The instantaneous velocity of a particle is defined as",
+     "a": "the limiting value of the average velocity as the time interval approaches zero",
+     "o": [
+      "the limiting value of the average velocity as the time interval approaches zero",
+      "the average velocity taken over one second",
+      "the total path length divided by the total time",
+      "the position vector divided by the time elapsed"
+     ]
+    },
+    {
+     "b": "Understand",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "The coordinates x and y of a particle are known as functions of time. Its velocity components vx and vy are found by",
+     "a": "differentiating x and y with respect to time",
+     "o": [
+      "differentiating x and y with respect to time",
+      "dividing x and y by the time t",
+      "multiplying x and y by the time t",
+      "squaring x and y and adding them"
+     ]
+    },
+    {
+     "b": "Understand",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "q": "A particle moving in the x-y plane has velocity v = vx i + vy j. The angle theta that the velocity makes with the x-axis is given by",
+     "a": "tan theta = vy/vx",
+     "o": [
+      "tan theta = vy/vx",
+      "tan theta = vx/vy",
+      "sin theta = vy/vx",
+      "cos theta = vy/vx"
+     ]
+    },
+    {
+     "b": "Understand",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "q": "The velocity of a particle changes from 4i m/s to 4j m/s. The change in its velocity is",
+     "a": "-4i + 4j m/s, which is not zero although the speed is unchanged",
+     "o": [
+      "-4i + 4j m/s, which is not zero although the speed is unchanged",
+      "zero, because the speed has not changed",
+      "4i + 4j m/s",
+      "8 m/s along the x-axis"
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "A particle moves from the position r = 2i + 3j m to the position r' = 5i + 7j m. Its displacement is",
+     "a": "3i + 4j m",
+     "o": [
+      "3i + 4j m",
+      "7i + 10j m",
+      "-3i - 4j m",
+      "10i + 21j m"
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Easy",
+     "t": "fill_blank",
+     "m": 1,
+     "q": "A particle undergoes a displacement of 6i + 8j m in 2 s. The magnitude of its average velocity is ____ m/s (write a whole number).",
+     "a": "5"
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "q": "The velocity of a particle moving in the x-y plane changes from 3i + 2j m/s to 7i + 10j m/s in 4 s. Find its average acceleration in unit-vector form and the magnitude of this acceleration (leave it as a square root and also give it to 3 significant figures).",
+     "a": "Change in velocity = (7 - 3)i + (10 - 2)j = 4i + 8j m/s. Average acceleration = (4i + 8j)/4 = i + 2j m/s^2. Its magnitude is sqrt(1 + 4) = sqrt(5) = 2.24 m/s^2.",
+     "s": [
+      [
+       "Change in velocity = 4i + 8j m/s",
+       1
+      ],
+      [
+       "Average acceleration = i + 2j m/s^2, magnitude sqrt(5) = 2.24 m/s^2",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "q": "The position of a particle is r = 6t i + 2t^2 j, where t is in seconds and r is in metres (i along the x-axis, j along the y-axis). Find the magnitude and direction of its velocity at t = 2 s. Take tan 53 = 4/3.",
+     "a": "v = dr/dt = 6i + 4t j m/s. At t = 2 s, v = 6i + 8j m/s. Magnitude = sqrt(36 + 64) = 10 m/s. tan theta = vy/vx = 8/6 = 4/3, so the velocity makes 53 degrees with the x-axis (towards +y).",
+     "s": [
+      [
+       "v = 6i + 4t j, so v = 6i + 8j m/s at t = 2 s",
+       1
+      ],
+      [
+       "Magnitude 10 m/s at 53 degrees with the x-axis",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "q": "The position of a particle is r = 5t i - 1.5t^2 j + 2k, where t is in seconds and r is in metres. Its acceleration is",
+     "a": "-3j m/s^2",
+     "o": [
+      "-3j m/s^2",
+      "-1.5j m/s^2",
+      "5i - 3t j m/s^2",
+      "5i - 3j m/s^2"
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hardest",
+     "t": "long_answer",
+     "m": 3,
+     "q": "An aircraft flies horizontally at a constant height of 2400 m. At one instant it is vertically above a ground observation point; 10 s later the line from the observation point to the aircraft makes an angle of 37 degrees with the vertical. Take tan 37 = 0.75. Find the speed of the aircraft.",
+     "a": "The first position is vertically above the observer and the second is displaced horizontally by d. In the right-angled triangle formed by the vertical height h and the horizontal displacement d, tan 37 = d/h, so d = h tan 37 = 2400 x 0.75 = 1800 m. Speed = displacement/time = 1800/10 = 180 m/s.",
+     "s": [
+      [
+       "Geometry: horizontal displacement d = h tan 37",
+       1
+      ],
+      [
+       "d = 2400 x 0.75 = 1800 m",
+       1
+      ],
+      [
+       "Speed = 1800/10 = 180 m/s",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "assertion_reason",
+     "m": 1,
+     "q": "Assertion (A): A particle that moves along a curved path at a constant speed has a non-zero acceleration. Reason (R): The acceleration of a particle depends only on the change in the magnitude of its velocity. Choose the correct option.",
+     "a": "A is true, R is false",
+     "o": [
+      "A is true, R is false",
+      "Both A and R are true, and R is the correct explanation of A",
+      "Both A and R are true, but R is not the correct explanation of A",
+      "A is false, R is true"
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "q": "For an arbitrary motion in a plane (the acceleration need not be constant), consider these two relations for the average velocity over the interval t1 to t2: (a) average velocity = [r(t2) - r(t1)]/(t2 - t1); (b) average velocity = (1/2)[v(t1) + v(t2)]. Decide which is true for every motion, with reasons.",
+     "a": "(a) is true for every motion: it is the definition of average velocity, the displacement divided by the time interval. (b) is not true in general: the mean of the initial and final velocities equals the average velocity only in special cases such as uniform (constant) acceleration, and fails for an arbitrary motion.",
+     "s": [
+      [
+       "(a) true - it is the definition of average velocity",
+       1
+      ],
+      [
+       "(b) not generally true - it holds only for special cases such as constant acceleration",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hardest",
+     "t": "long_answer",
+     "m": 3,
+     "q": "The position of a particle is r = 3t i + (4t - 5t^2) j, where t is in seconds and r is in metres (x-axis horizontal, y-axis vertically upward). Find (a) its velocity and speed at t = 0, (b) its acceleration, and (c) the instant at which its velocity is perpendicular to its acceleration, and the velocity at that instant.",
+     "a": "(a) v = dr/dt = 3i + (4 - 10t) j m/s. At t = 0, v = 3i + 4j m/s and the speed is sqrt(9 + 16) = 5 m/s. (b) a = dv/dt = -10j m/s^2, constant and directed along -y. (c) The acceleration is along the y-axis, so the velocity is perpendicular to it when the velocity has no y-component: 4 - 10t = 0, t = 0.4 s. At that instant v = 3i m/s.",
+     "s": [
+      [
+       "v = 3i + (4 - 10t) j; at t = 0, v = 3i + 4j m/s, speed 5 m/s",
+       1
+      ],
+      [
+       "a = -10j m/s^2",
+       1
+      ],
+      [
+       "vy = 0 at t = 0.4 s, where v = 3i m/s",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Evaluate",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "q": "A particle moves along a curved path and is at point P at time t and at point P1 a little later. A student says that the instantaneous velocity at P points along the chord from P to P1. Evaluate this statement.",
+     "a": "The statement is not correct. The chord from P to P1 gives the direction of the displacement, and so of the average velocity, over that time interval. The instantaneous velocity is the limit of the average velocity as the interval shrinks to zero; in that limit the chord becomes the tangent to the path at P. So the instantaneous velocity at P is along the tangent at P, not along the chord.",
+     "s": [
+      [
+       "Judgement - the chord gives the direction of the average velocity, not the instantaneous velocity",
+       1
+      ],
+      [
+       "Reason - as the time interval tends to zero the chord tends to the tangent at P",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Create",
+     "d": "Hardest",
+     "t": "long_answer",
+     "m": 3,
+     "q": "Write down a position vector r(t), in unit-vector form, for a particle moving in the x-y plane such that its velocity component along x is constant and its acceleration is 4 m/s^2 along +y. Verify your choice by finding v(t) and a(t), and find the speed of the particle at t = 1 s.",
+     "a": "Sample: r = 3t i + 2t^2 j (metres, t in seconds). Then v = dr/dt = 3i + 4t j m/s, so vx = 3 m/s is constant, and a = dv/dt = 4j m/s^2, as required. At t = 1 s, v = 3i + 4j m/s and the speed is sqrt(9 + 16) = 5 m/s.",
+     "s": [
+      [
+       "r(t) with x linear in t (a constant vx, zero allowed) and y containing the term 2t^2",
+       1
+      ],
+      [
+       "v(t) and a(t) obtained by differentiation, giving constant vx and a = 4j m/s^2",
+       1
+      ],
+      [
+       "Speed at t = 1 s correctly computed from the chosen r(t)",
+       1
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "code": "C11P-3.6",
+   "name": "Motion in a plane with constant acceleration and the equations of a projectile",
+   "description": "The vector equations of motion for constant acceleration, their component form, the independence of the two perpendicular motions, and the position, velocity and path of a projectile.",
+   "idea": "Motion in a plane with constant acceleration is two independent straight-line motions along perpendicular directions; a projectile has no horizontal acceleration and a downward acceleration g.",
+   "rule": "For constant acceleration a: v = v0 + a t and r = r0 + v0 t + (1/2) a t^2. In components: vx = v0x + ax t, vy = v0y + ay t, x = x0 + v0x t + (1/2) ax t^2, y = y0 + v0y t + (1/2) ay t^2. The motions along x and y can be treated independently, as two separate simultaneous one-dimensional motions. A projectile is an object in flight after being thrown or projected. With air resistance neglected, x horizontal and y vertically upward, its acceleration is a = -g j (ax = 0, ay = -g). Launched from the origin with speed v0 at angle theta0 above the horizontal: v0x = v0 cos theta0, v0y = v0 sin theta0; x = (v0 cos theta0) t, y = (v0 sin theta0) t - (1/2) g t^2; vx = v0 cos theta0 (constant), vy = v0 sin theta0 - g t. Eliminating t gives the path y = (tan theta0) x - g x^2/(2 (v0 cos theta0)^2), which is of the form y = a x + b x^2, a parabola. At the highest point vy = 0.",
+   "example": "A particle starts from the origin with v0 = 2i m/s and constant a = 3j m/s^2. At t = 2 s, v = 2i + 6j m/s and r = 4i + 6j m.",
+   "difficulty_base": "Hard",
+   "questions": [
+    {
+     "b": "Remember",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "An object moves in a plane with constant acceleration a. Its velocity is v0 at t = 0. Its velocity at time t is",
+     "a": "v0 + a t",
+     "o": [
+      "v0 + a t",
+      "v0 + (1/2) a t",
+      "v0 + a t^2",
+      "v0 t + a"
+     ]
+    },
+    {
+     "b": "Remember",
+     "d": "Easy",
+     "t": "fill_blank",
+     "m": 1,
+     "q": "With air resistance neglected, the curved path followed by a projectile launched at an angle to the horizontal is a ____ (write one word, the name of the curve).",
+     "a": "parabola"
+    },
+    {
+     "b": "Remember",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "A projectile is launched with speed v0 at angle theta0 above the horizontal (y-axis vertically upward, air resistance neglected). The vertical component of its velocity at time t is",
+     "a": "v0 sin theta0 - g t",
+     "o": [
+      "v0 sin theta0 - g t",
+      "v0 cos theta0 - g t",
+      "v0 sin theta0 + g t",
+      "v0 sin theta0 - (1/2) g t^2"
+     ]
+    },
+    {
+     "b": "Remember",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "q": "Which of the following statements about a projectile in flight (air resistance neglected) is NOT correct?",
+     "a": "Its acceleration becomes zero at the highest point of its path",
+     "o": [
+      "Its acceleration becomes zero at the highest point of its path",
+      "Its acceleration is directed vertically downward throughout the flight",
+      "Its position at any time is fixed by two parameters, the initial speed and the angle of projection",
+      "Its motion can be thought of as two separate component motions occurring simultaneously"
+     ],
+     "rev": true
+    },
+    {
+     "b": "Understand",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "The component equations x = x0 + v0x t + (1/2) ax t^2 and y = y0 + v0y t + (1/2) ay t^2 show that motion in a plane with constant acceleration can be treated as",
+     "a": "two separate simultaneous one-dimensional motions with constant acceleration along two perpendicular directions",
+     "o": [
+      "two separate simultaneous one-dimensional motions with constant acceleration along two perpendicular directions",
+      "a single one-dimensional motion along the direction of the initial velocity",
+      "two motions that must take place one after the other",
+      "a motion in which the x- and y-coordinates always change by equal amounts"
+     ]
+    },
+    {
+     "b": "Understand",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "A projectile is launched with speed v0 at an angle theta0 above the horizontal. Take the x-axis horizontal and the y-axis vertically upward. The x- and y-components of its initial velocity are",
+     "a": "v0 cos theta0 and v0 sin theta0",
+     "o": [
+      "v0 cos theta0 and v0 sin theta0",
+      "v0 sin theta0 and v0 cos theta0",
+      "v0 tan theta0 and v0",
+      "v0 and v0 sin theta0"
+     ]
+    },
+    {
+     "b": "Understand",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "A projectile is launched with speed v0 at an angle theta0 above the horizontal. Neglect air resistance. At the highest point of its path its velocity is",
+     "a": "horizontal, of magnitude v0 cos theta0",
+     "o": [
+      "horizontal, of magnitude v0 cos theta0",
+      "zero",
+      "vertical, of magnitude v0 sin theta0",
+      "horizontal, of magnitude v0"
+     ]
+    },
+    {
+     "b": "Understand",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "q": "The vector equations v = v0 + a t and r = r0 + v0 t + (1/2) a t^2 for motion in a plane hold only if",
+     "a": "the acceleration is constant in both magnitude and direction",
+     "o": [
+      "the acceleration is constant in both magnitude and direction",
+      "the speed of the object is constant",
+      "the object moves along a straight line",
+      "the initial velocity is zero"
+     ]
+    },
+    {
+     "b": "Understand",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "q": "The velocity of a projectile makes an angle theta with the horizontal, where tan theta = vy/vx. Neglect air resistance. As the projectile rises from the launch point to the highest point of its path, theta",
+     "a": "decreases from theta0 to zero",
+     "o": [
+      "decreases from theta0 to zero",
+      "stays equal to the launch angle theta0",
+      "increases from theta0 to 90 degrees",
+      "decreases, but becomes zero only when the projectile lands"
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "A particle starts from rest and moves in the x-y plane with a constant acceleration of 2i + 3j m/s^2 (i along the x-axis, j along the y-axis). Its velocity at t = 4 s is",
+     "a": "8i + 12j m/s",
+     "o": [
+      "8i + 12j m/s",
+      "16i + 24j m/s",
+      "2i + 3j m/s",
+      "6i + 7j m/s"
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Easy",
+     "t": "fill_blank",
+     "m": 1,
+     "q": "A ball is launched at 30 m/s at an angle of 60 degrees above the horizontal. Neglect air resistance and take cos 60 = 0.5. The horizontal component of its velocity 2 s after launch is ____ m/s (write a whole number).",
+     "a": "15"
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "q": "A particle starts from the origin at t = 0 with velocity 3j m/s and moves in the x-y plane with a constant acceleration of 2i - j m/s^2 (i along the x-axis, j along the y-axis). Find its velocity and its position vector at t = 2 s.",
+     "a": "v = v0 + a t = 3j + (2i - j)(2) = 4i + j m/s. r = v0 t + (1/2) a t^2 = (3j)(2) + (1/2)(2i - j)(4) = 6j + 4i - 2j = 4i + 4j m.",
+     "s": [
+      [
+       "v = v0 + a t = 4i + j m/s",
+       1
+      ],
+      [
+       "r = v0 t + (1/2) a t^2 = 4i + 4j m",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "q": "A ball is launched from the origin at 25 m/s at an angle of 53 degrees above the horizontal. Take the x-axis horizontal and the y-axis vertically upward, g = 10 m/s^2, sin 53 = 0.8 and cos 53 = 0.6, and neglect air resistance. Find its coordinates and its velocity (in unit-vector form) 1 s after launch.",
+     "a": "v0x = 25 x 0.6 = 15 m/s and v0y = 25 x 0.8 = 20 m/s. At t = 1 s: x = v0x t = 15 m; y = v0y t - (1/2) g t^2 = 20 - 5 = 15 m. vx = 15 m/s (unchanged) and vy = v0y - g t = 20 - 10 = 10 m/s, so v = 15i + 10j m/s.",
+     "s": [
+      [
+       "x = 15 m and y = 20 - 5 = 15 m",
+       1
+      ],
+      [
+       "v = 15i + 10j m/s",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "q": "A stone is thrown horizontally with a speed of 15 m/s from the edge of a cliff 80 m above the ground. Neglect air resistance and take g = 10 m/s^2. The time it takes to reach the ground is",
+     "a": "4 s",
+     "o": [
+      "4 s",
+      "8 s",
+      "16 s",
+      "5.3 s"
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hardest",
+     "t": "long_answer",
+     "m": 3,
+     "q": "A particle starts from the origin at t = 0 with a velocity of 4i m/s and moves in the x-y plane with a constant acceleration of 2i + 4j m/s^2 (i along the x-axis, j along the y-axis). (a) At what time is its x-coordinate 32 m? (b) What is its y-coordinate at that time? (c) What is its speed at that time?",
+     "a": "(a) x = v0x t + (1/2) ax t^2 = 4t + t^2. Setting 4t + t^2 = 32 gives t^2 + 4t - 32 = 0, (t - 4)(t + 8) = 0, so t = 4 s (the negative root is rejected). (b) y = (1/2) ay t^2 = (1/2)(4)(16) = 32 m. (c) v = v0 + a t = (4 + 8)i + 16j = 12i + 16j m/s, so the speed = sqrt(144 + 256) = 20 m/s.",
+     "s": [
+      [
+       "x = 4t + t^2 = 32 gives t = 4 s",
+       1
+      ],
+      [
+       "y = (1/2)(4)(4^2) = 32 m",
+       1
+      ],
+      [
+       "v = 12i + 16j m/s, speed 20 m/s",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "multi_statement",
+     "m": 1,
+     "q": "Consider these statements about a projectile launched at an angle above the horizontal, with air resistance neglected. (I) The horizontal distance it has covered is directly proportional to the time since launch. (II) The vertical component of its velocity decreases by the same amount in every second of the flight. Which is or are correct?",
+     "a": "Both I and II",
+     "o": [
+      "Both I and II",
+      "Only I",
+      "Only II",
+      "Neither I nor II"
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "q": "A particle leaves the origin with velocity 6i + 4j m/s and has a constant acceleration of -2j m/s^2 (i along the x-axis, j along the y-axis). Find the instant at which its y-coordinate is greatest, and its position and velocity at that instant.",
+     "a": "The y-coordinate is greatest when vy = 0: vy = 4 - 2t = 0, so t = 2 s. At that instant x = 6 x 2 = 12 m (no acceleration along x) and y = 4 x 2 - (1/2)(2)(4) = 8 - 4 = 4 m, so the position is 12i + 4j m. The velocity is 6i m/s, since vx stays 6 m/s and vy = 0.",
+     "s": [
+      [
+       "vy = 4 - 2t = 0 gives t = 2 s",
+       1
+      ],
+      [
+       "Position 12i + 4j m and velocity 6i m/s",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hardest",
+     "t": "long_answer",
+     "m": 3,
+     "q": "A projectile is launched from the origin with speed v0 at angle theta0 above the horizontal (x-axis horizontal, y-axis vertically upward, air resistance neglected). (a) Starting from the expressions for x and y at time t, obtain the equation of its path and identify the shape of the path, with a reason. (b) For v0 = 20 m/s, theta0 = 45 degrees and g = 10 m/s^2 (tan 45 = 1, cos^2 45 = 0.5), find the height of the projectile when it is at a horizontal distance of 10 m from the launch point.",
+     "a": "(a) x = (v0 cos theta0) t and y = (v0 sin theta0) t - (1/2) g t^2. From the first, t = x/(v0 cos theta0). Substituting, y = (tan theta0) x - g x^2/(2 (v0 cos theta0)^2). As g, v0 and theta0 are constants this has the form y = a x + b x^2, which is the equation of a parabola. (b) y = x - 10 x^2/(2 x 400 x 0.5) = x - x^2/40. At x = 10 m, y = 10 - 100/40 = 10 - 2.5 = 7.5 m.",
+     "s": [
+      [
+       "Writes x(t) and y(t) and eliminates t using t = x/(v0 cos theta0)",
+       1
+      ],
+      [
+       "Obtains y = (tan theta0) x - g x^2/(2 (v0 cos theta0)^2), of the form y = a x + b x^2, a parabola",
+       1
+      ],
+      [
+       "y = 7.5 m at x = 10 m, from the path equation y = x - x^2/40 or from t = x/(v0 cos theta0) and y(t)",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Evaluate",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "q": "A student says: 'A bullet fired horizontally from a rifle stays in the air longer than a bullet dropped from the same height at the same instant, because the fired bullet is moving so fast.' Neglecting air resistance and taking the ground to be level, evaluate this statement.",
+     "a": "The statement is wrong. The horizontal and vertical motions are independent of each other. Both bullets start with zero vertical velocity from the same height and have the same downward acceleration g, so their vertical motions are identical and they reach the ground at the same time. The speed of the fired bullet only decides how far it travels horizontally in that time.",
+     "s": [
+      [
+       "Judgement - both reach the ground at the same time",
+       1
+      ],
+      [
+       "Reason - vertical motion (zero initial vertical velocity, same height, same g) is independent of the horizontal motion",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Create",
+     "d": "Hardest",
+     "t": "long_answer",
+     "m": 3,
+     "q": "Make up a projectile launch of your own: choose a launch speed and an angle of 37 degrees or 53 degrees above the horizontal (sin 37 = cos 53 = 0.6, cos 37 = sin 53 = 0.8), with g = 10 m/s^2 and air resistance neglected. Take the launch point as origin, the x-axis horizontal and the y-axis vertically upward. Write x and y as functions of time for your launch, and find the position and the velocity of the projectile 2 s after launch.",
+     "a": "Sample: v0 = 50 m/s at 37 degrees. v0x = 50 x 0.8 = 40 m/s and v0y = 50 x 0.6 = 30 m/s. So x = 40t and y = 30t - 5t^2 (metres, t in seconds). At t = 2 s: x = 80 m and y = 60 - 20 = 40 m. The velocity is vx = 40 m/s and vy = 30 - 10 x 2 = 10 m/s, that is v = 40i + 10j m/s.",
+     "s": [
+      [
+       "Launch speed and angle chosen and resolved into v0x and v0y",
+       1
+      ],
+      [
+       "x = v0x t and y = v0y t - 5t^2 written for the chosen values",
+       1
+      ],
+      [
+       "Position and velocity at t = 2 s correctly computed from the chosen values",
+       1
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "code": "C11P-3.7",
+   "name": "Time of flight, maximum height and horizontal range of a projectile",
+   "description": "The time to reach the maximum height, the time of flight, the maximum height and the horizontal range of a projectile launched from level ground, and how the range depends on the angle of projection.",
+   "idea": "The vertical motion fixes how long the projectile stays in flight and how high it rises; the horizontal motion during that time fixes the range.",
+   "rule": "For a projectile launched with speed v0 at angle theta0 above the horizontal and returning to the launch level (air resistance neglected): time to reach the maximum height tm = v0 sin theta0/g (where vy = 0); time of flight Tf = 2 v0 sin theta0/g = 2 tm, from the symmetry of the parabolic path; maximum height hm = (v0 sin theta0)^2/(2g); horizontal range R = (v0 cos theta0) Tf = v0^2 sin 2theta0/g, the horizontal distance from the launch point to the point where the projectile passes y = 0 during its fall. For a given v0 the range is greatest when sin 2theta0 = 1, that is theta0 = 45 degrees, and the maximum range is Rm = v0^2/g. For elevations that exceed or fall short of 45 degrees by equal amounts the ranges are equal.",
+   "example": "A ball launched at 10 m/s at 30 degrees above the horizontal with g = 10 m/s^2 (sin 30 = 0.5, sin 60 = 0.866) has tm = 0.5 s, Tf = 1 s, hm = 1.25 m and R = 100 x 0.866/10 = 8.66 m.",
+   "difficulty_base": "Hard",
+   "questions": [
+    {
+     "b": "Remember",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "A projectile is launched from level ground with speed v0 at angle theta0 above the horizontal. Neglecting air resistance, its time of flight is",
+     "a": "2 v0 sin theta0/g",
+     "o": [
+      "2 v0 sin theta0/g",
+      "v0 sin theta0/g",
+      "v0^2 sin 2theta0/g",
+      "2 v0 cos theta0/g"
+     ]
+    },
+    {
+     "b": "Remember",
+     "d": "Easy",
+     "t": "fill_blank",
+     "m": 1,
+     "q": "For a given speed of projection and with air resistance neglected, the horizontal range of a projectile on level ground is greatest when the angle of projection above the horizontal is ____ degrees (write a whole number).",
+     "a": "45"
+    },
+    {
+     "b": "Remember",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "A projectile is launched with speed v0 at angle theta0 above the horizontal. Neglecting air resistance, the maximum height it reaches above the launch level is",
+     "a": "(v0 sin theta0)^2/(2g)",
+     "o": [
+      "(v0 sin theta0)^2/(2g)",
+      "(v0 sin theta0)^2/g",
+      "v0^2 sin 2theta0/g",
+      "v0 sin theta0/(2g)"
+     ]
+    },
+    {
+     "b": "Remember",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "q": "Which of the following statements about a projectile launched from level ground (air resistance neglected) is FALSE?",
+     "a": "The horizontal range is the horizontal distance covered in the time taken to reach the maximum height",
+     "o": [
+      "The horizontal range is the horizontal distance covered in the time taken to reach the maximum height",
+      "The vertical component of its velocity is zero at the maximum height",
+      "For a given launch speed, the range depends on the sine of twice the angle of projection",
+      "For a given angle of projection, the time of flight is proportional to the launch speed"
+     ],
+     "rev": true
+    },
+    {
+     "b": "Understand",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "The time of flight of a projectile launched from level ground is twice the time it takes to reach its maximum height. This is expected because",
+     "a": "the path is symmetrical about its highest point, so the descent takes as long as the ascent",
+     "o": [
+      "the path is symmetrical about its highest point, so the descent takes as long as the ascent",
+      "the projectile moves twice as fast while coming down",
+      "the horizontal velocity doubles after the highest point",
+      "gravity acts only during the descent"
+     ]
+    },
+    {
+     "b": "Understand",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "The horizontal range of a projectile launched from level ground is the horizontal distance travelled",
+     "a": "from the launch point to the point where it passes the launch level again during its fall",
+     "o": [
+      "from the launch point to the point where it passes the launch level again during its fall",
+      "from the launch point to the point directly below its highest position",
+      "during the first second of the flight",
+      "measured along the curved path from launch to landing"
+     ]
+    },
+    {
+     "b": "Understand",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "Galileo stated that for elevations which exceed or fall short of 45 degrees by equal amounts, the ranges are equal. For the same launch speed, which pair of angles of projection therefore gives equal ranges?",
+     "a": "40 degrees and 50 degrees",
+     "o": [
+      "40 degrees and 50 degrees",
+      "30 degrees and 45 degrees",
+      "20 degrees and 60 degrees",
+      "45 degrees and 90 degrees"
+     ]
+    },
+    {
+     "b": "Understand",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "q": "The launch speed of a projectile is doubled while the angle of projection is kept the same. Neglecting air resistance, its horizontal range on level ground becomes",
+     "a": "four times as large",
+     "o": [
+      "four times as large",
+      "twice as large",
+      "half as large",
+      "eight times as large"
+     ]
+    },
+    {
+     "b": "Understand",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "q": "On the Moon the acceleration due to gravity is about one-sixth of its value on the Earth. A ball is thrown with the same speed and at the same angle in both places (no air resistance). Compared with its time of flight on the Earth, its time of flight on the Moon is",
+     "a": "six times as long",
+     "o": [
+      "six times as long",
+      "one-sixth as long",
+      "the same",
+      "thirty-six times as long"
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "A ball is launched from level ground at 20 m/s at 30 degrees above the horizontal. Neglect air resistance; take g = 10 m/s^2, sin 30 = 0.5 and cos 30 = 0.866. Its time of flight is",
+     "a": "2 s",
+     "o": [
+      "2 s",
+      "1 s",
+      "4 s",
+      "3.46 s"
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Easy",
+     "t": "fill_blank",
+     "m": 1,
+     "q": "A stone is launched at 30 m/s at 53 degrees above the horizontal. Neglect air resistance; take g = 10 m/s^2 and sin 53 = 0.8. The maximum height it reaches above the launch level is ____ m (write a decimal).",
+     "a": "28.8"
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "q": "A football is kicked from level ground at 25 m/s at 37 degrees above the horizontal. Neglect air resistance; take g = 10 m/s^2, sin 37 = 0.6 and cos 37 = 0.8. Find its time of flight and its horizontal range.",
+     "a": "Tf = 2 v0 sin theta0/g = 2 x 25 x 0.6/10 = 3 s. R = (v0 cos theta0) Tf = 25 x 0.8 x 3 = 60 m.",
+     "s": [
+      [
+       "Tf = 2 v0 sin theta0/g = 3 s",
+       1
+      ],
+      [
+       "R = 60 m, from (v0 cos theta0) Tf or v0^2 sin 2theta0/g with sin 74 = 2 x 0.6 x 0.8",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "q": "A cricketer can throw a ball to a maximum horizontal distance of 80 m on level ground. Neglecting air resistance, how high above the point of release can the cricketer throw the same ball with the same speed, if it is thrown vertically upward?",
+     "a": "The maximum range is Rm = v0^2/g = 80 m, so v0^2 = 80 g. Thrown vertically upward (theta0 = 90 degrees, sin theta0 = 1), the height reached is h = v0^2/(2g) = 80 g/(2g) = 40 m.",
+     "s": [
+      [
+       "Maximum range v0^2/g = 80 m, so v0^2 = 80 g",
+       1
+      ],
+      [
+       "Height = v0^2/(2g) = 40 m",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "q": "A projectile is launched from level ground at 20 m/s at 15 degrees above the horizontal. Neglect air resistance; take g = 10 m/s^2, sin 15 = 0.26 and sin 30 = 0.5. Its horizontal range is",
+     "a": "20 m",
+     "o": [
+      "20 m",
+      "40 m",
+      "10.4 m",
+      "1 m"
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hardest",
+     "t": "long_answer",
+     "m": 3,
+     "q": "The ceiling of a long hall is 20 m above the point from which a ball is thrown with a speed of 40 m/s. Neglect air resistance and take g = 10 m/s^2, sin 30 = 0.5 and sin 60 = 0.866. Find the greatest horizontal distance the ball can cover, returning to the level of projection, without hitting the ceiling. Give the distance to 3 significant figures.",
+     "a": "The ball must not rise above 20 m: hm = (v0 sin theta0)^2/(2g) is at most 20, so sin^2 theta0 is at most 2 x 10 x 20/40^2 = 400/1600 = 0.25, sin theta0 at most 0.5, that is theta0 at most 30 degrees. For angles below 45 degrees the range v0^2 sin 2theta0/g increases with the angle, so the greatest allowed range is at theta0 = 30 degrees: R = 40^2 x sin 60/10 = 1600 x 0.866/10 = 138.56 m = 139 m.",
+     "s": [
+      [
+       "Maximum height condition (v0 sin theta0)^2/(2g) = 20 m gives sin theta0 = 0.5, theta0 = 30 degrees",
+       1
+      ],
+      [
+       "Argues that the range grows with angle below 45 degrees, so the largest allowed angle is used",
+       1
+      ],
+      [
+       "R = 1600 x 0.866/10 = 139 m",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "assertion_reason",
+     "m": 1,
+     "q": "Assertion (A): For a given speed of projection, a projectile launched at 60 degrees above the horizontal has a larger horizontal range on level ground than one launched at 45 degrees. Reason (R): For a given speed of projection, a projectile launched at 60 degrees above the horizontal rises to a greater maximum height than one launched at 45 degrees. Choose the correct option.",
+     "a": "A is false, R is true",
+     "o": [
+      "A is false, R is true",
+      "Both A and R are true, and R is the correct explanation of A",
+      "Both A and R are true, but R is not the correct explanation of A",
+      "A is true, R is false"
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "q": "Two balls are thrown from level ground with the same speed, one at 30 degrees and the other at 60 degrees above the horizontal. Neglect air resistance; take sin 30 = 0.5 and sin 60 = 0.866. Compare (i) their maximum heights and (ii) their times of flight.",
+     "a": "(i) hm is proportional to sin^2 theta0 for the same speed, so h(30) : h(60) = 0.25 : 0.75 = 1 : 3. (ii) Tf is proportional to sin theta0, so T(30) : T(60) = 0.5 : 0.866 = 1 : 1.73. The ball thrown at 60 degrees rises three times as high and stays in the air about 1.73 times as long.",
+     "s": [
+      [
+       "Maximum heights in the ratio sin^2 30 : sin^2 60 = 1 : 3",
+       1
+      ],
+      [
+       "Times of flight in the ratio sin 30 : sin 60 = 1 : 1.73",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hardest",
+     "t": "long_answer",
+     "m": 3,
+     "q": "Prove that, for a given speed of projection and with air resistance neglected, the horizontal ranges on level ground are equal for two angles of projection that exceed and fall short of 45 degrees by the same amount alpha.",
+     "a": "The range is R = v0^2 sin 2theta0/g. For theta0 = 45 + alpha, 2theta0 = 90 + 2alpha; for theta0 = 45 - alpha, 2theta0 = 90 - 2alpha. Now sin(90 + 2alpha) = cos 2alpha and sin(90 - 2alpha) = cos 2alpha, so both angles give the same value of sin 2theta0. With v0 and g the same, both ranges equal v0^2 cos 2alpha/g, so they are equal.",
+     "s": [
+      [
+       "States R = v0^2 sin 2theta0/g",
+       1
+      ],
+      [
+       "Writes 2theta0 as 90 + 2alpha and 90 - 2alpha for the two angles",
+       1
+      ],
+      [
+       "Shows both sines equal cos 2alpha, hence equal ranges",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Evaluate",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "q": "A student argues: 'To throw a ball as far as possible along level ground I should make it rise as high as possible, so I should throw it almost vertically.' Neglecting air resistance, evaluate this argument.",
+     "a": "The argument is wrong. The range is R = v0^2 sin 2theta0/g, which is greatest when sin 2theta0 = 1, that is at 45 degrees. A nearly vertical throw does give the greatest height, but sin 2theta0 is then close to sin 180 = 0, so the horizontal component of velocity is very small and the ball lands close to the thrower.",
+     "s": [
+      [
+       "Judgement - wrong; greatest range needs 45 degrees, where sin 2theta0 = 1",
+       1
+      ],
+      [
+       "Reason - near 90 degrees the height is large but sin 2theta0 (the horizontal velocity) is nearly zero, so the range is small",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Create",
+     "d": "Hardest",
+     "t": "long_answer",
+     "m": 3,
+     "q": "Design a launch (choose a speed and an angle of projection above the horizontal) for which a ball lands 40 m away on level ground. Take g = 10 m/s^2 and neglect air resistance; you may use sin 45 = 0.707 and sin 90 = 1. For your design, find the time of flight and the maximum height.",
+     "a": "Sample: choose theta0 = 45 degrees. R = v0^2 sin 90/g = v0^2/10 = 40, so v0^2 = 400 and v0 = 20 m/s. Time of flight Tf = 2 v0 sin theta0/g = 2 x 20 x 0.707/10 = 2.83 s. Maximum height hm = (v0 sin theta0)^2/(2g) = (14.14)^2/20 = 200/20 = 10 m. (Any other pair with v0^2 sin 2theta0 = 400 is equally acceptable.)",
+     "s": [
+      [
+       "A speed and an angle chosen that satisfy v0^2 sin 2theta0/g = 40 m",
+       1
+      ],
+      [
+       "Time of flight 2 v0 sin theta0/g correctly found for the chosen values",
+       1
+      ],
+      [
+       "Maximum height (v0 sin theta0)^2/(2g) correctly found for the chosen values",
+       1
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "code": "C11P-3.8",
+   "name": "Uniform circular motion and centripetal acceleration",
+   "description": "Motion in a circle at constant speed: the direction and magnitude of the centripetal acceleration, angular speed, time period and frequency, and the relations between them.",
+   "idea": "An object moving in a circle at constant speed is accelerated because the direction of its velocity keeps changing; the acceleration points to the centre and has magnitude v^2/R.",
+   "rule": "In uniform circular motion the speed is constant but the velocity, which is along the tangent, changes direction continuously, so the object is accelerated. The acceleration is directed towards the centre of the circle at every point (centripetal, meaning centre-seeking) and has magnitude ac = v^2/R. Its magnitude is constant but its direction keeps changing, so it is not a constant vector. Angular speed omega = (angle turned)/(time taken); v = R omega, so ac = omega^2 R. The time period T is the time for one revolution and the frequency nu = 1/T is the number of revolutions per second; v = 2 pi R/T = 2 pi R nu, omega = 2 pi nu and ac = 4 pi^2 nu^2 R.",
+   "example": "An object moving at 4 m/s in a circle of radius 2 m has ac = 16/2 = 8 m/s^2 towards the centre and omega = 4/2 = 2 rad/s.",
+   "difficulty_base": "Hard",
+   "questions": [
+    {
+     "b": "Remember",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "An object moves with constant speed v in a circle of radius R. The magnitude of its acceleration is",
+     "a": "v^2/R",
+     "o": [
+      "v^2/R",
+      "v/R",
+      "v R",
+      "v^2 R"
+     ]
+    },
+    {
+     "b": "Remember",
+     "d": "Easy",
+     "t": "fill_blank",
+     "m": 1,
+     "q": "For an object in uniform circular motion, the number of revolutions made in one second is called its ____ (write one word).",
+     "a": "frequency"
+    },
+    {
+     "b": "Remember",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "For an object moving in a circle of radius R with angular speed omega, the linear speed v is",
+     "a": "R omega",
+     "o": [
+      "R omega",
+      "omega/R",
+      "R omega^2",
+      "R/omega"
+     ]
+    },
+    {
+     "b": "Remember",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "q": "Which of the following statements about an object in uniform circular motion is NOT correct?",
+     "a": "Its time period is directly proportional to its frequency",
+     "o": [
+      "Its time period is directly proportional to its frequency",
+      "Its acceleration is directed towards the centre of the circle at every point of the path",
+      "Its angular speed is the same at every instant",
+      "Its linear speed equals the product of the radius and its angular speed"
+     ],
+     "rev": true
+    },
+    {
+     "b": "Understand",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "In the term 'uniform circular motion', the word 'uniform' refers to",
+     "a": "the speed of the object, which stays constant",
+     "o": [
+      "the speed of the object, which stays constant",
+      "the velocity of the object, which stays constant",
+      "the acceleration of the object, which is zero",
+      "the radius of the circle, which is one unit"
+     ]
+    },
+    {
+     "b": "Understand",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "An object moves in a circle at constant speed. It has an acceleration because",
+     "a": "the direction of its velocity changes continuously",
+     "o": [
+      "the direction of its velocity changes continuously",
+      "its speed increases steadily",
+      "its distance from the centre keeps changing",
+      "its angular speed keeps changing"
+     ]
+    },
+    {
+     "b": "Understand",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "The acceleration of an object in uniform circular motion is called 'centripetal'. The word means",
+     "a": "centre-seeking",
+     "o": [
+      "centre-seeking",
+      "centre-fleeing",
+      "along the tangent",
+      "of constant size"
+     ]
+    },
+    {
+     "b": "Understand",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "q": "An object moves in a circle of fixed radius. If its angular speed is doubled, the magnitude of its centripetal acceleration becomes",
+     "a": "four times as large",
+     "o": [
+      "four times as large",
+      "twice as large",
+      "half as large",
+      "one-quarter as large"
+     ]
+    },
+    {
+     "b": "Understand",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "q": "In deriving ac = v^2/R, the triangle formed by the position vectors r and r' is similar to the triangle formed by the velocity vectors v and v'. The two triangles are similar because",
+     "a": "each velocity is perpendicular to its position vector, so the angle between v and v' equals the angle between r and r', and each triangle has two equal sides",
+     "o": [
+      "each velocity is perpendicular to its position vector, so the angle between v and v' equals the angle between r and r', and each triangle has two equal sides",
+      "the velocity vectors are parallel to the position vectors",
+      "the two triangles always have equal areas",
+      "the change in velocity is parallel to the change in position"
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "A car moves at a constant speed of 10 m/s round a circular track of radius 20 m. The magnitude of its centripetal acceleration is",
+     "a": "5 m/s^2",
+     "o": [
+      "5 m/s^2",
+      "0.5 m/s^2",
+      "200 m/s^2",
+      "2 m/s^2"
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Easy",
+     "t": "fill_blank",
+     "m": 1,
+     "q": "A particle in uniform circular motion makes 5 revolutions every second. Its time period is ____ s (write a decimal).",
+     "a": "0.2"
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "q": "A stone tied to the end of a string 0.5 m long is whirled in a horizontal circle at constant speed and makes 7 revolutions in 11 s. Take pi = 22/7. Find its angular speed, and the magnitude and direction of its acceleration.",
+     "a": "Time period T = 11/7 s. Angular speed omega = 2 pi/T = 2 x (22/7) x (7/11) = 4 rad/s. Acceleration ac = omega^2 R = 16 x 0.5 = 8 m/s^2, directed along the string towards the centre of the circle.",
+     "s": [
+      [
+       "omega = 2 pi/T = 4 rad/s",
+       1
+      ],
+      [
+       "ac = 8 m/s^2 (omega^2 R, or v^2/R with v = R omega = 2 m/s), directed along the string towards the centre",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "q": "An aircraft executes a horizontal loop of radius 2 km at a steady speed of 720 km/h. Find its centripetal acceleration and compare it with the acceleration due to gravity, taking g = 10 m/s^2.",
+     "a": "v = 720 km/h = 720 x 1000/3600 = 200 m/s and R = 2000 m. ac = v^2/R = 40000/2000 = 20 m/s^2. So ac/g = 20/10 = 2: the centripetal acceleration is twice the acceleration due to gravity.",
+     "s": [
+      [
+       "Converts the speed to 200 m/s and the radius to 2000 m",
+       1
+      ],
+      [
+       "ac = v^2/R = 20 m/s^2 = 2g",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "q": "A wheel of radius 0.3 m rotates with a constant angular speed of 20 rad/s. The linear speed of a point on its rim is",
+     "a": "6 m/s",
+     "o": [
+      "6 m/s",
+      "66.7 m/s",
+      "120 m/s",
+      "0.015 m/s"
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hardest",
+     "t": "long_answer",
+     "m": 3,
+     "q": "A cyclist rides at constant speed round a circular track of radius 100 m and completes one lap in 62.8 s. Take pi = 3.14. Find (a) the speed, (b) the angular speed, and (c) the magnitude and direction of the acceleration of the cyclist.",
+     "a": "(a) v = 2 pi R/T = 2 x 3.14 x 100/62.8 = 628/62.8 = 10 m/s. (b) omega = 2 pi/T = 6.28/62.8 = 0.1 rad/s (also v/R = 10/100). (c) ac = v^2/R = 100/100 = 1 m/s^2, directed towards the centre of the track.",
+     "s": [
+      [
+       "v = 2 pi R/T = 10 m/s",
+       1
+      ],
+      [
+       "omega = 2 pi/T = 0.1 rad/s",
+       1
+      ],
+      [
+       "ac = 1 m/s^2 (v^2/R or omega^2 R), directed towards the centre of the track",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "multi_statement",
+     "m": 1,
+     "q": "Consider these statements about uniform circular motion. (I) For the same angular speed, an object on a circle of larger radius has a smaller linear speed. (II) If the radius of the circle is doubled while the speed is kept the same, the centripetal acceleration is doubled. Which is or are correct?",
+     "a": "Neither I nor II",
+     "o": [
+      "Neither I nor II",
+      "Only I",
+      "Only II",
+      "Both I and II"
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "q": "It is said that the acceleration vector of a particle in uniform circular motion, averaged over one complete revolution, is a null vector. Analyse whether this is true, and say whether it means the particle has no acceleration at any instant.",
+     "a": "It is true. Average acceleration = (change in velocity)/(time interval). After one complete revolution the particle is back at the same point with the same velocity vector, so the change in velocity is zero and the average acceleration over the revolution is a null vector. This does not mean there is no acceleration: at every instant the acceleration has magnitude v^2/R towards the centre; its direction turns through a full circle, so the average over a revolution is zero.",
+     "s": [
+      [
+       "Velocity vector is the same after one revolution, so change in velocity and hence average acceleration is a null vector",
+       1
+      ],
+      [
+       "Instantaneous acceleration is never zero: v^2/R towards the centre at every instant",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hardest",
+     "t": "long_answer",
+     "m": 3,
+     "q": "A particle moves anticlockwise at a constant speed of 3.14 m/s round a circle of radius 1 m centred on the origin of an x-y plane. At one instant its velocity is 3.14j m/s; a quarter of a revolution later its velocity is -3.14i m/s. Take pi = 3.14 and sqrt(2) = 1.414. Find (a) the time for the quarter revolution, (b) the magnitude of the change in velocity, and (c) the magnitude of the average acceleration over this time, and compare it with the magnitude of the instantaneous acceleration. Give numerical answers to 3 significant figures.",
+     "a": "(a) Quarter of the circumference = 2 x 3.14 x 1/4 = 1.57 m, so the time = 1.57/3.14 = 0.5 s. (b) Change in velocity = -3.14i - 3.14j m/s, of magnitude 3.14 x sqrt(2) = 3.14 x 1.414 = 4.44 m/s. (c) Average acceleration = 4.44/0.5 = 8.88 m/s^2. The instantaneous acceleration has magnitude v^2/R = (3.14)^2/1 = 9.86 m/s^2, so the average over a quarter revolution is smaller in magnitude than the instantaneous value.",
+     "s": [
+      [
+       "Time for the quarter revolution = 0.5 s (quarter circumference/speed, or one quarter of T = 2 pi R/v)",
+       1
+      ],
+      [
+       "Change in velocity = -3.14i - 3.14j m/s, magnitude 4.44 m/s",
+       1
+      ],
+      [
+       "Average acceleration 8.88 m/s^2, less than v^2/R = 9.86 m/s^2",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Evaluate",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "q": "A particle moves round a circle at a constant speed of 5 m/s with a centripetal acceleration of 10 m/s^2. A student uses v = v0 + a t to claim that after 2 s its speed will be 5 + 10 x 2 = 25 m/s. Evaluate this claim.",
+     "a": "The claim is wrong. The equation v = v0 + a t was obtained for an acceleration that is constant, and as a vector equation it cannot be used by simply adding magnitudes. In uniform circular motion the acceleration has constant magnitude but its direction keeps changing (always towards the centre), so it is not a constant vector. It changes only the direction of the velocity: the speed stays 5 m/s.",
+     "s": [
+      [
+       "Judgement - wrong; the speed remains 5 m/s",
+       1
+      ],
+      [
+       "Reason - centripetal acceleration is not a constant vector (direction changes), so the constant-acceleration equation does not apply; it only turns the velocity",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Create",
+     "d": "Hardest",
+     "t": "long_answer",
+     "m": 3,
+     "q": "Design a uniform circular motion whose centripetal acceleration is 10 m/s^2: choose a radius and a speed of your own. For your design find the angular speed and the time period. Take pi = 3.14.",
+     "a": "Sample: choose R = 10 m. Then v^2 = ac R = 10 x 10 = 100, so v = 10 m/s. Angular speed omega = v/R = 10/10 = 1 rad/s. Time period T = 2 pi/omega = 2 x 3.14/1 = 6.28 s. (Any radius and speed with v^2/R = 10 m/s^2 are acceptable, for example R = 2.5 m and v = 5 m/s.)",
+     "s": [
+      [
+       "Radius and speed chosen with v^2/R = 10 m/s^2",
+       1
+      ],
+      [
+       "omega = v/R correctly found for the chosen values",
+       1
+      ],
+      [
+       "T = 2 pi/omega (or 2 pi R/v) correctly found for the chosen values",
+       1
+      ]
+     ]
+    }
+   ]
+  }
+ ]
+}
