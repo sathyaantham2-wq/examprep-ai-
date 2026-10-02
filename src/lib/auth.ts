@@ -21,20 +21,19 @@ export const auth = betterAuth({
       generateId: 'uuid',
     },
   },
-  // Student and parent sign-up are both open (owner decision 2026-09-22, reopening parent
-  // sign-up -- it had been closed since 2026-09-20 while only the student path was ready).
-  // Teacher accounts still come later. Enforced here, not just by hiding the choice on the form,
+  // Only student sign-up is open (owner decision 2026-10-02: no new parent accounts -- a student
+  // shares her own chapter mastery instead). Parent accounts that already exist keep working;
+  // this only gates new HTTP sign-ups. Enforced here, not just by hiding the choice on the form,
   // for requests that arrive over HTTP. Server-side calls (tests, scripts) carry no request and
-  // are not affected. databaseHooks below already maps any signup_type other than
-  // 'student'/'teacher' to role 'parent', so 'parent' just needed to clear this gate.
+  // are not affected. Teacher accounts still come later.
   hooks: {
     before: createAuthMiddleware(async (ctx) => {
       if (ctx.path !== '/sign-up/email' || !ctx.request) return
       const type = (ctx.body as { signup_type?: string } | undefined)
         ?.signup_type
-      if (type !== 'student' && type !== 'parent') {
+      if (type !== 'student') {
         throw new APIError('FORBIDDEN', {
-          message: 'Only student and parent sign-up are open right now.',
+          message: 'Only student sign-up is open right now.',
         })
       }
     }),

@@ -14,7 +14,7 @@ F131, a Trusted Web Activity; see `android/README.md`.
 
 A web app that generates syllabus-exact question papers for one school student, evaluates her
 attempt question by question, and diagnoses whether each lost mark was a **knowledge gap** or a
-**delivery habit**. The parent is the primary user; the student is secondary.
+**delivery habit**. The parent is the primary user; the student is secondary. **Update 2026-10-02 (user decision):** new sign-ups are students only -- no new parent accounts, and a student shares her own chapter mastery (text via the share sheet / WhatsApp, no stored link) with a parent. Existing parent accounts keep working unchanged and nothing is deleted. The student sign-up tick ("my parent or guardian agrees") is the consent record. Parent confirmation of marks on normal papers is *not required* going forward; extending the adaptive student-accept flow to normal papers is a separate, not-yet-built step, so until then the existing parent-confirm path stays for existing households. No F-number covers this yet.
 
 The one-line test for any feature: *does it help answer "which marks did she lose because she
 didn't know it, and which because she stopped writing too early?"* If not, it is out of scope.
