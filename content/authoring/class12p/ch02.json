@@ -1,0 +1,3062 @@
+{
+ "subject": {
+  "code": "PHY12",
+  "name": "Physics",
+  "board": "CBSE",
+  "class": 12
+ },
+ "source": {
+  "publisher": "NCERT",
+  "title": "Physics Part I",
+  "edition": "Textbook for Class XII Part I, Reprint 2026-27",
+  "year": 2026
+ },
+ "chapter": {
+  "part": "I",
+  "chapter_no": 2,
+  "name": "Electrostatic Potential and Capacitance",
+  "blurb": "Because the electrostatic force is conservative, every point in a field can be given a potential, and the chapter builds this idea up from a point charge to a dipole and a system of charges, linking it to the field through equipotential surfaces and to the energy of charges and dipoles. It then turns to conductors and dielectrics in electrostatic fields and to capacitors: the parallel plate capacitor with and without a dielectric, series and parallel combinations, and the energy a capacitor stores in its electric field.",
+  "source_code": "leph102",
+  "order_index": 2
+ },
+ "scope_in": [
+  {
+   "item": "State that the Coulomb force is conservative; define potential energy difference as the work done by an external force (equal and opposite to the electric force) in moving a charge without acceleration, W_RP = U_P - U_R; explain why only differences matter and why the zero is chosen at infinity",
+   "pages": "45-47"
+  },
+  {
+   "item": "Define electrostatic potential as work done per unit positive charge in bringing a charge from infinity; use W = q(V_P - V_R); unit volt",
+   "pages": "47-48"
+  },
+  {
+   "item": "Use V = Q/(4 pi epsilon0 r) for a point charge, including the sign of V for Q < 0 and the 1/r variation of V against the 1/r^2 variation of E (Example 2.1)",
+   "pages": "48-49"
+  },
+  {
+   "item": "Use the dipole potential V = p cos(theta)/(4 pi epsilon0 r^2) for r >> a: +p/(4 pi epsilon0 r^2) or -p/(4 pi epsilon0 r^2) on the axis, zero in the equatorial plane; contrast it with the potential of a single charge (angle dependence, 1/r^2 fall-off)",
+   "pages": "49-51"
+  },
+  {
+   "item": "Find the potential of a system of point charges by algebraic superposition, including points of zero potential on the line joining two charges (Example 2.2, Exercises 2.1-2.2); potential outside and inside a uniformly charged spherical shell",
+   "pages": "51-53, 79"
+  },
+  {
+   "item": "Decide signs of potential difference, potential energy difference and work for charges moved near a positive or negative point charge (Example 2.3)",
+   "pages": "53"
+  },
+  {
+   "item": "Describe equipotential surfaces (concentric spheres for a point charge, planes normal to a uniform field, the equatorial plane of a dipole) and explain why the field is normal to them and no work is done on them (Exercise 2.3)",
+   "pages": "54, 79"
+  },
+  {
+   "item": "Relate field and potential: the field points in the direction of steepest decrease of potential and |E| = |delta V|/delta l normal to the equipotential surface; apply to uniform fields",
+   "pages": "55"
+  },
+  {
+   "item": "Calculate the potential energy of two and of three or more point charges as a sum over pairs, U = q1 q2/(4 pi epsilon0 r12) + ..., with signs, and the work to assemble or separate a configuration; independence of the order of assembly (Example 2.4)",
+   "pages": "55-58"
+  },
+  {
+   "item": "Use U = qV(r) for a charge in an external field; the electron volt and its multiples; U = q1 V(r1) + q2 V(r2) + q1 q2/(4 pi epsilon0 r12) for two charges in an external field (Example 2.5)",
+   "pages": "58-60"
+  },
+  {
+   "item": "Potential energy of a dipole in a uniform field: work by an external torque pE(cos theta0 - cos theta1), U = -pE cos(theta) = -p.E with zero at 90 degrees, and its origin from the two-charge expression (Example 2.6)",
+   "pages": "60-61"
+  },
+  {
+   "item": "State and justify the electrostatic properties of conductors: zero field inside, field normal to the surface, no excess charge in the interior, constant potential, E = sigma/epsilon0 at the surface (pill-box derivation), and electrostatic shielding of a charge-free cavity; everyday cases of Example 2.7 (Exercise 2.4)",
+   "pages": "61-65, 79"
+  },
+  {
+   "item": "Describe dielectrics: polar and non-polar molecules, induced and orientational polarisation, polarisation P = epsilon0 chi_e E for linear isotropic dielectrics, bound surface charges and the reduction (not cancellation) of the field inside",
+   "pages": "65-67"
+  },
+  {
+   "item": "Define a capacitor and capacitance C = Q/V, the farad and its sub-multiples; explain why C depends only on geometry (and the dielectric), and the role of dielectric strength (about 3 x 10^6 V/m for air) in limiting the charge stored",
+   "pages": "67-68"
+  },
+  {
+   "item": "Derive and use C = epsilon0 A/d for a parallel plate capacitor: field sigma/epsilon0 between the plates and zero outside, fringing, V = Ed, the size of 1 F (Exercise 2.8)",
+   "pages": "68-69, 79"
+  },
+  {
+   "item": "Explain and use the effect of a dielectric filling a capacitor: E = (sigma - sigma_p)/epsilon0 = sigma/(epsilon0 K), C = K epsilon0 A/d = K C0, permittivity epsilon = epsilon0 K, dielectric constant K > 1; a slab filling part of the gap by the method of Example 2.8; supply connected versus disconnected (Exercises 2.5, 2.9)",
+   "pages": "69-71, 79-80"
+  },
+  {
+   "item": "Find effective capacitance, charges and potential differences for capacitors in series (1/C = 1/C1 + 1/C2 + ...) and in parallel (C = C1 + C2 + ...), and for simple networks (Example 2.9, Exercises 2.6-2.7)",
+   "pages": "71-73, 79"
+  },
+  {
+   "item": "Calculate the energy stored in a capacitor, U = (1/2)QV = (1/2)CV^2 = Q^2/(2C), the energy density (1/2) epsilon0 E^2, and the energy lost when a charged capacitor shares charge with an uncharged one (Example 2.10, Exercises 2.10-2.11)",
+   "pages": "73-76, 80"
+  }
+ ],
+ "scope_out": [
+  {
+   "item": "Van de Graaff generator",
+   "reason": "Not in this edition: the chapter ends with Section 2.15 Energy Stored in a Capacitor (p. 76) and has no such section, figure or exercise"
+  },
+  {
+   "item": "Electric displacement vector D and Gauss's law in dielectrics",
+   "reason": "Not in this edition: Section 2.10 stops at bound surface charge densities (p. 67) and never introduces D"
+  },
+  {
+   "item": "Spherical and cylindrical capacitors, capacitance of an isolated sphere, and the long 'Additional Exercises' set",
+   "reason": "Not in this edition: only the parallel plate capacitor is treated and the exercises end at 2.11 (p. 80); a single conductor as a capacitor is a one-line remark on p. 67"
+  },
+  {
+   "item": "E = -dV/dr as a derivative or gradient, and obtaining field components by differentiating a given potential function",
+   "reason": "Section 2.6.1 (p. 55) gives only |E| = |delta V|/delta l between two close equipotential surfaces and the direction of steepest decrease"
+  },
+  {
+   "item": "Potential of continuous charge distributions by integration (ring, disc, line, solid sphere), and the potential inside a uniformly charged solid sphere",
+   "reason": "p. 52 only mentions that one integrates over volume elements; the only worked continuous case is the spherical shell result of Eq. 2.19"
+  },
+  {
+   "item": "Proof that the work done by an electrostatic field is path-independent, and proofs of the cavity (shielding) results",
+   "reason": "The book states these and explicitly omits the proofs (pp. 46, 64)"
+  },
+  {
+   "item": "Derivation of the dipole potential by the binomial expansion as an examinable derivation, and the exact potential of a finite dipole at near points",
+   "reason": "Questions use only the far-field result Eq. 2.15-2.16 (pp. 50-51); the expansion steps are not asked"
+  },
+  {
+   "item": "Relation of electric susceptibility to molecular properties, tables of dielectric constants and dielectric strengths of materials other than air, energy of a capacitor with a dielectric, force between capacitor plates, a conducting slab between the plates",
+   "reason": "Not taught: p. 66 says the molecular relation 'we shall not pursue here', and no such table, energy expression or slab case appears in the chapter"
+  },
+  {
+   "item": "Capacitors in ac circuits, charging and discharging through a resistor (RC circuits), and electrolytic conductors and chemical forces",
+   "reason": "Deferred by the book to Chapter 7 (p. 68) and Chapter 3 (p. 62)"
+  },
+  {
+   "item": "Biography of Count Alessandro Volta, the Points to Ponder (including shielding not working from inside to outside and the oscillation of a dipole about the field), dimensions table and web links",
+   "reason": "Boxed historical note and end-of-chapter remarks; not relied on by the Summary's numbered results or by any exercise"
+  }
+ ],
+ "concepts": [
+  {
+   "code": "C12P-2.1",
+   "name": "Electrostatic potential energy, potential and the potential of a point charge",
+   "description": "Electrostatic force is conservative, so a charge in a field has potential energy; potential is the work done per unit positive charge by an external force in bringing a charge from infinity, and for a point charge Q it equals Q/(4 pi epsilon0 r).",
+   "idea": "Because the work done by the electrostatic field depends only on the end points, each point in a field can be given a potential: the work an external force does per unit positive charge in bringing a charge there from infinity without acceleration.",
+   "rule": "Work done by an external force in moving charge q from R to P without acceleration = U_P - U_R = q(V_P - V_R). Only differences are physically significant; with the zero chosen at infinity, a point charge Q gives V(r) = Q/(4 pi epsilon0 r), positive for Q > 0 and negative for Q < 0.",
+   "example": "A charge of 4 x 10^-7 C gives a potential of 9 x 10^9 x 4 x 10^-7 / 0.09 = 4 x 10^4 V at a point 9 cm away; bringing 2 x 10^-9 C from infinity to that point needs W = qV = 8 x 10^-5 J, whatever the path.",
+   "difficulty_base": "Easy",
+   "questions": [
+    {
+     "b": "Remember",
+     "d": "Easy",
+     "t": "fill_blank",
+     "m": 1,
+     "q": "The work done by an external force in bringing a unit positive charge, without acceleration, from infinity to a point in an electrostatic field is called the electrostatic ____ at that point. (one word)",
+     "a": "potential"
+    },
+    {
+     "b": "Remember",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "The Coulomb force between two stationary charges, like the spring force and the gravitational force, is an example of a",
+     "a": "conservative force",
+     "o": [
+      "conservative force",
+      "frictional force",
+      "dissipative force",
+      "force whose work depends on the path taken"
+     ]
+    },
+    {
+     "b": "Remember",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "The SI unit of electrostatic potential is the",
+     "a": "volt",
+     "o": [
+      "volt",
+      "farad",
+      "coulomb",
+      "joule"
+     ]
+    },
+    {
+     "b": "Remember",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "q": "Which of the following statements about electrostatic potential energy is NOT correct?",
+     "a": "Its actual value at a single point is what is physically significant, rather than its difference between two points",
+     "o": [
+      "Its actual value at a single point is what is physically significant, rather than its difference between two points",
+      "It is undetermined to within an additive constant",
+      "A convenient choice is to take it as zero at infinity",
+      "It can be defined only because the work done by the electrostatic field does not depend on the path"
+     ],
+     "rev": true
+    },
+    {
+     "b": "Understand",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "In defining the potential energy difference of a test charge between two points R and P, the external force is taken to be just equal and opposite to the electric force. Why?",
+     "a": "So that the charge moves without acceleration and all the work done is stored as potential energy",
+     "o": [
+      "So that the charge moves without acceleration and all the work done is stored as potential energy",
+      "So that the electric force does no work on the charge",
+      "So that the work done depends on the path chosen",
+      "So that the test charge gains the maximum possible kinetic energy"
+     ]
+    },
+    {
+     "b": "Understand",
+     "d": "Easy",
+     "t": "fill_blank",
+     "m": 1,
+     "q": "For a point charge, the potential at a distance r (with the zero of potential at infinity) varies as 1/r^n. The value of n is ____. (a whole number)",
+     "a": "1"
+    },
+    {
+     "b": "Understand",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "A point charge Q is negative. With the potential taken as zero at infinity, the potential at any finite distance from it is",
+     "a": "negative",
+     "o": [
+      "negative",
+      "positive",
+      "zero",
+      "positive close to the charge and negative far from it"
+     ]
+    },
+    {
+     "b": "Understand",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "q": "For a negative point charge Q, the work done by the electrostatic force in bringing a unit positive test charge from infinity to a point P is positive. This is because",
+     "a": "the force on the test charge is attractive, so the force and the displacement towards Q are in the same direction",
+     "o": [
+      "the force on the test charge is attractive, so the force and the displacement towards Q are in the same direction",
+      "the force on the test charge is repulsive, so the force and the displacement are in opposite directions",
+      "the work done by an electrostatic force is positive for every displacement",
+      "the potential at infinity is taken to be negative for a negative charge"
+     ]
+    },
+    {
+     "b": "Understand",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "q": "Explain why the concept of electrostatic potential energy would not be meaningful if the work done by an electrostatic field in moving a charge depended on the path taken.",
+     "a": "Potential energy difference between two points is defined as the work done by the external force (equal and opposite to the electric force) in moving the charge from one point to the other. For this to give one definite value for a given pair of points, the work must depend only on the initial and final positions. If it depended on the path, different paths would give different values and no single potential energy could be assigned to a point. Because the electrostatic force is conservative, the work is path-independent and the definition is meaningful.",
+     "s": [
+      [
+       "Potential energy difference is defined through the work done between two points",
+       1
+      ],
+      [
+       "A unique value needs path-independent work, i.e. a conservative force",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "A point charge of 2 x 10^-8 C is placed in air. Take 1/(4 pi epsilon0) = 9 x 10^9 N m^2/C^2. The potential at a point 6 cm from the charge is",
+     "a": "3000 V",
+     "o": [
+      "3000 V",
+      "30 V",
+      "50000 V",
+      "10.8 V"
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "The potential at a point P is 500 V, with the zero of potential at infinity. The work done by an external force in bringing a charge of 4 x 10^-6 C from infinity to P without acceleration is",
+     "a": "2 x 10^-3 J",
+     "o": [
+      "2 x 10^-3 J",
+      "1.25 x 10^8 J",
+      "8 x 10^-9 J",
+      "-2 x 10^-3 J"
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "q": "The potential is 300 V at a point R and 500 V at a point P. The work done by an external force in moving a charge of -2 x 10^-6 C from R to P without acceleration is",
+     "a": "-4 x 10^-4 J",
+     "o": [
+      "-4 x 10^-4 J",
+      "4 x 10^-4 J",
+      "-1.6 x 10^-3 J",
+      "-1 x 10^-3 J"
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "q": "A point charge produces a potential of 600 V at a point 0.30 m away from it (zero of potential at infinity). Take 1/(4 pi epsilon0) = 9 x 10^9 N m^2/C^2. Find the charge.",
+     "a": "V = Q/(4 pi epsilon0 r), so Q = V r / (9 x 10^9) = 600 V x 0.30 m / (9 x 10^9 N m^2/C^2) = 180 / (9 x 10^9) C = 2 x 10^-8 C. The charge is positive because the potential is positive.",
+     "s": [
+      [
+       "Formula V = Q/(4 pi epsilon0 r) rearranged for Q with substitution",
+       1
+      ],
+      [
+       "Q = 2 x 10^-8 C (positive)",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "q": "The potential at a distance of 20 cm from a point charge is 900 V (zero at infinity). Find (a) the potential at 60 cm from the same charge, and (b) the work done by an external force in moving a charge of 2 x 10^-9 C, without acceleration, from the 60 cm point to the 20 cm point.",
+     "a": "(a) For a point charge V is proportional to 1/r, so V at 60 cm = 900 V x (20/60) = 300 V. (b) W = q(V_final - V_initial) = 2 x 10^-9 C x (900 V - 300 V) = 1.2 x 10^-6 J.",
+     "s": [
+      [
+       "V at 60 cm = 300 V using V proportional to 1/r",
+       1
+      ],
+      [
+       "W = q x 600 V = 1.2 x 10^-6 J",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hardest",
+     "t": "long_answer",
+     "m": 3,
+     "q": "A point charge Q = +5 x 10^-8 C is fixed at the origin. Take 1/(4 pi epsilon0) = 9 x 10^9 N m^2/C^2. (a) Find the potentials at A, 0.15 m from Q, and at B, 0.45 m from Q. (b) Find the work done by an external force in moving a charge q = +3 x 10^-9 C from B to A without acceleration. (c) State, with a reason, the work done by the electric field during the same displacement.",
+     "a": "(a) V = Q/(4 pi epsilon0 r). V_A = 9 x 10^9 x 5 x 10^-8 / 0.15 = 3000 V; V_B = 9 x 10^9 x 5 x 10^-8 / 0.45 = 1000 V. (b) W_ext = q(V_A - V_B) = 3 x 10^-9 C x 2000 V = 6 x 10^-6 J. (c) The external force is equal and opposite to the electric force at every point, so the work done by the field is the negative of this: -6 x 10^-6 J (the displacement is against the repulsive force).",
+     "s": [
+      [
+       "V_A = 3000 V and V_B = 1000 V",
+       1
+      ],
+      [
+       "W_ext = q(V_A - V_B) = 6 x 10^-6 J",
+       1
+      ],
+      [
+       "Work by field = -6 x 10^-6 J, with the reason",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "assertion_reason",
+     "m": 1,
+     "q": "Assertion (A): The work done by an electrostatic field in moving a charge from one point to another is independent of the path taken between them. Reason (R): The electrostatic force is a conservative force. Choose the correct option.",
+     "a": "Both A and R are true, and R is the correct explanation of A",
+     "o": [
+      "Both A and R are true, and R is the correct explanation of A",
+      "Both A and R are true, but R is not the correct explanation of A",
+      "A is true, R is false",
+      "A is false, R is true"
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "q": "One student takes the potential to be zero at infinity. A second student adds 50 V to the first student's value of the potential at every point. Analyse whether the two will disagree about (a) the potential at a given point, and (b) the work needed to move a given charge between two given points.",
+     "a": "(a) They disagree about the potential at a point: the second student's value is 50 V higher everywhere. (b) They agree about the work, because work depends only on the potential difference, and (V_P + 50) - (V_R + 50) = V_P - V_R. Potential is undetermined to within an additive constant; only potential difference is physically significant.",
+     "s": [
+      [
+       "Values of potential at a point differ by the constant 50 V",
+       1
+      ],
+      [
+       "Work is the same because the constant cancels in the difference",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hardest",
+     "t": "long_answer",
+     "m": 3,
+     "q": "At a certain point the potential due to an isolated point charge is 1800 V (zero at infinity) and the magnitude of its electric field is 6000 N/C. Take 1/(4 pi epsilon0) = 9 x 10^9 N m^2/C^2. Find the distance of the point from the charge and the magnitude of the charge.",
+     "a": "For a point charge V = Q/(4 pi epsilon0 r) and E = Q/(4 pi epsilon0 r^2), so V/E = r. Hence r = 1800 V / 6000 N/C = 0.30 m. Then Q = V r / (9 x 10^9) = 1800 x 0.30 / (9 x 10^9) = 6 x 10^-8 C. Check: E = 9 x 10^9 x 6 x 10^-8 / (0.30)^2 = 6000 N/C.",
+     "s": [
+      [
+       "Uses V/E = r for a point charge",
+       1
+      ],
+      [
+       "r = 0.30 m",
+       1
+      ],
+      [
+       "Q = 6 x 10^-8 C",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Evaluate",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "q": "A student claims that more work is needed to bring a small charge from infinity to a point P near a fixed point charge along a long curved path than along the straight radial path. Evaluate this claim using the textbook's argument.",
+     "a": "The claim is wrong: the work is the same for every path. Any small piece of an arbitrary path can be resolved into a displacement along the radial direction r and one perpendicular to r. The electric force is radial, so the work for the perpendicular displacement is zero; only the radial part contributes, and it adds up to the same total for any path between the same end points.",
+     "s": [
+      [
+       "States that the work is path-independent, so the claim is wrong",
+       1
+      ],
+      [
+       "Reason: perpendicular displacements need no work, only the radial part counts",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Create",
+     "d": "Hardest",
+     "t": "long_answer",
+     "m": 3,
+     "q": "Make up your own numerical example with a negative point charge to show that (a) the potential near it is negative, and (b) an external force does negative work in bringing a positive test charge from infinity to a point near it. Choose the values yourself, take 1/(4 pi epsilon0) = 9 x 10^9 N m^2/C^2, and interpret the sign of the work.",
+     "a": "One possible example: Q = -2 x 10^-8 C, point P at r = 0.10 m. (a) V = 9 x 10^9 x (-2 x 10^-8) / 0.10 = -1800 V. (b) For a test charge q = +1 x 10^-9 C, W_ext = qV = 1 x 10^-9 x (-1800) = -1.8 x 10^-6 J. Interpretation: the force on the positive charge is attractive, so the field itself does positive work (+1.8 x 10^-6 J) as the charge comes in, and the external force, which must hold the charge back, does negative work. Any consistent set of values earns the marks.",
+     "s": [
+      [
+       "Sensible values chosen and V computed, with a negative result",
+       1
+      ],
+      [
+       "W = qV computed, with a negative result",
+       1
+      ],
+      [
+       "Sign interpreted: attractive force, field does positive work",
+       1
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "code": "C12P-2.2",
+   "name": "Potential due to an electric dipole and a system of charges",
+   "description": "Potential obeys superposition: for a system of charges it is the algebraic sum of the individual potentials, and for a dipole at a far point it is p cos(theta)/(4 pi epsilon0 r^2).",
+   "idea": "Potential is a scalar, so the potentials of several charges simply add with their signs. Adding the potentials of +q and -q gives the dipole potential, which depends on direction as well as distance and falls off faster than that of a single charge.",
+   "rule": "V = (1/(4 pi epsilon0)) (q1/r1P + q2/r2P + ... + qn/rnP). For a dipole of moment p (r >> a): V = p cos(theta)/(4 pi epsilon0 r^2), i.e. +p/(4 pi epsilon0 r^2) or -p/(4 pi epsilon0 r^2) on the axis and zero in the equatorial plane. For a charged shell of radius R: V = q/(4 pi epsilon0 r) outside, and the constant q/(4 pi epsilon0 R) inside.",
+   "example": "For charges 3 x 10^-8 C and -2 x 10^-8 C placed 15 cm apart, the potential is zero where 3/x = 2/(15 - x), i.e. 9 cm from the positive charge, and also where 3/x = 2/(x - 15), i.e. 45 cm from it on the far side of the negative charge.",
+   "difficulty_base": "Hard",
+   "questions": [
+    {
+     "b": "Remember",
+     "d": "Easy",
+     "t": "fill_blank",
+     "m": 1,
+     "q": "At large distances the potential due to an electric dipole falls off as 1/r^n. The value of n is ____. (a whole number)",
+     "a": "2"
+    },
+    {
+     "b": "Remember",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "By the superposition principle, the potential at a point due to a system of point charges is the",
+     "a": "algebraic sum of the potentials due to the individual charges",
+     "o": [
+      "algebraic sum of the potentials due to the individual charges",
+      "vector sum of the potentials due to the individual charges",
+      "product of the potentials due to the individual charges",
+      "sum of the magnitudes of the individual potentials, ignoring signs"
+     ]
+    },
+    {
+     "b": "Remember",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "A thin spherical shell of radius R carries a charge q spread uniformly over it. At points inside the shell the potential is",
+     "a": "constant and equal to its value at the surface",
+     "o": [
+      "constant and equal to its value at the surface",
+      "zero everywhere",
+      "inversely proportional to the distance from the centre",
+      "largest at the centre and smaller near the shell"
+     ]
+    },
+    {
+     "b": "Remember",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "q": "Which of the following statements about the potential due to a short electric dipole is NOT correct?",
+     "a": "At a given distance from the centre it has the same value in every direction",
+     "o": [
+      "At a given distance from the centre it has the same value in every direction",
+      "It is zero at every point of the equatorial plane",
+      "On the axis it is positive on the side of the positive charge and negative on the side of the negative charge",
+      "It is axially symmetric about the dipole moment vector"
+     ],
+     "rev": true
+    },
+    {
+     "b": "Understand",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "A dipole consists of charges q and -q separated by a distance 2a. The standard expression for its potential at a point at distance r from its centre is approximately true only when r is",
+     "a": "much greater than a",
+     "o": [
+      "much greater than a",
+      "much smaller than a",
+      "exactly equal to a",
+      "exactly equal to 2a"
+     ]
+    },
+    {
+     "b": "Understand",
+     "d": "Easy",
+     "t": "fill_blank",
+     "m": 1,
+     "q": "For a point in the equatorial plane of an electric dipole, the angle between the dipole moment vector and the position vector of the point (drawn from the centre of the dipole) is ____ degrees. (a whole number)",
+     "a": "90"
+    },
+    {
+     "b": "Understand",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "Why can the potentials due to several charges be added as ordinary numbers, while their electric fields must be added as vectors?",
+     "a": "Potential is a scalar quantity, whereas electric field is a vector",
+     "o": [
+      "Potential is a scalar quantity, whereas electric field is a vector",
+      "Potential is always positive, whereas field can be negative",
+      "Potential does not obey the superposition principle, whereas field does",
+      "Potential is a vector that always points along the field"
+     ]
+    },
+    {
+     "b": "Understand",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "q": "Outside a uniformly charged spherical shell the potential is the same as that of a point charge placed at its centre. This follows because",
+     "a": "the electric field outside the shell is the same as if the entire charge were concentrated at the centre",
+     "o": [
+      "the electric field outside the shell is the same as if the entire charge were concentrated at the centre",
+      "the electric field outside the shell is zero",
+      "the charge on the shell actually moves to the centre",
+      "the potential has the same value at all points outside the shell"
+     ]
+    },
+    {
+     "b": "Understand",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "q": "State two ways in which the potential due to an electric dipole differs from the potential due to a single point charge.",
+     "a": "(i) The dipole potential depends not only on the distance r but also on the angle between the position vector r and the dipole moment p, whereas the potential of a single charge depends on r alone. (ii) At large distances the dipole potential falls off as 1/r^2, whereas the potential of a single charge falls off as 1/r.",
+     "s": [
+      [
+       "Depends on the angle between r and p as well as on r",
+       1
+      ],
+      [
+       "Falls off as 1/r^2 instead of 1/r",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "Two point charges, +4 x 10^-9 C and -1 x 10^-9 C, are each 0.3 m from a point P. Take 1/(4 pi epsilon0) = 9 x 10^9 N m^2/C^2. The potential at P is",
+     "a": "90 V",
+     "o": [
+      "90 V",
+      "150 V",
+      "120 V",
+      "300 V"
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "A short electric dipole has dipole moment 4 x 10^-9 C m. Take 1/(4 pi epsilon0) = 9 x 10^9 N m^2/C^2. The potential at a point on its axis 2 m from its centre, on the side of the positive charge, is",
+     "a": "9 V",
+     "o": [
+      "9 V",
+      "18 V",
+      "-9 V",
+      "0 V"
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "q": "A charge of 2 x 10^-9 C is placed at each of the four corners of a square whose diagonal is 0.6 m long. Take 1/(4 pi epsilon0) = 9 x 10^9 N m^2/C^2. The potential at the centre of the square is",
+     "a": "240 V",
+     "o": [
+      "240 V",
+      "60 V",
+      "120 V",
+      "0 V"
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "q": "A short dipole of dipole moment 6 x 10^-9 C m is placed at the origin. Take 1/(4 pi epsilon0) = 9 x 10^9 N m^2/C^2. Find the potential at a point 3 m from the origin whose position vector makes an angle of 60 degrees with the dipole moment (cos 60 degrees = 0.5).",
+     "a": "V = p cos(theta)/(4 pi epsilon0 r^2) = 9 x 10^9 x 6 x 10^-9 x 0.5 / (3)^2 = 27/9 = 3 V.",
+     "s": [
+      [
+       "Formula V = p cos(theta)/(4 pi epsilon0 r^2) with substitution",
+       1
+      ],
+      [
+       "V = 3 V",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "q": "A thin spherical shell of radius 0.1 m carries a charge of 2 x 10^-9 C spread uniformly over it. Take 1/(4 pi epsilon0) = 9 x 10^9 N m^2/C^2. Find the potential (a) at a point 0.2 m from the centre and (b) at a point 0.05 m from the centre.",
+     "a": "(a) Outside the shell V = q/(4 pi epsilon0 r) = 9 x 10^9 x 2 x 10^-9 / 0.2 = 90 V. (b) Inside the shell the field is zero, so the potential is constant and equal to its surface value: V = 9 x 10^9 x 2 x 10^-9 / 0.1 = 180 V.",
+     "s": [
+      [
+       "Outside: V = 90 V",
+       1
+      ],
+      [
+       "Inside: constant, equal to the surface value 180 V",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hardest",
+     "t": "long_answer",
+     "m": 3,
+     "q": "A charge of +6 x 10^-8 C is placed at the origin and a charge of -2 x 10^-8 C at x = 20 cm on the x-axis. Taking the potential to be zero at infinity, find the two points on the x-axis at which the potential is zero.",
+     "a": "Let the point be at x cm. The potential is zero where 6/r1 = 2/r2, with r1 and r2 the distances from the two charges. Between the charges: 6/x = 2/(20 - x), so 120 - 6x = 2x and x = 15 cm. Beyond the negative charge: 6/x = 2/(x - 20), so 6x - 120 = 2x and x = 30 cm. For x < 0 the point is always nearer the larger charge, so the potentials cannot cancel. The potential is zero at x = 15 cm and x = 30 cm.",
+     "s": [
+      [
+       "Sets the algebraic sum of the two potentials equal to zero",
+       1
+      ],
+      [
+       "x = 15 cm, between the charges",
+       1
+      ],
+      [
+       "x = 30 cm, beyond the negative charge",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "multi_statement",
+     "m": 1,
+     "q": "Consider the statements: (I) The potential at the centre of a uniformly charged spherical shell is zero, because the electric field inside the shell is zero. (II) Two equal and opposite point charges produce zero potential at every point that is equidistant from them. Which is or are correct?",
+     "a": "Only II",
+     "o": [
+      "Only II",
+      "Only I",
+      "Both I and II",
+      "Neither I nor II"
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "q": "A positive charge and a negative charge of smaller magnitude are fixed some distance apart. A student finds one point of zero potential between the charges and stops. Analyse where on the line joining the charges the second such point lies, and why there is none on the other side.",
+     "a": "The second point lies outside the pair, beyond the smaller (negative) charge. For the potentials to cancel, the point must be nearer to the smaller charge than to the larger one in the ratio of the charges; this is possible between the charges and on the far side of the smaller charge. On the far side of the larger charge every point is nearer to the larger charge, so its potential always dominates and the sum cannot be zero.",
+     "s": [
+      [
+       "Second point is beyond the charge of smaller magnitude",
+       1
+      ],
+      [
+       "No point beyond the larger charge, since it is always nearer and dominates",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hardest",
+     "t": "long_answer",
+     "m": 3,
+     "q": "Three point charges are fixed in the x-y plane: +2 x 10^-9 C at (0, 0), +2 x 10^-9 C at (0.6 m, 0) and -2 x 10^-9 C at (0.3 m, 0.1 m). Take 1/(4 pi epsilon0) = 9 x 10^9 N m^2/C^2. Find the potential at the point P (0.3 m, 0.4 m).",
+     "a": "Distances from P: to (0, 0), sqrt(0.3^2 + 0.4^2) = 0.5 m; to (0.6, 0), sqrt(0.3^2 + 0.4^2) = 0.5 m; to (0.3, 0.1), 0.3 m. Potentials: 9 x 10^9 x 2 x 10^-9 / 0.5 = 36 V from each positive charge, and 9 x 10^9 x (-2 x 10^-9) / 0.3 = -60 V from the negative charge. By superposition V = 36 + 36 - 60 = 12 V.",
+     "s": [
+      [
+       "Distances 0.5 m, 0.5 m and 0.3 m",
+       1
+      ],
+      [
+       "Individual potentials 36 V, 36 V and -60 V",
+       1
+      ],
+      [
+       "Algebraic sum V = 12 V",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Evaluate",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "q": "Charges +q, -q, +q and -q are placed in order at the corners of a square. To find the potential at the centre, a student draws four arrows along the diagonals and adds them like vectors. Evaluate the method and state the correct result.",
+     "a": "The method is wrong: potential is a scalar, so the contributions are added algebraically, not as vectors. All four charges are at the same distance r from the centre, so V = (1/(4 pi epsilon0)) (q - q + q - q)/r = 0. The potential at the centre is zero.",
+     "s": [
+      [
+       "Potential is a scalar: add algebraically, not as vectors",
+       1
+      ],
+      [
+       "Equal distances, so the sum is zero",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Create",
+     "d": "Hardest",
+     "t": "long_answer",
+     "m": 3,
+     "q": "Design an arrangement of three point charges, none of them zero, placed on the x-axis so that the total potential at the origin is zero. State the charges and their positions and verify your design, taking 1/(4 pi epsilon0) = 9 x 10^9 N m^2/C^2.",
+     "a": "One possible design: +2 x 10^-9 C at x = +0.1 m, +2 x 10^-9 C at x = -0.1 m and -8 x 10^-9 C at x = +0.2 m. Potentials at the origin: 9 x 10^9 x 2 x 10^-9 / 0.1 = 180 V from each positive charge, and 9 x 10^9 x (-8 x 10^-9) / 0.2 = -360 V from the negative charge. Sum = 180 + 180 - 360 = 0. Any arrangement in which the sum of q/r over the three charges is zero earns the marks.",
+     "s": [
+      [
+       "Charges and positions stated, with both signs present",
+       1
+      ],
+      [
+       "Individual potentials at the origin computed",
+       1
+      ],
+      [
+       "Algebraic sum shown to be zero",
+       1
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "code": "C12P-2.3",
+   "name": "Equipotential surfaces and the relation between field and potential",
+   "description": "An equipotential surface has the same potential at every point; the electric field is everywhere normal to it, points towards decreasing potential, and has magnitude equal to the change in potential per unit normal distance.",
+   "idea": "Surfaces of constant potential give a second picture of a field alongside field lines. No work is needed to move a charge along such a surface, so the field can have no component along it.",
+   "rule": "The field at a point is normal to the equipotential surface through it, is directed the way the potential decreases most steeply, and has magnitude |E| = |delta V|/delta l, where delta l is the normal distance between two close equipotential surfaces. A point charge has concentric spherical equipotentials; a uniform field has plane equipotentials normal to the field.",
+   "example": "In a uniform field of 500 V/m the equipotential planes drawn for every 10 V are 10/500 = 0.02 m = 2 cm apart, and the potential falls by 10 V for every 2 cm moved along the field.",
+   "difficulty_base": "Easy",
+   "questions": [
+    {
+     "b": "Remember",
+     "d": "Easy",
+     "t": "fill_blank",
+     "m": 1,
+     "q": "A surface that has the same value of potential at all points on it is called an ____ surface. (one word)",
+     "a": "equipotential"
+    },
+    {
+     "b": "Remember",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "The electric field lines of a single negative point charge are",
+     "a": "radial lines ending at the charge",
+     "o": [
+      "radial lines ending at the charge",
+      "radial lines starting from the charge",
+      "concentric circles around the charge",
+      "parallel straight lines"
+     ]
+    },
+    {
+     "b": "Remember",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "For a uniform electric field directed along the x-axis, the equipotential surfaces are",
+     "a": "planes parallel to the y-z plane",
+     "o": [
+      "planes parallel to the y-z plane",
+      "planes parallel to the x-y plane",
+      "spheres centred at the origin",
+      "cylinders with the x-axis as their axis"
+     ]
+    },
+    {
+     "b": "Remember",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "q": "Which of the following statements about the relation between electric field and potential is NOT correct?",
+     "a": "The electric field points in the direction in which the potential increases most steeply",
+     "o": [
+      "The electric field points in the direction in which the potential increases most steeply",
+      "The magnitude of the field equals the change in the magnitude of potential per unit displacement normal to the equipotential surface",
+      "The field at a point is normal to the equipotential surface through that point",
+      "Electric field can be expressed in the unit volt per metre"
+     ],
+     "rev": true
+    },
+    {
+     "b": "Understand",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "The equipotential surfaces of a single point charge are spheres centred on the charge because",
+     "a": "its potential depends only on the distance r from the charge, so it is constant wherever r is constant",
+     "o": [
+      "its potential depends only on the distance r from the charge, so it is constant wherever r is constant",
+      "its electric field is zero on these spheres",
+      "the charge is spread uniformly over these spheres",
+      "its field lines lie along these spheres"
+     ]
+    },
+    {
+     "b": "Understand",
+     "d": "Easy",
+     "t": "fill_blank",
+     "m": 1,
+     "q": "A charge of 3 x 10^-6 C is moved from one point to another point on the same equipotential surface. The work done by the electric field is ____ J. (a number)",
+     "a": "0"
+    },
+    {
+     "b": "Understand",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "Equipotential surfaces of a point charge are drawn for equal steps of potential. Compared with those far from the charge, the surfaces near the charge are",
+     "a": "closer together, because the field is stronger there",
+     "o": [
+      "closer together, because the field is stronger there",
+      "farther apart, because the field is stronger there",
+      "equally spaced, because the charge is a point",
+      "absent, because the potential is not defined near a charge"
+     ]
+    },
+    {
+     "b": "Understand",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "q": "For an electric dipole, the plane through its centre perpendicular to its axis is an equipotential surface because",
+     "a": "every point of the plane is equidistant from the two equal and opposite charges, so the potential is zero all over it",
+     "o": [
+      "every point of the plane is equidistant from the two equal and opposite charges, so the potential is zero all over it",
+      "the electric field is zero at every point of the plane",
+      "both charges of the dipole lie in this plane",
+      "the field lines of the dipole lie within this plane"
+     ]
+    },
+    {
+     "b": "Understand",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "q": "Explain why the electric field at any point must be normal to the equipotential surface passing through that point.",
+     "a": "If the field were not normal to the surface it would have a non-zero component along the surface. Work would then have to be done to move a test charge along the surface against that component. But by definition there is no potential difference between any two points of an equipotential surface, so no work is needed to move a charge on it. This contradiction shows the field has no component along the surface, i.e. it is normal to it.",
+     "s": [
+      [
+       "A component along the surface would require work to move a charge on the surface",
+       1
+      ],
+      [
+       "This contradicts zero potential difference on the surface, so the field is normal",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "In a uniform electric field of magnitude 500 V/m, the potential difference between two equipotential planes that are 4 cm apart is",
+     "a": "20 V",
+     "o": [
+      "20 V",
+      "2000 V",
+      "12500 V",
+      "125 V"
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "Two parallel equipotential planes 2 mm apart are at potentials 10 V and 4 V. The magnitude of the uniform electric field between them is",
+     "a": "3000 V/m",
+     "o": [
+      "3000 V/m",
+      "3 V/m",
+      "0.012 V/m",
+      "7000 V/m"
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "q": "A uniform electric field of magnitude 200 V/m is directed along the positive x-direction. The potential at x = 0 is 50 V. The potential at x = 0.1 m is",
+     "a": "30 V",
+     "o": [
+      "30 V",
+      "70 V",
+      "20 V",
+      "-150 V"
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "q": "A point charge of 4 x 10^-9 C is placed in air. Take 1/(4 pi epsilon0) = 9 x 10^9 N m^2/C^2. Find the radii of its equipotential surfaces of potential 60 V and 30 V (zero of potential at infinity).",
+     "a": "On an equipotential sphere V = Q/(4 pi epsilon0 r), so r = 9 x 10^9 x Q / V = 36 / V (in m). For 60 V, r = 36/60 = 0.6 m; for 30 V, r = 36/30 = 1.2 m.",
+     "s": [
+      [
+       "r = Q/(4 pi epsilon0 V) with substitution; r = 0.6 m for 60 V",
+       1
+      ],
+      [
+       "r = 1.2 m for 30 V",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "q": "In a uniform electric field the potential falls from 120 V to 90 V over a distance of 6 cm measured along a field line. Find (a) the magnitude of the field and (b) the work done by an external force in moving a charge of +2 x 10^-6 C, without acceleration, from the 90 V point back to the 120 V point.",
+     "a": "(a) |E| = |delta V|/delta l = 30 V / 0.06 m = 500 V/m. (b) W = q(V_final - V_initial) = 2 x 10^-6 C x (120 V - 90 V) = 6 x 10^-5 J.",
+     "s": [
+      [
+       "|E| = 30/0.06 = 500 V/m",
+       1
+      ],
+      [
+       "W = q x 30 V = 6 x 10^-5 J",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hardest",
+     "t": "long_answer",
+     "m": 3,
+     "q": "A uniform electric field of magnitude 400 V/m is directed along the positive x-direction. A, B and C are the points (0, 0), (0.05 m, 0) and (0.05 m, 0.03 m). Find (a) V_A - V_B, (b) V_B - V_C, and (c) the work done by an external force in taking a charge of -1 x 10^-6 C from A to C without acceleration.",
+     "a": "(a) A and B are 0.05 m apart along the field and the potential falls along the field, so V_A - V_B = E d = 400 x 0.05 = 20 V. (b) B and C have the same x-coordinate, so they lie on the same equipotential plane (normal to the field): V_B - V_C = 0. (c) V_C - V_A = -20 V, so W = q(V_C - V_A) = (-1 x 10^-6 C) x (-20 V) = +2 x 10^-5 J.",
+     "s": [
+      [
+       "V_A - V_B = 20 V",
+       1
+      ],
+      [
+       "V_B - V_C = 0, same equipotential plane",
+       1
+      ],
+      [
+       "W = q(V_C - V_A) = +2 x 10^-5 J",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "assertion_reason",
+     "m": 1,
+     "q": "Assertion (A): No work is done in moving a test charge from one point to another on an equipotential surface. Reason (R): The electric field is zero at every point of an equipotential surface. Choose the correct option.",
+     "a": "A is true, R is false",
+     "o": [
+      "A is true, R is false",
+      "Both A and R are true, and R is the correct explanation of A",
+      "Both A and R are true, but R is not the correct explanation of A",
+      "A is false, R is true"
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "q": "In a region the equipotential surfaces of 10 V, 20 V and 30 V are parallel planes. The 10 V and 20 V planes are 2 cm apart, and the 20 V and 30 V planes are 1 cm apart. Compare the average field magnitudes in the two gaps and state the direction of the field.",
+     "a": "Between 10 V and 20 V: |E| = 10 V / 0.02 m = 500 V/m. Between 20 V and 30 V: |E| = 10 V / 0.01 m = 1000 V/m, twice as large, because the same potential step occurs over half the distance. The field is normal to the planes and directed from the 30 V plane towards the 10 V plane, the way the potential decreases.",
+     "s": [
+      [
+       "500 V/m and 1000 V/m; the field is stronger where the planes are closer",
+       1
+      ],
+      [
+       "Direction: normal to the planes, from higher to lower potential",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hardest",
+     "t": "long_answer",
+     "m": 3,
+     "q": "A point charge of 2 x 10^-8 C is placed in air. Take 1/(4 pi epsilon0) = 9 x 10^9 N m^2/C^2. Find the radii of its equipotential surfaces of 900 V, 600 V and 300 V, and use your results to explain why equipotential surfaces drawn for equal steps of potential are not equally spaced.",
+     "a": "r = Q/(4 pi epsilon0 V) = 9 x 10^9 x 2 x 10^-8 / V = 180 / V (in m). So r = 0.2 m for 900 V, 0.3 m for 600 V and 0.6 m for 300 V. The first 300 V step takes 0.1 m and the next takes 0.3 m. The field magnitude equals the change in potential per unit normal distance; since the field of a point charge weakens with distance, the same potential step needs a larger distance farther out, so the surfaces spread apart.",
+     "s": [
+      [
+       "r = 0.2 m and 0.3 m for 900 V and 600 V",
+       1
+      ],
+      [
+       "r = 0.6 m for 300 V; spacings 0.1 m and 0.3 m are unequal",
+       1
+      ],
+      [
+       "Explanation: weaker field farther out means a larger distance per potential step",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Evaluate",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "q": "Throughout a certain region the potential has the same value, 1000 V, at every point. A student argues that the electric field there must be strong because the potential is high. Evaluate this argument.",
+     "a": "The argument is wrong. The field magnitude is given by the change of potential per unit displacement, not by the value of the potential itself. Since the potential does not change from point to point in the region, delta V = 0 for every displacement and the field is zero there, however large the constant potential is.",
+     "s": [
+      [
+       "Field depends on the change in potential with distance, not on its value",
+       1
+      ],
+      [
+       "Constant potential means zero field in the region",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Create",
+     "d": "Hardest",
+     "t": "long_answer",
+     "m": 3,
+     "q": "A uniform electric field of magnitude 1000 V/m points along the positive x-direction, and the potential at x = 0 is 20 V. Design a set of four equipotential surfaces, 5 V apart in potential, starting from the one through x = 0: describe their shape and give the position and potential of each.",
+     "a": "The surfaces are planes normal to the field, i.e. parallel to the y-z plane. The spacing for a 5 V step is delta l = delta V / E = 5 / 1000 = 0.005 m = 5 mm. Since the potential decreases along the field, the planes are: x = 0 (20 V), x = 5 mm (15 V), x = 10 mm (10 V) and x = 15 mm (5 V). (A set taken on the negative x side, with potentials rising to 25 V, 30 V and 35 V, is equally acceptable.)",
+     "s": [
+      [
+       "Shape: planes normal to the field (parallel to the y-z plane)",
+       1
+      ],
+      [
+       "Spacing 5 mm from delta V / E",
+       1
+      ],
+      [
+       "Positions with potentials decreasing along the field",
+       1
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "code": "C12P-2.4",
+   "name": "Potential energy of a system of charges",
+   "description": "The potential energy of a system of point charges is the work done by an external agency in assembling them from infinity; for two charges it is q1 q2/(4 pi epsilon0 r12), and for more charges it is the sum of such terms over all pairs.",
+   "idea": "Bringing the first charge in costs nothing; each later charge is brought in against the potential of those already present. Because the electrostatic force is conservative, the total depends only on the final arrangement, not on the order of assembly.",
+   "rule": "U = (1/(4 pi epsilon0)) q1 q2 / r12 for two charges (positive for like charges, negative for unlike charges). For three charges U = (1/(4 pi epsilon0)) (q1 q2/r12 + q1 q3/r13 + q2 q3/r23). Work needed to change a configuration = U_final - U_initial.",
+   "example": "Charges of 7 micro-C and -2 micro-C placed 18 cm apart have U = 9 x 10^9 x 7 x (-2) x 10^-12 / 0.18 = -0.7 J, so 0.7 J of work is needed to separate them to infinity.",
+   "difficulty_base": "Hard",
+   "questions": [
+    {
+     "b": "Remember",
+     "d": "Easy",
+     "t": "fill_blank",
+     "m": 1,
+     "q": "When a system of charges is assembled in a region with no external field, the work needed to bring the very first charge from infinity to its position is ____ J. (a number)",
+     "a": "0"
+    },
+    {
+     "b": "Remember",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "The potential energy of a system of two point charges is",
+     "a": "directly proportional to the product of the charges and inversely proportional to the distance between them",
+     "o": [
+      "directly proportional to the product of the charges and inversely proportional to the distance between them",
+      "directly proportional to the product of the charges and inversely proportional to the square of the distance between them",
+      "directly proportional to the sum of the charges and inversely proportional to the distance between them",
+      "directly proportional to the product of the charges and independent of the distance between them"
+     ]
+    },
+    {
+     "b": "Remember",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "The potential energy stored in a system of charges is defined as the work done by an external agency in",
+     "a": "assembling the charges at their locations, starting with them at infinity",
+     "o": [
+      "assembling the charges at their locations, starting with them at infinity",
+      "moving one of the charges once round a closed path",
+      "holding the charges at rest at their locations",
+      "setting the charges into motion from their locations"
+     ]
+    },
+    {
+     "b": "Remember",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "q": "Which of the following statements about the potential energy of a system of two point charges is NOT correct?",
+     "a": "Its value depends on which of the two charges is brought to its position first",
+     "o": [
+      "Its value depends on which of the two charges is brought to its position first",
+      "It is positive when the two charges have the same sign",
+      "It is negative when the two charges have opposite signs",
+      "It equals the work done by an external agency in bringing the charges from infinity to their positions"
+     ],
+     "rev": true
+    },
+    {
+     "b": "Understand",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "The potential energy of a pair of unlike charges held a finite distance apart is negative. This means that",
+     "a": "a positive amount of work must be done by an external agency to separate them to infinity",
+     "o": [
+      "a positive amount of work must be done by an external agency to separate them to infinity",
+      "the two charges repel each other",
+      "a positive amount of work was done by an external agency in bringing them together from infinity",
+      "there is no force between the two charges"
+     ]
+    },
+    {
+     "b": "Understand",
+     "d": "Easy",
+     "t": "fill_blank",
+     "m": 1,
+     "q": "The expression for the potential energy of a system of three point charges contains one term for each pair of charges. The number of such terms is ____. (a whole number)",
+     "a": "3"
+    },
+    {
+     "b": "Understand",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "The potential energy of a given configuration of charges does not depend on the order in which the charges are brought into position because",
+     "a": "the electrostatic force is conservative, so the work done is independent of the path",
+     "o": [
+      "the electrostatic force is conservative, so the work done is independent of the path",
+      "the charges are always equal in magnitude",
+      "the external agency does no work on any of the charges",
+      "the potential energy is zero once all the charges are in place"
+     ]
+    },
+    {
+     "b": "Understand",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "q": "The distance between two like point charges is doubled. The potential energy of the pair",
+     "a": "becomes half",
+     "o": [
+      "becomes half",
+      "becomes one-fourth",
+      "becomes double",
+      "remains unchanged"
+     ]
+    },
+    {
+     "b": "Understand",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "q": "In terms of the work done by an external agency, explain why the potential energy of two like charges is positive while that of two unlike charges is negative.",
+     "a": "Like charges repel, so an external agency must do a positive amount of work against the repulsion to bring them from infinity to a finite separation; this work is stored, so U is positive. Unlike charges attract, so positive work is needed to take them apart to infinity; for the reverse path, from infinity to the given separation, the work done by the external agency is negative, so U is negative.",
+     "s": [
+      [
+       "Like charges: positive work against repulsion, so U > 0",
+       1
+      ],
+      [
+       "Unlike charges: negative work in bringing them together, so U < 0",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "Two point charges of +2 x 10^-6 C and +3 x 10^-6 C are 0.3 m apart, with no external field. Take 1/(4 pi epsilon0) = 9 x 10^9 N m^2/C^2. The potential energy of the system is",
+     "a": "0.18 J",
+     "o": [
+      "0.18 J",
+      "0.6 J",
+      "0.054 J",
+      "-0.18 J"
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "Two point charges of +4 x 10^-6 C and -5 x 10^-6 C are 0.6 m apart, with no external field. Take 1/(4 pi epsilon0) = 9 x 10^9 N m^2/C^2. The potential energy of the system is",
+     "a": "-0.3 J",
+     "o": [
+      "-0.3 J",
+      "0.3 J",
+      "-0.5 J",
+      "-0.18 J"
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "q": "Two point charges of +2 x 10^-6 C and -4 x 10^-6 C are held 0.3 m apart. Take 1/(4 pi epsilon0) = 9 x 10^9 N m^2/C^2. The work an external agency must do to separate them to an infinite distance is",
+     "a": "0.24 J",
+     "o": [
+      "0.24 J",
+      "-0.24 J",
+      "0.8 J",
+      "0.072 J"
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "q": "Three point charges, each of +1 x 10^-6 C, are placed at the corners of an equilateral triangle of side 0.3 m. Take 1/(4 pi epsilon0) = 9 x 10^9 N m^2/C^2. Find the potential energy of the system.",
+     "a": "There are three pairs, each with U_pair = q^2/(4 pi epsilon0 r) = 9 x 10^9 x (1 x 10^-6)^2 / 0.3 = 0.03 J. Total U = 3 x 0.03 = 0.09 J.",
+     "s": [
+      [
+       "Energy of one pair = 0.03 J",
+       1
+      ],
+      [
+       "Three pairs: U = 0.09 J",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "q": "Two point charges of +3 x 10^-6 C and +2 x 10^-6 C are initially 0.6 m apart. Take 1/(4 pi epsilon0) = 9 x 10^9 N m^2/C^2. How much work must an external agency do to bring them to a separation of 0.2 m?",
+     "a": "U = q1 q2/(4 pi epsilon0 r). U_initial = 9 x 10^9 x 6 x 10^-12 / 0.6 = 0.09 J; U_final = 9 x 10^9 x 6 x 10^-12 / 0.2 = 0.27 J. Work done = U_final - U_initial = 0.27 - 0.09 = 0.18 J.",
+     "s": [
+      [
+       "U_initial = 0.09 J and U_final = 0.27 J",
+       1
+      ],
+      [
+       "W = U_final - U_initial = 0.18 J",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hardest",
+     "t": "long_answer",
+     "m": 3,
+     "q": "Three point charges lie on the x-axis: +2 x 10^-6 C at x = 0, -2 x 10^-6 C at x = 0.3 m and +2 x 10^-6 C at x = 0.6 m. Take 1/(4 pi epsilon0) = 9 x 10^9 N m^2/C^2. Find the total potential energy of the system.",
+     "a": "U = (1/(4 pi epsilon0)) (q1 q2/r12 + q2 q3/r23 + q1 q3/r13). First and second: 9 x 10^9 x (-4 x 10^-12) / 0.3 = -0.12 J. Second and third: 9 x 10^9 x (-4 x 10^-12) / 0.3 = -0.12 J. First and third: 9 x 10^9 x (+4 x 10^-12) / 0.6 = +0.06 J. Total U = -0.12 - 0.12 + 0.06 = -0.18 J.",
+     "s": [
+      [
+       "Sum over the three pairs set up, with signs",
+       1
+      ],
+      [
+       "Pair energies -0.12 J, -0.12 J and +0.06 J",
+       1
+      ],
+      [
+       "Total U = -0.18 J",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "multi_statement",
+     "m": 1,
+     "q": "Consider the statements: (I) The potential energy of a system of two point charges is negative whenever at least one of the two charges is negative. (II) The potential energy of three point charges is the sum of three pair terms, each calculated as if the third charge were absent. Which is or are correct?",
+     "a": "Only II",
+     "o": [
+      "Only II",
+      "Only I",
+      "Both I and II",
+      "Neither I nor II"
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "q": "Charges +q, -q, +q and -q are placed in order at the corners A, B, C and D of a square of side d. Without substituting numbers, analyse the pairs of charges to decide the sign of the total potential energy of the arrangement.",
+     "a": "There are six pairs. The four pairs along the sides (AB, BC, CD, DA) are unlike charges at distance d, each contributing -q^2/(4 pi epsilon0 d). The two pairs along the diagonals (AC, BD) are like charges at the larger distance d sqrt(2), each contributing +q^2/(4 pi epsilon0 d sqrt(2)). The four negative terms are more numerous and individually larger in magnitude than the two positive ones, so the total is negative: U = -(q^2/(4 pi epsilon0 d)) (4 - sqrt(2)).",
+     "s": [
+      [
+       "Four unlike side pairs (negative) and two like diagonal pairs (positive) identified",
+       1
+      ],
+      [
+       "Negative terms outweigh the positive ones, so the total is negative",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hardest",
+     "t": "long_answer",
+     "m": 3,
+     "q": "Charges of +2 x 10^-6 C are placed at the corners A and C of a square ABCD of side 0.3 m, and charges of -2 x 10^-6 C at B and D. Take 1/(4 pi epsilon0) = 9 x 10^9 N m^2/C^2. Take sqrt(2) = 1.41. Find the total electrostatic potential energy of the four charges, correct to two significant figures.",
+     "a": "Let u = q^2/(4 pi epsilon0 d) = 9 x 10^9 x (2 x 10^-6)^2 / 0.3 = 0.12 J. Four side pairs of unlike charges give 4 x (-u) = -0.48 J. Two diagonal pairs of like charges at distance d sqrt(2) give 2 x u/1.41 = 1.41 u = +0.17 J. Total U = -u (4 - 1.41) = -0.12 x 2.59 = -0.31 J.",
+     "s": [
+      [
+       "u = q^2/(4 pi epsilon0 d) = 0.12 J",
+       1
+      ],
+      [
+       "Four side pairs at -u each and two diagonal pairs at +u/sqrt(2) each",
+       1
+      ],
+      [
+       "U = -0.31 J",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Evaluate",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "q": "Two students compute the potential energy of the same three fixed charges. One assembles them in the order q1, q2, q3 and the other in the order q3, q1, q2, and their answers differ. They decide that both answers are right because 'the order matters'. Evaluate this conclusion.",
+     "a": "The conclusion is wrong. Because the electrostatic force is conservative, the work done in assembling a configuration is independent of the manner of assembly; the potential energy is a characteristic of the final configuration only. Both orders must give the same sum over the three pairs, so at least one of the students has made an error in calculation.",
+     "s": [
+      [
+       "Potential energy depends only on the final configuration, not on the order",
+       1
+      ],
+      [
+       "So the answers must agree; a differing answer signals a calculation error",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Create",
+     "d": "Hardest",
+     "t": "long_answer",
+     "m": 3,
+     "q": "Design a system of three point charges on a straight line, none of them zero, whose total potential energy is zero. State the charges and positions and verify your design, taking 1/(4 pi epsilon0) = 9 x 10^9 N m^2/C^2.",
+     "a": "One possible design: +4 x 10^-6 C at x = 0, -1 x 10^-6 C at x = 0.2 m and +4 x 10^-6 C at x = 0.4 m. Outer pair: 9 x 10^9 x 16 x 10^-12 / 0.4 = +0.36 J. Each outer charge with the middle one: 9 x 10^9 x (-4 x 10^-12) / 0.2 = -0.18 J. Total U = 0.36 - 0.18 - 0.18 = 0. (In general, two equal charges q with a charge -q/4 midway between them give zero total energy; any verified design earns the marks.)",
+     "s": [
+      [
+       "Charges and positions stated, with both signs present",
+       1
+      ],
+      [
+       "The three pair energies computed",
+       1
+      ],
+      [
+       "Sum shown to be zero",
+       1
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "code": "C12P-2.5",
+   "name": "Potential energy in an external field",
+   "description": "A charge q at a point where the external potential is V has potential energy qV; two charges in an external field have q1 V(r1) + q2 V(r2) plus their mutual energy; a dipole in a uniform field has potential energy -pE cos(theta).",
+   "idea": "Here the field is produced by sources other than the charges being considered, and we ask only for the energy of those charges in that field. For a dipole this energy depends on its orientation relative to the field.",
+   "rule": "U = qV(r) for a single charge; U = q1 V(r1) + q2 V(r2) + q1 q2/(4 pi epsilon0 r12) for two charges. Work done by an external torque in turning a dipole from angle theta0 to theta1 is pE(cos theta0 - cos theta1); with the zero of energy at theta = 90 degrees, U(theta) = -pE cos(theta) = -p.E. Energy gained by charge e through 1 volt is 1 eV = 1.6 x 10^-19 J.",
+   "example": "A sample with total dipole moment 6 x 10^-6 C m in a field of 10^6 V/m has U = -6 J when aligned with the field and -3 J at 60 degrees to it, a difference of 3 J.",
+   "difficulty_base": "Hard",
+   "questions": [
+    {
+     "b": "Remember",
+     "d": "Easy",
+     "t": "fill_blank",
+     "m": 1,
+     "q": "1 keV = ____ eV. (a whole number)",
+     "a": "1000"
+    },
+    {
+     "b": "Remember",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "A charge q is placed at a point where the potential due to external sources is V. Its potential energy in the external field is",
+     "a": "qV",
+     "o": [
+      "qV",
+      "q/V",
+      "V/q",
+      "qV^2"
+     ]
+    },
+    {
+     "b": "Remember",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "One electron volt (1 eV) is equal to",
+     "a": "1.6 x 10^-19 J",
+     "o": [
+      "1.6 x 10^-19 J",
+      "1.6 x 10^-19 C",
+      "1.6 x 10^19 J",
+      "1 J"
+     ]
+    },
+    {
+     "b": "Remember",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "q": "Which of the following statements about an electric dipole placed in a uniform external electric field is NOT correct?",
+     "a": "It experiences a net force in the direction of the field",
+     "o": [
+      "It experiences a net force in the direction of the field",
+      "It experiences no torque when its dipole moment is parallel or antiparallel to the field",
+      "Its potential energy depends on the angle between its dipole moment and the field",
+      "An external torque must do work to rotate it slowly away from the direction of the field"
+     ],
+     "rev": true
+    },
+    {
+     "b": "Understand",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "In the expression for the potential energy of a charge q in an external field, the potential used is the potential due to",
+     "a": "the external sources only, not the charge q itself",
+     "o": [
+      "the external sources only, not the charge q itself",
+      "the charge q itself only",
+      "the charge q together with the external sources",
+      "a unit positive charge placed at infinity"
+     ]
+    },
+    {
+     "b": "Understand",
+     "d": "Easy",
+     "t": "fill_blank",
+     "m": 1,
+     "q": "The potential energy of a dipole in a uniform electric field is conventionally taken to be zero when the angle between the dipole moment and the field is ____ degrees. (a whole number)",
+     "a": "90"
+    },
+    {
+     "b": "Understand",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "An electron, starting from rest, is accelerated through a potential difference of 1 volt. The energy it gains is called",
+     "a": "1 electron volt",
+     "o": [
+      "1 electron volt",
+      "1 joule",
+      "1 coulomb",
+      "1 farad"
+     ]
+    },
+    {
+     "b": "Understand",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "q": "The potential energy of two charges q1 and q2 placed in an external field is written as a sum of three terms. The term that contains the product q1 q2 represents",
+     "a": "the mutual interaction energy of the two charges",
+     "o": [
+      "the mutual interaction energy of the two charges",
+      "the energy of q1 in the external field",
+      "the potential energy of the sources that produce the external field",
+      "the kinetic energy gained by the charges while they are brought in"
+     ]
+    },
+    {
+     "b": "Understand",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "q": "A dipole of dipole moment p is placed in a uniform electric field E, with the zero of potential energy chosen in the usual way. Write its potential energy when the dipole moment is (a) along the field and (b) opposite to the field, and state in which case the energy is lower.",
+     "a": "U(theta) = -pE cos(theta). (a) Along the field, theta = 0: U = -pE. (b) Opposite to the field, theta = 180 degrees: U = +pE. The energy is lower (a minimum) when the dipole moment is along the field.",
+     "s": [
+      [
+       "U = -pE along the field and +pE opposite to it",
+       1
+      ],
+      [
+       "Lower when the dipole moment is along the field",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "A charge of 3 x 10^-6 C is placed at a point where the potential due to external sources is 400 V. Its potential energy in the external field is",
+     "a": "1.2 x 10^-3 J",
+     "o": [
+      "1.2 x 10^-3 J",
+      "1.33 x 10^8 J",
+      "7.5 x 10^-9 J",
+      "0.48 J"
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "A proton (charge +e) starting from rest is accelerated through a potential difference of 2000 V. The kinetic energy it gains is",
+     "a": "2000 eV",
+     "o": [
+      "2000 eV",
+      "2 eV",
+      "2000 J",
+      "3.2 x 10^-16 eV"
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "q": "An electric dipole of dipole moment 2 x 10^-8 C m is placed in a uniform electric field of 5 x 10^4 N/C with its dipole moment at 60 degrees to the field. Take cos 60 degrees = 0.5 and sin 60 degrees = 0.87, and use the usual choice of the zero of potential energy. Its potential energy is",
+     "a": "-5 x 10^-4 J",
+     "o": [
+      "-5 x 10^-4 J",
+      "5 x 10^-4 J",
+      "-1 x 10^-3 J",
+      "-8.7 x 10^-4 J"
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "q": "An electric dipole of dipole moment 4 x 10^-9 C m lies with its dipole moment along a uniform electric field of 2 x 10^5 N/C. Find the work done by an external torque in rotating it slowly until its dipole moment is opposite to the field.",
+     "a": "W = pE(cos theta0 - cos theta1) = 4 x 10^-9 x 2 x 10^5 x (cos 0 - cos 180 degrees) = 8 x 10^-4 x (1 - (-1)) = 1.6 x 10^-3 J.",
+     "s": [
+      [
+       "W = pE(cos theta0 - cos theta1) with theta0 = 0 and theta1 = 180 degrees",
+       1
+      ],
+      [
+       "W = 1.6 x 10^-3 J",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "q": "A charge of -2 x 10^-6 C is moved from a point where the external potential is 100 V to a point where it is 400 V. Find the change in its potential energy and state whether the energy increases or decreases.",
+     "a": "Change in U = q(V_final - V_initial) = (-2 x 10^-6 C) x (400 V - 100 V) = -6 x 10^-4 J. The potential energy decreases by 6 x 10^-4 J, because a negative charge has lower energy at higher potential.",
+     "s": [
+      [
+       "Change in U = q x 300 V with the sign of q kept",
+       1
+      ],
+      [
+       "-6 x 10^-4 J, a decrease",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hardest",
+     "t": "long_answer",
+     "m": 3,
+     "q": "Charges q1 = +2 x 10^-6 C and q2 = -1 x 10^-6 C are held 0.3 m apart in an external electric field. The external potential is 3 x 10^4 V at the position of q1 and 5 x 10^4 V at the position of q2. Take 1/(4 pi epsilon0) = 9 x 10^9 N m^2/C^2. Find the total electrostatic potential energy of the two-charge system in this field.",
+     "a": "U = q1 V(r1) + q2 V(r2) + q1 q2/(4 pi epsilon0 r12). q1 V(r1) = 2 x 10^-6 x 3 x 10^4 = +0.06 J. q2 V(r2) = (-1 x 10^-6) x 5 x 10^4 = -0.05 J. Mutual term = 9 x 10^9 x (2 x 10^-6) x (-1 x 10^-6) / 0.3 = -0.06 J. Total U = 0.06 - 0.05 - 0.06 = -0.05 J.",
+     "s": [
+      [
+       "Energies in the external field: +0.06 J and -0.05 J",
+       1
+      ],
+      [
+       "Mutual interaction energy = -0.06 J",
+       1
+      ],
+      [
+       "Total U = -0.05 J",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "assertion_reason",
+     "m": 1,
+     "q": "Assertion (A): When an external torque slowly rotates a dipole from the direction of a uniform electric field to the opposite direction, the potential energy of the dipole increases. Reason (R): A dipole placed in a uniform electric field experiences no net force. Choose the correct option.",
+     "a": "Both A and R are true, but R is not the correct explanation of A",
+     "o": [
+      "Both A and R are true, but R is not the correct explanation of A",
+      "Both A and R are true, and R is the correct explanation of A",
+      "A is true, R is false",
+      "A is false, R is true"
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "q": "A sample of polar molecules has a total dipole moment of 4 x 10^-6 C m, fully aligned with an electric field of magnitude 5 x 10^5 V/m. The direction of the field is suddenly turned through 60 degrees (cos 60 degrees = 0.5), its magnitude staying the same. Find the heat released as the dipoles align with the new direction of the field.",
+     "a": "pE = 4 x 10^-6 x 5 x 10^5 = 2 J. Just after the field is turned, the dipoles are at 60 degrees to the new field: U = -pE cos 60 degrees = -1 J. After they align with the new field: U = -pE cos 0 = -2 J. The potential energy falls by 1 J, and this loss appears as heat: 1 J is released.",
+     "s": [
+      [
+       "U = -1 J at 60 degrees and -2 J when aligned, using U = -pE cos(theta)",
+       1
+      ],
+      [
+       "Heat released = loss in potential energy = 1 J",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hardest",
+     "t": "long_answer",
+     "m": 3,
+     "q": "A dipole consists of charges +q at position r1 and -q at position r2, a distance 2a apart, in a uniform external field E, with its dipole moment at angle theta to the field. Starting from the potential energy of two charges in an external field, show how the orientation-dependent energy of the dipole arises, and explain why the remaining term may be dropped.",
+     "a": "For two charges in an external field, U' = qV(r1) - qV(r2) - q^2/(4 pi epsilon0 x 2a). The potential difference V(r1) - V(r2) is the work done in taking a unit positive charge from r2 to r1 against the field; the displacement parallel to the field is 2a cos(theta), so V(r1) - V(r2) = -E x 2a cos(theta). Hence q[V(r1) - V(r2)] = -q x 2a x E cos(theta) = -pE cos(theta) = -p.E, with p = 2qa. The remaining term, -q^2/(4 pi epsilon0 x 2a), is the mutual energy of the two charges; it is a constant for a given dipole, and since a constant is insignificant for potential energy it can be dropped, leaving U = -pE cos(theta).",
+     "s": [
+      [
+       "V(r1) - V(r2) = -E x 2a cos(theta)",
+       1
+      ],
+      [
+       "q[V(r1) - V(r2)] = -pE cos(theta) with p = 2qa",
+       1
+      ],
+      [
+       "Mutual term is a constant for the given dipole, so it can be dropped",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Evaluate",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "q": "An alpha particle (charge +2e) is at a point where the external potential is 100 V. A student writes its potential energy as 100 eV, saying that 'energy in eV is always numerically equal to the potential in volts'. Evaluate the student's answer.",
+     "a": "The answer is wrong. The potential energy is U = qV = (2e)(100 V) = 200 eV. The energy in eV equals the potential in volts only for a particle of charge e, such as an electron or a proton; for a charge of 2e it is twice that number.",
+     "s": [
+      [
+       "U = qV with q = 2e gives 200 eV",
+       1
+      ],
+      [
+       "The rule holds only for a charge of magnitude e",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Create",
+     "d": "Hardest",
+     "t": "long_answer",
+     "m": 3,
+     "q": "Make up a numerical problem in which a dipole in a uniform electric field is rotated slowly from the position perpendicular to the field to the position along the field. Choose the dipole moment and the field yourself, calculate the work done by the external torque, and interpret its sign.",
+     "a": "One possible problem: p = 1 x 10^-8 C m, E = 1 x 10^5 N/C, rotated from theta0 = 90 degrees to theta1 = 0. W = pE(cos theta0 - cos theta1) = 1 x 10^-8 x 1 x 10^5 x (0 - 1) = -1 x 10^-3 J. The work done by the external torque is negative: the torque of the field itself turns the dipole towards the field direction, so the field does positive work and the potential energy falls from 0 to -1 x 10^-3 J. Any consistent values earn the marks.",
+     "s": [
+      [
+       "Values chosen and the formula W = pE(cos theta0 - cos theta1) set up",
+       1
+      ],
+      [
+       "W computed, with a negative result",
+       1
+      ],
+      [
+       "Sign interpreted: the potential energy falls as the dipole aligns with the field",
+       1
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "code": "C12P-2.6",
+   "name": "Electrostatics of conductors and electrostatic shielding",
+   "description": "In the static situation a conductor has zero field inside, field normal to its surface of magnitude sigma/epsilon0 just outside, excess charge only on its surface and the same potential throughout; a charge-free cavity inside a conductor is shielded from outside fields.",
+   "idea": "A conductor has free charge carriers. They keep moving until nothing pushes them any more, and that single requirement fixes the field, the charge distribution and the potential of a conductor in equilibrium.",
+   "rule": "Inside a conductor E = 0. At the surface E is normal to the surface, with E = sigma/epsilon0 directed outward for sigma > 0 and inward for sigma < 0. Excess charge resides only on the surface. The potential is constant throughout the volume and on the surface. In a cavity with no charge inside it, E = 0 whatever the charge on the conductor or the external field (electrostatic shielding).",
+   "example": "A surface charge density of 8.85 x 10^-9 C/m^2 on a conductor gives a field of 8.85 x 10^-9 / 8.85 x 10^-12 = 1000 N/C just outside that part of the surface, directed normally outward.",
+   "difficulty_base": "Easy",
+   "questions": [
+    {
+     "b": "Remember",
+     "d": "Easy",
+     "t": "fill_blank",
+     "m": 1,
+     "q": "Vehicles carrying inflammable materials usually have metallic ropes touching the ground during motion, so that charge produced by ____ is conducted away. (one word)",
+     "a": "friction"
+    },
+    {
+     "b": "Remember",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "In a metallic conductor the mobile charge carriers are",
+     "a": "electrons",
+     "o": [
+      "electrons",
+      "positive ions",
+      "both positive and negative ions",
+      "protons"
+     ]
+    },
+    {
+     "b": "Remember",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "Special rubber tyres of aircraft are made slightly conducting in order to",
+     "a": "conduct the charge produced by friction to the ground",
+     "o": [
+      "conduct the charge produced by friction to the ground",
+      "increase the friction between the tyre and the runway",
+      "store the charge produced by friction inside the tyre",
+      "shield the aircraft from external electric fields"
+     ]
+    },
+    {
+     "b": "Remember",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "q": "Which of the following statements about electrostatic shielding is NOT correct?",
+     "a": "It works only when the cavity inside the conductor is spherical",
+     "o": [
+      "It works only when the cavity inside the conductor is spherical",
+      "The field inside a charge-free cavity of a conductor is zero whatever the charge on the conductor",
+      "It can be used to protect sensitive instruments from outside electrical influence",
+      "A charge-free cavity stays shielded whatever external fields the conductor is placed in"
+     ],
+     "rev": true
+    },
+    {
+     "b": "Understand",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "The electrostatic field at the surface of a charged conductor must be normal to the surface because otherwise",
+     "a": "free charges on the surface would experience a force along the surface and move, so the situation would not be static",
+     "o": [
+      "free charges on the surface would experience a force along the surface and move, so the situation would not be static",
+      "the charges on the surface would leave the conductor",
+      "the potential of the conductor would become zero",
+      "the total charge of the conductor would not be conserved"
+     ]
+    },
+    {
+     "b": "Understand",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "In the static situation, the electrostatic potential at points inside the material of a conductor is",
+     "a": "constant, with the same value as on its surface",
+     "o": [
+      "constant, with the same value as on its surface",
+      "zero, whatever the charge on the conductor",
+      "greatest at the centre and decreasing towards the surface",
+      "smallest at the centre and increasing towards the surface"
+     ]
+    },
+    {
+     "b": "Understand",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "A bird perched on a bare high-power line is unharmed because",
+     "a": "there is no potential difference across its body, so no current passes through it",
+     "o": [
+      "there is no potential difference across its body, so no current passes through it",
+      "its body is a perfect insulator",
+      "a high-power line carries no charge",
+      "its feathers shield it electrostatically"
+     ]
+    },
+    {
+     "b": "Understand",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "q": "The result that there can be no net charge at any point in the interior of a conductor in the static situation is obtained by",
+     "a": "applying Gauss's law to a closed surface inside the conductor, on which the field, and hence the flux, is zero",
+     "o": [
+      "applying Gauss's law to a closed surface inside the conductor, on which the field, and hence the flux, is zero",
+      "applying Coulomb's law to two point charges inside the conductor",
+      "requiring the potential energy of the conductor to be zero",
+      "requiring the field just outside the conductor to be zero"
+     ]
+    },
+    {
+     "b": "Understand",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "q": "Explain why the electrostatic field inside a conductor must be zero in the static situation.",
+     "a": "A conductor has free charge carriers (free electrons in a metal). As long as the electric field inside is not zero, these carriers experience a force and drift, so the situation is not static. In the static situation the free charges have therefore distributed themselves in such a way that the electric field is zero everywhere inside the conductor.",
+     "s": [
+      [
+       "Free charge carriers would drift under any non-zero field",
+       1
+      ],
+      [
+       "Static situation therefore requires the charges to have arranged themselves so that E = 0 inside",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "A part of the surface of a charged conductor has surface charge density 8.85 x 10^-9 C/m^2. Take epsilon0 = 8.85 x 10^-12 C^2/N m^2. The magnitude of the electric field just outside that part of the surface is",
+     "a": "1000 N/C",
+     "o": [
+      "1000 N/C",
+      "500 N/C",
+      "2000 N/C",
+      "7.8 x 10^-20 N/C"
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "The surface of a charged solid metal sphere is at a potential of 500 V (zero of potential at infinity). The potential at the centre of the sphere is",
+     "a": "500 V",
+     "o": [
+      "500 V",
+      "0 V",
+      "250 V",
+      "1000 V"
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "q": "A spherical conductor of radius 0.1 m carries a charge of 2 x 10^-9 C in the static situation. Take 1/(4 pi epsilon0) = 9 x 10^9 N m^2/C^2. The magnitude of the electric field at a point 0.05 m from its centre is",
+     "a": "0 N/C",
+     "o": [
+      "0 N/C",
+      "7200 N/C",
+      "1800 N/C",
+      "360 N/C"
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "q": "The electric field just outside a part of the surface of a charged conductor has magnitude 2 x 10^4 N/C and is directed towards the surface. Take epsilon0 = 8.85 x 10^-12 C^2/N m^2. Find the surface charge density on that part of the surface, with its sign.",
+     "a": "E = |sigma|/epsilon0, so |sigma| = epsilon0 E = 8.85 x 10^-12 x 2 x 10^4 = 1.77 x 10^-7 C/m^2. The field is normal to the surface inward, which happens for sigma < 0, so sigma = -1.77 x 10^-7 C/m^2.",
+     "s": [
+      [
+       "|sigma| = epsilon0 E = 1.77 x 10^-7 C/m^2",
+       1
+      ],
+      [
+       "Negative sign, because the field is directed inward",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "q": "A spherical conductor of radius 0.2 m has a charge of 8 x 10^-9 C distributed uniformly on its surface. Take 1/(4 pi epsilon0) = 9 x 10^9 N m^2/C^2. Find the magnitude of the electric field (a) just outside the sphere and (b) at a point 0.6 m from its centre.",
+     "a": "Outside the sphere the field is as if the whole charge were at the centre: E = q/(4 pi epsilon0 r^2). (a) Just outside, r = 0.2 m: E = 9 x 10^9 x 8 x 10^-9 / (0.2)^2 = 72/0.04 = 1800 N/C. (b) At r = 0.6 m: E = 72/0.36 = 200 N/C.",
+     "s": [
+      [
+       "E = 1800 N/C just outside",
+       1
+      ],
+      [
+       "E = 200 N/C at 0.6 m",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hardest",
+     "t": "long_answer",
+     "m": 3,
+     "q": "A conducting sphere of radius 0.3 m carries a charge of 6 x 10^-9 C in the static situation. Take 1/(4 pi epsilon0) = 9 x 10^9 N m^2/C^2. Find (a) the potential at its surface, (b) the potential and the electric field at its centre, and (c) the magnitude of the electric field just outside its surface.",
+     "a": "(a) V = q/(4 pi epsilon0 R) = 9 x 10^9 x 6 x 10^-9 / 0.3 = 180 V. (b) The field is zero everywhere inside a conductor, so E = 0 at the centre; the potential is constant throughout the conductor and equal to its surface value, so V = 180 V at the centre. (c) Just outside, E = q/(4 pi epsilon0 R^2) = 9 x 10^9 x 6 x 10^-9 / (0.3)^2 = 54/0.09 = 600 N/C.",
+     "s": [
+      [
+       "Surface potential = 180 V",
+       1
+      ],
+      [
+       "At the centre: E = 0 and V = 180 V",
+       1
+      ],
+      [
+       "E just outside = 600 N/C",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "multi_statement",
+     "m": 1,
+     "q": "Consider the statements: (I) For a conductor that carries no surface charge density, the electrostatic field is zero even at its surface. (II) In a system of several conductors, each conductor has its own constant potential, and this constant may differ from one conductor to another. Which is or are correct?",
+     "a": "Both I and II",
+     "o": [
+      "Both I and II",
+      "Only I",
+      "Only II",
+      "Neither I nor II"
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "q": "A neutral metal body with a cavity (no charge inside the cavity) is placed in a strong external electric field. Analyse (a) the field in the metal and in the cavity, and (b) where the induced charges are found.",
+     "a": "(a) In the static situation the field is zero everywhere in the metal, and it is also zero in the charge-free cavity, whatever the size and shape of the cavity and whatever the external field. (b) The charges induced by the external field reside only on the outer surface of the conductor; there is no charge on the surface of the cavity.",
+     "s": [
+      [
+       "Field is zero in the metal and in the cavity",
+       1
+      ],
+      [
+       "Induced charges lie only on the outer surface",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hardest",
+     "t": "long_answer",
+     "m": 3,
+     "q": "Using Gauss's law and a suitable Gaussian surface, derive the expression for the electric field just outside the surface of a charged conductor in terms of its surface charge density sigma. State the direction of the field for both signs of sigma.",
+     "a": "Choose a pill box (a short cylinder) of small cross-sectional area delta S and negligible height about a point on the surface, partly inside and partly outside the conductor. Just inside the surface the field is zero, and just outside it is normal to the surface with magnitude E, so the only contribution to the flux comes from the outer circular face: flux = E delta S. The charge enclosed is |sigma| delta S. By Gauss's law E delta S = |sigma| delta S / epsilon0, so E = |sigma|/epsilon0. In vector form E = (sigma/epsilon0) n, where n is the unit outward normal: the field is normal to the surface outward for sigma > 0 and inward for sigma < 0.",
+     "s": [
+      [
+       "Pill-box Gaussian surface; flux only through the outer face, E delta S",
+       1
+      ],
+      [
+       "Enclosed charge sigma delta S and Gauss's law give E = sigma/epsilon0",
+       1
+      ],
+      [
+       "Direction: normal outward for sigma > 0, inward for sigma < 0",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Evaluate",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "q": "A bird sits safely on a bare high-power line, but a man standing on the ground who touches the same line gets a fatal shock. A student explains this by saying that the bird is too small to be affected. Evaluate this explanation.",
+     "a": "The explanation is wrong; size is not the reason. Current passes through a body only when there is a potential difference across it. Both feet of the bird are on the same line, so there is no potential difference across its body and no current flows. The man touches the line while standing on the ground, so the large potential difference between the line and the ground appears across his body and a large current passes through him.",
+     "s": [
+      [
+       "Bird: no potential difference across its body, so no current",
+       1
+      ],
+      [
+       "Man: potential difference between line and ground across his body drives a current",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Create",
+     "d": "Hardest",
+     "t": "long_answer",
+     "m": 3,
+     "q": "Design a way of protecting a sensitive instrument from stray external electric fields. Describe the arrangement, explain the physics that makes it work, and state the condition about charges that your design assumes.",
+     "a": "Arrangement: place the instrument inside a hollow closed metal enclosure (a conducting box or shell), i.e. in a cavity within a conductor. Physics: whatever the charge on the conductor and whatever external fields it is placed in, the electric field inside a cavity of a conductor is zero, and any charge on the conductor or induced on it resides only on its outer surface; this is electrostatic shielding. Condition: the result holds for a cavity that has no charges placed inside it.",
+     "s": [
+      [
+       "Instrument enclosed in a cavity inside a conductor",
+       1
+      ],
+      [
+       "Field in the cavity is zero whatever the outside charge and field; charges stay on the outer surface",
+       1
+      ],
+      [
+       "Condition: no charges placed inside the cavity",
+       1
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "code": "C12P-2.7",
+   "name": "Capacitors, capacitance and the parallel plate capacitor",
+   "description": "A capacitor is two conductors separated by an insulator, with capacitance C = Q/V fixed by geometry; for a parallel plate capacitor with vacuum between the plates C = epsilon0 A/d.",
+   "idea": "The potential difference between two conductors carrying +Q and -Q is proportional to Q, so the ratio Q/V is a constant of the arrangement. A large capacitance lets a lot of charge be stored at a modest potential difference, keeping the field below breakdown.",
+   "rule": "C = Q/V, with unit farad (1 F = 1 C/V). Parallel plates of area A and separation d in vacuum: field between the plates E = sigma/epsilon0 = Q/(epsilon0 A), zero outside; V = Ed; C = epsilon0 A/d. Dielectric strength of air is about 3 x 10^6 V/m.",
+   "example": "Plates of area 1 m^2 separated by 1 mm in vacuum have C = 8.85 x 10^-12 x 1 / 10^-3 = 8.85 x 10^-9 F; a capacitance of 1 F with a 1 cm gap would need plates of area about 10^9 m^2, about 30 km on a side.",
+   "difficulty_base": "Easy",
+   "questions": [
+    {
+     "b": "Remember",
+     "d": "Easy",
+     "t": "fill_blank",
+     "m": 1,
+     "q": "1 pF = 10^-n F. The value of n is ____. (a whole number)",
+     "a": "12"
+    },
+    {
+     "b": "Remember",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "A capacitor is a system of",
+     "a": "two conductors separated by an insulator",
+     "o": [
+      "two conductors separated by an insulator",
+      "two insulators separated by a conductor",
+      "two conductors joined by a conducting wire",
+      "a single insulator carrying a net charge"
+     ]
+    },
+    {
+     "b": "Remember",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "The SI unit of capacitance, the farad, is the same as one",
+     "a": "coulomb per volt",
+     "o": [
+      "coulomb per volt",
+      "volt per coulomb",
+      "joule per coulomb",
+      "coulomb volt"
+     ]
+    },
+    {
+     "b": "Remember",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "q": "The capacitance of a parallel plate capacitor does NOT depend on",
+     "a": "the potential difference applied across the plates",
+     "o": [
+      "the potential difference applied across the plates",
+      "the area of each plate",
+      "the separation between the plates",
+      "the nature of the insulating medium between the plates"
+     ],
+     "rev": true
+    },
+    {
+     "b": "Understand",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "The two conductors of a capacitor carry charges Q and -Q. The 'charge of the capacitor' means",
+     "a": "Q, the charge on one of the conductors, although the total charge of the capacitor is zero",
+     "o": [
+      "Q, the charge on one of the conductors, although the total charge of the capacitor is zero",
+      "2Q, the sum of the magnitudes of the charges on the two conductors",
+      "zero, because that is the total charge on the two conductors",
+      "the charge that passes through the insulator between the conductors"
+     ]
+    },
+    {
+     "b": "Understand",
+     "d": "Easy",
+     "t": "fill_blank",
+     "m": 1,
+     "q": "The charge on a given capacitor is doubled. The potential difference between its conductors becomes ____ times its earlier value. (a whole number)",
+     "a": "2"
+    },
+    {
+     "b": "Understand",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "A capacitor of large capacitance is useful for storing charge because, for a given charge Q,",
+     "a": "the potential difference is small, so the electric field stays below the value at which the insulation breaks down",
+     "o": [
+      "the potential difference is small, so the electric field stays below the value at which the insulation breaks down",
+      "the potential difference is large, so the charge is held more firmly on the plates",
+      "there is no electric field between its conductors",
+      "the charge leaks through the surrounding air more quickly"
+     ]
+    },
+    {
+     "b": "Understand",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "q": "For a parallel plate capacitor with plates carrying +Q and -Q, the field is confined to the region between the plates (edge effects ignored) because",
+     "a": "between the plates the fields of the two charged plates add, while outside the plates they cancel",
+     "o": [
+      "between the plates the fields of the two charged plates add, while outside the plates they cancel",
+      "outside the plates the fields of the two charged plates add, while between the plates they cancel",
+      "each plate by itself produces a field on one side only",
+      "the outer faces of the plates are insulated from the surroundings"
+     ]
+    },
+    {
+     "b": "Understand",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "q": "What is meant by 'fringing of the field' in a parallel plate capacitor, and under what condition can it be ignored?",
+     "a": "For plates of finite area the field is not uniform near the outer boundaries of the plates: the field lines bend outward at the edges. This effect is called fringing of the field. It can be ignored, in regions sufficiently far from the edges, when the separation is much smaller than the linear size of the plates, i.e. when d^2 << A.",
+     "s": [
+      [
+       "Field lines bend outward at the edges of finite plates",
+       1
+      ],
+      [
+       "Negligible when d^2 << A, away from the edges",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "A capacitor holds a charge of 6 x 10^-6 C when the potential difference between its plates is 12 V. Its capacitance is",
+     "a": "0.5 micro-F",
+     "o": [
+      "0.5 micro-F",
+      "2 micro-F",
+      "72 micro-F",
+      "0.5 F"
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "A parallel plate capacitor with vacuum between its plates has capacitance C. If the area of each plate is doubled and the separation between the plates is halved, the capacitance becomes",
+     "a": "4C",
+     "o": [
+      "4C",
+      "C",
+      "2C",
+      "C/4"
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "q": "Each plate of a parallel plate capacitor has area 0.02 m^2 and the plates are 1 mm apart, with vacuum between them. Take epsilon0 = 8.85 x 10^-12 C^2/N m^2. Its capacitance is",
+     "a": "177 pF",
+     "o": [
+      "177 pF",
+      "0.177 pF",
+      "0.44 pF",
+      "354 pF"
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "q": "In a parallel plate capacitor with air between the plates, each plate has an area of 3 x 10^-3 m^2 and the separation is 1.5 mm. Take epsilon0 = 8.85 x 10^-12 C^2/N m^2. Find the capacitance, and the charge on each plate when the capacitor is connected to a 200 V supply.",
+     "a": "C = epsilon0 A/d = 8.85 x 10^-12 x 3 x 10^-3 / (1.5 x 10^-3) = 1.77 x 10^-11 F = 17.7 pF. Q = CV = 1.77 x 10^-11 F x 200 V = 3.54 x 10^-9 C.",
+     "s": [
+      [
+       "C = epsilon0 A/d = 1.77 x 10^-11 F (17.7 pF)",
+       1
+      ],
+      [
+       "Q = CV = 3.54 x 10^-9 C",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "q": "The dielectric strength of air is about 3 x 10^6 V/m. An air-filled parallel plate capacitor of capacitance 50 pF has its plates 2 mm apart. Find (a) the largest potential difference it can have without breakdown and (b) the corresponding charge.",
+     "a": "(a) V_max = E_max d = 3 x 10^6 V/m x 2 x 10^-3 m = 6000 V. (b) Q_max = C V_max = 50 x 10^-12 F x 6000 V = 3 x 10^-7 C.",
+     "s": [
+      [
+       "V_max = E_max d = 6000 V",
+       1
+      ],
+      [
+       "Q_max = C V_max = 3 x 10^-7 C",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hardest",
+     "t": "long_answer",
+     "m": 3,
+     "q": "A parallel plate capacitor with air between the plates is to have a capacitance of 1 micro-F with a plate separation of 0.885 mm. Take epsilon0 = 8.85 x 10^-12 C^2/N m^2. (a) Find the area of each plate. (b) If the plates are square, find the side of each plate. (c) Comment on what the result shows about the farad as a unit.",
+     "a": "(a) C = epsilon0 A/d, so A = Cd/epsilon0 = 1 x 10^-6 x 0.885 x 10^-3 / (8.85 x 10^-12) = 100 m^2. (b) Side = sqrt(100 m^2) = 10 m. (c) Even one millionth of a farad needs plates 10 m on a side at this separation, so the farad is a very large unit in practice; that is why sub-multiples such as micro-F, nF and pF are commonly used.",
+     "s": [
+      [
+       "A = Cd/epsilon0 with correct unit conversions",
+       1
+      ],
+      [
+       "A = 100 m^2 and side = 10 m",
+       1
+      ],
+      [
+       "Comment: the farad is a very large unit, so sub-multiples are used",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "assertion_reason",
+     "m": 1,
+     "q": "Assertion (A): The capacitance of a given capacitor increases when the charge on it is increased. Reason (R): The capacitance of a capacitor is the ratio of the charge Q on it to the potential difference V between its conductors. Choose the correct option.",
+     "a": "A is false, R is true",
+     "o": [
+      "A is false, R is true",
+      "Both A and R are true, and R is the correct explanation of A",
+      "Both A and R are true, but R is not the correct explanation of A",
+      "A is true, R is false"
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "q": "A parallel plate capacitor with vacuum between its plates is charged and then isolated, so that the charge on its plates cannot change. The separation between the plates is then doubled. Analyse what happens to (a) the electric field between the plates and (b) the capacitance and the potential difference.",
+     "a": "(a) The charge Q, and so the surface charge density sigma = Q/A, is unchanged; since E = sigma/epsilon0, the field between the plates is unchanged. (b) C = epsilon0 A/d becomes half when d is doubled. V = Ed (or Q/C) becomes double.",
+     "s": [
+      [
+       "E unchanged because sigma is unchanged",
+       1
+      ],
+      [
+       "C is halved and V is doubled",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hardest",
+     "t": "long_answer",
+     "m": 3,
+     "q": "Starting from the electric field between two large parallel plates carrying charges +Q and -Q, each of area A and separated by a distance d in vacuum, derive the expression for the capacitance of a parallel plate capacitor.",
+     "a": "Each plate has surface charge density of magnitude sigma = Q/A. Between the plates the fields of the two plates add: E = sigma/(2 epsilon0) + sigma/(2 epsilon0) = sigma/epsilon0 = Q/(epsilon0 A); outside they cancel. For a uniform field the potential difference is V = Ed = Qd/(epsilon0 A). Hence C = Q/V = epsilon0 A/d, which depends only on the geometry.",
+     "s": [
+      [
+       "E = sigma/epsilon0 = Q/(epsilon0 A) between the plates",
+       1
+      ],
+      [
+       "V = Ed = Qd/(epsilon0 A)",
+       1
+      ],
+      [
+       "C = Q/V = epsilon0 A/d",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Evaluate",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "q": "A student proposes to build a parallel plate air capacitor of capacitance 1 F, with the plates 1 cm apart, for a school laboratory. Take epsilon0 = 8.85 x 10^-12 C^2/N m^2. Evaluate whether this is practical, giving the plate area needed to one significant figure.",
+     "a": "A = Cd/epsilon0 = 1 F x 10^-2 m / (8.85 x 10^-12 C^2/N m^2), which is about 1 x 10^9 m^2. Square plates of this area would be about 30 km long and 30 km wide. The proposal is not practical; it shows that 1 F is far too big a unit for ordinary capacitors.",
+     "s": [
+      [
+       "A = Cd/epsilon0, about 1 x 10^9 m^2",
+       1
+      ],
+      [
+       "Judgement: plates about 30 km on a side, so not practical",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Create",
+     "d": "Hardest",
+     "t": "long_answer",
+     "m": 3,
+     "q": "Design a parallel plate air capacitor of capacitance 88.5 pF. Choose a plate separation and work out the plate area (Take epsilon0 = 8.85 x 10^-12 C^2/N m^2), suggest plate dimensions, and state the largest potential difference your capacitor can take if the dielectric strength of air is 3 x 10^6 V/m.",
+     "a": "One possible design: choose d = 1 mm = 1 x 10^-3 m. Then A = Cd/epsilon0 = 88.5 x 10^-12 x 1 x 10^-3 / (8.85 x 10^-12) = 0.01 m^2, for example square plates 10 cm x 10 cm. Largest potential difference = E_max d = 3 x 10^6 x 1 x 10^-3 = 3000 V. Any consistent choice (for example d = 2 mm with A = 0.02 m^2 and 6000 V) earns the marks.",
+     "s": [
+      [
+       "Separation chosen and A = Cd/epsilon0 computed",
+       1
+      ],
+      [
+       "Plate dimensions consistent with the area",
+       1
+      ],
+      [
+       "V_max = E_max d for the chosen separation",
+       1
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "code": "C12P-2.8",
+   "name": "Dielectrics, polarisation and the effect of a dielectric on capacitance",
+   "description": "An external field polarises a dielectric, producing bound surface charges whose field partly cancels the applied field; filling a capacitor with a dielectric of dielectric constant K therefore raises its capacitance from C0 to K C0.",
+   "idea": "A dielectric has no free carriers, but its molecules become (or already are) dipoles that line up with an applied field. Their collective effect is a pair of bound surface charge layers that reduce, but never fully cancel, the field inside.",
+   "rule": "Polarisation P (dipole moment per unit volume) = epsilon0 chi_e E for a linear isotropic dielectric. In a filled parallel plate capacitor E = (sigma - sigma_p)/epsilon0 = sigma/(epsilon0 K), so V = Qd/(epsilon0 K A) and C = K epsilon0 A/d = K C0, with K = epsilon/epsilon0 > 1 (K = 1 for vacuum).",
+   "example": "A slab of dielectric constant K and thickness (3/4)d placed between plates a distance d apart lowers the potential difference to V0 (K + 3)/(4K) at fixed charge, so the capacitance rises to 4K C0/(K + 3).",
+   "difficulty_base": "Hard",
+   "questions": [
+    {
+     "b": "Remember",
+     "d": "Easy",
+     "t": "fill_blank",
+     "m": 1,
+     "q": "A molecule in which the centres of positive and negative charge coincide, so that it has no permanent dipole moment, is called a non-____ molecule. (one word)",
+     "a": "polar"
+    },
+    {
+     "b": "Remember",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "Which of the following is a polar molecule?",
+     "a": "water (H2O)",
+     "o": [
+      "water (H2O)",
+      "oxygen (O2)",
+      "hydrogen (H2)",
+      "nitrogen (N2)"
+     ]
+    },
+    {
+     "b": "Remember",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "The dipole moment per unit volume developed in a dielectric placed in an external field is called its",
+     "a": "polarisation",
+     "o": [
+      "polarisation",
+      "electric susceptibility",
+      "permittivity",
+      "dielectric strength"
+     ]
+    },
+    {
+     "b": "Remember",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "q": "Which of the following statements about the dielectric constant K of a substance is NOT correct?",
+     "a": "It is measured in farad per metre",
+     "o": [
+      "It is measured in farad per metre",
+      "It is a dimensionless quantity",
+      "It is the ratio of the permittivity of the substance to the permittivity of vacuum",
+      "It is a constant characteristic of the dielectric substance"
+     ],
+     "rev": true
+    },
+    {
+     "b": "Understand",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "A slab of dielectric is placed in a uniform external electric field. Compared with the external field, the net field inside the slab is",
+     "a": "smaller, but not zero",
+     "o": [
+      "smaller, but not zero",
+      "exactly zero, as in a conductor",
+      "larger",
+      "exactly the same"
+     ]
+    },
+    {
+     "b": "Understand",
+     "d": "Easy",
+     "t": "fill_blank",
+     "m": 1,
+     "q": "The value of the dielectric constant K for vacuum is ____. (a whole number)",
+     "a": "1"
+    },
+    {
+     "b": "Understand",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "In the absence of an external field, a dielectric made of polar molecules has no net dipole moment because",
+     "a": "its permanent dipoles are oriented randomly owing to thermal agitation",
+     "o": [
+      "its permanent dipoles are oriented randomly owing to thermal agitation",
+      "its molecules have no dipole moment until a field is applied",
+      "the positive and negative charge centres of each molecule coincide",
+      "its free electrons neutralise the dipoles"
+     ]
+    },
+    {
+     "b": "Understand",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "q": "The surface charge densities that appear on the faces of a polarised dielectric slab arise from",
+     "a": "bound charges: the unneutralised ends of the molecular dipoles at the surfaces",
+     "o": [
+      "bound charges: the unneutralised ends of the molecular dipoles at the surfaces",
+      "free electrons that travel through the slab to its faces",
+      "charge that leaks on to the slab from the capacitor plates",
+      "ions formed by breakdown of the surrounding air"
+     ]
+    },
+    {
+     "b": "Understand",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "q": "Explain how a dielectric made of non-polar molecules acquires a net dipole moment when it is placed in an external electric field.",
+     "a": "In an external field the positive and negative charges of each non-polar molecule are displaced in opposite directions. The displacement stops when the external force on the charges is balanced by the restoring force due to the internal fields in the molecule. Each molecule thus develops an induced dipole moment in the direction of the field, and the induced dipole moments of the different molecules add up to give the dielectric a net dipole moment.",
+     "s": [
+      [
+       "Charges of each molecule displaced in opposite directions until balanced by the restoring force",
+       1
+      ],
+      [
+       "Induced dipole moments along the field add up to a net dipole moment",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "A parallel plate capacitor has a capacitance of 5 pF with air between its plates. The space between the plates is now completely filled with a material of dielectric constant 4. The capacitance becomes",
+     "a": "20 pF",
+     "o": [
+      "20 pF",
+      "1.25 pF",
+      "9 pF",
+      "5 pF"
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "A medium has dielectric constant 5. Take epsilon0 = 8.85 x 10^-12 C^2/N m^2. The permittivity of the medium is",
+     "a": "4.425 x 10^-11 C^2/N m^2",
+     "o": [
+      "4.425 x 10^-11 C^2/N m^2",
+      "1.77 x 10^-12 C^2/N m^2",
+      "13.85 x 10^-12 C^2/N m^2",
+      "8.85 x 10^-12 C^2/N m^2"
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "q": "A parallel plate air capacitor is charged to a potential difference of 120 V and then disconnected from the battery. A dielectric of dielectric constant 4 is now inserted so as to fill the space between the plates completely. The potential difference between the plates becomes",
+     "a": "30 V",
+     "o": [
+      "30 V",
+      "480 V",
+      "120 V",
+      "116 V"
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "q": "A parallel plate capacitor with air between the plates has a capacitance of 12 pF. The separation between the plates is doubled and the space between them is then completely filled with a substance of dielectric constant 6. Find the new capacitance.",
+     "a": "With air, C0 = epsilon0 A/d = 12 pF. With the separation 2d and dielectric constant K = 6, C = K epsilon0 A/(2d) = (K/2) C0 = (6/2) x 12 pF = 36 pF.",
+     "s": [
+      [
+       "C = K epsilon0 A/(2d) = (K/2) C0",
+       1
+      ],
+      [
+       "C = 36 pF",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "q": "An air-filled parallel plate capacitor of capacitance 10 pF is connected to a 100 V supply. With the supply still connected, a mica sheet of dielectric constant 6 is inserted so as to fill the space between the plates. Find the new capacitance and the new charge on the plates.",
+     "a": "C = K C0 = 6 x 10 pF = 60 pF. The supply keeps the potential difference at 100 V, so Q = CV = 60 x 10^-12 F x 100 V = 6 x 10^-9 C (six times the original 1 x 10^-9 C).",
+     "s": [
+      [
+       "C = K C0 = 60 pF",
+       1
+      ],
+      [
+       "V stays at 100 V, so Q = 6 x 10^-9 C",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hardest",
+     "t": "long_answer",
+     "m": 3,
+     "q": "A parallel plate capacitor has plate separation d and capacitance 20 pF with vacuum between the plates. A slab of dielectric constant 3, with the same area as the plates and thickness d/2, is inserted between the plates, the charge on the plates remaining unchanged. Find the new capacitance.",
+     "a": "Let E0 = V0/d be the field without the slab. With the slab, the field is E0 in the remaining gap of thickness d/2 and E0/K inside the slab of thickness d/2. So V = E0 (d/2) + (E0/K)(d/2) = V0 (K + 1)/(2K) = V0 x 4/6 = (2/3) V0. The charge is unchanged, so C = Q0/V = [2K/(K + 1)] C0 = (6/4) x 20 pF = 30 pF.",
+     "s": [
+      [
+       "Field E0 in the gap and E0/K in the slab",
+       1
+      ],
+      [
+       "V = V0 (K + 1)/(2K) = (2/3) V0",
+       1
+      ],
+      [
+       "C = Q0/V = 30 pF",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "multi_statement",
+     "m": 1,
+     "q": "Consider the statements: (I) When a dielectric is inserted to fill the space between the plates of a charged capacitor that has been disconnected from its battery, the potential difference between the plates decreases. (II) In the same process the free charge on the capacitor plates decreases by the factor K. Which is or are correct?",
+     "a": "Only I",
+     "o": [
+      "Only I",
+      "Only II",
+      "Both I and II",
+      "Neither I nor II"
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "q": "A dielectric of dielectric constant K is inserted so as to fill a parallel plate capacitor (a) while the capacitor remains connected to its voltage supply, and (b) after the supply has been disconnected. Compare what happens to the charge on the plates and to the potential difference in the two cases.",
+     "a": "In both cases the capacitance becomes K times its original value. (a) With the supply connected the potential difference stays fixed, so the charge Q = CV increases to K times its original value. (b) With the supply disconnected the charge on the plates stays fixed, so the potential difference V = Q/C falls to 1/K of its original value.",
+     "s": [
+      [
+       "Supply connected: V unchanged, Q becomes K times",
+       1
+      ],
+      [
+       "Supply disconnected: Q unchanged, V becomes 1/K times",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hardest",
+     "t": "long_answer",
+     "m": 3,
+     "q": "A linear dielectric completely fills the space between the plates (area A, separation d, charges +Q and -Q, surface charge density sigma) of a parallel plate capacitor and acquires induced surface charge densities sigma_p and -sigma_p. Starting from the field inside the dielectric, show how the capacitance compares with its vacuum value C0.",
+     "a": "The field in the dielectric corresponds to a net surface charge density (sigma - sigma_p): E = (sigma - sigma_p)/epsilon0. For a linear dielectric sigma_p is proportional to sigma, so we write sigma - sigma_p = sigma/K, where K > 1 is the dielectric constant. Then V = Ed = sigma d/(epsilon0 K) = Qd/(A epsilon0 K). Hence C = Q/V = K epsilon0 A/d = K C0: the capacitance increases by the factor K.",
+     "s": [
+      [
+       "E = (sigma - sigma_p)/epsilon0",
+       1
+      ],
+      [
+       "sigma - sigma_p = sigma/K, giving V = Qd/(A epsilon0 K)",
+       1
+      ],
+      [
+       "C = K epsilon0 A/d = K C0",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Evaluate",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "q": "A student says: 'A dielectric and a conductor behave in the same way in an external electric field; in both, the induced charges completely cancel the field inside.' Evaluate this statement.",
+     "a": "The statement is right for a conductor but wrong for a dielectric. In a conductor the free charge carriers move until the field of the induced charges exactly cancels the external field, so the net field inside is zero. In a dielectric free movement of charges is not possible; the external field only stretches or re-orients the molecules, and the resulting bound surface charges produce an opposing field that reduces the external field inside but does not cancel it.",
+     "s": [
+      [
+       "Conductor: free charges move and cancel the field completely",
+       1
+      ],
+      [
+       "Dielectric: bound charges only reduce the field, not cancel it",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Create",
+     "d": "Hardest",
+     "t": "long_answer",
+     "m": 3,
+     "q": "You have a parallel plate air capacitor of capacitance 15 pF and need a capacitance of 90 pF without changing the area of the plates. Propose two different designs, using a dielectric and, if you wish, a change of plate separation, and verify each.",
+     "a": "Design 1: keep the separation and fill the space completely with a dielectric of dielectric constant 6: C = K C0 = 6 x 15 pF = 90 pF. Design 2: halve the separation, which doubles the capacitance to 30 pF, and fill the space with a dielectric of dielectric constant 3: C = 3 x 30 pF = 90 pF. In general any combination with K x (d_old/d_new) = 6 works.",
+     "s": [
+      [
+       "First design stated and verified to give 90 pF",
+       1
+      ],
+      [
+       "Second, different design stated",
+       1
+      ],
+      [
+       "Second design verified using C = K epsilon0 A/d",
+       1
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "code": "C12P-2.9",
+   "name": "Combination of capacitors and energy stored in a capacitor",
+   "description": "Capacitors in series share the same charge and add as reciprocals; capacitors in parallel share the same potential difference and add directly; a charged capacitor stores energy (1/2)QV, which can be regarded as stored in the electric field with energy density (1/2) epsilon0 E^2.",
+   "idea": "A combination of capacitors can be replaced by one effective capacitor that holds the same charge at the same total potential difference. Charging a capacitor takes work, which is stored as potential energy in the field between the plates.",
+   "rule": "Series: same charge Q on each, V = V1 + V2 + ..., 1/C = 1/C1 + 1/C2 + ... . Parallel: same V across each, Q = Q1 + Q2 + ..., C = C1 + C2 + ... . Energy U = (1/2)QV = (1/2)CV^2 = Q^2/(2C); energy density of an electric field u = (1/2) epsilon0 E^2.",
+   "example": "A 900 pF capacitor charged by a 100 V battery stores (1/2) x 9 x 10^-8 C x 100 V = 4.5 x 10^-6 J; when it is disconnected and joined to an identical uncharged capacitor the charge is shared equally and the stored energy falls to 2.25 x 10^-6 J.",
+   "difficulty_base": "Hard",
+   "questions": [
+    {
+     "b": "Remember",
+     "d": "Easy",
+     "t": "fill_blank",
+     "m": 1,
+     "q": "When capacitors are connected in series across a battery, the quantity that has the same value for every capacitor is the ____. (one word)",
+     "a": "charge"
+    },
+    {
+     "b": "Remember",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "When capacitors are connected in parallel across a supply, the quantity that is the same for every capacitor is the",
+     "a": "potential difference",
+     "o": [
+      "potential difference",
+      "charge",
+      "stored energy",
+      "surface charge density"
+     ]
+    },
+    {
+     "b": "Remember",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "The potential energy of a charged capacitor can be regarded as stored in the",
+     "a": "electric field between its plates",
+     "o": [
+      "electric field between its plates",
+      "wires that connect it to the battery",
+      "battery that charged it",
+      "metal of the plates as heat"
+     ]
+    },
+    {
+     "b": "Remember",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "q": "Which of the following is NOT a correct expression for the energy stored in a capacitor of capacitance C carrying charge Q at potential difference V?",
+     "a": "(1/2) Q V^2",
+     "o": [
+      "(1/2) Q V^2",
+      "(1/2) Q V",
+      "(1/2) C V^2",
+      "Q^2/(2C)"
+     ],
+     "rev": true
+    },
+    {
+     "b": "Understand",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "The effective capacitance of several capacitors connected in series is always",
+     "a": "smaller than the smallest individual capacitance",
+     "o": [
+      "smaller than the smallest individual capacitance",
+      "larger than the largest individual capacitance",
+      "equal to the sum of the individual capacitances",
+      "equal to the average of the individual capacitances"
+     ]
+    },
+    {
+     "b": "Understand",
+     "d": "Easy",
+     "t": "fill_blank",
+     "m": 1,
+     "q": "Two capacitors, each of capacitance 4 micro-F, are connected in parallel. Their effective capacitance, in micro-F, is ____. (a whole number)",
+     "a": "8"
+    },
+    {
+     "b": "Understand",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "Work has to be done by an external agency in charging a capacitor because",
+     "a": "at every stage positive charge is being transferred to the conductor that is at the higher potential",
+     "o": [
+      "at every stage positive charge is being transferred to the conductor that is at the higher potential",
+      "charge has to be created on the two conductors",
+      "the two conductors repel each other while they are being charged",
+      "the capacitance of the capacitor rises as it is charged"
+     ]
+    },
+    {
+     "b": "Understand",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "q": "Two capacitors C1 and C2 are joined in series across a battery. The two inner plates, which are connected to each other, carry equal and opposite charges because",
+     "a": "otherwise there would be an electric field in the conductor joining them, and charge would flow until the net charge on each capacitor is zero",
+     "o": [
+      "otherwise there would be an electric field in the conductor joining them, and charge would flow until the net charge on each capacitor is zero",
+      "the battery is connected directly to these two plates",
+      "the two capacitors always have equal capacitances",
+      "the two inner plates are at different potentials"
+     ]
+    },
+    {
+     "b": "Understand",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "q": "Derive the expression for the effective capacitance of two capacitors C1 and C2 connected in parallel across a potential difference V.",
+     "a": "In a parallel combination the same potential difference V is applied across both capacitors, so their charges are Q1 = C1 V and Q2 = C2 V. The equivalent capacitor has charge Q = Q1 + Q2 at potential difference V, so CV = C1 V + C2 V, which gives C = C1 + C2.",
+     "s": [
+      [
+       "Same V across both; Q1 = C1 V and Q2 = C2 V",
+       1
+      ],
+      [
+       "Q = Q1 + Q2 = CV gives C = C1 + C2",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "Three capacitors, each of capacitance 6 pF, are connected in series. The effective capacitance of the combination is",
+     "a": "2 pF",
+     "o": [
+      "2 pF",
+      "18 pF",
+      "0.5 pF",
+      "6 pF"
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "A capacitor of capacitance 4 micro-F is charged to a potential difference of 100 V. The energy stored in it is",
+     "a": "0.02 J",
+     "o": [
+      "0.02 J",
+      "0.04 J",
+      "2 x 10^-4 J",
+      "2 x 10^4 J"
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "q": "Capacitors of 3 micro-F and 6 micro-F are connected in series across a 12 V battery. The charge on the capacitors is",
+     "a": "24 micro-C on each",
+     "o": [
+      "24 micro-C on each",
+      "108 micro-C on each",
+      "36 micro-C on the 3 micro-F and 72 micro-C on the 6 micro-F",
+      "6 micro-C on each"
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "q": "Capacitors of 4 micro-F and 12 micro-F are connected in series across a 16 V supply. Find the potential difference across each capacitor.",
+     "a": "1/C = 1/4 + 1/12 = 4/12, so C = 3 micro-F. The charge on each capacitor is Q = CV = 3 micro-F x 16 V = 48 micro-C. Potential difference across the 4 micro-F capacitor = 48/4 = 12 V; across the 12 micro-F capacitor = 48/12 = 4 V (total 16 V).",
+     "s": [
+      [
+       "Effective capacitance 3 micro-F and common charge 48 micro-C",
+       1
+      ],
+      [
+       "12 V across the 4 micro-F and 4 V across the 12 micro-F",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "q": "The electric field between the plates of a parallel plate air capacitor is 2 x 10^5 V/m. Each plate has area 0.01 m^2 and the plates are 1 mm apart. Take epsilon0 = 8.85 x 10^-12 C^2/N m^2. Find (a) the energy density of the field and (b) the energy stored in the capacitor.",
+     "a": "(a) u = (1/2) epsilon0 E^2 = (1/2) x 8.85 x 10^-12 x (2 x 10^5)^2 = 0.177 J/m^3. (b) Volume between the plates = A d = 0.01 m^2 x 1 x 10^-3 m = 1 x 10^-5 m^3, so U = u x A d = 0.177 x 1 x 10^-5 = 1.77 x 10^-6 J.",
+     "s": [
+      [
+       "u = (1/2) epsilon0 E^2 = 0.177 J/m^3",
+       1
+      ],
+      [
+       "U = u x A d = 1.77 x 10^-6 J",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hardest",
+     "t": "long_answer",
+     "m": 3,
+     "q": "Capacitors C1 = 6 micro-F and C2 = 3 micro-F are connected in series, and this series pair is connected in parallel with a capacitor C3 = 4 micro-F. The network is connected to a 100 V supply. Find (a) the equivalent capacitance of the network, (b) the charge on each capacitor and (c) the total energy stored.",
+     "a": "(a) Series pair: 1/C' = 1/6 + 1/3 = 1/2, so C' = 2 micro-F. In parallel with C3: C = 2 + 4 = 6 micro-F. (b) The series pair has 100 V across it, so the charge on C1 and on C2 is Q = C' V = 2 micro-F x 100 V = 200 micro-C = 2 x 10^-4 C each. The charge on C3 is 4 micro-F x 100 V = 400 micro-C = 4 x 10^-4 C. (c) U = (1/2) C V^2 = (1/2) x 6 x 10^-6 x (100)^2 = 0.03 J.",
+     "s": [
+      [
+       "Equivalent capacitance = 6 micro-F",
+       1
+      ],
+      [
+       "200 micro-C on C1 and on C2; 400 micro-C on C3",
+       1
+      ],
+      [
+       "Total energy = 0.03 J",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "assertion_reason",
+     "m": 1,
+     "q": "Assertion (A): When a charged capacitor is disconnected from its battery and connected to an identical uncharged capacitor, the total electrostatic energy stored falls to half its initial value. Reason (R): Half of the total charge is lost when the two capacitors are connected. Choose the correct option.",
+     "a": "A is true, R is false",
+     "o": [
+      "A is true, R is false",
+      "Both A and R are true, and R is the correct explanation of A",
+      "Both A and R are true, but R is not the correct explanation of A",
+      "A is false, R is true"
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "q": "A parallel plate air capacitor remains connected to a battery of fixed voltage while the separation between its plates is doubled. Analyse what happens to its capacitance, to the charge on its plates and to the energy stored in it.",
+     "a": "The battery keeps V fixed. C = epsilon0 A/d becomes half when d is doubled. The charge Q = CV therefore becomes half, and the stored energy U = (1/2) C V^2 also becomes half.",
+     "s": [
+      [
+       "V fixed; C is halved",
+       1
+      ],
+      [
+       "Q and U are each halved",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hardest",
+     "t": "long_answer",
+     "m": 3,
+     "q": "A 2 micro-F capacitor is charged to 300 V and then disconnected from the supply. It is next connected across an uncharged 4 micro-F capacitor. Find (a) the common potential difference in the steady state, (b) the total energy stored before and after the connection, and (c) the energy lost, stating where it goes.",
+     "a": "(a) Initial charge Q = CV = 2 x 10^-6 x 300 = 6 x 10^-4 C. Charge is conserved and the two capacitors end at a common potential difference V', so V' = Q/(C1 + C2) = 6 x 10^-4 / (6 x 10^-6) = 100 V. (b) Before: U = (1/2) x 2 x 10^-6 x (300)^2 = 0.09 J. After: U' = (1/2) x 6 x 10^-6 x (100)^2 = 0.03 J. (c) Energy lost = 0.09 - 0.03 = 0.06 J; it is lost as heat and electromagnetic radiation during the transient period while current flows from one capacitor to the other.",
+     "s": [
+      [
+       "Charge conservation gives the common potential difference 100 V",
+       1
+      ],
+      [
+       "Energies 0.09 J before and 0.03 J after",
+       1
+      ],
+      [
+       "Loss of 0.06 J as heat and electromagnetic radiation during the transient current",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Evaluate",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "q": "To store as much energy as possible from a 12 V battery, a student connects two 10 micro-F capacitors in series across it. Evaluate this choice against connecting them in parallel, with numbers.",
+     "a": "Series: C = 5 micro-F, U = (1/2) C V^2 = (1/2) x 5 x 10^-6 x (12)^2 = 3.6 x 10^-4 J. Parallel: C = 20 micro-F, U = (1/2) x 20 x 10^-6 x (12)^2 = 1.44 x 10^-3 J. The parallel connection stores four times as much energy, so the student's choice is the poorer one.",
+     "s": [
+      [
+       "Series: 5 micro-F and 3.6 x 10^-4 J",
+       1
+      ],
+      [
+       "Parallel: 20 micro-F and 1.44 x 10^-3 J, so parallel is the better choice",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Create",
+     "d": "Hardest",
+     "t": "long_answer",
+     "m": 3,
+     "q": "Using only capacitors of 6 micro-F, design a combination whose effective capacitance is 9 micro-F. Describe the connections, verify the value, and find the energy stored when your combination is connected to a 10 V supply.",
+     "a": "One possible design: connect two 6 micro-F capacitors in series, and connect a third 6 micro-F capacitor in parallel with this pair. Series pair: 1/C' = 1/6 + 1/6, so C' = 3 micro-F. With the third in parallel: C = 3 + 6 = 9 micro-F. Energy at 10 V: U = (1/2) C V^2 = (1/2) x 9 x 10^-6 x (10)^2 = 4.5 x 10^-4 J. Any other verified combination giving 9 micro-F earns the marks.",
+     "s": [
+      [
+       "Design described: two in series, in parallel with a third (or equivalent)",
+       1
+      ],
+      [
+       "Verification that the effective capacitance is 9 micro-F",
+       1
+      ],
+      [
+       "Energy = 4.5 x 10^-4 J at 10 V",
+       1
+      ]
+     ]
+    }
+   ]
+  }
+ ]
+}

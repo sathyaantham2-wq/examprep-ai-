@@ -1,0 +1,3066 @@
+{
+ "subject": {
+  "code": "PHY12",
+  "name": "Physics",
+  "board": "CBSE",
+  "class": 12
+ },
+ "source": {
+  "publisher": "NCERT",
+  "title": "Physics Part I",
+  "edition": "Textbook for Class XII Part I, Reprint 2026-27",
+  "year": 2026
+ },
+ "chapter": {
+  "part": "I",
+  "chapter_no": 3,
+  "name": "Current Electricity",
+  "blurb": "Charges in steady motion make an electric current, and this chapter follows that current from its definition through Ohm's law, resistivity and the drift of electrons that explains it, to the way resistivity changes with temperature and the heat a current produces. It then turns to cells, their emf and internal resistance and their series and parallel combinations, and ends with Kirchhoff's rules for analysing any network and the Wheatstone bridge as their application.",
+  "source_code": "leph103",
+  "order_index": 3
+ },
+ "scope_in": [
+  {
+   "item": "Define steady current as net charge crossing an area per unit time (I = q/t, q = q+ - q-), interpret a negative value, and state the general definition as the limit of delta Q/delta t; ampere as the SI unit, with typical magnitudes (domestic appliances, lightning, nerves)",
+   "pages": "81-82"
+  },
+  {
+   "item": "Explain currents in conductors: free electrons in metals moving against fixed positive ions, both signs of charge moving in electrolytes, no net current from random thermal motion, the momentary current from charges +Q and -Q on a cylinder, and the need for a cell to maintain a steady field",
+   "pages": "82-83"
+  },
+  {
+   "item": "State and use Ohm's law V = RI; reason that resistance is proportional to length and inversely proportional to cross-sectional area, and use R = rho l/A to find resistance or resistivity",
+   "pages": "83-84"
+  },
+  {
+   "item": "Use current density j = I/A (A/m^2), V = El, and the forms E = rho j and j = sigma E with conductivity sigma = 1/rho",
+   "pages": "84-85"
+  },
+  {
+   "item": "Explain the drift of electrons: acceleration eE/m, relaxation time tau, drift velocity of magnitude e E tau/m opposite to E, and use I = n e A v_d to find drift speeds and drift times",
+   "pages": "85-87"
+  },
+  {
+   "item": "Relate conductivity to n e^2 tau/m, and answer the qualitative points of Example 3.2 (instant establishment of current, steady drift despite acceleration, large n, drift superposed on random motion, curved paths in a field)",
+   "pages": "86-88"
+  },
+  {
+   "item": "Define mobility as drift velocity magnitude per unit field, mu = v_d/E = e tau/m, with unit m^2/V s, and compute it",
+   "pages": "88-89"
+  },
+  {
+   "item": "State the three ways Ohm's law fails (V not proportional to I; dependence on the sign of V, as in a diode; non-unique relation, as in GaAs)",
+   "pages": "89"
+  },
+  {
+   "item": "Classify conductors, semiconductors and insulators by resistivity, with metals between 10^-8 ohm m and 10^-6 ohm m",
+   "pages": "89-90"
+  },
+  {
+   "item": "Use rho_T = rho_0 [1 + alpha (T - T0)] and the corresponding relation for resistance to find a resistance, a temperature or alpha; know its limited range of validity, that alpha is positive for metals, and the weak temperature dependence of nichrome, manganin and constantan",
+   "pages": "90-92, 105-106"
+  },
+  {
+   "item": "Explain from rho = m/(n e^2 tau) why resistivity rises with temperature in metals (tau decreases) and falls in semiconductors and insulators (n increases)",
+   "pages": "91"
+  },
+  {
+   "item": "Use the energy dissipated delta W = I V delta t and power P = IV = I^2 R = V^2/R; explain where the energy comes from and why the conductor heats",
+   "pages": "92-93"
+  },
+  {
+   "item": "Explain and calculate transmission loss Pc = I^2 Rc = P^2 Rc/V^2 and why power is transmitted at high voltage",
+   "pages": "93"
+  },
+  {
+   "item": "Define emf as the open-circuit potential difference of a cell and internal resistance; use V = epsilon - I r, I = epsilon/(R + r), maximum current epsilon/r, and V = epsilon + I r for a cell being charged",
+   "pages": "93-95, 97, 105-106"
+  },
+  {
+   "item": "Find the equivalent emf and internal resistance of cells in series (including a reversed cell) and of two cells in parallel, and use them to find currents",
+   "pages": "95-97"
+  },
+  {
+   "item": "State Kirchhoff's junction rule and loop rule with their physical basis, and apply them, with a sign convention, to single loops and simple multi-loop networks including the symmetric cube network of Example 3.5",
+   "pages": "97-100"
+  },
+  {
+   "item": "Describe the Wheatstone bridge, derive and use the balance condition R2/R1 = R4/R3 to find an unknown resistance, and analyse an unbalanced bridge with Kirchhoff's rules",
+   "pages": "100-102, 104"
+  }
+ ],
+ "scope_out": [
+  {
+   "item": "Colour code of carbon resistors",
+   "reason": "Not present anywhere in this Reprint 2026-27 edition of the chapter"
+  },
+  {
+   "item": "Series and parallel combinations of resistors as a taught topic (derivation of equivalent resistance, mixed-network reduction problems)",
+   "reason": "No such section in this edition; section 3.12 only refers back to 'the formulae we have derived earlier'. Used here only as Class 10 prior knowledge where the chapter's own examples do so (same current through resistors in one branch, same potential difference across branches between two points)"
+  },
+  {
+   "item": "Metre bridge: construction, balancing length, end corrections and numericals",
+   "reason": "The chapter only names 'the meter bridge' in one sentence on p. 101 as a practical device using the Wheatstone principle; nothing about it is taught"
+  },
+  {
+   "item": "Potentiometer: principle, comparison of emfs, measurement of internal resistance",
+   "reason": "Not present anywhere in this edition of the chapter"
+  },
+  {
+   "item": "Points to Ponder (current as a scalar and I = j . delta S, V = IR as a definition of resistance versus Ohm's law, the relation j = rho v for separate charge carriers)",
+   "reason": "Boxed end-of-chapter remarks (pp. 104-105) that neither the Summary nor any exercise relies on"
+  },
+  {
+   "item": "Biographical boxes on Georg Simon Ohm and Gustav Robert Kirchhoff, including dates and Ohm's heat-conduction analogy",
+   "reason": "Historical notes (pp. 84, 97), not examinable"
+  },
+  {
+   "item": "The numerical factor by which insulator resistivity exceeds that of metals",
+   "reason": "The book is inconsistent: the text on p. 90 says 10^18 times or more, the Summary on p. 103 says 10^22 to 10^24 times, so no question asks for the factor"
+  },
+  {
+   "item": "Thermal speed formula from kinetic theory (order of sqrt(kB T/M)) and its calculation",
+   "reason": "Quoted in Example 3.1 from the Class XI book only to give the value 2 x 10^2 m/s; the value is given in the stem wherever it is used"
+  },
+  {
+   "item": "Definition of the ampere through the magnetic effect of currents",
+   "reason": "Deferred by the chapter itself to the following chapter (p. 82)"
+  },
+  {
+   "item": "Semiconductor physics of the diode and of GaAs (why their V-I curves have these shapes), and the working of a transformer",
+   "reason": "Only named as examples here; the diode is deferred to Chapter 14 and the transformer is not explained in this chapter"
+  },
+  {
+   "item": "Reading values off the graphs of Figs. 3.5 to 3.10, and the dimensional formulas in the Summary table",
+   "reason": "Figures cannot be shown in this product, and the dimensions table is a reference list not developed in the text"
+  },
+  {
+   "item": "Superconductivity, thermistors, electrical energy in kilowatt-hour billing, maximum power transfer theorem, and grouping of cells in mixed (series-parallel) arrays",
+   "reason": "Commonly expected with this chapter but absent from this edition"
+  }
+ ],
+ "concepts": [
+  {
+   "code": "C12P-3.1",
+   "name": "Electric current and currents in conductors",
+   "description": "Current as net charge crossing an area per unit time, its unit and typical magnitudes, and why a metal carries a steady current only when a steady electric field is maintained in it.",
+   "idea": "Charges in motion constitute an electric current; in a solid metal the moving charges are electrons, and they give a net current only when an electric field makes their motion one-sided.",
+   "rule": "For a steady current I = q/t, where q is the net charge crossing the area in the forward direction in time t (q = q+ - q-); a negative value means a current in the backward direction. For a current that is not steady, the current at time t is the limit of delta Q/delta t as delta t tends to zero. The SI unit is the ampere. With no electric field the electrons of a metal move randomly because of thermal motion, colliding with the fixed ions and emerging with the same speed in a random direction, so there is no net current. Charges +Q and -Q placed once on the ends of a metal cylinder give a current only for a very short while; a cell or battery maintains a steady field and hence a continuous current.",
+   "example": "A steady current of 0.5 A carries a charge of 0.5 x 60 = 30 C across a cross-section in 1 minute.",
+   "difficulty_base": "Easy",
+   "questions": [
+    {
+     "b": "Remember",
+     "d": "Easy",
+     "t": "fill_blank",
+     "m": 1,
+     "q": "The SI unit of electric current is the ____ (one word, written in full).",
+     "a": "ampere"
+    },
+    {
+     "b": "Remember",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "For a steady flow of charge, the current across an area is defined as",
+     "a": "the net charge flowing across the area divided by the time taken",
+     "o": [
+      "the net charge flowing across the area divided by the time taken",
+      "the net charge flowing across the area multiplied by the time taken",
+      "the time taken divided by the net charge flowing across the area",
+      "the number of free electrons per unit volume of the conductor"
+     ]
+    },
+    {
+     "b": "Remember",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "In a solid metallic conductor, the electric current is carried by",
+     "a": "negatively charged electrons moving in a background of fixed positive ions",
+     "o": [
+      "negatively charged electrons moving in a background of fixed positive ions",
+      "positive ions moving through a background of fixed electrons",
+      "positive and negative ions that are both free to move",
+      "neutral atoms moving along the conductor"
+     ]
+    },
+    {
+     "b": "Remember",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "q": "Which of the following statements about electric current, as described in this chapter, is NOT correct?",
+     "a": "In a metal with no electric field applied, the free electrons are at rest, so there is no current",
+     "o": [
+      "In a metal with no electric field applied, the free electrons are at rest, so there is no current",
+      "An average lightning stroke carries a current of the order of tens of thousands of amperes",
+      "The currents in our nerves are of the order of microamperes",
+      "In an electrolytic solution both positive and negative charges can move"
+     ],
+     "rev": true
+    },
+    {
+     "b": "Understand",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "With no electric field applied, there is no net current in a metal because",
+     "a": "at any instant as many electrons travel in any direction as in the opposite direction",
+     "o": [
+      "at any instant as many electrons travel in any direction as in the opposite direction",
+      "the electrons are bound to their nuclei and cannot move at all",
+      "the electrons stop moving after they collide with the fixed ions",
+      "the positive ions move so as to cancel the current of the electrons"
+     ]
+    },
+    {
+     "b": "Understand",
+     "d": "Easy",
+     "t": "fill_blank",
+     "m": 1,
+     "q": "With no field applied, an electron of a metal that collides with a fixed ion emerges with the same speed as before, but its ____ after the collision is completely random (one word).",
+     "a": "direction"
+    },
+    {
+     "b": "Understand",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "In a time t, a net positive charge q+ and a net negative charge q- flow in the forward direction across an area. The net charge flowing across the area in the forward direction is",
+     "a": "q+ - q-",
+     "o": [
+      "q+ - q-",
+      "q+ + q-",
+      "q- - q+",
+      "q+ x q-"
+     ]
+    },
+    {
+     "b": "Understand",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "q": "Charges +Q and -Q are placed on two thin dielectric discs attached to the two flat ends of a metal cylinder, and are not replaced afterwards. The current in the cylinder",
+     "a": "flows for a very short while and then stops, as the moving electrons neutralise the charges",
+     "o": [
+      "flows for a very short while and then stops, as the moving electrons neutralise the charges",
+      "flows steadily for as long as the discs stay attached, since the field never changes",
+      "never flows, because the electrons of a metal are bound to their atoms",
+      "starts only after the two discs have been removed"
+     ]
+    },
+    {
+     "b": "Understand",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "q": "Charges placed once at the two ends of a metal cylinder give only a momentary current, but a cell connected across it gives a continuous current. Explain the difference.",
+     "a": "The charges at the ends set up a field that drives electrons towards the positive end; these electrons neutralise the charges, the field disappears and the current stops after a very short while. A cell keeps supplying fresh charge to the ends to make up for the charge neutralised, so a steady electric field is maintained in the conductor and the current is continuous.",
+     "s": [
+      [
+       "States that the moving electrons neutralise the end charges, so the field and the current die out",
+       1
+      ],
+      [
+       "States that a cell replenishes the charges and so maintains a steady field, giving a continuous current",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "A steady current of 0.5 A flows through a wire. The charge crossing any cross-section of the wire in 1 minute is",
+     "a": "30 C",
+     "o": [
+      "30 C",
+      "0.5 C",
+      "120 C",
+      "0.0083 C"
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "A charge of 240 C crosses a cross-section of a wire at a steady rate in 2 minutes. The current in the wire is",
+     "a": "2 A",
+     "o": [
+      "2 A",
+      "120 A",
+      "480 A",
+      "0.5 A"
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "q": "A steady current of 3.2 A flows in a wire. How many electrons cross a cross-section of the wire in 1 s? Take e = 1.6 x 10^-19 C.",
+     "a": "Charge crossing in 1 s: q = I t = 3.2 A x 1 s = 3.2 C. Number of electrons = q/e = 3.2/(1.6 x 10^-19) = 2 x 10^19 electrons.",
+     "s": [
+      [
+       "Finds the charge q = I t = 3.2 C",
+       1
+      ],
+      [
+       "Divides by e to get 2 x 10^19 electrons",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "q": "In an electrolytic solution, during 4 s positive ions carrying a total charge of 6 C cross a certain area in the forward direction, while negative ions carrying a total charge of magnitude 2 C cross the same area in the backward direction. Find the net charge transported in the forward direction and the current.",
+     "a": "Negative charge moving backward is equivalent to positive charge moving forward, so the net charge in the forward direction is q = q+ - q- = 6 C - (-2 C) = 8 C. Current I = q/t = 8 C / 4 s = 2 A, in the forward direction.",
+     "s": [
+      [
+       "Finds the net forward charge q = 6 - (-2) = 8 C",
+       1
+      ],
+      [
+       "Finds I = 8/4 = 2 A in the forward direction",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "q": "The net charge that has crossed a cross-section of a wire up to time t (t in seconds) is Q = 3t^2 + 2t coulomb. The current at t = 2 s, defined as the limit of delta Q/delta t, is",
+     "a": "14 A",
+     "o": [
+      "14 A",
+      "8 A",
+      "16 A",
+      "12 A"
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hardest",
+     "t": "long_answer",
+     "m": 3,
+     "q": "The current in a wire rises uniformly from 0 to 4 A in the first 5 s and then stays steady at 4 A for a further 10 s. Find (a) the charge that crosses a cross-section in the first 5 s, (b) the total charge in the whole 15 s, and (c) the steady current that would carry the same total charge in the same 15 s.",
+     "a": "(a) While the current rises uniformly its average value is (0 + 4)/2 = 2 A, so q1 = 2 A x 5 s = 10 C. (b) In the next 10 s, q2 = 4 A x 10 s = 40 C, so the total charge is 10 + 40 = 50 C. (c) Steady current = total charge/total time = 50 C / 15 s = 10/3 A, about 3.3 A.",
+     "s": [
+      [
+       "Finds 10 C for the first 5 s using the average current 2 A",
+       1
+      ],
+      [
+       "Finds 40 C for the steady part and the total 50 C",
+       1
+      ],
+      [
+       "Finds the equivalent steady current 50/15 = 10/3 A (about 3.3 A)",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "assertion_reason",
+     "m": 1,
+     "q": "Assertion (A): The current I = q/t calculated across an area for a chosen forward direction can come out as a negative number. Reason (R): q is the net charge flowing across the area in the forward direction, so a negative value simply means that the current is in the backward direction.",
+     "a": "Both A and R are true, and R is the correct explanation of A",
+     "o": [
+      "Both A and R are true, and R is the correct explanation of A",
+      "Both A and R are true, but R is not the correct explanation of A",
+      "A is true, R is false",
+      "A is false, R is true"
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "q": "The free electrons of a metal wire move at high thermal speeds even when no battery is connected. Analyse why this fast motion produces no current, whereas the motion produced when a battery is connected does.",
+     "a": "Thermal motion is random: after each collision an electron's direction is completely random, so at any time as many electrons cross a given area one way as the other way and the net charge crossing is zero. When a battery maintains an electric field, the electrons are all pushed the same way (towards the positive end), so there is a net flow of charge across the area in one direction, which is a current.",
+     "s": [
+      [
+       "Explains that random thermal motion gives zero net charge crossing any area",
+       1
+      ],
+      [
+       "Explains that the field gives a net one-way flow of charge, i.e. a current",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hardest",
+     "t": "long_answer",
+     "m": 3,
+     "q": "Compare what happens when an electric field is applied to (a) a solid metal, (b) an electrolytic solution and (c) a material in which all the electrons remain bound to their atoms. In each case state which charges, if any, move and whether a current results.",
+     "a": "(a) In a solid metal the atoms are tightly bound to each other and stay fixed, but some electrons are practically free to move within the bulk, so the current is carried by negatively charged electrons moving in a background of fixed positive ions. (b) In an electrolytic solution both positive and negative charges (ions) can move, so both kinds of charge carry the current, moving in opposite directions. (c) Where the electrons remain bound they do not accelerate even when the field is applied, so no charge is transported and no current results.",
+     "s": [
+      [
+       "Metal: free electrons carry the current, positive ions fixed",
+       1
+      ],
+      [
+       "Electrolyte: both positive and negative charges move and carry current",
+       1
+      ],
+      [
+       "Bound electrons: nothing free to move, so no current",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Evaluate",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "q": "A student says: 'A current of 1 A in a wire is a very small current, because the nerves in our body carry far larger currents.' Evaluate this claim using the magnitudes given in the chapter.",
+     "a": "The claim is wrong. An ampere is typically the order of magnitude of the currents in domestic appliances, while the currents in our nerves are in microamperes, about a millionth of an ampere. So 1 A is very large compared with nerve currents; it is small only in comparison with something like lightning, which carries tens of thousands of amperes.",
+     "s": [
+      [
+       "States that nerve currents are in microamperes, far smaller than 1 A, so the claim is wrong",
+       1
+      ],
+      [
+       "Places 1 A correctly: typical of domestic appliances, small only beside lightning (tens of thousands of amperes)",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Create",
+     "d": "Hardest",
+     "t": "long_answer",
+     "m": 3,
+     "q": "Construct an example of a steady current in which exactly 5 x 10^19 electrons cross a cross-section of a wire. State the current and the time you choose, show the calculation (take e = 1.6 x 10^-19 C), and state how many electrons would cross in the same time if the current were doubled.",
+     "a": "Charge needed: q = n e = 5 x 10^19 x 1.6 x 10^-19 C = 8 C. Any current and time with I t = 8 C will do, for example I = 2 A for t = 4 s (2 x 4 = 8 C). If the current is doubled to 4 A for the same 4 s, the charge is 16 C and the number of electrons doubles to 1 x 10^20.",
+     "s": [
+      [
+       "Finds the required charge q = 8 C",
+       1
+      ],
+      [
+       "Gives a current and a time whose product is 8 C, with the check shown",
+       1
+      ],
+      [
+       "States that doubling the current doubles the number to 1 x 10^20",
+       1
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "code": "C12P-3.2",
+   "name": "Ohm's law, resistance, resistivity and current density",
+   "description": "Ohm's law V = RI, the dependence of resistance on length and cross-section through R = rho l/A, and the equivalent form E = rho j or j = sigma E using current density and conductivity.",
+   "idea": "For a conductor obeying Ohm's law the potential difference is proportional to the current; the resistance depends on the shape of the conductor, but the resistivity depends only on the material.",
+   "rule": "Ohm's law: V = R I, with R in ohm. Doubling the length of a conductor doubles its resistance and halving its cross-sectional area doubles its resistance, so R = rho l/A, where the resistivity rho depends on the material but not on its dimensions. Current per unit area taken normal to the current is the current density j = I/A, in A/m^2, directed along E. With V = E l, Ohm's law becomes E = rho j, or j = sigma E, where sigma = 1/rho is the conductivity.",
+   "example": "A wire 20 m long of cross-section 4.0 x 10^-7 m^2 and resistance 2.5 ohm has resistivity rho = RA/l = 2.5 x 4.0 x 10^-7/20 = 5.0 x 10^-8 ohm m.",
+   "difficulty_base": "Easy",
+   "questions": [
+    {
+     "b": "Remember",
+     "d": "Easy",
+     "t": "fill_blank",
+     "m": 1,
+     "q": "In R = rho l/A, the constant rho, which depends on the material of the conductor, is called its ____ (one word).",
+     "a": "resistivity"
+    },
+    {
+     "b": "Remember",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "Ohm's law states that, for a conductor, the potential difference V between its ends is",
+     "a": "proportional to the current I flowing through it",
+     "o": [
+      "proportional to the current I flowing through it",
+      "inversely proportional to the current I flowing through it",
+      "proportional to the square of the current I flowing through it",
+      "independent of the current I flowing through it"
+     ]
+    },
+    {
+     "b": "Remember",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "The SI unit of current density is",
+     "a": "A/m^2",
+     "o": [
+      "A/m^2",
+      "A m^2",
+      "A/m",
+      "C/m^2"
+     ]
+    },
+    {
+     "b": "Remember",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "q": "According to the chapter, the resistivity of a conductor does NOT depend on",
+     "a": "the length and cross-sectional area of the conductor",
+     "o": [
+      "the length and cross-sectional area of the conductor",
+      "the material of the conductor",
+      "the temperature of the conductor",
+      "the pressure on the conductor"
+     ],
+     "rev": true
+    },
+    {
+     "b": "Understand",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "Three identical slabs, each of resistance R, are placed end to end so that the same current flows through all of them (the length triples, the cross-section is unchanged). The resistance of the combination is",
+     "a": "3R",
+     "o": [
+      "3R",
+      "R/3",
+      "R",
+      "9R"
+     ]
+    },
+    {
+     "b": "Understand",
+     "d": "Easy",
+     "t": "fill_blank",
+     "m": 1,
+     "q": "For any material, the product of its conductivity sigma and its resistivity rho is ____ (a whole number).",
+     "a": "1"
+    },
+    {
+     "b": "Understand",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "In a conductor carrying a current, the current density vector j is directed",
+     "a": "along the electric field E",
+     "o": [
+      "along the electric field E",
+      "opposite to the electric field E",
+      "perpendicular to the electric field E",
+      "along the direction in which the electrons move"
+     ]
+    },
+    {
+     "b": "Understand",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "q": "A slab of resistance R is cut lengthwise into two identical pieces, each of the full length l but of cross-sectional area A/2. The resistance of each piece is",
+     "a": "2R",
+     "o": [
+      "2R",
+      "R/2",
+      "R",
+      "4R"
+     ]
+    },
+    {
+     "b": "Understand",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "q": "Starting from V = IR and R = rho l/A for a uniform conductor of length l and cross-sectional area A, show that E = rho j, where E is the magnitude of the uniform electric field in it and j is the current density.",
+     "a": "V = I R = I rho l/A. The current per unit area is the current density, j = I/A, so V = j rho l. For a uniform field V = E l. Hence E l = j rho l, which gives E = rho j.",
+     "s": [
+      [
+       "Writes V = I rho l/A and uses j = I/A",
+       1
+      ],
+      [
+       "Uses V = E l and cancels l to obtain E = rho j",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "A potential difference of 12 V across a conductor drives a current of 3 A through it. The resistance of the conductor is",
+     "a": "4 ohm",
+     "o": [
+      "4 ohm",
+      "36 ohm",
+      "0.25 ohm",
+      "15 ohm"
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "A current of 6 A flows uniformly through a wire of cross-sectional area 2 x 10^-6 m^2, normal to the cross-section. The current density is",
+     "a": "3 x 10^6 A/m^2",
+     "o": [
+      "3 x 10^6 A/m^2",
+      "1.2 x 10^-5 A/m^2",
+      "3.3 x 10^-7 A/m^2",
+      "3 x 10^-6 A/m^2"
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "q": "A wire of length 20 m and uniform cross-sectional area 4.0 x 10^-7 m^2 has a resistance of 2.5 ohm. Find the resistivity of its material.",
+     "a": "R = rho l/A, so rho = R A/l = (2.5 ohm x 4.0 x 10^-7 m^2)/(20 m) = 5.0 x 10^-8 ohm m.",
+     "s": [
+      [
+       "Rearranges to rho = R A/l and substitutes",
+       1
+      ],
+      [
+       "Obtains rho = 5.0 x 10^-8 ohm m with the unit",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "q": "A uniform wire of resistance 8 ohm is stretched uniformly until its length is doubled. Its volume and resistivity stay the same. Find its new resistance.",
+     "a": "Volume = A l is constant, so doubling the length halves the cross-sectional area. R = rho l/A, so the new resistance is rho (2l)/(A/2) = 4 rho l/A = 4 x 8 ohm = 32 ohm.",
+     "s": [
+      [
+       "States that the area becomes A/2 when the length becomes 2l at constant volume",
+       1
+      ],
+      [
+       "Uses R = rho l/A to get 4 x 8 = 32 ohm",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "q": "The electric field inside a conductor of conductivity 5 x 10^7 S/m has magnitude 0.02 V/m. The magnitude of the current density in it is",
+     "a": "1 x 10^6 A/m^2",
+     "o": [
+      "1 x 10^6 A/m^2",
+      "2.5 x 10^9 A/m^2",
+      "4 x 10^-10 A/m^2",
+      "5 x 10^7 A/m^2"
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hardest",
+     "t": "long_answer",
+     "m": 3,
+     "q": "A uniform wire of length 2 m and cross-sectional area 1 x 10^-6 m^2 carries a current of 4 A when a potential difference of 0.16 V is applied across its ends. Find (a) its resistance, (b) the resistivity of its material, and (c) the electric field and the current density in it, and check that they satisfy E = rho j.",
+     "a": "(a) R = V/I = 0.16 V / 4 A = 0.04 ohm. (b) rho = R A/l = (0.04 x 1 x 10^-6)/2 = 2 x 10^-8 ohm m. (c) E = V/l = 0.16/2 = 0.08 V/m and j = I/A = 4/(1 x 10^-6) = 4 x 10^6 A/m^2. Check: rho j = 2 x 10^-8 x 4 x 10^6 = 0.08 V/m = E.",
+     "s": [
+      [
+       "Finds R = 0.04 ohm",
+       1
+      ],
+      [
+       "Finds rho = 2 x 10^-8 ohm m",
+       1
+      ],
+      [
+       "Finds E = 0.08 V/m and j = 4 x 10^6 A/m^2 and verifies E = rho j",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "multi_statement",
+     "m": 1,
+     "q": "Consider these statements about a uniform conductor. (I) If E is the magnitude of the uniform electric field in a conductor of length l, the potential difference across its ends is E l. (II) The SI unit of resistivity is ohm per metre. Which is or are correct?",
+     "a": "Only I",
+     "o": [
+      "Only I",
+      "Only II",
+      "Both I and II",
+      "Neither I nor II"
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "q": "Wires P and Q are made of the same material. Q has twice the length and twice the diameter of P. Compare the resistance of Q with that of P.",
+     "a": "R = rho l/A with the same rho. Twice the diameter means four times the cross-sectional area, and the length is doubled, so R_Q = rho (2l)/(4A) = (1/2) rho l/A. The resistance of Q is half that of P.",
+     "s": [
+      [
+       "States that doubling the diameter makes the area four times",
+       1
+      ],
+      [
+       "Concludes R_Q = R_P/2",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hardest",
+     "t": "long_answer",
+     "m": 3,
+     "q": "Two wires X and Y are made from equal volumes of the same material, and X is twice as long as Y. (a) Find the ratio of their resistances R_X : R_Y. (b) If the same potential difference is applied across each, find the ratio of the currents I_X : I_Y. (c) Find the ratio of the current densities j_X : j_Y.",
+     "a": "(a) Equal volumes: A_X l_X = A_Y l_Y, so with l_X = 2 l_Y we get A_X = A_Y/2. R = rho l/A gives R_X/R_Y = (2)/(1/2) = 4, so R_X : R_Y = 4 : 1. (b) For the same V, I = V/R, so I_X : I_Y = 1 : 4. (c) j = I/A, so j_X/j_Y = (1/4)/(1/2) = 1/2, i.e. j_X : j_Y = 1 : 2. (Check: j = sigma E with E = V/l, and X is twice as long.)",
+     "s": [
+      [
+       "Finds A_X = A_Y/2 and R_X : R_Y = 4 : 1",
+       1
+      ],
+      [
+       "Finds I_X : I_Y = 1 : 4",
+       1
+      ],
+      [
+       "Finds j_X : j_Y = 1 : 2",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Evaluate",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "q": "A student says: 'A thick copper wire has a lower resistivity than a thin copper wire of the same length at the same temperature, because the thick wire conducts better.' Evaluate this statement.",
+     "a": "It is wrong. Resistivity is a property of the material and does not depend on the dimensions of the conductor, so both copper wires have the same resistivity. What is lower for the thick wire is its resistance, because R = rho l/A and its cross-sectional area A is larger.",
+     "s": [
+      [
+       "States that resistivity depends on the material, not the dimensions, so it is the same for both wires",
+       1
+      ],
+      [
+       "Explains that it is the resistance R = rho l/A that is lower for the thick wire",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Create",
+     "d": "Hardest",
+     "t": "long_answer",
+     "m": 3,
+     "q": "Design a wire of resistance 10 ohm from a material of resistivity 5 x 10^-7 ohm m. Choose a length and a cross-sectional area, show that the resistance is 10 ohm, and find the current density in your wire when a potential difference of 5 V is applied across it.",
+     "a": "R = rho l/A = 10 ohm needs l/A = 10/(5 x 10^-7) = 2 x 10^7 per metre. For example choose A = 1 x 10^-6 m^2 and l = 20 m: R = (5 x 10^-7 x 20)/(1 x 10^-6) = 10 ohm. With 5 V applied, I = V/R = 0.5 A, so j = I/A = 0.5/(1 x 10^-6) = 5 x 10^5 A/m^2. (Other choices with l/A = 2 x 10^7 per metre are equally valid; j then equals 0.5 A divided by the chosen area.)",
+     "s": [
+      [
+       "Chooses l and A with l/A = 2 x 10^7 per metre",
+       1
+      ],
+      [
+       "Verifies R = rho l/A = 10 ohm",
+       1
+      ],
+      [
+       "Finds I = 0.5 A and the current density for the chosen area",
+       1
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "code": "C12P-3.3",
+   "name": "Drift of electrons, relaxation time and mobility",
+   "description": "The drift velocity of electrons in a field, the relation I = n e A v_d, the conductivity in terms of relaxation time, and mobility.",
+   "idea": "An electric field gives the randomly moving electrons of a metal a small steady average velocity, the drift velocity, and this drift of an enormous number of electrons is the current.",
+   "rule": "Between collisions an electron has acceleration of magnitude eE/m. Averaging over the electrons, with tau the average time between collisions (relaxation time), the drift velocity has magnitude v_d = e E tau/m and is directed opposite to E; it is independent of time. The current is I = n e A v_d, where n is the number of free electrons per unit volume, so j = (n e^2 tau/m) E, which is Ohm's law with conductivity sigma = n e^2 tau/m. Mobility is the magnitude of the drift velocity per unit electric field, mu = v_d/E = e tau/m, in m^2/V s. The drift speed is tiny (about a millimetre per second for a few amperes in a copper wire), far smaller than thermal speeds or the speed at which the field is established.",
+   "example": "With n = 1.0 x 10^29 per m^3, A = 2.0 x 10^-6 m^2 and I = 3.2 A, v_d = I/(n e A) = 3.2/(1.0 x 10^29 x 1.6 x 10^-19 x 2.0 x 10^-6) = 1.0 x 10^-4 m/s.",
+   "difficulty_base": "Hard",
+   "questions": [
+    {
+     "b": "Remember",
+     "d": "Easy",
+     "t": "fill_blank",
+     "m": 1,
+     "q": "The average time between successive collisions of an electron with the ions of a metal is called the ____ time (one word).",
+     "a": "relaxation"
+    },
+    {
+     "b": "Remember",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "The mobility of a charge carrier is defined as",
+     "a": "the magnitude of its drift velocity per unit electric field",
+     "o": [
+      "the magnitude of its drift velocity per unit electric field",
+      "the magnitude of its drift velocity multiplied by the electric field",
+      "the electric field per unit drift velocity",
+      "the current per unit area of cross-section"
+     ]
+    },
+    {
+     "b": "Remember",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "The SI unit of mobility is",
+     "a": "m^2/V s",
+     "o": [
+      "m^2/V s",
+      "m/V s",
+      "V s/m^2",
+      "m^2 V/s"
+     ]
+    },
+    {
+     "b": "Remember",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "q": "Which of the following statements about the drift of electrons in a metal carrying a steady current is FALSE?",
+     "a": "All the free electrons of the metal move in the same direction",
+     "o": [
+      "All the free electrons of the metal move in the same direction",
+      "The drift velocity is superposed on the much larger random velocities of the electrons",
+      "For a steady field, the average drift velocity is independent of time",
+      "The drift speed is far smaller than the speed at which the electric field is established along the conductor"
+     ],
+     "rev": true
+    },
+    {
+     "b": "Understand",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "The drift velocity of the electrons in a conductor is directed",
+     "a": "opposite to the electric field",
+     "o": [
+      "opposite to the electric field",
+      "along the electric field",
+      "perpendicular to the electric field",
+      "in no particular direction, since it is random"
+     ]
+    },
+    {
+     "b": "Understand",
+     "d": "Easy",
+     "t": "fill_blank",
+     "m": 1,
+     "q": "For the electrons of a given metal, if the relaxation time becomes twice as large, their mobility becomes ____ times as large (a whole number).",
+     "a": "2"
+    },
+    {
+     "b": "Understand",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "The drift speed of electrons is only about a millimetre per second, yet a current is established almost the instant a circuit is closed. This is because",
+     "a": "the electric field is set up throughout the circuit almost instantly, causing a local electron drift at every point",
+     "o": [
+      "the electric field is set up throughout the circuit almost instantly, causing a local electron drift at every point",
+      "the electrons near the battery travel to the far end of the circuit at the speed of light",
+      "the electrons were already drifting along the wire before the circuit was closed",
+      "the positive ions of the metal move quickly to carry the current"
+     ]
+    },
+    {
+     "b": "Understand",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "q": "The electrons of a conductor are accelerated by the electric field in it, yet on average they acquire only a steady drift speed. This is because",
+     "a": "an electron loses its drift speed in each collision with an ion and has to start accelerating again",
+     "o": [
+      "an electron loses its drift speed in each collision with an ion and has to start accelerating again",
+      "the electric field inside a current-carrying conductor is zero",
+      "the electrons are too heavy to be accelerated by the field",
+      "the force of the field is exactly balanced by the weight of the electron"
+     ]
+    },
+    {
+     "b": "Understand",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "q": "The drift speed of electrons is very small and the charge of an electron is very small. Explain how a conductor can still carry a large current, and write the relation that shows it.",
+     "a": "The current is I = n e A v_d. Although e and v_d are small, the number density n of free electrons in a metal is enormous, of the order of 10^29 per m^3, so the product n e A v_d can be a large current.",
+     "s": [
+      [
+       "Writes I = n e A v_d",
+       1
+      ],
+      [
+       "States that the electron number density is enormous (about 10^29 per m^3), which makes the current large",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "Electrons in a wire have a drift speed of 2 x 10^-4 m/s when the electric field in the wire is 0.5 V/m. Their mobility is",
+     "a": "4 x 10^-4 m^2/V s",
+     "o": [
+      "4 x 10^-4 m^2/V s",
+      "1 x 10^-4 m^2/V s",
+      "2.5 x 10^3 m^2/V s",
+      "2 x 10^-4 m^2/V s"
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "In a metal the field gives each electron an acceleration of magnitude 2 x 10^10 m/s^2 between collisions, and the relaxation time is 2 x 10^-14 s. The drift speed of the electrons is",
+     "a": "4 x 10^-4 m/s",
+     "o": [
+      "4 x 10^-4 m/s",
+      "2 x 10^-4 m/s",
+      "1 x 10^24 m/s",
+      "1 x 10^-24 m/s"
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "q": "A wire of cross-sectional area 2.0 x 10^-6 m^2 carries a current of 3.2 A. The number density of free electrons in it is 1.0 x 10^29 per m^3. Taking e = 1.6 x 10^-19 C, find the drift speed of the electrons.",
+     "a": "I = n e A v_d, so v_d = I/(n e A) = 3.2/(1.0 x 10^29 x 1.6 x 10^-19 x 2.0 x 10^-6) = 3.2/(3.2 x 10^4) = 1.0 x 10^-4 m/s.",
+     "s": [
+      [
+       "Writes v_d = I/(n e A) and substitutes",
+       1
+      ],
+      [
+       "Obtains v_d = 1.0 x 10^-4 m/s",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "q": "A wire 2.0 m long has a cross-sectional area of 1.0 x 10^-6 m^2 and carries a current of 8.0 A. The number density of free electrons is 1.0 x 10^29 per m^3 and e = 1.6 x 10^-19 C. How long does an electron take to drift from one end of the wire to the other?",
+     "a": "v_d = I/(n e A) = 8.0/(1.0 x 10^29 x 1.6 x 10^-19 x 1.0 x 10^-6) = 8.0/(1.6 x 10^4) = 5.0 x 10^-4 m/s. Time = length/v_d = 2.0/(5.0 x 10^-4) = 4.0 x 10^3 s (4000 s).",
+     "s": [
+      [
+       "Finds v_d = 5.0 x 10^-4 m/s",
+       1
+      ],
+      [
+       "Finds the time = 2.0/(5.0 x 10^-4) = 4000 s",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "q": "A metal has 5 x 10^28 free electrons per m^3, each of mobility 4 x 10^-3 m^2/V s. Taking e = 1.6 x 10^-19 C, the conductivity of the metal is",
+     "a": "3.2 x 10^7 S/m",
+     "o": [
+      "3.2 x 10^7 S/m",
+      "2 x 10^12 S/m",
+      "3.1 x 10^-8 S/m",
+      "2 x 10^26 S/m"
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hardest",
+     "t": "long_answer",
+     "m": 3,
+     "q": "A copper wire 4.0 m long with cross-sectional area 1.0 x 10^-6 m^2 carries a current of 1.6 A when the potential difference across its ends is 0.10 V. Take the number density of free electrons as 8.0 x 10^28 per m^3 and e = 1.6 x 10^-19 C. Find (a) the drift speed of the electrons, (b) the electric field in the wire and (c) the mobility of the electrons.",
+     "a": "(a) v_d = I/(n e A) = 1.6/(8.0 x 10^28 x 1.6 x 10^-19 x 1.0 x 10^-6) = 1.6/(1.28 x 10^4) = 1.25 x 10^-4 m/s. (b) E = V/l = 0.10/4.0 = 0.025 V/m. (c) mu = v_d/E = (1.25 x 10^-4)/0.025 = 5.0 x 10^-3 m^2/V s.",
+     "s": [
+      [
+       "Finds v_d = 1.25 x 10^-4 m/s",
+       1
+      ],
+      [
+       "Finds E = 0.025 V/m",
+       1
+      ],
+      [
+       "Finds mu = 5.0 x 10^-3 m^2/V s",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "assertion_reason",
+     "m": 1,
+     "q": "Assertion (A): For a fixed relaxation time, the mobility of the electrons in a metal does not change when the applied electric field is doubled. Reason (R): When the electric field in a metal is doubled, with the relaxation time fixed, the drift velocity of the electrons stays the same.",
+     "a": "A is true, R is false",
+     "o": [
+      "A is true, R is false",
+      "Both A and R are true, and R is the correct explanation of A",
+      "Both A and R are true, but R is not the correct explanation of A",
+      "A is false, R is true"
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "q": "Two wires X and Y of the same metal carry the same current. The diameter of X is twice that of Y. Compare the drift speeds of the electrons in the two wires.",
+     "a": "v_d = I/(n e A), and n, e and I are the same for both. Twice the diameter means four times the cross-sectional area, so the drift speed in X is one quarter of that in Y.",
+     "s": [
+      [
+       "Uses v_d = I/(n e A) with the same I and n, and area of X four times that of Y",
+       1
+      ],
+      [
+       "Concludes v_d in X is one quarter of that in Y",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hardest",
+     "t": "long_answer",
+     "m": 3,
+     "q": "For a copper wire carrying a few amperes, take the electron drift speed as 1.0 x 10^-3 m/s, the thermal speed of copper atoms at ordinary temperature as 2 x 10^2 m/s and the speed with which the electric field travels along the wire as 3.0 x 10^8 m/s. Find the ratio of the drift speed to each of the other two speeds, and explain what each of the three speeds describes.",
+     "a": "Drift speed/thermal speed = (1.0 x 10^-3)/(2 x 10^2) = 5 x 10^-6, i.e. of the order of 10^-5. Drift speed/field speed = (1.0 x 10^-3)/(3.0 x 10^8) = 3.3 x 10^-12, i.e. of the order of 10^-11. The drift speed is the small average velocity of the electrons along the wire caused by the field; the thermal speed is the random vibrational speed of the atoms, which gives no net flow; the field speed is the speed at which the field, and hence the drift, is established all along the circuit.",
+     "s": [
+      [
+       "Finds the ratio to the thermal speed, 5 x 10^-6 (order 10^-5)",
+       1
+      ],
+      [
+       "Finds the ratio to the field speed, about 3.3 x 10^-12 (order 10^-11)",
+       1
+      ],
+      [
+       "Explains what the drift, thermal and field speeds each describe",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Evaluate",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "q": "A student says: 'Between two collisions an electron in a metal moves in a straight line, whether or not an electric field is applied; the field only changes how fast it goes.' Evaluate this statement.",
+     "a": "It is only partly right. With no electric field an electron does move in a straight line between successive collisions. When a field is applied the electron is accelerated in a fixed direction (opposite to E) while it moves in some other direction, so its path between collisions is, in general, curved, not straight.",
+     "s": [
+      [
+       "Accepts that the paths are straight lines in the absence of a field",
+       1
+      ],
+      [
+       "States that with a field the paths between collisions are in general curved, with the reason",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Create",
+     "d": "Hardest",
+     "t": "long_answer",
+     "m": 3,
+     "q": "Construct a numerical example of a current-carrying metal wire in which the electron drift speed is exactly 2.0 x 10^-4 m/s. Choose the number density of free electrons, the cross-sectional area and the current (take e = 1.6 x 10^-19 C), verify the drift speed, and find how long an electron takes to drift through 1 m of your wire.",
+     "a": "For example choose n = 1.0 x 10^29 per m^3 and A = 1.0 x 10^-6 m^2. Then I = n e A v_d = 1.0 x 10^29 x 1.6 x 10^-19 x 1.0 x 10^-6 x 2.0 x 10^-4 = 3.2 A. Check: v_d = I/(n e A) = 3.2/(1.6 x 10^4) = 2.0 x 10^-4 m/s. Time to drift 1 m = 1/(2.0 x 10^-4) = 5000 s. (Any n, A and I with I/(n e A) = 2.0 x 10^-4 m/s is acceptable; the time is 5000 s in every case.)",
+     "s": [
+      [
+       "Chooses n, A and I consistent with I = n e A v_d",
+       1
+      ],
+      [
+       "Verifies v_d = 2.0 x 10^-4 m/s",
+       1
+      ],
+      [
+       "Finds the drift time for 1 m as 5000 s",
+       1
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "code": "C12P-3.4",
+   "name": "Limitations of Ohm's law and temperature dependence of resistivity",
+   "description": "The ways in which materials and devices deviate from Ohm's law, the resistivity ranges of metals, semiconductors and insulators, and how resistivity changes with temperature.",
+   "idea": "Ohm's law is not a fundamental law, and resistivity is not a fixed number: it differs enormously between materials and changes with temperature, rising for metals and falling for semiconductors.",
+   "rule": "Ohm's law fails when V ceases to be proportional to I, when the relation between V and I depends on the sign of V (as in a diode), or when the relation is not unique (as in GaAs). Metals have resistivities from 10^-8 ohm m to 10^-6 ohm m; insulators are higher by an enormous factor; semiconductors lie in between. Over a limited range of temperature the resistivity of a metal is rho_T = rho_0 [1 + alpha (T - T0)], with the temperature coefficient of resistivity alpha positive for metals; for a wire the same relation holds for resistance, R2 = R1 [1 + alpha (T2 - T1)]. Since rho = m/(n e^2 tau), heating a metal shortens tau and raises rho, while in semiconductors and insulators n increases with temperature and rho falls. Nichrome, manganin and constantan depend only weakly on temperature.",
+   "example": "A wire of resistance 10 ohm at 20 degrees C with alpha = 4 x 10^-3 per degree C has resistance 10 [1 + 4 x 10^-3 x 50] = 12 ohm at 70 degrees C.",
+   "difficulty_base": "Hard",
+   "questions": [
+    {
+     "b": "Remember",
+     "d": "Easy",
+     "t": "fill_blank",
+     "m": 1,
+     "q": "The device named in the chapter for which reversing V, keeping its magnitude fixed, does not give a current of the same magnitude in the opposite direction is the ____ (one word).",
+     "a": "diode"
+    },
+    {
+     "b": "Remember",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "The resistivities of metals lie in the range",
+     "a": "10^-8 ohm m to 10^-6 ohm m",
+     "o": [
+      "10^-8 ohm m to 10^-6 ohm m",
+      "10^-18 ohm m to 10^-16 ohm m",
+      "10^6 ohm m to 10^8 ohm m",
+      "1 ohm m to 100 ohm m"
+     ]
+    },
+    {
+     "b": "Remember",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "A material whose resistivity depends only very weakly on temperature, and which is therefore used in wire bound standard resistors, is",
+     "a": "manganin",
+     "o": [
+      "manganin",
+      "copper",
+      "silicon",
+      "platinum"
+     ]
+    },
+    {
+     "b": "Remember",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "q": "Which of the following is NOT one of the ways, listed in the chapter, in which a material or device can deviate from Ohm's law?",
+     "a": "V stays exactly proportional to I, but the constant of proportionality is very large",
+     "o": [
+      "V stays exactly proportional to I, but the constant of proportionality is very large",
+      "V ceases to be proportional to I",
+      "The relation between V and I depends on the sign of V",
+      "There is more than one value of V for the same current I"
+     ],
+     "rev": true
+    },
+    {
+     "b": "Understand",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "The resistivity of a metal increases when it is heated mainly because",
+     "a": "the average time between collisions of the electrons decreases",
+     "o": [
+      "the average time between collisions of the electrons decreases",
+      "the number of free electrons per unit volume falls sharply",
+      "the mass of each electron increases",
+      "the charge on each electron decreases"
+     ]
+    },
+    {
+     "b": "Understand",
+     "d": "Easy",
+     "t": "fill_blank",
+     "m": 1,
+     "q": "For metals, the temperature coefficient of resistivity alpha is ____ (write positive or negative).",
+     "a": "positive"
+    },
+    {
+     "b": "Understand",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "The resistivity of a semiconductor decreases as its temperature rises because",
+     "a": "the number of free charge carriers per unit volume increases with temperature",
+     "o": [
+      "the number of free charge carriers per unit volume increases with temperature",
+      "the average time between collisions increases with temperature",
+      "the number of free charge carriers per unit volume decreases with temperature",
+      "the charge carried by each carrier increases with temperature"
+     ]
+    },
+    {
+     "b": "Understand",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "q": "For a metallic conductor, the relation rho_T = rho_0 [1 + alpha (T - T0)] is",
+     "a": "an approximation that holds over a limited range of temperature around T0",
+     "o": [
+      "an approximation that holds over a limited range of temperature around T0",
+      "exact at all temperatures, however high or low",
+      "valid only at temperatures much lower than 0 degrees C",
+      "valid for semiconductors but not for metals"
+     ]
+    },
+    {
+     "b": "Understand",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "q": "Explain why alloys such as nichrome, manganin and constantan are used for wire bound standard resistors.",
+     "a": "The resistivity of these alloys shows only a very weak dependence on temperature. A standard resistor must keep a known, fixed resistance, and a wire made of such an alloy changes its resistance very little when its temperature changes.",
+     "s": [
+      [
+       "States that the resistivity of these alloys depends very weakly on temperature",
+       1
+      ],
+      [
+       "Links this to a standard resistor needing a resistance that changes very little with temperature",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "A metal wire has a resistance of 10 ohm at 20 degrees C. Its temperature coefficient of resistance, taken as constant with 20 degrees C as the reference, is 4 x 10^-3 per degree C. Its resistance at 70 degrees C is",
+     "a": "12 ohm",
+     "o": [
+      "12 ohm",
+      "10.2 ohm",
+      "8 ohm",
+      "2 ohm"
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "The resistivity of a metal is 2.0 x 10^-8 ohm m at a reference temperature T0, and its temperature coefficient of resistivity is 5 x 10^-3 per K. Its resistivity at a temperature 100 K above T0 is",
+     "a": "3.0 x 10^-8 ohm m",
+     "o": [
+      "3.0 x 10^-8 ohm m",
+      "2.01 x 10^-8 ohm m",
+      "1.0 x 10^-8 ohm m",
+      "4.0 x 10^-8 ohm m"
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "q": "The resistance of a heating element is 50 ohm at 25 degrees C. In use its resistance is found to be 60 ohm. The temperature coefficient of resistance of its material, averaged over the range involved, is 2.0 x 10^-4 per degree C. Find the temperature of the element in use.",
+     "a": "R2 = R1 [1 + alpha (T2 - T1)], so T2 - T1 = (R2 - R1)/(R1 alpha) = (60 - 50)/(50 x 2.0 x 10^-4) = 10/0.01 = 1000 degrees C. Hence T2 = 25 + 1000 = 1025 degrees C.",
+     "s": [
+      [
+       "Uses R2 = R1 [1 + alpha (T2 - T1)] to get a temperature rise of 1000 degrees C",
+       1
+      ],
+      [
+       "Adds the initial 25 degrees C to get 1025 degrees C",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "q": "A wire has a resistance of 2.0 ohm at 20 degrees C and 2.4 ohm at 120 degrees C. Taking 20 degrees C as the reference temperature, find the temperature coefficient of resistance of its material.",
+     "a": "R2 = R1 [1 + alpha (T2 - T1)], so alpha = (R2 - R1)/[R1 (T2 - T1)] = (2.4 - 2.0)/(2.0 x 100) = 0.4/200 = 2.0 x 10^-3 per degree C.",
+     "s": [
+      [
+       "Rearranges to alpha = (R2 - R1)/[R1 (T2 - T1)] and substitutes",
+       1
+      ],
+      [
+       "Obtains alpha = 2.0 x 10^-3 per degree C",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "q": "The platinum wire of a resistance thermometer has a resistance of 4.00 ohm at the ice point (0 degrees C) and 5.00 ohm at the steam point (100 degrees C). In a hot bath its resistance is 6.50 ohm. Assuming the resistance changes linearly with temperature, the temperature of the bath is",
+     "a": "250 degrees C",
+     "o": [
+      "250 degrees C",
+      "150 degrees C",
+      "162.5 degrees C",
+      "130 degrees C"
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hardest",
+     "t": "long_answer",
+     "m": 3,
+     "q": "The heating element of a toaster has a resistance of 40 ohm at room temperature (27 degrees C), measured with a negligibly small current. Connected to a 200 V supply, the current settles to a steady 4.0 A. The temperature coefficient of resistance of the element, averaged over the range involved, is 2.5 x 10^-4 per degree C. Find (a) the steady resistance of the element, (b) its steady temperature, and (c) the current at the instant of switching on, explaining why it differs from the steady current.",
+     "a": "(a) R2 = V/I = 200 V / 4.0 A = 50 ohm. (b) R2 = R1 [1 + alpha (T2 - T1)], so T2 - T1 = (50 - 40)/(40 x 2.5 x 10^-4) = 10/0.01 = 1000 degrees C, giving T2 = 27 + 1000 = 1027 degrees C. (c) At switch-on the element is still at room temperature with resistance 40 ohm, so the current is 200/40 = 5.0 A. It is higher than the steady 4.0 A because heating raises the resistance of the element, which reduces the current until a steady state is reached.",
+     "s": [
+      [
+       "Finds the steady resistance 50 ohm",
+       1
+      ],
+      [
+       "Finds the temperature rise 1000 degrees C and the steady temperature 1027 degrees C",
+       1
+      ],
+      [
+       "Finds the initial current 5.0 A and explains that the resistance rises as the element heats",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "multi_statement",
+     "m": 1,
+     "q": "Consider these statements. (I) In a metal, the number of free electrons per unit volume does not depend on temperature to any appreciable extent. (II) The resistivity of a semiconductor can be decreased by adding a small amount of suitable impurities. Which is or are correct?",
+     "a": "Both I and II",
+     "o": [
+      "Both I and II",
+      "Only I",
+      "Only II",
+      "Neither I nor II"
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "q": "A device carries a current of 2 mA when the potential difference across it is +0.2 V, but only 1 microampere, in the opposite direction, when the potential difference is -0.2 V. Analyse whether the device obeys Ohm's law, and name the type of deviation, if any.",
+     "a": "It does not obey Ohm's law. For an ohmic conductor, reversing V with its magnitude fixed would give a current of the same magnitude in the opposite direction. Here the magnitudes are 2 mA and 1 microampere, which are very different, so the relation between V and I depends on the sign of V.",
+     "s": [
+      [
+       "States what Ohm's law requires: the same magnitude of current when V is reversed",
+       1
+      ],
+      [
+       "Concludes the device is non-ohmic because the V-I relation depends on the sign of V",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hardest",
+     "t": "long_answer",
+     "m": 3,
+     "q": "Wire X has a resistance of 20 ohm at 0 degrees C and 25 ohm at 100 degrees C. Wire Y has a resistance of 20 ohm at 0 degrees C and 20.2 ohm at 100 degrees C. Find the temperature coefficient of resistance of each (reference 0 degrees C), and decide which wire is better suited to a standard resistor and which to a resistance thermometer, with reasons.",
+     "a": "alpha = (R100 - R0)/(R0 x 100). For X: (25 - 20)/(20 x 100) = 2.5 x 10^-3 per degree C. For Y: (20.2 - 20)/(20 x 100) = 1.0 x 10^-4 per degree C. Y, whose resistance changes very little with temperature, suits a standard resistor, which must keep a fixed value. X, whose resistance changes markedly with temperature, suits a resistance thermometer, where the change in resistance is used to measure the temperature.",
+     "s": [
+      [
+       "Finds alpha for X = 2.5 x 10^-3 per degree C",
+       1
+      ],
+      [
+       "Finds alpha for Y = 1.0 x 10^-4 per degree C",
+       1
+      ],
+      [
+       "Assigns Y to the standard resistor and X to the thermometer with reasons",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Evaluate",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "q": "A student uses the straight-line relation between resistivity and temperature, fitted for copper near room temperature, to predict the resistivity of copper at a few kelvin. Evaluate whether this is justified.",
+     "a": "It is not justified. The linear relation holds only approximately, over a limited range of temperature around the reference temperature. At temperatures much lower than 0 degrees C the graph of resistivity against temperature for copper deviates considerably from a straight line, so the prediction would be unreliable.",
+     "s": [
+      [
+       "States that the linear relation is valid only over a limited range around the reference temperature",
+       1
+      ],
+      [
+       "States that at temperatures much lower than 0 degrees C the graph for copper deviates considerably from a straight line",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Create",
+     "d": "Hardest",
+     "t": "long_answer",
+     "m": 3,
+     "q": "Design a platinum resistance thermometer problem whose answer is 300 degrees C. Choose the resistance at the ice point, at the steam point and in the unknown bath, state the relation used (resistance changing linearly with temperature), and show that the bath temperature is 300 degrees C.",
+     "a": "With a linear change, t = [(R_t - R_0)/(R_100 - R_0)] x 100 degrees C. For t = 300 degrees C we need R_t - R_0 = 3 (R_100 - R_0). For example R_0 = 10 ohm, R_100 = 12 ohm and R_t = 16 ohm: t = [(16 - 10)/(12 - 10)] x 100 = 3 x 100 = 300 degrees C.",
+     "s": [
+      [
+       "States t = [(R_t - R_0)/(R_100 - R_0)] x 100",
+       1
+      ],
+      [
+       "Chooses three resistances with R_t - R_0 = 3 (R_100 - R_0)",
+       1
+      ],
+      [
+       "Shows the calculation giving 300 degrees C",
+       1
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "code": "C12P-3.5",
+   "name": "Electrical energy and power",
+   "description": "Energy dissipated as heat in a conductor, the power expressions P = IV = I^2 R = V^2/R, and why power is transmitted at high voltage.",
+   "idea": "Charge moving through a conductor loses potential energy; because of collisions this energy appears as heat in the conductor, at a rate equal to the current times the potential difference.",
+   "rule": "When a current I flows through a conductor across which the potential difference is V, the energy dissipated as heat in time delta t is delta W = I V delta t, so the power is P = I V. Using V = IR, P = I^2 R = V^2/R (the ohmic loss). The power comes from the source, for a cell from its chemical energy. To deliver a power P at voltage V through cables of resistance Rc, the current is I = P/V and the power wasted in the cables is Pc = I^2 Rc = P^2 Rc/V^2, inversely proportional to V^2, which is why power is transmitted at very high voltage and lowered by a transformer at the other end.",
+   "example": "A device taking 10 kW at 200 V draws 50 A, wasting 50^2 x 1 = 2500 W in cables of 1 ohm; at 2000 V it draws 5 A and wastes only 25 W.",
+   "difficulty_base": "Easy",
+   "questions": [
+    {
+     "b": "Remember",
+     "d": "Easy",
+     "t": "fill_blank",
+     "m": 1,
+     "q": "The device that lowers the very high voltage of a transmission line to a value suitable for use is called a ____ (one word).",
+     "a": "transformer"
+    },
+    {
+     "b": "Remember",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "A current I flows through a conductor across which the potential difference is V. The energy dissipated as heat in the conductor in a time interval delta t is",
+     "a": "I V delta t",
+     "o": [
+      "I V delta t",
+      "I V/delta t",
+      "V delta t/I",
+      "I^2 V delta t"
+     ]
+    },
+    {
+     "b": "Remember",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "The power dissipated in a conductor of resistance R carrying a current I is called the",
+     "a": "ohmic loss",
+     "o": [
+      "ohmic loss",
+      "drift loss",
+      "emf loss",
+      "junction loss"
+     ]
+    },
+    {
+     "b": "Remember",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "q": "Which of the following is NOT a correct expression for the power dissipated in a resistor of resistance R that carries a current I with a potential difference V across it?",
+     "a": "V^2 R",
+     "o": [
+      "V^2 R",
+      "I V",
+      "I^2 R",
+      "V^2/R"
+     ],
+     "rev": true
+    },
+    {
+     "b": "Understand",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "In a simple circuit of a cell connected to a resistor, the energy dissipated as heat in the resistor comes from",
+     "a": "the chemical energy of the cell",
+     "o": [
+      "the chemical energy of the cell",
+      "the thermal energy of the surrounding air",
+      "the energy stored in the connecting wires",
+      "the mass of the electrons that pass through the resistor"
+     ]
+    },
+    {
+     "b": "Understand",
+     "d": "Easy",
+     "t": "fill_blank",
+     "m": 1,
+     "q": "For a fixed power to be delivered to a device, the power wasted in the connecting cables is inversely proportional to the ____ of the voltage at which it is delivered (one word).",
+     "a": "square"
+    },
+    {
+     "b": "Understand",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "A conductor carrying a current heats up because",
+     "a": "the energy gained by the charge carriers from the field is shared with the atoms during collisions",
+     "o": [
+      "the energy gained by the charge carriers from the field is shared with the atoms during collisions",
+      "the charge carriers are used up as they pass through the conductor",
+      "the current becomes smaller along the length of the conductor",
+      "the cell passes its heat directly along the connecting wires"
+     ]
+    },
+    {
+     "b": "Understand",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "q": "Suppose charges could move through a conductor without any collisions, the current being I and the potential difference across the conductor V. In a time interval delta t, the kinetic energy of the charges would",
+     "a": "increase by I V delta t",
+     "o": [
+      "increase by I V delta t",
+      "decrease by I V delta t",
+      "remain unchanged",
+      "increase by I V/delta t"
+     ]
+    },
+    {
+     "b": "Understand",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "q": "Explain why electrical power is transmitted from power stations at very high voltages.",
+     "a": "To deliver a power P at voltage V the current is I = P/V, and the power wasted in cables of resistance Rc is Pc = I^2 Rc = P^2 Rc/V^2. This loss is inversely proportional to V^2, and the cables are long with considerable resistance, so transmitting at a very high voltage makes the wasted power small.",
+     "s": [
+      [
+       "Writes Pc = I^2 Rc = P^2 Rc/V^2",
+       1
+      ],
+      [
+       "Concludes that the loss falls as 1/V^2, so a high voltage reduces the power wasted",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "An appliance draws a current of 5 A from a 220 V supply. The power it takes is",
+     "a": "1100 W",
+     "o": [
+      "1100 W",
+      "44 W",
+      "225 W",
+      "5500 W"
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "A resistor of 10 ohm carries a current of 2 A. The power dissipated in it is",
+     "a": "40 W",
+     "o": [
+      "40 W",
+      "20 W",
+      "5 W",
+      "200 W"
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "q": "A heater of resistance 20 ohm is connected to a 200 V supply. Find the power it dissipates and the energy it dissipates in 5 minutes.",
+     "a": "P = V^2/R = (200 V)^2/(20 ohm) = 2000 W. Energy = P t = 2000 W x 300 s = 6.0 x 10^5 J.",
+     "s": [
+      [
+       "Finds P = V^2/R = 2000 W",
+       1
+      ],
+      [
+       "Converts 5 minutes to 300 s and finds the energy 6.0 x 10^5 J",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "q": "A device is to receive 2000 W at 200 V through connecting cables of total resistance 5 ohm. Find the current in the cables and the power wasted in them.",
+     "a": "I = P/V = 2000 W / 200 V = 10 A. Power wasted in the cables Pc = I^2 Rc = (10 A)^2 x 5 ohm = 500 W.",
+     "s": [
+      [
+       "Finds I = P/V = 10 A",
+       1
+      ],
+      [
+       "Finds Pc = I^2 Rc = 500 W",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "q": "A bulb dissipates 100 W when connected to a 200 V supply. If its resistance is assumed to stay constant, the power it dissipates on a 100 V supply is",
+     "a": "25 W",
+     "o": [
+      "25 W",
+      "50 W",
+      "200 W",
+      "400 W"
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hardest",
+     "t": "long_answer",
+     "m": 3,
+     "q": "A power of 10 kW is to be delivered to a device through cables of total resistance 1 ohm. Find the power wasted in the cables when the voltage across the device is (a) 200 V and (b) 2000 V, and (c) state the factor by which the loss falls and how it follows from the voltages.",
+     "a": "(a) I = P/V = 10000/200 = 50 A, so Pc = I^2 Rc = 50^2 x 1 = 2500 W. (b) I = 10000/2000 = 5 A, so Pc = 5^2 x 1 = 25 W. (c) The loss falls by a factor of 2500/25 = 100. This is because Pc = P^2 Rc/V^2 is inversely proportional to V^2, and the voltage is 10 times larger, giving 10^2 = 100.",
+     "s": [
+      [
+       "Finds 50 A and 2500 W wasted at 200 V",
+       1
+      ],
+      [
+       "Finds 5 A and 25 W wasted at 2000 V",
+       1
+      ],
+      [
+       "States the factor 100 and relates it to Pc being inversely proportional to V^2",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "assertion_reason",
+     "m": 1,
+     "q": "Assertion (A): When a steady current flows through a resistor, the charge carriers steadily gain kinetic energy as they move through it. Reason (R): The potential energy of the charge decreases as it moves through the resistor from the end at higher potential to the end at lower potential.",
+     "a": "A is false, R is true",
+     "o": [
+      "A is false, R is true",
+      "Both A and R are true, and R is the correct explanation of A",
+      "Both A and R are true, but R is not the correct explanation of A",
+      "A is true, R is false"
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "q": "Resistors of 2 ohm and 4 ohm are used in two different situations: (i) the same current flows through both; (ii) the same potential difference is applied across each. In each situation, which resistor dissipates more power, and by what factor?",
+     "a": "(i) With the same current, P = I^2 R is proportional to R, so the 4 ohm resistor dissipates twice as much power as the 2 ohm resistor. (ii) With the same potential difference, P = V^2/R is inversely proportional to R, so the 2 ohm resistor dissipates twice as much power as the 4 ohm resistor.",
+     "s": [
+      [
+       "Same current: uses P = I^2 R, the 4 ohm resistor dissipates twice as much",
+       1
+      ],
+      [
+       "Same potential difference: uses P = V^2/R, the 2 ohm resistor dissipates twice as much",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hardest",
+     "t": "long_answer",
+     "m": 3,
+     "q": "A uniform heating wire of resistance 50 ohm is connected to a 200 V supply. The wire is then cut to half its length and one half is connected to the same supply. Assuming the resistivity does not change, compare (a) the current, (b) the power, before and after, and (c) find the energy dissipated by the half-length wire in 10 minutes.",
+     "a": "Before: I = 200/50 = 4 A and P = V^2/R = 200^2/50 = 800 W. Resistance is proportional to length, so the half-length wire has R = 25 ohm. After: (a) I = 200/25 = 8 A, twice the earlier current; (b) P = 200^2/25 = 1600 W, twice the earlier power. (c) Energy = P t = 1600 W x 600 s = 9.6 x 10^5 J.",
+     "s": [
+      [
+       "Finds 4 A and 800 W for the full wire",
+       1
+      ],
+      [
+       "Uses R = 25 ohm for half the length to get 8 A and 1600 W, each doubled",
+       1
+      ],
+      [
+       "Finds the energy 9.6 x 10^5 J in 600 s",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Evaluate",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "q": "A student says: 'Since P = I^2 R, of two resistors connected in turn across the same 12 V battery of negligible internal resistance, the one with the larger resistance always dissipates more power.' Evaluate this claim, using 6 ohm and 12 ohm as a test.",
+     "a": "The claim is wrong, because the current is not the same in the two cases: a larger resistance draws a smaller current from the same battery. With V fixed, P = V^2/R. For 6 ohm, P = 12^2/6 = 24 W; for 12 ohm, P = 12^2/12 = 12 W. The smaller resistance dissipates more power.",
+     "s": [
+      [
+       "Points out that the current differs, so the comparison must use P = V^2/R at fixed V",
+       1
+      ],
+      [
+       "Computes 24 W for 6 ohm and 12 W for 12 ohm and concludes the smaller resistance dissipates more",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Create",
+     "d": "Hardest",
+     "t": "long_answer",
+     "m": 3,
+     "q": "Design a power-transmission example in which raising the voltage reduces the power wasted in the cables by a factor of exactly 400. Choose the power delivered, the cable resistance and the two voltages, and show the wasted power in each case.",
+     "a": "Since Pc = P^2 Rc/V^2, the loss falls by 400 when the voltage is raised 20 times. For example, P = 4000 W, Rc = 2 ohm. At 200 V: I = 4000/200 = 20 A and Pc = 20^2 x 2 = 800 W. At 4000 V: I = 4000/4000 = 1 A and Pc = 1^2 x 2 = 2 W. Ratio 800/2 = 400.",
+     "s": [
+      [
+       "Recognises that the voltage must be raised by a factor of 20 (loss proportional to 1/V^2)",
+       1
+      ],
+      [
+       "Computes the wasted power at the lower voltage for the chosen values",
+       1
+      ],
+      [
+       "Computes the wasted power at the higher voltage and shows the ratio is 400",
+       1
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "code": "C12P-3.6",
+   "name": "Cells, emf and internal resistance",
+   "description": "The emf of a cell as its open-circuit potential difference, its internal resistance, the terminal potential difference V = epsilon - I r and the current I = epsilon/(R + r).",
+   "idea": "A cell maintains a steady current; its emf is the potential difference between its electrodes when no current flows, and when it delivers current part of this is lost across the internal resistance of its electrolyte.",
+   "rule": "The emf epsilon of a cell is the potential difference between its positive and negative electrodes in an open circuit; it is a potential difference, not a force. The electrolyte has a finite internal resistance r. When the cell sends a current I through an external resistance R, the potential difference between its terminals is V = epsilon - I r, and since V = I R, the current is I = epsilon/(R + r). The maximum current, for R = 0, is epsilon/r. If the current is driven through the cell from its positive to its negative terminal (as in charging), V = epsilon + I r.",
+   "example": "A cell of emf 2 V and internal resistance 1 ohm connected to a 4 ohm resistor gives I = 2/(4 + 1) = 0.4 A and a terminal potential difference of 2 - 0.4 x 1 = 1.6 V.",
+   "difficulty_base": "Easy",
+   "questions": [
+    {
+     "b": "Remember",
+     "d": "Easy",
+     "t": "fill_blank",
+     "m": 1,
+     "q": "The resistance offered by the electrolyte of a cell to the current flowing through it is called the ____ resistance of the cell (one word).",
+     "a": "internal"
+    },
+    {
+     "b": "Remember",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "The emf of a cell is",
+     "a": "the potential difference between its positive and negative electrodes when no current flows through it",
+     "o": [
+      "the potential difference between its positive and negative electrodes when no current flows through it",
+      "the force exerted by the cell on a unit charge inside it",
+      "the potential difference between its electrodes when the maximum current is drawn from it",
+      "the product of the current through the cell and its internal resistance"
+     ]
+    },
+    {
+     "b": "Remember",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "The maximum current that can be drawn from a cell of emf epsilon and internal resistance r is",
+     "a": "epsilon/r",
+     "o": [
+      "epsilon/r",
+      "epsilon x r",
+      "r/epsilon",
+      "epsilon/(2r)"
+     ]
+    },
+    {
+     "b": "Remember",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "q": "Which of the following statements about a cell is NOT correct?",
+     "a": "The emf of a cell is a force, measured in newton, that pushes the charges around the circuit",
+     "o": [
+      "The emf of a cell is a force, measured in newton, that pushes the charges around the circuit",
+      "The internal resistance of dry cells is much higher than that of common electrolytic cells",
+      "The internal resistance may be neglected in calculations when epsilon is much greater than I r",
+      "The electrodes of a cell exchange charges with the electrolyte in which they are dipped"
+     ],
+     "rev": true
+    },
+    {
+     "b": "Understand",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "A cell of internal resistance r sends a current I through an external resistor. The potential difference between the terminals of the cell is",
+     "a": "less than its emf by I r",
+     "o": [
+      "less than its emf by I r",
+      "greater than its emf by I r",
+      "exactly equal to its emf",
+      "equal to I r"
+     ]
+    },
+    {
+     "b": "Understand",
+     "d": "Easy",
+     "t": "fill_blank",
+     "m": 1,
+     "q": "A cell of emf 1.5 V is on open circuit, so that no current flows through it. The potential difference between its terminals is ____ V (as a decimal).",
+     "a": "1.5"
+    },
+    {
+     "b": "Understand",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "The current drawn from a given cell is largest when the external resistance connected across it is",
+     "a": "zero",
+     "o": [
+      "zero",
+      "equal to its internal resistance",
+      "infinite",
+      "much larger than its internal resistance"
+     ]
+    },
+    {
+     "b": "Understand",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "q": "In most cells the maximum allowed current is kept much lower than the largest current the cell could deliver. This is done in order to",
+     "a": "prevent permanent damage to the cell",
+     "o": [
+      "prevent permanent damage to the cell",
+      "stop the emf of the cell from increasing",
+      "make the terminal potential difference larger than the emf",
+      "increase the internal resistance of the cell"
+     ]
+    },
+    {
+     "b": "Understand",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "q": "A cell of emf epsilon and internal resistance r is connected to an external resistance R. Derive the expression I = epsilon/(R + r) for the current.",
+     "a": "The potential difference between the terminals of the cell when it delivers a current I is V = epsilon - I r. This same V is the potential difference across R, so by Ohm's law V = I R. Hence I R = epsilon - I r, which gives I (R + r) = epsilon and I = epsilon/(R + r).",
+     "s": [
+      [
+       "Writes V = epsilon - I r for the cell and V = I R for the resistor",
+       1
+      ],
+      [
+       "Equates them to obtain I = epsilon/(R + r)",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "A battery has an emf of 6 V and an internal resistance of 0.2 ohm. The maximum current that can be drawn from it is",
+     "a": "30 A",
+     "o": [
+      "30 A",
+      "1.2 A",
+      "0.033 A",
+      "6.2 A"
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "A cell of emf 2 V and internal resistance 1 ohm is connected to a 4 ohm resistor. The current in the circuit is",
+     "a": "0.4 A",
+     "o": [
+      "0.4 A",
+      "0.5 A",
+      "2 A",
+      "10 A"
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "q": "A battery of emf 12 V and internal resistance 2 ohm is connected to a resistor, and the current in the circuit is 0.5 A. Find the resistance of the resistor and the terminal voltage of the battery.",
+     "a": "I = epsilon/(R + r), so R + r = epsilon/I = 12/0.5 = 24 ohm and R = 24 - 2 = 22 ohm. Terminal voltage V = epsilon - I r = 12 - 0.5 x 2 = 11 V (which equals I R = 0.5 x 22).",
+     "s": [
+      [
+       "Finds R = 12/0.5 - 2 = 22 ohm",
+       1
+      ],
+      [
+       "Finds the terminal voltage V = 12 - 1 = 11 V",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "q": "The potential difference between the terminals of a cell is 2.0 V on open circuit and 1.8 V when it delivers a current of 0.5 A to a resistor. Find the internal resistance of the cell and the resistance of the resistor.",
+     "a": "The emf is the open-circuit value, epsilon = 2.0 V. From V = epsilon - I r, r = (epsilon - V)/I = (2.0 - 1.8)/0.5 = 0.4 ohm. The resistor has R = V/I = 1.8/0.5 = 3.6 ohm.",
+     "s": [
+      [
+       "Finds r = (2.0 - 1.8)/0.5 = 0.4 ohm",
+       1
+      ],
+      [
+       "Finds R = 1.8/0.5 = 3.6 ohm",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "q": "A storage battery of emf 10 V and internal resistance 1 ohm is being charged: a current of 2 A is driven through it from its positive terminal to its negative terminal. The potential difference between its terminals during charging is",
+     "a": "12 V",
+     "o": [
+      "12 V",
+      "8 V",
+      "10 V",
+      "2 V"
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hardest",
+     "t": "long_answer",
+     "m": 3,
+     "q": "A storage battery of emf 12 V and internal resistance 1 ohm is being charged by a 100 V dc supply, with a resistor of 21 ohm connected in series. Find (a) the charging current, (b) the terminal voltage of the battery during charging, and (c) explain the purpose of the series resistor, using the current that would flow without it.",
+     "a": "(a) The supply drives current against the emf of the battery, so I = (100 - 12)/(21 + 1) = 88/22 = 4 A. (b) During charging the current enters the battery at its positive terminal, so V = epsilon + I r = 12 + 4 x 1 = 16 V. (c) The series resistor limits the charging current. Without it the current would be (100 - 12)/1 = 88 A, which is dangerously large and would damage the battery.",
+     "s": [
+      [
+       "Finds the charging current (100 - 12)/22 = 4 A",
+       1
+      ],
+      [
+       "Finds the terminal voltage 12 + 4 x 1 = 16 V",
+       1
+      ],
+      [
+       "Explains that the resistor limits the current, which would otherwise be 88 A",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "multi_statement",
+     "m": 1,
+     "q": "Consider these statements about a cell of emf epsilon and internal resistance r connected to an external resistor R. (I) Inside the electrolyte, the current flows from the positive electrode to the negative electrode. (II) The potential difference across the external resistor is epsilon R/(R + r). Which is or are correct?",
+     "a": "Only II",
+     "o": [
+      "Only II",
+      "Only I",
+      "Both I and II",
+      "Neither I nor II"
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "q": "A cell sends a current of 1.0 A through a 2 ohm resistor and, when that resistor is replaced, a current of 0.5 A through a 5 ohm resistor. Find the emf and the internal resistance of the cell.",
+     "a": "epsilon = I (R + r) in both cases: epsilon = 1.0 (2 + r) and epsilon = 0.5 (5 + r). So 2 + r = 2.5 + 0.5 r, giving 0.5 r = 0.5 and r = 1 ohm. Then epsilon = 1.0 x (2 + 1) = 3 V.",
+     "s": [
+      [
+       "Writes epsilon = 1.0 (2 + r) = 0.5 (5 + r) and solves r = 1 ohm",
+       1
+      ],
+      [
+       "Finds epsilon = 3 V",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hardest",
+     "t": "long_answer",
+     "m": 3,
+     "q": "A cell of emf 6 V and internal resistance 1 ohm is connected in turn to external resistors of 1 ohm, 2 ohm and 5 ohm. Find the current and the terminal potential difference in each case, and state how the terminal potential difference compares with the emf as the external resistance increases.",
+     "a": "I = epsilon/(R + r) and V = epsilon - I r. For 1 ohm: I = 6/2 = 3 A, V = 6 - 3 = 3 V. For 2 ohm: I = 6/3 = 2 A, V = 6 - 2 = 4 V. For 5 ohm: I = 6/6 = 1 A, V = 6 - 1 = 5 V. As R increases the current falls, the drop I r across the internal resistance falls, and the terminal potential difference rises towards the emf of 6 V (reaching it only on open circuit).",
+     "s": [
+      [
+       "Finds the three currents 3 A, 2 A and 1 A",
+       1
+      ],
+      [
+       "Finds the three terminal potential differences 3 V, 4 V and 5 V",
+       1
+      ],
+      [
+       "States that V approaches the emf as R increases because I r becomes smaller",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Evaluate",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "q": "A cell is marked 1.5 V. A student measures 1.4 V across its terminals while it is lighting a bulb and concludes that the marking must be wrong. Evaluate this conclusion.",
+     "a": "The conclusion is not justified. The marked value is the emf, the potential difference between the terminals on open circuit. When the cell delivers a current I, the terminal potential difference is V = epsilon - I r, which is less than the emf by the drop I r across the internal resistance. A reading of 1.4 V under load is consistent with an emf of 1.5 V.",
+     "s": [
+      [
+       "States that the emf is the open-circuit potential difference",
+       1
+      ],
+      [
+       "Uses V = epsilon - I r to explain the lower reading while current flows",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Create",
+     "d": "Hardest",
+     "t": "long_answer",
+     "m": 3,
+     "q": "Design a circuit of one cell and one external resistor in which the terminal potential difference of the cell is exactly 90% of its emf. Choose the emf, the internal resistance and the external resistance, and show the current and the terminal potential difference.",
+     "a": "V = I R = epsilon R/(R + r), so V = 0.9 epsilon needs R/(R + r) = 0.9, i.e. R = 9 r. For example epsilon = 10 V, r = 1 ohm, R = 9 ohm: I = 10/(9 + 1) = 1 A, V = epsilon - I r = 10 - 1 = 9 V, which is 90% of 10 V.",
+     "s": [
+      [
+       "Obtains the condition R = 9 r",
+       1
+      ],
+      [
+       "Chooses values satisfying it and finds the current",
+       1
+      ],
+      [
+       "Shows the terminal potential difference is 90% of the emf",
+       1
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "code": "C12P-3.7",
+   "name": "Cells in series and in parallel",
+   "description": "Replacing a series or a parallel combination of cells by a single equivalent cell, with its equivalent emf and equivalent internal resistance.",
+   "idea": "Like resistors, cells can be combined, and for calculating currents and voltages a combination of cells can be replaced by one equivalent cell.",
+   "rule": "Series (current leaving each cell from its positive electrode): epsilon_eq = epsilon1 + epsilon2 and r_eq = r1 + r2; a cell from which the current leaves at the negative electrode enters with a negative sign, so with the two negatives joined epsilon_eq = epsilon1 - epsilon2 (epsilon1 > epsilon2), while the internal resistances still add. Parallel (positive terminals joined together and negative terminals joined together): I = I1 + I2, epsilon_eq = (epsilon1 r2 + epsilon2 r1)/(r1 + r2) and r_eq = r1 r2/(r1 + r2), equivalently 1/r_eq = 1/r1 + 1/r2 and epsilon_eq/r_eq = epsilon1/r1 + epsilon2/r2. Both rules extend to n cells.",
+   "example": "Cells of 6 V, 2 ohm and 3 V, 1 ohm in parallel give epsilon_eq = (6 x 1 + 3 x 2)/(2 + 1) = 4 V and r_eq = (2 x 1)/(2 + 1) = 2/3 ohm.",
+   "difficulty_base": "Hard",
+   "questions": [
+    {
+     "b": "Remember",
+     "d": "Easy",
+     "t": "fill_blank",
+     "m": 1,
+     "q": "When cells are connected in series so that the current leaves each cell from its positive electrode, the equivalent emf is the ____ of their individual emfs (one word).",
+     "a": "sum"
+    },
+    {
+     "b": "Remember",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "Two cells of internal resistances r1 and r2 are connected in series. The equivalent internal resistance of the combination is",
+     "a": "r1 + r2",
+     "o": [
+      "r1 + r2",
+      "r1 r2/(r1 + r2)",
+      "r1 - r2",
+      "(r1 + r2)/2"
+     ]
+    },
+    {
+     "b": "Remember",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "Two cells of internal resistances r1 and r2 are connected in parallel, positive terminal to positive and negative to negative. The equivalent internal resistance r_eq satisfies",
+     "a": "1/r_eq = 1/r1 + 1/r2",
+     "o": [
+      "1/r_eq = 1/r1 + 1/r2",
+      "r_eq = r1 + r2",
+      "r_eq = r1 r2",
+      "1/r_eq = 1/r1 - 1/r2"
+     ]
+    },
+    {
+     "b": "Remember",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "q": "Which of the following statements about combinations of cells is FALSE?",
+     "a": "For two cells of different emfs in parallel, the equivalent emf is the sum of the two emfs",
+     "o": [
+      "For two cells of different emfs in parallel, the equivalent emf is the sum of the two emfs",
+      "For calculating currents and voltages, a combination of cells can be replaced by an equivalent cell",
+      "The rule for the series combination of two cells can be extended to any number of cells",
+      "If the second cell of a parallel pair is reversed, the parallel formulas still hold with epsilon2 replaced by -epsilon2"
+     ],
+     "rev": true
+    },
+    {
+     "b": "Understand",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "Two identical cells, each of emf epsilon and internal resistance r, are connected in parallel with like terminals joined. The equivalent emf of the combination is",
+     "a": "epsilon",
+     "o": [
+      "epsilon",
+      "2 epsilon",
+      "epsilon/2",
+      "zero"
+     ]
+    },
+    {
+     "b": "Understand",
+     "d": "Easy",
+     "t": "fill_blank",
+     "m": 1,
+     "q": "Two identical cells, each of internal resistance 4 ohm, are connected in parallel with like terminals joined. The equivalent internal resistance is ____ ohm (a whole number).",
+     "a": "2"
+    },
+    {
+     "b": "Understand",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "Two cells of emfs epsilon1 and epsilon2 (epsilon1 > epsilon2) are connected in series with their two negative electrodes joined together. The equivalent emf is",
+     "a": "epsilon1 - epsilon2",
+     "o": [
+      "epsilon1 - epsilon2",
+      "epsilon1 + epsilon2",
+      "(epsilon1 + epsilon2)/2",
+      "epsilon1 epsilon2/(epsilon1 + epsilon2)"
+     ]
+    },
+    {
+     "b": "Understand",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "q": "Two cells of emfs epsilon1, epsilon2 and internal resistances r1, r2 are connected in parallel with like terminals joined. The equivalent emf is",
+     "a": "(epsilon1 r2 + epsilon2 r1)/(r1 + r2)",
+     "o": [
+      "(epsilon1 r2 + epsilon2 r1)/(r1 + r2)",
+      "(epsilon1 r1 + epsilon2 r2)/(r1 + r2)",
+      "(epsilon1 + epsilon2)/(r1 + r2)",
+      "(epsilon1 + epsilon2)/2"
+     ]
+    },
+    {
+     "b": "Understand",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "q": "Two cells (emfs epsilon1, epsilon2; internal resistances r1, r2) are joined in series, the negative electrode of the first to the positive electrode of the second, and carry a current I. Show that the combination behaves as a single cell, and identify its emf and internal resistance.",
+     "a": "For each cell the terminal potential difference is epsilon - I r. Across the first cell V_AB = epsilon1 - I r1 and across the second V_BC = epsilon2 - I r2. Across the combination V_AC = V_AB + V_BC = (epsilon1 + epsilon2) - I (r1 + r2). Comparing with V = epsilon_eq - I r_eq for a single cell gives epsilon_eq = epsilon1 + epsilon2 and r_eq = r1 + r2.",
+     "s": [
+      [
+       "Adds the two terminal potential differences to get (epsilon1 + epsilon2) - I (r1 + r2)",
+       1
+      ],
+      [
+       "Compares with epsilon_eq - I r_eq to identify the equivalent emf and internal resistance",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "Three cells, each of emf 1.5 V and internal resistance 0.2 ohm, are connected in series so that the current leaves each from its positive electrode. The equivalent emf and internal resistance are",
+     "a": "4.5 V and 0.6 ohm",
+     "o": [
+      "4.5 V and 0.6 ohm",
+      "1.5 V and 0.6 ohm",
+      "4.5 V and 0.067 ohm",
+      "1.5 V and 0.067 ohm"
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "A cell of emf 6 V and internal resistance 1 ohm is connected in series with a cell of emf 4 V and internal resistance 1 ohm, with their two negative electrodes joined together. The equivalent emf and internal resistance are",
+     "a": "2 V and 2 ohm",
+     "o": [
+      "2 V and 2 ohm",
+      "10 V and 2 ohm",
+      "2 V and 0.5 ohm",
+      "2 V and 0 ohm"
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "q": "A cell of emf 2 V and internal resistance 1 ohm is connected in parallel with a cell of emf 4 V and internal resistance 3 ohm, positive terminal to positive and negative to negative. Find the equivalent emf and the equivalent internal resistance.",
+     "a": "epsilon_eq = (epsilon1 r2 + epsilon2 r1)/(r1 + r2) = (2 x 3 + 4 x 1)/(1 + 3) = 10/4 = 2.5 V. r_eq = r1 r2/(r1 + r2) = (1 x 3)/(1 + 3) = 0.75 ohm.",
+     "s": [
+      [
+       "Finds epsilon_eq = 2.5 V",
+       1
+      ],
+      [
+       "Finds r_eq = 0.75 ohm",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "q": "Four cells, each of emf 1.5 V and internal resistance 0.5 ohm, are connected in series (current leaving each from its positive electrode) across a 10 ohm resistor. Find the current in the resistor and the potential difference across it.",
+     "a": "epsilon_eq = 4 x 1.5 = 6 V and r_eq = 4 x 0.5 = 2 ohm. I = epsilon_eq/(R + r_eq) = 6/(10 + 2) = 0.5 A. Potential difference across the resistor = I R = 0.5 x 10 = 5 V.",
+     "s": [
+      [
+       "Finds epsilon_eq = 6 V and r_eq = 2 ohm",
+       1
+      ],
+      [
+       "Finds I = 0.5 A and the potential difference 5 V",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "q": "A cell of emf 6 V and internal resistance 2 ohm is connected in parallel with a cell of emf 3 V and internal resistance 1 ohm, like terminals joined. The equivalent emf of the combination is",
+     "a": "4 V",
+     "o": [
+      "4 V",
+      "5 V",
+      "9 V",
+      "4.5 V"
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hardest",
+     "t": "long_answer",
+     "m": 3,
+     "q": "A cell of emf 12 V and internal resistance 2 ohm and a cell of emf 6 V and internal resistance 2 ohm are connected in parallel, like terminals joined, and the combination is connected across a 2 ohm resistor. Find (a) the equivalent emf and internal resistance, (b) the current in the resistor and the potential difference across it, and (c) the current delivered by each cell.",
+     "a": "(a) epsilon_eq = (12 x 2 + 6 x 2)/(2 + 2) = 36/4 = 9 V; r_eq = (2 x 2)/(2 + 2) = 1 ohm. (b) I = epsilon_eq/(R + r_eq) = 9/(2 + 1) = 3 A; V = I R = 3 x 2 = 6 V. (c) For each cell V = epsilon - I r, so I1 = (12 - 6)/2 = 3 A and I2 = (6 - 6)/2 = 0 A. The 6 V cell delivers no current, and I1 + I2 = 3 A as required.",
+     "s": [
+      [
+       "Finds epsilon_eq = 9 V and r_eq = 1 ohm",
+       1
+      ],
+      [
+       "Finds I = 3 A and V = 6 V",
+       1
+      ],
+      [
+       "Finds I1 = 3 A and I2 = 0 A from V = epsilon - I r for each cell",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "assertion_reason",
+     "m": 1,
+     "q": "Assertion (A): For two cells in parallel, the current in the external circuit equals the sum of the currents leaving the positive electrodes of the two cells. Reason (R): Two cells in parallel have the same potential difference across their terminals, because they are connected between the same two points.",
+     "a": "Both A and R are true, but R is not the correct explanation of A",
+     "o": [
+      "Both A and R are true, but R is not the correct explanation of A",
+      "Both A and R are true, and R is the correct explanation of A",
+      "A is true, R is false",
+      "A is false, R is true"
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "q": "Three cells, each of emf 2 V and internal resistance 0.5 ohm, are joined in series, but one of them is connected the wrong way round. The combination is connected across a 2.5 ohm resistor. Find the equivalent emf, the equivalent internal resistance and the current.",
+     "a": "The reversed cell enters with a negative sign: epsilon_eq = 2 + 2 - 2 = 2 V. Internal resistances still add: r_eq = 3 x 0.5 = 1.5 ohm. I = epsilon_eq/(R + r_eq) = 2/(2.5 + 1.5) = 0.5 A.",
+     "s": [
+      [
+       "Finds epsilon_eq = 2 V (reversed cell subtracts) and r_eq = 1.5 ohm (resistances add)",
+       1
+      ],
+      [
+       "Finds I = 2/4 = 0.5 A",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hardest",
+     "t": "long_answer",
+     "m": 3,
+     "q": "Two identical cells, each of emf 3 V and internal resistance 2 ohm, can be connected in series or in parallel (like terminals joined). Find the current each arrangement sends through (a) an 8 ohm resistor and (b) a 1 ohm resistor, and (c) state which arrangement gives the larger current in each case and why.",
+     "a": "Series: epsilon_eq = 6 V, r_eq = 4 ohm. Parallel: epsilon_eq = 3 V, r_eq = 1 ohm. (a) For 8 ohm: series I = 6/(8 + 4) = 0.5 A; parallel I = 3/(8 + 1) = 1/3 A, about 0.33 A. (b) For 1 ohm: series I = 6/(1 + 4) = 1.2 A; parallel I = 3/(1 + 1) = 1.5 A. (c) Series gives the larger current through the large external resistance, where the doubled emf matters more than the added internal resistance; parallel gives the larger current through the small external resistance, where the reduced internal resistance matters more.",
+     "s": [
+      [
+       "Finds the equivalent emf and internal resistance for series (6 V, 4 ohm) and parallel (3 V, 1 ohm)",
+       1
+      ],
+      [
+       "Finds 0.5 A and 1/3 A for 8 ohm, and 1.2 A and 1.5 A for 1 ohm",
+       1
+      ],
+      [
+       "Concludes series is better for the large resistance and parallel for the small one, with the reason",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Evaluate",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "q": "A student connects a 2 V cell and a 4 V cell of equal internal resistance in parallel, like terminals joined, and claims the combination is equivalent to a 6 V cell. Evaluate this claim.",
+     "a": "The claim is wrong; emfs add only in a series combination. In parallel, epsilon_eq = (epsilon1 r2 + epsilon2 r1)/(r1 + r2). With r1 = r2 = r this is (2 r + 4 r)/(2 r) = 3 V, so the combination is equivalent to a 3 V cell (with internal resistance r/2).",
+     "s": [
+      [
+       "States that adding emfs applies to series, not parallel, combinations",
+       1
+      ],
+      [
+       "Uses the parallel formula with equal internal resistances to get 3 V",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Create",
+     "d": "Hardest",
+     "t": "long_answer",
+     "m": 3,
+     "q": "Design a parallel combination (like terminals joined) of two cells with different emfs and different internal resistances whose equivalent emf is exactly 5 V. State your values, verify the equivalent emf and find the equivalent internal resistance.",
+     "a": "We need (epsilon1 r2 + epsilon2 r1)/(r1 + r2) = 5 V. For example epsilon1 = 6 V, r1 = 1 ohm and epsilon2 = 3 V, r2 = 2 ohm: epsilon_eq = (6 x 2 + 3 x 1)/(1 + 2) = 15/3 = 5 V. r_eq = r1 r2/(r1 + r2) = (1 x 2)/(1 + 2) = 2/3 ohm.",
+     "s": [
+      [
+       "States two different emfs and two different internal resistances",
+       1
+      ],
+      [
+       "Verifies epsilon_eq = 5 V with the parallel formula",
+       1
+      ],
+      [
+       "Finds r_eq for the chosen values",
+       1
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "code": "C12P-3.8",
+   "name": "Kirchhoff's rules",
+   "description": "The junction rule and the loop rule, their physical basis, and their use to find the currents in a network of resistors and cells.",
+   "idea": "Any network of cells and resistors can be analysed with two rules: charge does not pile up at a junction, and the potential returns to its starting value around a closed loop.",
+   "rule": "Label a current with a symbol and an arrow in each branch; a negative result means the actual current is opposite to the arrow. Junction rule: at any junction the sum of the currents entering equals the sum of the currents leaving (for steady currents charge does not accumulate at any point). Loop rule: the algebraic sum of the changes in potential around any closed loop involving resistors and cells is zero (potential depends only on location). Going through a resistor R along the current I the change is -IR; going through a cell from its negative to its positive terminal the change is +epsilon. Use as many junctions and loops as are needed to solve for the unknowns.",
+   "example": "A loop with a 12 V cell and resistors of 2 ohm and 4 ohm: 12 - 2 I - 4 I = 0, so I = 2 A.",
+   "difficulty_base": "Hard",
+   "questions": [
+    {
+     "b": "Remember",
+     "d": "Easy",
+     "t": "fill_blank",
+     "m": 1,
+     "q": "Kirchhoff's junction rule: at any junction, the sum of the currents entering the junction is equal to the sum of the currents ____ the junction (one word).",
+     "a": "leaving"
+    },
+    {
+     "b": "Remember",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "Kirchhoff's loop rule states that",
+     "a": "the algebraic sum of the changes in potential around any closed loop is zero",
+     "o": [
+      "the algebraic sum of the changes in potential around any closed loop is zero",
+      "the algebraic sum of the currents around any closed loop is zero",
+      "the sum of the resistances around any closed loop is zero",
+      "the potential is the same at every point of a closed loop"
+     ]
+    },
+    {
+     "b": "Remember",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "In applying Kirchhoff's rules, a current I is marked with an arrow in a branch. If I turns out to be negative on solving, then",
+     "a": "the actual current flows opposite to the direction of the arrow",
+     "o": [
+      "the actual current flows opposite to the direction of the arrow",
+      "there is no current in that branch",
+      "the resistance of that branch must be negative",
+      "the junction rule does not hold for that branch"
+     ]
+    },
+    {
+     "b": "Remember",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "q": "Which of the following statements about Kirchhoff's rules is NOT correct?",
+     "a": "The junction rule requires charge to keep accumulating at a junction while the currents are steady",
+     "o": [
+      "The junction rule requires charge to keep accumulating at a junction while the currents are steady",
+      "The junction rule applies equally well to a point in a line",
+      "The rules are applied to as many junctions and closed loops as are needed to solve for the unknowns",
+      "For a cell with the current labelled from its positive to its negative terminal through it, the potential difference between its terminals is epsilon + I r"
+     ],
+     "rev": true
+    },
+    {
+     "b": "Understand",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "Before writing Kirchhoff's equations for a network, the first step for each resistor is to",
+     "a": "label the current in it with a symbol and an arrow for an assumed direction",
+     "o": [
+      "label the current in it with a symbol and an arrow for an assumed direction",
+      "replace it by an equivalent cell",
+      "assume that it carries no current",
+      "assume that it carries the same current as every other resistor"
+     ]
+    },
+    {
+     "b": "Understand",
+     "d": "Easy",
+     "t": "fill_blank",
+     "m": 1,
+     "q": "Starting at any point of a circuit, going once round a closed loop and returning to the same point, the total change in potential is ____ volt (a whole number).",
+     "a": "0"
+    },
+    {
+     "b": "Understand",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "Kirchhoff's rules are needed in circuit analysis because",
+     "a": "the formulas for series and parallel combinations are not always sufficient to find all the currents and potential differences",
+     "o": [
+      "the formulas for series and parallel combinations are not always sufficient to find all the currents and potential differences",
+      "Ohm's law fails in every circuit that has more than one cell",
+      "the resistors in a network have no definite resistance",
+      "the currents in a network of cells and resistors are never steady"
+     ]
+    },
+    {
+     "b": "Understand",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "q": "While going round a closed loop, a resistor R is crossed in the same direction as the current I through it. The change in potential across the resistor is",
+     "a": "-I R",
+     "o": [
+      "-I R",
+      "+I R",
+      "zero",
+      "-I/R"
+     ]
+    },
+    {
+     "b": "Understand",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "q": "State the physical reason behind (a) Kirchhoff's junction rule and (b) Kirchhoff's loop rule.",
+     "a": "(a) When currents are steady there is no accumulation of charge at any junction or at any point in a line, so the rate at which charge flows into a junction must equal the rate at which it flows out. (b) Electric potential depends only on the location of the point, so on starting from any point and coming back to the same point round a closed loop the total change in potential must be zero.",
+     "s": [
+      [
+       "Junction rule: no accumulation of charge at a junction for steady currents",
+       1
+      ],
+      [
+       "Loop rule: potential depends only on position, so the total change round a closed loop is zero",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "A single closed loop contains a cell of emf 12 V with negligible internal resistance and two resistors of 2 ohm and 4 ohm, all connected one after another. Applying the loop rule, the current in the loop is",
+     "a": "2 A",
+     "o": [
+      "2 A",
+      "6 A",
+      "3 A",
+      "72 A"
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "Five wires meet at a junction. Currents of 4 A and 3 A enter the junction through two of them, and currents of 2 A and 1 A leave through two others. The current in the fifth wire is",
+     "a": "4 A, leaving the junction",
+     "o": [
+      "4 A, leaving the junction",
+      "4 A, entering the junction",
+      "10 A, leaving the junction",
+      "5 A, leaving the junction"
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "q": "A single closed loop contains a cell of emf 10 V and a cell of emf 4 V, each of internal resistance 1 ohm, connected so that their emfs oppose each other, and a 4 ohm resistor. Use the loop rule to find the current and the potential difference across the 4 ohm resistor.",
+     "a": "Going round the loop in the direction of the current I (driven by the 10 V cell): +10 - 4 - I (1) - I (1) - I (4) = 0, so 6 I = 6 and I = 1 A. Potential difference across the 4 ohm resistor = I R = 1 x 4 = 4 V.",
+     "s": [
+      [
+       "Writes the loop equation 10 - 4 - 6 I = 0 and finds I = 1 A",
+       1
+      ],
+      [
+       "Finds the potential difference 4 V across the 4 ohm resistor",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "q": "A cell of emf 9 V and negligible internal resistance is connected across two points P and Q. A 3 ohm resistor and a 6 ohm resistor are each connected directly between P and Q. Use the loop rule for the loop containing the cell and each resistor in turn to find the current in each resistor, and the junction rule to find the current through the cell.",
+     "a": "Loop through the cell and the 3 ohm resistor: 9 - 3 I1 = 0, so I1 = 3 A. Loop through the cell and the 6 ohm resistor: 9 - 6 I2 = 0, so I2 = 1.5 A. Junction rule at P: current through the cell I = I1 + I2 = 3 + 1.5 = 4.5 A.",
+     "s": [
+      [
+       "Uses the loop rule to find I1 = 3 A and I2 = 1.5 A",
+       1
+      ],
+      [
+       "Uses the junction rule to find the cell current 4.5 A",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "q": "Going round a single closed loop in the direction of the current I, one crosses a cell of emf 20 V from its negative to its positive terminal, resistors of 3 ohm and 5 ohm, and a second cell of emf 4 V from its positive to its negative terminal. Internal resistances are negligible. The current I is",
+     "a": "2 A",
+     "o": [
+      "2 A",
+      "3 A",
+      "2.5 A",
+      "0.5 A"
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hardest",
+     "t": "long_answer",
+     "m": 3,
+     "q": "Points a and b are joined by three branches. Branch 1 has a cell of emf 14 V, its positive terminal towards a, in series with a 2 ohm resistor. Branch 2 has a cell of emf 10 V, its positive terminal towards a, in series with a 2 ohm resistor. Branch 3 is a 2 ohm resistor alone. Internal resistances are negligible. Using Kirchhoff's rules, find the current in each branch.",
+     "a": "Let I1 and I2 flow through branches 1 and 2 towards a, and I3 flow from a to b through branch 3. Junction rule at a: I3 = I1 + I2. Loop through branch 1 and branch 3: 14 - 2 I1 - 2 I3 = 0. Loop through branch 2 and branch 3: 10 - 2 I2 - 2 I3 = 0. Adding the loop equations: 24 - 2 (I1 + I2) - 4 I3 = 0, so 24 = 6 I3 and I3 = 4 A. Then I1 = (14 - 8)/2 = 3 A and I2 = (10 - 8)/2 = 1 A. So branch 1 carries 3 A and branch 2 carries 1 A, both towards a, and branch 3 carries 4 A from a to b.",
+     "s": [
+      [
+       "Writes the junction equation I3 = I1 + I2",
+       1
+      ],
+      [
+       "Writes the two loop equations 14 - 2 I1 - 2 I3 = 0 and 10 - 2 I2 - 2 I3 = 0",
+       1
+      ],
+      [
+       "Solves to get I1 = 3 A, I2 = 1 A, I3 = 4 A",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "multi_statement",
+     "m": 1,
+     "q": "Consider these statements about Kirchhoff's rules. (I) The junction rule holds only when the wires meeting at the junction have equal resistances. (II) The loop rule can be applied only to a closed loop that contains at least one cell. Which is or are correct?",
+     "a": "Neither I nor II",
+     "o": [
+      "Neither I nor II",
+      "Only I",
+      "Only II",
+      "Both I and II"
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "q": "Twelve identical resistors form the edges of a cube. A current 3I enters at one corner and leaves at the diagonally opposite corner. Using symmetry and the junction rule, find the current in each of the three edges meeting at the entry corner, and in each of the edges into which those currents next divide.",
+     "a": "The three edges meeting at the entry corner are symmetrically placed, so the current 3I divides equally among them: each carries I. At the far end of each of these edges the incoming current I must split equally into the two outgoing edges, so each of those six edges carries I/2.",
+     "s": [
+      [
+       "Uses symmetry and the junction rule at the entry corner to get I in each of the three edges",
+       1
+      ],
+      [
+       "Uses the junction rule at the next corners to get I/2 in each of the six following edges",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hardest",
+     "t": "long_answer",
+     "m": 3,
+     "q": "Twelve resistors, each of 6 ohm, form the edges of a cube. A battery of emf 10 V and negligible internal resistance is connected across two diagonally opposite corners. Using symmetry and Kirchhoff's rules, find the equivalent resistance of the network, the total current drawn from the battery and the currents in the edges.",
+     "a": "Let the total current be 3I. By symmetry each of the three edges at the entry corner carries I, each of the six middle edges carries I/2, and each of the three edges meeting at the exit corner carries I. Loop rule for a closed loop through the battery and one path across the cube (three edges): -I R - (1/2) I R - I R + epsilon = 0, so epsilon = (5/2) I R. Equivalent resistance R_eq = epsilon/(3I) = (5/6) R = (5/6) x 6 = 5 ohm. Total current = 10 V / 5 ohm = 2 A, so I = 2/3 A: the six edges at the entry and exit corners carry 2/3 A each and the six middle edges carry 1/3 A each.",
+     "s": [
+      [
+       "Assigns currents I, I/2, I to the three kinds of edge using symmetry and the junction rule",
+       1
+      ],
+      [
+       "Applies the loop rule to get epsilon = (5/2) I R and R_eq = (5/6) R = 5 ohm",
+       1
+      ],
+      [
+       "Finds the total current 2 A and the edge currents 2/3 A and 1/3 A",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Evaluate",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "q": "For a network with three unknown currents, a student writes the loop rule for four different closed loops and expects to obtain four independent equations. Evaluate this expectation.",
+     "a": "The expectation is wrong. Three unknown currents need only three independent equations. Once enough loops have been used to solve for the unknowns, the loop rule applied to the remaining closed loops gives no additional independent equation; the currents already found automatically satisfy the rule for every other closed loop of the network.",
+     "s": [
+      [
+       "States that only as many independent equations as unknowns (three) are needed or available",
+       1
+      ],
+      [
+       "States that further loops give no new independent equation and are automatically satisfied",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Create",
+     "d": "Hardest",
+     "t": "long_answer",
+     "m": 3,
+     "q": "Design a single closed loop containing two cells of different emfs connected so that they oppose each other, and two resistors, in which the current is exactly 0.5 A. Neglect internal resistances. Write the loop equation for your values, and find the potential difference across each resistor.",
+     "a": "For example, cells of 12 V and 6 V opposing each other, with resistors of 4 ohm and 8 ohm. Going round in the direction of the current (driven by the 12 V cell): +12 - 6 - 4 I - 8 I = 0, so 12 I = 6 and I = 0.5 A. Potential differences: 0.5 x 4 = 2 V and 0.5 x 8 = 4 V, which together equal the net emf of 6 V.",
+     "s": [
+      [
+       "Chooses two opposing emfs and two resistors with (difference of emfs)/(total resistance) = 0.5 A",
+       1
+      ],
+      [
+       "Writes the loop equation and shows I = 0.5 A",
+       1
+      ],
+      [
+       "Finds the potential difference across each resistor",
+       1
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "code": "C12P-3.9",
+   "name": "Wheatstone bridge",
+   "description": "The four-resistor bridge circuit, its balance condition obtained from Kirchhoff's rules, and its use to find an unknown resistance.",
+   "idea": "Four resistors form a bridge; when their values are in the right proportion no current flows through the galvanometer, and this null condition lets one resistance be found from the other three.",
+   "rule": "Four resistors form the arms of a bridge ABCD: R1 in arm AD, R2 in arm AB, R3 in arm DC and R4 in arm BC. A source is connected across A and C (the battery arm) and a galvanometer across B and D (the galvanometer arm). In a balanced bridge the galvanometer current is zero; the junction rule then gives I1 = I3 and I2 = I4, and the loop rule for loops ADBA and CBDC gives the balance condition R2/R1 = R4/R3, i.e. R_AB/R_AD = R_BC/R_DC. With known R1 and R2, R3 is varied until the galvanometer shows null deflection, and the unknown is R4 = R3 R2/R1. An unbalanced bridge is solved with Kirchhoff's rules.",
+   "example": "With AB = 10 ohm, BC = 20 ohm and AD = 30 ohm, the bridge balances when DC = 30 x 20/10 = 60 ohm.",
+   "difficulty_base": "Hard",
+   "questions": [
+    {
+     "b": "Remember",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "In a Wheatstone bridge, the galvanometer is connected",
+     "a": "between the two vertices that are not connected to the source",
+     "o": [
+      "between the two vertices that are not connected to the source",
+      "in series with the source",
+      "directly across the terminals of the source",
+      "in series with the unknown resistance in one arm"
+     ]
+    },
+    {
+     "b": "Remember",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "In a Wheatstone bridge, the galvanometer is a device used to",
+     "a": "detect currents",
+     "o": [
+      "detect currents",
+      "supply the emf",
+      "store charge",
+      "measure temperature"
+     ]
+    },
+    {
+     "b": "Remember",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "In a Wheatstone bridge, the line joining the pair of diagonally opposite points across which the source is connected is called the",
+     "a": "battery arm",
+     "o": [
+      "battery arm",
+      "galvanometer arm",
+      "standard arm",
+      "null arm"
+     ]
+    },
+    {
+     "b": "Remember",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "q": "Which of the following statements about a Wheatstone bridge is NOT correct?",
+     "a": "When the bridge is balanced, no current flows through any of the four resistors",
+     "o": [
+      "When the bridge is balanced, no current flows through any of the four resistors",
+      "The source is connected across one pair of diagonally opposite points",
+      "The balance condition can be obtained by applying Kirchhoff's rules",
+      "It provides a practical method of determining an unknown resistance"
+     ],
+     "rev": true
+    },
+    {
+     "b": "Understand",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "A Wheatstone bridge ABCD has R1 in arm AD, R2 in arm AB, R3 in arm DC and R4 in arm BC (source connected across A and C, galvanometer connected across B and D). The balance condition is",
+     "a": "R2/R1 = R4/R3",
+     "o": [
+      "R2/R1 = R4/R3",
+      "R1 R2 = R3 R4",
+      "R1 + R2 = R3 + R4",
+      "R2/R1 = R3/R4"
+     ]
+    },
+    {
+     "b": "Understand",
+     "d": "Easy",
+     "t": "fill_blank",
+     "m": 1,
+     "q": "In a balanced Wheatstone bridge, the potential difference between the two ends of the galvanometer arm is ____ volt (a whole number).",
+     "a": "0"
+    },
+    {
+     "b": "Understand",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "In a balanced Wheatstone bridge ABCD (source connected across A and C, galvanometer connected across B and D), the current in arm AB is equal to the current in arm",
+     "a": "BC",
+     "o": [
+      "BC",
+      "AD",
+      "DC",
+      "AC, the battery arm"
+     ]
+    },
+    {
+     "b": "Understand",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "q": "To find an unknown resistance R4 with a Wheatstone bridge in which R1 and R2 are known and kept fixed, one",
+     "a": "varies R3 until the galvanometer shows null deflection and then uses the balance condition",
+     "o": [
+      "varies R3 until the galvanometer shows null deflection and then uses the balance condition",
+      "varies the emf of the source until the galvanometer shows its largest deflection",
+      "removes the galvanometer and measures the current drawn from the source",
+      "varies R3 until the current drawn from the source becomes zero"
+     ]
+    },
+    {
+     "b": "Understand",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "q": "A Wheatstone bridge ABCD has R1 in arm AD carrying current I1, R2 in arm AB carrying current I2, R3 in arm DC and R4 in arm BC (source connected across A and C, galvanometer connected across B and D). Use Kirchhoff's rules to derive the balance condition.",
+     "a": "At balance the galvanometer current is zero, so by the junction rule at D and B the current in DC is I1 and the current in BC is I2. Loop rule for loop ADBA: -I1 R1 + 0 + I2 R2 = 0, so I1/I2 = R2/R1. Loop rule for loop CBDC: I2 R4 + 0 - I1 R3 = 0, so I1/I2 = R4/R3. Equating, R2/R1 = R4/R3.",
+     "s": [
+      [
+       "Uses zero galvanometer current and the junction rule, then writes the two loop equations",
+       1
+      ],
+      [
+       "Obtains I1/I2 = R2/R1 = R4/R3, the balance condition",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "In a Wheatstone bridge ABCD (source connected across A and C, galvanometer connected across B and D), the arms are AB = 10 ohm, BC = 20 ohm and AD = 30 ohm. The bridge is balanced when the arm DC is",
+     "a": "60 ohm",
+     "o": [
+      "60 ohm",
+      "15 ohm",
+      "6.7 ohm",
+      "40 ohm"
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "In a Wheatstone bridge with R1 = 100 ohm in arm AD and R2 = 200 ohm in arm AB, balance is obtained when R3 = 45 ohm in arm DC (source connected across A and C, galvanometer connected across B and D). The unknown resistance R4 in arm BC is",
+     "a": "90 ohm",
+     "o": [
+      "90 ohm",
+      "22.5 ohm",
+      "145 ohm",
+      "444 ohm"
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "q": "A Wheatstone bridge ABCD (source connected across A and C, galvanometer connected across B and D) has arms AB = 6 ohm, BC = 3 ohm, AD = 4 ohm and DC = 2 ohm. The source has emf 9 V and negligible internal resistance. Show that the bridge is balanced and find the current drawn from the source.",
+     "a": "AB/BC = 6/3 = 2 and AD/DC = 4/2 = 2, so the bridge is balanced and no current flows through the galvanometer. The same current then flows through AB and BC: loop rule gives 9 - I (6 + 3) = 0, so I = 1 A. Similarly for AD and DC: 9 - I' (4 + 2) = 0, so I' = 1.5 A. Junction rule at A: current from the source = 1 + 1.5 = 2.5 A.",
+     "s": [
+      [
+       "Shows AB/BC = AD/DC = 2, so the bridge is balanced",
+       1
+      ],
+      [
+       "Finds 1 A through ABC and 1.5 A through ADC, total 2.5 A",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "q": "The arms of a Wheatstone bridge ABCD (source connected across A and C, galvanometer connected across B and D) are AB = 100 ohm, BC = 10 ohm and DA = 60 ohm. Find the value of the arm CD for which the bridge is balanced, and state whether the bridge is balanced if CD = 5 ohm.",
+     "a": "At balance AB/BC = DA/CD, so CD = DA x BC/AB = 60 x 10/100 = 6 ohm. With CD = 5 ohm, AB/BC = 10 but DA/CD = 12, so the bridge is not balanced and a current flows through the galvanometer.",
+     "s": [
+      [
+       "Finds CD = 6 ohm from the balance condition",
+       1
+      ],
+      [
+       "States that CD = 5 ohm does not satisfy the condition, so the bridge is unbalanced",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "q": "A Wheatstone bridge ABCD (source connected across A and C, galvanometer connected across B and D) has arms AB = 2 ohm, BC = 4 ohm, AD = 3 ohm and DC = 6 ohm. The source has emf 12 V and negligible internal resistance. The potential difference across the arm AB is",
+     "a": "4 V",
+     "o": [
+      "4 V",
+      "8 V",
+      "6 V",
+      "12 V"
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hardest",
+     "t": "long_answer",
+     "m": 3,
+     "q": "A bridge network ABCD has arms AB = 4 ohm, BC = 2 ohm, AD = 2 ohm and DC = 4 ohm, and a 4 ohm resistor connected between B and D. A source of emf 10 V and negligible internal resistance is connected across A and C, with A at the higher potential. Using Kirchhoff's rules, find the current in each of the five resistors and the current drawn from the source.",
+     "a": "Let I1 flow in AB, I2 in AD, and Ig from D to B through the 4 ohm resistor. Then BC carries I1 + Ig and DC carries I2 - Ig. Loop ABDA: -4 I1 + 4 Ig + 2 I2 = 0. Loop through AB, BC and the source: 10 - 4 I1 - 2 (I1 + Ig) = 0. Loop through AD, DC and the source: 10 - 2 I2 - 4 (I2 - Ig) = 0. Solving: I1 = 1.5 A, I2 = 2 A, Ig = 0.5 A. So AB carries 1.5 A, BC carries 2 A, AD carries 2 A, DC carries 1.5 A and the resistor BD carries 0.5 A from D to B. Current from the source = I1 + I2 = 3.5 A.",
+     "s": [
+      [
+       "Labels the currents using the junction rule and writes three independent loop equations",
+       1
+      ],
+      [
+       "Solves to get 1.5 A in AB, 2 A in AD and 0.5 A from D to B",
+       1
+      ],
+      [
+       "States the currents 2 A in BC, 1.5 A in DC and the source current 3.5 A",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "assertion_reason",
+     "m": 1,
+     "q": "Assertion (A): The resistance of the galvanometer does not appear in the balance condition of a Wheatstone bridge. Reason (R): In a balanced Wheatstone bridge no current flows through the galvanometer.",
+     "a": "Both A and R are true, and R is the correct explanation of A",
+     "o": [
+      "Both A and R are true, and R is the correct explanation of A",
+      "Both A and R are true, but R is not the correct explanation of A",
+      "A is true, R is false",
+      "A is false, R is true"
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "q": "A Wheatstone bridge ABCD (source connected across A and C, galvanometer connected across B and D) has arms AB = 10 ohm, BC = 30 ohm, AD = 20 ohm and DC = 50 ohm, with A at the higher potential. Decide whether the bridge is balanced; if it is not, find which of B and D is at the higher potential with the galvanometer disconnected, and hence the direction of the current through the galvanometer when it is connected.",
+     "a": "AB/BC = 10/30 = 0.33 but AD/DC = 20/50 = 0.40, so the bridge is not balanced. With the galvanometer disconnected, the fraction of the source voltage dropped across AB is 10/40 = 0.25 and across AD is 20/70 = 0.29 (to two figures). The drop from A to B is smaller, so B is at a higher potential than D, and the current flows through the galvanometer from B to D.",
+     "s": [
+      [
+       "Shows AB/BC is not equal to AD/DC, so the bridge is unbalanced",
+       1
+      ],
+      [
+       "Compares the drops across AB (0.25 of the source voltage) and AD (0.29) to conclude B is higher and current flows from B to D",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hardest",
+     "t": "long_answer",
+     "m": 3,
+     "q": "A Wheatstone bridge ABCD (source connected across A and C, galvanometer connected across B and D) has arms AB = 20 ohm, BC = 40 ohm, AD = 30 ohm and DC = 60 ohm; the source has emf 18 V and negligible internal resistance, with A at the higher potential. (a) Verify that the bridge is balanced. (b) Find the current in each arm and the current drawn from the source. (c) If DC is changed to 30 ohm, find the potentials of B and D relative to C with the galvanometer disconnected, and state the direction of the galvanometer current when it is connected.",
+     "a": "(a) AB/BC = 20/40 = 1/2 and AD/DC = 30/60 = 1/2, so the bridge is balanced. (b) No current flows in the galvanometer, so AB and BC carry 18/(20 + 40) = 0.3 A and AD and DC carry 18/(30 + 60) = 0.2 A; the source supplies 0.5 A. (c) With DC = 30 ohm and the galvanometer disconnected, the potential of B above C is 18 x 40/60 = 12 V and that of D above C is 18 x 30/60 = 9 V. B is at the higher potential, so current flows through the galvanometer from B to D.",
+     "s": [
+      [
+       "Verifies AB/BC = AD/DC = 1/2",
+       1
+      ],
+      [
+       "Finds 0.3 A in AB and BC, 0.2 A in AD and DC, and 0.5 A from the source",
+       1
+      ],
+      [
+       "Finds 12 V at B and 9 V at D, so the galvanometer current is from B to D",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Evaluate",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "q": "In a Wheatstone bridge an unknown resistance X is in arm BC, with R2 = 100 ohm in arm AB and R1 = 10 ohm in arm AD (source connected across A and C, galvanometer connected across B and D). Balance is obtained with R3 = 25 ohm in arm DC. A student reports X = 2.5 ohm. Evaluate the student's answer.",
+     "a": "The student has inverted the ratio. The balance condition R2/R1 = R4/R3 gives X = R4 = R3 x R2/R1 = 25 x 100/10 = 250 ohm, not 25 x 10/100 = 2.5 ohm.",
+     "s": [
+      [
+       "Uses the balance condition correctly: X = R3 R2/R1",
+       1
+      ],
+      [
+       "Obtains 250 ohm and identifies that the student inverted the ratio",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Create",
+     "d": "Hardest",
+     "t": "long_answer",
+     "m": 3,
+     "q": "Design a balanced Wheatstone bridge ABCD (source connected across A and C, galvanometer connected across B and D) using four different resistances. State the resistance in each arm, verify the balance condition, and then show that changing one of your resistances unbalances the bridge.",
+     "a": "For example AB = 10 ohm, BC = 20 ohm, AD = 15 ohm and DC = 30 ohm. AB/BC = 10/20 = 1/2 and AD/DC = 15/30 = 1/2, so the bridge is balanced and the galvanometer shows null deflection. If DC is changed to 40 ohm, AD/DC = 15/40 = 3/8, which is not equal to 1/2, so the bridge is no longer balanced and a current flows through the galvanometer.",
+     "s": [
+      [
+       "Gives four different resistances with the arms stated",
+       1
+      ],
+      [
+       "Verifies AB/BC = AD/DC",
+       1
+      ],
+      [
+       "Shows that a changed value breaks the equality, so the bridge is unbalanced",
+       1
+      ]
+     ]
+    }
+   ]
+  }
+ ]
+}
