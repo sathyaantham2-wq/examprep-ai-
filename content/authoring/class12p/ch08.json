@@ -1,0 +1,1996 @@
+{
+ "subject": {
+  "code": "PHY12",
+  "name": "Physics",
+  "board": "CBSE",
+  "class": 12
+ },
+ "source": {
+  "publisher": "NCERT",
+  "title": "Physics Part I",
+  "edition": "Textbook for Class XII Part I, Reprint 2026-27",
+  "year": 2026
+ },
+ "chapter": {
+  "part": "I",
+  "chapter_no": 8,
+  "name": "Electromagnetic Waves",
+  "blurb": "The chapter shows how Maxwell removed an inconsistency in Ampere's circuital law by introducing the displacement current, giving the Ampere-Maxwell law and a symmetry between changing electric and magnetic fields. It then describes, mostly qualitatively, how accelerated charges radiate electromagnetic waves, in which E and B are perpendicular to each other and to the direction of travel and which move in vacuum at c = 1/sqrt(mu0 epsilon0) with B0 = E0/c. Finally it surveys the electromagnetic spectrum from radio waves to gamma rays, with how each region is produced, detected and used.",
+  "source_code": "leph108",
+  "order_index": 8
+ },
+ "scope_in": [
+  {
+   "item": "Explain the inconsistency in Ampere's circuital law for a charging capacitor using surfaces with the same rim, and how the missing term is found from the electric flux Q/epsilon0 between the plates",
+   "pages": "202-203"
+  },
+  {
+   "item": "State and use the displacement current i_d = epsilon0 dPhi_E/dt (including epsilon0 A dE/dt and C dV/dt for a capacitor) and recognise that it is due to a time-varying electric field and is a source of magnetic field like a conduction current",
+   "pages": "203-204, 212, 213 (Exercise 8.1)"
+  },
+  {
+   "item": "State and apply the Ampere-Maxwell law with total current i_c + i_d; say where conduction and displacement currents exist for a charging capacitor; find B outside and between circular plates",
+   "pages": "204, 213-214 (Exercise 8.2)"
+  },
+  {
+   "item": "Explain the symmetry between Faraday's law and the Ampere-Maxwell law (time-dependent E and B give rise to each other), why it is not perfect (no magnetic monopoles), and recognise the four Maxwell's equations in vacuum by name",
+   "pages": "204-205"
+  },
+  {
+   "item": "Explain that only accelerated (for example oscillating) charges radiate electromagnetic waves, that the wave has the frequency of the oscillating charge and takes its energy from the source, and why the demonstration came in the radio region (Hertz), with the contributions of Bose and Marconi",
+   "pages": "205-206, 212, 214 (Exercise 8.6)"
+  },
+  {
+   "item": "Describe the nature of electromagnetic waves: E and B perpendicular to each other and to the direction of propagation (E x B along propagation), no material medium, carry energy; use c = 1/sqrt(mu0 epsilon0) and v = 1/sqrt(mu epsilon) in a medium",
+   "pages": "206-208, 212"
+  },
+  {
+   "item": "Use Ex = E0 sin(kz - omega t), By = B0 sin(kz - omega t), k = 2 pi/lambda, omega = ck, nu lambda = c and B0 = E0/c to find wavelength, frequency, amplitudes and field expressions",
+   "pages": "206-208, 212, 214 (Exercises 8.4, 8.5, 8.7, 8.8, 8.10)"
+  },
+  {
+   "item": "Name the regions of the electromagnetic spectrum in order, and give for each its production, detection and uses as stated in Sections 8.4.1-8.4.7 and Table 8.1; place a wavelength that lies clearly inside a region",
+   "pages": "208-212, 214 (Exercise 8.3)"
+  }
+ ],
+ "scope_out": [
+  {
+   "item": "Energy density of the electric and magnetic fields of an electromagnetic wave, intensity and the Poynting vector",
+   "reason": "Not taught in this rationalised edition; the text only remarks that the waves carry energy (p. 207). Exercise 8.10(c) is a vestigial reference with no supporting text"
+  },
+  {
+   "item": "Momentum of an electromagnetic wave and radiation pressure",
+   "reason": "Removed from this edition; no mention anywhere in the chapter"
+  },
+  {
+   "item": "Photon energy E = h nu and photon energies of the regions of the spectrum in eV",
+   "reason": "Appears only in Exercise 8.9, which quotes a formula taught later in Part II (Dual Nature of Radiation and Matter)"
+  },
+  {
+   "item": "Derivation of the wave equation or of c = 1/sqrt(mu0 epsilon0), B0 = E0/c and the transverse nature from Maxwell's equations; differential forms of Maxwell's equations",
+   "reason": "The chapter states these results 'from Maxwell's equations' without derivation (pp. 206-207); the four equations appear only as a boxed list in integral form (p. 205)"
+  },
+  {
+   "item": "Proof that accelerated charges radiate, and details of Hertz's apparatus",
+   "reason": "The text says the proof is beyond the scope of the book (p. 205) and describes no apparatus"
+  },
+  {
+   "item": "Polarisation of electromagnetic waves, polaroids and Malus' law",
+   "reason": "Fig. 8.3 only uses the words 'linearly polarised' in its caption; polarisation is taught in Wave Optics (Part II)"
+  },
+  {
+   "item": "Refractive index in terms of permittivity and permeability, and refraction",
+   "reason": "The chapter only notes that refractive index will be met in the next chapter (p. 207)"
+  },
+  {
+   "item": "Transmission and reception of radio waves, modulation, antenna size",
+   "reason": "The text defers this to a 'Chapter 15' on communication systems that is not part of this edition (p. 209); antenna size appears only in Points to Ponder"
+  },
+  {
+   "item": "Exact numerical boundaries between regions of the spectrum, the frequency scale of Fig. 8.4 and dates of historical experiments",
+   "reason": "The book says the boundaries are not sharp and overlap, and its text and Table 8.1 give different limits (pp. 208-211); the book also gives both 1885 and 1887 for Hertz's experiment (pp. 202, 206)"
+  },
+  {
+   "item": "Biographical boxes on Maxwell and Hertz, and Points to Ponder",
+   "reason": "Boxed historical notes and Points to Ponder (pp. 202, 206, 213) are not examinable"
+  }
+ ],
+ "concepts": [
+  {
+   "code": "C12P-8.1",
+   "name": "Displacement current",
+   "description": "The inconsistency in Ampere's circuital law for a charging capacitor and the displacement current, epsilon0 times the rate of change of electric flux, that removes it.",
+   "idea": "A time-varying electric field behaves like a current: between the plates of a charging capacitor no charge flows, yet the changing electric flux there counts as a displacement current equal to the charging current.",
+   "rule": "Ampere's circuital law applied to a loop around the wire of a charging capacitor gives B(2 pi r) = mu0 i for a flat surface cut by the wire, but zero for a pot-shaped or tiffin-box-shaped surface with the same rim that passes between the plates, because no conduction current crosses it. The field at a point cannot depend on the surface chosen, so the law is missing a term. Between the plates E = Q/(A epsilon0), so the electric flux is Phi_E = Q/epsilon0 and epsilon0 dPhi_E/dt = dQ/dt = i. The displacement current is i_d = epsilon0 dPhi_E/dt, measured in ampere. It is due to a time-varying electric field, not to moving charges, and it acts as a source of magnetic field in exactly the same way as a conduction current. It is zero wherever the electric field does not change with time. For a capacitor, i_d = epsilon0 A dE/dt = C dV/dt.",
+   "example": "A 100 pF capacitor whose voltage rises at 2.0 x 10^5 V/s carries a displacement current C dV/dt = 2.0 x 10^-5 A between its plates.",
+   "difficulty_base": "Hard",
+   "questions": [
+    {
+     "b": "Remember",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "While applying Ampere's circuital law to a capacitor connected to a time-varying current, an inconsistency was noticed and an additional current was suggested to remove it. Who made this suggestion?",
+     "a": "James Clerk Maxwell",
+     "o": [
+      "James Clerk Maxwell",
+      "Andre-Marie Ampere",
+      "Michael Faraday",
+      "Heinrich Hertz"
+     ]
+    },
+    {
+     "b": "Remember",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "The SI unit of displacement current is the",
+     "a": "ampere",
+     "o": [
+      "ampere",
+      "volt",
+      "coulomb",
+      "tesla"
+     ]
+    },
+    {
+     "b": "Remember",
+     "d": "Easy",
+     "t": "fill_blank",
+     "m": 1,
+     "q": "The current carried by conductors due to the flow of charges is called the ____ current (write one word).",
+     "a": "conduction"
+    },
+    {
+     "b": "Remember",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "q": "Which of the following statements about displacement current is NOT correct?",
+     "a": "It is carried by charges that actually cross the gap between the plates of a capacitor",
+     "o": [
+      "It is carried by charges that actually cross the gap between the plates of a capacitor",
+      "It is due to an electric field that changes with time",
+      "It acts as a source of magnetic field in the same way as a conduction current",
+      "It is zero in a region where the electric field does not change with time"
+     ],
+     "rev": true
+    },
+    {
+     "b": "Understand",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "A capacitor is being charged through a long straight wire. A pot-shaped surface has the circular loop around the wire as its rim and its bottom between the capacitor plates. Why does Ampere's circuital law in its original form give zero for the magnetic field on the loop when this surface is used?",
+     "a": "Because no conduction current passes through the pot-shaped surface",
+     "o": [
+      "Because no conduction current passes through the pot-shaped surface",
+      "Because the electric field between the plates is zero",
+      "Because the circular loop encloses no area",
+      "Because the magnetic field lines around the wire are not closed"
+     ]
+    },
+    {
+     "b": "Understand",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "What passes through a flat surface placed between the plates of a capacitor that is being charged, although no charge crosses it?",
+     "a": "An electric flux that changes with time",
+     "o": [
+      "An electric flux that changes with time",
+      "A conduction current equal to the charging current",
+      "A stream of electrons jumping across the gap",
+      "Nothing at all"
+     ]
+    },
+    {
+     "b": "Understand",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "A parallel plate capacitor has been fully charged and the charge on its plates is now constant. The displacement current between its plates is",
+     "a": "zero, because the electric field between the plates is not changing",
+     "o": [
+      "zero, because the electric field between the plates is not changing",
+      "largest, because the electric field between the plates is now largest",
+      "equal to the charge on the plates divided by epsilon0",
+      "equal to the current that flowed while it was charging"
+     ]
+    },
+    {
+     "b": "Understand",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "q": "For a charging capacitor, the original Ampere's circuital law gives a non-zero magnetic field at a point P on a loop for one surface bounded by the loop and zero for another. Why did this show that the law was missing a term?",
+     "a": "Because the magnetic field at P must have a single value, whichever surface with that loop as its rim is used",
+     "o": [
+      "Because the magnetic field at P must have a single value, whichever surface with that loop as its rim is used",
+      "Because the magnetic field at P must be zero for every surface",
+      "Because a loop can be the rim of only one surface",
+      "Because the charging current is different for different surfaces"
+     ]
+    },
+    {
+     "b": "Understand",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "q": "Kirchhoff's junction rule (current entering a point equals current leaving it) is applied at one plate of a capacitor that is being charged. The rule",
+     "a": "holds, provided the displacement current across the gap is counted as the current leaving the plate",
+     "o": [
+      "holds, provided the displacement current across the gap is counted as the current leaving the plate",
+      "holds, because a conduction current flows across the gap",
+      "fails, because current enters the plate but none leaves it",
+      "holds only after the capacitor is fully charged"
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "The electric flux through a surface between the plates of a capacitor is changing at the rate of 4.0 x 10^8 V m/s. Take epsilon0 = 8.85 x 10^-12 C^2/N m^2. The displacement current through the surface is",
+     "a": "3.54 x 10^-3 A",
+     "o": [
+      "3.54 x 10^-3 A",
+      "4.52 x 10^19 A",
+      "2.21 x 10^-20 A",
+      "4.0 x 10^8 A"
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Easy",
+     "t": "fill_blank",
+     "m": 1,
+     "q": "The potential difference across a capacitor of capacitance 2 microfarad is rising at a steady rate of 1500 V/s. Find the displacement current between its plates in mA, as a whole number.",
+     "a": "3"
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "q": "The electric field between the plates of a parallel plate capacitor is uniform over the plate area of 0.02 m^2 and is increasing at the rate of 5.0 x 10^12 V/m s. Take epsilon0 = 8.85 x 10^-12 C^2/N m^2. The displacement current between the plates is",
+     "a": "0.885 A",
+     "o": [
+      "0.885 A",
+      "44.25 A",
+      "2212.5 A",
+      "1.13 x 10^22 A"
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "q": "At a certain instant the plates of a parallel plate capacitor carry a charge of magnitude 8.85 x 10^-9 C. Take epsilon0 = 8.85 x 10^-12 C^2/N m^2. Find the electric flux through a flat surface lying between the plates and covering the whole plate area.",
+     "a": "Between the plates E = Q/(A epsilon0), uniform over the plate area A, so Phi_E = E A = Q/epsilon0. Phi_E = (8.85 x 10^-9 C)/(8.85 x 10^-12 C^2/N m^2) = 1.0 x 10^3 N m^2/C (that is, 1000 V m).",
+     "s": [
+      [
+       "Phi_E = E A = Q/epsilon0",
+       1
+      ],
+      [
+       "Phi_E = 1.0 x 10^3 N m^2/C (1000 V m)",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "q": "A displacement current of 1.0 A is to be set up between the plates of a capacitor of capacitance 1 microfarad. At what rate must the potential difference across the capacitor change?",
+     "a": "1.0 x 10^6 V/s",
+     "o": [
+      "1.0 x 10^6 V/s",
+      "1.0 x 10^-6 V/s",
+      "1.0 x 10^3 V/s",
+      "1.0 V/s"
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hardest",
+     "t": "long_answer",
+     "m": 3,
+     "q": "A parallel plate capacitor has plates of area 0.01 m^2 separated by 1.0 mm of air. The potential difference between the plates is increased at a steady rate of 2.0 x 10^6 V/s. Take epsilon0 = 8.85 x 10^-12 C^2/N m^2. Find (a) the rate of change of the electric field between the plates and (b) the displacement current between the plates.",
+     "a": "(a) E = V/d, so dE/dt = (dV/dt)/d = (2.0 x 10^6 V/s)/(1.0 x 10^-3 m) = 2.0 x 10^9 V/m s. (b) Phi_E = E A, so i_d = epsilon0 dPhi_E/dt = epsilon0 A dE/dt = 8.85 x 10^-12 x 0.01 x 2.0 x 10^9 = 1.77 x 10^-4 A.",
+     "s": [
+      [
+       "dE/dt = (dV/dt)/d = 2.0 x 10^9 V/m s, with d converted to 1.0 x 10^-3 m",
+       1
+      ],
+      [
+       "i_d = epsilon0 dPhi_E/dt = epsilon0 A dE/dt",
+       1
+      ],
+      [
+       "i_d = 1.77 x 10^-4 A",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "assertion_reason",
+     "m": 1,
+     "q": "Assertion (A): While a capacitor is being charged, a magnetic field exists in the gap between its plates although no conduction current flows across the gap. Reason (R): An electric field that changes with time acts as a source of magnetic field. Choose the correct option.",
+     "a": "Both A and R are true, and R is the correct explanation of A",
+     "o": [
+      "Both A and R are true, and R is the correct explanation of A",
+      "Both A and R are true, but R is not the correct explanation of A",
+      "A is true, R is false",
+      "A is false, R is true"
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "q": "A parallel plate capacitor is being charged by a current i = dQ/dt. Starting from the electric flux between the plates, show that the displacement current between the plates is equal to i.",
+     "a": "The flux between the plates is Phi_E = E A = [Q/(A epsilon0)] A = Q/epsilon0. Differentiating, dPhi_E/dt = (1/epsilon0) dQ/dt. Hence i_d = epsilon0 dPhi_E/dt = dQ/dt = i.",
+     "s": [
+      [
+       "Phi_E = Q/epsilon0 between the plates",
+       1
+      ],
+      [
+       "i_d = epsilon0 dPhi_E/dt = dQ/dt = i",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hardest",
+     "t": "long_answer",
+     "m": 3,
+     "q": "A capacitor of capacitance 100 pF is connected to a source whose voltage rises at a steady rate from 0 to 300 V in 1.0 ms and then stays constant at 300 V. Analyse the displacement current between the plates during the rise and after it.",
+     "a": "During the rise dV/dt = 300 V/(1.0 x 10^-3 s) = 3.0 x 10^5 V/s. Since Q = CV, i_d = dQ/dt = C dV/dt = 100 x 10^-12 F x 3.0 x 10^5 V/s = 3.0 x 10^-5 A (30 microampere), constant throughout the rise. After the voltage becomes constant the electric field between the plates no longer changes, so the electric flux is constant and the displacement current is zero.",
+     "s": [
+      [
+       "dV/dt = 3.0 x 10^5 V/s during the rise",
+       1
+      ],
+      [
+       "i_d = C dV/dt = 3.0 x 10^-5 A during the rise",
+       1
+      ],
+      [
+       "After the rise the field is steady, so i_d = 0",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Evaluate",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "q": "A student argues: 'Nothing flows between the plates of a capacitor, so it is wrong to call the term Maxwell added a current.' Evaluate this argument.",
+     "a": "The student is right that no charge flows between the plates, but the name is justified. The term, epsilon0 times the rate of change of electric flux, has the dimensions of a current, equals the charging current i in the wire, and produces a magnetic field in exactly the same way as a conduction current. It is called a displacement current to distinguish it from a conduction current due to flow of charges.",
+     "s": [
+      [
+       "Concedes that no charge flows - it is not a conduction current",
+       1
+      ],
+      [
+       "Justifies the name: it equals i and is a source of magnetic field exactly as a conduction current is",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Create",
+     "d": "Hardest",
+     "t": "long_answer",
+     "m": 3,
+     "q": "Design an experimental check, using a parallel plate capacitor that is being charged, which would show that the displacement current is real. State what you would measure, where, and what result would support Maxwell's idea.",
+     "a": "Charge a parallel plate capacitor with a time-varying current. Measure the magnetic field at a point M between the plates and at a point P just outside the plates, both at the same distance from the axis of the wire. No conduction current flows between the plates, so the original Ampere's law would predict no magnetic field at M. If the field measured at M is found to be the same as that at P, the changing electric field between the plates must be acting as a current, which confirms the displacement current.",
+     "s": [
+      [
+       "Set-up: capacitor being charged, magnetic field measured at a point between the plates",
+       1
+      ],
+      [
+       "Comparison point just outside the plates at the same distance from the axis",
+       1
+      ],
+      [
+       "Expected result: the two fields are the same, though no conduction current crosses the gap",
+       1
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "code": "C12P-8.2",
+   "name": "The Ampere-Maxwell law and Maxwell's equations",
+   "description": "Total current as the sum of conduction and displacement currents, the generalised Ampere's circuital law, its symmetry with Faraday's law and the four Maxwell's equations in vacuum.",
+   "idea": "The source of a magnetic field is the total current, conduction plus displacement, so a changing electric field produces a magnetic field just as a changing magnetic field produces an electric field.",
+   "rule": "Total current i = i_c + i_d = i_c + epsilon0 dPhi_E/dt. Outside the plates of a charging capacitor i_c = i and i_d = 0; between the plates i_c = 0 and i_d = i. The Ampere-Maxwell law: closed line integral of B.dl = mu0 i_c + mu0 epsilon0 dPhi_E/dt, where the total current is that through any surface having the loop as its perimeter, so every such surface gives the same result. The field at a point just inside the plates is the same as that just outside. For circular plates of radius R with uniform field, a loop of radius r < R between the plates encloses displacement current i r^2/R^2, so B = mu0 i r/(2 pi R^2); outside, B = mu0 i/(2 pi r). Both currents may be present in the same region since no medium is a perfect conductor or perfect insulator; in regions with only time-varying electric fields there is only displacement current, and still a magnetic field. Faraday's law says a changing magnetic field gives an electric field; the symmetrical counterpart is that a changing electric field gives a magnetic field. The symmetry is not perfect: there are no known magnetic monopoles. Maxwell's equations in vacuum: Gauss's law for electricity, Gauss's law for magnetism, Faraday's law and the Ampere-Maxwell law.",
+   "example": "Circular capacitor plates of radius 6 cm are charged by a current of 1.2 A. A loop of radius 3 cm between the plates encloses a displacement current 1.2 x (3/6)^2 = 0.3 A, so B = (2 x 10^-7 x 0.3)/0.03 = 2 x 10^-6 T there (using mu0/(2 pi) = 2 x 10^-7 T m/A).",
+   "difficulty_base": "Hard",
+   "questions": [
+    {
+     "b": "Remember",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "In the generalised Ampere's circuital law, the total current passing through a surface is the sum of the",
+     "a": "conduction current and the displacement current",
+     "o": [
+      "conduction current and the displacement current",
+      "conduction current and the eddy current",
+      "displacement current and the induced current",
+      "induced current and the eddy current"
+     ]
+    },
+    {
+     "b": "Remember",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "The generalised form of Ampere's circuital law that takes a time-varying electric flux into account is known as the",
+     "a": "Ampere-Maxwell law",
+     "o": [
+      "Ampere-Maxwell law",
+      "Biot-Savart law",
+      "Faraday-Lenz law",
+      "Lorentz force law"
+     ]
+    },
+    {
+     "b": "Remember",
+     "d": "Easy",
+     "t": "fill_blank",
+     "m": 1,
+     "q": "Among Maxwell's equations in vacuum, the equation stating that the integral of B.dA over a closed surface is zero is called ____'s law for magnetism (write one name).",
+     "a": "Gauss"
+    },
+    {
+     "b": "Remember",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "q": "Which of the following statements about conduction current and displacement current is NOT correct?",
+     "a": "The two can never be present together in the same region of space",
+     "o": [
+      "The two can never be present together in the same region of space",
+      "In a region with only a time-varying electric field there may be only a displacement current",
+      "In a wire carrying a steady current the displacement current may be zero",
+      "The displacement current has the same physical effects as the conduction current"
+     ],
+     "rev": true
+    },
+    {
+     "b": "Understand",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "A capacitor is being charged. In the connecting wire outside the capacitor plates, which current or currents are present?",
+     "a": "Only the conduction current",
+     "o": [
+      "Only the conduction current",
+      "Only the displacement current",
+      "Both, each equal to half the charging current",
+      "Neither"
+     ]
+    },
+    {
+     "b": "Understand",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "Compared with the original Ampere's circuital law, the right-hand side of the Ampere-Maxwell law has an extra term that depends on the",
+     "a": "rate of change of electric flux through the surface",
+     "o": [
+      "rate of change of electric flux through the surface",
+      "rate of change of magnetic flux through the surface",
+      "total charge enclosed by the surface",
+      "resistance of the conductor crossing the surface"
+     ]
+    },
+    {
+     "b": "Understand",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "Faraday's law of induction can be rephrased as: a magnetic field changing with time gives rise to an electric field. What is the symmetrical counterpart that follows from the displacement current?",
+     "a": "An electric field changing with time gives rise to a magnetic field",
+     "o": [
+      "An electric field changing with time gives rise to a magnetic field",
+      "A steady electric field gives rise to a steady magnetic field",
+      "A magnetic field changing with time gives rise to a conduction current",
+      "An electric field changing with time gives rise to an electric charge"
+     ]
+    },
+    {
+     "b": "Understand",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "q": "Even after the displacement current is included, the laws of electricity and magnetism are not perfectly symmetrical. Why?",
+     "a": "There are no known sources of magnetic field (magnetic monopoles) analogous to electric charges",
+     "o": [
+      "There are no known sources of magnetic field (magnetic monopoles) analogous to electric charges",
+      "A changing magnetic field does not produce an electric field",
+      "The displacement current does not produce a magnetic field",
+      "Electric charges are not sources of electric field"
+     ]
+    },
+    {
+     "b": "Understand",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "q": "A circular loop surrounds the wire leading to a capacitor being charged by a current i. Surface 1 is the flat disc cut by the wire; surface 2 is a pot-shaped surface passing between the plates. With the generalised law, the total currents through surfaces 1 and 2 are",
+     "a": "i and i",
+     "o": [
+      "i and i",
+      "i and zero",
+      "zero and i",
+      "i and 2i"
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "A parallel plate capacitor is being charged by a steady current of 0.25 A. The displacement current across the gap between its plates is",
+     "a": "0.25 A",
+     "o": [
+      "0.25 A",
+      "zero",
+      "0.125 A",
+      "0.50 A"
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Easy",
+     "t": "fill_blank",
+     "m": 1,
+     "q": "Through a certain surface the conduction current is 1.5 A and the displacement current is 0.5 A in the same sense. Find the total current through the surface in ampere, as a whole number.",
+     "a": "2"
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "q": "Through a surface bounded by a closed loop, the conduction current is 3 A and the displacement current is 2 A in the same sense. Take mu0 = 4 pi x 10^-7 T m/A. The closed line integral of B.dl around the loop is",
+     "a": "6.28 x 10^-6 T m",
+     "o": [
+      "6.28 x 10^-6 T m",
+      "3.77 x 10^-6 T m",
+      "1.26 x 10^-6 T m",
+      "5 T m"
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "q": "A long straight wire carries a charging current of 3 A to a capacitor. Take mu0 = 4 pi x 10^-7 T m/A. The magnitude of the magnetic field at a point outside the capacitor, 6 cm from the axis of the wire, is",
+     "a": "1.0 x 10^-5 T",
+     "o": [
+      "1.0 x 10^-5 T",
+      "1.0 x 10^-7 T",
+      "3.6 x 10^-8 T",
+      "6.3 x 10^-5 T"
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "q": "A capacitor with circular plates of radius R is being charged by a current of 0.8 A, and the electric field between the plates is uniform over the plate area. How much displacement current passes through a circular loop of radius R/2 placed between the plates, coaxial with them and parallel to them?",
+     "a": "The displacement current is spread uniformly over the plate area, so the loop encloses the fraction (area of loop)/(area of plate) = (R/2)^2/R^2 = 1/4 of it. Enclosed displacement current = 0.8 A x 1/4 = 0.2 A.",
+     "s": [
+      [
+       "Fraction enclosed = (R/2)^2/R^2 = 1/4",
+       1
+      ],
+      [
+       "Enclosed displacement current = 0.2 A",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hardest",
+     "t": "long_answer",
+     "m": 3,
+     "q": "A parallel plate capacitor with circular plates of radius 10 cm is being charged by a current of 2 A. The electric field between the plates is uniform over the plate area. Take mu0 = 4 pi x 10^-7 T m/A. Use the Ampere-Maxwell law to find the magnitude of the magnetic field between the plates at a point 5 cm from the axis.",
+     "a": "Between the plates there is no conduction current, only displacement current of total 2 A spread uniformly over the plate area. A loop of radius r = 0.05 m encloses i_d = 2 A x (0.05/0.10)^2 = 0.5 A. By symmetry B is the same all round the loop, so B(2 pi r) = mu0 x 0.5 A. B = (4 pi x 10^-7 x 0.5)/(2 pi x 0.05) = 2 x 10^-6 T.",
+     "s": [
+      [
+       "Enclosed displacement current = 2 x (5/10)^2 = 0.5 A",
+       1
+      ],
+      [
+       "B(2 pi r) = mu0 x (enclosed total current)",
+       1
+      ],
+      [
+       "B = 2 x 10^-6 T",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "multi_statement",
+     "m": 1,
+     "q": "Consider a parallel plate capacitor being charged. (I) The magnetic field at a point just inside the edge of the plates is the same as that at a point just outside, at the same distance from the axis. (II) The Ampere-Maxwell law gives the same value for the line integral of B around a loop whichever surface bounded by that loop is used. Which is or are correct?",
+     "a": "Both I and II",
+     "o": [
+      "Both I and II",
+      "Only I",
+      "Only II",
+      "Neither I nor II"
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "q": "In a large region of space there is no conducting material and no flow of charge, yet a magnetic field is detected there. Explain how this is possible.",
+     "a": "If the electric field in the region varies with time, the electric flux changes and there is a displacement current epsilon0 dPhi_E/dt even though the conduction current is zero. By the Ampere-Maxwell law the displacement current is a source of magnetic field just as a conduction current is, so a magnetic field exists.",
+     "s": [
+      [
+       "A time-varying electric field gives a displacement current although the conduction current is zero",
+       1
+      ],
+      [
+       "By the Ampere-Maxwell law the displacement current is a source of magnetic field",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hardest",
+     "t": "long_answer",
+     "m": 3,
+     "q": "A capacitor with circular plates of radius R = 4 cm is being charged by a current of 0.6 A, the electric field being uniform between the plates and zero outside the plate area. Take mu0 = 4 pi x 10^-7 T m/A. Compare the magnetic field, in the plane midway between the plates, at distances 2 cm, 4 cm and 8 cm from the axis.",
+     "a": "At r = 4 cm (= R) the loop encloses all the displacement current: B = mu0 i/(2 pi R) = (2 x 10^-7 x 0.6)/0.04 = 3.0 x 10^-6 T. At r = 2 cm the loop encloses 0.6 x (2/4)^2 = 0.15 A: B = (2 x 10^-7 x 0.15)/0.02 = 1.5 x 10^-6 T. At r = 8 cm the loop still encloses only 0.6 A: B = (2 x 10^-7 x 0.6)/0.08 = 1.5 x 10^-6 T. The field rises in proportion to r up to the edge of the plates, is largest there, and falls as 1/r beyond; the values at 2 cm and 8 cm are equal, each half the value at the edge.",
+     "s": [
+      [
+       "B at 4 cm = 3.0 x 10^-6 T (all 0.6 A enclosed)",
+       1
+      ],
+      [
+       "B at 2 cm = 1.5 x 10^-6 T (0.15 A enclosed)",
+       1
+      ],
+      [
+       "B at 8 cm = 1.5 x 10^-6 T; largest at the edge, equal at 2 cm and 8 cm",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Evaluate",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "q": "A student says: 'Maxwell showed that Ampere's circuital law was wrong, so every result obtained from it for steady currents must be discarded.' Evaluate this statement.",
+     "a": "The statement is not justified. For steady currents the electric field does not change with time, so the displacement current is zero and the Ampere-Maxwell law reduces exactly to the original Ampere's circuital law. The original law was incomplete only for time-varying electric fields; its results for steady currents remain valid.",
+     "s": [
+      [
+       "For steady currents the displacement current is zero, so the generalised law reduces to the original one",
+       1
+      ],
+      [
+       "Judgement: the law was incomplete, not wrong for steady currents; those results stand",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Create",
+     "d": "Hardest",
+     "t": "long_answer",
+     "m": 3,
+     "q": "Write a short explanatory note that links Faraday's law and the Ampere-Maxwell law to show how time-dependent electric and magnetic fields give rise to each other, and state the important consequence of this symmetry.",
+     "a": "Faraday's law: an emf is induced equal to the rate of change of magnetic flux; since an emf implies an electric field, a magnetic field changing with time gives rise to an electric field. Ampere-Maxwell law: because the displacement current is a source of magnetic field, an electric field changing with time gives rise to a magnetic field. So time-dependent electric and magnetic fields give rise to each other. The important consequence is the existence of electromagnetic waves, coupled time-varying electric and magnetic fields that propagate in space.",
+     "s": [
+      [
+       "Faraday's law: a changing magnetic field gives rise to an electric field",
+       1
+      ],
+      [
+       "Ampere-Maxwell law: a changing electric field (displacement current) gives rise to a magnetic field",
+       1
+      ],
+      [
+       "Consequence: the fields sustain each other, so electromagnetic waves exist",
+       1
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "code": "C12P-8.3",
+   "name": "Sources of electromagnetic waves",
+   "description": "Accelerated charges as the source of electromagnetic waves, the frequency and energy of the radiated wave, and the experiments of Hertz, Bose and Marconi.",
+   "idea": "Only accelerated charges radiate: an oscillating charge sets up oscillating electric and magnetic fields that regenerate each other and travel away as a wave of the same frequency.",
+   "rule": "Stationary charges produce only electrostatic fields and charges in uniform motion (steady currents) produce magnetic fields that do not vary with time, so neither is a source of electromagnetic waves. Accelerated charges radiate electromagnetic waves; an oscillating charge is an accelerating charge. The oscillating electric field produces an oscillating magnetic field, which in turn produces an oscillating electric field, and so on. The frequency of the wave equals the frequency of oscillation of the charge, and the energy of the wave comes at the expense of the energy of the source. An electric dipole is a basic source of electromagnetic waves. Light cannot be produced by an ac circuit: yellow light has a frequency of about 6 x 10^14 Hz, while even modern electronic circuits reach hardly about 10^11 Hz, so the demonstration came in the radio wave region, in Hertz's experiment (waves of the order of a few metres). Jagdish Chandra Bose produced and observed much shorter waves (25 mm to 5 mm) in the laboratory; Marconi transmitted waves over many kilometres, the beginning of communication using electromagnetic waves.",
+   "example": "A charge oscillating at 10^9 Hz radiates an electromagnetic wave of the same frequency, 10^9 Hz.",
+   "difficulty_base": "Easy",
+   "questions": [
+    {
+     "b": "Remember",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "According to Maxwell's theory, electromagnetic waves are radiated by",
+     "a": "accelerated charges",
+     "o": [
+      "accelerated charges",
+      "stationary charges",
+      "charges moving with uniform velocity",
+      "neutral particles at rest"
+     ]
+    },
+    {
+     "b": "Remember",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "Who was the first to demonstrate experimentally the existence of electromagnetic waves?",
+     "a": "Heinrich Hertz",
+     "o": [
+      "Heinrich Hertz",
+      "James Clerk Maxwell",
+      "Guglielmo Marconi",
+      "Jagdish Chandra Bose"
+     ]
+    },
+    {
+     "b": "Remember",
+     "d": "Easy",
+     "t": "fill_blank",
+     "m": 1,
+     "q": "According to the chapter on electromagnetic waves, an electric ____ is a basic source of electromagnetic waves (write one word).",
+     "a": "dipole"
+    },
+    {
+     "b": "Remember",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "q": "Which of the following CANNOT be a source of electromagnetic waves?",
+     "a": "A steady current flowing in a straight wire",
+     "o": [
+      "A steady current flowing in a straight wire",
+      "A charge oscillating about its mean position",
+      "Electrons that are rapidly accelerated and decelerated in an aerial",
+      "A charge whose speed is increasing"
+     ],
+     "rev": true
+    },
+    {
+     "b": "Understand",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "An oscillating charge is able to radiate electromagnetic waves because an oscillating charge is",
+     "a": "an accelerating charge",
+     "o": [
+      "an accelerating charge",
+      "a charge moving with uniform velocity",
+      "a charge that is at rest on average",
+      "an electrically neutral object"
+     ]
+    },
+    {
+     "b": "Understand",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "How is the frequency of the electromagnetic wave radiated by an oscillating charge related to the frequency of oscillation of the charge?",
+     "a": "The two frequencies are equal",
+     "o": [
+      "The two frequencies are equal",
+      "The wave has twice the frequency of the charge",
+      "The wave has half the frequency of the charge",
+      "The two frequencies are unrelated"
+     ]
+    },
+    {
+     "b": "Understand",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "From where does the energy carried by a propagating electromagnetic wave come?",
+     "a": "From the energy of the source, the accelerated charge",
+     "o": [
+      "From the energy of the source, the accelerated charge",
+      "From the medium through which the wave travels",
+      "From the magnetic field of the earth",
+      "From nowhere; the wave carries no energy"
+     ]
+    },
+    {
+     "b": "Understand",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "q": "According to the Summary of the chapter on electromagnetic waves, the waves first produced and detected in the laboratory by Hertz had wavelengths of the order of",
+     "a": "a few metres",
+     "o": [
+      "a few metres",
+      "a few nanometres",
+      "a few micrometres",
+      "a few thousand kilometres"
+     ]
+    },
+    {
+     "b": "Understand",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "q": "How are the fields of an electromagnetic wave kept going as the wave moves away from an oscillating charge?",
+     "a": "The oscillating electric field produces an oscillating magnetic field, which in turn produces an oscillating electric field, and so on",
+     "o": [
+      "The oscillating electric field produces an oscillating magnetic field, which in turn produces an oscillating electric field, and so on",
+      "The charge travels along with the wave and carries the fields with it",
+      "The electric field stays constant while only the magnetic field oscillates",
+      "The surrounding air molecules pass the oscillation from one to the next"
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "A charged particle oscillates about its mean position with a frequency of 2.5 x 10^6 Hz. The frequency of the electromagnetic waves it produces is",
+     "a": "2.5 x 10^6 Hz",
+     "o": [
+      "2.5 x 10^6 Hz",
+      "5.0 x 10^6 Hz",
+      "1.25 x 10^6 Hz",
+      "zero"
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Easy",
+     "t": "fill_blank",
+     "m": 1,
+     "q": "A charge oscillates about its mean position 1.5 x 10^8 times per second. Take c = 3 x 10^8 m/s. Find the wavelength, in m, of the wave it radiates, as a whole number.",
+     "a": "2"
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "q": "Consider an electron (i) at rest, (ii) moving in a straight line with constant velocity, (iii) oscillating to and fro about a fixed point. Which of these radiate electromagnetic waves?",
+     "a": "Only (iii)",
+     "o": [
+      "Only (iii)",
+      "Only (ii) and (iii)",
+      "Only (i)",
+      "All three"
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "q": "Yellow light has a frequency of about 6 x 10^14 Hz. A circuit oscillating at 2 x 10^8 Hz would have to have its frequency raised by what factor to reach that of yellow light?",
+     "a": "3 x 10^6",
+     "o": [
+      "3 x 10^6",
+      "3 x 10^5",
+      "1.2 x 10^23",
+      "300"
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "q": "Hertz's experiment on electromagnetic waves was confined to the laboratory. State one way in which the work of Jagdish Chandra Bose and one way in which the work of Marconi went beyond it.",
+     "a": "Bose, working at Calcutta, produced and observed electromagnetic waves of much shorter wavelength (25 mm to 5 mm), though still inside the laboratory. Marconi succeeded in transmitting electromagnetic waves over distances of many kilometres, which marks the beginning of communication using electromagnetic waves.",
+     "s": [
+      [
+       "Bose: much shorter wavelengths (25 mm to 5 mm)",
+       1
+      ],
+      [
+       "Marconi: transmission over many kilometres - beginning of communication",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hardest",
+     "t": "long_answer",
+     "m": 3,
+     "q": "A charge is made to oscillate about a fixed point at 2 x 10^9 Hz. Explain step by step how this produces an electromagnetic wave, state the frequency of the wave, and state where the energy of the wave comes from.",
+     "a": "An oscillating charge is an accelerating charge, so it radiates. It produces an oscillating electric field in space; this produces an oscillating magnetic field, which in turn is a source of an oscillating electric field, and so on, so the two fields regenerate each other as the wave propagates. The frequency of the wave equals the frequency of oscillation of the charge, 2 x 10^9 Hz. The energy carried by the wave comes at the expense of the energy of the source, the accelerated charge.",
+     "s": [
+      [
+       "Oscillating (accelerated) charge gives oscillating E, which gives oscillating B, which gives E again - the fields regenerate each other",
+       1
+      ],
+      [
+       "Frequency of the wave = 2 x 10^9 Hz",
+       1
+      ],
+      [
+       "Energy comes from the source, the accelerated charge",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "assertion_reason",
+     "m": 1,
+     "q": "Assertion (A): The first experimental demonstration of electromagnetic waves was made in the radio wave region and not with visible light. Reason (R): Electromagnetic waves cannot have frequencies as high as that of visible light. Choose the correct option.",
+     "a": "A is true, R is false",
+     "o": [
+      "A is true, R is false",
+      "Both A and R are true, and R is the correct explanation of A",
+      "Both A and R are true, but R is not the correct explanation of A",
+      "A is false, R is true"
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "q": "Distinguish between the fields produced by a stationary charge, by a charge in uniform motion (a steady current) and by an accelerated charge, and hence say which of them is a source of electromagnetic waves.",
+     "a": "A stationary charge produces only an electrostatic field, and a charge in uniform motion (steady current) produces a magnetic field that does not vary with time; neither gives time-varying fields, so neither radiates. An accelerated charge produces time-varying electric and magnetic fields and so radiates electromagnetic waves.",
+     "s": [
+      [
+       "Stationary charge: electrostatic field only; steady current: magnetic field that does not vary with time",
+       1
+      ],
+      [
+       "Only the accelerated charge gives time-varying fields and radiates",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hardest",
+     "t": "long_answer",
+     "m": 3,
+     "q": "It might seem that the prediction that light is an electromagnetic wave could be tested simply by setting up an ac circuit that oscillates at the frequency of yellow light, about 6 x 10^14 Hz. Explain why this cannot be done and how Maxwell's prediction of electromagnetic waves was actually tested.",
+     "a": "An ac circuit radiates waves at the frequency at which its current oscillates. Even modern electronic circuits give frequencies of hardly about 10^11 Hz, thousands of times lower than the 6 x 10^14 Hz of yellow light, so a circuit cannot be made to oscillate at optical frequencies. The test therefore had to come in the low-frequency radio wave region: Hertz produced and detected electromagnetic waves in the laboratory, verifying the basic prediction of Maxwell's equations.",
+     "s": [
+      [
+       "A circuit radiates at its own oscillation frequency",
+       1
+      ],
+      [
+       "Circuits reach only about 10^11 Hz, far below 6 x 10^14 Hz",
+       1
+      ],
+      [
+       "Test made in the radio wave region - Hertz's experiment",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Evaluate",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "q": "A student claims: 'Once an aerial has started radiating, the electric and magnetic fields regenerate each other, so the aerial needs no further supply of energy.' Evaluate this claim.",
+     "a": "The claim is wrong. It is true that the oscillating fields regenerate each other as the wave travels, but the energy carried away by the wave comes at the expense of the energy of the source, the accelerated charges. To keep radiating, the charges in the aerial must be kept oscillating, so energy must be supplied to them continuously.",
+     "s": [
+      [
+       "The energy of the wave comes at the expense of the source",
+       1
+      ],
+      [
+       "Judgement: claim wrong - energy must be supplied continuously to keep the charges oscillating",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Create",
+     "d": "Hardest",
+     "t": "long_answer",
+     "m": 3,
+     "q": "Design, in outline, an arrangement to produce electromagnetic waves of frequency 100 MHz. State what must be made to move, how it must move, and why a battery driving a steady current through the same wire would not do.",
+     "a": "Connect a conducting wire (an aerial) to an ac circuit that oscillates at 100 MHz, so that the charges in the wire are accelerated to and fro 10^8 times a second. Accelerated (oscillating) charges radiate, and the frequency of the wave equals the frequency of oscillation of the charges, so the wave has frequency 100 MHz. A battery gives a steady current: charges in uniform motion produce a magnetic field that does not vary with time, so no electromagnetic wave is radiated.",
+     "s": [
+      [
+       "Charges in a conducting wire must oscillate (be accelerated), driven by an ac circuit",
+       1
+      ],
+      [
+       "Oscillation frequency must be 100 MHz because wave frequency = charge frequency",
+       1
+      ],
+      [
+       "Steady current gives a magnetic field that does not vary with time - no radiation",
+       1
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "code": "C12P-8.4",
+   "name": "Nature and speed of electromagnetic waves",
+   "description": "The transverse nature of electromagnetic waves, the directions of E, B and propagation, and the speed of the waves in vacuum and in a material medium.",
+   "idea": "In an electromagnetic wave the electric and magnetic fields oscillate at right angles to each other and to the direction of travel, need no material medium, and move in vacuum at c = 1/sqrt(mu0 epsilon0).",
+   "rule": "E and B are perpendicular to each other and to the direction of propagation; the direction of E x B is the direction of propagation. For a plane wave along z with E along x, B is along y, and both vary as sin(kz - omega t), so they reach their maxima and zeros together. Electromagnetic waves are self-sustaining oscillations of electric and magnetic fields in free space; no material medium is involved. Speed in vacuum c = 1/sqrt(mu0 epsilon0), about 3 x 10^8 m/s, equal to the speed of light from optical measurements and the same for all wavelengths; its constancy is used to define a standard of length. In a material medium of permittivity epsilon and permeability mu, v = 1/sqrt(mu epsilon), so the speed depends on the electric and magnetic properties of the medium. Electromagnetic waves carry energy from one place to another.",
+   "example": "In a medium with permittivity 25 epsilon0 and permeability mu0 the speed of an electromagnetic wave is c/sqrt(25) = (3 x 10^8)/5 = 0.6 x 10^8 m/s.",
+   "difficulty_base": "Easy",
+   "questions": [
+    {
+     "b": "Remember",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "In an electromagnetic wave, the electric field and the magnetic field are",
+     "a": "perpendicular to each other and to the direction of propagation",
+     "o": [
+      "perpendicular to each other and to the direction of propagation",
+      "parallel to each other and perpendicular to the direction of propagation",
+      "parallel to each other and along the direction of propagation",
+      "perpendicular to each other, with the electric field along the direction of propagation"
+     ]
+    },
+    {
+     "b": "Remember",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "The speed c of electromagnetic waves in vacuum is related to the permeability mu0 and permittivity epsilon0 of free space by",
+     "a": "c = 1/sqrt(mu0 epsilon0)",
+     "o": [
+      "c = 1/sqrt(mu0 epsilon0)",
+      "c = sqrt(mu0 epsilon0)",
+      "c = 1/(mu0 epsilon0)",
+      "c = sqrt(mu0/epsilon0)"
+     ]
+    },
+    {
+     "b": "Remember",
+     "d": "Easy",
+     "t": "fill_blank",
+     "m": 1,
+     "q": "The constancy of the velocity of electromagnetic waves in vacuum is so well established that it is used to define the standard of the SI unit of ____ (write one word).",
+     "a": "length"
+    },
+    {
+     "b": "Remember",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "q": "Which of the following statements about electromagnetic waves is NOT correct?",
+     "a": "A material medium is needed for the vibrations of their electric and magnetic fields",
+     "o": [
+      "A material medium is needed for the vibrations of their electric and magnetic fields",
+      "They are self-sustaining oscillations of electric and magnetic fields",
+      "Their existence was predicted from Maxwell's equations",
+      "Their speed in vacuum equals the speed of light obtained from optical measurements"
+     ],
+     "rev": true
+    },
+    {
+     "b": "Understand",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "A plane electromagnetic wave travels along the x-axis and its electric field oscillates along the z-axis. Its magnetic field oscillates along the",
+     "a": "y-axis",
+     "o": [
+      "y-axis",
+      "x-axis",
+      "z-axis",
+      "line midway between the x-axis and the z-axis"
+     ]
+    },
+    {
+     "b": "Understand",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "On what does the speed of light in a material medium such as glass depend?",
+     "a": "On the electric and magnetic properties (permittivity and permeability) of the medium",
+     "o": [
+      "On the electric and magnetic properties (permittivity and permeability) of the medium",
+      "Only on the brightness of the source",
+      "Only on the amplitude of the electric field",
+      "On nothing; it is the same as in vacuum"
+     ]
+    },
+    {
+     "b": "Understand",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "According to the chapter on electromagnetic waves, the great technological importance of these waves stems from their capability to",
+     "a": "carry energy from one place to another",
+     "o": [
+      "carry energy from one place to another",
+      "travel only through conductors",
+      "remain confined near their source",
+      "travel without any electric field"
+     ]
+    },
+    {
+     "b": "Understand",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "q": "Between the plates of a charging capacitor the electric field is perpendicular to the plates. How does this situation make it reasonable that E and B are perpendicular in an electromagnetic wave?",
+     "a": "The magnetic field produced by the displacement current lies along circles parallel to the plates, at right angles to the electric field",
+     "o": [
+      "The magnetic field produced by the displacement current lies along circles parallel to the plates, at right angles to the electric field",
+      "The magnetic field produced by the displacement current is also perpendicular to the plates",
+      "The displacement current produces no magnetic field between the plates",
+      "The electric field between the plates is zero wherever the magnetic field is non-zero"
+     ]
+    },
+    {
+     "b": "Understand",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "q": "For a plane electromagnetic wave travelling along z, the fields are Ex = E0 sin(kz - omega t) and By = B0 sin(kz - omega t). What does the identical sine factor tell us?",
+     "a": "E and B reach their maximum values, and become zero, at the same places and times",
+     "o": [
+      "E and B reach their maximum values, and become zero, at the same places and times",
+      "B is maximum wherever E is zero",
+      "E and B oscillate with different frequencies",
+      "E and B travel in opposite directions"
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "A plane electromagnetic wave travels along the +y direction. At a certain point and instant its electric field points along +z. Given that E x B points along the direction of propagation, the magnetic field there points along",
+     "a": "+x",
+     "o": [
+      "+x",
+      "-x",
+      "+y",
+      "-z"
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Easy",
+     "t": "fill_blank",
+     "m": 1,
+     "q": "An electromagnetic wave enters a medium whose permittivity is 4 epsilon0 and whose permeability is mu0. Take c = 3 x 10^8 m/s. Its speed in the medium is ____ x 10^8 m/s (write the number as a decimal).",
+     "a": "1.5"
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "q": "A medium has permittivity 9 epsilon0 and permeability mu0. Take c = 3 x 10^8 m/s. The speed of electromagnetic waves in this medium is",
+     "a": "1.0 x 10^8 m/s",
+     "o": [
+      "1.0 x 10^8 m/s",
+      "3.3 x 10^7 m/s",
+      "9.0 x 10^8 m/s",
+      "2.7 x 10^9 m/s"
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "q": "A plane electromagnetic wave travels along the -x direction. At a certain point and instant its magnetic field points along +y. Given that E x B points along the direction of propagation, the electric field there points along",
+     "a": "+z",
+     "o": [
+      "+z",
+      "-z",
+      "+x",
+      "-y"
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "q": "Take mu0 = 4 pi x 10^-7 T m/A (use pi = 3.14) and epsilon0 = 8.85 x 10^-12 C^2/N m^2. Calculate the speed of electromagnetic waves in vacuum, to two significant figures.",
+     "a": "c = 1/sqrt(mu0 epsilon0). mu0 epsilon0 = 12.56 x 10^-7 x 8.85 x 10^-12 = 1.11 x 10^-17 s^2/m^2, so sqrt(mu0 epsilon0) = 3.33 x 10^-9 s/m. c = 1/(3.33 x 10^-9) = 3.0 x 10^8 m/s.",
+     "s": [
+      [
+       "c = 1/sqrt(mu0 epsilon0) with mu0 epsilon0 = 1.11 x 10^-17 s^2/m^2",
+       1
+      ],
+      [
+       "c = 3.0 x 10^8 m/s",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hardest",
+     "t": "long_answer",
+     "m": 3,
+     "q": "Electromagnetic waves travel at 2.0 x 10^8 m/s in a certain non-magnetic medium (permeability mu0). Take c = 3 x 10^8 m/s. Take epsilon0 = 8.85 x 10^-12 C^2/N m^2. Find (a) the ratio of the permittivity of the medium to epsilon0 and (b) the permittivity of the medium, to three significant figures.",
+     "a": "c = 1/sqrt(mu0 epsilon0) and v = 1/sqrt(mu0 epsilon), so c/v = sqrt(epsilon/epsilon0). (a) epsilon/epsilon0 = (c/v)^2 = (3 x 10^8/2.0 x 10^8)^2 = 2.25. (b) epsilon = 2.25 x 8.85 x 10^-12 = 1.99 x 10^-11 C^2/N m^2.",
+     "s": [
+      [
+       "c/v = sqrt(epsilon/epsilon0) from v = 1/sqrt(mu epsilon) with mu = mu0",
+       1
+      ],
+      [
+       "epsilon/epsilon0 = 2.25",
+       1
+      ],
+      [
+       "epsilon = 1.99 x 10^-11 C^2/N m^2",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "multi_statement",
+     "m": 1,
+     "q": "(I) In vacuum, an electromagnetic wave of wavelength 500 m and one of wavelength 10^-10 m travel with the same speed. (II) The speed of an electromagnetic wave in a material medium is always the same as its speed in vacuum. Which is or are correct?",
+     "a": "Only I",
+     "o": [
+      "Only I",
+      "Only II",
+      "Both I and II",
+      "Neither I nor II"
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "q": "A plane electromagnetic wave travels in free space along the +x direction. At a particular point and instant its electric field points along -y. Find the direction of the magnetic field at that point and justify it.",
+     "a": "B must be perpendicular to both the direction of propagation (x) and E (y), so it lies along the z-axis. E x B must point along +x. Since (-j) x (-k) = +i, B points along -z.",
+     "s": [
+      [
+       "B is perpendicular to both x and y, so along the z-axis",
+       1
+      ],
+      [
+       "E x B along +x requires B along -z, since (-j) x (-k) = +i",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hardest",
+     "t": "long_answer",
+     "m": 3,
+     "q": "Medium P has permittivity 16 epsilon0 and permeability mu0. Medium Q has permittivity 4 epsilon0 and permeability 4 mu0. Take c = 3 x 10^8 m/s. Find the speed of electromagnetic waves in each medium and comment on the result.",
+     "a": "v = 1/sqrt(mu epsilon). In P: v = 1/sqrt(16 mu0 epsilon0) = c/4 = 7.5 x 10^7 m/s. In Q: v = 1/sqrt(4 mu0 x 4 epsilon0) = c/4 = 7.5 x 10^7 m/s. The speeds are equal although the media are different, because the speed depends only on the product of the permeability and the permittivity, which is 16 mu0 epsilon0 in both.",
+     "s": [
+      [
+       "Speed in P = c/4 = 7.5 x 10^7 m/s",
+       1
+      ],
+      [
+       "Speed in Q = c/4 = 7.5 x 10^7 m/s",
+       1
+      ],
+      [
+       "Comment: speed depends on the product mu x epsilon, the same for both media",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Evaluate",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "q": "A student says: 'Sound cannot travel through empty space, so light from the sun must be travelling through some material that fills space.' Evaluate this reasoning.",
+     "a": "The reasoning is wrong. Electromagnetic waves differ from the other waves studied in that no material medium is involved in the vibrations of the electric and magnetic fields; they are self-sustaining oscillations of these fields in free space. Light, an electromagnetic wave, therefore travels from the sun to the earth through vacuum.",
+     "s": [
+      [
+       "Electromagnetic waves are self-sustaining oscillations of E and B needing no material medium",
+       1
+      ],
+      [
+       "Judgement: reasoning wrong - light crosses the vacuum between the sun and the earth",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Create",
+     "d": "Hardest",
+     "t": "long_answer",
+     "m": 3,
+     "q": "No figure can be shown. Write a description in words of a plane electromagnetic wave travelling along the +z direction, complete enough for a classmate to sketch it: give the directions of the two fields, how each varies along z at a given time, and how the two variations are related.",
+     "a": "The electric field E is along the x-axis and the magnetic field B is along the y-axis, so E, B and the direction of travel z are mutually perpendicular. At a given time each field varies sinusoidally with z: Ex = E0 sin(kz - omega t) and By = B0 sin(kz - omega t). Both have the same wavelength and the same sine factor, so E and B are largest at the same values of z and are zero at the same values of z.",
+     "s": [
+      [
+       "E and B perpendicular to each other and to z, with E x B along +z (for example E along x, B along y)",
+       1
+      ],
+      [
+       "Each field varies sinusoidally with z at a given time",
+       1
+      ],
+      [
+       "Same sine factor: maxima and zeros of E and B occur at the same places",
+       1
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "code": "C12P-8.5",
+   "name": "Equations and wave relations of a plane electromagnetic wave",
+   "description": "The sinusoidal expressions for E and B in a plane electromagnetic wave and the relations between wave number, angular frequency, frequency, wavelength and the two amplitudes.",
+   "idea": "A plane electromagnetic wave is described by E0 sin(kz - omega t) and B0 sin(kz - omega t); its frequency and wavelength are tied together by c, and its two amplitudes by B0 = E0/c.",
+   "rule": "Ex = E0 sin(kz - omega t), By = B0 sin(kz - omega t). k = 2 pi/lambda is the magnitude of the wave vector, whose direction is the direction of propagation; omega = 2 pi nu is the angular frequency; the speed of propagation is omega/k. In vacuum omega = ck, that is nu x lambda = c, and B0 = E0/c. A phase (kx - omega t) describes a wave travelling along +x and (kx + omega t) one travelling along -x. The same expression can be written as sin[2 pi (z/lambda - t/T)] with T = 1/nu.",
+   "example": "A wave of frequency 25 MHz in vacuum has wavelength c/nu = (3 x 10^8)/(25 x 10^6) = 12 m; if its electric field amplitude is 6.3 V/m, its magnetic field amplitude is E0/c = 6.3/(3 x 10^8) = 2.1 x 10^-8 T.",
+   "difficulty_base": "Hard",
+   "questions": [
+    {
+     "b": "Remember",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "In the expression Ex = E0 sin(kz - omega t) for a plane electromagnetic wave, k is related to the wavelength lambda by",
+     "a": "k = 2 pi/lambda",
+     "o": [
+      "k = 2 pi/lambda",
+      "k = lambda/(2 pi)",
+      "k = 2 pi x lambda",
+      "k = 1/lambda"
+     ]
+    },
+    {
+     "b": "Remember",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "The amplitudes E0 and B0 of the electric and magnetic fields of an electromagnetic wave in vacuum are related by",
+     "a": "B0 = E0/c",
+     "o": [
+      "B0 = E0/c",
+      "B0 = c x E0",
+      "B0 = E0",
+      "B0 = E0/c^2"
+     ]
+    },
+    {
+     "b": "Remember",
+     "d": "Easy",
+     "t": "fill_blank",
+     "m": 1,
+     "q": "The speed of propagation of a wave of angular frequency omega and wave number k is omega divided by ____ (write one letter).",
+     "a": "k"
+    },
+    {
+     "b": "Remember",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "q": "For a plane electromagnetic wave in vacuum with frequency nu, wavelength lambda, period T, angular frequency omega and wave number k, which of the following relations is NOT correct?",
+     "a": "nu = c x lambda",
+     "o": [
+      "nu = c x lambda",
+      "omega = 2 pi x nu",
+      "T = 1/nu",
+      "omega = c x k"
+     ],
+     "rev": true
+    },
+    {
+     "b": "Understand",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "In By = B0 sin(kz - omega t), the quantity B0 represents the",
+     "a": "maximum value (amplitude) of the magnetic field",
+     "o": [
+      "maximum value (amplitude) of the magnetic field",
+      "wavelength of the wave",
+      "speed of the wave",
+      "value of the magnetic field at z = 0 and t = 0"
+     ]
+    },
+    {
+     "b": "Understand",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "The magnetic field of a plane electromagnetic wave is By = B0 sin(kx + omega t), with k and omega positive. The wave is travelling along the",
+     "a": "negative x-direction",
+     "o": [
+      "negative x-direction",
+      "positive x-direction",
+      "positive y-direction",
+      "negative y-direction"
+     ]
+    },
+    {
+     "b": "Understand",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "In the expression E0 sin(kz - omega t) for an electromagnetic wave, omega is called the",
+     "a": "angular frequency",
+     "o": [
+      "angular frequency",
+      "wave number",
+      "wavelength",
+      "amplitude"
+     ]
+    },
+    {
+     "b": "Understand",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "q": "In Ex = E0 sin(kz - omega t), the field at a FIXED position z repeats itself after a time interval of",
+     "a": "2 pi/omega",
+     "o": [
+      "2 pi/omega",
+      "2 pi/k",
+      "omega/k",
+      "k/omega"
+     ]
+    },
+    {
+     "b": "Understand",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "q": "In Ex = E0 sin(kz - omega t), k is the magnitude of the wave vector. What does the direction of the wave vector describe?",
+     "a": "The direction of propagation of the wave",
+     "o": [
+      "The direction of propagation of the wave",
+      "The direction of the electric field",
+      "The direction of the magnetic field",
+      "The direction in which the amplitude decreases"
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "An electromagnetic wave of frequency 60 MHz travels in vacuum. Take c = 3 x 10^8 m/s. Its wavelength is",
+     "a": "5 m",
+     "o": [
+      "5 m",
+      "0.2 m",
+      "50 m",
+      "1.8 x 10^16 m"
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Easy",
+     "t": "fill_blank",
+     "m": 1,
+     "q": "The amplitude of the magnetic field of an electromagnetic wave in vacuum is 200 nT. Take c = 3 x 10^8 m/s. Find the amplitude of its electric field in V/m, as a whole number.",
+     "a": "60"
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "q": "The amplitude of the electric field of an electromagnetic wave in vacuum is 90 V/m. Take c = 3 x 10^8 m/s. The amplitude of its magnetic field is",
+     "a": "3.0 x 10^-7 T",
+     "o": [
+      "3.0 x 10^-7 T",
+      "2.7 x 10^10 T",
+      "3.3 x 10^6 T",
+      "3.0 x 10^-9 T"
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "q": "A radio can tune in to any station in the 6 MHz to 15 MHz band. Take c = 3 x 10^8 m/s. The corresponding wavelength band is",
+     "a": "50 m to 20 m",
+     "o": [
+      "50 m to 20 m",
+      "5 m to 2 m",
+      "500 m to 200 m",
+      "0.02 m to 0.05 m"
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "q": "An electromagnetic wave in vacuum has a frequency of 75 MHz. Take c = 3 x 10^8 m/s. Use pi = 3.14. Find its angular frequency omega and its wave number k.",
+     "a": "omega = 2 pi nu = 2 x 3.14 x 7.5 x 10^7 = 4.71 x 10^8 rad/s. lambda = c/nu = (3 x 10^8)/(7.5 x 10^7) = 4 m, so k = 2 pi/lambda = 6.28/4 = 1.57 rad/m (equivalently k = omega/c).",
+     "s": [
+      [
+       "omega = 2 pi nu = 4.71 x 10^8 rad/s",
+       1
+      ],
+      [
+       "k = 2 pi/lambda = omega/c = 1.57 rad/m",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hardest",
+     "t": "long_answer",
+     "m": 3,
+     "q": "The electric field of a plane electromagnetic wave in vacuum is Ey = 30 sin(pi x - 3 pi x 10^8 t) V/m, where the x in 'pi x' is the coordinate in metres, t is in seconds and '3 pi x 10^8' means 3 pi times 10^8. Take c = 3 x 10^8 m/s. Find the wavelength, the frequency and the amplitude of the magnetic field, and write the expression for the magnetic field with its direction.",
+     "a": "k = pi rad/m, so lambda = 2 pi/k = 2 m. omega = 3 pi x 10^8 rad/s, so nu = omega/(2 pi) = 1.5 x 10^8 Hz. B0 = E0/c = 30/(3 x 10^8) = 1.0 x 10^-7 T. The wave travels along +x and E is along y, so B is along z (j x k = i): Bz = 1.0 x 10^-7 sin(pi x - 3 pi x 10^8 t) T.",
+     "s": [
+      [
+       "lambda = 2 pi/k = 2 m and nu = omega/(2 pi) = 1.5 x 10^8 Hz",
+       1
+      ],
+      [
+       "B0 = E0/c = 1.0 x 10^-7 T",
+       1
+      ],
+      [
+       "Bz = 1.0 x 10^-7 sin(pi x - 3 pi x 10^8 t) T, along the z-axis",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "assertion_reason",
+     "m": 1,
+     "q": "Assertion (A): In vacuum, an electromagnetic wave of frequency 60 MHz has a longer wavelength than one of frequency 30 MHz. Reason (R): In vacuum, the product of frequency and wavelength has the same value for all electromagnetic waves. Choose the correct option.",
+     "a": "A is false, R is true",
+     "o": [
+      "A is false, R is true",
+      "Both A and R are true, and R is the correct explanation of A",
+      "Both A and R are true, but R is not the correct explanation of A",
+      "A is true, R is false"
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "q": "A plane electromagnetic wave has angular frequency 3.0 x 10^15 rad/s and wave number 1.5 x 10^7 rad/m. Take c = 3 x 10^8 m/s. Find its speed of propagation and decide whether it is travelling in vacuum.",
+     "a": "Speed = omega/k = (3.0 x 10^15)/(1.5 x 10^7) = 2.0 x 10^8 m/s. This is less than c = 3 x 10^8 m/s, so the wave is not in vacuum; it is travelling in a material medium.",
+     "s": [
+      [
+       "Speed = omega/k = 2.0 x 10^8 m/s",
+       1
+      ],
+      [
+       "Less than c, so the wave is in a material medium, not vacuum",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hardest",
+     "t": "long_answer",
+     "m": 3,
+     "q": "The magnetic field of a plane electromagnetic wave in vacuum is By = 5 x 10^-8 sin(200 pi x + 6 pi x 10^10 t) T, where the x in '200 pi x' is the coordinate in metres, t is in seconds and '6 pi x 10^10' means 6 pi times 10^10. Take c = 3 x 10^8 m/s. Find the direction of travel, the wavelength, the frequency and the amplitude of the electric field, and state the axis along which the electric field oscillates.",
+     "a": "The phase has the form (kx + omega t), so the wave travels along the negative x-direction. k = 200 pi rad/m, so lambda = 2 pi/k = 0.01 m (1 cm). omega = 6 pi x 10^10 rad/s, so nu = omega/(2 pi) = 3 x 10^10 Hz. E0 = c B0 = 3 x 10^8 x 5 x 10^-8 = 15 V/m. E is perpendicular to the direction of propagation (x) and to B (y), so it oscillates along the z-axis.",
+     "s": [
+      [
+       "Travels along -x; lambda = 2 pi/k = 0.01 m",
+       1
+      ],
+      [
+       "nu = omega/(2 pi) = 3 x 10^10 Hz",
+       1
+      ],
+      [
+       "E0 = c B0 = 15 V/m, along the z-axis",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Evaluate",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "q": "Two students report measurements on electromagnetic waves said to be in vacuum. P reports amplitudes of 45 V/m and 1.5 x 10^-7 T; Q reports 45 V/m and 4.5 x 10^-7 T. Take c = 3 x 10^8 m/s. Evaluate which report is consistent with a wave in vacuum.",
+     "a": "In vacuum E0/B0 must equal c. For P: 45/(1.5 x 10^-7) = 3 x 10^8 m/s = c, so P's report is consistent. For Q: 45/(4.5 x 10^-7) = 1 x 10^8 m/s, which is not c, so Q's values cannot both belong to a wave in vacuum.",
+     "s": [
+      [
+       "P: ratio = 3 x 10^8 m/s = c, consistent",
+       1
+      ],
+      [
+       "Q: ratio = 1 x 10^8 m/s, not c, so not consistent",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Create",
+     "d": "Hardest",
+     "t": "long_answer",
+     "m": 3,
+     "q": "Construct the expressions for the electric and magnetic fields of a plane electromagnetic wave in vacuum that travels along +z, has frequency 3 x 10^8 Hz and electric field amplitude 12 V/m along the x-axis. Take c = 3 x 10^8 m/s. Leave pi as a symbol.",
+     "a": "lambda = c/nu = 1 m, so k = 2 pi/lambda = 2 pi rad/m; omega = 2 pi nu = 6 pi x 10^8 rad/s. B0 = E0/c = 12/(3 x 10^8) = 4 x 10^-8 T, and B is along y since the wave travels along z with E along x. Ex = 12 sin(2 pi z - 6 pi x 10^8 t) V/m and By = 4 x 10^-8 sin(2 pi z - 6 pi x 10^8 t) T, with z in metres and t in seconds.",
+     "s": [
+      [
+       "k = 2 pi rad/m and omega = 6 pi x 10^8 rad/s",
+       1
+      ],
+      [
+       "B0 = E0/c = 4 x 10^-8 T, along the y-axis",
+       1
+      ],
+      [
+       "Ex = 12 sin(2 pi z - 6 pi x 10^8 t) V/m and By = 4 x 10^-8 sin(2 pi z - 6 pi x 10^8 t) T",
+       1
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "code": "C12P-8.6",
+   "name": "The electromagnetic spectrum",
+   "description": "The regions of the electromagnetic spectrum from radio waves to gamma rays: their order, how each is produced and detected, and their uses, as stated in the chapter and its Table 8.1.",
+   "idea": "All electromagnetic waves are the same kind of wave travelling at the same speed in vacuum; they are given different names according to wavelength, roughly by how they are produced and detected.",
+   "rule": "In order of increasing wavelength: gamma rays, X-rays, ultraviolet, visible, infrared, microwaves, radio waves. There is no sharp division between regions, and they overlap. Table 8.1: radio (> 0.1 m) - rapid acceleration and deceleration of electrons in aerials, detected by receiver's aerials; microwave (0.1 m to 1 mm) - klystron or magnetron valve, point contact diodes; infrared (1 mm to 700 nm) - vibration of atoms and molecules, thermopiles, bolometer, infrared photographic film; light (700 nm to 400 nm) - electrons in atoms moving to a lower energy level, the eye, photocells, photographic film; ultraviolet (400 nm to 1 nm) - inner shell electrons moving to a lower level, photocells, photographic film; X-rays (1 nm to 10^-3 nm) - X-ray tubes or inner shell electrons, photographic film, Geiger tubes, ionisation chamber; gamma rays (< 10^-3 nm) - radioactive decay of the nucleus. Uses: radio and TV communication, cellular phones (radio); radar, speed guns, microwave ovens tuned to the resonant frequency of water molecules (microwaves); physical therapy, remote controls, satellite detectors, the greenhouse effect (infrared, the 'heat waves'); LASIK eye surgery, killing germs in water purifiers (ultraviolet, absorbed by the ozone layer and by ordinary glass); medical diagnosis and treatment of some cancers (X-rays); destroying cancer cells (gamma rays).",
+   "example": "A wave of frequency 5 x 10^12 Hz has wavelength (3 x 10^8)/(5 x 10^12) = 6 x 10^-5 m = 60 micrometre, which lies in the infrared region.",
+   "difficulty_base": "Easy",
+   "questions": [
+    {
+     "b": "Remember",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "Which list gives the regions of the electromagnetic spectrum in order of increasing wavelength?",
+     "a": "Gamma rays, X-rays, ultraviolet, visible, infrared, microwaves, radio waves",
+     "o": [
+      "Gamma rays, X-rays, ultraviolet, visible, infrared, microwaves, radio waves",
+      "Radio waves, microwaves, infrared, visible, ultraviolet, X-rays, gamma rays",
+      "Gamma rays, ultraviolet, X-rays, visible, microwaves, infrared, radio waves",
+      "X-rays, gamma rays, visible, ultraviolet, infrared, radio waves, microwaves"
+     ]
+    },
+    {
+     "b": "Remember",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "Microwaves are produced by",
+     "a": "special vacuum tubes such as klystrons and magnetrons",
+     "o": [
+      "special vacuum tubes such as klystrons and magnetrons",
+      "radioactive decay of the nucleus",
+      "rapid acceleration and deceleration of electrons in aerials",
+      "vibration of atoms and molecules"
+     ]
+    },
+    {
+     "b": "Remember",
+     "d": "Easy",
+     "t": "fill_blank",
+     "m": 1,
+     "q": "Because they are readily absorbed by water molecules and warm up materials, infrared waves are sometimes referred to as ____ waves (write one word).",
+     "a": "heat"
+    },
+    {
+     "b": "Remember",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "q": "Which of the following statements about ultraviolet radiation is NOT correct?",
+     "a": "It passes easily through ordinary glass, so one can get tanned through a glass window",
+     "o": [
+      "It passes easily through ordinary glass, so one can get tanned through a glass window",
+      "The sun is an important source of it",
+      "Exposure to it induces the production of more melanin, causing tanning of the skin",
+      "Ultraviolet lamps are used to kill germs in water purifiers"
+     ],
+     "rev": true
+    },
+    {
+     "b": "Understand",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "The classification of electromagnetic waves into the regions of the spectrum is based roughly on",
+     "a": "how the waves are produced and/or detected",
+     "o": [
+      "how the waves are produced and/or detected",
+      "the speed of the waves in vacuum",
+      "the amplitude of the electric field",
+      "the direction in which the waves travel"
+     ]
+    },
+    {
+     "b": "Understand",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "Why does a microwave oven heat food that contains water efficiently?",
+     "a": "The frequency of the microwaves is selected to match the resonant frequency of water molecules, so energy is transferred efficiently to them",
+     "o": [
+      "The frequency of the microwaves is selected to match the resonant frequency of water molecules, so energy is transferred efficiently to them",
+      "Microwaves have the highest frequency in the whole spectrum",
+      "Microwaves are absorbed only by the metal walls, which then heat the food",
+      "Microwaves make the nuclei in the food radioactive"
+     ]
+    },
+    {
+     "b": "Understand",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "What physical quantity is the same for X-rays, red light and radio waves travelling in vacuum?",
+     "a": "Their speed",
+     "o": [
+      "Their speed",
+      "Their wavelength",
+      "Their frequency",
+      "Their period"
+     ]
+    },
+    {
+     "b": "Understand",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "q": "Why are microwaves suitable for the radar systems used in aircraft navigation?",
+     "a": "Because of their short wavelengths",
+     "o": [
+      "Because of their short wavelengths",
+      "Because they travel faster than other electromagnetic waves in vacuum",
+      "Because they are visible to the human eye",
+      "Because they are emitted by radioactive nuclei"
+     ]
+    },
+    {
+     "b": "Understand",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "q": "How does infrared radiation help to maintain the earth's average temperature through the greenhouse effect?",
+     "a": "The earth's surface absorbs incoming visible light and re-radiates it as infrared, which is trapped by gases such as carbon dioxide and water vapour",
+     "o": [
+      "The earth's surface absorbs incoming visible light and re-radiates it as infrared, which is trapped by gases such as carbon dioxide and water vapour",
+      "The ozone layer converts incoming infrared radiation into ultraviolet radiation",
+      "Infrared radiation from the sun cannot enter the atmosphere at all",
+      "Greenhouse gases reflect all incoming visible light back into space"
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "The remote switch of a television set uses radiation emitted by a semiconductor light emitting diode. According to the chapter on electromagnetic waves, this radiation is",
+     "a": "infrared",
+     "o": [
+      "infrared",
+      "ultraviolet",
+      "X-rays",
+      "gamma rays"
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Easy",
+     "t": "fill_blank",
+     "m": 1,
+     "q": "Light of frequency 5 x 10^14 Hz travels in vacuum. Take c = 3 x 10^8 m/s. Find its wavelength in nm, as a whole number.",
+     "a": "600"
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "q": "An electromagnetic wave in vacuum has a frequency of 10 GHz (1 x 10^10 Hz). Take c = 3 x 10^8 m/s. In which region of the spectrum does it lie?",
+     "a": "Microwaves",
+     "o": [
+      "Microwaves",
+      "Visible light",
+      "X-rays",
+      "Gamma rays"
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "q": "A hot body emits electromagnetic radiation of wavelength 1 x 10^-5 m (10 micrometres). In which region of the spectrum does this lie?",
+     "a": "Infrared",
+     "o": [
+      "Infrared",
+      "Radio waves",
+      "Ultraviolet",
+      "X-rays"
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "q": "An FM radio station broadcasts at 100 MHz. Take c = 3 x 10^8 m/s. Calculate the wavelength of its waves and name the region of Table 8.1 in which it falls.",
+     "a": "lambda = c/nu = (3 x 10^8 m/s)/(1 x 10^8 Hz) = 3 m. This is greater than 0.1 m, so it falls in the radio region.",
+     "s": [
+      [
+       "lambda = c/nu = 3 m",
+       1
+      ],
+      [
+       "Region: radio (wavelength greater than 0.1 m)",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hardest",
+     "t": "long_answer",
+     "m": 3,
+     "q": "Use what the chapter says about ultraviolet radiation to explain each of the following: (a) welders wear special glass goggles or face masks with glass windows; (b) ultraviolet radiation is used in LASIK eye surgery; (c) depletion of the ozone layer by chlorofluorocarbons is a matter of international concern.",
+     "a": "(a) Welding arcs produce a large amount of ultraviolet radiation, which is harmful in large quantities; ultraviolet is absorbed by glass, so the goggles protect the eyes. (b) Because of its shorter wavelengths, ultraviolet radiation can be focussed into very narrow beams, which suits high precision work such as LASIK eye surgery. (c) The ozone layer in the atmosphere absorbs most of the ultraviolet radiation coming from the sun and so plays a protective role; its depletion would let more harmful ultraviolet reach the surface.",
+     "s": [
+      [
+       "(a) Welding arcs give much UV; glass absorbs UV and protects the eyes",
+       1
+      ],
+      [
+       "(b) Short wavelength lets UV be focussed into very narrow beams",
+       1
+      ],
+      [
+       "(c) Ozone absorbs most solar UV; depletion removes this protection",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "multi_statement",
+     "m": 1,
+     "q": "(I) X-rays are used only as a diagnostic tool and never for treatment. (II) The infrared band lies adjacent to the low-frequency (long-wavelength) end of the visible spectrum. Which is or are correct?",
+     "a": "Only II",
+     "o": [
+      "Only II",
+      "Only I",
+      "Both I and II",
+      "Neither I nor II"
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "q": "Using Table 8.1 of the chapter on electromagnetic waves, compare radio waves and gamma rays in terms of how each is produced and how each is detected.",
+     "a": "Radio waves are produced by rapid acceleration and deceleration of electrons in aerials and are detected by receiver's aerials. Gamma rays are produced by radioactive decay of the nucleus and are detected by photographic film, Geiger tubes or an ionisation chamber. So radio waves come from charges moving in circuits, while gamma rays come from the nucleus.",
+     "s": [
+      [
+       "Radio: electrons accelerated and decelerated in aerials; detected by receiver's aerials",
+       1
+      ],
+      [
+       "Gamma: radioactive decay of the nucleus; detected by photographic film, Geiger tubes or ionisation chamber",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hardest",
+     "t": "long_answer",
+     "m": 3,
+     "q": "Three sources emit electromagnetic waves in vacuum with frequencies 1 x 10^6 Hz, 3 x 10^10 Hz and 6 x 10^14 Hz. Take c = 3 x 10^8 m/s. Find the wavelength of each and, using the wavelength ranges of Table 8.1, assign each to its region of the spectrum.",
+     "a": "lambda = c/nu. For 1 x 10^6 Hz: lambda = 300 m, greater than 0.1 m, so radio. For 3 x 10^10 Hz: lambda = 0.01 m = 1 cm, between 0.1 m and 1 mm, so microwave. For 6 x 10^14 Hz: lambda = 5 x 10^-7 m = 500 nm, between 700 nm and 400 nm, so visible light.",
+     "s": [
+      [
+       "300 m - radio",
+       1
+      ],
+      [
+       "0.01 m (1 cm) - microwave",
+       1
+      ],
+      [
+       "5 x 10^-7 m (500 nm) - visible light",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Evaluate",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "q": "A student notices that the text and Table 8.1 of the chapter on electromagnetic waves give different limits for where the ultraviolet region ends and the X-ray region begins, and concludes that one of them must be a misprint. Evaluate this conclusion.",
+     "a": "The conclusion is not justified. The chapter states that there is no sharp division between one kind of wave and the next and that the regions overlap. The names are assigned roughly according to how the waves are produced and/or detected, so quoted limits are only approximate and can differ.",
+     "s": [
+      [
+       "The regions have no sharp boundaries and overlap",
+       1
+      ],
+      [
+       "Judgement: differing limits are not an error - classification is rough, by production and detection",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Create",
+     "d": "Hardest",
+     "t": "long_answer",
+     "m": 3,
+     "q": "Prepare a summary chart, written as three lines, for microwaves, infrared waves and ultraviolet rays, giving for each one way it is produced and one use, as stated in the chapter on electromagnetic waves.",
+     "a": "Microwaves - produced by special vacuum tubes (klystrons, magnetrons, Gunn diodes); used in radar systems for aircraft navigation (or microwave ovens, speed guns). Infrared - produced by hot bodies and molecules (vibration of atoms and molecules); used in physical therapy lamps (or remote switches, satellite detectors). Ultraviolet - produced by special lamps and very hot bodies such as the sun; used in LASIK eye surgery (or to kill germs in water purifiers).",
+     "s": [
+      [
+       "Microwaves: klystron/magnetron source and a correct use (radar, oven, speed gun)",
+       1
+      ],
+      [
+       "Infrared: hot bodies/vibrating molecules and a correct use (therapy, remotes, satellites)",
+       1
+      ],
+      [
+       "Ultraviolet: special lamps/very hot bodies and a correct use (LASIK, water purifiers)",
+       1
+      ]
+     ]
+    }
+   ]
+  }
+ ]
+}

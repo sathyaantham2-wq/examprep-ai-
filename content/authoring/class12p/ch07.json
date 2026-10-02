@@ -1,0 +1,2664 @@
+{
+ "subject": {
+  "code": "PHY12",
+  "name": "Physics",
+  "board": "CBSE",
+  "class": 12
+ },
+ "source": {
+  "publisher": "NCERT",
+  "title": "Physics Part I",
+  "edition": "Textbook for Class XII Part I, Reprint 2026-27",
+  "year": 2026
+ },
+ "chapter": {
+  "part": "I",
+  "chapter_no": 7,
+  "name": "Alternating Current",
+  "blurb": "The chapter studies circuits driven by a sinusoidal ac voltage: a resistor, an inductor and a capacitor separately, with rms values, reactances and the phase relation between current and voltage shown by phasors. It then solves the series LCR circuit by the phasor diagram to obtain the impedance and phase angle, and treats resonance and the average power with its power factor. It ends with the transformer and its use in the transmission of electrical energy.",
+  "source_code": "leph107",
+  "order_index": 7
+ },
+ "scope_in": [
+  {
+   "item": "Describe an ac voltage v = vm sin(omega t), identify its amplitude and angular frequency, and state why ac is preferred for supply (easy and efficient conversion of voltage by transformers, economical long-distance transmission)",
+   "pages": "177-178"
+  },
+  {
+   "item": "For a pure resistor on an ac source, use im = vm/R, state that current and voltage are in phase, explain why the average current over a cycle is zero while Joule heating is not, and obtain the instantaneous power im^2 R sin^2(omega t) and the average power (1/2) im^2 R",
+   "pages": "178-179"
+  },
+  {
+   "item": "Define rms (effective) current and voltage, use I = im/sqrt(2) = 0.707 im and V = vm/sqrt(2), V = I R and P = I^2 R = V^2/R = I V; interpret quoted ac values (220 V mains, power ratings) as rms and average values and find peak values (Example 7.1, Exercises 7.1, 7.2)",
+   "pages": "179-180, 198-200"
+  },
+  {
+   "item": "Describe a phasor as a rotating vector whose magnitude is the peak value and whose vertical component is the instantaneous value; state the phasor relation for a resistor; recognise that voltage and current are scalars",
+   "pages": "181, 199"
+  },
+  {
+   "item": "For a pure inductor on an ac source, use XL = omega L = 2 pi f L and im = vm/XL, state that the current lags the voltage by pi/2 (a quarter period), show that the average power over a cycle is zero, and explain the dimming of a series bulb when an iron rod is inserted into the coil (Examples 7.2, 7.5, Exercise 7.3)",
+   "pages": "181-183, 186, 200"
+  },
+  {
+   "item": "For a capacitor on an ac source, use XC = 1/(omega C) = 1/(2 pi f C) and im = vm/XC, state that the current leads the voltage by pi/2, show that the average power over a cycle is zero, contrast dc and ac behaviour, and predict the brightness of a lamp in series with a capacitor (Examples 7.3, 7.4, Exercises 7.4, 7.5)",
+   "pages": "184-186, 200"
+  },
+  {
+   "item": "Solve a series LCR circuit by the phasor diagram: phases of VR, VL, VC relative to the current, vm^2 = vRm^2 + (vCm - vLm)^2, impedance Z = sqrt(R^2 + (XC - XL)^2), im = vm/Z, tan phi = (XC - XL)/R, the impedance diagram, and whether the current leads or lags",
+   "pages": "186-188"
+  },
+  {
+   "item": "Add rms voltages across series elements with their phases (V = sqrt(VR^2 + VC^2) for an RC circuit) and resolve the apparent paradox of their algebraic sum exceeding the source voltage (Example 7.6)",
+   "pages": "190, 199"
+  },
+  {
+   "item": "Distinguish qualitatively the steady-state solution given by phasors from the transient solution that dies out with time",
+   "pages": "188"
+  },
+  {
+   "item": "State the resonance condition XC = XL, calculate omega0 = 1/sqrt(LC), use Z = R and im = vm/R at resonance, compare circuits of different R, find the voltages across R, L and C at resonance, and explain why resonance needs both L and C (Example 7.9, Exercises 7.7, 7.8)",
+   "pages": "188-189, 193, 199-200"
+  },
+  {
+   "item": "Explain the tuning of a radio and the working of a metal detector as applications of resonance (Example 7.10)",
+   "pages": "189, 193"
+  },
+  {
+   "item": "Calculate the average power P = V I cos(phi) = I^2 Z cos(phi) = I^2 R and the power factor cos(phi) = R/Z; discuss the resistive, purely reactive (wattless current), LCR and resonance cases (Example 7.8)",
+   "pages": "190-193"
+  },
+  {
+   "item": "Explain why a low power factor means a large transmission loss and how a parallel capacitor improves the power factor of a lagging circuit (Example 7.7)",
+   "pages": "191-192"
+  },
+  {
+   "item": "Describe the construction and principle of a transformer and use Vs/Vp = Ns/Np and Ip Vp = Is Vs for an ideal transformer; classify step-up and step-down transformers",
+   "pages": "194-195, 197"
+  },
+  {
+   "item": "List the energy losses in an actual transformer (flux leakage, winding resistance, eddy currents, hysteresis) with their remedies, and explain the use of step-up and step-down transformers in long-distance transmission",
+   "pages": "195-196, 199"
+  }
+ ],
+ "scope_out": [
+  {
+   "item": "Analytical solution of the series LCR differential equation",
+   "reason": "p. 186 announces a second, analytical method but this edition contains only Section 7.6.1 (phasor-diagram solution) and 7.6.2 (Resonance); the analytical subsection has been removed"
+  },
+  {
+   "item": "Sharpness of resonance, bandwidth, half-power frequencies and the quality factor Q",
+   "reason": "Section removed from this edition; Q survives only as a vestigial row in the summary table (p. 198) and is never taught or used in an example or exercise"
+  },
+  {
+   "item": "LC oscillations: free oscillations of a charged capacitor connected to an inductor, energy exchange between L and C, analogy with a mass on a spring",
+   "reason": "Section removed from this edition; Exercise 7.6 (p. 200), which asks for the angular frequency of free oscillations, is a vestigial reference to it"
+  },
+  {
+   "item": "Transient behaviour in detail: growth and decay of current, time constants of RL and RC circuits",
+   "reason": "p. 188 only mentions that a transient solution exists and dies out; nothing quantitative is taught"
+  },
+  {
+   "item": "Parallel LCR or parallel LC circuits and parallel resonance; currents in parallel branches",
+   "reason": "Only the series circuit is analysed; the parallel capacitor of Example 7.7 (p. 192) is described qualitatively only"
+  },
+  {
+   "item": "Choke coil and its advantage over a resistor in a tube light",
+   "reason": "Not present in this edition"
+  },
+  {
+   "item": "Average (mean) value of ac over a half cycle (2 im/pi), form factor and peak factor",
+   "reason": "The chapter takes averages over a complete cycle only (pp. 178-179)"
+  },
+  {
+   "item": "The ac generator and its emf e = N B A omega sin(omega t); the working of motors",
+   "reason": "The generator belongs to Chapter 6; Points to Ponder 10 (p. 199) only remarks on energy conversion in generators and motors and is not examinable"
+  },
+  {
+   "item": "Biographical notes on Nicola Tesla and George Westinghouse",
+   "reason": "Boxed historical notes (pp. 178-179), not examinable"
+  },
+  {
+   "item": "Dimensional formulae of rms voltage, reactance and impedance",
+   "reason": "Appear only in the summary table (p. 198); not taught or exercised in the chapter text"
+  },
+  {
+   "item": "Complex-number (j omega) treatment of impedance, admittance and susceptance",
+   "reason": "Not used anywhere in the book; the chapter uses phasor diagrams only"
+  },
+  {
+   "item": "Electromagnetic waves and displacement current through a capacitor",
+   "reason": "Taught in Chapter 8, not here"
+  }
+ ],
+ "concepts": [
+  {
+   "code": "C12P-7.1",
+   "name": "AC voltage applied to a resistor and the phasor picture",
+   "description": "A sinusoidal voltage across a pure resistor, the in-phase current it drives, the instantaneous and average power, and the representation of ac quantities by phasors.",
+   "idea": "In a pure resistor the alternating current rises and falls exactly in step with the alternating voltage, and although the current averages to zero over a cycle the heating does not.",
+   "rule": "An ac source gives v = vm sin(omega t), where vm is the amplitude (peak value) and omega the angular frequency. Applied to a resistor R, Kirchhoff's loop rule gives i = im sin(omega t) with im = vm/R, which is Ohm's law and holds for ac as for dc. Voltage and current reach their zero, maximum and minimum values at the same instants: they are in phase (phase angle zero). Over one complete cycle the average current is zero, but the instantaneous power p = i^2 R = im^2 R sin^2(omega t) is never negative; since the average of sin^2(omega t) over a cycle is 1/2, the average power is (1/2) im^2 R. A phasor is a vector that rotates about the origin with angular speed omega; its magnitude is the peak value and its vertical component is the instantaneous value of the quantity. For a resistor the V and I phasors point in the same direction at all times. Voltage and current are scalars; phasors are only a convenient way of adding sinusoidal quantities. AC is preferred for supply mainly because ac voltages are easily and efficiently changed by transformers.",
+   "example": "v = 120 sin(50 t) volt across 40 ohm gives i = 3 sin(50 t) ampere; the average power is (1/2) x 3^2 x 40 = 180 W.",
+   "difficulty_base": "Easy",
+   "questions": [
+    {
+     "b": "Remember",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "A voltage that varies like a sine function with time, such as the electric mains supply in homes, is called",
+     "a": "an alternating voltage",
+     "o": [
+      "an alternating voltage",
+      "a direct voltage",
+      "a steady voltage",
+      "a static voltage"
+     ]
+    },
+    {
+     "b": "Remember",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "In the expression v = vm sin(omega t) for the potential difference across an ac source, the quantity vm is the",
+     "a": "amplitude (peak value) of the voltage",
+     "o": [
+      "amplitude (peak value) of the voltage",
+      "average value of the voltage over one cycle",
+      "angular frequency of the voltage",
+      "value of the voltage at time t = 0"
+     ]
+    },
+    {
+     "b": "Remember",
+     "d": "Easy",
+     "t": "fill_blank",
+     "m": 1,
+     "q": "For a pure resistor connected to an ac source, the phase angle between the voltage across it and the current through it is ____ degrees (write a whole number).",
+     "a": "0"
+    },
+    {
+     "b": "Remember",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "q": "Which of the following statements about a phasor used in the analysis of ac circuits is NOT correct?",
+     "a": "It rotates about the origin with an angular speed equal to twice the angular frequency omega of the source",
+     "o": [
+      "It rotates about the origin with an angular speed equal to twice the angular frequency omega of the source",
+      "Its magnitude represents the amplitude (peak value) of the voltage or current",
+      "Its vertical component represents the instantaneous value of the voltage or current",
+      "It is used to show the phase relationship between voltage and current in an ac circuit"
+     ],
+     "rev": true
+    },
+    {
+     "b": "Understand",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "Why is the average of an alternating current i = im sin(omega t) over one complete cycle equal to zero?",
+     "a": "The positive values in one half cycle are cancelled by equal negative values in the other half cycle",
+     "o": [
+      "The positive values in one half cycle are cancelled by equal negative values in the other half cycle",
+      "The resistor absorbs all the current before the cycle is over",
+      "The peak value im of the current is itself zero",
+      "The charges cannot move when the frequency is high"
+     ]
+    },
+    {
+     "b": "Understand",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "For a resistor R connected to an ac source, the current amplitude is related to the voltage amplitude by im = vm/R. This shows that Ohm's law for a resistor",
+     "a": "works equally well for ac and dc voltages",
+     "o": [
+      "works equally well for ac and dc voltages",
+      "works for dc voltages but fails for ac voltages",
+      "works for ac only when the frequency is very low",
+      "works only for the average values over a cycle"
+     ]
+    },
+    {
+     "b": "Understand",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "The main reason given for preferring ac voltage to dc voltage for the supply of electrical energy is that ac voltages",
+     "a": "can be converted easily and efficiently from one value to another by transformers",
+     "o": [
+      "can be converted easily and efficiently from one value to another by transformers",
+      "produce no heating in the wires that carry them",
+      "do not need a closed circuit to drive a current",
+      "always have a larger peak value than any dc voltage"
+     ]
+    },
+    {
+     "b": "Understand",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "q": "An ac source is connected to a pure resistor. On the phasor diagram, the voltage phasor V and the current phasor I",
+     "a": "point in the same direction at all times",
+     "o": [
+      "point in the same direction at all times",
+      "are at right angles, with I behind V",
+      "are at right angles, with I ahead of V",
+      "point in opposite directions at all times"
+     ]
+    },
+    {
+     "b": "Understand",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "q": "The average of sin^2(omega t) over one complete cycle is 1/2. Consequently, the average power dissipated in a resistor R carrying the current i = im sin(omega t) is",
+     "a": "(1/2) im^2 R",
+     "o": [
+      "(1/2) im^2 R",
+      "im^2 R",
+      "zero",
+      "(1/4) im^2 R"
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "An ac voltage v = 200 sin(100 t) (v in volt, t in second; peak value 200 V, angular frequency 100 rad/s) is applied to a pure resistor of 50 ohm. The peak value of the current is",
+     "a": "4 A",
+     "o": [
+      "4 A",
+      "0.25 A",
+      "2 A",
+      "10000 A"
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Easy",
+     "t": "fill_blank",
+     "m": 1,
+     "q": "An alternating current i = 5 sin(314 t) (i in ampere; peak value 5 A, angular frequency 314 rad/s) flows through a pure resistor of 20 ohm. The peak value of the voltage across the resistor is ____ V (write a whole number).",
+     "a": "100"
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "q": "The voltage across a pure resistor of 10 ohm is v = 50 sin(omega t) volt (peak value 50 V). Given sin(pi/6) = 0.5 and cos(pi/6) = 0.866, the instantaneous current at the instant when omega t = pi/6 is",
+     "a": "2.5 A",
+     "o": [
+      "2.5 A",
+      "5 A",
+      "4.33 A",
+      "0.25 A"
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "q": "A current i = 4 sin(omega t) ampere (peak value 4 A) flows through a pure resistor of 25 ohm. Find (a) the instantaneous power dissipated at the instant the current is at its peak, and (b) the average power dissipated over one complete cycle.",
+     "a": "(a) p = i^2 R; at the peak i = 4 A, so p = 4^2 x 25 = 400 W. (b) Average power = (1/2) im^2 R = (1/2) x 16 x 25 = 200 W.",
+     "s": [
+      [
+       "Instantaneous power at the peak = im^2 R = 400 W",
+       1
+      ],
+      [
+       "Average power = (1/2) im^2 R = 200 W",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "q": "An ac voltage v = 100 sin(omega t) volt (peak value 100 V) is applied to a pure resistor. At the instant when omega t = pi/2 the voltage has its maximum positive value. At that same instant the current through the resistor",
+     "a": "has its maximum positive value",
+     "o": [
+      "has its maximum positive value",
+      "is zero",
+      "has its maximum negative value",
+      "has half its maximum value"
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hardest",
+     "t": "long_answer",
+     "m": 3,
+     "q": "An ac source of voltage v = 300 sin(omega t) volt (peak value 300 V) is connected to a pure resistor of 60 ohm. (a) Write the expression for the current as a function of time. (b) Find the instantaneous power dissipated when omega t = pi/2. (c) Find the average power dissipated over one complete cycle.",
+     "a": "(a) im = vm/R = 300/60 = 5 A, and the current is in phase with the voltage, so i = 5 sin(omega t) ampere. (b) At omega t = pi/2, i = 5 A, so p = i^2 R = 25 x 60 = 1500 W. (c) Average power = (1/2) im^2 R = (1/2) x 25 x 60 = 750 W.",
+     "s": [
+      [
+       "im = vm/R = 5 A and i = 5 sin(omega t) A, in phase with v",
+       1
+      ],
+      [
+       "p = i^2 R = 1500 W at omega t = pi/2",
+       1
+      ],
+      [
+       "Average power = (1/2) im^2 R = 750 W",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "assertion_reason",
+     "m": 1,
+     "q": "Assertion (A): When an alternating current passes through a resistor, electrical energy is dissipated even though the average current over a cycle is zero. Reason (R): Joule heating is given by i^2 R, and i^2 is positive whether i is positive or negative. Choose the correct option.",
+     "a": "Both A and R are true, and R is the correct explanation of A",
+     "o": [
+      "Both A and R are true, and R is the correct explanation of A",
+      "Both A and R are true, but R is not the correct explanation of A",
+      "A is true, R is false",
+      "A is false, R is true"
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "q": "At a certain instant the voltage phasor (length 100 V) and the current phasor (length 2 A) of a single circuit element both make an angle of 30 degrees with the horizontal axis. Given sin 30 degrees = 0.5, find the instantaneous voltage and current, and say with a reason whether the element can be a pure resistor.",
+     "a": "The instantaneous value is the vertical component of the phasor: v = 100 sin 30 degrees = 50 V and i = 2 sin 30 degrees = 1 A. The two phasors point in the same direction, so the voltage and current are in phase, which is the case of a pure resistor (here of resistance 100 V / 2 A = 50 ohm).",
+     "s": [
+      [
+       "Vertical components: v = 50 V and i = 1 A",
+       1
+      ],
+      [
+       "Phasors in the same direction mean zero phase angle, so the element is a pure resistor",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hardest",
+     "t": "long_answer",
+     "m": 3,
+     "q": "A student argues: 'The average of an alternating current over a cycle is zero, so the average power dissipated in a resistor must also be zero.' Analyse this argument using the instantaneous power for the current i = im sin(omega t) in a resistor R, and obtain the correct average power.",
+     "a": "The argument is wrong because power depends on i^2, not on i. The instantaneous power is p = i^2 R = im^2 R sin^2(omega t), which is never negative, so its average cannot be zero. Using sin^2(omega t) = (1/2)(1 - cos 2 omega t) and the fact that cos(2 omega t) averages to zero over a cycle, the average of sin^2(omega t) is 1/2. Hence the average power is (1/2) im^2 R.",
+     "s": [
+      [
+       "p = i^2 R = im^2 R sin^2(omega t) is never negative, so the zero average of i does not imply zero power",
+       1
+      ],
+      [
+       "Average of sin^2(omega t) over a cycle is 1/2, since cos(2 omega t) averages to zero",
+       1
+      ],
+      [
+       "Average power = (1/2) im^2 R",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Evaluate",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "q": "In ac circuit analysis the voltage and current are drawn as rotating vectors (phasors). Evaluate the claim that ac voltage and ac current are therefore vector quantities.",
+     "a": "The claim is wrong. Voltage and current are scalar quantities. It only happens that the amplitudes and phases of sinusoidally varying scalars combine mathematically in the same way as the projections of rotating vectors of corresponding magnitudes and directions, so rotating vectors are introduced as a simple way of adding such quantities.",
+     "s": [
+      [
+       "Judgement - voltage and current are scalars, not vectors",
+       1
+      ],
+      [
+       "Reason - amplitudes and phases of sinusoidal scalars combine like projections of rotating vectors, so phasors are only a convenient tool",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Create",
+     "d": "Hardest",
+     "t": "long_answer",
+     "m": 3,
+     "q": "Construct an example of an ac source connected to a pure resistor in which the peak current is exactly 2 A and the average power dissipated over a cycle is exactly 100 W. Give the resistance, the equation of the source voltage (with an angular frequency of your choice) and the equation of the current, and show that your values work.",
+     "a": "Average power = (1/2) im^2 R, so 100 = (1/2) x 2^2 x R, giving R = 50 ohm. The peak voltage is vm = im R = 2 x 50 = 100 V. Choosing, for example, omega = 100 rad/s, the source is v = 100 sin(100 t) volt and the current is i = 2 sin(100 t) ampere, in phase with the voltage. Check: (1/2) x 4 x 50 = 100 W.",
+     "s": [
+      [
+       "R = 50 ohm from (1/2) im^2 R = 100 W",
+       1
+      ],
+      [
+       "vm = im R = 100 V",
+       1
+      ],
+      [
+       "Equations v = 100 sin(omega t) V and i = 2 sin(omega t) A with a stated omega, in phase",
+       1
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "code": "C12P-7.2",
+   "name": "RMS values and average power in a resistor",
+   "description": "The root mean square (effective) current and voltage, their relation to peak values, and the average power written in the dc form.",
+   "idea": "The rms value of an alternating current is the steady direct current that would heat the same resistor at the same average rate.",
+   "rule": "The rms or effective current is I = sqrt(mean of i^2) = im/sqrt(2) = 0.707 im, and the rms or effective voltage is V = vm/sqrt(2) = 0.707 vm. In terms of rms values V = I R, and the average power is P = I^2 R = V^2/R = I V, the same forms as for dc. It is customary to quote rms values for ac: the household line voltage of 220 V is an rms value, with peak value sqrt(2) x 220 = 311 V. The power rating of an element used in ac circuits is its average power. The ac ampere is defined through Joule heating, a property independent of the direction of the current: an alternating current has an rms value of one ampere if it produces the same average heating as one ampere of direct current under the same conditions.",
+   "example": "A bulb rated 100 W for a 220 V (rms) supply has R = 220^2/100 = 484 ohm and carries an rms current of 100/220 = 0.454 A.",
+   "difficulty_base": "Easy",
+   "questions": [
+    {
+     "b": "Remember",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "The rms value I of an alternating current whose peak value is im is",
+     "a": "im/sqrt(2)",
+     "o": [
+      "im/sqrt(2)",
+      "im/2",
+      "sqrt(2) x im",
+      "2 im/pi"
+     ]
+    },
+    {
+     "b": "Remember",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "The root mean square (rms) current is also called the",
+     "a": "effective current",
+     "o": [
+      "effective current",
+      "peak current",
+      "wattless current",
+      "average current"
+     ]
+    },
+    {
+     "b": "Remember",
+     "d": "Easy",
+     "t": "fill_blank",
+     "m": 1,
+     "q": "The rms value of a sinusoidal alternating current equals its peak value multiplied by ____ (write as a decimal correct to three decimal places).",
+     "a": "0.707"
+    },
+    {
+     "b": "Remember",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "q": "V and I are the rms voltage across and rms current through a resistor R in an ac circuit, and vm and im are the corresponding peak values. Which of the following is NOT a correct expression for the average power P dissipated in the resistor?",
+     "a": "P = vm x im",
+     "o": [
+      "P = vm x im",
+      "P = I^2 R",
+      "P = V^2/R",
+      "P = I V"
+     ],
+     "rev": true
+    },
+    {
+     "b": "Understand",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "The rms value of an alternating current is the value of the",
+     "a": "equivalent direct current that would produce the same average power loss in the resistor",
+     "o": [
+      "equivalent direct current that would produce the same average power loss in the resistor",
+      "average of the current taken over one complete cycle",
+      "largest instantaneous current during a cycle",
+      "current at the instant t = 0"
+     ]
+    },
+    {
+     "b": "Understand",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "The household line voltage is quoted as 220 V. This figure is the",
+     "a": "rms value of the voltage",
+     "o": [
+      "rms value of the voltage",
+      "peak value of the voltage",
+      "average value of the voltage over a complete cycle",
+      "difference between the positive and negative peaks"
+     ]
+    },
+    {
+     "b": "Understand",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "A bulb meant for use on an ac supply is marked 100 W. This power rating refers to its",
+     "a": "average power",
+     "o": [
+      "average power",
+      "largest instantaneous power",
+      "smallest instantaneous power",
+      "power at the instant it is switched on"
+     ]
+    },
+    {
+     "b": "Understand",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "q": "The ampere for an alternating current is defined through Joule heating rather than through an effect that depends on the direction of the current. The reason is that",
+     "a": "an alternating current changes direction with the source frequency, whereas heating is independent of the direction of the current",
+     "o": [
+      "an alternating current changes direction with the source frequency, whereas heating is independent of the direction of the current",
+      "an alternating current produces no magnetic effect at any instant",
+      "Joule heating does not occur at all with direct current",
+      "an alternating current has no definite peak value"
+     ]
+    },
+    {
+     "b": "Understand",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "q": "The advantage of introducing rms values for ac quantities is that, in terms of them,",
+     "a": "the equation for power and the relation between current and voltage for a resistor take the same form as in the dc case",
+     "o": [
+      "the equation for power and the relation between current and voltage for a resistor take the same form as in the dc case",
+      "the average current over a cycle becomes non-zero",
+      "the voltage and current stop varying with time",
+      "the peak values of voltage and current become equal"
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "The peak voltage of an ac supply is 300 V. Taking sqrt(2) = 1.414, the rms voltage is closest to",
+     "a": "212 V",
+     "o": [
+      "212 V",
+      "424 V",
+      "150 V",
+      "300 V"
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Easy",
+     "t": "fill_blank",
+     "m": 1,
+     "q": "The rms value of the current in an ac circuit is 10 A. Taking sqrt(2) = 1.41, the peak current is ____ A (write as a decimal correct to one decimal place).",
+     "a": "14.1"
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "q": "A 100 ohm resistor is connected to an ac supply of rms voltage 220 V and frequency 50 Hz. The rms current in the circuit and the net power consumed over a full cycle are",
+     "a": "2.2 A and 484 W",
+     "o": [
+      "2.2 A and 484 W",
+      "2.2 A and 242 W",
+      "3.11 A and 968 W",
+      "2.2 A and zero"
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "q": "A heater is rated at 1100 W for an ac supply of rms voltage 220 V. Find the resistance of the heater and the rms current through it.",
+     "a": "R = V^2/P = (220)^2/1100 = 48400/1100 = 44 ohm. Since P = I V, I = P/V = 1100/220 = 5 A.",
+     "s": [
+      [
+       "R = V^2/P = 44 ohm",
+       1
+      ],
+      [
+       "I = P/V = 5 A (rms)",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "q": "An alternating current i = 10 sin(100 pi t) ampere (peak value 10 A, frequency 50 Hz) flows through a pure resistor of 20 ohm. The average power dissipated in the resistor is",
+     "a": "1000 W",
+     "o": [
+      "1000 W",
+      "2000 W",
+      "200 W",
+      "500 W"
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hardest",
+     "t": "long_answer",
+     "m": 3,
+     "q": "A light bulb is rated at 200 W for an ac supply of rms voltage 200 V. Taking sqrt(2) = 1.41, find (a) the resistance of the bulb, (b) the peak voltage of the source, and (c) the rms current and the peak current through the bulb.",
+     "a": "(a) R = V^2/P = (200)^2/200 = 200 ohm. (b) vm = sqrt(2) V = 1.41 x 200 = 282 V. (c) I = P/V = 200/200 = 1 A (rms), and im = sqrt(2) I = 1.41 A.",
+     "s": [
+      [
+       "R = V^2/P = 200 ohm",
+       1
+      ],
+      [
+       "vm = sqrt(2) V = 282 V",
+       1
+      ],
+      [
+       "I = P/V = 1 A and im = 1.41 A",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "multi_statement",
+     "m": 1,
+     "q": "Consider these statements about heating by alternating current. (I) A direct current of 5 A and an alternating current of rms value 5 A produce the same average heating in the same resistor. (II) An alternating current of peak value 5 A produces the same average heating in a resistor as a direct current of 5 A. Which is or are correct?",
+     "a": "Only I",
+     "o": [
+      "Only I",
+      "Only II",
+      "Both I and II",
+      "Neither I nor II"
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "q": "The voltage across a 50 ohm resistor is v = 100 sqrt(2) sin(omega t) volt, so its peak value is 100 sqrt(2) V. An ac ammeter that reads rms values is connected in series with the resistor. What does the ammeter read, and what is the average power dissipated in the resistor?",
+     "a": "The rms voltage is V = vm/sqrt(2) = 100 V. The ammeter reads I = V/R = 100/50 = 2 A. The average power is P = I V = 2 x 100 = 200 W (equivalently I^2 R = 4 x 50 = 200 W).",
+     "s": [
+      [
+       "V = vm/sqrt(2) = 100 V and I = V/R = 2 A",
+       1
+      ],
+      [
+       "P = I V = I^2 R = 200 W",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hardest",
+     "t": "long_answer",
+     "m": 3,
+     "q": "Two identical heaters A and B each have a resistance of 50 ohm. A is connected to a dc source of 100 V. B is connected to an ac source whose peak voltage is 100 V. (a) Find the average power in each heater. (b) What peak voltage should the ac source have for B to give the same average power as A? Leave this answer in terms of sqrt(2).",
+     "a": "(a) For A, P = V^2/R = (100)^2/50 = 200 W. For B the rms voltage is 100/sqrt(2) V, so P = V^2/R = (100^2/2)/50 = 100 W, half that of A. (b) B needs an rms voltage of 100 V, so its peak voltage must be 100 sqrt(2) V (about 141 V).",
+     "s": [
+      [
+       "Heater A on dc: P = V^2/R = 200 W",
+       1
+      ],
+      [
+       "Heater B: rms voltage 100/sqrt(2) V, so P = 100 W",
+       1
+      ],
+      [
+       "Required peak voltage = 100 sqrt(2) V, so that the rms voltage is 100 V",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Evaluate",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "q": "A student says: 'The household supply is quoted as 220 V, so the insulation of an appliance never has to withstand more than 220 V.' Evaluate this statement, taking sqrt(2) = 1.414.",
+     "a": "The statement is wrong. The quoted 220 V is the rms value. The voltage actually swings up to the peak value vm = sqrt(2) V = 1.414 x 220 = 311 V in each direction, so the insulation must withstand about 311 V.",
+     "s": [
+      [
+       "The quoted value is the rms value, not the largest voltage",
+       1
+      ],
+      [
+       "Peak voltage = sqrt(2) x 220 = 311 V, which the insulation must withstand",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Create",
+     "d": "Hardest",
+     "t": "long_answer",
+     "m": 3,
+     "q": "Devise a simple demonstration, using two identical bulbs, an ac source and a variable dc source, that would show a classmate what the rms value of an ac voltage means. State what is adjusted, what is observed and what is concluded.",
+     "a": "Connect one bulb to the ac source and the identical bulb to the variable dc source. Adjust the dc voltage until both bulbs glow equally brightly, that is, until the same average power is dissipated in each. The dc voltage at which this happens equals the rms (effective) value of the ac voltage, because the rms value is the equivalent dc value that produces the same average power loss in the same resistance. This value is vm/sqrt(2), about 0.707 times the peak of the ac voltage, not the peak itself.",
+     "s": [
+      [
+       "Set-up - identical bulbs, one on the ac source and one on the variable dc source",
+       1
+      ],
+      [
+       "Adjust the dc voltage until the brightness (average power) is equal",
+       1
+      ],
+      [
+       "Conclusion - that dc voltage is the rms value of the ac voltage, equal to peak/sqrt(2)",
+       1
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "code": "C12P-7.3",
+   "name": "AC voltage applied to an inductor",
+   "description": "The current driven through a pure inductor by an ac source, inductive reactance, the phase lag of the current and the zero average power.",
+   "idea": "A pure inductor limits an alternating current through its reactance, which grows with frequency, and makes the current lag the voltage by a quarter cycle without consuming any power on average.",
+   "rule": "For a pure inductor (negligible winding resistance) connected to v = vm sin(omega t), the loop rule gives v - L di/dt = 0, so i = im sin(omega t - pi/2) with im = vm/XL. The inductive reactance is XL = omega L = 2 pi f L; it has the dimension of resistance, its SI unit is the ohm, and it is directly proportional to the inductance and to the frequency. The same relation holds for rms values: I = V/XL. The current lags the voltage by pi/2, that is by one-quarter of a cycle (it reaches its maximum T/4 later). The instantaneous power is p = -(im vm/2) sin(2 omega t), whose average over a complete cycle is zero, so the average power supplied to a pure inductor is zero. Inserting an iron rod into a coil increases its inductance and hence its reactance; a bulb in series with it then glows less brightly.",
+   "example": "A 0.10 H pure inductor on a 110 V (rms), 50 Hz source has XL = 2 x 3.14 x 50 x 0.10 = 31.4 ohm and carries an rms current of 110/31.4 = 3.5 A.",
+   "difficulty_base": "Hard",
+   "questions": [
+    {
+     "b": "Remember",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "The inductive reactance of a pure inductor of self-inductance L at angular frequency omega is",
+     "a": "omega L",
+     "o": [
+      "omega L",
+      "1/(omega L)",
+      "omega/L",
+      "L/omega"
+     ]
+    },
+    {
+     "b": "Remember",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "In a purely inductive ac circuit, the current",
+     "a": "lags the voltage by pi/2",
+     "o": [
+      "lags the voltage by pi/2",
+      "leads the voltage by pi/2",
+      "is in phase with the voltage",
+      "lags the voltage by pi"
+     ]
+    },
+    {
+     "b": "Remember",
+     "d": "Easy",
+     "t": "fill_blank",
+     "m": 1,
+     "q": "The SI unit of inductive reactance is the ____ (write the name of the unit as one word, in the singular).",
+     "a": "ohm"
+    },
+    {
+     "b": "Remember",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "q": "Which of the following statements about a pure inductor connected to a sinusoidal ac source is FALSE?",
+     "a": "Its reactance decreases when the frequency of the source is increased",
+     "o": [
+      "Its reactance decreases when the frequency of the source is increased",
+      "The inductor is assumed to have negligible resistance in its windings",
+      "The current through it oscillates symmetrically about zero, with no constant component",
+      "The self-induced emf in it has a sign that follows from Lenz's law"
+     ],
+     "rev": true
+    },
+    {
+     "b": "Understand",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "The inductive reactance limits the current in a purely inductive ac circuit in the same way as",
+     "a": "the resistance limits the current in a purely resistive circuit",
+     "o": [
+      "the resistance limits the current in a purely resistive circuit",
+      "a capacitor stores charge in a dc circuit",
+      "the emf of a cell drives the current in a dc circuit",
+      "an open switch stops the current in a dc circuit"
+     ]
+    },
+    {
+     "b": "Understand",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "A pure inductor is connected to an ac source. If the frequency of the source is doubled while its voltage amplitude is kept the same, the current amplitude",
+     "a": "is halved",
+     "o": [
+      "is halved",
+      "is doubled",
+      "is unchanged",
+      "becomes four times as large"
+     ]
+    },
+    {
+     "b": "Understand",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "The average power supplied to a pure inductor over one complete cycle is zero because the instantaneous power",
+     "a": "varies as sin(2 omega t), whose average over a complete cycle is zero",
+     "o": [
+      "varies as sin(2 omega t), whose average over a complete cycle is zero",
+      "is zero at every instant of the cycle",
+      "is negative at every instant of the cycle",
+      "is positive throughout but too small to measure"
+     ]
+    },
+    {
+     "b": "Understand",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "q": "A light bulb and an open coil inductor are connected in series to an ac source. An iron rod is now pushed into the interior of the coil. The glow of the bulb",
+     "a": "decreases, because the inductance and hence the inductive reactance of the coil increase",
+     "o": [
+      "decreases, because the inductance and hence the inductive reactance of the coil increase",
+      "increases, because iron is a good conductor of electricity",
+      "is unchanged, because an inductor consumes no power",
+      "increases, because the reactance of the coil falls"
+     ]
+    },
+    {
+     "b": "Understand",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "q": "In a purely inductive ac circuit of time period T, the time interval between an instant at which the voltage is maximum and the nearest instant at which the current is maximum is",
+     "a": "T/4",
+     "o": [
+      "T/4",
+      "T/2",
+      "T",
+      "zero"
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "A pure inductor of 0.5 H is connected to an ac source of angular frequency 100 rad/s. Its inductive reactance is",
+     "a": "50 ohm",
+     "o": [
+      "50 ohm",
+      "200 ohm",
+      "0.02 ohm",
+      "0.005 ohm"
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Easy",
+     "t": "fill_blank",
+     "m": 1,
+     "q": "A pure inductor of reactance 44 ohm is connected to an ac source of rms voltage 220 V. The rms current in the circuit is ____ A (write a whole number).",
+     "a": "5"
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "q": "A pure inductor of 25 mH is connected to an ac source of rms voltage 220 V and frequency 50 Hz. Taking pi = 3.14, the inductive reactance and the rms current are closest to",
+     "a": "7.85 ohm and 28 A",
+     "o": [
+      "7.85 ohm and 28 A",
+      "1.25 ohm and 176 A",
+      "7850 ohm and 0.028 A",
+      "3.93 ohm and 56 A"
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "q": "A pure inductor of inductance (1/pi) H is connected to an ac source of peak voltage 200 V and frequency 50 Hz. Find the inductive reactance and the peak current.",
+     "a": "XL = 2 pi f L = 2 x pi x 50 x (1/pi) = 100 ohm. Peak current im = vm/XL = 200/100 = 2 A.",
+     "s": [
+      [
+       "XL = 2 pi f L = 100 ohm",
+       1
+      ],
+      [
+       "im = vm/XL = 2 A",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "q": "An ac voltage v = 100 sin(200 t) volt (peak value 100 V, angular frequency 200 rad/s, t in second) is applied to a pure inductor of 0.25 H. The current in the circuit, in ampere, is",
+     "a": "i = 2 sin(200 t - pi/2)",
+     "o": [
+      "i = 2 sin(200 t - pi/2)",
+      "i = 2 sin(200 t + pi/2)",
+      "i = 2 sin(200 t)",
+      "i = 50 sin(200 t - pi/2)"
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hardest",
+     "t": "long_answer",
+     "m": 3,
+     "q": "A pure inductor of 70 mH is connected to an ac supply of rms voltage 220 V and frequency 50 Hz. Taking pi = 22/7, find (a) the inductive reactance, (b) the rms current, and (c) the net power absorbed by the circuit over a complete cycle, with a reason.",
+     "a": "(a) XL = 2 pi f L = 2 x (22/7) x 50 x 0.07 = 22 ohm. (b) I = V/XL = 220/22 = 10 A (rms). (c) The net power absorbed over a complete cycle is zero, because in a pure inductor the current lags the voltage by pi/2 and the instantaneous power, which varies as sin(2 omega t), averages to zero.",
+     "s": [
+      [
+       "XL = 2 pi f L = 22 ohm",
+       1
+      ],
+      [
+       "I = V/XL = 10 A (rms)",
+       1
+      ],
+      [
+       "Net power over a cycle is zero - current and voltage differ in phase by pi/2",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "assertion_reason",
+     "m": 1,
+     "q": "Assertion (A): A pure inductor connected to an ac source limits the current in the circuit although its windings have negligible resistance. Reason (R): The average power supplied to a pure inductor over one complete cycle is zero. Choose the correct option.",
+     "a": "Both A and R are true, but R is not the correct explanation of A",
+     "o": [
+      "Both A and R are true, but R is not the correct explanation of A",
+      "Both A and R are true, and R is the correct explanation of A",
+      "A is true, R is false",
+      "A is false, R is true"
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "q": "An ac source of fixed rms voltage 120 V is connected to a pure inductor. At a frequency of 50 Hz the rms current is 3 A. Find the inductive reactance at 50 Hz and the rms current when the frequency is raised to 150 Hz.",
+     "a": "At 50 Hz, XL = V/I = 120/3 = 40 ohm. Inductive reactance is directly proportional to frequency, so at 150 Hz it is 3 x 40 = 120 ohm, and the rms current is 120/120 = 1 A.",
+     "s": [
+      [
+       "XL at 50 Hz = V/I = 40 ohm",
+       1
+      ],
+      [
+       "XL at 150 Hz = 120 ohm, so I = 1 A (rms)",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hardest",
+     "t": "long_answer",
+     "m": 3,
+     "q": "Starting from the expressions for the source voltage and for the current in a pure inductor connected to it, obtain the instantaneous power supplied to the inductor and hence show what the average power over a complete cycle is.",
+     "a": "With v = vm sin(omega t), the current in a pure inductor is i = im sin(omega t - pi/2) = -im cos(omega t). The instantaneous power is p = i v = -im vm cos(omega t) sin(omega t) = -(im vm/2) sin(2 omega t). Over a complete cycle the average of sin(2 omega t) is zero, so the average power supplied to the inductor is zero.",
+     "s": [
+      [
+       "v = vm sin(omega t) and i = im sin(omega t - pi/2)",
+       1
+      ],
+      [
+       "p = i v = -(im vm/2) sin(2 omega t)",
+       1
+      ],
+      [
+       "Average of sin(2 omega t) over a cycle is zero, so the average power is zero",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Evaluate",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "q": "A student claims: 'An inductor limits an alternating current just as a resistor does, so it must also consume power just as a resistor does.' Evaluate this claim for a pure inductor.",
+     "a": "The first part is right: the inductive reactance omega L limits the current amplitude in the same way as resistance does. The second part is wrong: in a pure inductor the current lags the voltage by pi/2, so the instantaneous power averages to zero over a complete cycle and no power is consumed on average.",
+     "s": [
+      [
+       "Correct part - reactance limits the current like a resistance",
+       1
+      ],
+      [
+       "Wrong part - average power over a cycle is zero because current lags voltage by pi/2",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Create",
+     "d": "Hardest",
+     "t": "long_answer",
+     "m": 3,
+     "q": "Design a purely inductive circuit in which an ac source of rms voltage 110 V and angular frequency 500 rad/s drives an rms current of exactly 2 A. Find the inductance needed, predict the rms current if the angular frequency is changed to 1000 rad/s with the same rms voltage, and state one change that would restore the current to 2 A at the new frequency.",
+     "a": "Required reactance XL = V/I = 110/2 = 55 ohm, so L = XL/omega = 55/500 = 0.11 H. At 1000 rad/s, XL = 1000 x 0.11 = 110 ohm and I = 110/110 = 1 A. To restore 2 A at 1000 rad/s the reactance must again be 55 ohm: halve the inductance to 0.055 H (or, alternatively, double the rms voltage to 220 V).",
+     "s": [
+      [
+       "XL = V/I = 55 ohm and L = XL/omega = 0.11 H",
+       1
+      ],
+      [
+       "At 1000 rad/s, XL = 110 ohm and I = 1 A (rms)",
+       1
+      ],
+      [
+       "Restore by halving L to 0.055 H (or doubling the rms voltage to 220 V)",
+       1
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "code": "C12P-7.4",
+   "name": "AC voltage applied to a capacitor",
+   "description": "The current in a purely capacitive ac circuit, capacitive reactance, the phase lead of the current and the zero average power.",
+   "idea": "A capacitor blocks a steady direct current once charged but passes an alternating current by charging and discharging every half cycle, with the current a quarter cycle ahead of the voltage.",
+   "rule": "In a dc circuit a capacitor carries current only for the short time needed to charge it; when fully charged the current is zero. On an ac source v = vm sin(omega t) the capacitor is alternately charged and discharged, so it limits but does not prevent the flow of charge. With q = C v and i = dq/dt, i = omega C vm cos(omega t) = im sin(omega t + pi/2), where im = vm/XC. The capacitive reactance is XC = 1/(omega C) = 1/(2 pi f C); it has the dimension of resistance, its SI unit is the ohm, and it is inversely proportional to the frequency and to the capacitance. The same relation holds for rms values: I = V/XC. The current leads the voltage by pi/2, reaching its maximum one-quarter of a period earlier. The instantaneous power is p = (im vm/2) sin(2 omega t), which averages to zero over a complete cycle. A lamp in series with a capacitor does not glow on dc; on ac it glows, and less brightly if C is reduced.",
+   "example": "A 15.0 micro-F capacitor on a 220 V (rms), 50 Hz source has XC = 1/(2 pi x 50 x 15.0 x 10^-6) = 212 ohm and carries an rms current of 220/212 = 1.04 A.",
+   "difficulty_base": "Hard",
+   "questions": [
+    {
+     "b": "Remember",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "The capacitive reactance of a capacitor of capacitance C at angular frequency omega is",
+     "a": "1/(omega C)",
+     "o": [
+      "1/(omega C)",
+      "omega C",
+      "omega/C",
+      "C/omega"
+     ]
+    },
+    {
+     "b": "Remember",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "In a purely capacitive ac circuit, the current",
+     "a": "leads the voltage by pi/2",
+     "o": [
+      "leads the voltage by pi/2",
+      "lags the voltage by pi/2",
+      "is in phase with the voltage",
+      "leads the voltage by pi"
+     ]
+    },
+    {
+     "b": "Remember",
+     "d": "Easy",
+     "t": "fill_blank",
+     "m": 1,
+     "q": "When a capacitor connected to a dc source has become fully charged, the current in the circuit is ____ A (write a whole number).",
+     "a": "0"
+    },
+    {
+     "b": "Remember",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "q": "Which of the following statements about a capacitor connected to an ac source is NOT correct?",
+     "a": "It completely prevents the flow of charge in the circuit",
+     "o": [
+      "It completely prevents the flow of charge in the circuit",
+      "It is alternately charged and discharged as the current reverses each half cycle",
+      "Its reactance has the same dimension as resistance",
+      "The instantaneous voltage across it equals q/C, where q is the charge on it at that instant"
+     ],
+     "rev": true
+    },
+    {
+     "b": "Understand",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "The capacitive reactance of a capacitor is",
+     "a": "inversely proportional to both the frequency and the capacitance",
+     "o": [
+      "inversely proportional to both the frequency and the capacitance",
+      "directly proportional to both the frequency and the capacitance",
+      "directly proportional to the frequency and inversely proportional to the capacitance",
+      "independent of the frequency of the source"
+     ]
+    },
+    {
+     "b": "Understand",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "A lamp is connected in series with a capacitor to a dc source. After a short time the lamp",
+     "a": "does not glow, because no current flows once the capacitor is charged",
+     "o": [
+      "does not glow, because no current flows once the capacitor is charged",
+      "glows steadily, because the capacitor acts like a connecting wire",
+      "glows more and more brightly as the capacitor charges",
+      "flickers on and off fifty times each second"
+     ]
+    },
+    {
+     "b": "Understand",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "The average power supplied to a pure capacitor over one complete cycle of an ac source (voltage amplitude vm, current amplitude im) is",
+     "a": "zero",
+     "o": [
+      "zero",
+      "(1/2) vm im",
+      "vm im",
+      "(1/4) vm im"
+     ]
+    },
+    {
+     "b": "Understand",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "q": "A lamp connected in series with a capacitor glows when the combination is connected to an ac source. If the capacitance is now reduced, the lamp",
+     "a": "shines less brightly, because the capacitive reactance increases",
+     "o": [
+      "shines less brightly, because the capacitive reactance increases",
+      "shines more brightly, because the capacitive reactance decreases",
+      "shines exactly as before, because a capacitor consumes no power",
+      "goes out completely, because a smaller capacitor cannot pass ac"
+     ]
+    },
+    {
+     "b": "Understand",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "q": "For a capacitor connected to an ac source, the current is the rate of change of the charge q = C v on the capacitor. Hence the current has its peak value at the instants when the voltage across the capacitor is",
+     "a": "passing through zero",
+     "o": [
+      "passing through zero",
+      "at its positive maximum",
+      "at its negative maximum",
+      "at half its maximum value"
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "A 50 micro-F capacitor is connected to an ac source of angular frequency 200 rad/s. Its capacitive reactance is",
+     "a": "100 ohm",
+     "o": [
+      "100 ohm",
+      "0.01 ohm",
+      "0.0001 ohm",
+      "4 ohm"
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Easy",
+     "t": "fill_blank",
+     "m": 1,
+     "q": "A capacitor of reactance 55 ohm is connected to an ac source of rms voltage 110 V. The rms current in the circuit is ____ A (write a whole number).",
+     "a": "2"
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "q": "A capacitor has a reactance of 200 ohm when connected to an ac source of frequency 50 Hz. Its reactance when the frequency of the source is 100 Hz is",
+     "a": "100 ohm",
+     "o": [
+      "100 ohm",
+      "400 ohm",
+      "200 ohm",
+      "50 ohm"
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "q": "A capacitor of capacitance (100/pi) micro-F is connected to an ac source of rms voltage 220 V and frequency 50 Hz. Find the capacitive reactance and the rms current.",
+     "a": "XC = 1/(2 pi f C) = 1/(2 x pi x 50 x (100/pi) x 10^-6) = 1/(10^-2) = 100 ohm. I = V/XC = 220/100 = 2.2 A (rms).",
+     "s": [
+      [
+       "XC = 1/(2 pi f C) = 100 ohm",
+       1
+      ],
+      [
+       "I = V/XC = 2.2 A (rms)",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "q": "An ac voltage v = 200 sin(500 t) volt (peak value 200 V, angular frequency 500 rad/s, t in second) is applied to a 10 micro-F capacitor. The current in the circuit, in ampere, is",
+     "a": "i = sin(500 t + pi/2)",
+     "o": [
+      "i = sin(500 t + pi/2)",
+      "i = sin(500 t - pi/2)",
+      "i = sin(500 t)",
+      "i = 200 sin(500 t + pi/2)"
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hardest",
+     "t": "long_answer",
+     "m": 3,
+     "q": "A 20 micro-F capacitor is connected to an ac source of rms voltage 100 V and angular frequency 500 rad/s. Taking sqrt(2) = 1.41, find (a) the capacitive reactance, (b) the rms current and the peak current, and (c) the new reactance and rms current if the angular frequency is doubled to 1000 rad/s at the same rms voltage.",
+     "a": "(a) XC = 1/(omega C) = 1/(500 x 20 x 10^-6) = 100 ohm. (b) I = V/XC = 100/100 = 1 A (rms); im = sqrt(2) I = 1.41 A. (c) At 1000 rad/s, XC = 1/(1000 x 20 x 10^-6) = 50 ohm, so the reactance is halved and the rms current doubles to 100/50 = 2 A.",
+     "s": [
+      [
+       "XC = 1/(omega C) = 100 ohm",
+       1
+      ],
+      [
+       "I = 1 A (rms) and im = 1.41 A",
+       1
+      ],
+      [
+       "At 1000 rad/s, XC = 50 ohm and I = 2 A (rms)",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "multi_statement",
+     "m": 1,
+     "q": "Consider these statements about a pure capacitor connected to a sinusoidal ac source. (I) The current reaches its maximum value one-quarter of a period later than the voltage does. (II) The instantaneous power supplied to the capacitor varies with time at twice the frequency of the source. Which is or are correct?",
+     "a": "Only II",
+     "o": [
+      "Only II",
+      "Only I",
+      "Both I and II",
+      "Neither I nor II"
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "q": "An ac source of rms voltage 100 V and angular frequency 1000 rad/s drives an rms current of 0.5 A through a pure capacitor. Find the capacitive reactance and the capacitance in micro-F.",
+     "a": "XC = V/I = 100/0.5 = 200 ohm. Since XC = 1/(omega C), C = 1/(omega XC) = 1/(1000 x 200) = 5 x 10^-6 F = 5 micro-F.",
+     "s": [
+      [
+       "XC = V/I = 200 ohm",
+       1
+      ],
+      [
+       "C = 1/(omega XC) = 5 micro-F",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hardest",
+     "t": "long_answer",
+     "m": 3,
+     "q": "A pure inductor and a pure capacitor are connected, one at a time, to the same ac source of fixed voltage amplitude whose frequency is gradually increased from a very low value. Analyse how the current amplitude changes in each case, and say what each element does to the current as the frequency tends to zero (steady dc).",
+     "a": "For the inductor the reactance omega L increases in proportion to the frequency, so the current amplitude vm/(omega L) decreases as the frequency rises. For the capacitor the reactance 1/(omega C) decreases as the frequency rises, so the current amplitude vm omega C increases. As the frequency tends to zero the capacitive reactance becomes very large, so the capacitor passes no steady current (it simply charges and the current falls to zero), whereas the inductive reactance tends to zero, so a pure inductor offers no opposition to a steady current.",
+     "s": [
+      [
+       "Inductor - reactance omega L rises with frequency, so the current amplitude falls",
+       1
+      ],
+      [
+       "Capacitor - reactance 1/(omega C) falls with frequency, so the current amplitude rises",
+       1
+      ],
+      [
+       "As frequency tends to zero the capacitor blocks the steady current while the pure inductor offers no reactance",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Evaluate",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "q": "A student says: 'No charge can cross the gap between the plates of a capacitor, so a capacitor stops an alternating current just as it stops a steady direct current.' Evaluate this statement.",
+     "a": "The statement is wrong for ac. With a dc source the current stops once the capacitor is fully charged. With an ac source the capacitor is alternately charged and discharged as the current reverses each half cycle, so charge keeps flowing in the circuit; the capacitor only limits the current through its reactance 1/(omega C).",
+     "s": [
+      [
+       "dc - current falls to zero once the capacitor is charged",
+       1
+      ],
+      [
+       "ac - the capacitor charges and discharges every half cycle, so a current flows, limited by the reactance 1/(omega C)",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Create",
+     "d": "Hardest",
+     "t": "long_answer",
+     "m": 3,
+     "q": "Design a purely capacitive circuit in which an ac source of rms voltage 100 V and angular frequency 400 rad/s drives an rms current of exactly 0.5 A. Find the reactance and the capacitance needed (in micro-F), and state what capacitance would double the current at the same voltage and frequency.",
+     "a": "Required reactance XC = V/I = 100/0.5 = 200 ohm. C = 1/(omega XC) = 1/(400 x 200) = 1.25 x 10^-5 F = 12.5 micro-F. To double the current to 1 A the reactance must be halved to 100 ohm, which needs double the capacitance: 25 micro-F.",
+     "s": [
+      [
+       "XC = V/I = 200 ohm",
+       1
+      ],
+      [
+       "C = 1/(omega XC) = 12.5 micro-F",
+       1
+      ],
+      [
+       "Doubling the current needs half the reactance, so C = 25 micro-F",
+       1
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "code": "C12P-7.5",
+   "name": "Series LCR circuit: impedance and phase angle",
+   "description": "The phasor-diagram solution of a series LCR circuit: adding the voltages across R, L and C with their phases to obtain the impedance and the phase angle between source voltage and current.",
+   "idea": "In a series LCR circuit the same current flows through all three elements, and their voltages must be added as phasors, not as plain numbers.",
+   "rule": "In a series LCR circuit driven by v = vm sin(omega t) the current i = im sin(omega t + phi) is the same in R, L and C at every instant. The voltage across R is in phase with the current, the voltage across L is pi/2 ahead of the current and the voltage across C is pi/2 behind it, with amplitudes vRm = im R, vLm = im XL, vCm = im XC. The phasors VL and VC lie along the same line in opposite directions, so vm^2 = vRm^2 + (vCm - vLm)^2. Hence im = vm/Z with impedance Z = sqrt(R^2 + (XC - XL)^2), and the same holds for rms values, I = V/Z. The phase angle is given by tan phi = (XC - XL)/R; the impedance diagram is a right-angled triangle with sides R and (XC - XL) and hypotenuse Z. If XC > XL, phi is positive, the circuit is predominantly capacitive and the current leads the source voltage; if XC < XL, phi is negative, the circuit is predominantly inductive and the current lags. Rms voltages across elements cannot be added algebraically: in an RC circuit V = sqrt(VR^2 + VC^2). The phasor method gives only the steady-state solution; a transient solution also exists and dies out after a sufficiently long time.",
+   "example": "With R = 3 ohm, XL = 8 ohm and XC = 4 ohm, Z = sqrt(3^2 + (8 - 4)^2) = 5 ohm and tan phi = (4 - 8)/3, so phi is negative and the current lags the source voltage.",
+   "difficulty_base": "Hard",
+   "questions": [
+    {
+     "b": "Remember",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "The impedance Z of a series LCR circuit with resistance R, inductive reactance XL and capacitive reactance XC is",
+     "a": "sqrt(R^2 + (XC - XL)^2)",
+     "o": [
+      "sqrt(R^2 + (XC - XL)^2)",
+      "R + XC + XL",
+      "sqrt(R^2 + (XC + XL)^2)",
+      "R + XC - XL"
+     ]
+    },
+    {
+     "b": "Remember",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "In a series LCR circuit connected to an ac source, the quantity that is the same in the resistor, the inductor and the capacitor at every instant is the",
+     "a": "current",
+     "o": [
+      "current",
+      "voltage",
+      "power dissipated",
+      "reactance"
+     ]
+    },
+    {
+     "b": "Remember",
+     "d": "Easy",
+     "t": "fill_blank",
+     "m": 1,
+     "q": "The impedance diagram of a series LCR circuit is a right-angled triangle with sides R and (XC - XL). Its hypotenuse represents the ____ of the circuit (write one word).",
+     "a": "impedance"
+    },
+    {
+     "b": "Remember",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "q": "Which of the following is NOT true of the phasor-diagram solution of a series LCR circuit?",
+     "a": "It gives the general solution, including the transient part",
+     "o": [
+      "It gives the general solution, including the transient part",
+      "It gives the steady-state solution",
+      "It says nothing about the initial condition",
+      "In it the source voltage phasor is the hypotenuse of a right-angled triangle whose sides are VR and (VC + VL)"
+     ],
+     "rev": true
+    },
+    {
+     "b": "Understand",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "In a series LCR circuit in which XC is greater than XL, the circuit is predominantly",
+     "a": "capacitive, and the current leads the source voltage",
+     "o": [
+      "capacitive, and the current leads the source voltage",
+      "capacitive, and the current lags the source voltage",
+      "inductive, and the current leads the source voltage",
+      "inductive, and the current lags the source voltage"
+     ]
+    },
+    {
+     "b": "Understand",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "In the phasor diagram of a series LCR circuit, the phasor of the voltage across the inductor and the phasor of the voltage across the capacitor are",
+     "a": "along the same line, in opposite directions",
+     "o": [
+      "along the same line, in opposite directions",
+      "along the same line, in the same direction",
+      "at right angles to each other",
+      "both parallel to the current phasor"
+     ]
+    },
+    {
+     "b": "Understand",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "In a series RC circuit connected to an ac source, the rms voltages across R and across C cannot simply be added to get the rms source voltage because",
+     "a": "the two voltages differ in phase by ninety degrees",
+     "o": [
+      "the two voltages differ in phase by ninety degrees",
+      "the capacitor absorbs part of the source voltage permanently",
+      "Kirchhoff's loop rule does not hold for alternating currents",
+      "the two voltages have different frequencies"
+     ]
+    },
+    {
+     "b": "Understand",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "q": "The transient solution for the current in a series LCR circuit connected to an ac source",
+     "a": "dies out after a sufficiently long time, leaving the steady-state solution",
+     "o": [
+      "dies out after a sufficiently long time, leaving the steady-state solution",
+      "grows steadily as long as the source is connected",
+      "is identical to the steady-state solution at all times",
+      "exists only when the source voltage is at its peak"
+     ]
+    },
+    {
+     "b": "Understand",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "q": "In a series LCR circuit connected to an ac source, the voltage across the resistor is, at every instant,",
+     "a": "in phase with the current",
+     "o": [
+      "in phase with the current",
+      "ahead of the current by pi/2",
+      "behind the current by pi/2",
+      "opposite in phase to the current"
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "A series LCR circuit has R = 30 ohm, XL = 60 ohm and XC = 20 ohm at the frequency of the source. Its impedance is",
+     "a": "50 ohm",
+     "o": [
+      "50 ohm",
+      "110 ohm",
+      "70 ohm",
+      "85.4 ohm"
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Easy",
+     "t": "fill_blank",
+     "m": 1,
+     "q": "A series LCR circuit has R = 6 ohm, XL = 12 ohm and XC = 4 ohm at the frequency of the source. Its impedance is ____ ohm (write a whole number).",
+     "a": "10"
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "q": "A resistor of 40 ohm and a pure inductor of reactance 30 ohm are connected in series to an ac source of rms voltage 100 V. The rms current, the rms voltage across the resistor and the rms voltage across the inductor are",
+     "a": "2 A, 80 V and 60 V",
+     "o": [
+      "2 A, 80 V and 60 V",
+      "1.43 A, 57 V and 43 V",
+      "2 A, 60 V and 80 V",
+      "2.5 A, 100 V and 75 V"
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "q": "A sinusoidal voltage of peak value 500 V and angular frequency 400 rad/s is applied to a series LCR circuit with R = 200 ohm, L = 0.5 H and C = 50 micro-F. Find the impedance of the circuit and the peak current.",
+     "a": "XL = omega L = 400 x 0.5 = 200 ohm; XC = 1/(omega C) = 1/(400 x 50 x 10^-6) = 50 ohm. Z = sqrt(R^2 + (XC - XL)^2) = sqrt(200^2 + 150^2) = 250 ohm. Peak current im = vm/Z = 500/250 = 2 A.",
+     "s": [
+      [
+       "XL = 200 ohm and XC = 50 ohm",
+       1
+      ],
+      [
+       "Z = 250 ohm and im = vm/Z = 2 A",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "q": "A series LCR circuit has R = 10 ohm, XL = 30 ohm and XC = 20 ohm at the frequency of the source. The current in the circuit",
+     "a": "lags the source voltage by 45 degrees",
+     "o": [
+      "lags the source voltage by 45 degrees",
+      "leads the source voltage by 45 degrees",
+      "lags the source voltage by 90 degrees",
+      "is in phase with the source voltage"
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hardest",
+     "t": "long_answer",
+     "m": 3,
+     "q": "A sinusoidal voltage of peak value 250 V and angular frequency 500 rad/s is applied to a series LCR circuit in which R = 80 ohm, L = 0.2 H and C = 50 micro-F. Find (a) the inductive and capacitive reactances, (b) the impedance and the peak current, and (c) the value of tan phi, where tan phi = (XC - XL)/R, stating whether the current leads or lags the source voltage.",
+     "a": "(a) XL = omega L = 500 x 0.2 = 100 ohm; XC = 1/(omega C) = 1/(500 x 50 x 10^-6) = 40 ohm. (b) Z = sqrt(R^2 + (XC - XL)^2) = sqrt(80^2 + 60^2) = 100 ohm; im = vm/Z = 250/100 = 2.5 A. (c) tan phi = (40 - 100)/80 = -0.75. Since phi is negative (XC < XL) the circuit is predominantly inductive and the current lags the source voltage.",
+     "s": [
+      [
+       "XL = 100 ohm and XC = 40 ohm",
+       1
+      ],
+      [
+       "Z = 100 ohm and im = 2.5 A",
+       1
+      ],
+      [
+       "tan phi = -0.75, so the current lags the source voltage",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "assertion_reason",
+     "m": 1,
+     "q": "Assertion (A): In a series RC circuit connected to an ac source, the sum of the rms voltage across R and the rms voltage across C can be greater than the rms voltage of the source. Reason (R): The voltages across R and C in a series RC circuit are in phase with each other, so they add like ordinary numbers. Choose the correct option.",
+     "a": "A is true, R is false",
+     "o": [
+      "A is true, R is false",
+      "Both A and R are true, and R is the correct explanation of A",
+      "Both A and R are true, but R is not the correct explanation of A",
+      "A is false, R is true"
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "q": "In a series LCR circuit connected to an ac source, voltmeters reading rms values show 40 V across the resistor, 90 V across the inductor and 60 V across the capacitor. Find the rms voltage of the source and state whether the current leads or lags the source voltage.",
+     "a": "The voltages across L and C are opposite in phase, so they combine to 90 - 60 = 30 V, at right angles to the voltage across R. Source voltage V = sqrt(40^2 + 30^2) = 50 V (rms). Since the inductor voltage exceeds the capacitor voltage (XL > XC), the circuit is predominantly inductive and the current lags the source voltage.",
+     "s": [
+      [
+       "V = sqrt(VR^2 + (VL - VC)^2) = 50 V (rms)",
+       1
+      ],
+      [
+       "VL > VC means XL > XC, so the current lags the source voltage",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hardest",
+     "t": "long_answer",
+     "m": 3,
+     "q": "A resistor of 60 ohm and a capacitor of reactance 80 ohm are connected in series to an ac source of rms voltage 200 V. (a) Find the rms current. (b) Find the rms voltages across the resistor and across the capacitor. (c) Their algebraic sum is not 200 V; analyse why, and show how the two voltages are consistent with the source voltage.",
+     "a": "(a) Z = sqrt(R^2 + XC^2) = sqrt(60^2 + 80^2) = 100 ohm, so I = V/Z = 200/100 = 2 A. (b) VR = I R = 2 x 60 = 120 V; VC = I XC = 2 x 80 = 160 V. (c) Their algebraic sum is 280 V, more than 200 V, but the two voltages are out of phase by ninety degrees and cannot be added like ordinary numbers. Adding them with the Pythagorean theorem gives sqrt(120^2 + 160^2) = 200 V, equal to the source voltage.",
+     "s": [
+      [
+       "Z = 100 ohm and I = 2 A (rms)",
+       1
+      ],
+      [
+       "VR = 120 V and VC = 160 V",
+       1
+      ],
+      [
+       "Voltages are ninety degrees out of phase, so sqrt(VR^2 + VC^2) = 200 V equals the source voltage",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Evaluate",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "q": "A student finds the impedance of a series LCR circuit with R = 12 ohm, XL = 25 ohm and XC = 9 ohm as 12 + 25 + 9 = 46 ohm. Evaluate this working and give the correct impedance.",
+     "a": "The working is wrong. The voltages across L and C are opposite in phase, so the reactances subtract, and their difference is at right angles (in phase) to the resistive part, so it must be combined with R by the Pythagorean rule. Z = sqrt(R^2 + (XC - XL)^2) = sqrt(12^2 + 16^2) = 20 ohm.",
+     "s": [
+      [
+       "Error - reactances of L and C subtract and combine with R at right angles, not by simple addition",
+       1
+      ],
+      [
+       "Z = sqrt(12^2 + 16^2) = 20 ohm",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Create",
+     "d": "Hardest",
+     "t": "long_answer",
+     "m": 3,
+     "q": "Design a series LCR circuit with R = 30 ohm, by choosing values of XL and XC at the source frequency, such that its impedance is 50 ohm and the current leads the source voltage. For your circuit connected to a source of rms voltage 100 V, find the rms current and the rms voltage across the resistor.",
+     "a": "Z^2 = R^2 + (XC - XL)^2 requires (XC - XL)^2 = 50^2 - 30^2 = 1600, so XC - XL = 40 ohm, with XC greater than XL so that the circuit is predominantly capacitive and the current leads. For example XC = 60 ohm and XL = 20 ohm. Then I = V/Z = 100/50 = 2 A (rms) and VR = I R = 2 x 30 = 60 V (rms).",
+     "s": [
+      [
+       "XC - XL must equal 40 ohm in magnitude",
+       1
+      ],
+      [
+       "A valid choice with XC > XL (e.g. XC = 60 ohm, XL = 20 ohm) so the current leads",
+       1
+      ],
+      [
+       "I = V/Z = 2 A and VR = I R = 60 V (rms)",
+       1
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "code": "C12P-7.6",
+   "name": "Resonance in a series LCR circuit",
+   "description": "The resonant frequency of a series LCR circuit, the minimum impedance and maximum current at resonance, and applications such as radio tuning and metal detectors.",
+   "idea": "At one particular frequency the inductive and capacitive reactances cancel, the impedance drops to R alone and the current is as large as it can be.",
+   "rule": "As omega is varied, at omega0 the reactances are equal, XC = XL, i.e. 1/(omega0 C) = omega0 L, so the resonant angular frequency is omega0 = 1/sqrt(LC) and the resonant frequency is omega0/(2 pi). At resonance the impedance is minimum, Z = R, the current amplitude is maximum, im = vm/R, and the current is in phase with the source voltage. The voltages across L and C are equal and opposite in phase and cancel, so the total source voltage appears across R. Resonance needs both L and C: it cannot occur in an RL or an RC circuit. For the same L and C a smaller R gives a larger current at resonance, at the same resonant frequency. In tuning a radio the capacitance of the tuning circuit is varied until its resonant frequency nearly equals the frequency of the wanted station. A metal detector doorway is a coil and capacitor tuned to resonance; metal changes the impedance and hence the current, which triggers the alarm.",
+   "example": "With L = 0.5 H and C = 20 micro-F, omega0 = 1/sqrt(0.5 x 20 x 10^-6) = 1/sqrt(10^-5) = 316 rad/s; at this frequency XL = XC = 158 ohm, so Z = R and the current is as large as it can be.",
+   "difficulty_base": "Hard",
+   "questions": [
+    {
+     "b": "Remember",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "The resonant angular frequency of a series LCR circuit is",
+     "a": "1/sqrt(LC)",
+     "o": [
+      "1/sqrt(LC)",
+      "sqrt(LC)",
+      "1/(LC)",
+      "sqrt(L/C)"
+     ]
+    },
+    {
+     "b": "Remember",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "At resonance, the impedance of a series LCR circuit is equal to",
+     "a": "R",
+     "o": [
+      "R",
+      "zero",
+      "XL + XC",
+      "sqrt(2) x R"
+     ]
+    },
+    {
+     "b": "Remember",
+     "d": "Easy",
+     "t": "fill_blank",
+     "m": 1,
+     "q": "At resonance in a series LCR circuit, the phase angle between the source voltage and the current is ____ degrees (write a whole number).",
+     "a": "0"
+    },
+    {
+     "b": "Remember",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "q": "In which of the following circuits can resonance NOT occur?",
+     "a": "A series circuit containing only a resistor and a capacitor",
+     "o": [
+      "A series circuit containing only a resistor and a capacitor",
+      "A series circuit containing a resistor, an inductor and a capacitor",
+      "The tuning circuit of a radio, containing a coil and a variable capacitor",
+      "A metal-detector doorway, containing a coil connected to a capacitor"
+     ],
+     "rev": true
+    },
+    {
+     "b": "Understand",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "The current amplitude in a series LCR circuit is largest at the resonant frequency because, at that frequency,",
+     "a": "the impedance has its minimum value",
+     "o": [
+      "the impedance has its minimum value",
+      "the resistance of the circuit becomes zero",
+      "both reactances become zero",
+      "the voltage amplitude of the source increases"
+     ]
+    },
+    {
+     "b": "Understand",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "To hear one particular station, the capacitance in the tuning circuit of a radio is varied until",
+     "a": "the resonant frequency of the circuit is nearly equal to the frequency of the signal from that station",
+     "o": [
+      "the resonant frequency of the circuit is nearly equal to the frequency of the signal from that station",
+      "the impedance of the circuit is as large as possible at the frequency of that station",
+      "the resistance of the circuit falls to zero",
+      "the capacitance is numerically equal to the inductance"
+     ]
+    },
+    {
+     "b": "Understand",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "At resonance in a series LCR circuit, the voltage across the inductor and the voltage across the capacitor",
+     "a": "are equal in magnitude and opposite in phase, so they cancel each other",
+     "o": [
+      "are equal in magnitude and opposite in phase, so they cancel each other",
+      "are both zero at every instant",
+      "are in phase and add up to the source voltage",
+      "are each exactly half of the source voltage"
+     ]
+    },
+    {
+     "b": "Understand",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "q": "Resonance is shown by a circuit only if both L and C are present, because only then",
+     "a": "can the voltages across L and C cancel each other",
+     "o": [
+      "can the voltages across L and C cancel each other",
+      "can the resistance of the circuit be made zero",
+      "can any current flow in the circuit at all",
+      "does the frequency of the source stay constant"
+     ]
+    },
+    {
+     "b": "Understand",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "q": "Two series LCR circuits have the same L and the same C but resistances of 100 ohm and 200 ohm, and are driven by sources of the same voltage amplitude. Compared with the 200 ohm circuit, the 100 ohm circuit has",
+     "a": "the same resonant frequency and twice the current amplitude at resonance",
+     "o": [
+      "the same resonant frequency and twice the current amplitude at resonance",
+      "half the resonant frequency and the same current amplitude at resonance",
+      "the same resonant frequency and half the current amplitude at resonance",
+      "twice the resonant frequency and twice the current amplitude at resonance"
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "A series LCR circuit has L = 0.1 H and C = 10 micro-F. Its resonant angular frequency is",
+     "a": "1000 rad/s",
+     "o": [
+      "1000 rad/s",
+      "1000000 rad/s",
+      "0.001 rad/s",
+      "100 rad/s"
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Easy",
+     "t": "fill_blank",
+     "m": 1,
+     "q": "A series LCR circuit with R = 20 ohm is connected to an ac source of rms voltage 200 V whose frequency equals the resonant frequency of the circuit. The rms current is ____ A (write a whole number).",
+     "a": "10"
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "q": "A series LCR circuit with R = 25 ohm, L = 1.5 H and C = 35 micro-F is connected to a variable-frequency ac supply of rms voltage 200 V. When the frequency of the supply equals the resonant frequency of the circuit, the average power transferred to the circuit in one complete cycle is",
+     "a": "1600 W",
+     "o": [
+      "1600 W",
+      "800 W",
+      "8 W",
+      "3200 W"
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "q": "A series LCR circuit with L = 5.0 H, C = 80 micro-F and R = 40 ohm is connected to a variable-frequency ac source of rms voltage 230 V. Find the angular frequency of the source that drives the circuit in resonance, and the rms current at that frequency.",
+     "a": "omega0 = 1/sqrt(LC) = 1/sqrt(5.0 x 80 x 10^-6) = 1/sqrt(4 x 10^-4) = 1/0.02 = 50 rad/s. At resonance Z = R = 40 ohm, so I = V/R = 230/40 = 5.75 A (rms).",
+     "s": [
+      [
+       "omega0 = 1/sqrt(LC) = 50 rad/s",
+       1
+      ],
+      [
+       "At resonance Z = R, so I = 230/40 = 5.75 A (rms)",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "q": "A series LCR circuit contains an inductor of 0.2 H. The capacitance needed for the circuit to be in resonance with a source of angular frequency 500 rad/s is",
+     "a": "20 micro-F",
+     "o": [
+      "20 micro-F",
+      "0.01 F",
+      "4 micro-F",
+      "0.8 micro-F"
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hardest",
+     "t": "long_answer",
+     "m": 3,
+     "q": "A series LCR circuit with L = 2 H, C = 50 micro-F and R = 50 ohm is connected to a variable-frequency ac source of rms voltage 200 V. (a) Find the resonant angular frequency. (b) Find the impedance and the rms current at resonance. (c) Find the rms potential drops across R, L and C at resonance and show that the potential drop across the LC combination is zero.",
+     "a": "(a) omega0 = 1/sqrt(LC) = 1/sqrt(2 x 50 x 10^-6) = 1/sqrt(10^-4) = 100 rad/s. (b) At resonance Z = R = 50 ohm and I = V/R = 200/50 = 4 A (rms). (c) VR = I R = 200 V. XL = omega0 L = 100 x 2 = 200 ohm and XC = 1/(omega0 C) = 200 ohm, so VL = VC = 4 x 200 = 800 V. These two are equal and opposite in phase, so the drop across the LC combination is 800 - 800 = 0, and the whole source voltage appears across R.",
+     "s": [
+      [
+       "omega0 = 1/sqrt(LC) = 100 rad/s",
+       1
+      ],
+      [
+       "Z = R = 50 ohm and I = 4 A (rms)",
+       1
+      ],
+      [
+       "VR = 200 V, VL = VC = 800 V, opposite in phase, so the LC combination has zero drop",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "multi_statement",
+     "m": 1,
+     "q": "Consider these statements about a series LCR circuit driven at its resonant frequency. (I) The rms voltage across the inductor can be larger than the rms voltage of the source. (II) The inductive reactance is equal to the capacitive reactance. Which is or are correct?",
+     "a": "Both I and II",
+     "o": [
+      "Both I and II",
+      "Only I",
+      "Only II",
+      "Neither I nor II"
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "q": "At a source angular frequency of 2000 rad/s, a series LCR circuit has an inductive reactance of 80 ohm and a capacitive reactance of 20 ohm. Find the resonant angular frequency of the circuit.",
+     "a": "L = XL/omega = 80/2000 = 0.04 H and C = 1/(omega XC) = 1/(2000 x 20) = 2.5 x 10^-5 F. Then LC = 0.04 x 2.5 x 10^-5 = 10^-6 s^2, so omega0 = 1/sqrt(LC) = 1000 rad/s. (Equivalently XL/XC = omega^2 LC = 4, so omega0 = omega/2.)",
+     "s": [
+      [
+       "L = 0.04 H and C = 2.5 x 10^-5 F (or XL/XC = omega^2 LC = 4)",
+       1
+      ],
+      [
+       "omega0 = 1/sqrt(LC) = 1000 rad/s",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hardest",
+     "t": "long_answer",
+     "m": 3,
+     "q": "The frequency of the ac source connected to a series LCR circuit is slowly raised from well below the resonant frequency to well above it, the voltage amplitude being kept fixed. Analyse how the reactances, the impedance, the current amplitude and the phase of the current relative to the source voltage change through this range.",
+     "a": "Below resonance XC = 1/(omega C) is larger than XL = omega L, so the circuit is predominantly capacitive and the current leads the source voltage; as the frequency rises XC falls and XL rises, the impedance decreases and the current amplitude grows. At the resonant frequency XC = XL, the impedance is minimum (Z = R), the current amplitude is maximum (vm/R) and the current is in phase with the voltage. Above resonance XL exceeds XC, the circuit is predominantly inductive and the current lags; the impedance increases again and the current amplitude falls.",
+     "s": [
+      [
+       "Below resonance XC > XL - current leads, and it grows as the impedance falls",
+       1
+      ],
+      [
+       "At resonance XC = XL - Z = R is minimum, the current amplitude vm/R is maximum, in phase",
+       1
+      ],
+      [
+       "Above resonance XL > XC - current lags, impedance rises and the current falls",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Evaluate",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "q": "A student claims that a series circuit containing only a resistor and an inductor can be brought to resonance simply by choosing the right frequency of the source. Evaluate this claim.",
+     "a": "The claim is wrong. Resonance needs the voltages across L and C to cancel each other, which requires both an inductor and a capacitor. With only R and L there is nothing to cancel the inductive reactance at any frequency, so the impedance is always greater than R and no resonance is possible.",
+     "s": [
+      [
+       "Judgement - no resonance is possible in an RL circuit",
+       1
+      ],
+      [
+       "Reason - resonance needs the L and C voltages to cancel; with L alone the reactance is never cancelled",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Create",
+     "d": "Hardest",
+     "t": "long_answer",
+     "m": 3,
+     "q": "Design a tuning circuit using a coil of inductance 1.0 mH in series with a capacitor and a 50 ohm resistor so that it resonates at an angular frequency of 1.0 x 10^6 rad/s. Find the capacitance needed (in nF), the peak current at resonance for a signal of peak voltage 10 V, and the capacitance needed to retune the circuit to 2.0 x 10^6 rad/s.",
+     "a": "At resonance omega0 = 1/sqrt(LC), so C = 1/(omega0^2 L) = 1/((10^6)^2 x 10^-3) = 10^-9 F = 1 nF. At resonance Z = R, so the peak current is im = vm/R = 10/50 = 0.2 A. For 2.0 x 10^6 rad/s, C = 1/((2 x 10^6)^2 x 10^-3) = 2.5 x 10^-10 F = 0.25 nF, one quarter of the first value.",
+     "s": [
+      [
+       "C = 1/(omega0^2 L) = 1 nF",
+       1
+      ],
+      [
+       "Peak current at resonance = vm/R = 0.2 A",
+       1
+      ],
+      [
+       "For 2.0 x 10^6 rad/s, C = 0.25 nF",
+       1
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "code": "C12P-7.7",
+   "name": "Power in an ac circuit and the power factor",
+   "description": "The average power in a series LCR circuit, the power factor cos phi, wattless current, and why a low power factor wastes power in transmission.",
+   "idea": "Only the part of the current that is in phase with the voltage delivers power, so the average power is the product of rms voltage and rms current reduced by the power factor.",
+   "rule": "For v = vm sin(omega t) and i = im sin(omega t + phi) the instantaneous power is p = (vm im/2)[cos phi - cos(2 omega t + phi)]; the time-dependent term averages to zero, so the average power is P = V I cos phi = I^2 Z cos phi, with V and I rms values. cos phi is the power factor, and from the impedance triangle cos phi = R/Z. Resistive circuit: phi = 0, cos phi = 1, maximum power dissipation. Purely inductive or purely capacitive circuit: phi = pi/2, cos phi = 0, no power is dissipated although a current flows; this is called wattless current. In an RL, RC or LCR circuit power is dissipated only in the resistor, P = I^2 R. At resonance XC = XL, phi = 0, cos phi = 1 and P = I^2 R is maximum. The power consumed in an ac circuit is never negative. For supplying a given power at a given voltage a low power factor needs a larger current and so causes a larger I^2 R loss in transmission; with a lagging current the power factor is improved by connecting a capacitor of suitable capacitance in parallel, whose leading wattless current cancels the lagging wattless component.",
+   "example": "With R = 3 ohm, XL = 8 ohm, XC = 4 ohm and an rms current of 40 A, Z = 5 ohm, the power factor is 3/5 = 0.6 and P = I^2 R = 40^2 x 3 = 4800 W.",
+   "difficulty_base": "Hard",
+   "questions": [
+    {
+     "b": "Remember",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "The average power dissipated in an ac circuit, where V and I are the rms voltage and current and phi is the phase angle between them, is",
+     "a": "V I cos(phi)",
+     "o": [
+      "V I cos(phi)",
+      "V I sin(phi)",
+      "V I",
+      "V I tan(phi)"
+     ]
+    },
+    {
+     "b": "Remember",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "In an ac circuit the quantity cos(phi), where phi is the phase angle between the voltage and the current, is called the",
+     "a": "power factor",
+     "o": [
+      "power factor",
+      "phase factor",
+      "reactance factor",
+      "wattless factor"
+     ]
+    },
+    {
+     "b": "Remember",
+     "d": "Easy",
+     "t": "fill_blank",
+     "m": 1,
+     "q": "The power factor of an ac circuit that contains only a pure resistor is ____ (write a whole number).",
+     "a": "1"
+    },
+    {
+     "b": "Remember",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "q": "Which of the following is NOT true of a series LCR circuit connected to an ac source?",
+     "a": "Average power is dissipated in the inductor and in the capacitor as well as in the resistor",
+     "o": [
+      "Average power is dissipated in the inductor and in the capacitor as well as in the resistor",
+      "The average power depends on the cosine of the phase angle between the source voltage and the current",
+      "The instantaneous power contains a time-dependent term whose average over a cycle is zero",
+      "The power consumed by the circuit is never negative"
+     ],
+     "rev": true
+    },
+    {
+     "b": "Understand",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "The current in a purely inductive or a purely capacitive ac circuit is called wattless current because",
+     "a": "the power factor is zero, so no power is dissipated even though a current flows",
+     "o": [
+      "the power factor is zero, so no power is dissipated even though a current flows",
+      "the current itself is zero in such a circuit",
+      "the voltage across the element is zero in such a circuit",
+      "the current flows only for a very short time after switching on"
+     ]
+    },
+    {
+     "b": "Understand",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "In a series RL, RC or LCR circuit connected to an ac source, the average power is dissipated",
+     "a": "only in the resistor",
+     "o": [
+      "only in the resistor",
+      "only in the inductor",
+      "only in the capacitor",
+      "equally in all the elements present"
+     ]
+    },
+    {
+     "b": "Understand",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "At resonance in a series LCR circuit the power factor is",
+     "a": "1, and the power dissipated is maximum",
+     "o": [
+      "1, and the power dissipated is maximum",
+      "0, and the power dissipated is minimum",
+      "1, and no power is dissipated",
+      "0, and the power dissipated is maximum"
+     ]
+    },
+    {
+     "b": "Understand",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "q": "For circuits used for transporting electric power, a low power factor implies a large power loss in transmission. This is because, to supply a given power at a given voltage,",
+     "a": "a larger current is needed, which increases the I^2 R loss in the lines",
+     "o": [
+      "a larger current is needed, which increases the I^2 R loss in the lines",
+      "a smaller current is needed, which increases the resistance of the lines",
+      "the frequency of the supply has to be raised",
+      "the voltage across the load falls to zero"
+     ]
+    },
+    {
+     "b": "Understand",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "q": "In a circuit in which the current lags the voltage, the power factor can be improved by connecting a capacitor of appropriate capacitance in parallel. The capacitor does this by",
+     "a": "supplying a leading wattless current that cancels the lagging wattless component of the current",
+     "o": [
+      "supplying a leading wattless current that cancels the lagging wattless component of the current",
+      "increasing the resistance of the circuit",
+      "lowering the voltage of the supply",
+      "removing the component of the current that is in phase with the voltage"
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "In an ac circuit the rms voltage is 200 V, the rms current is 5 A and the phase angle between them is 60 degrees. Given cos 60 degrees = 0.5 and sin 60 degrees = 0.866, the average power is",
+     "a": "500 W",
+     "o": [
+      "500 W",
+      "1000 W",
+      "866 W",
+      "250 W"
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Easy",
+     "t": "fill_blank",
+     "m": 1,
+     "q": "A series LCR circuit has resistance 35 ohm and impedance 50 ohm at the frequency of the source. Its power factor is ____ (write as a decimal).",
+     "a": "0.7"
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "q": "A series LCR circuit has R = 6 ohm, XL = 10 ohm and XC = 2 ohm at the frequency of the source. Its power factor is",
+     "a": "0.6",
+     "o": [
+      "0.6",
+      "0.8",
+      "1.67",
+      "1.33"
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "q": "A series LCR circuit with R = 7 ohm, XL = 29 ohm and XC = 5 ohm at the source frequency carries an rms current of 10 A. Find the average power dissipated in the circuit and the power factor.",
+     "a": "Power is dissipated only in the resistor: P = I^2 R = 10^2 x 7 = 700 W. Z = sqrt(R^2 + (XC - XL)^2) = sqrt(7^2 + 24^2) = 25 ohm, so the power factor is cos phi = R/Z = 7/25 = 0.28.",
+     "s": [
+      [
+       "P = I^2 R = 700 W",
+       1
+      ],
+      [
+       "Z = 25 ohm and power factor = R/Z = 0.28",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "q": "An ac source of rms voltage 100 V is connected to a series circuit of a 30 ohm resistor and a pure inductor of reactance 40 ohm. The average power dissipated in the circuit is",
+     "a": "120 W",
+     "o": [
+      "120 W",
+      "200 W",
+      "160 W",
+      "333 W"
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hardest",
+     "t": "long_answer",
+     "m": 3,
+     "q": "A sinusoidal voltage of rms value 200 V is applied to a series LCR circuit in which R = 40 ohm, XL = 50 ohm and XC = 20 ohm at the source frequency. Find (a) the impedance and the rms current, (b) the power factor and the average power dissipated, and (c) the average power that would be dissipated if the source frequency were changed to the resonant frequency of the circuit, the rms voltage staying at 200 V.",
+     "a": "(a) Z = sqrt(R^2 + (XC - XL)^2) = sqrt(40^2 + 30^2) = 50 ohm; I = V/Z = 200/50 = 4 A. (b) Power factor = R/Z = 40/50 = 0.8; P = V I cos phi = 200 x 4 x 0.8 = 640 W (also I^2 R = 16 x 40). (c) At resonance Z = R = 40 ohm, I = 200/40 = 5 A and cos phi = 1, so P = I^2 R = 25 x 40 = 1000 W.",
+     "s": [
+      [
+       "Z = 50 ohm and I = 4 A (rms)",
+       1
+      ],
+      [
+       "Power factor = 0.8 and P = 640 W",
+       1
+      ],
+      [
+       "At resonance I = 5 A and P = 1000 W",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "assertion_reason",
+     "m": 1,
+     "q": "Assertion (A): A purely capacitive circuit connected to an ac source dissipates the maximum possible power. Reason (R): An alternating current flows in a purely capacitive circuit connected to an ac source. Choose the correct option.",
+     "a": "A is false, R is true",
+     "o": [
+      "A is false, R is true",
+      "Both A and R are true, and R is the correct explanation of A",
+      "Both A and R are true, but R is not the correct explanation of A",
+      "A is true, R is false"
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "q": "A device connected to an ac supply of rms voltage 200 V draws an rms current of 5 A and consumes an average power of 600 W. Find the power factor of the device and its resistance.",
+     "a": "P = V I cos phi, so cos phi = P/(V I) = 600/(200 x 5) = 0.6. Power is dissipated only in the resistance, so R = P/I^2 = 600/25 = 24 ohm (equivalently Z = V/I = 40 ohm and R = Z cos phi = 24 ohm).",
+     "s": [
+      [
+       "Power factor = P/(V I) = 0.6",
+       1
+      ],
+      [
+       "R = P/I^2 = 24 ohm",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hardest",
+     "t": "long_answer",
+     "m": 3,
+     "q": "A factory needs an average power of 22 kW at an rms voltage of 220 V, supplied through lines of total resistance 0.5 ohm. Compare the rms current drawn and the power lost in the lines when the power factor of the factory is (a) 1 and (b) 0.5, and state what this shows.",
+     "a": "From P = V I cos phi, I = P/(V cos phi). (a) cos phi = 1: I = 22000/220 = 100 A; line loss = I^2 R = 100^2 x 0.5 = 5000 W. (b) cos phi = 0.5: I = 22000/(220 x 0.5) = 200 A; line loss = 200^2 x 0.5 = 20000 W. Halving the power factor doubles the current and makes the transmission loss four times as large, which is why a low power factor is undesirable.",
+     "s": [
+      [
+       "Power factor 1: I = 100 A and line loss = 5000 W",
+       1
+      ],
+      [
+       "Power factor 0.5: I = 200 A and line loss = 20000 W",
+       1
+      ],
+      [
+       "Conclusion - a lower power factor needs a larger current, giving four times the I^2 R loss here",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Evaluate",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "q": "A pure inductor connected to an ac source of rms voltage 220 V carries an rms current of 2 A. A student says the inductor must be consuming 220 x 2 = 440 W. Evaluate this statement.",
+     "a": "The statement is wrong. The average power is V I cos phi, and in a pure inductor the phase difference between voltage and current is pi/2, so cos phi = 0 and the average power is zero. The 2 A is a wattless current: it flows without any power being dissipated.",
+     "s": [
+      [
+       "Average power is V I cos phi, not simply V I",
+       1
+      ],
+      [
+       "For a pure inductor cos phi = 0, so the average power is zero (wattless current)",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Create",
+     "d": "Hardest",
+     "t": "long_answer",
+     "m": 3,
+     "q": "Design a series circuit, by choosing its resistance and its net reactance, that has an impedance of 100 ohm and a power factor of 0.8. For your circuit connected to an ac source of rms voltage 200 V, find the rms current and the average power, and state what must be done to the reactances to raise the power factor to 1 without changing the resistance.",
+     "a": "Power factor = R/Z = 0.8 with Z = 100 ohm gives R = 80 ohm. Then (XC - XL)^2 = 100^2 - 80^2 = 3600, so the net reactance must be 60 ohm (for example XL = 60 ohm with no capacitor, or XL = 90 ohm and XC = 30 ohm). I = V/Z = 200/100 = 2 A (rms) and P = V I cos phi = 200 x 2 x 0.8 = 320 W (= I^2 R). To make the power factor 1 the net reactance must be made zero, that is XL = XC (resonance), for example by adding a suitable capacitor so that the capacitive reactance equals the inductive reactance.",
+     "s": [
+      [
+       "R = 80 ohm and net reactance 60 ohm",
+       1
+      ],
+      [
+       "I = 2 A (rms) and P = 320 W",
+       1
+      ],
+      [
+       "Make XL = XC (net reactance zero) so that Z = R and the power factor is 1",
+       1
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "code": "C12P-7.8",
+   "name": "Transformers",
+   "description": "The principle and construction of a transformer, the voltage and current relations of an ideal transformer, step-up and step-down action, energy losses and the use of transformers in power transmission.",
+   "idea": "A transformer changes an alternating voltage by mutual induction: the voltages are in the ratio of the turns, and what is gained in voltage is given up in current.",
+   "rule": "A transformer has a primary coil of Np turns and a secondary coil of Ns turns, insulated from each other and wound on a soft-iron core. An alternating voltage on the primary produces an alternating flux that links the secondary and induces an emf in it (mutual induction): es = -Ns d(phi)/dt and ep = -Np d(phi)/dt. For an ideal transformer (negligible primary resistance, all the flux linking both coils, small secondary current) vs/vp = Ns/Np. If it is 100 per cent efficient, ip vp = is vs, so ip/is = vs/vp = Ns/Np; that is Vs = (Ns/Np) Vp and Is = (Np/Ns) Ip, also for rms values. Ns > Np gives a step-up transformer (higher voltage, smaller current); Ns < Np gives a step-down transformer (lower voltage, larger current). Energy losses in an actual transformer: flux leakage (reduced by winding the coils one over the other), resistance of the windings (I^2 R heat, reduced by thick wire in high-current windings), eddy currents in the core (reduced by a laminated core) and hysteresis (reduced by a core material with low hysteresis loss). A well designed transformer may have an efficiency of more than 95 per cent. For long-distance transmission the generator voltage is stepped up so that the current and the I^2 R loss are reduced, and stepped down again near the consumers.",
+   "example": "With Np = 300 and Ns = 900, a 110 V (rms) input at 6 A is stepped up to a 330 V output at 2 A.",
+   "difficulty_base": "Hard",
+   "questions": [
+    {
+     "b": "Remember",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "A transformer works on the principle of",
+     "a": "mutual induction",
+     "o": [
+      "mutual induction",
+      "resonance",
+      "Joule heating",
+      "electrostatic induction"
+     ]
+    },
+    {
+     "b": "Remember",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "A transformer in which the secondary coil has a greater number of turns than the primary coil is called",
+     "a": "a step-up transformer",
+     "o": [
+      "a step-up transformer",
+      "a step-down transformer",
+      "an ac generator",
+      "a rectifier"
+     ]
+    },
+    {
+     "b": "Remember",
+     "d": "Easy",
+     "t": "fill_blank",
+     "m": 1,
+     "q": "The heating of a transformer core by eddy currents is reduced by using a ____ core (write one word).",
+     "a": "laminated"
+    },
+    {
+     "b": "Remember",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "q": "Which of the following is NOT one of the causes of energy loss in an actual transformer?",
+     "a": "Resonance between the primary and secondary coils",
+     "o": [
+      "Resonance between the primary and secondary coils",
+      "Flux leakage",
+      "Resistance of the windings",
+      "Hysteresis in the core"
+     ],
+     "rev": true
+    },
+    {
+     "b": "Understand",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "In a step-up transformer, compared with the primary, the secondary has a",
+     "a": "higher voltage and a smaller current",
+     "o": [
+      "higher voltage and a smaller current",
+      "higher voltage and a larger current",
+      "lower voltage and a larger current",
+      "lower voltage and a smaller current"
+     ]
+    },
+    {
+     "b": "Understand",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "For transmission over long distances the output voltage of a generator is stepped up. The purpose is that, for the same power transmitted,",
+     "a": "the current is reduced, so the I^2 R loss in the lines is cut down",
+     "o": [
+      "the current is reduced, so the I^2 R loss in the lines is cut down",
+      "the current is increased, so the energy travels faster",
+      "the resistance of the transmission lines is reduced",
+      "the frequency of the supply is increased"
+     ]
+    },
+    {
+     "b": "Understand",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "In the high-current, low-voltage windings of a transformer, the energy loss due to the resistance of the windings is minimised by",
+     "a": "using thick wire",
+     "o": [
+      "using thick wire",
+      "using a laminated core",
+      "winding the two coils on separate limbs of the core",
+      "using a core material with a low hysteresis loss"
+     ]
+    },
+    {
+     "b": "Understand",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "q": "A step-up transformer changes a low voltage into a high voltage. This does not violate the law of conservation of energy because",
+     "a": "the current is reduced in the same proportion",
+     "o": [
+      "the current is reduced in the same proportion",
+      "the extra energy is supplied by the iron core",
+      "conservation of energy does not apply to alternating currents",
+      "the frequency is reduced in the same proportion"
+     ]
+    },
+    {
+     "b": "Understand",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "q": "Flux leakage in a transformer, in which not all of the flux due to the primary passes through the secondary, can be reduced by",
+     "a": "winding the primary and secondary coils one over the other",
+     "o": [
+      "winding the primary and secondary coils one over the other",
+      "using thicker wire for both windings",
+      "making the core out of thin laminations",
+      "raising the frequency of the supply"
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "An ideal transformer has 500 turns in the primary and 2500 turns in the secondary. If the rms voltage applied to the primary is 200 V, the rms voltage across the secondary is",
+     "a": "1000 V",
+     "o": [
+      "1000 V",
+      "40 V",
+      "200 V",
+      "5000 V"
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Easy",
+     "t": "fill_blank",
+     "m": 1,
+     "q": "An ideal transformer steps up an input of rms voltage 220 V at an rms current of 10 A to an output of rms voltage 440 V. The rms output current is ____ A (write a whole number).",
+     "a": "5"
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "q": "An ideal step-down transformer changes an rms voltage of 2200 V to an rms voltage of 220 V. If the primary has 3000 turns, the number of turns in the secondary is",
+     "a": "300 turns",
+     "o": [
+      "300 turns",
+      "30000 turns",
+      "3000 turns",
+      "30 turns"
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "q": "An ideal transformer has 1100 turns in the primary and 50 turns in the secondary. The primary is connected to an ac source of rms voltage 220 V and the secondary delivers an rms current of 11 A. Find the rms secondary voltage and the rms primary current.",
+     "a": "Vs = (Ns/Np) Vp = (50/1100) x 220 = 10 V. For an ideal transformer Ip Vp = Is Vs, so Ip = Is Vs/Vp = 11 x 10/220 = 0.5 A.",
+     "s": [
+      [
+       "Vs = (Ns/Np) Vp = 10 V (rms)",
+       1
+      ],
+      [
+       "Ip = Is Vs/Vp = 0.5 A (rms)",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "q": "An ideal transformer delivers a power of 1100 W. Its primary is connected to an ac source of rms voltage 220 V and its secondary voltage is 11 V (rms). The rms currents in the primary and in the secondary are",
+     "a": "5 A and 100 A",
+     "o": [
+      "5 A and 100 A",
+      "100 A and 5 A",
+      "5 A and 5 A",
+      "50 A and 100 A"
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hardest",
+     "t": "long_answer",
+     "m": 3,
+     "q": "A power of 11 kW is to be sent through a transmission line of total resistance 2 ohm. Taking power as the product of rms voltage and rms current, find the current in the line and the power lost as heat in the line when the power is sent (a) at an rms voltage of 220 V and (b) at an rms voltage of 11000 V. (c) State what this shows about the use of transformers in transmission.",
+     "a": "(a) I = P/V = 11000/220 = 50 A; loss = I^2 R = 50^2 x 2 = 5000 W. (b) I = 11000/11000 = 1 A; loss = 1^2 x 2 = 2 W. (c) Stepping up the voltage reduces the current and so cuts down the I^2 R loss enormously; this is why the generator output is stepped up for transmission and stepped down again near the consumers.",
+     "s": [
+      [
+       "At 220 V: I = 50 A and loss = 5000 W",
+       1
+      ],
+      [
+       "At 11000 V: I = 1 A and loss = 2 W",
+       1
+      ],
+      [
+       "Stepping up the voltage reduces the current and hence the I^2 R loss; it is stepped down near the consumer",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "multi_statement",
+     "m": 1,
+     "q": "Consider these statements about transformers. (I) In an ideal step-down transformer both the voltage and the current are smaller in the secondary than in the primary. (II) The loss due to eddy currents in the core of a transformer is reduced by using thick wire for the windings. Which is or are correct?",
+     "a": "Neither I nor II",
+     "o": [
+      "Neither I nor II",
+      "Only I",
+      "Only II",
+      "Both I and II"
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "q": "In an ideal transformer the rms secondary current is found to be four times the rms primary current. Identify the type of transformer, and find the turns ratio Ns/Np and the rms secondary voltage when the rms primary voltage is 240 V.",
+     "a": "For an ideal transformer Is/Ip = Np/Ns, so Np/Ns = 4 and Ns/Np = 1/4. The secondary has fewer turns, so it is a step-down transformer. Vs = (Ns/Np) Vp = 240/4 = 60 V (rms).",
+     "s": [
+      [
+       "Ns/Np = 1/4, so it is a step-down transformer",
+       1
+      ],
+      [
+       "Vs = (Ns/Np) Vp = 60 V (rms)",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hardest",
+     "t": "long_answer",
+     "m": 3,
+     "q": "An actual transformer takes an rms current of 5 A from a source of rms voltage 200 V at its primary and delivers an rms current of 0.9 A at an rms voltage of 1000 V from its secondary. Taking power as the product of rms voltage and rms current, find the input power, the output power and the percentage of the input power that reaches the output. Name two causes of the missing power and how each is reduced.",
+     "a": "Input power = 200 x 5 = 1000 W. Output power = 1000 x 0.9 = 900 W. So 90 per cent of the input power reaches the output and 100 W is lost. Causes (any two): flux leakage, reduced by winding the primary and secondary one over the other; resistance of the windings, reduced by using thick wire; eddy currents in the core, reduced by a laminated core; hysteresis, reduced by using a core material with low hysteresis loss.",
+     "s": [
+      [
+       "Input power = 1000 W and output power = 900 W",
+       1
+      ],
+      [
+       "90 per cent reaches the output; 100 W is lost",
+       1
+      ],
+      [
+       "Two causes of loss, each with its remedy",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Evaluate",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "q": "A student proposes to raise the voltage of a battery by connecting it, as a steady dc source, to the primary of a step-up transformer. Evaluate this proposal.",
+     "a": "The proposal will not work. The emf induced in the secondary is es = -Ns d(phi)/dt, which needs a changing flux in the core. A steady direct current in the primary produces a steady flux, so d(phi)/dt = 0 and no emf is induced in the secondary. A transformer needs an alternating voltage on its primary.",
+     "s": [
+      [
+       "Judgement - no steady output; the proposal fails",
+       1
+      ],
+      [
+       "Reason - a steady current gives a constant flux, so the induced emf Ns d(phi)/dt in the secondary is zero",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Create",
+     "d": "Hardest",
+     "t": "long_answer",
+     "m": 3,
+     "q": "Design an ideal transformer to run a lamp rated 12 V (rms), 24 W from an ac mains supply of rms voltage 240 V. Choose suitable numbers of turns for the two coils, find the rms currents in the secondary and in the primary, and state two features of construction you would use to keep the energy losses of a real transformer small.",
+     "a": "Ns/Np = Vs/Vp = 12/240 = 1/20, a step-down transformer; for example Np = 2000 turns and Ns = 100 turns. Secondary current Is = P/Vs = 24/12 = 2 A. For an ideal transformer Ip Vp = Is Vs, so Ip = 24/240 = 0.1 A. To keep losses small: wind the primary and secondary one over the other (less flux leakage), use a laminated core (smaller eddy currents), use thick wire for the high-current secondary (less I^2 R loss), and use a core material with low hysteresis loss (any two).",
+     "s": [
+      [
+       "Turns ratio Ns/Np = 1/20 with a valid choice of turns",
+       1
+      ],
+      [
+       "Is = 2 A and Ip = 0.1 A (rms)",
+       1
+      ],
+      [
+       "Two loss-reducing features of construction",
+       1
+      ]
+     ]
+    }
+   ]
+  }
+ ]
+}

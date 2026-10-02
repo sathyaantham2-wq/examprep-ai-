@@ -146,7 +146,7 @@
    "description": "Current as net charge crossing an area per unit time, its unit and typical magnitudes, and why a metal carries a steady current only when a steady electric field is maintained in it.",
    "idea": "Charges in motion constitute an electric current; in a solid metal the moving charges are electrons, and they give a net current only when an electric field makes their motion one-sided.",
    "rule": "For a steady current I = q/t, where q is the net charge crossing the area in the forward direction in time t (q = q+ - q-); a negative value means a current in the backward direction. For a current that is not steady, the current at time t is the limit of delta Q/delta t as delta t tends to zero. The SI unit is the ampere. With no electric field the electrons of a metal move randomly because of thermal motion, colliding with the fixed ions and emerging with the same speed in a random direction, so there is no net current. Charges +Q and -Q placed once on the ends of a metal cylinder give a current only for a very short while; a cell or battery maintains a steady field and hence a continuous current.",
-   "example": "A steady current of 0.5 A carries a charge of 0.5 x 60 = 30 C across a cross-section in 1 minute.",
+   "example": "A steady current of 1.5 A carries a charge of 1.5 x 40 = 60 C across a cross-section in 40 s.",
    "difficulty_base": "Easy",
    "questions": [
     {
@@ -470,7 +470,7 @@
    "description": "Ohm's law V = RI, the dependence of resistance on length and cross-section through R = rho l/A, and the equivalent form E = rho j or j = sigma E using current density and conductivity.",
    "idea": "For a conductor obeying Ohm's law the potential difference is proportional to the current; the resistance depends on the shape of the conductor, but the resistivity depends only on the material.",
    "rule": "Ohm's law: V = R I, with R in ohm. Doubling the length of a conductor doubles its resistance and halving its cross-sectional area doubles its resistance, so R = rho l/A, where the resistivity rho depends on the material but not on its dimensions. Current per unit area taken normal to the current is the current density j = I/A, in A/m^2, directed along E. With V = E l, Ohm's law becomes E = rho j, or j = sigma E, where sigma = 1/rho is the conductivity.",
-   "example": "A wire 20 m long of cross-section 4.0 x 10^-7 m^2 and resistance 2.5 ohm has resistivity rho = RA/l = 2.5 x 4.0 x 10^-7/20 = 5.0 x 10^-8 ohm m.",
+   "example": "A wire 15 m long of cross-section 6.0 x 10^-7 m^2 and resistance 5.0 ohm has resistivity rho = RA/l = 5.0 x 6.0 x 10^-7/15 = 2.0 x 10^-7 ohm m.",
    "difficulty_base": "Easy",
    "questions": [
     {
@@ -794,7 +794,7 @@
    "description": "The drift velocity of electrons in a field, the relation I = n e A v_d, the conductivity in terms of relaxation time, and mobility.",
    "idea": "An electric field gives the randomly moving electrons of a metal a small steady average velocity, the drift velocity, and this drift of an enormous number of electrons is the current.",
    "rule": "Between collisions an electron has acceleration of magnitude eE/m. Averaging over the electrons, with tau the average time between collisions (relaxation time), the drift velocity has magnitude v_d = e E tau/m and is directed opposite to E; it is independent of time. The current is I = n e A v_d, where n is the number of free electrons per unit volume, so j = (n e^2 tau/m) E, which is Ohm's law with conductivity sigma = n e^2 tau/m. Mobility is the magnitude of the drift velocity per unit electric field, mu = v_d/E = e tau/m, in m^2/V s. The drift speed is tiny (about a millimetre per second for a few amperes in a copper wire), far smaller than thermal speeds or the speed at which the field is established.",
-   "example": "With n = 1.0 x 10^29 per m^3, A = 2.0 x 10^-6 m^2 and I = 3.2 A, v_d = I/(n e A) = 3.2/(1.0 x 10^29 x 1.6 x 10^-19 x 2.0 x 10^-6) = 1.0 x 10^-4 m/s.",
+   "example": "With n = 8.5 x 10^28 per m^3, A = 1.0 x 10^-7 m^2 and I = 1.5 A, v_d = I/(n e A) = 1.5/(8.5 x 10^28 x 1.6 x 10^-19 x 1.0 x 10^-7) = 1.1 x 10^-3 m/s, about a millimetre per second.",
    "difficulty_base": "Hard",
    "questions": [
     {
@@ -1118,7 +1118,7 @@
    "description": "The ways in which materials and devices deviate from Ohm's law, the resistivity ranges of metals, semiconductors and insulators, and how resistivity changes with temperature.",
    "idea": "Ohm's law is not a fundamental law, and resistivity is not a fixed number: it differs enormously between materials and changes with temperature, rising for metals and falling for semiconductors.",
    "rule": "Ohm's law fails when V ceases to be proportional to I, when the relation between V and I depends on the sign of V (as in a diode), or when the relation is not unique (as in GaAs). Metals have resistivities from 10^-8 ohm m to 10^-6 ohm m; insulators are higher by an enormous factor; semiconductors lie in between. Over a limited range of temperature the resistivity of a metal is rho_T = rho_0 [1 + alpha (T - T0)], with the temperature coefficient of resistivity alpha positive for metals; for a wire the same relation holds for resistance, R2 = R1 [1 + alpha (T2 - T1)]. Since rho = m/(n e^2 tau), heating a metal shortens tau and raises rho, while in semiconductors and insulators n increases with temperature and rho falls. Nichrome, manganin and constantan depend only weakly on temperature.",
-   "example": "A wire of resistance 10 ohm at 20 degrees C with alpha = 4 x 10^-3 per degree C has resistance 10 [1 + 4 x 10^-3 x 50] = 12 ohm at 70 degrees C.",
+   "example": "A wire of resistance 8.0 ohm at 0 degrees C with alpha = 5 x 10^-3 per degree C has resistance 8.0 [1 + 5 x 10^-3 x 50] = 10 ohm at 50 degrees C.",
    "difficulty_base": "Hard",
    "questions": [
     {
@@ -1442,7 +1442,7 @@
    "description": "Energy dissipated as heat in a conductor, the power expressions P = IV = I^2 R = V^2/R, and why power is transmitted at high voltage.",
    "idea": "Charge moving through a conductor loses potential energy; because of collisions this energy appears as heat in the conductor, at a rate equal to the current times the potential difference.",
    "rule": "When a current I flows through a conductor across which the potential difference is V, the energy dissipated as heat in time delta t is delta W = I V delta t, so the power is P = I V. Using V = IR, P = I^2 R = V^2/R (the ohmic loss). The power comes from the source, for a cell from its chemical energy. To deliver a power P at voltage V through cables of resistance Rc, the current is I = P/V and the power wasted in the cables is Pc = I^2 Rc = P^2 Rc/V^2, inversely proportional to V^2, which is why power is transmitted at very high voltage and lowered by a transformer at the other end.",
-   "example": "A device taking 10 kW at 200 V draws 50 A, wasting 50^2 x 1 = 2500 W in cables of 1 ohm; at 2000 V it draws 5 A and wastes only 25 W.",
+   "example": "A device taking 6 kW at 300 V draws 20 A, wasting 20^2 x 0.5 = 200 W in cables of 0.5 ohm; at 3000 V it draws 2 A and wastes only 2 W.",
    "difficulty_base": "Easy",
    "questions": [
     {
@@ -1766,7 +1766,7 @@
    "description": "The emf of a cell as its open-circuit potential difference, its internal resistance, the terminal potential difference V = epsilon - I r and the current I = epsilon/(R + r).",
    "idea": "A cell maintains a steady current; its emf is the potential difference between its electrodes when no current flows, and when it delivers current part of this is lost across the internal resistance of its electrolyte.",
    "rule": "The emf epsilon of a cell is the potential difference between its positive and negative electrodes in an open circuit; it is a potential difference, not a force. The electrolyte has a finite internal resistance r. When the cell sends a current I through an external resistance R, the potential difference between its terminals is V = epsilon - I r, and since V = I R, the current is I = epsilon/(R + r). The maximum current, for R = 0, is epsilon/r. If the current is driven through the cell from its positive to its negative terminal (as in charging), V = epsilon + I r.",
-   "example": "A cell of emf 2 V and internal resistance 1 ohm connected to a 4 ohm resistor gives I = 2/(4 + 1) = 0.4 A and a terminal potential difference of 2 - 0.4 x 1 = 1.6 V.",
+   "example": "A cell of emf 3 V and internal resistance 0.5 ohm connected to a 2.5 ohm resistor gives I = 3/(2.5 + 0.5) = 1 A and a terminal potential difference of 3 - 1 x 0.5 = 2.5 V.",
    "difficulty_base": "Easy",
    "questions": [
     {
@@ -2090,7 +2090,7 @@
    "description": "Replacing a series or a parallel combination of cells by a single equivalent cell, with its equivalent emf and equivalent internal resistance.",
    "idea": "Like resistors, cells can be combined, and for calculating currents and voltages a combination of cells can be replaced by one equivalent cell.",
    "rule": "Series (current leaving each cell from its positive electrode): epsilon_eq = epsilon1 + epsilon2 and r_eq = r1 + r2; a cell from which the current leaves at the negative electrode enters with a negative sign, so with the two negatives joined epsilon_eq = epsilon1 - epsilon2 (epsilon1 > epsilon2), while the internal resistances still add. Parallel (positive terminals joined together and negative terminals joined together): I = I1 + I2, epsilon_eq = (epsilon1 r2 + epsilon2 r1)/(r1 + r2) and r_eq = r1 r2/(r1 + r2), equivalently 1/r_eq = 1/r1 + 1/r2 and epsilon_eq/r_eq = epsilon1/r1 + epsilon2/r2. Both rules extend to n cells.",
-   "example": "Cells of 6 V, 2 ohm and 3 V, 1 ohm in parallel give epsilon_eq = (6 x 1 + 3 x 2)/(2 + 1) = 4 V and r_eq = (2 x 1)/(2 + 1) = 2/3 ohm.",
+   "example": "Cells of 5 V, 1 ohm and 2 V, 4 ohm in parallel give epsilon_eq = (5 x 4 + 2 x 1)/(1 + 4) = 4.4 V and r_eq = (1 x 4)/(1 + 4) = 0.8 ohm.",
    "difficulty_base": "Hard",
    "questions": [
     {
@@ -2414,7 +2414,7 @@
    "description": "The junction rule and the loop rule, their physical basis, and their use to find the currents in a network of resistors and cells.",
    "idea": "Any network of cells and resistors can be analysed with two rules: charge does not pile up at a junction, and the potential returns to its starting value around a closed loop.",
    "rule": "Label a current with a symbol and an arrow in each branch; a negative result means the actual current is opposite to the arrow. Junction rule: at any junction the sum of the currents entering equals the sum of the currents leaving (for steady currents charge does not accumulate at any point). Loop rule: the algebraic sum of the changes in potential around any closed loop involving resistors and cells is zero (potential depends only on location). Going through a resistor R along the current I the change is -IR; going through a cell from its negative to its positive terminal the change is +epsilon. Use as many junctions and loops as are needed to solve for the unknowns.",
-   "example": "A loop with a 12 V cell and resistors of 2 ohm and 4 ohm: 12 - 2 I - 4 I = 0, so I = 2 A.",
+   "example": "A loop with a 15 V cell and resistors of 1 ohm and 4 ohm: 15 - 1 I - 4 I = 0, so I = 3 A.",
    "difficulty_base": "Hard",
    "questions": [
     {
@@ -2738,7 +2738,7 @@
    "description": "The four-resistor bridge circuit, its balance condition obtained from Kirchhoff's rules, and its use to find an unknown resistance.",
    "idea": "Four resistors form a bridge; when their values are in the right proportion no current flows through the galvanometer, and this null condition lets one resistance be found from the other three.",
    "rule": "Four resistors form the arms of a bridge ABCD: R1 in arm AD, R2 in arm AB, R3 in arm DC and R4 in arm BC. A source is connected across A and C (the battery arm) and a galvanometer across B and D (the galvanometer arm). In a balanced bridge the galvanometer current is zero; the junction rule then gives I1 = I3 and I2 = I4, and the loop rule for loops ADBA and CBDC gives the balance condition R2/R1 = R4/R3, i.e. R_AB/R_AD = R_BC/R_DC. With known R1 and R2, R3 is varied until the galvanometer shows null deflection, and the unknown is R4 = R3 R2/R1. An unbalanced bridge is solved with Kirchhoff's rules.",
-   "example": "With AB = 10 ohm, BC = 20 ohm and AD = 30 ohm, the bridge balances when DC = 30 x 20/10 = 60 ohm.",
+   "example": "With AB = 5 ohm, BC = 15 ohm and AD = 8 ohm, the bridge balances when DC = 8 x 15/5 = 24 ohm.",
    "difficulty_base": "Hard",
    "questions": [
     {
