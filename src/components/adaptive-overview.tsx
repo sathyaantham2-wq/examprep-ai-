@@ -8,6 +8,9 @@ import {
   CardHeader,
   CardTitle,
 } from './ui/card'
+import { MasteryRing } from './mastery-ring'
+import { chapterAdvice, conceptAdvice } from '../lib/adaptive/advice'
+import type { StudyAdvice } from '../lib/adaptive/advice'
 
 export interface ConceptView {
   concept_id: string
@@ -188,6 +191,174 @@ function StatTile({
   )
 }
 
+// Opens "New paper" already narrowed to one chapter, or to particular concepts inside it.
+function practiseHref(
+  subjectId: string,
+  chapterId: string,
+  conceptIds: Array<string> = [],
+): string {
+  const query = new URLSearchParams({ subject: subjectId, chapters: chapterId })
+  if (conceptIds.length > 0) query.set('concepts', conceptIds.join(','))
+  return `/my-paper?${query}`
+}
+
+// What to do next and why, with the learning principle it rests on as a small label.
+function AdviceNote({ advice }: { advice: StudyAdvice }) {
+  return (
+    <div className="bg-muted/50 rounded-lg p-3">
+      <p className="field-label">{advice.principle}</p>
+      <p className="text-body mt-0.5 font-medium">{advice.action}</p>
+      <p className="text-small text-muted-foreground mt-0.5">{advice.reason}</p>
+    </div>
+  )
+}
+
+/**
+ * One subject's chapters (2026-10-02 request): a ring per chapter, and opening a chapter shows
+ * its concepts as bars. Both levels say what to do next and why, and both can start a paper on
+ * exactly what she is looking at -- the chapter, the few concepts in it with the most to gain, or
+ * a single concept.
+ */
+function SubjectChapters({ subject }: { subject: SubjectView }) {
+  const [openChapter, setOpenChapter] = useState<string | null>(null)
+  const [openConcept, setOpenConcept] = useState<string | null>(null)
+  const chapter = subject.chapters.find((c) => c.chapter_id === openChapter)
+  const advice = chapter ? chapterAdvice(chapter.concepts) : null
+
+  return (
+    <CardContent className="border-border space-y-4 border-t px-4 py-4">
+      <p className="text-small text-muted-foreground">
+        Tap a chapter to see its concepts and practise it.
+      </p>
+      <div className="grid grid-cols-3 gap-x-2 gap-y-4 sm:grid-cols-4 lg:grid-cols-6">
+        {subject.chapters.map((c) => {
+          const selected = c.chapter_id === openChapter
+          return (
+            <button
+              key={c.chapter_id}
+              type="button"
+              aria-expanded={selected}
+              onClick={() => {
+                setOpenChapter(selected ? null : c.chapter_id)
+                setOpenConcept(null)
+              }}
+              className={`hover:bg-muted/50 flex justify-center rounded-xl p-2 ${
+                selected ? 'bg-muted ring-primary ring-2' : ''
+              }`}
+            >
+              <MasteryRing
+                percent={Math.round(c.average_mastery ?? 0)}
+                label={`${c.part === 'I' ? '' : `${c.part} `}Ch ${c.chapter_no}: ${c.chapter_name}`}
+                size={72}
+              />
+            </button>
+          )
+        })}
+      </div>
+
+      {chapter && advice && (
+        <div className="space-y-3 rounded-xl border p-4">
+          <p className="text-body font-semibold">
+            {chapter.part} Ch {chapter.chapter_no}: {chapter.chapter_name}
+          </p>
+          <AdviceNote advice={advice} />
+          <div className="flex flex-wrap gap-2">
+            {advice.focus_concept_ids.length > 0 && (
+              <a
+                href={practiseHref(
+                  subject.subject_id,
+                  chapter.chapter_id,
+                  advice.focus_concept_ids,
+                )}
+              >
+                <Button size="sm">
+                  {advice.focus_concept_ids.length === 1
+                    ? 'Practise that concept'
+                    : `Practise those ${advice.focus_concept_ids.length} concepts`}
+                </Button>
+              </a>
+            )}
+            <a href={practiseHref(subject.subject_id, chapter.chapter_id)}>
+              <Button
+                size="sm"
+                variant={
+                  advice.focus_concept_ids.length > 0 ? 'outline' : 'default'
+                }
+              >
+                Practise this chapter
+              </Button>
+            </a>
+          </div>
+
+          <div className="space-y-2 pt-1">
+            {chapter.concepts.map((concept) => {
+              const conceptOpen = openConcept === concept.concept_id
+              return (
+                <div key={concept.concept_id} className="rounded-md border p-3">
+                  <button
+                    type="button"
+                    className="flex w-full items-center justify-between gap-3 text-left"
+                    aria-expanded={conceptOpen}
+                    onClick={() =>
+                      setOpenConcept(conceptOpen ? null : concept.concept_id)
+                    }
+                  >
+                    <span className="text-body">{concept.concept_name}</span>
+                    <span className="flex shrink-0 items-center gap-2">
+                      <span className="text-small text-muted-foreground w-8 text-right">
+                        {concept.mastery_score === null
+                          ? '–'
+                          : Math.round(concept.mastery_score)}
+                      </span>
+                      <LevelBadge level={concept.mastery_level} />
+                    </span>
+                  </button>
+                  <div className="mt-2">
+                    <ScoreBar score={concept.mastery_score} />
+                  </div>
+                  {conceptOpen && (
+                    <div className="mt-3 space-y-3">
+                      <div className="text-small text-muted-foreground space-y-1">
+                        <p>
+                          Difficulty now: {concept.current_difficulty} ·{' '}
+                          {concept.questions_attempted} questions answered
+                          {concept.accuracy !== null &&
+                            ` · accuracy ${Math.round(concept.accuracy)}%`}
+                          {concept.recent_accuracy !== null &&
+                            ` · recent ${Math.round(concept.recent_accuracy)}%`}
+                        </p>
+                        {concept.why.map((line, i) => (
+                          <p key={i}>{line}</p>
+                        ))}
+                      </div>
+                      <AdviceNote advice={conceptAdvice(concept)} />
+                      <div className="flex flex-wrap items-center gap-4">
+                        <a
+                          href={practiseHref(
+                            subject.subject_id,
+                            chapter.chapter_id,
+                            [concept.concept_id],
+                          )}
+                        >
+                          <Button size="sm">Practise this concept</Button>
+                        </a>
+                        <VideoLink
+                          url={concept.video_url}
+                          title={concept.video_title}
+                        />
+                      </div>
+                    </div>
+                  )}
+                </div>
+              )
+            })}
+          </div>
+        </div>
+      )}
+    </CardContent>
+  )
+}
+
 /**
  * The student's own progress overview on /student.
  *
@@ -205,7 +376,6 @@ export function AdaptiveOverview({
   data: AdaptiveOverviewData
   afterRecommended?: ReactNode
 }) {
-  const [openConcept, setOpenConcept] = useState<string | null>(null)
   const [openSubjects, setOpenSubjects] = useState<Set<string>>(new Set())
   const next = data.recommended_next
 
@@ -397,75 +567,7 @@ export function AdaptiveOverview({
                   )}
                 </button>
                 {subject.has_content && open && (
-                  <CardContent className="border-border space-y-5 border-t px-4 py-4">
-                    {subject.chapters.map((chapter) => (
-                      <div key={chapter.chapter_id}>
-                        <p className="text-body mb-2 font-medium">
-                          {chapter.part} Ch {chapter.chapter_no}:{' '}
-                          {chapter.chapter_name}
-                        </p>
-                        <div className="space-y-2">
-                          {chapter.concepts.map((concept) => {
-                            const conceptOpen =
-                              openConcept === concept.concept_id
-                            return (
-                              <div
-                                key={concept.concept_id}
-                                className="rounded-md border p-3"
-                              >
-                                <button
-                                  type="button"
-                                  className="flex w-full items-center justify-between gap-3 text-left"
-                                  aria-expanded={conceptOpen}
-                                  onClick={() =>
-                                    setOpenConcept(
-                                      conceptOpen ? null : concept.concept_id,
-                                    )
-                                  }
-                                >
-                                  <span className="text-body">
-                                    {concept.concept_name}
-                                  </span>
-                                  <span className="flex shrink-0 items-center gap-2">
-                                    <span className="text-small text-muted-foreground w-8 text-right">
-                                      {concept.mastery_score === null
-                                        ? '–'
-                                        : Math.round(concept.mastery_score)}
-                                    </span>
-                                    <LevelBadge level={concept.mastery_level} />
-                                  </span>
-                                </button>
-                                <div className="mt-2">
-                                  <ScoreBar score={concept.mastery_score} />
-                                </div>
-                                {conceptOpen && (
-                                  <div className="text-small text-muted-foreground mt-3 space-y-1">
-                                    <p>
-                                      Difficulty now:{' '}
-                                      {concept.current_difficulty} ·{' '}
-                                      {concept.questions_attempted} questions
-                                      answered
-                                      {concept.accuracy !== null &&
-                                        ` · accuracy ${Math.round(concept.accuracy)}%`}
-                                      {concept.recent_accuracy !== null &&
-                                        ` · recent ${Math.round(concept.recent_accuracy)}%`}
-                                    </p>
-                                    {concept.why.map((line, i) => (
-                                      <p key={i}>{line}</p>
-                                    ))}
-                                    <VideoLink
-                                      url={concept.video_url}
-                                      title={concept.video_title}
-                                    />
-                                  </div>
-                                )}
-                              </div>
-                            )
-                          })}
-                        </div>
-                      </div>
-                    ))}
-                  </CardContent>
+                  <SubjectChapters subject={subject} />
                 )}
               </Card>
             )

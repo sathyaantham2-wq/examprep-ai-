@@ -71,6 +71,9 @@ export async function buildPaperPlan(
     studentId: string
     subjectId: string
     chapterIds?: Array<string>
+    // Narrows the plan to these concepts. With no chapterIds, the chapters are the ones these
+    // concepts belong to.
+    conceptIds?: Array<string>
     // Short and long answer sections for concepts that have moved up. On by default.
     includeWritten?: boolean
     // Overrides the paper's size (Section A's count). Clamped to a sane range; the student's own
@@ -148,9 +151,17 @@ export async function buildPaperPlan(
     chapterMeta.set(r.chapter_id, meta)
   }
 
+  const focus = input.conceptIds && input.conceptIds.length > 0 ? new Set(input.conceptIds) : null
+  const inFocus = (conceptId: string) => !focus || focus.has(conceptId)
+
   let chosen: Array<string>
   if (input.chapterIds && input.chapterIds.length > 0) {
     chosen = input.chapterIds.filter((id) => chapterMeta.has(id))
+  } else if (focus) {
+    chosen = [...chapterMeta.values()]
+      .filter((c) => c.concepts.some((id) => focus.has(id)))
+      .sort((a, b) => a.order - b.order)
+      .map((c) => c.id)
   } else if (isInitial) {
     chosen = [...chapterMeta.values()]
       .sort((a, b) => a.order - b.order)
@@ -166,7 +177,11 @@ export async function buildPaperPlan(
   }
   if (chosen.length === 0) return null
 
-  const chosenConceptIds = rows.filter((r) => chosen.includes(r.chapter_id)).map((r) => r.concept_id)
+  const chosenConceptIds = rows
+    .filter((r) => chosen.includes(r.chapter_id) && inFocus(r.concept_id))
+    .map((r) => r.concept_id)
+  // The focus named no concept in these chapters that has questions.
+  if (chosenConceptIds.length === 0) return null
   const chosenSignals = chosenConceptIds.map((id) => signalById.get(id)!)
   const levels = chosenSignals.map((s) => s.currentLevel)
   const maxLevel = Math.max(...levels) as AdaptiveLevel
@@ -224,7 +239,7 @@ export async function buildPaperPlan(
   )
 
   const concepts: Array<PlanConcept> = rows
-    .filter((r) => chosen.includes(r.chapter_id))
+    .filter((r) => chosen.includes(r.chapter_id) && inFocus(r.concept_id))
     .map((r) => {
       const s = signalById.get(r.concept_id)!
       return {

@@ -1,4 +1,4 @@
-import { useEffect, useMemo, useState } from 'react'
+import { useEffect, useMemo, useRef, useState } from 'react'
 import { createFileRoute, useNavigate } from '@tanstack/react-router'
 import { Button } from '../components/ui/button'
 import {
@@ -22,10 +22,21 @@ const INSTALL_OFFER_KEY = 'prepplan-install-offer-generate'
 
 export const Route = createFileRoute('/my-paper')({
   component: MyPaper,
-  validateSearch: (search: Record<string, unknown>): { subject?: string } => ({
+  // chapters / concepts (comma-separated ids) arrive from "Practise this chapter" and "Practise
+  // this concept" on the student's mastery view.
+  validateSearch: (
+    search: Record<string, unknown>,
+  ): { subject?: string; chapters?: string; concepts?: string } => ({
     subject: typeof search.subject === 'string' ? search.subject : undefined,
+    chapters: typeof search.chapters === 'string' ? search.chapters : undefined,
+    concepts: typeof search.concepts === 'string' ? search.concepts : undefined,
   }),
 })
+
+const UUID = /^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$/i
+function idList(value: string | undefined): Array<string> {
+  return (value ?? '').split(',').filter((id) => UUID.test(id))
+}
 
 // Real tiers, not "Medium" -- same DIFFICULTY_TIERS /generate.tsx uses (sourced from
 // src/routes/api/papers/generate.ts). '' means no ceiling (F119's default: every difficulty
@@ -303,6 +314,17 @@ function MyPaper() {
   const [loadingPlan, setLoadingPlan] = useState(false)
   const [error, setError] = useState<string | null>(null)
   const [starting, setStarting] = useState(false)
+  // A paper narrowed to particular concepts. Kept in a ref as well, because loadPlan is called
+  // from handlers that must see the value they have just set.
+  const [focusConceptIds, setFocusConceptIds] = useState<Array<string>>([])
+  const focusRef = useRef<Array<string>>([])
+  // The chapter/concept she came here to practise is applied to the first subject shown only;
+  // changing the subject afterwards starts from the normal recommendation.
+  const linkedFocusUsed = useRef(false)
+  function setFocus(ids: Array<string>) {
+    focusRef.current = ids
+    setFocusConceptIds(ids)
+  }
   const installOffer = useInstallOffer(INSTALL_OFFER_KEY)
   const [showInstall, setShowInstall] = useState(false)
   const [installAsked, setInstallAsked] = useState(false)
@@ -365,7 +387,21 @@ function MyPaper() {
     fetch(`/api/syllabus/chapters?subject_id=${subjectId}`)
       .then((r) => r.json())
       .then((data: Array<ChapterChoice>) => setAllChapters(data))
-    void loadPlan(subjectId, null, questionCount, questionType)
+    const linkedChapters = linkedFocusUsed.current
+      ? []
+      : idList(search.chapters)
+    const linkedConcepts = linkedFocusUsed.current
+      ? []
+      : idList(search.concepts)
+    linkedFocusUsed.current = true
+    setFocus(linkedConcepts)
+    if (linkedChapters.length > 0) setChapterIds(linkedChapters)
+    void loadPlan(
+      subjectId,
+      linkedChapters.length > 0 ? linkedChapters : null,
+      questionCount,
+      questionType,
+    )
     // Only the subject should reset chapters and re-fetch them -- questionCount/questionType
     // changes reuse the current chapter selection via their own handlers (updateQuestionCount/
     // updateQuestionType below) instead of an effect, so they're deliberately not dependencies
@@ -388,6 +424,8 @@ function MyPaper() {
       })
       if (chapters && chapters.length > 0)
         query.set('chapter_ids', chapters.join(','))
+      if (focusRef.current.length > 0)
+        query.set('concept_ids', focusRef.current.join(','))
       const response = await fetch(`/api/adaptive/plan?${query}`)
       const body = await response.json()
       if (!response.ok) {
@@ -408,6 +446,7 @@ function MyPaper() {
     const next = current.includes(id)
       ? current.filter((c) => c !== id)
       : [...current, id]
+    setFocus([])
     setChapterIds(next)
     // A momentarily-empty selection (the last box unchecked, or Clear All) just isn't sent to
     // GET /api/adaptive/plan -- an empty chapter_ids param is indistinguishable from "none given"
@@ -419,12 +458,21 @@ function MyPaper() {
 
   function selectAllChapters() {
     const all = allChapters.map((c) => c.id)
+    setFocus([])
     setChapterIds(all)
     void loadPlan(subjectId, all, questionCount, questionType)
   }
 
   function clearAllChapters() {
+    setFocus([])
     setChapterIds([])
+  }
+
+  // Drops the concept focus but keeps the chapters, so the paper covers those chapters in full.
+  function practiseWholeChapters() {
+    setFocus([])
+    if (subjectId)
+      void loadPlan(subjectId, chapterIds, questionCount, questionType)
   }
 
   function togglePartCollapsed(part: string) {
@@ -474,6 +522,9 @@ function MyPaper() {
           adaptive: true,
           subject_id: subjectId,
           chapter_ids: chapterIds,
+          ...(focusConceptIds.length > 0
+            ? { concept_ids: focusConceptIds }
+            : {}),
           theme: DEFAULT_THEME,
           adaptive_question_count: questionCount,
           adaptive_question_type: questionType,
@@ -706,6 +757,34 @@ function MyPaper() {
                   Pick at least one chapter below to generate a paper.
                 </p>
               )}
+            </CardContent>
+          </Card>
+        )}
+
+        {plan && focusConceptIds.length > 0 && (
+          <Card className="border-primary/40 mb-4">
+            <CardContent className="flex flex-wrap items-center justify-between gap-3">
+              <div className="min-w-0">
+                <p className="field-label">Focused practice</p>
+                <p className="text-body font-medium">
+                  {plan.concepts.map((c) => c.concept_name).join(' · ')}
+                </p>
+                <p className="text-small text-muted-foreground">
+                  This paper asks only about{' '}
+                  {plan.concepts.length === 1
+                    ? 'this concept'
+                    : 'these concepts'}
+                  .
+                </p>
+              </div>
+              <Button
+                type="button"
+                variant="outline"
+                size="sm"
+                onClick={practiseWholeChapters}
+              >
+                Practise the whole chapter instead
+              </Button>
             </CardContent>
           </Card>
         )}

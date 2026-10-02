@@ -287,4 +287,35 @@ describe('generatePaper distributes marks across chapters proportionally to conc
       [chapterB.id]: 4,
     })
   })
+
+  it('concept_ids narrows the paper to those concepts and reports what it could not fill', async () => {
+    const [focus] = await db
+      .selectFrom('concepts')
+      .select('id')
+      .where('chapter_id', '=', chapterA.id)
+      .orderBy('code')
+      .execute()
+
+    const result = await generatePaper(db, {
+      student_id: student.id,
+      blueprint_id: blueprintOverrideId,
+      chapter_ids: [chapterA.id, chapterB.id],
+      concept_ids: [focus.id],
+      // The earlier tests already served this student questions; that is not what is under test.
+      recentUsageWindowDays: 0,
+    })
+
+    const picked = await db
+      .selectFrom('paper_questions')
+      .innerJoin('questions', 'questions.id', 'paper_questions.question_id')
+      .select(['questions.concept_id'])
+      .where('paper_questions.paper_id', '=', result.paper.id)
+      .execute()
+
+    // The concept has three questions and the blueprint asks for five: all three are used,
+    // nothing is borrowed from the other concepts, and the gap is reported (F032).
+    expect(picked).toHaveLength(3)
+    expect(new Set(picked.map((q) => q.concept_id))).toEqual(new Set([focus.id]))
+    expect(result.shortfalls.length).toBeGreaterThan(0)
+  })
 })
