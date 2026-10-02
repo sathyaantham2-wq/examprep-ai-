@@ -135,3 +135,35 @@ describe('fillBlankMatches (F129 spelling tolerance)', () => {
     expect(fillBlankMatches('iron', 'icon')).toBe(false)
   })
 })
+
+describe('fillBlankMatches accepts the same number written another way (F044)', () => {
+  it('accepts a decimal for a fraction key and a fraction for a decimal key', () => {
+    expect(fillBlankMatches('0.5', '1/2')).toBe(true)
+    expect(fillBlankMatches('0.375', '3/8')).toBe(true)
+    expect(fillBlankMatches('2/5', '0.4')).toBe(true)
+    expect(fillBlankMatches('4/10', '0.4')).toBe(true)
+    expect(fillBlankMatches('1 / 2', '1/2')).toBe(true)
+  })
+  it('accepts a missing leading zero, trailing zeros and an explicit plus sign', () => {
+    expect(fillBlankMatches('.2', '0.2')).toBe(true)
+    expect(fillBlankMatches('0.20', '0.2')).toBe(true)
+    expect(fillBlankMatches('5.0', '5')).toBe(true)
+    expect(fillBlankMatches('+5', '5')).toBe(true)
+    expect(fillBlankMatches('-0.5', '-1/2')).toBe(true)
+  })
+  it('still rejects a different number, however close', () => {
+    expect(fillBlankMatches('0.33', '1/3')).toBe(false)
+    expect(fillBlankMatches('0.51', '1/2')).toBe(false)
+    expect(fillBlankMatches('-5', '5')).toBe(false)
+    expect(fillBlankMatches('3.15', '3.14')).toBe(false)
+    expect(fillBlankMatches('1/0', '1')).toBe(false)
+  })
+  it('does not accept an unreduced fraction for a fraction key', () => {
+    expect(fillBlankMatches('2/4', '1/2')).toBe(false)
+  })
+  it('leaves answers that are not plain numbers to the existing rules', () => {
+    expect(fillBlankMatches('5 cm', '5cm')).toBe(true)
+    expect(fillBlankMatches('x = 5', '5')).toBe(false)
+    expect(fillBlankMatches('VIII', 'VIII')).toBe(true)
+  })
+})
