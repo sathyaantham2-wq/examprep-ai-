@@ -11,6 +11,7 @@ import {
   reportReactError,
 } from '../lib/client-error-reporting'
 import { installUiSounds } from '../lib/sfx'
+import { watchInstallPrompt } from '../lib/install-app'
 
 // F004: a route-render error still gets reported (see client-error-reporting.ts's own comment
 // for why this needs a separate path from window.onerror), and the visitor gets a plain
@@ -101,6 +102,8 @@ function RootDocument({ children }: { children: React.ReactNode }) {
   }, [])
   // F128: tap/select/nav sounds for every button and link (switchable in the sidebar).
   useEffect(() => installUiSounds(), [])
+  // The browser offers the install once per page load; keep it for the screens that ask later.
+  useEffect(() => watchInstallPrompt(), [])
   // F131: offline fallback page for the installed app (see public/sw.js). Production only, so
   // local dev never serves a stale worker.
   useEffect(() => {

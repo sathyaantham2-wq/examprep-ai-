@@ -8,12 +8,18 @@ import { useSession } from '../lib/auth-client'
 import { PAPER_THEMES, DEFAULT_THEME, THEME_BLURB } from '../lib/pdf/themes'
 import type { PaperTheme } from '../lib/pdf/themes'
 import { PageLoading } from '../components/page-loading'
+import {
+  InstallAppDialog,
+  useInstallOffer,
+} from '../components/install-app-dialog'
 
 const FORM_ID = 'generate-paper-form'
 // Real tiers, not the reference mockup's "Medium" -- src/routes/api/papers/generate.ts's own
 // DIFFICULTY_TIERS. '' means no ceiling chosen (every difficulty stays eligible, F119's default).
 const DIFFICULTY_TIERS = ['Easy', 'Hard', 'Hardest'] as const
 type DifficultyTier = (typeof DIFFICULTY_TIERS)[number]
+
+const INSTALL_OFFER_KEY = 'prepplan-install-offer-generate'
 
 export const Route = createFileRoute('/generate')({ component: GeneratePaper })
 
@@ -80,6 +86,9 @@ function GeneratePaper() {
 
   const [error, setError] = useState<string | null>(null)
   const [submitting, setSubmitting] = useState(false)
+  const installOffer = useInstallOffer(INSTALL_OFFER_KEY)
+  const [showInstall, setShowInstall] = useState(false)
+  const [installAsked, setInstallAsked] = useState(false)
   const [result, setResult] = useState<GenerateResult | null>(null)
 
   useEffect(() => {
@@ -192,8 +201,17 @@ function GeneratePaper() {
   const readyToGenerate =
     Boolean(studentId) && Boolean(blueprintId) && chapterIds.length > 0
 
-  async function handleGenerate(e: React.FormEvent) {
+  // Generating a paper is the moment she has decided to use the app, so it is where the install
+  // is offered (2026-10-02 request). Asked once; the paper is generated whichever way she answers.
+  function handleSubmit(e: React.FormEvent) {
     e.preventDefault()
+    if (installOffer && !installAsked) {
+      setInstallAsked(true)
+      setShowInstall(true)
+    } else void handleGenerate()
+  }
+
+  async function handleGenerate() {
     setError(null)
     setResult(null)
     setSubmitting(true)
@@ -467,11 +485,7 @@ function GeneratePaper() {
         ) : (
           <div className="grid gap-6 md:grid-cols-3">
             <div className="space-y-6 md:col-span-2">
-              <form
-                id={FORM_ID}
-                onSubmit={handleGenerate}
-                className="space-y-6"
-              >
+              <form id={FORM_ID} onSubmit={handleSubmit} className="space-y-6">
                 <Card>
                   <CardHeader>
                     <CardTitle className="text-h3">
@@ -860,6 +874,15 @@ function GeneratePaper() {
           </div>
         )}
       </div>
+      {showInstall && (
+        <InstallAppDialog
+          storageKey={INSTALL_OFFER_KEY}
+          onClose={() => {
+            setShowInstall(false)
+            void handleGenerate()
+          }}
+        />
+      )}
     </AppShell>
   )
 }
