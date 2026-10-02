@@ -1,0 +1,2352 @@
+{
+ "subject": {
+  "code": "PHY12",
+  "name": "Physics",
+  "board": "CBSE",
+  "class": 12
+ },
+ "source": {
+  "publisher": "NCERT",
+  "title": "Physics Part II",
+  "edition": "Textbook for Class XII Part II, Reprint 2026-27",
+  "year": 2026
+ },
+ "chapter": {
+  "part": "II",
+  "chapter_no": 14,
+  "name": "Semiconductor Electronics: Materials, Devices and Simple Circuits",
+  "blurb": "The chapter classifies solids as metals, semiconductors and insulators by conductivity and by energy bands, and explains conduction in pure (intrinsic) and doped (n-type and p-type) semiconductors through electrons and holes. It then describes how a p-n junction forms, with its depletion region and barrier potential, and how a junction diode behaves under forward and reverse bias. Finally it applies the diode as a half-wave and a full-wave rectifier with a capacitor filter.",
+  "source_code": "leph206",
+  "order_index": 14
+ },
+ "scope_in": [
+  {
+   "item": "Classify solids as metals, semiconductors or insulators from the indicative ranges of resistivity and conductivity, using resistivity = 1/conductivity; name elemental (Si, Ge) and compound (inorganic, organic, polymer) semiconductors",
+   "pages": "324-325"
+  },
+  {
+   "item": "Explain the formation of energy bands in a crystal, define valence band, conduction band and energy gap E_g, count the 4N electrons and 8N states of a Si or Ge crystal of N atoms, and classify metals (overlapping or partly filled bands), insulators (E_g > 3 eV) and semiconductors (E_g < 3 eV)",
+   "pages": "325-327"
+  },
+  {
+   "item": "Describe the covalently bonded diamond-like structure of Si and Ge, thermal generation of electron-hole pairs, the hole as an effective positive charge and its apparent motion, n_e = n_h = n_i, I = I_e + I_h, and the balance of generation and recombination",
+   "pages": "327-329"
+  },
+  {
+   "item": "Explain why C is an insulator while Si and Ge are intrinsic semiconductors, and describe the intrinsic semiconductor at T = 0 K and at T > 0 K in the band picture",
+   "pages": "329"
+  },
+  {
+   "item": "Explain doping and the requirements on a dopant; describe how pentavalent donors (As, Sb, P) give n-type and trivalent acceptors (In, B, Al) give p-type material; identify majority and minority carriers and the charge neutrality of the crystal",
+   "pages": "329-331"
+  },
+  {
+   "item": "Locate the donor level E_D and acceptor level E_A in the band diagram, and use n_e n_h = n_i^2 with the doping level (ppm) to calculate electron and hole concentrations; compare the energy gaps of C, Si, Ge and Sn",
+   "pages": "331-332"
+  },
+  {
+   "item": "Describe the formation of a p-n junction: diffusion and drift, the depletion region of immobile ions, the direction of the junction field, equilibrium with no net current, and the barrier potential; explain why two slabs cannot simply be joined",
+   "pages": "333-334"
+  },
+  {
+   "item": "Describe the semiconductor diode and its symbol; explain forward bias (barrier V0 - V, narrower depletion layer, minority carrier injection, current in mA) and reverse bias (barrier V0 + V, wider depletion region, drift current of a few microampere, breakdown voltage)",
+   "pages": "334-336"
+  },
+  {
+   "item": "Describe the experiment for the V-I characteristics of a diode and read the characteristic: threshold (cut-in) voltage of about 0.2 V for Ge and 0.7 V for Si, reverse saturation current, and dynamic resistance r_d = (change in V)/(change in I), including forward and reverse resistance from given readings",
+   "pages": "336-337"
+  },
+  {
+   "item": "Explain the working of the half-wave rectifier and the centre-tap full-wave rectifier, describe their output waveforms, and state the output frequency of each for a given input frequency",
+   "pages": "338-339, 342"
+  },
+  {
+   "item": "Explain the action of a capacitor filter across the load of a rectifier, including the role of the time constant C R_L and why large capacitors are used",
+   "pages": "339-340"
+  }
+ ],
+ "scope_out": [
+  {
+   "item": "Special purpose p-n junction diodes: Zener diode and Zener voltage regulation, photodiode, light emitting diode (LED), solar cell",
+   "reason": "Section removed from this rationalised edition; the only trace is a dangling remark on p. 337 that breakdown 'is discussed later in Section 14.8', a section that does not exist. Mechanisms of breakdown (Zener, avalanche) are not taught."
+  },
+  {
+   "item": "The junction transistor: structure and action, n-p-n and p-n-p types, characteristics, transistor as amplifier, oscillator and switch, current gains",
+   "reason": "Not present in this edition; the Introduction (p. 324) mentions the bipolar junction transistor only in passing"
+  },
+  {
+   "item": "Digital electronics and logic gates (NOT, OR, AND, NAND, NOR), truth tables, integrated circuits",
+   "reason": "Not present anywhere in this edition; there is no exercise on them"
+  },
+  {
+   "item": "The four-diode (bridge) full-wave rectifier and the inductor filter",
+   "reason": "Each is mentioned in one sentence (pp. 338-339) with no circuit or explanation"
+  },
+  {
+   "item": "Average (dc) and rms values of rectified output, ripple factor, rectifier efficiency, peak inverse voltage formulas",
+   "reason": "Not taught; the chapter treats rectifiers qualitatively, apart from output frequency (Exercise 14.6)"
+  },
+  {
+   "item": "The diode equation I = I0 (exp(eV/kT) - 1), numerical values of the barrier potential, and the formula for depletion width",
+   "reason": "Not given; the characteristic is described only by its features and the barrier only as V0"
+  },
+  {
+   "item": "Conductivity in terms of carrier mobility, sigma = e (n_e mu_e + n_h mu_h), and the temperature dependence formula of n_i",
+   "reason": "Not in this chapter; only n_e = n_h = n_i, I = I_e + I_h and n_e n_h = n_i^2 are given"
+  },
+  {
+   "item": "Fermi level and the detailed band theory of solids",
+   "reason": "The 'box on Band Theory of Solids' referred to on p. 325 is not printed in this edition"
+  },
+  {
+   "item": "Vacuum tubes (diode, triode, tetrode, pentode), cathode ray tubes and the galena detector",
+   "reason": "Historical background in the Introduction (pp. 323-324) only; not used by the Summary or any exercise"
+  },
+  {
+   "item": "Points to Ponder: space-delocalised bands, non-stoichiometric compound semiconductors",
+   "reason": "Enrichment note (p. 341), not examinable"
+  },
+  {
+   "item": "Organic and polymer semiconductors beyond their names, and lattice-spacing values of C, Si and Ge",
+   "reason": "Listed as examples or in a figure caption only (pp. 324, 327)"
+  }
+ ],
+ "concepts": [
+  {
+   "code": "C12P-14.1",
+   "name": "Classification of metals, semiconductors and insulators",
+   "description": "Classifying solids by their conductivity or resistivity and by their energy bands: valence band, conduction band and the energy gap between them.",
+   "idea": "Whether a solid is a metal, a semiconductor or an insulator is decided by how its valence band and conduction band are placed: overlapping (or partly filled), separated by a small gap, or separated by a large gap.",
+   "rule": "By conductivity (indicative ranges): metals have resistivity about 10^-2 to 10^-8 ohm m (conductivity 10^2 to 10^8 S/m); semiconductors about 10^-5 to 10^6 ohm m (10^5 to 10^-6 S/m); insulators about 10^11 to 10^19 ohm m (10^-11 to 10^-19 S/m), with resistivity = 1/conductivity. Semiconductors may be elemental (Si, Ge) or compound: inorganic (CdS, GaAs, CdSe, InP), organic (anthracene, doped pthalocyanines) or organic polymers (polypyrrole, polyaniline, polythiophene). By energy bands: in a crystal the energy levels form bands. The band holding the valence electrons is the valence band; the band above it is the conduction band; the gap between the top of the valence band (E_V) and the bottom of the conduction band (E_C) is the energy gap E_g. Metals: the conduction band is partially filled, or the conduction and valence bands overlap (E_g about 0), so many electrons are available for conduction. Insulators: E_g > 3 eV, no electrons in the conduction band and thermal excitation cannot lift them there. Semiconductors: a finite but small gap, E_g < 3 eV, so at room temperature some electrons cross into the conduction band. For a Si or Ge crystal of N atoms there are 4N outer electrons and 8N available states, which split into two bands of 4N states each; at absolute zero the lower (valence) band is completely filled and the upper (conduction) band is completely empty.",
+   "example": "A solid whose energy gap is 9 eV has no electrons in its conduction band at room temperature and is an insulator, while a solid with a gap of 0.3 eV is a semiconductor.",
+   "difficulty_base": "Easy",
+   "questions": [
+    {
+     "b": "Remember",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "In a solid, the energy band that includes the energy levels of the valence electrons is called the",
+     "a": "valence band",
+     "o": [
+      "valence band",
+      "conduction band",
+      "forbidden band",
+      "overlap band"
+     ]
+    },
+    {
+     "b": "Remember",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "Which pair consists of the elemental semiconductors named in the chapter on semiconductor electronics?",
+     "a": "Si and Ge",
+     "o": [
+      "Si and Ge",
+      "GaAs and CdS",
+      "Anthracene and polypyrrole",
+      "CdSe and InP"
+     ]
+    },
+    {
+     "b": "Remember",
+     "d": "Easy",
+     "t": "fill_blank",
+     "m": 1,
+     "q": "The gap between the top of the valence band and the bottom of the conduction band is called the energy band ____ (write one word).",
+     "a": "gap"
+    },
+    {
+     "b": "Remember",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "q": "Which of the following is NOT a compound semiconductor in the chapter's classification of semiconductors?",
+     "a": "Germanium (Ge)",
+     "o": [
+      "Germanium (Ge)",
+      "Gallium arsenide (GaAs)",
+      "Cadmium sulphide (CdS)",
+      "Indium phosphide (InP)"
+     ],
+     "rev": true
+    },
+    {
+     "b": "Understand",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "A solid whose conduction band overlaps its valence band is a good conductor because",
+     "a": "electrons from the valence band can easily move into the conduction band, so a large number of electrons are available for conduction",
+     "o": [
+      "electrons from the valence band can easily move into the conduction band, so a large number of electrons are available for conduction",
+      "the overlap removes all the electrons from the valence band and leaves the solid without carriers",
+      "the overlap produces an energy gap larger than that of an insulator",
+      "the electrons in the overlapping bands are all tightly bound to their parent atoms"
+     ]
+    },
+    {
+     "b": "Understand",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "Why is no electrical conduction possible in an insulator at ordinary temperatures?",
+     "a": "Its energy gap is so large that thermal excitation cannot lift electrons from the valence band to the conduction band",
+     "o": [
+      "Its energy gap is so large that thermal excitation cannot lift electrons from the valence band to the conduction band",
+      "Its valence band contains no electrons at all",
+      "Its conduction band is completely filled with electrons",
+      "Its conduction band overlaps its valence band"
+     ]
+    },
+    {
+     "b": "Understand",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "On the basis of conductivity, semiconductors are solids whose resistivity is",
+     "a": "intermediate between that of metals and that of insulators",
+     "o": [
+      "intermediate between that of metals and that of insulators",
+      "lower than that of every metal",
+      "higher than that of every insulator",
+      "exactly zero at room temperature"
+     ]
+    },
+    {
+     "b": "Understand",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "q": "Why is the resistance of a semiconductor at room temperature not as high as that of an insulator?",
+     "a": "Because its band gap is small, so some valence-band electrons acquire enough thermal energy to enter the conduction band",
+     "o": [
+      "Because its band gap is small, so some valence-band electrons acquire enough thermal energy to enter the conduction band",
+      "Because its conduction band overlaps its valence band, as in a metal",
+      "Because its valence band is empty at room temperature",
+      "Because its conduction band is completely filled at room temperature"
+     ]
+    },
+    {
+     "b": "Understand",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "q": "Why do the electrons of a crystal occupy energy bands instead of the sharp energy levels of an isolated atom?",
+     "a": "Inside the crystal no two electrons see exactly the same pattern of surrounding charges, so each has a different energy level and the closely spaced levels form bands",
+     "o": [
+      "Inside the crystal no two electrons see exactly the same pattern of surrounding charges, so each has a different energy level and the closely spaced levels form bands",
+      "Inside the crystal the electrons stop moving, so their energies spread out",
+      "Inside the crystal all the atoms share one common nucleus",
+      "Thermal energy merges all the atomic levels into one single level"
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "A solid has a resistivity of about 10^15 ohm m. On the basis of conductivity it is classed as",
+     "a": "an insulator",
+     "o": [
+      "an insulator",
+      "a metal",
+      "a semiconductor",
+      "a solid that fits none of the three classes"
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Easy",
+     "t": "fill_blank",
+     "m": 1,
+     "q": "A material has electrical conductivity 0.5 S/m. Its resistivity, in ohm m, as a whole number, is ____.",
+     "a": "2"
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "q": "A silicon crystal contains N atoms. The total number of outer (valence) electrons in the crystal and the total number of energy states available to them are, respectively,",
+     "a": "4N and 8N",
+     "o": [
+      "4N and 8N",
+      "4N and 4N",
+      "8N and 8N",
+      "2N and 8N"
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "q": "Solid X has an energy gap of 6 eV, solid Y has an energy gap of 1 eV, and in solid Z the conduction and valence bands overlap. Using the energy-band classification, X, Y and Z are respectively",
+     "a": "an insulator, a semiconductor and a metal",
+     "o": [
+      "an insulator, a semiconductor and a metal",
+      "a semiconductor, an insulator and a metal",
+      "a metal, a semiconductor and an insulator",
+      "an insulator, a metal and a semiconductor"
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "q": "A solid has electrical conductivity 2 x 10^-4 S/m. Calculate its resistivity and classify the solid on the basis of the chapter's resistivity ranges.",
+     "a": "Resistivity = 1/conductivity = 1/(2 x 10^-4 S/m) = 5 x 10^3 ohm m. This lies inside the semiconductor range (about 10^-5 to 10^6 ohm m), far above the metal range and far below the insulator range (10^11 ohm m and above), so the solid is a semiconductor.",
+     "s": [
+      [
+       "Resistivity = 1/conductivity = 5 x 10^3 ohm m",
+       1
+      ],
+      [
+       "Lies in the intermediate range, so it is a semiconductor",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hardest",
+     "t": "long_answer",
+     "m": 3,
+     "q": "A silicon crystal contains 2 x 10^22 atoms. Find (a) the total number of valence electrons, (b) the total number of energy states available to them and the number of states in each of the two bands into which they split, and (c) state how the two bands are occupied at absolute zero and what this means for conduction.",
+     "a": "(a) Each Si atom has 4 outer electrons, so the number of valence electrons = 4N = 4 x 2 x 10^22 = 8 x 10^22. (b) Each atom has 8 available outer states, so the states number 8N = 1.6 x 10^23; at the lattice spacing of Si these split into two bands of 4N = 8 x 10^22 states each, separated by the energy gap E_g. (c) At absolute zero the 8 x 10^22 electrons completely fill the lower (valence) band and the upper (conduction) band is completely empty, so there are no carriers free to conduct.",
+     "s": [
+      [
+       "Valence electrons 4N = 8 x 10^22",
+       1
+      ],
+      [
+       "States 8N = 1.6 x 10^23, split into two bands of 8 x 10^22 states each",
+       1
+      ],
+      [
+       "At 0 K valence band completely filled, conduction band completely empty, so no conduction",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "assertion_reason",
+     "m": 1,
+     "q": "Assertion (A): At room temperature some electrons are present in the conduction band of a pure semiconductor. Reason (R): At absolute zero the valence band of a semiconductor is completely filled. Choose the correct option.",
+     "a": "Both A and R are true, but R is not the correct explanation of A",
+     "o": [
+      "Both A and R are true, but R is not the correct explanation of A",
+      "Both A and R are true, and R is the correct explanation of A",
+      "A is true, R is false",
+      "A is false, R is true"
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "q": "Compare the energy-band pictures of an insulator and a semiconductor, and use the comparison to account for the difference in their conduction at room temperature.",
+     "a": "In both, a gap separates a filled valence band from the conduction band, but in an insulator the gap is large (E_g > 3 eV) while in a semiconductor it is finite but small (E_g < 3 eV). Thermal excitation cannot lift electrons across the large gap, so the conduction band of an insulator stays empty and it does not conduct; across the small gap some electrons do cross at room temperature and move in the conduction band, so a semiconductor conducts a little.",
+     "s": [
+      [
+       "Insulator has a large gap (E_g > 3 eV), semiconductor a small one (E_g < 3 eV)",
+       1
+      ],
+      [
+       "Thermal excitation cannot cross the large gap but lifts some electrons across the small one, giving some conduction",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hardest",
+     "t": "long_answer",
+     "m": 3,
+     "q": "The chapter describes two different band arrangements that both make a solid a metal. Describe each arrangement, explain how each makes conduction possible, and state what feature they share that an insulator lacks.",
+     "a": "First arrangement: the conduction band is partially filled and the valence band is partially empty. Electrons in a partly empty band can move from lower levels to higher vacant levels, so conduction is possible. Second arrangement: the conduction band and the valence band overlap (E_g about 0), so electrons from the valence band move easily into the conduction band and a large number of electrons become available for conduction. In both, vacant energy levels lie immediately above occupied ones with no gap to cross, so the resistance is low; in an insulator a large gap separates the filled valence band from the empty conduction band.",
+     "s": [
+      [
+       "Partially filled conduction band / partially empty valence band: electrons move to higher vacant levels",
+       1
+      ],
+      [
+       "Overlapping conduction and valence bands: electrons pass easily into the conduction band, many carriers",
+       1
+      ],
+      [
+       "Common feature: no energy gap to cross to reach vacant levels, unlike the large gap of an insulator",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Evaluate",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "q": "A student claims: 'Measuring the resistivity of a solid is always enough to decide whether it is a metal, a semiconductor or an insulator.' Evaluate this claim using what the chapter says about the resistivity ranges.",
+     "a": "The claim is not fully justified. The quoted ranges are only indicative of magnitude and values can fall outside them; the metal and semiconductor ranges even overlap (between about 10^-5 and 10^-2 ohm m). The chapter states that relative resistivity is not the only criterion for distinguishing the three classes; other differences, such as the energy-band structure, also separate them.",
+     "s": [
+      [
+       "Judgement - not always enough; ranges are only indicative (and overlap / can be exceeded)",
+       1
+      ],
+      [
+       "Resistivity is not the only criterion; other differences such as the band structure distinguish them",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Create",
+     "d": "Hardest",
+     "t": "long_answer",
+     "m": 3,
+     "q": "Three unknown solids are described: P has resistivity about 10^-7 ohm m; Q has a filled valence band separated from an empty conduction band by 7 eV; R has a filled valence band separated from the conduction band by 0.5 eV. Prepare a short classification note that names the class of each solid, gives the reason, and predicts for each whether a rise in temperature from very low values to room temperature can put electrons into the conduction band.",
+     "a": "P is a metal: its resistivity lies in the range 10^-2 to 10^-8 ohm m; its bands overlap or are partly filled, so electrons are available for conduction at all temperatures. Q is an insulator: its gap of 7 eV is greater than 3 eV, so thermal excitation cannot lift electrons to the conduction band and it stays non-conducting at room temperature. R is a semiconductor: its gap of 0.5 eV is finite but less than 3 eV; at very low temperature its conduction band is empty, but at room temperature some electrons gain enough energy to cross the gap and it conducts a little.",
+     "s": [
+      [
+       "P - metal, with reason (very low resistivity; overlapping or partly filled bands)",
+       1
+      ],
+      [
+       "Q - insulator, gap > 3 eV, no thermal excitation across it",
+       1
+      ],
+      [
+       "R - semiconductor, small gap < 3 eV, some electrons excited at room temperature",
+       1
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "code": "C12P-14.2",
+   "name": "Intrinsic semiconductors: electrons and holes",
+   "description": "The covalently bonded Si or Ge crystal, thermal generation of electron-hole pairs, the hole as an effective positive charge, and the electron and hole currents of a pure semiconductor.",
+   "idea": "In a pure semiconductor every electron freed from a covalent bond leaves behind a hole, so electrons and holes exist in equal numbers and both carry current.",
+   "rule": "Si and Ge have a diamond-like structure in which each atom is surrounded by four nearest neighbours and shares one valence electron with each, forming covalent bonds. At low temperature all bonds are intact; as temperature rises thermal energy breaks a few bonds, giving a free electron (charge -q) and a vacancy with effective charge +q called a hole. In an intrinsic semiconductor n_e = n_h = n_i, the intrinsic carrier concentration. A hole moves when a bound electron from a neighbouring bond jumps into the vacancy; the originally freed electron is not involved, and hole motion is only a convenient way of describing the motion of bound electrons. Under an electric field holes move towards the negative potential and give a hole current I_h, free electrons give an electron current I_e, and the total current is I = I_e + I_h. Generation of electron-hole pairs is accompanied by recombination (an electron colliding with a hole); at equilibrium the rate of generation equals the rate of recombination. At T = 0 K an intrinsic semiconductor behaves like an insulator; at T > 0 K thermally excited electrons partly occupy the conduction band and leave an equal number of holes in the valence band. C, Si and Ge have the same lattice structure, but their bonding electrons lie in the second, third and fourth orbits, so the energy needed to free an electron is least for Ge, more for Si and highest for C: free electrons are significant in Ge and Si and negligible in C.",
+   "example": "If thermal energy breaks 12 covalent bonds in a pure crystal, 12 free electrons and 12 holes are produced, so the electron and hole numbers stay equal.",
+   "difficulty_base": "Easy",
+   "questions": [
+    {
+     "b": "Remember",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "In the crystal structure of silicon or germanium, each atom is surrounded by how many nearest neighbours?",
+     "a": "Four",
+     "o": [
+      "Four",
+      "Two",
+      "Six",
+      "Eight"
+     ]
+    },
+    {
+     "b": "Remember",
+     "d": "Easy",
+     "t": "fill_blank",
+     "m": 1,
+     "q": "At equilibrium in a semiconductor, the rate of generation of electron-hole pairs is equal to the rate of ____ of the charge carriers (write one word).",
+     "a": "recombination"
+    },
+    {
+     "b": "Remember",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "In an intrinsic semiconductor the number of free electrons n_e, the number of holes n_h and the intrinsic carrier concentration n_i are related by",
+     "a": "n_e = n_h = n_i",
+     "o": [
+      "n_e = n_h = n_i",
+      "n_e is much greater than n_h",
+      "n_h is much greater than n_e",
+      "n_e + n_h = n_i"
+     ]
+    },
+    {
+     "b": "Remember",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "q": "Which of the following is NOT true of a hole in an intrinsic semiconductor?",
+     "a": "It carries an effective negative charge equal to that of an electron",
+     "o": [
+      "It carries an effective negative charge equal to that of an electron",
+      "It is a vacancy left in a covalent bond when an electron breaks away",
+      "It behaves as an apparent free particle",
+      "Under an electric field it moves towards the negative potential"
+     ],
+     "rev": true
+    },
+    {
+     "b": "Understand",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "Why does a pure semiconductor conduct better when its temperature is raised?",
+     "a": "More thermal energy breaks more covalent bonds, giving more free electrons and more holes",
+     "o": [
+      "More thermal energy breaks more covalent bonds, giving more free electrons and more holes",
+      "The atoms move closer together until the valence and conduction bands overlap",
+      "The crystal changes from a diamond-like structure to a metallic structure",
+      "The inner cores of the atoms begin to move through the lattice"
+     ]
+    },
+    {
+     "b": "Understand",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "The two shared electrons of a covalent bond in silicon are described as shuttling back and forth between the two atoms. According to the chapter this",
+     "a": "holds the two atoms together strongly",
+     "o": [
+      "holds the two atoms together strongly",
+      "breaks the bond even at low temperature",
+      "turns both atoms into ions",
+      "gives each atom a net negative charge"
+     ]
+    },
+    {
+     "b": "Understand",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "At a temperature of 0 K, an intrinsic semiconductor behaves like",
+     "a": "an insulator",
+     "o": [
+      "an insulator",
+      "a metal",
+      "an n-type semiconductor",
+      "a p-type semiconductor"
+     ]
+    },
+    {
+     "b": "Understand",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "q": "In the diamond-like structure of silicon, each covalent bond between two neighbouring atoms consists of",
+     "a": "a pair of shared electrons, one contributed by each of the two atoms",
+     "o": [
+      "a pair of shared electrons, one contributed by each of the two atoms",
+      "four electrons, all contributed by one of the two atoms",
+      "one electron transferred completely from one atom to the other",
+      "free electrons that belong to no particular pair of atoms"
+     ]
+    },
+    {
+     "b": "Understand",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "q": "A potential difference is applied across a pure silicon crystal. Which statement describes the motion of its carriers and the resulting current?",
+     "a": "Holes move towards the negative potential, free electrons towards the positive potential, and the two currents add",
+     "o": [
+      "Holes move towards the negative potential, free electrons towards the positive potential, and the two currents add",
+      "Holes and free electrons both move towards the negative potential, and the two currents cancel",
+      "Holes move towards the positive potential, free electrons towards the negative potential, and the two currents add",
+      "Only the free electrons move; holes are fixed vacancies that carry no current"
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "In a pure germanium crystal carrying a current, the electron current is 0.6 mA and the hole current is 0.3 mA. The total current is",
+     "a": "0.9 mA",
+     "o": [
+      "0.9 mA",
+      "0.3 mA",
+      "0.6 mA",
+      "0.18 mA"
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Easy",
+     "t": "fill_blank",
+     "m": 1,
+     "q": "Thermal energy breaks exactly 500 covalent bonds in a small sample of pure silicon. Ignoring recombination, the number of holes created, as a whole number, is ____.",
+     "a": "500"
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "q": "In pure silicon at a certain temperature the intrinsic carrier concentration is n_i = 1.5 x 10^16 m^-3. The total number of charge carriers (free electrons plus holes) per cubic metre is",
+     "a": "3.0 x 10^16 m^-3",
+     "o": [
+      "3.0 x 10^16 m^-3",
+      "1.5 x 10^16 m^-3",
+      "2.25 x 10^32 m^-3",
+      "0.75 x 10^16 m^-3"
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "q": "A pure semiconductor carries a total current of 5.0 mA. The electron current is 1.5 times the hole current. Calculate the hole current and the electron current.",
+     "a": "Total current I = I_e + I_h. With I_e = 1.5 I_h: 5.0 mA = 1.5 I_h + I_h = 2.5 I_h, so I_h = 2.0 mA and I_e = 1.5 x 2.0 mA = 3.0 mA.",
+     "s": [
+      [
+       "Uses I = I_e + I_h with I_e = 1.5 I_h, giving 2.5 I_h = 5.0 mA",
+       1
+      ],
+      [
+       "I_h = 2.0 mA and I_e = 3.0 mA",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "q": "At a certain temperature a pure germanium crystal has 2.4 x 10^19 free electrons per cubic metre. The number of holes per cubic metre is",
+     "a": "2.4 x 10^19 m^-3, because each broken bond gives one free electron and one hole",
+     "o": [
+      "2.4 x 10^19 m^-3, because each broken bond gives one free electron and one hole",
+      "1.2 x 10^19 m^-3, because two electrons are freed for every hole formed",
+      "4.8 x 10^19 m^-3, because each broken bond gives two holes",
+      "zero, because a pure crystal contains no holes"
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hardest",
+     "t": "long_answer",
+     "m": 3,
+     "q": "Three neighbouring bond sites P, Q and R of a pure silicon crystal lie in a line from left to right. A hole is at P. An electric field is applied pointing from left to right, so the right-hand end is at the lower (negative) potential. Describe, step by step, how the hole moves, state the direction in which the bound electrons move, and say whether the free electron originally released from P takes part.",
+     "a": "A bound electron is pushed opposite to the field, that is from right to left. So a bound electron from the bond at Q jumps left into the vacancy at P; P is now filled and the hole is at Q. Next a bound electron from R jumps left into Q, and the hole is at R. The hole has therefore moved from left to right, along the field, towards the negative potential, while the bound electrons moved from right to left. The free electron originally released from P takes no part: it moves independently as a conduction electron and gives the electron current.",
+     "s": [
+      [
+       "Bound electrons jump right to left: Q to P, then R to Q",
+       1
+      ],
+      [
+       "Hole moves P to Q to R, i.e. left to right, towards the negative potential",
+       1
+      ],
+      [
+       "The originally freed electron is not involved; it moves independently as a conduction electron",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "multi_statement",
+     "m": 1,
+     "q": "Consider these statements about a pure semiconductor at room temperature. (I) Thermal energy ionises most of the atoms of the crystal. (II) The neighbourhood from which an electron has broken free is left with an effective charge +q. Which is or are correct?",
+     "a": "Only II",
+     "o": [
+      "Only II",
+      "Only I",
+      "Both I and II",
+      "Neither I nor II"
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "q": "Carbon (diamond), silicon and germanium have the same lattice structure. Explain why carbon is an insulator while silicon and germanium are intrinsic semiconductors.",
+     "a": "The four bonding electrons of C, Si and Ge lie in the second, third and fourth orbits respectively. The energy needed to take an electron out of the bond is therefore least for Ge, larger for Si and highest for C. So the number of free electrons available for conduction is significant in Ge and Si but negligibly small in C, which makes C an insulator.",
+     "s": [
+      [
+       "Bonding electrons lie in the 2nd, 3rd, 4th orbits, so the energy to free one is highest for C and least for Ge",
+       1
+      ],
+      [
+       "Free electrons significant in Si and Ge but negligible in C, hence C is an insulator",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hardest",
+     "t": "long_answer",
+     "m": 3,
+     "q": "At a fixed temperature the number of free electrons and holes in a pure semiconductor stays at a steady value instead of growing without limit, although thermal energy keeps breaking bonds. Analyse why, and state what happens to the carrier numbers when the temperature is raised.",
+     "a": "Two processes go on together. Generation: thermal energy breaks covalent bonds and creates electron-hole pairs. Recombination: a free electron collides with a hole and the pair is lost. As the number of carriers grows, such collisions become more frequent, until the rate of recombination equals the rate of generation; at this equilibrium the carrier numbers are steady, with n_e = n_h = n_i. When the temperature is raised more thermal energy is available, more bonds break, and equilibrium is re-established at larger but still equal numbers of electrons and holes.",
+     "s": [
+      [
+       "Generation of electron-hole pairs by thermal energy and simultaneous recombination",
+       1
+      ],
+      [
+       "Equilibrium when rate of generation equals rate of recombination, giving steady n_e = n_h = n_i",
+       1
+      ],
+      [
+       "Higher temperature: more bonds broken, larger (still equal) numbers of electrons and holes",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Evaluate",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "q": "A student writes: 'A hole current is a flow of real positive particles that travel through the crystal just as protons would.' Evaluate this statement.",
+     "a": "The statement is not correct. A hole is a vacancy in a covalent bond with an effective positive charge, not a real positive particle. What actually moves is bound electrons jumping from bond to bond into the vacancy; the motion of the hole is only a convenient way of describing this motion of bound electrons, which looks like a positive charge moving towards the negative potential.",
+     "s": [
+      [
+       "Judgement - incorrect; a hole is a vacancy with an effective positive charge, not a real particle",
+       1
+      ],
+      [
+       "Hole motion is a convenient description of bound electrons jumping into the vacancy",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Create",
+     "d": "Hardest",
+     "t": "long_answer",
+     "m": 3,
+     "q": "Write a short explanatory note for a classmate that follows a pure silicon crystal from absolute zero up to room temperature. Your note must link the covalent-bond picture to the energy-band picture at each stage.",
+     "a": "At absolute zero every covalent bond is intact; in the band picture the valence band is completely filled and the conduction band is empty, so the crystal behaves like an insulator. As the temperature rises, thermal energy breaks a few bonds: each broken bond frees an electron and leaves a hole. In the band picture this is an electron excited from the valence band across the energy gap to the conduction band, leaving a hole in the valence band. At room temperature the conduction band is partly occupied by these electrons and the valence band holds an equal number of holes (n_e = n_h = n_i); both carry current, so the crystal conducts weakly.",
+     "s": [
+      [
+       "0 K: all bonds intact = valence band full, conduction band empty, behaves as an insulator",
+       1
+      ],
+      [
+       "Warming: a broken bond = an electron lifted across the gap to the conduction band, leaving a hole in the valence band",
+       1
+      ],
+      [
+       "Room temperature: equal numbers of electrons and holes, both conduct, conductivity small",
+       1
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "code": "C12P-14.3",
+   "name": "Extrinsic semiconductors: doping, n-type and p-type",
+   "description": "Doping a pure semiconductor with pentavalent or trivalent impurities to obtain n-type and p-type material, with their majority and minority carriers.",
+   "idea": "Adding a few parts per million of a suitable impurity gives a semiconductor many extra carriers of one kind: electrons from pentavalent donors (n-type) or holes from trivalent acceptors (p-type).",
+   "rule": "The conductivity of an intrinsic semiconductor at room temperature is very low; adding a small amount (a few parts per million) of a suitable impurity increases it manifold. This deliberate addition is doping, the impurity atoms are dopants, and the material is an extrinsic (impurity, doped) semiconductor. The dopant must not distort the lattice, so its atoms must be nearly the same size as the semiconductor atoms; it occupies only a very few lattice sites. Pentavalent dopants (As, Sb, P): four electrons bond with the four neighbours and the fifth is very weakly bound (about 0.01 eV for Ge and 0.05 eV for Si, against about 0.72 eV and 1.1 eV to cross the forbidden band), so it is free at room temperature. The dopant is a donor; electrons are majority carriers and holes minority carriers; the material is n-type, n_e >> n_h. The number of donor electrons depends on the doping level and not on a rise in ambient temperature. Trivalent dopants (In, B, Al): the bond with the fourth neighbour has a vacancy; an electron from a neighbouring bond fills it, leaving a hole and making the dopant core negatively charged. The dopant is an acceptor, one acceptor atom gives one hole; holes are majority carriers and electrons minority carriers; the material is p-type, n_h >> n_e. The abundant majority carriers make recombination of the thermally generated minority carriers more likely, so the minority concentration falls below the intrinsic value. The crystal stays electrically neutral overall, because the charge of the additional carriers is equal and opposite to that of the ionised cores.",
+   "example": "Germanium doped with antimony becomes n-type: each antimony atom gives one conduction electron and is left as a fixed positive core.",
+   "difficulty_base": "Easy",
+   "questions": [
+    {
+     "b": "Remember",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "The deliberate addition of a desirable impurity to a pure semiconductor is called",
+     "a": "doping",
+     "o": [
+      "doping",
+      "diffusion",
+      "rectification",
+      "recombination"
+     ]
+    },
+    {
+     "b": "Remember",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "Which of these is a pentavalent dopant used for silicon or germanium?",
+     "a": "Arsenic",
+     "o": [
+      "Arsenic",
+      "Boron",
+      "Indium",
+      "Aluminium"
+     ]
+    },
+    {
+     "b": "Remember",
+     "d": "Easy",
+     "t": "fill_blank",
+     "m": 1,
+     "q": "A trivalent dopant such as boron takes an electron from a neighbouring bond to complete its fourth bond, and for this reason it is called an ____ impurity (write one word).",
+     "a": "acceptor"
+    },
+    {
+     "b": "Remember",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "q": "Which of the following is NOT a feature of the doping of a semiconductor as described in the chapter?",
+     "a": "The dopant atoms replace most of the semiconductor atoms in the crystal",
+     "o": [
+      "The dopant atoms replace most of the semiconductor atoms in the crystal",
+      "The dopant atoms are nearly the same size as the semiconductor atoms",
+      "The impurity is added in a small amount, such as a few parts per million",
+      "The dopant is chosen so that it does not distort the original lattice"
+     ],
+     "rev": true
+    },
+    {
+     "b": "Understand",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "An arsenic atom replaces a silicon atom in a silicon crystal. Why is its fifth valence electron free to move even at room temperature?",
+     "a": "It is only very weakly bound to its parent atom, so the energy needed to set it free is very small",
+     "o": [
+      "It is only very weakly bound to its parent atom, so the energy needed to set it free is very small",
+      "It is strongly repelled by the nuclei of the four silicon neighbours",
+      "The arsenic atom is so large that it breaks the surrounding covalent bonds",
+      "Thermal energy breaks all four covalent bonds of the arsenic atom"
+     ]
+    },
+    {
+     "b": "Understand",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "Why is a pentavalent impurity in silicon known as a donor impurity?",
+     "a": "Each impurity atom gives one extra electron for conduction",
+     "o": [
+      "Each impurity atom gives one extra electron for conduction",
+      "Each impurity atom gives one extra hole for conduction",
+      "Each impurity atom gives up its positive core to the lattice",
+      "Each impurity atom gives five electrons to every neighbouring atom"
+     ]
+    },
+    {
+     "b": "Understand",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "A trivalent atom placed in a silicon lattice gives rise to a hole because",
+     "a": "it has one valence electron fewer than silicon, so its bond with the fourth neighbour has a vacancy",
+     "o": [
+      "it has one valence electron fewer than silicon, so its bond with the fourth neighbour has a vacancy",
+      "it has one valence electron more than silicon, which pushes a bound electron out",
+      "it removes an electron from the conduction band of silicon",
+      "it is much larger than a silicon atom and breaks four bonds"
+     ]
+    },
+    {
+     "b": "Understand",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "q": "Doping silicon with donor atoms makes the number of holes smaller than in the pure crystal. Why?",
+     "a": "The large number of electrons increases the rate at which holes recombine",
+     "o": [
+      "The large number of electrons increases the rate at which holes recombine",
+      "The donor atoms widen the energy gap of silicon",
+      "The donor atoms each trap one hole permanently in a covalent bond",
+      "The donor atoms lower the temperature of the crystal"
+     ]
+    },
+    {
+     "b": "Understand",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "q": "A trivalent impurity atom in silicon has taken an electron from a neighbouring bond to complete its fourth bond. The impurity core is now",
+     "a": "effectively negatively charged and fixed in the lattice, with an associated hole that can move",
+     "o": [
+      "effectively negatively charged and fixed in the lattice, with an associated hole that can move",
+      "effectively positively charged and fixed in the lattice, with an associated free electron",
+      "neutral and free to move through the lattice",
+      "effectively negatively charged and free to move through the lattice"
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "Which statement is true for n-type silicon?",
+     "a": "Holes are minority carriers and pentavalent atoms are the dopants",
+     "o": [
+      "Holes are minority carriers and pentavalent atoms are the dopants",
+      "Electrons are majority carriers and trivalent atoms are the dopants",
+      "Electrons are minority carriers and pentavalent atoms are the dopants",
+      "Holes are majority carriers and trivalent atoms are the dopants"
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "A silicon crystal is doped with indium. The crystal becomes",
+     "a": "p-type, with holes as majority carriers",
+     "o": [
+      "p-type, with holes as majority carriers",
+      "n-type, with electrons as majority carriers",
+      "p-type, with electrons as majority carriers",
+      "n-type, with holes as majority carriers"
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "q": "In silicon about 0.05 eV is needed to free the fifth electron of a donor atom, while about 1.1 eV is needed for an electron to cross the forbidden band. The second energy is how many times the first?",
+     "a": "22 times",
+     "o": [
+      "22 times",
+      "0.045 times",
+      "1.05 times",
+      "0.055 times"
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "q": "A silicon wafer is doped with boron. State the type of semiconductor formed, and name the majority and minority carriers together with the source of each.",
+     "a": "Boron is trivalent, so it acts as an acceptor and the wafer becomes p-type. Holes are the majority carriers: one hole comes from each acceptor atom, in addition to the intrinsically generated holes. Electrons are the minority carriers and come only from intrinsic (thermal) generation.",
+     "s": [
+      [
+       "p-type, since boron is a trivalent acceptor",
+       1
+      ],
+      [
+       "Majority carriers holes (from acceptors plus intrinsic); minority carriers electrons (intrinsic generation only)",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "q": "An n-type silicon sample is warmed slightly above room temperature. According to the chapter, the number of conduction electrons supplied by the dopant atoms",
+     "a": "is independent of the rise in ambient temperature, while the number of thermally generated pairs increases weakly",
+     "o": [
+      "is independent of the rise in ambient temperature, while the number of thermally generated pairs increases weakly",
+      "increases strongly, while the number of thermally generated pairs stays fixed",
+      "falls to zero, while the number of thermally generated pairs increases strongly",
+      "decreases weakly, while the number of thermally generated pairs also decreases"
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hardest",
+     "t": "long_answer",
+     "m": 3,
+     "q": "A manufacturer needs one germanium wafer that is n-type and another that is p-type. For each wafer name a suitable dopant from those listed in the chapter with its valency, explain how the majority carrier arises, and state the sign of the charge left on the dopant core.",
+     "a": "n-type: use a pentavalent dopant such as arsenic, antimony or phosphorus (valency 5). Four of its electrons bond with the four Ge neighbours; the fifth is very weakly bound and becomes a free conduction electron, leaving the donor core with one effective positive charge. p-type: use a trivalent dopant such as indium, boron or aluminium (valency 3). It can bond with only three neighbours; the fourth bond has a vacancy, which an electron from a neighbouring bond fills, creating a mobile hole and leaving the acceptor core with one effective negative charge.",
+     "s": [
+      [
+       "n-type: pentavalent dopant (As/Sb/P), fifth electron weakly bound and set free",
+       1
+      ],
+      [
+       "p-type: trivalent dopant (In/B/Al), vacancy in the fourth bond gives a hole",
+       1
+      ],
+      [
+       "Donor core left positive; acceptor core left negative",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "assertion_reason",
+     "m": 1,
+     "q": "Assertion (A): A crystal of n-type silicon is electrically neutral as a whole. Reason (R): The charge of the additional charge carriers is equal and opposite to that of the ionised dopant cores in the lattice. Choose the correct option.",
+     "a": "Both A and R are true, and R is the correct explanation of A",
+     "o": [
+      "Both A and R are true, and R is the correct explanation of A",
+      "Both A and R are true, but R is not the correct explanation of A",
+      "A is true, R is false",
+      "A is false, R is true"
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "q": "In germanium about 0.01 eV separates the fifth electron of a donor atom from its atom, whereas about 0.72 eV is needed to cross the forbidden band. Analyse what this comparison implies about where the conduction electrons of n-type germanium come from at room temperature.",
+     "a": "The donor electron needs about 0.72/0.01 = 72 times less energy than an electron crossing the forbidden band, so at room temperature practically every donor atom gives up its fifth electron while only very few Ge atoms are ionised across the gap. Hence most of the conduction electrons in n-type germanium come from the donor atoms and only a small number from intrinsic (thermal) generation.",
+     "s": [
+      [
+       "Donor electron needs far less energy (about 72 times less), so donors are readily ionised at room temperature",
+       1
+      ],
+      [
+       "Most conduction electrons come from donors, only a few from intrinsic generation",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hardest",
+     "t": "long_answer",
+     "m": 3,
+     "q": "In a silicon crystal one silicon atom is replaced by an antimony atom. Account for each of the five valence electrons of the antimony atom, state what is left at the antimony site when its loosely held electron moves away, and explain how this way of producing a conduction electron differs from the thermal breaking of a silicon-silicon bond.",
+     "a": "Four of the five valence electrons form covalent bonds with the four neighbouring silicon atoms. The fifth is not needed for bonding; it is very weakly bound and is set free by a very small energy even at room temperature. When it moves away it leaves a fixed (immobile) antimony core with one effective positive charge. No bond is broken in this process, so no hole is created: the donor gives a conduction electron only. When a silicon-silicon bond breaks thermally, by contrast, a free electron and a hole are always produced together.",
+     "s": [
+      [
+       "Four electrons form bonds with the four Si neighbours; the fifth is weakly bound and set free",
+       1
+      ],
+      [
+       "A fixed core with one effective positive charge is left at the site",
+       1
+      ],
+      [
+       "Donor ionisation gives an electron without a hole, whereas thermal bond breaking gives an electron-hole pair",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Evaluate",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "q": "A student argues: 'Pure silicon already contains free electrons and holes at room temperature, so doping it is unnecessary for making electronic devices.' Evaluate this argument.",
+     "a": "The argument is not sound. Although a pure semiconductor has thermally generated carriers, its conductivity at room temperature is very low, so no important electronic device can be developed from it. Adding a few parts per million of a suitable impurity increases the conductivity manifold and fixes whether electrons or holes are the majority carriers, which is why doping is necessary.",
+     "s": [
+      [
+       "Judgement - not sound; intrinsic conductivity at room temperature is very low, no important devices possible",
+       1
+      ],
+      [
+       "Doping with a few ppm of suitable impurity raises the conductivity manifold (and sets the majority carrier)",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Create",
+     "d": "Hardest",
+     "t": "long_answer",
+     "m": 3,
+     "q": "Draw up, in words, a three-row comparison of n-type and p-type semiconductors made from silicon. Row 1: the valency of the dopant with one example and the name given to that kind of impurity. Row 2: the majority and the minority carriers. Row 3: the charge on the fixed dopant core and the overall charge of the crystal.",
+     "a": "Row 1: n-type uses a pentavalent dopant (for example arsenic, antimony or phosphorus), called a donor; p-type uses a trivalent dopant (for example boron, aluminium or indium), called an acceptor. Row 2: in n-type, electrons are the majority carriers and holes the minority carriers (n_e >> n_h); in p-type, holes are the majority carriers and electrons the minority carriers (n_h >> n_e). Row 3: the donor core carries one effective positive charge and the acceptor core one effective negative charge; in both cases the crystal as a whole is electrically neutral.",
+     "s": [
+      [
+       "Row 1: pentavalent donor with example for n-type; trivalent acceptor with example for p-type",
+       1
+      ],
+      [
+       "Row 2: n-type electrons majority, holes minority; p-type holes majority, electrons minority",
+       1
+      ],
+      [
+       "Row 3: donor core positive, acceptor core negative, crystal neutral overall in both",
+       1
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "code": "C12P-14.4",
+   "name": "Energy bands of doped semiconductors and the relation n_e n_h = n_i^2",
+   "description": "Donor and acceptor energy levels in the band diagram, the energy gaps of the group IV elements, and calculating electron and hole concentrations in a doped semiconductor.",
+   "idea": "Doping adds an energy level very close to a band edge, so the dopants ionise easily at room temperature; the majority concentration is then fixed by the doping and the minority concentration follows from n_e n_h = n_i^2.",
+   "rule": "In the band diagram of n-type Si the donor level E_D lies slightly below the bottom E_C of the conduction band (about 0.01 eV), so electrons move from it into the conduction band with a very small supply of energy. At room temperature most donor atoms are ionised but very few Si atoms are, so most conduction-band electrons come from the donors. In p-type material the acceptor level E_A lies slightly above the top E_V of the valence band (about 0.01 to 0.05 eV); an electron from the valence band jumps to E_A with very little energy (equivalently, the hole sinks from E_A into the valence band), so at room temperature most acceptors are ionised and the holes in the valence band are predominantly due to the impurity. Electrons rise up and holes fall down when they gain energy. In thermal equilibrium the electron and hole concentrations satisfy n_e n_h = n_i^2. When the doping is much larger than n_i, the majority concentration is taken equal to the dopant concentration (n_e approximately N_D for donors) and the minority concentration is n_i^2 divided by it. A doping of 1 ppm means one dopant atom per 10^6 atoms of the crystal. The different resistivities of C, Si and Ge follow from their energy gaps: 5.4 eV for C (diamond), 1.1 eV for Si and 0.7 eV for Ge; Sn, also in group IV, is a metal because its energy gap is 0 eV.",
+   "example": "With n_i = 1.0 x 10^16 m^-3 and donors giving n_e = 1.0 x 10^22 m^-3, the hole concentration is n_h = (1.0 x 10^32)/(1.0 x 10^22) = 1.0 x 10^10 m^-3.",
+   "difficulty_base": "Hard",
+   "questions": [
+    {
+     "b": "Remember",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "Which group IV element is a metal because its energy gap is 0 eV?",
+     "a": "Tin (Sn)",
+     "o": [
+      "Tin (Sn)",
+      "Carbon (C)",
+      "Silicon (Si)",
+      "Germanium (Ge)"
+     ]
+    },
+    {
+     "b": "Remember",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "The electron concentration n_e and the hole concentration n_h of a semiconductor in thermal equilibrium are related to the intrinsic concentration n_i by",
+     "a": "n_e n_h = n_i^2",
+     "o": [
+      "n_e n_h = n_i^2",
+      "n_e + n_h = 2 n_i",
+      "n_e n_h = n_i",
+      "n_e / n_h = n_i^2"
+     ]
+    },
+    {
+     "b": "Remember",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "In the energy band diagram of n-type material shown in the chapter, the separation between the donor level E_D and the bottom of the conduction band E_C is about",
+     "a": "0.01 eV",
+     "o": [
+      "0.01 eV",
+      "0.7 eV",
+      "1.1 eV",
+      "5.4 eV"
+     ]
+    },
+    {
+     "b": "Remember",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "q": "Which statement about doped silicon at room temperature is NOT correct?",
+     "a": "Most of the silicon atoms, like most of the donor atoms, are ionised",
+     "o": [
+      "Most of the silicon atoms, like most of the donor atoms, are ionised",
+      "Electrons move from the donor level into the conduction band with a very small supply of energy",
+      "In p-type material the holes in the valence band are predominantly due to the impurity",
+      "In n-type material most of the conduction-band electrons come from the donor impurities"
+     ],
+     "rev": true
+    },
+    {
+     "b": "Understand",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "In n-type silicon, why can the donor electrons reach the conduction band with only a very small supply of energy?",
+     "a": "Because the donor energy level lies slightly below the bottom of the conduction band",
+     "o": [
+      "Because the donor energy level lies slightly below the bottom of the conduction band",
+      "Because the donor energy level lies slightly above the top of the valence band",
+      "Because the donor energy level lies exactly in the middle of the energy gap",
+      "Because the donor energy level lies inside the valence band"
+     ]
+    },
+    {
+     "b": "Understand",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "The chapter says that 'electrons rise up and holes fall down when they gain external energy'. For p-type material this means that",
+     "a": "an electron jumping up from the valence band to the acceptor level is the same event as the hole sinking from the acceptor level into the valence band",
+     "o": [
+      "an electron jumping up from the valence band to the acceptor level is the same event as the hole sinking from the acceptor level into the valence band",
+      "an electron falling from the conduction band to the acceptor level is the same event as the hole rising into the conduction band",
+      "holes lose energy whenever electrons gain it, so the two never move together",
+      "the acceptor level moves down into the valence band as the temperature rises"
+     ]
+    },
+    {
+     "b": "Understand",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "Carbon (diamond), silicon and germanium differ widely in resistivity. According to the chapter, this difference depends on",
+     "a": "the energy gap between their conduction and valence bands",
+     "o": [
+      "the energy gap between their conduction and valence bands",
+      "their lattice structures, which are of three different kinds",
+      "the number of valence electrons, which differs from one to the next",
+      "the number of nearest neighbours of each atom, which differs from one to the next"
+     ]
+    },
+    {
+     "b": "Understand",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "q": "A semiconductor is doped with donors at a fixed temperature, so that its electron concentration rises far above n_i. What does the equilibrium relation between the carrier concentrations imply for the holes?",
+     "a": "The hole concentration falls below n_i, so that the product of the two concentrations is unchanged",
+     "o": [
+      "The hole concentration falls below n_i, so that the product of the two concentrations is unchanged",
+      "The hole concentration rises by the same factor as the electron concentration",
+      "The hole concentration stays equal to n_i",
+      "The hole concentration becomes exactly zero"
+     ]
+    },
+    {
+     "b": "Understand",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "q": "In a silicon crystal doped with donors at a concentration N_D of about 10^22 m^-3, the electron concentration is taken as approximately N_D. Why is this justified?",
+     "a": "The thermally generated electrons (about 10^16 m^-3) are negligibly few compared with those produced by doping",
+     "o": [
+      "The thermally generated electrons (about 10^16 m^-3) are negligibly few compared with those produced by doping",
+      "The thermally generated electrons are far more numerous than the donor electrons",
+      "The donor atoms prevent every silicon-silicon bond from breaking",
+      "The holes supplied by the donors cancel the thermally generated electrons"
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "A doped semiconductor in thermal equilibrium has n_i = 1.5 x 10^16 m^-3 and electron concentration n_e = 4.5 x 10^22 m^-3. Its hole concentration is",
+     "a": "5.0 x 10^9 m^-3",
+     "o": [
+      "5.0 x 10^9 m^-3",
+      "3.0 x 10^6 m^-3",
+      "6.75 x 10^38 m^-3",
+      "3.3 x 10^-7 m^-3"
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Easy",
+     "t": "fill_blank",
+     "m": 1,
+     "q": "In a doped semiconductor in thermal equilibrium the electron concentration is 100 times the intrinsic concentration n_i. The hole concentration is then n_i divided by ____ (write a whole number).",
+     "a": "100"
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "q": "A semiconductor crystal has 4 x 10^28 atoms m^-3 and intrinsic concentration n_i = 2 x 10^16 m^-3. It is doped with 1 ppm (one part per million) of a trivalent impurity, every atom of which gives one hole. The hole and electron concentrations are",
+     "a": "n_h = 4 x 10^22 m^-3 and n_e = 1 x 10^10 m^-3",
+     "o": [
+      "n_h = 4 x 10^22 m^-3 and n_e = 1 x 10^10 m^-3",
+      "n_h = 1 x 10^10 m^-3 and n_e = 4 x 10^22 m^-3",
+      "n_h = 4 x 10^22 m^-3 and n_e = 2 x 10^16 m^-3",
+      "n_h = 4 x 10^34 m^-3 and n_e = 1 x 10^-2 m^-3"
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "q": "A pure silicon crystal has 5 x 10^28 atoms m^-3 and n_i = 1.5 x 10^16 m^-3. It is doped with 2 ppm (two parts per million) of arsenic. Calculate the electron concentration and the hole concentration.",
+     "a": "Donor concentration N_D = 2 x 10^-6 x 5 x 10^28 = 1 x 10^23 m^-3. The thermally generated electrons are negligible, so n_e = N_D = 1 x 10^23 m^-3. From n_e n_h = n_i^2, n_h = (1.5 x 10^16)^2 / (1 x 10^23) = (2.25 x 10^32)/(1 x 10^23) = 2.25 x 10^9 m^-3.",
+     "s": [
+      [
+       "n_e = N_D = 2 x 10^-6 x 5 x 10^28 = 1 x 10^23 m^-3",
+       1
+      ],
+      [
+       "n_h = n_i^2 / n_e = 2.25 x 10^9 m^-3",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "q": "Carbon, silicon and germanium have energy band gaps (E_g)C, (E_g)Si and (E_g)Ge. Which relation is correct?",
+     "a": "(E_g)C > (E_g)Si > (E_g)Ge",
+     "o": [
+      "(E_g)C > (E_g)Si > (E_g)Ge",
+      "(E_g)Si < (E_g)Ge < (E_g)C",
+      "(E_g)C < (E_g)Si < (E_g)Ge",
+      "(E_g)C = (E_g)Si = (E_g)Ge"
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hardest",
+     "t": "long_answer",
+     "m": 3,
+     "q": "A pure silicon crystal has 5 x 10^28 atoms m^-3 and n_i = 1.5 x 10^16 m^-3. It is doped with indium at one indium atom for every 5 x 10^7 silicon atoms, each indium atom giving one hole. Find (a) the concentration of indium atoms, (b) the hole concentration and the type of semiconductor, and (c) the electron concentration.",
+     "a": "(a) Indium concentration N_A = (5 x 10^28)/(5 x 10^7) = 1 x 10^21 m^-3. (b) Indium is trivalent, so the crystal is p-type; the thermally generated holes (about 10^16 m^-3) are negligible, so n_h = N_A = 1 x 10^21 m^-3. (c) n_e = n_i^2 / n_h = (2.25 x 10^32)/(1 x 10^21) = 2.25 x 10^11 m^-3.",
+     "s": [
+      [
+       "N_A = 5 x 10^28 / 5 x 10^7 = 1 x 10^21 m^-3",
+       1
+      ],
+      [
+       "p-type with n_h = 1 x 10^21 m^-3",
+       1
+      ],
+      [
+       "n_e = n_i^2 / n_h = 2.25 x 10^11 m^-3",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "multi_statement",
+     "m": 1,
+     "q": "Consider these statements about p-type silicon. (I) At room temperature most of the acceptor atoms are ionised, leaving holes in the valence band. (II) An electron needs only a very small energy to jump from the valence band to the acceptor level. Which is or are correct?",
+     "a": "Both I and II",
+     "o": [
+      "Both I and II",
+      "Only I",
+      "Only II",
+      "Neither I nor II"
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "q": "In an n-type sample in thermal equilibrium the electron concentration is 9 x 10^20 m^-3 and the hole concentration is 2.5 x 10^11 m^-3. Find the intrinsic carrier concentration of the material at this temperature and the factor by which the majority carriers outnumber the minority carriers.",
+     "a": "n_i^2 = n_e n_h = 9 x 10^20 x 2.5 x 10^11 = 2.25 x 10^32 m^-6, so n_i = 1.5 x 10^16 m^-3. Ratio of majority to minority carriers = (9 x 10^20)/(2.5 x 10^11) = 3.6 x 10^9.",
+     "s": [
+      [
+       "n_i = sqrt(n_e n_h) = 1.5 x 10^16 m^-3",
+       1
+      ],
+      [
+       "n_e / n_h = 3.6 x 10^9",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hardest",
+     "t": "long_answer",
+     "m": 3,
+     "q": "Two samples of the same semiconductor are at the same temperature, at which n_i = 6 x 10^15 m^-3. Sample A has electron concentration 3 x 10^22 m^-3; sample B has hole concentration 6 x 10^21 m^-3. For each sample find the minority carrier concentration and state its type, then compare the minority concentrations of the two samples.",
+     "a": "n_i^2 = (6 x 10^15)^2 = 3.6 x 10^31 m^-6. Sample A: electrons are in the majority, so it is n-type; n_h = (3.6 x 10^31)/(3 x 10^22) = 1.2 x 10^9 m^-3. Sample B: holes are in the majority, so it is p-type; n_e = (3.6 x 10^31)/(6 x 10^21) = 6 x 10^9 m^-3. The minority concentration of B is 5 times that of A, because B is the more lightly doped sample.",
+     "s": [
+      [
+       "Sample A: n-type, n_h = 1.2 x 10^9 m^-3",
+       1
+      ],
+      [
+       "Sample B: p-type, n_e = 6 x 10^9 m^-3",
+       1
+      ],
+      [
+       "Minority concentration of B is 5 times that of A (B less heavily doped)",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Evaluate",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "q": "Silicon with n_i = 1.5 x 10^16 m^-3 is doped so that n_e = 5 x 10^22 m^-3. A student says: 'Holes come only from the intrinsic source, so the hole concentration is still 1.5 x 10^16 m^-3.' Evaluate this, giving the correct value.",
+     "a": "The student is wrong. Holes do come only from intrinsic generation, but the large number of electrons increases the rate of recombination, so the hole concentration is pushed far below n_i. In thermal equilibrium n_e n_h = n_i^2, so n_h = (2.25 x 10^32)/(5 x 10^22) = 4.5 x 10^9 m^-3.",
+     "s": [
+      [
+       "Judgement - wrong; extra electrons increase recombination, so n_h falls below n_i",
+       1
+      ],
+      [
+       "n_h = n_i^2 / n_e = 4.5 x 10^9 m^-3",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Create",
+     "d": "Hardest",
+     "t": "long_answer",
+     "m": 3,
+     "q": "Silicon has 5 x 10^28 atoms m^-3 and n_i = 1.5 x 10^16 m^-3. Devise a doping specification that produces n-type silicon whose hole concentration is 9 x 10^8 m^-3: state the kind of dopant with one example, the electron concentration required, and the doping level in parts per million.",
+     "a": "Use a pentavalent (donor) dopant such as arsenic, antimony or phosphorus to make the silicon n-type. Required electron concentration: n_e = n_i^2 / n_h = (2.25 x 10^32)/(9 x 10^8) = 2.5 x 10^23 m^-3, which must equal the donor concentration N_D. Doping level = N_D / (number of Si atoms per m^3) = (2.5 x 10^23)/(5 x 10^28) = 5 x 10^-6, that is 5 ppm.",
+     "s": [
+      [
+       "Pentavalent donor dopant with an example (As, Sb or P)",
+       1
+      ],
+      [
+       "n_e = n_i^2 / n_h = 2.5 x 10^23 m^-3",
+       1
+      ],
+      [
+       "Doping level = 2.5 x 10^23 / 5 x 10^28 = 5 ppm",
+       1
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "code": "C12P-14.5",
+   "name": "Formation of the p-n junction: depletion region and barrier potential",
+   "description": "Diffusion and drift of carriers across a p-n junction, the depletion region of immobile ions, the junction field and the barrier potential at equilibrium.",
+   "idea": "Carriers diffusing across a p-n junction uncover fixed ions that set up a field opposing further diffusion; the junction settles when the drift current balances the diffusion current.",
+   "rule": "A p-n junction is made within one wafer, for example by adding a small quantity of pentavalent impurity to part of a p-Si wafer; pressing a p-type slab against an n-type slab does not work, because the surface roughness is much larger than the inter-atomic spacing (about 2 to 3 angstrom) and the contact is a discontinuity for the carriers. Because of the concentration gradient, holes diffuse from the p-side to the n-side and electrons from the n-side to the p-side: this is the diffusion current. An electron leaving the n-side leaves behind an immobile ionised donor (positive); a hole leaving the p-side leaves behind an immobile ionised acceptor (negative). The positive space-charge layer on the n-side and the negative layer on the p-side together form the depletion region, about one-tenth of a micrometre thick, depleted of free charges. Its charges set up an electric field directed from the positive charge towards the negative charge (from the n-side to the p-side); this field moves electrons from the p-side to the n-side and holes from the n-side to the p-side, which is drift. The drift current is opposite to the diffusion current. At first the diffusion current is large and the drift current small; as the space-charge regions extend the field and the drift current grow until the two currents are equal, and there is then no net current. The n-material has lost electrons and the p-material has gained them, so the n-side is positive relative to the p-side; since this potential tends to prevent the movement of electrons from the n-region to the p-region it is called the barrier potential.",
+   "example": "A hole wandering close to the junction on the n-side is swept by the junction field across to the p-side; this is a drift motion.",
+   "difficulty_base": "Hard",
+   "questions": [
+    {
+     "b": "Remember",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "The two important processes that occur during the formation of a p-n junction are",
+     "a": "diffusion and drift",
+     "o": [
+      "diffusion and drift",
+      "doping and rectification",
+      "generation and filtering",
+      "ionisation and breakdown"
+     ]
+    },
+    {
+     "b": "Remember",
+     "d": "Easy",
+     "t": "fill_blank",
+     "m": 1,
+     "q": "The thickness of the depletion region of a p-n junction is of the order of ____ micrometre (write a decimal).",
+     "a": "0.1"
+    },
+    {
+     "b": "Remember",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "The motion of charge carriers caused by an electric field is called",
+     "a": "drift",
+     "o": [
+      "drift",
+      "diffusion",
+      "doping",
+      "recombination"
+     ]
+    },
+    {
+     "b": "Remember",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "q": "Which statement about the depletion region of a p-n junction is NOT correct?",
+     "a": "It contains a high concentration of free electrons and holes",
+     "o": [
+      "It contains a high concentration of free electrons and holes",
+      "It consists of immobile ionised donors and acceptors",
+      "It carries positive space charge on the n-side and negative space charge on the p-side",
+      "It is formed by the carriers that moved across the junction in the initial diffusion"
+     ],
+     "rev": true
+    },
+    {
+     "b": "Understand",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "In an unbiased p-n junction, holes diffuse from the p-region to the n-region because",
+     "a": "the hole concentration in the p-region is greater than in the n-region",
+     "o": [
+      "the hole concentration in the p-region is greater than in the n-region",
+      "the free electrons in the n-region attract them",
+      "the potential difference across the junction pushes them across",
+      "an external battery drives them across"
+     ]
+    },
+    {
+     "b": "Understand",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "When an electron diffuses from the n-side to the p-side of a junction, it leaves behind on the n-side",
+     "a": "an immobile ionised donor carrying positive charge",
+     "o": [
+      "an immobile ionised donor carrying positive charge",
+      "an immobile ionised acceptor carrying negative charge",
+      "a mobile hole",
+      "a neutral dopant atom that is free to move"
+     ]
+    },
+    {
+     "b": "Understand",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "Why is there no net current through a p-n junction in equilibrium?",
+     "a": "The diffusion current and the drift current are equal and opposite",
+     "o": [
+      "The diffusion current and the drift current are equal and opposite",
+      "Neither diffusion nor drift of carriers takes place any longer",
+      "All the free carriers of the crystal have recombined",
+      "The barrier potential has fallen to zero"
+     ]
+    },
+    {
+     "b": "Understand",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "q": "The electric field inside the depletion region of a p-n junction is directed",
+     "a": "from the n-side towards the p-side",
+     "o": [
+      "from the n-side towards the p-side",
+      "from the p-side towards the n-side",
+      "parallel to the plane of the junction",
+      "alternately towards the p-side and the n-side"
+     ]
+    },
+    {
+     "b": "Understand",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "q": "Why do the ionised donors and acceptors of the depletion region not move away under the junction field?",
+     "a": "They are immobile, being bonded to the surrounding atoms of the lattice",
+     "o": [
+      "They are immobile, being bonded to the surrounding atoms of the lattice",
+      "They are electrically neutral and feel no force",
+      "They recombine with one another as soon as they are formed",
+      "They are held in place by the external battery"
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "An electron on the p-side of an unbiased p-n junction comes close to the junction in its random motion. Under the junction field it",
+     "a": "moves across to the n-side",
+     "o": [
+      "moves across to the n-side",
+      "is pushed deeper into the p-side",
+      "stays at rest at the edge of the junction",
+      "is converted into a hole"
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "In an unbiased p-n junction, the drift current across the junction is carried by",
+     "a": "minority carriers - electrons on the p-side and holes on the n-side - that come near the junction and are swept across by the junction field",
+     "o": [
+      "minority carriers - electrons on the p-side and holes on the n-side - that come near the junction and are swept across by the junction field",
+      "majority carriers crossing because of the concentration gradient",
+      "the immobile ionised donors and acceptors of the depletion region",
+      "no carriers; drift is a motion of the crystal lattice"
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "q": "At one instant while a p-n junction is forming, the diffusion current across it is 8 microampere and the drift current is 3 microampere. The net conventional current across the junction at that instant is",
+     "a": "5 microampere, from the p-side to the n-side",
+     "o": [
+      "5 microampere, from the p-side to the n-side",
+      "5 microampere, from the n-side to the p-side",
+      "11 microampere, from the p-side to the n-side",
+      "11 microampere, from the n-side to the p-side"
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "q": "Can a p-n junction be obtained by taking a slab of p-type semiconductor and physically pressing it against a slab of n-type semiconductor? Give the reason.",
+     "a": "No. Any slab, however flat, has a roughness much larger than the inter-atomic crystal spacing (about 2 to 3 angstrom), so continuous contact at the atomic level is not possible. The junction would behave as a discontinuity for the flowing charge carriers.",
+     "s": [
+      [
+       "No - roughness is much larger than the inter-atomic spacing, so no continuous contact at the atomic level",
+       1
+      ],
+      [
+       "The join acts as a discontinuity for the charge carriers",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "q": "As diffusion continues during the formation of a p-n junction, what happens to the space-charge regions, the junction field and the drift current?",
+     "a": "The space-charge regions extend, the field becomes stronger and the drift current increases",
+     "o": [
+      "The space-charge regions extend, the field becomes stronger and the drift current increases",
+      "The space-charge regions shrink, the field becomes weaker and the drift current decreases",
+      "The space-charge regions extend, the field becomes weaker and the drift current decreases",
+      "The space-charge regions shrink, the field becomes stronger and the drift current increases"
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hardest",
+     "t": "long_answer",
+     "m": 3,
+     "q": "A p-n junction is drawn with the p-region on the left and the n-region on the right. For the unbiased junction state, as 'left to right' or 'right to left': (a) the direction in which holes diffuse and in which electrons diffuse, and the direction of the conventional diffusion current; (b) on which side the positive space charge lies and the direction of the junction electric field; (c) the direction of the conventional drift current.",
+     "a": "(a) Holes diffuse from the p-side to the n-side, that is left to right; electrons diffuse from the n-side to the p-side, that is right to left. Both give a conventional diffusion current from left to right. (b) The positive space charge (ionised donors) is on the right, in the n-side, and the negative space charge (ionised acceptors) on the left; the field points from positive to negative charge, that is right to left. (c) The field drives holes from right to left and electrons from left to right, so the conventional drift current is from right to left, opposite to the diffusion current.",
+     "s": [
+      [
+       "Holes diffuse left to right, electrons right to left; diffusion current left to right",
+       1
+      ],
+      [
+       "Positive space charge on the right (n-side); field directed right to left",
+       1
+      ],
+      [
+       "Drift current right to left, opposite to the diffusion current",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "assertion_reason",
+     "m": 1,
+     "q": "Assertion (A): The barrier potential of a p-n junction makes the p-material positive relative to the n-material. Reason (R): During the formation of the junction the n-region loses electrons and the p-region gains electrons. Choose the correct option.",
+     "a": "A is false, R is true",
+     "o": [
+      "A is false, R is true",
+      "Both A and R are true, and R is the correct explanation of A",
+      "Both A and R are true, but R is not the correct explanation of A",
+      "A is true, R is false"
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "q": "Explain why the potential difference that appears across an unbiased p-n junction is called a barrier potential, stating which movement of carriers it acts against.",
+     "a": "The loss of electrons from the n-region and the gain of electrons by the p-region makes the n-material positive relative to the p-material. The polarity of this potential is such as to oppose the further flow of carriers by diffusion: it tends to prevent electrons moving from the n-region into the p-region (and holes from the p-region into the n-region). Because it acts as a barrier to this movement it is called the barrier potential.",
+     "s": [
+      [
+       "Potential arises with the n-side positive relative to the p-side (n lost electrons, p gained them)",
+       1
+      ],
+      [
+       "It opposes further movement of electrons from n to p (majority-carrier diffusion), hence 'barrier'",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hardest",
+     "t": "long_answer",
+     "m": 3,
+     "q": "When a p-n junction is formed, diffusion does not continue until the electron and hole concentrations are the same on both sides. Analyse, as a chain of cause and effect, how the junction limits its own diffusion and reaches equilibrium.",
+     "a": "Initially the diffusion current is large and the drift current small. Each carrier that diffuses across leaves behind an immobile ion, so the positive space charge on the n-side and the negative space charge on the p-side build up and the space-charge regions extend. This increases the strength of the electric field across the junction, and with it the drift current, which flows opposite to the diffusion current. The process continues until the drift current equals the diffusion current; there is then no net current, and a barrier potential exists across the junction that opposes further diffusion.",
+     "s": [
+      [
+       "Diffusion uncovers immobile ions, so the space-charge regions extend",
+       1
+      ],
+      [
+       "The junction field strengthens and the opposing drift current grows",
+       1
+      ],
+      [
+       "Equilibrium when drift current equals diffusion current: no net current",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Evaluate",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "q": "A student reasons: 'The depletion region has been emptied of charges, so there can be no electric field inside it.' Evaluate this reasoning.",
+     "a": "The reasoning is wrong. The depletion region is depleted only of its free (mobile) charges. It still contains immobile ionised donors (positive) on the n-side and immobile ionised acceptors (negative) on the p-side. These space charges set up an electric field directed from the positive charge towards the negative charge, that is from the n-side to the p-side.",
+     "s": [
+      [
+       "Judgement - wrong; only the mobile charges are absent, immobile ionised donors and acceptors remain",
+       1
+      ],
+      [
+       "These space charges produce a field from the n-side to the p-side",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Create",
+     "d": "Hardest",
+     "t": "long_answer",
+     "m": 3,
+     "q": "Compose a description, in words, of a sketch of the electric potential plotted against position across an unbiased p-n junction, going from deep in the p-region to deep in the n-region. Say where the potential is constant, where and in which sense it changes, and what charges are responsible.",
+     "a": "Deep in the p-region the potential is constant, at its lower value, because that region is neutral. On entering the depletion region the potential starts to rise; it rises continuously across the depletion region, a distance of the order of one-tenth of a micrometre, passing first through the layer of negative ionised acceptors on the p-side and then through the layer of positive ionised donors on the n-side. Beyond the depletion region, deep in the n-region, it is constant again at its higher value. The total rise is the barrier potential, with the n-side positive relative to the p-side.",
+     "s": [
+      [
+       "Constant (lower) potential in the neutral p-region and constant (higher) potential in the neutral n-region",
+       1
+      ],
+      [
+       "Potential rises across the depletion region from the p-side to the n-side",
+       1
+      ],
+      [
+       "Rise caused by negative acceptor ions on the p-side and positive donor ions on the n-side; total rise is the barrier potential",
+       1
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "code": "C12P-14.6",
+   "name": "The semiconductor diode under forward and reverse bias",
+   "description": "The p-n junction diode with an applied voltage: barrier height, depletion width and current under forward and reverse bias, the V-I characteristics and dynamic resistance.",
+   "idea": "A forward bias lowers the junction barrier and gives a current of milliamperes; a reverse bias raises the barrier and leaves only a tiny, almost constant current, so the diode conducts essentially in one direction.",
+   "rule": "A semiconductor diode is a p-n junction with metallic contacts at its ends, a two-terminal device; the arrow of its symbol gives the conventional direction of current under forward bias. Forward bias: p-side to the positive terminal of the battery and n-side to the negative. The applied voltage V drops mostly across the depletion region (its resistance is very high compared with the p-side and n-side) and opposes the built-in potential V0, so the depletion layer width decreases and the effective barrier height is (V0 - V). Electrons from the n-side cross to the p-side and holes from the p-side cross to the n-side, where they are minority carriers (minority carrier injection); they diffuse away from the junction, and the forward current, usually in mA, is the sum of the hole diffusion current and the conventional current due to electron diffusion. Reverse bias: n-side positive and p-side negative. The barrier height becomes (V0 + V), the depletion region widens and the diffusion current falls enormously; what remains is the drift of minority carriers swept across the junction, a current of the order of a few microampere, limited by the minority carrier concentration and not by the applied voltage. This reverse saturation current is essentially independent of voltage up to the breakdown voltage V_br, where it increases sharply; if the current exceeds the rated value the diode is destroyed by overheating. V-I characteristics are studied with a potentiometer (rheostat), a voltmeter across the diode and a milliammeter (forward bias) or microammeter (reverse bias). In forward bias the current is negligible until the threshold or cut-in voltage (about 0.2 V for a germanium diode and about 0.7 V for a silicon diode) and then rises significantly (exponentially). The forward-bias resistance is low compared with the reverse-bias resistance. Dynamic resistance r_d = (small change in voltage)/(small change in current).",
+   "example": "If the forward current of a diode rises by 5 mA when the voltage across it rises by 0.05 V, its dynamic resistance is 0.05 V / 0.005 A = 10 ohm.",
+   "difficulty_base": "Hard",
+   "questions": [
+    {
+     "b": "Remember",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "A p-n junction diode is forward biased when",
+     "a": "its p-side is connected to the positive terminal of the battery and its n-side to the negative terminal",
+     "o": [
+      "its p-side is connected to the positive terminal of the battery and its n-side to the negative terminal",
+      "its n-side is connected to the positive terminal of the battery and its p-side to the negative terminal",
+      "both its sides are connected to the positive terminal of the battery",
+      "no battery is connected across it"
+     ]
+    },
+    {
+     "b": "Remember",
+     "d": "Easy",
+     "t": "fill_blank",
+     "m": 1,
+     "q": "The threshold (cut-in) voltage of a silicon diode is about ____ V (write a decimal).",
+     "a": "0.7"
+    },
+    {
+     "b": "Remember",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "The very small current through a reverse-biased diode, which remains almost constant as the bias is changed, is called the",
+     "a": "reverse saturation current",
+     "o": [
+      "reverse saturation current",
+      "diffusion current",
+      "threshold current",
+      "injection current"
+     ]
+    },
+    {
+     "b": "Remember",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "q": "Which of the following is NOT true of a p-n junction diode under reverse bias?",
+     "a": "The depletion region becomes narrower",
+     "o": [
+      "The depletion region becomes narrower",
+      "The effective barrier height increases",
+      "The current is of the order of a few microampere",
+      "The current is almost independent of the applied voltage up to the breakdown voltage"
+     ],
+     "rev": true
+    },
+    {
+     "b": "Understand",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "When a forward bias is applied to a p-n junction, it",
+     "a": "lowers the potential barrier",
+     "o": [
+      "lowers the potential barrier",
+      "raises the potential barrier",
+      "reduces the majority carrier current to zero",
+      "leaves the potential barrier unchanged but widens the depletion region"
+     ]
+    },
+    {
+     "b": "Understand",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "Why does a voltage applied to a diode drop mostly across the depletion region?",
+     "a": "The depletion region, having no free charges, has a very high resistance compared with the p-side and the n-side",
+     "o": [
+      "The depletion region, having no free charges, has a very high resistance compared with the p-side and the n-side",
+      "The depletion region has a very low resistance compared with the p-side and the n-side",
+      "The p-side and the n-side are insulators through which no voltage can be applied",
+      "The metallic contacts at the ends prevent any voltage from appearing elsewhere"
+     ]
+    },
+    {
+     "b": "Understand",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "The arrow in the circuit symbol of a p-n junction diode indicates",
+     "a": "the conventional direction of current when the diode is forward biased",
+     "o": [
+      "the conventional direction of current when the diode is forward biased",
+      "the direction of electron flow when the diode is forward biased",
+      "the direction of the reverse saturation current",
+      "the direction of the electric field inside the depletion region"
+     ]
+    },
+    {
+     "b": "Understand",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "q": "Why is the reverse current of a diode not very much dependent on the applied voltage?",
+     "a": "It is limited by the concentration of minority carriers on either side of the junction, and even a small voltage is enough to sweep them across",
+     "o": [
+      "It is limited by the concentration of minority carriers on either side of the junction, and even a small voltage is enough to sweep them across",
+      "The barrier height stays the same whatever reverse voltage is applied",
+      "The majority carriers diffuse across the junction at a rate that the voltage cannot change",
+      "The depletion region disappears under reverse bias"
+     ]
+    },
+    {
+     "b": "Understand",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "q": "What is meant by 'minority carrier injection' in a forward-biased diode?",
+     "a": "Electrons from the n-side cross to the p-side and holes from the p-side cross to the n-side, where each becomes a minority carrier",
+     "o": [
+      "Electrons from the n-side cross to the p-side and holes from the p-side cross to the n-side, where each becomes a minority carrier",
+      "Minority carriers on each side are swept by the junction field to their majority side",
+      "Extra dopant atoms are added near the junction while the diode is conducting",
+      "Electron-hole pairs are generated thermally inside the depletion region"
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "A p-n junction has a built-in potential V0 = 0.8 V. A forward bias of 0.3 V is applied across it. The effective barrier height is",
+     "a": "0.5 V",
+     "o": [
+      "0.5 V",
+      "1.1 V",
+      "0.8 V",
+      "0.3 V"
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Easy",
+     "t": "fill_blank",
+     "m": 1,
+     "q": "A p-n junction has a built-in potential of 0.6 V. It is reverse biased with 5 V. The effective barrier height, in V, as a decimal, is ____.",
+     "a": "5.6"
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "q": "When the forward voltage across a diode is raised from 0.65 V to 0.75 V, the current rises from 10 mA to 30 mA. The dynamic resistance of the diode over this range is",
+     "a": "5 ohm",
+     "o": [
+      "5 ohm",
+      "5 x 10^-3 ohm",
+      "0.2 ohm",
+      "25 ohm"
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "q": "A diode carries a reverse current of 3 microampere at a reverse bias of 12 V. (a) Applying Ohm's law at this point, find the reverse-bias resistance. (b) If its forward-bias resistance is 20 ohm, find the ratio of the reverse-bias resistance to the forward-bias resistance.",
+     "a": "(a) Reverse resistance = V/I = 12 V / (3 x 10^-6 A) = 4 x 10^6 ohm. (b) Ratio = (4 x 10^6 ohm)/(20 ohm) = 2 x 10^5, so the reverse-bias resistance is 2 x 10^5 times the forward-bias resistance.",
+     "s": [
+      [
+       "Reverse resistance = 12 V / 3 x 10^-6 A = 4 x 10^6 ohm",
+       1
+      ],
+      [
+       "Ratio = 4 x 10^6 / 20 = 2 x 10^5",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "q": "In the experiment to study the V-I characteristics of a diode, which current-measuring instruments are used?",
+     "a": "A milliammeter in forward bias and a microammeter in reverse bias",
+     "o": [
+      "A milliammeter in forward bias and a microammeter in reverse bias",
+      "A microammeter in forward bias and a milliammeter in reverse bias",
+      "A milliammeter in both forward and reverse bias",
+      "A microammeter in both forward and reverse bias"
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hardest",
+     "t": "long_answer",
+     "m": 3,
+     "q": "The characteristic of a diode gives these readings. Forward bias: 5 mA at 0.62 V and 25 mA at 0.70 V. Reverse bias: 2 microampere at 8 V. Treating the forward characteristic as a straight line between the two forward readings, find (a) the dynamic resistance in forward bias, (b) the resistance in reverse bias from Ohm's law, and (c) the ratio of the reverse-bias resistance to the forward-bias dynamic resistance.",
+     "a": "(a) r_d = (change in V)/(change in I) = (0.70 - 0.62) V / (25 - 5) mA = 0.08 V / 0.020 A = 4 ohm. (b) Reverse resistance = 8 V / (2 x 10^-6 A) = 4 x 10^6 ohm. (c) Ratio = (4 x 10^6 ohm)/(4 ohm) = 1 x 10^6.",
+     "s": [
+      [
+       "Forward dynamic resistance = 0.08 V / 0.020 A = 4 ohm",
+       1
+      ],
+      [
+       "Reverse resistance = 8 V / 2 x 10^-6 A = 4 x 10^6 ohm",
+       1
+      ],
+      [
+       "Ratio = 1 x 10^6",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "multi_statement",
+     "m": 1,
+     "q": "Consider these statements about a p-n junction diode. (I) Under forward bias the width of the depletion layer decreases. (II) Under reverse bias the diffusion current becomes enormously larger than it is under forward bias. Which is or are correct?",
+     "a": "Only I",
+     "o": [
+      "Only I",
+      "Only II",
+      "Both I and II",
+      "Neither I nor II"
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "q": "In forward bias the diode current is almost negligible for small applied voltages and then rises steeply. Explain this behaviour in terms of the barrier and the energies of the carriers.",
+     "a": "For a small applied voltage the barrier potential is reduced only slightly below its equilibrium value, so only the small number of carriers that happen to be in the uppermost energy levels have enough energy to cross the junction, and the current is small. When the applied voltage is increased significantly the barrier height is reduced further, many more carriers have the required energy, and the current increases significantly (exponentially) for even a small further increase in voltage.",
+     "s": [
+      [
+       "Small voltage: barrier only slightly reduced, only carriers in the uppermost energy levels cross, small current",
+       1
+      ],
+      [
+       "Larger voltage: barrier much reduced, many more carriers can cross, current rises steeply",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hardest",
+     "t": "long_answer",
+     "m": 3,
+     "q": "Contrast the current through a diode in forward bias with that in reverse bias under three heads: the carriers and process responsible, the typical order of magnitude, and the dependence on the applied voltage.",
+     "a": "Process: the forward current is due to majority carriers injected across the lowered barrier (electrons into the p-side, holes into the n-side), which then diffuse away from the junction; the reverse current is due to minority carriers that come close to the junction and are swept across it by the junction field (drift). Magnitude: the forward current is usually in milliampere; the reverse current is of the order of a few microampere. Voltage dependence: beyond the threshold voltage the forward current rises steeply (exponentially) with voltage; the reverse current is almost independent of voltage, being limited by the minority carrier concentration, until the breakdown voltage is reached, where it increases sharply.",
+     "s": [
+      [
+       "Forward: injected carriers diffusing; reverse: drift of minority carriers across the junction",
+       1
+      ],
+      [
+       "Forward in mA; reverse in microampere",
+       1
+      ],
+      [
+       "Forward rises steeply with voltage beyond threshold; reverse nearly constant until breakdown",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Evaluate",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "q": "A technician says: 'A general-purpose diode can be run safely at its reverse breakdown voltage, because in reverse bias the current is always tiny.' Evaluate this statement.",
+     "a": "The statement is wrong. The reverse current is tiny and nearly constant only up to the breakdown voltage; at the breakdown voltage it increases sharply, and even a slight increase in bias causes a large change in current. If the current is not limited by the external circuit below the rated value, the diode overheats and is destroyed. General-purpose diodes are therefore not used beyond the reverse saturation current region.",
+     "s": [
+      [
+       "Judgement - wrong; at breakdown the reverse current increases sharply",
+       1
+      ],
+      [
+       "Current above the rated value destroys the diode by overheating, so such diodes are kept within the saturation region",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Create",
+     "d": "Hardest",
+     "t": "long_answer",
+     "m": 3,
+     "q": "Design an experiment to obtain the V-I characteristics of a silicon diode in both forward and reverse bias. Describe the circuit in words, the change you make between the two parts, the readings you take, and the shape of graph you expect.",
+     "a": "Connect the battery to the diode through a potentiometer (rheostat) so that the voltage applied to the diode can be varied, with a voltmeter across the diode and a current meter in series with it. Forward bias: connect the p-side towards the positive terminal and use a milliammeter. Reverse bias: reverse the battery connections so that the n-side is positive, and replace the milliammeter by a microammeter. In each part increase the voltage in steps and note the current for each voltage, then plot current against voltage. Expected graph: in forward bias the current stays almost negligible up to the threshold voltage (about 0.7 V) and then rises steeply; in reverse bias the current is very small and almost constant (the reverse saturation current) until, at the breakdown voltage, it increases sharply.",
+     "s": [
+      [
+       "Circuit: battery through a potentiometer/rheostat, voltmeter across the diode, current meter in series",
+       1
+      ],
+      [
+       "Forward bias with a milliammeter; reverse bias with reversed battery and a microammeter; note I for each V",
+       1
+      ],
+      [
+       "Graph: negligible then steep rise beyond threshold in forward bias; small constant current up to breakdown in reverse",
+       1
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "code": "C12P-14.7",
+   "name": "The junction diode as a rectifier",
+   "description": "Half-wave and centre-tap full-wave rectifier circuits, their output waveforms and frequencies, and the capacitor filter that smooths the rectified output.",
+   "idea": "Because a diode conducts only when forward biased, it passes only one half of an alternating voltage; two diodes with a centre-tap transformer use both halves, and a capacitor across the load holds the output near its peak.",
+   "rule": "A rectifier is a circuit that rectifies an alternating voltage, restricting it to one direction. Half-wave rectifier: the secondary of a transformer supplies the ac across terminals A and B, and one diode is in series with the load resistor R_L. When A is positive the diode is forward biased and conducts; when A is negative it is reverse biased and does not conduct (the reverse saturation current is taken as zero). The output across R_L appears only in the positive half-cycles, so there is one output pulse per cycle and the output frequency equals the input frequency. The reverse breakdown voltage of the diode must be sufficiently higher than the peak ac voltage at the secondary. Full-wave rectifier: a centre-tap transformer and two diodes; the p-sides of the diodes are connected to the ends A and B of the secondary, the n-sides are joined, and the output is taken between this common point and the centre tap. The voltages at A and B relative to the centre tap are out of phase, so D1 conducts in one half-cycle and D2 in the other, sending current through R_L in the same direction; each diode rectifies only half the total secondary voltage. There are two output pulses per cycle, so the output frequency is twice the input frequency, and the circuit is more efficient than the half-wave rectifier. (Another full-wave circuit, needing four diodes and no centre tap, is only mentioned.) The rectified voltage is a train of half-sinusoid pulses: unidirectional but not steady. A filter makes it steady: normally a capacitor connected across the output terminals, in parallel with R_L (an inductor in series with R_L can also be used). The capacitor charges to the peak of the rectified output while the voltage rises; with no load it stays at the peak; with a load it discharges through the load and its voltage falls until it is recharged in the next half-cycle. The rate of fall depends inversely on the product C R_L, the time constant, so large capacitors are used and the output stays near the peak voltage.",
+   "example": "For an ac input of 400 Hz, a half-wave rectifier gives 400 output pulses per second and a full-wave rectifier gives 800.",
+   "difficulty_base": "Hard",
+   "questions": [
+    {
+     "b": "Remember",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "A circuit that uses a diode to restrict an alternating voltage to one direction is called",
+     "a": "a rectifier",
+     "o": [
+      "a rectifier",
+      "an amplifier",
+      "an oscillator",
+      "a potentiometer"
+     ]
+    },
+    {
+     "b": "Remember",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "The transformer used in the two-diode full-wave rectifier, whose secondary has a connection at its midpoint, is called a",
+     "a": "centre-tap transformer",
+     "o": [
+      "centre-tap transformer",
+      "step-down autotransformer",
+      "current transformer",
+      "variable transformer"
+     ]
+    },
+    {
+     "b": "Remember",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "To obtain a steady dc output from the pulsating voltage of a rectifier, a capacitor is normally connected",
+     "a": "across the output terminals, in parallel with the load",
+     "o": [
+      "across the output terminals, in parallel with the load",
+      "in series with the load",
+      "in series with the primary of the transformer",
+      "in series with the diode"
+     ]
+    },
+    {
+     "b": "Remember",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "q": "Which statement about the half-wave rectifier is NOT correct?",
+     "a": "The diode conducts during both halves of the ac cycle",
+     "o": [
+      "The diode conducts during both halves of the ac cycle",
+      "A single diode is connected in series with the load",
+      "The output voltage, though still varying, is restricted to one direction",
+      "The reverse breakdown voltage of the diode must be sufficiently higher than the peak ac voltage at the transformer secondary"
+     ],
+     "rev": true
+    },
+    {
+     "b": "Understand",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "Why can a junction diode be used to rectify an alternating voltage?",
+     "a": "It allows current to pass only when it is forward biased",
+     "o": [
+      "It allows current to pass only when it is forward biased",
+      "It allows current to pass equally well in both directions",
+      "It stores charge during one half-cycle and releases it in the next",
+      "It changes the frequency of the alternating voltage to zero"
+     ]
+    },
+    {
+     "b": "Understand",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "Why is the single-diode rectifier circuit called a half-wave rectifier?",
+     "a": "Because its rectified output is obtained for only half of the input ac wave",
+     "o": [
+      "Because its rectified output is obtained for only half of the input ac wave",
+      "Because its output voltage is always half the input voltage",
+      "Because it uses only half of the transformer secondary",
+      "Because its output frequency is half the input frequency"
+     ]
+    },
+    {
+     "b": "Understand",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "Why is a full-wave rectifier a more efficient circuit for getting rectified voltage than a half-wave rectifier?",
+     "a": "It gives output during both the positive and the negative half of the ac cycle",
+     "o": [
+      "It gives output during both the positive and the negative half of the ac cycle",
+      "It gives output only during the positive half of the ac cycle, but with twice the voltage",
+      "It needs no transformer",
+      "Its diodes never become reverse biased"
+     ]
+    },
+    {
+     "b": "Understand",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "q": "Why do capacitor input filters use capacitors of large capacitance?",
+     "a": "A large capacitance makes the time constant large, so the capacitor voltage falls only a little before it is recharged",
+     "o": [
+      "A large capacitance makes the time constant large, so the capacitor voltage falls only a little before it is recharged",
+      "A large capacitance makes the time constant small, so the capacitor discharges completely in each cycle",
+      "A large capacitance blocks the direct current from reaching the load",
+      "A large capacitance raises the peak voltage above that of the rectified output"
+     ]
+    },
+    {
+     "b": "Understand",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "q": "In a centre-tap full-wave rectifier, D1 is connected to end A of the secondary and D2 to end B. At an instant when A is positive with respect to the centre tap,",
+     "a": "B is negative with respect to the centre tap, so D1 conducts and D2 does not",
+     "o": [
+      "B is negative with respect to the centre tap, so D1 conducts and D2 does not",
+      "B is also positive with respect to the centre tap, so both diodes conduct",
+      "B is negative with respect to the centre tap, so D2 conducts and D1 does not",
+      "B is at the same potential as the centre tap, so neither diode conducts"
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "An ac input of frequency 40 Hz is applied in turn to a half-wave rectifier and to a full-wave rectifier. The output frequencies are respectively",
+     "a": "40 Hz and 80 Hz",
+     "o": [
+      "40 Hz and 80 Hz",
+      "20 Hz and 40 Hz",
+      "40 Hz and 40 Hz",
+      "80 Hz and 40 Hz"
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Easy",
+     "t": "fill_blank",
+     "m": 1,
+     "q": "An ac input of frequency 60 Hz is applied to a full-wave rectifier. The frequency of the output, in Hz, as a whole number, is ____.",
+     "a": "120"
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "q": "A capacitor filter uses C = 1000 microfarad across a load R_L = 500 ohm. The time constant C x R_L is",
+     "a": "0.5 s",
+     "o": [
+      "0.5 s",
+      "5 x 10^5 s",
+      "2 x 10^-6 s",
+      "2 s"
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "q": "In a centre-tap full-wave rectifier the peak voltage between the two ends of the transformer secondary is 24 V. Neglecting the voltage drop across a conducting diode, the peak voltage rectified by each diode is",
+     "a": "12 V",
+     "o": [
+      "12 V",
+      "24 V",
+      "48 V",
+      "6 V"
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "q": "In a full-wave rectifier the p-side of diode D1 is joined to end A of a centre-tapped secondary and the p-side of diode D2 to end B. The n-sides of both diodes are joined at point X, and the load R_L is connected between X and the centre tap. For the half-cycle in which B is positive with respect to the centre tap, state which diode conducts and why, and compare the direction of the current in R_L with that in the other half-cycle.",
+     "a": "When B is positive with respect to the centre tap, A is negative. The p-side of D2 is then positive, so D2 is forward biased and conducts, while D1 is reverse biased and does not conduct. The current passes from X through R_L to the centre tap, which is the same direction through R_L as in the other half-cycle (when D1 conducts), so the output is unidirectional.",
+     "s": [
+      [
+       "D2 conducts (forward biased, its p-side positive); D1 is reverse biased",
+       1
+      ],
+      [
+       "Current through R_L is in the same direction (X to centre tap) as in the other half-cycle",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hardest",
+     "t": "long_answer",
+     "m": 3,
+     "q": "A centre-tap full-wave rectifier is fed with 50 Hz ac. The peak voltage between the two ends of the secondary is 30 V and the voltage drop across a conducting diode may be neglected. A capacitor of 2000 microfarad is connected across the load of 1000 ohm. Find (a) the peak value of the rectified output, (b) the frequency of the output pulses and the time between successive peaks, and (c) the time constant C R_L, commenting on what it implies for the output voltage.",
+     "a": "(a) Each diode rectifies half the total secondary voltage, so the peak of the rectified output = 30 V / 2 = 15 V. (b) A full-wave rectifier gives two pulses per cycle, so the output frequency = 2 x 50 Hz = 100 Hz and the time between successive peaks = 1/100 s = 0.01 s. (c) Time constant = C R_L = 2000 x 10^-6 F x 1000 ohm = 2 s. This is very large compared with 0.01 s, so the capacitor voltage falls very little between peaks and the output stays close to the peak value of 15 V.",
+     "s": [
+      [
+       "Peak rectified output = 15 V",
+       1
+      ],
+      [
+       "Output frequency 100 Hz, time between peaks 0.01 s",
+       1
+      ],
+      [
+       "C R_L = 2 s, much larger than 0.01 s, so the output stays near 15 V",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "assertion_reason",
+     "m": 1,
+     "q": "Assertion (A): A capacitor connected across the load of a rectifier keeps the output voltage nearer to the peak value of the rectified voltage. Reason (R): A capacitor connected across the load blocks the steady part of the rectified output and passes only the varying part to the load. Choose the correct option.",
+     "a": "A is true, R is false",
+     "o": [
+      "A is true, R is false",
+      "Both A and R are true, and R is the correct explanation of A",
+      "Both A and R are true, but R is not the correct explanation of A",
+      "A is false, R is true"
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "q": "The same sinusoidal ac input is applied to a half-wave rectifier and to a full-wave rectifier, with no filter. Compare the two output waveforms across the load over one complete cycle of the input.",
+     "a": "Half-wave: there is one pulse, shaped like half a sinusoid, during the half-cycle in which the diode is forward biased, and zero output during the other half-cycle. Full-wave: there are two such pulses in one input cycle, one from each diode, with no gap between them. In both cases the output is in one direction only, but it is pulsating rather than steady.",
+     "s": [
+      [
+       "Half-wave: one half-sinusoid pulse per cycle, zero output for the other half-cycle",
+       1
+      ],
+      [
+       "Full-wave: two pulses per cycle with no gap; both outputs unidirectional but pulsating",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hardest",
+     "t": "long_answer",
+     "m": 3,
+     "q": "A capacitor is connected across the output terminals of a full-wave rectifier. Analyse how the voltage across the capacitor behaves (a) when no load is connected and (b) when a load resistor is connected, and state what decides how far the voltage falls between peaks.",
+     "a": "While the rectified voltage is rising the capacitor gets charged. (a) With no external load it has no path to discharge, so it remains charged to the peak voltage of the rectified output. (b) With a load it discharges through the load once the rectified voltage falls below the capacitor voltage, so the voltage across it begins to fall; in the next half-cycle of the rectified output it is charged again to the peak value. The rate of fall depends inversely on the product of the capacitance C and the effective load resistance R_L (the time constant): the larger C R_L, the smaller the fall, and the nearer the output stays to the peak voltage.",
+     "s": [
+      [
+       "Capacitor charges as the voltage rises; with no load it stays at the peak voltage",
+       1
+      ],
+      [
+       "With a load it discharges through the load, the voltage falls, and it is recharged to the peak in the next half-cycle",
+       1
+      ],
+      [
+       "Rate of fall depends inversely on C R_L; a large time constant keeps the output near the peak",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Evaluate",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "q": "A student says: 'The output of a full-wave rectifier never changes direction, so it is already a steady dc voltage and needs nothing more.' Evaluate this statement.",
+     "a": "The statement is only partly right. The output is unidirectional, but it is in the form of pulses shaped like half sinusoids and does not have a steady value. To get a steady dc output a filter is needed: normally a capacitor connected across the output terminals in parallel with the load (or an inductor in series with the load), which filters out the ac ripple.",
+     "s": [
+      [
+       "Judgement - unidirectional but pulsating (half-sinusoid pulses), not steady",
+       1
+      ],
+      [
+       "A filter is needed: capacitor across the load (or inductor in series with it)",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Create",
+     "d": "Hardest",
+     "t": "long_answer",
+     "m": 3,
+     "q": "Using a transformer, one junction diode, a load resistor and a capacitor, design a circuit that gives a nearly steady dc voltage from the ac mains. Describe the connections in words, explain when the diode conducts, and state one requirement each on the diode and on the capacitor.",
+     "a": "Connect the primary of the transformer to the ac mains. Join one end A of the secondary to the p-side of the diode, the n-side of the diode to one end of the load resistor, and the other end of the load resistor back to the other end B of the secondary; connect the capacitor across the load resistor (in parallel with it). The diode conducts only in the half-cycles in which A is positive, when it is forward biased, charging the capacitor to the peak voltage; in the other half-cycles it is reverse biased and the capacitor supplies the load. Requirements: the reverse breakdown voltage of the diode must be sufficiently higher than the peak ac voltage at the secondary, and the capacitance must be large so that the time constant C R_L is large and the voltage falls only slightly between peaks.",
+     "s": [
+      [
+       "Connections: diode in series with the load across the secondary, capacitor in parallel with the load",
+       1
+      ],
+      [
+       "Diode conducts only when its p-side end is positive (forward biased), charging the capacitor; capacitor feeds the load otherwise",
+       1
+      ],
+      [
+       "Diode breakdown voltage well above the peak secondary voltage; large capacitance for a large time constant",
+       1
+      ]
+     ]
+    }
+   ]
+  }
+ ]
+}

@@ -23,7 +23,9 @@ const args = process.argv.slice(2)
 const checkOnly = args.includes('--check')
 const files = args.filter((a) => !a.startsWith('--'))
 if (files.length === 0) {
-  console.error('usage: sync-concept-text.ts <authored chapter file>... [--check]')
+  console.error(
+    'usage: sync-concept-text.ts <authored chapter file>... [--check]',
+  )
   process.exit(1)
 }
 
@@ -52,7 +54,12 @@ try {
         .where('code', '=', c.code)
         .executeTakeFirst()
       if (!row) continue
-      if (row.idea === c.idea && row.rule === c.rule && row.example === c.example) continue
+      if (
+        row.idea === c.idea &&
+        row.rule === c.rule &&
+        row.example === c.example
+      )
+        continue
       changed += 1
       if (!checkOnly) {
         await db

@@ -1,0 +1,1698 @@
+{
+ "subject": {
+  "code": "PHY11",
+  "name": "Physics",
+  "board": "CBSE",
+  "class": 11
+ },
+ "source": {
+  "publisher": "NCERT",
+  "title": "Physics Part I",
+  "edition": "Textbook for Class XI Part I, Reprint 2026-27",
+  "year": 2026
+ },
+ "chapter": {
+  "part": "I",
+  "chapter_no": 1,
+  "name": "Units and Measurement",
+  "blurb": "The chapter explains that measuring a physical quantity means comparing it with a unit and introduces the International System of Units with its seven base units. It then sets out the rules for significant figures: how to count them, how to carry them through arithmetic and how to round off. Finally it introduces the dimensions of physical quantities and uses dimensional analysis to check equations and deduce relations, noting what the method cannot do.",
+  "source_code": "keph101",
+  "order_index": 1
+ },
+ "scope_in": [
+  {
+   "item": "State what a unit is, that a measurement is a number accompanied by a unit, and distinguish base units, derived units and a system of units; recall the base units of length, mass and time in the CGS, FPS and MKS systems",
+   "pages": "1, 10"
+  },
+  {
+   "item": "Name the seven SI base quantities with their units and symbols (Table 1.1), and describe the radian and steradian as units of the dimensionless plane angle (ds/r) and solid angle (dA/r^2)",
+   "pages": "2"
+  },
+  {
+   "item": "State that the elementary entities must be specified when the mole is used; recognise derived units with special names (newton, joule, watt) and the units retained for general use in Table 1.2",
+   "pages": "3, 10"
+  },
+  {
+   "item": "Convert a quantity from one set of units to another by treating units as algebraic quantities, including a newly defined system of units (Exercises 1.1-1.3, 1.5)",
+   "pages": "8, 10-11"
+  },
+  {
+   "item": "Define significant figures as the reliable digits plus the first uncertain digit and count them using the chapter's rules for non-zero digits, zeros between digits, leading zeros and trailing zeros with and without a decimal point",
+   "pages": "3-4, 11"
+  },
+  {
+   "item": "Explain that a change of units cannot change the number of significant figures; write measurements in scientific notation a x 10^b; find an order of magnitude by the chapter's rule; treat exact numbers as having infinite significant figures",
+   "pages": "3-5"
+  },
+  {
+   "item": "Apply the rules for significant figures in multiplication/division (least number of significant figures) and addition/subtraction (least number of decimal places)",
+   "pages": "5-6, 11"
+  },
+  {
+   "item": "Round off using the chapter's convention, including a dropped 5 (preceding digit even: dropped; odd: raised), and keep one extra digit in intermediate steps",
+   "pages": "5-7"
+  },
+  {
+   "item": "State that a value quoted to n significant figures has a relative error that depends on the value itself, and compare the relative errors of single quoted values",
+   "pages": "6"
+  },
+  {
+   "item": "State the seven dimensions of the physical world, define the dimensions of a quantity, and write dimensional formulae and dimensional equations of mechanical quantities from their defining relations",
+   "pages": "7"
+  },
+  {
+   "item": "State and use the principle of homogeneity of dimensions to check the dimensional consistency of an equation; recognise dimensionless quantities and that arguments of trigonometric, logarithmic and exponential functions are dimensionless",
+   "pages": "7-9, 11"
+  },
+  {
+   "item": "Deduce a relation among physical quantities as a product of powers by the method of dimensions, and state the limitations of the method",
+   "pages": "9-10"
+  }
+ ],
+ "scope_out": [
+  {
+   "item": "Measurement of length: parallax method, size of a molecule, estimation of very small and very large distances, range of lengths",
+   "reason": "Section removed from this rationalised edition; only vestigial exercises (1.14-1.17) remain and no text teaches the methods"
+  },
+  {
+   "item": "Measurement of mass and of time (range of masses, atomic clocks, range of time intervals)",
+   "reason": "Sections absent from this edition"
+  },
+  {
+   "item": "Accuracy and precision of instruments; least count of vernier callipers and screw gauge",
+   "reason": "Not taught in this edition; least count is mentioned once in passing (p. 3) and Exercises 1.6-1.8 are left over from the removed section"
+  },
+  {
+   "item": "Errors in measurement: systematic and random errors, absolute error, mean absolute error, relative and percentage error of a set of readings, combination of errors in sums, products, quotients and powers",
+   "reason": "The whole treatment is absent; p. 6 quotes one product result 'using the combination of errors rule' without stating the rule, so no error-propagation question is set"
+  },
+  {
+   "item": "The numerical values in the definitions of the SI base units (c, h, caesium frequency, e, k, Avogadro constant, luminous efficacy)",
+   "reason": "Footnote to Table 1.1 (p. 2) says these values need not be remembered or asked in a test"
+  },
+  {
+   "item": "Tables of SI prefixes, derived units and dimensional formulae in Appendices A2, A6-A9",
+   "reason": "The appendices are only referred to (pp. 3, 7) and are not part of this chapter; only prefixes and units used in the chapter text are used in questions"
+  },
+  {
+   "item": "Dimensional formulae of electrical, thermal and optical quantities",
+   "reason": "The chapter works only with [M], [L], [T] for mechanical quantities; the other four dimensions are only named (p. 7)"
+  },
+  {
+   "item": "Special relativity and the mass-speed relation as physics",
+   "reason": "Appears only in Exercise 1.13 as a dimensional puzzle"
+  },
+  {
+   "item": "Rounding conventions other than the chapter's (for example always rounding a 5 up), and rounding when the dropped part is a 5 followed by further non-zero digits",
+   "reason": "The chapter states only the even/odd convention for a dropped digit 5 (p. 5); no item depends on a case it does not state"
+  }
+ ],
+ "concepts": [
+  {
+   "code": "C11P-1.1",
+   "name": "Units, base and derived units, and the International System (SI)",
+   "description": "What a unit and a system of units are, the seven SI base quantities and units, the radian and steradian, units retained for general use, and converting a quantity from one set of units to another.",
+   "idea": "Measuring a physical quantity means comparing it with an internationally accepted reference standard called a unit, and a small set of base units is enough to build the units of every other quantity.",
+   "rule": "The result of a measurement is a number accompanied by a unit. Units of the fundamental (base) quantities are base units; units of all other quantities are combinations of base units and are called derived units; base and derived units together form a system of units. The CGS, FPS and MKS systems used centimetre-gram-second, foot-pound-second and metre-kilogram-second. The SI has seven base units: metre (m) for length, kilogram (kg) for mass, second (s) for time, ampere (A) for electric current, kelvin (K) for thermodynamic temperature, mole (mol) for amount of substance and candela (cd) for luminous intensity. Two more units are defined: the radian (rad) for plane angle, d theta = ds/r, and the steradian (sr) for solid angle, d Omega = dA/r^2; both quantities are dimensionless. When the mole is used the elementary entities must be specified. Some derived units have special names (newton, joule, watt). In a computation units are treated like algebraic quantities, so a conversion is done by replacing each unit by its equivalent.",
+   "example": "72 km/h = 72 x (1000 m)/(3600 s) = 20 m/s.",
+   "difficulty_base": "Easy",
+   "questions": [
+    {
+     "b": "Remember",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "In the CGS system of units, the base units of length, mass and time are respectively",
+     "a": "centimetre, gram and second",
+     "o": [
+      "centimetre, gram and second",
+      "foot, pound and second",
+      "metre, kilogram and second",
+      "centimetre, kilogram and second"
+     ]
+    },
+    {
+     "b": "Remember",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "The SI unit of luminous intensity is the",
+     "a": "candela",
+     "o": [
+      "candela",
+      "kelvin",
+      "mole",
+      "steradian"
+     ]
+    },
+    {
+     "b": "Remember",
+     "d": "Easy",
+     "t": "fill_blank",
+     "m": 1,
+     "q": "The SI unit of thermodynamic temperature is the ____ (write the name of the unit as one word).",
+     "a": "kelvin"
+    },
+    {
+     "b": "Remember",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "q": "Which of the following is NOT one of the seven base units of the SI?",
+     "a": "radian",
+     "o": [
+      "radian",
+      "ampere",
+      "mole",
+      "candela"
+     ],
+     "rev": true
+    },
+    {
+     "b": "Understand",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "Why is a limited number of units enough to express all physical quantities?",
+     "a": "Because physical quantities are inter-related with one another, so the units of the rest can be built from a few base units",
+     "o": [
+      "Because physical quantities are inter-related with one another, so the units of the rest can be built from a few base units",
+      "Because only seven physical quantities exist in nature",
+      "Because every physical quantity can be measured with a metre scale",
+      "Because derived quantities do not need units"
+     ]
+    },
+    {
+     "b": "Understand",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "Which of the following is a derived unit?",
+     "a": "newton",
+     "o": [
+      "newton",
+      "kilogram",
+      "second",
+      "metre"
+     ]
+    },
+    {
+     "b": "Understand",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "A plane angle d theta is defined as the ratio of",
+     "a": "the length of arc ds to the radius r",
+     "o": [
+      "the length of arc ds to the radius r",
+      "the radius r to the length of arc ds",
+      "the intercepted area dA to the square of the radius r",
+      "the length of arc ds to the square of the radius r"
+     ]
+    },
+    {
+     "b": "Understand",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "q": "Conversions within the SI are simple and convenient because",
+     "a": "SI units use the decimal system",
+     "o": [
+      "SI units use the decimal system",
+      "the SI has only three base units",
+      "SI units are defined only for mechanical quantities",
+      "every SI unit has a special name of its own"
+     ]
+    },
+    {
+     "b": "Understand",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "q": "A chemist writes 'the sample contains 2 mol'. According to the chapter, what is missing from this statement?",
+     "a": "The elementary entities (atoms, molecules, ions, electrons and so on) must be specified",
+     "o": [
+      "The elementary entities (atoms, molecules, ions, electrons and so on) must be specified",
+      "The temperature at which the amount was measured",
+      "The mass of one elementary entity",
+      "Nothing is missing; the mole needs no further specification"
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "A car moves at 54 km/h. Using 1 km = 1000 m and 1 h = 3600 s, its speed is",
+     "a": "15 m/s",
+     "o": [
+      "15 m/s",
+      "194.4 m/s",
+      "54000 m/s",
+      "0.9 m/s"
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Easy",
+     "t": "fill_blank",
+     "m": 1,
+     "q": "Using 1 hectare = 10^4 m^2, a field of area 25000 m^2 has an area of ____ hectare (write the number as a decimal).",
+     "a": "2.5"
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "q": "The volume of a cube of side 2 cm, expressed in m^3 (1 cm = 10^-2 m), is",
+     "a": "8 x 10^-6 m^3",
+     "o": [
+      "8 x 10^-6 m^3",
+      "8 x 10^-2 m^3",
+      "8 x 10^-4 m^3",
+      "8 x 10^6 m^3"
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "q": "The density of a metal is 2.7 g/cm^3. Express it in kg/m^3, treating the units as algebraic quantities. Use 1 g = 10^-3 kg and 1 cm = 10^-2 m.",
+     "a": "2.7 g/cm^3 = 2.7 x (10^-3 kg)/(10^-2 m)^3 = 2.7 x (10^-3 kg)/(10^-6 m^3) = 2.7 x 10^3 kg/m^3 = 2700 kg/m^3.",
+     "s": [
+      [
+       "Replaces g by 10^-3 kg and cm^3 by (10^-2 m)^3 = 10^-6 m^3",
+       1
+      ],
+      [
+       "Simplifies to 2.7 x 10^3 kg/m^3 = 2700 kg/m^3",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "q": "One newton is 1 kg m s^-2. Using 1 kg = 10^3 g and 1 m = 10^2 cm, 1 newton is equal to",
+     "a": "10^5 g cm s^-2",
+     "o": [
+      "10^5 g cm s^-2",
+      "10^3 g cm s^-2",
+      "10^2 g cm s^-2",
+      "10^-5 g cm s^-2"
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hardest",
+     "t": "long_answer",
+     "m": 3,
+     "q": "1 J = 1 kg m^2 s^-2. A new system of units is used in which the unit of mass is 2 kg, the unit of length is 5 m and the unit of time is 10 s. Find the size of the new unit of energy in joule, and hence express an energy of 100 J in the new units.",
+     "a": "The new unit of energy is (unit of mass) x (unit of length)^2 x (unit of time)^-2 = (2 kg) x (5 m)^2 x (10 s)^-2 = 2 x 25 / 100 kg m^2 s^-2 = 0.5 J. So 1 J = 2 new units, and 100 J = 100 / 0.5 = 200 new units of energy.",
+     "s": [
+      [
+       "Writes the new energy unit as (mass unit)(length unit)^2(time unit)^-2",
+       1
+      ],
+      [
+       "Evaluates it as 2 x 25/100 = 0.5 J",
+       1
+      ],
+      [
+       "100 J = 100/0.5 = 200 new units",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "assertion_reason",
+     "m": 1,
+     "q": "Assertion (A): A speed of 36 km/h is the same as 10 m/s. Reason (R): In a computation units may be treated like algebraic quantities, so km/h may be replaced by (1000 m)/(3600 s). Choose the correct option.",
+     "a": "Both A and R are true, and R is the correct explanation of A",
+     "o": [
+      "Both A and R are true, and R is the correct explanation of A",
+      "Both A and R are true, but R is not the correct explanation of A",
+      "A is true, R is false",
+      "A is false, R is true"
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "q": "A new unit of length is chosen so that the speed of light in vacuum is exactly 1 new unit of length per second (the second is kept as the unit of time). Light from a spacecraft takes 2 min 30 s to reach the Earth. What is the distance of the spacecraft in the new unit, and why?",
+     "a": "Distance = speed x time. The time is 2 min 30 s = 150 s and the speed of light is 1 new unit per second, so the distance = 1 x 150 = 150 new units of length (the new unit is simply the distance light travels in 1 s).",
+     "s": [
+      [
+       "Converts the time to 150 s and uses distance = speed x time",
+       1
+      ],
+      [
+       "Distance = 150 new units of length",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hardest",
+     "t": "long_answer",
+     "m": 3,
+     "q": "An object has an acceleration of 5 m/s^2. Express this acceleration in km/h^2, showing how each unit is replaced. Use 1 m = 10^-3 km and 1 s = (1/3600) h.",
+     "a": "5 m/s^2 = 5 x (10^-3 km) / ((1/3600) h)^2 = 5 x 10^-3 x (3600)^2 km/h^2. Since (3600)^2 = 1.296 x 10^7, the acceleration = 5 x 10^-3 x 1.296 x 10^7 km/h^2 = 6.48 x 10^4 km/h^2 = 64800 km/h^2. The time unit is squared, so the factor 3600 enters twice.",
+     "s": [
+      [
+       "Replaces m by 10^-3 km and s by (1/3600) h",
+       1
+      ],
+      [
+       "Squares the time factor: (3600)^2 = 1.296 x 10^7",
+       1
+      ],
+      [
+       "Result 6.48 x 10^4 km/h^2 (64800 km/h^2)",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Evaluate",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "q": "A student records the length of a table in his notebook as just '1.2', saying that the number alone is enough. Evaluate this practice using what the chapter says about measurement.",
+     "a": "It is not acceptable. A measurement is a comparison with a reference standard called a unit, so its result must be expressed as a number accompanied by a unit. '1.2' could mean 1.2 m, 1.2 cm or 1.2 foot, which are very different lengths, so the number alone conveys nothing definite.",
+     "s": [
+      [
+       "Judgement - not acceptable; a result is a number accompanied by a unit",
+       1
+      ],
+      [
+       "Reason - the same number with different units means different lengths, so the unit (reference standard) must be stated",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Create",
+     "d": "Hardest",
+     "t": "long_answer",
+     "m": 3,
+     "q": "Suppose you invent a system of units in which the base unit of length is the 'pace' (1 pace = 0.5 m), the base unit of mass is the 'brick' (1 brick = 2 kg) and the base unit of time is the 'beat' (1 beat = 0.5 s). Construct the derived units of speed and of force in your system and find the size of each in SI units.",
+     "a": "Speed is length/time, so the derived unit of speed is 1 pace per beat = (0.5 m)/(0.5 s) = 1 m/s. Force is mass x acceleration = mass x length/(time)^2, so the derived unit of force is 1 brick pace per beat^2 = (2 kg) x (0.5 m)/(0.5 s)^2 = 1/0.25 kg m s^-2 = 4 kg m s^-2 = 4 N.",
+     "s": [
+      [
+       "Unit of speed = pace/beat = 0.5 m / 0.5 s = 1 m/s",
+       1
+      ],
+      [
+       "Unit of force built as brick x pace / beat^2 (mass x length / time^2)",
+       1
+      ],
+      [
+       "Evaluates it as 2 x 0.5 / 0.25 = 4 N",
+       1
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "code": "C11P-1.2",
+   "name": "Significant figures: counting them, scientific notation and order of magnitude",
+   "description": "What significant figures are, the rules for deciding which digits (especially zeros) are significant, why a change of units cannot change their number, scientific notation, exact numbers and order of magnitude.",
+   "idea": "A measured value is reported with all the digits that are known reliably plus the first uncertain digit, and these significant figures show the precision of the measurement.",
+   "rule": "Significant figures = reliable digits + the first uncertain digit; their number depends on the least count of the instrument and does not change when the unit is changed, so the position of the decimal point is of no consequence. All non-zero digits are significant. Zeros between two non-zero digits are significant. For a number less than 1, zeros to the right of the decimal point but to the left of the first non-zero digit are not significant, and the zero written to the left of the decimal point is never significant. Trailing zeros in a number without a decimal point are not significant; trailing zeros in a number with a decimal point are significant. To avoid ambiguity report a measurement in scientific notation a x 10^b with a between 1 and 10: the power of 10 is irrelevant and every digit of a, including its zeros, is significant. Rounding a to 1 (for a <= 5) or to 10 (for 5 < a <= 10) gives the order of magnitude. Multiplying or dividing factors that are neither rounded nor measured (such as the 2 in s = 2 pi r) are exact and have an infinite number of significant figures.",
+   "example": "0.02308 m, 2.308 cm and 23.08 mm are the same length and each has four significant figures (2, 3, 0, 8).",
+   "difficulty_base": "Easy",
+   "questions": [
+    {
+     "b": "Remember",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "The significant figures of a measured value are",
+     "a": "the digits known reliably plus the first uncertain digit",
+     "o": [
+      "the digits known reliably plus the first uncertain digit",
+      "only the digits that are known reliably",
+      "all the digits shown by a calculator",
+      "only the digits after the decimal point"
+     ]
+    },
+    {
+     "b": "Remember",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "The period of a pendulum is reported as 5.38 s. Which digit of this value is the uncertain one?",
+     "a": "8",
+     "o": [
+      "8",
+      "3",
+      "5",
+      "None; all three digits are certain"
+     ]
+    },
+    {
+     "b": "Remember",
+     "d": "Easy",
+     "t": "fill_blank",
+     "m": 1,
+     "q": "The number of significant figures in the measurement 60.07 g is ____ (write a whole number).",
+     "a": "4"
+    },
+    {
+     "b": "Remember",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "q": "Which of the following statements about counting significant figures is NOT correct according to the chapter?",
+     "a": "Changing the unit in which a measurement is written changes its number of significant figures",
+     "o": [
+      "Changing the unit in which a measurement is written changes its number of significant figures",
+      "All the non-zero digits are significant",
+      "All the zeros between two non-zero digits are significant",
+      "The trailing zeros in a number with a decimal point are significant"
+     ],
+     "rev": true
+    },
+    {
+     "b": "Understand",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "Why is it misleading to report a measured result with more digits than its significant figures?",
+     "a": "It gives a wrong idea about the precision of the measurement",
+     "o": [
+      "It gives a wrong idea about the precision of the measurement",
+      "It makes the unit of the result incorrect",
+      "It changes the order of magnitude of the result",
+      "It makes the result smaller than the true value"
+     ]
+    },
+    {
+     "b": "Understand",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "A length of 5.06 cm is rewritten as 0.0506 m. The number of significant figures",
+     "a": "stays 3",
+     "o": [
+      "stays 3",
+      "rises to 4",
+      "rises to 5",
+      "falls to 2"
+     ]
+    },
+    {
+     "b": "Understand",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "The number of significant figures in a measurement indicates its precision, which depends on",
+     "a": "the least count of the measuring instrument",
+     "o": [
+      "the least count of the measuring instrument",
+      "the system of units chosen",
+      "the power of 10 used in scientific notation",
+      "the number of times the result is copied"
+     ]
+    },
+    {
+     "b": "Understand",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "q": "A distance is reported in scientific notation as 6.300 x 10^5 m. How many significant figures does it have?",
+     "a": "4",
+     "o": [
+      "4",
+      "2",
+      "5",
+      "6"
+     ]
+    },
+    {
+     "b": "Understand",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "q": "In the formula s = 2 pi r for the circumference of a circle, the factor 2 is treated as having",
+     "a": "an infinite number of significant figures, because it is an exact number",
+     "o": [
+      "an infinite number of significant figures, because it is an exact number",
+      "one significant figure, because it has a single digit",
+      "the same number of significant figures as r",
+      "no significant figures, because it is not measured"
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "The number of significant figures in the measurement 0.0520 kg is",
+     "a": "3",
+     "o": [
+      "3",
+      "5",
+      "4",
+      "2"
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Easy",
+     "t": "fill_blank",
+     "m": 1,
+     "q": "The number of significant figures in the measurement 0.007080 m is ____ (write a whole number).",
+     "a": "4"
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "q": "Applying the chapter's rules to each number exactly as it is written, which of the following has four significant figures?",
+     "a": "0.004700 km",
+     "o": [
+      "0.004700 km",
+      "0.0470 km",
+      "47000 mm",
+      "4.70 x 10^3 mm"
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "q": "The mass of a parcel is known to three significant figures and is written as 2500 g. Rewrite it in scientific notation so that the three significant figures are shown without ambiguity, first in gram and then in kilogram.",
+     "a": "In scientific notation the base number carries all the significant digits, so the mass is 2.50 x 10^3 g. In kilogram it is 2.50 kg (or 2.50 x 10^0 kg). In both forms the zero after the 5 is a trailing zero in a number with a decimal point and is significant, giving three significant figures.",
+     "s": [
+      [
+       "2.50 x 10^3 g, with three digits in the base number",
+       1
+      ],
+      [
+       "2.50 kg, the trailing zero after the decimal point kept as significant",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "q": "The chapter finds the order of magnitude of a quantity written as a x 10^b by rounding a to 1 if a <= 5 and to 10 if 5 < a <= 10. By this rule the order of magnitude of the radius of the earth, 6.4 x 10^6 m, is",
+     "a": "7",
+     "o": [
+      "7",
+      "6",
+      "5",
+      "8"
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hardest",
+     "t": "long_answer",
+     "m": 3,
+     "q": "The diameter of the Sun is 1.39 x 10^9 m and the diameter of a red blood cell is 7 x 10^-6 m. The chapter finds the order of magnitude of a x 10^b by rounding a to 1 if a <= 5 and to 10 if 5 < a <= 10. Find the order of magnitude of each diameter and state by how many orders of magnitude the Sun is larger than the cell.",
+     "a": "Sun: a = 1.39 <= 5, so a is rounded to 1 and the diameter is of the order of 10^9 m; order of magnitude 9. Red blood cell: a = 7 > 5, so a is rounded to 10 and the diameter is of the order of 10 x 10^-6 m = 10^-5 m; order of magnitude -5. Difference = 9 - (-5) = 14, so the Sun is 14 orders of magnitude larger than the cell.",
+     "s": [
+      [
+       "Sun: a = 1.39 rounds to 1, order of magnitude 9",
+       1
+      ],
+      [
+       "Cell: a = 7 rounds to 10, giving 10^-5 m, order of magnitude -5",
+       1
+      ],
+      [
+       "Difference 9 - (-5) = 14 orders of magnitude",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "multi_statement",
+     "m": 1,
+     "q": "Consider two statements about significant figures. (I) The measurement 0.06900 g has four significant figures. (II) In the measurement 0.1250 m, the zero written to the left of the decimal point is significant. Which is or are correct?",
+     "a": "Only I",
+     "o": [
+      "Only I",
+      "Only II",
+      "Both I and II",
+      "Neither I nor II"
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "q": "A length is reported as 3.200 m. A student converts it to 3200 mm and then says it has only two significant figures because trailing zeros in a number without a decimal point are not significant. Analyse the mistake and write the length in mm so that no confusion arises.",
+     "a": "The reported value 3.200 m has four significant figures, because trailing zeros in a number with a decimal point are significant, and a mere change of units cannot change the number of significant figures. The ambiguity comes only from writing 3200 without a decimal point. Written in scientific notation the length is 3.200 x 10^3 mm, which shows all four significant figures.",
+     "s": [
+      [
+       "A change of units cannot change the number of significant figures; the value still has four",
+       1
+      ],
+      [
+       "Writes 3.200 x 10^3 mm (scientific notation) to remove the ambiguity",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hardest",
+     "t": "long_answer",
+     "m": 3,
+     "q": "Four values are written as: P = 0.0305 m, Q = 3.050 x 10^2 m, S = 30500 m (written without a decimal point) and W = 3.5 m. Applying the chapter's rules to each as written, find the number of significant figures in each, giving the rule used, and arrange them in increasing order of the number of significant figures.",
+     "a": "P = 0.0305 m: the zeros before the 3 are not significant (number less than 1), the zero between 3 and 5 is significant, so 3 significant figures. Q = 3.050 x 10^2 m: the power of 10 is irrelevant and all digits of the base number, including both zeros, are significant, so 4. S = 30500 m: the zero between 3 and 5 is significant but the trailing zeros in a number without a decimal point are not, so 3. W = 3.5 m: 2. Increasing order: W (2), then P and S (3 each), then Q (4).",
+     "s": [
+      [
+       "P has 3 (leading zeros not significant, middle zero significant) and W has 2",
+       1
+      ],
+      [
+       "Q has 4 (all digits of the base number in scientific notation) and S has 3 (trailing zeros without a decimal point not significant)",
+       1
+      ],
+      [
+       "Order: W < P = S < Q",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Evaluate",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "q": "A student says that the readings 5.0 kg and 5.00 kg are the same measurement because the two numbers are equal. Evaluate this claim.",
+     "a": "The claim is not correct as a statement about measurements. Trailing zeros in a number with a decimal point are significant, so 5.0 kg has two significant figures and 5.00 kg has three. The second reading conveys a higher precision (its uncertain digit is in the second decimal place, not the first), so the two are numerically equal but are not equivalent measurements.",
+     "s": [
+      [
+       "Judgement - not the same measurement: 5.0 kg has 2 and 5.00 kg has 3 significant figures",
+       1
+      ],
+      [
+       "Reason - trailing zeros after a decimal point are significant and convey the precision of the measurement",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Create",
+     "d": "Hardest",
+     "t": "long_answer",
+     "m": 3,
+     "q": "Make up three measured values of your own, with units: (a) a value less than 1 that has exactly three significant figures and contains zeros that are not significant; (b) a value with exactly five significant figures that contains a significant zero between non-zero digits and a significant trailing zero; (c) a value in scientific notation with exactly two significant figures. Justify the count in each case.",
+     "a": "One possible set: (a) 0.00417 kg - the zeros before the 4 lie to the left of the first non-zero digit in a number less than 1, so they are not significant, leaving 4, 1, 7: three significant figures. (b) 20.360 m - the zero between 2 and 3 is significant, and the trailing zero is significant because the number has a decimal point: five significant figures. (c) 4.6 x 10^8 s - the power of 10 is irrelevant and the base number 4.6 has two significant figures. Any other values that satisfy the three conditions are equally acceptable.",
+     "s": [
+      [
+       "(a) valid value below 1 with three significant figures and leading zeros identified as not significant",
+       1
+      ],
+      [
+       "(b) valid five-figure value with the in-between zero and the trailing zero after a decimal point justified as significant",
+       1
+      ],
+      [
+       "(c) valid a x 10^b value with a two-digit base number, power of 10 stated to be irrelevant",
+       1
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "code": "C11P-1.3",
+   "name": "Arithmetic with significant figures, rounding off and uncertainty in results",
+   "description": "The rules for multiplication/division and for addition/subtraction with significant figures, the convention for rounding off (including a dropped 5), keeping an extra digit in intermediate steps, and how the relative error of a value depends on the value itself.",
+   "idea": "A calculated result cannot be more accurate than the measured values it is based on, so it is rounded off to the precision that the data justify.",
+   "rule": "Multiplication or division: the final result keeps as many significant figures as the original number with the least significant figures. Addition or subtraction: the final result keeps as many decimal places as the number with the least decimal places (the rule is in terms of decimal places, not significant figures), so subtraction can reduce the number of significant figures. Rounding off: the preceding digit is raised by 1 if the digit to be dropped is more than 5 and left unchanged if it is less than 5; if the digit to be dropped is 5, it is simply dropped when the preceding digit is even and the preceding digit is raised by 1 when it is odd. In a multi-step calculation keep one digit more than the significant digits in intermediate steps and round off at the end, otherwise rounding errors build up. A value quoted to a given decimal place is uncertain by 1 in its last digit, and its relative error = (uncertainty/value) x 100 %, which depends on the value itself as well as on the number of significant figures.",
+   "example": "4.237 g / 2.51 cm^3 = 1.688... g/cm^3, reported as 1.69 g/cm^3 because 2.51 has only three significant figures.",
+   "difficulty_base": "Hard",
+   "questions": [
+    {
+     "b": "Remember",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "When measured values are multiplied or divided, the final result should retain",
+     "a": "as many significant figures as the original number with the least significant figures",
+     "o": [
+      "as many significant figures as the original number with the least significant figures",
+      "as many significant figures as the original number with the most significant figures",
+      "as many decimal places as the number with the least decimal places",
+      "all the digits given by the arithmetic"
+     ]
+    },
+    {
+     "b": "Remember",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "When measured values are added or subtracted, the final result should retain",
+     "a": "as many decimal places as the number with the least decimal places",
+     "o": [
+      "as many decimal places as the number with the least decimal places",
+      "as many significant figures as the number with the least significant figures",
+      "as many decimal places as the number with the most decimal places",
+      "one decimal place more than the least precise number"
+     ]
+    },
+    {
+     "b": "Remember",
+     "d": "Easy",
+     "t": "fill_blank",
+     "m": 1,
+     "q": "Rounded off to three significant figures, the number 3.862 becomes ____ (write the number as a decimal).",
+     "a": "3.86"
+    },
+    {
+     "b": "Remember",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "q": "Following the chapter's convention for rounding off, which of these roundings to three significant figures is NOT correct?",
+     "a": "4.675 rounded off to 4.67",
+     "o": [
+      "4.675 rounded off to 4.67",
+      "4.685 rounded off to 4.68",
+      "4.676 rounded off to 4.68",
+      "4.674 rounded off to 4.67"
+     ],
+     "rev": true
+    },
+    {
+     "b": "Understand",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "Why should a calculated result not carry more significant figures than the data it is obtained from?",
+     "a": "Because the result cannot be more accurate than the original measured values on which it is based",
+     "o": [
+      "Because the result cannot be more accurate than the original measured values on which it is based",
+      "Because calculators cannot display more digits than the data",
+      "Because extra digits change the unit of the result",
+      "Because significant figures are always whole numbers"
+     ]
+    },
+    {
+     "b": "Understand",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "In a complex multi-step calculation, how many digits should be retained in the intermediate steps?",
+     "a": "One digit more than the significant digits, rounding off only at the end",
+     "o": [
+      "One digit more than the significant digits, rounding off only at the end",
+      "Exactly the significant digits, rounding off after every step",
+      "One digit fewer than the significant digits",
+      "All the digits the calculator shows, with no rounding at the end either"
+     ]
+    },
+    {
+     "b": "Understand",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "When the digit to be dropped in rounding off is exactly 5, the chapter's convention is to",
+     "a": "drop it if the preceding digit is even and raise the preceding digit by 1 if it is odd",
+     "o": [
+      "drop it if the preceding digit is even and raise the preceding digit by 1 if it is odd",
+      "always raise the preceding digit by 1",
+      "always leave the preceding digit unchanged",
+      "raise the preceding digit by 1 if it is even and leave it unchanged if it is odd"
+     ]
+    },
+    {
+     "b": "Understand",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "q": "The circumference of a circle is computed as 2 pi r from a radius measured as 2.5 cm, taking pi = 3.14. Which reported value is correct, and why?",
+     "a": "16 cm, because the measured radius has two significant figures; 2 is an exact number and pi can be taken to as many figures as required",
+     "o": [
+      "16 cm, because the measured radius has two significant figures; 2 is an exact number and pi can be taken to as many figures as required",
+      "15.7 cm, because pi = 3.14 is written with three significant figures",
+      "15.70 cm, because the product of 2.5 and 3.14 should keep four significant figures",
+      "20 cm, because the exact factor 2 has only one significant figure"
+     ]
+    },
+    {
+     "b": "Understand",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "q": "Two masses, 2.00 g and 8.00 g, are each measured to within 0.01 g, so both have three significant figures. Which statement about their relative errors is correct?",
+     "a": "The relative error of the 2.00 g value is larger, because relative error depends on the number itself as well as on the number of significant figures",
+     "o": [
+      "The relative error of the 2.00 g value is larger, because relative error depends on the number itself as well as on the number of significant figures",
+      "The two relative errors are equal, because both values have three significant figures",
+      "The relative error of the 8.00 g value is larger, because it is the bigger mass",
+      "Neither value has a relative error, because both are measured to 0.01 g"
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "A substance of mass 9.36 g occupies a volume of 2.4 cm^3. Its density, to the appropriate number of significant figures, is",
+     "a": "3.9 g/cm^3",
+     "o": [
+      "3.9 g/cm^3",
+      "3.90 g/cm^3",
+      "4 g/cm^3",
+      "3.900 g/cm^3"
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Easy",
+     "t": "fill_blank",
+     "m": 1,
+     "q": "Two masses, 24.36 g and 5.2 g, are added. Reported to the correct number of decimal places, the sum is ____ g (write the number as a decimal).",
+     "a": "29.6"
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "q": "The sides of a rectangular plot are measured as 4.25 m and 2.2 m. Using the chapter's rules for significant figures and for rounding off, its area is",
+     "a": "9.4 m^2",
+     "o": [
+      "9.4 m^2",
+      "9.35 m^2",
+      "9.3 m^2",
+      "9 m^2"
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "q": "The mass of a box measured on a grocer's balance is 3.40 kg. Two gold pieces of masses 25.12 g and 25.19 g are placed in it. To the correct significant figures find (a) the total mass in kg and (b) the difference between the masses of the two pieces in g.",
+     "a": "(a) Total = 3.40 kg + 0.02512 kg + 0.02519 kg = 3.45031 kg. The least precise value (3.40 kg) has two decimal places, so the total is 3.45 kg. (b) Difference = 25.19 g - 25.12 g = 0.07 g, correct to two decimal places as both values are.",
+     "s": [
+      [
+       "(a) adds in the same unit to get 3.45031 kg and rounds to two decimal places: 3.45 kg",
+       1
+      ],
+      [
+       "(b) difference = 0.07 g (two decimal places)",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "q": "Each side of a cube is measured to be 2.15 m. Its volume, to the appropriate number of significant figures, is",
+     "a": "9.94 m^3",
+     "o": [
+      "9.94 m^3",
+      "9.938 m^3",
+      "9.9 m^3",
+      "9.93 m^3"
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hardest",
+     "t": "long_answer",
+     "m": 3,
+     "q": "The length, breadth and thickness of a rectangular metal sheet are measured as 3.125 m, 2.004 m and 1.50 cm. Using the chapter's rules for significant figures and its convention for rounding off, find the area of the large face of the sheet and the volume of the sheet.",
+     "a": "Area = 3.125 m x 2.004 m = 6.2625 m^2. Both lengths have four significant figures, so the area is rounded to four: the digit to be dropped is 5 and the preceding digit 2 is even, so it is simply dropped, giving 6.262 m^2. Volume = 3.125 m x 2.004 m x 0.0150 m = 0.0939375 m^3. The thickness has only three significant figures, so the volume is rounded to three: 0.0939 m^3 (9.39 x 10^-2 m^3). The unrounded area 6.2625 m^2 is used in the intermediate step.",
+     "s": [
+      [
+       "Area by arithmetic 6.2625 m^2, to be kept to four significant figures",
+       1
+      ],
+      [
+       "Rounded by the dropped-5 convention (preceding digit 2 even) to 6.262 m^2",
+       1
+      ],
+      [
+       "Volume 0.0939375 m^3 with thickness 0.0150 m, rounded to three significant figures: 0.0939 m^3",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "assertion_reason",
+     "m": 1,
+     "q": "Assertion (A): The sum of the masses 125.37 g, 42.1 g and 0.25 g should be reported as 167.7 g. Reason (R): In addition, the final result retains as many significant figures as the number with the least significant figures. Choose the correct option.",
+     "a": "A is true, R is false",
+     "o": [
+      "A is true, R is false",
+      "Both A and R are true, and R is the correct explanation of A",
+      "Both A and R are true, but R is not the correct explanation of A",
+      "A is false, R is true"
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "q": "A student subtracts 9.27 cm from 15.8 cm and reports the result as 6.53 cm, arguing that both data have three significant figures so the answer must too. Analyse the error and give the result that should be reported.",
+     "a": "The rule for subtraction is in terms of decimal places, not significant figures: the result keeps as many decimal places as the value with the least decimal places. 15.8 cm is known only to one decimal place, so 6.53 cm must be rounded to one decimal place, giving 6.5 cm. The number of significant figures has been reduced from three to two by the subtraction.",
+     "s": [
+      [
+       "Identifies that subtraction follows the least number of decimal places, not significant figures",
+       1
+      ],
+      [
+       "Correct result 6.5 cm (two significant figures)",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hardest",
+     "t": "long_answer",
+     "m": 3,
+     "q": "The reciprocal of 7.13 is 0.140252... (i) Round this to three significant figures and take the reciprocal of the rounded value, again to three significant figures. (ii) Repeat, but keep four significant figures in the intermediate value. Use 1/0.140 = 7.142857... and 1/0.1403 = 7.127583.... What do the two results show about intermediate steps?",
+     "a": "(i) 1/7.13 = 0.140 to three significant figures; 1/0.140 = 7.142857..., which is 7.14 to three significant figures, so the original 7.13 is not recovered. (ii) Keeping one extra digit, 1/7.13 = 0.1403; 1/0.1403 = 7.127583..., which is 7.13 to three significant figures, the original value. This shows that one more digit than the significant digits should be retained in intermediate steps and the rounding done only at the end, otherwise rounding errors build up.",
+     "s": [
+      [
+       "(i) 0.140, whose reciprocal rounds to 7.14, not the original value",
+       1
+      ],
+      [
+       "(ii) 0.1403, whose reciprocal rounds to 7.13, the original value",
+       1
+      ],
+      [
+       "Conclusion - keep one extra digit in intermediate steps and round off at the end",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Evaluate",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "q": "A student divides a measured mass of 8.4 g by a measured volume of 3.0 cm^3, gets exactly 2.8 and writes the density as 2.800 g/cm^3 'to make the answer more accurate'. Evaluate this.",
+     "a": "It is not justified. Both measurements have only two significant figures, and a result of division keeps as many significant figures as the least precise datum, so the density is 2.8 g/cm^3. Writing 2.800 g/cm^3 claims four significant figures, a precision the measurements do not have; a computed result cannot be more accurate than the data on which it is based.",
+     "s": [
+      [
+       "Judgement - wrong; the density should be reported as 2.8 g/cm^3 (two significant figures)",
+       1
+      ],
+      [
+       "Reason - added zeros claim a precision the measured data do not have",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Create",
+     "d": "Hardest",
+     "t": "long_answer",
+     "m": 3,
+     "q": "Make up two measured lengths of your own, both in cm, that have a different number of significant figures. Using them, show with working how the reported product and the reported sum are decided by two different rules.",
+     "a": "One possible example: l = 12.5 cm (three significant figures, one decimal place) and b = 2.3 cm (two significant figures, one decimal place). Product: 12.5 cm x 2.3 cm = 28.75 cm^2; multiplication keeps the least number of significant figures (two), so the area is reported as 29 cm^2. Sum: 12.5 cm + 2.3 cm = 14.8 cm; addition keeps the least number of decimal places (one), so the sum is 14.8 cm, which has three significant figures. The product is fixed by significant figures and the sum by decimal places. Any other correct pair is acceptable.",
+     "s": [
+      [
+       "Two valid measured values with different numbers of significant figures",
+       1
+      ],
+      [
+       "Product rounded to the least number of significant figures",
+       1
+      ],
+      [
+       "Sum rounded to the least number of decimal places, and the two rules contrasted",
+       1
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "code": "C11P-1.4",
+   "name": "Dimensions of physical quantities, dimensional formulae and dimensional equations",
+   "description": "The seven dimensions of the physical world, what the dimensions of a quantity are, and how to write the dimensional formula and dimensional equation of a mechanical quantity from its defining relation.",
+   "idea": "The nature of a physical quantity is described by its dimensions, the powers to which the base quantities must be raised to represent it.",
+   "rule": "The seven base quantities are the seven dimensions of the physical world, written in square brackets: length [L], mass [M], time [T], electric current [A], thermodynamic temperature [K], luminous intensity [cd] and amount of substance [mol]. Square brackets round a quantity mean 'the dimensions of' that quantity. The dimensions of a quantity are the powers to which the base quantities are raised to represent it; in mechanics only [L], [M] and [T] are needed. Magnitudes are not considered, only the type of quantity, so speed, initial velocity, average velocity and change in velocity all have dimensions [L T^-1]. The dimensional formula shows how and which base quantities represent the quantity, for example volume [M^0 L^3 T^0], velocity [M^0 L T^-1], acceleration [M^0 L T^-2], force [M L T^-2], mass density [M L^-3 T^0]. Equating a quantity with its dimensional formula gives its dimensional equation, for example [v] = [M^0 L T^-1]. A dimensional formula is obtained from the equation that relates the quantity to other quantities.",
+   "example": "Force = mass x acceleration = mass x length/(time)^2, so [F] = [M][L]/[T]^2 = [M L T^-2].",
+   "difficulty_base": "Hard",
+   "questions": [
+    {
+     "b": "Remember",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "The dimensions of a physical quantity are",
+     "a": "the powers to which the base quantities are raised to represent that quantity",
+     "o": [
+      "the powers to which the base quantities are raised to represent that quantity",
+      "the SI units in which the quantity is measured",
+      "the numerical value of the quantity in base units",
+      "the number of significant figures in its measured value"
+     ]
+    },
+    {
+     "b": "Remember",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "Writing square brackets [ ] round a physical quantity means that we are dealing with",
+     "a": "the dimensions of the quantity",
+     "o": [
+      "the dimensions of the quantity",
+      "the magnitude of the quantity",
+      "the SI unit of the quantity",
+      "the uncertainty in the quantity"
+     ]
+    },
+    {
+     "b": "Remember",
+     "d": "Easy",
+     "t": "fill_blank",
+     "m": 1,
+     "q": "Speed has ____ dimension(s) in mass (write a whole number).",
+     "a": "0"
+    },
+    {
+     "b": "Remember",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "q": "Which of the following is NOT one of the seven dimensions of the physical world listed in the chapter?",
+     "a": "force, denoted [F]",
+     "o": [
+      "force, denoted [F]",
+      "electric current, denoted [A]",
+      "thermodynamic temperature, denoted [K]",
+      "amount of substance, denoted [mol]"
+     ],
+     "rev": true
+    },
+    {
+     "b": "Understand",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "In mechanics, all physical quantities can be written in terms of the dimensions",
+     "a": "[L], [M] and [T]",
+     "o": [
+      "[L], [M] and [T]",
+      "[L], [M] and [K]",
+      "[L], [T] and [A]",
+      "[M], [T] and [mol]"
+     ]
+    },
+    {
+     "b": "Understand",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "Initial velocity, final velocity, average velocity and speed all have the same dimensions because",
+     "a": "in a dimensional representation magnitudes are not considered; each is a length divided by a time",
+     "o": [
+      "in a dimensional representation magnitudes are not considered; each is a length divided by a time",
+      "they always have the same numerical value",
+      "each of them is a base quantity",
+      "they are all measured with the same instrument"
+     ]
+    },
+    {
+     "b": "Understand",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "The dimensional formula of velocity is",
+     "a": "[M^0 L T^-1]",
+     "o": [
+      "[M^0 L T^-1]",
+      "[M^0 L T^-2]",
+      "[M^0 L^-1 T]",
+      "[M L T^-1]"
+     ]
+    },
+    {
+     "b": "Understand",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "q": "Which of the following is a dimensional equation?",
+     "a": "[V] = [M^0 L^3 T^0]",
+     "o": [
+      "[V] = [M^0 L^3 T^0]",
+      "V = length x breadth x height",
+      "[M^0 L^3 T^0]",
+      "1 m^3 = 10^6 cm^3"
+     ]
+    },
+    {
+     "b": "Understand",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "q": "The dimensional formula of volume is written with M^0 and T^0 because",
+     "a": "volume is independent of mass and time, so it has zero dimension in each",
+     "o": [
+      "volume is independent of mass and time, so it has zero dimension in each",
+      "volume has no unit of mass or time in the CGS system only",
+      "the mass and time of an object are always zero when its volume is measured",
+      "every dimensional formula must contain exactly one non-zero power"
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "Area is the product of two lengths. The dimensional formula of area is",
+     "a": "[M^0 L^2 T^0]",
+     "o": [
+      "[M^0 L^2 T^0]",
+      "[M^0 L^3 T^0]",
+      "[M^0 L T^0]",
+      "[M L^2 T^0]"
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Easy",
+     "t": "fill_blank",
+     "m": 1,
+     "q": "Mass density is mass divided by volume, so its dimensional formula is [M L^x T^0]. The value of x is ____ (write an integer with its sign).",
+     "a": "-3"
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "q": "Linear momentum is the product of mass and velocity. Its dimensional formula is",
+     "a": "[M L T^-1]",
+     "o": [
+      "[M L T^-1]",
+      "[M L T^-2]",
+      "[M L^2 T^-1]",
+      "[M^0 L T^-1]"
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "q": "Pressure is force per unit area. Starting from force = mass x acceleration, obtain the dimensional formula of pressure.",
+     "a": "[Force] = [M][L T^-2] = [M L T^-2]. [Area] = [L^2]. [Pressure] = [M L T^-2]/[L^2] = [M L^-1 T^-2].",
+     "s": [
+      [
+       "Dimensions of force [M L T^-2] and of area [L^2]",
+       1
+      ],
+      [
+       "Pressure = [M L^-1 T^-2]",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "q": "Work is the product of force and distance, and force is mass x acceleration. The dimensional formula of work is",
+     "a": "[M L^2 T^-2]",
+     "o": [
+      "[M L^2 T^-2]",
+      "[M L T^-2]",
+      "[M L^2 T^-1]",
+      "[M L^2 T^-3]"
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hardest",
+     "t": "long_answer",
+     "m": 3,
+     "q": "The gravitational force between two masses m1 and m2 a distance r apart is F = G m1 m2 / r^2. Obtain the dimensional formula of the constant G, starting from force = mass x acceleration.",
+     "a": "Rearranging, G = F r^2 / (m1 m2). [F] = [M][L T^-2] = [M L T^-2]. So [G] = [M L T^-2][L^2] / ([M][M]) = [M L^3 T^-2]/[M^2] = [M^-1 L^3 T^-2].",
+     "s": [
+      [
+       "Rearranges to G = F r^2/(m1 m2)",
+       1
+      ],
+      [
+       "Uses [F] = [M L T^-2] and [r^2] = [L^2], [m1 m2] = [M^2]",
+       1
+      ],
+      [
+       "[G] = [M^-1 L^3 T^-2]",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "multi_statement",
+     "m": 1,
+     "q": "Consider two statements. (I) Force per unit mass has the same dimensional formula as acceleration. (II) Relative density, being the ratio of the density of a substance to the density of water, has the dimensional formula [M^0 L^0 T^0]. Which is or are correct?",
+     "a": "Both I and II",
+     "o": [
+      "Both I and II",
+      "Only I",
+      "Only II",
+      "Neither I nor II"
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "q": "Surface tension is force per unit length, and the spring constant of a spring is force per unit extension. Compare the dimensional formulae of these two quantities (take force = mass x acceleration) and state what the comparison shows.",
+     "a": "[Force] = [M L T^-2]. Surface tension = force/length = [M L T^-2]/[L] = [M L^0 T^-2]. Spring constant = force/extension = [M L T^-2]/[L] = [M L^0 T^-2]. The two formulae are identical, which shows that two physically different quantities can have the same dimensions, so a dimensional formula alone does not identify a quantity.",
+     "s": [
+      [
+       "Both worked out as [M L T^-2]/[L] = [M L^0 T^-2]",
+       1
+      ],
+      [
+       "Conclusion - different physical quantities can share the same dimensional formula",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hardest",
+     "t": "long_answer",
+     "m": 3,
+     "q": "The Planck constant h is energy divided by frequency, where energy has the dimensions of force x distance and frequency is a number of oscillations per unit time. Angular momentum of a particle is the product m v r of its mass, speed and distance from an axis. Find the dimensional formula of each and compare them.",
+     "a": "[Energy] = [M L T^-2][L] = [M L^2 T^-2]. [Frequency] = [T^-1]. So [h] = [M L^2 T^-2]/[T^-1] = [M L^2 T^-1]. [Angular momentum] = [M][L T^-1][L] = [M L^2 T^-1]. The two dimensional formulae are the same, so the Planck constant has the dimensions of angular momentum.",
+     "s": [
+      [
+       "Energy [M L^2 T^-2] and frequency [T^-1]",
+       1
+      ],
+      [
+       "[h] = [M L^2 T^-1]",
+       1
+      ],
+      [
+       "[m v r] = [M L^2 T^-1], identical to that of h",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Evaluate",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "q": "A student argues: 'A plane angle is measured in radian, and anything that has a unit must have a dimension, so plane angle has dimensions.' Evaluate this argument.",
+     "a": "The argument is wrong. A plane angle is defined as the ratio of the length of arc to the radius, so its dimensions are [L]/[L] = [M^0 L^0 T^0]: it is a dimensionless quantity even though it has a unit, the radian. Having a unit therefore does not imply having dimensions.",
+     "s": [
+      [
+       "Judgement - wrong; plane angle is dimensionless although it has a unit",
+       1
+      ],
+      [
+       "Reason - it is a ratio of two lengths, [L]/[L] = [M^0 L^0 T^0]",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Create",
+     "d": "Hardest",
+     "t": "long_answer",
+     "m": 3,
+     "q": "Using only a force F, a length l and a time t, construct a combination of the form F^a l^b t^c that has the dimensions of mass, and verify your answer. Take [F] = [M L T^-2].",
+     "a": "Require [M L T^-2]^a [L]^b [T]^c = [M^1 L^0 T^0]. Mass: a = 1. Length: a + b = 0, so b = -1. Time: -2a + c = 0, so c = 2. The combination is F t^2 / l. Check: [M L T^-2][T^2]/[L] = [M L^0 T^0] = [M].",
+     "s": [
+      [
+       "Sets up the powers of M, L and T and equates them to those of mass",
+       1
+      ],
+      [
+       "Solves a = 1, b = -1, c = 2, giving F t^2 / l",
+       1
+      ],
+      [
+       "Verifies [M L T^-2][T^2]/[L] = [M]",
+       1
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "code": "C11P-1.5",
+   "name": "Dimensional analysis: checking equations, deducing relations and its limitations",
+   "description": "The principle of homogeneity of dimensions, testing the dimensional consistency of an equation, deducing a relation among physical quantities by the method of dimensions, and what the method cannot do.",
+   "idea": "Only quantities with the same dimensions can be added, subtracted or equated, and this single requirement lets us test equations and even guess the form of a relation.",
+   "rule": "Principle of homogeneity of dimensions: magnitudes of physical quantities may be added or subtracted only if they have the same dimensions, and both sides of an equation must have the same dimensions. Units and dimensions are treated like algebraic symbols and can be cancelled. If the dimensions of all the terms are not the same, the equation is wrong; if an equation passes the test it is not proved right. A pure number, a ratio of similar quantities (angle, refractive index) has no dimensions, and the arguments of trigonometric, logarithmic and exponential functions must be dimensionless. To deduce a relation, write the quantity as a product of powers of the quantities it depends on (up to three), with a dimensionless constant k, and equate the powers of M, L and T on the two sides. Limitations: dimensionless constants cannot be obtained, a dimensionally correct equation need not be the exact relation, and the method does not distinguish between quantities having the same dimensions.",
+   "example": "The speed v gained by a body falling freely from rest through a height h is assumed to depend on h and on g: v = k h^x g^y. Dimensions: [L T^-1] = [L]^x [L T^-2]^y = [L^(x+y) T^(-2y)], so x + y = 1 and -2y = -1, giving x = y = 1/2 and v = k sqrt(g h); the dimensionless constant k cannot be found by this method.",
+   "difficulty_base": "Hard",
+   "questions": [
+    {
+     "b": "Remember",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "The principle of homogeneity of dimensions states that the magnitudes of physical quantities may be added together or subtracted from one another only if they",
+     "a": "have the same dimensions",
+     "o": [
+      "have the same dimensions",
+      "have the same numerical value",
+      "are measured with the same instrument",
+      "are both base quantities"
+     ]
+    },
+    {
+     "b": "Remember",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "The arguments of special functions such as the trigonometric, logarithmic and exponential functions must be",
+     "a": "dimensionless",
+     "o": [
+      "dimensionless",
+      "lengths",
+      "expressed in SI base units",
+      "times"
+     ]
+    },
+    {
+     "b": "Remember",
+     "d": "Easy",
+     "t": "fill_blank",
+     "m": 1,
+     "q": "According to the chapter, the method of dimensions can be used to deduce a relation when the physical quantity depends on up to ____ other physical quantities (write a whole number).",
+     "a": "3"
+    },
+    {
+     "b": "Remember",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "q": "Which of the following can the method of dimensions NOT do?",
+     "a": "Give the numerical value of the dimensionless constant that multiplies a relation it has deduced",
+     "o": [
+      "Give the numerical value of the dimensionless constant that multiplies a relation it has deduced",
+      "Test whether an equation is dimensionally consistent",
+      "Show that a dimensionally inconsistent equation is wrong",
+      "Deduce how a quantity depends on other quantities as a product of their powers"
+     ],
+     "rev": true
+    },
+    {
+     "b": "Understand",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "An expression is derived for the distance travelled by an object. Whatever symbols appear in it, when all the individual dimensions are simplified the remaining dimension must be that of",
+     "a": "length",
+     "o": [
+      "length",
+      "time",
+      "length divided by time",
+      "a pure number"
+     ]
+    },
+    {
+     "b": "Understand",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "Compared with a test of consistency of units, a test of consistency of dimensions has the advantage that",
+     "a": "we need not commit ourselves to a particular choice of units or worry about conversions among multiples and sub-multiples",
+     "o": [
+      "we need not commit ourselves to a particular choice of units or worry about conversions among multiples and sub-multiples",
+      "it also checks the numerical constants in the equation",
+      "it proves that an equation which passes is exactly correct",
+      "it works even when the terms of the equation have different dimensions"
+     ]
+    },
+    {
+     "b": "Understand",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "The refractive index of a medium has no dimensions because it is",
+     "a": "a ratio of two similar physical quantities (two speeds)",
+     "o": [
+      "a ratio of two similar physical quantities (two speeds)",
+      "a very small quantity",
+      "always measured in SI units",
+      "a base quantity of the SI"
+     ]
+    },
+    {
+     "b": "Understand",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "q": "Pressure (force per unit area) and work done per unit volume have the same dimensional formula. If the method of dimensions is used to deduce how some quantity depends on the pressure of a medium, exactly the same relation results if the work per unit volume is assumed instead. This illustrates that the method of dimensions",
+     "a": "does not distinguish between physical quantities that have the same dimensions",
+     "o": [
+      "does not distinguish between physical quantities that have the same dimensions",
+      "cannot be applied when the quantity depends on a force",
+      "gives the exact relation between the quantities, including any numerical constant",
+      "can be applied only when the quantity depends on a single other quantity"
+     ]
+    },
+    {
+     "b": "Understand",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "q": "The expression (1/2) m v^2 + m a, where m is a mass, v a speed and a an acceleration, has no proper dimensions because",
+     "a": "two quantities of different dimensions have been added",
+     "o": [
+      "two quantities of different dimensions have been added",
+      "it contains the numerical factor 1/2",
+      "mass appears in both of its terms",
+      "a sum can never have dimensions"
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "x is a distance, v a speed, a an acceleration and t a time. Which of the following equations is dimensionally consistent?",
+     "a": "x = v t",
+     "o": [
+      "x = v t",
+      "x = v/t",
+      "x = a t",
+      "x = v t^2"
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "In the relation y = A sin(omega t), t is a time. For the argument of the sine to be acceptable, omega must have the dimensional formula",
+     "a": "[M^0 L^0 T^-1]",
+     "o": [
+      "[M^0 L^0 T^-1]",
+      "[M^0 L^0 T]",
+      "[M^0 L T^-1]",
+      "[M^0 L^0 T^0]"
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "q": "In the relation P = P0 e^(-b t^2), t is a time and P and P0 are pressures. The dimensional formula of the constant b is",
+     "a": "[M^0 L^0 T^-2]",
+     "o": [
+      "[M^0 L^0 T^-2]",
+      "[M^0 L^0 T^2]",
+      "[M^0 L^0 T^-1]",
+      "[M^0 L^0 T^0]"
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "q": "Check the dimensional consistency of the equation v^2 = u^2 + 2 a s, where u and v are speeds, a is an acceleration and s is a distance.",
+     "a": "[v^2] = [L T^-1]^2 = [L^2 T^-2]. [u^2] = [L^2 T^-2]. [2 a s] = [L T^-2][L] = [L^2 T^-2], the factor 2 being a dimensionless number. Every term has the dimensions [L^2 T^-2], so the equation is dimensionally consistent.",
+     "s": [
+      [
+       "Dimensions of v^2 and u^2 as [L^2 T^-2]",
+       1
+      ],
+      [
+       "Dimensions of a s as [L T^-2][L] = [L^2 T^-2] and conclusion that the equation is consistent",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "q": "A force F varies with time t as F = p t + q t^2. Given [F] = [M L T^-2], the dimensional formula of q is",
+     "a": "[M L T^-4]",
+     "o": [
+      "[M L T^-4]",
+      "[M L T^-3]",
+      "[M L T^-2]",
+      "[M L T^0]"
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hardest",
+     "t": "long_answer",
+     "m": 3,
+     "q": "The centripetal force F on a body moving in a circle is assumed to depend on its mass m, its speed v and the radius r of the circle. Using the method of dimensions, deduce the form of the relation. Take [F] = [M L T^-2].",
+     "a": "Write F = k m^a v^b r^c with k a dimensionless constant. Dimensions: [M L T^-2] = [M]^a [L T^-1]^b [L]^c = [M^a L^(b+c) T^-b]. Equating powers: a = 1; b + c = 1; -b = -2. So b = 2 and c = -1. Hence F = k m v^2 / r. The value of k cannot be found by this method.",
+     "s": [
+      [
+       "Writes F = k m^a v^b r^c and the dimensions of each side",
+       1
+      ],
+      [
+       "Equates powers: a = 1, b + c = 1, -b = -2, giving b = 2, c = -1",
+       1
+      ],
+      [
+       "F = k m v^2 / r, with k undetermined",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "assertion_reason",
+     "m": 1,
+     "q": "Assertion (A): An equation that passes the test of dimensional consistency is thereby proved to be a correct equation. Reason (R): An equation in which the terms do not all have the same dimensions must be wrong. Choose the correct option.",
+     "a": "A is false, R is true",
+     "o": [
+      "A is false, R is true",
+      "Both A and R are true, and R is the correct explanation of A",
+      "Both A and R are true, but R is not the correct explanation of A",
+      "A is true, R is false"
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "q": "A student writes s = u t + (1/2) a t for the distance s covered in time t by a body with initial speed u and acceleration a. Use dimensions to find which term is faulty, and say what the dimensional test can and cannot tell about the repaired equation s = u t + (1/2) a t^2.",
+     "a": "[s] = [L] and [u t] = [L T^-1][T] = [L], but [a t] = [L T^-2][T] = [L T^-1], which is not a length, so the term (1/2) a t is faulty and the equation is wrong. With a t^2 the term has dimensions [L T^-2][T^2] = [L], so the repaired equation is dimensionally consistent; however the test cannot confirm the factor 1/2, because a number has no dimensions.",
+     "s": [
+      [
+       "Finds [a t] = [L T^-1] differs from [L], so the last term is faulty",
+       1
+      ],
+      [
+       "Repaired equation is dimensionally consistent, but dimensions cannot check the factor 1/2",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hardest",
+     "t": "long_answer",
+     "m": 3,
+     "q": "The frequency f of a vibrating string is assumed to depend on its length l, the tension F in it and its mass per unit length mu. Using the method of dimensions, deduce the relation. Take [f] = [T^-1], [F] = [M L T^-2] and [mu] = [M L^-1].",
+     "a": "Write f = k l^a F^b mu^c with k dimensionless. Dimensions: [M^0 L^0 T^-1] = [L]^a [M L T^-2]^b [M L^-1]^c = [M^(b+c) L^(a+b-c) T^(-2b)]. Equating powers: b + c = 0; a + b - c = 0; -2b = -1. So b = 1/2, c = -1/2 and a = -1. Hence f = (k/l) sqrt(F/mu), with the constant k not obtainable by this method.",
+     "s": [
+      [
+       "Writes f = k l^a F^b mu^c and the dimensions of the right-hand side",
+       1
+      ],
+      [
+       "Equations b + c = 0, a + b - c = 0, -2b = -1 solved as a = -1, b = 1/2, c = -1/2",
+       1
+      ],
+      [
+       "f = (k/l) sqrt(F/mu)",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Evaluate",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "q": "After obtaining T = k sqrt(l/g) for a simple pendulum by the method of dimensions, a student claims that the method has proved (i) that the period does not depend on the mass of the bob and (ii) that k = 1. Evaluate both claims.",
+     "a": "(i) is acceptable within the assumption made: taking T as a product of powers of l, g and m, the exponent of m comes out as zero, so the mass does not enter. (ii) is wrong: a dimensionless constant cannot be obtained by the method of dimensions, since multiplying the right side by any number does not change its dimensions; actually k = 2 pi.",
+     "s": [
+      [
+       "(i) accepted - the exponent of mass comes out as zero under the assumed product form",
+       1
+      ],
+      [
+       "(ii) rejected - dimensionless constants cannot be found by dimensions (actually k = 2 pi)",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Create",
+     "d": "Hardest",
+     "t": "long_answer",
+     "m": 3,
+     "q": "For a body moving along a straight line with initial position x0, initial velocity v0 and uniform acceleration a, write (a) one equation of your own for its position x at time t that is dimensionally correct but not the correct equation of motion, and (b) one equation that is dimensionally wrong. Justify each by dimensions and state what the pair shows about the test.",
+     "a": "One possible answer: (a) x = x0 + v0 t + a t^2. Each term is a length: [v0 t] = [L T^-1][T] = [L] and [a t^2] = [L T^-2][T^2] = [L], so it is dimensionally correct, but the factor 1/2 is missing, so it is not the correct equation. (b) x = x0 + v0 t^2: [v0 t^2] = [L T^-1][T^2] = [L T], which is not a length, so the equation is dimensionally wrong and must be wrong. The pair shows that failing the test proves an equation wrong, while passing it does not prove it right.",
+     "s": [
+      [
+       "(a) an equation whose every term has dimension [L] but with a wrong numerical factor, justified",
+       1
+      ],
+      [
+       "(b) an equation with a term whose dimension is not [L], justified",
+       1
+      ],
+      [
+       "Conclusion - a dimensionally wrong equation must be wrong; a dimensionally correct one need not be right",
+       1
+      ]
+     ]
+    }
+   ]
+  }
+ ]
+}
