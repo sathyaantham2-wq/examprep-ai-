@@ -20,7 +20,7 @@ export function MasteryRing({
   const offset = circumference * (1 - clamped / 100)
 
   return (
-    <div className="flex flex-col items-center gap-2">
+    <span className="flex flex-col items-center gap-2">
       <svg width={size} height={size} viewBox={`0 0 ${size} ${size}`}>
         <circle
           cx={size / 2}
@@ -55,6 +55,6 @@ export function MasteryRing({
       <span className="text-small text-muted-foreground max-w-[6.5rem] text-center leading-tight">
         {label}
       </span>
-    </div>
+    </span>
   )
 }

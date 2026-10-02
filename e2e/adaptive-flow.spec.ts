@@ -298,9 +298,26 @@ test('first-time student: profile, personalised home, Easy assessment, marked at
   await expect(
     subjectHeading.locator('xpath=following-sibling::*[1]'),
   ).toContainText('1 of 1 concepts started')
-  // Subjects are collapsed by default (2026-09-30 UX rework) -- open this one to see its concepts.
+  // Subjects are collapsed by default (2026-09-30 UX rework). Opening one shows a ring per
+  // chapter; opening a chapter shows its concepts, what to do next, and a way to practise exactly
+  // that chapter or concept (2026-10-02).
   await subjectHeading.click()
-  await expect(page.getByText('Adaptive E2E concept').first()).toBeVisible()
+  await page.getByRole('button', { name: /Adaptive E2E chapter/ }).click()
+  const practiseChapter = page.getByRole('link', {
+    name: 'Practise this chapter',
+  })
+  await expect(practiseChapter).toHaveAttribute(
+    'href',
+    new RegExp(`subject=${subjectId}&chapters=${chapterId}$`),
+  )
+  await page.getByRole('button', { name: /Adaptive E2E concept/ }).click()
+  const practiseConcept = page.getByRole('link', {
+    name: 'Practise this concept',
+  })
+  await expect(practiseConcept).toHaveAttribute(
+    'href',
+    new RegExp(`chapters=${chapterId}&concepts=${conceptId}$`),
+  )
 
   // F123 follow-up (2026-09-24, user feedback): a finished paper no longer sits, unclickable,
   // in "Papers to attempt" under a "Completed" label -- it has its own page now, reachable from
@@ -308,6 +325,14 @@ test('first-time student: profile, personalised home, Easy assessment, marked at
   // there never renders -- the sidebar is the one path guaranteed to exist), and opening it goes
   // right back to the same marked result.
   await expect(page.getByText('Papers to attempt')).toHaveCount(0)
+
+  // "Practise this concept" opens New paper already narrowed to that one concept.
+  await practiseConcept.click()
+  await page.waitForURL('**/my-paper?**')
+  await expect(page.getByText('Focused practice')).toBeVisible()
+  await expect(
+    page.getByText('This paper asks only about this concept.'),
+  ).toBeVisible()
   await page.getByRole('link', { name: 'Papers Attempted' }).click()
   await page.waitForURL('**/papers-attempted')
   await expect(

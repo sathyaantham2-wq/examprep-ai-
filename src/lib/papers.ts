@@ -134,6 +134,10 @@ export interface GeneratePaperInput {
   student_id: string
   blueprint_id: string
   chapter_ids: Array<string>
+  // Narrows the paper to these concepts inside chapter_ids (a student practising one concept, or
+  // the few a chapter needs most). Unset means every concept of the chosen chapters, as before.
+  // The weak/priority weighting still applies among whatever concepts are left.
+  concept_ids?: Array<string>
   theme?: string
   difficulty_ceiling?: DifficultyTier
   weighting_override?: Weighting
@@ -202,6 +206,9 @@ export async function generatePaper(db: Db, input: GeneratePaperInput) {
     .selectFrom('concepts')
     .select(['id', 'chapter_id'])
     .where('chapter_id', 'in', input.chapter_ids)
+    .$if(Boolean(input.concept_ids?.length), (qb) =>
+      qb.where('id', 'in', input.concept_ids!),
+    )
     .execute()
   const conceptIds = chapterConcepts.map((c) => c.id)
   const chapterByConceptId = new Map(

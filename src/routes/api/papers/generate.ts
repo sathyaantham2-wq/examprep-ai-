@@ -64,6 +64,9 @@ const generateSchema = z
     // always sends it; every existing caller keeps the blueprint-driven behaviour.
     adaptive: z.boolean().optional(),
     chapter_ids: z.array(z.string().uuid()).min(1),
+    // Narrows the paper to these concepts inside chapter_ids -- "practise this concept" from the
+    // student's mastery view. Concepts outside chapter_ids are simply not matched.
+    concept_ids: z.array(z.string().uuid()).min(1).max(50).optional(),
     // F034: "selectable at generation" -- the moment this actually gets validated; the PDF
     // route's own ?theme= override is deliberately more lenient (falls back rather than 400s,
     // since it's just a re-print convenience, not the generation record).
@@ -187,6 +190,7 @@ export const Route = createFileRoute('/api/papers/generate')({
             studentId: student.id,
             subjectId: parsed.data.subject_id!,
             chapterIds: parsed.data.chapter_ids,
+            conceptIds: parsed.data.concept_ids,
             questionCount: parsed.data.adaptive_question_count,
             questionType: parsed.data.adaptive_question_type,
           })

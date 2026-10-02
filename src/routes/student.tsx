@@ -8,7 +8,6 @@ import {
   CardHeader,
   CardTitle,
 } from '../components/ui/card'
-import { MasteryRing } from '../components/mastery-ring'
 import { AdaptiveOverview } from '../components/adaptive-overview'
 import type { AdaptiveOverviewData } from '../components/adaptive-overview'
 import { AppShell } from '../components/app-shell'
@@ -347,30 +346,10 @@ function StudentHome() {
               </Card>
             )}
 
-            <Card>
-              <CardHeader>
-                <CardTitle className="text-h3">Chapter mastery</CardTitle>
-              </CardHeader>
-              <CardContent>
-                {dashboard.chapters.length === 0 ? (
-                  <p className="text-body text-muted-foreground">
-                    No chapters attempted yet — your first paper will show up
-                    here.
-                  </p>
-                ) : (
-                  <div className="flex flex-wrap gap-6">
-                    {dashboard.chapters.map((c) => (
-                      <MasteryRing
-                        key={c.chapter_id}
-                        percent={c.mastery_pct}
-                        label={c.chapter_name}
-                      />
-                    ))}
-                  </div>
-                )}
-              </CardContent>
-            </Card>
-
+            {/* The separate "Chapter mastery" rings card that stood here was removed 2026-10-02:
+                "Your subjects" above now shows a ring per chapter, from the same mastery score
+                as everything else on this page. This card drew the same chapters from the older
+                concept-status percentage, so one chapter could show two different numbers. */}
             {dashboard.recent_improvements.length > 0 && (
               <Card>
                 <CardHeader>
