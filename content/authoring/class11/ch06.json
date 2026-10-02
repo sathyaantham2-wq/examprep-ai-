@@ -1,0 +1,2324 @@
+{
+ "subject": {
+  "code": "MATH11",
+  "name": "Mathematics",
+  "board": "CBSE",
+  "class": 11
+ },
+ "source": {
+  "publisher": "NCERT",
+  "title": "Mathematics",
+  "edition": "Textbook for Class XI, Reprint 2026-27",
+  "year": 2026
+ },
+ "chapter": {
+  "part": "I",
+  "chapter_no": 6,
+  "name": "Permutations and Combinations",
+  "blurb": "This chapter builds counting techniques that avoid listing: the fundamental principle of counting, factorial notation, and permutations of distinct objects with and without repetition, of objects that are not all distinct, and under restrictions. It then introduces combinations, where order is not important, with the formula for C(n, r), its properties, and their use in selecting committees, teams and cards.",
+  "source_code": "kemh106",
+  "order_index": 6
+ },
+ "scope_in": [
+  {
+   "item": "State and use the fundamental principle of counting (multiplication principle) for two, three or more events in succession, by filling vacant places one at a time",
+   "pages": "100-102"
+  },
+  {
+   "item": "Count words, codes, signals, numbers and outcomes with repetition allowed or not allowed, filling the restricted place (e.g. the units place of an even number) first, and adding the counts of separate cases such as signals of 2, 3, 4 or 5 flags",
+   "pages": "102-104"
+  },
+  {
+   "item": "Define a permutation as an arrangement in a definite order of objects taken some or all at a time, and use P(n, r) = n(n - 1)...(n - r + 1) for n different objects taken r at a time without repetition",
+   "pages": "104-105"
+  },
+  {
+   "item": "Use factorial notation: n! = 1 x 2 x ... x n, 0! = 1, n! = n x (n - 1)!; evaluate and simplify expressions such as 7!/5!, 12!/(10! x 2!), n!/(r! x (n - r)!), and solve equations such as 1/8! + 1/9! = x/10!",
+   "pages": "105-107"
+  },
+  {
+   "item": "Use P(n, r) = n!/(n - r)! for 0 <= r <= n, with P(n, n) = n! and P(n, 0) = 1, and the count n^r when repetition is allowed; solve simple equations in P(n, r) for n or r",
+   "pages": "107-108, 110-112, 114"
+  },
+  {
+   "item": "Count the permutations of n objects that are not all distinct using n!/p! and n!/(p1! x p2! x ... x pk!): words with repeated letters, indistinguishable discs, numbers with repeated digits",
+   "pages": "108-110, 112-114, 121-122"
+  },
+  {
+   "item": "Count permutations under restrictions: given objects all together (treated as one object) or not all together (total minus together), letters fixed at given places, numbers that may not begin with 0, objects kept apart by placing them in gaps, women in the even places, a fixed number of letters between two letters, and words listed in dictionary order",
+   "pages": "110-114, 121-123"
+  },
+  {
+   "item": "Define a combination as a selection in which order is not important; use P(n, r) = C(n, r) x r! and C(n, r) = n!/(r! x (n - r)!) for 0 <= r <= n, with C(n, 0) = C(n, n) = 1",
+   "pages": "114-116"
+  },
+  {
+   "item": "Use the properties C(n, n - r) = C(n, r); C(n, a) = C(n, b) implies a = b or n = a + b; and C(n, r) + C(n, r - 1) = C(n + 1, r), including its proof; solve simple equations in C(n, r)",
+   "pages": "116-117, 119"
+  },
+  {
+   "item": "Count selections with C(n, r): handshakes, chords, committees and teams drawn from two or more groups, card selections from a pack of 52, compulsory items, and 'exactly', 'at least' and 'at most' conditions by adding cases",
+   "pages": "114-115, 117-120, 122-123"
+  },
+  {
+   "item": "Combine selection and arrangement: choose letters with combinations and then arrange them (words of given numbers of vowels and consonants)",
+   "pages": "119-120, 122-123"
+  }
+ ],
+ "scope_out": [
+  {
+   "item": "Circular permutations (seating round a table, necklaces and garlands)",
+   "reason": "Not taught anywhere in this chapter; every arrangement in it is in a row or a line of places (pp. 100-123)"
+  },
+  {
+   "item": "The binomial theorem, binomial coefficients as coefficients in an expansion, and Pascal's triangle",
+   "reason": "Taught in Chapter 7 of this book; here C(n, r) is used only for counting selections"
+  },
+  {
+   "item": "Combinations or selections with repetition allowed, and distributing identical objects into groups (stars and bars)",
+   "reason": "Not in this chapter; Theorem 2 (p. 108) covers only permutations with repetition, n^r"
+  },
+  {
+   "item": "Derangements and the principle of inclusion and exclusion",
+   "reason": "Not in this chapter; the only subtraction used is 'total minus the unwanted arrangements' (pp. 111, 112, 122)"
+  },
+  {
+   "item": "Dividing objects into groups or distributing them among persons using formulas such as (m + n)!/(m! x n!)",
+   "reason": "Not in this chapter"
+  },
+  {
+   "item": "The sum C(n, 0) + C(n, 1) + ... + C(n, n) = 2^n and the total number of selections of 'one or more' objects",
+   "reason": "Not derived or used in the chapter's text or exercises; it appears only as the figure 63 in the Historical Note on p. 124"
+  },
+  {
+   "item": "Probability of events computed from counts of selections",
+   "reason": "Not in this chapter; probability is Chapter 14 of this book. Card and coin situations are used here only for counting"
+  },
+  {
+   "item": "Rank of a word with a general formula, or the sum of all numbers formed from given digits",
+   "reason": "The chapter only counts dictionary-order words by fixing the first letter (Example 22 on p. 121 and Miscellaneous Exercise 4 on pp. 122-123); no rank formula or digit-sum problem appears"
+  },
+  {
+   "item": "An 'addition principle' stated as a named theorem",
+   "reason": "The chapter names only the multiplication principle (p. 102); separate cases are simply added in worked examples (Example 4, pp. 103-104), which is in scope as a technique"
+  },
+  {
+   "item": "History of permutations and combinations (Mahavira, Bhaskaracharya, Bernoulli's Ars Conjectandi)",
+   "reason": "Historical Note on pp. 124-125 is background reading, not examinable"
+  }
+ ],
+ "concepts": [
+  {
+   "code": "C11M-6.1",
+   "name": "Fundamental principle of counting",
+   "description": "The multiplication principle for events occurring in succession, applied by filling vacant places one at a time, with or without repetition, and adding the counts of separate cases.",
+   "idea": "Instead of listing every possibility, count the ways each successive choice can be made and multiply them.",
+   "rule": "If an event can occur in m different ways, following which another event can occur in n different ways, then the total number of occurrences of the events in the given order is m x n; the same holds for any finite number of events (m x n x p for three). Fill the most restricted place first, and add the counts of separate cases such as signals of 2, 3, 4 or 5 flags.",
+   "example": "3-digit numbers from the digits 1, 2, 3, 4, 5: 5 x 5 x 5 = 125 if repetition is allowed and 5 x 4 x 3 = 60 if it is not.",
+   "difficulty_base": "Easy",
+   "questions": [
+    {
+     "b": "Remember",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "The fundamental principle of counting states that if an event can occur in m different ways, following which another event can occur in n different ways, then the total number of occurrences of the events in the given order is",
+     "a": "m x n",
+     "o": [
+      "m x n",
+      "m + n",
+      "m^n",
+      "m! x n!"
+     ]
+    },
+    {
+     "b": "Remember",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "The fundamental principle of counting is also known as the",
+     "a": "multiplication principle",
+     "o": [
+      "multiplication principle",
+      "addition principle",
+      "factorial principle",
+      "combination principle"
+     ]
+    },
+    {
+     "b": "Remember",
+     "d": "Easy",
+     "t": "fill_blank",
+     "m": 1,
+     "q": "Mohan has 3 pants and 2 shirts. The number of different pairs of a pant and a shirt that he can dress up with is ____.",
+     "a": "6"
+    },
+    {
+     "b": "Remember",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "q": "Which of the following statements about the fundamental principle of counting is NOT correct?",
+     "a": "If one event can occur in m ways and, following it, another can occur in n ways, then the two together can occur in m + n ways",
+     "o": [
+      "If one event can occur in m ways and, following it, another can occur in n ways, then the two together can occur in m + n ways",
+      "It can be generalised to any finite number of events",
+      "For three successive events that can occur in m, n and p ways, the total is m x n x p",
+      "It is also known as the multiplication principle"
+     ],
+     "rev": true
+    },
+    {
+     "b": "Understand",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "Sabnam has 3 school bags, 4 tiffin boxes and 2 water bottles. In how many ways can she carry these items to school, choosing one of each?",
+     "a": "24",
+     "o": [
+      "24",
+      "9",
+      "12",
+      "14"
+     ]
+    },
+    {
+     "b": "Understand",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "A coin is tossed 3 times and the outcomes are recorded in order. How many possible outcomes are there?",
+     "a": "8",
+     "o": [
+      "8",
+      "6",
+      "9",
+      "3"
+     ]
+    },
+    {
+     "b": "Understand",
+     "d": "Easy",
+     "t": "short_answer",
+     "m": 2,
+     "q": "How many 2-digit even numbers can be formed from the digits 1, 2, 3, 4, 5 if the digits can be repeated? Explain why it is convenient to fill the units place first.",
+     "a": "The units place is the restricted place: it must be 2 or 4, so it can be filled in 2 ways, and it is filled first for that reason. The tens place can then be filled by any of the 5 digits, because repetition is allowed. By the multiplication principle the number of such numbers is 2 x 5 = 10.",
+     "s": [
+      [
+       "Fills the units place first because it is restricted to 2 or 4, giving 2 ways",
+       1
+      ],
+      [
+       "Fills the tens place in 5 ways and multiplies to get 2 x 5 = 10",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Understand",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "q": "How many 3-digit numbers can be formed from the digits 1, 2, 3, 4 and 5 if repetition of the digits is forbidden?",
+     "a": "60",
+     "o": [
+      "60",
+      "125",
+      "12",
+      "20"
+     ]
+    },
+    {
+     "b": "Understand",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "q": "How many 3-digit even numbers can be formed from the digits 1, 2, 3, 4, 5, 6 if the digits can be repeated?",
+     "a": "108",
+     "o": [
+      "108",
+      "216",
+      "60",
+      "18"
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "Given 5 flags of different colours, how many different signals can be generated if each signal requires the use of exactly 2 flags, one below the other?",
+     "a": "20",
+     "o": [
+      "20",
+      "10",
+      "25",
+      "9"
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Easy",
+     "t": "fill_blank",
+     "m": 1,
+     "q": "The number of 4-letter codes that can be formed using the first 10 letters of the English alphabet, if no letter can be repeated, is ____.",
+     "a": "5040"
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "q": "How many 5-digit telephone numbers can be constructed using the digits 0 to 9 if each number starts with 67 and no digit appears more than once?",
+     "a": "336",
+     "o": [
+      "336",
+      "720",
+      "512",
+      "1000"
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "q": "A number lock has 4 wheels, each labelled with the 10 digits 0 to 9. It opens on a sequence of 4 digits with no digit repeated, and you remember only that the first digit is 7. How many sequences for the remaining 3 digits might you have to check?",
+     "a": "504",
+     "o": [
+      "504",
+      "720",
+      "729",
+      "1000"
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "q": "How many 3-digit numbers can be formed from the digits 0, 1, 2, 3, 4 if repetition of the digits is allowed? (A 3-digit number cannot begin with 0.)",
+     "a": "The hundreds place cannot be 0, so it can be filled in 4 ways. Since repetition is allowed, the tens place and the units place can each be filled in 5 ways. By the multiplication principle the count is 4 x 5 x 5 = 100.",
+     "s": [
+      [
+       "Fills the hundreds place in 4 ways because 0 is excluded there",
+       1
+      ],
+      [
+       "Fills the other two places in 5 ways each and gets 4 x 5 x 5 = 100",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hardest",
+     "t": "long_answer",
+     "m": 3,
+     "q": "Find the number of different signals that can be generated by arranging at least 3 flags in order (one below the other) on a vertical staff, if 6 flags of different colours are available.",
+     "a": "A signal can have 3, 4, 5 or 6 flags; count each case and add. 3 flags: 6 x 5 x 4 = 120. 4 flags: 6 x 5 x 4 x 3 = 360. 5 flags: 6 x 5 x 4 x 3 x 2 = 720. 6 flags: 6 x 5 x 4 x 3 x 2 x 1 = 720. Total = 120 + 360 + 720 + 720 = 1920 signals.",
+     "s": [
+      [
+       "Splits into the cases of 3, 4, 5 and 6 flags, to be added",
+       1
+      ],
+      [
+       "Uses the multiplication principle to get 120, 360, 720 and 720",
+       1
+      ],
+      [
+       "Adds to obtain 1920",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "assertion_reason",
+     "m": 1,
+     "q": "Assertion (A): The number of 3-letter words, with or without meaning, that can be formed from the letters of the word NUMBER when repetition of letters is allowed is 216. Reason (R): When repetition is allowed, each of the 3 places can be filled in 6 ways, so by the multiplication principle the count is 6 x 6 x 6.",
+     "a": "Both A and R are true, and R is the correct explanation of A",
+     "o": [
+      "Both A and R are true, and R is the correct explanation of A",
+      "Both A and R are true, but R is not the correct explanation of A",
+      "A is true, R is false",
+      "A is false, R is true"
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "multi_statement",
+     "m": 1,
+     "q": "Consider these statements. (I) The number of 2-digit numbers that can be formed from the digits 1, 2, 3 when repetition is allowed is 9. (II) The number of 4-letter words, with or without meaning, that can be formed from the letters of the word ROSE when repetition is allowed is 24. Which is or are correct?",
+     "a": "Only I",
+     "o": [
+      "Only I",
+      "Only II",
+      "Both I and II",
+      "Neither I nor II"
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hardest",
+     "t": "long_answer",
+     "m": 3,
+     "q": "How many 4-digit even numbers with no digit repeated can be formed from the digits 0, 1, 2, 3, 4, 5? (A 4-digit number cannot begin with 0.) Explain why two cases are needed.",
+     "a": "The units digit must be 0, 2 or 4, but whether 0 has been used changes the choices for the thousands place, so two cases are needed. Case 1, units digit 0: the thousands, hundreds and tens places can be filled in 5 x 4 x 3 = 60 ways. Case 2, units digit 2 or 4 (2 ways): the thousands place cannot be 0 or the units digit, so 4 ways; then the hundreds place has 4 ways and the tens place 3 ways, giving 2 x 4 x 4 x 3 = 96. Total = 60 + 96 = 156.",
+     "s": [
+      [
+       "Case units digit 0: 5 x 4 x 3 = 60",
+       1
+      ],
+      [
+       "Case units digit 2 or 4: 2 x 4 x 4 x 3 = 96, with 0 excluded from the thousands place",
+       1
+      ],
+      [
+       "Adds the cases to get 156 and explains that 0 in the units place changes the count for the thousands place",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Evaluate",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "q": "A cafe offers 4 kinds of sandwich and 3 kinds of drink. Ravi says a meal of one sandwich and one drink can be chosen in 4 + 3 = 7 ways. Evaluate his claim.",
+     "a": "Ravi is wrong. For every one of the 4 sandwiches there are 3 possible drinks, so by the multiplication principle the number of meals is 4 x 3 = 12, not 7. Adding would count the ways of choosing just one item (a sandwich or a drink), not a pair.",
+     "s": [
+      [
+       "Says the claim is wrong because each of the 4 sandwiches can go with each of the 3 drinks",
+       1
+      ],
+      [
+       "Gives the correct count 4 x 3 = 12",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Create",
+     "d": "Hardest",
+     "t": "long_answer",
+     "m": 3,
+     "q": "Create a counting problem about forming a 3-symbol code whose answer by the multiplication principle is 5 x 4 x 3 = 60. Then change one condition so that the answer becomes 5 x 5 x 5 = 125, and explain what the change does.",
+     "a": "Sample: 'How many 3-letter codes can be formed from the letters A, B, C, D, E if no letter may be repeated?' The first place can be filled in 5 ways, the second in 4 and the third in 3, so there are 5 x 4 x 3 = 60 codes. Changed version: 'How many 3-letter codes can be formed from A, B, C, D, E if letters may be repeated?' Now each of the 3 places can be filled in 5 ways, so there are 5 x 5 x 5 = 125 codes. Allowing repetition means a symbol already used is still available, so the number of choices does not drop from place to place.",
+     "s": [
+      [
+       "States a valid problem with 5 symbols, 3 ordered places and no repetition, giving 5 x 4 x 3 = 60",
+       1
+      ],
+      [
+       "States the changed problem with repetition allowed, giving 5 x 5 x 5 = 125",
+       1
+      ],
+      [
+       "Explains that with repetition each place keeps all 5 choices, whereas without it the choices fall by one each time",
+       1
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "code": "C11M-6.2",
+   "name": "Factorial notation",
+   "description": "The meaning of n! as the product of the first n natural numbers, the convention 0! = 1, the relation n! = n x (n - 1)!, and the evaluation and simplification of expressions involving factorials.",
+   "idea": "n! is shorthand for the product 1 x 2 x 3 x ... x n, which keeps turning up when arrangements are counted.",
+   "rule": "n! = 1 x 2 x 3 x ... x (n - 1) x n, and 0! = 1 by definition. For a natural number n, n! = n x (n - 1)! = n x (n - 1) x (n - 2)! and so on, so a quotient of factorials is simplified by cancelling the smaller factorial, not by dividing the numbers.",
+   "example": "7!/5! = (7 x 6 x 5!)/5! = 42, and 12!/(10! x 2!) = (12 x 11)/2 = 66.",
+   "difficulty_base": "Easy",
+   "questions": [
+    {
+     "b": "Remember",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "For a natural number n, the notation n! represents",
+     "a": "the product of the first n natural numbers",
+     "o": [
+      "the product of the first n natural numbers",
+      "the sum of the first n natural numbers",
+      "the product n x n",
+      "n multiplied by itself n times"
+     ]
+    },
+    {
+     "b": "Remember",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "The value of 0! is defined to be",
+     "a": "1",
+     "o": [
+      "1",
+      "0",
+      "-1",
+      "10"
+     ]
+    },
+    {
+     "b": "Remember",
+     "d": "Easy",
+     "t": "fill_blank",
+     "m": 1,
+     "q": "The value of 5! is ____.",
+     "a": "120"
+    },
+    {
+     "b": "Remember",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "q": "Which of the following statements about factorial notation is FALSE?",
+     "a": "3! + 4! = 7!",
+     "o": [
+      "3! + 4! = 7!",
+      "0! = 1",
+      "n! = n x (n - 1)! for every natural number n",
+      "5! = 5 x 4 x 3!"
+     ],
+     "rev": true
+    },
+    {
+     "b": "Understand",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "The value of 7!/5! is",
+     "a": "42",
+     "o": [
+      "42",
+      "2",
+      "1.4",
+      "35"
+     ]
+    },
+    {
+     "b": "Understand",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "The value of 4! - 3! is",
+     "a": "18",
+     "o": [
+      "18",
+      "1",
+      "30",
+      "12"
+     ]
+    },
+    {
+     "b": "Understand",
+     "d": "Easy",
+     "t": "short_answer",
+     "m": 2,
+     "q": "Is 3! + 4! = 7!? Justify your answer by evaluating both sides.",
+     "a": "No. 3! + 4! = 6 + 24 = 30, whereas 7! = 5040. Since 30 is not equal to 5040, 3! + 4! is not equal to 7!; factorials cannot be added by adding the numbers.",
+     "s": [
+      [
+       "Evaluates 3! + 4! = 6 + 24 = 30",
+       1
+      ],
+      [
+       "Evaluates 7! = 5040 and concludes that the two sides are not equal",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Understand",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "q": "The value of 8!/(6! x 2!) is",
+     "a": "28",
+     "o": [
+      "28",
+      "56",
+      "112",
+      "4"
+     ]
+    },
+    {
+     "b": "Understand",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "q": "The value of n!/(n - r)! when n = 6 and r = 2 is",
+     "a": "30",
+     "o": [
+      "30",
+      "15",
+      "360",
+      "3"
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "The value of 12!/(10! x 2!) is",
+     "a": "66",
+     "o": [
+      "66",
+      "132",
+      "264",
+      "6"
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Easy",
+     "t": "fill_blank",
+     "m": 1,
+     "q": "The value of 7! - 5! is ____.",
+     "a": "4920"
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "q": "If 1/8! + 1/9! = x/10!, then the value of x is",
+     "a": "100",
+     "o": [
+      "100",
+      "90",
+      "10",
+      "19"
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "q": "The value of n!/(r! x (n - r)!) when n = 5 and r = 2 is",
+     "a": "10",
+     "o": [
+      "10",
+      "20",
+      "60",
+      "2.5"
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "q": "If 1/6! + 1/7! = x/8!, find x.",
+     "a": "Write 7! = 7 x 6! and 8! = 8 x 7 x 6!. Then 1/6! + 1/(7 x 6!) = x/(8 x 7 x 6!). Multiplying through by 6! gives 1 + 1/7 = x/56, i.e. 8/7 = x/56, so x = 64.",
+     "s": [
+      [
+       "Rewrites 7! and 8! in terms of 6! and cancels 6!, reaching 1 + 1/7 = x/56",
+       1
+      ],
+      [
+       "Solves to get x = 64",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hardest",
+     "t": "long_answer",
+     "m": 3,
+     "q": "Evaluate n!/(n - r)! when (i) n = 6, r = 2 and (ii) n = 9, r = 5. Then state how many times as large the second value is as the first.",
+     "a": "(i) 6!/4! = 6 x 5 = 30. (ii) 9!/4! = 9 x 8 x 7 x 6 x 5 = 15120. Ratio: 15120/30 = 504, so the second value is 504 times the first.",
+     "s": [
+      [
+       "Obtains 6!/4! = 30",
+       1
+      ],
+      [
+       "Obtains 9!/4! = 9 x 8 x 7 x 6 x 5 = 15120",
+       1
+      ],
+      [
+       "Divides to find that the second value is 504 times the first",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "assertion_reason",
+     "m": 1,
+     "q": "Assertion (A): 7!/5! = 42. Reason (R): 0! is defined to be 1.",
+     "a": "Both A and R are true, but R is not the correct explanation of A",
+     "o": [
+      "Both A and R are true, but R is not the correct explanation of A",
+      "Both A and R are true, and R is the correct explanation of A",
+      "A is true, R is false",
+      "A is false, R is true"
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "multi_statement",
+     "m": 1,
+     "q": "Consider these statements. (I) 4! + 2! = 6!. (II) 6!/4! = 30. Which is or are correct?",
+     "a": "Only II",
+     "o": [
+      "Only II",
+      "Only I",
+      "Both I and II",
+      "Neither I nor II"
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hardest",
+     "t": "long_answer",
+     "m": 3,
+     "q": "Find the natural number n for which (n + 2)! = 20 x n!.",
+     "a": "(n + 2)! = (n + 2)(n + 1) x n!, so the equation becomes (n + 2)(n + 1) x n! = 20 x n!. Dividing by n! (which is not zero): (n + 2)(n + 1) = 20, i.e. n^2 + 3n - 18 = 0, so (n + 6)(n - 3) = 0 and n = 3 or n = -6. As n is a natural number, n = 3. Check: 5! = 120 and 20 x 3! = 120.",
+     "s": [
+      [
+       "Writes (n + 2)! = (n + 2)(n + 1) x n! and cancels n!",
+       1
+      ],
+      [
+       "Forms and factorises n^2 + 3n - 18 = 0 as (n + 6)(n - 3) = 0",
+       1
+      ],
+      [
+       "Rejects n = -6 and concludes n = 3 (check: 5! = 120 = 20 x 3!)",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Evaluate",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "q": "A student simplifies 10!/5! to 2!, arguing that 10/5 = 2. Evaluate this working and give the correct value.",
+     "a": "The working is wrong: the factorial sign cannot be cancelled like a common factor. 10! = 10 x 9 x 8 x 7 x 6 x 5!, so 10!/5! = 10 x 9 x 8 x 7 x 6 = 30240, whereas 2! = 2.",
+     "s": [
+      [
+       "Explains that 10!/5! is found by writing 10! = 10 x 9 x 8 x 7 x 6 x 5! and cancelling 5!, not by dividing 10 by 5",
+       1
+      ],
+      [
+       "Gives the correct value 30240",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Create",
+     "d": "Hardest",
+     "t": "long_answer",
+     "m": 3,
+     "q": "Construct the equation 1/a! + 1/(a + 1)! = x/(a + 2)! for a = 4, solve it for x, and verify your answer by evaluating both sides.",
+     "a": "With a = 4 the equation is 1/4! + 1/5! = x/6!. Since 5! = 5 x 4! and 6! = 6 x 5 x 4!, multiplying through by 4! gives 1 + 1/5 = x/30, i.e. 6/5 = x/30, so x = 36. Verification: 1/24 + 1/120 = 5/120 + 1/120 = 6/120 = 1/20, and 36/720 = 1/20.",
+     "s": [
+      [
+       "Writes the equation 1/4! + 1/5! = x/6!",
+       1
+      ],
+      [
+       "Expresses 5! and 6! in terms of 4! and solves to get x = 36",
+       1
+      ],
+      [
+       "Verifies that both sides equal 1/20",
+       1
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "code": "C11M-6.3",
+   "name": "Permutations of distinct objects: P(n, r) and n^r",
+   "description": "A permutation as an arrangement in a definite order; the number P(n, r) = n!/(n - r)! of permutations of n different objects taken r at a time without repetition, the count n^r when repetition is allowed, and simple equations in P(n, r).",
+   "idea": "When order matters and the objects are all different, the number of arrangements of r of them is found by filling r places in succession.",
+   "rule": "P(n, r) = n(n - 1)(n - 2)...(n - r + 1) = n!/(n - r)! for 0 <= r <= n, with P(n, n) = n! and P(n, 0) = 1. If repetition is allowed, the number of permutations of n different objects taken r at a time is n^r.",
+   "example": "3-letter words from the letters of NUMBER: P(6, 3) = 6 x 5 x 4 = 120 without repetition, and 6^3 = 216 with repetition.",
+   "difficulty_base": "Easy",
+   "questions": [
+    {
+     "b": "Remember",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "A permutation is",
+     "a": "an arrangement in a definite order of a number of objects taken some or all at a time",
+     "o": [
+      "an arrangement in a definite order of a number of objects taken some or all at a time",
+      "a selection of a number of objects in which the order is not important",
+      "the product of the first n natural numbers",
+      "the number of ways in which two events can occur one after the other"
+     ]
+    },
+    {
+     "b": "Remember",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "For 0 <= r <= n, the number of permutations of n different objects taken r at a time, when the objects do not repeat, is P(n, r) =",
+     "a": "n!/(n - r)!",
+     "o": [
+      "n!/(n - r)!",
+      "n!/(r! x (n - r)!)",
+      "n!/r!",
+      "n^r"
+     ]
+    },
+    {
+     "b": "Remember",
+     "d": "Easy",
+     "t": "fill_blank",
+     "m": 1,
+     "q": "For any natural number n, the value of P(n, 0) is ____.",
+     "a": "1"
+    },
+    {
+     "b": "Remember",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "q": "Which of the following statements about P(n, r), the number of permutations of n different objects taken r at a time without repetition, is NOT true?",
+     "a": "P(n, n) = 1 for every natural number n",
+     "o": [
+      "P(n, n) = 1 for every natural number n",
+      "P(n, 0) = 1",
+      "P(n, r) = n(n - 1)(n - 2)...(n - r + 1) for 0 < r <= n",
+      "P(n, n) = n!"
+     ],
+     "rev": true
+    },
+    {
+     "b": "Understand",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "The number of permutations of n different objects taken r at a time, when repetition is allowed, is",
+     "a": "n^r",
+     "o": [
+      "n^r",
+      "r^n",
+      "n x r",
+      "n!/(n - r)!"
+     ]
+    },
+    {
+     "b": "Understand",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "The value of P(6, 3) is",
+     "a": "120",
+     "o": [
+      "120",
+      "20",
+      "216",
+      "18"
+     ]
+    },
+    {
+     "b": "Understand",
+     "d": "Easy",
+     "t": "short_answer",
+     "m": 2,
+     "q": "How many 4-letter words, with or without meaning, can be formed from the letters of the word MONDAY (i) if no letter is repeated, (ii) if repetition of letters is allowed?",
+     "a": "MONDAY has 6 different letters. (i) Without repetition the number is P(6, 4) = 6 x 5 x 4 x 3 = 360. (ii) With repetition each of the 4 places can be filled in 6 ways, so the number is 6^4 = 1296.",
+     "s": [
+      [
+       "Without repetition: P(6, 4) = 6 x 5 x 4 x 3 = 360",
+       1
+      ],
+      [
+       "With repetition: 6^4 = 1296",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Understand",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "q": "A chairman and a vice-chairman are to be chosen from a group of 12 persons, and one person cannot hold more than one position. In how many ways can this be done?",
+     "a": "132",
+     "o": [
+      "132",
+      "66",
+      "144",
+      "23"
+     ]
+    },
+    {
+     "b": "Understand",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "q": "How many 4-digit numbers can be formed by using the digits 1 to 9 if repetition of digits is not allowed?",
+     "a": "3024",
+     "o": [
+      "3024",
+      "6561",
+      "126",
+      "5040"
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "How many 3-digit numbers can be formed by using the digits 1 to 9 if no digit is repeated?",
+     "a": "504",
+     "o": [
+      "504",
+      "729",
+      "84",
+      "720"
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Easy",
+     "t": "fill_blank",
+     "m": 1,
+     "q": "The number of words, with or without meaning, that can be formed using all 8 letters of the word EQUATION, each letter exactly once, is ____.",
+     "a": "40320"
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "q": "If P(n, 4) = 20 x P(n, 2) and n > 3, then n equals",
+     "a": "7",
+     "o": [
+      "7",
+      "6",
+      "2",
+      "22"
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "q": "If P(5, r) = 2 x P(6, r - 1), where 1 <= r <= 5, then r equals",
+     "a": "3",
+     "o": [
+      "3",
+      "10",
+      "4",
+      "2"
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "q": "How many 4-digit numbers are there with no digit repeated? (The digits 0 to 9 are available and a 4-digit number cannot begin with 0.)",
+     "a": "The thousands place can be filled in 9 ways (any digit except 0). The remaining three places are then filled from the remaining 9 digits (0 is now allowed) in 9 x 8 x 7 = 504 ways. Total = 9 x 504 = 4536. Equivalently P(10, 4) - P(9, 3) = 5040 - 504 = 4536.",
+     "s": [
+      [
+       "Thousands place in 9 ways since 0 is excluded (or subtracts the P(9, 3) arrangements starting with 0)",
+       1
+      ],
+      [
+       "Completes the count: 9 x 9 x 8 x 7 = 4536",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hardest",
+     "t": "long_answer",
+     "m": 3,
+     "q": "Find n if P(n - 1, 3) : P(n, 4) = 1 : 9.",
+     "a": "P(n - 1, 3) = (n - 1)(n - 2)(n - 3) and P(n, 4) = n(n - 1)(n - 2)(n - 3). Their ratio is (n - 1)(n - 2)(n - 3)/[n(n - 1)(n - 2)(n - 3)] = 1/n, since (n - 1)(n - 2)(n - 3) is not zero for n >= 4. So 1/n = 1/9 and n = 9. Check: P(8, 3) = 336 and P(9, 4) = 3024 = 9 x 336.",
+     "s": [
+      [
+       "Writes P(n - 1, 3) = (n - 1)(n - 2)(n - 3) and P(n, 4) = n(n - 1)(n - 2)(n - 3)",
+       1
+      ],
+      [
+       "Cancels the common non-zero factors to get the ratio 1/n",
+       1
+      ],
+      [
+       "Sets 1/n = 1/9 and concludes n = 9",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "assertion_reason",
+     "m": 1,
+     "q": "Assertion (A): P(7, 7) = 7!. Reason (R): For 0 <= r <= n, P(n, r) = n!/r!.",
+     "a": "A is true, R is false",
+     "o": [
+      "A is true, R is false",
+      "Both A and R are true, and R is the correct explanation of A",
+      "Both A and R are true, but R is not the correct explanation of A",
+      "A is false, R is true"
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "multi_statement",
+     "m": 1,
+     "q": "Consider these statements. (I) P(5, 2) = 20. (II) The number of 2-letter words, with or without meaning, that can be formed from 5 different letters when repetition is allowed is 25. Which is or are correct?",
+     "a": "Both I and II",
+     "o": [
+      "Both I and II",
+      "Only I",
+      "Only II",
+      "Neither I nor II"
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hardest",
+     "t": "long_answer",
+     "m": 3,
+     "q": "How many words, with or without meaning, can be made from the letters of the word MONDAY, assuming that no letter is repeated, if (i) 4 letters are used at a time, (ii) all letters are used at a time, (iii) all letters are used but the first letter is a vowel?",
+     "a": "MONDAY has 6 different letters, of which O and A are vowels. (i) P(6, 4) = 6 x 5 x 4 x 3 = 360. (ii) P(6, 6) = 6! = 720. (iii) The first place can be filled by a vowel in 2 ways and the remaining 5 letters can then be arranged in 5! = 120 ways, giving 2 x 120 = 240.",
+     "s": [
+      [
+       "(i) P(6, 4) = 360",
+       1
+      ],
+      [
+       "(ii) 6! = 720",
+       1
+      ],
+      [
+       "(iii) 2 x 5! = 240, filling the restricted first place first",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Evaluate",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "q": "A first prize and a second prize are to be given to two different students out of 10. A student claims this can be done in 10 x 10 = 100 ways. Evaluate the claim.",
+     "a": "The claim is wrong. Once the first prize is given (10 ways), the same student cannot receive the second prize, so only 9 students remain. The number of ways is P(10, 2) = 10 x 9 = 90. The figure 100 = 10^2 would be right only if repetition (one student getting both prizes) were allowed.",
+     "s": [
+      [
+       "Identifies that the two winners must be different, so repetition is not allowed and 10^2 does not apply",
+       1
+      ],
+      [
+       "Gives the correct count P(10, 2) = 10 x 9 = 90",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Create",
+     "d": "Hardest",
+     "t": "long_answer",
+     "m": 3,
+     "q": "Create one real-life problem whose answer is P(8, 3) and another whose answer is 8^3. State clearly the condition on repetition in each, and evaluate both.",
+     "a": "Sample. Problem 1: '8 runners take part in a race. In how many ways can the gold, silver and bronze medals be awarded, if no runner can win two medals?' Order matters and repetition is not allowed, so the answer is P(8, 3) = 8 x 7 x 6 = 336. Problem 2: 'A 3-letter code is made from 8 different letters, and a letter may be used more than once. How many codes are possible?' Order matters and repetition is allowed, so the answer is 8^3 = 512.",
+     "s": [
+      [
+       "Gives a valid ordered, no-repetition problem with 8 objects and 3 places",
+       1
+      ],
+      [
+       "Gives a valid ordered problem with repetition allowed, 8 objects and 3 places",
+       1
+      ],
+      [
+       "Evaluates P(8, 3) = 336 and 8^3 = 512",
+       1
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "code": "C11M-6.4",
+   "name": "Permutations when the objects are not all distinct",
+   "description": "Counting the distinct arrangements of n objects of which some are alike, using n!/p! and n!/(p1! x p2! x ... x pk!), for words with repeated letters, indistinguishable discs and numbers with repeated digits.",
+   "idea": "If some objects are alike, swapping the alike objects among themselves gives no new arrangement, so the n! arrangements of 'labelled' objects over-count.",
+   "rule": "The number of permutations of n objects taken all at a time, where p1 objects are of one kind, p2 of a second kind, ..., pk of a kth kind and the rest, if any, are all different, is n!/(p1! x p2! x ... x pk!). With only one group of p alike objects this is n!/p!.",
+   "example": "ROOT: 4!/2! = 12 arrangements. ALLAHABAD (4 As, 2 Ls): 9!/(4! x 2!) = 7560.",
+   "difficulty_base": "Hard",
+   "questions": [
+    {
+     "b": "Remember",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "The number of permutations of n objects taken all at a time, where p objects are of the same kind and the rest are all different, is",
+     "a": "n!/p!",
+     "o": [
+      "n!/p!",
+      "n!/(n - p)!",
+      "n! x p!",
+      "n! - p!"
+     ]
+    },
+    {
+     "b": "Remember",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "The number of permutations of n objects taken all at a time, where p1 objects are of one kind, p2 are of a second kind, ..., pk are of a kth kind and the rest, if any, are all different, is",
+     "a": "n!/(p1! x p2! x ... x pk!)",
+     "o": [
+      "n!/(p1! x p2! x ... x pk!)",
+      "n!/(p1 + p2 + ... + pk)!",
+      "n!/(p1 x p2 x ... x pk)",
+      "n! x p1! x p2! x ... x pk!"
+     ]
+    },
+    {
+     "b": "Remember",
+     "d": "Easy",
+     "t": "fill_blank",
+     "m": 1,
+     "q": "The number of distinct ways of rearranging the letters of the word ROOT is ____.",
+     "a": "12"
+    },
+    {
+     "b": "Remember",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "q": "Each option gives a word and a claimed number of distinct arrangements of all its letters. Which claim is NOT correct?",
+     "a": "BANANA: 120",
+     "o": [
+      "BANANA: 120",
+      "ROOT: 12",
+      "AGAIN: 60",
+      "LEVEL: 30"
+     ],
+     "rev": true
+    },
+    {
+     "b": "Understand",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "In the word INSTITUTE the letter I appears 2 times and the letter T appears 3 times; the other letters are different. The number of distinct arrangements of its 9 letters is",
+     "a": "9!/(2! x 3!)",
+     "o": [
+      "9!/(2! x 3!)",
+      "9!/5!",
+      "9!",
+      "9!/(2 x 3)"
+     ]
+    },
+    {
+     "b": "Understand",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "The number of distinct arrangements of all the letters of the word AGAIN is",
+     "a": "60",
+     "o": [
+      "60",
+      "120",
+      "24",
+      "30"
+     ]
+    },
+    {
+     "b": "Understand",
+     "d": "Easy",
+     "t": "short_answer",
+     "m": 2,
+     "q": "Explain why the number of distinct arrangements of the letters of the word ROOT is 4!/2! and not 4!.",
+     "a": "If the two Os are treated as different, say O1 and O2, the 4 letters can be arranged in 4! = 24 ways. But each actual arrangement, such as ROOT, appears 2! = 2 times in this list (R O1 O2 T and R O2 O1 T), because interchanging the two Os changes nothing when they are the same letter. So the number of distinct arrangements is 4!/2! = 12.",
+     "s": [
+      [
+       "Treats the two Os as different to get 4! = 24 arrangements",
+       1
+      ],
+      [
+       "Explains that every arrangement is then counted 2! times, so the count is 24/2 = 12",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Understand",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "q": "The number of permutations of all the letters of the word ALLAHABAD is",
+     "a": "7560",
+     "o": [
+      "7560",
+      "15120",
+      "181440",
+      "362880"
+     ]
+    },
+    {
+     "b": "Understand",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "q": "In how many ways can 3 red, 2 yellow and 2 green discs be arranged in a row if the discs of the same colour are indistinguishable?",
+     "a": "210",
+     "o": [
+      "210",
+      "420",
+      "5040",
+      "12"
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "The number of distinct arrangements of all the letters of the word BANANA is",
+     "a": "60",
+     "o": [
+      "60",
+      "720",
+      "360",
+      "20"
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Easy",
+     "t": "fill_blank",
+     "m": 1,
+     "q": "The number of distinct arrangements of all the letters of the word LEVEL is ____.",
+     "a": "30"
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "q": "The number of distinct arrangements of all the letters of the word INDEPENDENCE is",
+     "a": "1663200",
+     "o": [
+      "1663200",
+      "3326400",
+      "9979200",
+      "479001600"
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "q": "The number of distinct arrangements of all the letters of the word MISSISSIPPI is",
+     "a": "34650",
+     "o": [
+      "34650",
+      "69300",
+      "831600",
+      "39916800"
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "q": "Find the number of distinct arrangements of all the letters of the word EXAMINATION.",
+     "a": "EXAMINATION has 11 letters, in which A appears 2 times, I appears 2 times and N appears 2 times; the rest (E, X, M, T, O) are different. Number of arrangements = 11!/(2! x 2! x 2!) = 39916800/8 = 4989600.",
+     "s": [
+      [
+       "Counts 11 letters with A, I and N each appearing twice",
+       1
+      ],
+      [
+       "Computes 11!/(2! x 2! x 2!) = 4989600",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hardest",
+     "t": "long_answer",
+     "m": 3,
+     "q": "The letters of the word ASSASSINATION are arranged in a row in all possible ways. State how many times each repeated letter occurs, and find the total number of distinct arrangements.",
+     "a": "ASSASSINATION has 13 letters: A appears 3 times, S appears 4 times, I appears 2 times, N appears 2 times, and T and O appear once each. Number of distinct arrangements = 13!/(3! x 4! x 2! x 2!) = 6227020800/576 = 10810800.",
+     "s": [
+      [
+       "Counts 13 letters with A 3 times, S 4 times, I 2 times and N 2 times",
+       1
+      ],
+      [
+       "Sets up 13!/(3! x 4! x 2! x 2!)",
+       1
+      ],
+      [
+       "Evaluates it as 10810800",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "assertion_reason",
+     "m": 1,
+     "q": "Assertion (A): The number of distinct arrangements of the letters of the word ROOT is 24. Reason (R): The number of permutations of n objects taken all at a time, where p objects are of the same kind and the rest are all different, is n!/p!.",
+     "a": "A is false, R is true",
+     "o": [
+      "A is false, R is true",
+      "Both A and R are true, and R is the correct explanation of A",
+      "Both A and R are true, but R is not the correct explanation of A",
+      "A is true, R is false"
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "multi_statement",
+     "m": 1,
+     "q": "Consider these statements. (I) The letters of the word AGAIN can be arranged in 120 distinct ways. (II) The number of permutations of n objects taken all at a time, where p objects are alike and the rest are all different, is n!/(n - p)!. Which is or are correct?",
+     "a": "Neither I nor II",
+     "o": [
+      "Neither I nor II",
+      "Only I",
+      "Only II",
+      "Both I and II"
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hardest",
+     "t": "long_answer",
+     "m": 3,
+     "q": "How many 6-digit numbers can be formed by using all of the digits 0, 1, 1, 2, 2, 2, each digit being used exactly as many times as it is listed? (A 6-digit number cannot begin with 0.)",
+     "a": "The 6 digits contain two 1s and three 2s, so the number of arrangements of all six is 6!/(2! x 3!) = 720/12 = 60. These include arrangements with 0 at the extreme left, which are not 6-digit numbers. Fixing 0 at the left, the remaining digits 1, 1, 2, 2, 2 can be arranged in 5!/(2! x 3!) = 10 ways. Required number = 60 - 10 = 50.",
+     "s": [
+      [
+       "Counts all arrangements: 6!/(2! x 3!) = 60",
+       1
+      ],
+      [
+       "Counts those beginning with 0: 5!/(2! x 3!) = 10",
+       1
+      ],
+      [
+       "Subtracts to get 50",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Evaluate",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "q": "Meena says that the letters of the word LETTER can be arranged in 6! = 720 distinct ways. Evaluate her answer.",
+     "a": "She is wrong, because the letters are not all different: E appears 2 times and T appears 2 times. The number of distinct arrangements is 6!/(2! x 2!) = 720/4 = 180.",
+     "s": [
+      [
+       "Points out that E and T are each repeated twice, so 6! over-counts",
+       1
+      ],
+      [
+       "Gives the correct count 6!/(2! x 2!) = 180",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Create",
+     "d": "Hardest",
+     "t": "long_answer",
+     "m": 3,
+     "q": "Design a set of 6 beads in exactly two colours (beads of the same colour being indistinguishable) so that the number of distinct ways of arranging all 6 in a row is exactly 15. State how many beads there are of each colour, justify the count with the formula, and show that a 3 + 3 split would not give 15.",
+     "a": "Take 4 beads of one colour and 2 of the other, for example 4 red and 2 blue. Number of arrangements = 6!/(4! x 2!) = 720/48 = 15. A 3 + 3 split gives 6!/(3! x 3!) = 720/36 = 20, which is not 15 (and a 5 + 1 split gives 6!/5! = 6), so the split must be 4 + 2.",
+     "s": [
+      [
+       "Chooses 4 beads of one colour and 2 of the other",
+       1
+      ],
+      [
+       "Justifies with 6!/(4! x 2!) = 15",
+       1
+      ],
+      [
+       "Shows that a 3 + 3 split gives 6!/(3! x 3!) = 20, not 15",
+       1
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "code": "C11M-6.5",
+   "name": "Permutations under restrictions",
+   "description": "Arrangements subject to a condition: particular objects together or not all together, particular objects in fixed or specified places, numbers that may not begin with 0, objects kept apart by placing them in gaps, and words listed in dictionary order.",
+   "idea": "A restriction is handled by dealing with the restricted objects or places first, or by counting everything and subtracting the unwanted arrangements.",
+   "rule": "Objects that must stay together are treated temporarily as a single object, and the result is multiplied by the number of arrangements inside that object. 'Not all together' = total - 'all together'. Fix the objects whose places are given and arrange the rest. Numbers beginning with 0 are subtracted. To keep objects apart, arrange the others first and place the separated objects in the gaps. Dictionary rank is found by counting the words that begin with each earlier letter.",
+   "example": "DAUGHTER with the 3 vowels together: 6! x 3! = 4320; with the vowels not all together: 8! - 4320 = 36000.",
+   "difficulty_base": "Hard",
+   "questions": [
+    {
+     "b": "Remember",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "To count the arrangements in which certain objects must all occur together, the method used in this chapter is to",
+     "a": "treat those objects temporarily as a single object, arrange, and then multiply by the number of arrangements within that object",
+     "o": [
+      "treat those objects temporarily as a single object, arrange, and then multiply by the number of arrangements within that object",
+      "subtract the number of those objects from n and take the factorial of the result",
+      "divide the total number of arrangements by the number of those objects",
+      "arrange only those objects and ignore the rest"
+     ]
+    },
+    {
+     "b": "Remember",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "To find the number of arrangements of the letters of a word in which the vowels do not all occur together, we compute",
+     "a": "(all arrangements) - (arrangements with all the vowels together)",
+     "o": [
+      "(all arrangements) - (arrangements with all the vowels together)",
+      "(all arrangements) + (arrangements with all the vowels together)",
+      "(all arrangements) / (arrangements with all the vowels together)",
+      "(arrangements of the consonants alone) x (arrangements of the vowels alone)"
+     ]
+    },
+    {
+     "b": "Remember",
+     "d": "Easy",
+     "t": "fill_blank",
+     "m": 1,
+     "q": "The word DAUGHTER has 8 different letters. The number of vowels among them is ____.",
+     "a": "3"
+    },
+    {
+     "b": "Remember",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "q": "When counting the numbers lying between 100 and 1000 that can be formed from the digits 0, 1, 2, 3, 4, 5 without repetition, which of these arrangements must NOT be counted?",
+     "a": "042",
+     "o": [
+      "042",
+      "402",
+      "420",
+      "204"
+     ],
+     "rev": true
+    },
+    {
+     "b": "Understand",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "The 5 letters of the word TABLE are arranged in a row in all possible ways. In how many of these arrangements are the two vowels A and E next to each other?",
+     "a": "48",
+     "o": [
+      "48",
+      "24",
+      "120",
+      "72"
+     ]
+    },
+    {
+     "b": "Understand",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "How many arrangements of all the letters of the word EQUATION, each letter used exactly once, begin with the letter Q?",
+     "a": "5040",
+     "o": [
+      "5040",
+      "40320",
+      "720",
+      "35280"
+     ]
+    },
+    {
+     "b": "Understand",
+     "d": "Easy",
+     "t": "short_answer",
+     "m": 2,
+     "q": "How many numbers lying between 100 and 1000 can be formed with the digits 0, 1, 2, 3, 4 if repetition of the digits is not allowed? Explain what has to be subtracted and why.",
+     "a": "Every number between 100 and 1000 is a 3-digit number. The permutations of the 5 digits taken 3 at a time number P(5, 3) = 60, but these include arrangements with 0 at the hundreds place (such as 042), which are really 2-digit numbers. Fixing 0 at the hundreds place, the other two places can be filled in P(4, 2) = 12 ways. Required number = 60 - 12 = 48.",
+     "s": [
+      [
+       "Counts P(5, 3) = 60 arrangements of 3 of the 5 digits",
+       1
+      ],
+      [
+       "Subtracts the P(4, 2) = 12 arrangements with 0 at the hundreds place to get 48",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Understand",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "q": "In how many ways can the letters of the word PERMUTATIONS be arranged if every arrangement starts with P and ends with S?",
+     "a": "1814400",
+     "o": [
+      "1814400",
+      "3628800",
+      "907200",
+      "239500800"
+     ]
+    },
+    {
+     "b": "Understand",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "q": "It is required to seat 5 men and 4 women in a row of 9 seats so that the women occupy the even places. How many such arrangements are possible?",
+     "a": "2880",
+     "o": [
+      "2880",
+      "144",
+      "5760",
+      "362880"
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "How many 6-digit numbers divisible by 10 can be formed from the digits 0, 1, 3, 5, 7 and 9 if no digit is repeated?",
+     "a": "120",
+     "o": [
+      "120",
+      "720",
+      "600",
+      "24"
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Easy",
+     "t": "fill_blank",
+     "m": 1,
+     "q": "The number of 3-digit even numbers that can be made using the digits 1, 2, 3, 4, 6, 7, if no digit is repeated, is ____.",
+     "a": "60"
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "q": "In how many ways can 4 girls and 2 boys be seated in a row so that the two boys are never next to each other?",
+     "a": "480",
+     "o": [
+      "480",
+      "240",
+      "288",
+      "720"
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "q": "All the distinct arrangements of the letters of the word AGAIN are written as in a dictionary. How many words come before the first word that starts with N?",
+     "a": "48",
+     "o": [
+      "48",
+      "72",
+      "36",
+      "24"
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "q": "Find the number of 4-digit numbers that can be formed using the digits 1, 2, 3, 4, 5 if no digit is repeated. How many of these are even?",
+     "a": "Number of 4-digit numbers = P(5, 4) = 5 x 4 x 3 x 2 = 120. For an even number the units place must be 2 or 4 (2 ways); the remaining three places can then be filled from the remaining 4 digits in 4 x 3 x 2 = 24 ways. Even numbers = 2 x 24 = 48.",
+     "s": [
+      [
+       "Total: P(5, 4) = 120",
+       1
+      ],
+      [
+       "Even: units place in 2 ways, then 4 x 3 x 2, giving 48",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hardest",
+     "t": "long_answer",
+     "m": 3,
+     "q": "In how many of the distinct permutations of the letters of the word MISSISSIPPI do the four Is not all come together?",
+     "a": "MISSISSIPPI has 11 letters: I 4 times, S 4 times, P 2 times, M once. Total distinct permutations = 11!/(4! x 4! x 2!) = 34650. With the four Is together, treat IIII as a single object: there are then 8 objects (IIII, M, S, S, S, S, P, P), which can be arranged in 8!/(4! x 2!) = 840 ways. Required number = 34650 - 840 = 33810.",
+     "s": [
+      [
+       "Total permutations: 11!/(4! x 4! x 2!) = 34650",
+       1
+      ],
+      [
+       "Permutations with the four Is together: 8!/(4! x 2!) = 840",
+       1
+      ],
+      [
+       "Subtracts to get 33810",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "assertion_reason",
+     "m": 1,
+     "q": "Assertion (A): The number of arrangements of the 8 letters of the word DAUGHTER in which all the vowels occur together is 6! x 3!. Reason (R): Treating the 3 vowels as a single object leaves 6 objects, which can be arranged in 6! ways, and for each of these the 3 vowels can be arranged among themselves in 3! ways.",
+     "a": "Both A and R are true, and R is the correct explanation of A",
+     "o": [
+      "Both A and R are true, and R is the correct explanation of A",
+      "Both A and R are true, but R is not the correct explanation of A",
+      "A is true, R is false",
+      "A is false, R is true"
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "multi_statement",
+     "m": 1,
+     "q": "Consider these statements. (I) The number of 3-digit numbers with no digit repeated that can be formed from the digits 0, 1, 2 is 6. (II) The number of arrangements of all the letters of the word TABLE that start with T is 24. Which is or are correct?",
+     "a": "Only II",
+     "o": [
+      "Only II",
+      "Only I",
+      "Both I and II",
+      "Neither I nor II"
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hardest",
+     "t": "long_answer",
+     "m": 3,
+     "q": "In how many ways can the letters of the word PERMUTATIONS be arranged if (i) the vowels are all together, (ii) there are always 4 letters between P and S?",
+     "a": "PERMUTATIONS has 12 letters; T appears twice and the rest are different. The vowels are E, U, A, I, O. (i) Treat the 5 vowels as one object; with the 7 consonants (P, R, M, T, T, N, S) there are 8 objects with T repeated, arranged in 8!/2! = 20160 ways, and the vowels can be arranged among themselves in 5! = 120 ways. Total = 20160 x 120 = 2419200. (ii) With exactly 4 letters between them, P and S occupy places (1, 6), (2, 7), ..., (7, 12): 7 pairs of places, and P and S can be interchanged, giving 7 x 2 = 14 ways. The remaining 10 letters (T twice) can be arranged in 10!/2! = 1814400 ways. Total = 14 x 1814400 = 25401600.",
+     "s": [
+      [
+       "(i) 8!/2! x 5! = 2419200",
+       1
+      ],
+      [
+       "(ii) Finds 7 x 2 = 14 ways of placing P and S with 4 letters between them",
+       1
+      ],
+      [
+       "(ii) Multiplies by 10!/2! = 1814400 to get 25401600",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Evaluate",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "q": "To count the arrangements of the letters of DAUGHTER in which the three vowels are not all together, Arun computes 8! - 6!. Evaluate his method and give the correct count.",
+     "a": "Arun's idea of subtracting is right, but the number he subtracts is wrong. When the vowels are tied together as one object there are 6 objects giving 6! arrangements, and the 3 vowels can also be arranged among themselves in 3! ways, so the 'together' count is 6! x 3! = 4320, not 6!. Correct answer = 8! - 6! x 3! = 40320 - 4320 = 36000.",
+     "s": [
+      [
+       "Identifies that the vowels-together count should be 6! x 3! = 4320, because the vowels can be arranged within the block",
+       1
+      ],
+      [
+       "Gives the correct count 40320 - 4320 = 36000",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Create",
+     "d": "Hardest",
+     "t": "long_answer",
+     "m": 3,
+     "q": "Using the word EQUATION, frame a question that needs a group of letters to be treated as a single object, and solve it completely, explaining each factor in your product.",
+     "a": "Sample: 'In how many arrangements of all the letters of EQUATION, each used once, do all the vowels occur together?' EQUATION has 8 different letters: 5 vowels (E, U, A, I, O) and 3 consonants (Q, T, N). Treat the 5 vowels as a single object; with the 3 consonants this makes 4 objects, which can be arranged in 4! = 24 ways. Inside the single object the 5 vowels can be arranged in 5! = 120 ways. By the multiplication principle the answer is 4! x 5! = 2880. (Another valid question: vowels together and consonants together, 2! x 5! x 3! = 1440.)",
+     "s": [
+      [
+       "Frames a clear question in which a named group of letters of EQUATION must stay together",
+       1
+      ],
+      [
+       "Treats the group as a single object and counts the arrangements of the resulting objects",
+       1
+      ],
+      [
+       "Multiplies by the arrangements within the group and reaches the correct total for the question framed (2880 for all vowels together)",
+       1
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "code": "C11M-6.6",
+   "name": "Combinations: C(n, r) and its properties",
+   "description": "A combination as a selection in which order is not important; the relation P(n, r) = C(n, r) x r!, the formula C(n, r) = n!/(r! x (n - r)!), and the properties C(n, 0) = C(n, n) = 1, C(n, r) = C(n, n - r), C(n, a) = C(n, b) implies a = b or n = a + b, and C(n, r) + C(n, r - 1) = C(n + 1, r).",
+   "idea": "Each selection of r objects can be arranged in r! orders, so there are r! times as many permutations as combinations.",
+   "rule": "P(n, r) = C(n, r) x r!, so C(n, r) = n!/(r! x (n - r)!) for 0 <= r <= n. C(n, 0) = C(n, n) = 1. C(n, n - r) = C(n, r): selecting r objects is the same as rejecting n - r. If C(n, a) = C(n, b) then a = b or n = a + b. C(n, r) + C(n, r - 1) = C(n + 1, r).",
+   "example": "C(4, 2) = 4!/(2! x 2!) = 6: AB, AC, AD, BC, BD, CD. If C(n, 9) = C(n, 8) then n = 17.",
+   "difficulty_base": "Hard",
+   "questions": [
+    {
+     "b": "Remember",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "In a combination of objects,",
+     "a": "the order of the objects is not important",
+     "o": [
+      "the order of the objects is not important",
+      "the order of the objects is important",
+      "every object must be used more than once",
+      "all the given objects must be taken"
+     ]
+    },
+    {
+     "b": "Remember",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "For 0 <= r <= n, the number of combinations of n different objects taken r at a time is C(n, r) =",
+     "a": "n!/(r! x (n - r)!)",
+     "o": [
+      "n!/(r! x (n - r)!)",
+      "n!/(n - r)!",
+      "n!/r!",
+      "n^r/r!"
+     ]
+    },
+    {
+     "b": "Remember",
+     "d": "Easy",
+     "t": "fill_blank",
+     "m": 1,
+     "q": "For any natural number n, the value of C(n, 0) is ____.",
+     "a": "1"
+    },
+    {
+     "b": "Remember",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "q": "Which of the following statements about C(n, r), the number of combinations of n different objects taken r at a time, is NOT true?",
+     "a": "C(n, r) = P(n, r) x r!",
+     "o": [
+      "C(n, r) = P(n, r) x r!",
+      "C(n, n - r) = C(n, r)",
+      "C(n, n) = 1",
+      "C(n, r) + C(n, r - 1) = C(n + 1, r)"
+     ],
+     "rev": true
+    },
+    {
+     "b": "Understand",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "For 0 < r <= n, the relation between the number of permutations and the number of combinations of n different things taken r at a time is",
+     "a": "P(n, r) = C(n, r) x r!",
+     "o": [
+      "P(n, r) = C(n, r) x r!",
+      "C(n, r) = P(n, r) x r!",
+      "P(n, r) = C(n, r) + r!",
+      "P(n, r) = C(n, r) x (n - r)!"
+     ]
+    },
+    {
+     "b": "Understand",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "The value of C(5, 3) is",
+     "a": "10",
+     "o": [
+      "10",
+      "60",
+      "20",
+      "15"
+     ]
+    },
+    {
+     "b": "Understand",
+     "d": "Easy",
+     "t": "short_answer",
+     "m": 2,
+     "q": "List all the combinations of the 4 different objects A, B, C, D taken 2 at a time, and explain why BA is not listed separately from AB.",
+     "a": "The combinations are AB, AC, AD, BC, BD, CD, so there are C(4, 2) = 6 of them. BA is not listed separately because in a combination the order is not important: AB and BA are the same selection of the two objects A and B.",
+     "s": [
+      [
+       "Lists the 6 combinations AB, AC, AD, BC, BD, CD",
+       1
+      ],
+      [
+       "Explains that order does not alter a combination, so AB and BA are the same",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Understand",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "q": "If C(n, 8) = C(n, 2), then n equals",
+     "a": "10",
+     "o": [
+      "10",
+      "6",
+      "16",
+      "4"
+     ]
+    },
+    {
+     "b": "Understand",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "q": "For 1 <= r <= n, the sum C(n, r) + C(n, r - 1) equals",
+     "a": "C(n + 1, r)",
+     "o": [
+      "C(n + 1, r)",
+      "C(n + 1, r + 1)",
+      "C(n, r + 1)",
+      "C(2n, 2r - 1)"
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "The value of C(10, 4) is",
+     "a": "210",
+     "o": [
+      "210",
+      "5040",
+      "151200",
+      "40"
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Easy",
+     "t": "fill_blank",
+     "m": 1,
+     "q": "If C(n, 9) = C(n, 8), then the value of C(n, 17) is ____.",
+     "a": "1"
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "q": "If C(n, 8) = C(n, 2), then the value of C(n, 2) is",
+     "a": "45",
+     "o": [
+      "45",
+      "90",
+      "28",
+      "10"
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "q": "The value of C(7, 3) + C(7, 2) is",
+     "a": "56",
+     "o": [
+      "56",
+      "70",
+      "28",
+      "35"
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "q": "Determine n if C(2n, 3) : C(n, 3) = 12 : 1.",
+     "a": "C(2n, 3) = 2n(2n - 1)(2n - 2)/6 and C(n, 3) = n(n - 1)(n - 2)/6. Their ratio is 2n(2n - 1) x 2(n - 1)/[n(n - 1)(n - 2)] = 4(2n - 1)/(n - 2). Setting this equal to 12: 4(2n - 1) = 12(n - 2), so 8n - 4 = 12n - 24 and n = 5. Check: C(10, 3) = 120 and C(5, 3) = 10.",
+     "s": [
+      [
+       "Simplifies the ratio to 4(2n - 1)/(n - 2)",
+       1
+      ],
+      [
+       "Solves 4(2n - 1) = 12(n - 2) to get n = 5",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hardest",
+     "t": "long_answer",
+     "m": 3,
+     "q": "Determine n if C(2n, 3) : C(n, 3) = 11 : 1.",
+     "a": "C(2n, 3) = 2n(2n - 1)(2n - 2)/6 and C(n, 3) = n(n - 1)(n - 2)/6. Dividing, the ratio is 2n(2n - 1) x 2(n - 1)/[n(n - 1)(n - 2)] = 4(2n - 1)/(n - 2). So 4(2n - 1) = 11(n - 2), i.e. 8n - 4 = 11n - 22, giving 3n = 18 and n = 6. Check: C(12, 3) = 220 and C(6, 3) = 20, and 220 : 20 = 11 : 1.",
+     "s": [
+      [
+       "Writes C(2n, 3) and C(n, 3) as products: 2n(2n - 1)(2n - 2)/6 and n(n - 1)(n - 2)/6",
+       1
+      ],
+      [
+       "Simplifies the ratio to 4(2n - 1)/(n - 2) and sets it equal to 11",
+       1
+      ],
+      [
+       "Solves to get n = 6",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "assertion_reason",
+     "m": 1,
+     "q": "Assertion (A): C(12, 5) = C(12, 7). Reason (R): C(n, 0) = 1 for every natural number n.",
+     "a": "Both A and R are true, but R is not the correct explanation of A",
+     "o": [
+      "Both A and R are true, but R is not the correct explanation of A",
+      "Both A and R are true, and R is the correct explanation of A",
+      "A is true, R is false",
+      "A is false, R is true"
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "multi_statement",
+     "m": 1,
+     "q": "Consider these statements. (I) C(6, 2) = C(6, 4). (II) P(6, 2) = 2 x C(6, 2). Which is or are correct?",
+     "a": "Both I and II",
+     "o": [
+      "Both I and II",
+      "Only I",
+      "Only II",
+      "Neither I nor II"
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hardest",
+     "t": "long_answer",
+     "m": 3,
+     "q": "Prove that C(n, r) + C(n, r - 1) = C(n + 1, r), and verify the result for n = 6, r = 3.",
+     "a": "C(n, r) + C(n, r - 1) = n!/(r! x (n - r)!) + n!/((r - 1)! x (n - r + 1)!). Taking out the common factor n!/((r - 1)! x (n - r)!), this equals n!/((r - 1)! x (n - r)!) x [1/r + 1/(n - r + 1)] = n!/((r - 1)! x (n - r)!) x (n - r + 1 + r)/(r(n - r + 1)) = (n + 1)!/(r! x (n + 1 - r)!) = C(n + 1, r). Verification: C(6, 3) + C(6, 2) = 20 + 15 = 35 = C(7, 3).",
+     "s": [
+      [
+       "Writes both terms in factorial form and takes out the common factor n!/((r - 1)! x (n - r)!)",
+       1
+      ],
+      [
+       "Adds 1/r + 1/(n - r + 1) = (n + 1)/(r(n - r + 1)) and obtains (n + 1)!/(r! x (n + 1 - r)!) = C(n + 1, r)",
+       1
+      ],
+      [
+       "Verifies 20 + 15 = 35 = C(7, 3)",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Evaluate",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "q": "A student says that C(10, 3) and C(10, 7) must be different numbers because 3 and 7 are different. Evaluate this statement.",
+     "a": "The statement is wrong. C(n, n - r) = C(n, r), because selecting r objects out of n is the same as rejecting the other n - r objects. So C(10, 7) = C(10, 3) = (10 x 9 x 8)/(3 x 2 x 1) = 120.",
+     "s": [
+      [
+       "States that C(n, n - r) = C(n, r), since selecting 3 out of 10 is the same as rejecting 7",
+       1
+      ],
+      [
+       "Shows that both values equal 120",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Create",
+     "d": "Hardest",
+     "t": "long_answer",
+     "m": 3,
+     "q": "Construct your own demonstration, using 5 named objects taken 2 at a time, that P(5, 2) = C(5, 2) x 2!. List the combinations, explain where the factor 2! comes from, and confirm the numbers.",
+     "a": "Take the objects A, B, C, D, E. The combinations taken 2 at a time are AB, AC, AD, AE, BC, BD, BE, CD, CE, DE, so C(5, 2) = 10. Each combination, such as AB, gives 2! = 2 permutations (AB and BA), because its 2 objects can be rearranged in 2! ways. So the number of permutations is 10 x 2 = 20, which agrees with P(5, 2) = 5 x 4 = 20.",
+     "s": [
+      [
+       "Lists the 10 combinations of 5 named objects taken 2 at a time",
+       1
+      ],
+      [
+       "Explains that each combination yields 2! permutations because its 2 objects can be rearranged in 2! ways",
+       1
+      ],
+      [
+       "Confirms 10 x 2 = 20 = P(5, 2)",
+       1
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "code": "C11M-6.7",
+   "name": "Counting selections with combinations",
+   "description": "Using C(n, r) to count handshakes, chords, committees, teams, card selections and course programmes, including selections drawn from several groups (multiply), 'at least' and 'at most' conditions (add cases), compulsory items, and selections that are then arranged.",
+   "idea": "When only who or what is chosen matters, count combinations; choices made from separate groups are multiplied, and alternative cases are added.",
+   "rule": "A selection of r from n distinct things can be made in C(n, r) ways. Choosing a from one group AND b from another gives C(n1, a) x C(n2, b). 'At least' or 'at most' conditions are split into exact cases whose counts are added. Compulsory items are set aside first. If the chosen objects must then be arranged, multiply by the factorial of the number chosen.",
+   "example": "A committee of 3 from 2 men and 3 women: C(5, 3) = 10 in all; with exactly 1 man and 2 women: C(2, 1) x C(3, 2) = 6.",
+   "difficulty_base": "Hard",
+   "questions": [
+    {
+     "b": "Remember",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "Twelve persons meet in a room and each shakes hands with all the others. The number of handshakes is equal to the number of",
+     "a": "combinations of 12 different things taken 2 at a time",
+     "o": [
+      "combinations of 12 different things taken 2 at a time",
+      "permutations of 12 different things taken 2 at a time",
+      "permutations of 12 different things taken all at a time",
+      "combinations of 12 different things taken 12 at a time"
+     ]
+    },
+    {
+     "b": "Remember",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "A pack of 52 playing cards has four suits: diamond, club, spade and heart. The number of cards in each suit is",
+     "a": "13",
+     "o": [
+      "13",
+      "12",
+      "26",
+      "4"
+     ]
+    },
+    {
+     "b": "Remember",
+     "d": "Easy",
+     "t": "fill_blank",
+     "m": 1,
+     "q": "Seven points lie on a circle. The number of chords that can be drawn by joining these points pairwise is ____.",
+     "a": "21"
+    },
+    {
+     "b": "Remember",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "q": "For which of the following counting tasks is C(n, r) NOT the right tool, because the order of the chosen persons or points matters?",
+     "a": "Choosing a chairman and a vice-chairman from 8 persons",
+     "o": [
+      "Choosing a chairman and a vice-chairman from 8 persons",
+      "Choosing a committee of 3 from 8 persons",
+      "Counting the handshakes when 8 persons each shake hands with all the others",
+      "Counting the chords joining 8 points on a circle pairwise"
+     ],
+     "rev": true
+    },
+    {
+     "b": "Understand",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "A committee of 3 persons is to be constituted from a group of 6 persons. In how many ways can this be done?",
+     "a": "20",
+     "o": [
+      "20",
+      "120",
+      "18",
+      "216"
+     ]
+    },
+    {
+     "b": "Understand",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "How many chords can be drawn through 21 points on a circle, each chord joining two of the points?",
+     "a": "210",
+     "o": [
+      "210",
+      "420",
+      "42",
+      "441"
+     ]
+    },
+    {
+     "b": "Understand",
+     "d": "Easy",
+     "t": "short_answer",
+     "m": 2,
+     "q": "A team of 2 players is to be formed from 3 lawn tennis players X, Y and Z. List the possible teams and explain why the count is C(3, 2) and not P(3, 2).",
+     "a": "The possible teams are XY, YZ and ZX, so there are 3 teams. The team of X and Y is the same as the team of Y and X, so the order is not important and we count combinations: C(3, 2) = 3. P(3, 2) = 6 would count each team twice.",
+     "s": [
+      [
+       "Lists the 3 teams XY, YZ, ZX",
+       1
+      ],
+      [
+       "Explains that order is not important in a team, so the count is C(3, 2) = 3 and not P(3, 2) = 6",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Understand",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "q": "A committee of 3 persons is to be constituted from a group of 2 men and 3 women. How many of the possible committees consist of exactly 1 man and 2 women?",
+     "a": "6",
+     "o": [
+      "6",
+      "5",
+      "10",
+      "12"
+     ]
+    },
+    {
+     "b": "Understand",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "q": "In how many ways can a team of 3 boys and 3 girls be selected from 5 boys and 4 girls?",
+     "a": "40",
+     "o": [
+      "40",
+      "14",
+      "84",
+      "1440"
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "A bag contains 5 black and 6 red balls, all distinguishable from one another. In how many ways can 2 black and 3 red balls be selected?",
+     "a": "200",
+     "o": [
+      "200",
+      "30",
+      "462",
+      "2400"
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Easy",
+     "t": "fill_blank",
+     "m": 1,
+     "q": "A student must choose a programme of 5 courses from 9 available courses, and 2 specific courses are compulsory for every student. The number of possible programmes is ____.",
+     "a": "35"
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "q": "The number of 5-card combinations out of a deck of 52 cards in which there is exactly one ace is",
+     "a": "778320",
+     "o": [
+      "778320",
+      "194580",
+      "999600",
+      "2598960"
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "q": "In how many ways can 9 balls be selected from 6 red balls, 5 white balls and 5 blue balls (all distinguishable) if each selection consists of 3 balls of each colour?",
+     "a": "2000",
+     "o": [
+      "2000",
+      "40",
+      "11440",
+      "432000"
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "q": "In how many ways can a cricket team of eleven be selected from 17 players, of whom only 5 can bowl, if each team of 11 must include exactly 4 bowlers?",
+     "a": "The 4 bowlers are chosen from the 5 bowlers in C(5, 4) = 5 ways. The other 7 players are chosen from the 12 non-bowlers in C(12, 7) = 792 ways. By the multiplication principle the number of teams is 5 x 792 = 3960.",
+     "s": [
+      [
+       "Chooses 4 of the 5 bowlers in C(5, 4) = 5 ways and 7 of the 12 non-bowlers in C(12, 7) = 792 ways",
+       1
+      ],
+      [
+       "Multiplies to get 3960",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hardest",
+     "t": "long_answer",
+     "m": 3,
+     "q": "A committee of 7 has to be formed from 9 boys and 4 girls. In how many ways can this be done when the committee consists of (i) exactly 3 girls, (ii) at least 3 girls, (iii) at most 3 girls?",
+     "a": "(i) Exactly 3 girls and 4 boys: C(4, 3) x C(9, 4) = 4 x 126 = 504. (ii) At least 3 girls means 3 girls or 4 girls: 504 + C(4, 4) x C(9, 3) = 504 + 84 = 588. (iii) At most 3 girls means every committee except those with 4 girls: C(13, 7) - 84 = 1716 - 84 = 1632 (equivalently 36 + 336 + 756 + 504 for 0, 1, 2, 3 girls).",
+     "s": [
+      [
+       "(i) C(4, 3) x C(9, 4) = 504",
+       1
+      ],
+      [
+       "(ii) 504 + C(4, 4) x C(9, 3) = 588",
+       1
+      ],
+      [
+       "(iii) 1716 - 84 = 1632, or the sum of the cases with 0, 1, 2 and 3 girls",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "assertion_reason",
+     "m": 1,
+     "q": "Assertion (A): The number of ways of choosing 4 cards from a pack of 52 playing cards so that all four are of the same suit is 4 x C(13, 4). Reason (R): The number of ways of choosing 4 cards from the 13 cards of one suit is P(13, 4).",
+     "a": "A is true, R is false",
+     "o": [
+      "A is true, R is false",
+      "Both A and R are true, and R is the correct explanation of A",
+      "Both A and R are true, but R is not the correct explanation of A",
+      "A is false, R is true"
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "multi_statement",
+     "m": 1,
+     "q": "Consider these statements about choosing 4 cards from a pack of 52 playing cards (26 red and 26 black; 13 in each of four suits). (I) The number of ways in which the four cards belong to four different suits is 13^4. (II) The number of ways in which two are red and two are black is C(26, 2) + C(26, 2). Which is or are correct?",
+     "a": "Only I",
+     "o": [
+      "Only I",
+      "Only II",
+      "Both I and II",
+      "Neither I nor II"
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hardest",
+     "t": "long_answer",
+     "m": 3,
+     "q": "How many words, with or without meaning, each consisting of 2 vowels and 3 consonants and with no letter repeated, can be formed from the letters of the word DAUGHTER?",
+     "a": "DAUGHTER has 3 vowels (A, U, E) and 5 consonants (D, G, H, T, R). The 2 vowels can be selected in C(3, 2) = 3 ways and the 3 consonants in C(5, 3) = 10 ways, so there are 3 x 10 = 30 selections of 5 letters. Each selection of 5 different letters can be arranged in 5! = 120 ways. Number of words = 30 x 120 = 3600.",
+     "s": [
+      [
+       "Selects the letters in C(3, 2) x C(5, 3) = 30 ways",
+       1
+      ],
+      [
+       "Recognises that each selection of 5 letters can be arranged in 5! = 120 ways",
+       1
+      ],
+      [
+       "Multiplies to get 3600",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Evaluate",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "q": "From a class of 25 students, 10 are to be chosen for an excursion party. There are 3 students who decide that either all three will join or none of them will. Riya says the party can be chosen in C(22, 7) ways. Evaluate her answer.",
+     "a": "Riya has counted only the case in which the 3 students all join: then 7 more are chosen from the other 22 in C(22, 7) = 170544 ways. She has left out the case in which none of the 3 joins: then all 10 are chosen from the other 22 in C(22, 10) = 646646 ways. The correct count is C(22, 7) + C(22, 10) = 817190.",
+     "s": [
+      [
+       "Identifies that the case in which none of the three joins, C(22, 10), has been left out",
+       1
+      ],
+      [
+       "Gives the correct total C(22, 7) + C(22, 10) = 170544 + 646646 = 817190",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Create",
+     "d": "Hardest",
+     "t": "long_answer",
+     "m": 3,
+     "q": "Frame a selection problem about choosing a team of 4 from 5 boys and 4 girls in which an 'at least' condition forces two separate cases to be added. List the cases and find the answer.",
+     "a": "Sample: 'A team of 4 is to be chosen from 5 boys and 4 girls. In how many ways can this be done if the team has at least 3 girls?' The cases are (a) 3 girls and 1 boy: C(4, 3) x C(5, 1) = 4 x 5 = 20; (b) 4 girls and no boy: C(4, 4) = 1. Since exactly one of the cases happens, the counts are added: 20 + 1 = 21.",
+     "s": [
+      [
+       "Frames a valid 'at least' condition on a team of 4 from 5 boys and 4 girls that leads to two cases",
+       1
+      ],
+      [
+       "Lists the two cases and counts each with a product of combinations",
+       1
+      ],
+      [
+       "Adds the cases to reach the correct total for the problem framed (21 for at least 3 girls)",
+       1
+      ]
+     ]
+    }
+   ]
+  }
+ ]
+}

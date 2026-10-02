@@ -1,0 +1,84 @@
+424 MATHEMATICS
+Fig 13.4
+(b) E1 ∪ Ε2
+ ∪ ... ∪ En
+= S and
+(c) P(Ei
+)> 0 for all i = 1, 2, ..., n.
+In other words, the events E1
+, E2
+, ..., En
+ represent a partition of the sample space
+S if they are pairwise disjoint, exhaustive and have nonzero probabilities.
+As an example, we see that any nonempty event E and its complement E′ form a
+partition of the sample space S since they satisfy E ∩ E′ = φ and E ∪ E′ = S.
+From the Venn diagram in Fig 13.3, one can easily observe that if E and F are any
+two events associated with a sample space S, then the set {E ∩ F′, E ∩ F, E′ ∩ F, E′ ∩ F′}
+is a partition of the sample space S. It may be mentioned that the partition of a sample
+space is not unique. There can be several partitions of the same sample space.
+We shall now prove a theorem known as Theorem of total probability.
+13.5.2 Theorem of total probability
+Let {E1
+, E2
+,...,En
+} be a partition of the sample space S, and suppose that each of the
+events E1
+, E2
+,..., En
+ has nonzero probability of occurrence. Let A be any event associated
+with S, then
+P(A) = P(E1
+) P(A|E1
+) + P(E2
+) P(A|E2
+) + ... + P(En
+) P(A|En
+)
+=
+1
+P(E ) P(A|E )
+n
+j j
+j=
+∑
+Proof Given that E1
+, E2
+,..., En
+ is a partition of the sample space S (Fig 13.4). Therefore,
+S = E1 ∪ E2 ∪ ... ∪ En
+ ... (1)
+and Ei ∩ Ej
+ = φ, i ≠ j, i, j = 1, 2, ..., n
+Now, we know that for any event A,
+A = A ∩ S
+= A ∩ (E1 ∪ E2 ∪ ... ∪ En
+)
+= (A ∩ E1
+) ∪ (A ∩ E2
+) ∪ ...∪ (A ∩ En
+)
+Also A ∩ Ei
+ and A ∩ Ej
+ are respectively the subsets of Ei
+ and Ej
+. We know that
+Ei and Ej
+ are disjoint, for i ≠ j, therefore, A ∩ Ei
+ and A ∩ Ej
+ are also disjoint for all
+i ≠ j, i, j = 1, 2, ..., n.
+Thus, P(A) = P [(A ∩ E1
+) ∪ (A ∩ E2
+)∪ .....∪ (A ∩ En
+)]
+= P (A ∩ E1
+) + P (A ∩ E2
+) + ... + P (A ∩ En
+)
+Now, by multiplication rule of probability, we have
+P(A ∩ Ei
+) = P(Ei
+) P(A|Ei
+) as P (Ei
+) ≠ 0∀i = 1,2,..., n
+Reprint 2026-27

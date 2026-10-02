@@ -1,0 +1,2312 @@
+{
+  "subject": {
+    "code": "MATH12",
+    "name": "Mathematics",
+    "board": "CBSE",
+    "class": 12
+  },
+  "source": {
+    "publisher": "NCERT",
+    "title": "Mathematics Part II",
+    "edition": "Textbook for Class XII Part II, Reprint 2026-27",
+    "year": 2026
+  },
+  "chapter": {
+    "part": "II",
+    "chapter_no": 9,
+    "name": "Differential Equations",
+    "blurb": "An equation involving derivatives of the dependent variable with respect to an independent variable is called a differential equation. The chapter studies the order and degree of a differential equation, its general and particular solutions, and three methods of solving first order, first degree differential equations: variables separable, homogeneous equations and linear equations, with applications to curves, compound interest and growth.",
+    "source_code": "lemh203",
+    "order_index": 9
+  },
+  "scope_in": [
+    {
+      "item": "Recognise a differential equation as an equation involving derivatives of the dependent variable, and an ordinary differential equation as one with derivatives with respect to a single independent variable; use the notations y', y'', y''' and dy/dx, d^2y/dx^2",
+      "pages": "300-301"
+    },
+    {
+      "item": "Find the order of a differential equation as the order of its highest order derivative",
+      "pages": "301-304"
+    },
+    {
+      "item": "Decide whether the degree is defined (polynomial equation in the derivatives) and, if so, find it as the highest power of the highest order derivative; know order and degree are positive integers",
+      "pages": "302-304, 333-334"
+    },
+    {
+      "item": "Verify that a given explicit or implicit function is a solution of a differential equation by substituting it and its derivatives",
+      "pages": "304-306, 329-330, 334"
+    },
+    {
+      "item": "Distinguish the general solution (as many arbitrary constants as the order) from a particular solution (free from arbitrary constants); count arbitrary constants",
+      "pages": "305-306, 336"
+    },
+    {
+      "item": "Solve first order, first degree equations dy/dx = g(x) h(y) by separating the variables, find particular solutions and curves through a given point",
+      "pages": "306-312, 330-331"
+    },
+    {
+      "item": "Apply the variable separable method to slope-of-tangent curve problems, continuous compound interest, bacterial growth proportional to the number present and a balloon inflating at a constant volume rate",
+      "pages": "309-313"
+    },
+    {
+      "item": "Test whether F(x, y) is a homogeneous function of degree n using F(lambda x, lambda y) = lambda^n F(x, y), and whether dy/dx = F(x, y) or dx/dy = G(x, y) is a homogeneous differential equation",
+      "pages": "312-315, 321-322"
+    },
+    {
+      "item": "Solve homogeneous differential equations by y = vx (or x = vy for dx/dy = h(x/y)), including particular solutions and families of curves defined by a slope",
+      "pages": "313-322, 331-332"
+    },
+    {
+      "item": "Recognise first order linear equations dy/dx + Py = Q and dx/dy + P1 x = Q1, find the integrating factor e^(integral of P dx) or e^(integral of P1 dy), and write general and particular solutions, including curves from a slope condition",
+      "pages": "322-329, 333-334"
+    }
+  ],
+  "scope_out": [
+    {
+      "item": "Formation of a differential equation whose general solution is given (eliminating arbitrary constants from a family of curves)",
+      "reason": "Not present in this rationalised Reprint 2026-27 edition: section 9.3 (General and Particular Solutions, pp. 304-306) is followed directly by 9.4 Methods of Solving (p. 306). The introduction on p. 300 still mentions 'formation of differential equations', but no section, example or exercise teaches it"
+    },
+    {
+      "item": "Partial differential equations",
+      "reason": "Named on p. 301 only to say 'at this stage we shall confine ourselves to the study of ordinary differential equations only'"
+    },
+    {
+      "item": "Methods of solving second or higher order differential equations",
+      "reason": "Second order equations appear only for order/degree and for verifying a given solution (pp. 302-306, 329-330, 334); every solving method in 9.4 is for first order, first degree equations (p. 306)"
+    },
+    {
+      "item": "Degree of an equation containing radicals of derivatives (clearing fractional powers before reading the degree)",
+      "reason": "The book defines degree only for equations that are already polynomial in the derivatives (p. 302) and never discusses rationalising; questions avoid such equations"
+    },
+    {
+      "item": "Equations reducible to homogeneous form by shifting the origin, e.g. (4x + 6y + 5) dy = (3y + 2x + 4) dx",
+      "reason": "Appears only as a non-homogeneous option in Exercise 9.4 Q17 (p. 322); the book never solves such equations"
+    },
+    {
+      "item": "Exact equations, Bernoulli equations, Clairaut's equation and integrating factors other than e^(integral of P dx)",
+      "reason": "The only methods in 9.4 are variables separable, homogeneous and linear (p. 306); the substitution x - y = t appears once as a hint in Miscellaneous Exercise Q9 (p. 335) and is not developed as a method"
+    },
+    {
+      "item": "Newton's law of cooling, radioactive decay half-life, orthogonal trajectories and mixing problems",
+      "reason": "The applications in this edition are limited to slope-of-tangent curves, continuous compound interest, bacterial growth and an inflating balloon (pp. 309-313, 327-329)"
+    },
+    {
+      "item": "Existence and uniqueness of solutions, singular solutions and qualitative analysis",
+      "reason": "Mentioned only in the Historical Note (pp. 336-337) as later developments; not taught"
+    }
+  ],
+  "concepts": [
+    {
+      "code": "C12M-9.1",
+      "name": "Differential equations and their order",
+      "description": "Recognising a differential equation as an equation involving derivatives of the dependent variable, ordinary differential equations, and finding the order as the order of the highest order derivative present.",
+      "idea": "A differential equation links an unknown function with its derivatives; its order says how many times, at most, the dependent variable has been differentiated in it.",
+      "rule": "Order = order of the highest order derivative of the dependent variable present in the equation. It is always a positive integer and does not depend on the powers to which the derivatives are raised.",
+      "example": "d^3y/dx^3 + x^2 (d^2y/dx^2)^3 = 0 has order 3, because d^3y/dx^3 is the highest order derivative present.",
+      "difficulty_base": "Easy",
+      "questions": [
+        {
+          "b": "Remember",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "The order of the differential equation d^2y/dx^2 + y = 0 is",
+          "a": "2",
+          "o": [
+            "2",
+            "1",
+            "0",
+            "not defined"
+          ]
+        },
+        {
+          "b": "Remember",
+          "d": "Easy",
+          "t": "fill_blank",
+          "m": 1,
+          "q": "An equation involving derivatives of the dependent variable with respect to only one independent variable is called an ____ differential equation.",
+          "a": "ordinary"
+        },
+        {
+          "b": "Remember",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "The order of a differential equation is the order of",
+          "a": "the highest order derivative of the dependent variable present in it",
+          "o": [
+            "the highest order derivative of the dependent variable present in it",
+            "the lowest order derivative of the dependent variable present in it",
+            "the highest power of the highest order derivative present in it",
+            "the number of terms that contain a derivative"
+          ]
+        },
+        {
+          "b": "Remember",
+          "d": "Hard",
+          "t": "mcq",
+          "m": 1,
+          "q": "Which of the following equations is NOT a differential equation?",
+          "a": "x + y = 7",
+          "o": [
+            "x + y = 7",
+            "dy/dx = 0",
+            "dy/dx = e^x",
+            "d^2y/dx^2 + y = 0"
+          ],
+          "rev": true
+        },
+        {
+          "b": "Understand",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "The order of the differential equation y''' + 2y'' + y' = 0 is",
+          "a": "3",
+          "o": [
+            "3",
+            "2",
+            "1",
+            "6"
+          ]
+        },
+        {
+          "b": "Understand",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "The order of the differential equation (d^2y/dx^2)^3 + (dy/dx)^4 + y = 0 is",
+          "a": "2",
+          "o": [
+            "2",
+            "3",
+            "4",
+            "5"
+          ]
+        },
+        {
+          "b": "Understand",
+          "d": "Easy",
+          "t": "short_answer",
+          "m": 2,
+          "q": "Find the order of the differential equation y'' + 2y' + sin y = 0 and say why it is an ordinary differential equation.",
+          "a": "The highest order derivative present is y'', so the order is 2. It involves derivatives of y with respect to the single independent variable x only, so it is an ordinary differential equation.",
+          "s": [
+            [
+              "Identifies y'' as the highest order derivative and states order 2",
+              1
+            ],
+            [
+              "Explains it is ordinary because the derivatives are with respect to only one independent variable x",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Understand",
+          "d": "Hard",
+          "t": "mcq",
+          "m": 1,
+          "q": "The order of the differential equation 2x^2 (d^2y/dx^2) - 3(dy/dx) + y = 0 is",
+          "a": "2",
+          "o": [
+            "2",
+            "1",
+            "0",
+            "not defined"
+          ]
+        },
+        {
+          "b": "Understand",
+          "d": "Hard",
+          "t": "mcq",
+          "m": 1,
+          "q": "The order of the differential equation d^4y/dx^4 + sin(y''') = 0 is",
+          "a": "4",
+          "o": [
+            "4",
+            "3",
+            "not defined",
+            "1"
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Easy",
+          "t": "fill_blank",
+          "m": 1,
+          "q": "The order of the differential equation (ds/dt)^4 + 3s (d^2s/dt^2) = 0 is ____.",
+          "a": "2"
+        },
+        {
+          "b": "Apply",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "The order of the differential equation y' + 5y = 0 is",
+          "a": "1",
+          "o": [
+            "1",
+            "5",
+            "0",
+            "2"
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Hard",
+          "t": "mcq",
+          "m": 1,
+          "q": "Which of the following differential equations has order 3?",
+          "a": "y''' + x^2 (y'')^3 = 0",
+          "o": [
+            "y''' + x^2 (y'')^3 = 0",
+            "(y'')^3 + y = 0",
+            "(y')^3 + x = 0",
+            "y'' + 3y' + 3y = 0"
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Hard",
+          "t": "mcq",
+          "m": 1,
+          "q": "The order of the differential equation (d^2y/dx^2)^2 + cos(dy/dx) = 0 is",
+          "a": "2",
+          "o": [
+            "2",
+            "not defined",
+            "1",
+            "4"
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Hard",
+          "t": "short_answer",
+          "m": 2,
+          "q": "Find the order of each differential equation: (i) d^2y/dx^2 = cos 3x + sin 3x (ii) (y''')^2 + (y'')^3 + (y')^4 + y^5 = 0.",
+          "a": "(i) The highest order derivative is d^2y/dx^2, so the order is 2. (ii) The highest order derivative is y''', so the order is 3 (the powers 2, 3, 4, 5 do not affect the order).",
+          "s": [
+            [
+              "Order of (i) is 2",
+              1
+            ],
+            [
+              "Order of (ii) is 3, ignoring the powers",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Hardest",
+          "t": "long_answer",
+          "m": 3,
+          "q": "Find the order of each differential equation, naming the highest order derivative in each: (i) dy/dx - cos x = 0 (ii) xy (d^2y/dx^2) + x (dy/dx)^2 - y (dy/dx) = 0 (iii) y''' + y^2 + e^(y') = 0.",
+          "a": "(i) Highest order derivative dy/dx, order 1. (ii) Highest order derivative d^2y/dx^2, order 2. (iii) Highest order derivative y''', order 3.",
+          "s": [
+            [
+              "(i) dy/dx, order 1",
+              1
+            ],
+            [
+              "(ii) d^2y/dx^2, order 2",
+              1
+            ],
+            [
+              "(iii) y''', order 3",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Analyse",
+          "d": "Hard",
+          "t": "assertion_reason",
+          "m": 1,
+          "q": "Assertion (A): The order of the differential equation y'' + (y')^5 = 0 is 2. Reason (R): The order of a differential equation is the order of the highest order derivative present in it, not the highest power of any derivative.",
+          "a": "Both A and R are true, and R is the correct explanation of A",
+          "o": [
+            "Both A and R are true, and R is the correct explanation of A",
+            "Both A and R are true, but R is not the correct explanation of A",
+            "A is true, R is false",
+            "A is false, R is true"
+          ]
+        },
+        {
+          "b": "Analyse",
+          "d": "Hard",
+          "t": "multi_statement",
+          "m": 1,
+          "q": "Consider these statements. (I) The equation dy/dx = g(x) is a differential equation of order 1. (II) An equation involving derivatives of the dependent variable with respect to two independent variables is an ordinary differential equation. Which is or are correct?",
+          "a": "Only I",
+          "o": [
+            "Only I",
+            "Only II",
+            "Both I and II",
+            "Neither I nor II"
+          ]
+        },
+        {
+          "b": "Analyse",
+          "d": "Hardest",
+          "t": "long_answer",
+          "m": 3,
+          "q": "Decide which of the following are differential equations and give the order of each one that is: (i) x^2 - 3x + 3 = 0 (ii) dy/dx + y = sin x (iii) d^2y/dx^2 - (dy/dx)^3 = 0.",
+          "a": "(i) It contains no derivative of a dependent variable, so it is not a differential equation. (ii) It contains dy/dx, so it is a differential equation; order 1. (iii) It contains d^2y/dx^2 and dy/dx, so it is a differential equation; the highest order derivative is d^2y/dx^2, so order 2.",
+          "s": [
+            [
+              "States (i) is not a differential equation because it has no derivative",
+              1
+            ],
+            [
+              "(ii) is a differential equation of order 1",
+              1
+            ],
+            [
+              "(iii) is a differential equation of order 2, not 3",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Evaluate",
+          "d": "Hard",
+          "t": "short_answer",
+          "m": 2,
+          "q": "A student says the order of (dy/dx)^3 + d^2y/dx^2 = 0 is 3 because 3 is the largest index in the equation. Is the student right? Justify.",
+          "a": "No. Order is the order of the highest order derivative present, which is d^2y/dx^2, so the order is 2. The index 3 is a power of dy/dx and does not affect the order.",
+          "s": [
+            [
+              "States the student is wrong and the order is 2",
+              1
+            ],
+            [
+              "Explains that order depends on the highest order derivative, not on powers",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Create",
+          "d": "Hardest",
+          "t": "long_answer",
+          "m": 3,
+          "q": "Construct a differential equation of order 2 in which dy/dx appears raised to the power 3, and explain why its order is 2 and not 3.",
+          "a": "For example d^2y/dx^2 + (dy/dx)^3 + y = 0. The highest order derivative present is d^2y/dx^2, which is a second order derivative, so the order is 2. The power 3 on dy/dx is not an order of differentiation, so it does not make the order 3.",
+          "s": [
+            [
+              "Gives a valid equation whose highest order derivative is d^2y/dx^2",
+              1
+            ],
+            [
+              "Includes (dy/dx)^3 in it",
+              1
+            ],
+            [
+              "Explains the order is 2 because order depends on the highest order derivative, not on powers",
+              1
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "code": "C12M-9.2",
+      "name": "Degree of a differential equation",
+      "description": "Deciding whether the degree of a differential equation is defined (the equation must be a polynomial equation in its derivatives) and, when it is, finding it as the highest power of the highest order derivative.",
+      "idea": "Degree only makes sense when the derivatives appear as in a polynomial; then it records the power of the highest order derivative.",
+      "rule": "If the equation is a polynomial equation in y', y'', y''', ..., its degree is the highest positive integral power of the highest order derivative. If a derivative sits inside sin, cos, e^( ) and the like, the degree is not defined. Order and degree (if defined) are always positive integers.",
+      "example": "(dy/dx)^2 + dy/dx - sin^2 y = 0 has degree 2 (it is a polynomial in y', though not in y), while dy/dx + sin(dy/dx) = 0 has no degree.",
+      "difficulty_base": "Easy",
+      "questions": [
+        {
+          "b": "Remember",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "The degree of a differential equation is defined only when the equation is",
+          "a": "a polynomial equation in its derivatives",
+          "o": [
+            "a polynomial equation in its derivatives",
+            "a polynomial equation in y",
+            "of order one",
+            "free of the independent variable x"
+          ]
+        },
+        {
+          "b": "Remember",
+          "d": "Easy",
+          "t": "fill_blank",
+          "m": 1,
+          "q": "The degree of a differential equation, when defined, is the highest power of the ____ order derivative in it.",
+          "a": "highest"
+        },
+        {
+          "b": "Remember",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "The degree of the differential equation y''' + 2y'' + y' = 0 is",
+          "a": "1",
+          "o": [
+            "1",
+            "3",
+            "2",
+            "0"
+          ]
+        },
+        {
+          "b": "Remember",
+          "d": "Hard",
+          "t": "mcq",
+          "m": 1,
+          "q": "Which of the following can NOT be the degree of a differential equation?",
+          "a": "1/2",
+          "o": [
+            "1/2",
+            "1",
+            "2",
+            "3"
+          ],
+          "rev": true
+        },
+        {
+          "b": "Understand",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "The degree of the differential equation (dy/dx)^2 + dy/dx - sin^2 y = 0 is",
+          "a": "2",
+          "o": [
+            "2",
+            "1",
+            "not defined",
+            "3"
+          ]
+        },
+        {
+          "b": "Understand",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "The degree of the differential equation dy/dx + sin(dy/dx) = 0 is",
+          "a": "not defined",
+          "o": [
+            "not defined",
+            "1",
+            "2",
+            "0"
+          ]
+        },
+        {
+          "b": "Understand",
+          "d": "Easy",
+          "t": "short_answer",
+          "m": 2,
+          "q": "Find the order and degree of the differential equation y' + 5y = 0.",
+          "a": "The highest order derivative is y', so the order is 1. The equation is a polynomial in y' and y' appears to the power 1, so the degree is 1.",
+          "s": [
+            [
+              "Order 1",
+              1
+            ],
+            [
+              "Degree 1, as a polynomial in y' with highest power 1",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Understand",
+          "d": "Hard",
+          "t": "mcq",
+          "m": 1,
+          "q": "The degree of the differential equation (d^2y/dx^2)^3 + (dy/dx)^2 + sin(dy/dx) + 1 = 0 is",
+          "a": "not defined",
+          "o": [
+            "not defined",
+            "3",
+            "2",
+            "1"
+          ]
+        },
+        {
+          "b": "Understand",
+          "d": "Hard",
+          "t": "mcq",
+          "m": 1,
+          "q": "The degree of the differential equation (y''')^2 + (y'')^3 + (y')^4 + y^5 = 0 is",
+          "a": "2",
+          "o": [
+            "2",
+            "4",
+            "5",
+            "3"
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Easy",
+          "t": "fill_blank",
+          "m": 1,
+          "q": "The degree of the differential equation d^4y/dx^4 + sin(y''') = 0 is ____.",
+          "a": "not defined"
+        },
+        {
+          "b": "Apply",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "The order and degree of the differential equation (ds/dt)^4 + 3s (d^2s/dt^2) = 0 are respectively",
+          "a": "2 and 1",
+          "o": [
+            "2 and 1",
+            "1 and 4",
+            "2 and 4",
+            "4 and 2"
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Hard",
+          "t": "mcq",
+          "m": 1,
+          "q": "The degree of the differential equation y'' + 2y' + sin y = 0 is",
+          "a": "1",
+          "o": [
+            "1",
+            "not defined",
+            "2",
+            "0"
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Hard",
+          "t": "mcq",
+          "m": 1,
+          "q": "The order and degree of the differential equation xy (d^2y/dx^2) + x (dy/dx)^2 - y (dy/dx) = 0 are respectively",
+          "a": "2 and 1",
+          "o": [
+            "2 and 1",
+            "2 and 2",
+            "1 and 2",
+            "1 and 1"
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Hard",
+          "t": "short_answer",
+          "m": 2,
+          "q": "Find the order and degree (if defined) of (d^2y/dx^2)^2 + cos(dy/dx) = 0.",
+          "a": "The highest order derivative is d^2y/dx^2, so the order is 2. The term cos(dy/dx) means the equation is not a polynomial equation in its derivatives, so its degree is not defined.",
+          "s": [
+            [
+              "Order 2",
+              1
+            ],
+            [
+              "Degree not defined because cos(dy/dx) is not polynomial in dy/dx",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Hardest",
+          "t": "long_answer",
+          "m": 3,
+          "q": "Indicate the order and degree (if defined) of each: (i) d^2y/dx^2 + 5x (dy/dx)^2 - 6y = log x (ii) (dy/dx)^3 - 4(dy/dx)^2 + 7y = sin x (iii) d^4y/dx^4 - sin(d^3y/dx^3) = 0.",
+          "a": "(i) Order 2; it is a polynomial in the derivatives and d^2y/dx^2 has power 1, so degree 1. (ii) Order 1; the highest power of dy/dx is 3, so degree 3. (iii) Order 4; sin(d^3y/dx^3) is not polynomial in a derivative, so degree not defined.",
+          "s": [
+            [
+              "(i) order 2, degree 1",
+              1
+            ],
+            [
+              "(ii) order 1, degree 3",
+              1
+            ],
+            [
+              "(iii) order 4, degree not defined",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Analyse",
+          "d": "Hard",
+          "t": "assertion_reason",
+          "m": 1,
+          "q": "Assertion (A): The degree of the differential equation (dy/dx)^2 + dy/dx - sin^2 y = 0 is 2. Reason (R): A differential equation containing a term such as sin^2 y cannot have a degree.",
+          "a": "A is true, R is false",
+          "o": [
+            "A is true, R is false",
+            "Both A and R are true, and R is the correct explanation of A",
+            "Both A and R are true, but R is not the correct explanation of A",
+            "A is false, R is true"
+          ]
+        },
+        {
+          "b": "Analyse",
+          "d": "Hard",
+          "t": "multi_statement",
+          "m": 1,
+          "q": "Consider these statements. (I) The differential equation dy/dx + sin(dy/dx) = 0 has order 1, but its degree is not defined. (II) If the degree of a differential equation is defined, it is always a positive integer. Which is or are correct?",
+          "a": "Both I and II",
+          "o": [
+            "Both I and II",
+            "Only I",
+            "Only II",
+            "Neither I nor II"
+          ]
+        },
+        {
+          "b": "Analyse",
+          "d": "Hardest",
+          "t": "long_answer",
+          "m": 3,
+          "q": "Consider (a) (d^3y/dx^3)^2 + y = 0, (b) d^2y/dx^2 + (dy/dx)^3 = 0 and (c) dy/dx + e^(dy/dx) = 0. Find the order and degree (if defined) of each, and say which has the largest degree.",
+          "a": "(a) Order 3; polynomial in d^3y/dx^3 with power 2, so degree 2. (b) Order 2; the highest order derivative d^2y/dx^2 has power 1, so degree 1 (the power 3 is on dy/dx, a lower order derivative). (c) Order 1; e^(dy/dx) is not polynomial in dy/dx, so the degree is not defined. Equation (a) has the largest degree.",
+          "s": [
+            [
+              "(a) order 3, degree 2",
+              1
+            ],
+            [
+              "(b) order 2, degree 1",
+              1
+            ],
+            [
+              "(c) order 1, degree not defined; (a) has the largest degree",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Evaluate",
+          "d": "Hard",
+          "t": "short_answer",
+          "m": 2,
+          "q": "A student says the degree of d^2y/dx^2 + (dy/dx)^3 = 0 is 3 because 3 is the highest power appearing. Evaluate the claim.",
+          "a": "The claim is wrong. Degree is the power of the highest order derivative, which is d^2y/dx^2, and it appears to the power 1. So the degree is 1. The power 3 belongs to dy/dx, a lower order derivative.",
+          "s": [
+            [
+              "States the degree is 1, not 3",
+              1
+            ],
+            [
+              "Explains degree uses the power of the highest order derivative only",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Create",
+          "d": "Hardest",
+          "t": "long_answer",
+          "m": 3,
+          "q": "Write one differential equation of order 2 and degree 3, and one of order 2 whose degree is not defined. Justify both.",
+          "a": "For example (d^2y/dx^2)^3 + dy/dx + y = 0: the highest order derivative is d^2y/dx^2 (order 2), it is polynomial in the derivatives and d^2y/dx^2 has power 3 (degree 3). And d^2y/dx^2 + e^(dy/dx) = 0: order 2, but e^(dy/dx) is not polynomial in dy/dx, so the degree is not defined.",
+          "s": [
+            [
+              "Gives a valid equation of order 2 and degree 3",
+              1
+            ],
+            [
+              "Gives a valid equation of order 2 that is not polynomial in its derivatives",
+              1
+            ],
+            [
+              "Justifies the order and degree claims for both",
+              1
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "code": "C12M-9.3",
+      "name": "General and particular solutions",
+      "description": "Verifying that a given function (explicit or implicit) is a solution of a differential equation by substitution, and telling a general solution (with arbitrary constants) from a particular solution (constants given values).",
+      "idea": "A solution of a differential equation is a function, not a number: substitute it and its derivatives and the two sides must agree.",
+      "rule": "The general solution contains as many arbitrary constants as the order of the equation; a particular solution is obtained by giving particular values to these constants and is free from arbitrary constants.",
+      "example": "y = a sin(x + b) is the general solution of d^2y/dx^2 + y = 0 (two constants, order 2); y = 2 sin(x + pi/4) is a particular solution.",
+      "difficulty_base": "Easy",
+      "questions": [
+        {
+          "b": "Remember",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "A solution of a differential equation which contains arbitrary constants is called",
+          "a": "the general solution",
+          "o": [
+            "the general solution",
+            "a particular solution",
+            "the integrating factor",
+            "a homogeneous function"
+          ]
+        },
+        {
+          "b": "Remember",
+          "d": "Easy",
+          "t": "fill_blank",
+          "m": 1,
+          "q": "The curve y = phi(x) given by a solution of a differential equation is called a solution curve or an ____ curve.",
+          "a": "integral"
+        },
+        {
+          "b": "Remember",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "The number of arbitrary constants in the general solution of a differential equation of fourth order is",
+          "a": "4",
+          "o": [
+            "4",
+            "0",
+            "2",
+            "3"
+          ]
+        },
+        {
+          "b": "Remember",
+          "d": "Hard",
+          "t": "mcq",
+          "m": 1,
+          "q": "Which of the following is NOT true of a particular solution of a differential equation?",
+          "a": "It contains as many arbitrary constants as the order of the equation",
+          "o": [
+            "It contains as many arbitrary constants as the order of the equation",
+            "It satisfies the differential equation",
+            "It is obtained by giving particular values to the arbitrary constants of the general solution",
+            "It is free from arbitrary constants"
+          ],
+          "rev": true
+        },
+        {
+          "b": "Understand",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "The number of arbitrary constants in a particular solution of a differential equation of third order is",
+          "a": "0",
+          "o": [
+            "0",
+            "3",
+            "2",
+            "1"
+          ]
+        },
+        {
+          "b": "Understand",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "For the differential equation d^2y/dx^2 + y = 0, the function y = a sin(x + b), where a and b are arbitrary constants, is",
+          "a": "the general solution, as it has two arbitrary constants",
+          "o": [
+            "the general solution, as it has two arbitrary constants",
+            "a particular solution, as it is a single formula",
+            "not a solution, since a solution cannot contain constants",
+            "a solution only when a = 1 and b = 0"
+          ]
+        },
+        {
+          "b": "Understand",
+          "d": "Easy",
+          "t": "short_answer",
+          "m": 2,
+          "q": "Verify that y = e^x + 1 is a solution of the differential equation y'' - y' = 0.",
+          "a": "y = e^x + 1 gives y' = e^x and y'' = e^x. Then y'' - y' = e^x - e^x = 0, which is the right hand side. So y = e^x + 1 is a solution.",
+          "s": [
+            [
+              "Finds y' = e^x and y'' = e^x",
+              1
+            ],
+            [
+              "Substitutes to get 0 = R.H.S. and concludes",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Understand",
+          "d": "Hard",
+          "t": "mcq",
+          "m": 1,
+          "q": "For the differential equation d^2y/dx^2 + y = 0, the function y = 2 sin(x + pi/4) is",
+          "a": "a particular solution",
+          "o": [
+            "a particular solution",
+            "the general solution",
+            "not a solution",
+            "a solution only at x = pi/4"
+          ]
+        },
+        {
+          "b": "Understand",
+          "d": "Hard",
+          "t": "mcq",
+          "m": 1,
+          "q": "Which of the following is a solution of the differential equation dy/dx + sin x = 0?",
+          "a": "y = cos x + C",
+          "o": [
+            "y = cos x + C",
+            "y = sin x + C",
+            "y = -cos x + C",
+            "y = -sin x + C"
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Easy",
+          "t": "fill_blank",
+          "m": 1,
+          "q": "If y = x^2 + 2x + C is a solution of the differential equation y' - 2x - k = 0, then k = ____.",
+          "a": "2"
+        },
+        {
+          "b": "Apply",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "To verify that y = e^(-3x) satisfies d^2y/dx^2 + dy/dx - 6y = 0, we need d^2y/dx^2, which equals",
+          "a": "9e^(-3x)",
+          "o": [
+            "9e^(-3x)",
+            "-9e^(-3x)",
+            "3e^(-3x)",
+            "-3e^(-3x)"
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Hard",
+          "t": "mcq",
+          "m": 1,
+          "q": "y = e^(mx) is a solution of d^2y/dx^2 + dy/dx - 6y = 0 for two values of m. The negative value of m is",
+          "a": "-3",
+          "o": [
+            "-3",
+            "-2",
+            "3",
+            "2"
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Hard",
+          "t": "mcq",
+          "m": 1,
+          "q": "The function y = Ax, where A is an arbitrary constant, is a solution (x not 0) of which differential equation?",
+          "a": "xy' = y",
+          "o": [
+            "xy' = y",
+            "y' = y",
+            "xy' = -y",
+            "xy' = 2y"
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Hard",
+          "t": "short_answer",
+          "m": 2,
+          "q": "Verify that y = a cos x + b sin x, where a and b are real constants, is a solution of d^2y/dx^2 + y = 0.",
+          "a": "dy/dx = -a sin x + b cos x and d^2y/dx^2 = -a cos x - b sin x. Then d^2y/dx^2 + y = (-a cos x - b sin x) + (a cos x + b sin x) = 0 = R.H.S. So it is a solution.",
+          "s": [
+            [
+              "Differentiates twice to get d^2y/dx^2 = -a cos x - b sin x",
+              1
+            ],
+            [
+              "Substitutes and shows L.H.S. = 0 = R.H.S.",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Hardest",
+          "t": "long_answer",
+          "m": 3,
+          "q": "Verify that y = x sin 3x is a solution of the differential equation d^2y/dx^2 + 9y - 6 cos 3x = 0.",
+          "a": "dy/dx = sin 3x + 3x cos 3x. d^2y/dx^2 = 3 cos 3x + 3 cos 3x - 9x sin 3x = 6 cos 3x - 9x sin 3x. Then d^2y/dx^2 + 9y - 6 cos 3x = 6 cos 3x - 9x sin 3x + 9x sin 3x - 6 cos 3x = 0 = R.H.S.",
+          "s": [
+            [
+              "Finds dy/dx = sin 3x + 3x cos 3x using the product rule",
+              1
+            ],
+            [
+              "Finds d^2y/dx^2 = 6 cos 3x - 9x sin 3x",
+              1
+            ],
+            [
+              "Substitutes and shows L.H.S. = 0 = R.H.S.",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Analyse",
+          "d": "Hard",
+          "t": "assertion_reason",
+          "m": 1,
+          "q": "Assertion (A): y = e^(-3x) is a solution of the differential equation d^2y/dx^2 + dy/dx - 6y = 0. Reason (R): The general solution of a differential equation of second order contains two arbitrary constants.",
+          "a": "Both A and R are true, but R is not the correct explanation of A",
+          "o": [
+            "Both A and R are true, but R is not the correct explanation of A",
+            "Both A and R are true, and R is the correct explanation of A",
+            "A is true, R is false",
+            "A is false, R is true"
+          ]
+        },
+        {
+          "b": "Analyse",
+          "d": "Hard",
+          "t": "multi_statement",
+          "m": 1,
+          "q": "Consider these statements. (I) y = x^2 + 2x + C is a particular solution of y' - 2x - 2 = 0. (II) y = x^2 + 2x is a particular solution of y' - 2x - 2 = 0. Which is or are correct?",
+          "a": "Only II",
+          "o": [
+            "Only II",
+            "Only I",
+            "Both I and II",
+            "Neither I nor II"
+          ]
+        },
+        {
+          "b": "Analyse",
+          "d": "Hardest",
+          "t": "long_answer",
+          "m": 3,
+          "q": "Check which of y = e^x, y = e^(-x) and y = e^(2x) satisfy y'' - y = 0. Using the ones that do, write a solution containing two arbitrary constants and say what kind of solution it is.",
+          "a": "For y = e^x: y'' - y = e^x - e^x = 0, a solution. For y = e^(-x): y'' = e^(-x), so y'' - y = 0, a solution. For y = e^(2x): y'' - y = 4e^(2x) - e^(2x) = 3e^(2x), not 0, so it is not a solution. Then y = A e^x + B e^(-x) gives y'' = A e^x + B e^(-x) = y, so it is a solution; it has two arbitrary constants, equal to the order 2, so it is the general solution.",
+          "s": [
+            [
+              "Shows e^x and e^(-x) satisfy the equation",
+              1
+            ],
+            [
+              "Shows e^(2x) does not",
+              1
+            ],
+            [
+              "Writes y = A e^x + B e^(-x), verifies it and calls it the general solution (2 constants = order 2)",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Evaluate",
+          "d": "Hard",
+          "t": "short_answer",
+          "m": 2,
+          "q": "A student claims that y = cos x + C cannot satisfy y' + sin x = 0 for every value of C, because the constant C would be left over. Is the student right? Justify.",
+          "a": "No. The derivative of the constant C is 0, so y' = -sin x for every C, and y' + sin x = 0. So y = cos x + C satisfies the equation for every C; it is the general solution of this first order equation.",
+          "s": [
+            [
+              "Notes the derivative of C is 0 so y' = -sin x",
+              1
+            ],
+            [
+              "Concludes it satisfies the equation for every C, so the student is wrong",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Create",
+          "d": "Hardest",
+          "t": "long_answer",
+          "m": 3,
+          "q": "The general solution of d^2y/dx^2 + y = 0 is y = a cos x + b sin x. Construct the particular solution with y = 0 when x = 0 and y = 3 when x = pi/2, and verify it.",
+          "a": "At x = 0: y = a = 0. At x = pi/2: y = b = 3. So y = 3 sin x. Check: y'' = -3 sin x, so y'' + y = 0, and y(0) = 0, y(pi/2) = 3.",
+          "s": [
+            [
+              "Uses y(0) = 0 to get a = 0",
+              1
+            ],
+            [
+              "Uses y(pi/2) = 3 to get b = 3, so y = 3 sin x",
+              1
+            ],
+            [
+              "Verifies y = 3 sin x satisfies the equation and both conditions",
+              1
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "code": "C12M-9.4",
+      "name": "Variables separable method",
+      "description": "Solving dy/dx = g(x) h(y) by separating the variables and integrating both sides, finding particular solutions and curves through a point, and applying it to continuous growth (bank interest, bacteria) and rate problems.",
+      "idea": "If the right side splits into a function of x times a function of y, move all the y terms to dy and all the x terms to dx, then integrate each side.",
+      "rule": "dy/dx = g(x) h(y), h(y) not 0, gives integral of dy/h(y) = integral of g(x) dx, i.e. H(y) = G(x) + C. Use a given point or condition to fix C for a particular solution.",
+      "example": "dy/dx = -4xy^2 gives dy/y^2 = -4x dx, so -1/y = -2x^2 + C; with y = 1 at x = 0, C = -1 and y = 1/(2x^2 + 1).",
+      "difficulty_base": "Easy",
+      "questions": [
+        {
+          "b": "Remember",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "A differential equation dy/dx = F(x, y) is of variable separable type if F(x, y) can be written as",
+          "a": "g(x) h(y)",
+          "o": [
+            "g(x) h(y)",
+            "g(x) + h(y)",
+            "g(y/x)",
+            "P(x) y + Q(x)"
+          ]
+        },
+        {
+          "b": "Remember",
+          "d": "Easy",
+          "t": "fill_blank",
+          "m": 1,
+          "q": "After separating the variables as dy/h(y) = g(x) dx and integrating, the solution is written as H(y) = G(x) + C, where C is the ____ constant.",
+          "a": "arbitrary"
+        },
+        {
+          "b": "Remember",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "In the variable separable method, the terms containing y are kept with",
+          "a": "dy",
+          "o": [
+            "dy",
+            "dx",
+            "the arbitrary constant",
+            "the integrating factor"
+          ]
+        },
+        {
+          "b": "Remember",
+          "d": "Hard",
+          "t": "mcq",
+          "m": 1,
+          "q": "Which of the following differential equations is NOT of variable separable type?",
+          "a": "dy/dx = x + y",
+          "o": [
+            "dy/dx = x + y",
+            "dy/dx = e^(x + y)",
+            "dy/dx = (1 + y^2)/(1 + x^2)",
+            "dy/dx = -4xy^2"
+          ],
+          "rev": true
+        },
+        {
+          "b": "Understand",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "Separating the variables in dy/dx = (x + 1)/(2 - y), y not 2, gives",
+          "a": "(2 - y) dy = (x + 1) dx",
+          "o": [
+            "(2 - y) dy = (x + 1) dx",
+            "(x + 1) dy = (2 - y) dx",
+            "dy/(2 - y) = (x + 1) dx",
+            "(2 + y) dy = (x + 1) dx"
+          ]
+        },
+        {
+          "b": "Understand",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "The general solution of the differential equation dy/dx = (1 + y^2)/(1 + x^2) is",
+          "a": "tan^(-1) y = tan^(-1) x + C",
+          "o": [
+            "tan^(-1) y = tan^(-1) x + C",
+            "tan^(-1) y = tan^(-1) x",
+            "y = x + C",
+            "log|1 + y^2| = log|1 + x^2| + C"
+          ]
+        },
+        {
+          "b": "Understand",
+          "d": "Easy",
+          "t": "short_answer",
+          "m": 2,
+          "q": "Find the general solution of dy/dx = (x + 1)/(2 - y), y not 2.",
+          "a": "Separating, (2 - y) dy = (x + 1) dx. Integrating, 2y - y^2/2 = x^2/2 + x + C1, i.e. x^2 + y^2 + 2x - 4y + C = 0 where C = 2C1.",
+          "s": [
+            [
+              "Separates the variables as (2 - y) dy = (x + 1) dx",
+              1
+            ],
+            [
+              "Integrates to get x^2 + y^2 + 2x - 4y + C = 0 (or an equivalent form)",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Understand",
+          "d": "Hard",
+          "t": "mcq",
+          "m": 1,
+          "q": "The general solution of the differential equation dy/dx = e^(x + y) is",
+          "a": "e^x + e^(-y) = C",
+          "o": [
+            "e^x + e^(-y) = C",
+            "e^x + e^y = C",
+            "e^(-x) + e^y = C",
+            "e^(-x) + e^(-y) = C"
+          ]
+        },
+        {
+          "b": "Understand",
+          "d": "Hard",
+          "t": "mcq",
+          "m": 1,
+          "q": "In a bank, principal grows continuously at 5% per year, so dP/dt = P/20. Rs 1000 will double in",
+          "a": "20 log_e 2 years",
+          "o": [
+            "20 log_e 2 years",
+            "20 years",
+            "(log_e 2)/20 years",
+            "5 log_e 2 years"
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Easy",
+          "t": "fill_blank",
+          "m": 1,
+          "q": "The particular solution of dy/dx = -4xy^2 with y = 1 when x = 0 is y = 1/(2x^2 + ____).",
+          "a": "1"
+        },
+        {
+          "b": "Apply",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "The equation of the curve through (1, 1) whose differential equation is x dy = (2x^2 + 1) dx (x not 0) is",
+          "a": "y = x^2 + log|x|",
+          "o": [
+            "y = x^2 + log|x|",
+            "y = x^2 + log|x| + 1",
+            "y = 2x^2 + log|x| - 1",
+            "y = x^2 - 1/x + 1"
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Hard",
+          "t": "mcq",
+          "m": 1,
+          "q": "The equation of the curve through (-2, 3) whose tangent at any point (x, y) has slope 2x/y^2 is",
+          "a": "y^3 = 3x^2 + 15",
+          "o": [
+            "y^3 = 3x^2 + 15",
+            "y^3 = 3x^2 + 5",
+            "y^3 = x^2 + 23",
+            "y^2 = 2x^2 + 1"
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Hard",
+          "t": "mcq",
+          "m": 1,
+          "q": "Rs 1000 is deposited in a bank where principal grows continuously at 5% per year. Using e^0.5 = 1.648, the amount after 10 years is",
+          "a": "Rs 1648",
+          "o": [
+            "Rs 1648",
+            "Rs 1500",
+            "Rs 1050",
+            "Rs 1628.89"
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Hard",
+          "t": "short_answer",
+          "m": 2,
+          "q": "Find the particular solution of dy/dx = y tan x, given that y = 1 when x = 0.",
+          "a": "Separating, dy/y = tan x dx. Integrating, log|y| = log|sec x| + log|C|, so y = C sec x. At x = 0, y = 1 gives C = 1. Hence y = sec x.",
+          "s": [
+            [
+              "Separates and integrates to get y = C sec x",
+              1
+            ],
+            [
+              "Uses y = 1 at x = 0 to get C = 1, so y = sec x",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Hardest",
+          "t": "long_answer",
+          "m": 3,
+          "q": "In a culture the bacteria count is 1,00,000. It increases by 10% in 2 hours. If the rate of growth is proportional to the number present, in how many hours will the count reach 2,00,000?",
+          "a": "Let y be the count at time t hours. dy/dt = ky, so dy/y = k dt and y = C e^(kt). At t = 0, y = 100000, so C = 100000. At t = 2, y = 110000: e^(2k) = 1.1, so k = (1/2) log 1.1. For y = 200000: e^(kt) = 2, so t = (log 2)/k = 2 log 2/log 1.1 hours (about 14.5 hours).",
+          "s": [
+            [
+              "Sets up dy/dt = ky and solves to y = C e^(kt) with C = 100000",
+              1
+            ],
+            [
+              "Uses the 10% rise in 2 hours to get k = (1/2) log 1.1",
+              1
+            ],
+            [
+              "Solves e^(kt) = 2 to get t = 2 log 2/log 1.1 hours",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Analyse",
+          "d": "Hard",
+          "t": "assertion_reason",
+          "m": 1,
+          "q": "Assertion (A): The differential equation dy/dx = e^(x + y) is of variable separable type. Reason (R): e^(x + y) = e^x . e^y, which is a product of a function of x and a function of y.",
+          "a": "Both A and R are true, and R is the correct explanation of A",
+          "o": [
+            "Both A and R are true, and R is the correct explanation of A",
+            "Both A and R are true, but R is not the correct explanation of A",
+            "A is true, R is false",
+            "A is false, R is true"
+          ]
+        },
+        {
+          "b": "Analyse",
+          "d": "Hard",
+          "t": "multi_statement",
+          "m": 1,
+          "q": "Consider these statements. (I) The general solution of dy/dx = e^(x + y) is e^x + e^y = C. (II) The differential equation dy/dx = x + y is of variable separable type. Which is or are correct?",
+          "a": "Neither I nor II",
+          "o": [
+            "Neither I nor II",
+            "Only I",
+            "Only II",
+            "Both I and II"
+          ]
+        },
+        {
+          "b": "Analyse",
+          "d": "Hardest",
+          "t": "long_answer",
+          "m": 3,
+          "q": "At any point (x, y) of a curve, the slope of the tangent is twice the slope of the line segment joining the point of contact to (-4, -3). Find the curve, given that it passes through (-2, 1).",
+          "a": "Slope of the segment = (y + 3)/(x + 4), so dy/dx = 2(y + 3)/(x + 4). Separating, dy/(y + 3) = 2 dx/(x + 4). Integrating, log|y + 3| = 2 log|x + 4| + log|C|, so y + 3 = C(x + 4)^2. At (-2, 1): 4 = 4C, C = 1. The curve is (x + 4)^2 = y + 3.",
+          "s": [
+            [
+              "Forms dy/dx = 2(y + 3)/(x + 4)",
+              1
+            ],
+            [
+              "Separates and integrates to y + 3 = C(x + 4)^2",
+              1
+            ],
+            [
+              "Uses (-2, 1) to get C = 1 and states (x + 4)^2 = y + 3",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Evaluate",
+          "d": "Hard",
+          "t": "short_answer",
+          "m": 2,
+          "q": "A student says that dy/dx + y = 1 (y not 1) cannot be solved by separating variables because it contains both y and a constant term. Evaluate this and solve it.",
+          "a": "The student is wrong: dy/dx = 1 - y is a function of y alone times the function 1 of x, so it is separable. dy/(1 - y) = dx gives -log|1 - y| = x + C, so 1 - y = A e^(-x), i.e. y = 1 - A e^(-x) (A an arbitrary constant).",
+          "s": [
+            [
+              "Explains dy/dx = 1 - y is of the form g(x) h(y), so it is separable",
+              1
+            ],
+            [
+              "Solves to y = 1 - A e^(-x) or an equivalent form",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Create",
+          "d": "Hardest",
+          "t": "long_answer",
+          "m": 3,
+          "q": "Construct a differential equation of the form dy/dx = g(x) h(y) whose solution curve through (0, 1) is y = e^(x^2). Verify by solving your equation.",
+          "a": "From y = e^(x^2), dy/dx = 2x e^(x^2) = 2xy. So take dy/dx = 2xy, with g(x) = 2x and h(y) = y. Solving: dy/y = 2x dx gives log|y| = x^2 + C. At (0, 1), C = 0, so y = e^(x^2).",
+          "s": [
+            [
+              "Differentiates y = e^(x^2) and writes dy/dx = 2xy",
+              1
+            ],
+            [
+              "Identifies it as separable with g(x) = 2x, h(y) = y",
+              1
+            ],
+            [
+              "Solves with (0, 1) to recover y = e^(x^2)",
+              1
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "code": "C12M-9.5",
+      "name": "Homogeneous functions and homogeneous differential equations",
+      "description": "Testing whether F(x, y) is a homogeneous function of degree n by replacing x, y with lambda x, lambda y, and deciding whether dy/dx = F(x, y) (or dx/dy = G(x, y)) is a homogeneous differential equation, i.e. F is homogeneous of degree zero.",
+      "idea": "A homogeneous function scales by a fixed power of lambda when both variables are scaled by lambda; a homogeneous differential equation has a right side of degree zero, so it depends only on y/x.",
+      "rule": "F(x, y) is homogeneous of degree n if F(lambda x, lambda y) = lambda^n F(x, y), equivalently F = x^n g(y/x) or y^n h(x/y). dy/dx = F(x, y) is homogeneous if F is homogeneous of degree zero.",
+      "example": "y^2 + 2xy is homogeneous of degree 2, 2x - 3y of degree 1, cos(y/x) of degree 0, while sin x + cos y is not homogeneous.",
+      "difficulty_base": "Easy",
+      "questions": [
+        {
+          "b": "Remember",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "A function F(x, y) is a homogeneous function of degree n if, for any nonzero constant lambda,",
+          "a": "F(lambda x, lambda y) = lambda^n F(x, y)",
+          "o": [
+            "F(lambda x, lambda y) = lambda^n F(x, y)",
+            "F(lambda x, lambda y) = n F(x, y)",
+            "F(lambda x, lambda y) = F(x, y) + lambda^n",
+            "F(lambda x, y) = lambda^n F(x, y)"
+          ]
+        },
+        {
+          "b": "Remember",
+          "d": "Easy",
+          "t": "fill_blank",
+          "m": 1,
+          "q": "A differential equation dy/dx = F(x, y) is homogeneous if F(x, y) is a homogeneous function of degree ____ (write a number).",
+          "a": "0"
+        },
+        {
+          "b": "Remember",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "The function F(x, y) = y^2 + 2xy is homogeneous of degree",
+          "a": "2",
+          "o": [
+            "2",
+            "1",
+            "0",
+            "3"
+          ]
+        },
+        {
+          "b": "Remember",
+          "d": "Hard",
+          "t": "mcq",
+          "m": 1,
+          "q": "Which of the following functions is NOT a homogeneous function?",
+          "a": "sin x + cos y",
+          "o": [
+            "sin x + cos y",
+            "y^2 + 2xy",
+            "2x - 3y",
+            "cos(y/x)"
+          ],
+          "rev": true
+        },
+        {
+          "b": "Understand",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "The function F(x, y) = cos(y/x) is homogeneous of degree",
+          "a": "0",
+          "o": [
+            "0",
+            "1",
+            "-1",
+            "2"
+          ]
+        },
+        {
+          "b": "Understand",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "The function F(x, y) = (x + 2y)/(x - y) is",
+          "a": "homogeneous of degree 0",
+          "o": [
+            "homogeneous of degree 0",
+            "homogeneous of degree 1",
+            "homogeneous of degree 2",
+            "not homogeneous"
+          ]
+        },
+        {
+          "b": "Understand",
+          "d": "Easy",
+          "t": "short_answer",
+          "m": 2,
+          "q": "Show that F(x, y) = 2x - 3y is a homogeneous function and find its degree.",
+          "a": "F(lambda x, lambda y) = 2 lambda x - 3 lambda y = lambda (2x - 3y) = lambda^1 F(x, y). So F is homogeneous of degree 1.",
+          "s": [
+            [
+              "Computes F(lambda x, lambda y) = lambda (2x - 3y)",
+              1
+            ],
+            [
+              "Concludes F is homogeneous of degree 1",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Understand",
+          "d": "Hard",
+          "t": "mcq",
+          "m": 1,
+          "q": "Which of the following is a homogeneous differential equation?",
+          "a": "y^2 dx + (x^2 - xy - y^2) dy = 0",
+          "o": [
+            "y^2 dx + (x^2 - xy - y^2) dy = 0",
+            "(4x + 6y + 5) dy - (3y + 2x + 4) dx = 0",
+            "(xy) dx - (x^3 + y^3) dy = 0",
+            "(x^3 + 2y^2) dx + 2xy dy = 0"
+          ]
+        },
+        {
+          "b": "Understand",
+          "d": "Hard",
+          "t": "mcq",
+          "m": 1,
+          "q": "A homogeneous function F(x, y) of degree n can always be written in the form",
+          "a": "x^n g(y/x)",
+          "o": [
+            "x^n g(y/x)",
+            "g(x) h(y)",
+            "x^n + g(y/x)",
+            "n g(y/x)"
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Easy",
+          "t": "fill_blank",
+          "m": 1,
+          "q": "The function F(x, y) = x^3 + 2xy^2 is homogeneous of degree ____.",
+          "a": "3"
+        },
+        {
+          "b": "Apply",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "For F(x, y) = y^2 + 2xy, the value of F(2x, 2y) is",
+          "a": "4 F(x, y)",
+          "o": [
+            "4 F(x, y)",
+            "2 F(x, y)",
+            "F(x, y)",
+            "8 F(x, y)"
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Hard",
+          "t": "mcq",
+          "m": 1,
+          "q": "Which of the following differential equations is homogeneous?",
+          "a": "(x^2 + xy) dy = (x^2 + y^2) dx",
+          "o": [
+            "(x^2 + xy) dy = (x^2 + y^2) dx",
+            "(x + y + 1) dy = (x - y) dx",
+            "dy/dx = x^2 + y",
+            "dy/dx = sin x + cos y"
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Hard",
+          "t": "mcq",
+          "m": 1,
+          "q": "The differential equation x^2 (dy/dx) = x^2 - 2y^2 + xy is homogeneous because dy/dx can be written as",
+          "a": "1 - 2(y/x)^2 + (y/x)",
+          "o": [
+            "1 - 2(y/x)^2 + (y/x)",
+            "x^2 - 2y^2 + xy",
+            "1 - 2y^2 + xy",
+            "1 - 2(y/x) + (y/x)^2"
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Hard",
+          "t": "short_answer",
+          "m": 2,
+          "q": "Show that the differential equation (x - y) dy/dx = x + 2y is homogeneous.",
+          "a": "dy/dx = (x + 2y)/(x - y) = F(x, y). F(lambda x, lambda y) = lambda (x + 2y)/(lambda (x - y)) = lambda^0 F(x, y). So F is homogeneous of degree zero and the equation is homogeneous.",
+          "s": [
+            [
+              "Writes dy/dx = (x + 2y)/(x - y)",
+              1
+            ],
+            [
+              "Shows F(lambda x, lambda y) = lambda^0 F(x, y) and concludes",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Hardest",
+          "t": "long_answer",
+          "m": 3,
+          "q": "Show that y dx + x log(y/x) dy - 2x dy = 0 is a homogeneous differential equation.",
+          "a": "Rewriting, (2x - x log(y/x)) dy = y dx, so dy/dx = y/(2x - x log(y/x)) = F(x, y). Then F(lambda x, lambda y) = lambda y/(2 lambda x - lambda x log(lambda y/(lambda x))) = y/(2x - x log(y/x)) = lambda^0 F(x, y). Equivalently dy/dx = (y/x)/(2 - log(y/x)), a function of y/x. So F is homogeneous of degree zero and the equation is homogeneous.",
+          "s": [
+            [
+              "Writes dy/dx = y/(2x - x log(y/x))",
+              1
+            ],
+            [
+              "Replaces x, y by lambda x, lambda y and simplifies, noting log(y/x) is unchanged",
+              1
+            ],
+            [
+              "Concludes F has degree zero, so the equation is homogeneous",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Analyse",
+          "d": "Hard",
+          "t": "assertion_reason",
+          "m": 1,
+          "q": "Assertion (A): The differential equation (4x + 6y + 5) dy - (3y + 2x + 4) dx = 0 is homogeneous. Reason (R): A differential equation dy/dx = F(x, y) is homogeneous if F(x, y) is a homogeneous function of degree zero.",
+          "a": "A is false, R is true",
+          "o": [
+            "A is false, R is true",
+            "Both A and R are true, and R is the correct explanation of A",
+            "Both A and R are true, but R is not the correct explanation of A",
+            "A is true, R is false"
+          ]
+        },
+        {
+          "b": "Analyse",
+          "d": "Hard",
+          "t": "multi_statement",
+          "m": 1,
+          "q": "Consider these statements. (I) The function y^2 + 2xy is homogeneous of degree 2. (II) The differential equation dy/dx = (x^2 + y^2)/(2xy) is homogeneous. Which is or are correct?",
+          "a": "Both I and II",
+          "o": [
+            "Both I and II",
+            "Only I",
+            "Only II",
+            "Neither I nor II"
+          ]
+        },
+        {
+          "b": "Analyse",
+          "d": "Hardest",
+          "t": "long_answer",
+          "m": 3,
+          "q": "Decide, with reasons, which of the following differential equations are homogeneous: (i) dy/dx = (x + y)/x (ii) dy/dx = (x^2 + y)/x^2 (iii) dy/dx = y/x + sin(y/x).",
+          "a": "(i) F = (x + y)/x; F(lambda x, lambda y) = lambda (x + y)/(lambda x) = F, degree 0, so homogeneous. (ii) F(lambda x, lambda y) = (lambda^2 x^2 + lambda y)/(lambda^2 x^2), which is not lambda^0 F(x, y) in general (the numerator is not homogeneous), so not homogeneous. (iii) F depends only on y/x, which is unchanged by scaling, so F has degree 0 and the equation is homogeneous.",
+          "s": [
+            [
+              "(i) homogeneous, with the lambda test",
+              1
+            ],
+            [
+              "(ii) not homogeneous, because x^2 + y is not homogeneous",
+              1
+            ],
+            [
+              "(iii) homogeneous, as a function of y/x",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Evaluate",
+          "d": "Hard",
+          "t": "short_answer",
+          "m": 2,
+          "q": "A student claims (x^2 - y^2) dx + 2xy dy = 0 is not a homogeneous differential equation because its terms are of degree 2, not 0. Evaluate the claim.",
+          "a": "The claim is wrong. Writing it as dy/dx = (y^2 - x^2)/(2xy) = F(x, y), F(lambda x, lambda y) = lambda^2 (y^2 - x^2)/(lambda^2 . 2xy) = lambda^0 F(x, y). The degree that must be zero is that of F = dy/dx, a ratio of two degree 2 functions, so the equation is homogeneous.",
+          "s": [
+            [
+              "Writes dy/dx = (y^2 - x^2)/(2xy)",
+              1
+            ],
+            [
+              "Shows F has degree 0 and concludes the equation is homogeneous",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Create",
+          "d": "Hardest",
+          "t": "long_answer",
+          "m": 3,
+          "q": "Construct a differential equation dy/dx = F(x, y) in which F is the ratio of two homogeneous functions of degree 2, and show that it is a homogeneous differential equation.",
+          "a": "For example dy/dx = (x^2 + y^2)/(xy). Numerator and denominator are each homogeneous of degree 2. F(lambda x, lambda y) = lambda^2 (x^2 + y^2)/(lambda^2 xy) = lambda^0 F(x, y), so F is homogeneous of degree zero and the equation is homogeneous. Equivalently F = (1 + (y/x)^2)/(y/x).",
+          "s": [
+            [
+              "Gives a ratio of two degree 2 homogeneous functions",
+              1
+            ],
+            [
+              "Shows F(lambda x, lambda y) = lambda^0 F(x, y)",
+              1
+            ],
+            [
+              "Concludes the differential equation is homogeneous",
+              1
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "code": "C12M-9.6",
+      "name": "Solving homogeneous differential equations",
+      "description": "Solving dy/dx = g(y/x) by the substitution y = vx (and dx/dy = h(x/y) by x = vy), separating v and x, integrating, and replacing v by y/x; finding particular solutions and families of curves.",
+      "idea": "In a homogeneous equation only the ratio y/x matters, so treating that ratio v as the new unknown turns the equation into a separable one.",
+      "rule": "Put y = vx, so dy/dx = v + x dv/dx. Then x dv/dx = g(v) - v, so dv/(g(v) - v) = dx/x; integrate and replace v by y/x. For dx/dy = h(x/y) put x = vy, dx/dy = v + y dv/dy.",
+      "example": "dy/dx = (x^2 + y^2)/(2xy): y = vx gives 2v dv/(1 - v^2) = dx/x, leading to x^2 - y^2 = Cx.",
+      "difficulty_base": "Hard",
+      "questions": [
+        {
+          "b": "Remember",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "To solve a homogeneous differential equation of the form dy/dx = g(y/x), the substitution made is",
+          "a": "y = vx",
+          "o": [
+            "y = vx",
+            "y = v + x",
+            "x = v",
+            "y = x/v + 1"
+          ]
+        },
+        {
+          "b": "Remember",
+          "d": "Easy",
+          "t": "fill_blank",
+          "m": 1,
+          "q": "If y = vx, then dy/dx = v + ____.",
+          "a": "x dv/dx"
+        },
+        {
+          "b": "Remember",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "A homogeneous differential equation of the form dx/dy = h(x/y) can be solved by making the substitution",
+          "a": "x = vy",
+          "o": [
+            "x = vy",
+            "y = vx",
+            "v = yx",
+            "x = v"
+          ]
+        },
+        {
+          "b": "Remember",
+          "d": "Hard",
+          "t": "mcq",
+          "m": 1,
+          "q": "Which of the following statements about solving dy/dx = g(y/x) with y = vx is NOT correct?",
+          "a": "The new equation in v and x must be solved with an integrating factor",
+          "o": [
+            "The new equation in v and x must be solved with an integrating factor",
+            "The equation becomes v + x dv/dx = g(v)",
+            "The variables v and x can then be separated",
+            "v is replaced by y/x at the end"
+          ],
+          "rev": true
+        },
+        {
+          "b": "Understand",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "With y = vx, the differential equation dy/dx = (x^2 + y^2)/(2xy) becomes",
+          "a": "v + x dv/dx = (1 + v^2)/(2v)",
+          "o": [
+            "v + x dv/dx = (1 + v^2)/(2v)",
+            "dv/dx = (1 + v^2)/(2v)",
+            "v + x dv/dx = (1 + v)/(2v)",
+            "x dv/dx = (1 + v^2)/(2v)"
+          ]
+        },
+        {
+          "b": "Understand",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "Substituting y = vx in dy/dx = (y cos(y/x) + x)/(x cos(y/x)) gives x dv/dx equal to",
+          "a": "1/cos v",
+          "o": [
+            "1/cos v",
+            "v + 1/cos v",
+            "(v cos v + 1)/cos v",
+            "cos v"
+          ]
+        },
+        {
+          "b": "Understand",
+          "d": "Easy",
+          "t": "short_answer",
+          "m": 2,
+          "q": "Solve the homogeneous differential equation y' = (x + y)/x (x > 0).",
+          "a": "Put y = vx, so y' = v + x dv/dx. Then v + x dv/dx = 1 + v, so dv = dx/x and v = log|x| + C. Replacing v by y/x, y = x log|x| + Cx.",
+          "s": [
+            [
+              "Substitutes y = vx to get x dv/dx = 1",
+              1
+            ],
+            [
+              "Integrates and replaces v by y/x: y = x log|x| + Cx",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Understand",
+          "d": "Hard",
+          "t": "mcq",
+          "m": 1,
+          "q": "The general solution of dy/dx = (y cos(y/x) + x)/(x cos(y/x)) is",
+          "a": "sin(y/x) = log|Cx|",
+          "o": [
+            "sin(y/x) = log|Cx|",
+            "cos(y/x) = log|Cx|",
+            "sin(y/x) = Cx",
+            "sin(y/x) = log|x|"
+          ]
+        },
+        {
+          "b": "Understand",
+          "d": "Hard",
+          "t": "mcq",
+          "m": 1,
+          "q": "For x dy/dx - y + x sin(y/x) = 0, substituting y = vx and separating the variables gives",
+          "a": "dv/sin v = -dx/x",
+          "o": [
+            "dv/sin v = -dx/x",
+            "dv/sin v = dx/x",
+            "sin v dv = -dx/x",
+            "dv/(sin v - v) = dx/x"
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Easy",
+          "t": "fill_blank",
+          "m": 1,
+          "q": "If x = vy, then dx/dy = v + ____.",
+          "a": "y dv/dy"
+        },
+        {
+          "b": "Apply",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "Substituting y = vx in dy/dx = (x^2 + y^2)/(2xy) leads to 2v dv/(1 - v^2) = dx/x. The general solution of the equation is",
+          "a": "x^2 - y^2 = Cx",
+          "o": [
+            "x^2 - y^2 = Cx",
+            "x^2 + y^2 = Cx",
+            "y^2 - x^2 = C",
+            "x^2 - y^2 = C"
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Hard",
+          "t": "mcq",
+          "m": 1,
+          "q": "For (x^2 + xy) dy = (x^2 + y^2) dx, the substitution y = vx gives the separated form",
+          "a": "(1 + v)/(1 - v) dv = dx/x",
+          "o": [
+            "(1 + v)/(1 - v) dv = dx/x",
+            "(1 + v)/(1 + v^2) dv = dx/x",
+            "(1 - v)/(1 + v) dv = dx/x",
+            "(1 + v^2)/(1 + v) dv = dx/x"
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Hard",
+          "t": "mcq",
+          "m": 1,
+          "q": "The general solution of (x - y) dy - (x + y) dx = 0 is",
+          "a": "tan^(-1)(y/x) = (1/2) log(x^2 + y^2) + C",
+          "o": [
+            "tan^(-1)(y/x) = (1/2) log(x^2 + y^2) + C",
+            "tan^(-1)(y/x) = log(x^2 + y^2) + C",
+            "tan^(-1)(x/y) = (1/2) log(x^2 + y^2) + C",
+            "tan^(-1)(y/x) = -(1/2) log(x^2 + y^2) + C"
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Hard",
+          "t": "short_answer",
+          "m": 2,
+          "q": "Solve the homogeneous differential equation (x^2 - y^2) dx + 2xy dy = 0.",
+          "a": "dy/dx = (y^2 - x^2)/(2xy). Put y = vx: v + x dv/dx = (v^2 - 1)/(2v), so x dv/dx = -(1 + v^2)/(2v), i.e. 2v dv/(1 + v^2) = -dx/x. Integrating, log(1 + v^2) = -log|x| + log|C|, so x(1 + v^2) = C, i.e. x^2 + y^2 = Cx.",
+          "s": [
+            [
+              "Substitutes y = vx and separates to 2v dv/(1 + v^2) = -dx/x",
+              1
+            ],
+            [
+              "Integrates and replaces v to get x^2 + y^2 = Cx",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Hardest",
+          "t": "long_answer",
+          "m": 3,
+          "q": "Find the particular solution of dy/dx - y/x + cosec(y/x) = 0, given that y = 0 when x = 1.",
+          "a": "Put y = vx: v + x dv/dx - v + cosec v = 0, so x dv/dx = -cosec v, i.e. sin v dv = -dx/x. Integrating, -cos v = -log|x| - C, so cos v = log|x| + C, i.e. cos(y/x) = log|x| + C. At x = 1, y = 0: cos 0 = 1 = 0 + C, so C = 1. Hence cos(y/x) = log|x| + 1 = log|ex|.",
+          "s": [
+            [
+              "Substitutes y = vx and separates to sin v dv = -dx/x",
+              1
+            ],
+            [
+              "Integrates to cos(y/x) = log|x| + C",
+              1
+            ],
+            [
+              "Uses y = 0 at x = 1 to get C = 1: cos(y/x) = log|ex|",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Analyse",
+          "d": "Hard",
+          "t": "assertion_reason",
+          "m": 1,
+          "q": "Assertion (A): The general solution of dy/dx = (y cos(y/x) + x)/(x cos(y/x)) is sin(y/x) = log|Cx|. Reason (R): A homogeneous differential equation of the form dx/dy = h(x/y) is solved with the substitution x = vy.",
+          "a": "Both A and R are true, but R is not the correct explanation of A",
+          "o": [
+            "Both A and R are true, but R is not the correct explanation of A",
+            "Both A and R are true, and R is the correct explanation of A",
+            "A is true, R is false",
+            "A is false, R is true"
+          ]
+        },
+        {
+          "b": "Analyse",
+          "d": "Hard",
+          "t": "multi_statement",
+          "m": 1,
+          "q": "Consider these statements. (I) Substituting y = vx in dy/dx = g(y/x) gives x dv/dx = g(v) - v. (II) After integrating in terms of v, the general solution is left in v and x; v is never replaced by y/x. Which is or are correct?",
+          "a": "Only I",
+          "o": [
+            "Only I",
+            "Only II",
+            "Both I and II",
+            "Neither I nor II"
+          ]
+        },
+        {
+          "b": "Analyse",
+          "d": "Hardest",
+          "t": "long_answer",
+          "m": 3,
+          "q": "Find the particular solution of x^2 dy + (xy + y^2) dx = 0, given that y = 1 when x = 1.",
+          "a": "dy/dx = -(xy + y^2)/x^2. Put y = vx: v + x dv/dx = -(v + v^2), so x dv/dx = -(2v + v^2) and dv/(v(v + 2)) = -dx/x. Partial fractions: (1/2)[1/v - 1/(v + 2)] dv = -dx/x, so (1/2) log|v/(v + 2)| = -log|x| + c, i.e. v/(v + 2) = A/x^2. With v = y/x: x^2 y = A(y + 2x). At (1, 1): 1 = 3A, A = 1/3. So 3x^2 y = y + 2x, i.e. y = 2x/(3x^2 - 1).",
+          "s": [
+            [
+              "Substitutes y = vx and separates to dv/(v(v + 2)) = -dx/x",
+              1
+            ],
+            [
+              "Integrates and replaces v to get x^2 y = A(y + 2x)",
+              1
+            ],
+            [
+              "Uses (1, 1) to get A = 1/3 and y = 2x/(3x^2 - 1)",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Evaluate",
+          "d": "Hard",
+          "t": "short_answer",
+          "m": 2,
+          "q": "Solving a homogeneous equation, a student puts y = vx and writes dy/dx = v + dv/dx. Evaluate this step.",
+          "a": "The step is wrong. y = vx is a product of v and x, both depending on x, so by the product rule dy/dx = v . 1 + x dv/dx = v + x dv/dx. Dropping the factor x makes the separated equation and the solution wrong.",
+          "s": [
+            [
+              "Identifies the missing factor x",
+              1
+            ],
+            [
+              "Justifies dy/dx = v + x dv/dx by the product rule",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Create",
+          "d": "Hardest",
+          "t": "long_answer",
+          "m": 3,
+          "q": "Construct a homogeneous differential equation dy/dx = g(y/x) for which the substitution y = vx leads to x dv/dx = 2, and solve it.",
+          "a": "Need g(v) - v = 2, so g(v) = v + 2: the equation dy/dx = y/x + 2. Put y = vx: v + x dv/dx = v + 2, so dv = 2 dx/x and v = 2 log|x| + C. Hence y = 2x log|x| + Cx.",
+          "s": [
+            [
+              "Chooses g(v) = v + 2, giving dy/dx = y/x + 2 (or an equivalent valid equation)",
+              1
+            ],
+            [
+              "Substitutes y = vx to get x dv/dx = 2 and separates",
+              1
+            ],
+            [
+              "Integrates and replaces v: y = 2x log|x| + Cx",
+              1
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "code": "C12M-9.7",
+      "name": "Linear differential equations and the integrating factor",
+      "description": "Recognising first order linear differential equations dy/dx + Py = Q (P, Q functions of x) or dx/dy + P1 x = Q1 (P1, Q1 functions of y), finding the integrating factor, and writing general and particular solutions, including curves defined by a slope condition.",
+      "idea": "Multiplying a linear equation by the right factor turns its left side into the derivative of y times that factor, so one integration solves it.",
+      "rule": "For dy/dx + Py = Q: I.F. = e^(integral of P dx), and y (I.F.) = integral of Q (I.F.) dx + C. For dx/dy + P1 x = Q1: I.F. = e^(integral of P1 dy), and x (I.F.) = integral of Q1 (I.F.) dy + C. Put the equation in standard form (coefficient of dy/dx equal to 1) before reading off P.",
+      "example": "x dy/dx + 2y = x^2: divide by x to get P = 2/x, I.F. = e^(2 log x) = x^2, so y x^2 = x^4/4 + C.",
+      "difficulty_base": "Hard",
+      "questions": [
+        {
+          "b": "Remember",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "A first order linear differential equation has the form dy/dx + Py = Q, where",
+          "a": "P and Q are constants or functions of x only",
+          "o": [
+            "P and Q are constants or functions of x only",
+            "P and Q are functions of y only",
+            "P and Q may be functions of both x and y",
+            "P is a function of y and Q is a function of x"
+          ]
+        },
+        {
+          "b": "Remember",
+          "d": "Easy",
+          "t": "fill_blank",
+          "m": 1,
+          "q": "The integrating factor of dy/dx + Py = Q is e^(integral of ____ dx).",
+          "a": "P"
+        },
+        {
+          "b": "Remember",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "If I.F. is the integrating factor of dy/dx + Py = Q, the general solution is",
+          "a": "y (I.F.) = integral of Q (I.F.) dx + C",
+          "o": [
+            "y (I.F.) = integral of Q (I.F.) dx + C",
+            "y (I.F.) = integral of Q dx + C",
+            "y = integral of Q (I.F.) dx + C",
+            "y (I.F.) = integral of P (I.F.) dx + C"
+          ]
+        },
+        {
+          "b": "Remember",
+          "d": "Hard",
+          "t": "mcq",
+          "m": 1,
+          "q": "Which of the following is NOT a first order linear differential equation?",
+          "a": "dy/dx + y^2 = x",
+          "o": [
+            "dy/dx + y^2 = x",
+            "dy/dx + y = sin x",
+            "dy/dx + y/(x log x) = 1/x",
+            "dx/dy + x = cos y"
+          ],
+          "rev": true
+        },
+        {
+          "b": "Understand",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "The integrating factor of dy/dx - y = cos x is",
+          "a": "e^(-x)",
+          "o": [
+            "e^(-x)",
+            "e^x",
+            "e^(-y)",
+            "e^(cos x)"
+          ]
+        },
+        {
+          "b": "Understand",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "The integrating factor of the differential equation x dy/dx - y = 2x^2 is",
+          "a": "1/x",
+          "o": [
+            "1/x",
+            "e^(-x)",
+            "e^(-y)",
+            "x"
+          ]
+        },
+        {
+          "b": "Understand",
+          "d": "Easy",
+          "t": "short_answer",
+          "m": 2,
+          "q": "Find the integrating factor of cos^2 x (dy/dx) + y = tan x (0 <= x < pi/2).",
+          "a": "Dividing by cos^2 x: dy/dx + (sec^2 x) y = sec^2 x tan x, so P = sec^2 x. I.F. = e^(integral of sec^2 x dx) = e^(tan x).",
+          "s": [
+            [
+              "Divides by cos^2 x to get P = sec^2 x",
+              1
+            ],
+            [
+              "I.F. = e^(tan x)",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Understand",
+          "d": "Hard",
+          "t": "mcq",
+          "m": 1,
+          "q": "Writing y dx - (x + 2y^2) dy = 0 as dx/dy + P1 x = Q1, the integrating factor is",
+          "a": "1/y",
+          "o": [
+            "1/y",
+            "y",
+            "e^(-y)",
+            "1/x"
+          ]
+        },
+        {
+          "b": "Understand",
+          "d": "Hard",
+          "t": "mcq",
+          "m": 1,
+          "q": "The general solution of a differential equation of the type dx/dy + P1 x = Q1 is",
+          "a": "x e^(integral of P1 dy) = integral of Q1 e^(integral of P1 dy) dy + C",
+          "o": [
+            "x e^(integral of P1 dy) = integral of Q1 e^(integral of P1 dy) dy + C",
+            "y e^(integral of P1 dy) = integral of Q1 e^(integral of P1 dy) dy + C",
+            "y e^(integral of P1 dx) = integral of Q1 e^(integral of P1 dx) dx + C",
+            "x e^(integral of P1 dx) = integral of Q1 e^(integral of P1 dx) dx + C"
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Easy",
+          "t": "fill_blank",
+          "m": 1,
+          "q": "The integrating factor of dy/dx + (sec x) y = tan x (0 <= x < pi/2) is ____.",
+          "a": "sec x + tan x"
+        },
+        {
+          "b": "Apply",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "The integrating factor of (1 - y^2) dx/dy + yx = ay (-1 < y < 1) is",
+          "a": "1/sqrt(1 - y^2)",
+          "o": [
+            "1/sqrt(1 - y^2)",
+            "1/(1 - y^2)",
+            "1/sqrt(y^2 - 1)",
+            "1/(y^2 - 1)"
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Hard",
+          "t": "mcq",
+          "m": 1,
+          "q": "The general solution of dy/dx + 2y = sin x is",
+          "a": "y = (2 sin x - cos x)/5 + C e^(-2x)",
+          "o": [
+            "y = (2 sin x - cos x)/5 + C e^(-2x)",
+            "y = (2 sin x + cos x)/5 + C e^(-2x)",
+            "y = (2 sin x - cos x)/5 + C e^(2x)",
+            "y = (sin x - 2 cos x)/5 + C e^(-2x)"
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Hard",
+          "t": "mcq",
+          "m": 1,
+          "q": "The curve through the origin whose tangent at any point (x, y) has slope equal to the sum of the coordinates of the point is",
+          "a": "y = e^x - x - 1",
+          "o": [
+            "y = e^x - x - 1",
+            "y = e^x + x - 1",
+            "y = e^(-x) + x - 1",
+            "y = x^2/2"
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Hard",
+          "t": "short_answer",
+          "m": 2,
+          "q": "Find the general solution of dy/dx + 3y = e^(-2x).",
+          "a": "P = 3, so I.F. = e^(3x). Then y e^(3x) = integral of e^(-2x) e^(3x) dx = integral of e^x dx = e^x + C. So y = e^(-2x) + C e^(-3x).",
+          "s": [
+            [
+              "I.F. = e^(3x)",
+              1
+            ],
+            [
+              "y e^(3x) = e^x + C, so y = e^(-2x) + C e^(-3x)",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Hardest",
+          "t": "long_answer",
+          "m": 3,
+          "q": "Find the particular solution of dy/dx + y cot x = 4x cosec x (x not 0), given that y = 0 when x = pi/2.",
+          "a": "P = cot x, so I.F. = e^(integral of cot x dx) = e^(log sin x) = sin x. Then y sin x = integral of 4x cosec x sin x dx = integral of 4x dx = 2x^2 + C. At x = pi/2, y = 0: 0 = 2(pi^2/4) + C, so C = -pi^2/2. Hence y sin x = 2x^2 - pi^2/2.",
+          "s": [
+            [
+              "I.F. = sin x",
+              1
+            ],
+            [
+              "y sin x = 2x^2 + C",
+              1
+            ],
+            [
+              "Uses y = 0 at x = pi/2 to get C = -pi^2/2: y sin x = 2x^2 - pi^2/2",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Analyse",
+          "d": "Hard",
+          "t": "assertion_reason",
+          "m": 1,
+          "q": "Assertion (A): The integrating factor of dy/dx + (2/x) y = x (x > 0) is x^2. Reason (R): The integrating factor of dy/dx + Py = Q is e^(integral of Q dx).",
+          "a": "A is true, R is false",
+          "o": [
+            "A is true, R is false",
+            "Both A and R are true, and R is the correct explanation of A",
+            "Both A and R are true, but R is not the correct explanation of A",
+            "A is false, R is true"
+          ]
+        },
+        {
+          "b": "Analyse",
+          "d": "Hard",
+          "t": "multi_statement",
+          "m": 1,
+          "q": "Consider these statements. (I) dy/dx + y^2 = x is a first order linear differential equation. (II) dx/dy - x/y = 2y is a first order linear differential equation of the type dx/dy + P1 x = Q1 with P1 = -1/y. Which is or are correct?",
+          "a": "Only II",
+          "o": [
+            "Only II",
+            "Only I",
+            "Both I and II",
+            "Neither I nor II"
+          ]
+        },
+        {
+          "b": "Analyse",
+          "d": "Hardest",
+          "t": "long_answer",
+          "m": 3,
+          "q": "Find the general solution of y dx + (x - y^2) dy = 0 (y > 0), first deciding whether to treat it as linear in y or in x.",
+          "a": "As dy/dx = y/(y^2 - x) it is not linear in y, but dx/dy = (y^2 - x)/y gives dx/dy + x/y = y, which is linear in x with P1 = 1/y, Q1 = y. I.F. = e^(integral of dy/y) = e^(log y) = y. Then xy = integral of y . y dy = y^3/3 + C, so x = y^2/3 + C/y.",
+          "s": [
+            [
+              "Recognises the equation is linear in x: dx/dy + x/y = y",
+              1
+            ],
+            [
+              "I.F. = y",
+              1
+            ],
+            [
+              "xy = y^3/3 + C, i.e. x = y^2/3 + C/y",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Evaluate",
+          "d": "Hard",
+          "t": "short_answer",
+          "m": 2,
+          "q": "For x dy/dx + 2y = x^2 (x not 0), a student takes P = 2 and uses the integrating factor e^(2x). Evaluate this.",
+          "a": "This is wrong. The standard form needs the coefficient of dy/dx to be 1, so divide by x: dy/dx + (2/x) y = x. Then P = 2/x and I.F. = e^(2 log x) = x^2, not e^(2x).",
+          "s": [
+            [
+              "Points out the equation must first be divided by x to reach dy/dx + Py = Q",
+              1
+            ],
+            [
+              "Gives the correct P = 2/x and I.F. = x^2",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Create",
+          "d": "Hardest",
+          "t": "long_answer",
+          "m": 3,
+          "q": "Construct a first order linear differential equation dy/dx + Py = Q whose integrating factor is x (x > 0) and which has y = x as a solution. Verify by solving it.",
+          "a": "I.F. = x needs e^(integral of P dx) = x, so P = 1/x. For y = x to satisfy dy/dx + y/x = Q we need 1 + 1 = Q, so Q = 2. The equation is dy/dx + y/x = 2. Solving: xy = integral of 2x dx = x^2 + C, so y = x + C/x; C = 0 gives y = x.",
+          "s": [
+            [
+              "Chooses P = 1/x so that the I.F. is x",
+              1
+            ],
+            [
+              "Finds Q = 2 so that y = x satisfies the equation",
+              1
+            ],
+            [
+              "Solves to y = x + C/x and recovers y = x with C = 0",
+              1
+            ]
+          ]
+        }
+      ]
+    }
+  ]
+}

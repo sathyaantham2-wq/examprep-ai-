@@ -1,0 +1,1693 @@
+{
+ "subject": {
+  "code": "MATH11",
+  "name": "Mathematics",
+  "board": "CBSE",
+  "class": 11
+ },
+ "source": {
+  "publisher": "NCERT",
+  "title": "Mathematics",
+  "edition": "Textbook for Class XI, Reprint 2026-27",
+  "year": 2026
+ },
+ "chapter": {
+  "part": "I",
+  "chapter_no": 4,
+  "name": "Complex Numbers and Quadratic Equations",
+  "blurb": "This chapter extends the real numbers by introducing i = sqrt(-1), so that equations such as x^2 + 1 = 0 gain solutions, and defines a complex number a + ib with its real and imaginary parts. It develops the algebra of complex numbers -- addition, subtraction, multiplication, division, powers of i and square roots of negative reals -- together with the modulus, the conjugate and the multiplicative inverse. It closes by picturing complex numbers as points of the Argand plane.",
+  "source_code": "kemh104",
+  "order_index": 4
+ },
+ "depth": 20,
+ "scope_in": [
+  {
+   "item": "Explain why x^2 + 1 = 0 has no real solution and why the real number system is extended using i = sqrt(-1), with i^2 = -1",
+   "pages": "76"
+  },
+  {
+   "item": "Recognise a complex number a + ib (a, b real) and read off its real part Re z and imaginary part Im z",
+   "pages": "76"
+  },
+  {
+   "item": "Use equality of complex numbers (equal real parts and equal imaginary parts) to find real unknowns",
+   "pages": "76-77, 86"
+  },
+  {
+   "item": "Add and subtract complex numbers; state the closure, commutative and associative laws, the additive identity 0 + i0 and the additive inverse -z",
+   "pages": "77"
+  },
+  {
+   "item": "Multiply complex numbers using (ac - bd) + i(ad + bc); state the closure, commutative, associative and distributive laws and the multiplicative identity 1 + i0",
+   "pages": "78"
+  },
+  {
+   "item": "Use the identities for (z1 + z2)^2, (z1 - z2)^2, (z1 + z2)^3, (z1 - z2)^3 and z1^2 - z2^2 to express powers and products in the form a + ib",
+   "pages": "80-83"
+  },
+  {
+   "item": "Evaluate integer powers of i, positive and negative, using i^4k = 1, i^(4k+1) = i, i^(4k+2) = -1, i^(4k+3) = -i",
+   "pages": "79, 82, 85-87"
+  },
+  {
+   "item": "Give the square roots of a negative real number, use sqrt(-a) = sqrt(a) i for a > 0, and know that sqrt(a) sqrt(b) = sqrt(ab) fails when a and b are both negative",
+   "pages": "79-81"
+  },
+  {
+   "item": "Find the modulus |z| = sqrt(a^2 + b^2) and the conjugate a - ib of a complex number, and use the stated results on modulus and conjugate of products, quotients and sums",
+   "pages": "81, 85-86"
+  },
+  {
+   "item": "Find the multiplicative inverse of a non-zero complex number as (conjugate of z)/|z|^2, and divide complex numbers to reach the form a + ib",
+   "pages": "78-79, 81-83, 85-86"
+  },
+  {
+   "item": "Represent a complex number x + iy as the point (x, y) of the Argand plane, name the real and imaginary axes, and read the modulus as distance from the origin",
+   "pages": "83-84"
+  },
+  {
+   "item": "Locate the conjugate of z in the Argand plane as the mirror image of z in the real axis",
+   "pages": "84"
+  }
+ ],
+ "scope_out": [
+  {
+   "item": "Polar representation r(cos theta + i sin theta) of a complex number",
+   "reason": "Section 4.5 is still titled 'Argand Plane and Polar Representation' (p. 83) but in this rationalised edition it contains only the Argand plane; no polar form is taught"
+  },
+  {
+   "item": "Argument (amplitude) and principal argument of a complex number",
+   "reason": "Not in this edition; the word 'argument' does not occur in the chapter and no exercise asks for it"
+  },
+  {
+   "item": "Solving quadratic equations ax^2 + bx + c = 0 with D < 0 (complex roots), and the quadratic formula with the square root of a negative discriminant",
+   "reason": "The title and the introduction (p. 76) mention it as motivation only; the 'Quadratic Equations' section and its exercise are deleted from this edition (the chapter has only Exercise 4.1 and the Miscellaneous Exercise)"
+  },
+  {
+   "item": "Square root of a general complex number a + ib",
+   "reason": "Not in this edition; only square roots of negative real numbers are taught (pp. 79-80)"
+  },
+  {
+   "item": "De Moivre's theorem, Euler's form e^(i theta), and cube roots of unity (omega)",
+   "reason": "Never part of this book; a model would pull these in from competitive-exam syllabi"
+  },
+  {
+   "item": "The triangle inequality |z1 + z2| <= |z1| + |z2| as a result to be stated or applied",
+   "reason": "Not among the modulus results listed on p. 81 (the bank uses the false equality |z1 + z2| = |z1| + |z2| only as a wrong statement)"
+  },
+  {
+   "item": "Loci and regions in the Argand plane (e.g. |z - a| = r as a circle), and geometric (parallelogram) addition of complex numbers",
+   "reason": "Section 4.5 only plots points, names the axes and relates z to its conjugate (pp. 83-84)"
+  },
+  {
+   "item": "Fundamental theorem of algebra and the number of roots of a polynomial equation",
+   "reason": "Appears only in the Historical Note (p. 88), which is not examinable"
+  },
+  {
+   "item": "Historical facts about Mahavira, Bhaskara, Cardan, Girard, Euler and Hamilton",
+   "reason": "Historical Note (pp. 87-88), not examinable content"
+  }
+ ],
+ "concepts": [
+  {
+   "code": "C11M-4.1",
+   "name": "Complex numbers: i, real and imaginary parts, equality",
+   "description": "The need for i = sqrt(-1), the form a + ib, Re z and Im z, and equality of two complex numbers used to find real unknowns.",
+   "idea": "No real number has square -1, so a new number i with i^2 = -1 is introduced. Every complex number is a + ib with a and b real.",
+   "rule": "For z = a + ib, Re z = a and Im z = b (a real number, not ib). a + ib = c + id if a = c and b = d.",
+   "example": "If 4x + i(3x - y) = 3 + i(-6), then 4x = 3 and 3x - y = -6, so x = 3/4 and y = 33/4.",
+   "difficulty_base": "Easy",
+   "questions": [
+    {
+     "b": "Remember",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "A complex number is a number of the form a + ib, where",
+     "a": "a and b are real numbers",
+     "o": [
+      "a and b are real numbers",
+      "a is a real number and b is itself an imaginary number",
+      "a and b are integers only",
+      "a and b are real numbers and b is never 0"
+     ]
+    },
+    {
+     "b": "Remember",
+     "d": "Easy",
+     "t": "fill_blank",
+     "m": 1,
+     "q": "If z = 2 + 5i, then Im z = ____. (Write a single number.)",
+     "a": "5"
+    },
+    {
+     "b": "Remember",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "The symbol i denotes sqrt(-1). The value of i^2 is",
+     "a": "-1",
+     "o": [
+      "-1",
+      "1",
+      "i",
+      "-i"
+     ]
+    },
+    {
+     "b": "Remember",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "q": "Which of the following statements about the complex number z = a + ib (a and b real) is NOT correct?",
+     "a": "The imaginary part of z is ib",
+     "o": [
+      "The imaginary part of z is ib",
+      "The real part of z is a",
+      "z = c + id (c and d real) if a = c and b = d",
+      "i is a solution of the equation x^2 + 1 = 0"
+     ],
+     "rev": true
+    },
+    {
+     "b": "Understand",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "Why does the equation x^2 + 1 = 0 have no real solution?",
+     "a": "Because the square of every real number is non-negative, so x^2 cannot be -1",
+     "o": [
+      "Because the square of every real number is non-negative, so x^2 cannot be -1",
+      "Because its discriminant is equal to zero",
+      "Because it is a linear equation, not a quadratic equation",
+      "Because 1 has no square root among the real numbers"
+     ]
+    },
+    {
+     "b": "Understand",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "The real number -7, written as the complex number -7 + 0i, has",
+     "a": "Re z = -7 and Im z = 0",
+     "o": [
+      "Re z = -7 and Im z = 0",
+      "Re z = 0 and Im z = -7",
+      "Re z = -7 and no imaginary part defined",
+      "Re z = 7 and Im z = 0"
+     ]
+    },
+    {
+     "b": "Understand",
+     "d": "Easy",
+     "t": "short_answer",
+     "m": 2,
+     "q": "Explain why 3 + 2i and 2 + 3i are not equal complex numbers, although both are built from the numbers 2 and 3.",
+     "a": "Two complex numbers a + ib and c + id are equal only if a = c and b = d. Here the real parts are 3 and 2 (not equal) and the imaginary parts are 2 and 3 (not equal), so the numbers are not equal.",
+     "s": [
+      [
+       "States that equality needs equal real parts and equal imaginary parts",
+       1
+      ],
+      [
+       "Compares Re: 3 and 2 (and Im: 2 and 3) and concludes they are not equal",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Understand",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "q": "The real part and the imaginary part of z = 5i - 3 are, respectively,",
+     "a": "-3 and 5",
+     "o": [
+      "-3 and 5",
+      "5 and -3",
+      "-3 and 5i",
+      "3 and 5"
+     ]
+    },
+    {
+     "b": "Understand",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "q": "If a + ib = 0, where a and b are real numbers, then",
+     "a": "a = 0 and b = 0",
+     "o": [
+      "a = 0 and b = 0",
+      "a = -b, and a need not be 0",
+      "a = 0, while b can be any real number",
+      "b = 0, while a can be any real number"
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Easy",
+     "t": "fill_blank",
+     "m": 1,
+     "q": "If 2x + i(x - y) = 6 + 5i, where x and y are real numbers, then y = ____. (Write an integer.)",
+     "a": "-2"
+    },
+    {
+     "b": "Apply",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "If (x + 1) + i(y - 3) = 4 + 2i, where x and y are real numbers, then",
+     "a": "x = 3 and y = 5",
+     "o": [
+      "x = 3 and y = 5",
+      "x = 5 and y = -1",
+      "x = 3 and y = -1",
+      "x = 1 and y = 7"
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "q": "If 4x + i(3x - y) = 3 + i(-6), where x and y are real numbers, then y equals",
+     "a": "33/4",
+     "o": [
+      "33/4",
+      "-15/4",
+      "15/4",
+      "3/4"
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "q": "Real numbers x and y satisfy (x + y) + i(x - y) = 7 + 3i. Then (x, y) is",
+     "a": "(5, 2)",
+     "o": [
+      "(5, 2)",
+      "(2, 5)",
+      "(7, 3)",
+      "(10, 4)"
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "q": "Find the real numbers x and y for which (3x - 7) + 2iy = -5y + (5 + x)i.",
+     "a": "Equating real parts: 3x - 7 = -5y. Equating imaginary parts: 2y = 5 + x, so x = 2y - 5. Substituting: 3(2y - 5) - 7 = -5y, so 11y = 22, y = 2 and x = -1.",
+     "s": [
+      [
+       "Equates real and imaginary parts: 3x - 7 = -5y and 2y = 5 + x",
+       1
+      ],
+      [
+       "Solves to get x = -1 and y = 2",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hardest",
+     "t": "long_answer",
+     "m": 3,
+     "q": "Find the real numbers x and y such that (x + 2y) + i(2x - 3y) = 5 - 4i, and verify your answer by substitution.",
+     "a": "Equating real parts: x + 2y = 5. Equating imaginary parts: 2x - 3y = -4. From the first, x = 5 - 2y; then 2(5 - 2y) - 3y = -4 gives 7y = 14, so y = 2 and x = 1. Check: x + 2y = 1 + 4 = 5 and 2x - 3y = 2 - 6 = -4, so the left side is 5 - 4i.",
+     "s": [
+      [
+       "Equates real and imaginary parts to get x + 2y = 5 and 2x - 3y = -4",
+       1
+      ],
+      [
+       "Solves the pair to get x = 1 and y = 2",
+       1
+      ],
+      [
+       "Substitutes back and confirms the left side equals 5 - 4i",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "assertion_reason",
+     "m": 1,
+     "q": "Assertion (A): If x and y are real numbers and (x - 2) + i(y + 1) = 0, then x = 2 and y = -1. Reason (R): Two complex numbers a + ib and c + id are equal if a = c and b = d.",
+     "a": "Both A and R are true, and R is the correct explanation of A",
+     "o": [
+      "Both A and R are true, and R is the correct explanation of A",
+      "Both A and R are true, but R is not the correct explanation of A",
+      "A is true, R is false",
+      "A is false, R is true"
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "multi_statement",
+     "m": 1,
+     "q": "Consider these statements. (I) For z = 3 - 2i, Im z = -2i. (II) Every real number a can be written as the complex number a + i0. Which is or are correct?",
+     "a": "Only II",
+     "o": [
+      "Only II",
+      "Only I",
+      "Both I and II",
+      "Neither I nor II"
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hardest",
+     "t": "long_answer",
+     "m": 3,
+     "q": "For real numbers x and y, the complex numbers z1 = (x^2 - 3x) + i(y + 2) and z2 = -2 + 5i are equal. Find all possible pairs (x, y) and explain why there is more than one pair.",
+     "a": "Equal complex numbers have equal real parts and equal imaginary parts. Real parts: x^2 - 3x = -2, so x^2 - 3x + 2 = 0, (x - 1)(x - 2) = 0, x = 1 or x = 2. Imaginary parts: y + 2 = 5, so y = 3. The pairs are (1, 3) and (2, 3). There are two pairs because the real-part condition is a quadratic equation in x with two real roots, while the imaginary-part condition fixes y uniquely.",
+     "s": [
+      [
+       "Equates parts: x^2 - 3x = -2 and y + 2 = 5",
+       1
+      ],
+      [
+       "Solves to get x = 1 or 2, and y = 3; pairs (1, 3) and (2, 3)",
+       1
+      ],
+      [
+       "Explains that the real-part equation is quadratic with two roots while y is fixed",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Evaluate",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "q": "Arjun says: 'In z = 6 - 2i the imaginary part is -2i, because that is the part containing i.' Evaluate his statement.",
+     "a": "He is wrong. For z = a + ib the imaginary part Im z is the real number b, the coefficient of i, not the term ib. Here z = 6 + i(-2), so Im z = -2 (and Re z = 6).",
+     "s": [
+      [
+       "States that Im z is the real coefficient b of i, not the term ib",
+       1
+      ],
+      [
+       "Gives the correct value Im z = -2",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Create",
+     "d": "Hardest",
+     "t": "long_answer",
+     "m": 3,
+     "q": "Construct two different complex numbers z1 and z2, neither of them a real number, that have the same real part 4 and whose imaginary parts add up to 0. State Re and Im of each, and explain why z1 and z2 are not equal.",
+     "a": "For example z1 = 4 + 3i and z2 = 4 - 3i. Re z1 = 4, Im z1 = 3; Re z2 = 4, Im z2 = -3; and 3 + (-3) = 0. Neither is real because each imaginary part is non-zero. They are not equal because equality needs equal real parts and equal imaginary parts, and 3 is not equal to -3. (Any pair 4 + bi and 4 - bi with b non-zero earns full marks.)",
+     "s": [
+      [
+       "Gives a valid pair of the form 4 + bi and 4 - bi with b non-zero",
+       1
+      ],
+      [
+       "States Re and Im of each correctly and shows the imaginary parts add to 0",
+       1
+      ],
+      [
+       "Explains inequality using the definition of equality (imaginary parts differ)",
+       1
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "code": "C11M-4.2",
+   "name": "Addition, subtraction and multiplication of complex numbers",
+   "description": "Sum, difference and product of complex numbers, the laws they obey (closure, commutative, associative, distributive, identities, additive inverse) and the algebraic identities.",
+   "idea": "Complex numbers are added part by part and multiplied like binomials, replacing i^2 by -1.",
+   "rule": "(a + ib) + (c + id) = (a + c) + i(b + d). (a + ib)(c + id) = (ac - bd) + i(ad + bc). The usual identities such as (z1 + z2)^2 = z1^2 + 2 z1 z2 + z2^2 hold.",
+   "example": "(3 + 5i)(2 + 6i) = (6 - 30) + i(18 + 10) = -24 + 28i.",
+   "difficulty_base": "Easy",
+   "questions": [
+    {
+     "b": "Remember",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "For z1 = a + ib and z2 = c + id, the product z1 z2 is defined as",
+     "a": "(ac - bd) + i(ad + bc)",
+     "o": [
+      "(ac - bd) + i(ad + bc)",
+      "(ac + bd) + i(ad + bc)",
+      "ac + i(bd)",
+      "(ac - bd) + i(ad - bc)"
+     ]
+    },
+    {
+     "b": "Remember",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "The additive identity for complex numbers is",
+     "a": "0 + i0",
+     "o": [
+      "0 + i0",
+      "1 + i0",
+      "0 + i1",
+      "1 + i1"
+     ]
+    },
+    {
+     "b": "Remember",
+     "d": "Easy",
+     "t": "fill_blank",
+     "m": 1,
+     "q": "(2 + 3i) + (-6 + 5i) = -4 + ki. The value of k is ____. (Write a single number.)",
+     "a": "8"
+    },
+    {
+     "b": "Remember",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "q": "Which of the following statements about multiplication of complex numbers is NOT true?",
+     "a": "The multiplicative identity is 0 + i1",
+     "o": [
+      "The multiplicative identity is 0 + i1",
+      "z1 z2 = z2 z1 for all complex numbers z1 and z2",
+      "(z1 z2) z3 = z1 (z2 z3) for all complex numbers z1, z2 and z3",
+      "z1 (z2 + z3) = z1 z2 + z1 z3 for all complex numbers z1, z2 and z3"
+     ],
+     "rev": true
+    },
+    {
+     "b": "Understand",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "The additive inverse of z = 3 - 4i is",
+     "a": "-3 + 4i",
+     "o": [
+      "-3 + 4i",
+      "3 + 4i",
+      "-3 - 4i",
+      "3/25 + (4/25)i"
+     ]
+    },
+    {
+     "b": "Understand",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "(6 + 3i) - (2 - i) equals",
+     "a": "4 + 4i",
+     "o": [
+      "4 + 4i",
+      "4 + 2i",
+      "8 + 2i",
+      "-4 - 4i"
+     ]
+    },
+    {
+     "b": "Understand",
+     "d": "Easy",
+     "t": "short_answer",
+     "m": 2,
+     "q": "Explain, using i^2 = -1, why the product (a + ib)(c + id) has real part ac - bd and not ac + bd.",
+     "a": "Expanding, (a + ib)(c + id) = ac + i(ad) + i(bc) + i^2 (bd). Since i^2 = -1, the last term is -bd, which is real. So the real part is ac - bd and the imaginary part is ad + bc.",
+     "s": [
+      [
+       "Expands the product to ac + i ad + i bc + i^2 bd",
+       1
+      ],
+      [
+       "Uses i^2 = -1 to turn i^2 bd into -bd, giving real part ac - bd",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Understand",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "q": "The product (2 + 3i)(2 - 3i) is",
+     "a": "13",
+     "o": [
+      "13",
+      "-5",
+      "4 - 9i",
+      "-5 - 12i"
+     ]
+    },
+    {
+     "b": "Understand",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "q": "In proving (z1 + z2)^2 = z1^2 + 2 z1 z2 + z2^2, which law justifies the step (z1 + z2) z1 + (z1 + z2) z2 = z1^2 + z2 z1 + z1 z2 + z2^2?",
+     "a": "The distributive law",
+     "o": [
+      "The distributive law",
+      "The commutative law of multiplication",
+      "The associative law of addition",
+      "The existence of the multiplicative identity"
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "(3 + 5i)(2 + 6i) equals",
+     "a": "-24 + 28i",
+     "o": [
+      "-24 + 28i",
+      "36 + 28i",
+      "6 + 30i",
+      "-24 + 8i"
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Easy",
+     "t": "fill_blank",
+     "m": 1,
+     "q": "(1 - i) - (-1 + 6i) = 2 + ki. The value of k is ____. (Write an integer.)",
+     "a": "-7"
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "q": "(5 - 3i)^3 expressed in the form a + ib is",
+     "a": "-10 - 198i",
+     "o": [
+      "-10 - 198i",
+      "260 - 252i",
+      "-10 - 252i",
+      "125 - 27i"
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "q": "3(7 + 7i) + i(7 + 7i) equals",
+     "a": "14 + 28i",
+     "o": [
+      "14 + 28i",
+      "28 + 28i",
+      "14 + 21i",
+      "21 + 28i"
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "q": "Express (1 - i)^4 in the form a + ib.",
+     "a": "(1 - i)^2 = 1 - 2i + i^2 = 1 - 2i - 1 = -2i. So (1 - i)^4 = (-2i)^2 = 4 i^2 = -4. In the form a + ib this is -4 + 0i.",
+     "s": [
+      [
+       "Finds (1 - i)^2 = -2i",
+       1
+      ],
+      [
+       "Squares again to get -4, i.e. -4 + 0i",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hardest",
+     "t": "long_answer",
+     "m": 3,
+     "q": "Express (1/3 + 3i)^3 in the form a + ib.",
+     "a": "Using (z1 + z2)^3 = z1^3 + 3 z1^2 z2 + 3 z1 z2^2 + z2^3: (1/3)^3 + 3 (1/3)^2 (3i) + 3 (1/3) (3i)^2 + (3i)^3 = 1/27 + i + 9 i^2 + 27 i^3. Since i^2 = -1 and i^3 = -i this is 1/27 + i - 9 - 27i = -242/27 - 26i.",
+     "s": [
+      [
+       "Expands with the cube identity: 1/27 + i + 9 i^2 + 27 i^3",
+       1
+      ],
+      [
+       "Uses i^2 = -1 and i^3 = -i: 1/27 + i - 9 - 27i",
+       1
+      ],
+      [
+       "Collects to -242/27 - 26i",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "assertion_reason",
+     "m": 1,
+     "q": "Assertion (A): (3 + 2i)(3 - 2i) is a real number. Reason (R): Multiplication of complex numbers is commutative: z1 z2 = z2 z1.",
+     "a": "Both A and R are true, but R is not the correct explanation of A",
+     "o": [
+      "Both A and R are true, but R is not the correct explanation of A",
+      "Both A and R are true, and R is the correct explanation of A",
+      "A is true, R is false",
+      "A is false, R is true"
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "multi_statement",
+     "m": 1,
+     "q": "Consider these statements. (I) (1 + i)^2 = 2i. (II) (1 + i)(1 - i) = 0. Which is or are correct?",
+     "a": "Only I",
+     "o": [
+      "Only I",
+      "Only II",
+      "Both I and II",
+      "Neither I nor II"
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hardest",
+     "t": "long_answer",
+     "m": 3,
+     "q": "For z1 = 2 + i, z2 = 1 - 3i and z3 = -1 + 2i, verify the distributive law z1 (z2 + z3) = z1 z2 + z1 z3 by working out each side separately.",
+     "a": "Left side: z2 + z3 = 0 - i = -i, so z1 (z2 + z3) = (2 + i)(-i) = -2i - i^2 = 1 - 2i. Right side: z1 z2 = (2 + i)(1 - 3i) = 2 - 6i + i - 3 i^2 = 5 - 5i; z1 z3 = (2 + i)(-1 + 2i) = -2 + 4i - i + 2 i^2 = -4 + 3i; their sum is 1 - 2i. Both sides equal 1 - 2i, so the law is verified.",
+     "s": [
+      [
+       "Left side: z2 + z3 = -i and z1 (z2 + z3) = 1 - 2i",
+       1
+      ],
+      [
+       "Right side products: z1 z2 = 5 - 5i and z1 z3 = -4 + 3i",
+       1
+      ],
+      [
+       "Adds to get 1 - 2i and concludes both sides agree",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Evaluate",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "q": "Meera writes: (4 + 3i)(4 - 3i) = 16 - 9 = 7. Evaluate her working.",
+     "a": "She is wrong. (4 + 3i)(4 - 3i) = 16 - (3i)^2 = 16 - 9 i^2 = 16 + 9 = 25, because i^2 = -1. She treated i^2 as 1 (subtracting 9 instead of adding it).",
+     "s": [
+      [
+       "Gives the correct product 25",
+       1
+      ],
+      [
+       "Identifies the error: i^2 was taken as 1 instead of -1",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Create",
+     "d": "Hardest",
+     "t": "long_answer",
+     "m": 3,
+     "q": "Construct two complex numbers, neither of them a real number, whose sum and whose product are both real numbers. Show the sum and the product in full.",
+     "a": "For example z1 = 2 + 3i and z2 = 2 - 3i. Sum: (2 + 2) + i(3 - 3) = 4, which is real. Product: (2 + 3i)(2 - 3i) = 4 - 9 i^2 = 4 + 9 = 13, which is real. Neither number is real because the imaginary parts 3 and -3 are non-zero. (Any pair a + bi and a - bi with b non-zero earns full marks.)",
+     "s": [
+      [
+       "Chooses a valid non-real pair, e.g. a + bi and a - bi with b non-zero",
+       1
+      ],
+      [
+       "Computes the sum correctly and shows it is real",
+       1
+      ],
+      [
+       "Computes the product correctly using i^2 = -1 and shows it is real",
+       1
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "code": "C11M-4.3",
+   "name": "Powers of i and square roots of negative real numbers",
+   "description": "Integer powers of i (positive and negative) through the cycle of four, the square roots of a negative real, and where sqrt(a) sqrt(b) = sqrt(ab) fails.",
+   "idea": "Powers of i repeat every four steps: i, -1, -i, 1. A negative real -a has two square roots, sqrt(a) i and -sqrt(a) i, and the symbol sqrt(-a) means sqrt(a) i only.",
+   "rule": "For any integer k: i^4k = 1, i^(4k+1) = i, i^(4k+2) = -1, i^(4k+3) = -i. sqrt(a) sqrt(b) = sqrt(ab) is not true when a and b are both negative.",
+   "example": "i^(-35) = 1/i^35 = 1/(-i) = i. sqrt(-2) sqrt(-3) = (sqrt(2) i)(sqrt(3) i) = -sqrt(6).",
+   "difficulty_base": "Hard",
+   "questions": [
+    {
+     "b": "Remember",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "For any integer k, i^(4k + 3) equals",
+     "a": "-i",
+     "o": [
+      "-i",
+      "i",
+      "-1",
+      "1"
+     ]
+    },
+    {
+     "b": "Remember",
+     "d": "Easy",
+     "t": "fill_blank",
+     "m": 1,
+     "q": "The value of i^4 is ____. (Write a single number.)",
+     "a": "1"
+    },
+    {
+     "b": "Remember",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "By the symbol sqrt(-1) we mean",
+     "a": "i only",
+     "o": [
+      "i only",
+      "-i only",
+      "both i and -i",
+      "-1"
+     ]
+    },
+    {
+     "b": "Remember",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "q": "Which of the following statements about powers of i is FALSE?",
+     "a": "i^6 = 1",
+     "o": [
+      "i^6 = 1",
+      "i^5 = i",
+      "i^(-1) = -i",
+      "i^(-4) = 1"
+     ],
+     "rev": true
+    },
+    {
+     "b": "Understand",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "The square roots of -3 are",
+     "a": "sqrt(3) i and -sqrt(3) i",
+     "o": [
+      "sqrt(3) i and -sqrt(3) i",
+      "sqrt(3) i only",
+      "sqrt(3) and -sqrt(3)",
+      "3i and -3i"
+     ]
+    },
+    {
+     "b": "Understand",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "i^(-1) equals -i because",
+     "a": "1/i = (1/i)(i/i) = i/i^2 = i/(-1) = -i",
+     "o": [
+      "1/i = (1/i)(i/i) = i/i^2 = i/(-1) = -i",
+      "a negative exponent always changes the sign of the number",
+      "1/i = i/i^2 = i/1 = i, and the sign is then reversed by convention",
+      "i^(-1) is defined to be the additive inverse of i"
+     ]
+    },
+    {
+     "b": "Understand",
+     "d": "Easy",
+     "t": "short_answer",
+     "m": 2,
+     "q": "Explain, using i^4 = 1, why i^9 = i.",
+     "a": "9 = 4 x 2 + 1, so i^9 = (i^4)^2 x i = 1^2 x i = i. In general i^(4k + 1) = i.",
+     "s": [
+      [
+       "Writes 9 = 4 x 2 + 1, i.e. i^9 = (i^4)^2 x i",
+       1
+      ],
+      [
+       "Uses i^4 = 1 to conclude i^9 = i",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Understand",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "q": "sqrt(-16) + sqrt(-9) equals",
+     "a": "7i",
+     "o": [
+      "7i",
+      "5i",
+      "-7",
+      "7"
+     ]
+    },
+    {
+     "b": "Understand",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "q": "The rule sqrt(a) sqrt(b) = sqrt(ab) does not hold when",
+     "a": "both a and b are negative real numbers",
+     "o": [
+      "both a and b are negative real numbers",
+      "a is positive and b is negative",
+      "a is negative and b is positive",
+      "either a or b is zero"
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "i^9 + i^19 equals",
+     "a": "0",
+     "o": [
+      "0",
+      "2i",
+      "-2i",
+      "2"
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Easy",
+     "t": "fill_blank",
+     "m": 1,
+     "q": "The value of i^102 is ____. (Write a single integer.)",
+     "a": "-1"
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "q": "i^(-39) expressed in the form a + ib is",
+     "a": "0 + i",
+     "o": [
+      "0 + i",
+      "0 - i",
+      "-1 + 0i",
+      "1 + 0i"
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "q": "sqrt(-2) sqrt(-3) equals",
+     "a": "-sqrt(6)",
+     "o": [
+      "-sqrt(6)",
+      "sqrt(6)",
+      "sqrt(6) i",
+      "-sqrt(6) i"
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "q": "Simplify i^7 + i^10 + i^(-3), giving a single number.",
+     "a": "i^7 = i^(4 + 3) = -i. i^10 = i^(8 + 2) = -1. i^(-3) = 1/i^3 = 1/(-i) = i (or i^(-3) = i^(-4 + 1) = i). Sum: -i - 1 + i = -1.",
+     "s": [
+      [
+       "Finds i^7 = -i, i^10 = -1 and i^(-3) = i",
+       1
+      ],
+      [
+       "Adds to get -1",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hardest",
+     "t": "long_answer",
+     "m": 3,
+     "q": "Evaluate [i^18 + (1/i)^25]^3, giving the answer in the form a + ib.",
+     "a": "i^18 = i^(16 + 2) = -1. 1/i = -i, so (1/i)^25 = (-i)^25 = -(i^25) = -i, since i^25 = i. The bracket is -1 - i = -(1 + i). (1 + i)^3 = 1 + 3i + 3 i^2 + i^3 = 1 + 3i - 3 - i = -2 + 2i. So the value is -(-2 + 2i) = 2 - 2i.",
+     "s": [
+      [
+       "Finds i^18 = -1 and (1/i)^25 = -i",
+       1
+      ],
+      [
+       "Expands (1 + i)^3 = -2 + 2i (or equivalent cube of -1 - i)",
+       1
+      ],
+      [
+       "Obtains 2 - 2i",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "assertion_reason",
+     "m": 1,
+     "q": "Assertion (A): sqrt(-4) sqrt(-9) = -6. Reason (R): sqrt(a) sqrt(b) = sqrt(ab) for all real numbers a and b.",
+     "a": "A is true, R is false",
+     "o": [
+      "A is true, R is false",
+      "Both A and R are true, and R is the correct explanation of A",
+      "Both A and R are true, but R is not the correct explanation of A",
+      "A is false, R is true"
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "multi_statement",
+     "m": 1,
+     "q": "Consider these statements. (I) i^(-2) = -1. (II) i^2022 = -1. Which is or are correct?",
+     "a": "Both I and II",
+     "o": [
+      "Both I and II",
+      "Only I",
+      "Only II",
+      "Neither I nor II"
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hardest",
+     "t": "long_answer",
+     "m": 3,
+     "q": "Show that i^n + i^(n + 1) + i^(n + 2) + i^(n + 3) = 0 for every integer n, and hence find the value of i + i^2 + i^3 + ... + i^10 in the form a + ib.",
+     "a": "i^n + i^(n + 1) + i^(n + 2) + i^(n + 3) = i^n (1 + i + i^2 + i^3) = i^n (1 + i - 1 - i) = 0. In i + i^2 + ... + i^10 the first four terms sum to 0 and the next four (i^5 to i^8) sum to 0, leaving i^9 + i^10 = i + (-1). So the value is -1 + i.",
+     "s": [
+      [
+       "Factors out i^n and shows 1 + i + i^2 + i^3 = 1 + i - 1 - i = 0",
+       1
+      ],
+      [
+       "Groups the ten terms so that the first eight sum to 0, leaving i^9 + i^10",
+       1
+      ],
+      [
+       "Uses i^9 = i and i^10 = -1 to get -1 + i",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Evaluate",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "q": "A student writes: i^2 = sqrt(-1) sqrt(-1) = sqrt((-1)(-1)) = sqrt(1) = 1. Evaluate this working.",
+     "a": "It is wrong: i^2 = -1, not 1. The faulty step is sqrt(-1) sqrt(-1) = sqrt((-1)(-1)). The rule sqrt(a) sqrt(b) = sqrt(ab) does not hold when both a and b are negative real numbers, and using it here contradicts i^2 = -1.",
+     "s": [
+      [
+       "States that i^2 = -1, so the conclusion 1 is wrong",
+       1
+      ],
+      [
+       "Identifies the invalid step: sqrt(a) sqrt(b) = sqrt(ab) fails when a and b are both negative",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Create",
+     "d": "Hardest",
+     "t": "long_answer",
+     "m": 3,
+     "q": "Write three different integers n, at least one of them negative, for which i^n = -i. Justify each one and state the general form of all such n.",
+     "a": "For example n = 3, n = 7 and n = -1. i^3 = i^2 x i = -i. i^7 = i^4 x i^3 = 1 x (-i) = -i. i^(-1) = 1/i = i/i^2 = -i. In general i^n = -i exactly when n = 4k + 3 for some integer k (k = 0, 1 and -1 give 3, 7 and -1). (Any three correct integers of the form 4k + 3 with one negative earn full marks.)",
+     "s": [
+      [
+       "Gives three valid integers of the form 4k + 3, at least one negative",
+       1
+      ],
+      [
+       "Justifies each using i^2 = -1, i^4 = 1 or 1/i = -i",
+       1
+      ],
+      [
+       "States the general form n = 4k + 3, k an integer",
+       1
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "code": "C11M-4.4",
+   "name": "Modulus, conjugate, multiplicative inverse and division",
+   "description": "The modulus sqrt(a^2 + b^2), the conjugate a - ib, their stated properties, the multiplicative inverse (conjugate of z)/|z|^2 and division of complex numbers.",
+   "idea": "The conjugate flips the sign of the imaginary part; z times its conjugate is the real number |z|^2, which is what lets us divide.",
+   "rule": "|z| = sqrt(a^2 + b^2). z x (conjugate of z) = |z|^2. 1/z = (conjugate of z)/|z|^2. z1/z2 = z1 x (1/z2), found by multiplying top and bottom by the conjugate of z2.",
+   "example": "For z = 2 - 3i: conjugate 2 + 3i, |z|^2 = 13, so 1/z = 2/13 + (3/13)i.",
+   "difficulty_base": "Hard",
+   "questions": [
+    {
+     "b": "Remember",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "For z = a + ib, the modulus |z| is defined as",
+     "a": "sqrt(a^2 + b^2)",
+     "o": [
+      "sqrt(a^2 + b^2)",
+      "a^2 + b^2",
+      "sqrt(a^2 - b^2)",
+      "a + b"
+     ]
+    },
+    {
+     "b": "Remember",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "The conjugate of the complex number z = a + ib is",
+     "a": "a - ib",
+     "o": [
+      "a - ib",
+      "-a + ib",
+      "-a - ib",
+      "b + ia"
+     ]
+    },
+    {
+     "b": "Remember",
+     "d": "Easy",
+     "t": "fill_blank",
+     "m": 1,
+     "q": "The modulus of 3 + 4i is ____. (Write a single number.)",
+     "a": "5"
+    },
+    {
+     "b": "Remember",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "q": "Which of the following results about the modulus and the conjugate of complex numbers is NOT correct?",
+     "a": "|z1 + z2| = |z1| + |z2| for all complex numbers z1 and z2",
+     "o": [
+      "|z1 + z2| = |z1| + |z2| for all complex numbers z1 and z2",
+      "|z1 z2| = |z1| |z2| for all complex numbers z1 and z2",
+      "The conjugate of z1 z2 is the product of the conjugates of z1 and z2",
+      "z multiplied by the conjugate of z equals |z|^2"
+     ],
+     "rev": true
+    },
+    {
+     "b": "Understand",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "The conjugate of -3i - 5 is",
+     "a": "3i - 5",
+     "o": [
+      "3i - 5",
+      "-3i + 5",
+      "3i + 5",
+      "-3i - 5"
+     ]
+    },
+    {
+     "b": "Understand",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "|2 - 5i| equals",
+     "a": "sqrt(29)",
+     "o": [
+      "sqrt(29)",
+      "sqrt(21)",
+      "29",
+      "7"
+     ]
+    },
+    {
+     "b": "Understand",
+     "d": "Easy",
+     "t": "short_answer",
+     "m": 2,
+     "q": "For z = a + ib, show that z multiplied by the conjugate of z equals |z|^2.",
+     "a": "The conjugate of z is a - ib. So z x (conjugate of z) = (a + ib)(a - ib) = a^2 - (ib)^2 = a^2 - i^2 b^2 = a^2 + b^2. Since |z| = sqrt(a^2 + b^2), this is |z|^2.",
+     "s": [
+      [
+       "Multiplies (a + ib)(a - ib) and uses i^2 = -1 to get a^2 + b^2",
+       1
+      ],
+      [
+       "Identifies a^2 + b^2 as |z|^2 from the definition of modulus",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Understand",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "q": "The multiplicative inverse of a non-zero complex number z can be written as",
+     "a": "(conjugate of z) / |z|^2",
+     "o": [
+      "(conjugate of z) / |z|^2",
+      "(conjugate of z) / |z|",
+      "z / |z|^2",
+      "the conjugate of z"
+     ]
+    },
+    {
+     "b": "Understand",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "q": "The multiplicative inverse of -i is",
+     "a": "i",
+     "o": [
+      "i",
+      "-i",
+      "1",
+      "-1"
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "The multiplicative inverse of 2 - 3i is",
+     "a": "2/13 + (3/13)i",
+     "o": [
+      "2/13 + (3/13)i",
+      "2/13 - (3/13)i",
+      "2 + 3i",
+      "-2/5 - (3/5)i"
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Easy",
+     "t": "fill_blank",
+     "m": 1,
+     "q": "If z = 1 + i, then z multiplied by the conjugate of z equals ____. (Write a single number.)",
+     "a": "2"
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "q": "(5 + sqrt(2) i) / (1 - sqrt(2) i) expressed in the form a + ib is",
+     "a": "1 + 2 sqrt(2) i",
+     "o": [
+      "1 + 2 sqrt(2) i",
+      "3 + 6 sqrt(2) i",
+      "-3 - 6 sqrt(2) i",
+      "7/3 + 2 sqrt(2) i"
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "q": "The multiplicative inverse of 4 - 3i is",
+     "a": "4/25 + (3/25)i",
+     "o": [
+      "4/25 + (3/25)i",
+      "4/25 - (3/25)i",
+      "4/7 + (3/7)i",
+      "4/5 + (3/5)i"
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "q": "Find the modulus of (1 + i)/(1 - i) - (1 - i)/(1 + i).",
+     "a": "(1 + i)/(1 - i) = (1 + i)^2 / ((1 - i)(1 + i)) = 2i/2 = i. (1 - i)/(1 + i) = (1 - i)^2 / 2 = -2i/2 = -i. The difference is i - (-i) = 2i, and |2i| = sqrt(0^2 + 2^2) = 2.",
+     "s": [
+      [
+       "Simplifies the two quotients to i and -i (difference 2i)",
+       1
+      ],
+      [
+       "Finds the modulus |2i| = 2",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hardest",
+     "t": "long_answer",
+     "m": 3,
+     "q": "Find the conjugate of (3 - 2i)(2 + 3i) / ((1 + 2i)(2 - i)), giving it in the form a + ib.",
+     "a": "Numerator: (3 - 2i)(2 + 3i) = 6 + 9i - 4i - 6 i^2 = 12 + 5i. Denominator: (1 + 2i)(2 - i) = 2 - i + 4i - 2 i^2 = 4 + 3i. Quotient: (12 + 5i)(4 - 3i) / ((4 + 3i)(4 - 3i)) = (48 - 36i + 20i + 15)/25 = (63 - 16i)/25. Its conjugate is 63/25 + (16/25)i.",
+     "s": [
+      [
+       "Simplifies numerator to 12 + 5i and denominator to 4 + 3i",
+       1
+      ],
+      [
+       "Multiplies by (4 - 3i)/(4 - 3i) to get 63/25 - (16/25)i",
+       1
+      ],
+      [
+       "Writes the conjugate 63/25 + (16/25)i",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "assertion_reason",
+     "m": 1,
+     "q": "Assertion (A): The multiplicative inverse of 3 + 4i is 3 - 4i. Reason (R): For a non-zero complex number z, z multiplied by the conjugate of z equals |z|^2.",
+     "a": "A is false, R is true",
+     "o": [
+      "A is false, R is true",
+      "Both A and R are true, and R is the correct explanation of A",
+      "Both A and R are true, but R is not the correct explanation of A",
+      "A is true, R is false"
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "multi_statement",
+     "m": 1,
+     "q": "Consider these statements. (I) |3 + 4i| = 7. (II) The conjugate of 2 - 5i is -2 + 5i. Which is or are correct?",
+     "a": "Neither I nor II",
+     "o": [
+      "Neither I nor II",
+      "Only I",
+      "Only II",
+      "Both I and II"
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hardest",
+     "t": "long_answer",
+     "m": 3,
+     "q": "If x + iy = (a + ib)/(a - ib), where a, b, x and y are real and a and b are not both zero, prove that x^2 + y^2 = 1.",
+     "a": "x + iy = (a + ib)(a + ib) / ((a - ib)(a + ib)) = (a^2 - b^2 + 2abi)/(a^2 + b^2), so x = (a^2 - b^2)/(a^2 + b^2) and y = 2ab/(a^2 + b^2). Then x^2 + y^2 = ((a^2 - b^2)^2 + 4 a^2 b^2)/(a^2 + b^2)^2 = (a^2 + b^2)^2/(a^2 + b^2)^2 = 1. (Alternatively: x^2 + y^2 = |x + iy|^2 = |a + ib|^2 / |a - ib|^2 = (a^2 + b^2)/(a^2 + b^2) = 1.)",
+     "s": [
+      [
+       "Multiplies numerator and denominator by a + ib (or takes the modulus of both sides)",
+       1
+      ],
+      [
+       "Identifies x = (a^2 - b^2)/(a^2 + b^2) and y = 2ab/(a^2 + b^2) (or |a + ib| = |a - ib|)",
+       1
+      ],
+      [
+       "Simplifies x^2 + y^2 to 1",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Evaluate",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "q": "Kiran claims that 1/(1 + i) = 1 - i 'because to invert a complex number you just take its conjugate'. Evaluate his claim.",
+     "a": "He is wrong. (1 + i)(1 - i) = 1 - i^2 = 2, not 1, so 1 - i is not the inverse. The inverse is (conjugate of z)/|z|^2 = (1 - i)/2 = 1/2 - (1/2)i. He forgot to divide the conjugate by |z|^2 = 2.",
+     "s": [
+      [
+       "Shows (1 + i)(1 - i) = 2, so the claim fails, and gives the correct inverse 1/2 - (1/2)i",
+       1
+      ],
+      [
+       "Identifies the error: the conjugate must be divided by |z|^2",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Create",
+     "d": "Hardest",
+     "t": "long_answer",
+     "m": 3,
+     "q": "Construct a complex number z, not a real number, whose real and imaginary parts are integers and whose modulus is 13. Write its conjugate and its multiplicative inverse, and verify that z multiplied by its inverse is 1.",
+     "a": "For example z = 5 + 12i: |z| = sqrt(25 + 144) = sqrt(169) = 13. Conjugate: 5 - 12i. Inverse: (conjugate of z)/|z|^2 = (5 - 12i)/169 = 5/169 - (12/169)i. Check: (5 + 12i)(5 - 12i)/169 = (25 + 144)/169 = 1. (Any correct choice such as 12 + 5i, -5 + 12i or 13i earns full marks.)",
+     "s": [
+      [
+       "Gives a valid non-real z with integer parts and shows |z| = 13",
+       1
+      ],
+      [
+       "Writes the conjugate and the inverse (conjugate of z)/169 correctly",
+       1
+      ],
+      [
+       "Verifies that z times its inverse equals 1",
+       1
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "code": "C11M-4.5",
+   "name": "The Argand plane",
+   "description": "Representing x + iy as the point (x, y), the real and imaginary axes, modulus as distance from the origin, and the conjugate as a mirror image in the real axis.",
+   "idea": "Each complex number x + iy is one point (x, y) of a plane, and each point is one complex number.",
+   "rule": "The x-axis is the real axis (numbers a + i0) and the y-axis is the imaginary axis (numbers 0 + ib). |x + iy| is the distance of (x, y) from the origin. The conjugate is the point (x, -y).",
+   "example": "-2 + 3i is the point (-2, 3); its conjugate -2 - 3i is the point (-2, -3), the mirror image in the real axis.",
+   "difficulty_base": "Easy",
+   "questions": [
+    {
+     "b": "Remember",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "The plane having a complex number assigned to each of its points is called the",
+     "a": "Argand plane",
+     "o": [
+      "Argand plane",
+      "real axis",
+      "imaginary axis",
+      "number line"
+     ]
+    },
+    {
+     "b": "Remember",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "In the Argand plane, the x-axis is called the",
+     "a": "real axis",
+     "o": [
+      "real axis",
+      "imaginary axis",
+      "conjugate axis",
+      "modulus axis"
+     ]
+    },
+    {
+     "b": "Remember",
+     "d": "Easy",
+     "t": "fill_blank",
+     "m": 1,
+     "q": "In the Argand plane the complex number 2 + 4i is represented by the point (2, k). The value of k is ____. (Write a single number.)",
+     "a": "4"
+    },
+    {
+     "b": "Remember",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "q": "Which of the following statements about the Argand plane is NOT correct?",
+     "a": "The point representing the conjugate of z is the mirror image of the point representing z in the imaginary axis",
+     "o": [
+      "The point representing the conjugate of z is the mirror image of the point representing z in the imaginary axis",
+      "Points on the x-axis correspond to complex numbers of the form a + i0",
+      "The y-axis is called the imaginary axis",
+      "The modulus of x + iy is the distance of the point (x, y) from the origin"
+     ],
+     "rev": true
+    },
+    {
+     "b": "Understand",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "In the Argand plane the complex number -5 - 2i is represented by the point",
+     "a": "(-5, -2)",
+     "o": [
+      "(-5, -2)",
+      "(-2, -5)",
+      "(5, 2)",
+      "(-5, 2)"
+     ]
+    },
+    {
+     "b": "Understand",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "In the Argand plane, the modulus of the complex number x + iy is",
+     "a": "the distance of the point P(x, y) from the origin",
+     "o": [
+      "the distance of the point P(x, y) from the origin",
+      "the distance of the point P(x, y) from the real axis",
+      "the distance of the point P(x, y) from the imaginary axis",
+      "the sum of the coordinates x and y"
+     ]
+    },
+    {
+     "b": "Understand",
+     "d": "Easy",
+     "t": "short_answer",
+     "m": 2,
+     "q": "State the points that represent 0 + 1i and 2 + 0i in the Argand plane, and name the axis on which each point lies.",
+     "a": "0 + 1i is the point (0, 1), which lies on the y-axis, the imaginary axis. 2 + 0i is the point (2, 0), which lies on the x-axis, the real axis.",
+     "s": [
+      [
+       "Gives (0, 1) on the imaginary axis for 0 + 1i",
+       1
+      ],
+      [
+       "Gives (2, 0) on the real axis for 2 + 0i",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Understand",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "q": "If z is represented in the Argand plane by the point P(3, -4), then the conjugate of z is represented by the point",
+     "a": "(3, 4)",
+     "o": [
+      "(3, 4)",
+      "(-3, -4)",
+      "(-3, 4)",
+      "(-4, 3)"
+     ]
+    },
+    {
+     "b": "Understand",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "q": "A complex number is represented by a point on the imaginary axis of the Argand plane, other than the origin. The number must be of the form",
+     "a": "0 + ib with b not equal to 0",
+     "o": [
+      "0 + ib with b not equal to 0",
+      "a + i0 with a not equal to 0",
+      "a + ia with a not equal to 0",
+      "a - ia with a not equal to 0"
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "The distance from the origin of the point representing 6 - 8i in the Argand plane is",
+     "a": "10",
+     "o": [
+      "10",
+      "100",
+      "14",
+      "2"
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Easy",
+     "t": "fill_blank",
+     "m": 1,
+     "q": "The conjugate of 1 - 2i is represented in the Argand plane by the point (1, k). The value of k is ____. (Write a single number.)",
+     "a": "2"
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "q": "Let z1 = 2 + 3i and z2 = 4 - i. In the Argand plane the point representing z1 + z2 is",
+     "a": "(6, 2)",
+     "o": [
+      "(6, 2)",
+      "(6, 4)",
+      "(-2, 4)",
+      "(8, -3)"
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "q": "In the Argand plane the point representing the product (1 + i)(2 + 3i) is",
+     "a": "(-1, 5)",
+     "o": [
+      "(-1, 5)",
+      "(5, 5)",
+      "(2, 3)",
+      "(3, 4)"
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "q": "The points A(2, 4) and E(-5, -2) of the Argand plane represent two complex numbers. Write the two numbers and decide which point is farther from the origin.",
+     "a": "A represents 2 + 4i and E represents -5 - 2i. |2 + 4i| = sqrt(4 + 16) = sqrt(20) and |-5 - 2i| = sqrt(25 + 4) = sqrt(29). Since sqrt(29) > sqrt(20), E is farther from the origin.",
+     "s": [
+      [
+       "Writes the numbers 2 + 4i and -5 - 2i",
+       1
+      ],
+      [
+       "Finds the moduli sqrt(20) and sqrt(29) and concludes E is farther",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hardest",
+     "t": "long_answer",
+     "m": 3,
+     "q": "In the Argand plane P represents z = 3 + 4i and Q represents the conjugate of z. Find the coordinates of P and Q, the distance of each from the origin, and the length PQ.",
+     "a": "P is (3, 4). The conjugate is 3 - 4i, so Q is (3, -4). OP = sqrt(9 + 16) = 5 and OQ = sqrt(9 + 16) = 5. P and Q have the same x-coordinate, so PQ = 4 - (-4) = 8.",
+     "s": [
+      [
+       "Gives P(3, 4) and Q(3, -4)",
+       1
+      ],
+      [
+       "Finds OP = OQ = 5",
+       1
+      ],
+      [
+       "Finds PQ = 8",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "assertion_reason",
+     "m": 1,
+     "q": "Assertion (A): In the Argand plane the point representing 0 + 5i lies on the imaginary axis. Reason (R): Points on the y-axis of the Argand plane correspond to complex numbers of the form a + i0.",
+     "a": "A is true, R is false",
+     "o": [
+      "A is true, R is false",
+      "Both A and R are true, and R is the correct explanation of A",
+      "Both A and R are true, but R is not the correct explanation of A",
+      "A is false, R is true"
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "multi_statement",
+     "m": 1,
+     "q": "Consider these statements. (I) The complex number 2 + 0i is represented by a point on the imaginary axis of the Argand plane. (II) The points representing -2 + 3i and its conjugate are at the same distance from the origin. Which is or are correct?",
+     "a": "Only II",
+     "o": [
+      "Only II",
+      "Only I",
+      "Both I and II",
+      "Neither I nor II"
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hardest",
+     "t": "long_answer",
+     "m": 3,
+     "q": "In the Argand plane F(1, -2) represents the complex number z. Let Q represent the conjugate of z and R represent z + (conjugate of z). Find Q and R, explain why R lies on the real axis, and find the distances of F and Q from the origin.",
+     "a": "z = 1 - 2i, so its conjugate is 1 + 2i and Q is (1, 2), the mirror image of F in the real axis. z + conjugate = (1 + 1) + i(-2 + 2) = 2 + 0i, so R is (2, 0). R lies on the real axis because the imaginary parts -2 and 2 cancel, leaving a number of the form a + i0. OF = sqrt(1 + 4) = sqrt(5) and OQ = sqrt(1 + 4) = sqrt(5).",
+     "s": [
+      [
+       "Finds Q(1, 2) as the point of the conjugate 1 + 2i",
+       1
+      ],
+      [
+       "Finds R(2, 0) and explains the imaginary parts cancel, giving the form a + i0",
+       1
+      ],
+      [
+       "Finds OF = OQ = sqrt(5)",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Evaluate",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "q": "Dev says: 'The conjugate of z is found by reflecting its point in the y-axis, so the conjugate of 2 + 3i is plotted at (-2, 3).' Evaluate his statement.",
+     "a": "He is wrong. The conjugate of 2 + 3i is 2 - 3i, plotted at (2, -3). The conjugate changes the sign of the imaginary part only, so its point (x, -y) is the mirror image of (x, y) in the real axis (x-axis), not the y-axis. He changed the sign of the real part.",
+     "s": [
+      [
+       "Gives the correct point (2, -3) for the conjugate 2 - 3i",
+       1
+      ],
+      [
+       "Identifies the error: reflection is in the real axis (sign of imaginary part changes), not the y-axis",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Create",
+     "d": "Hardest",
+     "t": "long_answer",
+     "m": 3,
+     "q": "Construct a complex number z with a negative real part, lying on neither axis of the Argand plane, whose point is at distance 5 from the origin. Give the points representing z and its conjugate and verify the distance.",
+     "a": "For example z = -3 + 4i, represented by (-3, 4). Its conjugate is -3 - 4i, represented by (-3, -4). Distance of (-3, 4) from the origin = sqrt(9 + 16) = sqrt(25) = 5. Neither coordinate is 0, so the point lies on neither axis. (Any correct choice, such as -4 + 3i or -3 - 4i, earns full marks.)",
+     "s": [
+      [
+       "Gives a valid z with negative real part and non-zero imaginary part",
+       1
+      ],
+      [
+       "States the points of z and of its conjugate correctly",
+       1
+      ],
+      [
+       "Verifies the distance sqrt(x^2 + y^2) = 5",
+       1
+      ]
+     ]
+    }
+   ]
+  }
+ ]
+}

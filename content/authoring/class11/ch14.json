@@ -1,0 +1,2280 @@
+{
+  "subject": {
+    "code": "MATH11",
+    "name": "Mathematics",
+    "board": "CBSE",
+    "class": 11
+  },
+  "source": {
+    "publisher": "NCERT",
+    "title": "Mathematics",
+    "edition": "Textbook for Class XI, Reprint 2026-27",
+    "year": 2026
+  },
+  "chapter": {
+    "part": "I",
+    "chapter_no": 14,
+    "name": "Probability",
+    "blurb": "This chapter treats an event as a subset of the sample space, classifies events (impossible, sure, simple, compound), combines them with 'not', 'or', 'and' and 'but not', and tests whether events are mutually exclusive and exhaustive. It then introduces the axiomatic approach to probability, the formula for equally likely outcomes, the addition rule P(A or B) = P(A) + P(B) - P(A and B) and the complement rule P(not A) = 1 - P(A).",
+    "source_code": "kemh114",
+    "order_index": 14
+  },
+  "scope_in": [
+    {
+      "item": "Define an event as any subset of the sample space and write the subset for an event described in words (coins tossed two or three times, one die, two dice as 36 ordered pairs), including 'exactly', 'at least' and 'at most' descriptions",
+      "pages": "289-291"
+    },
+    {
+      "item": "Decide whether an event has occurred for a given outcome (the outcome belongs to the event)",
+      "pages": "290"
+    },
+    {
+      "item": "Classify events as impossible (phi), sure (S), simple or elementary (one sample point) and compound (more than one sample point), and use the fact that n distinct sample points give exactly n simple events",
+      "pages": "290-291, 295"
+    },
+    {
+      "item": "Form the complementary event 'not A' = A' = S - A and the events 'A or B' (union), 'A and B' (intersection) and 'A but not B' = A - B = A and B', and list them for dice, coin and numbered-card experiments",
+      "pages": "291-292, 294-295"
+    },
+    {
+      "item": "Decide whether two events are mutually exclusive (cannot occur simultaneously, 'A and B' = phi), knowing that simple events are always mutually exclusive",
+      "pages": "292-295"
+    },
+    {
+      "item": "Decide whether events are exhaustive (their union is S, so at least one necessarily occurs) and whether a set of events is mutually exclusive and exhaustive",
+      "pages": "293-295"
+    },
+    {
+      "item": "State the three axioms of probability (P(E) >= 0, P(S) = 1, P(E or F) = P(E) + P(F) for mutually exclusive E and F), deduce P(phi) = 0, and know that P is a function from the power set of S to [0, 1]",
+      "pages": "295-296"
+    },
+    {
+      "item": "Check whether an assignment of probabilities to the outcomes of a finite sample space is valid (each between 0 and 1, sum equal to 1), including assignments in which the outcomes are not equally likely",
+      "pages": "296-298, 305-306"
+    },
+    {
+      "item": "Find P(A) as the sum of the probabilities of the sample points in A for a given assignment",
+      "pages": "296, 298-299, 311"
+    },
+    {
+      "item": "Use P(E) = n(E)/n(S) when outcomes are equally likely: coins, dice, a deck of 52 cards, discs or balls in a bag, letters of a word, people selected at random",
+      "pages": "299, 302-304, 306"
+    },
+    {
+      "item": "Find probabilities by counting arrangements with n! or P(n, r) and selections with C(n, r), as in the chapter's examples on committees, hands of cards, orders of visiting cities and finishing orders in a race",
+      "pages": "305, 307-311"
+    },
+    {
+      "item": "Use the addition rule P(A or B) = P(A) + P(B) - P(A and B), follow its derivation from axiom (iii), and use it to find any one of the four probabilities from the other three or to test whether given probabilities are consistently defined",
+      "pages": "299-301, 304, 307-308, 311"
+    },
+    {
+      "item": "Use P(A or B) = P(A) + P(B) for mutually exclusive events, and P(A but not B) = P(A) - P(A and B) for 'only one' problems",
+      "pages": "301, 304-305, 307-308"
+    },
+    {
+      "item": "Use the complement rule P(not A) = 1 - P(A), with De Morgan's law for 'neither A nor B' = 'not (A or B)' and with 'at least one' = 1 - P(none)",
+      "pages": "301-305, 307-308, 310-311"
+    },
+    {
+      "item": "Know the result P(A or B or C) = P(A) + P(B) + P(C) - P(A and B) - P(A and C) - P(B and C) + P(A and B and C) proved in Example 11",
+      "pages": "309-310"
+    }
+  ],
+  "scope_out": [
+    {
+      "item": "A separate treatment of random experiments, outcomes and the construction of sample spaces, including multi-stage experiments (toss a coin and then roll a die only if a head shows, draw until a given result appears)",
+      "reason": "This rationalised edition has no 'Random Experiments' section; the chapter opens at 14.1 Event with 'We have studied about random experiment and sample space' (p. 289) and simply uses the sample spaces of coins, dice and cards"
+    },
+    {
+      "item": "Conditional probability P(E|F) and reduced sample spaces",
+      "reason": "Not in this chapter; taught in Class 12 Chapter 13"
+    },
+    {
+      "item": "Independent events and the rule P(A and B) = P(A) x P(B)",
+      "reason": "Not in this chapter; taught in Class 12 Chapter 13. Here P(A and B) is always given or found by counting"
+    },
+    {
+      "item": "The multiplication theorem of probability and tree-diagram multiplication along branches for successive draws",
+      "reason": "Not in this chapter; taught in Class 12 Chapter 13. Draws of several objects are handled here only by counting selections with C(n, r) (pp. 305, 309-311)"
+    },
+    {
+      "item": "Theorem of total probability and Bayes' theorem",
+      "reason": "Not in this chapter; taught in Class 12 Chapter 13"
+    },
+    {
+      "item": "Random variables, probability distributions, mean or expectation, and Bernoulli trials or the binomial distribution",
+      "reason": "Not in this chapter (pp. 289-313); the nearest item is Exercise 14.2 Q7, which only lists amounts of money and their probabilities"
+    },
+    {
+      "item": "Statistical (relative-frequency, experimental) probability and the classical approach as separately named theories",
+      "reason": "The chapter mentions only that methods of assigning probability were 'studied in earlier classes' (p. 296) and teaches the axiomatic approach"
+    },
+    {
+      "item": "Odds in favour of and odds against an event",
+      "reason": "Not in this chapter (pp. 289-313)"
+    },
+    {
+      "item": "Infinite or continuous sample spaces and geometric probability (lengths, areas)",
+      "reason": "Every sample space in the chapter is finite (pp. 289-311)"
+    },
+    {
+      "item": "General inclusion-exclusion for more than three events, and derangement formulas",
+      "reason": "Only the two-event rule (pp. 299-301) and the three-event result of Example 11 (pp. 309-310) appear; Miscellaneous Exercise Q6 on three letters and envelopes is done by listing"
+    },
+    {
+      "item": "History of probability (Cardan, Pascal, Fermat, Kolmogorov)",
+      "reason": "Historical Note on p. 313 is background reading, not examinable"
+    }
+  ],
+  "concepts": [
+    {
+      "code": "C11M-14.1",
+      "name": "Events and types of events",
+      "description": "An event as a subset of the sample space, when an event is said to occur, and the impossible, sure, simple and compound events.",
+      "idea": "Every question about an experiment is a question about some set of outcomes, so an event is simply a subset of the sample space.",
+      "rule": "Any subset E of a sample space S is an event. E has occurred if the outcome of the experiment belongs to E. The empty set phi is the impossible event and S is the sure event. An event with only one sample point is a simple (elementary) event; an event with more than one sample point is a compound event. A sample space with n distinct elements has exactly n simple events.",
+      "example": "Tossing a coin twice, S = {HH, HT, TH, TT}: 'exactly one head' is the compound event {HT, TH}, 'exactly two tails' is the simple event {TT}, and 'more than two tails' is phi.",
+      "difficulty_base": "Easy",
+      "questions": [
+        {
+          "b": "Remember",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "In the axiomatic treatment of probability, an event associated with an experiment whose sample space is S is defined as",
+          "a": "any subset of S",
+          "o": [
+            "any subset of S",
+            "any single element of S",
+            "only a subset of S that has more than one element",
+            "only the set S itself"
+          ]
+        },
+        {
+          "b": "Remember",
+          "d": "Easy",
+          "t": "fill_blank",
+          "m": 1,
+          "q": "An event that has only one sample point of the sample space is called a simple or ____ event.",
+          "a": "elementary"
+        },
+        {
+          "b": "Remember",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "The whole sample space S, regarded as an event, is called the",
+          "a": "sure event",
+          "o": [
+            "sure event",
+            "impossible event",
+            "simple event",
+            "complementary event"
+          ]
+        },
+        {
+          "b": "Remember",
+          "d": "Hard",
+          "t": "mcq",
+          "m": 1,
+          "q": "A die is rolled once, so that S = {1, 2, 3, 4, 5, 6}. Which of the following is NOT a compound event?",
+          "a": "'a number greater than 5 appears'",
+          "o": [
+            "'a number greater than 5 appears'",
+            "'an even number appears'",
+            "'a number less than 3 appears'",
+            "'a prime number appears'"
+          ],
+          "rev": true
+        },
+        {
+          "b": "Understand",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "A coin is tossed two times, so that S = {HH, HT, TH, TT}. The event 'the number of tails is at least one' is the subset",
+          "a": "{HT, TH, TT}",
+          "o": [
+            "{HT, TH, TT}",
+            "{HT, TH}",
+            "{TT}",
+            "{HH, HT, TH}"
+          ]
+        },
+        {
+          "b": "Understand",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "A die is thrown once and E is the event 'a multiple of 3 appears'. The die shows 6. Which statement is correct?",
+          "a": "E has occurred, because 6 is an element of E",
+          "o": [
+            "E has occurred, because 6 is an element of E",
+            "E has not occurred, because 6 is not the only element of E",
+            "E has occurred only if 3 appears as well",
+            "E has not occurred, because E is a compound event"
+          ]
+        },
+        {
+          "b": "Understand",
+          "d": "Easy",
+          "t": "fill_blank",
+          "m": 1,
+          "q": "A coin is tossed three times and the results are recorded in order. The number of simple events of this sample space is ____.",
+          "a": "8"
+        },
+        {
+          "b": "Understand",
+          "d": "Hard",
+          "t": "mcq",
+          "m": 1,
+          "q": "A die is rolled once. Which term describes the event 'the number appearing is a multiple of 7'?",
+          "a": "impossible event",
+          "o": [
+            "impossible event",
+            "sure event",
+            "simple event",
+            "compound event"
+          ]
+        },
+        {
+          "b": "Understand",
+          "d": "Hard",
+          "t": "mcq",
+          "m": 1,
+          "q": "Two coins are tossed once, so that S = {HH, HT, TH, TT}. The event 'at most two tails appear' is the subset",
+          "a": "{HH, HT, TH, TT}",
+          "o": [
+            "{HH, HT, TH, TT}",
+            "{HT, TH, TT}",
+            "{TT}",
+            "{HH, HT, TH}"
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Easy",
+          "t": "fill_blank",
+          "m": 1,
+          "q": "A coin is tossed three times. The number of sample points in the event 'exactly two heads appear' is ____.",
+          "a": "3"
+        },
+        {
+          "b": "Apply",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "Two dice are thrown once and the sample space consists of the 36 ordered pairs (x, y). The event 'the sum of the two numbers is 4' is",
+          "a": "{(1, 3), (2, 2), (3, 1)}",
+          "o": [
+            "{(1, 3), (2, 2), (3, 1)}",
+            "{(1, 3), (2, 2)}",
+            "{(1, 3), (3, 1)}",
+            "{(1, 4), (2, 2), (4, 1)}"
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Hard",
+          "t": "mcq",
+          "m": 1,
+          "q": "A coin is tossed three times. How many sample points are there in the event 'at most one tail appears'?",
+          "a": "4",
+          "o": [
+            "4",
+            "3",
+            "1",
+            "7"
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Hard",
+          "t": "mcq",
+          "m": 1,
+          "q": "Two dice are thrown once and the ordered pair of numbers is recorded. How many sample points are there in the event 'the two numbers are equal'?",
+          "a": "6",
+          "o": [
+            "6",
+            "1",
+            "12",
+            "36"
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Hard",
+          "t": "short_answer",
+          "m": 2,
+          "q": "A die is thrown once, with S = {1, 2, 3, 4, 5, 6}. Write the subset of S for each of the events P: 'a number less than 7 appears' and Q: 'an even number greater than 4 appears', and name the type of each event.",
+          "a": "P = {1, 2, 3, 4, 5, 6} = S, so P is the sure event. Q = {6}, which has only one sample point, so Q is a simple (elementary) event.",
+          "s": [
+            [
+              "Writes P = {1, 2, 3, 4, 5, 6} = S and calls it the sure event",
+              1
+            ],
+            [
+              "Writes Q = {6} and calls it a simple (elementary) event",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Hardest",
+          "t": "long_answer",
+          "m": 3,
+          "q": "Three coins are tossed once. Let A be the event 'three heads show', B the event 'two heads and one tail show', C the event 'three tails show' and D the event 'a head shows on the first coin'. Write each event as a subset of the sample space and state which of them are simple and which are compound.",
+          "a": "S = {HHH, HHT, HTH, THH, HTT, THT, TTH, TTT}. A = {HHH}, B = {HHT, HTH, THH}, C = {TTT}, D = {HHH, HHT, HTH, HTT}. A and C each have only one sample point, so they are simple events. B has 3 sample points and D has 4, so B and D are compound events.",
+          "s": [
+            [
+              "Writes A = {HHH} and C = {TTT}",
+              1
+            ],
+            [
+              "Writes B = {HHT, HTH, THH} and D = {HHH, HHT, HTH, HTT}",
+              1
+            ],
+            [
+              "Classifies A and C as simple and B and D as compound, by the number of sample points",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Analyse",
+          "d": "Hard",
+          "t": "assertion_reason",
+          "m": 1,
+          "q": "Assertion (A): In the experiment of tossing a coin twice, the event 'the number of tails is more than two' is the empty set phi. Reason (R): In the experiment of tossing a coin twice, the event 'the number of tails is exactly two' is a simple event.",
+          "a": "Both A and R are true, but R is not the correct explanation of A",
+          "o": [
+            "Both A and R are true, but R is not the correct explanation of A",
+            "Both A and R are true, and R is the correct explanation of A",
+            "A is true, R is false",
+            "A is false, R is true"
+          ]
+        },
+        {
+          "b": "Analyse",
+          "d": "Hard",
+          "t": "multi_statement",
+          "m": 1,
+          "q": "Consider these statements. (I) When a die is rolled once, the event 'a number less than 2 appears' is a simple event. (II) When a die is rolled once, the event 'the number that turns up is odd or even' is a compound event with exactly two sample points. Which is or are correct?",
+          "a": "Only I",
+          "o": [
+            "Only I",
+            "Only II",
+            "Both I and II",
+            "Neither I nor II"
+          ]
+        },
+        {
+          "b": "Analyse",
+          "d": "Hardest",
+          "t": "long_answer",
+          "m": 3,
+          "q": "A coin is tossed three times. Consider the events E: 'exactly one head appears', F: 'at least one head appears' and G: 'at most one head appears'. Write the three subsets. Then identify the sample points that are in F but not in E, and those that are in G but not in E, and use them to explain how 'at least one' and 'at most one' differ from 'exactly one'.",
+          "a": "E = {HTT, THT, TTH}. F = {HTT, THT, TTH, HHT, HTH, THH, HHH}. G = {TTT, HTT, THT, TTH}. The points in F but not in E are HHT, HTH, THH and HHH: 'at least one head' also allows two or three heads. The only point in G but not in E is TTT: 'at most one head' also allows no head at all. So E is a subset of both F and G; 'at least one' adds the outcomes with more heads and 'at most one' adds the outcome with fewer heads.",
+          "s": [
+            [
+              "Writes E = {HTT, THT, TTH} and G = {TTT, HTT, THT, TTH}",
+              1
+            ],
+            [
+              "Writes F with its 7 sample points (every outcome except TTT)",
+              1
+            ],
+            [
+              "Identifies HHT, HTH, THH, HHH as the extra points of F and TTT as the extra point of G, and explains the difference",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Evaluate",
+          "d": "Hard",
+          "t": "short_answer",
+          "m": 2,
+          "q": "Ravi says that when a die is rolled once, 'a number less than 1 appears' is not an event at all, because it contains no outcome. Evaluate his claim.",
+          "a": "Ravi is wrong. An event is any subset of the sample space S = {1, 2, 3, 4, 5, 6}, and the empty set phi is a subset of S. The description 'a number less than 1 appears' corresponds to phi, so it is an event; it is called the impossible event because no outcome ensures its occurrence.",
+          "s": [
+            [
+              "States that an event is any subset of S and that phi is a subset of S",
+              1
+            ],
+            [
+              "Concludes that it is an event, namely the impossible event phi",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Create",
+          "d": "Hardest",
+          "t": "long_answer",
+          "m": 3,
+          "q": "For the experiment of rolling a die once, create four events described in words: one impossible event, one sure event, one simple event and one compound event. Write the subset of S = {1, 2, 3, 4, 5, 6} for each and justify its type.",
+          "a": "Sample answer. Impossible: 'a number greater than 6 appears' = phi, since no outcome satisfies it. Sure: 'a number less than 7 appears' = {1, 2, 3, 4, 5, 6} = S, since every outcome satisfies it. Simple: 'the number 5 appears' = {5}, which has only one sample point. Compound: 'an odd number appears' = {1, 3, 5}, which has more than one sample point. Any four correct events with correct subsets and reasons earn full marks.",
+          "s": [
+            [
+              "Gives an impossible event with subset phi and a sure event with subset S",
+              1
+            ],
+            [
+              "Gives a simple event with exactly one sample point",
+              1
+            ],
+            [
+              "Gives a compound event with more than one sample point, with all four types justified",
+              1
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "code": "C11M-14.2",
+      "name": "Algebra of events",
+      "description": "Combining events with set operations: the complementary event 'not A', and the events 'A or B', 'A and B' and 'A but not B'.",
+      "idea": "Events are sets, so new events are built from old ones with complement, union, intersection and difference.",
+      "rule": "'not A' = A' = S - A (the complementary event). 'A or B' is the union of A and B (either A or B or both). 'A and B' is the intersection of A and B. 'A but not B' = A - B, which is the same as 'A and B''.",
+      "example": "Rolling a die with A = 'a prime number' = {2, 3, 5} and B = 'an odd number' = {1, 3, 5}: 'A or B' = {1, 2, 3, 5}, 'A and B' = {3, 5}, 'A but not B' = {2}, 'not A' = {1, 4, 6}.",
+      "difficulty_base": "Easy",
+      "questions": [
+        {
+          "b": "Remember",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "For two events A and B of a sample space S, the event 'A or B' is represented by",
+          "a": "the union of the sets A and B",
+          "o": [
+            "the union of the sets A and B",
+            "the intersection of the sets A and B",
+            "the difference A - B",
+            "the complement of the set A"
+          ]
+        },
+        {
+          "b": "Remember",
+          "d": "Easy",
+          "t": "fill_blank",
+          "m": 1,
+          "q": "For an event A of a sample space S, the event 'not A', written A', is called the ____ event to A.",
+          "a": "complementary"
+        },
+        {
+          "b": "Remember",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "For two events A and B of a sample space S, the event 'A but not B' is represented by the set",
+          "a": "A - B",
+          "o": [
+            "A - B",
+            "B - A",
+            "S - A",
+            "S - B"
+          ]
+        },
+        {
+          "b": "Remember",
+          "d": "Hard",
+          "t": "mcq",
+          "m": 1,
+          "q": "For events A and B of a sample space S, which of the following is NOT a correct description of the event A'?",
+          "a": "the set of outcomes of S that are in A but not in B",
+          "o": [
+            "the set of outcomes of S that are in A but not in B",
+            "the set S - A",
+            "the event 'not A'",
+            "the set of outcomes of S that are not in A"
+          ],
+          "rev": true
+        },
+        {
+          "b": "Understand",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "A die is rolled once. A is the event 'an even number appears' and B is the event 'a number greater than 3 appears'. The event 'A and B' is",
+          "a": "{4, 6}",
+          "o": [
+            "{4, 6}",
+            "{2, 4, 5, 6}",
+            "{2}",
+            "{5}"
+          ]
+        },
+        {
+          "b": "Understand",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "A die is rolled once. A is the event 'a multiple of 3 appears' and B is the event 'a number less than 4 appears'. The event 'A or B' is",
+          "a": "{1, 2, 3, 6}",
+          "o": [
+            "{1, 2, 3, 6}",
+            "{3}",
+            "{1, 2, 6}",
+            "{6}"
+          ]
+        },
+        {
+          "b": "Understand",
+          "d": "Easy",
+          "t": "fill_blank",
+          "m": 1,
+          "q": "A die is rolled once and A is the event 'a number greater than 4 appears'. The number of sample points in the event 'not A' is ____.",
+          "a": "4"
+        },
+        {
+          "b": "Understand",
+          "d": "Hard",
+          "t": "mcq",
+          "m": 1,
+          "q": "For two events A and B, the event 'A but not B' can also be written as",
+          "a": "A and B'",
+          "o": [
+            "A and B'",
+            "A' and B",
+            "A or B'",
+            "A' or B"
+          ]
+        },
+        {
+          "b": "Understand",
+          "d": "Hard",
+          "t": "mcq",
+          "m": 1,
+          "q": "Three coins are tossed once and A is the event 'at least two heads appear'. The event 'not A' is",
+          "a": "{HTT, THT, TTH, TTT}",
+          "o": [
+            "{HTT, THT, TTH, TTT}",
+            "{TTT}",
+            "{HTT, THT, TTH}",
+            "{HHT, HTH, THH}"
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "A die is rolled once. A is the event 'a prime number appears' and B is the event 'an even number appears'. The event 'A but not B' is",
+          "a": "{3, 5}",
+          "o": [
+            "{3, 5}",
+            "{4, 6}",
+            "{2}",
+            "{2, 3, 4, 5, 6}"
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Easy",
+          "t": "fill_blank",
+          "m": 1,
+          "q": "A die is thrown twice. A is the event 'the score on the first throw is 5' and B is the event 'the sum of the two scores is at least 10'. The number of sample points in the event 'A and B' is ____.",
+          "a": "2"
+        },
+        {
+          "b": "Apply",
+          "d": "Hard",
+          "t": "mcq",
+          "m": 1,
+          "q": "Two dice are thrown once. B is the event 'an odd number appears on the first die' and C is the event 'the sum of the numbers on the dice is at most 4'. The event 'B and C' is",
+          "a": "{(1, 1), (1, 2), (1, 3), (3, 1)}",
+          "o": [
+            "{(1, 1), (1, 2), (1, 3), (3, 1)}",
+            "{(1, 1), (1, 2), (1, 3)}",
+            "{(1, 1), (1, 2), (1, 3), (3, 1), (3, 2)}",
+            "{(1, 1), (2, 1), (3, 1), (1, 3)}"
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Hard",
+          "t": "mcq",
+          "m": 1,
+          "q": "A die is thrown once. E is the event 'an even number greater than 4 appears' and F is the event 'a number not less than 3 appears'. The event 'E and F'' is",
+          "a": "phi",
+          "o": [
+            "phi",
+            "{6}",
+            "{1, 2}",
+            "{1, 2, 6}"
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Hard",
+          "t": "short_answer",
+          "m": 2,
+          "q": "A card is drawn from a box of ten cards numbered 1 to 10. A is the event 'the number is even' and B is the event 'the number is a multiple of 3'. Write the sets representing the events 'A or B' and 'A but not B'.",
+          "a": "A = {2, 4, 6, 8, 10} and B = {3, 6, 9}. 'A or B' is the union, {2, 3, 4, 6, 8, 9, 10}. 'A but not B' = A - B = {2, 4, 8, 10}, since 6 is the only element of A that is also in B.",
+          "s": [
+            [
+              "Writes 'A or B' = {2, 3, 4, 6, 8, 9, 10}",
+              1
+            ],
+            [
+              "Writes 'A but not B' = {2, 4, 8, 10}",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Hardest",
+          "t": "long_answer",
+          "m": 3,
+          "q": "Two dice are thrown once. A is the event 'an even number appears on the first die', B is the event 'an odd number appears on the first die' and C is the event 'the sum of the numbers on the dice is at most 5'. Describe as sets the events (i) 'A and B', (ii) 'B and C', (iii) 'A and B' and C''.",
+          "a": "(i) No number is both even and odd, so 'A and B' = phi. (ii) 'B and C' needs an odd first number and a sum of at most 5: {(1, 1), (1, 2), (1, 3), (1, 4), (3, 1), (3, 2)}. (iii) B' = A, so 'A and B' and C'' is 'A and C'': the outcomes with an even first number whose sum is more than 5. From the 18 outcomes of A remove (2, 1), (2, 2), (2, 3) and (4, 1), leaving the 14 outcomes {(2, 4), (2, 5), (2, 6), (4, 2), (4, 3), (4, 4), (4, 5), (4, 6), (6, 1), (6, 2), (6, 3), (6, 4), (6, 5), (6, 6)}.",
+          "s": [
+            [
+              "States 'A and B' = phi with the reason",
+              1
+            ],
+            [
+              "Lists 'B and C' = {(1, 1), (1, 2), (1, 3), (1, 4), (3, 1), (3, 2)}",
+              1
+            ],
+            [
+              "Uses B' = A and lists the 14 outcomes of A whose sum is more than 5",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Analyse",
+          "d": "Hard",
+          "t": "assertion_reason",
+          "m": 1,
+          "q": "Assertion (A): A die is rolled once, A is the event 'a number less than 5 appears' and B is the event 'an odd number appears'. Then the event 'A but not B' is {2, 4}. Reason (R): The event 'A but not B' consists of those outcomes that belong to A and do not belong to B.",
+          "a": "Both A and R are true, and R is the correct explanation of A",
+          "o": [
+            "Both A and R are true, and R is the correct explanation of A",
+            "Both A and R are true, but R is not the correct explanation of A",
+            "A is true, R is false",
+            "A is false, R is true"
+          ]
+        },
+        {
+          "b": "Analyse",
+          "d": "Hard",
+          "t": "multi_statement",
+          "m": 1,
+          "q": "Consider these statements. (I) For any event A of a sample space S, the event 'A or A'' is the whole sample space S. (II) A card is drawn from eight cards numbered 1 to 8; if A = {1, 2, 3, 4} and B = {3, 4, 5}, then the event 'A and B' has exactly 2 sample points. Which is or are correct?",
+          "a": "Both I and II",
+          "o": [
+            "Both I and II",
+            "Only I",
+            "Only II",
+            "Neither I nor II"
+          ]
+        },
+        {
+          "b": "Analyse",
+          "d": "Hardest",
+          "t": "long_answer",
+          "m": 3,
+          "q": "Three coins are tossed once. A is the event 'exactly two heads appear' and B is the event 'the first coin shows a head'. Write the sets A, B, 'A and B' and 'A or B'. Then compare the number of sample points in 'A or B' with n(A) + n(B) and explain the difference.",
+          "a": "A = {HHT, HTH, THH} and B = {HHH, HHT, HTH, HTT}. 'A and B' = {HHT, HTH}. 'A or B' = {HHH, HHT, HTH, HTT, THH}. So n(A or B) = 5, while n(A) + n(B) = 3 + 4 = 7. The difference is 2 because the two common points HHT and HTH are counted once in A and again in B; removing the double count gives 7 - 2 = 5.",
+          "s": [
+            [
+              "Writes A = {HHT, HTH, THH} and B = {HHH, HHT, HTH, HTT}",
+              1
+            ],
+            [
+              "Writes 'A and B' = {HHT, HTH} and 'A or B' = {HHH, HHT, HTH, HTT, THH}",
+              1
+            ],
+            [
+              "Compares 5 with 3 + 4 = 7 and explains that the 2 common points are counted twice",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Evaluate",
+          "d": "Hard",
+          "t": "short_answer",
+          "m": 2,
+          "q": "Meena says that for two events A and B the event 'A or B' contains only those outcomes that lie in exactly one of A and B. Using A = {1, 2, 3} and B = {3, 4} for a die rolled once, evaluate her statement.",
+          "a": "Meena is wrong. 'A or B' means 'either A or B or both', i.e. the union of A and B. Here 'A or B' = {1, 2, 3, 4}, which includes the outcome 3 that lies in both A and B. Her rule would give {1, 2, 4} and wrongly leave out 3.",
+          "s": [
+            [
+              "States that 'A or B' is the union and includes the outcomes common to both",
+              1
+            ],
+            [
+              "Gives 'A or B' = {1, 2, 3, 4}, including 3",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Create",
+          "d": "Hardest",
+          "t": "long_answer",
+          "m": 3,
+          "q": "For the experiment of rolling a die once, create two events A and B, described in words, such that 'A and B' has exactly one sample point and 'A but not B' has exactly two sample points. Write the sets A, B, 'A and B', 'A but not B' and 'A or B'.",
+          "a": "Sample answer. Let A be 'an odd number appears' = {1, 3, 5} and B be 'a number greater than 4 appears' = {5, 6}. Then 'A and B' = {5}, which has one sample point; 'A but not B' = {1, 3}, which has two sample points; and 'A or B' = {1, 3, 5, 6}. Any pair of events meeting both conditions, with all five sets written correctly, earns full marks.",
+          "s": [
+            [
+              "Describes two events in words and writes A and B correctly as subsets of S",
+              1
+            ],
+            [
+              "Shows 'A and B' has exactly one sample point and 'A but not B' exactly two",
+              1
+            ],
+            [
+              "Writes 'A or B' correctly as the union",
+              1
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "code": "C11M-14.3",
+      "name": "Mutually exclusive and exhaustive events",
+      "description": "Deciding whether events are mutually exclusive (disjoint), exhaustive (their union is S), both or neither.",
+      "idea": "Mutually exclusive events cannot happen together; exhaustive events leave no outcome uncovered. The two properties are separate and must be tested separately.",
+      "rule": "A and B are mutually exclusive if they cannot occur simultaneously, i.e. 'A and B' = phi. Events E1, E2, ..., En are exhaustive if their union is S, i.e. at least one of them necessarily occurs whenever the experiment is performed. If in addition they are pairwise disjoint they are mutually exclusive and exhaustive. Simple events of a sample space are always mutually exclusive.",
+      "example": "Tossing a coin three times: A = 'no head' = {TTT}, B = 'exactly one head' = {HTT, THT, TTH}, C = 'at least two heads' = {HHT, HTH, THH, HHH} are pairwise disjoint and their union is S, so they are mutually exclusive and exhaustive.",
+      "difficulty_base": "Hard",
+      "questions": [
+        {
+          "b": "Remember",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "Two events A and B of a sample space S are called mutually exclusive if",
+          "a": "'A and B' = phi",
+          "o": [
+            "'A and B' = phi",
+            "'A or B' = S",
+            "'A and B' = S",
+            "'A or B' = phi"
+          ]
+        },
+        {
+          "b": "Remember",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "If the events E1, E2, ..., En of a sample space are exhaustive, then whenever the experiment is performed",
+          "a": "at least one of them necessarily occurs",
+          "o": [
+            "at least one of them necessarily occurs",
+            "at most one of them can occur",
+            "none of them can occur",
+            "all of them necessarily occur"
+          ]
+        },
+        {
+          "b": "Remember",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "Simple events of a sample space are always",
+          "a": "mutually exclusive",
+          "o": [
+            "mutually exclusive",
+            "equally likely",
+            "compound",
+            "impossible"
+          ]
+        },
+        {
+          "b": "Remember",
+          "d": "Hard",
+          "t": "mcq",
+          "m": 1,
+          "q": "A die is rolled once. Which of the following pairs of events is NOT mutually exclusive?",
+          "a": "'an odd number appears' and 'a number less than 4 appears'",
+          "o": [
+            "'an odd number appears' and 'a number less than 4 appears'",
+            "'an odd number appears' and 'an even number appears'",
+            "'a number less than 3 appears' and 'a number greater than 4 appears'",
+            "'the number 4 appears' and 'a prime number appears'"
+          ],
+          "rev": true
+        },
+        {
+          "b": "Understand",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "A die is rolled once. Let E be the event 'the die shows 4' and F the event 'the die shows an even number'. Are E and F mutually exclusive?",
+          "a": "No, because the outcome 4 belongs to both E and F",
+          "o": [
+            "No, because the outcome 4 belongs to both E and F",
+            "Yes, because E is a simple event and F is a compound event",
+            "Yes, because E and F are different sets",
+            "No, because 'E or F' is not the whole sample space"
+          ]
+        },
+        {
+          "b": "Understand",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "A die is rolled once. A is 'a number less than 3 appears', B is 'one of the numbers 2, 3, 4 appears' and C is 'a number greater than 4 appears'. The events A, B and C are",
+          "a": "exhaustive but not mutually exclusive",
+          "o": [
+            "exhaustive but not mutually exclusive",
+            "mutually exclusive but not exhaustive",
+            "both mutually exclusive and exhaustive",
+            "neither mutually exclusive nor exhaustive"
+          ]
+        },
+        {
+          "b": "Understand",
+          "d": "Easy",
+          "t": "fill_blank",
+          "m": 1,
+          "q": "A card is drawn from ten cards numbered 1 to 10. A is the event 'the number is less than 4' and B is the event 'the number is greater than 6'. If A, B and C are mutually exclusive and exhaustive events, the number of sample points in C is ____.",
+          "a": "3"
+        },
+        {
+          "b": "Understand",
+          "d": "Hard",
+          "t": "mcq",
+          "m": 1,
+          "q": "Two dice are thrown and the sum of the numbers is noted. P is the event 'the sum is less than 5', Q is 'the sum is greater than 9' and R is 'the sum is a multiple of 4'. Which pairs of these events are mutually exclusive?",
+          "a": "P and Q only",
+          "o": [
+            "P and Q only",
+            "P and R only",
+            "Q and R only",
+            "all three pairs"
+          ]
+        },
+        {
+          "b": "Understand",
+          "d": "Hard",
+          "t": "mcq",
+          "m": 1,
+          "q": "Three coins are tossed once. A is the event 'three heads show', B is 'two heads and one tail show', C is 'three tails show' and D is 'a head shows on the first coin'. Among A, B and C, the event D is mutually exclusive with",
+          "a": "C only",
+          "o": [
+            "C only",
+            "A only",
+            "B and C only",
+            "each of A, B and C"
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "Three coins are tossed once. Which of the following is a pair of mutually exclusive events?",
+          "a": "'at least two heads appear' and 'at least two tails appear'",
+          "o": [
+            "'at least two heads appear' and 'at least two tails appear'",
+            "'at least one head appears' and 'at least one tail appears'",
+            "'exactly two heads appear' and 'the first coin shows a head'",
+            "'at most two heads appear' and 'at most two tails appear'"
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Easy",
+          "t": "fill_blank",
+          "m": 1,
+          "q": "A die is rolled once. A = {1, 2} and B = {3, 4, 5}. The events A, B and C are mutually exclusive and exhaustive, and C is a simple event. The one number in C is ____.",
+          "a": "6"
+        },
+        {
+          "b": "Apply",
+          "d": "Hard",
+          "t": "mcq",
+          "m": 1,
+          "q": "Two dice are thrown and the sum of the numbers is noted. A is the event 'the sum is even', B is 'the sum is odd' and C is 'the sum is a multiple of 5'. Which statement is true?",
+          "a": "A and B are mutually exclusive and exhaustive",
+          "o": [
+            "A and B are mutually exclusive and exhaustive",
+            "A and C are mutually exclusive",
+            "B and C are mutually exclusive",
+            "A, B and C are mutually exclusive and exhaustive"
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Hard",
+          "t": "mcq",
+          "m": 1,
+          "q": "A pair of dice is rolled. A is the event 'the sum is greater than 8', B is '2 occurs on either die' and C is 'the sum is at least 7 and a multiple of 3'. Which pairs of these events are mutually exclusive?",
+          "a": "(A, B) and (B, C)",
+          "o": [
+            "(A, B) and (B, C)",
+            "(A, B) only",
+            "(A, C) only",
+            "(A, C) and (B, C)"
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Hard",
+          "t": "short_answer",
+          "m": 2,
+          "q": "A die is rolled once. A is the event 'a number less than 3 appears', B is 'a multiple of 3 appears' and C is 'the number 4 or 5 appears'. Do A, B and C form a set of mutually exclusive and exhaustive events? Justify.",
+          "a": "A = {1, 2}, B = {3, 6}, C = {4, 5}. No two of these sets have a common element, so the events are pairwise disjoint, i.e. mutually exclusive. Their union is {1, 2, 3, 4, 5, 6} = S, so they are exhaustive. Hence A, B and C are mutually exclusive and exhaustive.",
+          "s": [
+            [
+              "Writes the three sets and shows they are pairwise disjoint (mutually exclusive)",
+              1
+            ],
+            [
+              "Shows the union is S (exhaustive) and concludes yes",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Hardest",
+          "t": "long_answer",
+          "m": 3,
+          "q": "Two dice are thrown. A is the event 'an even number appears on the first die', B is 'an odd number appears on the first die' and C is 'the sum of the numbers on the dice is at most 5'. State whether each statement is true or false, with a reason: (i) A = B', (ii) A and B' are mutually exclusive, (iii) A', B' and C are mutually exclusive and exhaustive.",
+          "a": "(i) True: the first die shows either an even or an odd number, so the outcomes not in B are exactly those in A. (ii) False: B' = A, so 'A and B'' = A, which is not phi. (iii) False: A' = B and B' = A, and C has outcomes in common with both, for example (1, 1) is in both B and C and (2, 1) is in both A and C, so the three events are not mutually exclusive (although their union is S).",
+          "s": [
+            [
+              "(i) True, with the reason that A consists of exactly the outcomes not in B",
+              1
+            ],
+            [
+              "(ii) False, because B' = A and so their intersection is A, not phi",
+              1
+            ],
+            [
+              "(iii) False, with an outcome such as (1, 1) or (2, 1) shown to be common to C and one of A', B'",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Analyse",
+          "d": "Hard",
+          "t": "assertion_reason",
+          "m": 1,
+          "q": "Assertion (A): When a die is rolled once, the events 'a number less than 4 appears' and 'a number greater than 2 appears' are mutually exclusive. Reason (R): When a die is rolled once, the events 'a number less than 4 appears' and 'a number greater than 2 appears' are exhaustive.",
+          "a": "A is false, R is true",
+          "o": [
+            "A is false, R is true",
+            "Both A and R are true, and R is the correct explanation of A",
+            "Both A and R are true, but R is not the correct explanation of A",
+            "A is true, R is false"
+          ]
+        },
+        {
+          "b": "Analyse",
+          "d": "Hard",
+          "t": "multi_statement",
+          "m": 1,
+          "q": "Consider these statements. (I) If two events of a sample space are exhaustive, then they must also be mutually exclusive. (II) For a coin tossed twice, the three events {HH}, {HT, TH} and {TT} are mutually exclusive and exhaustive. Which is or are correct?",
+          "a": "Only II",
+          "o": [
+            "Only II",
+            "Only I",
+            "Both I and II",
+            "Neither I nor II"
+          ]
+        },
+        {
+          "b": "Analyse",
+          "d": "Hardest",
+          "t": "long_answer",
+          "m": 3,
+          "q": "A card is drawn from twelve cards numbered 1 to 12. A is the event 'the number is a multiple of 2', B is 'the number is a multiple of 3' and C is 'the number is neither a multiple of 2 nor a multiple of 3'. Analyse whether A, B and C are (i) exhaustive, (ii) mutually exclusive. If they are not both, suggest a change to B alone that makes the three events mutually exclusive and exhaustive.",
+          "a": "A = {2, 4, 6, 8, 10, 12}, B = {3, 6, 9, 12}, C = {1, 5, 7, 11}. (i) The union of A, B and C is {1, 2, ..., 12} = S, so they are exhaustive. (ii) 'A and B' = {6, 12}, which is not phi, so they are not mutually exclusive (C is disjoint from both A and B). Changing B to 'the number is an odd multiple of 3' = {3, 9} removes the overlap with A and still leaves the union equal to S, so A, the new B and C are mutually exclusive and exhaustive.",
+          "s": [
+            [
+              "Writes the three sets and shows their union is S (exhaustive)",
+              1
+            ],
+            [
+              "Finds 'A and B' = {6, 12}, so the events are not mutually exclusive",
+              1
+            ],
+            [
+              "Changes B to {3, 9} (or an equivalent description) and checks both properties",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Evaluate",
+          "d": "Hard",
+          "t": "short_answer",
+          "m": 2,
+          "q": "A coin is tossed twice. Sara claims that the events 'at least one head appears' and 'at least one tail appears' are mutually exclusive and exhaustive, because between them they cover every outcome. Evaluate her claim.",
+          "a": "Sara is only half right. 'At least one head' = {HH, HT, TH} and 'at least one tail' = {HT, TH, TT}. Their union is {HH, HT, TH, TT} = S, so they are exhaustive. But HT and TH belong to both, so their intersection is not phi and they are not mutually exclusive. Covering every outcome shows only that events are exhaustive.",
+          "s": [
+            [
+              "Shows the union is S, so the events are exhaustive",
+              1
+            ],
+            [
+              "Shows HT and TH are common, so the events are not mutually exclusive, and rejects the claim",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Create",
+          "d": "Hardest",
+          "t": "long_answer",
+          "m": 3,
+          "q": "For the experiment of tossing three coins once, create (i) two events that are mutually exclusive but not exhaustive, (ii) three events that are mutually exclusive and exhaustive, (iii) two events that are not mutually exclusive. Describe each event in words, write its subset, and justify.",
+          "a": "Sample answer. (i) 'three heads' = {HHH} and 'three tails' = {TTT}: no common outcome, but their union is not S. (ii) 'no tail' = {HHH}, 'exactly one tail' = {HHT, HTH, THH} and 'at least two tails' = {HTT, THT, TTH, TTT}: pairwise disjoint with union S. (iii) 'at least two heads' = {HHH, HHT, HTH, THH} and 'the first coin shows a head' = {HHH, HHT, HTH, HTT}: HHH, HHT and HTH are common. Any correct events with subsets and reasons earn full marks.",
+          "s": [
+            [
+              "Gives two disjoint events whose union is not S",
+              1
+            ],
+            [
+              "Gives three pairwise disjoint events whose union is S",
+              1
+            ],
+            [
+              "Gives two events with a common sample point, naming it",
+              1
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "code": "C11M-14.4",
+      "name": "Axiomatic approach and the probability of an event",
+      "description": "The three axioms of probability, valid assignments of probabilities to outcomes, and P(A) as the sum of the probabilities of the sample points in A.",
+      "idea": "Probability is a function on events that obeys three rules; any assignment of numbers to the outcomes that respects them is a valid probability model, whether or not the outcomes are equally likely.",
+      "rule": "Axioms: (i) P(E) >= 0 for any event E, (ii) P(S) = 1, (iii) if E and F are mutually exclusive then P(E or F) = P(E) + P(F). It follows that P(phi) = 0. For S = {w1, w2, ..., wn}: 0 <= P(wi) <= 1 for each wi, P(w1) + P(w2) + ... + P(wn) = 1, and for any event A, P(A) is the sum of P(wi) over the sample points wi in A.",
+      "example": "For a coin tossed twice with P(HH) = 1/4, P(HT) = 1/7, P(TH) = 2/7, P(TT) = 9/28 (a valid assignment), the event 'both tosses give the same result' = {HH, TT} has probability 1/4 + 9/28 = 4/7.",
+      "difficulty_base": "Hard",
+      "questions": [
+        {
+          "b": "Remember",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "If S = {w1, w2, ..., wn} is the sample space of an experiment, it follows from the axiomatic definition of probability that P(w1) + P(w2) + ... + P(wn) equals",
+          "a": "1",
+          "o": [
+            "1",
+            "n",
+            "0",
+            "1/n"
+          ]
+        },
+        {
+          "b": "Remember",
+          "d": "Easy",
+          "t": "fill_blank",
+          "m": 1,
+          "q": "It follows from the axioms of probability that P(phi) = ____.",
+          "a": "0"
+        },
+        {
+          "b": "Remember",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "In the axiomatic approach, probability P is a real valued function whose domain is the power set of S and whose range is the interval",
+          "a": "[0, 1]",
+          "o": [
+            "[0, 1]",
+            "(0, 1)",
+            "[-1, 1]",
+            "[0, infinity)"
+          ]
+        },
+        {
+          "b": "Remember",
+          "d": "Hard",
+          "t": "mcq",
+          "m": 1,
+          "q": "Which of the following numbers can NOT be the probability of an event?",
+          "a": "1.2",
+          "o": [
+            "1.2",
+            "0",
+            "1",
+            "0.999"
+          ],
+          "rev": true
+        },
+        {
+          "b": "Understand",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "A coin is tossed once and the probability assigned to the outcome H is 0.3. For the assignment to be valid, the probability assigned to T must be",
+          "a": "0.7",
+          "o": [
+            "0.7",
+            "0.3",
+            "0.5",
+            "1.3"
+          ]
+        },
+        {
+          "b": "Understand",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "A sample space is S = {w1, w2, w3}. Which of the following assignments of probabilities to w1, w2, w3 (in that order) is valid?",
+          "a": "0.2, 0.3, 0.5",
+          "o": [
+            "0.2, 0.3, 0.5",
+            "0.4, 0.4, 0.4",
+            "0.6, 0.6, -0.2",
+            "0.1, 0.2, 0.3"
+          ]
+        },
+        {
+          "b": "Understand",
+          "d": "Easy",
+          "t": "fill_blank",
+          "m": 1,
+          "q": "A sample space is S = {w1, w2, w3, w4} with P(w1) = 0.1, P(w2) = 0.3 and P(w3) = 0.4. Then P(w4) = ____ (as a decimal).",
+          "a": "0.2"
+        },
+        {
+          "b": "Understand",
+          "d": "Hard",
+          "t": "mcq",
+          "m": 1,
+          "q": "A sample space is S = {a, b, c, d} with P(a) = 1/2, P(b) = 1/4, P(c) = 1/8 and P(d) = 1/8. The probability of the event E = {a, d} is",
+          "a": "5/8",
+          "o": [
+            "5/8",
+            "1/2",
+            "1/16",
+            "3/8"
+          ]
+        },
+        {
+          "b": "Understand",
+          "d": "Hard",
+          "t": "mcq",
+          "m": 1,
+          "q": "Which statement about assigning probabilities to the outcomes H and T of a single toss of a coin is correct in the axiomatic approach?",
+          "a": "P(H) = p and P(T) = 1 - p is a valid assignment for every p with 0 <= p <= 1",
+          "o": [
+            "P(H) = p and P(T) = 1 - p is a valid assignment for every p with 0 <= p <= 1",
+            "P(H) = 1/2 and P(T) = 1/2 is the only valid assignment",
+            "P(H) = 1 and P(T) = 0 is not valid, because a probability cannot be 0",
+            "P(H) = 3/4 and P(T) = 3/4 is valid, because each number lies between 0 and 1"
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "A sample space is S = {w1, w2, w3, w4} with P(w1) = 0.1, P(w2) = 0.2, P(w3) = 0.3 and P(w4) = 0.4. The probability of the event A = {w2, w4} is",
+          "a": "0.6",
+          "o": [
+            "0.6",
+            "0.5",
+            "0.08",
+            "0.4"
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Easy",
+          "t": "fill_blank",
+          "m": 1,
+          "q": "A die is loaded so that P(1) = P(2) = P(3) = P(4) = P(5) = 0.1. Then P(6) = ____ (as a decimal).",
+          "a": "0.5"
+        },
+        {
+          "b": "Apply",
+          "d": "Hard",
+          "t": "mcq",
+          "m": 1,
+          "q": "A die is loaded so that P(1) = 0.1, P(2) = 0.2, P(3) = 0.1, P(4) = 0.2, P(5) = 0.1 and P(6) = 0.3. The probability that an even number appears is",
+          "a": "0.7",
+          "o": [
+            "0.7",
+            "0.5",
+            "0.3",
+            "0.012"
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Hard",
+          "t": "mcq",
+          "m": 1,
+          "q": "A coin is biased so that a head is twice as likely to occur as a tail. The probability of a head is",
+          "a": "2/3",
+          "o": [
+            "2/3",
+            "1/2",
+            "1/3",
+            "2"
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Hard",
+          "t": "short_answer",
+          "m": 2,
+          "q": "An experiment has three outcomes w1, w2 and w3, where w1 is twice as likely as w2 and w2 is twice as likely as w3. Find the probability of each outcome.",
+          "a": "Let P(w3) = x. Then P(w2) = 2x and P(w1) = 4x. The probabilities of all the outcomes add up to 1, so 4x + 2x + x = 1 and x = 1/7. Hence P(w1) = 4/7, P(w2) = 2/7 and P(w3) = 1/7.",
+          "s": [
+            [
+              "Sets up 4x + 2x + x = 1 using the fact that the probabilities of the outcomes sum to 1",
+              1
+            ],
+            [
+              "Obtains P(w1) = 4/7, P(w2) = 2/7, P(w3) = 1/7",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Hardest",
+          "t": "long_answer",
+          "m": 3,
+          "q": "Let S = {w1, w2, w3, w4}. Decide, with reasons, whether each assignment of probabilities to w1, w2, w3, w4 (in that order) is valid: (a) 1/3, 1/3, 1/6, 1/6; (b) 0.4, 0.3, 0.2, 0.2; (c) 0.7, 0.5, -0.1, -0.1.",
+          "a": "(a) Valid: each number lies between 0 and 1 and the sum is 1/3 + 1/3 + 1/6 + 1/6 = 1. (b) Not valid: each number lies between 0 and 1 but the sum is 0.4 + 0.3 + 0.2 + 0.2 = 1.1, which is not 1. (c) Not valid: the sum is 1, but P(w3) and P(w4) are negative, and a probability cannot be negative.",
+          "s": [
+            [
+              "(a) valid, checking both conditions (each between 0 and 1, sum 1)",
+              1
+            ],
+            [
+              "(b) not valid because the sum is 1.1",
+              1
+            ],
+            [
+              "(c) not valid because two of the numbers are negative, even though the sum is 1",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Analyse",
+          "d": "Hard",
+          "t": "assertion_reason",
+          "m": 1,
+          "q": "Assertion (A): For a sample space S = {w1, w2, w3}, the assignment P(w1) = 1, P(w2) = 0, P(w3) = 0 is a valid assignment of probabilities. Reason (R): In a valid assignment of probabilities, every outcome must be given a probability strictly greater than 0.",
+          "a": "A is true, R is false",
+          "o": [
+            "A is true, R is false",
+            "Both A and R are true, and R is the correct explanation of A",
+            "Both A and R are true, but R is not the correct explanation of A",
+            "A is false, R is true"
+          ]
+        },
+        {
+          "b": "Analyse",
+          "d": "Hard",
+          "t": "multi_statement",
+          "m": 1,
+          "q": "Consider these statements. (I) An assignment of numbers to the outcomes of a sample space is a valid assignment of probabilities whenever each number lies between 0 and 1. (II) For an event A, P(A) is the product of the probabilities of the sample points in A. Which is or are correct?",
+          "a": "Neither I nor II",
+          "o": [
+            "Neither I nor II",
+            "Only I",
+            "Only II",
+            "Both I and II"
+          ]
+        },
+        {
+          "b": "Analyse",
+          "d": "Hardest",
+          "t": "long_answer",
+          "m": 3,
+          "q": "An experiment has sample space S = {a, b, c, d} with P(a) = 0.1 and P(b) = 0.4, and the outcome c is three times as likely as d. Find P(c) and P(d). Then find the probabilities of the events X = {a, c} and Y = {b, d}, and explain, using the axioms, why P(X) + P(Y) had to come out as it did.",
+          "a": "P(c) + P(d) = 1 - 0.1 - 0.4 = 0.5. With P(c) = 3 P(d), 4 P(d) = 0.5, so P(d) = 0.125 and P(c) = 0.375. P(X) = P(a) + P(c) = 0.1 + 0.375 = 0.475. P(Y) = P(b) + P(d) = 0.4 + 0.125 = 0.525. P(X) + P(Y) = 1. This had to happen: X and Y are mutually exclusive and 'X or Y' = S, so by axiom (iii) P(X) + P(Y) = P(X or Y) = P(S), which is 1 by axiom (ii).",
+          "s": [
+            [
+              "Finds P(d) = 0.125 and P(c) = 0.375 from the sum of all probabilities being 1",
+              1
+            ],
+            [
+              "Finds P(X) = 0.475 and P(Y) = 0.525 by adding the probabilities of their sample points",
+              1
+            ],
+            [
+              "Explains the total 1 from X, Y being mutually exclusive with union S (axioms (ii) and (iii))",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Evaluate",
+          "d": "Hard",
+          "t": "short_answer",
+          "m": 2,
+          "q": "Arjun assigns the probabilities 0.5, 0.4 and 0.2 to the three outcomes Red, Green and Blue of a spinner and says the assignment is valid because each number lies between 0 and 1. Evaluate his claim.",
+          "a": "Arjun is wrong. A valid assignment needs two things: each probability lies between 0 and 1, and the probabilities of all the outcomes add up to 1. Here the sum is 0.5 + 0.4 + 0.2 = 1.1, which is not 1, so the assignment is not valid.",
+          "s": [
+            [
+              "States that the probabilities of all outcomes must also add up to 1",
+              1
+            ],
+            [
+              "Computes the sum 1.1 and concludes the assignment is not valid",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Create",
+          "d": "Hardest",
+          "t": "long_answer",
+          "m": 3,
+          "q": "For the sample space S = {w1, w2, w3, w4}, create two different valid assignments of probabilities: one in which all four outcomes have the same probability and one in which no two outcomes have the same probability. Show that each is valid and find P({w1, w2}) under each.",
+          "a": "Sample answer. First assignment: 1/4, 1/4, 1/4, 1/4; each number lies between 0 and 1 and the sum is 1, so it is valid, and P({w1, w2}) = 1/4 + 1/4 = 1/2. Second assignment: 0.1, 0.2, 0.3, 0.4; each number lies between 0 and 1 and the sum is 1, so it is valid, and P({w1, w2}) = 0.1 + 0.2 = 0.3. Any two correct assignments with checks and sums earn full marks.",
+          "s": [
+            [
+              "Gives a valid equal assignment (1/4 each) and checks both conditions",
+              1
+            ],
+            [
+              "Gives a valid assignment with four different probabilities and checks both conditions",
+              1
+            ],
+            [
+              "Finds P({w1, w2}) in each case by adding the two probabilities",
+              1
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "code": "C11M-14.5",
+      "name": "Probability with equally likely outcomes",
+      "description": "Using P(E) = n(E)/n(S) for coins, dice, cards, letters, arrangements and selections counted with factorials and C(n, r).",
+      "idea": "When every outcome has the same chance, finding a probability is a counting problem: count the favourable outcomes and divide by the total.",
+      "rule": "If S has n equally likely outcomes, each has probability 1/n. If n(S) = n and n(E) = m, then P(E) = m/n = (number of outcomes favourable to E)/(total possible outcomes). The outcomes counted must themselves be equally likely: ordered pairs for two dice (36), ordered strings for coins, and C(n, r) selections or n! arrangements where the chapter's examples use them.",
+      "example": "A committee of two is selected from two men and two women: P(one man) = C(2, 1) x C(2, 1) / C(4, 2) = 4/6 = 2/3.",
+      "difficulty_base": "Hard",
+      "questions": [
+        {
+          "b": "Remember",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "If a sample space S has n outcomes that are all equally likely, the probability of each outcome is",
+          "a": "1/n",
+          "o": [
+            "1/n",
+            "n",
+            "1/2",
+            "1/n^2"
+          ]
+        },
+        {
+          "b": "Remember",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "For a finite sample space S with equally likely outcomes, the probability of an event A is",
+          "a": "n(A)/n(S)",
+          "o": [
+            "n(A)/n(S)",
+            "n(S)/n(A)",
+            "n(A) x n(S)",
+            "n(A)/(n(S) - n(A))"
+          ]
+        },
+        {
+          "b": "Remember",
+          "d": "Easy",
+          "t": "fill_blank",
+          "m": 1,
+          "q": "One card is selected from a well-shuffled pack of 52 cards. The number of points in the sample space is ____.",
+          "a": "52"
+        },
+        {
+          "b": "Remember",
+          "d": "Hard",
+          "t": "mcq",
+          "m": 1,
+          "q": "Which of the following experiments does NOT have equally likely outcomes when its outcomes are listed as described?",
+          "a": "Tossing two fair coins and listing the outcomes as the number of heads: 0, 1, 2",
+          "o": [
+            "Tossing two fair coins and listing the outcomes as the number of heads: 0, 1, 2",
+            "Rolling a fair die and listing the outcomes as 1, 2, 3, 4, 5, 6",
+            "Drawing one card from a well-shuffled deck and listing the outcomes as the individual cards",
+            "Tossing a fair coin twice and listing the outcomes as HH, HT, TH, TT"
+          ],
+          "rev": true
+        },
+        {
+          "b": "Understand",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "A fair die is thrown once. The probability that a prime number appears is",
+          "a": "1/2",
+          "o": [
+            "1/2",
+            "2/3",
+            "1/3",
+            "1/6"
+          ]
+        },
+        {
+          "b": "Understand",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "A fair coin is tossed twice. The probability that at least one tail occurs is",
+          "a": "3/4",
+          "o": [
+            "3/4",
+            "1/2",
+            "1/4",
+            "2/3"
+          ]
+        },
+        {
+          "b": "Understand",
+          "d": "Easy",
+          "t": "fill_blank",
+          "m": 1,
+          "q": "There are 5 men and 7 women on a city council. One council member is selected at random for a committee. The probability that a woman is selected is ____ (as a fraction in lowest terms).",
+          "a": "7/12"
+        },
+        {
+          "b": "Understand",
+          "d": "Hard",
+          "t": "mcq",
+          "m": 1,
+          "q": "A letter is chosen at random from the 11 letters of the word 'MATHEMATICS'. The probability that the letter is a vowel is",
+          "a": "4/11",
+          "o": [
+            "4/11",
+            "7/11",
+            "3/8",
+            "4/7"
+          ]
+        },
+        {
+          "b": "Understand",
+          "d": "Hard",
+          "t": "mcq",
+          "m": 1,
+          "q": "Two fair dice are thrown once. The probability that the sum of the numbers that turn up is 9 is",
+          "a": "1/9",
+          "o": [
+            "1/9",
+            "1/18",
+            "2/21",
+            "1/11"
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "Three fair coins are tossed once. The probability of getting exactly two tails is",
+          "a": "3/8",
+          "o": [
+            "3/8",
+            "1/2",
+            "1/4",
+            "2/3"
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Easy",
+          "t": "fill_blank",
+          "m": 1,
+          "q": "One card is drawn at random from a well-shuffled deck of 52 cards, which contains 4 aces. The probability that the card is an ace is ____ (as a fraction in lowest terms).",
+          "a": "1/13"
+        },
+        {
+          "b": "Apply",
+          "d": "Hard",
+          "t": "mcq",
+          "m": 1,
+          "q": "A fair coin has 2 marked on one face and 5 on the other. The coin and a fair die are both tossed. The probability that the sum of the two numbers that turn up is 7 is",
+          "a": "1/6",
+          "o": [
+            "1/6",
+            "1/12",
+            "1/36",
+            "1/4"
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Hard",
+          "t": "mcq",
+          "m": 1,
+          "q": "A committee of two persons is selected at random from 3 men and 2 women. The probability that the committee has exactly one man is",
+          "a": "3/5",
+          "o": [
+            "3/5",
+            "3/10",
+            "1/2",
+            "6/25"
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Hard",
+          "t": "short_answer",
+          "m": 2,
+          "q": "Four runners P, Q, R and S run a race and all finishing orders are equally likely. Find the probability that P finishes first and Q finishes second.",
+          "a": "The number of finishing orders of four runners is 4! = 24, all equally likely. With P first and Q second, the remaining two places can be filled by R and S in 2! = 2 ways (PQRS and PQSR). So the probability is 2/24 = 1/12.",
+          "s": [
+            [
+              "Counts n(S) = 4! = 24 equally likely finishing orders",
+              1
+            ],
+            [
+              "Counts 2 favourable orders and gets 2/24 = 1/12",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Hardest",
+          "t": "long_answer",
+          "m": 3,
+          "q": "Four cards are drawn at random from a well-shuffled deck of 52 cards (4 suits of 13 cards each). Find the probability that the four cards are 2 hearts and 2 clubs. Give the answer in terms of C(n, r) and as a fraction in lowest terms.",
+          "a": "The 4 cards can be chosen in C(52, 4) = 270725 ways, all equally likely. Two hearts can be chosen in C(13, 2) = 78 ways and two clubs in C(13, 2) = 78 ways, so the number of favourable selections is 78 x 78 = 6084. P = C(13, 2) x C(13, 2) / C(52, 4) = 6084/270725 = 468/20825.",
+          "s": [
+            [
+              "Total number of selections C(52, 4) = 270725",
+              1
+            ],
+            [
+              "Favourable selections C(13, 2) x C(13, 2) = 78 x 78 = 6084",
+              1
+            ],
+            [
+              "Probability 6084/270725 = 468/20825",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Analyse",
+          "d": "Hard",
+          "t": "assertion_reason",
+          "m": 1,
+          "q": "Assertion (A): A letter is chosen at random from the 11 letters of the word 'PROBABILITY'. The probability that the letter is B is 2/11. Reason (R): Each of the 11 letters is equally likely to be chosen, and 2 of them are B.",
+          "a": "Both A and R are true, and R is the correct explanation of A",
+          "o": [
+            "Both A and R are true, and R is the correct explanation of A",
+            "Both A and R are true, but R is not the correct explanation of A",
+            "A is true, R is false",
+            "A is false, R is true"
+          ]
+        },
+        {
+          "b": "Analyse",
+          "d": "Hard",
+          "t": "multi_statement",
+          "m": 1,
+          "q": "Consider these statements. (I) When two fair coins are tossed, the results 'no head', 'one head' and 'two heads' each have probability 1/3. (II) When one card is drawn at random from a well-shuffled deck of 52 cards, the probability that it is the ace of spades is 1/52. Which is or are correct?",
+          "a": "Only II",
+          "o": [
+            "Only II",
+            "Only I",
+            "Both I and II",
+            "Neither I nor II"
+          ]
+        },
+        {
+          "b": "Analyse",
+          "d": "Hardest",
+          "t": "long_answer",
+          "m": 3,
+          "q": "Three friends A, B and C stand in a row in a random order, all orders being equally likely. Write the sample space and find the probability that (i) A stands somewhere to the left of B, (ii) A is first and B is last, (iii) A and B stand next to each other.",
+          "a": "S = {ABC, ACB, BAC, BCA, CAB, CBA}, so n(S) = 3! = 6. (i) A is to the left of B in ABC, ACB and CAB, so the probability is 3/6 = 1/2. (ii) A first and B last happens only in ACB, so the probability is 1/6. (iii) A and B are next to each other in ABC, BAC, CAB and CBA, so the probability is 4/6 = 2/3.",
+          "s": [
+            [
+              "Lists the 6 orders and finds 3/6 = 1/2 for (i)",
+              1
+            ],
+            [
+              "Finds 1/6 for (ii) from the single order ACB",
+              1
+            ],
+            [
+              "Finds 4/6 = 2/3 for (iii) from ABC, BAC, CAB, CBA",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Evaluate",
+          "d": "Hard",
+          "t": "short_answer",
+          "m": 2,
+          "q": "Kiran says: 'When two fair dice are thrown, the possible sums are 2, 3, ..., 12. That is 11 sums, so the probability that the sum is 2 is 1/11.' Evaluate his reasoning.",
+          "a": "Kiran is wrong, because the 11 sums are not equally likely, so P(E) = n(E)/n(S) cannot be applied to them. The equally likely outcomes are the 36 ordered pairs (x, y). Only (1, 1) gives the sum 2, so the probability is 1/36.",
+          "s": [
+            [
+              "Points out that the 11 sums are not equally likely and that the 36 ordered pairs are",
+              1
+            ],
+            [
+              "Gives the correct probability 1/36",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Create",
+          "d": "Hardest",
+          "t": "long_answer",
+          "m": 3,
+          "q": "Create an experiment of drawing one ball at random from a bag of coloured balls for which P(red) = 2/5 and P(blue) = 1/2. State how many balls of each colour the bag contains, verify the two probabilities, and find the probability of drawing a ball of the remaining colour.",
+          "a": "Sample answer. Put 10 balls in the bag: 4 red, 5 blue and 1 green, and draw one at random so that all 10 outcomes are equally likely. P(red) = 4/10 = 2/5 and P(blue) = 5/10 = 1/2, as required. P(green) = 1/10. Any bag whose total is a multiple of 10 with red, blue and other balls in the ratio 4 : 5 : 1 earns full marks.",
+          "s": [
+            [
+              "Chooses numbers of balls with a total that makes 2/5 and 1/2 possible (e.g. 4 red, 5 blue, 1 other out of 10)",
+              1
+            ],
+            [
+              "Verifies P(red) = 2/5 and P(blue) = 1/2 using n(E)/n(S)",
+              1
+            ],
+            [
+              "Finds the probability of the remaining colour, 1/10",
+              1
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "code": "C11M-14.6",
+      "name": "Probability of the event 'A or B'",
+      "description": "The addition rule P(A or B) = P(A) + P(B) - P(A and B), its special case for mutually exclusive events, and its use to find any one of the four probabilities.",
+      "idea": "Adding P(A) and P(B) counts the outcomes common to A and B twice, so their probability must be taken away once.",
+      "rule": "For any two events A and B, P(A or B) = P(A) + P(B) - P(A and B). If A and B are mutually exclusive, 'A and B' = phi, P(A and B) = 0 and P(A or B) = P(A) + P(B), which is axiom (iii). Also P(A but not B) = P(A) - P(A and B).",
+      "example": "If P(E) = 0.05, P(F) = 0.10 and P(E and F) = 0.02, then P(E or F) = 0.05 + 0.10 - 0.02 = 0.13.",
+      "difficulty_base": "Hard",
+      "questions": [
+        {
+          "b": "Remember",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "If A and B are any two events associated with a random experiment, then P(A or B) equals",
+          "a": "P(A) + P(B) - P(A and B)",
+          "o": [
+            "P(A) + P(B) - P(A and B)",
+            "P(A) + P(B) + P(A and B)",
+            "P(A) - P(B) + P(A and B)",
+            "P(A and B) - P(A) - P(B)"
+          ]
+        },
+        {
+          "b": "Remember",
+          "d": "Easy",
+          "t": "fill_blank",
+          "m": 1,
+          "q": "If A and B are mutually exclusive events, then P(A and B) = ____.",
+          "a": "0"
+        },
+        {
+          "b": "Remember",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "If A and B are mutually exclusive events, then P(A or B) equals",
+          "a": "P(A) + P(B)",
+          "o": [
+            "P(A) + P(B)",
+            "P(A) - P(B)",
+            "1 - P(A) - P(B)",
+            "1"
+          ]
+        },
+        {
+          "b": "Remember",
+          "d": "Hard",
+          "t": "mcq",
+          "m": 1,
+          "q": "Which of the following sets of probabilities for two events A and B is NOT consistently defined?",
+          "a": "P(A) = 0.5, P(B) = 0.7, P(A and B) = 0.6",
+          "o": [
+            "P(A) = 0.5, P(B) = 0.7, P(A and B) = 0.6",
+            "P(A) = 0.5, P(B) = 0.4, P(A or B) = 0.8",
+            "P(A) = 0.3, P(B) = 0.3, P(A and B) = 0",
+            "P(A) = 0.6, P(B) = 0.5, P(A or B) = 0.9"
+          ],
+          "rev": true
+        },
+        {
+          "b": "Understand",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "A and B are mutually exclusive events with P(A) = 0.3 and P(B) = 0.45. Then P(A or B) is",
+          "a": "0.75",
+          "o": [
+            "0.75",
+            "0.15",
+            "0.25",
+            "0.375"
+          ]
+        },
+        {
+          "b": "Understand",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "If P(A) = 1/2, P(B) = 1/3 and P(A and B) = 1/4, then P(A or B) is",
+          "a": "7/12",
+          "o": [
+            "7/12",
+            "5/6",
+            "13/12",
+            "1/12"
+          ]
+        },
+        {
+          "b": "Understand",
+          "d": "Easy",
+          "t": "fill_blank",
+          "m": 1,
+          "q": "If P(A) = 0.6, P(B) = 0.3 and P(A or B) = 0.8, then P(A and B) = ____ (as a decimal).",
+          "a": "0.1"
+        },
+        {
+          "b": "Understand",
+          "d": "Hard",
+          "t": "mcq",
+          "m": 1,
+          "q": "If P(A) = 0.4, P(A and B) = 0.15 and P(A or B) = 0.7, then P(B) is",
+          "a": "0.45",
+          "o": [
+            "0.45",
+            "0.3",
+            "0.15",
+            "0.55"
+          ]
+        },
+        {
+          "b": "Understand",
+          "d": "Hard",
+          "t": "mcq",
+          "m": 1,
+          "q": "In finding P(A or B) for two events that are not mutually exclusive, P(A and B) is subtracted from P(A) + P(B) because",
+          "a": "the sample points common to A and B are included twice in P(A) + P(B)",
+          "o": [
+            "the sample points common to A and B are included twice in P(A) + P(B)",
+            "A and B cannot occur together",
+            "P(A or B) must be less than each of P(A) and P(B)",
+            "'A and B' is the complement of 'A or B'"
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "One card is drawn at random from a well-shuffled deck of 52 cards (4 suits of 13 cards, with one king in each suit). The probability that the card is a king or a heart is",
+          "a": "4/13",
+          "o": [
+            "4/13",
+            "17/52",
+            "1/52",
+            "15/52"
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Easy",
+          "t": "fill_blank",
+          "m": 1,
+          "q": "In a class, 50% of the students play cricket, 35% play football and 15% play both. A student is selected at random. The probability that the student plays cricket or football is ____ (as a decimal).",
+          "a": "0.7"
+        },
+        {
+          "b": "Apply",
+          "d": "Hard",
+          "t": "mcq",
+          "m": 1,
+          "q": "In a test graded on two examinations, the probability that a randomly chosen student passes the first examination is 0.6 and the probability of passing the second is 0.5. The probability of passing at least one of them is 0.85. The probability of passing both is",
+          "a": "0.25",
+          "o": [
+            "0.25",
+            "1.10",
+            "0.35",
+            "0.15"
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Hard",
+          "t": "mcq",
+          "m": 1,
+          "q": "In a group of 50 students, 28 like tea, 22 like coffee and 10 like both. One student is selected at random. The probability that the student likes tea or coffee is",
+          "a": "4/5",
+          "o": [
+            "4/5",
+            "1",
+            "1/5",
+            "3/5"
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Hard",
+          "t": "short_answer",
+          "m": 2,
+          "q": "A card is drawn at random from fifteen cards numbered 1 to 15. A is the event 'the number is a multiple of 3' and B is the event 'the number is a multiple of 5'. Find P(A or B) using the addition rule and verify it by listing the event 'A or B'.",
+          "a": "A = {3, 6, 9, 12, 15}, B = {5, 10, 15} and 'A and B' = {15}. P(A or B) = P(A) + P(B) - P(A and B) = 5/15 + 3/15 - 1/15 = 7/15. Check: 'A or B' = {3, 5, 6, 9, 10, 12, 15} has 7 of the 15 equally likely outcomes, so its probability is 7/15.",
+          "s": [
+            [
+              "Uses the addition rule with 5/15, 3/15 and 1/15 to get 7/15",
+              1
+            ],
+            [
+              "Lists 'A or B' = {3, 5, 6, 9, 10, 12, 15} and confirms 7/15",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Hardest",
+          "t": "long_answer",
+          "m": 3,
+          "q": "One card is drawn at random from a well-shuffled deck of 52 cards: 26 red and 26 black, in 4 suits of 13, with 3 face cards (jack, queen, king) in each suit. Find the probability that the card is (i) red or a face card, (ii) a face card but not red.",
+          "a": "Let R be 'the card is red' and F be 'the card is a face card'. P(R) = 26/52 and P(F) = 12/52. The red face cards are the 3 of hearts and the 3 of diamonds, so P(R and F) = 6/52. (i) P(R or F) = 26/52 + 12/52 - 6/52 = 32/52 = 8/13. (ii) P(F but not R) = P(F) - P(R and F) = 12/52 - 6/52 = 6/52 = 3/26.",
+          "s": [
+            [
+              "Finds P(R) = 26/52, P(F) = 12/52 and P(R and F) = 6/52",
+              1
+            ],
+            [
+              "Applies the addition rule to get 32/52 = 8/13",
+              1
+            ],
+            [
+              "Finds P(F but not R) = 12/52 - 6/52 = 3/26",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Analyse",
+          "d": "Hard",
+          "t": "assertion_reason",
+          "m": 1,
+          "q": "Assertion (A): A fair die is rolled once, A is the event 'a multiple of 2 appears' and B is the event 'a multiple of 3 appears'. Then P(A or B) = 2/3. Reason (R): The events A and B have no sample point in common.",
+          "a": "A is true, R is false",
+          "o": [
+            "A is true, R is false",
+            "Both A and R are true, and R is the correct explanation of A",
+            "Both A and R are true, but R is not the correct explanation of A",
+            "A is false, R is true"
+          ]
+        },
+        {
+          "b": "Analyse",
+          "d": "Hard",
+          "t": "multi_statement",
+          "m": 1,
+          "q": "Consider these statements. (I) For any two events A and B, P(A or B) can never be greater than P(A) + P(B). (II) Two events A and B with P(A) = 0.6 and P(B) = 0.7 can be mutually exclusive. Which is or are correct?",
+          "a": "Only I",
+          "o": [
+            "Only I",
+            "Only II",
+            "Both I and II",
+            "Neither I nor II"
+          ]
+        },
+        {
+          "b": "Analyse",
+          "d": "Hardest",
+          "t": "long_answer",
+          "m": 3,
+          "q": "For two events A and B, the event 'A or B' is made up of the two mutually exclusive events A and 'B but not A', and the event B is made up of the two mutually exclusive events 'A and B' and 'B but not A'. Use the axiom for mutually exclusive events on each of these facts to derive the rule connecting P(A or B) with P(A), P(B) and P(A and B).",
+          "a": "Since A and 'B but not A' are mutually exclusive and their union is 'A or B', axiom (iii) gives P(A or B) = P(A) + P(B but not A) ... (1). Since 'A and B' and 'B but not A' are mutually exclusive and their union is B, axiom (iii) gives P(B) = P(A and B) + P(B but not A) ... (2). Subtracting (2) from (1): P(A or B) - P(B) = P(A) - P(A and B). Hence P(A or B) = P(A) + P(B) - P(A and B).",
+          "s": [
+            [
+              "Writes P(A or B) = P(A) + P(B but not A) by axiom (iii)",
+              1
+            ],
+            [
+              "Writes P(B) = P(A and B) + P(B but not A) by axiom (iii)",
+              1
+            ],
+            [
+              "Subtracts to obtain P(A or B) = P(A) + P(B) - P(A and B)",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Evaluate",
+          "d": "Hard",
+          "t": "short_answer",
+          "m": 2,
+          "q": "A card is drawn at random from twenty cards numbered 1 to 20. Tina says: 'P(multiple of 2) = 10/20 and P(multiple of 5) = 4/20, so P(multiple of 2 or of 5) = 14/20 = 7/10.' Evaluate her answer.",
+          "a": "Tina is wrong. The two events are not mutually exclusive: 10 and 20 are multiples of both 2 and 5, so P(both) = 2/20 has been counted twice. The correct value is 10/20 + 4/20 - 2/20 = 12/20 = 3/5.",
+          "s": [
+            [
+              "Identifies that 10 and 20 are common, so the events are not mutually exclusive and 2/20 is counted twice",
+              1
+            ],
+            [
+              "Gives the correct probability 12/20 = 3/5",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Create",
+          "d": "Hardest",
+          "t": "long_answer",
+          "m": 3,
+          "q": "Create a word problem about a class in which some students play chess, some play carrom and some play both, with numbers chosen so that the probability that a randomly selected student plays at least one of the two games is 3/4. State the problem and solve it with the addition rule.",
+          "a": "Sample answer. 'In a class of 40 students, 20 play chess, 16 play carrom and 6 play both. A student is selected at random. Find the probability that the student plays chess or carrom.' Solution: P(chess) = 20/40, P(carrom) = 16/40, P(both) = 6/40. P(chess or carrom) = 20/40 + 16/40 - 6/40 = 30/40 = 3/4. Any consistent set of numbers giving 3/4 earns full marks.",
+          "s": [
+            [
+              "States a complete problem with a class size and consistent numbers for chess, carrom and both",
+              1
+            ],
+            [
+              "Applies P(A or B) = P(A) + P(B) - P(A and B) with those numbers",
+              1
+            ],
+            [
+              "Obtains 3/4",
+              1
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "code": "C11M-14.7",
+      "name": "Probability of the event 'not A'",
+      "description": "The complement rule P(not A) = 1 - P(A) and its use for 'not', 'neither ... nor' and 'at least one' probabilities.",
+      "idea": "A and 'not A' between them cover the whole sample space without overlap, so their probabilities add up to 1; it is often easier to find the probability of what you do not want and subtract it from 1.",
+      "rule": "A and A' are mutually exclusive and exhaustive, so by axioms (ii) and (iii) P(A) + P(A') = 1, i.e. P(not A) = 1 - P(A). By De Morgan's law 'not E and not F' = 'not (E or F)', so P(not E and not F) = 1 - P(E or F). P(at least one) = 1 - P(none).",
+      "example": "One card is drawn from a well-shuffled deck of 52 cards: P(not an ace) = 1 - 4/52 = 12/13 and P(not a diamond) = 1 - 1/4 = 3/4.",
+      "difficulty_base": "Hard",
+      "questions": [
+        {
+          "b": "Remember",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "If A is any event, then P(not A) equals",
+          "a": "1 - P(A)",
+          "o": [
+            "1 - P(A)",
+            "P(A) - 1",
+            "1/P(A)",
+            "1 + P(A)"
+          ]
+        },
+        {
+          "b": "Remember",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "An event A and its complementary event A' are always",
+          "a": "mutually exclusive and exhaustive",
+          "o": [
+            "mutually exclusive and exhaustive",
+            "mutually exclusive but not exhaustive",
+            "exhaustive but not mutually exclusive",
+            "equally likely"
+          ]
+        },
+        {
+          "b": "Remember",
+          "d": "Easy",
+          "t": "fill_blank",
+          "m": 1,
+          "q": "By De Morgan's law, the event 'not E and not F' is the same as the event 'not (E ____ F)'.",
+          "a": "or"
+        },
+        {
+          "b": "Remember",
+          "d": "Hard",
+          "t": "mcq",
+          "m": 1,
+          "q": "For an event A with P(A) = 0.3, which of the following statements about A and 'not A' is NOT correct?",
+          "a": "P(not A) = 0.3",
+          "o": [
+            "P(not A) = 0.3",
+            "P(not A) is greater than P(A)",
+            "A is not the impossible event",
+            "'not A' is not the sure event"
+          ],
+          "rev": true
+        },
+        {
+          "b": "Understand",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "If 3/7 is the probability of an event A, then the probability of the event 'not A' is",
+          "a": "4/7",
+          "o": [
+            "4/7",
+            "3/7",
+            "7/3",
+            "10/7"
+          ]
+        },
+        {
+          "b": "Understand",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "One card is drawn at random from a well-shuffled deck of 52 cards, which contains 12 face cards (jacks, queens and kings). The probability that the card is not a face card is",
+          "a": "10/13",
+          "o": [
+            "10/13",
+            "3/13",
+            "12/13",
+            "9/13"
+          ]
+        },
+        {
+          "b": "Understand",
+          "d": "Easy",
+          "t": "fill_blank",
+          "m": 1,
+          "q": "If P(A) = 0.36, then P(not A) = ____ (as a decimal).",
+          "a": "0.64"
+        },
+        {
+          "b": "Understand",
+          "d": "Hard",
+          "t": "mcq",
+          "m": 1,
+          "q": "A bag contains 12 discs of the same shape and size: 5 red, 4 green and 3 white. A disc is drawn at random. The probability that it is not green is",
+          "a": "2/3",
+          "o": [
+            "2/3",
+            "1/3",
+            "3/4",
+            "7/12"
+          ]
+        },
+        {
+          "b": "Understand",
+          "d": "Hard",
+          "t": "mcq",
+          "m": 1,
+          "q": "E and F are two events. The event 'at least one of E and F does not occur' is the complement of the event",
+          "a": "'E and F'",
+          "o": [
+            "'E and F'",
+            "'E or F'",
+            "'not E and not F'",
+            "'E but not F'"
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "A fair coin is tossed three times. The probability that at least one head appears is",
+          "a": "7/8",
+          "o": [
+            "7/8",
+            "1/8",
+            "3/8",
+            "1/2"
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Easy",
+          "t": "fill_blank",
+          "m": 1,
+          "q": "E and F are two events with P(E or F) = 0.65. Then P(not E and not F) = ____ (as a decimal).",
+          "a": "0.35"
+        },
+        {
+          "b": "Apply",
+          "d": "Hard",
+          "t": "mcq",
+          "m": 1,
+          "q": "A and B are events with P(A) = 0.4, P(B) = 0.5 and P(A and B) = 0.2. The probability that neither A nor B occurs is",
+          "a": "0.3",
+          "o": [
+            "0.3",
+            "0.7",
+            "0.1",
+            "0.8"
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Hard",
+          "t": "mcq",
+          "m": 1,
+          "q": "Two fair dice are thrown once. The probability that the two numbers that turn up are not equal is",
+          "a": "5/6",
+          "o": [
+            "5/6",
+            "1/6",
+            "35/36",
+            "5/7"
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Hard",
+          "t": "short_answer",
+          "m": 2,
+          "q": "In a lottery 2000 tickets are sold and 8 equal prizes are awarded. If you buy one ticket, find the probability of not getting a prize.",
+          "a": "Each of the 2000 tickets is equally likely to be yours, and 8 of them win, so P(prize) = 8/2000 = 1/250. Therefore P(no prize) = 1 - 1/250 = 249/250.",
+          "s": [
+            [
+              "Finds P(prize) = 8/2000 = 1/250",
+              1
+            ],
+            [
+              "Uses P(not A) = 1 - P(A) to get 249/250",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Hardest",
+          "t": "long_answer",
+          "m": 3,
+          "q": "A bag contains 4 red and 6 blue balls. Three balls are drawn at random together (without replacement). Find the probability that at least one of the three balls is red.",
+          "a": "Three balls can be chosen from 10 in C(10, 3) = 120 equally likely ways. 'At least one red' is the complement of 'no red', i.e. all three blue. Three blue balls can be chosen in C(6, 3) = 20 ways, so P(no red) = 20/120 = 1/6. Hence P(at least one red) = 1 - 1/6 = 5/6.",
+          "s": [
+            [
+              "Total selections C(10, 3) = 120",
+              1
+            ],
+            [
+              "P(no red) = C(6, 3)/C(10, 3) = 20/120 = 1/6",
+              1
+            ],
+            [
+              "P(at least one red) = 1 - 1/6 = 5/6",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Analyse",
+          "d": "Hard",
+          "t": "assertion_reason",
+          "m": 1,
+          "q": "Assertion (A): If the probability that it rains tomorrow is 0.35, then the probability that it does not rain tomorrow is 0.75. Reason (R): The event 'it does not rain tomorrow' is the complementary event of the event 'it rains tomorrow'.",
+          "a": "A is false, R is true",
+          "o": [
+            "A is false, R is true",
+            "Both A and R are true, and R is the correct explanation of A",
+            "Both A and R are true, but R is not the correct explanation of A",
+            "A is true, R is false"
+          ]
+        },
+        {
+          "b": "Analyse",
+          "d": "Hard",
+          "t": "multi_statement",
+          "m": 1,
+          "q": "Consider these statements. (I) If A is the sure event, then 'not A' is the impossible event. (II) When a fair die is rolled once, the probability that the number is not a multiple of 3 is 2/3. Which is or are correct?",
+          "a": "Both I and II",
+          "o": [
+            "Both I and II",
+            "Only I",
+            "Only II",
+            "Neither I nor II"
+          ]
+        },
+        {
+          "b": "Analyse",
+          "d": "Hardest",
+          "t": "long_answer",
+          "m": 3,
+          "q": "Two students Ravi and Sana appear in an examination. The probability that Ravi qualifies is 0.3, the probability that Sana qualifies is 0.5 and the probability that both qualify is 0.1. Find the probability that (a) neither of them qualifies, (b) at least one of them does not qualify, (c) only one of them qualifies.",
+          "a": "Let E and F be the events that Ravi and Sana qualify. P(E or F) = 0.3 + 0.5 - 0.1 = 0.7. (a) 'Neither qualifies' is 'not E and not F' = 'not (E or F)' by De Morgan's law, so its probability is 1 - 0.7 = 0.3. (b) 'At least one does not qualify' is the complement of 'both qualify', so its probability is 1 - 0.1 = 0.9. (c) 'Only one qualifies' is 'E but not F' or 'F but not E', which are mutually exclusive, so its probability is (0.3 - 0.1) + (0.5 - 0.1) = 0.6.",
+          "s": [
+            [
+              "(a) P(E or F) = 0.7 and P(neither) = 1 - 0.7 = 0.3",
+              1
+            ],
+            [
+              "(b) 1 - P(both) = 1 - 0.1 = 0.9",
+              1
+            ],
+            [
+              "(c) (0.3 - 0.1) + (0.5 - 0.1) = 0.6",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Evaluate",
+          "d": "Hard",
+          "t": "short_answer",
+          "m": 2,
+          "q": "A fair coin is tossed twice. Dev says that P(at least one head) = 1 - P(at least one tail), because heads and tails are opposites. Evaluate his statement.",
+          "a": "Dev is wrong. The complement of 'at least one head' = {HH, HT, TH} is 'no head' = {TT}, not 'at least one tail' = {HT, TH, TT}; the outcomes HT and TH lie in both of his events, so they are not complementary. Correctly, P(at least one head) = 1 - P(no head) = 1 - 1/4 = 3/4, whereas his rule gives 1 - 3/4 = 1/4.",
+          "s": [
+            [
+              "Shows that the complement of 'at least one head' is 'no head' = {TT}, not 'at least one tail'",
+              1
+            ],
+            [
+              "Gives the correct value 1 - 1/4 = 3/4",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Create",
+          "d": "Hardest",
+          "t": "long_answer",
+          "m": 3,
+          "q": "Create a problem in which two balls are drawn at random together from a bag of white and black balls and the probability of 'at least one black ball' is asked. Choose your own numbers, and solve the problem by using the complementary event.",
+          "a": "Sample answer. 'A bag contains 5 white and 3 black balls. Two balls are drawn at random together. Find the probability that at least one is black.' Solution: two balls can be chosen in C(8, 2) = 28 equally likely ways. The complement of 'at least one black' is 'both white', which can happen in C(5, 2) = 10 ways, so P(both white) = 10/28 = 5/14. Hence P(at least one black) = 1 - 5/14 = 9/14. Any correctly stated and solved problem of this kind earns full marks.",
+          "s": [
+            [
+              "States a complete problem with the numbers of white and black balls",
+              1
+            ],
+            [
+              "Identifies the complement 'no black ball' and finds its probability with C(n, r)",
+              1
+            ],
+            [
+              "Subtracts from 1 to get the required probability",
+              1
+            ]
+          ]
+        }
+      ]
+    }
+  ]
+}

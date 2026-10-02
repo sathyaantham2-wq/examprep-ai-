@@ -1,0 +1,2677 @@
+{
+ "subject": {
+  "code": "MATH11",
+  "name": "Mathematics",
+  "board": "CBSE",
+  "class": 11
+ },
+ "source": {
+  "publisher": "NCERT",
+  "title": "Mathematics",
+  "edition": "Textbook for Class XI, Reprint 2026-27",
+  "year": 2026
+ },
+ "chapter": {
+  "part": "I",
+  "chapter_no": 10,
+  "name": "Conic Sections",
+  "blurb": "This chapter shows how a plane cutting a double-napped right circular cone produces the circle, ellipse, parabola and hyperbola, together with their degenerated cases. It then defines each curve by a geometric property and obtains its standard equation: the circle with centre (h, k), and the parabola, ellipse and hyperbola in standard position with centre or vertex at the origin. For these it studies the focus, directrix of a parabola, vertices, axes, eccentricity and latus rectum, and applies them to reflectors, arches and loci.",
+  "source_code": "kemh110",
+  "order_index": 10
+ },
+ "depth": 20,
+ "scope_in": [
+  {
+   "item": "Name the vertex, axis, generator and nappes of a double-napped right circular cone, and say what a conic section is",
+   "pages": "176-177"
+  },
+  {
+   "item": "Decide from the angles alpha (generator with axis) and beta (plane with axis) whether a plane not through the vertex cuts the cone in a circle, ellipse, parabola or hyperbola",
+   "pages": "177-178"
+  },
+  {
+   "item": "Identify the degenerated conic sections (point, straight line, pair of intersecting straight lines) obtained when the plane passes through the vertex",
+   "pages": "178-179"
+  },
+  {
+   "item": "Define a circle and write its equation (x - h)^2 + (y - k)^2 = r^2 from a given centre and radius, including x^2 + y^2 = r^2",
+   "pages": "179-181"
+  },
+  {
+   "item": "Find the centre and radius of a circle from its equation by completing the squares, and decide whether a point lies inside, on or outside a circle by comparing its distance from the centre with the radius",
+   "pages": "180-181"
+  },
+  {
+   "item": "Find the equation of a circle from conditions such as two points on it and a line containing its centre",
+   "pages": "181"
+  },
+  {
+   "item": "Define a parabola by focus and directrix; name its axis and vertex; derive y^2 = 4ax from the definition",
+   "pages": "182-184"
+  },
+  {
+   "item": "Recognise the four standard equations y^2 = 4ax, y^2 = -4ax, x^2 = 4ay, x^2 = -4ay and state the axis of symmetry and direction of opening of each",
+   "pages": "182-184"
+  },
+  {
+   "item": "Find the focus, the equation of the directrix and the length 4a of the latus rectum of a standard parabola",
+   "pages": "185-186"
+  },
+  {
+   "item": "Find the equation of a standard parabola from its focus and directrix, its vertex and focus, or a point on it and its axis",
+   "pages": "186-187"
+  },
+  {
+   "item": "Use a standard parabola in applied problems (reflector, arch, beam, cable) and in simple geometry of its latus rectum",
+   "pages": "202-204"
+  },
+  {
+   "item": "Define an ellipse by the constant sum 2a of focal distances; name its centre, major and minor axes and vertices; use a^2 = b^2 + c^2 and eccentricity e = c/a",
+   "pages": "187-188"
+  },
+  {
+   "item": "Recognise the two standard equations of an ellipse, decide the major axis from the larger denominator, and use the symmetry and extent (-a <= x <= a) of the curve",
+   "pages": "188-191"
+  },
+  {
+   "item": "Find the foci, vertices, lengths of the axes, eccentricity and latus rectum 2b^2/a of an ellipse given in or reducible to standard form",
+   "pages": "192-193, 195"
+  },
+  {
+   "item": "Find the standard equation of an ellipse from vertices, foci, axis lengths or points on it, including semi-elliptical arch and rod-locus settings",
+   "pages": "193-195, 203-204"
+  },
+  {
+   "item": "Define a hyperbola by the constant difference 2a of focal distances; name its centre, transverse and conjugate axes and vertices; use b^2 = c^2 - a^2 and eccentricity e = c/a; know an equilateral hyperbola has a = b",
+   "pages": "195-197, 199"
+  },
+  {
+   "item": "Recognise the two standard equations of a hyperbola, decide the transverse axis from the positive term, and use the symmetry and extent (x <= -a or x >= a) of the curve",
+   "pages": "197-200"
+  },
+  {
+   "item": "Find the foci, vertices, eccentricity and latus rectum 2b^2/a of a hyperbola given in or reducible to standard form",
+   "pages": "200-202"
+  },
+  {
+   "item": "Find the standard equation of a hyperbola from vertices, foci, axis lengths, latus rectum, eccentricity or a point on it",
+   "pages": "201-202"
+  }
+ ],
+ "scope_out": [
+  {
+   "item": "The general equation of a circle x^2 + y^2 + 2gx + 2fy + c = 0 with the formulas centre (-g, -f) and radius sqrt(g^2 + f^2 - c), and the diameter form of a circle",
+   "reason": "Not taught; the chapter only completes the squares on a numerical equation (Example 3, p. 180)"
+  },
+  {
+   "item": "The general second-degree equation ax^2 + 2hxy + by^2 + 2gx + 2fy + c = 0 and classifying a conic from its coefficients or discriminant",
+   "reason": "Does not appear anywhere in the chapter"
+  },
+  {
+   "item": "Tangents and normals to a circle or to any conic, condition of tangency, chord of contact, and the reflection property proved from tangents",
+   "reason": "Not in this chapter; no tangent to a conic is defined or used"
+  },
+  {
+   "item": "Parametric forms of the conics, such as (at^2, 2at), (a cos t, b sin t) or (a sec t, b tan t)",
+   "reason": "Not taught; Example 19 (pp. 203-204) uses an angle theta only as a step in one locus problem"
+  },
+  {
+   "item": "Directrices of an ellipse or a hyperbola (x = a/e, x = -a/e) and the focus-directrix definition of these curves with eccentricity as the ratio PF/PM",
+   "reason": "Not taught; a directrix is defined only for the parabola (p. 182) and eccentricity only as c/a (pp. 188, 197)"
+  },
+  {
+   "item": "Eccentricity of a circle (0) or of a parabola (1), and classifying conics by the value of e",
+   "reason": "Eccentricity is defined in this chapter only for the ellipse and the hyperbola"
+  },
+  {
+   "item": "Parabolas, ellipses and hyperbolas with vertex or centre away from the origin, or with axes not along the coordinate axes (shifted or rotated forms)",
+   "reason": "Explicitly stated to be beyond the scope in the Notes on pp. 184, 191 and 199"
+  },
+  {
+   "item": "Asymptotes of a hyperbola, the conjugate hyperbola, and the rectangular hyperbola xy = c^2",
+   "reason": "Not taught; the only special case named is the equilateral hyperbola a = b (p. 199)"
+  },
+  {
+   "item": "Area or perimeter of an ellipse, the auxiliary circle and eccentric angle, focal chords and focal-distance formulas quoted as results (such as a + ex)",
+   "reason": "Not taught as results; the expressions a + (c/a)x appear only inside the derivations on pp. 190 and 198"
+  },
+  {
+   "item": "Intersection of a line with a conic, and the position of a point relative to a parabola, ellipse or hyperbola",
+   "reason": "Not taught; only Exercise 10.1 Q15 (p. 181) asks whether a point is inside, outside or on a circle"
+  },
+  {
+   "item": "Historical facts about Apollonius, Euclid, Descartes, Fermat and others",
+   "reason": "Introduction and Historical Note (pp. 176, 206-207), not examinable content"
+  }
+ ],
+ "concepts": [
+  {
+   "code": "C11M-10.1",
+   "name": "Sections of a cone and degenerated conics",
+   "description": "How a plane cutting a double-napped right circular cone gives a circle, ellipse, parabola or hyperbola according to the angle beta it makes with the axis, and the degenerated sections when the plane passes through the vertex.",
+   "idea": "A line m turning about a fixed line l at a constant angle alpha sweeps out a double-napped cone. A plane cutting it at angle beta to the axis gives a different curve for each range of beta.",
+   "rule": "Plane not through the vertex: beta = 90 degrees circle; alpha < beta < 90 degrees ellipse; beta = alpha parabola; 0 <= beta < alpha hyperbola (both nappes). Plane through the vertex: point, straight line, or pair of intersecting lines for the same three ranges.",
+   "example": "With alpha = 30 degrees, a plane missing the vertex at beta = 50 degrees gives an ellipse; at beta = 30 degrees a parabola; at beta = 10 degrees a hyperbola.",
+   "difficulty_base": "Easy",
+   "questions": [
+    {
+     "b": "Remember",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "The fixed point V at which the rotating line m meets the fixed vertical line l of a double-napped right circular cone is called the",
+     "a": "vertex of the cone",
+     "o": [
+      "vertex of the cone",
+      "generator of the cone",
+      "axis of the cone",
+      "nappe of the cone"
+     ]
+    },
+    {
+     "b": "Remember",
+     "d": "Easy",
+     "t": "fill_blank",
+     "m": 1,
+     "q": "The vertex separates a double-napped right circular cone into two parts. Each of these parts is called a ____. (Write one word.)",
+     "a": "nappe"
+    },
+    {
+     "b": "Remember",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "A plane cuts one nappe of a cone (not at the vertex) and makes an angle beta = 90 degrees with the axis of the cone. The section obtained is",
+     "a": "a circle",
+     "o": [
+      "a circle",
+      "an ellipse",
+      "a parabola",
+      "a hyperbola"
+     ]
+    },
+    {
+     "b": "Remember",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "q": "Which of the following is NOT a degenerated conic section obtained when a plane cuts a double-napped cone at its vertex?",
+     "a": "A circle",
+     "o": [
+      "A circle",
+      "A point",
+      "A straight line",
+      "A pair of intersecting straight lines"
+     ],
+     "rev": true
+    },
+    {
+     "b": "Understand",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "A plane cuts a double-napped right circular cone whose generator makes an angle alpha with its axis, not at the vertex, at an angle beta to the axis. In which case does the plane cut through BOTH nappes of the cone?",
+     "a": "When 0 <= beta < alpha, giving a hyperbola",
+     "o": [
+      "When 0 <= beta < alpha, giving a hyperbola",
+      "When beta = alpha, giving a parabola",
+      "When alpha < beta < 90 degrees, giving an ellipse",
+      "When beta = 90 degrees, giving a circle"
+     ]
+    },
+    {
+     "b": "Understand",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "A plane cuts a double-napped cone at its vertex with beta = alpha, so that the plane contains a generator and the section is a straight line. This straight line is the degenerated case of",
+     "a": "a parabola",
+     "o": [
+      "a parabola",
+      "a hyperbola",
+      "an ellipse",
+      "a circle"
+     ]
+    },
+    {
+     "b": "Understand",
+     "d": "Easy",
+     "t": "short_answer",
+     "m": 2,
+     "q": "A plane cuts one nappe of a cone without passing through the vertex. In terms of alpha (the angle between a generator and the axis) and beta (the angle between the plane and the axis), explain the difference between the plane that gives an ellipse and the plane that gives a parabola.",
+     "a": "The section is an ellipse when alpha < beta < 90 degrees, that is, when the plane is inclined to the axis at an angle larger than the generator's angle but is not perpendicular to the axis. The section is a parabola when beta = alpha exactly, that is, when the plane makes the same angle with the axis as a generator does. In both cases the plane cuts only one nappe.",
+     "s": [
+      [
+       "States the ellipse condition alpha < beta < 90 degrees",
+       1
+      ],
+      [
+       "States the parabola condition beta = alpha",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Understand",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "q": "A plane passes through the vertex of a double-napped right circular cone whose generator makes an angle alpha with its axis. The plane makes an angle beta with the axis, where alpha < beta <= 90 degrees. The section is",
+     "a": "a point",
+     "o": [
+      "a point",
+      "an ellipse",
+      "a straight line",
+      "a pair of intersecting straight lines"
+     ]
+    },
+    {
+     "b": "Understand",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "q": "A plane that does not pass through the vertex cuts a double-napped right circular cone whose generator makes an angle alpha with its axis. As the angle beta between the plane and the axis is decreased steadily from 90 degrees to 0 degrees, the sections appear in the order",
+     "a": "circle, ellipse, parabola, hyperbola",
+     "o": [
+      "circle, ellipse, parabola, hyperbola",
+      "circle, parabola, ellipse, hyperbola",
+      "hyperbola, parabola, ellipse, circle",
+      "circle, ellipse, hyperbola, parabola"
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Easy",
+     "t": "fill_blank",
+     "m": 1,
+     "q": "A generator of a cone makes an angle alpha = 35 degrees with its axis. A plane that does not pass through the vertex cuts the cone in a parabola. The angle beta between the plane and the axis is ____ degrees. (Write a whole number.)",
+     "a": "35"
+    },
+    {
+     "b": "Apply",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "For a cone, alpha = 30 degrees. A plane not passing through the vertex makes an angle beta = 50 degrees with the axis. The section is",
+     "a": "an ellipse",
+     "o": [
+      "an ellipse",
+      "a circle",
+      "a parabola",
+      "a hyperbola"
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "q": "For a cone, alpha = 40 degrees. A plane not passing through the vertex makes an angle beta = 25 degrees with the axis. The section is",
+     "a": "a hyperbola",
+     "o": [
+      "a hyperbola",
+      "an ellipse",
+      "a parabola",
+      "a pair of intersecting straight lines"
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "q": "For a double-napped cone, alpha = 45 degrees. A plane passing through the vertex makes an angle beta = 20 degrees with the axis. The section is",
+     "a": "a pair of intersecting straight lines",
+     "o": [
+      "a pair of intersecting straight lines",
+      "a hyperbola",
+      "a point",
+      "a single straight line"
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "q": "For a cone, alpha = 25 degrees. A plane that does not pass through the vertex cuts the cone. Name the section, with a reason, when (i) beta = 25 degrees, (ii) beta = 60 degrees.",
+     "a": "(i) beta = alpha = 25 degrees, so the section is a parabola. (ii) 25 < 60 < 90, that is alpha < beta < 90 degrees, so the section is an ellipse.",
+     "s": [
+      [
+       "(i) Parabola, because beta = alpha",
+       1
+      ],
+      [
+       "(ii) Ellipse, because alpha < beta < 90 degrees",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hardest",
+     "t": "long_answer",
+     "m": 3,
+     "q": "A double-napped cone has alpha = 50 degrees. Name the section, giving the reason in terms of alpha and beta, for each plane: (i) a plane not through the vertex with beta = 90 degrees; (ii) a plane not through the vertex with beta = 10 degrees; (iii) a plane through the vertex with beta = 50 degrees.",
+     "a": "(i) beta = 90 degrees and the plane misses the vertex, so the section is a circle. (ii) 0 <= 10 < 50, that is 0 <= beta < alpha, so the plane cuts both nappes and the section is a hyperbola. (iii) The plane passes through the vertex with beta = alpha, so it contains a generator and the section is a straight line, the degenerated case of a parabola.",
+     "s": [
+      [
+       "(i) Circle, since beta = 90 degrees",
+       1
+      ],
+      [
+       "(ii) Hyperbola, since 0 <= beta < alpha (both nappes cut)",
+       1
+      ],
+      [
+       "(iii) Straight line (degenerated parabola), since the plane is through the vertex with beta = alpha",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "assertion_reason",
+     "m": 1,
+     "q": "Assertion (A): A plane that cuts a double-napped cone (not at the vertex) with beta = alpha gives a parabola. Reason (R): When beta = alpha, the cutting plane passes through both nappes of the cone.",
+     "a": "A is true, R is false",
+     "o": [
+      "A is true, R is false",
+      "Both A and R are true, and R is the correct explanation of A",
+      "Both A and R are true, but R is not the correct explanation of A",
+      "A is false, R is true"
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "multi_statement",
+     "m": 1,
+     "q": "Consider these statements. (I) A plane cutting a double-napped cone at its vertex with alpha < beta <= 90 degrees gives a single point. (II) A pair of intersecting straight lines is the degenerated case of a hyperbola. Which is or are correct?",
+     "a": "Both I and II",
+     "o": [
+      "Both I and II",
+      "Only I",
+      "Only II",
+      "Neither I nor II"
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hardest",
+     "t": "long_answer",
+     "m": 3,
+     "q": "A plane makes a fixed angle beta = 30 degrees with the axis of a double-napped cone and does not pass through the vertex. Cones with different values of alpha (the angle between a generator and the axis) are cut by this plane. Decide the type of section when (i) alpha = 20 degrees, (ii) alpha = 30 degrees, (iii) alpha = 55 degrees, and explain how the answer changes as alpha grows.",
+     "a": "(i) alpha = 20: here alpha < beta < 90 degrees (20 < 30 < 90), so the section is an ellipse. (ii) alpha = 30: beta = alpha, so the section is a parabola. (iii) alpha = 55: 0 <= beta < alpha (30 < 55), so the plane cuts both nappes and the section is a hyperbola. So for a fixed plane angle, a narrow cone (alpha less than beta) gives an ellipse, the cone with alpha equal to beta gives a parabola, and any wider cone (alpha greater than beta) gives a hyperbola.",
+     "s": [
+      [
+       "(i) Ellipse, since alpha < beta < 90 degrees",
+       1
+      ],
+      [
+       "(ii) Parabola, since beta = alpha",
+       1
+      ],
+      [
+       "(iii) Hyperbola, since beta < alpha, with the general comparison of alpha with beta stated",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Evaluate",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "q": "Meera says: 'Whenever a plane passes through the vertex of a double-napped cone, the section is just a single point.' Evaluate her statement.",
+     "a": "She is only partly right. The section is a point only when alpha < beta <= 90 degrees. If beta = alpha the plane contains a generator and the section is a straight line, and if 0 <= beta < alpha the section is a pair of intersecting straight lines. So her 'whenever' is wrong.",
+     "s": [
+      [
+       "States that a point occurs only when alpha < beta <= 90 degrees",
+       1
+      ],
+      [
+       "Gives the other cases: a straight line when beta = alpha, a pair of intersecting lines when beta < alpha",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Create",
+     "d": "Hardest",
+     "t": "long_answer",
+     "m": 3,
+     "q": "Choose a value of alpha for a double-napped cone. Then choose three planes, none through the vertex, by giving their angles beta with the axis, so that the sections are an ellipse, a parabola and a hyperbola respectively. Justify each choice.",
+     "a": "For example take alpha = 40 degrees. Ellipse: beta = 70 degrees, because 40 < 70 < 90 (alpha < beta < 90 degrees). Parabola: beta = 40 degrees, because beta = alpha. Hyperbola: beta = 15 degrees, because 0 <= 15 < 40 (0 <= beta < alpha), so the plane cuts both nappes. (Any alpha strictly between 0 and 90 degrees with three betas satisfying these conditions earns full marks.)",
+     "s": [
+      [
+       "Ellipse: a beta with alpha < beta < 90 degrees, justified",
+       1
+      ],
+      [
+       "Parabola: beta = alpha, justified",
+       1
+      ],
+      [
+       "Hyperbola: a beta with 0 <= beta < alpha, justified",
+       1
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "code": "C11M-10.2",
+   "name": "Circle: equation, centre and radius",
+   "description": "The circle as a set of points equidistant from a centre, its equation (x - h)^2 + (y - k)^2 = r^2, reading centre and radius by completing squares, and finding a circle from given conditions.",
+   "idea": "Every point of a circle is at the same distance r from the centre (h, k); the distance formula turns that into an equation.",
+   "rule": "(x - h)^2 + (y - k)^2 = r^2. To read centre and radius from an expanded equation, make the coefficients of x^2 and y^2 equal to 1 and complete the squares.",
+   "example": "x^2 + y^2 + 8x + 10y - 8 = 0 becomes (x + 4)^2 + (y + 5)^2 = 49: centre (-4, -5), radius 7.",
+   "difficulty_base": "Easy",
+   "questions": [
+    {
+     "b": "Remember",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "The equation of the circle with centre (h, k) and radius r is",
+     "a": "(x - h)^2 + (y - k)^2 = r^2",
+     "o": [
+      "(x - h)^2 + (y - k)^2 = r^2",
+      "(x + h)^2 + (y + k)^2 = r^2",
+      "(x - h)^2 + (y - k)^2 = r",
+      "(x - h)^2 - (y - k)^2 = r^2"
+     ]
+    },
+    {
+     "b": "Remember",
+     "d": "Easy",
+     "t": "fill_blank",
+     "m": 1,
+     "q": "The radius of the circle x^2 + y^2 = 81 is ____. (Write a whole number.)",
+     "a": "9"
+    },
+    {
+     "b": "Remember",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "A circle is the set of all points in a plane that are",
+     "a": "equidistant from a fixed point in the plane",
+     "o": [
+      "equidistant from a fixed point in the plane",
+      "equidistant from a fixed point and a fixed line in the plane",
+      "such that the sum of their distances from two fixed points is constant",
+      "equidistant from two fixed points in the plane"
+     ]
+    },
+    {
+     "b": "Remember",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "q": "Which of the following statements about the circle (x - 3)^2 + (y + 4)^2 = 25 is FALSE?",
+     "a": "Its centre is (-3, 4)",
+     "o": [
+      "Its centre is (-3, 4)",
+      "Its radius is 5",
+      "It passes through the origin",
+      "The point (3, 1) lies on it"
+     ],
+     "rev": true
+    },
+    {
+     "b": "Understand",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "The centre of the circle (x + 2)^2 + (y - 7)^2 = 9 is",
+     "a": "(-2, 7)",
+     "o": [
+      "(-2, 7)",
+      "(2, -7)",
+      "(7, -2)",
+      "(-2, -7)"
+     ]
+    },
+    {
+     "b": "Understand",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "The equation of the circle with centre at the origin and radius 6 is",
+     "a": "x^2 + y^2 = 36",
+     "o": [
+      "x^2 + y^2 = 36",
+      "x^2 + y^2 = 6",
+      "x^2 + y^2 = 12",
+      "x^2 - y^2 = 36"
+     ]
+    },
+    {
+     "b": "Understand",
+     "d": "Easy",
+     "t": "short_answer",
+     "m": 2,
+     "q": "Explain why the equation (x - 1)^2 + (y - 2)^2 = 16 represents a circle of radius 4 and not of radius 16.",
+     "a": "The equation of a circle with centre (h, k) and radius r is (x - h)^2 + (y - k)^2 = r^2, so the right-hand side is the SQUARE of the radius. Here r^2 = 16, so r = 4 (radius is positive). The centre is (1, 2).",
+     "s": [
+      [
+       "States that the right-hand side of the standard equation is r^2",
+       1
+      ],
+      [
+       "Concludes r^2 = 16 gives r = 4",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Understand",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "q": "The radius of the circle (x - 1)^2 + (y + 6)^2 = 20 is",
+     "a": "2 sqrt(5)",
+     "o": [
+      "2 sqrt(5)",
+      "20",
+      "10",
+      "sqrt(10)"
+     ]
+    },
+    {
+     "b": "Understand",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "q": "Where does the point (4, -3) lie in relation to the circle x^2 + y^2 = 36?",
+     "a": "Inside the circle, because its distance from the centre is 5, which is less than 6",
+     "o": [
+      "Inside the circle, because its distance from the centre is 5, which is less than 6",
+      "On the circle, because 4^2 + (-3)^2 = 36",
+      "Outside the circle, because 4 + 3 = 7 is greater than 6",
+      "Outside the circle, because 4^2 + (-3)^2 = 25 is greater than the radius 6"
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Easy",
+     "t": "fill_blank",
+     "m": 1,
+     "q": "A circle with centre (1, 2) passes through the point (4, 6). Its radius is ____. (Write a whole number.)",
+     "a": "5"
+    },
+    {
+     "b": "Apply",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "The equation of the circle with centre (-3, 5) and radius 2 is",
+     "a": "(x + 3)^2 + (y - 5)^2 = 4",
+     "o": [
+      "(x + 3)^2 + (y - 5)^2 = 4",
+      "(x - 3)^2 + (y + 5)^2 = 4",
+      "(x + 3)^2 + (y - 5)^2 = 2",
+      "(x + 5)^2 + (y - 3)^2 = 4"
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "q": "The centre of the circle x^2 + y^2 - 6x + 4y - 12 = 0 is",
+     "a": "(3, -2)",
+     "o": [
+      "(3, -2)",
+      "(-3, 2)",
+      "(6, -4)",
+      "(-6, 4)"
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "q": "The radius of the circle x^2 + y^2 + 2x - 10y + 10 = 0 is",
+     "a": "4",
+     "o": [
+      "4",
+      "16",
+      "6",
+      "sqrt(10)"
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "q": "Find the centre and the radius of the circle 2x^2 + 2y^2 - 8x + 12y - 6 = 0.",
+     "a": "Divide by 2: x^2 + y^2 - 4x + 6y - 3 = 0. Completing the squares: (x^2 - 4x + 4) + (y^2 + 6y + 9) = 3 + 4 + 9, that is (x - 2)^2 + (y + 3)^2 = 16. So the centre is (2, -3) and the radius is 4.",
+     "s": [
+      [
+       "Divides by 2 and completes the squares to get (x - 2)^2 + (y + 3)^2 = 16",
+       1
+      ],
+      [
+       "States centre (2, -3) and radius 4",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hardest",
+     "t": "long_answer",
+     "m": 3,
+     "q": "Find the equation of the circle which passes through the points (5, 7) and (6, 0) and whose centre lies on the line x + y = 5.",
+     "a": "Let the circle be (x - h)^2 + (y - k)^2 = r^2. Through (5, 7): (5 - h)^2 + (7 - k)^2 = r^2. Through (6, 0): (6 - h)^2 + k^2 = r^2. Subtracting: 74 - 10h - 14k = 36 - 12h, so 2h - 14k + 38 = 0, that is h = 7k - 19. The centre lies on x + y = 5, so h + k = 5, giving 8k = 24, k = 3 and h = 2. Then r^2 = (6 - 2)^2 + 3^2 = 25. The circle is (x - 2)^2 + (y - 3)^2 = 25.",
+     "s": [
+      [
+       "Writes the two point conditions and the centre condition h + k = 5",
+       1
+      ],
+      [
+       "Solves to get h = 2, k = 3",
+       1
+      ],
+      [
+       "Finds r^2 = 25 and writes (x - 2)^2 + (y - 3)^2 = 25",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "assertion_reason",
+     "m": 1,
+     "q": "Assertion (A): The circle x^2 + y^2 - 4x + 2y - 4 = 0 has radius 3. Reason (R): Completing the squares rewrites this equation as (x - 2)^2 + (y + 1)^2 = 9, which is of the form (x - h)^2 + (y - k)^2 = r^2.",
+     "a": "Both A and R are true, and R is the correct explanation of A",
+     "o": [
+      "Both A and R are true, and R is the correct explanation of A",
+      "Both A and R are true, but R is not the correct explanation of A",
+      "A is true, R is false",
+      "A is false, R is true"
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "multi_statement",
+     "m": 1,
+     "q": "Consider these statements. (I) The circle (x + 1)^2 + (y - 4)^2 = 49 has centre (1, -4). (II) The circle x^2 + y^2 = 50 passes through the point (5, -5). Which is or are correct?",
+     "a": "Only II",
+     "o": [
+      "Only II",
+      "Only I",
+      "Both I and II",
+      "Neither I nor II"
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hardest",
+     "t": "long_answer",
+     "m": 3,
+     "q": "A circle of radius 13 has its centre on the y-axis and passes through the point (5, 2). Find the equation of every such circle and explain why there is more than one.",
+     "a": "Let the centre be (0, k). Then (x - 0)^2 + (y - k)^2 = 169 and the point (5, 2) gives 25 + (2 - k)^2 = 169, so (2 - k)^2 = 144, 2 - k = 12 or -12, k = -10 or k = 14. The circles are x^2 + (y + 10)^2 = 169 and x^2 + (y - 14)^2 = 169. There are two because the condition is a quadratic equation in k with two real roots: the centre can be 12 units below or 12 units above the level y = 2 on the y-axis.",
+     "s": [
+      [
+       "Takes centre (0, k) and forms 25 + (2 - k)^2 = 169",
+       1
+      ],
+      [
+       "Solves to get k = -10 or k = 14 and writes both equations",
+       1
+      ],
+      [
+       "Explains the two answers from the two roots of the quadratic in k",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Evaluate",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "q": "Ravi says: 'The circle x^2 + y^2 + 6x - 8y = 0 has centre (3, -4) and radius 5.' Evaluate his statement.",
+     "a": "Completing the squares: (x^2 + 6x + 9) + (y^2 - 8y + 16) = 25, that is (x + 3)^2 + (y - 4)^2 = 25 = {x - (-3)}^2 + (y - 4)^2. So the radius 5 is correct, but the centre is (-3, 4), not (3, -4). Ravi has the signs of both coordinates of the centre wrong.",
+     "s": [
+      [
+       "Completes the squares to get (x + 3)^2 + (y - 4)^2 = 25",
+       1
+      ],
+      [
+       "Judges: radius 5 correct, centre should be (-3, 4)",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Create",
+     "d": "Hardest",
+     "t": "long_answer",
+     "m": 3,
+     "q": "Construct the equation of a circle whose centre lies in the fourth quadrant and which passes through the origin. State the centre and the radius, write the equation in the form (x - h)^2 + (y - k)^2 = r^2, and verify that the origin lies on it.",
+     "a": "For example take the centre (6, -8), which is in the fourth quadrant. The radius is its distance from the origin: sqrt(36 + 64) = 10. Equation: (x - 6)^2 + (y + 8)^2 = 100. Check at (0, 0): 36 + 64 = 100, so the origin lies on the circle. (Any centre (h, k) with h > 0 and k < 0 and r^2 = h^2 + k^2 earns full marks.)",
+     "s": [
+      [
+       "Chooses a centre (h, k) with h > 0, k < 0 and finds r as its distance from the origin",
+       1
+      ],
+      [
+       "Writes the equation correctly with the right signs",
+       1
+      ],
+      [
+       "Verifies that (0, 0) satisfies the equation",
+       1
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "code": "C11M-10.3",
+   "name": "Parabola: definition and the four standard equations",
+   "description": "The parabola as the set of points equidistant from a fixed line (directrix) and a fixed point (focus), its axis and vertex, the four standard equations with vertex at the origin, and which way each opens.",
+   "idea": "Each point of a parabola is as far from the focus as from the directrix. Putting the vertex at the origin and the axis along a coordinate axis gives four simple equations.",
+   "rule": "y^2 = 4ax opens right, y^2 = -4ax opens left, x^2 = 4ay opens upwards, x^2 = -4ay opens downwards (a > 0). A y^2 term means the axis is the x-axis; an x^2 term means the axis is the y-axis.",
+   "example": "A parabola symmetric about the y-axis through (2, -3) opens downwards: 4 = -4a(-3) gives a = 1/3, so 3x^2 = -4y.",
+   "difficulty_base": "Easy",
+   "questions": [
+    {
+     "b": "Remember",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "By definition, a parabola is the set of all points in a plane that are",
+     "a": "equidistant from a fixed line and a fixed point (not on the line) in the plane",
+     "o": [
+      "equidistant from a fixed line and a fixed point (not on the line) in the plane",
+      "equidistant from a fixed point in the plane",
+      "such that the sum of their distances from two fixed points is constant",
+      "such that the difference of their distances from two fixed points is constant"
+     ]
+    },
+    {
+     "b": "Remember",
+     "d": "Easy",
+     "t": "fill_blank",
+     "m": 1,
+     "q": "The fixed line used in the definition of a parabola is called the ____ of the parabola. (Write one word.)",
+     "a": "directrix"
+    },
+    {
+     "b": "Remember",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "The point of intersection of a parabola with its axis is called the",
+     "a": "vertex",
+     "o": [
+      "vertex",
+      "focus",
+      "directrix",
+      "latus rectum"
+     ]
+    },
+    {
+     "b": "Remember",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "q": "Which of the following is NOT one of the four standard equations of a parabola with vertex at the origin (a > 0)?",
+     "a": "x^2 = 4ay^2",
+     "o": [
+      "x^2 = 4ay^2",
+      "y^2 = -4ax",
+      "x^2 = 4ay",
+      "x^2 = -4ay"
+     ],
+     "rev": true
+    },
+    {
+     "b": "Understand",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "The parabola y^2 = -4ax, where a > 0, opens",
+     "a": "to the left",
+     "o": [
+      "to the left",
+      "to the right",
+      "upwards",
+      "downwards"
+     ]
+    },
+    {
+     "b": "Understand",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "If the standard equation of a parabola has an x^2 term (for example x^2 = 4ay), then its axis of symmetry is along",
+     "a": "the y-axis",
+     "o": [
+      "the y-axis",
+      "the x-axis",
+      "the line y = x",
+      "the directrix"
+     ]
+    },
+    {
+     "b": "Understand",
+     "d": "Easy",
+     "t": "short_answer",
+     "m": 2,
+     "q": "Explain why the parabola y^2 = 4ax, with a > 0, has no point whose x-coordinate is negative.",
+     "a": "For every point (x, y) on the curve, y^2 = 4ax. Since y^2 is never negative, 4ax >= 0, and as a > 0 this forces x >= 0. So x can be zero or positive but never negative; the curve lies in the first and fourth quadrants (and passes through the origin).",
+     "s": [
+      [
+       "Uses y^2 >= 0 to get 4ax >= 0",
+       1
+      ],
+      [
+       "Concludes x >= 0 because a > 0",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Understand",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "q": "The parabola x^2 = -20y",
+     "a": "has the y-axis as its axis of symmetry and opens downwards",
+     "o": [
+      "has the y-axis as its axis of symmetry and opens downwards",
+      "has the y-axis as its axis of symmetry and opens upwards",
+      "has the x-axis as its axis of symmetry and opens to the left",
+      "has the x-axis as its axis of symmetry and opens to the right"
+     ]
+    },
+    {
+     "b": "Understand",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "q": "In deriving the equation y^2 = 4ax, the focus is taken at (a, 0) and the directrix as x = -a. The distance from the directrix to the focus is therefore",
+     "a": "2a",
+     "o": [
+      "2a",
+      "a",
+      "4a",
+      "a/2"
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Easy",
+     "t": "fill_blank",
+     "m": 1,
+     "q": "The parabola y^2 = 4ax passes through the point (3, 6). The value of a is ____. (Write a whole number.)",
+     "a": "3"
+    },
+    {
+     "b": "Apply",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "Which of the following parabolas opens upwards?",
+     "a": "x^2 = 5y",
+     "o": [
+      "x^2 = 5y",
+      "x^2 = -5y",
+      "y^2 = 5x",
+      "y^2 = -5x"
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "q": "A parabola has its vertex at the origin and its axis along the x-axis, and it passes through the point (-2, 4). Its equation is",
+     "a": "y^2 = -8x",
+     "o": [
+      "y^2 = -8x",
+      "y^2 = 8x",
+      "x^2 = y",
+      "y^2 = -2x"
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "q": "A parabola has its vertex at the origin, is symmetric about the y-axis and passes through the point (6, -3). Its equation is",
+     "a": "x^2 = -12y",
+     "o": [
+      "x^2 = -12y",
+      "x^2 = 12y",
+      "2y^2 = 3x",
+      "x^2 = -3y"
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "q": "Using the definition of a parabola (and the distance formula), derive the equation of the parabola whose focus is (3, 0) and whose directrix is the line x = -3.",
+     "a": "Let P(x, y) be a point of the parabola. Its distance from the focus is sqrt((x - 3)^2 + y^2) and its distance from the directrix x = -3 is sqrt((x + 3)^2). Setting these equal and squaring: (x - 3)^2 + y^2 = (x + 3)^2, so x^2 - 6x + 9 + y^2 = x^2 + 6x + 9, giving y^2 = 12x.",
+     "s": [
+      [
+       "Equates the distance from (3, 0) to the distance from the line x = -3",
+       1
+      ],
+      [
+       "Squares and simplifies to y^2 = 12x",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hardest",
+     "t": "long_answer",
+     "m": 3,
+     "q": "A parabola has its vertex at the origin, is symmetric about the y-axis and passes through the point (4, -2). (i) Decide whether it opens upwards or downwards, with a reason. (ii) Find its equation. (iii) Find the y-coordinate of the points on it whose x-coordinate is 12.",
+     "a": "(i) Symmetric about the y-axis with vertex at the origin, so the form is x^2 = 4ay or x^2 = -4ay. The point (4, -2) has a negative y-coordinate (fourth quadrant), so the parabola opens downwards: x^2 = -4ay. (ii) Substituting (4, -2): 16 = -4a(-2) = 8a, so a = 2 and the equation is x^2 = -8y. (iii) At x = 12: 144 = -8y, so y = -18.",
+     "s": [
+      [
+       "Chooses the form x^2 = -4ay (opens downwards) with the reason",
+       1
+      ],
+      [
+       "Finds a = 2 and the equation x^2 = -8y",
+       1
+      ],
+      [
+       "Finds y = -18 when x = 12",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "assertion_reason",
+     "m": 1,
+     "q": "Assertion (A): The parabola y^2 = -6x opens downwards. Reason (R): If the standard equation of a parabola has a y^2 term, then its axis of symmetry is along the x-axis.",
+     "a": "A is false, R is true",
+     "o": [
+      "A is false, R is true",
+      "Both A and R are true, and R is the correct explanation of A",
+      "Both A and R are true, but R is not the correct explanation of A",
+      "A is true, R is false"
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "multi_statement",
+     "m": 1,
+     "q": "Consider these statements. (I) Every point of the parabola x^2 = 4ay (a > 0) lies on or above the x-axis. (II) If the fixed point lies on the fixed line, the set of points equidistant from the point and the line is still a curved parabola. Which is or are correct?",
+     "a": "Only I",
+     "o": [
+      "Only I",
+      "Only II",
+      "Both I and II",
+      "Neither I nor II"
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hardest",
+     "t": "long_answer",
+     "m": 3,
+     "q": "Three parabolas with vertex at the origin are given: P1: y^2 = 7x, P2: x^2 = -3y, P3: y^2 = -x. (i) State the axis of symmetry and the direction of opening of each. (ii) Decide, with working, which of them passes through the point (-4, 2). (iii) Explain how part (i) could have told you in advance that P1 cannot pass through (-4, 2).",
+     "a": "(i) P1 has a y^2 term and a positive coefficient of x: axis along the x-axis, opens to the right. P2 has an x^2 term and a negative coefficient of y: axis along the y-axis, opens downwards. P3 has a y^2 term and a negative coefficient of x: axis along the x-axis, opens to the left. (ii) At (-4, 2): P1: y^2 = 4 but 7x = -28, no. P2: x^2 = 16 but -3y = -6, no. P3: y^2 = 4 and -x = 4, yes. Only P3 passes through (-4, 2). (iii) P1 opens to the right, so every point on it has x >= 0; a point with x = -4 cannot lie on it.",
+     "s": [
+      [
+       "Gives axis and opening direction of all three correctly",
+       1
+      ],
+      [
+       "Tests (-4, 2) in each and finds only P3 satisfied",
+       1
+      ],
+      [
+       "Explains that P1 has no points with negative x",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Evaluate",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "q": "Kiran says: 'The point (2, -4) lies in the fourth quadrant, so a parabola with vertex at the origin, symmetric about the x-axis and passing through it, must open to the left.' Evaluate his statement.",
+     "a": "He is wrong. A parabola symmetric about the x-axis with vertex at the origin is y^2 = 4ax (opens right, all points have x >= 0) or y^2 = -4ax (opens left, all points have x <= 0). The point (2, -4) has a positive x-coordinate, so the parabola opens to the right. Indeed 16 = 4a(2) gives a = 2 and the equation y^2 = 8x. For this orientation it is the sign of x, not of y, that decides the direction.",
+     "s": [
+      [
+       "States that the sign of the x-coordinate decides between opening right and left",
+       1
+      ],
+      [
+       "Concludes it opens to the right (y^2 = 8x), so Kiran is wrong",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Create",
+     "d": "Hardest",
+     "t": "long_answer",
+     "m": 3,
+     "q": "Construct a parabola in standard form that opens to the left and passes through a point whose y-coordinate is 6. Give its equation and the point, verify that the point lies on it, and state its axis of symmetry.",
+     "a": "For example take y^2 = -4x (the form y^2 = -4ax with a = 1), which opens to the left. With y = 6: 36 = -4x, so x = -9 and the point is (-9, 6). Check: y^2 = 36 and -4x = -4(-9) = 36. The axis of symmetry is the x-axis. (Any equation y^2 = -4ax with a > 0 and the matching point (-9/a, 6) earns full marks.)",
+     "s": [
+      [
+       "Chooses an equation of the form y^2 = -4ax with a > 0",
+       1
+      ],
+      [
+       "Finds a point with y = 6 and verifies it satisfies the equation",
+       1
+      ],
+      [
+       "States that the axis of symmetry is the x-axis",
+       1
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "code": "C11M-10.4",
+   "name": "Parabola: focus, directrix, latus rectum and applications",
+   "description": "Finding the focus, directrix and latus rectum of a standard parabola, finding the equation from focus, directrix or a point, and using a parabola in reflector, arch and beam problems.",
+   "idea": "In a standard parabola the focus is a units from the vertex along the axis, the directrix is a units on the other side, and the chord through the focus perpendicular to the axis is the latus rectum.",
+   "rule": "y^2 = 4ax: focus (a, 0), directrix x = -a. x^2 = 4ay: focus (0, a), directrix y = -a. Signs reverse for the -4a forms. Length of the latus rectum = 4a.",
+   "example": "y^2 = 8x has a = 2: focus (2, 0), directrix x = -2, latus rectum 8.",
+   "difficulty_base": "Hard",
+   "questions": [
+    {
+     "b": "Remember",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "The length of the latus rectum of the parabola y^2 = 4ax is",
+     "a": "4a",
+     "o": [
+      "4a",
+      "2a",
+      "a",
+      "2b^2/a"
+     ]
+    },
+    {
+     "b": "Remember",
+     "d": "Easy",
+     "t": "fill_blank",
+     "m": 1,
+     "q": "The length of the latus rectum of the parabola y^2 = 44x is ____. (Write a whole number.)",
+     "a": "44"
+    },
+    {
+     "b": "Remember",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "The focus of the parabola x^2 = 4ay, where a > 0, is the point",
+     "a": "(0, a)",
+     "o": [
+      "(0, a)",
+      "(a, 0)",
+      "(0, -a)",
+      "(-a, 0)"
+     ]
+    },
+    {
+     "b": "Remember",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "q": "Which of the following statements about the latus rectum of a parabola is NOT true?",
+     "a": "It is parallel to the axis of the parabola",
+     "o": [
+      "It is parallel to the axis of the parabola",
+      "It passes through the focus",
+      "Its end points lie on the parabola",
+      "For the parabola y^2 = 4ax its length is 4a"
+     ],
+     "rev": true
+    },
+    {
+     "b": "Understand",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "The directrix of the parabola y^2 = 4ax, where a > 0, is the line",
+     "a": "x = -a",
+     "o": [
+      "x = -a",
+      "x = a",
+      "y = -a",
+      "y = a"
+     ]
+    },
+    {
+     "b": "Understand",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "The focus of the parabola y^2 = 28x is",
+     "a": "(7, 0)",
+     "o": [
+      "(7, 0)",
+      "(28, 0)",
+      "(0, 7)",
+      "(-7, 0)"
+     ]
+    },
+    {
+     "b": "Understand",
+     "d": "Easy",
+     "t": "short_answer",
+     "m": 2,
+     "q": "Explain why the latus rectum of the parabola y^2 = 4ax (a > 0) has length 4a.",
+     "a": "The latus rectum is the segment through the focus (a, 0) perpendicular to the axis (the x-axis), with its ends on the parabola, so its ends have x = a. Putting x = a in y^2 = 4ax gives y^2 = 4a^2, so y = 2a or y = -2a. The ends are (a, 2a) and (a, -2a), and the distance between them is 4a. (Equivalently, each end is at distance 2a from the directrix, hence 2a from the focus, and the two halves add to 4a.)",
+     "s": [
+      [
+       "Locates the ends on the line x = a through the focus (or uses the focus-directrix distance 2a)",
+       1
+      ],
+      [
+       "Gets ends (a, 2a) and (a, -2a), or two halves of 2a, and hence length 4a",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Understand",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "q": "The directrix of the parabola x^2 = -24y is the line",
+     "a": "y = 6",
+     "o": [
+      "y = 6",
+      "y = -6",
+      "x = 6",
+      "y = 24"
+     ]
+    },
+    {
+     "b": "Understand",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "q": "The focus of the parabola y^2 = -10x is",
+     "a": "(-5/2, 0)",
+     "o": [
+      "(-5/2, 0)",
+      "(5/2, 0)",
+      "(0, -5/2)",
+      "(-10, 0)"
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Easy",
+     "t": "fill_blank",
+     "m": 1,
+     "q": "The parabola with vertex (0, 0) and focus (0, 9) has equation x^2 = ky. The value of k is ____. (Write a whole number.)",
+     "a": "36"
+    },
+    {
+     "b": "Apply",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "The equation of the parabola with focus (5, 0) and directrix x = -5 is",
+     "a": "y^2 = 20x",
+     "o": [
+      "y^2 = 20x",
+      "y^2 = -20x",
+      "x^2 = 20y",
+      "y^2 = 5x"
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "q": "The equation of the parabola with focus (0, -4) and directrix y = 4 is",
+     "a": "x^2 = -16y",
+     "o": [
+      "x^2 = -16y",
+      "x^2 = 16y",
+      "y^2 = -16x",
+      "x^2 = -4y"
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "q": "A point P on the parabola y^2 = 16x has x-coordinate 5. The distance of P from the focus of the parabola is",
+     "a": "9",
+     "o": [
+      "9",
+      "5",
+      "1",
+      "4 sqrt(5)"
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "q": "For the parabola x^2 = -9y, find the coordinates of the focus, the equation of the directrix and the length of the latus rectum.",
+     "a": "The equation has an x^2 term and a negative coefficient of y, so it is of the form x^2 = -4ay and opens downwards. 4a = 9, so a = 9/4. Focus: (0, -9/4). Directrix: y = 9/4. Length of the latus rectum: 4a = 9.",
+     "s": [
+      [
+       "Identifies the form x^2 = -4ay with a = 9/4",
+       1
+      ],
+      [
+       "Gives focus (0, -9/4), directrix y = 9/4 and latus rectum 9",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hardest",
+     "t": "long_answer",
+     "m": 3,
+     "q": "A parabolic reflector is 24 cm in diameter at its rim and 9 cm deep. Taking the vertex at the origin and the axis of the reflector along the positive x-axis, find the equation of the parabolic section and the distance of the focus from the vertex.",
+     "a": "With vertex at the origin and axis along the positive x-axis the section is y^2 = 4ax. The rim is 9 cm from the vertex and its diameter is 24 cm, so the point (9, 12) lies on the parabola. Then 144 = 4a(9) = 36a, so a = 4. The equation is y^2 = 16x and the focus is (4, 0), that is 4 cm from the vertex along the axis.",
+     "s": [
+      [
+       "Sets up y^2 = 4ax and identifies the rim point (9, 12)",
+       1
+      ],
+      [
+       "Substitutes to get a = 4 and y^2 = 16x",
+       1
+      ],
+      [
+       "States that the focus is 4 cm from the vertex",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "assertion_reason",
+     "m": 1,
+     "q": "Assertion (A): The focus of the parabola x^2 = 8y is the point (0, 2). Reason (R): The latus rectum of a parabola is perpendicular to the axis of the parabola.",
+     "a": "Both A and R are true, but R is not the correct explanation of A",
+     "o": [
+      "Both A and R are true, but R is not the correct explanation of A",
+      "Both A and R are true, and R is the correct explanation of A",
+      "A is true, R is false",
+      "A is false, R is true"
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "multi_statement",
+     "m": 1,
+     "q": "Consider these statements. (I) The directrix of the parabola y^2 = -4x is the line x = -1. (II) The latus rectum of the parabola x^2 = 2y has length 8. Which is or are correct?",
+     "a": "Neither I nor II",
+     "o": [
+      "Neither I nor II",
+      "Only I",
+      "Only II",
+      "Both I and II"
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hardest",
+     "t": "long_answer",
+     "m": 3,
+     "q": "Find the area of the triangle formed by joining the vertex of the parabola y^2 = 8x to the two ends of its latus rectum.",
+     "a": "Here 4a = 8, so a = 2 and the focus is (2, 0). The latus rectum lies on the line x = 2; putting x = 2 gives y^2 = 16, so its ends are (2, 4) and (2, -4) and its length is 8. The vertex is (0, 0), at perpendicular distance 2 from the line x = 2. Area = (1/2)(base)(height) = (1/2)(8)(2) = 8 square units.",
+     "s": [
+      [
+       "Finds a = 2 and the focus (2, 0)",
+       1
+      ],
+      [
+       "Finds the ends (2, 4) and (2, -4) of the latus rectum (length 8)",
+       1
+      ],
+      [
+       "Uses base 8 and height 2 to get area 8 square units",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Evaluate",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "q": "Anu says: 'For the parabola x^2 = -20y, the focus is (0, 5) and the directrix is y = -5.' Evaluate her statement.",
+     "a": "She has the value a = 5 right (4a = 20) but the positions wrong. The equation is of the form x^2 = -4ay, which opens downwards, so the focus is below the vertex at (0, -5) and the directrix is the line y = 5. Anu has given the focus and directrix of x^2 = 20y instead.",
+     "s": [
+      [
+       "Recognises the form x^2 = -4ay (opens downwards) with a = 5",
+       1
+      ],
+      [
+       "Corrects to focus (0, -5) and directrix y = 5",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Create",
+     "d": "Hardest",
+     "t": "long_answer",
+     "m": 3,
+     "q": "Construct the equation of a parabola with vertex at the origin that opens downwards and whose latus rectum has length 12. State its focus, the equation of its directrix and the coordinates of the two ends of its latus rectum.",
+     "a": "Opening downwards means the form x^2 = -4ay. Latus rectum 4a = 12 gives a = 3, so the equation is x^2 = -12y. Focus: (0, -3). Directrix: y = 3. The latus rectum lies on y = -3: x^2 = 36, so its ends are (6, -3) and (-6, -3), which are 12 apart as required.",
+     "s": [
+      [
+       "Uses x^2 = -4ay with 4a = 12 to get x^2 = -12y",
+       1
+      ],
+      [
+       "States focus (0, -3) and directrix y = 3",
+       1
+      ],
+      [
+       "Finds the ends (6, -3) and (-6, -3)",
+       1
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "code": "C11M-10.5",
+   "name": "Ellipse: definition, axes, a^2 = b^2 + c^2 and eccentricity",
+   "description": "The ellipse as the set of points whose distances from two foci have a constant sum 2a; centre, major and minor axes, vertices; the relation a^2 = b^2 + c^2; eccentricity e = c/a; the two standard equations and which axis is the major axis.",
+   "idea": "The sum of the distances from the two foci is the same, 2a, for every point of an ellipse. Applying this at the end of the minor axis gives a^2 = b^2 + c^2.",
+   "rule": "a^2 = b^2 + c^2, e = c/a < 1, focus at distance ae from the centre. x^2/a^2 + y^2/b^2 = 1 has its major axis on the x-axis, x^2/b^2 + y^2/a^2 = 1 on the y-axis; a^2 is always the larger denominator.",
+   "example": "Major axis 20 and foci 10 apart: a = 10, c = 5, b^2 = 75, e = 1/2.",
+   "difficulty_base": "Hard",
+   "questions": [
+    {
+     "b": "Remember",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "By definition, an ellipse is the set of all points in a plane",
+     "a": "the sum of whose distances from two fixed points in the plane is a constant",
+     "o": [
+      "the sum of whose distances from two fixed points in the plane is a constant",
+      "the difference of whose distances from two fixed points in the plane is a constant",
+      "that are equidistant from a fixed point and a fixed line in the plane",
+      "that are equidistant from one fixed point in the plane"
+     ]
+    },
+    {
+     "b": "Remember",
+     "d": "Easy",
+     "t": "fill_blank",
+     "m": 1,
+     "q": "The two fixed points used in the definition of an ellipse are called its ____. (Write one word, in the plural.)",
+     "a": "foci"
+    },
+    {
+     "b": "Remember",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "For an ellipse with semi-major axis a, semi-minor axis b and distance c of each focus from the centre, the relation between a, b and c is",
+     "a": "a^2 = b^2 + c^2",
+     "o": [
+      "a^2 = b^2 + c^2",
+      "c^2 = a^2 + b^2",
+      "b^2 = a^2 + c^2",
+      "a = b + c"
+     ]
+    },
+    {
+     "b": "Remember",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "q": "Which of the following statements about the axes and foci of an ellipse is NOT correct?",
+     "a": "The foci lie on the minor axis",
+     "o": [
+      "The foci lie on the minor axis",
+      "The end points of the major axis are called the vertices",
+      "The centre is the mid-point of the line segment joining the foci",
+      "The length of the major axis is 2a"
+     ],
+     "rev": true
+    },
+    {
+     "b": "Understand",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "The eccentricity e of an ellipse with semi-major axis a and distance c from the centre to a focus is defined as",
+     "a": "c/a",
+     "o": [
+      "c/a",
+      "a/c",
+      "b/a",
+      "c/b"
+     ]
+    },
+    {
+     "b": "Understand",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "For any point P on the ellipse x^2/a^2 + y^2/b^2 = 1 (a > b), the sum of the distances of P from the two foci is",
+     "a": "2a",
+     "o": [
+      "2a",
+      "2b",
+      "2c",
+      "a + b"
+     ]
+    },
+    {
+     "b": "Understand",
+     "d": "Easy",
+     "t": "short_answer",
+     "m": 2,
+     "q": "Explain why the eccentricity of an ellipse is always less than 1.",
+     "a": "For an ellipse a^2 = b^2 + c^2, so c^2 = a^2 - b^2, which is less than a^2 because b > 0. Hence c < a, and the eccentricity e = c/a is less than 1. (The focus lies between the centre and the vertex.)",
+     "s": [
+      [
+       "Uses c^2 = a^2 - b^2 to show c < a",
+       1
+      ],
+      [
+       "Concludes e = c/a < 1",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Understand",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "q": "The major axis of the ellipse x^2/16 + y^2/49 = 1 lies along",
+     "a": "the y-axis, because the y^2 term has the larger denominator",
+     "o": [
+      "the y-axis, because the y^2 term has the larger denominator",
+      "the x-axis, because the x^2 term is written first",
+      "the x-axis, because the x^2 term has the smaller denominator",
+      "the line y = x, because both terms are positive"
+     ]
+    },
+    {
+     "b": "Understand",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "q": "In terms of the eccentricity e, each focus of an ellipse with semi-major axis a is at a distance from the centre equal to",
+     "a": "ae",
+     "o": [
+      "ae",
+      "a/e",
+      "a(1 - e)",
+      "ae^2"
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Easy",
+     "t": "fill_blank",
+     "m": 1,
+     "q": "An ellipse has semi-major axis 15 and semi-minor axis 12. The distance of each focus from the centre is ____. (Write a whole number.)",
+     "a": "9"
+    },
+    {
+     "b": "Apply",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "The length of the major axis of the ellipse x^2/25 + y^2/16 = 1 is",
+     "a": "10",
+     "o": [
+      "10",
+      "5",
+      "8",
+      "25"
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "q": "An ellipse has a major axis of length 20 and a minor axis of length 12. Its eccentricity is",
+     "a": "4/5",
+     "o": [
+      "4/5",
+      "3/5",
+      "5/4",
+      "4/3"
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "q": "For every point of an ellipse the sum of the distances from the two foci is 34, and the foci are 30 units apart. The length of the minor axis is",
+     "a": "16",
+     "o": [
+      "16",
+      "8",
+      "4",
+      "2 sqrt(514)"
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "q": "The foci of an ellipse are 10 units apart and its eccentricity is 5/13. Find the lengths of its major and minor axes.",
+     "a": "2c = 10, so c = 5. e = c/a = 5/13 gives a = 13. Then b^2 = a^2 - c^2 = 169 - 25 = 144, so b = 12. The major axis is 2a = 26 units and the minor axis is 2b = 24 units.",
+     "s": [
+      [
+       "Finds c = 5 and a = 13 from e = c/a",
+       1
+      ],
+      [
+       "Finds b = 12 and states the axes 26 and 24",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hardest",
+     "t": "long_answer",
+     "m": 3,
+     "q": "The point Q at one end of the minor axis of an ellipse is at a distance of 25 units from each focus, and the two foci are 14 units apart. Find a, b, c and the eccentricity of the ellipse, explaining each step.",
+     "a": "Q lies on the ellipse, so the sum of its distances from the foci is 2a: 25 + 25 = 2a, a = 25. The foci are 2c = 14 apart, so c = 7. From a^2 = b^2 + c^2: b^2 = 625 - 49 = 576, so b = 24. Eccentricity e = c/a = 7/25.",
+     "s": [
+      [
+       "Uses the definition at Q: 2a = 50, so a = 25",
+       1
+      ],
+      [
+       "Finds c = 7 and b = 24 from a^2 = b^2 + c^2",
+       1
+      ],
+      [
+       "Finds e = 7/25",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "assertion_reason",
+     "m": 1,
+     "q": "Assertion (A): An ellipse whose foci are 8 units apart cannot have a major axis of length 6. Reason (R): The constant sum of the distances of a point on an ellipse from the two foci is always greater than the distance between the foci.",
+     "a": "Both A and R are true, and R is the correct explanation of A",
+     "o": [
+      "Both A and R are true, and R is the correct explanation of A",
+      "Both A and R are true, but R is not the correct explanation of A",
+      "A is true, R is false",
+      "A is false, R is true"
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "multi_statement",
+     "m": 1,
+     "q": "Consider these statements. (I) In the ellipse x^2/b^2 + y^2/a^2 = 1 (a > b), the foci lie on the y-axis. (II) The ellipse x^2/a^2 + y^2/b^2 = 1 (a > b) has some points whose x-coordinate is greater than a. Which is or are correct?",
+     "a": "Only I",
+     "o": [
+      "Only I",
+      "Only II",
+      "Both I and II",
+      "Neither I nor II"
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hardest",
+     "t": "long_answer",
+     "m": 3,
+     "q": "Ellipse E1 has semi-major axis 5 and semi-minor axis 3. Ellipse E2 has semi-major axis 29 and semi-minor axis 21. (i) Find c for each. (ii) Find the eccentricity of each. (iii) Which ellipse has its foci farther from its centre, and which has the larger eccentricity? Explain why these two answers need not agree.",
+     "a": "(i) E1: c = sqrt(25 - 9) = 4. E2: c = sqrt(841 - 441) = sqrt(400) = 20. (ii) E1: e = 4/5 = 0.8. E2: e = 20/29, about 0.69. (iii) E2 has its foci farther from the centre (20 > 4), but E1 has the larger eccentricity (4/5 > 20/29, since 116 > 100). They need not agree because eccentricity is the ratio c/a, not the distance c itself: E2's foci are far out only in proportion to a much larger a.",
+     "s": [
+      [
+       "Finds c = 4 for E1 and c = 20 for E2",
+       1
+      ],
+      [
+       "Finds e = 4/5 and e = 20/29",
+       1
+      ],
+      [
+       "States E2 has farther foci but E1 has larger e, because e is the ratio c/a",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Evaluate",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "q": "Sana claims: 'In an ellipse with a = 5 and b = 4, each focus is at a distance sqrt(41) from the centre, because c^2 = a^2 + b^2.' Evaluate her claim.",
+     "a": "She is wrong. For an ellipse the relation is a^2 = b^2 + c^2, so c^2 = a^2 - b^2 = 25 - 16 = 9 and c = 3. Her value sqrt(41) is larger than a = 5, which is impossible, because the foci of an ellipse lie on the major axis between the centre and the vertices (c < a).",
+     "s": [
+      [
+       "States the correct relation c^2 = a^2 - b^2 and finds c = 3",
+       1
+      ],
+      [
+       "Notes that sqrt(41) > a is impossible for an ellipse (c < a)",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Create",
+     "d": "Hardest",
+     "t": "long_answer",
+     "m": 3,
+     "q": "Construct an ellipse, with a, b and c all whole numbers, whose major axis is along the y-axis and whose eccentricity is 3/5. Give a, b and c, write its standard equation and state the coordinates of its foci.",
+     "a": "For example a = 5 and c = 3 give e = 3/5, and b^2 = a^2 - c^2 = 16, so b = 4. With the major axis along the y-axis the larger denominator goes under y^2: x^2/16 + y^2/25 = 1. The foci are (0, 3) and (0, -3). (Any whole-number multiple, such as a = 10, b = 8, c = 6 with x^2/64 + y^2/100 = 1, earns full marks.)",
+     "s": [
+      [
+       "Chooses whole numbers with c/a = 3/5 and b^2 = a^2 - c^2",
+       1
+      ],
+      [
+       "Writes the equation with a^2 under y^2",
+       1
+      ],
+      [
+       "States the foci on the y-axis at (0, c) and (0, -c)",
+       1
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "code": "C11M-10.6",
+   "name": "Ellipse: foci, vertices, latus rectum and finding its equation",
+   "description": "Reading foci, vertices, axis lengths, eccentricity and latus rectum from the equation of an ellipse, finding the standard equation from given conditions, and semi-elliptical arch problems.",
+   "idea": "Put the equation in standard form, take a^2 as the larger denominator to fix the major axis, then every other element follows from a, b and c = sqrt(a^2 - b^2).",
+   "rule": "Foci (c, 0), (-c, 0) or (0, c), (0, -c) on the major axis; vertices at distance a; e = c/a; latus rectum = 2b^2/a.",
+   "example": "x^2/25 + y^2/9 = 1: a = 5, b = 3, c = 4; foci (4, 0) and (-4, 0); e = 4/5; latus rectum 18/5.",
+   "difficulty_base": "Hard",
+   "questions": [
+    {
+     "b": "Remember",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "The length of the latus rectum of the ellipse x^2/a^2 + y^2/b^2 = 1 (a > b) is",
+     "a": "2b^2/a",
+     "o": [
+      "2b^2/a",
+      "2a^2/b",
+      "b^2/a",
+      "4a"
+     ]
+    },
+    {
+     "b": "Remember",
+     "d": "Easy",
+     "t": "fill_blank",
+     "m": 1,
+     "q": "The vertices of the ellipse x^2/49 + y^2/36 = 1 are the points (k, 0) and (-k, 0), where the positive number k = ____. (Write a whole number.)",
+     "a": "7"
+    },
+    {
+     "b": "Remember",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "For the ellipse x^2/a^2 + y^2/b^2 = 1 with a > b and c = sqrt(a^2 - b^2), the foci are the points",
+     "a": "(c, 0) and (-c, 0)",
+     "o": [
+      "(c, 0) and (-c, 0)",
+      "(0, c) and (0, -c)",
+      "(a, 0) and (-a, 0)",
+      "(b, 0) and (-b, 0)"
+     ]
+    },
+    {
+     "b": "Remember",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "q": "Which of the following statements about the ellipse x^2/25 + y^2/9 = 1 is FALSE?",
+     "a": "Its latus rectum has length 50/3",
+     "o": [
+      "Its latus rectum has length 50/3",
+      "Its foci are (4, 0) and (-4, 0)",
+      "Its eccentricity is 4/5",
+      "Its minor axis has length 6"
+     ],
+     "rev": true
+    },
+    {
+     "b": "Understand",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "The latus rectum of an ellipse is a line segment",
+     "a": "perpendicular to the major axis through a focus, with its end points on the ellipse",
+     "o": [
+      "perpendicular to the major axis through a focus, with its end points on the ellipse",
+      "perpendicular to the major axis through the centre, with its end points on the ellipse",
+      "joining the two foci of the ellipse",
+      "joining the two vertices of the ellipse"
+     ]
+    },
+    {
+     "b": "Understand",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "Written in standard form, the ellipse 4x^2 + 9y^2 = 36 is",
+     "a": "x^2/9 + y^2/4 = 1",
+     "o": [
+      "x^2/9 + y^2/4 = 1",
+      "x^2/4 + y^2/9 = 1",
+      "x^2/144 + y^2/324 = 1",
+      "x^2/3 + y^2/2 = 1"
+     ]
+    },
+    {
+     "b": "Understand",
+     "d": "Easy",
+     "t": "short_answer",
+     "m": 2,
+     "q": "Explain how you can tell, from the equation x^2/4 + y^2/25 = 1 alone, on which coordinate axis the foci of the ellipse lie, and give the foci.",
+     "a": "The y^2 term has the larger denominator (25 > 4), so the major axis is along the y-axis, and the foci always lie on the major axis. Here a^2 = 25, b^2 = 4, so c = sqrt(25 - 4) = sqrt(21). The foci are (0, sqrt(21)) and (0, -sqrt(21)).",
+     "s": [
+      [
+       "Uses the larger denominator under y^2 to place the major axis and foci on the y-axis",
+       1
+      ],
+      [
+       "Finds c = sqrt(21) and states the foci (0, sqrt(21)) and (0, -sqrt(21))",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Understand",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "q": "The foci of the ellipse x^2/36 + y^2/100 = 1 are",
+     "a": "(0, 8) and (0, -8)",
+     "o": [
+      "(0, 8) and (0, -8)",
+      "(8, 0) and (-8, 0)",
+      "(0, 10) and (0, -10)",
+      "(0, 2 sqrt(34)) and (0, -2 sqrt(34))"
+     ]
+    },
+    {
+     "b": "Understand",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "q": "The length of the latus rectum of the ellipse x^2/16 + y^2/9 = 1 is",
+     "a": "9/2",
+     "o": [
+      "9/2",
+      "32/3",
+      "9/4",
+      "16"
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Easy",
+     "t": "fill_blank",
+     "m": 1,
+     "q": "The length of the minor axis of the ellipse 16x^2 + y^2 = 16 is ____. (Write a whole number.)",
+     "a": "2"
+    },
+    {
+     "b": "Apply",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "The eccentricity of the ellipse x^2/100 + y^2/64 = 1 is",
+     "a": "3/5",
+     "o": [
+      "3/5",
+      "4/5",
+      "5/3",
+      "3/4"
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "q": "The equation of the ellipse with vertices (17, 0) and (-17, 0) and foci (8, 0) and (-8, 0) is",
+     "a": "x^2/289 + y^2/225 = 1",
+     "o": [
+      "x^2/289 + y^2/225 = 1",
+      "x^2/225 + y^2/289 = 1",
+      "x^2/289 + y^2/64 = 1",
+      "x^2/289 + y^2/353 = 1"
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "q": "An ellipse has its centre at the origin, foci (0, 12) and (0, -12), and a minor axis of length 10. Its equation is",
+     "a": "x^2/25 + y^2/169 = 1",
+     "o": [
+      "x^2/25 + y^2/169 = 1",
+      "x^2/169 + y^2/25 = 1",
+      "x^2/100 + y^2/244 = 1",
+      "x^2/25 + y^2/119 = 1"
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "q": "For the ellipse 4x^2 + y^2 = 36, find the coordinates of the foci, the eccentricity and the length of the latus rectum.",
+     "a": "Dividing by 36: x^2/9 + y^2/36 = 1. The larger denominator is under y^2, so the major axis is along the y-axis with a = 6 and b = 3. c = sqrt(36 - 9) = sqrt(27) = 3 sqrt(3). Foci: (0, 3 sqrt(3)) and (0, -3 sqrt(3)). Eccentricity e = c/a = sqrt(3)/2. Latus rectum = 2b^2/a = 2(9)/6 = 3.",
+     "s": [
+      [
+       "Writes x^2/9 + y^2/36 = 1 and identifies a = 6, b = 3 with major axis along the y-axis",
+       1
+      ],
+      [
+       "Gives foci (0, 3 sqrt(3)) and (0, -3 sqrt(3)), e = sqrt(3)/2 and latus rectum 3",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hardest",
+     "t": "long_answer",
+     "m": 3,
+     "q": "Find the equation of the ellipse with centre at the origin and major axis along the x-axis which passes through the points (2, 3) and (6, 1).",
+     "a": "Let the ellipse be x^2/a^2 + y^2/b^2 = 1. Through (2, 3): 4/a^2 + 9/b^2 = 1. Through (6, 1): 36/a^2 + 1/b^2 = 1. From the second, 1/b^2 = 1 - 36/a^2; substituting in the first: 4/a^2 + 9 - 324/a^2 = 1, so 320/a^2 = 8 and a^2 = 40. Then 1/b^2 = 1 - 36/40 = 1/10, so b^2 = 10. The ellipse is x^2/40 + y^2/10 = 1 (that is, x^2 + 4y^2 = 40); since 40 > 10 the major axis is indeed along the x-axis.",
+     "s": [
+      [
+       "Substitutes both points to get 4/a^2 + 9/b^2 = 1 and 36/a^2 + 1/b^2 = 1",
+       1
+      ],
+      [
+       "Solves to get a^2 = 40 and b^2 = 10",
+       1
+      ],
+      [
+       "Writes x^2/40 + y^2/10 = 1",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "assertion_reason",
+     "m": 1,
+     "q": "Assertion (A): The foci of the ellipse x^2/20 + y^2/36 = 1 are (0, 4) and (0, -4). Reason (R): For an ellipse, the distance c of a focus from the centre is found from c^2 = a^2 + b^2.",
+     "a": "A is true, R is false",
+     "o": [
+      "A is true, R is false",
+      "Both A and R are true, and R is the correct explanation of A",
+      "Both A and R are true, but R is not the correct explanation of A",
+      "A is false, R is true"
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "multi_statement",
+     "m": 1,
+     "q": "Consider these statements. (I) The latus rectum of the ellipse x^2/36 + y^2/12 = 1 has length 4. (II) The ellipse 9x^2 + y^2 = 9 has its major axis along the y-axis. Which is or are correct?",
+     "a": "Both I and II",
+     "o": [
+      "Both I and II",
+      "Only I",
+      "Only II",
+      "Neither I nor II"
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hardest",
+     "t": "long_answer",
+     "m": 3,
+     "q": "An arch is in the form of a semi-ellipse. It is 20 m wide at the base and 6 m high at the centre. Taking the centre of the base as the origin and the base along the x-axis, find the equation of the ellipse and the height of the arch at a point 2 m from one end of the base.",
+     "a": "The base is the major axis, 2a = 20, so a = 10; the height at the centre is b = 6. Equation: x^2/100 + y^2/36 = 1. A point 2 m from one end of the base is 10 - 2 = 8 m from the centre, so x = 8: 64/100 + y^2/36 = 1, y^2/36 = 36/100, so y^2 = 1296/100 and y = 36/10 = 3.6. The arch is 3.6 m high there.",
+     "s": [
+      [
+       "Identifies a = 10, b = 6 and writes x^2/100 + y^2/36 = 1",
+       1
+      ],
+      [
+       "Uses x = 8 (8 m from the centre)",
+       1
+      ],
+      [
+       "Finds the height 3.6 m",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Evaluate",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "q": "Dev says: 'For the ellipse x^2/4 + y^2/49 = 1, a = 2 and b = 7, so the latus rectum is 2b^2/a = 49.' Evaluate his working.",
+     "a": "He is wrong. In an ellipse a is the semi-major axis, so a^2 is the LARGER denominator: a = 7 and b = 2 (major axis along the y-axis). The latus rectum is 2b^2/a = 2(4)/7 = 8/7. Dev took a and b in the order in which the denominators are written instead of by size.",
+     "s": [
+      [
+       "States that a^2 is the larger denominator, so a = 7 and b = 2",
+       1
+      ],
+      [
+       "Gives the correct latus rectum 8/7",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Create",
+     "d": "Hardest",
+     "t": "long_answer",
+     "m": 3,
+     "q": "Construct an ellipse in standard form, with foci on the x-axis and whole-number values of a and b, whose latus rectum has length exactly 2. Write its equation, verify the latus rectum, and give its foci.",
+     "a": "Latus rectum 2b^2/a = 2 requires b^2 = a. For example a = 4 and b = 2: the ellipse is x^2/16 + y^2/4 = 1, with a > b so the foci are on the x-axis. Check: 2b^2/a = 2(4)/4 = 2. c = sqrt(16 - 4) = sqrt(12) = 2 sqrt(3), so the foci are (2 sqrt(3), 0) and (-2 sqrt(3), 0). (Another valid choice is a = 9, b = 3; any a = b^2 with b a whole number greater than 1 earns full marks.)",
+     "s": [
+      [
+       "Derives the condition b^2 = a and picks whole numbers with a > b",
+       1
+      ],
+      [
+       "Writes the equation and verifies 2b^2/a = 2",
+       1
+      ],
+      [
+       "Finds c from c^2 = a^2 - b^2 and states the foci on the x-axis",
+       1
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "code": "C11M-10.7",
+   "name": "Hyperbola: definition, axes, c^2 = a^2 + b^2 and eccentricity",
+   "description": "The hyperbola as the set of points whose distances from two foci have a constant difference 2a; centre, transverse and conjugate axes, vertices; b = sqrt(c^2 - a^2); eccentricity e = c/a; the two standard equations and how the positive term fixes the transverse axis.",
+   "idea": "For every point of a hyperbola, (distance to the farther focus) - (distance to the closer focus) = 2a, the distance between the vertices.",
+   "rule": "b^2 = c^2 - a^2, so c^2 = a^2 + b^2 and e = c/a > 1. The positive term gives the transverse axis: x^2/a^2 - y^2/b^2 = 1 (x-axis), y^2/a^2 - x^2/b^2 = 1 (y-axis). a = b is an equilateral hyperbola.",
+   "example": "x^2/9 - y^2/16 = 1 has its transverse axis along the x-axis, of length 6, although 16 > 9.",
+   "difficulty_base": "Hard",
+   "questions": [
+    {
+     "b": "Remember",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "By definition, a hyperbola is the set of all points in a plane",
+     "a": "the difference of whose distances from two fixed points in the plane is a constant",
+     "o": [
+      "the difference of whose distances from two fixed points in the plane is a constant",
+      "the sum of whose distances from two fixed points in the plane is a constant",
+      "that are equidistant from a fixed point and a fixed line in the plane",
+      "that are at a constant distance from one fixed point in the plane"
+     ]
+    },
+    {
+     "b": "Remember",
+     "d": "Easy",
+     "t": "fill_blank",
+     "m": 1,
+     "q": "The line through the two foci of a hyperbola is called the ____ axis of the hyperbola. (Write one word.)",
+     "a": "transverse"
+    },
+    {
+     "b": "Remember",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "For a hyperbola in which the distance between the vertices is 2a and the distance between the foci is 2c, the quantity b is defined by",
+     "a": "b = sqrt(c^2 - a^2)",
+     "o": [
+      "b = sqrt(c^2 - a^2)",
+      "b = sqrt(a^2 - c^2)",
+      "b = sqrt(a^2 + c^2)",
+      "b = c - a"
+     ]
+    },
+    {
+     "b": "Remember",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "q": "Which of the following statements about the hyperbola x^2/a^2 - y^2/b^2 = 1 is NOT correct?",
+     "a": "It crosses the y-axis at the points (0, b) and (0, -b)",
+     "o": [
+      "It crosses the y-axis at the points (0, b) and (0, -b)",
+      "Its vertices are (a, 0) and (-a, 0)",
+      "It is symmetric with respect to both coordinate axes",
+      "No part of the curve lies between the lines x = -a and x = a"
+     ],
+     "rev": true
+    },
+    {
+     "b": "Understand",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "A hyperbola in which a = b is called",
+     "a": "an equilateral hyperbola",
+     "o": [
+      "an equilateral hyperbola",
+      "a degenerated hyperbola",
+      "a conjugate hyperbola",
+      "a circular hyperbola"
+     ]
+    },
+    {
+     "b": "Understand",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "The transverse axis of the hyperbola y^2/25 - x^2/16 = 1 is",
+     "a": "along the y-axis, with length 10",
+     "o": [
+      "along the y-axis, with length 10",
+      "along the x-axis, with length 8",
+      "along the y-axis, with length 5",
+      "along the x-axis, with length 10"
+     ]
+    },
+    {
+     "b": "Understand",
+     "d": "Easy",
+     "t": "short_answer",
+     "m": 2,
+     "q": "Explain why the eccentricity of a hyperbola is greater than 1.",
+     "a": "For a hyperbola b is defined by b = sqrt(c^2 - a^2), so c^2 = a^2 + b^2, which is greater than a^2. Hence c > a, and the eccentricity e = c/a is greater than 1. (Each focus is farther from the centre than the vertex is.)",
+     "s": [
+      [
+       "Uses c^2 = a^2 + b^2 to show c > a",
+       1
+      ],
+      [
+       "Concludes e = c/a > 1",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Understand",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "q": "For any point P on a hyperbola, the distance to the farther focus minus the distance to the closer focus is equal to",
+     "a": "2a, the length of the transverse axis",
+     "o": [
+      "2a, the length of the transverse axis",
+      "2b, the length of the conjugate axis",
+      "2c, the distance between the foci",
+      "a, the distance from the centre to a vertex"
+     ]
+    },
+    {
+     "b": "Understand",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "q": "The transverse axis of the hyperbola x^2/4 - y^2/21 = 1 is along",
+     "a": "the x-axis, because the x^2 term is the positive term",
+     "o": [
+      "the x-axis, because the x^2 term is the positive term",
+      "the y-axis, because the y^2 term has the larger denominator",
+      "the y-axis, because the y^2 term is the negative term",
+      "neither coordinate axis, because the two denominators are unequal"
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Easy",
+     "t": "fill_blank",
+     "m": 1,
+     "q": "For a hyperbola, a = 8 and c = 17. The value of b is ____. (Write a whole number.)",
+     "a": "15"
+    },
+    {
+     "b": "Apply",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "The length of the transverse axis of the hyperbola x^2/49 - y^2/15 = 1 is",
+     "a": "14",
+     "o": [
+      "14",
+      "7",
+      "2 sqrt(15)",
+      "49"
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "q": "A hyperbola has a transverse axis of length 10 and its foci are 26 units apart. Its eccentricity is",
+     "a": "13/5",
+     "o": [
+      "13/5",
+      "5/13",
+      "12/5",
+      "13/12"
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "q": "The eccentricity of an equilateral hyperbola (one in which a = b) is",
+     "a": "sqrt(2)",
+     "o": [
+      "sqrt(2)",
+      "1",
+      "2",
+      "1/sqrt(2)"
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "q": "A point P on a hyperbola is 15 units from the farther focus and 7 units from the closer focus. The two foci are 10 units apart. Find a, b and the eccentricity.",
+     "a": "The difference of the distances is 2a: 15 - 7 = 8, so a = 4. The foci are 2c = 10 apart, so c = 5. b = sqrt(c^2 - a^2) = sqrt(25 - 16) = 3. Eccentricity e = c/a = 5/4.",
+     "s": [
+      [
+       "Uses the definition: 2a = 15 - 7 = 8, so a = 4, and c = 5",
+       1
+      ],
+      [
+       "Finds b = 3 and e = 5/4",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hardest",
+     "t": "long_answer",
+     "m": 3,
+     "q": "The foci of a hyperbola lie on the x-axis, 20 units apart, the centre is at the origin and the eccentricity is 5/4. Find the lengths of the transverse and conjugate axes and write the standard equation of the hyperbola.",
+     "a": "2c = 20, so c = 10. e = c/a = 5/4 gives a = 8. b^2 = c^2 - a^2 = 100 - 64 = 36, so b = 6. Transverse axis = 2a = 16, conjugate axis = 2b = 12. With foci on the x-axis the equation is x^2/64 - y^2/36 = 1.",
+     "s": [
+      [
+       "Finds c = 10 and a = 8 from e = c/a",
+       1
+      ],
+      [
+       "Finds b = 6 and the axes 16 and 12",
+       1
+      ],
+      [
+       "Writes x^2/64 - y^2/36 = 1",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "assertion_reason",
+     "m": 1,
+     "q": "Assertion (A): The hyperbola x^2/a^2 - y^2/b^2 = 1 does not meet the y-axis. Reason (R): A hyperbola in standard form is symmetric with respect to both coordinate axes.",
+     "a": "Both A and R are true, but R is not the correct explanation of A",
+     "o": [
+      "Both A and R are true, but R is not the correct explanation of A",
+      "Both A and R are true, and R is the correct explanation of A",
+      "A is true, R is false",
+      "A is false, R is true"
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "multi_statement",
+     "m": 1,
+     "q": "Consider these statements. (I) For a hyperbola, the quantities a, b and c are related by c^2 = a^2 - b^2. (II) The foci of a hyperbola lie on its conjugate axis. Which is or are correct?",
+     "a": "Neither I nor II",
+     "o": [
+      "Neither I nor II",
+      "Only I",
+      "Only II",
+      "Both I and II"
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hardest",
+     "t": "long_answer",
+     "m": 3,
+     "q": "An ellipse and a hyperbola, both with centre at the origin, each have a = 4 and b = 3. (i) Find c and the eccentricity of the ellipse. (ii) Find c and the eccentricity of the hyperbola. (iii) Explain, from the two definitions of b, why the foci lie inside the vertices for one curve and beyond the vertices for the other.",
+     "a": "(i) Ellipse: c^2 = a^2 - b^2 = 16 - 9 = 7, c = sqrt(7), e = sqrt(7)/4, which is less than 1. (ii) Hyperbola: c^2 = a^2 + b^2 = 16 + 9 = 25, c = 5, e = 5/4, which is greater than 1. (iii) In the ellipse a^2 = b^2 + c^2, so c < a and each focus lies between the centre and a vertex. In the hyperbola b is defined by b^2 = c^2 - a^2, so c > a and each focus lies beyond the vertex on the transverse axis.",
+     "s": [
+      [
+       "Ellipse: c = sqrt(7) and e = sqrt(7)/4",
+       1
+      ],
+      [
+       "Hyperbola: c = 5 and e = 5/4",
+       1
+      ],
+      [
+       "Explains c < a for the ellipse and c > a for the hyperbola from the two relations",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Evaluate",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "q": "Tara says: 'In the hyperbola y^2/25 - x^2/39 = 1 the larger denominator, 39, is under x^2, so the transverse axis is along the x-axis.' Evaluate her statement.",
+     "a": "She is wrong. The larger-denominator rule is for ellipses. For a hyperbola it is the positive term whose denominator gives the transverse axis, whatever the sizes of the denominators. Here the y^2 term is positive, so the transverse axis is along the y-axis, with a^2 = 25 and length 2a = 10.",
+     "s": [
+      [
+       "States that for a hyperbola the positive term decides the transverse axis (not the larger denominator)",
+       1
+      ],
+      [
+       "Concludes the transverse axis is along the y-axis with a = 5 (length 10)",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Create",
+     "d": "Hardest",
+     "t": "long_answer",
+     "m": 3,
+     "q": "Construct a hyperbola with centre at the origin and foci on the x-axis for which the difference of the distances of any point from the two foci is 10 and c is a whole number. State a, b, c and e, and write its standard equation.",
+     "a": "The constant difference is 2a = 10, so a = 5. Choose for example c = 13 (any whole number greater than 5 will do). Then b = sqrt(169 - 25) = 12 and e = c/a = 13/5. With foci on the x-axis the equation is x^2/25 - y^2/144 = 1. (Any whole number c > 5 with b^2 = c^2 - 25 and equation x^2/25 - y^2/b^2 = 1 earns full marks.)",
+     "s": [
+      [
+       "Uses 2a = 10 to get a = 5 and chooses a whole number c > 5",
+       1
+      ],
+      [
+       "Finds b from b^2 = c^2 - a^2 and e = c/a",
+       1
+      ],
+      [
+       "Writes the equation in the form x^2/a^2 - y^2/b^2 = 1",
+       1
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "code": "C11M-10.8",
+   "name": "Hyperbola: foci, vertices, latus rectum and finding its equation",
+   "description": "Reading foci, vertices, eccentricity and latus rectum from the equation of a hyperbola, and finding the standard equation from vertices, foci, axis lengths, latus rectum, eccentricity or a point.",
+   "idea": "Put the equation in standard form, read a^2 from the positive term and b^2 from the negative term, then c = sqrt(a^2 + b^2) gives the foci on the transverse axis.",
+   "rule": "Vertices at distance a and foci at distance c from the centre on the transverse axis; e = c/a; latus rectum = 2b^2/a.",
+   "example": "x^2/9 - y^2/16 = 1: a = 3, b = 4, c = 5; foci (5, 0) and (-5, 0); e = 5/3; latus rectum 32/3.",
+   "difficulty_base": "Hard",
+   "questions": [
+    {
+     "b": "Remember",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "The length of the latus rectum of the hyperbola x^2/a^2 - y^2/b^2 = 1 is",
+     "a": "2b^2/a",
+     "o": [
+      "2b^2/a",
+      "2a^2/b",
+      "4a",
+      "b^2/a"
+     ]
+    },
+    {
+     "b": "Remember",
+     "d": "Easy",
+     "t": "fill_blank",
+     "m": 1,
+     "q": "The vertices of the hyperbola x^2/36 - y^2/13 = 1 are the points (k, 0) and (-k, 0), where the positive number k = ____. (Write a whole number.)",
+     "a": "6"
+    },
+    {
+     "b": "Remember",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "For the hyperbola y^2/a^2 - x^2/b^2 = 1 with c = sqrt(a^2 + b^2), the foci are the points",
+     "a": "(0, c) and (0, -c)",
+     "o": [
+      "(0, c) and (0, -c)",
+      "(c, 0) and (-c, 0)",
+      "(0, a) and (0, -a)",
+      "(0, b) and (0, -b)"
+     ]
+    },
+    {
+     "b": "Remember",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "q": "Which of the following statements about the hyperbola x^2/9 - y^2/16 = 1 is FALSE?",
+     "a": "Its foci are (sqrt(7), 0) and (-sqrt(7), 0)",
+     "o": [
+      "Its foci are (sqrt(7), 0) and (-sqrt(7), 0)",
+      "Its vertices are (3, 0) and (-3, 0)",
+      "Its eccentricity is 5/3",
+      "Its latus rectum has length 32/3"
+     ],
+     "rev": true
+    },
+    {
+     "b": "Understand",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "Written in standard form, the hyperbola 9y^2 - 4x^2 = 36 is",
+     "a": "y^2/4 - x^2/9 = 1",
+     "o": [
+      "y^2/4 - x^2/9 = 1",
+      "x^2/9 - y^2/4 = 1",
+      "y^2/9 - x^2/4 = 1",
+      "y^2/36 - x^2/36 = 1"
+     ]
+    },
+    {
+     "b": "Understand",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "The foci of the hyperbola x^2/16 - y^2/9 = 1 are",
+     "a": "(5, 0) and (-5, 0)",
+     "o": [
+      "(5, 0) and (-5, 0)",
+      "(sqrt(7), 0) and (-sqrt(7), 0)",
+      "(0, 5) and (0, -5)",
+      "(4, 0) and (-4, 0)"
+     ]
+    },
+    {
+     "b": "Understand",
+     "d": "Easy",
+     "t": "short_answer",
+     "m": 2,
+     "q": "Explain how the positions of the vertices and the foci of the hyperbola y^2/a^2 - x^2/b^2 = 1 differ from those of the hyperbola x^2/a^2 - y^2/b^2 = 1.",
+     "a": "In x^2/a^2 - y^2/b^2 = 1 the positive term is the x^2 term, so the transverse axis is the x-axis: vertices (a, 0) and (-a, 0), foci (c, 0) and (-c, 0). In y^2/a^2 - x^2/b^2 = 1 the positive term is the y^2 term, so the transverse axis is the y-axis: vertices (0, a) and (0, -a), foci (0, c) and (0, -c). In both, c = sqrt(a^2 + b^2).",
+     "s": [
+      [
+       "Places vertices and foci of x^2/a^2 - y^2/b^2 = 1 on the x-axis at distances a and c",
+       1
+      ],
+      [
+       "Places vertices and foci of y^2/a^2 - x^2/b^2 = 1 on the y-axis at distances a and c",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Understand",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "q": "The eccentricity of the hyperbola y^2/9 - x^2/27 = 1 is",
+     "a": "2",
+     "o": [
+      "2",
+      "sqrt(2)",
+      "1/2",
+      "2/sqrt(3)"
+     ]
+    },
+    {
+     "b": "Understand",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "q": "The length of the latus rectum of the hyperbola x^2/25 - y^2/20 = 1 is",
+     "a": "8",
+     "o": [
+      "8",
+      "4",
+      "20",
+      "40"
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Easy",
+     "t": "fill_blank",
+     "m": 1,
+     "q": "For the hyperbola x^2/4 - y^2/12 = 1, the distance of each focus from the centre is ____. (Write a whole number.)",
+     "a": "4"
+    },
+    {
+     "b": "Apply",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "The vertices of the hyperbola 16x^2 - 9y^2 = 576 are",
+     "a": "(6, 0) and (-6, 0)",
+     "o": [
+      "(6, 0) and (-6, 0)",
+      "(8, 0) and (-8, 0)",
+      "(0, 6) and (0, -6)",
+      "(10, 0) and (-10, 0)"
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "q": "The equation of the hyperbola with vertices (0, 5) and (0, -5) and foci (0, 13) and (0, -13) is",
+     "a": "y^2/25 - x^2/144 = 1",
+     "o": [
+      "y^2/25 - x^2/144 = 1",
+      "x^2/25 - y^2/144 = 1",
+      "y^2/25 - x^2/169 = 1",
+      "y^2/25 - x^2/194 = 1"
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "q": "A hyperbola has centre at the origin, foci (17, 0) and (-17, 0), and a conjugate axis of length 16. Its equation is",
+     "a": "x^2/225 - y^2/64 = 1",
+     "o": [
+      "x^2/225 - y^2/64 = 1",
+      "x^2/64 - y^2/225 = 1",
+      "x^2/33 - y^2/256 = 1",
+      "x^2/353 - y^2/64 = 1"
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "q": "For the hyperbola 4y^2 - 5x^2 = 20, find the coordinates of the foci, the eccentricity and the length of the latus rectum.",
+     "a": "Dividing by 20: y^2/5 - x^2/4 = 1, of the form y^2/a^2 - x^2/b^2 = 1 with a^2 = 5, b^2 = 4, so a = sqrt(5) and b = 2. c = sqrt(a^2 + b^2) = sqrt(9) = 3. The transverse axis is the y-axis, so the foci are (0, 3) and (0, -3). Eccentricity e = c/a = 3/sqrt(5). Latus rectum = 2b^2/a = 8/sqrt(5).",
+     "s": [
+      [
+       "Writes y^2/5 - x^2/4 = 1 and finds c = 3, foci (0, 3) and (0, -3)",
+       1
+      ],
+      [
+       "Gives e = 3/sqrt(5) and latus rectum 8/sqrt(5)",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hardest",
+     "t": "long_answer",
+     "m": 3,
+     "q": "Find the equation of the hyperbola with centre at the origin and foci (6, 0) and (-6, 0) whose latus rectum has length 10.",
+     "a": "c = 6 and the foci are on the x-axis, so the form is x^2/a^2 - y^2/b^2 = 1. Latus rectum: 2b^2/a = 10, so b^2 = 5a. From c^2 = a^2 + b^2: 36 = a^2 + 5a, that is a^2 + 5a - 36 = 0, (a + 9)(a - 4) = 0, so a = -9 or a = 4. Since a cannot be negative, a = 4 and b^2 = 20. The hyperbola is x^2/16 - y^2/20 = 1.",
+     "s": [
+      [
+       "Uses 2b^2/a = 10 to get b^2 = 5a, with c = 6",
+       1
+      ],
+      [
+       "Forms a^2 + 5a - 36 = 0 and takes the positive root a = 4",
+       1
+      ],
+      [
+       "Finds b^2 = 20 and writes x^2/16 - y^2/20 = 1",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "assertion_reason",
+     "m": 1,
+     "q": "Assertion (A): The hyperbola y^2/7 - x^2/9 = 1 has foci (4, 0) and (-4, 0). Reason (R): The foci of a hyperbola always lie on its transverse axis.",
+     "a": "A is false, R is true",
+     "o": [
+      "A is false, R is true",
+      "Both A and R are true, and R is the correct explanation of A",
+      "Both A and R are true, but R is not the correct explanation of A",
+      "A is true, R is false"
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "multi_statement",
+     "m": 1,
+     "q": "Consider these statements. (I) For the hyperbola x^2/a^2 - y^2/b^2 = 1, the latus rectum has length 2a^2/b. (II) The hyperbola x^2/16 - y^2/48 = 1 has eccentricity 2. Which is or are correct?",
+     "a": "Only II",
+     "o": [
+      "Only II",
+      "Only I",
+      "Both I and II",
+      "Neither I nor II"
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hardest",
+     "t": "long_answer",
+     "m": 3,
+     "q": "A hyperbola with centre at the origin and foci on the x-axis has eccentricity 2 and passes through the point (2, 3). Find its equation and its foci, and show that (2, 3) is an end of one of its latus recta.",
+     "a": "Let the hyperbola be x^2/a^2 - y^2/b^2 = 1. e = c/a = 2 gives c = 2a, so b^2 = c^2 - a^2 = 3a^2. Through (2, 3): 4/a^2 - 9/(3a^2) = 1, that is 4/a^2 - 3/a^2 = 1, so a^2 = 1 and b^2 = 3. The equation is x^2/1 - y^2/3 = 1, that is 3x^2 - y^2 = 3. c = 2a = 2, so the foci are (2, 0) and (-2, 0). The point (2, 3) has the same x-coordinate as the focus (2, 0), so it lies on the line through that focus perpendicular to the transverse axis, and it is on the hyperbola; hence it is an end of that latus rectum (whose length 2b^2/a = 6 agrees with the ends (2, 3) and (2, -3)).",
+     "s": [
+      [
+       "Uses e = 2 to get c = 2a and b^2 = 3a^2",
+       1
+      ],
+      [
+       "Substitutes (2, 3) to get a^2 = 1, b^2 = 3 and the equation 3x^2 - y^2 = 3",
+       1
+      ],
+      [
+       "Finds foci (2, 0) and (-2, 0) and explains that (2, 3) lies on the hyperbola directly above a focus",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Evaluate",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "q": "Imran says: 'For the hyperbola x^2/144 - y^2/25 = 1, c^2 = a^2 - b^2 = 119, so the foci are (sqrt(119), 0) and (-sqrt(119), 0).' Evaluate his working.",
+     "a": "He is wrong: c^2 = a^2 - b^2 is the relation for an ellipse. For a hyperbola c^2 = a^2 + b^2 = 144 + 25 = 169, so c = 13 and the foci are (13, 0) and (-13, 0). His value sqrt(119) is less than a = 12, which is impossible for a hyperbola, whose foci lie beyond the vertices (c > a).",
+     "s": [
+      [
+       "States the correct relation c^2 = a^2 + b^2 for a hyperbola",
+       1
+      ],
+      [
+       "Gives c = 13 and foci (13, 0) and (-13, 0)",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Create",
+     "d": "Hardest",
+     "t": "long_answer",
+     "m": 3,
+     "q": "Construct a hyperbola with centre at the origin, transverse axis along the y-axis, whole-number values of a, b and c, and eccentricity 5/4. Write its equation and state its vertices, its foci and the length of its latus rectum.",
+     "a": "For example a = 4 and c = 5 give e = 5/4, and b^2 = c^2 - a^2 = 9, so b = 3. With the transverse axis along the y-axis the y^2 term is positive: y^2/16 - x^2/9 = 1. Vertices: (0, 4) and (0, -4). Foci: (0, 5) and (0, -5). Latus rectum = 2b^2/a = 18/4 = 9/2. (Any whole-number multiple, such as a = 8, b = 6, c = 10 with y^2/64 - x^2/36 = 1 and latus rectum 9, earns full marks.)",
+     "s": [
+      [
+       "Chooses whole numbers with c/a = 5/4 and b^2 = c^2 - a^2",
+       1
+      ],
+      [
+       "Writes the equation with the y^2 term positive and a^2 under it",
+       1
+      ],
+      [
+       "States the vertices, the foci and the latus rectum 2b^2/a correctly",
+       1
+      ]
+     ]
+    }
+   ]
+  }
+ ]
+}

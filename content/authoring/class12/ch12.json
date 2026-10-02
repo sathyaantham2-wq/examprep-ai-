@@ -1,0 +1,1700 @@
+{
+  "subject": {
+    "code": "MATH12",
+    "name": "Mathematics",
+    "board": "CBSE",
+    "class": 12
+  },
+  "source": {
+    "publisher": "NCERT",
+    "title": "Mathematics Part II",
+    "edition": "Textbook for Class XII Part II, Reprint 2026-27",
+    "year": 2026
+  },
+  "chapter": {
+    "part": "II",
+    "chapter_no": 12,
+    "name": "Linear Programming",
+    "blurb": "A linear programming problem seeks the maximum or minimum value of a linear objective function of non-negative variables subject to a set of linear constraints. The chapter formulates such a problem mathematically from a real-life situation and solves two-variable problems by the graphical Corner Point Method, covering bounded and unbounded feasible regions, multiple optimal solutions and problems with no feasible region.",
+    "source_code": "lemh206",
+    "order_index": 12
+  },
+  "scope_in": [
+    {
+      "item": "Recognise an optimisation problem and a linear programming problem as a special type of it, and say what 'linear' and 'programming' mean",
+      "pages": "394-396"
+    },
+    {
+      "item": "Identify the objective function Z = ax + by, the decision variables, the constraints and the non-negative restrictions of a given linear programming problem, and evaluate Z at a given point",
+      "pages": "396"
+    },
+    {
+      "item": "Formulate a simple two-variable real-life problem of the furniture-dealer kind (limited money, limited storage or time, profit per item) as a linear programming problem: variables, linear constraints, non-negativity and objective function",
+      "pages": "394-396"
+    },
+    {
+      "item": "Define and identify the feasible region, infeasible region, feasible solution, infeasible solution and optimal solution; test whether a given point is feasible",
+      "pages": "397-398"
+    },
+    {
+      "item": "Say whether a feasible region is bounded or unbounded (can or cannot be enclosed within a circle), know that it is always convex, and find its corner points as intersections of boundary lines",
+      "pages": "397-398, 403"
+    },
+    {
+      "item": "State and use Theorems 1 and 2 (without proof): an optimal value occurs at a corner point; on a bounded region both a maximum and a minimum exist at corner points",
+      "pages": "398"
+    },
+    {
+      "item": "Apply the Corner Point Method to a bounded feasible region: evaluate Z at every corner point and pick the largest and smallest values",
+      "pages": "398-401, 403-404"
+    },
+    {
+      "item": "Recognise multiple optimal solutions: when two corner points give the same optimal value, every point on the segment joining them does",
+      "pages": "401, 403"
+    },
+    {
+      "item": "For an unbounded feasible region, decide whether the largest or smallest corner value M or m is the maximum or minimum by testing the open half plane ax + by > M or ax + by < m against the feasible region",
+      "pages": "398-399, 402-404"
+    },
+    {
+      "item": "Recognise a problem whose constraints have no common point as having no feasible region and hence no feasible solution",
+      "pages": "403-404"
+    }
+  ],
+  "scope_out": [
+    {
+      "item": "Different types of linear programming problems as a taught section (manufacturing, diet, transportation problems) and their worked word problems",
+      "reason": "Not present in this rationalised Reprint 2026-27 edition: the chapter has only sections 12.1 and 12.2 (12.2.1, 12.2.2) and Exercise 12.1 (pp. 394-404). Diet and transportation problems are named only in the Historical Note (pp. 404-405)"
+    },
+    {
+      "item": "Word-problem exercises requiring formulation and then full graphical solution (old Exercise 12.2) and the Miscellaneous Exercise",
+      "reason": "Not present in this edition; Exercise 12.1 (pp. 403-404) contains only ten problems already stated mathematically. Formulation is taught only through the furniture dealer example (pp. 394-396)"
+    },
+    {
+      "item": "Simplex method or any non-graphical method of solution",
+      "reason": "p. 394 and p. 397 say the chapter uses the graphical method only; the simplex method is named only in the Historical Note (p. 405)"
+    },
+    {
+      "item": "Linear programming problems in three or more variables",
+      "reason": "All formulation, examples and exercises are in two variables x and y (pp. 395-404)"
+    },
+    {
+      "item": "Proofs of Theorem 1 and Theorem 2",
+      "reason": "p. 398 states the proofs are beyond the scope of the book"
+    },
+    {
+      "item": "Iso-profit / iso-cost line method of locating the optimum",
+      "reason": "Not taught; only the Corner Point Method is given (p. 399)"
+    },
+    {
+      "item": "Drawing the graph of the feasible region as an assessed skill, and graphing linear inequalities from scratch",
+      "reason": "Graphing of linear inequalities is Class XI work recalled on p. 397; questions here give constraints or corner points in text so no drawing is required"
+    },
+    {
+      "item": "Historical facts (Kantorovich, Hitchcock, Stigler, Dantzig, Koopmans, dates, Nobel prize)",
+      "reason": "Historical Note only (pp. 404-405), not examinable content"
+    },
+    {
+      "item": "Integer-valued solutions, redundant constraints named as such, degenerate cases and sensitivity of the optimum",
+      "reason": "Not discussed anywhere in the chapter"
+    }
+  ],
+  "concepts": [
+    {
+      "code": "C12M-12.1",
+      "name": "Linear programming problem and its terms",
+      "description": "Recognising a linear programming problem as a special optimisation problem and naming its objective function, decision variables, constraints and non-negative restrictions.",
+      "idea": "A linear programming problem asks for the largest or smallest value of a linear function of non-negative variables that must also satisfy some linear inequalities.",
+      "rule": "Objective function Z = ax + by is what is maximised or minimised; x and y are the decision variables; the linear inequalities, including x >= 0 and y >= 0, are the constraints. Everything must be linear.",
+      "example": "Maximise Z = 250x + 75y subject to 5x + y <= 100, x + y <= 60, x >= 0, y >= 0: Z is the objective function, x and y the decision variables, and the four inequalities are the constraints.",
+      "difficulty_base": "Easy",
+      "questions": [
+        {
+          "b": "Remember",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "In a linear programming problem, the linear function Z = ax + by that has to be maximised or minimised is called the",
+          "a": "objective function",
+          "o": [
+            "objective function",
+            "constraint",
+            "decision variable",
+            "feasible region"
+          ]
+        },
+        {
+          "b": "Remember",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "In a linear programming problem with objective function Z = ax + by, the variables x and y are called",
+          "a": "decision variables",
+          "o": [
+            "decision variables",
+            "constraints",
+            "corner points",
+            "optimal values"
+          ]
+        },
+        {
+          "b": "Remember",
+          "d": "Easy",
+          "t": "fill_blank",
+          "m": 1,
+          "q": "The linear inequalities or equations or restrictions on the variables of a linear programming problem are called ____.",
+          "a": "constraints"
+        },
+        {
+          "b": "Remember",
+          "d": "Hard",
+          "t": "mcq",
+          "m": 1,
+          "q": "Which of the following is NOT a requirement in the definition of a linear programming problem?",
+          "a": "The objective function must always be maximised and never minimised",
+          "o": [
+            "The objective function must always be maximised and never minimised",
+            "The objective function is a linear function of the variables",
+            "The variables are non-negative",
+            "The variables satisfy a set of linear inequalities called linear constraints"
+          ],
+          "rev": true
+        },
+        {
+          "b": "Understand",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "In the problem 'Maximise Z = 250x + 75y subject to 5x + y <= 100, x + y <= 60, x >= 0, y >= 0', the objective function is",
+          "a": "Z = 250x + 75y",
+          "o": [
+            "Z = 250x + 75y",
+            "5x + y <= 100",
+            "x + y <= 60",
+            "x >= 0, y >= 0"
+          ]
+        },
+        {
+          "b": "Understand",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "The word 'linear' in the name 'linear programming' implies that",
+          "a": "all the mathematical relations used in the problem are linear relations",
+          "o": [
+            "all the mathematical relations used in the problem are linear relations",
+            "the feasible region of the problem is always a straight line",
+            "the problem has only one constraint",
+            "the optimal value is found by drawing a single straight line"
+          ]
+        },
+        {
+          "b": "Understand",
+          "d": "Easy",
+          "t": "short_answer",
+          "m": 2,
+          "q": "Explain what the words 'linear' and 'programming' mean in the name 'linear programming problem'.",
+          "a": "'Linear' implies that all the mathematical relations used in the problem (the objective function and the constraints) are linear relations. 'Programming' refers to the method of determining a particular programme or plan of action.",
+          "s": [
+            [
+              "Linear: all the mathematical relations used in the problem are linear",
+              1
+            ],
+            [
+              "Programming: the method of determining a particular programme or plan of action",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Understand",
+          "d": "Hard",
+          "t": "mcq",
+          "m": 1,
+          "q": "Which of the following can be the objective function of a linear programming problem?",
+          "a": "Z = 7x - 2y",
+          "o": [
+            "Z = 7x - 2y",
+            "Z = 3xy",
+            "Z = x^2 + y",
+            "Z = 4x + 5/y"
+          ]
+        },
+        {
+          "b": "Understand",
+          "d": "Hard",
+          "t": "mcq",
+          "m": 1,
+          "q": "For the problem 'Minimise Z = 200x + 500y subject to x + 2y >= 10, 3x + 4y <= 24, x >= 0, y >= 0', how many constraints are there in all, counting each non-negative restriction separately?",
+          "a": "4",
+          "o": [
+            "4",
+            "2",
+            "3",
+            "5"
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Easy",
+          "t": "fill_blank",
+          "m": 1,
+          "q": "In the problem 'Maximise Z = 4x + y subject to x + y <= 50, 3x + y <= 90, x >= 0, y >= 0', the coefficient of x in the objective function is ____.",
+          "a": "4"
+        },
+        {
+          "b": "Apply",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "A problem asks to minimise the cost Z = 3x + 5y subject to x + 3y >= 3, x + y >= 2, x >= 0, y >= 0. The decision variables of this problem are",
+          "a": "x and y",
+          "o": [
+            "x and y",
+            "Z only",
+            "3 and 5",
+            "x + 3y and x + y"
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Hard",
+          "t": "mcq",
+          "m": 1,
+          "q": "Which of the following problems is a linear programming problem?",
+          "a": "Minimise Z = 2x + 9y subject to x + y >= 5, x <= 8, x >= 0, y >= 0",
+          "o": [
+            "Minimise Z = 2x + 9y subject to x + y >= 5, x <= 8, x >= 0, y >= 0",
+            "Maximise Z = x^2 + y^2 subject to x + y <= 5, x >= 0, y >= 0",
+            "Maximise Z = 3x + 4y subject to xy <= 12, x >= 0, y >= 0",
+            "Solve the equations x + y = 5 and x - y = 1"
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Hard",
+          "t": "mcq",
+          "m": 1,
+          "q": "A dealer who buys x tables and y chairs earns a profit Z = 250x + 75y (in Rs). The value of this objective function at x = 10, y = 50 is",
+          "a": "6250",
+          "o": [
+            "6250",
+            "13250",
+            "19500",
+            "5000"
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Hard",
+          "t": "short_answer",
+          "m": 2,
+          "q": "A dealer buys x tables and y chairs and his profit in Rs is Z = 250x + 75y. Find his profit if he buys (i) 20 tables and no chairs, (ii) 10 tables and 50 chairs, and say which choice gives the larger value of the objective function.",
+          "a": "(i) Z = 250(20) + 75(0) = 5000. (ii) Z = 250(10) + 75(50) = 2500 + 3750 = 6250. The second choice gives the larger value, Rs 6250.",
+          "s": [
+            [
+              "Z = 5000 for 20 tables only",
+              1
+            ],
+            [
+              "Z = 6250 for 10 tables and 50 chairs, which is larger",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Hardest",
+          "t": "long_answer",
+          "m": 3,
+          "q": "For the problem 'Minimise Z = -50x + 20y subject to 2x - y >= -5, 3x + y >= 3, 2x - 3y <= 12, x >= 0, y >= 0', write down (i) the objective function, (ii) the decision variables, (iii) all the constraints, pointing out which of them are the non-negative restrictions.",
+          "a": "(i) The objective function is Z = -50x + 20y, which is to be minimised. (ii) The decision variables are x and y. (iii) The constraints are 2x - y >= -5, 3x + y >= 3, 2x - 3y <= 12, x >= 0 and y >= 0; of these, x >= 0 and y >= 0 are the non-negative restrictions.",
+          "s": [
+            [
+              "Objective function Z = -50x + 20y (to be minimised)",
+              1
+            ],
+            [
+              "Decision variables x and y",
+              1
+            ],
+            [
+              "Lists all five constraints and names x >= 0, y >= 0 as the non-negative restrictions",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Analyse",
+          "d": "Hard",
+          "t": "assertion_reason",
+          "m": 1,
+          "q": "Assertion (A): The problem 'Maximise Z = 3x + 4y subject to x + y <= 4, x >= 0, y >= 0' is a linear programming problem. Reason (R): A linear programming problem seeks the optimal value of a linear function of the variables, subject to the variables being non-negative and satisfying a set of linear inequalities.",
+          "a": "Both A and R are true, and R is the correct explanation of A",
+          "o": [
+            "Both A and R are true, and R is the correct explanation of A",
+            "Both A and R are true, but R is not the correct explanation of A",
+            "A is true, R is false",
+            "A is false, R is true"
+          ]
+        },
+        {
+          "b": "Analyse",
+          "d": "Hard",
+          "t": "multi_statement",
+          "m": 1,
+          "q": "Consider these statements. (I) Every linear programming problem is an optimisation problem. (II) In the objective function Z = ax + by, the constants a and b are called the decision variables. Which is or are correct?",
+          "a": "Only I",
+          "o": [
+            "Only I",
+            "Only II",
+            "Both I and II",
+            "Neither I nor II"
+          ]
+        },
+        {
+          "b": "Analyse",
+          "d": "Hardest",
+          "t": "long_answer",
+          "m": 3,
+          "q": "A student claims that both of these are linear programming problems as defined in the textbook: (P) 'Maximise Z = 5x + 3y subject to 3x + 5y <= 15, 5x + 2y <= 10', with no other condition stated; (Q) 'Maximise Z = xy subject to x + y <= 10, x >= 0, y >= 0'. Examine each claim and say what, if anything, is missing or wrong.",
+          "a": "(P) The objective function and both constraints are linear, but the definition also requires the variables to be non-negative; the restrictions x >= 0, y >= 0 are missing, so as stated it does not meet the definition until they are added. (Q) The constraints are linear and the variables are non-negative, but Z = xy is not a linear function of x and y, so (Q) is not a linear programming problem.",
+          "s": [
+            [
+              "(P): objective and constraints are linear",
+              1
+            ],
+            [
+              "(P): non-negative restrictions x >= 0, y >= 0 are missing and must be added",
+              1
+            ],
+            [
+              "(Q): Z = xy is not linear, so it is not a linear programming problem",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Evaluate",
+          "d": "Hard",
+          "t": "short_answer",
+          "m": 2,
+          "q": "Riya says: 'An optimisation problem and a linear programming problem mean exactly the same thing.' Is she right? Justify from the textbook's description of the two terms.",
+          "a": "She is not right. Optimisation problems are the general class of problems that seek to maximise or minimise a quantity such as profit or cost. Linear programming problems are a special but very important type of optimisation problem, in which a linear objective function is optimised subject to linear constraints with non-negative variables.",
+          "s": [
+            [
+              "States that linear programming problems are a special type of optimisation problem, not the same thing",
+              1
+            ],
+            [
+              "Gives what makes it linear programming: linear objective function, linear constraints, non-negative variables",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Create",
+          "d": "Hardest",
+          "t": "long_answer",
+          "m": 3,
+          "q": "Write a linear programming problem of your own in two variables x and y that has a maximisation objective and exactly two constraints besides the non-negative restrictions. Then name its objective function, its decision variables and its constraints.",
+          "a": "One example: Maximise Z = 2x + 5y subject to x + y <= 8, x + 3y <= 12, x >= 0, y >= 0. Objective function: Z = 2x + 5y. Decision variables: x and y. Constraints: x + y <= 8, x + 3y <= 12 together with the non-negative restrictions x >= 0, y >= 0. Any answer with a linear objective, two linear inequalities and x >= 0, y >= 0 is acceptable.",
+          "s": [
+            [
+              "Linear objective function Z = ax + by to be maximised",
+              1
+            ],
+            [
+              "Exactly two linear constraints plus x >= 0, y >= 0",
+              1
+            ],
+            [
+              "Correctly names the objective function, decision variables and constraints",
+              1
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "code": "C12M-12.2",
+      "name": "Mathematical formulation of a linear programming problem",
+      "description": "Turning a two-variable real-life situation into variables, linear constraints, non-negative restrictions and a linear objective function.",
+      "idea": "Each limited resource in the story becomes one inequality and the quantity to be made largest or smallest becomes the objective function.",
+      "rule": "Choose x and y as the quantities to decide; write 'at most' as <= and 'at least' as >=; add x >= 0, y >= 0; write profit or cost as Z = ax + by.",
+      "example": "Tables cost Rs 2500, chairs Rs 500, Rs 50,000 available, at most 60 pieces: 5x + y <= 100, x + y <= 60, x >= 0, y >= 0; profit Z = 250x + 75y.",
+      "difficulty_base": "Easy",
+      "questions": [
+        {
+          "b": "Remember",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "In the textbook's furniture dealer problem, the variables x and y stand for",
+          "a": "the number of tables and the number of chairs that the dealer buys",
+          "o": [
+            "the number of tables and the number of chairs that the dealer buys",
+            "the cost of one table and the cost of one chair",
+            "the profit on one table and the profit on one chair",
+            "the money invested and the storage space used"
+          ]
+        },
+        {
+          "b": "Remember",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "In the formulation of the furniture dealer problem, the inequality x + y <= 60 is called the",
+          "a": "storage constraint",
+          "o": [
+            "storage constraint",
+            "investment constraint",
+            "objective function",
+            "non-negative constraint"
+          ]
+        },
+        {
+          "b": "Remember",
+          "d": "Easy",
+          "t": "fill_blank",
+          "m": 1,
+          "q": "In the furniture dealer problem, the investment constraint 2500x + 500y <= 50000 simplifies to 5x + y <= ____.",
+          "a": "100"
+        },
+        {
+          "b": "Remember",
+          "d": "Hard",
+          "t": "mcq",
+          "m": 1,
+          "q": "In the mathematical formulation of the furniture dealer problem (x tables and y chairs), which of the following is NOT one of the constraints?",
+          "a": "x + y >= 60",
+          "o": [
+            "x + y >= 60",
+            "5x + y <= 100",
+            "x + y <= 60",
+            "x >= 0, y >= 0"
+          ],
+          "rev": true
+        },
+        {
+          "b": "Understand",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "A dealer can store at most 60 pieces. If he buys x tables and y chairs, this condition is written as",
+          "a": "x + y <= 60",
+          "o": [
+            "x + y <= 60",
+            "x + y >= 60",
+            "x + y = 60",
+            "x + y < 60"
+          ]
+        },
+        {
+          "b": "Understand",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "A table costs Rs 2500 and a chair costs Rs 500. The total cost of x tables and y chairs, in Rs, is",
+          "a": "2500x + 500y",
+          "o": [
+            "2500x + 500y",
+            "500x + 2500y",
+            "3000(x + y)",
+            "3000xy"
+          ]
+        },
+        {
+          "b": "Understand",
+          "d": "Easy",
+          "t": "short_answer",
+          "m": 2,
+          "q": "A dealer buys x tables and y chairs. Why must the conditions x >= 0 and y >= 0 be included in the formulation, and what are these conditions called?",
+          "a": "x and y are numbers of tables and chairs bought, and a number of items cannot be negative, so x >= 0 and y >= 0 must hold. They are called the non-negative constraints (non-negative restrictions).",
+          "s": [
+            [
+              "A number of items bought cannot be negative",
+              1
+            ],
+            [
+              "Names them non-negative constraints or restrictions",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Understand",
+          "d": "Hard",
+          "t": "mcq",
+          "m": 1,
+          "q": "In a formulation, x and y are the numbers of two items produced. Which wording in the problem leads to the constraint x + y >= 20?",
+          "a": "At least 20 items in all must be produced",
+          "o": [
+            "At least 20 items in all must be produced",
+            "At most 20 items in all can be produced",
+            "Exactly 20 items in all must be produced",
+            "Fewer than 20 items in all can be produced"
+          ]
+        },
+        {
+          "b": "Understand",
+          "d": "Hard",
+          "t": "mcq",
+          "m": 1,
+          "q": "A dealer earns a profit of Rs 250 on each table and Rs 75 on each chair. He has money enough for 100 chairs but storage space for only 60 pieces. If he buys chairs only, his largest possible profit is",
+          "a": "Rs 4500",
+          "o": [
+            "Rs 4500",
+            "Rs 7500",
+            "Rs 15000",
+            "Rs 5000"
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Easy",
+          "t": "fill_blank",
+          "m": 1,
+          "q": "A shopkeeper makes a profit of Rs 4 on each pen and Rs 9 on each notebook. If he sells x pens and y notebooks, his profit in Rs is Z = 4x + ____y.",
+          "a": "9"
+        },
+        {
+          "b": "Apply",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "A pen costs Rs 20 and a notebook costs Rs 50. A shopkeeper who buys x pens and y notebooks has at most Rs 2000 to spend. The investment constraint is",
+          "a": "20x + 50y <= 2000",
+          "o": [
+            "20x + 50y <= 2000",
+            "50x + 20y <= 2000",
+            "20x + 50y >= 2000",
+            "x + y <= 2000"
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Hard",
+          "t": "mcq",
+          "m": 1,
+          "q": "A tailor stitches x shirts and y pairs of trousers in a week. A shirt takes 2 hours and a pair of trousers takes 3 hours, and at most 60 hours are available. The profit is Rs 40 on a shirt and Rs 60 on a pair of trousers. The problem of maximising his profit is",
+          "a": "Maximise Z = 40x + 60y subject to 2x + 3y <= 60, x >= 0, y >= 0",
+          "o": [
+            "Maximise Z = 40x + 60y subject to 2x + 3y <= 60, x >= 0, y >= 0",
+            "Maximise Z = 2x + 3y subject to 40x + 60y <= 60, x >= 0, y >= 0",
+            "Maximise Z = 40x + 60y subject to 2x + 3y >= 60, x >= 0, y >= 0",
+            "Maximise Z = 40x + 60y subject to 3x + 2y <= 60, x >= 0, y >= 0"
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Hard",
+          "t": "mcq",
+          "m": 1,
+          "q": "A dealer has Rs 36000 to invest in fans costing Rs 1200 each and lamps costing Rs 400 each. If he buys x fans and y lamps, the investment constraint in its simplest form is",
+          "a": "3x + y <= 90",
+          "o": [
+            "3x + y <= 90",
+            "x + 3y <= 90",
+            "3x + y >= 90",
+            "3x + y <= 36000"
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Hard",
+          "t": "short_answer",
+          "m": 3,
+          "q": "A stationer buys x pens at Rs 20 each and y notebooks at Rs 50 each. He has Rs 2000 to invest and shelf space for at most 70 items. His profit is Rs 4 on a pen and Rs 9 on a notebook, and he can sell all that he buys. Formulate the problem of maximising his profit as a linear programming problem.",
+          "a": "Let x be the number of pens and y the number of notebooks, so x >= 0, y >= 0. Investment constraint: 20x + 50y <= 2000, i.e. 2x + 5y <= 200. Storage constraint: x + y <= 70. Objective function: Z = 4x + 9y. The problem is: Maximise Z = 4x + 9y subject to 2x + 5y <= 200, x + y <= 70, x >= 0, y >= 0.",
+          "s": [
+            [
+              "Investment constraint 20x + 50y <= 2000 (or 2x + 5y <= 200)",
+              1
+            ],
+            [
+              "Storage constraint x + y <= 70 with x >= 0, y >= 0",
+              1
+            ],
+            [
+              "Objective: Maximise Z = 4x + 9y",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Hardest",
+          "t": "long_answer",
+          "m": 3,
+          "q": "A fruit seller buys x boxes of apples at Rs 800 a box and y boxes of oranges at Rs 400 a box. He has Rs 16000 to invest, his cart holds at most 30 boxes, and he must buy at least 5 boxes of oranges. His profit is Rs 120 on a box of apples and Rs 50 on a box of oranges. Formulate the problem of maximising his profit as a linear programming problem.",
+          "a": "Investment: 800x + 400y <= 16000, i.e. 2x + y <= 40. Cart space: x + y <= 30. Oranges: y >= 5. Non-negativity: x >= 0 (y >= 0 is already ensured by y >= 5). Objective: Z = 120x + 50y. The problem is: Maximise Z = 120x + 50y subject to 2x + y <= 40, x + y <= 30, y >= 5, x >= 0, y >= 0.",
+          "s": [
+            [
+              "Investment constraint 800x + 400y <= 16000 (or 2x + y <= 40)",
+              1
+            ],
+            [
+              "Constraints x + y <= 30 and y >= 5, with non-negativity",
+              1
+            ],
+            [
+              "Objective: Maximise Z = 120x + 50y",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Analyse",
+          "d": "Hard",
+          "t": "assertion_reason",
+          "m": 1,
+          "q": "Assertion (A): In the furniture dealer problem, where a table costs Rs 2500, a chair costs Rs 500 and Rs 50,000 is available, the investment constraint is 5x + y <= 100. Reason (R): In the furniture dealer problem, where the profit is Rs 250 on a table and Rs 75 on a chair, the objective function is Z = 250x + 75y.",
+          "a": "Both A and R are true, but R is not the correct explanation of A",
+          "o": [
+            "Both A and R are true, but R is not the correct explanation of A",
+            "Both A and R are true, and R is the correct explanation of A",
+            "A is true, R is false",
+            "A is false, R is true"
+          ]
+        },
+        {
+          "b": "Analyse",
+          "d": "Hard",
+          "t": "multi_statement",
+          "m": 1,
+          "q": "A dealer buys x tables and y chairs. Consider these statements about formulating his problem. (I) 'He has storage space of at most 60 pieces' is written as x + y <= 60. (II) 'He has Rs 50,000 to invest, a table costs Rs 2500 and a chair costs Rs 500' is written as 5x + y <= 100. Which is or are correct?",
+          "a": "Both I and II",
+          "o": [
+            "Both I and II",
+            "Only I",
+            "Only II",
+            "Neither I nor II"
+          ]
+        },
+        {
+          "b": "Analyse",
+          "d": "Hardest",
+          "t": "long_answer",
+          "m": 3,
+          "q": "A furniture dealer has Rs 50,000 to invest and storage space for at most 60 pieces. A table costs Rs 2500 and a chair Rs 500; the profit is Rs 250 on a table and Rs 75 on a chair. A student formulates the problem as 'Maximise Z = 2500x + 500y subject to 250x + 75y <= 50000, x + y <= 60'. Identify every error and write the correct formulation.",
+          "a": "Errors: (1) the objective function uses the costs; profit must be Z = 250x + 75y. (2) The investment constraint uses the profits; it must use the costs, 2500x + 500y <= 50000, i.e. 5x + y <= 100. (3) The non-negative constraints x >= 0, y >= 0 are missing. Correct formulation: Maximise Z = 250x + 75y subject to 5x + y <= 100, x + y <= 60, x >= 0, y >= 0.",
+          "s": [
+            [
+              "Objective must be the profit Z = 250x + 75y, not the cost",
+              1
+            ],
+            [
+              "Investment constraint must be 2500x + 500y <= 50000 (5x + y <= 100)",
+              1
+            ],
+            [
+              "Adds x >= 0, y >= 0 and states the correct formulation",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Evaluate",
+          "d": "Hard",
+          "t": "short_answer",
+          "m": 2,
+          "q": "x units of item A and y units of item B are made. Item A needs 2 hours and item B needs 1 hour on a machine that can run for at most 12 hours, and at least 3 units of item B must be made. A student writes the constraints 2x + y <= 12 and y <= 3. Judge each inequality.",
+          "a": "2x + y <= 12 is correct: the total machine time 2x + y cannot exceed 12 hours. y <= 3 is wrong: 'at least 3 units of item B' means y >= 3, so the inequality sign has been reversed.",
+          "s": [
+            [
+              "Accepts 2x + y <= 12 with the reason (total time at most 12 hours)",
+              1
+            ],
+            [
+              "Rejects y <= 3 and corrects it to y >= 3",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Create",
+          "d": "Hardest",
+          "t": "long_answer",
+          "m": 3,
+          "q": "Make up a real-life situation in which a person buys two kinds of items with a limited amount of money and limited storage space and wants the greatest profit. State the data clearly and formulate it as a linear programming problem, giving the variables, the constraints and the objective function.",
+          "a": "One example: A shopkeeper buys x bags and y umbrellas. A bag costs Rs 300 and an umbrella Rs 100; he has Rs 9000 and space for at most 50 items. The profit is Rs 60 on a bag and Rs 25 on an umbrella. Constraints: 300x + 100y <= 9000, i.e. 3x + y <= 90; x + y <= 50; x >= 0, y >= 0. Objective: Maximise Z = 60x + 25y. Any consistent situation with a money constraint, a storage constraint, non-negativity and a linear profit function is acceptable.",
+          "s": [
+            [
+              "States a clear situation and defines the two variables",
+              1
+            ],
+            [
+              "Writes a correct money constraint and storage constraint with x >= 0, y >= 0",
+              1
+            ],
+            [
+              "Writes a correct linear objective function to be maximised",
+              1
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "code": "C12M-12.3",
+      "name": "Feasible region and feasible solutions",
+      "description": "The feasible region as the common region of all constraints, feasible, infeasible and optimal solutions, bounded and unbounded regions, and corner points.",
+      "idea": "The feasible region is the set of all points that satisfy every constraint at once; each of its points is a possible choice.",
+      "rule": "A point is feasible only if it satisfies all constraints, including x >= 0, y >= 0. The region is bounded if it can be enclosed within a circle. A corner point is the intersection of two boundary lines lying in the region.",
+      "example": "For 5x + y <= 100, x + y <= 60, x >= 0, y >= 0 the feasible region has corner points (0, 0), (20, 0), (10, 50), (0, 60); (10, 50) is feasible and (25, 40) is infeasible.",
+      "difficulty_base": "Easy",
+      "questions": [
+        {
+          "b": "Remember",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "The common region determined by all the constraints of a linear programming problem, including the non-negative constraints x >= 0, y >= 0, is called the",
+          "a": "feasible region",
+          "o": [
+            "feasible region",
+            "infeasible region",
+            "objective region",
+            "optimal solution"
+          ]
+        },
+        {
+          "b": "Remember",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "A point in the feasible region that gives the maximum or minimum value of the objective function is called",
+          "a": "an optimal solution",
+          "o": [
+            "an optimal solution",
+            "an infeasible solution",
+            "a decision variable",
+            "a non-negative restriction"
+          ]
+        },
+        {
+          "b": "Remember",
+          "d": "Easy",
+          "t": "fill_blank",
+          "m": 1,
+          "q": "A feasible region that can be enclosed within a circle is said to be ____.",
+          "a": "bounded"
+        },
+        {
+          "b": "Remember",
+          "d": "Hard",
+          "t": "mcq",
+          "m": 1,
+          "q": "Which of the following statements about the feasible region of a linear programming problem is FALSE?",
+          "a": "Only the corner points of the feasible region are feasible solutions",
+          "o": [
+            "Only the corner points of the feasible region are feasible solutions",
+            "Points within and on the boundary of the feasible region are feasible solutions",
+            "The feasible region is always a convex region",
+            "Any point outside the feasible region is an infeasible solution"
+          ],
+          "rev": true
+        },
+        {
+          "b": "Understand",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "For the constraints 5x + y <= 100, x + y <= 60, x >= 0, y >= 0, which of the following points is a feasible solution?",
+          "a": "(10, 50)",
+          "o": [
+            "(10, 50)",
+            "(25, 40)",
+            "(20, 10)",
+            "(-5, 20)"
+          ]
+        },
+        {
+          "b": "Understand",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "The feasible region for the constraints x + y <= 4, x >= 0, y >= 0 is",
+          "a": "the triangle with vertices (0, 0), (4, 0) and (0, 4), together with its interior",
+          "o": [
+            "the triangle with vertices (0, 0), (4, 0) and (0, 4), together with its interior",
+            "only the line segment joining (4, 0) and (0, 4)",
+            "the part of the first quadrant lying above the line x + y = 4",
+            "only the three points (0, 0), (4, 0) and (0, 4)"
+          ]
+        },
+        {
+          "b": "Understand",
+          "d": "Easy",
+          "t": "short_answer",
+          "m": 2,
+          "q": "Show that the point (25, 40) is an infeasible solution for the constraints 5x + y <= 100, x + y <= 60, x >= 0, y >= 0.",
+          "a": "At (25, 40): 5x + y = 125 + 40 = 165, which is greater than 100, so 5x + y <= 100 fails (also x + y = 65 > 60). Since the point does not satisfy all the constraints, it lies outside the feasible region and is an infeasible solution.",
+          "s": [
+            [
+              "Substitutes and shows a constraint fails (165 > 100 or 65 > 60)",
+              1
+            ],
+            [
+              "Concludes the point is outside the feasible region, so infeasible",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Understand",
+          "d": "Hard",
+          "t": "mcq",
+          "m": 1,
+          "q": "The constraints x + y >= 8, 3x + 5y <= 15, x >= 0, y >= 0 have",
+          "a": "no feasible region, because no point satisfies all of them together",
+          "o": [
+            "no feasible region, because no point satisfies all of them together",
+            "a bounded feasible region with corner points (5, 0), (8, 0) and (0, 3)",
+            "an unbounded feasible region lying above the line x + y = 8",
+            "exactly one feasible point, (5, 3)"
+          ]
+        },
+        {
+          "b": "Understand",
+          "d": "Hard",
+          "t": "mcq",
+          "m": 1,
+          "q": "The feasible region for the constraints x + 3y >= 3, x + y >= 2, x >= 0, y >= 0 is",
+          "a": "unbounded, because it extends indefinitely and cannot be enclosed within a circle",
+          "o": [
+            "unbounded, because it extends indefinitely and cannot be enclosed within a circle",
+            "bounded, because it has exactly three corner points",
+            "bounded, because x and y are non-negative",
+            "empty, because the two inequalities contradict each other"
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Easy",
+          "t": "fill_blank",
+          "m": 1,
+          "q": "For the constraints x + y <= 50, 3x + y <= 90, x >= 0, y >= 0, the corner point of the feasible region on the x-axis other than the origin is (____, 0).",
+          "a": "30"
+        },
+        {
+          "b": "Apply",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "Which of the following points lies in the feasible region of x + 2y <= 8, 3x + 2y <= 12, x >= 0, y >= 0?",
+          "a": "(2, 3)",
+          "o": [
+            "(2, 3)",
+            "(4, 3)",
+            "(3, 2)",
+            "(0, 5)"
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Hard",
+          "t": "mcq",
+          "m": 1,
+          "q": "The corner points of the feasible region for x + 2y <= 10, 3x + y <= 15, x >= 0, y >= 0 are",
+          "a": "(0, 0), (5, 0), (4, 3) and (0, 5)",
+          "o": [
+            "(0, 0), (5, 0), (4, 3) and (0, 5)",
+            "(0, 0), (10, 0), (4, 3) and (0, 15)",
+            "(0, 0), (5, 0) and (0, 5) only",
+            "(0, 0), (5, 0), (3, 4) and (0, 5)"
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Hard",
+          "t": "mcq",
+          "m": 1,
+          "q": "The feasible region of x + 2y >= 10, 3x + 4y <= 24, x >= 0, y >= 0 has a corner point where the lines x + 2y = 10 and 3x + 4y = 24 meet. This corner point is",
+          "a": "(4, 3)",
+          "o": [
+            "(4, 3)",
+            "(3, 4)",
+            "(10, 0)",
+            "(8, 0)"
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Hard",
+          "t": "short_answer",
+          "m": 3,
+          "q": "Find the corner points of the feasible region for the constraints x + 3y <= 60, x + y >= 10, x <= y, x >= 0, y >= 0.",
+          "a": "On the y-axis (x = 0): x + y = 10 gives (0, 10) and x + 3y = 60 gives (0, 20). The lines x = y and x + y = 10 meet at (5, 5). The lines x = y and x + 3y = 60 meet at (15, 15). Each of these satisfies all the constraints, so the corner points are (0, 10), (5, 5), (15, 15) and (0, 20).",
+          "s": [
+            [
+              "(0, 10) and (0, 20) on the y-axis",
+              1
+            ],
+            [
+              "(5, 5) from x = y and x + y = 10",
+              1
+            ],
+            [
+              "(15, 15) from x = y and x + 3y = 60",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Hardest",
+          "t": "long_answer",
+          "m": 3,
+          "q": "For the constraints x + 2y <= 120, x + y >= 60, x - 2y >= 0, x >= 0, y >= 0, find all the corner points of the feasible region and state whether the region is bounded.",
+          "a": "On the x-axis (y = 0): x + y = 60 gives (60, 0) and x + 2y = 120 gives (120, 0). The lines x = 2y and x + 2y = 120 meet at (60, 30). The lines x = 2y and x + y = 60 meet at (40, 20). All four points satisfy every constraint, so the corner points are (60, 0), (120, 0), (60, 30) and (40, 20). The region is a quadrilateral that can be enclosed within a circle, so it is bounded.",
+          "s": [
+            [
+              "(60, 0) and (120, 0) on the x-axis",
+              1
+            ],
+            [
+              "(60, 30) and (40, 20) on the line x = 2y",
+              1
+            ],
+            [
+              "States the region is bounded",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Analyse",
+          "d": "Hard",
+          "t": "assertion_reason",
+          "m": 1,
+          "q": "Assertion (A): The point (0, 60) is a feasible solution of the constraints 5x + y <= 100, x + y <= 60, x >= 0, y >= 0. Reason (R): Only points lying strictly inside the feasible region are feasible solutions; points on its boundary are not.",
+          "a": "A is true, R is false",
+          "o": [
+            "A is true, R is false",
+            "Both A and R are true, and R is the correct explanation of A",
+            "Both A and R are true, but R is not the correct explanation of A",
+            "A is false, R is true"
+          ]
+        },
+        {
+          "b": "Analyse",
+          "d": "Hard",
+          "t": "multi_statement",
+          "m": 1,
+          "q": "Consider these statements. (I) A feasible region is called bounded if it extends indefinitely in some direction. (II) The feasible region of a linear programming problem is always a convex region. Which is or are correct?",
+          "a": "Only II",
+          "o": [
+            "Only II",
+            "Only I",
+            "Both I and II",
+            "Neither I nor II"
+          ]
+        },
+        {
+          "b": "Analyse",
+          "d": "Hardest",
+          "t": "long_answer",
+          "m": 3,
+          "q": "For the constraints 3x + 5y <= 15, 5x + 2y <= 10, x >= 0, y >= 0, classify each of the points (2, 1), (1, 3) and (0, 3) as a feasible or an infeasible solution, showing the check for each.",
+          "a": "(2, 1): 3x + 5y = 11 <= 15 holds, but 5x + 2y = 12 > 10, so it is infeasible. (1, 3): 3x + 5y = 18 > 15, so it is infeasible. (0, 3): 3x + 5y = 15 <= 15 and 5x + 2y = 6 <= 10 with x, y >= 0, so it is feasible (it lies on the boundary and is a corner point).",
+          "s": [
+            [
+              "(2, 1) infeasible because 5x + 2y = 12 > 10",
+              1
+            ],
+            [
+              "(1, 3) infeasible because 3x + 5y = 18 > 15",
+              1
+            ],
+            [
+              "(0, 3) feasible, with both checks shown",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Evaluate",
+          "d": "Hard",
+          "t": "short_answer",
+          "m": 2,
+          "q": "A student says: 'Since x >= 0 and y >= 0, the feasible region lies in the first quadrant, so it must be bounded.' Evaluate this claim using the constraints x + y >= 2, x >= 0, y >= 0.",
+          "a": "The claim is wrong. For these constraints every point (t, t) with t >= 1 is feasible, for example (1, 1), (10, 10), (100, 100), so the region extends indefinitely and cannot be enclosed within a circle. It is unbounded even though it lies in the first quadrant.",
+          "s": [
+            [
+              "States the claim is wrong: this region is unbounded",
+              1
+            ],
+            [
+              "Justifies with feasible points arbitrarily far away or the 'cannot be enclosed within a circle' test",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Create",
+          "d": "Hardest",
+          "t": "long_answer",
+          "m": 3,
+          "q": "Write a set of linear constraints in x and y, including x >= 0 and y >= 0, whose feasible region is bounded and has exactly four corner points. List the corner points and explain why the region is bounded.",
+          "a": "One example: x <= 4, y <= 3, x >= 0, y >= 0. The feasible region is the rectangle with corner points (0, 0), (4, 0), (4, 3) and (0, 3). It is bounded because it can be enclosed within a circle. Any correct set of constraints with four corner points is acceptable, for example x + 2y <= 8, 3x + 2y <= 12, x >= 0, y >= 0 with corners (0, 0), (4, 0), (2, 3), (0, 4).",
+          "s": [
+            [
+              "Gives valid linear constraints including x >= 0, y >= 0",
+              1
+            ],
+            [
+              "Lists four correct corner points",
+              1
+            ],
+            [
+              "Explains boundedness (can be enclosed within a circle)",
+              1
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "code": "C12M-12.4",
+      "name": "Corner Point Method on a bounded feasible region",
+      "description": "Using Theorems 1 and 2 to find the maximum and minimum of Z by evaluating it at the corner points of a bounded feasible region, including multiple optimal solutions.",
+      "idea": "On a bounded feasible region the best value of a linear objective function is always found at a vertex, so only the corner points need checking.",
+      "rule": "Find the corner points, evaluate Z = ax + by at each; the largest value M is the maximum and the smallest value m is the minimum. If two corners tie, every point on the segment joining them is optimal.",
+      "example": "Z = 4x + y at corners (0, 0), (30, 0), (20, 30), (0, 50) gives 0, 120, 110, 50, so the maximum is 120 at (30, 0).",
+      "difficulty_base": "Hard",
+      "questions": [
+        {
+          "b": "Remember",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "According to Theorem 1 of the textbook, when the objective function Z = ax + by of a linear programming problem has an optimal value, this value must occur at",
+          "a": "a corner point (vertex) of the feasible region",
+          "o": [
+            "a corner point (vertex) of the feasible region",
+            "the centre of the feasible region",
+            "the origin in every case",
+            "a point outside the feasible region"
+          ]
+        },
+        {
+          "b": "Remember",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "If the feasible region R of a linear programming problem is bounded, then on R the objective function Z has",
+          "a": "both a maximum and a minimum value, each at a corner point of R",
+          "o": [
+            "both a maximum and a minimum value, each at a corner point of R",
+            "a maximum value but no minimum value",
+            "a minimum value but no maximum value",
+            "neither a maximum nor a minimum value"
+          ]
+        },
+        {
+          "b": "Remember",
+          "d": "Easy",
+          "t": "fill_blank",
+          "m": 1,
+          "q": "The method of solving a linear programming problem by evaluating Z at each vertex of the feasible region is called the ____ Point Method.",
+          "a": "Corner"
+        },
+        {
+          "b": "Remember",
+          "d": "Hard",
+          "t": "mcq",
+          "m": 1,
+          "q": "Which of the following is NOT a step of the Corner Point Method for a bounded feasible region?",
+          "a": "Evaluate Z at the midpoint of each boundary line and take the largest of these values",
+          "o": [
+            "Evaluate Z at the midpoint of each boundary line and take the largest of these values",
+            "Find the feasible region and determine its corner points",
+            "Evaluate the objective function Z = ax + by at each corner point",
+            "Take the largest and smallest of the corner values, M and m, as the maximum and minimum of Z"
+          ],
+          "rev": true
+        },
+        {
+          "b": "Understand",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "The corner points of a bounded feasible region are (0, 0), (30, 0), (20, 30) and (0, 50). The maximum value of Z = 4x + y is",
+          "a": "120",
+          "o": [
+            "120",
+            "110",
+            "50",
+            "170"
+          ]
+        },
+        {
+          "b": "Understand",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "The corner points of a bounded feasible region are (0, 5), (4, 3) and (0, 6). The minimum value of Z = 200x + 500y occurs at",
+          "a": "(4, 3)",
+          "o": [
+            "(4, 3)",
+            "(0, 5)",
+            "(0, 6)",
+            "(0, 0)"
+          ]
+        },
+        {
+          "b": "Understand",
+          "d": "Easy",
+          "t": "short_answer",
+          "m": 2,
+          "q": "The corner points of a bounded feasible region are (0, 0), (4, 0) and (0, 4). Find the maximum value of Z = 3x + 4y and the point at which it occurs.",
+          "a": "Z at (0, 0) is 0, at (4, 0) is 12 and at (0, 4) is 16. The region is bounded, so the maximum value of Z is 16, at the point (0, 4).",
+          "s": [
+            [
+              "Evaluates Z at the three corner points: 0, 12, 16",
+              1
+            ],
+            [
+              "Maximum 16 at (0, 4)",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Understand",
+          "d": "Hard",
+          "t": "mcq",
+          "m": 1,
+          "q": "For a bounded feasible region, Z = 3x + 9y takes its largest corner value 180 at both the corner points C (15, 15) and D (0, 20). Then the maximum value 180 is attained",
+          "a": "at every point of the line segment CD",
+          "o": [
+            "at every point of the line segment CD",
+            "only at the two points C and D",
+            "only at the midpoint of CD",
+            "at every point of the feasible region"
+          ]
+        },
+        {
+          "b": "Understand",
+          "d": "Hard",
+          "t": "mcq",
+          "m": 1,
+          "q": "The corner points of a bounded feasible region are (0, 0), (4, 0), (2, 3) and (0, 4). The minimum value of Z = -3x + 4y is",
+          "a": "-12",
+          "o": [
+            "-12",
+            "0",
+            "6",
+            "16"
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Easy",
+          "t": "fill_blank",
+          "m": 1,
+          "q": "The corner points of a bounded feasible region are (0, 0), (5, 0), (4, 3) and (0, 5). The maximum value of Z = 3x + 2y is ____.",
+          "a": "18"
+        },
+        {
+          "b": "Apply",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "The corner points of a bounded feasible region are (0, 10), (5, 5), (15, 15) and (0, 20). The minimum value of Z = 3x + 9y is",
+          "a": "60",
+          "o": [
+            "60",
+            "90",
+            "180",
+            "0"
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Hard",
+          "t": "mcq",
+          "m": 1,
+          "q": "Maximise Z = 2x + 3y subject to x + y <= 6, x <= 4, y <= 5, x >= 0, y >= 0. The corner points of the feasible region are (0, 0), (4, 0), (4, 2), (1, 5) and (0, 5). The maximum value of Z is",
+          "a": "17",
+          "o": [
+            "17",
+            "15",
+            "14",
+            "23"
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Hard",
+          "t": "mcq",
+          "m": 1,
+          "q": "The corner points of the bounded feasible region of a problem are (60, 0), (120, 0), (60, 30) and (40, 20), and Z = 5x + 10y. Which conclusion is correct?",
+          "a": "The minimum of Z is 300 at (60, 0), and the maximum is 600 at every point of the segment joining (120, 0) and (60, 30)",
+          "o": [
+            "The minimum of Z is 300 at (60, 0), and the maximum is 600 at every point of the segment joining (120, 0) and (60, 30)",
+            "The minimum of Z is 300 at (60, 0), and the maximum is 600 at the point (120, 0) only",
+            "The minimum of Z is 400 at (40, 20), and the maximum is 600 at the point (60, 30) only",
+            "The minimum of Z is 0 at (0, 0), and the maximum is 600 at every point of the segment joining (120, 0) and (60, 30)"
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Hard",
+          "t": "short_answer",
+          "m": 3,
+          "q": "Solve by the Corner Point Method: Maximise Z = 5x + 3y subject to 3x + 5y <= 15, 5x + 2y <= 10, x >= 0, y >= 0.",
+          "a": "The feasible region is bounded with corner points (0, 0), (2, 0), (20/19, 45/19) and (0, 3), the third being the intersection of 3x + 5y = 15 and 5x + 2y = 10. Z = 0 at (0, 0), 10 at (2, 0), 235/19 at (20/19, 45/19) and 9 at (0, 3). Since 235/19 is about 12.37, the maximum value of Z is 235/19 at (20/19, 45/19).",
+          "s": [
+            [
+              "Corner points (0, 0), (2, 0), (0, 3) and the intersection (20/19, 45/19)",
+              1
+            ],
+            [
+              "Z values 0, 10, 235/19, 9",
+              1
+            ],
+            [
+              "Maximum Z = 235/19 at (20/19, 45/19)",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Hardest",
+          "t": "long_answer",
+          "m": 3,
+          "q": "Minimise and maximise Z = x + 2y subject to x + 2y >= 100, 2x - y <= 0, 2x + y <= 200, x >= 0, y >= 0.",
+          "a": "The feasible region is bounded with corner points (0, 50), (20, 40), (50, 100) and (0, 200). Z = 100 at (0, 50), 100 at (20, 40), 250 at (50, 100) and 400 at (0, 200). The maximum value of Z is 400 at (0, 200). The minimum value of Z is 100, attained at (0, 50) and (20, 40) and hence at every point of the line segment joining them.",
+          "s": [
+            [
+              "Corner points (0, 50), (20, 40), (50, 100), (0, 200)",
+              1
+            ],
+            [
+              "Z values 100, 100, 250, 400 and maximum 400 at (0, 200)",
+              1
+            ],
+            [
+              "Minimum 100 at all points of the segment joining (0, 50) and (20, 40)",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Analyse",
+          "d": "Hard",
+          "t": "assertion_reason",
+          "m": 1,
+          "q": "Assertion (A): For a bounded feasible region with corner points (0, 0), (30, 0), (20, 30) and (0, 50), the maximum value of Z = 4x + y is 110, attained at (20, 30). Reason (R): If the feasible region is bounded, the maximum value of the objective function occurs at a corner point of the region.",
+          "a": "A is false, R is true",
+          "o": [
+            "A is false, R is true",
+            "Both A and R are true, and R is the correct explanation of A",
+            "Both A and R are true, but R is not the correct explanation of A",
+            "A is true, R is false"
+          ]
+        },
+        {
+          "b": "Analyse",
+          "d": "Hard",
+          "t": "multi_statement",
+          "m": 1,
+          "q": "Consider these statements. (I) For a bounded feasible region, the maximum of Z always occurs at the corner point where two constraint lines other than the axes intersect. (II) If two corner points of a bounded feasible region give the same maximum value of Z, then the problem has no optimal solution. Which is or are correct?",
+          "a": "Neither I nor II",
+          "o": [
+            "Neither I nor II",
+            "Only I",
+            "Only II",
+            "Both I and II"
+          ]
+        },
+        {
+          "b": "Analyse",
+          "d": "Hardest",
+          "t": "long_answer",
+          "m": 3,
+          "q": "For the problem 'Maximise Z = 6x + 4y subject to 3x + 2y <= 18, x <= 4, y <= 6, x >= 0, y >= 0', the corner points of the feasible region are (0, 0), (4, 0), (4, 3), (2, 6) and (0, 6). Find the maximum value of Z, explain why the problem has more than one optimal solution, and give one optimal solution that is not a corner point.",
+          "a": "Z = 0 at (0, 0), 24 at (4, 0), 36 at (4, 3), 36 at (2, 6) and 24 at (0, 6). The region is bounded, so the maximum is 36. Two corner points, (4, 3) and (2, 6), give this same maximum, so every point on the line segment joining them also gives 36 (multiple optimal solutions). For example (3, 9/2) lies on that segment and Z = 18 + 18 = 36.",
+          "s": [
+            [
+              "Z values at all five corner points and maximum 36",
+              1
+            ],
+            [
+              "Explains: two corners give the same maximum, so every point on the segment joining them is optimal",
+              1
+            ],
+            [
+              "Gives a valid non-corner point on the segment, such as (3, 9/2), with Z = 36",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Evaluate",
+          "d": "Hard",
+          "t": "short_answer",
+          "m": 2,
+          "q": "For the constraints x + 2y <= 10, 3x + y <= 15, x >= 0, y >= 0, the corner points of the feasible region are (0, 0), (5, 0), (4, 3) and (0, 5). A student computes Z = 3x + 2y at (5, 5), gets 25, and declares the maximum value of Z to be 25. Evaluate this answer.",
+          "a": "The answer is wrong. (5, 5) is not a feasible point: x + 2y = 15 > 10 and 3x + y = 20 > 15, and it is not a corner point of the region. Z must be evaluated at the corner points only: 0, 15, 18 and 10. The maximum value is 18 at (4, 3).",
+          "s": [
+            [
+              "(5, 5) is infeasible / not a corner point, so 25 is rejected",
+              1
+            ],
+            [
+              "Correct maximum 18 at (4, 3) from the corner values",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Create",
+          "d": "Hardest",
+          "t": "long_answer",
+          "m": 3,
+          "q": "The bounded feasible region of x + 2y <= 8, 3x + 2y <= 12, x >= 0, y >= 0 has corner points (0, 0), (4, 0), (2, 3) and (0, 4). Construct an objective function Z = ax + by, with a and b positive, whose maximum on this region occurs at the corner point (2, 3) only, and verify your choice.",
+          "a": "One example: Z = x + y. Z = 0 at (0, 0), 4 at (4, 0), 5 at (2, 3) and 4 at (0, 4). The region is bounded, so the maximum is 5 and it occurs only at (2, 3). Any Z = ax + by with positive a, b whose value at (2, 3) is strictly greater than at the other three corners is acceptable (for instance Z = 3x + 2y is not, since it gives 12 at both (4, 0) and (2, 3)).",
+          "s": [
+            [
+              "Proposes a linear Z = ax + by with a, b positive",
+              1
+            ],
+            [
+              "Evaluates Z at all four corner points",
+              1
+            ],
+            [
+              "Shows the value at (2, 3) is strictly the largest",
+              1
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "code": "C12M-12.5",
+      "name": "Unbounded feasible regions and problems with no solution",
+      "description": "Deciding by the open half plane test whether a corner value is really the maximum or minimum on an unbounded feasible region, and recognising problems with no feasible region.",
+      "idea": "On an unbounded region the corner values are only candidates: Z may keep growing or falling without limit, so the candidate must be tested.",
+      "rule": "M is the maximum only if ax + by > M has no point in common with the feasible region; m is the minimum only if ax + by < m has none. If no point satisfies all constraints there is no feasible region and no solution.",
+      "example": "Z = -50x + 20y on the unbounded region with corners (0, 5), (0, 3), (1, 0), (6, 0): smallest corner value -300, but -50x + 20y < -300 meets the region, so Z has no minimum.",
+      "difficulty_base": "Hard",
+      "questions": [
+        {
+          "b": "Remember",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "If the feasible region of a linear programming problem is unbounded, then a maximum or a minimum value of the objective function",
+          "a": "may not exist, but if it exists it must occur at a corner point of the region",
+          "o": [
+            "may not exist, but if it exists it must occur at a corner point of the region",
+            "always exists and occurs at a corner point of the region",
+            "never exists",
+            "exists only when the origin is a corner point"
+          ]
+        },
+        {
+          "b": "Remember",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "For an unbounded feasible region, let M be the largest value of Z = ax + by at the corner points. Then M is the maximum value of Z if the open half plane ax + by > M",
+          "a": "has no point in common with the feasible region",
+          "o": [
+            "has no point in common with the feasible region",
+            "has at least one point in common with the feasible region",
+            "contains the origin",
+            "contains every corner point of the feasible region"
+          ]
+        },
+        {
+          "b": "Remember",
+          "d": "Easy",
+          "t": "fill_blank",
+          "m": 1,
+          "q": "A feasible region that cannot be enclosed within a circle is called ____.",
+          "a": "unbounded"
+        },
+        {
+          "b": "Remember",
+          "d": "Hard",
+          "t": "mcq",
+          "m": 1,
+          "q": "Which of the following statements about a linear programming problem with an unbounded feasible region is FALSE?",
+          "a": "The largest value of Z at the corner points is always the maximum value of Z",
+          "o": [
+            "The largest value of Z at the corner points is always the maximum value of Z",
+            "A maximum or a minimum value of Z may not exist",
+            "If a minimum value of Z exists, it occurs at a corner point",
+            "The feasible region cannot be enclosed within a circle"
+          ],
+          "rev": true
+        },
+        {
+          "b": "Understand",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "For an unbounded feasible region, the smallest value of Z = 3x + 5y at the corner points is 7. To decide whether 7 is the minimum value of Z, we check whether the feasible region has any point in common with the open half plane",
+          "a": "3x + 5y < 7",
+          "o": [
+            "3x + 5y < 7",
+            "3x + 5y > 7",
+            "3x + 5y <= 7",
+            "3x + 5y >= 7"
+          ]
+        },
+        {
+          "b": "Understand",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "The constraints x - y <= -1, -x + y <= 0, x >= 0, y >= 0 require y >= x + 1 and y <= x at the same time. So the problem 'Maximise Z = x + y' subject to these constraints has",
+          "a": "no feasible region, and hence no maximum value",
+          "o": [
+            "no feasible region, and hence no maximum value",
+            "maximum value 1 at the point (0, 1)",
+            "maximum value 0 at the point (0, 0)",
+            "an unbounded feasible region on which Z has no maximum"
+          ]
+        },
+        {
+          "b": "Understand",
+          "d": "Easy",
+          "t": "short_answer",
+          "m": 2,
+          "q": "For an unbounded feasible region, state the test used in the Corner Point Method to decide whether the smallest corner value m of Z = ax + by is the minimum value of Z.",
+          "a": "Consider the open half plane ax + by < m. If it has no point in common with the feasible region, then m is the minimum value of Z. If it has a point in common with the feasible region, then Z has no minimum value.",
+          "s": [
+            [
+              "Uses the open half plane ax + by < m",
+              1
+            ],
+            [
+              "No common point: m is the minimum; common point: Z has no minimum",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Understand",
+          "d": "Hard",
+          "t": "mcq",
+          "m": 1,
+          "q": "The feasible region of x + 3y >= 3, x + y >= 2, x >= 0, y >= 0 is unbounded with corner points (3, 0), (3/2, 1/2) and (0, 2). For Z = 3x + 5y, the open half plane 3x + 5y < 7 has no point in common with the feasible region. Hence",
+          "a": "the minimum value of Z is 7, at (3/2, 1/2)",
+          "o": [
+            "the minimum value of Z is 7, at (3/2, 1/2)",
+            "Z has no minimum value, because the region is unbounded",
+            "the minimum value of Z is 9, at (3, 0)",
+            "the minimum value of Z is 0, at (0, 0)"
+          ]
+        },
+        {
+          "b": "Understand",
+          "d": "Hard",
+          "t": "mcq",
+          "m": 1,
+          "q": "An unbounded feasible region has corner points (0, 5), (0, 3), (1, 0) and (6, 0). The smallest corner value of Z = -50x + 20y is -300 at (6, 0), and the open half plane -50x + 20y < -300 has points in common with the feasible region. Hence",
+          "a": "Z has no minimum value",
+          "o": [
+            "Z has no minimum value",
+            "the minimum value of Z is -300, at (6, 0)",
+            "the minimum value of Z is -50, at (1, 0)",
+            "the minimum value of Z is 60, at (0, 3)"
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Easy",
+          "t": "fill_blank",
+          "m": 1,
+          "q": "The corner points of an unbounded feasible region are (6, 0), (4, 1) and (3, 2). The largest value of Z = -x + 2y at these corner points is ____.",
+          "a": "1"
+        },
+        {
+          "b": "Apply",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "The corner points of an unbounded feasible region are (6, 0), (3, 1) and (0, 4). The smallest value of Z = 4x + 3y at these corner points is",
+          "a": "12",
+          "o": [
+            "12",
+            "15",
+            "24",
+            "0"
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Hard",
+          "t": "mcq",
+          "m": 1,
+          "q": "Maximise Z = 2x + y subject to x - y <= 2, x + y >= 4, x >= 0, y >= 0. The feasible region is unbounded with corner points (3, 1) and (0, 4), and the point (10, 10) lies in it. Which conclusion is correct?",
+          "a": "Z has no maximum value, because 2x + y > 7 has points in common with the feasible region",
+          "o": [
+            "Z has no maximum value, because 2x + y > 7 has points in common with the feasible region",
+            "The maximum value of Z is 7, at (3, 1)",
+            "The maximum value of Z is 4, at (0, 4)",
+            "The maximum value of Z is 30, at (10, 10)"
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Hard",
+          "t": "mcq",
+          "m": 1,
+          "q": "Minimise Z = 4x + 3y subject to x + y >= 4, x + 3y >= 6, x >= 0, y >= 0. The feasible region is unbounded with corner points (6, 0), (3, 1) and (0, 4), and the open half plane 4x + 3y < 12 has no point in common with it. The minimum value of Z is",
+          "a": "12, at (0, 4)",
+          "o": [
+            "12, at (0, 4)",
+            "15, at (3, 1)",
+            "0, at (0, 0)",
+            "non-existent, because the region is unbounded"
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Hard",
+          "t": "short_answer",
+          "m": 3,
+          "q": "Maximise Z = -x + 2y subject to x >= 3, x + y >= 5, x + 2y >= 6, y >= 0. The feasible region is unbounded with corner points (6, 0), (4, 1) and (3, 2). Decide whether Z has a maximum value.",
+          "a": "Z = -6 at (6, 0), -2 at (4, 1) and 1 at (3, 2), so the largest corner value is 1. Since the region is unbounded, check the open half plane -x + 2y > 1. The point (3, 10) satisfies all the constraints and gives Z = 17 > 1, so this half plane has points in common with the feasible region. Hence Z has no maximum value.",
+          "s": [
+            [
+              "Corner values -6, -2, 1; largest is 1",
+              1
+            ],
+            [
+              "Tests the open half plane -x + 2y > 1 and finds a common feasible point",
+              1
+            ],
+            [
+              "Concludes Z has no maximum value",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Hardest",
+          "t": "long_answer",
+          "m": 3,
+          "q": "Minimise Z = x + 2y subject to 2x + y >= 3, x + 2y >= 6, x >= 0, y >= 0, and show that the minimum of Z occurs at more than two points.",
+          "a": "The feasible region is unbounded with corner points (6, 0) and (0, 3). Z = 6 at both, so the smallest corner value is 6. The open half plane x + 2y < 6 has no point in common with the feasible region, because every feasible point satisfies x + 2y >= 6. So the minimum value of Z is 6. As it occurs at both (6, 0) and (0, 3), it occurs at every point of the line segment joining them, for example (2, 2), i.e. at more than two points.",
+          "s": [
+            [
+              "Corner points (6, 0) and (0, 3), with Z = 6 at each",
+              1
+            ],
+            [
+              "Shows x + 2y < 6 has no point in common with the feasible region, so the minimum is 6",
+              1
+            ],
+            [
+              "Minimum occurs at every point of the segment joining (6, 0) and (0, 3)",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Analyse",
+          "d": "Hard",
+          "t": "assertion_reason",
+          "m": 1,
+          "q": "Assertion (A): On the unbounded feasible region of 2x - y >= -5, 3x + y >= 3, 2x - 3y <= 12, x >= 0, y >= 0, whose corner points are (0, 5), (0, 3), (1, 0) and (6, 0), the function Z = -50x + 20y has no minimum value. Reason (R): The open half plane -50x + 20y < -300 has points in common with this feasible region, for example (9, 2), where -300 is the smallest value of Z at the corner points.",
+          "a": "Both A and R are true, and R is the correct explanation of A",
+          "o": [
+            "Both A and R are true, and R is the correct explanation of A",
+            "Both A and R are true, but R is not the correct explanation of A",
+            "A is true, R is false",
+            "A is false, R is true"
+          ]
+        },
+        {
+          "b": "Analyse",
+          "d": "Hard",
+          "t": "multi_statement",
+          "m": 1,
+          "q": "Consider these statements. (I) If a feasible region is unbounded, the objective function can never have a minimum value on it. (II) If the open half plane ax + by > M has a point in common with an unbounded feasible region, where M is the largest corner value of Z = ax + by, then Z has no maximum value. Which is or are correct?",
+          "a": "Only II",
+          "o": [
+            "Only II",
+            "Only I",
+            "Both I and II",
+            "Neither I nor II"
+          ]
+        },
+        {
+          "b": "Analyse",
+          "d": "Hardest",
+          "t": "long_answer",
+          "m": 3,
+          "q": "The feasible region of 2x - y >= -5, 3x + y >= 3, 2x - 3y <= 12, x >= 0, y >= 0 is unbounded with corner points (0, 5), (0, 3), (1, 0) and (6, 0). Examine whether Z = -50x + 20y has a maximum value on this region.",
+          "a": "Z = 100 at (0, 5), 60 at (0, 3), -50 at (1, 0) and -300 at (6, 0), so the largest corner value is 100. The region is unbounded, so test the open half plane -50x + 20y > 100, i.e. 2y > 5x + 10. Every feasible point has y <= 2x + 5, so 2y <= 4x + 10 <= 5x + 10 because x >= 0. Hence the half plane has no point in common with the feasible region, and the maximum value of Z is 100 at (0, 5).",
+          "s": [
+            [
+              "Corner values 100, 60, -50, -300; largest 100",
+              1
+            ],
+            [
+              "Tests the open half plane -50x + 20y > 100 and shows it has no common point with the region",
+              1
+            ],
+            [
+              "Concludes the maximum value is 100 at (0, 5)",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Evaluate",
+          "d": "Hard",
+          "t": "short_answer",
+          "m": 2,
+          "q": "For 'Minimise Z = 3x + 5y subject to x + 3y >= 3, x + y >= 2, x >= 0, y >= 0', the corner points are (3, 0), (3/2, 1/2) and (0, 2). A student writes: 'The feasible region is unbounded, so Z has no minimum value.' Evaluate this conclusion.",
+          "a": "The conclusion is wrong: an unbounded region only means a minimum may not exist, so the half plane test is needed. The smallest corner value is 7 at (3/2, 1/2) (the others are 9 and 10). In the feasible region 3x + 5y = (x + 3y) + 2(x + y) >= 3 + 4 = 7, so 3x + 5y < 7 has no point in common with it. Hence the minimum value of Z is 7 at (3/2, 1/2).",
+          "s": [
+            [
+              "Rejects the reasoning: unbounded does not by itself mean no minimum; the open half plane 3x + 5y < 7 must be tested",
+              1
+            ],
+            [
+              "Minimum value 7 at (3/2, 1/2)",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Create",
+          "d": "Hardest",
+          "t": "long_answer",
+          "m": 3,
+          "q": "Give an example of a linear programming problem in two variables whose feasible region is unbounded and whose objective function has no maximum value. Justify both properties.",
+          "a": "One example: Maximise Z = x + y subject to x + y >= 2, x >= 0, y >= 0. The feasible region contains (t, t) for every t >= 1, so it cannot be enclosed within a circle and is unbounded. Its corner points are (2, 0) and (0, 2), where Z = 2. The open half plane x + y > 2 has points in common with the region, for example (5, 5) with Z = 10, so Z has no maximum value.",
+          "s": [
+            [
+              "Gives a valid problem with linear objective, linear constraints and x >= 0, y >= 0",
+              1
+            ],
+            [
+              "Justifies that the feasible region is unbounded",
+              1
+            ],
+            [
+              "Shows the open half plane Z > M meets the region, so there is no maximum",
+              1
+            ]
+          ]
+        }
+      ]
+    }
+  ]
+}

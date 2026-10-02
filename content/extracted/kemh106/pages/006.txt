@@ -1,0 +1,38 @@
+PERMUTATIONS AND COMBINATIONS 105
+Definition 1 A permutation is an arrangement in a definite order of a number of
+objects taken some or all at a time.
+In the following sub-section, we shall obtain the formula needed to answer these
+questions immediately.
+6.3.1 Permutations when all the objects are distinct
+Theorem 1 The number of permutations of n different objects taken r at a time,
+where 0 < r ≤ n and the objects do not repeat is n ( n – 1) ( n – 2). . .( n – r + 1),
+which is denoted by nPr
+.
+Proof There will be as many permutations as there are ways of filling in r vacant
+places . . . by
+← r vacant places →
+the n objects. The first place can be filled in n ways; following which, the second place
+can be filled in (n – 1) ways, following which the third place can be filled in (n – 2)
+ways,..., the rth place can be filled in (n – (r – 1)) ways. Therefore, the number of
+ways of filling in r vacant places in succession is n(n – 1) (n – 2) . . . (n – (r – 1)) or
+n ( n – 1) (n – 2) ... (n – r + 1)
+This expression for nPr
+ is cumbersome and we need a notation which will help to
+reduce the size of this expression. The symbol n! (read as factorial n or n factorial )
+comes to our rescue. In the following text we will learn what actually n! means.
+6.3.2 Factorial notation The notation n! represents the product of first n natural
+numbers, i.e., the product 1 × 2 × 3 × . . . × (n – 1) × n is denoted as n!. We read this
+symbol as ‘n factorial’. Thus, 1 × 2 × 3 × 4 . . . × (n – 1) × n = n !
+1 = 1 !
+1 × 2 = 2 !
+1× 2 × 3 = 3 !
+1 × 2 × 3 × 4 = 4 ! and so on.
+We define 0 ! = 1
+We can write 5 ! = 5 × 4 ! = 5 × 4 × 3 ! = 5 × 4 × 3 × 2 !
+= 5 × 4 × 3 × 2 × 1!
+Clearly, for a natural number n
+ n ! = n (n – 1) !
+= n (n – 1) (n – 2) ! [provided (n ≥ 2)]
+= n (n – 1) (n – 2) (n – 3) ! [provided (n ≥ 3)]
+and so on.
+Reprint 2026-27

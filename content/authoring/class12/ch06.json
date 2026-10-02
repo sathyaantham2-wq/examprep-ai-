@@ -1,0 +1,2332 @@
+{
+ "subject": {
+  "code": "MATH12",
+  "name": "Mathematics",
+  "board": "CBSE",
+  "class": 12
+ },
+ "source": {
+  "publisher": "NCERT",
+  "title": "Mathematics Part I",
+  "edition": "Textbook for Class XII Part I, Reprint 2026-27",
+  "year": 2026
+ },
+ "chapter": {
+  "part": "I",
+  "chapter_no": 6,
+  "name": "Application of Derivatives",
+  "blurb": "Applications of the derivative: as the rate of change of one quantity with respect to another (including related rates through the Chain Rule and marginal cost and revenue), to find intervals on which a function is increasing or decreasing, and to locate turning points where a function has local maxima or minima. The chapter closes with the absolute maximum and minimum values of a function on a closed interval and applied optimisation problems.",
+  "source_code": "lemh106",
+  "order_index": 6
+ },
+ "scope_in": [
+  {
+   "item": "Interpret dy/dx (or f'(x)) as the rate of change of y with respect to x, evaluate it at x = x0, and read its sign (positive: y increases as x increases; negative: y decreases)",
+   "pages": "147-149, 185"
+  },
+  {
+   "item": "Find the rate of change of area, volume, surface area or circumference with respect to a length (circle, sphere, cube) at a given value",
+   "pages": "148, 150-151"
+  },
+  {
+   "item": "Find marginal cost dC/dx and marginal revenue dR/dx for polynomial cost and revenue functions at a given output",
+   "pages": "150-152"
+  },
+  {
+   "item": "Use the Chain Rule dy/dt = (dy/dx)(dx/dt) and dy/dx = (dy/dt)/(dx/dt) to solve related-rate problems with time: ripples, cubes, spheres and balloons, rectangles, a sliding ladder, a sand or water cone, a lamp-post shadow, a point moving on a curve",
+   "pages": "147-151, 178-179, 181"
+  },
+  {
+   "item": "State the definitions of increasing, decreasing, strictly increasing, strictly decreasing and constant functions on an interval, and of increasing/decreasing at a point",
+   "pages": "152-153, 185"
+  },
+  {
+   "item": "Use Theorem 1 (sign of f'(x) on (a, b) decides increasing, decreasing or constant on [a, b]) to show a function is increasing or decreasing on R or on an interval, including e^x, log x, sin x, cos x and cubics with f'(x) written as a sum of squares",
+   "pages": "153-154, 158-159, 180-181"
+  },
+  {
+   "item": "Find the intervals of increase and decrease by solving f'(x) = 0, dividing the domain into disjoint intervals and testing the sign of f'(x) in each, for polynomial and trigonometric functions on restricted intervals",
+   "pages": "155-159, 179-180"
+  },
+  {
+   "item": "Define maximum, minimum and extreme values of a function on an interval and decide from the function (x^2, |x|, x on (0, 1)) whether they exist",
+   "pages": "159-162"
+  },
+  {
+   "item": "Define points of local maxima and local minima and critical points (f'(c) = 0 or f not differentiable), and know that f'(c) = 0 does not guarantee an extremum (x^3 at 0)",
+   "pages": "162-164"
+  },
+  {
+   "item": "Apply the First Derivative Test (sign change of f'(x) through a critical point), including points of inflexion where f' does not change sign and non-differentiable points such as |x|",
+   "pages": "164-167, 185-186"
+  },
+  {
+   "item": "Apply the Second Derivative Test (f'(c) = 0 with f''(c) < 0 or > 0) and recognise when it fails (f''(c) = 0 or f not twice differentiable) and revert to the first derivative test",
+   "pages": "166-167, 186"
+  },
+  {
+   "item": "Solve optimisation problems by writing the quantity as a function of one variable and rejecting impossible values: numbers with a given sum, open boxes from sheets, wire cut into a square and circle, profit functions, distances from a point to a curve, cylinders and cones",
+   "pages": "167-171, 174-177, 181-185"
+  },
+  {
+   "item": "Distinguish absolute (global) maximum and minimum values from local ones and use Theorems 5 and 6 on a closed interval",
+   "pages": "171-172"
+  },
+  {
+   "item": "Use the four-step working rule (critical points, end points, evaluate, compare) to find absolute maximum and minimum values on a closed interval, including points where f is not differentiable",
+   "pages": "172-176, 186"
+  }
+ ],
+ "scope_out": [
+  {
+   "item": "Tangents and normals to a curve (slope of a tangent, equations of tangent and normal)",
+   "reason": "Listed in the 6.1 Introduction (p. 147) but there is no tangents-and-normals section in this rationalised Reprint 2026-27 edition: the chapter runs 6.2 Rate of Change, 6.3 Increasing and Decreasing Functions, 6.4 Maxima and Minima and the Summary only"
+  },
+  {
+   "item": "Approximations and differentials (dy = f'(x) dx, approximate values such as sqrt(25.3))",
+   "reason": "Also promised in the Introduction (p. 147) but no approximations section exists in this edition; the word 'approximate' appears only in Example 35 (p. 181), which is still a rate-of-change computation"
+  },
+  {
+   "item": "Rolle's Theorem and the Mean Value Theorem as topics in their own right",
+   "reason": "The proof of Theorem 1 cites the Mean Value Theorem (p. 154) but this chapter does not teach or test it, and Chapter 5 of this edition has no MVT section either"
+  },
+  {
+   "item": "Concavity, using f''(x) to find intervals of concave up/down, and finding points of inflexion by solving f''(x) = 0",
+   "reason": "The book defines a point of inflexion only as a critical point where f'(x) does not change sign (pp. 164, 166); f'' is used solely in the second derivative test"
+  },
+  {
+   "item": "Full curve sketching and asymptotes",
+   "reason": "Graphs are used only as illustrations (Figs 6.1-6.19); no curve-tracing procedure is taught"
+  },
+  {
+   "item": "Proofs of Theorem 2, Theorem 5 (extreme value theorem) and Theorem 6",
+   "reason": "Stated without proof (pp. 164, 172); the result that every continuous function on a closed interval has a maximum and minimum is explicitly 'beyond the scope of the present text' (p. 162)"
+  },
+  {
+   "item": "Functions of two or more variables, partial derivatives and Lagrange multipliers",
+   "reason": "Every optimisation problem in the chapter is reduced to one variable using the given condition"
+  },
+  {
+   "item": "Newton's method, error estimates and percentage error",
+   "reason": "Not in the chapter; percentage error belongs to the approximations section that this edition does not contain"
+  },
+  {
+   "item": "Velocity and acceleration as a separate kinematics topic (second derivative of displacement)",
+   "reason": "Only Example 30 (p. 177) uses v = dx/dt to find when a car stops; acceleration is not discussed"
+  }
+ ],
+ "concepts": [
+  {
+   "code": "C12M-6.1",
+   "name": "Rate of change of a quantity, marginal cost and marginal revenue",
+   "description": "Reading dy/dx as the rate of change of y with respect to x, evaluating it at a point, interpreting its sign, and finding marginal cost dC/dx and marginal revenue dR/dx.",
+   "idea": "When y depends on x, dy/dx tells how fast y changes as x changes; its value at x = x0 is the rate at that particular x.",
+   "rule": "Rate of change of y with respect to x at x = x0 is dy/dx evaluated at x0. A positive rate means y increases as x increases, a negative rate means y decreases. Marginal cost = dC/dx and marginal revenue = dR/dx.",
+   "example": "A = pi r^2 gives dA/dr = 2 pi r, so at r = 5 cm the area changes at 10 pi (cm^2 per cm of radius). For R(x) = 3x^2 + 36x + 5, MR = 6x + 36 = 66 at x = 5.",
+   "difficulty_base": "Easy",
+   "questions": [
+    {
+     "b": "Remember",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "If y = f(x), the rate of change of y with respect to x at x = x0 is given by",
+     "a": "f'(x0)",
+     "o": [
+      "f'(x0)",
+      "f(x0)",
+      "f(x0)/x0",
+      "f''(x0)"
+     ]
+    },
+    {
+     "b": "Remember",
+     "d": "Easy",
+     "t": "fill_blank",
+     "m": 1,
+     "q": "Marginal cost is the instantaneous rate of change of total cost with respect to the ____.",
+     "a": "output"
+    },
+    {
+     "b": "Remember",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "The rate of change of the area A of a circle with respect to its radius r is",
+     "a": "2 pi r",
+     "o": [
+      "2 pi r",
+      "pi r^2",
+      "pi r",
+      "2 pi"
+     ]
+    },
+    {
+     "b": "Remember",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "rev": true,
+     "q": "Which statement about the sign of dy/dx as a rate of change is FALSE?",
+     "a": "If dy/dx is negative, then y increases as x increases",
+     "o": [
+      "If dy/dx is negative, then y increases as x increases",
+      "If dy/dx is positive, then y increases as x increases",
+      "If dy/dx is negative, then y decreases as x increases",
+      "The value of dy/dx at x = x0 is the rate of change of y with respect to x at x = x0"
+     ]
+    },
+    {
+     "b": "Understand",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "The marginal revenue of a product at x = 5 units is Rs 66. This means that, at that level of sales,",
+     "a": "total revenue is changing at the rate of Rs 66 per unit sold",
+     "o": [
+      "total revenue is changing at the rate of Rs 66 per unit sold",
+      "the total revenue from 5 units is Rs 66",
+      "the average revenue per unit sold is Rs 66",
+      "the selling price of each unit is Rs 66"
+     ]
+    },
+    {
+     "b": "Understand",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "The rate of change of the volume V = (4/3) pi r^3 of a sphere with respect to its radius r is",
+     "a": "4 pi r^2",
+     "o": [
+      "4 pi r^2",
+      "(4/3) pi r^2",
+      "(4/3) pi r^3",
+      "8 pi r"
+     ]
+    },
+    {
+     "b": "Understand",
+     "d": "Easy",
+     "t": "short_answer",
+     "m": 2,
+     "q": "Find the rate of change of the area of a circle with respect to its radius r when r = 4 cm.",
+     "a": "A = pi r^2, so dA/dr = 2 pi r. At r = 4 cm, dA/dr = 8 pi, i.e. the area changes at 8 pi cm^2 per cm of radius.",
+     "s": [
+      [
+       "Writes dA/dr = 2 pi r",
+       1
+      ],
+      [
+       "Substitutes r = 4 to get 8 pi",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Understand",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "q": "The total cost of producing x units of an item is C(x) rupees. By the book's definition, the marginal cost when 3 units are produced is found by",
+     "a": "evaluating dC/dx at x = 3",
+     "o": [
+      "evaluating dC/dx at x = 3",
+      "evaluating C(x) at x = 3",
+      "dividing C(3) by 3",
+      "evaluating d^2C/dx^2 at x = 3"
+     ]
+    },
+    {
+     "b": "Understand",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "q": "For y = 10 - 3x, the rate of change of y with respect to x tells us that, as x increases, y",
+     "a": "decreases by 3 units for each unit increase in x",
+     "o": [
+      "decreases by 3 units for each unit increase in x",
+      "increases by 3 units for each unit increase in x",
+      "decreases by 10 units for each unit increase in x",
+      "stays constant, because dy/dx does not depend on x"
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Easy",
+     "t": "fill_blank",
+     "m": 1,
+     "q": "The total revenue from selling x units is R(x) = 3x^2 + 36x + 5 rupees. The marginal revenue when x = 10 is Rs ____.",
+     "a": "96"
+    },
+    {
+     "b": "Apply",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "The rate of change of the area of a circle with respect to its radius r at r = 7 cm is",
+     "a": "14 pi",
+     "o": [
+      "14 pi",
+      "49 pi",
+      "7 pi",
+      "28 pi"
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "q": "The total cost of producing x units is C(x) = 0.01x^3 - 0.5x^2 + 20x + 1000 rupees. The marginal cost when 10 units are produced is",
+     "a": "Rs 13",
+     "o": [
+      "Rs 13",
+      "Rs 1160",
+      "Rs 33",
+      "Rs 18"
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "q": "A spherical balloon has a variable radius r. The rate at which its volume changes with respect to the radius when r = 10 cm is",
+     "a": "400 pi cm^3 per cm",
+     "o": [
+      "400 pi cm^3 per cm",
+      "(4000/3) pi cm^3 per cm",
+      "(400/3) pi cm^3 per cm",
+      "80 pi cm^3 per cm"
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "q": "The total revenue in rupees from the sale of x units of a product is R(x) = 13x^2 + 26x + 15. Find the marginal revenue when x = 7.",
+     "a": "MR = dR/dx = 26x + 26. At x = 7, MR = 182 + 26 = 208, so the marginal revenue is Rs 208.",
+     "s": [
+      [
+       "Finds dR/dx = 26x + 26",
+       1
+      ],
+      [
+       "Evaluates at x = 7 to get Rs 208",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hardest",
+     "t": "long_answer",
+     "m": 3,
+     "q": "A balloon, which always remains spherical, has a variable diameter (3/2)(2x + 1). Find the rate of change of its volume with respect to x.",
+     "a": "Radius r = (3/4)(2x + 1). V = (4/3) pi r^3 = (4/3) pi (27/64)(2x + 1)^3 = (9/16) pi (2x + 1)^3. dV/dx = (9/16) pi . 3(2x + 1)^2 . 2 = (27/8) pi (2x + 1)^2.",
+     "s": [
+      [
+       "Writes the radius as (3/4)(2x + 1)",
+       1
+      ],
+      [
+       "Expresses V = (9/16) pi (2x + 1)^3",
+       1
+      ],
+      [
+       "Differentiates with the chain factor 2 to get (27/8) pi (2x + 1)^2",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "assertion_reason",
+     "m": 1,
+     "q": "Assertion (A): The rate of change of the area of a circle with respect to its radius at r = 5 cm is 10 pi cm^2 per cm. Reason (R): For A = pi r^2, dA/dr = 2 pi r.",
+     "a": "Both A and R are true, and R is the correct explanation of A",
+     "o": [
+      "Both A and R are true, and R is the correct explanation of A",
+      "Both A and R are true, but R is not the correct explanation of A",
+      "A is true, R is false",
+      "A is false, R is true"
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "multi_statement",
+     "m": 1,
+     "q": "Consider these statements. (I) If y = 5 - 2x^2, then y is decreasing with respect to x at x = 1, because dy/dx = -4 there. (II) The marginal revenue when x units are sold is R(x)/x, the revenue per unit. Which is or are correct?",
+     "a": "Only I",
+     "o": [
+      "Only I",
+      "Only II",
+      "Both I and II",
+      "Neither I nor II"
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hardest",
+     "t": "long_answer",
+     "m": 3,
+     "q": "The total revenue from selling x units is R(x) = 40x - x^2 rupees. Find the marginal revenue at x = 15 and at x = 25, and explain what the sign of each tells you about total revenue.",
+     "a": "MR = dR/dx = 40 - 2x. At x = 15, MR = 10 > 0, so total revenue is still increasing as more units are sold. At x = 25, MR = -10 < 0, so total revenue is decreasing as more units are sold.",
+     "s": [
+      [
+       "Finds MR = 40 - 2x",
+       1
+      ],
+      [
+       "Gets MR = 10 at x = 15 and MR = -10 at x = 25",
+       1
+      ],
+      [
+       "Interprets positive MR as revenue increasing and negative MR as revenue decreasing",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Evaluate",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "q": "A student writes: 'Since A = pi r^2, the rate of change of A with respect to r at r = 3 cm is pi(3)^2 = 9 pi.' Is the student right? Justify.",
+     "a": "No. 9 pi is the area at r = 3, not its rate of change. The rate of change is dA/dr = 2 pi r, which at r = 3 cm is 6 pi cm^2 per cm.",
+     "s": [
+      [
+       "Identifies that the student substituted into A instead of dA/dr",
+       1
+      ],
+      [
+       "Gives the correct rate 6 pi",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Create",
+     "d": "Hardest",
+     "t": "long_answer",
+     "m": 3,
+     "q": "Construct a quadratic total revenue function R(x) whose marginal revenue at x = 5 is Rs 50. Verify your answer.",
+     "a": "For example R(x) = 3x^2 + 20x + 5. Then MR = dR/dx = 6x + 20, and at x = 5, MR = 30 + 20 = 50. (Any quadratic with R'(5) = 50 is acceptable.)",
+     "s": [
+      [
+       "Gives a quadratic R(x)",
+       1
+      ],
+      [
+       "Differentiates it correctly",
+       1
+      ],
+      [
+       "Verifies R'(5) = 50",
+       1
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "code": "C12M-6.2",
+   "name": "Related rates with respect to time using the Chain Rule",
+   "description": "Linking the rates of change of quantities that vary with time through a formula connecting them: circles, cubes, spheres, rectangles, ladders, cones and shadows.",
+   "idea": "When quantities change with time and are tied together by a formula, differentiating that formula with respect to t ties their rates together.",
+   "rule": "If y = f(x) and x varies with t, then dy/dt = f'(x) . dx/dt. If x = f(t) and y = g(t), dy/dx = (dy/dt)/(dx/dt) when dx/dt != 0. A quantity that is decreasing has a negative rate.",
+   "example": "Ripples spread at dr/dt = 4 cm/s. A = pi r^2 gives dA/dt = 2 pi r (dr/dt) = 2 pi (10)(4) = 80 pi cm^2/s when r = 10 cm.",
+   "difficulty_base": "Hard",
+   "questions": [
+    {
+     "b": "Remember",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "If x = f(t) and y = g(t), then by the Chain Rule the rate of change of y with respect to x is",
+     "a": "(dy/dt) / (dx/dt), provided dx/dt != 0",
+     "o": [
+      "(dy/dt) / (dx/dt), provided dx/dt != 0",
+      "(dx/dt) / (dy/dt), provided dy/dt != 0",
+      "(dy/dt) . (dx/dt)",
+      "(dy/dt) - (dx/dt)"
+     ]
+    },
+    {
+     "b": "Remember",
+     "d": "Easy",
+     "t": "fill_blank",
+     "m": 1,
+     "q": "The length x of a rectangle is decreasing at the rate of 3 cm/minute. Then dx/dt = ____ cm/minute.",
+     "a": "-3"
+    },
+    {
+     "b": "Remember",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "The area of a circle is A = pi r^2, where the radius r changes with time t. Then dA/dt equals",
+     "a": "2 pi r (dr/dt)",
+     "o": [
+      "2 pi r (dr/dt)",
+      "2 pi r",
+      "pi r^2 (dr/dt)",
+      "2 pi (dr/dt)"
+     ]
+    },
+    {
+     "b": "Remember",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "rev": true,
+     "q": "Which statement about the related rates of a circle whose radius r grows with time t is NOT correct?",
+     "a": "dA/dt = 2 pi r, whatever the value of dr/dt",
+     "o": [
+      "dA/dt = 2 pi r, whatever the value of dr/dt",
+      "dA/dt = 2 pi r (dr/dt)",
+      "The circumference C = 2 pi r changes at the rate dC/dt = 2 pi (dr/dt)",
+      "If dr/dt is constant, dA/dt becomes larger as r becomes larger"
+     ]
+    },
+    {
+     "b": "Understand",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "When V = x^3 is differentiated with respect to time t, why is the result multiplied by dx/dt?",
+     "a": "Because x itself depends on t, so the Chain Rule gives dV/dt = 3x^2 (dx/dt)",
+     "o": [
+      "Because x itself depends on t, so the Chain Rule gives dV/dt = 3x^2 (dx/dt)",
+      "Because V is a constant",
+      "Because dx/dt is always equal to 1",
+      "Because the formula V = x^3 changes with time"
+     ]
+    },
+    {
+     "b": "Understand",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "The length x of a rectangle is decreasing and its width y is increasing with time. Which signs are correct?",
+     "a": "dx/dt < 0 and dy/dt > 0",
+     "o": [
+      "dx/dt < 0 and dy/dt > 0",
+      "dx/dt > 0 and dy/dt < 0",
+      "dx/dt > 0 and dy/dt > 0",
+      "dx/dt < 0 and dy/dt < 0"
+     ]
+    },
+    {
+     "b": "Understand",
+     "d": "Easy",
+     "t": "short_answer",
+     "m": 2,
+     "q": "The radius of a circle is increasing at the rate of 0.7 cm/s. What is the rate of increase of its circumference?",
+     "a": "C = 2 pi r, so dC/dt = 2 pi (dr/dt) = 2 pi (0.7) = 1.4 pi cm/s.",
+     "s": [
+      [
+       "Writes dC/dt = 2 pi (dr/dt)",
+       1
+      ],
+      [
+       "Gets 1.4 pi cm/s",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Understand",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "q": "The length x of a rectangle decreases at 4 cm/min and its width y increases at 1 cm/min. At the instant x = 10 cm and y = 6 cm, the perimeter",
+     "a": "decreases at 6 cm/min",
+     "o": [
+      "decreases at 6 cm/min",
+      "increases at 10 cm/min",
+      "decreases at 3 cm/min",
+      "increases at 6 cm/min"
+     ]
+    },
+    {
+     "b": "Understand",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "q": "A ladder of fixed length 5 m leans against a wall, its foot x m from the wall and its top y m up the wall, so x^2 + y^2 = 25. Which relation links their rates of change?",
+     "a": "x (dx/dt) + y (dy/dt) = 0",
+     "o": [
+      "x (dx/dt) + y (dy/dt) = 0",
+      "dx/dt + dy/dt = 0",
+      "2x + 2y = 0",
+      "x (dx/dt) = y (dy/dt)"
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Easy",
+     "t": "fill_blank",
+     "m": 1,
+     "q": "An edge of a variable cube is increasing at the rate of 3 cm/s. When the edge is 10 cm long, the volume is increasing at ____ cm^3/s.",
+     "a": "900"
+    },
+    {
+     "b": "Apply",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "A stone is dropped into a quiet lake and the waves move in circles at 5 cm/s. When the radius of the circular wave is 8 cm, the enclosed area is increasing at",
+     "a": "80 pi cm^2/s",
+     "o": [
+      "80 pi cm^2/s",
+      "16 pi cm^2/s",
+      "40 pi cm^2/s",
+      "64 pi cm^2/s"
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "q": "A spherical balloon is inflated by pumping in 900 cm^3 of gas per second. The rate at which its radius increases when the radius is 15 cm is",
+     "a": "1/pi cm/s",
+     "o": [
+      "1/pi cm/s",
+      "3/pi cm/s",
+      "1/(15 pi) cm/s",
+      "pi cm/s"
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "q": "The volume of a cube is increasing at 8 cm^3/s. How fast is its surface area increasing when an edge is 12 cm?",
+     "a": "8/3 cm^2/s",
+     "o": [
+      "8/3 cm^2/s",
+      "1152 cm^2/s",
+      "4/3 cm^2/s",
+      "1/54 cm^2/s"
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "q": "The radius of an air bubble is increasing at the rate of 1/2 cm/s. At what rate is its volume increasing when the radius is 1 cm?",
+     "a": "V = (4/3) pi r^3, so dV/dt = 4 pi r^2 (dr/dt) = 4 pi (1)^2 (1/2) = 2 pi cm^3/s.",
+     "s": [
+      [
+       "Writes dV/dt = 4 pi r^2 (dr/dt)",
+       1
+      ],
+      [
+       "Gets 2 pi cm^3/s",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hardest",
+     "t": "long_answer",
+     "m": 3,
+     "q": "A ladder 5 m long leans against a wall. Its foot is pulled along the ground away from the wall at 2 cm/s. How fast is its height on the wall decreasing when the foot is 4 m from the wall?",
+     "a": "x^2 + y^2 = 25, so 2x (dx/dt) + 2y (dy/dt) = 0 and dy/dt = -(x/y)(dx/dt). When x = 4 m, y = 3 m, so dy/dt = -(4/3)(2) = -8/3 cm/s. The height is decreasing at 8/3 cm/s.",
+     "s": [
+      [
+       "Writes x^2 + y^2 = 25 and differentiates with respect to t",
+       1
+      ],
+      [
+       "Finds y = 3 m when x = 4 m",
+       1
+      ],
+      [
+       "Gets dy/dt = -8/3, i.e. decreasing at 8/3 cm/s",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "assertion_reason",
+     "m": 1,
+     "q": "Assertion (A): If the radius of a circle increases at a constant rate, its area also increases at a constant rate. Reason (R): dA/dt = 2 pi r (dr/dt).",
+     "a": "A is false, R is true",
+     "o": [
+      "A is false, R is true",
+      "Both A and R are true, and R is the correct explanation of A",
+      "Both A and R are true, but R is not the correct explanation of A",
+      "A is true, R is false"
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "multi_statement",
+     "m": 1,
+     "q": "Consider these statements. (I) For a cube of edge x changing with time, dV/dt = 3x^2 (dx/dt). (II) For a ladder whose foot slides away from the wall, the rate of change dy/dt of the height of its top on the wall is negative. Which is or are correct?",
+     "a": "Both I and II",
+     "o": [
+      "Both I and II",
+      "Only I",
+      "Only II",
+      "Neither I nor II"
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hardest",
+     "t": "long_answer",
+     "m": 3,
+     "q": "A particle moves along the curve 6y = x^3 + 2. Find the points on the curve at which the y-coordinate is changing 8 times as fast as the x-coordinate.",
+     "a": "Differentiating with respect to t: 6 (dy/dt) = 3x^2 (dx/dt), so dy/dt = (x^2/2)(dx/dt). Setting dy/dt = 8 (dx/dt) gives x^2/2 = 8, so x = 4 or x = -4. Then y = (64 + 2)/6 = 11 and y = (-64 + 2)/6 = -31/3. The points are (4, 11) and (-4, -31/3).",
+     "s": [
+      [
+       "Differentiates to get dy/dt = (x^2/2)(dx/dt)",
+       1
+      ],
+      [
+       "Solves x^2/2 = 8 to get x = 4 or -4",
+       1
+      ],
+      [
+       "Finds the points (4, 11) and (-4, -31/3)",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Evaluate",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "q": "A student writes for a spherical balloon: 'V = (4/3) pi r^3, so dV/dt = 4 pi r^2. Hence at r = 10 cm the volume grows at 400 pi cm^3/s, whatever the rate at which r grows.' Evaluate this reasoning.",
+     "a": "It is wrong. 4 pi r^2 is dV/dr, not dV/dt. By the Chain Rule dV/dt = 4 pi r^2 (dr/dt), so at r = 10 cm, dV/dt = 400 pi (dr/dt), which depends on how fast r grows.",
+     "s": [
+      [
+       "Identifies the missing chain factor dr/dt",
+       1
+      ],
+      [
+       "Writes the correct dV/dt = 400 pi (dr/dt) at r = 10",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Create",
+     "d": "Hardest",
+     "t": "long_answer",
+     "m": 3,
+     "q": "Frame a related-rates question about a square whose side increases at a constant rate, and solve it to show that the rate of change of its area depends on the side length.",
+     "a": "For example: the side x of a square increases at 2 cm/s; how fast is the area increasing when x = 5 cm and when x = 10 cm? A = x^2, so dA/dt = 2x (dx/dt) = 4x. At x = 5 cm it is 20 cm^2/s and at x = 10 cm it is 40 cm^2/s, so the rate grows with the side.",
+     "s": [
+      [
+       "Frames a clear question with a constant rate for the side",
+       1
+      ],
+      [
+       "Uses dA/dt = 2x (dx/dt)",
+       1
+      ],
+      [
+       "Computes the rate at two side lengths and shows it depends on x",
+       1
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "code": "C12M-6.3",
+   "name": "Increasing and decreasing functions and the derivative test",
+   "description": "Definitions of increasing, decreasing, strictly increasing, strictly decreasing and constant functions on an interval, and Theorem 1: the sign of f'(x) on (a, b) decides whether f is increasing, decreasing or constant on [a, b].",
+   "idea": "Moving left to right, an increasing function's graph never goes down and a decreasing one's never goes up; the sign of the slope f'(x) tells which.",
+   "rule": "If f is continuous on [a, b] and differentiable on (a, b): f'(x) > 0 for each x in (a, b) gives f increasing on [a, b]; f'(x) < 0 gives f decreasing; f'(x) = 0 gives f constant.",
+   "example": "f(x) = x^3 - 3x^2 + 4x has f'(x) = 3(x - 1)^2 + 1 > 0 for every x, so f is increasing on R.",
+   "difficulty_base": "Easy",
+   "questions": [
+    {
+     "b": "Remember",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "A function f is strictly increasing on an interval I if, for all x1, x2 in I, x1 < x2 implies",
+     "a": "f(x1) < f(x2)",
+     "o": [
+      "f(x1) < f(x2)",
+      "f(x1) > f(x2)",
+      "f(x1) = f(x2)",
+      "f(x1) >= f(x2)"
+     ]
+    },
+    {
+     "b": "Remember",
+     "d": "Easy",
+     "t": "fill_blank",
+     "m": 1,
+     "q": "If f is continuous on [a, b] and f'(x) = 0 for each x in (a, b), then f is a ____ function on [a, b].",
+     "a": "constant"
+    },
+    {
+     "b": "Remember",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "Let f be continuous on [a, b] and differentiable on (a, b). If f'(x) < 0 for each x in (a, b), then f is",
+     "a": "decreasing on [a, b]",
+     "o": [
+      "decreasing on [a, b]",
+      "increasing on [a, b]",
+      "constant on [a, b]",
+      "decreasing only at x = a"
+     ]
+    },
+    {
+     "b": "Remember",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "rev": true,
+     "q": "Which statement about the derivative test for increasing and decreasing functions is NOT correct?",
+     "a": "If f'(c) > 0 at one point c, then f is increasing on the whole of R",
+     "o": [
+      "If f'(c) > 0 at one point c, then f is increasing on the whole of R",
+      "If f'(x) > 0 for each x in (a, b), then f is increasing on [a, b]",
+      "If f'(x) < 0 for each x in (a, b), then f is decreasing on [a, b]",
+      "If f'(x) = 0 for each x in (a, b), then f is constant on [a, b]"
+     ]
+    },
+    {
+     "b": "Understand",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "For f(x) = x^2, as we move from left to right along the part of the graph where x < 0, the height of the graph",
+     "a": "decreases, so f is decreasing for x < 0",
+     "o": [
+      "decreases, so f is decreasing for x < 0",
+      "increases, so f is increasing for x < 0",
+      "stays the same, so f is constant for x < 0",
+      "first increases and then decreases"
+     ]
+    },
+    {
+     "b": "Understand",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "The function f(x) = 7x - 3 is",
+     "a": "strictly increasing on R",
+     "o": [
+      "strictly increasing on R",
+      "strictly decreasing on R",
+      "increasing only for x > 3/7",
+      "constant on R"
+     ]
+    },
+    {
+     "b": "Understand",
+     "d": "Easy",
+     "t": "short_answer",
+     "m": 2,
+     "q": "Show that the function f(x) = 3x + 17 is increasing on R.",
+     "a": "f'(x) = 3 > 0 for every x in R, so by the derivative test f is increasing on R.",
+     "s": [
+      [
+       "Finds f'(x) = 3",
+       1
+      ],
+      [
+       "Concludes f is increasing on R since f'(x) > 0",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Understand",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "q": "f(x) = cos x is decreasing on (0, pi) because",
+     "a": "f'(x) = -sin x < 0 for every x in (0, pi)",
+     "o": [
+      "f'(x) = -sin x < 0 for every x in (0, pi)",
+      "f'(x) = sin x > 0 for every x in (0, pi)",
+      "cos x < 0 for every x in (0, pi)",
+      "f'(x) = -sin x > 0 for every x in (0, pi)"
+     ]
+    },
+    {
+     "b": "Understand",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "q": "On the interval (0, 2 pi), the function f(x) = cos x is",
+     "a": "neither increasing nor decreasing",
+     "o": [
+      "neither increasing nor decreasing",
+      "decreasing",
+      "increasing",
+      "constant"
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Easy",
+     "t": "fill_blank",
+     "m": 1,
+     "q": "For f(x) = e^(2x), f'(x) = ____, which is positive for every real x, so f is increasing on R.",
+     "a": "2e^(2x)"
+    },
+    {
+     "b": "Apply",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "Which of the following functions is decreasing on R?",
+     "a": "f(x) = 5 - 2x",
+     "o": [
+      "f(x) = 5 - 2x",
+      "f(x) = 2x - 5",
+      "f(x) = x^2",
+      "f(x) = e^x"
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "q": "For f(x) = x^3 - 3x^2 + 3x - 100, f'(x) = 3(x - 1)^2. What can you conclude?",
+     "a": "f is increasing on R, since f'(x) >= 0 everywhere and f'(x) = 0 only at x = 1",
+     "o": [
+      "f is increasing on R, since f'(x) >= 0 everywhere and f'(x) = 0 only at x = 1",
+      "f is decreasing for x < 1 and increasing for x > 1",
+      "f is constant on R",
+      "f is decreasing on R"
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "q": "Which of the following functions is decreasing on (0, pi/2)?",
+     "a": "cos x",
+     "o": [
+      "cos x",
+      "cos 3x",
+      "tan x",
+      "sin x"
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "q": "Prove that the logarithmic function f(x) = log x is increasing on (0, infinity).",
+     "a": "f'(x) = 1/x, and 1/x > 0 for every x in (0, infinity). Hence f is increasing on (0, infinity).",
+     "s": [
+      [
+       "Finds f'(x) = 1/x",
+       1
+      ],
+      [
+       "Shows 1/x > 0 for x > 0 and concludes f is increasing",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hardest",
+     "t": "long_answer",
+     "m": 3,
+     "q": "Show that the function f(x) = x^3 + 3x^2 + 6x - 4 is increasing on R.",
+     "a": "f'(x) = 3x^2 + 6x + 6 = 3(x^2 + 2x + 1) + 3 = 3(x + 1)^2 + 3. Since 3(x + 1)^2 >= 0, f'(x) >= 3 > 0 for every real x. Hence f is increasing on R.",
+     "s": [
+      [
+       "Finds f'(x) = 3x^2 + 6x + 6",
+       1
+      ],
+      [
+       "Writes it as 3(x + 1)^2 + 3",
+       1
+      ],
+      [
+       "Concludes f'(x) > 0 for all x, so f is increasing on R",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "assertion_reason",
+     "m": 1,
+     "q": "Assertion (A): The function f(x) = x^3 is increasing on R. Reason (R): f'(x) = 3x^2 > 0 for every real x.",
+     "a": "A is true, R is false",
+     "o": [
+      "A is true, R is false",
+      "Both A and R are true, and R is the correct explanation of A",
+      "Both A and R are true, but R is not the correct explanation of A",
+      "A is false, R is true"
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "multi_statement",
+     "m": 1,
+     "q": "Consider these statements. (I) f(x) = sin x is decreasing on (0, pi/2). (II) f(x) = e^(2x) is increasing on R. Which is or are correct?",
+     "a": "Only II",
+     "o": [
+      "Only II",
+      "Only I",
+      "Both I and II",
+      "Neither I nor II"
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hardest",
+     "t": "long_answer",
+     "m": 3,
+     "q": "Prove that the function f(x) = x^2 - x + 1 is neither increasing nor decreasing on (-1, 1).",
+     "a": "f'(x) = 2x - 1. For x in (-1, 1/2), f'(x) < 0, so f is decreasing there; for x in (1/2, 1), f'(x) > 0, so f is increasing there. Since f decreases on one part of (-1, 1) and increases on another, it is neither increasing nor decreasing on (-1, 1).",
+     "s": [
+      [
+       "Finds f'(x) = 2x - 1 and the point x = 1/2",
+       1
+      ],
+      [
+       "Shows f'(x) < 0 on (-1, 1/2) and f'(x) > 0 on (1/2, 1)",
+       1
+      ],
+      [
+       "Concludes f is neither increasing nor decreasing on (-1, 1)",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Evaluate",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "q": "A student says: 'For f(x) = cos x, f'(x) = -sin x, and -sin x < 0 at x = 3 pi/2, so cos x is decreasing near x = 3 pi/2.' Evaluate this claim.",
+     "a": "The claim is wrong. sin(3 pi/2) = -1, so f'(3 pi/2) = -(-1) = 1 > 0. In fact f'(x) = -sin x > 0 on (pi, 2 pi), so cos x is increasing near x = 3 pi/2.",
+     "s": [
+      [
+       "Evaluates f'(3 pi/2) = 1 > 0, finding the sign error",
+       1
+      ],
+      [
+       "Concludes cos x is increasing near 3 pi/2",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Create",
+     "d": "Hardest",
+     "t": "long_answer",
+     "m": 3,
+     "q": "Construct a polynomial function f that is increasing on R but whose derivative is zero at x = 2. Justify your example.",
+     "a": "For example f(x) = (x - 2)^3. Then f'(x) = 3(x - 2)^2, which is 0 at x = 2 and positive everywhere else. Also if x1 < x2 then x1 - 2 < x2 - 2, so (x1 - 2)^3 < (x2 - 2)^3, i.e. f(x1) < f(x2). Hence f is increasing on R although f'(2) = 0.",
+     "s": [
+      [
+       "Gives a suitable polynomial such as (x - 2)^3",
+       1
+      ],
+      [
+       "Shows f'(2) = 0",
+       1
+      ],
+      [
+       "Justifies that f is increasing on R",
+       1
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "code": "C12M-6.4",
+   "name": "Finding intervals of increase and decrease",
+   "description": "Solving f'(x) = 0 to split the domain into disjoint intervals and testing the sign of f'(x) on each to find where a polynomial or trigonometric function is increasing or decreasing.",
+   "idea": "The points where f'(x) = 0 cut the line into pieces; on each piece f' keeps one sign, so f either rises or falls throughout that piece.",
+   "rule": "Find f'(x), solve f'(x) = 0, divide the domain at those points, and check the sign of f'(x) in each interval: f'(x) > 0 means increasing, f'(x) < 0 means decreasing.",
+   "example": "f(x) = 4x^3 - 6x^2 - 72x + 30 gives f'(x) = 12(x - 3)(x + 2); f is increasing on (-infinity, -2) and (3, infinity) and decreasing on (-2, 3).",
+   "difficulty_base": "Hard",
+   "questions": [
+    {
+     "b": "Remember",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "To find the intervals in which f is increasing or decreasing, the real line is divided at the points where",
+     "a": "f'(x) = 0",
+     "o": [
+      "f'(x) = 0",
+      "f(x) = 0",
+      "f''(x) = 0",
+      "x = 0"
+     ]
+    },
+    {
+     "b": "Remember",
+     "d": "Easy",
+     "t": "fill_blank",
+     "m": 1,
+     "q": "On an interval where f'(x) < 0, the function f is ____.",
+     "a": "decreasing"
+    },
+    {
+     "b": "Remember",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "For f(x) = x^2 - 4x + 6, f'(x) = 2x - 4. The function f is decreasing on",
+     "a": "(-infinity, 2)",
+     "o": [
+      "(-infinity, 2)",
+      "(2, infinity)",
+      "(-infinity, 6)",
+      "(-infinity, -2)"
+     ]
+    },
+    {
+     "b": "Remember",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "rev": true,
+     "q": "Which statement about the intervals of increase and decrease of f(x) = x^2 is FALSE?",
+     "a": "f is increasing on R",
+     "o": [
+      "f is increasing on R",
+      "f is decreasing on (-infinity, 0)",
+      "f is increasing on (0, infinity)",
+      "f'(x) = 0 only at x = 0"
+     ]
+    },
+    {
+     "b": "Understand",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "For a function with f'(x) = 12(x - 3)(x + 2), the sign of f'(x) on the interval (-2, 3) is",
+     "a": "negative, so f is decreasing there",
+     "o": [
+      "negative, so f is decreasing there",
+      "positive, so f is increasing there",
+      "zero, so f is constant there",
+      "negative, so f is increasing there"
+     ]
+    },
+    {
+     "b": "Understand",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "A function f is increasing on (-infinity, -2) and on (3, infinity), and decreasing on (-2, 3). Which statement about f on R is correct?",
+     "a": "f is neither increasing nor decreasing on R",
+     "o": [
+      "f is neither increasing nor decreasing on R",
+      "f is increasing on R",
+      "f is decreasing on R",
+      "f is constant on R"
+     ]
+    },
+    {
+     "b": "Understand",
+     "d": "Easy",
+     "t": "short_answer",
+     "m": 2,
+     "q": "Find the intervals in which f(x) = x^2 + 2x - 5 is strictly increasing or strictly decreasing.",
+     "a": "f'(x) = 2x + 2, which is 0 at x = -1. f'(x) < 0 for x < -1 and f'(x) > 0 for x > -1. So f is strictly decreasing on (-infinity, -1) and strictly increasing on (-1, infinity).",
+     "s": [
+      [
+       "Finds f'(x) = 2x + 2 and x = -1",
+       1
+      ],
+      [
+       "States decreasing on (-infinity, -1) and increasing on (-1, infinity)",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Understand",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "q": "For f(x) = sin x + cos x on [0, 2 pi], f'(x) = cos x - sin x is zero at",
+     "a": "x = pi/4 and x = 5 pi/4",
+     "o": [
+      "x = pi/4 and x = 5 pi/4",
+      "x = pi/4 and x = 3 pi/4",
+      "x = 3 pi/4 and x = 7 pi/4",
+      "x = pi/2 and x = 3 pi/2"
+     ]
+    },
+    {
+     "b": "Understand",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "q": "For f(x) = sin 3x on [0, pi/2], f'(x) = 3 cos 3x. The function f is increasing on",
+     "a": "[0, pi/6]",
+     "o": [
+      "[0, pi/6]",
+      "[pi/6, pi/2]",
+      "[0, pi/2]",
+      "[0, pi/3]"
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Easy",
+     "t": "fill_blank",
+     "m": 1,
+     "q": "The function f(x) = 10 - 6x - 2x^2 is strictly increasing on the interval (-infinity, ____).",
+     "a": "-3/2"
+    },
+    {
+     "b": "Apply",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "The function f(x) = 6 - 9x - x^2 is strictly increasing on",
+     "a": "(-infinity, -9/2)",
+     "o": [
+      "(-infinity, -9/2)",
+      "(-9/2, infinity)",
+      "(-infinity, 9/2)",
+      "(-infinity, -9)"
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "q": "The function f(x) = 2x^3 - 3x^2 - 36x + 7 is decreasing on",
+     "a": "(-2, 3)",
+     "o": [
+      "(-2, 3)",
+      "(-3, 2)",
+      "(-infinity, -2) and (3, infinity)",
+      "(3, infinity)"
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "q": "The interval in which y = x^2 e^(-x) is increasing is",
+     "a": "(0, 2)",
+     "o": [
+      "(0, 2)",
+      "(-2, 0)",
+      "(2, infinity)",
+      "(-infinity, infinity)"
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "q": "Find the values of x for which y = [x(x - 2)]^2 is an increasing function.",
+     "a": "y = x^2 (x - 2)^2, so dy/dx = 2x(x - 2)^2 + 2x^2 (x - 2) = 2x(x - 2)(2x - 2) = 4x(x - 1)(x - 2). dy/dx > 0 for 0 < x < 1 and for x > 2. So y is increasing on (0, 1) and (2, infinity).",
+     "s": [
+      [
+       "Finds dy/dx = 4x(x - 1)(x - 2)",
+       1
+      ],
+      [
+       "States y is increasing on (0, 1) and (2, infinity)",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hardest",
+     "t": "long_answer",
+     "m": 3,
+     "q": "Find the intervals in which f(x) = 2x^3 - 9x^2 + 12x + 1 is (a) increasing (b) decreasing.",
+     "a": "f'(x) = 6x^2 - 18x + 12 = 6(x - 1)(x - 2), which is 0 at x = 1 and x = 2. On (-infinity, 1), f'(x) > 0; on (1, 2), f'(x) < 0; on (2, infinity), f'(x) > 0. So (a) f is increasing on (-infinity, 1) and (2, infinity); (b) f is decreasing on (1, 2).",
+     "s": [
+      [
+       "Finds f'(x) = 6(x - 1)(x - 2)",
+       1
+      ],
+      [
+       "Tests the sign of f'(x) on the three intervals",
+       1
+      ],
+      [
+       "States increasing on (-infinity, 1) and (2, infinity), decreasing on (1, 2)",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "assertion_reason",
+     "m": 1,
+     "q": "Assertion (A): The function f(x) = 4x^3 - 6x^2 - 72x + 30 is increasing on (3, infinity). Reason (R): f'(x) = 12(x - 3)(x + 2) > 0 for every x > 3.",
+     "a": "Both A and R are true, and R is the correct explanation of A",
+     "o": [
+      "Both A and R are true, and R is the correct explanation of A",
+      "Both A and R are true, but R is not the correct explanation of A",
+      "A is true, R is false",
+      "A is false, R is true"
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "multi_statement",
+     "m": 1,
+     "q": "Consider these statements. (I) For f(x) = sin x + cos x on [0, 2 pi], f is decreasing on (pi/4, 5 pi/4). (II) For f(x) = x^2 - 4x + 6, f is increasing on (-infinity, 2). Which is or are correct?",
+     "a": "Only I",
+     "o": [
+      "Only I",
+      "Only II",
+      "Both I and II",
+      "Neither I nor II"
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hardest",
+     "t": "long_answer",
+     "m": 3,
+     "q": "Find the intervals in which f(x) = (x + 1)^3 (x - 3)^3 is strictly increasing or strictly decreasing.",
+     "a": "f'(x) = 3(x + 1)^2 (x - 3)^3 + 3(x + 1)^3 (x - 3)^2 = 3(x + 1)^2 (x - 3)^2 [(x - 3) + (x + 1)] = 6(x + 1)^2 (x - 3)^2 (x - 1). The squared factors are never negative, so the sign of f'(x) is the sign of (x - 1): f'(x) < 0 on (-infinity, -1) and (-1, 1), and f'(x) > 0 on (1, 3) and (3, infinity). So f is strictly decreasing for x < 1 and strictly increasing for x > 1.",
+     "s": [
+      [
+       "Finds f'(x) = 6(x + 1)^2 (x - 3)^2 (x - 1)",
+       1
+      ],
+      [
+       "Notes the sign of f'(x) depends only on (x - 1)",
+       1
+      ],
+      [
+       "States strictly decreasing for x < 1 and strictly increasing for x > 1",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Evaluate",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "q": "A student argues: 'For f(x) = x^3 - 3x, f(-2) = -2 and f(2) = 2, so f(-2) < f(2) and therefore f is increasing on (-2, 2).' Evaluate this argument.",
+     "a": "It is wrong: comparing only the end values does not show f is increasing. f'(x) = 3x^2 - 3 = 3(x - 1)(x + 1) < 0 on (-1, 1), so f is decreasing there. Hence f is not increasing on (-2, 2).",
+     "s": [
+      [
+       "Points out that end-value comparison is not enough",
+       1
+      ],
+      [
+       "Uses f'(x) < 0 on (-1, 1) to show f is not increasing on (-2, 2)",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Create",
+     "d": "Hardest",
+     "t": "long_answer",
+     "m": 3,
+     "q": "Construct a quadratic function that is decreasing on (-infinity, 3) and increasing on (3, infinity). Verify using f'(x).",
+     "a": "For example f(x) = (x - 3)^2 + 1 = x^2 - 6x + 10. Then f'(x) = 2x - 6 = 2(x - 3), which is negative for x < 3 and positive for x > 3. So f is decreasing on (-infinity, 3) and increasing on (3, infinity).",
+     "s": [
+      [
+       "Gives a suitable quadratic",
+       1
+      ],
+      [
+       "Finds f'(x) = 2(x - 3)",
+       1
+      ],
+      [
+       "Checks the sign of f'(x) on both intervals",
+       1
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "code": "C12M-6.5",
+   "name": "Maximum and minimum values, local extrema and the first derivative test",
+   "description": "Maximum and minimum values of a function on an interval, points of local maxima and local minima, critical points, the first derivative test, and points of inflexion.",
+   "idea": "At the top of a little hill or the bottom of a little valley on a graph, the slope is zero or undefined; whether it is a hill or a valley depends on how the sign of f' changes there.",
+   "rule": "A critical point c has f'(c) = 0 or f not differentiable at c. If f'(x) changes from positive to negative through c, c is a point of local maxima; from negative to positive, local minima; if f' does not change sign, c is a point of inflexion.",
+   "example": "f(x) = x^3 - 3x + 3 has f'(x) = 3(x - 1)(x + 1): x = -1 is a point of local maxima (value 5) and x = 1 a point of local minima (value 1).",
+   "difficulty_base": "Hard",
+   "questions": [
+    {
+     "b": "Remember",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "A point c in the domain of f at which either f'(c) = 0 or f is not differentiable is called",
+     "a": "a critical point of f",
+     "o": [
+      "a critical point of f",
+      "a point of local maxima of f",
+      "a point of inflexion of f",
+      "an end point of f"
+     ]
+    },
+    {
+     "b": "Remember",
+     "d": "Easy",
+     "t": "fill_blank",
+     "m": 1,
+     "q": "If f'(x) does not change sign as x increases through a critical point c, then c is called a point of ____.",
+     "a": "inflexion"
+    },
+    {
+     "b": "Remember",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "By the First Derivative Test, if f'(x) changes sign from positive to negative as x increases through a critical point c, then c is a point of",
+     "a": "local maxima",
+     "o": [
+      "local maxima",
+      "local minima",
+      "inflexion",
+      "absolute minimum"
+     ]
+    },
+    {
+     "b": "Remember",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "rev": true,
+     "q": "Which statement about critical points and local extrema is NOT correct?",
+     "a": "Every point c where f'(c) = 0 is a point of local maxima or local minima",
+     "o": [
+      "Every point c where f'(c) = 0 is a point of local maxima or local minima",
+      "If f has a local maximum at an interior point c, then f'(c) = 0 or f is not differentiable at c",
+      "f(x) = |x| has a local minimum at x = 0 although it is not differentiable there",
+      "f(x) = x^3 has f'(0) = 0 but has no local extremum at x = 0"
+     ]
+    },
+    {
+     "b": "Understand",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "For f(x) = x^2, x in R, which statement is correct?",
+     "a": "f has minimum value 0 and no maximum value",
+     "o": [
+      "f has minimum value 0 and no maximum value",
+      "f has maximum value 0 and no minimum value",
+      "f has minimum value 0 and maximum value 4",
+      "f has neither a maximum nor a minimum value"
+     ]
+    },
+    {
+     "b": "Understand",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "The function f(x) = x on the open interval (0, 1) has",
+     "a": "neither a maximum value nor a minimum value",
+     "o": [
+      "neither a maximum value nor a minimum value",
+      "minimum value 0 and maximum value 1",
+      "maximum value 1 only",
+      "minimum value 0 only"
+     ]
+    },
+    {
+     "b": "Understand",
+     "d": "Easy",
+     "t": "short_answer",
+     "m": 2,
+     "q": "Find the minimum value of f(x) = (2x - 1)^2 + 3, and state whether f has a maximum value on R.",
+     "a": "(2x - 1)^2 >= 0, so f(x) >= 3, with equality at x = 1/2. The minimum value is 3. Since (2x - 1)^2 grows without bound, f has no maximum value.",
+     "s": [
+      [
+       "Finds the minimum value 3 at x = 1/2",
+       1
+      ],
+      [
+       "States f has no maximum value",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Understand",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "q": "For f(x) = x^3, f'(0) = 0. What happens at x = 0?",
+     "a": "f'(x) does not change sign through 0, so x = 0 is a point of inflexion and not a local extremum",
+     "o": [
+      "f'(x) does not change sign through 0, so x = 0 is a point of inflexion and not a local extremum",
+      "x = 0 is a point of local minima because f'(0) = 0",
+      "x = 0 is a point of local maxima because f(0) = 0",
+      "x = 0 is a point of local minima because f(x) >= 0 near 0"
+     ]
+    },
+    {
+     "b": "Understand",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "q": "For f(x) = 3 + |x|, x in R, which statement about x = 0 is correct?",
+     "a": "f'(x) changes from -1 to 1 through 0, so x = 0 is a point of local minima with local minimum value 3",
+     "o": [
+      "f'(x) changes from -1 to 1 through 0, so x = 0 is a point of local minima with local minimum value 3",
+      "f is not differentiable at 0, so x = 0 cannot be a point of local minima",
+      "x = 0 is a point of local maxima with local maximum value 3",
+      "x = 0 is a point of local minima with local minimum value 0"
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Easy",
+     "t": "fill_blank",
+     "m": 1,
+     "q": "The maximum value of f(x) = -(x - 1)^2 + 10 is ____.",
+     "a": "10"
+    },
+    {
+     "b": "Apply",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "The minimum value of f(x) = |x + 2| - 1 is",
+     "a": "-1",
+     "o": [
+      "-1",
+      "1",
+      "-2",
+      "0"
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "q": "For f(x) = x^3 - 3x + 3, the local maximum value and the point where it occurs are",
+     "a": "5, at x = -1",
+     "o": [
+      "5, at x = -1",
+      "1, at x = 1",
+      "5, at x = 1",
+      "3, at x = 0"
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "q": "For g(x) = x^3 - 3x, the point of local minima and the local minimum value are",
+     "a": "x = 1, local minimum value -2",
+     "o": [
+      "x = 1, local minimum value -2",
+      "x = -1, local minimum value 2",
+      "x = 1, local minimum value 2",
+      "x = 0, local minimum value 0"
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "q": "Find the local minimum value of g(x) = x/2 + 2/x, x > 0.",
+     "a": "g'(x) = 1/2 - 2/x^2 = 0 gives x^2 = 4, so x = 2 (as x > 0). g'(x) < 0 for 0 < x < 2 and g'(x) > 0 for x > 2, so x = 2 is a point of local minima and the local minimum value is g(2) = 1 + 1 = 2.",
+     "s": [
+      [
+       "Solves g'(x) = 0 to get x = 2",
+       1
+      ],
+      [
+       "Confirms local minima and gets the local minimum value 2",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hardest",
+     "t": "long_answer",
+     "m": 3,
+     "q": "Using the first derivative test, find the local maximum and local minimum values of f(x) = x^3 - 6x^2 + 9x + 15.",
+     "a": "f'(x) = 3x^2 - 12x + 9 = 3(x - 1)(x - 3), zero at x = 1 and x = 3. f'(x) changes from positive to negative at x = 1, so the local maximum value is f(1) = 1 - 6 + 9 + 15 = 19. f'(x) changes from negative to positive at x = 3, so the local minimum value is f(3) = 27 - 54 + 27 + 15 = 15.",
+     "s": [
+      [
+       "Finds the critical points x = 1 and x = 3",
+       1
+      ],
+      [
+       "Applies the sign change of f'(x) at each point",
+       1
+      ],
+      [
+       "Gets local maximum value 19 and local minimum value 15",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "assertion_reason",
+     "m": 1,
+     "q": "Assertion (A): x = 0 is a point of local minima of f(x) = |x|. Reason (R): f(x) = |x| is not differentiable at x = 0.",
+     "a": "Both A and R are true, but R is not the correct explanation of A",
+     "o": [
+      "Both A and R are true, but R is not the correct explanation of A",
+      "Both A and R are true, and R is the correct explanation of A",
+      "A is true, R is false",
+      "A is false, R is true"
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "multi_statement",
+     "m": 1,
+     "q": "Consider these statements. (I) Every critical point of a function is a point of local maxima or local minima. (II) If f has a local minimum at an interior point c where f is differentiable, then f'(c) = 0. Which is or are correct?",
+     "a": "Only II",
+     "o": [
+      "Only II",
+      "Only I",
+      "Both I and II",
+      "Neither I nor II"
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hardest",
+     "t": "long_answer",
+     "m": 3,
+     "q": "Find the points at which f(x) = (x - 2)^4 (x + 1)^3 has (i) local maxima (ii) local minima (iii) a point of inflexion.",
+     "a": "f'(x) = 4(x - 2)^3 (x + 1)^3 + 3(x - 2)^4 (x + 1)^2 = (x - 2)^3 (x + 1)^2 (7x - 2). Critical points: x = -1, 2/7, 2. For x < -1 and for -1 < x < 2/7, f'(x) > 0, so f' does not change sign at -1. For 2/7 < x < 2, f'(x) < 0; for x > 2, f'(x) > 0. So (i) local maxima at x = 2/7, (ii) local minima at x = 2, (iii) point of inflexion at x = -1.",
+     "s": [
+      [
+       "Finds f'(x) = (x - 2)^3 (x + 1)^2 (7x - 2)",
+       1
+      ],
+      [
+       "Tests the sign of f'(x) around x = -1, 2/7 and 2",
+       1
+      ],
+      [
+       "States local maxima at 2/7, local minima at 2, inflexion at -1",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Evaluate",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "q": "A student says: 'f(x) = |x| cannot have a local minimum at x = 0, because f'(0) does not exist.' Evaluate this statement.",
+     "a": "It is wrong. A point where f is not differentiable is still a critical point. For x < 0, f'(x) = -1 and for x > 0, f'(x) = 1, so f' changes from negative to positive and x = 0 is a point of local minima with value 0.",
+     "s": [
+      [
+       "States that a non-differentiable point is still a critical point",
+       1
+      ],
+      [
+       "Uses the sign change of f' to show a local minimum 0 at x = 0",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Create",
+     "d": "Hardest",
+     "t": "long_answer",
+     "m": 3,
+     "q": "Construct a cubic polynomial with a point of local maxima at x = -1 and a point of local minima at x = 1. Verify using the first derivative test.",
+     "a": "For example f(x) = x^3 - 3x. Then f'(x) = 3x^2 - 3 = 3(x - 1)(x + 1). Near x = -1, f'(x) changes from positive to negative, so x = -1 is a point of local maxima; near x = 1, f'(x) changes from negative to positive, so x = 1 is a point of local minima.",
+     "s": [
+      [
+       "Chooses f with f'(x) a multiple of (x - 1)(x + 1)",
+       1
+      ],
+      [
+       "Shows the sign change at x = -1 gives local maxima",
+       1
+      ],
+      [
+       "Shows the sign change at x = 1 gives local minima",
+       1
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "code": "C12M-6.6",
+   "name": "Second derivative test and optimisation problems",
+   "description": "Using f'(c) = 0 together with the sign of f''(c) to classify local maxima and minima, recognising when the test fails, and solving word problems (numbers, boxes, profit, mensuration) by maximising or minimising a function of one variable.",
+   "idea": "At a stationary point, a graph that bends downward (f'' < 0) is at a hilltop and one that bends upward (f'' > 0) is at a valley bottom; a word problem is solved by turning the quantity into a function of one variable.",
+   "rule": "If f'(c) = 0 and f''(c) < 0, c is a point of local maxima; if f'(c) = 0 and f''(c) > 0, local minima; if f'(c) = 0 and f''(c) = 0 the test fails and the first derivative test is used. In word problems, use the given condition to write the quantity in one variable, reject values that are physically impossible, then apply the test.",
+   "example": "Two positive numbers with sum 15: S(x) = x^2 + (15 - x)^2, S'(x) = 4x - 30 = 0 gives x = 15/2 and S'' = 4 > 0, so the sum of squares is least when both numbers are 15/2.",
+   "difficulty_base": "Hard",
+   "questions": [
+    {
+     "b": "Remember",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "By the Second Derivative Test, x = c is a point of local maxima of f if",
+     "a": "f'(c) = 0 and f''(c) < 0",
+     "o": [
+      "f'(c) = 0 and f''(c) < 0",
+      "f'(c) = 0 and f''(c) > 0",
+      "f'(c) < 0 and f''(c) = 0",
+      "f'(c) = 0 and f''(c) = 0"
+     ]
+    },
+    {
+     "b": "Remember",
+     "d": "Easy",
+     "t": "fill_blank",
+     "m": 1,
+     "q": "If f'(c) = 0 and f''(c) = 0, the second derivative test ____, and we go back to the first derivative test.",
+     "a": "fails"
+    },
+    {
+     "b": "Remember",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "If f'(c) = 0 and f''(c) > 0, then f(c) is",
+     "a": "a local minimum value of f",
+     "o": [
+      "a local minimum value of f",
+      "a local maximum value of f",
+      "the absolute maximum value of f",
+      "neither a maximum nor a minimum value of f"
+     ]
+    },
+    {
+     "b": "Remember",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "rev": true,
+     "q": "Which statement about the Second Derivative Test is NOT correct?",
+     "a": "If f'(c) = 0 and f''(c) = 0, then c must be a point of inflexion",
+     "o": [
+      "If f'(c) = 0 and f''(c) = 0, then c must be a point of inflexion",
+      "It needs f to be twice differentiable at c",
+      "If f'(c) = 0 and f''(c) < 0, then c is a point of local maxima",
+      "If f'(c) = 0 and f''(c) > 0, then c is a point of local minima"
+     ]
+    },
+    {
+     "b": "Understand",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "Why can the second derivative test not be used for f(x) = 3 + |x| at x = 0?",
+     "a": "f is not differentiable at x = 0",
+     "o": [
+      "f is not differentiable at x = 0",
+      "f''(0) < 0",
+      "f'(0) = 0 and f''(0) = 0",
+      "x = 0 is not a critical point of f"
+     ]
+    },
+    {
+     "b": "Understand",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "Two positive numbers have sum 15 and the sum of their squares is as small as possible. The numbers are",
+     "a": "15/2 and 15/2",
+     "o": [
+      "15/2 and 15/2",
+      "1 and 14",
+      "5 and 10",
+      "0 and 15"
+     ]
+    },
+    {
+     "b": "Understand",
+     "d": "Easy",
+     "t": "short_answer",
+     "m": 2,
+     "q": "Use the second derivative test to find the minimum value of f(x) = 9x^2 + 12x + 2.",
+     "a": "f'(x) = 18x + 12 = 0 gives x = -2/3. f''(x) = 18 > 0, so x = -2/3 is a point of local minima. f(-2/3) = 9(4/9) - 8 + 2 = -2. The minimum value is -2.",
+     "s": [
+      [
+       "Finds x = -2/3 and f'' = 18 > 0",
+       1
+      ],
+      [
+       "Gets the minimum value -2",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Understand",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "q": "For f(x) = 3x^4 + 4x^3 - 12x^2 + 12, f'(0) = 0 and f''(0) = -24. Which conclusion is correct?",
+     "a": "x = 0 is a point of local maxima and the local maximum value is 12",
+     "o": [
+      "x = 0 is a point of local maxima and the local maximum value is 12",
+      "x = 0 is a point of local minima and the local minimum value is 12",
+      "x = 0 is a point of local maxima and the local maximum value is 0",
+      "x = 0 is a point of inflexion because f''(0) != 0"
+     ]
+    },
+    {
+     "b": "Understand",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "q": "For f(x) = 2x^3 - 6x^2 + 6x + 5, f'(1) = 0 and f''(1) = 0. What should you conclude?",
+     "a": "The second derivative test fails; the first derivative test shows x = 1 is a point of inflexion",
+     "o": [
+      "The second derivative test fails; the first derivative test shows x = 1 is a point of inflexion",
+      "x = 1 is a point of local maxima",
+      "x = 1 is a point of local minima because f''(1) >= 0",
+      "f has no critical point"
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Easy",
+     "t": "fill_blank",
+     "m": 1,
+     "q": "Two numbers have sum 24 and their product is as large as possible. Each number is ____.",
+     "a": "12"
+    },
+    {
+     "b": "Apply",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "The profit of a company is p(x) = 41 - 72x - 18x^2. The maximum profit is",
+     "a": "113",
+     "o": [
+      "113",
+      "41",
+      "-2",
+      "185"
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "q": "A square piece of tin of side 18 cm is made into an open box by cutting a square of side x cm from each corner and folding up the flaps. The volume is maximum when x =",
+     "a": "3 cm",
+     "o": [
+      "3 cm",
+      "9 cm",
+      "6 cm",
+      "4.5 cm"
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "q": "Positive numbers x and y satisfy x + y = 60 and x y^3 is maximum. Then (x, y) =",
+     "a": "(15, 45)",
+     "o": [
+      "(15, 45)",
+      "(45, 15)",
+      "(30, 30)",
+      "(20, 40)"
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "q": "Find two positive numbers whose sum is 16 and the sum of whose cubes is minimum.",
+     "a": "S(x) = x^3 + (16 - x)^3. S'(x) = 3x^2 - 3(16 - x)^2 = 0 gives x = 16 - x, so x = 8. S''(x) = 6x + 6(16 - x) = 96 > 0, so S is minimum at x = 8. The numbers are 8 and 8.",
+     "s": [
+      [
+       "Solves S'(x) = 0 to get x = 8",
+       1
+      ],
+      [
+       "Confirms S''(8) > 0 and states the numbers 8 and 8",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hardest",
+     "t": "long_answer",
+     "m": 3,
+     "q": "A rectangular sheet of tin 45 cm by 24 cm is made into an open box by cutting a square of side x cm from each corner and folding up the flaps. Find x for which the volume is maximum, and the maximum volume.",
+     "a": "V(x) = x(45 - 2x)(24 - 2x) = 4x^3 - 138x^2 + 1080x. V'(x) = 12x^2 - 276x + 1080 = 12(x - 5)(x - 18). x = 18 is impossible since 24 - 2x would be negative, so x = 5. V''(x) = 24x - 276, and V''(5) = -156 < 0, so V is maximum at x = 5. Maximum volume = 5 x 35 x 14 = 2450 cm^3.",
+     "s": [
+      [
+       "Writes V(x) = x(45 - 2x)(24 - 2x) and finds V'(x) = 12(x - 5)(x - 18)",
+       1
+      ],
+      [
+       "Rejects x = 18 and uses V''(5) < 0 to confirm a maximum at x = 5",
+       1
+      ],
+      [
+       "Gets the maximum volume 2450 cm^3",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "assertion_reason",
+     "m": 1,
+     "q": "Assertion (A): The second derivative test fails for f(x) = x^4 at x = 0. Reason (R): x = 0 is a point of local minima of f(x) = x^4.",
+     "a": "Both A and R are true, but R is not the correct explanation of A",
+     "o": [
+      "Both A and R are true, but R is not the correct explanation of A",
+      "Both A and R are true, and R is the correct explanation of A",
+      "A is true, R is false",
+      "A is false, R is true"
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "multi_statement",
+     "m": 1,
+     "q": "Consider these statements. (I) For S(x) = 2x^2 - 40x + 1140, S has a local maximum at x = 10. (II) For an open box made from a 3 m by 8 m sheet, with volume V(x) = 4x^3 - 22x^2 + 24x, cutting squares of side x = 3 m gives the largest box. Which is or are correct?",
+     "a": "Neither I nor II",
+     "o": [
+      "Neither I nor II",
+      "Only I",
+      "Only II",
+      "Both I and II"
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hardest",
+     "t": "long_answer",
+     "m": 3,
+     "q": "A wire of length 28 m is cut into two pieces. One piece is bent into a square and the other into a circle. What should the lengths of the two pieces be so that the combined area is minimum?",
+     "a": "Let the square piece be x m, so the side is x/4 and the circle's circumference is 28 - x, radius (28 - x)/(2 pi). A(x) = x^2/16 + (28 - x)^2/(4 pi). A'(x) = x/8 - (28 - x)/(2 pi) = 0 gives pi x = 4(28 - x), so x = 112/(pi + 4). A''(x) = 1/8 + 1/(2 pi) > 0, so this is a minimum. The square piece is 112/(pi + 4) m and the circle piece is 28 - 112/(pi + 4) = 28 pi/(pi + 4) m.",
+     "s": [
+      [
+       "Writes A(x) = x^2/16 + (28 - x)^2/(4 pi)",
+       1
+      ],
+      [
+       "Solves A'(x) = 0 to get x = 112/(pi + 4) and checks A'' > 0",
+       1
+      ],
+      [
+       "States the pieces 112/(pi + 4) m and 28 pi/(pi + 4) m",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Evaluate",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "q": "For an open box made from a 3 m by 8 m sheet, V(x) = x(3 - 2x)(8 - 2x). A student finds V'(x) = 0 at x = 2/3 and x = 3 and chooses x = 3 because it is larger. Evaluate the choice.",
+     "a": "The choice is wrong. At x = 3 the breadth 3 - 2x = -3 is negative, so x = 3 is impossible. Only x = 2/3 is valid, and V''(2/3) = 24(2/3) - 44 = -28 < 0, so x = 2/3 m gives the largest box, of volume 200/27 m^3.",
+     "s": [
+      [
+       "Rejects x = 3 because a side length becomes negative",
+       1
+      ],
+      [
+       "Uses x = 2/3 with V'' < 0 as the maximum",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Create",
+     "d": "Hardest",
+     "t": "long_answer",
+     "m": 3,
+     "q": "Frame an optimisation problem about a rectangle of perimeter 40 cm, and solve it with the second derivative test.",
+     "a": "For example: find the dimensions of the rectangle of perimeter 40 cm with the largest area. If one side is x, the other is 20 - x, so A(x) = x(20 - x) = 20x - x^2. A'(x) = 20 - 2x = 0 gives x = 10, and A''(x) = -2 < 0, so the area is maximum: the rectangle is a 10 cm by 10 cm square with area 100 cm^2.",
+     "s": [
+      [
+       "Frames a clear problem and writes A(x) = x(20 - x)",
+       1
+      ],
+      [
+       "Finds x = 10 from A'(x) = 0 and checks A'' < 0",
+       1
+      ],
+      [
+       "States the dimensions 10 cm by 10 cm and area 100 cm^2",
+       1
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "code": "C12M-6.7",
+   "name": "Absolute maximum and minimum on a closed interval",
+   "description": "Absolute (global) maximum and minimum values of a continuous function on a closed interval, how they differ from local extrema, and the four-step working rule using critical points and end points.",
+   "idea": "On a closed interval, a continuous function always reaches a greatest and a least value, either at a critical point inside or at an end point.",
+   "rule": "Working rule: (1) find the critical points of f in [a, b]; (2) take the end points a and b; (3) evaluate f at all these points; (4) the largest value is the absolute maximum and the smallest is the absolute minimum.",
+   "example": "f(x) = 2x^3 - 15x^2 + 36x + 1 on [1, 5]: f(1) = 24, f(2) = 29, f(3) = 28, f(5) = 56, so the absolute maximum is 56 at x = 5 and the absolute minimum is 24 at x = 1.",
+   "difficulty_base": "Hard",
+   "questions": [
+    {
+     "b": "Remember",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "Every continuous function on a closed interval [a, b]",
+     "a": "has an absolute maximum value and an absolute minimum value",
+     "o": [
+      "has an absolute maximum value and an absolute minimum value",
+      "has a point of local maxima inside (a, b)",
+      "attains its maximum value only at an end point",
+      "has f'(c) = 0 at some point c in (a, b)"
+     ]
+    },
+    {
+     "b": "Remember",
+     "d": "Easy",
+     "t": "fill_blank",
+     "m": 1,
+     "q": "The absolute maximum value of a function on an interval is also called its global maximum or ____ value.",
+     "a": "greatest"
+    },
+    {
+     "b": "Remember",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "In the working rule for absolute extreme values on [a, b], after finding the critical points in the interval we must also",
+     "a": "take the end points a and b",
+     "o": [
+      "take the end points a and b",
+      "find f''(x) at every critical point",
+      "discard points where f is not differentiable",
+      "find the points where f(x) = 0"
+     ]
+    },
+    {
+     "b": "Remember",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "rev": true,
+     "q": "Which statement about the working rule for absolute maximum and minimum on a closed interval is NOT correct?",
+     "a": "The end points need not be checked if f has a critical point inside the interval",
+     "o": [
+      "The end points need not be checked if f has a critical point inside the interval",
+      "Points where f is not differentiable must be checked as critical points",
+      "The largest of the computed values is the absolute maximum value",
+      "The smallest of the computed values is the absolute minimum value"
+     ]
+    },
+    {
+     "b": "Understand",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "The function f(x) = x + 2 on the closed interval [0, 1] has absolute maximum value",
+     "a": "3, at x = 1",
+     "o": [
+      "3, at x = 1",
+      "2, at x = 0",
+      "none, since f'(x) is never 0",
+      "1, at x = 1"
+     ]
+    },
+    {
+     "b": "Understand",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "If the domain of f(x) = x^2 is restricted to [-2, 1], its maximum value is",
+     "a": "4, at x = -2",
+     "o": [
+      "4, at x = -2",
+      "1, at x = 1",
+      "0, at x = 0",
+      "no maximum value exists"
+     ]
+    },
+    {
+     "b": "Understand",
+     "d": "Easy",
+     "t": "short_answer",
+     "m": 2,
+     "q": "Find the absolute maximum and absolute minimum values of f(x) = x^3 on [-2, 2].",
+     "a": "f'(x) = 3x^2 = 0 gives x = 0. f(-2) = -8, f(0) = 0, f(2) = 8. Absolute maximum 8 at x = 2; absolute minimum -8 at x = -2.",
+     "s": [
+      [
+       "Finds the critical point 0 and evaluates f at -2, 0, 2",
+       1
+      ],
+      [
+       "States absolute maximum 8 and absolute minimum -8",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Understand",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "q": "A continuous function on [a, d] has a point of local maxima at an interior point c, yet f(a) > f(c). What does this show?",
+     "a": "A local maximum value need not be the absolute maximum value",
+     "o": [
+      "A local maximum value need not be the absolute maximum value",
+      "The absolute maximum always occurs at an interior critical point",
+      "f cannot be continuous at x = a",
+      "c cannot be a point of local maxima"
+     ]
+    },
+    {
+     "b": "Understand",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "q": "When finding the absolute extreme values of f(x) = 12x^(4/3) - 6x^(1/3) on [-1, 1], why must x = 0 be checked?",
+     "a": "f'(x) is not defined at x = 0, so 0 is a critical point",
+     "o": [
+      "f'(x) is not defined at x = 0, so 0 is a critical point",
+      "f'(0) = 0",
+      "0 is an end point of the interval",
+      "f(0) is the largest value of f"
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Easy",
+     "t": "fill_blank",
+     "m": 1,
+     "q": "The absolute maximum value of f(x) = 2x^3 - 15x^2 + 36x + 1 on [0, 3] is ____.",
+     "a": "29"
+    },
+    {
+     "b": "Apply",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "The absolute maximum value of f(x) = sin x + cos x on [0, pi] is",
+     "a": "sqrt(2), at x = pi/4",
+     "o": [
+      "sqrt(2), at x = pi/4",
+      "1, at x = 0",
+      "2, at x = pi/4",
+      "-1, at x = pi"
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "q": "The absolute minimum value of f(x) = 4x - x^2/2 on [-2, 9/2] is",
+     "a": "-10, at x = -2",
+     "o": [
+      "-10, at x = -2",
+      "8, at x = 4",
+      "63/8, at x = 9/2",
+      "0, at x = 0"
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "q": "The absolute maximum value of f(x) = (x - 1)^2 + 3 on [-3, 1] is",
+     "a": "19, at x = -3",
+     "o": [
+      "19, at x = -3",
+      "3, at x = 1",
+      "16, at x = -3",
+      "4, at x = 0"
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "q": "Find the maximum value of f(x) = 2x^3 - 24x + 107 on the interval [1, 3].",
+     "a": "f'(x) = 6x^2 - 24 = 0 gives x = 2 in [1, 3]. f(1) = 85, f(2) = 75, f(3) = 89. The maximum value is 89, at x = 3.",
+     "s": [
+      [
+       "Finds the critical point x = 2 and evaluates f at 1, 2 and 3",
+       1
+      ],
+      [
+       "States the maximum value 89 at x = 3",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hardest",
+     "t": "long_answer",
+     "m": 3,
+     "q": "Find the absolute maximum and absolute minimum values of f(x) = 3x^4 - 8x^3 + 12x^2 - 48x + 25 on [0, 3].",
+     "a": "f'(x) = 12x^3 - 24x^2 + 24x - 48 = 12(x - 2)(x^2 + 2), which is 0 only at x = 2. f(0) = 25, f(2) = 48 - 64 + 48 - 96 + 25 = -39, f(3) = 243 - 216 + 108 - 144 + 25 = 16. Absolute maximum 25 at x = 0; absolute minimum -39 at x = 2.",
+     "s": [
+      [
+       "Factorises f'(x) = 12(x - 2)(x^2 + 2) and finds x = 2",
+       1
+      ],
+      [
+       "Evaluates f(0) = 25, f(2) = -39, f(3) = 16",
+       1
+      ],
+      [
+       "States absolute maximum 25 and absolute minimum -39",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "assertion_reason",
+     "m": 1,
+     "q": "Assertion (A): The absolute maximum value of f(x) = x^2 on [-2, 1] is 1, attained at x = 1. Reason (R): The absolute maximum of a continuous function on a closed interval is found by comparing its values at the critical points and at the end points.",
+     "a": "A is false, R is true",
+     "o": [
+      "A is false, R is true",
+      "Both A and R are true, and R is the correct explanation of A",
+      "Both A and R are true, but R is not the correct explanation of A",
+      "A is true, R is false"
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "multi_statement",
+     "m": 1,
+     "q": "Consider these statements. (I) For f(x) = 2x^3 - 15x^2 + 36x + 1 on [1, 5], the absolute minimum value is 24, attained at the end point x = 1. (II) The maximum value of sin x + cos x over all real x is sqrt(2). Which is or are correct?",
+     "a": "Both I and II",
+     "o": [
+      "Both I and II",
+      "Only I",
+      "Only II",
+      "Neither I nor II"
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hardest",
+     "t": "long_answer",
+     "m": 3,
+     "q": "At x = 1, the function f(x) = x^4 - 62x^2 + ax + 9 attains its maximum value on [0, 2]. Find the value of a.",
+     "a": "Since x = 1 is an interior point of [0, 2] at which f attains its absolute maximum, f'(1) = 0. f'(x) = 4x^3 - 124x + a, so 4 - 124 + a = 0, giving a = 120.",
+     "s": [
+      [
+       "Uses that an interior absolute maximum of a differentiable f has f'(c) = 0",
+       1
+      ],
+      [
+       "Finds f'(x) = 4x^3 - 124x + a",
+       1
+      ],
+      [
+       "Solves f'(1) = 0 to get a = 120",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Evaluate",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "q": "A student finds the absolute maximum of f(x) = 2x^3 - 15x^2 + 36x + 1 on [1, 5] by checking only the critical points x = 2 and x = 3, and answers 29. Evaluate this answer.",
+     "a": "It is wrong because the end points were ignored. f(1) = 24, f(2) = 29, f(3) = 28 and f(5) = 56, so the absolute maximum is 56 at the end point x = 5.",
+     "s": [
+      [
+       "Points out that the end points must be checked",
+       1
+      ],
+      [
+       "Gives the correct absolute maximum 56 at x = 5",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Create",
+     "d": "Hardest",
+     "t": "long_answer",
+     "m": 3,
+     "q": "Construct a continuous function on a closed interval of your choice whose absolute maximum occurs at an end point although the function also has a point of local maxima inside the interval. Verify your example.",
+     "a": "For example f(x) = x^3 - 6x^2 + 9x on [0, 5]. f'(x) = 3x^2 - 12x + 9 = 3(x - 1)(x - 3). f'(x) changes from positive to negative at x = 1, so x = 1 is a point of local maxima with f(1) = 4. Checking f(0) = 0, f(1) = 4, f(3) = 0 and f(5) = 20, the absolute maximum is 20 at the end point x = 5.",
+     "s": [
+      [
+       "Gives a suitable function and closed interval",
+       1
+      ],
+      [
+       "Shows an interior point of local maxima using f'(x)",
+       1
+      ],
+      [
+       "Evaluates f at the critical points and end points to show the absolute maximum is at an end point",
+       1
+      ]
+     ]
+    }
+   ]
+  }
+ ]
+}

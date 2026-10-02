@@ -1,0 +1,52 @@
+BINOMIAL THEOREM 127
+We now arrange the coefficients in these expansions as follows (Fig 7.1):
+Do we observe any pattern in this table that will help us to write the next row? Yes we
+do. It can be seen that the addition of 1’s in the row for index 1 gives rise to 2 in the row
+for index 2. The addition of 1, 2 and 2, 1 in the row for index 2, gives rise to 3 and 3 in
+the row for index 3 and so on. Also, 1 is present at the beginning and at the end of each
+row. This can be continued till any index of our interest.
+We can extend the pattern given in Fig 7.2 by writing a few more rows.
+Pascal’s Triangle
+The structure given in Fig 7.2 looks like a triangle with 1 at the top vertex and running
+down the two slanting sides. This array of numbers is known as Pascal’s triangle,
+after the name of French mathematician Blaise Pascal. It is also known as Meru
+Prastara by Pingla.
+Expansions for the higher powers of a binomial are also possible by using Pascal’s
+triangle. Let us expand (2x + 3y)
+5
+ by using Pascal’s triangle. The row for index 5 is
+1 5 10 10 5 1
+Using this row and our observations (i), (ii) and (iii), we get
+(2x + 3y)
+5 = (2x)
+5
+ + 5(2x)
+4
+ (3y) + 10(2x)
+3
+ (3y)
+2
+ +10 (2x)
+2
+ (3y)
+3
+ + 5(2x)(3y)
+4
+ +(3y)
+5
+= 32x
+5
+ + 240x
+4y + 720x
+3y
+2
+ + 1080x
+2y
+3
+ + 810xy4
+ + 243y
+5
+.
+Fig 7.1
+Fig 7.2
+Reprint 2026-27

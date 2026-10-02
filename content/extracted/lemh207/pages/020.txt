@@ -1,0 +1,73 @@
+PROBABILITY 425
+Therefore, P (A) = P (E1
+) P (A|E1
+) + P (E2
+) P (A|E2
+) + ... + P (En
+)P(A|En
+)
+or P(A) =
+1
+P(E ) P(A|E )
+n
+j j
+j=
+∑
+Example 15 A person has undertaken a construction job. The probabilities are 0.65
+that there will be strike, 0.80 that the construction job will be completed on time if there
+is no strike, and 0.32 that the construction job will be completed on time if there is a
+strike. Determine the probability that the construction job will be completed on time.
+Solution Let A be the event that the construction job will be completed on time, and B
+be the event that there will be a strike. We have to find P(A).
+We have
+P(B) = 0.65, P(no strike) = P(B′) = 1 − P(B) = 1 − 0.65 = 0.35
+P(A|B) = 0.32, P(A|B′) = 0.80
+Since events B and B′ form a partition of the sample space S, therefore, by theorem
+on total probability, we have
+P(A) = P(B) P(A|B) + P(B′) P(A|B′)
+ = 0.65 × 0.32 + 0.35 × 0.8
+ = 0.208 + 0.28 = 0.488
+Thus, the probability that the construction job will be completed in time is 0.488.
+We shall now state and prove the Bayes' theorem.
+Bayes’ Theorem If E1
+, E2
+ ,..., En
+ are n non empty events which constitute a partition
+of sample space S, i.e. E1
+, E2
+ ,..., En
+ are pairwise disjoint and E1∪ E2∪ ... ∪ En
+ = S and
+A is any event of nonzero probability, then
+P(Ei
+|A) =
+1
+P(E ) P(A|E )
+P(E ) P(A|E )
+i i
+n
+j j
+j=
+∑
+ for any i = 1, 2, 3, ..., n
+Proof By formula of conditional probability, we know that
+P(Ei
+|A) =
+P(A E )
+P(A)
+∩ i
+=
+P(E )P(A|E )
+P(A)
+i i (by multiplication rule of probability)
+=
+1
+P(E ) P(A|E )
+P(E )P(A|E )
+i i
+n
+j j
+j=
+∑
+ (by the result of theorem of total probability)
+Reprint 2026-27

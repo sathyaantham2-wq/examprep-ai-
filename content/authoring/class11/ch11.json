@@ -1,0 +1,1692 @@
+{
+ "subject": {
+  "code": "MATH11",
+  "name": "Mathematics",
+  "board": "CBSE",
+  "class": 11
+ },
+ "source": {
+  "publisher": "NCERT",
+  "title": "Mathematics",
+  "edition": "Textbook for Class XI, Reprint 2026-27",
+  "year": 2026
+ },
+ "chapter": {
+  "part": "I",
+  "chapter_no": 11,
+  "name": "Introduction to Three Dimensional Geometry",
+  "blurb": "This chapter extends coordinate geometry from the plane to space. It sets up three mutually perpendicular coordinate axes and coordinate planes, shows how every point in space gets an ordered triplet (x, y, z) and how the signs of the coordinates fix one of eight octants. It then derives the distance formula between two points in space and uses it to test collinearity, identify triangles and parallelograms, and write equations of sets of points.",
+  "source_code": "kemh111",
+  "order_index": 11
+ },
+ "scope_in": [
+  {
+   "item": "Explain why three numbers (perpendicular distances from three mutually perpendicular planes) are needed to locate a point in space",
+   "pages": "208"
+  },
+  {
+   "item": "Name the x, y and z-axes (X'OX, Y'OY, Z'OZ), the origin, and the XY, YZ and ZX coordinate planes, and say which axes lie in which plane and along which axis two planes meet",
+   "pages": "209"
+  },
+  {
+   "item": "Use the sign convention for directed distances: above/below the XY-plane, right/left of the ZX-plane, in front of/behind the YZ-plane",
+   "pages": "209"
+  },
+  {
+   "item": "State that the coordinate planes divide space into eight octants, and name them by half-axes (XOYZ, X'OYZ, X'OY'Z, XOY'Z, XOYZ', X'OYZ', X'OY'Z', XOY'Z') with their numbers I to VIII",
+   "pages": "209"
+  },
+  {
+   "item": "Find the coordinates (x, y, z) of a point from the construction PM perpendicular to the XY-plane and ML perpendicular to the x-axis (OL = x, LM = y, MP = z), or from planes through P parallel to the coordinate planes meeting the axes at A, B, C; and locate a point from a given triplet",
+   "pages": "209-210"
+  },
+  {
+   "item": "Read x, y, z as the perpendicular distances of a point from the YZ, ZX and XY planes",
+   "pages": "210, 215"
+  },
+  {
+   "item": "Write the form of the coordinates of the origin, of a point on each axis and of a point in each coordinate plane, and find the foot of the perpendicular from a point to a coordinate plane (as in Example 1)",
+   "pages": "210-211, 215"
+  },
+  {
+   "item": "Use Table 11.1 of signs of coordinates to name the octant of a given point, or the signs for a given octant",
+   "pages": "210-211"
+  },
+  {
+   "item": "State, follow the derivation of, and use the distance formula PQ = sqrt((x2 - x1)^2 + (y2 - y1)^2 + (z2 - z1)^2), including the distance from the origin sqrt(x^2 + y^2 + z^2)",
+   "pages": "211-212, 215"
+  },
+  {
+   "item": "Use distances to show three points are collinear (sum of two distances equals the third), to test whether a triangle is isosceles, equilateral or right angled, and to show four points form a parallelogram that is or is not a rectangle (opposite sides equal, diagonals compared)",
+   "pages": "212-214"
+  },
+  {
+   "item": "Find the equation of a set of points P(x, y, z) given a distance condition, such as PA = PB or PA^2 + PB^2 = constant",
+   "pages": "213-215"
+  }
+ ],
+ "scope_out": [
+  {
+   "item": "Section formula in three dimensions (internal and external division of a segment in a given ratio)",
+   "reason": "The section 'Section Formula' is not in this rationalised edition: the chapter has only 11.1 to 11.4, Exercises 11.1 and 11.2 and a Miscellaneous Exercise, and the Summary (p 215) lists no section formula"
+  },
+  {
+   "item": "Mid-point formula, centroid of a triangle, finding a fourth vertex of a parallelogram from bisecting diagonals, lengths of medians",
+   "reason": "No formula for a mid-point or centroid is taught in this edition. They appear only as leftovers of the removed section: Example 9 (pp 214-215), a one-line note on p 214 and Miscellaneous Exercise 1 to 3 (p 215). No question or model answer here uses them"
+  },
+  {
+   "item": "Direction cosines and direction ratios of a line, angle between two lines",
+   "reason": "Class 12 Three Dimensional Geometry; not in this chapter"
+  },
+  {
+   "item": "Equations of a line or a plane in space, shortest distance between lines, and naming the surface (plane, sphere) that a set-of-points equation represents",
+   "reason": "Class 12 material. This chapter only derives the equation of a set of points from a distance condition (pp 213-214) and never names or interprets the result"
+  },
+  {
+   "item": "Vectors, position vectors, dot product as a test for perpendicularity",
+   "reason": "Class 12 Vector Algebra; right angles here are tested only with squares of distances (Example 5, p 212)"
+  },
+  {
+   "item": "Distance of a point from a coordinate axis as a formula, e.g. sqrt(y^2 + z^2) from the x-axis",
+   "reason": "The chapter gives only perpendicular distances from the coordinate planes (p 210) and the distance between two points; no distance-from-an-axis result is stated"
+  },
+  {
+   "item": "Sets of points needing heavy algebra with square roots, such as the sum of distances from two points being constant",
+   "reason": "Appears only as Exercise 11.2 Q5 (p 213) with no worked example; squaring twice is too long for a phone-sized answer"
+  },
+  {
+   "item": "Octant of a point that has a zero coordinate",
+   "reason": "Table 11.1 (p 210) gives signs + and - only; the book never assigns an octant to a point lying on a coordinate plane, so no question asks for one"
+  },
+  {
+   "item": "Questions that require seeing Fig 11.1 to 11.4",
+   "reason": "The app cannot display figures; every construction is described in words in the question"
+  },
+  {
+   "item": "History of three dimensional coordinate geometry (Descartes, Fermat, La Hire, Bernoulli, Parent, Euler, dates)",
+   "reason": "Historical Note only (p 216)"
+  }
+ ],
+ "concepts": [
+  {
+   "code": "C11M-11.1",
+   "name": "Coordinate axes, coordinate planes and octants",
+   "description": "The three mutually perpendicular axes and planes of the rectangular coordinate system in space, the sign convention for directed distances, and the eight octants named by their half-axes.",
+   "idea": "Three mutually perpendicular planes through a point O meet along three mutually perpendicular lines, the x, y and z-axes, and cut space into eight parts.",
+   "rule": "The planes XOY, YOZ and ZOX are the XY, YZ and ZX-planes. Distances are positive above the XY-plane (along OZ), to the right of the ZX-plane (along OY) and in front of the YZ-plane (along OX). The octants XOYZ, X'OYZ, X'OY'Z, XOY'Z, XOYZ', X'OYZ', X'OY'Z', XOY'Z' are denoted I to VIII.",
+   "example": "A point behind the YZ-plane, to the right of the ZX-plane and above the XY-plane is in the octant X'OYZ, which is octant II.",
+   "difficulty_base": "Easy",
+   "questions": [
+    {
+     "b": "Remember",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "In three dimensional space, three mutually perpendicular planes through a point O intersect along the lines X'OX, Y'OY and Z'OZ. These three lines are called the",
+     "a": "x, y and z-axes",
+     "o": [
+      "x, y and z-axes",
+      "XY, YZ and ZX-planes",
+      "octants",
+      "ordered triplets"
+     ]
+    },
+    {
+     "b": "Remember",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "The point O at which the three mutually perpendicular coordinate planes meet is called the",
+     "a": "origin",
+     "o": [
+      "origin",
+      "octant",
+      "XY-plane",
+      "x-axis"
+     ]
+    },
+    {
+     "b": "Remember",
+     "d": "Easy",
+     "t": "fill_blank",
+     "m": 1,
+     "q": "The three coordinate planes divide the space into ____ parts known as octants. (Answer with a number.)",
+     "a": "8"
+    },
+    {
+     "b": "Remember",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "q": "Which of the following statements about the coordinate axes and coordinate planes in three dimensional space is NOT correct?",
+     "a": "The XY-plane and the YZ-plane meet along the x-axis",
+     "o": [
+      "The XY-plane and the YZ-plane meet along the x-axis",
+      "The three coordinate axes are mutually perpendicular",
+      "The three coordinate planes all pass through the origin O",
+      "The ZX-plane contains both the z-axis and the x-axis"
+     ],
+     "rev": true
+    },
+    {
+     "b": "Understand",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "If the XY-plane is taken as the plane of the paper and the paper is held horizontal, then the line Z'OZ (the z-axis) is",
+     "a": "vertical, perpendicular to the plane of the paper",
+     "o": [
+      "vertical, perpendicular to the plane of the paper",
+      "horizontal, lying in the plane of the paper",
+      "parallel to the x-axis",
+      "parallel to the y-axis"
+     ]
+    },
+    {
+     "b": "Understand",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "Distances measured from the XY-plane downwards, in the direction of OZ', are taken as",
+     "a": "negative",
+     "o": [
+      "negative",
+      "positive",
+      "zero",
+      "positive in some octants and negative in others"
+     ]
+    },
+    {
+     "b": "Understand",
+     "d": "Easy",
+     "t": "short_answer",
+     "m": 2,
+     "q": "Name the three coordinate planes of the rectangular coordinate system in space and state, for each plane, the two coordinate axes that lie in it.",
+     "a": "The three coordinate planes are the XY-plane (plane XOY), the YZ-plane (plane YOZ) and the ZX-plane (plane ZOX). The XY-plane contains the x-axis and the y-axis, the YZ-plane contains the y-axis and the z-axis, and the ZX-plane contains the z-axis and the x-axis.",
+     "s": [
+      [
+       "Names the XY-plane, YZ-plane and ZX-plane",
+       1
+      ],
+      [
+       "States the correct pair of axes lying in each plane",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Understand",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "q": "The octant named X'OY'Z is the part of space that lies",
+     "a": "behind the YZ-plane, to the left of the ZX-plane and above the XY-plane",
+     "o": [
+      "behind the YZ-plane, to the left of the ZX-plane and above the XY-plane",
+      "in front of the YZ-plane, to the left of the ZX-plane and above the XY-plane",
+      "behind the YZ-plane, to the right of the ZX-plane and above the XY-plane",
+      "behind the YZ-plane, to the left of the ZX-plane and below the XY-plane"
+     ]
+    },
+    {
+     "b": "Understand",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "q": "The x-axis is the line along which which two coordinate planes meet?",
+     "a": "The XY-plane and the ZX-plane",
+     "o": [
+      "The XY-plane and the ZX-plane",
+      "The XY-plane and the YZ-plane",
+      "The YZ-plane and the ZX-plane",
+      "No two of them; the coordinate planes meet only at the origin"
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Easy",
+     "t": "fill_blank",
+     "m": 1,
+     "q": "The octants are denoted I, II, III, ..., VIII. The octant named XOY'Z' is denoted by ____. (Write the octant as a Roman numeral.)",
+     "a": "VIII"
+    },
+    {
+     "b": "Apply",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "A point is 4 units in front of the YZ-plane, 3 units to the left of the ZX-plane and 2 units above the XY-plane. With the usual convention, the signs of its distances measured along OX, OY and OZ are, in that order,",
+     "a": "+, -, +",
+     "o": [
+      "+, -, +",
+      "+, +, +",
+      "-, +, +",
+      "+, -, -"
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "q": "A fly is 2 units behind the YZ-plane, 5 units to the right of the ZX-plane and 1 unit below the XY-plane. Named by its half-axes, the octant in which the fly lies is",
+     "a": "X'OYZ'",
+     "o": [
+      "X'OYZ'",
+      "XOYZ'",
+      "X'OY'Z'",
+      "X'OYZ"
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "q": "In the order in which the eight octants are denoted I to VIII, the octant denoted VII is the one named",
+     "a": "X'OY'Z'",
+     "o": [
+      "X'OY'Z'",
+      "XOY'Z'",
+      "X'OY'Z",
+      "X'OYZ'"
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "q": "Octant I is named XOYZ. Octants II, III and IV also lie above the XY-plane. Write the names of octants II, III and IV and describe how the name changes from each octant to the next.",
+     "a": "Octant II is X'OYZ, octant III is X'OY'Z and octant IV is XOY'Z. From I to II the x half-axis changes from OX to OX'; from II to III the y half-axis changes from OY to OY'; from III to IV the x half-axis changes back from OX' to OX. OZ stays the same in all four because they all lie above the XY-plane.",
+     "s": [
+      [
+       "Writes II = X'OYZ, III = X'OY'Z and IV = XOY'Z",
+       1
+      ],
+      [
+       "Describes that one half-axis (x, then y, then x again) changes at each step while OZ is unchanged",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hardest",
+     "t": "long_answer",
+     "m": 3,
+     "q": "A room is modelled with its floor as the XY-plane and two adjacent walls as the YZ-plane and the ZX-plane, the corner where all three meet being the origin O. The room occupies the octant XOYZ. (a) Which coordinate axis runs along the vertical line in which the two walls meet? (b) Along which coordinate axis does the floor meet the wall that is the ZX-plane? (c) A second room lies directly below this one, on the other side of the floor. Name the octant it occupies by its half-axes.",
+     "a": "(a) The two walls are the YZ-plane and the ZX-plane; both contain the z-axis, so they meet along the z-axis. (b) The floor is the XY-plane and the wall is the ZX-plane; both contain the x-axis, so they meet along the x-axis. (c) Going below the XY-plane changes only the direction OZ to OZ', so the room below occupies the octant XOYZ'.",
+     "s": [
+      [
+       "States that the two walls meet along the z-axis",
+       1
+      ],
+      [
+       "States that the floor and the ZX-plane wall meet along the x-axis",
+       1
+      ],
+      [
+       "Names the lower room's octant as XOYZ', with only OZ changed to OZ'",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "assertion_reason",
+     "m": 1,
+     "q": "Assertion (A): The three coordinate axes X'OX, Y'OY and Z'OZ are mutually perpendicular to each other. Reason (R): The coordinate axes are the lines along which three mutually perpendicular planes through O intersect.",
+     "a": "Both A and R are true, and R is the correct explanation of A",
+     "o": [
+      "Both A and R are true, and R is the correct explanation of A",
+      "Both A and R are true, but R is not the correct explanation of A",
+      "A is true, R is false",
+      "A is false, R is true"
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "multi_statement",
+     "m": 1,
+     "q": "Consider these statements about the sign convention for distances in space. (I) Distances measured to the right of the ZX-plane along OY are taken as positive. (II) Distances measured to the back of the YZ-plane along OX' are taken as positive. Which is or are correct?",
+     "a": "Only I",
+     "o": [
+      "Only I",
+      "Only II",
+      "Both I and II",
+      "Neither I nor II"
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hardest",
+     "t": "long_answer",
+     "m": 3,
+     "q": "A student argues: 'Two coordinate axes divide a plane into 4 quadrants, so three coordinate axes must divide space into 6 parts.' Analyse this argument. State what actually divides the space, how many parts are formed, and explain the count using the two sides of each coordinate plane.",
+     "a": "The space is divided by the three coordinate planes (XY, YZ and ZX), not by the three axes, which are only lines. Each coordinate plane has two sides: above or below the XY-plane, in front of or behind the YZ-plane, to the right or left of the ZX-plane. A part of space is fixed by choosing one side for each of the three planes, giving 2 x 2 x 2 = 8 parts. So the space is divided into 8 octants, not 6.",
+     "s": [
+      [
+       "States that the three coordinate planes, not the axes, divide the space",
+       1
+      ],
+      [
+       "Explains that each of the three planes has two sides and a part is fixed by one choice of side per plane",
+       1
+      ],
+      [
+       "Concludes 2 x 2 x 2 = 8 octants, so the claim of 6 parts is wrong",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Evaluate",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "q": "Ravi says: 'The octant X'OYZ' lies above the XY-plane, because its name contains the letter Z.' Is Ravi right? Justify your answer by describing where this octant lies relative to all three coordinate planes.",
+     "a": "Ravi is wrong. The name contains Z', which stands for the direction OZ', and distances along OZ' are measured downwards from the XY-plane. So the octant X'OYZ' lies below the XY-plane; it is also behind the YZ-plane (OX') and to the right of the ZX-plane (OY).",
+     "s": [
+      [
+       "Says Ravi is wrong because Z' means the direction OZ', which is below the XY-plane",
+       1
+      ],
+      [
+       "Describes the octant as behind the YZ-plane, to the right of the ZX-plane and below the XY-plane",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Create",
+     "d": "Hardest",
+     "t": "long_answer",
+     "m": 3,
+     "q": "Make up your own description of the position of a point, using the words in front of or behind the YZ-plane, right or left of the ZX-plane and above or below the XY-plane, with distances of your own choice, so that the point lies in the octant X'OY'Z. State the sign of each of the three directed distances and explain why your point is in that octant.",
+     "a": "One possible answer: the point is 3 units behind the YZ-plane, 2 units to the left of the ZX-plane and 4 units above the XY-plane. Behind the YZ-plane is along OX', so that distance is negative; left of the ZX-plane is along OY', so that distance is negative; above the XY-plane is along OZ, so that distance is positive. The half-axes used are OX', OY' and OZ, so the point lies in the octant X'OY'Z. (Any distances work, provided the point is behind, to the left and above.)",
+     "s": [
+      [
+       "Gives a description that places the point behind the YZ-plane, left of the ZX-plane and above the XY-plane",
+       1
+      ],
+      [
+       "States the signs as negative, negative and positive for the distances along the x, y and z directions",
+       1
+      ],
+      [
+       "Explains that the half-axes OX', OY' and OZ give the octant X'OY'Z",
+       1
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "code": "C11M-11.2",
+   "name": "Coordinates of a point in space",
+   "description": "Associating an ordered triplet (x, y, z) with a point, reading the coordinates as perpendicular distances from the coordinate planes, and the special forms of points on the axes and in the coordinate planes.",
+   "idea": "Every point in space corresponds to exactly one ordered triplet (x, y, z) of real numbers, and every triplet to exactly one point.",
+   "rule": "x, y and z are the perpendicular distances of the point from the YZ, ZX and XY-planes. The origin is (0, 0, 0); points on the x, y, z-axes are (x, 0, 0), (0, y, 0), (0, 0, z); points in the XY, YZ, ZX-planes are (x, y, 0), (0, y, z), (x, 0, z).",
+   "example": "For P(2, 4, 5), the foot of the perpendicular on the ZX-plane has no distance along OY, so it is (2, 0, 5).",
+   "difficulty_base": "Easy",
+   "questions": [
+    {
+     "b": "Remember",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "In three dimensional space, the coordinates of the origin O are",
+     "a": "(0, 0, 0)",
+     "o": [
+      "(0, 0, 0)",
+      "(0, 0)",
+      "(1, 1, 1)",
+      "(0, 0, 1)"
+     ]
+    },
+    {
+     "b": "Remember",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "The coordinates of any point on the x-axis are of the form",
+     "a": "(x, 0, 0)",
+     "o": [
+      "(x, 0, 0)",
+      "(0, y, z)",
+      "(x, y, 0)",
+      "(0, x, 0)"
+     ]
+    },
+    {
+     "b": "Remember",
+     "d": "Easy",
+     "t": "fill_blank",
+     "m": 1,
+     "q": "A point lies in the XZ-plane. Its y-coordinate is ____. (Answer with a number.)",
+     "a": "0"
+    },
+    {
+     "b": "Remember",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "q": "Which of the following points does NOT lie on any of the three coordinate axes?",
+     "a": "(0, 4, -3)",
+     "o": [
+      "(0, 4, -3)",
+      "(0, 0, 7)",
+      "(-5, 0, 0)",
+      "(0, 2, 0)"
+     ],
+     "rev": true
+    },
+    {
+     "b": "Understand",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "For a point P(x, y, z) in space, the z-coordinate gives the perpendicular distance of P from the",
+     "a": "XY-plane",
+     "o": [
+      "XY-plane",
+      "YZ-plane",
+      "ZX-plane",
+      "z-axis"
+     ]
+    },
+    {
+     "b": "Understand",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "The coordinates of any point in the YZ-plane are of the form",
+     "a": "(0, y, z)",
+     "o": [
+      "(0, y, z)",
+      "(x, 0, 0)",
+      "(x, y, 0)",
+      "(x, 0, z)"
+     ]
+    },
+    {
+     "b": "Understand",
+     "d": "Easy",
+     "t": "short_answer",
+     "m": 2,
+     "q": "From a point P in the octant XOYZ a perpendicular PM is dropped on the XY-plane, and from M a perpendicular ML is drawn to the x-axis. State which of the lengths OL, LM and MP give the x, y and z coordinates of P, and write the coordinates of M when P is (3, 5, 7).",
+     "a": "OL = x, LM = y and MP = z. For P(3, 5, 7), M is the foot of the perpendicular on the XY-plane, so its z-coordinate is 0 and M is (3, 5, 0).",
+     "s": [
+      [
+       "States OL = x, LM = y and MP = z",
+       1
+      ],
+      [
+       "Writes M = (3, 5, 0)",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Understand",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "q": "The point (0, -6, 0) lies",
+     "a": "on the y-axis",
+     "o": [
+      "on the y-axis",
+      "on the x-axis",
+      "on the z-axis",
+      "in the ZX-plane"
+     ]
+    },
+    {
+     "b": "Understand",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "q": "The perpendicular distance of the point (4, -7, 2) from the ZX-plane is",
+     "a": "7 units",
+     "o": [
+      "7 units",
+      "-7 units",
+      "4 units",
+      "2 units"
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Easy",
+     "t": "fill_blank",
+     "m": 1,
+     "q": "Through the point P(3, 8, -4) a plane is drawn parallel to the YZ-plane, meeting the x-axis at A. The length OA is ____ units. (Answer with a number.)",
+     "a": "3"
+    },
+    {
+     "b": "Apply",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "The foot of the perpendicular drawn from the point (6, -2, 9) to the XY-plane is the point",
+     "a": "(6, -2, 0)",
+     "o": [
+      "(6, -2, 0)",
+      "(0, 0, 9)",
+      "(6, 0, 9)",
+      "(0, -2, 9)"
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "q": "From the point P(-1, 6, 3) a perpendicular is dropped on the ZX-plane. The coordinates of its foot are",
+     "a": "(-1, 0, 3)",
+     "o": [
+      "(-1, 0, 3)",
+      "(-1, 6, 0)",
+      "(0, 6, 3)",
+      "(0, 6, 0)"
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "q": "Planes drawn through the point P(5, -3, 8) parallel to the YZ-plane, the ZX-plane and the XY-plane meet the x-axis, y-axis and z-axis at A, B and C respectively. The coordinates of B are",
+     "a": "(0, -3, 0)",
+     "o": [
+      "(0, -3, 0)",
+      "(5, 0, 8)",
+      "(0, 3, 0)",
+      "(-3, 0, 0)"
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "q": "A point P lies in the octant XOYZ at perpendicular distances 2, 3 and 6 units from the YZ-plane, the ZX-plane and the XY-plane respectively. Write the coordinates of P and the coordinates of the foot of the perpendicular from P to the YZ-plane.",
+     "a": "x, y and z are the perpendicular distances from the YZ, ZX and XY planes, and in octant XOYZ all are positive, so P is (2, 3, 6). For the foot of the perpendicular on the YZ-plane the distance along OX is zero, so the foot is (0, 3, 6).",
+     "s": [
+      [
+       "Writes P = (2, 3, 6)",
+       1
+      ],
+      [
+       "Writes the foot on the YZ-plane as (0, 3, 6)",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hardest",
+     "t": "long_answer",
+     "m": 3,
+     "q": "The point P is (4, -5, 6). Find (a) the foot M of the perpendicular from P to the XY-plane, (b) the foot L of the perpendicular from M to the x-axis, and (c) the lengths OL, LM and MP.",
+     "a": "(a) On the XY-plane the z-coordinate is 0, so M is (4, -5, 0). (b) On the x-axis the y and z coordinates are 0, so L is (4, 0, 0). (c) OL = 4, LM = 5 and MP = 6 units; these are the sizes of the x, y and z coordinates of P (the y-coordinate is -5 because LM is measured along OY').",
+     "s": [
+      [
+       "Finds M = (4, -5, 0)",
+       1
+      ],
+      [
+       "Finds L = (4, 0, 0)",
+       1
+      ],
+      [
+       "States OL = 4, LM = 5 and MP = 6 units",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "assertion_reason",
+     "m": 1,
+     "q": "Assertion (A): The point (4, -2, 0) lies in the XY-plane. Reason (R): Every point on the z-axis has its x-coordinate and y-coordinate equal to zero.",
+     "a": "Both A and R are true, but R is not the correct explanation of A",
+     "o": [
+      "Both A and R are true, but R is not the correct explanation of A",
+      "Both A and R are true, and R is the correct explanation of A",
+      "A is true, R is false",
+      "A is false, R is true"
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "multi_statement",
+     "m": 1,
+     "q": "Consider these statements about points on the coordinate axes and planes. (I) The point (3, 0, 0) lies on the y-axis. (II) The point (3, 0, 4) lies in the ZX-plane. Which is or are correct?",
+     "a": "Only II",
+     "o": [
+      "Only II",
+      "Only I",
+      "Both I and II",
+      "Neither I nor II"
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hardest",
+     "t": "long_answer",
+     "m": 3,
+     "q": "Planes drawn through a point P parallel to the coordinate planes meet the x-axis, y-axis and z-axis at A(7, 0, 0), B(0, -4, 0) and C(0, 0, 2) respectively. (a) Find the coordinates of P. (b) State the perpendicular distance of P from each of the three coordinate planes. (c) Which coordinate plane is P nearest to?",
+     "a": "(a) OA, OB and OC give x, y and z, so P is (7, -4, 2). (b) The distance of P from the YZ-plane is 7 units, from the ZX-plane is 4 units and from the XY-plane is 2 units. (c) The smallest of these is 2, so P is nearest to the XY-plane.",
+     "s": [
+      [
+       "Finds P = (7, -4, 2)",
+       1
+      ],
+      [
+       "States distances 7, 4 and 2 units from the YZ-plane, ZX-plane and XY-plane respectively",
+       1
+      ],
+      [
+       "Concludes P is nearest to the XY-plane",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Evaluate",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "q": "Meena says: 'The point (0, 3, 0) lies in exactly one coordinate plane.' Evaluate her statement, naming every coordinate axis and coordinate plane on which the point lies.",
+     "a": "Meena is wrong. The point (0, 3, 0) has x = 0 and z = 0, so it lies on the y-axis. Since x = 0 it is in the YZ-plane, and since z = 0 it is in the XY-plane, so it lies in two coordinate planes. It is not in the ZX-plane because its y-coordinate is not 0.",
+     "s": [
+      [
+       "Identifies that the point lies on the y-axis",
+       1
+      ],
+      [
+       "Shows it lies in both the XY-plane and the YZ-plane (not the ZX-plane), so the statement is wrong",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Create",
+     "d": "Hardest",
+     "t": "long_answer",
+     "m": 3,
+     "q": "Write the coordinates of three points of your own choice: one on the z-axis (not the origin), one in the XY-plane that is not on any axis, and one that does not lie in any coordinate plane. Justify each choice by saying which of its coordinates are zero.",
+     "a": "One possible answer: (0, 0, 5) is on the z-axis because its x and y coordinates are both 0. (2, 3, 0) is in the XY-plane because its z-coordinate is 0, and it is on no axis because only one coordinate is 0. (1, 2, 3) is in no coordinate plane because none of its coordinates is 0.",
+     "s": [
+      [
+       "Gives a point of the form (0, 0, z) with z not 0, justified by x = y = 0",
+       1
+      ],
+      [
+       "Gives a point of the form (x, y, 0) with x and y not 0, justified by only z = 0",
+       1
+      ],
+      [
+       "Gives a point with all three coordinates non-zero, justified by no coordinate being 0",
+       1
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "code": "C11M-11.3",
+   "name": "Signs of coordinates and the octant of a point",
+   "description": "Using the table of signs of x, y and z in the eight octants to name the octant of a point or the signs in a given octant.",
+   "idea": "The signs of the three coordinates of a point decide the octant in which it lies.",
+   "rule": "Signs of (x, y, z): I (+, +, +), II (-, +, +), III (-, -, +), IV (+, -, +), V (+, +, -), VI (-, +, -), VII (-, -, -), VIII (+, -, -). Octants I to IV have z positive; V to VIII repeat the same x, y signs with z negative.",
+   "example": "(-3, 1, 2) has signs (-, +, +), so it is in octant II; (-3, 1, -2) has signs (-, +, -), so it is in octant VI.",
+   "difficulty_base": "Easy",
+   "questions": [
+    {
+     "b": "Remember",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "The signs of the coordinates (x, y, z) of a point in octant VII are",
+     "a": "(-, -, -)",
+     "o": [
+      "(-, -, -)",
+      "(+, +, +)",
+      "(-, -, +)",
+      "(+, -, -)"
+     ]
+    },
+    {
+     "b": "Remember",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "According to the table of signs of coordinates in the eight octants, the z-coordinate of a point is positive in octants",
+     "a": "I, II, III and IV",
+     "o": [
+      "I, II, III and IV",
+      "V, VI, VII and VIII",
+      "I, IV, V and VIII",
+      "I, II, V and VI"
+     ]
+    },
+    {
+     "b": "Remember",
+     "d": "Easy",
+     "t": "fill_blank",
+     "m": 1,
+     "q": "The point (1, 2, 3) lies in octant ____. (Write the octant as a Roman numeral.)",
+     "a": "I"
+    },
+    {
+     "b": "Remember",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "q": "Which of the following points does NOT lie in the same octant as the point (-3, 1, 2)?",
+     "a": "(-3, 1, -2)",
+     "o": [
+      "(-3, 1, -2)",
+      "(-1, 5, 4)",
+      "(-7, 2, 9)",
+      "(-2, 8, 1)"
+     ],
+     "rev": true
+    },
+    {
+     "b": "Understand",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "The point (4, -2, 3) lies in octant",
+     "a": "IV",
+     "o": [
+      "IV",
+      "III",
+      "VIII",
+      "II"
+     ]
+    },
+    {
+     "b": "Understand",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "The point (-4, 2, -5) lies in octant",
+     "a": "VI",
+     "o": [
+      "VI",
+      "II",
+      "VII",
+      "V"
+     ]
+    },
+    {
+     "b": "Understand",
+     "d": "Easy",
+     "t": "short_answer",
+     "m": 2,
+     "q": "Name the octants in which the points (4, 2, -5) and (-2, -4, -7) lie, writing the sign pattern of (x, y, z) for each point.",
+     "a": "(4, 2, -5) has signs (+, +, -), which is octant V. (-2, -4, -7) has signs (-, -, -), which is octant VII.",
+     "s": [
+      [
+       "States (4, 2, -5) has signs (+, +, -) and lies in octant V",
+       1
+      ],
+      [
+       "States (-2, -4, -7) has signs (-, -, -) and lies in octant VII",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Understand",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "q": "A point has a negative x-coordinate, a negative y-coordinate and a positive z-coordinate. It lies in octant",
+     "a": "III",
+     "o": [
+      "III",
+      "VII",
+      "II",
+      "IV"
+     ]
+    },
+    {
+     "b": "Understand",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "q": "The x-coordinate and the y-coordinate of a point are both negative exactly when the point lies in one of the octants",
+     "a": "III and VII",
+     "o": [
+      "III and VII",
+      "II and VI",
+      "III and IV",
+      "VII and VIII"
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Easy",
+     "t": "fill_blank",
+     "m": 1,
+     "q": "The point (9, -4, -1) lies in octant ____. (Write the octant as a Roman numeral.)",
+     "a": "VIII"
+    },
+    {
+     "b": "Apply",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "Which of the following points lies in octant V?",
+     "a": "(6, 1, -8)",
+     "o": [
+      "(6, 1, -8)",
+      "(6, -1, 8)",
+      "(-6, 1, -8)",
+      "(6, -1, -8)"
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "q": "The point P(2, -3, 5) is changed into Q by reversing the sign of its z-coordinate only. Q lies in octant",
+     "a": "VIII",
+     "o": [
+      "VIII",
+      "IV",
+      "V",
+      "VII"
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "q": "The point (a, b, c) lies in octant VI. The point (-a, -b, -c) lies in octant",
+     "a": "IV",
+     "o": [
+      "IV",
+      "VI",
+      "VIII",
+      "II"
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "q": "A point lies in octant VIII at perpendicular distances 3, 5 and 2 units from the YZ-plane, the ZX-plane and the XY-plane respectively. Write its coordinates, giving the sign pattern you used.",
+     "a": "In octant VIII the signs of (x, y, z) are (+, -, -). The distances from the YZ, ZX and XY planes give the sizes of x, y and z, so the point is (3, -5, -2).",
+     "s": [
+      [
+       "States the sign pattern (+, -, -) for octant VIII",
+       1
+      ],
+      [
+       "Writes the point as (3, -5, -2)",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hardest",
+     "t": "long_answer",
+     "m": 3,
+     "q": "Three points are A(5, -2, 4), B(-5, -2, 4) and C(-5, 2, -4). (a) Name the octant in which each point lies. (b) Between A and B only one coordinate changes sign; name the coordinate plane that therefore lies between A and B. (c) State how many coordinates change sign from B to C and whether B and C are on the same side of the YZ-plane.",
+     "a": "(a) A has signs (+, -, +), octant IV; B has signs (-, -, +), octant III; C has signs (-, +, -), octant VI. (b) From A to B only x changes sign, and x is the distance from the YZ-plane, so the YZ-plane lies between A and B. (c) From B to C the y and z coordinates change sign, that is two coordinates; x is negative for both, so B and C are on the same side of (behind) the YZ-plane.",
+     "s": [
+      [
+       "Names the octants IV, III and VI for A, B and C",
+       1
+      ],
+      [
+       "States that the YZ-plane lies between A and B because only x changes sign",
+       1
+      ],
+      [
+       "States that two coordinates (y and z) change from B to C and that both points are on the same side of the YZ-plane",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "assertion_reason",
+     "m": 1,
+     "q": "Assertion (A): The points (2, 5, -1) and (7, 3, -9) lie in the same octant. Reason (R): A point lies in octant V whenever its z-coordinate is negative.",
+     "a": "A is true, R is false",
+     "o": [
+      "A is true, R is false",
+      "Both A and R are true, and R is the correct explanation of A",
+      "Both A and R are true, but R is not the correct explanation of A",
+      "A is false, R is true"
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "multi_statement",
+     "m": 1,
+     "q": "Consider these statements about the signs of coordinates in the octants. (I) If the y-coordinate of a point is positive, the point cannot lie in octant III. (II) The x-coordinate of a point is positive in octants I, IV, V and VIII. Which is or are correct?",
+     "a": "Both I and II",
+     "o": [
+      "Both I and II",
+      "Only I",
+      "Only II",
+      "Neither I nor II"
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hardest",
+     "t": "long_answer",
+     "m": 3,
+     "q": "The coordinates of a point P(x, y, z) satisfy xy < 0 and z > 0. (a) List the possible sign patterns of (x, y, z). (b) Name the octants in which P can lie. (c) If it is also known that x > 0, in which octant does P lie?",
+     "a": "(a) xy < 0 means x and y have opposite signs, and z is positive, so the patterns are (+, -, +) and (-, +, +). (b) (+, -, +) is octant IV and (-, +, +) is octant II, so P lies in octant II or octant IV. (c) If x > 0 the pattern is (+, -, +), so P lies in octant IV.",
+     "s": [
+      [
+       "Lists the two patterns (+, -, +) and (-, +, +)",
+       1
+      ],
+      [
+       "Names the possible octants as II and IV",
+       1
+      ],
+      [
+       "Concludes octant IV when x > 0",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Evaluate",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "q": "Kiran says: 'The points (-2, 6, 4) and (-2, -6, 4) lie in the same octant, because both are behind the YZ-plane and both are above the XY-plane.' Evaluate Kiran's claim.",
+     "a": "Kiran is wrong. An octant is fixed by the signs of all three coordinates, not two. (-2, 6, 4) has signs (-, +, +) and lies in octant II, while (-2, -6, 4) has signs (-, -, +) and lies in octant III. Their y-coordinates have opposite signs, so they are on opposite sides of the ZX-plane.",
+     "s": [
+      [
+       "States that the octant depends on the signs of all three coordinates and the y signs differ",
+       1
+      ],
+      [
+       "Identifies the octants as II and III, so the claim is wrong",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Create",
+     "d": "Hardest",
+     "t": "long_answer",
+     "m": 3,
+     "q": "Create three points, each at perpendicular distances 1, 2 and 3 units from the YZ-plane, the ZX-plane and the XY-plane respectively, such that one lies in octant II, one in octant V and one in octant VII. Give the sign pattern that justifies each point.",
+     "a": "The sizes of x, y and z are 1, 2 and 3. Octant II has signs (-, +, +), giving (-1, 2, 3). Octant V has signs (+, +, -), giving (1, 2, -3). Octant VII has signs (-, -, -), giving (-1, -2, -3).",
+     "s": [
+      [
+       "Gives (-1, 2, 3) for octant II with pattern (-, +, +)",
+       1
+      ],
+      [
+       "Gives (1, 2, -3) for octant V with pattern (+, +, -)",
+       1
+      ],
+      [
+       "Gives (-1, -2, -3) for octant VII with pattern (-, -, -)",
+       1
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "code": "C11M-11.4",
+   "name": "Distance between two points in space",
+   "description": "The distance formula in three dimensions, its derivation from a rectangular parallelopiped, and the distance of a point from the origin.",
+   "idea": "The segment joining two points is the diagonal of a rectangular box whose edges are the differences of the coordinates, so its length follows from two right angled triangles.",
+   "rule": "PQ = sqrt((x2 - x1)^2 + (y2 - y1)^2 + (z2 - z1)^2). The distance of (x, y, z) from the origin is sqrt(x^2 + y^2 + z^2).",
+   "example": "For P(1, -3, 4) and Q(-4, 1, 2): PQ = sqrt(25 + 16 + 4) = sqrt(45) = 3 sqrt(5) units.",
+   "difficulty_base": "Hard",
+   "questions": [
+    {
+     "b": "Remember",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "The distance between the points P(x1, y1, z1) and Q(x2, y2, z2) is given by",
+     "a": "sqrt((x2 - x1)^2 + (y2 - y1)^2 + (z2 - z1)^2)",
+     "o": [
+      "sqrt((x2 - x1)^2 + (y2 - y1)^2 + (z2 - z1)^2)",
+      "(x2 - x1)^2 + (y2 - y1)^2 + (z2 - z1)^2",
+      "sqrt((x2 + x1)^2 + (y2 + y1)^2 + (z2 + z1)^2)",
+      "(x2 - x1) + (y2 - y1) + (z2 - z1)"
+     ]
+    },
+    {
+     "b": "Remember",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "The distance of the point Q(x, y, z) from the origin O is",
+     "a": "sqrt(x^2 + y^2 + z^2)",
+     "o": [
+      "sqrt(x^2 + y^2 + z^2)",
+      "x + y + z",
+      "x^2 + y^2 + z^2",
+      "sqrt(x^2 + y^2)"
+     ]
+    },
+    {
+     "b": "Remember",
+     "d": "Easy",
+     "t": "fill_blank",
+     "m": 1,
+     "q": "The distance between the points (0, 0, 0) and (0, 0, 9) is ____ units. (Answer with a number.)",
+     "a": "9"
+    },
+    {
+     "b": "Remember",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "q": "Which of the following statements about the distance formula in three dimensions is NOT correct?",
+     "a": "The distance between two points is negative when a coordinate difference is negative",
+     "o": [
+      "The distance between two points is negative when a coordinate difference is negative",
+      "The distance from P to Q is the same as the distance from Q to P",
+      "Each difference of corresponding coordinates is squared before the squares are added",
+      "It is obtained from two right angled triangles inside a rectangular parallelopiped that has PQ as a diagonal"
+     ],
+     "rev": true
+    },
+    {
+     "b": "Understand",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "The distance between the points (2, 3, 5) and (4, 3, 1) is",
+     "a": "2 sqrt(5) units",
+     "o": [
+      "2 sqrt(5) units",
+      "6 units",
+      "20 units",
+      "2 sqrt(3) units"
+     ]
+    },
+    {
+     "b": "Understand",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "The distance of the point (2, -3, 6) from the origin is",
+     "a": "7 units",
+     "o": [
+      "7 units",
+      "5 units",
+      "49 units",
+      "sqrt(31) units"
+     ]
+    },
+    {
+     "b": "Understand",
+     "d": "Easy",
+     "t": "short_answer",
+     "m": 2,
+     "q": "Find the distance between the points (-3, 7, 2) and (2, 4, -1).",
+     "a": "Distance = sqrt((2 + 3)^2 + (4 - 7)^2 + (-1 - 2)^2) = sqrt(25 + 9 + 9) = sqrt(43) units.",
+     "s": [
+      [
+       "Substitutes correctly to get sqrt(25 + 9 + 9)",
+       1
+      ],
+      [
+       "Obtains sqrt(43) units",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Understand",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "q": "The distance between the points (-1, 3, -4) and (1, -3, 4) is",
+     "a": "2 sqrt(26) units",
+     "o": [
+      "2 sqrt(26) units",
+      "sqrt(26) units",
+      "104 units",
+      "0 units"
+     ]
+    },
+    {
+     "b": "Understand",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "q": "In deriving the distance formula, planes are drawn through P and Q parallel to the coordinate planes so as to form a rectangular parallelopiped. In this parallelopiped the segment PQ is",
+     "a": "a diagonal of the parallelopiped",
+     "o": [
+      "a diagonal of the parallelopiped",
+      "an edge of the parallelopiped",
+      "a diagonal of one of its faces",
+      "a perpendicular from P to the XY-plane"
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Easy",
+     "t": "fill_blank",
+     "m": 1,
+     "q": "The distance between the points (-1, 0, 2) and (1, 9, 8) is ____ units. (Answer with a number.)",
+     "a": "11"
+    },
+    {
+     "b": "Apply",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "The distance between the points (0, 2, -1) and (4, -2, 1) is",
+     "a": "6 units",
+     "o": [
+      "6 units",
+      "36 units",
+      "10 units",
+      "2 sqrt(5) units"
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "q": "If the distance between the points (1, 2, 3) and (1, 2, k) is 5 units, then k equals",
+     "a": "8 or -2",
+     "o": [
+      "8 or -2",
+      "8 only",
+      "2 or -8",
+      "28"
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "q": "Which of the following points is nearest to the origin?",
+     "a": "(1, -2, 1)",
+     "o": [
+      "(1, -2, 1)",
+      "(2, 0, 2)",
+      "(0, 0, 3)",
+      "(-2, -2, 0)"
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "q": "Find the distance between the points A(6, -1, 2) and B(3, 3, -3), giving the answer as a simplified surd.",
+     "a": "AB = sqrt((3 - 6)^2 + (3 + 1)^2 + (-3 - 2)^2) = sqrt(9 + 16 + 25) = sqrt(50) = 5 sqrt(2) units.",
+     "s": [
+      [
+       "Substitutes correctly to get sqrt(9 + 16 + 25) = sqrt(50)",
+       1
+      ],
+      [
+       "Simplifies to 5 sqrt(2) units",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hardest",
+     "t": "long_answer",
+     "m": 3,
+     "q": "A rectangular box has its edges parallel to the coordinate axes, and P(1, 2, 3) and Q(4, 6, 15) are opposite corners, so that PQ is a diagonal of the box. (a) Write the lengths of the three edges of the box. (b) Find the length of the diagonal of the face that is parallel to the XY-plane. (c) Find the length of PQ.",
+     "a": "(a) The edges are the differences of the coordinates: 4 - 1 = 3, 6 - 2 = 4 and 15 - 3 = 12 units. (b) The face parallel to the XY-plane has edges 3 and 4, so its diagonal is sqrt(3^2 + 4^2) = 5 units. (c) PQ^2 = 5^2 + 12^2 = 169, that is PQ = sqrt(3^2 + 4^2 + 12^2) = 13 units.",
+     "s": [
+      [
+       "Finds the edges 3, 4 and 12 units",
+       1
+      ],
+      [
+       "Finds the face diagonal sqrt(9 + 16) = 5 units",
+       1
+      ],
+      [
+       "Finds PQ = sqrt(9 + 16 + 144) = 13 units",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "assertion_reason",
+     "m": 1,
+     "q": "Assertion (A): The distance between the points (1, 1, 1) and (-1, -1, -1) is 0 units. Reason (R): The distance between two points is found from the squares of the differences of their corresponding coordinates.",
+     "a": "A is false, R is true",
+     "o": [
+      "A is false, R is true",
+      "Both A and R are true, and R is the correct explanation of A",
+      "Both A and R are true, but R is not the correct explanation of A",
+      "A is true, R is false"
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "multi_statement",
+     "m": 1,
+     "q": "Consider these statements about distances in space. (I) The distance of the point (3, 4, 12) from the origin is 19 units. (II) For c and d both positive, the distance between the points (a, b, c) and (a, b, d) is c + d. Which is or are correct?",
+     "a": "Neither I nor II",
+     "o": [
+      "Neither I nor II",
+      "Only I",
+      "Only II",
+      "Both I and II"
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hardest",
+     "t": "long_answer",
+     "m": 3,
+     "q": "The distance between the points P(2, k, -1) and Q(5, 3, 1) is 7 units. Form an equation in k using the distance formula and find all possible values of k.",
+     "a": "PQ^2 = (5 - 2)^2 + (3 - k)^2 + (1 + 1)^2 = 9 + (3 - k)^2 + 4. Setting this equal to 7^2 = 49 gives (3 - k)^2 = 36, so 3 - k = 6 or 3 - k = -6. Hence k = -3 or k = 9.",
+     "s": [
+      [
+       "Writes 9 + (3 - k)^2 + 4 = 49",
+       1
+      ],
+      [
+       "Reduces to (3 - k)^2 = 36 and takes both square roots",
+       1
+      ],
+      [
+       "Obtains k = -3 or k = 9",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Evaluate",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "q": "Asha works out the distance between (4, -2, 1) and (1, 2, 1) as sqrt((4 - 1)^2 + (-2 - 2)^2 + (1 - 1)^2) = sqrt(9 - 16 + 0), and concludes that the distance cannot be found. Identify her error and give the correct distance.",
+     "a": "Her substitution is right, but she squared -4 wrongly: (-2 - 2)^2 = (-4)^2 = +16, not -16. A square is never negative. The correct distance is sqrt(9 + 16 + 0) = sqrt(25) = 5 units.",
+     "s": [
+      [
+       "Identifies that (-4)^2 is +16, not -16",
+       1
+      ],
+      [
+       "Gives the correct distance 5 units",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Create",
+     "d": "Hardest",
+     "t": "long_answer",
+     "m": 3,
+     "q": "Construct two points in space, neither of them the origin, whose x-coordinates differ, whose y-coordinates differ and whose z-coordinates differ, such that the distance between them is exactly 3 units. Verify your answer with the distance formula.",
+     "a": "One possible answer: A(1, 1, 1) and B(2, 3, 3). The differences are 1, 2 and 2, all non-zero. AB = sqrt(1^2 + 2^2 + 2^2) = sqrt(1 + 4 + 4) = sqrt(9) = 3 units. (Any pair whose squared coordinate differences are all non-zero and add up to 9 is acceptable.)",
+     "s": [
+      [
+       "Gives two points, neither the origin, with all three coordinate differences non-zero",
+       1
+      ],
+      [
+       "Substitutes the points into the distance formula correctly",
+       1
+      ],
+      [
+       "Shows that the sum of the squares is 9, so the distance is 3 units",
+       1
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "code": "C11M-11.5",
+   "name": "Using the distance formula: collinear points, figures and sets of points",
+   "description": "Applying the distance formula to show points are collinear, to classify triangles and parallelograms, and to find the equation of a set of points satisfying a distance condition.",
+   "idea": "Once all the distances between given points are known, they tell us whether the points lie on a line or what figure they form; a distance condition on a variable point (x, y, z) becomes an equation.",
+   "rule": "Collinear: the sum of two distances equals the third. Right angled: the square of one side equals the sum of the squares of the other two. Parallelogram (book's method): opposite sides equal; it is a rectangle only if the diagonals are equal. Set of points: write the condition with P(x, y, z), square and simplify.",
+   "example": "P(-2, 3, 5), Q(1, 2, 3), R(7, 0, -1): PQ = sqrt(14), QR = 2 sqrt(14), PR = 3 sqrt(14), so PQ + QR = PR and the points are collinear.",
+   "difficulty_base": "Hard",
+   "questions": [
+    {
+     "b": "Remember",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "Using the distance formula, three points P, Q and R are shown to be collinear when",
+     "a": "the sum of two of the distances PQ, QR and PR equals the third",
+     "o": [
+      "the sum of two of the distances PQ, QR and PR equals the third",
+      "all three distances PQ, QR and PR are equal",
+      "the square of one distance equals the sum of the squares of the other two",
+      "the three distances are all different"
+     ]
+    },
+    {
+     "b": "Remember",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "After the distance formula has shown that ABCD is a parallelogram, the figure is shown not to be a rectangle by proving that",
+     "a": "the diagonals AC and BD are unequal",
+     "o": [
+      "the diagonals AC and BD are unequal",
+      "the opposite sides AB and CD are unequal",
+      "the diagonals AC and BD are equal",
+      "all four sides are equal"
+     ]
+    },
+    {
+     "b": "Remember",
+     "d": "Easy",
+     "t": "fill_blank",
+     "m": 1,
+     "q": "Points that lie on one line are called ____ points. (Answer with one word.)",
+     "a": "collinear"
+    },
+    {
+     "b": "Remember",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "q": "Which of the following is NOT a valid conclusion from distances found with the distance formula?",
+     "a": "A triangle is right angled because its three sides are all of different lengths",
+     "o": [
+      "A triangle is right angled because its three sides are all of different lengths",
+      "A triangle is isosceles because two of its sides are equal",
+      "A triangle is equilateral because all three of its sides are equal",
+      "A triangle is right angled because the square of one side equals the sum of the squares of the other two"
+     ],
+     "rev": true
+    },
+    {
+     "b": "Understand",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "For three points P, Q and R it is found that PQ = sqrt(6), QR = 2 sqrt(6) and PR = 3 sqrt(6). The points are",
+     "a": "collinear, with Q between P and R",
+     "o": [
+      "collinear, with Q between P and R",
+      "collinear, with P between Q and R",
+      "the vertices of a right angled triangle",
+      "the vertices of an isosceles triangle"
+     ]
+    },
+    {
+     "b": "Understand",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "To find the equation of the set of points P(x, y, z) that are equidistant from two given points A and B, we start from the condition",
+     "a": "PA = PB",
+     "o": [
+      "PA = PB",
+      "PA + PB = 0",
+      "PA = 2 PB",
+      "PA^2 + PB^2 = AB^2"
+     ]
+    },
+    {
+     "b": "Understand",
+     "d": "Easy",
+     "t": "short_answer",
+     "m": 2,
+     "q": "Show that the points A(2, 0, 0), B(0, 2, 0) and C(0, 0, 5) are the vertices of an isosceles triangle.",
+     "a": "AB = sqrt(4 + 4 + 0) = sqrt(8), BC = sqrt(0 + 4 + 25) = sqrt(29) and CA = sqrt(4 + 0 + 25) = sqrt(29). Since BC = CA, two sides are equal and the triangle ABC is isosceles.",
+     "s": [
+      [
+       "Finds AB = sqrt(8), BC = sqrt(29) and CA = sqrt(29)",
+       1
+      ],
+      [
+       "Concludes that BC = CA, so the triangle is isosceles",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Understand",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "q": "For a triangle ABC in space the distance formula gives AB^2 = 18, BC^2 = 18 and CA^2 = 36. The triangle is",
+     "a": "right angled and isosceles",
+     "o": [
+      "right angled and isosceles",
+      "isosceles but not right angled",
+      "right angled but not isosceles",
+      "equilateral"
+     ]
+    },
+    {
+     "b": "Understand",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "q": "ABCD is known to be a parallelogram, and the distance formula gives AC = sqrt(30) and BD = sqrt(38). Then ABCD",
+     "a": "is not a rectangle, because its diagonals are unequal",
+     "o": [
+      "is not a rectangle, because its diagonals are unequal",
+      "is a rectangle, because its opposite sides are equal",
+      "is a rectangle, because its diagonals bisect each other",
+      "is not a parallelogram after all, because its diagonals are unequal"
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Easy",
+     "t": "fill_blank",
+     "m": 1,
+     "q": "The triangle with vertices A(1, 0, 0), B(0, 1, 0) and C(0, 0, 1) has all three sides equal. The square of the length of each side is ____. (Answer with a number.)",
+     "a": "2"
+    },
+    {
+     "b": "Apply",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "The points A(0, 0, 0), B(1, 2, 2) and C(3, 6, 6) are",
+     "a": "collinear",
+     "o": [
+      "collinear",
+      "the vertices of a right angled triangle",
+      "the vertices of an isosceles triangle",
+      "the vertices of an equilateral triangle"
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "q": "The equation of the set of points P(x, y, z) equidistant from A(1, 0, 0) and B(0, 0, 3) is",
+     "a": "x - 3z + 4 = 0",
+     "o": [
+      "x - 3z + 4 = 0",
+      "x + 3z + 4 = 0",
+      "x - 3z - 4 = 0",
+      "x - 3z = 0"
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "q": "The triangle with vertices A(1, 1, 1), B(3, 2, 3) and C(5, -3, -1) is",
+     "a": "right angled at A",
+     "o": [
+      "right angled at A",
+      "right angled at B",
+      "right angled at C",
+      "not a right angled triangle"
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "q": "Show, using the distance formula, that the points P(1, -1, 2), Q(3, 0, 4) and R(7, 2, 8) are collinear.",
+     "a": "PQ = sqrt(4 + 1 + 4) = 3, QR = sqrt(16 + 4 + 16) = 6 and PR = sqrt(36 + 9 + 36) = 9. Since PQ + QR = 3 + 6 = 9 = PR, the points P, Q and R are collinear.",
+     "s": [
+      [
+       "Finds PQ = 3, QR = 6 and PR = 9",
+       1
+      ],
+      [
+       "Shows PQ + QR = PR and concludes the points are collinear",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hardest",
+     "t": "long_answer",
+     "m": 3,
+     "q": "Show that the points A(1, 0, 2), B(3, 1, 4), C(4, 3, 3) and D(2, 2, 1) are the vertices of a parallelogram ABCD by showing that its opposite sides are equal, and show that it is not a rectangle.",
+     "a": "AB = sqrt(4 + 1 + 4) = 3, BC = sqrt(1 + 4 + 1) = sqrt(6), CD = sqrt(4 + 1 + 4) = 3 and DA = sqrt(1 + 4 + 1) = sqrt(6). Since AB = CD and BC = DA, ABCD is a parallelogram. The diagonals are AC = sqrt(9 + 9 + 1) = sqrt(19) and BD = sqrt(1 + 1 + 9) = sqrt(11). Since AC is not equal to BD, ABCD is not a rectangle.",
+     "s": [
+      [
+       "Finds AB = CD = 3 and BC = DA = sqrt(6)",
+       1
+      ],
+      [
+       "Concludes ABCD is a parallelogram because opposite sides are equal",
+       1
+      ],
+      [
+       "Finds AC = sqrt(19) and BD = sqrt(11) and concludes it is not a rectangle",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "assertion_reason",
+     "m": 1,
+     "q": "Assertion (A): The points (0, 0, 0), (2, 0, 0) and (5, 0, 0) are collinear. Reason (R): A triangle is right angled when the square of one side equals the sum of the squares of the other two sides.",
+     "a": "Both A and R are true, but R is not the correct explanation of A",
+     "o": [
+      "Both A and R are true, but R is not the correct explanation of A",
+      "Both A and R are true, and R is the correct explanation of A",
+      "A is true, R is false",
+      "A is false, R is true"
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "multi_statement",
+     "m": 1,
+     "q": "Consider these statements about using distances between points. (I) If AB + BC = AC for three points A, B and C, then the three points lie on one line. (II) A triangle whose sides are sqrt(8), sqrt(8) and 4 units is right angled. Which is or are correct?",
+     "a": "Both I and II",
+     "o": [
+      "Both I and II",
+      "Only I",
+      "Only II",
+      "Neither I nor II"
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hardest",
+     "t": "long_answer",
+     "m": 3,
+     "q": "A and B are the points (1, 0, 2) and (-1, 2, 0). Find the equation of the set of points P(x, y, z) such that PA^2 + PB^2 = 50, in its simplest form.",
+     "a": "PA^2 = (x - 1)^2 + y^2 + (z - 2)^2 and PB^2 = (x + 1)^2 + (y - 2)^2 + z^2. Adding, PA^2 + PB^2 = 2x^2 + 2y^2 + 2z^2 - 4y - 4z + 10. Setting this equal to 50 gives 2x^2 + 2y^2 + 2z^2 - 4y - 4z - 40 = 0, that is x^2 + y^2 + z^2 - 2y - 2z - 20 = 0.",
+     "s": [
+      [
+       "Writes PA^2 = (x - 1)^2 + y^2 + (z - 2)^2 and PB^2 = (x + 1)^2 + (y - 2)^2 + z^2",
+       1
+      ],
+      [
+       "Expands and adds to get 2x^2 + 2y^2 + 2z^2 - 4y - 4z + 10",
+       1
+      ],
+      [
+       "Equates to 50 and simplifies to x^2 + y^2 + z^2 - 2y - 2z - 20 = 0",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Evaluate",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "q": "Dev finds AB = 3, BC = 4 and AC = 5 for three points A, B and C in space and concludes that the points are collinear. Evaluate his conclusion and say what the three distances actually show.",
+     "a": "Dev is wrong. For collinear points the sum of two distances must equal the third, but 3 + 4 = 7, which is not 5. Instead AB^2 + BC^2 = 9 + 16 = 25 = AC^2, so A, B and C are the vertices of a right angled triangle, with the right angle at B.",
+     "s": [
+      [
+       "Shows AB + BC = 7 is not equal to AC = 5, so the points are not collinear",
+       1
+      ],
+      [
+       "Shows AB^2 + BC^2 = AC^2, so ABC is a triangle right angled at B",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Create",
+     "d": "Hardest",
+     "t": "long_answer",
+     "m": 3,
+     "q": "Create three points in space, with every coordinate non-zero, that are the vertices of an equilateral triangle. Prove your claim with the distance formula.",
+     "a": "One possible answer: A(1, 2, 3), B(2, 3, 1) and C(3, 1, 2). AB = sqrt(1 + 1 + 4) = sqrt(6), BC = sqrt(1 + 4 + 1) = sqrt(6) and CA = sqrt(4 + 1 + 1) = sqrt(6). All three sides are equal, so triangle ABC is equilateral. (Any three points with non-zero coordinates and three equal non-zero distances are acceptable.)",
+     "s": [
+      [
+       "Gives three distinct points with every coordinate non-zero",
+       1
+      ],
+      [
+       "Finds all three sides correctly with the distance formula",
+       1
+      ],
+      [
+       "Shows the three sides are equal and concludes the triangle is equilateral",
+       1
+      ]
+     ]
+    }
+   ]
+  }
+ ]
+}

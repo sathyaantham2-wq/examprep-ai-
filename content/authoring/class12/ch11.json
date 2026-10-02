@@ -1,0 +1,1978 @@
+{
+  "subject": {
+    "code": "MATH12",
+    "name": "Mathematics",
+    "board": "CBSE",
+    "class": 12
+  },
+  "source": {
+    "publisher": "NCERT",
+    "title": "Mathematics Part II",
+    "edition": "Textbook for Class XII Part II, Reprint 2026-27",
+    "year": 2026
+  },
+  "chapter": {
+    "part": "II",
+    "chapter_no": 11,
+    "name": "Three Dimensional Geometry",
+    "blurb": "Direction cosines and direction ratios of a line, including the line through two points, and the vector and Cartesian equations of a line in space. The chapter then finds the angle between two lines with the conditions for perpendicular and parallel lines, and the shortest distance between two skew lines and between two parallel lines.",
+    "source_code": "lemh205",
+    "order_index": 11
+  },
+  "scope_in": [
+    {
+      "item": "State the direction angles and direction cosines l, m, n of a directed line, use l^2 + m^2 + n^2 = 1, and explain that reversing the direction reverses the signs so an undirected line has two sets of direction cosines; for a line not through the origin use the parallel line through the origin",
+      "pages": "377-378, 391"
+    },
+    {
+      "item": "Define direction ratios as numbers proportional to the direction cosines, know a line has infinitely many proportional sets, and convert direction ratios a, b, c to direction cosines by dividing by +/- sqrt(a^2 + b^2 + c^2)",
+      "pages": "378-380, 391"
+    },
+    {
+      "item": "Find direction cosines from given angles with the axes (including the coordinate axes themselves and a line equally inclined to the axes)",
+      "pages": "380-381"
+    },
+    {
+      "item": "Find the direction ratios x2 - x1, y2 - y1, z2 - z1 and the direction cosines of the line joining two points, dividing by PQ",
+      "pages": "379-381, 391"
+    },
+    {
+      "item": "Show three points are collinear by proportional direction ratios of AB and BC with B common",
+      "pages": "381"
+    },
+    {
+      "item": "Write the vector equation r = a + lambda b of a line through a point parallel to a vector, its parametric equations and its Cartesian equation (x - x1)/a = (y - y1)/b = (z - z1)/c, and convert between the forms",
+      "pages": "381-383, 389, 392"
+    },
+    {
+      "item": "Write the vector equation of the line through two points as r = a + lambda (b - a)",
+      "pages": "392"
+    },
+    {
+      "item": "Find the acute angle between two lines from direction ratios, direction cosines, vector equations or Cartesian equations",
+      "pages": "383-385, 389-390, 391-392"
+    },
+    {
+      "item": "Use the conditions a1 a2 + b1 b2 + c1 c2 = 0 for perpendicular lines and a1/a2 = b1/b2 = c1/c2 for parallel lines, including finding an unknown constant and finding a line perpendicular to two given lines",
+      "pages": "384, 389-391"
+    },
+    {
+      "item": "Describe skew lines (neither parallel nor intersecting, non-coplanar), the angle between skew lines, and the line of shortest distance perpendicular to both; know intersecting lines have shortest distance zero",
+      "pages": "385-386, 391-392"
+    },
+    {
+      "item": "Find the shortest distance between two skew lines, d = |(b1 x b2) . (a2 - a1)| / |b1 x b2|, from vector or Cartesian equations",
+      "pages": "386-388, 390-393"
+    },
+    {
+      "item": "Find the distance between two parallel lines, d = |b x (a2 - a1)| / |b|, and recognise when lines are parallel",
+      "pages": "387-389, 393"
+    }
+  ],
+  "scope_out": [
+    {
+      "item": "Planes: equation of a plane in normal form, through three points, intercept form, or through the intersection of two planes",
+      "reason": "Not present in this rationalised Reprint 2026-27 edition: the chapter ends at 11.5.2 Distance between parallel lines (pp. 387-389), although the Introduction on p. 377 still mentions planes"
+    },
+    {
+      "item": "Angle between two planes, angle between a line and a plane, and distance of a point from a plane",
+      "reason": "Named in the Introduction (p. 377) but no such section, example, exercise or Summary entry exists in this edition (pp. 377-393)"
+    },
+    {
+      "item": "Coplanarity condition of two lines",
+      "reason": "No such section in this edition; the chapter only remarks that parallel lines are coplanar and skew lines are not (pp. 385, 387)"
+    },
+    {
+      "item": "Finding the point of intersection of two lines, the foot of the perpendicular from a point to a line, or the image of a point in a line",
+      "reason": "Not taught or exercised anywhere in pp. 377-393"
+    },
+    {
+      "item": "Distance of a point from a line as a separate topic",
+      "reason": "Only the distance between two parallel lines is derived (pp. 387-388)"
+    },
+    {
+      "item": "A separate derivation of the line through two points, and its Cartesian two-point form (x - x1)/(x2 - x1) = ...",
+      "reason": "This edition has no section 11.3.2; only the vector form r = a + lambda (b - a) is stated, in the Summary (p. 392)"
+    },
+    {
+      "item": "The sin theta form of the angle between two lines as a computational tool",
+      "reason": "Derived on pp. 383-384 only to obtain the parallel condition; every example and exercise uses cos theta"
+    },
+    {
+      "item": "Scalar triple product notation and vector triple product",
+      "reason": "Not in this book; the skew-distance formula is written out as (b1 x b2) . (a2 - a1) without triple-product notation (pp. 386-387)"
+    },
+    {
+      "item": "Section formula and distance formula in three dimensions as topics in their own right",
+      "reason": "Class XI material; here the distance PQ is used only inside the direction cosines of a line through two points (pp. 379-380)"
+    }
+  ],
+  "concepts": [
+    {
+      "code": "C12M-11.1",
+      "name": "Direction cosines and direction ratios of a line",
+      "description": "The direction angles and direction cosines l, m, n of a directed line, the two sets of direction cosines of an undirected line, direction ratios as numbers proportional to the direction cosines, and converting direction ratios to direction cosines.",
+      "idea": "A directed line makes angles alpha, beta, gamma with the positive x, y and z axes; the cosines of these angles are its direction cosines. Any three numbers proportional to them are direction ratios.",
+      "rule": "l^2 + m^2 + n^2 = 1. If a, b, c are direction ratios, then l = a/k, m = b/k, n = c/k with k = sqrt(a^2 + b^2 + c^2) or its negative. Reversing the direction reverses all three signs; a line has infinitely many sets of direction ratios.",
+      "example": "A line with direction ratios 2, -1, -2 has sqrt(4 + 1 + 4) = 3, so its direction cosines are 2/3, -1/3, -2/3.",
+      "difficulty_base": "Easy",
+      "questions": [
+        {
+          "b": "Remember",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "The direction cosines of a directed line in space are the cosines of the angles the line makes with",
+          "a": "the positive directions of the x, y and z axes",
+          "o": [
+            "the positive directions of the x, y and z axes",
+            "the XY, YZ and ZX coordinate planes",
+            "the negative directions of the x, y and z axes",
+            "another given line in space"
+          ]
+        },
+        {
+          "b": "Remember",
+          "d": "Easy",
+          "t": "fill_blank",
+          "m": 1,
+          "q": "For a line with direction cosines l, m, n, the value of l^2 + m^2 + n^2 is ____.",
+          "a": "1"
+        },
+        {
+          "b": "Remember",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "Any three numbers that are proportional to the direction cosines of a line are called its",
+          "a": "direction ratios",
+          "o": [
+            "direction ratios",
+            "direction angles",
+            "direction cosines",
+            "parametric coordinates"
+          ]
+        },
+        {
+          "b": "Remember",
+          "d": "Hard",
+          "t": "mcq",
+          "m": 1,
+          "q": "Which of the following can NOT be a set of direction cosines of a line?",
+          "a": "1/2, 1/2, 1/2",
+          "o": [
+            "1/2, 1/2, 1/2",
+            "1, 0, 0",
+            "2/3, -1/3, -2/3",
+            "0, 1/2, sqrt(3)/2"
+          ],
+          "rev": true
+        },
+        {
+          "b": "Understand",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "If the direction of a directed line L is reversed, its direction cosines",
+          "a": "all change sign",
+          "o": [
+            "all change sign",
+            "stay exactly the same",
+            "become their reciprocals",
+            "are interchanged in cyclic order"
+          ]
+        },
+        {
+          "b": "Understand",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "A line in space that does not pass through the origin has the same set of direction cosines as",
+          "a": "a line through the origin drawn parallel to it",
+          "o": [
+            "a line through the origin drawn parallel to it",
+            "a line through the origin drawn perpendicular to it",
+            "the x-axis, whatever the line is",
+            "the perpendicular dropped from the origin onto it"
+          ]
+        },
+        {
+          "b": "Understand",
+          "d": "Easy",
+          "t": "fill_blank",
+          "m": 1,
+          "q": "The direction cosines of the y-axis are 0, ____, 0.",
+          "a": "1"
+        },
+        {
+          "b": "Understand",
+          "d": "Hard",
+          "t": "mcq",
+          "m": 1,
+          "q": "How many sets of direction ratios does a given line in space have?",
+          "a": "Infinitely many",
+          "o": [
+            "Infinitely many",
+            "Exactly one",
+            "Exactly two",
+            "Exactly three"
+          ]
+        },
+        {
+          "b": "Understand",
+          "d": "Hard",
+          "t": "mcq",
+          "m": 1,
+          "q": "If a, b, c are direction ratios of a line, then its direction cosines are a/k, b/k, c/k, where",
+          "a": "k = sqrt(a^2 + b^2 + c^2) or k = -sqrt(a^2 + b^2 + c^2)",
+          "o": [
+            "k = sqrt(a^2 + b^2 + c^2) or k = -sqrt(a^2 + b^2 + c^2)",
+            "k = a^2 + b^2 + c^2",
+            "k = a + b + c",
+            "k = 1/sqrt(a^2 + b^2 + c^2)"
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "A line makes angles of 90 degrees, 60 degrees and 30 degrees with the positive directions of the x, y and z axes respectively. Its direction cosines are",
+          "a": "0, 1/2, sqrt(3)/2",
+          "o": [
+            "0, 1/2, sqrt(3)/2",
+            "1, sqrt(3)/2, 1/2",
+            "0, sqrt(3)/2, 1/2",
+            "90, 60, 30"
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "A line has direction ratios 2, -1, -2. One set of its direction cosines is",
+          "a": "2/3, -1/3, -2/3",
+          "o": [
+            "2/3, -1/3, -2/3",
+            "2/9, -1/9, -2/9",
+            "2/3, 1/3, 2/3",
+            "2, -1, -2"
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Hard",
+          "t": "mcq",
+          "m": 1,
+          "q": "A line has direction ratios -18, 12, -4. One set of its direction cosines is",
+          "a": "-9/11, 6/11, -2/11",
+          "o": [
+            "-9/11, 6/11, -2/11",
+            "-9/17, 6/17, -2/17",
+            "9/11, 6/11, 2/11",
+            "-18/484, 12/484, -4/484"
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Hard",
+          "t": "mcq",
+          "m": 1,
+          "q": "A line makes angles of 90 degrees, 135 degrees and 45 degrees with the x, y and z axes respectively. Its direction cosines are",
+          "a": "0, -1/sqrt(2), 1/sqrt(2)",
+          "o": [
+            "0, -1/sqrt(2), 1/sqrt(2)",
+            "0, 1/sqrt(2), 1/sqrt(2)",
+            "1, 1/sqrt(2), 1/sqrt(2)",
+            "0, -1/2, 1/2"
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Hard",
+          "t": "short_answer",
+          "m": 2,
+          "q": "A line makes equal angles with the three coordinate axes. Find its direction cosines.",
+          "a": "Let the direction cosines be l, l, l. Then l^2 + l^2 + l^2 = 1, so 3 l^2 = 1 and l = 1/sqrt(3) or -1/sqrt(3). The direction cosines are 1/sqrt(3), 1/sqrt(3), 1/sqrt(3) or -1/sqrt(3), -1/sqrt(3), -1/sqrt(3).",
+          "s": [
+            [
+              "Takes l = m = n and uses l^2 + m^2 + n^2 = 1 to get 3 l^2 = 1",
+              1
+            ],
+            [
+              "Gives the direction cosines as 1/sqrt(3) each (or -1/sqrt(3) each)",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Hardest",
+          "t": "long_answer",
+          "m": 3,
+          "q": "A line makes an angle of 60 degrees with the x-axis and 45 degrees with the y-axis. Find the possible angles it makes with the z-axis and write the corresponding direction cosines.",
+          "a": "l = cos 60 = 1/2 and m = cos 45 = 1/sqrt(2). From l^2 + m^2 + n^2 = 1, n^2 = 1 - 1/4 - 1/2 = 1/4, so n = 1/2 or -1/2. The angle with the z-axis is 60 degrees or 120 degrees, and the direction cosines are 1/2, 1/sqrt(2), 1/2 or 1/2, 1/sqrt(2), -1/2.",
+          "s": [
+            [
+              "Writes l = 1/2 and m = 1/sqrt(2)",
+              1
+            ],
+            [
+              "Uses l^2 + m^2 + n^2 = 1 to get n = 1/2 or -1/2",
+              1
+            ],
+            [
+              "States the angle with the z-axis is 60 or 120 degrees and writes the direction cosines",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Analyse",
+          "d": "Hard",
+          "t": "assertion_reason",
+          "m": 1,
+          "q": "Assertion (A): If a line has direction ratios 3, 4, 12, then 3/13, 4/13, 12/13 is a set of its direction cosines. Reason (R): The direction cosines of a line are obtained by dividing its direction ratios a, b, c by sqrt(a^2 + b^2 + c^2), taken with either sign.",
+          "a": "Both A and R are true, and R is the correct explanation of A",
+          "o": [
+            "Both A and R are true, and R is the correct explanation of A",
+            "Both A and R are true, but R is not the correct explanation of A",
+            "A is true, R is false",
+            "A is false, R is true"
+          ]
+        },
+        {
+          "b": "Analyse",
+          "d": "Hard",
+          "t": "multi_statement",
+          "m": 1,
+          "q": "Consider these statements about a line in space. (I) A given line, taken without a chosen direction, has two sets of direction cosines that differ only in sign. (II) A given line has exactly one set of direction ratios. Which is or are correct?",
+          "a": "Only I",
+          "o": [
+            "Only I",
+            "Only II",
+            "Both I and II",
+            "Neither I nor II"
+          ]
+        },
+        {
+          "b": "Analyse",
+          "d": "Hardest",
+          "t": "long_answer",
+          "m": 3,
+          "q": "Can a line make an angle of 45 degrees with each of the three coordinate axes? Analyse using direction cosines, and find the cosine of the angle that a line equally inclined to the three axes actually makes with each axis.",
+          "a": "If each angle were 45 degrees, then l = m = n = 1/sqrt(2) and l^2 + m^2 + n^2 = 1/2 + 1/2 + 1/2 = 3/2, which is not 1. So no such line exists. For an equally inclined line, 3 l^2 = 1, so the cosine of the angle with each axis is 1/sqrt(3) (or -1/sqrt(3) for the opposite direction).",
+          "s": [
+            [
+              "Finds l = m = n = 1/sqrt(2) and the sum of squares 3/2",
+              1
+            ],
+            [
+              "Concludes that no such line exists because the sum of squares must be 1",
+              1
+            ],
+            [
+              "Finds the cosine 1/sqrt(3) (or -1/sqrt(3)) for an equally inclined line",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Evaluate",
+          "d": "Hard",
+          "t": "short_answer",
+          "m": 2,
+          "q": "A student says: 'A line with direction ratios 1, 2, 2 and a line with direction ratios -2, -4, -4 must point in different directions, because the numbers are different.' Is the student right? Justify.",
+          "a": "No. -2, -4, -4 = -2 times (1, 2, 2), so the two sets are proportional and are direction ratios of the same line (or of parallel lines). Both give the direction cosines 1/3, 2/3, 2/3 up to sign.",
+          "s": [
+            [
+              "Shows the two sets are proportional (factor -2)",
+              1
+            ],
+            [
+              "Concludes they describe the same or parallel lines, e.g. both give direction cosines 1/3, 2/3, 2/3 up to sign",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Create",
+          "d": "Hardest",
+          "t": "long_answer",
+          "m": 3,
+          "q": "Construct a set of three non-zero integer direction ratios for a line whose direction cosines are all rational numbers. Write both sets of direction cosines of the line and verify that l^2 + m^2 + n^2 = 1.",
+          "a": "For example 2, 3, 6: sqrt(4 + 9 + 36) = 7. The direction cosines are 2/7, 3/7, 6/7 or -2/7, -3/7, -6/7. Check: 4/49 + 9/49 + 36/49 = 49/49 = 1. (1, 2, 2 with divisor 3 also works.)",
+          "s": [
+            [
+              "Gives non-zero integer direction ratios whose sum of squares is a perfect square",
+              1
+            ],
+            [
+              "Writes both sets of direction cosines (opposite signs)",
+              1
+            ],
+            [
+              "Verifies the sum of squares is 1",
+              1
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "code": "C12M-11.2",
+      "name": "Direction cosines of a line through two points and collinearity",
+      "description": "Direction ratios and direction cosines of the line joining P(x1, y1, z1) and Q(x2, y2, z2), and the use of proportional direction ratios with a common point to show three points are collinear.",
+      "idea": "Exactly one line passes through two points, and the differences of their coordinates give its direction ratios.",
+      "rule": "Direction ratios of PQ: x2 - x1, y2 - y1, z2 - z1 (or the negatives). Direction cosines: these divided by PQ = sqrt((x2 - x1)^2 + (y2 - y1)^2 + (z2 - z1)^2). A, B, C are collinear if the direction ratios of AB and BC are proportional.",
+      "example": "For P(-2, 4, -5) and Q(1, 2, 3): direction ratios 3, -2, 8, PQ = sqrt(77), direction cosines 3/sqrt(77), -2/sqrt(77), 8/sqrt(77).",
+      "difficulty_base": "Easy",
+      "questions": [
+        {
+          "b": "Remember",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "The direction ratios of the line segment joining P(x1, y1, z1) and Q(x2, y2, z2) may be taken as",
+          "a": "x2 - x1, y2 - y1, z2 - z1",
+          "o": [
+            "x2 - x1, y2 - y1, z2 - z1",
+            "x2 + x1, y2 + y1, z2 + z1",
+            "x1 x2, y1 y2, z1 z2",
+            "(x1 + x2)/2, (y1 + y2)/2, (z1 + z2)/2"
+          ]
+        },
+        {
+          "b": "Remember",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "In the direction cosines (x2 - x1)/PQ, (y2 - y1)/PQ, (z2 - z1)/PQ of the line joining P(x1, y1, z1) and Q(x2, y2, z2), the length PQ equals",
+          "a": "sqrt((x2 - x1)^2 + (y2 - y1)^2 + (z2 - z1)^2)",
+          "o": [
+            "sqrt((x2 - x1)^2 + (y2 - y1)^2 + (z2 - z1)^2)",
+            "(x2 - x1)^2 + (y2 - y1)^2 + (z2 - z1)^2",
+            "|x2 - x1| + |y2 - y1| + |z2 - z1|",
+            "sqrt((x2 + x1)^2 + (y2 + y1)^2 + (z2 + z1)^2)"
+          ]
+        },
+        {
+          "b": "Remember",
+          "d": "Easy",
+          "t": "fill_blank",
+          "m": 1,
+          "q": "Through two given distinct points in space there passes one and only ____ line. (Answer with a number word.)",
+          "a": "one"
+        },
+        {
+          "b": "Remember",
+          "d": "Hard",
+          "t": "mcq",
+          "m": 1,
+          "q": "For the line through P(1, 2, 3) and Q(3, 5, 9), which of the following is NOT a set of direction ratios?",
+          "a": "4, 7, 12",
+          "o": [
+            "4, 7, 12",
+            "2, 3, 6",
+            "-2, -3, -6",
+            "4, 6, 12"
+          ],
+          "rev": true
+        },
+        {
+          "b": "Understand",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "For the line PQ, taking x1 - x2, y1 - y2, z1 - z2 as direction ratios instead of x2 - x1, y2 - y1, z2 - z1 is",
+          "a": "equally valid, because the two sets are proportional (factor -1)",
+          "o": [
+            "equally valid, because the two sets are proportional (factor -1)",
+            "wrong, because direction ratios must all be positive",
+            "wrong, because it gives a line perpendicular to PQ",
+            "valid only when P is the origin"
+          ]
+        },
+        {
+          "b": "Understand",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "Three points A, B and C are collinear if the direction ratios of AB and BC are",
+          "a": "proportional",
+          "o": [
+            "proportional",
+            "equal in sum",
+            "such that the sum of their products in pairs is zero",
+            "all positive"
+          ]
+        },
+        {
+          "b": "Understand",
+          "d": "Easy",
+          "t": "fill_blank",
+          "m": 1,
+          "q": "The direction ratios of the line joining A(2, 3, -4) and B(1, -2, 3), taken as B minus A, are -1, -5, ____.",
+          "a": "7"
+        },
+        {
+          "b": "Understand",
+          "d": "Hard",
+          "t": "mcq",
+          "m": 1,
+          "q": "The direction ratios of AB and BC are found to be proportional. Why does this prove that A, B, C are collinear, and not merely that AB is parallel to BC?",
+          "a": "Because B is common to AB and BC, and parallel lines through a common point coincide",
+          "o": [
+            "Because B is common to AB and BC, and parallel lines through a common point coincide",
+            "Because proportional direction ratios always mean the lines are perpendicular",
+            "Because AB and BC must then have equal lengths",
+            "Because any three points in space are always collinear"
+          ]
+        },
+        {
+          "b": "Understand",
+          "d": "Hard",
+          "t": "mcq",
+          "m": 1,
+          "q": "Compared with the direction cosines of the line directed from P to Q, the direction cosines of the same line directed from Q to P are",
+          "a": "equal in magnitude and opposite in sign",
+          "o": [
+            "equal in magnitude and opposite in sign",
+            "identical in every respect",
+            "the reciprocals of the first set",
+            "the same numbers in reverse order"
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "Direction ratios of the line joining the points (1, -1, 2) and (3, 4, -2) are",
+          "a": "2, 5, -4",
+          "o": [
+            "2, 5, -4",
+            "4, 3, 0",
+            "2, 3, -4",
+            "2, 5, 4"
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "The distance PQ between P(-2, 4, -5) and Q(1, 2, 3) is",
+          "a": "sqrt(77)",
+          "o": [
+            "sqrt(77)",
+            "77",
+            "13",
+            "sqrt(41)"
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Hard",
+          "t": "mcq",
+          "m": 1,
+          "q": "The direction cosines of the line through P(-2, 4, -5) and Q(1, 2, 3), directed from P to Q, are",
+          "a": "3/sqrt(77), -2/sqrt(77), 8/sqrt(77)",
+          "o": [
+            "3/sqrt(77), -2/sqrt(77), 8/sqrt(77)",
+            "3/77, -2/77, 8/77",
+            "3/sqrt(77), 2/sqrt(77), 8/sqrt(77)",
+            "-1/sqrt(41), 6/sqrt(41), -2/sqrt(41)"
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Hard",
+          "t": "mcq",
+          "m": 1,
+          "q": "The direction cosines of the line directed from A(1, 2, 3) to B(3, 5, 9) are",
+          "a": "2/7, 3/7, 6/7",
+          "o": [
+            "2/7, 3/7, 6/7",
+            "2/11, 3/11, 6/11",
+            "2/49, 3/49, 6/49",
+            "4/sqrt(209), 7/sqrt(209), 12/sqrt(209)"
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Hard",
+          "t": "short_answer",
+          "m": 2,
+          "q": "Show that the points A(2, 3, 4), B(-1, -2, 1) and C(5, 8, 7) are collinear.",
+          "a": "Direction ratios of AB are -1 - 2, -2 - 3, 1 - 4, i.e. -3, -5, -3. Direction ratios of BC are 5 + 1, 8 + 2, 7 - 1, i.e. 6, 10, 6 = -2 times (-3, -5, -3). They are proportional, so AB is parallel to BC; B is common, so A, B, C are collinear.",
+          "s": [
+            [
+              "Finds direction ratios of AB (-3, -5, -3) and of BC (6, 10, 6)",
+              1
+            ],
+            [
+              "Shows they are proportional and, with B common, concludes the points are collinear",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Hardest",
+          "t": "long_answer",
+          "m": 3,
+          "q": "Find the direction cosines of the sides AB, BC and CA of the triangle with vertices A(3, 5, -4), B(-1, 1, 2) and C(-5, -5, -2).",
+          "a": "AB: direction ratios -4, -4, 6, length sqrt(68) = 2 sqrt(17), direction cosines -2/sqrt(17), -2/sqrt(17), 3/sqrt(17). BC: direction ratios -4, -6, -4, length 2 sqrt(17), direction cosines -2/sqrt(17), -3/sqrt(17), -2/sqrt(17). CA: direction ratios 8, 10, -2, length sqrt(168) = 2 sqrt(42), direction cosines 4/sqrt(42), 5/sqrt(42), -1/sqrt(42).",
+          "s": [
+            [
+              "Direction cosines of AB: -2/sqrt(17), -2/sqrt(17), 3/sqrt(17)",
+              1
+            ],
+            [
+              "Direction cosines of BC: -2/sqrt(17), -3/sqrt(17), -2/sqrt(17)",
+              1
+            ],
+            [
+              "Direction cosines of CA: 4/sqrt(42), 5/sqrt(42), -1/sqrt(42)",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Analyse",
+          "d": "Hard",
+          "t": "assertion_reason",
+          "m": 1,
+          "q": "Assertion (A): The points A(2, 3, -4), B(1, -2, 3) and C(3, 8, -11) are collinear. Reason (R): The direction cosines l, m, n of the line joining two points satisfy l^2 + m^2 + n^2 = 1.",
+          "a": "Both A and R are true, but R is not the correct explanation of A",
+          "o": [
+            "Both A and R are true, but R is not the correct explanation of A",
+            "Both A and R are true, and R is the correct explanation of A",
+            "A is true, R is false",
+            "A is false, R is true"
+          ]
+        },
+        {
+          "b": "Analyse",
+          "d": "Hard",
+          "t": "multi_statement",
+          "m": 1,
+          "q": "Consider the line through P(1, 0, 0) and Q(0, 1, 0). (I) The direction cosines of the line directed from P to Q are -1/2, 1/2, 0. (II) The numbers -1, 1, 0 are a set of direction ratios of the line PQ. Which is or are correct?",
+          "a": "Only II",
+          "o": [
+            "Only II",
+            "Only I",
+            "Both I and II",
+            "Neither I nor II"
+          ]
+        },
+        {
+          "b": "Analyse",
+          "d": "Hardest",
+          "t": "long_answer",
+          "m": 3,
+          "q": "The points A(1, 2, 3), B(3, 5, 9) and C(5, p, q) are collinear. Find p and q.",
+          "a": "Direction ratios of AB are 2, 3, 6. Direction ratios of BC are 2, p - 5, q - 9. For collinearity these are proportional: 2/2 = (p - 5)/3 = (q - 9)/6, so p - 5 = 3 and q - 9 = 6. Hence p = 8 and q = 15.",
+          "s": [
+            [
+              "Finds direction ratios of AB (2, 3, 6) and BC (2, p - 5, q - 9)",
+              1
+            ],
+            [
+              "Sets the two sets proportional",
+              1
+            ],
+            [
+              "Gets p = 8 and q = 15",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Evaluate",
+          "d": "Hard",
+          "t": "short_answer",
+          "m": 2,
+          "q": "For four points A, B, C, D a student finds that AB has direction ratios 1, 2, 3 and CD has direction ratios 2, 4, 6, and concludes that A, B, C, D all lie on one line. Evaluate this conclusion.",
+          "a": "The conclusion does not follow. Proportional direction ratios show only that AB is parallel to CD. Collinearity needs a common point as well (as B is common to AB and BC in the textbook method); AB and CD could be two distinct parallel lines.",
+          "s": [
+            [
+              "States that proportional direction ratios prove only that AB is parallel to CD",
+              1
+            ],
+            [
+              "Explains that a common point (e.g. checking BC as well) is needed, so the lines may be distinct parallel lines",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Create",
+          "d": "Hardest",
+          "t": "long_answer",
+          "m": 3,
+          "q": "Construct three distinct points with integer coordinates, none of them the origin, that lie on one line with direction ratios 1, -2, 2. Verify the collinearity using direction ratios and write the direction cosines of the line.",
+          "a": "For example A(1, 1, 1), B(2, -1, 3), C(3, -3, 5). AB has direction ratios 1, -2, 2 and BC has direction ratios 1, -2, 2, which are proportional, and B is common, so the points are collinear. Since sqrt(1 + 4 + 4) = 3, the direction cosines are 1/3, -2/3, 2/3 (or all signs reversed).",
+          "s": [
+            [
+              "Gives three valid distinct integer points, none the origin",
+              1
+            ],
+            [
+              "Verifies direction ratios of AB and BC are proportional with B common",
+              1
+            ],
+            [
+              "Writes the direction cosines 1/3, -2/3, 2/3 (or the opposite signs)",
+              1
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "code": "C12M-11.3",
+      "name": "Equation of a line in space: vector and Cartesian forms",
+      "description": "The vector equation r = a + lambda b of a line through a given point parallel to a given vector, its parametric and Cartesian forms, conversion between the forms, and the line through two points r = a + lambda (b - a).",
+      "idea": "A line is fixed by one point on it and its direction. Every point of the line is reached from the given point by moving some multiple lambda of the direction vector.",
+      "rule": "Vector form: r = a + lambda b. Cartesian form through (x1, y1, z1) with direction ratios a, b, c: (x - x1)/a = (y - y1)/b = (z - z1)/c, obtained by eliminating lambda from x = x1 + lambda a, y = y1 + lambda b, z = z1 + lambda c.",
+      "example": "The line through (5, 2, -4) parallel to 3i + 2j - 8k is r = 5i + 2j - 4k + lambda (3i + 2j - 8k), i.e. (x - 5)/3 = (y - 2)/2 = (z + 4)/(-8).",
+      "difficulty_base": "Easy",
+      "questions": [
+        {
+          "b": "Remember",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "The vector equation of the line that passes through the point with position vector a and is parallel to the vector b is",
+          "a": "r = a + lambda b",
+          "o": [
+            "r = a + lambda b",
+            "r = b + lambda a",
+            "r = lambda (a + b)",
+            "r = a x b"
+          ]
+        },
+        {
+          "b": "Remember",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "The Cartesian equation of the line through the point (x1, y1, z1) with direction ratios a, b, c is",
+          "a": "(x - x1)/a = (y - y1)/b = (z - z1)/c",
+          "o": [
+            "(x - x1)/a = (y - y1)/b = (z - z1)/c",
+            "(x + x1)/a = (y + y1)/b = (z + z1)/c",
+            "(x - a)/x1 = (y - b)/y1 = (z - c)/z1",
+            "a(x - x1) + b(y - y1) + c(z - z1) = 0"
+          ]
+        },
+        {
+          "b": "Remember",
+          "d": "Easy",
+          "t": "fill_blank",
+          "m": 1,
+          "q": "In the vector equation r = a + lambda b of a line, the real number lambda is called the ____.",
+          "a": "parameter"
+        },
+        {
+          "b": "Remember",
+          "d": "Hard",
+          "t": "mcq",
+          "m": 1,
+          "q": "For the line r = a + lambda b, which of the following statements is NOT true?",
+          "a": "The line must pass through the point whose position vector is b",
+          "o": [
+            "The line must pass through the point whose position vector is b",
+            "The line passes through the point whose position vector is a",
+            "The line is parallel to the vector b",
+            "Each real value of lambda gives the position vector of a point on the line"
+          ],
+          "rev": true
+        },
+        {
+          "b": "Understand",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "In the vector equation r = a + lambda b of a line, the vector r stands for",
+          "a": "the position vector of an arbitrary point on the line",
+          "o": [
+            "the position vector of an arbitrary point on the line",
+            "the position vector of the one fixed given point only",
+            "a vector perpendicular to the line",
+            "the length of the line"
+          ]
+        },
+        {
+          "b": "Understand",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "If a line is parallel to the vector b = a i + b j + c k, then the numbers a, b, c are",
+          "a": "direction ratios of the line",
+          "o": [
+            "direction ratios of the line",
+            "always the direction cosines of the line",
+            "the coordinates of a point on the line",
+            "the intercepts of the line on the axes"
+          ]
+        },
+        {
+          "b": "Understand",
+          "d": "Easy",
+          "t": "fill_blank",
+          "m": 1,
+          "q": "The line (x - 5)/3 = (y + 4)/7 = (z - 6)/2 passes through a fixed point whose x-coordinate, read from the equation, is ____.",
+          "a": "5"
+        },
+        {
+          "b": "Understand",
+          "d": "Hard",
+          "t": "mcq",
+          "m": 1,
+          "q": "The line (x - 5)/3 = (y + 4)/7 = (z - 6)/2 passes through the point",
+          "a": "(5, -4, 6)",
+          "o": [
+            "(5, -4, 6)",
+            "(-5, 4, -6)",
+            "(3, 7, 2)",
+            "(5, 4, 6)"
+          ]
+        },
+        {
+          "b": "Understand",
+          "d": "Hard",
+          "t": "mcq",
+          "m": 1,
+          "q": "The Cartesian equation of a line is obtained from its parametric equations x = x1 + lambda a, y = y1 + lambda b, z = z1 + lambda c by",
+          "a": "eliminating the parameter lambda",
+          "o": [
+            "eliminating the parameter lambda",
+            "putting lambda = 0",
+            "adding the three equations",
+            "squaring and adding the three equations"
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "The vector equation of the line through the point (1, 2, 3) and parallel to the vector 3i + 2j - 2k is",
+          "a": "r = i + 2j + 3k + lambda (3i + 2j - 2k)",
+          "o": [
+            "r = i + 2j + 3k + lambda (3i + 2j - 2k)",
+            "r = 3i + 2j - 2k + lambda (i + 2j + 3k)",
+            "r = -i - 2j - 3k + lambda (3i + 2j - 2k)",
+            "r = i + 2j + 3k + lambda (3i + 2j + 2k)"
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "The Cartesian equation of the line through the point (5, 2, -4) and parallel to the vector 3i + 2j - 8k is",
+          "a": "(x - 5)/3 = (y - 2)/2 = (z + 4)/(-8)",
+          "o": [
+            "(x - 5)/3 = (y - 2)/2 = (z + 4)/(-8)",
+            "(x + 5)/3 = (y + 2)/2 = (z - 4)/(-8)",
+            "(x - 3)/5 = (y - 2)/2 = (z + 8)/(-4)",
+            "(x - 5)/3 = (y - 2)/2 = (z - 4)/(-8)"
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Hard",
+          "t": "mcq",
+          "m": 1,
+          "q": "The Cartesian equation of the line through the point (-2, 4, -5) and parallel to the line (x + 3)/3 = (y - 4)/5 = (z + 8)/6 is",
+          "a": "(x + 2)/3 = (y - 4)/5 = (z + 5)/6",
+          "o": [
+            "(x + 2)/3 = (y - 4)/5 = (z + 5)/6",
+            "(x - 2)/3 = (y + 4)/5 = (z - 5)/6",
+            "(x + 3)/(-2) = (y - 4)/4 = (z + 8)/(-5)",
+            "(x + 2)/(-3) = (y - 4)/4 = (z + 5)/(-8)"
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Hard",
+          "t": "mcq",
+          "m": 1,
+          "q": "The vector form of the line (x - 5)/3 = (y + 4)/7 = (z - 6)/2 is",
+          "a": "r = 5i - 4j + 6k + lambda (3i + 7j + 2k)",
+          "o": [
+            "r = 5i - 4j + 6k + lambda (3i + 7j + 2k)",
+            "r = -5i + 4j - 6k + lambda (3i + 7j + 2k)",
+            "r = 3i + 7j + 2k + lambda (5i - 4j + 6k)",
+            "r = 5i + 4j + 6k + lambda (3i + 7j + 2k)"
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Hard",
+          "t": "short_answer",
+          "m": 2,
+          "q": "Find the vector and the Cartesian equations of the line that passes through the point with position vector 2i - j + 4k and is in the direction i + 2j - k.",
+          "a": "Vector form: r = 2i - j + 4k + lambda (i + 2j - k). The point is (2, -1, 4) and the direction ratios are 1, 2, -1, so the Cartesian form is (x - 2)/1 = (y + 1)/2 = (z - 4)/(-1).",
+          "s": [
+            [
+              "Writes r = 2i - j + 4k + lambda (i + 2j - k)",
+              1
+            ],
+            [
+              "Writes (x - 2)/1 = (y + 1)/2 = (z - 4)/(-1)",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Hardest",
+          "t": "long_answer",
+          "m": 3,
+          "q": "Find the vector and the Cartesian equations of the line passing through the two points A(-1, 0, 2) and B(3, 4, 6).",
+          "a": "Position vectors: a = -i + 2k, b = 3i + 4j + 6k, so b - a = 4i + 4j + 4k. Vector equation: r = a + lambda (b - a) = -i + 2k + lambda (4i + 4j + 4k). Cartesian equation: (x + 1)/4 = y/4 = (z - 2)/4, i.e. x + 1 = y = z - 2.",
+          "s": [
+            [
+              "Finds b - a = 4i + 4j + 4k (direction ratios 4, 4, 4 or 1, 1, 1)",
+              1
+            ],
+            [
+              "Writes r = -i + 2k + lambda (4i + 4j + 4k) or an equivalent form",
+              1
+            ],
+            [
+              "Writes (x + 1)/4 = y/4 = (z - 2)/4 or an equivalent form",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Analyse",
+          "d": "Hard",
+          "t": "assertion_reason",
+          "m": 1,
+          "q": "Assertion (A): The line (x - 1)/2 = (y - 2)/3 = (z - 3)/6 is parallel to the vector 2i + 3j + 6k. Reason (R): In the Cartesian equation (x - x1)/a = (y - y1)/b = (z - z1)/c of a line, the denominators a, b, c are always the direction cosines of the line.",
+          "a": "A is true, R is false",
+          "o": [
+            "A is true, R is false",
+            "Both A and R are true, and R is the correct explanation of A",
+            "Both A and R are true, but R is not the correct explanation of A",
+            "A is false, R is true"
+          ]
+        },
+        {
+          "b": "Analyse",
+          "d": "Hard",
+          "t": "multi_statement",
+          "m": 1,
+          "q": "Consider these statements about equations of lines. (I) The x-axis can be written as r = lambda i. (II) The line r = 2i + lambda (j + k) passes through the point (2, 3, 3). Which is or are correct?",
+          "a": "Both I and II",
+          "o": [
+            "Both I and II",
+            "Only I",
+            "Only II",
+            "Neither I nor II"
+          ]
+        },
+        {
+          "b": "Analyse",
+          "d": "Hardest",
+          "t": "long_answer",
+          "m": 3,
+          "q": "Find the vector equation of the line passing through the point (1, 2, -4) and perpendicular to the two lines (x - 8)/3 = (y + 19)/(-16) = (z - 10)/7 and (x - 15)/3 = (y - 29)/8 = (z - 5)/(-5).",
+          "a": "The required line is perpendicular to b1 = 3i - 16j + 7k and b2 = 3i + 8j - 5k, so it is parallel to b1 x b2 = (80 - 56)i - (-15 - 21)j + (24 + 48)k = 24i + 36j + 72k, i.e. to 2i + 3j + 6k. Hence r = i + 2j - 4k + lambda (2i + 3j + 6k).",
+          "s": [
+            [
+              "Identifies b1 = 3i - 16j + 7k, b2 = 3i + 8j - 5k and that the line is along b1 x b2",
+              1
+            ],
+            [
+              "Computes b1 x b2 = 24i + 36j + 72k (direction 2i + 3j + 6k)",
+              1
+            ],
+            [
+              "Writes r = i + 2j - 4k + lambda (2i + 3j + 6k)",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Evaluate",
+          "d": "Hard",
+          "t": "short_answer",
+          "m": 2,
+          "q": "For the line through the point (4, -3, 1) parallel to the vector 2i + 5j - 3k, a student writes the Cartesian equation (x - 2)/4 = (y - 5)/(-3) = (z + 3)/1. Evaluate the student's answer.",
+          "a": "It is wrong: the student has interchanged the point and the direction. The point's coordinates are subtracted in the numerators and the direction ratios go in the denominators. The correct equation is (x - 4)/2 = (y + 3)/5 = (z - 1)/(-3).",
+          "s": [
+            [
+              "Identifies that the point and the direction ratios have been interchanged",
+              1
+            ],
+            [
+              "Writes the correct equation (x - 4)/2 = (y + 3)/5 = (z - 1)/(-3)",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Create",
+          "d": "Hardest",
+          "t": "long_answer",
+          "m": 3,
+          "q": "Construct a line through the point (1, 1, 1) that is not parallel to any coordinate axis and whose direction ratios are three different positive integers. Write its vector equation, its Cartesian equation, and one more point on it.",
+          "a": "For example take b = 2i + 3j + 6k. Vector equation: r = i + j + k + lambda (2i + 3j + 6k). Cartesian equation: (x - 1)/2 = (y - 1)/3 = (z - 1)/6. Putting lambda = 1 gives another point (3, 4, 7).",
+          "s": [
+            [
+              "Writes a valid vector equation r = i + j + k + lambda b with three different positive integer components in b",
+              1
+            ],
+            [
+              "Writes the matching Cartesian equation",
+              1
+            ],
+            [
+              "Gives a correct second point for a stated value of lambda",
+              1
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "code": "C12M-11.4",
+      "name": "Angle between two lines",
+      "description": "The acute angle between two lines from their direction ratios, direction cosines or direction vectors, and the conditions for two lines to be perpendicular or parallel.",
+      "idea": "The angle between two lines is the acute angle between their direction vectors; the points the lines pass through play no part. For skew lines, parallel lines through one point are used.",
+      "rule": "cos theta = |a1 a2 + b1 b2 + c1 c2| / (sqrt(a1^2 + b1^2 + c1^2) sqrt(a2^2 + b2^2 + c2^2)) = |b1 . b2| / (|b1| |b2|); with direction cosines cos theta = |l1 l2 + m1 m2 + n1 n2|. Perpendicular: a1 a2 + b1 b2 + c1 c2 = 0. Parallel: a1/a2 = b1/b2 = c1/c2.",
+      "example": "For direction vectors i + 2j + 2k and 3i + 2j + 6k: cos theta = (3 + 4 + 12)/(3 x 7) = 19/21.",
+      "difficulty_base": "Hard",
+      "questions": [
+        {
+          "b": "Remember",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "If theta is the acute angle between two lines with direction ratios a1, b1, c1 and a2, b2, c2, then cos theta equals",
+          "a": "|a1 a2 + b1 b2 + c1 c2| / (sqrt(a1^2 + b1^2 + c1^2) sqrt(a2^2 + b2^2 + c2^2))",
+          "o": [
+            "|a1 a2 + b1 b2 + c1 c2| / (sqrt(a1^2 + b1^2 + c1^2) sqrt(a2^2 + b2^2 + c2^2))",
+            "|a1 a2 + b1 b2 + c1 c2|",
+            "|a1 a2 + b1 b2 + c1 c2| / (a1^2 + b1^2 + c1^2 + a2^2 + b2^2 + c2^2)",
+            "|a1 b2 + b1 c2 + c1 a2| / (sqrt(a1^2 + b1^2 + c1^2) sqrt(a2^2 + b2^2 + c2^2))"
+          ]
+        },
+        {
+          "b": "Remember",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "Two lines with direction ratios a1, b1, c1 and a2, b2, c2 are perpendicular if",
+          "a": "a1 a2 + b1 b2 + c1 c2 = 0",
+          "o": [
+            "a1 a2 + b1 b2 + c1 c2 = 0",
+            "a1/a2 = b1/b2 = c1/c2",
+            "a1 a2 + b1 b2 + c1 c2 = 1",
+            "a1 + b1 + c1 = a2 + b2 + c2"
+          ]
+        },
+        {
+          "b": "Remember",
+          "d": "Easy",
+          "t": "fill_blank",
+          "m": 1,
+          "q": "If l1, m1, n1 and l2, m2, n2 are the direction cosines of two perpendicular lines, then l1 l2 + m1 m2 + n1 n2 = ____.",
+          "a": "0"
+        },
+        {
+          "b": "Remember",
+          "d": "Hard",
+          "t": "mcq",
+          "m": 1,
+          "q": "Which of the following is NOT a correct statement about the angle between two lines with direction ratios a1, b1, c1 and a2, b2, c2?",
+          "a": "The lines are parallel if a1 a2 + b1 b2 + c1 c2 = 0",
+          "o": [
+            "The lines are parallel if a1 a2 + b1 b2 + c1 c2 = 0",
+            "The lines are perpendicular if a1 a2 + b1 b2 + c1 c2 = 0",
+            "The lines are parallel if a1/a2 = b1/b2 = c1/c2",
+            "If the lines do not pass through the origin, parallel lines through the origin may be used to find the angle"
+          ],
+          "rev": true
+        },
+        {
+          "b": "Understand",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "With direction cosines, the formula cos theta = |l1 l2 + m1 m2 + n1 n2| for the angle between two lines needs no denominator because",
+          "a": "l1^2 + m1^2 + n1^2 = 1 and l2^2 + m2^2 + n2^2 = 1",
+          "o": [
+            "l1^2 + m1^2 + n1^2 = 1 and l2^2 + m2^2 + n2^2 = 1",
+            "direction cosines are always positive",
+            "both lines pass through the origin",
+            "theta is always 90 degrees"
+          ]
+        },
+        {
+          "b": "Understand",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "The angle between two skew lines is taken as the angle between",
+          "a": "two intersecting lines drawn from any point parallel to each of the skew lines",
+          "o": [
+            "two intersecting lines drawn from any point parallel to each of the skew lines",
+            "the line of shortest distance and one of the skew lines",
+            "the two points where the lines meet the XY-plane",
+            "nothing at all, since it is not defined for skew lines"
+          ]
+        },
+        {
+          "b": "Understand",
+          "d": "Easy",
+          "t": "fill_blank",
+          "m": 1,
+          "q": "Two lines with direction ratios a1, b1, c1 and a2, b2, c2 satisfying a1/a2 = b1/b2 = c1/c2 are ____ to each other.",
+          "a": "parallel"
+        },
+        {
+          "b": "Understand",
+          "d": "Hard",
+          "t": "mcq",
+          "m": 1,
+          "q": "In cos theta = |b1 . b2| / (|b1| |b2|) for the lines r = a1 + lambda b1 and r = a2 + mu b2, the absolute value ensures that",
+          "a": "theta is the acute (or right) angle between the lines, whichever way b1 and b2 point",
+          "o": [
+            "theta is the acute (or right) angle between the lines, whichever way b1 and b2 point",
+            "theta is always greater than 90 degrees",
+            "the two lines intersect",
+            "b1 and b2 are unit vectors"
+          ]
+        },
+        {
+          "b": "Understand",
+          "d": "Hard",
+          "t": "mcq",
+          "m": 1,
+          "q": "The angle between the lines r = a1 + lambda b1 and r = a2 + mu b2 depends on",
+          "a": "only the vectors b1 and b2",
+          "o": [
+            "only the vectors b1 and b2",
+            "only the vectors a1 and a2",
+            "only the vector a2 - a1",
+            "the values chosen for lambda and mu"
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "The lines (x - 5)/7 = (y + 2)/(-5) = z/1 and x/1 = y/2 = z/3 are",
+          "a": "perpendicular to each other",
+          "o": [
+            "perpendicular to each other",
+            "parallel to each other",
+            "inclined at 60 degrees to each other",
+            "inclined at 45 degrees to each other"
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Easy",
+          "t": "fill_blank",
+          "m": 1,
+          "q": "If theta is the acute angle between the lines r = 3i + 2j - 4k + lambda (i + 2j + 2k) and r = 5i - 2j + mu (3i + 2j + 6k), then cos theta = ____. (Answer as a fraction.)",
+          "a": "19/21"
+        },
+        {
+          "b": "Apply",
+          "d": "Hard",
+          "t": "mcq",
+          "m": 1,
+          "q": "The acute angle between the lines (x + 3)/3 = (y - 1)/5 = (z + 3)/4 and (x + 1)/1 = (y - 4)/1 = (z - 5)/2 is",
+          "a": "cos^-1(8 sqrt(3)/15)",
+          "o": [
+            "cos^-1(8 sqrt(3)/15)",
+            "cos^-1(4/75)",
+            "cos^-1(8/15)",
+            "sin^-1(8 sqrt(3)/15)"
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Hard",
+          "t": "mcq",
+          "m": 1,
+          "q": "The acute angle between the lines x/2 = y/2 = z/1 and (x - 5)/4 = (y - 2)/1 = (z - 3)/8 is",
+          "a": "cos^-1(2/3)",
+          "o": [
+            "cos^-1(2/3)",
+            "cos^-1(2/9)",
+            "sin^-1(2/3)",
+            "cos^-1(18/65)"
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Hard",
+          "t": "short_answer",
+          "m": 2,
+          "q": "The lines (x - 1)/(-3) = (y - 2)/(2k) = (z - 3)/2 and (x - 1)/(3k) = (y - 1)/1 = (z - 6)/(-5) are perpendicular. Find the value of k.",
+          "a": "Direction ratios are -3, 2k, 2 and 3k, 1, -5. For perpendicular lines (-3)(3k) + (2k)(1) + (2)(-5) = 0, so -9k + 2k - 10 = 0, giving -7k = 10 and k = -10/7.",
+          "s": [
+            [
+              "Applies a1 a2 + b1 b2 + c1 c2 = 0 to get -9k + 2k - 10 = 0",
+              1
+            ],
+            [
+              "Solves to get k = -10/7",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Hardest",
+          "t": "long_answer",
+          "m": 3,
+          "q": "Find the value of p so that the lines (1 - x)/3 = (7y - 14)/(2p) = (z - 3)/2 and (7 - 7x)/(3p) = (y - 5)/1 = (6 - z)/5 are at right angles.",
+          "a": "In standard form the lines are (x - 1)/(-3) = (y - 2)/(2p/7) = (z - 3)/2 and (x - 1)/(-3p/7) = (y - 5)/1 = (z - 6)/(-5). Direction ratios: -3, 2p/7, 2 and -3p/7, 1, -5. Perpendicular: (-3)(-3p/7) + (2p/7)(1) + (2)(-5) = 0, so 9p/7 + 2p/7 = 10, 11p/7 = 10 and p = 70/11.",
+          "s": [
+            [
+              "Rewrites both lines in standard form with direction ratios -3, 2p/7, 2 and -3p/7, 1, -5",
+              1
+            ],
+            [
+              "Applies a1 a2 + b1 b2 + c1 c2 = 0 to get 11p/7 - 10 = 0",
+              1
+            ],
+            [
+              "Gets p = 70/11",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Analyse",
+          "d": "Hard",
+          "t": "assertion_reason",
+          "m": 1,
+          "q": "Assertion (A): The lines with direction ratios 1, 2, 2 and 2, 4, 4 are perpendicular to each other. Reason (R): Two lines with direction ratios a1, b1, c1 and a2, b2, c2 are perpendicular if a1 a2 + b1 b2 + c1 c2 = 0.",
+          "a": "A is false, R is true",
+          "o": [
+            "A is false, R is true",
+            "Both A and R are true, and R is the correct explanation of A",
+            "Both A and R are true, but R is not the correct explanation of A",
+            "A is true, R is false"
+          ]
+        },
+        {
+          "b": "Analyse",
+          "d": "Hard",
+          "t": "multi_statement",
+          "m": 1,
+          "q": "Consider these statements about the angle between two lines. (I) The lines with direction ratios 1, 1, 2 and 2, 2, 4 are perpendicular. (II) The angle between two lines changes when each line is replaced by the parallel line through the origin. Which is or are correct?",
+          "a": "Neither I nor II",
+          "o": [
+            "Neither I nor II",
+            "Only I",
+            "Only II",
+            "Both I and II"
+          ]
+        },
+        {
+          "b": "Analyse",
+          "d": "Hardest",
+          "t": "long_answer",
+          "m": 3,
+          "q": "Show that the three lines with direction cosines 12/13, -3/13, -4/13; 4/13, 12/13, 3/13; and 3/13, -4/13, 12/13 are mutually perpendicular.",
+          "a": "First and second: (12)(4) + (-3)(12) + (-4)(3) = 48 - 36 - 12 = 0, divided by 169 gives 0. Second and third: (4)(3) + (12)(-4) + (3)(12) = 12 - 48 + 36 = 0. Third and first: (3)(12) + (-4)(-3) + (12)(-4) = 36 + 12 - 48 = 0. Since l1 l2 + m1 m2 + n1 n2 = 0 for every pair, the lines are mutually perpendicular.",
+          "s": [
+            [
+              "Shows l1 l2 + m1 m2 + n1 n2 = 0 for the first and second lines",
+              1
+            ],
+            [
+              "Shows it is 0 for the second and third lines",
+              1
+            ],
+            [
+              "Shows it is 0 for the third and first lines and concludes",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Evaluate",
+          "d": "Hard",
+          "t": "short_answer",
+          "m": 2,
+          "q": "For two lines a student finds b1 . b2 = -6, |b1| = 3 and |b2| = 4, and reports the angle between the lines as cos^-1(-1/2) = 120 degrees. Evaluate this answer.",
+          "a": "The angle between two lines is taken as the acute angle, so cos theta = |b1 . b2| / (|b1| |b2|) = 6/12 = 1/2 and theta = 60 degrees. The student dropped the absolute value; 120 degrees is the supplement of the required angle.",
+          "s": [
+            [
+              "States that the acute angle is required, so the absolute value of b1 . b2 must be used",
+              1
+            ],
+            [
+              "Gives cos theta = 1/2 and theta = 60 degrees",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Create",
+          "d": "Hardest",
+          "t": "long_answer",
+          "m": 3,
+          "q": "Construct a line through the origin, with non-zero integer direction ratios, that is perpendicular to the line x/1 = y/2 = z/3. Write its Cartesian equation and verify the perpendicularity.",
+          "a": "For example direction ratios 1, 1, -1: the line is x/1 = y/1 = z/(-1). Check: (1)(1) + (2)(1) + (3)(-1) = 1 + 2 - 3 = 0, so the lines are perpendicular. (5, -1, -1 or 1, -2, 1 also work.)",
+          "s": [
+            [
+              "Chooses non-zero integer direction ratios a, b, c with a + 2b + 3c = 0",
+              1
+            ],
+            [
+              "Writes the Cartesian equation of the line through the origin",
+              1
+            ],
+            [
+              "Verifies a1 a2 + b1 b2 + c1 c2 = 0",
+              1
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "code": "C12M-11.5",
+      "name": "Skew lines and the shortest distance between them",
+      "description": "Skew lines as non-coplanar lines that are neither parallel nor intersecting, the line of shortest distance perpendicular to both, and the shortest distance in vector and Cartesian form.",
+      "idea": "Skew lines never meet and are not parallel. The shortest segment joining them is perpendicular to both, so it lies along b1 x b2, and its length is the projection of any joining vector a2 - a1 on that direction.",
+      "rule": "d = |(b1 x b2) . (a2 - a1)| / |b1 x b2| for the lines r = a1 + lambda b1 and r = a2 + mu b2. Intersecting lines have d = 0.",
+      "example": "For r = i + j + lambda (2i - j + k) and r = 2i + j - k + mu (3i - 5j + 2k): b1 x b2 = 3i - j - 7k, a2 - a1 = i - k, d = |3 + 7|/sqrt(59) = 10/sqrt(59).",
+      "difficulty_base": "Hard",
+      "questions": [
+        {
+          "b": "Remember",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "Lines in space which are neither intersecting nor parallel are called",
+          "a": "skew lines",
+          "o": [
+            "skew lines",
+            "coplanar lines",
+            "collinear lines",
+            "coincident lines"
+          ]
+        },
+        {
+          "b": "Remember",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "The shortest distance between the skew lines r = a1 + lambda b1 and r = a2 + mu b2 is",
+          "a": "|(b1 x b2) . (a2 - a1)| / |b1 x b2|",
+          "o": [
+            "|(b1 x b2) . (a2 - a1)| / |b1 x b2|",
+            "|b1 x (a2 - a1)| / |b1|",
+            "|(b1 x b2) . (a2 - a1)| / (|b1| |b2|)",
+            "|(b1 . b2) (a2 - a1)| / |b1 x b2|"
+          ]
+        },
+        {
+          "b": "Remember",
+          "d": "Easy",
+          "t": "fill_blank",
+          "m": 1,
+          "q": "If two lines in space intersect at a point, then the shortest distance between them is ____. (Answer with a number.)",
+          "a": "0"
+        },
+        {
+          "b": "Remember",
+          "d": "Hard",
+          "t": "mcq",
+          "m": 1,
+          "q": "Which of the following is NOT true of two skew lines?",
+          "a": "They lie in the same plane",
+          "o": [
+            "They lie in the same plane",
+            "They never meet",
+            "They are not parallel",
+            "The line of shortest distance is perpendicular to both of them"
+          ],
+          "rev": true
+        },
+        {
+          "b": "Understand",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "For two skew lines, the line of the shortest distance is",
+          "a": "perpendicular to both the lines",
+          "o": [
+            "perpendicular to both the lines",
+            "parallel to both the lines",
+            "perpendicular to one line and parallel to the other",
+            "always a line through the origin"
+          ]
+        },
+        {
+          "b": "Understand",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "The unit vector along the line of shortest distance between skew lines with direction vectors b1 and b2 is",
+          "a": "(b1 x b2) / |b1 x b2|",
+          "o": [
+            "(b1 x b2) / |b1 x b2|",
+            "(b1 + b2) / |b1 + b2|",
+            "(b1 - b2) / |b1 - b2|",
+            "(b1 x b2) / (|b1| |b2|)"
+          ]
+        },
+        {
+          "b": "Understand",
+          "d": "Easy",
+          "t": "fill_blank",
+          "m": 1,
+          "q": "Two skew lines do not lie in one plane; that is, skew lines are non-____.",
+          "a": "coplanar"
+        },
+        {
+          "b": "Understand",
+          "d": "Hard",
+          "t": "mcq",
+          "m": 1,
+          "q": "In deriving the shortest distance between skew lines l1 and l2, the distance is found as the projection of ST on the line of shortest distance. Here S and T are",
+          "a": "any point on l1 and any point on l2, with position vectors a1 and a2",
+          "o": [
+            "any point on l1 and any point on l2, with position vectors a1 and a2",
+            "necessarily the two feet of the common perpendicular",
+            "the points where the two lines meet the XY-plane",
+            "the origin and a point on l1"
+          ]
+        },
+        {
+          "b": "Understand",
+          "d": "Hard",
+          "t": "mcq",
+          "m": 1,
+          "q": "For two non-parallel lines, the formula |(b1 x b2) . (a2 - a1)| / |b1 x b2| gives the value 0. The lines must",
+          "a": "intersect",
+          "o": [
+            "intersect",
+            "be skew",
+            "be parallel",
+            "coincide"
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "For the skew-line distance formula with b1 = i - j + k and b2 = 2i + j + 2k, the vector b1 x b2 is",
+          "a": "-3i + 3k",
+          "o": [
+            "-3i + 3k",
+            "3i - 3k",
+            "2i - j + 2k",
+            "-3i + 4j + 3k"
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "For two skew lines, (b1 x b2) . (a2 - a1) = -9 and |b1 x b2| = 3 sqrt(2). The shortest distance between them is",
+          "a": "3 sqrt(2)/2",
+          "o": [
+            "3 sqrt(2)/2",
+            "-3 sqrt(2)/2",
+            "27 sqrt(2)",
+            "sqrt(2)/3"
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Hard",
+          "t": "mcq",
+          "m": 1,
+          "q": "The shortest distance between the lines r = i + j + lambda (2i - j + k) and r = 2i + j - k + mu (3i - 5j + 2k) is",
+          "a": "10/sqrt(59)",
+          "o": [
+            "10/sqrt(59)",
+            "10/59",
+            "4/sqrt(59)",
+            "10/sqrt(228)"
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Hard",
+          "t": "mcq",
+          "m": 1,
+          "q": "The shortest distance between the lines r = 6i + 2j + 2k + lambda (i - 2j + 2k) and r = -4i - k + mu (3i - 2j - 2k) is",
+          "a": "9",
+          "o": [
+            "9",
+            "-9",
+            "108",
+            "12"
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Hard",
+          "t": "short_answer",
+          "m": 2,
+          "q": "Find the shortest distance between the lines r = i + 2j + 3k + lambda (i - 3j + 2k) and r = 4i + 5j + 6k + mu (2i + 3j + k).",
+          "a": "a2 - a1 = 3i + 3j + 3k. b1 x b2 = (i - 3j + 2k) x (2i + 3j + k) = -9i + 3j + 9k, with |b1 x b2| = sqrt(81 + 9 + 81) = sqrt(171) = 3 sqrt(19). (b1 x b2) . (a2 - a1) = -27 + 9 + 27 = 9. So d = 9/(3 sqrt(19)) = 3/sqrt(19).",
+          "s": [
+            [
+              "Finds a2 - a1 = 3i + 3j + 3k and b1 x b2 = -9i + 3j + 9k",
+              1
+            ],
+            [
+              "Finds d = |9| / (3 sqrt(19)) = 3/sqrt(19)",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Hardest",
+          "t": "long_answer",
+          "m": 3,
+          "q": "Find the shortest distance between the lines (x + 1)/7 = (y + 1)/(-6) = (z + 1)/1 and (x - 3)/1 = (y - 5)/(-2) = (z - 7)/1.",
+          "a": "Points: (-1, -1, -1) and (3, 5, 7), so a2 - a1 = 4i + 6j + 8k. b1 = 7i - 6j + k, b2 = i - 2j + k, and b1 x b2 = -4i - 6j - 8k with magnitude sqrt(16 + 36 + 64) = sqrt(116) = 2 sqrt(29). (b1 x b2) . (a2 - a1) = -16 - 36 - 64 = -116. So d = 116/(2 sqrt(29)) = 2 sqrt(29).",
+          "s": [
+            [
+              "Reads off the points and directions and finds a2 - a1 = 4i + 6j + 8k",
+              1
+            ],
+            [
+              "Finds b1 x b2 = -4i - 6j - 8k and its magnitude 2 sqrt(29)",
+              1
+            ],
+            [
+              "Finds d = |-116| / (2 sqrt(29)) = 2 sqrt(29)",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Analyse",
+          "d": "Hard",
+          "t": "assertion_reason",
+          "m": 1,
+          "q": "Assertion (A): The line of shortest distance between two skew lines with direction vectors b1 and b2 lies along the vector b1 x b2. Reason (R): The line of shortest distance is perpendicular to both skew lines, and b1 x b2 is perpendicular to both b1 and b2.",
+          "a": "Both A and R are true, and R is the correct explanation of A",
+          "o": [
+            "Both A and R are true, and R is the correct explanation of A",
+            "Both A and R are true, but R is not the correct explanation of A",
+            "A is true, R is false",
+            "A is false, R is true"
+          ]
+        },
+        {
+          "b": "Analyse",
+          "d": "Hard",
+          "t": "multi_statement",
+          "m": 1,
+          "q": "Consider these statements about skew lines. (I) Skew lines are neither parallel nor intersecting. (II) The shortest distance between two skew lines can be negative, depending on the order in which the lines are taken. Which is or are correct?",
+          "a": "Only I",
+          "o": [
+            "Only I",
+            "Only II",
+            "Both I and II",
+            "Neither I nor II"
+          ]
+        },
+        {
+          "b": "Analyse",
+          "d": "Hardest",
+          "t": "long_answer",
+          "m": 3,
+          "q": "Find the shortest distance between the lines r = (1 - t)i + (t - 2)j + (3 - 2t)k and r = (s + 1)i + (2s - 1)j - (2s + 1)k.",
+          "a": "Rewrite: r = i - 2j + 3k + t(-i + j - 2k) and r = i - j - k + s(i + 2j - 2k). So a2 - a1 = j - 4k, and b1 x b2 = (-i + j - 2k) x (i + 2j - 2k) = 2i - 4j - 3k with magnitude sqrt(4 + 16 + 9) = sqrt(29). (b1 x b2) . (a2 - a1) = -4 + 12 = 8. So d = 8/sqrt(29).",
+          "s": [
+            [
+              "Rewrites both lines in the form r = a + t b and reads a1, b1, a2, b2",
+              1
+            ],
+            [
+              "Finds b1 x b2 = 2i - 4j - 3k and its magnitude sqrt(29)",
+              1
+            ],
+            [
+              "Finds d = 8/sqrt(29)",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Evaluate",
+          "d": "Hard",
+          "t": "short_answer",
+          "m": 2,
+          "q": "While finding the shortest distance between two skew lines, a student gets (b1 x b2) . (a2 - a1) = -10 and |b1 x b2| = sqrt(59), and reports the distance as -10/sqrt(59). Evaluate this answer.",
+          "a": "A distance cannot be negative. The formula takes the absolute value of (b1 x b2) . (a2 - a1), so the shortest distance is |-10|/sqrt(59) = 10/sqrt(59). The sign only reflects the order in which the lines were taken.",
+          "s": [
+            [
+              "States that a distance is non-negative and the formula uses the absolute value",
+              1
+            ],
+            [
+              "Gives the correct distance 10/sqrt(59)",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Create",
+          "d": "Hardest",
+          "t": "long_answer",
+          "m": 3,
+          "q": "Construct the vector equations of two skew lines whose shortest distance is exactly 5 units, and verify the distance using the formula.",
+          "a": "For example l1: r = lambda i (the x-axis) and l2: r = 5k + mu j. Here a2 - a1 = 5k, b1 x b2 = i x j = k and |b1 x b2| = 1. d = |k . 5k| / 1 = 5. The lines are not parallel (i and j are not proportional) and d is not 0, so they are skew.",
+          "s": [
+            [
+              "Gives two valid non-parallel, non-intersecting lines in vector form",
+              1
+            ],
+            [
+              "Computes b1 x b2 and a2 - a1 correctly",
+              1
+            ],
+            [
+              "Verifies d = 5 with the formula",
+              1
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "code": "C12M-11.6",
+      "name": "Distance between parallel lines",
+      "description": "The perpendicular distance between two parallel (hence coplanar) lines r = a1 + lambda b and r = a2 + mu b, and recognising when this formula rather than the skew-lines formula applies.",
+      "idea": "Parallel lines lie in one plane, and the distance between them is the length of the perpendicular from a point of one line to the other. The skew formula fails here because b1 x b2 = 0.",
+      "rule": "d = |b x (a2 - a1)| / |b|.",
+      "example": "For r = i + 2j - 4k + lambda (2i + 3j + 6k) and r = 3i + 3j - 5k + mu (2i + 3j + 6k): b x (a2 - a1) = -9i + 14j - 4k, so d = sqrt(293)/7.",
+      "difficulty_base": "Hard",
+      "questions": [
+        {
+          "b": "Remember",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "The distance between the parallel lines r = a1 + lambda b and r = a2 + mu b is",
+          "a": "|b x (a2 - a1)| / |b|",
+          "o": [
+            "|b x (a2 - a1)| / |b|",
+            "|b . (a2 - a1)| / |b|",
+            "|b x (a2 - a1)| / |a2 - a1|",
+            "|b x (a2 - a1)| / |b|^2"
+          ]
+        },
+        {
+          "b": "Remember",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "If two lines in space are parallel, the shortest distance between them is",
+          "a": "the length of the perpendicular drawn from a point on one line onto the other line",
+          "o": [
+            "the length of the perpendicular drawn from a point on one line onto the other line",
+            "always zero",
+            "always the distance between the two given points a1 and a2",
+            "not defined"
+          ]
+        },
+        {
+          "b": "Remember",
+          "d": "Easy",
+          "t": "fill_blank",
+          "m": 1,
+          "q": "If two lines are parallel, then they lie in one plane; that is, they are ____.",
+          "a": "coplanar"
+        },
+        {
+          "b": "Remember",
+          "d": "Hard",
+          "t": "mcq",
+          "m": 1,
+          "q": "About the distance between the parallel lines r = a1 + lambda b and r = a2 + mu b, which statement is NOT correct?",
+          "a": "It is found from |(b x b) . (a2 - a1)| / |b x b|, exactly as for skew lines",
+          "o": [
+            "It is found from |(b x b) . (a2 - a1)| / |b x b|, exactly as for skew lines",
+            "It equals |b x (a2 - a1)| / |b|",
+            "The two lines are coplanar",
+            "It is the length of the perpendicular from a point of one line to the other line"
+          ],
+          "rev": true
+        },
+        {
+          "b": "Understand",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "Why can the skew-lines formula |(b1 x b2) . (a2 - a1)| / |b1 x b2| not be used for two parallel lines?",
+          "a": "Because b1 x b2 is the zero vector for parallel lines, so the formula becomes 0/0",
+          "o": [
+            "Because b1 x b2 is the zero vector for parallel lines, so the formula becomes 0/0",
+            "Because parallel lines always intersect",
+            "Because a2 - a1 is the zero vector for parallel lines",
+            "Because parallel lines are not coplanar"
+          ]
+        },
+        {
+          "b": "Understand",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "In deriving the distance between parallel lines, S is a point on l1, T a point on l2, P the foot of the perpendicular from T on l1, and theta the angle between ST and b. Then PT equals",
+          "a": "ST sin theta",
+          "o": [
+            "ST sin theta",
+            "ST cos theta",
+            "ST tan theta",
+            "ST / sin theta"
+          ]
+        },
+        {
+          "b": "Understand",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "The lines r = i + 2j - 4k + lambda (2i + 3j + 6k) and r = 3i + 3j - 5k + mu (2i + 3j + 6k) are parallel because",
+          "a": "both are parallel to the same vector 2i + 3j + 6k",
+          "o": [
+            "both are parallel to the same vector 2i + 3j + 6k",
+            "both pass through the same point",
+            "the dot product of their direction vectors is zero",
+            "the vectors i + 2j - 4k and 3i + 3j - 5k are equal"
+          ]
+        },
+        {
+          "b": "Understand",
+          "d": "Hard",
+          "t": "mcq",
+          "m": 1,
+          "q": "For two parallel lines r = a1 + lambda b and r = a2 + mu b it is found that b x (a2 - a1) is the zero vector. Then",
+          "a": "the two lines coincide, since a2 - a1 is itself parallel to b",
+          "o": [
+            "the two lines coincide, since a2 - a1 is itself parallel to b",
+            "the two lines are skew",
+            "the two lines are perpendicular",
+            "the distance between the lines is |a2 - a1|"
+          ]
+        },
+        {
+          "b": "Understand",
+          "d": "Hard",
+          "t": "mcq",
+          "m": 1,
+          "q": "Two lines have direction vectors 2i + 3j + 6k and 4i + 6j + 12k and do not coincide. To find the distance between them one should use",
+          "a": "the parallel-lines formula |b x (a2 - a1)| / |b|, since the direction vectors are proportional",
+          "o": [
+            "the parallel-lines formula |b x (a2 - a1)| / |b|, since the direction vectors are proportional",
+            "the skew-lines formula, since the two direction vectors are different",
+            "the formula for cos theta, since the lines are inclined",
+            "no formula, since the lines must intersect"
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "For the parallel lines r = i + 2j - 4k + lambda (2i + 3j + 6k) and r = 3i + 3j - 5k + mu (2i + 3j + 6k), the vector a2 - a1 is",
+          "a": "2i + j - k",
+          "o": [
+            "2i + j - k",
+            "4i + 5j - 9k",
+            "2i + j + k",
+            "2i + 5j - k"
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Easy",
+          "t": "fill_blank",
+          "m": 1,
+          "q": "For two parallel lines with common direction vector b = 2i + 3j + 6k, the denominator |b| in the distance formula equals ____.",
+          "a": "7"
+        },
+        {
+          "b": "Apply",
+          "d": "Hard",
+          "t": "mcq",
+          "m": 1,
+          "q": "The distance between the lines r = i + 2j - 4k + lambda (2i + 3j + 6k) and r = 3i + 3j - 5k + mu (2i + 3j + 6k) is",
+          "a": "sqrt(293)/7",
+          "o": [
+            "sqrt(293)/7",
+            "sqrt(293)/49",
+            "293/7",
+            "1/7"
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Hard",
+          "t": "mcq",
+          "m": 1,
+          "q": "The distance between the parallel lines r = lambda (i + 2j + 2k) and r = 3i + mu (i + 2j + 2k) is",
+          "a": "2 sqrt(2)",
+          "o": [
+            "2 sqrt(2)",
+            "3",
+            "1",
+            "6 sqrt(2)"
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Hard",
+          "t": "short_answer",
+          "m": 2,
+          "q": "Find the distance between the parallel lines r = i + j + lambda (2i - j + 2k) and r = 2i + j - k + mu (2i - j + 2k).",
+          "a": "a2 - a1 = i - k and b = 2i - j + 2k with |b| = 3. b x (a2 - a1) = (2i - j + 2k) x (i - k) = i + 4j + k, of magnitude sqrt(1 + 16 + 1) = sqrt(18) = 3 sqrt(2). So d = 3 sqrt(2)/3 = sqrt(2).",
+          "s": [
+            [
+              "Finds a2 - a1 = i - k and b x (a2 - a1) = i + 4j + k",
+              1
+            ],
+            [
+              "Finds d = 3 sqrt(2)/3 = sqrt(2)",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Hardest",
+          "t": "long_answer",
+          "m": 3,
+          "q": "Find the distance between the lines x/1 = (y - 1)/2 = (z + 1)/2 and (x - 2)/2 = (y - 1)/4 = (z - 2)/4.",
+          "a": "Direction ratios 1, 2, 2 and 2, 4, 4 are proportional, so the lines are parallel with b = i + 2j + 2k and |b| = 3. Points: (0, 1, -1) and (2, 1, 2), so a2 - a1 = 2i + 3k. b x (a2 - a1) = (i + 2j + 2k) x (2i + 3k) = 6i + j - 4k, of magnitude sqrt(36 + 1 + 16) = sqrt(53). So d = sqrt(53)/3.",
+          "s": [
+            [
+              "Recognises the lines are parallel (2, 4, 4 = 2 times 1, 2, 2) and reads the points, giving a2 - a1 = 2i + 3k",
+              1
+            ],
+            [
+              "Finds b x (a2 - a1) = 6i + j - 4k with magnitude sqrt(53)",
+              1
+            ],
+            [
+              "Finds d = sqrt(53)/3",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Analyse",
+          "d": "Hard",
+          "t": "assertion_reason",
+          "m": 1,
+          "q": "Assertion (A): The distance between the parallel lines r = lambda (i + 2j + 2k) and r = 3i + mu (i + 2j + 2k) is 2 sqrt(2). Reason (R): If two lines in space intersect at a point, then the shortest distance between them is zero.",
+          "a": "Both A and R are true, but R is not the correct explanation of A",
+          "o": [
+            "Both A and R are true, but R is not the correct explanation of A",
+            "Both A and R are true, and R is the correct explanation of A",
+            "A is true, R is false",
+            "A is false, R is true"
+          ]
+        },
+        {
+          "b": "Analyse",
+          "d": "Hard",
+          "t": "multi_statement",
+          "m": 1,
+          "q": "Consider these statements about parallel lines in space. (I) Two parallel lines in space are non-coplanar. (II) The distance between the parallel lines r = a1 + lambda b and r = a2 + mu b is |b x (a2 - a1)| / |b|. Which is or are correct?",
+          "a": "Only II",
+          "o": [
+            "Only II",
+            "Only I",
+            "Both I and II",
+            "Neither I nor II"
+          ]
+        },
+        {
+          "b": "Analyse",
+          "d": "Hardest",
+          "t": "long_answer",
+          "m": 3,
+          "q": "For the parallel lines l1: r = i + 2j - 4k + lambda (2i + 3j + 6k) and l2: r = 3i + 3j - 5k + mu (2i + 3j + 6k), the distance found with a1 = i + 2j - 4k is sqrt(293)/7. Recompute the distance using instead the point of l1 given by lambda = 1, and explain why the result is the same.",
+          "a": "With lambda = 1 the point on l1 is 3i + 5j + 2k. Then a2 - a1 = (3i + 3j - 5k) - (3i + 5j + 2k) = -2j - 7k. b x (a2 - a1) = (2i + 3j + 6k) x (-2j - 7k) = -9i + 14j - 4k, of magnitude sqrt(81 + 196 + 16) = sqrt(293). So d = sqrt(293)/7, as before. Moving the point along l1 changes a2 - a1 by a multiple of b, and b x b = 0, so b x (a2 - a1) is unchanged.",
+          "s": [
+            [
+              "Finds the new point 3i + 5j + 2k and a2 - a1 = -2j - 7k",
+              1
+            ],
+            [
+              "Finds b x (a2 - a1) = -9i + 14j - 4k and d = sqrt(293)/7",
+              1
+            ],
+            [
+              "Explains that a2 - a1 changes by a multiple of b and b x b = 0, so the cross product is unchanged",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Evaluate",
+          "d": "Hard",
+          "t": "short_answer",
+          "m": 2,
+          "q": "For the parallel lines r = lambda (i + 2j + 2k) and r = 3i + mu (i + 2j + 2k), a student says the distance between them is |a2 - a1| = |3i| = 3. Evaluate this answer.",
+          "a": "It is wrong. a2 - a1 = 3i is not perpendicular to the lines, since (3i) . (i + 2j + 2k) = 3, not 0, so 3 is not the perpendicular distance. Using d = |b x (a2 - a1)| / |b|: b x (a2 - a1) = 6j - 6k, magnitude 6 sqrt(2), |b| = 3, so d = 2 sqrt(2), which is less than 3.",
+          "s": [
+            [
+              "Explains that a2 - a1 is not perpendicular to the lines, so its length is not the distance",
+              1
+            ],
+            [
+              "Finds the correct distance 2 sqrt(2)",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Create",
+          "d": "Hardest",
+          "t": "long_answer",
+          "m": 3,
+          "q": "Construct the vector equations of two distinct parallel lines whose distance apart is exactly 5 units, and verify the distance using the formula.",
+          "a": "For example l1: r = lambda k (the z-axis) and l2: r = 3i + 4j + mu k. Here b = k, |b| = 1 and a2 - a1 = 3i + 4j. b x (a2 - a1) = k x (3i + 4j) = -4i + 3j, of magnitude sqrt(16 + 9) = 5. So d = 5/1 = 5.",
+          "s": [
+            [
+              "Gives two valid distinct lines with the same direction vector",
+              1
+            ],
+            [
+              "Computes b x (a2 - a1) correctly",
+              1
+            ],
+            [
+              "Verifies d = 5 with the formula",
+              1
+            ]
+          ]
+        }
+      ]
+    }
+  ]
+}

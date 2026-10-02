@@ -1,0 +1,190 @@
+BINOMIAL THEOREM 129
+7.2.1 Binomial theorem for any positive integer n,
+(a + b)
+n = nC0
+a
+n
+ + nC1
+a
+n–1b + nC2
+a
+n–2 b
+2
+ + ...+ nCn – 1a.b
+n–1 + nCn
+b
+n
+Proof The proof is obtained by applying principle of mathematical induction.
+Let the given statement be
+P(n) : (a + b)
+n
+ = nC0
+a
+n
+ + nC1
+a
+n – 1b + nC2
+a
+n – 2b
+2
+ + ...+ nCn–1a.b
+n – 1 + nCn
+b
+n
+For n = 1, we have
+P (1) : (a + b)
+1
+ = 1C0
+a
+1
+ + 1C1
+b
+1
+ = a + b
+Thus, P (1) is true.
+Suppose P (k) is true for some positive integer k, i.e.
+(a + b)
+k
+ = kC0
+a
+k
+ + kC1
+a
+k – 1b + kC2
+a
+k – 2b
+2
+ + ...+ kCk
+b
+k
+...
+(1)
+We shall prove that P(k + 1) is also true, i.e.,
+(a + b)
+k + 1 = k + 1C0 a
+k + 1 + k + 1C1 a
+kb + k + 1C2 a
+k – 1b
+2
+ + ...+ k + 1Ck+1 b
+k + 1
+Now, (a + b)
+k + 1 = (a + b) (a + b)
+k
+= (a + b) (kC0 a
+k
+ + kC1
+a
+k – 1 b + kC2 a
+k – 2 b
+2 +...+ kCk – 1 abk – 1 + kCk b
+k
+)
+[from (1)]
+= kC0
+a
+k + 1
+ + kC1
+a
+kb + kC2
+a
+k – 1b
+2
+ +...+ kCk – 1
+a
+2b
+k – 1 + kCk
+abk
+ +kC0
+a
+kb
++ kC1
+a
+k – 1b
+2 +
+kC2
+a
+k – 2b
+3+...+ kCk-1abk
+ + kCk
+b
+k + 1
+[by actual multiplication]
+= kC0
+a
+k + 1 + (kC1
++
+ kC0
+) akb + (kC2 +
+ kC1
+)a
+k – 1b
+2 + ...
+ + (kCk
++
+ kCk–1) abk
+ + kCk
+b
+k + 1 [grouping like terms]
+= k + 1C0
+a k + 1 + k + 1C1
+a
+kb + k + 1C2
+a
+k – 1b
+2 +...+ k + 1Ck
+abk + k + 1Ck + 1 b
+k +1
+(by using k + 1C0
+=1, kCr
++ kCr–1 = k + 1Cr
+and kCk 
+= 1= k + 1Ck + 1)
+Thus, it has been proved that P (k + 1) is true whenever P(k) is true. Therefore, by
+principle of mathematical induction, P(n) is true for every positive integer n.
+We illustrate this theorem by expanding (x + 2)6
+:
+(x + 2)6 = 6C0
+x
+6
+ + 6C1
+x
+5
+.2 + 6C2
+x
+42
+2
+ + 6C3
+x
+3
+.23
+ + 6C4
+x
+2
+.24
+ + 6C5
+x.25
+ + 6C6
+.26
+.
+= x
+6
+ + 12x
+5
+ + 60x
+4
+ + 160x
+3 + 240x
+2
+ + 192x + 64
+Thus (x + 2)6 = x
+6
+ + 12x
+5
+ + 60x
+4
+ + 160x
+3 + 240x
+2
+ + 192x + 64.
+Reprint 2026-27

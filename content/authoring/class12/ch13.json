@@ -1,0 +1,2266 @@
+{
+  "subject": {
+    "code": "MATH12",
+    "name": "Mathematics",
+    "board": "CBSE",
+    "class": 12
+  },
+  "source": {
+    "publisher": "NCERT",
+    "title": "Mathematics Part II",
+    "edition": "Textbook for Class XII Part II, Reprint 2026-27",
+    "year": 2026
+  },
+  "chapter": {
+    "part": "II",
+    "chapter_no": 13,
+    "name": "Probability",
+    "blurb": "The chapter introduces the conditional probability of an event given that another event has occurred, and uses it to obtain the multiplication rule of probability and the idea of independent events. It then defines a partition of a sample space, proves the theorem of total probability and applies Bayes' theorem to find the reverse probability of a cause once an outcome is known.",
+    "source_code": "lemh207",
+    "order_index": 13
+  },
+  "scope_in": [
+    {
+      "item": "Explain conditional probability P(E|F) as the probability of E when the sample space is reduced to F, and compute it for equally likely outcomes as n(E and F)/n(F) for coins, dice, cards, children and counting situations",
+      "pages": "406-408, 409-412, 413-414"
+    },
+    {
+      "item": "Use the definition P(E|F) = P(E and F)/P(F), P(F) not 0, with given probabilities (including finding P(A and B) or P(A or B) from a given conditional probability) and state that P(E|F) is not defined when P(F) = 0",
+      "pages": "408-410, 413-415"
+    },
+    {
+      "item": "Apply the definition when the elementary events are not equally likely, using a tree diagram to assign probabilities (coin then coin-or-die experiment)",
+      "pages": "412-413"
+    },
+    {
+      "item": "State and use the properties P(S|F) = P(F|F) = 1, P((A or B)|F) = P(A|F) + P(B|F) - P((A and B)|F) (and its disjoint case), and P(E'|F) = 1 - P(E|F)",
+      "pages": "408-409, 437"
+    },
+    {
+      "item": "State the multiplication rule P(E and F) = P(E) P(F|E) = P(F) P(E|F) and use it for successive draws without replacement (urns, cards, oranges)",
+      "pages": "415-416, 421"
+    },
+    {
+      "item": "Extend the multiplication rule to three events, P(E and F and G) = P(E) P(F|E) P(G|EF), and use it for three successive draws",
+      "pages": "416-417, 421"
+    },
+    {
+      "item": "Define independent events by P(E|F) = P(E), P(F|E) = P(F) and equivalently P(E and F) = P(E) P(F); define dependent events; test given events for independence",
+      "pages": "417-420, 421-423"
+    },
+    {
+      "item": "Distinguish independent events from mutually exclusive events (events with non-zero probabilities cannot be both); state the condition for independent experiments and for three mutually independent events",
+      "pages": "418-419, 422"
+    },
+    {
+      "item": "Prove and use: if E and F are independent then so are E and F', E' and F, E' and F'; P(at least one of A, B) = 1 - P(A') P(B') for independent A, B; find P(neither), P(exactly one), P(A and not B) and probabilities for draws with replacement and repeated throws",
+      "pages": "420-423"
+    },
+    {
+      "item": "Find winning probabilities in a game of alternate independent throws by summing an infinite G.P. (Miscellaneous Example 23)",
+      "pages": "434"
+    },
+    {
+      "item": "Define a partition of a sample space (pairwise disjoint, exhaustive, non-zero probabilities), recognise examples such as {E, E'} and {E and F', E and F, E' and F, E' and F'}, and know a partition is not unique",
+      "pages": "423-424"
+    },
+    {
+      "item": "State, prove and apply the theorem of total probability P(A) = sum of P(Ej) P(A|Ej) over a partition",
+      "pages": "424-425, 431"
+    },
+    {
+      "item": "State and prove Bayes' theorem and use its terminology: hypotheses, priori probability P(Ei), a posteriori probability P(Ei|A), formula for the probability of causes",
+      "pages": "423, 425-426"
+    },
+    {
+      "item": "Apply Bayes' theorem to bags and boxes, machines and defective items, medical tests, truth-telling reports, transport and multiple-choice guessing problems with two, three or four hypotheses",
+      "pages": "426-436"
+    }
+  ],
+  "scope_out": [
+    {
+      "item": "Probability distribution of a random variable (tables of X against P(X), finding an unknown constant k, P(X <= a))",
+      "reason": "Not present in this rationalised Reprint 2026-27 edition. The introduction on p. 406 still promises 'random variable and its probability distribution', but the chapter goes from Bayes' theorem (13.5) straight to Exercise 13.3, the Miscellaneous Examples and the Summary; no section, example or exercise teaches distributions"
+    },
+    {
+      "item": "Mean (expectation) of a random variable",
+      "reason": "Not present in this edition; promised in the introduction on p. 406 but never taught, and absent from the Summary on p. 437"
+    },
+    {
+      "item": "Variance and standard deviation of a random variable",
+      "reason": "Not present in this edition; promised in the introduction on p. 406 but never taught, and absent from the Summary on p. 437"
+    },
+    {
+      "item": "Bernoulli trials and the binomial distribution, P(X = r) = nCr p^r q^(n-r)",
+      "reason": "Not present in this edition. The introduction (p. 406) says the last section studies the binomial distribution and Miscellaneous Exercise Q4 (p. 435, 'at most 6 of 10 people are right-handed') still needs it, but both are vestigial: there is no section, definition or worked example, and the Summary omits it. The Historical Note (p. 438) names the binomial distribution only in passing"
+    },
+    {
+      "item": "Random variable as a real valued function on the sample space (the Remark defining X and Y for two coin tosses)",
+      "reason": "Appears only as a half-page Remark on pp. 430-431 after Example 21, with no exercise question, no place in the Summary and nothing built on it; too thin to carry a concept, so no question is set on it (judgement call)"
+    },
+    {
+      "item": "Axiomatic definition of probability, classical probability of a single event, and the addition rule as topics in their own right",
+      "reason": "Class 11 work recalled on p. 406 ('In earlier Classes'); here they are used only as tools inside conditional-probability and independence problems"
+    },
+    {
+      "item": "Counting by permutations and combinations (nCr selections such as 'two cards drawn together') as the method of solution",
+      "reason": "The chapter's worked examples use listed sample spaces and the multiplication rule for successive draws, not combination formulae; only Exercise 13.3 Q12 (p. 432) leans that way"
+    },
+    {
+      "item": "Odds in favour of and against an event",
+      "reason": "Not used anywhere in this chapter"
+    },
+    {
+      "item": "Pairwise independence that fails to be mutual independence (counter-examples), and independence of more than three events",
+      "reason": "Remark (iv) on pp. 418-419 only states the four conditions for three mutually independent events; no example or exercise explores the distinction"
+    },
+    {
+      "item": "Conditional probability or Bayes' theorem for continuous random variables, and the historical note on Cardan, Galileo, Pascal, Fermat, Huygens, Bernoulli and Kolmogorov",
+      "reason": "Continuous cases are not in the book; the Historical Note (p. 438) is non-examinable background"
+    }
+  ],
+  "concepts": [
+    {
+      "code": "C12M-13.1",
+      "name": "Conditional probability from a reduced sample space",
+      "description": "Meaning and notation of P(E|F), and finding it for experiments with equally likely outcomes by treating F as the new sample space: P(E|F) = n(E and F)/n(F).",
+      "idea": "Knowing that F has occurred removes every outcome outside F, so the probability of E is measured inside F only.",
+      "rule": "For equally likely outcomes, P(E|F) = (number of outcomes favourable to both E and F) / (number of outcomes favourable to F).",
+      "example": "Three coins: E = at least two heads, F = first coin tail. F = {THH, THT, TTH, TTT}, only THH is in E, so P(E|F) = 1/4.",
+      "difficulty_base": "Easy",
+      "questions": [
+        {
+          "b": "Remember",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "The conditional probability of the event E given that the event F has already occurred is denoted by",
+          "a": "P(E|F)",
+          "o": [
+            "P(E|F)",
+            "P(F|E)",
+            "P(E and F)",
+            "P(E or F)"
+          ]
+        },
+        {
+          "b": "Remember",
+          "d": "Easy",
+          "t": "fill_blank",
+          "m": 1,
+          "q": "When it is known that the event F has occurred, the sample space used for finding the probability of E is reduced from S to its subset ____.",
+          "a": "F"
+        },
+        {
+          "b": "Remember",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "For an experiment with equally likely outcomes, the conditional probability P(E|F) equals",
+          "a": "n(E and F)/n(F)",
+          "o": [
+            "n(E and F)/n(F)",
+            "n(E and F)/n(S)",
+            "n(E and F)/n(E)",
+            "n(E)/n(F)"
+          ]
+        },
+        {
+          "b": "Remember",
+          "d": "Hard",
+          "t": "mcq",
+          "m": 1,
+          "q": "A fair die is rolled and it is known that the number shown is even. Which of the following outcomes can NOT belong to the reduced sample space used for this conditional probability?",
+          "a": "3",
+          "o": [
+            "3",
+            "2",
+            "4",
+            "6"
+          ],
+          "rev": true
+        },
+        {
+          "b": "Understand",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "Three fair coins are tossed. E is the event 'at least two heads appear' and F is the event 'first coin shows tail'. Then P(E|F) is",
+          "a": "1/4",
+          "o": [
+            "1/4",
+            "1/8",
+            "1/2",
+            "3/4"
+          ]
+        },
+        {
+          "b": "Understand",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "A family has two children. The probability that both children are boys, given that at least one of them is a boy, is",
+          "a": "1/3",
+          "o": [
+            "1/3",
+            "1/2",
+            "1/4",
+            "3/4"
+          ]
+        },
+        {
+          "b": "Understand",
+          "d": "Easy",
+          "t": "fill_blank",
+          "m": 1,
+          "q": "Ten cards numbered 1 to 10 are placed in a box and one card is drawn at random. If it is known that the number on the card is more than 3, the probability that it is an odd number is ____. (Answer as a fraction in lowest terms.)",
+          "a": "3/7"
+        },
+        {
+          "b": "Understand",
+          "d": "Hard",
+          "t": "mcq",
+          "m": 1,
+          "q": "A die is thrown twice and the sum of the numbers appearing is observed to be 8. The conditional probability that the number 5 has appeared at least once is",
+          "a": "2/5",
+          "o": [
+            "2/5",
+            "1/18",
+            "2/11",
+            "5/36"
+          ]
+        },
+        {
+          "b": "Understand",
+          "d": "Hard",
+          "t": "mcq",
+          "m": 1,
+          "q": "Two dice are thrown and it is given that the two numbers appearing are different. The probability that the sum of the numbers is 4 is",
+          "a": "1/15",
+          "o": [
+            "1/15",
+            "1/12",
+            "1/18",
+            "1/10"
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Easy",
+          "t": "fill_blank",
+          "m": 1,
+          "q": "A coin is tossed three times. E is the event 'head on the third toss' and F is the event 'heads on the first two tosses'. Then P(E|F) = ____. (Answer as a fraction in lowest terms.)",
+          "a": "1/2"
+        },
+        {
+          "b": "Apply",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "Mother, father and son line up at random for a family picture. E is the event 'son on one end' and F is the event 'father in the middle'. Then P(E|F) is",
+          "a": "1",
+          "o": [
+            "1",
+            "2/3",
+            "1/3",
+            "1/2"
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Hard",
+          "t": "mcq",
+          "m": 1,
+          "q": "A black die and a red die are rolled. The conditional probability of obtaining a sum greater than 9, given that the black die resulted in a 5, is",
+          "a": "1/3",
+          "o": [
+            "1/3",
+            "1/6",
+            "1/18",
+            "1/2"
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Hard",
+          "t": "mcq",
+          "m": 1,
+          "q": "A black die and a red die are rolled. The conditional probability of obtaining the sum 8, given that the red die resulted in a number less than 4, is",
+          "a": "1/9",
+          "o": [
+            "1/9",
+            "5/36",
+            "1/18",
+            "2/5"
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Hard",
+          "t": "short_answer",
+          "m": 2,
+          "q": "An instructor has a question bank of 300 easy True/False questions, 200 difficult True/False questions, 500 easy multiple choice questions and 400 difficult multiple choice questions. A question is selected at random. Find the probability that it is an easy question given that it is a multiple choice question.",
+          "a": "Let E: the question is easy, F: the question is multiple choice. n(F) = 500 + 400 = 900 and n(E and F) = 500. So P(E|F) = n(E and F)/n(F) = 500/900 = 5/9.",
+          "s": [
+            [
+              "Identifies the reduced sample space: n(F) = 900 multiple choice questions, of which n(E and F) = 500 are easy",
+              1
+            ],
+            [
+              "P(E|F) = 500/900 = 5/9",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Hardest",
+          "t": "long_answer",
+          "m": 3,
+          "q": "A fair die is rolled. Consider the events E = {1, 3, 5}, F = {2, 3} and G = {2, 3, 4, 5}. Find (i) P(E|G) (ii) P(G|E) (iii) P((E or F)|G).",
+          "a": "(i) E and G = {3, 5}, n(G) = 4, so P(E|G) = 2/4 = 1/2. (ii) n(E) = 3, so P(G|E) = 2/3. (iii) E or F = {1, 2, 3, 5}; (E or F) and G = {2, 3, 5}, so P((E or F)|G) = 3/4.",
+          "s": [
+            [
+              "P(E|G) = 2/4 = 1/2 using E and G = {3, 5}",
+              1
+            ],
+            [
+              "P(G|E) = 2/3, dividing by n(E) = 3",
+              1
+            ],
+            [
+              "(E or F) and G = {2, 3, 5}, so P((E or F)|G) = 3/4",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Analyse",
+          "d": "Hard",
+          "t": "assertion_reason",
+          "m": 1,
+          "q": "Assertion (A): When a fair die is rolled, the conditional probability that the number is 6 given that the number is even is 1/3. Reason (R): Knowing that F has occurred reduces the sample space from S to F, so for equally likely outcomes P(E|F) = n(E and F)/n(F).",
+          "a": "Both A and R are true, and R is the correct explanation of A",
+          "o": [
+            "Both A and R are true, and R is the correct explanation of A",
+            "Both A and R are true, but R is not the correct explanation of A",
+            "A is true, R is false",
+            "A is false, R is true"
+          ]
+        },
+        {
+          "b": "Analyse",
+          "d": "Hard",
+          "t": "multi_statement",
+          "m": 1,
+          "q": "Two fair coins are tossed. Consider these statements. (I) The probability of two heads, given that at least one coin shows a head, is 1/3. (II) The probability of two heads, given that the first coin shows a head, is 1/3. Which is or are correct?",
+          "a": "Only I",
+          "o": [
+            "Only I",
+            "Only II",
+            "Both I and II",
+            "Neither I nor II"
+          ]
+        },
+        {
+          "b": "Analyse",
+          "d": "Hardest",
+          "t": "long_answer",
+          "m": 3,
+          "q": "Assume each child born is equally likely to be a boy or a girl. A family has two children. Find the conditional probability that both are girls given that (i) the youngest is a girl, (ii) at least one is a girl. Explain why the two answers differ.",
+          "a": "S = {(b,b), (b,g), (g,b), (g,g)} with elder child written first. (i) F = youngest is a girl = {(b,g), (g,g)}, so P = 1/2. (ii) F = at least one girl = {(b,g), (g,b), (g,g)}, so P = 1/3. The answers differ because the two conditions give different reduced sample spaces: 2 outcomes in (i) but 3 outcomes in (ii), while only (g,g) is favourable in each.",
+          "s": [
+            [
+              "(i) Reduced sample space {(b,g), (g,g)}, probability 1/2",
+              1
+            ],
+            [
+              "(ii) Reduced sample space {(b,g), (g,b), (g,g)}, probability 1/3",
+              1
+            ],
+            [
+              "Explains that the given event changes the reduced sample space (2 outcomes against 3)",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Evaluate",
+          "d": "Hard",
+          "t": "short_answer",
+          "m": 2,
+          "q": "A coin is tossed three times. E is 'at least two heads' and F is 'at most two heads'. A student writes P(E|F) = 3/8 because three outcomes have exactly two heads. Is the student right? Justify.",
+          "a": "No. E and F = {HHT, HTH, THH}, so 3/8 is P(E and F), not P(E|F). Given F, the sample space reduces to F, which has 7 outcomes (all except HHH). So P(E|F) = 3/7.",
+          "s": [
+            [
+              "States that 3/8 is P(E and F), because the student divided by n(S) = 8 instead of n(F)",
+              1
+            ],
+            [
+              "n(F) = 7, so P(E|F) = 3/7",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Create",
+          "d": "Hardest",
+          "t": "long_answer",
+          "m": 3,
+          "q": "For the experiment of rolling one fair die, construct two events E and F such that P(E|F) = 2/3, and verify your answer by listing the outcomes.",
+          "a": "One example: F = {1, 2, 3} and E = 'the number is odd' = {1, 3, 5}. Then E and F = {1, 3}, n(F) = 3, so P(E|F) = n(E and F)/n(F) = 2/3. (Any F with 3 outcomes of which exactly 2 lie in E, or F with 6 outcomes and 4 in E, is acceptable.)",
+          "s": [
+            [
+              "Chooses an event F and lists its outcomes",
+              1
+            ],
+            [
+              "Chooses E so that exactly two-thirds of the outcomes of F lie in E, listing E and F",
+              1
+            ],
+            [
+              "Verifies P(E|F) = n(E and F)/n(F) = 2/3",
+              1
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "code": "C12M-13.2",
+      "name": "Definition and properties of conditional probability",
+      "description": "The definition P(E|F) = P(E and F)/P(F) with P(F) not 0, used with given probabilities and with outcomes that are not equally likely, and the three properties of conditional probability.",
+      "idea": "Conditional probability is the share of F's probability that also belongs to E; it behaves like an ordinary probability with F playing the role of the sample space.",
+      "rule": "P(E|F) = P(E and F)/P(F), P(F) not 0. P(S|F) = P(F|F) = 1; P((A or B)|F) = P(A|F) + P(B|F) - P((A and B)|F); P(E'|F) = 1 - P(E|F).",
+      "example": "P(A) = 7/13, P(B) = 9/13, P(A and B) = 4/13 gives P(A|B) = (4/13)/(9/13) = 4/9.",
+      "difficulty_base": "Hard",
+      "questions": [
+        {
+          "b": "Remember",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "If E and F are two events of the same sample space and P(F) is not 0, the conditional probability P(E|F) is defined as",
+          "a": "P(E and F)/P(F)",
+          "o": [
+            "P(E and F)/P(F)",
+            "P(E and F)/P(E)",
+            "P(E) P(F)",
+            "P(E)/P(F)"
+          ]
+        },
+        {
+          "b": "Remember",
+          "d": "Easy",
+          "t": "fill_blank",
+          "m": 1,
+          "q": "For any event F of a sample space S with P(F) not 0, P(S|F) = P(F|F) = ____.",
+          "a": "1"
+        },
+        {
+          "b": "Remember",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "For events E and F of a sample space with P(F) not 0, P(E'|F) equals",
+          "a": "1 - P(E|F)",
+          "o": [
+            "1 - P(E|F)",
+            "1 - P(E|F')",
+            "1 - P(F|E)",
+            "P(E|F')"
+          ]
+        },
+        {
+          "b": "Remember",
+          "d": "Hard",
+          "t": "mcq",
+          "m": 1,
+          "q": "For events A, B and F of a sample space with P(F) not 0, which of the following is NOT a property of conditional probability?",
+          "a": "P(A|F) + P(A|F') = 1",
+          "o": [
+            "P(A|F) + P(A|F') = 1",
+            "P(S|F) = 1",
+            "P(A'|F) = 1 - P(A|F)",
+            "P((A or B)|F) = P(A|F) + P(B|F) - P((A and B)|F)"
+          ],
+          "rev": true
+        },
+        {
+          "b": "Understand",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "If P(B) = 0.5 and P(A and B) = 0.32, then P(A|B) is",
+          "a": "0.64",
+          "o": [
+            "0.64",
+            "0.16",
+            "0.18",
+            "0.82"
+          ]
+        },
+        {
+          "b": "Understand",
+          "d": "Easy",
+          "t": "fill_blank",
+          "m": 1,
+          "q": "If P(E) = 0.6, P(F) = 0.3 and P(E and F) = 0.2, then P(F|E) = ____ (as a fraction in lowest terms).",
+          "a": "1/3"
+        },
+        {
+          "b": "Understand",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "Given that P(E) = 0.6, P(F) = 0.3 and P(E and F) = 0.2, the value of P(E|F) is",
+          "a": "2/3",
+          "o": [
+            "2/3",
+            "1/3",
+            "1/5",
+            "1/2"
+          ]
+        },
+        {
+          "b": "Understand",
+          "d": "Hard",
+          "t": "mcq",
+          "m": 1,
+          "q": "If P(A) = 1/2 and P(B) = 0, then P(A|B) is",
+          "a": "not defined",
+          "o": [
+            "not defined",
+            "0",
+            "1/2",
+            "1"
+          ]
+        },
+        {
+          "b": "Understand",
+          "d": "Hard",
+          "t": "mcq",
+          "m": 1,
+          "q": "If P(F) = 0.4 and P(E and F) = 0.1, then P(E'|F) is",
+          "a": "3/4",
+          "o": [
+            "3/4",
+            "1/4",
+            "9/10",
+            "3/10"
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "If P(A) = 0.8, P(B) = 0.5 and P(B|A) = 0.4, then P(A and B) is",
+          "a": "0.32",
+          "o": [
+            "0.32",
+            "0.2",
+            "0.4",
+            "0.5"
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Easy",
+          "t": "fill_blank",
+          "m": 1,
+          "q": "If P(A) = 6/11, P(B) = 5/11 and P(A and B) = 4/11, then P(A|B) = ____. (Answer as a fraction in lowest terms.)",
+          "a": "4/5"
+        },
+        {
+          "b": "Apply",
+          "d": "Hard",
+          "t": "mcq",
+          "m": 1,
+          "q": "If P(A) = 0.8, P(B) = 0.5 and P(B|A) = 0.4, then P(A|B) is",
+          "a": "0.64",
+          "o": [
+            "0.64",
+            "0.4",
+            "0.32",
+            "0.98"
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Hard",
+          "t": "mcq",
+          "m": 1,
+          "q": "If 2P(A) = P(B) = 5/13 and P(A|B) = 2/5, then P(A or B) is",
+          "a": "11/26",
+          "o": [
+            "11/26",
+            "15/26",
+            "2/13",
+            "8/13"
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Hard",
+          "t": "short_answer",
+          "m": 2,
+          "q": "A coin is tossed. If it shows head, it is tossed again; if it shows tail, a die is thrown. Find the conditional probability of the event 'the die shows a number greater than 4' given that 'there is at least one tail'.",
+          "a": "The outcomes (H,H), (H,T) have probability 1/4 each and (T,1), ..., (T,6) have probability 1/12 each (not equally likely). F = at least one tail = {(H,T), (T,1), ..., (T,6)}, so P(F) = 1/4 + 6/12 = 3/4. E and F = {(T,5), (T,6)}, so P(E and F) = 2/12 = 1/6. P(E|F) = (1/6)/(3/4) = 2/9.",
+          "s": [
+            [
+              "Assigns the unequal probabilities (1/4 and 1/12) and finds P(F) = 3/4",
+              1
+            ],
+            [
+              "P(E and F) = 1/6 and P(E|F) = (1/6)/(3/4) = 2/9",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Hardest",
+          "t": "long_answer",
+          "m": 3,
+          "q": "An electronic assembly consists of two subsystems A and B. It is known that P(A fails) = 0.25, P(B fails alone) = 0.10 and P(A and B fail) = 0.15. Evaluate (i) P(B fails) (ii) P(A fails | B has failed) (iii) P(A fails alone).",
+          "a": "(i) P(B fails) = P(B fails alone) + P(A and B fail) = 0.10 + 0.15 = 0.25. (ii) P(A fails | B has failed) = P(A and B fail)/P(B fails) = 0.15/0.25 = 3/5 = 0.6. (iii) P(A fails alone) = P(A fails) - P(A and B fail) = 0.25 - 0.15 = 0.10.",
+          "s": [
+            [
+              "P(B fails) = 0.10 + 0.15 = 0.25",
+              1
+            ],
+            [
+              "P(A fails | B has failed) = 0.15/0.25 = 0.6",
+              1
+            ],
+            [
+              "P(A fails alone) = 0.25 - 0.15 = 0.10",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Analyse",
+          "d": "Hard",
+          "t": "assertion_reason",
+          "m": 1,
+          "q": "Assertion (A): If P(A|B) = P(B|A) and P(A and B) is not 0, then A and B must be equal events. Reason (R): P(A|B) = P(A and B)/P(B) and P(B|A) = P(A and B)/P(A), provided the denominators are not 0.",
+          "a": "A is false, R is true",
+          "o": [
+            "A is false, R is true",
+            "Both A and R are true, and R is the correct explanation of A",
+            "Both A and R are true, but R is not the correct explanation of A",
+            "A is true, R is false"
+          ]
+        },
+        {
+          "b": "Analyse",
+          "d": "Hard",
+          "t": "multi_statement",
+          "m": 1,
+          "q": "Let A, B and F be events of a sample space S with P(F) not 0. Consider these statements. (I) If A and B are disjoint, then P((A or B)|F) = P(A|F) + P(B|F). (II) P(S|F) = P(F|F) = 1. Which is or are correct?",
+          "a": "Both I and II",
+          "o": [
+            "Both I and II",
+            "Only I",
+            "Only II",
+            "Neither I nor II"
+          ]
+        },
+        {
+          "b": "Analyse",
+          "d": "Hardest",
+          "t": "long_answer",
+          "m": 3,
+          "q": "A and B are two events. (i) Find P(B|A) if A is a subset of B and P(A) is not 0. (ii) Find P(B|A) if A and B have no common outcome and P(A) is not 0. (iii) Show that if A is a subset of B and P(B) is not 0, then P(A|B) is greater than or equal to P(A).",
+          "a": "(i) If A is a subset of B then A and B = A, so P(B|A) = P(A)/P(A) = 1. (ii) If A and B have no common outcome then P(A and B) = 0, so P(B|A) = 0/P(A) = 0. (iii) P(A|B) = P(A and B)/P(B) = P(A)/P(B). Since P(B) is at most 1, P(A)/P(B) is at least P(A), so P(A|B) >= P(A).",
+          "s": [
+            [
+              "(i) Uses A and B = A to get P(B|A) = 1",
+              1
+            ],
+            [
+              "(ii) Uses P(A and B) = 0 to get P(B|A) = 0",
+              1
+            ],
+            [
+              "(iii) P(A|B) = P(A)/P(B) >= P(A) because P(B) <= 1",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Evaluate",
+          "d": "Hard",
+          "t": "short_answer",
+          "m": 2,
+          "q": "A student claims that P(E|F) + P(E|F') = 1 for all events E and F. Test the claim for a fair die with E = {2} and F = {2, 4, 6}, and state the correct property.",
+          "a": "P(E|F) = 1/3 and P(E|F') = 0 because 2 is not in F' = {1, 3, 5}. The sum is 1/3, not 1, so the claim is wrong. The correct property keeps the same given event: P(E|F) + P(E'|F) = 1, i.e. P(E'|F) = 1 - P(E|F).",
+          "s": [
+            [
+              "Computes P(E|F) = 1/3 and P(E|F') = 0, so the sum is 1/3 and the claim fails",
+              1
+            ],
+            [
+              "States the correct property P(E'|F) = 1 - P(E|F)",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Create",
+          "d": "Hardest",
+          "t": "long_answer",
+          "m": 3,
+          "q": "Construct values of P(A), P(B) and P(A and B) for two events A and B so that P(A|B) = 1/2 and P(B|A) = 1/4. Verify both conditional probabilities and check that P(A or B) does not exceed 1.",
+          "a": "One example: P(A and B) = 1/8, P(B) = 1/4, P(A) = 1/2. Then P(A|B) = (1/8)/(1/4) = 1/2 and P(B|A) = (1/8)/(1/2) = 1/4. Also P(A or B) = 1/2 + 1/4 - 1/8 = 5/8, which is not more than 1, so the values are consistent. (Any values with P(B) = 2 P(A and B), P(A) = 4 P(A and B) and P(A or B) <= 1 are acceptable.)",
+          "s": [
+            [
+              "Chooses values with P(B) = 2 P(A and B) and P(A) = 4 P(A and B)",
+              1
+            ],
+            [
+              "Verifies P(A|B) = 1/2 and P(B|A) = 1/4 by the definition",
+              1
+            ],
+            [
+              "Checks P(A or B) = P(A) + P(B) - P(A and B) is at most 1",
+              1
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "code": "C12M-13.3",
+      "name": "Multiplication theorem on probability",
+      "description": "Finding the probability of the simultaneous occurrence of two or three events as P(E) P(F|E) and P(E) P(F|E) P(G|EF), especially for draws without replacement.",
+      "idea": "The chance that E and F both happen is the chance of E times the chance of F once E is known to have happened.",
+      "rule": "P(E and F) = P(E) P(F|E) = P(F) P(E|F); P(E and F and G) = P(E) P(F|E) P(G|EF).",
+      "example": "Urn with 10 black and 5 white balls, two drawn without replacement: P(both black) = (10/15)(9/14) = 3/7.",
+      "difficulty_base": "Hard",
+      "questions": [
+        {
+          "b": "Remember",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "For two events E and F with P(E) not 0, the multiplication rule of probability states that P(E and F) equals",
+          "a": "P(E) P(F|E)",
+          "o": [
+            "P(E) P(F|E)",
+            "P(E) + P(F|E)",
+            "P(E) P(E|F)",
+            "P(F|E)/P(E)"
+          ]
+        },
+        {
+          "b": "Remember",
+          "d": "Easy",
+          "t": "fill_blank",
+          "m": 1,
+          "q": "The event 'E and F', which denotes the simultaneous occurrence of the events E and F, is also written as ____.",
+          "a": "EF"
+        },
+        {
+          "b": "Remember",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "For three events E, F and G of a sample space, the multiplication rule gives P(E and F and G) =",
+          "a": "P(E) P(F|E) P(G|EF)",
+          "o": [
+            "P(E) P(F|E) P(G|EF)",
+            "P(E) P(F|E) P(G|F)",
+            "P(E) P(F|E) P(G|E)",
+            "P(E) + P(F|E) + P(G|EF)"
+          ]
+        },
+        {
+          "b": "Remember",
+          "d": "Hard",
+          "t": "mcq",
+          "m": 1,
+          "q": "By the multiplication rule of probability, with P(E) and P(F) non-zero, which of the following expressions is NOT in general equal to P(E and F)?",
+          "a": "P(E) P(E|F)",
+          "o": [
+            "P(E) P(E|F)",
+            "P(E) P(F|E)",
+            "P(F) P(E|F)",
+            "P(F and E)"
+          ],
+          "rev": true
+        },
+        {
+          "b": "Understand",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "An urn contains 6 black and 4 white balls. Two balls are drawn one after the other without replacement. The probability that both balls are black is",
+          "a": "1/3",
+          "o": [
+            "1/3",
+            "9/25",
+            "5/9",
+            "3/5"
+          ]
+        },
+        {
+          "b": "Understand",
+          "d": "Easy",
+          "t": "fill_blank",
+          "m": 1,
+          "q": "Two cards are drawn one after the other without replacement from a well shuffled pack of 52 cards. Given that the first card is a king, the probability that the second card is also a king is ____ (in lowest terms).",
+          "a": "1/17"
+        },
+        {
+          "b": "Understand",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "Two cards are drawn at random and without replacement from a pack of 52 playing cards. The probability that both cards are black is",
+          "a": "25/102",
+          "o": [
+            "25/102",
+            "1/4",
+            "25/51",
+            "1/2"
+          ]
+        },
+        {
+          "b": "Understand",
+          "d": "Hard",
+          "t": "mcq",
+          "m": 1,
+          "q": "Three cards are drawn successively, without replacement, from a pack of 52 well shuffled cards. The probability that the first two cards are kings and the third card is an ace is",
+          "a": "2/5525",
+          "o": [
+            "2/5525",
+            "1/2197",
+            "8/16575",
+            "1/5525"
+          ]
+        },
+        {
+          "b": "Understand",
+          "d": "Hard",
+          "t": "mcq",
+          "m": 1,
+          "q": "An urn has 4 white and 6 red balls. Two balls are drawn without replacement; E is 'first ball white' and F is 'second ball white'. In P(E and F) = P(E) P(F|E), the factor P(F|E) is",
+          "a": "3/9",
+          "o": [
+            "3/9",
+            "4/10",
+            "4/9",
+            "3/10"
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Easy",
+          "t": "fill_blank",
+          "m": 1,
+          "q": "A box contains 5 good and 3 bad oranges. Two oranges are drawn one after the other without replacement. The probability that both are good is ____. (Answer as a fraction in lowest terms.)",
+          "a": "5/14"
+        },
+        {
+          "b": "Apply",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "If P(E) = 0.5 and P(F|E) = 0.3, then P(E and F) is",
+          "a": "0.15",
+          "o": [
+            "0.15",
+            "0.8",
+            "0.6",
+            "0.2"
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Hard",
+          "t": "mcq",
+          "m": 1,
+          "q": "A box of 15 oranges contains 12 good and 3 bad ones. Three oranges are drawn without replacement, and the box is approved for sale only if all three are good. The probability that the box is approved is",
+          "a": "44/91",
+          "o": [
+            "44/91",
+            "64/125",
+            "4/5",
+            "22/35"
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Hard",
+          "t": "mcq",
+          "m": 1,
+          "q": "An urn contains 5 red and 5 black balls. A ball is drawn, its colour is noted and it is returned to the urn together with 2 additional balls of the colour drawn; then a ball is drawn again. The probability that both balls drawn are red is",
+          "a": "7/24",
+          "o": [
+            "7/24",
+            "1/4",
+            "7/12",
+            "5/24"
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Hard",
+          "t": "short_answer",
+          "m": 2,
+          "q": "A bag contains 4 red and 3 blue balls. Two balls are drawn one after the other without replacement. Using the multiplication rule, find the probability that the first ball is red and the second ball is blue.",
+          "a": "Let E: first ball red, F: second ball blue. P(E) = 4/7. After a red ball is removed, 6 balls remain of which 3 are blue, so P(F|E) = 3/6 = 1/2. P(E and F) = P(E) P(F|E) = (4/7)(1/2) = 2/7.",
+          "s": [
+            [
+              "P(E) = 4/7 and P(F|E) = 3/6",
+              1
+            ],
+            [
+              "P(E and F) = (4/7)(3/6) = 2/7",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Hardest",
+          "t": "long_answer",
+          "m": 3,
+          "q": "A bag contains 5 white, 4 red and 3 black balls. Three balls are drawn one after another without replacement. Find the probability that the first is white, the second is red and the third is black.",
+          "a": "Let W, R, B be the events first white, second red, third black. P(W) = 5/12. P(R|W) = 4/11, since 11 balls remain and 4 are red. P(B|WR) = 3/10, since 10 balls remain and 3 are black. P(W and R and B) = P(W) P(R|W) P(B|WR) = (5/12)(4/11)(3/10) = 60/1320 = 1/22.",
+          "s": [
+            [
+              "P(W) = 5/12 and P(R|W) = 4/11",
+              1
+            ],
+            [
+              "P(B|WR) = 3/10 with the total reduced to 10",
+              1
+            ],
+            [
+              "Product (5/12)(4/11)(3/10) = 1/22",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Analyse",
+          "d": "Hard",
+          "t": "assertion_reason",
+          "m": 1,
+          "q": "Assertion (A): If two balls are drawn one after the other without replacement from an urn containing 6 black and 4 white balls, the probability that both are black is 1/3. Reason (R): The multiplication rule extends to three events as P(E and F and G) = P(E) P(F|E) P(G|EF).",
+          "a": "Both A and R are true, but R is not the correct explanation of A",
+          "o": [
+            "Both A and R are true, but R is not the correct explanation of A",
+            "Both A and R are true, and R is the correct explanation of A",
+            "A is true, R is false",
+            "A is false, R is true"
+          ]
+        },
+        {
+          "b": "Analyse",
+          "d": "Hard",
+          "t": "multi_statement",
+          "m": 1,
+          "q": "Consider these statements. (I) When two cards are drawn without replacement from a pack of 52 cards, P(both are aces) = (4/52) x (4/52). (II) For events E and F with P(F) not 0, P(E and F) = P(F) P(E|F). Which is or are correct?",
+          "a": "Only II",
+          "o": [
+            "Only II",
+            "Only I",
+            "Both I and II",
+            "Neither I nor II"
+          ]
+        },
+        {
+          "b": "Analyse",
+          "d": "Hardest",
+          "t": "long_answer",
+          "m": 3,
+          "q": "An urn contains 10 black and 5 white balls. Two balls are drawn one after the other. Find (i) P(both black) when drawn without replacement, (ii) P(first black and second white) when drawn without replacement, (iii) P(both black) when the first ball is replaced before the second draw, and say why (i) and (iii) differ.",
+          "a": "(i) (10/15)(9/14) = 3/7. (ii) (10/15)(5/14) = 5/21. (iii) With replacement the urn is unchanged, so (10/15)(10/15) = 4/9. They differ because without replacement the conditional probability P(F|E) = 9/14 is smaller than P(F) = 10/15: removing a black ball changes the urn for the second draw.",
+          "s": [
+            [
+              "(i) (10/15)(9/14) = 3/7",
+              1
+            ],
+            [
+              "(ii) (10/15)(5/14) = 5/21",
+              1
+            ],
+            [
+              "(iii) 4/9, and explains that without replacement P(F|E) = 9/14 differs from 10/15",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Evaluate",
+          "d": "Hard",
+          "t": "short_answer",
+          "m": 2,
+          "q": "Ravi finds the probability of drawing two kings, one after the other without replacement from a pack of 52 cards, as (4/52) x (4/52) = 1/169. Evaluate his working.",
+          "a": "He is wrong. After one king is drawn and not replaced, 51 cards remain with 3 kings, so P(second king | first king) = 3/51, not 4/52. By the multiplication rule the probability is (4/52)(3/51) = 1/221.",
+          "s": [
+            [
+              "Identifies the error: the second factor must be the conditional probability 3/51",
+              1
+            ],
+            [
+              "Correct answer (4/52)(3/51) = 1/221",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Create",
+          "d": "Hardest",
+          "t": "long_answer",
+          "m": 3,
+          "q": "Create a problem about drawing three balls without replacement from an urn of your own choice which needs the multiplication rule for three events, and solve it.",
+          "a": "Example: An urn has 4 red and 3 green balls. Three balls are drawn one after another without replacement. Find the probability that all three are red. Solution: P(R1) = 4/7, P(R2|R1) = 3/6, P(R3|R1R2) = 2/5. So P(R1 and R2 and R3) = (4/7)(3/6)(2/5) = 24/210 = 4/35.",
+          "s": [
+            [
+              "States a clear three-draw, without-replacement problem with the urn contents given",
+              1
+            ],
+            [
+              "Writes the three factors P(E), P(F|E), P(G|EF) with numerators and denominators reduced correctly",
+              1
+            ],
+            [
+              "Multiplies to a correct final probability",
+              1
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "code": "C12M-13.4",
+      "name": "Independent events: definition and test",
+      "description": "Independence of two events as P(E|F) = P(E), equivalently P(E and F) = P(E) P(F); dependent events; testing a given pair of events for independence.",
+      "idea": "Two events are independent when the occurrence of one does not change the probability of the other.",
+      "rule": "E and F are independent if and only if P(E and F) = P(E) P(F); otherwise they are dependent.",
+      "example": "Die: E = multiple of 3 = {3, 6}, F = even = {2, 4, 6}. P(E and F) = 1/6 = (1/3)(1/2), so E and F are independent.",
+      "difficulty_base": "Hard",
+      "questions": [
+        {
+          "b": "Remember",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "Two events E and F associated with the same random experiment are said to be independent if",
+          "a": "P(E and F) = P(E) P(F)",
+          "o": [
+            "P(E and F) = P(E) P(F)",
+            "P(E and F) = 0",
+            "P(E or F) = P(E) + P(F)",
+            "P(E) = P(F)"
+          ]
+        },
+        {
+          "b": "Remember",
+          "d": "Easy",
+          "t": "fill_blank",
+          "m": 1,
+          "q": "If E and F are independent events and P(F) is not 0, then P(E|F) = ____.",
+          "a": "P(E)"
+        },
+        {
+          "b": "Remember",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "Two events E and F for which P(E and F) is not equal to P(E) P(F) are called",
+          "a": "dependent events",
+          "o": [
+            "dependent events",
+            "mutually exclusive events",
+            "exhaustive events",
+            "equally likely events"
+          ]
+        },
+        {
+          "b": "Remember",
+          "d": "Hard",
+          "t": "mcq",
+          "m": 1,
+          "q": "For independent events E and F with non-zero probabilities, which of the following is NOT necessarily true?",
+          "a": "P(E|F) = P(F|E)",
+          "o": [
+            "P(E|F) = P(F|E)",
+            "P(E|F) = P(E)",
+            "P(F|E) = P(F)",
+            "P(E and F) = P(E) P(F)"
+          ],
+          "rev": true
+        },
+        {
+          "b": "Understand",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "If A and B are independent events with P(A) = 3/5 and P(B) = 1/5, then P(A and B) is",
+          "a": "3/25",
+          "o": [
+            "3/25",
+            "4/5",
+            "0",
+            "1/3"
+          ]
+        },
+        {
+          "b": "Understand",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "A die is thrown. E is the event 'the number is a multiple of 3' and F is the event 'the number is even'. Then E and F are",
+          "a": "independent, since P(E and F) = 1/6 = P(E) P(F)",
+          "o": [
+            "independent, since P(E and F) = 1/6 = P(E) P(F)",
+            "dependent, since E and F have the common outcome 6",
+            "independent, since E and F have no common outcome",
+            "dependent, since P(E) is not equal to P(F)"
+          ]
+        },
+        {
+          "b": "Understand",
+          "d": "Easy",
+          "t": "fill_blank",
+          "m": 1,
+          "q": "A and B are independent events with P(A) = 0.3 and P(B) = 0.4. Then P(A|B) = ____. (Answer as a decimal.)",
+          "a": "0.3"
+        },
+        {
+          "b": "Understand",
+          "d": "Hard",
+          "t": "mcq",
+          "m": 1,
+          "q": "A die marked 1, 2, 3 in red and 4, 5, 6 in green is tossed. A is the event 'the number is even' and B is the event 'the number is red'. Then A and B are",
+          "a": "not independent, since P(A and B) = 1/6 but P(A) P(B) = 1/4",
+          "o": [
+            "not independent, since P(A and B) = 1/6 but P(A) P(B) = 1/4",
+            "independent, since P(A and B) = 1/4 = P(A) P(B)",
+            "independent, since colour and number are different features",
+            "not independent, since P(A) = P(B)"
+          ]
+        },
+        {
+          "b": "Understand",
+          "d": "Hard",
+          "t": "mcq",
+          "m": 1,
+          "q": "Let E and F be events with P(E) = 3/5, P(F) = 3/10 and P(E and F) = 1/5. Then E and F are",
+          "a": "not independent, because P(E) P(F) = 9/50, which is not 1/5",
+          "o": [
+            "not independent, because P(E) P(F) = 9/50, which is not 1/5",
+            "independent, because P(E and F) is not 0",
+            "independent, because P(E) + P(F) is less than 1",
+            "not independent, because P(E) is not equal to P(F)"
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "A fair coin and an unbiased die are tossed. A is 'head appears on the coin' and B is '3 on the die'. Since A and B are independent, P(A and B) is",
+          "a": "1/12",
+          "o": [
+            "1/12",
+            "2/3",
+            "1/6",
+            "1/2"
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Easy",
+          "t": "fill_blank",
+          "m": 1,
+          "q": "An unbiased die is thrown twice. The probability of getting an odd number on both throws is ____. (Answer as a fraction in lowest terms.)",
+          "a": "1/4"
+        },
+        {
+          "b": "Apply",
+          "d": "Hard",
+          "t": "mcq",
+          "m": 1,
+          "q": "One card is drawn at random from a well shuffled deck of 52 cards. In which of the following cases are the events E and F independent?",
+          "a": "E: the card is black, F: the card is a king",
+          "o": [
+            "E: the card is black, F: the card is a king",
+            "E: the card is a king or queen, F: the card is a queen or jack",
+            "E: the card is a king, F: the card is a queen",
+            "E: the card is a face card, F: the card is a king"
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Hard",
+          "t": "mcq",
+          "m": 1,
+          "q": "Events A and B are such that P(A) = 1/2, P(B) = 1/3 and P(not A or not B) = 5/6. Then A and B are",
+          "a": "independent, since P(A and B) = 1/6 = P(A) P(B)",
+          "o": [
+            "independent, since P(A and B) = 1/6 = P(A) P(B)",
+            "not independent, since P(A and B) = 5/6",
+            "not independent, since P(not A or not B) is not equal to P(A) P(B)",
+            "independent, since P(A) + P(B) = 5/6"
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Hard",
+          "t": "short_answer",
+          "m": 2,
+          "q": "A fair die is thrown. Let E = {1, 2, 3, 4} and F = {3, 4, 5, 6}. Check whether E and F are independent.",
+          "a": "P(E) = 4/6 = 2/3 and P(F) = 4/6 = 2/3. E and F = {3, 4}, so P(E and F) = 2/6 = 1/3. P(E) P(F) = 4/9, which is not equal to 1/3. Hence E and F are not independent (they are dependent).",
+          "s": [
+            [
+              "P(E) = 2/3, P(F) = 2/3 and P(E and F) = 1/3",
+              1
+            ],
+            [
+              "P(E) P(F) = 4/9 is not 1/3, so E and F are dependent",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Hardest",
+          "t": "long_answer",
+          "m": 3,
+          "q": "Three coins are tossed simultaneously. Consider the events E: 'three heads or three tails', F: 'at least two heads' and G: 'at most two heads'. Of the pairs (E, F), (E, G) and (F, G), which are independent and which are dependent?",
+          "a": "P(E) = 2/8 = 1/4, P(F) = 4/8 = 1/2, P(G) = 7/8. E and F = {HHH}, so P(E and F) = 1/8 = P(E) P(F): independent. E and G = {TTT}, so P(E and G) = 1/8 but P(E) P(G) = 7/32: dependent. F and G = {HHT, HTH, THH}, so P(F and G) = 3/8 but P(F) P(G) = 7/16: dependent.",
+          "s": [
+            [
+              "(E, F): P(E and F) = 1/8 = (1/4)(1/2), independent",
+              1
+            ],
+            [
+              "(E, G): 1/8 is not 7/32, dependent",
+              1
+            ],
+            [
+              "(F, G): 3/8 is not 7/16, dependent",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Analyse",
+          "d": "Hard",
+          "t": "assertion_reason",
+          "m": 1,
+          "q": "Assertion (A): When one card is drawn from a pack of 52 cards, the events 'the card is a spade' and 'the card is an ace' are independent. Reason (R): Two events are independent only when they have no outcome in common.",
+          "a": "A is true, R is false",
+          "o": [
+            "A is true, R is false",
+            "Both A and R are true, and R is the correct explanation of A",
+            "Both A and R are true, but R is not the correct explanation of A",
+            "A is false, R is true"
+          ]
+        },
+        {
+          "b": "Analyse",
+          "d": "Hard",
+          "t": "multi_statement",
+          "m": 1,
+          "q": "Consider these statements about testing independence. (I) When a die is thrown, E: 'multiple of 3' and F: 'even number' are dependent because they share the outcome 6. (II) Two events E and F are independent whenever P(E) = P(F). Which is or are correct?",
+          "a": "Neither I nor II",
+          "o": [
+            "Neither I nor II",
+            "Only I",
+            "Only II",
+            "Both I and II"
+          ]
+        },
+        {
+          "b": "Analyse",
+          "d": "Hardest",
+          "t": "long_answer",
+          "m": 3,
+          "q": "One card is drawn at random from a well shuffled deck of 52 cards. Test the independence of E and F when (i) E: 'the card is a spade', F: 'the card is an ace'; (ii) E: 'the card is a king or queen', F: 'the card is a queen or jack'.",
+          "a": "(i) P(E) = 13/52 = 1/4, P(F) = 4/52 = 1/13, P(E and F) = P(ace of spades) = 1/52 = (1/4)(1/13). So E and F are independent. (ii) P(E) = 8/52 = 2/13, P(F) = 8/52 = 2/13. E and F = 'the card is a queen', so P(E and F) = 4/52 = 1/13. P(E) P(F) = 4/169, which is not 1/13, so E and F are dependent.",
+          "s": [
+            [
+              "(i) 1/52 = (1/4)(1/13), independent",
+              1
+            ],
+            [
+              "(ii) P(E) = P(F) = 2/13 and P(E and F) = 1/13",
+              1
+            ],
+            [
+              "(ii) 4/169 is not 1/13, so dependent",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Evaluate",
+          "d": "Hard",
+          "t": "short_answer",
+          "m": 2,
+          "q": "A student says that events E and F with P(E) = 0.4, P(F) = 0.5 and P(E and F) = 0.2 are dependent 'because they can occur together'. Evaluate this reasoning.",
+          "a": "The reasoning is wrong. Independence is decided by probabilities, not by whether the events share outcomes. Here P(E) P(F) = 0.4 x 0.5 = 0.2 = P(E and F), so E and F are independent. Independent events may well have common outcomes.",
+          "s": [
+            [
+              "Checks P(E) P(F) = 0.2 = P(E and F) and concludes the events are independent",
+              1
+            ],
+            [
+              "Explains that having common outcomes does not make events dependent; the test is the product rule",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Create",
+          "d": "Hardest",
+          "t": "long_answer",
+          "m": 3,
+          "q": "For a single throw of a fair die, construct one pair of events that are independent and one pair of events that are dependent. Verify each pair using P(E and F) and P(E) P(F).",
+          "a": "Independent pair: E = {1, 2}, F = {2, 4, 6}. P(E) = 1/3, P(F) = 1/2, E and F = {2}, P(E and F) = 1/6 = (1/3)(1/2). Dependent pair: E = {1, 2}, G = {1, 2, 3}. P(G) = 1/2, E and G = {1, 2}, P(E and G) = 1/3, but P(E) P(G) = 1/6, so they are dependent.",
+          "s": [
+            [
+              "Gives a pair with P(E and F) = P(E) P(F), with outcomes listed",
+              1
+            ],
+            [
+              "Gives a pair with P(E and F) not equal to P(E) P(F), with outcomes listed",
+              1
+            ],
+            [
+              "Verifies both pairs by computing the three probabilities",
+              1
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "code": "C12M-13.5",
+      "name": "Working with independent events",
+      "description": "Independence of complements, P(at least one) = 1 - P(A') P(B'), independent versus mutually exclusive events, mutual independence of three events, and problems on independent trials.",
+      "idea": "Independence carries over to complements, which turns 'at least one', 'neither' and 'exactly one' problems into products; it is a different idea from mutual exclusiveness.",
+      "rule": "If E and F are independent, so are E and F', E' and F, E' and F'. P(at least one of A, B) = 1 - P(A') P(B'). Mutually exclusive events with non-zero probabilities are never independent.",
+      "example": "A and B solve a problem independently with probabilities 1/2 and 1/3: P(solved) = 1 - (1/2)(2/3) = 2/3.",
+      "difficulty_base": "Hard",
+      "questions": [
+        {
+          "b": "Remember",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "If E and F are independent events, then the events E and F' are",
+          "a": "independent",
+          "o": [
+            "independent",
+            "mutually exclusive",
+            "dependent",
+            "exhaustive"
+          ]
+        },
+        {
+          "b": "Remember",
+          "d": "Easy",
+          "t": "fill_blank",
+          "m": 1,
+          "q": "If A and B are two independent events, the probability of occurrence of at least one of A and B is 1 - P(A') x ____.",
+          "a": "P(B')"
+        },
+        {
+          "b": "Remember",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "Three events A, B and C are mutually independent if P(A and B) = P(A) P(B), P(A and C) = P(A) P(C), P(B and C) = P(B) P(C) and",
+          "a": "P(A and B and C) = P(A) P(B) P(C)",
+          "o": [
+            "P(A and B and C) = P(A) P(B) P(C)",
+            "P(A or B or C) = 1",
+            "P(A and B and C) = 0",
+            "P(A) = P(B) = P(C)"
+          ]
+        },
+        {
+          "b": "Remember",
+          "d": "Hard",
+          "t": "mcq",
+          "m": 1,
+          "q": "Which of the following statements about independent events and mutually exclusive events is FALSE?",
+          "a": "Two mutually exclusive events with non-zero probabilities are always independent",
+          "o": [
+            "Two mutually exclusive events with non-zero probabilities are always independent",
+            "Mutually exclusive events never have an outcome in common",
+            "Independent events may have a common outcome",
+            "Two independent events with non-zero probabilities cannot be mutually exclusive"
+          ],
+          "rev": true
+        },
+        {
+          "b": "Understand",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "Given two independent events A and B such that P(A) = 0.3 and P(B) = 0.6, P(A and not B) is",
+          "a": "0.12",
+          "o": [
+            "0.12",
+            "0.18",
+            "0.7",
+            "0.28"
+          ]
+        },
+        {
+          "b": "Understand",
+          "d": "Easy",
+          "t": "fill_blank",
+          "m": 1,
+          "q": "A and B are independent events with P(A) = 0.5 and P(B) = 0.2. Then P(neither A nor B) = ____. (Answer as a decimal.)",
+          "a": "0.4"
+        },
+        {
+          "b": "Understand",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "Let A and B be independent events with P(A) = 0.3 and P(B) = 0.4. Then P(A or B) is",
+          "a": "0.58",
+          "o": [
+            "0.58",
+            "0.7",
+            "0.12",
+            "0.42"
+          ]
+        },
+        {
+          "b": "Understand",
+          "d": "Hard",
+          "t": "mcq",
+          "m": 1,
+          "q": "A die is tossed thrice. The probability of getting an odd number at least once is",
+          "a": "7/8",
+          "o": [
+            "7/8",
+            "1/8",
+            "1/2",
+            "3/8"
+          ]
+        },
+        {
+          "b": "Understand",
+          "d": "Hard",
+          "t": "mcq",
+          "m": 1,
+          "q": "A and B are mutually exclusive events with P(A) = 0.4 and P(B) = 0.3. Then A and B are",
+          "a": "dependent, since P(A and B) = 0 but P(A) P(B) = 0.12",
+          "o": [
+            "dependent, since P(A and B) = 0 but P(A) P(B) = 0.12",
+            "independent, since they cannot occur together",
+            "independent, since P(A and B) = 0.12",
+            "dependent, since P(A) + P(B) is not 1"
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "The probabilities that A and B solve a specific problem independently are 1/2 and 1/3 respectively. If both try independently, the probability that the problem is solved is",
+          "a": "2/3",
+          "o": [
+            "2/3",
+            "1/6",
+            "5/6",
+            "1/3"
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Easy",
+          "t": "fill_blank",
+          "m": 1,
+          "q": "A and B try a problem independently, and their probabilities of solving it are 1/2 and 1/3. The probability that exactly one of them solves the problem is ____. (Answer as a fraction in lowest terms.)",
+          "a": "1/2"
+        },
+        {
+          "b": "Apply",
+          "d": "Hard",
+          "t": "mcq",
+          "m": 1,
+          "q": "Two balls are drawn at random with replacement from a box containing 10 black and 8 red balls. The probability that one of them is black and the other is red is",
+          "a": "40/81",
+          "o": [
+            "40/81",
+            "20/81",
+            "16/81",
+            "80/153"
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Hard",
+          "t": "mcq",
+          "m": 1,
+          "q": "If A and B are two events such that P(A) = 1/4, P(B) = 1/2 and P(A and B) = 1/8, then P(not A and not B) is",
+          "a": "3/8",
+          "o": [
+            "3/8",
+            "1/8",
+            "5/8",
+            "7/8"
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Hard",
+          "t": "short_answer",
+          "m": 2,
+          "q": "Prove that if E and F are independent events, then E and F' are also independent.",
+          "a": "E and F and E and F' are mutually exclusive and E = (E and F) or (E and F'). So P(E) = P(E and F) + P(E and F'), giving P(E and F') = P(E) - P(E and F) = P(E) - P(E) P(F) (by independence) = P(E)[1 - P(F)] = P(E) P(F'). Hence E and F' are independent.",
+          "s": [
+            [
+              "Writes P(E and F') = P(E) - P(E and F), using E = (E and F) or (E and F') with the two parts mutually exclusive",
+              1
+            ],
+            [
+              "Substitutes P(E and F) = P(E) P(F) and factorises to P(E) P(F')",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Hardest",
+          "t": "long_answer",
+          "m": 3,
+          "q": "If A and B are two independent events, prove that the probability of occurrence of at least one of A and B is 1 - P(A') P(B'). Hence find this probability when P(A) = 0.3 and P(B) = 0.6.",
+          "a": "P(at least one) = P(A or B) = P(A) + P(B) - P(A and B) = P(A) + P(B) - P(A) P(B) = P(A) + P(B)[1 - P(A)] = P(A) + P(B) P(A') = 1 - P(A') + P(B) P(A') = 1 - P(A')[1 - P(B)] = 1 - P(A') P(B'). With P(A) = 0.3 and P(B) = 0.6: 1 - (0.7)(0.4) = 1 - 0.28 = 0.72.",
+          "s": [
+            [
+              "P(A or B) = P(A) + P(B) - P(A) P(B), using independence",
+              1
+            ],
+            [
+              "Rearranges to 1 - P(A') P(B')",
+              1
+            ],
+            [
+              "1 - (0.7)(0.4) = 0.72",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Analyse",
+          "d": "Hard",
+          "t": "assertion_reason",
+          "m": 1,
+          "q": "Assertion (A): Two mutually exclusive events with non-zero probabilities of occurrence are independent. Reason (R): For mutually exclusive events P(E and F) = 0, whereas independence requires P(E and F) = P(E) P(F).",
+          "a": "A is false, R is true",
+          "o": [
+            "A is false, R is true",
+            "Both A and R are true, and R is the correct explanation of A",
+            "Both A and R are true, but R is not the correct explanation of A",
+            "A is true, R is false"
+          ]
+        },
+        {
+          "b": "Analyse",
+          "d": "Hard",
+          "t": "multi_statement",
+          "m": 1,
+          "q": "Consider these statements. (I) If A and B are independent events with P(A) = 0.3 and P(B) = 0.4, then P(A' and B') = 0.42. (II) Two independent events having non-zero probabilities of occurrence can also be mutually exclusive. Which is or are correct?",
+          "a": "Only I",
+          "o": [
+            "Only I",
+            "Only II",
+            "Both I and II",
+            "Neither I nor II"
+          ]
+        },
+        {
+          "b": "Analyse",
+          "d": "Hardest",
+          "t": "long_answer",
+          "m": 3,
+          "q": "The events A and B are such that P(A) = 1/2, P(A or B) = 3/5 and P(B) = p. Find p if A and B are (i) mutually exclusive, (ii) independent. Why are the two values different?",
+          "a": "(i) Mutually exclusive: P(A and B) = 0, so 3/5 = 1/2 + p, giving p = 1/10. (ii) Independent: P(A and B) = p/2, so 3/5 = 1/2 + p - p/2, i.e. p/2 = 1/10, giving p = 1/5. The values differ because 'mutually exclusive' makes P(A and B) = 0 while 'independent' makes P(A and B) = P(A) P(B); the two terms do not have the same meaning.",
+          "s": [
+            [
+              "(i) Uses P(A and B) = 0 to get p = 1/10",
+              1
+            ],
+            [
+              "(ii) Uses P(A and B) = p/2 to get p = 1/5",
+              1
+            ],
+            [
+              "Explains that mutually exclusive means P(A and B) = 0 whereas independent means P(A and B) = P(A) P(B)",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Evaluate",
+          "d": "Hard",
+          "t": "short_answer",
+          "m": 2,
+          "q": "A and B throw a die alternately till one of them gets a 6 and wins the game; A throws first. A student says both are equally likely to win because every throw has the same chance 1/6 of a six. Evaluate the claim by finding P(A wins).",
+          "a": "The throws are independent, so P(A wins) = 1/6 + (5/6)^2 (1/6) + (5/6)^4 (1/6) + ... , an infinite G.P. with first term 1/6 and common ratio 25/36. Its sum is (1/6)/(1 - 25/36) = 6/11. So P(B wins) = 1 - 6/11 = 5/11. The claim is wrong: A, who throws first, is more likely to win.",
+          "s": [
+            [
+              "Writes P(A wins) as the G.P. 1/6 + (5/6)^2 (1/6) + ... and sums it to 6/11",
+              1
+            ],
+            [
+              "P(B wins) = 5/11, so the two are not equally likely and the claim is rejected",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Create",
+          "d": "Hardest",
+          "t": "long_answer",
+          "m": 3,
+          "q": "Choose values of P(A) and P(B) for two independent events A and B so that the probability that at least one of them occurs is 0.8. Verify your choice, and find the probability that exactly one of them occurs.",
+          "a": "One example: P(A) = 0.5 and P(B) = 0.6. P(at least one) = 1 - P(A') P(B') = 1 - (0.5)(0.4) = 0.8. P(exactly one) = P(A) P(B') + P(A') P(B) = (0.5)(0.4) + (0.5)(0.6) = 0.5. (Any values with P(A') P(B') = 0.2 are acceptable.)",
+          "s": [
+            [
+              "Chooses P(A), P(B) with P(A') P(B') = 0.2",
+              1
+            ],
+            [
+              "Verifies 1 - P(A') P(B') = 0.8",
+              1
+            ],
+            [
+              "Finds P(exactly one) = P(A) P(B') + P(A') P(B) correctly for the chosen values",
+              1
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "code": "C12M-13.6",
+      "name": "Partition of a sample space and the theorem of total probability",
+      "description": "Recognising a partition (pairwise disjoint, exhaustive, non-zero probabilities) and finding P(A) as the sum of P(Ej) P(A|Ej) over the partition.",
+      "idea": "An event that can happen through several mutually exclusive routes has probability equal to the sum of (probability of the route) x (probability of the event along that route).",
+      "rule": "If {E1, ..., En} is a partition of S with each P(Ej) not 0, then P(A) = P(E1) P(A|E1) + ... + P(En) P(A|En).",
+      "example": "P(strike) = 0.65, P(on time | strike) = 0.32, P(on time | no strike) = 0.80: P(on time) = 0.65 x 0.32 + 0.35 x 0.80 = 0.488.",
+      "difficulty_base": "Hard",
+      "questions": [
+        {
+          "b": "Remember",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "Events E1, E2, ..., En represent a partition of the sample space S if they are pairwise disjoint, each has non-zero probability, and",
+          "a": "their union is S",
+          "o": [
+            "their union is S",
+            "their intersection is S",
+            "they are pairwise independent",
+            "they are equally likely"
+          ]
+        },
+        {
+          "b": "Remember",
+          "d": "Easy",
+          "t": "fill_blank",
+          "m": 1,
+          "q": "Any non-empty event E and its complement ____ form a partition of the sample space S, since they are disjoint and their union is S.",
+          "a": "E'"
+        },
+        {
+          "b": "Remember",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "If {E1, E2} is a partition of the sample space S and A is any event, the theorem of total probability gives P(A) =",
+          "a": "P(E1) P(A|E1) + P(E2) P(A|E2)",
+          "o": [
+            "P(E1) P(A|E1) + P(E2) P(A|E2)",
+            "P(A|E1) + P(A|E2)",
+            "P(E1) P(E1|A) + P(E2) P(E2|A)",
+            "P(E1) P(A|E1) x P(E2) P(A|E2)"
+          ]
+        },
+        {
+          "b": "Remember",
+          "d": "Hard",
+          "t": "mcq",
+          "m": 1,
+          "q": "Which of the following is NOT a condition for the events E1, E2, ..., En to represent a partition of the sample space S?",
+          "a": "P(E1) = P(E2) = ... = P(En)",
+          "o": [
+            "P(E1) = P(E2) = ... = P(En)",
+            "Ei and Ej have no common outcome whenever i is not equal to j",
+            "E1 or E2 or ... or En = S",
+            "P(Ei) > 0 for every i"
+          ],
+          "rev": true
+        },
+        {
+          "b": "Understand",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "For a throw of a fair die with S = {1, 2, 3, 4, 5, 6}, which of the following sets of events is a partition of S?",
+          "a": "{1, 2}, {3, 4}, {5, 6}",
+          "o": [
+            "{1, 2}, {3, 4}, {5, 6}",
+            "{1, 2, 3, 4}, {4, 5, 6}",
+            "{2, 4, 6}, {1, 3}",
+            "{1, 2, 3, 4, 5, 6}, {6}"
+          ]
+        },
+        {
+          "b": "Understand",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "The probability of a strike is 0.4. A job is completed on time with probability 0.9 if there is no strike and 0.3 if there is a strike. The probability that the job is completed on time is",
+          "a": "0.66",
+          "o": [
+            "0.66",
+            "0.12",
+            "0.6",
+            "0.54"
+          ]
+        },
+        {
+          "b": "Understand",
+          "d": "Easy",
+          "t": "fill_blank",
+          "m": 1,
+          "q": "If E and F are any two events of a sample space S, then the set {E and F', E and F, E' and F, ____} is a partition of S.",
+          "a": "E' and F'"
+        },
+        {
+          "b": "Understand",
+          "d": "Hard",
+          "t": "mcq",
+          "m": 1,
+          "q": "Bag I contains 2 white and 3 red balls and Bag II contains 4 white and 5 red balls. One of the bags is chosen at random and a ball is drawn from it. The probability that the ball is white is",
+          "a": "19/45",
+          "o": [
+            "19/45",
+            "3/7",
+            "38/45",
+            "2/45"
+          ]
+        },
+        {
+          "b": "Understand",
+          "d": "Hard",
+          "t": "mcq",
+          "m": 1,
+          "q": "In the proof of the theorem of total probability, P(A) is written as the sum P(A and E1) + P(A and E2) + ... + P(A and En). This is allowed because the events (A and E1), (A and E2), ..., (A and En) are",
+          "a": "pairwise disjoint",
+          "o": [
+            "pairwise disjoint",
+            "pairwise independent",
+            "equally likely",
+            "each equal to A"
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "In a college, 60% of the students reside in the hostel and 40% are day scholars. 30% of the hostel students and 20% of the day scholars attain A grade. The probability that a randomly chosen student has an A grade is",
+          "a": "0.26",
+          "o": [
+            "0.26",
+            "0.5",
+            "0.25",
+            "0.18"
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Easy",
+          "t": "fill_blank",
+          "m": 1,
+          "q": "Machine A produces 60% of the items of a factory and machine B produces 40%. Further, 2% of the items of A and 1% of the items of B are defective. The probability that an item chosen at random from the output is defective is ____ (as a decimal).",
+          "a": "0.016"
+        },
+        {
+          "b": "Apply",
+          "d": "Hard",
+          "t": "mcq",
+          "m": 1,
+          "q": "An urn contains 5 red and 5 black balls. A ball is drawn at random, its colour is noted and it is returned to the urn; moreover, 2 additional balls of the colour drawn are put in the urn and then a ball is drawn at random. The probability that the second ball is red is",
+          "a": "1/2",
+          "o": [
+            "1/2",
+            "7/12",
+            "7/24",
+            "5/12"
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Hard",
+          "t": "mcq",
+          "m": 1,
+          "q": "In a factory, machines A, B and C manufacture 25%, 35% and 40% of the bolts respectively. Of their outputs, 5%, 4% and 2% respectively are defective. The probability that a bolt drawn at random from the product is defective is",
+          "a": "0.0345",
+          "o": [
+            "0.0345",
+            "0.11",
+            "0.014",
+            "0.0125"
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Hard",
+          "t": "short_answer",
+          "m": 2,
+          "q": "An insurance company insured 2000 scooter drivers, 4000 car drivers and 6000 truck drivers. The probabilities of an accident are 0.01, 0.03 and 0.15 respectively. Find the probability that an insured person chosen at random meets with an accident.",
+          "a": "P(scooter) = 2000/12000 = 1/6, P(car) = 1/3, P(truck) = 1/2; these three events form a partition. By the theorem of total probability, P(accident) = (1/6)(0.01) + (1/3)(0.03) + (1/2)(0.15) = (0.01 + 0.06 + 0.45)/6 = 0.52/6 = 13/150.",
+          "s": [
+            [
+              "Finds the probabilities 1/6, 1/3, 1/2 of the three kinds of driver",
+              1
+            ],
+            [
+              "Applies total probability: (1/6)(0.01) + (1/3)(0.03) + (1/2)(0.15) = 13/150",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Hardest",
+          "t": "long_answer",
+          "m": 3,
+          "q": "Bag I contains 3 red and 4 black balls and Bag II contains 4 red and 5 black balls. One ball is transferred from Bag I to Bag II and then a ball is drawn from Bag II. Find the probability that the ball drawn is red.",
+          "a": "Let E1: transferred ball is red, E2: transferred ball is black; P(E1) = 3/7, P(E2) = 4/7. Let A: ball drawn from Bag II is red. If a red ball is transferred, Bag II has 5 red out of 10, so P(A|E1) = 5/10. If a black ball is transferred, Bag II has 4 red out of 10, so P(A|E2) = 4/10. P(A) = (3/7)(5/10) + (4/7)(4/10) = 15/70 + 16/70 = 31/70.",
+          "s": [
+            [
+              "P(E1) = 3/7 and P(E2) = 4/7 for the transferred ball",
+              1
+            ],
+            [
+              "P(A|E1) = 5/10 and P(A|E2) = 4/10 with Bag II now holding 10 balls",
+              1
+            ],
+            [
+              "P(A) = 15/70 + 16/70 = 31/70",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Analyse",
+          "d": "Hard",
+          "t": "assertion_reason",
+          "m": 1,
+          "q": "Assertion (A): If P(strike) = 0.2 and a job is completed on time with probability 0.9 when there is no strike and 0.4 when there is a strike, then P(job is completed on time) = 0.8. Reason (R): An event B and its complement B' form a partition of the sample space, so P(A) = P(B) P(A|B) + P(B') P(A|B').",
+          "a": "Both A and R are true, and R is the correct explanation of A",
+          "o": [
+            "Both A and R are true, and R is the correct explanation of A",
+            "Both A and R are true, but R is not the correct explanation of A",
+            "A is true, R is false",
+            "A is false, R is true"
+          ]
+        },
+        {
+          "b": "Analyse",
+          "d": "Hard",
+          "t": "multi_statement",
+          "m": 1,
+          "q": "Consider these statements. (I) A sample space has only one partition. (II) In the theorem of total probability, each event Ej of the partition must have non-zero probability. Which is or are correct?",
+          "a": "Only II",
+          "o": [
+            "Only II",
+            "Only I",
+            "Both I and II",
+            "Neither I nor II"
+          ]
+        },
+        {
+          "b": "Analyse",
+          "d": "Hardest",
+          "t": "long_answer",
+          "m": 3,
+          "q": "A girl throws a die. If she gets a 5 or 6, she tosses a coin three times and notes the number of heads. If she gets 1, 2, 3 or 4, she tosses a coin once and notes whether a head or tail is obtained. Find the probability that she obtains exactly one head.",
+          "a": "Let E1: she gets 5 or 6, E2: she gets 1, 2, 3 or 4; P(E1) = 1/3, P(E2) = 2/3. Let A: exactly one head. P(A|E1) = 3/8 (HTT, THT, TTH out of 8 outcomes). P(A|E2) = 1/2. By total probability, P(A) = (1/3)(3/8) + (2/3)(1/2) = 1/8 + 1/3 = 11/24.",
+          "s": [
+            [
+              "P(E1) = 1/3, P(E2) = 2/3 and P(A|E1) = 3/8",
+              1
+            ],
+            [
+              "P(A|E2) = 1/2",
+              1
+            ],
+            [
+              "P(A) = 1/8 + 1/3 = 11/24",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Evaluate",
+          "d": "Hard",
+          "t": "short_answer",
+          "m": 2,
+          "q": "Bag I contains 1 white and 1 red ball; Bag II contains 1 white and 3 red balls. A bag is chosen at random and a ball is drawn from it. A student pools the balls and says P(white) = 2/6 = 1/3. Evaluate this answer.",
+          "a": "The answer is wrong. The six balls are not equally likely to be drawn, because a bag is chosen first. By the theorem of total probability, P(white) = (1/2)(1/2) + (1/2)(1/4) = 1/4 + 1/8 = 3/8, not 1/3.",
+          "s": [
+            [
+              "Explains that pooling is invalid because the bag is chosen first, so the balls are not equally likely",
+              1
+            ],
+            [
+              "P(white) = (1/2)(1/2) + (1/2)(1/4) = 3/8",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Create",
+          "d": "Hardest",
+          "t": "long_answer",
+          "m": 3,
+          "q": "Create a problem with two bags having different numbers of red and black balls, one bag being chosen at random, in which the probability that the drawn ball is red comes out to be exactly 1/2. Solve it using the theorem of total probability.",
+          "a": "Example: Bag I has 1 red and 3 black balls; Bag II has 3 red and 1 black ball. A bag is chosen at random and a ball is drawn. P(E1) = P(E2) = 1/2, P(red|E1) = 1/4, P(red|E2) = 3/4. P(red) = (1/2)(1/4) + (1/2)(3/4) = 1/8 + 3/8 = 1/2.",
+          "s": [
+            [
+              "States two bags with different compositions and a bag chosen at random",
+              1
+            ],
+            [
+              "Writes P(E1), P(E2), P(A|E1), P(A|E2) correctly for the chosen bags",
+              1
+            ],
+            [
+              "Applies P(A) = P(E1) P(A|E1) + P(E2) P(A|E2) and obtains 1/2",
+              1
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "code": "C12M-13.7",
+      "name": "Bayes' theorem",
+      "description": "Finding the reverse (a posteriori) probability P(Ei|A) of a hypothesis from the priori probabilities P(Ei) and the conditional probabilities P(A|Ei), with the terminology of hypotheses and causes.",
+      "idea": "Once the outcome A is seen, each cause Ei gets the fraction of P(A) that came through it.",
+      "rule": "P(Ei|A) = P(Ei) P(A|Ei) / [P(E1) P(A|E1) + ... + P(En) P(A|En)].",
+      "example": "Bag I: 3 red, 4 black; Bag II: 5 red, 6 black; a red ball is drawn from a bag chosen at random. P(Bag II | red) = (1/2)(5/11) / [(1/2)(3/7) + (1/2)(5/11)] = 35/68.",
+      "difficulty_base": "Hardest",
+      "questions": [
+        {
+          "b": "Remember",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "When Bayes' theorem is applied, the events E1, E2, ..., En of the partition are called",
+          "a": "hypotheses",
+          "o": [
+            "hypotheses",
+            "elementary events",
+            "independent events",
+            "a posteriori events"
+          ]
+        },
+        {
+          "b": "Remember",
+          "d": "Easy",
+          "t": "fill_blank",
+          "m": 1,
+          "q": "In Bayes' theorem, the probability P(Ei) is called the 'a ____' probability of the hypothesis Ei (one word).",
+          "a": "priori"
+        },
+        {
+          "b": "Remember",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "For a partition {E1, E2} of the sample space and an event A of non-zero probability, Bayes' theorem gives P(E1|A) =",
+          "a": "P(E1) P(A|E1) / [P(E1) P(A|E1) + P(E2) P(A|E2)]",
+          "o": [
+            "P(E1) P(A|E1) / [P(E1) P(A|E1) + P(E2) P(A|E2)]",
+            "P(E1) P(A|E1)",
+            "P(A|E1) / [P(A|E1) + P(A|E2)]",
+            "P(E1) P(A|E1) / [P(E1) + P(E2)]"
+          ]
+        },
+        {
+          "b": "Remember",
+          "d": "Hard",
+          "t": "mcq",
+          "m": 1,
+          "q": "Which of the following statements about Bayes' theorem is FALSE?",
+          "a": "It requires the events E1, E2, ..., En to be independent of one another",
+          "o": [
+            "It requires the events E1, E2, ..., En to be independent of one another",
+            "It is also called the formula for the probability of causes",
+            "P(Ei|A) is called the a posteriori probability of the hypothesis Ei",
+            "Its denominator is P(A), obtained from the theorem of total probability"
+          ],
+          "rev": true
+        },
+        {
+          "b": "Understand",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "A bag contains 4 red and 4 black balls; another bag contains 2 red and 6 black balls. One of the two bags is selected at random and a ball drawn from it is found to be red. The probability that the ball was drawn from the first bag is",
+          "a": "2/3",
+          "o": [
+            "2/3",
+            "1/2",
+            "1/4",
+            "3/8"
+          ]
+        },
+        {
+          "b": "Understand",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "Of three identical boxes, box I has two gold coins, box II has two silver coins and box III has one gold and one silver coin. A box is chosen at random and a coin taken out of it is of gold. The probability that the other coin in the box is also of gold is",
+          "a": "2/3",
+          "o": [
+            "2/3",
+            "1/2",
+            "1/3",
+            "1/6"
+          ]
+        },
+        {
+          "b": "Understand",
+          "d": "Easy",
+          "t": "fill_blank",
+          "m": 1,
+          "q": "A man is known to speak the truth 3 out of 4 times. He throws a die and reports that it is a six. The probability that it is actually a six is ____. (Answer as a fraction in lowest terms.)",
+          "a": "3/8"
+        },
+        {
+          "b": "Understand",
+          "d": "Hard",
+          "t": "mcq",
+          "m": 1,
+          "q": "The probability that A speaks the truth is 4/5. A coin is tossed and A reports that a head appears. The probability that there actually was a head is",
+          "a": "4/5",
+          "o": [
+            "4/5",
+            "1/2",
+            "2/5",
+            "1/5"
+          ]
+        },
+        {
+          "b": "Understand",
+          "d": "Hard",
+          "t": "mcq",
+          "m": 1,
+          "q": "In answering a multiple choice question, a student knows the answer with probability 3/4 and guesses with probability 1/4; a guess is correct with probability 1/4. The probability that the student knows the answer, given that he answered it correctly, is",
+          "a": "12/13",
+          "o": [
+            "12/13",
+            "3/4",
+            "13/16",
+            "1/13"
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "In a college, 60% of students reside in the hostel and 40% are day scholars; 30% of the hostel students and 20% of the day scholars attain A grade. A student chosen at random has an A grade. The probability that the student is a hostel resident is",
+          "a": "9/13",
+          "o": [
+            "9/13",
+            "9/50",
+            "3/5",
+            "3/10"
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Easy",
+          "t": "fill_blank",
+          "m": 1,
+          "q": "Machine A produces 60% of the items of a factory and machine B produces 40%; 2% of the items of A and 1% of the items of B are defective. An item chosen at random is found to be defective. The probability that it was produced by machine B is ____. (Answer as a fraction in lowest terms.)",
+          "a": "1/4"
+        },
+        {
+          "b": "Apply",
+          "d": "Hard",
+          "t": "mcq",
+          "m": 1,
+          "q": "Machines A, B and C manufacture 25%, 35% and 40% of the bolts of a factory, and 5%, 4% and 2% of their outputs respectively are defective. A bolt drawn at random is found to be defective. The probability that it was manufactured by machine B is",
+          "a": "28/69",
+          "o": [
+            "28/69",
+            "7/20",
+            "7/500",
+            "4/11"
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Hard",
+          "t": "mcq",
+          "m": 1,
+          "q": "There are three coins: a two headed coin, a biased coin that comes up heads 75% of the time, and an unbiased coin. One of the three coins is chosen at random and tossed, and it shows heads. The probability that it was the two headed coin is",
+          "a": "4/9",
+          "o": [
+            "4/9",
+            "1/3",
+            "3/4",
+            "2/3"
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Hard",
+          "t": "short_answer",
+          "m": 2,
+          "q": "An insurance company insured 2000 scooter drivers, 4000 car drivers and 6000 truck drivers, whose probabilities of an accident are 0.01, 0.03 and 0.15 respectively. One of the insured persons meets with an accident. What is the probability that he is a scooter driver?",
+          "a": "P(E1) = 1/6, P(E2) = 1/3, P(E3) = 1/2 for scooter, car and truck drivers; P(A|E1) = 0.01, P(A|E2) = 0.03, P(A|E3) = 0.15. By Bayes' theorem, P(E1|A) = (1/6)(0.01) / [(1/6)(0.01) + (1/3)(0.03) + (1/2)(0.15)] = 0.01/(0.01 + 0.06 + 0.45) = 0.01/0.52 = 1/52.",
+          "s": [
+            [
+              "Sets up the priors 1/6, 1/3, 1/2 and writes Bayes' formula with all three terms in the denominator",
+              1
+            ],
+            [
+              "Evaluates to 0.01/0.52 = 1/52",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Hardest",
+          "t": "long_answer",
+          "m": 3,
+          "q": "A doctor is to visit a patient. The probabilities that he will come by train, bus, scooter or by other means of transport are 3/10, 1/5, 1/10 and 2/5 respectively. The probabilities that he will be late are 1/4, 1/3 and 1/12 if he comes by train, bus and scooter respectively, but if he comes by other means he will not be late. When he arrives, he is late. Find the probability that he came by bus.",
+          "a": "Let T1, T2, T3, T4 be the events train, bus, scooter, other; E: he is late. P(E|T1) = 1/4, P(E|T2) = 1/3, P(E|T3) = 1/12, P(E|T4) = 0. P(E) = (3/10)(1/4) + (1/5)(1/3) + (1/10)(1/12) + (2/5)(0) = 9/120 + 8/120 + 1/120 = 18/120 = 3/20. By Bayes' theorem, P(T2|E) = (1/5)(1/3)/(3/20) = (1/15)(20/3) = 4/9.",
+          "s": [
+            [
+              "Lists the four priors and the four conditional probabilities, including P(E|T4) = 0",
+              1
+            ],
+            [
+              "Denominator: P(E) = 3/40 + 1/15 + 1/120 + 0 = 3/20",
+              1
+            ],
+            [
+              "P(T2|E) = (1/15)/(3/20) = 4/9",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Analyse",
+          "d": "Hard",
+          "t": "assertion_reason",
+          "m": 1,
+          "q": "Assertion (A): If {E1, E2} is a partition with P(E1) = P(E2) = 1/2, and P(A|E1) = 3/7, P(A|E2) = 5/11, then P(E2|A) = 35/68. Reason (R): By Bayes' theorem, P(E2|A) is always equal to P(A|E2).",
+          "a": "A is true, R is false",
+          "o": [
+            "A is true, R is false",
+            "Both A and R are true, and R is the correct explanation of A",
+            "Both A and R are true, but R is not the correct explanation of A",
+            "A is false, R is true"
+          ]
+        },
+        {
+          "b": "Analyse",
+          "d": "Hard",
+          "t": "multi_statement",
+          "m": 1,
+          "q": "Consider these statements about Bayes' theorem for a partition E1, E2, ..., En and an event A of non-zero probability. (I) P(Ei|A) is called the a posteriori probability of the hypothesis Ei. (II) If P(A|Ei) = 0 for some hypothesis Ei, then P(Ei|A) = 0. Which is or are correct?",
+          "a": "Both I and II",
+          "o": [
+            "Both I and II",
+            "Only I",
+            "Only II",
+            "Neither I nor II"
+          ]
+        },
+        {
+          "b": "Analyse",
+          "d": "Hardest",
+          "t": "long_answer",
+          "m": 3,
+          "q": "A laboratory blood test is 99% effective in detecting a certain disease when it is in fact present. However, the test also yields a false positive result for 0.5% of the healthy persons tested. If 0.1 percent of the population actually has the disease, find the probability that a person has the disease given that his test result is positive, and explain why it is far smaller than 0.99.",
+          "a": "Let E: person has the disease, A: test is positive. P(E) = 0.001, P(E') = 0.999, P(A|E) = 0.99, P(A|E') = 0.005. By Bayes' theorem, P(E|A) = (0.001)(0.99) / [(0.001)(0.99) + (0.999)(0.005)] = 0.00099/(0.00099 + 0.004995) = 0.00099/0.005985 = 22/133, about 0.165. It is far below 0.99 because the disease is very rare: the healthy group is so large that its false positives (0.004995) outnumber the true positives (0.00099).",
+          "s": [
+            [
+              "Sets up P(E) = 0.001, P(E') = 0.999, P(A|E) = 0.99, P(A|E') = 0.005",
+              1
+            ],
+            [
+              "Applies Bayes' theorem to get 0.00099/0.005985 = 22/133 (about 0.165)",
+              1
+            ],
+            [
+              "Explains that the tiny prior makes false positives from the large healthy group dominate the denominator",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Evaluate",
+          "d": "Hard",
+          "t": "short_answer",
+          "m": 2,
+          "q": "If a machine is correctly set up it produces 90% acceptable items; if incorrectly set up, only 40%. 80% of the set ups are correctly done. After a certain set up the machine produces 2 acceptable items. A student gives the probability that the machine is correctly set up as 0.8 x 0.9 x 0.9 = 0.648. Evaluate this answer.",
+          "a": "The answer is wrong: 0.648 is only the numerator P(B1) P(A|B1) of Bayes' formula, i.e. P(B1 and A). It must be divided by P(A) = 0.8 x 0.9 x 0.9 + 0.2 x 0.4 x 0.4 = 0.648 + 0.032 = 0.680. So P(B1|A) = 0.648/0.680 = 81/85, about 0.95.",
+          "s": [
+            [
+              "Identifies that 0.648 is only the numerator and the total-probability denominator 0.680 is missing",
+              1
+            ],
+            [
+              "P(B1|A) = 0.648/0.680 = 81/85 (about 0.95)",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Create",
+          "d": "Hardest",
+          "t": "long_answer",
+          "m": 3,
+          "q": "Create a problem about two machines producing items, some of which are defective, in which the probability that a defective item came from the first machine works out to exactly 3/4. Solve it using Bayes' theorem.",
+          "a": "Example: Machines A and B each produce 50% of the items; 3% of A's items and 1% of B's items are defective. An item chosen at random is defective; find the probability that it came from A. Solution: P(A) = P(B) = 0.5, P(D|A) = 0.03, P(D|B) = 0.01. P(A|D) = (0.5)(0.03) / [(0.5)(0.03) + (0.5)(0.01)] = 0.015/0.020 = 3/4.",
+          "s": [
+            [
+              "States a complete problem giving each machine's share of output and its defective rate",
+              1
+            ],
+            [
+              "Writes Bayes' formula with the total-probability denominator for the chosen numbers",
+              1
+            ],
+            [
+              "Evaluates the posterior probability to exactly 3/4",
+              1
+            ]
+          ]
+        }
+      ]
+    }
+  ]
+}

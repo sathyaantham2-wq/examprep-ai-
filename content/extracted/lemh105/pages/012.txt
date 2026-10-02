@@ -1,0 +1,42 @@
+CONTINUITY AND DIFFERENTIABILITY 115
+Remark A similar proof may be given for the continuity of cosine function.
+Example 18 Prove that the function defined by f(x) = tan x is a continuous function.
+Solution The function f(x) = tan x = 
+sin
+cos
+x
+x
+. This is defined for all real numbers such
+that cos x ≠ 0, i.e., x ≠ (2n +1) 2
+π
+. We have just proved that both sine and cosine
+functions are continuous. Thus tan x being a quotient of two continuous functions is
+continuous wherever it is defined.
+An interesting fact is the behaviour of continuous functions with respect to
+composition of functions. Recall that if f and g are two real functions, then
+(f o g) (x) = f(g (x))
+is defined whenever the range of g is a subset of domain of f. The following theorem
+(stated without proof) captures the continuity of composite functions.
+Theorem 2 Suppose f and g are real valued functions such that (f o g) is defined at c.
+If g is continuous at c and if f is continuous at g (c), then (f o g) is continuous at c.
+The following examples illustrate this theorem.
+Example 19 Show that the function defined by f(x) = sin (x
+2
+) is a continuous function.
+Solution Observe that the function is defined for every real number. The function
+f may be thought of as a composition g o h of the two functions g and h, where
+g (x) = sin x and h (x) = x
+2
+. Since both g and h are continuous functions, by Theorem 2,
+it can be deduced that f is a continuous function.
+Example 20 Show that the function f defined by
+f(x) = |1 – x + | x | |,
+where x is any real number, is a continuous function.
+Solution Define g by g (x) = 1 – x + | x| and h by h (x) = | x| for all real x. Then
+(h o g) (x) = h (g (x))
+= h (1– x + | x |)
+= | 1– x + | x | | = f(x)
+In Example 7, we have seen that h is a continuous function. Hence g being a sum
+of a polynomial function and the modulus function is continuous. But then f being a
+composite of two continuous functions is continuous.
+Reprint 2026-27

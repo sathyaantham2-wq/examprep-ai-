@@ -1,0 +1,82 @@
+DETERMINANTS 85
+Example 10 Find minors and cofactors of the elements a11, a21 in the determinant
+∆ =
+11 12 13
+21 22 23
+31 32 33
+a a a
+a a a
+a a a
+Solution By definition of minors and cofactors, we have
+Minor of a11 = M11 = 
+22 23
+32 33
+a a
+a a
+ = a22 a33– a23 a32
+Cofactor of a11
+ = A11
+ = (–1)1+1 M11 = a22 a33 – a23 a32
+Minor of a21 = M21 = 
+12 13
+32 33
+a a
+a a
+ = a12 a33 – a13 a32
+Cofactor of a21 = A21 = (–1)2+1 M21 = (–1) (a12 a33 – a13 a32) = – a12 a33 + a13 a32
+Remark Expanding the determinant ∆, in Example 21, along R1
+, we have
+∆ = (–1)1+1 a11
+22 23
+32 33
+a a
+a a
++ (–1)1+2 a12
+21 23
+31 33
+a a
+a a
+ + (–1)1+3 a13
+21 22
+31 32
+a a
+a a
+ = a11 A11 + a12 A12 + a13 A13, where Aij is cofactor of aij
+ = sum of product of elements of R1
+ with their corresponding cofactors
+Similarly, ∆ can be calculated by other five ways of expansion that is along R2
+, R3
+,
+C1
+, C2
+ and C3
+.
+Hence ∆ = sum of the product of elements of any row (or column) with their
+corresponding cofactors.
+ANote If elements of a row (or column) are multiplied with cofactors of any
+other row (or column), then their sum is zero. For example,
+∆ = a11 A21 + a12 A22 + a13 A23
+= a11 (–1)1+1 12 13
+32 33
+a a
+a a
++ a12 (–1)1+2 11 13
+31 33
+a a
+a a
++ a13 (–1)1+3 11 12
+31 32
+a a
+a a
+= 
+11 12 13
+11 12 13
+31 32 33
+a a a
+a a a
+a a a
+ = 0 (since R1
+ and R2
+ are identical)
+Similarly, we can try for other rows and columns.
+Reprint 2026-27

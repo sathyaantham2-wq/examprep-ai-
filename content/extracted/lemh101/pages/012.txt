@@ -1,0 +1,48 @@
+12 MATHEMATICS
+1.4 Composition of Functions and Invertible Function
+Definition 8 Let f : A → B and g : B → C be two functions. Then the composition of
+f and g, denoted by gof, is defined as the function gof : A → C given by
+gof (x) = g(f (x)), ∀ x ∈ A.
+Fig 1.5
+Example 15 Let f : {2, 3, 4, 5} → {3, 4, 5, 9} and g : {3, 4, 5, 9} → {7, 11, 15} be
+functions defined as f(2) = 3, f(3) = 4, f(4) = f(5) = 5 and g (3) = g (4) = 7 and
+g (5) = g (9) = 11. Find gof.
+Solution We have gof(2) = g (f(2)) = g (3) = 7, gof (3) = g (f(3)) = g (4) = 7,
+gof(4) = g (f(4)) = g (5) = 11 and gof(5) = g (5) = 11.
+Example 16 Find gof and fog, if f : R → R and g : R → R are given by f(x) = cos x
+and g (x) = 3x
+2
+. Show that gof ≠ fog.
+Solution We have gof(x) = g (f(x)) = g (cos x) = 3 (cos x)
+2
+ = 3 cos2 x. Similarly,
+fog(x) = f(g (x)) = f(3x
+2
+) = cos (3x
+2
+). Note that 3cos2 x ≠ cos 3x
+2
+, for x = 0. Hence,
+gof ≠ fog.
+Definition 9 A function f : X → Y is defined to be invertible, if there exists a function
+g : Y → X such that gof = IX
+ and fog = IY
+. The function g is called the inverse of f and
+is denoted by f
+–1
+.
+Thus, if f is invertible, then f must be one-one and onto and conversely, if f is
+one-one and onto, then f must be invertible. This fact significantly helps for proving a
+function f to be invertible by showing that f is one-one and onto, specially when the
+actual inverse of f is not to be determined.
+Example 17 Let f : N → Y be a function defined as f(x) = 4x + 3, where,
+Y = {y ∈ N: y = 4x + 3 for some x ∈ N}. Show that f is invertible. Find the inverse.
+Solution Consider an arbitrary element y of Y. By the definition of Y, y = 4x + 3,
+for some x in the domain N. This shows that 
+( 3)
+4
+y
+x
+−
+= . Define g : Y → N by
+Reprint 2026-27

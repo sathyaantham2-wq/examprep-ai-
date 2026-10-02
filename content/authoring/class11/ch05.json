@@ -1,0 +1,1684 @@
+{
+ "subject": {
+  "code": "MATH11",
+  "name": "Mathematics",
+  "board": "CBSE",
+  "class": 11
+ },
+ "source": {
+  "publisher": "NCERT",
+  "title": "Mathematics",
+  "edition": "Textbook for Class XI, Reprint 2026-27",
+  "year": 2026
+ },
+ "chapter": {
+  "part": "I",
+  "chapter_no": 5,
+  "name": "Linear Inequalities",
+  "blurb": "This chapter introduces inequalities -- statements using <, >, <= or >= -- and classifies them as numerical or literal, strict or slack, and linear or not. It gives the two rules for solving a linear inequality in one variable, including reversing the sign on multiplying or dividing by a negative number, and solves such inequalities over the natural numbers, integers and reals with the solutions shown on a number line. It closes with double inequalities, systems of two inequalities in one variable, and word problems on marks, numbers, lengths, temperature and mixtures.",
+  "source_code": "kemh105",
+  "order_index": 5
+ },
+ "scope_in": [
+  {
+   "item": "Recognise an inequality and classify it as numerical, literal or double, and as strict (<, >) or slack (<=, >=)",
+   "pages": "89-90"
+  },
+  {
+   "item": "Identify linear inequalities in one variable (ax + b < 0 etc., a not 0) and in two variables (ax + by < c etc., a and b not 0), and tell them apart from quadratic inequalities, which are not linear",
+   "pages": "90"
+  },
+  {
+   "item": "Translate a statement ('less than', 'at most', 'up to', 'at least') into an inequality in one or two variables, without solving the two-variable case",
+   "pages": "89-90"
+  },
+  {
+   "item": "State what a solution and the solution set of an inequality in one variable are, and find solutions by trial",
+   "pages": "91"
+  },
+  {
+   "item": "Apply Rule 1 (add or subtract equal numbers) and Rule 2 (multiply or divide by a positive number; reverse the sign for a negative number) to an inequality",
+   "pages": "91-92, 99"
+  },
+  {
+   "item": "Solve a linear inequality in one variable when x is a natural number, an integer or a real number, and give the solution set in each case",
+   "pages": "92, 95"
+  },
+  {
+   "item": "Solve linear inequalities with brackets and fractions for real x and write the solution set in interval notation",
+   "pages": "92-95"
+  },
+  {
+   "item": "Represent the solutions of a one-variable inequality on a number line: open circle for < or >, dark circle for <= or >=, line darkened to the left or right",
+   "pages": "93-95, 99"
+  },
+  {
+   "item": "Solve a double inequality such as -8 <= 5x - 3 < 7 by operating on all three parts, reversing the signs when dividing by a negative",
+   "pages": "96, 98"
+  },
+  {
+   "item": "Solve a system of two linear inequalities in one variable by taking the common values, and show the solution on a number line",
+   "pages": "96-98"
+  },
+  {
+   "item": "Solve word problems that lead to linear inequalities in one variable: averages and marks, consecutive odd or even numbers, side lengths and cut lengths, temperature conversion, IQ and acid or boric-acid mixtures",
+   "pages": "94-99"
+  }
+ ],
+ "scope_out": [
+  {
+   "item": "Graphical solution of linear inequalities in two variables (shading a half-plane on one side of a line in the Cartesian plane)",
+   "reason": "Removed in this rationalised edition. Section 5.1 and p. 90 still say the chapter studies inequalities 'in one and two variables', but no section, example or exercise teaches it; the only numbered sections are 5.1, 5.2 and 5.3 (pp. 89-99)"
+  },
+  {
+   "item": "Solution of a system of linear inequalities in two variables (common or feasible region) and linear programming",
+   "reason": "Not in this edition of the chapter; the only systems solved are in one variable on a number line (Example 11, p. 96; Miscellaneous Exercise 7-10, p. 98)"
+  },
+  {
+   "item": "Solving or finding (x, y) solutions of a two-variable inequality such as 40x + 20y <= 120",
+   "reason": "Two-variable inequalities appear only as examples of forming and classifying an inequality (pp. 89-90); they are never solved"
+  },
+  {
+   "item": "Solving quadratic inequalities such as ax^2 + bx + c > 0",
+   "reason": "Mentioned on p. 90 only as an example of an inequality that is not linear; the chapter confines itself to linear inequalities"
+  },
+  {
+   "item": "Inequalities involving the modulus (absolute value), such as |x - 2| < 3",
+   "reason": "Not present anywhere in this edition's examples or exercises"
+  },
+  {
+   "item": "Rational inequalities with the variable in the denominator, such as 1/(x - 2) < 0, and the sign-chart (wavy curve) method",
+   "reason": "Not present; every denominator in the chapter is a constant"
+  },
+  {
+   "item": "Compound statements with 'or' giving a union of two intervals",
+   "reason": "Not taught; every double inequality and system in the chapter is an 'and' (common values) problem (pp. 96-98)"
+  },
+  {
+   "item": "Proofs of the rules for inequalities, and named inequalities such as AM >= GM",
+   "reason": "The two rules are stated and illustrated with numbers only (pp. 91-92); AM-GM belongs to Chapter 8"
+  }
+ ],
+ "concepts": [
+  {
+   "code": "C11M-5.1",
+   "name": "Inequalities: meaning, types and formation",
+   "description": "What an inequality is; numerical, literal and double inequalities; strict and slack inequalities; linear inequalities in one and in two variables versus quadratic ones; writing an inequality from a statement.",
+   "idea": "Two real numbers or two algebraic expressions related by <, >, <= or >= form an inequality. Many statement problems ('at most', 'at least', 'less than') translate into inequalities rather than equations.",
+   "rule": "< and > give strict inequalities; <= and >= give slack inequalities. ax + b < 0 (a not 0) is linear in one variable; ax + by < c (a, b not 0) is linear in two variables; ax^2 + bx + c > 0 is quadratic, not linear.",
+   "example": "Registers at Rs 40 and pens at Rs 20 bought with Rs 120: 40x + 20y <= 120, a slack linear inequality in two variables.",
+   "difficulty_base": "Easy",
+   "questions": [
+    {
+     "b": "Remember",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "Two real numbers or two algebraic expressions related by the symbol <, >, <= or >= form",
+     "a": "an inequality",
+     "o": [
+      "an inequality",
+      "an equation",
+      "an identity",
+      "a solution set"
+     ]
+    },
+    {
+     "b": "Remember",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "Which of the following is a numerical inequality?",
+     "a": "7 > 5",
+     "o": [
+      "7 > 5",
+      "y > 2",
+      "x >= 3",
+      "7 = 5 + 2"
+     ]
+    },
+    {
+     "b": "Remember",
+     "d": "Easy",
+     "t": "fill_blank",
+     "m": 1,
+     "q": "An inequality written with the sign < or >, which does not allow the two sides to be equal, is called a ____ inequality. (Answer in one word.)",
+     "a": "strict"
+    },
+    {
+     "b": "Remember",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "q": "Taking a not equal to 0, which of the following is NOT a linear inequality in one variable x?",
+     "a": "ax^2 + bx + c > 0",
+     "o": [
+      "ax^2 + bx + c > 0",
+      "ax + b < 0",
+      "ax + b >= 0",
+      "ax + b <= 0"
+     ],
+     "rev": true
+    },
+    {
+     "b": "Understand",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "The slack inequality 40x + 20y <= 120 is true exactly when",
+     "a": "40x + 20y < 120 or 40x + 20y = 120",
+     "o": [
+      "40x + 20y < 120 or 40x + 20y = 120",
+      "40x + 20y < 120 or 40x + 20y > 120",
+      "40x + 20y > 120 or 40x + 20y = 120",
+      "40x < 120 or 20y < 120"
+     ]
+    },
+    {
+     "b": "Understand",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "The double inequality 3 <= x < 5 is read as",
+     "a": "x is greater than or equal to 3 and less than 5",
+     "o": [
+      "x is greater than or equal to 3 and less than 5",
+      "x is greater than 3 and less than or equal to 5",
+      "x is greater than 3 and less than 5",
+      "x is less than or equal to 3 or greater than 5"
+     ]
+    },
+    {
+     "b": "Understand",
+     "d": "Easy",
+     "t": "short_answer",
+     "m": 2,
+     "q": "Classify the inequality 2x + 7 >= 0 as (a) strict or slack and (b) numerical or literal, giving a reason for each.",
+     "a": "(a) It is a slack inequality, because the sign >= allows the two sides to be equal. (b) It is a literal inequality, because it involves a variable (x) and not just numbers.",
+     "s": [
+      [
+       "States slack, because >= allows equality",
+       1
+      ],
+      [
+       "States literal, because it contains a variable",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Understand",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "q": "The inequality ax + by < c is called a linear inequality in two variables x and y when",
+     "a": "a is not 0 and b is not 0",
+     "o": [
+      "a is not 0 and b is not 0",
+      "a is not 0, while b may be 0",
+      "c is not 0",
+      "a = b"
+     ]
+    },
+    {
+     "b": "Understand",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "q": "Which of these is both a slack inequality and a linear inequality in two variables?",
+     "a": "2x + 3y <= 6",
+     "o": [
+      "2x + 3y <= 6",
+      "2x + 3y < 6",
+      "2x + 3 <= 6",
+      "x^2 + 3y <= 6"
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Easy",
+     "t": "fill_blank",
+     "m": 1,
+     "q": "How many of the four inequalities x < 5, y > 2, x >= 3 and y <= 4 are strict inequalities? Answer as a digit: ____.",
+     "a": "2"
+    },
+    {
+     "b": "Apply",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "A classroom can hold at most 60 tables or chairs or both. If x is the number of tables and y the number of chairs, this is written as",
+     "a": "x + y <= 60",
+     "o": [
+      "x + y <= 60",
+      "x + y < 60",
+      "x + y >= 60",
+      "xy <= 60"
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "q": "Anu has Rs 150 and may spend up to the whole amount on x notebooks costing Rs 35 each and y pens costing Rs 15 each. The inequality for this is",
+     "a": "35x + 15y <= 150",
+     "o": [
+      "35x + 15y <= 150",
+      "35x + 15y < 150",
+      "35x + 15y >= 150",
+      "15x + 35y <= 150"
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "q": "Among (i) 3x + 2 > 0, (ii) x + y <= 4, (iii) x^2 - 1 >= 0 and (iv) 5 - 2x <= 0, the linear inequalities in one variable are",
+     "a": "(i) and (iv) only",
+     "o": [
+      "(i) and (iv) only",
+      "(i), (iii) and (iv) only",
+      "(i), (ii) and (iv) only",
+      "(i) only"
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "q": "The shortest side of a triangle is x cm, the longest side is 3 times the shortest, and the third side is 2 cm shorter than the longest. The perimeter is at least 61 cm. Write this as an inequality in x (do not solve it) and state whether it is strict or slack.",
+     "a": "The sides are x, 3x and 3x - 2, so the perimeter is x + 3x + (3x - 2) = 7x - 2. 'At least 61' gives 7x - 2 >= 61. It is a slack inequality because 'at least' allows the perimeter to equal 61.",
+     "s": [
+      [
+       "Writes x + 3x + (3x - 2) >= 61, i.e. 7x - 2 >= 61",
+       1
+      ],
+      [
+       "States slack, since 'at least' includes equality",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hardest",
+     "t": "long_answer",
+     "m": 3,
+     "q": "Write an inequality for each statement and say whether it is strict or slack and how many variables it has. (a) The sum of two consecutive odd natural numbers, the smaller being x, is less than 40. (b) x registers at Rs 40 each and y pens at Rs 20 each cost at most Rs 120 in all. (c) Three times a number x, decreased by 4, is at least 2.",
+     "a": "(a) x + (x + 2) < 40: strict, one variable. (b) 40x + 20y <= 120: slack, two variables. (c) 3x - 4 >= 2: slack, one variable.",
+     "s": [
+      [
+       "(a) x + (x + 2) < 40, strict, one variable",
+       1
+      ],
+      [
+       "(b) 40x + 20y <= 120, slack, two variables",
+       1
+      ],
+      [
+       "(c) 3x - 4 >= 2, slack, one variable",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "assertion_reason",
+     "m": 1,
+     "q": "Assertion (A): 40x + 20y <= 120 is a slack inequality. Reason (R): An inequality written with the sign <= or >=, which allows its two sides to be equal, is called a slack inequality.",
+     "a": "Both A and R are true, and R is the correct explanation of A",
+     "o": [
+      "Both A and R are true, and R is the correct explanation of A",
+      "Both A and R are true, but R is not the correct explanation of A",
+      "A is true, R is false",
+      "A is false, R is true"
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "multi_statement",
+     "m": 1,
+     "q": "Consider these statements. (I) 3 < 5 < 7 is an example of a double inequality. (II) ax^2 + bx + c > 0, with a not equal to 0, is a linear inequality in one variable x. Which is or are correct?",
+     "a": "Only I",
+     "o": [
+      "Only I",
+      "Only II",
+      "Both I and II",
+      "Neither I nor II"
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hardest",
+     "t": "long_answer",
+     "m": 3,
+     "q": "A student writes: 'x^2 + 3x <= 0 is a linear inequality in one variable because it has only one variable, and it is a strict inequality because it contains the sign <.' Examine both parts of this claim.",
+     "a": "It does have only one variable, but it is not linear: the term x^2 makes it a quadratic inequality in one variable (linear ones have the form ax + b compared with 0). It is also not strict: the sign is <=, which allows equality, so it is a slack inequality. Both parts of the claim are wrong.",
+     "s": [
+      [
+       "States it is not linear because of the x^2 term",
+       1
+      ],
+      [
+       "Names it a quadratic inequality in one variable",
+       1
+      ],
+      [
+       "States it is slack, not strict, because <= allows equality",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Evaluate",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "q": "Meena translates 'a lift can carry at most 8 persons' as p < 8, where p is the number of persons in the lift. Evaluate her inequality.",
+     "a": "It is wrong. 'At most 8' allows exactly 8 persons, so the inequality should be the slack inequality p <= 8. Her strict inequality p < 8 wrongly excludes p = 8.",
+     "s": [
+      [
+       "States the correct inequality p <= 8",
+       1
+      ],
+      [
+       "Explains that 'at most' includes 8, which the strict sign < excludes",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Create",
+     "d": "Hardest",
+     "t": "long_answer",
+     "m": 3,
+     "q": "Create a real-life situation of your own that leads to a slack linear inequality in two variables. State what each variable stands for, write the inequality, and explain why it is slack rather than strict.",
+     "a": "For example: Sana has Rs 300 to buy x kg of apples at Rs 60 per kg and y kg of bananas at Rs 30 per kg, and she may spend up to the whole amount. Here x is the kg of apples and y the kg of bananas, and 60x + 30y <= 300. It is slack because spending exactly Rs 300 is allowed, so equality is included. (Any valid situation with two variables, each to the first power, and a sign <= or >= earns full marks.)",
+     "s": [
+      [
+       "Describes a situation and defines two variables",
+       1
+      ],
+      [
+       "Writes a correct linear inequality in two variables with <= or >=",
+       1
+      ],
+      [
+       "Explains that equality is allowed, so the inequality is slack",
+       1
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "code": "C11M-5.2",
+   "name": "Solutions, the two rules, and solving over natural numbers, integers and reals",
+   "description": "Solution and solution set of an inequality in one variable; the addition rule and the multiplication rule with sign reversal for negatives; how the solution set changes with the set x is taken from.",
+   "idea": "A solution is a value of the variable that makes the inequality true. The same inequality has different solution sets over the natural numbers, the integers and the real numbers.",
+   "rule": "Rule 1: equal numbers may be added to or subtracted from both sides. Rule 2: both sides may be multiplied or divided by the same positive number; with a negative number the sign of inequality is reversed.",
+   "example": "30x < 200 gives x < 20/3: {1, 2, 3, 4, 5, 6} over natural numbers, {..., -1, 0, 1, ..., 6} over integers.",
+   "difficulty_base": "Easy",
+   "questions": [
+    {
+     "b": "Remember",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "A solution of an inequality in one variable is",
+     "a": "a value of the variable which makes the inequality a true statement",
+     "o": [
+      "a value of the variable which makes the inequality a true statement",
+      "a value of the variable which makes the two sides equal",
+      "any real number whatever",
+      "only the largest value which makes the inequality true"
+     ]
+    },
+    {
+     "b": "Remember",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "When both sides of an inequality are multiplied or divided by the same negative number, the sign of inequality",
+     "a": "is reversed",
+     "o": [
+      "is reversed",
+      "stays the same",
+      "becomes the sign of equality",
+      "is reversed only if it is a strict sign"
+     ]
+    },
+    {
+     "b": "Remember",
+     "d": "Easy",
+     "t": "fill_blank",
+     "m": 1,
+     "q": "When the same number is added to both sides of an inequality, the sign of inequality is ____. (Answer in one word: reversed or unchanged.)",
+     "a": "unchanged"
+    },
+    {
+     "b": "Remember",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "q": "Which of the following operations on both sides of an inequality does NOT keep the sign of inequality the same?",
+     "a": "Dividing both sides by -2",
+     "o": [
+      "Dividing both sides by -2",
+      "Adding -2 to both sides",
+      "Subtracting 5 from both sides",
+      "Multiplying both sides by 1/2"
+     ],
+     "rev": true
+    },
+    {
+     "b": "Understand",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "We know that 3 > 2. Multiplying both sides by -1 gives the true statement",
+     "a": "-3 < -2",
+     "o": [
+      "-3 < -2",
+      "-3 > -2",
+      "-3 = -2",
+      "3 < 2"
+     ]
+    },
+    {
+     "b": "Understand",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "The solution set of 30x < 200 when x is a natural number is",
+     "a": "{1, 2, 3, 4, 5, 6}",
+     "o": [
+      "{1, 2, 3, 4, 5, 6}",
+      "{0, 1, 2, 3, 4, 5, 6}",
+      "{1, 2, 3, 4, 5, 6, 7}",
+      "{..., -2, -1, 0, 1, 2, 3, 4, 5, 6}"
+     ]
+    },
+    {
+     "b": "Understand",
+     "d": "Easy",
+     "t": "short_answer",
+     "m": 2,
+     "q": "Solve 5x - 3 < 7 when x is a real number, naming the rule used at each step.",
+     "a": "Adding 3 to both sides (Rule 1: equal numbers may be added to both sides) gives 5x < 10. Dividing both sides by the positive number 5 (Rule 2: the sign is unchanged for a positive number) gives x < 2. The solution set is (-infinity, 2).",
+     "s": [
+      [
+       "Adds 3 to both sides to get 5x < 10, citing the addition rule",
+       1
+      ],
+      [
+       "Divides by positive 5 to get x < 2, i.e. (-infinity, 2), sign unchanged",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Understand",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "q": "What is the solution set of -12x > 30 when x is a natural number?",
+     "a": "The empty set, because the inequality needs x < -5/2 and no natural number is that small",
+     "o": [
+      "The empty set, because the inequality needs x < -5/2 and no natural number is that small",
+      "{1, 2}",
+      "{3, 4, 5, ...}",
+      "{..., -5, -4, -3}"
+     ]
+    },
+    {
+     "b": "Understand",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "q": "The solution set of 5x - 3 < 3x + 1 when x is an integer is",
+     "a": "{..., -2, -1, 0, 1}",
+     "o": [
+      "{..., -2, -1, 0, 1}",
+      "{..., -1, 0, 1, 2}",
+      "(-infinity, 2)",
+      "{1}"
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Easy",
+     "t": "fill_blank",
+     "m": 1,
+     "q": "The greatest integer x that satisfies 24x < 100 is ____. (Answer as a whole number.)",
+     "a": "4"
+    },
+    {
+     "b": "Apply",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "The solution set of 3x + 8 > 2 when x is an integer is",
+     "a": "{-1, 0, 1, 2, ...}",
+     "o": [
+      "{-1, 0, 1, 2, ...}",
+      "{-2, -1, 0, 1, ...}",
+      "{..., -5, -4, -3}",
+      "(-2, infinity)"
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "q": "The solution set of -12x > 30 when x is an integer is",
+     "a": "{..., -5, -4, -3}",
+     "o": [
+      "{..., -5, -4, -3}",
+      "{..., -4, -3, -2}",
+      "{-2, -1, 0, 1, ...}",
+      "{3, 4, 5, ...}"
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "q": "How many natural numbers x satisfy 7x - 5 <= 3x + 14?",
+     "a": "4",
+     "o": [
+      "4",
+      "5",
+      "19",
+      "Infinitely many"
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "q": "Solve 2 - 5x >= 17 when (i) x is an integer and (ii) x is a real number.",
+     "a": "2 - 5x >= 17 gives -5x >= 15. Dividing by -5 reverses the sign: x <= -3. (i) Over the integers the solution set is {..., -5, -4, -3}. (ii) Over the real numbers it is (-infinity, -3].",
+     "s": [
+      [
+       "Obtains x <= -3, reversing the sign on dividing by -5",
+       1
+      ],
+      [
+       "Gives {..., -5, -4, -3} for integers and (-infinity, -3] for reals",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hardest",
+     "t": "long_answer",
+     "m": 3,
+     "q": "Solve 7 - 4x < 31 - x when (i) x is a natural number, (ii) x is an integer, (iii) x is a real number.",
+     "a": "7 - 4x < 31 - x gives -3x < 24, and dividing by -3 reverses the sign: x > -8. (i) Every natural number is greater than -8, so the solution set is {1, 2, 3, ...}, all natural numbers. (ii) Over the integers it is {-7, -6, -5, ...}. (iii) Over the reals it is (-8, infinity).",
+     "s": [
+      [
+       "Reduces to -3x < 24 and reverses the sign to get x > -8",
+       1
+      ],
+      [
+       "States that all natural numbers are solutions, and {-7, -6, -5, ...} for integers",
+       1
+      ],
+      [
+       "States (-8, infinity) for real x",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "assertion_reason",
+     "m": 1,
+     "q": "Assertion (A): When x is a natural number, the solution set of 30x < 200 is {1, 2, 3, 4, 5, 6}. Reason (R): When both sides of an inequality are multiplied or divided by a negative number, the sign of inequality is reversed.",
+     "a": "Both A and R are true, but R is not the correct explanation of A",
+     "o": [
+      "Both A and R are true, but R is not the correct explanation of A",
+      "Both A and R are true, and R is the correct explanation of A",
+      "A is true, R is false",
+      "A is false, R is true"
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "multi_statement",
+     "m": 1,
+     "q": "Consider these statements. (I) Starting from -8 < -7 and multiplying both sides by -2 gives the true statement 16 < 14. (II) Over the integers, the solution set of 5x - 3 < 3x + 1 has greatest element 1 and no least element. Which is or are correct?",
+     "a": "Only II",
+     "o": [
+      "Only II",
+      "Only I",
+      "Both I and II",
+      "Neither I nor II"
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hardest",
+     "t": "long_answer",
+     "m": 3,
+     "q": "A student solves -3x + 4 >= 16 like this: '-3x >= 12, so x >= -4.' Find the error, give the correct solution over the real numbers, and check your answer using the test values x = -5 and x = 0.",
+     "a": "The step -3x >= 12 is right, but on dividing by the negative number -3 the sign must be reversed: x <= -4, so the solution set is (-infinity, -4]. Check: x = -5 gives 15 + 4 = 19 >= 16, true, and -5 <= -4. x = 0 gives 4 >= 16, false, and 0 is not <= -4 (the student's answer x >= -4 would wrongly include 0).",
+     "s": [
+      [
+       "Identifies that the sign was not reversed on dividing by -3",
+       1
+      ],
+      [
+       "Gives x <= -4, i.e. (-infinity, -4]",
+       1
+      ],
+      [
+       "Checks x = -5 (true) and x = 0 (false) by substitution",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Evaluate",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "q": "Kiran says: 'The solution set of 24x < 100 is {1, 2, 3, 4}, whatever kind of number x is.' Evaluate this statement.",
+     "a": "It is correct only when x is a natural number. 24x < 100 gives x < 25/6. If x is an integer the solution set is {..., -1, 0, 1, 2, 3, 4}, and if x is a real number it is (-infinity, 25/6). The solution set depends on the set from which x is taken.",
+     "s": [
+      [
+       "States that {1, 2, 3, 4} is right only for natural numbers",
+       1
+      ],
+      [
+       "Gives the different solution set for integers or for real numbers",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Create",
+     "d": "Hardest",
+     "t": "long_answer",
+     "m": 3,
+     "q": "Construct a linear inequality in x in which the coefficient of x is negative and whose solution set over the real numbers is [3, infinity). Solve it to show this, pointing out where the sign is reversed, and state its solution set when x is a natural number.",
+     "a": "For example, -2x + 1 <= -5. Subtracting 1: -2x <= -6. Dividing by -2 reverses the sign: x >= 3, so the solution set over the reals is [3, infinity). Over the natural numbers it is {3, 4, 5, ...}. (Any correct inequality with a negative coefficient of x that reduces to x >= 3 earns full marks.)",
+     "s": [
+      [
+       "Writes a linear inequality with a negative coefficient of x that reduces to x >= 3",
+       1
+      ],
+      [
+       "Solves it, showing the sign reversed on dividing by a negative number",
+       1
+      ],
+      [
+       "States {3, 4, 5, ...} for natural numbers",
+       1
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "code": "C11M-5.3",
+   "name": "Solving linear inequalities for real x and showing solutions on a number line",
+   "description": "Solving one-variable linear inequalities with brackets and fractions over the reals, writing the solution set as an interval, and representing it on a number line.",
+   "idea": "Over the reals the solution set of a linear inequality is an interval running without end in one direction, shown on a number line by a circle at the end point and a darkened ray.",
+   "rule": "Clear brackets and fractions (multiply every term), collect x, and reverse the sign when dividing by a negative. For x < a or x > a use an open circle at a; for x <= a or x >= a use a dark circle; darken left for less than, right for greater than.",
+   "example": "(5 - 2x)/3 <= x/6 - 5 gives 10 - 4x <= x - 30, so -5x <= -40 and x >= 8: the interval [8, infinity).",
+   "difficulty_base": "Hard",
+   "questions": [
+    {
+     "b": "Remember",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "To represent x < a on a number line, we put",
+     "a": "an open circle on a and darken the line to the left of a",
+     "o": [
+      "an open circle on a and darken the line to the left of a",
+      "an open circle on a and darken the line to the right of a",
+      "a dark (filled) circle on a and darken the line to the left of a",
+      "a dark (filled) circle on a and darken the line to the right of a"
+     ]
+    },
+    {
+     "b": "Remember",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "In the number-line graph of x >= 1, the point 1 is marked with",
+     "a": "a dark (filled) circle, because 1 is a solution",
+     "o": [
+      "a dark (filled) circle, because 1 is a solution",
+      "an open circle, because 1 is not a solution",
+      "an open circle, because 1 is a solution",
+      "no circle at all"
+     ]
+    },
+    {
+     "b": "Remember",
+     "d": "Easy",
+     "t": "fill_blank",
+     "m": 1,
+     "q": "The set of all real numbers x with x >= 8 is written [8, infinity). The square bracket at 8 shows that 8 is ____ in the set. (Answer in one word: included or excluded.)",
+     "a": "included"
+    },
+    {
+     "b": "Remember",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "q": "Which description of the number-line graph of x < 3 is NOT correct?",
+     "a": "The number 3 is marked with a dark (filled) circle",
+     "o": [
+      "The number 3 is marked with a dark (filled) circle",
+      "The number 3 is marked with an open circle",
+      "The line to the left of 3 is darkened",
+      "The point 2.9 lies on the darkened part"
+     ],
+     "rev": true
+    },
+    {
+     "b": "Understand",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "For real x, the solution set of 4x + 3 < 5x + 7 is",
+     "a": "(-4, infinity)",
+     "o": [
+      "(-4, infinity)",
+      "(-infinity, -4)",
+      "[-4, infinity)",
+      "(4, infinity)"
+     ]
+    },
+    {
+     "b": "Understand",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "For real x, the solution set of 3x - 7 > 5x - 1 is",
+     "a": "(-infinity, -3)",
+     "o": [
+      "(-infinity, -3)",
+      "(-3, infinity)",
+      "(-infinity, -3]",
+      "(-infinity, 4)"
+     ]
+    },
+    {
+     "b": "Understand",
+     "d": "Easy",
+     "t": "short_answer",
+     "m": 2,
+     "q": "Solve 7x + 3 < 5x + 9 for real x and describe in words how its solutions are shown on a number line.",
+     "a": "7x + 3 < 5x + 9 gives 2x < 6, so x < 3; the solution set is (-infinity, 3). On the number line: an open circle at 3 (3 is not included) with the line darkened to the left of 3.",
+     "s": [
+      [
+       "Obtains x < 3",
+       1
+      ],
+      [
+       "Describes an open circle at 3 with the line darkened to the left",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Understand",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "q": "For real x, the solution set of 3(x - 1) <= 2(x - 3) is",
+     "a": "(-infinity, -3]",
+     "o": [
+      "(-infinity, -3]",
+      "(-infinity, -3)",
+      "[-3, infinity)",
+      "(-infinity, -2]"
+     ]
+    },
+    {
+     "b": "Understand",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "q": "A number-line graph shows a dark (filled) circle at -1 with the line darkened to the right of -1. Which inequality, solved for real x, has this graph?",
+     "a": "5x - 3 >= 3x - 5",
+     "o": [
+      "5x - 3 >= 3x - 5",
+      "5x - 3 > 3x - 5",
+      "3 - 5x >= 5 - 3x",
+      "5x + 3 >= 3x + 5"
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Easy",
+     "t": "fill_blank",
+     "m": 1,
+     "q": "For real x, the solution set of 3(2 - x) >= 2(1 - x) is the interval (-infinity, k]. The value of k, written as an integer, is ____.",
+     "a": "4"
+    },
+    {
+     "b": "Apply",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "For real x, the solution set of x/3 > x/2 + 1 is",
+     "a": "(-infinity, -6)",
+     "o": [
+      "(-infinity, -6)",
+      "(-6, infinity)",
+      "(-infinity, -1)",
+      "(-infinity, -6]"
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "q": "For real x, the solution set of x + x/2 + x/3 < 11 is",
+     "a": "(-infinity, 6)",
+     "o": [
+      "(-infinity, 6)",
+      "(-infinity, 1)",
+      "(6, infinity)",
+      "(-infinity, 6]"
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "q": "For real x, the solution set of 2(2x + 3) - 10 < 6(x - 2) is",
+     "a": "(4, infinity)",
+     "o": [
+      "(4, infinity)",
+      "(-infinity, 4)",
+      "(-1, infinity)",
+      "[4, infinity)"
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "q": "Solve 37 - (3x + 5) > 9x - 8(x - 3) for real x and write the solution set as an interval.",
+     "a": "Left side: 37 - 3x - 5 = 32 - 3x. Right side: 9x - 8x + 24 = x + 24. So 32 - 3x > x + 24, giving 8 > 4x, i.e. x < 2. The solution set is (-infinity, 2).",
+     "s": [
+      [
+       "Simplifies to 32 - 3x > x + 24",
+       1
+      ],
+      [
+       "Obtains x < 2, i.e. (-infinity, 2)",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hardest",
+     "t": "long_answer",
+     "m": 3,
+     "q": "Solve (2x - 1)/3 >= (3x - 2)/4 - (2 - x)/5 for real x, and describe in words the graph of the solutions on a number line.",
+     "a": "Multiplying both sides by 60: 20(2x - 1) >= 15(3x - 2) - 12(2 - x), i.e. 40x - 20 >= 45x - 30 - 24 + 12x = 57x - 54. So -17x >= -34, and dividing by -17 reverses the sign: x <= 2. The solution set is (-infinity, 2]. Graph: a dark (filled) circle at 2 with the line darkened to the left of 2.",
+     "s": [
+      [
+       "Clears fractions correctly: 40x - 20 >= 57x - 54",
+       1
+      ],
+      [
+       "Obtains -17x >= -34 and reverses the sign to get x <= 2",
+       1
+      ],
+      [
+       "Describes a dark (filled) circle at 2 with the line darkened to the left",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "assertion_reason",
+     "m": 1,
+     "q": "Assertion (A): For real x, the solution set of (5 - 2x)/3 <= x/6 - 5 is [8, infinity). Reason (R): When both sides of an inequality are divided by a negative number, the sign of inequality stays the same.",
+     "a": "A is true, R is false",
+     "o": [
+      "A is true, R is false",
+      "Both A and R are true, and R is the correct explanation of A",
+      "Both A and R are true, but R is not the correct explanation of A",
+      "A is false, R is true"
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "multi_statement",
+     "m": 1,
+     "q": "Consider these statements. (I) For real x, the solution set of 3(1 - x) < 2(x + 4) is (-1, infinity). (II) The number-line graph of x >= 1 has a dark (filled) circle at 1 with the line darkened to the right of 1. Which is or are correct?",
+     "a": "Both I and II",
+     "o": [
+      "Both I and II",
+      "Only I",
+      "Only II",
+      "Neither I nor II"
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hardest",
+     "t": "long_answer",
+     "m": 3,
+     "q": "Solve x/4 < (5x - 2)/3 - (7x - 3)/5 for real x. Then decide, with a reason, whether x = 4 and x = 5 are solutions.",
+     "a": "Multiplying both sides by 60: 15x < 20(5x - 2) - 12(7x - 3) = 100x - 40 - 84x + 36 = 16x - 4. So -x < -4, and multiplying by -1 reverses the sign: x > 4. The solution set is (4, infinity). x = 4 is not a solution because the inequality is strict (at x = 4 both sides equal 1). x = 5 is a solution because 5 > 4.",
+     "s": [
+      [
+       "Clears fractions correctly: 15x < 16x - 4",
+       1
+      ],
+      [
+       "Obtains x > 4, i.e. (4, infinity), reversing the sign",
+       1
+      ],
+      [
+       "States 4 is not a solution (strict sign) and 5 is a solution",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Evaluate",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "q": "To solve (3x - 4)/2 >= (x + 1)/4 - 1, Dev multiplies both sides by 4 and writes 2(3x - 4) >= (x + 1) - 1. Evaluate this step and give the correct solution for real x.",
+     "a": "The step is wrong: the term -1 must also be multiplied by 4. Correctly, 2(3x - 4) >= (x + 1) - 4, i.e. 6x - 8 >= x - 3, so 5x >= 5 and x >= 1. The solution set is [1, infinity).",
+     "s": [
+      [
+       "Identifies that the -1 was not multiplied by 4",
+       1
+      ],
+      [
+       "Obtains x >= 1, i.e. [1, infinity)",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Create",
+     "d": "Hardest",
+     "t": "long_answer",
+     "m": 3,
+     "q": "Construct a linear inequality that has x on both sides and contains at least one fraction, such that the graph of its solutions for real x is an open circle at 6 with the line darkened to the left of 6. Solve your inequality to show that it works.",
+     "a": "The graph described is x < 6. For example, x/2 + 1 < x/3 + 2. Multiplying by 6: 3x + 6 < 2x + 12, so x < 6, whose graph is an open circle at 6 with the line darkened to the left. (Any correct inequality with x on both sides and a fraction that reduces to x < 6 earns full marks.)",
+     "s": [
+      [
+       "Recognises that the graph represents x < 6 (strict)",
+       1
+      ],
+      [
+       "Writes a suitable inequality with x on both sides and a fraction",
+       1
+      ],
+      [
+       "Solves it correctly to reach x < 6",
+       1
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "code": "C11M-5.4",
+   "name": "Double inequalities and systems of two inequalities in one variable",
+   "description": "Solving double inequalities such as -8 <= 5x - 3 < 7 and systems of two linear inequalities in one variable, and showing the common solutions on a number line.",
+   "idea": "A double inequality is two inequalities that must hold together. A system is solved by solving each inequality and taking the values of x common to both.",
+   "rule": "Apply the same operation to all three parts of a double inequality; dividing by a negative reverses both signs. For a system, the solution is the overlap of the two graphs on the number line.",
+   "example": "3x - 7 < 5 + x gives x < 6 and 11 - 5x <= 1 gives x >= 2, so the system has solution 2 <= x < 6.",
+   "difficulty_base": "Hard",
+   "questions": [
+    {
+     "b": "Remember",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "To solve the double inequality -8 <= 5x - 3 < 7, we treat it as",
+     "a": "the two inequalities -8 <= 5x - 3 and 5x - 3 < 7, both to be satisfied together",
+     "o": [
+      "the two inequalities -8 <= 5x - 3 and 5x - 3 < 7, both to be satisfied together",
+      "the two inequalities -8 <= 5x - 3 and 5x - 3 < 7, of which only one need be satisfied",
+      "the single numerical inequality -8 < 7",
+      "the equation 5x - 3 = 7"
+     ]
+    },
+    {
+     "b": "Remember",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "The solutions of a system of two linear inequalities in one variable are the values of x that",
+     "a": "are common to the solutions of both inequalities",
+     "o": [
+      "are common to the solutions of both inequalities",
+      "satisfy at least one of the two inequalities",
+      "satisfy the first inequality only",
+      "satisfy neither inequality"
+     ]
+    },
+    {
+     "b": "Remember",
+     "d": "Easy",
+     "t": "fill_blank",
+     "m": 1,
+     "q": "When the two inequalities of a system are graphed on a number line, the solution of the system is the part that is ____ to both graphs. (Answer in one word.)",
+     "a": "common"
+    },
+    {
+     "b": "Remember",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "q": "Which real number is NOT a solution of the double inequality -1 <= x < 2?",
+     "a": "2",
+     "o": [
+      "2",
+      "-1",
+      "0",
+      "1.9"
+     ],
+     "rev": true
+    },
+    {
+     "b": "Understand",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "The real numbers that satisfy both x < 6 and x >= 2 are given by",
+     "a": "2 <= x < 6",
+     "o": [
+      "2 <= x < 6",
+      "2 < x <= 6",
+      "2 < x < 6",
+      "all real numbers"
+     ]
+    },
+    {
+     "b": "Understand",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "In interval notation, the set of real numbers x with -1 <= x < 2 is",
+     "a": "[-1, 2)",
+     "o": [
+      "[-1, 2)",
+      "(-1, 2]",
+      "[-1, 2]",
+      "(-1, 2)"
+     ]
+    },
+    {
+     "b": "Understand",
+     "d": "Easy",
+     "t": "short_answer",
+     "m": 2,
+     "q": "Solve 2 <= 3x - 4 <= 5 for real x.",
+     "a": "Adding 4 to all three parts: 6 <= 3x <= 9. Dividing by the positive number 3: 2 <= x <= 3. The solution set is [2, 3].",
+     "s": [
+      [
+       "Adds 4 throughout to get 6 <= 3x <= 9",
+       1
+      ],
+      [
+       "Divides by 3 to get 2 <= x <= 3, i.e. [2, 3]",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Understand",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "q": "Dividing all three parts of -15 <= -3x <= 11 by -3 correctly gives",
+     "a": "-11/3 <= x <= 5",
+     "o": [
+      "-11/3 <= x <= 5",
+      "5 <= x <= -11/3, which no real number satisfies",
+      "-5 <= x <= 11/3",
+      "-11/3 < x < 5"
+     ]
+    },
+    {
+     "b": "Understand",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "q": "The system 3x - 7 < 5 + x and 11 - 5x <= 1 is solved for real x. How does its solution look on a number line?",
+     "a": "A dark (filled) circle at 2, an open circle at 6, and the line darkened between them",
+     "o": [
+      "A dark (filled) circle at 2, an open circle at 6, and the line darkened between them",
+      "An open circle at 2, a dark (filled) circle at 6, and the line darkened between them",
+      "A dark (filled) circle at 2 with the line darkened to the right without end",
+      "An open circle at 6 with the line darkened to the left without end"
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Easy",
+     "t": "fill_blank",
+     "m": 1,
+     "q": "The number of integers x that satisfy -1 <= x < 2 is ____. (Answer as a whole number.)",
+     "a": "3"
+    },
+    {
+     "b": "Apply",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "For real x, the solution set of 6 <= -3(2x - 4) < 12 is",
+     "a": "(0, 1]",
+     "o": [
+      "(0, 1]",
+      "[0, 1)",
+      "[-1, 0)",
+      "(0, 1)"
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "q": "For real x, the solution set of -3 <= 4 - 7x/2 <= 18 is",
+     "a": "[-4, 2]",
+     "o": [
+      "[-4, 2]",
+      "[-2, 4]",
+      "(-4, 2)",
+      "[-36/7, 2]"
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "q": "For real x, the solution set of the system 5x + 1 > -24, 5x - 1 < 24 is",
+     "a": "(-5, 5)",
+     "o": [
+      "(-5, 5)",
+      "[-5, 5]",
+      "(-25, 25)",
+      "the set of all real numbers"
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "q": "Solve the system of inequalities 2(x - 1) < x + 5 and 3(x + 2) > 2 - x for real x.",
+     "a": "First: 2x - 2 < x + 5 gives x < 7. Second: 3x + 6 > 2 - x gives 4x > -4, so x > -1. The common values are -1 < x < 7, i.e. the interval (-1, 7).",
+     "s": [
+      [
+       "Solves both inequalities: x < 7 and x > -1",
+       1
+      ],
+      [
+       "Combines them as -1 < x < 7, i.e. (-1, 7)",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hardest",
+     "t": "long_answer",
+     "m": 3,
+     "q": "Solve the system 5(2x - 7) - 3(2x + 3) <= 0 and 2x + 19 <= 6x + 47 for real x, and describe in words the graph of the solutions on a number line.",
+     "a": "First: 10x - 35 - 6x - 9 <= 0 gives 4x - 44 <= 0, so x <= 11. Second: 2x + 19 <= 6x + 47 gives -4x <= 28, and dividing by -4 reverses the sign: x >= -7. Common values: -7 <= x <= 11, i.e. [-7, 11]. Graph: dark (filled) circles at -7 and at 11, with the line darkened between them.",
+     "s": [
+      [
+       "Solves the first inequality to get x <= 11",
+       1
+      ],
+      [
+       "Solves the second to get x >= -7, reversing the sign",
+       1
+      ],
+      [
+       "Combines to -7 <= x <= 11 and describes filled circles at both ends with the segment darkened",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "assertion_reason",
+     "m": 1,
+     "q": "Assertion (A): For real x, the solution of the system 3x - 7 > 2(x - 6), 6 - x > 11 - 2x is x > -5. Reason (R): The solution of a system of two inequalities in one variable consists of the values of x common to the solutions of both inequalities.",
+     "a": "A is false, R is true",
+     "o": [
+      "A is false, R is true",
+      "Both A and R are true, and R is the correct explanation of A",
+      "Both A and R are true, but R is not the correct explanation of A",
+      "A is true, R is false"
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "multi_statement",
+     "m": 1,
+     "q": "Consider these statements. (I) For real x, the solution of -5 <= (5 - 3x)/2 <= 8 is -5 <= x <= 11/3. (II) The number x = 6 satisfies the system x < 6 and x >= 2. Which is or are correct?",
+     "a": "Neither I nor II",
+     "o": [
+      "Neither I nor II",
+      "Only I",
+      "Only II",
+      "Both I and II"
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hardest",
+     "t": "long_answer",
+     "m": 3,
+     "q": "Solve 7 <= (3x + 11)/2 <= 11 for real x, and then list all the integers that satisfy it.",
+     "a": "Multiplying all parts by 2: 14 <= 3x + 11 <= 22. Subtracting 11: 3 <= 3x <= 11. Dividing by 3: 1 <= x <= 11/3. The solution set is [1, 11/3]. Since 11/3 is between 3 and 4, the integers that satisfy it are 1, 2 and 3.",
+     "s": [
+      [
+       "Obtains 14 <= 3x + 11 <= 22 and then 3 <= 3x <= 11",
+       1
+      ],
+      [
+       "Obtains 1 <= x <= 11/3",
+       1
+      ],
+      [
+       "Lists the integers 1, 2, 3",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Evaluate",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "q": "To solve -6 <= -2x < 4, Arjun divides all three parts by -2 and writes 3 <= x < -2. Evaluate his answer and give the correct solution for real x.",
+     "a": "His answer is wrong: dividing by the negative number -2 must reverse both signs. Correctly, 3 >= x > -2, i.e. -2 < x <= 3, the interval (-2, 3]. (His statement 3 <= x < -2 is satisfied by no real number.)",
+     "s": [
+      [
+       "Identifies that the inequality signs were not reversed on dividing by -2",
+       1
+      ],
+      [
+       "Gives -2 < x <= 3, i.e. (-2, 3]",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Create",
+     "d": "Hardest",
+     "t": "long_answer",
+     "m": 3,
+     "q": "Construct a system of two linear inequalities in x, at least one of them with a negative coefficient of x, whose solution for real x is 2 <= x < 6. Do not use the pair 3x - 7 < 5 + x, 11 - 5x <= 1. Solve your system to show that it works.",
+     "a": "For example, 2x - 1 < 11 and 8 - 3x <= 2. The first gives 2x < 12, so x < 6. The second gives -3x <= -6, and dividing by -3 reverses the sign: x >= 2. The common values are 2 <= x < 6. (Any correct system that reduces to x >= 2 and x < 6, with a negative coefficient of x in at least one inequality, earns full marks.)",
+     "s": [
+      [
+       "Writes two linear inequalities, at least one with a negative coefficient of x",
+       1
+      ],
+      [
+       "Solves each correctly to x < 6 and x >= 2, reversing the sign where needed",
+       1
+      ],
+      [
+       "Combines them as 2 <= x < 6",
+       1
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "code": "C11M-5.5",
+   "name": "Word problems leading to linear inequalities in one variable",
+   "description": "Translating statement problems on averages and marks, consecutive odd or even numbers, lengths, temperature conversion, IQ and mixtures into inequalities in one variable and interpreting the solution.",
+   "idea": "Phrases such as 'at least', 'at most', 'more than' and 'between' become inequality signs; the solution must then be read back in the context (whole numbers, odd numbers, lengths).",
+   "rule": "Let x be the unknown, write each condition as an inequality, solve, and keep only the values that fit the context. 'At least' is >=, 'at most' is <=, 'more than' is >, 'less than' is <.",
+   "example": "Marks 62 and 48, average at least 60: (62 + 48 + x)/3 >= 60 gives x >= 70, so the minimum is 70 marks.",
+   "difficulty_base": "Hard",
+   "questions": [
+    {
+     "b": "Remember",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "In a word problem, 'the average x must be at least 60' is written as",
+     "a": "x >= 60",
+     "o": [
+      "x >= 60",
+      "x > 60",
+      "x <= 60",
+      "x < 60"
+     ]
+    },
+    {
+     "b": "Remember",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "If x is the smaller of two consecutive odd natural numbers, the other number is",
+     "a": "x + 2",
+     "o": [
+      "x + 2",
+      "x + 1",
+      "2x",
+      "2x + 1"
+     ]
+    },
+    {
+     "b": "Remember",
+     "d": "Easy",
+     "t": "fill_blank",
+     "m": 1,
+     "q": "If x litres of a 30% acid solution are added to 600 litres of a 12% acid solution, the total mixture is (x + ____) litres. (Answer as a number.)",
+     "a": "600"
+    },
+    {
+     "b": "Remember",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "q": "The acid content of a mixture must be 'more than 15% but less than 18%'. Which acid content is NOT allowed by this condition?",
+     "a": "18%",
+     "o": [
+      "18%",
+      "15.5%",
+      "16%",
+      "17.9%"
+     ],
+     "rev": true
+    },
+    {
+     "b": "Understand",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "A student scores 62 and 48 in two examinations and x in the third. 'An average of at least 60 marks' is written as",
+     "a": "(62 + 48 + x)/3 >= 60",
+     "o": [
+      "(62 + 48 + x)/3 >= 60",
+      "(62 + 48 + x)/3 > 60",
+      "(62 + 48 + x)/2 >= 60",
+      "62 + 48 + x >= 60"
+     ]
+    },
+    {
+     "b": "Understand",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "IQ is given by IQ = (MA/CA) x 100, where MA is mental age and CA is chronological age. For 12-year-old children with 80 <= IQ <= 140, the condition on MA is",
+     "a": "80 <= (MA/12) x 100 <= 140",
+     "o": [
+      "80 <= (MA/12) x 100 <= 140",
+      "80 <= (12/MA) x 100 <= 140",
+      "80 <= 12 x MA <= 140",
+      "80 < (MA/12) x 100 < 140"
+     ]
+    },
+    {
+     "b": "Understand",
+     "d": "Easy",
+     "t": "short_answer",
+     "m": 2,
+     "q": "Ravi obtained 70 and 75 marks in the first two unit tests. Find the minimum marks he should get in the third test to have an average of at least 60 marks.",
+     "a": "Let x be his marks in the third test. Then (70 + 75 + x)/3 >= 60, so 145 + x >= 180 and x >= 35. He needs a minimum of 35 marks.",
+     "s": [
+      [
+       "Forms (70 + 75 + x)/3 >= 60",
+       1
+      ],
+      [
+       "Solves to x >= 35 and states the minimum is 35 marks",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Understand",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "q": "For two consecutive odd natural numbers, both larger than 10, with sum less than 40, the smaller number x satisfies 10 < x < 19. Why is x = 12 not accepted?",
+     "a": "Because x has to be an odd number",
+     "o": [
+      "Because x has to be an odd number",
+      "Because 12 is not greater than 10",
+      "Because 12 + 14 is not less than 40",
+      "Because 12 is not a natural number"
+     ]
+    },
+    {
+     "b": "Understand",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "q": "x litres of water are added to 1125 litres of a 45% acid solution. The amount of acid in the new mixture is",
+     "a": "45% of 1125 litres, whatever the value of x",
+     "o": [
+      "45% of 1125 litres, whatever the value of x",
+      "45% of (1125 + x) litres",
+      "45% of x litres",
+      "(45% of 1125) + x litres"
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Easy",
+     "t": "fill_blank",
+     "m": 1,
+     "q": "To get Grade A, Sunita needs an average of 90 marks or more in five examinations. Her marks in the first four are 87, 92, 94 and 95. The minimum marks she must get in the fifth examination is ____. (Answer as a whole number.)",
+     "a": "82"
+    },
+    {
+     "b": "Apply",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "A solution is to be kept between 68 degrees F and 77 degrees F. Using F = (9/5)C + 32, the temperature in degrees Celsius must lie",
+     "a": "between 20 and 25",
+     "o": [
+      "between 20 and 25",
+      "between 36 and 45",
+      "between 154.4 and 170.6",
+      "between 37.8 and 42.8 (to one decimal place)"
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "q": "All pairs of consecutive even positive integers, both larger than 5, whose sum is less than 23 are",
+     "a": "(6, 8), (8, 10) and (10, 12)",
+     "o": [
+      "(6, 8), (8, 10) and (10, 12)",
+      "(6, 8) and (8, 10) only",
+      "(4, 6), (6, 8), (8, 10) and (10, 12)",
+      "(6, 8), (8, 10), (10, 12) and (12, 14)"
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "q": "The longest side of a triangle is 3 times the shortest side, and the third side is 2 cm shorter than the longest side. If the perimeter is at least 61 cm, the minimum length of the shortest side is",
+     "a": "9 cm",
+     "o": [
+      "9 cm",
+      "10 cm",
+      "59/7 cm",
+      "63/5 cm"
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "q": "Find all pairs of consecutive odd positive integers, both of which are smaller than 10, such that their sum is more than 11.",
+     "a": "Let the smaller be x, so the other is x + 2. Both smaller than 10 needs x + 2 < 10, i.e. x < 8. Sum more than 11: 2x + 2 > 11, i.e. x > 9/2. So 9/2 < x < 8 with x odd: x = 5 or 7. The pairs are (5, 7) and (7, 9).",
+     "s": [
+      [
+       "Forms x + 2 < 10 and x + (x + 2) > 11, giving 9/2 < x < 8",
+       1
+      ],
+      [
+       "Uses x odd to get the pairs (5, 7) and (7, 9)",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hardest",
+     "t": "long_answer",
+     "m": 3,
+     "q": "A solution of 8% boric acid is to be diluted by adding a 2% boric acid solution to it. The resulting mixture is to be more than 4% but less than 6% boric acid. If we have 640 litres of the 8% solution, how many litres of the 2% solution will have to be added?",
+     "a": "Let x litres of the 2% solution be added; the mixture is (x + 640) litres containing 0.02x + 0.08(640) = 0.02x + 51.2 litres of boric acid. More than 4%: 0.02x + 51.2 > 0.04(x + 640) = 0.04x + 25.6, so 25.6 > 0.02x, i.e. x < 1280. Less than 6%: 0.02x + 51.2 < 0.06(x + 640) = 0.06x + 38.4, so 12.8 < 0.04x, i.e. x > 320. Hence 320 < x < 1280: more than 320 litres but less than 1280 litres must be added.",
+     "s": [
+      [
+       "Forms the two inequalities 2% of x + 8% of 640 > 4% of (x + 640) and < 6% of (x + 640)",
+       1
+      ],
+      [
+       "Solves the first to get x < 1280",
+       1
+      ],
+      [
+       "Solves the second to get x > 320 and states 320 < x < 1280",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "assertion_reason",
+     "m": 1,
+     "q": "Assertion (A): A student who scored 62 and 48 in two examinations needs at least 70 marks in the third to have an average of at least 60. Reason (R): The condition 'average at least 60' gives (62 + 48 + x)/3 >= 60, that is, 110 + x >= 180.",
+     "a": "Both A and R are true, and R is the correct explanation of A",
+     "o": [
+      "Both A and R are true, and R is the correct explanation of A",
+      "Both A and R are true, but R is not the correct explanation of A",
+      "A is true, R is false",
+      "A is false, R is true"
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "multi_statement",
+     "m": 1,
+     "q": "Consider these statements. (I) If 30 < C < 35 and C = (5/9)(F - 32), then 86 < F < 95. (II) If the second piece of a board is (x + 3) cm and the third is 2x cm, then 'the third piece is at least 5 cm longer than the second' is written 2x > (x + 3) + 5. Which is or are correct?",
+     "a": "Only I",
+     "o": [
+      "Only I",
+      "Only II",
+      "Both I and II",
+      "Neither I nor II"
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hardest",
+     "t": "long_answer",
+     "m": 3,
+     "q": "A man wants to cut three lengths from a single piece of board of length 91 cm. The second length is to be 3 cm longer than the shortest and the third length is to be twice as long as the shortest. What are the possible lengths of the shortest board if the third piece is to be at least 5 cm longer than the second?",
+     "a": "Let the shortest length be x cm; the others are (x + 3) cm and 2x cm. The board is 91 cm long, so x + (x + 3) + 2x <= 91, i.e. 4x <= 88 and x <= 22. The third is at least 5 cm longer than the second: 2x >= (x + 3) + 5, i.e. x >= 8. Hence 8 <= x <= 22: the shortest board is at least 8 cm and at most 22 cm long.",
+     "s": [
+      [
+       "Forms x + (x + 3) + 2x <= 91 and gets x <= 22",
+       1
+      ],
+      [
+       "Forms 2x >= (x + 3) + 5 and gets x >= 8",
+       1
+      ],
+      [
+       "Combines to 8 <= x <= 22",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Evaluate",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "q": "Water is added to 1125 litres of a 45% acid solution so that the mixture contains more than 25% but less than 30% acid. Tara answers: 'between 562.5 and 900 litres of water, with 562.5 and 900 themselves allowed.' Evaluate her answer.",
+     "a": "Acid = 45% of 1125 = 506.25 litres. More than 25%: 506.25 > 0.25(1125 + x) gives x < 900. Less than 30%: 506.25 < 0.30(1125 + x) gives x > 562.5. So 562.5 < x < 900. Her numbers are right, but the end values are not allowed: at x = 900 the mixture is exactly 25% and at x = 562.5 exactly 30%, and both conditions are strict.",
+     "s": [
+      [
+       "Confirms the bounds 562.5 and 900 from the two inequalities",
+       1
+      ],
+      [
+       "States the end values must be excluded because 'more than' and 'less than' are strict",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Create",
+     "d": "Hardest",
+     "t": "long_answer",
+     "m": 3,
+     "q": "Frame a word problem of your own about test marks that leads to a linear inequality in one variable and whose answer is 'a minimum of 80 marks'. Write the inequality and solve it.",
+     "a": "For example: Asha scored 65 and 80 in two tests. Find the minimum marks she needs in the third test to have an average of at least 75. Let x be the third mark: (65 + 80 + x)/3 >= 75, so 145 + x >= 225 and x >= 80. She needs a minimum of 80 marks. (Any correct problem whose inequality reduces to x >= 80 earns full marks.)",
+     "s": [
+      [
+       "Frames a clear word problem with an 'at least' type condition",
+       1
+      ],
+      [
+       "Writes a correct linear inequality in one variable for it",
+       1
+      ],
+      [
+       "Solves it to x >= 80 and states the minimum is 80",
+       1
+      ]
+     ]
+    }
+   ]
+  }
+ ]
+}

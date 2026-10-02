@@ -1,0 +1,70 @@
+94 MATHEMATICS
+Consistent system A system of equations is said to be consistent if its solution (one
+or more) exists.
+Inconsistent system A system of equations is said to be inconsistent if its solution
+does not exist.
+ANote In this chapter, we restrict ourselves to the system of linear equations
+having unique solutions only.
+4.6.1 Solution of system of linear equations using inverse of a matrix
+Let us express the system of linear equations as matrix equations and solve them using
+inverse of the coefficient matrix.
+Consider the system of equations
+a1
+x + b1 y + c
+1
+z = d1
+a2
+x + b2 y + c2
+z = d2
+a3
+x + b3 y + c
+3
+z = d3
+Let A =
+1 1 1 1
+2 2 2 2
+3 3 3 3
+, X and B
+a b c x d
+a b c y d
+a b c z d
+     
+     
+= =      
+           
+Then, the system of equations can be written as, AX = B, i.e.,
+1 1 1
+2 2 2
+3 3 3
+a b c x
+a b c y
+a b c z
+   
+   
+   
+       
+ =
+1
+2
+3
+d
+d
+d
+ 
+ 
+ 
+   
+Case I If A is a nonsingular matrix, then its inverse exists. Now
+AX = B
+or A–1 (AX) = A–1 B (premultiplying by A–1)
+or (A–1A) X = A–1 B (by associative property)
+or I X = A–1 B
+or X = A–1 B
+This matrix equation provides unique solution for the given system of equations as
+inverse of a matrix is unique. This method of solving system of equations is known as
+Matrix Method.
+Case II If A is a singular matrix, then |A| = 0.
+In this case, we calculate (adj A) B.
+If (adj A) B ≠ O, (O being zero matrix), then solution does not exist and the
+system of equations is called inconsistent.
+Reprint 2026-27

@@ -1,0 +1,2272 @@
+{
+  "subject": {
+    "code": "MATH12",
+    "name": "Mathematics",
+    "board": "CBSE",
+    "class": 12
+  },
+  "source": {
+    "publisher": "NCERT",
+    "title": "Mathematics Part II",
+    "edition": "Textbook for Class XII Part II, Reprint 2026-27",
+    "year": 2026
+  },
+  "chapter": {
+    "part": "II",
+    "chapter_no": 10,
+    "name": "Vector Algebra",
+    "blurb": "Scalars and vectors, the position vector and direction cosines, types of vectors, and the triangle and parallelogram laws of addition. The chapter then works with vectors in component form xi + yj + zk, the section formula, and the two products of vectors: the scalar (dot) product with projections, and the vector (cross) product with areas of triangles and parallelograms.",
+    "source_code": "lemh204",
+    "order_index": 10
+  },
+  "scope_in": [
+    {
+      "item": "Classify quantities as scalars (magnitude only) or vectors (magnitude and direction), and describe a vector as a directed line segment with initial point, terminal point and magnitude |AB|",
+      "pages": "338-339, 341-342"
+    },
+    {
+      "item": "Write the position vector OP of P(x, y, z) and find its magnitude sqrt(x^2 + y^2 + z^2)",
+      "pages": "339"
+    },
+    {
+      "item": "Find direction angles, direction cosines l = x/r, m = y/r, n = z/r and direction ratios of a vector, using l^2 + m^2 + n^2 = 1 (while a^2 + b^2 + c^2 need not be 1)",
+      "pages": "340-341, 351, 354, 372"
+    },
+    {
+      "item": "Recognise zero, unit, coinitial, collinear, equal and negative vectors, and free vectors, including in figures such as a square or parallelogram",
+      "pages": "341-342"
+    },
+    {
+      "item": "Add vectors by the triangle law and parallelogram law, use the zero resultant of a triangle's sides taken in order, form a - b = a + (-b), and use the commutative, associative and additive identity properties",
+      "pages": "343-346"
+    },
+    {
+      "item": "Multiply a vector by a scalar (|lambda a| = |lambda| |a|, direction same or opposite by the sign of lambda), and form the unit vector (1/|a|) a and a vector of given magnitude in a given direction",
+      "pages": "346-347, 350"
+    },
+    {
+      "item": "Write vectors in component form xi + yj + zk; find magnitude, sum, difference, scalar multiples and equality in components; test collinearity by proportional components; write unit vectors in the XY-plane as cos theta i + sin theta j",
+      "pages": "347-351, 369-372"
+    },
+    {
+      "item": "Find the vector joining two points P1P2 = (x2 - x1)i + (y2 - y1)j + (z2 - z1)k and its magnitude",
+      "pages": "351-352"
+    },
+    {
+      "item": "Use the section formula for internal division (mb + na)/(m + n), external division (mb - na)/(m - n) and the midpoint (a + b)/2; show three points are collinear and find the ratio of division",
+      "pages": "352-355, 361, 372"
+    },
+    {
+      "item": "Define and compute the scalar product a . b = |a||b| cos theta = a1 b1 + a2 b2 + a3 b3, use i . i = 1, i . j = 0, the perpendicularity test, commutativity and distributivity, and find the angle between two vectors",
+      "pages": "355-359"
+    },
+    {
+      "item": "Find the projection of a vector on a directed line or on another vector, (a . b)/|b|, and use a . a = |a|^2 to find quantities such as |a - b| and |a + b + c|",
+      "pages": "357-362, 370-373"
+    },
+    {
+      "item": "Define and compute the vector product a x b = |a||b| sin theta n (right handed system), use i x j = k, j x i = -k, b x a = -(a x b), a x b = 0 for parallel vectors, distributivity, and the determinant form in components",
+      "pages": "362-366"
+    },
+    {
+      "item": "Find a unit vector perpendicular to two given vectors, sin theta = |a x b|/(|a||b|), and the areas of a triangle (1/2)|a x b| and a parallelogram |a x b|",
+      "pages": "364-369"
+    }
+  ],
+  "scope_out": [
+    {
+      "item": "Scalar triple product [a b c], vector triple product a x (b x c) and coplanarity of vectors",
+      "reason": "Not present in this rationalised Reprint 2026-27 edition: the chapter ends at 10.6.3 Vector (or cross) product of two vectors, the Miscellaneous section and the Summary (pp. 362-375); Ex 10.4 Q7 uses only distributivity a x (b + c), not a triple product"
+    },
+    {
+      "item": "Vector and cartesian equations of lines and planes, angle between lines, shortest distance",
+      "reason": "Belong to the next chapter, Three Dimensional Geometry, not to this one"
+    },
+    {
+      "item": "Direction cosines of a line through two points as a separate topic",
+      "reason": "Treated in Three Dimensional Geometry; here direction cosines are only for vectors (pp. 340, 351, 354)"
+    },
+    {
+      "item": "Proofs of distributivity of the scalar and vector products over addition",
+      "reason": "Stated as properties without proof (pp. 356-357, 365)"
+    },
+    {
+      "item": "Lagrange's identity |a x b|^2 + (a . b)^2 = |a|^2 |b|^2 and other product identities",
+      "reason": "Not stated or used anywhere in this chapter"
+    },
+    {
+      "item": "Physics applications such as work done by a force, moment of a force or torque",
+      "reason": "The chapter only mentions force and velocity as examples of vectors (pp. 338, 344); it does not compute work or moments"
+    },
+    {
+      "item": "Linear combinations, linear independence or basis of vectors in general",
+      "reason": "Only the specific resolution into i, j, k components is taught (pp. 347-348)"
+    },
+    {
+      "item": "Vectors in more than three dimensions and the abstract vector space",
+      "reason": "All vectors here are free vectors in the plane or three dimensional space (p. 341)"
+    }
+  ],
+  "concepts": [
+    {
+      "code": "C12M-10.1",
+      "name": "Scalars, vectors, position vector and direction cosines",
+      "description": "Distinguishing scalar and vector quantities, the directed line segment with initial and terminal points and magnitude, the position vector of P(x, y, z) and its magnitude, and the direction angles, direction cosines (l, m, n) and direction ratios (a, b, c) of a vector.",
+      "idea": "A scalar has only magnitude; a vector has magnitude and direction, drawn as a directed line segment. The position vector of a point P is the vector from the origin O to P.",
+      "rule": "For P(x, y, z) with r = |OP| = sqrt(x^2 + y^2 + z^2), the direction cosines are l = x/r, m = y/r, n = z/r and l^2 + m^2 + n^2 = 1; the direction ratios a, b, c are any numbers proportional to l, m, n, and a^2 + b^2 + c^2 need not be 1.",
+      "example": "For P(2, 3, 6), r = sqrt(4 + 9 + 36) = 7, so the direction cosines of OP are 2/7, 3/7, 6/7 and 2, 3, 6 are its direction ratios.",
+      "difficulty_base": "Easy",
+      "questions": [
+        {
+          "b": "Remember",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "In the chapter's classification of quantities, which of the following is a vector quantity?",
+          "a": "Displacement",
+          "o": [
+            "Displacement",
+            "Distance",
+            "Speed",
+            "Work"
+          ]
+        },
+        {
+          "b": "Remember",
+          "d": "Easy",
+          "t": "fill_blank",
+          "m": 1,
+          "q": "For the vector AB (a directed line segment from A to B), the point A where it starts is called its ____ point.",
+          "a": "initial"
+        },
+        {
+          "b": "Remember",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "The magnitude of the position vector OP of the point P(x, y, z) with respect to the origin O is",
+          "a": "sqrt(x^2 + y^2 + z^2)",
+          "o": [
+            "sqrt(x^2 + y^2 + z^2)",
+            "x + y + z",
+            "x^2 + y^2 + z^2",
+            "sqrt(x + y + z)"
+          ]
+        },
+        {
+          "b": "Remember",
+          "d": "Hard",
+          "t": "mcq",
+          "m": 1,
+          "q": "In the book's classification of measures into scalars and vectors, which of the following is NOT a vector?",
+          "a": "30 km/hr",
+          "o": [
+            "30 km/hr",
+            "20 m/s towards north",
+            "10 Newton",
+            "2 metres north-west"
+          ],
+          "rev": true
+        },
+        {
+          "b": "Understand",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "The direction cosines of a vector are",
+          "a": "the cosines of the angles the vector makes with the positive x, y and z axes",
+          "o": [
+            "the cosines of the angles the vector makes with the positive x, y and z axes",
+            "the sines of the angles the vector makes with the positive x, y and z axes",
+            "the angles themselves that the vector makes with the positive x, y and z axes",
+            "the cosines of the angles the vector makes with the negative x, y and z axes"
+          ]
+        },
+        {
+          "b": "Understand",
+          "d": "Easy",
+          "t": "fill_blank",
+          "m": 1,
+          "q": "If l, m, n are the direction cosines of a vector, then l^2 + m^2 + n^2 = ____.",
+          "a": "1"
+        },
+        {
+          "b": "Understand",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "Why does the statement |vector a| < 0 have no meaning?",
+          "a": "Because the magnitude (length) of a vector is never negative",
+          "o": [
+            "Because the magnitude (length) of a vector is never negative",
+            "Because a vector has no magnitude, only a direction",
+            "Because the magnitude of a vector is always a whole number",
+            "Because only the zero vector has a magnitude"
+          ]
+        },
+        {
+          "b": "Understand",
+          "d": "Hard",
+          "t": "mcq",
+          "m": 1,
+          "q": "A vector OP has direction ratios a, b, c (its components) and magnitude r. Its direction cosines are",
+          "a": "a/r, b/r, c/r",
+          "o": [
+            "a/r, b/r, c/r",
+            "ar, br, cr",
+            "a/r^2, b/r^2, c/r^2",
+            "r/a, r/b, r/c"
+          ]
+        },
+        {
+          "b": "Understand",
+          "d": "Hard",
+          "t": "mcq",
+          "m": 1,
+          "q": "For the same vector, with direction cosines l, m, n and direction ratios a, b, c, which statement is true in general?",
+          "a": "l^2 + m^2 + n^2 = 1, but a^2 + b^2 + c^2 need not equal 1",
+          "o": [
+            "l^2 + m^2 + n^2 = 1, but a^2 + b^2 + c^2 need not equal 1",
+            "Both l^2 + m^2 + n^2 and a^2 + b^2 + c^2 equal 1",
+            "a^2 + b^2 + c^2 = 1, but l^2 + m^2 + n^2 need not equal 1",
+            "Neither l^2 + m^2 + n^2 nor a^2 + b^2 + c^2 need equal 1"
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Easy",
+          "t": "fill_blank",
+          "m": 1,
+          "q": "The magnitude of the position vector of the point P(2, 3, 6) is ____.",
+          "a": "7"
+        },
+        {
+          "b": "Apply",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "The direction cosines of the position vector of the point P(1, 2, 2) are",
+          "a": "1/3, 2/3, 2/3",
+          "o": [
+            "1/3, 2/3, 2/3",
+            "1, 2, 2",
+            "1/5, 2/5, 2/5",
+            "1/9, 2/9, 2/9"
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Hard",
+          "t": "mcq",
+          "m": 1,
+          "q": "The direction cosines of the position vector of the point P(3, -4, 12) are",
+          "a": "3/13, -4/13, 12/13",
+          "o": [
+            "3/13, -4/13, 12/13",
+            "3/13, 4/13, 12/13",
+            "3/11, -4/11, 12/11",
+            "3, -4, 12"
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Hard",
+          "t": "short_answer",
+          "m": 2,
+          "q": "Can a vector make angles of 90 degrees, 60 degrees and 30 degrees with the positive x, y and z axes respectively? Find its direction cosines and justify.",
+          "a": "l = cos 90 = 0, m = cos 60 = 1/2, n = cos 30 = sqrt(3)/2. Then l^2 + m^2 + n^2 = 0 + 1/4 + 3/4 = 1, so such a vector is possible, with direction cosines 0, 1/2, sqrt(3)/2.",
+          "s": [
+            [
+              "Writes l = 0, m = 1/2, n = sqrt(3)/2",
+              1
+            ],
+            [
+              "Checks l^2 + m^2 + n^2 = 1 and concludes the vector is possible",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Hard",
+          "t": "mcq",
+          "m": 1,
+          "q": "A vector is equally inclined to the positive x, y and z axes, so its direction cosines are l, l, l. Then l equals",
+          "a": "1/sqrt(3) or -1/sqrt(3)",
+          "o": [
+            "1/sqrt(3) or -1/sqrt(3)",
+            "1/3 or -1/3",
+            "1",
+            "3"
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Hardest",
+          "t": "long_answer",
+          "m": 3,
+          "q": "Find the magnitude and direction cosines of the position vector of P(2, -1, -2), and verify that the coordinates of P are (lr, mr, nr).",
+          "a": "r = sqrt(4 + 1 + 4) = 3. l = 2/3, m = -1/3, n = -2/3. Then lr = 2, mr = -1, nr = -2, which are the coordinates of P.",
+          "s": [
+            [
+              "Finds r = 3",
+              1
+            ],
+            [
+              "Finds direction cosines 2/3, -1/3, -2/3",
+              1
+            ],
+            [
+              "Verifies (lr, mr, nr) = (2, -1, -2)",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Analyse",
+          "d": "Hard",
+          "t": "assertion_reason",
+          "m": 1,
+          "q": "Assertion (A): The numbers 1/2, 1/2, 1/2 can be the direction cosines of a vector. Reason (R): Each direction cosine of a vector is the cosine of an angle, so it lies between -1 and 1.",
+          "a": "A is false, R is true",
+          "o": [
+            "A is false, R is true",
+            "Both A and R are true, and R is the correct explanation of A",
+            "Both A and R are true, but R is not the correct explanation of A",
+            "A is true, R is false"
+          ]
+        },
+        {
+          "b": "Analyse",
+          "d": "Hard",
+          "t": "multi_statement",
+          "m": 1,
+          "q": "Consider these statements. (I) The position vector of a point P(x, y, z) has its initial point at the origin O and its terminal point at P. (II) The direction ratios of a vector are always equal to its direction cosines. Which is or are correct?",
+          "a": "Only I",
+          "o": [
+            "Only I",
+            "Only II",
+            "Both I and II",
+            "Neither I nor II"
+          ]
+        },
+        {
+          "b": "Analyse",
+          "d": "Hardest",
+          "t": "long_answer",
+          "m": 3,
+          "q": "P is (1, 2, 2) and Q is (2, 2, 1). Compare the magnitudes and the direction cosines of the position vectors OP and OQ. Are OP and OQ equal vectors?",
+          "a": "|OP| = sqrt(1 + 4 + 4) = 3 and |OQ| = sqrt(4 + 4 + 1) = 3, so the magnitudes are equal. Direction cosines of OP are 1/3, 2/3, 2/3 and of OQ are 2/3, 2/3, 1/3, which differ. So the directions differ and OP is not equal to OQ.",
+          "s": [
+            [
+              "Finds |OP| = |OQ| = 3",
+              1
+            ],
+            [
+              "Finds the two sets of direction cosines and notes they differ",
+              1
+            ],
+            [
+              "Concludes the vectors are not equal since equal vectors need the same direction too",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Evaluate",
+          "d": "Hard",
+          "t": "short_answer",
+          "m": 2,
+          "q": "A student says that 2, 3, 6 are the direction cosines of the position vector of P(2, 3, 6). Is the student right? Justify.",
+          "a": "No. 2^2 + 3^2 + 6^2 = 49, not 1, so 2, 3, 6 cannot be direction cosines; they are direction ratios. Dividing by r = 7 gives the direction cosines 2/7, 3/7, 6/7.",
+          "s": [
+            [
+              "Shows 4 + 9 + 36 = 49 is not 1, so these are direction ratios, not direction cosines",
+              1
+            ],
+            [
+              "Gives the correct direction cosines 2/7, 3/7, 6/7",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Create",
+          "d": "Hardest",
+          "t": "long_answer",
+          "m": 3,
+          "q": "Construct a point P with non-zero integer coordinates such that the position vector OP has magnitude 9. Find the direction cosines of OP and verify that l^2 + m^2 + n^2 = 1.",
+          "a": "For example P(1, 4, 8): |OP| = sqrt(1 + 16 + 64) = sqrt(81) = 9. Direction cosines 1/9, 4/9, 8/9, and 1/81 + 16/81 + 64/81 = 81/81 = 1. (P(4, 4, 7) also works.)",
+          "s": [
+            [
+              "Gives a valid point with non-zero integer coordinates and magnitude 9",
+              1
+            ],
+            [
+              "Writes its direction cosines",
+              1
+            ],
+            [
+              "Verifies the sum of squares is 1",
+              1
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "code": "C12M-10.2",
+      "name": "Types of vectors",
+      "description": "Zero (null), unit, coinitial, collinear, equal and negative vectors, and free vectors, identified in figures such as a square or parallelogram.",
+      "idea": "Vectors are classified by their magnitude, their direction and their initial points; in this chapter all vectors are free, so they may be moved parallel to themselves.",
+      "rule": "Equal vectors have the same magnitude and direction (initial points may differ); collinear vectors are parallel to the same line whatever their magnitudes and directions; the negative of AB is BA; a zero vector has zero magnitude and no definite direction.",
+      "example": "In a square ABCD, vector AB = vector DC (equal), AB and CD are collinear but not equal, and AB and AD are coinitial.",
+      "difficulty_base": "Easy",
+      "questions": [
+        {
+          "b": "Remember",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "A vector whose initial and terminal points coincide is called",
+          "a": "a zero (null) vector",
+          "o": [
+            "a zero (null) vector",
+            "a unit vector",
+            "a coinitial vector",
+            "a negative vector"
+          ]
+        },
+        {
+          "b": "Remember",
+          "d": "Easy",
+          "t": "fill_blank",
+          "m": 1,
+          "q": "A vector whose magnitude is 1 unit is called a ____ vector.",
+          "a": "unit"
+        },
+        {
+          "b": "Remember",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "Two or more vectors having the same initial point are called",
+          "a": "coinitial vectors",
+          "o": [
+            "coinitial vectors",
+            "collinear vectors",
+            "equal vectors",
+            "free vectors"
+          ]
+        },
+        {
+          "b": "Remember",
+          "d": "Hard",
+          "t": "mcq",
+          "m": 1,
+          "q": "Which of the following conditions is NOT required for two vectors to be equal vectors?",
+          "a": "They must have the same initial point",
+          "o": [
+            "They must have the same initial point",
+            "They must have the same magnitude",
+            "They must have the same direction",
+            "They must agree in both magnitude and direction"
+          ],
+          "rev": true
+        },
+        {
+          "b": "Understand",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "Two or more vectors are called collinear if they are",
+          "a": "parallel to the same line, irrespective of their magnitudes and directions",
+          "o": [
+            "parallel to the same line, irrespective of their magnitudes and directions",
+            "equal in magnitude and in the same direction",
+            "having the same initial point",
+            "perpendicular to the same line"
+          ]
+        },
+        {
+          "b": "Understand",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "The negative of the vector AB is",
+          "a": "the vector BA",
+          "o": [
+            "the vector BA",
+            "the vector AB itself",
+            "the zero vector",
+            "a vector of magnitude -|AB| in the same direction"
+          ]
+        },
+        {
+          "b": "Understand",
+          "d": "Easy",
+          "t": "fill_blank",
+          "m": 1,
+          "q": "Vectors that may be given a parallel displacement without changing their magnitude and direction are called ____ vectors.",
+          "a": "free"
+        },
+        {
+          "b": "Understand",
+          "d": "Hard",
+          "t": "mcq",
+          "m": 1,
+          "q": "Why can a zero vector not be assigned a definite direction?",
+          "a": "Because it has zero magnitude",
+          "o": [
+            "Because it has zero magnitude",
+            "Because its initial point is always the origin",
+            "Because it is a unit vector",
+            "Because it is perpendicular to every coordinate axis"
+          ]
+        },
+        {
+          "b": "Understand",
+          "d": "Hard",
+          "t": "mcq",
+          "m": 1,
+          "q": "Two collinear vectors that have the same magnitude are",
+          "a": "not necessarily equal, since they may point in opposite directions",
+          "o": [
+            "not necessarily equal, since they may point in opposite directions",
+            "always equal",
+            "always negatives of each other",
+            "always coinitial"
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "In a square ABCD, which vector is equal to vector AB?",
+          "a": "vector DC",
+          "o": [
+            "vector DC",
+            "vector CD",
+            "vector AD",
+            "vector BA"
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Easy",
+          "t": "fill_blank",
+          "m": 1,
+          "q": "In a parallelogram ABCD, vector AD is equal to vector ____.",
+          "a": "BC"
+        },
+        {
+          "b": "Apply",
+          "d": "Hard",
+          "t": "mcq",
+          "m": 1,
+          "q": "In a square ABCD, which pair of vectors is collinear but NOT equal?",
+          "a": "vector AB and vector CD",
+          "o": [
+            "vector AB and vector CD",
+            "vector AB and vector DC",
+            "vector AB and vector AD",
+            "vector AC and vector BD"
+          ],
+          "rev": true
+        },
+        {
+          "b": "Apply",
+          "d": "Hard",
+          "t": "mcq",
+          "m": 1,
+          "q": "The diagonals of a parallelogram ABCD meet at O. Which pair of vectors are equal?",
+          "a": "vector AO and vector OC",
+          "o": [
+            "vector AO and vector OC",
+            "vector AO and vector OA",
+            "vector AO and vector CO",
+            "vector AO and vector OB"
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Hard",
+          "t": "short_answer",
+          "m": 2,
+          "q": "State, with a reason, whether the following is true or false: vector a and vector -a are collinear.",
+          "a": "True. Vector -a has the same magnitude as a but the opposite direction, so both lie along (are parallel to) the same line, which is exactly the definition of collinear vectors.",
+          "s": [
+            [
+              "States True",
+              1
+            ],
+            [
+              "Reason: -a is parallel to the same line as a; collinearity ignores direction and magnitude",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Hardest",
+          "t": "long_answer",
+          "m": 3,
+          "q": "PQRS is a rectangle (vertices in order). Classify each pair as equal, collinear but not equal, or coinitial and not collinear: (i) vector PQ and vector SR, (ii) vector PQ and vector RS, (iii) vector PQ and vector PS.",
+          "a": "(i) PQ and SR have the same magnitude and same direction, so they are equal. (ii) PQ and RS are parallel with the same magnitude but opposite directions, so collinear but not equal. (iii) PQ and PS both start at P and are perpendicular, so coinitial and not collinear.",
+          "s": [
+            [
+              "(i) equal",
+              1
+            ],
+            [
+              "(ii) collinear but not equal (opposite direction)",
+              1
+            ],
+            [
+              "(iii) coinitial, not collinear",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Analyse",
+          "d": "Hard",
+          "t": "assertion_reason",
+          "m": 1,
+          "q": "Assertion (A): Vector a and vector -a are collinear. Reason (R): Two collinear vectors are always equal in magnitude.",
+          "a": "A is true, R is false",
+          "o": [
+            "A is true, R is false",
+            "Both A and R are true, and R is the correct explanation of A",
+            "Both A and R are true, but R is not the correct explanation of A",
+            "A is false, R is true"
+          ]
+        },
+        {
+          "b": "Analyse",
+          "d": "Hard",
+          "t": "multi_statement",
+          "m": 1,
+          "q": "Consider these statements. (I) Two equal vectors must have the same initial point. (II) Two collinear vectors must have the same direction. Which is or are correct?",
+          "a": "Neither I nor II",
+          "o": [
+            "Neither I nor II",
+            "Only I",
+            "Only II",
+            "Both I and II"
+          ]
+        },
+        {
+          "b": "Analyse",
+          "d": "Hardest",
+          "t": "long_answer",
+          "m": 3,
+          "q": "Can two vectors be both coinitial and equal but have different terminal points? Explain.",
+          "a": "No. Equal vectors have the same magnitude and the same direction. If they also start at the same initial point, moving the same distance in the same direction from that point ends at the same terminal point. So their terminal points must coincide.",
+          "s": [
+            [
+              "Uses that equal vectors have the same magnitude and direction",
+              1
+            ],
+            [
+              "Argues that from one initial point the same length and direction reach the same point",
+              1
+            ],
+            [
+              "Concludes the terminal points must be the same",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Evaluate",
+          "d": "Hard",
+          "t": "short_answer",
+          "m": 2,
+          "q": "A student claims: 'Two collinear vectors are always equal in magnitude.' Evaluate this claim with an example.",
+          "a": "The claim is false. Vector a and vector 2a are parallel to the same line, so they are collinear, but |2a| = 2|a| is not equal to |a| for a nonzero a.",
+          "s": [
+            [
+              "States the claim is false",
+              1
+            ],
+            [
+              "Gives a counterexample such as a and 2a with unequal magnitudes",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Create",
+          "d": "Hardest",
+          "t": "long_answer",
+          "m": 3,
+          "q": "Using the vertices of a square ABCD, give one example each of: two equal vectors, a vector collinear with them but not equal to them, and a vector coinitial with the first but not collinear with it. Justify each.",
+          "a": "For example: vector AB and vector DC are equal (same length, same direction). Vector CD is collinear with them (parallel to AB) but opposite in direction, so not equal. Vector AD starts at A like AB but is perpendicular to it, so coinitial and not collinear.",
+          "s": [
+            [
+              "Gives a correct pair of equal vectors with reason",
+              1
+            ],
+            [
+              "Gives a correct collinear but not equal vector with reason",
+              1
+            ],
+            [
+              "Gives a correct coinitial, non-collinear vector with reason",
+              1
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "code": "C12M-10.3",
+      "name": "Addition and subtraction of vectors",
+      "description": "The triangle law and parallelogram law of vector addition, the zero resultant of the sides of a triangle taken in order, the difference a - b = a + (-b), and the commutative, associative and additive identity properties.",
+      "idea": "Adding vectors means following one displacement after another: place the initial point of the second at the terminal point of the first.",
+      "rule": "Triangle law: vector AB + vector BC = vector AC. Parallelogram law: the sum of two adjacent sides is the diagonal through their common point. a + b = b + a, (a + b) + c = a + (b + c), a + 0 = a, a + (-a) = 0, and a - b = a + (-b).",
+      "example": "In triangle ABC, vector AB + vector BC + vector CA = 0, because the sides taken in order bring you back to the starting point.",
+      "difficulty_base": "Easy",
+      "questions": [
+        {
+          "b": "Remember",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "By the triangle law of vector addition, vector AB + vector BC equals",
+          "a": "vector AC",
+          "o": [
+            "vector AC",
+            "vector CA",
+            "the zero vector",
+            "vector CB"
+          ]
+        },
+        {
+          "b": "Remember",
+          "d": "Easy",
+          "t": "fill_blank",
+          "m": 1,
+          "q": "The vector sum of the three sides of a triangle taken in order is the ____ vector.",
+          "a": "zero"
+        },
+        {
+          "b": "Remember",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "By the parallelogram law, the sum of two vectors represented by the adjacent sides of a parallelogram is represented by",
+          "a": "the diagonal through their common point",
+          "o": [
+            "the diagonal through their common point",
+            "the other diagonal",
+            "the side opposite to their common point",
+            "half of the diagonal through their common point"
+          ]
+        },
+        {
+          "b": "Remember",
+          "d": "Hard",
+          "t": "mcq",
+          "m": 1,
+          "q": "Which of the following statements about vector addition and subtraction is NOT true for all vectors a, b, c?",
+          "a": "a - b = b - a",
+          "o": [
+            "a - b = b - a",
+            "a + b = b + a",
+            "(a + b) + c = a + (b + c)",
+            "a + 0 = a"
+          ],
+          "rev": true
+        },
+        {
+          "b": "Understand",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "The additive identity for vector addition is",
+          "a": "the zero vector",
+          "o": [
+            "the zero vector",
+            "a unit vector",
+            "the vector -a",
+            "the number 1"
+          ]
+        },
+        {
+          "b": "Understand",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "The difference of vectors, a - b, is defined as",
+          "a": "a + (-b)",
+          "o": [
+            "a + (-b)",
+            "b + (-a)",
+            "-a - b",
+            "a + b"
+          ]
+        },
+        {
+          "b": "Understand",
+          "d": "Easy",
+          "t": "fill_blank",
+          "m": 1,
+          "q": "The associative property of vector addition lets us write the sum of three vectors without using ____.",
+          "a": "brackets"
+        },
+        {
+          "b": "Understand",
+          "d": "Hard",
+          "t": "mcq",
+          "m": 1,
+          "q": "In triangle ABC, vector AB - vector AC equals",
+          "a": "vector CB",
+          "o": [
+            "vector CB",
+            "vector BC",
+            "vector BA",
+            "vector CA"
+          ]
+        },
+        {
+          "b": "Understand",
+          "d": "Hard",
+          "t": "mcq",
+          "m": 1,
+          "q": "In parallelogram ABCD, vector a = vector AB and vector b = vector AD. Then a - b is represented by",
+          "a": "vector DB",
+          "o": [
+            "vector DB",
+            "vector BD",
+            "vector AC",
+            "vector CA"
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Easy",
+          "t": "fill_blank",
+          "m": 1,
+          "q": "A girl walks from point A to point B and then from B to point C. Her net displacement is the vector ____.",
+          "a": "AC"
+        },
+        {
+          "b": "Apply",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "In a quadrilateral ABCD, vector AB + vector BC + vector CD equals",
+          "a": "vector AD",
+          "o": [
+            "vector AD",
+            "vector DA",
+            "the zero vector",
+            "vector AC"
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Hard",
+          "t": "mcq",
+          "m": 1,
+          "q": "In parallelogram ABCD, vector AB + vector AD equals",
+          "a": "vector AC",
+          "o": [
+            "vector AC",
+            "vector BD",
+            "vector DB",
+            "vector CA"
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Hard",
+          "t": "mcq",
+          "m": 1,
+          "q": "In triangle ABC, vector AB = a and vector BC = b. Then vector CA equals",
+          "a": "-(a + b)",
+          "o": [
+            "-(a + b)",
+            "a + b",
+            "a - b",
+            "b - a"
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Hard",
+          "t": "short_answer",
+          "m": 2,
+          "q": "Using the triangle law, show that in parallelogram ABCD, vector AC = vector AB + vector AD.",
+          "a": "By the triangle law in triangle ABC, AC = AB + BC. Opposite sides of a parallelogram are equal and parallel, so vector BC = vector AD. Hence AC = AB + AD.",
+          "s": [
+            [
+              "Writes AC = AB + BC by the triangle law",
+              1
+            ],
+            [
+              "Uses BC = AD (opposite sides equal and parallel) to get AC = AB + AD",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Hardest",
+          "t": "long_answer",
+          "m": 3,
+          "q": "Prove the commutative property a + b = b + a using a parallelogram ABCD with vector AB = a and vector BC = b.",
+          "a": "In triangle ABC, AC = AB + BC = a + b. Opposite sides of a parallelogram are equal and parallel, so vector AD = vector BC = b and vector DC = vector AB = a. In triangle ADC, AC = AD + DC = b + a. Hence a + b = b + a.",
+          "s": [
+            [
+              "Gets AC = a + b from triangle ABC",
+              1
+            ],
+            [
+              "Uses AD = b and DC = a from the parallelogram",
+              1
+            ],
+            [
+              "Gets AC = b + a from triangle ADC and concludes a + b = b + a",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Analyse",
+          "d": "Hard",
+          "t": "assertion_reason",
+          "m": 1,
+          "q": "Assertion (A): In any triangle ABC, vector AB + vector BC + vector CA is the zero vector. Reason (R): When the sides of a triangle are taken in order, the initial point of the first side and the terminal point of the last side coincide.",
+          "a": "Both A and R are true, and R is the correct explanation of A",
+          "o": [
+            "Both A and R are true, and R is the correct explanation of A",
+            "Both A and R are true, but R is not the correct explanation of A",
+            "A is true, R is false",
+            "A is false, R is true"
+          ]
+        },
+        {
+          "b": "Analyse",
+          "d": "Hard",
+          "t": "multi_statement",
+          "m": 1,
+          "q": "Consider these statements. (I) a - b = b - a for all vectors a and b. (II) a + (-a) is the zero vector for every vector a. Which is or are correct?",
+          "a": "Only II",
+          "o": [
+            "Only II",
+            "Only I",
+            "Both I and II",
+            "Neither I nor II"
+          ]
+        },
+        {
+          "b": "Analyse",
+          "d": "Hardest",
+          "t": "long_answer",
+          "m": 3,
+          "q": "ABCD is a quadrilateral in which vector AB = vector DC. Show that vector AD = vector BC.",
+          "a": "By the triangle law along the path A to B to C to D, AD = AB + BC + CD. Since CD = -DC and DC = AB, CD = -AB. So AD = AB + BC - AB = BC.",
+          "s": [
+            [
+              "Writes AD = AB + BC + CD",
+              1
+            ],
+            [
+              "Uses CD = -DC = -AB",
+              1
+            ],
+            [
+              "Simplifies to AD = BC",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Evaluate",
+          "d": "Hard",
+          "t": "short_answer",
+          "m": 2,
+          "q": "A student writes: 'In triangle ABC, vector AB + vector BC = vector CA.' Identify the error and correct it.",
+          "a": "The error is the direction of the resultant. By the triangle law, AB + BC = AC (from the start A to the end C). Vector CA = -AC, so the correct statement is AB + BC = AC, equivalently AB + BC + CA = 0.",
+          "s": [
+            [
+              "Identifies that the resultant runs from A to C, not C to A",
+              1
+            ],
+            [
+              "Writes AB + BC = AC (or AB + BC + CA = 0)",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Create",
+          "d": "Hardest",
+          "t": "long_answer",
+          "m": 3,
+          "q": "Construct a closed path of four displacements on a quadrilateral PQRS and show, using the triangle law step by step, that their vector sum is the zero vector.",
+          "a": "Take PQ, QR, RS, SP. By the triangle law PQ + QR = PR, then PR + RS = PS, and PS + SP = PS + (-PS) = 0. So PQ + QR + RS + SP = 0.",
+          "s": [
+            [
+              "Combines PQ + QR = PR",
+              1
+            ],
+            [
+              "Combines PR + RS = PS",
+              1
+            ],
+            [
+              "Uses SP = -PS to get the zero vector",
+              1
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "code": "C12M-10.4",
+      "name": "Scalar multiple, component form and unit vectors",
+      "description": "Multiplying a vector by a scalar, the unit vectors i, j, k, the component form xi + yj + zk with its magnitude, sum, difference, equality and scalar multiples in components, collinearity by proportional components, unit vectors in a given direction, and direction cosines from components.",
+      "idea": "Every vector in space can be written as xi + yj + zk; the scalar components x, y, z are its direction ratios, and all vector operations reduce to working on components.",
+      "rule": "|lambda a| = |lambda| |a| and lambda a is collinear with a. If a = a1 i + a2 j + a3 k then |a| = sqrt(a1^2 + a2^2 + a3^2), the unit vector along a is (1/|a|) a, and b is collinear with a if and only if b1/a1 = b2/a2 = b3/a3 = lambda.",
+      "example": "For a = 2i + 3j + k, |a| = sqrt(14), so the unit vector along a is (2i + 3j + k)/sqrt(14).",
+      "difficulty_base": "Easy",
+      "questions": [
+        {
+          "b": "Remember",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "The unit vector in the direction of a nonzero vector a is",
+          "a": "(1/|a|) a",
+          "o": [
+            "(1/|a|) a",
+            "|a| a",
+            "(1/|a|^2) a",
+            "a - |a|"
+          ]
+        },
+        {
+          "b": "Remember",
+          "d": "Easy",
+          "t": "fill_blank",
+          "m": 1,
+          "q": "The unit vectors along the x, y and z axes are denoted by i, j and ____ respectively.",
+          "a": "k"
+        },
+        {
+          "b": "Remember",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "If vector a = a1 i + a2 j + a3 k and vector b = b1 i + b2 j + b3 k, then a = b if and only if",
+          "a": "a1 = b1, a2 = b2 and a3 = b3",
+          "o": [
+            "a1 = b1, a2 = b2 and a3 = b3",
+            "|a| = |b|",
+            "a1 + a2 + a3 = b1 + b2 + b3",
+            "a1/b1 = a2/b2 = a3/b3"
+          ]
+        },
+        {
+          "b": "Remember",
+          "d": "Hard",
+          "t": "mcq",
+          "m": 1,
+          "q": "For a nonzero scalar lambda and a nonzero vector a, which statement about the scalar multiple lambda a is NOT correct?",
+          "a": "lambda a always has the same direction as a",
+          "o": [
+            "lambda a always has the same direction as a",
+            "lambda a is collinear with a",
+            "|lambda a| = |lambda| |a|",
+            "If lambda = -1, then lambda a is the negative of a"
+          ],
+          "rev": true
+        },
+        {
+          "b": "Understand",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "For the vector 3i - 2j + 5k, the scalar components are",
+          "a": "3, -2, 5",
+          "o": [
+            "3, -2, 5",
+            "3i, -2j, 5k",
+            "3, 2, 5",
+            "sqrt(38)"
+          ]
+        },
+        {
+          "b": "Understand",
+          "d": "Easy",
+          "t": "fill_blank",
+          "m": 1,
+          "q": "For any scalar k, k times the zero vector is the ____ vector.",
+          "a": "zero"
+        },
+        {
+          "b": "Understand",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "The nonzero vectors a = a1 i + a2 j + a3 k and b = b1 i + b2 j + b3 k are collinear if and only if",
+          "a": "b1/a1 = b2/a2 = b3/a3",
+          "o": [
+            "b1/a1 = b2/a2 = b3/a3",
+            "a1 b1 + a2 b2 + a3 b3 = 0",
+            "|a| = |b|",
+            "a1 + b1 = a2 + b2 = a3 + b3"
+          ]
+        },
+        {
+          "b": "Understand",
+          "d": "Hard",
+          "t": "mcq",
+          "m": 1,
+          "q": "Let a = i + 2j + 3k and b = 2i + j + 3k. Which statement is correct?",
+          "a": "|a| = |b|, but a is not equal to b because their corresponding components differ",
+          "o": [
+            "|a| = |b|, but a is not equal to b because their corresponding components differ",
+            "a = b because |a| = |b|",
+            "|a| is not equal to |b|",
+            "a and b are collinear because |a| = |b|"
+          ]
+        },
+        {
+          "b": "Understand",
+          "d": "Hard",
+          "t": "mcq",
+          "m": 1,
+          "q": "If l, m, n are the direction cosines of a vector, then li + mj + nk is",
+          "a": "the unit vector in the direction of that vector",
+          "o": [
+            "the unit vector in the direction of that vector",
+            "the vector itself, whatever its magnitude",
+            "a vector of magnitude 3",
+            "the zero vector"
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "The unit vector in the direction of a = 2i + 3j + k is",
+          "a": "(2i + 3j + k)/sqrt(14)",
+          "o": [
+            "(2i + 3j + k)/sqrt(14)",
+            "(2i + 3j + k)/14",
+            "(2i + 3j + k)/6",
+            "2i + 3j + k"
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Easy",
+          "t": "fill_blank",
+          "m": 1,
+          "q": "If the vectors 2i + 3j and xi + yj are equal, then x + y = ____.",
+          "a": "5"
+        },
+        {
+          "b": "Apply",
+          "d": "Hard",
+          "t": "mcq",
+          "m": 1,
+          "q": "A vector in the direction of a = i - 2j that has magnitude 7 units is",
+          "a": "(7/sqrt(5)) i - (14/sqrt(5)) j",
+          "o": [
+            "(7/sqrt(5)) i - (14/sqrt(5)) j",
+            "7i - 14j",
+            "(7/5) i - (14/5) j",
+            "(7/sqrt(5)) i + (14/sqrt(5)) j"
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Hard",
+          "t": "mcq",
+          "m": 1,
+          "q": "The unit vector in the direction of the sum of a = 2i + 2j - 5k and b = 2i + j + 3k is",
+          "a": "(4i + 3j - 2k)/sqrt(29)",
+          "o": [
+            "(4i + 3j - 2k)/sqrt(29)",
+            "(4i + 3j - 8k)/sqrt(89)",
+            "(4i + 3j - 2k)/29",
+            "(4i + 3j - 2k)/5"
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Hard",
+          "t": "short_answer",
+          "m": 2,
+          "q": "Find the direction cosines of the vector i + 2j + 3k.",
+          "a": "|a| = sqrt(1 + 4 + 9) = sqrt(14). Direction cosines are 1/sqrt(14), 2/sqrt(14), 3/sqrt(14).",
+          "s": [
+            [
+              "Finds the magnitude sqrt(14)",
+              1
+            ],
+            [
+              "Divides each component by sqrt(14) to get the direction cosines",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Hardest",
+          "t": "long_answer",
+          "m": 3,
+          "q": "Show that the vectors 2i - 3j + 4k and -4i + 6j - 8k are collinear, find the scalar lambda with -4i + 6j - 8k = lambda(2i - 3j + 4k), and say whether they have the same or opposite directions.",
+          "a": "-4/2 = 6/(-3) = -8/4 = -2, so the components are proportional and the vectors are collinear with lambda = -2. Since lambda is negative, they have opposite directions.",
+          "s": [
+            [
+              "Shows the ratios of corresponding components are equal",
+              1
+            ],
+            [
+              "Finds lambda = -2",
+              1
+            ],
+            [
+              "Concludes opposite directions since lambda < 0",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Analyse",
+          "d": "Hard",
+          "t": "assertion_reason",
+          "m": 1,
+          "q": "Assertion (A): The vectors 2i - 3j + 4k and -4i + 6j - 8k are collinear. Reason (R): For any scalar lambda and vector a, the magnitude of lambda a is |lambda| times |a|.",
+          "a": "Both A and R are true, but R is not the correct explanation of A",
+          "o": [
+            "Both A and R are true, but R is not the correct explanation of A",
+            "Both A and R are true, and R is the correct explanation of A",
+            "A is true, R is false",
+            "A is false, R is true"
+          ]
+        },
+        {
+          "b": "Analyse",
+          "d": "Hard",
+          "t": "multi_statement",
+          "m": 1,
+          "q": "Consider these statements. (I) (1/3) i + (1/3) j - (1/3) k is a unit vector. (II) The vector of magnitude 8 in the direction of 5i - j + 2k is (40i - 8j + 16k)/sqrt(30). Which is or are correct?",
+          "a": "Only II",
+          "o": [
+            "Only II",
+            "Only I",
+            "Both I and II",
+            "Neither I nor II"
+          ]
+        },
+        {
+          "b": "Analyse",
+          "d": "Hardest",
+          "t": "long_answer",
+          "m": 3,
+          "q": "Find all values of x for which x(i + j + k) is a unit vector.",
+          "a": "|x(i + j + k)| = |x| sqrt(1 + 1 + 1) = |x| sqrt(3). For a unit vector, |x| sqrt(3) = 1, so |x| = 1/sqrt(3) and x = 1/sqrt(3) or x = -1/sqrt(3).",
+          "s": [
+            [
+              "Writes the magnitude as |x| sqrt(3)",
+              1
+            ],
+            [
+              "Sets it equal to 1",
+              1
+            ],
+            [
+              "Gets x = 1/sqrt(3) or -1/sqrt(3)",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Evaluate",
+          "d": "Hard",
+          "t": "short_answer",
+          "m": 2,
+          "q": "A student finds the unit vector along 3i + 4k as (3i + 4k)/7. Find the mistake and give the correct unit vector.",
+          "a": "The student divided by the sum of the components, 3 + 4 = 7, instead of the magnitude. |3i + 4k| = sqrt(9 + 16) = 5, so the unit vector is (3/5) i + (4/5) k.",
+          "s": [
+            [
+              "Identifies dividing by 3 + 4 instead of the magnitude",
+              1
+            ],
+            [
+              "Gives (3/5) i + (4/5) k",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Create",
+          "d": "Hardest",
+          "t": "long_answer",
+          "m": 3,
+          "q": "Construct two different vectors, each with three non-zero integer components, that have the same magnitude sqrt(14) but are not equal. Justify both claims.",
+          "a": "For example i + 2j + 3k and 3i + 2j + k. Each has magnitude sqrt(1 + 4 + 9) = sqrt(14). They are not equal because their i components (1 and 3) differ.",
+          "s": [
+            [
+              "Gives two vectors with non-zero integer components",
+              1
+            ],
+            [
+              "Shows both magnitudes are sqrt(14)",
+              1
+            ],
+            [
+              "Shows they are not equal by comparing components",
+              1
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "code": "C12M-10.5",
+      "name": "Vector joining two points and section formula",
+      "description": "The vector P1P2 = (x2 - x1)i + (y2 - y1)j + (z2 - z1)k and its magnitude, the position vector of a point dividing a segment internally or externally in the ratio m : n, the midpoint, and showing three points collinear.",
+      "idea": "The vector from P to Q is the position vector of Q minus the position vector of P; the section formula weights each end by the part of the ratio next to the other end.",
+      "rule": "Vector PQ = OQ - OP. If P, Q have position vectors a, b then R dividing PQ internally in m : n has position vector (mb + na)/(m + n), externally (mb - na)/(m - n), and the midpoint is (a + b)/2.",
+      "example": "The vector from P(2, 3, 0) to Q(-1, -2, -4) is -3i - 5j - 4k; the midpoint of P(2, 3, 4) and Q(4, 1, -2) is 3i + 2j + k.",
+      "difficulty_base": "Easy",
+      "questions": [
+        {
+          "b": "Remember",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "The vector joining P1(x1, y1, z1) to P2(x2, y2, z2), directed from P1 to P2, is",
+          "a": "(x2 - x1)i + (y2 - y1)j + (z2 - z1)k",
+          "o": [
+            "(x2 - x1)i + (y2 - y1)j + (z2 - z1)k",
+            "(x1 - x2)i + (y1 - y2)j + (z1 - z2)k",
+            "(x1 + x2)i + (y1 + y2)j + (z1 + z2)k",
+            "((x1 + x2)/2)i + ((y1 + y2)/2)j + ((z1 + z2)/2)k"
+          ]
+        },
+        {
+          "b": "Remember",
+          "d": "Easy",
+          "t": "fill_blank",
+          "m": 1,
+          "q": "If P and Q have position vectors a and b, the position vector of the midpoint of PQ is (a + b)/____.",
+          "a": "2"
+        },
+        {
+          "b": "Remember",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "P and Q have position vectors a and b. The position vector of R dividing PQ internally in the ratio m : n is",
+          "a": "(mb + na)/(m + n)",
+          "o": [
+            "(mb + na)/(m + n)",
+            "(ma + nb)/(m + n)",
+            "(mb - na)/(m - n)",
+            "(mb + na)/(m - n)"
+          ]
+        },
+        {
+          "b": "Remember",
+          "d": "Hard",
+          "t": "mcq",
+          "m": 1,
+          "q": "P and Q have position vectors a and b. Which of the following is NOT the position vector of the midpoint of PQ?",
+          "a": "(a - b)/2",
+          "o": [
+            "(a - b)/2",
+            "(a + b)/2",
+            "a + (b - a)/2",
+            "b - (b - a)/2"
+          ],
+          "rev": true
+        },
+        {
+          "b": "Understand",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "Why is vector PQ equal to (position vector of Q) - (position vector of P)?",
+          "a": "By the triangle law in triangle OPQ, OP + PQ = OQ",
+          "o": [
+            "By the triangle law in triangle OPQ, OP + PQ = OQ",
+            "Because PQ = OP + OQ",
+            "Because PQ = OP - OQ",
+            "Because PQ is always the midpoint of OP and OQ"
+          ]
+        },
+        {
+          "b": "Understand",
+          "d": "Easy",
+          "t": "fill_blank",
+          "m": 1,
+          "q": "When R divides PQ externally in the ratio m : n, the ratio PR/QR equals ____.",
+          "a": "m/n"
+        },
+        {
+          "b": "Understand",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "When the section formula is used for the midpoint R of PQ, the ratio parts m and n satisfy",
+          "a": "m = n",
+          "o": [
+            "m = n",
+            "m = 2n",
+            "m + n = 0",
+            "m = 0"
+          ]
+        },
+        {
+          "b": "Understand",
+          "d": "Hard",
+          "t": "mcq",
+          "m": 1,
+          "q": "If P has position vector a and Q has position vector b, then vector QP equals",
+          "a": "a - b",
+          "o": [
+            "a - b",
+            "b - a",
+            "a + b",
+            "(a + b)/2"
+          ]
+        },
+        {
+          "b": "Understand",
+          "d": "Hard",
+          "t": "mcq",
+          "m": 1,
+          "q": "The external division formula (mb - na)/(m - n) cannot be used when",
+          "a": "m = n",
+          "o": [
+            "m = n",
+            "m > n",
+            "m < n",
+            "m = 2n"
+          ],
+          "rev": true
+        },
+        {
+          "b": "Apply",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "The vector joining P(2, 3, 0) and Q(-1, -2, -4), directed from P to Q, is",
+          "a": "-3i - 5j - 4k",
+          "o": [
+            "-3i - 5j - 4k",
+            "3i + 5j + 4k",
+            "i + j - 4k",
+            "-3i - 5j + 4k"
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Easy",
+          "t": "fill_blank",
+          "m": 1,
+          "q": "The magnitude of the vector joining P(1, 2, 3) to Q(3, 5, 9) is ____.",
+          "a": "7"
+        },
+        {
+          "b": "Apply",
+          "d": "Hard",
+          "t": "mcq",
+          "m": 1,
+          "q": "The position vector of the midpoint of the line segment joining P(2, 3, 4) and Q(4, 1, -2) is",
+          "a": "3i + 2j + k",
+          "o": [
+            "3i + 2j + k",
+            "6i + 4j + 2k",
+            "i - j - 3k",
+            "3i + 2j + 3k"
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Hard",
+          "t": "mcq",
+          "m": 1,
+          "q": "P and Q have position vectors i + 2j - k and -i + j + k. The position vector of R dividing PQ externally in the ratio 2 : 1 is",
+          "a": "-3i + 3k",
+          "o": [
+            "-3i + 3k",
+            "-(1/3)i + (4/3)j + (1/3)k",
+            "3i + 3j - 3k",
+            "-i + k"
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Hard",
+          "t": "short_answer",
+          "m": 2,
+          "q": "P and Q have position vectors 3i - 2j + k and -i + 2j + 5k. Find the position vector of R which divides PQ internally in the ratio 3 : 1.",
+          "a": "OR = (3 OQ + 1 OP)/(3 + 1) = (3(-i + 2j + 5k) + (3i - 2j + k))/4 = (0i + 4j + 16k)/4 = j + 4k.",
+          "s": [
+            [
+              "Writes OR = (3 OQ + OP)/4 with the weights the right way round",
+              1
+            ],
+            [
+              "Simplifies to j + 4k",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Hardest",
+          "t": "long_answer",
+          "m": 3,
+          "q": "Show that A(1, -2, -8), B(5, 0, -2) and C(11, 3, 7) are collinear, and find the ratio in which B divides AC.",
+          "a": "AB = 4i + 2j + 6k and BC = 6i + 3j + 9k = (3/2)(4i + 2j + 6k) = (3/2) AB. So AB and BC are collinear with common point B, hence A, B, C are collinear. |AB| : |BC| = 1 : 3/2 = 2 : 3, so B divides AC internally in the ratio 2 : 3.",
+          "s": [
+            [
+              "Finds AB = 4i + 2j + 6k and BC = 6i + 3j + 9k",
+              1
+            ],
+            [
+              "Shows BC = (3/2) AB with common point B, so the points are collinear",
+              1
+            ],
+            [
+              "Concludes the ratio is 2 : 3",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Analyse",
+          "d": "Hard",
+          "t": "assertion_reason",
+          "m": 1,
+          "q": "Assertion (A): If R is the midpoint of PQ, where P and Q have position vectors a and b, then the position vector of R is (a + b)/2. Reason (R): Putting m = n in the internal section formula (mb + na)/(m + n) gives (a + b)/2.",
+          "a": "Both A and R are true, and R is the correct explanation of A",
+          "o": [
+            "Both A and R are true, and R is the correct explanation of A",
+            "Both A and R are true, but R is not the correct explanation of A",
+            "A is true, R is false",
+            "A is false, R is true"
+          ]
+        },
+        {
+          "b": "Analyse",
+          "d": "Hard",
+          "t": "multi_statement",
+          "m": 1,
+          "q": "Consider these statements. (I) The vector joining P(2, 3, 0) to Q(-1, -2, -4) has magnitude sqrt(50). (II) If R divides PQ internally in the ratio 1 : 1, then R is the midpoint of PQ. Which is or are correct?",
+          "a": "Both I and II",
+          "o": [
+            "Both I and II",
+            "Only I",
+            "Only II",
+            "Neither I nor II"
+          ]
+        },
+        {
+          "b": "Analyse",
+          "d": "Hardest",
+          "t": "long_answer",
+          "m": 3,
+          "q": "P and Q have position vectors 2a + b and a - 3b. Find the position vector of R which divides PQ externally in the ratio 1 : 2, and show that P is the midpoint of RQ.",
+          "a": "OR = (1(a - 3b) - 2(2a + b))/(1 - 2) = (-3a - 5b)/(-1) = 3a + 5b. Midpoint of RQ = ((3a + 5b) + (a - 3b))/2 = (4a + 2b)/2 = 2a + b, which is the position vector of P.",
+          "s": [
+            [
+              "Applies the external formula with the correct weights",
+              1
+            ],
+            [
+              "Gets OR = 3a + 5b",
+              1
+            ],
+            [
+              "Shows the midpoint of RQ is 2a + b = OP",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Evaluate",
+          "d": "Hard",
+          "t": "short_answer",
+          "m": 2,
+          "q": "A student finds the vector from P(1, 2, 3) to Q(4, 5, 6) as -3i - 3j - 3k. Is this correct? Justify.",
+          "a": "No. The vector from P to Q is OQ - OP = (4 - 1)i + (5 - 2)j + (6 - 3)k = 3i + 3j + 3k. The student subtracted the wrong way (OP - OQ), which gives vector QP.",
+          "s": [
+            [
+              "Identifies the reversed subtraction (OP - OQ gives QP)",
+              1
+            ],
+            [
+              "Gives 3i + 3j + 3k",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Create",
+          "d": "Hardest",
+          "t": "long_answer",
+          "m": 3,
+          "q": "Construct three points A, B, C with integer coordinates, not all on a coordinate axis, such that B divides AC internally in the ratio 1 : 2. Verify with the section formula.",
+          "a": "For example A(0, 0, 0), C(3, 6, 9) and B(1, 2, 3). Section formula: OB = (1 OC + 2 OA)/(1 + 2) = (3i + 6j + 9k)/3 = i + 2j + 3k, which matches B.",
+          "s": [
+            [
+              "Gives valid points A and C",
+              1
+            ],
+            [
+              "Applies the section formula with ratio 1 : 2",
+              1
+            ],
+            [
+              "Shows the result is the chosen B",
+              1
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "code": "C12M-10.6",
+      "name": "Scalar (dot) product and projection",
+      "description": "The scalar product a . b = |a||b| cos theta, its observations (perpendicularity, i . i = 1, i . j = 0, angle between vectors), commutativity and distributivity, the component formula a1 b1 + a2 b2 + a3 b3, the projection of a vector on a line or on another vector, and uses such as finding |a - b| and testing perpendicularity.",
+      "idea": "The dot product measures how much two vectors point the same way; it is a number, positive for an acute angle, zero for perpendicular vectors and negative for an obtuse angle.",
+      "rule": "a . b = |a||b| cos theta = a1 b1 + a2 b2 + a3 b3, so cos theta = (a . b)/(|a||b|). For nonzero vectors, a . b = 0 if and only if a is perpendicular to b. The projection of a on b is (a . b)/|b|, and a . a = |a|^2.",
+      "example": "For a = i + j - k and b = i - j + k, a . b = 1 - 1 - 1 = -1 and |a| = |b| = sqrt(3), so cos theta = -1/3.",
+      "difficulty_base": "Hard",
+      "questions": [
+        {
+          "b": "Remember",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "The scalar (dot) product of two nonzero vectors a and b, with angle theta between them, is defined as",
+          "a": "|a| |b| cos theta",
+          "o": [
+            "|a| |b| cos theta",
+            "|a| |b| sin theta",
+            "|a| |b| sin theta times a unit vector n",
+            "|a| + |b| cos theta"
+          ]
+        },
+        {
+          "b": "Remember",
+          "d": "Easy",
+          "t": "fill_blank",
+          "m": 1,
+          "q": "For the unit vector i along the x-axis, the scalar product i . i = ____.",
+          "a": "1"
+        },
+        {
+          "b": "Remember",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "If a = a1 i + a2 j + a3 k and b = b1 i + b2 j + b3 k, then the scalar product a . b equals",
+          "a": "a1 b1 + a2 b2 + a3 b3",
+          "o": [
+            "a1 b1 + a2 b2 + a3 b3",
+            "(a1 b1) i + (a2 b2) j + (a3 b3) k",
+            "a1 a2 a3 + b1 b2 b3",
+            "a1 b2 + a2 b3 + a3 b1"
+          ]
+        },
+        {
+          "b": "Remember",
+          "d": "Hard",
+          "t": "mcq",
+          "m": 1,
+          "q": "Among scalar products of the unit vectors i, j, k, which of the following is NOT equal to 0?",
+          "a": "k . k",
+          "o": [
+            "k . k",
+            "i . j",
+            "j . k",
+            "k . i"
+          ],
+          "rev": true
+        },
+        {
+          "b": "Understand",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "For two nonzero vectors a and b, the scalar product a . b = 0 if and only if",
+          "a": "a and b are perpendicular",
+          "o": [
+            "a and b are perpendicular",
+            "a and b are parallel",
+            "a and b are equal",
+            "one of them is a unit vector"
+          ]
+        },
+        {
+          "b": "Understand",
+          "d": "Easy",
+          "t": "fill_blank",
+          "m": 1,
+          "q": "The projection of vector a on vector b equals (a . b) divided by ____.",
+          "a": "|b|"
+        },
+        {
+          "b": "Understand",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "If the angle between nonzero vectors a and b is theta = pi, then the scalar product a . b equals",
+          "a": "-|a| |b|",
+          "o": [
+            "-|a| |b|",
+            "|a| |b|",
+            "0",
+            "1"
+          ]
+        },
+        {
+          "b": "Understand",
+          "d": "Hard",
+          "t": "mcq",
+          "m": 1,
+          "q": "If the angle between two nonzero vectors a and b is obtuse (between pi/2 and pi), then the scalar product a . b is",
+          "a": "negative",
+          "o": [
+            "negative",
+            "positive",
+            "zero",
+            "equal to |a| |b|"
+          ]
+        },
+        {
+          "b": "Understand",
+          "d": "Hard",
+          "t": "mcq",
+          "m": 1,
+          "q": "If p is the unit vector along a directed line l, then the projection of a vector a on l is",
+          "a": "a . p",
+          "o": [
+            "a . p",
+            "a x p",
+            "(a . p) |a|",
+            "|a| / (a . p)"
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Easy",
+          "t": "fill_blank",
+          "m": 1,
+          "q": "Two vectors a and b have |a| = 1, |b| = 2 and a . b = 1. The angle between them is pi/____.",
+          "a": "3"
+        },
+        {
+          "b": "Apply",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "The scalar product (i + j - k) . (i - j + k) equals",
+          "a": "-1",
+          "o": [
+            "-1",
+            "3",
+            "1",
+            "i - j - k"
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Hard",
+          "t": "mcq",
+          "m": 1,
+          "q": "The projection of the vector 2i + 3j + 2k on the vector i + 2j + k is",
+          "a": "10/sqrt(6)",
+          "o": [
+            "10/sqrt(6)",
+            "10/sqrt(17)",
+            "10/6",
+            "10"
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Hard",
+          "t": "mcq",
+          "m": 1,
+          "q": "Two vectors a and b have |a| = 2, |b| = 3 and a . b = 4. Then |a - b| equals",
+          "a": "sqrt(5)",
+          "o": [
+            "sqrt(5)",
+            "sqrt(21)",
+            "5",
+            "1"
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Hard",
+          "t": "short_answer",
+          "m": 3,
+          "q": "a = 2i + 2j + 3k, b = -i + 2j + k and c = 3i + j. Find lambda such that a + lambda b is perpendicular to c.",
+          "a": "a + lambda b = (2 - lambda)i + (2 + 2 lambda)j + (3 + lambda)k. Perpendicular to c means (a + lambda b) . c = 0: 3(2 - lambda) + 1(2 + 2 lambda) + 0 = 8 - lambda = 0, so lambda = 8.",
+          "s": [
+            [
+              "Writes a + lambda b in components",
+              1
+            ],
+            [
+              "Sets (a + lambda b) . c = 0 to get 8 - lambda = 0",
+              1
+            ],
+            [
+              "Finds lambda = 8",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Hardest",
+          "t": "long_answer",
+          "m": 4,
+          "q": "The vertices of triangle ABC are A(1, 2, 3), B(-1, 0, 0) and C(0, 1, 2). Find the angle ABC, the angle between vector BA and vector BC.",
+          "a": "BA = A - B = 2i + 2j + 3k and BC = C - B = i + j + 2k. BA . BC = 2 + 2 + 6 = 10, |BA| = sqrt(17), |BC| = sqrt(6). cos(ABC) = 10/sqrt(102), so angle ABC = cos^(-1)(10/sqrt(102)).",
+          "s": [
+            [
+              "Finds BA = 2i + 2j + 3k",
+              1
+            ],
+            [
+              "Finds BC = i + j + 2k",
+              1
+            ],
+            [
+              "Finds BA . BC = 10 and the magnitudes sqrt(17), sqrt(6)",
+              1
+            ],
+            [
+              "Concludes angle ABC = cos^(-1)(10/sqrt(102))",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Analyse",
+          "d": "Hard",
+          "t": "assertion_reason",
+          "m": 1,
+          "q": "Assertion (A): For a = 5i - j - 3k and b = i + 3j - 5k, the vectors a + b and a - b are perpendicular. Reason (R): Two nonzero vectors are perpendicular if and only if their vector (cross) product is the zero vector.",
+          "a": "A is true, R is false",
+          "o": [
+            "A is true, R is false",
+            "Both A and R are true, and R is the correct explanation of A",
+            "Both A and R are true, but R is not the correct explanation of A",
+            "A is false, R is true"
+          ]
+        },
+        {
+          "b": "Analyse",
+          "d": "Hard",
+          "t": "multi_statement",
+          "m": 1,
+          "q": "Consider these statements. (I) If a . b = 0, then a must be the zero vector or b must be the zero vector. (II) The scalar product is commutative, that is a . b = b . a for all vectors a and b. Which is or are correct?",
+          "a": "Only II",
+          "o": [
+            "Only II",
+            "Only I",
+            "Both I and II",
+            "Neither I nor II"
+          ]
+        },
+        {
+          "b": "Analyse",
+          "d": "Hardest",
+          "t": "long_answer",
+          "m": 3,
+          "q": "Vectors a, b, c have |a| = 3, |b| = 4, |c| = 5, and each is perpendicular to the sum of the other two. Find |a + b + c|.",
+          "a": "Given a . (b + c) = 0, b . (c + a) = 0, c . (a + b) = 0. |a + b + c|^2 = (a + b + c) . (a + b + c) = |a|^2 + |b|^2 + |c|^2 + a . (b + c) + b . (c + a) + c . (a + b) = 9 + 16 + 25 + 0 = 50. So |a + b + c| = sqrt(50) = 5 sqrt(2).",
+          "s": [
+            [
+              "Expands |a + b + c|^2 as a dot product",
+              1
+            ],
+            [
+              "Uses the three perpendicularity conditions to drop the cross terms, getting 50",
+              1
+            ],
+            [
+              "Concludes |a + b + c| = 5 sqrt(2)",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Evaluate",
+          "d": "Hard",
+          "t": "short_answer",
+          "m": 2,
+          "q": "A student says: 'If a . b = 0, then a or b must be the zero vector.' Evaluate this using a = i + j and b = i - j.",
+          "a": "The claim is false. a . b = 1(1) + 1(-1) + 0 = 0, yet neither a nor b is the zero vector; the two vectors are simply perpendicular.",
+          "s": [
+            [
+              "Computes a . b = 0",
+              1
+            ],
+            [
+              "Concludes the claim is false because both are nonzero (they are perpendicular)",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Create",
+          "d": "Hardest",
+          "t": "long_answer",
+          "m": 3,
+          "q": "Construct a nonzero vector with integer components that is perpendicular to a = 2i - j + 3k. Verify the perpendicularity and write the unit vector along your vector.",
+          "a": "For example b = i + 2j (that is, i + 2j + 0k). a . b = 2(1) + (-1)(2) + 3(0) = 0, so b is perpendicular to a. |b| = sqrt(5), so the unit vector is (1/sqrt(5)) i + (2/sqrt(5)) j.",
+          "s": [
+            [
+              "Gives a valid nonzero integer vector",
+              1
+            ],
+            [
+              "Verifies a . b = 0",
+              1
+            ],
+            [
+              "Writes the unit vector along it correctly",
+              1
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "code": "C12M-10.7",
+      "name": "Vector (cross) product and area",
+      "description": "The vector product a x b = |a||b| sin theta n with the right handed rule, its observations (parallel vectors give the zero vector, i x j = k, j x i = -k, not commutative), distributivity, the determinant form in components, unit vectors perpendicular to two vectors, sin theta from the cross product, and areas of triangles and parallelograms.",
+      "idea": "The cross product of two vectors is a new vector perpendicular to both, whose length equals the area of the parallelogram they span.",
+      "rule": "a x b = |a||b| sin theta n, with a, b, n right handed; b x a = -(a x b); a x b = 0 for nonzero vectors if and only if they are parallel. In components a x b = (a2 b3 - a3 b2)i - (a1 b3 - a3 b1)j + (a1 b2 - a2 b1)k. Area of parallelogram = |a x b|, area of triangle = (1/2)|a x b|.",
+      "example": "(2i + j + 3k) x (3i + 5j - 2k) = -17i + 13j + 7k, with magnitude sqrt(507).",
+      "difficulty_base": "Hard",
+      "questions": [
+        {
+          "b": "Remember",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "The vector (cross) product of nonzero vectors a and b, with angle theta between them, is defined as",
+          "a": "|a| |b| sin theta n, where n is a unit vector perpendicular to both such that a, b, n form a right handed system",
+          "o": [
+            "|a| |b| sin theta n, where n is a unit vector perpendicular to both such that a, b, n form a right handed system",
+            "|a| |b| cos theta n, where n is a unit vector perpendicular to both a and b",
+            "|a| |b| sin theta, a real number",
+            "|a| |b| cos theta, a real number"
+          ]
+        },
+        {
+          "b": "Remember",
+          "d": "Easy",
+          "t": "fill_blank",
+          "m": 1,
+          "q": "For the unit vectors along the axes, i x j = ____.",
+          "a": "k"
+        },
+        {
+          "b": "Remember",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "The area of a parallelogram whose adjacent sides are given by the vectors a and b is",
+          "a": "|a x b|",
+          "o": [
+            "|a x b|",
+            "(1/2) |a x b|",
+            "a . b",
+            "|a| + |b|"
+          ]
+        },
+        {
+          "b": "Remember",
+          "d": "Hard",
+          "t": "mcq",
+          "m": 1,
+          "q": "Among vector products of the unit vectors i, j, k, which of the following is NOT the zero vector?",
+          "a": "j x k",
+          "o": [
+            "j x k",
+            "i x i",
+            "j x j",
+            "k x k"
+          ],
+          "rev": true
+        },
+        {
+          "b": "Understand",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "For any two vectors a and b, the vector product b x a equals",
+          "a": "-(a x b)",
+          "o": [
+            "-(a x b)",
+            "a x b",
+            "the zero vector",
+            "a . b"
+          ]
+        },
+        {
+          "b": "Understand",
+          "d": "Easy",
+          "t": "fill_blank",
+          "m": 1,
+          "q": "For the unit vectors along the axes, k x j = ____.",
+          "a": "-i"
+        },
+        {
+          "b": "Understand",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "For nonzero vectors a and b, the vector product a x b is the zero vector if and only if",
+          "a": "a and b are parallel (collinear)",
+          "o": [
+            "a and b are parallel (collinear)",
+            "a and b are perpendicular",
+            "a . b = 0",
+            "|a| = |b|"
+          ]
+        },
+        {
+          "b": "Understand",
+          "d": "Hard",
+          "t": "mcq",
+          "m": 1,
+          "q": "In terms of the vector product, the sine of the angle theta between nonzero vectors a and b is",
+          "a": "|a x b| / (|a| |b|)",
+          "o": [
+            "|a x b| / (|a| |b|)",
+            "(a . b) / (|a| |b|)",
+            "|a x b| |a| |b|",
+            "|a x b| / (a . b)"
+          ]
+        },
+        {
+          "b": "Understand",
+          "d": "Hard",
+          "t": "mcq",
+          "m": 1,
+          "q": "If vectors a and b represent two adjacent sides of a triangle, the area of the triangle is",
+          "a": "(1/2) |a x b|",
+          "o": [
+            "(1/2) |a x b|",
+            "|a x b|",
+            "(1/2) a . b",
+            "(1/2) |a| |b|"
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Easy",
+          "t": "mcq",
+          "m": 1,
+          "q": "The vector product (2i + j + 3k) x (3i + 5j - 2k) equals",
+          "a": "-17i + 13j + 7k",
+          "o": [
+            "-17i + 13j + 7k",
+            "-17i - 13j + 7k",
+            "17i - 13j - 7k",
+            "6i + 5j - 6k"
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Easy",
+          "t": "fill_blank",
+          "m": 1,
+          "q": "For a = 2i + j + 3k and b = 3i + 5j - 2k, |a x b| = sqrt(____).",
+          "a": "507"
+        },
+        {
+          "b": "Apply",
+          "d": "Hard",
+          "t": "mcq",
+          "m": 1,
+          "q": "The area of the parallelogram whose adjacent sides are given by the vectors 3i + j + 4k and i - j + k is",
+          "a": "sqrt(42)",
+          "o": [
+            "sqrt(42)",
+            "sqrt(42)/2",
+            "6",
+            "42"
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Hard",
+          "t": "mcq",
+          "m": 1,
+          "q": "The area of the triangle with vertices A(1, 1, 2), B(2, 3, 5) and C(1, 5, 5) is",
+          "a": "sqrt(61)/2",
+          "o": [
+            "sqrt(61)/2",
+            "sqrt(61)",
+            "61/2",
+            "17/2"
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Hard",
+          "t": "long_answer",
+          "m": 3,
+          "q": "a = 3i + 2j + 2k and b = i + 2j - 2k. Find a unit vector perpendicular to each of the vectors a + b and a - b.",
+          "a": "a + b = 4i + 4j and a - b = 2i + 4k. (a + b) x (a - b) = (4(4) - 0(0))i - (4(4) - 0(2))j + (4(0) - 4(2))k = 16i - 16j - 8k, with magnitude sqrt(256 + 256 + 64) = 24. Unit vector = (2/3)i - (2/3)j - (1/3)k (or its negative).",
+          "s": [
+            [
+              "Finds a + b = 4i + 4j and a - b = 2i + 4k",
+              1
+            ],
+            [
+              "Computes the cross product 16i - 16j - 8k",
+              1
+            ],
+            [
+              "Divides by the magnitude 24 to get (2/3)i - (2/3)j - (1/3)k (or its negative)",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Apply",
+          "d": "Hardest",
+          "t": "long_answer",
+          "m": 4,
+          "q": "Find lambda and mu if (2i + 6j + 27k) x (i + lambda j + mu k) is the zero vector.",
+          "a": "A zero cross product of nonzero vectors means they are parallel, so the components are proportional: 1/2 = lambda/6 = mu/27. Hence lambda = 3 and mu = 27/2. (Equivalently each determinant component 6 mu - 27 lambda, 2 mu - 27, 2 lambda - 6 is zero.)",
+          "s": [
+            [
+              "Uses a x b = 0 to conclude the vectors are parallel (or sets each component to 0)",
+              1
+            ],
+            [
+              "Writes 1/2 = lambda/6 = mu/27 (or the component equations)",
+              1
+            ],
+            [
+              "Finds lambda = 3",
+              1
+            ],
+            [
+              "Finds mu = 27/2",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Analyse",
+          "d": "Hard",
+          "t": "assertion_reason",
+          "m": 1,
+          "q": "Assertion (A): i x j = k, while j x i = -k. Reason (R): The magnitude |a x b| = |a| |b| sin theta equals the area of the parallelogram with adjacent sides a and b.",
+          "a": "Both A and R are true, but R is not the correct explanation of A",
+          "o": [
+            "Both A and R are true, but R is not the correct explanation of A",
+            "Both A and R are true, and R is the correct explanation of A",
+            "A is true, R is false",
+            "A is false, R is true"
+          ]
+        },
+        {
+          "b": "Analyse",
+          "d": "Hard",
+          "t": "multi_statement",
+          "m": 1,
+          "q": "Consider these statements. (I) The vector a x b is perpendicular to both a and b. (II) a x a is the zero vector for every vector a. Which is or are correct?",
+          "a": "Both I and II",
+          "o": [
+            "Both I and II",
+            "Only I",
+            "Only II",
+            "Neither I nor II"
+          ]
+        },
+        {
+          "b": "Analyse",
+          "d": "Hardest",
+          "t": "long_answer",
+          "m": 3,
+          "q": "Vectors a and b satisfy |a| = 3 and |b| = sqrt(2)/3, and a x b is a unit vector. Find the acute angle between a and b.",
+          "a": "|a x b| = |a| |b| sin theta = 3 (sqrt(2)/3) sin theta = sqrt(2) sin theta. For a unit vector, sqrt(2) sin theta = 1, so sin theta = 1/sqrt(2) and, with 0 <= theta <= pi, the acute angle is theta = pi/4.",
+          "s": [
+            [
+              "Writes |a x b| = sqrt(2) sin theta",
+              1
+            ],
+            [
+              "Sets it equal to 1 to get sin theta = 1/sqrt(2)",
+              1
+            ],
+            [
+              "Concludes the acute angle theta = pi/4",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Evaluate",
+          "d": "Hard",
+          "t": "short_answer",
+          "m": 2,
+          "q": "A student says: 'If a x b is the zero vector, then a or b must be the zero vector.' Evaluate this using a = 2i + 3j + 4k and b = 4i + 6j + 8k.",
+          "a": "The claim is false. b = 2a, so a and b are parallel and a x b = 0 (each component: 3(8) - 4(6) = 0, 2(8) - 4(4) = 0, 2(6) - 3(4) = 0), yet neither vector is the zero vector.",
+          "s": [
+            [
+              "Shows a x b = 0 for these vectors",
+              1
+            ],
+            [
+              "Concludes the claim is false because both are nonzero but parallel",
+              1
+            ]
+          ]
+        },
+        {
+          "b": "Create",
+          "d": "Hardest",
+          "t": "long_answer",
+          "m": 3,
+          "q": "Construct two nonzero, non-parallel vectors a and b with integer components such that the triangle with adjacent sides a and b has area 3 square units. Verify using the vector product.",
+          "a": "For example a = 2i and b = 3j. a x b = 6 (i x j) = 6k, so |a x b| = 6 and the area of the triangle is (1/2)(6) = 3.",
+          "s": [
+            [
+              "Gives two nonzero, non-parallel integer vectors",
+              1
+            ],
+            [
+              "Computes a x b correctly",
+              1
+            ],
+            [
+              "Shows (1/2)|a x b| = 3",
+              1
+            ]
+          ]
+        }
+      ]
+    }
+  ]
+}

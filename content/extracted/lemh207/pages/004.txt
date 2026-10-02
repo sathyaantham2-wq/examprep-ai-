@@ -1,0 +1,49 @@
+PROBABILITY 409
+In particular, if A and B are disjoint events, then
+P((A∪B)|F) = P(A|F) + P(B|F)
+We have
+P((A∪B)|F) =
+P[(A B) F]
+P(F)
+∪ ∩
+=
+P[(A F) (B F)]
+P(F)
+∩ ∪ ∩
+(by distributive law of union of sets over intersection)
+=
+P(A F)+ P(B F) – P(A B F)
+P(F)
+∩ ∩ ∩ ∩
+=
+P(A F) P(B F) P[(A B) F]
+P(F) P(F) P(F)
+∩ ∩ ∩ ∩
++ −
+= P(A|F) + P(B|F) – P((A ∩B)|F)
+When A and B are disjoint events, then
+P((A ∩ B)|F) = 0
+⇒ P((A ∪ B)|F) = P(A|F) + P(B|F)
+Property 3 P(E′|F) = 1 − P(E|F)
+From Property 1, we know that P(S|F) = 1
+⇒ P(E ∪ E′|F) = 1 since S = E ∪ E′
+⇒ P(E|F) + P (E′|F) = 1 since E and E′ are disjoint events
+Thus, P(E′|F) = 1 − P(E|F)
+Let us now take up some examples.
+Example 1 If P(A) = 
+7
+13 , P(B) = 
+9
+13 and P(A ∩ B) = 
+4
+13 , evaluate P(A|B).
+Solution We have 
+4
+P(A B) 4 13 P(A|B)=
+P(B) 9 9
+13
+∩
+= =
+Example 2 A family has two children. What is the probability that both the children are
+boys given that at least one of them is a boy ?
+Reprint 2026-27
