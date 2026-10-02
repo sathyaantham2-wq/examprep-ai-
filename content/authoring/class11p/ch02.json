@@ -1,0 +1,1794 @@
+{
+ "subject": {
+  "code": "PHY11",
+  "name": "Physics",
+  "board": "CBSE",
+  "class": 11
+ },
+ "source": {
+  "publisher": "NCERT",
+  "title": "Physics Part I",
+  "edition": "Textbook for Class XI Part I, Reprint 2026-27",
+  "year": 2026
+ },
+ "chapter": {
+  "part": "I",
+  "chapter_no": 2,
+  "name": "Motion in a Straight Line",
+  "blurb": "The chapter describes motion along a straight line without asking what causes it. It defines the velocity and the acceleration at an instant as limits (v = dx/dt, a = dv/dt), reads them from position-time and velocity-time graphs, and shows that the area under a velocity-time graph is the displacement. For constant acceleration it obtains the kinematic equations and applies them to free fall, Galileo's law of odd numbers, the stopping distance of vehicles and reaction time.",
+  "source_code": "keph102",
+  "order_index": 2
+ },
+ "scope_in": [
+  {
+   "item": "Describe motion as change of position with time; treat an object as a point object when its size is much smaller than the distance it moves; know that kinematics describes rectilinear motion without its causes",
+   "pages": "13, 21, 24"
+  },
+  {
+   "item": "Define the velocity at an instant as the limit of the average velocity delta x / delta t as delta t becomes infinitesimally small, written dx/dt, and identify it with the slope of the tangent to the position-time graph",
+   "pages": "14-15, 21"
+  },
+  {
+   "item": "Find an instantaneous velocity numerically by shrinking delta t (Table 2.1) and by differentiating a simple expression such as x = a + b t^2; find an average velocity between two instants from the positions",
+   "pages": "14-15"
+  },
+  {
+   "item": "State that instantaneous speed is the magnitude of velocity, that for uniform motion velocity equals the average velocity at all instants, and that average speed (path length / time interval) is greater than or equal to the magnitude of average velocity over a finite interval",
+   "pages": "15, 21-23, 25"
+  },
+  {
+   "item": "Define average acceleration as delta v / delta t and instantaneous acceleration as dv/dt, the slope of the tangent to the velocity-time curve; state its SI unit and Galileo's finding that velocity changes uniformly with time in free fall",
+   "pages": "15-16, 22-23"
+  },
+  {
+   "item": "Interpret the sign of acceleration and relate it to speeding up or slowing down; recognise position-time graphs for positive, negative and zero acceleration; know that zero velocity at an instant does not imply zero acceleration",
+   "pages": "16, 23, 24"
+  },
+  {
+   "item": "Read velocity-time graphs for uniform motion and for the four cases of constant acceleration, including reversal of direction where the graph crosses the time axis",
+   "pages": "16, 22"
+  },
+  {
+   "item": "Use the area under a velocity-time graph as the displacement, for constant velocity and for uniform acceleration, and derive x = v0 t + (1/2) a t^2 and x = ((v + v0)/2) t from the area",
+   "pages": "16-17, 22"
+  },
+  {
+   "item": "Explain that realistic position-time and velocity-time graphs are smooth because velocity and acceleration cannot change abruptly",
+   "pages": "17"
+  },
+  {
+   "item": "State and use the kinematic equations v = v0 + at, x = v0 t + (1/2) a t^2, v^2 = v0^2 + 2ax, with x replaced by (x - x0) for a non-zero initial position, substituting quantities with proper signs",
+   "pages": "17-18, 22-24"
+  },
+  {
+   "item": "Follow the derivation of the kinematic equations by the method of calculus (a = dv/dt, v = dx/dt, a = v dv/dx) and state that this method also applies to non-uniform acceleration",
+   "pages": "18"
+  },
+  {
+   "item": "Derive and use the stopping distance of a braking vehicle, d = -v0^2/(2a), and its proportionality to the square of the initial velocity",
+   "pages": "20-21, 24"
+  },
+  {
+   "item": "Treat free fall (air resistance neglected) as uniformly accelerated motion with a = -g when upward is positive; solve for bodies dropped or thrown vertically, including the single-equation method with initial and final coordinates; describe the acceleration-time, velocity-time and position-time graphs of free fall",
+   "pages": "18-20, 24"
+  },
+  {
+   "item": "Prove and use Galileo's law of odd numbers for distances fallen in successive equal intervals",
+   "pages": "20"
+  },
+  {
+   "item": "Explain reaction time and estimate it from the distance a dropped ruler falls, t = sqrt(2d/g)",
+   "pages": "21"
+  }
+ ],
+ "scope_out": [
+  {
+   "item": "Relative velocity",
+   "reason": "Listed as section 2.5 in the chapter's contents box and promised in the Introduction (p. 13), but the section is absent from this rationalised edition and the Summary has no entry for it; only Exercise 2.14 (p. 25) survives as a vestige"
+  },
+  {
+   "item": "Position, path length and displacement as a taught section (frame of reference, choice of origin, worked examples)",
+   "reason": "Section removed from this edition; these survive only as recalled ideas in Summary item 1 and the summary table (pp. 21-22) and in Exercises 2.9-2.10, and are used only to that extent"
+  },
+  {
+   "item": "Average velocity and average speed as a taught section with its own worked examples",
+   "reason": "Section removed from this edition; average velocity is used as known in section 2.2 (p. 14) and average speed is defined only in the summary table and Exercise 2.9 (pp. 23, 25)"
+  },
+  {
+   "item": "Differentiation or integration beyond what the chapter does (derivative of a + b t^2, integrals of a constant acceleration); problems with non-uniform acceleration",
+   "reason": "The chapter differentiates only x = a + b t^2 (Example 2.1) and integrates only for constant a (Example 2.2); it restricts its study to constant acceleration (p. 16)"
+  },
+  {
+   "item": "Displacement in the n-th second formula, and equations for motion with variable acceleration",
+   "reason": "Not present in the chapter"
+  },
+  {
+   "item": "Motion in two or three dimensions: vectors, projectile motion, circular motion",
+   "reason": "Chapter 3 (Motion in a Plane), not here; the chapter confines itself to rectilinear motion (p. 13)"
+  },
+  {
+   "item": "Causes of motion: force, Newton's laws, momentum",
+   "reason": "Stated on p. 13 to be the subject matter of Chapter 4"
+  },
+  {
+   "item": "Variation of g with height or depth, air resistance and terminal velocity",
+   "reason": "The chapter takes g as constant and neglects air resistance (p. 19)"
+  },
+  {
+   "item": "Simple harmonic motion",
+   "reason": "Appears only as a graph in Exercise 2.16 with a pointer to Chapter 13"
+  },
+  {
+   "item": "Dimensional analysis as a method, significant figures and error analysis",
+   "reason": "Chapter 1 material; here only the remark that velocity x time has the dimension of length (p. 17) and the dimensions column of the summary table are used"
+  },
+  {
+   "item": "Historical detail about Galileo (dates, inclined-plane experiments) and the Points to Ponder box as text to be recalled",
+   "reason": "Not examinable in themselves; the physics in Points to Ponder is used only where the main text, Summary or Exercises 2.6-2.7 rely on it"
+  }
+ ],
+ "concepts": [
+  {
+   "code": "C11P-2.1",
+   "name": "Instantaneous velocity and speed",
+   "description": "Velocity at an instant as the limit of the average velocity, found graphically, numerically or as dx/dt; instantaneous speed as its magnitude; how these differ from average velocity and average speed.",
+   "idea": "The average velocity tells how fast an object has moved over an interval; the velocity at an instant is what that average tends to when the interval shrinks to nothing, and it is the slope of the tangent to the position-time graph at that instant.",
+   "rule": "Objects are treated as point objects when their size is much smaller than the distance moved. Average velocity over an interval = displacement / time interval = delta x / delta t, the slope of the straight line joining the two points on the position-time graph. Instantaneous velocity v = limit of delta x / delta t as delta t tends to zero = dx/dt, the slope of the tangent to the position-time graph at that instant; it can be found graphically, numerically (by taking smaller and smaller delta t) or by differentiating the expression for x. For uniform motion the velocity is the same as the average velocity at all instants. Instantaneous speed is the magnitude of the velocity. Average speed = path length / time interval; over a finite interval it is greater than or equal to the magnitude of the average velocity, but at an instant the speed always equals the magnitude of the velocity. In one dimension the sign of displacement and velocity indicates direction.",
+   "example": "If x = 5 + 1.5t^2 (x in m, t in s), then v = dx/dt = 3t; at t = 6 s the velocity is 18 m/s in the +x direction and the speed is 18 m/s.",
+   "difficulty_base": "Easy",
+   "questions": [
+    {
+     "b": "Remember",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "Motion of an object along a straight line is also known as",
+     "a": "rectilinear motion",
+     "o": [
+      "rectilinear motion",
+      "circular motion",
+      "rotational motion",
+      "projectile motion"
+     ]
+    },
+    {
+     "b": "Remember",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "The velocity of an object at an instant is defined as the limit of its average velocity as the time interval delta t",
+     "a": "becomes infinitesimally small",
+     "o": [
+      "becomes infinitesimally small",
+      "becomes very large",
+      "becomes equal to one second",
+      "becomes equal to the total time of the motion"
+     ]
+    },
+    {
+     "b": "Remember",
+     "d": "Easy",
+     "t": "fill_blank",
+     "m": 1,
+     "q": "The branch of physics in which motion is described without going into the causes of motion is called ____ (write one word).",
+     "a": "kinematics"
+    },
+    {
+     "b": "Remember",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "q": "Which of the following statements about the velocity and speed of a particle moving along a straight line is NOT correct?",
+     "a": "The average velocity over a time interval tells how fast the particle is moving at each instant of that interval",
+     "o": [
+      "The average velocity over a time interval tells how fast the particle is moving at each instant of that interval",
+      "A velocity of +24 m/s and a velocity of -24 m/s correspond to the same instantaneous speed",
+      "In uniform motion the velocity at every instant is the same as the average velocity",
+      "In the notation of differential calculus the velocity is written as dx/dt"
+     ],
+     "rev": true
+    },
+    {
+     "b": "Understand",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "On the position-time graph of a car, a straight line is drawn joining the point of the graph at t = 3 s to the point of the graph at t = 5 s. The slope of this line gives the car's",
+     "a": "average velocity over the interval from 3 s to 5 s",
+     "o": [
+      "average velocity over the interval from 3 s to 5 s",
+      "instantaneous velocity at t = 5 s",
+      "acceleration at t = 4 s",
+      "path length covered between 3 s and 5 s"
+     ]
+    },
+    {
+     "b": "Understand",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "A railway carriage moving without jerks between two stations 200 km apart can be treated as a point object because",
+     "a": "its size is much smaller than the distance it moves",
+     "o": [
+      "its size is much smaller than the distance it moves",
+      "its mass is very small",
+      "it moves with a constant speed",
+      "it carries no passengers who move inside it"
+     ]
+    },
+    {
+     "b": "Understand",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "The position-time graph of a particle moving along the x-axis is a smooth curve. The tangent to the curve at t = 5 s is steeper than the tangent at t = 2 s, and both tangents have a positive slope. This means that the particle's",
+     "a": "instantaneous velocity at t = 5 s is greater than at t = 2 s",
+     "o": [
+      "instantaneous velocity at t = 5 s is greater than at t = 2 s",
+      "average velocity from t = 2 s to t = 5 s is zero",
+      "position at t = 5 s is less than at t = 2 s",
+      "instantaneous velocity is the same at both instants"
+     ]
+    },
+    {
+     "b": "Understand",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "q": "For a car whose position-time graph is a curve that keeps getting steeper, the average velocity delta x / delta t is worked out for intervals centred on t = 4 s. For delta t = 2 s, 1 s, 0.5 s, 0.1 s and 0.01 s the values are 6.125 m/s, 6.031 m/s, 6.008 m/s, 6.0003 m/s and 6.0000 m/s, taking the direction of motion as positive. The instantaneous velocity at t = 4 s is best taken as",
+     "a": "6.0 m/s, the value that delta x / delta t approaches as delta t shrinks",
+     "o": [
+      "6.0 m/s, the value that delta x / delta t approaches as delta t shrinks",
+      "6.125 m/s, the value for the widest interval",
+      "6.033 m/s, the mean of the five listed values",
+      "0 m/s, because delta x becomes zero when delta t becomes zero"
+     ]
+    },
+    {
+     "b": "Understand",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "q": "The position-time graph of a particle moving along the x-axis is a smooth curve whose tangent at t = 2 s is parallel to the time axis. At t = 2 s the particle",
+     "a": "is momentarily at rest",
+     "o": [
+      "is momentarily at rest",
+      "is at the origin",
+      "is moving with its greatest speed",
+      "is moving in the negative x-direction"
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "The position of an object moving along the x-axis is x = 4 + 3t^2, with x in metre and t in second, the +x direction being positive. Its instantaneous velocity at t = 2 s is",
+     "a": "12 m/s",
+     "o": [
+      "12 m/s",
+      "16 m/s",
+      "8 m/s",
+      "6 m/s"
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "A particle moving along the x-axis, with the +x direction positive, is at x = +10 m at t = 1 s and at x = -14 m at t = 7 s. Its average velocity over this interval is",
+     "a": "-4 m/s",
+     "o": [
+      "-4 m/s",
+      "+4 m/s",
+      "-3 m/s",
+      "-2 m/s"
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "q": "The position of a particle moving along the x-axis is x = 2 + 5t^2, with x in metre and t in second, the +x direction being positive. Its average velocity between t = 1 s and t = 3 s is",
+     "a": "20 m/s",
+     "o": [
+      "20 m/s",
+      "30 m/s",
+      "10 m/s",
+      "40 m/s"
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 3,
+     "q": "Take the direction from home to market as positive. A man walks on a straight road from his home to a market 3.0 km away at 6 km/h. Finding the market closed, he instantly turns and walks back towards home at 9 km/h. For the time interval from 0 to 40 min, find (a) the magnitude of his average velocity and (b) his average speed, both in km/h. (Average speed = total path length / time interval.)",
+     "a": "He reaches the market in 3.0/6 = 0.5 h = 30 min. In the remaining 10 min = 1/6 h he walks back 9 x 1/6 = 1.5 km, so at 40 min he is 1.5 km from home. Displacement = 1.5 km and path length = 3.0 + 1.5 = 4.5 km in 40 min = 2/3 h. (a) Magnitude of average velocity = displacement / time = 1.5 / (2/3) = 2.25 km/h. (b) Average speed = path length / time = 4.5 / (2/3) = 6.75 km/h.",
+     "s": [
+      [
+       "Position at 40 min: reaches market at 30 min, walks back 1.5 km, so displacement 1.5 km and path length 4.5 km",
+       1
+      ],
+      [
+       "Magnitude of average velocity = 1.5 km / (2/3 h) = 2.25 km/h",
+       1
+      ],
+      [
+       "Average speed = 4.5 km / (2/3 h) = 6.75 km/h",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "q": "The position of an object moving along the x-axis is x = 6 + 3t^2, with x in metre and t in second, the +x direction being positive. Find (a) its velocity at t = 0 s and at t = 3 s and (b) its average velocity between t = 0 s and t = 3 s.",
+     "a": "(a) v = dx/dt = 6t m/s, so v = 0 m/s at t = 0 s and v = 18 m/s at t = 3 s. (b) x(0) = 6 m and x(3) = 6 + 27 = 33 m, so average velocity = (33 - 6)/(3 - 0) = 9 m/s in the +x direction.",
+     "s": [
+      [
+       "v = dx/dt = 6t, giving 0 m/s at t = 0 s and 18 m/s at t = 3 s",
+       1
+      ],
+      [
+       "Average velocity = (x(3) - x(0))/3 = (33 - 6)/3 = 9 m/s",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hardest",
+     "t": "long_answer",
+     "m": 3,
+     "q": "The position of a car moving along the x-axis is x = 2t^2, with x in metre and t in second, the +x direction being positive. (a) Find its average velocity over the intervals from t = 3 s to 4 s, from t = 3 s to 3.5 s and from t = 3 s to 3.1 s. (b) State the value these averages approach and what that value represents. (c) Confirm it by differentiation.",
+     "a": "(a) x(3) = 18 m, x(4) = 32 m, x(3.5) = 24.5 m, x(3.1) = 19.22 m. Average velocities: (32 - 18)/1 = 14 m/s; (24.5 - 18)/0.5 = 13 m/s; (19.22 - 18)/0.1 = 12.2 m/s. (b) As delta t is made smaller the average velocity approaches 12 m/s; this limiting value is the instantaneous velocity at t = 3 s. (c) v = dx/dt = 4t, so at t = 3 s, v = 12 m/s, in agreement.",
+     "s": [
+      [
+       "Average velocities 14 m/s (delta t = 1 s) and 13 m/s (delta t = 0.5 s)",
+       1
+      ],
+      [
+       "Average velocity 12.2 m/s for delta t = 0.1 s; the limit as delta t tends to zero is 12 m/s, the instantaneous velocity at t = 3 s",
+       1
+      ],
+      [
+       "v = dx/dt = 4t = 12 m/s at t = 3 s",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "assertion_reason",
+     "m": 1,
+     "q": "Assertion (A): For a particle in uniform motion along a straight line, the velocity at every instant is the same as its average velocity over any time interval. Reason (R): For a particle in uniform motion with a non-zero velocity, the position-time graph is a straight line parallel to the time axis. Choose the correct option.",
+     "a": "A is true, R is false",
+     "o": [
+      "A is true, R is false",
+      "Both A and R are true, and R is the correct explanation of A",
+      "Both A and R are true, but R is not the correct explanation of A",
+      "A is false, R is true"
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "q": "The position-time graph of a particle in one-dimensional motion lies along the time axis (x = 0) for t < 0 and is a parabola opening upward, starting from the origin, for t > 0. A student reads this as: 'the particle moves in a straight line for t < 0 and along a parabolic path for t > 0.' Is this reading correct? Describe the motion the graph actually shows.",
+     "a": "No. A position-time graph is not the path of the particle; it shows how the position along one straight line changes with time. For t < 0 the particle is at rest at x = 0. For t > 0 it moves along the same straight line in the positive direction with a velocity that keeps increasing (the slope of the graph grows), as for a body that starts from rest at t = 0 and speeds up uniformly.",
+     "s": [
+      [
+       "The graph is position against time, not the trajectory, so the reading is wrong",
+       1
+      ],
+      [
+       "At rest at x = 0 for t < 0; for t > 0 moving along the straight line with increasing velocity",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hardest",
+     "t": "long_answer",
+     "m": 3,
+     "q": "Explain why each of the following graphs cannot represent the one-dimensional motion of a particle: (a) a position-time graph that is a closed loop, so that a line drawn parallel to the position axis at some instant cuts it at two points; (b) a speed-time graph that dips below the time axis for part of the time; (c) a graph of total path length against time that falls during part of the time.",
+     "a": "(a) A line parallel to the position axis at one instant cutting the graph twice would mean the particle is at two different positions at the same instant, which is impossible. (b) Speed is the magnitude of velocity and so can never be negative; a speed-time graph cannot go below the time axis. (c) The total path length covered can only increase or stay the same as time passes; it can never decrease.",
+     "s": [
+      [
+       "(a) Two positions at the same instant are impossible",
+       1
+      ],
+      [
+       "(b) Speed is a magnitude and cannot be negative",
+       1
+      ],
+      [
+       "(c) Total path length never decreases with time",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Evaluate",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "q": "A student argues: 'Over a finite interval the average speed can be larger than the magnitude of the average velocity. So at an instant the speed can also be larger than the magnitude of the velocity.' Evaluate this argument.",
+     "a": "The conclusion is wrong. Over a finite interval the particle may reverse its direction, so the path length can exceed the magnitude of the displacement and the average speed can exceed the magnitude of the average velocity. Over an infinitesimally small interval the particle cannot change its direction of motion, so the path length equals the magnitude of the displacement. Hence the instantaneous speed is always equal to the magnitude of the instantaneous velocity.",
+     "s": [
+      [
+       "Over an infinitesimally small interval the path length equals the magnitude of the displacement (no reversal of direction is possible)",
+       1
+      ],
+      [
+       "So instantaneous speed always equals the magnitude of instantaneous velocity; the student's conclusion is wrong",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Create",
+     "d": "Hardest",
+     "t": "long_answer",
+     "m": 3,
+     "q": "Make up a motion of your own along a straight road, in two stages, for which the average speed over the whole trip is exactly twice the magnitude of the average velocity. State the distances, directions and times you choose, work out both quantities, and state the condition under which the two would have been equal.",
+     "a": "One possible answer: taking east as positive, a cyclist rides 300 m east in 100 s and then 100 m west in 100 s. Path length = 300 + 100 = 400 m; displacement = 300 - 100 = 200 m east; total time = 200 s. Average speed = 400/200 = 2 m/s. Magnitude of average velocity = 200/200 = 1 m/s. The average speed is twice the magnitude of the average velocity. The two are equal only when the path length equals the magnitude of the displacement, that is, when the object moves along the line without reversing its direction.",
+     "s": [
+      [
+       "A two-stage motion with a reversal of direction is specified, and its path length and displacement are found correctly",
+       1
+      ],
+      [
+       "Average speed = path length / time and magnitude of average velocity = displacement / time are computed and their ratio is 2",
+       1
+      ],
+      [
+       "Equality holds only if the object does not reverse direction (path length = magnitude of displacement)",
+       1
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "code": "C11P-2.2",
+   "name": "Acceleration",
+   "description": "Average and instantaneous acceleration as the rate of change of velocity with time, the meaning of its sign, and the shape of the position-time graph for positive, negative and zero acceleration.",
+   "idea": "Acceleration is the rate of change of velocity with time; its sign gives its direction along the axis, not whether the object is speeding up.",
+   "rule": "Average acceleration = (v2 - v1)/(t2 - t1) = delta v / delta t, the slope of the straight line joining two points on the velocity-time graph; SI unit m/s^2. Instantaneous acceleration a = limit of delta v / delta t as delta t tends to zero = dv/dt, the slope of the tangent to the velocity-time curve. Galileo found that in free fall it is the rate of change of velocity with time (not with distance) that is constant. Acceleration may come from a change in speed, in direction, or both, and can be positive, negative or zero: the position-time graph curves upward for positive acceleration, downward for negative acceleration and is a straight line for zero acceleration. For constant acceleration the average acceleration equals the constant value. A particle speeds up when its acceleration is in the direction of its velocity and slows down when it is opposite; a particle momentarily at rest can still have a non-zero acceleration.",
+   "example": "Taking the direction of motion as positive, a velocity that rises from 6 m/s to 20 m/s in 7 s means an average acceleration of (20 - 6)/7 = 2 m/s^2.",
+   "difficulty_base": "Hard",
+   "questions": [
+    {
+     "b": "Remember",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "The SI unit of acceleration is",
+     "a": "m/s^2",
+     "o": [
+      "m/s^2",
+      "m/s",
+      "m^2/s^2",
+      "m s"
+     ]
+    },
+    {
+     "b": "Remember",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "The average acceleration of an object over a time interval is defined as",
+     "a": "the change in its velocity divided by the time interval",
+     "o": [
+      "the change in its velocity divided by the time interval",
+      "the change in its position divided by the time interval",
+      "the change in its velocity divided by the distance covered",
+      "its final velocity divided by the total time of motion"
+     ]
+    },
+    {
+     "b": "Remember",
+     "d": "Easy",
+     "t": "fill_blank",
+     "m": 1,
+     "q": "For motion with a constant positive acceleration, the position-time graph curves ____ (write exactly one of these two words: upward, downward).",
+     "a": "upward"
+    },
+    {
+     "b": "Remember",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "q": "Which of the following statements about the acceleration of a particle moving along a straight line is FALSE?",
+     "a": "A particle moving in the negative x-direction must have a negative acceleration",
+     "o": [
+      "A particle moving in the negative x-direction must have a negative acceleration",
+      "Acceleration can be positive, negative or zero",
+      "Like velocity, acceleration in one dimension carries a sign that indicates its direction",
+      "On a velocity-time graph, the average acceleration is the slope of the straight line joining the two points concerned"
+     ],
+     "rev": true
+    },
+    {
+     "b": "Understand",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "From his studies of freely falling objects and of objects on an inclined plane, Galileo concluded that for all objects in free fall the quantity that stays constant is",
+     "a": "the rate of change of velocity with time",
+     "o": [
+      "the rate of change of velocity with time",
+      "the rate of change of velocity with distance",
+      "the velocity itself",
+      "the distance covered in each second"
+     ]
+    },
+    {
+     "b": "Understand",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "The acceleration of a particle at an instant is given by the slope of the tangent, at that instant, to its",
+     "a": "velocity-time curve",
+     "o": [
+      "velocity-time curve",
+      "position-time curve",
+      "acceleration-time curve",
+      "path-length-time curve"
+     ]
+    },
+    {
+     "b": "Understand",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "The position-time graph of a particle is a straight line inclined to the time axis. The acceleration of the particle is",
+     "a": "zero",
+     "o": [
+      "zero",
+      "positive and constant",
+      "negative and constant",
+      "increasing steadily with time"
+     ]
+    },
+    {
+     "b": "Understand",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "q": "A particle moves in the negative x-direction with a speed that is increasing. The signs of its velocity and acceleration are",
+     "a": "velocity negative, acceleration negative",
+     "o": [
+      "velocity negative, acceleration negative",
+      "velocity negative, acceleration positive",
+      "velocity positive, acceleration negative",
+      "velocity positive, acceleration positive"
+     ]
+    },
+    {
+     "b": "Understand",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "q": "The position-time graph of a particle rises with time but bends downward, so that its slope keeps decreasing while remaining positive. The particle is",
+     "a": "moving in the positive direction and slowing down",
+     "o": [
+      "moving in the positive direction and slowing down",
+      "moving in the positive direction and speeding up",
+      "moving in the negative direction and speeding up",
+      "at rest at a positive position"
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "Taking the direction of motion as positive, the velocity of a car increases from 10 m/s to 25 m/s in 5 s. Its average acceleration is",
+     "a": "3 m/s^2",
+     "o": [
+      "3 m/s^2",
+      "5 m/s^2",
+      "7 m/s^2",
+      "75 m/s^2"
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "Taking east as positive, the velocity of a trolley changes from +12 m/s to -8 m/s in 4 s. Its average acceleration is",
+     "a": "-5 m/s^2",
+     "o": [
+      "-5 m/s^2",
+      "-1 m/s^2",
+      "+5 m/s^2",
+      "+1 m/s^2"
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "q": "Taking the direction of motion as positive, the velocity-time graph of a particle is a straight line passing through the points (t = 0 s, v = 4 m/s) and (t = 5 s, v = 24 m/s). The acceleration of the particle at t = 2 s is",
+     "a": "4 m/s^2",
+     "o": [
+      "4 m/s^2",
+      "4.8 m/s^2",
+      "12 m/s^2",
+      "20 m/s^2"
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "q": "Taking east as positive, the velocity-time graph of a particle is a straight line from the point (t = 2 s, v = +6 m/s) to the point (t = 6 s, v = -10 m/s). Find (a) the acceleration of the particle and (b) the instant at which it is momentarily at rest.",
+     "a": "(a) Acceleration = slope = (v2 - v1)/(t2 - t1) = (-10 - 6)/(6 - 2) = -4 m/s^2, that is 4 m/s^2 towards the west. (b) The velocity falls by 4 m/s every second, so from +6 m/s at t = 2 s it reaches zero after 6/4 = 1.5 s, at t = 3.5 s.",
+     "s": [
+      [
+       "a = (-10 - 6)/(6 - 2) = -4 m/s^2 (directed west)",
+       1
+      ],
+      [
+       "v = 0 after a further 6/4 = 1.5 s, that is at t = 3.5 s",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 3,
+     "q": "Taking the direction of motion as positive, the velocity of a bus on a straight road is 0 m/s at t = 0 s, 20 m/s at t = 10 s, 20 m/s at t = 30 s and 0 m/s at t = 40 s. Find the average acceleration of the bus (a) from 0 s to 10 s, (b) from 10 s to 30 s, (c) from 30 s to 40 s and (d) over the whole 40 s.",
+     "a": "Average acceleration = change in velocity / time interval. (a) (20 - 0)/10 = +2 m/s^2. (b) (20 - 20)/20 = 0 m/s^2. (c) (0 - 20)/10 = -2 m/s^2. (d) (0 - 0)/40 = 0 m/s^2, because the velocity at the end equals the velocity at the start.",
+     "s": [
+      [
+       "(a) +2 m/s^2 and (b) 0 m/s^2",
+       1
+      ],
+      [
+       "(c) -2 m/s^2, with the negative sign",
+       1
+      ],
+      [
+       "(d) 0 m/s^2 for the whole 40 s since the net change in velocity is zero",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hardest",
+     "t": "long_answer",
+     "m": 3,
+     "q": "The position of a particle moving along the x-axis is x = 3 + 2t^2, with x in metre and t in second, the +x direction being positive. (a) Find its velocity at t = 1 s and at t = 4 s. (b) Find its average acceleration between these instants. (c) Find its instantaneous acceleration and explain why it equals the average acceleration.",
+     "a": "(a) v = dx/dt = 4t m/s, so v = 4 m/s at t = 1 s and v = 16 m/s at t = 4 s. (b) Average acceleration = (16 - 4)/(4 - 1) = 4 m/s^2. (c) a = dv/dt = 4 m/s^2 at every instant. Because the acceleration is constant, the average acceleration over any interval equals this constant value.",
+     "s": [
+      [
+       "v = dx/dt = 4t, giving 4 m/s and 16 m/s",
+       1
+      ],
+      [
+       "Average acceleration = (16 - 4)/3 = 4 m/s^2",
+       1
+      ],
+      [
+       "a = dv/dt = 4 m/s^2, constant, so the average equals the instantaneous acceleration",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "multi_statement",
+     "m": 1,
+     "q": "Consider these statements about a particle moving along a straight line. (I) If the speed of the particle is increasing, its acceleration is in the direction of its velocity. (II) The sign of the acceleration, taken by itself, tells whether the particle is speeding up or slowing down. Which is or are correct?",
+     "a": "Only I",
+     "o": [
+      "Only I",
+      "Only II",
+      "Both I and II",
+      "Neither I nor II"
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "q": "Taking east as positive, the velocity of a particle changes from +6 m/s to -6 m/s in 3 s. A student says: 'The speed is the same at the start and at the end, so the average acceleration is zero.' Analyse this statement and give the correct average acceleration.",
+     "a": "The statement is wrong. Acceleration is the rate of change of velocity, and velocity has direction as well as magnitude; here the direction has reversed although the speed is the same. Average acceleration = (v2 - v1)/(t2 - t1) = (-6 - 6)/3 = -4 m/s^2, that is 4 m/s^2 directed west.",
+     "s": [
+      [
+       "Velocity has changed because its direction reversed, so the acceleration is not zero",
+       1
+      ],
+      [
+       "Average acceleration = (-6 - 6)/3 = -4 m/s^2 (4 m/s^2 towards the west)",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hardest",
+     "t": "long_answer",
+     "m": 3,
+     "q": "The velocity of a particle on the x-axis, with the +x direction positive, is +8 m/s at t = 0 s, +4 m/s at t = 2 s, 0 m/s at t = 4 s, -4 m/s at t = 6 s and -8 m/s at t = 8 s. (a) Show that the average acceleration is the same in every 2 s interval and find it. (b) State the direction in which the particle moves before t = 4 s and after t = 4 s. (c) What is the acceleration at t = 4 s, when the velocity is zero? Explain.",
+     "a": "(a) In each 2 s interval the velocity changes by -4 m/s, so the average acceleration is -4/2 = -2 m/s^2 in every interval. (b) Before t = 4 s the velocity is positive, so the particle moves in the +x direction; after t = 4 s the velocity is negative, so it moves in the -x direction. It reverses its direction at t = 4 s. (c) The acceleration at t = 4 s is still -2 m/s^2. The velocity is zero only for that instant; it is still changing at the same rate, so a particle momentarily at rest can have a non-zero acceleration.",
+     "s": [
+      [
+       "Change of -4 m/s in every 2 s gives a = -2 m/s^2 in each interval",
+       1
+      ],
+      [
+       "Before 4 s it moves in the +x direction and after 4 s in the -x direction (reversal at t = 4 s)",
+       1
+      ],
+      [
+       "At t = 4 s the acceleration is still -2 m/s^2 because the velocity is still changing at that instant",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Evaluate",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "q": "A motorist drives along a straight road in one direction. His speedometer reads the same at 10:00 and at 10:05. He claims: 'My average acceleration over these five minutes was zero, so my acceleration was zero at every instant in between.' Evaluate the two parts of his claim.",
+     "a": "The first part is right: the velocity at the end equals the velocity at the start, so the change in velocity is zero and the average acceleration, change in velocity divided by the time interval, is zero. The second part does not follow: the average over an interval says nothing about individual instants. He may have speeded up and then slowed down (positive and then negative acceleration) and still returned to the same velocity.",
+     "s": [
+      [
+       "Average acceleration is zero because the net change in velocity is zero",
+       1
+      ],
+      [
+       "Instantaneous acceleration need not be zero in between, for example speeding up and then slowing down",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Create",
+     "d": "Hardest",
+     "t": "long_answer",
+     "m": 3,
+     "q": "Construct a numerical example of a particle moving along the x-axis with a constant NEGATIVE acceleration that is nevertheless speeding up throughout a 4 s interval. Give the initial velocity and the acceleration you choose, list the velocity at t = 0 s, 2 s and 4 s, show that the speed increases, and explain why a negative acceleration does not mean slowing down here. State what would change if the initial velocity were positive instead.",
+     "a": "One possible answer: taking the +x direction as positive, let the velocity be -2 m/s at t = 0 s and the acceleration be -3 m/s^2. The velocity changes by -3 m/s each second: v = -2 m/s at 0 s, -8 m/s at 2 s and -14 m/s at 4 s. The speeds are 2 m/s, 8 m/s and 14 m/s, so the speed increases. The acceleration is in the same direction as the velocity (both along -x), and a particle speeds up whenever its acceleration is in the direction of its velocity; the negative sign only gives the direction relative to the chosen axis. If the initial velocity were positive, the same negative acceleration would be opposite to the velocity and the particle would slow down (until it came to rest).",
+     "s": [
+      [
+       "An initial velocity that is zero or negative and a negative constant acceleration are chosen, and the velocities at 0 s, 2 s and 4 s are found correctly",
+       1
+      ],
+      [
+       "The speeds (magnitudes) are shown to increase",
+       1
+      ],
+      [
+       "Reason: acceleration is in the direction of velocity; with a positive initial velocity the particle would slow down",
+       1
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "code": "C11P-2.3",
+   "name": "Velocity-time graphs and the area under them",
+   "description": "Reading velocity-time graphs for uniform and uniformly accelerated motion, and using the area under the graph as the displacement, including the graphical derivation of x = v0 t + (1/2) a t^2.",
+   "idea": "A velocity-time graph shows the acceleration by its slope and the displacement by the area under it.",
+   "rule": "For uniform motion the velocity-time graph is a straight line parallel to the time axis and the position-time graph is a straight line inclined to the time axis. For uniform acceleration the velocity-time graph is a straight line inclined to the time axis and the position-time graph is a parabola. The graph lies above the time axis for motion in the positive direction and below it for motion in the negative direction; where it crosses the axis the object reverses. The area under the velocity-time curve between two instants equals the displacement in that interval (velocity x time has the dimension of length): a rectangle uT for constant velocity u, and for uniform acceleration a rectangle v0 t plus a triangle (1/2)(v - v0)t, which gives x = v0 t + (1/2) a t^2 = ((v + v0)/2) t. Real graphs are smooth: velocity and acceleration cannot change abruptly at an instant.",
+   "example": "Taking the direction of motion as positive, a velocity that rises along a straight line from 1 m/s at t = 0 s to 7 m/s at t = 5 s gives a displacement of 1/2 x (1 + 7) x 5 = 20 m.",
+   "difficulty_base": "Hard",
+   "questions": [
+    {
+     "b": "Remember",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "On a velocity-time graph, motion in the negative direction is shown by the part of the graph that lies",
+     "a": "below the time axis",
+     "o": [
+      "below the time axis",
+      "above the time axis",
+      "along the time axis",
+      "parallel to the velocity axis"
+     ]
+    },
+    {
+     "b": "Remember",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "An object moves with a constant velocity u for a time T. The area under its velocity-time graph between t = 0 and t = T is the area of a",
+     "a": "rectangle of height u and base T",
+     "o": [
+      "rectangle of height u and base T",
+      "triangle of height u and base T",
+      "square of side u",
+      "semicircle of diameter T"
+     ]
+    },
+    {
+     "b": "Remember",
+     "d": "Easy",
+     "t": "fill_blank",
+     "m": 1,
+     "q": "The area under a velocity-time graph has the dimension of ____ (write one word: length, time or velocity).",
+     "a": "length"
+    },
+    {
+     "b": "Remember",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "q": "Which of the following statements about the velocity-time graph of an object moving along a straight line is NOT correct?",
+     "a": "Its slope at an instant gives the displacement of the object up to that instant",
+     "o": [
+      "Its slope at an instant gives the displacement of the object up to that instant",
+      "For uniformly accelerated motion it is a straight line inclined to the time axis",
+      "For an object at rest it lies along the time axis",
+      "The straight line joining two of its points has a slope equal to the average acceleration between them"
+     ],
+     "rev": true
+    },
+    {
+     "b": "Understand",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "The velocity-time graphs of two objects P and Q are straight lines through the origin, both rising, and the line for P is steeper than the line for Q. Taking the direction of motion as positive, this shows that",
+     "a": "P has a greater acceleration than Q",
+     "o": [
+      "P has a greater acceleration than Q",
+      "P has a smaller acceleration than Q",
+      "P and Q have the same velocity at every instant",
+      "P has zero acceleration and Q has a non-zero acceleration"
+     ]
+    },
+    {
+     "b": "Understand",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "The velocity-time graph of an object is a straight line that starts at a positive value v0 on the velocity axis and slopes downward, staying above the time axis. The object is moving in the",
+     "a": "positive direction with a negative acceleration",
+     "o": [
+      "positive direction with a negative acceleration",
+      "positive direction with a positive acceleration",
+      "negative direction with a negative acceleration",
+      "negative direction with a positive acceleration"
+     ]
+    },
+    {
+     "b": "Understand",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "Taking east as positive, the velocity-time graph of an object is a straight line parallel to the time axis at v = -5 m/s. The object is",
+     "a": "moving west with a constant velocity",
+     "o": [
+      "moving west with a constant velocity",
+      "at rest 5 m to the west of the origin",
+      "moving east and slowing down",
+      "moving west and speeding up"
+     ]
+    },
+    {
+     "b": "Understand",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "q": "The velocity-time graph of an object is a straight line that starts at +v0 at t = 0, crosses the time axis at t = t1 and continues below the axis with the same slope up to t = t2. Between t1 and t2 the object",
+     "a": "moves in the negative direction with increasing speed",
+     "o": [
+      "moves in the negative direction with increasing speed",
+      "continues in the positive direction while slowing down",
+      "stays at rest",
+      "moves in the negative direction with decreasing speed"
+     ]
+    },
+    {
+     "b": "Understand",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "q": "The velocity-time graph of an object that starts from x = 0 is a straight line through the origin with a positive slope. The position-time graph of the same motion is",
+     "a": "a parabola opening upward",
+     "o": [
+      "a parabola opening upward",
+      "a straight line of positive slope",
+      "a straight line parallel to the time axis",
+      "a parabola opening downward"
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "Taking the direction of motion as positive, a trolley moves with a constant velocity of 6 m/s from t = 0 s to t = 5 s. Its displacement in this interval is",
+     "a": "30 m",
+     "o": [
+      "30 m",
+      "15 m",
+      "1.2 m",
+      "11 m"
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "Taking the direction of motion as positive, the velocity-time graph of a cyclist is a straight line from v = 0 m/s at t = 0 s to v = 12 m/s at t = 4 s. Her displacement in these 4 s is",
+     "a": "24 m",
+     "o": [
+      "24 m",
+      "48 m",
+      "3 m",
+      "16 m"
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "q": "Taking the direction of motion as positive, the velocity-time graph of a car is a straight line from v = 4 m/s at t = 0 s to v = 10 m/s at t = 6 s. The displacement of the car in these 6 s is",
+     "a": "42 m",
+     "o": [
+      "42 m",
+      "60 m",
+      "18 m",
+      "24 m"
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "q": "Taking the direction of motion as positive, the velocity-time graph of a tram is a line parallel to the time axis at 8 m/s from t = 0 s to t = 3 s, followed by a straight line falling uniformly to 0 m/s at t = 7 s. Find (a) the total displacement of the tram and (b) its acceleration during the second stage.",
+     "a": "(a) Displacement = area under the graph = rectangle (8 x 3 = 24 m) + triangle (1/2 x 4 x 8 = 16 m) = 40 m. (b) Acceleration = slope = (0 - 8)/(7 - 3) = -2 m/s^2.",
+     "s": [
+      [
+       "Area = 8 x 3 + 1/2 x 4 x 8 = 24 + 16 = 40 m",
+       1
+      ],
+      [
+       "Acceleration in second stage = (0 - 8)/4 = -2 m/s^2",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 3,
+     "q": "Taking the direction of motion as positive, the velocity-time graph of a particle is a straight line passing through the points (t = 0 s, v = 2 m/s) and (t = 4 s, v = 14 m/s). Find the velocity at t = 2 s and at t = 5 s, and hence the displacement of the particle between t = 2 s and t = 5 s.",
+     "a": "Slope = (14 - 2)/4 = 3 m/s^2, so v = 2 + 3t: at t = 2 s, v = 8 m/s; at t = 5 s, v = 17 m/s. The displacement is the area under the line between t = 2 s and t = 5 s, a trapezium: 1/2 x (8 + 17) x 3 = 37.5 m.",
+     "s": [
+      [
+       "Slope 3 m/s^2, giving v = 8 m/s at 2 s and 17 m/s at 5 s",
+       1
+      ],
+      [
+       "Displacement = area of the trapezium under the line between 2 s and 5 s = 1/2 x (8 + 17) x 3",
+       1
+      ],
+      [
+       "Displacement = 37.5 m",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hardest",
+     "t": "long_answer",
+     "m": 3,
+     "q": "Taking east as positive, the velocity-time graph of a toy car is a straight line from v = +12 m/s at t = 0 s to v = -6 m/s at t = 6 s. (a) At what instant does the car reverse its direction? (b) Find the displacement while it moves east and while it moves west. (c) Find the net displacement and the total path length for the 6 s.",
+     "a": "(a) Slope = (-6 - 12)/6 = -3 m/s^2, so the velocity is zero at t = 12/3 = 4 s; the car reverses there. (b) From 0 s to 4 s the area is a triangle above the time axis: 1/2 x 4 x 12 = 24 m east. From 4 s to 6 s the velocity is negative and the area is a triangle below the axis: 1/2 x 2 x 6 = 6 m, a displacement of 6 m west (-6 m). (c) Net displacement = 24 - 6 = 18 m east. Path length = 24 + 6 = 30 m.",
+     "s": [
+      [
+       "Slope -3 m/s^2, so v = 0 and the car reverses at t = 4 s",
+       1
+      ],
+      [
+       "Areas: 24 m east (0 s to 4 s) and 6 m west (4 s to 6 s)",
+       1
+      ],
+      [
+       "Net displacement 18 m east; path length 30 m",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "assertion_reason",
+     "m": 1,
+     "q": "Assertion (A): In any realistic situation, the position-time and velocity-time graphs of a moving object are smooth, without sharp kinks. Reason (R): The velocity and the acceleration of an object cannot change their values abruptly at an instant; the changes are always continuous. Choose the correct option.",
+     "a": "Both A and R are true, and R is the correct explanation of A",
+     "o": [
+      "Both A and R are true, and R is the correct explanation of A",
+      "Both A and R are true, but R is not the correct explanation of A",
+      "A is true, R is false",
+      "A is false, R is true"
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 3,
+     "q": "Two cars P and Q start from the same point at t = 0 and move along the same straight road in the same direction, taken as positive. The velocity-time graph of P is a line parallel to the time axis at 10 m/s. That of Q is a straight line through the origin that reaches 10 m/s at t = 4 s and continues with the same slope. Using areas under the graphs, (a) compare the displacements of the two cars at t = 4 s and (b) find the instant at which their displacements are equal.",
+     "a": "Slope of Q's graph = 10/4 = 2.5 m/s^2. Up to time t, P's area is a rectangle, 10t, and Q's area is a triangle, 1/2 x t x 2.5t = 1.25 t^2. (a) At t = 4 s: P has moved 40 m, Q only 1/2 x 4 x 10 = 20 m, so although the velocities are equal at that instant Q is 20 m behind. (b) Equal displacements: 1.25 t^2 = 10t, so t = 8 s (both have then moved 80 m).",
+     "s": [
+      [
+       "Areas: P is a rectangle 10t, Q is a triangle 1/2 x t x 2.5t",
+       1
+      ],
+      [
+       "At t = 4 s the velocities are equal but P has moved 40 m and Q only 20 m",
+       1
+      ],
+      [
+       "Displacements are equal at t = 8 s (80 m each)",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hardest",
+     "t": "long_answer",
+     "m": 3,
+     "q": "An object moves with uniform acceleration a; its velocity is v0 at t = 0 and v at time t. Describe its velocity-time graph and, by finding the area under it, show that its displacement in time t is x = v0 t + (1/2) a t^2. Show also that the same area can be written as x = ((v + v0)/2) t.",
+     "a": "The velocity-time graph is a straight line inclined to the time axis, rising from v0 at t = 0 to v at time t. The area under it between 0 and t is the displacement. It is made up of a rectangle of height v0 and base t, area v0 t, and a triangle on top of it of height (v - v0) and base t, area (1/2)(v - v0)t. So x = (1/2)(v - v0)t + v0 t. Since v - v0 = at, x = (1/2) a t^2 + v0 t = v0 t + (1/2) a t^2. Also, (1/2)(v - v0)t + v0 t = (1/2)(v + v0)t, so x = ((v + v0)/2) t: the displacement equals the arithmetic average of the initial and final velocities multiplied by the time.",
+     "s": [
+      [
+       "Graph is an inclined straight line from v0 to v; area = triangle (1/2)(v - v0)t + rectangle v0 t",
+       1
+      ],
+      [
+       "Using v - v0 = at gives x = v0 t + (1/2) a t^2",
+       1
+      ],
+      [
+       "Regrouping the same area gives x = ((v + v0)/2) t",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Evaluate",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "q": "Taking east as positive, the velocity-time graph of a cart is a straight line from +5 m/s at t = 0 s to -5 m/s at t = 10 s. A student adds the area above the time axis to the area below it, with the area below counted as negative, gets zero and concludes: 'The cart did not move at all.' Evaluate this conclusion.",
+     "a": "The zero total is the net displacement, not the path length, so the conclusion is wrong. From 0 s to 5 s the cart moves east through 1/2 x 5 x 5 = 12.5 m; from 5 s to 10 s it moves west through 12.5 m. It returns to its starting point, so its displacement is zero, but it has travelled a path length of 25 m.",
+     "s": [
+      [
+       "Zero area means zero net displacement (the cart returns to its start), not no motion",
+       1
+      ],
+      [
+       "It moves 12.5 m east and then 12.5 m west, a path length of 25 m",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Create",
+     "d": "Hardest",
+     "t": "long_answer",
+     "m": 3,
+     "q": "Design a velocity-time graph for a train that travels between two stations exactly 1200 m apart on a straight track: it starts from rest, speeds up uniformly, runs at a constant velocity, then slows down uniformly to rest. Choose your own values, show from the areas that the displacement is 1200 m, give the acceleration in each stage, and describe the shape of the position-time graph in each stage.",
+     "a": "One possible answer, taking the direction of motion as positive: the velocity rises along a straight line from 0 to 20 m/s between t = 0 s and t = 20 s, stays at 20 m/s (a line parallel to the time axis) from 20 s to 60 s, and falls along a straight line to 0 at t = 80 s. Areas: triangle 1/2 x 20 x 20 = 200 m; rectangle 20 x 40 = 800 m; triangle 1/2 x 20 x 20 = 200 m; total 1200 m. Accelerations (slopes): +1 m/s^2, 0 and -1 m/s^2. The position-time graph curves upward (a parabola) in the first stage, is a straight inclined line in the second, and bends downward, flattening out, in the third.",
+     "s": [
+      [
+       "A three-stage graph (inclined line up from rest, line parallel to the time axis, inclined line down to rest) with definite values",
+       1
+      ],
+      [
+       "Areas of the three stages are found and add up to 1200 m",
+       1
+      ],
+      [
+       "Accelerations given as the slopes, and position-time graph described as curving upward, straight, then bending downward",
+       1
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "code": "C11P-2.4",
+   "name": "Kinematic equations for uniformly accelerated motion",
+   "description": "The equations connecting initial velocity, final velocity, acceleration, time and displacement for constant acceleration, their calculus derivation, and their use, including the stopping distance of vehicles.",
+   "idea": "When the acceleration is constant, three simple equations connect the five quantities v0, v, a, t and x, so any two unknowns can be found from the other three.",
+   "rule": "For constant acceleration a, with x = 0 at t = 0: v = v0 + a t; x = v0 t + (1/2) a t^2; v^2 = v0^2 + 2 a x; and x = ((v + v0)/2) t, the average velocity being (v + v0)/2 for constant acceleration only. If the particle starts at x = x0, replace x by (x - x0). The equations can be obtained from the area under the velocity-time graph or by calculus from a = dv/dt, v = dx/dt and a = v dv/dx; the calculus method also works for non-uniform acceleration. All quantities are algebraic and must be substituted with proper signs after choosing the positive direction. Stopping distance of a vehicle braking with constant deceleration: with v = 0 in v^2 = v0^2 + 2 a x, d = -v0^2/(2a), proportional to the square of the initial velocity.",
+   "example": "Taking the direction of motion as positive, with v0 = 2 m/s and a = 3 m/s^2 for 2 s: v = 2 + 3 x 2 = 8 m/s and x = 2 x 2 + (1/2) x 3 x 2^2 = 10 m; check: v^2 = 4 + 2 x 3 x 10 = 64.",
+   "difficulty_base": "Hard",
+   "questions": [
+    {
+     "b": "Remember",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "The kinematic equations of rectilinear motion with constant acceleration connect five quantities. These are",
+     "a": "initial velocity, final velocity, acceleration, time and displacement",
+     "o": [
+      "initial velocity, final velocity, acceleration, time and displacement",
+      "initial velocity, final velocity, force, time and displacement",
+      "initial velocity, final velocity, acceleration, mass and displacement",
+      "initial velocity, average speed, path length, mass and time"
+     ]
+    },
+    {
+     "b": "Remember",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "The kinematic equations of motion are true only for motion in which",
+     "a": "the magnitude and direction of the acceleration are constant",
+     "o": [
+      "the magnitude and direction of the acceleration are constant",
+      "the velocity is constant",
+      "the initial velocity is zero",
+      "the acceleration changes uniformly with time"
+     ]
+    },
+    {
+     "b": "Remember",
+     "d": "Easy",
+     "t": "fill_blank",
+     "m": 1,
+     "q": "Of the five quantities v0, v, a, t and x, the one that does not appear in the kinematic equation v^2 = v0^2 + 2 a x is ____ (write its single-letter symbol).",
+     "a": "t"
+    },
+    {
+     "b": "Remember",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "q": "A particle starts from x = 0 at t = 0 with velocity v0 and moves with constant acceleration a, reaching velocity v at position x at time t. Which of the following is NOT a correct kinematic equation for this motion?",
+     "a": "x = v0 t + a t^2",
+     "o": [
+      "x = v0 t + a t^2",
+      "v = v0 + a t",
+      "v^2 = v0^2 + 2 a x",
+      "x = ((v + v0)/2) t"
+     ],
+     "rev": true
+    },
+    {
+     "b": "Understand",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "The kinematic equations are first written for a particle that is at x = 0 when t = 0. If instead the particle is at x = x0 when t = 0, then in these equations x is replaced by",
+     "a": "x - x0",
+     "o": [
+      "x - x0",
+      "x + x0",
+      "x0 - x",
+      "x x0"
+     ]
+    },
+    {
+     "b": "Understand",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "The textbook also obtains the equations of motion by the method of calculus, starting from a = dv/dt and v = dx/dt. The stated advantage of this method is that it",
+     "a": "can be used for motion with non-uniform acceleration also",
+     "o": [
+      "can be used for motion with non-uniform acceleration also",
+      "works only when the initial velocity is zero",
+      "gives equations that need no initial position",
+      "avoids the use of the acceleration altogether"
+     ]
+    },
+    {
+     "b": "Understand",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "In the equation v = v0 + a t for uniformly accelerated motion, the term a t represents",
+     "a": "the change in velocity during the time t",
+     "o": [
+      "the change in velocity during the time t",
+      "the displacement during the time t",
+      "the average velocity during the time t",
+      "the final velocity at time t"
+     ]
+    },
+    {
+     "b": "Understand",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "q": "A car with a known initial velocity is brought to rest with uniform retardation over a known distance. The retardation is not known. Which single equation gives the time taken directly, without first finding the retardation?",
+     "a": "x = ((v + v0)/2) t",
+     "o": [
+      "x = ((v + v0)/2) t",
+      "v = v0 + a t",
+      "x = v0 t + (1/2) a t^2",
+      "v^2 = v0^2 + 2 a x"
+     ]
+    },
+    {
+     "b": "Understand",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "q": "In deriving v^2 = v0^2 + 2a(x - x0) by calculus, the step v dv = a dx is obtained by writing the acceleration as",
+     "a": "a = (dv/dx)(dx/dt) = v dv/dx",
+     "o": [
+      "a = (dv/dx)(dx/dt) = v dv/dx",
+      "a = dx/dt",
+      "a = v/t",
+      "a = (dx/dv)(dv/dt)"
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "Taking the direction of motion as positive, a scooter moving at 5 m/s accelerates uniformly at 2 m/s^2 for 4 s. Its velocity at the end of the 4 s is",
+     "a": "13 m/s",
+     "o": [
+      "13 m/s",
+      "8 m/s",
+      "28 m/s",
+      "9 m/s"
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "Taking the direction of motion as positive, a trolley starts from rest and moves with a uniform acceleration of 3 m/s^2 for 6 s. Its displacement in this time is",
+     "a": "54 m",
+     "o": [
+      "54 m",
+      "108 m",
+      "18 m",
+      "9 m"
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "q": "A particle on the x-axis is at x0 = 10 m at t = 0 with a velocity of +4 m/s and has a constant acceleration of +2 m/s^2, the +x direction being positive. Its position at t = 3 s is",
+     "a": "31 m",
+     "o": [
+      "31 m",
+      "21 m",
+      "40 m",
+      "19 m"
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 3,
+     "q": "Taking the direction of motion as positive, a car moving along a straight highway at 108 km/h is brought to a stop within a distance of 90 m by a uniform retardation. Find the retardation of the car and the time it takes to stop.",
+     "a": "v0 = 108 km/h = 108 x 1000/3600 = 30 m/s, v = 0, x = 90 m. From v^2 = v0^2 + 2ax: 0 = 30^2 + 2a(90), so a = -900/180 = -5 m/s^2, a retardation of 5 m/s^2. From v = v0 + at: 0 = 30 - 5t, so t = 6 s.",
+     "s": [
+      [
+       "v0 = 108 km/h = 30 m/s",
+       1
+      ],
+      [
+       "v^2 = v0^2 + 2ax gives a = -5 m/s^2 (retardation 5 m/s^2)",
+       1
+      ],
+      [
+       "Time to stop t = 6 s, from v = v0 + at or from x = ((v + v0)/2) t",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "q": "Taking the direction of motion as positive, a train moving at 10 m/s accelerates uniformly at 0.5 m/s^2 over a distance of 300 m. Find its velocity at the end of this distance and the time taken.",
+     "a": "v^2 = v0^2 + 2ax = 10^2 + 2 x 0.5 x 300 = 100 + 300 = 400, so v = 20 m/s. From v = v0 + at: t = (20 - 10)/0.5 = 20 s.",
+     "s": [
+      [
+       "v^2 = v0^2 + 2ax = 400, so v = 20 m/s",
+       1
+      ],
+      [
+       "t = 20 s, from v = v0 + at or from x = ((v + v0)/2) t",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hardest",
+     "t": "long_answer",
+     "m": 3,
+     "q": "A motorist driving at 20 m/s on a straight road sees an obstacle. His reaction time is 0.5 s, during which the car keeps moving at 20 m/s; the brakes then give a uniform deceleration of 5 m/s^2. Take the direction of motion as positive. (a) Find the distance covered during the reaction time. (b) Find the distance covered during braking and the total distance needed to stop. (c) Repeat the total for a speed of 40 m/s with the same reaction time and deceleration, and comment on the result.",
+     "a": "(a) During the reaction time the motion is uniform: distance = 20 x 0.5 = 10 m. (b) During braking v0 = 20 m/s, v = 0, a = -5 m/s^2: v^2 = v0^2 + 2ax gives 0 = 400 - 10x, x = 40 m. Total = 10 + 40 = 50 m. (c) At 40 m/s: reaction distance = 40 x 0.5 = 20 m; braking distance = 40^2/(2 x 5) = 160 m; total = 180 m. Doubling the speed doubles the reaction distance but makes the braking distance four times as large, because the braking distance is proportional to the square of the initial velocity.",
+     "s": [
+      [
+       "Reaction distance = 20 x 0.5 = 10 m",
+       1
+      ],
+      [
+       "Braking distance = v0^2/(2 x 5) = 40 m; total 50 m",
+       1
+      ],
+      [
+       "At 40 m/s: 20 m + 160 m = 180 m; braking distance grows as the square of the speed",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "multi_statement",
+     "m": 1,
+     "q": "Consider these statements about the kinematic equations. (I) The relation v = v0 + a t can be used even when the acceleration changes with time, provided a is taken as the acceleration at the final instant. (II) The quantities in the kinematic equations are algebraic, so each value must be substituted with its proper sign. Which is or are correct?",
+     "a": "Only II",
+     "o": [
+      "Only II",
+      "Only I",
+      "Both I and II",
+      "Neither I nor II"
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 3,
+     "q": "Tests on a car, with the direction of motion taken as positive, give braking distances of 8 m, 32 m and 72 m for initial speeds of 10 m/s, 20 m/s and 30 m/s. (a) Work out the ratio of braking distance to the square of the initial speed for each reading and state what the results show. (b) Assuming the deceleration is uniform, find its magnitude.",
+     "a": "(a) Distance / (speed)^2 = 8/100 = 0.08, 32/400 = 0.08 and 72/900 = 0.08 s^2/m: the ratio is the same, so the stopping distance is proportional to the square of the initial velocity. (b) From v^2 = v0^2 + 2ax with v = 0, the stopping distance is v0^2/(2 x magnitude of a). So 1/(2 x magnitude of a) = 0.08, giving a deceleration of magnitude 1/0.16 = 6.25 m/s^2.",
+     "s": [
+      [
+       "Distance / (speed)^2 = 0.08 s^2/m for all three readings, so distance is proportional to the square of the speed",
+       1
+      ],
+      [
+       "Stopping distance = v0^2/(2 x magnitude of a), from v^2 = v0^2 + 2ax with v = 0",
+       1
+      ],
+      [
+       "Magnitude of deceleration = 6.25 m/s^2",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hardest",
+     "t": "long_answer",
+     "m": 3,
+     "q": "A particle moving along the x-axis with constant acceleration passes the origin at t = 0, the +x direction being positive. It is at x = 20 m at t = 2 s and at x = 60 m at t = 4 s. Find its velocity at t = 0, its acceleration, and its velocity at t = 4 s.",
+     "a": "Using x = v0 t + (1/2) a t^2: at t = 2 s, 20 = 2 v0 + 2a, so v0 + a = 10. At t = 4 s, 60 = 4 v0 + 8a, so v0 + 2a = 15. Subtracting, a = 5 m/s^2 and v0 = 5 m/s. Then v = v0 + at = 5 + 5 x 4 = 25 m/s at t = 4 s.",
+     "s": [
+      [
+       "Sets up two conditions on v0 and a from the two given positions (e.g. 20 = 2 v0 + 2a and 60 = 4 v0 + 8a, or the mid-interval velocities 10 m/s at t = 1 s and 20 m/s at t = 3 s)",
+       1
+      ],
+      [
+       "a = 5 m/s^2 and v0 = 5 m/s",
+       1
+      ],
+      [
+       "v = v0 + at = 25 m/s at t = 4 s",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Evaluate",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "q": "Taking the direction of motion as positive, the velocity of a car rises from 0 to 20 m/s in 10 s along a straight road. Without knowing how the velocity rose, a student writes: distance covered = ((0 + 20)/2) x 10 = 100 m. Evaluate this working.",
+     "a": "The working takes the average velocity to be the arithmetic average of the initial and final velocities. That is true only for constant acceleration. If the car's acceleration was uniform, 100 m is correct. If the velocity did not rise uniformly, the average velocity need not be 10 m/s and the result need not be right, so the answer cannot be accepted without knowing that the acceleration was constant.",
+     "s": [
+      [
+       "Average velocity = (v + v0)/2 holds for constant acceleration only",
+       1
+      ],
+      [
+       "So 100 m is correct only if the acceleration was uniform; otherwise the working is not justified",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Create",
+     "d": "Hardest",
+     "t": "long_answer",
+     "m": 3,
+     "q": "Compose a numerical problem about a scooter on a straight road in which the initial velocity, the uniform acceleration and the distance covered are given, so that the final velocity must be found first and the time taken next. State the problem with its data and the positive direction, and solve it completely.",
+     "a": "One possible answer. Problem: taking the direction of motion as positive, a scooter moving at 6 m/s accelerates uniformly at 2 m/s^2 over a distance of 40 m. Find its final velocity and the time taken. Solution: v^2 = v0^2 + 2ax = 6^2 + 2 x 2 x 40 = 36 + 160 = 196, so v = 14 m/s. Then v = v0 + at gives t = (14 - 6)/2 = 4 s. Check: x = v0 t + (1/2) a t^2 = 24 + 16 = 40 m.",
+     "s": [
+      [
+       "A clear problem giving initial velocity, uniform acceleration and distance, with units and the positive direction",
+       1
+      ],
+      [
+       "Final velocity found correctly from v^2 = v0^2 + 2ax",
+       1
+      ],
+      [
+       "Time found correctly from v = v0 + at (or an equivalent kinematic equation), with unit",
+       1
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "code": "C11P-2.5",
+   "name": "Free fall, Galileo's law of odd numbers and reaction time",
+   "description": "Motion under gravity with air resistance neglected as uniformly accelerated motion: bodies dropped or thrown vertically, the graphs of free fall, Galileo's law of odd numbers and the ruler-drop measurement of reaction time.",
+   "idea": "A freely falling body has the same constant downward acceleration g throughout its motion, whether it is going up, coming down or momentarily at rest at the top.",
+   "rule": "Free fall is motion under gravity with air resistance neglected; for heights small compared to the earth's radius g is constant, 9.8 m/s^2. Taking upward as positive, a = -g. For a body released from rest at y = 0: v = -g t, y = -(1/2) g t^2, v^2 = -2 g y; the acceleration-time graph is a line parallel to the time axis, the velocity-time graph a straight line through the origin with negative slope, and the position-time graph a parabola opening downward. For a body thrown upward the velocity is zero at the highest point but the acceleration is still g downward; the whole motion can be treated with one equation y = y0 + v0 t + (1/2) a t^2 using the initial and final coordinates. Galileo's law of odd numbers: distances fallen from rest in successive equal time intervals are as 1 : 3 : 5 : 7 ... Reaction time from a dropped ruler falling a distance d: t = sqrt(2d/g).",
+   "example": "Taking upward as positive and g = 10 m/s^2, a stone dropped from rest has, after 2 s, velocity v = -10 x 2 = -20 m/s and position y = -(1/2) x 10 x 2^2 = -20 m, that is 20 m below the point of release.",
+   "difficulty_base": "Hard",
+   "questions": [
+    {
+     "b": "Remember",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "An object released near the surface of the earth is said to be in free fall when",
+     "a": "air resistance is neglected",
+     "o": [
+      "air resistance is neglected",
+      "it is thrown horizontally",
+      "its mass is very small",
+      "it moves with a constant velocity"
+     ]
+    },
+    {
+     "b": "Remember",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "The reaction time of a person is the time the person takes to",
+     "a": "observe, think and act",
+     "o": [
+      "observe, think and act",
+      "fall freely through 1 m from rest",
+      "stop a moving car after the brakes are applied",
+      "catch a ruler that is already at rest"
+     ]
+    },
+    {
+     "b": "Remember",
+     "d": "Easy",
+     "t": "fill_blank",
+     "m": 1,
+     "q": "Taking the upward direction as positive, the velocity-time graph of a body released from rest in free fall is a straight line through the origin with a ____ slope (write one word: positive or negative).",
+     "a": "negative"
+    },
+    {
+     "b": "Remember",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "q": "Neglecting air resistance, which of the following statements about a body in free fall near the earth's surface is NOT correct?",
+     "a": "Its velocity stays constant throughout the fall",
+     "o": [
+      "Its velocity stays constant throughout the fall",
+      "It is a case of motion with uniform acceleration",
+      "With the upward direction taken as positive, its acceleration is written as a = -g",
+      "The magnitude of its acceleration is denoted by g and is taken as 9.8 m/s^2"
+     ],
+     "rev": true
+    },
+    {
+     "b": "Understand",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "In free fall near the earth's surface, g can be taken as constant, equal to 9.8 m/s^2, because",
+     "a": "the height through which the object falls is small compared to the earth's radius",
+     "o": [
+      "the height through which the object falls is small compared to the earth's radius",
+      "the object is small compared to the earth",
+      "the object falls for only a short time",
+      "all falling objects have the same mass"
+     ]
+    },
+    {
+     "b": "Understand",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "A body is released from rest at y = 0 and falls freely. Taking the upward direction as positive, its position-time graph is",
+     "a": "a parabola opening downward, with y becoming more and more negative",
+     "o": [
+      "a parabola opening downward, with y becoming more and more negative",
+      "a straight line of negative slope",
+      "a straight line parallel to the time axis",
+      "a parabola opening upward, with y becoming more and more positive"
+     ]
+    },
+    {
+     "b": "Understand",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "In the ruler-drop experiment, a friend drops a ruler through the gap between your thumb and forefinger and you catch it. If the ruler falls a longer distance before you catch it, this shows that",
+     "a": "your reaction time is longer",
+     "o": [
+      "your reaction time is longer",
+      "your reaction time is shorter",
+      "the value of g is larger",
+      "the ruler is heavier"
+     ]
+    },
+    {
+     "b": "Understand",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "q": "A ball is thrown vertically upward and air resistance is neglected. While the ball is moving upward, the direction of its acceleration is",
+     "a": "vertically downward",
+     "o": [
+      "vertically downward",
+      "vertically upward",
+      "upward at first and then downward",
+      "undefined, because the acceleration is zero"
+     ]
+    },
+    {
+     "b": "Understand",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "q": "A ball thrown upward from the top of a building lands on the ground below. The time of flight can be found by splitting the path into an upward and a downward part, or from one equation y = y0 + v0 t + (1/2) a t^2 using only the initial and final coordinates. The single-equation method works because",
+     "a": "the acceleration is constant over the whole motion, so the path need not be considered",
+     "o": [
+      "the acceleration is constant over the whole motion, so the path need not be considered",
+      "the velocity of the ball is constant over the whole motion",
+      "the path length equals the magnitude of the displacement for the whole motion",
+      "the upward and downward parts take equal times"
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "A stone is dropped from rest from a high bridge. Take the downward direction as positive, neglect air resistance and take g = 10 m/s^2. Its speed after 3 s of fall is",
+     "a": "30 m/s",
+     "o": [
+      "30 m/s",
+      "45 m/s",
+      "15 m/s",
+      "90 m/s"
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "A body is dropped from rest and falls freely for 4 s. Take the downward direction as positive, neglect air resistance and take g = 9.8 m/s^2. The distance it falls in this time is",
+     "a": "78.4 m",
+     "o": [
+      "78.4 m",
+      "39.2 m",
+      "156.8 m",
+      "19.6 m"
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "q": "Taking the upward direction as positive, a ball is thrown vertically upward with a velocity of 30 m/s. Neglect air resistance and take g = 10 m/s^2. The maximum height it reaches above the point of projection is",
+     "a": "45 m",
+     "o": [
+      "45 m",
+      "90 m",
+      "3 m",
+      "1.5 m"
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 3,
+     "q": "A player throws a ball vertically upward with an initial speed of 19.6 m/s. Taking the upward direction as positive, g = 9.8 m/s^2 and neglecting air resistance, find (a) the height to which the ball rises and (b) the time after which it returns to the player's hands.",
+     "a": "(a) At the highest point v = 0. v^2 = v0^2 + 2ay with a = -9.8 m/s^2: 0 = (19.6)^2 - 2 x 9.8 x y, so y = 384.16/19.6 = 19.6 m. (b) Time to rise: v = v0 + at gives 0 = 19.6 - 9.8t, t = 2 s. For the whole flight the displacement is zero: 0 = 19.6t - (1/2)(9.8)t^2, giving t = 4 s (other than t = 0). The ball returns after 4 s.",
+     "s": [
+      [
+       "Height: 0 = v0^2 - 2gy gives y = 19.6 m",
+       1
+      ],
+      [
+       "Time to reach the highest point = v0/g = 2 s",
+       1
+      ],
+      [
+       "Total time to return = 4 s (zero net displacement, or twice the time of rise)",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "q": "In a ruler-drop experiment to measure reaction time, the ruler falls 19.6 cm before it is caught. Taking the downward direction as positive and g = 9.8 m/s^2, and treating the ruler as falling freely from rest, find the reaction time.",
+     "a": "The ruler falls from rest, so the distance fallen is d = (1/2) g t^2 and t = sqrt(2d/g). With d = 19.6 cm = 0.196 m: t = sqrt(2 x 0.196/9.8) = sqrt(0.04) = 0.2 s.",
+     "s": [
+      [
+       "d = (1/2) g t^2, so t = sqrt(2d/g)",
+       1
+      ],
+      [
+       "d = 0.196 m gives t = sqrt(0.04) = 0.2 s",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hardest",
+     "t": "long_answer",
+     "m": 3,
+     "q": "A ball is thrown vertically upward with a velocity of 10 m/s from the top of a tower. The point of projection is 40 m above the ground. Take the upward direction as positive with y = 0 at the ground, g = 10 m/s^2, and neglect air resistance. Find (a) the greatest height of the ball above the ground, (b) the time after which it hits the ground and (c) its velocity just before it hits the ground.",
+     "a": "(a) Rise above the point of projection: 0 = v0^2 + 2a(y - y0) = 10^2 - 2 x 10 x (y - y0), so y - y0 = 5 m; greatest height = 40 + 5 = 45 m above the ground. (b) y = y0 + v0 t + (1/2) a t^2 with y = 0, y0 = 40 m, v0 = +10 m/s, a = -10 m/s^2: 0 = 40 + 10t - 5t^2, so t^2 - 2t - 8 = 0, (t - 4)(t + 2) = 0 and t = 4 s. (c) v = v0 + at = 10 - 10 x 4 = -30 m/s, that is 30 m/s directed downward.",
+     "s": [
+      [
+       "Rise of 5 m above the point of projection, so greatest height 45 m above the ground",
+       1
+      ],
+      [
+       "Time to reach the ground t = 4 s (from 0 = 40 + 10t - 5t^2, or 1 s to the top plus 3 s to fall 45 m from rest)",
+       1
+      ],
+      [
+       "v = 10 - 10 x 4 = -30 m/s (30 m/s downward)",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "assertion_reason",
+     "m": 1,
+     "q": "Assertion (A): A ball thrown vertically upward has, at its highest point, an acceleration of magnitude g directed downward (air resistance neglected). Reason (R): The velocity of the ball is zero at its highest point. Choose the correct option.",
+     "a": "Both A and R are true, but R is not the correct explanation of A",
+     "o": [
+      "Both A and R are true, but R is not the correct explanation of A",
+      "Both A and R are true, and R is the correct explanation of A",
+      "A is true, R is false",
+      "A is false, R is true"
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 3,
+     "q": "A ball is thrown vertically upward and later returns. Choose x = 0 and t = 0 at the highest point of its motion and take the vertically downward direction as the positive direction of the x-axis. Give the signs of the position, the velocity and the acceleration of the ball (a) during its upward motion and (b) during its downward motion. Neglect air resistance.",
+     "a": "Every point of the path lies below the highest point, so the position x is positive during both the upward and the downward motion. The velocity is negative during the upward motion (the ball moves towards -x) and positive during the downward motion. The acceleration is due to gravity and is directed downward throughout, so it is positive during both the upward and the downward motion.",
+     "s": [
+      [
+       "Position positive in both parts of the motion",
+       1
+      ],
+      [
+       "Velocity negative while moving up and positive while moving down",
+       1
+      ],
+      [
+       "Acceleration positive (downward) in both parts",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hardest",
+     "t": "long_answer",
+     "m": 3,
+     "q": "A body falls freely from rest. Divide the time of fall into equal intervals, each of duration tau, and work out, with proof, the ratio of the distances traversed in the first, second and third intervals. Take the upward direction as positive and neglect air resistance.",
+     "a": "With zero initial velocity, y = -(1/2) g t^2. Write y0 = -(1/2) g tau^2 for the position at t = tau. Then the positions at t = tau, 2 tau and 3 tau are y0, 4 y0 and 9 y0, since y grows as t^2. The distances traversed in the successive intervals are y0 - 0 = y0, 4 y0 - y0 = 3 y0 and 9 y0 - 4 y0 = 5 y0 (in magnitude). Their ratio is 1 : 3 : 5.",
+     "s": [
+      [
+       "y = -(1/2) g t^2, giving positions y0, 4 y0, 9 y0 at t = tau, 2 tau, 3 tau",
+       1
+      ],
+      [
+       "Distances in successive intervals are the differences: y0, 3 y0, 5 y0",
+       1
+      ],
+      [
+       "Ratio 1 : 3 : 5",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Evaluate",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "q": "A stone is dropped from rest; take the downward direction as positive and g = 10 m/s^2, and neglect air resistance. A student reasons: 'It falls 5 m in the first second, so it falls 5 m in every second and 15 m in 3 s.' Evaluate this reasoning and give the correct distance fallen in 3 s.",
+     "a": "The first step is right: (1/2) x 10 x 1^2 = 5 m. The rest is wrong, because the stone's speed keeps increasing, so it covers more distance in each later second. The distance fallen from rest grows as the square of the time: in 3 s it is (1/2) x 10 x 3^2 = 45 m (5 m, 15 m and 25 m in the three successive seconds).",
+     "s": [
+      [
+       "The distance fallen per second is not constant because the velocity keeps increasing (distance grows as t^2)",
+       1
+      ],
+      [
+       "Correct distance in 3 s = (1/2) x 10 x 9 = 45 m",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Create",
+     "d": "Hardest",
+     "t": "long_answer",
+     "m": 3,
+     "q": "Plan an experiment to estimate your own reaction time using only a ruler and a friend. Describe the procedure, derive the formula you will use, work out the reaction time for a sample reading of your own choice (take g = 9.8 m/s^2), and suggest one way of making the estimate more reliable.",
+     "a": "Procedure: a friend holds a ruler vertically and drops it without warning through the gap between my thumb and forefinger; I catch it as quickly as I can and note the distance d the ruler has fallen. Formula: the ruler falls freely from rest, so d = (1/2) g t^2 and the reaction time is t = sqrt(2d/g). Sample: if d = 44.1 cm = 0.441 m, t = sqrt(2 x 0.441/9.8) = sqrt(0.09) = 0.3 s. Improvement: repeat the drop several times and use the average distance (and make sure the release is not signalled in advance).",
+     "s": [
+      [
+       "Procedure: ruler dropped by a friend through the gap between thumb and forefinger, distance fallen before the catch is measured",
+       1
+      ],
+      [
+       "Free fall from rest: d = (1/2) g t^2, so t = sqrt(2d/g)",
+       1
+      ],
+      [
+       "A sample reading converted to metre and the time computed correctly, with one sensible improvement such as repeating and averaging",
+       1
+      ]
+     ]
+    }
+   ]
+  }
+ ]
+}

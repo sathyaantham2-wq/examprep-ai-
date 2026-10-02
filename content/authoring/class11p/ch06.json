@@ -1,0 +1,3030 @@
+{
+ "subject": {
+  "code": "PHY11",
+  "name": "Physics",
+  "board": "CBSE",
+  "class": 11
+ },
+ "source": {
+  "publisher": "NCERT",
+  "title": "Physics Part I",
+  "edition": "Textbook for Class XI Part I, Reprint 2026-27",
+  "year": 2026
+ },
+ "chapter": {
+  "part": "I",
+  "chapter_no": 6,
+  "name": "Systems of Particles and Rotational Motion",
+  "blurb": "The chapter goes beyond the single particle to extended bodies: it defines the centre of mass of a system of particles, shows that it moves as if all the external forces acted on the whole mass placed there, and introduces the vector product. It then builds rotational motion about a fixed axis in parallel with linear motion: angular velocity and acceleration, torque, angular momentum, moment of inertia, and the equation tau = I alpha. It also covers the equilibrium of rigid bodies with the principle of moments and the centre of gravity, and the conservation of angular momentum.",
+  "source_code": "keph106",
+  "order_index": 6
+ },
+ "scope_in": [
+  {
+   "item": "State what a rigid body is and classify its motion as pure translation, rotation about a fixed axis, rotation with one point fixed (top, oscillating fan) or a combination of translation and rotation (rolling described qualitatively)",
+   "pages": "92-95"
+  },
+  {
+   "item": "Locate the centre of mass of two, three and n particles from X = (sum of m_i x_i)/M and its y, z and vector forms; use the property that the sum of m_i r_i is zero about the centre of mass",
+   "pages": "95-96"
+  },
+  {
+   "item": "Use symmetry to place the centre of mass of homogeneous rods, rings, discs, spheres, cylinders and cubes at the geometric centre, of a triangular lamina at the centroid, and find it for an L-shaped lamina or a disc with a hole by replacing pieces with point masses (Examples 6.1-6.3, Exercises 6.1, 6.2, 6.15)",
+   "pages": "97-99, 125-126"
+  },
+  {
+   "item": "Use M A = F_ext: the centre of mass moves as if all mass and all external forces were concentrated there; internal forces cancel by Newton's third law (exploding projectile)",
+   "pages": "99-100"
+  },
+  {
+   "item": "Use P = M V and dP/dt = F_ext; apply conservation of total linear momentum and constancy of the centre-of-mass velocity when the external force is zero (radioactive decay, binary stars, child on a trolley)",
+   "pages": "100-101, 125"
+  },
+  {
+   "item": "Define the vector product: magnitude ab sin(theta), direction by the right-handed screw / right-hand rule; use its properties (non-commutative, distributive, a x a = 0, behaviour under reflection), the unit-vector products and the determinant form (Example 6.4, Exercise 6.4)",
+   "pages": "101-103, 125"
+  },
+  {
+   "item": "Use angular velocity as common to all particles of a body rotating about a fixed axis, v = omega r and v = omega x r, the direction of omega along the axis, and angular acceleration alpha = d(omega)/dt",
+   "pages": "103-105"
+  },
+  {
+   "item": "Apply the kinematic equations of rotation with uniform angular acceleration, including conversion between rev/min and rad/s (Examples 6.10, 6.11)",
+   "pages": "116-118"
+  },
+  {
+   "item": "Compute torque tau = r x F and angular momentum l = r x p of a particle (magnitudes via perpendicular distance, directions via the right-hand rule), use dl/dt = tau, and state when each is zero (Examples 6.5, 6.6, Exercises 6.6, 6.7)",
+   "pages": "105-109, 125"
+  },
+  {
+   "item": "For a system of particles use dL/dt = tau_ext, explain why internal torques cancel, and state the conservation of total angular momentum when the external torque is zero",
+   "pages": "107-108"
+  },
+  {
+   "item": "State and apply the two conditions of mechanical equilibrium, recognise partial equilibrium and couples, and show that the moment of a couple is independent of the origin (Example 6.7)",
+   "pages": "109-111"
+  },
+  {
+   "item": "Apply the principle of moments to levers (load arm x load = effort arm x effort, mechanical advantage) and to bars, metre sticks, cars and ladders in equilibrium with weight acting at the centre of gravity (Examples 6.8, 6.9, Exercises 6.9, 6.16)",
+   "pages": "111-114, 125-126"
+  },
+  {
+   "item": "Define the centre of gravity as the point of zero total gravitational torque, relate it to the centre of mass, and describe finding it by balancing or by suspension",
+   "pages": "112-113"
+  },
+  {
+   "item": "Define moment of inertia I = sum of m_i r_i^2 through K = (1/2) I omega^2, recall and use the eight entries of Table 6.1, the radius of gyration (I = M k^2) and the purpose of a flywheel (Exercise 6.11)",
+   "pages": "114-116, 126"
+  },
+  {
+   "item": "Use dW = tau d(theta), P = tau omega and tau = I alpha for rotation about a fixed axis, including a cord wound on a wheel or cylinder (Example 6.12, Exercises 6.10, 6.13, 6.14)",
+   "pages": "118-120, 126"
+  },
+  {
+   "item": "Use L = I omega for a body rotating about a fixed axis of symmetry and the conservation of I omega when no external torque acts (swivel chair, acrobat, diver, turntable; Exercise 6.12)",
+   "pages": "121-123, 126"
+  }
+ ],
+ "scope_out": [
+  {
+   "item": "Theorem of perpendicular axes and theorem of parallel axes",
+   "reason": "Not present in this rationalised edition: Section 6.9 (pp. 114-116) goes straight from the definition to Table 6.1, and no theorem, example or exercise uses them"
+  },
+  {
+   "item": "Rolling motion as a quantitative topic: v_cm = R omega, kinetic energy of a rolling body, rolling down an inclined plane, role of friction in rolling",
+   "reason": "The section on rolling motion is absent (the chapter ends with 6.12); rolling appears only qualitatively on pp. 93 and 95 as translation plus rotation with the point of contact at rest"
+  },
+  {
+   "item": "Moments of inertia of bodies or axes not listed in Table 6.1: rod about one end, hollow or thin spherical shell, disc or ring about a tangent, rectangular lamina, cone",
+   "reason": "Table 6.1 (p. 116) lists only eight cases, and without the axis theorems the others cannot be obtained"
+  },
+  {
+   "item": "Deriving moments of inertia of continuous bodies by integration",
+   "reason": "The book states that the derivations of the Table 6.1 expressions are beyond its scope (p. 115)"
+  },
+  {
+   "item": "Centre of mass of non-uniform or curved bodies by integration (semicircular ring or disc, hemisphere, cone, rod of varying density)",
+   "reason": "Only symmetry arguments and composite laminas are used (pp. 97-99); the integrals of Eq. 6.5 are stated but never evaluated"
+  },
+  {
+   "item": "Precession and gyroscopic motion as a quantitative topic, including the boxed 'experiment with the bicycle rim'",
+   "reason": "Precession is only named (p. 94) and the bicycle-rim box (p. 107) is an activity; the chapter restricts itself to rotation about a fixed axis"
+  },
+  {
+   "item": "Scalar triple product a . (b x c) and the volume of a parallelepiped",
+   "reason": "Appears only as Exercise 6.5 (p. 125); it is not taught in the text"
+  },
+  {
+   "item": "Separation of kinetic energy into that of the centre of mass and that about the centre of mass (K = K' + M V^2/2)",
+   "reason": "Mentioned only in Points to Ponder (p. 124), which is not examinable text"
+  },
+  {
+   "item": "Rotational kinematics with non-uniform angular acceleration, and the centripetal (radial) and resultant acceleration of a point of a rotating body",
+   "reason": "Section 6.10 (pp. 116-118) treats uniform angular acceleration only; the linear acceleration of a point is needed only as a = R alpha for a rope unwinding without slipping (Exercise 6.13, p. 126)"
+  },
+  {
+   "item": "Angular momentum of bodies not symmetric about the axis of rotation (calculating the perpendicular component of L)",
+   "reason": "Only noted qualitatively on p. 121; the book treats bodies symmetric about the axis"
+  },
+  {
+   "item": "Collisions, reduced mass, variable-mass systems (rockets) and angular impulse",
+   "reason": "Not in this chapter; the momentum of a system is used only for conservation when the external force is zero (pp. 100-101)"
+  },
+  {
+   "item": "Connected-body problems with pulleys that have mass, toppling and stability, and limiting friction (coefficient of friction) for a ladder",
+   "reason": "Not treated; the ladder of Example 6.9 (pp. 113-114) only finds the reaction and friction forces needed for equilibrium"
+  },
+  {
+   "item": "Non-coincidence of centre of gravity and centre of mass worked out for very extended bodies",
+   "reason": "Only the statement that they differ when g varies over the body is made (p. 113); no calculation is given"
+  }
+ ],
+ "concepts": [
+  {
+   "code": "C11P-6.1",
+   "name": "Rigid bodies and the kinds of motion they can have",
+   "description": "The idea of a rigid body, pure translation, rotation about a fixed axis, rotation with only one point fixed, and motion that combines translation with rotation.",
+   "idea": "A rigid body keeps the distance between every pair of its particles fixed, and its motion is pure translation, rotation, or a combination of the two.",
+   "rule": "Ideally a rigid body has a perfectly definite and unchanging shape; no real body is truly rigid, but the deformations are often negligible. In pure translation all particles have the same velocity at any instant. A body fixed along a straight line can only rotate about that line (the axis of rotation): every particle moves in a circle that lies in a plane perpendicular to the axis and has its centre on the axis, and particles on the axis stay at rest. In more general rotation (a spinning top, an oscillating table fan) only one point is fixed; the axis passes through that point but is not fixed, and the movement of a top's axis around the vertical is called precession. A body that is not pivoted or fixed has either pure translation or a combination of translation and rotation (a cylinder rolling down an incline); a body pivoted or fixed in some way has rotation. This chapter treats rotation about a fixed axis only.",
+   "example": "A potter's wheel and a merry-go-round rotate about a fixed axis; a box pushed across a floor without turning is in pure translation.",
+   "difficulty_base": "Easy",
+   "questions": [
+    {
+     "b": "Remember",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "Ideally, a rigid body is a body in which",
+     "a": "the distances between all pairs of its particles do not change",
+     "o": [
+      "the distances between all pairs of its particles do not change",
+      "all the particles always move with the same velocity",
+      "the whole mass is concentrated at a single point",
+      "no external force can ever act"
+     ]
+    },
+    {
+     "b": "Remember",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "In pure translational motion of a rigid body, at any instant of time all the particles of the body have the same",
+     "a": "velocity",
+     "o": [
+      "velocity",
+      "distance from a fixed axis",
+      "circular path",
+      "kinetic energy, whatever their masses"
+     ]
+    },
+    {
+     "b": "Remember",
+     "d": "Easy",
+     "t": "fill_blank",
+     "m": 1,
+     "q": "The axis of a top spinning in place moves around the vertical through its point of contact with the ground, sweeping out a cone. This movement of the axis is termed ____ (one word).",
+     "a": "precession"
+    },
+    {
+     "b": "Remember",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "q": "Which of the following is NOT true of a rigid body rotating about a fixed axis?",
+     "a": "The circles described by all its particles have the same radius",
+     "o": [
+      "The circles described by all its particles have the same radius",
+      "Every particle off the axis moves in a circle",
+      "The centre of the circle described by each particle lies on the axis",
+      "Particles lying on the axis remain stationary"
+     ],
+     "rev": true
+    },
+    {
+     "b": "Understand",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "Wheels, steel beams, molecules and planets are treated as rigid bodies in many situations because",
+     "a": "their warping, bending and vibration are negligible there and can be ignored",
+     "o": [
+      "their warping, bending and vibration are negligible there and can be ignored",
+      "no force of any kind acts on them",
+      "all their particles are permanently at rest",
+      "their whole mass is concentrated at one point"
+     ]
+    },
+    {
+     "b": "Understand",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "A top spins in place on the ground. Saying that the top does not slip from place to place means that the top has no",
+     "a": "translational motion",
+     "o": [
+      "translational motion",
+      "rotational motion",
+      "axis of rotation",
+      "fixed point"
+     ]
+    },
+    {
+     "b": "Understand",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "Why is no real body truly rigid?",
+     "a": "Real bodies deform under the influence of forces",
+     "o": [
+      "Real bodies deform under the influence of forces",
+      "Real bodies always rotate when a force acts on them",
+      "Real bodies have a finite mass",
+      "Real bodies are made of particles that are all at rest"
+     ]
+    },
+    {
+     "b": "Understand",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "q": "P1 and P2 are two particles of a rigid body rotating about a fixed axis, at different distances from the axis. The circles they describe",
+     "a": "may lie in different planes, but both planes are perpendicular to the axis",
+     "o": [
+      "may lie in different planes, but both planes are perpendicular to the axis",
+      "must lie in one and the same plane",
+      "lie in planes that contain the axis",
+      "have their centres at the centre of mass of the body, not on the axis"
+     ]
+    },
+    {
+     "b": "Understand",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "q": "In rotation of a rigid body about a fixed axis, which quantity is the same for every particle of the body at a given instant?",
+     "a": "Angular velocity",
+     "o": [
+      "Angular velocity",
+      "Linear speed",
+      "Radius of the circular path",
+      "Linear velocity"
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "Which of the following is an example of rotation of a rigid body about a fixed axis?",
+     "a": "A ceiling fan running at a steady setting",
+     "o": [
+      "A ceiling fan running at a steady setting",
+      "A top whose axis sweeps out a cone as it spins",
+      "A cylinder rolling down an inclined plane",
+      "A block sliding down an inclined plane"
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Easy",
+     "t": "fill_blank",
+     "m": 1,
+     "q": "A wheel rotates about a fixed axle at 5 rad/s. A particle of the wheel lies exactly on the axis of rotation. Its speed is ____ m/s (write a whole number).",
+     "a": "0"
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "q": "A giant wheel in a fair turns about its fixed horizontal axle. A point on the rim of the wheel moves in",
+     "a": "a circle in a vertical plane, with its centre on the axle",
+     "o": [
+      "a circle in a vertical plane, with its centre on the axle",
+      "a circle in a horizontal plane, with its centre on the axle",
+      "a straight vertical line",
+      "a circle whose centre is the lowest point of the wheel"
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "q": "At three instants the line OP joining two points O and P of a rigid body makes angles of 30 degrees, 45 degrees and 70 degrees with the horizontal, while O moves along a curved path. Identify the kind of motion and justify your answer.",
+     "a": "The motion is a combination of translation and rotation. In pure translation all particles have the same velocity at every instant, so the orientation of any line such as OP would stay the same; here the angle changes, so the body is also rotating while it moves along the path.",
+     "s": [
+      [
+       "Combination of translation and rotation",
+       1
+      ],
+      [
+       "Reason - in pure translation the orientation of OP (the angle with a fixed direction) would not change / O and P would have equal velocities",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "q": "What kinds of motion are possible for a rigid body (a) that is not pivoted or fixed in any way, and (b) that is pivoted or fixed in some way?",
+     "a": "(a) Either pure translation or a combination of translation and rotation. (b) Rotation, which may be about an axis that is fixed (a line of the body is fixed) or about an axis that moves while one point stays fixed.",
+     "s": [
+      [
+       "(a) Pure translation or a combination of translation and rotation",
+       1
+      ],
+      [
+       "(b) Rotation (about a fixed or a moving axis)",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hardest",
+     "t": "long_answer",
+     "m": 3,
+     "q": "A cylinder rolls without slipping down an inclined plane. (a) Explain why this is not pure translation. (b) Name the two motions it combines. (c) State the velocity, at any instant, of the point of the cylinder that is in contact with the plane.",
+     "a": "(a) In pure translation all particles would have the same velocity at any instant; in rolling, different points of the cylinder (top, centre, sides, point of contact) have different velocities at the same instant. (b) Rolling is a combination of translation and rotation about the cylinder's axis. (c) If the cylinder rolls without slipping, the point of contact has zero velocity at any instant.",
+     "s": [
+      [
+       "Different points have different velocities at the same instant, so not pure translation",
+       1
+      ],
+      [
+       "Rolling = translation plus rotation",
+       1
+      ],
+      [
+       "Velocity of the point of contact is zero at any instant",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "assertion_reason",
+     "m": 1,
+     "q": "Assertion (A): A top spinning in place, without slipping from place to place, is not in rotation about a fixed axis. Reason (R): While such a top spins, no point of the top remains fixed. Choose the correct option.",
+     "a": "A is true, R is false",
+     "o": [
+      "A is true, R is false",
+      "Both A and R are true, and R is the correct explanation of A",
+      "Both A and R are true, but R is not the correct explanation of A",
+      "A is false, R is true"
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "q": "Two particles P and Q of a rigid body rotating about a fixed axis are at the same perpendicular distance from the axis, but Q lies farther along the axis than P. Compare the circles the two particles describe: their radii, their centres and the planes in which they lie.",
+     "a": "Both circles have the same radius, equal to the common perpendicular distance of P and Q from the axis. Their centres are two different points, each on the axis directly opposite its own particle. The circles lie in two different planes, both perpendicular to the axis and therefore parallel to each other.",
+     "s": [
+      [
+       "Same radius (equal perpendicular distances); the centres are two different points on the axis",
+       1
+      ],
+      [
+       "Two different planes, both perpendicular to the axis (so parallel to each other)",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hardest",
+     "t": "long_answer",
+     "m": 3,
+     "q": "A rigid body rotates about the fixed z-axis. Three of its particles are at A (2, 0, 1), B (0, 4, 1) and C (0, 0, 3), coordinates in metres. (a) Describe the path of A and of B, giving the radius, the centre and the plane of each. (b) Describe the motion of C. (c) In the time A goes once round its path, how many times does B go round its own path, and how do the distances they travel compare?",
+     "a": "(a) A moves in a circle of radius 2 m and B in a circle of radius 4 m (their perpendicular distances from the z-axis). Both circles lie in the plane z = 1 m, which is perpendicular to the axis, and both have their centre at (0, 0, 1) m on the axis. (b) C lies on the axis, so it remains stationary. (c) The body is rigid, so all its particles turn through the same angle in the same time: B also goes round exactly once. Its circle has twice the radius, so it travels twice the distance (8 pi m against 4 pi m).",
+     "s": [
+      [
+       "A: radius 2 m, B: radius 4 m, both circles in the plane z = 1 m with centre (0, 0, 1) m on the axis",
+       1
+      ],
+      [
+       "C is on the axis and stays at rest",
+       1
+      ],
+      [
+       "B also completes one round; it travels twice the distance A does",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Evaluate",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "q": "A student says: 'The blades of an oscillating table fan rotate about a fixed axis, because the pivot of the fan never moves.' Evaluate this statement.",
+     "a": "The statement is incorrect. Rotation about a fixed axis requires a whole line of the body to stay fixed. In the oscillating fan the axis of rotation of the blades swings sidewise in a horizontal plane; only one point, the pivot through which the axis always passes, is fixed. It is therefore rotation with one point fixed and a moving axis.",
+     "s": [
+      [
+       "Judgement - incorrect: one fixed point is not a fixed axis (a fixed line is required)",
+       1
+      ],
+      [
+       "The axis of rotation of the blades itself moves sidewise, though it always passes through the pivot",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Create",
+     "d": "Hardest",
+     "t": "long_answer",
+     "m": 3,
+     "q": "Using a heavy book as the rigid body, design a demonstration that shows (a) pure translation and (b) a combination of translation and rotation, with the book taken along the same path on a table both times. State what an observer should look at to tell the two apart.",
+     "a": "Mark two points O and P on the cover and draw the line OP. (a) Slide the book along a chosen path on the table keeping the line OP always parallel to its starting direction: every point moves with the same velocity, so this is pure translation. (b) Take the point O along the same path again, but this time keep turning the book as it goes: this is translation plus rotation. The observer watches the angle that OP makes with a fixed direction (say an edge of the table): it stays constant in (a) and changes in (b).",
+     "s": [
+      [
+       "A workable set-up with a marked line on the book and one path for both runs",
+       1
+      ],
+      [
+       "(a) orientation kept fixed - pure translation; (b) book turned while moving - translation plus rotation",
+       1
+      ],
+      [
+       "Test - the angle of the marked line with a fixed direction stays constant in (a) and changes in (b)",
+       1
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "code": "C11P-6.2",
+   "name": "Centre of mass of a system of particles and of a rigid body",
+   "description": "Locating the centre of mass of two, three and many particles from the mass-weighted mean of their positions, and of homogeneous bodies and laminas by symmetry.",
+   "idea": "The centre of mass is the mass-weighted mean position of all the particles of a system.",
+   "rule": "For two particles on the x-axis X = (m1 x1 + m2 x2)/(m1 + m2); for equal masses the centre of mass is midway between them. For n particles X = (sum of m_i x_i)/M, Y = (sum of m_i y_i)/M, Z = (sum of m_i z_i)/M with M the total mass; in vector form R = (sum of m_i r_i)/M. For three particles of equal mass it is the centroid of the triangle they form. With the origin at the centre of mass, the sum of m_i r_i is zero. A rigid body is treated as a continuous distribution: X = (1/M) integral of x dm, and so on. For homogeneous bodies of regular shape (thin rod, ring, disc, sphere, cylinder, cube) reflection symmetry places the centre of mass at the geometric centre; for a uniform triangular lamina it is the centroid, where the medians meet. A lamina made of simple pieces is handled by replacing each piece with a point mass at its own centre of mass.",
+   "example": "Particles of 1 kg at x = 0 and 4 kg at x = 5 m: X = (1 x 0 + 4 x 5)/(1 + 4) = 4 m, nearer the heavier particle.",
+   "difficulty_base": "Easy",
+   "questions": [
+    {
+     "b": "Remember",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "For a system of two particles of equal mass, the centre of mass lies",
+     "a": "exactly midway between the two particles",
+     "o": [
+      "exactly midway between the two particles",
+      "at the position of one of the particles",
+      "at the origin of the coordinate system, wherever that is chosen",
+      "on the perpendicular bisector of the line joining them, away from that line"
+     ]
+    },
+    {
+     "b": "Remember",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "The centre of mass of a uniform triangular lamina lies at",
+     "a": "its centroid, the point where the three medians meet",
+     "o": [
+      "its centroid, the point where the three medians meet",
+      "the midpoint of its longest side",
+      "the vertex opposite its longest side",
+      "the point where the three altitudes meet, for every triangle"
+     ]
+    },
+    {
+     "b": "Remember",
+     "d": "Easy",
+     "t": "fill_blank",
+     "m": 1,
+     "q": "If the origin of the coordinate system is chosen at the centre of mass of a system of particles, the sum of the products m_i x_i taken over all the particles is ____ (write a whole number).",
+     "a": "0"
+    },
+    {
+     "b": "Remember",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "q": "Which of the following statements about locating a centre of mass is NOT correct?",
+     "a": "For two particles of unequal mass, the centre of mass lies closer to the lighter particle",
+     "o": [
+      "For two particles of unequal mass, the centre of mass lies closer to the lighter particle",
+      "For two particles, the centre of mass lies on the line joining them",
+      "For a homogeneous cube, the centre of mass is at its geometric centre",
+      "In the formula for the centre of mass, M is the sum of the masses of all the particles"
+     ],
+     "rev": true
+    },
+    {
+     "b": "Understand",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "Why does the centre of mass of a homogeneous thin rod lie at its geometric centre?",
+     "a": "For every element of mass at x from the centre there is an equal element at -x, so their contributions cancel",
+     "o": [
+      "For every element of mass at x from the centre there is an equal element at -x, so their contributions cancel",
+      "Because all the mass of the rod is located at its centre",
+      "Because the two ends of the rod are heavier than the middle",
+      "Because the centre of mass of every body lies at its geometric centre, whatever its mass distribution"
+     ]
+    },
+    {
+     "b": "Understand",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "For two particles on the x-axis, X = (m1 x1 + m2 x2)/(m1 + m2). X can be regarded as",
+     "a": "the mass-weighted mean of x1 and x2",
+     "o": [
+      "the mass-weighted mean of x1 and x2",
+      "the simple average of x1 and x2, whatever the masses",
+      "the distance between the two particles",
+      "the position of the heavier particle"
+     ]
+    },
+    {
+     "b": "Understand",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "In finding the centre of mass of a rigid body such as a metre stick, the sums over particles are replaced by integrals because",
+     "a": "the particles are so many and so closely spaced that the body can be treated as a continuous distribution of mass",
+     "o": [
+      "the particles are so many and so closely spaced that the body can be treated as a continuous distribution of mass",
+      "the particles of a rigid body have no mass",
+      "the formula for a system of particles does not apply to a rigid body",
+      "a rigid body has only one particle"
+     ]
+    },
+    {
+     "b": "Understand",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "q": "Particles of masses 100 g, 150 g and 200 g are placed at the three vertices of an equilateral triangle. Their centre of mass is not at the geometric centre of the triangle because",
+     "a": "the masses are unequal, so the mass-weighted mean is shifted towards the heavier particles",
+     "o": [
+      "the masses are unequal, so the mass-weighted mean is shifted towards the heavier particles",
+      "the centre of mass of three particles always lies at a vertex",
+      "the triangle is equilateral",
+      "the particles do not lie along a straight line"
+     ]
+    },
+    {
+     "b": "Understand",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "q": "Where is the centre of mass of a thin uniform ring?",
+     "a": "At the centre of the ring, a point where there is no material of the ring",
+     "o": [
+      "At the centre of the ring, a point where there is no material of the ring",
+      "At a point on the rim of the ring",
+      "At the midpoint of a radius of the ring",
+      "It is not defined, because the centre is empty"
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "A particle of mass 2 kg is at x = 0 and a particle of mass 6 kg is at x = 4 m. The centre of mass of the two is at x =",
+     "a": "3 m",
+     "o": [
+      "3 m",
+      "2 m",
+      "1 m",
+      "24 m"
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Easy",
+     "t": "fill_blank",
+     "m": 1,
+     "q": "Three particles of equal mass are placed at (0, 0), (3, 0) and (0, 6), all in metres. The y-coordinate of their centre of mass is ____ m (write a whole number).",
+     "a": "2"
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "q": "Particles of masses 1 kg, 2 kg and 3 kg are placed at (0, 0), (1, 0) and (0, 2) respectively, all coordinates in metres. The centre of mass (X, Y) is at",
+     "a": "(1/3 m, 1 m)",
+     "o": [
+      "(1/3 m, 1 m)",
+      "(1/3 m, 2/3 m)",
+      "(1 m, 1/3 m)",
+      "(2 m, 6 m)"
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "q": "Two particles of masses m and 3m are 0.8 m apart. How far from the lighter particle is their centre of mass?",
+     "a": "Take the lighter particle at x = 0 and the heavier at x = 0.8 m. X = (m x 0 + 3m x 0.8)/(m + 3m) = 2.4m/4m = 0.6 m. The centre of mass is 0.6 m from the lighter particle (0.2 m from the heavier one).",
+     "s": [
+      [
+       "Sets up X = (m1 x1 + m2 x2)/(m1 + m2) with a clearly stated origin",
+       1
+      ],
+      [
+       "X = 0.6 m from the lighter particle",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "q": "A uniform thin rod of mass 2 kg lies along the x-axis from x = 0 to x = 1 m. A particle of mass 2 kg is fixed on the x-axis at x = 2 m. Find the x-coordinate of the centre of mass of the system.",
+     "a": "The rod is uniform, so its centre of mass is at its mid-point, x = 0.5 m; replace it by a 2 kg point mass there. X = (2 x 0.5 + 2 x 2)/(2 + 2) = 5/4 = 1.25 m.",
+     "s": [
+      [
+       "Rod replaced by a 2 kg point mass at its mid-point x = 0.5 m",
+       1
+      ],
+      [
+       "X = (2 x 0.5 + 2 x 2)/4 = 1.25 m",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hardest",
+     "t": "long_answer",
+     "m": 3,
+     "q": "An L-shaped lamina is made of three square plates, each of side 1 m. With coordinates in metres the squares occupy 0 <= x <= 1, 0 <= y <= 1 (mass 2 kg); 1 <= x <= 2, 0 <= y <= 1 (mass 1 kg); and 0 <= x <= 1, 1 <= y <= 2 (mass 1 kg). Each square is uniform. Find the coordinates of the centre of mass of the lamina.",
+     "a": "Each uniform square has its centre of mass at its geometric centre: (0.5, 0.5), (1.5, 0.5) and (0.5, 1.5). Treat them as point masses of 2 kg, 1 kg and 1 kg. X = (2 x 0.5 + 1 x 1.5 + 1 x 0.5)/4 = 3/4 = 0.75 m. Y = (2 x 0.5 + 1 x 0.5 + 1 x 1.5)/4 = 3/4 = 0.75 m. The centre of mass is at (0.75 m, 0.75 m).",
+     "s": [
+      [
+       "Each square replaced by a point mass at its centre: (0.5, 0.5), (1.5, 0.5), (0.5, 1.5)",
+       1
+      ],
+      [
+       "X = 0.75 m",
+       1
+      ],
+      [
+       "Y = 0.75 m",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "multi_statement",
+     "m": 1,
+     "q": "(I) For three particles of equal mass that do not lie on one straight line, the centre of mass coincides with the centroid of the triangle formed by the particles. (II) For a body treated as a continuous distribution of mass M, the x-coordinate of the centre of mass is (1/M) times the integral of x dm. Which is or are correct?",
+     "a": "Both I and II",
+     "o": [
+      "Both I and II",
+      "Only I",
+      "Only II",
+      "Neither I nor II"
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "q": "A uniform L-shaped lamina consists of three identical squares of side 1 m occupying 0 <= x <= 1, 0 <= y <= 1; 1 <= x <= 2, 0 <= y <= 1; and 0 <= x <= 1, 1 <= y <= 2 (metres). Without calculating, explain why its centre of mass must lie on the line y = x.",
+     "a": "The lamina is symmetric about the line y = x: reflecting it in that line interchanges the two outer squares and leaves the corner square unchanged. For every element of mass on one side of the line there is an equal element at the mirror position on the other side, so the centre of mass cannot lie on either side; it must lie on the line y = x.",
+     "s": [
+      [
+       "The lamina is symmetric about the line y = x (the two outer squares are mirror images)",
+       1
+      ],
+      [
+       "Mass elements pair off on the two sides, so the centre of mass lies on the line of symmetry",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hardest",
+     "t": "long_answer",
+     "m": 3,
+     "q": "From a uniform circular disc of radius 12 cm, a circular hole of radius 6 cm is cut out. The centre of the hole is 6 cm from the centre O of the original disc. Locate the centre of mass of the remaining body.",
+     "a": "Take O as origin and the x-axis through the centre of the hole. Mass is proportional to area, so if the full disc has mass M, the removed piece has mass M/4 (its radius is half) and the remaining body 3M/4. The full disc is the remaining body plus the removed piece, and its centre of mass is at O: 0 = [(3M/4) x + (M/4)(6 cm)]/M. Hence x = -2 cm. The centre of mass of the remaining body is 2 cm from O, on the side opposite to the hole.",
+     "s": [
+      [
+       "Removed mass is M/4 and remaining mass 3M/4 (mass proportional to area)",
+       1
+      ],
+      [
+       "Full disc = remaining body + removed piece, with centre of mass at O: (3M/4) x + (M/4)(6 cm) = 0",
+       1
+      ],
+      [
+       "x = -2 cm: 2 cm from O on the side opposite the hole",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Evaluate",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "q": "To find the centre of mass of a uniform triangular lamina LMN, a student divides it into narrow strips parallel to the base MN and argues that the centre of mass lies on the median from L. Is the argument sound, and is it enough to fix the point?",
+     "a": "The argument is sound: each narrow strip has its centre of mass at its mid-point by symmetry, and the mid-points of all the strips lie on the median from L, so the centre of mass of the whole lamina lies on that median. It is not enough to fix the point; repeating the argument with strips parallel to another side shows it also lies on a second median, so it is at their point of intersection, the centroid.",
+     "s": [
+      [
+       "Sound - mid-points of the strips all lie on the median from L",
+       1
+      ],
+      [
+       "Not sufficient alone - a second median is needed; the intersection (centroid) is the centre of mass",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Create",
+     "d": "Hardest",
+     "t": "long_answer",
+     "m": 3,
+     "q": "Construct a system of three particles in the x-y plane, not all of the same mass and none placed at the origin, whose centre of mass is exactly at the origin. Give the masses and coordinates and verify your answer.",
+     "a": "One possible system: 2 kg at (1, 1) m, 1 kg at (-2, 0) m and 1 kg at (0, -2) m. Sum of m x = 2(1) + 1(-2) + 1(0) = 0, so X = 0. Sum of m y = 2(1) + 1(0) + 1(-2) = 0, so Y = 0. The centre of mass is at the origin. (Any set of masses and positions for which the sum of m x and the sum of m y are both zero is correct.)",
+     "s": [
+      [
+       "A valid choice of three unequal-mass particles, none at the origin",
+       1
+      ],
+      [
+       "Verification that the sum of m_i x_i is zero",
+       1
+      ],
+      [
+       "Verification that the sum of m_i y_i is zero",
+       1
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "code": "C11P-6.3",
+   "name": "Motion of the centre of mass and linear momentum of a system",
+   "description": "The equation of motion of the centre of mass, the total linear momentum of a system of particles and its conservation when the total external force is zero.",
+   "idea": "The centre of mass moves as if all the mass were concentrated there and all the external forces acted there; internal forces cannot change its motion.",
+   "rule": "Differentiating M R = sum of m_i r_i gives M V = sum of m_i v_i and M A = sum of m_i a_i = F1 + F2 + ... . Internal forces occur in equal and opposite pairs (Newton's third law) and cancel, so M A = F_ext. The total linear momentum is P = sum of m_i v_i = M V, and dP/dt = F_ext. If the total external force is zero, P is constant and the centre of mass moves with constant velocity, though individual particles may follow complicated paths. Illustrations: the centre of mass of the fragments of an exploding projectile continues on the same parabola; the products of the decay of a radium nucleus move so that their centre of mass keeps moving as the nucleus did, and back to back in the frame where the centre of mass is at rest; the two stars of a binary circle their centre of mass while it moves uniformly in a straight line.",
+   "example": "A system of total mass 3 kg acted on by a net external force of 12 N: the acceleration of its centre of mass is A = F_ext/M = 12/3 = 4 m/s^2, whatever the internal forces.",
+   "difficulty_base": "Hard",
+   "questions": [
+    {
+     "b": "Remember",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "For a system of particles of total mass M whose centre of mass has acceleration A, the product M A equals",
+     "a": "the vector sum of all the external forces acting on the system",
+     "o": [
+      "the vector sum of all the external forces acting on the system",
+      "the vector sum of all the internal forces of the system",
+      "the largest single force acting on any one particle",
+      "the total kinetic energy of the system"
+     ]
+    },
+    {
+     "b": "Remember",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "The total linear momentum of a system of particles is equal to",
+     "a": "the total mass of the system times the velocity of its centre of mass",
+     "o": [
+      "the total mass of the system times the velocity of its centre of mass",
+      "the total mass of the system times the speed of its fastest particle",
+      "the mass of the heaviest particle times the velocity of the centre of mass",
+      "the total mass of the system times the acceleration of its centre of mass"
+     ]
+    },
+    {
+     "b": "Remember",
+     "d": "Easy",
+     "t": "fill_blank",
+     "m": 1,
+     "q": "The total external force on a system of particles is zero. The acceleration of the centre of mass of the system is ____ m/s^2 (write a whole number).",
+     "a": "0"
+    },
+    {
+     "b": "Remember",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "q": "Which of the following is NOT needed in order to determine the motion of the centre of mass of a system of particles?",
+     "a": "The internal forces that the particles exert on one another",
+     "o": [
+      "The internal forces that the particles exert on one another",
+      "The total mass of the system",
+      "The external forces acting on the system",
+      "The initial velocity of the centre of mass"
+     ],
+     "rev": true
+    },
+    {
+     "b": "Understand",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "Why do the internal forces of a system not affect the acceleration of its centre of mass?",
+     "a": "By Newton's third law they occur in equal and opposite pairs, so they cancel in the sum of forces",
+     "o": [
+      "By Newton's third law they occur in equal and opposite pairs, so they cancel in the sum of forces",
+      "Because internal forces are always much weaker than external forces",
+      "Because internal forces act only at the centre of mass",
+      "Because internal forces do no work"
+     ]
+    },
+    {
+     "b": "Understand",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "A projectile explodes into fragments in mid-air. Neglecting air resistance, the total external force on the system of fragments just after the explosion is",
+     "a": "the force of gravity, the same as before the explosion",
+     "o": [
+      "the force of gravity, the same as before the explosion",
+      "zero, because the explosion forces cancel in pairs",
+      "the sum of the explosion forces on the fragments",
+      "greater than before, because there are now more bodies"
+     ]
+    },
+    {
+     "b": "Understand",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "A radium nucleus at rest decays into a radon nucleus and an alpha particle, with negligible external forces. The two products",
+     "a": "fly apart back to back, so that the total momentum stays zero",
+     "o": [
+      "fly apart back to back, so that the total momentum stays zero",
+      "move off together in the same direction",
+      "move off at right angles to each other",
+      "are such that the radon nucleus stays at rest and only the alpha particle moves"
+     ]
+    },
+    {
+     "b": "Understand",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "q": "In earlier chapters extended bodies were treated as single particles. What did that procedure assume, without saying so?",
+     "a": "That rotational motion and internal motion of the particles were absent or negligible",
+     "o": [
+      "That rotational motion and internal motion of the particles were absent or negligible",
+      "That no external force acts on an extended body",
+      "That an extended body has no centre of mass",
+      "That internal forces are larger than external forces"
+     ]
+    },
+    {
+     "b": "Understand",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "q": "The two stars of a binary system, free of external forces, trace complicated paths in our frame of reference. Each path is a combination of",
+     "a": "uniform straight-line motion of the centre of mass and a circular orbit about the centre of mass",
+     "o": [
+      "uniform straight-line motion of the centre of mass and a circular orbit about the centre of mass",
+      "two parabolic paths under gravity",
+      "a circular orbit about the other star, which stays at rest",
+      "accelerated straight-line motion of the centre of mass and a spin of each star"
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "A 2 kg particle moves along +x at 5 m/s and a 3 kg particle is at rest. The velocity of their centre of mass is",
+     "a": "2 m/s along +x",
+     "o": [
+      "2 m/s along +x",
+      "5 m/s along +x",
+      "2.5 m/s along +x",
+      "10 m/s along +x"
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Easy",
+     "t": "fill_blank",
+     "m": 1,
+     "q": "A system of particles of total mass 4 kg is acted on by a net external force of 20 N. The acceleration of its centre of mass is ____ m/s^2 (write a whole number).",
+     "a": "5"
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "q": "A particle of mass 1 kg has velocity 6i m/s and a particle of mass 2 kg has velocity 3j m/s. The velocity of their centre of mass is",
+     "a": "2i + 2j m/s",
+     "o": [
+      "2i + 2j m/s",
+      "6i + 3j m/s",
+      "3i + 1.5j m/s",
+      "6i + 6j m/s"
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "q": "A child sits at one end of a long trolley that moves uniformly at 2 m/s on a smooth horizontal floor. The child gets up and runs about on the trolley in any manner. What is the speed of the centre of mass of the (trolley + child) system while the child runs? Give the reason.",
+     "a": "It remains 2 m/s. The forces between the child and the trolley are internal to the system, and there is no external horizontal force on the system because the floor is smooth, so the velocity of the centre of mass cannot change.",
+     "s": [
+      [
+       "Speed of the centre of mass stays 2 m/s",
+       1
+      ],
+      [
+       "Reason - the child-trolley forces are internal and no external horizontal force acts",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "q": "A body at rest, free of external forces, bursts into two pieces of masses 2 kg and 3 kg. The 2 kg piece moves at 6 m/s along +x. Find the velocity of the 3 kg piece.",
+     "a": "The total external force is zero, so total linear momentum stays zero: 2 x 6 + 3 x v = 0, giving v = -4 m/s. The 3 kg piece moves at 4 m/s along -x.",
+     "s": [
+      [
+       "Total momentum conserved and equal to zero: 2 x 6 + 3v = 0",
+       1
+      ],
+      [
+       "v = 4 m/s along -x",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hardest",
+     "t": "long_answer",
+     "m": 3,
+     "q": "A shell is fired so that, unexploded, it would land 120 m from the gun on level ground. At the highest point of its path it explodes into two fragments of equal mass. The explosion gives the fragments only horizontal velocities; one fragment is left with zero velocity and falls straight down. Neglect air resistance. Find where the other fragment lands.",
+     "a": "The explosion forces are internal, so the centre of mass continues along the original parabola and reaches the ground 120 m from the gun. Both fragments start from the highest point with no vertical velocity, so they land at the same instant. The first falls straight down from the highest point, which is half-way, i.e. 60 m from the gun. For equal masses the centre of mass is midway: (60 + x)/2 = 120, so x = 180 m. The other fragment lands 180 m from the gun.",
+     "s": [
+      [
+       "Centre of mass follows the original parabola and lands at 120 m (explosion forces are internal)",
+       1
+      ],
+      [
+       "Both fragments land together; the first lands at 60 m, below the highest point",
+       1
+      ],
+      [
+       "(60 + x)/2 = 120, so x = 180 m from the gun",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "assertion_reason",
+     "m": 1,
+     "q": "Assertion (A): When a moving radium nucleus decays into a radon nucleus and an alpha particle, the centre of mass of the two products continues along the path on which the radium nucleus was moving. Reason (R): The forces leading to the decay are internal to the system and the external forces are negligible, so the total linear momentum of the system is unchanged. Choose the correct option.",
+     "a": "Both A and R are true, and R is the correct explanation of A",
+     "o": [
+      "Both A and R are true, and R is the correct explanation of A",
+      "Both A and R are true, but R is not the correct explanation of A",
+      "A is true, R is false",
+      "A is false, R is true"
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "q": "Blocks of masses 1 kg and 3 kg rest on a smooth horizontal table, joined by a stretched spring, and are released from rest. Describe the motion of their centre of mass, and compare the speeds of the two blocks at any later instant.",
+     "a": "The spring forces are internal and there is no external horizontal force, so the total momentum stays zero and the centre of mass stays at rest. Then 1 x v1 = 3 x v2 in magnitude, with the blocks moving in opposite directions, so the 1 kg block always moves three times as fast as the 3 kg block.",
+     "s": [
+      [
+       "Centre of mass remains at rest (no external horizontal force, initial momentum zero)",
+       1
+      ],
+      [
+       "m1 v1 = m2 v2, so the 1 kg block has three times the speed of the 3 kg block",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hardest",
+     "t": "long_answer",
+     "m": 3,
+     "q": "Starting from M R = m1 r1 + m2 r2 + ... + mn rn, show that M A = F_ext for a system of particles of constant masses, and point out exactly where Newton's third law is used.",
+     "a": "Differentiating once with respect to time gives M V = m1 v1 + ... + mn vn, and differentiating again gives M A = m1 a1 + ... + mn an. By Newton's second law m_i a_i = F_i, the total force on particle i, so M A = F1 + F2 + ... + Fn. Each F_i is the sum of external forces and internal forces from the other particles. By Newton's third law the internal forces occur in equal and opposite pairs, so their sum over the whole system is zero. Only external forces remain: M A = F_ext.",
+     "s": [
+      [
+       "Differentiate twice (masses constant): M A = sum of m_i a_i",
+       1
+      ],
+      [
+       "Second law for each particle: M A = F1 + F2 + ... + Fn",
+       1
+      ],
+      [
+       "Third law - internal forces cancel in pairs, leaving M A = F_ext",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Evaluate",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "q": "A student says: 'If the total external force on a system of particles is zero, every particle of the system moves with constant velocity.' Evaluate this statement.",
+     "a": "It is not correct. Zero total external force makes the total linear momentum, and therefore the velocity of the centre of mass, constant. The individual particles still exert internal forces on one another and may have complicated trajectories, as the two stars of a binary system do while their centre of mass moves uniformly.",
+     "s": [
+      [
+       "Judgement - incorrect: only the centre of mass (total momentum) is guaranteed constant velocity",
+       1
+      ],
+      [
+       "Reason - internal forces can still accelerate individual particles (e.g. binary stars, decay products)",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Create",
+     "d": "Hardest",
+     "t": "long_answer",
+     "m": 3,
+     "q": "Construct a numerical example of two particles on a line, free of external forces, in which an internal interaction changes the velocity of each particle but leaves the velocity of the centre of mass unchanged. Give masses and the velocities before and after, and verify.",
+     "a": "One possible example: A of 1 kg moving at 4 m/s and B of 3 kg at rest. Before: P = 1 x 4 + 3 x 0 = 4 kg m/s, V = P/M = 4/4 = 1 m/s. After they interact let A move at -2 m/s and B at +2 m/s: P = 1 x (-2) + 3 x 2 = 4 kg m/s, V = 1 m/s. Both individual velocities have changed, but the total momentum and hence the velocity of the centre of mass are the same. (Any example in which the total momentum before equals the total momentum after is correct.)",
+     "s": [
+      [
+       "Masses and initial velocities given, with total momentum and V = P/M found",
+       1
+      ],
+      [
+       "Final velocities that differ from the initial ones but give the same total momentum",
+       1
+      ],
+      [
+       "Verification that the velocity of the centre of mass is unchanged",
+       1
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "code": "C11P-6.4",
+   "name": "Vector product of two vectors",
+   "description": "Definition of the vector (cross) product, the right-hand rule for its direction, its properties, the products of the unit vectors and the component (determinant) form.",
+   "idea": "The vector product a x b is a vector of magnitude ab sin(theta), perpendicular to the plane of a and b, with its sense fixed by the right-hand rule.",
+   "rule": "c = a x b has magnitude ab sin(theta), where theta is the smaller angle (less than 180 degrees) between a and b; c is perpendicular to the plane containing a and b, in the direction a right-handed screw advances when turned from a to b (or the stretched thumb of the right hand when the fingers curl from a to b). It is not commutative: a x b = -(b x a). It does not change sign under reflection. It is distributive over addition: a x (b + c) = a x b + a x c. a x a = 0 (the null vector). For the unit vectors of a right-handed system: i x i = j x j = k x k = 0; i x j = k, j x k = i, k x i = j; j x i = -k, k x j = -i, i x k = -j (cyclic order positive). In components a x b = (a_y b_z - a_z b_y) i + (a_z b_x - a_x b_z) j + (a_x b_y - a_y b_x) k, which is the determinant with rows (i, j, k), (a_x, a_y, a_z), (b_x, b_y, b_z).",
+   "example": "With i x j = k: for a = i + j and b = i - j, a x b = (a_x b_y - a_y b_x) k = (1 x (-1) - 1 x 1) k = -2k.",
+   "difficulty_base": "Hard",
+   "questions": [
+    {
+     "b": "Remember",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "If theta is the angle between two vectors a and b of magnitudes a and b, the magnitude of the vector product a x b is",
+     "a": "ab sin(theta)",
+     "o": [
+      "ab sin(theta)",
+      "ab cos(theta)",
+      "ab tan(theta)",
+      "ab"
+     ]
+    },
+    {
+     "b": "Remember",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "The vector product a x b of two non-parallel vectors is directed",
+     "a": "perpendicular to the plane containing a and b",
+     "o": [
+      "perpendicular to the plane containing a and b",
+      "along a",
+      "along b",
+      "in the plane of a and b, along the bisector of the angle between them"
+     ]
+    },
+    {
+     "b": "Remember",
+     "d": "Easy",
+     "t": "fill_blank",
+     "m": 1,
+     "q": "i and j are unit vectors along the x- and y-axes of a right-handed coordinate system. The magnitude of the vector i x j is ____ (write a whole number).",
+     "a": "1"
+    },
+    {
+     "b": "Remember",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "q": "For the unit vectors i, j, k of a right-handed coordinate system (i x j = k), which of the following vector products is NOT written correctly?",
+     "a": "k x j = i",
+     "o": [
+      "k x j = i",
+      "j x k = i",
+      "i x k = -j",
+      "k x i = j"
+     ],
+     "rev": true
+    },
+    {
+     "b": "Understand",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "Why is the vector product of a vector with itself, a x a, the null vector?",
+     "a": "The angle between a and itself is zero, and sin 0 = 0",
+     "o": [
+      "The angle between a and itself is zero, and sin 0 = 0",
+      "The angle between a and itself is 90 degrees",
+      "A vector has no magnitude of its own",
+      "The vector product is defined only for unit vectors"
+     ]
+    },
+    {
+     "b": "Understand",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "How is b x a related to a x b?",
+     "a": "Same magnitude, opposite direction",
+     "o": [
+      "Same magnitude, opposite direction",
+      "Same magnitude, same direction",
+      "Different magnitude, same direction",
+      "b x a is always the null vector"
+     ]
+    },
+    {
+     "b": "Understand",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "There are two angles between any two vectors a and b, theta and (360 degrees - theta). In applying the right-hand rule to find the direction of a x b, the rotation from a to b is taken through",
+     "a": "the smaller angle, which is less than 180 degrees",
+     "o": [
+      "the smaller angle, which is less than 180 degrees",
+      "the larger angle, which is more than 180 degrees",
+      "exactly 90 degrees, whatever the vectors",
+      "either angle, since both give the same direction"
+     ]
+    },
+    {
+     "b": "Understand",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "q": "Under reflection (x to -x, y to -y, z to -z) every component of a vector changes sign. What happens to the vector product a x b under reflection?",
+     "a": "It does not change sign, because both a and b change sign",
+     "o": [
+      "It does not change sign, because both a and b change sign",
+      "It changes sign, like every other vector",
+      "It becomes the null vector",
+      "It turns through 90 degrees"
+     ]
+    },
+    {
+     "b": "Understand",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "q": "The vector product of two non-zero vectors is found to be the null vector. The two vectors must be",
+     "a": "parallel or antiparallel to each other",
+     "o": [
+      "parallel or antiparallel to each other",
+      "perpendicular to each other",
+      "of equal magnitude",
+      "inclined at 45 degrees to each other"
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "Two vectors of magnitudes 4 and 5 are inclined at 30 degrees to each other (sin 30 degrees = 1/2, cos 30 degrees = sqrt(3)/2). The magnitude of their vector product is",
+     "a": "10",
+     "o": [
+      "10",
+      "20",
+      "10 sqrt(3)",
+      "40"
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Easy",
+     "t": "fill_blank",
+     "m": 1,
+     "q": "With i x j = k, the vector product (2i) x (3j) can be written as n k. The value of n is ____ (write a whole number).",
+     "a": "6"
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "q": "Given a = 2i + 3j and b = 4i - j, with i x j = k, the vector product a x b is",
+     "a": "-14k",
+     "o": [
+      "-14k",
+      "14k",
+      "10k",
+      "5k"
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "q": "Find the vector product a x b for a = 2i - j + k and b = i + 3j - 2k, where i, j, k are the unit vectors of a right-handed system (i x j = k).",
+     "a": "a x b = (a_y b_z - a_z b_y) i + (a_z b_x - a_x b_z) j + (a_x b_y - a_y b_x) k = ((-1)(-2) - (1)(3)) i + ((1)(1) - (2)(-2)) j + ((2)(3) - (-1)(1)) k = -i + 5j + 7k.",
+     "s": [
+      [
+       "Determinant / component formula set up correctly",
+       1
+      ],
+      [
+       "a x b = -i + 5j + 7k",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "q": "The area of the triangle contained between two vectors a and b is one half of the magnitude of a x b. Use this to find the area of the triangle for a = 3i + 4j and b = 2i - j, both in metres (i x j = k).",
+     "a": "a x b = (a_x b_y - a_y b_x) k = (3 x (-1) - 4 x 2) k = -11k, of magnitude 11 m^2. Area = (1/2) x 11 = 5.5 m^2.",
+     "s": [
+      [
+       "a x b = -11k (magnitude 11 m^2)",
+       1
+      ],
+      [
+       "Area = 5.5 m^2",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hardest",
+     "t": "long_answer",
+     "m": 3,
+     "q": "For a = i + 2j - k and b = 3i - j + 2k (right-handed system, i x j = k), find c = a x b and verify, using scalar products, that c is perpendicular to both a and b.",
+     "a": "c = (a_y b_z - a_z b_y) i + (a_z b_x - a_x b_z) j + (a_x b_y - a_y b_x) k = ((2)(2) - (-1)(-1)) i + ((-1)(3) - (1)(2)) j + ((1)(-1) - (2)(3)) k = 3i - 5j - 7k. c . a = 3(1) + (-5)(2) + (-7)(-1) = 3 - 10 + 7 = 0. c . b = 3(3) + (-5)(-1) + (-7)(2) = 9 + 5 - 14 = 0. Both scalar products vanish, so c is perpendicular to a and to b.",
+     "s": [
+      [
+       "c = 3i - 5j - 7k",
+       1
+      ],
+      [
+       "c . a = 0",
+       1
+      ],
+      [
+       "c . b = 0, hence c is perpendicular to both",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "multi_statement",
+     "m": 1,
+     "q": "(I) The vector product of two vectors, like their scalar product, is commutative. (II) The vector product is distributive with respect to vector addition: a x (b + c) = a x b + a x c. Which is or are correct?",
+     "a": "Only II",
+     "o": [
+      "Only II",
+      "Only I",
+      "Both I and II",
+      "Neither I nor II"
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "q": "Two vectors p and q have magnitudes 6 and 5, and the magnitude of p x q is 15. Find every possible value of the angle between p and q.",
+     "a": "pq sin(theta) = 15 gives 30 sin(theta) = 15, so sin(theta) = 0.5. Between 0 and 180 degrees this has two solutions: theta = 30 degrees or theta = 150 degrees.",
+     "s": [
+      [
+       "sin(theta) = 15/(6 x 5) = 0.5",
+       1
+      ],
+      [
+       "theta = 30 degrees or 150 degrees (both)",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hardest",
+     "t": "long_answer",
+     "m": 3,
+     "q": "For two vectors lying in the x-y plane, a = a_x i + a_y j and b = b_x i + b_y j, obtain the expression for a x b using only the products of the unit vectors and the distributive property.",
+     "a": "a x b = (a_x i + a_y j) x (b_x i + b_y j) = a_x b_x (i x i) + a_x b_y (i x j) + a_y b_x (j x i) + a_y b_y (j x j), by the distributive property. Now i x i = j x j = 0, i x j = k and j x i = -k. Hence a x b = a_x b_y k - a_y b_x k = (a_x b_y - a_y b_x) k, a vector along the z-axis, perpendicular to the plane of a and b.",
+     "s": [
+      [
+       "Expansion into four terms using the distributive property",
+       1
+      ],
+      [
+       "Use of i x i = j x j = 0, i x j = k, j x i = -k",
+       1
+      ],
+      [
+       "Result a x b = (a_x b_y - a_y b_x) k",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Evaluate",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "q": "A student claims: 'The vector product of two vectors of magnitudes 3 and 4 always has magnitude 12.' Evaluate the claim.",
+     "a": "The claim is wrong in general. The magnitude is ab sin(theta) = 12 sin(theta), which depends on the angle between the vectors. It equals 12 only when the vectors are perpendicular; it is smaller for any other angle and is zero when they are parallel or antiparallel.",
+     "s": [
+      [
+       "Magnitude is 12 sin(theta), so it depends on the angle",
+       1
+      ],
+      [
+       "It is 12 only for perpendicular vectors (and zero for parallel ones)",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Create",
+     "d": "Hardest",
+     "t": "long_answer",
+     "m": 3,
+     "q": "Construct two vectors in the x-y plane, neither of them along a coordinate axis, whose vector product is 10k (right-handed system, i x j = k). Verify your answer and state what b x a is for your pair.",
+     "a": "One possible pair: a = 3i + j and b = 2i + 4j. a x b = (a_x b_y - a_y b_x) k = (3 x 4 - 1 x 2) k = 10k. Then b x a = -(a x b) = -10k. (Any pair, each with non-zero x and y components, satisfying a_x b_y - a_y b_x = 10 is correct.)",
+     "s": [
+      [
+       "Two vectors with non-zero x and y components",
+       1
+      ],
+      [
+       "Verification that a_x b_y - a_y b_x = 10, so a x b = 10k",
+       1
+      ],
+      [
+       "b x a = -10k",
+       1
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "code": "C11P-6.5",
+   "name": "Angular velocity, angular acceleration and kinematics of rotation about a fixed axis",
+   "description": "Angular velocity of a rotating rigid body and its relation v = omega x r with linear velocity, angular acceleration, and the kinematic equations for uniform angular acceleration.",
+   "idea": "Every particle of a body rotating about a fixed axis has the same angular velocity omega, and its linear speed is omega times its perpendicular distance from the axis.",
+   "rule": "omega = d(theta)/dt is the same for all particles and is the angular velocity of the whole body; v = omega r for a particle at perpendicular distance r from the axis, so particles on the axis are at rest. Angular velocity is a vector along the axis, in the direction a right-handed screw advances when its head is turned with the body; reversing the sense of rotation reverses it. In vector form v = omega x r, with r measured from an origin on the axis. Angular acceleration alpha = d(omega)/dt; for a fixed axis the direction of omega is fixed and only its magnitude may change. For uniform angular acceleration: omega = omega0 + alpha t; theta = theta0 + omega0 t + (1/2) alpha t^2; omega^2 = omega0^2 + 2 alpha (theta - theta0). One revolution is 2 pi rad, so n rev/min = 2 pi n/60 rad/s.",
+   "example": "A wheel starting from rest with uniform alpha = 2 rad/s^2: after 5 s, omega = 2 x 5 = 10 rad/s and theta = (1/2) x 2 x 5^2 = 25 rad.",
+   "difficulty_base": "Easy",
+   "questions": [
+    {
+     "b": "Remember",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "The angular acceleration of a rotating body is defined as the time rate of change of its",
+     "a": "angular velocity",
+     "o": [
+      "angular velocity",
+      "angular displacement",
+      "linear velocity",
+      "linear acceleration"
+     ]
+    },
+    {
+     "b": "Remember",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "For a rigid body rotating about a fixed axis, the angular velocity vector is directed",
+     "a": "along the axis of rotation",
+     "o": [
+      "along the axis of rotation",
+      "along the tangent to the circle described by a particle",
+      "along the radius, towards the axis",
+      "along the radius, away from the axis"
+     ]
+    },
+    {
+     "b": "Remember",
+     "d": "Easy",
+     "t": "fill_blank",
+     "m": 1,
+     "q": "One complete revolution corresponds to an angular displacement of n x pi radians. The value of n is ____ (write a whole number).",
+     "a": "2"
+    },
+    {
+     "b": "Remember",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "q": "For rotation about a fixed axis with uniform angular acceleration alpha (initial angular velocity omega0, initial angular displacement theta0), which of the following is NOT a correct kinematic equation?",
+     "a": "omega^2 = omega0^2 + alpha (theta - theta0)",
+     "o": [
+      "omega^2 = omega0^2 + alpha (theta - theta0)",
+      "omega = omega0 + alpha t",
+      "theta = theta0 + omega0 t + (1/2) alpha t^2",
+      "alpha = (omega - omega0)/t"
+     ],
+     "rev": true
+    },
+    {
+     "b": "Understand",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "Why can omega be called the angular velocity of the whole rigid body rather than of one particle?",
+     "a": "Because at any instant every particle of the body has the same angular velocity",
+     "o": [
+      "Because at any instant every particle of the body has the same angular velocity",
+      "Because every particle of the body has the same linear velocity",
+      "Because omega is measured only at the centre of mass",
+      "Because the particles on the axis move the fastest"
+     ]
+    },
+    {
+     "b": "Understand",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "Two particles of a rotating disc are 5 cm and 10 cm from the axis of rotation. Compared with the nearer particle, the farther particle has",
+     "a": "the same angular velocity and twice the linear speed",
+     "o": [
+      "the same angular velocity and twice the linear speed",
+      "twice the angular velocity and the same linear speed",
+      "the same angular velocity and half the linear speed",
+      "half the angular velocity and twice the linear speed"
+     ]
+    },
+    {
+     "b": "Understand",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "A wheel rotating about a fixed axis is made to rotate in the opposite sense (clockwise instead of anticlockwise). The angular velocity vector",
+     "a": "reverses its direction, staying along the axis",
+     "o": [
+      "reverses its direction, staying along the axis",
+      "keeps its direction, since the axis has not changed",
+      "turns to point along the radius of the wheel",
+      "turns to point along the tangent to the rim"
+     ]
+    },
+    {
+     "b": "Understand",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "q": "A particle of a rotating rigid body has position vector r measured from an origin on the fixed axis. In terms of the angular velocity vector omega, its linear velocity is",
+     "a": "v = omega x r",
+     "o": [
+      "v = omega x r",
+      "v = r x omega",
+      "v = (omega . r) along the axis",
+      "v = omega r, directed along r"
+     ]
+    },
+    {
+     "b": "Understand",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "q": "For rotation about a fixed axis, what can be said about the angular velocity vector as time passes?",
+     "a": "Its direction stays fixed; its magnitude may change",
+     "o": [
+      "Its direction stays fixed; its magnitude may change",
+      "Both its direction and its magnitude must change",
+      "Its magnitude stays fixed; its direction may change",
+      "Neither its direction nor its magnitude can ever change"
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "The tip of a fan blade is 0.5 m from the axis of rotation and the fan turns at 20 rad/s. The speed of the tip is",
+     "a": "10 m/s",
+     "o": [
+      "10 m/s",
+      "40 m/s",
+      "200 m/s",
+      "0.025 m/s"
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Easy",
+     "t": "fill_blank",
+     "m": 1,
+     "q": "A wheel starts from rest and has a uniform angular acceleration of 3 rad/s^2. Its angular speed after 4 s is ____ rad/s (write a whole number).",
+     "a": "12"
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "q": "The angular speed of a wheel increases uniformly from 10 rad/s to 30 rad/s in 5 s. The angular displacement of the wheel in this time is",
+     "a": "100 rad",
+     "o": [
+      "100 rad",
+      "150 rad",
+      "50 rad",
+      "200 rad"
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "q": "The angular speed of a motor wheel increases uniformly from 600 rev/min to 1800 rev/min in 10 s. Find (i) its angular acceleration in terms of pi, and (ii) the number of revolutions it makes in this time.",
+     "a": "omega0 = 2 pi x 600/60 = 20 pi rad/s and omega = 2 pi x 1800/60 = 60 pi rad/s. (i) alpha = (omega - omega0)/t = (60 pi - 20 pi)/10 = 4 pi rad/s^2. (ii) theta = omega0 t + (1/2) alpha t^2 = 20 pi x 10 + (1/2) x 4 pi x 100 = 400 pi rad, i.e. 400 pi/(2 pi) = 200 revolutions.",
+     "s": [
+      [
+       "Conversion to rad/s and alpha = 4 pi rad/s^2",
+       1
+      ],
+      [
+       "theta = 400 pi rad = 200 revolutions",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "q": "A rigid body rotates about the z-axis with angular velocity omega = 4k rad/s (anticlockwise as seen from the +z side). A particle of the body has position vector r = 2i + 3k m from an origin on the axis. Using i x j = k, find its linear velocity, and state its speed.",
+     "a": "v = omega x r = 4k x (2i + 3k) = 8 (k x i) + 12 (k x k) = 8j + 0 = 8j m/s. The speed is 8 m/s; only the part of r perpendicular to the axis (2 m) matters, since v = omega r_perp = 4 x 2.",
+     "s": [
+      [
+       "v = omega x r with k x i = j and k x k = 0",
+       1
+      ],
+      [
+       "v = 8j m/s (speed 8 m/s)",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hardest",
+     "t": "long_answer",
+     "m": 3,
+     "q": "A flywheel of radius 0.25 m rotating at 40 rad/s is brought to rest with uniform angular retardation in 8 s. Find (a) its angular acceleration, (b) the angle it turns through while stopping, and (c) the linear speed of a point on its rim 4 s after the braking begins.",
+     "a": "(a) alpha = (omega - omega0)/t = (0 - 40)/8 = -5 rad/s^2. (b) theta = omega0 t + (1/2) alpha t^2 = 40 x 8 - (1/2) x 5 x 64 = 320 - 160 = 160 rad. (c) At t = 4 s, omega = 40 - 5 x 4 = 20 rad/s, so v = omega r = 20 x 0.25 = 5 m/s.",
+     "s": [
+      [
+       "alpha = -5 rad/s^2 (retardation of 5 rad/s^2)",
+       1
+      ],
+      [
+       "theta = 160 rad",
+       1
+      ],
+      [
+       "omega = 20 rad/s at 4 s, so v = 5 m/s",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "assertion_reason",
+     "m": 1,
+     "q": "Assertion (A): For a rigid body rotating about a fixed axis, the angular velocity vector omega is directed along the tangent to the circle described by a particle of the body. Reason (R): The linear velocity v = omega x r of a particle of the body is perpendicular to both omega and r. Choose the correct option.",
+     "a": "A is false, R is true",
+     "o": [
+      "A is false, R is true",
+      "Both A and R are true, and R is the correct explanation of A",
+      "Both A and R are true, but R is not the correct explanation of A",
+      "A is true, R is false"
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "q": "A disc starts from rest and rotates with uniform angular acceleration. It turns through an angle theta1 in the first 2 s and through theta2 in the next 2 s. Find the ratio theta2/theta1.",
+     "a": "From rest, theta = (1/2) alpha t^2. In the first 2 s, theta1 = (1/2) alpha x 4 = 2 alpha. In the first 4 s the angle is (1/2) alpha x 16 = 8 alpha, so theta2 = 8 alpha - 2 alpha = 6 alpha. Hence theta2/theta1 = 3.",
+     "s": [
+      [
+       "theta1 = (1/2) alpha (2)^2 = 2 alpha; theta2 = 6 alpha, found either as theta(4 s) - theta(2 s) = 8 alpha - 2 alpha or from omega(2 s) = 2 alpha as the initial angular speed of the second interval",
+       1
+      ],
+      [
+       "theta2 = 6 alpha, so theta2/theta1 = 3",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hardest",
+     "t": "long_answer",
+     "m": 3,
+     "q": "Starting from omega = omega0 + alpha t for uniform angular acceleration and the definition omega = d(theta)/dt, obtain the equation for the angular displacement theta at time t, given that theta = theta0 at t = 0.",
+     "a": "d(theta)/dt = omega0 + alpha t. Integrating with respect to time (alpha and omega0 are constants): theta = omega0 t + (1/2) alpha t^2 + c. At t = 0, theta = theta0, so c = theta0. Hence theta = theta0 + omega0 t + (1/2) alpha t^2.",
+     "s": [
+      [
+       "d(theta)/dt = omega0 + alpha t",
+       1
+      ],
+      [
+       "Integration: theta = omega0 t + (1/2) alpha t^2 + c",
+       1
+      ],
+      [
+       "c = theta0 from the initial condition, giving theta = theta0 + omega0 t + (1/2) alpha t^2",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Evaluate",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "q": "To convert an angular speed of 1200 rev/min into rad/s, a student writes 1200 x 2 pi = 2400 pi rad/s. Evaluate this working and give the correct value in terms of pi.",
+     "a": "The working is wrong: multiplying by 2 pi converts revolutions to radians, but the time is still in minutes. One must also divide by 60 s/min: omega = 2 pi x 1200/60 = 40 pi rad/s.",
+     "s": [
+      [
+       "Error identified - minutes not converted to seconds (division by 60 missing)",
+       1
+      ],
+      [
+       "Correct value 40 pi rad/s",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Create",
+     "d": "Hardest",
+     "t": "long_answer",
+     "m": 3,
+     "q": "Design a numerical problem about a wheel that starts from rest and speeds up with uniform angular acceleration, such that the wheel makes exactly 50 revolutions. State your data and show the solution.",
+     "a": "One possible problem: 'A wheel starts from rest with a uniform angular acceleration of 2 pi rad/s^2. How many revolutions does it make in 10 s?' Solution: theta = omega0 t + (1/2) alpha t^2 = 0 + (1/2) x 2 pi x 100 = 100 pi rad. Number of revolutions = 100 pi/(2 pi) = 50. (Any data for which (1/2) alpha t^2 = 100 pi rad is correct.)",
+     "s": [
+      [
+       "A complete problem statement with alpha and t (from rest)",
+       1
+      ],
+      [
+       "theta = (1/2) alpha t^2 evaluated as 100 pi rad",
+       1
+      ],
+      [
+       "Division by 2 pi giving exactly 50 revolutions",
+       1
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "code": "C11P-6.6",
+   "name": "Torque and angular momentum",
+   "description": "Moment of a force and angular momentum of a particle as vector products, their relation, the extension to a system of particles and the conservation of total angular momentum.",
+   "idea": "Torque tau = r x F is the rotational analogue of force and angular momentum l = r x p the analogue of linear momentum; torque is the rate of change of angular momentum.",
+   "rule": "Moment of force (torque) about the origin: tau = r x F, of magnitude rF sin(theta) = r_perp F = r F_perp, where r_perp is the perpendicular distance of the line of action from the origin; dimensions M L^2 T^-2 (same as work, but torque is a vector), SI unit N m. Torque is zero if r = 0, F = 0 or the line of action passes through the origin. Angular momentum of a particle: l = r x p (the moment of momentum), magnitude rp sin(theta) = r_perp p; it is zero if p = 0, r = 0 or the line of p passes through the origin. dl/dt = tau, the rotational analogue of F = dp/dt. For a system L = sum of r_i x p_i and dL/dt = tau_ext: internal torques cancel, assuming Newton's third law and that the forces between two particles act along the line joining them. If the total external torque is zero, L is constant, i.e. Lx, Ly and Lz are each constant.",
+   "example": "With i x j = k: a force F = 2j N acting at r = 3i m has torque tau = r x F = 6 (i x j) = 6k N m about the origin.",
+   "difficulty_base": "Hard",
+   "questions": [
+    {
+     "b": "Remember",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "A force F acts on a particle whose position vector with respect to the origin O is r. The moment of the force about O is defined as",
+     "a": "r x F",
+     "o": [
+      "r x F",
+      "F x r",
+      "r . F",
+      "rF cos(theta), a scalar"
+     ]
+    },
+    {
+     "b": "Remember",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "The moment of a force about the origin, tau = r x F, is a vector directed",
+     "a": "perpendicular to the plane containing r and F",
+     "o": [
+      "perpendicular to the plane containing r and F",
+      "along r",
+      "along F",
+      "in the plane of r and F, midway between them"
+     ]
+    },
+    {
+     "b": "Remember",
+     "d": "Easy",
+     "t": "fill_blank",
+     "m": 1,
+     "q": "Just as torque is the moment of force, the angular momentum l = r x p of a particle can be referred to as the moment of ____ (one word).",
+     "a": "momentum"
+    },
+    {
+     "b": "Remember",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "q": "In which of the following cases is the torque of a non-zero force about the origin NOT zero?",
+     "a": "The force acts perpendicular to the position vector of a point away from the origin",
+     "o": [
+      "The force acts perpendicular to the position vector of a point away from the origin",
+      "The force is applied at the origin itself",
+      "The line of action of the force passes through the origin",
+      "The force is directed opposite to the position vector of its point of application"
+     ],
+     "rev": true
+    },
+    {
+     "b": "Understand",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "A particle moves along a straight line with constant velocity. Its angular momentum about a fixed point O that does not lie on the line stays constant because",
+     "a": "both the magnitude of its momentum and the perpendicular distance of its line of motion from O stay the same",
+     "o": [
+      "both the magnitude of its momentum and the perpendicular distance of its line of motion from O stay the same",
+      "its position vector from O stays the same",
+      "its angular momentum about every point is zero",
+      "its momentum keeps changing direction so as to keep r x p fixed"
+     ]
+    },
+    {
+     "b": "Understand",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "Moment of a force and work have the same dimensions, M L^2 T^-2. How do the two quantities differ?",
+     "a": "Moment of a force is a vector, while work is a scalar",
+     "o": [
+      "Moment of a force is a vector, while work is a scalar",
+      "Moment of a force is a scalar, while work is a vector",
+      "Moment of a force has no unit, while work is measured in joule",
+      "They do not differ; they are the same physical quantity"
+     ]
+    },
+    {
+     "b": "Understand",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "For a single particle, dl/dt = tau. Of which equation of translational motion is this the rotational analogue?",
+     "a": "F = dp/dt",
+     "o": [
+      "F = dp/dt",
+      "p = mv",
+      "W = F . d",
+      "v = dr/dt"
+     ]
+    },
+    {
+     "b": "Understand",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "q": "In showing that dL/dt equals the external torque for a system of particles, why does the total torque of the internal forces vanish?",
+     "a": "The internal forces between two particles are equal and opposite and act along the line joining them, so each pair gives zero torque",
+     "o": [
+      "The internal forces between two particles are equal and opposite and act along the line joining them, so each pair gives zero torque",
+      "The internal forces are equal and opposite, and that alone makes their torques cancel whatever their lines of action",
+      "Internal forces are always zero in a system of particles",
+      "Internal forces all act at the origin"
+     ]
+    },
+    {
+     "b": "Understand",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "q": "The torque of a force F acting at position r is tau. If the directions of both r and F are reversed, the torque",
+     "a": "remains the same",
+     "o": [
+      "remains the same",
+      "reverses its direction",
+      "becomes zero",
+      "is doubled in magnitude"
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "A force of 10 N is applied at right angles to a door at a point 0.8 m from the hinge line. The magnitude of the torque about the hinge line is",
+     "a": "8 N m",
+     "o": [
+      "8 N m",
+      "12.5 N m",
+      "10.8 N m",
+      "0 N m"
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Easy",
+     "t": "fill_blank",
+     "m": 1,
+     "q": "A particle of mass 2 kg moves at 3 m/s along a straight line whose perpendicular distance from the origin is 4 m. The magnitude of its angular momentum about the origin is ____ kg m^2/s (write a whole number).",
+     "a": "24"
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "q": "A force F = 3i + 4j N acts on a particle at r = i + 2j m. With i x j = k, the torque about the origin is",
+     "a": "-2k N m",
+     "o": [
+      "-2k N m",
+      "2k N m",
+      "11k N m",
+      "10k N m"
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "q": "Find the torque about the origin of a force F = i - 3j + 2k N acting on a particle whose position vector is r = 2i + j - k m (right-handed system, i x j = k).",
+     "a": "tau = r x F = (y F_z - z F_y) i + (z F_x - x F_z) j + (x F_y - y F_x) k = ((1)(2) - (-1)(-3)) i + ((-1)(1) - (2)(2)) j + ((2)(-3) - (1)(1)) k = -i - 5j - 7k N m.",
+     "s": [
+      [
+       "tau = r x F set up by the determinant / component rule",
+       1
+      ],
+      [
+       "tau = -i - 5j - 7k N m",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "q": "A force of 20 N acts at a point whose position vector from the origin has magnitude 0.5 m; the angle between the position vector and the force is 30 degrees (sin 30 degrees = 0.5). Find the magnitude of the torque about the origin and the perpendicular distance of the line of action of the force from the origin.",
+     "a": "tau = rF sin(theta) = 0.5 x 20 x 0.5 = 5 N m. Perpendicular distance of the line of action r_perp = r sin(theta) = 0.5 x 0.5 = 0.25 m (check: r_perp F = 0.25 x 20 = 5 N m).",
+     "s": [
+      [
+       "tau = rF sin(theta) = 5 N m",
+       1
+      ],
+      [
+       "r_perp = r sin(theta) = 0.25 m",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hardest",
+     "t": "long_answer",
+     "m": 3,
+     "q": "A particle of mass 2 kg moves with constant velocity 5i m/s along the line y = 3 m in the x-y plane (right-handed system, i x j = k). Find its angular momentum about the origin (a) when it is at x = 0 and (b) when it is at x = 4 m, and (c) state the torque acting on it about the origin.",
+     "a": "p = mv = 10i kg m/s. (a) r = 3j: l = r x p = 3j x 10i = 30 (j x i) = -30k kg m^2/s. (b) r = 4i + 3j: l = (4i + 3j) x 10i = 40 (i x i) + 30 (j x i) = 0 - 30k = -30k kg m^2/s, the same as before. (c) The velocity is constant, so the force on the particle is zero and the torque about the origin is zero, consistent with dl/dt = 0.",
+     "s": [
+      [
+       "l = -30k kg m^2/s at x = 0",
+       1
+      ],
+      [
+       "l = -30k kg m^2/s at x = 4 m",
+       1
+      ],
+      [
+       "Torque is zero (no force on a particle of constant velocity)",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "multi_statement",
+     "m": 1,
+     "q": "(I) If the total external torque on a system of particles is zero, each of the three components Lx, Ly and Lz of its total angular momentum stays constant. (II) The angular momentum of a particle about the origin can be zero only if the particle is at rest. Which is or are correct?",
+     "a": "Only I",
+     "o": [
+      "Only I",
+      "Only II",
+      "Both I and II",
+      "Neither I nor II"
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "q": "Two particles, each of mass m and speed v, travel in opposite directions along parallel lines separated by a distance d. Show that the magnitude of the total angular momentum of the pair is the same whatever point between the lines it is taken about.",
+     "a": "Take a point at perpendicular distance x from the first line, and so (d - x) from the second. Each particle's angular momentum has magnitude (momentum) x (perpendicular distance), and because the particles move in opposite directions on opposite sides of the point, both angular momenta have the same sense. L = mvx + mv(d - x) = mvd, which does not contain x, so it is the same for every such point.",
+     "s": [
+      [
+       "Angular momenta mvx and mv(d - x) about a point at distance x from one line, in the same sense",
+       1
+      ],
+      [
+       "Total L = mvd, independent of x",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hardest",
+     "t": "long_answer",
+     "m": 3,
+     "q": "Starting from l = r x p for a single particle, show that the time rate of change of its angular momentum equals the torque acting on it.",
+     "a": "dl/dt = d(r x p)/dt = (dr/dt) x p + r x (dp/dt), by the product rule. dr/dt = v and p = mv, so the first term is v x mv = 0, since the vector product of two parallel vectors vanishes. dp/dt = F by Newton's second law, so the second term is r x F = tau. Hence dl/dt = tau.",
+     "s": [
+      [
+       "Product rule: dl/dt = (dr/dt) x p + r x (dp/dt)",
+       1
+      ],
+      [
+       "First term v x mv = 0 (parallel vectors)",
+       1
+      ],
+      [
+       "Second term r x F = tau, so dl/dt = tau",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Evaluate",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "q": "A student says: 'The total angular momentum of a system is conserved whenever the total external force on it is zero.' Evaluate this statement.",
+     "a": "The statement gives the wrong condition. Angular momentum is conserved when the total external torque is zero. Zero total force does not ensure zero total torque: two equal and opposite forces acting along different lines add up to zero force but give a non-zero torque, which changes the angular momentum.",
+     "s": [
+      [
+       "Correct condition - total external torque (not force) must be zero",
+       1
+      ],
+      [
+       "Zero net force can still give non-zero torque, e.g. equal and opposite forces along different lines",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Create",
+     "d": "Hardest",
+     "t": "long_answer",
+     "m": 3,
+     "q": "A particle is at r = 2i + 3j m. Devise (a) a non-zero force on it that has zero torque about the origin, and (b) a force of magnitude sqrt(13) N lying in the x-y plane that has the largest possible torque about the origin. Justify each choice and give the magnitude of the torque in (b). Use i x j = k.",
+     "a": "(a) Any force along or opposite to r, for example F = 2i + 3j N: r x F = (2 x 3 - 3 x 2) k = 0, because its line of action passes through the origin. (b) The torque rF sin(theta) is largest when F is perpendicular to r, for example F = -3i + 2j N (magnitude sqrt(13) N; r . F = -6 + 6 = 0). Then tau = r x F = (2 x 2 - 3 x (-3)) k = 13k N m, of magnitude rF = sqrt(13) x sqrt(13) = 13 N m.",
+     "s": [
+      [
+       "(a) a force parallel or antiparallel to r, with the reason (line of action through the origin / sin(theta) = 0)",
+       1
+      ],
+      [
+       "(b) a force of magnitude sqrt(13) N perpendicular to r",
+       1
+      ],
+      [
+       "Maximum torque of magnitude 13 N m",
+       1
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "code": "C11P-6.7",
+   "name": "Equilibrium of a rigid body: couples, moments and centre of gravity",
+   "description": "The two conditions of mechanical equilibrium, partial equilibrium, couples, the principle of moments for a lever, and the centre of gravity, applied to bars on supports and a ladder against a wall.",
+   "idea": "A rigid body is in mechanical equilibrium only when the total external force and the total external torque on it are both zero.",
+   "rule": "Translational equilibrium: the vector sum of the forces is zero. Rotational equilibrium: the vector sum of the torques is zero; if the body is in translational equilibrium this condition does not depend on the point about which torques are taken. For coplanar forces three conditions suffice: two for the force components and one for the torques. A body may be in partial equilibrium. A couple is a pair of equal and opposite forces with different lines of action; it produces rotation without translation and its moment is the same about every point. Principle of moments for a lever: load arm x load = effort arm x effort (d1 F1 = d2 F2); mechanical advantage = F1/F2 = d2/d1. The reaction at the fulcrum has no moment about the fulcrum. Anticlockwise moments are taken positive. The centre of gravity is the point about which the total gravitational torque is zero; it coincides with the centre of mass when g is the same over the body. The weight of a body acts at its centre of gravity; a suspended body hangs with its centre of gravity vertically below the point of suspension.",
+   "example": "A load of 400 N placed 0.5 m from the fulcrum of a light lever is balanced by an effort of 100 N applied 2 m from the fulcrum, since 0.5 x 400 = 2 x 100; the mechanical advantage is 4.",
+   "difficulty_base": "Hard",
+   "questions": [
+    {
+     "b": "Remember",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "A rigid body is in mechanical equilibrium when",
+     "a": "the total external force and the total external torque on it are both zero",
+     "o": [
+      "the total external force and the total external torque on it are both zero",
+      "the total external force on it is zero, whatever the total torque",
+      "the total external torque on it is zero, whatever the total force",
+      "no force of any kind acts on it"
+     ]
+    },
+    {
+     "b": "Remember",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "A pair of forces of equal magnitude, acting in opposite directions along different lines of action, is known as",
+     "a": "a couple",
+     "o": [
+      "a couple",
+      "a lever",
+      "a pair of concurrent forces",
+      "a pair of balanced forces in equilibrium"
+     ]
+    },
+    {
+     "b": "Remember",
+     "d": "Easy",
+     "t": "fill_blank",
+     "m": 1,
+     "q": "When all the forces acting on a rigid body are coplanar, the number of independent conditions that must be satisfied for its mechanical equilibrium is ____ (write a whole number).",
+     "a": "3"
+    },
+    {
+     "b": "Remember",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "q": "Which of the following statements about the centre of gravity (CG) of a body is NOT correct?",
+     "a": "It coincides with the centre of mass even when g varies from one part of the body to another",
+     "o": [
+      "It coincides with the centre of mass even when g varies from one part of the body to another",
+      "It is the point about which the total gravitational torque on the body is zero",
+      "A flat cardboard can be balanced horizontally on a pencil tip placed under its CG",
+      "The weight of the body can be taken to act at its CG"
+     ],
+     "rev": true
+    },
+    {
+     "b": "Understand",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "Two equal forces, parallel and in the same direction, act perpendicular to a light rod at its two ends A and B. Considering moments about the mid-point of AB, the rod is",
+     "a": "in rotational equilibrium but not in translational equilibrium",
+     "o": [
+      "in rotational equilibrium but not in translational equilibrium",
+      "in translational equilibrium but not in rotational equilibrium",
+      "in complete mechanical equilibrium",
+      "in neither translational nor rotational equilibrium"
+     ]
+    },
+    {
+     "b": "Understand",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "Two forces of equal magnitude but opposite directions act perpendicular to a light rod, one at each end. The rod is",
+     "a": "in translational equilibrium but not in rotational equilibrium",
+     "o": [
+      "in translational equilibrium but not in rotational equilibrium",
+      "in rotational equilibrium but not in translational equilibrium",
+      "in complete mechanical equilibrium",
+      "in neither translational nor rotational equilibrium"
+     ]
+    },
+    {
+     "b": "Understand",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "In writing the principle of moments for a lever, moments are taken about the fulcrum. Why does the reaction of the support not appear in the equation?",
+     "a": "It acts at the fulcrum itself, so its moment about the fulcrum is zero",
+     "o": [
+      "It acts at the fulcrum itself, so its moment about the fulcrum is zero",
+      "It is always much smaller than the load and the effort",
+      "It acts along the length of the lever",
+      "It is an internal force of the lever"
+     ]
+    },
+    {
+     "b": "Understand",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "q": "A rigid body is in translational equilibrium. If the point about which the torques are taken is shifted, the condition for its rotational equilibrium",
+     "a": "is unaffected, since the total torque is then the same about every point",
+     "o": [
+      "is unaffected, since the total torque is then the same about every point",
+      "fails, since torque always depends on the origin",
+      "holds only if the new point is the centre of mass",
+      "holds only if all the forces are parallel"
+     ]
+    },
+    {
+     "b": "Understand",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "q": "Why does the centre of gravity of a small body coincide with its centre of mass?",
+     "a": "Because g is the same for all its particles, so zero total gravitational torque about a point means the sum of m_i r_i about that point is zero",
+     "o": [
+      "Because g is the same for all its particles, so zero total gravitational torque about a point means the sum of m_i r_i about that point is zero",
+      "Because gravity acts only on the particle at the centre of mass",
+      "Because the centre of mass is defined in terms of the weight of the body",
+      "Because a small body has no rotational motion"
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "A load of 600 N is placed 0.2 m from the fulcrum of a light lever. The effort is applied on the other side, 0.6 m from the fulcrum, parallel to the load. The effort needed for balance is",
+     "a": "200 N",
+     "o": [
+      "200 N",
+      "1800 N",
+      "120 N",
+      "600 N"
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Easy",
+     "t": "fill_blank",
+     "m": 1,
+     "q": "A light see-saw is balanced with a child of mass 30 kg sitting 2 m from the fulcrum on one side and a child of mass 40 kg on the other side. The distance of the second child from the fulcrum is ____ m (write a decimal).",
+     "a": "1.5"
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "q": "A light lever has an effort arm of 1.5 m and a load arm of 0.3 m. Its mechanical advantage is",
+     "a": "5",
+     "o": [
+      "5",
+      "0.2",
+      "1.2",
+      "1.8"
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "q": "A uniform metre stick balances on a knife edge at its 50 cm mark. When a 20 g mass is placed at the 10 cm mark, the stick balances with the knife edge at the 40 cm mark. Find the mass of the metre stick.",
+     "a": "The weight of the uniform stick acts at its centre of gravity, the 50 cm mark. Taking moments about the knife edge at 40 cm: 20 g x (40 - 10) cm = M x (50 - 40) cm, so 600 = 10 M and M = 60 g.",
+     "s": [
+      [
+       "Moments about the knife edge: 20 x 30 = M x 10 (weight of the stick acting at the 50 cm mark)",
+       1
+      ],
+      [
+       "M = 60 g",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "q": "A car of mass 1200 kg stands on level ground. The distance between its front and back axles is 2.0 m and its centre of gravity is 0.8 m behind the front axle. Taking g = 10 m/s^2, find the force exerted by the ground on each front wheel and on each back wheel.",
+     "a": "Weight W = 12000 N acts at the centre of gravity. Taking moments about the front axle: R_back x 2.0 = 12000 x 0.8, so the two back wheels together carry 4800 N; the two front wheels carry 12000 - 4800 = 7200 N. Each front wheel: 3600 N; each back wheel: 2400 N.",
+     "s": [
+      [
+       "Moments about one axle and total force: back axle 4800 N, front axle 7200 N",
+       1
+      ],
+      [
+       "Each front wheel 3600 N, each back wheel 2400 N",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hardest",
+     "t": "long_answer",
+     "m": 3,
+     "q": "A uniform ladder 5 m long and of mass 12 kg leans against a frictionless vertical wall, with its foot on a rough horizontal floor 3 m from the wall, so that its top is 4 m above the floor. Taking g = 10 m/s^2, find (a) the reaction of the wall, (b) the normal reaction of the floor and (c) the force of friction at the floor, with its direction.",
+     "a": "Forces on the ladder: weight W = 120 N acting vertically down at its mid-point (1.5 m horizontally from the foot); reaction F1 of the frictionless wall, horizontal, acting at the top (4 m above the floor); at the foot, the normal reaction N upwards and friction F along the floor. Moments about the foot: F1 x 4 - 120 x 1.5 = 0, so (a) F1 = 45 N. Vertical forces: (b) N = W = 120 N. Horizontal forces: (c) F = F1 = 45 N, directed towards the wall, since it prevents the foot from sliding away from the wall.",
+     "s": [
+      [
+       "Wall reaction F1 = 45 N (e.g. from moments about the foot, F1 x 4 = 120 x 1.5, or about any other point)",
+       1
+      ],
+      [
+       "Normal reaction of the floor N = 120 N",
+       1
+      ],
+      [
+       "Friction 45 N directed towards the wall",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "assertion_reason",
+     "m": 1,
+     "q": "Assertion (A): A compass needle that is not pointing along the north-south direction experiences a couple in the earth's magnetic field. Reason (R): A couple produces rotation without translation. Choose the correct option.",
+     "a": "Both A and R are true, but R is not the correct explanation of A",
+     "o": [
+      "Both A and R are true, but R is not the correct explanation of A",
+      "Both A and R are true, and R is the correct explanation of A",
+      "A is true, R is false",
+      "A is false, R is true"
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "q": "Forces -F and F act on a rigid body at points A and B whose position vectors from an origin O are r1 and r2 respectively. Show that the moment of this couple does not depend on the choice of O.",
+     "a": "Moment of the couple about O = r1 x (-F) + r2 x F = (r2 - r1) x F. But r2 - r1 = AB, the vector from A to B, which depends only on the two points and not on O. So the moment is AB x F, the same about every point.",
+     "s": [
+      [
+       "Sum of moments: r1 x (-F) + r2 x F = (r2 - r1) x F",
+       1
+      ],
+      [
+       "r2 - r1 = AB, so the moment AB x F is independent of the origin",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hardest",
+     "t": "long_answer",
+     "m": 3,
+     "q": "A uniform bar AB, 1.0 m long and of mass 2 kg, rests horizontally on two knife edges: K1 at 10 cm from end A and K2 at 10 cm from end B. A load of mass 3 kg hangs from the bar at 30 cm from end A. Taking g = 10 m/s^2, find the reactions R1 at K1 and R2 at K2.",
+     "a": "Forces: weight of the bar 20 N acting down at its centre of gravity (50 cm from A); load 30 N acting down at 30 cm from A; reactions R1 (at 10 cm) and R2 (at 90 cm) acting up. Translational equilibrium: R1 + R2 = 50 N. Moments about K1: R2 x 0.80 - 30 x 0.20 - 20 x 0.40 = 0, so R2 = 14/0.80 = 17.5 N. Then R1 = 50 - 17.5 = 32.5 N.",
+     "s": [
+      [
+       "R1 + R2 = 50 N (weights 20 N at the centre and 30 N at the load point)",
+       1
+      ],
+      [
+       "Moment equation about a knife edge, e.g. R2 x 0.80 = 30 x 0.20 + 20 x 0.40",
+       1
+      ],
+      [
+       "R2 = 17.5 N and R1 = 32.5 N",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Evaluate",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "q": "To find the centre of gravity of an irregular cardboard, a student hangs it freely from one point A, marks the vertical line through A on the cardboard, and declares that the centre of gravity has been found. Evaluate the procedure.",
+     "a": "The procedure is incomplete. Hanging from A only shows that the centre of gravity lies somewhere on the vertical line through A. The cardboard must be suspended from at least one other point and that vertical marked too; the centre of gravity is where the marked lines intersect.",
+     "s": [
+      [
+       "One suspension only locates a line on which the CG lies",
+       1
+      ],
+      [
+       "A second suspension point is needed; the CG is the intersection of the verticals",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Create",
+     "d": "Hardest",
+     "t": "long_answer",
+     "m": 3,
+     "q": "Using a light rigid rod 1.2 m long as a lever, design an arrangement in which an effort of 100 N just balances a load of 500 N hung from one end, with the effort applied at the other end. State where the fulcrum must be placed, verify with the principle of moments, and state the mechanical advantage.",
+     "a": "Place the fulcrum 0.2 m from the load end, so that the load arm is 0.2 m and the effort arm is 1.0 m. Principle of moments: load arm x load = 0.2 x 500 = 100 N m; effort arm x effort = 1.0 x 100 = 100 N m, so the lever balances. Mechanical advantage = load/effort = 500/100 = 5 (equal to effort arm/load arm = 1.0/0.2).",
+     "s": [
+      [
+       "Fulcrum 0.2 m from the load end (load arm 0.2 m, effort arm 1.0 m)",
+       1
+      ],
+      [
+       "Verification: 0.2 x 500 = 1.0 x 100",
+       1
+      ],
+      [
+       "Mechanical advantage = 5",
+       1
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "code": "C11P-6.8",
+   "name": "Moment of inertia, radius of gyration and rotational kinetic energy",
+   "description": "The definition of moment of inertia from the kinetic energy of rotation, its values for the standard bodies of Table 6.1, the radius of gyration and the role of a flywheel.",
+   "idea": "Moment of inertia I = sum of m_i r_i^2 is the rotational analogue of mass; it depends on how the mass is distributed about the chosen axis.",
+   "rule": "A body rotating about a fixed axis with angular velocity omega has kinetic energy K = (1/2) I omega^2, where I = sum of m_i r_i^2 and r_i is the perpendicular distance of the i-th particle from the axis. I does not depend on omega; it depends on the mass, shape and size of the body, the distribution of mass about the axis and the position and orientation of the axis. Dimensions M L^2, SI unit kg m^2. Table 6.1: thin ring about the axis through its centre perpendicular to its plane, M R^2; thin ring about a diameter, M R^2/2; thin rod about the perpendicular axis through its mid-point, M L^2/12; circular disc about the axis through its centre perpendicular to its plane, M R^2/2; disc about a diameter, M R^2/4; hollow cylinder about its axis, M R^2; solid cylinder about its axis, M R^2/2; solid sphere about a diameter, 2 M R^2/5. Two masses M/2 at the ends of a light rod of length l, about the perpendicular axis through the centre: M l^2/4. Radius of gyration k is defined by I = M k^2. A flywheel has a large moment of inertia and so resists sudden changes of speed.",
+   "example": "A thin ring of mass 2 kg and radius 0.1 m, about the axis through its centre perpendicular to its plane: I = M R^2 = 2 x 0.01 = 0.02 kg m^2.",
+   "difficulty_base": "Hard",
+   "questions": [
+    {
+     "b": "Remember",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "The moment of inertia of a rigid body about an axis is defined as (r_i is the perpendicular distance of the i-th particle, of mass m_i, from the axis)",
+     "a": "the sum of m_i r_i^2 over all particles",
+     "o": [
+      "the sum of m_i r_i^2 over all particles",
+      "the sum of m_i r_i over all particles",
+      "the sum of m_i^2 r_i over all particles",
+      "the total mass times the sum of all the r_i"
+     ]
+    },
+    {
+     "b": "Remember",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "The moment of inertia of a thin circular ring of mass M and radius R about a diameter is",
+     "a": "M R^2/2",
+     "o": [
+      "M R^2/2",
+      "M R^2",
+      "M R^2/4",
+      "2 M R^2/5"
+     ]
+    },
+    {
+     "b": "Remember",
+     "d": "Easy",
+     "t": "fill_blank",
+     "m": 1,
+     "q": "The moment of inertia of a solid sphere of mass M and radius R about a diameter can be written as (n/5) M R^2. The value of n is ____ (write a whole number).",
+     "a": "2"
+    },
+    {
+     "b": "Remember",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "q": "On which of the following does the moment of inertia of a rigid body NOT depend?",
+     "a": "The angular velocity with which the body is rotating",
+     "o": [
+      "The angular velocity with which the body is rotating",
+      "The mass of the body",
+      "The distribution of the mass about the axis of rotation",
+      "The position and orientation of the axis of rotation"
+     ],
+     "rev": true
+    },
+    {
+     "b": "Understand",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "In rotation about a fixed axis, moment of inertia plays the role that which quantity plays in linear motion?",
+     "a": "Mass",
+     "o": [
+      "Mass",
+      "Force",
+      "Velocity",
+      "Linear momentum"
+     ]
+    },
+    {
+     "b": "Understand",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "Why are machines such as a steam engine or an automobile engine fitted with a flywheel?",
+     "a": "Its large moment of inertia resists sudden changes of speed, so the speed changes gradually",
+     "o": [
+      "Its large moment of inertia resists sudden changes of speed, so the speed changes gradually",
+      "Its large moment of inertia makes the engine rotate faster",
+      "It reduces the mass of the engine",
+      "It removes all friction from the rotating parts"
+     ]
+    },
+    {
+     "b": "Understand",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "A thin ring of mass M and radius R rotates in its own plane about its centre. Its moment of inertia about this axis is simply M R^2 because",
+     "a": "every mass element of the ring is at the same distance R from the axis",
+     "o": [
+      "every mass element of the ring is at the same distance R from the axis",
+      "the mass of the ring is concentrated at its centre",
+      "the ring has no thickness",
+      "half of the mass is at distance R and half is on the axis"
+     ]
+    },
+    {
+     "b": "Understand",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "q": "The radius of gyration of a body about an axis is",
+     "a": "the distance from the axis of a mass point, having the whole mass of the body, whose moment of inertia equals that of the body",
+     "o": [
+      "the distance from the axis of a mass point, having the whole mass of the body, whose moment of inertia equals that of the body",
+      "the distance of the centre of mass of the body from the axis",
+      "the radius of the largest circle described by any particle of the body",
+      "the average distance of the particles of the body from the axis"
+     ]
+    },
+    {
+     "b": "Understand",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "q": "A thin ring and a circular disc have the same mass and the same radius. About the axis through the centre perpendicular to the plane, the ring has the larger moment of inertia because",
+     "a": "all the mass of the ring is at the full distance R, while much of the disc's mass lies closer to the axis",
+     "o": [
+      "all the mass of the ring is at the full distance R, while much of the disc's mass lies closer to the axis",
+      "the ring is heavier than the disc",
+      "the disc rotates faster than the ring",
+      "the ring has a larger radius of the two"
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "A uniform circular disc of mass 2 kg and radius 0.5 m rotates about the axis through its centre perpendicular to its plane. Its moment of inertia about this axis is",
+     "a": "0.25 kg m^2",
+     "o": [
+      "0.25 kg m^2",
+      "0.5 kg m^2",
+      "0.125 kg m^2",
+      "1 kg m^2"
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Easy",
+     "t": "fill_blank",
+     "m": 1,
+     "q": "Two small masses of 1 kg each are fixed at the two ends of a light rod 2 m long. The moment of inertia of the system about the axis through the mid-point of the rod and perpendicular to it is ____ kg m^2 (write a whole number).",
+     "a": "2"
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "q": "A body with moment of inertia 0.4 kg m^2 about a fixed axis rotates about that axis at 10 rad/s. Its kinetic energy of rotation is",
+     "a": "20 J",
+     "o": [
+      "20 J",
+      "40 J",
+      "2 J",
+      "4 J"
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "q": "A thin uniform rod of mass 0.6 kg and length 1.0 m rotates about the axis perpendicular to the rod through its mid-point. Find its moment of inertia about this axis and its radius of gyration (to 2 significant figures; sqrt(12) = 3.46).",
+     "a": "I = M L^2/12 = 0.6 x 1.0^2/12 = 0.05 kg m^2. From I = M k^2, k^2 = L^2/12, so k = L/sqrt(12) = 1.0/3.46 = 0.29 m.",
+     "s": [
+      [
+       "I = M L^2/12 = 0.05 kg m^2",
+       1
+      ],
+      [
+       "k = L/sqrt(12) = 0.29 m",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "q": "A solid cylinder of mass 10 kg and radius 0.2 m rotates about its own axis at 50 rad/s. Find its moment of inertia about the axis and its kinetic energy of rotation.",
+     "a": "I = M R^2/2 = 10 x 0.04/2 = 0.2 kg m^2. K = (1/2) I omega^2 = 0.5 x 0.2 x 2500 = 250 J.",
+     "s": [
+      [
+       "I = M R^2/2 = 0.2 kg m^2",
+       1
+      ],
+      [
+       "K = (1/2) I omega^2 = 250 J",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hardest",
+     "t": "long_answer",
+     "m": 3,
+     "q": "Particles of masses 1 kg, 2 kg and 3 kg are fixed to a light rigid frame at (1, 0), (0, 2) and (-1, -1), coordinates in metres, in the x-y plane. The frame rotates about the z-axis at 2 rad/s. Find (a) the moment of inertia about the z-axis, (b) the kinetic energy of rotation and (c) the radius of gyration about the z-axis (to 3 significant figures; sqrt(2.5) = 1.58).",
+     "a": "The squared distances from the z-axis are 1, 4 and 2 m^2. (a) I = 1 x 1 + 2 x 4 + 3 x 2 = 15 kg m^2. (b) K = (1/2) I omega^2 = 0.5 x 15 x 4 = 30 J. (c) I = M k^2 with M = 6 kg: k^2 = 15/6 = 2.5 m^2, so k = 1.58 m.",
+     "s": [
+      [
+       "I = sum of m r^2 = 15 kg m^2",
+       1
+      ],
+      [
+       "K = 30 J",
+       1
+      ],
+      [
+       "k = sqrt(I/M) = 1.58 m",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "multi_statement",
+     "m": 1,
+     "q": "(I) The moment of inertia of a rigid body is a fixed quantity like its mass and does not depend on the axis about which it rotates. (II) A circular disc has the same moment of inertia about a diameter as about the axis through its centre perpendicular to its plane. Which is or are correct?",
+     "a": "Neither I nor II",
+     "o": [
+      "Neither I nor II",
+      "Only I",
+      "Only II",
+      "Both I and II"
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "q": "A hollow cylinder and a solid cylinder have the same mass and the same radius and spin about their own axes with the same angular speed. Find the ratio of the kinetic energy of rotation of the hollow cylinder to that of the solid cylinder.",
+     "a": "About its axis the hollow cylinder has I = M R^2 and the solid cylinder I = M R^2/2. With the same omega, K = (1/2) I omega^2 is proportional to I, so K_hollow : K_solid = M R^2 : M R^2/2 = 2 : 1.",
+     "s": [
+      [
+       "I (hollow) = M R^2 and I (solid) = M R^2/2",
+       1
+      ],
+      [
+       "K proportional to I at the same omega, so the ratio is 2 : 1",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hardest",
+     "t": "long_answer",
+     "m": 3,
+     "q": "A rigid body rotates about a fixed axis with angular velocity omega. Starting from the kinetic energy of one of its particles, derive the expression for the kinetic energy of the whole body in terms of omega.",
+     "a": "A particle of mass m_i at perpendicular distance r_i from the axis moves in a circle with speed v_i = r_i omega, so its kinetic energy is (1/2) m_i v_i^2 = (1/2) m_i r_i^2 omega^2. The total kinetic energy is the sum over all particles; omega is the same for every particle and can be taken out of the sum: K = (1/2) (sum of m_i r_i^2) omega^2. Defining I = sum of m_i r_i^2, K = (1/2) I omega^2. Comparing with (1/2) m v^2, I is the rotational analogue of mass.",
+     "s": [
+      [
+       "Particle: v_i = r_i omega, kinetic energy (1/2) m_i r_i^2 omega^2",
+       1
+      ],
+      [
+       "Sum over particles with omega common: K = (1/2)(sum of m_i r_i^2) omega^2",
+       1
+      ],
+      [
+       "I = sum of m_i r_i^2 identified, giving K = (1/2) I omega^2",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Evaluate",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "q": "A flywheel of mass 4 kg has a moment of inertia of 1 kg m^2 about its axle. A student writes its radius of gyration about the axle as k = I/M = 0.25 m. Evaluate this working.",
+     "a": "The working is wrong. The radius of gyration is defined by I = M k^2, so k^2 = I/M = 1/4 = 0.25 m^2 and k = 0.5 m. I/M is k^2, with unit m^2, not k; the student forgot to take the square root.",
+     "s": [
+      [
+       "Uses I = M k^2: k^2 = I/M = 0.25 m^2",
+       1
+      ],
+      [
+       "k = 0.5 m, not 0.25 m (square root omitted)",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Create",
+     "d": "Hardest",
+     "t": "long_answer",
+     "m": 3,
+     "q": "You have two small masses of 0.5 kg each and a light rod. Design an arrangement, rotating about the axis through the mid-point of the rod and perpendicular to it, whose moment of inertia is 0.16 kg m^2. Then state how the same two masses should be repositioned to double the moment of inertia (sqrt(0.32) = 0.566).",
+     "a": "Fix the masses at equal distances d on either side of the axis: I = 0.5 d^2 + 0.5 d^2 = d^2. For I = 0.16 kg m^2, d = 0.4 m, i.e. the masses are at the ends of a light rod 0.8 m long. To double I to 0.32 kg m^2 without changing the masses, d^2 = 0.32, so each mass must be moved out to d = 0.566 m from the axis (a factor sqrt(2), not 2).",
+     "s": [
+      [
+       "I = 2 x 0.5 x d^2 = d^2 for masses at distance d on either side of the axis",
+       1
+      ],
+      [
+       "d = 0.4 m (rod 0.8 m long) for I = 0.16 kg m^2",
+       1
+      ],
+      [
+       "Doubling I needs d = 0.566 m (distance increased by a factor sqrt(2))",
+       1
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "code": "C11P-6.9",
+   "name": "Dynamics of rotation about a fixed axis and conservation of angular momentum",
+   "description": "Work and power of a torque, tau = I alpha, the angular momentum L = I omega of a body rotating about a fixed axis of symmetry, and conservation of angular momentum when no external torque acts.",
+   "idea": "For rotation about a fixed axis, torque produces angular acceleration (tau = I alpha), and when no external torque acts about the axis, I omega stays constant.",
+   "rule": "Only forces lying in planes perpendicular to the axis, and only the components of position vectors perpendicular to the axis, contribute to the torque along the axis; components of torque perpendicular to the axis are cancelled by forces of constraint. Work done by a torque: dW = tau d(theta); power P = tau omega. For a rigid body the work done by the external torque goes into kinetic energy (1/2) I omega^2; equating rates gives tau = I alpha (I constant), Newton's second law for rotation about a fixed axis. Analogues: x and theta, v and omega, a and alpha, M and I, F and tau, p and L. The component of angular momentum along the axis is L_z = I omega; for a body symmetric about the axis L = I omega along the axis, but in general L and omega need not be parallel. d(I omega)/dt = tau; if the external torque about the axis is zero, I omega = constant, so a decrease in I (arms pulled in) increases omega, as on a swivel chair, for an acrobat, a diver or a dancer.",
+   "example": "A torque of 10 N m acting on a wheel of moment of inertia 5 kg m^2 gives alpha = tau/I = 2 rad/s^2; at the instant its angular speed is 4 rad/s the torque delivers power P = tau omega = 40 W.",
+   "difficulty_base": "Hardest",
+   "questions": [
+    {
+     "b": "Remember",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "Newton's second law for the rotation of a rigid body about a fixed axis (moment of inertia I constant) is",
+     "a": "tau = I alpha",
+     "o": [
+      "tau = I alpha",
+      "tau = I omega",
+      "tau = I/alpha",
+      "tau = (1/2) I alpha^2"
+     ]
+    },
+    {
+     "b": "Remember",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "The instantaneous power delivered by a torque tau acting on a body rotating about a fixed axis with angular velocity omega is",
+     "a": "P = tau omega",
+     "o": [
+      "P = tau omega",
+      "P = tau/omega",
+      "P = tau omega^2",
+      "P = (1/2) tau omega^2"
+     ]
+    },
+    {
+     "b": "Remember",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "The work done by a torque tau when a body rotating about a fixed axis turns through a small angle d(theta) is",
+     "a": "dW = tau d(theta)",
+     "o": [
+      "dW = tau d(theta)",
+      "dW = tau/d(theta)",
+      "dW = (1/2) tau d(theta)^2",
+      "dW = tau omega d(theta)"
+     ]
+    },
+    {
+     "b": "Remember",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "q": "In calculating the torque that rotates a rigid body about a fixed axis, which of the following need NOT be taken into account?",
+     "a": "Forces that are parallel to the axis of rotation",
+     "o": [
+      "Forces that are parallel to the axis of rotation",
+      "Forces that lie in planes perpendicular to the axis",
+      "Components of the position vectors that are perpendicular to the axis",
+      "Components of the torques that are along the axis"
+     ],
+     "rev": true
+    },
+    {
+     "b": "Understand",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "A girl sits on a freely rotating swivel chair with her arms folded, and then stretches her arms out horizontally. With friction at the pivot negligible, her angular speed",
+     "a": "decreases, because her moment of inertia increases while I omega stays constant",
+     "o": [
+      "decreases, because her moment of inertia increases while I omega stays constant",
+      "increases, because her moment of inertia increases",
+      "stays the same, because no external torque acts",
+      "decreases, because stretching the arms exerts an external torque on the chair"
+     ]
+    },
+    {
+     "b": "Understand",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "In the comparison of translational motion with rotational motion about a fixed axis, the rotational analogue of force is",
+     "a": "torque",
+     "o": [
+      "torque",
+      "moment of inertia",
+      "angular momentum",
+      "angular acceleration"
+     ]
+    },
+    {
+     "b": "Understand",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "In a perfectly rigid body rotating about a fixed axis, the work done by the external torque goes into",
+     "a": "increasing the kinetic energy of rotation, since there is no internal motion to dissipate it",
+     "o": [
+      "increasing the kinetic energy of rotation, since there is no internal motion to dissipate it",
+      "heating the body, since rigid bodies dissipate all work done on them",
+      "increasing the moment of inertia of the body",
+      "internal motion of the particles relative to one another"
+     ]
+    },
+    {
+     "b": "Understand",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "q": "For which rotating rigid bodies is the total angular momentum L directed along the axis, with L = I omega?",
+     "a": "Bodies rotating about a fixed axis that is an axis of symmetry of the body",
+     "o": [
+      "Bodies rotating about a fixed axis that is an axis of symmetry of the body",
+      "All rigid bodies, about any axis whatever",
+      "Only bodies whose centre of mass lies off the axis",
+      "Only bodies with zero moment of inertia about the axis"
+     ]
+    },
+    {
+     "b": "Understand",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "q": "Why can a component of external torque perpendicular to the fixed axis be left out when studying rotation about that axis?",
+     "a": "It would tend to turn the axis itself, and forces of constraint arise to cancel its effect so that the axis stays fixed",
+     "o": [
+      "It would tend to turn the axis itself, and forces of constraint arise to cancel its effect so that the axis stays fixed",
+      "Such a component is always exactly zero for every force",
+      "It increases the angular speed about the axis only slightly",
+      "It acts only on the particles lying on the axis, which have no mass"
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Easy",
+     "t": "mcq",
+     "m": 1,
+     "q": "A torque of 6 N m acts on a body whose moment of inertia about its fixed axis of rotation is 2 kg m^2. Its angular acceleration is",
+     "a": "3 rad/s^2",
+     "o": [
+      "3 rad/s^2",
+      "12 rad/s^2",
+      "0.33 rad/s^2",
+      "8 rad/s^2"
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Easy",
+     "t": "fill_blank",
+     "m": 1,
+     "q": "A constant torque of 5 N m turns a wheel about its fixed axle through an angle of 4 rad. The work done by the torque is ____ J (write a whole number).",
+     "a": "20"
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "mcq",
+     "m": 1,
+     "q": "To keep a rotor turning at a uniform angular speed of 150 rad/s against friction, an engine must transmit a torque of 40 N m. The power the engine must deliver is",
+     "a": "6000 W",
+     "o": [
+      "6000 W",
+      "3.75 W",
+      "190 W",
+      "3000 W"
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "q": "A skater spins about a vertical axis at 3 rad/s with arms outstretched, her moment of inertia about the axis being 4 kg m^2. She pulls her arms in, reducing her moment of inertia to 1.5 kg m^2. Neglecting friction, find her new angular speed.",
+     "a": "With no external torque about the axis, I omega is constant: I1 omega1 = I2 omega2, so 4 x 3 = 1.5 x omega2 and omega2 = 8 rad/s.",
+     "s": [
+      [
+       "Conservation of angular momentum: I1 omega1 = I2 omega2 (no external torque)",
+       1
+      ],
+      [
+       "omega2 = 8 rad/s",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "q": "A rope of negligible mass is wound round a hollow cylinder of mass 2 kg and radius 0.5 m, which is free to rotate about its own axis. The rope is pulled with a force of 20 N and does not slip. Find the angular acceleration of the cylinder and the linear acceleration of the rope.",
+     "a": "For a hollow cylinder about its axis I = M R^2 = 2 x 0.25 = 0.5 kg m^2. Torque tau = F R = 20 x 0.5 = 10 N m. alpha = tau/I = 10/0.5 = 20 rad/s^2. Since the rope does not slip, it moves with the speed v = R omega of the rim, so its linear acceleration is a = dv/dt = R alpha = 0.5 x 20 = 10 m/s^2.",
+     "s": [
+      [
+       "I = M R^2 = 0.5 kg m^2 and tau = F R = 10 N m, giving alpha = 20 rad/s^2",
+       1
+      ],
+      [
+       "a = R alpha = 10 m/s^2",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Apply",
+     "d": "Hardest",
+     "t": "long_answer",
+     "m": 3,
+     "q": "A cord of negligible mass is wound round the rim of a flywheel, a uniform disc of mass 10 kg and radius 0.4 m mounted on a horizontal axle through its centre with frictionless bearings. A steady pull of 20 N is applied to the cord and the wheel starts from rest. Find (a) the angular acceleration of the wheel, (b) the work done by the pull when 4 m of cord has unwound, and (c) the kinetic energy of the wheel at that point; compare (b) and (c).",
+     "a": "(a) I = M R^2/2 = 10 x 0.16/2 = 0.8 kg m^2; tau = F R = 20 x 0.4 = 8 N m; alpha = tau/I = 10 rad/s^2. (b) W = force x length unwound = 20 x 4 = 80 J. (c) Angular displacement theta = 4/0.4 = 10 rad; omega^2 = 2 alpha theta = 2 x 10 x 10 = 200 (rad/s)^2; K = (1/2) I omega^2 = 0.5 x 0.8 x 200 = 80 J. The kinetic energy gained equals the work done by the pull, as there is no loss to friction.",
+     "s": [
+      [
+       "I = 0.8 kg m^2, tau = 8 N m, alpha = 10 rad/s^2",
+       1
+      ],
+      [
+       "Work done by the pull = 80 J",
+       1
+      ],
+      [
+       "theta = 10 rad, omega^2 = 200, K = 80 J, equal to the work done",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "assertion_reason",
+     "m": 1,
+     "q": "Assertion (A): Torques of equal magnitude are applied to a hollow cylinder free to rotate about its axis and to a solid sphere free to rotate about a diameter, both of the same mass and radius and both starting from rest; after the same time the sphere has the greater angular speed. Reason (R): For a given torque the angular acceleration is inversely proportional to the moment of inertia, and the solid sphere has the smaller moment of inertia of the two. Choose the correct option.",
+     "a": "Both A and R are true, and R is the correct explanation of A",
+     "o": [
+      "Both A and R are true, and R is the correct explanation of A",
+      "Both A and R are true, but R is not the correct explanation of A",
+      "A is true, R is false",
+      "A is false, R is true"
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "q": "Two wheels A and B, with moments of inertia 1 kg m^2 and 4 kg m^2 about their axles, have equal kinetic energies of rotation. Find the ratio of the angular momentum of A to that of B.",
+     "a": "Equal kinetic energies: (1/2)(1) omega_A^2 = (1/2)(4) omega_B^2, so omega_A = 2 omega_B. Angular momenta: L_A = 1 x omega_A = 2 omega_B and L_B = 4 omega_B. Hence L_A : L_B = 1 : 2.",
+     "s": [
+      [
+       "From equal (1/2) I omega^2: omega_A = 2 omega_B",
+       1
+      ],
+      [
+       "L = I omega gives L_A : L_B = 1 : 2",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Analyse",
+     "d": "Hardest",
+     "t": "long_answer",
+     "m": 3,
+     "q": "For a rigid body rotating about a fixed axis, derive tau = I alpha by equating the rate at which the external torque does work to the rate of increase of the kinetic energy of rotation. State the assumption made about I.",
+     "a": "The rate of doing work (power) is P = tau omega. The kinetic energy is (1/2) I omega^2; assuming I does not change with time (the mass is constant, the body stays rigid and the axis keeps its position in the body), d/dt[(1/2) I omega^2] = I omega (d omega/dt) = I omega alpha. For a rigid body there is no internal motion, so all the work goes into kinetic energy: tau omega = I omega alpha, hence tau = I alpha.",
+     "s": [
+      [
+       "Rate of work = tau omega",
+       1
+      ],
+      [
+       "Rate of increase of kinetic energy = I omega alpha, with I constant in time",
+       1
+      ],
+      [
+       "Equating the two: tau = I alpha",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Evaluate",
+     "d": "Hard",
+     "t": "short_answer",
+     "m": 2,
+     "q": "A student says: 'A rotor turning at a uniform angular speed has no angular acceleration, so the engine driving it at 200 rad/s supplies no torque and no power.' Evaluate this statement.",
+     "a": "It is true that uniform angular speed means zero net torque. But in practice a frictional torque opposes the rotation, so the engine must apply an equal torque to counter it. The engine therefore does deliver power P = tau omega, which is non-zero; only in the complete absence of friction would no torque be needed.",
+     "s": [
+      [
+       "Uniform omega means zero NET torque, not zero applied torque",
+       1
+      ],
+      [
+       "Engine torque balances the frictional torque, so power tau omega is delivered",
+       1
+      ]
+     ]
+    },
+    {
+     "b": "Create",
+     "d": "Hardest",
+     "t": "long_answer",
+     "m": 3,
+     "q": "Compose a numerical problem about a child standing at the centre of a frictionless turntable who folds his outstretched arms, in which the angular speed rises from 30 rev/min to 75 rev/min. State the change in moment of inertia your problem needs, show the solution, and find the ratio of the final to the initial kinetic energy of rotation.",
+     "a": "One possible problem: 'A child stands at the centre of a turntable that rotates without friction at 30 rev/min, with his arms outstretched. He folds his arms, reducing the moment of inertia of the rotating system to 2/5 of its initial value. Find the new angular speed.' Solution: no external torque acts about the axis, so I1 omega1 = I2 omega2 and omega2 = (I1/I2) omega1 = (5/2) x 30 = 75 rev/min. Since K = (1/2) I omega^2, K2/K1 = (I2/I1) x (omega2/omega1)^2 = (2/5) x (2.5)^2 = 2.5. The kinetic energy becomes 2.5 times as large; the extra energy comes from the work the child does in pulling his arms in.",
+     "s": [
+      [
+       "A complete problem in which the moment of inertia falls to 2/5 of its initial value (I1/I2 = 2.5)",
+       1
+      ],
+      [
+       "I1 omega1 = I2 omega2 (no external torque) giving 75 rev/min",
+       1
+      ],
+      [
+       "K2/K1 = (I2/I1)(omega2/omega1)^2 = 2.5",
+       1
+      ]
+     ]
+    }
+   ]
+  }
+ ]
+}
