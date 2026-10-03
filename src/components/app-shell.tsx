@@ -28,6 +28,7 @@ export type AppShellActive =
   | 'settings'
   | 'leaderboard'
   | 'reports'
+  | 'activity'
 export type AppShellVariant = 'parent' | 'student'
 
 interface AppShellProps {
@@ -337,6 +338,13 @@ export function AppShell({
                   shortLabel: 'Reports',
                   href: '/admin/reports',
                   icon: <ReportsIcon />,
+                },
+                {
+                  key: 'activity' as const,
+                  label: 'Student activity',
+                  shortLabel: 'Activity',
+                  href: '/admin/activity',
+                  icon: <ProgressIcon />,
                 },
               ]
             : []),

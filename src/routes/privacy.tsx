@@ -53,6 +53,12 @@ function PrivacyPolicy() {
           stays as her answers.
         </li>
         <li>
+          <strong>Time spent in the app:</strong> while a student is using the app, it records a
+          running total of active minutes per day (only while the page is open on screen and she
+          is tapping or typing). Only the number of minutes is kept, never what she was looking
+          at, and it is used to see how much the app is used.
+        </li>
+        <li>
           <strong>Technical records:</strong> the IP address and browser of each signed-in
           session, error reports (the page and what went wrong), and a record of key actions
           such as a paper being generated or marked, so we can fix problems and keep an audit

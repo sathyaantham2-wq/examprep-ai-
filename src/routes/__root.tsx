@@ -6,6 +6,7 @@ import { TanStackDevtools } from '@tanstack/react-devtools'
 
 import appCss from '../styles.css?url'
 import { ThemeProvider } from '../components/theme-provider'
+import { ActivityPing } from '../components/activity-ping'
 import {
   installClientErrorReporting,
   reportReactError,
@@ -128,6 +129,7 @@ function RootDocument({ children }: { children: React.ReactNode }) {
           <span />
         </div>
         <ThemeProvider>
+          <ActivityPing />
           {children}
           <TanStackDevtools
             config={{

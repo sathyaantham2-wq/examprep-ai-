@@ -26,6 +26,7 @@ import { Route as RemediationRouteImport } from './routes/remediation'
 import { Route as SettingsRouteImport } from './routes/settings'
 import { Route as StudentRouteImport } from './routes/student'
 import { Route as DotwellKnownAssetlinksDotjsonRouteImport } from './routes/[.]well-known/assetlinks[.]json'
+import { Route as AdminActivityRouteImport } from './routes/admin/activity'
 import { Route as AdminAdaptiveRouteImport } from './routes/admin/adaptive'
 import { Route as AdminBlueprintsRouteImport } from './routes/admin/blueprints'
 import { Route as AdminCoverageRouteImport } from './routes/admin/coverage'
@@ -57,6 +58,7 @@ import { Route as PaperIdRouteImport } from './routes/paper/$id'
 import { Route as ScanAttemptIdRouteImport } from './routes/scan/$attemptId'
 import { Route as SummaryWeeklyRouteImport } from './routes/summary/weekly'
 import { Route as TrackerStudentIdRouteImport } from './routes/tracker/$studentId'
+import { Route as ApiActivityPingRouteImport } from './routes/api/activity/ping'
 import { Route as ApiAdaptiveOverviewRouteImport } from './routes/api/adaptive/overview'
 import { Route as ApiAdaptivePlanRouteImport } from './routes/api/adaptive/plan'
 import { Route as ApiAdminAiStatusRouteImport } from './routes/api/admin/ai-status'
@@ -64,6 +66,7 @@ import { Route as ApiAdminAiUsageRouteImport } from './routes/api/admin/ai-usage
 import { Route as ApiAdminMasterySettingsRouteImport } from './routes/api/admin/mastery-settings'
 import { Route as ApiAdminProductFunnelRouteImport } from './routes/api/admin/product-funnel'
 import { Route as ApiAdminQuestionReportsRouteImport } from './routes/api/admin/question-reports'
+import { Route as ApiAdminStudentActivityRouteImport } from './routes/api/admin/student-activity'
 import { Route as ApiAdminSubjectsRouteImport } from './routes/api/admin/subjects'
 import { Route as ApiAdminSyllabusFidelityRouteImport } from './routes/api/admin/syllabus-fidelity'
 import { Route as ApiAttemptsIdRouteImport } from './routes/api/attempts/$id'
@@ -234,6 +237,11 @@ const DotwellKnownAssetlinksDotjsonRoute =
     path: '/.well-known/assetlinks.json',
     getParentRoute: () => rootRouteImport,
   } as any)
+const AdminActivityRoute = AdminActivityRouteImport.update({
+  id: '/admin/activity',
+  path: '/admin/activity',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const AdminAdaptiveRoute = AdminAdaptiveRouteImport.update({
   id: '/admin/adaptive',
   path: '/admin/adaptive',
@@ -389,6 +397,11 @@ const TrackerStudentIdRoute = TrackerStudentIdRouteImport.update({
   path: '/tracker/$studentId',
   getParentRoute: () => rootRouteImport,
 } as any)
+const ApiActivityPingRoute = ApiActivityPingRouteImport.update({
+  id: '/api/activity/ping',
+  path: '/api/activity/ping',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const ApiAdaptiveOverviewRoute = ApiAdaptiveOverviewRouteImport.update({
   id: '/api/adaptive/overview',
   path: '/api/adaptive/overview',
@@ -422,6 +435,11 @@ const ApiAdminProductFunnelRoute = ApiAdminProductFunnelRouteImport.update({
 const ApiAdminQuestionReportsRoute = ApiAdminQuestionReportsRouteImport.update({
   id: '/api/admin/question-reports',
   path: '/api/admin/question-reports',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ApiAdminStudentActivityRoute = ApiAdminStudentActivityRouteImport.update({
+  id: '/api/admin/student-activity',
+  path: '/api/admin/student-activity',
   getParentRoute: () => rootRouteImport,
 } as any)
 const ApiAdminSubjectsRoute = ApiAdminSubjectsRouteImport.update({
@@ -884,6 +902,7 @@ export interface FileRoutesByFullPath {
   '/settings': typeof SettingsRoute
   '/student': typeof StudentRoute
   '/.well-known/assetlinks.json': typeof DotwellKnownAssetlinksDotjsonRoute
+  '/admin/activity': typeof AdminActivityRoute
   '/admin/adaptive': typeof AdminAdaptiveRoute
   '/admin/blueprints': typeof AdminBlueprintsRoute
   '/admin/coverage': typeof AdminCoverageRoute
@@ -915,6 +934,7 @@ export interface FileRoutesByFullPath {
   '/scan/$attemptId': typeof ScanAttemptIdRoute
   '/summary/weekly': typeof SummaryWeeklyRoute
   '/tracker/$studentId': typeof TrackerStudentIdRoute
+  '/api/activity/ping': typeof ApiActivityPingRoute
   '/api/adaptive/overview': typeof ApiAdaptiveOverviewRoute
   '/api/adaptive/plan': typeof ApiAdaptivePlanRoute
   '/api/admin/ai-status': typeof ApiAdminAiStatusRoute
@@ -922,6 +942,7 @@ export interface FileRoutesByFullPath {
   '/api/admin/mastery-settings': typeof ApiAdminMasterySettingsRoute
   '/api/admin/product-funnel': typeof ApiAdminProductFunnelRoute
   '/api/admin/question-reports': typeof ApiAdminQuestionReportsRoute
+  '/api/admin/student-activity': typeof ApiAdminStudentActivityRoute
   '/api/admin/subjects': typeof ApiAdminSubjectsRouteWithChildren
   '/api/admin/syllabus-fidelity': typeof ApiAdminSyllabusFidelityRoute
   '/api/attempts/$id': typeof ApiAttemptsIdRouteWithChildren
@@ -1024,6 +1045,7 @@ export interface FileRoutesByTo {
   '/settings': typeof SettingsRoute
   '/student': typeof StudentRoute
   '/.well-known/assetlinks.json': typeof DotwellKnownAssetlinksDotjsonRoute
+  '/admin/activity': typeof AdminActivityRoute
   '/admin/adaptive': typeof AdminAdaptiveRoute
   '/admin/blueprints': typeof AdminBlueprintsRoute
   '/admin/coverage': typeof AdminCoverageRoute
@@ -1055,6 +1077,7 @@ export interface FileRoutesByTo {
   '/scan/$attemptId': typeof ScanAttemptIdRoute
   '/summary/weekly': typeof SummaryWeeklyRoute
   '/tracker/$studentId': typeof TrackerStudentIdRoute
+  '/api/activity/ping': typeof ApiActivityPingRoute
   '/api/adaptive/overview': typeof ApiAdaptiveOverviewRoute
   '/api/adaptive/plan': typeof ApiAdaptivePlanRoute
   '/api/admin/ai-status': typeof ApiAdminAiStatusRoute
@@ -1062,6 +1085,7 @@ export interface FileRoutesByTo {
   '/api/admin/mastery-settings': typeof ApiAdminMasterySettingsRoute
   '/api/admin/product-funnel': typeof ApiAdminProductFunnelRoute
   '/api/admin/question-reports': typeof ApiAdminQuestionReportsRoute
+  '/api/admin/student-activity': typeof ApiAdminStudentActivityRoute
   '/api/admin/subjects': typeof ApiAdminSubjectsRouteWithChildren
   '/api/admin/syllabus-fidelity': typeof ApiAdminSyllabusFidelityRoute
   '/api/attempts/$id': typeof ApiAttemptsIdRouteWithChildren
@@ -1165,6 +1189,7 @@ export interface FileRoutesById {
   '/settings': typeof SettingsRoute
   '/student': typeof StudentRoute
   '/.well-known/assetlinks.json': typeof DotwellKnownAssetlinksDotjsonRoute
+  '/admin/activity': typeof AdminActivityRoute
   '/admin/adaptive': typeof AdminAdaptiveRoute
   '/admin/blueprints': typeof AdminBlueprintsRoute
   '/admin/coverage': typeof AdminCoverageRoute
@@ -1196,6 +1221,7 @@ export interface FileRoutesById {
   '/scan/$attemptId': typeof ScanAttemptIdRoute
   '/summary/weekly': typeof SummaryWeeklyRoute
   '/tracker/$studentId': typeof TrackerStudentIdRoute
+  '/api/activity/ping': typeof ApiActivityPingRoute
   '/api/adaptive/overview': typeof ApiAdaptiveOverviewRoute
   '/api/adaptive/plan': typeof ApiAdaptivePlanRoute
   '/api/admin/ai-status': typeof ApiAdminAiStatusRoute
@@ -1203,6 +1229,7 @@ export interface FileRoutesById {
   '/api/admin/mastery-settings': typeof ApiAdminMasterySettingsRoute
   '/api/admin/product-funnel': typeof ApiAdminProductFunnelRoute
   '/api/admin/question-reports': typeof ApiAdminQuestionReportsRoute
+  '/api/admin/student-activity': typeof ApiAdminStudentActivityRoute
   '/api/admin/subjects': typeof ApiAdminSubjectsRouteWithChildren
   '/api/admin/syllabus-fidelity': typeof ApiAdminSyllabusFidelityRoute
   '/api/attempts/$id': typeof ApiAttemptsIdRouteWithChildren
@@ -1307,6 +1334,7 @@ export interface FileRouteTypes {
     | '/settings'
     | '/student'
     | '/.well-known/assetlinks.json'
+    | '/admin/activity'
     | '/admin/adaptive'
     | '/admin/blueprints'
     | '/admin/coverage'
@@ -1338,6 +1366,7 @@ export interface FileRouteTypes {
     | '/scan/$attemptId'
     | '/summary/weekly'
     | '/tracker/$studentId'
+    | '/api/activity/ping'
     | '/api/adaptive/overview'
     | '/api/adaptive/plan'
     | '/api/admin/ai-status'
@@ -1345,6 +1374,7 @@ export interface FileRouteTypes {
     | '/api/admin/mastery-settings'
     | '/api/admin/product-funnel'
     | '/api/admin/question-reports'
+    | '/api/admin/student-activity'
     | '/api/admin/subjects'
     | '/api/admin/syllabus-fidelity'
     | '/api/attempts/$id'
@@ -1447,6 +1477,7 @@ export interface FileRouteTypes {
     | '/settings'
     | '/student'
     | '/.well-known/assetlinks.json'
+    | '/admin/activity'
     | '/admin/adaptive'
     | '/admin/blueprints'
     | '/admin/coverage'
@@ -1478,6 +1509,7 @@ export interface FileRouteTypes {
     | '/scan/$attemptId'
     | '/summary/weekly'
     | '/tracker/$studentId'
+    | '/api/activity/ping'
     | '/api/adaptive/overview'
     | '/api/adaptive/plan'
     | '/api/admin/ai-status'
@@ -1485,6 +1517,7 @@ export interface FileRouteTypes {
     | '/api/admin/mastery-settings'
     | '/api/admin/product-funnel'
     | '/api/admin/question-reports'
+    | '/api/admin/student-activity'
     | '/api/admin/subjects'
     | '/api/admin/syllabus-fidelity'
     | '/api/attempts/$id'
@@ -1587,6 +1620,7 @@ export interface FileRouteTypes {
     | '/settings'
     | '/student'
     | '/.well-known/assetlinks.json'
+    | '/admin/activity'
     | '/admin/adaptive'
     | '/admin/blueprints'
     | '/admin/coverage'
@@ -1618,6 +1652,7 @@ export interface FileRouteTypes {
     | '/scan/$attemptId'
     | '/summary/weekly'
     | '/tracker/$studentId'
+    | '/api/activity/ping'
     | '/api/adaptive/overview'
     | '/api/adaptive/plan'
     | '/api/admin/ai-status'
@@ -1625,6 +1660,7 @@ export interface FileRouteTypes {
     | '/api/admin/mastery-settings'
     | '/api/admin/product-funnel'
     | '/api/admin/question-reports'
+    | '/api/admin/student-activity'
     | '/api/admin/subjects'
     | '/api/admin/syllabus-fidelity'
     | '/api/attempts/$id'
@@ -1728,6 +1764,7 @@ export interface RootRouteChildren {
   SettingsRoute: typeof SettingsRoute
   StudentRoute: typeof StudentRoute
   DotwellKnownAssetlinksDotjsonRoute: typeof DotwellKnownAssetlinksDotjsonRoute
+  AdminActivityRoute: typeof AdminActivityRoute
   AdminAdaptiveRoute: typeof AdminAdaptiveRoute
   AdminBlueprintsRoute: typeof AdminBlueprintsRoute
   AdminCoverageRoute: typeof AdminCoverageRoute
@@ -1759,6 +1796,7 @@ export interface RootRouteChildren {
   ScanAttemptIdRoute: typeof ScanAttemptIdRoute
   SummaryWeeklyRoute: typeof SummaryWeeklyRoute
   TrackerStudentIdRoute: typeof TrackerStudentIdRoute
+  ApiActivityPingRoute: typeof ApiActivityPingRoute
   ApiAdaptiveOverviewRoute: typeof ApiAdaptiveOverviewRoute
   ApiAdaptivePlanRoute: typeof ApiAdaptivePlanRoute
   ApiAdminAiStatusRoute: typeof ApiAdminAiStatusRoute
@@ -1766,6 +1804,7 @@ export interface RootRouteChildren {
   ApiAdminMasterySettingsRoute: typeof ApiAdminMasterySettingsRoute
   ApiAdminProductFunnelRoute: typeof ApiAdminProductFunnelRoute
   ApiAdminQuestionReportsRoute: typeof ApiAdminQuestionReportsRoute
+  ApiAdminStudentActivityRoute: typeof ApiAdminStudentActivityRoute
   ApiAdminSubjectsRoute: typeof ApiAdminSubjectsRouteWithChildren
   ApiAdminSyllabusFidelityRoute: typeof ApiAdminSyllabusFidelityRoute
   ApiAuthSplatRoute: typeof ApiAuthSplatRoute
@@ -1909,6 +1948,13 @@ declare module '@tanstack/react-router' {
       path: '/.well-known/assetlinks.json'
       fullPath: '/.well-known/assetlinks.json'
       preLoaderRoute: typeof DotwellKnownAssetlinksDotjsonRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/admin/activity': {
+      id: '/admin/activity'
+      path: '/admin/activity'
+      fullPath: '/admin/activity'
+      preLoaderRoute: typeof AdminActivityRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/admin/adaptive': {
@@ -2128,6 +2174,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof TrackerStudentIdRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/api/activity/ping': {
+      id: '/api/activity/ping'
+      path: '/api/activity/ping'
+      fullPath: '/api/activity/ping'
+      preLoaderRoute: typeof ApiActivityPingRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/api/adaptive/overview': {
       id: '/api/adaptive/overview'
       path: '/api/adaptive/overview'
@@ -2175,6 +2228,13 @@ declare module '@tanstack/react-router' {
       path: '/api/admin/question-reports'
       fullPath: '/api/admin/question-reports'
       preLoaderRoute: typeof ApiAdminQuestionReportsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/api/admin/student-activity': {
+      id: '/api/admin/student-activity'
+      path: '/api/admin/student-activity'
+      fullPath: '/api/admin/student-activity'
+      preLoaderRoute: typeof ApiAdminStudentActivityRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/api/admin/subjects': {
@@ -3177,6 +3237,7 @@ const rootRouteChildren: RootRouteChildren = {
   SettingsRoute: SettingsRoute,
   StudentRoute: StudentRoute,
   DotwellKnownAssetlinksDotjsonRoute: DotwellKnownAssetlinksDotjsonRoute,
+  AdminActivityRoute: AdminActivityRoute,
   AdminAdaptiveRoute: AdminAdaptiveRoute,
   AdminBlueprintsRoute: AdminBlueprintsRoute,
   AdminCoverageRoute: AdminCoverageRoute,
@@ -3208,6 +3269,7 @@ const rootRouteChildren: RootRouteChildren = {
   ScanAttemptIdRoute: ScanAttemptIdRoute,
   SummaryWeeklyRoute: SummaryWeeklyRoute,
   TrackerStudentIdRoute: TrackerStudentIdRoute,
+  ApiActivityPingRoute: ApiActivityPingRoute,
   ApiAdaptiveOverviewRoute: ApiAdaptiveOverviewRoute,
   ApiAdaptivePlanRoute: ApiAdaptivePlanRoute,
   ApiAdminAiStatusRoute: ApiAdminAiStatusRoute,
@@ -3215,6 +3277,7 @@ const rootRouteChildren: RootRouteChildren = {
   ApiAdminMasterySettingsRoute: ApiAdminMasterySettingsRoute,
   ApiAdminProductFunnelRoute: ApiAdminProductFunnelRoute,
   ApiAdminQuestionReportsRoute: ApiAdminQuestionReportsRoute,
+  ApiAdminStudentActivityRoute: ApiAdminStudentActivityRoute,
   ApiAdminSubjectsRoute: ApiAdminSubjectsRouteWithChildren,
   ApiAdminSyllabusFidelityRoute: ApiAdminSyllabusFidelityRoute,
   ApiAuthSplatRoute: ApiAuthSplatRoute,
