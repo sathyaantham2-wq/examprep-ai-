@@ -662,6 +662,15 @@ export interface StudentPointsLedger {
   subject_id: string;
 }
 
+export interface StudentActivityDaily {
+  active_seconds: Generated<number>;
+  day: ColumnType<string, string | Date, string | Date>;
+  first_seen_at: Generated<Timestamp>;
+  last_seen_at: Generated<Timestamp>;
+  pings: Generated<number>;
+  student_id: string;
+}
+
 export interface Students {
   access_enabled: Generated<boolean>;
   board: string;
@@ -801,6 +810,7 @@ export interface DB {
   student_concept_performance: StudentConceptPerformance;
   student_points_ledger: StudentPointsLedger;
   student_subjects: StudentSubjects;
+  student_activity_daily: StudentActivityDaily;
   students: Students;
   study_plans: StudyPlans;
   subjects: Subjects;
