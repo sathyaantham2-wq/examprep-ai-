@@ -29,7 +29,9 @@ interface InstallAppDialogProps {
 }
 
 // The popup form of the install offer (2026-10-02 request): shown when a shared link is opened
-// and when a paper is generated. Asked once per place; the caller decides when to open it.
+// and when a paper is generated. Asked once per place; the caller decides when to open it. On a
+// phone it sits at the TOP of the screen (2026-10-03 request), where it is seen at once, not in a
+// bottom sheet below the fold; on a wide screen it stays centred.
 export function InstallAppDialog({
   storageKey,
   onClose,
@@ -54,7 +56,7 @@ export function InstallAppDialog({
 
   return (
     <div
-      className="no-print fixed inset-0 z-50 flex items-end justify-center bg-black/50 p-4 sm:items-center"
+      className="no-print fixed inset-0 z-50 flex items-start justify-center bg-black/50 p-4 pt-[max(1rem,env(safe-area-inset-top))] sm:items-center"
       onClick={close}
     >
       <div

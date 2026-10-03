@@ -309,7 +309,9 @@ function MyPaper() {
   const [allChapters, setAllChapters] = useState<Array<ChapterChoice>>([])
   const [chapterIds, setChapterIds] = useState<Array<string> | null>(null)
   const [chapterSearch, setChapterSearch] = useState('')
-  const [collapsedParts, setCollapsedParts] = useState<Set<string>>(new Set())
+  // Parts start closed (2026-10-03 request): she opens the one she wants. While she is searching
+  // the matching chapters always show, so a search never looks like it found nothing.
+  const [expandedParts, setExpandedParts] = useState<Set<string>>(new Set())
   const [plan, setPlan] = useState<Plan | null>(null)
   const [loadingPlan, setLoadingPlan] = useState(false)
   const [error, setError] = useState<string | null>(null)
@@ -476,7 +478,7 @@ function MyPaper() {
   }
 
   function togglePartCollapsed(part: string) {
-    setCollapsedParts((prev) => {
+    setExpandedParts((prev) => {
       const next = new Set(prev)
       if (next.has(part)) next.delete(part)
       else next.add(part)
@@ -857,7 +859,9 @@ function MyPaper() {
                       const selectedInPart = group.chapters.filter((c) =>
                         (chapterIds ?? []).includes(c.id),
                       ).length
-                      const collapsed = collapsedParts.has(group.part)
+                      const collapsed =
+                        !expandedParts.has(group.part) &&
+                        chapterSearch.trim() === ''
                       return (
                         <div
                           key={group.part}

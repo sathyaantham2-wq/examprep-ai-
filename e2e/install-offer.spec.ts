@@ -62,3 +62,23 @@ test('nothing is offered when the browser cannot install the app', async ({
   await expect(page.getByRole('dialog')).toHaveCount(0)
   await expect(page.getByText('Install PrepPlan')).toHaveCount(0)
 })
+
+test('on a phone the install popup sits at the top of the screen', async ({
+  browser,
+}) => {
+  // 2026-10-03 request: it used to appear as a sheet at the bottom of a phone screen.
+  const context = await browser.newContext({
+    viewport: { width: 390, height: 844 },
+  })
+  const page = await context.newPage()
+  await open(page, '/?source=share')
+  await offerInstall(page)
+
+  const dialog = page.getByRole('dialog', { name: 'Install PrepPlan' })
+  await expect(dialog).toBeVisible()
+  const box = await dialog.boundingBox()
+  expect(box).not.toBeNull()
+  // Near the top, nowhere near the bottom third of an 844 px screen.
+  expect(box!.y).toBeLessThan(120)
+  await context.close()
+})
