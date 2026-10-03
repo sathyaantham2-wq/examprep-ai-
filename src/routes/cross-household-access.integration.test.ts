@@ -14,6 +14,7 @@ import { Route as TrackerRoute } from './api/tracker/$studentId'
 import { Route as AttemptsRoute } from './api/attempts'
 import { Route as AttemptAnswerRoute } from './api/attempts/$id/answer'
 import { Route as AttemptSubmitRoute } from './api/attempts/$id/submit'
+import { undoAutoEvaluation } from '../test-support/undo-auto-evaluation'
 import { Route as EvaluationsRoute } from './api/evaluations'
 import { Route as EvaluationItemRoute } from './api/evaluations/$id/items/$itemId'
 import { Route as EvaluationConfirmRoute } from './api/evaluations/$id/confirm'
@@ -242,6 +243,7 @@ describe('cross-household access is denied on every route it was checked against
       request: request(studentA.cookie, {}),
       params: { id: attemptId },
     })
+    await undoAutoEvaluation(db, attemptId)
 
     const evaluationResponse = await handlerFor(
       EvaluationsRoute,

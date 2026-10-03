@@ -9,6 +9,7 @@ import {
   CardTitle,
 } from './ui/card'
 import { MasteryRing } from './mastery-ring'
+import { ShareMasteryButton } from './share-mastery-button'
 import { chapterAdvice, conceptAdvice } from '../lib/adaptive/advice'
 import type { StudyAdvice } from '../lib/adaptive/advice'
 
@@ -420,6 +421,13 @@ export function AdaptiveOverview({
       )}
 
       {afterRecommended}
+
+      <div className="flex justify-end">
+        <ShareMasteryButton
+          studentName={data.student.name}
+          subjects={data.subjects}
+        />
+      </div>
 
       <dl className="grid grid-cols-2 gap-3 sm:grid-cols-4">
         <StatTile

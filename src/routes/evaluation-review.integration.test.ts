@@ -10,6 +10,7 @@ import { Route as GenerateRoute } from './api/papers/generate'
 import { Route as AttemptsRoute } from './api/attempts'
 import { Route as AttemptAnswerRoute } from './api/attempts/$id/answer'
 import { Route as AttemptSubmitRoute } from './api/attempts/$id/submit'
+import { undoAutoEvaluation } from '../test-support/undo-auto-evaluation'
 import { Route as EvaluationsRoute } from './api/evaluations'
 import { Route as EvaluationByIdRoute } from './api/evaluations/$id'
 import { Route as EvaluationConfirmRoute } from './api/evaluations/$id/confirm'
@@ -187,6 +188,7 @@ describe('evaluation review workspace data (F048)', () => {
       request: request(student.cookie, {}),
       params: { id: attemptId },
     })
+    await undoAutoEvaluation(db, attemptId)
   })
 
   afterAll(async () => {

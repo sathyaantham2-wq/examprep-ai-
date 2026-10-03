@@ -23,7 +23,6 @@ const SHARE_INSTALL_OFFER_KEY = 'prepplan-install-offer-share'
 export const Route = createFileRoute('/')({ component: Home })
 
 type Mode = 'sign-in' | 'sign-up'
-type AccountType = 'student' | 'parent'
 
 function Home() {
   const { data: session, isPending } = useSession()
@@ -38,10 +37,8 @@ function Home() {
       new URLSearchParams(window.location.search).get('source') === 'share',
     )
   }, [])
-  // Owner decision 2026-09-22: parent sign-up reopened (auth.ts's before-hook gates the actual
-  // HTTP request; this is just the form's half). Student stays the default -- it was the only
-  // option until now, and is still the more common case.
-  const [accountType, setAccountType] = useState<AccountType>('student')
+  // Owner decision 2026-10-02: new sign-ups are students only. Existing parent accounts still
+  // sign in here; auth.ts's before-hook refuses any other signup_type over HTTP.
   const [name, setName] = useState('')
   const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
@@ -143,7 +140,7 @@ function Home() {
           setError('The two passwords do not match.')
           return
         }
-        if (accountType === 'student' && !guardianOk) {
+        if (!guardianOk) {
           setError('Please confirm that your parent or guardian agrees.')
           return
         }
@@ -151,7 +148,7 @@ function Home() {
           name,
           email,
           password,
-          signup_type: accountType,
+          signup_type: 'student',
         })
         if (result.error) {
           setError(result.error.message ?? 'Sign up failed')
@@ -198,9 +195,7 @@ function Home() {
             <CardDescription>
               {mode === 'sign-in'
                 ? 'Sign in with the email and password you signed up with.'
-                : accountType === 'student'
-                  ? 'Create your own student login. You will set up your class and subjects next.'
-                  : 'Create your parent login. You will add your child and pick her syllabus next.'}
+                : 'Create your own student login. You will set up your class and subjects next.'}
             </CardDescription>
           </CardHeader>
           <CardContent>
@@ -209,30 +204,8 @@ function Home() {
                 {mode === 'sign-up' && (
                   <>
                     <div className="space-y-1.5">
-                      <Label>I am signing up as a</Label>
-                      <div className="grid grid-cols-2 gap-2">
-                        {(['student', 'parent'] as const).map((t) => (
-                          <button
-                            key={t}
-                            type="button"
-                            onClick={() => setAccountType(t)}
-                            className={
-                              'rounded-md border px-3 py-2 text-sm font-medium capitalize ' +
-                              (accountType === t
-                                ? 'border-primary bg-primary text-primary-foreground'
-                                : 'border-input')
-                            }
-                          >
-                            {t === 'student' ? 'Student' : 'Parent / Guardian'}
-                          </button>
-                        ))}
-                      </div>
-                    </div>
-                    <div className="space-y-1.5">
                       <Label htmlFor="name">
-                        {accountType === 'student'
-                          ? 'Your name'
-                          : 'Your name (parent/guardian)'}
+                        Your name
                       </Label>
                       <Input
                         id="name"
@@ -277,19 +250,17 @@ function Home() {
                         minLength={8}
                       />
                     </div>
-                    {accountType === 'student' && (
-                      <Label className="items-start">
-                        <input
-                          type="checkbox"
-                          className="mt-0.5"
-                          checked={guardianOk}
-                          onChange={(e) => setGuardianOk(e.target.checked)}
-                        />
-                        <span className="text-small font-normal">
-                          My parent or guardian agrees to my using PrepPlan.
-                        </span>
-                      </Label>
-                    )}
+                    <Label className="items-start">
+                      <input
+                        type="checkbox"
+                        className="mt-0.5"
+                        checked={guardianOk}
+                        onChange={(e) => setGuardianOk(e.target.checked)}
+                      />
+                      <span className="text-small font-normal">
+                        My parent or guardian agrees to my using PrepPlan.
+                      </span>
+                    </Label>
                   </>
                 )}
                 {error && (

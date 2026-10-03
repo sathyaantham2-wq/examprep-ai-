@@ -131,7 +131,7 @@ export function AnswerReview({
         <p className="text-body text-muted-foreground">
           {data.state === 'none'
             ? 'This attempt is not finished yet.'
-            : 'Your answers have been recorded. Your parent will review and confirm the marks.'}
+            : 'Your answers have been recorded. We could not mark every answer with confidence yet, so your marks are waiting for a check.'}
         </p>
         <a href="/student" className="text-small text-primary mt-4 inline-block underline-offset-4 hover:underline">
           Back to my progress

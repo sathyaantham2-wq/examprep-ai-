@@ -1,5 +1,6 @@
 import { test, expect } from '@playwright/test'
 import { createDb } from '../src/db/connection'
+import { undoAutoEvaluation } from '../src/test-support/undo-auto-evaluation'
 import type { Db } from '../src/db/connection'
 import {
   conceptsRepository,
@@ -181,6 +182,10 @@ test.beforeAll(async () => {
     },
     body: '{}',
   })
+  // Submitting marks the paper at once now; this spec drives the parent's review workspace, so put
+  // the attempt back as submitted-and-unevaluated, the state a paper waits in when the AI cannot
+  // mark a written answer.
+  await undoAutoEvaluation(db, attemptId)
 })
 
 test.afterAll(async () => {
